@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://websites.anotherseoguru.com"),
+  metadataBase: new URL("https://anotherseoguru.com"),
   title: {
     default: "AnotherSEOGuru | Data-Driven SEO Agency",
     template: "%s", // Use strict template (or just %s) to prevent double branding since buildMetadata handles it
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://websites.anotherseoguru.com",
+    url: "https://anotherseoguru.com",
     siteName: "AnotherSEOGuru",
     title: "AnotherSEOGuru | Data-Driven SEO Agency",
     description:
@@ -77,7 +77,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://websites.anotherseoguru.com",
+    canonical: "https://anotherseoguru.com",
   },
   verification: {
     google: "tkWhNe__BsE39YeIQM5fmGc8Y1W7hzw8RadiokDZquw",
@@ -89,8 +89,8 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "AnotherSEOGuru",
-  url: "https://websites.anotherseoguru.com",
-  logo: "https://websites.anotherseoguru.com/logo.png",
+  url: "https://anotherseoguru.com",
+  logo: "https://anotherseoguru.com/logo.png",
   description:
     "Data-driven SEO agency specializing in technical SEO, content strategy, link building, and AI-powered optimization.",
   contactPoint: {

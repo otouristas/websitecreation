@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 import { getAllServiceSlugs } from '@/data/services';
 import { getAllLocationSlugs } from '@/data/locations';
 
-const BASE_URL = 'https://websites.anotherseoguru.com';
+const BASE_URL = 'https://anotherseoguru.com';
 
 export async function GET() {
     const serviceSlugs = getAllServiceSlugs();

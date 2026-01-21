@@ -1,7 +1,7 @@
 // SEO Description Builder
 // Generates optimized meta descriptions with smart truncation
 
-const BASE_URL = 'https://websites.anotherseoguru.com';
+const BASE_URL = 'https://anotherseoguru.com';
 const BRAND_NAME = 'AnotherSEOGuru';
 const DEFAULT_USP = 'Our expert team builds custom, high-performance websites optimized for Google to outrank competitors and convert more local visitors into paying customers';
 

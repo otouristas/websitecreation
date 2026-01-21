@@ -1,7 +1,7 @@
 // Index sitemap that points to all sub-sitemaps
 import { MetadataRoute } from 'next';
 
-const BASE_URL = 'https://websites.anotherseoguru.com';
+const BASE_URL = 'https://anotherseoguru.com';
 
 export default function sitemap(): MetadataRoute.Sitemap {
     // This file serves as a simple sitemap for static pages

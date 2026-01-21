@@ -1,7 +1,7 @@
 // Sitemap index pointing to all sub-sitemaps
 import { NextResponse } from 'next/server';
 
-const BASE_URL = 'https://websites.anotherseoguru.com';
+const BASE_URL = 'https://anotherseoguru.com';
 
 export async function GET() {
     const sitemaps = [

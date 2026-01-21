@@ -17,7 +17,7 @@ export default function robots(): MetadataRoute.Robots {
                 allow: '/',
             },
         ],
-        sitemap: 'https://websites.anotherseoguru.com/sitemap.xml',
-        host: 'https://websites.anotherseoguru.com',
+        sitemap: 'https://anotherseoguru.com/sitemap.xml',
+        host: 'https://anotherseoguru.com',
     };
 }
