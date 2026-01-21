@@ -80,7 +80,7 @@ export const metadata: Metadata = {
     canonical: "https://websites.anotherseoguru.com",
   },
   verification: {
-    google: "your-google-verification-code",
+    google: "tkWhNe__BsE39YeIQM5fmGc8Y1W7hzw8RadiokDZquw",
   },
 };
 
