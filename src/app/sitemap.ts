@@ -45,6 +45,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.8,
         },
         {
+            url: `${BASE_URL}/pricing`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
+            url: `${BASE_URL}/get-started`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.9,
+        },
+        {
             url: `${BASE_URL}/locations`,
             lastModified: new Date(),
             changeFrequency: 'weekly',
@@ -82,6 +94,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
         },
         {
             url: `${BASE_URL}/blog/diy-vs-agency`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${BASE_URL}/blog/medical-marketing`,
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.7,

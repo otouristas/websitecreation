@@ -155,6 +155,10 @@ export default function Header() {
                             <Link href="/about" className="px-4 py-2 text-sm font-medium text-foreground/80 hover:text-primary transition-smooth rounded-lg hover:bg-muted/50">
                                 About
                             </Link>
+
+                            <Link href="/blog" className="px-4 py-2 text-sm font-medium text-foreground/80 hover:text-primary transition-smooth rounded-lg hover:bg-muted/50">
+                                Blog
+                            </Link>
                         </div>
 
                         {/* CTA */}
@@ -188,8 +192,8 @@ export default function Header() {
             {/* Full Screen Mobile Menu Overlay */}
             <div
                 className={`fixed inset-0 z-[100] lg:hidden transition-all duration-300 ${isMobileMenuOpen
-                        ? 'opacity-100 pointer-events-auto'
-                        : 'opacity-0 pointer-events-none'
+                    ? 'opacity-100 pointer-events-auto'
+                    : 'opacity-0 pointer-events-none'
                     }`}
             >
                 {/* Backdrop */}
@@ -367,6 +371,22 @@ export default function Header() {
                                     <div>
                                         <div className="font-semibold">About Us</div>
                                         <div className="text-xs text-muted-foreground">Learn about our agency</div>
+                                    </div>
+                                </Link>
+
+                                <Link
+                                    href="/blog"
+                                    onClick={closeMobileMenu}
+                                    className="flex items-center gap-3 p-4 rounded-xl border border-border hover:bg-muted/50 transition-colors"
+                                >
+                                    <div className="w-10 h-10 rounded-lg bg-orange-500/20 flex items-center justify-center">
+                                        <svg className="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <div className="font-semibold">Blog</div>
+                                        <div className="text-xs text-muted-foreground">Read our latest guides</div>
                                     </div>
                                 </Link>
 

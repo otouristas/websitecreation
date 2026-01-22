@@ -31,6 +31,13 @@ const articles = [
         category: 'Business Strategy',
         color: 'bg-green-100 text-green-700',
     },
+    {
+        slug: 'medical-marketing',
+        title: 'Medical SEO: The Ultimate Guide for Growing Your Practice',
+        excerpt: 'The complete guide to SEO for doctors, plastic surgeons, and med spas. Learn compliance-friendly marketing strategies to get more patients.',
+        category: 'Healthcare Marketing',
+        color: 'bg-teal-100 text-teal-700',
+    },
 ];
 
 export default function BlogIndex() {

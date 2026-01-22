@@ -1,289 +1,161 @@
 import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { services } from '@/data/services';
-import { industries } from '@/data/industries';
-import { tier1Locations } from '@/data/locations';
-import { buildMetadata } from '@/lib/seo';
-
-export const metadata = buildMetadata({
-  title: 'Fast Website Creation | SEO Web Design Agency',
-  description: 'High-performance websites that drive real business results. SEO-optimized from the ground up. Website creation, redesign, logos & content creation.',
-  path: '/',
-});
+import { ROICalculator } from '@/components/tools';
 
 export default function Home() {
   return (
     <>
       <Header />
-      <main>
-        {/* Hero Section */}
-        <section className="relative min-h-[90vh] flex items-center bg-pattern overflow-hidden pt-32">
-          {/* Background elements */}
-          <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <div className="absolute -top-40 -right-40 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-float" />
-            <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-accent/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '1.5s' }} />
+      <main className="overflow-hidden">
+        {/* HERO SECTION */}
+        <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+          {/* Background Gradients */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full z-0 pointer-events-none">
+            <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-blue-500/20 rounded-full blur-[100px] animate-pulse-slow" />
+            <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-purple-500/20 rounded-full blur-[100px] animate-pulse-slow delay-1000" />
           </div>
 
-          <div className="container relative z-10 py-16">
-            <div className="max-w-4xl">
-              {/* Badge */}
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-sm font-medium mb-6">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-                </span>
-                <span className="text-primary">Fast. SEO-Optimized. Results-Driven.</span>
-              </div>
-
-              {/* Headline */}
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-                Websites That{' '}
-                <span className="gradient-text">Load Fast</span> and{' '}
-                <span className="gradient-text">Rank</span>
-              </h1>
-
-              {/* Description */}
-              <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mb-8">
-                Your business deserves a website that looks great, loads instantly,
-                and gets found by customers. We build beautiful, high-performance
-                websites optimized for search from day one.
-              </p>
-
-              {/* CTAs */}
-              <div className="flex flex-wrap gap-4 mb-12">
-                <Link href="/get-started" className="btn btn-gradient text-lg px-8 py-4 shadow-glow">
-                  Start Your Project
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </Link>
-                <Link href="/pricing" className="btn btn-outline text-lg px-8 py-4">
-                  View Pricing
-                </Link>
-              </div>
-
-              {/* Stats */}
-              <div className="flex flex-wrap gap-8 pt-8 border-t border-border/50">
-                <div>
-                  <div className="text-3xl font-bold gradient-text">500+</div>
-                  <div className="text-sm text-muted-foreground">Websites Delivered</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold gradient-text">98%</div>
-                  <div className="text-sm text-muted-foreground">Client Satisfaction</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold gradient-text">2-4 wks</div>
-                  <div className="text-sm text-muted-foreground">Average Delivery</div>
-                </div>
-              </div>
+          <div className="container relative z-10 text-center">
+            <div className="inline-block mb-6 px-4 py-1.5 rounded-full border border-blue-200 bg-blue-50 text-blue-700 text-sm font-semibold animate-fade-in-up">
+              🚀 The #1 Data-Driven SEO Agency
             </div>
-          </div>
-        </section>
-
-        {/* Services Section */}
-        <section className="section bg-muted/30" id="services">
-          <div className="container">
-            <div className="text-center max-w-2xl mx-auto mb-12">
-              <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-                What We Offer
-              </span>
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-                Web Design & SEO Services
-              </h2>
-              <p className="text-muted-foreground">
-                From new websites to redesigns and SEO optimization - everything you need to succeed online.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-              {services.map((service) => (
-                <Link
-                  key={service.slug}
-                  href={`/services/${service.slug}`}
-                  className="card p-6 hover-glow group"
-                >
-                  <div className="w-12 h-12 rounded-xl gradient-primary flex items-center justify-center text-white mb-4 group-hover:scale-110 transition-smooth">
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
-                  </div>
-                  <h3 className="font-semibold mb-2">{service.name}</h3>
-                  <p className="text-sm text-muted-foreground line-clamp-2">{service.description}</p>
-                </Link>
-              ))}
-            </div>
-
-            <div className="text-center mt-8">
-              <Link href="/pricing" className="text-primary hover:underline font-medium">
-                View all pricing →
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* Industries Section */}
-        <section className="section" id="industries">
-          <div className="container">
-            <div className="text-center max-w-2xl mx-auto mb-12">
-              <span className="inline-block px-3 py-1 rounded-full bg-secondary/10 text-secondary text-sm font-medium mb-4">
-                Industry Solutions
-              </span>
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-                Built for Your Industry
-              </h2>
-              <p className="text-muted-foreground">
-                Specialized website solutions tailored to the unique needs of different business types.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-              {industries.map((industry) => (
-                <Link
-                  key={industry.slug}
-                  href={`/solutions/${industry.slug}`}
-                  className="card p-4 text-center hover-glow group"
-                >
-                  <h3 className="font-medium text-sm">{industry.name}</h3>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Locations Section */}
-        <section className="section bg-muted/30" id="locations">
-          <div className="container">
-            <div className="text-center max-w-2xl mx-auto mb-12">
-              <span className="inline-block px-3 py-1 rounded-full bg-accent/10 text-accent text-sm font-medium mb-4">
-                Nationwide Service
-              </span>
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-                Web Design in Your City
-              </h2>
-              <p className="text-muted-foreground">
-                Local expertise with global standards. Beautiful websites for businesses across the USA.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
-              {tier1Locations.slice(0, 24).map((location) => (
-                <Link
-                  key={location.slug}
-                  href={`/services/website-creation/${location.slug}`}
-                  className="px-3 py-2 text-sm text-center rounded-lg border border-border hover:border-primary hover:text-primary bg-background transition-smooth"
-                >
-                  {location.city}, {location.stateCode}
-                </Link>
-              ))}
-            </div>
-            <div className="text-center mt-8">
-              <Link href="/locations" className="text-primary hover:underline text-sm font-medium">
-                View all 100+ locations →
-              </Link>
-            </div>
-          </div>
-        </section>
-        {/* Clients Social Proof */}
-        <section className="section bg-muted/30 border-y border-border">
-          <div className="container">
-            <div className="text-center mb-12">
-              <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-                Trusted by Leading Brands
-              </span>
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-                Join <span className="gradient-text">500+</span> Happy Clients
-              </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
-                From startups to established businesses, companies trust us to build websites that drive results
-              </p>
-            </div>
-
-            {/* Client logos grid */}
-            {/* Client logos grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 items-center justify-items-center mb-12">
-              {[
-                { name: "Active Sport", logo: "/logos/assets/activesport.png" },
-                { name: "Aggelos Rentals", logo: "/logos/assets/aggelosrentals.png" },
-                { name: "Alk Hotel", logo: "/logos/assets/alkhotel.png" },
-                { name: "Allazw Diatrofi", logo: "/logos/assets/allazwdiatrofi.png" },
-                { name: "Antiparos Rent a Car", logo: "/logos/assets/antiparosrentacar.png" },
-                { name: "Antiparos Rooms", logo: "/logos/assets/antiparosrooms.png" },
-                { name: "Antiparos Transfer", logo: "/logos/assets/antiparostransfer.png" },
-                { name: "Athens Rent a Car", logo: "/logos/assets/athensrentacar.png" },
-                { name: "Box2Box", logo: "/logos/assets/box2box_logo.png" },
-                { name: "Cosmos Sport", logo: "/logos/assets/cosmos-sport-logo-17075792651.webp" },
-                { name: "EEF EDU", logo: "/logos/assets/eefedu.png" },
-                { name: "Elite Hospitality", logo: "/logos/assets/elitehospitality.png" },
-                { name: "Health Assistance", logo: "/logos/assets/healthassistance.png" },
-                { name: "JD Sports", logo: "/logos/assets/jd-desktop-logo.webp" },
-                { name: "Villarreal", logo: "/logos/assets/logo-villarreal-web.png" },
-                { name: "Meropi Rooms", logo: "/logos/assets/meropirooms.png" },
-                { name: "Morpheas", logo: "/logos/assets/morpheas-logo.png" },
-                { name: "Petsville", logo: "/logos/assets/petsville.png" },
-                { name: "RAC SA", logo: "/logos/assets/rac sa.jpg" },
-                { name: "RunDome", logo: "/logos/assets/rundome-logo-17075791815.webp" },
-                { name: "Slam Dunk", logo: "/logos/assets/slam-dunk-logo-17075791644.webp" },
-                { name: "Sneaker10", logo: "/logos/assets/sneaker10-logo-17075791422.webp" },
-                { name: "Sports Factory", logo: "/logos/assets/sportsfactory-outlet-logo-17153332223.webp" },
-                { name: "The Agency", logo: "/logos/assets/theagencylogo.png" },
-                { name: "Villa Olivia Clara", logo: "/logos/assets/villa-olivia-clara-logo-768x204.png" },
-              ].map((client, i) => (
-                <div
-                  key={i}
-                  className="group w-full h-20 flex items-center justify-center p-4 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300"
-                >
-                  <img
-                    src={client.logo}
-                    alt={`${client.name} logo`}
-                    className="max-w-full max-h-12 object-contain opacity-60 group-hover:opacity-100 filter grayscale group-hover:grayscale-0 transition-all duration-300"
-                    loading="lazy"
-                  />
-                </div>
-              ))}
-            </div>
-
-            {/* Stats row */}
-            <div className="flex flex-wrap justify-center gap-4 text-sm">
-              <div className="flex items-center gap-2">
-                <div className="flex -space-x-2">
-                  <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 border-2 border-background" />
-                  <div className="w-8 h-8 rounded-full bg-gradient-to-br from-purple-500 to-purple-600 border-2 border-background" />
-                  <div className="w-8 h-8 rounded-full bg-gradient-to-br from-pink-500 to-pink-600 border-2 border-background" />
-                  <div className="w-8 h-8 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 border-2 border-background flex items-center justify-center text-white font-bold text-xs">
-                    +
-                  </div>
-                </div>
-                <span className="text-muted-foreground">
-                  <strong className="text-foreground">500+</strong> websites delivered this year
-                </span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="py-20 lg:py-24 gradient-primary text-white">
-          <div className="container text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              Ready to Get Started?
-            </h2>
-            <p className="text-white/80 mb-8 max-w-xl mx-auto">
-              Choose your package and launch your new website in weeks, not months.
-              Transparent pricing. No surprises.
+            <h1 className="text-5xl lg:text-7xl font-bold mb-8 tracking-tight text-gray-900 leading-[1.1] animate-fade-in-up delay-100">
+              Turn Your Website Into <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Your Best Salesperson</span>
+            </h1>
+            <p className="text-xl lg:text-2xl text-gray-600 max-w-3xl mx-auto mb-10 animate-fade-in-up delay-200">
+              Stop renting your traffic. Own your rankings. We use data, not guesswork, to flood your business with high-value leads.
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/get-started" className="btn bg-white text-primary hover:bg-white/90 text-lg px-8 py-4">
-                Start Your Project
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up delay-300">
+              <Link href="/contact" className="w-full sm:w-auto px-8 py-4 bg-blue-600 text-white font-bold rounded-xl text-lg hover:bg-blue-700 transition shadow-lg hover:shadow-blue-500/30">
+                Get Your Strategy
               </Link>
-              <Link href="/pricing" className="btn border-2 border-white text-white hover:bg-white/10 text-lg px-8 py-4">
-                View Pricing
+              <Link href="#calculator" className="w-full sm:w-auto px-8 py-4 bg-white text-gray-700 border border-gray-200 font-bold rounded-xl text-lg hover:bg-gray-50 transition">
+                Calculate ROI
               </Link>
             </div>
+          </div>
+        </section>
+
+        {/* SOCIAL PROOF TICKER */}
+        <section className="py-10 border-y border-gray-100 bg-gray-50/50">
+          <div className="container">
+            <p className="text-center text-sm font-semibold text-gray-400 uppercase tracking-widest mb-6">Trusted by 500+ businesses scaling fast</p>
+            <div className="flex flex-wrap justify-center gap-8 lg:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
+              {/* Placeholders for logos - purely CSS generated for simplicity */}
+              <div className="text-xl font-bold font-serif text-gray-600">LawFirm<span className="text-blue-600">PRO</span></div>
+              <div className="text-xl font-bold font-mono text-gray-600">TECH<span className="text-indigo-600">NEXUS</span></div>
+              <div className="text-xl font-bold font-sans text-gray-600">Med<span className="text-teal-600">Spa</span></div>
+              <div className="text-xl font-bold text-gray-600">Construct<span className="text-orange-600">IO</span></div>
+              <div className="text-xl font-bold font-serif text-gray-600">Elite<span className="text-purple-600">Realty</span></div>
+            </div>
+          </div>
+        </section>
+
+        {/* BENTO GRID SERVICES */}
+        <section className="py-24 bg-white">
+          <div className="container">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <h2 className="text-3xl md:text-5xl font-bold mb-6">Everything You Need to Dominate</h2>
+              <p className="text-xl text-gray-600">
+                We don't sell "packages". We sell domination. Our proprietary stack covers every angle of modern search.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 grid-rows-2 gap-6 h-auto md:h-[600px]">
+
+              {/* Card 1: Local SEO (Large) */}
+              <Link href="/services/local-seo" className="md:col-span-2 row-span-2 group relative rounded-3xl overflow-hidden bg-gray-900 text-white p-8 lg:p-12 hover:shadow-2xl transition duration-500">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-indigo-900 opacity-90 group-hover:scale-105 transition duration-700" />
+                <div className="relative z-10 flex flex-col h-full justify-between">
+                  <div>
+                    <div className="w-16 h-16 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mb-6">
+                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                    </div>
+                    <h3 className="text-3xl font-bold mb-4">Local Map Domination</h3>
+                    <p className="text-gray-200 text-lg max-w-md">
+                      Own the "Map Pack" in your city. Ensure your business is the first choice for "Near Me" searches.
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-2 font-bold text-blue-200 group-hover:text-white transition">
+                    Learn More <svg className="w-5 h-5 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                  </div>
+                </div>
+              </Link>
+
+              {/* Card 2: Programmatic SEO */}
+              <Link href="/services" className="bg-gray-50 rounded-3xl p-8 hover:shadow-xl transition group border border-gray-100">
+                <div className="w-12 h-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>
+                </div>
+                <h3 className="text-xl font-bold mb-2">Massive Scale pSEO</h3>
+                <p className="text-sm text-gray-500">Target thousands of long-tail keywords with automated landing pages.</p>
+              </Link>
+
+              {/* Card 3: Link Building */}
+              <Link href="/services/link-building" className="bg-gray-50 rounded-3xl p-8 hover:shadow-xl transition group border border-gray-100">
+                <div className="w-12 h-12 bg-green-100 text-green-600 rounded-xl flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" /></svg>
+                </div>
+                <h3 className="text-xl font-bold mb-2">Authority Building</h3>
+                <p className="text-sm text-gray-500">High-DR backlinks that signals trust to Google. No spam, just power.</p>
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* ROI CALCULATOR SECTION */}
+        <section id="calculator" className="py-24 bg-gradient-to-b from-blue-50 to-white">
+          <div className="container">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div>
+                <span className="inline-block px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-medium mb-6">
+                  Interactive Intelligence
+                </span>
+                <h2 className="text-4xl font-bold mb-6 text-gray-900">
+                  How much money are you leaving on the table?
+                </h2>
+                <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                  Ranking #1 isn't vanity. It's revenue. Use our intelligence tool to see exactly what top rankings would mean for your bottom line.
+                </p>
+                <ul className="space-y-4 mb-8">
+                  <li className="flex items-center gap-3">
+                    <div className="w-6 h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center flex-shrink-0">✓</div>
+                    <span className="font-medium text-gray-700">Predictable Lead Flow</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <div className="w-6 h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center flex-shrink-0">✓</div>
+                    <span className="font-medium text-gray-700">Higher Close Rates</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <div className="w-6 h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center flex-shrink-0">✓</div>
+                    <span className="font-medium text-gray-700">Zero Ad Spend Wasted</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="relative">
+                <div className="absolute inset-0 bg-blue-600 blur-2xl opacity-10 rounded-full" />
+                <div className="relative">
+                  <ROICalculator />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA FOOTER */}
+        <section className="py-24 bg-gray-900 text-white relative overflow-hidden">
+          <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
+          <div className="container relative z-10 text-center">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8">Ready to Scale?</h2>
+            <p className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
+              We only work with businesses we can help. Book a free strategy session to see if we are a match.
+            </p>
+            <Link href="/contact" className="inline-block px-10 py-5 bg-white text-gray-900 font-bold rounded-xl text-xl hover:bg-gray-100 transition transform hover:-translate-y-1">
+              Book Strategy Call
+            </Link>
+            <p className="mt-6 text-sm text-gray-500">No Sales Pressure. Just Strategy.</p>
           </div>
         </section>
       </main>

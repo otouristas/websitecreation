@@ -113,6 +113,15 @@ export function generateLocalBusinessSchema(data: LocalBusinessSchemaData): Sche
                 latitude: data.geo.latitude,
                 longitude: data.geo.longitude,
             },
+            areaServed: {
+                '@type': 'GeoCircle',
+                geoMidpoint: {
+                    '@type': 'GeoCoordinates',
+                    latitude: data.geo.latitude,
+                    longitude: data.geo.longitude,
+                },
+                geoRadius: '40000', // ~25 miles in meters
+            },
         }),
         ...(data.telephone && { telephone: data.telephone }),
         ...(data.priceRange && { priceRange: data.priceRange }),
@@ -135,6 +144,19 @@ export function generateServiceSchema(data: ServiceSchemaData): SchemaOutput {
         },
         ...(data.areaServed && { areaServed: data.areaServed }),
         ...(data.serviceType && { serviceType: data.serviceType }),
+        hasOfferCatalog: {
+            '@type': 'OfferCatalog',
+            name: 'Service Offerings',
+            itemListElement: [
+                {
+                    '@type': 'Offer',
+                    itemOffered: {
+                        '@type': 'Service',
+                        name: data.name,
+                    }
+                }
+            ]
+        }
     };
 }
 

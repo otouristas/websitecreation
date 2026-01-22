@@ -177,6 +177,46 @@ export const industries: Industry[] = [
         painPoints: ['Online booking', 'Service showcase', 'Staff profiles', 'Before/after gallery'],
         icon: 'scissors',
     },
+    {
+        slug: 'plastic-surgeons',
+        name: 'Plastic Surgeons',
+        description: 'Premium websites for plastic surgery clinics. Gallery showcases, procedure guides, and patient trust building.',
+        metaDescription: 'Plastic surgery marketing and SEO. Patient acquisition for rhinoplasty, breast augmentation, and more.',
+        painPoints: ['Patient trust', 'Before/after compliance', 'High-end branding', 'Lead qualification'],
+        icon: 'user-plus',
+    },
+    {
+        slug: 'med-spas',
+        name: 'Med Spas',
+        description: 'Chic, high-converting websites for Medical Spas. Booking integration, treatment menus, and visual storytelling.',
+        metaDescription: 'Med Spa marketing and web design. SEO for Botox, fillers, and aesthetic treatments.',
+        painPoints: ['Booking rates', 'Visual appeal', 'Treatment education', 'Recurring clients'],
+        icon: 'sparkles',
+    },
+    {
+        slug: 'dui-lawyers',
+        name: 'DUI Lawyers',
+        description: 'High-urgency lead generation for DUI attorneys. Click-to-call focus, authority building, and local dominance.',
+        metaDescription: 'DUI attorney SEO and web design. Generate urgent defense leads in your local market.',
+        painPoints: ['Urgency', 'Authority/Trust', 'Local visibility', 'Mobile experience'],
+        icon: 'shield',
+    },
+    {
+        slug: 'personal-injury',
+        name: 'Personal Injury',
+        description: 'Aggressive SEO strategies for PI firms. Case result showcases, practice area landing pages, and lead capture.',
+        metaDescription: 'Personal injury lawyer marketing. High-value case generation for auto accidents and slips.',
+        painPoints: ['High competition', 'Case results', 'Trust signals', 'Lead volume'],
+        icon: 'ambulance',
+    },
+    {
+        slug: 'financial-advisors',
+        name: 'Financial Advisors',
+        description: 'Professional, compliance-friendly websites for wealth managers. Trust building, resource hubs, and appointment setting.',
+        metaDescription: 'SEO for financial advisors and wealth managers. Build trust and attract high-net-worth clients.',
+        painPoints: ['Trust & Credibility', 'Compliance', 'Lead quality', 'Expertise showcase'],
+        icon: 'briefcase',
+    },
 ];
 
 export const getIndustryBySlug = (slug: string): Industry | undefined => {

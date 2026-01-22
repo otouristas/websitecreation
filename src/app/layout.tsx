@@ -142,6 +142,7 @@ const jsonLd = {
 };
 
 import MarketingPopup from "@/components/MarketingPopup";
+import CookieConsent from "@/components/CookieConsent";
 
 // ... (Metadata and imports)
 
@@ -176,6 +177,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <MarketingPopup />
+        <CookieConsent />
         {children}
       </body>
     </html>

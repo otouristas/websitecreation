@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Location } from '@/data/locations';
 import { Service } from '@/data/services';
 import { Industry } from '@/data/industries';
+import { ServiceAreaMap } from './ServiceAreaMap';
 
 interface LocationContentProps {
     location: Location;
