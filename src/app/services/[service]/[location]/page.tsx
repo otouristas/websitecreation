@@ -6,11 +6,16 @@ import Footer from '@/components/Footer';
 import { services, getServiceBySlug, getAllServiceSlugs } from '@/data/services';
 import { industries } from '@/data/industries';
 import { allLocations, getLocationBySlug, getAllLocationSlugs, formatLocationName, stateNames } from '@/data/locations';
-import { buildServiceLocationMetadata } from '@/lib/seo';
+import { buildServiceLocationMetadata, generateBreadcrumbSchema, generateLocalBusinessSchema, generateServiceSchema, combineSchemas } from '@/lib/seo';
+import { SchemaMarkup, Breadcrumbs } from '@/components/seo';
+import { getServiceLocationBreadcrumbs } from '@/lib/linking';
 
 interface PageProps {
     params: Promise<{ service: string; location: string }>;
 }
+
+// ISR: Revalidate every hour
+export const revalidate = 3600;
 
 // Generate static paths for service × location combinations
 export async function generateStaticParams() {
@@ -61,8 +66,38 @@ export default async function ServiceLocationPage({ params }: PageProps) {
     // Related services
     const relatedServices = services.filter((s) => s.slug !== serviceSlug).slice(0, 3);
 
+    // Generate breadcrumbs
+    const breadcrumbs = getServiceLocationBreadcrumbs(service.name, serviceSlug, location.city, locationSlug);
+
+    // Generate schemas
+    const schemas = combineSchemas(
+        generateBreadcrumbSchema({ items: breadcrumbs }),
+        generateLocalBusinessSchema({
+            name: `${service.name} - ${cityState}`,
+            description: `Professional ${service.name.toLowerCase()} services in ${cityState}`,
+            url: `https://anotherseoguru.com/services/${serviceSlug}/${locationSlug}`,
+            address: {
+                addressLocality: location.city,
+                addressRegion: location.stateCode,
+                addressCountry: 'US',
+            },
+            geo: {
+                latitude: location.latitude,
+                longitude: location.longitude,
+            },
+        }),
+        generateServiceSchema({
+            name: service.name,
+            description: service.description,
+            provider: { name: 'AnotherSEOGuru', url: 'https://anotherseoguru.com' },
+            areaServed: [location.city, location.stateCode],
+            serviceType: 'Web Development',
+        })
+    );
+
     return (
         <>
+            <SchemaMarkup schemas={schemas} />
             <Header />
             <main className="pt-32">
                 {/* Hero */}
@@ -70,15 +105,7 @@ export default async function ServiceLocationPage({ params }: PageProps) {
                     <div className="container">
                         <div className="max-w-3xl">
                             {/* Breadcrumb */}
-                            <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-6 flex-wrap">
-                                <Link href="/" className="hover:text-primary">Home</Link>
-                                <span>/</span>
-                                <Link href="/services" className="hover:text-primary">Services</Link>
-                                <span>/</span>
-                                <Link href={`/services/${serviceSlug}`} className="hover:text-primary">{service.name}</Link>
-                                <span>/</span>
-                                <span className="text-foreground">{location.city}</span>
-                            </nav>
+                            <Breadcrumbs items={breadcrumbs} className="mb-6" />
 
                             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
                                 {service.name} in {cityState}

@@ -6,11 +6,16 @@ import Footer from '@/components/Footer';
 import { services } from '@/data/services';
 import { industries, getIndustryBySlug, getAllIndustrySlugs } from '@/data/industries';
 import { tier1Locations } from '@/data/locations';
-import { buildIndustryMetadata } from '@/lib/seo';
+import { buildIndustryMetadata, generateArticleSchema, generateBreadcrumbSchema, combineSchemas } from '@/lib/seo';
+import { SchemaMarkup, Breadcrumbs } from '@/components/seo';
+import { getIndustryBreadcrumbs } from '@/lib/linking';
 
 interface PageProps {
     params: Promise<{ industry: string }>;
 }
+
+// ISR: Revalidate every hour
+export const revalidate = 3600;
 
 // Generate static paths for all industries
 export async function generateStaticParams() {
@@ -42,8 +47,24 @@ export default async function IndustryPage({ params }: PageProps) {
     // Related industries
     const relatedIndustries = industries.filter((i) => i.slug !== industrySlug).slice(0, 4);
 
+    // Generate breadcrumbs
+    const breadcrumbs = getIndustryBreadcrumbs(industry.name, industrySlug);
+
+    // Generate schemas
+    const schemas = combineSchemas(
+        generateBreadcrumbSchema({ items: breadcrumbs }),
+        generateArticleSchema({
+            headline: `Website Solutions for ${industry.name}`,
+            description: industry.description,
+            datePublished: new Date().toISOString(),
+            dateModified: new Date().toISOString(),
+            author: { name: 'AnotherSEOGuru' },
+        })
+    );
+
     return (
         <>
+            <SchemaMarkup schemas={schemas} />
             <Header />
             <main className="pt-32">
                 {/* Hero */}
@@ -51,13 +72,7 @@ export default async function IndustryPage({ params }: PageProps) {
                     <div className="container">
                         <div className="max-w-3xl">
                             {/* Breadcrumb */}
-                            <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
-                                <Link href="/" className="hover:text-primary">Home</Link>
-                                <span>/</span>
-                                <Link href="/solutions" className="hover:text-primary">Solutions</Link>
-                                <span>/</span>
-                                <span className="text-foreground">{industry.name}</span>
-                            </nav>
+                            <Breadcrumbs items={breadcrumbs} className="mb-6" />
 
                             <h1 className="text-4xl sm:text-5xl font-bold mb-6">
                                 Website Solutions for {industry.name}

@@ -6,11 +6,16 @@ import Footer from '@/components/Footer';
 import { services, getServiceBySlug, getAllServiceSlugs } from '@/data/services';
 import { industries, getIndustryBySlug, getAllIndustrySlugs } from '@/data/industries';
 import { tier1Locations } from '@/data/locations';
-import { buildIndustryServiceMetadata } from '@/lib/seo';
+import { buildIndustryServiceMetadata, generateArticleSchema, generateBreadcrumbSchema, generateServiceSchema, combineSchemas } from '@/lib/seo';
+import { SchemaMarkup, Breadcrumbs } from '@/components/seo';
+import { getIndustryServiceBreadcrumbs } from '@/lib/linking';
 
 interface PageProps {
     params: Promise<{ industry: string; service: string }>;
 }
+
+// ISR: Revalidate every hour
+export const revalidate = 3600;
 
 // Generate static paths for industry × service combinations
 export async function generateStaticParams() {
@@ -56,8 +61,30 @@ export default async function IndustryServicePage({ params }: PageProps) {
     // Related industries for this service
     const relatedIndustries = industries.filter((i) => i.slug !== industrySlug).slice(0, 4);
 
+    // Generate breadcrumbs
+    const breadcrumbs = getIndustryServiceBreadcrumbs(industry.name, industrySlug, service.name, serviceSlug);
+
+    // Generate schemas
+    const schemas = combineSchemas(
+        generateBreadcrumbSchema({ items: breadcrumbs }),
+        generateServiceSchema({
+            name: `${service.name} for ${industry.name}`,
+            description: `Professional ${service.name.toLowerCase()} for ${industry.name.toLowerCase()} businesses`,
+            provider: { name: 'AnotherSEOGuru', url: 'https://anotherseoguru.com' },
+            serviceType: 'Web Development',
+        }),
+        generateArticleSchema({
+            headline: `${service.name} for ${industry.name}`,
+            description: `Professional ${service.name.toLowerCase()} tailored for ${industry.name.toLowerCase()} businesses`,
+            datePublished: new Date().toISOString(),
+            dateModified: new Date().toISOString(),
+            author: { name: 'AnotherSEOGuru' },
+        })
+    );
+
     return (
         <>
+            <SchemaMarkup schemas={schemas} />
             <Header />
             <main className="pt-32">
                 {/* Hero */}
@@ -65,15 +92,7 @@ export default async function IndustryServicePage({ params }: PageProps) {
                     <div className="container">
                         <div className="max-w-3xl">
                             {/* Breadcrumb */}
-                            <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-6 flex-wrap">
-                                <Link href="/" className="hover:text-primary">Home</Link>
-                                <span>/</span>
-                                <Link href="/solutions" className="hover:text-primary">Solutions</Link>
-                                <span>/</span>
-                                <Link href={`/solutions/${industrySlug}`} className="hover:text-primary">{industry.name}</Link>
-                                <span>/</span>
-                                <span className="text-foreground">{service.name}</span>
-                            </nav>
+                            <Breadcrumbs items={breadcrumbs} className="mb-6" />
 
                             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
                                 {service.name} for {industry.name}

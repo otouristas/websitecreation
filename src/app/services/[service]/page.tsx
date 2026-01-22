@@ -6,11 +6,16 @@ import Footer from '@/components/Footer';
 import { services, getServiceBySlug, getAllServiceSlugs } from '@/data/services';
 import { industries } from '@/data/industries';
 import { tier1Locations } from '@/data/locations';
-import { buildServiceMetadata } from '@/lib/seo';
+import { buildServiceMetadata, generateArticleSchema, generateBreadcrumbSchema, generateServiceSchema, combineSchemas } from '@/lib/seo';
+import { SchemaMarkup, Breadcrumbs } from '@/components/seo';
+import { getServiceBreadcrumbs } from '@/lib/linking';
 
 interface PageProps {
     params: Promise<{ service: string }>;
 }
+
+// ISR: Revalidate every hour
+export const revalidate = 3600;
 
 // Generate static paths for all services
 export async function generateStaticParams() {
@@ -42,8 +47,30 @@ export default async function ServicePage({ params }: PageProps) {
     // Related services (excluding current)
     const relatedServices = services.filter((s) => s.slug !== serviceSlug).slice(0, 3);
 
+    // Generate breadcrumbs for navigation
+    const breadcrumbs = getServiceBreadcrumbs(service.name, service.slug);
+
+    // Generate schema markup
+    const schemas = combineSchemas(
+        generateBreadcrumbSchema({ items: breadcrumbs }),
+        generateServiceSchema({
+            name: service.name,
+            description: service.description,
+            provider: { name: 'AnotherSEOGuru', url: 'https://anotherseoguru.com' },
+            serviceType: 'Web Development',
+        }),
+        generateArticleSchema({
+            headline: service.name,
+            description: service.metaDescription,
+            datePublished: new Date().toISOString(),
+            dateModified: new Date().toISOString(),
+            author: { name: 'AnotherSEOGuru' },
+        })
+    );
+
     return (
         <>
+            <SchemaMarkup schemas={schemas} />
             <Header />
             <main className="pt-32">
                 {/* Hero */}
@@ -51,13 +78,7 @@ export default async function ServicePage({ params }: PageProps) {
                     <div className="container">
                         <div className="max-w-3xl">
                             {/* Breadcrumb */}
-                            <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
-                                <Link href="/" className="hover:text-primary">Home</Link>
-                                <span>/</span>
-                                <Link href="/services" className="hover:text-primary">Services</Link>
-                                <span>/</span>
-                                <span className="text-foreground">{service.name}</span>
-                            </nav>
+                            <Breadcrumbs items={breadcrumbs} className="mb-6" />
 
                             <h1 className="text-4xl sm:text-5xl font-bold mb-6">
                                 {service.name}
