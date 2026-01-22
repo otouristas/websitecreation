@@ -43,22 +43,25 @@ export default function Home() {
         <section className="py-10 border-y border-gray-100 bg-gray-50/50">
           <div className="container">
             <p className="text-center text-sm font-semibold text-gray-400 uppercase tracking-widest mb-6">Trusted by 500+ businesses scaling fast</p>
-            <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
-              {/* Real Logos from assets */}
-              <div className="relative w-32 h-12">
-                <Image src="/logos/assets/openai.webp" alt="OpenAI" fill className="object-contain" />
+            <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-16 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+              {/* Real Client Logos */}
+              <div className="relative w-36 h-14">
+                <Image src="/logos/assets/aggelosrentals.png" alt="Aggelos Rentals" fill className="object-contain" />
               </div>
-              <div className="relative w-32 h-12">
-                <Image src="/logos/assets/Claude_A.png" alt="Claude" fill className="object-contain" />
+              <div className="relative w-36 h-14">
+                <Image src="/logos/assets/alkhotel.png" alt="ALK Hotel" fill className="object-contain" />
               </div>
-              <div className="relative w-32 h-12">
-                <Image src="/logos/assets/perplexity.png" alt="Perplexity" fill className="object-contain" />
+              <div className="relative w-36 h-14">
+                <Image src="/logos/assets/antiparosrentacar.png" alt="Antiparos Rent a Car" fill className="object-contain" />
               </div>
-              <div className="relative w-32 h-12">
-                <Image src="/logos/assets/rac sa.jpg" alt="RAC SA" fill className="object-contain mix-blend-multiply" />
+              <div className="relative w-36 h-14">
+                <Image src="/logos/assets/elitehospitality.png" alt="Elite Hospitality" fill className="object-contain" />
               </div>
-              <div className="relative w-32 h-12">
-                <Image src="/logos/assets/cosmos-sport-logo-17075792651.webp" alt="Cosmos Sport" fill className="object-contain" />
+              <div className="relative w-36 h-14">
+                <Image src="/logos/assets/theagencylogo.png" alt="The Agency" fill className="object-contain" />
+              </div>
+              <div className="relative w-40 h-14">
+                <Image src="/logos/assets/villa-olivia-clara-logo-768x204.png" alt="Villa Olivia Clara" fill className="object-contain" />
               </div>
             </div>
           </div>
