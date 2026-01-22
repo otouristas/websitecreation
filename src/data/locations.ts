@@ -9,6 +9,7 @@ export interface Location {
     population: number;
     latitude: number;
     longitude: number;
+    neighborhoods?: string[];
 }
 
 // Top 100 US cities by population (tier 1 - for immediate launch)
@@ -20,7 +21,7 @@ export const tier1Locations: Location[] = [
     { slug: 'phoenix-az', city: 'Phoenix', state: 'Arizona', stateCode: 'AZ', population: 1650070, latitude: 33.44838, longitude: -112.07404 },
     { slug: 'philadelphia-pa', city: 'Philadelphia', state: 'Pennsylvania', stateCode: 'PA', population: 1573916, latitude: 39.95238, longitude: -75.16362 },
     { slug: 'san-antonio-tx', city: 'San Antonio', state: 'Texas', stateCode: 'TX', population: 1526656, latitude: 29.42412, longitude: -98.49363 },
-    { slug: 'san-diego-ca', city: 'San Diego', state: 'California', stateCode: 'CA', population: 1404452, latitude: 32.71571, longitude: -117.16472 },
+    { slug: 'san-diego-ca', city: 'San Diego', state: 'California', stateCode: 'CA', population: 1404452, latitude: 32.71571, longitude: -117.16472, neighborhoods: ['Gaslamp Quarter', 'North Park', 'La Jolla', 'Pacific Beach', 'Hillcrest', 'Little Italy'] },
     { slug: 'dallas-tx', city: 'Dallas', state: 'Texas', stateCode: 'TX', population: 1326087, latitude: 32.78306, longitude: -96.80667 },
     { slug: 'jacksonville-fl', city: 'Jacksonville', state: 'Florida', stateCode: 'FL', population: 1009833, latitude: 30.33218, longitude: -81.65565 },
     { slug: 'fort-worth-tx', city: 'Fort Worth', state: 'Texas', stateCode: 'TX', population: 1008106, latitude: 32.72541, longitude: -97.32085 },
@@ -92,7 +93,7 @@ export const allLocations: Location[] = [
     { slug: 'newark-nj', city: 'Newark', state: 'New Jersey', stateCode: 'NJ', population: 281944, latitude: 40.73566, longitude: -74.17237 },
     { slug: 'madison-wi', city: 'Madison', state: 'Wisconsin', stateCode: 'WI', population: 280305, latitude: 43.07305, longitude: -89.40123 },
     { slug: 'st-louis-mo', city: 'St. Louis', state: 'Missouri', stateCode: 'MO', population: 279695, latitude: 38.62727, longitude: -90.19789 },
-    { slug: 'chula-vista-ca', city: 'Chula Vista', state: 'California', stateCode: 'CA', population: 265757, latitude: 32.64005, longitude: -117.0842 },
+    { slug: 'chula-vista-ca', city: 'Chula Vista', state: 'California', stateCode: 'CA', population: 265757, latitude: 32.64005, longitude: -117.0842, neighborhoods: ['Eastlake', 'Otay Ranch', 'Terra Nova', 'Rancho Del Rey', 'Castle Park', 'Sunbow'] },
     { slug: 'toledo-oh', city: 'Toledo', state: 'Ohio', stateCode: 'OH', population: 265638, latitude: 41.66394, longitude: -83.55521 },
     { slug: 'jersey-city-nj', city: 'Jersey City', state: 'New Jersey', stateCode: 'NJ', population: 264290, latitude: 40.72816, longitude: -74.07764 },
     { slug: 'reno-nv', city: 'Reno', state: 'Nevada', stateCode: 'NV', population: 264165, latitude: 39.52963, longitude: -119.8138 },

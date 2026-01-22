@@ -7,7 +7,7 @@ import { services, getServiceBySlug, getAllServiceSlugs } from '@/data/services'
 import { industries } from '@/data/industries';
 import { allLocations, getLocationBySlug, getAllLocationSlugs, formatLocationName, stateNames } from '@/data/locations';
 import { buildServiceLocationMetadata, generateBreadcrumbSchema, generateLocalBusinessSchema, generateServiceSchema, combineSchemas } from '@/lib/seo';
-import { SchemaMarkup, Breadcrumbs } from '@/components/seo';
+import { SchemaMarkup, Breadcrumbs, LocationContent } from '@/components/seo';
 import { getServiceLocationBreadcrumbs } from '@/lib/linking';
 
 interface PageProps {
@@ -157,53 +157,10 @@ export default async function ServiceLocationPage({ params }: PageProps) {
                     </div>
                 </section>
 
-                {/* Why Local Matters */}
-                <section className="section bg-muted/30">
+                {/* Dynamic Location Content Engine (Competitor Style) */}
+                <section className="section bg-white">
                     <div className="container">
-                        <div className="grid lg:grid-cols-2 gap-12 items-center">
-                            <div>
-                                <h2 className="text-2xl sm:text-3xl font-bold mb-4">
-                                    Why Choose Us for {location.city}
-                                </h2>
-                                <p className="text-muted-foreground mb-6">
-                                    As a business serving {location.city} and {stateFull}, your website needs to perform
-                                    exceptionally in local search results while maintaining fast load times for all visitors.
-                                </p>
-                                <ul className="space-y-3">
-                                    <li className="flex items-start gap-3">
-                                        <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                        </svg>
-                                        <span>Local SEO optimization for {location.city} search visibility</span>
-                                    </li>
-                                    <li className="flex items-start gap-3">
-                                        <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                        </svg>
-                                        <span>Fast websites optimized for {stateFull} customers</span>
-                                    </li>
-                                    <li className="flex items-start gap-3">
-                                        <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                        </svg>
-                                        <span>Schema markup for local business visibility</span>
-                                    </li>
-                                    <li className="flex items-start gap-3">
-                                        <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                        </svg>
-                                        <span>Speed-optimized for fast load times</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className="card p-8 text-center">
-                                <div className="text-5xl font-bold gradient-text mb-2">500+</div>
-                                <div className="text-muted-foreground mb-6">Websites Delivered</div>
-                                <Link href="/get-started" className="btn btn-gradient w-full">
-                                    Get Started in {location.city}
-                                </Link>
-                            </div>
-                        </div>
+                        <LocationContent location={location} service={service} />
                     </div>
                 </section>
 
