@@ -4,8 +4,8 @@ import Footer from '@/components/Footer';
 import { buildMetadata } from '@/lib/seo';
 
 export const metadata = buildMetadata({
-    title: 'Google Business Profile Masterclass: Dominate Local Search | AnotherSEOGuru',
-    description: 'Step-by-step guide to optimizing your Google Business Profile. Get more calls from Maps by optimizing categories, photos, and reviews.',
+    title: 'Google Business Profile Masterclass: The 2026 Optimization Guide',
+    description: 'Step-by-step guide to optimizing your Google Business Profile. Categories, photos, reviews, and the secret "Posts" strategy that doubles visibility.',
     path: '/blog/google-business-profile-masterclass',
 });
 
@@ -14,74 +14,85 @@ export default function GBPMasterclass() {
         <>
             <Header />
             <main className="pt-32 pb-20">
-                <article className="container max-w-4xl">
-                    <header className="mb-12 text-center">
+                <article className="container max-w-3xl">
+                    <header className="mb-12">
                         <span className="inline-block px-3 py-1 rounded-full bg-red-100 text-red-700 text-sm font-medium mb-6">
                             Tactical Guide
                         </span>
-                        <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 leading-tight">
-                            Google Business Profile Masterclass: How to Dominate the Map Pack
+                        <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gray-900 leading-tight">
+                            Google Business Profile Masterclass: Dominate Local Search
                         </h1>
-                        <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                            50% of local searches result in a visit within 24 hours. Here is how to make sure they visit YOU.
-                        </p>
+                        <div className="flex items-center gap-4 text-gray-600 mb-8">
+                            <div className="font-medium">By AnotherSEOGuru Team • 20 min read</div>
+                        </div>
                     </header>
 
                     <div className="prose prose-lg max-w-none text-gray-700">
-                        <p>
-                            Your website is important, but for local services, your Google Business Profile (GBP) is the star of the show.
-                            It shows up <em>before</em> the organic results. If you optimize this one asset correctly, you can double your leads
-                            without writing a single new blog post.
+                        <p className="lead text-xl text-gray-600">
+                            For local businesses, your Google Business Profile (GBP) is more important than your website.
+                            It appears <strong>before</strong> the organic search results. If you ignore it, you are handing customers to your competitors.
                         </p>
 
-                        <h2 className="text-3xl font-bold text-gray-900 mt-12 mb-6">Step 1: The "Perfect" Category</h2>
+                        <h2>Why GBP is the "Kill Shot" of Local SEO</h2>
                         <p>
-                            Google asks for a "Primary Category". This is the specific ranking factor. Be specific.
+                            Google wants to keep users on Google. They built the "Local Pack" to give answers fast.
+                            A fully optimized profile gets <strong>7x more clicks</strong> than a bare-bones one.
                         </p>
-                        <ul className="list-disc pl-6 mb-8">
-                            <li><strong>bad:</strong> "Contractor"</li>
-                            <li><strong>Good:</strong> "Plumber"</li>
-                            <li><strong>Best:</strong> "Emergency Plumber" (if that exists) or specific niche like "Drainage Service" if applicable.</li>
+
+                        <h2>Step 1: The "Perfect" Categories</h2>
+                        <p>
+                            You get one "Primary Category". This is the most important ranking factor.
+                            If you are a Pizza Restaurant, do not choose "Restaurant". Choose "Pizza Restaurant". Be specific.
+                        </p>
+                        <p>
+                            <strong>Secondary Categories:</strong> Add as many as relevant. If you do delivery, add "Pizza Delivery".
+                            If you do slices, add "Pizza Takeout".
+                        </p>
+
+                        <h2>Step 2: The "Secret" Posts Strategy</h2>
+                        <p>
+                            Most business owners ignore Google Posts. Big mistake. Posts are free billboards in search results.
+                        </p>
+                        <ul>
+                            <li><strong>Offer Posts:</strong> "Get $50 off your first cleaning". These have a countdown timer and drove high urgency.</li>
+                            <li><strong>Update Posts:</strong> "We now offer emergency 24/7 service".</li>
+                            <li><strong>Event Posts:</strong> Great for open houses or seasonal specials.</li>
                         </ul>
                         <p>
-                            <strong>Pro Tip:</strong> Look at what category your top-ranking competitor is using and match it.
+                            We recommend posting <strong>once a week</strong>. It sends a "heartbeat" signal to Google that you are alive and active.
                         </p>
 
-                        <h2 className="text-3xl font-bold text-gray-900 mt-12 mb-6">Step 2: Service Areas vs. Physical Address</h2>
+                        <div className="bg-red-50 p-8 rounded-xl my-12">
+                            <h3 className="text-2xl font-bold text-red-900 mb-4">Too busy to post?</h3>
+                            <p className="mb-6">Our <Link href="/services/local-seo">Local SEO Services</Link> include weekly GBP management and posting.</p>
+                        </div>
+
+                        <h2>Step 3: Q&A Hacking</h2>
                         <p>
-                            If you go to customers (like a plumber), set up as a "Service Area Business" (SAB). Hide your address if you work from home.
-                            Define your service areas by City (Chula Vista, San Diego, National City) or Zip Code.
+                            Did you know anyone can ask a question on your profile? And anyone can answer?
+                            This is a risk—and an opportunity.
+                        </p>
+                        <p>
+                            <strong>Strategy:</strong> Load your own Q&A. Ask common questions like "Do you offer free estimates?"
+                            and answer them yourself from the business account. This is compliant and helpful for users.
                         </p>
 
-                        <h2 className="text-3xl font-bold text-gray-900 mt-12 mb-6">Step 3: The "Posts" Secret Weapon</h2>
+                        <h2>Step 4: Fighting Spam</h2>
                         <p>
-                            Most business owners set it and forget it. But you can post updates on GBP just like Facebook.
-                        </p>
-                        <ul className="list-disc pl-6 mb-8">
-                            <li>Post "Offers" (e.g., "$50 off water heater flush").</li>
-                            <li>Post "Updates" with photos of completed jobs.</li>
-                            <li>Post "Events" if you are hosting one.</li>
-                        </ul>
-                        <p>
-                            These posts expire after 6 months (formerly 7 days), but they send "freshness" signals to Google.
+                            Your competitors might be cheating. Keyword stuffing ("Bob's Best Plumber Cheap") violates guidelines.
+                            You can use the "Suggest an Edit" feature to report them. Cleaning up spam often moves you up the rankings
+                            automatically.
                         </p>
 
-                        <h2 className="text-3xl font-bold text-gray-900 mt-12 mb-6">Step 4: Q&A Seeding</h2>
+                        <h2>Conclusion</h2>
                         <p>
-                            Did you know you can ask AND answer your own questions on your profile? This is 100% allowed by Google.
-                        </p>
-                        <p>
-                            <strong>Do this:</strong> Post common questions like "Do you offer 24/7 service?" or "Do you give free estimates?"
-                            and answer them yourself. It populates the profile with keywords.
+                            Your GBP is a living asset. You cannot set it and forget it. Feed it with photos, reviews, and posts,
+                            and it will feed you with leads.
                         </p>
 
-                        <div className="bg-red-50 border-l-4 border-red-600 p-8 my-12 rounded-r-xl">
-                            <h3 className="text-xl font-bold text-red-900 mb-2">Want Us to Manage This For You?</h3>
-                            <p className="text-red-800 mb-4">
-                                We optimize hundreds of GBPs. We know exactly what moves the needle for home service businesses.
-                            </p>
-                            <Link href="/services/local-seo" className="inline-block bg-red-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-red-700 transition">
-                                Check Our Local SEO Plans
+                        <div className="mt-12 text-center">
+                            <Link href="/contact" className="inline-block px-10 py-5 bg-red-600 text-white font-bold rounded-xl hover:bg-red-700 transition">
+                                Get a Professional GBP Audit
                             </Link>
                         </div>
                     </div>

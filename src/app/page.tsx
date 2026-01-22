@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { ROICalculator } from '@/components/tools';
@@ -28,8 +29,8 @@ export default function Home() {
               Stop renting your traffic. Own your rankings. We use data, not guesswork, to flood your business with high-value leads.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up delay-300">
-              <Link href="/contact" className="w-full sm:w-auto px-8 py-4 bg-blue-600 text-white font-bold rounded-xl text-lg hover:bg-blue-700 transition shadow-lg hover:shadow-blue-500/30">
-                Get Your Strategy
+              <Link href="/pricing" className="w-full sm:w-auto px-8 py-4 bg-blue-600 text-white font-bold rounded-xl text-lg hover:bg-blue-700 transition shadow-lg hover:shadow-blue-500/30">
+                See Our Packages
               </Link>
               <Link href="#calculator" className="w-full sm:w-auto px-8 py-4 bg-white text-gray-700 border border-gray-200 font-bold rounded-xl text-lg hover:bg-gray-50 transition">
                 Calculate ROI
@@ -42,18 +43,28 @@ export default function Home() {
         <section className="py-10 border-y border-gray-100 bg-gray-50/50">
           <div className="container">
             <p className="text-center text-sm font-semibold text-gray-400 uppercase tracking-widest mb-6">Trusted by 500+ businesses scaling fast</p>
-            <div className="flex flex-wrap justify-center gap-8 lg:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
-              {/* Placeholders for logos - purely CSS generated for simplicity */}
-              <div className="text-xl font-bold font-serif text-gray-600">LawFirm<span className="text-blue-600">PRO</span></div>
-              <div className="text-xl font-bold font-mono text-gray-600">TECH<span className="text-indigo-600">NEXUS</span></div>
-              <div className="text-xl font-bold font-sans text-gray-600">Med<span className="text-teal-600">Spa</span></div>
-              <div className="text-xl font-bold text-gray-600">Construct<span className="text-orange-600">IO</span></div>
-              <div className="text-xl font-bold font-serif text-gray-600">Elite<span className="text-purple-600">Realty</span></div>
+            <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
+              {/* Real Logos from assets */}
+              <div className="relative w-32 h-12">
+                <Image src="/logos/assets/openai.webp" alt="OpenAI" fill className="object-contain" />
+              </div>
+              <div className="relative w-32 h-12">
+                <Image src="/logos/assets/Claude_A.png" alt="Claude" fill className="object-contain" />
+              </div>
+              <div className="relative w-32 h-12">
+                <Image src="/logos/assets/perplexity.png" alt="Perplexity" fill className="object-contain" />
+              </div>
+              <div className="relative w-32 h-12">
+                <Image src="/logos/assets/rac sa.jpg" alt="RAC SA" fill className="object-contain mix-blend-multiply" />
+              </div>
+              <div className="relative w-32 h-12">
+                <Image src="/logos/assets/cosmos-sport-logo-17075792651.webp" alt="Cosmos Sport" fill className="object-contain" />
+              </div>
             </div>
           </div>
         </section>
 
-        {/* BENTO GRID SERVICES */}
+        {/* BENTO GRID SERVICES - EXPANDED */}
         <section className="py-24 bg-white">
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-16">
@@ -63,10 +74,10 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 grid-rows-2 gap-6 h-auto md:h-[600px]">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-              {/* Card 1: Local SEO (Large) */}
-              <Link href="/services/local-seo" className="md:col-span-2 row-span-2 group relative rounded-3xl overflow-hidden bg-gray-900 text-white p-8 lg:p-12 hover:shadow-2xl transition duration-500">
+              {/* Card 1: Local SEO (Large Feature) */}
+              <Link href="/services/local-seo" className="md:col-span-2 group relative rounded-3xl overflow-hidden bg-gray-900 text-white p-8 lg:p-12 hover:shadow-2xl transition duration-500 min-h-[320px]">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-indigo-900 opacity-90 group-hover:scale-105 transition duration-700" />
                 <div className="relative z-10 flex flex-col h-full justify-between">
                   <div>
@@ -85,22 +96,53 @@ export default function Home() {
               </Link>
 
               {/* Card 2: Programmatic SEO */}
-              <Link href="/services" className="bg-gray-50 rounded-3xl p-8 hover:shadow-xl transition group border border-gray-100">
-                <div className="w-12 h-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>
+              <Link href="/services" className="bg-gray-50 rounded-3xl p-8 hover:shadow-xl transition group border border-gray-100 min-h-[320px] flex flex-col justify-between">
+                <div>
+                  <div className="w-12 h-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center mb-4">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>
+                  </div>
+                  <h3 className="text-xl font-bold mb-2">Massive Scale pSEO</h3>
+                  <p className="text-sm text-gray-500">Target thousands of long-tail keywords with automated landing pages.</p>
                 </div>
-                <h3 className="text-xl font-bold mb-2">Massive Scale pSEO</h3>
-                <p className="text-sm text-gray-500">Target thousands of long-tail keywords with automated landing pages.</p>
+                <span className="text-purple-600 font-semibold text-sm group-hover:translate-x-1 transition inline-block">Explore Strategy →</span>
               </Link>
 
-              {/* Card 3: Link Building */}
-              <Link href="/services/link-building" className="bg-gray-50 rounded-3xl p-8 hover:shadow-xl transition group border border-gray-100">
-                <div className="w-12 h-12 bg-green-100 text-green-600 rounded-xl flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" /></svg>
+              {/* Card 3: SEO Web Design */}
+              <Link href="/services/seo-web-design" className="bg-gray-50 rounded-3xl p-8 hover:shadow-xl transition group border border-gray-100 min-h-[280px] flex flex-col justify-between">
+                <div>
+                  <div className="w-12 h-12 bg-pink-100 text-pink-600 rounded-xl flex items-center justify-center mb-4">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                  </div>
+                  <h3 className="text-xl font-bold mb-2">SEO Web Design</h3>
+                  <p className="text-sm text-gray-500">Beauty meets brains. Websites built to rank from day one.</p>
                 </div>
-                <h3 className="text-xl font-bold mb-2">Authority Building</h3>
-                <p className="text-sm text-gray-500">High-DR backlinks that signals trust to Google. No spam, just power.</p>
+                <span className="text-pink-600 font-semibold text-sm group-hover:translate-x-1 transition inline-block">See Designs →</span>
               </Link>
+
+              {/* Card 4: Link Building */}
+              <Link href="/services/link-building" className="bg-gray-50 rounded-3xl p-8 hover:shadow-xl transition group border border-gray-100 min-h-[280px] flex flex-col justify-between">
+                <div>
+                  <div className="w-12 h-12 bg-green-100 text-green-600 rounded-xl flex items-center justify-center mb-4">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" /></svg>
+                  </div>
+                  <h3 className="text-xl font-bold mb-2">Authority Building</h3>
+                  <p className="text-sm text-gray-500">High-DR backlinks. No spam, just power.</p>
+                </div>
+                <span className="text-green-600 font-semibold text-sm group-hover:translate-x-1 transition inline-block">Build Authority →</span>
+              </Link>
+
+              {/* Card 5: Speed Optimization */}
+              <Link href="/services/speed-optimization" className="bg-gray-50 rounded-3xl p-8 hover:shadow-xl transition group border border-gray-100 min-h-[280px] flex flex-col justify-between">
+                <div>
+                  <div className="w-12 h-12 bg-yellow-100 text-yellow-600 rounded-xl flex items-center justify-center mb-4">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                  </div>
+                  <h3 className="text-xl font-bold mb-2">90+ Speed Score</h3>
+                  <p className="text-sm text-gray-500">Pass Core Web Vitals or don't pay. We make sites fly.</p>
+                </div>
+                <span className="text-yellow-600 font-semibold text-sm group-hover:translate-x-1 transition inline-block">Optimize Now →</span>
+              </Link>
+
             </div>
           </div>
         </section>
