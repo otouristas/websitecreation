@@ -48,21 +48,12 @@ export const metadata: Metadata = {
     title: "AnotherSEOGuru | Data-Driven SEO Agency",
     description:
       "Transform your online presence with cutting-edge SEO strategies, AI-powered insights, and proven techniques that drive organic traffic.",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "AnotherSEOGuru - SEO Agency",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "AnotherSEOGuru | Data-Driven SEO Agency",
     description:
       "Transform your online presence with cutting-edge SEO strategies and AI-powered insights.",
-    images: ["/og-image.png"],
     creator: "@anotherseoguru",
   },
   robots: {
