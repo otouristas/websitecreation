@@ -7,6 +7,7 @@ export {
     generateLocalBusinessSchema,
     generateServiceSchema,
     generateOrganizationSchema,
+    generateSoftwareApplicationSchema,
     combineSchemas,
     serializeSchemas,
 } from './schema';

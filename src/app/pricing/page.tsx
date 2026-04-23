@@ -81,9 +81,9 @@ export default function PricingPage() {
     return (
         <>
             <Header />
-            <main className="pt-32">
+            <main className="main-below-header">
                 {/* Hero */}
-                <section className="section gradient-hero">
+                <section className="section-compact gradient-hero">
                     <div className="container text-center">
                         <h1 className="text-4xl sm:text-5xl font-bold mb-6">
                             Simple, Transparent Pricing

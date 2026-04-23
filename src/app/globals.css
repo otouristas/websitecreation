@@ -48,6 +48,17 @@
   /* Border Radius */
   --radius: 1rem;
 
+  /* Marketing / hero glow (used by ProductHero) */
+  --glow: hsl(217 91% 60% / 0.22);
+
+  /* Fixed marketing header (brand lockup + tagline + vertical padding) */
+  --site-header-height: 5rem;
+
+  /* Marketing layout (shared homepage / platform / blog) */
+  --marketing-section-y: 5rem;
+  --marketing-section-y-lg: 7rem;
+  --marketing-container-narrow: 48rem;
+
   /* Gradients */
   --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(142 69% 58%) 100%);
   --gradient-secondary: linear-gradient(135deg, hsl(142 76% 36%) 0%, hsl(158 64% 52%) 100%);
@@ -66,6 +77,12 @@
   --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (min-width: 768px) {
+  :root {
+    --site-header-height: 6rem;
+  }
 }
 
 /* 🌙 Dark Mode */
@@ -209,6 +226,60 @@ body {
 
 .shadow-glow {
   box-shadow: var(--shadow-glow);
+}
+
+/* Markdown from content/blog (react-markdown) */
+.markdown-body {
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: hsl(var(--foreground) / 0.9);
+}
+.markdown-body > * + * {
+  margin-top: 1.25em;
+}
+.markdown-body h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: hsl(var(--foreground));
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+.markdown-body h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: hsl(var(--foreground));
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+.markdown-body a {
+  color: hsl(var(--primary));
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.markdown-body a:hover {
+  opacity: 0.9;
+}
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 1.5rem;
+}
+.markdown-body li + li {
+  margin-top: 0.5em;
+}
+.markdown-body strong {
+  font-weight: 600;
+  color: hsl(var(--foreground));
+}
+.markdown-body blockquote {
+  border-left: 4px solid hsl(var(--primary));
+  padding-left: 1.25rem;
+  font-style: italic;
+  color: hsl(var(--muted-foreground));
+}
+.markdown-body hr {
+  border: 0;
+  border-top: 1px solid hsl(var(--border));
+  margin: 2.5rem 0;
 }
 
 .shadow-xl {
@@ -407,19 +478,33 @@ body {
    Section Styles
    ========================================================================== */
 
+/* Main content offset below fixed site header (replaces ad-hoc pt-32) */
+.main-below-header {
+  padding-top: calc(var(--site-header-height) + 0.25rem);
+}
+
+/* Homepage / landing hero: intentional space below fixed nav */
+.hero-below-header {
+  padding-top: calc(var(--site-header-height) + 1rem);
+}
+
+@media (min-width: 1024px) {
+  .hero-below-header {
+    padding-top: calc(var(--site-header-height) + 1.5rem);
+  }
+}
+
 .section {
   padding: 5rem 0;
+}
+
+.section-compact {
+  padding: 3rem 0;
 }
 
 /* CTA section with extra bottom padding for footer separation */
 .section-cta {
   padding: 5rem 0 6rem 0;
-}
-
-/* Gradient sections that precede footer need extra spacing */
-.gradient-primary+footer,
-.section:last-child+footer {
-  margin-top: 0;
 }
 
 .section-hero {
@@ -431,17 +516,36 @@ body {
   overflow: hidden;
 }
 
+/* Use padding-inline only so Tailwind pt-/pb- on the same node are not reset by shorthand padding. */
 .container {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding-inline: 1.5rem;
 }
 
 @media (min-width: 1400px) {
   .container {
     max-width: 1400px;
   }
+}
+
+/* Footer client logo strip — global keyframes avoid styled-jsx SSR/client class hash drift */
+@keyframes footer-logo-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.footer-logo-marquee {
+  animation: footer-logo-marquee 60s linear infinite;
+}
+
+.footer-logo-marquee:hover {
+  animation-play-state: paused;
 }
 
 /* ==========================================================================
@@ -496,4 +600,115 @@ body {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
+}
+
+/* ==========================================================================
+   Paddle-style marketing canvas (PaddleHQ/paddle-nextjs-starter-kit) + ASG tokens
+   ========================================================================== */
+
+.asg-paddle-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  min-height: 100dvh;
+  width: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.asg-paddle-grain-blur {
+  position: absolute;
+  left: 0;
+  top: -220px;
+  z-index: 0;
+  width: 100%;
+  min-height: 1400px;
+  background: url("/assets/background/grain-blur.svg") no-repeat 50% 0;
+  opacity: 0.5;
+  filter: saturate(1.1);
+}
+
+.asg-paddle-grain {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+  width: 100%;
+  min-height: 1400px;
+  background: url("/assets/background/grain-bg.svg") repeat;
+  opacity: 0.22;
+  mix-blend-mode: overlay;
+}
+
+.dark .asg-paddle-grain {
+  opacity: 0.12;
+}
+
+.asg-paddle-grid {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+  width: 100%;
+  min-height: 1400px;
+  background: url("/assets/background/grid-bg.svg") no-repeat 50% 0;
+  opacity: 0.35;
+  mix-blend-mode: multiply;
+}
+
+.dark .asg-paddle-grid {
+  opacity: 0.2;
+  mix-blend-mode: screen;
+}
+
+.asg-paddle-orb-primary {
+  position: absolute;
+  left: 50%;
+  top: -680px;
+  z-index: 0;
+  width: 1500px;
+  height: 1500px;
+  margin-left: -750px;
+  min-height: 0;
+  border-radius: 750px;
+  opacity: 0.22;
+  background: radial-gradient(
+    70.71% 70.71% at 50% 50%,
+    hsl(217 91% 60% / 0.45) 0%,
+    hsl(142 69% 58% / 0.12) 45%,
+    transparent 70%
+  );
+  filter: blur(48px);
+}
+
+.dark .asg-paddle-orb-primary {
+  opacity: 0.32;
+  background: radial-gradient(
+    70.71% 70.71% at 50% 50%,
+    hsl(217 91% 60% / 0.35) 0%,
+    hsl(142 76% 36% / 0.2) 50%,
+    transparent 72%
+  );
+}
+
+.asg-paddle-orb-small {
+  position: absolute;
+  left: 50%;
+  top: 80px;
+  z-index: 0;
+  width: 900px;
+  height: 400px;
+  min-height: 0;
+  margin-left: -450px;
+  background: url("/assets/background/small-blur.svg") no-repeat 50% 0;
+  background-size: 100% auto;
+  opacity: 0.45;
+  filter: hue-rotate(-8deg) saturate(1.2);
+  mask-image: linear-gradient(180deg, black 0%, transparent 85%);
+  -webkit-mask-image: linear-gradient(180deg, black 0%, transparent 85%);
+}
+
+.dark .asg-paddle-orb-small {
+  opacity: 0.3;
+  filter: hue-rotate(0deg) saturate(0.9);
 }

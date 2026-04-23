@@ -66,9 +66,9 @@ export default async function IndustryPage({ params }: PageProps) {
         <>
             <SchemaMarkup schemas={schemas} />
             <Header />
-            <main className="pt-32">
+            <main className="main-below-header">
                 {/* Hero */}
-                <section className="section gradient-hero">
+                <section className="section-compact gradient-hero">
                     <div className="container">
                         <div className="max-w-3xl">
                             {/* Breadcrumb */}

@@ -197,4 +197,34 @@ export function serializeSchemas(schemas: SchemaOutput[]): string {
     return JSON.stringify(schemas);
 }
 
+/**
+ * SoftwareApplication JSON-LD for the SEO platform product page.
+ */
+export function generateSoftwareApplicationSchema(input: {
+    name: string;
+    description: string;
+    url: string;
+}): SchemaOutput {
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'SoftwareApplication',
+        name: input.name,
+        description: input.description,
+        url: input.url,
+        applicationCategory: 'BusinessApplication',
+        operatingSystem: 'Web',
+        offers: {
+            '@type': 'Offer',
+            price: '0',
+            priceCurrency: 'USD',
+            description: 'Free tier available; paid plans in app.',
+        },
+        provider: {
+            '@type': 'Organization',
+            name: BRAND_NAME,
+            url: BASE_URL,
+        },
+    };
+}
+
 export { BASE_URL, BRAND_NAME };

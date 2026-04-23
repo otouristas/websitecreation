@@ -1,432 +1,275 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
-import { services } from '@/data/services';
-import { industries } from '@/data/industries';
+import { useEffect, useState, type ReactElement } from "react";
+import Link from "next/link";
+import { ChevronDown, Menu, X } from "lucide-react";
+import { BrandLogo } from "@/components/BrandLogo";
+import { FreeToolsMegaMenu } from "@/components/landing/free-tools-mega-menu";
+import { ThemeToggle } from "@/components/theme-toggle";
+import { getAppPath } from "@/lib/app-links";
+import { services } from "@/data/services";
 
-export default function Header() {
-    const [isScrolled, setIsScrolled] = useState(false);
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-    const [mobileAccordion, setMobileAccordion] = useState<string | null>(null);
+const linkClass =
+  "text-sm font-medium text-muted-foreground transition-colors hover:text-primary";
 
-    useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 20);
-        };
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+const dropdownPanelInnerClass =
+  "min-w-[15rem] max-w-[22rem] rounded-2xl border border-border/80 bg-background/95 p-3 shadow-[0_20px_50px_-12px_hsl(217_91%_60%_/_0.18)] backdrop-blur-xl dark:shadow-[0_20px_50px_-12px_hsl(0_0%_0%_/_0.45)]";
 
-    // Lock body scroll when mobile menu is open
-    useEffect(() => {
-        if (isMobileMenuOpen) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = '';
-        }
-        return () => {
-            document.body.style.overflow = '';
-        };
-    }, [isMobileMenuOpen]);
+const dropdownItemClass =
+  "block rounded-xl px-4 py-3 text-sm text-foreground transition-colors hover:bg-primary/10 hover:text-primary";
 
-    const handleMouseEnter = (dropdown: string) => {
-        setActiveDropdown(dropdown);
-    };
+function sortAgencyServices() {
+  const websiteCreation = services.find((s) => s.slug === "website-creation");
+  const rest = services.filter((s) => s.slug !== "website-creation");
+  const head = websiteCreation ? [websiteCreation] : [];
+  return [...head, ...rest].slice(0, 6);
+}
 
-    const handleMouseLeave = () => {
-        setActiveDropdown(null);
-    };
+interface NavDropdownProps {
+  readonly label: string;
+  readonly children: React.ReactNode;
+}
 
-    const toggleMobileAccordion = (section: string) => {
-        setMobileAccordion(mobileAccordion === section ? null : section);
-    };
+function NavDropdown(props: NavDropdownProps): ReactElement {
+  const [open, setOpen] = useState(false);
+  return (
+    <div
+      className="relative"
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+    >
+      <button
+        type="button"
+        className={`inline-flex items-center gap-0.5 rounded-lg px-1 py-1 ${linkClass}`}
+        aria-expanded={open}
+      >
+        {props.label}
+        <ChevronDown className={`h-4 w-4 transition-transform ${open ? "rotate-180" : ""}`} />
+      </button>
+      {open ? (
+        <div className="absolute left-0 top-full z-[70] pt-2">
+          <div className={dropdownPanelInnerClass}>{props.children}</div>
+        </div>
+      ) : null}
+    </div>
+  );
+}
 
-    const closeMobileMenu = () => {
-        setIsMobileMenuOpen(false);
-        setMobileAccordion(null);
-    };
-
-    return (
-        <>
-            <header
-                className={`fixed top-0 left-0 right-0 z-50 transition-smooth flex flex-col ${isScrolled
-                    ? 'bg-background/95 backdrop-blur-lg shadow-medium border-b border-border'
-                    : 'bg-background/80 backdrop-blur-md'
-                    }`}
+export default function Header(): ReactElement {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState<string | null>(null);
+  const agencyNavServices = sortAgencyServices();
+  useEffect(() => {
+    function handleScroll(): void {
+      setIsScrolled(window.scrollY > 12);
+    }
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+  function toggleMobile(id: string): void {
+    setMobileOpen((prev) => (prev === id ? null : id));
+  }
+  function closeMobile(): void {
+    setIsMobileMenuOpen(false);
+    setMobileOpen(null);
+  }
+  return (
+    <nav
+      className={`fixed left-0 right-0 top-0 z-50 overflow-visible transition-[box-shadow,background-color,border-color] duration-300 ease-out ${
+        isScrolled
+          ? "border-b border-border/70 bg-background/85 shadow-[0_12px_40px_-12px_hsl(217_91%_60%_/_0.12)] backdrop-blur-xl dark:bg-background/80 dark:shadow-[0_8px_32px_-8px_hsl(0_0%_0%_/_0.4)]"
+          : "border-b border-transparent bg-transparent"
+      }`}
+      aria-label="Main"
+    >
+      <div className="container mx-auto px-3 py-1.5 transition-all duration-300 sm:px-4 md:min-h-20 md:px-6 md:py-2">
+        <div className="flex min-h-14 items-center justify-between gap-3 md:min-h-[4.25rem]">
+          <div className="flex min-w-0 flex-col justify-center gap-0.5">
+            <BrandLogo size="md" className="shrink-0 transition-transform hover:opacity-90" />
+            <p className="max-w-[14rem] text-[9px] leading-snug text-muted-foreground sm:max-w-none sm:text-[10px] md:text-xs">
+              Platform · Agency · Websites
+            </p>
+          </div>
+          <div className="hidden items-center gap-1 lg:flex lg:gap-2 xl:gap-3">
+            <NavDropdown label="Platform">
+              <Link href="/platform" className={dropdownItemClass}>
+                Platform overview
+              </Link>
+              <Link href="/platform/features" className={dropdownItemClass}>
+                All features
+              </Link>
+              <Link href="/platform/pricing" className={dropdownItemClass}>
+                Software pricing
+              </Link>
+              <Link href="/platform/for/agencies" className={dropdownItemClass}>
+                For agencies
+              </Link>
+              <Link href="/platform/for/in-house" className={dropdownItemClass}>
+                For in-house teams
+              </Link>
+              <Link href="/platform/for/ecommerce" className={dropdownItemClass}>
+                For ecommerce
+              </Link>
+            </NavDropdown>
+            <NavDropdown label="Agency">
+              <Link href="/services" className={`${dropdownItemClass} font-semibold`}>
+                All services
+              </Link>
+              <Link href="/services/website-creation" className={dropdownItemClass}>
+                Website creation
+              </Link>
+              {agencyNavServices
+                .filter((s) => s.slug !== "website-creation")
+                .map((s) => (
+                  <Link key={s.slug} href={`/services/${s.slug}`} className={dropdownItemClass}>
+                    {s.shortName}
+                  </Link>
+                ))}
+            </NavDropdown>
+            <FreeToolsMegaMenu />
+            <NavDropdown label="Pricing">
+              <Link href="/platform/pricing" className={dropdownItemClass}>
+                Software pricing
+              </Link>
+              <Link href="/pricing" className={dropdownItemClass}>
+                Agency pricing
+              </Link>
+            </NavDropdown>
+          </div>
+          <div className="flex shrink-0 items-center gap-1 sm:gap-2 md:gap-3">
+            <ThemeToggle />
+            <a
+              href={getAppPath("/auth")}
+              className="hidden rounded-xl px-2 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-primary/5 hover:text-primary sm:inline-flex md:px-3"
+              rel="noopener noreferrer"
+              aria-label="Sign in to AnotherSEOGuru"
             >
-                {/* Top Bar */}
-                <div className="bg-gradient-to-r from-primary/90 to-blue-600 text-white py-2 text-center text-xs sm:text-sm font-bold relative z-50">
-                    <div className="container flex items-center justify-center gap-2">
-                        <span>🎉 40% OFF All Packages! Limited Time Offer.</span>
-                        <Link href="/pricing" className="underline hover:text-white/90">
-                            Get Started
-                        </Link>
-                    </div>
-                </div>
-
-                <div className="container">
-                    <nav className="flex items-center justify-between h-16 lg:h-20">
-                        {/* Logo */}
-                        <Link href="/" className="flex items-center gap-2 group">
-                            <div className="relative w-9 h-9 gradient-primary rounded-lg flex items-center justify-center">
-                                <svg viewBox="0 0 24 24" className="w-5 h-5 text-white" fill="currentColor">
-                                    <path d="M13 10V3L4 14h7v7l9-11h-7z" />
-                                </svg>
-                            </div>
-                            <div className="flex flex-col">
-                                <span className="text-lg font-bold leading-tight gradient-text">AnotherSEOGuru</span>
-                                <span className="text-[10px] text-muted-foreground leading-tight hidden sm:block">SEO Web Design Agency</span>
-                            </div>
-                        </Link>
-
-                        {/* Desktop Navigation */}
-                        <div className="hidden lg:flex items-center gap-1">
-                            {/* Services Dropdown */}
-                            <div
-                                className="relative"
-                                onMouseEnter={() => handleMouseEnter('services')}
-                                onMouseLeave={handleMouseLeave}
-                            >
-                                <button className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-foreground/80 hover:text-primary transition-smooth rounded-lg hover:bg-muted/50">
-                                    Services
-                                    <svg className={`w-4 h-4 transition-transform ${activeDropdown === 'services' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                                    </svg>
-                                </button>
-
-                                {activeDropdown === 'services' && (
-                                    <div className="absolute top-full left-0 mt-1 w-[480px] p-4 bg-background border border-border rounded-xl shadow-xl grid grid-cols-2 gap-2">
-                                        {services.map((service) => (
-                                            <Link
-                                                key={service.slug}
-                                                href={`/services/${service.slug}`}
-                                                className="flex items-start gap-3 p-3 rounded-lg hover:bg-muted/50 transition-smooth group"
-                                            >
-                                                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-smooth">
-                                                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                                                    </svg>
-                                                </div>
-                                                <div>
-                                                    <div className="font-medium text-sm">{service.name}</div>
-                                                    <div className="text-xs text-muted-foreground line-clamp-1">{service.description.slice(0, 50)}...</div>
-                                                </div>
-                                            </Link>
-                                        ))}
-                                    </div>
-                                )}
-                            </div>
-
-                            {/* Industries Dropdown */}
-                            <div
-                                className="relative"
-                                onMouseEnter={() => handleMouseEnter('industries')}
-                                onMouseLeave={handleMouseLeave}
-                            >
-                                <button className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-foreground/80 hover:text-primary transition-smooth rounded-lg hover:bg-muted/50">
-                                    Industries
-                                    <svg className={`w-4 h-4 transition-transform ${activeDropdown === 'industries' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                                    </svg>
-                                </button>
-
-                                {activeDropdown === 'industries' && (
-                                    <div className="absolute top-full left-0 mt-1 w-[400px] p-4 bg-background border border-border rounded-xl shadow-xl grid grid-cols-2 gap-1">
-                                        {industries.map((industry) => (
-                                            <Link
-                                                key={industry.slug}
-                                                href={`/solutions/${industry.slug}`}
-                                                className="flex items-center gap-2 p-2 rounded-lg hover:bg-muted/50 transition-smooth text-sm"
-                                            >
-                                                <span className="w-2 h-2 rounded-full bg-primary" />
-                                                {industry.name}
-                                            </Link>
-                                        ))}
-                                    </div>
-                                )}
-                            </div>
-
-                            <Link href="/pricing" className="px-4 py-2 text-sm font-medium text-foreground/80 hover:text-primary transition-smooth rounded-lg hover:bg-muted/50">
-                                Pricing
-                            </Link>
-
-                            <Link href="/about" className="px-4 py-2 text-sm font-medium text-foreground/80 hover:text-primary transition-smooth rounded-lg hover:bg-muted/50">
-                                About
-                            </Link>
-
-                            <Link href="/blog" className="px-4 py-2 text-sm font-medium text-foreground/80 hover:text-primary transition-smooth rounded-lg hover:bg-muted/50">
-                                Blog
-                            </Link>
-                        </div>
-
-                        {/* CTA */}
-                        <div className="hidden lg:flex items-center gap-3">
-                            <Link href="/contact" className="btn btn-gradient text-sm px-5 py-2.5">
-                                Free Quote
-                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                                </svg>
-                            </Link>
-                        </div>
-
-                        {/* Mobile Menu Button */}
-                        <button
-                            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                            className="lg:hidden p-2 text-foreground hover:text-primary transition-smooth"
-                            aria-label="Toggle menu"
-                        >
-                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                {isMobileMenuOpen ? (
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                                ) : (
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                                )}
-                            </svg>
-                        </button>
-                    </nav>
-                </div>
-            </header>
-
-            {/* Full Screen Mobile Menu Overlay */}
-            <div
-                className={`fixed inset-0 z-[100] lg:hidden transition-all duration-300 ${isMobileMenuOpen
-                    ? 'opacity-100 pointer-events-auto'
-                    : 'opacity-0 pointer-events-none'
-                    }`}
+              Sign In
+            </a>
+            <a
+              href={getAppPath("/auth")}
+              className="hidden rounded-xl px-3 py-2 text-sm font-semibold text-primary-foreground shadow-md shadow-primary/25 transition-[transform,opacity] hover:opacity-95 md:inline-flex gradient-primary md:px-4"
+              rel="noopener noreferrer"
+              aria-label="Get started free with AnotherSEOGuru"
             >
-                {/* Backdrop */}
-                <div
-                    className="absolute inset-0 bg-black/60 backdrop-blur-sm"
-                    onClick={closeMobileMenu}
-                />
-
-                {/* Menu Panel */}
-                <div
-                    className={`absolute top-0 right-0 h-full w-full max-w-md bg-background shadow-2xl transition-transform duration-300 ease-out ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
-                        }`}
+              Get Started Free
+            </a>
+            <button
+              type="button"
+              className="inline-flex rounded-xl p-2 text-foreground transition-colors hover:bg-primary/10 lg:hidden"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-expanded={isMobileMenuOpen}
+              aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+            >
+              {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>
+          </div>
+        </div>
+        {isMobileMenuOpen ? (
+          <div className="max-h-[min(70vh,calc(100dvh-var(--site-header-height)))] overflow-y-auto rounded-xl border border-border/60 bg-background/96 py-2 backdrop-blur-md lg:hidden">
+            {(
+              [
+                {
+                  id: "platform",
+                  title: "Platform",
+                  links: [
+                    ["/platform", "Overview"],
+                    ["/platform/features", "All features"],
+                    ["/platform/pricing", "Software pricing"],
+                    ["/platform/for/agencies", "For agencies"],
+                    ["/platform/for/in-house", "For in-house"],
+                    ["/platform/for/ecommerce", "For ecommerce"],
+                  ],
+                },
+                {
+                  id: "agency",
+                  title: "Agency",
+                  links: [
+                    ["/services", "All services"],
+                    ["/services/website-creation", "Website creation"],
+                    ...agencyNavServices
+                      .filter((s) => s.slug !== "website-creation")
+                      .map((s) => [`/services/${s.slug}`, s.shortName] as const),
+                  ],
+                },
+              ] as const
+            ).map((section) => (
+              <div key={section.id} className="border-b border-border/50 last:border-b-0">
+                <button
+                  type="button"
+                  className="flex w-full items-center justify-between px-2 py-2.5 text-left text-sm font-semibold text-foreground"
+                  onClick={() => toggleMobile(section.id)}
+                  aria-expanded={mobileOpen === section.id}
                 >
-                    {/* Menu Header */}
-                    <div className="flex items-center justify-between p-4 border-b border-border bg-gradient-to-r from-primary/5 to-secondary/5">
-                        <Link href="/" className="flex items-center gap-2" onClick={closeMobileMenu}>
-                            <div className="relative w-8 h-8 gradient-primary rounded-lg flex items-center justify-center">
-                                <svg viewBox="0 0 24 24" className="w-4 h-4 text-white" fill="currentColor">
-                                    <path d="M13 10V3L4 14h7v7l9-11h-7z" />
-                                </svg>
-                            </div>
-                            <span className="text-lg font-bold gradient-text">AnotherSEOGuru</span>
-                        </Link>
-                        <button
-                            onClick={closeMobileMenu}
-                            className="p-2 rounded-full hover:bg-muted/50 transition-colors"
-                            aria-label="Close menu"
-                        >
-                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                            </svg>
-                        </button>
-                    </div>
-
-                    {/* Menu Content - Scrollable */}
-                    <div className="h-[calc(100%-180px)] overflow-y-auto">
-                        <div className="p-4 space-y-2">
-                            {/* Services Accordion */}
-                            <div className="border border-border rounded-xl overflow-hidden">
-                                <button
-                                    onClick={() => toggleMobileAccordion('services')}
-                                    className="w-full flex items-center justify-between p-4 bg-muted/30 hover:bg-muted/50 transition-colors"
-                                >
-                                    <div className="flex items-center gap-3">
-                                        <div className="w-10 h-10 rounded-lg gradient-primary flex items-center justify-center">
-                                            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                                            </svg>
-                                        </div>
-                                        <div className="text-left">
-                                            <div className="font-semibold">Services</div>
-                                            <div className="text-xs text-muted-foreground">{services.length} services available</div>
-                                        </div>
-                                    </div>
-                                    <svg
-                                        className={`w-5 h-5 text-muted-foreground transition-transform duration-200 ${mobileAccordion === 'services' ? 'rotate-180' : ''
-                                            }`}
-                                        fill="none"
-                                        stroke="currentColor"
-                                        viewBox="0 0 24 24"
-                                    >
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                                    </svg>
-                                </button>
-
-                                <div
-                                    className={`transition-all duration-300 ease-in-out overflow-hidden ${mobileAccordion === 'services' ? 'max-h-[500px]' : 'max-h-0'
-                                        }`}
-                                >
-                                    <div className="p-2 space-y-1 bg-background">
-                                        {services.map((service) => (
-                                            <Link
-                                                key={service.slug}
-                                                href={`/services/${service.slug}`}
-                                                onClick={closeMobileMenu}
-                                                className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted/50 transition-colors group"
-                                            >
-                                                <div className="w-2 h-2 rounded-full bg-primary group-hover:scale-125 transition-transform" />
-                                                <div>
-                                                    <div className="font-medium text-sm">{service.name}</div>
-                                                    <div className="text-xs text-muted-foreground line-clamp-1">{service.shortName}</div>
-                                                </div>
-                                            </Link>
-                                        ))}
-                                        <Link
-                                            href="/services"
-                                            onClick={closeMobileMenu}
-                                            className="flex items-center gap-2 p-3 text-primary font-medium text-sm hover:bg-primary/5 rounded-lg transition-colors"
-                                        >
-                                            View all services
-                                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                            </svg>
-                                        </Link>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Industries Accordion */}
-                            <div className="border border-border rounded-xl overflow-hidden">
-                                <button
-                                    onClick={() => toggleMobileAccordion('industries')}
-                                    className="w-full flex items-center justify-between p-4 bg-muted/30 hover:bg-muted/50 transition-colors"
-                                >
-                                    <div className="flex items-center gap-3">
-                                        <div className="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center">
-                                            <svg className="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                                            </svg>
-                                        </div>
-                                        <div className="text-left">
-                                            <div className="font-semibold">Industries</div>
-                                            <div className="text-xs text-muted-foreground">{industries.length} industries served</div>
-                                        </div>
-                                    </div>
-                                    <svg
-                                        className={`w-5 h-5 text-muted-foreground transition-transform duration-200 ${mobileAccordion === 'industries' ? 'rotate-180' : ''
-                                            }`}
-                                        fill="none"
-                                        stroke="currentColor"
-                                        viewBox="0 0 24 24"
-                                    >
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                                    </svg>
-                                </button>
-
-                                <div
-                                    className={`transition-all duration-300 ease-in-out overflow-hidden ${mobileAccordion === 'industries' ? 'max-h-[500px]' : 'max-h-0'
-                                        }`}
-                                >
-                                    <div className="p-2 space-y-1 bg-background">
-                                        {industries.map((industry) => (
-                                            <Link
-                                                key={industry.slug}
-                                                href={`/solutions/${industry.slug}`}
-                                                onClick={closeMobileMenu}
-                                                className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted/50 transition-colors group"
-                                            >
-                                                <div className="w-2 h-2 rounded-full bg-secondary group-hover:scale-125 transition-transform" />
-                                                <span className="font-medium text-sm">{industry.name}</span>
-                                            </Link>
-                                        ))}
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Direct Links */}
-                            <div className="space-y-1 pt-2">
-                                <Link
-                                    href="/pricing"
-                                    onClick={closeMobileMenu}
-                                    className="flex items-center gap-3 p-4 rounded-xl border border-border hover:bg-muted/50 transition-colors"
-                                >
-                                    <div className="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center">
-                                        <svg className="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <div className="font-semibold">Pricing</div>
-                                        <div className="text-xs text-muted-foreground">View our packages</div>
-                                    </div>
-                                </Link>
-
-                                <Link
-                                    href="/about"
-                                    onClick={closeMobileMenu}
-                                    className="flex items-center gap-3 p-4 rounded-xl border border-border hover:bg-muted/50 transition-colors"
-                                >
-                                    <div className="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center">
-                                        <svg className="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <div className="font-semibold">About Us</div>
-                                        <div className="text-xs text-muted-foreground">Learn about our agency</div>
-                                    </div>
-                                </Link>
-
-                                <Link
-                                    href="/blog"
-                                    onClick={closeMobileMenu}
-                                    className="flex items-center gap-3 p-4 rounded-xl border border-border hover:bg-muted/50 transition-colors"
-                                >
-                                    <div className="w-10 h-10 rounded-lg bg-orange-500/20 flex items-center justify-center">
-                                        <svg className="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <div className="font-semibold">Blog</div>
-                                        <div className="text-xs text-muted-foreground">Read our latest guides</div>
-                                    </div>
-                                </Link>
-
-                                <Link
-                                    href="/contact"
-                                    onClick={closeMobileMenu}
-                                    className="flex items-center gap-3 p-4 rounded-xl border border-border hover:bg-muted/50 transition-colors"
-                                >
-                                    <div className="w-10 h-10 rounded-lg bg-green-500/20 flex items-center justify-center">
-                                        <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <div className="font-semibold">Contact</div>
-                                        <div className="text-xs text-muted-foreground">Get in touch with us</div>
-                                    </div>
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Menu Footer - CTA */}
-                    <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-border bg-background/95 backdrop-blur-sm">
-                        <Link
-                            href="/get-started"
-                            onClick={closeMobileMenu}
-                            className="btn btn-gradient w-full text-center py-4 text-lg font-semibold shadow-glow"
-                        >
-                            Get Free Quote
-                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                            </svg>
-                        </Link>
-                        <p className="text-center text-xs text-muted-foreground mt-2">
-                            Free consultation • No commitment
-                        </p>
-                    </div>
-                </div>
+                  {section.title}
+                  <ChevronDown
+                    className={`h-4 w-4 shrink-0 transition-transform ${mobileOpen === section.id ? "rotate-180" : ""}`}
+                  />
+                </button>
+                {mobileOpen === section.id ? (
+                  <div className="flex flex-col gap-0.5 pb-2 pl-3">
+                    {section.links.map(([href, label]) => (
+                      <Link
+                        key={href}
+                        href={href}
+                        className="py-1.5 text-sm text-muted-foreground transition-colors hover:text-primary"
+                        onClick={closeMobile}
+                      >
+                        {label}
+                      </Link>
+                    ))}
+                  </div>
+                ) : null}
+              </div>
+            ))}
+            <div className="mt-1 flex flex-col gap-0.5 border-t border-border/50 px-2 pt-2">
+              <Link
+                href="/tools"
+                className="py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+                onClick={closeMobile}
+              >
+                Free tools
+              </Link>
+              <Link
+                href="/platform/pricing"
+                className="py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+                onClick={closeMobile}
+              >
+                Software pricing
+              </Link>
+              <Link
+                href="/pricing"
+                className="py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+                onClick={closeMobile}
+              >
+                Agency pricing
+              </Link>
             </div>
-        </>
-    );
+            <p className="px-2 pt-2 text-xs text-muted-foreground">
+              Blog, glossary, industries, cities, and compares are in the footer.
+            </p>
+            <div className="mt-3 flex flex-col gap-2 border-t border-border/50 px-2 pt-3">
+              <a
+                href={getAppPath("/auth")}
+                className="inline-flex w-full items-center justify-center rounded-xl border border-border/80 px-4 py-2.5 text-sm font-medium transition-colors hover:border-primary/30 hover:bg-primary/5"
+                rel="noopener noreferrer"
+                onClick={closeMobile}
+              >
+                Sign In
+              </a>
+              <a
+                href={getAppPath("/auth")}
+                className="inline-flex w-full items-center justify-center rounded-xl px-4 py-2.5 text-sm font-semibold text-primary-foreground shadow-md shadow-primary/25 gradient-primary"
+                rel="noopener noreferrer"
+                onClick={closeMobile}
+              >
+                Get Started Free
+              </a>
+            </div>
+          </div>
+        ) : null}
+      </div>
+    </nav>
+  );
 }

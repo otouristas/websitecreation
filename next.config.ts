@@ -4,6 +4,42 @@ const nextConfig: NextConfig = {
   // React Compiler for performance
   reactCompiler: true,
 
+  async redirects() {
+    const appOrigin = process.env.NEXT_PUBLIC_APP_ORIGIN?.replace(/\/$/, '') || 'https://app.anotherseoguru.com';
+    return [
+      {
+        source: '/landing',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/features',
+        destination: '/platform/features',
+        permanent: true,
+      },
+      {
+        source: '/seo-platform',
+        destination: '/platform',
+        permanent: true,
+      },
+      {
+        source: '/free-tools/:path*',
+        destination: `${appOrigin}/free-tools/:path*`,
+        permanent: true,
+      },
+      {
+        source: '/app/:path*',
+        destination: `${appOrigin}/:path*`,
+        permanent: false,
+      },
+      {
+        source: '/status',
+        destination: '/contact',
+        permanent: false,
+      },
+    ];
+  },
+
   // Image optimization for Core Web Vitals
   images: {
     remotePatterns: [
@@ -22,6 +58,10 @@ const nextConfig: NextConfig = {
   experimental: {
     // Optimize package imports for faster builds
     optimizePackageImports: ['@/lib/seo', '@/components/seo', '@/lib/linking'],
+  },
+
+  turbopack: {
+    root: __dirname,
   },
 
   // Cache headers for programmatic pages

@@ -14,7 +14,7 @@ export default function ServicesPage() {
     return (
         <>
             <Header />
-            <main className="pt-24 pb-16 min-h-screen">
+            <main className="main-below-header min-h-screen pb-16">
                 <section className="container">
                     <div className="max-w-3xl mx-auto text-center mb-16">
                         <h1 className="text-4xl sm:text-5xl font-bold mb-6">

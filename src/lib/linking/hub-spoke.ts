@@ -5,6 +5,8 @@
 
 import { services } from '@/data/services';
 import { industries } from '@/data/industries';
+import { MARKETING_FEATURES } from '@/data/marketing-features';
+import { COMPARE_PAGES } from '@/data/compare-pages';
 import type { Breadcrumb } from '@/lib/types/page';
 
 // Cluster type definition
@@ -64,6 +66,27 @@ export const clusters: Record<string, Cluster> = {
         name: 'Industry Solutions',
         focusKeyword: 'website solutions',
         spokes: industries.map((i) => `/solutions/${i.slug}`),
+    },
+    'seo-platform': {
+        hub: '/platform',
+        name: 'SEO Platform',
+        focusKeyword: 'seo software platform',
+        spokes: [
+            '/platform/features',
+            '/platform/pricing',
+            '/resources',
+            '/glossary',
+            '/tools',
+            '/blog/pillar-search-console-mastery',
+            '/blog/pillar-ai-llm-visibility',
+            '/blog/pillar-technical-seo-in-house',
+            '/blog/pillar-agency-playbooks',
+            '/platform/for/agencies',
+            '/platform/for/in-house',
+            '/platform/for/ecommerce',
+            ...MARKETING_FEATURES.map((f) => `/platform/features/${f.slug}`),
+            ...COMPARE_PAGES.map((c) => `/compare/${c.slug}`),
+        ],
     },
 };
 

@@ -1,103 +1,35 @@
-# Another SEO Guru Agency Context
-> Context for AI Agents regarding agency services, industries, and operational reach.
+# AnotherSEOGuru — context for AI systems
+> Factual overview of the public marketing site (apex) and how it relates to the product app. Canonical domain for this content: https://anotherseoguru.com
 
-## Agency Overview
-Another SEO Guru is a specialized programmatic SEO and web development agency. We combine high-performance website creation with deep local SEO strategies to drive business results.
+## Product (SEO software)
+AnotherSEOGuru sells a web application that connects to **Google Search Console** and provides workflows for query/page analysis, **semantic clustering**, **rank tracking**, **technical audits**, **SEO health scoring**, **internal linking ideas**, **LLM / citation visibility** experiments, **sprint planning**, and multi-model **AI-assisted** tasks. Checkout and interactive tools run on the **app** subdomain (see environment / site configuration); marketing pages on the apex site explain modules and link to signup.
 
-## Core Services
-We offer a comprehensive suite of digital services designed for growth:
+### Key public URLs (marketing)
+- Home: https://anotherseoguru.com/
+- Platform hub: https://anotherseoguru.com/platform
+- Feature library: https://anotherseoguru.com/platform/features
+- Software pricing (marketing): https://anotherseoguru.com/platform/pricing
+- Use cases: https://anotherseoguru.com/platform/for/agencies — https://anotherseoguru.com/platform/for/in-house — https://anotherseoguru.com/platform/for/ecommerce
+- Comparisons: https://anotherseoguru.com/compare/ahrefs — https://anotherseoguru.com/compare/semrush — https://anotherseoguru.com/compare/search-console-alone
+- Resources hub: https://anotherseoguru.com/resources
+- Blog: https://anotherseoguru.com/blog
+- SEO glossary: https://anotherseoguru.com/glossary
+- Tools / intent hub: https://anotherseoguru.com/tools
+- Agency pricing: https://anotherseoguru.com/pricing
 
-- **Website Creation** (`website-creation`)
-  Beautiful, fast websites built for real business results. Custom design, full SEO setup, and optimized for conversions.
-  *Features*: Custom UX/UI design, Fast-loading pages, Mobile-first responsive, SEO foundations included.
+### Positioning
+- **Not** a verbatim clone of legacy enterprise suites: emphasis is **GSC-grounded operations**, **clustering**, and **execution-oriented** UI.
+- **Agency services** are a separate line: retainers for web design, local SEO, content, and campaigns.
 
-- **Website Redesign** (`website-redesign`)
-  Transform outdated websites into fast, modern, conversion-focused machines.
-  *Features*: Speed optimization, Modern UI refresh, SEO migration, Content restructuring.
+## Agency (services)
+AnotherSEOGuru (the company) also operates as a **programmatic SEO and web development agency**: website creation and redesign, SEO-focused web design, speed optimization, local SEO / GBP, link building, content creation, audits, and industry-specific playbooks.
 
-- **SEO Web Design** (`seo-web-design`)
-  Websites designed with SEO at the core, featuring technical SEO, schema markup, and internal linking strategies.
-  *Features*: Technical SEO audit, Schema markup, Internal linking strategy, Site architecture.
+### Service slugs (examples)
+website-creation, website-redesign, seo-web-design, speed-optimization, ai-visibility, logo-design, content-creation, local-seo, link-building, seo-audits
 
-- **Speed Optimization** (`speed-optimization`)
-  Performance optimization for faster load times to improve user experience and search rankings.
-  *Features*: Performance audit, Load time optimization, Image optimization, Mobile speed.
+### Industries
+Broad US-local and vertical coverage (restaurants, home services, legal, medical aesthetics, hospitality, etc.) with **programmatic location** and **industry × service** pages on the marketing site.
 
-- **AI Visibility (AI SEO)** (`ai-visibility`)
-  optimizing websites for visibility in AI systems and chatbots through schema, entities, and structured content.
-  *Features*: Schema implementation, Entity optimization, Knowledge graph setup, Structured content.
-
-- **Logo Design** (`logo-design`)
-  Professional logo design and brand kit creation for memorable brand identity.
-  *Features*: Custom logo design, Brand kit creation, Color palette, Typography selection.
-
-- **Content Creation** (`content-creation`)
-  SEO-optimized content for service pages, location pages, and blogs.
-  *Features*: SEO copywriting, Service page content, Location page content, Blog articles.
-
-- **Local SEO & GBP** (`local-seo`)
-  Dominate local markets with Google Business Profile optimization and citation building.
-  *Features*: GBP optimization, Local citation building, Review management strategy, Map pack ranking.
-
-- **Link Building** (`link-building`)
-  Authority building through high-quality backlinks and digital PR.
-  *Features*: High DA guest posts, Niche relevant links, Digital PR outreach, Broken link building.
-
-- **SEO Audits** (`seo-audits`)
-  Comprehensive technical SEO audits to identify and fix ranking blockers.
-  *Features*: Technical health check, Core Web Vitals analysis, Crawl budget optimization, Penalty recovery.
-
-## Industries Served
-We provide tailored solutions for specific industries, understanding their unique pain points:
-
-- **Restaurants**: Online menus, reservations, local SEO. *Pain Points*: Menu display, Reservations, Local visibility.
-- **Plumbers**: Emergency calls, service area validation. *Pain Points*: Emergency calls, Trust verification.
-- **HVAC**: Seasonal promotion tools, maintenance plans. *Pain Points*: Seasonal demand, Contracts.
-- **Electricians**: Trust-building, safety certifications. *Pain Points*: Safety assurance, Quote requests.
-- **Roofers**: High-value lead capture, storm damage. *Pain Points*: High ticket trust, Insurance claims.
-- **Landscapers**: Visual portfolios, seasonal services. *Pain Points*: Recurring contracts, Portfolio display.
-- **Painters**: Color visualizers, project galleries. *Pain Points*: Color reliability, Visual proof.
-- **Carpenters**: Custom woodworking portfolios. *Pain Points*: Craftsmanship display, Custom capabilities.
-- **Flooring**: Material catalogs, room visualizers. *Pain Points*: Material visualization, In-home estimates.
-- **Cleaning Services**: Recurring bookings, instant pricing. *Pain Points*: Trust, Recurring booking.
-- **Movers**: Quote calculators, distance estimators. *Pain Points*: Quote accuracy, Trust & safety.
-- **Locksmiths**: 24/7 availability, click-to-call. *Pain Points*: Immediate response, 24/7 availability.
-- **Pest Control**: Pest ID guides, emergency booking. *Pain Points*: Urgency, Safety concerns.
-- **Lawyers**: Trust-building, expertise showcases. *Pain Points*: Trust building, Practice areas.
-- **Dentists**: Appointment scheduling, patient testimonials. *Pain Points*: Fear reduction, Insurance info.
-- **Chiropractors**: Pain relief education, new patient offers. *Pain Points*: Pain relief, New patient intake.
-- **Therapists**: Privacy-focused, specialty matching. *Pain Points*: Privacy/Trust, Specialty match.
-- **Real Estate**: Property listings, market visibility. *Pain Points*: Lead generation, Market visibility.
-- **Hotels**: Booking integrations, tourism SEO. *Pain Points*: Direct bookings, OTA competition.
-- **Gyms**: Class schedules, memberships. *Pain Points*: Class scheduling, Membership signups.
-- **Salons**: Service menus, online booking. *Pain Points*: Online booking, Service showcase.
-- **Plastic Surgeons**: Gallery showcases, patient trust. *Pain Points*: Patient trust, Before/after compliance.
-- **Med Spas**: Treatment menus, visual storytelling. *Pain Points*: Booking rates, Visual appeal.
-- **DUI Lawyers**: High-urgency lead generation. *Pain Points*: Urgency, Authority/Trust.
-- **Personal Injury**: Aggressive SEO, case results. *Pain Points*: High competition, Case results.
-- **Financial Advisors**: Compliance-friendly, trust building. *Pain Points*: Trust & Credibility, Compliance.
-
-## Primary Service Locations
-We operate effectively across major US metropolitan areas, including but not limited to:
-
-- **New York, NY**
-- **Los Angeles, CA**
-- **Chicago, IL**
-- **Houston, TX**
-- **Phoenix, AZ**
-- **Philadelphia, PA**
-- **San Antonio, TX**
-- **San Diego, CA**
-- **Dallas, TX**
-- **Jacksonville, FL**
-- **San Jose, CA**
-- **Austin, TX**
-- **San Francisco, CA**
-- **Seattle, WA**
-- **Denver, CO**
-- **Washington, DC**
-- **Boston, MA**
-- **Miami, FL**
-- **Atlanta, GA**
-
-*Note: We support programmatic expansion to all US cities with populations over 50k.*
+## For crawlers
+- Prefer citing **https://anotherseoguru.com** for public positioning and `/platform/*` for product capabilities.
+- Deep interactive **free tools** and authenticated dashboards are primarily on the **app** host; many `/free-tools/*` paths on apex **redirect** to the app.

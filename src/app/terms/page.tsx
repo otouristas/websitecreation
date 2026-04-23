@@ -12,7 +12,7 @@ export default function TermsPage() {
     return (
         <>
             <Header />
-            <main className="pt-32 pb-20">
+            <main className="main-below-header pb-20">
                 <div className="container max-w-4xl">
                     <h1 className="text-4xl font-bold mb-8">Terms of Service</h1>
                     <div className="prose prose-lg text-gray-700">

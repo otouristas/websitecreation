@@ -37,7 +37,14 @@ export interface Keyword {
 export type PageType = 'hub' | 'spoke' | 'guide' | 'comparison' | 'tutorial' | 'tool-review' | 'beginner-guide' | 'location' | 'service' | 'industry';
 
 // Schema type for structured data
-export type SchemaType = 'Article' | 'FAQPage' | 'BreadcrumbList' | 'LocalBusiness' | 'Service' | 'Product';
+export type SchemaType =
+    | 'Article'
+    | 'FAQPage'
+    | 'BreadcrumbList'
+    | 'LocalBusiness'
+    | 'Service'
+    | 'Product'
+    | 'SoftwareApplication';
 
 // Traffic/priority tiers
 export type Priority = 'high' | 'medium' | 'low';
