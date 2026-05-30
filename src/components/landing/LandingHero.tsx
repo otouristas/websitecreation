@@ -21,20 +21,21 @@ export function LandingHero() {
             <div className="mb-6 flex justify-center lg:justify-start">
               <div className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
                 <Sparkles className="h-4 w-4 shrink-0" aria-hidden />
-                AI SEO platform connected to Google Search Console
+                SEO · GEO · AEO · AI Search — GSC-native platform
               </div>
             </div>
             <h1 className="mb-6 text-4xl font-medium leading-[1.05] tracking-[-0.04em] text-foreground md:text-6xl md:leading-[1.02] lg:text-7xl">
-              <span className="gradient-text">Track rankings · Analyze competitors</span>
+              <span className="gradient-text">SEO software · Web design · Development</span>
               <br />
-              <span className="text-foreground">AI workflows · Search Console intelligence</span>
+              <span className="text-foreground">GEO, AEO &amp; AI search visibility</span>
             </h1>
             <p className="mb-3 text-lg text-muted-foreground md:text-xl">
-              Powered by <strong className="text-foreground">OpenAI, Claude, Gemini &amp; more</strong>
+              Rank on Google, ChatGPT, Perplexity &amp; Gemini — powered by{" "}
+              <strong className="text-foreground">Search Console + multi-LLM workflows</strong>
             </p>
             <p className="mx-auto mb-8 max-w-xl text-base text-muted-foreground md:text-lg lg:mx-0">
-              Keyword clustering, rank tracking, technical audits, LLM citation insights, sprint planning, and optional
-              autopilot — plus our agency team when you want execution.
+              Generative Engine Optimization (GEO), Answer Engine Optimization (AEO), technical SEO audits,
+              website design for rankings, and AI content — one platform with a 7-day card-verified trial.
             </p>
             <div className="mb-8 flex flex-col justify-center gap-4 sm:flex-row lg:justify-start">
               <a
@@ -43,7 +44,7 @@ export function LandingHero() {
                 rel="noopener noreferrer"
                 aria-label="Start free with AnotherSEOGuru — create your account"
               >
-                Start free
+                Start 7-day trial
               </a>
               <Link
                 href="/platform/features"

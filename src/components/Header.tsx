@@ -6,6 +6,7 @@ import { ChevronDown, Menu, X } from "lucide-react";
 import { BrandLogo } from "@/components/BrandLogo";
 import { FreeToolsMegaMenu } from "@/components/landing/free-tools-mega-menu";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { getAppPath } from "@/lib/app-links";
 import { services } from "@/data/services";
 
@@ -138,6 +139,7 @@ export default function Header(): ReactElement {
             </NavDropdown>
           </div>
           <div className="flex shrink-0 items-center gap-1 sm:gap-2 md:gap-3">
+            <LanguageSwitcher />
             <ThemeToggle />
             <a
               href={getAppPath("/auth")}
@@ -153,7 +155,7 @@ export default function Header(): ReactElement {
               rel="noopener noreferrer"
               aria-label="Get started free with AnotherSEOGuru"
             >
-              Get Started Free
+              Start 7-day trial
             </a>
             <button
               type="button"
@@ -264,7 +266,7 @@ export default function Header(): ReactElement {
                 rel="noopener noreferrer"
                 onClick={closeMobile}
               >
-                Get Started Free
+                Start 7-day trial
               </a>
             </div>
           </div>

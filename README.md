@@ -1,22 +1,32 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AnotherSEOGuru marketing site (Next.js)
 
-## Getting Started
+**Canonical repo:** [github.com/otouristas/websitecreation](https://github.com/otouristas/websitecreation)  
+**Production:** [anotherseoguru.com](https://anotherseoguru.com)
 
-First, run the development server:
+This folder is a clone of `websitecreation`, nested inside the `gsc-gemini-boost` monorepo for convenience.  
+The **Vite app** in the parent repo (`npm run dev:app`) is the product dashboard — **not** the public marketing site.
+
+## Local development
+
+From this folder:
 
 ```bash
+cp .env.local.example .env.local   # if missing
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open **http://localhost:8080** (marketing).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+From the parent `gsc-gemini-boost` repo:
+
+```bash
+npm run dev          # same — starts this Next.js site on :8080
+npm run dev:app      # Vite dashboard on http://localhost:8081
+npm run dev:all      # marketing + dashboard together
+```
+
+Edit the homepage in `src/app/page.tsx`. Deploy from this repo to Vercel (see `websitecreation-seven.vercel.app`).
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 

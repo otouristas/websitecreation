@@ -127,17 +127,56 @@ export function buildServiceMetadata(service: { name: string; slug: string; meta
  */
 export function buildServiceLocationMetadata(
     service: { name: string; slug: string },
-    location: { city: string; state: string; stateCode: string; slug: string }
+    location: {
+        city: string;
+        state: string;
+        stateCode: string;
+        slug: string;
+        country?: string;
+        countryCode?: string;
+        currency?: string;
+    }
 ): Metadata {
-    const cityState = `${location.city}, ${location.stateCode}`;
+    const placeLabel =
+        location.countryCode && location.countryCode !== 'US'
+            ? `${location.city}, ${location.country ?? location.countryCode}`
+            : `${location.city}, ${location.stateCode}`;
+
+    const currencyHint = location.currency ? ` Pricing in ${location.currency}.` : '';
 
     return buildMetadata({
-        title: `${service.name} in ${cityState}`,
+        title: `${service.name} in ${placeLabel}`,
+        description: `Professional ${service.name.toLowerCase()} in ${placeLabel}. SEO-ready sites, local strategy, and measurable growth.${currencyHint} Free quote.`,
         path: `/services/${service.slug}/${location.slug}`,
         service: service.name,
-        location: cityState,
+        location: placeLabel,
         usp: `Fast, beautiful websites for ${location.city} businesses`,
         ctaHint: 'Get a free quote today.',
+    });
+}
+
+/**
+ * Greek programmatic service × location metadata
+ */
+export function buildServiceLocationMetadataEl(
+    service: { name: string; slug: string },
+    location: {
+        city: string;
+        cityLocal?: string;
+        slug: string;
+        country?: string;
+    }
+): Metadata {
+    const place = location.cityLocal
+        ? `${location.cityLocal}, ${location.country ?? 'Ελλάδα'}`
+        : `${location.city}, ${location.country ?? 'Ελλάδα'}`;
+
+    return buildMetadata({
+        title: `${service.name} στην ${place}`,
+        description: `Επαγγελματικές υπηρεσίες ${service.name.toLowerCase()} στην ${place}. SEO, ταχύτητα, GEO/AEO και τοπική στρατηγική. Δωρεάν προσφορά.`,
+        path: `/gr/services/${service.slug}/${location.slug}`,
+        primaryKeyword: `${service.name} ${location.cityLocal ?? location.city}`,
+        ctaHint: 'Ζητήστε δωρεάν προσφορά.',
     });
 }
 

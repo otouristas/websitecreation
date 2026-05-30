@@ -5,35 +5,44 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { services, getServiceBySlug, getAllServiceSlugs } from '@/data/services';
 import { industries } from '@/data/industries';
-import { allLocations, getLocationBySlug, getAllLocationSlugs, formatLocationName, stateNames } from '@/data/locations';
-import { buildServiceLocationMetadata, generateBreadcrumbSchema, generateLocalBusinessSchema, generateServiceSchema, combineSchemas } from '@/lib/seo';
+import {
+    getLocationBySlug,
+    getTier1LocationSlugs,
+    formatLocationName,
+    stateNames,
+    getNearbyLocations,
+    isGreekLocation,
+} from '@/data/locations';
+import {
+    buildServiceLocationMetadata,
+    generateBreadcrumbSchema,
+    generateLocalBusinessSchema,
+    generateServiceSchema,
+    generateFAQSchema,
+    combineSchemas,
+    BASE_URL,
+} from '@/lib/seo';
 import { SchemaMarkup, Breadcrumbs, LocationContent } from '@/components/seo';
 import { getServiceLocationBreadcrumbs } from '@/lib/linking';
+import { grServiceLocationPath } from '@/lib/locale-paths';
 
 interface PageProps {
     params: Promise<{ service: string; location: string }>;
 }
 
-// ISR: Revalidate every hour
 export const revalidate = 3600;
+export const dynamicParams = true;
 
-// Generate static paths for service × location combinations
+/** Pre-render tier-1 hubs only; all other combos use on-demand ISR */
 export async function generateStaticParams() {
     const serviceSlugs = getAllServiceSlugs();
-    const locationSlugs = getAllLocationSlugs();
+    const locationSlugs = getTier1LocationSlugs();
 
-    const paths: { service: string; location: string }[] = [];
-
-    for (const service of serviceSlugs) {
-        for (const location of locationSlugs) {
-            paths.push({ service, location });
-        }
-    }
-
-    return paths;
+    return serviceSlugs.flatMap((service) =>
+        locationSlugs.map((location) => ({ service, location })),
+    );
 }
 
-// Generate unique metadata for each page
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
     const { service: serviceSlug, location: locationSlug } = await params;
     const service = getServiceBySlug(serviceSlug);
@@ -56,30 +65,45 @@ export default async function ServiceLocationPage({ params }: PageProps) {
     }
 
     const cityState = formatLocationName(location);
-    const stateFull = stateNames[location.stateCode] || location.state;
+    const stateFull =
+        location.countryCode === 'US'
+            ? stateNames[location.stateCode] || location.state
+            : location.state;
+    const regionLabel =
+        location.countryCode === 'US' ? stateFull : location.country;
 
-    // Nearby cities (same state, different city)
-    const nearbyCities = allLocations
-        .filter((l) => l.stateCode === location.stateCode && l.slug !== location.slug)
-        .slice(0, 6);
-
-    // Related services
+    const nearbyCities = getNearbyLocations(location, 6);
     const relatedServices = services.filter((s) => s.slug !== serviceSlug).slice(0, 3);
-
-    // Generate breadcrumbs
     const breadcrumbs = getServiceLocationBreadcrumbs(service.name, serviceSlug, location.city, locationSlug);
 
-    // Generate schemas
+    const pageUrl = `${BASE_URL}/services/${serviceSlug}/${locationSlug}`;
+
+    const faqItems = [
+        {
+            question: `How fast can my ${location.city} website go live?`,
+            answer: `Depending on scope, most ${service.name.toLowerCase()} projects in ${location.city} launch in 2–8 weeks once content and approvals are ready. We work in ${location.currency} and align timelines to your market.`,
+        },
+        {
+            question: `Do you offer ${service.name.toLowerCase()} for local SEO in ${location.city}?`,
+            answer: `Yes. We build location pages, internal links, schema, and GBP strategy so ${location.city} businesses rank for commercial and "near me" queries.`,
+        },
+        {
+            question: `What makes your ${location.city} sites rank in Google and AI search?`,
+            answer: `Technical SEO, semantic clustering from Search Console, GEO/AEO structured content, and fast Core Web Vitals — not thin template pages.`,
+        },
+    ];
+
     const schemas = combineSchemas(
         generateBreadcrumbSchema({ items: breadcrumbs }),
+        generateFAQSchema({ faqs: faqItems }),
         generateLocalBusinessSchema({
             name: `${service.name} - ${cityState}`,
             description: `Professional ${service.name.toLowerCase()} services in ${cityState}`,
-            url: `https://anotherseoguru.com/services/${serviceSlug}/${locationSlug}`,
+            url: pageUrl,
             address: {
                 addressLocality: location.city,
                 addressRegion: location.stateCode,
-                addressCountry: 'US',
+                addressCountry: location.countryCode,
             },
             geo: {
                 latitude: location.latitude,
@@ -89,10 +113,10 @@ export default async function ServiceLocationPage({ params }: PageProps) {
         generateServiceSchema({
             name: service.name,
             description: service.description,
-            provider: { name: 'AnotherSEOGuru', url: 'https://anotherseoguru.com' },
-            areaServed: [location.city, location.stateCode],
-            serviceType: 'Web Development',
-        })
+            provider: { name: 'AnotherSEOGuru', url: BASE_URL },
+            areaServed: [location.city, location.country],
+            serviceType: service.name,
+        }),
     );
 
     return (
@@ -100,23 +124,32 @@ export default async function ServiceLocationPage({ params }: PageProps) {
             <SchemaMarkup schemas={schemas} />
             <Header />
             <main className="main-below-header">
-                {/* Hero */}
                 <section className="section-compact gradient-hero">
                     <div className="container">
                         <div className="max-w-3xl">
-                            {/* Breadcrumb */}
                             <Breadcrumbs items={breadcrumbs} className="mb-6" />
 
                             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
                                 {service.name} in {cityState}
                             </h1>
 
-                            {/* Description under H1 - unique per location */}
-                            <p className="text-lg text-muted-foreground mb-8">
-                                Looking for professional {service.name.toLowerCase()} in {location.city}, {stateFull}?
-                                We build fast, beautiful websites that rank well in search and convert visitors into customers.
-                                Get a custom quote for your {location.city} business.
+                            <p className="text-lg text-muted-foreground mb-4">
+                                Looking for professional {service.name.toLowerCase()} in {location.city},{' '}
+                                {regionLabel}? We build fast, SEO-ready websites that rank in Google and AI
+                                search — with transparent pricing in {location.currency}.
                             </p>
+
+                            {isGreekLocation(location) && (
+                                <p className="text-sm text-muted-foreground mb-6">
+                                    <Link
+                                        href={grServiceLocationPath(serviceSlug, locationSlug)}
+                                        hrefLang="el"
+                                        className="text-primary font-medium hover:underline"
+                                    >
+                                        Διαβάστε αυτή τη σελίδα στα Ελληνικά →
+                                    </Link>
+                                </p>
+                            )}
 
                             <div className="flex flex-wrap gap-4">
                                 <Link href="/contact" className="btn btn-gradient">
@@ -128,20 +161,22 @@ export default async function ServiceLocationPage({ params }: PageProps) {
                                 <Link href={`/services/${serviceSlug}`} className="btn btn-outline">
                                     All Locations
                                 </Link>
+                                <Link href="/locations" className="btn btn-outline">
+                                    Browse Cities
+                                </Link>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                {/* What's Included */}
                 <section className="section">
                     <div className="container">
                         <h2 className="text-2xl sm:text-3xl font-bold mb-4">
                             What&apos;s Included in {location.city}
                         </h2>
                         <p className="text-muted-foreground mb-8 max-w-2xl">
-                            Our {service.name.toLowerCase()} services for {location.city} businesses include everything
-                            you need for a high-performing website.
+                            Our {service.name.toLowerCase()} services for {location.city} businesses include
+                            everything you need for a high-performing website in {location.country}.
                         </p>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -157,14 +192,12 @@ export default async function ServiceLocationPage({ params }: PageProps) {
                     </div>
                 </section>
 
-                {/* Dynamic Location Content Engine (Competitor Style) */}
                 <section className="section bg-white">
                     <div className="container">
                         <LocationContent location={location} service={service} />
                     </div>
                 </section>
 
-                {/* Industry Solutions */}
                 <section className="section">
                     <div className="container">
                         <h2 className="text-2xl sm:text-3xl font-bold mb-4">
@@ -187,12 +220,11 @@ export default async function ServiceLocationPage({ params }: PageProps) {
                     </div>
                 </section>
 
-                {/* Nearby Cities */}
                 {nearbyCities.length > 0 && (
                     <section className="section bg-muted/30">
                         <div className="container">
                             <h2 className="text-2xl sm:text-3xl font-bold mb-4">
-                                Also Serving Nearby {stateFull} Cities
+                                Also Serving Nearby {regionLabel} Cities
                             </h2>
                             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
                                 {nearbyCities.map((city) => (
@@ -209,7 +241,6 @@ export default async function ServiceLocationPage({ params }: PageProps) {
                     </section>
                 )}
 
-                {/* Other Services */}
                 <section className="section">
                     <div className="container">
                         <h2 className="text-2xl sm:text-3xl font-bold mb-8">
@@ -230,53 +261,37 @@ export default async function ServiceLocationPage({ params }: PageProps) {
                     </div>
                 </section>
 
-                {/* FAQ */}
                 <section className="section bg-muted/30">
                     <div className="container max-w-3xl">
                         <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-center">
-                            Frequently Asked Questions
+                            Frequently Asked Questions — {location.city}
                         </h2>
                         <div className="space-y-4">
-                            <div className="card p-6">
-                                <h3 className="font-semibold mb-2">How fast can my {location.city} website go live?</h3>
-                                <p className="text-muted-foreground text-sm">
-                                    Depending on the scope, a basic website can launch within 2-4 weeks once all assets and content are ready.
-                                    More complex projects may take 4-8 weeks.
-                                </p>
-                            </div>
-                            <div className="card p-6">
-                                <h3 className="font-semibold mb-2">Do you handle content for {location.city} businesses?</h3>
-                                <p className="text-muted-foreground text-sm">
-                                    Yes! We offer content creation services including service pages, location pages, and blog content
-                                    optimized for {location.city} search visibility.
-                                </p>
-                            </div>
-                            <div className="card p-6">
-                                <h3 className="font-semibold mb-2">What makes your websites fast?</h3>
-                                <p className="text-muted-foreground text-sm">
-                                    We use modern development practices and performance optimization techniques
-                                    to ensure your website loads quickly on all devices.
-                                </p>
-                            </div>
+                            {faqItems.map((item) => (
+                                <div key={item.question} className="card p-6">
+                                    <h3 className="font-semibold mb-2">{item.question}</h3>
+                                    <p className="text-muted-foreground text-sm">{item.answer}</p>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </section>
 
-                {/* CTA */}
                 <section className="section gradient-primary text-white">
                     <div className="container text-center">
                         <h2 className="text-3xl font-bold mb-4">
                             Ready for {service.name} in {location.city}?
                         </h2>
                         <p className="text-white/80 mb-8">
-                            Get a free quote tailored for your {location.city} business today.
+                            Get a free quote tailored for your {location.city} business — pricing in{' '}
+                            {location.currency}.
                         </p>
                         <Link href="/contact" className="btn bg-white text-primary hover:bg-white/90">
                             Get Free {location.city} Quote
                         </Link>
                     </div>
                 </section>
-            </main >
+            </main>
             <Footer />
         </>
     );

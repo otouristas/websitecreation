@@ -87,6 +87,10 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: SITE_URL,
+    languages: {
+      en: SITE_URL,
+      el: `${SITE_URL}/gr`,
+    },
   },
   verification: {
     google: "tkWhNe__BsE39YeIQM5fmGc8Y1W7hzw8RadiokDZquw",
