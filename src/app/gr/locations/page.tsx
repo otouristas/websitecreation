@@ -7,9 +7,9 @@ import { getServiceEl } from '@/data/services-i18n';
 import { buildMetadata } from '@/lib/seo';
 
 export const metadata = buildMetadata({
-    title: 'Πόλεις | Κατασκευή ιστοσελίδων & SEO σε όλη την Ελλάδα',
+    title: 'Πόλεις — Κατασκευή Ιστοσελίδων Ελλάδα',
     description:
-        'Υπηρεσίες κατασκευής ιστοσελίδων, SEO, GEO και AEO σε Αθήνα, Θεσσαλονίκη, Πάτρα, Ηράκλειο και όλη την Ελλάδα. Τοπικές σελίδες με πλούσιο περιεχόμενο.',
+        'Κατασκευή ιστοσελίδων, SEO, GEO και AEO σε Αθήνα, Θεσσαλονίκη, Πάτρα, Ηράκλειο και όλη την Ελλάδα. Πλούσιες τοπικές σελίδες, όχι thin content. Δωρεάν προσφορά.',
     path: '/gr/locations',
     primaryKeyword: 'κατασκευή ιστοσελίδων',
 });

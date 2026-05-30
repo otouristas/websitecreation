@@ -5,9 +5,9 @@ import { getAppPath } from "@/lib/app-links";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "SEO platform for in-house teams — GSC to roadmap",
+  title: "SEO Platform for In-House Teams",
   description:
-    "Give marketing and SEO leads one workspace: Search Console analytics, health scores, rank tracking, and AI briefs without a dozen subscriptions.",
+    "In-house SEO platform: one GSC workspace for clustering, health scores, rank tracking, AI briefs, and sprint planning—replace scattered tools with measurable roadmaps.",
   path: "/platform/for/in-house",
   primaryKeyword: "in-house SEO software",
 });

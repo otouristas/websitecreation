@@ -1,213 +1,219 @@
-// SEO Metadata Builder
-// Generates complete Next.js Metadata objects with OG/Twitter alignment
+// SEO Metadata Builder — titles ≤60 chars total, descriptions 150–160 chars
 
 import { Metadata } from 'next';
-import { buildMetaDescription, BASE_URL, BRAND_NAME } from './description';
+import { buildMetaDescription, finalizeDescription, BRAND_NAME, BASE_URL } from './description';
+
+export const TITLE_BRAND_SUFFIX = ` | ${BRAND_NAME}`;
+export const MAX_TITLE_TOTAL = 60;
+export const MAX_TITLE_PRIMARY = MAX_TITLE_TOTAL - TITLE_BRAND_SUFFIX.length;
 
 interface MetadataInput {
-    title: string;
-    description?: string;
-    path: string;
-    primaryKeyword?: string;
-    location?: string;
-    industry?: string;
-    service?: string;
-    usp?: string;
-    ctaHint?: string;
-    noIndex?: boolean;
+  title: string;
+  description?: string;
+  path: string;
+  primaryKeyword?: string;
+  location?: string;
+  industry?: string;
+  service?: string;
+  usp?: string;
+  ctaHint?: string;
+  noIndex?: boolean;
 }
 
-/**
- * Build complete Metadata object for Next.js App Router
- * Ensures title, description, canonical, OG, and Twitter are aligned
- */
-export function buildMetadata(input: MetadataInput): Metadata {
-    const {
-        title,
-        description: customDescription,
-        path,
-        primaryKeyword,
-        location,
-        industry,
-        service,
-        usp,
-        ctaHint,
-        noIndex = false,
-    } = input;
+function smartTruncateTitle(text: string, max: number): string {
+  if (text.length <= max) return text;
+  const cut = text.slice(0, max);
+  const lastSpace = cut.lastIndexOf(' ');
+  return (lastSpace > 20 ? cut.slice(0, lastSpace) : cut).replace(/[,;:\-–—]$/, '').trim();
+}
 
-    // Generate description if not provided
-    const description = customDescription || buildMetaDescription({
+/** Strip brand duplication and enforce primary segment length before suffix */
+export function cleanPageTitle(raw: string): string {
+  let cleanTitle = raw.trim();
+
+  cleanTitle = cleanTitle.replace(new RegExp(`\\s*[\\|\\-]\\s*${BRAND_NAME}`, 'gi'), '');
+  cleanTitle = cleanTitle.replace(new RegExp(`^${BRAND_NAME}\\s*[\\|\\-]\\s*`, 'gi'), '');
+
+  if (cleanTitle.toLowerCase() !== BRAND_NAME.toLowerCase()) {
+    cleanTitle = cleanTitle.replace(new RegExp(BRAND_NAME, 'gi'), '').trim();
+  }
+
+  cleanTitle = cleanTitle
+    .replace(/\s*\|\s*$/, '')
+    .replace(/\s*-\s*$/, '')
+    .replace(/^\s*\|\s*/, '')
+    .replace(/^\s*-\s*/, '')
+    .replace(/^[—–-]\s*/, '')
+    .replace(/\s*[—–-]\s*/g, ' — ')
+    .trim();
+
+  if (cleanTitle.toLowerCase() === BRAND_NAME.toLowerCase()) {
+    return BRAND_NAME;
+  }
+
+  if (cleanTitle.length > MAX_TITLE_PRIMARY) {
+    cleanTitle = smartTruncateTitle(cleanTitle, MAX_TITLE_PRIMARY);
+  }
+
+  return cleanTitle;
+}
+
+export function buildFullTitle(raw: string): string {
+  const primary = cleanPageTitle(raw);
+  if (primary === BRAND_NAME) return BRAND_NAME;
+  return `${primary}${TITLE_BRAND_SUFFIX}`;
+}
+
+export function buildMetadata(input: MetadataInput): Metadata {
+  const {
+    title,
+    description: customDescription,
+    path,
+    primaryKeyword,
+    location,
+    industry,
+    service,
+    usp,
+    ctaHint,
+    noIndex = false,
+  } = input;
+
+  const description = finalizeDescription(
+    customDescription ||
+      buildMetaDescription({
         primaryKeyword: primaryKeyword || title,
         location,
         industry,
         service,
         usp,
         ctaHint,
-    });
+      }),
+  );
 
-    // Build canonical URL (ensure no trailing slash except for root)
-    const canonical = path === '/'
-        ? BASE_URL
-        : `${BASE_URL}${path.startsWith('/') ? path : `/${path}`}`;
+  const canonical =
+    path === '/' ? BASE_URL : `${BASE_URL}${path.startsWith('/') ? path : `/${path}`}`;
 
-    // Clean title - aggressively remove any existing brand suffixes/prefixes to prevent duplication
-    let cleanTitle = title;
+  const fullTitle = buildFullTitle(title);
 
-    // Remove " | AnotherSEOGuru" or " - AnotherSEOGuru" (case insensitive)
-    cleanTitle = cleanTitle.replace(new RegExp(`\\s*[\\|\\-]\\s*${BRAND_NAME}`, 'gi'), '');
+  const metadata: Metadata = {
+    title: fullTitle,
+    description,
+    alternates: { canonical },
+    openGraph: {
+      title: fullTitle,
+      description,
+      url: canonical,
+      siteName: BRAND_NAME,
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: fullTitle,
+      description,
+    },
+  };
 
-    // Remove "AnotherSEOGuru | " or "AnotherSEOGuru - " at start
-    cleanTitle = cleanTitle.replace(new RegExp(`^${BRAND_NAME}\\s*[\\|\\-]\\s*`, 'gi'), '');
+  if (noIndex) {
+    metadata.robots = { index: false, follow: false };
+  }
 
-    // Remove just "AnotherSEOGuru" if it's there specifically (but be careful not to remove it if it's the ONLY thing, though usually we append)
-    if (cleanTitle.toLowerCase() !== BRAND_NAME.toLowerCase()) {
-        cleanTitle = cleanTitle.replace(new RegExp(BRAND_NAME, 'gi'), '').trim();
-    }
-
-    // Clean up any double separators or trailing separators
-    cleanTitle = cleanTitle
-        .replace(/\s*\|\s*$/, '')
-        .replace(/\s*-\s*$/, '')
-        .replace(/^\s*\|\s*/, '')
-        .replace(/^\s*-\s*/, '')
-        .trim();
-
-    // Build full title with single brand suffix
-    // If the title IS the brand name, don't duplicate it
-    const fullTitle = cleanTitle.toLowerCase() === BRAND_NAME.toLowerCase()
-        ? BRAND_NAME
-        : `${cleanTitle} | ${BRAND_NAME}`;
-
-    const metadata: Metadata = {
-        title: fullTitle,
-        description,
-        alternates: {
-            canonical,
-        },
-        openGraph: {
-            title: fullTitle,
-            description,
-            url: canonical,
-            siteName: BRAND_NAME,
-            type: 'website',
-        },
-        twitter: {
-            card: 'summary_large_image',
-            title: fullTitle,
-            description,
-        },
-    };
-
-    // Add noindex if specified
-    if (noIndex) {
-        metadata.robots = {
-            index: false,
-            follow: false,
-        };
-    }
-
-    return metadata;
+  return metadata;
 }
 
-/**
- * Build metadata for service pages
- */
-export function buildServiceMetadata(service: { name: string; slug: string; metaDescription?: string }): Metadata {
-    return buildMetadata({
-        title: `${service.name} Services`,
-        description: service.metaDescription,
-        path: `/services/${service.slug}`,
-        service: service.name,
-        ctaHint: 'View pricing and get started.',
-    });
+export function buildServiceMetadata(service: {
+  name: string;
+  slug: string;
+  metaTitle?: string;
+  metaDescription?: string;
+}): Metadata {
+  return buildMetadata({
+    title: service.metaTitle || `${service.name} Services`,
+    description: service.metaDescription,
+    path: `/services/${service.slug}`,
+    service: service.name,
+    primaryKeyword: `${service.name} services`,
+    ctaHint: 'View packages and request a quote.',
+  });
 }
 
-/**
- * Build metadata for service × location pages
- */
 export function buildServiceLocationMetadata(
-    service: { name: string; slug: string },
-    location: {
-        city: string;
-        state: string;
-        stateCode: string;
-        slug: string;
-        country?: string;
-        countryCode?: string;
-        currency?: string;
-    }
+  service: { name: string; slug: string },
+  location: {
+    city: string;
+    state: string;
+    stateCode: string;
+    slug: string;
+    country?: string;
+    countryCode?: string;
+    currency?: string;
+  },
 ): Metadata {
-    const placeLabel =
-        location.countryCode && location.countryCode !== 'US'
-            ? `${location.city}, ${location.country ?? location.countryCode}`
-            : `${location.city}, ${location.stateCode}`;
+  const placeLabel =
+    location.countryCode && location.countryCode !== 'US'
+      ? `${location.city}, ${location.country ?? location.countryCode}`
+      : `${location.city}, ${location.stateCode}`;
 
-    const currencyHint = location.currency ? ` Pricing in ${location.currency}.` : '';
-
-    return buildMetadata({
-        title: `${service.name} in ${placeLabel}`,
-        description: `Professional ${service.name.toLowerCase()} in ${placeLabel}. SEO-ready sites, local strategy, and measurable growth.${currencyHint} Free quote.`,
-        path: `/services/${service.slug}/${location.slug}`,
-        service: service.name,
-        location: placeLabel,
-        usp: `Fast, beautiful websites for ${location.city} businesses`,
-        ctaHint: 'Get a free quote today.',
-    });
+  return buildMetadata({
+    title: `${service.name} in ${placeLabel}`,
+    description: `Expert ${service.name.toLowerCase()} in ${placeLabel}. SEO-ready websites, local strategy, GEO/AEO, and fast delivery. Pricing in ${location.currency ?? 'USD'}. Free quote.`,
+    path: `/services/${service.slug}/${location.slug}`,
+    service: service.name,
+    location: placeLabel,
+    usp: `Trusted ${service.name.toLowerCase()} for ${location.city}`,
+    ctaHint: 'Request a free local quote.',
+  });
 }
 
-/**
- * Greek programmatic service × location metadata
- */
 export function buildServiceLocationMetadataEl(
-    service: { name: string; slug: string },
-    location: {
-        city: string;
-        cityLocal?: string;
-        slug: string;
-        country?: string;
-    }
+  service: { name: string; slug: string },
+  location: {
+    city: string;
+    cityLocal?: string;
+    slug: string;
+    country?: string;
+  },
 ): Metadata {
-    const place = location.cityLocal
-        ? `${location.cityLocal}, ${location.country ?? 'Ελλάδα'}`
-        : `${location.city}, ${location.country ?? 'Ελλάδα'}`;
+  const place = location.cityLocal
+    ? `${location.cityLocal}, ${location.country ?? 'Ελλάδα'}`
+    : `${location.city}, ${location.country ?? 'Ελλάδα'}`;
 
-    return buildMetadata({
-        title: `${service.name} στην ${place}`,
-        description: `Επαγγελματικές υπηρεσίες ${service.name.toLowerCase()} στην ${place}. SEO, ταχύτητα, GEO/AEO και τοπική στρατηγική. Δωρεάν προσφορά.`,
-        path: `/gr/services/${service.slug}/${location.slug}`,
-        primaryKeyword: `${service.name} ${location.cityLocal ?? location.city}`,
-        ctaHint: 'Ζητήστε δωρεάν προσφορά.',
-    });
+  return buildMetadata({
+    title: `${service.name} — ${place}`,
+    description: `Επαγγελματικό ${service.name.toLowerCase()} στην ${place}. SEO, GEO/AEO, ταχύτητα ιστοσελίδας και τοπική στρατηγική. Δωρεάν προσφορά ή δοκιμή πλατφόρμας 7 ημερών.`,
+    path: `/gr/services/${service.slug}/${location.slug}`,
+    primaryKeyword: `${service.name} ${location.cityLocal ?? location.city}`,
+    ctaHint: 'Ζητήστε δωρεάν προσφορά.',
+  });
 }
 
-/**
- * Build metadata for industry hub pages
- */
-export function buildIndustryMetadata(industry: { name: string; slug: string; metaDescription?: string }): Metadata {
-    return buildMetadata({
-        title: `Website Solutions for ${industry.name}`,
-        description: industry.metaDescription,
-        path: `/solutions/${industry.slug}`,
-        industry: industry.name,
-        ctaHint: 'See packages for your industry.',
-    });
+export function buildIndustryMetadata(industry: {
+  name: string;
+  slug: string;
+  metaDescription?: string;
+}): Metadata {
+  return buildMetadata({
+    title: `${industry.name} Website & SEO Solutions`,
+    description:
+      industry.metaDescription ||
+      `Website design and SEO for ${industry.name.toLowerCase()} businesses. Industry playbooks, fast builds, and Search Console intelligence. See packages.`,
+    path: `/solutions/${industry.slug}`,
+    industry: industry.name,
+    ctaHint: 'Explore industry packages.',
+  });
 }
 
-/**
- * Build metadata for industry × service pages
- */
 export function buildIndustryServiceMetadata(
-    industry: { name: string; slug: string },
-    service: { name: string; slug: string }
+  industry: { name: string; slug: string },
+  service: { name: string; slug: string },
 ): Metadata {
-    return buildMetadata({
-        title: `${service.name} for ${industry.name}`,
-        path: `/solutions/${industry.slug}/${service.slug}`,
-        service: service.name,
-        industry: industry.name,
-        usp: `Specialized ${service.name.toLowerCase()} for ${industry.name.toLowerCase()} businesses`,
-        ctaHint: 'Get started today.',
-    });
+  return buildMetadata({
+    title: `${service.name} for ${industry.name}`,
+    path: `/solutions/${industry.slug}/${service.slug}`,
+    service: service.name,
+    industry: industry.name,
+    usp: `${service.name} tailored for ${industry.name.toLowerCase()}`,
+    ctaHint: 'Get started with a free consultation.',
+  });
 }
 
 export { BASE_URL, BRAND_NAME };

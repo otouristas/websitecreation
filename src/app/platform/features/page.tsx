@@ -5,9 +5,9 @@ import { MARKETING_FEATURES } from "@/data/marketing-features";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "Platform features — GSC, AI, rankings, links, and more",
+  title: "SEO Platform Features — Full List",
   description:
-    "Full list of AnotherSEOGuru platform capabilities: sprint boards, autopilot, keyword research, SERP tracking, audits, E-E-A-T, outreach, and LLM insights.",
+    "Explore every platform feature: GSC clustering, rank tracking, technical audits, AI autopilot, sprint boards, E-E-A-T, outreach, LLM citations, and GEO/AEO workflows.",
   path: "/platform/features",
   primaryKeyword: "SEO platform features",
 });

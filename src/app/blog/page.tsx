@@ -5,9 +5,9 @@ import { buildMetadata } from '@/lib/seo';
 import { getAllBlogPosts } from '@/lib/blog';
 
 export const metadata = buildMetadata({
-  title: 'Local SEO & Marketing Blog | AnotherSEOGuru',
+  title: 'SEO, GEO & AEO Blog — Guides & Playbooks',
   description:
-    'Insights, guides, and pillar hubs on Search Console, AI visibility, technical SEO, and agency playbooks — with links to our SEO platform.',
+    'Expert guides on Search Console, GEO, AEO, AI search visibility, technical SEO, local SEO, and agency playbooks. Actionable tactics for global and Greek markets.',
   path: '/blog',
 });
 

@@ -9,9 +9,9 @@ import { generateSoftwareApplicationSchema } from "@/lib/seo/schema";
 import { BASE_URL } from "@/lib/seo/description";
 
 export const metadata = buildMetadata({
-  title: "SEO platform — Search Console, AI workflows, rank tracking",
+  title: "SEO Software Platform — GSC & AI",
   description:
-    "AnotherSEOGuru software: Google Search Console workspace, AI-assisted SEO, rank tracking, technical audits, and LLM citation insights. Start free.",
+    "GSC-native SEO platform: semantic clustering, rank tracking, technical audits, GEO, AEO, and multi-LLM workflows. Turn Search Console data into weekly execution. 7-day trial.",
   path: "/platform",
   primaryKeyword: "SEO software platform",
 });

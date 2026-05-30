@@ -12,9 +12,9 @@ import { services } from '@/data/services';
 import { buildMetadata } from '@/lib/seo';
 
 export const metadata = buildMetadata({
-    title: 'Locations | Web Design & SEO Services Worldwide',
+    title: 'Website Creation by City — Worldwide',
     description:
-        'Professional website creation, SEO, GEO and AEO services in 120+ cities across the USA, Greece, UK, Canada, Australia, and global hubs. Find your city.',
+        'Website creation, SEO, GEO, and AEO services in 120+ cities: USA, Greece, UK, Canada, Australia, and global hubs. Local pricing, rich city pages, and free quotes.',
     path: '/locations',
     primaryKeyword: 'website creation by city',
 });

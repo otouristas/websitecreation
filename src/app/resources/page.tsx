@@ -6,9 +6,9 @@ import { buildMetadata } from "@/lib/seo";
 import { getAllBlogPosts } from "@/lib/blog";
 
 export const metadata = buildMetadata({
-  title: "Resources — guides, blog, and SEO tools",
+  title: "SEO Resources — Blog, Tools & Guides",
   description:
-    "AnotherSEOGuru resources: blog, intent guides, and links to free tools in the product. Learn Search Console, AI visibility, and technical SEO.",
+    "Free SEO resources: Search Console playbooks, GEO and AEO guides, technical SEO checklists, blog pillars, and links to clustering, audit, and AI visibility tools.",
   path: "/resources",
   primaryKeyword: "SEO resources",
 });

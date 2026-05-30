@@ -2,8 +2,9 @@ import { Metadata } from 'next';
 import { buildMetadata } from '@/lib/seo';
 
 export const metadata: Metadata = buildMetadata({
-    title: 'Start Your Website Project',
-    description: 'Begin your custom website project with AnotherSEOGuru. Choose your package, tell us about your business, and get a fast, SEO-optimized website in weeks.',
+    title: 'Get Started — Website & SEO Project',
+    description:
+        'Start your website or SEO project: choose a package, share your goals, and launch a fast, SEO-ready site in weeks. Platform trial or full agency delivery available.',
     path: '/get-started',
 });
 

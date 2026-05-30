@@ -16,9 +16,9 @@ import { BASE_URL } from "@/lib/seo/description";
 import { getAppPath } from "@/lib/app-links";
 
 export const metadata = buildMetadata({
-  title: "AnotherSEOGuru — Πλατφόρμα SEO, GEO & AEO για Ελλάδα και παγκόσμια αγορά",
+  title: "Πλατφόρμα SEO, GEO & AEO — Ελλάδα",
   description:
-    "Λογισμικό SEO με Google Search Console, βελτιστοποίηση για AI αναζήτηση (GEO/AEO), σχεδιασμός ιστοσελίδων και ανάπτυξη — δοκιμή 7 ημερών με κάρτα.",
+    "Κατακτήστε την Google και την AI αναζήτηση με λογισμικό SEO από Search Console: clustering, τεχνικό SEO, GEO, AEO, κατασκευή ιστοσελίδων. Δοκιμή 7 ημερών. 500+ ομάδες.",
   path: "/gr",
   primaryKeyword: "seo ελλάδα",
 });

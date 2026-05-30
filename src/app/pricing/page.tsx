@@ -4,8 +4,9 @@ import Footer from '@/components/Footer';
 import { buildMetadata } from '@/lib/seo';
 
 export const metadata = buildMetadata({
-    title: 'Pricing | Website Creation Packages',
-    description: 'Transparent pricing for website creation, redesign, and SEO services. Choose the package that fits your business needs and budget.',
+    title: 'Agency Pricing — Web & SEO Packages',
+    description:
+        'Transparent agency pricing for website creation, redesign, SEO web design, GEO, AEO, and speed optimization. Compare packages and request a custom quote today.',
     path: '/pricing',
 });
 

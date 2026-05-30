@@ -5,9 +5,9 @@ import { getAppPath } from "@/lib/app-links";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "Software pricing — AnotherSEOGuru SEO platform",
+  title: "SEO Software Pricing & Plans",
   description:
-    "Start free and scale with credits for AI and data APIs. Full checkout and plan management live in the app — this page explains how software billing differs from agency retainers.",
+    "SEO platform pricing: 7-day card-verified trial, monthly plans, and credits for AI workflows. Compare software billing vs agency retainers and start in the app today.",
   path: "/platform/pricing",
   primaryKeyword: "SEO software pricing",
 });

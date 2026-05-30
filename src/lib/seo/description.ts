@@ -1,92 +1,111 @@
-// SEO Description Builder
-// Generates optimized meta descriptions with smart truncation
+// SEO Description Builder — targets 150–160 character meta descriptions
 
 const BASE_URL = 'https://anotherseoguru.com';
 const BRAND_NAME = 'AnotherSEOGuru';
-const DEFAULT_USP = 'Our expert team builds custom, high-performance websites optimized for Google to outrank competitors and convert more local visitors into paying customers';
+
+/** Used only when no custom description is supplied */
+const DEFAULT_USP =
+  'SEO-ready sites, GEO/AEO, and measurable growth for Search Console teams';
+
+export const META_DESC_MIN = 150;
+export const META_DESC_MAX = 160;
 
 interface DescriptionInput {
-    primaryKeyword: string;
-    location?: string;
-    industry?: string;
-    service?: string;
-    usp?: string;
-    ctaHint?: string;
+  primaryKeyword: string;
+  location?: string;
+  industry?: string;
+  service?: string;
+  usp?: string;
+  ctaHint?: string;
 }
 
-/**
- * Smart truncation at word boundary
- * Trims string to maxLength, cutting at last complete word
- */
 export function smartTruncate(text: string, maxLength: number): string {
-    if (text.length <= maxLength) return text;
+  if (text.length <= maxLength) return text;
 
-    const truncated = text.slice(0, maxLength);
-    const lastSpace = truncated.lastIndexOf(' ');
+  const truncated = text.slice(0, maxLength);
+  const lastSpace = truncated.lastIndexOf(' ');
 
-    if (lastSpace === -1) return truncated;
+  if (lastSpace === -1) return truncated;
 
-    // Remove trailing punctuation if present
-    let result = truncated.slice(0, lastSpace);
-    result = result.replace(/[,;:\-–—]$/, '').trim();
+  let result = truncated.slice(0, lastSpace);
+  result = result.replace(/[,;:\-–—]$/, '').trim();
 
-    return result;
+  return result;
 }
 
 /**
- * Build meta description with optimal length (130-160 chars target)
- * Prioritizes first 120 chars for mobile SERP visibility
+ * Ensure description is SERP-optimal (150–160 chars). Pads or trims as needed.
  */
+export function finalizeDescription(
+  text: string,
+  minLen = META_DESC_MIN,
+  maxLen = META_DESC_MAX,
+): string {
+  let d = text.replace(/\s+/g, ' ').trim();
+
+  if (d.length > maxLen) {
+    d = smartTruncate(d, maxLen - 1);
+    if (!d.endsWith('.')) d += '.';
+    return d;
+  }
+
+  if (d.length < minLen) {
+    const pads = [
+      ' Free quote or 7-day platform trial.',
+      ' Built for Google & AI search visibility.',
+      ' Trusted by 500+ marketing teams worldwide.',
+    ];
+    for (const pad of pads) {
+      if (d.length >= minLen) break;
+      const candidate = d + pad;
+      d = candidate.length <= maxLen ? candidate : smartTruncate(candidate, maxLen - 1) + '.';
+    }
+  }
+
+  if (d.length > maxLen) {
+    d = smartTruncate(d, maxLen - 1) + '.';
+  }
+
+  return d;
+}
+
 export function buildMetaDescription(input: DescriptionInput): string {
-    const { primaryKeyword, location, industry, service, usp, ctaHint } = input;
+  const { primaryKeyword, location, industry, service, usp, ctaHint } = input;
 
-    let description = '';
-    const uniqueUSP = usp || DEFAULT_USP;
-    const callToAction = ctaHint || 'Get your free expert quote today.';
+  const uniqueUSP = usp || DEFAULT_USP;
+  const callToAction = ctaHint || 'Get a free quote or start your 7-day trial.';
 
-    // Build description based on input type
-    if (service && location) {
-        // Service × Location pages
-        description = `Top-rated ${service.toLowerCase()} in ${location}. ${uniqueUSP}. We help ${location} businesses grow online. ${callToAction}`;
-    } else if (service && industry) {
-        // Industry × Service pages
-        description = `Professional ${service.toLowerCase()} specialized for ${industry.toLowerCase()} companies. ${uniqueUSP}. Trust the experts in ${industry} web design. ${callToAction}`;
-    } else if (industry) {
-        // Industry hub pages
-        description = `Complete website solutions designed specifically for ${industry.toLowerCase()} businesses. ${uniqueUSP}. Custom features for ${industry} needs. ${callToAction}`;
-    } else if (service) {
-        // Service hub pages
-        description = `Premium ${service.toLowerCase()} services to scale your business. ${uniqueUSP}. Fast turnaround and 5-star support. ${callToAction}`;
-    } else {
-        // Generic/static pages
-        description = `${primaryKeyword}. ${uniqueUSP}. 500+ satisfied clients. ${callToAction}`;
-    }
+  let description = '';
 
-    // Ensure first 120 chars contain core message, total under 160
-    if (description.length > 160) {
-        description = smartTruncate(description, 158) + '.';
-    }
+  if (service && location) {
+    description = `${service} in ${location}: ${uniqueUSP}. Local SEO, fast sites, GEO/AEO. ${callToAction}`;
+  } else if (service && industry) {
+    description = `${service} for ${industry}: ${uniqueUSP}. Industry-specific SEO and web design. ${callToAction}`;
+  } else if (industry) {
+    description = `${industry} website & SEO solutions. ${uniqueUSP}. Packages for your vertical. ${callToAction}`;
+  } else if (service) {
+    description = `${service} services: ${uniqueUSP}. Search Console workflows, AI SEO, and delivery. ${callToAction}`;
+  } else {
+    description = `${primaryKeyword}: ${uniqueUSP}. Rank on Google and AI search. ${callToAction}`;
+  }
 
-    return description;
+  return finalizeDescription(description);
 }
 
-/**
- * Get description length status for validation
- */
 export function getDescriptionStatus(description: string): {
-    length: number;
-    status: 'too-short' | 'optimal' | 'too-long';
-    message: string;
+  length: number;
+  status: 'too-short' | 'optimal' | 'too-long';
+  message: string;
 } {
-    const length = description.length;
+  const length = description.length;
 
-    if (length < 80) {
-        return { length, status: 'too-short', message: `Too short (${length} chars, min 80)` };
-    } else if (length > 180) {
-        return { length, status: 'too-long', message: `Too long (${length} chars, max 180)` };
-    } else {
-        return { length, status: 'optimal', message: `OK (${length} chars)` };
-    }
+  if (length < META_DESC_MIN) {
+    return { length, status: 'too-short', message: `Too short (${length} chars, target ${META_DESC_MIN}+)` };
+  }
+  if (length > 180) {
+    return { length, status: 'too-long', message: `Too long (${length} chars, max 180)` };
+  }
+  return { length, status: 'optimal', message: `OK (${length} chars)` };
 }
 
 export { BASE_URL, BRAND_NAME, DEFAULT_USP };

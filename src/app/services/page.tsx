@@ -5,8 +5,9 @@ import { services } from '@/data/services';
 import { buildMetadata } from '@/lib/seo';
 
 export const metadata = buildMetadata({
-    title: 'Our Services | SEO Web Design Agency',
-    description: 'Explore our comprehensive web design and SEO services. From custom website creation to speed optimization and AI visibility.',
+    title: 'Web Design & SEO Services',
+    description:
+        'Website creation, redesign, SEO web design, GEO, AEO, local SEO, content, link building, and technical audits. Full-service agency plus GSC-native software.',
     path: '/services',
 });
 

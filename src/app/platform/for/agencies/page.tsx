@@ -5,9 +5,9 @@ import { getAppPath } from "@/lib/app-links";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "SEO platform for agencies — multi-client workflows",
+  title: "SEO Platform for Agencies",
   description:
-    "White-label-ready narratives, sprint boards, GSC-centric reporting, and AI velocity for agencies managing many Search Console properties.",
+    "Multi-client SEO platform for agencies: GSC reporting, sprint boards, AI workflows, rank tracking, and white-label-ready delivery across many Search Console properties.",
   path: "/platform/for/agencies",
   primaryKeyword: "SEO software for agencies",
 });

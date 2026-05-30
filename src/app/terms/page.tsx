@@ -3,8 +3,9 @@ import Footer from '@/components/Footer';
 import { buildMetadata } from '@/lib/seo';
 
 export const metadata = buildMetadata({
-    title: 'Terms of Service | AnotherSEOGuru',
-    description: 'Terms and conditions for using AnotherSEOGuru services.',
+    title: 'Terms of Service',
+    description:
+        'Terms of service for AnotherSEOGuru SEO software, agency services, subscriptions, trials, billing, acceptable use, and limitations of liability.',
     path: '/terms',
 });
 

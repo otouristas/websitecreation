@@ -6,8 +6,9 @@ import { services } from '@/data/services';
 import { buildMetadata } from '@/lib/seo';
 
 export const metadata = buildMetadata({
-    title: 'Industry Solutions | Web Design by Business Type',
-    description: 'Specialized website solutions for every industry. Find web design and SEO services tailored for restaurants, hotels, real estate, lawyers, doctors, and more.',
+    title: 'Industry SEO & Web Solutions',
+    description:
+        'Industry-specific website and SEO solutions for restaurants, hotels, legal, medical, home services, ecommerce, and more. Tailored playbooks and service packages.',
     path: '/solutions',
 });
 

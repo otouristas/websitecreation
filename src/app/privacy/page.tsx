@@ -3,8 +3,9 @@ import Footer from '@/components/Footer';
 import { buildMetadata } from '@/lib/seo';
 
 export const metadata = buildMetadata({
-    title: 'Privacy Policy | AnotherSEOGuru',
-    description: 'How we collect, use, and protect your data.',
+    title: 'Privacy Policy',
+    description:
+        'AnotherSEOGuru privacy policy: how we collect, use, store, and protect personal data for our SEO platform, agency services, analytics, and marketing communications.',
     path: '/privacy',
 });
 

@@ -4,8 +4,9 @@ import Footer from '@/components/Footer';
 import { buildMetadata } from '@/lib/seo';
 
 export const metadata = buildMetadata({
-    title: 'About Our Web Design Agency',
-    description: 'Meet AnotherSEOGuru — web designers and SEO specialists building fast, beautiful websites that drive real business results. 500+ sites delivered. 98% satisfaction.',
+    title: 'About — SEO Agency & Software',
+    description:
+        'AnotherSEOGuru combines a GSC-native SEO platform with an execution-focused agency. Fast websites, GEO, AEO, and measurable growth. 500+ projects delivered.',
     path: '/about',
 });
 

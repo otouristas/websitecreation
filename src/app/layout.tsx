@@ -20,11 +20,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "AnotherSEOGuru | SEO Software & Agency for Search Console Teams",
+    default: "SEO, GEO & AEO Platform + Web Agency | AnotherSEOGuru",
     template: "%s",
   },
   description:
-    "GSC-native SEO software with clustering, rank tracking, audits, and AI workflows — plus agency programs for technical SEO, content, and sites that convert. 500+ teams served.",
+    "Rank on Google and AI search with GSC-native SEO software: keyword clustering, technical audits, GEO, AEO, web design, and development. Card-verified 7-day trial. 500+ teams.",
   keywords: [
     "SEO software",
     "Google Search Console",
@@ -51,9 +51,9 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: SITE_URL,
     siteName: "AnotherSEOGuru",
-    title: "AnotherSEOGuru | SEO Software & Agency for Search Console Teams",
+    title: "SEO, GEO & AEO Platform + Web Agency | AnotherSEOGuru",
     description:
-      "GSC-native SEO platform with clustering, audits, and AI workflows — plus agency delivery when you want execution done for you.",
+      "Rank on Google and AI search with GSC-native SEO software: keyword clustering, technical audits, GEO, AEO, web design, and development. Card-verified 7-day trial. 500+ teams.",
     images: [
       {
         url: "/opengraph-image.png",
@@ -65,9 +65,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AnotherSEOGuru | SEO Software & Agency for Search Console Teams",
+    title: "SEO, GEO & AEO Platform + Web Agency | AnotherSEOGuru",
     description:
-      "GSC-native SEO platform with clustering, audits, and AI workflows — plus agency programs when you want hands-on execution.",
+      "Rank on Google and AI search with GSC-native SEO software: keyword clustering, technical audits, GEO, AEO, web design, and development. Card-verified 7-day trial. 500+ teams.",
     creator: "@anotherseoguru",
     images: ["/opengraph-image.png"],
   },

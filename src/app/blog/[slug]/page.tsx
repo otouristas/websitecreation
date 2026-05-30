@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
     return {};
   }
   return buildMetadata({
-    title: `${post.title} | AnotherSEOGuru`,
+    title: post.title,
     description: post.description,
     path: `/blog/${post.slug}`,
   });

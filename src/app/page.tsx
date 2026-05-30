@@ -23,9 +23,9 @@ import { generateSoftwareApplicationSchema } from '@/lib/seo/schema';
 import { BASE_URL } from '@/lib/seo/description';
 
 export const metadata = buildMetadata({
-  title: 'AnotherSEOGuru — SEO platform + agency for Search Console teams',
+  title: 'SEO, GEO & AEO Platform + Web Agency',
   description:
-    'GSC-native SEO software with clustering, rank tracking, audits, and AI workflows — plus done-for-you agency services when you want execution.',
+    'Rank on Google and AI search with GSC-native SEO software: keyword clustering, technical audits, GEO, AEO, web design, and development. Card-verified 7-day trial. 500+ teams.',
   path: '/',
   primaryKeyword: 'SEO software',
 });

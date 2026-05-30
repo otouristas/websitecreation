@@ -5,9 +5,9 @@ import { GlossaryClient } from "@/components/glossary/GlossaryClient";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "SEO Glossary — definitions, examples, and tactics",
+  title: "SEO Glossary — 200+ Terms Explained",
   description:
-    "Browse 200+ SEO terms: on-page, technical, AI visibility, links, and more. Examples, implementation tips, and links to our platform and tools.",
+    "SEO glossary with 200+ definitions: technical SEO, GEO, AEO, AI search, links, and Search Console. Clear examples and links to platform features and guides.",
   path: "/glossary",
   primaryKeyword: "SEO glossary",
 });

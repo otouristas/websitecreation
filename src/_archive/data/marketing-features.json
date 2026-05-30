@@ -1,0 +1,1001 @@
+[
+  {
+    "slug": "sprint-board-task-management",
+    "title": "Sprint Board & Task Management",
+    "shortDescription": "Monday.com-style sprint board with AI-generated 12-week SEO plans. Track progress, execute tasks automatically, and achieve your goals.",
+    "overview": "Transform your SEO workflow with a powerful sprint board that combines project management excellence with AI-driven task generation. Our Sprint Board automatically creates 12-week SEO roadmaps based on your site's current performance, goals, and competitive landscape. Visualize your entire SEO strategy, track task completion, and watch your rankings improve week by week.",
+    "benefits": [
+      "AI-generated 12-week SEO roadmaps tailored to your site",
+      "Visual sprint board interface for easy task tracking",
+      "Automatic task prioritization based on impact potential",
+      "Progress tracking with completion metrics and timelines",
+      "Integration with all SEO tools for seamless workflow"
+    ],
+    "howItWorks": [
+      "Connect your Google Search Console account",
+      "AI analyzes your current SEO performance and goals",
+      "System generates a customized 12-week SEO plan",
+      "Tasks are automatically added to your sprint board",
+      "Track progress and execute tasks with one-click actions"
+    ],
+    "useCases": [
+      "SEO agencies managing multiple client projects",
+      "In-house SEO teams planning quarterly campaigns",
+      "Freelancers organizing client work efficiently",
+      "Businesses tracking SEO improvement initiatives"
+    ],
+    "relatedFeatures": [
+      "ai-autopilot-mode",
+      "seo-health-score",
+      "ranking-predictions",
+      "achievements-gamification"
+    ],
+    "seo": {
+      "metaTitle": "Sprint Board & Task Management for SEO | AnotherSEOGuru",
+      "metaDescription": "AI-powered sprint board with 12-week SEO plans. Track tasks, automate workflows, and achieve your SEO goals. Start your free trial today!",
+      "keywords": "SEO sprint board, SEO task management, SEO project management, AI SEO planning, SEO workflow automation"
+    }
+  },
+  {
+    "slug": "ai-autopilot-mode",
+    "title": "AI Autopilot Mode",
+    "shortDescription": "Let AI handle your SEO tasks automatically. Daily task execution, progress tracking, and email summaries—all on autopilot.",
+    "overview": "Set your SEO on autopilot and let AI handle the heavy lifting. Our Autopilot Mode automatically executes SEO tasks, monitors your rankings, identifies opportunities, and sends you daily email summaries. Focus on strategy while AI handles execution—from fixing broken links to generating meta descriptions and optimizing content.",
+    "benefits": [
+      "Fully automated SEO task execution",
+      "Daily email summaries of completed tasks",
+      "Intelligent task prioritization and scheduling",
+      "24/7 monitoring and automatic issue detection",
+      "Time savings of 20+ hours per week"
+    ],
+    "howItWorks": [
+      "Enable Autopilot Mode in your dashboard",
+      "Configure your SEO goals and priorities",
+      "AI analyzes your site and creates task queue",
+      "Tasks execute automatically based on schedule",
+      "Receive daily summaries of progress and results"
+    ],
+    "useCases": [
+      "Busy SEO professionals who want automation",
+      "Agencies managing multiple client accounts",
+      "Businesses with limited SEO resources",
+      "Teams wanting to focus on strategy over execution"
+    ],
+    "relatedFeatures": [
+      "sprint-board-task-management",
+      "content-decay-detector",
+      "seo-health-score",
+      "multi-llm-ai-system"
+    ],
+    "seo": {
+      "metaTitle": "AI Autopilot Mode for SEO Automation | AnotherSEOGuru",
+      "metaDescription": "Automate your SEO tasks with AI. Daily execution, progress tracking, and email summaries. Save 20+ hours per week. Start free trial!",
+      "keywords": "SEO automation, AI SEO, automated SEO tasks, SEO autopilot, AI content generation"
+    }
+  },
+  {
+    "slug": "keyword-research-clustering",
+    "title": "Keyword Research & Clustering",
+    "shortDescription": "Access 50M+ keywords with difficulty scores, search volumes, and intelligent clustering to find profitable opportunities.",
+    "overview": "Discover profitable keyword opportunities with access to over 50 million keywords. Our advanced keyword research tool provides search volumes, difficulty scores, CPC data, and trend analysis. AI-powered clustering automatically groups related keywords by semantic intent, helping you build comprehensive content strategies around topic clusters.",
+    "benefits": [
+      "Access to 50M+ keyword database with real-time data",
+      "AI-powered semantic clustering by search intent",
+      "Difficulty scores and competition analysis",
+      "Search volume trends and seasonality insights",
+      "Topic cluster recommendations for content planning"
+    ],
+    "howItWorks": [
+      "Enter your seed keywords or topics",
+      "System searches 50M+ keyword database",
+      "AI analyzes and clusters keywords by intent",
+      "Review difficulty scores and search volumes",
+      "Export clusters for content planning"
+    ],
+    "useCases": [
+      "Content marketers planning editorial calendars",
+      "SEO professionals finding new opportunities",
+      "E-commerce sites optimizing product pages",
+      "Bloggers discovering trending topics"
+    ],
+    "relatedFeatures": [
+      "serp-tracking-analysis",
+      "content-gap-analysis",
+      "semantic-keyword-clustering",
+      "serp-intent-mapper"
+    ],
+    "seo": {
+      "metaTitle": "Keyword Research & Clustering Tool | 50M+ Keywords | AnotherSEOGuru",
+      "metaDescription": "Research 50M+ keywords with AI clustering. Find profitable opportunities with difficulty scores, search volumes, and intent analysis. Free trial!",
+      "keywords": "keyword research, keyword clustering, SEO keywords, keyword analysis, semantic keyword clustering"
+    }
+  },
+  {
+    "slug": "serp-tracking-analysis",
+    "title": "SERP Tracking & Analysis",
+    "shortDescription": "Monitor your rankings 24/7 across desktop and mobile. Track competitors and identify SERP features to dominate.",
+    "overview": "Track your search engine rankings in real-time across desktop and mobile devices. Monitor position changes, track competitors, and identify SERP feature opportunities. Get instant alerts when rankings drop or when competitors outrank you. Comprehensive SERP analysis helps you understand what it takes to dominate search results.",
+    "benefits": [
+      "24/7 real-time ranking tracking across devices",
+      "Competitor ranking monitoring and alerts",
+      "SERP feature detection (snippets, PAA, images)",
+      "Historical ranking data and trend analysis",
+      "Mobile vs desktop ranking comparisons"
+    ],
+    "howItWorks": [
+      "Add keywords you want to track",
+      "System monitors rankings daily",
+      "Track positions across desktop and mobile",
+      "Receive alerts for ranking changes",
+      "Analyze SERP features and opportunities"
+    ],
+    "useCases": [
+      "SEO professionals tracking client rankings",
+      "E-commerce sites monitoring product keywords",
+      "Content creators tracking article performance",
+      "Local businesses tracking local pack rankings"
+    ],
+    "relatedFeatures": [
+      "ranking-tracker",
+      "serp-feature-hunter",
+      "competitor-analysis",
+      "ranking-predictions"
+    ],
+    "seo": {
+      "metaTitle": "SERP Tracking & Analysis Tool | Real-Time Rankings | AnotherSEOGuru",
+      "metaDescription": "Track rankings 24/7 across desktop and mobile. Monitor competitors and identify SERP features. Start your free trial today!",
+      "keywords": "SERP tracking, rank tracking, SERP analysis, ranking monitor, search rankings"
+    }
+  },
+  {
+    "slug": "serpproof-testing",
+    "title": "SERPProof Testing",
+    "shortDescription": "Run SEO experiments and A/B tests on your Google Search Console data. Time-based tests and CTR opportunities analysis.",
+    "overview": "Run scientific SEO experiments on your Google Search Console data. Test different strategies, measure impact, and make data-driven decisions. Our SERPProof Testing tool lets you create time-based experiments, analyze CTR opportunities, and validate SEO hypotheses before committing to major changes.",
+    "benefits": [
+      "Run A/B tests on real GSC data",
+      "Time-based experiment tracking",
+      "CTR opportunity identification",
+      "Statistical significance validation",
+      "Experiment results and recommendations"
+    ],
+    "howItWorks": [
+      "Create an experiment with your hypothesis",
+      "Define test parameters and duration",
+      "System tracks performance metrics",
+      "Compare test vs control groups",
+      "Get statistical analysis and recommendations"
+    ],
+    "useCases": [
+      "Testing meta description variations",
+      "Validating title tag changes",
+      "Measuring content update impact",
+      "Testing schema markup implementations"
+    ],
+    "relatedFeatures": [
+      "serp-tracking-analysis",
+      "ranking-tracker",
+      "seo-health-score",
+      "technical-seo-audits"
+    ],
+    "seo": {
+      "metaTitle": "SERPProof Testing - SEO A/B Testing Tool | AnotherSEOGuru",
+      "metaDescription": "Run SEO experiments and A/B tests on Google Search Console data. Validate strategies with statistical analysis. Free trial!",
+      "keywords": "SEO testing, SEO experiments, A/B testing SEO, SERP testing, SEO validation"
+    }
+  },
+  {
+    "slug": "backlink-monitoring",
+    "title": "Backlink Monitoring",
+    "shortDescription": "Track your backlink profile with quality scoring, anchor text analysis, and competitor gap identification.",
+    "overview": "Monitor your backlink profile continuously with quality scoring, anchor text analysis, and toxic link detection. Track new backlinks, lost links, and competitor backlink gaps. Get alerts for suspicious links and opportunities to acquire high-quality backlinks from competitors.",
+    "benefits": [
+      "Continuous backlink monitoring and alerts",
+      "Quality scoring and toxic link detection",
+      "Anchor text analysis and distribution",
+      "Competitor backlink gap identification",
+      "Historical backlink tracking and trends"
+    ],
+    "howItWorks": [
+      "Add your domain and competitor domains",
+      "System crawls and indexes backlinks",
+      "Quality scores assigned to each link",
+      "Receive alerts for new/lost links",
+      "Analyze gaps and opportunities"
+    ],
+    "useCases": [
+      "SEO professionals managing link profiles",
+      "Agencies tracking client backlinks",
+      "Businesses monitoring brand mentions",
+      "Content creators tracking article links"
+    ],
+    "relatedFeatures": [
+      "link-velocity-tracker",
+      "outreach-autopilot",
+      "competitor-analysis",
+      "eeat-optimizer"
+    ],
+    "seo": {
+      "metaTitle": "Backlink Monitoring Tool | Quality Scoring & Analysis | AnotherSEOGuru",
+      "metaDescription": "Monitor backlinks with quality scoring, anchor text analysis, and competitor gaps. Track new/lost links with alerts. Free trial!",
+      "keywords": "backlink monitoring, backlink analysis, link building, backlink tracker, SEO backlinks"
+    }
+  },
+  {
+    "slug": "competitor-analysis",
+    "title": "Competitor Analysis",
+    "shortDescription": "Spy on competitors' keywords, content strategies, backlinks, and ranking patterns to stay ahead.",
+    "overview": "Gain competitive intelligence by analyzing your competitors' SEO strategies. Discover their top keywords, content strategies, backlink sources, and ranking patterns. Identify opportunities to outrank them and understand what's working in your industry.",
+    "benefits": [
+      "Competitor keyword discovery and analysis",
+      "Content strategy insights and gaps",
+      "Backlink profile comparison",
+      "Ranking pattern analysis",
+      "Opportunity identification"
+    ],
+    "howItWorks": [
+      "Add competitor domains",
+      "System analyzes their SEO strategy",
+      "Compare keywords, content, and backlinks",
+      "Identify gaps and opportunities",
+      "Get actionable recommendations"
+    ],
+    "useCases": [
+      "SEO professionals benchmarking clients",
+      "Content teams researching competitors",
+      "E-commerce sites analyzing competitors",
+      "Startups understanding market leaders"
+    ],
+    "relatedFeatures": [
+      "competitor-content-spy",
+      "content-gap-analysis",
+      "backlink-monitoring",
+      "serp-tracking-analysis"
+    ],
+    "seo": {
+      "metaTitle": "Competitor Analysis Tool | SEO Competitive Intelligence | AnotherSEOGuru",
+      "metaDescription": "Analyze competitors' keywords, content, backlinks, and rankings. Discover opportunities to outrank them. Start free trial!",
+      "keywords": "competitor analysis, SEO competitive analysis, competitor research, competitive intelligence"
+    }
+  },
+  {
+    "slug": "ranking-tracker",
+    "title": "Ranking Tracker",
+    "shortDescription": "Track unlimited keywords with historical data, position changes, and visibility trends over time.",
+    "overview": "Track unlimited keywords with comprehensive historical data, position change alerts, and visibility trend analysis. Monitor your SEO progress over time with detailed charts and reports. Get instant notifications when rankings change significantly.",
+    "benefits": [
+      "Unlimited keyword tracking",
+      "Historical ranking data and trends",
+      "Position change alerts and notifications",
+      "Visibility score calculations",
+      "Detailed ranking reports and charts"
+    ],
+    "howItWorks": [
+      "Add keywords to track",
+      "System monitors rankings daily",
+      "Historical data stored automatically",
+      "Receive alerts for significant changes",
+      "Analyze trends and patterns"
+    ],
+    "useCases": [
+      "SEO agencies tracking client keywords",
+      "E-commerce monitoring product rankings",
+      "Content creators tracking article keywords",
+      "Local businesses tracking local keywords"
+    ],
+    "relatedFeatures": [
+      "serp-tracking-analysis",
+      "ranking-predictions",
+      "serp-feature-hunter",
+      "seo-health-score"
+    ],
+    "seo": {
+      "metaTitle": "Ranking Tracker | Unlimited Keyword Tracking | AnotherSEOGuru",
+      "metaDescription": "Track unlimited keywords with historical data, position alerts, and visibility trends. Monitor SEO progress. Free trial!",
+      "keywords": "ranking tracker, keyword tracking, rank monitor, SEO tracking, position tracking"
+    }
+  },
+  {
+    "slug": "ai-content-generation",
+    "title": "AI Content Generation",
+    "shortDescription": "Generate platform-optimized content for Medium, LinkedIn, Reddit, X, YouTube, TikTok, Instagram, and blogs.",
+    "overview": "Transform one piece of content into 8+ platform-optimized versions using AI. Generate content for Medium, LinkedIn, Reddit, X (Twitter), YouTube, TikTok, Instagram, and SEO blogs. Each version is optimized for the platform's unique format, audience, and best practices.",
+    "benefits": [
+      "Generate 8+ platform versions from one piece",
+      "Platform-specific optimization and formatting",
+      "SEO-optimized blog content generation",
+      "Social media content creation",
+      "Time savings of 10+ hours per piece"
+    ],
+    "howItWorks": [
+      "Input your source content or URL",
+      "Select target platforms",
+      "AI generates optimized versions",
+      "Review and edit as needed",
+      "Publish across all platforms"
+    ],
+    "useCases": [
+      "Content creators repurposing content",
+      "Marketing teams scaling content production",
+      "Bloggers expanding to social media",
+      "Agencies creating multi-platform campaigns"
+    ],
+    "relatedFeatures": [
+      "multi-llm-ai-system",
+      "content-gap-analysis",
+      "seo-health-score",
+      "semantic-keyword-clustering"
+    ],
+    "seo": {
+      "metaTitle": "AI Content Generation | Multi-Platform Content | AnotherSEOGuru",
+      "metaDescription": "Generate platform-optimized content for 8+ platforms. Transform one piece into Medium, LinkedIn, X, YouTube, TikTok versions. Free trial!",
+      "keywords": "AI content generation, content repurposing, multi-platform content, AI writing, content automation"
+    }
+  },
+  {
+    "slug": "technical-seo-audits",
+    "title": "Technical SEO Audits",
+    "shortDescription": "Run comprehensive site audits with 60+ checks including Core Web Vitals, mobile-friendliness, and technical issues.",
+    "overview": "Run comprehensive technical SEO audits with 60+ automated checks. Identify Core Web Vitals issues, mobile-friendliness problems, crawl errors, duplicate content, and more. Get prioritized recommendations to fix technical issues that impact your search rankings.",
+    "benefits": [
+      "60+ automated technical SEO checks",
+      "Core Web Vitals analysis",
+      "Mobile-friendliness testing",
+      "Crawl error detection",
+      "Prioritized fix recommendations"
+    ],
+    "howItWorks": [
+      "Enter your website URL",
+      "System crawls your site",
+      "Runs 60+ technical checks",
+      "Generates comprehensive report",
+      "Get prioritized action items"
+    ],
+    "useCases": [
+      "SEO professionals auditing client sites",
+      "Web developers fixing technical issues",
+      "Businesses preparing for site launches",
+      "Agencies providing audit services"
+    ],
+    "relatedFeatures": [
+      "seo-health-score",
+      "content-decay-detector",
+      "eeat-optimizer",
+      "sprint-board-task-management"
+    ],
+    "seo": {
+      "metaTitle": "Technical SEO Audit Tool | 60+ Checks | AnotherSEOGuru",
+      "metaDescription": "Run comprehensive technical SEO audits with 60+ checks. Core Web Vitals, mobile-friendliness, crawl errors. Free trial!",
+      "keywords": "technical SEO audit, SEO audit tool, site audit, technical SEO, Core Web Vitals"
+    }
+  },
+  {
+    "slug": "local-seo-google-maps",
+    "title": "Local SEO & Google Maps",
+    "shortDescription": "Track local rankings, monitor Google Maps positions, manage citations, and optimize for local pack.",
+    "overview": "Dominate local search with comprehensive local SEO tools. Track your Google Maps rankings, monitor local pack positions, manage citations across directories, and optimize your Google Business Profile. Get insights into local competitors and opportunities to improve your local visibility.",
+    "benefits": [
+      "Google Maps ranking tracking",
+      "Local pack position monitoring",
+      "Citation management and tracking",
+      "NAP consistency checking",
+      "Local competitor analysis"
+    ],
+    "howItWorks": [
+      "Add your business location",
+      "System tracks local rankings",
+      "Monitor Google Maps positions",
+      "Check citation consistency",
+      "Get optimization recommendations"
+    ],
+    "useCases": [
+      "Local businesses optimizing for local search",
+      "Multi-location businesses",
+      "Service area businesses",
+      "Restaurants and retail stores"
+    ],
+    "relatedFeatures": [
+      "ranking-tracker",
+      "competitor-analysis",
+      "technical-seo-audits",
+      "seo-health-score"
+    ],
+    "seo": {
+      "metaTitle": "Local SEO & Google Maps Optimization | AnotherSEOGuru",
+      "metaDescription": "Track local rankings, monitor Google Maps positions, manage citations. Optimize for local pack. Start free trial!",
+      "keywords": "local SEO, Google Maps SEO, local pack optimization, local rankings, citation management"
+    }
+  },
+  {
+    "slug": "shopping-product-research",
+    "title": "Shopping & Product Research",
+    "shortDescription": "Analyze product listings, track shopping ads, monitor competitor prices, and optimize for e-commerce.",
+    "overview": "Optimize your e-commerce SEO with comprehensive product research tools. Analyze product listings, track shopping ad performance, monitor competitor prices, and identify opportunities to improve your product visibility in Google Shopping and organic search.",
+    "benefits": [
+      "Product listing analysis and optimization",
+      "Shopping ad performance tracking",
+      "Competitor price monitoring",
+      "Product SEO opportunity identification",
+      "E-commerce ranking insights"
+    ],
+    "howItWorks": [
+      "Add your product URLs or SKUs",
+      "System analyzes product listings",
+      "Track shopping ad performance",
+      "Monitor competitor prices",
+      "Get optimization recommendations"
+    ],
+    "useCases": [
+      "E-commerce stores optimizing products",
+      "Online retailers tracking performance",
+      "Dropshipping businesses",
+      "Marketplace sellers"
+    ],
+    "relatedFeatures": [
+      "ranking-tracker",
+      "competitor-analysis",
+      "serp-tracking-analysis",
+      "content-gap-analysis"
+    ],
+    "seo": {
+      "metaTitle": "Shopping & Product Research Tool | E-commerce SEO | AnotherSEOGuru",
+      "metaDescription": "Analyze product listings, track shopping ads, monitor competitor prices. Optimize e-commerce SEO. Free trial!",
+      "keywords": "e-commerce SEO, product SEO, shopping ads, Google Shopping, product research"
+    }
+  },
+  {
+    "slug": "content-gap-analysis",
+    "title": "Content Gap Analysis",
+    "shortDescription": "Discover keyword opportunities, identify content gaps, detect cannibalization, and plan your content strategy.",
+    "overview": "Discover content opportunities by analyzing gaps between your content and competitors. Identify keywords competitors rank for that you don't, find content gaps in your strategy, and detect keyword cannibalization issues. Build a data-driven content plan that fills gaps and maximizes opportunities.",
+    "benefits": [
+      "Competitor content gap identification",
+      "Keyword opportunity discovery",
+      "Cannibalization detection",
+      "Content strategy recommendations",
+      "Priority scoring for opportunities"
+    ],
+    "howItWorks": [
+      "Add your site and competitor sites",
+      "System analyzes content and keywords",
+      "Identifies gaps and opportunities",
+      "Detects cannibalization issues",
+      "Generates prioritized content plan"
+    ],
+    "useCases": [
+      "Content teams planning strategies",
+      "SEO professionals finding opportunities",
+      "Bloggers expanding content",
+      "E-commerce sites optimizing categories"
+    ],
+    "relatedFeatures": [
+      "competitor-analysis",
+      "keyword-research-clustering",
+      "cannibalization-doctor",
+      "semantic-keyword-clustering"
+    ],
+    "seo": {
+      "metaTitle": "Content Gap Analysis Tool | Find Content Opportunities | AnotherSEOGuru",
+      "metaDescription": "Discover content gaps, keyword opportunities, and cannibalization issues. Plan data-driven content strategy. Free trial!",
+      "keywords": "content gap analysis, content strategy, keyword opportunities, content planning, SEO content"
+    }
+  },
+  {
+    "slug": "multi-llm-ai-system",
+    "title": "Multi-LLM AI System",
+    "shortDescription": "Advanced AI powered by Claude, GPT-5, Gemini, and Perplexity. Smart routing, consensus analysis, and training data pipeline.",
+    "overview": "Leverage the power of multiple AI models working together. Our Multi-LLM system intelligently routes tasks to Claude, GPT-5, Gemini, or Perplexity based on the task type. Get consensus analysis from multiple models for critical decisions and benefit from our continuous training data pipeline that improves results over time.",
+    "benefits": [
+      "Access to Claude, GPT-5, Gemini, and Perplexity",
+      "Intelligent routing to best model per task",
+      "Consensus analysis from multiple models",
+      "Continuous improvement via training pipeline",
+      "Best-in-class AI results for SEO"
+    ],
+    "howItWorks": [
+      "Submit your SEO task or query",
+      "System routes to optimal AI model",
+      "Multiple models analyze when needed",
+      "Consensus results provided",
+      "Results improve over time"
+    ],
+    "useCases": [
+      "Complex SEO strategy questions",
+      "Content brief generation",
+      "Technical SEO analysis",
+      "Competitive intelligence"
+    ],
+    "relatedFeatures": [
+      "ai-content-generation",
+      "ai-autopilot-mode",
+      "seo-health-score",
+      "sprint-board-task-management"
+    ],
+    "seo": {
+      "metaTitle": "Multi-LLM AI System | Claude, GPT-5, Gemini | AnotherSEOGuru",
+      "metaDescription": "Advanced AI powered by Claude, GPT-5, Gemini, Perplexity. Smart routing and consensus analysis. Free trial!",
+      "keywords": "AI SEO, multi-LLM, Claude AI, GPT-5, Gemini AI, Perplexity AI"
+    }
+  },
+  {
+    "slug": "achievements-gamification",
+    "title": "Achievements & Gamification",
+    "shortDescription": "Unlock achievements, maintain daily streaks, and track your progress with visual progress rings and celebration toasts.",
+    "overview": "Make SEO fun and engaging with achievements and gamification. Unlock achievements as you complete SEO tasks, maintain daily streaks, and track your progress with beautiful visual progress rings. Celebrate milestones with toast notifications and stay motivated to improve your SEO consistently.",
+    "benefits": [
+      "Achievement system for SEO milestones",
+      "Daily streak tracking and rewards",
+      "Visual progress rings and metrics",
+      "Celebration toasts for achievements",
+      "Increased motivation and engagement"
+    ],
+    "howItWorks": [
+      "Complete SEO tasks and activities",
+      "Earn achievements automatically",
+      "Maintain daily streaks",
+      "Track progress with visual rings",
+      "Celebrate milestones"
+    ],
+    "useCases": [
+      "SEO professionals staying motivated",
+      "Teams building SEO habits",
+      "Agencies engaging clients",
+      "Individuals tracking personal progress"
+    ],
+    "relatedFeatures": [
+      "sprint-board-task-management",
+      "seo-health-score",
+      "ai-autopilot-mode",
+      "ranking-tracker"
+    ],
+    "seo": {
+      "metaTitle": "SEO Gamification & Achievements | AnotherSEOGuru",
+      "metaDescription": "Unlock achievements, maintain streaks, track progress with visual rings. Make SEO fun and engaging. Free trial!",
+      "keywords": "SEO gamification, SEO achievements, SEO motivation, gamified SEO"
+    }
+  },
+  {
+    "slug": "algorithm-drop-detector",
+    "title": "Algorithm Drop Detector",
+    "shortDescription": "Get instant alerts for Google algorithm updates, analyze impact on your rankings, and receive recovery recommendations.",
+    "overview": "Stay ahead of Google algorithm updates with instant detection and impact analysis. Get alerts when Google releases algorithm updates, analyze how they affect your rankings, and receive actionable recovery recommendations. Never be caught off guard by algorithm changes again.",
+    "benefits": [
+      "Instant algorithm update detection",
+      "Ranking impact analysis",
+      "Recovery recommendations",
+      "Historical algorithm tracking",
+      "Competitor impact comparison"
+    ],
+    "howItWorks": [
+      "System monitors for algorithm updates",
+      "Instant alerts sent when updates detected",
+      "Analyze ranking changes",
+      "Get recovery recommendations",
+      "Track recovery progress"
+    ],
+    "useCases": [
+      "SEO professionals monitoring updates",
+      "Agencies protecting client rankings",
+      "Businesses recovering from penalties",
+      "Websites tracking algorithm impact"
+    ],
+    "relatedFeatures": [
+      "ranking-tracker",
+      "seo-health-score",
+      "content-decay-detector",
+      "serp-tracking-analysis"
+    ],
+    "seo": {
+      "metaTitle": "Algorithm Drop Detector | Google Update Alerts | AnotherSEOGuru",
+      "metaDescription": "Get instant alerts for Google algorithm updates, analyze impact, and receive recovery recommendations. Free trial!",
+      "keywords": "Google algorithm update, algorithm detector, SEO recovery, algorithm impact analysis"
+    }
+  },
+  {
+    "slug": "content-decay-detector",
+    "title": "Content Decay Detector",
+    "shortDescription": "AI monitors your content for decay signals and automatically schedules refresh tasks. Never let stale content hurt your rankings.",
+    "overview": "Automatically detect when your content is decaying and needs refresh. Our AI monitors ranking drops, traffic decline, CTR loss, and other decay signals. When decay is detected, the system automatically schedules refresh tasks in your Sprint Board, ensuring your content stays fresh and competitive.",
+    "benefits": [
+      "Automatic content decay detection",
+      "AI-powered signal analysis",
+      "Automatic refresh task scheduling",
+      "Decay trend tracking",
+      "Prevent ranking losses proactively"
+    ],
+    "howItWorks": [
+      "System monitors content performance",
+      "AI detects decay signals",
+      "Decay alerts sent",
+      "Refresh tasks auto-scheduled",
+      "Track refresh impact"
+    ],
+    "useCases": [
+      "Content teams maintaining freshness",
+      "Bloggers updating old articles",
+      "E-commerce sites refreshing product pages",
+      "SEO professionals preventing decay"
+    ],
+    "relatedFeatures": [
+      "sprint-board-task-management",
+      "ranking-tracker",
+      "seo-health-score",
+      "ai-autopilot-mode"
+    ],
+    "seo": {
+      "metaTitle": "Content Decay Detector | Auto-Refresh Content | AnotherSEOGuru",
+      "metaDescription": "AI detects content decay and auto-schedules refresh tasks. Prevent ranking losses from stale content. Free trial!",
+      "keywords": "content decay, content refresh, stale content, content maintenance, SEO content"
+    }
+  },
+  {
+    "slug": "seo-health-score",
+    "title": "SEO Health Score",
+    "shortDescription": "Real-time SEO health score (0-100) with predictive analytics. Track technical, content, authority, and UX scores.",
+    "overview": "Get a comprehensive view of your SEO health with a real-time score from 0-100. Track technical SEO, content quality, authority metrics, and user experience scores separately. Use predictive analytics to forecast future performance and identify areas needing improvement.",
+    "benefits": [
+      "Real-time SEO health score (0-100)",
+      "Breakdown by technical, content, authority, UX",
+      "Predictive analytics and forecasting",
+      "Historical trend tracking",
+      "Actionable improvement recommendations"
+    ],
+    "howItWorks": [
+      "System analyzes all SEO factors",
+      "Calculates health score components",
+      "Generates overall health score",
+      "Provides improvement recommendations",
+      "Tracks trends over time"
+    ],
+    "useCases": [
+      "SEO professionals monitoring site health",
+      "Agencies reporting to clients",
+      "Businesses tracking SEO progress",
+      "Websites preparing for launches"
+    ],
+    "relatedFeatures": [
+      "technical-seo-audits",
+      "ranking-tracker",
+      "sprint-board-task-management",
+      "ranking-predictions"
+    ],
+    "seo": {
+      "metaTitle": "SEO Health Score | Real-Time SEO Metrics | AnotherSEOGuru",
+      "metaDescription": "Real-time SEO health score (0-100) with predictive analytics. Track technical, content, authority, UX. Free trial!",
+      "keywords": "SEO health score, SEO metrics, SEO analytics, SEO dashboard, SEO monitoring"
+    }
+  },
+  {
+    "slug": "ranking-predictions",
+    "title": "Ranking Predictions",
+    "shortDescription": "AI predicts your keyword rankings for 7/30/90 days based on trajectory and competitor velocity.",
+    "overview": "Predict your future keyword rankings with AI-powered forecasting. Our system analyzes your historical ranking trajectory, competitor velocity, and market trends to predict where your keywords will rank in 7, 30, and 90 days. Plan your SEO strategy with confidence using data-driven predictions.",
+    "benefits": [
+      "AI-powered ranking predictions",
+      "7/30/90 day forecasts",
+      "Trajectory and velocity analysis",
+      "Competitor impact consideration",
+      "Strategic planning insights"
+    ],
+    "howItWorks": [
+      "System analyzes historical rankings",
+      "Calculates trajectory and velocity",
+      "Considers competitor movements",
+      "Generates predictions for 7/30/90 days",
+      "Updates predictions as data changes"
+    ],
+    "useCases": [
+      "SEO professionals planning strategies",
+      "Agencies forecasting client results",
+      "Businesses setting SEO goals",
+      "Content teams prioritizing efforts"
+    ],
+    "relatedFeatures": [
+      "ranking-tracker",
+      "serp-tracking-analysis",
+      "seo-health-score",
+      "sprint-board-task-management"
+    ],
+    "seo": {
+      "metaTitle": "Ranking Predictions | AI SEO Forecasting | AnotherSEOGuru",
+      "metaDescription": "AI predicts keyword rankings for 7/30/90 days based on trajectory and competitor velocity. Free trial!",
+      "keywords": "ranking predictions, SEO forecasting, keyword predictions, SEO analytics, ranking forecast"
+    }
+  },
+  {
+    "slug": "competitor-content-spy",
+    "title": "Competitor Content Spy",
+    "shortDescription": "Monitor competitors 24/7 and get instant alerts on new pages, content updates, and strategy changes.",
+    "overview": "Monitor your competitors 24/7 and never miss a strategy change. Get instant alerts when competitors publish new pages, update content, change meta tags, or lose backlinks. Stay ahead of the competition by knowing exactly what they're doing and when.",
+    "benefits": [
+      "24/7 competitor monitoring",
+      "Instant alerts for new pages",
+      "Content update notifications",
+      "Meta tag change tracking",
+      "Backlink loss detection"
+    ],
+    "howItWorks": [
+      "Add competitor domains to monitor",
+      "System crawls competitors continuously",
+      "Detects new pages and updates",
+      "Sends instant alerts",
+      "Tracks changes over time"
+    ],
+    "useCases": [
+      "SEO professionals monitoring competitors",
+      "Content teams tracking competitor content",
+      "Agencies staying ahead of competition",
+      "Businesses in competitive markets"
+    ],
+    "relatedFeatures": [
+      "competitor-analysis",
+      "content-gap-analysis",
+      "backlink-monitoring",
+      "serp-tracking-analysis"
+    ],
+    "seo": {
+      "metaTitle": "Competitor Content Spy | 24/7 Monitoring | AnotherSEOGuru",
+      "metaDescription": "Monitor competitors 24/7. Get instant alerts on new pages, content updates, and strategy changes. Free trial!",
+      "keywords": "competitor monitoring, competitor spy, competitive intelligence, competitor tracking"
+    }
+  },
+  {
+    "slug": "semantic-keyword-clustering",
+    "title": "Semantic Keyword Clustering",
+    "shortDescription": "AI groups keywords by semantic intent and auto-generates topic cluster plans with pillar page strategies.",
+    "overview": "Build comprehensive topic clusters with AI-powered semantic keyword clustering. Our system groups keywords by semantic intent using advanced embeddings, then auto-generates topic cluster plans with pillar page strategies. Create content architectures that dominate entire topic areas.",
+    "benefits": [
+      "AI-powered semantic clustering",
+      "Intent-based keyword grouping",
+      "Automatic topic cluster plans",
+      "Pillar page strategy recommendations",
+      "Content architecture visualization"
+    ],
+    "howItWorks": [
+      "Input your keyword list",
+      "AI analyzes semantic relationships",
+      "Groups keywords by intent",
+      "Generates cluster plans",
+      "Recommends pillar page structure"
+    ],
+    "useCases": [
+      "Content teams building topic clusters",
+      "SEO professionals planning content",
+      "Bloggers organizing content strategy",
+      "E-commerce sites optimizing categories"
+    ],
+    "relatedFeatures": [
+      "keyword-research-clustering",
+      "content-gap-analysis",
+      "serp-intent-mapper",
+      "ai-content-generation"
+    ],
+    "seo": {
+      "metaTitle": "Semantic Keyword Clustering | Topic Clusters | AnotherSEOGuru",
+      "metaDescription": "AI groups keywords by semantic intent and auto-generates topic cluster plans with pillar page strategies. Free trial!",
+      "keywords": "semantic keyword clustering, topic clusters, keyword grouping, content clusters, pillar pages"
+    }
+  },
+  {
+    "slug": "serp-intent-mapper",
+    "title": "SERP Intent Mapper",
+    "shortDescription": "Visual map of what Google wants: intent, content structure, gaps, and opportunities for each keyword.",
+    "overview": "Understand exactly what Google wants for each keyword with visual SERP intent mapping. See search intent, content structure requirements, gaps in your content, and opportunities to win rankings. Create content that perfectly matches what Google rewards for each keyword.",
+    "benefits": [
+      "Visual SERP intent mapping",
+      "Content structure analysis",
+      "Gap identification",
+      "Opportunity visualization",
+      "Content recommendations"
+    ],
+    "howItWorks": [
+      "Enter keywords to analyze",
+      "System analyzes SERP results",
+      "Maps intent and structure",
+      "Identifies gaps and opportunities",
+      "Provides content recommendations"
+    ],
+    "useCases": [
+      "Content creators optimizing articles",
+      "SEO professionals planning content",
+      "Bloggers matching search intent",
+      "E-commerce optimizing product pages"
+    ],
+    "relatedFeatures": [
+      "keyword-research-clustering",
+      "serp-feature-hunter",
+      "content-gap-analysis",
+      "ai-content-generation"
+    ],
+    "seo": {
+      "metaTitle": "SERP Intent Mapper | Search Intent Analysis | AnotherSEOGuru",
+      "metaDescription": "Visual map of what Google wants: intent, content structure, gaps, and opportunities. Free trial!",
+      "keywords": "SERP intent, search intent, intent mapping, content structure, SEO intent"
+    }
+  },
+  {
+    "slug": "cannibalization-doctor",
+    "title": "Cannibalization Doctor",
+    "shortDescription": "Detects keyword cannibalization issues and suggests merge strategies to consolidate rankings and boost authority.",
+    "overview": "Detect and fix keyword cannibalization issues automatically. Our Cannibalization Doctor identifies when multiple pages compete for the same keywords, analyzes the impact, and suggests merge strategies including redirects, canonicals, or noindex tags. Consolidate rankings and boost authority by eliminating internal competition.",
+    "benefits": [
+      "Automatic cannibalization detection",
+      "Impact analysis and scoring",
+      "Merge strategy recommendations",
+      "Redirect and canonical suggestions",
+      "Authority consolidation"
+    ],
+    "howItWorks": [
+      "System analyzes your site structure",
+      "Detects competing pages for keywords",
+      "Calculates cannibalization impact",
+      "Recommends merge strategies",
+      "Tracks fix implementation"
+    ],
+    "useCases": [
+      "SEO professionals fixing site issues",
+      "Web developers consolidating pages",
+      "Content teams organizing content",
+      "E-commerce sites optimizing categories"
+    ],
+    "relatedFeatures": [
+      "content-gap-analysis",
+      "technical-seo-audits",
+      "seo-health-score",
+      "sprint-board-task-management"
+    ],
+    "seo": {
+      "metaTitle": "Cannibalization Doctor | Fix Keyword Cannibalization | AnotherSEOGuru",
+      "metaDescription": "Detect and fix keyword cannibalization. Get merge strategies to consolidate rankings. Free trial!",
+      "keywords": "keyword cannibalization, cannibalization fix, SEO cannibalization, duplicate content"
+    }
+  },
+  {
+    "slug": "serp-feature-hunter",
+    "title": "SERP Feature Hunter",
+    "shortDescription": "Finds featured snippet, PAA, video carousel opportunities and auto-generates optimized content to win them.",
+    "overview": "Hunt down SERP feature opportunities and win them with optimized content. Our SERP Feature Hunter identifies opportunities for featured snippets, People Also Ask boxes, video carousels, and image packs. Then it auto-generates optimized content specifically designed to win these valuable SERP features.",
+    "benefits": [
+      "SERP feature opportunity detection",
+      "Featured snippet optimization",
+      "PAA box content generation",
+      "Video carousel opportunities",
+      "Auto-generated optimized content"
+    ],
+    "howItWorks": [
+      "System analyzes SERP features",
+      "Identifies opportunities",
+      "Generates optimized content",
+      "Provides implementation guide",
+      "Tracks feature wins"
+    ],
+    "useCases": [
+      "SEO professionals winning snippets",
+      "Content creators targeting features",
+      "Bloggers increasing visibility",
+      "Businesses dominating SERPs"
+    ],
+    "relatedFeatures": [
+      "serp-tracking-analysis",
+      "serp-intent-mapper",
+      "ai-content-generation",
+      "ranking-tracker"
+    ],
+    "seo": {
+      "metaTitle": "SERP Feature Hunter | Win Featured Snippets | AnotherSEOGuru",
+      "metaDescription": "Find featured snippet, PAA, video carousel opportunities. Auto-generate optimized content to win them. Free trial!",
+      "keywords": "featured snippets, SERP features, PAA boxes, snippet optimization, SERP feature hunting"
+    }
+  },
+  {
+    "slug": "link-velocity-tracker",
+    "title": "Link Velocity Tracker",
+    "shortDescription": "Tracks backlink acquisition rate, compares with competitors, and automates outreach campaigns.",
+    "overview": "Track your backlink acquisition velocity and compare it with competitors. Monitor your link building momentum, identify when velocity drops, and automatically trigger outreach campaigns. Maintain consistent link growth to build authority and improve rankings.",
+    "benefits": [
+      "Backlink velocity tracking",
+      "Competitor velocity comparison",
+      "Velocity drop alerts",
+      "Automated outreach triggers",
+      "Link building momentum analysis"
+    ],
+    "howItWorks": [
+      "System tracks new backlinks",
+      "Calculates acquisition velocity",
+      "Compares with competitors",
+      "Alerts on velocity drops",
+      "Triggers outreach campaigns"
+    ],
+    "useCases": [
+      "Link builders tracking progress",
+      "SEO professionals monitoring authority",
+      "Agencies managing link campaigns",
+      "Businesses building domain authority"
+    ],
+    "relatedFeatures": [
+      "backlink-monitoring",
+      "outreach-autopilot",
+      "competitor-analysis",
+      "seo-health-score"
+    ],
+    "seo": {
+      "metaTitle": "Link Velocity Tracker | Backlink Growth | AnotherSEOGuru",
+      "metaDescription": "Track backlink acquisition rate, compare with competitors, automate outreach. Build authority faster. Free trial!",
+      "keywords": "link velocity, backlink tracking, link building, link acquisition, domain authority"
+    }
+  },
+  {
+    "slug": "outreach-autopilot",
+    "title": "Outreach Autopilot",
+    "shortDescription": "Auto-generates personalized outreach emails, tracks responses, and manages link building campaigns end-to-end.",
+    "overview": "Automate your entire link building outreach process. Our Outreach Autopilot auto-generates personalized outreach emails using GPT-5, tracks opens and replies, manages follow-ups, and handles your link building campaigns from start to finish. Scale your link building without scaling your time investment.",
+    "benefits": [
+      "Auto-generated personalized emails",
+      "Email open and reply tracking",
+      "Automatic follow-up management",
+      "Campaign performance analytics",
+      "Time savings of 15+ hours per week"
+    ],
+    "howItWorks": [
+      "Define your link building goals",
+      "System finds outreach opportunities",
+      "AI generates personalized emails",
+      "Tracks responses automatically",
+      "Manages follow-ups and closes"
+    ],
+    "useCases": [
+      "Link builders scaling outreach",
+      "SEO professionals building links",
+      "Agencies managing campaigns",
+      "Businesses acquiring backlinks"
+    ],
+    "relatedFeatures": [
+      "backlink-monitoring",
+      "link-velocity-tracker",
+      "competitor-analysis",
+      "multi-llm-ai-system"
+    ],
+    "seo": {
+      "metaTitle": "Outreach Autopilot | Automated Link Building | AnotherSEOGuru",
+      "metaDescription": "Auto-generate personalized outreach emails, track responses, manage campaigns. Scale link building. Free trial!",
+      "keywords": "link building outreach, email outreach, link building automation, outreach campaigns"
+    }
+  },
+  {
+    "slug": "eeat-optimizer",
+    "title": "E-E-A-T Optimizer",
+    "shortDescription": "Analyzes E-E-A-T signals (Experience, Expertise, Authoritativeness, Trustworthiness) and auto-generates improvements.",
+    "overview": "Optimize your content for Google's E-E-A-T guidelines (Experience, Expertise, Authoritativeness, Trustworthiness). Our E-E-A-T Optimizer analyzes your content for E-E-A-T signals, identifies gaps, and auto-generates improvement recommendations. Build trust with Google and improve rankings in competitive niches.",
+    "benefits": [
+      "E-E-A-T signal analysis",
+      "Gap identification and scoring",
+      "Auto-generated improvements",
+      "Trust signal optimization",
+      "Authority building recommendations"
+    ],
+    "howItWorks": [
+      "System analyzes your content",
+      "Evaluates E-E-A-T signals",
+      "Identifies gaps and weaknesses",
+      "Generates improvement recommendations",
+      "Tracks E-E-A-T score improvements"
+    ],
+    "useCases": [
+      "YMYL (Your Money Your Life) sites",
+      "Medical and health content",
+      "Financial advice websites",
+      "Legal and professional services"
+    ],
+    "relatedFeatures": [
+      "technical-seo-audits",
+      "ai-content-generation",
+      "seo-health-score",
+      "backlink-monitoring"
+    ],
+    "seo": {
+      "metaTitle": "E-E-A-T Optimizer | Google E-E-A-T Guidelines | AnotherSEOGuru",
+      "metaDescription": "Analyze and optimize E-E-A-T signals. Auto-generate improvements for Experience, Expertise, Authoritativeness, Trust. Free trial!",
+      "keywords": "E-E-A-T, EAT SEO, Google E-E-A-T, trust signals, authority optimization"
+    }
+  }
+]

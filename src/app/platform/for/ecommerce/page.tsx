@@ -5,9 +5,9 @@ import { getAppPath } from "@/lib/app-links";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "SEO platform for ecommerce — products, SERP, and decay",
+  title: "SEO Platform for Ecommerce",
   description:
-    "Monitor category and product queries, shopping visibility, content decay, and technical health for stores that live or die on organic product discovery.",
+    "Ecommerce SEO software: product and category query tracking, SERP monitoring, content decay alerts, technical audits, and AI briefs for stores scaling organic revenue.",
   path: "/platform/for/ecommerce",
   primaryKeyword: "ecommerce SEO software",
 });
