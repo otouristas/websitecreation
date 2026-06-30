@@ -187,6 +187,7 @@ const structuredDataGraph = {
 };
 
 import StickyMobileCta from "@/components/StickyMobileCta";
+import { Analytics } from "@vercel/analytics/next";
 
 export default function RootLayout({
   children,
@@ -210,6 +211,7 @@ export default function RootLayout({
         </div>
         <div className="relative z-0 min-h-dvh">{children}</div>
         <StickyMobileCta />
+        <Analytics />
       </body>
     </html>
   );
