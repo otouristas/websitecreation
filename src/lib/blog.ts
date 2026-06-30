@@ -12,6 +12,7 @@ export interface BlogPostListItem {
   readonly categoryColor?: string;
   readonly pillar?: string;
   readonly isPillarHub: boolean;
+  readonly locale: 'en' | 'el';
 }
 
 export interface BlogPostParsed extends BlogPostListItem {
@@ -28,6 +29,7 @@ interface MatterData {
   readonly categoryColor?: string;
   readonly pillar?: string;
   readonly pillarHub?: boolean;
+  readonly locale?: 'en' | 'el';
 }
 
 function getContentDir(): string {
@@ -54,6 +56,7 @@ function parsePostFile(filePath: string, fileBase: string): BlogPostParsed | nul
     categoryColor: typeof d.categoryColor === "string" ? d.categoryColor : undefined,
     pillar: typeof d.pillar === "string" ? d.pillar : undefined,
     isPillarHub: Boolean(d.pillarHub),
+    locale: d.locale === "el" ? "el" : "en",
     content,
   };
 }
@@ -61,7 +64,7 @@ function parsePostFile(filePath: string, fileBase: string): BlogPostParsed | nul
 /**
  * Returns all blog posts from content/blog, newest first.
  */
-export function getAllBlogPosts(): BlogPostListItem[] {
+export function getAllBlogPosts(locale?: 'en' | 'el'): BlogPostListItem[] {
   const dir = getContentDir();
   if (!fs.existsSync(dir)) {
     return [];
@@ -76,6 +79,7 @@ export function getAllBlogPosts(): BlogPostListItem[] {
     }
   }
   return posts
+    .filter((p) => !locale || p.locale === locale)
     .map(({ content: _c, ...rest }) => rest)
     .sort((a, b) => (a.date < b.date ? 1 : -1));
 }

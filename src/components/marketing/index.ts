@@ -4,3 +4,4 @@ export { HowItWorks } from "./HowItWorks";
 export { FeatureHighlightGrid } from "./FeatureHighlightGrid";
 export { AgencyBand } from "./AgencyBand";
 export { HomeFaq } from "./HomeFaq";
+export { AdsLandingBand } from "./AdsLandingBand";

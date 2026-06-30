@@ -2,8 +2,13 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { localizedPath, siteLocaleFromPath } from '@/lib/i18n/locale';
 
 export default function MarketingPopup() {
+    const pathname = usePathname() ?? '/en';
+    const locale = siteLocaleFromPath(pathname);
+    const lp = (path: string) => localizedPath(locale, path);
     const [isVisible, setIsVisible] = useState(false);
     const [isDismissed, setIsDismissed] = useState(false);
 
@@ -72,7 +77,7 @@ export default function MarketingPopup() {
 
                     <div className="space-y-3">
                         <Link
-                            href="/get-started"
+                            href={lp('/get-started')}
                             onClick={handleDismiss}
                             className="btn btn-gradient w-full py-3 text-lg shadow-lg hover:shadow-primary/25"
                         >

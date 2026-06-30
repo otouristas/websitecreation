@@ -217,6 +217,46 @@ export const industries: Industry[] = [
         painPoints: ['Trust & Credibility', 'Compliance', 'Lead quality', 'Expertise showcase'],
         icon: 'briefcase',
     },
+    {
+        slug: 'rent-a-car',
+        name: 'Rent-a-Car',
+        description: 'Car rental websites with fleet catalogs, booking funnels, seasonal offers, and island or airport local SEO.',
+        metaDescription: 'Car rental website design and SEO. Fleet pages, online bookings, and local search for rent-a-car brands.',
+        painPoints: ['Online bookings', 'Fleet showcase', 'Seasonal demand', 'OTA competition'],
+        icon: 'car',
+    },
+    {
+        slug: 'tour-operators',
+        name: 'Tour Operators',
+        description: 'Excursion and daily tour websites with package catalogs, gallery-rich pages, and destination SEO clusters.',
+        metaDescription: 'Tour operator websites with excursion catalogs, booking CTAs, and tourism SEO for destinations worldwide.',
+        painPoints: ['Excursion bookings', 'Seasonal packages', 'Gallery content', 'Multi-language SEO'],
+        icon: 'map',
+    },
+    {
+        slug: 'villas-apartments',
+        name: 'Villas & Apartments',
+        description: 'Vacation rental and villa websites with immersive galleries, direct booking forms, and international SEO.',
+        metaDescription: 'Villa and apartment rental websites. Direct bookings, luxury galleries, and vacation rental SEO.',
+        painPoints: ['Direct bookings', 'Photo galleries', 'OTA competition', 'International guests'],
+        icon: 'home',
+    },
+    {
+        slug: 'travel-agencies',
+        name: 'Travel Agencies',
+        description: 'Travel agency sites with package showcases, destination hubs, and lead capture for custom itineraries.',
+        metaDescription: 'Travel agency web design and SEO. Package pages, destination content, and multilingual lead funnels.',
+        painPoints: ['Package sales', 'Lead capture', 'Destination content', 'Trust signals'],
+        icon: 'plane',
+    },
+    {
+        slug: 'travel-ai-chatbots',
+        name: 'Travel AI Chatbots',
+        description: 'AI assistant implementations for tourism — multilingual booking support, FAQ automation, and AEO visibility.',
+        metaDescription: 'Travel AI chatbot development. Multilingual assistants for hotels, rent-a-car, and tour operators.',
+        painPoints: ['24/7 support', 'Multilingual guests', 'Booking automation', 'AI search visibility'],
+        icon: 'bot',
+    },
 ];
 
 export const getIndustryBySlug = (slug: string): Industry | undefined => {

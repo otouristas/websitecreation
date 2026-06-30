@@ -1,6 +1,14 @@
 /**
- * Map paths between English and Greek marketing routes.
+ * Map paths between /en and /el marketing routes.
  */
+
+import {
+  localizedPath,
+  siteLocaleFromPath,
+  stripLocalePrefix,
+  swapLocaleInPath,
+  type SiteLocale,
+} from '@/lib/i18n/locale';
 
 const GREEK_LOCATION_SLUGS = new Set([
   'athens-gr',
@@ -9,59 +17,61 @@ const GREEK_LOCATION_SLUGS = new Set([
   'heraklion-gr',
   'larissa-gr',
   'volos-gr',
+  'santorini-gr',
+  'mykonos-gr',
+  'paros-gr',
+  'naxos-gr',
+  'crete-gr',
 ]);
 
 export function isGreekLocationSlug(slug: string): boolean {
   return GREEK_LOCATION_SLUGS.has(slug) || slug.endsWith('-gr');
 }
 
-/** English programmatic service-location path */
 export function enServiceLocationPath(service: string, location: string): string {
-  return `/services/${service}/${location}`;
+  return localizedPath('en', `/services/${service}/${location}`);
 }
 
-/** Greek programmatic service-location path */
-export function grServiceLocationPath(service: string, location: string): string {
-  return `/gr/services/${service}/${location}`;
+export function elServiceLocationPath(service: string, location: string): string {
+  return localizedPath('el', `/services/${service}/${location}`);
 }
 
-/**
- * Given current pathname, return alternate locale href.
- */
+/** @deprecated use elServiceLocationPath */
+export const grServiceLocationPath = elServiceLocationPath;
+
 export function getAlternateLocalePath(pathname: string): string {
-  const isGreekRoute = pathname === '/gr' || pathname.startsWith('/gr/');
+  const current = siteLocaleFromPath(pathname);
+  const target: SiteLocale = current === 'el' ? 'en' : 'el';
+  const bare = stripLocalePrefix(pathname);
 
-  if (isGreekRoute) {
-    if (pathname === '/gr') return '/';
-    if (pathname === '/gr/locations') return '/locations';
-
-    const grServiceMatch = pathname.match(/^\/gr\/services\/([^/]+)\/([^/]+)$/);
-    if (grServiceMatch) {
-      const [, service, location] = grServiceMatch;
-      return enServiceLocationPath(service, location);
-    }
-
-    if (pathname.startsWith('/gr/')) {
-      return pathname.replace(/^\/gr/, '') || '/';
-    }
-    return '/';
-  }
-
-  if (pathname === '/') return '/gr';
-  if (pathname === '/locations') return '/gr/locations';
-
-  const enServiceMatch = pathname.match(/^\/services\/([^/]+)\/([^/]+)$/);
-  if (enServiceMatch) {
-    const [, service, location] = enServiceMatch;
+  const serviceLocationMatch = bare.match(/^\/services\/([^/]+)\/([^/]+)$/);
+  if (serviceLocationMatch) {
+    const [, service, location] = serviceLocationMatch;
     if (isGreekLocationSlug(location)) {
-      return grServiceLocationPath(service, location);
+      return target === 'el'
+        ? elServiceLocationPath(service, location)
+        : enServiceLocationPath(service, location);
     }
-    return '/gr';
+    return localizedPath(target, '/services');
   }
 
-  return '/gr';
+  return swapLocaleInPath(pathname, target);
 }
 
-export function getLocaleFromPath(pathname: string): 'en' | 'el' {
-  return pathname === '/gr' || pathname.startsWith('/gr/') ? 'el' : 'en';
+export function getLocaleFromPath(pathname: string): SiteLocale {
+  return siteLocaleFromPath(pathname);
+}
+
+export function getHreflangAlternates(barePath: string): {
+  en: string;
+  el: string;
+  'x-default': string;
+} {
+  const base = 'https://anotherseoguru.com';
+  const normalized = barePath.startsWith('/') ? barePath : `/${barePath}`;
+  return {
+    en: `${base}${localizedPath('en', normalized)}`,
+    el: `${base}${localizedPath('el', normalized)}`,
+    'x-default': `${base}${localizedPath('en', normalized)}`,
+  };
 }

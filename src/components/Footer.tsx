@@ -1,7 +1,12 @@
+"use client";
+
 import type { ReactElement } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { BrandLogo } from "@/components/BrandLogo";
 import { getAppPath } from "@/lib/app-links";
+import { localizedPath, siteLocaleFromPath, type SiteLocale } from "@/lib/i18n/locale";
+import { getFooterDictionary } from "@/lib/i18n/get-dictionary";
 
 const columnLinkClass =
   "text-sm text-muted-foreground transition-colors hover:text-foreground";
@@ -12,8 +17,13 @@ const columnHeadingClass =
 const socialButtonClass =
   "flex h-10 w-10 items-center justify-center rounded-xl border border-border/60 bg-card/50 text-muted-foreground transition-colors hover:border-primary/40 hover:bg-primary/10 hover:text-primary";
 
-export default function Footer(): ReactElement {
+export default function Footer({ locale: localeProp }: { locale?: SiteLocale }): ReactElement {
+  const pathname = usePathname() ?? "/en";
+  const locale = localeProp ?? siteLocaleFromPath(pathname);
   const currentYear = new Date().getFullYear();
+  const isEl = locale === "el";
+  const lp = (path: string) => localizedPath(locale, path);
+  const t = getFooterDictionary(locale);
   return (
     <footer className="relative mt-20 border-t border-border/80 bg-gradient-to-b from-primary/[0.07] via-muted/35 to-muted/45 dark:from-primary/[0.1] dark:via-background dark:to-muted/20 md:mt-28 lg:mt-36">
       <div
@@ -23,10 +33,9 @@ export default function Footer(): ReactElement {
       <div className="container mx-auto px-4 pb-16 pt-24 sm:px-6 md:pb-20 md:pt-32 lg:pb-24 lg:pt-40">
         <div className="mb-12 grid grid-cols-2 gap-x-10 gap-y-10 md:grid-cols-4 lg:grid-cols-6">
           <div className="col-span-2">
-            <BrandLogo size="lg" className="mb-4" />
+            <BrandLogo size="lg" className="mb-4" homeHref={lp("/")} />
             <p className="mb-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
-              The most powerful SEO platform with AI-powered content generation. Dominate search rankings and scale your
-              content like a pro.
+              {t.tagline}
             </p>
             <div className="flex flex-wrap items-center gap-2">
               <a
@@ -128,138 +137,180 @@ export default function Footer(): ReactElement {
             </div>
           </div>
           <div>
-            <h3 className={columnHeadingClass}>Product</h3>
+            <h3 className={columnHeadingClass}>{isEl ? t!.agency : "Product"}</h3>
             <ul className="space-y-3.5">
-              <li>
-                <Link href="/platform/features" className={columnLinkClass}>
-                  Features
-                </Link>
-              </li>
-              <li>
-                <a href={getAppPath("/free-tools")} className={columnLinkClass} rel="noopener noreferrer">
-                  Free tools
-                </a>
-              </li>
-              <li>
-                <Link href="/pricing" className={columnLinkClass}>
-                  Pricing
-                </Link>
-              </li>
-              <li>
-                <a href={getAppPath("/signup")} className={columnLinkClass} rel="noopener noreferrer">
-                  Sign up
-                </a>
-              </li>
-              <li>
-                <a href={getAppPath("/login")} className={columnLinkClass} rel="noopener noreferrer">
-                  Login
-                </a>
-              </li>
-              <li>
-                <Link href="/resources" className={columnLinkClass}>
-                  Roadmap
-                </Link>
-              </li>
+              {isEl ? (
+                <>
+                  <li>
+                    <Link href={lp("/services")} className={columnLinkClass}>
+                      {t.services}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href={lp("/services/website-creation")} className={columnLinkClass}>
+                      {t.websiteCreation}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href={lp("/pricing")} className={columnLinkClass}>
+                      {t.pricing}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href={lp("/get-started")} className={columnLinkClass}>
+                      {t.getStarted}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href={lp("/locations")} className={columnLinkClass}>
+                      {t.locations}
+                    </Link>
+                  </li>
+                </>
+              ) : (
+                <>
+                  <li>
+                    <Link href={lp("/platform/features")} className={columnLinkClass}>
+                      Features
+                    </Link>
+                  </li>
+                  <li>
+                    <a href={getAppPath("/free-tools")} className={columnLinkClass} rel="noopener noreferrer">
+                      Free tools
+                    </a>
+                  </li>
+                  <li>
+                    <Link href={lp("/pricing")} className={columnLinkClass}>
+                      Pricing
+                    </Link>
+                  </li>
+                  <li>
+                    <a href={getAppPath("/signup")} className={columnLinkClass} rel="noopener noreferrer">
+                      Sign up
+                    </a>
+                  </li>
+                  <li>
+                    <a href={getAppPath("/login")} className={columnLinkClass} rel="noopener noreferrer">
+                      Login
+                    </a>
+                  </li>
+                  <li>
+                    <Link href={lp("/resources")} className={columnLinkClass}>
+                      Roadmap
+                    </Link>
+                  </li>
+                </>
+              )}
             </ul>
           </div>
           <div>
-            <h3 className={columnHeadingClass}>Resources</h3>
+            <h3 className={columnHeadingClass}>{isEl ? t!.resources : "Resources"}</h3>
             <ul className="space-y-3.5">
               <li>
-                <Link href="/blog" className={columnLinkClass}>
-                  Blog
+                <Link href={lp("/blog")} className={columnLinkClass}>
+                  {isEl ? t!.blog : "Blog"}
                 </Link>
               </li>
               <li>
-                <Link href="/resources" className={columnLinkClass}>
-                  Case studies
+                <Link href={lp("/work")} className={columnLinkClass}>
+                  {isEl ? t!.work : "Case studies"}
                 </Link>
               </li>
-              <li>
-                <Link href="/glossary" className={columnLinkClass}>
-                  SEO glossary
-                </Link>
-              </li>
-              <li>
-                <a href={getAppPath("/help")} className={columnLinkClass} rel="noopener noreferrer">
-                  Help center
-                </a>
-              </li>
-              <li>
-                <a href={getAppPath("/changelog")} className={columnLinkClass} rel="noopener noreferrer">
-                  Changelog
-                </a>
-              </li>
-              <li>
-                <Link href="/resources" className={columnLinkClass}>
-                  SEO guides
-                </Link>
-              </li>
-              <li>
-                <Link href="/resources" className={columnLinkClass}>
-                  API docs
-                </Link>
-              </li>
+              {!isEl && (
+                <>
+                  <li>
+                    <Link href={lp("/glossary")} className={columnLinkClass}>
+                      SEO glossary
+                    </Link>
+                  </li>
+                  <li>
+                    <a href={getAppPath("/help")} className={columnLinkClass} rel="noopener noreferrer">
+                      Help center
+                    </a>
+                  </li>
+                  <li>
+                    <a href={getAppPath("/changelog")} className={columnLinkClass} rel="noopener noreferrer">
+                      Changelog
+                    </a>
+                  </li>
+                  <li>
+                    <Link href={lp("/resources")} className={columnLinkClass}>
+                      SEO guides
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href={lp("/platform/features")} className={columnLinkClass}>
+                      Platform features
+                    </Link>
+                  </li>
+                </>
+              )}
             </ul>
           </div>
           <div>
-            <h3 className={columnHeadingClass}>Company</h3>
+            <h3 className={columnHeadingClass}>{isEl ? t!.company : "Company"}</h3>
             <ul className="space-y-3.5">
               <li>
-                <Link href="/about" className={columnLinkClass}>
-                  About us
+                <Link href={lp("/about")} className={columnLinkClass}>
+                  {isEl ? t!.about : "About us"}
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className={columnLinkClass}>
-                  Contact
+                <Link href={lp("/contact")} className={columnLinkClass}>
+                  {isEl ? t!.contact : "Contact"}
                 </Link>
               </li>
-              <li>
-                <Link href="/contact" className={columnLinkClass}>
-                  Careers
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className={columnLinkClass}>
-                  Partners
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className={columnLinkClass}>
-                  Affiliates
-                </Link>
-              </li>
+              {!isEl && (
+                <>
+                  <li>
+                    <Link href={lp("/contact")} className={columnLinkClass}>
+                      Careers
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href={lp("/contact")} className={columnLinkClass}>
+                      Partners
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href={lp("/contact")} className={columnLinkClass}>
+                      Affiliates
+                    </Link>
+                  </li>
+                </>
+              )}
             </ul>
           </div>
           <div>
-            <h3 className={columnHeadingClass}>Legal</h3>
+            <h3 className={columnHeadingClass}>{isEl ? t!.legal : "Legal"}</h3>
             <ul className="space-y-3.5">
               <li>
-                <Link href="/privacy" className={columnLinkClass}>
-                  Privacy policy
+                <Link href={lp("/privacy")} className={columnLinkClass}>
+                  {isEl ? t!.privacy : "Privacy policy"}
                 </Link>
               </li>
               <li>
-                <Link href="/terms" className={columnLinkClass}>
-                  Terms of service
+                <Link href={lp("/terms")} className={columnLinkClass}>
+                  {isEl ? t!.terms : "Terms of service"}
                 </Link>
               </li>
               <li>
-                <Link href="/privacy#cookies" className={columnLinkClass}>
-                  Cookie policy
+                <Link href={lp("/privacy#cookies")} className={columnLinkClass}>
+                  {isEl ? t!.cookies : "Cookie policy"}
                 </Link>
               </li>
               <li>
-                <Link href="/privacy" className={columnLinkClass}>
-                  GDPR
+                <Link href={lp("/privacy")} className={columnLinkClass}>
+                  {isEl ? t!.gdpr : "GDPR"}
                 </Link>
               </li>
-              <li>
-                <Link href="/contact" className={columnLinkClass}>
-                  Security
-                </Link>
-              </li>
+              {!isEl && (
+                <li>
+                  <Link href={lp("/contact")} className={columnLinkClass}>
+                    Security
+                  </Link>
+                </li>
+              )}
             </ul>
           </div>
         </div>
@@ -267,20 +318,20 @@ export default function Footer(): ReactElement {
           <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
             <div className="flex flex-col items-center gap-3 md:items-start">
               <p className="text-sm text-muted-foreground">
-                © {currentYear} AnotherSEOGuru. All rights reserved.
+                © {currentYear} AnotherSEOGuru. {isEl ? t!.rights : "All rights reserved."}
               </p>
               <div className="flex items-center gap-6 text-sm text-muted-foreground">
                 <a href="mailto:hello@anotherseoguru.com" className="transition-colors hover:text-foreground">
                   hello@anotherseoguru.com
                 </a>
                 <span aria-hidden>•</span>
-                <Link href="/status" className="transition-colors hover:text-foreground">
-                  Status
+                <Link href={lp("/contact")} className="transition-colors hover:text-foreground">
+                  {isEl ? t!.contact : "Contact"}
                 </Link>
               </div>
             </div>
             <div className="flex flex-col items-center gap-2 md:items-end">
-              <p className="text-xs text-muted-foreground">We accept</p>
+              <p className="text-xs text-muted-foreground">{isEl ? t!.payments : "We accept"}</p>
               <img
                 src="/payment-methods.png"
                 alt="Accepted payment methods: Visa, Mastercard, Amex, iDEAL, JCB, Bancontact, Apple Pay, Google Pay, PayPal"

@@ -17,7 +17,10 @@ export default function robots(): MetadataRoute.Robots {
                 allow: '/',
             },
         ],
-        sitemap: 'https://anotherseoguru.com/sitemap.xml',
+        sitemap: [
+            'https://anotherseoguru.com/sitemap.xml',
+            'https://anotherseoguru.com/sitemap-index.xml',
+        ],
         host: 'https://anotherseoguru.com',
     };
 }

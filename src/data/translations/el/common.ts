@@ -1,0 +1,18 @@
+export const commonEl = {
+  home: 'Αρχική',
+  getFreeQuote: 'Δωρεάν προσφορά',
+  getStarted: 'Ξεκινήστε',
+  viewPricing: 'Δείτε τιμές',
+  contactUs: 'Επικοινωνία',
+  learnMore: 'Μάθετε περισσότερα',
+  cancel: 'Ακύρωση',
+  backToHome: 'Αρχική',
+  allServices: 'Όλες οι υπηρεσίες',
+  allSolutions: 'Όλοι οι κλάδοι',
+  agencyPricing: 'Τιμές agency',
+  ourWork: 'Τα έργα μας',
+  freeTools: 'Δωρεάν εργαλεία',
+  platform: 'Πλατφόρμα',
+  blog: 'Blog',
+  resources: 'Πόροι',
+} as const;

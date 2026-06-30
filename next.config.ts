@@ -9,7 +9,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: '/landing',
-        destination: '/',
+        destination: '/en',
         permanent: true,
       },
       {
@@ -31,6 +31,61 @@ const nextConfig: NextConfig = {
         source: '/app/:path*',
         destination: `${appOrigin}/:path*`,
         permanent: false,
+      },
+      {
+        source: '/gr',
+        destination: '/el',
+        permanent: true,
+      },
+      {
+        source: '/gr/:path*',
+        destination: '/el/:path*',
+        permanent: true,
+      },
+      {
+        source: '/work',
+        destination: '/en/work',
+        permanent: true,
+      },
+      {
+        source: '/work/:path*',
+        destination: '/en/work/:path*',
+        permanent: true,
+      },
+      {
+        source: '/services/:path*',
+        destination: '/en/services/:path*',
+        permanent: true,
+      },
+      {
+        source: '/solutions/:path*',
+        destination: '/en/solutions/:path*',
+        permanent: true,
+      },
+      {
+        source: '/pricing',
+        destination: '/en/pricing',
+        permanent: true,
+      },
+      {
+        source: '/contact',
+        destination: '/en/contact',
+        permanent: true,
+      },
+      {
+        source: '/get-started',
+        destination: '/en/get-started',
+        permanent: true,
+      },
+      {
+        source: '/blog/:path*',
+        destination: '/en/blog/:path*',
+        permanent: true,
+      },
+      {
+        source: '/platform/:path*',
+        destination: '/en/platform/:path*',
+        permanent: true,
       },
       {
         source: '/status',

@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import MarketingPopup from "@/components/MarketingPopup";
 import CookieConsent from "@/components/CookieConsent";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 import { MarketingPageBackground } from "@/components/marketing";
 
 const SITE_URL = "https://anotherseoguru.com";
@@ -86,10 +87,11 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: SITE_URL,
+    canonical: `${SITE_URL}/en`,
     languages: {
-      en: SITE_URL,
-      el: `${SITE_URL}/gr`,
+      en: `${SITE_URL}/en`,
+      el: `${SITE_URL}/el`,
+      'x-default': `${SITE_URL}/en`,
     },
   },
   verification: {
@@ -115,7 +117,7 @@ const structuredDataGraph = {
       contactPoint: {
         "@type": "ContactPoint",
         contactType: "customer service",
-        email: "info@anotherseoguru.com",
+        email: "hello@anotherseoguru.com",
         availableLanguage: ["English", "Greek"],
       },
       sameAs: [
@@ -194,23 +196,13 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <head>
         <link rel="alternate" type="text/plain" href="/llms.txt" title="LLMs documentation for AnotherSEOGuru" />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-FGFJEKZHB1" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-FGFJEKZHB1');
-            `,
-          }}
-        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredDataGraph) }}
         />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} relative antialiased`}>
+        <GoogleAnalytics />
         <MarketingPopup />
         <CookieConsent />
         <div className="pointer-events-none fixed inset-0 -z-10" aria-hidden>

@@ -1,8 +1,14 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { localizedPath, siteLocaleFromPath } from '@/lib/i18n/locale';
 
 export function ROICalculator() {
+    const pathname = usePathname() ?? '/en';
+    const locale = siteLocaleFromPath(pathname);
+    const lp = (path: string) => localizedPath(locale, path);
     const [traffic, setTraffic] = useState(1000);
     const [conversionRate, setConversionRate] = useState(2);
     const [closeRate, setCloseRate] = useState(20);
@@ -100,9 +106,9 @@ export function ROICalculator() {
                         </div>
                     </div>
 
-                    <a href="/contact" className="w-full py-3 px-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold rounded-lg hover:shadow-lg transition-all transform hover:-translate-y-0.5">
+                    <Link href={lp('/contact')} className="w-full py-3 px-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold rounded-lg hover:shadow-lg transition-all transform hover:-translate-y-0.5">
                         Start Growing Today
-                    </a>
+                    </Link>
                 </div>
             </div>
         </div>

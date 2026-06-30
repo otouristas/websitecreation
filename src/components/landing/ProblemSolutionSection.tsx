@@ -1,8 +1,16 @@
 import Link from "next/link";
 import { AlertCircle, ArrowRight, CheckCircle2 } from "lucide-react";
-import { getAppPath } from "@/lib/app-links";
+import { elHome } from "@/data/translations/el-home";
+import { localizedPath, type SiteLocale } from "@/lib/i18n/locale";
 
-export function ProblemSolutionSection() {
+interface ProblemSolutionSectionProps {
+  locale?: SiteLocale;
+}
+
+export function ProblemSolutionSection({ locale = "en" }: ProblemSolutionSectionProps) {
+  const isEl = locale === "el";
+  const t = isEl ? elHome.problem : null;
+
   return (
     <section className="py-[var(--marketing-section-y)] lg:py-[var(--marketing-section-y-lg)] bg-muted/30 border-y border-border">
       <div className="container mx-auto px-4">
@@ -10,68 +18,67 @@ export function ProblemSolutionSection() {
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-destructive/10 text-destructive mb-6">
               <AlertCircle className="w-4 h-4" aria-hidden />
-              <span className="text-sm font-semibold">The problem</span>
+              <span className="text-sm font-semibold">{isEl ? t!.badge : "The problem"}</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">Fragmented SEO tools and endless exports?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
+              {isEl ? t!.title : "Your website isn't bringing bookings?"}
+            </h2>
             <ul className="space-y-4 text-muted-foreground">
-              <li className="flex gap-3">
-                <span className="text-destructive font-bold">×</span>
-                <span>
-                  <strong className="text-foreground">Stack overload</strong> — separate rank trackers, content tools, and GSC
-                  spreadsheets.
-                </span>
-              </li>
-              <li className="flex gap-3">
-                <span className="text-destructive font-bold">×</span>
-                <span>
-                  <strong className="text-foreground">Slow decisions</strong> — insights do not turn into a weekly backlog.
-                </span>
-              </li>
-              <li className="flex gap-3">
-                <span className="text-destructive font-bold">×</span>
-                <span>
-                  <strong className="text-foreground">AI bolt-ons</strong> — generic chat instead of SEO-native workflows.
-                </span>
-              </li>
+              {(isEl
+                ? t!.items
+                : [
+                    { strong: "Outdated design", text: "— tourists don't trust it enough to book direct." },
+                    { strong: "No SEO", text: "— you lose organic traffic to OTAs and competitors." },
+                    { strong: "No AI visibility", text: "— you're missing ChatGPT, Perplexity and AI Overviews." },
+                  ]
+              ).map((item) => (
+                <li key={item.strong} className="flex gap-3">
+                  <span className="text-destructive font-bold">×</span>
+                  <span>
+                    <strong className="text-foreground">{item.strong}</strong> {item.text}
+                  </span>
+                </li>
+              ))}
             </ul>
           </div>
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[hsl(var(--success)/0.15)] text-[hsl(var(--success))] mb-6">
               <CheckCircle2 className="w-4 h-4" aria-hidden />
-              <span className="text-sm font-semibold">The solution</span>
+              <span className="text-sm font-semibold">{isEl ? t!.solutionBadge : "The solution"}</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">One workspace tied to Search Console</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
+              {isEl ? t!.solutionTitle : "Website + SEO + GEO/AEO from one team"}
+            </h2>
             <ul className="space-y-4 mb-8 text-muted-foreground">
-              <li className="flex gap-3">
-                <CheckCircle2 className="w-5 h-5 text-[hsl(var(--success))] shrink-0 mt-0.5" aria-hidden />
-                <span>
-                  <strong className="text-foreground">Cluster &amp; prioritize</strong> from real queries and pages.
-                </span>
-              </li>
-              <li className="flex gap-3">
-                <CheckCircle2 className="w-5 h-5 text-[hsl(var(--success))] shrink-0 mt-0.5" aria-hidden />
-                <span>
-                  <strong className="text-foreground">Track &amp; audit</strong> with modules your team actually opens.
-                </span>
-              </li>
-              <li className="flex gap-3">
-                <CheckCircle2 className="w-5 h-5 text-[hsl(var(--success))] shrink-0 mt-0.5" aria-hidden />
-                <span>
-                  <strong className="text-foreground">AI + agency</strong> — ship in-product or hand off to our team.
-                </span>
-              </li>
+              {(isEl
+                ? t!.solutionItems
+                : [
+                    { strong: "Conversion-first design", text: "— bookings, quote requests and direct calls." },
+                    { strong: "Technical SEO", text: "— speed, schema, local pages and content hubs." },
+                    { strong: "AI chatbots", text: "— multilingual 24/7 support for travelers." },
+                  ]
+              ).map((item) => (
+                <li key={item.strong} className="flex gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-[hsl(var(--success))] shrink-0 mt-0.5" aria-hidden />
+                  <span>
+                    <strong className="text-foreground">{item.strong}</strong> {item.text}
+                  </span>
+                </li>
+              ))}
             </ul>
             <div className="flex flex-col sm:flex-row gap-3">
-              <a
-                href={getAppPath("/signup")}
+              <Link
+                href={localizedPath(isEl ? "el" : "en", "/get-started")}
                 className="btn btn-gradient px-8 py-4 inline-flex items-center justify-center gap-2"
-                rel="noopener noreferrer"
               >
-                Start free
+                {isEl ? t!.ctaQuote : "Get a quote"}
                 <ArrowRight className="w-5 h-5" aria-hidden />
-              </a>
-              <Link href="/platform" className="btn btn-outline px-8 py-4 text-center">
-                Platform overview
+              </Link>
+              <Link
+                href={localizedPath(isEl ? "el" : "en", "/services")}
+                className="btn btn-outline px-8 py-4 text-center"
+              >
+                {isEl ? t!.ctaServices : "View services"}
               </Link>
             </div>
           </div>

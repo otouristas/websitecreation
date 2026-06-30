@@ -6,6 +6,8 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { BookOpen, ChevronRight, Code, Lightbulb, Search, Zap } from "lucide-react";
 import { glossaryCategories, type GlossaryCategory, type GlossaryTerm } from "@/data/glossary-data";
 import { resolveMarketingPath } from "@/lib/marketing-links";
+import { getGlossaryUi } from "@/lib/i18n/get-dictionary";
+import { localizedPath, type SiteLocale } from "@/lib/i18n/locale";
 
 const categoryBadgeClass: Record<string, string> = {
   blue: "bg-blue-500/10 text-blue-700 border border-blue-500/20",
@@ -58,7 +60,9 @@ function RelatedResourceLink(props: { readonly title: string; readonly url: stri
   );
 }
 
-export function GlossaryClient() {
+export function GlossaryClient({ locale = "en" }: { locale?: SiteLocale }) {
+  const ui = getGlossaryUi(locale);
+  const glossaryBase = localizedPath(locale, "/glossary");
   const router = useRouter();
   const searchParams = useSearchParams();
   const [searchQuery, setSearchQuery] = useState("");
@@ -83,9 +87,9 @@ export function GlossaryClient() {
         p.set("term", termId);
       }
       const q = p.toString();
-      router.replace(q ? `/glossary?${q}` : "/glossary", { scroll: false });
+      router.replace(q ? `${glossaryBase}?${q}` : glossaryBase, { scroll: false });
     },
-    [router],
+    [router, glossaryBase],
   );
 
   const selectTerm = (categoryId: string, termId: string) => {
@@ -153,7 +157,7 @@ export function GlossaryClient() {
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
             <input
               type="search"
-              placeholder="Search terms..."
+              placeholder={ui.searchPlaceholder}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-10 pr-3 py-2 rounded-lg border border-border bg-background text-sm"
@@ -167,7 +171,7 @@ export function GlossaryClient() {
             }`}
           >
             <BookOpen className="h-4 w-4" />
-            All categories
+            {ui.allCategories}
           </button>
           <nav className="space-y-1">
             {glossaryCategories.map((category) => {
@@ -280,7 +284,7 @@ export function GlossaryClient() {
             ) : null}
             {currentTerm.term.relatedLinks && currentTerm.term.relatedLinks.length > 0 ? (
               <section className="mb-8">
-                <h2 className="text-xl font-semibold mb-3 text-foreground">Related resources</h2>
+                <h2 className="text-xl font-semibold mb-3 text-foreground">{ui.relatedResources}</h2>
                 <div className="grid gap-2">
                   {currentTerm.term.relatedLinks.map((link) => (
                     <RelatedResourceLink key={`${link.title}-${link.url}`} title={link.title} url={link.url} />

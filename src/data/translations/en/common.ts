@@ -1,0 +1,18 @@
+export const commonEn = {
+  home: 'Home',
+  getFreeQuote: 'Get Free Quote',
+  getStarted: 'Get Started',
+  viewPricing: 'View Pricing',
+  contactUs: 'Contact Us',
+  learnMore: 'Learn more',
+  cancel: 'Cancel',
+  backToHome: 'Back to Home',
+  allServices: 'All Services',
+  allSolutions: 'All Solutions',
+  agencyPricing: 'Agency Pricing',
+  ourWork: 'Our Work',
+  freeTools: 'Free Tools',
+  platform: 'Platform',
+  blog: 'Blog',
+  resources: 'Resources',
+} as const;

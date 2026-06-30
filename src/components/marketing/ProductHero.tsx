@@ -1,5 +1,9 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { getAppPath } from "@/lib/app-links";
+import { localizedPath, siteLocaleFromPath } from "@/lib/i18n/locale";
 
 interface ProductHeroProps {
   readonly badge?: string;
@@ -9,6 +13,9 @@ interface ProductHeroProps {
 }
 
 export function ProductHero({ badge, title, titleHighlight, description }: ProductHeroProps) {
+  const pathname = usePathname() ?? "/en";
+  const locale = siteLocaleFromPath(pathname);
+  const lp = (path: string) => localizedPath(locale, path);
   return (
     <section className="relative overflow-hidden border-b border-border pt-6 pb-16 lg:pt-8 lg:pb-24">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,var(--glow),transparent)] opacity-80" />
@@ -32,7 +39,7 @@ export function ProductHero({ badge, title, titleHighlight, description }: Produ
           <a href={getAppPath("/login")} className="btn btn-outline px-8 py-4 text-base font-semibold w-full sm:w-auto" rel="noopener noreferrer">
             Log in
           </a>
-          <Link href="/contact" className="btn btn-outline px-8 py-4 text-base font-semibold w-full sm:w-auto">
+          <Link href={lp("/contact")} className="btn btn-outline px-8 py-4 text-base font-semibold w-full sm:w-auto">
             Book agency call
           </Link>
         </div>

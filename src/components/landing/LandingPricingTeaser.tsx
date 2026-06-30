@@ -1,5 +1,9 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { getAppPath } from "@/lib/app-links";
+import { localizedPath, siteLocaleFromPath } from "@/lib/i18n/locale";
 
 const tiers = [
   {
@@ -26,6 +30,10 @@ const tiers = [
 ] as const;
 
 export function LandingPricingTeaser() {
+  const pathname = usePathname() ?? "/en";
+  const locale = siteLocaleFromPath(pathname);
+  const lp = (path: string) => localizedPath(locale, path);
+
   return (
     <section className="py-[var(--marketing-section-y)] lg:py-[var(--marketing-section-y-lg)]">
       <div className="container mx-auto px-4">
@@ -63,10 +71,10 @@ export function LandingPricingTeaser() {
           ))}
         </div>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link href="/platform/pricing" className="btn btn-outline px-8">
+          <Link href={lp("/platform/pricing")} className="btn btn-outline px-8">
             Full software pricing page
           </Link>
-          <Link href="/pricing" className="btn btn-outline px-8">
+          <Link href={lp("/pricing")} className="btn btn-outline px-8">
             Agency retainers
           </Link>
         </div>

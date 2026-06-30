@@ -9,7 +9,7 @@ export async function GET() {
     `${BASE_URL}/sitemap-services.xml`,
     `${BASE_URL}/sitemap-solutions.xml`,
     `${BASE_URL}/sitemap-locations.xml`,
-    `${BASE_URL}/sitemap-locations-gr.xml`,
+    `${BASE_URL}/sitemap-locations-el.xml`,
   ];
 
   return new NextResponse(buildSitemapIndexXml(sitemaps), { headers: XML_HEADERS });

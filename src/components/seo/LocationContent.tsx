@@ -1,23 +1,42 @@
+'use client';
+
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Location } from '@/data/locations';
 import { Service } from '@/data/services';
 import { Industry } from '@/data/industries';
-import { ServiceAreaMap } from './ServiceAreaMap';
+import { localizedPath, siteLocaleFromPath, type SiteLocale } from '@/lib/i18n/locale';
 
 interface LocationContentProps {
     location: Location;
     service?: Service;
     industry?: Industry;
+    locale?: SiteLocale;
 }
 
-export function LocationContent({ location, service, industry }: LocationContentProps) {
+export function LocationContent({ location, service, industry, locale: localeProp }: LocationContentProps) {
+    const pathname = usePathname() ?? '/en';
+    const locale = localeProp ?? siteLocaleFromPath(pathname);
+    const lp = (path: string) => localizedPath(locale, path);
     const city = location.city;
     const state = location.state;
     const target = service ? service.name : (industry ? `${industry.name} SEO` : 'SEO');
     const targetShort = service ? service.shortName : (industry ? industry.name : 'SEO');
 
+    const currencyNote =
+        location.countryCode === 'GB'
+            ? 'Pricing quoted in GBP with UK local SEO and Google Business Profile optimization.'
+            : location.countryCode === 'CA'
+              ? 'Pricing quoted in CAD with bilingual-ready pages where needed.'
+              : location.countryCode === 'GR' || location.currency === 'EUR'
+                ? 'Pricing quoted in EUR with Greece and EU market SEO.'
+                : location.countryCode === 'US'
+                  ? 'Pricing quoted in USD with US local SEO best practices.'
+                  : `Pricing in ${location.currency ?? 'USD'} for ${location.country ?? 'your market'}.`;
+
     return (
         <div className="prose prose-lg max-w-none text-gray-700">
+            <p className="text-sm font-medium text-primary not-prose mb-6">{currencyNote}</p>
             {/* Section 1: The "Why Us" Intro - Replaces Competitor's "Since 2010" with Modern/AI Angle */}
             <div className="mb-12">
                 <h2 className="text-3xl font-bold text-gray-900 mb-6">
@@ -97,7 +116,7 @@ export function LocationContent({ location, service, industry }: LocationContent
                     and has the technology to get you to #1.
                 </p>
                 <Link
-                    href="/contact"
+                    href={lp('/contact')}
                     className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-200 bg-blue-600 rounded-lg hover:bg-blue-700 hover:shadow-lg transform hover:-translate-y-0.5"
                 >
                     Get Your Free {city} SEO Proposal

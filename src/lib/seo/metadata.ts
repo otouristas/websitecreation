@@ -2,6 +2,8 @@
 
 import { Metadata } from 'next';
 import { buildMetaDescription, finalizeDescription, BRAND_NAME, BASE_URL } from './description';
+import { getHreflangAlternates } from '@/lib/locale-paths';
+import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 
 export const TITLE_BRAND_SUFFIX = ` | ${BRAND_NAME}`;
 export const MAX_TITLE_TOTAL = 60;
@@ -18,6 +20,7 @@ interface MetadataInput {
   usp?: string;
   ctaHint?: string;
   noIndex?: boolean;
+  hreflangPath?: string;
 }
 
 function smartTruncateTitle(text: string, max: number): string {
@@ -76,6 +79,7 @@ export function buildMetadata(input: MetadataInput): Metadata {
     usp,
     ctaHint,
     noIndex = false,
+    hreflangPath,
   } = input;
 
   const description = finalizeDescription(
@@ -98,7 +102,10 @@ export function buildMetadata(input: MetadataInput): Metadata {
   const metadata: Metadata = {
     title: fullTitle,
     description,
-    alternates: { canonical },
+    alternates: {
+      canonical,
+      ...(hreflangPath ? { languages: getHreflangAlternates(hreflangPath) } : {}),
+    },
     openGraph: {
       title: fullTitle,
       description,
@@ -120,19 +127,23 @@ export function buildMetadata(input: MetadataInput): Metadata {
   return metadata;
 }
 
-export function buildServiceMetadata(service: {
-  name: string;
-  slug: string;
-  metaTitle?: string;
-  metaDescription?: string;
-}): Metadata {
+export function buildServiceMetadata(
+  service: {
+    name: string;
+    slug: string;
+    metaTitle?: string;
+    metaDescription?: string;
+  },
+  locale: SiteLocale = 'en',
+): Metadata {
   return buildMetadata({
     title: service.metaTitle || `${service.name} Services`,
     description: service.metaDescription,
-    path: `/services/${service.slug}`,
+    path: localizedPath(locale, `/services/${service.slug}`),
+    hreflangPath: `/services/${service.slug}`,
     service: service.name,
     primaryKeyword: `${service.name} services`,
-    ctaHint: 'View packages and request a quote.',
+    ctaHint: locale === 'el' ? 'Δείτε πακέτα και ζητήστε προσφορά.' : 'View packages and request a quote.',
   });
 }
 
@@ -147,6 +158,7 @@ export function buildServiceLocationMetadata(
     countryCode?: string;
     currency?: string;
   },
+  locale: SiteLocale = 'en',
 ): Metadata {
   const placeLabel =
     location.countryCode && location.countryCode !== 'US'
@@ -156,7 +168,8 @@ export function buildServiceLocationMetadata(
   return buildMetadata({
     title: `${service.name} in ${placeLabel}`,
     description: `Expert ${service.name.toLowerCase()} in ${placeLabel}. SEO-ready websites, local strategy, GEO/AEO, and fast delivery. Pricing in ${location.currency ?? 'USD'}. Free quote.`,
-    path: `/services/${service.slug}/${location.slug}`,
+    path: localizedPath(locale, `/services/${service.slug}/${location.slug}`),
+    hreflangPath: `/services/${service.slug}/${location.slug}`,
     service: service.name,
     location: placeLabel,
     usp: `Trusted ${service.name.toLowerCase()} for ${location.city}`,
@@ -180,39 +193,48 @@ export function buildServiceLocationMetadataEl(
   return buildMetadata({
     title: `${service.name} — ${place}`,
     description: `Επαγγελματικό ${service.name.toLowerCase()} στην ${place}. SEO, GEO/AEO, ταχύτητα ιστοσελίδας και τοπική στρατηγική. Δωρεάν προσφορά ή δοκιμή πλατφόρμας 7 ημερών.`,
-    path: `/gr/services/${service.slug}/${location.slug}`,
+    path: localizedPath('el', `/services/${service.slug}/${location.slug}`),
+    hreflangPath: `/services/${service.slug}/${location.slug}`,
     primaryKeyword: `${service.name} ${location.cityLocal ?? location.city}`,
     ctaHint: 'Ζητήστε δωρεάν προσφορά.',
   });
 }
 
-export function buildIndustryMetadata(industry: {
-  name: string;
-  slug: string;
-  metaDescription?: string;
-}): Metadata {
+export function buildIndustryMetadata(
+  industry: {
+    name: string;
+    slug: string;
+    metaDescription?: string;
+  },
+  locale: SiteLocale = 'en',
+): Metadata {
   return buildMetadata({
-    title: `${industry.name} Website & SEO Solutions`,
+    title: locale === 'el' ? `${industry.name} — Ιστοσελίδες & SEO` : `${industry.name} Website & SEO Solutions`,
     description:
       industry.metaDescription ||
-      `Website design and SEO for ${industry.name.toLowerCase()} businesses. Industry playbooks, fast builds, and Search Console intelligence. See packages.`,
-    path: `/solutions/${industry.slug}`,
+      (locale === 'el'
+        ? `Ιστοσελίδες και SEO για ${industry.name}. Industry playbooks, γρήγορη υλοποίηση και Search Console intelligence.`
+        : `Website design and SEO for ${industry.name.toLowerCase()} businesses. Industry playbooks, fast builds, and Search Console intelligence. See packages.`),
+    path: localizedPath(locale, `/solutions/${industry.slug}`),
+    hreflangPath: `/solutions/${industry.slug}`,
     industry: industry.name,
-    ctaHint: 'Explore industry packages.',
+    ctaHint: locale === 'el' ? 'Δείτε πακέτα ανά κλάδο.' : 'Explore industry packages.',
   });
 }
 
 export function buildIndustryServiceMetadata(
   industry: { name: string; slug: string },
   service: { name: string; slug: string },
+  locale: SiteLocale = 'en',
 ): Metadata {
   return buildMetadata({
-    title: `${service.name} for ${industry.name}`,
-    path: `/solutions/${industry.slug}/${service.slug}`,
+    title: locale === 'el' ? `${service.name} για ${industry.name}` : `${service.name} for ${industry.name}`,
+    path: localizedPath(locale, `/solutions/${industry.slug}/${service.slug}`),
+    hreflangPath: `/solutions/${industry.slug}/${service.slug}`,
     service: service.name,
     industry: industry.name,
     usp: `${service.name} tailored for ${industry.name.toLowerCase()}`,
-    ctaHint: 'Get started with a free consultation.',
+    ctaHint: locale === 'el' ? 'Ξεκινήστε με δωρεάν συμβουλευτική.' : 'Get started with a free consultation.',
   });
 }
 

@@ -7,6 +7,9 @@ export interface BrandLogoProps {
   readonly className?: string;
   /** Wordmark on dark footer backgrounds */
   readonly variant?: "default" | "light";
+  /** Home link — defaults to / */
+  readonly homeHref?: string;
+  readonly onClick?: () => void;
 }
 
 const imagePixels: Record<NonNullable<BrandLogoProps["size"]>, number> = {
@@ -29,10 +32,12 @@ export function BrandLogo({
   showText = true,
   className = "",
   variant = "default",
+  homeHref = "/",
+  onClick,
 }: BrandLogoProps) {
   const px = imagePixels[size];
   return (
-    <Link href="/" className={`flex items-center gap-2 hover:opacity-90 transition-opacity ${className}`}>
+    <Link href={homeHref} onClick={onClick} className={`flex items-center gap-2 hover:opacity-90 transition-opacity ${className}`}>
       <Image
         src="/logo.png"
         alt="AnotherSEOGuru"

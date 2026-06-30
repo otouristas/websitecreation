@@ -16,8 +16,14 @@ AnotherSEOGuru sells a web application that connects to **Google Search Console*
 - SEO glossary: https://anotherseoguru.com/glossary
 - Tools / intent hub: https://anotherseoguru.com/tools
 - Agency pricing: https://anotherseoguru.com/pricing
+- Portfolio / case studies: https://anotherseoguru.com/work
+- Greek homepage: https://anotherseoguru.com/gr
 
-### Positioning
+### Tourism positioning
+AnotherSEOGuru specializes in **tourism website design** for hotels, rent-a-car, tour operators, villas, and **travel AI chatbots**. 55+ live client projects. Markets: Greece, UK, US, Canada, Europe.
+
+### Industry slugs (tourism)
+hotels, rent-a-car, tour-operators, villas-apartments, travel-agencies, travel-ai-chatbots
 - **Not** a verbatim clone of legacy enterprise suites: emphasis is **GSC-grounded operations**, **clustering**, and **execution-oriented** UI.
 - **Agency services** are a separate line: retainers for web design, local SEO, content, and campaigns.
 

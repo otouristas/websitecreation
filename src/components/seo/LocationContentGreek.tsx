@@ -1,15 +1,23 @@
+'use client';
+
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Location } from '@/data/locations';
 import { Service } from '@/data/services';
 import { getServiceEl } from '@/data/services-i18n';
 import { formatLocationNameEl } from '@/data/locations';
+import { localizedPath, siteLocaleFromPath, type SiteLocale } from '@/lib/i18n/locale';
 
 interface LocationContentGreekProps {
   location: Location;
   service?: Service;
+  locale?: SiteLocale;
 }
 
-export function LocationContentGreek({ location, service }: LocationContentGreekProps) {
+export function LocationContentGreek({ location, service, locale: localeProp }: LocationContentGreekProps) {
+  const pathname = usePathname() ?? '/el';
+  const locale = localeProp ?? siteLocaleFromPath(pathname);
+  const lp = (path: string) => localizedPath(locale, path);
   const city = location.cityLocal ?? location.city;
   const place = formatLocationNameEl(location);
   const serviceEl = service ? getServiceEl(service.slug) : null;
@@ -127,12 +135,12 @@ export function LocationContentGreek({ location, service }: LocationContentGreek
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
-            href="/contact"
+            href={lp('/contact')}
             className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white bg-blue-600 rounded-lg hover:bg-blue-700"
           >
             Δωρεάν προσφορά — {city}
           </Link>
-          <Link href="/blog/geo-aeo-ellada" className="btn btn-outline text-lg px-8 py-4">
+          <Link href={lp('/blog/geo-aeo-ellada')} className="btn btn-outline text-lg px-8 py-4">
             Οδηγός GEO &amp; AEO Ελλάδα
           </Link>
         </div>

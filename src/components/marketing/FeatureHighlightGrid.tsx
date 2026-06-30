@@ -1,5 +1,9 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import type { MarketingFeature } from "@/data/marketing-features";
+import { localizedPath, siteLocaleFromPath } from "@/lib/i18n/locale";
 
 interface FeatureHighlightGridProps {
   readonly heading: string;
@@ -9,6 +13,9 @@ interface FeatureHighlightGridProps {
 }
 
 export function FeatureHighlightGrid({ heading, subheading, features, limit = 6 }: FeatureHighlightGridProps) {
+  const pathname = usePathname() ?? "/en";
+  const locale = siteLocaleFromPath(pathname);
+  const lp = (path: string) => localizedPath(locale, path);
   const items = features.slice(0, limit);
   return (
     <section className="py-20 lg:py-28">
@@ -21,7 +28,7 @@ export function FeatureHighlightGrid({ heading, subheading, features, limit = 6 
           {items.map((f) => (
             <li key={f.slug}>
               <Link
-                href={`/platform/features/${f.slug}`}
+                href={lp(`/platform/features/${f.slug}`)}
                 className="block h-full rounded-2xl border border-border p-6 hover:border-primary/40 hover:bg-muted/20 transition-smooth group"
               >
                 <h3 className="font-semibold text-foreground group-hover:text-primary mb-2">{f.title}</h3>
@@ -32,7 +39,7 @@ export function FeatureHighlightGrid({ heading, subheading, features, limit = 6 
           ))}
         </ul>
         <div className="text-center mt-10">
-          <Link href="/platform/features" className="btn btn-outline px-8">
+          <Link href={lp("/platform/features")} className="btn btn-outline px-8">
             View all capabilities
           </Link>
         </div>

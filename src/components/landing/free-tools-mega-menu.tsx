@@ -26,7 +26,9 @@ import {
   Sparkles,
   Target,
 } from "lucide-react";
+import { usePathname } from "next/navigation";
 import { getAppPath } from "@/lib/app-links";
+import { localizedPath, siteLocaleFromPath } from "@/lib/i18n/locale";
 
 interface ToolItem {
   readonly name: string;
@@ -111,6 +113,9 @@ function ToolBadge(props: { readonly children: string; readonly className: strin
 const megaMenuCloseDelayMs = 220;
 
 export function FreeToolsMegaMenu(): ReactElement {
+  const pathname = usePathname() ?? "/en";
+  const locale = siteLocaleFromPath(pathname);
+  const lp = (path: string) => localizedPath(locale, path);
   const [isOpen, setIsOpen] = useState(false);
   const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   function cancelScheduledClose(): void {
@@ -250,7 +255,7 @@ export function FreeToolsMegaMenu(): ReactElement {
                         ))}
                       </ul>
                       <Link
-                        href="/tools"
+                        href={lp("/tools")}
                         className="btn btn-gradient inline-flex w-full items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold text-primary-foreground shadow-sm transition-opacity hover:opacity-95"
                         onClick={() => {
                           cancelScheduledClose();
