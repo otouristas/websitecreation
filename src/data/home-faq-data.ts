@@ -15,12 +15,12 @@ export const HOME_FAQ_ITEMS: readonly HomeFaqItem[] = [
   {
     question: "How does AnotherSEOGuru compare to Ahrefs or Semrush?",
     answer:
-      "Those tools excel at large-scale keyword indexes and historical links. We focus on operational SEO: connecting your verified property, prioritizing queries and pages, clustering intent, and shipping a weekly backlog — plus optional AI execution. See our comparison pages for nuance.",
+      "Those tools excel at large-scale keyword indexes and historical links. We focus on operational SEO: connecting your verified property, prioritizing queries and pages, clustering intent, and shipping a weekly backlog - plus optional AI execution. See our comparison pages for nuance.",
   },
   {
     question: "Do I need to connect Google Search Console?",
     answer:
-      "Connecting Search Console unlocks queries, pages, and performance data in the workspace. Many recommendations assume that connection; some tools accept other inputs — check in-product for your use case.",
+      "Connecting Search Console unlocks queries, pages, and performance data in the workspace. Many recommendations assume that connection; some tools accept other inputs - check in-product for your use case.",
   },
   {
     question: "What AI models can I use?",
@@ -35,7 +35,7 @@ export const HOME_FAQ_ITEMS: readonly HomeFaqItem[] = [
   {
     question: "Is the platform the same as your agency services?",
     answer:
-      "No. The platform is self-serve software. Agency services are retainers for web design, local SEO, content, and campaigns — we can work alongside your in-house use of the product.",
+      "No. The platform is self-serve software. Agency services are retainers for web design, local SEO, content, and campaigns - we can work alongside your in-house use of the product.",
   },
   {
     question: "What happens to my data if I cancel?",

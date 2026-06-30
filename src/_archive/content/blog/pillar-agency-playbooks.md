@@ -1,25 +1,25 @@
 ---
 slug: pillar-agency-playbooks
-title: Agency Playbooks — Delivery, Reporting, and Scaling Client SEO
-description: Hub for operators running retainers — scoping, narrative reporting, and when software augments headcount.
+title: Agency Playbooks - Delivery, Reporting, and Scaling Client SEO
+description: Hub for operators running retainers - scoping, narrative reporting, and when software augments headcount.
 date: 2026-02-01
 author: AnotherSEOGuru Editorial Team
 pillarHub: true
 pillar: agency-playbooks
 ---
 
-Agency SEO fails for predictable reasons: unclear scope, dashboards nobody reads, and strategies that ignore client constraints (CMS, legal, seasonality). Strong operators **productize** delivery — templates, QA, and a single source of truth for performance.
+Agency SEO fails for predictable reasons: unclear scope, dashboards nobody reads, and strategies that ignore client constraints (CMS, legal, seasonality). Strong operators **productize** delivery - templates, QA, and a single source of truth for performance.
 
 ## Recommended articles
 
-- [DIY SEO vs. hiring an agency](/blog/diy-vs-agency) — framing for prospects and realistic expectations.
-- [GSC query prioritization framework](/blog/gsc-query-prioritization-framework) — turn client Search Console into a sprint backlog.
+- [DIY SEO vs. hiring an agency](/blog/diy-vs-agency) - framing for prospects and realistic expectations.
+- [GSC query prioritization framework](/blog/gsc-query-prioritization-framework) - turn client Search Console into a sprint backlog.
 
 ## Where the product helps
 
-- [Sprint board & task management](/platform/features/sprint-board-task-management) — client-facing roadmaps without losing nuance.
-- [AI autopilot mode](/platform/features/ai-autopilot-mode) — automate repetitive execution with human review.
-- [Competitor analysis](/platform/features/competitor-analysis) — faster differentiation stories in pitches and QBRs.
+- [Sprint board & task management](/platform/features/sprint-board-task-management) - client-facing roadmaps without losing nuance.
+- [AI autopilot mode](/platform/features/ai-autopilot-mode) - automate repetitive execution with human review.
+- [Competitor analysis](/platform/features/competitor-analysis) - faster differentiation stories in pitches and QBRs.
 
 ## For agencies on this site
 

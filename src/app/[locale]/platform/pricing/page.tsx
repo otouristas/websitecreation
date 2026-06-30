@@ -54,7 +54,7 @@ export default async function PlatformPricingPage({ params }: PageProps) {
           <header className="text-center max-w-2xl mx-auto mb-16">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Platform pricing</h1>
             <p className="text-lg text-muted-foreground">
-              Software plans, credits, and checkout are managed inside the product. Start free — upgrade when your team is
+              Software plans, credits, and checkout are managed inside the product. Start free - upgrade when your team is
               ready. Looking for done-for-you execution? See{" "}
               <Link href={lp("/pricing")} className="text-primary font-medium hover:underline">
                 agency packages
@@ -90,7 +90,7 @@ export default async function PlatformPricingPage({ params }: PageProps) {
           </div>
           <div className="rounded-2xl border border-border bg-muted/30 p-8 text-center">
             <p className="text-muted-foreground mb-4">
-              Exact prices, credit bundles, and add-ons ship in-product and may change — this marketing page stays focused
+              Exact prices, credit bundles, and add-ons ship in-product and may change - this marketing page stays focused
               on positioning.
             </p>
             <div className="flex flex-wrap justify-center gap-4">

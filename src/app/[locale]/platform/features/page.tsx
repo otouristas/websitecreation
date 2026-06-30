@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { locale } = await params;
   if (!isValidLocale(locale)) return {};
   return buildMetadata({
-    title: "SEO Platform Features — Full List",
+    title: "SEO Platform Features - Full List",
     description:
       "Explore every platform feature: GSC clustering, rank tracking, technical audits, AI autopilot, sprint boards, E-E-A-T, outreach, LLM citations, and GEO/AEO workflows.",
     path: localizedPath(locale as SiteLocale, "/platform/features"),

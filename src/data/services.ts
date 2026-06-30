@@ -181,6 +181,40 @@ export const services: Service[] = [
         ],
         icon: 'clipboard-check',
     },
+    {
+        slug: 'eshop-woocommerce',
+        name: 'E-shop WooCommerce',
+        shortName: 'E-shop Build',
+        description: 'High-converting, fully customized WooCommerce e-shops. Integrated secure payments, shipping calculators, and automated inventory systems.',
+        metaTitle: 'WooCommerce E-shop Creation Services',
+        metaDescription: 'Professional WooCommerce e-shop creation. Beautiful, secure, and SEO-optimized online stores built for sales.',
+        features: [
+            'WooCommerce setup',
+            'Custom product page design',
+            'Payment gateway integration',
+            'Shipping rules & checkout optimization',
+            'SEO category structure',
+            'Inventory management',
+        ],
+        icon: 'shopping-cart',
+    },
+    {
+        slug: 'eshop-seo',
+        name: 'E-shop SEO',
+        shortName: 'E-shop SEO',
+        description: 'Comprehensive SEO services specifically designed for online stores. Rank your categories and products higher to drive consistent organic sales.',
+        metaTitle: 'E-commerce & E-shop SEO Services',
+        metaDescription: 'Rank your e-shop higher. Specialized e-commerce SEO optimization for categories, products, rich snippets, and mobile speed.',
+        features: [
+            'E-shop technical audit',
+            'Category & product optimization',
+            'Product schema markup',
+            'E-commerce keyword research',
+            'Speed & mobile optimization',
+            'Conversion rate optimization',
+        ],
+        icon: 'trending-up',
+    },
 ];
 
 export const getServiceBySlug = (slug: string): Service | undefined => {

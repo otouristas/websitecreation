@@ -5,9 +5,9 @@ import { getAppPath } from "@/lib/app-links";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "Software pricing — AnotherSEOGuru SEO platform",
+  title: "Software pricing - AnotherSEOGuru SEO platform",
   description:
-    "Start free and scale with credits for AI and data APIs. Full checkout and plan management live in the app — this page explains how software billing differs from agency retainers.",
+    "Start free and scale with credits for AI and data APIs. Full checkout and plan management live in the app - this page explains how software billing differs from agency retainers.",
   path: "/platform/pricing",
   primaryKeyword: "SEO software pricing",
 });
@@ -40,7 +40,7 @@ export default function PlatformPricingPage() {
           <header className="text-center max-w-2xl mx-auto mb-16">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Platform pricing</h1>
             <p className="text-lg text-muted-foreground">
-              Software plans, credits, and checkout are managed inside the product. Start free — upgrade when your team is
+              Software plans, credits, and checkout are managed inside the product. Start free - upgrade when your team is
               ready. Looking for done-for-you execution? See{" "}
               <Link href="/pricing" className="text-primary font-medium hover:underline">
                 agency packages
@@ -76,7 +76,7 @@ export default function PlatformPricingPage() {
           </div>
           <div className="rounded-2xl border border-border bg-muted/30 p-8 text-center">
             <p className="text-muted-foreground mb-4">
-              Exact prices, credit bundles, and add-ons ship in-product and may change — this marketing page stays focused
+              Exact prices, credit bundles, and add-ons ship in-product and may change - this marketing page stays focused
               on positioning.
             </p>
             <div className="flex flex-wrap justify-center gap-4">

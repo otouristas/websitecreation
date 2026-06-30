@@ -1,7 +1,7 @@
 ---
 slug: internal-linking-audit-checklist
 title: Internal Linking Audit Checklist for In-House SEO Teams
-description: Find orphan pages, over-linked footers, and anchor text patterns that waste crawl budget — with a pragmatic fix order.
+description: Find orphan pages, over-linked footers, and anchor text patterns that waste crawl budget - with a pragmatic fix order.
 date: 2026-02-18
 author: AnotherSEOGuru Editorial Team
 category: Technical SEO
@@ -21,7 +21,7 @@ Every commercial cluster should have a **hub** (broad intent) and **spokes** (sp
 
 ## 3. Anchor text discipline
 
-Avoid stuffing exact-match anchors site-wide. Use natural language, vary phrasing, and never create patterns that look manipulative. When in doubt, optimize for **clarity for humans** — search engines follow.
+Avoid stuffing exact-match anchors site-wide. Use natural language, vary phrasing, and never create patterns that look manipulative. When in doubt, optimize for **clarity for humans** - search engines follow.
 
 ## 4. Footer and global nav hygiene
 

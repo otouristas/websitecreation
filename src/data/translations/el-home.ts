@@ -9,7 +9,7 @@ export const elHome = {
     h1Line1: 'Ιστοσελίδες που φέρνουν κρατήσεις',
     h1Line2: 'SEO · GEO · AEO · AI chatbots',
     sub:
-      'Σχεδιάζουμε και υλοποιούμε ιστοσελίδες για ξενοδοχεία, rent-a-car και ταξιδιωτικές επιχειρήσεις — με πλήρες SEO, GEO/AEO και AI chatbots.',
+      'Σχεδιάζουμε και υλοποιούμε ιστοσελίδες για ξενοδοχεία, rent-a-car και ταξιδιωτικές επιχειρήσεις - με πλήρες SEO, GEO/AEO και AI chatbots.',
     proof:
       '55+ live έργα σε Κυκλάδες, Κρήτη, UK, US, Canada και Ευρώπη. Από την Google μέχρι τις απαντήσεις των LLM.',
     ctaQuote: 'Ζητήστε προσφορά',
@@ -38,16 +38,16 @@ export const elHome = {
     badge: 'Το πρόβλημα',
     title: 'Η ιστοσελίδα σας δεν φέρνει κρατήσεις;',
     items: [
-      { strong: 'Παλιό design', text: '— δεν εμπνέει εμπιστοσύνη σε ταξιδιώτες που κλείνουν online.' },
-      { strong: 'Χωρίς SEO', text: '— χάνετε organic traffic σε Booking, OTAs και ανταγωνιστές.' },
-      { strong: 'Χωρίς AI', text: '— δεν εμφανίζεστε σε ChatGPT, Perplexity και Google AI Overviews.' },
+      { strong: 'Παλιό design', text: ' - δεν εμπνέει εμπιστοσύνη σε ταξιδιώτες που κλείνουν online.' },
+      { strong: 'Χωρίς SEO', text: ' - χάνετε organic traffic σε Booking, OTAs και ανταγωνιστές.' },
+      { strong: 'Χωρίς AI', text: ' - δεν εμφανίζεστε σε ChatGPT, Perplexity και Google AI Overviews.' },
     ],
     solutionBadge: 'Η λύση',
     solutionTitle: 'Ιστοσελίδα + SEO + GEO/AEO από μία ομάδα',
     solutionItems: [
-      { strong: 'Design που μετατρέπει', text: '— κρατήσεις, αιτήματα προσφοράς και άμεσες κλήσεις.' },
-      { strong: 'Τεχνικό SEO', text: '— ταχύτητα, schema, τοπικές σελίδες και content hubs.' },
-      { strong: 'AI chatbots', text: '— πολύγλωσση υποστήριξη 24/7 για τουρίστες.' },
+      { strong: 'Design που μετατρέπει', text: ' - κρατήσεις, αιτήματα προσφοράς και άμεσες κλήσεις.' },
+      { strong: 'Τεχνικό SEO', text: ' - ταχύτητα, schema, τοπικές σελίδες και content hubs.' },
+      { strong: 'AI chatbots', text: ' - πολύγλωσση υποστήριξη 24/7 για τουρίστες.' },
     ],
     ctaQuote: 'Ζητήστε προσφορά',
     ctaServices: 'Δείτε υπηρεσίες',
@@ -55,7 +55,7 @@ export const elHome = {
 
   howItWorks: {
     heading: 'Πώς δουλεύουμε',
-    subheading: 'Από το brief μέχρι το live site — με SEO ενσωματωμένο, όχι προσθήκη στο τέλος.',
+    subheading: 'Από το brief μέχρι το live site - με SEO ενσωματωμένο, όχι προσθήκη στο τέλος.',
     steps: [
       { title: 'Brief & στρατηγική', description: 'Κατανοούμε την αγορά σας, τους ανταγωνιστές και τα keywords που αξίζουν.' },
       { title: 'Design & ανάπτυξη', description: 'UI/UX για κρατήσεις, galleries, φόρμες και mobile-first εμπειρία.' },
@@ -68,7 +68,7 @@ export const elHome = {
     label: 'Done-for-you agency',
     title: 'Φτιάχνουμε ιστοσελίδες που rankάρουν',
     body:
-      'Εξειδίκευση σε τουρισμό, ξενοδοχεία, rent-a-car και travel AI. 55+ live projects — από την Πάρο μέχρι global markets.',
+      'Εξειδίκευση σε τουρισμό, ξενοδοχεία, rent-a-car και travel AI. 55+ live projects - από την Πάρο μέχρι global markets.',
     ctaPricing: 'Πακέτα & τιμές',
     ctaStart: 'Ξεκινήστε έργο',
     ctaServices: 'Όλες οι υπηρεσίες',
@@ -102,7 +102,7 @@ export const elHome = {
 
   finalCta: {
     title: 'Έτοιμοι για ιστοσελίδα που φέρνει αποτελέσματα;',
-    body: 'Πείτε μας για το project σας — απαντάμε εντός 24 ωρών με προσφορά και χρονοδιάγραμμα.',
+    body: 'Πείτε μας για το project σας - απαντάμε εντός 24 ωρών με προσφορά και χρονοδιάγραμμα.',
     cta: 'Ζητήστε δωρεάν προσφορά',
     secondary: 'Δείτε case studies',
   },
@@ -114,7 +114,7 @@ export const EL_HOME_FAQ = [
   {
     question: 'Τι κάνει η AnotherSEOGuru;',
     answer:
-      'Είμαστε agency κατασκευής ιστοσελίδων και SEO με εξειδίκευση στον τουρισμό — ξενοδοχεία, rent-a-car, εκδρομές, βίλες και travel AI. Παραδίδουμε design, ανάπτυξη, SEO, GEO/AEO και chatbots.',
+      'Είμαστε agency κατασκευής ιστοσελίδων και SEO με εξειδίκευση στον τουρισμό - ξενοδοχεία, rent-a-car, εκδρομές, βίλες και travel AI. Παραδίδουμε design, ανάπτυξη, SEO, GEO/AEO και chatbots.',
   },
   {
     question: 'Για ποιες αγορές φτιάχνετε ιστοσελίδες;',
@@ -127,6 +127,21 @@ export const EL_HOME_FAQ = [
       'Τα πακέτα ξεκινούν από €899 για μικρές επιχειρήσεις. Για ξενοδοχεία και multi-property projects, τα Professional/Business πακέτα (€1.799–€2.999+) καλύπτουν galleries, κρατήσεις και πλήρες SEO.',
   },
   {
+    question: 'Πόσο κοστίζει το SEO στην Ελλάδα και τι περιλαμβάνει ένα πακέτο;',
+    answer:
+      'Το μηνιαίο SEO στην Ελλάδα ξεκινά από €299 τον μήνα για τοπικές επιχειρήσεις και διαμορφώνεται ανάλογα με τον ανταγωνισμό και τις στοχευόμενες λέξεις-κλειδιά. Ένα ολοκληρωμένο πακέτο περιλαμβάνει τεχνικό audit, on-page βελτιστοποίηση, schema markup, δημιουργία περιεχομένου, link building και AEO/GEO βελτιστοποίηση.',
+  },
+  {
+    question: 'Πώς κάνετε SEO σε ένα eshop WooCommerce και πόσο κοστίζει η κατασκευή του;',
+    answer:
+      'Η κατασκευή ενός eshop WooCommerce ξεκινά από €2.999 και περιλαμβάνει πλήρη σχεδιασμό, πληρωμές και SEO structure. Το SEO για eshop εστιάζει στη βελτιστοποίηση κατηγοριών, προϊόντων, schema rich snippets, mobile ταχύτητας και conversion rate για αύξηση των οργανικών πωλήσεων.',
+  },
+  {
+    question: 'Πόσο γρήγορα φέρνει αποτελέσματα το SEO;',
+    answer:
+      'Τα πρώτα αποτελέσματα (αύξηση εμφανίσεων στο Google Search Console) φαίνονται συνήθως σε 3–6 μήνες. Η ουσιαστική αύξηση οργανικής επισκεψιμότητας και κρατήσεων απαιτεί 6–12 μήνες, ανάλογα με τον ανταγωνισμό του κλάδου σας.',
+  },
+  {
     question: 'Συμπεριλαμβάνεται SEO στην τιμή;',
     answer:
       'Ναι. Κάθε ιστοσελίδα παραδίδεται SEO-ready: τεχνικό setup, schema, ταχύτητα, meta tags και οδηγίες για content. Προσφέρουμε και ongoing SEO retainers.',
@@ -134,12 +149,12 @@ export const EL_HOME_FAQ = [
   {
     question: 'Τι είναι GEO και AEO;',
     answer:
-      'GEO (Generative Engine Optimization) και AEO (Answer Engine Optimization) βελτιστοποιούν το περιεχόμενό σας ώστε να εμφανίζεστε σε AI απαντήσεις — ChatGPT, Perplexity, Gemini και Google AI Overviews.',
+      'GEO (Generative Engine Optimization) και AEO (Answer Engine Optimization) βελτιστοποιούν το περιεχόμενό σας ώστε να εμφανίζεστε σε AI απαντήσεις - ChatGPT, Perplexity, Gemini και Google AI Overviews.',
   },
   {
     question: 'Φτιάχνετε AI chatbots για τουρισμό;',
     answer:
-      'Ναι. Πολύγλωσσα chatbots για κρατήσεις, FAQ, διαθεσιμότητα και lead capture — ενσωματωμένα στην ιστοσελίδα σας.',
+      'Ναι. Πολύγλωσσα chatbots για κρατήσεις, FAQ, διαθεσιμότητα και lead capture - ενσωματωμένα στην ιστοσελίδα σας.',
   },
   {
     question: 'Πόσο διαρκεί ένα project;',
@@ -149,6 +164,6 @@ export const EL_HOME_FAQ = [
   {
     question: 'Μπορώ να δω δείγματα δουλειάς σας;',
     answer:
-      'Ναι — δείτε 55+ live projects στο portfolio μας: rent-a-car, ξενοδοχεία, εκδρομές και travel AI.',
+      'Ναι - δείτε 55+ live projects στο portfolio μας: rent-a-car, ξενοδοχεία, εκδρομές και travel AI.',
   },
 ] as const;

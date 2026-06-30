@@ -67,7 +67,7 @@ export default async function PlatformToolPage({ params }: ToolPageProps) {
           </div>
           <p className="mt-10 text-sm text-muted-foreground">
             The interactive tool runs on our secure app subdomain. Agency services for done-for-you SEO and web design
-            are still available on this site — see{" "}
+            are still available on this site - see{" "}
             <Link href="/services" className="text-primary hover:underline">
               services
             </Link>

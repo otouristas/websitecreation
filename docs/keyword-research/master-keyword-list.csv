@@ -1,0 +1,152 @@
+keyword,language,cluster,monthly_volume_gr,difficulty,intent,serp_features,current_gsc_position,current_impressions,target_url,target_file,page_status,priority
+seo υπηρεσιεσ,el,C1,300,,commercial,,6.02,45,/el,src/app/[locale]/page.tsx,exists,P0
+seo υπηρεσίες τιμές,el,C1,,,commercial,,83.8,5,/el,src/app/[locale]/page.tsx,exists,P0
+ποσο κοστιζει το seo,el,C1,10,,commercial,,17.1,58,/el,src/app/[locale]/page.tsx,exists,P0
+πόσο κοστίζει το seo ελλάδα,el,C1,,,commercial,,62.22,9,/el,src/app/[locale]/page.tsx,exists,P0
+seo τιμες,el,C1,40,,commercial,,78.2,25,/el,src/app/[locale]/page.tsx,exists,P0
+τιμές seo,el,C1,40,,commercial,,82.79,14,/el,src/app/[locale]/page.tsx,exists,P0
+σεο τιμεσ,el,C1,40,,commercial,,21.5,12,/el,src/app/[locale]/page.tsx,exists,P0
+seo κοστοσ,el,C1,,,commercial,,85.56,41,/el,src/app/[locale]/page.tsx,exists,P0
+κοστος seo,el,C1,,,commercial,,90.33,3,/el,src/app/[locale]/page.tsx,exists,P0
+seo κόστος,el,C1,,,commercial,,93,3,/el,src/app/[locale]/page.tsx,exists,P0
+seo τιμές ελλάδα,el,C1,,,commercial,,76.38,8,/el,src/app/[locale]/page.tsx,exists,P0
+τιμές seo ελλάδα,el,C1,,,commercial,,80.5,6,/el,src/app/[locale]/page.tsx,exists,P0
+πακέτα seo,el,C1,40,,commercial,,89.83,6,/el,src/app/[locale]/page.tsx,exists,P0
+προσφορά seo,el,C1,,,commercial,,25.25,4,/el,src/app/[locale]/page.tsx,exists,P0
+seo για επιχειρησεις,el,C1,,,commercial,,75.67,86,/el,src/app/[locale]/page.tsx,exists,P0
+seo για μικρές επιχειρήσεις,el,C1,,low,commercial,,42.47,19,/el,src/app/[locale]/page.tsx,exists,P0
+εταιρεια seo,el,C1,90,,commercial,,1,1,/el,src/app/[locale]/page.tsx,exists,P0
+seo,el,C1,4300,93,informational,ai_overview,80.91,56,/el,src/app/[locale]/page.tsx,exists,P0
+seo audit ελλάδα,el,C1,150,75,commercial,ai_overview;question,71.58,12,/el/services/seo-audits,src/app/[locale]/services/[service]/page.tsx,exists,P0
+δωρεάν seo έλεγχος ιστοσελίδας,el,C1,,,commercial,,39,4,/el/services/seo-audits,src/app/[locale]/services/[service]/page.tsx,exists,P1
+επαγγελματικό vs φθηνό seo,el,C1,,,commercial,,38.67,3,/el,src/app/[locale]/page.tsx,exists,P2
+αξιόπιστη vs φθηνή seo εταιρεία,el,C1,,,commercial,,59.67,3,/el,src/app/[locale]/page.tsx,exists,P2
+πότε να αγοράσω seo,el,C1,,,informational,,89,1,/el,src/app/[locale]/page.tsx,exists,P2
+seo ιστοσελιδων,el,C1,,,commercial,,62,1,/el,src/app/[locale]/page.tsx,exists,P1
+seo ελληνικων ιστοσελιδων,el,C1,,,commercial,,100,1,/el,src/app/[locale]/page.tsx,exists,P2
+κατασκευη ιστοσελιδων,el,C2,700,51,commercial,ai_overview,,,/el/services/website-creation,src/app/[locale]/services/[service]/[location]/page.tsx,exists,P0
+κατασκευή ιστοσελίδων θεσσαλονίκη,el,C2,200,39,commercial/local,local_pack,45.17,47,/el/services/website-creation/thessaloniki-gr,src/app/[locale]/services/[service]/[location]/page.tsx,exists,P0
+κατασκευη ιστοσελιδων θεσσαλονικη,el,C2,200,39,commercial/local,local_pack,48.62,29,/el/services/website-creation/thessaloniki-gr,src/app/[locale]/services/[service]/[location]/page.tsx,exists,P0
+κατασκευη ιστοσελιδασ θεσσαλονικη,el,C2,200,39,commercial/local,local_pack,41.12,33,/el/services/website-creation/thessaloniki-gr,src/app/[locale]/services/[service]/[location]/page.tsx,exists,P0
+κατασκευή ιστοσελίδων θεσσαλονίκη τιμεσ,el,C2,,,commercial/local,local_pack,30.48,25,/el/services/website-creation/thessaloniki-gr,src/app/[locale]/services/[service]/[location]/page.tsx,exists,P0
+κατασκευή ιστοσελίδων θεσσαλονίκη τιμές,el,C2,,,commercial/local,local_pack,23,1,/el/services/website-creation/thessaloniki-gr,src/app/[locale]/services/[service]/[location]/page.tsx,exists,P0
+ιστοσελίδες θεσσαλονίκη,el,C2,,,commercial/local,local_pack,45.55,11,/el/services/website-creation/thessaloniki-gr,src/app/[locale]/services/[service]/[location]/page.tsx,exists,P1
+κατασκευη site θεσσαλονικη,el,C2,,,commercial/local,local_pack,46.27,11,/el/services/website-creation/thessaloniki-gr,src/app/[locale]/services/[service]/[location]/page.tsx,exists,P1
+εταιρειες κατασκευης ιστοσελιδων θεσσαλονικη,el,C2,,,commercial/local,local_pack,64.67,9,/el/services/website-creation/thessaloniki-gr,src/app/[locale]/services/[service]/[location]/page.tsx,exists,P1
+διαχειριση site θεσσαλονικη,el,C2,,,commercial/local,,48.33,3,/el/services/website-creation/thessaloniki-gr,src/app/[locale]/services/[service]/[location]/page.tsx,exists,P2
+δημιουργία ιστοσελίδων θεσσαλονίκη,el,C2,,,commercial/local,local_pack,74,2,/el/services/website-creation/thessaloniki-gr,src/app/[locale]/services/[service]/[location]/page.tsx,exists,P1
+κατασκευή ιστοσελίδων αθήνα,el,C2,80,39,commercial/local,local_pack,16.07,41,/el/services/website-creation/athens-gr,src/app/[locale]/services/[service]/[location]/page.tsx,exists,P0
+κατασκευη ιστοσελιδων αθηνα,el,C2,80,39,commercial/local,local_pack,17.6,5,/el/services/website-creation/athens-gr,src/app/[locale]/services/[service]/[location]/page.tsx,exists,P0
+κατασκευή ιστοσελίδας αθήνα,el,C2,80,39,commercial/local,local_pack,14,6,/el/services/website-creation/athens-gr,src/app/[locale]/services/[service]/[location]/page.tsx,exists,P0
+κατασκευη ιστοσελιδασ αθηνα,el,C2,80,39,commercial/local,local_pack,18.17,6,/el/services/website-creation/athens-gr,src/app/[locale]/services/[service]/[location]/page.tsx,exists,P0
+αθήνα κατασκευή ιστοσελίδων,el,C2,80,39,commercial/local,local_pack,16,1,/el/services/website-creation/athens-gr,src/app/[locale]/services/[service]/[location]/page.tsx,exists,P0
+κατασκευή site αθήνα,el,C2,,,commercial/local,local_pack,21,1,/el/services/website-creation/athens-gr,src/app/[locale]/services/[service]/[location]/page.tsx,exists,P1
+κατασκευή ιστοσελίδων στην αθήνα,el,C2,,,commercial/local,local_pack,21,1,/el/services/website-creation/athens-gr,src/app/[locale]/services/[service]/[location]/page.tsx,exists,P1
+κατασκευη ιστοσελιδων ηρακλειο,el,C2,,,commercial/local,local_pack,27.33,6,/el/services/website-creation/heraklion-gr,src/app/[locale]/services/[service]/[location]/page.tsx,exists,P0
+ιστοσελίδες ηράκλειο κρήτης,el,C2,,,commercial/local,local_pack,25,5,/el/services/website-creation/heraklion-gr,src/app/[locale]/services/[service]/[location]/page.tsx,exists,P1
+κατασκευη ιστοσελιδας κρητη,el,C2,,,commercial/local,,51.25,4,/el/services/website-creation/crete-gr,src/app/[locale]/services/[service]/[location]/page.tsx,exists,P1
+κατασκευή ιστοσελίδων κρήτη,el,C2,,,commercial/local,,23,1,/el/services/website-creation/crete-gr,src/app/[locale]/services/[service]/[location]/page.tsx,exists,P1
+ανάπτυξη ιστοσελίδων,el,C2,,,commercial,,1,2,/el/services/website-creation,src/app/[locale]/services/[service]/page.tsx,exists,P1
+ανάπτυξη ιστοσελίδων ελλάδα,el,C2,,,commercial,,71.33,3,/el/services/website-creation,src/app/[locale]/services/[service]/page.tsx,exists,P1
+δημιουργία ιστοσελίδων,el,C2,,,commercial,,1,1,/el/services/website-creation,src/app/[locale]/services/[service]/page.tsx,exists,P1
+συντηρηση ιστοσελιδων,el,C2,,,commercial,,46.5,2,/el/services/website-redesign,src/app/[locale]/services/[service]/page.tsx,exists,P2
+seo ιστοσελιδασ,el,C2,,,commercial,,29.5,2,/el/services/seo-web-design,src/app/[locale]/services/[service]/page.tsx,exists,P1
+προωθηση ιστοσελιδων,el,C2,300,low,commercial,image,,,/el,src/app/[locale]/page.tsx,exists,P0
+προωθηση ιστοσελιδων τιμη,el,C2,150,,commercial,,1,5,/el,src/app/[locale]/page.tsx,exists,P0
+προωθηση ιστοσελιδων τιμεσ,el,C2,150,,commercial,,11,1,/el,src/app/[locale]/page.tsx,exists,P0
+προωθηση ιστοσελιδασ,el,C2,,,commercial,,9,1,/el,src/app/[locale]/page.tsx,exists,P1
+κατασκευη eshop,el,C3,700,2,commercial,ai_overview;paid_top,,,/el/services/eshop-woocommerce,src/data/services.ts,new,P1
+κατασκευη eshop woocommerce,el,C3,150,,commercial,,91.18,22,/el/services/eshop-woocommerce,src/data/services.ts,new,P1
+κατασκευή eshop woocommerce,el,C3,150,,commercial,,63.91,11,/el/services/eshop-woocommerce,src/data/services.ts,new,P1
+κατασκευη eshop magento,el,C3,,,commercial,,75,1,/el/services/eshop-woocommerce,src/data/services.ts,new,P2
+κατασκευή woocommerce,el,C3,,,commercial,,97.09,23,/el/services/eshop-woocommerce,src/data/services.ts,new,P1
+κατασκευη eshop θεσσαλονικη τιμεσ,el,C3,,,commercial/local,,36.33,6,/el/services/eshop-woocommerce,src/data/services.ts,new,P1
+seo για eshop,el,C3,200,,commercial,,80.85,101,/el/services/eshop-seo,src/data/services.ts,new,P1
+seo για e-shop,el,C3,200,,commercial,,84.67,63,/el/services/eshop-seo,src/data/services.ts,new,P1
+seo eshop,el,C3,200,,commercial,,82,17,/el/services/eshop-seo,src/data/services.ts,new,P1
+eshop seo,el,C3,,,commercial,,24.69,16,/el/services/eshop-seo,src/data/services.ts,new,P1
+seo for e-shop,en,C3,,,commercial,,41,2,/en/services/eshop-seo,src/data/services.ts,new,P2
+seo για ηλεκτρονικό κατάστημα,el,C3,,,commercial,,91.82,11,/el/services/eshop-seo,src/data/services.ts,new,P1
+webshop seo,el,C3,,,commercial,,34.32,19,/el/services/eshop-seo,src/data/services.ts,new,P1
+voice seo για eshop,el,C3,,,commercial,,31.73,15,/el/services/eshop-seo,src/data/services.ts,new,P1
+woocommerce τι ειναι,el,C3,150,0,informational,ai_overview,23,2,/el/glossary,src/app/[locale]/glossary/page.tsx,gap,P1
+εγκατάσταση meta pixel σε woocommerce,el,C3,,,informational,,59.5,2,/el/blog,content/blog,new,P3
+καλυτερο cms για seo,el,C3,,,informational,,66.5,6,/el/blog,content/blog,new,P2
+web hosting,el,C4,450,61,commercial,question;local_pack,14.46,340,/el/blog,content/blog,off-core,P3
+hosting,el,C4,700,50,commercial/local,ai_overview,11,3,/el/glossary,src/app/[locale]/glossary/page.tsx,off-core,P3
+web hosting greece,el,C4,150,54,commercial/local,local_pack,27.22,55,/el/blog,content/blog,off-core,P3
+web hosting services,en,C4,,,commercial,,26.27,15,/en/blog,content/blog,off-core,P3
+web hosting in greece,en,C4,,,commercial,,31,1,/en/blog,content/blog,off-core,P3
+seo hosting,el,C4,,,commercial,,54,1,/el/blog,content/blog,off-core,P3
+hosting ιστοσελιδας,el,C4,,,commercial,,21,1,/el/blog,content/blog,off-core,P3
+γρήγορο web hosting,el,C4,,,commercial,,54.33,3,/el/blog,content/blog,off-core,P3
+daily web hosting,el,C4,,,commercial,,46,3,/el/blog,content/blog,off-core,P3
+presta shop host greece,el,C4,,,commercial,,8.88,8,/el/blog,content/blog,off-core,P3
+magento hosting ελλάδα,el,C4,,,commercial,,73.33,3,/el/blog,content/blog,off-core,P3
+ελληνικο domain,el,C4,40,,commercial,,51.85,13,/el/glossary,src/app/[locale]/glossary/page.tsx,off-core,P3
+ελληνικα domain,el,C4,40,,commercial,,55.31,13,/el/glossary,src/app/[locale]/glossary/page.tsx,off-core,P3
+domain name,el,C4,1200,75,informational,paid;question,,,/el/glossary,src/app/[locale]/glossary/page.tsx,off-core,P3
+.gr domain names dnhost,el,C4,,,navigational,,35,2,/el/glossary,src/app/[locale]/glossary/page.tsx,off-core,P3
+dailyhost,el,C4,,,navigational/brand,,1.69,62,/,src/app/[locale]/page.tsx,brand,P3
+daily host,el,C4,,,navigational/brand,,5,4,/,src/app/[locale]/page.tsx,brand,P3
+daily hosting,el,C4,,,navigational/brand,,23.5,2,/,src/app/[locale]/page.tsx,brand,P3
+mediahost,el,C4,,,navigational/brand,,58.67,3,/,src/app/[locale]/page.tsx,brand,P3
+seo θεσσαλονικη,el,C5,100,,commercial/local,,95.21,14,/el/services/local-seo/thessaloniki-gr,src/app/[locale]/services/[service]/[location]/page.tsx,exists,P1
+ηράκλειο seo,el,C5,,,commercial/local,,82.7,10,/el/services/local-seo/heraklion-gr,src/app/[locale]/services/[service]/[location]/page.tsx,exists,P1
+κρήτη seo,el,C5,,,commercial/local,,62.17,23,/el/services/local-seo/crete-gr,src/app/[locale]/services/[service]/[location]/page.tsx,exists,P1
+ρέθυμνο seo,el,C5,,,commercial/local,,12.41,51,/el/services/local-seo/rethymno-gr,src/data/locations.ts,new,P1
+ρέθυμνο προώθηση ιστοσελίδων,el,C5,,,commercial/local,,1.29,35,/el/services/website-creation/rethymno-gr,src/data/locations.ts,new,P1
+προώθηση ιστοσελίδων ηράκλειο κρήτης,el,C5,,,commercial/local,,83.5,2,/el/services/local-seo/heraklion-gr,src/app/[locale]/services/[service]/[location]/page.tsx,exists,P1
+κως seo,el,C5,,,commercial/local,,79.17,6,/el/services/local-seo/kos-gr,src/data/locations.ts,new,P2
+χανιά seo,el,C5,,,commercial/local,,88,1,/el/services/local-seo/chania-gr,src/data/locations.ts,new,P2
+seo κορινθος,el,C5,,,commercial/local,,86.67,3,/el/services/local-seo/corinth-gr,src/data/locations.ts,new,P2
+σέρρες seo,el,C5,,,commercial/local,,86,2,/el/services/local-seo/serres-gr,src/data/locations.ts,new,P2
+λαμία seo,el,C5,,,commercial/local,,83,1,/el/services/local-seo/lamia-gr,src/data/locations.ts,new,P2
+προώθηση ιστοσελίδων θεσσαλονίκη,el,C5,,,commercial/local,,89,2,/el/services/local-seo/thessaloniki-gr,src/app/[locale]/services/[service]/[location]/page.tsx,exists,P1
+seo θεσσαλονικη (variant),el,C5,100,,commercial/local,,14,1,/el/services/local-seo/thessaloniki-gr,src/app/[locale]/services/[service]/[location]/page.tsx,exists,P1
+aeo,el,C6,150,0,informational/branded,ai_overview,75.18,17,/el/services/ai-visibility,src/app/[locale]/services/[service]/page.tsx,exists,P1
+aeo marketing,el,C6,,,informational,,51,1,/el/services/ai-visibility,src/app/[locale]/services/[service]/page.tsx,exists,P1
+aeo chatgpt,el,C6,,,informational,,78,1,/el/services/ai-visibility,src/app/[locale]/services/[service]/page.tsx,exists,P1
+seo labs vs ανταγωνιστές,el,C6,,,commercial/branded,,96,1,/el/services/ai-visibility,src/app/[locale]/services/[service]/page.tsx,exists,P2
+google e seo,el,C6,,,informational,,23.93,14,/el/blog/pillar-ai-llm-visibility,content/blog/pillar-ai-llm-visibility.md,exists,P2
+seo web,el,C6,,,informational,,40,12,/el/blog/pillar-ai-llm-visibility,content/blog/pillar-ai-llm-visibility.md,exists,P2
+markup τι ειναι,el,C6,,,informational,,34,1,/el/glossary,src/app/[locale]/glossary/page.tsx,gap,P2
+seo vs google ads ελλάδα,el,C7,1700,,informational,,36.33,18,/el/blog/seo-vs-google-ads,content/blog,new,P2
+seo vs google ads,en,C7,1700,,informational,,25,1,/en/blog/seo-vs-google-ads,content/blog,new,P2
+google ads vs seo,en,C7,1700,,informational,,25,1,/en/blog/seo-vs-google-ads,content/blog,new,P2
+google ads seo,el,C7,,,commercial,,27.25,4,/el/blog/seo-vs-google-ads,content/blog,new,P2
+seo adwords,el,C7,,,commercial,,22.33,6,/el/blog/seo-vs-google-ads,content/blog,new,P2
+google adwords seo,el,C7,,,commercial,,23.25,4,/el/blog/seo-vs-google-ads,content/blog,new,P2
+seo google ads,el,C7,,,commercial,,30,2,/el/blog/seo-vs-google-ads,content/blog,new,P2
+seo ads,el,C7,,,commercial,,24,1,/el/blog/seo-vs-google-ads,content/blog,new,P2
+adwords μικρες επιχειρησεις,el,C7,,,commercial,,25.5,10,/el/blog/seo-vs-google-ads,content/blog,new,P2
+adwords μικρεσ επιχειρησεισ,el,C7,,,commercial,,37.22,67,/el/blog/seo-vs-google-ads,content/blog,new,P2
+chatbot για ενοικιαζόμενα,el,C8,,,commercial,,87.17,6,/el/solutions/travel-ai-chatbots,src/data/industries.ts,exists,P3
+chatbot για επιχειρήσεις,el,C8,,,commercial,,25.54,13,/el/blog/chatbot-guide,content/blog,off-core,P3
+chatbot για υποστήριξη πελατών,el,C8,,,commercial,,21,2,/el/blog/chatbot-guide,content/blog,off-core,P3
+κατασκευή ιατρικών ιστοσελίδων,el,C9,40,,commercial,,13.85,52,/el/solutions/medical,src/data/industries.ts,gap,P1
+κατασκευή ιατρικών ιστοσελίδων θεσσαλονίκη,el,C9,,,commercial/local,,23.62,16,/el/solutions/medical,src/data/industries.ts,gap,P1
+κατασκευη ιατρικων ιστοσελιδων,el,C9,40,,commercial,,13,1,/el/solutions/medical,src/data/industries.ts,gap,P1
+seo για τουριστικές επιχειρήσεις,el,C9,,,commercial,,25.83,6,/el/solutions/hotels,src/data/industries.ts,exists,P1
+seo εστίαση,el,C9,,,commercial,,89,3,/el/solutions/restaurants,src/data/industries.ts,exists,P2
+seo οικιακές υπηρεσίες,el,C9,,,commercial,,40,2,/el/solutions/cleaning-services,src/data/industries.ts,exists,P2
+for my baby spa rethymno,en,C9,,,navigational/local,,9,2,/en/solutions/med-spas,src/data/industries.ts,off-core,P3
+web development,en,C10,,,commercial,,7.86,7,/en/services/website-creation,src/app/[locale]/services/[service]/page.tsx,exists,P2
+web development agency,en,C10,,,commercial,,12,1,/en/services/website-creation,src/app/[locale]/services/[service]/page.tsx,exists,P2
+web development heraklion crete,en,C10,,,commercial/local,,75.5,2,/en/services/website-creation/heraklion-gr,src/app/[locale]/services/[service]/[location]/page.tsx,exists,P2
+website design near me,en,C10,,,commercial/local,,1,1,/en/locations,src/app/[locale]/locations/page.tsx,exists,P2
+modern web design,en,C10,,,commercial,,13,1,/en/services/website-creation,src/app/[locale]/services/[service]/page.tsx,exists,P2
+seo services,en,C10,,,commercial,,12,1,/en/services,src/app/[locale]/services/page.tsx,exists,P2
+seo agencies,en,C10,,,commercial,,7,1,/en/services,src/app/[locale]/services/page.tsx,exists,P2
+seo greek,en,C10,,,informational,,26,1,/el,src/app/[locale]/page.tsx,exists,P2
+seo τι ειναι,el,PAA,450,0,informational,ai_overview,,,/el/glossary,src/app/[locale]/glossary/page.tsx,gap,P1
+seo πως λειτουργει,el,PAA,90,,informational,,,,/el,src/app/[locale]/page.tsx,exists,P1
+google ads τι ειναι,el,PAA,200,0,informational,ai_overview,,,/el/blog/seo-vs-google-ads,content/blog,new,P2
+δημιουργια eshop τι χρειαζεται,el,PAA,100,0,informational,ai_overview,,,/el/services/eshop-woocommerce,src/data/services.ts,new,P1
+ποσο κοστιζει ενα eshop,el,PAA,80,0,informational,ai_overview,,,/el/services/eshop-woocommerce,src/data/services.ts,new,P1
+τι φορολογια εχουν τα eshop,el,PAA,70,0,informational,ai_overview,,,/el/blog/eshop-guide,content/blog,new,P2
+chatbot τι ειναι,el,PAA,400,0,informational,ai_overview,,,/el/glossary,src/app/[locale]/glossary/page.tsx,gap,P3
+domain name τι ειναι,el,PAA,70,0,informational,ai_overview,,,/el/glossary,src/app/[locale]/glossary/page.tsx,off-core,P3
+hosting τι ειναι,el,PAA,40,37,informational,ai_overview,,,/el/glossary,src/app/[locale]/glossary/page.tsx,off-core,P3
+ποιο web hosting να διαλεξω,el,PAA,30,,informational,,,,/el/blog/web-hosting-guide,content/blog,off-core,P3
+answer engine optimization,el,PAA,90,,informational,,,,/el/services/ai-visibility,src/app/[locale]/services/[service]/page.tsx,exists,P1

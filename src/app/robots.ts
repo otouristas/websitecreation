@@ -16,6 +16,26 @@ export default function robots(): MetadataRoute.Robots {
                 userAgent: 'Bingbot',
                 allow: '/',
             },
+            {
+                userAgent: 'GPTBot',
+                allow: '/',
+            },
+            {
+                userAgent: 'ChatGPT-User',
+                allow: '/',
+            },
+            {
+                userAgent: 'ClaudeBot',
+                allow: '/',
+            },
+            {
+                userAgent: 'Google-Extended',
+                allow: '/',
+            },
+            {
+                userAgent: 'PerplexityBot',
+                allow: '/',
+            },
         ],
         sitemap: [
             'https://anotherseoguru.com/sitemap.xml',

@@ -464,7 +464,7 @@ export const glossaryCategories: GlossaryCategory[] = [
         fullDefinition: "Keyword difficulty (KD) is a score that estimates how challenging it would be to rank on the first page of search results for a given keyword. It's typically based on the authority and backlink profiles of currently ranking pages.",
         example: "KD 10 = Easy (new sites can rank), KD 50 = Moderate, KD 80+ = Very hard (requires high authority)",
         technique: "For new sites, target KD under 30. Build authority over time to compete for harder keywords. Always verify by manually checking who's currently ranking.",
-        proTip: "Don't rely solely on KD scores. Manually analyze the SERP—sometimes 'high difficulty' keywords have weak competitors you can beat with better content.",
+        proTip: "Don't rely solely on KD scores. Manually analyze the SERP - sometimes 'high difficulty' keywords have weak competitors you can beat with better content.",
         relatedTerms: ["search-volume", "serp-analysis", "domain-authority"],
         relatedLinks: [
           { title: "Keyword Research & Clustering", url: "/features/keyword-research-clustering", type: "feature" },
@@ -478,7 +478,7 @@ export const glossaryCategories: GlossaryCategory[] = [
         fullDefinition: "Search intent (also called user intent or query intent) refers to the purpose behind a search query. Understanding intent is crucial for creating content that satisfies users and ranks well. The four main types are informational, navigational, commercial, and transactional.",
         example: "Informational: 'how to tie running shoes'. Transactional: 'buy Nike Air Max'. Commercial: 'best running shoes 2025'. Navigational: 'Nike official site'",
         technique: "Analyze the current SERP to understand what Google thinks the intent is. Match your content format (guide, product page, comparison, etc.) to the intent.",
-        proTip: "If your content doesn't match search intent, you won't rank—no matter how good it is. Always check the SERP before creating content.",
+        proTip: "If your content doesn't match search intent, you won't rank - no matter how good it is. Always check the SERP before creating content.",
         relatedTerms: ["keywords", "serp-analysis", "content-optimization"],
         relatedLinks: [
           { title: "SERP Intent Mapper", url: "/features/serp-intent-mapper", type: "feature" }
@@ -594,7 +594,7 @@ export const glossaryCategories: GlossaryCategory[] = [
         fullDefinition: "Bounce rate measures the percentage of single-page sessions where users left your site without interacting further. While not a direct ranking factor, high bounce rates may indicate content that doesn't satisfy user intent.",
         example: "1,000 visitors, 600 left after one page = 60% bounce rate. Blogs often have 70-90% bounce rate (normal), e-commerce should be 20-45%.",
         technique: "Reduce bounce rate by: matching search intent, improving page speed, adding compelling CTAs, using internal links, improving content quality, and optimizing mobile experience.",
-        proTip: "Bounce rate without context is meaningless. A single-page site or a page that fully answers the query will have high bounce rate—and that's fine.",
+        proTip: "Bounce rate without context is meaningless. A single-page site or a page that fully answers the query will have high bounce rate - and that's fine.",
         relatedTerms: ["dwell-time", "pogo-sticking", "user-engagement"],
         relatedLinks: [
           { title: "SEO Health Score", url: "/features/seo-health-score", type: "feature" }
@@ -604,7 +604,7 @@ export const glossaryCategories: GlossaryCategory[] = [
         id: "organic-traffic",
         term: "Organic Traffic",
         shortDefinition: "Visitors who arrive at your site from unpaid search engine results.",
-        fullDefinition: "Organic traffic consists of visitors who find your website through non-paid search engine results. It's the primary goal of SEO—increasing the quantity and quality of visitors from search engines without paying for ads.",
+        fullDefinition: "Organic traffic consists of visitors who find your website through non-paid search engine results. It's the primary goal of SEO - increasing the quantity and quality of visitors from search engines without paying for ads.",
         example: "If 10,000 monthly visitors come from Google search results (not Google Ads), that's your organic traffic.",
         technique: "Grow organic traffic by: expanding keyword targeting, improving existing rankings, creating more content, building backlinks, fixing technical issues, and targeting featured snippets.",
         proTip: "Track organic traffic trends, not just absolute numbers. Seasonal businesses have natural fluctuations. Compare year-over-year for accurate growth measurement.",
@@ -617,10 +617,10 @@ export const glossaryCategories: GlossaryCategory[] = [
         id: "dwell-time",
         term: "Dwell Time",
         shortDefinition: "How long a user spends on your page before returning to search results.",
-        fullDefinition: "Dwell time is the duration between when a user clicks on a search result and when they return to the SERP. It's a potential user engagement signal—longer dwell time suggests the content satisfied the user's query.",
+        fullDefinition: "Dwell time is the duration between when a user clicks on a search result and when they return to the SERP. It's a potential user engagement signal - longer dwell time suggests the content satisfied the user's query.",
         example: "User clicks your result, spends 5 minutes reading, then goes back to Google. Dwell time = 5 minutes.",
         technique: "Increase dwell time by: creating comprehensive content, using engaging multimedia, improving readability, adding table of contents, using internal links to keep users on site.",
-        proTip: "Dwell time isn't directly measurable in analytics. Use 'time on page' as a proxy, but remember it's not identical—dwell time specifically measures return to SERP.",
+        proTip: "Dwell time isn't directly measurable in analytics. Use 'time on page' as a proxy, but remember it's not identical - dwell time specifically measures return to SERP.",
         relatedTerms: ["bounce-rate", "pogo-sticking", "user-engagement"],
         relatedLinks: [
           { title: "Content Decay Detector", url: "/features/content-decay-detector", type: "feature" }
@@ -678,7 +678,7 @@ export const glossaryCategories: GlossaryCategory[] = [
         id: "rich-snippets",
         term: "Rich Snippets",
         shortDefinition: "Enhanced search results displaying additional information like stars, prices, or images.",
-        fullDefinition: "Rich snippets are search results enhanced with additional visual information derived from structured data. They can include star ratings, prices, availability, cooking times, calorie counts, and more—making listings more eye-catching.",
+        fullDefinition: "Rich snippets are search results enhanced with additional visual information derived from structured data. They can include star ratings, prices, availability, cooking times, calorie counts, and more - making listings more eye-catching.",
         example: "A recipe result showing: ★★★★☆ (4.5) · 45 min · 350 calories vs a plain blue link with just title and description.",
         technique: "Implement relevant schema markup (Product, Recipe, Review, FAQ, HowTo), test with Rich Results Test, ensure data accuracy, avoid spammy markup.",
         proTip: "Rich snippets improve CTR by 20-30%. Prioritize schema for your most important page types and track CTR changes after implementation.",
@@ -733,7 +733,7 @@ export const glossaryCategories: GlossaryCategory[] = [
         fullDefinition: "The Video Carousel is a SERP feature showing a horizontal, scrollable row of video thumbnails for queries where video content is relevant. Videos are primarily from YouTube and display titles, channels, and durations.",
         example: "Searching 'how to tie a tie' shows a video carousel with tutorial videos from various YouTube channels.",
         technique: "Create video content for informational queries, optimize YouTube titles/descriptions, use Video schema on embedded videos, create engaging thumbnails, add timestamps.",
-        proTip: "Videos often appear for 'how to' queries. If you see video carousels for your target keywords, consider creating video content—or you're missing a major traffic opportunity.",
+        proTip: "Videos often appear for 'how to' queries. If you see video carousels for your target keywords, consider creating video content - or you're missing a major traffic opportunity.",
         relatedTerms: ["youtube-seo", "video-schema", "serp-features"],
         relatedLinks: [
           { title: "SERP Feature Hunter", url: "/features/serp-feature-hunter", type: "feature" }
@@ -779,7 +779,7 @@ export const glossaryCategories: GlossaryCategory[] = [
         id: "nap",
         term: "NAP (Name, Address, Phone)",
         shortDefinition: "Business contact information that must be consistent across the web.",
-        fullDefinition: "NAP stands for Name, Address, and Phone number—the critical business information that should be consistent across your website, Google Business Profile, directories, and all online mentions. Inconsistency confuses search engines and hurts local rankings.",
+        fullDefinition: "NAP stands for Name, Address, and Phone number - the critical business information that should be consistent across your website, Google Business Profile, directories, and all online mentions. Inconsistency confuses search engines and hurts local rankings.",
         example: "If your GBP says '123 Main St' but your website says '123 Main Street, Suite 100', that's NAP inconsistency.",
         technique: "Audit all citations for consistency, use the exact same format everywhere, include NAP in website footer, use LocalBusiness schema, fix variations promptly.",
         proTip: "Create a master document with your exact NAP format. Use it when submitting to any directory or platform. Even small variations can hurt.",
@@ -793,7 +793,7 @@ export const glossaryCategories: GlossaryCategory[] = [
         term: "Local Citations",
         shortDefinition: "Online mentions of your business name, address, and phone number.",
         fullDefinition: "Local citations are online references to your business's NAP information on websites, directories, apps, and social platforms. They help search engines verify your business exists and is legitimate, impacting local search rankings.",
-        example: "Listings on Yelp, Yellow Pages, Facebook, industry directories, local chamber of commerce—each is a citation.",
+        example: "Listings on Yelp, Yellow Pages, Facebook, industry directories, local chamber of commerce - each is a citation.",
         technique: "Submit to major directories first (Yelp, Facebook, Apple Maps, Bing Places), then industry-specific directories, ensure consistency, remove duplicates, fix incorrect listings.",
         proTip: "Quality over quantity. Citations from authoritative, relevant sources matter more than hundreds from low-quality directories.",
         relatedTerms: ["nap", "google-business-profile", "local-seo"],
@@ -821,7 +821,7 @@ export const glossaryCategories: GlossaryCategory[] = [
         fullDefinition: "Review management involves actively monitoring reviews across platforms, responding professionally to both positive and negative feedback, and implementing strategies to encourage satisfied customers to leave reviews.",
         example: "Responding to a negative review: 'We're sorry about your experience. Please contact us at [email] so we can make this right.'",
         technique: "Respond to all reviews within 24-48 hours, thank positive reviewers, address negative reviews professionally, never argue, ask happy customers for reviews at the right moment.",
-        proTip: "Negative reviews handled well can build trust. A thoughtful response shows potential customers you care. Never buy fake reviews—Google will catch you.",
+        proTip: "Negative reviews handled well can build trust. A thoughtful response shows potential customers you care. Never buy fake reviews - Google will catch you.",
         relatedTerms: ["google-business-profile", "local-seo", "reputation-management"],
         relatedLinks: [
           { title: "Local SEO & Google Maps", url: "/features/local-seo-google-maps", type: "feature" }
@@ -852,11 +852,11 @@ export const glossaryCategories: GlossaryCategory[] = [
       {
         id: "e-e-a-t",
         term: "E-E-A-T",
-        shortDefinition: "Experience, Expertise, Authoritativeness, Trustworthiness—Google's content quality guidelines.",
+        shortDefinition: "Experience, Expertise, Authoritativeness, Trustworthiness - Google's content quality guidelines.",
         fullDefinition: "E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness) is Google's framework for evaluating content quality. It's especially important for YMYL (Your Money Your Life) topics. The extra E for Experience was added in 2022.",
         example: "A medical article written by a licensed doctor (expertise) who has treated patients (experience) for a respected hospital (authority) with cited sources (trust).",
         technique: "Display author credentials, link to authoritative sources, show real experience, get mentions/links from authorities, use HTTPS, display contact info, update content regularly.",
-        proTip: "E-E-A-T isn't a direct ranking factor—it's what Google's quality raters use. But optimizing for it aligns with what Google's algorithms reward.",
+        proTip: "E-E-A-T isn't a direct ranking factor - it's what Google's quality raters use. But optimizing for it aligns with what Google's algorithms reward.",
         relatedTerms: ["ymyl", "content-quality", "author-authority"],
         relatedLinks: [
           { title: "E-E-A-T Optimizer", url: "/features/eeat-optimizer", type: "feature" }
@@ -919,7 +919,7 @@ export const glossaryCategories: GlossaryCategory[] = [
         id: "thin-content",
         term: "Thin Content",
         shortDefinition: "Pages with little or no added value for users.",
-        fullDefinition: "Thin content refers to pages that provide little unique value—they may be too short, duplicate other content, be auto-generated, or simply not helpful to users. Google may demote thin content or penalize sites with too much of it.",
+        fullDefinition: "Thin content refers to pages that provide little unique value - they may be too short, duplicate other content, be auto-generated, or simply not helpful to users. Google may demote thin content or penalize sites with too much of it.",
         example: "A 100-word product description copied from the manufacturer, or tag pages with just a list of post titles and no context.",
         technique: "Audit for thin pages (under 300 words without good reason), noindex low-value pages, consolidate similar thin pages, add unique value to product descriptions.",
         proTip: "Word count alone doesn't define thin content. A 200-word page that perfectly answers a simple question is better than 2,000 words of fluff.",
@@ -957,7 +957,7 @@ export const glossaryCategories: GlossaryCategory[] = [
         fullDefinition: "Largest Contentful Paint (LCP) measures the time it takes for the largest content element (image, video, or text block) in the viewport to become visible. It's a key Core Web Vital indicating perceived load speed.",
         example: "Good: <2.5s, Needs Improvement: 2.5-4s, Poor: >4s. If your hero image takes 5 seconds to load, your LCP is 5 seconds.",
         technique: "Optimize and compress images, use next-gen formats (WebP), implement lazy loading, preload critical resources, use CDN, reduce server response time.",
-        proTip: "Identify your LCP element using PageSpeed Insights or DevTools. Often it's a hero image—optimizing just that one element can dramatically improve LCP.",
+        proTip: "Identify your LCP element using PageSpeed Insights or DevTools. Often it's a hero image - optimizing just that one element can dramatically improve LCP.",
         relatedTerms: ["core-web-vitals", "page-speed", "fid", "cls"],
         relatedLinks: [
           { title: "Core Web Vitals Pulse", url: "/free-tools/cwv-pulse", type: "tool" },
@@ -1033,7 +1033,7 @@ export const glossaryCategories: GlossaryCategory[] = [
         shortDefinition: "The complex system Google uses to rank search results.",
         fullDefinition: "Google's algorithm is the system of rules and machine learning models that retrieve and rank content from its index. It considers hundreds of factors to deliver the most relevant results for each search query.",
         example: "When you search 'best pizza', the algorithm evaluates millions of pages for relevance, authority, and user experience to rank results.",
-        technique: "Focus on quality content, build authority, ensure technical health, and align with user intent. Don't try to 'game' the algorithm—build for users.",
+        technique: "Focus on quality content, build authority, ensure technical health, and align with user intent. Don't try to 'game' the algorithm - build for users.",
         proTip: "The algorithm updates constantly. Focus on sustainable SEO practices rather than tactics that exploit temporary loopholes.",
         relatedTerms: ["ranking-factors", "algorithm-update", "serp"],
         relatedLinks: [
@@ -1059,7 +1059,7 @@ export const glossaryCategories: GlossaryCategory[] = [
         shortDefinition: "Major algorithm updates affecting broad ranking systems.",
         fullDefinition: "Core updates are significant changes to Google's main ranking algorithm, typically announced and named by release date (e.g., 'March 2025 Core Update'). They can cause large ranking fluctuations and usually complete over 2 weeks.",
         example: "A core update might promote sites with strong E-E-A-T while demoting those with thin content or poor user experience.",
-        technique: "Focus on overall site quality, E-E-A-T signals, content depth, and user satisfaction. There's no 'fix' for core updates—improve broadly.",
+        technique: "Focus on overall site quality, E-E-A-T signals, content depth, and user satisfaction. There's no 'fix' for core updates - improve broadly.",
         proTip: "Core update recovery can take until the next core update. Use the time between to make substantial quality improvements.",
         relatedTerms: ["algorithm-update", "e-e-a-t", "ranking-volatility"],
         relatedLinks: [
@@ -1070,7 +1070,7 @@ export const glossaryCategories: GlossaryCategory[] = [
         id: "helpful-content-update",
         term: "Helpful Content Update",
         shortDefinition: "Update targeting content created primarily for search engines rather than users.",
-        fullDefinition: "The Helpful Content Update targets sites with content that feels written for search engines rather than humans. It's a site-wide signal—having lots of unhelpful content can drag down rankings for your entire domain.",
+        fullDefinition: "The Helpful Content Update targets sites with content that feels written for search engines rather than humans. It's a site-wide signal - having lots of unhelpful content can drag down rankings for your entire domain.",
         example: "Sites with auto-generated content, thin affiliate pages, or content that doesn't satisfy user intent were hit. 'How tall is Eiffel Tower?' articles with 2000 words of filler.",
         technique: "Remove or substantially improve unhelpful content, ensure every page provides unique value, write for humans first, answer queries directly without excessive fluff.",
         proTip: "The HCU classifier is site-wide. Even if 80% of your content is great, 20% unhelpful content can hurt everything. Audit and prune aggressively.",
@@ -1133,7 +1133,7 @@ export const glossaryCategories: GlossaryCategory[] = [
         id: "ai-content",
         term: "AI-Generated Content",
         shortDefinition: "Content created by artificial intelligence tools.",
-        fullDefinition: "AI-generated content is text, images, or other media created by AI tools like ChatGPT, Claude, or Gemini. Google doesn't penalize AI content per se—it penalizes low-quality content regardless of how it's created.",
+        fullDefinition: "AI-generated content is text, images, or other media created by AI tools like ChatGPT, Claude, or Gemini. Google doesn't penalize AI content per se - it penalizes low-quality content regardless of how it's created.",
         example: "Using ChatGPT to draft a blog post, then editing for accuracy, brand voice, and adding unique insights.",
         technique: "Use AI as a starting point, not a final product. Add unique expertise, fact-check everything, inject personal experience, ensure E-E-A-T signals.",
         proTip: "The Helpful Content Update targets content that doesn't add value. AI content that's just regurgitation will fail; AI content enhanced with expertise can succeed.",
@@ -1173,7 +1173,7 @@ export const glossaryCategories: GlossaryCategory[] = [
         id: "entity-seo",
         term: "Entity SEO",
         shortDefinition: "Optimization focused on entities (people, places, things) rather than keywords.",
-        fullDefinition: "Entity SEO is the practice of optimizing for how search engines understand and connect entities—specific people, places, organizations, concepts, and things. It's about being recognized as a definitive entity in your space.",
+        fullDefinition: "Entity SEO is the practice of optimizing for how search engines understand and connect entities - specific people, places, organizations, concepts, and things. It's about being recognized as a definitive entity in your space.",
         example: "When you search 'Elon Musk', Google shows a Knowledge Panel because it understands Elon Musk as an entity connected to Tesla, SpaceX, etc.",
         technique: "Build consistent brand mentions, claim Knowledge Panels, use Organization schema, get Wikipedia presence (if notable), maintain consistent information across platforms.",
         proTip: "Entities are how Google connects information across the web. Building entity recognition means your brand becomes part of Google's understanding of topics.",
@@ -1236,7 +1236,7 @@ export const glossaryCategories: GlossaryCategory[] = [
         term: "SERP (Search Engine Results Page)",
         shortDefinition: "The page displayed by search engines in response to a query.",
         fullDefinition: "A SERP is the page search engines display after a user enters a query. Modern SERPs include organic results, paid ads, featured snippets, knowledge panels, maps, images, videos, and various other features.",
-        example: "Searching 'best coffee maker' shows ads at top, a featured snippet, shopping results, PAA box, and organic listings—all on one SERP.",
+        example: "Searching 'best coffee maker' shows ads at top, a featured snippet, shopping results, PAA box, and organic listings - all on one SERP.",
         technique: "Analyze SERPs for your target keywords to understand intent, identify featured snippet opportunities, assess competitor content, and plan content format.",
         proTip: "SERPs vary by device, location, and personalization. Check from incognito mode and different locations for accurate competitive analysis.",
         relatedTerms: ["serp-features", "organic-results", "featured-snippet"],
@@ -1293,7 +1293,7 @@ export const glossaryCategories: GlossaryCategory[] = [
         fullDefinition: "SEO competitor analysis involves studying competitors' organic search performance, keyword rankings, backlink profiles, content strategies, and technical implementations to identify opportunities and inform your strategy.",
         example: "Analysis shows competitor ranks for 500 keywords you don't, has 3x your backlinks, but poor Core Web Vitals you can beat.",
         technique: "Identify true SERP competitors (not just business competitors), analyze their top content, find their backlink sources, identify content gaps, study their site structure.",
-        proTip: "Your real competitors are whoever ranks for your target keywords—not necessarily your business competitors. A blog might outrank you, not a rival company.",
+        proTip: "Your real competitors are whoever ranks for your target keywords - not necessarily your business competitors. A blog might outrank you, not a rival company.",
         relatedTerms: ["content-gap-analysis", "backlink-analysis", "keyword-research"],
         relatedLinks: [
           { title: "Competitor Analysis", url: "/features/competitor-analysis", type: "feature" },
@@ -1365,7 +1365,7 @@ export const glossaryCategories: GlossaryCategory[] = [
         id: "pogo-sticking",
         term: "Pogo-sticking",
         shortDefinition: "When users quickly bounce back to search results and click another result.",
-        fullDefinition: "Pogo-sticking occurs when a user clicks a search result, quickly returns to the SERP, and clicks a different result. It suggests the first result didn't satisfy their query—a potential negative signal.",
+        fullDefinition: "Pogo-sticking occurs when a user clicks a search result, quickly returns to the SERP, and clicks a different result. It suggests the first result didn't satisfy their query - a potential negative signal.",
         example: "User searches 'best coffee maker', clicks result #1, returns in 5 seconds, clicks result #2 and stays. Result #1 may have pogo-sticking issues.",
         technique: "Match search intent precisely, answer the query quickly (don't bury the answer), improve page speed, ensure mobile-friendliness, use clear headlines.",
         proTip: "Put the answer to the query near the top. If users have to scroll through ads and fluff to find what they want, they'll pogo-stick back.",
@@ -1392,7 +1392,7 @@ export const glossaryCategories: GlossaryCategory[] = [
         term: "Log File Analysis",
         shortDefinition: "Analyzing server logs to understand how search engines crawl your site.",
         fullDefinition: "Log file analysis involves examining your web server's log files to see exactly which pages search engine bots visit, how often, and whether they encounter errors. It provides ground truth about crawl behavior.",
-        example: "Logs show Googlebot visits your blog 1000 times/day but your product pages only 50 times/day—indicating crawl priority issues.",
+        example: "Logs show Googlebot visits your blog 1000 times/day but your product pages only 50 times/day - indicating crawl priority issues.",
         technique: "Filter logs for bot user agents, identify frequently/rarely crawled pages, spot crawl errors, detect crawl waste, analyze crawl patterns over time.",
         proTip: "Log files are the only way to see what Googlebot actually does, not what you think it does. They can reveal hidden issues GSC doesn't show.",
         relatedTerms: ["crawling", "crawl-budget", "googlebot"],
@@ -1404,10 +1404,10 @@ export const glossaryCategories: GlossaryCategory[] = [
         id: "site-migration",
         term: "Site Migration",
         shortDefinition: "Moving a website to a new domain, platform, or structure.",
-        fullDefinition: "Site migration involves significant changes to a website's URL structure, domain, platform, or content. Migrations carry SEO risk—improper handling can cause major traffic losses, while good execution can maintain or improve rankings.",
+        fullDefinition: "Site migration involves significant changes to a website's URL structure, domain, platform, or content. Migrations carry SEO risk - improper handling can cause major traffic losses, while good execution can maintain or improve rankings.",
         example: "Migrating from example.com to newexample.com, or from HTTP to HTTPS, or from an old CMS to a new one.",
         technique: "Create comprehensive redirect maps, update all internal links, monitor GSC for errors, notify Google via Change of Address tool, preserve URL structures when possible.",
-        proTip: "Never migrate during your busy season. Traffic drops are normal post-migration—recover time can be weeks to months. Plan buffer time.",
+        proTip: "Never migrate during your busy season. Traffic drops are normal post-migration - recover time can be weeks to months. Plan buffer time.",
         relatedTerms: ["redirect", "canonical-tag", "https"],
         relatedLinks: [
           { title: "Technical SEO Audits", url: "/features/technical-seo-audits", type: "feature" }
@@ -1433,7 +1433,7 @@ export const glossaryCategories: GlossaryCategory[] = [
         fullDefinition: "Duplicate content is identical or near-identical content that appears at multiple URLs, either within a single site or across different sites. It can cause crawl waste, dilute rankings, and confuse search engines about which version to rank.",
         example: "Product descriptions copied from manufacturers, www vs non-www versions, HTTP vs HTTPS versions, URL parameters creating duplicates.",
         technique: "Use canonical tags to specify preferred versions, implement proper redirects, set parameter handling in GSC, create unique content, consolidate similar pages.",
-        proTip: "Duplicate content typically isn't penalized—it's filtered. But it wastes crawl budget and can cause the wrong version to rank. Fix with canonicals.",
+        proTip: "Duplicate content typically isn't penalized - it's filtered. But it wastes crawl budget and can cause the wrong version to rank. Fix with canonicals.",
         relatedTerms: ["canonical-tag", "index-bloat", "content-quality"],
         relatedLinks: [
           { title: "Technical SEO Audits", url: "/features/technical-seo-audits", type: "feature" }
@@ -1443,7 +1443,7 @@ export const glossaryCategories: GlossaryCategory[] = [
         id: "noindex",
         term: "Noindex Tag",
         shortDefinition: "A directive telling search engines not to include a page in their index.",
-        fullDefinition: "The noindex meta tag or HTTP header tells search engines that a page should not be added to their index and therefore won't appear in search results. It's different from blocking crawling—the page is still crawled but not indexed.",
+        fullDefinition: "The noindex meta tag or HTTP header tells search engines that a page should not be added to their index and therefore won't appear in search results. It's different from blocking crawling - the page is still crawled but not indexed.",
         example: "<meta name=\"robots\" content=\"noindex\"> on thank-you pages, admin pages, or thin tag/category pages.",
         technique: "Use noindex for: thin pages, duplicate pages, admin areas, staging sites, thank-you pages. Don't use on pages you want traffic to.",
         proTip: "Noindex + follow lets Google crawl links on the page without indexing it. Useful for pages with good internal links but no search value themselves.",
@@ -1470,9 +1470,9 @@ export const glossaryCategories: GlossaryCategory[] = [
         term: "Rendering (JavaScript SEO)",
         shortDefinition: "How search engines process and execute JavaScript to see page content.",
         fullDefinition: "Rendering is the process by which search engines execute JavaScript to generate the final HTML content of a page. JavaScript-heavy sites require proper rendering for search engines to index their content.",
-        example: "A React SPA that loads content via JavaScript. Googlebot must render the page to see the content—if rendering fails, content isn't indexed.",
+        example: "A React SPA that loads content via JavaScript. Googlebot must render the page to see the content - if rendering fails, content isn't indexed.",
         technique: "Use server-side rendering (SSR) or static generation for critical content, test with Mobile-Friendly Test, check rendered HTML in GSC, minimize render-blocking JS.",
-        proTip: "Googlebot queues pages for rendering—there's a delay between crawl and render. SSR ensures content is immediately visible without rendering dependency.",
+        proTip: "Googlebot queues pages for rendering - there's a delay between crawl and render. SSR ensures content is immediately visible without rendering dependency.",
         relatedTerms: ["javascript-seo", "indexing", "crawling"],
         relatedLinks: [
           { title: "Technical SEO Audits", url: "/features/technical-seo-audits", type: "feature" }

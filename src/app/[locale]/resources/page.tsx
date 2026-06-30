@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { locale } = await params;
   if (!isValidLocale(locale)) return {};
   return buildMetadata({
-    title: "SEO Resources — Blog, Tools & Guides",
+    title: "SEO Resources - Blog, Tools & Guides",
     description:
       "Free SEO resources: Search Console playbooks, GEO and AEO guides, technical SEO checklists, blog pillars, and links to clustering, audit, and AI visibility tools.",
     path: localizedPath(locale as SiteLocale, "/resources"),
@@ -47,7 +47,7 @@ export default async function ResourcesPage({ params }: PageProps) {
                 <Link href={lp("/glossary")} className="text-primary font-medium hover:underline">
                   SEO glossary
                 </Link>{" "}
-                — definitions, examples, and links to features and tools.
+                - definitions, examples, and links to features and tools.
               </p>
             </section>
             <section>

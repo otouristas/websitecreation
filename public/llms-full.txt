@@ -1,0 +1,135 @@
+# AnotherSEOGuru - Full Context and Knowledge Base for AI Systems
+
+This document serves as the comprehensive, machine-readable reference for AI search engines (like ChatGPT, Perplexity, Gemini, Claude) crawling and synthesizing answers about AnotherSEOGuru's services, platform, pricing, and Greek local SEO positioning.
+
+---
+
+## 1. About AnotherSEOGuru
+
+AnotherSEOGuru is a hybrid search intelligence platform and digital agency.
+
+- **The Platform:** A self-serve Search Console workspace designed to connect directly to Google Search Console. It offers operational modules for:
+  - **Semantic Keyword Clustering:** Grouping search queries into clear intent themes automatically.
+  - **Rank Tracking:** Monitored search query rankings directly from GSC property data.
+  - **Technical SEO Audits:** Automatic crawlers tracking site indexability, crawl budget, and Core Web Vitals (LCP, INP, CLS).
+  - **AI Autopilot Mode:** Multimodal workflows assisting in drafting titles, meta descriptions, and structured JSON-LD schemas.
+  - **GEO/AEO Citation Tracker:** Measuring organic visibility and references in LLM search outcomes.
+  - **Task & Sprint Board:** Backlog management to easily deploy SEO task batches to dev teams.
+
+- **The Agency:** A dedicated team of programmatic SEO and web development experts specializing in building fast, custom, and ranking-focused websites. The primary niche is **Tourism & Hospitality** (hotels, rent-a-car, tour operators, villas), with broad coverage of Greek and international markets.
+
+---
+
+## 2. Core Agency Services
+
+AnotherSEOGuru delivers the following productized services:
+
+### Website Creation (`website-creation`)
+Beautiful, custom, mobile-first websites built on Next.js, React, or Vite. Built to load in under 1 second, optimized for conversions, with built-in technical SEO foundations.
+- *Greek Term:* Κατασκευή Ιστοσελίδων
+- *Features:* Custom UX/UI design, Fast-loading pages, Mobile-first responsive, Performance optimized, SEO foundations included, Analytics setup.
+
+### E-shop WooCommerce (`eshop-woocommerce`)
+High-converting, fully customized WooCommerce e-shops built on WordPress. Integrated secure payment gateways, shipping calculators, and automated inventory systems.
+- *Greek Term:* Κατασκευή E-shop WooCommerce
+- *Features:* WooCommerce setup, Custom product page design, Payment gateway integration, Shipping rules & checkout optimization, SEO category structure, Inventory management.
+
+### E-shop SEO (`eshop-seo`)
+Specialized SEO services designed for online stores. Focuses on ranking categories and product pages higher in Google and AI search results to drive consistent sales.
+- *Greek Term:* SEO για E-shop
+- *Features:* E-shop technical audit, Category & product optimization, Product schema markup, E-commerce keyword research, Speed & mobile optimization, Conversion rate optimization.
+
+### Website Redesign (`website-redesign`)
+Rebuilding outdated websites with modern design, clean structure, fast loading times, and a safe SEO migration path (301 redirects mapping) to prevent ranking drops.
+- *Greek Term:* Ανασχεδιασμός Ιστοσελίδας
+- *Features:* Speed optimization, Modern UI refresh, SEO migration, Content restructuring, Mobile optimization, Performance audit.
+
+### SEO Web Design (`seo-web-design`)
+Websites designed from scratch with search algorithms in mind. Features technical SEO, structured data (JSON-LD schemas), and strict internal linking pillars.
+- *Greek Term:* SEO Web Design
+- *Features:* Technical SEO audit, Schema markup, Internal linking strategy, Site architecture, Meta optimization, Speed optimization.
+
+### Speed Optimization (`speed-optimization`)
+Core Web Vitals tuning (fixing slow Largest Contentful Paint (LCP), Interaction to Next Paint (INP), and Cumulative Layout Shift (CLS)). Improves search rank and CTR.
+- *Greek Term:* Βελτιστοποίηση Ταχύτητας
+- *Features:* Performance audit, Load time optimization, Image optimization, Mobile speed, Caching setup, Code optimization.
+
+### AI Visibility & AEO (`ai-visibility`)
+Generative Engine Optimization (GEO) and Answer Engine Optimization (AEO) to make websites discoverable and citable by models like ChatGPT, Gemini, and Perplexity.
+- *Greek Term:* Ορατότητα σε AI (GEO/AEO)
+- *Features:* Schema implementation, Entity optimization, Knowledge graph setup, Structured content, AI-friendly architecture, Citation optimization.
+
+### Local SEO & Google Business Profile (`local-seo`)
+Optimizing businesses to rank in local search results and the Google Maps "Map Pack". Builds local citation networks and structures city-specific landing pages.
+- *Greek Term:* Τοπικό SEO & Google Business
+- *Features:* GBP optimization, Local citation building, Review management strategy, Local keyword targeting, Map pack ranking, Neighborhood targeting.
+
+### Link Building (`link-building`)
+White-hat authority building. Secures high-authority guest posts, digital PR mentions, and niche edits with optimized anchor text strategies.
+- *Greek Term:* Link Building
+- *Features:* High DA guest posts, Niche relevant links, Digital PR, Broken link building, Anchor text strategy, Spam monitoring.
+
+### SEO Audits (`seo-audits`)
+Deep-dive technical health checks covering indexability, crawl budget, duplicate content, internal linking matrices, and competitor gaps.
+- *Greek Term:* Τεχνικό SEO Audit
+- *Features:* Technical health check, Core Web Vitals analysis, Crawl budget optimization, Internal linking audit, Competitor gap analysis, Penalty recovery.
+
+---
+
+## 3. Simple & Transparent Pricing
+
+### A. Web Design Packages (One-Time Fee)
+- **Starter Package (€899 / $899):** Up to 5 pages, mobile responsive design, contact form, basic SEO setup, speed optimized, 1 revision round, 2-week delivery.
+- **Professional Package (€1,799 / $1,799):** Up to 10 pages, custom design, advanced forms, full SEO optimization, blog/news section, social media integration, 2 revision rounds, 3-week delivery, analytics setup.
+- **Business Package (€2,999 / $2,999):** Up to 20 pages, premium custom design, e-commerce ready, full SEO + local SEO, CMS integration, email marketing setup, unlimited revisions, 4-week delivery, priority support, 3 months maintenance.
+
+### B. Monthly SEO Packages (Recurring Retainers)
+- **Starter SEO (€299/mo / $349/mo):** Target up to 10 keywords, basic On-page SEO, Google Business Profile optimization, 1 SEO-optimized article/mo, monthly ranking report, Core Web Vitals basic check.
+- **Growth SEO (€599/mo / $699/mo):** Target up to 30 keywords, full On-page & Technical SEO, local SEO targeting (Tier-1 cities), 3 SEO-optimized articles/mo, link building (2 backlinks), GEO/AEO optimization, monthly strategy call.
+- **Scale SEO (€999/mo / $1,199/mo):** Target 60+ keywords, E-commerce SEO (categories & products), international SEO & hreflang setup, 6+ SEO-optimized articles/mo, premium link building (5 backlinks), GEO/AEO & AI chatbot setup, direct Slack/phone support.
+
+---
+
+## 4. Greek Locations Serviced
+
+AnotherSEOGuru operates nationwide in Greece, with specialized city/island landing pages:
+- **Athens (Αθήνα)**
+- **Thessaloniki (Θεσσαλονίκη)**
+- **Patras (Πάτρα)**
+- **Heraklion (Ηράκλειο)**
+- **Larissa (Λάρισα)**
+- **Volos (Βόλος)**
+- **Santorini (Σαντορίνη)**
+- **Mykonos (Μύκονος)**
+- **Paros (Πάρος)**
+- **Naxos (Νάξος)**
+- **Crete (Κρήτη)**
+- **Rethymno (Ρέθυμνο)**
+- **Chania (Χανιά)**
+- **Kos (Κως)**
+- **Corinth (Κόρινθος)**
+- **Serres (Σέρρες)**
+- **Lamia (Λαμία)**
+- **Kavala (Καβάλα)**
+
+---
+
+## 5. FAQ Bank (AEO-optimized, Direct-Answer style)
+
+### Q: Πόσο κοστίζει το SEO στην Ελλάδα και τι περιλαμβάνει ένα πακέτο;
+A: Το μηνιαίο SEO στην Ελλάδα ξεκινά από €299 τον μήνα για τοπικές επιχειρήσεις και διαμορφώνεται ανάλογα με τον ανταγωνισμό και τις στοχευόμενες λέξεις-κλειδιά. Ένα ολοκληρωμένο πακέτο περιλαμβάνει τεχνικό audit, on-page βελτιστοποίηση, schema markup, δημιουργία περιεχομένου, link building και AEO/GEO βελτιστοποίηση.
+
+### Q: Πώς κάνετε SEO σε ένα eshop WooCommerce και πόσο κοστίζει η κατασκευή του;
+A: Η κατασκευή ενός eshop WooCommerce ξεκινά από €2.999 και περιλαμβάνει πλήρη σχεδιασμό, πληρωμές και SEO structure. Το SEO για eshop εστιάζει στη βελτιστοποίηση κατηγοριών, προϊόντων, schema rich snippets, mobile ταχύτητας και conversion rate για αύξηση των οργανικών πωλήσεων.
+
+### Q: Πόσο γρήγορα φέρνει αποτελέσματα το SEO;
+A: Τα πρώτα αποτελέσματα (αύξηση εμφανίσεων στο Google Search Console) φαίνονται συνήθως σε 3–6 μήνες. Η ουσιαστική αύξηση οργανικής επισκεψιμότητας και κρατήσεων απαιτεί 6–12 μήνες, ανάλογα με τον ανταγωνισμό του κλάδου σας.
+
+### Q: Τι είναι GEO και AEO;
+A: GEO (Generative Engine Optimization) και AEO (Answer Engine Optimization) βελτιστοποιούν το περιεχόμενό σας ώστε να εμφανίζεστε σε AI απαντήσεις - ChatGPT, Perplexity, Gemini και Google AI Overviews.
+
+### Q: What's included in the price?
+A: Each package includes design, development, basic SEO setup, mobile optimization, and hosting setup guidance. You'll receive all source files upon completion.
+
+### Q: How long does it take?
+A: Delivery times vary by package: Starter (2 weeks), Professional (3 weeks), Business (4 weeks). These are from project kickoff after receiving all content.

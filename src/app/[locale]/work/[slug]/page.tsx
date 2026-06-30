@@ -21,7 +21,7 @@ export async function generateMetadata({
   const project = getWorkProject(slug);
   if (!project) return {};
   return buildMetadata({
-    title: `${project.name} — Case Study`,
+    title: `${project.name} - Case Study`,
     description: project.summary,
     path: localizedPath(locale as SiteLocale, `/work/${slug}`),
     hreflangPath: `/work/${slug}`,

@@ -22,6 +22,13 @@ const GREEK_LOCATION_SLUGS = new Set([
   'paros-gr',
   'naxos-gr',
   'crete-gr',
+  'rethymno-gr',
+  'chania-gr',
+  'kos-gr',
+  'corinth-gr',
+  'serres-gr',
+  'lamia-gr',
+  'kavala-gr',
 ]);
 
 export function isGreekLocationSlug(slug: string): boolean {

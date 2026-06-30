@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { locale } = await params;
   if (!isValidLocale(locale)) return {};
   return buildMetadata({
-    title: "Free SEO Tools — GSC & AI Search",
+    title: "Free SEO Tools - GSC & AI Search",
     description:
       "Explore free SEO tools and guides: Search Console clustering, LLM citation tracking, health scores, semantic keywords, and AI visibility workflows in the product app.",
     path: localizedPath(locale as SiteLocale, "/tools"),

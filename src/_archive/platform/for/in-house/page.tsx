@@ -5,7 +5,7 @@ import { getAppPath } from "@/lib/app-links";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "SEO platform for in-house teams — GSC to roadmap",
+  title: "SEO platform for in-house teams - GSC to roadmap",
   description:
     "Give marketing and SEO leads one workspace: Search Console analytics, health scores, rank tracking, and AI briefs without a dozen subscriptions.",
   path: "/platform/for/in-house",
@@ -21,7 +21,7 @@ export default function PlatformForInHousePage() {
           <h1 className="text-4xl md:text-5xl font-bold mb-6">One stack for the marketing org</h1>
           <p className="text-lg text-muted-foreground mb-10 leading-relaxed">
             In-house teams win when SEO, content, and web share a single source of truth. AnotherSEOGuru starts from the
-            queries and pages Google already shows you — then layers clustering, audits, and AI assistance so roadmap
+            queries and pages Google already shows you - then layers clustering, audits, and AI assistance so roadmap
             debates end faster.
           </p>
           <ul className="space-y-4 text-muted-foreground mb-12">

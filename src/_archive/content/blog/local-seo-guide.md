@@ -9,14 +9,14 @@ categoryColor: bg-blue-100 text-blue-700
 pillar: search-console-mastery
 ---
 
-> "I'm the best plumber in town, but nobody calls me." We hear this every single day. The problem isn't your skill—it's your visibility. In 2026, if you aren't in the Google "Map Pack", you don't exist. This guide is your roadmap out of obscurity.
+> "I'm the best plumber in town, but nobody calls me." We hear this every single day. The problem isn't your skill - it's your visibility. In 2026, if you aren't in the Google "Map Pack", you don't exist. This guide is your roadmap out of obscurity.
 
 ## Table of contents
 
 - [Chapter 1: Why "Near Me" searches are your lifeline](#chapter-1-why-near-me-searches-are-your-lifeline)
 - [Chapter 2: Claiming and verifying your GBP](#chapter-2-claiming-and-verifying-your-gbp)
 - [Chapter 3: The NAP consistency rule](#chapter-3-the-nap-consistency-rule)
-- [Chapter 4: Reviews — your digital currency](#chapter-4-reviews--your-digital-currency)
+- [Chapter 4: Reviews - your digital currency](#chapter-4-reviews--your-digital-currency)
 - [Chapter 5: On-page signals for local SEO](#chapter-5-on-page-signals-for-local-seo)
 - [Chapter 6: Building local citations](#chapter-6-building-local-citations)
 - [Chapter 7: Tracking your ROI](#chapter-7-tracking-your-roi)
@@ -29,7 +29,7 @@ Google reported a **500% increase** in "near me" searches over the last few year
 
 If you are a home service business, **Local SEO** isn't an option. It's survival. Are you ready to stop buying shared leads from Angi/HomeAdvisor and start owning your own traffic?
 
-**Don't know where you rank?** [Book a strategy call](/contact) and we'll help you interpret Search Console and Maps visibility — the same signals we use in our [local SEO module](/platform/features/local-seo-google-maps).
+**Don't know where you rank?** [Book a strategy call](/contact) and we'll help you interpret Search Console and Maps visibility - the same signals we use in our [local SEO module](/platform/features/local-seo-google-maps).
 
 ## Chapter 2: Claiming and verifying your GBP
 
@@ -45,9 +45,9 @@ Your Google Business Profile (formerly GMB) is your new homepage. For many custo
 
 NAP stands for **Name, Address, Phone Number**. Google is a robot; it gets confused easily. If your website says "Bob's Plumbing", your Facebook says "Bob's Plumbing LLC", and Yelp says "Bob the Plumber", Google loses trust in your data.
 
-**The golden rule:** Pick one format and stick to it everywhere — down to "St" vs "Street".
+**The golden rule:** Pick one format and stick to it everywhere - down to "St" vs "Street".
 
-## Chapter 4: Reviews — your digital currency
+## Chapter 4: Reviews - your digital currency
 
 Reviews are a ranking factor. Quantity matters, but **recency** and **keywords** matter more. A 5-star review that says "Great job" is okay. A 5-star review that says "Bob fixed my **leaking water heater** in **Austin** quickly" is pure gold.
 
@@ -55,7 +55,7 @@ Reviews are a ranking factor. Quantity matters, but **recency** and **keywords**
 
 ## Chapter 5: On-page signals for local SEO
 
-Your website needs to back up your GBP claims. This means creating dedicated location pages. You cannot copy-paste the same content for every city — that is "doorway page" spam.
+Your website needs to back up your GBP claims. This means creating dedicated location pages. You cannot copy-paste the same content for every city - that is "doorway page" spam.
 
 We use [programmatic SEO](/services) to generate unique, value-rich pages for every neighborhood you serve, embedding local maps, weather data, and specific landmarks to prove relevance.
 
@@ -77,6 +77,6 @@ Want to see the potential? Use the [ROI calculator on our homepage](/#calculator
 
 ### Ready to dominate your local market?
 
-You can try to manage GBP, citations, reviews, and website content yourself — or you can let experts handle it while you focus on doing the work.
+You can try to manage GBP, citations, reviews, and website content yourself - or you can let experts handle it while you focus on doing the work.
 
 [View our local SEO packages](/pricing)

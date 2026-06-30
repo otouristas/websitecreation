@@ -1,4 +1,4 @@
-// Sitemap for solutions (industry) pages — /en and /el
+// Sitemap for solutions (industry) pages - /en and /el
 import { NextResponse } from 'next/server';
 import { getAllIndustrySlugs } from '@/data/industries';
 import { getAllServiceSlugs } from '@/data/services';

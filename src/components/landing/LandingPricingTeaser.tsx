@@ -41,7 +41,7 @@ export function LandingPricingTeaser() {
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Software plans</h2>
           <p className="text-muted-foreground">
             Pricing details and limits live in-product. Start free, then upgrade when you are ready. Agency retainers are
-            separate — see agency pricing.
+            separate - see agency pricing.
           </p>
         </div>
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-10">

@@ -68,8 +68,8 @@ export function VerticalServices({ locale = 'en' }: VerticalServicesProps) {
           </h2>
           <p className="mx-auto mt-2 max-w-2xl text-muted-foreground">
             {isEl
-              ? 'Κατασκευή ιστοσελίδας, SEO, GEO/AEO και AI — για κάθε vertical του ταξιδιού.'
-              : 'Website design, SEO, GEO/AEO and AI chatbots — for every travel vertical you serve.'}
+              ? 'Κατασκευή ιστοσελίδας, SEO, GEO/AEO και AI - για κάθε vertical του ταξιδιού.'
+              : 'Website design, SEO, GEO/AEO and AI chatbots - for every travel vertical you serve.'}
           </p>
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

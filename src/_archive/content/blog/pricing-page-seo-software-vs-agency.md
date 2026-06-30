@@ -1,7 +1,7 @@
 ---
 slug: pricing-page-seo-software-vs-agency
 title: Why we split software pricing and agency pricing (and how to choose)
-description: Clear positioning between self-serve SEO software and done-for-you retainers — reduces confusion and improves conversion quality.
+description: Clear positioning between self-serve SEO software and done-for-you retainers - reduces confusion and improves conversion quality.
 date: 2026-03-10
 author: AnotherSEOGuru Editorial Team
 category: Strategy
@@ -9,7 +9,7 @@ categoryColor: bg-slate-100 text-slate-800
 pillar: agency-playbooks
 ---
 
-Most buyers do not fail because of price — they fail because they **do not know what they are buying**. Splitting **software** and **agency** pricing is a deliberate conversion choice.
+Most buyers do not fail because of price - they fail because they **do not know what they are buying**. Splitting **software** and **agency** pricing is a deliberate conversion choice.
 
 ## Software: time and leverage
 
@@ -19,7 +19,7 @@ Most buyers do not fail because of price — they fail because they **do not kno
 
 ## Agency: outcomes and labor
 
-- You pay for **delivery** — implementation, content, technical fixes, and reporting.
+- You pay for **delivery** - implementation, content, technical fixes, and reporting.
 - Success depends on **scope** and access to stakeholders.
 - Review [agency packages](/pricing) and book a call when execution is the bottleneck.
 

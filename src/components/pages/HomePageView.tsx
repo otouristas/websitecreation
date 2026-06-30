@@ -105,7 +105,6 @@ export function HomePageView({ locale }: { locale: SiteLocale }) {
             </div>
           </section>
         </main>
-        <StickyMobileCta />
         <Footer />
       </>
     );
@@ -150,7 +149,7 @@ export function HomePageView({ locale }: { locale: SiteLocale }) {
         </section>
         <HowItWorks
           heading="How we deliver tourism websites that rank"
-          subheading="From brief to live site — with SEO, GEO and AEO built in, not bolted on."
+          subheading="From brief to live site - with SEO, GEO and AEO built in, not bolted on."
           steps={[
             { step: 1, title: 'Strategy & brief', description: 'Market, competitors and keyword opportunities mapped before design.' },
             { step: 2, title: 'Design & build', description: 'Mobile-first UX for bookings, galleries and conversion paths.' },
@@ -160,7 +159,7 @@ export function HomePageView({ locale }: { locale: SiteLocale }) {
         />
         <FeatureHighlightGrid
           heading="Platform capabilities teams open daily"
-          subheading="Deep pages for every module — aligned with the in-app experience."
+          subheading="Deep pages for every module - aligned with the in-app experience."
           features={highlightFeatures}
           limit={6}
         />
@@ -197,7 +196,6 @@ export function HomePageView({ locale }: { locale: SiteLocale }) {
           </div>
         </section>
       </main>
-      <StickyMobileCta />
       <Footer />
     </>
   );

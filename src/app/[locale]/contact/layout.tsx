@@ -8,7 +8,7 @@ export async function generateMetadata({ params }: LayoutProps): Promise<Metadat
   const { locale } = await params;
   if (!isValidLocale(locale)) return {};
   return buildMetadata({
-    title: locale === 'el' ? 'Επικοινωνία — Δωρεάν προσφορά SEO' : 'Contact — Get a Free SEO Quote',
+    title: locale === 'el' ? 'Επικοινωνία - Δωρεάν προσφορά SEO' : 'Contact - Get a Free SEO Quote',
     description:
       locale === 'el'
         ? 'Επικοινωνήστε με την ομάδα SEO και web design. Απάντηση εντός 24 ωρών. Δωρεάν προσφορά για ιστοσελίδες, GEO, AEO και τεχνικό SEO.'

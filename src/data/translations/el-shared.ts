@@ -3,7 +3,7 @@
 export const elShared = {
   footer: {
     tagline:
-      'Agency κατασκευής ιστοσελίδων και SEO για τουρισμό — ξενοδοχεία, rent-a-car, εκδρομές και travel AI.',
+      'Agency κατασκευής ιστοσελίδων και SEO για τουρισμό - ξενοδοχεία, rent-a-car, εκδρομές και travel AI.',
     agency: 'Υπηρεσίες',
     resources: 'Πόροι',
     company: 'Εταιρεία',

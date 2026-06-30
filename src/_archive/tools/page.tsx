@@ -6,9 +6,9 @@ import { buildMetadata } from "@/lib/seo";
 import { getAppPath } from "@/lib/app-links";
 
 export const metadata = buildMetadata({
-  title: "Free SEO tools & product intents — AnotherSEOGuru",
+  title: "Free SEO tools & product intents - AnotherSEOGuru",
   description:
-    "Marketing hub for Search Console workflows, clustering, LLM visibility, health scores, and more — with deep links into the product app.",
+    "Marketing hub for Search Console workflows, clustering, LLM visibility, health scores, and more - with deep links into the product app.",
   path: "/tools",
   primaryKeyword: "free SEO tools",
 });

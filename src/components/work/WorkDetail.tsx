@@ -49,7 +49,7 @@ export function WorkDetail({ project, locale = 'en' }: WorkDetailProps) {
     .slice(0, 3);
 
   const articleSchema = generateArticleSchema({
-    headline: `${project.name} — ${isEl ? 'Case Study' : 'Case Study'}`,
+    headline: `${project.name} - ${isEl ? 'Case Study' : 'Case Study'}`,
     description: isEl && project.summaryEl ? project.summaryEl : project.summary,
     datePublished: new Date().toISOString(),
     dateModified: new Date().toISOString(),

@@ -4,8 +4,9 @@ import { notFound } from 'next/navigation';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { services, getServiceBySlug, getAllServiceSlugs } from '@/data/services';
+import { getServiceEl } from '@/data/services-i18n';
 import { industries } from '@/data/industries';
-import { tier1Locations } from '@/data/locations';
+import { tier1Locations, greeceLocations } from '@/data/locations';
 import { isValidLocale, localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 import { buildServiceMetadata, generateArticleSchema, generateBreadcrumbSchema, generateServiceSchema, combineSchemas } from '@/lib/seo';
 import { SchemaMarkup, Breadcrumbs } from '@/components/seo';
@@ -47,31 +48,70 @@ export default async function ServicePage({ params }: PageProps) {
         notFound();
     }
 
+    const isEl = locale === 'el';
+    const serviceEl = isEl ? getServiceEl(serviceSlug) : null;
+
+    const displayName = serviceEl?.name ?? service.name;
+    const displayDesc = serviceEl?.description ?? service.description;
+    const displayFeatures = serviceEl?.features ?? service.features;
+
+    const t = isEl
+        ? {
+            whatsIncluded: 'Τι Περιλαμβάνεται',
+            byCity: `${displayName} ανά Πόλη`,
+            byCityDesc: `Παρέχουμε υπηρεσίες ${displayName.toLowerCase()} σε επιχειρήσεις σε όλη την Ελλάδα και διεθνώς. Επιλέξτε την πόλη σας για τοπικές λεπτομέρειες.`,
+            allCities: 'Δείτε όλες τις τοποθεσίες →',
+            forIndustries: `${displayName} για Κλάδους & Επιχειρήσεις`,
+            forIndustriesDesc: `Εξειδικευμένες λύσεις ${displayName.toLowerCase()} προσαρμοσμένες στις ανάγκες της δικής σας δραστηριότητας.`,
+            relatedServices: 'Σχετικές Υπηρεσίες',
+            ctaTitle: 'Έτοιμοι να ξεκινήσουμε;',
+            ctaDesc: `Ζητήστε μια δωρεάν προσφορά για ${displayName.toLowerCase()} σήμερα.`,
+            ctaButton: 'Δωρεάν Προσφορά',
+            getQuote: 'Ζητήστε Προσφορά',
+            viewByLocation: 'Δείτε ανά Τοποθεσία',
+          }
+        : {
+            whatsIncluded: "What's Included",
+            byCity: `${displayName} by City`,
+            byCityDesc: `We provide ${displayName.toLowerCase()} services to businesses across the United States and internationally. Select your city for local pricing and availability.`,
+            allCities: 'View all 100+ cities →',
+            forIndustries: `${displayName} for Industries`,
+            forIndustriesDesc: `Specialized ${displayName.toLowerCase()} tailored for specific business types and niches.`,
+            relatedServices: 'Related Services',
+            ctaTitle: 'Ready to Start?',
+            ctaDesc: `Get a free quote for ${displayName.toLowerCase()} today.`,
+            ctaButton: 'Get Free Quote',
+            getQuote: 'Get a Quote',
+            viewByLocation: 'View by Location',
+          };
+
     const lp = (path: string) => localizedPath(locale as SiteLocale, path);
 
     // Related services (excluding current)
     const relatedServices = services.filter((s) => s.slug !== serviceSlug).slice(0, 3);
 
     // Generate breadcrumbs for navigation
-    const breadcrumbs = getServiceBreadcrumbs(service.name, service.slug);
+    const breadcrumbs = getServiceBreadcrumbs(displayName, service.slug);
 
     // Generate schema markup
     const schemas = combineSchemas(
         generateBreadcrumbSchema({ items: breadcrumbs }),
         generateServiceSchema({
-            name: service.name,
-            description: service.description,
+            name: displayName,
+            description: displayDesc,
             provider: { name: 'AnotherSEOGuru', url: 'https://anotherseoguru.com' },
             serviceType: 'Web Development',
         }),
         generateArticleSchema({
-            headline: service.name,
-            description: service.metaDescription,
+            headline: displayName,
+            description: displayDesc,
             datePublished: new Date().toISOString(),
             dateModified: new Date().toISOString(),
             author: { name: 'AnotherSEOGuru' },
         })
     );
+
+    const locationsToShow = isEl ? greeceLocations : tier1Locations.slice(0, 30);
 
     return (
         <>
@@ -86,23 +126,23 @@ export default async function ServicePage({ params }: PageProps) {
                             <Breadcrumbs items={breadcrumbs} className="mb-6" />
 
                             <h1 className="text-4xl sm:text-5xl font-bold mb-6">
-                                {service.name}
+                                {displayName}
                             </h1>
 
                             {/* Description under H1 */}
                             <p className="text-lg text-muted-foreground mb-8">
-                                {service.description}
+                                {displayDesc}
                             </p>
 
                             <div className="flex flex-wrap gap-4">
                                 <Link href={lp("/contact")} className="btn btn-gradient">
-                                    Get a Quote
+                                    {t.getQuote}
                                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                     </svg>
                                 </Link>
                                 <Link href="#locations" className="btn btn-outline">
-                                    View by Location
+                                    {t.viewByLocation}
                                 </Link>
                             </div>
                         </div>
@@ -112,10 +152,10 @@ export default async function ServicePage({ params }: PageProps) {
                 {/* Features */}
                 <section className="section">
                     <div className="container">
-                        <h2 className="text-2xl sm:text-3xl font-bold mb-8">What&apos;s Included</h2>
+                        <h2 className="text-2xl sm:text-3xl font-bold mb-8">{t.whatsIncluded}</h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                            {service.features.map((feature, i) => (
-                                <div key={i} className="flex items-start gap-3 p-4 rounded-xl bg-muted/50">
+                            {displayFeatures.map((feature, i) => (
+                                <div key={i} className="glass-card hover-glow flex items-start gap-3 p-4 rounded-xl">
                                     <svg className="w-5 h-5 text-success mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                     </svg>
@@ -130,27 +170,26 @@ export default async function ServicePage({ params }: PageProps) {
                 <section className="section bg-muted/30" id="locations">
                     <div className="container">
                         <h2 className="text-2xl sm:text-3xl font-bold mb-4">
-                            {service.name} by City
+                            {t.byCity}
                         </h2>
                         <p className="text-muted-foreground mb-8 max-w-2xl">
-                            We provide {service.name.toLowerCase()} services to businesses across the United States.
-                            Select your city for local pricing and availability.
+                            {t.byCityDesc}
                         </p>
 
                         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
-                            {tier1Locations.slice(0, 30).map((location) => (
+                            {locationsToShow.map((location) => (
                                 <Link
                                     key={location.slug}
                                     href={lp(`/services/${serviceSlug}/${location.slug}`)}
-                                    className="px-3 py-2 text-sm text-center rounded-lg border border-border hover:border-primary hover:text-primary bg-background transition-smooth"
+                                    className="glass-card hover-glow px-3 py-2 text-sm text-center rounded-lg border border-border transition-smooth"
                                 >
-                                    {location.city}
+                                    {isEl && location.cityLocal ? location.cityLocal : location.city}
                                 </Link>
                             ))}
                         </div>
                         <div className="text-center mt-6">
                             <Link href={lp("/locations")} className="text-primary hover:underline text-sm font-medium">
-                                View all 100+ cities →
+                                {t.allCities}
                             </Link>
                         </div>
                     </div>
@@ -160,22 +199,31 @@ export default async function ServicePage({ params }: PageProps) {
                 <section className="section">
                     <div className="container">
                         <h2 className="text-2xl sm:text-3xl font-bold mb-4">
-                            {service.name} for Industries
+                            {t.forIndustries}
                         </h2>
                         <p className="text-muted-foreground mb-8 max-w-2xl">
-                            Specialized {service.name.toLowerCase()} tailored for specific business types and niches.
+                            {t.forIndustriesDesc}
                         </p>
 
                         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
-                            {industries.map((industry) => (
-                                <Link
-                                    key={industry.slug}
-                                    href={lp(`/solutions/${industry.slug}/${serviceSlug}`)}
-                                    className="px-4 py-3 text-sm text-center rounded-lg border border-border hover:border-primary hover:text-primary bg-background transition-smooth"
-                                >
-                                    {industry.name}
-                                </Link>
-                            ))}
+                            {industries.map((industry) => {
+                                const indName = isEl && industry.slug === 'rent-a-car'
+                                  ? 'Rent-a-Car'
+                                  : (isEl && industry.slug === 'hotels'
+                                    ? 'Ξενοδοχεία'
+                                    : (isEl && industry.slug === 'tour-operators'
+                                      ? 'Εκδρομές & Tours'
+                                      : industry.name));
+                                return (
+                                    <Link
+                                        key={industry.slug}
+                                        href={lp(`/solutions/${industry.slug}/${serviceSlug}`)}
+                                        className="glass-card hover-glow px-4 py-3 text-sm text-center rounded-lg border border-border transition-smooth"
+                                    >
+                                        {indName}
+                                    </Link>
+                                );
+                            })}
                         </div>
                     </div>
                 </section>
@@ -183,18 +231,23 @@ export default async function ServicePage({ params }: PageProps) {
                 {/* Related Services */}
                 <section className="section bg-muted/30">
                     <div className="container">
-                        <h2 className="text-2xl sm:text-3xl font-bold mb-8">Related Services</h2>
+                        <h2 className="text-2xl sm:text-3xl font-bold mb-8">{t.relatedServices}</h2>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                            {relatedServices.map((related) => (
-                                <Link
-                                    key={related.slug}
-                                    href={lp(`/services/${related.slug}`)}
-                                    className="card p-6 hover-glow"
-                                >
-                                    <h3 className="font-semibold mb-2">{related.name}</h3>
-                                    <p className="text-sm text-muted-foreground">{related.description}</p>
-                                </Link>
-                            ))}
+                            {relatedServices.map((related) => {
+                                const relEl = isEl ? getServiceEl(related.slug) : null;
+                                const relName = relEl?.name ?? related.name;
+                                const relDesc = relEl?.description ?? related.description;
+                                return (
+                                    <Link
+                                        key={related.slug}
+                                        href={lp(`/services/${related.slug}`)}
+                                        className="glass-card hover-glow card p-6"
+                                    >
+                                        <h3 className="font-semibold mb-2">{relName}</h3>
+                                        <p className="text-sm text-muted-foreground">{relDesc}</p>
+                                    </Link>
+                                );
+                            })}
                         </div>
                     </div>
                 </section>
@@ -202,10 +255,10 @@ export default async function ServicePage({ params }: PageProps) {
                 {/* CTA */}
                 <section className="section gradient-primary text-white">
                     <div className="container text-center">
-                        <h2 className="text-3xl font-bold mb-4">Ready to Start?</h2>
-                        <p className="text-white/80 mb-8">Get a free quote for {service.name.toLowerCase()} today.</p>
+                        <h2 className="text-3xl font-bold mb-4">{t.ctaTitle}</h2>
+                        <p className="text-white/80 mb-8">{t.ctaDesc}</p>
                         <Link href={lp("/contact")} className="btn bg-white text-primary hover:bg-white/90">
-                            Get Free Quote
+                            {t.ctaButton}
                         </Link>
                     </div>
                 </section>

@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
-export const alt = 'AnotherSEOGuru — Web design, SEO, GEO & AEO for tourism';
+export const alt = 'AnotherSEOGuru - Web design, SEO, GEO & AEO for tourism';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -26,7 +26,7 @@ export default function OpenGraphImage() {
           Web Design · SEO · GEO & AEO
         </div>
         <div style={{ fontSize: 28, marginTop: 24, opacity: 0.9, maxWidth: 800 }}>
-          Tourism, hotels, rent-a-car & travel AI — built to rank globally
+          Tourism, hotels, rent-a-car & travel AI - built to rank globally
         </div>
       </div>
     ),

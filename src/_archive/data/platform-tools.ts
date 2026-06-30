@@ -63,7 +63,7 @@ export const PLATFORM_TOOLS: readonly PlatformToolDefinition[] = [
     slug: "free-seo-tools",
     title: "Free SEO tools (meta, schema, CWV, and more)",
     description:
-      "Generators and checkers for meta tags, schema, robots.txt, Core Web Vitals, and hreflang—run them in the browser.",
+      "Generators and checkers for meta tags, schema, robots.txt, Core Web Vitals, and hreflang - run them in the browser.",
     primaryKeyword: "free SEO tools",
     appPath: "/free-tools",
   },

@@ -1,6 +1,6 @@
 ---
 slug: llm-citations-brand-visibility
-title: LLM Citations and Brand Visibility — A Sober Measurement Guide
+title: LLM Citations and Brand Visibility - A Sober Measurement Guide
 description: What "being cited by AI" means, how to sample responsibly, and how to connect efforts to real business outcomes.
 date: 2026-02-14
 author: AnotherSEOGuru Editorial Team
@@ -22,11 +22,11 @@ Always log model version and date. A screenshot without context ages poorly.
 ## What not to claim
 
 - That you can "guarantee" placement in synthetic answers.
-- That LLM mentions replace organic clicks one-for-one — most teams still need classic search and direct demand.
+- That LLM mentions replace organic clicks one-for-one - most teams still need classic search and direct demand.
 
 ## Connect to SEO fundamentals
 
-Clear entity pages, authoritative citations, and helpful structured content still matter. Our [multi-LLM AI system](/platform/features/multi-llm-ai-system) is designed for **workflow** — briefs, checks, and repeatable prompts — not magic bullets.
+Clear entity pages, authoritative citations, and helpful structured content still matter. Our [multi-LLM AI system](/platform/features/multi-llm-ai-system) is designed for **workflow** - briefs, checks, and repeatable prompts - not magic bullets.
 
 ## Reporting to leadership
 

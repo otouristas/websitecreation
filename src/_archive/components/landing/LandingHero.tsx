@@ -34,14 +34,14 @@ export function LandingHero() {
             </p>
             <p className="mx-auto mb-8 max-w-xl text-base text-muted-foreground md:text-lg lg:mx-0">
               Keyword clustering, rank tracking, technical audits, LLM citation insights, sprint planning, and optional
-              autopilot — plus our agency team when you want execution.
+              autopilot - plus our agency team when you want execution.
             </p>
             <div className="mb-8 flex flex-col justify-center gap-4 sm:flex-row lg:justify-start">
               <a
                 href={getAppPath("/signup")}
                 className="inline-flex items-center justify-center gap-2 rounded-2xl px-8 py-4 text-lg font-semibold text-primary-foreground shadow-lg shadow-primary/30 btn btn-gradient"
                 rel="noopener noreferrer"
-                aria-label="Start free with AnotherSEOGuru — create your account"
+                aria-label="Start free with AnotherSEOGuru - create your account"
               >
                 Start free
               </a>

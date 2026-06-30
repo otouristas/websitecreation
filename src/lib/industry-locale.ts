@@ -29,7 +29,7 @@ export function getLocalizedIndustry(slug: string, locale: SiteLocale): Localize
 
 export function getIndustryMeta(industry: LocalizedIndustry, locale: SiteLocale) {
   return {
-    title: locale === 'el' ? `${industry.name} — Ιστοσελίδες & SEO` : `Website Solutions for ${industry.name}`,
+    title: locale === 'el' ? `${industry.name} - Ιστοσελίδες & SEO` : `Website Solutions for ${industry.name}`,
     description: industry.metaDescription,
   };
 }

@@ -1,4 +1,4 @@
-// SEO Description Builder — targets 150–160 character meta descriptions
+// SEO Description Builder - targets 150–160 character meta descriptions
 
 const BASE_URL = 'https://anotherseoguru.com';
 const BRAND_NAME = 'AnotherSEOGuru';
@@ -28,7 +28,7 @@ export function smartTruncate(text: string, maxLength: number): string {
   if (lastSpace === -1) return truncated;
 
   let result = truncated.slice(0, lastSpace);
-  result = result.replace(/[,;:\-–—]$/, '').trim();
+  result = result.replace(/[,;:\-– - ]$/, '').trim();
 
   return result;
 }
@@ -50,11 +50,18 @@ export function finalizeDescription(
   }
 
   if (d.length < minLen) {
-    const pads = [
-      ' Free quote or 7-day platform trial.',
-      ' Built for Google & AI search visibility.',
-      ' Trusted by 500+ marketing teams worldwide.',
-    ];
+    const isGreek = /[α-ωΑ-Ωίϊΐόάέύϋΰήώ]/i.test(d);
+    const pads = isGreek
+      ? [
+          ' Ζητήστε δωρεάν προσφορά σήμερα.',
+          ' Σχεδιασμένο για Google και AI αναζήτηση.',
+          ' Κορυφαία ταχύτητα και απόδοση ιστοσελίδας.',
+        ]
+      : [
+          ' Free quote or 7-day platform trial.',
+          ' Built for Google & AI search visibility.',
+          ' Trusted by 500+ marketing teams worldwide.',
+        ];
     for (const pad of pads) {
       if (d.length >= minLen) break;
       const candidate = d + pad;

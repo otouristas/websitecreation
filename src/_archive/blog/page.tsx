@@ -7,7 +7,7 @@ import { getAllBlogPosts } from '@/lib/blog';
 export const metadata = buildMetadata({
   title: 'Local SEO & Marketing Blog | AnotherSEOGuru',
   description:
-    'Insights, guides, and pillar hubs on Search Console, AI visibility, technical SEO, and agency playbooks — with links to our SEO platform.',
+    'Insights, guides, and pillar hubs on Search Console, AI visibility, technical SEO, and agency playbooks - with links to our SEO platform.',
   path: '/blog',
 });
 
@@ -21,7 +21,7 @@ export default function BlogIndex() {
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">SEO insights & playbooks</h1>
             <p className="text-xl text-muted-foreground">
-              Actionable articles on local SEO, Search Console operations, AI visibility, and technical delivery — plus links into the product when
+              Actionable articles on local SEO, Search Console operations, AI visibility, and technical delivery - plus links into the product when
               you are ready to execute faster.
             </p>
           </div>

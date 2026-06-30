@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import MarketingPopup from "@/components/MarketingPopup";
 import CookieConsent from "@/components/CookieConsent";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import { MarketingPageBackground } from "@/components/marketing";
@@ -60,7 +59,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image.png",
         width: 1200,
         height: 630,
-        alt: "AnotherSEOGuru — SEO software and agency",
+        alt: "AnotherSEOGuru - SEO software and agency",
       },
     ],
   },
@@ -180,12 +179,14 @@ const structuredDataGraph = {
       url: SITE_URL,
       name: "AnotherSEOGuru",
       description:
-        "SEO software for Search Console teams and full-service SEO agency programs — platform, execution, and websites in one partner ecosystem.",
+        "SEO software for Search Console teams and full-service SEO agency programs - platform, execution, and websites in one partner ecosystem.",
       publisher: { "@id": `${SITE_URL}/#organization` },
       inLanguage: "en-US",
     },
   ],
 };
+
+import StickyMobileCta from "@/components/StickyMobileCta";
 
 export default function RootLayout({
   children,
@@ -203,12 +204,12 @@ export default function RootLayout({
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} relative antialiased`}>
         <GoogleAnalytics />
-        <MarketingPopup />
         <CookieConsent />
         <div className="pointer-events-none fixed inset-0 -z-10" aria-hidden>
           <MarketingPageBackground />
         </div>
         <div className="relative z-0 min-h-dvh">{children}</div>
+        <StickyMobileCta />
       </body>
     </html>
   );

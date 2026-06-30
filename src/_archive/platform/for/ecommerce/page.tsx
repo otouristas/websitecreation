@@ -5,7 +5,7 @@ import { getAppPath } from "@/lib/app-links";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "SEO platform for ecommerce — products, SERP, and decay",
+  title: "SEO platform for ecommerce - products, SERP, and decay",
   description:
     "Monitor category and product queries, shopping visibility, content decay, and technical health for stores that live or die on organic product discovery.",
   path: "/platform/for/ecommerce",
@@ -22,7 +22,7 @@ export default function PlatformForEcommercePage() {
           <p className="text-lg text-muted-foreground mb-10 leading-relaxed">
             Product grids, faceted navigation, and seasonal demand punish slow teams. AnotherSEOGuru helps you see which
             queries and templates actually drive revenue, where content is decaying, and which SERP features you can
-            realistically win — then tracks progress over time.
+            realistically win - then tracks progress over time.
           </p>
           <ul className="space-y-4 text-muted-foreground mb-12">
             <li className="flex gap-3">

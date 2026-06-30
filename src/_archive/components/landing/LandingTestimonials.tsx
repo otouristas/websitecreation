@@ -7,7 +7,7 @@ const testimonials = [
   {
     name: "Sarah Chen",
     handle: "@sarahseo",
-    text: "Keyword clustering and rank tracking in one place — I wish we had consolidated sooner.",
+    text: "Keyword clustering and rank tracking in one place - I wish we had consolidated sooner.",
   },
   {
     name: "Marcus Rodriguez",

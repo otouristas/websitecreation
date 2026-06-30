@@ -17,20 +17,20 @@ export function ProblemSolutionSection() {
               <li className="flex gap-3">
                 <span className="text-destructive font-bold">×</span>
                 <span>
-                  <strong className="text-foreground">Stack overload</strong> — separate rank trackers, content tools, and GSC
+                  <strong className="text-foreground">Stack overload</strong> - separate rank trackers, content tools, and GSC
                   spreadsheets.
                 </span>
               </li>
               <li className="flex gap-3">
                 <span className="text-destructive font-bold">×</span>
                 <span>
-                  <strong className="text-foreground">Slow decisions</strong> — insights do not turn into a weekly backlog.
+                  <strong className="text-foreground">Slow decisions</strong> - insights do not turn into a weekly backlog.
                 </span>
               </li>
               <li className="flex gap-3">
                 <span className="text-destructive font-bold">×</span>
                 <span>
-                  <strong className="text-foreground">AI bolt-ons</strong> — generic chat instead of SEO-native workflows.
+                  <strong className="text-foreground">AI bolt-ons</strong> - generic chat instead of SEO-native workflows.
                 </span>
               </li>
             </ul>
@@ -57,7 +57,7 @@ export function ProblemSolutionSection() {
               <li className="flex gap-3">
                 <CheckCircle2 className="w-5 h-5 text-[hsl(var(--success))] shrink-0 mt-0.5" aria-hidden />
                 <span>
-                  <strong className="text-foreground">AI + agency</strong> — ship in-product or hand off to our team.
+                  <strong className="text-foreground">AI + agency</strong> - ship in-product or hand off to our team.
                 </span>
               </li>
             </ul>

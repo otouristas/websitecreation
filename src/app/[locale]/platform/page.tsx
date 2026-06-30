@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { locale } = await params;
   if (!isValidLocale(locale)) return {};
   return buildMetadata({
-    title: "SEO Software Platform — GSC & AI",
+    title: "SEO Software Platform - GSC & AI",
     description:
       "GSC-native SEO platform: semantic clustering, rank tracking, technical audits, GEO, AEO, and multi-LLM workflows. Turn Search Console data into weekly execution. 7-day trial.",
     path: localizedPath(locale as SiteLocale, "/platform"),
@@ -46,11 +46,11 @@ export default async function PlatformHubPage({ params }: PageProps) {
           badge="Product · Connects to Google Search Console"
           title="The SEO command center for teams who"
           titleHighlight="outgrow spreadsheets."
-          description="Query-level GSC analytics, semantic clustering, rank tracking, technical audits, and AI workflows — one login. Prefer hands-off execution? Our agency team has your back."
+          description="Query-level GSC analytics, semantic clustering, rank tracking, technical audits, and AI workflows - one login. Prefer hands-off execution? Our agency team has your back."
         />
         <HowItWorks
           heading="How teams ship faster with the platform"
-          subheading="From raw Search Console data to prioritized actions in minutes — not slide decks."
+          subheading="From raw Search Console data to prioritized actions in minutes - not slide decks."
           steps={[
             {
               step: 1,
@@ -76,7 +76,7 @@ export default async function PlatformHubPage({ params }: PageProps) {
         />
         <FeatureHighlightGrid
           heading="Built for serious SEO workflows"
-          subheading="Explore every capability — each page maps to the same modules inside the live app."
+          subheading="Explore every capability - each page maps to the same modules inside the live app."
           features={MARKETING_FEATURES}
           limit={9}
         />

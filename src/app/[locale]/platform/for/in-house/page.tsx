@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return buildMetadata({
     title: "SEO Platform for In-House Teams",
     description:
-      "In-house SEO platform: one GSC workspace for clustering, health scores, rank tracking, AI briefs, and sprint planning—replace scattered tools with measurable roadmaps.",
+      "In-house SEO platform: one GSC workspace for clustering, health scores, rank tracking, AI briefs, and sprint planning - replace scattered tools with measurable roadmaps.",
     path: localizedPath(locale as SiteLocale, "/platform/for/in-house"),
     hreflangPath: "/platform/for/in-house",
     primaryKeyword: "in-house SEO software",
@@ -35,7 +35,7 @@ export default async function PlatformForInHousePage({ params }: PageProps) {
           <h1 className="text-4xl md:text-5xl font-bold mb-6">One stack for the marketing org</h1>
           <p className="text-lg text-muted-foreground mb-10 leading-relaxed">
             In-house teams win when SEO, content, and web share a single source of truth. AnotherSEOGuru starts from the
-            queries and pages Google already shows you — then layers clustering, audits, and AI assistance so roadmap
+            queries and pages Google already shows you - then layers clustering, audits, and AI assistance so roadmap
             debates end faster.
           </p>
           <ul className="space-y-4 text-muted-foreground mb-12">

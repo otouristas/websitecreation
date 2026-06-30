@@ -2,7 +2,7 @@ const testimonials = [
   {
     name: 'Aggelos Rentals',
     role: 'Rent-a-car, Paros',
-    text: 'Our new site handles fleet browsing and island SEO properly — bookings come directly instead of only through aggregators.',
+    text: 'Our new site handles fleet browsing and island SEO properly - bookings come directly instead of only through aggregators.',
   },
   {
     name: 'Villa Olivia Clara',
@@ -12,7 +12,7 @@ const testimonials = [
   {
     name: 'Discover Cyclades',
     role: 'Travel guide',
-    text: 'Content hubs and internal linking brought steady organic growth across island pages — exactly the architecture we needed.',
+    text: 'Content hubs and internal linking brought steady organic growth across island pages - exactly the architecture we needed.',
   },
 ] as const;
 
@@ -28,7 +28,7 @@ export function LandingTestimonials({ locale = 'en' }: LandingTestimonialsProps)
         {
           name: 'Aggelos Rentals',
           role: 'Rent-a-car, Πάρος',
-          text: 'Η νέα ιστοσελίδα δείχνει τον στόλο σωστά και κατατάσσει για αναζητήσεις στο νησί — περισσότερες άμεσες κρατήσεις.',
+          text: 'Η νέα ιστοσελίδα δείχνει τον στόλο σωστά και κατατάσσει για αναζητήσεις στο νησί - περισσότερες άμεσες κρατήσεις.',
         },
         {
           name: 'Villa Olivia Clara',

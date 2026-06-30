@@ -252,7 +252,7 @@ export const industries: Industry[] = [
     {
         slug: 'travel-ai-chatbots',
         name: 'Travel AI Chatbots',
-        description: 'AI assistant implementations for tourism — multilingual booking support, FAQ automation, and AEO visibility.',
+        description: 'AI assistant implementations for tourism - multilingual booking support, FAQ automation, and AEO visibility.',
         metaDescription: 'Travel AI chatbot development. Multilingual assistants for hotels, rent-a-car, and tour operators.',
         painPoints: ['24/7 support', 'Multilingual guests', 'Booking automation', 'AI search visibility'],
         icon: 'bot',

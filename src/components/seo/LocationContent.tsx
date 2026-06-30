@@ -6,6 +6,7 @@ import { Location } from '@/data/locations';
 import { Service } from '@/data/services';
 import { Industry } from '@/data/industries';
 import { localizedPath, siteLocaleFromPath, type SiteLocale } from '@/lib/i18n/locale';
+import { LocationContentGreek } from './LocationContentGreek';
 
 interface LocationContentProps {
     location: Location;
@@ -17,6 +18,11 @@ interface LocationContentProps {
 export function LocationContent({ location, service, industry, locale: localeProp }: LocationContentProps) {
     const pathname = usePathname() ?? '/en';
     const locale = localeProp ?? siteLocaleFromPath(pathname);
+    
+    if (locale === 'el') {
+        return <LocationContentGreek location={location} service={service} locale={locale} />;
+    }
+
     const lp = (path: string) => localizedPath(locale, path);
     const city = location.city;
     const state = location.state;

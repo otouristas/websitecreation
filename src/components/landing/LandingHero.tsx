@@ -32,7 +32,7 @@ export function LandingHero({ locale = "en" }: { locale?: SiteLocale }) {
               <br />
               <span className="text-foreground">{isEl ? t!.h1Line2 : "SEO · GEO · AEO · AI chatbots"}</span>
             </h1>
-            <p className="mb-3 text-lg text-muted-foreground md:text-xl">{isEl ? t!.sub : "High-converting sites for hotels, car rental & travel brands — with full SEO, GEO, AEO & AI chatbots."}</p>
+            <p className="mb-3 text-lg text-muted-foreground md:text-xl">{isEl ? t!.sub : "High-converting sites for hotels, car rental & travel brands - with full SEO, GEO, AEO & AI chatbots."}</p>
             <p className="mx-auto mb-8 max-w-xl text-base text-muted-foreground lg:mx-0">
               {isEl
                 ? t!.proof

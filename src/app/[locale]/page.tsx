@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return buildMetadata({
       title: 'Κατασκευή ιστοσελίδων τουρισμού & SEO',
       description:
-        'Ιστοσελίδες για ξενοδοχεία, ενοικίαση αυτοκινήτου, τουρισμό και travel AI — με πλήρες SEO, GEO, AEO. 55+ έργα. Δωρεάν προσφορά.',
+        'Κατασκευή ιστοσελίδων για ξενοδοχεία, ενοικίαση αυτοκινήτου, τουρισμό και travel AI με πλήρες SEO, GEO, AEO. Δείτε τα πακέτα μας και ζητήστε δωρεάν προσφορά.',
       path: localizedPath('el', '/'),
       primaryKeyword: 'κατασκευή ιστοσελίδας τουρισμός',
       hreflangPath: '/',
@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return buildMetadata({
     title: 'Tourism Web Design, SEO & Travel AI',
     description:
-      'We build high-converting websites for hotels, rent-a-car, tours and travel brands — plus full SEO, GEO, AEO and AI chatbots. 55+ live projects. Free quote.',
+      'We build high-converting websites for hotels, rent-a-car, tours and travel brands - plus full SEO, GEO, AEO and AI chatbots. 55+ live projects. Free quote.',
     path: localizedPath('en', '/'),
     primaryKeyword: 'tourism website design',
     hreflangPath: '/',

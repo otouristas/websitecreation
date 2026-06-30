@@ -27,9 +27,9 @@ export function ProblemSolutionSection({ locale = "en" }: ProblemSolutionSection
               {(isEl
                 ? t!.items
                 : [
-                    { strong: "Outdated design", text: "— tourists don't trust it enough to book direct." },
-                    { strong: "No SEO", text: "— you lose organic traffic to OTAs and competitors." },
-                    { strong: "No AI visibility", text: "— you're missing ChatGPT, Perplexity and AI Overviews." },
+                    { strong: "Outdated design", text: " - tourists don't trust it enough to book direct." },
+                    { strong: "No SEO", text: " - you lose organic traffic to OTAs and competitors." },
+                    { strong: "No AI visibility", text: " - you're missing ChatGPT, Perplexity and AI Overviews." },
                   ]
               ).map((item) => (
                 <li key={item.strong} className="flex gap-3">
@@ -53,9 +53,9 @@ export function ProblemSolutionSection({ locale = "en" }: ProblemSolutionSection
               {(isEl
                 ? t!.solutionItems
                 : [
-                    { strong: "Conversion-first design", text: "— bookings, quote requests and direct calls." },
-                    { strong: "Technical SEO", text: "— speed, schema, local pages and content hubs." },
-                    { strong: "AI chatbots", text: "— multilingual 24/7 support for travelers." },
+                    { strong: "Conversion-first design", text: " - bookings, quote requests and direct calls." },
+                    { strong: "Technical SEO", text: " - speed, schema, local pages and content hubs." },
+                    { strong: "AI chatbots", text: " - multilingual 24/7 support for travelers." },
                   ]
               ).map((item) => (
                 <li key={item.strong} className="flex gap-3">

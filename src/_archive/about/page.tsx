@@ -5,7 +5,7 @@ import { buildMetadata } from '@/lib/seo';
 
 export const metadata = buildMetadata({
     title: 'About Our Web Design Agency',
-    description: 'Meet AnotherSEOGuru — web designers and SEO specialists building fast, beautiful websites that drive real business results. 500+ sites delivered. 98% satisfaction.',
+    description: 'Meet AnotherSEOGuru - web designers and SEO specialists building fast, beautiful websites that drive real business results. 500+ sites delivered. 98% satisfaction.',
     path: '/about',
 });
 

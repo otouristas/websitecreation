@@ -239,8 +239,8 @@ export function buildProjectCaseStudy(
     : `${name} is a live ${catLabel.toLowerCase()} project serving ${markets} markets in ${langs}. We delivered ${serviceList} focused on organic traffic, bookings and visibility across Google and AI answer engines.`;
 
   const challenge = isEl
-    ? `Ο πελάτης χρειαζόταν ιστοσελίδα που να εμπιστεύονται οι ταξιδιώτες, να rankάρει για competitive tourism keywords και να μετατρέπει επισκέψεις σε κρατήσεις ή αιτήματα — χωρίς να εξαρτάται μόνο από OTAs ή aggregators.`
-    : `The client needed a site tourists trust, that ranks for competitive tourism keywords and converts visits into bookings or inquiries — without relying solely on OTAs or aggregators.`;
+    ? `Ο πελάτης χρειαζόταν ιστοσελίδα που να εμπιστεύονται οι ταξιδιώτες, να rankάρει για competitive tourism keywords και να μετατρέπει επισκέψεις σε κρατήσεις ή αιτήματα - χωρίς να εξαρτάται μόνο από OTAs ή aggregators.`
+    : `The client needed a site tourists trust, that ranks for competitive tourism keywords and converts visits into bookings or inquiries - without relying solely on OTAs or aggregators.`;
 
   const approach = isEl
     ? `Σχεδιάσαμε mobile-first UX για ${catLabel.toLowerCase()}, υλοποιήσαμε τεχνικό SEO από την αρχή και δομήσαμε περιεχόμενο για local, GEO και AEO. ${summary}`
@@ -284,11 +284,11 @@ export function buildProjectCaseStudy(
     challenge,
     approach,
     seo: {
-      title: isEl ? 'SEO — Τεχνικό & On-page' : 'SEO — Technical & On-page',
+      title: isEl ? 'SEO - Τεχνικό & On-page' : 'SEO - Technical & On-page',
       items: seoItems,
     },
     geoAeo: {
-      title: isEl ? 'GEO & AEO — AI αναζήτηση' : 'GEO & AEO — AI search',
+      title: isEl ? 'GEO & AEO - AI αναζήτηση' : 'GEO & AEO - AI search',
       items: GEO_AEO[isEl ? 'el' : 'en'],
     },
     technical: {

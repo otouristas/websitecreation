@@ -23,8 +23,8 @@ export function PortfolioGrid({ locale = 'en', limit = 12 }: PortfolioGridProps)
             </h2>
             <p className="mt-2 max-w-xl text-muted-foreground">
               {isEl
-                ? 'Ξενοδοχεία, rent-a-car, τουρισμός και travel AI — δείτε live ιστοσελίδες που φτιάξαμε.'
-                : 'Hotels, rent-a-car, tours and travel AI — live sites we designed, built and optimized.'}
+                ? 'Ξενοδοχεία, rent-a-car, τουρισμός και travel AI - δείτε live ιστοσελίδες που φτιάξαμε.'
+                : 'Hotels, rent-a-car, tours and travel AI - live sites we designed, built and optimized.'}
             </p>
           </div>
           <Link href={lp('/work')} className="btn btn-outline mt-4 md:mt-0">

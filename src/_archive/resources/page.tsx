@@ -6,7 +6,7 @@ import { buildMetadata } from "@/lib/seo";
 import { getAllBlogPosts } from "@/lib/blog";
 
 export const metadata = buildMetadata({
-  title: "Resources — guides, blog, and SEO tools",
+  title: "Resources - guides, blog, and SEO tools",
   description:
     "AnotherSEOGuru resources: blog, intent guides, and links to free tools in the product. Learn Search Console, AI visibility, and technical SEO.",
   path: "/resources",
@@ -33,7 +33,7 @@ export default function ResourcesPage() {
                 <Link href="/glossary" className="text-primary font-medium hover:underline">
                   SEO glossary
                 </Link>{" "}
-                — definitions, examples, and links to features and tools.
+                - definitions, examples, and links to features and tools.
               </p>
             </section>
             <section>

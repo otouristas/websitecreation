@@ -8,7 +8,7 @@ export async function generateMetadata({ params }: LayoutProps): Promise<Metadat
   const { locale } = await params;
   if (!isValidLocale(locale)) return {};
   return buildMetadata({
-    title: locale === 'el' ? 'Ξεκινήστε — Έργο ιστοσελίδας & SEO' : 'Get Started — Website & SEO Project',
+    title: locale === 'el' ? 'Ξεκινήστε - Έργο ιστοσελίδας & SEO' : 'Get Started - Website & SEO Project',
     description:
       locale === 'el'
         ? 'Ξεκινήστε το έργο σας: επιλέξτε πακέτο, μοιραστείτε στόχους και λάβετε SEO-ready ιστοσελίδα σε εβδομάδες.'

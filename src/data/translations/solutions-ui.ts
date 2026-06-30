@@ -44,7 +44,7 @@ export const solutionsUi = {
     home: 'Αρχική',
     solutions: 'Κλάδοι',
     websiteSolutionsFor: 'Ιστοσελίδες για',
-    getQuoteFor: (name: string) => `Προσφορά — ${name}`,
+    getQuoteFor: (name: string) => `Προσφορά - ${name}`,
     viewServices: 'Δείτε υπηρεσίες',
     whatWebsitesNeed: (name: string) => `Τι χρειάζεται μια ιστοσελίδα ${name}`,
     painIntro: (name: string) =>
@@ -53,7 +53,7 @@ export const solutionsUi = {
     servicesIntro: (name: string) =>
       `Επιλέξτε την υπηρεσία που ταιριάζει στην επιχείρησή σας (${name}).`,
     learnMore: 'Μάθετε περισσότερα →',
-    byCity: (name: string) => `${name} — ανά πόλη / νησί`,
+    byCity: (name: string) => `${name} - ανά πόλη / νησί`,
     locationsIntro: (name: string, isEl: boolean) =>
       isEl
         ? `Τοπικές υπηρεσίες ιστοσελίδας και SEO για ${name} σε όλη την Ελλάδα.`
@@ -65,20 +65,20 @@ export const solutionsUi = {
     serviceForIndustry: (service: string, industry: string) => `${service} για ${industry}`,
     serviceHeroDesc: (service: string, industry: string) =>
       `Αναζητάτε επαγγελματικό ${service.toLowerCase()} προσαρμοσμένο για επιχειρήσεις ${industry}; Σχεδιάζουμε γρήγορες, SEO-ready ιστοσελίδες που καλύπτουν τις ανάγκες του κλάδου.`,
-    getIndustryQuote: (industry: string) => `Προσφορά — ${industry}`,
+    getIndustryQuote: (industry: string) => `Προσφορά - ${industry}`,
     allIndustryServices: (industry: string) => `Όλες οι υπηρεσίες ${industry}`,
     whatsIncluded: (industry: string) => `Τι περιλαμβάνεται για ${industry}`,
     whatsIncludedDesc: (service: string, industry: string) =>
       `Το ${service.toLowerCase()} για ${industry} περιλαμβάνει ό,τι χρειάζεται μια υψηλής απόδοσης ιστοσελίδα για τον κλάδο.`,
     builtFor: (industry: string) => `Σχεδιασμένο για ${industry}`,
     builtForDesc: (industry: string) => `Κατανοούμε τις προκλήσεις των επιχειρήσεων στον κλάδο ${industry}.`,
-    byCityService: (service: string, industry: string) => `${service} — ${industry} ανά πόλη`,
+    byCityService: (service: string, industry: string) => `${service} - ${industry} ανά πόλη`,
     byCityServiceDesc: (industry: string, isEl: boolean) =>
       isEl
         ? `Τοπικές υπηρεσίες για επιχειρήσεις ${industry} σε όλη την Ελλάδα.`
         : `Τοπικές υπηρεσίες για ${industry}.`,
     otherServicesFor: (industry: string) => `Άλλες υπηρεσίες για ${industry}`,
-    serviceForOtherIndustries: (service: string) => `${service} — άλλοι κλάδοι`,
+    serviceForOtherIndustries: (service: string) => `${service} - άλλοι κλάδοι`,
     readyForService: (service: string) => `Έτοιμοι για ${service};`,
     readyForServiceSub: (industry: string) => `Ζητήστε προσφορά για την επιχείρησή σας (${industry}).`,
   },

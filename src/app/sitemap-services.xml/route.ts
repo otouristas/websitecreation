@@ -1,4 +1,4 @@
-// Sitemap for service pages — /en and /el
+// Sitemap for service pages - /en and /el
 import { NextResponse } from 'next/server';
 import { getAllServiceSlugs } from '@/data/services';
 import { localizedPath } from '@/lib/i18n/locale';

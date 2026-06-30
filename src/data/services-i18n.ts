@@ -23,7 +23,7 @@ export const serviceNamesEl: Record<
     name: 'Ανασχεδιασμός Ιστοσελίδας',
     shortName: 'Redesign',
     description:
-      'Μετατρέψτε παλιά sites σε σύγχρονα, γρήγορα και φιλικά προς την αναζήτηση — με ασφαλή SEO migration.',
+      'Μετατρέψτε παλιά sites σε σύγχρονα, γρήγορα και φιλικά προς την αναζήτηση - με ασφαλή SEO migration.',
     features: [
       'Βελτιστοποίηση ταχύτητας',
       'Σύγχρονο UI refresh',
@@ -141,6 +141,34 @@ export const serviceNamesEl: Record<
       'Internal linking audit',
       'Competitor gap analysis',
       'Penalty recovery',
+    ],
+  },
+  'eshop-woocommerce': {
+    name: 'Κατασκευή E-shop WooCommerce',
+    shortName: 'Κατασκευή E-shop',
+    description:
+      'Υψηλής μετατροπής, πλήρως προσαρμοσμένα ηλεκτρονικά καταστήματα (e-shops) WooCommerce με ενσωματωμένες πληρωμές, μεταφορικά και SEO.',
+    features: [
+      'Εγκατάσταση & ρύθμιση WooCommerce',
+      'Σχεδιασμός σελίδων προϊόντων',
+      'Σύνδεση με πύλες πληρωμών',
+      'Ρύθμιση μεταφορικών & checkout',
+      'SEO δομή κατηγοριών',
+      'Διαχείριση αποθέματος',
+    ],
+  },
+  'eshop-seo': {
+    name: 'SEO για E-shop',
+    shortName: 'E-shop SEO',
+    description:
+      'Εξειδικευμένες υπηρεσίες SEO για ηλεκτρονικά καταστήματα. Αυξήστε την οργανική εμφάνιση κατηγοριών και προϊόντων για περισσότερες πωλήσεις.',
+    features: [
+      'Τεχνικό audit για eshop',
+      'Βελτιστοποίηση κατηγοριών & προϊόντων',
+      'Schema markup προϊόντων (JSON-LD)',
+      'Έρευνα λέξεων-κλειδιά e-commerce',
+      'Ταχύτητα & mobile βελτιστοποίηση',
+      'Βελτιστοποίηση Conversion Rate (CRO)',
     ],
   },
 };

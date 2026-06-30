@@ -1,4 +1,4 @@
-# AnotherSEOGuru — context for AI systems
+# AnotherSEOGuru - context for AI systems
 > Factual overview of the public marketing site (apex) and how it relates to the product app. Canonical domain for this content: https://anotherseoguru.com
 
 ## Product (SEO software)
@@ -9,8 +9,8 @@ AnotherSEOGuru sells a web application that connects to **Google Search Console*
 - Platform hub: https://anotherseoguru.com/platform
 - Feature library: https://anotherseoguru.com/platform/features
 - Software pricing (marketing): https://anotherseoguru.com/platform/pricing
-- Use cases: https://anotherseoguru.com/platform/for/agencies — https://anotherseoguru.com/platform/for/in-house — https://anotherseoguru.com/platform/for/ecommerce
-- Comparisons: https://anotherseoguru.com/compare/ahrefs — https://anotherseoguru.com/compare/semrush — https://anotherseoguru.com/compare/search-console-alone
+- Use cases: https://anotherseoguru.com/platform/for/agencies - https://anotherseoguru.com/platform/for/in-house - https://anotherseoguru.com/platform/for/ecommerce
+- Comparisons: https://anotherseoguru.com/compare/ahrefs - https://anotherseoguru.com/compare/semrush - https://anotherseoguru.com/compare/search-console-alone
 - Resources hub: https://anotherseoguru.com/resources
 - Blog: https://anotherseoguru.com/blog
 - SEO glossary: https://anotherseoguru.com/glossary

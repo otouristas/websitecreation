@@ -35,7 +35,7 @@ export function LandingComparisonTable() {
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Honest positioning: we are built around your Search Console reality, AI execution, and optional agency
-            delivery — not a generic enterprise suite.
+            delivery - not a generic enterprise suite.
           </p>
           <p className="text-sm text-muted-foreground mt-4">
             For deeper comparisons see{" "}

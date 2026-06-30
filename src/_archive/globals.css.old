@@ -530,7 +530,7 @@ body {
   }
 }
 
-/* Footer client logo strip — global keyframes avoid styled-jsx SSR/client class hash drift */
+/* Footer client logo strip - global keyframes avoid styled-jsx SSR/client class hash drift */
 @keyframes footer-logo-marquee {
   0% {
     transform: translateX(0);

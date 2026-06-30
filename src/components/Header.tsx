@@ -12,6 +12,7 @@ import { MobileNav } from "@/components/MobileNav";
 import { localizedPath, siteLocaleFromPath, type SiteLocale } from "@/lib/i18n/locale";
 import { getNavDictionary } from "@/lib/i18n/get-dictionary";
 import { services } from "@/data/services";
+import { getServiceEl } from "@/data/services-i18n";
 
 const linkClass =
   "text-sm font-medium text-muted-foreground transition-colors hover:text-primary";
@@ -102,7 +103,11 @@ export default function Header({ locale: localeProp }: { locale?: SiteLocale }):
     [lp("/services/website-creation"), nav.websiteCreation],
     ...agencyNavServices
       .filter((s) => s.slug !== "website-creation")
-      .map((s) => [lp(`/services/${s.slug}`), s.shortName] as const),
+      .map((s) => {
+        const svcEl = isEl ? getServiceEl(s.slug) : null;
+        const dispName = svcEl?.shortName ?? svcEl?.name ?? s.shortName;
+        return [lp(`/services/${s.slug}`), dispName] as const;
+      }),
   ];
 
   return (
@@ -152,11 +157,15 @@ export default function Header({ locale: localeProp }: { locale?: SiteLocale }):
                 </Link>
                 {agencyNavServices
                   .filter((s) => s.slug !== "website-creation")
-                  .map((s) => (
-                    <Link key={s.slug} href={lp(`/services/${s.slug}`)} className={dropdownItemClass}>
-                      {s.shortName}
-                    </Link>
-                  ))}
+                  .map((s) => {
+                    const svcEl = isEl ? getServiceEl(s.slug) : null;
+                    const dispName = svcEl?.shortName ?? svcEl?.name ?? s.shortName;
+                    return (
+                      <Link key={s.slug} href={lp(`/services/${s.slug}`)} className={dropdownItemClass}>
+                        {dispName}
+                      </Link>
+                    );
+                  })}
               </NavDropdown>
               <NavDropdown label={nav.solutions}>
                 <Link href={lp("/solutions/rent-a-car")} className={dropdownItemClass}>

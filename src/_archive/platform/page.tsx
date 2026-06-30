@@ -9,7 +9,7 @@ import { generateSoftwareApplicationSchema } from "@/lib/seo/schema";
 import { BASE_URL } from "@/lib/seo/description";
 
 export const metadata = buildMetadata({
-  title: "SEO platform — Search Console, AI workflows, rank tracking",
+  title: "SEO platform - Search Console, AI workflows, rank tracking",
   description:
     "AnotherSEOGuru software: Google Search Console workspace, AI-assisted SEO, rank tracking, technical audits, and LLM citation insights. Start free.",
   path: "/platform",
@@ -32,11 +32,11 @@ export default function PlatformHubPage() {
           badge="Product · Connects to Google Search Console"
           title="The SEO command center for teams who"
           titleHighlight="outgrow spreadsheets."
-          description="Query-level GSC analytics, semantic clustering, rank tracking, technical audits, and AI workflows — one login. Prefer hands-off execution? Our agency team has your back."
+          description="Query-level GSC analytics, semantic clustering, rank tracking, technical audits, and AI workflows - one login. Prefer hands-off execution? Our agency team has your back."
         />
         <HowItWorks
           heading="How teams ship faster with the platform"
-          subheading="From raw Search Console data to prioritized actions in minutes — not slide decks."
+          subheading="From raw Search Console data to prioritized actions in minutes - not slide decks."
           steps={[
             {
               step: 1,
@@ -62,7 +62,7 @@ export default function PlatformHubPage() {
         />
         <FeatureHighlightGrid
           heading="Built for serious SEO workflows"
-          subheading="Explore every capability — each page maps to the same modules inside the live app."
+          subheading="Explore every capability - each page maps to the same modules inside the live app."
           features={MARKETING_FEATURES}
           limit={9}
         />

@@ -7,7 +7,7 @@ export interface BrandLogoProps {
   readonly className?: string;
   /** Wordmark on dark footer backgrounds */
   readonly variant?: "default" | "light";
-  /** Home link — defaults to / */
+  /** Home link - defaults to / */
   readonly homeHref?: string;
   readonly onClick?: () => void;
 }
