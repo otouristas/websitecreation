@@ -7,13 +7,8 @@ declare global {
   }
 }
 
-export function hasAnalyticsConsent(): boolean {
-  if (typeof window === 'undefined') return false;
-  return localStorage.getItem('cookie-consent') === 'accepted';
-}
-
 export function loadGoogleAnalytics(): void {
-  if (typeof window === 'undefined' || !hasAnalyticsConsent()) return;
+  if (typeof window === 'undefined') return;
   if (document.getElementById('ga-script')) return;
 
   window.dataLayer = window.dataLayer || [];
@@ -34,7 +29,7 @@ export function trackEvent(
   eventName: string,
   params?: Record<string, string | number | boolean | undefined>,
 ): void {
-  if (typeof window === 'undefined' || !hasAnalyticsConsent() || !window.gtag) return;
+  if (typeof window === 'undefined' || !window.gtag) return;
   window.gtag('event', eventName, params);
 }
 
@@ -48,6 +43,14 @@ export function trackFormStart(formName: string): void {
 
 export function trackFormSubmit(formName: string): void {
   trackEvent('form_submit', { form_name: formName });
+}
+
+export function trackCtaClick(ctaName: string): void {
+  trackEvent('cta_click', { cta_name: ctaName });
+}
+
+export function trackPlanSelection(planName: string): void {
+  trackEvent('plan_selection', { plan_name: planName });
 }
 
 export function captureUtmParams(): Record<string, string> {

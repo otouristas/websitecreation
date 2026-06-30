@@ -13,6 +13,7 @@ import { localizedPath, siteLocaleFromPath, type SiteLocale } from "@/lib/i18n/l
 import { getNavDictionary } from "@/lib/i18n/get-dictionary";
 import { services } from "@/data/services";
 import { getServiceEl } from "@/data/services-i18n";
+import { trackCtaClick } from "@/lib/analytics";
 
 const linkClass =
   "text-sm font-medium text-muted-foreground transition-colors hover:text-primary";
@@ -200,6 +201,7 @@ export default function Header({ locale: localeProp }: { locale?: SiteLocale }):
               </Link>
               <Link
                 href={lp("/get-started")}
+                onClick={() => trackCtaClick("header_get_quote")}
                 className="hidden rounded-xl px-3 py-2 text-sm font-semibold text-primary-foreground shadow-md shadow-primary/25 transition-[transform,opacity] hover:opacity-95 md:inline-flex gradient-primary md:px-4"
               >
                 {nav.getQuote}

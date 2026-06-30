@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { industries } from '@/data/industries';
 import { industriesEl } from '@/data/industries-i18n';
 import { submitToFormspree } from '@/lib/formspree';
-import { captureUtmParams, trackFormStart, trackLead } from '@/lib/analytics';
+import { captureUtmParams, trackFormStart, trackLead, trackPlanSelection } from '@/lib/analytics';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 
 const packagesEn = [
@@ -125,6 +125,9 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
     setUtmParams(captureUtmParams());
     const pkg = searchParams.get('package');
     const project = searchParams.get('project');
+    if (pkg) {
+      trackPlanSelection(pkg);
+    }
     setFormData((prev) => {
       let next = { ...prev };
       if (pkg && packages.some((p) => p.id === pkg)) {
