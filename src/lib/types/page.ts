@@ -39,6 +39,7 @@ export type PageType = 'hub' | 'spoke' | 'guide' | 'comparison' | 'tutorial' | '
 // Schema type for structured data
 export type SchemaType =
     | 'Article'
+    | 'BlogPosting'
     | 'FAQPage'
     | 'BreadcrumbList'
     | 'LocalBusiness'

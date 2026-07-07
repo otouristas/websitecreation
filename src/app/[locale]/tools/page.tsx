@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description:
       "Explore free SEO tools and guides: Search Console clustering, LLM citation tracking, health scores, semantic keywords, and AI visibility workflows in the product app.",
     path: localizedPath(locale as SiteLocale, "/tools"),
-    hreflangPath: "/tools",
+    canonicalPath: localizedPath("en", "/tools"),
     primaryKeyword: "free SEO tools",
   });
 }

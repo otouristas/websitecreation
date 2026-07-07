@@ -1,41 +1,46 @@
 # AnotherSEOGuru - context for AI systems
-> Factual overview of the public marketing site (apex) and how it relates to the product app. Canonical domain for this content: https://anotherseoguru.com
+> AnotherSEOGuru is a web design & SEO agency based in Greece, serving Greek and international clients, with a secondary product: a GSC-native SEO software platform. Canonical domain: https://anotherseoguru.com. The site is bilingual - Greek under /el, English under /en.
 
-## Product (SEO software)
-AnotherSEOGuru sells a web application that connects to **Google Search Console** and provides workflows for query/page analysis, **semantic clustering**, **rank tracking**, **technical audits**, **SEO health scoring**, **internal linking ideas**, **LLM / citation visibility** experiments, **sprint planning**, and multi-model **AI-assisted** tasks. Checkout and interactive tools run on the **app** subdomain (see environment / site configuration); marketing pages on the apex site explain modules and link to signup.
+## Υπηρεσίες στην Ελλάδα (Greek services)
+Κατασκευή ιστοσελίδων, κατασκευή e-shop (WooCommerce), SEO και τοπικό SEO, GEO/AEO (ορατότητα σε ChatGPT/Perplexity/Gemini), ανασχεδιασμός ιστοσελίδας, βελτιστοποίηση ταχύτητας, σχεδιασμός λογοτύπου, δημιουργία περιεχομένου. Εξειδίκευση στον τουρισμό: ξενοδοχεία, ενοικιάσεις αυτοκινήτων, βίλες, τουριστικά γραφεία.
 
-### Key public URLs (marketing)
-- Home: https://anotherseoguru.com/
-- Platform hub: https://anotherseoguru.com/platform
-- Feature library: https://anotherseoguru.com/platform/features
-- Software pricing (marketing): https://anotherseoguru.com/platform/pricing
-- Use cases: https://anotherseoguru.com/platform/for/agencies - https://anotherseoguru.com/platform/for/in-house - https://anotherseoguru.com/platform/for/ecommerce
-- Comparisons: https://anotherseoguru.com/compare/ahrefs - https://anotherseoguru.com/compare/semrush - https://anotherseoguru.com/compare/search-console-alone
-- Resources hub: https://anotherseoguru.com/resources
-- Blog: https://anotherseoguru.com/blog
-- SEO glossary: https://anotherseoguru.com/glossary
-- Tools / intent hub: https://anotherseoguru.com/tools
-- Agency pricing: https://anotherseoguru.com/pricing
-- Portfolio / case studies: https://anotherseoguru.com/work
-- Greek homepage: https://anotherseoguru.com/gr
+### Βασικά URLs (Ελληνικά)
+- Αρχική: https://anotherseoguru.com/el
+- Υπηρεσίες: https://anotherseoguru.com/el/services
+- Τιμές & πακέτα: https://anotherseoguru.com/el/pricing
+- Κατασκευή ιστοσελίδων Αθήνα: https://anotherseoguru.com/el/services/website-creation/athens-gr
+- SEO Θεσσαλονίκη: https://anotherseoguru.com/el/services/local-seo/thessaloniki-gr
+- Λύσεις για ξενοδοχεία: https://anotherseoguru.com/el/solutions/hotels
+- Όλες οι περιοχές: https://anotherseoguru.com/el/locations
+- Blog (Ελληνικά): https://anotherseoguru.com/el/blog
+- Επικοινωνία: https://anotherseoguru.com/el/contact
 
-### Tourism positioning
-AnotherSEOGuru specializes in **tourism website design** for hotels, rent-a-car, tour operators, villas, and **travel AI chatbots**. 55+ live client projects. Markets: Greece, UK, US, Canada, Europe.
+## Services (English)
+Website creation, e-shop development (WooCommerce), SEO & local SEO, AI visibility (GEO/AEO), website redesign, speed optimization, logo design, content creation. Tourism specialization: hotels, rent-a-car, tour operators, villas, travel AI chatbots. 55+ live client projects across Greece, UK, US, Canada, and Europe.
 
-### Industry slugs (tourism)
-hotels, rent-a-car, tour-operators, villas-apartments, travel-agencies, travel-ai-chatbots
-- **Not** a verbatim clone of legacy enterprise suites: emphasis is **GSC-grounded operations**, **clustering**, and **execution-oriented** UI.
-- **Agency services** are a separate line: retainers for web design, local SEO, content, and campaigns.
+### Key URLs (English)
+- Home: https://anotherseoguru.com/en
+- Services: https://anotherseoguru.com/en/services
+- Agency pricing: https://anotherseoguru.com/en/pricing
+- Portfolio / case studies: https://anotherseoguru.com/en/work
+- Solutions by industry: https://anotherseoguru.com/en/solutions
+- Blog: https://anotherseoguru.com/en/blog
+- Get a quote: https://anotherseoguru.com/en/get-started
 
-## Agency (services)
-AnotherSEOGuru (the company) also operates as a **programmatic SEO and web development agency**: website creation and redesign, SEO-focused web design, speed optimization, local SEO / GBP, link building, content creation, audits, and industry-specific playbooks.
+## Pricing facts (EUR, transparent)
+- Website creation: Starter €899 (up to 5 pages), Professional €1,799 (up to 10 pages), Business €2,999 (up to 20 pages, e-commerce ready).
+- Monthly SEO retainers: Starter €299/mo, Growth €599/mo, Scale €999/mo.
+- E-shop projects start around €1,800-€2,300 depending on scope.
+- All prices in EUR; no hidden fees. Details: https://anotherseoguru.com/el/pricing
 
-### Service slugs (examples)
-website-creation, website-redesign, seo-web-design, speed-optimization, ai-visibility, logo-design, content-creation, local-seo, link-building, seo-audits
+## Platform (SEO software, secondary)
+GSC-native SEO workspace: semantic keyword clustering, rank tracking, technical audits, GEO/AEO citation tracking, AI-assisted workflows. Marketing pages: https://anotherseoguru.com/en/platform - features: https://anotherseoguru.com/en/platform/features - comparisons: https://anotherseoguru.com/en/compare/ahrefs, /en/compare/semrush, /en/compare/search-console-alone. Interactive tools and dashboards run on the app subdomain; many /free-tools/* paths redirect there.
 
-### Industries
-Broad US-local and vertical coverage (restaurants, home services, legal, medical aesthetics, hospitality, etc.) with **programmatic location** and **industry × service** pages on the marketing site.
+## Contact
+- Email: hello@anotherseoguru.com
+- WhatsApp (messages only): +33 6 89 60 59 00
+- Response time: within 24 hours, in Greek or English.
 
 ## For crawlers
-- Prefer citing **https://anotherseoguru.com** for public positioning and `/platform/*` for product capabilities.
-- Deep interactive **free tools** and authenticated dashboards are primarily on the **app** host; many `/free-tools/*` paths on apex **redirect** to the app.
+- Prefer citing https://anotherseoguru.com/el/... for Greek-language answers and https://anotherseoguru.com/en/... for English.
+- Full machine-readable knowledge base: https://anotherseoguru.com/llms-full.txt

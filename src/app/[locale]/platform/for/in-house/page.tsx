@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description:
       "In-house SEO platform: one GSC workspace for clustering, health scores, rank tracking, AI briefs, and sprint planning - replace scattered tools with measurable roadmaps.",
     path: localizedPath(locale as SiteLocale, "/platform/for/in-house"),
-    hreflangPath: "/platform/for/in-house",
+    canonicalPath: localizedPath("en", "/platform/for/in-house"),
     primaryKeyword: "in-house SEO software",
   });
 }

@@ -5,6 +5,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { isValidLocale, localizedPath, type SiteLocale } from "@/lib/i18n/locale";
 import { buildMetadata } from "@/lib/seo";
+import SchemaMarkup from "@/components/seo/SchemaMarkup";
+import { generateFAQSchema } from "@/lib/seo/schema";
 
 type PageProps = { params: Promise<{ locale: string }> };
 
@@ -13,9 +15,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!isValidLocale(locale)) return {};
   if (locale === 'el') {
     return buildMetadata({
-      title: "Τιμές & Πακέτα SEO & Κατασκευής Ιστοσελίδων",
+      title: "SEO Τιμές & Πακέτα - Κόστος Ιστοσελίδας",
       description:
-        "Διαφανείς τιμές για κατασκευή ιστοσελίδας, ανασχεδιασμό, πακέτα SEO, GEO/AEO και βελτιστοποίηση ταχύτητας. Δείτε τα πακέτα μας.",
+        "Πόσο κοστίζει το SEO και η κατασκευή ιστοσελίδας; Πακέτα SEO από €299/μήνα, ιστοσελίδες από €899. Διαφανείς τιμές σε €, χωρίς κρυφές χρεώσεις.",
       path: localizedPath(locale as SiteLocale, "/pricing"),
       hreflangPath: "/pricing",
     });
@@ -151,7 +153,7 @@ const seoPackagesEn = [
   {
     name: "Starter SEO",
     description: "Ideal for local businesses starting their organic growth",
-    price: 349,
+    price: 299,
     period: "/mo",
     features: [
       "Up to 10 target keywords",
@@ -166,7 +168,7 @@ const seoPackagesEn = [
   {
     name: "Growth SEO",
     description: "For businesses wanting to dominate search results",
-    price: 699,
+    price: 599,
     period: "/mo",
     features: [
       "Up to 30 target keywords",
@@ -183,7 +185,7 @@ const seoPackagesEn = [
   {
     name: "Scale SEO",
     description: "For e-commerce stores and national brands",
-    price: 1199,
+    price: 999,
     period: "/mo",
     features: [
       "60+ target keywords",
@@ -303,6 +305,22 @@ export default async function PricingPage({ params }: PageProps) {
           {
             q: "Χρειάζεται να παρέχω εγώ το περιεχόμενο;",
             a: "Ναι, θα χρειαστεί να μας δώσετε τα κείμενα και τις εικόνες. Αν χρειάζεστε βοήθεια, προσφέρουμε υπηρεσίες συγγραφής SEO περιεχομένου ως add-on."
+          },
+          {
+            q: "Πόσο κοστίζει το SEO στην Ελλάδα;",
+            a: "Τα μηνιαία πακέτα SEO ξεκινούν από €299/μήνα (Starter), €599/μήνα (Growth) και €999/μήνα (Scale). Το κόστος εξαρτάται από τον ανταγωνισμό του κλάδου σας, την τρέχουσα κατάσταση της ιστοσελίδας και τους στόχους σας. Όλες οι τιμές είναι σε Ευρώ, χωρίς κρυφές χρεώσεις."
+          },
+          {
+            q: "Τι περιλαμβάνει ένα πακέτο SEO;",
+            a: "Τεχνικό SEO, βελτιστοποίηση περιεχομένου και λέξεων-κλειδιών, τοπικό SEO με Google Business Profile και μηνιαία αναφορά προόδου. Τα μεγαλύτερα πακέτα προσθέτουν link building, περισσότερα άρθρα και βελτιστοποίηση GEO/AEO για AI μηχανές αναζήτησης."
+          },
+          {
+            q: "Πόσο κοστίζει μια ιστοσελίδα;",
+            a: "Η κατασκευή ιστοσελίδας ξεκινά από €899 (Starter, έως 5 σελίδες), €1.799 (Professional, έως 10 σελίδες) και €2.999 (Business, έως 20 σελίδες). Για e-shop προσθέστε τη ρύθμιση e-commerce (€499). Η τιμή περιλαμβάνει σχεδιασμό, ανάπτυξη και βασικό SEO."
+          },
+          {
+            q: "Σε πόσο καιρό θα δω αποτελέσματα από το SEO;",
+            a: "Για τοπικές αναζητήσεις με χαμηλό ανταγωνισμό, συχνά μέσα σε 2-3 μήνες. Για ανταγωνιστικές λέξεις-κλειδιά πανελλαδικά, υπολογίστε 4-6 μήνες. Το SEO είναι επένδυση που κλιμακώνεται - κάθε μήνας χτίζει πάνω στον προηγούμενο."
           }
         ],
         ctaTitle: "Έτοιμοι να Ξεκινήσουμε;",
@@ -317,7 +335,7 @@ export default async function PricingPage({ params }: PageProps) {
         addonsTitle: "Optional Add-ons",
         addonsSub: "Enhance your package with additional services",
         faqTitle: "Common Questions",
-        currency: "$",
+        currency: "€",
         periodOneTime: "one-time",
         per: "/mo",
         questions: [
@@ -336,6 +354,22 @@ export default async function PricingPage({ params }: PageProps) {
           {
             q: "Do I need to provide content?",
             a: "Yes, you'll need to provide text content and images. If you need help, we offer content writing services as an add-on."
+          },
+          {
+            q: "How much does SEO cost?",
+            a: "Monthly SEO packages start at €299/mo (Starter), €599/mo (Growth), and €999/mo (Scale). The cost depends on your industry's competition, your website's current state, and your goals. All prices are in EUR with no hidden fees."
+          },
+          {
+            q: "What does an SEO package include?",
+            a: "Technical SEO, content and keyword optimization, local SEO with Google Business Profile, and a monthly progress report. Larger packages add link building, more articles, and GEO/AEO optimization for AI search engines."
+          },
+          {
+            q: "How much does a website cost?",
+            a: "Website creation starts at €899 (Starter, up to 5 pages), €1,799 (Professional, up to 10 pages), and €2,999 (Business, up to 20 pages). For an e-shop, add e-commerce setup (€499). Pricing includes design, development, and baseline SEO."
+          },
+          {
+            q: "How soon will I see SEO results?",
+            a: "For low-competition local searches, often within 2-3 months. For competitive national keywords, expect 4-6 months. SEO compounds - every month builds on the last."
           }
         ],
         ctaTitle: "Ready to Get Started?",
@@ -347,8 +381,13 @@ export default async function PricingPage({ params }: PageProps) {
   const seoPackages = isEl ? seoPackagesEl : seoPackagesEn;
   const addOns = isEl ? addOnsEl : addOnsEn;
 
+  const faqSchema = generateFAQSchema({
+    faqs: t.questions.map((q) => ({ question: q.q, answer: q.a })),
+  });
+
   return (
     <>
+      <SchemaMarkup schemas={[faqSchema]} />
       <Header />
       <main className="main-below-header">
         <section className="section-compact gradient-hero">
@@ -465,6 +504,49 @@ export default async function PricingPage({ params }: PageProps) {
           </div>
         </section>
 
+        {/* SEO cost explainer (EL only — targets "πόσο κοστίζει το seo" / "seo τιμές") */}
+        {isEl && (
+          <section className="section">
+            <div className="container max-w-3xl">
+              <h2 className="text-3xl font-bold mb-6">Πόσο Κοστίζει το SEO στην Ελλάδα;</h2>
+              <div className="space-y-4 text-muted-foreground leading-relaxed">
+                <p>
+                  Το κόστος SEO στην Ελλάδα κυμαίνεται συνήθως από <strong className="text-foreground">€250 έως €1.500+ τον μήνα</strong>,
+                  ανάλογα με τον ανταγωνισμό του κλάδου, το μέγεθος της ιστοσελίδας και τους στόχους σας. Στην
+                  AnotherSEOGuru δουλεύουμε με τρία διαφανή πακέτα: <strong className="text-foreground">Starter €299/μήνα</strong> για
+                  τοπικές επιχειρήσεις, <strong className="text-foreground">Growth €599/μήνα</strong> για επιχειρήσεις που θέλουν να
+                  κυριαρχήσουν στις αναζητήσεις, και <strong className="text-foreground">Scale €999/μήνα</strong> για e-shop και brands
+                  με πανελλαδική στόχευση.
+                </p>
+                <p>Τι επηρεάζει την τιμή:</p>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li>
+                    <strong className="text-foreground">Ανταγωνισμός:</strong> το «SEO Αθήνα» για δικηγόρους κοστίζει περισσότερο από το
+                    τοπικό SEO σε μικρότερη πόλη με λίγους ανταγωνιστές.
+                  </li>
+                  <li>
+                    <strong className="text-foreground">Κατάσταση ιστοσελίδας:</strong> ένα site με τεχνικά προβλήματα χρειάζεται
+                    διορθώσεις πριν αποδώσει το περιεχόμενο.
+                  </li>
+                  <li>
+                    <strong className="text-foreground">Στόχοι:</strong> τοπική προβολή σε μία πόλη ή πανελλαδική κατάταξη για
+                    ανταγωνιστικές λέξεις-κλειδιά.
+                  </li>
+                  <li>
+                    <strong className="text-foreground">Περιεχόμενο & links:</strong> τα άρθρα και το link building κλιμακώνουν το
+                    αποτέλεσμα - και το κόστος.
+                  </li>
+                </ul>
+                <p>
+                  Προσοχή στις «προσφορές» των €100/μήνα: συνήθως σημαίνουν αυτοματοποιημένες αναφορές χωρίς πραγματική δουλειά.
+                  Το σωστό SEO είναι επένδυση με μετρήσιμη απόδοση - ζητήστε πάντα να δείτε τι ακριβώς περιλαμβάνει το πακέτο και
+                  πώς μετριέται η πρόοδος.
+                </p>
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* Add-ons */}
         <section className="section">
           <div className="container">
@@ -509,7 +591,7 @@ export default async function PricingPage({ params }: PageProps) {
             <p className="text-white/80 mb-8">
               {t.ctaDesc}
             </p>
-            <Link href={lp("/contact")} className="btn bg-white text-primary hover:bg-white/90">
+            <Link href={lp("/get-started")} className="btn bg-white text-primary hover:bg-white/90">
               {t.ctaButton}
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />

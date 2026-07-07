@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: ToolPageProps) {
     title: tool.title,
     description: tool.description,
     path: localizedPath(locale as SiteLocale, `/tools/${tool.slug}`),
-    hreflangPath: `/tools/${tool.slug}`,
+    canonicalPath: localizedPath("en", `/tools/${tool.slug}`),
     primaryKeyword: tool.primaryKeyword,
   });
 }

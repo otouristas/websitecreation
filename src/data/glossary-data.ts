@@ -19,6 +19,10 @@ export interface GlossaryTerm {
   term: string;
   shortDefinition: string;
   fullDefinition: string;
+  /** Greek translations (optional; UI falls back to English when absent). */
+  termEl?: string;
+  shortDefinitionEl?: string;
+  fullDefinitionEl?: string;
   example?: string;
   technique?: string;
   proTip?: string;
@@ -45,6 +49,9 @@ export const glossaryCategories: GlossaryCategory[] = [
     terms: [
       {
         id: "title-tag",
+        termEl: "Title Tag (Ετικέτα Τίτλου)",
+        shortDefinitionEl: "HTML στοιχείο που ορίζει τον τίτλο της σελίδας στα αποτελέσματα αναζήτησης και στην καρτέλα του browser.",
+        fullDefinitionEl: "Το title tag είναι το HTML στοιχείο που ορίζει τον τίτλο μιας ιστοσελίδας. Εμφανίζεται ως η κλικαμπλ επικεφαλίδα στα αποτελέσματα της Google και στις καρτέλες του browser. Είναι από τους σημαντικότερους on-page SEO παράγοντες: κρατήστε τον 50-60 χαρακτήρες, με τη βασική λέξη-κλειδί στην αρχή.",
         term: "Title Tag",
         shortDefinition: "HTML element specifying a page's title for search results and browser tabs.",
         fullDefinition: "The title tag is an HTML element that defines the title of a web page. It appears in search engine results as the clickable headline and in browser tabs. Title tags are one of the most important on-page SEO factors.",
@@ -59,6 +66,9 @@ export const glossaryCategories: GlossaryCategory[] = [
       },
       {
         id: "meta-description",
+        termEl: "Meta Description (Μετα-περιγραφή)",
+        shortDefinitionEl: "Σύντομη περίληψη της σελίδας που εμφανίζεται κάτω από τον τίτλο στα αποτελέσματα της Google.",
+        fullDefinitionEl: "Η meta description είναι η σύντομη περιγραφή (150-160 χαρακτήρες) που εμφανίζεται κάτω από τον τίτλο στα αποτελέσματα αναζήτησης. Δεν αποτελεί άμεσο παράγοντα κατάταξης, αλλά καθορίζει το ποσοστό κλικ (CTR): μια πειστική περιγραφή με σαφή αξία και κάλεσμα φέρνει περισσότερους επισκέπτες από την ίδια θέση.",
         term: "Meta Description",
         shortDefinition: "HTML attribute providing a brief summary of page content for search results.",
         fullDefinition: "A meta description is an HTML attribute that provides a concise summary of a web page's content. While not a direct ranking factor, it significantly impacts click-through rates as it appears as the snippet text under the title in search results.",
@@ -126,6 +136,9 @@ export const glossaryCategories: GlossaryCategory[] = [
       },
       {
         id: "internal-linking",
+        termEl: "Internal Linking (Εσωτερική Διασύνδεση)",
+        shortDefinitionEl: "Σύνδεσμοι μεταξύ σελίδων του ίδιου site που μοιράζουν αξία SEO και καθοδηγούν χρήστες και Google.",
+        fullDefinitionEl: "Η εσωτερική διασύνδεση είναι οι σύνδεσμοι από μία σελίδα του site σας προς άλλη. Βοηθά τη Google να ανακαλύψει τις σελίδες σας, μεταφέρει «κύρος» στις σημαντικές σελίδες και κρατά τους επισκέπτες περισσότερο. Στρατηγική hub-and-spoke: οι κεντρικές σελίδες υπηρεσιών συνδέονται με τοπικές σελίδες και άρθρα, και αντίστροφα.",
         term: "Internal Linking",
         shortDefinition: "Hyperlinks connecting pages within the same website.",
         fullDefinition: "Internal linking is the practice of creating hyperlinks between pages on the same domain. It distributes page authority, helps users navigate, and enables search engines to discover and understand site structure and content relationships.",
@@ -162,6 +175,9 @@ export const glossaryCategories: GlossaryCategory[] = [
     terms: [
       {
         id: "crawling",
+        termEl: "Crawling (Ανίχνευση)",
+        shortDefinitionEl: "Η διαδικασία όπου τα ρομπότ της Google ανακαλύπτουν και διαβάζουν τις σελίδες του ιστού.",
+        fullDefinitionEl: "Crawling είναι η διαδικασία με την οποία τα προγράμματα της Google (Googlebot) επισκέπτονται σελίδες ακολουθώντας συνδέσμους και sitemaps. Αν μια σελίδα δεν ανιχνεύεται (μπλοκαρισμένη στο robots.txt, ορφανή χωρίς εσωτερικούς συνδέσμους, πολύ αργή), δεν μπορεί ποτέ να εμφανιστεί στα αποτελέσματα.",
         term: "Crawling",
         shortDefinition: "The process by which search engine bots discover and read web pages.",
         fullDefinition: "Crawling is the process where search engine bots (like Googlebot) systematically browse the web to discover new and updated content. Bots follow links, read content, and send data back to be indexed.",
@@ -176,6 +192,9 @@ export const glossaryCategories: GlossaryCategory[] = [
       },
       {
         id: "indexing",
+        termEl: "Indexing (Ευρετηρίαση)",
+        shortDefinitionEl: "Η αποθήκευση μιας σελίδας στο ευρετήριο της Google ώστε να μπορεί να εμφανιστεί στα αποτελέσματα.",
+        fullDefinitionEl: "Μετά την ανίχνευση, η Google αποφασίζει αν θα αποθηκεύσει τη σελίδα στο ευρετήριό της. Σελίδες με λεπτό ή διπλότυπο περιεχόμενο, noindex ή τεχνικά προβλήματα μένουν εκτός - άρα αόρατες. Ελέγξτε την κατάσταση ευρετηρίασης στο Google Search Console (Coverage / Ευρετηρίαση σελίδων).",
         term: "Indexing",
         shortDefinition: "The process of storing and organizing crawled pages in search engine databases.",
         fullDefinition: "After crawling, search engines process and store page content in their index (a massive database). Only indexed pages can appear in search results. Indexing involves analyzing content, understanding topics, and determining relevance.",
@@ -189,6 +208,9 @@ export const glossaryCategories: GlossaryCategory[] = [
       },
       {
         id: "robots-txt",
+        termEl: "Robots.txt",
+        shortDefinitionEl: "Αρχείο που λέει στις μηχανές αναζήτησης ποια σημεία του site επιτρέπεται να ανιχνεύσουν.",
+        fullDefinitionEl: "Το robots.txt είναι ένα απλό αρχείο κειμένου στη ρίζα του site (π.χ. anotherseoguru.com/robots.txt) που δίνει οδηγίες στα ρομπότ: τι να ανιχνεύσουν και τι όχι. Προσοχή: ένα λάθος Disallow μπορεί να εξαφανίσει ολόκληρο site από τη Google - από τα πρώτα πράγματα που ελέγχουμε σε κάθε τεχνικό audit.",
         term: "Robots.txt",
         shortDefinition: "A file that instructs search engine crawlers which pages to crawl or avoid.",
         fullDefinition: "Robots.txt is a text file placed in your site's root directory that tells search engine crawlers which URLs they can and cannot access. It's used to manage crawl budget and prevent indexing of certain content.",
@@ -202,6 +224,9 @@ export const glossaryCategories: GlossaryCategory[] = [
       },
       {
         id: "xml-sitemap",
+        termEl: "XML Sitemap (Χάρτης Ιστοσελίδας)",
+        shortDefinitionEl: "Αρχείο που απαριθμεί όλες τις σημαντικές σελίδες του site για τις μηχανές αναζήτησης.",
+        fullDefinitionEl: "Το XML sitemap είναι ο «κατάλογος» των σελίδων που θέλετε να ευρετηριάσει η Google, με πληροφορίες όπως ημερομηνία τελευταίας αλλαγής. Υποβάλλεται στο Google Search Console και είναι ιδιαίτερα σημαντικό για μεγάλα sites, e-shop και νέες ιστοσελίδες χωρίς πολλά backlinks.",
         term: "XML Sitemap",
         shortDefinition: "A file listing important URLs to help search engines discover and crawl content.",
         fullDefinition: "An XML sitemap is a structured file that lists the URLs on your website you want search engines to crawl and index. It includes metadata like last modification date, change frequency, and priority.",
@@ -215,6 +240,9 @@ export const glossaryCategories: GlossaryCategory[] = [
       },
       {
         id: "canonical-tag",
+        termEl: "Canonical Tag (Κανονική Διεύθυνση)",
+        shortDefinitionEl: "HTML ετικέτα που δηλώνει την «επίσημη» έκδοση μιας σελίδας όταν υπάρχει παρόμοιο περιεχόμενο.",
+        fullDefinitionEl: "Το canonical tag (rel=\"canonical\") λέει στη Google ποια έκδοση μιας σελίδας είναι η κύρια όταν το ίδιο ή παρόμοιο περιεχόμενο υπάρχει σε πολλά URLs (π.χ. με παραμέτρους, φίλτρα e-shop). Χωρίς σωστά canonicals, η αξία της σελίδας μοιράζεται σε διπλότυπα και οι κατατάξεις υποφέρουν.",
         term: "Canonical Tag",
         shortDefinition: "HTML element that specifies the preferred version of a page to avoid duplicate content.",
         fullDefinition: "A canonical tag (rel=\"canonical\") is an HTML element that tells search engines which URL is the 'master' version when multiple pages have similar or identical content. It consolidates ranking signals to the preferred URL.",
@@ -228,6 +256,9 @@ export const glossaryCategories: GlossaryCategory[] = [
       },
       {
         id: "structured-data",
+        termEl: "Structured Data (Δομημένα Δεδομένα)",
+        shortDefinitionEl: "Κώδικας schema.org που βοηθά Google και AI να καταλάβουν το περιεχόμενο και δίνει πλούσια αποτελέσματα.",
+        fullDefinitionEl: "Τα δομημένα δεδομένα (JSON-LD schema) περιγράφουν το περιεχόμενο με τυποποιημένο τρόπο: επιχείρηση, προϊόν, FAQ, άρθρο, κριτικές. Ξεκλειδώνουν πλούσια αποτελέσματα (αστέρια, τιμές, FAQ) στη Google και είναι θεμέλιο για την ορατότητα σε AI μηχανές (GEO/AEO).",
         term: "Structured Data (Schema)",
         shortDefinition: "Code markup that helps search engines understand page content and enables rich results.",
         fullDefinition: "Structured data is a standardized format (typically JSON-LD) for providing explicit information about a page's content. It helps search engines understand entities, relationships, and can trigger rich results like stars, FAQs, and product info in SERPs.",
@@ -254,6 +285,9 @@ export const glossaryCategories: GlossaryCategory[] = [
       },
       {
         id: "hreflang",
+        termEl: "Hreflang",
+        shortDefinitionEl: "Ετικέτα που δηλώνει τη γλώσσα και τη χώρα-στόχο κάθε έκδοσης μιας πολυγλωσσικής σελίδας.",
+        fullDefinitionEl: "Το hreflang λέει στη Google ποια γλωσσική έκδοση να δείξει σε κάθε χρήστη - π.χ. τα ελληνικά (/el) σε αναζητήσεις από Ελλάδα και τα αγγλικά (/en) διεθνώς. Κρίσιμο για τουριστικά sites: λάθος hreflang σημαίνει λάθος γλώσσα στα αποτελέσματα ή σελίδες που ανταγωνίζονται η μία την άλλη.",
         term: "Hreflang",
         shortDefinition: "HTML attribute that specifies language and regional targeting for international pages.",
         fullDefinition: "Hreflang is an HTML attribute that tells search engines which language and regional version of a page to show users based on their location and language preferences. Essential for international and multilingual websites.",
@@ -268,6 +302,9 @@ export const glossaryCategories: GlossaryCategory[] = [
       },
       {
         id: "page-speed",
+        termEl: "Page Speed (Ταχύτητα Σελίδας)",
+        shortDefinitionEl: "Πόσο γρήγορα φορτώνει μια σελίδα - παράγοντας κατάταξης και καθοριστικός για τις μετατροπές.",
+        fullDefinitionEl: "Η ταχύτητα σελίδας μετριέται με τα Core Web Vitals της Google (LCP, INP, CLS). Επηρεάζει άμεσα τις κατατάξεις και ακόμα περισσότερο τις πωλήσεις: κάθε δευτερόλεπτο καθυστέρησης κοστίζει επισκέπτες. Ελέγξτε το site σας στο PageSpeed Insights - κάτω από 2,5s LCP σε κινητό είναι ο στόχος.",
         term: "Page Speed",
         shortDefinition: "How fast a web page loads, affecting user experience and search rankings.",
         fullDefinition: "Page speed measures how quickly the content on a URL loads. It's a ranking factor for both desktop and mobile search, and significantly impacts user experience, bounce rates, and conversions.",
@@ -304,6 +341,9 @@ export const glossaryCategories: GlossaryCategory[] = [
     terms: [
       {
         id: "backlink",
+        termEl: "Backlink (Εισερχόμενος Σύνδεσμος)",
+        shortDefinitionEl: "Σύνδεσμος από άλλο site προς το δικό σας - «ψήφος εμπιστοσύνης» για τη Google.",
+        fullDefinitionEl: "Backlink είναι κάθε σύνδεσμος από ξένο site προς το δικό σας. Η Google τον διαβάζει ως ψήφο αξιοπιστίας: ποιοτικά backlinks από σχετικά, έγκυρα sites ανεβάζουν τις κατατάξεις. Ποιότητα πάνω από ποσότητα - ένας σύνδεσμος από κλαδικό μέσο αξίζει περισσότερο από εκατοντάδες σπαμ καταχωρήσεις, που μπορεί και να βλάψουν.",
         term: "Backlink",
         shortDefinition: "A link from one website to another, signaling trust and authority.",
         fullDefinition: "A backlink (also called inbound link or incoming link) is a hyperlink from one website to another. Search engines view backlinks as votes of confidence, using them as a key ranking factor to determine page authority and relevance.",
@@ -318,6 +358,9 @@ export const glossaryCategories: GlossaryCategory[] = [
       },
       {
         id: "anchor-text",
+        termEl: "Anchor Text (Κείμενο Συνδέσμου)",
+        shortDefinitionEl: "Το ορατό, κλικαμπλ κείμενο ενός συνδέσμου - σήμα για το θέμα της σελίδας προορισμού.",
+        fullDefinitionEl: "Το anchor text είναι οι λέξεις πάνω στις οποίες πατάει ο χρήστης. Η Google το χρησιμοποιεί για να καταλάβει το θέμα της σελίδας-στόχου: το «κατασκευή ιστοσελίδων Αθήνα» ως anchor λέει πολύ περισσότερα από το «δείτε εδώ». Στα εξωτερικά links, η υπερβολική χρήση ακριβούς λέξης-κλειδιού μοιάζει χειραγώγηση - χρειάζεται φυσική ποικιλία.",
         term: "Anchor Text",
         shortDefinition: "The visible, clickable text in a hyperlink.",
         fullDefinition: "Anchor text is the visible, clickable text of a hyperlink that provides context about the linked page's content. Search engines use anchor text to understand what the destination page is about.",
@@ -331,6 +374,9 @@ export const glossaryCategories: GlossaryCategory[] = [
       },
       {
         id: "domain-authority",
+        termEl: "Domain Authority (Κύρος Domain)",
+        shortDefinitionEl: "Μετρική (0-100) που εκτιμά τη συνολική δύναμη ενός domain στις κατατάξεις.",
+        fullDefinitionEl: "Το Domain Authority (Moz) και το αντίστοιχο Domain Rating (Ahrefs) εκτιμούν πόσο «δυνατό» είναι ένα site με βάση το προφίλ των backlinks του. Δεν είναι επίσημη μετρική της Google, αλλά χρήσιμος δείκτης σύγκρισης με ανταγωνιστές και αξιολόγησης ευκαιριών για guest posts και συνεργασίες.",
         term: "Domain Authority (DA)",
         shortDefinition: "A metric predicting a website's ability to rank, based on its backlink profile.",
         fullDefinition: "Domain Authority is a search engine ranking score (developed by Moz) that predicts how likely a website is to rank in search results. It's calculated based on the quantity and quality of backlinks, scored from 1-100.",
@@ -418,6 +464,9 @@ export const glossaryCategories: GlossaryCategory[] = [
     terms: [
       {
         id: "keywords",
+        termEl: "Keywords (Λέξεις-κλειδιά)",
+        shortDefinitionEl: "Οι όροι που πληκτρολογούν οι χρήστες στις μηχανές αναζήτησης - η βάση κάθε SEO στρατηγικής.",
+        fullDefinitionEl: "Λέξεις-κλειδιά είναι ό,τι ψάχνει το κοινό σας: από «δικηγόρος Αθήνα» μέχρι «πόσο κοστίζει ιστοσελίδα». Η έρευνα λέξεων-κλειδιών αποκαλύπτει τι ψάχνουν, πόσο συχνά και με ποια πρόθεση - ώστε κάθε σελίδα του site να στοχεύει μια πραγματική αναζήτηση με εμπορική αξία.",
         term: "Keywords",
         shortDefinition: "Words or phrases users type into search engines to find information.",
         fullDefinition: "Keywords are the terms and phrases that users enter into search engines when looking for information, products, or services. They form the foundation of SEO strategy, connecting user intent with your content.",
@@ -432,6 +481,9 @@ export const glossaryCategories: GlossaryCategory[] = [
       },
       {
         id: "long-tail-keywords",
+        termEl: "Long-tail Keywords (Μακριές Λέξεις-κλειδιά)",
+        shortDefinitionEl: "Πιο συγκεκριμένες, πολυλεκτικές αναζητήσεις με λιγότερο ανταγωνισμό και υψηλότερη πρόθεση.",
+        fullDefinitionEl: "Long-tail είναι οι εξειδικευμένες αναζητήσεις: όχι «SEO» αλλά «πόσο κοστίζει το SEO για e-shop». Έχουν μικρότερο όγκο αλλά πολύ υψηλότερη πρόθεση αγοράς και χαμηλότερο ανταγωνισμό - ιδανικό σημείο εκκίνησης για νέα sites και τοπικές επιχειρήσεις.",
         term: "Long-tail Keywords",
         shortDefinition: "Longer, more specific keyword phrases with lower volume but higher intent.",
         fullDefinition: "Long-tail keywords are longer, more specific search phrases (typically 3+ words) that have lower search volume but often higher conversion rates. They represent more specific user intent and face less competition.",
@@ -473,6 +525,9 @@ export const glossaryCategories: GlossaryCategory[] = [
       },
       {
         id: "search-intent",
+        termEl: "Search Intent (Πρόθεση Αναζήτησης)",
+        shortDefinitionEl: "Ο πραγματικός στόχος πίσω από μια αναζήτηση: πληροφορία, σύγκριση, αγορά ή πλοήγηση.",
+        fullDefinitionEl: "Η πρόθεση αναζήτησης καθορίζει τι είδους σελίδα πρέπει να φτιάξετε: το «τι είναι SEO» θέλει οδηγό, το «SEO τιμές» θέλει σελίδα τιμών, το «SEO agency Θεσσαλονίκη» θέλει τοπική σελίδα υπηρεσίας. Σελίδα που δεν ταιριάζει με την πρόθεση δεν κατατάσσεται, όσο καλή κι αν είναι.",
         term: "Search Intent",
         shortDefinition: "The underlying goal a user has when typing a search query.",
         fullDefinition: "Search intent (also called user intent or query intent) refers to the purpose behind a search query. Understanding intent is crucial for creating content that satisfies users and ranks well. The four main types are informational, navigational, commercial, and transactional.",
@@ -562,6 +617,9 @@ export const glossaryCategories: GlossaryCategory[] = [
       },
       {
         id: "ctr",
+        termEl: "CTR (Ποσοστό Κλικ)",
+        shortDefinitionEl: "Το ποσοστό όσων είδαν το αποτέλεσμά σας και έκαναν κλικ - εμφανίσεις προς κλικ.",
+        fullDefinitionEl: "Το CTR (Click-Through Rate) δείχνει πόσο ελκυστικό είναι το αποτέλεσμά σας: κλικ ÷ εμφανίσεις. Χαμηλό CTR σε καλή θέση σημαίνει αδύναμο τίτλο ή περιγραφή - η πιο γρήγορη SEO νίκη είναι συχνά η επανασυγγραφή τίτλων σε σελίδες με πολλές εμφανίσεις και λίγα κλικ (δεδομένα από το Search Console).",
         term: "CTR (Click-Through Rate)",
         shortDefinition: "The percentage of impressions that resulted in clicks.",
         fullDefinition: "Click-through rate (CTR) is the ratio of clicks to impressions, expressed as a percentage. It measures how often people who see your listing in search results actually click through to your website.",
@@ -602,6 +660,9 @@ export const glossaryCategories: GlossaryCategory[] = [
       },
       {
         id: "organic-traffic",
+        termEl: "Organic Traffic (Οργανική Επισκεψιμότητα)",
+        shortDefinitionEl: "Επισκέπτες που έρχονται από μη πληρωμένα αποτελέσματα αναζήτησης.",
+        fullDefinitionEl: "Οργανική επισκεψιμότητα είναι όσοι σας βρίσκουν στη Google χωρίς να πληρώνετε ανά κλικ - το αποτέλεσμα του SEO. Σε αντίθεση με τις διαφημίσεις, χτίζεται σταδιακά και παραμένει: μια σελίδα που κατατάσσεται φέρνει επισκέπτες κάθε μέρα, για χρόνια, με μηδενικό οριακό κόστος.",
         term: "Organic Traffic",
         shortDefinition: "Visitors who arrive at your site from unpaid search engine results.",
         fullDefinition: "Organic traffic consists of visitors who find your website through non-paid search engine results. It's the primary goal of SEO - increasing the quantity and quality of visitors from search engines without paying for ads.",
@@ -650,6 +711,9 @@ export const glossaryCategories: GlossaryCategory[] = [
     terms: [
       {
         id: "featured-snippet",
+        termEl: "Featured Snippet (Προβεβλημένο Απόσπασμα)",
+        shortDefinitionEl: "Το πλαίσιο απάντησης στην κορυφή της Google, πάνω από τα κανονικά αποτελέσματα.",
+        fullDefinitionEl: "Το featured snippet απαντά στην ερώτηση του χρήστη απευθείας στα αποτελέσματα, με απόσπασμα από μια σελίδα. Κερδίζεται με σαφείς, σύντομες απαντήσεις (40-60 λέξεις) κάτω από ερώτηση-επικεφαλίδα, λίστες και πίνακες - και τροφοδοτεί και τις απαντήσεις των AI μηχανών (AEO).",
         term: "Featured Snippet",
         shortDefinition: "A highlighted answer box that appears at the top of search results.",
         fullDefinition: "A featured snippet is a special search result that appears above the regular organic results (position 0). It extracts and displays a direct answer from a webpage, including paragraph, list, table, or video formats.",
@@ -764,6 +828,9 @@ export const glossaryCategories: GlossaryCategory[] = [
     terms: [
       {
         id: "google-business-profile",
+        termEl: "Google Business Profile (Επιχειρηματικό Προφίλ Google)",
+        shortDefinitionEl: "Το δωρεάν προφίλ της επιχείρησης στο Google Maps και την τοπική αναζήτηση.",
+        fullDefinitionEl: "Το Google Business Profile (πρώην Google My Business) είναι το εργαλείο που κρίνει τις αναζητήσεις «κοντά μου» και το τοπικό «τρίο» του χάρτη. Πλήρες προφίλ με σωστή κατηγορία, φωτογραφίες, ωράριο και σταθερή ροή κριτικών με απαντήσεις είναι το 60% του τοπικού SEO για ελληνικές επιχειρήσεις.",
         term: "Google Business Profile (GBP)",
         shortDefinition: "Free Google tool for managing your business's appearance in search and maps.",
         fullDefinition: "Google Business Profile (formerly Google My Business) is a free tool that allows businesses to manage their online presence across Google Search and Maps. It displays business information, hours, reviews, photos, and posts.",
@@ -790,6 +857,9 @@ export const glossaryCategories: GlossaryCategory[] = [
       },
       {
         id: "local-citations",
+        termEl: "Local Citations (Τοπικές Καταχωρήσεις)",
+        shortDefinitionEl: "Αναφορές της επιχείρησης (όνομα, διεύθυνση, τηλέφωνο) σε καταλόγους και τοπικά sites.",
+        fullDefinitionEl: "Citations είναι οι αναφορές των στοιχείων NAP (Name, Address, Phone) σε καταλόγους όπως Vrisko, XO και κλαδικά directories. Η συνέπεια μετράει: ίδια στοιχεία παντού. Ασυνεπείς καταχωρήσεις (παλιά διεύθυνση, διαφορετικό τηλέφωνο) μπερδεύουν τη Google και υπονομεύουν τις τοπικές κατατάξεις.",
         term: "Local Citations",
         shortDefinition: "Online mentions of your business name, address, and phone number.",
         fullDefinition: "Local citations are online references to your business's NAP information on websites, directories, apps, and social platforms. They help search engines verify your business exists and is legitimate, impacting local search rankings.",

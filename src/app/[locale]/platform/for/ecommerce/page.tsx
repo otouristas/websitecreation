@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description:
       "Ecommerce SEO software: product and category query tracking, SERP monitoring, content decay alerts, technical audits, and AI briefs for stores scaling organic revenue.",
     path: localizedPath(locale as SiteLocale, "/platform/for/ecommerce"),
-    hreflangPath: "/platform/for/ecommerce",
+    canonicalPath: localizedPath("en", "/platform/for/ecommerce"),
     primaryKeyword: "ecommerce SEO software",
   });
 }

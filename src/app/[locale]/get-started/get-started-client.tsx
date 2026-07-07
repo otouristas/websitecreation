@@ -119,6 +119,8 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
     fullName: '',
     email: '',
     phone: '',
+    // Honeypot — humans never see or fill this ("website" is a real field in this form).
+    gotcha: '',
   });
 
   useEffect(() => {
@@ -208,6 +210,11 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
   };
 
   const handleSubmit = async () => {
+    if (formData.gotcha) {
+      // Bot filled the honeypot — pretend success, send nothing.
+      setIsComplete(true);
+      return;
+    }
     setIsSubmitting(true);
     setSubmitError('');
 
@@ -370,7 +377,7 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
         title: "Start Your Project",
         subtitle: "Complete our wizard to receive a custom quote in 24 hours.",
         stepLabels: ['Package', 'Business', 'Project', 'Contact'],
-        currency: "$",
+        currency: "€",
         choosePkg: "Choose Your Package",
         choosePkgSub: "Select the package that fits your needs",
         pagesCount: (count: number) => `Up to ${count} pages`,
@@ -933,6 +940,18 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
                   <p className="text-muted-foreground mb-6 text-sm">{t.contactSub}</p>
 
                   <div className="space-y-4">
+                    <div className="absolute -left-[9999px] top-0 opacity-0" aria-hidden="true">
+                      <label htmlFor="gs-gotcha">Leave this field empty</label>
+                      <input
+                        type="text"
+                        id="gs-gotcha"
+                        name="gotcha"
+                        value={formData.gotcha}
+                        onChange={handleInputChange}
+                        tabIndex={-1}
+                        autoComplete="off"
+                      />
+                    </div>
                     <div>
                       <label className="block text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">{t.fullName}</label>
                       <input

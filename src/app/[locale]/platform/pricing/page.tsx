@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description:
       "SEO platform pricing: 7-day card-verified trial, monthly plans, and credits for AI workflows. Compare software billing vs agency retainers and start in the app today.",
     path: localizedPath(locale as SiteLocale, "/platform/pricing"),
-    hreflangPath: "/platform/pricing",
+    canonicalPath: localizedPath("en", "/platform/pricing"),
     primaryKeyword: "SEO software pricing",
   });
 }

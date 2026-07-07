@@ -28,6 +28,7 @@ import { SchemaMarkup, Breadcrumbs, LocationContent } from '@/components/seo';
 import { getServiceLocationBreadcrumbs } from '@/lib/linking';
 import { grServiceLocationPath } from '@/lib/locale-paths';
 import { isValidLocale, localizedPath, type SiteLocale } from '@/lib/i18n/locale';
+import { getGreekLocative } from '@/lib/greek-locative';
 
 interface PageProps {
     params: Promise<{ locale: string; service: string; location: string }>;
@@ -57,30 +58,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     }
 
     return buildServiceLocationMetadata(service, location, locale as SiteLocale);
-}
-
-function getGreekLocative(slug: string): string {
-    const locMap: Record<string, string> = {
-        'athens-gr': 'στην Αθήνα',
-        'thessaloniki-gr': 'στη Θεσσαλονίκη',
-        'patras-gr': 'στην Πάτρα',
-        'heraklion-gr': 'στο Ηράκλειο',
-        'larissa-gr': 'στη Λάρισα',
-        'volos-gr': 'στο Βόλο',
-        'santorini-gr': 'στη Σαντορίνη',
-        'mykonos-gr': 'στη Μύκονο',
-        'paros-gr': 'στην Πάρο',
-        'naxos-gr': 'στη Νάξο',
-        'crete-gr': 'στην Κρήτη',
-        'rethymno-gr': 'στο Ρέθυμνο',
-        'chania-gr': 'στα Χανιά',
-        'kos-gr': 'στην Κω',
-        'corinth-gr': 'στην Κόρινθο',
-        'serres-gr': 'στις Σέρρες',
-        'lamia-gr': 'στη Λαμία',
-        'kavala-gr': 'στην Καβάλα',
-    };
-    return locMap[slug] || 'στην Ελλάδα';
 }
 
 export default async function ServiceLocationPage({ params }: PageProps) {
@@ -169,6 +146,12 @@ export default async function ServiceLocationPage({ params }: PageProps) {
         {
             question: `Τι κάνει τις ιστοσελίδες μας να ξεχωρίζουν σε Google και AI αναζήτηση;`,
             answer: `Το τεχνικό SEO, το semantic clustering από το Search Console, το GEO/AEO βελτιστοποιημένο περιεχόμενο και οι κορυφαίες επιδόσεις Core Web Vitals - όχι οι απλές, λεπτές σελίδες προτύπων.`,
+        },
+        {
+            question: `Πόσο κοστίζει ${serviceName.toLowerCase()} ${cityLocative};`,
+            answer: ['local-seo', 'seo-audits', 'ai-visibility', 'link-building', 'eshop-seo', 'content-creation'].includes(serviceSlug)
+                ? `Τα πακέτα SEO ξεκινούν από €299/μήνα (Starter), €599/μήνα (Growth) και €999/μήνα (Scale). Η τιμή εξαρτάται από τον ανταγωνισμό ${cityLocative} και τους στόχους σας. Δείτε αναλυτικές τιμές στη σελίδα τιμών μας ή ζητήστε δωρεάν προσφορά.`
+                : `Οι ιστοσελίδες ξεκινούν από €899 (Starter, έως 5 σελίδες), €1.799 (Professional, έως 10 σελίδες) και €2.999 (Business, έως 20 σελίδες). Χωρίς κρυφές χρεώσεις - όλες οι τιμές σε Ευρώ. Ζητήστε δωρεάν προσφορά για ${cityName}.`,
         },
     ] : [
         {

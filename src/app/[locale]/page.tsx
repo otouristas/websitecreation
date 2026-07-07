@@ -12,11 +12,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (locale === 'el') {
     return buildMetadata({
-      title: 'Κατασκευή ιστοσελίδων τουρισμού & SEO',
+      title: 'Κατασκευή Ιστοσελίδων & SEO στην Ελλάδα',
       description:
-        'Κατασκευή ιστοσελίδων για ξενοδοχεία, ενοικίαση αυτοκινήτου, τουρισμό και travel AI με πλήρες SEO, GEO, AEO. Δείτε τα πακέτα μας και ζητήστε δωρεάν προσφορά.',
+        'Κατασκευή ιστοσελίδων, e-shop και SEO για επιχειρήσεις σε όλη την Ελλάδα. Διαφανείς τιμές σε €, GEO/AEO, γρήγορη παράδοση. Ζητήστε δωρεάν προσφορά.',
       path: localizedPath('el', '/'),
-      primaryKeyword: 'κατασκευή ιστοσελίδας τουρισμός',
+      primaryKeyword: 'κατασκευή ιστοσελίδων',
       hreflangPath: '/',
     });
   }

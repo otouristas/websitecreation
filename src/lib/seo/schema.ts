@@ -22,11 +22,15 @@ const BRAND_NAME = 'AnotherSEOGuru';
 export function generateArticleSchema(data: ArticleSchemaData): SchemaOutput {
     return {
         '@context': 'https://schema.org',
-        '@type': 'Article',
+        '@type': data.schemaType ?? 'Article',
         headline: data.headline,
         description: data.description,
         datePublished: data.datePublished,
         dateModified: data.dateModified,
+        ...(data.inLanguage && { inLanguage: data.inLanguage }),
+        ...(data.mainEntityOfPage && {
+            mainEntityOfPage: { '@type': 'WebPage', '@id': data.mainEntityOfPage },
+        }),
         author: {
             '@type': 'Organization',
             name: data.author.name,
@@ -34,6 +38,7 @@ export function generateArticleSchema(data: ArticleSchemaData): SchemaOutput {
         },
         publisher: {
             '@type': 'Organization',
+            '@id': `${BASE_URL}/#organization`,
             name: BRAND_NAME,
             logo: {
                 '@type': 'ImageObject',

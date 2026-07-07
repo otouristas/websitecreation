@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description:
       "Free SEO resources: Search Console playbooks, GEO and AEO guides, technical SEO checklists, blog pillars, and links to clustering, audit, and AI visibility tools.",
     path: localizedPath(locale as SiteLocale, "/resources"),
-    hreflangPath: "/resources",
+    canonicalPath: localizedPath("en", "/resources"),
     primaryKeyword: "SEO resources",
   });
 }

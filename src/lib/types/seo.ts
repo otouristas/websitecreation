@@ -20,6 +20,12 @@ export interface ArticleSchemaData {
         width: number;
         height: number;
     };
+    /** Use BlogPosting for blog posts (richer type than generic Article). */
+    schemaType?: 'Article' | 'BlogPosting';
+    /** BCP-47 language of the content, e.g. 'el' | 'en'. */
+    inLanguage?: string;
+    /** Canonical URL of the page this article is the main entity of. */
+    mainEntityOfPage?: string;
 }
 
 // FAQ schema data (uses FAQ from page.ts)

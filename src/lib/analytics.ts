@@ -12,17 +12,29 @@ export function loadGoogleAnalytics(): void {
   if (document.getElementById('ga-script')) return;
 
   window.dataLayer = window.dataLayer || [];
-  window.gtag = function gtag(...args: unknown[]) {
-    window.dataLayer!.push(args);
-  };
-  window.gtag('js', new Date());
-  window.gtag('config', GA_MEASUREMENT_ID, { anonymize_ip: true });
+  // gtag.js only processes `arguments` objects pushed to dataLayer — a plain
+  // array is silently ignored, so this must NOT use rest parameters.
+  window.gtag = function gtag() {
+    // eslint-disable-next-line prefer-rest-params
+    window.dataLayer!.push(arguments);
+  } as Window['gtag'];
+  window.gtag!('js', new Date());
+  // Pageviews are sent manually (trackPageView) so SPA route changes count.
+  window.gtag!('config', GA_MEASUREMENT_ID, { anonymize_ip: true, send_page_view: false });
 
   const script = document.createElement('script');
   script.id = 'ga-script';
   script.async = true;
   script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
   document.head.appendChild(script);
+}
+
+export function trackPageView(url: string): void {
+  trackEvent('page_view', {
+    page_location: url,
+    page_path: new URL(url, window.location.origin).pathname,
+    page_title: document.title,
+  });
 }
 
 export function trackEvent(

@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description:
       "Multi-client SEO platform for agencies: GSC reporting, sprint boards, AI workflows, rank tracking, and white-label-ready delivery across many Search Console properties.",
     path: localizedPath(locale as SiteLocale, "/platform/for/agencies"),
-    hreflangPath: "/platform/for/agencies",
+    canonicalPath: localizedPath("en", "/platform/for/agencies"),
     primaryKeyword: "SEO software for agencies",
   });
 }

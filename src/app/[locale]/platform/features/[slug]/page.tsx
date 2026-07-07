@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: PageProps) {
     title: f.seo.metaTitle.replace(/\s*\|\s*AnotherSEOGuru\s*$/i, "").trim(),
     description: f.seo.metaDescription,
     path: localizedPath(locale as SiteLocale, `/platform/features/${f.slug}`),
-    hreflangPath: `/platform/features/${f.slug}`,
+    canonicalPath: localizedPath("en", `/platform/features/${f.slug}`),
     primaryKeyword: f.seo.keywords.split(",")[0]?.trim(),
   });
 }

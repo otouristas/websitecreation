@@ -62,6 +62,10 @@ function RelatedResourceLink(props: { readonly title: string; readonly url: stri
 
 export function GlossaryClient({ locale = "en" }: { locale?: SiteLocale }) {
   const ui = getGlossaryUi(locale);
+  const isEl = locale === "el";
+  const tName = (t: GlossaryTerm) => (isEl && t.termEl) || t.term;
+  const tShort = (t: GlossaryTerm) => (isEl && t.shortDefinitionEl) || t.shortDefinition;
+  const tFull = (t: GlossaryTerm) => (isEl && t.fullDefinitionEl) || t.fullDefinition;
   const glossaryBase = localizedPath(locale, "/glossary");
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -107,7 +111,9 @@ export function GlossaryClient({ locale = "en" }: { locale?: SiteLocale }) {
       ({ term }) =>
         term.term.toLowerCase().includes(query) ||
         term.shortDefinition.toLowerCase().includes(query) ||
-        term.fullDefinition.toLowerCase().includes(query),
+        term.fullDefinition.toLowerCase().includes(query) ||
+        (term.termEl ?? "").toLowerCase().includes(query) ||
+        (term.shortDefinitionEl ?? "").toLowerCase().includes(query),
     );
   }, [searchQuery]);
 
@@ -205,7 +211,7 @@ export function GlossaryClient({ locale = "en" }: { locale?: SiteLocale }) {
                             selectedTerm === term.id ? "bg-primary/10 text-primary font-medium" : "text-muted-foreground hover:bg-muted"
                           }`}
                         >
-                          {term.term}
+                          {tName(term)}
                         </button>
                       ))}
                     </div>
@@ -228,8 +234,8 @@ export function GlossaryClient({ locale = "en" }: { locale?: SiteLocale }) {
                     onClick={() => selectTerm(category.id, term.id)}
                     className="w-full text-left p-3 rounded-lg border border-border hover:border-primary/50"
                   >
-                    <span className="font-medium text-foreground">{term.term}</span>
-                    <span className="block text-sm text-muted-foreground line-clamp-2">{term.shortDefinition}</span>
+                    <span className="font-medium text-foreground">{tName(term)}</span>
+                    <span className="block text-sm text-muted-foreground line-clamp-2">{tShort(term)}</span>
                   </button>
                 </li>
               ))}
@@ -244,16 +250,16 @@ export function GlossaryClient({ locale = "en" }: { locale?: SiteLocale }) {
               <ChevronRight className="h-3.5 w-3.5" />
               <span>{currentTerm.category.title}</span>
               <ChevronRight className="h-3.5 w-3.5" />
-              <span className="text-foreground font-medium">{currentTerm.term.term}</span>
+              <span className="text-foreground font-medium">{tName(currentTerm.term)}</span>
             </nav>
             <span className={`inline-block text-xs font-medium px-2 py-1 rounded-md mb-3 ${categoryBadgeClass[currentTerm.category.color] ?? "bg-muted"}`}>
               {currentTerm.category.title}
             </span>
-            <h1 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">{currentTerm.term.term}</h1>
-            <p className="text-lg text-muted-foreground mb-8">{currentTerm.term.shortDefinition}</p>
+            <h1 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">{tName(currentTerm.term)}</h1>
+            <p className="text-lg text-muted-foreground mb-8">{tShort(currentTerm.term)}</p>
             <section className="mb-8">
               <h2 className="text-xl font-semibold mb-3 text-foreground">Definition</h2>
-              <p className="text-muted-foreground leading-relaxed">{currentTerm.term.fullDefinition}</p>
+              <p className="text-muted-foreground leading-relaxed">{tFull(currentTerm.term)}</p>
             </section>
             {currentTerm.term.example ? (
               <section className="mb-8">
@@ -308,7 +314,7 @@ export function GlossaryClient({ locale = "en" }: { locale?: SiteLocale }) {
                         onClick={() => selectTerm(found.category.id, termId)}
                         className="px-3 py-1.5 text-sm bg-muted rounded-full hover:bg-muted/80"
                       >
-                        {found.term.term}
+                        {tName(found.term)}
                       </button>
                     );
                   })}
@@ -346,8 +352,8 @@ export function GlossaryClient({ locale = "en" }: { locale?: SiteLocale }) {
                         onClick={() => selectTerm(category.id, term.id)}
                         className="text-left p-4 rounded-xl border border-border bg-card hover:border-primary/50 hover:shadow-md transition-all"
                       >
-                        <h3 className="font-semibold mb-2 text-foreground">{term.term}</h3>
-                        <p className="text-sm text-muted-foreground line-clamp-3">{term.shortDefinition}</p>
+                        <h3 className="font-semibold mb-2 text-foreground">{tName(term)}</h3>
+                        <p className="text-sm text-muted-foreground line-clamp-3">{tShort(term)}</p>
                       </button>
                     ))}
                   </div>

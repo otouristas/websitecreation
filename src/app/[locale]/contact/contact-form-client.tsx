@@ -7,6 +7,7 @@ import { submitToFormspree } from "@/lib/formspree";
 import { captureUtmParams, trackFormStart, trackLead } from "@/lib/analytics";
 import { localizedPath, type SiteLocale } from "@/lib/i18n/locale";
 import { elContact } from "@/data/translations/el-contact";
+import ContactChannels from "@/components/ContactChannels";
 
 export function ContactFormClient({ locale = "en" }: { locale?: SiteLocale }): ReactElement {
   const isEl = locale === "el";
@@ -123,6 +124,9 @@ export function ContactFormClient({ locale = "en" }: { locale?: SiteLocale }): R
             <div className="space-y-8 lg:col-span-2">
               <div>
                 <h2 className="mb-6 text-2xl font-bold">{isEl ? t!.getInTouch : "Get in Touch"}</h2>
+                <div className="mb-6">
+                  <ContactChannels variant="buttons" locale={locale} />
+                </div>
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
                     <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">

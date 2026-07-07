@@ -71,13 +71,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }),
   );
 
-  const blogPages = blogPosts.flatMap((p) =>
-    forBothLocales(`/blog/${p.slug}`, {
-      lastModified: new Date(p.date),
-      priority: p.isPillarHub ? 0.85 : 0.7,
-      changeFrequency: 'monthly',
-    }),
-  );
+  // Posts are single-locale files — only list them under the locale they exist in.
+  const blogPages: MetadataRoute.Sitemap = blogPosts.map((p) => ({
+    url: localeUrl(p.locale, `/blog/${p.slug}`),
+    lastModified: new Date(p.date),
+    changeFrequency: 'monthly',
+    priority: p.isPillarHub ? 0.85 : 0.7,
+  }));
 
   const toolPages = PLATFORM_TOOLS.flatMap((tool) =>
     forBothLocales(`/tools/${tool.slug}`, { priority: 0.75, changeFrequency: 'monthly' }),

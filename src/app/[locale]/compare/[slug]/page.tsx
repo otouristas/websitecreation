@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: PageProps) {
     title: c.headline,
     description: c.summary,
     path: localizedPath(locale as SiteLocale, `/compare/${c.slug}`),
-    hreflangPath: `/compare/${c.slug}`,
+    canonicalPath: localizedPath("en", `/compare/${c.slug}`),
     primaryKeyword: `SEO software vs ${c.competitorName}`,
   });
 }

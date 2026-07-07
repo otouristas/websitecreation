@@ -7,6 +7,43 @@ import { BrandLogo } from "@/components/BrandLogo";
 import { getAppPath } from "@/lib/app-links";
 import { localizedPath, siteLocaleFromPath, type SiteLocale } from "@/lib/i18n/locale";
 import { getFooterDictionary } from "@/lib/i18n/get-dictionary";
+import { elServiceLocationPath } from "@/lib/locale-paths";
+import { CONTACT_EMAIL, PHONE_DISPLAY, WHATSAPP_HREF } from "@/lib/contact-info";
+import { trackCtaClick } from "@/lib/analytics";
+
+/** Exact-anchor Greek service×city links matching striking-distance GSC queries. */
+const EL_SEO_HUB_LINKS: { label: string; href: string }[] = [
+  { label: "Κατασκευή Ιστοσελίδων Αθήνα", href: elServiceLocationPath("website-creation", "athens-gr") },
+  { label: "Κατασκευή Ιστοσελίδων Θεσσαλονίκη", href: elServiceLocationPath("website-creation", "thessaloniki-gr") },
+  { label: "Κατασκευή Ιστοσελίδων Πάτρα", href: elServiceLocationPath("website-creation", "patras-gr") },
+  { label: "Κατασκευή Ιστοσελίδων Ηράκλειο", href: elServiceLocationPath("website-creation", "heraklion-gr") },
+  { label: "Κατασκευή Ιστοσελίδων Λάρισα", href: elServiceLocationPath("website-creation", "larissa-gr") },
+  { label: "Κατασκευή Ιστοσελίδων Κόρινθος", href: elServiceLocationPath("website-creation", "corinth-gr") },
+  { label: "SEO Αθήνα", href: elServiceLocationPath("local-seo", "athens-gr") },
+  { label: "SEO Θεσσαλονίκη", href: elServiceLocationPath("local-seo", "thessaloniki-gr") },
+  { label: "SEO Σαντορίνη", href: elServiceLocationPath("local-seo", "santorini-gr") },
+  { label: "SEO Μύκονος", href: elServiceLocationPath("local-seo", "mykonos-gr") },
+  { label: "SEO Κως", href: elServiceLocationPath("local-seo", "kos-gr") },
+  { label: "SEO Χανιά", href: elServiceLocationPath("local-seo", "chania-gr") },
+  { label: "Κατασκευή E-shop Αθήνα", href: elServiceLocationPath("eshop-woocommerce", "athens-gr") },
+  { label: "Κατασκευή E-shop Θεσσαλονίκη", href: elServiceLocationPath("eshop-woocommerce", "thessaloniki-gr") },
+  { label: "Σχεδιασμός Λογοτύπου Θεσσαλονίκη", href: elServiceLocationPath("logo-design", "thessaloniki-gr") },
+  { label: "Ανασχεδιασμός Ιστοσελίδας", href: "/el/services/website-redesign" },
+  { label: "SEO για Ξενοδοχεία", href: "/el/solutions/hotels" },
+  { label: "Κατασκευή Ιστοσελίδας Ξενοδοχείου", href: "/el/solutions/hotels/website-creation" },
+  { label: "Τιμές & Πακέτα", href: "/el/pricing" },
+  { label: "Όλες οι Υπηρεσίες", href: "/el/services" },
+  { label: "Όλες οι Περιοχές", href: "/el/locations" },
+];
+
+const EN_SEO_HUB_LINKS: { label: string; href: string }[] = [
+  { label: "Website Creation", href: "/en/services/website-creation" },
+  { label: "Local SEO", href: "/en/services/local-seo" },
+  { label: "SEO Web Design", href: "/en/services/seo-web-design" },
+  { label: "Hotel Websites", href: "/en/solutions/hotels" },
+  { label: "Pricing", href: "/en/pricing" },
+  { label: "All Locations", href: "/en/locations" },
+];
 
 const columnLinkClass =
   "text-sm text-muted-foreground transition-colors hover:text-foreground";
@@ -314,15 +351,39 @@ export default function Footer({ locale: localeProp }: { locale?: SiteLocale }):
             </ul>
           </div>
         </div>
+        <div className="mb-12 border-t border-border pt-10">
+          <h2 className="mb-5 text-sm font-semibold tracking-tight text-foreground">
+            {isEl ? "Υπηρεσίες ανά Πόλη" : "Services by City"}
+          </h2>
+          <ul className="grid grid-cols-2 gap-x-6 gap-y-2 sm:grid-cols-3 lg:grid-cols-4">
+            {(isEl ? EL_SEO_HUB_LINKS : EN_SEO_HUB_LINKS).map((link) => (
+              <li key={link.href}>
+                <Link href={link.href} className={columnLinkClass}>
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
         <div className="border-t border-border pt-10 md:pt-12">
           <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
             <div className="flex flex-col items-center gap-3 md:items-start">
               <p className="text-sm text-muted-foreground">
                 © {currentYear} AnotherSEOGuru. {isEl ? t!.rights : "All rights reserved."}
               </p>
-              <div className="flex items-center gap-6 text-sm text-muted-foreground">
-                <a href="mailto:hello@anotherseoguru.com" className="transition-colors hover:text-foreground">
-                  hello@anotherseoguru.com
+              <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-muted-foreground md:justify-start">
+                <a
+                  href={WHATSAPP_HREF}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackCtaClick("footer_whatsapp")}
+                  className="transition-colors hover:text-foreground"
+                >
+                  WhatsApp {PHONE_DISPLAY}
+                </a>
+                <span aria-hidden>•</span>
+                <a href={`mailto:${CONTACT_EMAIL}`} className="transition-colors hover:text-foreground">
+                  {CONTACT_EMAIL}
                 </a>
                 <span aria-hidden>•</span>
                 <Link href={lp("/contact")} className="transition-colors hover:text-foreground">

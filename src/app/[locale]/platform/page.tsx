@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description:
       "GSC-native SEO platform: semantic clustering, rank tracking, technical audits, GEO, AEO, and multi-LLM workflows. Turn Search Console data into weekly execution. 7-day trial.",
     path: localizedPath(locale as SiteLocale, "/platform"),
-    hreflangPath: "/platform",
+    canonicalPath: localizedPath("en", "/platform"),
     primaryKeyword: "SEO software platform",
   });
 }

@@ -13,6 +13,8 @@ export interface BlogPostListItem {
   readonly pillar?: string;
   readonly isPillarHub: boolean;
   readonly locale: 'en' | 'el';
+  /** Slug of this post's counterpart in the other locale, when a real translation pair exists. */
+  readonly translationOf?: string;
 }
 
 export interface BlogPostParsed extends BlogPostListItem {
@@ -30,6 +32,7 @@ interface MatterData {
   readonly pillar?: string;
   readonly pillarHub?: boolean;
   readonly locale?: 'en' | 'el';
+  readonly translationOf?: string;
 }
 
 function getContentDir(): string {
@@ -57,8 +60,29 @@ function parsePostFile(filePath: string, fileBase: string): BlogPostParsed | nul
     pillar: typeof d.pillar === "string" ? d.pillar : undefined,
     isPillarHub: Boolean(d.pillarHub),
     locale: d.locale === "el" ? "el" : "en",
+    translationOf: typeof d.translationOf === "string" ? d.translationOf : undefined,
     content,
   };
+}
+
+/**
+ * Resolve the other-locale counterpart of a post. Follows `translationOf` in
+ * either direction and validates the pair really spans two locales.
+ */
+export function getTranslationCounterpart(
+  post: Pick<BlogPostListItem, "slug" | "locale" | "translationOf">,
+): BlogPostListItem | null {
+  if (post.translationOf) {
+    const target = getBlogPostBySlug(post.translationOf);
+    if (target && target.locale !== post.locale) {
+      const { content: _c, ...rest } = target;
+      return rest;
+    }
+  }
+  const reverse = getAllBlogPosts().find(
+    (p) => p.translationOf === post.slug && p.locale !== post.locale,
+  );
+  return reverse ?? null;
 }
 
 /**

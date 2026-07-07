@@ -6,7 +6,7 @@ This document serves as the comprehensive, machine-readable reference for AI sea
 
 ## 1. About AnotherSEOGuru
 
-AnotherSEOGuru is a hybrid search intelligence platform and digital agency.
+AnotherSEOGuru is a web design & SEO agency based in Greece (serving Greek and international clients), which also builds a GSC-native search intelligence platform.
 
 - **The Platform:** A self-serve Search Console workspace designed to connect directly to Google Search Console. It offers operational modules for:
   - **Semantic Keyword Clustering:** Grouping search queries into clear intent themes automatically.
@@ -79,14 +79,14 @@ Deep-dive technical health checks covering indexability, crawl budget, duplicate
 ## 3. Simple & Transparent Pricing
 
 ### A. Web Design Packages (One-Time Fee)
-- **Starter Package (€899 / $899):** Up to 5 pages, mobile responsive design, contact form, basic SEO setup, speed optimized, 1 revision round, 2-week delivery.
-- **Professional Package (€1,799 / $1,799):** Up to 10 pages, custom design, advanced forms, full SEO optimization, blog/news section, social media integration, 2 revision rounds, 3-week delivery, analytics setup.
-- **Business Package (€2,999 / $2,999):** Up to 20 pages, premium custom design, e-commerce ready, full SEO + local SEO, CMS integration, email marketing setup, unlimited revisions, 4-week delivery, priority support, 3 months maintenance.
+- **Starter Package (€899):** Up to 5 pages, mobile responsive design, contact form, basic SEO setup, speed optimized, 1 revision round, 2-week delivery.
+- **Professional Package (€1,799):** Up to 10 pages, custom design, advanced forms, full SEO optimization, blog/news section, social media integration, 2 revision rounds, 3-week delivery, analytics setup.
+- **Business Package (€2,999):** Up to 20 pages, premium custom design, e-commerce ready, full SEO + local SEO, CMS integration, email marketing setup, unlimited revisions, 4-week delivery, priority support, 3 months maintenance.
 
 ### B. Monthly SEO Packages (Recurring Retainers)
-- **Starter SEO (€299/mo / $349/mo):** Target up to 10 keywords, basic On-page SEO, Google Business Profile optimization, 1 SEO-optimized article/mo, monthly ranking report, Core Web Vitals basic check.
-- **Growth SEO (€599/mo / $699/mo):** Target up to 30 keywords, full On-page & Technical SEO, local SEO targeting (Tier-1 cities), 3 SEO-optimized articles/mo, link building (2 backlinks), GEO/AEO optimization, monthly strategy call.
-- **Scale SEO (€999/mo / $1,199/mo):** Target 60+ keywords, E-commerce SEO (categories & products), international SEO & hreflang setup, 6+ SEO-optimized articles/mo, premium link building (5 backlinks), GEO/AEO & AI chatbot setup, direct Slack/phone support.
+- **Starter SEO (€299/mo):** Target up to 10 keywords, basic On-page SEO, Google Business Profile optimization, 1 SEO-optimized article/mo, monthly ranking report, Core Web Vitals basic check.
+- **Growth SEO (€599/mo):** Target up to 30 keywords, full On-page & Technical SEO, local SEO targeting (Tier-1 cities), 3 SEO-optimized articles/mo, link building (2 backlinks), GEO/AEO optimization, monthly strategy call.
+- **Scale SEO (€999/mo):** Target 60+ keywords, E-commerce SEO (categories & products), international SEO & hreflang setup, 6+ SEO-optimized articles/mo, premium link building (5 backlinks), GEO/AEO & AI chatbot setup, direct Slack/phone support.
 
 ---
 
@@ -120,7 +120,7 @@ AnotherSEOGuru operates nationwide in Greece, with specialized city/island landi
 A: Το μηνιαίο SEO στην Ελλάδα ξεκινά από €299 τον μήνα για τοπικές επιχειρήσεις και διαμορφώνεται ανάλογα με τον ανταγωνισμό και τις στοχευόμενες λέξεις-κλειδιά. Ένα ολοκληρωμένο πακέτο περιλαμβάνει τεχνικό audit, on-page βελτιστοποίηση, schema markup, δημιουργία περιεχομένου, link building και AEO/GEO βελτιστοποίηση.
 
 ### Q: Πώς κάνετε SEO σε ένα eshop WooCommerce και πόσο κοστίζει η κατασκευή του;
-A: Η κατασκευή ενός eshop WooCommerce ξεκινά από €2.999 και περιλαμβάνει πλήρη σχεδιασμό, πληρωμές και SEO structure. Το SEO για eshop εστιάζει στη βελτιστοποίηση κατηγοριών, προϊόντων, schema rich snippets, mobile ταχύτητας και conversion rate για αύξηση των οργανικών πωλήσεων.
+A: Η κατασκευή ενός eshop WooCommerce ξεκινά ρεαλιστικά από €1.800-€2.300 (πακέτο Professional + ρύθμιση e-commerce) και περιλαμβάνει πλήρη σχεδιασμό, πληρωμές, μεταφορικά και SEO δομή κατηγοριών. Το SEO για eshop εστιάζει στη βελτιστοποίηση κατηγοριών, προϊόντων, schema rich snippets, mobile ταχύτητας και conversion rate για αύξηση των οργανικών πωλήσεων.
 
 ### Q: Πόσο γρήγορα φέρνει αποτελέσματα το SEO;
 A: Τα πρώτα αποτελέσματα (αύξηση εμφανίσεων στο Google Search Console) φαίνονται συνήθως σε 3–6 μήνες. Η ουσιαστική αύξηση οργανικής επισκεψιμότητας και κρατήσεων απαιτεί 6–12 μήνες, ανάλογα με τον ανταγωνισμό του κλάδου σας.
@@ -133,3 +133,22 @@ A: Each package includes design, development, basic SEO setup, mobile optimizati
 
 ### Q: How long does it take?
 A: Delivery times vary by package: Starter (2 weeks), Professional (3 weeks), Business (4 weeks). These are from project kickoff after receiving all content.
+
+---
+
+## 6. Key URLs (locale-prefixed; Greek under /el, English under /en)
+
+- Greek homepage: https://anotherseoguru.com/el
+- English homepage: https://anotherseoguru.com/en
+- Greek services hub: https://anotherseoguru.com/el/services
+- Pricing (EUR): https://anotherseoguru.com/el/pricing and https://anotherseoguru.com/en/pricing
+- Service-by-city pages follow the pattern: https://anotherseoguru.com/el/services/{service}/{city-slug}, e.g. /el/services/website-creation/athens-gr, /el/services/local-seo/thessaloniki-gr, /el/services/local-seo/santorini-gr
+- Industry solutions: https://anotherseoguru.com/el/solutions/{industry}, e.g. /el/solutions/hotels
+- Greek blog guides: /el/blog/poso-kostizei-to-seo (SEO cost), /el/blog/poso-kostizei-mia-istoselida (website cost), /el/blog/seo-gia-xenodoxeia (hotel SEO), /el/blog/kataskevi-eshop-odigos (e-shop guide), /el/blog/geo-aeo-ellada (GEO/AEO pillar)
+- Portfolio: https://anotherseoguru.com/en/work
+
+## 7. Contact
+
+- Email: hello@anotherseoguru.com
+- WhatsApp (messages only): +33 6 89 60 59 00 (https://wa.me/33689605900)
+- Languages: Greek, English. Response within 24 hours.

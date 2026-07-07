@@ -59,12 +59,34 @@ export function LandingTestimonials({ locale = 'en' }: LandingTestimonialsProps)
         <ul className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {items.map((t) => (
             <li key={t.name} className="rounded-2xl border border-border bg-card p-6 shadow-sm">
+              <div className="mb-3 flex items-center gap-0.5 text-amber-400" aria-hidden>
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <svg key={i} className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.958a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.367 2.446a1 1 0 00-.363 1.118l1.286 3.958c.3.922-.755 1.688-1.539 1.118l-3.367-2.446a1 1 0 00-1.175 0l-3.367 2.446c-.783.57-1.838-.196-1.538-1.118l1.285-3.958a1 1 0 00-.363-1.118L2.02 9.385c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.951-.69l1.286-3.958z" />
+                  </svg>
+                ))}
+              </div>
               <p className="text-foreground mb-4 leading-relaxed">&ldquo;{t.text}&rdquo;</p>
-              <div className="text-sm font-semibold text-foreground">{t.name}</div>
-              <div className="text-xs text-muted-foreground">{t.role}</div>
+              <div className="flex items-center gap-3">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full gradient-primary text-sm font-bold text-primary-foreground">
+                  {t.name.charAt(0)}
+                </span>
+                <div>
+                  <div className="text-sm font-semibold text-foreground">{t.name}</div>
+                  <div className="text-xs text-muted-foreground">{t.role}</div>
+                </div>
+              </div>
             </li>
           ))}
         </ul>
+        <div className="mt-10 text-center">
+          <a
+            href={isEl ? '/el/work' : '/en/work'}
+            className="text-sm font-semibold text-primary underline-offset-4 hover:underline"
+          >
+            {isEl ? 'Δείτε όλα τα projects →' : 'See all projects →'}
+          </a>
+        </div>
       </div>
     </section>
   );

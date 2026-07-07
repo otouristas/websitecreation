@@ -3,9 +3,17 @@
  */
 export const serviceNamesEl: Record<
   string,
-  { name: string; shortName: string; description: string; features?: string[] }
+  {
+    name: string;
+    shortName: string;
+    description: string;
+    features?: string[];
+    /** Nominative commercial keyword used to front-load SERP titles (matches real Greek queries). */
+    titleKeyword?: string;
+  }
 > = {
   'website-creation': {
+    titleKeyword: 'Κατασκευή Ιστοσελίδων',
     name: 'Κατασκευή Ιστοσελίδων',
     shortName: 'Ιστοσελίδες',
     description:
@@ -20,6 +28,7 @@ export const serviceNamesEl: Record<
     ],
   },
   'website-redesign': {
+    titleKeyword: 'Ανασχεδιασμός Ιστοσελίδας',
     name: 'Ανασχεδιασμός Ιστοσελίδας',
     shortName: 'Redesign',
     description:
@@ -34,6 +43,7 @@ export const serviceNamesEl: Record<
     ],
   },
   'seo-web-design': {
+    titleKeyword: 'SEO Web Design',
     name: 'SEO Web Design',
     shortName: 'SEO Design',
     description:
@@ -48,6 +58,7 @@ export const serviceNamesEl: Record<
     ],
   },
   'speed-optimization': {
+    titleKeyword: 'Βελτιστοποίηση Ταχύτητας',
     name: 'Βελτιστοποίηση Ταχύτητας',
     shortName: 'Ταχύτητα',
     description:
@@ -62,6 +73,7 @@ export const serviceNamesEl: Record<
     ],
   },
   'ai-visibility': {
+    titleKeyword: 'AI Visibility (GEO/AEO)',
     name: 'Ορατότητα σε AI (GEO/AEO)',
     shortName: 'AI SEO',
     description:
@@ -76,6 +88,7 @@ export const serviceNamesEl: Record<
     ],
   },
   'logo-design': {
+    titleKeyword: 'Σχεδιασμός Λογοτύπου',
     name: 'Σχεδιασμός Λογοτύπου',
     shortName: 'Branding',
     description: 'Επαγγελματικό λογότυπο και brand kit για αναγνωρισιμότητα στην αγορά σας.',
@@ -89,6 +102,7 @@ export const serviceNamesEl: Record<
     ],
   },
   'content-creation': {
+    titleKeyword: 'Δημιουργία Περιεχομένου',
     name: 'Δημιουργία Περιεχομένου',
     shortName: 'Content',
     description:
@@ -103,6 +117,7 @@ export const serviceNamesEl: Record<
     ],
   },
   'local-seo': {
+    titleKeyword: 'SEO',
     name: 'Τοπικό SEO & Google Business',
     shortName: 'Local SEO',
     description:
@@ -117,6 +132,7 @@ export const serviceNamesEl: Record<
     ],
   },
   'link-building': {
+    titleKeyword: 'Link Building',
     name: 'Link Building',
     shortName: 'Backlinks',
     description: 'White-hat backlinks, digital PR και niche edits για αύξηση domain authority.',
@@ -130,6 +146,7 @@ export const serviceNamesEl: Record<
     ],
   },
   'seo-audits': {
+    titleKeyword: 'SEO Audit',
     name: 'Τεχνικό SEO Audit',
     shortName: 'Audits',
     description:
@@ -144,6 +161,7 @@ export const serviceNamesEl: Record<
     ],
   },
   'eshop-woocommerce': {
+    titleKeyword: 'Κατασκευή E-shop',
     name: 'Κατασκευή E-shop WooCommerce',
     shortName: 'Κατασκευή E-shop',
     description:
@@ -158,6 +176,7 @@ export const serviceNamesEl: Record<
     ],
   },
   'eshop-seo': {
+    titleKeyword: 'SEO για E-shop',
     name: 'SEO για E-shop',
     shortName: 'E-shop SEO',
     description:

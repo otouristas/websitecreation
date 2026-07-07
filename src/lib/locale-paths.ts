@@ -69,16 +69,42 @@ export function getLocaleFromPath(pathname: string): SiteLocale {
   return siteLocaleFromPath(pathname);
 }
 
-export function getHreflangAlternates(barePath: string): {
-  en: string;
-  el: string;
-  'x-default': string;
-} {
-  const base = 'https://anotherseoguru.com';
+const HREFLANG_BASE = 'https://anotherseoguru.com';
+
+/**
+ * hreflang alternates for a bare (locale-less) path. Only emit when the page
+ * genuinely exists in more than one locale — advertising an alternate that
+ * 404s or serves untranslated content hurts more than no hreflang at all.
+ */
+export function getHreflangAlternates(
+  barePath: string,
+  locales: readonly SiteLocale[] = ['en', 'el'],
+): Record<string, string> | undefined {
+  if (locales.length < 2) return undefined;
   const normalized = barePath.startsWith('/') ? barePath : `/${barePath}`;
   return {
-    en: `${base}${localizedPath('en', normalized)}`,
-    el: `${base}${localizedPath('el', normalized)}`,
-    'x-default': `${base}${localizedPath('en', normalized)}`,
+    en: `${HREFLANG_BASE}${localizedPath('en', normalized)}`,
+    el: `${HREFLANG_BASE}${localizedPath('el', normalized)}`,
+    'x-default': `${HREFLANG_BASE}${localizedPath('en', normalized)}`,
   };
+}
+
+/**
+ * hreflang map for pages whose slugs differ per locale (e.g. paired blog
+ * posts). Pass full locale-prefixed paths; returns undefined unless at least
+ * two locales are present.
+ */
+export function buildHreflangMapFromPaths(
+  paths: Partial<Record<SiteLocale, string>>,
+): Record<string, string> | undefined {
+  const entries = Object.entries(paths).filter(
+    (entry): entry is [SiteLocale, string] => typeof entry[1] === 'string' && entry[1].length > 0,
+  );
+  if (entries.length < 2) return undefined;
+  const map: Record<string, string> = {};
+  for (const [locale, p] of entries) {
+    map[locale] = `${HREFLANG_BASE}${p.startsWith('/') ? p : `/${p}`}`;
+  }
+  if (map.en) map['x-default'] = map.en;
+  return map;
 }
