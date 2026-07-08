@@ -112,7 +112,7 @@ export function LocationContentGreek({ location, service, locale: localeProp }: 
         <p>
           Έχουμε εμπειρία με ελληνικές αγορές φιλοξενίας και τουρισμού (π.χ. ξενοδοχεία, ενοικιάσεις
           οχημάτων) - κατανοούμε πώς η τοπική αναζήτηση και η ορατότητα σε AI αλλάζουν τις κρατήσεις και
-          τα leads στην {city}.
+          τα αιτήματα πελατών στην {city}.
         </p>
         {CITY_INTROS[location.slug] ? (
           <>

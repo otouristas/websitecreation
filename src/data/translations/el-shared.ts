@@ -3,15 +3,15 @@
 export const elShared = {
   footer: {
     tagline:
-      'Agency κατασκευής ιστοσελίδων και SEO για τουρισμό - ξενοδοχεία, rent-a-car, εκδρομές και travel AI.',
+      'Γραφείο κατασκευής ιστοσελίδων και SEO για τον τουρισμό - ξενοδοχεία, rent-a-car, εκδρομές και travel AI.',
     agency: 'Υπηρεσίες',
     resources: 'Πόροι',
     company: 'Εταιρεία',
     legal: 'Νομικά',
     services: 'Όλες οι υπηρεσίες',
     websiteCreation: 'Κατασκευή ιστοσελίδας',
-    pricing: 'Τιμές agency',
-    work: 'Έργα & case studies',
+    pricing: 'Τιμές',
+    work: 'Έργα & μελέτες περίπτωσης',
     blog: 'Blog',
     locations: 'Πόλεις & νησιά',
     contact: 'Επικοινωνία',

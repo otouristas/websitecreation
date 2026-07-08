@@ -5,6 +5,7 @@ description: Οδηγός SEO για ξενοδοχεία στην Ελλάδα.
 date: 2026-07-06
 author: AnotherSEOGuru Editorial Team
 locale: el
+translationOf: hotel-seo-guide
 category: Τουρισμός
 categoryColor: bg-sky-100 text-sky-800
 pillar: search-console-mastery

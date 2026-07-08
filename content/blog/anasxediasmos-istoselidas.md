@@ -5,6 +5,7 @@ description: Πότε χρειάζεται ανασχεδιασμός ιστοσ
 date: 2026-07-06
 author: AnotherSEOGuru Editorial Team
 locale: el
+translationOf: website-redesign-guide
 category: Web Design
 categoryColor: bg-rose-100 text-rose-800
 pillar: technical-seo-in-house

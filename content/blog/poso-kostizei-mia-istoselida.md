@@ -5,6 +5,7 @@ description: Τι κοστίζει η κατασκευή ιστοσελίδας 
 date: 2026-07-06
 author: AnotherSEOGuru Editorial Team
 locale: el
+translationOf: how-much-does-a-website-cost
 category: Web Design
 categoryColor: bg-rose-100 text-rose-800
 pillar: agency-playbooks

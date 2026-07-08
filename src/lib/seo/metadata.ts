@@ -2,7 +2,7 @@
 
 import { Metadata } from 'next';
 import { buildMetaDescription, finalizeDescription, BRAND_NAME, BASE_URL } from './description';
-import { getHreflangAlternates } from '@/lib/locale-paths';
+import { getHreflangAlternates, isGreekLocationSlug } from '@/lib/locale-paths';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 import { LOCALES } from '@/lib/i18n/locale';
 
@@ -176,8 +176,12 @@ export function buildServiceMetadata(
     });
   }
   return buildMetadata({
-    title: service.metaTitle || `${service.name} Services`,
-    description: service.metaDescription,
+    title: fitTitleWithSuffix(service.name, [
+      ' | Pricing, Packages & Process',
+      ' | Pricing & Packages',
+      ' | Pricing',
+    ]),
+    description: `${service.name} for growing businesses: SEO-ready delivery, transparent pricing (${enPriceHook(service.slug)}), GEO/AEO, and fast turnaround. Get a free quote today.`,
     path: localizedPath(locale, `/services/${service.slug}`),
     hreflangPath: `/services/${service.slug}`,
     service: service.name,
@@ -213,12 +217,19 @@ export function buildServiceLocationMetadata(
     location.countryCode && location.countryCode !== 'US'
       ? `${location.city}, ${location.country ?? location.countryCode}`
       : `${location.city}, ${location.stateCode}`;
- 
+
   return buildMetadata({
-    title: `${service.name} in ${placeLabel}`,
-    description: `Expert ${service.name.toLowerCase()} in ${placeLabel}. SEO-ready websites, local strategy, GEO/AEO, and fast delivery. Pricing in ${location.currency ?? 'USD'}. Free quote.`,
+    // Front-load keyword + city so truncation drops the hook, never the keyword.
+    title: fitTitleWithSuffix(`${service.name} ${location.city}`, [
+      ' | Pricing & Free Quote',
+      ' | Pricing',
+      '',
+    ]),
+    description: `${service.name} in ${placeLabel}: SEO-ready websites, local strategy, GEO/AEO, and fast delivery. Transparent pricing (${enPriceHook(service.slug)}). Get a free quote.`,
     path: localizedPath(locale, `/services/${service.slug}/${location.slug}`),
     hreflangPath: `/services/${service.slug}/${location.slug}`,
+    // English city pages don't have Greek counterparts unless the city is Greek.
+    hreflangLocales: isGreekLocationSlug(location.slug) ? ['en', 'el'] : ['en'],
     service: service.name,
     location: placeLabel,
     usp: `Trusted ${service.name.toLowerCase()} for ${location.city}`,
@@ -229,6 +240,11 @@ export function buildServiceLocationMetadata(
 /** Services sold as monthly retainers (price hook €/μήνα) vs one-off projects. */
 function isSeoRetainerService(slug: string): boolean {
   return ['local-seo', 'seo-audits', 'ai-visibility', 'link-building', 'eshop-seo', 'content-creation'].includes(slug);
+}
+
+/** English price hook. Business bills in EUR, so € everywhere for consistency with the pricing page. */
+function enPriceHook(slug: string): string {
+  return isSeoRetainerService(slug) ? 'from €299/mo' : 'from €899';
 }
 
 /** Append the longest suffix that keeps the primary title within MAX_TITLE_PRIMARY. */
@@ -256,9 +272,10 @@ export function buildServiceLocationMetadataEl(
   return buildMetadata({
     // Keyword+city first so any truncation drops the hook, never the keyword.
     title: fitTitleWithSuffix(`${keyword} ${city}`, [' | Τιμές & Πακέτα', ' - Τιμές', '']),
-    description: `${keyword} ${getGreekLocative(location.slug)} από ελληνική ομάδα. Πακέτα ${priceHook}, SEO-ready παράδοση και τοπική στρατηγική. Ζητήστε δωρεάν προσφορά σήμερα.`,
+    description: `${keyword} ${getGreekLocative(location.slug)} από ελληνική ομάδα. Πακέτα ${priceHook}, παράδοση έτοιμη για SEO και τοπική στρατηγική. Ζητήστε δωρεάν προσφορά σήμερα.`,
     path: localizedPath('el', `/services/${service.slug}/${location.slug}`),
     hreflangPath: `/services/${service.slug}/${location.slug}`,
+    hreflangLocales: isGreekLocationSlug(location.slug) ? ['en', 'el'] : ['el'],
     primaryKeyword: `${keyword} ${city}`,
     ctaHint: 'Ζητήστε δωρεάν προσφορά.',
   });
@@ -283,12 +300,15 @@ export function buildIndustryMetadata(
   }
 
   return buildMetadata({
-    title: locale === 'el' ? `${indName} - Ιστοσελίδες & SEO` : `${indName} Website & SEO Solutions`,
+    title:
+      locale === 'el'
+        ? fitTitleWithSuffix(`${indName} - Ιστοσελίδες & SEO`, [' | Πακέτα', ''])
+        : fitTitleWithSuffix(`${indName} Websites & SEO`, [' | Packages & Pricing', ' | Pricing', '']),
     description:
       indDesc ||
       (locale === 'el'
-        ? `Ιστοσελίδες και SEO για ${indName}. Industry playbooks, γρήγορη υλοποίηση και Search Console intelligence.`
-        : `Website design and SEO for ${indName.toLowerCase()} businesses. Industry playbooks, fast builds, and Search Console intelligence. See packages.`),
+        ? `Ιστοσελίδες και SEO για ${indName}: στρατηγικές ανά κλάδο, γρήγορη υλοποίηση και δεδομένα από το Google Search Console. Δείτε πακέτα και ζητήστε προσφορά.`
+        : `Website design and SEO built for ${indName.toLowerCase()}: industry playbooks, fast builds, and measurable growth. Transparent pricing. See packages and get a free quote.`),
     path: localizedPath(locale, `/solutions/${industry.slug}`),
     hreflangPath: `/solutions/${industry.slug}`,
     industry: indName,
@@ -311,7 +331,14 @@ export function buildIndustryServiceMetadata(
   }
 
   return buildMetadata({
-    title: locale === 'el' ? `${svcName} για ${indName}` : `${svcName} for ${indName}`,
+    title:
+      locale === 'el'
+        ? fitTitleWithSuffix(`${svcName} για ${indName}`, [' | Τιμές', ''])
+        : fitTitleWithSuffix(`${svcName} for ${indName}`, [' | Pricing & Quote', '']),
+    description:
+      locale === 'el'
+        ? `${svcName} σχεδιασμένο για ${indName}: παράδοση έτοιμη για SEO, διαφανείς τιμές και γρήγορη υλοποίηση. Ζητήστε δωρεάν συμβουλευτική.`
+        : `${svcName} tailored for ${indName.toLowerCase()}: SEO-ready delivery, transparent pricing, and fast turnaround. Get a free consultation.`,
     path: localizedPath(locale, `/solutions/${industry.slug}/${service.slug}`),
     hreflangPath: `/solutions/${industry.slug}/${service.slug}`,
     service: svcName,

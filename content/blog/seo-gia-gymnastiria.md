@@ -5,6 +5,7 @@ description: Στρατηγική SEO για γυμναστήρια και στ�
 date: 2026-07-06
 author: AnotherSEOGuru Editorial Team
 locale: el
+translationOf: gym-fitness-seo
 category: Local SEO
 categoryColor: bg-blue-100 text-blue-700
 pillar: agency-playbooks

@@ -9,7 +9,7 @@ export const commonEl = {
   backToHome: 'Αρχική',
   allServices: 'Όλες οι υπηρεσίες',
   allSolutions: 'Όλοι οι κλάδοι',
-  agencyPricing: 'Τιμές agency',
+  agencyPricing: 'Τιμές υπηρεσιών',
   ourWork: 'Τα έργα μας',
   freeTools: 'Δωρεάν εργαλεία',
   platform: 'Πλατφόρμα',

@@ -5,6 +5,7 @@ description: Πώς μεσιτικά γραφεία και real estate επιχ�
 date: 2026-07-06
 author: AnotherSEOGuru Editorial Team
 locale: el
+translationOf: real-estate-seo
 category: SEO
 categoryColor: bg-emerald-100 text-emerald-800
 pillar: agency-playbooks

@@ -15,6 +15,24 @@ interface LocationContentProps {
     locale?: SiteLocale;
 }
 
+/** Hand-written intros for high-value markets (keyed by location slug). Others use the generic body. */
+const EN_CITY_INTROS: Record<string, string> = {
+    'new-york-ny': 'New York is the most competitive local market in the world - law firms, medical practices, restaurants and startups all fight for the same first-page spots. A beautiful website is not enough here: you need technical SEO, speed, and content that answers exactly what New Yorkers search for. We work from real Google Search Console data and build pages that target specific boroughs and buyer intent.',
+    'los-angeles-ca': 'Los Angeles is a sprawling, neighborhood-driven market where "near me" searches decide who gets the call. From Santa Monica to Downtown, we build fast, mobile-first websites and local SEO that put you in the Google map pack for the neighborhoods that matter to your business.',
+    'chicago-il': 'Chicago businesses compete across dozens of distinct neighborhoods and a huge metro area. We build location-aware pages and a technical foundation that helps you rank for commercial and "near me" searches across the city and suburbs.',
+    'houston-tx': 'Houston is one of the fastest-growing metros in the US, and its businesses are increasingly won or lost online. With the right technical SEO and local strategy, a Houston business can dominate its category before competitors catch up.',
+    'miami-fl': 'Miami is a bilingual, tourism-heavy market where speed and mobile experience decide conversions. We build fast, English/Spanish-ready websites with local SEO and GEO/AEO so you show up in Google and in AI assistants that travelers now use to plan.',
+    'austin-tx': 'Austin’s booming, tech-savvy market means your customers research thoroughly before they buy. We build SEO-ready websites and content that earn trust early and rank for the high-intent searches that bring Austin customers to you.',
+    'san-diego-ca': 'San Diego blends strong local demand with a competitive services market. We build location pages, Google Business Profile strategy, and fast websites so your business wins the map pack and the organic results across the county.',
+    'dallas-tx': 'Dallas-Fort Worth is a massive, competitive metro where local SEO and site speed separate the leaders from the rest. We reverse-engineer what is ranking today and build the technical and content foundation to get you there.',
+    'seattle-wa': 'Seattle customers are research-driven and mobile-first. We build fast, technically sound websites and content that answer their questions and rank in both Google and AI search.',
+    'boston-ma': 'Boston’s professional-services and education-heavy market rewards authority and trust. We build content and technical SEO that establish your expertise and rank for the competitive terms your Boston customers search.',
+    'london-uk': 'London is one of the most competitive search markets in Europe. We build fast, SEO-ready websites with local strategy and GEO/AEO so you rank across boroughs and in the AI answers your customers increasingly rely on. Pricing quoted in EUR/GBP.',
+    'toronto-ca': 'Toronto is a diverse, competitive metro where local relevance and site speed drive conversions. We build location-aware, bilingual-ready websites and local SEO that win the map pack across the GTA.',
+    'sydney-au': 'Sydney businesses compete across a wide, suburb-driven metro. We build fast, mobile-first websites and local SEO that rank for the suburbs and services your Sydney customers actually search.',
+    'dublin-ie': 'Dublin is a fast-growing, English-speaking hub for both local and international business. We build SEO-ready websites with local strategy and GEO/AEO so you rank in Google and in AI search across Ireland and the EU.',
+};
+
 export function LocationContent({ location, service, industry, locale: localeProp }: LocationContentProps) {
     const pathname = usePathname() ?? '/en';
     const locale = localeProp ?? siteLocaleFromPath(pathname);
@@ -56,6 +74,14 @@ export function LocationContent({ location, service, industry, locale: localePro
                 <p>
                     We don't just "guess" what works. We analyze the exact signals Google uses to rank businesses in {city} and deploy
                     a custom {target.toLowerCase()} strategy designed for maximum ROI.
+                </p>
+                {EN_CITY_INTROS[location.slug] ? (
+                    <p className="mt-4">{EN_CITY_INTROS[location.slug]}</p>
+                ) : null}
+                <p className="mt-4">
+                    <strong>Transparent pricing:</strong> websites start at €899 and monthly SEO from €299/mo - see our{' '}
+                    <Link href={lp('/pricing')} className="text-blue-600 underline">pricing &amp; packages</Link> or{' '}
+                    <Link href={lp('/get-started')} className="text-blue-600 underline">request a free quote</Link>.
                 </p>
             </div>
 
@@ -113,6 +139,23 @@ export function LocationContent({ location, service, industry, locale: localePro
                     </div>
                 </div>
             )}
+
+            {/* Internal links: distribute crawl equity + help users convert */}
+            <div className="not-prose mb-12">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Explore more</h3>
+                <div className="flex flex-wrap gap-3 text-sm">
+                    {service ? (
+                        <Link href={lp(`/services/${service.slug}`)} className="rounded-full border border-gray-200 px-4 py-2 text-blue-700 hover:bg-blue-50">
+                            {service.name} overview
+                        </Link>
+                    ) : null}
+                    <Link href={lp('/services')} className="rounded-full border border-gray-200 px-4 py-2 text-blue-700 hover:bg-blue-50">All services</Link>
+                    <Link href={lp('/solutions')} className="rounded-full border border-gray-200 px-4 py-2 text-blue-700 hover:bg-blue-50">Solutions by industry</Link>
+                    <Link href={lp('/pricing')} className="rounded-full border border-gray-200 px-4 py-2 text-blue-700 hover:bg-blue-50">Pricing &amp; packages</Link>
+                    <Link href={lp('/blog/how-much-does-seo-cost')} className="rounded-full border border-gray-200 px-4 py-2 text-blue-700 hover:bg-blue-50">How much does SEO cost?</Link>
+                    <Link href={lp('/work')} className="rounded-full border border-gray-200 px-4 py-2 text-blue-700 hover:bg-blue-50">See our work</Link>
+                </div>
+            </div>
 
             {/* Section 4: CTA - Adapted from Competitor's "Ready to Grow?" */}
             <div className="text-center py-12 border-t border-gray-100 mt-12">

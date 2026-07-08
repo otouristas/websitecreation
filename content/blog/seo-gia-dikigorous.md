@@ -5,6 +5,7 @@ description: Πώς ένα δικηγορικό γραφείο κερδίζει 
 date: 2026-07-06
 author: AnotherSEOGuru Editorial Team
 locale: el
+translationOf: law-firm-seo
 category: SEO
 categoryColor: bg-emerald-100 text-emerald-800
 pillar: agency-playbooks

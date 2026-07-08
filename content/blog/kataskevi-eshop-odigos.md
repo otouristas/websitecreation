@@ -5,6 +5,7 @@ description: Τι κοστίζει η κατασκευή e-shop στην Ελλ�
 date: 2026-07-06
 author: AnotherSEOGuru Editorial Team
 locale: el
+translationOf: ecommerce-website-cost-guide
 category: Web Design
 categoryColor: bg-rose-100 text-rose-800
 pillar: agency-playbooks
@@ -66,7 +67,7 @@ pillar: agency-playbooks
 
 ### Πώς θα φέρει πελάτες το e-shop;
 
-Συνδυασμός: SEO κατηγοριών και προϊόντων για σταθερή οργανική ροή, Google Shopping/Ads για άμεσες πωλήσεις, email marketing για επαναγορές. Δείτε τη σύγκριση [SEO ή Google Ads](/el/blog/seo-vs-google-ads).
+Συνδυασμός: SEO κατηγοριών και προϊόντων για σταθερή οργανική ροή, Google Shopping/Ads για άμεσες πωλήσεις, email marketing για επαναγορές. Δείτε τη σύγκριση [SEO ή Google Ads](/el/blog/seo-i-google-ads).
 
 ## Ξεκινήστε Σωστά
 

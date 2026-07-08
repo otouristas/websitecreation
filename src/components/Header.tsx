@@ -7,6 +7,7 @@ import { ChevronDown, Menu, X } from "lucide-react";
 import { PHONE_DISPLAY, WHATSAPP_HREF } from "@/lib/contact-info";
 import { BrandLogo } from "@/components/BrandLogo";
 import { FreeToolsMegaMenu } from "@/components/landing/free-tools-mega-menu";
+import { AgencyMegaMenu } from "@/components/AgencyMegaMenu";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { MobileNav } from "@/components/MobileNav";
@@ -150,25 +151,7 @@ export default function Header({ locale: localeProp }: { locale?: SiteLocale }):
                   <FreeToolsMegaMenu />
                 </>
               )}
-              <NavDropdown label={nav.agency}>
-                <Link href={lp("/services")} className={`${dropdownItemClass} font-semibold`}>
-                  {nav.allServices}
-                </Link>
-                <Link href={lp("/services/website-creation")} className={dropdownItemClass}>
-                  {nav.websiteCreation}
-                </Link>
-                {agencyNavServices
-                  .filter((s) => s.slug !== "website-creation")
-                  .map((s) => {
-                    const svcEl = isEl ? getServiceEl(s.slug) : null;
-                    const dispName = svcEl?.shortName ?? svcEl?.name ?? s.shortName;
-                    return (
-                      <Link key={s.slug} href={lp(`/services/${s.slug}`)} className={dropdownItemClass}>
-                        {dispName}
-                      </Link>
-                    );
-                  })}
-              </NavDropdown>
+              <AgencyMegaMenu locale={locale} label={nav.agency} />
               <NavDropdown label={nav.solutions}>
                 <Link href={lp("/solutions/rent-a-car")} className={dropdownItemClass}>
                   {nav.rentACar}

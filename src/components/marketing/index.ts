@@ -5,3 +5,4 @@ export { FeatureHighlightGrid } from "./FeatureHighlightGrid";
 export { AgencyBand } from "./AgencyBand";
 export { HomeFaq } from "./HomeFaq";
 export { AdsLandingBand } from "./AdsLandingBand";
+export { ResultsBand } from "./ResultsBand";

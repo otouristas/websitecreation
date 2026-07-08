@@ -5,6 +5,7 @@ description: Τι είναι το SEO με απλά λόγια. Πώς κατα�
 date: 2026-07-06
 author: AnotherSEOGuru Editorial Team
 locale: el
+translationOf: seo-for-beginners
 category: SEO
 categoryColor: bg-emerald-100 text-emerald-800
 pillar: agency-playbooks
@@ -65,7 +66,7 @@ pillar: agency-playbooks
 
 ### SEO ή διαφημίσεις Google;
 
-Διαφορετικά εργαλεία για διαφορετικούς ορίζοντες - δείτε την πλήρη σύγκριση [SEO ή Google Ads](/el/blog/seo-vs-google-ads).
+Διαφορετικά εργαλεία για διαφορετικούς ορίζοντες - δείτε την πλήρη σύγκριση [SEO ή Google Ads](/el/blog/seo-i-google-ads).
 
 ## Το Πρώτο σας Βήμα
 

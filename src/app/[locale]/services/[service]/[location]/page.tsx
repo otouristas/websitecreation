@@ -166,6 +166,12 @@ export default async function ServiceLocationPage({ params }: PageProps) {
             question: `What makes your ${location.city} sites rank in Google and AI search?`,
             answer: `Technical SEO, semantic clustering from Search Console, GEO/AEO structured content, and fast Core Web Vitals - not thin template pages.`,
         },
+        {
+            question: `How much does ${service.name.toLowerCase()} cost in ${location.city}?`,
+            answer: ['local-seo', 'seo-audits', 'ai-visibility', 'link-building', 'eshop-seo', 'content-creation'].includes(serviceSlug)
+                ? `SEO packages start at €299/mo (Starter), €599/mo (Growth), and €999/mo (Scale). The price depends on competition in ${location.city} and your goals. All pricing is transparent - see our pricing page or request a free quote.`
+                : `Websites start at €899 (Starter, up to 5 pages), €1,799 (Professional, up to 10 pages), and €2,999 (Business, up to 20 pages). No hidden fees. Request a free quote for ${location.city}.`,
+        },
     ];
 
     const schemas = combineSchemas(

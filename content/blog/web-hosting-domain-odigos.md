@@ -5,6 +5,7 @@ description: Πώς να επιλέξετε hosting και domain για την 
 date: 2026-07-06
 author: AnotherSEOGuru Editorial Team
 locale: el
+translationOf: web-hosting-domain-guide
 category: Web Design
 categoryColor: bg-rose-100 text-rose-800
 pillar: technical-seo-in-house

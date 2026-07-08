@@ -5,7 +5,7 @@ import Footer from '@/components/Footer';
 import StickyMobileCta from '@/components/StickyMobileCta';
 import SchemaMarkup from '@/components/seo/SchemaMarkup';
 import { ROICalculator } from '@/components/tools';
-import { HowItWorks, FeatureHighlightGrid, AgencyBand, HomeFaq } from '@/components/marketing';
+import { HowItWorks, FeatureHighlightGrid, AgencyBand, HomeFaq, ResultsBand } from '@/components/marketing';
 import {
   LandingHero,
   ProblemSolutionSection,
@@ -48,7 +48,7 @@ export function HomePageView({ locale }: { locale: SiteLocale }) {
       url: `${BASE_URL}/el`,
       logo: `${BASE_URL}/logo.png`,
       description:
-        'Agency κατασκευής ιστοσελίδων και SEO για τουρισμό, ξενοδοχεία, rent-a-car και travel AI στην Ελλάδα και διεθνώς.',
+        'Γραφείο κατασκευής ιστοσελίδων και SEO για τον τουρισμό, ξενοδοχεία, rent-a-car και travel AI στην Ελλάδα και διεθνώς.',
     });
 
     return (
@@ -80,6 +80,7 @@ export function HomePageView({ locale }: { locale: SiteLocale }) {
               </div>
             </div>
           </section>
+          <ResultsBand locale="el" />
           <HowItWorks
             heading={elHome.howItWorks.heading}
             subheading={elHome.howItWorks.subheading}
@@ -147,6 +148,7 @@ export function HomePageView({ locale }: { locale: SiteLocale }) {
             </div>
           </div>
         </section>
+        <ResultsBand />
         <HowItWorks
           heading="How we deliver tourism websites that rank"
           subheading="From brief to live site - with SEO, GEO and AEO built in, not bolted on."

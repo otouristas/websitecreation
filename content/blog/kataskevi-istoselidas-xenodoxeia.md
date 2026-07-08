@@ -5,6 +5,7 @@ description: Πώς να σχεδιάσετε μια ιστοσελίδα ξεν
 date: 2026-06-17
 author: AnotherSEOGuru Editorial Team
 locale: el
+translationOf: hotel-website-design
 category: Τουρισμός
 categoryColor: bg-sky-100 text-sky-800
 pillar: search-console-mastery

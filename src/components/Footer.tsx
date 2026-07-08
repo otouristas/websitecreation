@@ -37,11 +37,21 @@ const EL_SEO_HUB_LINKS: { label: string; href: string }[] = [
 ];
 
 const EN_SEO_HUB_LINKS: { label: string; href: string }[] = [
-  { label: "Website Creation", href: "/en/services/website-creation" },
-  { label: "Local SEO", href: "/en/services/local-seo" },
+  // Head-term service pages (C10: "seo services", "web development agency", "modern web design")
+  { label: "SEO Services", href: "/en/services/local-seo" },
+  { label: "Web Development Agency", href: "/en/services/website-creation" },
   { label: "SEO Web Design", href: "/en/services/seo-web-design" },
-  { label: "Hotel Websites", href: "/en/solutions/hotels" },
-  { label: "Pricing", href: "/en/pricing" },
+  { label: "E-commerce / E-shop", href: "/en/services/eshop-woocommerce" },
+  { label: "AI Visibility (GEO/AEO)", href: "/en/services/ai-visibility" },
+  { label: "Website Redesign", href: "/en/services/website-redesign" },
+  // Top international markets
+  { label: "Web Design New York", href: "/en/services/website-creation/new-york-ny" },
+  { label: "SEO Los Angeles", href: "/en/services/local-seo/los-angeles-ca" },
+  { label: "Web Design London", href: "/en/services/website-creation/london-uk" },
+  { label: "SEO Toronto", href: "/en/services/local-seo/toronto-ca" },
+  { label: "Web Design Sydney", href: "/en/services/website-creation/sydney-au" },
+  { label: "Hotel SEO", href: "/en/solutions/hotels" },
+  { label: "Pricing & Packages", href: "/en/pricing" },
   { label: "All Locations", href: "/en/locations" },
 ];
 
@@ -62,12 +72,12 @@ export default function Footer({ locale: localeProp }: { locale?: SiteLocale }):
   const lp = (path: string) => localizedPath(locale, path);
   const t = getFooterDictionary(locale);
   return (
-    <footer className="relative mt-20 border-t border-border/80 bg-gradient-to-b from-primary/[0.07] via-muted/35 to-muted/45 dark:from-primary/[0.1] dark:via-background dark:to-muted/20 md:mt-28 lg:mt-36">
+    <footer className="relative border-t border-border/80 bg-gradient-to-b from-primary/[0.07] via-muted/35 to-muted/45 dark:from-primary/[0.1] dark:via-background dark:to-muted/20">
       <div
         className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/35 to-transparent"
         aria-hidden
       />
-      <div className="container mx-auto px-4 pb-16 pt-24 sm:px-6 md:pb-20 md:pt-32 lg:pb-24 lg:pt-40">
+      <div className="container mx-auto px-4 pb-16 pt-14 sm:px-6 md:pb-20 md:pt-16 lg:pb-24 lg:pt-20">
         <div className="mb-12 grid grid-cols-2 gap-x-10 gap-y-10 md:grid-cols-4 lg:grid-cols-6">
           <div className="col-span-2">
             <BrandLogo size="lg" className="mb-4" homeHref={lp("/")} />
