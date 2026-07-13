@@ -58,6 +58,17 @@ export default async function WorkPage({ params }: PageProps) {
           <div className="container max-w-3xl">
             <h1 className="mb-4 text-4xl font-bold sm:text-5xl">{t.h1}</h1>
             <p className="text-lg text-muted-foreground">{t.desc}</p>
+            <p className="mt-4 text-sm text-muted-foreground">
+              {isEl ? "Όλα τα έργα υλοποιήθηκαν σε συνεργασία και φιλοξενούνται από την " : "All projects built in collaboration with and hosted by "}
+              <a
+                href="https://dailyhost.gr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-primary underline underline-offset-4 hover:text-primary/80"
+              >
+                Dailyhost.gr
+              </a>
+            </p>
           </div>
         </section>
         <section className="section">

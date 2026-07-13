@@ -114,6 +114,31 @@ export function WorkDetail({ project, locale = 'en' }: WorkDetailProps) {
                   {isEl ? 'Ζητήστε παρόμοιο έργο' : 'Get a similar project'}
                 </Link>
               </div>
+              <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 rounded-xl border border-border/80 bg-card/60 px-4 py-3 text-sm text-muted-foreground">
+                <span>
+                  {isEl ? "Σε συνεργασία με την " : "In collaboration with "}
+                  <a
+                    href="https://dailyhost.gr"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium text-foreground underline underline-offset-4 hover:text-primary"
+                  >
+                    Dailyhost.gr
+                  </a>
+                </span>
+                <span aria-hidden>•</span>
+                <span>
+                  {isEl ? "Φιλοξενία από την " : "Hosting by "}
+                  <a
+                    href="https://dailyhost.gr"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium text-foreground underline underline-offset-4 hover:text-primary"
+                  >
+                    Dailyhost.gr
+                  </a>
+                </span>
+              </div>
             </div>
             <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-border shadow-lg">
               <PortfolioThumbnail src={project.screenshot} alt={`${project.name} homepage`} />
