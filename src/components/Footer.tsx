@@ -381,6 +381,27 @@ export default function Footer({ locale: localeProp }: { locale?: SiteLocale }):
               <p className="text-sm text-muted-foreground">
                 © {currentYear} AnotherSEOGuru. {isEl ? t!.rights : "All rights reserved."}
               </p>
+              <p className="text-xs text-muted-foreground">
+                {isEl ? "Σε συνεργασία με την " : "In collaboration with "}
+                <a
+                  href="https://dailyhost.gr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium underline underline-offset-4 hover:text-foreground"
+                >
+                  Dailyhost.gr
+                </a>
+                {" • "}
+                {isEl ? "Φιλοξενία από την " : "Hosting by "}
+                <a
+                  href="https://dailyhost.gr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium underline underline-offset-4 hover:text-foreground"
+                >
+                  Dailyhost.gr
+                </a>
+              </p>
               <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-muted-foreground md:justify-start">
                 <a
                   href={WHATSAPP_HREF}
