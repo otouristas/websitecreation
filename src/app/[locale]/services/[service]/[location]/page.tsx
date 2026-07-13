@@ -153,6 +153,10 @@ export default async function ServiceLocationPage({ params }: PageProps) {
                 ? `Τα πακέτα SEO ξεκινούν από €299/μήνα (Starter), €599/μήνα (Growth) και €999/μήνα (Scale). Η τιμή εξαρτάται από τον ανταγωνισμό ${cityLocative} και τους στόχους σας. Δείτε αναλυτικές τιμές στη σελίδα τιμών μας ή ζητήστε δωρεάν προσφορά.`
                 : `Οι ιστοσελίδες ξεκινούν από €899 (Starter, έως 5 σελίδες), €1.799 (Professional, έως 10 σελίδες) και €2.999 (Business, έως 20 σελίδες). Χωρίς κρυφές χρεώσεις - όλες οι τιμές σε Ευρώ. Ζητήστε δωρεάν προσφορά για ${cityName}.`,
         },
+        {
+            question: `Θα εμφανίζεται η επιχείρησή μου σε ChatGPT και AI αναζητήσεις;`,
+            answer: `Ναι. Με βελτιστοποίηση GEO/AEO - schema, οντότητες και δομημένο περιεχόμενο - στοχεύουμε να αναφέρεται η μάρκα σας στις απαντήσεις των ChatGPT Search, Perplexity και Gemini, όχι μόνο στα παραδοσιακά αποτελέσματα της Google ${cityLocative}.`,
+        },
     ] : [
         {
             question: `How fast can my ${location.city} website go live?`,

@@ -70,7 +70,7 @@ categoryColor: bg-rose-100 text-rose-800
 └── Επικοινωνία / Κράτηση
 ```
 
-Η σωστή [εσωτερική διασύνδεση (internal linking)](/glossary?term=internal-linking) από το blog και το [γλωσσάρι](/glossary) προς τις εμπορικές σελίδες ενισχύει την οργανική ορατότητα. Δείτε το [σχετικό μας checklist](/blog/internal-linking-audit-checklist).
+Η σωστή [εσωτερική διασύνδεση (internal linking)](/glossary?term=internal-linking) από το blog και το [γλωσσάρι](/glossary) προς τις εμπορικές σελίδες ενισχύει την οργανική ορατότητα. Δείτε το [σχετικό μας checklist](/en/blog/internal-linking-audit-checklist).
 
 ---
 
@@ -115,4 +115,4 @@ categoryColor: bg-rose-100 text-rose-800
 
 Στην AnotherSEOGuru συνδυάζουμε premium design, custom ανάπτυξη, SEO και GEO για να δημιουργήσουμε ιστοσελίδες ξενοδοχείων και rent-a-car που ξεχωρίζουν.
 
-[Ξεκινήστε Σήμερα](/get-started) · [Δείτε τα Έργα μας](/work) · [SEO Web Design Platform](/blog/seo-web-design-development-platform)
+[Ξεκινήστε Σήμερα](/get-started) · [Δείτε τα Έργα μας](/work) · [SEO Web Design Platform](/en/blog/seo-web-design-development-platform)

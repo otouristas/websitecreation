@@ -86,6 +86,41 @@ const CITY_INTROS: Record<string, { intro: string; tourism: boolean }> = {
     intro:
       'Η Κως ζει από τον τουρισμό και οι κρατήσεις ξεκινούν από την αναζήτηση. Καταλύματα, rent-a-car και δραστηριότητες με γρήγορη, δίγλωσση ιστοσελίδα και τοπικό SEO εμφανίζονται εκεί που ψάχνουν οι επισκέπτες - στη Google και πλέον στα AI chatbots.',
   },
+  'volos-gr': {
+    tourism: false,
+    intro:
+      'Ο Βόλος είναι ένα ζωντανό εμπορικό και λιμενικό κέντρο με ισχυρή τοπική αγορά και σχετικά χαμηλό ψηφιακό ανταγωνισμό. Καταστήματα, e-shop, ιατρεία και επιχειρήσεις υπηρεσιών που επενδύουν τώρα σε κατασκευή ιστοσελίδας και τοπικό SEO κερδίζουν σταθερά πελάτες από αναζητήσεις όπως «κατασκευή ιστοσελίδων Βόλος» - πριν το κάνουν οι ανταγωνιστές τους.',
+  },
+  'serres-gr': {
+    tourism: false,
+    intro:
+      'Οι Σέρρες είναι μια αγορά με πολύ χαμηλό online ανταγωνισμό, όπου μια σωστά βελτιστοποιημένη ιστοσελίδα φτάνει γρήγορα στην πρώτη σελίδα της Google. Τοπικές επιχειρήσεις, e-shop και επαγγελματίες που χτίζουν τώρα ψηφιακή παρουσία με τεχνικό SEO αποκτούν διαρκές προβάδισμα στην περιοχή.',
+  },
+  'lamia-gr': {
+    tourism: false,
+    intro:
+      'Η Λαμία, κόμβος της κεντρικής Ελλάδας, συνδυάζει σταθερή τοπική ζήτηση με λίγους ανταγωνιστές που κάνουν σοβαρό SEO. Αυτό δημιουργεί ευκαιρία: με μια γρήγορη, SEO-ready ιστοσελίδα και τοπικές σελίδες, μια λαμιώτικη επιχείρηση κυριαρχεί εύκολα στις αναζητήσεις της περιοχής.',
+  },
+  'kavala-gr': {
+    tourism: false,
+    intro:
+      'Η Καβάλα συνδυάζει εμπορική δραστηριότητα λιμανιού με εποχιακή τουριστική κίνηση. Επιχειρήσεις, e-shop και επαγγελματίες που θέλουν να ξεχωρίσουν στις αναζητήσεις «κατασκευή ιστοσελίδων Καβάλα» και «SEO Καβάλα» κερδίζουν από στοχευμένο τοπικό SEO σε μια αγορά με ακόμη περιορισμένο ψηφιακό ανταγωνισμό.',
+  },
+};
+
+/** Maps each service to its most relevant Greek blog guide for contextual A->B internal linking. */
+const SERVICE_GUIDE: Record<string, { href: string; label: string }> = {
+  'eshop-woocommerce': { href: '/blog/kataskevi-eshop-odigos', label: 'Οδηγός: Κατασκευή E-shop & Κόστος 2026' },
+  'eshop-seo': { href: '/blog/kataskevi-eshop-odigos', label: 'Οδηγός: Κατασκευή E-shop & Κόστος 2026' },
+  'website-creation': { href: '/blog/poso-kostizei-mia-istoselida', label: 'Πόσο κοστίζει μια ιστοσελίδα το 2026' },
+  'website-redesign': { href: '/blog/anasxediasmos-istoselidas', label: 'Οδηγός ανασχεδιασμού ιστοσελίδας χωρίς απώλεια SEO' },
+  'local-seo': { href: '/blog/poso-kostizei-to-seo', label: 'Πόσο κοστίζει το SEO στην Ελλάδα' },
+  'seo-audits': { href: '/blog/poso-kostizei-to-seo', label: 'Πόσο κοστίζει το SEO στην Ελλάδα' },
+  'seo-web-design': { href: '/blog/poso-kostizei-to-seo', label: 'Πόσο κοστίζει το SEO στην Ελλάδα' },
+  'ai-visibility': { href: '/blog/geo-aeo-ellada', label: 'Οδηγός GEO & AEO για την Ελλάδα' },
+  'link-building': { href: '/blog/poso-kostizei-to-seo', label: 'Πόσο κοστίζει το SEO στην Ελλάδα' },
+  'content-creation': { href: '/blog/poso-kostizei-to-seo', label: 'Πόσο κοστίζει το SEO στην Ελλάδα' },
+  'speed-optimization': { href: '/blog/poso-kostizei-to-seo', label: 'Πόσο κοστίζει το SEO στην Ελλάδα' },
 };
 
 export function LocationContentGreek({ location, service, locale: localeProp }: LocationContentGreekProps) {
@@ -191,39 +226,18 @@ export function LocationContentGreek({ location, service, locale: localeProp }: 
         </div>
       )}
 
-      <div className="mb-12">
-        <h3 className="text-2xl font-bold text-gray-900 mb-6">Συχνές ερωτήσεις - {city}</h3>
-        <div className="space-y-4 not-prose">
-          <details className="card p-6 group">
-            <summary className="font-semibold cursor-pointer">
-              Πόσο κοστίζει {target.toLowerCase()} στην {city};
-            </summary>
-            <p className="mt-3 text-muted-foreground text-sm">
-              Εξαρτάται από εμβέλεια και ανταγωνισμό. Δίνουμε προσφορά σε {location.currency} με σαφή
-              πακέτα - χωρίς κρυφές χρεώσεις.
-            </p>
-          </details>
-          <details className="card p-6 group">
-            <summary className="font-semibold cursor-pointer">
-              Υποστηρίζετε ελληνικό και αγγλικό περιεχόμενο;
-            </summary>
-            <p className="mt-3 text-muted-foreground text-sm">
-              Ναι. Για διεθνή τουρισμό στην {city} συνδυάζουμε ελληνικές landing σελίδες, hreflang και
-              στρατηγική για ξένες αγορές.
-            </p>
-          </details>
-          <details className="card p-6 group">
-            <summary className="font-semibold cursor-pointer">
-              Τι είναι GEO/AEO και γιατί μετράει στην Ελλάδα;
-            </summary>
-            <p className="mt-3 text-muted-foreground text-sm">
-              Όλο και περισσότεροι χρήστες ρωτούν AI βοηθούς αντί να ψάχνουν στη Google. Το GEO φέρνει
-              αναφορές (citations) στα μοντέλα, το AEO κερδίζει τις έτοιμες απαντήσεις - κρίσιμο για
-              τουρισμό, υγεία και B2B υπηρεσίες.
-            </p>
-          </details>
+      {service && SERVICE_GUIDE[service.slug] ? (
+        <div className="mb-12 bg-gray-50 p-8 rounded-2xl border border-gray-100 not-prose">
+          <h3 className="text-xl font-bold text-gray-900 mb-3">Χρήσιμος οδηγός πριν ξεκινήσετε</h3>
+          <p className="text-gray-600 mb-4">
+            Διαβάστε τον αναλυτικό μας οδηγό ώστε να ξέρετε ακριβώς τι να περιμένετε σε κόστος, χρόνο και
+            αποτέλεσμα για {target.toLowerCase()} στην {city}.
+          </p>
+          <Link href={lp(SERVICE_GUIDE[service.slug].href)} className="text-blue-600 underline font-medium">
+            {SERVICE_GUIDE[service.slug].label} →
+          </Link>
         </div>
-      </div>
+      ) : null}
 
       <div className="text-center py-12 border-t border-gray-100 mt-12">
         <h3 className="text-2xl font-bold mb-4">Έτοιμοι να αναπτύξετε την επιχείρησή σας στην {city};</h3>

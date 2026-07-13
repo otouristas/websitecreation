@@ -22,7 +22,7 @@ pillar: ai-llm-visibility
 | **GEO** | Αναφορές και παραπομπές (citations) του brand σε AI περιλήψεις | ChatGPT Search, Perplexity AI, Gemini Overviews |
 | **AEO** | Δομημένο περιεχόμενο για άμεσες απαντήσεις | Featured snippets, AI Overviews, φωνητική αναζήτηση |
 
-Αυτές οι τρεις κατευθύνσεις επικαλύπτονται. Μια σελίδα με σαφείς ορισμούς, δομημένα βήματα και FAQ Schema εξυπηρετεί το AEO και ταυτόχρονα αυξάνει κατακόρυφα τις πιθανότητες να χρησιμοποιηθεί ως πηγή (citation) από μοντέλα AI. Διαβάστε επίσης τον οδηγό μας: [GEO & AEO Global Playbook](/blog/geo-aeo-global-seo-playbook).
+Αυτές οι τρεις κατευθύνσεις επικαλύπτονται. Μια σελίδα με σαφείς ορισμούς, δομημένα βήματα και FAQ Schema εξυπηρετεί το AEO και ταυτόχρονα αυξάνει κατακόρυφα τις πιθανότητες να χρησιμοποιηθεί ως πηγή (citation) από μοντέλα AI. Διαβάστε επίσης τον οδηγό μας: [GEO & AEO Global Playbook](/en/blog/geo-aeo-global-seo-playbook).
 
 ---
 
@@ -50,7 +50,7 @@ pillar: ai-llm-visibility
 * Σωστά γραμμένα [title tags](/glossary?term=title-tag) και [meta descriptions](/glossary?term=meta-description) που απαντούν στο search intent.
 * Στρατηγική [εσωτερικής διασύνδεσης (internal linking)](/glossary?term=internal-linking) από σελίδες με υψηλή επισκεψιμότητα προς εμπορικά URLs.
 
-Δείτε επίσης: [Τοπικό SEO στις Κυκλάδες](/blog/topiko-seo-kykladon) και τον αγγλικό οδηγό [local SEO guide](/blog/local-seo-guide).
+Δείτε επίσης: [Τοπικό SEO στις Κυκλάδες](/blog/topiko-seo-kykladon) και τον αγγλικό οδηγό [local SEO guide](/en/blog/local-seo-guide).
 
 ---
 
@@ -86,7 +86,7 @@ pillar: ai-llm-visibility
 ### Μήνας 2 - Περιεχόμενο
 * Προσθήκη FAQ Schema στις 10 κορυφαίες σελίδες σε επισκεψιμότητα.
 * Δημιουργία Location Pages για κάθε προορισμό που εξυπηρετείτε.
-* Εσωτερική διασύνδεση χρησιμοποιώντας το [internal linking checklist](/blog/internal-linking-audit-checklist).
+* Εσωτερική διασύνδεση χρησιμοποιώντας το [internal linking checklist](/en/blog/internal-linking-audit-checklist).
 
 ### Μήνας 3 - Βελτιστοποίηση
 * Έλεγχος των εμφανίσεων σε AI Search (ChatGPT, Gemini, κλπ.).
@@ -109,4 +109,4 @@ pillar: ai-llm-visibility
 
 Στην AnotherSEOGuru σχεδιάζουμε, αναπτύσσουμε και βελτιστοποιούμε ιστοσελίδες τουρισμού που ξεχωρίζουν τόσο στη Google όσο και στις μηχανές τεχνητής νοημοσύνης.
 
-[Ξεκινήστε Εδώ](/get-started) · [Δείτε τα Έργα μας](/work) · [AI & LLM Visibility Pillar](/blog/pillar-ai-llm-visibility)
+[Ξεκινήστε Εδώ](/get-started) · [Δείτε τα Έργα μας](/work) · [AI & LLM Visibility Pillar](/en/blog/pillar-ai-llm-visibility)

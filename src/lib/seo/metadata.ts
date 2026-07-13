@@ -161,12 +161,11 @@ export function buildServiceMetadata(
     const name = svcEl?.name ?? service.name;
     const keyword = svcEl?.titleKeyword ?? name;
     const priceHook = isSeoRetainerService(service.slug) ? 'από €299/μήνα' : 'από €899';
+    const hubSuffixes = isSeoRetainerService(service.slug)
+      ? [' - Τιμές & Μετρήσιμα Αποτελέσματα', ' - Τιμές & Αποτελέσματα', ' - Τιμές & Πακέτα', ' - Τιμές', '']
+      : [' - Τιμές & SEO από την 1η μέρα', ' - Τιμές, Πακέτα & SEO', ' - Τιμές & Πακέτα', ' - Τιμές', ''];
     return buildMetadata({
-      title: fitTitleWithSuffix(keyword, [
-        ' | Τιμές, Πακέτα & Διαδικασία',
-        ' | Τιμές & Πακέτα',
-        ' - Τιμές',
-      ]),
+      title: fitTitleWithSuffix(keyword, hubSuffixes),
       description: `${keyword} από ελληνική ομάδα: διαφανείς τιμές, πακέτα ${priceHook} και SEO-ready παράδοση. Δείτε τιμές, διαδικασία και ζητήστε δωρεάν προσφορά.`,
       path: localizedPath('el', `/services/${service.slug}`),
       hreflangPath: `/services/${service.slug}`,
@@ -242,6 +241,18 @@ function isSeoRetainerService(slug: string): boolean {
   return ['local-seo', 'seo-audits', 'ai-visibility', 'link-building', 'eshop-seo', 'content-creation'].includes(slug);
 }
 
+/**
+ * Greek SERP title suffix ladder (richest first). Leads with a value/outcome hook
+ * per the premium positioning ("value, not cheapest") while keeping a compact
+ * price-transparency token, since a large share of Greek queries carry
+ * τιμή/κόστος/τιμές intent. `fitTitleWithSuffix` picks the longest that fits ≤43 chars.
+ */
+function elTitleSuffixes(slug: string): readonly string[] {
+  return isSeoRetainerService(slug)
+    ? [' - Τιμές & Αποτελέσματα', ' - Αποτελέσματα', ' - Τιμές', ' | Προσφορά', '']
+    : [' - Τιμές & SEO από 1η μέρα', ' - Τιμές & SEO', ' - Τιμές', ' | Προσφορά', ''];
+}
+
 /** English price hook. Business bills in EUR, so € everywhere for consistency with the pricing page. */
 function enPriceHook(slug: string): string {
   return isSeoRetainerService(slug) ? 'from €299/mo' : 'from €899';
@@ -271,7 +282,7 @@ export function buildServiceLocationMetadataEl(
 
   return buildMetadata({
     // Keyword+city first so any truncation drops the hook, never the keyword.
-    title: fitTitleWithSuffix(`${keyword} ${city}`, [' | Τιμές & Πακέτα', ' - Τιμές', '']),
+    title: fitTitleWithSuffix(`${keyword} ${city}`, elTitleSuffixes(service.slug)),
     description: `${keyword} ${getGreekLocative(location.slug)} από ελληνική ομάδα. Πακέτα ${priceHook}, παράδοση έτοιμη για SEO και τοπική στρατηγική. Ζητήστε δωρεάν προσφορά σήμερα.`,
     path: localizedPath('el', `/services/${service.slug}/${location.slug}`),
     hreflangPath: `/services/${service.slug}/${location.slug}`,

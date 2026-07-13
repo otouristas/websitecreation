@@ -4,11 +4,22 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
 import { MarkdownBody } from "@/components/blog/markdown-body";
-import { getAllBlogPosts, getBlogPostBySlug, getTranslationCounterpart } from "@/lib/blog";
+import RelatedPages from "@/components/seo/RelatedPages";
+import {
+  extractFaqFromMarkdown,
+  getAllBlogPosts,
+  getBlogPostBySlug,
+  getTranslationCounterpart,
+} from "@/lib/blog";
 import { isValidLocale, localizedPath, type SiteLocale } from "@/lib/i18n/locale";
 import { buildHreflangMapFromPaths } from "@/lib/locale-paths";
 import { buildMetadata } from "@/lib/seo";
-import { generateArticleSchema } from "@/lib/seo/schema";
+import {
+  generateArticleSchema,
+  generateBreadcrumbSchema,
+  generateFAQSchema,
+  combineSchemas,
+} from "@/lib/seo/schema";
 
 interface BlogPostPageProps {
   readonly params: Promise<{ locale: string; slug: string }>;
@@ -74,10 +85,31 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     inLanguage: post.locale,
     mainEntityOfPage: `https://anotherseoguru.com${lp(`/blog/${post.slug}`)}`,
   });
+  const breadcrumbSchema = generateBreadcrumbSchema({
+    items: [
+      { name: isEl ? "Αρχική" : "Home", url: lp("/") },
+      { name: "Blog", url: lp("/blog") },
+      { name: post.title, url: lp(`/blog/${post.slug}`) },
+    ],
+  });
+  // Prefer explicit frontmatter FAQ; otherwise derive from the body's FAQ section.
+  const faqItems =
+    post.faq && post.faq.length > 0 ? post.faq : extractFaqFromMarkdown(post.content);
+  const faqSchema =
+    faqItems.length > 0
+      ? generateFAQSchema({ faqs: faqItems.map((f) => ({ question: f.question, answer: f.answer })) })
+      : null;
+  const schemas = combineSchemas(articleSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : []));
+
+  // Related posts: same pillar, other slugs, newest first, capped at 4.
+  const relatedPosts = getAllBlogPosts(locale as SiteLocale)
+    .filter((p) => p.slug !== post.slug && post.pillar && p.pillar === post.pillar)
+    .slice(0, 4)
+    .map((p) => ({ slug: lp(`/blog/${p.slug}`), title: p.title, description: p.description }));
 
   return (
     <>
-      <SchemaMarkup schemas={[articleSchema]} />
+      <SchemaMarkup schemas={schemas} />
       <Header />
       <main className="main-below-header pb-20">
         <article className="container max-w-[var(--marketing-container-narrow)]">
@@ -103,7 +135,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </div>
           </header>
           <div className="markdown-body">
-            <MarkdownBody markdown={post.content} />
+            <MarkdownBody markdown={post.content} locale={locale as SiteLocale} />
           </div>
           <footer className="mt-16 pt-10 border-t border-border">
             {counterpart ? (
@@ -135,6 +167,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 </Link>
               </div>
             </div>
+            {relatedPosts.length > 0 ? (
+              <RelatedPages
+                className="mt-10"
+                title={isEl ? "Σχετικά Άρθρα" : "Related Articles"}
+                pages={relatedPosts}
+              />
+            ) : null}
           </footer>
         </article>
       </main>

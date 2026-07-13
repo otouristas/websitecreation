@@ -2,6 +2,11 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 
+export interface BlogFaqItem {
+  readonly question: string;
+  readonly answer: string;
+}
+
 export interface BlogPostListItem {
   readonly slug: string;
   readonly title: string;
@@ -15,6 +20,8 @@ export interface BlogPostListItem {
   readonly locale: 'en' | 'el';
   /** Slug of this post's counterpart in the other locale, when a real translation pair exists. */
   readonly translationOf?: string;
+  /** Optional Q&A pairs (frontmatter `faq:`) surfaced into FAQPage JSON-LD. */
+  readonly faq?: readonly BlogFaqItem[];
 }
 
 export interface BlogPostParsed extends BlogPostListItem {
@@ -33,6 +40,23 @@ interface MatterData {
   readonly pillarHub?: boolean;
   readonly locale?: 'en' | 'el';
   readonly translationOf?: string;
+  readonly faq?: unknown;
+}
+
+/** Normalize the frontmatter `faq:` list into clean {question, answer} pairs. */
+function parseFaq(raw: unknown): BlogFaqItem[] | undefined {
+  if (!Array.isArray(raw)) return undefined;
+  const items: BlogFaqItem[] = [];
+  for (const entry of raw) {
+    if (entry && typeof entry === "object") {
+      const q = (entry as Record<string, unknown>).question ?? (entry as Record<string, unknown>).q;
+      const a = (entry as Record<string, unknown>).answer ?? (entry as Record<string, unknown>).a;
+      if (typeof q === "string" && typeof a === "string" && q.trim() && a.trim()) {
+        items.push({ question: q.trim(), answer: a.trim() });
+      }
+    }
+  }
+  return items.length > 0 ? items : undefined;
 }
 
 function getContentDir(): string {
@@ -61,8 +85,63 @@ function parsePostFile(filePath: string, fileBase: string): BlogPostParsed | nul
     isPillarHub: Boolean(d.pillarHub),
     locale: d.locale === "el" ? "el" : "en",
     translationOf: typeof d.translationOf === "string" ? d.translationOf : undefined,
+    faq: parseFaq(d.faq),
     content,
   };
+}
+
+/** Strip markdown inline formatting so FAQ answers are clean plain text for JSON-LD. */
+function stripMarkdownInline(text: string): string {
+  return text
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1") // [label](url) -> label
+    .replace(/\*\*([^*]+)\*\*/g, "$1") // **bold** -> bold
+    .replace(/\*([^*]+)\*/g, "$1") // *italic* -> italic
+    .replace(/`([^`]+)`/g, "$1") // `code` -> code
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+/**
+ * Derive FAQ Q&A pairs from a post body's "Συχνές Ερωτήσεις" / "FAQ" section
+ * (H2), reading each following H3 as a question and its paragraphs as the answer.
+ * Used as a fallback when a post has no explicit `faq:` frontmatter, so FAQPage
+ * JSON-LD is emitted from content the reader already sees.
+ */
+export function extractFaqFromMarkdown(content: string): BlogFaqItem[] {
+  const lines = content.split(/\r?\n/);
+  const faqHeading = /^##\s+(Συχνές\s+Ερωτήσεις|FAQ|Frequently\s+Asked\s+Questions)\s*$/i;
+  let inSection = false;
+  const items: BlogFaqItem[] = [];
+  let question: string | null = null;
+  let answerLines: string[] = [];
+  const flush = () => {
+    if (question) {
+      const answer = stripMarkdownInline(answerLines.join(" "));
+      if (answer) items.push({ question: stripMarkdownInline(question), answer });
+    }
+    question = null;
+    answerLines = [];
+  };
+  for (const line of lines) {
+    if (!inSection) {
+      if (faqHeading.test(line.trim())) inSection = true;
+      continue;
+    }
+    if (/^##\s+/.test(line) && !/^###/.test(line)) {
+      // Next H2 ends the FAQ section.
+      flush();
+      break;
+    }
+    const h3 = line.match(/^###\s+(.*\S)\s*$/);
+    if (h3) {
+      flush();
+      question = h3[1].replace(/[?;]\s*$/, (m) => m.trim());
+      continue;
+    }
+    if (question && line.trim()) answerLines.push(line.trim());
+  }
+  flush();
+  return items;
 }
 
 /**
