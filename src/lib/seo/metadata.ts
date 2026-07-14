@@ -175,11 +175,12 @@ export function buildServiceMetadata(
     });
   }
   return buildMetadata({
-    title: fitTitleWithSuffix(service.name, [
-      ' | Pricing, Packages & Process',
-      ' | Pricing & Packages',
-      ' | Pricing',
-    ]),
+    title: fitTitleWithSuffix(
+      service.name,
+      isSeoRetainerService(service.slug)
+        ? [' - Pricing & Measurable Results', ' - Pricing & Packages', ' - Pricing', '']
+        : [' - SEO-Ready Delivery & Pricing', ' - Pricing & Packages', ' - Pricing', ''],
+    ),
     description: `${service.name} for growing businesses: SEO-ready delivery, transparent pricing (${enPriceHook(service.slug)}), GEO/AEO, and fast turnaround. Get a free quote today.`,
     path: localizedPath(locale, `/services/${service.slug}`),
     hreflangPath: `/services/${service.slug}`,
@@ -219,11 +220,7 @@ export function buildServiceLocationMetadata(
 
   return buildMetadata({
     // Front-load keyword + city so truncation drops the hook, never the keyword.
-    title: fitTitleWithSuffix(`${service.name} ${location.city}`, [
-      ' | Pricing & Free Quote',
-      ' | Pricing',
-      '',
-    ]),
+    title: fitTitleWithSuffix(`${service.name} ${location.city}`, enTitleSuffixes(service.slug)),
     description: `${service.name} in ${placeLabel}: SEO-ready websites, local strategy, GEO/AEO, and fast delivery. Transparent pricing (${enPriceHook(service.slug)}). Get a free quote.`,
     path: localizedPath(locale, `/services/${service.slug}/${location.slug}`),
     hreflangPath: `/services/${service.slug}/${location.slug}`,
@@ -251,6 +248,13 @@ function elTitleSuffixes(slug: string): readonly string[] {
   return isSeoRetainerService(slug)
     ? [' - Τιμές & Αποτελέσματα', ' - Αποτελέσματα', ' - Τιμές', ' | Προσφορά', '']
     : [' - Τιμές & SEO από 1η μέρα', ' - Τιμές & SEO', ' - Τιμές', ' | Προσφορά', ''];
+}
+
+/** English SERP title suffix ladder (value-led, per "value not cheapest"). Picks the longest ≤43 chars. */
+function enTitleSuffixes(slug: string): readonly string[] {
+  return isSeoRetainerService(slug)
+    ? [' - Measurable Results', ' - Pricing & Quote', ' - Pricing', '']
+    : [' - SEO-Ready & Fast', ' - Pricing & Quote', ' - Pricing', ''];
 }
 
 /** English price hook. Business bills in EUR, so € everywhere for consistency with the pricing page. */

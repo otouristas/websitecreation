@@ -176,6 +176,10 @@ export default async function ServiceLocationPage({ params }: PageProps) {
                 ? `SEO packages start at €299/mo (Starter), €599/mo (Growth), and €999/mo (Scale). The price depends on competition in ${location.city} and your goals. All pricing is transparent - see our pricing page or request a free quote.`
                 : `Websites start at €899 (Starter, up to 5 pages), €1,799 (Professional, up to 10 pages), and €2,999 (Business, up to 20 pages). No hidden fees. Request a free quote for ${location.city}.`,
         },
+        {
+            question: `Will my business show up in ChatGPT and AI search?`,
+            answer: `Yes. With GEO/AEO optimization - schema, entities, and structured content - we work to get your brand cited in ChatGPT Search, Perplexity, and Gemini answers, not just the traditional Google results in ${location.city}.`,
+        },
     ];
 
     const schemas = combineSchemas(

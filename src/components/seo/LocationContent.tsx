@@ -31,6 +31,28 @@ const EN_CITY_INTROS: Record<string, string> = {
     'toronto-ca': 'Toronto is a diverse, competitive metro where local relevance and site speed drive conversions. We build location-aware, bilingual-ready websites and local SEO that win the map pack across the GTA.',
     'sydney-au': 'Sydney businesses compete across a wide, suburb-driven metro. We build fast, mobile-first websites and local SEO that rank for the suburbs and services your Sydney customers actually search.',
     'dublin-ie': 'Dublin is a fast-growing, English-speaking hub for both local and international business. We build SEO-ready websites with local strategy and GEO/AEO so you rank in Google and in AI search across Ireland and the EU.',
+    'portland-or': 'Portland is a design-conscious, mobile-first market where a slow or dated website costs you customers fast. We build fast, SEO-ready sites and local strategy that rank across the metro - and we handle website redesigns with a safe SEO migration so you keep the rankings you already have.',
+    'aurora-co': 'Aurora and the greater Denver metro are growing fast, and local search decides who gets the call. We reverse-engineer what ranks today and build the technical SEO, Google Business Profile strategy, and content that put Aurora businesses in the map pack.',
+    'toledo-oh': 'Toledo is a market where strong local SEO still beats bigger budgets. With a fast website, a well-optimized Google Business Profile, and location-focused content, a Toledo business can own its category in the local results.',
+    'tampa-fl': 'Tampa Bay is a competitive, high-growth market where speed and mobile experience drive conversions. We build fast, SEO-ready websites and local strategy - including website redesigns that keep your existing rankings - so you win across the metro.',
+    'brisbane-au': 'Brisbane businesses compete across a wide, suburb-driven metro. We build fast, mobile-first websites and local SEO that rank for the suburbs and services your Brisbane customers actually search. Pricing quoted in AUD/EUR.',
+    'philadelphia-pa': 'Philadelphia is a dense, neighborhood-driven market where local relevance and authority win. We build location pages, earn authoritative backlinks, and structure content so Philly businesses rank for competitive commercial and "near me" searches.',
+};
+
+/** Maps each service to its most relevant English blog guide for contextual A->B internal linking. */
+const SERVICE_GUIDE_EN: Record<string, { href: string; label: string }> = {
+    'eshop-woocommerce': { href: '/blog/ecommerce-website-cost-guide', label: 'How much does an e-commerce website cost?' },
+    'eshop-seo': { href: '/blog/ecommerce-website-cost-guide', label: 'How much does an e-commerce website cost?' },
+    'website-creation': { href: '/blog/how-much-does-a-website-cost', label: 'How much does a website cost?' },
+    'website-redesign': { href: '/blog/website-redesign-guide', label: 'Website redesign guide (without losing SEO)' },
+    'seo-web-design': { href: '/blog/seo-web-design-development-platform', label: 'SEO web design & development guide' },
+    'ai-visibility': { href: '/blog/pillar-ai-llm-visibility', label: 'AI & LLM visibility playbook' },
+    'local-seo': { href: '/blog/how-much-does-seo-cost', label: 'How much does SEO cost?' },
+    'seo-audits': { href: '/blog/how-much-does-seo-cost', label: 'How much does SEO cost?' },
+    'link-building': { href: '/blog/how-much-does-seo-cost', label: 'How much does SEO cost?' },
+    'content-creation': { href: '/blog/how-much-does-seo-cost', label: 'How much does SEO cost?' },
+    'speed-optimization': { href: '/blog/how-much-does-seo-cost', label: 'How much does SEO cost?' },
+    'logo-design': { href: '/blog/how-much-does-a-website-cost', label: 'How much does a website cost?' },
 };
 
 export function LocationContent({ location, service, industry, locale: localeProp }: LocationContentProps) {
@@ -152,7 +174,13 @@ export function LocationContent({ location, service, industry, locale: localePro
                     <Link href={lp('/services')} className="rounded-full border border-gray-200 px-4 py-2 text-blue-700 hover:bg-blue-50">All services</Link>
                     <Link href={lp('/solutions')} className="rounded-full border border-gray-200 px-4 py-2 text-blue-700 hover:bg-blue-50">Solutions by industry</Link>
                     <Link href={lp('/pricing')} className="rounded-full border border-gray-200 px-4 py-2 text-blue-700 hover:bg-blue-50">Pricing &amp; packages</Link>
-                    <Link href={lp('/blog/how-much-does-seo-cost')} className="rounded-full border border-gray-200 px-4 py-2 text-blue-700 hover:bg-blue-50">How much does SEO cost?</Link>
+                    {(() => {
+                        const guide = service ? SERVICE_GUIDE_EN[service.slug] : null;
+                        const g = guide ?? { href: '/blog/how-much-does-seo-cost', label: 'How much does SEO cost?' };
+                        return (
+                            <Link href={lp(g.href)} className="rounded-full border border-gray-200 px-4 py-2 text-blue-700 hover:bg-blue-50">{g.label}</Link>
+                        );
+                    })()}
                     <Link href={lp('/work')} className="rounded-full border border-gray-200 px-4 py-2 text-blue-700 hover:bg-blue-50">See our work</Link>
                 </div>
             </div>
