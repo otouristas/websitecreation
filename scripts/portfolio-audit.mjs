@@ -5,6 +5,7 @@
  *   node scripts/portfolio-audit.mjs              # audit only
  *   node scripts/portfolio-audit.mjs --screenshot # audit + screenshots
  *   node scripts/portfolio-audit.mjs --screenshot-only
+ *   node scripts/portfolio-audit.mjs --screenshot-only --force  # retake even if WebP exists
  */
 import fs from 'fs';
 import path from 'path';
@@ -59,9 +60,10 @@ async function auditUrl(project) {
   return result;
 }
 
-async function screenshotUrl(project) {
+async function screenshotUrl(project, { force = false } = {}) {
   const outPath = path.join(ROOT, 'public', project.screenshot.replace(/^\//, ''));
-  if (fs.existsSync(outPath)) {
+  const hadExisting = fs.existsSync(outPath);
+  if (hadExisting && !force) {
     return true;
   }
 
@@ -83,9 +85,14 @@ async function screenshotUrl(project) {
     if (ok) return true;
   }
 
-  await generatePlaceholder(project, outPath);
-  console.warn(`Used placeholder for ${project.slug}`);
-  return true;
+  // Never clobber a good shot with a placeholder on --force retakes
+  if (!hadExisting) {
+    await generatePlaceholder(project, outPath);
+    console.warn(`Used placeholder for ${project.slug}`);
+    return true;
+  }
+  console.warn(`Keeping existing screenshot for ${project.slug} (capture failed)`);
+  return false;
 }
 
 async function tryScreenshot(project, outPath, url) {
@@ -131,6 +138,7 @@ async function generatePlaceholder(project, outPath) {
 async function main() {
   const withScreenshot = process.argv.includes('--screenshot');
   const screenshotOnly = process.argv.includes('--screenshot-only');
+  const force = process.argv.includes('--force');
   const projects = loadProjectsFromPortfolio();
 
   if (projects.length === 0) {
@@ -152,8 +160,8 @@ async function main() {
     }
 
     if (withScreenshot || screenshotOnly) {
-      console.log(`Screenshot ${project.slug} → ${project.screenshot}`);
-      const ok = await screenshotUrl(project);
+      console.log(`Screenshot ${project.slug} → ${project.screenshot}${force ? ' (force)' : ''}`);
+      const ok = await screenshotUrl(project, { force });
       if (ok) shotOk++;
       else shotFail++;
     }

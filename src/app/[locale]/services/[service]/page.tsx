@@ -6,12 +6,15 @@ import Footer from '@/components/Footer';
 import { services, getServiceBySlug, getAllServiceSlugs } from '@/data/services';
 import { getServiceEl } from '@/data/services-i18n';
 import { industries } from '@/data/industries';
-import { tier1Locations, greeceLocations } from '@/data/locations';
+import { industriesEl } from '@/data/industries-i18n';
+import { greeceLocations, getIndexableServiceLocationSlugs, getLocationBySlug } from '@/data/locations';
 import { isValidLocale, localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 import { buildServiceMetadata, generateArticleSchema, generateBreadcrumbSchema, generateServiceSchema, generateFAQSchema, combineSchemas } from '@/lib/seo';
 import { SchemaMarkup, Breadcrumbs, FAQSection } from '@/components/seo';
+import ServiceHubCommercialBody from '@/components/seo/ServiceHubCommercialBody';
 import { getServiceBreadcrumbs, getServiceHubRelatedPaths } from '@/lib/linking';
 import { getServiceFaqs } from '@/data/service-faq-data';
+import { getServiceHubCommercial } from '@/data/service-hub-commercial';
 import { getFeaturedPortfolio } from '@/data/portfolio';
 import RelatedPages from '@/components/seo/RelatedPages';
 
@@ -62,13 +65,13 @@ export default async function ServicePage({ params }: PageProps) {
         ? {
             whatsIncluded: 'Τι Περιλαμβάνεται',
             byCity: `${displayName} ανά Πόλη`,
-            byCityDesc: `Παρέχουμε υπηρεσίες ${displayName.toLowerCase()} σε επιχειρήσεις σε όλη την Ελλάδα και διεθνώς. Επιλέξτε την πόλη σας για τοπικές λεπτομέρειες.`,
+            byCityDesc: `Παρέχουμε υπηρεσίες ${displayName} σε επιχειρήσεις σε όλη την Ελλάδα και διεθνώς. Επιλέξτε την πόλη σας για τοπικές λεπτομέρειες.`,
             allCities: 'Δείτε όλες τις τοποθεσίες →',
             forIndustries: `${displayName} για Κλάδους & Επιχειρήσεις`,
-            forIndustriesDesc: `Εξειδικευμένες λύσεις ${displayName.toLowerCase()} προσαρμοσμένες στις ανάγκες της δικής σας δραστηριότητας.`,
+            forIndustriesDesc: `Εξειδικευμένες λύσεις ${displayName} προσαρμοσμένες στις ανάγκες της δικής σας δραστηριότητας.`,
             relatedServices: 'Σχετικές Υπηρεσίες',
             ctaTitle: 'Έτοιμοι να ξεκινήσουμε;',
-            ctaDesc: `Ζητήστε μια δωρεάν προσφορά για ${displayName.toLowerCase()} σήμερα.`,
+            ctaDesc: `Ζητήστε μια δωρεάν προσφορά για ${displayName} σήμερα.`,
             ctaButton: 'Δωρεάν Προσφορά',
             getQuote: 'Ζητήστε Προσφορά',
             viewByLocation: 'Δείτε ανά Τοποθεσία',
@@ -127,11 +130,17 @@ export default async function ServicePage({ params }: PageProps) {
         generateFAQSchema({ faqs: faqItems })
     );
 
-    const locationsToShow = isEl ? greeceLocations : tier1Locations.slice(0, 30);
+    const locationsToShow = isEl
+        ? greeceLocations
+        : getIndexableServiceLocationSlugs()
+            .map((slug) => getLocationBySlug(slug))
+            .filter((loc): loc is NonNullable<typeof loc> => Boolean(loc))
+            .slice(0, 30);
     const hubRelated = getServiceHubRelatedPaths(serviceSlug).map((p) => ({
         slug: lp(p.path),
         title: isEl ? p.titleEl : p.titleEn,
     }));
+    const commercial = getServiceHubCommercial(serviceSlug, isEl ? 'el' : 'en');
 
     return (
         <>
@@ -171,6 +180,10 @@ export default async function ServicePage({ params }: PageProps) {
                         </div>
                     </div>
                 </section>
+
+                {commercial ? (
+                    <ServiceHubCommercialBody commercial={commercial} locale={locale as SiteLocale} />
+                ) : null}
 
                 {/* Features */}
                 <section className="section">
@@ -230,13 +243,9 @@ export default async function ServicePage({ params }: PageProps) {
 
                         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
                             {industries.map((industry) => {
-                                const indName = isEl && industry.slug === 'rent-a-car'
-                                  ? 'Rent-a-Car'
-                                  : (isEl && industry.slug === 'hotels'
-                                    ? 'Ξενοδοχεία'
-                                    : (isEl && industry.slug === 'tour-operators'
-                                      ? 'Εκδρομές & Tours'
-                                      : industry.name));
+                                const indName = isEl
+                                  ? (industriesEl[industry.slug]?.name ?? industry.name)
+                                  : industry.name;
                                 return (
                                     <Link
                                         key={industry.slug}

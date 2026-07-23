@@ -263,7 +263,7 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
 
   const t = isEl
     ? {
-        title: "Ξεκινήστε το Project Σας",
+        title: "Ξεκινήστε το Έργο Σας",
         subtitle: "Συμπληρώστε τον οδηγό για να λάβετε μια προσαρμοσμένη προσφορά σε 24 ώρες.",
         stepLabels: ['Πακέτο', 'Επιχείρηση', 'Project', 'Επικοινωνία'],
         currency: "€",
@@ -1106,7 +1106,7 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
 }
 
 export function GetStartedClient({ locale }: { locale: SiteLocale }) {
-  const fallbackTitle = locale === 'el' ? 'Ξεκινήστε το Project Σας' : 'Start Your Project';
+  const fallbackTitle = locale === 'el' ? 'Ξεκινήστε το Έργο Σας' : 'Start Your Project';
   return (
     <Suspense
       fallback={

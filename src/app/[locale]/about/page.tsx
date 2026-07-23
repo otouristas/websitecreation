@@ -58,7 +58,7 @@ export default async function AboutPage({ params }: PageProps) {
         ctaTitle: "Έτοιμοι να Συνεργαστούμε;",
         ctaSub: "Ας κατασκευάσουμε μια ιστοσελίδα που θα φέρει πραγματικά αποτελέσματα στην επιχείρησή σας.",
         viewPricing: "Δείτε τις Τιμές",
-        startProject: "Ξεκινήστε το Project",
+        startProject: "Ξεκινήστε το έργο",
         values: [
           {
             title: "Ταχύτητα Πρώτα",

@@ -9,7 +9,7 @@ export const blogUiEn = {
 } as const;
 
 export const blogUiEl = {
-  title: 'Blog SEO, GEO & AEO - Οδηγοί',
+  title: 'Άρθρα SEO, GEO & AEO - Οδηγοί',
   metaDescription:
     'Οδηγοί για Google Search Console, GEO, AEO, αναζήτηση με AI, τεχνικό SEO, τοπικό SEO και στρατηγικές - για ελληνικές και διεθνείς αγορές.',
   h1: 'Άρθρα & οδηγοί SEO',

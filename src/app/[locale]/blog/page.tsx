@@ -51,7 +51,7 @@ export default async function BlogIndex({ params }: PageProps) {
                   <div className="mb-4 flex flex-wrap gap-2">
                     {article.isPillarHub ? (
                       <span className="inline-block px-3 py-1 rounded-full text-xs font-bold bg-primary/10 text-primary">
-                        {siteLocale === "el" ? "Pillar hub" : "Pillar hub"}
+                        {siteLocale === "el" ? "Οδηγός-πυλώνας" : "Pillar hub"}
                       </span>
                     ) : null}
                     {article.category ? (

@@ -15,6 +15,7 @@ import {
 import { isValidLocale, localizedPath, type SiteLocale } from "@/lib/i18n/locale";
 import { buildHreflangMapFromPaths } from "@/lib/locale-paths";
 import { buildMetadata } from "@/lib/seo";
+import { getBlogMoneyLinks } from "@/lib/linking";
 import {
   generateArticleSchema,
   generateBreadcrumbSchema,
@@ -109,6 +110,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     .slice(0, 4)
     .map((p) => ({ slug: lp(`/blog/${p.slug}`), title: p.title, description: p.description }));
 
+  const moneyPages = getBlogMoneyLinks(post.slug).map((p) => ({
+    slug: lp(p.path),
+    title: isEl ? p.titleEl : p.titleEn,
+  }));
+
   return (
     <>
       <SchemaMarkup schemas={schemas} />
@@ -119,7 +125,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             <Breadcrumbs items={breadcrumbItems} className="mb-6" />
             {post.isPillarHub ? (
               <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
-                Content pillar
+                {isEl ? "Οδηγός-πυλώνας" : "Content pillar"}
               </span>
             ) : null}
             {post.category && !post.isPillarHub ? (
@@ -170,6 +176,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 </Link>
               </div>
             </div>
+            {moneyPages.length > 0 ? (
+              <RelatedPages
+                className="mt-10"
+                title={isEl ? "Υπηρεσίες & Τιμές" : "Services & Pricing"}
+                pages={moneyPages}
+              />
+            ) : null}
             {relatedPosts.length > 0 ? (
               <RelatedPages
                 className="mt-10"

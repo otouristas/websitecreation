@@ -64,12 +64,12 @@ export const solutionsUi = {
     freeQuote: 'Δωρεάν προσφορά',
     serviceForIndustry: (service: string, industry: string) => `${service} για ${industry}`,
     serviceHeroDesc: (service: string, industry: string) =>
-      `Αναζητάτε επαγγελματικό ${service.toLowerCase()} προσαρμοσμένο για επιχειρήσεις ${industry}; Σχεδιάζουμε γρήγορες, SEO-ready ιστοσελίδες που καλύπτουν τις ανάγκες του κλάδου.`,
+      `Αναζητάτε επαγγελματικό ${service} προσαρμοσμένο για επιχειρήσεις ${industry}; Σχεδιάζουμε γρήγορες, SEO-ready ιστοσελίδες που καλύπτουν τις ανάγκες του κλάδου.`,
     getIndustryQuote: (industry: string) => `Προσφορά - ${industry}`,
     allIndustryServices: (industry: string) => `Όλες οι υπηρεσίες ${industry}`,
     whatsIncluded: (industry: string) => `Τι περιλαμβάνεται για ${industry}`,
     whatsIncludedDesc: (service: string, industry: string) =>
-      `Το ${service.toLowerCase()} για ${industry} περιλαμβάνει ό,τι χρειάζεται μια υψηλής απόδοσης ιστοσελίδα για τον κλάδο.`,
+      `Το ${service} για ${industry} περιλαμβάνει ό,τι χρειάζεται μια υψηλής απόδοσης ιστοσελίδα για τον κλάδο.`,
     builtFor: (industry: string) => `Σχεδιασμένο για ${industry}`,
     builtForDesc: (industry: string) => `Κατανοούμε τις προκλήσεις των επιχειρήσεων στον κλάδο ${industry}.`,
     byCityService: (service: string, industry: string) => `${service} - ${industry} ανά πόλη`,

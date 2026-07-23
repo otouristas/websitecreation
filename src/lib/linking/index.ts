@@ -9,6 +9,8 @@ export {
     getRelatedPages,
     getPricingRelatedPaths,
     getServiceHubRelatedPaths,
+    getBlogMoneyLinks,
+    BLOG_MONEY_LINKS,
     generateBreadcrumbs,
     getServiceBreadcrumbs,
     getServiceLocationBreadcrumbs,

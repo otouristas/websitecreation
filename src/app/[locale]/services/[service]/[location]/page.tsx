@@ -15,6 +15,7 @@ import {
     getNearbyLocations,
     isGreekLocation,
 } from '@/data/locations';
+import { getLocationPack } from '@/data/location-content';
 import {
     buildServiceLocationMetadata,
     generateBreadcrumbSchema,
@@ -29,6 +30,7 @@ import { getServiceLocationBreadcrumbs } from '@/lib/linking';
 import { grServiceLocationPath } from '@/lib/locale-paths';
 import { isValidLocale, localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 import { getGreekLocative } from '@/lib/greek-locative';
+import { getServiceFaqs } from '@/data/service-faq-data';
 
 interface PageProps {
     params: Promise<{ locale: string; service: string; location: string }>;
@@ -110,12 +112,12 @@ export default async function ServiceLocationPage({ params }: PageProps) {
 
     const t = isEl ? {
         heroTitle: `${serviceName} ${cityLocative}`,
-        heroDesc: `Ψάχνετε για επαγγελματικές υπηρεσίες ${serviceName.toLowerCase()} ${cityLocative}; Δημιουργούμε γρήγορες, SEO-ready ιστοσελίδες που κατατάσσονται ψηλά στη Google και σε AI μηχανές αναζήτησης - με διαφανείς τιμές σε ${location.currency === 'EUR' ? 'Ευρώ (€)' : location.currency}.`,
+        heroDesc: `Ψάχνετε για επαγγελματικές υπηρεσίες ${serviceName} ${cityLocative}; Δημιουργούμε γρήγορες, SEO-ready ιστοσελίδες που κατατάσσονται ψηλά στη Google και σε AI μηχανές αναζήτησης - με διαφανείς τιμές σε ${location.currency === 'EUR' ? 'Ευρώ (€)' : location.currency}.`,
         getQuote: `Προσφορά για ${cityName}`,
         allLocations: 'Όλες οι Τοποθεσίες',
         browseCities: 'Πλοήγηση σε Πόλεις',
         whatsIncludedTitle: `Τι Περιλαμβάνεται ${cityLocative}`,
-        whatsIncludedDesc: `Οι υπηρεσίες μας για ${serviceName.toLowerCase()} για επιχειρήσεις ${cityLocative} περιλαμβάνουν όλα όσα χρειάζεστε για μια ιστοσελίδα υψηλών επιδόσεων στην ${location.countryCode === 'GR' ? 'Ελλάδα' : 'χώρα εξυπηρέτησης'}.`,
+        whatsIncludedDesc: `Οι υπηρεσίες μας για ${serviceName} για επιχειρήσεις ${cityLocative} περιλαμβάνουν όλα όσα χρειάζεστε για μια ιστοσελίδα υψηλών επιδόσεων στην ${location.countryCode === 'GR' ? 'Ελλάδα' : 'χώρα εξυπηρέτησης'}.`,
         industriesTitle: `${serviceName} για Κλάδους ${cityLocative}`,
         industriesDesc: `Εξειδικευμένες λύσεις για διαφορετικούς τύπους επιχειρήσεων ${cityLocative}.`,
         nearbyTitle: `Επίσης Εξυπηρετούμε Κοντινές Περιοχές ${cityLocative}`,
@@ -142,13 +144,21 @@ export default async function ServiceLocationPage({ params }: PageProps) {
         ctaBtn: `Get Free ${location.city} Quote`,
     };
 
-    const faqItems = isEl ? [
+    const hubFaqSlugs = new Set([
+        'website-creation',
+        'local-seo',
+        'seo-audits',
+        'eshop-woocommerce',
+        'ai-visibility',
+    ]);
+
+    const cityFaqItems = isEl ? [
         {
             question: `Πόσο γρήγορα μπορεί να παραδοθεί η ιστοσελίδα μου ${cityLocative};`,
-            answer: `Ανάλογα με το εύρος, τα περισσότερα projects για ${serviceName.toLowerCase()} ${cityLocative} παραδίδονται σε 2-8 εβδομάδες μόλις είναι έτοιμο το υλικό. Οι τιμές μας είναι σε ${location.currency === 'EUR' ? 'Ευρώ (€)' : location.currency}.`,
+            answer: `Ανάλογα με το εύρος, τα περισσότερα projects για ${serviceName} ${cityLocative} παραδίδονται σε 2-8 εβδομάδες μόλις είναι έτοιμο το υλικό. Οι τιμές μας είναι σε ${location.currency === 'EUR' ? 'Ευρώ (€)' : location.currency}.`,
         },
         {
-            question: `Παρέχετε ${serviceName.toLowerCase()} με τοπικό SEO ${cityLocative};`,
+            question: `Παρέχετε ${serviceName} με τοπικό SEO ${cityLocative};`,
             answer: `Ναι. Σχεδιάζουμε τοπικές σελίδες, δομή εσωτερικών συνδέσμων, schema markup και στρατηγική Google Business Profile ώστε οι επιχειρήσεις ${cityLocative} να κατατάσσονται ψηλά για τοπικές αναζητήσεις.`,
         },
         {
@@ -156,7 +166,7 @@ export default async function ServiceLocationPage({ params }: PageProps) {
             answer: `Το τεχνικό SEO, το semantic clustering από το Search Console, το GEO/AEO βελτιστοποιημένο περιεχόμενο και οι κορυφαίες επιδόσεις Core Web Vitals - όχι οι απλές, λεπτές σελίδες προτύπων.`,
         },
         {
-            question: `Πόσο κοστίζει ${serviceName.toLowerCase()} ${cityLocative};`,
+            question: `Πόσο κοστίζει ${serviceName} ${cityLocative};`,
             answer: ['local-seo', 'seo-audits', 'ai-visibility', 'link-building', 'eshop-seo', 'content-creation'].includes(serviceSlug)
                 ? `Τα πακέτα SEO ξεκινούν από €299/μήνα (Starter), €599/μήνα (Growth) και €999/μήνα (Scale). Η τιμή εξαρτάται από τον ανταγωνισμό ${cityLocative} και τους στόχους σας. Δείτε αναλυτικές τιμές στη σελίδα τιμών μας ή ζητήστε δωρεάν προσφορά.`
                 : `Οι ιστοσελίδες ξεκινούν από €899 (Starter, έως 5 σελίδες), €1.799 (Professional, έως 10 σελίδες) και €2.999 (Business, έως 20 σελίδες). Χωρίς κρυφές χρεώσεις - όλες οι τιμές σε Ευρώ. Ζητήστε δωρεάν προσφορά για ${cityName}.`,
@@ -190,12 +200,24 @@ export default async function ServiceLocationPage({ params }: PageProps) {
         },
     ];
 
+    const packFaqs = (getLocationPack(location.slug, isEl ? 'el' : 'en')?.faqs ?? []).slice(0, 4);
+
+    const faqItems = hubFaqSlugs.has(serviceSlug)
+        ? [
+            ...getServiceFaqs(serviceSlug, isEl ? 'el' : 'en'),
+            cityFaqItems.find((f) => /κοστίζει|How much/i.test(f.question)) ?? cityFaqItems[0],
+            ...packFaqs,
+          ]
+        : [...packFaqs, ...cityFaqItems];
+
     const schemas = combineSchemas(
         generateBreadcrumbSchema({ items: breadcrumbs }),
         generateFAQSchema({ faqs: faqItems }),
         generateLocalBusinessSchema({
             name: `${serviceName} - ${cityName}`,
-            description: `Professional ${serviceName.toLowerCase()} services in ${cityName}`,
+            description: isEl
+                ? `Επαγγελματικές υπηρεσίες ${serviceName} στην περιοχή ${cityName}`
+                : `Professional ${serviceName.toLowerCase()} services in ${cityName}`,
             url: pageUrl,
             address: {
                 addressLocality: cityName,

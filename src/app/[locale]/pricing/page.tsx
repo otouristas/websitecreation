@@ -18,17 +18,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!isValidLocale(locale)) return {};
   if (locale === 'el') {
     return buildMetadata({
-      title: "SEO Τιμές & Πακέτα - Κόστος Ιστοσελίδας",
+      title: "Τιμές SEO από €299/μήνα",
       description:
-        "Πόσο κοστίζει το SEO και η κατασκευή ιστοσελίδας; Πακέτα SEO από €299/μήνα, ιστοσελίδες από €899. Διαφανείς τιμές σε €, χωρίς κρυφές χρεώσεις.",
+        "Πόσο κοστίζει το SEO και η κατασκευή ιστοσελίδας; Πακέτα SEO από €299/μήνα, ιστοσελίδες από €899. Διαφανείς τιμές σε € — ζητήστε προσφορά.",
       path: localizedPath(locale as SiteLocale, "/pricing"),
       hreflangPath: "/pricing",
     });
   }
   return buildMetadata({
-    title: "Agency Pricing - Web & SEO Packages",
+    title: "SEO & Web Pricing from €299",
     description:
-      "Transparent agency pricing for website creation, redesign, SEO web design, GEO, AEO, and speed optimization. Compare packages and request a custom quote today.",
+      "Transparent SEO & website pricing from €299/mo and €899 one-shot. Compare packages for web design, SEO, GEO/AEO. Request a free custom quote today.",
     path: localizedPath(locale as SiteLocale, "/pricing"),
     hreflangPath: "/pricing",
   });
@@ -335,12 +335,12 @@ export default async function PricingPage({ params }: PageProps) {
           },
           {
             q: "Έχετε παραδείγματα έργων;",
-            a: "Ναι — πάνω από 70 live projects σε rent-a-car, ξενοδοχεία, tours, e-shop και τοπικές επιχειρήσεις. Δείτε το portfolio μας και ζητήστε παρόμοιο project μέσω Get Started."
+            a: "Ναι — πάνω από 70 ζωντανά έργα σε ενοικίαση αυτοκινήτου, ξενοδοχεία, tours, e-shop και τοπικές επιχειρήσεις. Δείτε το portfolio μας και ζητήστε παρόμοιο έργο μέσω Get Started."
           }
         ],
         ctaTitle: "Έτοιμοι να Ξεκινήσουμε;",
         ctaDesc: "Επιλέξτε το πακέτο σας και λανσάρετε τη νέα σας ιστοσελίδα σε εβδομάδες, όχι μήνες. Ή ζητήστε προσαρμοσμένη προσφορά.",
-        ctaButton: "Ξεκινήστε το Project",
+        ctaButton: "Ξεκινήστε το Έργο",
       }
     : {
         h1: "Simple, Transparent Pricing",

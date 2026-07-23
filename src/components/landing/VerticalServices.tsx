@@ -8,7 +8,7 @@ const verticals = [
     titleEn: 'Rent-a-car websites',
     titleEl: 'Ιστοσελίδες ενοικίασης αυτοκινήτου',
     descEn: 'Fleet pages, booking funnels and island SEO for car rental brands.',
-    descEl: 'Στόλος, online κρατήσεις και SEO για rent-a-car σε νησιά και πόλεις.',
+    descEl: 'Στόλος, online κρατήσεις και SEO για ενοικίαση αυτοκινήτου σε νησιά και πόλεις.',
     href: '/solutions/rent-a-car',
   },
   {

@@ -49,7 +49,7 @@ const SERVICE_ITEMS: ServiceItem[] = [
 
 const SOLUTION_ITEMS: { slug: string; en: string; el: string }[] = [
   { slug: "hotels", en: "Hotels", el: "Ξενοδοχεία" },
-  { slug: "rent-a-car", en: "Rent-a-Car", el: "Rent-a-Car" },
+  { slug: "rent-a-car", en: "Rent-a-Car", el: "Ενοικίαση αυτοκινήτου" },
   { slug: "tour-operators", en: "Tour Operators", el: "Τουριστικά γραφεία" },
   { slug: "villas-apartments", en: "Villas & Apartments", el: "Βίλες & Καταλύματα" },
   { slug: "restaurants", en: "Restaurants", el: "Εστιατόρια" },

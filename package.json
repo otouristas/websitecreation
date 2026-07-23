@@ -11,7 +11,9 @@
     "start": "next start",
     "lint": "eslint",
     "audit:portfolio": "node scripts/portfolio-audit.mjs",
+    "audit:locations": "npx tsx scripts/audit-locations.ts",
     "screenshots:portfolio": "node scripts/portfolio-audit.mjs --screenshot-only",
+    "screenshots:portfolio:force": "node scripts/portfolio-audit.mjs --screenshot-only --force",
     "generate:llms": "node scripts/generate-llms.mjs"
   },
   "dependencies": {

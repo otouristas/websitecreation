@@ -225,7 +225,7 @@ export function buildServiceLocationMetadata(
       ? `${location.city}, ${location.country ?? location.countryCode}`
       : `${location.city}, ${location.stateCode}`;
 
-  const noIndex = !shouldIndexServiceLocation(location as Location);
+  const noIndex = !shouldIndexServiceLocation(location as Location, 'en');
 
   return buildMetadata({
     // Front-load keyword + city so truncation drops the hook, never the keyword.
@@ -281,6 +281,34 @@ function fitTitleWithSuffix(base: string, suffixes: readonly string[]): string {
   return base;
 }
 
+/**
+ * Short Greek SERP keywords when full titleKeyword + city exceeds the 30-char primary
+ * budget — city name must never be dropped by truncation.
+ */
+const EL_SHORT_TITLE_KEYWORD: Record<string, string> = {
+  'website-creation': 'Ιστοσελίδες',
+  'website-redesign': 'Ανασχεδιασμός',
+  'seo-web-design': 'SEO Web Design',
+  'local-seo': 'Τοπικό SEO',
+  'seo-audits': 'Υπηρεσίες SEO',
+  'eshop-woocommerce': 'E-shop',
+  'eshop-seo': 'E-shop SEO',
+  'ai-visibility': 'GEO / AEO',
+  'speed-optimization': 'Ταχύτητα Site',
+  'link-building': 'Link Building',
+  'content-creation': 'SEO Content',
+};
+
+function elLocationTitleBase(serviceSlug: string, keyword: string, city: string): string {
+  const full = `${keyword} ${city}`;
+  if (full.length <= MAX_TITLE_PRIMARY_GREEK) return full;
+  const short = EL_SHORT_TITLE_KEYWORD[serviceSlug] ?? 'SEO';
+  const shortBase = `${short} ${city}`;
+  if (shortBase.length <= MAX_TITLE_PRIMARY_GREEK) return shortBase;
+  // Last resort: city-first so the place name survives smartTruncate
+  return `${city} ${short}`;
+}
+
 export function buildServiceLocationMetadataEl(
   service: { name: string; slug: string },
   location: {
@@ -297,12 +325,13 @@ export function buildServiceLocationMetadataEl(
   const city = location.cityLocal ?? location.city;
   const priceHook = isSeoRetainerService(service.slug) ? 'από €299/μήνα' : 'από €899';
   const locative = getGreekLocative(location.slug, city);
-  // Greek locale should not index non-Greek city pages (wrong market + thin/duplicate risk).
-  const noIndex = !isGreekLocationSlug(location.slug);
+  // EL indexes only Greek locations that pass the uniqueness content gate.
+  const noIndex = !shouldIndexServiceLocation(location as Location, 'el');
+  const titleBase = elLocationTitleBase(service.slug, keyword, city);
 
   return buildMetadata({
-    // Keyword+city first so any truncation drops the hook, never the keyword.
-    title: fitTitleWithSuffix(`${keyword} ${city}`, elTitleSuffixes(service.slug)),
+    // Prefer short keyword when needed so truncation never drops the city.
+    title: fitTitleWithSuffix(titleBase, elTitleSuffixes(service.slug)),
     description: `${keyword} ${locative}: πακέτα ${priceHook}, SEO-ready παράδοση και τοπική στρατηγική.`,
     path: localizedPath('el', `/services/${service.slug}/${location.slug}`),
     hreflangPath: `/services/${service.slug}/${location.slug}`,

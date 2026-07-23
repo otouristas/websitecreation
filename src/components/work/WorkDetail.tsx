@@ -51,7 +51,7 @@ export function WorkDetail({ project, locale = 'en' }: WorkDetailProps) {
     .slice(0, 3);
 
   const articleSchema = generateArticleSchema({
-    headline: `${project.name} - ${isEl ? 'Case Study' : 'Case Study'}`,
+    headline: `${project.name} - ${isEl ? 'Μελέτη περίπτωσης' : 'Case Study'}`,
     description: isEl && project.summaryEl ? project.summaryEl : project.summary,
     datePublished: new Date().toISOString(),
     dateModified: new Date().toISOString(),
@@ -105,7 +105,7 @@ export function WorkDetail({ project, locale = 'en' }: WorkDetailProps) {
                   rel="noopener noreferrer"
                   className="btn btn-outline"
                 >
-                  {isEl ? 'Δείτε live site' : 'View live site'} ↗
+                  {isEl ? 'Δείτε τη ζωντανή ιστοσελίδα' : 'View live site'} ↗
                 </a>
                 <Link
                   href={localizedPath(isEl ? 'el' : 'en', `/get-started?project=${project.category}`)}
@@ -117,7 +117,7 @@ export function WorkDetail({ project, locale = 'en' }: WorkDetailProps) {
               {project.relatedUrls && project.relatedUrls.length > 0 ? (
                 <div className="mt-4 text-sm text-muted-foreground">
                   <span className="font-medium text-foreground">
-                    {isEl ? 'Σχετικά domains: ' : 'Related domains: '}
+                    {isEl ? 'Σχετικοί ιστότοποι: ' : 'Related domains: '}
                   </span>
                   {project.relatedUrls.map((u, i) => (
                     <span key={u}>
@@ -161,7 +161,7 @@ export function WorkDetail({ project, locale = 'en' }: WorkDetailProps) {
               </div>
             </div>
             <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-border shadow-lg">
-              <PortfolioThumbnail src={project.screenshot} alt={`${project.name} homepage`} />
+              <PortfolioThumbnail src={project.screenshot} alt={isEl ? `${project.name} - αρχική σελίδα` : `${project.name} homepage`} />
             </div>
           </div>
         </div>
@@ -202,15 +202,15 @@ export function WorkDetail({ project, locale = 'en' }: WorkDetailProps) {
 
           {(project.seoTitle || project.seoDescription) && (
             <div className="mb-10 rounded-xl border border-border bg-muted/30 p-6">
-              <h2 className="mb-4 text-xl font-bold">{isEl ? 'Live SEO snapshot' : 'Live SEO snapshot'}</h2>
+              <h2 className="mb-4 text-xl font-bold">{isEl ? 'Στιγμιότυπο SEO' : 'Live SEO snapshot'}</h2>
               {project.seoTitle && (
                 <p className="mb-2 text-sm">
-                  <strong>Title:</strong> {project.seoTitle}
+                  <strong>{isEl ? 'Τίτλος:' : 'Title:'}</strong> {project.seoTitle}
                 </p>
               )}
               {project.seoDescription && (
                 <p className="text-sm text-muted-foreground">
-                  <strong>Meta:</strong> {project.seoDescription}
+                  <strong>{isEl ? 'Meta περιγραφή:' : 'Meta:'}</strong> {project.seoDescription}
                 </p>
               )}
             </div>

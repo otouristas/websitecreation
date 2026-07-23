@@ -48,7 +48,7 @@ export function HomePageView({ locale }: { locale: SiteLocale }) {
       url: `${BASE_URL}/el`,
       logo: `${BASE_URL}/logo.png`,
       description:
-        'Γραφείο κατασκευής ιστοσελίδων και SEO για τον τουρισμό, ξενοδοχεία, rent-a-car και travel AI στην Ελλάδα και διεθνώς.',
+        'Γραφείο κατασκευής ιστοσελίδων και SEO για τον τουρισμό, ξενοδοχεία, ενοικίαση αυτοκινήτου και travel AI στην Ελλάδα και διεθνώς.',
     });
 
     return (

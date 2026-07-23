@@ -68,9 +68,9 @@ const EN_SEO_HUB_LINKS: { label: string; href: string }[] = [
   // Top international markets
   { label: "Web Design New York", href: "/en/services/website-creation/new-york-ny" },
   { label: "SEO Los Angeles", href: "/en/services/local-seo/los-angeles-ca" },
-  { label: "Web Design London", href: "/en/services/website-creation/london-uk" },
-  { label: "SEO Toronto", href: "/en/services/local-seo/toronto-ca" },
-  { label: "Web Design Sydney", href: "/en/services/website-creation/sydney-au" },
+  { label: "Web Design Athens", href: "/en/services/website-creation/athens-gr" },
+  { label: "SEO Thessaloniki", href: "/en/services/local-seo/thessaloniki-gr" },
+  { label: "Website Creation Thessaloniki", href: "/en/services/website-creation/thessaloniki-gr" },
   { label: "Hotel SEO", href: "/en/solutions/hotels" },
   { label: "Pricing & Packages", href: "/en/pricing" },
   { label: "All Locations", href: "/en/locations" },

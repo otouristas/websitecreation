@@ -3,7 +3,7 @@
 export const elShared = {
   footer: {
     tagline:
-      'Γραφείο κατασκευής ιστοσελίδων και SEO για τον τουρισμό - ξενοδοχεία, rent-a-car, εκδρομές και travel AI.',
+      'Γραφείο κατασκευής ιστοσελίδων και SEO για τον τουρισμό - ξενοδοχεία, ενοικίαση αυτοκινήτου, εκδρομές και travel AI.',
     agency: 'Υπηρεσίες',
     resources: 'Πόροι',
     company: 'Εταιρεία',
@@ -12,14 +12,14 @@ export const elShared = {
     websiteCreation: 'Κατασκευή ιστοσελίδας',
     pricing: 'Τιμές',
     work: 'Έργα & μελέτες περίπτωσης',
-    blog: 'Blog',
+    blog: 'Άρθρα',
     locations: 'Πόλεις & νησιά',
     contact: 'Επικοινωνία',
     about: 'Σχετικά με εμάς',
     getStarted: 'Ζητήστε προσφορά',
     privacy: 'Πολιτική απορρήτου',
     terms: 'Όροι χρήσης',
-    cookies: 'Cookies',
+    cookies: 'Πολιτική cookies',
     gdpr: 'GDPR',
     rights: 'Με επιφύλαξη παντός δικαιώματος.',
     payments: 'Δεχόμαστε',

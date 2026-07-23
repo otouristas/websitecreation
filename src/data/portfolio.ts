@@ -38,7 +38,7 @@ export const PORTFOLIO_CATEGORIES: Record<
   villa: { label: 'Villas & apartments', labelEl: 'Βίλες & διαμερίσματα' },
   tours: { label: 'Tours & travel', labelEl: 'Τουρισμός & εκδρομές' },
   transfers: { label: 'Transfers & VIP', labelEl: 'Μεταφορές & VIP' },
-  'travel-ai': { label: 'Travel AI', labelEl: 'Travel AI' },
+  'travel-ai': { label: 'Travel AI', labelEl: 'AI chatbot ταξιδιών' },
   restaurant: { label: 'Restaurants & cafes', labelEl: 'Εστιατόρια' },
   other: { label: 'Other', labelEl: 'Άλλα' },
 };

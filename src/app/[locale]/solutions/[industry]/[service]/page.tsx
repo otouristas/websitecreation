@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title,
     description:
       locale === 'el'
-        ? `Επαγγελματικό ${serviceName.toLowerCase()} για ${industry.name}. SEO-ready ιστοσελίδες, τοπική στρατηγική και γρήγορη παράδοση.`
+        ? `Επαγγελματικό ${serviceName} για ${industry.name}. SEO-ready ιστοσελίδες, τοπική στρατηγική και γρήγορη παράδοση.`
         : `Professional ${serviceName.toLowerCase()} for ${industry.name}. SEO-ready websites tailored to your industry.`,
     path: localizedPath(locale as SiteLocale, `/solutions/${industrySlug}/${serviceSlug}`),
     hreflangPath: `/solutions/${industrySlug}/${serviceSlug}`,

@@ -23,7 +23,7 @@ export function PortfolioGrid({ locale = 'en', limit = 12 }: PortfolioGridProps)
             </h2>
             <p className="mt-2 max-w-xl text-muted-foreground">
               {isEl
-                ? 'Ξενοδοχεία, rent-a-car, τουρισμός και travel AI - δείτε live ιστοσελίδες που φτιάξαμε.'
+                ? 'Ξενοδοχεία, ενοικίαση αυτοκινήτου, τουρισμός και AI chatbot ταξιδιών - δείτε ζωντανές ιστοσελίδες που φτιάξαμε.'
                 : 'Hotels, rent-a-car, tours and travel AI - live sites we designed, built and optimized.'}
             </p>
           </div>
@@ -43,7 +43,7 @@ export function PortfolioGrid({ locale = 'en', limit = 12 }: PortfolioGridProps)
                 <div className="relative aspect-[16/10] bg-gradient-to-br from-primary/20 to-muted overflow-hidden">
                   <PortfolioThumbnail
                     src={project.screenshot}
-                    alt={`${project.name} homepage`}
+                    alt={isEl ? `${project.name} - αρχική σελίδα` : `${project.name} homepage`}
                     className="transition-transform group-hover:scale-[1.02]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />

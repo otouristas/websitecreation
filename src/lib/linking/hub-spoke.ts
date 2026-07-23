@@ -137,6 +137,98 @@ export function getServiceHubRelatedPaths(serviceSlug: string): { path: string; 
     ];
 }
 
+/** Blog slug → commercial / money paths for RelatedPages (locale-agnostic paths). */
+export const BLOG_MONEY_LINKS: Record<
+    string,
+    { path: string; titleEn: string; titleEl: string }[]
+> = {
+    'kataskevi-eshop-odigos': [
+        { path: '/services/eshop-woocommerce', titleEn: 'WooCommerce e-shop', titleEl: 'Κατασκευή e-shop WooCommerce' },
+        { path: '/services/eshop-seo', titleEn: 'E-shop SEO', titleEl: 'SEO για e-shop' },
+        { path: '/pricing', titleEn: 'Pricing & packages', titleEl: 'Τιμές & πακέτα' },
+    ],
+    'ecommerce-website-cost-guide': [
+        { path: '/services/eshop-woocommerce', titleEn: 'WooCommerce e-shop', titleEl: 'Κατασκευή e-shop WooCommerce' },
+        { path: '/pricing', titleEn: 'Pricing & packages', titleEl: 'Τιμές & πακέτα' },
+    ],
+    'poso-kostizei-to-seo': [
+        { path: '/pricing', titleEn: 'SEO pricing', titleEl: 'Τιμές SEO' },
+        { path: '/services/seo-audits', titleEn: 'SEO services', titleEl: 'Υπηρεσίες SEO' },
+        { path: '/services/local-seo', titleEn: 'Local SEO', titleEl: 'Τοπικό SEO' },
+    ],
+    'how-much-does-seo-cost': [
+        { path: '/pricing', titleEn: 'SEO pricing', titleEl: 'Τιμές SEO' },
+        { path: '/services/seo-audits', titleEn: 'SEO audits', titleEl: 'Υπηρεσίες SEO' },
+        { path: '/services/local-seo', titleEn: 'Local SEO', titleEl: 'Τοπικό SEO' },
+    ],
+    'poso-kostizei-mia-istoselida': [
+        { path: '/pricing', titleEn: 'Website pricing', titleEl: 'Τιμές ιστοσελίδας' },
+        { path: '/services/website-creation', titleEn: 'Website creation', titleEl: 'Κατασκευή ιστοσελίδων' },
+        { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
+    ],
+    'how-much-does-a-website-cost': [
+        { path: '/pricing', titleEn: 'Website pricing', titleEl: 'Τιμές ιστοσελίδας' },
+        { path: '/services/website-creation', titleEn: 'Website creation', titleEl: 'Κατασκευή ιστοσελίδων' },
+        { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
+    ],
+    'seo-gia-xenodoxeia': [
+        { path: '/solutions/hotels', titleEn: 'Hotel solutions', titleEl: 'Λύσεις για ξενοδοχεία' },
+        { path: '/services/local-seo', titleEn: 'Local SEO', titleEl: 'Τοπικό SEO' },
+        { path: '/services/ai-visibility', titleEn: 'AI visibility', titleEl: 'Ορατότητα σε AI' },
+    ],
+    'seo-gia-xenodoxeia-odigos-2026': [
+        { path: '/solutions/hotels', titleEn: 'Hotel solutions', titleEl: 'Λύσεις για ξενοδοχεία' },
+        { path: '/services/ai-visibility', titleEn: 'AI visibility', titleEl: 'Ορατότητα σε AI' },
+        { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
+    ],
+    'hotel-seo-guide': [
+        { path: '/solutions/hotels', titleEn: 'Hotel solutions', titleEl: 'Λύσεις για ξενοδοχεία' },
+        { path: '/services/local-seo', titleEn: 'Local SEO', titleEl: 'Τοπικό SEO' },
+        { path: '/services/ai-visibility', titleEn: 'AI visibility', titleEl: 'Ορατότητα σε AI' },
+    ],
+    'seo-for-hotels-guide': [
+        { path: '/solutions/hotels', titleEn: 'Hotel solutions', titleEl: 'Λύσεις για ξενοδοχεία' },
+        { path: '/services/ai-visibility', titleEn: 'AI visibility', titleEl: 'Ορατότητα σε AI' },
+        { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
+    ],
+    'geo-agency-ellada': [
+        { path: '/services/ai-visibility', titleEn: 'AI visibility (GEO/AEO)', titleEl: 'AI Visibility (GEO/AEO)' },
+        { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
+        { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
+    ],
+    'ai-seo-agency-geo-aeo': [
+        { path: '/services/ai-visibility', titleEn: 'AI visibility (GEO/AEO)', titleEl: 'AI Visibility (GEO/AEO)' },
+        { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
+        { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
+    ],
+    'ai-seo-agency-geo-aeo-el': [
+        { path: '/services/ai-visibility', titleEn: 'AI visibility (GEO/AEO)', titleEl: 'AI Visibility (GEO/AEO)' },
+        { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
+        { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
+    ],
+    'what-is-seo': [
+        { path: '/services/seo-audits', titleEn: 'SEO services', titleEl: 'Υπηρεσίες SEO' },
+        { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
+        { path: '/glossary', titleEn: 'SEO glossary', titleEl: 'Γλωσσάρι SEO' },
+    ],
+    'seo-gia-arxarious': [
+        { path: '/services/seo-audits', titleEn: 'SEO services', titleEl: 'Υπηρεσίες SEO' },
+        { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
+        { path: '/glossary', titleEn: 'SEO glossary', titleEl: 'Γλωσσάρι SEO' },
+    ],
+    'seo-for-beginners': [
+        { path: '/services/seo-audits', titleEn: 'SEO services', titleEl: 'Υπηρεσίες SEO' },
+        { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
+        { path: '/glossary', titleEn: 'SEO glossary', titleEl: 'Γλωσσάρι SEO' },
+    ],
+};
+
+export function getBlogMoneyLinks(
+    slug: string,
+): { path: string; titleEn: string; titleEl: string }[] {
+    return BLOG_MONEY_LINKS[slug] ?? [];
+}
+
 /**
  * Generate breadcrumb path for a page (paths are locale-prefixed).
  */
