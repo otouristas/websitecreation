@@ -7,6 +7,15 @@ author: AnotherSEOGuru Editorial Team
 category: Local SEO
 categoryColor: bg-blue-100 text-blue-700
 pillar: search-console-mastery
+faq:
+  - question: What is local SEO?
+    answer: Local SEO is how you rank in Google’s map pack and local results for “near me” and city searches. It centers on Google Business Profile, NAP consistency, reviews, local pages, and citations.
+  - question: Does local SEO still work?
+    answer: Yes. Map pack and “near me” searches remain high-intent. Complete profiles, recent reviews, and unique location pages still beat generic national sites for local demand.
+  - question: How much does local SEO cost?
+    answer: Retainers depend on competition and number of locations. Most small businesses start with a focused GBP + citations + location pages package, then scale monthly content and reviews.
+  - question: How to do local SEO for beginners?
+    answer: Claim and fully complete Google Business Profile, match NAP everywhere, collect recent reviews, build one strong location/service page, and track calls or directions.
 ---
 
 > "I'm the best plumber in town, but nobody calls me." We hear this every single day. The problem isn't your skill — it's your visibility. In 2026, if you aren't in the Google "Map Pack", you don't exist. This guide is your roadmap out of obscurity — whether you run a home services crew, a boutique hotel in the Cyclades, or a rent-a-car fleet at the airport.
@@ -116,6 +125,18 @@ Watch [clicks](/glossary?term=clicks), [impressions](/glossary?term=impressions)
 
 ## FAQ
 
+### What is local SEO?
+
+Local SEO is the practice of ranking in map packs and local organic results for “near me” and city queries. It centers on Google Business Profile, NAP consistency, reviews, local pages, and citations. For done-for-you help, see [local SEO services](/en/services/local-seo).
+
+### Does local SEO still work in 2026?
+
+Yes. Map pack and “near me” searches remain high-intent. Businesses with complete profiles, strong reviews, and unique location pages still win customers over generic national sites.
+
+### How much does local SEO cost?
+
+Local SEO retainers vary by market competition and number of locations. Many small businesses start with a focused GBP + citations + location pages package, then scale monthly content and reviews. Related: [How much does SEO cost?](/en/blog/how-much-does-seo-cost)
+
 ### How long does local SEO take to show results?
 
 Most businesses see measurable map-pack movement within 8–12 weeks when GBP, citations, and on-page signals are aligned. Highly competitive markets (major metros, top island destinations) may take 4–6 months. Quick wins — category fixes, photo uploads, review velocity — often show within 30 days.
@@ -142,4 +163,4 @@ Paid leads can fill gaps short-term, but you don't own the relationship or the d
 
 You can manage GBP, citations, reviews, and website content yourself — or work with a team that builds local visibility systems for home services, hotels, and rent-a-car brands every week.
 
-[Get started — tell us about your business](/get-started) · [See our work](/work) · [Read the GBP masterclass](/blog/google-business-profile-masterclass)
+[Get started — tell us about your business](/get-started) · [Local SEO services](/en/services/local-seo) · [See our work](/work) · [Read the GBP masterclass](/blog/google-business-profile-masterclass) · [What is SEO?](/en/blog/what-is-seo)

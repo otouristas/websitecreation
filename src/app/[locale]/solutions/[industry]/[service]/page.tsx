@@ -33,10 +33,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const svcEl = locale === 'el' ? getServiceEl(serviceSlug) : null;
   const serviceName = svcEl?.name ?? baseService.name;
 
+  // Industry first so truncation in buildMetadata keeps uniqueness across services.
   const title =
     locale === 'el'
-      ? `${serviceName} για ${industry.name}`
-      : `${serviceName} for ${industry.name}`;
+      ? `${industry.name}: ${serviceName}`
+      : `${industry.name}: ${serviceName}`;
 
   return buildMetadata({
     title,

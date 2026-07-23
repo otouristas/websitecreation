@@ -483,6 +483,42 @@ export const getAllLocationSlugs = (): string[] => allLocations.map((l) => l.slu
 export const getTier1LocationSlugs = (): string[] =>
   allLocations.filter((l) => l.tier === 1).map((l) => l.slug);
 
+/**
+ * EN service×location index allowlist: curated US metros only.
+ * All Greek cities stay indexed; everything else stays crawlable but noindex.
+ */
+const SERVICE_LOCATION_INDEX_ALLOWLIST = new Set([
+  'new-york-ny',
+  'los-angeles-ca',
+  'chicago-il',
+  'miami-fl',
+  'san-francisco-ca',
+  'austin-tx',
+  'houston-tx',
+  'seattle-wa',
+  'boston-ma',
+  'atlanta-ga',
+  'dallas-tx',
+  'denver-co',
+  'philadelphia-pa',
+  'washington-dc',
+  'phoenix-az',
+]);
+
+/**
+ * Index all Greek cities + curated US metros. Thin tier-1 / intl pages
+ * stay live for crawl but out of the index to protect crawl budget.
+ */
+export function shouldIndexServiceLocation(location: Location): boolean {
+  if (location.countryCode === 'GR') return true;
+  return SERVICE_LOCATION_INDEX_ALLOWLIST.has(location.slug);
+}
+
+/** Slugs safe to list in EN service×location sitemaps. */
+export function getIndexableServiceLocationSlugs(): string[] {
+  return allLocations.filter(shouldIndexServiceLocation).map((l) => l.slug);
+}
+
 export const getLocationsByCountry = (countryCode: string): Location[] =>
   allLocations.filter((l) => l.countryCode === countryCode);
 

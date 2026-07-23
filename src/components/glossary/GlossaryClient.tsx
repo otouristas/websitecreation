@@ -39,8 +39,12 @@ function getTotalTermCount(): number {
   return glossaryCategories.reduce((acc, cat) => acc + cat.terms.length, 0);
 }
 
-function RelatedResourceLink(props: { readonly title: string; readonly url: string }) {
-  const href = resolveMarketingPath(props.url);
+function RelatedResourceLink(props: {
+  readonly title: string;
+  readonly url: string;
+  readonly locale?: SiteLocale;
+}) {
+  const href = resolveMarketingPath(props.url, props.locale ?? "en");
   const isExternal = href.startsWith("http");
   const className =
     "flex items-center justify-between p-3 rounded-lg border border-border hover:border-primary/50 hover:bg-muted/50 text-left w-full";
@@ -293,7 +297,12 @@ export function GlossaryClient({ locale = "en" }: { locale?: SiteLocale }) {
                 <h2 className="text-xl font-semibold mb-3 text-foreground">{ui.relatedResources}</h2>
                 <div className="grid gap-2">
                   {currentTerm.term.relatedLinks.map((link) => (
-                    <RelatedResourceLink key={`${link.title}-${link.url}`} title={link.title} url={link.url} />
+                    <RelatedResourceLink
+                      key={`${link.title}-${link.url}`}
+                      title={link.title}
+                      url={link.url}
+                      locale={locale}
+                    />
                   ))}
                 </div>
               </section>

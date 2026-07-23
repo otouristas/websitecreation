@@ -83,7 +83,9 @@ export default async function ServiceLocationPage({ params }: PageProps) {
         : formatLocationName(location);
 
     const cityName = isEl && location.cityLocal ? location.cityLocal : location.city;
-    const cityLocative = isEl ? getGreekLocative(locationSlug) : `in ${cityState}`;
+    const cityLocative = isEl
+        ? getGreekLocative(locationSlug, cityName)
+        : `in ${cityState}`;
     
     const stateFull =
         location.countryCode === 'US'
@@ -96,9 +98,15 @@ export default async function ServiceLocationPage({ params }: PageProps) {
     const relatedServices = services.filter((s) => s.slug !== serviceSlug).slice(0, 3);
     
     // Breadcrumbs translated
-    const breadcrumbs = getServiceLocationBreadcrumbs(serviceName, serviceSlug, cityName, locationSlug);
+    const breadcrumbs = getServiceLocationBreadcrumbs(
+        serviceName,
+        serviceSlug,
+        cityName,
+        locationSlug,
+        locale as SiteLocale,
+    );
 
-    const pageUrl = `${BASE_URL}/services/${serviceSlug}/${locationSlug}`;
+    const pageUrl = `${BASE_URL}${localizedPath(locale as SiteLocale, `/services/${serviceSlug}/${locationSlug}`)}`;
 
     const t = isEl ? {
         heroTitle: `${serviceName} ${cityLocative}`,
@@ -239,7 +247,7 @@ export default async function ServiceLocationPage({ params }: PageProps) {
                             )}
 
                             <div className="flex flex-wrap gap-4">
-                                <Link href={lp("/contact")} className="btn btn-gradient">
+                                <Link href={lp("/get-started")} className="btn btn-gradient">
                                     {t.getQuote}
                                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -380,7 +388,7 @@ export default async function ServiceLocationPage({ params }: PageProps) {
                         <p className="text-white/80 mb-8">
                             {t.ctaDesc}
                         </p>
-                        <Link href={lp("/contact")} className="btn bg-white text-primary hover:bg-white/90">
+                        <Link href={lp("/get-started")} className="btn bg-white text-primary hover:bg-white/90">
                             {t.ctaBtn}
                         </Link>
                     </div>

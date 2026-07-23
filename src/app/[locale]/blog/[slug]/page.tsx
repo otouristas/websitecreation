@@ -1,10 +1,11 @@
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
 import { MarkdownBody } from "@/components/blog/markdown-body";
 import RelatedPages from "@/components/seo/RelatedPages";
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import {
   extractFaqFromMarkdown,
   getAllBlogPosts,
@@ -44,8 +45,8 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
     return {};
   }
   if (post.locale !== locale) {
-    // Wrong-locale URL renders a 404 — never advertise it to crawlers.
-    return { robots: { index: false, follow: false } };
+    // Wrong-locale URL redirects to the post's real locale — never index the bad URL.
+    return { robots: { index: false, follow: true } };
   }
   const counterpart = getTranslationCounterpart(post);
   const languages = counterpart
@@ -70,7 +71,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     notFound();
   }
   if (post.locale !== locale) {
-    notFound();
+    permanentRedirect(localizedPath(post.locale, `/blog/${post.slug}`));
   }
   const lp = (path: string) => localizedPath(locale as SiteLocale, path);
   const isEl = locale === "el";
@@ -85,12 +86,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     inLanguage: post.locale,
     mainEntityOfPage: `https://anotherseoguru.com${lp(`/blog/${post.slug}`)}`,
   });
+  const breadcrumbItems = [
+    { name: isEl ? "Αρχική" : "Home", url: lp("/") },
+    { name: "Blog", url: lp("/blog") },
+    { name: post.title, url: lp(`/blog/${post.slug}`) },
+  ];
   const breadcrumbSchema = generateBreadcrumbSchema({
-    items: [
-      { name: isEl ? "Αρχική" : "Home", url: lp("/") },
-      { name: "Blog", url: lp("/blog") },
-      { name: post.title, url: lp(`/blog/${post.slug}`) },
-    ],
+    items: breadcrumbItems,
   });
   // Prefer explicit frontmatter FAQ; otherwise derive from the body's FAQ section.
   const faqItems =
@@ -114,6 +116,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       <main className="main-below-header pb-20">
         <article className="container max-w-[var(--marketing-container-narrow)]">
           <header className="mb-12">
+            <Breadcrumbs items={breadcrumbItems} className="mb-6" />
             {post.isPillarHub ? (
               <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
                 Content pillar

@@ -2,10 +2,11 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { FAQSection, SchemaMarkup } from "@/components/seo";
 import { PLATFORM_TOOLS, getPlatformToolBySlug } from "@/data/platform-tools";
 import { getAppPath } from "@/lib/app-links";
 import { isValidLocale, localizedPath, type SiteLocale } from "@/lib/i18n/locale";
-import { buildMetadata } from "@/lib/seo";
+import { buildMetadata, generateFAQSchema } from "@/lib/seo";
 
 interface ToolPageProps {
   params: Promise<{ locale: string; slug: string }>;
@@ -40,10 +41,16 @@ export default async function PlatformToolPage({ params }: ToolPageProps) {
   }
   const lp = (path: string) => localizedPath(locale as SiteLocale, path);
   const appUrl = getAppPath(tool.appPath);
+  const faqItems = (tool.faqs ?? []).map((f) => ({
+    question: f.question,
+    answer: f.answer,
+  }));
+  const faqSchema = faqItems.length > 0 ? generateFAQSchema({ faqs: faqItems }) : null;
 
   return (
     <>
       <Header />
+      {faqSchema ? <SchemaMarkup schemas={[faqSchema]} /> : null}
       <main className="main-below-header pb-16">
         <div className="container max-w-3xl">
           <nav className="text-sm text-muted-foreground mb-6">
@@ -51,8 +58,8 @@ export default async function PlatformToolPage({ params }: ToolPageProps) {
               Home
             </Link>
             <span className="mx-2">/</span>
-            <Link href={lp("/seo-platform")} className="hover:text-primary">
-              SEO platform
+            <Link href={lp("/tools")} className="hover:text-primary">
+              SEO tools
             </Link>
             <span className="mx-2">/</span>
             <span className="text-foreground">{tool.title}</span>
@@ -67,18 +74,28 @@ export default async function PlatformToolPage({ params }: ToolPageProps) {
             >
               Open in platform
             </a>
-            <Link href={lp("/seo-platform")} className="btn btn-outline px-6 py-3">
-              All product modules
+            <Link href={lp("/services/seo-audits")} className="btn btn-outline px-6 py-3">
+              SEO audit services
             </Link>
           </div>
           <p className="mt-10 text-sm text-muted-foreground">
-            The interactive tool runs on our secure app subdomain. Agency services for done-for-you SEO and web design
-            are still available on this site - see{" "}
+            The interactive tool runs on our secure app subdomain. Need done-for-you help? See{" "}
             <Link href={lp("/services")} className="text-primary hover:underline">
-              services
+              SEO services
+            </Link>
+            ,{" "}
+            <Link href={lp("/services/local-seo")} className="text-primary hover:underline">
+              local SEO
+            </Link>
+            , or our{" "}
+            <Link href={lp("/blog/what-is-seo")} className="text-primary hover:underline">
+              SEO pillar guide
             </Link>
             .
           </p>
+          {faqItems.length > 0 ? (
+            <FAQSection faqs={faqItems} focusKeyword={tool.primaryKeyword} className="mt-4" />
+          ) : null}
         </div>
       </main>
       <Footer />

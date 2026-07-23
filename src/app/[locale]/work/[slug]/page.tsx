@@ -20,8 +20,9 @@ export async function generateMetadata({
   if (!isValidLocale(locale)) return {};
   const project = getWorkProject(slug);
   if (!project) return {};
+  const caseStudyLabel = locale === 'el' ? 'Μελέτη περίπτωσης' : 'Case Study';
   return buildMetadata({
-    title: `${project.name} - Case Study`,
+    title: `${project.name} - ${caseStudyLabel}`,
     description: project.summary,
     path: localizedPath(locale as SiteLocale, `/work/${slug}`),
     hreflangPath: `/work/${slug}`,

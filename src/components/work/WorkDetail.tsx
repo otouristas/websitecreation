@@ -7,10 +7,12 @@ import {
 } from '@/data/portfolio';
 import { PortfolioThumbnail } from '@/components/landing/PortfolioThumbnail';
 import SchemaMarkup from '@/components/seo/SchemaMarkup';
-import { generateArticleSchema } from '@/lib/seo/schema';
+import Breadcrumbs from '@/components/seo/Breadcrumbs';
+import { generateArticleSchema, generateBreadcrumbSchema, combineSchemas } from '@/lib/seo/schema';
 import { buildProjectCaseStudy } from '@/lib/portfolio-case-study';
 import { getServiceEl } from '@/data/services-i18n';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
+import { generateBreadcrumbs } from '@/lib/linking';
 
 interface WorkDetailProps {
   project: PortfolioProject;
@@ -60,23 +62,21 @@ export function WorkDetail({ project, locale = 'en' }: WorkDetailProps) {
       height: 630,
     },
   });
+  const breadcrumbs = generateBreadcrumbs(
+    [
+      { name: isEl ? 'Έργα' : 'Work', url: '/work' },
+      { name: project.name, url: `/work/${project.slug}` },
+    ],
+    locale,
+  );
+  const breadcrumbSchema = generateBreadcrumbSchema({ items: breadcrumbs });
 
   return (
     <>
-      <SchemaMarkup schemas={[articleSchema]} />
+      <SchemaMarkup schemas={combineSchemas(articleSchema, breadcrumbSchema)} />
       <section className="section gradient-hero">
         <div className="container">
-          <nav className="mb-6 flex items-center gap-2 text-sm text-muted-foreground">
-            <Link href={lp('/')} className="hover:text-primary">
-              {isEl ? 'Αρχική' : 'Home'}
-            </Link>
-            <span>/</span>
-            <Link href={lp('/work')} className="hover:text-primary">
-              {isEl ? 'Έργα' : 'Work'}
-            </Link>
-            <span>/</span>
-            <span className="text-foreground">{project.name}</span>
-          </nav>
+          <Breadcrumbs items={breadcrumbs} className="mb-6" />
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <div>
               <span className="mb-3 inline-block rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
@@ -114,6 +114,26 @@ export function WorkDetail({ project, locale = 'en' }: WorkDetailProps) {
                   {isEl ? 'Ζητήστε παρόμοιο έργο' : 'Get a similar project'}
                 </Link>
               </div>
+              {project.relatedUrls && project.relatedUrls.length > 0 ? (
+                <div className="mt-4 text-sm text-muted-foreground">
+                  <span className="font-medium text-foreground">
+                    {isEl ? 'Σχετικά domains: ' : 'Related domains: '}
+                  </span>
+                  {project.relatedUrls.map((u, i) => (
+                    <span key={u}>
+                      {i > 0 ? ', ' : ''}
+                      <a
+                        href={u}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline underline-offset-4 hover:text-primary"
+                      >
+                        {u.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')}
+                      </a>
+                    </span>
+                  ))}
+                </div>
+              ) : null}
               <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 rounded-xl border border-border/80 bg-card/60 px-4 py-3 text-sm text-muted-foreground">
                 <span>
                   {isEl ? "Σε συνεργασία με την " : "In collaboration with "}

@@ -43,37 +43,48 @@ export function finalizeDescription(
 ): string {
   let d = text.replace(/\s+/g, ' ').trim();
 
+  // Collapse duplicated CTA fragments from layered builders.
+  d = d
+    .replace(/(Ζητήστε δωρεάν προσφορά[^.]*\.)(\s*Ζητήστε[^.]*)+/gi, '$1')
+    .replace(/(Get a free quote[^.]*\.)(\s*Free quote[^.]*)+/gi, '$1')
+    .replace(/\s+/g, ' ')
+    .trim();
+
   if (d.length > maxLen) {
     d = smartTruncate(d, maxLen - 1);
     if (!d.endsWith('.')) d += '.';
-    return d;
+    return d.slice(0, maxLen);
   }
 
   if (d.length < minLen) {
     const isGreek = /[α-ωΑ-Ωίϊΐόάέύϋΰήώ]/i.test(d);
+    const alreadyHasCta = /προσφορά|quote|trial/i.test(d);
     const pads = isGreek
-      ? [
-          ' Ζητήστε δωρεάν προσφορά σήμερα.',
-          ' Σχεδιασμένο για Google και AI αναζήτηση.',
-          ' Κορυφαία ταχύτητα και απόδοση ιστοσελίδας.',
-        ]
-      : [
-          ' Free quote or 7-day platform trial.',
-          ' Built for Google & AI search visibility.',
-          ' Trusted by 500+ marketing teams worldwide.',
-        ];
+      ? alreadyHasCta
+        ? [' Τοπική στρατηγική και γρήγορη παράδοση.', ' SEO-ready από την πρώτη μέρα.']
+        : [' Ζητήστε δωρεάν προσφορά.', ' Τοπική στρατηγική και γρήγορη παράδοση.']
+      : alreadyHasCta
+        ? [' Built for Google and AI search.', ' Transparent pricing, fast delivery.']
+        : [' Free quote available.', ' Built for Google and AI search.'];
     for (const pad of pads) {
       if (d.length >= minLen) break;
       const candidate = d + pad;
-      d = candidate.length <= maxLen ? candidate : smartTruncate(candidate, maxLen - 1) + '.';
+      if (candidate.length <= maxLen) {
+        d = candidate;
+      } else {
+        d = smartTruncate(candidate, maxLen - 1);
+        if (!d.endsWith('.')) d += '.';
+        break;
+      }
     }
   }
 
   if (d.length > maxLen) {
-    d = smartTruncate(d, maxLen - 1) + '.';
+    d = smartTruncate(d, maxLen - 1);
+    if (!d.endsWith('.')) d += '.';
   }
 
-  return d;
+  return d.slice(0, maxLen);
 }
 
 export function buildMetaDescription(input: DescriptionInput): string {

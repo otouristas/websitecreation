@@ -266,3 +266,16 @@ export const getIndustryBySlug = (slug: string): Industry | undefined => {
 export const getAllIndustrySlugs = (): string[] => {
     return industries.map((i) => i.slug);
 };
+
+/** Tourism niches prioritized for industry×service sitemap spokes. */
+export const TOURISM_INDUSTRY_SLUGS = [
+    'hotels',
+    'restaurants',
+    'rent-a-car',
+    'tour-operators',
+    'villas-apartments',
+    'travel-agencies',
+    'travel-ai-chatbots',
+] as const;
+
+export type TourismIndustrySlug = (typeof TOURISM_INDUSTRY_SLUGS)[number];

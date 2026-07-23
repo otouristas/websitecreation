@@ -182,3 +182,13 @@ Yes - we build and optimise websites for businesses across Greece (Athens, Thess
 - **Είστε SEO εταιρεία ή λογισμικό;** - both: GSC-native SEO platform + agency services (web design, τοπικό SEO, AEO).
 - **Σε ποιες πόλεις δραστηριοποιείστε;** - Greece-wide + international; list Tier-1 Greek cities and link to `/el/locations`.
 - **Προσφέρετε διαφανή τιμολόγηση;** - yes; link to pricing block (answers `seo τιμες`/`πακετα seo` intent).
+
+---
+
+## EN SEO Hub (US) — full PAA bank
+
+Copy-ready EN answers for hubs H1–H8 (pillar, keyword research, tools, services, local SEO, audit, technical, on/off-page) live in:
+
+**[`faq-aeo-en-seo-hub.md`](./faq-aeo-en-seo-hub.md)**
+
+Wire into `src/data/service-faq-data.ts`, blog `faq:` frontmatter, and tool landings. Research map: [`en-seo-hub-ahrefs-2026-07-23.md`](./en-seo-hub-ahrefs-2026-07-23.md).

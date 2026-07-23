@@ -29,7 +29,7 @@
 
   /* Utility Colors */
   --muted: 210 20% 96%;
-  --muted-foreground: 215 16% 47%;
+  --muted-foreground: 215 20% 38%;
 
   --success: 142 76% 36%;
   --success-foreground: 0 0% 100%;
@@ -679,6 +679,15 @@ body {
     transparent 70%
   );
   filter: blur(48px);
+}
+
+/* Hide decorative orbs/blur on mobile so they cannot steal LCP from the hero image. */
+@media (max-width: 767px) {
+  .asg-paddle-orb-primary,
+  .asg-paddle-orb-small,
+  .asg-paddle-grain-blur {
+    display: none !important;
+  }
 }
 
 .dark .asg-paddle-orb-primary {

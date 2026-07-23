@@ -27,10 +27,9 @@ export function ResultsBand({ locale = 'en' }: { locale?: SiteLocale }) {
             </div>
             <dl className="grid grid-cols-2 gap-6 sm:grid-cols-4">
               {stats.map((s) => (
-                <div key={s.label} className="text-center sm:text-left">
-                  <dt className="sr-only">{s.label}</dt>
+                <div key={s.label} className="flex flex-col-reverse text-center sm:text-left">
+                  <dt className="mt-1 text-sm text-primary-foreground/90">{s.label}</dt>
                   <dd className="text-4xl font-black tracking-tight sm:text-5xl">{s.value}</dd>
-                  <p className="mt-1 text-sm text-primary-foreground/80">{s.label}</p>
                 </div>
               ))}
             </dl>

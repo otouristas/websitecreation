@@ -14,12 +14,22 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/features',
-        destination: '/platform/features',
+        destination: '/en/platform/features',
         permanent: true,
       },
       {
         source: '/seo-platform',
-        destination: '/platform',
+        destination: '/en/platform',
+        permanent: true,
+      },
+      {
+        source: '/:locale(en|el)/seo-platform',
+        destination: '/:locale/platform',
+        permanent: true,
+      },
+      {
+        source: '/:locale(en|el)/seo-platform/:path*',
+        destination: '/:locale/platform/:path*',
         permanent: true,
       },
       {
@@ -89,7 +99,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/status',
-        destination: '/contact',
+        destination: '/en/contact',
         permanent: false,
       },
     ];
@@ -119,9 +129,41 @@ const nextConfig: NextConfig = {
     root: __dirname,
   },
 
-  // Cache headers for programmatic pages
+  // Cache headers for programmatic pages + sitewide security headers
   async headers() {
+    const securityHeaders = [
+      { key: 'X-Content-Type-Options', value: 'nosniff' },
+      { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
+      { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
+      {
+        key: 'Strict-Transport-Security',
+        value: 'max-age=63072000; includeSubDomains; preload',
+      },
+      {
+        key: 'Cross-Origin-Opener-Policy',
+        value: 'same-origin-allow-popups',
+      },
+      {
+        key: 'Content-Security-Policy',
+        value: [
+          "default-src 'self'",
+          "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com https://vitals.vercel-insights.com https://www.googletagmanager.com https://www.google-analytics.com",
+          "style-src 'self' 'unsafe-inline'",
+          "img-src 'self' data: blob: https:",
+          "font-src 'self' data:",
+          "connect-src 'self' https://va.vercel-scripts.com https://vitals.vercel-insights.com https://formspree.io https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com",
+          "frame-ancestors 'self'",
+          "base-uri 'self'",
+          "form-action 'self' https://formspree.io",
+        ].join('; '),
+      },
+    ];
+
     return [
+      {
+        source: '/:path*',
+        headers: securityHeaders,
+      },
       {
         // Service pages
         source: '/services/:service',

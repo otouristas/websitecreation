@@ -5,13 +5,13 @@ export const elHome = {
   langSwitch: 'English homepage',
 
   hero: {
-    badge: 'Ιστοσελίδες τουρισμού · Ξενοδοχεία · Ενοικίαση αυτοκινήτου · AI',
-    h1Line1: 'Ιστοσελίδες που φέρνουν κρατήσεις',
-    h1Line2: 'SEO · GEO · AEO · AI chatbots',
+    badge: 'AnotherSEOGuru · Ιστοσελίδες τουρισμού · SEO · GEO/AEO',
+    h1Line1: 'AnotherSEOGuru',
+    h1Line2: 'Ιστοσελίδες που φέρνουν κρατήσεις & κατατάξεις',
     sub:
-      'Σχεδιάζουμε και υλοποιούμε ιστοσελίδες για ξενοδοχεία, rent-a-car και ταξιδιωτικές επιχειρήσεις - με πλήρες SEO, GEO/AEO και AI chatbots.',
+      'Κατασκευή ιστοσελίδων, e-shop και SEO για ξενοδοχεία, rent-a-car και τοπικές επιχειρήσεις — με GEO/AEO και διαφανείς τιμές σε €.',
     proof:
-      '55+ ολοκληρωμένα έργα σε Κυκλάδες, Κρήτη, Ηνωμένο Βασίλειο, ΗΠΑ, Καναδά και Ευρώπη. Από τη Google μέχρι τις απαντήσεις των LLM.',
+      '70+ ολοκληρωμένα έργα σε Κυκλάδες, Κρήτη, Ηνωμένο Βασίλειο, ΗΠΑ, Καναδά και Ευρώπη. Από τη Google μέχρι τις απαντήσεις των LLM.',
     ctaQuote: 'Ζητήστε προσφορά',
     ctaWork: 'Δείτε τα έργα μας',
     ctaContact: 'Επικοινωνία',
@@ -21,7 +21,7 @@ export const elHome = {
     poweredBy: 'Τεχνολογίες',
     stats: {
       projects: 'Έργα',
-      projectsVal: '55+',
+      projectsVal: '70+',
       markets: 'Αγορές',
       marketsVal: '5',
       languages: 'Γλώσσες',

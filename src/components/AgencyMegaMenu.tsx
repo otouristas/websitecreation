@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type ReactElement } from "react";
+import { useEffect, useRef, useState, type ReactElement } from "react";
 import Link from "next/link";
 import {
   ChevronDown,
@@ -60,23 +60,53 @@ const SOLUTION_ITEMS: { slug: string; en: string; el: string }[] = [
 
 export function AgencyMegaMenu({ locale, label }: { locale: SiteLocale; label: string }): ReactElement {
   const [open, setOpen] = useState(false);
+  const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const isEl = locale === "el";
   const lp = (path: string) => localizedPath(locale, path);
   const chips = getTrustChips(locale);
 
+  function openMenu(): void {
+    if (closeTimerRef.current !== null) {
+      clearTimeout(closeTimerRef.current);
+      closeTimerRef.current = null;
+    }
+    setOpen(true);
+  }
+
+  function scheduleClose(): void {
+    if (closeTimerRef.current !== null) clearTimeout(closeTimerRef.current);
+    closeTimerRef.current = setTimeout(() => {
+      setOpen(false);
+      closeTimerRef.current = null;
+    }, 150);
+  }
+
+  useEffect(
+    () => () => {
+      if (closeTimerRef.current !== null) clearTimeout(closeTimerRef.current);
+    },
+    [],
+  );
+
   return (
-    <div className="static" onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
+    <div className="relative" onMouseEnter={openMenu} onMouseLeave={scheduleClose}>
       <button
         type="button"
         className="inline-flex items-center gap-0.5 rounded-lg px-1 py-1 text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
         aria-expanded={open}
+        aria-haspopup="true"
       >
         {label}
         <ChevronDown className={`h-4 w-4 transition-transform ${open ? "rotate-180" : ""}`} />
       </button>
       {open ? (
-        <div className="absolute left-0 right-0 top-full z-[70] px-4 pt-2">
-          <div className="mx-auto max-w-[1200px] overflow-hidden rounded-3xl border border-border/80 bg-background/95 shadow-[0_30px_70px_-20px_hsl(217_91%_60%_/_0.25)] backdrop-blur-xl dark:shadow-[0_30px_70px_-20px_hsl(0_0%_0%_/_0.55)]">
+        <div className="pointer-events-none fixed inset-x-0 top-[var(--site-header-height)] z-[70]">
+          <div
+            className="pointer-events-auto mx-auto max-w-[1200px] px-4 pt-1"
+            onMouseEnter={openMenu}
+            onMouseLeave={scheduleClose}
+          >
+            <div className="overflow-hidden rounded-3xl border border-border/80 bg-background/95 shadow-[0_30px_70px_-20px_hsl(217_91%_60%_/_0.25)] backdrop-blur-xl dark:shadow-[0_30px_70px_-20px_hsl(0_0%_0%_/_0.55)]">
             <div className="grid gap-0 lg:grid-cols-[1fr_1fr_0.8fr]">
               {/* Services (2 columns) */}
               <div className="col-span-2 grid grid-cols-2 gap-1 p-5">
@@ -93,6 +123,7 @@ export function AgencyMegaMenu({ locale, label }: { locale: SiteLocale; label: s
                       key={s.slug}
                       href={lp(`/services/${s.slug}`)}
                       className="group flex items-start gap-3 rounded-xl p-2.5 transition-colors hover:bg-primary/[0.06]"
+                      onClick={() => setOpen(false)}
                     >
                       <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
                         <Icon className="h-5 w-5" />
@@ -104,7 +135,7 @@ export function AgencyMegaMenu({ locale, label }: { locale: SiteLocale; label: s
                     </Link>
                   );
                 })}
-                <Link href={lp("/services")} className="col-span-2 mt-1 inline-flex items-center gap-1 px-2.5 text-sm font-semibold text-primary hover:underline">
+                <Link href={lp("/services")} className="col-span-2 mt-1 inline-flex items-center gap-1 px-2.5 text-sm font-semibold text-primary hover:underline" onClick={() => setOpen(false)}>
                   {isEl ? "Όλες οι υπηρεσίες" : "All services"} <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>
@@ -117,7 +148,7 @@ export function AgencyMegaMenu({ locale, label }: { locale: SiteLocale; label: s
                   </div>
                   <div className="grid grid-cols-2 gap-x-3 gap-y-1">
                     {SOLUTION_ITEMS.map((ind) => (
-                      <Link key={ind.slug} href={lp(`/solutions/${ind.slug}`)} className="rounded-lg px-1.5 py-1.5 text-sm text-muted-foreground transition-colors hover:text-primary">
+                      <Link key={ind.slug} href={lp(`/solutions/${ind.slug}`)} className="rounded-lg px-1.5 py-1.5 text-sm text-muted-foreground transition-colors hover:text-primary" onClick={() => setOpen(false)}>
                         {isEl ? ind.el : ind.en}
                       </Link>
                     ))}
@@ -132,7 +163,10 @@ export function AgencyMegaMenu({ locale, label }: { locale: SiteLocale; label: s
                   <div className="mt-3 flex flex-col gap-2">
                     <Link
                       href={lp("/get-started")}
-                      onClick={() => trackCtaClick("mega_menu_quote")}
+                      onClick={() => {
+                        trackCtaClick("mega_menu_quote");
+                        setOpen(false);
+                      }}
                       className="inline-flex items-center justify-center gap-1 rounded-xl bg-white px-3 py-2 text-sm font-bold text-primary transition hover:bg-white/90"
                     >
                       {isEl ? "Ζητήστε προσφορά" : "Get a quote"} <ArrowRight className="h-4 w-4" />
@@ -157,6 +191,7 @@ export function AgencyMegaMenu({ locale, label }: { locale: SiteLocale; label: s
                   </div>
                 </div>
               </div>
+            </div>
             </div>
           </div>
         </div>

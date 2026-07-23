@@ -10,7 +10,7 @@ categoryColor: bg-emerald-100 text-emerald-800
 pillar: agency-playbooks
 ---
 
-**SEO (Search Engine Optimization)** is everything you do to make your website appear high in Google's organic (unpaid) results when your customers search for what you offer. This guide explains the basics without jargon.
+**SEO (Search Engine Optimization)** is everything you do to make your website appear high in Google's organic (unpaid) results when your customers search for what you offer. This guide explains the basics without jargon. For the full pillar (types, strategy, best practices, AI search), read [What is SEO?](/en/blog/what-is-seo).
 
 ## How Google Works (in 30 Seconds)
 

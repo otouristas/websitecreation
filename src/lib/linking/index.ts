@@ -7,6 +7,8 @@ export {
     getHubForPage,
     getSpokesForHub,
     getRelatedPages,
+    getPricingRelatedPaths,
+    getServiceHubRelatedPaths,
     generateBreadcrumbs,
     getServiceBreadcrumbs,
     getServiceLocationBreadcrumbs,

@@ -5,10 +5,17 @@ import { buildMetaDescription, finalizeDescription, BRAND_NAME, BASE_URL } from 
 import { getHreflangAlternates, isGreekLocationSlug } from '@/lib/locale-paths';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 import { LOCALES } from '@/lib/i18n/locale';
+import { shouldIndexServiceLocation, type Location } from '@/data/locations';
 
 export const TITLE_BRAND_SUFFIX = ` | ${BRAND_NAME}`;
 export const MAX_TITLE_TOTAL = 60;
 export const MAX_TITLE_PRIMARY = MAX_TITLE_TOTAL - TITLE_BRAND_SUFFIX.length;
+/** Greek glyphs are wider in SERP pixels — keep primary shorter to stay under ~561px. */
+export const MAX_TITLE_PRIMARY_GREEK = 30;
+
+function primaryTitleMax(text: string): number {
+  return /[Α-Ωα-ωάέήίόύώϊϋΐΰ]/u.test(text) ? MAX_TITLE_PRIMARY_GREEK : MAX_TITLE_PRIMARY;
+}
 
 interface MetadataInput {
   title: string;
@@ -41,13 +48,11 @@ function smartTruncateTitle(text: string, max: number): string {
 export function cleanPageTitle(raw: string): string {
   let cleanTitle = raw.trim();
 
-  cleanTitle = cleanTitle.replace(new RegExp(`\\s*[\\|\\-]\\s*${BRAND_NAME}`, 'gi'), '');
+  // Only strip brand when it is a leading/trailing suffix — never from the middle
+  // (e.g. "AnotherSEOGuru vs Ahrefs" must stay intact, not collapse to "vs Ahrefs").
+  cleanTitle = cleanTitle.replace(new RegExp(`\\s*[\\|\\-]\\s*${BRAND_NAME}\\s*$`, 'gi'), '');
   cleanTitle = cleanTitle.replace(new RegExp(`^${BRAND_NAME}\\s*[\\|\\-]\\s*`, 'gi'), '');
 
-  if (cleanTitle.toLowerCase() !== BRAND_NAME.toLowerCase()) {
-    cleanTitle = cleanTitle.replace(new RegExp(BRAND_NAME, 'gi'), '').trim();
-  }
- 
   cleanTitle = cleanTitle
     .replace(/\s*\|\s*$/, '')
     .replace(/\s*-\s*$/, '')
@@ -56,15 +61,16 @@ export function cleanPageTitle(raw: string): string {
     .replace(/^[–-]\s*/, '')
     .replace(/\s*[–]\s*/g, ' - ')
     .trim();
- 
+
   if (cleanTitle.toLowerCase() === BRAND_NAME.toLowerCase()) {
     return BRAND_NAME;
   }
- 
-  if (cleanTitle.length > MAX_TITLE_PRIMARY) {
-    cleanTitle = smartTruncateTitle(cleanTitle, MAX_TITLE_PRIMARY);
+
+  const maxPrimary = primaryTitleMax(cleanTitle);
+  if (cleanTitle.length > maxPrimary) {
+    cleanTitle = smartTruncateTitle(cleanTitle, maxPrimary);
   }
- 
+
   return cleanTitle;
 }
  
@@ -201,6 +207,7 @@ export function buildServiceLocationMetadata(
     country?: string;
     countryCode?: string;
     currency?: string;
+    tier?: 1 | 2;
   },
   locale: SiteLocale = 'en',
 ): Metadata {
@@ -218,6 +225,8 @@ export function buildServiceLocationMetadata(
       ? `${location.city}, ${location.country ?? location.countryCode}`
       : `${location.city}, ${location.stateCode}`;
 
+  const noIndex = !shouldIndexServiceLocation(location as Location);
+
   return buildMetadata({
     // Front-load keyword + city so truncation drops the hook, never the keyword.
     title: fitTitleWithSuffix(`${service.name} ${location.city}`, enTitleSuffixes(service.slug)),
@@ -230,6 +239,7 @@ export function buildServiceLocationMetadata(
     location: placeLabel,
     usp: `Trusted ${service.name.toLowerCase()} for ${location.city}`,
     ctaHint: 'Request a free local quote.',
+    noIndex,
   });
 }
  
@@ -262,10 +272,11 @@ function enPriceHook(slug: string): string {
   return isSeoRetainerService(slug) ? 'from €299/mo' : 'from €899';
 }
 
-/** Append the longest suffix that keeps the primary title within MAX_TITLE_PRIMARY. */
+/** Append the longest suffix that keeps the primary title within the locale-aware max. */
 function fitTitleWithSuffix(base: string, suffixes: readonly string[]): string {
+  const max = primaryTitleMax(base);
   for (const suffix of suffixes) {
-    if (base.length + suffix.length <= MAX_TITLE_PRIMARY) return base + suffix;
+    if (base.length + suffix.length <= max) return base + suffix;
   }
   return base;
 }
@@ -277,22 +288,28 @@ export function buildServiceLocationMetadataEl(
     cityLocal?: string;
     slug: string;
     country?: string;
+    countryCode?: string;
+    tier?: 1 | 2;
   },
 ): Metadata {
   const svcEl = getServiceEl(service.slug);
   const keyword = svcEl?.titleKeyword ?? service.name;
   const city = location.cityLocal ?? location.city;
   const priceHook = isSeoRetainerService(service.slug) ? 'από €299/μήνα' : 'από €899';
+  const locative = getGreekLocative(location.slug, city);
+  // Greek locale should not index non-Greek city pages (wrong market + thin/duplicate risk).
+  const noIndex = !isGreekLocationSlug(location.slug);
 
   return buildMetadata({
     // Keyword+city first so any truncation drops the hook, never the keyword.
     title: fitTitleWithSuffix(`${keyword} ${city}`, elTitleSuffixes(service.slug)),
-    description: `${keyword} ${getGreekLocative(location.slug)} από ελληνική ομάδα. Πακέτα ${priceHook}, παράδοση έτοιμη για SEO και τοπική στρατηγική. Ζητήστε δωρεάν προσφορά σήμερα.`,
+    description: `${keyword} ${locative}: πακέτα ${priceHook}, SEO-ready παράδοση και τοπική στρατηγική.`,
     path: localizedPath('el', `/services/${service.slug}/${location.slug}`),
     hreflangPath: `/services/${service.slug}/${location.slug}`,
     hreflangLocales: isGreekLocationSlug(location.slug) ? ['en', 'el'] : ['el'],
     primaryKeyword: `${keyword} ${city}`,
-    ctaHint: 'Ζητήστε δωρεάν προσφορά.',
+    ctaHint: 'Ζητήστε προσφορά.',
+    noIndex,
   });
 }
  

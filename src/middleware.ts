@@ -60,6 +60,19 @@ export function middleware(request: NextRequest) {
     const target = localizedPath(locale, pathname === '/' ? '/' : pathname);
     const url = request.nextUrl.clone();
     url.pathname = target;
+
+    // Homepage: rewrite (no extra hop) so PSI/root visitors avoid a 307.
+    // Other unprefixed paths keep a 307 so bookmarks still land on locale URLs.
+    if (pathname === '/') {
+      const response = NextResponse.rewrite(url);
+      response.cookies.set(LOCALE_COOKIE, locale, {
+        path: '/',
+        maxAge: 60 * 60 * 24 * 365,
+        sameSite: 'lax',
+      });
+      return response;
+    }
+
     const response = NextResponse.redirect(url, 307);
     response.cookies.set(LOCALE_COOKIE, locale, {
       path: '/',

@@ -27,8 +27,9 @@ export function PortfolioThumbnail({
     <Image
       src={src}
       alt={alt}
-      fill
-      className={`object-cover object-top ${className}`}
+      width={1200}
+      height={750}
+      className={`h-full w-full object-cover object-top ${className}`}
       sizes="(max-width: 768px) 100vw, 25vw"
       onError={() => setFailed(true)}
     />

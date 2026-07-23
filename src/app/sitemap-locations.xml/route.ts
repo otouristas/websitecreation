@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { getAllServiceSlugs } from '@/data/services';
-import { getAllLocationSlugs } from '@/data/locations';
+import { getIndexableServiceLocationSlugs } from '@/data/locations';
 import { buildUrlsetXml, type SitemapUrlEntry, XML_HEADERS } from '@/lib/sitemap-xml';
 import { localizedPath } from '@/lib/i18n/locale';
 
@@ -8,7 +8,7 @@ const BASE_URL = 'https://anotherseoguru.com';
 
 export async function GET() {
   const serviceSlugs = getAllServiceSlugs();
-  const locationSlugs = getAllLocationSlugs();
+  const locationSlugs = getIndexableServiceLocationSlugs();
   const urls: SitemapUrlEntry[] = [];
 
   for (const service of serviceSlugs) {

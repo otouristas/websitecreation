@@ -48,6 +48,21 @@ export const glossaryCategories: GlossaryCategory[] = [
     color: "blue",
     terms: [
       {
+        id: "on-page-seo-term",
+        termEl: "On-Page SEO",
+        shortDefinitionEl: "Βελτιστοποίηση στοιχείων μέσα στη σελίδα: τίτλοι, περιεχόμενο, επικεφαλίδες και εσωτερικοί σύνδεσμοι.",
+        fullDefinitionEl: "Το on-page SEO καλύπτει ό,τι ελέγχετε στη σελίδα σας — title tags, H1, δομή περιεχομένου, εσωτερική σύνδεση, εικόνες και meta — ώστε να ταιριάζει με την πρόθεση αναζήτησης. Είναι το θεμέλιο πριν από off-page και link building.",
+        term: "On-Page SEO",
+        shortDefinition: "Optimizing elements on a web page to rank for relevant searches.",
+        fullDefinition: "On-page SEO covers titles, headings, content, internal links, images, and meta tags so a page matches search intent and can rank. It is the foundation before off-page authority work.",
+        example: "Rewriting a service page title and opening paragraph to answer 'τι είναι το on-page SEO' in the first 50 words.",
+        technique: "One intent per URL, keyword in title/H1 naturally, short answer near the top, supporting H2s for PAA, internal links to money pages.",
+        relatedTerms: ["title-tag", "meta-description", "keywords", "seo"],
+        relatedLinks: [
+          { title: "On-Page SEO οδηγός", url: "/el/blog/on-page-seo", type: "blog" }
+        ]
+      },
+      {
         id: "title-tag",
         termEl: "Title Tag (Ετικέτα Τίτλου)",
         shortDefinitionEl: "HTML στοιχείο που ορίζει τον τίτλο της σελίδας στα αποτελέσματα αναζήτησης και στην καρτέλα του browser.",
@@ -173,6 +188,22 @@ export const glossaryCategories: GlossaryCategory[] = [
     icon: Settings,
     color: "purple",
     terms: [
+      {
+        id: "technical-seo-term",
+        termEl: "Τεχνικό SEO",
+        shortDefinitionEl: "Βελτιστοποίηση υποδομής site για crawl, index, ταχύτητα και δομημένα δεδομένα.",
+        fullDefinitionEl: "Το τεχνικό SEO διασφαλίζει ότι η Google μπορεί να ανιχνεύσει και να ευρετηριάσει τις σελίδες σας: Core Web Vitals, mobile-first, HTTPS, sitemaps, robots.txt, canonicals και schema. Χωρίς αυτό, το καλύτερο περιεχόμενο δεν αποδίδει.",
+        term: "Technical SEO",
+        shortDefinition: "Improving site infrastructure for crawling, indexing, speed, and structured data.",
+        fullDefinition: "Technical SEO ensures search engines can crawl and index your pages efficiently — Core Web Vitals, mobile-first, HTTPS, sitemaps, robots.txt, canonicals, and schema.",
+        example: "Fixing 'discovered – not indexed' URLs and improving LCP on mobile before launching a content blitz.",
+        technique: "Audit crawl/index first, submit sitemaps, fix vitals, add relevant schema, keep internal links to money pages.",
+        relatedTerms: ["crawling", "indexing", "core-web-vitals", "seo"],
+        relatedLinks: [
+          { title: "Τεχνικό SEO checklist", url: "/el/blog/techniko-seo", type: "blog" },
+          { title: "SEO Audit", url: "/el/services/seo-audits", type: "feature" }
+        ]
+      },
       {
         id: "crawling",
         termEl: "Crawling (Ανίχνευση)",
@@ -340,6 +371,22 @@ export const glossaryCategories: GlossaryCategory[] = [
     color: "green",
     terms: [
       {
+        id: "off-page-seo",
+        termEl: "Off-Page SEO",
+        shortDefinitionEl: "Σήματα αξιοπιστίας έξω από το site σας — κυρίως ποιοτικά backlinks και brand mentions.",
+        fullDefinitionEl: "Το off-page SEO καλύπτει παράγοντες εκτός της ιστοσελίδας σας που επηρεάζουν την κατάταξη: backlinks, mentions, φήμη και digital PR. Στην Ελλάδα προτιμήστε συνάφεια και ποιότητα αντί για μαζικά spam directories.",
+        term: "Off-Page SEO",
+        shortDefinition: "Ranking signals earned outside your website, mainly backlinks and brand mentions.",
+        fullDefinition: "Off-page SEO covers external trust signals — backlinks, mentions, reputation, and digital PR — that influence rankings beyond what you control on your own pages.",
+        example: "An industry blog linking to your Greek SEO guide with a natural editorial mention.",
+        technique: "Earn relevant editorial links, diversify anchors, pair with strong on-page pages, avoid PBNs and bulk paid links.",
+        relatedTerms: ["backlink", "anchor-text", "seo"],
+        relatedLinks: [
+          { title: "Off-Page SEO οδηγός", url: "/el/blog/off-page-seo", type: "blog" },
+          { title: "Link Building", url: "/el/services/link-building", type: "feature" }
+        ]
+      },
+      {
         id: "backlink",
         termEl: "Backlink (Εισερχόμενος Σύνδεσμος)",
         shortDefinitionEl: "Σύνδεσμος από άλλο site προς το δικό σας - «ψήφος εμπιστοσύνης» για τη Google.",
@@ -463,6 +510,24 @@ export const glossaryCategories: GlossaryCategory[] = [
     color: "orange",
     terms: [
       {
+        id: "seo",
+        termEl: "SEO (Βελτιστοποίηση για Μηχανές Αναζήτησης)",
+        shortDefinitionEl: "Η διαδικασία βελτιστοποίησης ιστοσελίδας ώστε να κατατάσσεται ψηλότερα στα οργανικά αποτελέσματα της Google.",
+        fullDefinitionEl: "SEO (Search Engine Optimization) είναι το σύνολο τεχνικών, περιεχομένου και εξωτερικών σημάτων που βοηθούν μια ιστοσελίδα να εμφανίζεται ψηλά στα οργανικά αποτελέσματα αναζήτησης. Περιλαμβάνει τεχνικό SEO, on-page, off-page και τοπικό SEO. Στην Ελλάδα οι χρήστες συχνά ψάχνουν «τι είναι το SEO», «υπηρεσίες SEO» και «τιμές SEO».",
+        term: "SEO (Search Engine Optimization)",
+        shortDefinition: "The practice of improving a website so it ranks higher in organic search results.",
+        fullDefinition: "Search Engine Optimization (SEO) is the set of technical, content, and off-site practices that help a website appear higher in unpaid search results. It includes technical SEO, on-page SEO, off-page SEO, and local SEO.",
+        example: "Optimizing a service page for 'υπηρεσίες SEO' with clear titles, FAQ schema, and fast mobile load.",
+        technique: "Map one primary intent per URL, fix crawl/index issues first, write citation-ready answers, add FAQ schema, and measure in Google Search Console.",
+        proTip: "In Greece, commercial queries like τιμές SEO and υπηρεσίες SEO often convert better than the head term SEO alone.",
+        relatedTerms: ["on-page-seo-term", "technical-seo-term", "keywords", "local-pack"],
+        relatedLinks: [
+          { title: "What is SEO?", url: "/en/blog/what-is-seo", type: "blog" },
+          { title: "Τι είναι το SEO", url: "/el/blog/seo-gia-arxarious", type: "blog" },
+          { title: "SEO audit services", url: "/en/services/seo-audits", type: "feature" }
+        ]
+      },
+      {
         id: "keywords",
         termEl: "Keywords (Λέξεις-κλειδιά)",
         shortDefinitionEl: "Οι όροι που πληκτρολογούν οι χρήστες στις μηχανές αναζήτησης - η βάση κάθε SEO στρατηγικής.",
@@ -475,7 +540,8 @@ export const glossaryCategories: GlossaryCategory[] = [
         proTip: "Don't just chase high-volume keywords. Focus on keywords that match your content's purpose and your audience's needs.",
         relatedTerms: ["long-tail-keywords", "search-intent", "keyword-difficulty", "search-volume"],
         relatedLinks: [
-          { title: "Keyword Research & Clustering", url: "/features/keyword-research-clustering", type: "feature" },
+          { title: "Keyword research guide", url: "/en/blog/keyword-research-guide", type: "blog" },
+          { title: "Free keyword research tool", url: "/en/tools/keyword-research", type: "tool" },
           { title: "Keyword Clustering Tool", url: "/free-tools/keyword-clustering", type: "tool" }
         ]
       },
@@ -671,6 +737,8 @@ export const glossaryCategories: GlossaryCategory[] = [
         proTip: "Track organic traffic trends, not just absolute numbers. Seasonal businesses have natural fluctuations. Compare year-over-year for accurate growth measurement.",
         relatedTerms: ["paid-traffic", "direct-traffic", "referral-traffic"],
         relatedLinks: [
+          { title: "How to increase organic traffic", url: "/blog/how-to-increase-organic-traffic", type: "blog" },
+          { title: "What is SEO?", url: "/blog/what-is-seo", type: "blog" },
           { title: "Connect Search Console", url: "/help/connect-search-console", type: "help" }
         ]
       },
@@ -826,6 +894,22 @@ export const glossaryCategories: GlossaryCategory[] = [
     icon: MapPin,
     color: "red",
     terms: [
+      {
+        id: "local-seo-term",
+        termEl: "Τοπικό SEO (Local SEO)",
+        shortDefinitionEl: "Βελτιστοποίηση για τοπικές αναζητήσεις και το map pack της Google (Αθήνα, Θεσσαλονίκη, «κοντά μου»).",
+        fullDefinitionEl: "Το τοπικό SEO βοηθά επιχειρήσεις με φυσική ή γεωγραφική εμβέλεια να εμφανίζονται στο map pack και στα τοπικά αποτελέσματα. Κεντρικά στοιχεία: Google Business Profile, σταθερό NAP, κριτικές, τοπικές σελίδες και citations.",
+        term: "Local SEO",
+        shortDefinition: "Optimization for map pack and location-based search results.",
+        fullDefinition: "Local SEO helps businesses appear in Google’s map pack and local results for city and “near me” queries through GBP, NAP consistency, reviews, local pages, and citations.",
+        example: "Ranking in the map pack for 'seo θεσσαλονικη' with a complete GBP and a dedicated Thessaloniki service page.",
+        technique: "Complete GBP fields, keep NAP identical everywhere, build location pages, collect and reply to reviews, add LocalBusiness schema.",
+        relatedTerms: ["google-business-profile", "nap", "local-pack"],
+        relatedLinks: [
+          { title: "Τοπικό SEO υπηρεσία", url: "/el/services/local-seo", type: "feature" },
+          { title: "SEO Θεσσαλονίκη", url: "/el/services/local-seo/thessaloniki-gr", type: "feature" }
+        ]
+      },
       {
         id: "google-business-profile",
         termEl: "Google Business Profile (Επιχειρηματικό Προφίλ Google)",
@@ -1290,6 +1374,9 @@ export const glossaryCategories: GlossaryCategory[] = [
       },
       {
         id: "google-analytics",
+        termEl: "Google Analytics 4 (GA4)",
+        shortDefinitionEl: "Δωρεάν πλατφόρμα analytics της Google για συμπεριφορά χρηστών και conversions — κρίσιμη για μέτρηση SEO.",
+        fullDefinitionEl: "Το Google Analytics 4 μετρά sessions, engagement και conversions. Για SEO, συνδέστε το με Search Console ώστε να βλέπετε ποια οργανικά ερωτήματα φέρνουν πραγματική αξία — όχι μόνο εντυπώσεις.",
         term: "Google Analytics 4 (GA4)",
         shortDefinition: "Google's free web analytics platform for tracking user behavior.",
         fullDefinition: "Google Analytics 4 is Google's analytics platform that tracks website traffic, user behavior, conversions, and more. It uses event-based tracking and machine learning to provide insights about your audience and their journey.",
@@ -1298,6 +1385,7 @@ export const glossaryCategories: GlossaryCategory[] = [
         proTip: "Link GA4 with GSC to combine behavior data with search performance. This helps identify which rankings actually drive conversions.",
         relatedTerms: ["organic-traffic", "conversion-rate", "user-behavior"],
         relatedLinks: [
+          { title: "Εργαλεία SEO", url: "/el/blog/ergaleia-seo", type: "blog" },
           { title: "SEO Health Score", url: "/features/seo-health-score", type: "feature" }
         ]
       },

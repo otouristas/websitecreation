@@ -1,6 +1,6 @@
 ---
 slug: seo-web-design-development-platform
-title: SEO Software, Web Design & Development — One Platform for Organic Growth
+title: SEO Software, Web Design & Development Platform
 description: How teams combine SEO tools, website design for rankings, and development best practices with AI search optimization (GEO/AEO) to grow revenue.
 date: 2026-05-31
 author: AnotherSEOGuru Editorial Team

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, type ReactElement } from "react";
+import { useEffect, useRef, useState, type ReactElement } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ChevronDown, Menu, X } from "lucide-react";
@@ -40,23 +40,47 @@ interface NavDropdownProps {
 
 function NavDropdown(props: NavDropdownProps): ReactElement {
   const [open, setOpen] = useState(false);
+  const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  function openMenu(): void {
+    if (closeTimerRef.current !== null) {
+      clearTimeout(closeTimerRef.current);
+      closeTimerRef.current = null;
+    }
+    setOpen(true);
+  }
+
+  function scheduleClose(): void {
+    if (closeTimerRef.current !== null) clearTimeout(closeTimerRef.current);
+    closeTimerRef.current = setTimeout(() => {
+      setOpen(false);
+      closeTimerRef.current = null;
+    }, 150);
+  }
+
+  useEffect(
+    () => () => {
+      if (closeTimerRef.current !== null) clearTimeout(closeTimerRef.current);
+    },
+    [],
+  );
+
   return (
-    <div
-      className="relative"
-      onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
-    >
+    <div className="relative" onMouseEnter={openMenu} onMouseLeave={scheduleClose}>
       <button
         type="button"
         className={`inline-flex items-center gap-0.5 rounded-lg px-1 py-1 ${linkClass}`}
         aria-expanded={open}
+        aria-haspopup="true"
       >
         {props.label}
         <ChevronDown className={`h-4 w-4 transition-transform ${open ? "rotate-180" : ""}`} />
       </button>
       {open ? (
-        <div className="absolute left-0 top-full z-[70] pt-2">
-          <div className={dropdownPanelInnerClass}>{props.children}</div>
+        <div className="absolute left-0 top-full z-[70] pt-1">
+          <div className={dropdownPanelInnerClass} onMouseEnter={openMenu} onMouseLeave={scheduleClose}>
+            {props.children}
+          </div>
         </div>
       ) : null}
     </div>
