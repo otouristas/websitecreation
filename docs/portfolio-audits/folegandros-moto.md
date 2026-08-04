@@ -2,11 +2,12 @@
 
 - URL: https://folegandros-moto.gr
 - Category: rent-a-car
-- Place: Folegandros / Φολέγανδρος
-- Niche: moto & scooter rental
+- Business: moto and scooter rental / ενοικίαση μηχανών και scooters
+- Location: Folegandros / Φολέγανδρο
 - Keywords EN: Folegandros scooter rental; rent a moto Folegandros; ATV Folegandros
-- Keywords EL: ενοικίαση μηχανής Φολέγανδρος; scooter Φολέγανδρος
-- Angle: two-wheel fleet for cliff-road island mobility
+- Keywords EL: ενοικίαση μηχανής Φολέγανδρος; scooter Φολέγανδρος; ATV Φολέγανδρος
+- Angle: two-wheel fleet for island mobility since 1998
+- CTA: κράτηση
 - Scrape: yes
 
 ## Snippet

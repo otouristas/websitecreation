@@ -2,11 +2,12 @@
 
 - URL: https://villaskaterina.com
 - Category: villa
-- Place: villa complex / συγκρότημα βιλών
-- Niche: villas Katerina brand
-- Keywords EN: Villas Katerina; villas for rent Greece
-- Keywords EL: Villas Katerina; βίλες προς ενοικίαση
-- Angle: unit comparison pages for villa shoppers
+- Business: villa complex for holiday stays / συγκρότημα βιλών για διακοπές
+- Location: Crete / Κρήτη
+- Keywords EN: Villas Katerina; villas for rent Crete
+- Keywords EL: Villas Katerina; βίλες προς ενοικίαση Κρήτη
+- Angle: unit comparison pages so guests pick the right villa quickly
+- CTA: κράτηση
 - Scrape: yes
 
 ## Snippet

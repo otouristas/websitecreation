@@ -2,11 +2,12 @@
 
 - URL: https://rentacarinparos.gr
 - Category: rent-a-car
-- Place: Paros / Πάρος
-- Niche: Paros car rental landing brand
+- Business: Paros car hire brand / ενοικίαση αυτοκινήτων στην Πάρο
+- Location: Paros / Πάρο
 - Keywords EN: rent a car in Paros; Paros car hire; Paros port car rental
-- Keywords EL: ενοικίαση αυτοκινήτου στην Πάρο; rent a car Πάρος
-- Angle: conversion-led vehicle cards for summer peaks
+- Keywords EL: ενοικίαση αυτοκινήτου στην Πάρο; αυτοκίνητο Πάρος; ενοικίαση λιμάνι Πάρος
+- Angle: conversion-led vehicle cards for summer peak demand
+- CTA: κράτηση
 - Scrape: yes
 
 ## Snippet

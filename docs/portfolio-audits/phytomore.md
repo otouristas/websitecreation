@@ -2,11 +2,12 @@
 
 - URL: https://phytomore.com
 - Category: other
-- Place: plant / wellness brand / φυτά / wellness
-- Niche: Phytomore product brand
+- Business: plant-based wellness product brand / brand φυτικών προϊόντων wellness
+- Location: Greece / EU / Ελλάδα και ΕΕ
 - Keywords EN: Phytomore; plant based products; wellness shop
-- Keywords EL: Phytomore; φυτικά προϊόντα; wellness shop
-- Angle: product education content for organic search
+- Keywords EL: Phytomore; φυτικά προϊόντα; wellness shop Ελλάδα
+- Angle: product education content that supports organic discovery
+- CTA: παραγγελία
 - Scrape: yes
 
 ## Snippet

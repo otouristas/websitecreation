@@ -5,7 +5,19 @@ description: How teams combine SEO tools, website design for rankings, and devel
 date: 2026-05-31
 author: AnotherSEOGuru Editorial Team
 category: Platform
-categoryColor: primary
+categoryColor: bg-indigo-100 text-indigo-800
+pillar: technical-seo-in-house
+faq:
+  - question: Should SEO come before or after design?
+    answer: At the same time. SEO informs information architecture, URL planning, and template requirements before high-fidelity design. Bolting SEO on after development costs more and works worse.
+  - question: Do I need custom development or is WordPress enough?
+    answer: Both can rank. Custom Next.js stacks offer performance and component consistency at scale — valuable for multi-property hospitality and rent-a-car fleets. WordPress works for smaller footprints with strict maintenance discipline.
+  - question: How do Core Web Vitals affect AI visibility?
+    answer: Indirectly but meaningfully. Slow, poorly indexed pages are less likely to be retrieved and cited. Performance is a baseline eligibility factor, not a vanity metric.
+  - question: Can one agency handle design, dev, and SEO?
+    answer: Yes — if they show integrated case studies with Search Console outcomes, not only design shots. Ask for work samples with measurable search results.
+  - question: What's the first step for a redesign without losing rankings?
+    answer: Crawl the current site, map URL redirects, export top GSC pages, and lock the redirect + content migration plan before touching the new design system.
 ---
 
 Buyers searching **seo**, **website design**, **web development**, and **ai seo** want one partner that ships fast *and* ranks. Fragmented stacks — agency for design, freelancer for dev, three SaaS tools for keywords, another for audits — slow execution and blur accountability. When a hotel group needs a booking-ready site that also wins "Paros family hotel" queries, or a rent-a-car operator needs fleet pages that rank at the airport, the unified approach wins.
@@ -147,8 +159,8 @@ Crawl the current site, map URL redirects, export top GSC pages, and lock the re
 
 ---
 
-### Ship a site that ranks — not just a site that looks good
+## Ready to Get Started?
 
 We build [hotel websites](/solutions/hotels), [rent-a-car platforms](/solutions/rent-a-car), and [travel AI experiences](/solutions/travel-ai-chatbots) with SEO, GEO, and AEO built in from wireframe to launch.
 
-[Get started](/get-started) · [See our work](/work) · [Browse the glossary](/glossary)
+[Get started](/en/get-started) · [See our work](/work) · [Browse the glossary](/glossary)

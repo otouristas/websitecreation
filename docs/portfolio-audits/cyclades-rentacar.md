@@ -2,11 +2,12 @@
 
 - URL: https://cycladesrentacar.com
 - Category: rent-a-car
-- Place: Cyclades / Κυκλάδες
-- Niche: multi-island car rental brand
-- Keywords EN: Cyclades car rental; rent a car Cyclades; Greek islands car hire
-- Keywords EL: ενοικίαση αυτοκινήτου Κυκλάδες; rent a car Κυκλάδες; αυτοκίνητο Κυκλάδες
-- Angle: hub-and-spoke island rental positioning
+- Business: multi-island car rental comparison platform / πλατφόρμα σύγκρισης ενοικίασης αυτοκινήτων στα νησιά
+- Location: Cyclades islands / Κυκλάδες
+- Keywords EN: rent a car Cyclades; Greek islands car hire; Cyclades scooter rental
+- Keywords EL: ενοικίαση αυτοκινήτου Κυκλάδες; αυτοκίνητο ελληνικά νησιά; scooter Κυκλάδες
+- Angle: compare agencies across 24 islands with clear booking paths
+- CTA: κράτηση
 - Scrape: yes
 
 ## Snippet

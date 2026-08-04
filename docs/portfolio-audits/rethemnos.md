@@ -2,11 +2,12 @@
 
 - URL: https://rethemnos.gr
 - Category: tours
-- Place: Rethymno / Ρέθυμνο
-- Niche: Rethymno tourism portal
+- Business: Rethymno tourism portal and local guide / τουριστική πύλη και τοπικός οδηγός Ρεθύμνου
+- Location: Rethymno / Ρέθυμνο
 - Keywords EN: Rethymno tourism; visit Rethymno; Rethymno guide
-- Keywords EL: τουρισμός Ρέθυμνο; οδηγός Ρέθυμνο; visit Ρέθυμνο
-- Angle: city guide hubs feeding commercial tourism pages
+- Keywords EL: τουρισμός Ρέθυμνο; οδηγός Ρέθυμνο; τι να δω στο Ρέθυμνο
+- Angle: city guide hubs that feed commercial tourism and local business pages
+- CTA: επικοινωνία
 - Scrape: yes
 
 ## Snippet

@@ -2,11 +2,12 @@
 
 - URL: https://discovercyclades.gr
 - Category: tours
-- Place: Cyclades / Κυκλάδες
-- Niche: Cyclades travel guide & tours
+- Business: Cyclades travel guide and discovery platform / ταξιδιωτικός οδηγός και πλατφόρμα ανακάλυψης Κυκλάδων
+- Location: Cyclades / Κυκλάδες
 - Keywords EN: Discover Cyclades; Cyclades travel guide; Cyclades islands tours
-- Keywords EL: Discover Cyclades; οδηγός Κυκλάδες; εκδρομές Κυκλάδες
-- Angle: island hub architecture for discovery traffic
+- Keywords EL: οδηγός Κυκλάδες; εκδρομές Κυκλάδες; ταξίδι Κυκλάδες
+- Angle: island hub architecture that funnels discovery traffic to commercial pages
+- CTA: επικοινωνία
 - Scrape: yes
 
 ## Snippet

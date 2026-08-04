@@ -2,11 +2,12 @@
 
 - URL: https://mastorush.gr
 - Category: other
-- Place: crafts / services Greece / τεχνικές υπηρεσίες Ελλάδα
-- Niche: Mastorush services brand
-- Keywords EN: Mastorush; home services Greece
-- Keywords EL: Mastorush; υπηρεσίες σπιτιού
-- Angle: service-area pages for local demand
+- Business: craftsman quote marketplace / αγορά αιτημάτων προσφορών από μάστορες
+- Location: Greece / Ελλάδα
+- Keywords EN: Mastorush; find craftsman Greece; home repair quotes Greece
+- Keywords EL: Mastorush; προσφορές από μάστορες; εύρεση τεχνίτη Ελλάδα
+- Angle: post a job, get verified craftsman quotes with photos
+- CTA: εγγραφή
 - Scrape: yes
 
 ## Snippet

@@ -2,11 +2,12 @@
 
 - URL: https://dailyhost.gr
 - Category: hotel
-- Place: short-term hosting / βραχυχρόνια μίσθωση
-- Niche: hospitality hosting platform/brand
-- Keywords EN: DailyHost; holiday hosting Greece; vacation rental hosting
+- Business: short-term rental hosting management / διαχείριση βραχυχρόνιας μίσθωσης
+- Location: Greece / Ελλάδα
+- Keywords EN: DailyHost; holiday hosting Greece; vacation rental management
 - Keywords EL: DailyHost; βραχυχρόνια μίσθωση; διαχείριση καταλυμάτων
-- Angle: property listing UX and host conversion paths
+- Angle: host onboarding and property listing conversion paths
+- CTA: επικοινωνία
 - Scrape: yes
 
 ## Snippet

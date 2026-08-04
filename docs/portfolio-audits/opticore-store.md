@@ -2,11 +2,12 @@
 
 - URL: https://opticorestore.gr
 - Category: other
-- Place: optics / eyewear e-commerce / οπτικά / e-shop
-- Niche: optics store e-shop
+- Business: optics and eyewear e-shop / ηλεκτρονικό κατάστημα οπτικών
+- Location: Greece / Ελλάδα
 - Keywords EN: Opticore Store; buy glasses online Greece; optics e-shop
-- Keywords EL: Opticore Store; αγορά γυαλιών online; e-shop οπτικών
-- Angle: category SEO for frames and lenses
+- Keywords EL: αγορά γυαλιών online; e-shop οπτικών; Opticore Store
+- Angle: category SEO for frames and lenses with clear add-to-cart paths
+- CTA: παραγγελία
 - Scrape: yes
 
 ## Snippet

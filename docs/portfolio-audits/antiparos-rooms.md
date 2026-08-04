@@ -2,11 +2,12 @@
 
 - URL: https://antiparosrooms.com
 - Category: hotel
-- Place: Antiparos / Αντίπαρος
-- Niche: rooms & apartments Antiparos
-- Keywords EN: Antiparos rooms; Antiparos apartments; stay in Antiparos
-- Keywords EL: δωμάτια Αντίπαρος; διαμερίσματα Αντίπαρος; διαμονή Αντίπαρος
-- Angle: direct booking rooms vs OTA dependency
+- Business: seaside rooms and apartments / παραθαλάσσια δωμάτια και διαμερίσματα
+- Location: Antiparos / Αντίπαρο
+- Keywords EN: Antiparos rooms; Antiparos apartments; sea view apartments Antiparos
+- Keywords EL: δωμάτια Αντίπαρος; διαμερίσματα Αντίπαρος; διαμονή Αντίπαρος θάλασσα
+- Angle: direct booking for Cycladic seaside apartments versus OTA dependence
+- CTA: κράτηση
 - Scrape: yes
 
 ## Snippet

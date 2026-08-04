@@ -2,11 +2,12 @@
 
 - URL: https://erebos.gr
 - Category: other
-- Place: brand / nightlife or services / brand / υπηρεσίες
-- Niche: Erebos brand site
-- Keywords EN: Erebos; Erebos Greece
-- Keywords EL: Erebos; Erebos Ελλάδα
-- Angle: brand-first SEO with clear service taxonomy
+- Business: real-time GPS vehicle tracking platform / πλατφόρμα παρακολούθησης οχημάτων σε πραγματικό χρόνο
+- Location: Greece and the EU / Ελλάδα και την ΕΕ
+- Keywords EN: Erebos GPS tracking; vehicle tracking platform; fleet tracking Greece
+- Keywords EL: παρακολούθηση οχημάτων; GPS στόλου; Erebos tracking
+- Angle: phone or hardware tracker setup with free start tracking CTA
+- CTA: εγγραφή
 - Scrape: yes
 
 ## Snippet

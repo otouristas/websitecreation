@@ -2,11 +2,12 @@
 
 - URL: https://onomahotel.com
 - Category: hotel
-- Place: Greece hospitality / φιλοξενία Ελλάδα
-- Niche: boutique hotel brand site
+- Business: boutique hotel brand site / ιστοσελίδα boutique ξενοδοχείου
+- Location: Greece / Ελλάδα
 - Keywords EN: Onoma Hotel; boutique hotel Greece; hotel direct booking
-- Keywords EL: Onoma Hotel; boutique ξενοδοχείο; άμεση κράτηση ξενοδοχείου
-- Angle: brand storytelling + room-type SEO pages
+- Keywords EL: Onoma Hotel; boutique ξενοδοχείο Ελλάδα; άμεση κράτηση ξενοδοχείου
+- Angle: brand storytelling with room-type pages for direct bookings
+- CTA: κράτηση
 - Scrape: yes
 
 ## Snippet

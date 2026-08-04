@@ -2,11 +2,12 @@
 
 - URL: https://agrocult.gr
 - Category: other
-- Place: agriculture / agribusiness / αγροτικές επιχειρήσεις
-- Niche: AgroCult brand
-- Keywords EN: AgroCult; agriculture Greece; agribusiness
-- Keywords EL: AgroCult; γεωργία Ελλάδα; αγροτικές επιχειρήσεις
-- Angle: B2B agri content and service SEO
+- Business: pest control, landscaping and agri services / απεντόμωση, έργα πρασίνου και αγροτικές υπηρεσίες
+- Location: Rethymno / Ρέθυμνο
+- Keywords EN: Agrocult Rethymno; pest control Rethymno; landscaping Crete
+- Keywords EL: Agrocult Ρέθυμνο; απεντόμωση Ρέθυμνο; έργα πρασίνου Κρήτη
+- Angle: public health, green projects and agri service landing pages
+- CTA: αίτημα προσφοράς
 - Scrape: yes
 
 ## Snippet

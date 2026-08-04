@@ -2,11 +2,12 @@
 
 - URL: https://spiliapartments.com
 - Category: villa
-- Place: Spili Crete / Σπήλι Κρήτη
-- Niche: apartments in Spili
-- Keywords EN: Spili apartments; Spili Crete accommodation; stay Spili
-- Keywords EL: διαμερίσματα Σπήλι; διαμονή Σπήλι Κρήτη
-- Angle: Crete hinterland stay SEO vs coastal competitors
+- Business: family holiday apartments / οικογενειακά διαμερίσματα διακοπών
+- Location: Spili, Rethymno Crete / Σπήλι Ρεθύμνου στην Κρήτη
+- Keywords EN: Spili apartments; Spili Crete accommodation; stay Spili Rethymno
+- Keywords EL: διαμερίσματα Σπήλι; διαμονή Σπήλι Κρήτη; διαμερίσματα Ρέθυμνο ενδοχώρα
+- Angle: Crete hinterland stay SEO versus coastal competitors
+- CTA: κράτηση
 - Scrape: yes
 
 ## Snippet

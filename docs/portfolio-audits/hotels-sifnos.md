@@ -2,11 +2,12 @@
 
 - URL: https://hotelssifnos.com
 - Category: hotel
-- Place: Sifnos / Σίφνος
-- Niche: Sifnos hotels
+- Business: Sifnos hotels and stays / ξενοδοχεία και διαμονή στη Σίφνο
+- Location: Sifnos / Σίφνο
 - Keywords EN: hotels Sifnos; Sifnos accommodation; where to stay Sifnos
-- Keywords EL: ξενοδοχεία Σίφνος; διαμονή Σίφνος
-- Angle: boutique island stays with local SEO hubs
+- Keywords EL: ξενοδοχεία Σίφνος; διαμονή Σίφνος; πού να μείνω Σίφνος
+- Angle: boutique island stay hubs for travelers researching lodging
+- CTA: κράτηση
 - Scrape: yes
 
 ## Snippet

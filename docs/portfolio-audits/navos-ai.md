@@ -2,12 +2,14 @@
 
 - URL: https://navos.ai
 - Category: travel-ai
-- Place: travel AI product / προϊόν travel AI
-- Niche: AI travel assistant / SaaS
-- Keywords EN: Navos AI; travel AI assistant; AI chatbot tourism
-- Keywords EL: Navos AI; AI βοηθός ταξιδιών; chatbot τουρισμός
-- Angle: product + use-case pages for AI citations
+- Business: AI strategy advisor SaaS / πλατφόρμα τεχνητής νοημοσύνης για επιχειρηματικές αποφάσεις
+- Location: global SaaS market / διεθνή αγορά SaaS
+- Keywords EN: Navos AI; AI strategy advisor; business AI decisions
+- Keywords EL: Navos AI; σύμβουλος στρατηγικής AI; τεχνητή νοημοσύνη επιχειρήσεις
+- Angle: product and use-case pages that explain decisions needing attention now
+- CTA: επίδειξη
 - Scrape: yes
+- Notes: Scrape shows general AI strategy advisor, not tourism-only chatbot
 
 ## Snippet
 

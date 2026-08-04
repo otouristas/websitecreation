@@ -2,11 +2,12 @@
 
 - URL: https://hotelssantorini.gr
 - Category: hotel
-- Place: Santorini / Σαντορίνη
-- Niche: Santorini hotels directory / bookings
+- Business: Santorini hotels directory and bookings / κατάλογος και κρατήσεις ξενοδοχείων Σαντορίνης
+- Location: Santorini / Σαντορίνη
 - Keywords EN: hotels Santorini; Santorini hotel booking; caldera hotels
-- Keywords EL: ξενοδοχεία Σαντορίνη; κράτηση ξενοδοχείου Σαντορίνη
-- Angle: caldera & beach hotel discovery with direct CTAs
+- Keywords EL: ξενοδοχεία Σαντορίνη; κράτηση ξενοδοχείου Σαντορίνη; ξενοδοχεία καλντέρα
+- Angle: caldera and beach hotel discovery with direct booking calls to action
+- CTA: κράτηση
 - Scrape: yes
 
 ## Snippet

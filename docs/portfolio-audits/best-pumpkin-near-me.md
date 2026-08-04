@@ -2,11 +2,12 @@
 
 - URL: https://bestpumpkinnearme.com
 - Category: other
-- Place: US local pumpkin / seasonal / τοπικό seasonal US
-- Niche: local “near me” seasonal site
+- Business: US local pumpkin patch directory / κατάλογος τοπικών pumpkin patches στις ΗΠΑ
+- Location: United States / Ηνωμένες Πολιτείες
 - Keywords EN: best pumpkin near me; pumpkin patch near me
-- Keywords EL: best pumpkin near me; κολοκύθα κοντά μου
-- Angle: hyperlocal near-me SEO for seasonal demand
+- Keywords EL: best pumpkin near me; pumpkin patch κοντά μου
+- Angle: hyperlocal near-me SEO for seasonal autumn demand
+- CTA: επικοινωνία
 - Scrape: yes
 
 ## Snippet

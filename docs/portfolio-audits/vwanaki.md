@@ -1,13 +1,15 @@
 # vwanaki (vwanaki)
 
 - URL: https://vwanaki.gr
-- Category: restaurant
-- Place: restaurant brand / εστιατόριο
-- Niche: restaurant website
-- Keywords EN: Vwanaki restaurant; dine Greece; restaurant booking
-- Keywords EL: Vwanaki εστιατόριο; κράτηση τραπεζιού
-- Angle: brand-led menu SEO and reservation CTAs
+- Category: other
+- Business: mobile cocktail bar for events / κινητό cocktail bar για εκδηλώσεις
+- Location: Greece / Ελλάδα
+- Keywords EN: mobile cocktail bar Greece; Vwanaki cocktail bar; cocktail bar for events
+- Keywords EL: κινητό cocktail bar; cocktail bar εκδηλώσεις; Vwanaki bar
+- Angle: a mobile bar that comes to the client for cocktails and events
+- CTA: αίτημα προσφοράς
 - Scrape: yes
+- Notes: NOT a restaurant; mobile cocktail bar / events
 
 ## Snippet
 

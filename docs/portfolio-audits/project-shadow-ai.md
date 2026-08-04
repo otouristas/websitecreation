@@ -2,12 +2,14 @@
 
 - URL: https://projectshadow.ai
 - Category: travel-ai
-- Place: AI tourism tooling / AI εργαλεία τουρισμού
-- Niche: AI project / platform
-- Keywords EN: Project Shadow AI; AI for travel brands; tourism AI platform
-- Keywords EL: Project Shadow AI; AI για τουρισμό; πλατφόρμα tourism AI
-- Angle: technical brand authority for AI search visibility
+- Business: AI tooling for online stores / εργαλεία τεχνητής νοημοσύνης για ηλεκτρονικά καταστήματα
+- Location: global e-commerce / διεθνές αγορά e-commerce
+- Keywords EN: Project Shadow AI; AI for WordPress stores; store AI assistant
+- Keywords EL: Project Shadow AI; AI για ηλεκτρονικό κατάστημα; WordPress AI
+- Angle: technical brand pages for AI store assistance (scrape was thin)
+- CTA: επικοινωνία
 - Scrape: thin or broken page content at scrape time — used portfolio metadata
+- Notes: Thin scrape mentioned WordPress store AI; avoided inventing tourism claims
 
 ## Snippet
 

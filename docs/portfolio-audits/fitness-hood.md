@@ -2,11 +2,12 @@
 
 - URL: https://fitnesshoodtrainingcenter.gr
 - Category: other
-- Place: fitness training / γυμναστήριο / training
-- Niche: Fitness Hood training center
-- Keywords EN: Fitness Hood; gym near me; personal training Greece
-- Keywords EL: Fitness Hood; γυμναστήριο; personal training
-- Angle: local gym SEO and class/program pages
+- Business: strength and discipline training center / κέντρο προπόνησης δύναμης και πειθαρχίας
+- Location: Greece / Ελλάδα
+- Keywords EN: Fitness Hood; training center Greece; personal training
+- Keywords EL: Fitness Hood; κέντρο προπόνησης; personal training
+- Angle: local gym SEO with class and program pages
+- CTA: επικοινωνία
 - Scrape: yes
 
 ## Snippet

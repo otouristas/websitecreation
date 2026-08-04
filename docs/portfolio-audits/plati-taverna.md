@@ -2,11 +2,12 @@
 
 - URL: https://platiataverna.com
 - Category: restaurant
-- Place: taverna / restaurant / ταβέρνα / εστιατόριο
-- Niche: Greek taverna website
-- Keywords EN: Plati Taverna; Greek taverna; restaurant reservations
-- Keywords EL: Πλάτη Ταβέρνα; ελληνική ταβέρνα; κράτηση εστιατορίου
-- Angle: menu + reservation local SEO
+- Business: traditional Greek taverna / παραδοσιακή ελληνική ταβέρνα
+- Location: Spili, Rethymno / Σπήλι Ρεθύμνου
+- Keywords EN: Plati Taverna Spili; taverna Spili Rethymno; Greek taverna Crete
+- Keywords EL: Ταβέρνα Πλατεία Σπήλι; ταβέρνα Σπήλι; εστιατόριο Σπήλι Ρέθυμνο
+- Angle: menu and wine pages with local village storytelling
+- CTA: κράτηση τραπεζιού
 - Scrape: yes
 
 ## Snippet

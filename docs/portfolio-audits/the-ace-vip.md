@@ -2,12 +2,14 @@
 
 - URL: https://theacevip.com
 - Category: transfers
-- Place: VIP transport / VIP μεταφορές
-- Niche: ACE VIP transfer brand
-- Keywords EN: The ACE VIP; VIP car service; executive transfers Greece
-- Keywords EL: The ACE VIP; VIP αυτοκίνητο; executive μεταφορές
-- Angle: premium fleet trust signals for corporate VIP
+- Business: Mykonos luxury villas and premium concierge / πολυτελείς βίλες και premium concierge στη Μύκονο
+- Location: Mykonos / Μύκονο
+- Keywords EN: Mykonos VIP villas; Mykonos concierge; The ACE VIP
+- Keywords EL: βίλες Μύκονος VIP; concierge Μύκονος; The ACE VIP
+- Angle: exclusive villa and concierge packaging for high-spend guests
+- CTA: αίτημα προσφοράς
 - Scrape: yes
+- Notes: Scrape shows Mykonos villas + concierge more than pure transfers
 
 ## Snippet
 

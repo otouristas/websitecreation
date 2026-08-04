@@ -2,11 +2,12 @@
 
 - URL: https://cocktailsinthecity.gr
 - Category: restaurant
-- Place: cocktail bar / cocktail bar
-- Niche: cocktail bar / nightlife
-- Keywords EN: Cocktails in the City; cocktail bar Greece; best cocktails
+- Business: cocktail bar and nightlife brand / cocktail bar και nightlife brand
+- Location: Greece / Ελλάδα
+- Keywords EN: Cocktails in the City; cocktail bar Greece; best cocktails Athens
 - Keywords EL: Cocktails in the City; cocktail bar; cocktails Ελλάδα
-- Angle: events and signature drinks as content SEO
+- Angle: events and signature drinks as content SEO hooks
+- CTA: κράτηση
 - Scrape: yes
 
 ## Snippet

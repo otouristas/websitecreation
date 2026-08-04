@@ -2,11 +2,12 @@
 
 - URL: https://cretanwaysrentals.com
 - Category: rent-a-car
-- Place: Crete / Κρήτη
-- Niche: Crete car & scooter rentals
+- Business: Crete car and scooter rentals / ενοικίαση αυτοκινήτων και scooters στην Κρήτη
+- Location: Crete / Κρήτη
 - Keywords EN: rent a car Crete; Heraklion car rental; Crete scooter hire
-- Keywords EL: ενοικίαση αυτοκινήτου Κρήτη; rent a car Ηράκλειο; ενοικίαση μηχανής Κρήτη
-- Angle: airport-to-resort routes across Crete
+- Keywords EL: ενοικίαση αυτοκινήτου Κρήτη; ενοικίαση αυτοκινήτου Ηράκλειο; ενοικίαση μηχανής Κρήτη
+- Angle: airport-to-resort routes for independent Crete travelers
+- CTA: κράτηση
 - Scrape: yes
 
 ## Snippet

@@ -2,11 +2,12 @@
 
 - URL: https://arionfarm.gr
 - Category: other
-- Place: farm / agritourism / αγρόκτημα / αγροτουρισμός
-- Niche: farm brand & experiences
-- Keywords EN: Arion Farm; agritourism Greece; farm experiences
-- Keywords EL: Arion Farm; αγροτουρισμός; επισκέψιμο αγρόκτημα
-- Angle: agritourism and product SEO
+- Business: Cretan farm experiences and agritourism / αγροτικές εμπειρίες και αγροτουρισμός στην Κρήτη
+- Location: Crete / Κρήτη
+- Keywords EN: Arion Farm; Crete farm experiences; agritourism Crete
+- Keywords EL: Arion Farm; αγροτουρισμός Κρήτη; εμπειρίες αγροκτήματος Κρήτη
+- Angle: tours, traditional food and participatory farm experiences
+- CTA: κράτηση
 - Scrape: yes
 
 ## Snippet

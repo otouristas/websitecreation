@@ -7,15 +7,26 @@ author: AnotherSEOGuru Editorial Team
 category: Strategy
 categoryColor: bg-slate-100 text-slate-800
 pillar: agency-playbooks
+faq:
+  - question: "Is software cheaper than agency?"
+    answer: "Lower cash cost — higher time cost. Total cost of ownership includes your hours or opportunity cost."
+  - question: "Can I switch from software to agency mid-year?"
+    answer: "Yes — export GSC history and backlog. Good agencies start from data."
+  - question: "Do you need agency for [GEO/AEO](/en/blog/geo-aeo-ellada)?"
+    answer: "FAQ and entity content can be agency or in-house. LLM measurement discipline benefits from experienced guidance initially."
+  - question: "Should startups buy agency day one?"
+    answer: "If website doesn't exist or doesn't rank — agency project often beats software alone. If learning phase — software + DIY path."
+  - question: "How do I compare agency quotes?"
+    answer: "Same scope definition: pages delivered, GBP locations, reporting cadence, redesign inclusion. Apples-to-apples."
 ---
 
 Most buyers do not fail because of price — they fail because they **do not know what they are buying**. Splitting **software** and **agency** pricing is a deliberate conversion choice. It helps solopreneurs, in-house marketers, and tourism operators choose the right path without buying a retainer when they need a wrench — or software when they need a crew.
 
-This guide explains when software wins, when agency wins, when both make sense, and how [hotels](/solutions/hotels), [rent-a-car brands](/solutions/rent-a-car), and home services typically decide.
+This guide explains when software wins, when agency wins, when both make sense, and how [hotels](/en/solutions/hotels), [rent-a-car brands](/en/solutions/rent-a-car), and home services typically decide.
 
 ## Software: time and leverage
 
-Software sells **capacity** — seats, limits, workflows. Success depends on **operating cadence**: weekly [Search Console](/blog/gsc-weekly-ops-playbook) review, backlog hygiene, someone who ships three fixes per week.
+Software sells **capacity** — seats, limits, workflows. Success depends on **operating cadence**: weekly [Search Console](/en/blog/gsc-weekly-ops-playbook) review, backlog hygiene, someone who ships three fixes per week.
 
 ### What software buyers get
 
@@ -29,7 +40,7 @@ Software sells **capacity** — seats, limits, workflows. Success depends on **o
 
 - In-house SEO with engineering support
 - Agencies white-labeling diagnostics
-- Owner-operators learning [local SEO](/blog/local-seo-guide) with discipline
+- Owner-operators learning [local SEO](/en/blog/local-seo-guide) with discipline
 - Budget-conscious businesses pre-revenue from organic
 
 ### Not a substitute for
@@ -37,7 +48,7 @@ Software sells **capacity** — seats, limits, workflows. Success depends on **o
 - Full website redesign
 - 20 location page production sprint
 - GBP multi-location cleanup during peak season
-- [Travel AI chatbot](/solutions/travel-ai-chatbots) integration
+- [Travel AI chatbot](/en/solutions/travel-ai-chatbots) integration
 
 Software tells you what to fix. Agency fixes it — or your team executes from the backlog.
 
@@ -47,7 +58,7 @@ Agency pricing sells **delivery** — implementation, content, technical fixes, 
 
 ### What agency buyers get
 
-- Done-for-you [SEO web design](/blog/seo-web-design-development-platform)
+- Done-for-you [SEO web design](/en/blog/seo-web-design-development-platform)
 - Location page and fleet content production
 - GBP and citation campaigns
 - Migration and redirect management
@@ -55,12 +66,12 @@ Agency pricing sells **delivery** — implementation, content, technical fixes, 
 
 ### Best for
 
-- Multi-location [hotel groups](/solutions/hotels) and [rent-a-car fleets](/solutions/rent-a-car)
-- Competitive island markets ([Cyclades local SEO](/blog/topiko-seo-kykladon))
+- Multi-location [hotel groups](/en/solutions/hotels) and [rent-a-car fleets](/en/solutions/rent-a-car)
+- Competitive island markets ([Cyclades local SEO](/en/blog/topiko-seo-kykladon))
 - Teams with budget but no SEO headcount
 - Redesign quarters where SEO must not regress
 
-Browse [case studies](/work) for agency-delivered outcomes.
+Browse [case studies](/en/work) for agency-delivered outcomes.
 
 ## When to buy both
 
@@ -75,7 +86,7 @@ Common pattern — and often optimal:
 
 Examples:
 
-- **Hotel group:** Software for GSC clustering across properties; agency for pre-season location page refresh and [GEO/AEO FAQ](/blog/geo-aeo-global-seo-playbook) rollout
+- **Hotel group:** Software for GSC clustering across properties; agency for pre-season location page refresh and [GEO/AEO FAQ](/en/blog/geo-aeo-global-seo-playbook) rollout
 - **Rent-a-car:** Software for near-miss query tracking; agency for new airport desk launch pages
 - **Home services:** Software for ops; agency for programmatic city page build
 
@@ -89,7 +100,7 @@ Answer five questions:
 4. **Peak season in <8 weeks?** Yes → agency surge vs missed revenue
 5. **Is organic already working?** Yes → software to optimize; agency for expansion
 
-Still unsure? [Get started](/get-started) with scope conversation — not generic package grid.
+Still unsure? [Get started](/en/get-started) with scope conversation — not generic package grid.
 
 ## For agencies selling the same stack
 
@@ -122,7 +133,7 @@ Software stays flat — good for year-round ops discipline.
 
 ### Project vs retainer
 
-- **Project:** new [hotel website](/blog/kataskevi-istoselidas-xenodoxeia), island expansion, chatbot launch
+- **Project:** new [hotel website](/en/blog/kataskevi-istoselidas-xenodoxeia), island expansion, chatbot launch
 - **Retainer:** GBP, content, link hygiene, GSC ops
 
 Quote projects separately from ongoing visibility.
@@ -148,8 +159,8 @@ Agency proposals should use their numbers — not generic "more traffic".
 
 - No access to your analytics
 - Vanity rank reports only
-- No [portfolio](/work) in your vertical
-- Can't explain [DIY vs agency tradeoffs](/blog/diy-vs-agency) honestly
+- No [portfolio](/en/work) in your vertical
+- Can't explain [DIY vs agency tradeoffs](/en/blog/diy-vs-agency) honestly
 
 ## Building a hybrid stack — example scopes
 
@@ -162,7 +173,7 @@ Agency proposals should use their numbers — not generic "more traffic".
 **Rent-a-car fleet (5 island desks):**
 
 - Agency retainer peak season (GBP + content)
-- In-house ops off-season with [weekly playbook](/blog/gsc-weekly-ops-playbook)
+- In-house ops off-season with [weekly playbook](/en/blog/gsc-weekly-ops-playbook)
 - Agency project for new airport desk launch pages
 
 **Home services (single city):**
@@ -171,6 +182,18 @@ Agency proposals should use their numbers — not generic "more traffic".
 - Agency if map pack stuck after consistent execution
 
 Document the handoff points so nothing falls between DIY and agency ownership.
+
+
+## Example scopes compared
+
+| Need | Software-first | Agency-first | Hybrid |
+|------|----------------|--------------|--------|
+| Learn GSC ops | Yes | Overkill alone | Software + light coaching |
+| New hotel website | No | Project package | Agency build + software ops |
+| 5 island desks | Partial | Retainer | Agency peak / DIY off-season |
+| Migration | No | Project + QA | Agency lead, in-house review |
+
+Use this table in discovery calls so buyers self-select before you quote. Misaligned packaging is the fastest path to churn — whether the buyer under-bought software or over-bought a retainer they cannot absorb.
 
 ## FAQ
 
@@ -182,13 +205,13 @@ Lower cash cost — higher time cost. Total cost of ownership includes your hour
 
 Yes — export GSC history and backlog. Good agencies start from data.
 
-### Do you need agency for [GEO/AEO](/blog/geo-aeo-ellada)?
+### Do you need agency for [GEO/AEO](/en/blog/geo-aeo-ellada)?
 
 FAQ and entity content can be agency or in-house. LLM measurement discipline benefits from experienced guidance initially.
 
 ### Should startups buy agency day one?
 
-If website doesn't exist or doesn't rank — agency project often beats software alone. If learning phase — software + [DIY path](/blog/diy-vs-agency).
+If website doesn't exist or doesn't rank — agency project often beats software alone. If learning phase — software + [DIY path](/en/blog/diy-vs-agency).
 
 ### How do I compare agency quotes?
 
@@ -196,8 +219,8 @@ Same scope definition: pages delivered, GBP locations, reporting cadence, redesi
 
 ---
 
-### Choose the right path — software, agency, or both
+## Ready to Get Started?
 
-Tell us about your hotel, rent-a-car, or local business. We'll recommend scope honestly.
+Tell us about your site, locations, and goals — we'll recommend a scoped plan with Search Console ops, content priorities, and clear next steps.
 
-[Get started](/get-started) · [See our work](/work) · [Agency playbooks pillar](/blog/pillar-agency-playbooks)
+[Get started](/en/get-started) · [See our work](/en/work) · [Pricing](/en/pricing)

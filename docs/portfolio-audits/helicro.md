@@ -2,11 +2,12 @@
 
 - URL: https://helicro.be
 - Category: other
-- Place: Belgium / EU business / Βέλγιο / ΕΕ
-- Niche: Helicro business site
-- Keywords EN: Helicro; Belgium business website
-- Keywords EL: Helicro; επιχειρηματική ιστοσελίδα Βέλγιο
-- Angle: EU commercial SEO for B2B discovery
+- Business: airport and private transfer service / υπηρεσία ιδιωτικών και αεροδρομικών μεταφορών
+- Location: Belgium and Greece corridors / Βέλγιο και διαδρομές προς Ελλάδα
+- Keywords EN: Helicro transport; Belgium airport transfer; private transfer Belgium
+- Keywords EL: Helicro μεταφορές; μεταφορά αεροδρόμιο Βέλγιο; ιδιωτική μεταφορά Βέλγιο
+- Angle: bilingual Belgium–Greece transfer booking with loyalty offers
+- CTA: κράτηση
 - Scrape: yes
 
 ## Snippet

@@ -2,12 +2,14 @@
 
 - URL: https://athensrentacar.com
 - Category: rent-a-car
-- Place: Athens / Αθήνα
-- Niche: Athens city & airport rental
+- Business: Athens city and airport car rental / ενοικίαση αυτοκινήτων στην Αθήνα
+- Location: Athens / Αθήνα
 - Keywords EN: rent a car Athens; Athens airport car rental; Athens car hire
-- Keywords EL: ενοικίαση αυτοκινήτου Αθήνα; rent a car αεροδρόμιο Αθήνα
-- Angle: airport + city delivery for business and tourism
+- Keywords EL: ενοικίαση αυτοκινήτου Αθήνα; αυτοκίνητο αεροδρόμιο Αθήνα; rent a car Αθήνα
+- Angle: airport and city delivery for business and tourism
+- CTA: κράτηση
 - Scrape: yes
+- Notes: Live scrape was polluted; kept portfolio positioning for Athens rental
 
 ## Snippet
 

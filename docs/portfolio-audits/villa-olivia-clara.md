@@ -2,11 +2,12 @@
 
 - URL: https://villaoliviaclara.com
 - Category: villa
-- Place: luxury villa stay / πολυτελής βίλα
-- Niche: single flagship villa site
-- Keywords EN: Villa Olivia Clara; luxury villa rental; private villa Greece
-- Keywords EL: Villa Olivia Clara; ενοικίαση πολυτελούς βίλας; ιδιωτική βίλα
-- Angle: photo-led conversion for high-intent villa searches
+- Business: luxury private villa / πολυτελής ιδιωτική βίλα
+- Location: Crete / Κρήτη
+- Keywords EN: Villa Olivia Clara; luxury villa Crete; private villa Greece
+- Keywords EL: Villa Olivia Clara; πολυτελής βίλα Κρήτη; ιδιωτική βίλα Ελλάδα
+- Angle: photo-led conversion for high-intent luxury villa searches
+- CTA: αίτημα προσφοράς
 - Scrape: yes
 
 ## Snippet

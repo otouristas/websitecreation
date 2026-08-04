@@ -2,11 +2,12 @@
 
 - URL: https://georgexipolitas.com
 - Category: other
-- Place: personal brand / professional / προσωπικό brand / επαγγελματίας
-- Niche: professional services site
-- Keywords EN: George Xipolitas; professional services Greece
-- Keywords EL: George Xipolitas; επαγγελματικές υπηρεσίες
-- Angle: authority pages for local professional search
+- Business: dining consulting and hospitality professional brand / επαγγελματικό brand συμβουλευτικής εστίασης
+- Location: Greece / Ελλάδα
+- Keywords EN: George Xipolitas; hospitality consulting Greece; dining consultancy
+- Keywords EL: George Xipolitas; συμβουλευτική εστίασης; επαγγελματικές υπηρεσίες εστίασης
+- Angle: authority pages for local professional and hospitality search
+- CTA: επικοινωνία
 - Scrape: yes
 
 ## Snippet

@@ -2,11 +2,12 @@
 
 - URL: https://waytocrete.com
 - Category: tours
-- Place: Crete / Κρήτη
-- Niche: Crete travel experiences
-- Keywords EN: Way to Crete; Crete experiences; Crete day trips
-- Keywords EL: Way to Crete; εμπειρίες Κρήτη; ημερήσιες εκδρομές Κρήτη
-- Angle: experience-led booking pages for Crete travelers
+- Business: storytelling tours and Crete experiences / εκδρομές storytelling και εμπειρίες στην Κρήτη
+- Location: Crete / Κρήτη
+- Keywords EN: Way to Crete; Crete experiences; Crete storytelling tours
+- Keywords EL: εμπειρίες Κρήτη; εκδρομές storytelling Κρήτη; ημερήσιες εκδρομές Κρήτη
+- Angle: experience-led booking pages that sell belonging, not just sightseeing
+- CTA: κράτηση
 - Scrape: yes
 
 ## Snippet

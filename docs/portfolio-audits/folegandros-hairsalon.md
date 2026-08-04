@@ -2,11 +2,12 @@
 
 - URL: https://folegandros-hairsalon.gr
 - Category: other
-- Place: Folegandros / Φολέγανδρος
-- Niche: hair salon
-- Keywords EN: Folegandros hair salon; hairdresser Folegandros
-- Keywords EL: κομμωτήριο Φολέγανδρος; hair salon Φολέγανδρος
-- Angle: local service SEO for island visitors and residents
+- Business: hair, nails and makeup salon / κομμωτήριο, νύχια και μακιγιάζ
+- Location: Folegandros / Φολέγανδρο
+- Keywords EN: Folegandros hair salon; Sousi Hair Salon; nails makeup Folegandros
+- Keywords EL: κομμωτήριο Φολέγανδρος; Sousi Hair Salon; νύχια μακιγιάζ Φολέγανδρος
+- Angle: beauty services for island visitors and residents with book-now
+- CTA: κράτηση
 - Scrape: yes
 
 ## Snippet

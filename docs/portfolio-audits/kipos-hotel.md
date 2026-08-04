@@ -2,11 +2,12 @@
 
 - URL: https://kipos-hotel.com
 - Category: hotel
-- Place: garden hotel stay / ξενοδοχείο με κήπο
-- Niche: garden-themed hotel website
-- Keywords EN: Kipos Hotel; garden hotel Greece; hotel with garden
-- Keywords EL: Kipos Hotel; ξενοδοχείο με κήπο; διαμονή με κήπο
-- Angle: amenities and garden experience as ranking hooks
+- Business: city-centre hotel near the Old Town / ξενοδοχείο στο κέντρο κοντά στην Παλιά Πόλη
+- Location: Rethymno / Ρέθυμνο
+- Keywords EN: Kipos Hotel Rethymno; hotel Old Town Rethymno; Rethymno city hotel
+- Keywords EL: Kipos Hotel Ρέθυμνο; ξενοδοχείο Παλιά Πόλη Ρέθυμνο; ξενοδοχείο κέντρο Ρέθυμνο
+- Angle: city-centre location with easy access to shops, cafes and the Old Town
+- CTA: κράτηση
 - Scrape: yes
 
 ## Snippet

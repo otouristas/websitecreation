@@ -2,11 +2,12 @@
 
 - URL: https://antiparosrentacar.com
 - Category: rent-a-car
-- Place: Antiparos / Αντίπαρος
-- Niche: island rent-a-car
-- Keywords EN: rent a car Antiparos; Antiparos car rental; scooter hire Antiparos
-- Keywords EL: ενοικίαση αυτοκινήτου Αντίπαρος; rent a car Αντίπαρος; ενοικίαση μηχανής Αντίπαρος
-- Angle: ferry-arrival pickup and compact fleet for narrow roads
+- Business: island car and scooter rental / ενοικίαση αυτοκινήτων και μηχανών στο νησί
+- Location: Antiparos / Αντίπαρο
+- Keywords EN: rent a car Antiparos; Antiparos scooter hire; car hire Antiparos ferry
+- Keywords EL: ενοικίαση αυτοκινήτου Αντίπαρος; ενοικίαση μηχανής Αντίπαρος; αυτοκίνητο Αντίπαρος ferry
+- Angle: ferry-arrival pickup and compact fleet for narrow island roads
+- CTA: κράτηση
 - Scrape: yes
 
 ## Snippet

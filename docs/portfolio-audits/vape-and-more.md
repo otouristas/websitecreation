@@ -2,11 +2,12 @@
 
 - URL: https://vapeandmore.gr
 - Category: other
-- Place: vape retail / κατάστημα vape
-- Niche: vape & more e-commerce
+- Business: vape retail e-shop / ηλεκτρονικό κατάστημα vape
+- Location: Greece / Ελλάδα
 - Keywords EN: Vape and More; vape shop Greece; buy vape online
-- Keywords EL: Vape and More; κατάστημα vape; αγορά vape online
-- Angle: product category architecture for retail search
+- Keywords EL: κατάστημα vape; αγορά vape online; Vape and More
+- Angle: product category architecture for retail search and fast checkout
+- CTA: παραγγελία
 - Scrape: yes
 
 ## Snippet

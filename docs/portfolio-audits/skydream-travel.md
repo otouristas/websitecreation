@@ -2,11 +2,12 @@
 
 - URL: https://www.skydream.travel
 - Category: tours
-- Place: travel agency / ταξιδιωτικό γραφείο
-- Niche: travel agency / packages
-- Keywords EN: SkyDream Travel; travel agency Greece; holiday packages
-- Keywords EL: SkyDream Travel; ταξιδιωτικό γραφείο; πακέτα διακοπών
-- Angle: package and destination landing SEO
+- Business: travel agency and holiday packages / ταξιδιωτικό γραφείο και πακέτα διακοπών
+- Location: Greece / Ελλάδα
+- Keywords EN: SkyDream Travel; travel agency Greece; holiday packages Greece
+- Keywords EL: ταξιδιωτικό γραφείο; πακέτα διακοπών; SkyDream Travel
+- Angle: package and destination landing pages for commercial travel intent
+- CTA: επικοινωνία
 - Scrape: yes
 
 ## Snippet

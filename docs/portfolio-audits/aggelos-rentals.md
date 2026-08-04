@@ -2,12 +2,14 @@
 
 - URL: https://aggelosrentals.com
 - Category: rent-a-car
-- Place: Paros & Piraeus / Πάρος & Πειραιάς
-- Niche: car rental with port/airport delivery
-- Keywords EN: rent a car Paros; car rental Piraeus port; airport car hire Greece
-- Keywords EL: ενοικίαση αυτοκινήτου Πάρος; ενοικίαση αυτοκινήτου Πειραιάς; rent a car λιμάνι
-- Angle: seasonal fleet booking for island arrivals
+- Business: car rental with port and airport delivery / ενοικίαση αυτοκινήτων με παράδοση σε λιμάνι και αεροδρόμιο
+- Location: Piraeus and Paros / Πειραιά και Πάρο
+- Keywords EN: rent a car Piraeus; airport car delivery Greece; monthly car rental Piraeus
+- Keywords EL: ενοικίαση αυτοκινήτου Πειραιά; παράδοση αυτοκινήτου αεροδρόμιο; μηνιαία ενοικίαση αυτοκινήτου
+- Angle: port and airport handoff for ferry and flight arrivals
+- CTA: κράτηση
 - Scrape: yes
+- Notes: Scrape confirms Piraeus focus with port/airport delivery
 
 ## Snippet
 

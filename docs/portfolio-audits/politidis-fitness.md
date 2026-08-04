@@ -2,11 +2,12 @@
 
 - URL: https://politidisfitness.gr
 - Category: other
-- Place: fitness brand / fitness brand
-- Niche: Politidis Fitness
-- Keywords EN: Politidis Fitness; personal trainer Greece; fitness coaching
-- Keywords EL: Politidis Fitness; personal trainer; προπόνηση
-- Angle: trainer authority pages and program SEO
+- Business: personal training and online fitness programs / προσωπική προπόνηση και online προγράμματα fitness
+- Location: Greece / Ελλάδα
+- Keywords EN: Politidis Fitness; personal trainer Greece; online fitness coaching
+- Keywords EL: Politidis Fitness; personal trainer; online προπόνηση
+- Angle: trainer authority pages and program SEO for coaching leads
+- CTA: επικοινωνία
 - Scrape: yes
 
 ## Snippet

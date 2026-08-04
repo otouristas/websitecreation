@@ -2,11 +2,12 @@
 
 - URL: https://naxos-car-rental.com
 - Category: rent-a-car
-- Place: Naxos / Νάξος
-- Niche: Naxos car rental brand
+- Business: Naxos car rental brand / ενοικίαση αυτοκινήτων στη Νάξο
+- Location: Naxos / Νάξο
 - Keywords EN: Naxos car rental; rent a car Naxos airport
 - Keywords EL: ενοικίαση αυτοκινήτου Νάξος; αυτοκίνητο αεροδρόμιο Νάξος
-- Angle: distinct fleet taxonomy vs sibling Naxos brands
+- Angle: distinct fleet taxonomy versus sibling Naxos rental brands
+- CTA: κράτηση
 - Scrape: yes
 
 ## Snippet

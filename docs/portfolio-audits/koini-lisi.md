@@ -2,11 +2,12 @@
 
 - URL: https://koinilisi.gr
 - Category: other
-- Place: solutions / services firm / λύσεις / υπηρεσίες
-- Niche: Koini Lisi services
-- Keywords EN: Koini Lisi; business solutions Greece
-- Keywords EL: Κοινή Λύση; επιχειρηματικές λύσεις
-- Angle: service landing pages for Greek commercial queries
+- Business: mediation and out-of-court dispute resolution / διαμεσολάβηση και εξωδικαστική επίλυση διαφορών
+- Location: Greece / Ελλάδα
+- Keywords EN: mediation Greece; Koini Lisi; out of court dispute resolution
+- Keywords EL: διαμεσολάβηση; εξωδικαστική επίλυση διαφορών; Κοινή Λύση
+- Angle: confidential mediation service pages for Greek commercial queries
+- CTA: επικοινωνία
 - Scrape: yes
 
 ## Snippet

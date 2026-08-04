@@ -1,151 +1,130 @@
 ---
 slug: medical-marketing
 title: Medical SEO — The Ultimate Guide for Growing Your Practice
-description: SEO for doctors, surgeons, and med spas — YMYL, E-E-A-T, local patient intent, and compliance-friendly content patterns.
+description: SEO for doctors, surgeons, and med spas — YMYL, E-E-A-T, local patient intent, and compliance-friendly content patterns that earn trust and rankings.
 date: 2026-01-05
 author: AnotherSEOGuru Editorial Team
 category: Healthcare Marketing
 categoryColor: bg-teal-100 text-teal-700
-pillar: technical-seo-in-house
+pillar: industry-playbooks
+faq:
+  - question: Is medical SEO different from local SEO?
+    answer: It layers YMYL and E-E-A-T requirements on top of local fundamentals — Google Business Profile, citations, and location pages. The local playbook still applies; the content and compliance bar is higher.
+  - question: Can AI write medical content for SEO?
+    answer: AI drafts can accelerate production but require clinician review before publish. Unreviewed AI content is a YMYL risk and can damage trust and rankings.
+  - question: How long until medical SEO shows results?
+    answer: Competitive metros often need 6–12 months for procedure keywords. Long-tail education content can rank in 8–16 weeks with strong E-E-A-T signals.
+  - question: Do med spas follow the same SEO rules as clinics?
+    answer: Yes — injectables and device treatments fall under YMYL. Marketing claims must align with regional advertising rules and platform policies.
+  - question: Should medical practices blog?
+    answer: Yes — educational content builds authority, internal links, and AEO eligibility when it is medically accurate and professionally reviewed.
 ---
 
-Marketing a medical practice is different. You are not only selling a service — you are asking for trust. Whether you are a plastic surgeon targeting procedure research queries or a med spa promoting injectables, your SEO strategy must be precise, defensible, and compliant. The same principles that apply to [E-E-A-T](/glossary?term=e-e-a-t) for healthcare apply increasingly to tourism and professional services — clarity, authority, and verifiable facts win both Google rankings and AI citations.
+Marketing a medical practice is different. You are not only selling a service — you are asking for trust. Whether you are a plastic surgeon targeting procedure research queries or a med spa promoting injectables, your SEO strategy must be precise, defensible, and compliant. The same clarity, authority, and verifiable facts that win [E-E-A-T](/en/glossary?term=e-e-a-t) for healthcare increasingly win AI citations too.
+
+AnotherSEOGuru scopes technical and local growth carefully for healthcare brands — start at [Get Started](/en/get-started), review [technical SEO](/en/blog/technical-seo-guide), and borrow operational cadence from the [GSC weekly ops playbook](/en/blog/gsc-weekly-ops-playbook) without copying clinical standards from other industries.
 
 ## 1. Your Money or Your Life (YMYL)
 
-Google treats medical content under YMYL guidelines. The bar for quality is higher than for a restaurant blog or fleet gallery. Generic filler content will not cut it. You need to demonstrate **experience, expertise, authoritativeness, and trust**.
+Google treats medical content under YMYL guidelines. The bar is higher than for a restaurant blog or fleet gallery. Generic filler will not cut it. You need experience, expertise, authoritativeness, and trust.
 
 ### E-E-A-T signals that matter
 
-- **Author bios:** Clinical credentials, board certification, years of practice
-- **Medical review:** Content reviewed by qualified professionals where appropriate
-- **Citations:** Link to reputable sources (NIH, PubMed, specialty societies) when stating clinical facts
-- **Safety and expectations:** Transparent risks, recovery timelines, candidacy criteria — converts better-qualified patients
-- **Contact and location clarity:** Same [NAP](/glossary?term=nap) discipline as [local SEO](/blog/local-seo-guide)
+- **Author bios:** clinical credentials, board certification, years of practice
+- **Medical review:** content reviewed by qualified professionals where appropriate
+- **Citations:** link to reputable sources (NIH, PubMed, specialty societies) when stating clinical facts
+- **Safety and expectations:** transparent risks, recovery timelines, candidacy criteria — converts better-qualified patients
+- **Contact and location clarity:** same [NAP](/en/glossary?term=nap) discipline as [local SEO](/en/blog/local-seo-guide)
 
 ### What to avoid
 
-- Before/after claims without context
-- Guaranteed outcomes
-- Keyword-stuffed condition pages with no clinical depth
-- Copy-paste content across locations
+Before/after claims without context, guaranteed outcomes, keyword-stuffed condition pages with no clinical depth, and copy-paste content across locations.
 
-## 2. Local SEO for patients
+## 2. Local SEO for Patients
 
-Patients want convenience. They search "Botox near me", "best dermatologist in [city]", or "rhinoplasty surgeon [metro]". Your [Google Business Profile](/glossary?term=google-business-profile) must be accurate:
+Patients want convenience. They search “Botox near me,” “best dermatologist in [city],” or “rhinoplasty surgeon [metro].” Your Google Business Profile must be accurate: facility photos (not stock), updated hours including consultation slots, privacy-safe review replies with no PHI, and the correct primary category.
 
-- Photos of the facility — not stock images
-- Updated hours including procedure consultation slots
-- Review responses that respect privacy — no PHI in public replies
-- Correct primary category — "Plastic surgeon", "Dermatologist", not generic "Doctor"
+Pair GBP with location pages that reference neighborhoods, parking, and transit — the same operational pattern used in [hotel local SEO](/en/solutions/hotels) and [Cyclades local SEO](/en/blog/topiko-seo-kykladon), adapted for healthcare compliance.
 
-Pair GBP with location pages that reference neighborhoods, parking, and transit — the same pattern we use for [hotel local SEO](/solutions/hotels) and [Cyclades operators](/blog/topiko-seo-kykladon), adapted for healthcare compliance.
+Map queries to dedicated URLs: service + city, condition education, and provider branded searches. Use intent grouping so you do not cannibalize with overlapping thin pages — cannibalization hurts YMYL sites especially hard.
 
-### Local keywords and landing pages
+## 3. On-Page SEO for Medical Content
 
-Map queries to dedicated URLs:
+Title tags should include service + location where relevant, plus brand. Meta descriptions must set accurate expectations — not clickbait. Use one H1 per page and a logical heading flow for procedures: overview → candidacy → process → recovery → FAQ.
 
-- Service + city ("lip filler Austin")
-- Condition education ("what is rhinoplasty recovery timeline")
-- Provider branded ("Dr. [Name] reviews")
+Medical queries trigger featured snippets and People Also Ask. Structure visible Q&A plus structured data aligned with on-page text — never hidden-only markup. This mirrors [GEO/AEO](/en/blog/geo-aeo-global-seo-playbook) patterns used in hospitality FAQ, with higher accuracy stakes.
 
-Use [search intent](/glossary?term=search-intent) grouping — don't cannibalize with overlapping thin pages. [Cannibalization](/glossary?term=keyword-cannibalization) hurts YMYL sites especially hard.
+## 4. Before-and-After Galleries (Responsibly)
 
-## 3. On-page SEO for medical content
+For aesthetic practices, results persuade — when optimized carefully.
 
-### Title tags and meta descriptions
+- **Alt text:** describe procedure and view (“Rhinoplasty before and after, side profile”)
+- **File names:** descriptive — not `IMG_123.jpg`
+- **Performance:** compress so galleries do not tank Core Web Vitals
+- **Consent:** document patient consent for published images per jurisdiction
 
-[Title tags](/glossary?term=title-tag) should include service + location where relevant, plus brand. [Meta descriptions](/glossary?term=meta-description) must set accurate expectations — not clickbait.
+Slow galleries lose mobile patients — the same performance discipline we enforce on [rent-a-car fleet pages](/en/solutions/rent-a-car).
 
-### Heading structure
+## 5. Technical SEO for Healthcare Sites
 
-One [H1](/glossary?term=h1-tag) per page, logical [heading structure](/glossary?term=heading-structure) for procedures: overview → candidacy → process → recovery → FAQ.
+| Area | Priority | Why it matters |
+| :--- | :--- | :--- |
+| HTTPS | Required | Trust and indexing baseline |
+| Mobile-first | Critical | Patients search on phones |
+| Indexation control | High | Block staging; monitor after CMS updates |
+| Internal linking | High | Hub procedures → blogs → FAQs |
+| Schema | High | Physician, MedicalProcedure, FAQ where appropriate |
+| Page speed | High | Green Core Web Vitals on gallery-heavy templates |
 
-### FAQ for AEO
+Run [internal linking audits](/en/blog/internal-linking-audit-checklist) after every template change. Deepen crawl hygiene with [technical SEO](/en/blog/technical-seo-guide).
 
-Medical queries trigger [featured snippets](/glossary?term=featured-snippet) and [People Also Ask](/glossary?term=people-also-ask). Structure FAQ with visible Q&A plus [structured data](/glossary?term=structured-data) — aligned with on-page text, never hidden-only markup.
+## 6. Content Strategy — Education over Promotion
 
-This mirrors [GEO/AEO playbook](/blog/geo-aeo-global-seo-playbook) patterns used for hospitality FAQ — with higher accuracy stakes.
+Winning medical SEO educates: procedure guides with honest pros/cons, recovery timelines, comparison content with clinical nuance, and glossary-style definitions. Use topic clusters — pillar procedure page + supporting articles + FAQ. Same architecture as tourism hubs, different compliance bar. Pair with [on-page SEO](/en/blog/on-page-seo) craft.
 
-## 4. The power of "before and after" galleries
+## 7. Reputation, Reviews and Compliance
 
-For aesthetic practices, results are persuasive — but they must be optimized responsibly.
+Reviews influence local pack rankings and patient trust. Use systematic post-visit requests compliant with platform policies, respond professionally without discussing PHI, and flag inaccurate reviews through official channels.
 
-- **Alt text:** Describe procedure and view ("Rhinoplasty before and after, side profile")
-- **File names:** Descriptive — not `IMG_123.jpg`
-- **Performance:** Compress images so galleries don't tank [Core Web Vitals](/glossary?term=lcp) and [CLS](/glossary?term=cls)
-- **Consent:** Document patient consent for published images per jurisdiction
+We respect HIPAA, regional medical board advertising standards, and platform policies. Tactics that work for [hotels](/en/solutions/hotels) or home services may be inappropriate for healthcare. Always involve compliance stakeholders before publishing campaign content.
 
-Slow galleries lose mobile patients — the same performance discipline we enforce on [rent-a-car fleet pages](/solutions/rent-a-car).
+## Common Medical SEO Mistakes
 
-## 5. Technical SEO for healthcare sites
+1. **Unreviewed AI articles** published at volume under a clinician’s name.
+2. **Guaranteed outcomes** or aggressive before/after claims without context.
+3. **Thin multi-location clones** that swap the city name only.
+4. **Ignoring GBP categories and review replies** while competitors stay active.
+5. **Heavy galleries** that destroy mobile Core Web Vitals.
+6. **Burying credentials** so E-E-A-T signals never reach the page.
 
-| Area | Priority |
-|------|----------|
-| [HTTPS](/glossary?term=https) | Required |
-| [Mobile-first indexing](/glossary?term=mobile-first-indexing) | Critical — patients search on phones |
-| [Indexation](/glossary?term=indexing) | Block staging; monitor coverage after CMS updates |
-| [Internal linking](/glossary?term=internal-linking) | Hub procedure pages → supporting blogs → glossary |
-| Schema | Physician, MedicalProcedure, FAQ where appropriate |
-| Page speed | Target green [Core Web Vitals](/glossary?term=page-experience) |
-
-Run [technical audits](/blog/internal-linking-audit-checklist) after every template change.
-
-## 6. Content strategy — education over promotion
-
-Winning medical SEO educates:
-
-- Procedure guides with honest pros/cons
-- Recovery timelines and aftercare
-- Comparison content ("fillers vs Botox") with clinical nuance
-- Glossary-style definitions linking to [SEO glossary](/glossary?term=e-e-a-t) patterns
-
-Use [topic clusters](/glossary?term=topic-clusters): pillar procedure page + supporting articles + FAQ. Same architecture as [tourism website design 2026](/blog/sxediasmos-istoselidas-tourismos-2026) — different compliance bar.
-
-## 7. Reputation and reviews
-
-Reviews influence [local pack](/glossary?term=local-pack) rankings and patient trust.
-
-- Systematic post-visit requests — compliant with platform policies
-- Respond professionally — never discuss PHI publicly
-- Monitor accuracy — flag policy violations to platforms
-
-## 8. Compliance reminder
-
-We respect HIPAA, regional medical board advertising standards, and platform policies. SEO tactics that work for [hotels](/solutions/hotels) or home services may be inappropriate for healthcare. Always involve compliance stakeholders before publishing campaign content.
+Prioritize one high-value procedure or service line before expanding location clones. A single authoritative hub with reviewed FAQs outperforms ten thin city pages. Measure consultation requests and qualified form fills — not blog traffic alone — and keep compliance review on the critical path before every publish.
 
 ## FAQ
 
 ### Is medical SEO different from local SEO?
 
-It layers YMYL and E-E-A-T requirements on top of local fundamentals — GBP, citations, location pages. The local playbook still applies; the content bar is higher.
+It layers YMYL and E-E-A-T on top of GBP, citations, and location pages. Local fundamentals still apply; the content bar is higher.
 
 ### Can AI write medical content?
 
-AI drafts can accelerate production but require clinician review before publish. Unreviewed AI content is a YMYL risk.
+Drafts only — clinician review before publish is mandatory for YMYL safety.
 
 ### How long until results?
 
-Competitive metros: 6–12 months for procedure keywords. Long-tail education content can rank in 8–16 weeks with strong E-E-A-T.
+Competitive metros: 6–12 months for procedure keywords. Long-tail education can move in 8–16 weeks with strong E-E-A-T.
 
 ### Do med spas follow the same rules?
 
-Yes — injectables and device treatments fall under YMYL. Marketing claims must align with regional advertising rules.
+Yes. Injectables and device treatments remain YMYL; claims must match advertising rules.
 
 ### Should I blog?
 
-Yes — educational content builds authority, internal links, and AEO eligibility — when medically accurate and reviewed.
+Yes, when content is accurate, reviewed, and linked into procedure hubs for AEO and authority.
 
 ### How does medical SEO relate to tourism SEO patterns?
 
-Both rely on [local pack](/glossary?term=local-pack) fundamentals, FAQ/AEO structure, and performance discipline — but medical adds YMYL compliance. Tourism teams can borrow operational cadence ([GSC weekly ops](/blog/gsc-weekly-ops-playbook)) without copying clinical content standards.
+Both rely on local pack fundamentals, FAQ/AEO structure, and performance discipline — medical adds YMYL compliance. Borrow ops cadence from [GSC weekly ops](/en/blog/gsc-weekly-ops-playbook), not clinical copy standards.
 
-For practice growth scoped to SEO and web presence, start at [/get-started](/get-started) — we separate healthcare compliance review from technical delivery planning.
+## Ready to Get Started?
 
----
-
-### Grow your practice with defensible SEO
-
-We handle technical SEO, content architecture, and local visibility for healthcare brands — with compliance-aware workflows.
-
-[Get started](/get-started) · [See our work](/work) · [Technical SEO pillar](/blog/pillar-technical-seo-in-house)
+For practice growth scoped to SEO and web presence, [get started](/en/get-started) — we separate healthcare compliance review from technical delivery planning. See [our work](/en/work), [pricing](/en/pricing), and the [technical SEO guide](/en/blog/technical-seo-guide) when you want a defensible roadmap.

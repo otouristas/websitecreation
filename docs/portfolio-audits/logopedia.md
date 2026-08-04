@@ -2,11 +2,12 @@
 
 - URL: https://logopedia.edu.gr
 - Category: other
-- Place: speech therapy education / λογοθεραπεία / εκπαίδευση
-- Niche: logopedia / speech therapy
-- Keywords EN: Logopedia; speech therapy Greece; λογοθεραπεία
+- Business: speech therapy education and practice / λογοθεραπεία και εκπαίδευση
+- Location: Greece / Ελλάδα
+- Keywords EN: Logopedia; speech therapy Greece
 - Keywords EL: λογοθεραπεία; λογοθεραπευτής; Logopedia
-- Angle: educational authority + local therapy booking SEO
+- Angle: educational authority plus local therapy booking SEO
+- CTA: κράτηση
 - Scrape: yes
 
 ## Snippet

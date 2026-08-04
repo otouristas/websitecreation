@@ -256,6 +256,200 @@ export const BLOG_MONEY_LINKS: Record<
         { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
         { path: '/glossary', titleEn: 'SEO glossary', titleEl: 'Γλωσσάρι SEO' },
     ],
+    'web-hosting-domain-odigos': [
+        { path: '/services/website-creation', titleEn: 'Website creation', titleEl: 'Κατασκευή ιστοσελίδων' },
+        { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
+        { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
+    ],
+    'web-hosting-domain-guide': [
+        { path: '/services/website-creation', titleEn: 'Website creation', titleEl: 'Κατασκευή ιστοσελίδων' },
+        { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
+        { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
+    ],
+    'anasxediasmos-istoselidas': [
+        { path: '/services/website-creation', titleEn: 'Website creation', titleEl: 'Κατασκευή ιστοσελίδων' },
+        { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
+        { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
+        { path: '/work', titleEn: 'Portfolio', titleEl: 'Έργα' },
+    ],
+    'website-redesign-guide': [
+        { path: '/services/website-creation', titleEn: 'Website creation', titleEl: 'Κατασκευή ιστοσελίδων' },
+        { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
+        { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
+        { path: '/work', titleEn: 'Portfolio', titleEl: 'Έργα' },
+    ],
+    'sxediasmos-istoselidas-tourismos-2026': [
+        { path: '/solutions/hotels', titleEn: 'Hotel solutions', titleEl: 'Λύσεις για ξενοδοχεία' },
+        { path: '/services/website-creation', titleEn: 'Website creation', titleEl: 'Κατασκευή ιστοσελίδων' },
+        { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
+        { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
+    ],
+    'seo-web-design-development-platform': [
+        { path: '/services/website-creation', titleEn: 'Website creation', titleEl: 'Κατασκευή ιστοσελίδων' },
+        { path: '/platform', titleEn: 'SEO platform', titleEl: 'SEO platform' },
+        { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
+        { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
+    ],
+    'seo-gia-estiatoria': [
+        { path: '/services/local-seo', titleEn: 'Local SEO', titleEl: 'Τοπικό SEO' },
+        { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
+        { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
+    ],
+    'seo-gia-dikigorous': [
+        { path: '/services/local-seo', titleEn: 'Local SEO', titleEl: 'Τοπικό SEO' },
+        { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
+        { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
+    ],
+    'law-firm-seo': [
+        { path: '/services/local-seo', titleEn: 'Local SEO', titleEl: 'Τοπικό SEO' },
+        { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
+        { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
+    ],
+    'seo-gia-odontiatrous': [
+        { path: '/services/local-seo', titleEn: 'Local SEO', titleEl: 'Τοπικό SEO' },
+        { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
+        { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
+    ],
+    'seo-gia-gymnastiria': [
+        { path: '/services/local-seo', titleEn: 'Local SEO', titleEl: 'Τοπικό SEO' },
+        { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
+        { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
+    ],
+    'gym-fitness-seo': [
+        { path: '/services/local-seo', titleEn: 'Local SEO', titleEl: 'Τοπικό SEO' },
+        { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
+        { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
+    ],
+    'seo-gia-akinita': [
+        { path: '/services/local-seo', titleEn: 'Local SEO', titleEl: 'Τοπικό SEO' },
+        { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
+        { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
+    ],
+    'real-estate-seo': [
+        { path: '/services/local-seo', titleEn: 'Local SEO', titleEl: 'Τοπικό SEO' },
+        { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
+        { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
+    ],
+    'medical-marketing': [
+        { path: '/services/local-seo', titleEn: 'Local SEO', titleEl: 'Τοπικό SEO' },
+        { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
+        { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
+    ],
+    'istoselida-enikiasis-autokinitou-seo': [
+        { path: '/solutions/rent-a-car', titleEn: 'Rent-a-car websites', titleEl: 'Ενοικιάσεις αυτοκινήτων' },
+        { path: '/services/local-seo', titleEn: 'Local SEO', titleEl: 'Τοπικό SEO' },
+        { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
+        { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
+    ],
+    'topiko-seo-thessaloniki': [
+        { path: '/services/local-seo/thessaloniki-gr', titleEn: 'Local SEO Thessaloniki', titleEl: 'Τοπικό SEO Θεσσαλονίκη' },
+        { path: '/services/local-seo', titleEn: 'Local SEO', titleEl: 'Τοπικό SEO' },
+        { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
+        { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
+    ],
+    'topiko-seo-kykladon': [
+        { path: '/services/local-seo', titleEn: 'Local SEO', titleEl: 'Τοπικό SEO' },
+        { path: '/solutions/hotels', titleEn: 'Hotel solutions', titleEl: 'Λύσεις για ξενοδοχεία' },
+        { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
+        { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
+    ],
+    'geo-aeo-ellada': [
+        { path: '/services/ai-visibility', titleEn: 'AI visibility (GEO/AEO)', titleEl: 'AI Visibility (GEO/AEO)' },
+        { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
+        { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
+    ],
+    'geo-vs-seo-vs-aeo': [
+        { path: '/services/ai-visibility', titleEn: 'AI visibility (GEO/AEO)', titleEl: 'AI Visibility (GEO/AEO)' },
+        { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
+        { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
+    ],
+    'geo-vs-seo-vs-aeo-el': [
+        { path: '/services/ai-visibility', titleEn: 'AI visibility (GEO/AEO)', titleEl: 'AI Visibility (GEO/AEO)' },
+        { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
+        { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
+    ],
+    'ai-chatbots-tourismos': [
+        { path: '/solutions/travel-ai-chatbots', titleEn: 'Travel AI chatbots', titleEl: 'AI Chatbots τουρισμού' },
+        { path: '/services/ai-visibility', titleEn: 'AI visibility', titleEl: 'Ορατότητα σε AI' },
+        { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
+    ],
+    'on-page-seo': [
+        { path: '/services/seo-audits', titleEn: 'SEO services', titleEl: 'Υπηρεσίες SEO' },
+        { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
+        { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
+    ],
+    'off-page-seo': [
+        { path: '/services/link-building', titleEn: 'Link building', titleEl: 'Link building' },
+        { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
+        { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
+    ],
+    'link-building-guide': [
+        { path: '/services/link-building', titleEn: 'Link building', titleEl: 'Link building' },
+        { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
+        { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
+    ],
+    'seo-content-guide': [
+        { path: '/services/seo-audits', titleEn: 'SEO services', titleEl: 'Υπηρεσίες SEO' },
+        { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
+        { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
+    ],
+    'technical-seo-guide': [
+        { path: '/services/seo-audits', titleEn: 'SEO audits', titleEl: 'Υπηρεσίες SEO' },
+        { path: '/tools/free-seo-audit', titleEn: 'Free SEO audit', titleEl: 'Δωρεάν SEO audit' },
+        { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
+        { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
+    ],
+    'techniko-seo': [
+        { path: '/services/seo-audits', titleEn: 'SEO audits', titleEl: 'Υπηρεσίες SEO' },
+        { path: '/tools/free-seo-audit', titleEn: 'Free SEO audit', titleEl: 'Δωρεάν SEO audit' },
+        { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
+        { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
+    ],
+    'keyword-research-guide': [
+        { path: '/services/seo-audits', titleEn: 'SEO services', titleEl: 'Υπηρεσίες SEO' },
+        { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
+        { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
+    ],
+    'lexeis-kleidia-seo': [
+        { path: '/services/seo-audits', titleEn: 'SEO services', titleEl: 'Υπηρεσίες SEO' },
+        { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
+        { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
+    ],
+    'how-to-increase-organic-traffic': [
+        { path: '/services/seo-audits', titleEn: 'SEO services', titleEl: 'Υπηρεσίες SEO' },
+        { path: '/services/local-seo', titleEn: 'Local SEO', titleEl: 'Τοπικό SEO' },
+        { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
+    ],
+    'seo-vs-google-ads': [
+        { path: '/services/seo-audits', titleEn: 'SEO services', titleEl: 'Υπηρεσίες SEO' },
+        { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
+        { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
+    ],
+    'seo-i-google-ads': [
+        { path: '/services/seo-audits', titleEn: 'SEO services', titleEl: 'Υπηρεσίες SEO' },
+        { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
+        { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
+    ],
+    'best-seo-tools-2026': [
+        { path: '/platform', titleEn: 'SEO platform', titleEl: 'SEO platform' },
+        { path: '/tools/free-seo-tools', titleEn: 'Free SEO tools', titleEl: 'Δωρεάν εργαλεία SEO' },
+        { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
+    ],
+    'ergaleia-seo': [
+        { path: '/platform', titleEn: 'SEO platform', titleEl: 'SEO platform' },
+        { path: '/tools/free-seo-tools', titleEn: 'Free SEO tools', titleEl: 'Δωρεάν εργαλεία SEO' },
+        { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
+    ],
+    'diy-vs-agency': [
+        { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
+        { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
+        { path: '/work', titleEn: 'Portfolio', titleEl: 'Έργα' },
+    ],
+    'local-seo-guide': [
+        { path: '/services/local-seo', titleEn: 'Local SEO', titleEl: 'Τοπικό SEO' },
+        { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
+        { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
+    ],
 };
 
 export function getBlogMoneyLinks(

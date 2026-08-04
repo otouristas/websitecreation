@@ -2,11 +2,12 @@
 
 - URL: https://eolidesvillas.gr
 - Category: villa
-- Place: Greek villas / βίλες Ελλάδα
-- Niche: luxury villa portfolio
-- Keywords EN: Eolides Villas; luxury villas Greece; villa rental Greece
-- Keywords EL: Eolides Villas; πολυτελείς βίλες; ενοικίαση βίλας Ελλάδα
-- Angle: multi-property villa SEO with inquiry forms
+- Business: family villas portfolio / οικογενειακές βίλες
+- Location: Lampini, Rethymno Crete / Λαμπινή Ρεθύμνου στην Κρήτη
+- Keywords EN: Eolides Villas; family villas Rethymno; villas Lampini Crete
+- Keywords EL: Eolides Villas; οικογενειακές βίλες Ρέθυμνο; βίλες Λαμπινή Κρήτη
+- Angle: multi-villa portfolio with inquiry forms for family groups
+- CTA: αίτημα προσφοράς
 - Scrape: yes
 
 ## Snippet

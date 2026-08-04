@@ -2,11 +2,12 @@
 
 - URL: https://ilektronikatsigara.gr
 - Category: other
-- Place: e-cigarette retail / ηλεκτρονικά τσιγάρα
-- Niche: e-cigarette shop
-- Keywords EN: electronic cigarettes Greece; e-cig shop
-- Keywords EL: ηλεκτρονικά τσιγάρα; κατάστημα ηλεκτρονικών τσιγάρων
-- Angle: Greek commercial keywords for e-cig categories
+- Business: electronic cigarettes e-shop / ηλεκτρονικό κατάστημα ηλεκτρονικών τσιγάρων
+- Location: Greece / Ελλάδα
+- Keywords EN: electronic cigarettes Greece; e-cig shop Greece
+- Keywords EL: ηλεκτρονικά τσιγάρα; κατάστημα ηλεκτρονικών τσιγάρων; δωρεάν αποστολή ηλεκτρονικά τσιγάρα
+- Angle: Greek commercial category SEO with free-shipping conversion hooks
+- CTA: παραγγελία
 - Scrape: yes
 
 ## Snippet

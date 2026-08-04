@@ -2,11 +2,12 @@
 
 - URL: https://quadsafarirethymno.com
 - Category: tours
-- Place: Rethymno Crete / Ρέθυμνο Κρήτη
-- Niche: quad safari tours
+- Business: quad safari adventure tours / εκδρομές quad safari
+- Location: Rethymno, Crete / Ρέθυμνο στην Κρήτη
 - Keywords EN: quad safari Rethymno; Crete ATV tour; Rethymno jeep safari
 - Keywords EL: quad safari Ρέθυμνο; ATV Κρήτη; σαφάρι Ρέθυμνο
-- Angle: adventure activity keywords around Rethymno
+- Angle: adventure activity keywords around Rethymno with book-now paths
+- CTA: κράτηση
 - Scrape: yes
 
 ## Snippet

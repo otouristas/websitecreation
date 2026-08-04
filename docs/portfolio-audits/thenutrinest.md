@@ -2,11 +2,12 @@
 
 - URL: https://www.thenutrinest.gr
 - Category: other
-- Place: nutrition brand / διατροφή
-- Niche: nutrition / healthy living
-- Keywords EN: The Nutri Nest; nutrition Greece; healthy living shop
-- Keywords EL: The Nutri Nest; διατροφή Ελλάδα; υγιεινή διατροφή
-- Angle: nutrition content hubs and product CTAs
+- Business: clinical dietitian and nutrition practice / κλινική διαιτολογία και διατροφολογία
+- Location: Greece / Ελλάδα
+- Keywords EN: clinical dietitian Greece; The Nutri Nest; nutritionist Greece
+- Keywords EL: κλινική διαιτολόγος; διατροφολόγος; The Nutri Nest
+- Angle: practitioner authority pages and appointment inquiry paths
+- CTA: επικοινωνία
 - Scrape: yes
 
 ## Snippet

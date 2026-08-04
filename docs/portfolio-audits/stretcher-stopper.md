@@ -2,11 +2,12 @@
 
 - URL: https://stretcherstopper.com
 - Category: other
-- Place: product / safety brand / προϊόν / ασφάλεια
-- Niche: Stretcher Stopper product site
-- Keywords EN: Stretcher Stopper; medical stretcher safety
-- Keywords EL: Stretcher Stopper; ασφάλεια φορείου
-- Angle: product education + commercial intent pages
+- Business: medical stretcher wall-protection product / προϊόν προστασίας τοίχων από φορεία
+- Location: United States / healthcare facilities / ΗΠΑ και χώροι υγείας
+- Keywords EN: Stretcher Stopper; medical stretcher safety; hospital wall protection
+- Keywords EL: Stretcher Stopper; προστασία τοίχων νοσοκομείο; ασφάλεια φορείου
+- Angle: product education pages with direct quote requests
+- CTA: αίτημα προσφοράς
 - Scrape: yes
 
 ## Snippet

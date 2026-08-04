@@ -2,11 +2,12 @@
 
 - URL: https://naxos-carrentals.com
 - Category: rent-a-car
-- Place: Naxos / Νάξος
-- Niche: Naxos car rental
-- Keywords EN: rent a car Naxos; Naxos car rental; Naxos airport transfer car
-- Keywords EL: ενοικίαση αυτοκινήτου Νάξος; rent a car Νάξος; αυτοκίνητο Νάξος
-- Angle: port pickup and beach-day fleet pages
+- Business: Naxos car rental / ενοικίαση αυτοκινήτων στη Νάξο
+- Location: Naxos / Νάξο
+- Keywords EN: rent a car Naxos; Naxos car rental; Naxos port car hire
+- Keywords EL: ενοικίαση αυτοκινήτου Νάξος; αυτοκίνητο Νάξος; παραλαβή λιμάνι Νάξος
+- Angle: port pickup and beach-day fleet pages for island itineraries
+- CTA: κράτηση
 - Scrape: yes
 
 ## Snippet

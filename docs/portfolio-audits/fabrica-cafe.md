@@ -2,11 +2,12 @@
 
 - URL: https://fabricacafe.info
 - Category: restaurant
-- Place: cafe / καφέ
-- Niche: cafe brand site
-- Keywords EN: Fabrica Cafe; cafe near me Greece; best cafe
-- Keywords EL: Fabrica Cafe; καφέ; καλύτερο καφέ
-- Angle: local cafe discovery and menu highlights
+- Business: cafe and gathering spot / καφέ και χώρος συνάντησης
+- Location: Spili, Rethymno / Σπήλι Ρεθύμνου
+- Keywords EN: Fabrica Cafe Spili; cafe Spili Rethymno; best cafe Spili
+- Keywords EL: Fabrica Cafe Σπήλι; καφέ Σπήλι; καφέ Ρέθυμνο Σπήλι
+- Angle: local cafe discovery with menu and visit highlights
+- CTA: επικοινωνία
 - Scrape: yes
 
 ## Snippet

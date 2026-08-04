@@ -2,11 +2,12 @@
 
 - URL: https://santotoursmarinakis.com
 - Category: tours
-- Place: Santorini / Σαντορίνη
-- Niche: local Santorini tour operator
+- Business: local Santorini tour operator / τοπικός tour operator στη Σαντορίνη
+- Location: Santorini / Σαντορίνη
 - Keywords EN: Santo Tours Marinakis; Santorini tours; Santorini excursions
-- Keywords EL: Santo Tours Marinakis; εκδρομές Σαντορίνη
-- Angle: family operator trust + excursion SEO
+- Keywords EL: εκδρομές Σαντορίνη; Marinakis Tours; τουρ Σαντορίνη τοπικός
+- Angle: family operator trust and licensed excursion SEO since 2000
+- CTA: κράτηση
 - Scrape: yes
 
 ## Snippet

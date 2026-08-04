@@ -2,11 +2,12 @@
 
 - URL: https://rentacarantiparos.gr
 - Category: rent-a-car
-- Place: Antiparos / Αντίπαρος
-- Niche: .gr local rent-a-car
+- Business: local Antiparos rent-a-car (.gr) / τοπική ενοικίαση αυτοκινήτων Αντιπάρου
+- Location: Antiparos / Αντίπαρο
 - Keywords EN: Antiparos rent a car; car hire Antiparos Greece
 - Keywords EL: ενοικίαση αυτοκινήτου Αντίπαρος; rentacar Αντίπαρος
-- Angle: Greek-first local SEO for Antiparos visitors
+- Angle: Greek-first local SEO for Antiparos visitors booking on mobile
+- CTA: κράτηση
 - Scrape: yes
 
 ## Snippet

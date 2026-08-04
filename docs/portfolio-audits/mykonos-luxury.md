@@ -2,11 +2,12 @@
 
 - URL: https://mykonos.luxury
 - Category: villa
-- Place: Mykonos / Μύκονος
-- Niche: Mykonos luxury stays
-- Keywords EN: Mykonos luxury villa; luxury stay Mykonos; Mykonos private villa
-- Keywords EL: πολυτελής βίλα Μύκονος; luxury Μύκονος
-- Angle: luxury villa/hotel intents for international EN search
+- Business: luxury Mykonos journey and villa concierge / πολυτελής διαμονή και concierge στη Μύκονο
+- Location: Mykonos / Μύκονο
+- Keywords EN: Mykonos luxury villa; Mykonos concierge; luxury stay Mykonos
+- Keywords EL: πολυτελής βίλα Μύκονος; concierge Μύκονος; διαμονή πολυτελείας Μύκονος
+- Angle: complete luxury journey packaging for international guests
+- CTA: αίτημα προσφοράς
 - Scrape: yes
 
 ## Snippet

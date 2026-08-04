@@ -2,11 +2,12 @@
 
 - URL: https://ktimaorion.gr
 - Category: villa
-- Place: estate / ktima / κτήμα
-- Niche: estate venue & stays
-- Keywords EN: Ktima Orion; estate venue Greece; wedding estate Crete
-- Keywords EL: Κτήμα Orion; κτήμα εκδηλώσεων; χώρος γάμου
-- Angle: venue + hospitality dual intent SEO
+- Business: wedding and events estate / κτήμα γάμων και εκδηλώσεων
+- Location: Keratea, Attica / Κερατέα Αττικής
+- Keywords EN: Ktima Orion; wedding estate Attica; event venue Keratea
+- Keywords EL: Κτήμα Ωρίων; κτήμα γάμου Κερατέα; χώρος εκδηλώσεων Αττική
+- Angle: wedding, baptism and event venue SEO for Attica couples
+- CTA: αίτημα προσφοράς
 - Scrape: yes
 
 ## Snippet

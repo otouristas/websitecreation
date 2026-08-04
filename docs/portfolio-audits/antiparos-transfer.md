@@ -2,11 +2,12 @@
 
 - URL: https://antiparostransfer.gr
 - Category: transfers
-- Place: Antiparos / Αντίπαρος
-- Niche: island transfer service
-- Keywords EN: Antiparos transfer; Antiparos taxi; port transfer Antiparos
+- Business: luxury island transfer service / υπηρεσία πολυτελών μεταφορών στο νησί
+- Location: Antiparos and Paros / Αντίπαρο και Πάρο
+- Keywords EN: Antiparos transfer; Antiparos taxi; Paros Antiparos airport transfer
 - Keywords EL: μεταφορά Αντίπαρος; ταξί Αντίπαρος; transfer λιμάνι Αντίπαρος
-- Angle: ferry/port transfer booking for Antiparos
+- Angle: family-run door-to-door transfers since 1994 including weddings
+- CTA: κράτηση
 - Scrape: yes
 
 ## Snippet

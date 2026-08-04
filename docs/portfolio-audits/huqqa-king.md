@@ -2,11 +2,12 @@
 
 - URL: https://huqqaking.gr
 - Category: other
-- Place: hookah / lounge brand / ναργιλές / lounge
-- Niche: Huqqa King lounge
-- Keywords EN: Huqqa King; hookah lounge; shisha bar
-- Keywords EL: Huqqa King; ναργιλές; shisha bar
-- Angle: local nightlife discovery keywords
+- Business: hookah lounge brand / brand ναργιλέ / lounge
+- Location: Greece / Ελλάδα
+- Keywords EN: Huqqa King; hookah lounge Greece; shisha bar
+- Keywords EL: Huqqa King; ναργιλές; shisha bar Ελλάδα
+- Angle: local nightlife discovery with age-gated brand presence
+- CTA: επικοινωνία
 - Scrape: yes
 
 ## Snippet

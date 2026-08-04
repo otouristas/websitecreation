@@ -2,11 +2,12 @@
 
 - URL: https://www.myhoneymoon.gr
 - Category: tours
-- Place: honeymoon travel / ταξίδι honeymoon
-- Niche: honeymoon planning brand
+- Business: honeymoon planning brand / οργάνωση ταξιδιού του μέλιτος
+- Location: Greece / Ελλάδα
 - Keywords EN: My Honeymoon; Greece honeymoon packages; honeymoon travel Greece
-- Keywords EL: My Honeymoon; πακέτα honeymoon Ελλάδα; ταξίδι του μέλιτος
-- Angle: romantic itinerary and package keyword clusters
+- Keywords EL: ταξίδι του μέλιτος Ελλάδα; πακέτα honeymoon; My Honeymoon
+- Angle: romantic itinerary and package keyword clusters for couples
+- CTA: αίτημα προσφοράς
 - Scrape: yes
 
 ## Snippet

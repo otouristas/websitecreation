@@ -2,11 +2,12 @@
 
 - URL: https://rentacarpiraeus.gr
 - Category: rent-a-car
-- Place: Piraeus / Πειραιάς
-- Niche: port city car rental
+- Business: Piraeus port city car rental / ενοικίαση αυτοκινήτων στον Πειραιά
+- Location: Piraeus / Πειραιά
 - Keywords EN: rent a car Piraeus; Piraeus port car rental; Athens port car hire
-- Keywords EL: ενοικίαση αυτοκινήτου Πειραιάς; rent a car Πειραιάς λιμάνι
-- Angle: ferry-day and cruise-port pickup intents
+- Keywords EL: ενοικίαση αυτοκινήτου Πειραιάς; αυτοκίνητο λιμάνι Πειραιά; ενοικίαση Νίκαια Κορυδαλλός
+- Angle: ferry-day and neighborhood pickup around the port
+- CTA: κράτηση
 - Scrape: yes
 
 ## Snippet

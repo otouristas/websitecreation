@@ -2,11 +2,12 @@
 
 - URL: https://www.cubatravel.academy
 - Category: tours
-- Place: Cuba travel education / εκπαίδευση ταξιδιών Κούβα
-- Niche: Cuba travel academy / training
-- Keywords EN: Cuba Travel Academy; Cuba travel courses; travel training Cuba
-- Keywords EL: Cuba Travel Academy; μαθήματα ταξιδιών Κούβα
-- Angle: education + travel niche authority content
+- Business: Cuba travel education academy / ακαδημία εκπαίδευσης για ταξίδι στην Κούβα
+- Location: Cuba travel (Greek audience) / Ελλάδα με στόχο ταξίδι στην Κούβα
+- Keywords EN: Cuba Travel Academy; Cuba travel guide Greek; travel to Cuba documents
+- Keywords EL: ταξίδι Κούβα; έγγραφα Κούβα; Cuba Travel Academy
+- Angle: education-led content that answers document and itinerary questions before booking
+- CTA: εγγραφή
 - Scrape: yes
 
 ## Snippet

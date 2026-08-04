@@ -2,11 +2,12 @@
 
 - URL: https://smartdogtraining.gr
 - Category: other
-- Place: dog training / εκπαίδευση σκύλων
-- Niche: Smart Dog Training
-- Keywords EN: Smart Dog Training; dog training near me; puppy training Greece
-- Keywords EL: εκπαίδευση σκύλων; εκπαιδευτής σκύλων; Smart Dog Training
-- Angle: local pet-service keywords and program funnels
+- Business: positive-reinforcement dog training / εκπαίδευση σκύλων με θετική ενίσχυση
+- Location: Greece / Ελλάδα
+- Keywords EN: Smart Dog Training; dog training Greece; puppy training positive reinforcement
+- Keywords EL: εκπαίδευση σκύλων; εκπαιδευτής σκύλων; θετική ενίσχυση σκύλος
+- Angle: relationship-first training funnels with program pages
+- CTA: επικοινωνία
 - Scrape: yes
 
 ## Snippet

@@ -2,11 +2,12 @@
 
 - URL: https://weddings-folegandros.gr
 - Category: tours
-- Place: Folegandros / Φολέγανδρος
-- Niche: destination weddings
+- Business: destination wedding planning / οργάνωση γάμων προορισμού
+- Location: Folegandros / Φολέγανδρο
 - Keywords EN: Folegandros weddings; destination wedding Greece; island wedding Folegandros
-- Keywords EL: γάμοι Φολέγανδρος; γάμος προορισμού Ελλάδα
-- Angle: wedding planning SEO for island elopements
+- Keywords EL: γάμοι Φολέγανδρος; γάμος προορισμού Ελλάδα; γάμος νησί Κυκλάδες
+- Angle: Aegean wedding storytelling with planning inquiry paths
+- CTA: αίτημα προσφοράς
 - Scrape: yes
 
 ## Snippet

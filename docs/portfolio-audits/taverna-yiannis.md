@@ -2,11 +2,12 @@
 
 - URL: https://tavernayiannis.gr
 - Category: restaurant
-- Place: traditional taverna / παραδοσιακή ταβέρνα
-- Niche: family taverna site
-- Keywords EN: Taverna Yiannis; traditional Greek taverna; local restaurant Greece
-- Keywords EL: Ταβέρνα Γιάννης; παραδοσιακή ταβέρνα; τοπικό εστιατόριο
-- Angle: local food keywords and Google Maps conversion
+- Business: family traditional Cretan taverna / οικογενειακή παραδοσιακή κρητική ταβέρνα
+- Location: Platanes, Rethymno / Πλατανές Ρεθύμνου
+- Keywords EN: Taverna Yiannis Platanes; traditional Cretan taverna; restaurant Platanes Rethymno
+- Keywords EL: Ταβέρνα Γιάννης Πλατανές; παραδοσιακή κρητική ταβέρνα; εστιατόριο Πλατανές
+- Angle: local food keywords and Maps-driven visit conversion
+- CTA: κράτηση τραπεζιού
 - Scrape: yes
 
 ## Snippet

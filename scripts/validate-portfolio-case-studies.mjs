@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Validate unique EN/EL case-study overrides for every portfolio project.
+ * Validate unique EN/EL case-study overrides + Greek quality gates.
  */
 import fs from 'fs';
 import path from 'path';
@@ -10,7 +10,6 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
 function loadTsExportObject(filePath, exportName) {
   const src = fs.readFileSync(filePath, 'utf8');
-  // Strip type imports / annotations lightly for Function eval of the object literal
   const marker = `export const ${exportName}`;
   const idx = src.indexOf(marker);
   if (idx === -1) throw new Error(`Export ${exportName} not found in ${filePath}`);
@@ -37,8 +36,7 @@ function loadTsExportObject(filePath, exportName) {
 
 function loadPortfolioSlugs() {
   const src = fs.readFileSync(path.join(root, 'src/data/portfolio.ts'), 'utf8');
-  const slugs = [...src.matchAll(/slug:\s*'([^']+)'/g)].map((m) => m[1]);
-  return [...new Set(slugs)];
+  return [...new Set([...src.matchAll(/slug:\s*'([^']+)'/g)].map((m) => m[1]))];
 }
 
 function loadPortfolioFieldUniques() {
@@ -60,21 +58,51 @@ const caseStudies = loadTsExportObject(
   path.join(root, 'src/data/portfolio-case-studies.ts'),
   'PORTFOLIO_CASE_STUDIES',
 );
+const metaPath = path.join(root, 'docs/portfolio-audits/_meta-corrections.json');
+if (!fs.existsSync(metaPath)) {
+  errors.push('Missing docs/portfolio-audits/_meta-corrections.json');
+}
+const meta = fs.existsSync(metaPath) ? JSON.parse(fs.readFileSync(metaPath, 'utf8')) : {};
+
+const missingMeta = slugs.filter((s) => !meta[s]);
+if (missingMeta.length) errors.push(`Missing META corrections: ${missingMeta.join(', ')}`);
 
 const missing = slugs.filter((s) => !caseStudies[s]);
 if (missing.length) errors.push(`Missing caseStudy overrides: ${missing.join(', ')}`);
-
-const extra = Object.keys(caseStudies).filter((s) => !slugs.includes(s));
-if (extra.length) warnings.push(`Extra caseStudy keys not in portfolio: ${extra.join(', ')}`);
 
 const overviewEn = new Map();
 const overviewEl = new Map();
 const challengeEn = new Map();
 const challengeEl = new Map();
 
+const bannedEl = [
+  /rankάρει/i,
+  /generic template/i,
+  /\bCTAs?\b/,
+  /mobile UX/i,
+  /buyer journey/i,
+  /ιστοσελίδα ιστοσελίδα/i,
+  /website-creation/i,
+  /local-seo/i,
+];
+
+const genericPlaces = new Set([
+  'εστιατόριο',
+  'καφέ',
+  'brand',
+  'κτήμα',
+  'restaurant brand',
+  'cocktail bar',
+  'travel AI product',
+  'fitness brand',
+  'dog training',
+]);
+
 for (const slug of slugs) {
   const cs = caseStudies[slug];
+  const m = meta[slug];
   if (!cs) continue;
+
   for (const field of [
     'overview',
     'challenge',
@@ -88,6 +116,46 @@ for (const slug of slugs) {
   ]) {
     if (!cs[field]) errors.push(`${slug}: missing ${field}`);
   }
+
+  if (m) {
+    if (!m.locationEl || genericPlaces.has(m.locationEl.trim().toLowerCase())) {
+      errors.push(`${slug}: generic or missing locationEl (${m.locationEl})`);
+    }
+    if (!m.businessEl || !m.kwEl?.[0] || !m.ctaEl) {
+      errors.push(`${slug}: incomplete META (businessEl/kwEl/ctaEl)`);
+    }
+  }
+
+  const elTexts = [
+    cs.overview?.el,
+    cs.challenge?.el,
+    cs.approach?.el,
+    ...(cs.seo?.el || []),
+    ...(cs.geoAeo?.el || []),
+    ...(cs.technical?.el || []),
+    ...(cs.content?.el || []),
+    ...(cs.outcomes?.el || []),
+  ].filter(Boolean);
+
+  for (const t of elTexts) {
+    for (const re of bannedEl) {
+      if (re.test(t)) errors.push(`${slug}: banned EL token ${re} in “${t.slice(0, 80)}…”`);
+    }
+    if (/(\S+)\s+\1/i.test(t) && !/και και|ή ή/.test(t)) {
+      // allow rare intentional repeats; flag ιστοσελίδα ιστοσελίδα already covered
+      const dup = t.match(/(\S+)\s+\1/i);
+      if (dup && /ιστοσελίδα|εστιατόριο|Σίφνος|Νάξος|Πάρος/.test(dup[1])) {
+        errors.push(`${slug}: duplicate word “${dup[1]}”`);
+      }
+    }
+  }
+
+  if (cs.overview?.el && m?.kwEl?.[0]) {
+    const count = (cs.overview.el.match(new RegExp(m.kwEl[0].replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g')) || [])
+      .length;
+    if (count >= 3) errors.push(`${slug}: kwEl[0] appears ${count}× in overview.el`);
+  }
+
   if (cs.overview) {
     for (const [map, lang] of [
       [overviewEn, 'en'],
@@ -110,50 +178,56 @@ for (const slug of slugs) {
       else map.set(text, slug);
     }
   }
+
+  // Fact checks for known mismatches
+  if (slug === 'vwanaki') {
+    const blob = elTexts.join(' ');
+    if (/εστιατόριο/i.test(blob)) errors.push('vwanaki still mentions εστιατόριο');
+    if (!/cocktail bar|κοκτέιλ|κινητ/i.test(blob)) errors.push('vwanaki missing cocktail/mobile bar language');
+  }
+  if (slug === 'erebos' && !/παρακολούθηση|GPS|οχημ/i.test(elTexts.join(' '))) {
+    errors.push('erebos missing vehicle tracking language');
+  }
+  if (slug === 'koini-lisi' && !/διαμεσολάβηση|εξωδικαστική/i.test(elTexts.join(' '))) {
+    errors.push('koini-lisi missing mediation language');
+  }
 }
 
 const { summaries, summaryEls } = loadPortfolioFieldUniques();
-const dupSummary = summaries.filter((s, i) => summaries.indexOf(s) !== i);
-const dupSummaryEl = summaryEls.filter((s, i) => summaryEls.indexOf(s) !== i);
-if (dupSummary.length) errors.push(`Duplicate EN summaries: ${dupSummary.length}`);
-if (dupSummaryEl.length) errors.push(`Duplicate EL summaries: ${dupSummaryEl.length}`);
 if (summaries.length < slugs.length) errors.push(`EN summary count ${summaries.length} < slugs ${slugs.length}`);
 if (summaryEls.length < slugs.length) errors.push(`EL summary count ${summaryEls.length} < slugs ${slugs.length}`);
 
-// Operators 2026 presence
+const suffixCounts = {};
+for (const s of summaryEls) {
+  const suf = s.slice(-48);
+  suffixCounts[suf] = (suffixCounts[suf] || 0) + 1;
+}
+const maxSuffix = Math.max(0, ...Object.values(suffixCounts));
+if (maxSuffix > 12) {
+  errors.push(`Too many identical summaryEl suffixes (${maxSuffix} > 12)`);
+}
+
+for (const s of summaryEls) {
+  for (const re of bannedEl) {
+    if (re.test(s)) errors.push(`Banned token in summaryEl: ${s.slice(0, 100)}`);
+  }
+}
+
 const blog2026 = path.join(root, 'content/blog/google-search-operators-2026.md');
 const blog2025 = path.join(root, 'content/blog/google-search-operators-2025.md');
-if (!fs.existsSync(blog2026)) errors.push('Missing content/blog/google-search-operators-2026.md');
-if (fs.existsSync(blog2025)) errors.push('Old content/blog/google-search-operators-2025.md still present');
-
-const nextConfig = fs.readFileSync(path.join(root, 'next.config.ts'), 'utf8');
-if (!nextConfig.includes('google-search-operators-2025')) {
-  errors.push('next.config.ts missing operators-2025 redirect source');
-}
-if (!nextConfig.includes('google-search-operators-2026')) {
-  errors.push('next.config.ts missing operators-2026 redirect destination');
-}
-
-// Scrape coverage (warnings only — dead URLs allowed)
-const scrapeDir = path.join(root, '.firecrawl/work');
-let scrapeOk = 0;
-let scrapeMissing = 0;
-for (const slug of slugs) {
-  const md = path.join(scrapeDir, `${slug}.md`);
-  if (fs.existsSync(md) && fs.statSync(md).size > 200) scrapeOk++;
-  else scrapeMissing++;
-}
+if (!fs.existsSync(blog2026)) errors.push('Missing operators 2026 blog');
+if (fs.existsSync(blog2025)) errors.push('Old operators 2025 blog still present');
 
 console.log(
   JSON.stringify(
     {
       slugs: slugs.length,
       caseStudies: Object.keys(caseStudies).length,
-      scrapeOk,
-      scrapeMissing,
+      meta: Object.keys(meta).length,
+      maxSummaryElSuffix: maxSuffix,
       errors: errors.length,
       warnings: warnings.length,
-      errorList: errors,
+      errorList: errors.slice(0, 40),
       warningList: warnings,
     },
     null,

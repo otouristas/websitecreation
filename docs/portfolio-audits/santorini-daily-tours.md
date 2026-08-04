@@ -2,11 +2,12 @@
 
 - URL: https://santorinidailytours.com
 - Category: tours
-- Place: Santorini / Σαντορίνη
-- Niche: daily tours Santorini
+- Business: daily tour products in Santorini / ημερήσιες εκδρομές στη Σαντορίνη
+- Location: Santorini / Σαντορίνη
 - Keywords EN: Santorini daily tours; Santorini boat tour; Santorini day trip
-- Keywords EL: ημερήσιες εκδρομές Σαντορίνη; τουρ Σαντορίνη; βαρκάδα Σαντορίνη
-- Angle: tour product pages for volcano/boat/day trips
+- Keywords EL: ημερήσιες εκδρομές Σαντορίνη; βαρκάδα Σαντορίνη; τουρ Σαντορίνη
+- Angle: product pages for volcano, boat and day-trip intents
+- CTA: κράτηση
 - Scrape: yes
 
 ## Snippet

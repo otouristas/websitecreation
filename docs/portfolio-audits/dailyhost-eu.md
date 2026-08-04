@@ -2,11 +2,12 @@
 
 - URL: https://dailyhost.eu
 - Category: hotel
-- Place: EU hosting market / αγορά hosting ΕΕ
-- Niche: EU-facing hosting brand
+- Business: EU-facing vacation hosting brand / ευρωπαϊκό brand διαχείρισης καταλυμάτων
+- Location: European market / ευρωπαϊκή αγορά
 - Keywords EN: DailyHost EU; Europe vacation hosting
-- Keywords EL: DailyHost EU; φιλοξενία Ευρώπη
-- Angle: multi-market EN positioning for EU guests
+- Keywords EL: DailyHost EU; φιλοξενία καταλυμάτων Ευρώπη
+- Angle: multi-market English positioning for EU guests and owners
+- CTA: επικοινωνία
 - Scrape: yes
 
 ## Snippet

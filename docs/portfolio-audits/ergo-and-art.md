@@ -2,11 +2,12 @@
 
 - URL: https://ergoandart.gr
 - Category: other
-- Place: art / crafts / τέχνη / χειροτεχνία
-- Niche: Ergo and Art studio
-- Keywords EN: Ergo and Art; art studio Greece; custom art commissions
-- Keywords EL: Ergo and Art; καλλιτεχνικό στούντιο; χειροποίητη τέχνη
-- Angle: portfolio SEO for art and custom work inquiries
+- Business: architecture and spatial design studio / στούντιο αρχιτεκτονικής και σχεδιασμού χώρων
+- Location: Greece / Ελλάδα
+- Keywords EN: Ergo and Art; architecture studio Greece; spatial design Greece
+- Keywords EL: Ergo and Art; αρχιτεκτονικό στούντιο; σχεδιασμός χώρων
+- Angle: human-centred space design portfolio for project inquiries
+- CTA: αίτημα προσφοράς
 - Scrape: yes
 
 ## Snippet

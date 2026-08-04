@@ -2,11 +2,12 @@
 
 - URL: https://naxosautorent.com
 - Category: rent-a-car
-- Place: Naxos / Νάξος
-- Niche: auto rent Naxos
+- Business: online Naxos auto rent / online ενοικίαση αυτοκινήτων στη Νάξο
+- Location: Naxos / Νάξο
 - Keywords EN: Naxos auto rent; Naxos car hire online
 - Keywords EL: ενοικίαση αυτοκινήτου Νάξος online; Naxos autorent
 - Angle: English-first booking UX for international guests
+- CTA: κράτηση
 - Scrape: yes
 
 ## Snippet

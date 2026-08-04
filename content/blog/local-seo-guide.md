@@ -99,6 +99,13 @@ Focus on the "big aggregators" first: Data Axle, Neustar, Foursquare. Then move 
 - **Hotels:** Booking.com, Expedia (where applicable), regional tourism boards
 - **Rent-a-car:** DiscoverCars, Rentalcars, airport authority listings
 
+| Priority | Citation type | Why it matters | Typical timeline |
+| :--- | :--- | :--- | :--- |
+| P0 | Google Business Profile + NAP cleanup | Map pack eligibility and trust | Week 1–2 |
+| P1 | Big aggregators (Data Axle, Neustar, Foursquare) | Feeds major directories at scale | Week 2–4 |
+| P2 | Niche / industry directories | Relevance signals for your category | Month 1–2 |
+| P3 | Tourism & airport portals | High-intent traveler discovery | Month 2–3 |
+
 Citation building is slow but compounding. One afternoon of cleanup can unlock map-pack movement within 60–90 days.
 
 ## Local SEO for tourism businesses
@@ -159,8 +166,8 @@ Paid leads can fill gaps short-term, but you don't own the relationship or the d
 
 ---
 
-### Ready to dominate your local market?
+## Ready to Get Started?
 
 You can manage GBP, citations, reviews, and website content yourself — or work with a team that builds local visibility systems for home services, hotels, and rent-a-car brands every week.
 
-[Get started — tell us about your business](/get-started) · [Local SEO services](/en/services/local-seo) · [See our work](/work) · [Read the GBP masterclass](/blog/google-business-profile-masterclass) · [What is SEO?](/en/blog/what-is-seo)
+[Get started — tell us about your business](/en/get-started) · [Local SEO services](/en/services/local-seo) · [See our work](/work) · [Read the GBP masterclass](/blog/google-business-profile-masterclass) · [What is SEO?](/en/blog/what-is-seo)

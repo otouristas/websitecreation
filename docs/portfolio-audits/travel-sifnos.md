@@ -2,11 +2,13 @@
 
 - URL: https://travelsifnos.com
 - Category: tours
-- Place: Sifnos / Σίφνος
-- Niche: Sifnos travel guide
+- Business: Sifnos travel guide / ταξιδιωτικός οδηγός Σίφνου
+- Location: Sifnos / Σίφνο
 - Keywords EN: Travel Sifnos; Sifnos travel guide; visit Sifnos
-- Keywords EL: Travel Sifnos; οδηγός Σίφνος; επισκεφθείτε Σίφνο
-- Angle: local experiences and stay discovery for Sifnos
+- Keywords EL: οδηγός Σίφνος; επισκεφθείτε Σίφνο; ταξίδι Σίφνος
+- Angle: local experiences and stay discovery for Sifnos visitors
+- CTA: επικοινωνία
 - Scrape: site offline at scrape time — used portfolio metadata
+- Notes: Site offline at scrape time
 
 

@@ -2,11 +2,12 @@
 
 - URL: https://rentacarsifnos.com
 - Category: rent-a-car
-- Place: Sifnos / Σίφνος
-- Niche: Sifnos car rental
-- Keywords EN: rent a car Sifnos; Sifnos car rental
-- Keywords EL: ενοικίαση αυτοκινήτου Σίφνος; rent a car Σίφνος
-- Angle: port arrival + village hop itineraries
+- Business: car and scooter rental / ενοικίαση αυτοκινήτων και scooters
+- Location: Sifnos / Σίφνο
+- Keywords EN: rent a car Sifnos; Sifnos scooter rental; Kamares car hire
+- Keywords EL: ενοικίαση αυτοκινήτου Σίφνος; ενοικίαση μηχανής Σίφνος; αυτοκίνητο Καμάρες
+- Angle: reliable fleet from Apollonia since 1988 with free Kamares port pickup
+- CTA: κράτηση
 - Scrape: yes
 
 ## Snippet

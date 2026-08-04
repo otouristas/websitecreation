@@ -2,11 +2,12 @@
 
 - URL: https://kaffatosviptransfers.com
 - Category: transfers
-- Place: VIP transfers Greece / VIP μεταφορές Ελλάδα
-- Niche: VIP chauffeur transfers
+- Business: VIP chauffeur transfers / VIP μεταφορές με οδηγό
+- Location: Greece / Athens region / Ελλάδα και ευρύτερη Αθήνα
 - Keywords EN: VIP transfers Greece; private driver Athens; airport VIP transfer
 - Keywords EL: VIP μεταφορές; ιδιωτικός οδηγός Αθήνα; VIP αεροδρόμιο
-- Angle: airport/port VIP route landing pages
+- Angle: airport and port VIP route landing pages
+- CTA: κράτηση
 - Scrape: yes
 
 ## Snippet
