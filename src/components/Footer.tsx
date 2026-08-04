@@ -11,6 +11,19 @@ import { elServiceLocationPath } from "@/lib/locale-paths";
 import { CONTACT_EMAIL, PHONE_DISPLAY, WHATSAPP_HREF } from "@/lib/contact-info";
 import { trackCtaClick } from "@/lib/analytics";
 
+/** Official SVGs from https://github.com/datatrans/payment-logos (CC-BY-SA-4.0) */
+const PAYMENT_LOGOS = [
+  { src: "/payments/visa.svg", alt: "Visa", width: 42 },
+  { src: "/payments/mastercard.svg", alt: "Mastercard", width: 42 },
+  { src: "/payments/american-express.svg", alt: "American Express", width: 42 },
+  { src: "/payments/paypal.svg", alt: "PayPal", width: 42 },
+  { src: "/payments/apple-pay.svg", alt: "Apple Pay", width: 42 },
+  { src: "/payments/google-pay.svg", alt: "Google Pay", width: 42 },
+  { src: "/payments/ideal.svg", alt: "iDEAL", width: 42 },
+  { src: "/payments/bancontact.svg", alt: "Bancontact", width: 42 },
+  { src: "/payments/jcb.svg", alt: "JCB", width: 42 },
+] as const;
+
 /** Exact-anchor Greek service×city links matching striking-distance GSC queries. */
 const EL_SEO_HUB_LINKS: { label: string; href: string }[] = [
   { label: "Κατασκευή Ιστοσελίδων Αθήνα", href: elServiceLocationPath("website-creation", "athens-gr") },
@@ -25,23 +38,41 @@ const EL_SEO_HUB_LINKS: { label: string; href: string }[] = [
   { label: "SEO Μύκονος", href: elServiceLocationPath("local-seo", "mykonos-gr") },
   { label: "SEO Κως", href: elServiceLocationPath("local-seo", "kos-gr") },
   { label: "SEO Χανιά", href: elServiceLocationPath("local-seo", "chania-gr") },
+  { label: "Κατασκευή E-shop", href: "/el/services/eshop-woocommerce" },
+  { label: "SEO για E-shop", href: "/el/services/eshop-seo" },
   { label: "Κατασκευή E-shop Αθήνα", href: elServiceLocationPath("eshop-woocommerce", "athens-gr") },
   { label: "Κατασκευή E-shop Θεσσαλονίκη", href: elServiceLocationPath("eshop-woocommerce", "thessaloniki-gr") },
+  { label: "Κατασκευή E-shop Πάτρα", href: elServiceLocationPath("eshop-woocommerce", "patras-gr") },
   { label: "Σχεδιασμός Λογοτύπου Θεσσαλονίκη", href: elServiceLocationPath("logo-design", "thessaloniki-gr") },
   { label: "Ανασχεδιασμός Ιστοσελίδας", href: "/el/services/website-redesign" },
   { label: "SEO για Ξενοδοχεία", href: "/el/solutions/hotels" },
   { label: "Κατασκευή Ιστοσελίδας Ξενοδοχείου", href: "/el/solutions/hotels/website-creation" },
+  { label: "SEO για Δικηγόρους", href: "/el/solutions/lawyers" },
+  { label: "SEO για Ακίνητα", href: "/el/solutions/real-estate" },
+  { label: "Οδηγός: Κατασκευή E-shop", href: "/el/blog/kataskevi-eshop-odigos" },
+  { label: "Πόσο Κοστίζει μια Ιστοσελίδα", href: "/el/blog/poso-kostizei-mia-istoselida" },
+  { label: "Πόσο Κοστίζει το SEO", href: "/el/blog/poso-kostizei-to-seo" },
   { label: "Τιμές & Πακέτα", href: "/el/pricing" },
   { label: "Όλες οι Υπηρεσίες", href: "/el/services" },
   { label: "Όλες οι Περιοχές", href: "/el/locations" },
 ];
 
 const EN_SEO_HUB_LINKS: { label: string; href: string }[] = [
-  { label: "Website Creation", href: "/en/services/website-creation" },
-  { label: "Local SEO", href: "/en/services/local-seo" },
+  // Head-term service pages (C10: "seo services", "web development agency", "modern web design")
+  { label: "SEO Services", href: "/en/services/local-seo" },
+  { label: "Web Development Agency", href: "/en/services/website-creation" },
   { label: "SEO Web Design", href: "/en/services/seo-web-design" },
-  { label: "Hotel Websites", href: "/en/solutions/hotels" },
-  { label: "Pricing", href: "/en/pricing" },
+  { label: "E-commerce / E-shop", href: "/en/services/eshop-woocommerce" },
+  { label: "AI Visibility (GEO/AEO)", href: "/en/services/ai-visibility" },
+  { label: "Website Redesign", href: "/en/services/website-redesign" },
+  // Top international markets
+  { label: "Web Design New York", href: "/en/services/website-creation/new-york-ny" },
+  { label: "SEO Los Angeles", href: "/en/services/local-seo/los-angeles-ca" },
+  { label: "Web Design Athens", href: "/en/services/website-creation/athens-gr" },
+  { label: "SEO Thessaloniki", href: "/en/services/local-seo/thessaloniki-gr" },
+  { label: "Website Creation Thessaloniki", href: "/en/services/website-creation/thessaloniki-gr" },
+  { label: "Hotel SEO", href: "/en/solutions/hotels" },
+  { label: "Pricing & Packages", href: "/en/pricing" },
   { label: "All Locations", href: "/en/locations" },
 ];
 
@@ -62,12 +93,12 @@ export default function Footer({ locale: localeProp }: { locale?: SiteLocale }):
   const lp = (path: string) => localizedPath(locale, path);
   const t = getFooterDictionary(locale);
   return (
-    <footer className="relative mt-20 border-t border-border/80 bg-gradient-to-b from-primary/[0.07] via-muted/35 to-muted/45 dark:from-primary/[0.1] dark:via-background dark:to-muted/20 md:mt-28 lg:mt-36">
+    <footer className="relative border-t border-border/80 bg-gradient-to-b from-primary/[0.07] via-muted/35 to-muted/45 dark:from-primary/[0.1] dark:via-background dark:to-muted/20">
       <div
         className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/35 to-transparent"
         aria-hidden
       />
-      <div className="container mx-auto px-4 pb-16 pt-24 sm:px-6 md:pb-20 md:pt-32 lg:pb-24 lg:pt-40">
+      <div className="container mx-auto px-4 pb-16 pt-14 sm:px-6 md:pb-20 md:pt-16 lg:pb-24 lg:pt-20">
         <div className="mb-12 grid grid-cols-2 gap-x-10 gap-y-10 md:grid-cols-4 lg:grid-cols-6">
           <div className="col-span-2">
             <BrandLogo size="lg" className="mb-4" homeHref={lp("/")} />
@@ -121,30 +152,6 @@ export default function Footer({ locale: localeProp }: { locale?: SiteLocale }):
                   <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
                   <rect width="4" height="12" x="2" y="9" />
                   <circle cx="4" cy="4" r="2" />
-                </svg>
-              </a>
-              <a
-                href="https://github.com/anotherseoguru"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={socialButtonClass}
-                aria-label="GitHub"
-              >
-                <svg
-                  className="h-4 w-4"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden
-                >
-                  <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
-                  <path d="M9 18c-4.51 2-5-2-7-2" />
                 </svg>
               </a>
               <a
@@ -352,9 +359,9 @@ export default function Footer({ locale: localeProp }: { locale?: SiteLocale }):
           </div>
         </div>
         <div className="mb-12 border-t border-border pt-10">
-          <h2 className="mb-5 text-sm font-semibold tracking-tight text-foreground">
+          <p className="mb-5 text-sm font-semibold tracking-tight text-foreground">
             {isEl ? "Υπηρεσίες ανά Πόλη" : "Services by City"}
-          </h2>
+          </p>
           <ul className="grid grid-cols-2 gap-x-6 gap-y-2 sm:grid-cols-3 lg:grid-cols-4">
             {(isEl ? EL_SEO_HUB_LINKS : EN_SEO_HUB_LINKS).map((link) => (
               <li key={link.href}>
@@ -393,13 +400,24 @@ export default function Footer({ locale: localeProp }: { locale?: SiteLocale }):
             </div>
             <div className="flex flex-col items-center gap-2 md:items-end">
               <p className="text-xs text-muted-foreground">{isEl ? t!.payments : "We accept"}</p>
-              <img
-                src="/payment-methods.png"
-                alt="Accepted payment methods: Visa, Mastercard, Amex, iDEAL, JCB, Bancontact, Apple Pay, Google Pay, PayPal"
-                width={320}
-                height={36}
-                className="h-6 opacity-70 transition-opacity hover:opacity-100"
-              />
+              <ul
+                className="flex flex-wrap items-center justify-center gap-1.5 md:justify-end"
+                aria-label={isEl ? "Δεχόμαστε κάρτες και ψηφιακές πληρωμές" : "Accepted payment methods"}
+              >
+                {PAYMENT_LOGOS.map((logo) => (
+                  <li key={logo.src} className="list-none">
+                    <img
+                      src={logo.src}
+                      alt={logo.alt}
+                      width={logo.width}
+                      height={28}
+                      className="h-7 w-auto rounded-sm opacity-90 transition-opacity hover:opacity-100"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>

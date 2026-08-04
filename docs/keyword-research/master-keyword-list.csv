@@ -150,3 +150,48 @@ domain name τι ειναι,el,PAA,70,0,informational,ai_overview,,,/el/glossary
 hosting τι ειναι,el,PAA,40,37,informational,ai_overview,,,/el/glossary,src/app/[locale]/glossary/page.tsx,off-core,P3
 ποιο web hosting να διαλεξω,el,PAA,30,,informational,,,,/el/blog/web-hosting-guide,content/blog,off-core,P3
 answer engine optimization,el,PAA,90,,informational,,,,/el/services/ai-visibility,src/app/[locale]/services/[service]/page.tsx,exists,P1
+seo,en,EN-H1,592000,94,informational,ai_overview;question,,,/en/blog/what-is-seo,content/blog/what-is-seo.md,new,P1
+search engine optimization,en,EN-H1,73000,90,informational,ai_overview;question,,,/en/blog/what-is-seo,content/blog/what-is-seo.md,new,P1
+seo marketing,en,EN-H1,22000,64,informational,ai_overview;question,,,/en/blog/what-is-seo,content/blog/what-is-seo.md,new,P1
+website seo,en,EN-H1,4500,91,informational,ai_overview;question,,,/en/blog/what-is-seo,content/blog/what-is-seo.md,new,P2
+seo strategy,en,EN-H1,15000,77,informational,ai_overview;question,,,/en/blog/what-is-seo,content/blog/what-is-seo.md,new,P1
+seo best practices,en,EN-H1,3500,70,informational,ai_overview;question,,,/en/blog/what-is-seo,content/blog/what-is-seo.md,new,P1
+seo for beginners,en,EN-H1,2300,80,informational,ai_overview;question,,,/en/blog/seo-for-beginners,content/blog/seo-for-beginners.md,exists,P1
+what is seo,en,EN-H1,36000,96,informational,ai_overview;question,,,/en/blog/what-is-seo,content/blog/what-is-seo.md,new,P1
+keyword research,en,EN-H2,811000,92,commercial,ai_overview;question,,,/en/tools/keyword-research,src/data/platform-tools.ts,new,P0
+seo keywords,en,EN-H2,4700,93,commercial,ai_overview;question,,,/en/tools/keyword-research,src/data/platform-tools.ts,new,P1
+how to do keyword research for seo,en,EN-H2,2100,83,informational,ai_overview,,,/en/blog/keyword-research-guide,content/blog/keyword-research-guide.md,new,P1
+seo tools,en,EN-H3,251000,75,commercial,ai_overview;question,,,/en/tools,src/app/[locale]/tools/page.tsx,exists,P2
+free seo tools,en,EN-H3,,,commercial,,,,/en/tools/free-seo-tools,src/data/platform-tools.ts,exists,P2
+best seo tools,en,EN-H3,,,commercial,,,,/en/blog/best-seo-tools-2026,content/blog/best-seo-tools-2026.md,new,P2
+seo services,en,EN-H4,63000,32,commercial,ai_overview;local_pack;question,,,/en/services/seo-audits,src/data/services.ts,exists,P0
+seo services near me,en,EN-H4,16000,11,commercial,local_pack,,,/en/services/local-seo,src/data/services.ts,exists,P0
+professional seo services,en,EN-H4,8900,29,commercial,local_pack,,,/en/services/seo-audits,src/data/services.ts,exists,P0
+small business seo services,en,EN-H4,5800,26,commercial,ai_overview;local_pack,,,/en/services/seo-audits,src/data/services.ts,exists,P0
+affordable seo services,en,EN-H4,4800,27,commercial,local_pack,,,/en/services/seo-audits,src/data/services.ts,exists,P1
+ai seo services,en,EN-H4,4200,11,commercial,ai_overview,,,/en/services/ai-visibility,src/data/services.ts,exists,P0
+ecommerce seo services,en,EN-H4,7000,14,commercial,ai_overview;local_pack,,,/en/services/eshop-seo,src/data/services.ts,exists,P0
+b2b seo services,en,EN-H4,3100,2,commercial,ai_overview,,,/en/services,src/app/[locale]/services/page.tsx,exists,P1
+how much does seo cost,en,EN-H4,2500,31,commercial,ai_overview;question,,,/en/blog/how-much-does-seo-cost,content/blog/how-much-does-seo-cost.md,exists,P0
+local seo,en,EN-H5,45000,82,commercial,ai_overview;local_pack;question,,,/en/blog/local-seo-guide,content/blog/local-seo-guide.md,exists,P0
+local seo services,en,EN-H5,26000,8,commercial,local_pack,,,/en/services/local-seo,src/data/services.ts,exists,P0
+local seo company,en,EN-H5,14000,8,commercial,local_pack,,,/en/services/local-seo,src/data/services.ts,exists,P0
+local seo agency,en,EN-H5,12000,22,commercial,local_pack,,,/en/services/local-seo,src/data/services.ts,exists,P0
+local seo packages,en,EN-H5,3600,4,commercial,ai_overview,,,/en/services/local-seo,src/data/services.ts,exists,P1
+what is local seo,en,EN-H5,5400,65,informational,ai_overview;question,,,/en/blog/local-seo-guide,content/blog/local-seo-guide.md,exists,P1
+seo audit,en,EN-H6,18000,84,commercial,ai_overview;question,,,/en/tools/free-seo-audit,src/data/platform-tools.ts,new,P0
+free seo audit,en,EN-H6,4800,85,commercial,question,,,/en/tools/free-seo-audit,src/data/platform-tools.ts,new,P0
+seo audit services,en,EN-H6,5600,6,commercial,ai_overview,,,/en/services/seo-audits,src/data/services.ts,exists,P0
+technical seo audit,en,EN-H6,3700,59,informational,ai_overview,,,/en/services/seo-audits,src/data/services.ts,exists,P1
+technical seo,en,EN-H7,14000,66,informational,ai_overview;question,,,/en/blog/technical-seo-guide,content/blog/technical-seo-guide.md,new,P1
+technical seo services,en,EN-H7,10000,18,commercial,ai_overview,,,/en/services/seo-audits,src/data/services.ts,exists,P0
+on page seo,en,EN-H8,7800,73,informational,ai_overview;question,,,/en/blog/on-page-seo,content/blog/on-page-seo.md,new,P1
+off page seo,en,EN-H8,4500,44,informational,ai_overview;question,,,/en/blog/off-page-seo,content/blog/off-page-seo.md,new,P1
+link building,en,EN-H8,13000,84,informational,ai_overview;question,,,/en/blog/link-building-guide,content/blog/link-building-guide.md,new,P1
+link building services,en,EN-H8,9800,21,commercial,question,,,/en/services/link-building,src/data/services.ts,exists,P0
+seo content,en,EN-H8,3600,48,informational,ai_overview;question,,,/en/blog/seo-content-guide,content/blog/seo-content-guide.md,new,P1
+organic traffic,en,EN-H8,1600,65,informational,ai_overview;question,,,/en/blog/how-to-increase-organic-traffic,content/blog/how-to-increase-organic-traffic.md,new,P2
+google search ranking,en,EN-H8,2000,83,informational,ai_overview;question,,,/en/blog/what-is-seo,content/blog/what-is-seo.md,new,P2
+what is on page seo,en,EN-H8,3800,68,informational,ai_overview;question,,,/en/blog/on-page-seo,content/blog/on-page-seo.md,new,P1
+what is off page seo,en,EN-H8,1200,30,informational,ai_overview;question,,,/en/blog/off-page-seo,content/blog/off-page-seo.md,new,P1
+how to increase organic traffic,en,EN-H8,800,33,informational,ai_overview;question,,,/en/blog/how-to-increase-organic-traffic,content/blog/how-to-increase-organic-traffic.md,new,P2

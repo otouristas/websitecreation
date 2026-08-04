@@ -263,7 +263,7 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
 
   const t = isEl
     ? {
-        title: "Ξεκινήστε το Project Σας",
+        title: "Ξεκινήστε το Έργο Σας",
         subtitle: "Συμπληρώστε τον οδηγό για να λάβετε μια προσαρμοσμένη προσφορά σε 24 ώρες.",
         stepLabels: ['Πακέτο', 'Επιχείρηση', 'Project', 'Επικοινωνία'],
         currency: "€",
@@ -1106,12 +1106,22 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
 }
 
 export function GetStartedClient({ locale }: { locale: SiteLocale }) {
+  const fallbackTitle = locale === 'el' ? 'Ξεκινήστε το Έργο Σας' : 'Start Your Project';
   return (
-    <Suspense fallback={
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-spin w-8 h-8 border-2 border-primary border-t-transparent rounded-full" />
-      </div>
-    }>
+    <Suspense
+      fallback={
+        <main className="main-below-header pb-24">
+          <section className="section-compact gradient-hero mb-8">
+            <div className="container text-center">
+              <h1 className="text-4xl sm:text-5xl font-bold mb-4">{fallbackTitle}</h1>
+              <div className="mx-auto mt-8 flex justify-center">
+                <div className="animate-spin w-8 h-8 border-2 border-primary border-t-transparent rounded-full" />
+              </div>
+            </div>
+          </section>
+        </main>
+      }
+    >
       <OnboardingWizard locale={locale} />
     </Suspense>
   );

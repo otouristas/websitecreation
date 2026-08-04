@@ -7,10 +7,12 @@ import {
 } from '@/data/portfolio';
 import { PortfolioThumbnail } from '@/components/landing/PortfolioThumbnail';
 import SchemaMarkup from '@/components/seo/SchemaMarkup';
-import { generateArticleSchema } from '@/lib/seo/schema';
+import Breadcrumbs from '@/components/seo/Breadcrumbs';
+import { generateArticleSchema, generateBreadcrumbSchema, combineSchemas } from '@/lib/seo/schema';
 import { buildProjectCaseStudy } from '@/lib/portfolio-case-study';
 import { getServiceEl } from '@/data/services-i18n';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
+import { generateBreadcrumbs } from '@/lib/linking';
 
 interface WorkDetailProps {
   project: PortfolioProject;
@@ -49,7 +51,7 @@ export function WorkDetail({ project, locale = 'en' }: WorkDetailProps) {
     .slice(0, 3);
 
   const articleSchema = generateArticleSchema({
-    headline: `${project.name} - ${isEl ? 'Case Study' : 'Case Study'}`,
+    headline: `${project.name} - ${isEl ? 'Μελέτη περίπτωσης' : 'Case Study'}`,
     description: isEl && project.summaryEl ? project.summaryEl : project.summary,
     datePublished: new Date().toISOString(),
     dateModified: new Date().toISOString(),
@@ -60,23 +62,21 @@ export function WorkDetail({ project, locale = 'en' }: WorkDetailProps) {
       height: 630,
     },
   });
+  const breadcrumbs = generateBreadcrumbs(
+    [
+      { name: isEl ? 'Έργα' : 'Work', url: '/work' },
+      { name: project.name, url: `/work/${project.slug}` },
+    ],
+    locale,
+  );
+  const breadcrumbSchema = generateBreadcrumbSchema({ items: breadcrumbs });
 
   return (
     <>
-      <SchemaMarkup schemas={[articleSchema]} />
+      <SchemaMarkup schemas={combineSchemas(articleSchema, breadcrumbSchema)} />
       <section className="section gradient-hero">
         <div className="container">
-          <nav className="mb-6 flex items-center gap-2 text-sm text-muted-foreground">
-            <Link href={lp('/')} className="hover:text-primary">
-              {isEl ? 'Αρχική' : 'Home'}
-            </Link>
-            <span>/</span>
-            <Link href={lp('/work')} className="hover:text-primary">
-              {isEl ? 'Έργα' : 'Work'}
-            </Link>
-            <span>/</span>
-            <span className="text-foreground">{project.name}</span>
-          </nav>
+          <Breadcrumbs items={breadcrumbs} className="mb-6" />
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <div>
               <span className="mb-3 inline-block rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
@@ -105,7 +105,7 @@ export function WorkDetail({ project, locale = 'en' }: WorkDetailProps) {
                   rel="noopener noreferrer"
                   className="btn btn-outline"
                 >
-                  {isEl ? 'Δείτε live site' : 'View live site'} ↗
+                  {isEl ? 'Δείτε τη ζωντανή ιστοσελίδα' : 'View live site'} ↗
                 </a>
                 <Link
                   href={localizedPath(isEl ? 'el' : 'en', `/get-started?project=${project.category}`)}
@@ -114,9 +114,29 @@ export function WorkDetail({ project, locale = 'en' }: WorkDetailProps) {
                   {isEl ? 'Ζητήστε παρόμοιο έργο' : 'Get a similar project'}
                 </Link>
               </div>
+              {project.relatedUrls && project.relatedUrls.length > 0 ? (
+                <div className="mt-4 text-sm text-muted-foreground">
+                  <span className="font-medium text-foreground">
+                    {isEl ? 'Σχετικοί ιστότοποι: ' : 'Related domains: '}
+                  </span>
+                  {project.relatedUrls.map((u, i) => (
+                    <span key={u}>
+                      {i > 0 ? ', ' : ''}
+                      <a
+                        href={u}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline underline-offset-4 hover:text-primary"
+                      >
+                        {u.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')}
+                      </a>
+                    </span>
+                  ))}
+                </div>
+              ) : null}
             </div>
             <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-border shadow-lg">
-              <PortfolioThumbnail src={project.screenshot} alt={`${project.name} homepage`} />
+              <PortfolioThumbnail src={project.screenshot} alt={isEl ? `${project.name} - αρχική σελίδα` : `${project.name} homepage`} />
             </div>
           </div>
         </div>
@@ -157,26 +177,38 @@ export function WorkDetail({ project, locale = 'en' }: WorkDetailProps) {
 
           {(project.seoTitle || project.seoDescription) && (
             <div className="mb-10 rounded-xl border border-border bg-muted/30 p-6">
-              <h2 className="mb-4 text-xl font-bold">{isEl ? 'Live SEO snapshot' : 'Live SEO snapshot'}</h2>
+              <h2 className="mb-4 text-xl font-bold">{isEl ? 'Στιγμιότυπο SEO' : 'Live SEO snapshot'}</h2>
               {project.seoTitle && (
                 <p className="mb-2 text-sm">
-                  <strong>Title:</strong> {project.seoTitle}
+                  <strong>{isEl ? 'Τίτλος:' : 'Title:'}</strong> {project.seoTitle}
                 </p>
               )}
               {project.seoDescription && (
                 <p className="text-sm text-muted-foreground">
-                  <strong>Meta:</strong> {project.seoDescription}
+                  <strong>{isEl ? 'Meta περιγραφή:' : 'Meta:'}</strong> {project.seoDescription}
                 </p>
               )}
             </div>
           )}
 
           <h2 className="mb-4 text-2xl font-bold">{isEl ? 'Αποτελέσματα' : 'Outcomes'}</h2>
-          <ul className="list-disc space-y-2 pl-5 text-muted-foreground">
+          <ul className="mb-10 list-disc space-y-2 pl-5 text-muted-foreground">
             {caseStudy.outcomes.map((r) => (
               <li key={r}>{r}</li>
             ))}
           </ul>
+
+          <p className="text-sm text-muted-foreground">
+            {isEl ? 'Φιλοξενία: ' : 'Hosting: '}
+            <a
+              href="https://dailyhost.gr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-foreground underline underline-offset-4 hover:text-primary"
+            >
+              Dailyhost.gr
+            </a>
+          </p>
         </div>
       </section>
 

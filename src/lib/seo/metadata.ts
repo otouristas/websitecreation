@@ -2,13 +2,20 @@
 
 import { Metadata } from 'next';
 import { buildMetaDescription, finalizeDescription, BRAND_NAME, BASE_URL } from './description';
-import { getHreflangAlternates } from '@/lib/locale-paths';
+import { getHreflangAlternates, isGreekLocationSlug } from '@/lib/locale-paths';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 import { LOCALES } from '@/lib/i18n/locale';
+import { shouldIndexServiceLocation, type Location } from '@/data/locations';
 
 export const TITLE_BRAND_SUFFIX = ` | ${BRAND_NAME}`;
 export const MAX_TITLE_TOTAL = 60;
 export const MAX_TITLE_PRIMARY = MAX_TITLE_TOTAL - TITLE_BRAND_SUFFIX.length;
+/** Greek glyphs are wider in SERP pixels — keep primary shorter to stay under ~561px. */
+export const MAX_TITLE_PRIMARY_GREEK = 30;
+
+function primaryTitleMax(text: string): number {
+  return /[Α-Ωα-ωάέήίόύώϊϋΐΰ]/u.test(text) ? MAX_TITLE_PRIMARY_GREEK : MAX_TITLE_PRIMARY;
+}
 
 interface MetadataInput {
   title: string;
@@ -41,13 +48,11 @@ function smartTruncateTitle(text: string, max: number): string {
 export function cleanPageTitle(raw: string): string {
   let cleanTitle = raw.trim();
 
-  cleanTitle = cleanTitle.replace(new RegExp(`\\s*[\\|\\-]\\s*${BRAND_NAME}`, 'gi'), '');
+  // Only strip brand when it is a leading/trailing suffix — never from the middle
+  // (e.g. "AnotherSEOGuru vs Ahrefs" must stay intact, not collapse to "vs Ahrefs").
+  cleanTitle = cleanTitle.replace(new RegExp(`\\s*[\\|\\-]\\s*${BRAND_NAME}\\s*$`, 'gi'), '');
   cleanTitle = cleanTitle.replace(new RegExp(`^${BRAND_NAME}\\s*[\\|\\-]\\s*`, 'gi'), '');
 
-  if (cleanTitle.toLowerCase() !== BRAND_NAME.toLowerCase()) {
-    cleanTitle = cleanTitle.replace(new RegExp(BRAND_NAME, 'gi'), '').trim();
-  }
- 
   cleanTitle = cleanTitle
     .replace(/\s*\|\s*$/, '')
     .replace(/\s*-\s*$/, '')
@@ -56,15 +61,16 @@ export function cleanPageTitle(raw: string): string {
     .replace(/^[–-]\s*/, '')
     .replace(/\s*[–]\s*/g, ' - ')
     .trim();
- 
+
   if (cleanTitle.toLowerCase() === BRAND_NAME.toLowerCase()) {
     return BRAND_NAME;
   }
- 
-  if (cleanTitle.length > MAX_TITLE_PRIMARY) {
-    cleanTitle = smartTruncateTitle(cleanTitle, MAX_TITLE_PRIMARY);
+
+  const maxPrimary = primaryTitleMax(cleanTitle);
+  if (cleanTitle.length > maxPrimary) {
+    cleanTitle = smartTruncateTitle(cleanTitle, maxPrimary);
   }
- 
+
   return cleanTitle;
 }
  
@@ -161,12 +167,11 @@ export function buildServiceMetadata(
     const name = svcEl?.name ?? service.name;
     const keyword = svcEl?.titleKeyword ?? name;
     const priceHook = isSeoRetainerService(service.slug) ? 'από €299/μήνα' : 'από €899';
+    const hubSuffixes = isSeoRetainerService(service.slug)
+      ? [' - Τιμές & Μετρήσιμα Αποτελέσματα', ' - Τιμές & Αποτελέσματα', ' - Τιμές & Πακέτα', ' - Τιμές', '']
+      : [' - Τιμές & SEO από την 1η μέρα', ' - Τιμές, Πακέτα & SEO', ' - Τιμές & Πακέτα', ' - Τιμές', ''];
     return buildMetadata({
-      title: fitTitleWithSuffix(keyword, [
-        ' | Τιμές, Πακέτα & Διαδικασία',
-        ' | Τιμές & Πακέτα',
-        ' - Τιμές',
-      ]),
+      title: fitTitleWithSuffix(keyword, hubSuffixes),
       description: `${keyword} από ελληνική ομάδα: διαφανείς τιμές, πακέτα ${priceHook} και SEO-ready παράδοση. Δείτε τιμές, διαδικασία και ζητήστε δωρεάν προσφορά.`,
       path: localizedPath('el', `/services/${service.slug}`),
       hreflangPath: `/services/${service.slug}`,
@@ -176,8 +181,13 @@ export function buildServiceMetadata(
     });
   }
   return buildMetadata({
-    title: service.metaTitle || `${service.name} Services`,
-    description: service.metaDescription,
+    title: fitTitleWithSuffix(
+      service.name,
+      isSeoRetainerService(service.slug)
+        ? [' - Pricing & Measurable Results', ' - Pricing & Packages', ' - Pricing', '']
+        : [' - SEO-Ready Delivery & Pricing', ' - Pricing & Packages', ' - Pricing', ''],
+    ),
+    description: `${service.name} for growing businesses: SEO-ready delivery, transparent pricing (${enPriceHook(service.slug)}), GEO/AEO, and fast turnaround. Get a free quote today.`,
     path: localizedPath(locale, `/services/${service.slug}`),
     hreflangPath: `/services/${service.slug}`,
     service: service.name,
@@ -197,6 +207,7 @@ export function buildServiceLocationMetadata(
     country?: string;
     countryCode?: string;
     currency?: string;
+    tier?: 1 | 2;
   },
   locale: SiteLocale = 'en',
 ): Metadata {
@@ -213,16 +224,22 @@ export function buildServiceLocationMetadata(
     location.countryCode && location.countryCode !== 'US'
       ? `${location.city}, ${location.country ?? location.countryCode}`
       : `${location.city}, ${location.stateCode}`;
- 
+
+  const noIndex = !shouldIndexServiceLocation(location as Location, 'en');
+
   return buildMetadata({
-    title: `${service.name} in ${placeLabel}`,
-    description: `Expert ${service.name.toLowerCase()} in ${placeLabel}. SEO-ready websites, local strategy, GEO/AEO, and fast delivery. Pricing in ${location.currency ?? 'USD'}. Free quote.`,
+    // Front-load keyword + city so truncation drops the hook, never the keyword.
+    title: fitTitleWithSuffix(`${service.name} ${location.city}`, enTitleSuffixes(service.slug)),
+    description: `${service.name} in ${placeLabel}: SEO-ready websites, local strategy, GEO/AEO, and fast delivery. Transparent pricing (${enPriceHook(service.slug)}). Get a free quote.`,
     path: localizedPath(locale, `/services/${service.slug}/${location.slug}`),
     hreflangPath: `/services/${service.slug}/${location.slug}`,
+    // English city pages don't have Greek counterparts unless the city is Greek.
+    hreflangLocales: isGreekLocationSlug(location.slug) ? ['en', 'el'] : ['en'],
     service: service.name,
     location: placeLabel,
     usp: `Trusted ${service.name.toLowerCase()} for ${location.city}`,
     ctaHint: 'Request a free local quote.',
+    noIndex,
   });
 }
  
@@ -231,12 +248,65 @@ function isSeoRetainerService(slug: string): boolean {
   return ['local-seo', 'seo-audits', 'ai-visibility', 'link-building', 'eshop-seo', 'content-creation'].includes(slug);
 }
 
-/** Append the longest suffix that keeps the primary title within MAX_TITLE_PRIMARY. */
+/**
+ * Greek SERP title suffix ladder (richest first). Leads with a value/outcome hook
+ * per the premium positioning ("value, not cheapest") while keeping a compact
+ * price-transparency token, since a large share of Greek queries carry
+ * τιμή/κόστος/τιμές intent. `fitTitleWithSuffix` picks the longest that fits ≤43 chars.
+ */
+function elTitleSuffixes(slug: string): readonly string[] {
+  return isSeoRetainerService(slug)
+    ? [' - Τιμές & Αποτελέσματα', ' - Αποτελέσματα', ' - Τιμές', ' | Προσφορά', '']
+    : [' - Τιμές & SEO από 1η μέρα', ' - Τιμές & SEO', ' - Τιμές', ' | Προσφορά', ''];
+}
+
+/** English SERP title suffix ladder (value-led, per "value not cheapest"). Picks the longest ≤43 chars. */
+function enTitleSuffixes(slug: string): readonly string[] {
+  return isSeoRetainerService(slug)
+    ? [' - Measurable Results', ' - Pricing & Quote', ' - Pricing', '']
+    : [' - SEO-Ready & Fast', ' - Pricing & Quote', ' - Pricing', ''];
+}
+
+/** English price hook. Business bills in EUR, so € everywhere for consistency with the pricing page. */
+function enPriceHook(slug: string): string {
+  return isSeoRetainerService(slug) ? 'from €299/mo' : 'from €899';
+}
+
+/** Append the longest suffix that keeps the primary title within the locale-aware max. */
 function fitTitleWithSuffix(base: string, suffixes: readonly string[]): string {
+  const max = primaryTitleMax(base);
   for (const suffix of suffixes) {
-    if (base.length + suffix.length <= MAX_TITLE_PRIMARY) return base + suffix;
+    if (base.length + suffix.length <= max) return base + suffix;
   }
   return base;
+}
+
+/**
+ * Short Greek SERP keywords when full titleKeyword + city exceeds the 30-char primary
+ * budget — city name must never be dropped by truncation.
+ */
+const EL_SHORT_TITLE_KEYWORD: Record<string, string> = {
+  'website-creation': 'Ιστοσελίδες',
+  'website-redesign': 'Ανασχεδιασμός',
+  'seo-web-design': 'SEO Web Design',
+  'local-seo': 'Τοπικό SEO',
+  'seo-audits': 'Υπηρεσίες SEO',
+  'eshop-woocommerce': 'E-shop',
+  'eshop-seo': 'E-shop SEO',
+  'ai-visibility': 'GEO / AEO',
+  'speed-optimization': 'Ταχύτητα Site',
+  'link-building': 'Link Building',
+  'content-creation': 'SEO Content',
+};
+
+function elLocationTitleBase(serviceSlug: string, keyword: string, city: string): string {
+  const full = `${keyword} ${city}`;
+  if (full.length <= MAX_TITLE_PRIMARY_GREEK) return full;
+  const short = EL_SHORT_TITLE_KEYWORD[serviceSlug] ?? 'SEO';
+  const shortBase = `${short} ${city}`;
+  if (shortBase.length <= MAX_TITLE_PRIMARY_GREEK) return shortBase;
+  // Last resort: city-first so the place name survives smartTruncate
+  return `${city} ${short}`;
 }
 
 export function buildServiceLocationMetadataEl(
@@ -246,21 +316,29 @@ export function buildServiceLocationMetadataEl(
     cityLocal?: string;
     slug: string;
     country?: string;
+    countryCode?: string;
+    tier?: 1 | 2;
   },
 ): Metadata {
   const svcEl = getServiceEl(service.slug);
   const keyword = svcEl?.titleKeyword ?? service.name;
   const city = location.cityLocal ?? location.city;
   const priceHook = isSeoRetainerService(service.slug) ? 'από €299/μήνα' : 'από €899';
+  const locative = getGreekLocative(location.slug, city);
+  // EL indexes only Greek locations that pass the uniqueness content gate.
+  const noIndex = !shouldIndexServiceLocation(location as Location, 'el');
+  const titleBase = elLocationTitleBase(service.slug, keyword, city);
 
   return buildMetadata({
-    // Keyword+city first so any truncation drops the hook, never the keyword.
-    title: fitTitleWithSuffix(`${keyword} ${city}`, [' | Τιμές & Πακέτα', ' - Τιμές', '']),
-    description: `${keyword} ${getGreekLocative(location.slug)} από ελληνική ομάδα. Πακέτα ${priceHook}, SEO-ready παράδοση και τοπική στρατηγική. Ζητήστε δωρεάν προσφορά σήμερα.`,
+    // Prefer short keyword when needed so truncation never drops the city.
+    title: fitTitleWithSuffix(titleBase, elTitleSuffixes(service.slug)),
+    description: `${keyword} ${locative}: πακέτα ${priceHook}, SEO-ready παράδοση και τοπική στρατηγική.`,
     path: localizedPath('el', `/services/${service.slug}/${location.slug}`),
     hreflangPath: `/services/${service.slug}/${location.slug}`,
+    hreflangLocales: isGreekLocationSlug(location.slug) ? ['en', 'el'] : ['el'],
     primaryKeyword: `${keyword} ${city}`,
-    ctaHint: 'Ζητήστε δωρεάν προσφορά.',
+    ctaHint: 'Ζητήστε προσφορά.',
+    noIndex,
   });
 }
  
@@ -283,12 +361,15 @@ export function buildIndustryMetadata(
   }
 
   return buildMetadata({
-    title: locale === 'el' ? `${indName} - Ιστοσελίδες & SEO` : `${indName} Website & SEO Solutions`,
+    title:
+      locale === 'el'
+        ? fitTitleWithSuffix(`${indName} - Ιστοσελίδες & SEO`, [' | Πακέτα', ''])
+        : fitTitleWithSuffix(`${indName} Websites & SEO`, [' | Packages & Pricing', ' | Pricing', '']),
     description:
       indDesc ||
       (locale === 'el'
-        ? `Ιστοσελίδες και SEO για ${indName}. Industry playbooks, γρήγορη υλοποίηση και Search Console intelligence.`
-        : `Website design and SEO for ${indName.toLowerCase()} businesses. Industry playbooks, fast builds, and Search Console intelligence. See packages.`),
+        ? `Ιστοσελίδες και SEO για ${indName}: στρατηγικές ανά κλάδο, γρήγορη υλοποίηση και δεδομένα από το Google Search Console. Δείτε πακέτα και ζητήστε προσφορά.`
+        : `Website design and SEO built for ${indName.toLowerCase()}: industry playbooks, fast builds, and measurable growth. Transparent pricing. See packages and get a free quote.`),
     path: localizedPath(locale, `/solutions/${industry.slug}`),
     hreflangPath: `/solutions/${industry.slug}`,
     industry: indName,
@@ -311,7 +392,14 @@ export function buildIndustryServiceMetadata(
   }
 
   return buildMetadata({
-    title: locale === 'el' ? `${svcName} για ${indName}` : `${svcName} for ${indName}`,
+    title:
+      locale === 'el'
+        ? fitTitleWithSuffix(`${svcName} για ${indName}`, [' | Τιμές', ''])
+        : fitTitleWithSuffix(`${svcName} for ${indName}`, [' | Pricing & Quote', '']),
+    description:
+      locale === 'el'
+        ? `${svcName} σχεδιασμένο για ${indName}: παράδοση έτοιμη για SEO, διαφανείς τιμές και γρήγορη υλοποίηση. Ζητήστε δωρεάν συμβουλευτική.`
+        : `${svcName} tailored for ${indName.toLowerCase()}: SEO-ready delivery, transparent pricing, and fast turnaround. Get a free consultation.`,
     path: localizedPath(locale, `/solutions/${industry.slug}/${service.slug}`),
     hreflangPath: `/solutions/${industry.slug}/${service.slug}`,
     service: svcName,

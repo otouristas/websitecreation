@@ -6,10 +6,42 @@ interface AgencyServicesGridProps {
   locale?: SiteLocale;
 }
 
-export function AgencyServicesGrid({ locale = "en" }: AgencyServicesGridProps) {
-  if (locale !== "el") return null;
+const enServices = {
+  heading: "What every tourism project includes",
+  subheading: "Each site ships with SEO-ready architecture — not a template bolted on later.",
+  items: [
+    {
+      title: "Website creation",
+      desc: "Custom design for hotels, rent-a-car and tour brands.",
+    },
+    {
+      title: "SEO web design",
+      desc: "Speed, schema, internal links and mobile-first UX.",
+    },
+    {
+      title: "Local SEO",
+      desc: "Google Business Profile, local listings and city/island pages.",
+    },
+    {
+      title: "GEO & AEO",
+      desc: "Optimization for AI answers and LLM citations.",
+    },
+    {
+      title: "AI chatbots",
+      desc: "Multilingual assistants for bookings and FAQs.",
+    },
+    {
+      title: "Content & blog",
+      desc: "Destination guides and topic hubs built to rank.",
+    },
+  ],
+  cta: "All services",
+} as const;
 
-  const t = elHome.servicesGrid;
+export function AgencyServicesGrid({ locale = "en" }: AgencyServicesGridProps) {
+  const isEl = locale === "el";
+  const t = isEl ? elHome.servicesGrid : enServices;
+  const lp = (path: string) => localizedPath(locale, path);
 
   return (
     <section className="py-20 lg:py-28">
@@ -27,7 +59,7 @@ export function AgencyServicesGrid({ locale = "en" }: AgencyServicesGridProps) {
           ))}
         </ul>
         <div className="text-center mt-10">
-          <Link href={localizedPath("el", "/services")} className="btn btn-outline px-8">
+          <Link href={lp("/services")} className="btn btn-outline px-8">
             {t.cta}
           </Link>
         </div>

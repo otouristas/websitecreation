@@ -15,9 +15,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (locale === 'el') {
     return buildMetadata({
-      title: 'Έργα & Portfolio - Τουρισμός, Ξενοδοχεία & Rent-a-Car',
+      title: 'Έργα & Portfolio - Τουρισμός, Ξενοδοχεία & Ενοικίαση Αυτοκινήτου',
       description:
-        '55+ live ιστοσελίδες για ξενοδοχεία, rent-a-car, εκδρομές, βίλες και travel AI. Δείτε το portfolio μας με SEO βελτιστοποιημένα έργα σε Ελλάδα και Ευρώπη.',
+        '55+ live ιστοσελίδες για ξενοδοχεία, ενοικίαση αυτοκινήτου, εκδρομές, βίλες και travel AI. Δείτε το portfolio μας με SEO βελτιστοποιημένα έργα σε Ελλάδα και Ευρώπη.',
       path: localizedPath('el', '/work'),
       primaryKeyword: 'τουριστικές ιστοσελίδες portfolio',
       hreflangPath: '/work',

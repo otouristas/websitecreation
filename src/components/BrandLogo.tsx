@@ -40,7 +40,7 @@ export function BrandLogo({
     <Link href={homeHref} onClick={onClick} className={`flex items-center gap-2 hover:opacity-90 transition-opacity ${className}`}>
       <Image
         src="/logo.png"
-        alt="AnotherSEOGuru"
+        alt={showText ? "" : "AnotherSEOGuru"}
         width={px}
         height={px}
         className="flex-shrink-0 object-contain"

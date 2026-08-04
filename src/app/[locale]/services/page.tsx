@@ -137,7 +137,7 @@ export default async function ServicesPage({ params }: PageProps) {
                 {t.notSureDesc}
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <Link href={lp("/contact")} className="btn btn-gradient px-8 py-3">
+                <Link href={lp("/get-started")} className="btn btn-gradient px-8 py-3">
                   {t.getQuote}
                 </Link>
                 <Link href={lp("/pricing")} className="btn btn-outline px-8 py-3 bg-background">

@@ -27,7 +27,7 @@ export function LandingTestimonials({ locale = 'en' }: LandingTestimonialsProps)
     ? [
         {
           name: 'Aggelos Rentals',
-          role: 'Rent-a-car, Πάρος',
+          role: 'Ενοικίαση αυτοκινήτου, Πάρος',
           text: 'Η νέα ιστοσελίδα δείχνει τον στόλο σωστά και κατατάσσει για αναζητήσεις στο νησί - περισσότερες άμεσες κρατήσεις.',
         },
         {
@@ -52,7 +52,7 @@ export function LandingTestimonials({ locale = 'en' }: LandingTestimonialsProps)
           </h2>
           <p className="text-muted-foreground">
             {isEl
-              ? 'Αποτέλεσμα από έργα τουρισμού, ξενοδοχείων και rent-a-car.'
+              ? 'Αποτέλεσμα από έργα τουρισμού, ξενοδοχείων και ενοικίασης αυτοκινήτου.'
               : 'Results from tourism, hospitality and rent-a-car projects we delivered.'}
           </p>
         </div>
@@ -84,7 +84,7 @@ export function LandingTestimonials({ locale = 'en' }: LandingTestimonialsProps)
             href={isEl ? '/el/work' : '/en/work'}
             className="text-sm font-semibold text-primary underline-offset-4 hover:underline"
           >
-            {isEl ? 'Δείτε όλα τα projects →' : 'See all projects →'}
+            {isEl ? 'Δείτε όλα τα έργα →' : 'See all projects →'}
           </a>
         </div>
       </div>

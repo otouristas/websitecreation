@@ -27,9 +27,35 @@ export function getLocalizedIndustry(slug: string, locale: SiteLocale): Localize
   };
 }
 
+const EN_INDUSTRY_META: Record<string, { title: string; description: string }> = {
+  hotels: {
+    title: 'Hotel Website Design & SEO Agency',
+    description:
+      'Hotel website design with booking CTAs, galleries and tourism SEO. Win direct bookings vs OTAs. Free quote from €899.',
+  },
+  'rent-a-car': {
+    title: 'Rent-a-Car Website Design & SEO',
+    description:
+      'Car rental website design with fleet pages, booking funnels and local SEO for airports and islands. Free EUR quote.',
+  },
+  'tour-operators': {
+    title: 'Tour Operator Website Design & SEO',
+    description:
+      'Tour operator websites with excursion catalogs, booking CTAs and destination SEO. Built for Google and AI search.',
+  },
+};
+
 export function getIndustryMeta(industry: LocalizedIndustry, locale: SiteLocale) {
+  if (locale === 'en') {
+    const override = EN_INDUSTRY_META[industry.slug];
+    if (override) return override;
+    return {
+      title: `${industry.name} Website Design & SEO`,
+      description: industry.metaDescription,
+    };
+  }
   return {
-    title: locale === 'el' ? `${industry.name} - Ιστοσελίδες & SEO` : `Website Solutions for ${industry.name}`,
+    title: `${industry.name} - Ιστοσελίδες & SEO`,
     description: industry.metaDescription,
   };
 }

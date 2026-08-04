@@ -157,7 +157,8 @@ export const industries: Industry[] = [
         slug: 'hotels',
         name: 'Hotels',
         description: 'Hotel and hospitality websites with booking integrations, gallery showcases, and tourism-focused SEO.',
-        metaDescription: 'Hotel websites with booking systems, galleries, and tourism SEO optimization.',
+        metaDescription:
+          'Hotel website design with booking CTAs, galleries and tourism SEO. Win direct bookings vs OTAs. Free quote from €899.',
         painPoints: ['Direct bookings', 'Room showcases', 'OTA competition', 'Guest reviews'],
         icon: 'building',
     },
@@ -221,7 +222,8 @@ export const industries: Industry[] = [
         slug: 'rent-a-car',
         name: 'Rent-a-Car',
         description: 'Car rental websites with fleet catalogs, booking funnels, seasonal offers, and island or airport local SEO.',
-        metaDescription: 'Car rental website design and SEO. Fleet pages, online bookings, and local search for rent-a-car brands.',
+        metaDescription:
+          'Car rental website design with fleet pages, booking funnels and local SEO for airports and islands. Free EUR quote.',
         painPoints: ['Online bookings', 'Fleet showcase', 'Seasonal demand', 'OTA competition'],
         icon: 'car',
     },
@@ -229,7 +231,8 @@ export const industries: Industry[] = [
         slug: 'tour-operators',
         name: 'Tour Operators',
         description: 'Excursion and daily tour websites with package catalogs, gallery-rich pages, and destination SEO clusters.',
-        metaDescription: 'Tour operator websites with excursion catalogs, booking CTAs, and tourism SEO for destinations worldwide.',
+        metaDescription:
+          'Tour operator websites with excursion catalogs, booking CTAs and destination SEO. Built for Google and AI search.',
         painPoints: ['Excursion bookings', 'Seasonal packages', 'Gallery content', 'Multi-language SEO'],
         icon: 'map',
     },
@@ -266,3 +269,16 @@ export const getIndustryBySlug = (slug: string): Industry | undefined => {
 export const getAllIndustrySlugs = (): string[] => {
     return industries.map((i) => i.slug);
 };
+
+/** Tourism niches prioritized for industry×service sitemap spokes. */
+export const TOURISM_INDUSTRY_SLUGS = [
+    'hotels',
+    'restaurants',
+    'rent-a-car',
+    'tour-operators',
+    'villas-apartments',
+    'travel-agencies',
+    'travel-ai-chatbots',
+] as const;
+
+export type TourismIndustrySlug = (typeof TOURISM_INDUSTRY_SLUGS)[number];

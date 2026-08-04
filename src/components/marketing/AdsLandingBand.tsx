@@ -55,11 +55,11 @@ export function AdsLandingBand({ industrySlug, locale = 'en' }: AdsLandingBandPr
             {isEl ? 'Ζητήστε δωρεάν προσφορά' : 'Get a free quote'}
           </Link>
           <Link href={lp('/work')} className="btn btn-outline px-8 py-3">
-            {isEl ? 'Όλα τα case studies' : 'All case studies'}
+            {isEl ? 'Όλες οι μελέτες περίπτωσης' : 'All case studies'}
           </Link>
         </div>
         <p className="mt-4 text-center text-xs text-muted-foreground">
-          {isEl ? 'Απάντηση εντός 24 ωρών · SEO, GEO & AEO included' : 'Reply within 24h · SEO, GEO & AEO included'}
+          {isEl ? 'Απάντηση εντός 24 ωρών · SEO, GEO & AEO συμπεριλαμβάνονται' : 'Reply within 24h · SEO, GEO & AEO included'}
         </p>
       </div>
     </section>

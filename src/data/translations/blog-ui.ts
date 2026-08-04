@@ -9,11 +9,11 @@ export const blogUiEn = {
 } as const;
 
 export const blogUiEl = {
-  title: 'Blog SEO, GEO & AEO - Οδηγοί',
+  title: 'Άρθρα SEO, GEO & AEO - Οδηγοί',
   metaDescription:
-    'Οδηγοί για Search Console, GEO, AEO, AI αναζήτηση, τεχνικό SEO, τοπικό SEO και agency playbooks - για ελληνικές και διεθνείς αγορές.',
-  h1: 'SEO insights & οδηγοί',
+    'Οδηγοί για Google Search Console, GEO, AEO, αναζήτηση με AI, τεχνικό SEO, τοπικό SEO και στρατηγικές - για ελληνικές και διεθνείς αγορές.',
+  h1: 'Άρθρα & οδηγοί SEO',
   intro:
-    'Άρθρα για τοπικό SEO, Search Console, AI visibility και τεχνική υλοποίηση - με συνδέσμους στην πλατφόρμα όταν είστε έτοιμοι να εκτελέσετε.',
+    'Πρακτικά άρθρα για τοπικό SEO, Google Search Console, ορατότητα σε AI και τεχνική υλοποίηση - με συνδέσμους στην πλατφόρμα όταν είστε έτοιμοι να προχωρήσετε.',
   readMore: 'Διαβάστε',
 } as const;

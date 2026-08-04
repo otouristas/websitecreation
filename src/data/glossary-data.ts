@@ -48,6 +48,21 @@ export const glossaryCategories: GlossaryCategory[] = [
     color: "blue",
     terms: [
       {
+        id: "on-page-seo-term",
+        termEl: "On-Page SEO",
+        shortDefinitionEl: "Βελτιστοποίηση στοιχείων μέσα στη σελίδα: τίτλοι, περιεχόμενο, επικεφαλίδες και εσωτερικοί σύνδεσμοι.",
+        fullDefinitionEl: "Το on-page SEO καλύπτει ό,τι ελέγχετε στη σελίδα σας — title tags, H1, δομή περιεχομένου, εσωτερική σύνδεση, εικόνες και meta — ώστε να ταιριάζει με την πρόθεση αναζήτησης. Είναι το θεμέλιο πριν από off-page και link building.",
+        term: "On-Page SEO",
+        shortDefinition: "Optimizing elements on a web page to rank for relevant searches.",
+        fullDefinition: "On-page SEO covers titles, headings, content, internal links, images, and meta tags so a page matches search intent and can rank. It is the foundation before off-page authority work.",
+        example: "Rewriting a service page title and opening paragraph to answer 'τι είναι το on-page SEO' in the first 50 words.",
+        technique: "One intent per URL, keyword in title/H1 naturally, short answer near the top, supporting H2s for PAA, internal links to money pages.",
+        relatedTerms: ["title-tag", "meta-description", "keywords", "seo"],
+        relatedLinks: [
+          { title: "On-Page SEO οδηγός", url: "/el/blog/on-page-seo", type: "blog" }
+        ]
+      },
+      {
         id: "title-tag",
         termEl: "Title Tag (Ετικέτα Τίτλου)",
         shortDefinitionEl: "HTML στοιχείο που ορίζει τον τίτλο της σελίδας στα αποτελέσματα αναζήτησης και στην καρτέλα του browser.",
@@ -55,7 +70,7 @@ export const glossaryCategories: GlossaryCategory[] = [
         term: "Title Tag",
         shortDefinition: "HTML element specifying a page's title for search results and browser tabs.",
         fullDefinition: "The title tag is an HTML element that defines the title of a web page. It appears in search engine results as the clickable headline and in browser tabs. Title tags are one of the most important on-page SEO factors.",
-        example: "<title>Best Running Shoes 2025 | Expert Reviews & Buying Guide</title>",
+        example: "<title>Best Running Shoes 2026 | Expert Reviews & Buying Guide</title>",
         technique: "Keep titles 50-60 characters, include primary keyword near the beginning, add brand name at the end with a pipe separator, make it compelling to improve CTR.",
         proTip: "Use unique titles for every page. Duplicate titles confuse search engines about which page to rank.",
         relatedTerms: ["meta-description", "serp", "ctr"],
@@ -72,7 +87,7 @@ export const glossaryCategories: GlossaryCategory[] = [
         term: "Meta Description",
         shortDefinition: "HTML attribute providing a brief summary of page content for search results.",
         fullDefinition: "A meta description is an HTML attribute that provides a concise summary of a web page's content. While not a direct ranking factor, it significantly impacts click-through rates as it appears as the snippet text under the title in search results.",
-        example: "<meta name=\"description\" content=\"Compare the top 10 running shoes of 2025. Expert reviews, price comparisons, and buying tips to help you find your perfect pair.\">",
+        example: "<meta name=\"description\" content=\"Compare the top 10 running shoes of 2026. Expert reviews, price comparisons, and buying tips to help you find your perfect pair.\">",
         technique: "Write 150-160 characters, include primary keyword naturally, add a call-to-action, make it unique per page, and match search intent.",
         proTip: "If Google rewrites your meta description, it means the original didn't match user intent well enough.",
         relatedTerms: ["title-tag", "ctr", "serp"],
@@ -126,7 +141,7 @@ export const glossaryCategories: GlossaryCategory[] = [
         term: "Image Alt Text",
         shortDefinition: "Descriptive text attribute for images that helps search engines and screen readers.",
         fullDefinition: "Alt text (alternative text) is an HTML attribute that describes the contents of an image. It serves three purposes: accessibility for visually impaired users, context for search engines, and fallback text when images fail to load.",
-        example: "<img src=\"nike-air-max.jpg\" alt=\"Nike Air Max 2025 running shoes in black and white colorway\">",
+        example: "<img src=\"nike-air-max.jpg\" alt=\"Nike Air Max 2026 running shoes in black and white colorway\">",
         technique: "Be descriptive and specific, include relevant keywords naturally, keep it under 125 characters, don't start with 'image of' or 'picture of'.",
         proTip: "Decorative images can use empty alt attributes (alt=\"\"). Don't describe images that don't add informational value.",
         relatedTerms: ["image-seo", "accessibility", "technical-seo"],
@@ -147,7 +162,7 @@ export const glossaryCategories: GlossaryCategory[] = [
         proTip: "Audit your orphan pages regularly. Pages with no internal links pointing to them are hard for search engines to find and rank.",
         relatedTerms: ["anchor-text", "link-equity", "site-architecture", "topic-clusters"],
         relatedLinks: [
-          { title: "Internal Linking at Scale", url: "/blog/internal-linking-scale", type: "blog" }
+          { title: "Internal Linking Audit Checklist", url: "/blog/internal-linking-audit-checklist", type: "blog" }
         ]
       },
       {
@@ -174,6 +189,22 @@ export const glossaryCategories: GlossaryCategory[] = [
     color: "purple",
     terms: [
       {
+        id: "technical-seo-term",
+        termEl: "Τεχνικό SEO",
+        shortDefinitionEl: "Βελτιστοποίηση υποδομής site για crawl, index, ταχύτητα και δομημένα δεδομένα.",
+        fullDefinitionEl: "Το τεχνικό SEO διασφαλίζει ότι η Google μπορεί να ανιχνεύσει και να ευρετηριάσει τις σελίδες σας: Core Web Vitals, mobile-first, HTTPS, sitemaps, robots.txt, canonicals και schema. Χωρίς αυτό, το καλύτερο περιεχόμενο δεν αποδίδει.",
+        term: "Technical SEO",
+        shortDefinition: "Improving site infrastructure for crawling, indexing, speed, and structured data.",
+        fullDefinition: "Technical SEO ensures search engines can crawl and index your pages efficiently — Core Web Vitals, mobile-first, HTTPS, sitemaps, robots.txt, canonicals, and schema.",
+        example: "Fixing 'discovered – not indexed' URLs and improving LCP on mobile before launching a content blitz.",
+        technique: "Audit crawl/index first, submit sitemaps, fix vitals, add relevant schema, keep internal links to money pages.",
+        relatedTerms: ["crawling", "indexing", "core-web-vitals", "seo"],
+        relatedLinks: [
+          { title: "Τεχνικό SEO checklist", url: "/el/blog/techniko-seo", type: "blog" },
+          { title: "SEO Audit", url: "/el/services/seo-audits", type: "feature" }
+        ]
+      },
+      {
         id: "crawling",
         termEl: "Crawling (Ανίχνευση)",
         shortDefinitionEl: "Η διαδικασία όπου τα ρομπότ της Google ανακαλύπτουν και διαβάζουν τις σελίδες του ιστού.",
@@ -186,8 +217,8 @@ export const glossaryCategories: GlossaryCategory[] = [
         proTip: "Check Server Logs to see exactly what Googlebot is crawling. GSC's crawl stats only show aggregates.",
         relatedTerms: ["indexing", "robots-txt", "xml-sitemap", "crawl-budget"],
         relatedLinks: [
-          { title: "Log File SEO Guide", url: "/blog/log-file-seo-guide", type: "blog" },
-          { title: "Technical SEO Audits", url: "/features/technical-seo-audits", type: "feature" }
+          { title: "Technical SEO Guide", url: "/blog/technical-seo-guide", type: "blog" },
+          { title: "Technical SEO Audits", url: "/platform/features/technical-seo-audits", type: "feature" }
         ]
       },
       {
@@ -230,7 +261,7 @@ export const glossaryCategories: GlossaryCategory[] = [
         term: "XML Sitemap",
         shortDefinition: "A file listing important URLs to help search engines discover and crawl content.",
         fullDefinition: "An XML sitemap is a structured file that lists the URLs on your website you want search engines to crawl and index. It includes metadata like last modification date, change frequency, and priority.",
-        example: "<?xml version=\"1.0\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n  <url>\n    <loc>https://example.com/page</loc>\n    <lastmod>2025-01-15</lastmod>\n  </url>\n</urlset>",
+        example: "<?xml version=\"1.0\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n  <url>\n    <loc>https://example.com/page</loc>\n    <lastmod>2026-01-15</lastmod>\n  </url>\n</urlset>",
         technique: "Include only indexable pages, keep under 50MB or 50,000 URLs, update lastmod only when content changes, submit to GSC, and split large sitemaps.",
         proTip: "Monitor 'Sitemap' report in GSC. If submitted URLs don't match indexed URLs, investigate why pages are being excluded.",
         relatedTerms: ["crawling", "indexing", "robots-txt"],
@@ -296,7 +327,7 @@ export const glossaryCategories: GlossaryCategory[] = [
         proTip: "Always include an x-default hreflang for users who don't match any specified language/region combination.",
         relatedTerms: ["international-seo", "geo-targeting", "language-targeting"],
         relatedLinks: [
-          { title: "Hreflang Guide", url: "/blog/hreflang-guide", type: "blog" },
+          { title: "Technical SEO Guide (hreflang)", url: "/blog/technical-seo-guide", type: "blog" },
           { title: "Hreflang Builder", url: "/free-tools/hreflang-builder", type: "tool" }
         ]
       },
@@ -339,6 +370,22 @@ export const glossaryCategories: GlossaryCategory[] = [
     icon: Link2,
     color: "green",
     terms: [
+      {
+        id: "off-page-seo",
+        termEl: "Off-Page SEO",
+        shortDefinitionEl: "Σήματα αξιοπιστίας έξω από το site σας — κυρίως ποιοτικά backlinks και brand mentions.",
+        fullDefinitionEl: "Το off-page SEO καλύπτει παράγοντες εκτός της ιστοσελίδας σας που επηρεάζουν την κατάταξη: backlinks, mentions, φήμη και digital PR. Στην Ελλάδα προτιμήστε συνάφεια και ποιότητα αντί για μαζικά spam directories.",
+        term: "Off-Page SEO",
+        shortDefinition: "Ranking signals earned outside your website, mainly backlinks and brand mentions.",
+        fullDefinition: "Off-page SEO covers external trust signals — backlinks, mentions, reputation, and digital PR — that influence rankings beyond what you control on your own pages.",
+        example: "An industry blog linking to your Greek SEO guide with a natural editorial mention.",
+        technique: "Earn relevant editorial links, diversify anchors, pair with strong on-page pages, avoid PBNs and bulk paid links.",
+        relatedTerms: ["backlink", "anchor-text", "seo"],
+        relatedLinks: [
+          { title: "Off-Page SEO οδηγός", url: "/el/blog/off-page-seo", type: "blog" },
+          { title: "Link Building", url: "/el/services/link-building", type: "feature" }
+        ]
+      },
       {
         id: "backlink",
         termEl: "Backlink (Εισερχόμενος Σύνδεσμος)",
@@ -463,6 +510,24 @@ export const glossaryCategories: GlossaryCategory[] = [
     color: "orange",
     terms: [
       {
+        id: "seo",
+        termEl: "SEO (Βελτιστοποίηση για Μηχανές Αναζήτησης)",
+        shortDefinitionEl: "Η διαδικασία βελτιστοποίησης ιστοσελίδας ώστε να κατατάσσεται ψηλότερα στα οργανικά αποτελέσματα της Google.",
+        fullDefinitionEl: "SEO (Search Engine Optimization) είναι το σύνολο τεχνικών, περιεχομένου και εξωτερικών σημάτων που βοηθούν μια ιστοσελίδα να εμφανίζεται ψηλά στα οργανικά αποτελέσματα αναζήτησης. Περιλαμβάνει τεχνικό SEO, on-page, off-page και τοπικό SEO. Στην Ελλάδα οι χρήστες συχνά ψάχνουν «τι είναι το SEO», «υπηρεσίες SEO» και «τιμές SEO».",
+        term: "SEO (Search Engine Optimization)",
+        shortDefinition: "The practice of improving a website so it ranks higher in organic search results.",
+        fullDefinition: "Search Engine Optimization (SEO) is the set of technical, content, and off-site practices that help a website appear higher in unpaid search results. It includes technical SEO, on-page SEO, off-page SEO, and local SEO.",
+        example: "Optimizing a service page for 'υπηρεσίες SEO' with clear titles, FAQ schema, and fast mobile load.",
+        technique: "Map one primary intent per URL, fix crawl/index issues first, write citation-ready answers, add FAQ schema, and measure in Google Search Console.",
+        proTip: "In Greece, commercial queries like τιμές SEO and υπηρεσίες SEO often convert better than the head term SEO alone.",
+        relatedTerms: ["on-page-seo-term", "technical-seo-term", "keywords", "local-pack"],
+        relatedLinks: [
+          { title: "What is SEO?", url: "/en/blog/what-is-seo", type: "blog" },
+          { title: "Τι είναι το SEO", url: "/el/blog/seo-gia-arxarious", type: "blog" },
+          { title: "SEO audit services", url: "/en/services/seo-audits", type: "feature" }
+        ]
+      },
+      {
         id: "keywords",
         termEl: "Keywords (Λέξεις-κλειδιά)",
         shortDefinitionEl: "Οι όροι που πληκτρολογούν οι χρήστες στις μηχανές αναζήτησης - η βάση κάθε SEO στρατηγικής.",
@@ -475,7 +540,8 @@ export const glossaryCategories: GlossaryCategory[] = [
         proTip: "Don't just chase high-volume keywords. Focus on keywords that match your content's purpose and your audience's needs.",
         relatedTerms: ["long-tail-keywords", "search-intent", "keyword-difficulty", "search-volume"],
         relatedLinks: [
-          { title: "Keyword Research & Clustering", url: "/features/keyword-research-clustering", type: "feature" },
+          { title: "Keyword research guide", url: "/en/blog/keyword-research-guide", type: "blog" },
+          { title: "Free keyword research tool", url: "/en/tools/keyword-research", type: "tool" },
           { title: "Keyword Clustering Tool", url: "/free-tools/keyword-clustering", type: "tool" }
         ]
       },
@@ -531,7 +597,7 @@ export const glossaryCategories: GlossaryCategory[] = [
         term: "Search Intent",
         shortDefinition: "The underlying goal a user has when typing a search query.",
         fullDefinition: "Search intent (also called user intent or query intent) refers to the purpose behind a search query. Understanding intent is crucial for creating content that satisfies users and ranks well. The four main types are informational, navigational, commercial, and transactional.",
-        example: "Informational: 'how to tie running shoes'. Transactional: 'buy Nike Air Max'. Commercial: 'best running shoes 2025'. Navigational: 'Nike official site'",
+        example: "Informational: 'how to tie running shoes'. Transactional: 'buy Nike Air Max'. Commercial: 'best running shoes 2026'. Navigational: 'Nike official site'",
         technique: "Analyze the current SERP to understand what Google thinks the intent is. Match your content format (guide, product page, comparison, etc.) to the intent.",
         proTip: "If your content doesn't match search intent, you won't rank - no matter how good it is. Always check the SERP before creating content.",
         relatedTerms: ["keywords", "serp-analysis", "content-optimization"],
@@ -544,7 +610,7 @@ export const glossaryCategories: GlossaryCategory[] = [
         term: "Keyword Cannibalization",
         shortDefinition: "When multiple pages on your site compete for the same keyword.",
         fullDefinition: "Keyword cannibalization occurs when multiple pages on the same website target the same or very similar keywords, causing them to compete against each other in search results. This can dilute ranking signals and confuse search engines.",
-        example: "Having '/best-running-shoes' and '/top-running-shoes-2025' both targeting 'best running shoes' causes cannibalization.",
+        example: "Having '/best-running-shoes' and '/top-running-shoes-2026' both targeting 'best running shoes' causes cannibalization.",
         technique: "Audit your content for overlapping keywords, consolidate similar pages into one comprehensive piece, use canonical tags, or differentiate content focus.",
         proTip: "Use GSC to identify cannibalization: if multiple URLs rank for the same query and swap positions, you likely have cannibalization.",
         relatedTerms: ["content-consolidation", "canonical-tag", "site-architecture"],
@@ -671,6 +737,8 @@ export const glossaryCategories: GlossaryCategory[] = [
         proTip: "Track organic traffic trends, not just absolute numbers. Seasonal businesses have natural fluctuations. Compare year-over-year for accurate growth measurement.",
         relatedTerms: ["paid-traffic", "direct-traffic", "referral-traffic"],
         relatedLinks: [
+          { title: "How to increase organic traffic", url: "/blog/how-to-increase-organic-traffic", type: "blog" },
+          { title: "What is SEO?", url: "/blog/what-is-seo", type: "blog" },
           { title: "Connect Search Console", url: "/help/connect-search-console", type: "help" }
         ]
       },
@@ -814,7 +882,7 @@ export const glossaryCategories: GlossaryCategory[] = [
         relatedTerms: ["llm-seo", "zero-click-search", "serp-features"],
         relatedLinks: [
           { title: "AI Overview Checker", url: "/free-tools/ai-overview-checker", type: "tool" },
-          { title: "LLM SEO Guide", url: "/blog/llm-seo-chatgpt-perplexity", type: "blog" }
+          { title: "LLM Citations & Brand Visibility", url: "/blog/llm-citations-brand-visibility", type: "blog" }
         ]
       }
     ]
@@ -826,6 +894,22 @@ export const glossaryCategories: GlossaryCategory[] = [
     icon: MapPin,
     color: "red",
     terms: [
+      {
+        id: "local-seo-term",
+        termEl: "Τοπικό SEO (Local SEO)",
+        shortDefinitionEl: "Βελτιστοποίηση για τοπικές αναζητήσεις και το map pack της Google (Αθήνα, Θεσσαλονίκη, «κοντά μου»).",
+        fullDefinitionEl: "Το τοπικό SEO βοηθά επιχειρήσεις με φυσική ή γεωγραφική εμβέλεια να εμφανίζονται στο map pack και στα τοπικά αποτελέσματα. Κεντρικά στοιχεία: Google Business Profile, σταθερό NAP, κριτικές, τοπικές σελίδες και citations.",
+        term: "Local SEO",
+        shortDefinition: "Optimization for map pack and location-based search results.",
+        fullDefinition: "Local SEO helps businesses appear in Google’s map pack and local results for city and “near me” queries through GBP, NAP consistency, reviews, local pages, and citations.",
+        example: "Ranking in the map pack for 'seo θεσσαλονικη' with a complete GBP and a dedicated Thessaloniki service page.",
+        technique: "Complete GBP fields, keep NAP identical everywhere, build location pages, collect and reply to reviews, add LocalBusiness schema.",
+        relatedTerms: ["google-business-profile", "nap", "local-pack"],
+        relatedLinks: [
+          { title: "Τοπικό SEO υπηρεσία", url: "/el/services/local-seo", type: "feature" },
+          { title: "SEO Θεσσαλονίκη", url: "/el/services/local-seo/thessaloniki-gr", type: "feature" }
+        ]
+      },
       {
         id: "google-business-profile",
         termEl: "Google Business Profile (Επιχειρηματικό Προφίλ Google)",
@@ -937,7 +1021,7 @@ export const glossaryCategories: GlossaryCategory[] = [
         term: "Content Decay",
         shortDefinition: "The gradual decline in organic traffic and rankings of older content.",
         fullDefinition: "Content decay occurs when previously high-performing content gradually loses rankings and traffic over time. This happens as content becomes outdated, competitors publish better content, or user needs evolve.",
-        example: "A 'Best Tools 2023' article that ranked #1 now ranks #15 because it's outdated and competitors have 2025 versions.",
+        example: "A 'Best Tools 2024' article that ranked #1 now ranks #15 because it's outdated and competitors have 2026 versions.",
         technique: "Monitor traffic trends per page, identify decaying content before it's too late, update with current information, refresh titles with current year, add new sections, improve comprehensiveness.",
         proTip: "Set calendar reminders to review evergreen content quarterly. Preventing decay is easier than recovering from it.",
         relatedTerms: ["content-freshness", "content-update", "evergreen-content"],
@@ -1003,9 +1087,9 @@ export const glossaryCategories: GlossaryCategory[] = [
         term: "Content Freshness",
         shortDefinition: "How recently content was published or updated.",
         fullDefinition: "Content freshness refers to how current your content is. For some queries (news, trending topics, 'best of [year]'), Google prefers fresh content. Updating existing content can boost rankings by signaling relevance.",
-        example: "Updating your 'Best Running Shoes' post from 2023 data to 2025 data and changing the title can restore lost rankings.",
+        example: "Updating your 'Best Running Shoes' post from 2024 data to 2026 data and changing the title can restore lost rankings.",
         technique: "Update content with new information regularly, change last-modified dates only with substantial updates, add current year to titles where relevant, publish timely content for trending topics.",
-        proTip: "Not all content needs freshness. 'How to boil water' doesn't need 2025 updates. But 'Best AI tools' becomes stale quickly.",
+        proTip: "Not all content needs freshness. 'How to boil water' doesn't need 2026 updates. But 'Best AI tools' becomes stale quickly.",
         relatedTerms: ["content-decay", "content-update", "query-deserves-freshness"],
         relatedLinks: [
           { title: "Content Decay Detector", url: "/features/content-decay-detector", type: "feature" }
@@ -1195,7 +1279,7 @@ export const glossaryCategories: GlossaryCategory[] = [
         proTip: "LLMs learn from their training data and sometimes real-time search. Building brand mentions across the web is increasingly important.",
         relatedTerms: ["ai-overview", "zero-click-search", "e-e-a-t"],
         relatedLinks: [
-          { title: "LLM SEO Guide", url: "/blog/llm-seo-chatgpt-perplexity", type: "blog" },
+          { title: "LLM Citations & Brand Visibility", url: "/blog/llm-citations-brand-visibility", type: "blog" },
           { title: "AI Overview Checker", url: "/free-tools/ai-overview-checker", type: "tool" }
         ]
       },
@@ -1290,6 +1374,9 @@ export const glossaryCategories: GlossaryCategory[] = [
       },
       {
         id: "google-analytics",
+        termEl: "Google Analytics 4 (GA4)",
+        shortDefinitionEl: "Δωρεάν πλατφόρμα analytics της Google για συμπεριφορά χρηστών και conversions — κρίσιμη για μέτρηση SEO.",
+        fullDefinitionEl: "Το Google Analytics 4 μετρά sessions, engagement και conversions. Για SEO, συνδέστε το με Search Console ώστε να βλέπετε ποια οργανικά ερωτήματα φέρνουν πραγματική αξία — όχι μόνο εντυπώσεις.",
         term: "Google Analytics 4 (GA4)",
         shortDefinition: "Google's free web analytics platform for tracking user behavior.",
         fullDefinition: "Google Analytics 4 is Google's analytics platform that tracks website traffic, user behavior, conversions, and more. It uses event-based tracking and machine learning to provide insights about your audience and their journey.",
@@ -1298,6 +1385,7 @@ export const glossaryCategories: GlossaryCategory[] = [
         proTip: "Link GA4 with GSC to combine behavior data with search performance. This helps identify which rankings actually drive conversions.",
         relatedTerms: ["organic-traffic", "conversion-rate", "user-behavior"],
         relatedLinks: [
+          { title: "Εργαλεία SEO", url: "/el/blog/ergaleia-seo", type: "blog" },
           { title: "SEO Health Score", url: "/features/seo-health-score", type: "feature" }
         ]
       },
@@ -1325,7 +1413,7 @@ export const glossaryCategories: GlossaryCategory[] = [
         relatedTerms: ["indexing", "serp", "competitive-analysis"],
         relatedLinks: [
           { title: "Search Operators Tool", url: "/free-tools/search-operators", type: "tool" },
-          { title: "Google Search Operators Guide", url: "/blog/google-search-operators-2025", type: "blog" }
+          { title: "Google Search Operators Guide", url: "/blog/google-search-operators-2026", type: "blog" }
         ]
       },
       {
@@ -1467,7 +1555,7 @@ export const glossaryCategories: GlossaryCategory[] = [
         proTip: "Log files are the only way to see what Googlebot actually does, not what you think it does. They can reveal hidden issues GSC doesn't show.",
         relatedTerms: ["crawling", "crawl-budget", "googlebot"],
         relatedLinks: [
-          { title: "Log File SEO Guide", url: "/blog/log-file-seo-guide", type: "blog" }
+          { title: "Technical SEO Guide", url: "/blog/technical-seo-guide", type: "blog" }
         ]
       },
       {

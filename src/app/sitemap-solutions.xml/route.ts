@@ -1,6 +1,6 @@
 // Sitemap for solutions (industry) pages - /en and /el
 import { NextResponse } from 'next/server';
-import { getAllIndustrySlugs } from '@/data/industries';
+import { getAllIndustrySlugs, TOURISM_INDUSTRY_SLUGS } from '@/data/industries';
 import { getAllServiceSlugs } from '@/data/services';
 import { localizedPath } from '@/lib/i18n/locale';
 
@@ -14,6 +14,7 @@ export async function GET() {
   const urls: { loc: string; lastmod: string; changefreq: string; priority: string }[] = [];
 
   for (const locale of LOCALES) {
+    // All industry hubs stay in the sitemap.
     industrySlugs.forEach((industry) => {
       urls.push({
         loc: `${BASE_URL}${localizedPath(locale, `/solutions/${industry}`)}`,
@@ -23,7 +24,8 @@ export async function GET() {
       });
     });
 
-    industrySlugs.forEach((industry) => {
+    // Industry×service spokes: tourism niches only (money pages).
+    TOURISM_INDUSTRY_SLUGS.forEach((industry) => {
       serviceSlugs.forEach((service) => {
         urls.push({
           loc: `${BASE_URL}${localizedPath(locale, `/solutions/${industry}/${service}`)}`,

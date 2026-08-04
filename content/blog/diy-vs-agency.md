@@ -7,6 +7,17 @@ author: AnotherSEOGuru Editorial Team
 category: Business Strategy
 categoryColor: bg-green-100 text-green-700
 pillar: agency-playbooks
+faq:
+  - question: "How much does agency SEO cost?"
+    answer: "Retainers vary by scope — single-location local SEO vs multi-island tourism build. Get a scoped proposal rather than guessing from generic pricing pages."
+  - question: "Can I start DIY and switch to agency later?"
+    answer: "Yes — and it's common. Bring your Search Console history and content; a good agency picks up from data, not zero."
+  - question: "Is SEO software enough without an agency?"
+    answer: "Software provides leverage — clustering, audits, tracking — but someone must execute. Software without ops cadence fails."
+  - question: "How do I know if DIY is working?"
+    answer: "Track commercial clicks in GSC, map actions, calls, and bookings monthly. Rankings alone mislead."
+  - question: "Should tourism brands ever fully outsource SEO?"
+    answer: "Outsource execution, not oversight. You know seasonality, pricing, and guest questions — the agency knows search systems. Stay involved on content accuracy."
 ---
 
 You know you need to be on Google. The question is whether you have the time to put yourself there — and whether software plus a light process can get you far enough before you need hands-on help. Every small business owner reaches this crossroads: the website is live, but bookings and calls aren't where they should be.
@@ -17,18 +28,18 @@ This guide gives you an honest framework — no scare tactics, no "agencies alwa
 
 **Best for:** Solopreneurs, businesses under roughly $200k/year, or teams with more time than cash — and operators willing to learn Search Console.
 
-The basics of [local SEO](/blog/local-seo-guide) are learnable. Google wants to rank good businesses with clear entities and helpful content. If you are willing to invest 5–10 hours per week, you can achieve meaningful groundwork yourself — especially with a structured weekly loop like our [GSC ops playbook](/blog/gsc-weekly-ops-playbook).
+The basics of [local SEO](/en/blog/local-seo-guide) are learnable. Google wants to rank good businesses with clear entities and helpful content. If you are willing to invest 5–10 hours per week, you can achieve meaningful groundwork yourself — especially with a structured weekly loop like our [GSC ops playbook](/en/blog/gsc-weekly-ops-playbook).
 
 ### What DIY actually involves
 
-- Claiming and optimizing [Google Business Profile](/glossary?term=google-business-profile)
-- Fixing [NAP](/glossary?term=nap) consistency across directories
+- Claiming and optimizing [Google Business Profile](/en/glossary?term=google-business-profile)
+- Fixing [NAP](/en/glossary?term=nap) consistency across directories
 - Writing location pages and FAQ content (not copy-paste templates)
-- Monitoring [Search Console](/glossary?term=clicks) weekly for near-miss queries
-- Building [internal links](/glossary?term=internal-linking) from blog and glossary to money pages
+- Monitoring [Search Console](/en/glossary?term=clicks) weekly for near-miss queries
+- Building [internal links](/en/glossary?term=internal-linking) from blog and glossary to money pages
 - Requesting reviews with a consistent process
 
-For tourism brands, DIY also means keeping [hotel](/solutions/hotels) or [rent-a-car](/solutions/rent-a-car) fleet pages updated seasonally and syncing GBP photos before peak season.
+For tourism brands, DIY also means keeping [hotel](/en/solutions/hotels) or [rent-a-car](/en/solutions/rent-a-car) fleet pages updated seasonally and syncing GBP photos before peak season.
 
 ### The pros
 
@@ -40,7 +51,7 @@ For tourism brands, DIY also means keeping [hotel](/solutions/hotels) or [rent-a
 ### The cons
 
 - **Time drain:** Serious execution is often 5–10 hours per week; peak tourism season leaves zero bandwidth
-- **Learning curve:** SEO, [SERP features](/glossary?term=serp), and [GEO/AEO](/blog/geo-aeo-global-seo-playbook) change constantly
+- **Learning curve:** SEO, [SERP features](/en/glossary?term=serp), and [GEO/AEO](/en/blog/geo-aeo-global-seo-playbook) change constantly
 - **Mistakes are costly:** Thin location pages, toxic links, or aggressive tactics create cleanup work
 - **Opportunity cost:** Every hour on SEO is an hour not serving guests or closing jobs
 
@@ -52,13 +63,13 @@ An agency brings systems, tools, and pattern recognition. The best partners do n
 
 ### What good agencies deliver
 
-- Technical audit and fix roadmap tied to [indexation](/glossary?term=indexing) and [Core Web Vitals](/glossary?term=page-experience)
-- Content architecture — hubs, spokes, [topic clusters](/glossary?term=topic-clusters)
+- Technical audit and fix roadmap tied to [indexation](/en/glossary?term=indexing) and [Core Web Vitals](/en/glossary?term=page-experience)
+- Content architecture — hubs, spokes, [topic clusters](/en/glossary?term=topic-clusters)
 - Local stack — GBP, citations, review velocity
-- Design and development when the site is the bottleneck — see our [SEO web design guide](/blog/seo-web-design-development-platform)
+- Design and development when the site is the bottleneck — see our [SEO web design guide](/en/blog/seo-web-design-development-platform)
 - Reporting tied to calls, bookings, and revenue — not rank grids alone
 
-We build [hotel websites](/solutions/hotels), [rent-a-car platforms](/solutions/rent-a-car), and [travel AI chatbots](/solutions/travel-ai-chatbots) with search built in. Browse [case studies](/work) for examples.
+We build [hotel websites](/en/solutions/hotels), [rent-a-car platforms](/en/solutions/rent-a-car), and [travel AI chatbots](/en/solutions/travel-ai-chatbots) with search built in. Browse [case studies](/en/work) for examples.
 
 ### The pros
 
@@ -76,7 +87,7 @@ We build [hotel websites](/solutions/hotels), [rent-a-car platforms](/solutions/
 
 ## The third path — software-first, agency when needed
 
-Many teams connect Search Console, ship weekly priorities from [keyword clustering](/glossary?term=keyword-clustering) and health scores, and only bring in an agency for execution-heavy quarters: migrations, redesigns, multi-island launches.
+Many teams connect Search Console, ship weekly priorities from [keyword clustering](/en/glossary?term=keyword-clustering) and health scores, and only bring in an agency for execution-heavy quarters: migrations, redesigns, multi-island launches.
 
 This hybrid works well for:
 
@@ -84,7 +95,7 @@ This hybrid works well for:
 - Hotel group with internal content + external technical SEO
 - Rent-a-car operator using software for GSC ops, agency for location page production
 
-Use our [query prioritization framework](/blog/gsc-query-prioritization-framework) to keep DIY phases focused.
+Use our [query prioritization framework](/en/blog/gsc-query-prioritization-framework) to keep DIY phases focused.
 
 ## Decision matrix
 
@@ -100,7 +111,7 @@ Use our [query prioritization framework](/blog/gsc-query-prioritization-framewor
 
 ### Hotels and villas
 
-OTA commissions eat margin. DIY local SEO can work for a single boutique property with owner-operated GBP. Multi-property groups almost always need agency or dedicated in-house — [local SEO for Cyclades](/blog/topiko-seo-kykladon) complexity scales fast.
+OTA commissions eat margin. DIY local SEO can work for a single boutique property with owner-operated GBP. Multi-property groups almost always need agency or dedicated in-house — [local SEO for Cyclades](/en/blog/topiko-seo-kykladon) complexity scales fast.
 
 ### Rent-a-car
 
@@ -108,21 +119,21 @@ Airport and island keywords are competitive. Fleet page production, schema, and 
 
 ### Travel AI
 
-[AI chatbots for tourism](/solutions/travel-ai-chatbots) require integration expertise — rarely pure DIY.
+[AI chatbots for tourism](/en/solutions/travel-ai-chatbots) require integration expertise — rarely pure DIY.
 
 ## Red flags when choosing an agency
 
 - Guaranteed #1 rankings
 - No access to your Search Console or analytics
 - Generic monthly PDF with no shipped work listed
-- No examples in [portfolio](/work) with measurable outcomes
-- Can't explain [E-E-A-T](/glossary?term=e-e-a-t) or [search intent](/glossary?term=search-intent) for your vertical
+- No examples in [portfolio](/en/work) with measurable outcomes
+- Can't explain [E-E-A-T](/en/glossary?term=e-e-a-t) or [search intent](/en/glossary?term=search-intent) for your vertical
 
 ## FAQ
 
 ### How much does agency SEO cost?
 
-Retainers vary by scope — single-location local SEO vs multi-island tourism build. [Get a scoped proposal](/get-started) rather than guessing from generic pricing pages.
+Retainers vary by scope — single-location local SEO vs multi-island tourism build. [Get a scoped proposal](/en/get-started) rather than guessing from generic pricing pages.
 
 ### Can I start DIY and switch to agency later?
 
@@ -142,8 +153,8 @@ Outsource execution, not oversight. You know seasonality, pricing, and guest que
 
 ---
 
-### Not sure which path fits?
+## Ready to Get Started?
 
-Tell us about your business — home services, hotel, rent-a-car, or travel brand — and we'll recommend DIY steps, hybrid scope, or full partnership.
+Tell us about your site, locations, and goals — we'll recommend a scoped plan with Search Console ops, content priorities, and clear next steps.
 
-[Get started](/get-started) · [See our work](/work) · [Local SEO guide](/blog/local-seo-guide)
+[Get started](/en/get-started) · [See our work](/en/work) · [Pricing](/en/pricing)

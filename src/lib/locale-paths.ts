@@ -29,6 +29,33 @@ const GREEK_LOCATION_SLUGS = new Set([
   'serres-gr',
   'lamia-gr',
   'kavala-gr',
+  'rhodes-gr',
+  'corfu-gr',
+  'zakynthos-gr',
+  'lefkada-gr',
+  'skiathos-gr',
+  'ios-gr',
+  'milos-gr',
+  'syros-gr',
+  'tinos-gr',
+  'andros-gr',
+  'karpathos-gr',
+  'lemnos-gr',
+  'chios-gr',
+  'samos-gr',
+  'ikaria-gr',
+  'mytilene-gr',
+  'ioannina-gr',
+  'trikala-gr',
+  'kalamata-gr',
+  'agrinio-gr',
+  'drama-gr',
+  'alexandroupoli-gr',
+  'tripoli-gr',
+  'chalkida-gr',
+  'komotini-gr',
+  'nafplio-gr',
+  'pyrgos-gr',
 ]);
 
 export function isGreekLocationSlug(slug: string): boolean {
@@ -46,10 +73,27 @@ export function elServiceLocationPath(service: string, location: string): string
 /** @deprecated use elServiceLocationPath */
 export const grServiceLocationPath = elServiceLocationPath;
 
+/** EN-first product paths with no dedicated EL twin — lang switch falls back to home. */
+const EN_ONLY_PATH_PREFIXES = ['/platform', '/tools', '/resources', '/glossary'] as const;
+
+function isEnOnlyBarePath(bare: string): boolean {
+  return EN_ONLY_PATH_PREFIXES.some(
+    (prefix) => bare === prefix || bare.startsWith(`${prefix}/`),
+  );
+}
+
+/**
+ * Locale twin for the current marketing path. Falls back to the other locale's
+ * homepage when there is no reliable 1:1 page (platform/tools, non-GR locations).
+ */
 export function getAlternateLocalePath(pathname: string): string {
   const current = siteLocaleFromPath(pathname);
   const target: SiteLocale = current === 'el' ? 'en' : 'el';
   const bare = stripLocalePrefix(pathname);
+
+  if (isEnOnlyBarePath(bare)) {
+    return localizedPath(target, '/');
+  }
 
   const serviceLocationMatch = bare.match(/^\/services\/([^/]+)\/([^/]+)$/);
   if (serviceLocationMatch) {

@@ -27,10 +27,11 @@ export function ROICalculator() {
             <div className="grid md:grid-cols-2 gap-8">
                 <div className="space-y-6">
                     <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                        <label htmlFor="roi-traffic" className="block text-sm font-medium text-gray-700 mb-2">
                             Monthly Traffic: <span className="font-bold text-blue-600">{traffic.toLocaleString()}</span>
                         </label>
                         <input
+                            id="roi-traffic"
                             type="range"
                             min="100"
                             max="50000"
@@ -42,10 +43,11 @@ export function ROICalculator() {
                     </div>
 
                     <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                        <label htmlFor="roi-conversion" className="block text-sm font-medium text-gray-700 mb-2">
                             Website Conv. Rate: <span className="font-bold text-blue-600">{conversionRate}%</span>
                         </label>
                         <input
+                            id="roi-conversion"
                             type="range"
                             min="0.1"
                             max="10"
@@ -57,10 +59,11 @@ export function ROICalculator() {
                     </div>
 
                     <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                        <label htmlFor="roi-close" className="block text-sm font-medium text-gray-700 mb-2">
                             Sales Close Rate: <span className="font-bold text-blue-600">{closeRate}%</span>
                         </label>
                         <input
+                            id="roi-close"
                             type="range"
                             min="1"
                             max="100"
@@ -72,10 +75,11 @@ export function ROICalculator() {
                     </div>
 
                     <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                        <label htmlFor="roi-value" className="block text-sm font-medium text-gray-700 mb-2">
                             Customer Value ($): <span className="font-bold text-blue-600">${customerValue}</span>
                         </label>
                         <input
+                            id="roi-value"
                             type="range"
                             min="100"
                             max="10000"

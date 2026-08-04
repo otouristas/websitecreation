@@ -2,13 +2,20 @@
   "name": "anotherseoguru-agency",
   "version": "0.1.0",
   "private": true,
+  "browserslist": [
+    "defaults and fully supports es6-module"
+  ],
   "scripts": {
     "dev": "next dev -p 8080",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
     "audit:portfolio": "node scripts/portfolio-audit.mjs",
-    "screenshots:portfolio": "node scripts/portfolio-audit.mjs --screenshot-only"
+    "audit:locations": "npx tsx scripts/audit-locations.ts",
+    "screenshots:portfolio": "node scripts/portfolio-audit.mjs --screenshot-only",
+    "screenshots:portfolio:force": "node scripts/portfolio-audit.mjs --screenshot-only --force",
+    "generate:llms": "node scripts/generate-llms.mjs",
+    "validate:blog": "node scripts/validate-blog-posts.mjs"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.4",

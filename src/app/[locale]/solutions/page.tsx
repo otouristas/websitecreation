@@ -27,9 +27,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   return buildMetadata({
-    title: "Industry SEO & Web Solutions",
+    title: "Tourism & Industry Website Solutions | Hotels, Rent-a-Car, Tours",
     description:
-      "Industry-specific website and SEO solutions for restaurants, hotels, legal, medical, home services, ecommerce, and more. Tailored playbooks and service packages.",
+      "Industry website design and SEO for hotels, rent-a-car, tour operators and more. Playbooks built to rank globally and convert bookings.",
     path: localizedPath('en', '/solutions'),
     hreflangPath: "/solutions",
   });
@@ -49,7 +49,7 @@ export default async function SolutionsPage({ params }: PageProps) {
         h1: "Κλαδικές Λύσεις",
         sub: "Κάθε κλάδος έχει μοναδικές ανάγκες. Κατασκευάζουμε ιστοσελίδες ειδικά σχεδιασμένες για τον δικό σας κλάδο - με τα χαρακτηριστικά, το design και το SEO που σας βοηθά να ξεχωρίσετε.",
         viewPricing: "Δείτε τις Τιμές",
-        startProject: "Ξεκινήστε το Project",
+        startProject: "Ξεκινήστε το έργο",
         ourServicesTitle: "Οι Υπηρεσίες Μας",
         ourServicesSub: "Κάθε κλαδική λύση περιλαμβάνει πρόσβαση σε όλο το φάσμα των υπηρεσιών μας",
         readyTitle: "Έτοιμοι να Κατασκευάσετε την Ιστοσελίδα Σας;",

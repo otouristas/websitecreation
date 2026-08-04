@@ -20,12 +20,20 @@ export async function generateMetadata({
   if (!isValidLocale(locale)) return {};
   const project = getWorkProject(slug);
   if (!project) return {};
+  const isEl = locale === 'el';
+  const caseStudyLabel = isEl ? 'Μελέτη περίπτωσης' : 'Case Study';
+  const title =
+    (isEl ? project.seoTitleEl : project.seoTitle) ||
+    `${project.name} - ${caseStudyLabel}`;
+  const description =
+    (isEl ? project.seoDescriptionEl : project.seoDescription) ||
+    (isEl && project.summaryEl ? project.summaryEl : project.summary);
   return buildMetadata({
-    title: `${project.name} - Case Study`,
-    description: project.summary,
+    title,
+    description,
     path: localizedPath(locale as SiteLocale, `/work/${slug}`),
     hreflangPath: `/work/${slug}`,
-    primaryKeyword: `${project.name} website`,
+    primaryKeyword: `${project.name} ${isEl ? 'ιστοσελίδα' : 'website'}`,
   });
 }
 

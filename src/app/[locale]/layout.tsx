@@ -86,6 +86,7 @@ export async function generateMetadata({
     openGraph: {
       type: 'website',
       locale: isEl ? 'el_GR' : 'en_US',
+      alternateLocale: isEl ? ['en_US', 'en_GB'] : ['en_GB', 'el_GR'],
       url: `${SITE_URL}/${locale}`,
       siteName: 'AnotherSEOGuru',
       title,
@@ -148,7 +149,7 @@ function buildStructuredDataGraph(isEl: boolean) {
           contactType: 'customer service',
           email: CONTACT_EMAIL,
           telephone: PHONE_E164,
-          areaServed: 'GR',
+          areaServed: ['GR', 'US', 'GB', 'CA', 'AU', 'IE', 'EU'],
           availableLanguage: ['Greek', 'English'],
         },
         sameAs: [
@@ -160,6 +161,10 @@ function buildStructuredDataGraph(isEl: boolean) {
           { '@type': 'Country', name: 'Greece' },
           { '@type': 'Country', name: 'United States' },
           { '@type': 'Country', name: 'United Kingdom' },
+          { '@type': 'Country', name: 'Canada' },
+          { '@type': 'Country', name: 'Australia' },
+          { '@type': 'Country', name: 'Ireland' },
+          { '@type': 'AdministrativeArea', name: 'Europe' },
         ],
         knowsAbout: [
           'Web design',

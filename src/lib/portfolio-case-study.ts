@@ -2,6 +2,7 @@ import {
   PORTFOLIO_CATEGORIES,
   type PortfolioProject,
 } from '@/data/portfolio';
+import { PORTFOLIO_CASE_STUDIES } from '@/data/portfolio-case-studies';
 import type { SiteLocale } from '@/lib/i18n/locale';
 
 export interface CaseStudySection {
@@ -208,15 +209,17 @@ const CONTENT: { en: string[]; el: string[] } = {
 function serviceLabels(slug: string, isEl: boolean): string {
   const map: Record<string, { en: string; el: string }> = {
     'website-creation': { en: 'custom website build', el: 'κατασκευή ιστοσελίδας' },
-    'website-redesign': { en: 'website redesign', el: 'redesign ιστοσελίδας' },
-    'seo-web-design': { en: 'SEO web design', el: 'SEO web design' },
+    'website-redesign': { en: 'website redesign', el: 'ανασχεδιασμός ιστοσελίδας' },
+    'seo-web-design': { en: 'SEO web design', el: 'σχεδιασμός με SEO' },
     'speed-optimization': { en: 'speed optimization', el: 'βελτιστοποίηση ταχύτητας' },
     'ai-visibility': { en: 'GEO/AEO visibility', el: 'GEO/AEO ορατότητα' },
     'local-seo': { en: 'local SEO', el: 'τοπικό SEO' },
     'content-creation': { en: 'content creation', el: 'δημιουργία περιεχομένου' },
-    'link-building': { en: 'link building', el: 'link building' },
+    'link-building': { en: 'link building', el: 'δημιουργία backlinks' },
     'seo-audits': { en: 'technical SEO audit', el: 'τεχνικό SEO audit' },
-    'logo-design': { en: 'brand/logo design', el: 'branding/logo' },
+    'logo-design': { en: 'brand/logo design', el: 'σχεδιασμός λογοτύπου' },
+    'eshop-woocommerce': { en: 'WooCommerce e-shop', el: 'κατασκευή e-shop WooCommerce' },
+    'eshop-seo': { en: 'e-shop SEO', el: 'SEO για e-shop' },
   };
   return map[slug]?.[isEl ? 'el' : 'en'] ?? slug.replace(/-/g, ' ');
 }
@@ -226,6 +229,41 @@ export function buildProjectCaseStudy(
   locale: SiteLocale = 'en',
 ): ProjectCaseStudy {
   const isEl = locale === 'el';
+  const override = PORTFOLIO_CASE_STUDIES[project.slug];
+
+  if (override) {
+    const outcomes =
+      isEl && project.resultsEl && project.resultsEl.length > 0
+        ? project.resultsEl
+        : !isEl && project.results && project.results.length > 0
+          ? project.results
+          : override.outcomes[isEl ? 'el' : 'en'];
+
+    return {
+      overview: override.overview[isEl ? 'el' : 'en'],
+      challenge: override.challenge[isEl ? 'el' : 'en'],
+      approach: override.approach[isEl ? 'el' : 'en'],
+      seo: {
+        title: isEl ? 'SEO - Τεχνικό & On-page' : 'SEO - Technical & On-page',
+        items: override.seo[isEl ? 'el' : 'en'],
+      },
+      geoAeo: {
+        title: isEl ? 'GEO & AEO - AI αναζήτηση' : 'GEO & AEO - AI search',
+        items: override.geoAeo[isEl ? 'el' : 'en'],
+      },
+      technical: {
+        title: isEl ? 'Τεχνική υλοποίηση' : 'Technical delivery',
+        items: override.technical[isEl ? 'el' : 'en'],
+      },
+      content: {
+        title: isEl ? 'Περιεχόμενο & μετατροπές' : 'Content & conversions',
+        items: override.content[isEl ? 'el' : 'en'],
+      },
+      outcomes,
+    };
+  }
+
+  // Fallback templates (should not be used once all slugs have overrides)
   const cat = PORTFOLIO_CATEGORIES[project.category];
   const catLabel = isEl ? cat.labelEl : cat.label;
   const markets = project.markets.join(', ');
@@ -235,7 +273,7 @@ export function buildProjectCaseStudy(
   const summary = isEl && project.summaryEl ? project.summaryEl : project.summary;
 
   const overview = isEl
-    ? `${name} είναι live ${catLabel.toLowerCase()} project για αγορές ${markets}, σε ${langs}. Παραδώσαμε ${serviceList} με επίκεντρο οργανική κίνηση, κρατήσεις και ορατότητα σε Google και AI απαντήσεις.`
+    ? `${name} είναι ζωντανό έργο κατηγορίας «${catLabel}» για αγορές ${markets}, σε ${langs}. Παραδώσαμε ${serviceList} με επίκεντρο οργανική κίνηση, κρατήσεις και ορατότητα σε Google και AI απαντήσεις.`
     : `${name} is a live ${catLabel.toLowerCase()} project serving ${markets} markets in ${langs}. We delivered ${serviceList} focused on organic traffic, bookings and visibility across Google and AI answer engines.`;
 
   const challenge = isEl
@@ -243,14 +281,14 @@ export function buildProjectCaseStudy(
     : `The client needed a site tourists trust, that ranks for competitive tourism keywords and converts visits into bookings or inquiries - without relying solely on OTAs or aggregators.`;
 
   const approach = isEl
-    ? `Σχεδιάσαμε mobile-first UX για ${catLabel.toLowerCase()}, υλοποιήσαμε τεχνικό SEO από την αρχή και δομήσαμε περιεχόμενο για local, GEO και AEO. ${summary}`
+    ? `Σχεδιάσαμε mobile-first UX για την κατηγορία «${catLabel}», υλοποιήσαμε τεχνικό SEO από την αρχή και δομήσαμε περιεχόμενο για local, GEO και AEO. ${summary}`
     : `We designed mobile-first UX for ${catLabel.toLowerCase()}, implemented technical SEO from day one and structured content for local, GEO and AEO discovery. ${summary}`;
 
   const seoItems = [...CATEGORY_SEO[project.category][isEl ? 'el' : 'en']];
   if (project.seoTitle) {
     seoItems.unshift(
       isEl
-        ? `Live title tag audit: «${project.seoTitle}»`
+        ? `Έλεγχος title tag: «${project.seoTitle}»`
         : `Live title tag: "${project.seoTitle}"`,
     );
   }

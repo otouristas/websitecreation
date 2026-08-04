@@ -30,7 +30,16 @@ export default async function GlossaryPage({ params }: PageProps) {
   return (
     <>
       <Header />
-      <Suspense fallback={<div className="main-below-header min-h-screen text-center text-muted-foreground">{ui.loading}</div>}>
+      <Suspense
+        fallback={
+          <main className="main-below-header min-h-screen">
+            <div className="max-w-6xl mx-auto px-4 py-8 text-center">
+              <h1 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">{ui.title}</h1>
+              <p className="text-muted-foreground">{ui.loading}</p>
+            </div>
+          </main>
+        }
+      >
         <GlossaryClient locale={locale as SiteLocale} />
       </Suspense>
       <Footer />

@@ -1,0 +1,172 @@
+# AnotherSEOGuru - robots.txt
+# https://anotherseoguru.com
+# Last Updated: August 2026
+# Standard: https://www.robotstxt.org/
+
+# =============================================================================
+# DEFAULT RULES FOR ALL CRAWLERS
+# =============================================================================
+
+User-agent: *
+Allow: /
+
+# Next.js / Vercel assets (often carry ?dpl= — must remain crawlable for rendering)
+Allow: /_next/static/
+Allow: /_next/image
+Allow: /images/
+Allow: /portfolio/
+Allow: /logos/
+Allow: /payments/
+
+# AI-readable site corpus (llms.txt standard — https://llmstxt.org/)
+Allow: /llms.txt
+Allow: /llms-full.txt
+
+# AI content preferences (draft Content-Signal — not valid as a robots.txt directive;
+# see https://contentsignals.org/). Expressed here as comments for humans; crawlers
+# that support the draft may read llms.txt / llms-full.txt on this site.
+#   search=yes   — allow indexing for traditional search results
+#   ai-input=yes — allow grounding/RAG use as live input to AI answers about this brand
+#   ai-train=no  — prefer no use of this content to train foundation models
+# Content-Signal: search=yes, ai-input=yes, ai-train=no
+
+# Disallow API and admin surfaces
+Disallow: /api/
+Disallow: /admin/
+
+# =============================================================================
+# AI CRAWLER DIRECTIVES
+# =============================================================================
+
+# OpenAI
+User-agent: GPTBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: ChatGPT-User
+Allow: /
+Crawl-delay: 1
+
+User-agent: OAI-SearchBot
+Allow: /
+Crawl-delay: 1
+
+# Google AI
+User-agent: Google-Extended
+Allow: /
+Crawl-delay: 1
+
+# Anthropic
+User-agent: Anthropic-AI
+Allow: /
+Crawl-delay: 1
+
+User-agent: Claude-Web
+Allow: /
+Crawl-delay: 1
+
+User-agent: ClaudeBot
+Allow: /
+Crawl-delay: 1
+
+# Common Crawl (used by many LLMs for training)
+User-agent: CCBot
+Allow: /
+Crawl-delay: 1
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Perplexity-User
+Allow: /
+Crawl-delay: 1
+
+# Apple
+User-agent: Applebot-Extended
+Allow: /
+Crawl-delay: 1
+
+# Meta
+User-agent: Meta-ExternalAgent
+Allow: /
+Crawl-delay: 1
+
+# Mistral
+User-agent: MistralAI-User
+Allow: /
+Crawl-delay: 1
+
+# DuckDuckGo AI
+User-agent: DuckAssistBot
+Allow: /
+Crawl-delay: 1
+
+# Amazon (Alexa / Rufus)
+User-agent: Amazonbot
+Allow: /
+Crawl-delay: 1
+
+# ByteDance (Doubao, Coze)
+User-agent: Bytespider
+Allow: /
+Crawl-delay: 1
+
+# =============================================================================
+# SOCIAL PREVIEW BOTS (explicit allowlist for link-card rendering)
+# =============================================================================
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: Slackbot
+Allow: /
+
+User-agent: Discordbot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
+User-agent: Pinterestbot
+Allow: /
+
+# LLMs.txt files for AI crawlers (short summary + long-form corpus)
+# Explicitly allowed in the default rules above so every AI crawler can fetch them:
+#   https://anotherseoguru.com/llms.txt
+#   https://anotherseoguru.com/llms-full.txt
+
+# =============================================================================
+# SEARCH ENGINE SPECIFIC DIRECTIVES
+# =============================================================================
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# =============================================================================
+# SITEMAPS
+# =============================================================================
+
+# Single entry point — child sitemaps (including /sitemap.xml) are listed inside the index
+Sitemap: https://anotherseoguru.com/sitemap-index.xml
+
+# =============================================================================
+# END OF ROBOTS.TXT
+# =============================================================================

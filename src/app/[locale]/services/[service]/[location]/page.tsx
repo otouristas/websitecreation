@@ -15,6 +15,7 @@ import {
     getNearbyLocations,
     isGreekLocation,
 } from '@/data/locations';
+import { getLocationPack } from '@/data/location-content';
 import {
     buildServiceLocationMetadata,
     generateBreadcrumbSchema,
@@ -29,6 +30,7 @@ import { getServiceLocationBreadcrumbs } from '@/lib/linking';
 import { grServiceLocationPath } from '@/lib/locale-paths';
 import { isValidLocale, localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 import { getGreekLocative } from '@/lib/greek-locative';
+import { getServiceFaqs } from '@/data/service-faq-data';
 
 interface PageProps {
     params: Promise<{ locale: string; service: string; location: string }>;
@@ -83,7 +85,9 @@ export default async function ServiceLocationPage({ params }: PageProps) {
         : formatLocationName(location);
 
     const cityName = isEl && location.cityLocal ? location.cityLocal : location.city;
-    const cityLocative = isEl ? getGreekLocative(locationSlug) : `in ${cityState}`;
+    const cityLocative = isEl
+        ? getGreekLocative(locationSlug, cityName)
+        : `in ${cityState}`;
     
     const stateFull =
         location.countryCode === 'US'
@@ -96,18 +100,24 @@ export default async function ServiceLocationPage({ params }: PageProps) {
     const relatedServices = services.filter((s) => s.slug !== serviceSlug).slice(0, 3);
     
     // Breadcrumbs translated
-    const breadcrumbs = getServiceLocationBreadcrumbs(serviceName, serviceSlug, cityName, locationSlug);
+    const breadcrumbs = getServiceLocationBreadcrumbs(
+        serviceName,
+        serviceSlug,
+        cityName,
+        locationSlug,
+        locale as SiteLocale,
+    );
 
-    const pageUrl = `${BASE_URL}/services/${serviceSlug}/${locationSlug}`;
+    const pageUrl = `${BASE_URL}${localizedPath(locale as SiteLocale, `/services/${serviceSlug}/${locationSlug}`)}`;
 
     const t = isEl ? {
         heroTitle: `${serviceName} ${cityLocative}`,
-        heroDesc: `Ψάχνετε για επαγγελματικές υπηρεσίες ${serviceName.toLowerCase()} ${cityLocative}; Δημιουργούμε γρήγορες, SEO-ready ιστοσελίδες που κατατάσσονται ψηλά στη Google και σε AI μηχανές αναζήτησης - με διαφανείς τιμές σε ${location.currency === 'EUR' ? 'Ευρώ (€)' : location.currency}.`,
+        heroDesc: `Ψάχνετε για επαγγελματικές υπηρεσίες ${serviceName} ${cityLocative}; Δημιουργούμε γρήγορες, SEO-ready ιστοσελίδες που κατατάσσονται ψηλά στη Google και σε AI μηχανές αναζήτησης - με διαφανείς τιμές σε ${location.currency === 'EUR' ? 'Ευρώ (€)' : location.currency}.`,
         getQuote: `Προσφορά για ${cityName}`,
         allLocations: 'Όλες οι Τοποθεσίες',
         browseCities: 'Πλοήγηση σε Πόλεις',
         whatsIncludedTitle: `Τι Περιλαμβάνεται ${cityLocative}`,
-        whatsIncludedDesc: `Οι υπηρεσίες μας για ${serviceName.toLowerCase()} για επιχειρήσεις ${cityLocative} περιλαμβάνουν όλα όσα χρειάζεστε για μια ιστοσελίδα υψηλών επιδόσεων στην ${location.countryCode === 'GR' ? 'Ελλάδα' : 'χώρα εξυπηρέτησης'}.`,
+        whatsIncludedDesc: `Οι υπηρεσίες μας για ${serviceName} για επιχειρήσεις ${cityLocative} περιλαμβάνουν όλα όσα χρειάζεστε για μια ιστοσελίδα υψηλών επιδόσεων στην ${location.countryCode === 'GR' ? 'Ελλάδα' : 'χώρα εξυπηρέτησης'}.`,
         industriesTitle: `${serviceName} για Κλάδους ${cityLocative}`,
         industriesDesc: `Εξειδικευμένες λύσεις για διαφορετικούς τύπους επιχειρήσεων ${cityLocative}.`,
         nearbyTitle: `Επίσης Εξυπηρετούμε Κοντινές Περιοχές ${cityLocative}`,
@@ -134,13 +144,21 @@ export default async function ServiceLocationPage({ params }: PageProps) {
         ctaBtn: `Get Free ${location.city} Quote`,
     };
 
-    const faqItems = isEl ? [
+    const hubFaqSlugs = new Set([
+        'website-creation',
+        'local-seo',
+        'seo-audits',
+        'eshop-woocommerce',
+        'ai-visibility',
+    ]);
+
+    const cityFaqItems = isEl ? [
         {
             question: `Πόσο γρήγορα μπορεί να παραδοθεί η ιστοσελίδα μου ${cityLocative};`,
-            answer: `Ανάλογα με το εύρος, τα περισσότερα projects για ${serviceName.toLowerCase()} ${cityLocative} παραδίδονται σε 2-8 εβδομάδες μόλις είναι έτοιμο το υλικό. Οι τιμές μας είναι σε ${location.currency === 'EUR' ? 'Ευρώ (€)' : location.currency}.`,
+            answer: `Ανάλογα με το εύρος, τα περισσότερα projects για ${serviceName} ${cityLocative} παραδίδονται σε 2-8 εβδομάδες μόλις είναι έτοιμο το υλικό. Οι τιμές μας είναι σε ${location.currency === 'EUR' ? 'Ευρώ (€)' : location.currency}.`,
         },
         {
-            question: `Παρέχετε ${serviceName.toLowerCase()} με τοπικό SEO ${cityLocative};`,
+            question: `Παρέχετε ${serviceName} με τοπικό SEO ${cityLocative};`,
             answer: `Ναι. Σχεδιάζουμε τοπικές σελίδες, δομή εσωτερικών συνδέσμων, schema markup και στρατηγική Google Business Profile ώστε οι επιχειρήσεις ${cityLocative} να κατατάσσονται ψηλά για τοπικές αναζητήσεις.`,
         },
         {
@@ -148,10 +166,14 @@ export default async function ServiceLocationPage({ params }: PageProps) {
             answer: `Το τεχνικό SEO, το semantic clustering από το Search Console, το GEO/AEO βελτιστοποιημένο περιεχόμενο και οι κορυφαίες επιδόσεις Core Web Vitals - όχι οι απλές, λεπτές σελίδες προτύπων.`,
         },
         {
-            question: `Πόσο κοστίζει ${serviceName.toLowerCase()} ${cityLocative};`,
+            question: `Πόσο κοστίζει ${serviceName} ${cityLocative};`,
             answer: ['local-seo', 'seo-audits', 'ai-visibility', 'link-building', 'eshop-seo', 'content-creation'].includes(serviceSlug)
                 ? `Τα πακέτα SEO ξεκινούν από €299/μήνα (Starter), €599/μήνα (Growth) και €999/μήνα (Scale). Η τιμή εξαρτάται από τον ανταγωνισμό ${cityLocative} και τους στόχους σας. Δείτε αναλυτικές τιμές στη σελίδα τιμών μας ή ζητήστε δωρεάν προσφορά.`
                 : `Οι ιστοσελίδες ξεκινούν από €899 (Starter, έως 5 σελίδες), €1.799 (Professional, έως 10 σελίδες) και €2.999 (Business, έως 20 σελίδες). Χωρίς κρυφές χρεώσεις - όλες οι τιμές σε Ευρώ. Ζητήστε δωρεάν προσφορά για ${cityName}.`,
+        },
+        {
+            question: `Θα εμφανίζεται η επιχείρησή μου σε ChatGPT και AI αναζητήσεις;`,
+            answer: `Ναι. Με βελτιστοποίηση GEO/AEO - schema, οντότητες και δομημένο περιεχόμενο - στοχεύουμε να αναφέρεται η μάρκα σας στις απαντήσεις των ChatGPT Search, Perplexity και Gemini, όχι μόνο στα παραδοσιακά αποτελέσματα της Google ${cityLocative}.`,
         },
     ] : [
         {
@@ -166,14 +188,36 @@ export default async function ServiceLocationPage({ params }: PageProps) {
             question: `What makes your ${location.city} sites rank in Google and AI search?`,
             answer: `Technical SEO, semantic clustering from Search Console, GEO/AEO structured content, and fast Core Web Vitals - not thin template pages.`,
         },
+        {
+            question: `How much does ${service.name.toLowerCase()} cost in ${location.city}?`,
+            answer: ['local-seo', 'seo-audits', 'ai-visibility', 'link-building', 'eshop-seo', 'content-creation'].includes(serviceSlug)
+                ? `SEO packages start at €299/mo (Starter), €599/mo (Growth), and €999/mo (Scale). The price depends on competition in ${location.city} and your goals. All pricing is transparent - see our pricing page or request a free quote.`
+                : `Websites start at €899 (Starter, up to 5 pages), €1,799 (Professional, up to 10 pages), and €2,999 (Business, up to 20 pages). No hidden fees. Request a free quote for ${location.city}.`,
+        },
+        {
+            question: `Will my business show up in ChatGPT and AI search?`,
+            answer: `Yes. With GEO/AEO optimization - schema, entities, and structured content - we work to get your brand cited in ChatGPT Search, Perplexity, and Gemini answers, not just the traditional Google results in ${location.city}.`,
+        },
     ];
+
+    const packFaqs = (getLocationPack(location.slug, isEl ? 'el' : 'en')?.faqs ?? []).slice(0, 4);
+
+    const faqItems = hubFaqSlugs.has(serviceSlug)
+        ? [
+            ...getServiceFaqs(serviceSlug, isEl ? 'el' : 'en'),
+            cityFaqItems.find((f) => /κοστίζει|How much/i.test(f.question)) ?? cityFaqItems[0],
+            ...packFaqs,
+          ]
+        : [...packFaqs, ...cityFaqItems];
 
     const schemas = combineSchemas(
         generateBreadcrumbSchema({ items: breadcrumbs }),
         generateFAQSchema({ faqs: faqItems }),
         generateLocalBusinessSchema({
             name: `${serviceName} - ${cityName}`,
-            description: `Professional ${serviceName.toLowerCase()} services in ${cityName}`,
+            description: isEl
+                ? `Επαγγελματικές υπηρεσίες ${serviceName} στην περιοχή ${cityName}`
+                : `Professional ${serviceName.toLowerCase()} services in ${cityName}`,
             url: pageUrl,
             address: {
                 addressLocality: cityName,
@@ -225,7 +269,7 @@ export default async function ServiceLocationPage({ params }: PageProps) {
                             )}
 
                             <div className="flex flex-wrap gap-4">
-                                <Link href={lp("/contact")} className="btn btn-gradient">
+                                <Link href={lp("/get-started")} className="btn btn-gradient">
                                     {t.getQuote}
                                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -366,7 +410,7 @@ export default async function ServiceLocationPage({ params }: PageProps) {
                         <p className="text-white/80 mb-8">
                             {t.ctaDesc}
                         </p>
-                        <Link href={lp("/contact")} className="btn bg-white text-primary hover:bg-white/90">
+                        <Link href={lp("/get-started")} className="btn bg-white text-primary hover:bg-white/90">
                             {t.ctaBtn}
                         </Link>
                     </div>

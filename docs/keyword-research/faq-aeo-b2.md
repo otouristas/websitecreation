@@ -2,6 +2,8 @@
 
 > All entries are grouped by cluster, with short answers and suggested target pages/schema types.
 > Mark clusters C4, C7, C8 as off‑core in internal notes (content only, not productized services).
+>
+> **Greek SEO head-term cluster (Ahrefs GR, 2026-07-23):** see [greek-seo-cluster-2026-07-23.md](./greek-seo-cluster-2026-07-23.md) for page map, top related/PAA, and shipped URLs (`seo-gia-arxarious`, pricing, `seo-audits`, spokes).
 
 ---
 

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Check, X } from "lucide-react";
+import { localizedPath, type SiteLocale } from "@/lib/i18n/locale";
 
 const competitors = [
   { name: "Ahrefs", price: "$99/mo" },
@@ -25,7 +26,8 @@ function competitorCell(ok: boolean) {
   );
 }
 
-export function LandingComparisonTable() {
+export function LandingComparisonTable({ locale = "en" }: { locale?: SiteLocale }) {
+  const lp = (path: string) => localizedPath(locale, path);
   return (
     <section className="py-[var(--marketing-section-y)] lg:py-[var(--marketing-section-y-lg)]">
       <div className="container mx-auto px-4">
@@ -39,15 +41,15 @@ export function LandingComparisonTable() {
           </p>
           <p className="text-sm text-muted-foreground mt-4">
             For deeper comparisons see{" "}
-            <Link href="/compare/ahrefs" className="text-primary underline">
+            <Link href={lp("/compare/ahrefs")} className="text-primary underline">
               vs Ahrefs
             </Link>
             ,{" "}
-            <Link href="/compare/semrush" className="text-primary underline">
+            <Link href={lp("/compare/semrush")} className="text-primary underline">
               vs Semrush
             </Link>
             ,{" "}
-            <Link href="/compare/search-console-alone" className="text-primary underline">
+            <Link href={lp("/compare/search-console-alone")} className="text-primary underline">
               vs GSC alone
             </Link>
             .

@@ -6,7 +6,10 @@ import Footer from "@/components/Footer";
 import { isValidLocale, localizedPath, type SiteLocale } from "@/lib/i18n/locale";
 import { buildMetadata } from "@/lib/seo";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
-import { generateFAQSchema } from "@/lib/seo/schema";
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
+import RelatedPages from "@/components/seo/RelatedPages";
+import { generateFAQSchema, generateBreadcrumbSchema, combineSchemas } from "@/lib/seo/schema";
+import { generateBreadcrumbs, getPricingRelatedPaths } from "@/lib/linking";
 
 type PageProps = { params: Promise<{ locale: string }> };
 
@@ -15,18 +18,20 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!isValidLocale(locale)) return {};
   if (locale === 'el') {
     return buildMetadata({
-      title: "SEO Τιμές & Πακέτα - Κόστος Ιστοσελίδας",
+      title: "Τιμές SEO & Ιστοσελίδας",
       description:
-        "Πόσο κοστίζει το SEO και η κατασκευή ιστοσελίδας; Πακέτα SEO από €299/μήνα, ιστοσελίδες από €899. Διαφανείς τιμές σε €, χωρίς κρυφές χρεώσεις.",
+        "Τιμές SEO από €299/μήνα και κατασκευή ιστοσελίδας από €899. Πίνακας πακέτων, e-shop add-on και GEO/AEO. Διαφανείς τιμές σε € — δωρεάν προσφορά.",
       path: localizedPath(locale as SiteLocale, "/pricing"),
+      primaryKeyword: "τιμές SEO",
       hreflangPath: "/pricing",
     });
   }
   return buildMetadata({
-    title: "Agency Pricing - Web & SEO Packages",
+    title: "Tourism Website & SEO Pricing | From €899",
     description:
-      "Transparent agency pricing for website creation, redesign, SEO web design, GEO, AEO, and speed optimization. Compare packages and request a custom quote today.",
+      "Hotel, rent-a-car and tour website packages from €899. SEO retainers from €299/mo. Transparent EUR pricing with GEO/AEO. Free quote.",
     path: localizedPath(locale as SiteLocale, "/pricing"),
+    primaryKeyword: "website design cost",
     hreflangPath: "/pricing",
   });
 }
@@ -279,10 +284,10 @@ export default async function PricingPage({ params }: PageProps) {
 
   const t = isEl
     ? {
-        h1: "Απλές, Διαφανείς Τιμές",
-        sub: "Χωρίς κρυφές χρεώσεις. Επιλέξτε το πακέτο που ταιριάζει στις ανάγκες σας και αποκτήστε μια γρήγορη, επαγγελματική ιστοσελίδα.",
+        h1: "Τιμές SEO & Πακέτα Ιστοσελίδας",
+        sub: "Διαφανές τιμές SEO και κατασκευής ιστοσελίδας στην Ελλάδα. Χωρίς κρυφές χρεώσεις — Starter SEO από €299/μήνα, ιστοσελίδες από €899.",
         webPackagesTitle: "Πακέτα Κατασκευής Ιστοσελίδας",
-        seoPackagesTitle: "Πακέτα Προώθησης SEO (Μηνιαία)",
+        seoPackagesTitle: "Τιμές SEO / Μηνιαία Πακέτα Προώθησης",
         addonsTitle: "Προαιρετικά Add-ons",
         addonsSub: "Ενισχύστε το πακέτο σας με επιπλέον υπηρεσίες",
         faqTitle: "Συχνές Ερωτήσεις",
@@ -307,8 +312,12 @@ export default async function PricingPage({ params }: PageProps) {
             a: "Ναι, θα χρειαστεί να μας δώσετε τα κείμενα και τις εικόνες. Αν χρειάζεστε βοήθεια, προσφέρουμε υπηρεσίες συγγραφής SEO περιεχομένου ως add-on."
           },
           {
-            q: "Πόσο κοστίζει το SEO στην Ελλάδα;",
-            a: "Τα μηνιαία πακέτα SEO ξεκινούν από €299/μήνα (Starter), €599/μήνα (Growth) και €999/μήνα (Scale). Το κόστος εξαρτάται από τον ανταγωνισμό του κλάδου σας, την τρέχουσα κατάσταση της ιστοσελίδας και τους στόχους σας. Όλες οι τιμές είναι σε Ευρώ, χωρίς κρυφές χρεώσεις."
+            q: "Πόσο κοστίζει το SEO στην Ελλάδα; Ποιες είναι οι τιμές SEO;",
+            a: "Τα μηνιαία πακέτα SEO ξεκινούν από €299/μήνα (Starter), €599/μήνα (Growth) και €999/μήνα (Scale). Στην αγορά, το κόστος SEO κυμαίνεται συνήθως €250–€1.500+/μήνα ανάλογα με ανταγωνισμό και στόχους. Όλες οι τιμές μας είναι σε Ευρώ, χωρίς κρυφές χρεώσεις."
+          },
+          {
+            q: "Γιατί το SEO φαίνεται ακριβό σε σχέση με φθηνές προσφορές;",
+            a: "Επειδή σοβαρό SEO περιλαμβάνει τεχνική εργασία, περιεχόμενο, τοπικό προφίλ και αναφορές κάθε μήνα. Προσφορές €80–€100/μήνα σχεδόν πάντα σημαίνουν αυτοματοποιημένες αναφορές ή ριψοκίνδυνες τακτικές — όχι πραγματική βελτίωση κατάταξης."
           },
           {
             q: "Τι περιλαμβάνει ένα πακέτο SEO;",
@@ -321,11 +330,19 @@ export default async function PricingPage({ params }: PageProps) {
           {
             q: "Σε πόσο καιρό θα δω αποτελέσματα από το SEO;",
             a: "Για τοπικές αναζητήσεις με χαμηλό ανταγωνισμό, συχνά μέσα σε 2-3 μήνες. Για ανταγωνιστικές λέξεις-κλειδιά πανελλαδικά, υπολογίστε 4-6 μήνες. Το SEO είναι επένδυση που κλιμακώνεται - κάθε μήνας χτίζει πάνω στον προηγούμενο."
+          },
+          {
+            q: "Πόσο κοστίζει κατασκευή e-shop;",
+            a: "Η ρύθμιση WooCommerce e-shop ξεκινά από €499 ως add-on πάνω σε πακέτο ιστοσελίδας (ή ως μέρος του Business πακέτου στα €2.999). Το τελικό κόστος εξαρτάται από μέγεθος καταλόγου, πληρωμές και αποστολές. Δείτε και την υπηρεσία Κατασκευή E-shop WooCommerce."
+          },
+          {
+            q: "Έχετε παραδείγματα έργων;",
+            a: "Ναι — πάνω από 70 ζωντανά έργα σε ενοικίαση αυτοκινήτου, ξενοδοχεία, tours, e-shop και τοπικές επιχειρήσεις. Δείτε το portfolio μας και ζητήστε παρόμοιο έργο μέσω Get Started."
           }
         ],
         ctaTitle: "Έτοιμοι να Ξεκινήσουμε;",
-        ctaDesc: "Επιλέξτε το πακέτο σας και λανσάρετε τη νέα σας ιστοσελίδα σε εβδομάδες, όχι μήνες.",
-        ctaButton: "Ξεκινήστε το Project",
+        ctaDesc: "Επιλέξτε το πακέτο σας και λανσάρετε τη νέα σας ιστοσελίδα σε εβδομάδες, όχι μήνες. Ή ζητήστε προσαρμοσμένη προσφορά.",
+        ctaButton: "Ξεκινήστε το Έργο",
       }
     : {
         h1: "Simple, Transparent Pricing",
@@ -370,10 +387,18 @@ export default async function PricingPage({ params }: PageProps) {
           {
             q: "How soon will I see SEO results?",
             a: "For low-competition local searches, often within 2-3 months. For competitive national keywords, expect 4-6 months. SEO compounds - every month builds on the last."
+          },
+          {
+            q: "How much does an e-shop cost?",
+            a: "WooCommerce e-commerce setup starts from €499 as an add-on on a website package (or as part of the Business package at €2,999). Final cost depends on catalog size, payments and shipping. See our WooCommerce e-shop service for details."
+          },
+          {
+            q: "Do you have live project examples?",
+            a: "Yes — 70+ live projects across rent-a-car, hotels, tours, e-commerce and local businesses. Browse the portfolio and request a similar project via Get Started."
           }
         ],
         ctaTitle: "Ready to Get Started?",
-        ctaDesc: "Choose your package and launch your new website in weeks, not months.",
+        ctaDesc: "Choose your package and launch your new website in weeks, not months. Or request a custom quote.",
         ctaButton: "Start Your Project",
       };
 
@@ -384,14 +409,24 @@ export default async function PricingPage({ params }: PageProps) {
   const faqSchema = generateFAQSchema({
     faqs: t.questions.map((q) => ({ question: q.q, answer: q.a })),
   });
+  const breadcrumbs = generateBreadcrumbs(
+    [{ name: isEl ? "Τιμές" : "Pricing", url: "/pricing" }],
+    locale as SiteLocale,
+  );
+  const breadcrumbSchema = generateBreadcrumbSchema({ items: breadcrumbs });
+  const relatedPages = getPricingRelatedPaths(locale as SiteLocale).map((p) => ({
+    slug: lp(p.path),
+    title: isEl ? p.titleEl : p.titleEn,
+  }));
 
   return (
     <>
-      <SchemaMarkup schemas={[faqSchema]} />
+      <SchemaMarkup schemas={combineSchemas(faqSchema, breadcrumbSchema)} />
       <Header />
       <main className="main-below-header">
         <section className="section-compact gradient-hero">
           <div className="container text-center">
+            <Breadcrumbs items={breadcrumbs} className="mb-6 justify-center" />
             <h1 className="text-4xl sm:text-5xl font-bold mb-6">
               {t.h1}
             </h1>
@@ -445,7 +480,7 @@ export default async function PricingPage({ params }: PageProps) {
                   </ul>
 
                   <Link
-                    href={lp(`/get-started?package=${pkg.name.toLowerCase()}`)}
+                    href={lp(`/get-started?package=${pkg.name.toLowerCase().replace(/\s+/g, "-")}`)}
                     className={`btn w-full justify-center ${pkg.popular ? "btn-gradient" : "btn-outline"}`}
                   >
                     {pkg.cta}
@@ -493,7 +528,7 @@ export default async function PricingPage({ params }: PageProps) {
                   </ul>
 
                   <Link
-                    href={lp(`/get-started?package=${pkg.name.toLowerCase()}`)}
+                    href={lp(`/get-started?package=${pkg.name.toLowerCase().replace(/\s+/g, "-")}`)}
                     className={`btn w-full justify-center ${pkg.popular ? "btn-gradient" : "btn-outline"}`}
                   >
                     {pkg.cta}
@@ -565,6 +600,16 @@ export default async function PricingPage({ params }: PageProps) {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* Money-page internal links */}
+        <section className="section border-t border-border">
+          <div className="container max-w-3xl">
+            <RelatedPages
+              title={isEl ? "Σχετικές σελίδες" : "Explore related pages"}
+              pages={relatedPages}
+            />
           </div>
         </section>
 

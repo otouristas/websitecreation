@@ -1,12 +1,12 @@
 "use client";
 
-import { useEffect, useState, type ReactElement } from "react";
+import { useEffect, useRef, useState, type ReactElement } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { PHONE_DISPLAY, WHATSAPP_HREF } from "@/lib/contact-info";
 import { BrandLogo } from "@/components/BrandLogo";
-import { FreeToolsMegaMenu } from "@/components/landing/free-tools-mega-menu";
+import { AgencyMegaMenu } from "@/components/AgencyMegaMenu";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { MobileNav } from "@/components/MobileNav";
@@ -39,23 +39,47 @@ interface NavDropdownProps {
 
 function NavDropdown(props: NavDropdownProps): ReactElement {
   const [open, setOpen] = useState(false);
+  const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  function openMenu(): void {
+    if (closeTimerRef.current !== null) {
+      clearTimeout(closeTimerRef.current);
+      closeTimerRef.current = null;
+    }
+    setOpen(true);
+  }
+
+  function scheduleClose(): void {
+    if (closeTimerRef.current !== null) clearTimeout(closeTimerRef.current);
+    closeTimerRef.current = setTimeout(() => {
+      setOpen(false);
+      closeTimerRef.current = null;
+    }, 150);
+  }
+
+  useEffect(
+    () => () => {
+      if (closeTimerRef.current !== null) clearTimeout(closeTimerRef.current);
+    },
+    [],
+  );
+
   return (
-    <div
-      className="relative"
-      onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
-    >
+    <div className="relative" onMouseEnter={openMenu} onMouseLeave={scheduleClose}>
       <button
         type="button"
         className={`inline-flex items-center gap-0.5 rounded-lg px-1 py-1 ${linkClass}`}
         aria-expanded={open}
+        aria-haspopup="true"
       >
         {props.label}
         <ChevronDown className={`h-4 w-4 transition-transform ${open ? "rotate-180" : ""}`} />
       </button>
       {open ? (
-        <div className="absolute left-0 top-full z-[70] pt-2">
-          <div className={dropdownPanelInnerClass}>{props.children}</div>
+        <div className="absolute left-0 top-full z-[70] pt-1">
+          <div className={dropdownPanelInnerClass} onMouseEnter={openMenu} onMouseLeave={scheduleClose}>
+            {props.children}
+          </div>
         </div>
       ) : null}
     </div>
@@ -131,44 +155,7 @@ export default function Header({ locale: localeProp }: { locale?: SiteLocale }):
               </p>
             </div>
             <div className="hidden items-center gap-1 lg:flex lg:gap-2 xl:gap-3">
-              {!isEl && (
-                <>
-                  <NavDropdown label={nav.platform}>
-                    <Link href={lp("/platform")} className={dropdownItemClass}>
-                      {nav.platformOverview}
-                    </Link>
-                    <Link href={lp("/platform/features")} className={dropdownItemClass}>
-                      {nav.allFeatures}
-                    </Link>
-                    <Link href={lp("/platform/pricing")} className={dropdownItemClass}>
-                      {nav.softwarePricing}
-                    </Link>
-                    <Link href={lp("/platform/for/agencies")} className={dropdownItemClass}>
-                      {nav.forAgencies}
-                    </Link>
-                  </NavDropdown>
-                  <FreeToolsMegaMenu />
-                </>
-              )}
-              <NavDropdown label={nav.agency}>
-                <Link href={lp("/services")} className={`${dropdownItemClass} font-semibold`}>
-                  {nav.allServices}
-                </Link>
-                <Link href={lp("/services/website-creation")} className={dropdownItemClass}>
-                  {nav.websiteCreation}
-                </Link>
-                {agencyNavServices
-                  .filter((s) => s.slug !== "website-creation")
-                  .map((s) => {
-                    const svcEl = isEl ? getServiceEl(s.slug) : null;
-                    const dispName = svcEl?.shortName ?? svcEl?.name ?? s.shortName;
-                    return (
-                      <Link key={s.slug} href={lp(`/services/${s.slug}`)} className={dropdownItemClass}>
-                        {dispName}
-                      </Link>
-                    );
-                  })}
-              </NavDropdown>
+              <AgencyMegaMenu locale={locale} label={nav.agency} />
               <NavDropdown label={nav.solutions}>
                 <Link href={lp("/solutions/rent-a-car")} className={dropdownItemClass}>
                   {nav.rentACar}
@@ -183,22 +170,18 @@ export default function Header({ locale: localeProp }: { locale?: SiteLocale }):
                   {nav.allSolutions}
                 </Link>
               </NavDropdown>
-              <NavDropdown label={nav.pricing}>
-                {!isEl && (
-                  <Link href={lp("/platform/pricing")} className={dropdownItemClass}>
-                    {nav.softwarePricing}
-                  </Link>
-                )}
-                <Link href={lp("/pricing")} className={dropdownItemClass}>
-                  {nav.agencyPricing}
-                </Link>
-              </NavDropdown>
+              <Link href={lp("/pricing")} className={`rounded-lg px-1 py-1 ${linkClass}`}>
+                {nav.pricing}
+              </Link>
             </div>
             <div className="flex shrink-0 items-center gap-1 sm:gap-2 md:gap-3">
               <LanguageSwitcher />
               <ThemeToggle />
               <Link href={lp("/work")} className={`hidden sm:inline-flex md:px-3 rounded-xl px-2 py-2 ${linkClass}`}>
                 {nav.ourWork}
+              </Link>
+              <Link href={lp("/blog")} className={`hidden sm:inline-flex md:px-3 rounded-xl px-2 py-2 ${linkClass}`}>
+                {nav.blog}
               </Link>
               <a
                 href={WHATSAPP_HREF}

@@ -1,14 +1,27 @@
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
 import { MarkdownBody } from "@/components/blog/markdown-body";
-import { getAllBlogPosts, getBlogPostBySlug, getTranslationCounterpart } from "@/lib/blog";
+import RelatedPages from "@/components/seo/RelatedPages";
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
+import {
+  extractFaqFromMarkdown,
+  getAllBlogPosts,
+  getBlogPostBySlug,
+  getTranslationCounterpart,
+} from "@/lib/blog";
 import { isValidLocale, localizedPath, type SiteLocale } from "@/lib/i18n/locale";
 import { buildHreflangMapFromPaths } from "@/lib/locale-paths";
 import { buildMetadata } from "@/lib/seo";
-import { generateArticleSchema } from "@/lib/seo/schema";
+import { getBlogMoneyLinks } from "@/lib/linking";
+import {
+  generateArticleSchema,
+  generateBreadcrumbSchema,
+  generateFAQSchema,
+  combineSchemas,
+} from "@/lib/seo/schema";
 
 interface BlogPostPageProps {
   readonly params: Promise<{ locale: string; slug: string }>;
@@ -33,8 +46,8 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
     return {};
   }
   if (post.locale !== locale) {
-    // Wrong-locale URL renders a 404 — never advertise it to crawlers.
-    return { robots: { index: false, follow: false } };
+    // Wrong-locale URL redirects to the post's real locale — never index the bad URL.
+    return { robots: { index: false, follow: true } };
   }
   const counterpart = getTranslationCounterpart(post);
   const languages = counterpart
@@ -59,7 +72,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     notFound();
   }
   if (post.locale !== locale) {
-    notFound();
+    permanentRedirect(localizedPath(post.locale, `/blog/${post.slug}`));
   }
   const lp = (path: string) => localizedPath(locale as SiteLocale, path);
   const isEl = locale === "el";
@@ -74,17 +87,45 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     inLanguage: post.locale,
     mainEntityOfPage: `https://anotherseoguru.com${lp(`/blog/${post.slug}`)}`,
   });
+  const breadcrumbItems = [
+    { name: isEl ? "Αρχική" : "Home", url: lp("/") },
+    { name: "Blog", url: lp("/blog") },
+    { name: post.title, url: lp(`/blog/${post.slug}`) },
+  ];
+  const breadcrumbSchema = generateBreadcrumbSchema({
+    items: breadcrumbItems,
+  });
+  // Prefer explicit frontmatter FAQ; otherwise derive from the body's FAQ section.
+  const faqItems =
+    post.faq && post.faq.length > 0 ? post.faq : extractFaqFromMarkdown(post.content);
+  const faqSchema =
+    faqItems.length > 0
+      ? generateFAQSchema({ faqs: faqItems.map((f) => ({ question: f.question, answer: f.answer })) })
+      : null;
+  const schemas = combineSchemas(articleSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : []));
+
+  // Related posts: same pillar, other slugs, newest first, capped at 4.
+  const relatedPosts = getAllBlogPosts(locale as SiteLocale)
+    .filter((p) => p.slug !== post.slug && post.pillar && p.pillar === post.pillar)
+    .slice(0, 4)
+    .map((p) => ({ slug: lp(`/blog/${p.slug}`), title: p.title, description: p.description }));
+
+  const moneyPages = getBlogMoneyLinks(post.slug).map((p) => ({
+    slug: lp(p.path),
+    title: isEl ? p.titleEl : p.titleEn,
+  }));
 
   return (
     <>
-      <SchemaMarkup schemas={[articleSchema]} />
+      <SchemaMarkup schemas={schemas} />
       <Header />
       <main className="main-below-header pb-20">
         <article className="container max-w-[var(--marketing-container-narrow)]">
           <header className="mb-12">
+            <Breadcrumbs items={breadcrumbItems} className="mb-6" />
             {post.isPillarHub ? (
               <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
-                Content pillar
+                {isEl ? "Οδηγός-πυλώνας" : "Content pillar"}
               </span>
             ) : null}
             {post.category && !post.isPillarHub ? (
@@ -103,7 +144,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </div>
           </header>
           <div className="markdown-body">
-            <MarkdownBody markdown={post.content} />
+            <MarkdownBody markdown={post.content} locale={locale as SiteLocale} />
           </div>
           <footer className="mt-16 pt-10 border-t border-border">
             {counterpart ? (
@@ -135,6 +176,20 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 </Link>
               </div>
             </div>
+            {moneyPages.length > 0 ? (
+              <RelatedPages
+                className="mt-10"
+                title={isEl ? "Υπηρεσίες & Τιμές" : "Services & Pricing"}
+                pages={moneyPages}
+              />
+            ) : null}
+            {relatedPosts.length > 0 ? (
+              <RelatedPages
+                className="mt-10"
+                title={isEl ? "Σχετικά Άρθρα" : "Related Articles"}
+                pages={relatedPosts}
+              />
+            ) : null}
           </footer>
         </article>
       </main>

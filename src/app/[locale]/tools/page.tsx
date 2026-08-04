@@ -14,12 +14,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { locale } = await params;
   if (!isValidLocale(locale)) return {};
   return buildMetadata({
-    title: "Free SEO Tools - GSC & AI Search",
+    title: "SEO Tools — Free Keyword Research, Audits & Checkers",
     description:
-      "Explore free SEO tools and guides: Search Console clustering, LLM citation tracking, health scores, semantic keywords, and AI visibility workflows in the product app.",
+      "Free SEO tools for keyword research, SEO audits, Search Console clustering, LLM citations, health scores, and browser checkers for meta, schema, and Core Web Vitals.",
     path: localizedPath(locale as SiteLocale, "/tools"),
     canonicalPath: localizedPath("en", "/tools"),
-    primaryKeyword: "free SEO tools",
+    primaryKeyword: "seo tools",
   });
 }
 
@@ -33,10 +33,11 @@ export default async function ToolsHubPage({ params }: PageProps) {
       <Header />
       <main className="main-below-header pb-20">
         <div className="container max-w-4xl">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Tools &amp; intents</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">SEO tools</h1>
           <p className="text-lg text-muted-foreground mb-10">
-            These pages explain what you can do in the product and link to the live app. Generators and advanced free tools
-            run on the app subdomain.
+            Free SEO tools for keyword research, audits, Search Console clustering, and AI visibility — plus
+            browser checkers in the app. Start with keyword research or a free SEO audit, then deepen with our
+            guides.
           </p>
           <ul className="space-y-4">
             {PLATFORM_TOOLS.map((t) => (

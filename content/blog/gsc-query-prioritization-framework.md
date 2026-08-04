@@ -7,9 +7,20 @@ author: AnotherSEOGuru Editorial Team
 category: Search Console
 categoryColor: bg-blue-100 text-blue-700
 pillar: search-console-mastery
+faq:
+  - question: "How many queries should I prioritize per week?"
+    answer: "Three shipped fixes maximum for small teams. More rarely completes; unfinished backlog demoralizes."
+  - question: "Position or impressions — which matters more?"
+    answer: "Impressions show opportunity; clicks show reality. Near-miss bucket uses both — high impressions at position 8–15 is the sweet spot."
+  - question: "Should branded queries go in bucket 1?"
+    answer: "Yes — protect branded clicks. But don't spend hours optimizing typos with 3 impressions."
+  - question: "How do I handle seasonality?"
+    answer: "Compare year-over-year where possible. Rising shoulder-season queries in bucket 3 may need content 8–12 weeks before peak."
+  - question: "Can this framework work for Greek and English queries?"
+    answer: "Yes — segment by language in GSC. Tag EL vs EN buckets separately for hreflang sites."
 ---
 
-Search Console exports are infinite. The mistake is treating every row as equally important. A practical weekly workflow buckets queries into **four actions**: protect winners, fix near-misses, test new intent, and deprioritize noise. Whether you manage SEO for a home services company, a [hotel group in the Cyclades](/blog/topiko-seo-kykladon), or a [rent-a-car fleet](/solutions/rent-a-car), this framework keeps your backlog tied to revenue — not spreadsheet anxiety.
+Search Console exports are infinite. The mistake is treating every row as equally important. A practical weekly workflow buckets queries into **four actions**: protect winners, fix near-misses, test new intent, and deprioritize noise. Whether you manage SEO for a home services company, a [hotel group in the Cyclades](/en/blog/topiko-seo-kykladon), or a [rent-a-car fleet](/en/solutions/rent-a-car), this framework keeps your backlog tied to revenue — not spreadsheet anxiety.
 
 ## Why prioritization beats "fix everything"
 
@@ -24,14 +35,14 @@ Without buckets, teams chase low-impression brand typos while "rent a car Mykono
 
 ## Bucket 1 — Protect winners
 
-**Profile:** High [clicks](/glossary?term=clicks) + stable [average position](/glossary?term=average-position) + commercial [search intent](/glossary?term=search-intent).
+**Profile:** High [clicks](/en/glossary?term=clicks) + stable [average position](/en/glossary?term=average-position) + commercial [search intent](/en/glossary?term=search-intent).
 
 These queries fund the business. Tasks here are **defensive**:
 
-- Monitor [title tags](/glossary?term=title-tag) and [meta descriptions](/glossary?term=meta-description) for CTR decay
-- Strengthen [internal links](/glossary?term=internal-linking) to the winning URL
-- Watch [SERP feature](/glossary?term=featured-snippet) encroachment — [AI overviews](/glossary?term=ai-overview), [local pack](/glossary?term=local-pack) layout changes
-- Ensure page speed stays green — [Core Web Vitals](/glossary?term=page-experience) regressions hurt winners first
+- Monitor [title tags](/en/glossary?term=title-tag) and [meta descriptions](/en/glossary?term=meta-description) for CTR decay
+- Strengthen [internal links](/en/glossary?term=internal-linking) to the winning URL
+- Watch [SERP feature](/en/glossary?term=featured-snippet) encroachment — [AI overviews](/en/glossary?term=ai-overview), [local pack](/en/glossary?term=local-pack) layout changes
+- Ensure page speed stays green — [Core Web Vitals](/en/glossary?term=page-experience) regressions hurt winners first
 
 ### Tourism example
 
@@ -39,13 +50,13 @@ These queries fund the business. Tasks here are **defensive**:
 
 ## Bucket 2 — Fix near-misses
 
-**Profile:** High [impressions](/glossary?term=impressions) + low [CTR](/glossary?term=ctr) OR position 6–15 for valuable intent.
+**Profile:** High [impressions](/en/glossary?term=impressions) + low [CTR](/en/glossary?term=ctr) OR position 6–15 for valuable intent.
 
 Classic optimization targets:
 
 - Rewrite titles and meta for CTR — match intent language ("automatic car rental" vs "vehicles")
-- Add structured sections — comparison tables, FAQ, definition blocks for [AEO](/blog/geo-aeo-global-seo-playbook)
-- Resolve [keyword cannibalization](/glossary?term=keyword-cannibalization) if two URLs split signal
+- Add structured sections — comparison tables, FAQ, definition blocks for [AEO](/en/blog/geo-aeo-global-seo-playbook)
+- Resolve [keyword cannibalization](/en/glossary?term=keyword-cannibalization) if two URLs split signal
 - Improve above-fold clarity — travelers decide in seconds on mobile
 
 ### Scoring near-misses quickly
@@ -64,15 +75,15 @@ A query at position 8 with 8,000 impressions beats position 12 with 500 impressi
 
 **Profile:** Emerging queries with rising impressions — often seasonal for tourism.
 
-Cluster them [semantically](/glossary?term=keyword-clustering) before spinning up pages. Often **one strong hub** beats ten thin URLs.
+Cluster them [semantically](/en/glossary?term=keyword-clustering) before spinning up pages. Often **one strong hub** beats ten thin URLs.
 
 ### Examples
 
 - Rising "Paros ferry hotel shuttle" → add FAQ block to Paros page, not new domain section
 - New "EV rental Greece" → fleet hub update + blog if sustained volume
-- "AI hotel chatbot" → link to [travel AI solution](/solutions/travel-ai-chatbots) from relevant post
+- "AI hotel chatbot" → link to [travel AI solution](/en/solutions/travel-ai-chatbots) from relevant post
 
-Validate with [topic clusters](/glossary?term=topic-clusters) — see [glossary linking strategy](/blog/glossary-strategy-internal-linking).
+Validate with [topic clusters](/en/glossary?term=topic-clusters) — see [glossary linking strategy](/en/blog/glossary-strategy-internal-linking).
 
 ## Bucket 4 — Deprioritize noise
 
@@ -82,7 +93,7 @@ Log them — don't let them steal sprint capacity. Examples:
 
 - "hotell paros" — note for typo monitoring only
 - Irrelevant country queries you don't serve
-- Informational queries with no path to [get-started](/get-started) or booking
+- Informational queries with no path to [get-started](/en/get-started) or booking
 
 ## Weekly workflow — 60 minutes
 
@@ -92,7 +103,7 @@ Log them — don't let them steal sprint capacity. Examples:
 4. **Log hypotheses** — what you changed and expected outcome
 5. **Review prior week** fixes against click delta
 
-Aligns with our [GSC weekly ops playbook](/blog/gsc-weekly-ops-playbook).
+Aligns with our [GSC weekly ops playbook](/en/blog/gsc-weekly-ops-playbook).
 
 ## Reporting to executives
 
@@ -120,21 +131,21 @@ Prioritize location pages and room types by impression volume.
 - Vehicle type ("automatic Mykonos")
 - Policy ("rent a car Greece license")
 
-Prioritize location + fleet pages — see [rent-a-car SEO guide](/blog/istoselida-enikiasis-autokinitou-seo).
+Prioritize location + fleet pages — see [rent-a-car SEO guide](/en/blog/istoselida-enikiasis-autokinitou-seo).
 
 ### Home services
 
 - "near me" + emergency modifiers
 - Service + city
 
-Prioritize GBP alignment and [local SEO guide](/blog/local-seo-guide) tactics.
+Prioritize GBP alignment and [local SEO guide](/en/blog/local-seo-guide) tactics.
 
 ## Tools and tie-ins
 
 - Search Console — ground truth
-- [Keyword clustering](/glossary?term=keyword-clustering) — intent grouping
+- [Keyword clustering](/en/glossary?term=keyword-clustering) — intent grouping
 - Rank tracking — SERP layout changes
-- [Portfolio benchmarks](/work) — realistic position timelines by vertical
+- [Portfolio benchmarks](/en/work) — realistic position timelines by vertical
 
 ## Worked example — scoring a near-miss
 
@@ -149,6 +160,15 @@ Re-score in 28 days. If clicks double, move to bucket 1 (protect). If flat, test
 ### How do near-miss fixes differ for hotels vs rent-a-car?
 
 Hotels: emphasize visuals and trust in titles ("Sea View · Free Breakfast · Paros Port 5 min Walk"). Rent-a-car: emphasize policy clarity ("Automatic Fleet · No Hidden Fees · Mykonos Airport Desk"). Same framework, different CTR levers.
+
+## Priority score snapshot
+
+| Bucket | Signal mix | Weekly action |
+|--------|------------|---------------|
+| Protect winners | High clicks, stable position | Defend titles, links, vitals |
+| Fix near-misses | High impressions, pos 6–15 | Title/meta, FAQ, cannibalization |
+| Test new intent | Rising impressions | Cluster, then one hub page |
+| Deprioritize noise | Typos, zero commercial fit | Log and skip |
 
 ## FAQ
 
@@ -170,12 +190,12 @@ Compare year-over-year where possible. Rising shoulder-season queries in bucket 
 
 ### Can this framework work for Greek and English queries?
 
-Yes — segment by language in GSC. Tag EL vs EN buckets separately for [hreflang](/glossary?term=hreflang) sites.
+Yes — segment by language in GSC. Tag EL vs EN buckets separately for [hreflang](/en/glossary?term=hreflang) sites.
 
 ---
 
-### Turn Search Console into a revenue backlog
+## Ready to Get Started?
 
-We prioritize queries and ship fixes for tourism and local brands — hotels, rent-a-car, multi-location operators.
+Tell us about your site, locations, and goals — we'll recommend a scoped plan with Search Console ops, content priorities, and clear next steps.
 
-[Get started](/get-started) · [Search Console pillar](/blog/pillar-search-console-mastery) · [See our work](/work)
+[Get started](/en/get-started) · [See our work](/en/work) · [Pricing](/en/pricing)

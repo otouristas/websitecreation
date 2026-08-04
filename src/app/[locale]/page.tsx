@@ -12,9 +12,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (locale === 'el') {
     return buildMetadata({
-      title: 'Κατασκευή Ιστοσελίδων & SEO στην Ελλάδα',
+      title: 'Κατασκευή Ιστοσελίδων Τουρισμού & SEO | Ξενοδοχεία, Rent a Car',
       description:
-        'Κατασκευή ιστοσελίδων, e-shop και SEO για επιχειρήσεις σε όλη την Ελλάδα. Διαφανείς τιμές σε €, GEO/AEO, γρήγορη παράδοση. Ζητήστε δωρεάν προσφορά.',
+        'AnotherSEOGuru: κατασκευή ιστοσελίδων, e-shop και SEO για ξενοδοχεία και τουρισμό από €899 / €299 μήνα. 70+ έργα. GEO/AEO. Δωρεάν προσφορά.',
       path: localizedPath('el', '/'),
       primaryKeyword: 'κατασκευή ιστοσελίδων',
       hreflangPath: '/',
@@ -22,11 +22,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   return buildMetadata({
-    title: 'Tourism Web Design, SEO & Travel AI',
+    title: 'Tourism Website Design & SEO Agency | Hotels, Rent-a-Car, Tours',
     description:
-      'We build high-converting websites for hotels, rent-a-car, tours and travel brands - plus full SEO, GEO, AEO and AI chatbots. 55+ live projects. Free quote.',
+      'Custom tourism websites with SEO, GEO & AEO. 70+ live projects across Greece and Europe. From €899. Free quote.',
     path: localizedPath('en', '/'),
-    primaryKeyword: 'tourism website design',
+    primaryKeyword: 'hotel website design',
     hreflangPath: '/',
   });
 }

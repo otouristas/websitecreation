@@ -54,8 +54,11 @@ export default async function ResourcesPage({ params }: PageProps) {
               <h2 className="text-xl font-bold mb-4">Blog</h2>
               <ul className="space-y-3">
                 {posts.map((p) => (
-                  <li key={p.slug}>
-                    <Link href={lp(`/blog/${p.slug}`)} className="text-primary hover:underline font-medium">
+                  <li key={`${p.locale}-${p.slug}`}>
+                    <Link
+                      href={localizedPath(p.locale, `/blog/${p.slug}`)}
+                      className="text-primary hover:underline font-medium"
+                    >
                       {p.title}
                     </Link>
                     <p className="text-sm text-muted-foreground line-clamp-2">{p.description}</p>
