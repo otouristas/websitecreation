@@ -12,21 +12,21 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (locale === 'el') {
     return buildMetadata({
-      title: 'SEO Guru - Web & SEO Ελλάδα',
+      title: 'Κατασκευή Ιστοσελίδων Τουρισμού & SEO | Ξενοδοχεία, Rent a Car',
       description:
-        'SEO Guru για κατασκευή ιστοσελίδων, e-shop και SEO από €899 / €299 μήνα. 70+ live projects σε τουρισμό & τοπικές επιχειρήσεις. GEO/AEO. Δωρεάν προσφορά.',
+        'AnotherSEOGuru: κατασκευή ιστοσελίδων, e-shop και SEO για ξενοδοχεία και τουρισμό από €899 / €299 μήνα. 70+ έργα. GEO/AEO. Δωρεάν προσφορά.',
       path: localizedPath('el', '/'),
-      primaryKeyword: 'seo guru',
+      primaryKeyword: 'κατασκευή ιστοσελίδων',
       hreflangPath: '/',
     });
   }
 
   return buildMetadata({
-    title: 'SEO Guru for Hotels & Tours',
+    title: 'Tourism Website Design & SEO Agency | Hotels, Rent-a-Car, Tours',
     description:
-      'SEO Guru builds high-converting websites for hotels, rent-a-car and tours — plus SEO, GEO, AEO. From €899 / €299 mo. 70+ live projects. Free quote in EUR.',
+      'Custom tourism websites with SEO, GEO & AEO. 70+ live projects across Greece and Europe. From €899. Free quote.',
     path: localizedPath('en', '/'),
-    primaryKeyword: 'seo guru',
+    primaryKeyword: 'hotel website design',
     hreflangPath: '/',
   });
 }

@@ -14,7 +14,7 @@ export const navEl = {
   villas: 'Βίλες & διαμερίσματα',
   allSolutions: 'Όλοι οι κλάδοι',
   pricing: 'Τιμές',
-  agencyPricing: 'Πακέτα υπηρεσιών',
+  agencyPricing: 'Τιμές',
   ourWork: 'Έργα',
   getQuote: 'Ζητήστε προσφορά',
   contact: 'Επικοινωνία',
@@ -22,5 +22,5 @@ export const navEl = {
   freeTools: 'Δωρεάν εργαλεία',
   openMenu: 'Άνοιγμα μενού',
   closeMenu: 'Κλείσιμο μενού',
-  tagline: 'Γραφείο · Ιστοσελίδες · SEO',
+  tagline: 'Ιστοσελίδες · SEO · GEO',
 } as const;

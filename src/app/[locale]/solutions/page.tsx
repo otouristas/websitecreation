@@ -27,9 +27,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   return buildMetadata({
-    title: "Industry SEO & Web Solutions",
+    title: "Tourism & Industry Website Solutions | Hotels, Rent-a-Car, Tours",
     description:
-      "Industry-specific website and SEO solutions for restaurants, hotels, legal, medical, home services, ecommerce, and more. Tailored playbooks and service packages.",
+      "Industry website design and SEO for hotels, rent-a-car, tour operators and more. Playbooks built to rank globally and convert bookings.",
     path: localizedPath('en', '/solutions'),
     hreflangPath: "/solutions",
   });

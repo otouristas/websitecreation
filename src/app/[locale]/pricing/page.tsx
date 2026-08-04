@@ -18,18 +18,20 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!isValidLocale(locale)) return {};
   if (locale === 'el') {
     return buildMetadata({
-      title: "Τιμές SEO από €299/μήνα",
+      title: "Τιμές SEO & Ιστοσελίδας",
       description:
-        "Πόσο κοστίζει το SEO και η κατασκευή ιστοσελίδας; Πακέτα SEO από €299/μήνα, ιστοσελίδες από €899. Διαφανείς τιμές σε € — ζητήστε προσφορά.",
+        "Τιμές SEO από €299/μήνα και κατασκευή ιστοσελίδας από €899. Πίνακας πακέτων, e-shop add-on και GEO/AEO. Διαφανείς τιμές σε € — δωρεάν προσφορά.",
       path: localizedPath(locale as SiteLocale, "/pricing"),
+      primaryKeyword: "τιμές SEO",
       hreflangPath: "/pricing",
     });
   }
   return buildMetadata({
-    title: "SEO & Web Pricing from €299",
+    title: "Tourism Website & SEO Pricing | From €899",
     description:
-      "Transparent SEO & website pricing from €299/mo and €899 one-shot. Compare packages for web design, SEO, GEO/AEO. Request a free custom quote today.",
+      "Hotel, rent-a-car and tour website packages from €899. SEO retainers from €299/mo. Transparent EUR pricing with GEO/AEO. Free quote.",
     path: localizedPath(locale as SiteLocale, "/pricing"),
+    primaryKeyword: "website design cost",
     hreflangPath: "/pricing",
   });
 }
@@ -412,7 +414,7 @@ export default async function PricingPage({ params }: PageProps) {
     locale as SiteLocale,
   );
   const breadcrumbSchema = generateBreadcrumbSchema({ items: breadcrumbs });
-  const relatedPages = getPricingRelatedPaths().map((p) => ({
+  const relatedPages = getPricingRelatedPaths(locale as SiteLocale).map((p) => ({
     slug: lp(p.path),
     title: isEl ? p.titleEl : p.titleEn,
   }));

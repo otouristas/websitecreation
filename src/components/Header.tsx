@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { PHONE_DISPLAY, WHATSAPP_HREF } from "@/lib/contact-info";
 import { BrandLogo } from "@/components/BrandLogo";
-import { FreeToolsMegaMenu } from "@/components/landing/free-tools-mega-menu";
 import { AgencyMegaMenu } from "@/components/AgencyMegaMenu";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
@@ -156,25 +155,6 @@ export default function Header({ locale: localeProp }: { locale?: SiteLocale }):
               </p>
             </div>
             <div className="hidden items-center gap-1 lg:flex lg:gap-2 xl:gap-3">
-              {!isEl && (
-                <>
-                  <NavDropdown label={nav.platform}>
-                    <Link href={lp("/platform")} className={dropdownItemClass}>
-                      {nav.platformOverview}
-                    </Link>
-                    <Link href={lp("/platform/features")} className={dropdownItemClass}>
-                      {nav.allFeatures}
-                    </Link>
-                    <Link href={lp("/platform/pricing")} className={dropdownItemClass}>
-                      {nav.softwarePricing}
-                    </Link>
-                    <Link href={lp("/platform/for/agencies")} className={dropdownItemClass}>
-                      {nav.forAgencies}
-                    </Link>
-                  </NavDropdown>
-                  <FreeToolsMegaMenu />
-                </>
-              )}
               <AgencyMegaMenu locale={locale} label={nav.agency} />
               <NavDropdown label={nav.solutions}>
                 <Link href={lp("/solutions/rent-a-car")} className={dropdownItemClass}>
@@ -190,22 +170,18 @@ export default function Header({ locale: localeProp }: { locale?: SiteLocale }):
                   {nav.allSolutions}
                 </Link>
               </NavDropdown>
-              <NavDropdown label={nav.pricing}>
-                {!isEl && (
-                  <Link href={lp("/platform/pricing")} className={dropdownItemClass}>
-                    {nav.softwarePricing}
-                  </Link>
-                )}
-                <Link href={lp("/pricing")} className={dropdownItemClass}>
-                  {nav.agencyPricing}
-                </Link>
-              </NavDropdown>
+              <Link href={lp("/pricing")} className={`rounded-lg px-1 py-1 ${linkClass}`}>
+                {nav.pricing}
+              </Link>
             </div>
             <div className="flex shrink-0 items-center gap-1 sm:gap-2 md:gap-3">
               <LanguageSwitcher />
               <ThemeToggle />
               <Link href={lp("/work")} className={`hidden sm:inline-flex md:px-3 rounded-xl px-2 py-2 ${linkClass}`}>
                 {nav.ourWork}
+              </Link>
+              <Link href={lp("/blog")} className={`hidden sm:inline-flex md:px-3 rounded-xl px-2 py-2 ${linkClass}`}>
+                {nav.blog}
               </Link>
               <a
                 href={WHATSAPP_HREF}

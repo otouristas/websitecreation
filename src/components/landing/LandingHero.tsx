@@ -4,11 +4,6 @@ import { Check, Sparkles } from "lucide-react";
 import { elHome } from "@/data/translations/el-home";
 import { localizedPath, type SiteLocale } from "@/lib/i18n/locale";
 
-const poweredBy = [
-  { name: "OpenAI", src: "/logos/assets/openai.webp", width: 20, height: 20 },
-  { name: "Claude", src: "/logos/assets/Claude_A.png", width: 20, height: 20 },
-] as const;
-
 export function LandingHero({ locale = "en" }: { locale?: SiteLocale }) {
   const isEl = locale === "el";
   const t = isEl ? elHome.hero : null;
@@ -31,18 +26,18 @@ export function LandingHero({ locale = "en" }: { locale?: SiteLocale }) {
               </span>
               <br />
               <span className="text-foreground">
-                {isEl ? t!.h1Line2 : "Websites that win bookings & rankings"}
+                {isEl ? t!.h1Line2 : "Websites for hotels & tours that win bookings"}
               </span>
             </h1>
             <p className="mb-3 text-lg text-muted-foreground md:text-xl">
               {isEl
                 ? t!.sub
-                : "SEO · GEO · AEO · AI chatbots for hotels, rent-a-car & travel brands — plus transparent EUR pricing."}
+                : "Web design, SEO, GEO & AEO for hotels, rent-a-car and travel brands — from €899 / €299 mo."}
             </p>
             <p className="mx-auto mb-8 max-w-xl text-base text-muted-foreground lg:mx-0">
               {isEl
                 ? t!.proof
-                : "70+ live projects across Greece, UK, US, Canada & Europe. Built to rank on Google and AI search."}
+                : "70+ live projects across Greece and Europe. Built to rank on Google and AI search — free quote in EUR."}
             </p>
             <div className="mb-8 flex flex-col justify-center gap-3 sm:flex-row lg:justify-start">
               <Link
@@ -73,8 +68,8 @@ export function LandingHero({ locale = "en" }: { locale?: SiteLocale }) {
           <div className="relative mx-auto w-full max-w-xl lg:max-w-none">
             <div className="relative z-10 overflow-hidden rounded-2xl border-2 border-border shadow-strong">
               <Image
-                src={isEl ? "/portfolio/discover-cyclades.webp" : "/logos/assets/screenshots/sidebar-ai-tools.png"}
-                alt={isEl ? t!.imageAlt : "AnotherSEOGuru tourism website example"}
+                src="/portfolio/discover-cyclades.webp"
+                alt={isEl ? t!.imageAlt : "Tourism website example by AnotherSEOGuru"}
                 width={1200}
                 height={800}
                 className="w-full h-auto object-cover object-top"
@@ -110,7 +105,7 @@ export function LandingHero({ locale = "en" }: { locale?: SiteLocale }) {
                 </>
               ) : (
                 <>
-                  <div><div className="text-2xl md:text-3xl font-bold">55+</div><div className="text-sm text-muted-foreground">Projects</div></div>
+                  <div><div className="text-2xl md:text-3xl font-bold">70+</div><div className="text-sm text-muted-foreground">Projects</div></div>
                   <div><div className="text-2xl md:text-3xl font-bold">5</div><div className="text-sm text-muted-foreground">Markets</div></div>
                   <div><div className="text-2xl md:text-3xl font-bold">EN/EL</div><div className="text-sm text-muted-foreground">Languages</div></div>
                   <div><div className="text-2xl md:text-3xl font-bold">24/7</div><div className="text-sm text-muted-foreground">Support</div></div>

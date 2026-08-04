@@ -1,6 +1,6 @@
 # AnotherSEOGuru - robots.txt
 # https://anotherseoguru.com
-# Last Updated: July 2026
+# Last Updated: August 2026
 # Standard: https://www.robotstxt.org/
 
 # =============================================================================
@@ -164,7 +164,7 @@ Crawl-delay: 1
 # SITEMAPS
 # =============================================================================
 
-Sitemap: https://anotherseoguru.com/sitemap.xml
+# Single entry point — child sitemaps (including /sitemap.xml) are listed inside the index
 Sitemap: https://anotherseoguru.com/sitemap-index.xml
 
 # =============================================================================

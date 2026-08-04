@@ -102,6 +102,16 @@ const nextConfig: NextConfig = {
         destination: '/en/contact',
         permanent: false,
       },
+      {
+        source: '/blog/google-search-operators-2025',
+        destination: '/en/blog/google-search-operators-2026',
+        permanent: true,
+      },
+      {
+        source: '/:locale(en|el)/blog/google-search-operators-2025',
+        destination: '/:locale/blog/google-search-operators-2026',
+        permanent: true,
+      },
     ];
   },
 

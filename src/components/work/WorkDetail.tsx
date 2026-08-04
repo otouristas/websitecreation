@@ -134,31 +134,6 @@ export function WorkDetail({ project, locale = 'en' }: WorkDetailProps) {
                   ))}
                 </div>
               ) : null}
-              <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 rounded-xl border border-border/80 bg-card/60 px-4 py-3 text-sm text-muted-foreground">
-                <span>
-                  {isEl ? "Σε συνεργασία με την " : "In collaboration with "}
-                  <a
-                    href="https://dailyhost.gr"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-medium text-foreground underline underline-offset-4 hover:text-primary"
-                  >
-                    Dailyhost.gr
-                  </a>
-                </span>
-                <span aria-hidden>•</span>
-                <span>
-                  {isEl ? "Φιλοξενία από την " : "Hosting by "}
-                  <a
-                    href="https://dailyhost.gr"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-medium text-foreground underline underline-offset-4 hover:text-primary"
-                  >
-                    Dailyhost.gr
-                  </a>
-                </span>
-              </div>
             </div>
             <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-border shadow-lg">
               <PortfolioThumbnail src={project.screenshot} alt={isEl ? `${project.name} - αρχική σελίδα` : `${project.name} homepage`} />
@@ -217,11 +192,23 @@ export function WorkDetail({ project, locale = 'en' }: WorkDetailProps) {
           )}
 
           <h2 className="mb-4 text-2xl font-bold">{isEl ? 'Αποτελέσματα' : 'Outcomes'}</h2>
-          <ul className="list-disc space-y-2 pl-5 text-muted-foreground">
+          <ul className="mb-10 list-disc space-y-2 pl-5 text-muted-foreground">
             {caseStudy.outcomes.map((r) => (
               <li key={r}>{r}</li>
             ))}
           </ul>
+
+          <p className="text-sm text-muted-foreground">
+            {isEl ? 'Φιλοξενία: ' : 'Hosting: '}
+            <a
+              href="https://dailyhost.gr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-foreground underline underline-offset-4 hover:text-primary"
+            >
+              Dailyhost.gr
+            </a>
+          </p>
         </div>
       </section>
 

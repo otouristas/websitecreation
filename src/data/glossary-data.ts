@@ -70,7 +70,7 @@ export const glossaryCategories: GlossaryCategory[] = [
         term: "Title Tag",
         shortDefinition: "HTML element specifying a page's title for search results and browser tabs.",
         fullDefinition: "The title tag is an HTML element that defines the title of a web page. It appears in search engine results as the clickable headline and in browser tabs. Title tags are one of the most important on-page SEO factors.",
-        example: "<title>Best Running Shoes 2025 | Expert Reviews & Buying Guide</title>",
+        example: "<title>Best Running Shoes 2026 | Expert Reviews & Buying Guide</title>",
         technique: "Keep titles 50-60 characters, include primary keyword near the beginning, add brand name at the end with a pipe separator, make it compelling to improve CTR.",
         proTip: "Use unique titles for every page. Duplicate titles confuse search engines about which page to rank.",
         relatedTerms: ["meta-description", "serp", "ctr"],
@@ -87,7 +87,7 @@ export const glossaryCategories: GlossaryCategory[] = [
         term: "Meta Description",
         shortDefinition: "HTML attribute providing a brief summary of page content for search results.",
         fullDefinition: "A meta description is an HTML attribute that provides a concise summary of a web page's content. While not a direct ranking factor, it significantly impacts click-through rates as it appears as the snippet text under the title in search results.",
-        example: "<meta name=\"description\" content=\"Compare the top 10 running shoes of 2025. Expert reviews, price comparisons, and buying tips to help you find your perfect pair.\">",
+        example: "<meta name=\"description\" content=\"Compare the top 10 running shoes of 2026. Expert reviews, price comparisons, and buying tips to help you find your perfect pair.\">",
         technique: "Write 150-160 characters, include primary keyword naturally, add a call-to-action, make it unique per page, and match search intent.",
         proTip: "If Google rewrites your meta description, it means the original didn't match user intent well enough.",
         relatedTerms: ["title-tag", "ctr", "serp"],
@@ -141,7 +141,7 @@ export const glossaryCategories: GlossaryCategory[] = [
         term: "Image Alt Text",
         shortDefinition: "Descriptive text attribute for images that helps search engines and screen readers.",
         fullDefinition: "Alt text (alternative text) is an HTML attribute that describes the contents of an image. It serves three purposes: accessibility for visually impaired users, context for search engines, and fallback text when images fail to load.",
-        example: "<img src=\"nike-air-max.jpg\" alt=\"Nike Air Max 2025 running shoes in black and white colorway\">",
+        example: "<img src=\"nike-air-max.jpg\" alt=\"Nike Air Max 2026 running shoes in black and white colorway\">",
         technique: "Be descriptive and specific, include relevant keywords naturally, keep it under 125 characters, don't start with 'image of' or 'picture of'.",
         proTip: "Decorative images can use empty alt attributes (alt=\"\"). Don't describe images that don't add informational value.",
         relatedTerms: ["image-seo", "accessibility", "technical-seo"],
@@ -162,7 +162,7 @@ export const glossaryCategories: GlossaryCategory[] = [
         proTip: "Audit your orphan pages regularly. Pages with no internal links pointing to them are hard for search engines to find and rank.",
         relatedTerms: ["anchor-text", "link-equity", "site-architecture", "topic-clusters"],
         relatedLinks: [
-          { title: "Internal Linking at Scale", url: "/blog/internal-linking-scale", type: "blog" }
+          { title: "Internal Linking Audit Checklist", url: "/blog/internal-linking-audit-checklist", type: "blog" }
         ]
       },
       {
@@ -217,8 +217,8 @@ export const glossaryCategories: GlossaryCategory[] = [
         proTip: "Check Server Logs to see exactly what Googlebot is crawling. GSC's crawl stats only show aggregates.",
         relatedTerms: ["indexing", "robots-txt", "xml-sitemap", "crawl-budget"],
         relatedLinks: [
-          { title: "Log File SEO Guide", url: "/blog/log-file-seo-guide", type: "blog" },
-          { title: "Technical SEO Audits", url: "/features/technical-seo-audits", type: "feature" }
+          { title: "Technical SEO Guide", url: "/blog/technical-seo-guide", type: "blog" },
+          { title: "Technical SEO Audits", url: "/platform/features/technical-seo-audits", type: "feature" }
         ]
       },
       {
@@ -261,7 +261,7 @@ export const glossaryCategories: GlossaryCategory[] = [
         term: "XML Sitemap",
         shortDefinition: "A file listing important URLs to help search engines discover and crawl content.",
         fullDefinition: "An XML sitemap is a structured file that lists the URLs on your website you want search engines to crawl and index. It includes metadata like last modification date, change frequency, and priority.",
-        example: "<?xml version=\"1.0\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n  <url>\n    <loc>https://example.com/page</loc>\n    <lastmod>2025-01-15</lastmod>\n  </url>\n</urlset>",
+        example: "<?xml version=\"1.0\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n  <url>\n    <loc>https://example.com/page</loc>\n    <lastmod>2026-01-15</lastmod>\n  </url>\n</urlset>",
         technique: "Include only indexable pages, keep under 50MB or 50,000 URLs, update lastmod only when content changes, submit to GSC, and split large sitemaps.",
         proTip: "Monitor 'Sitemap' report in GSC. If submitted URLs don't match indexed URLs, investigate why pages are being excluded.",
         relatedTerms: ["crawling", "indexing", "robots-txt"],
@@ -327,7 +327,7 @@ export const glossaryCategories: GlossaryCategory[] = [
         proTip: "Always include an x-default hreflang for users who don't match any specified language/region combination.",
         relatedTerms: ["international-seo", "geo-targeting", "language-targeting"],
         relatedLinks: [
-          { title: "Hreflang Guide", url: "/blog/hreflang-guide", type: "blog" },
+          { title: "Technical SEO Guide (hreflang)", url: "/blog/technical-seo-guide", type: "blog" },
           { title: "Hreflang Builder", url: "/free-tools/hreflang-builder", type: "tool" }
         ]
       },
@@ -597,7 +597,7 @@ export const glossaryCategories: GlossaryCategory[] = [
         term: "Search Intent",
         shortDefinition: "The underlying goal a user has when typing a search query.",
         fullDefinition: "Search intent (also called user intent or query intent) refers to the purpose behind a search query. Understanding intent is crucial for creating content that satisfies users and ranks well. The four main types are informational, navigational, commercial, and transactional.",
-        example: "Informational: 'how to tie running shoes'. Transactional: 'buy Nike Air Max'. Commercial: 'best running shoes 2025'. Navigational: 'Nike official site'",
+        example: "Informational: 'how to tie running shoes'. Transactional: 'buy Nike Air Max'. Commercial: 'best running shoes 2026'. Navigational: 'Nike official site'",
         technique: "Analyze the current SERP to understand what Google thinks the intent is. Match your content format (guide, product page, comparison, etc.) to the intent.",
         proTip: "If your content doesn't match search intent, you won't rank - no matter how good it is. Always check the SERP before creating content.",
         relatedTerms: ["keywords", "serp-analysis", "content-optimization"],
@@ -610,7 +610,7 @@ export const glossaryCategories: GlossaryCategory[] = [
         term: "Keyword Cannibalization",
         shortDefinition: "When multiple pages on your site compete for the same keyword.",
         fullDefinition: "Keyword cannibalization occurs when multiple pages on the same website target the same or very similar keywords, causing them to compete against each other in search results. This can dilute ranking signals and confuse search engines.",
-        example: "Having '/best-running-shoes' and '/top-running-shoes-2025' both targeting 'best running shoes' causes cannibalization.",
+        example: "Having '/best-running-shoes' and '/top-running-shoes-2026' both targeting 'best running shoes' causes cannibalization.",
         technique: "Audit your content for overlapping keywords, consolidate similar pages into one comprehensive piece, use canonical tags, or differentiate content focus.",
         proTip: "Use GSC to identify cannibalization: if multiple URLs rank for the same query and swap positions, you likely have cannibalization.",
         relatedTerms: ["content-consolidation", "canonical-tag", "site-architecture"],
@@ -882,7 +882,7 @@ export const glossaryCategories: GlossaryCategory[] = [
         relatedTerms: ["llm-seo", "zero-click-search", "serp-features"],
         relatedLinks: [
           { title: "AI Overview Checker", url: "/free-tools/ai-overview-checker", type: "tool" },
-          { title: "LLM SEO Guide", url: "/blog/llm-seo-chatgpt-perplexity", type: "blog" }
+          { title: "LLM Citations & Brand Visibility", url: "/blog/llm-citations-brand-visibility", type: "blog" }
         ]
       }
     ]
@@ -1021,7 +1021,7 @@ export const glossaryCategories: GlossaryCategory[] = [
         term: "Content Decay",
         shortDefinition: "The gradual decline in organic traffic and rankings of older content.",
         fullDefinition: "Content decay occurs when previously high-performing content gradually loses rankings and traffic over time. This happens as content becomes outdated, competitors publish better content, or user needs evolve.",
-        example: "A 'Best Tools 2023' article that ranked #1 now ranks #15 because it's outdated and competitors have 2025 versions.",
+        example: "A 'Best Tools 2024' article that ranked #1 now ranks #15 because it's outdated and competitors have 2026 versions.",
         technique: "Monitor traffic trends per page, identify decaying content before it's too late, update with current information, refresh titles with current year, add new sections, improve comprehensiveness.",
         proTip: "Set calendar reminders to review evergreen content quarterly. Preventing decay is easier than recovering from it.",
         relatedTerms: ["content-freshness", "content-update", "evergreen-content"],
@@ -1087,9 +1087,9 @@ export const glossaryCategories: GlossaryCategory[] = [
         term: "Content Freshness",
         shortDefinition: "How recently content was published or updated.",
         fullDefinition: "Content freshness refers to how current your content is. For some queries (news, trending topics, 'best of [year]'), Google prefers fresh content. Updating existing content can boost rankings by signaling relevance.",
-        example: "Updating your 'Best Running Shoes' post from 2023 data to 2025 data and changing the title can restore lost rankings.",
+        example: "Updating your 'Best Running Shoes' post from 2024 data to 2026 data and changing the title can restore lost rankings.",
         technique: "Update content with new information regularly, change last-modified dates only with substantial updates, add current year to titles where relevant, publish timely content for trending topics.",
-        proTip: "Not all content needs freshness. 'How to boil water' doesn't need 2025 updates. But 'Best AI tools' becomes stale quickly.",
+        proTip: "Not all content needs freshness. 'How to boil water' doesn't need 2026 updates. But 'Best AI tools' becomes stale quickly.",
         relatedTerms: ["content-decay", "content-update", "query-deserves-freshness"],
         relatedLinks: [
           { title: "Content Decay Detector", url: "/features/content-decay-detector", type: "feature" }
@@ -1279,7 +1279,7 @@ export const glossaryCategories: GlossaryCategory[] = [
         proTip: "LLMs learn from their training data and sometimes real-time search. Building brand mentions across the web is increasingly important.",
         relatedTerms: ["ai-overview", "zero-click-search", "e-e-a-t"],
         relatedLinks: [
-          { title: "LLM SEO Guide", url: "/blog/llm-seo-chatgpt-perplexity", type: "blog" },
+          { title: "LLM Citations & Brand Visibility", url: "/blog/llm-citations-brand-visibility", type: "blog" },
           { title: "AI Overview Checker", url: "/free-tools/ai-overview-checker", type: "tool" }
         ]
       },
@@ -1413,7 +1413,7 @@ export const glossaryCategories: GlossaryCategory[] = [
         relatedTerms: ["indexing", "serp", "competitive-analysis"],
         relatedLinks: [
           { title: "Search Operators Tool", url: "/free-tools/search-operators", type: "tool" },
-          { title: "Google Search Operators Guide", url: "/blog/google-search-operators-2025", type: "blog" }
+          { title: "Google Search Operators Guide", url: "/blog/google-search-operators-2026", type: "blog" }
         ]
       },
       {
@@ -1555,7 +1555,7 @@ export const glossaryCategories: GlossaryCategory[] = [
         proTip: "Log files are the only way to see what Googlebot actually does, not what you think it does. They can reveal hidden issues GSC doesn't show.",
         relatedTerms: ["crawling", "crawl-budget", "googlebot"],
         relatedLinks: [
-          { title: "Log File SEO Guide", url: "/blog/log-file-seo-guide", type: "blog" }
+          { title: "Technical SEO Guide", url: "/blog/technical-seo-guide", type: "blog" }
         ]
       },
       {

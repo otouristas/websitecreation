@@ -111,7 +111,13 @@ export function getRelatedPages(pageUrl: string, limit = 5): string[] {
 }
 
 /** Money-page related links for pricing (locale-agnostic paths). */
-export function getPricingRelatedPaths(): { path: string; titleEn: string; titleEl: string }[] {
+export function getPricingRelatedPaths(
+    locale: SiteLocale = 'en',
+): { path: string; titleEn: string; titleEl: string }[] {
+    const costSeo = locale === 'el' ? '/blog/poso-kostizei-to-seo' : '/blog/how-much-does-seo-cost';
+    const costSite = locale === 'el' ? '/blog/poso-kostizei-mia-istoselida' : '/blog/how-much-does-a-website-cost';
+    const costEshop = locale === 'el' ? '/blog/kataskevi-eshop-odigos' : '/blog/ecommerce-website-cost-guide';
+
     return [
         { path: '/services/website-creation', titleEn: 'Website creation', titleEl: 'Κατασκευή ιστοσελίδων' },
         { path: '/services/eshop-woocommerce', titleEn: 'E-shop WooCommerce', titleEl: 'Κατασκευή e-shop' },
@@ -119,6 +125,9 @@ export function getPricingRelatedPaths(): { path: string; titleEn: string; title
         { path: '/solutions/hotels', titleEn: 'Hotel websites & SEO', titleEl: 'Λύσεις για ξενοδοχεία' },
         { path: '/services/website-creation/athens-gr', titleEn: 'Website creation Athens', titleEl: 'Κατασκευή ιστοσελίδων Αθήνα' },
         { path: '/services/local-seo/thessaloniki-gr', titleEn: 'Local SEO Thessaloniki', titleEl: 'Τοπικό SEO Θεσσαλονίκη' },
+        { path: costSeo, titleEn: 'How much does SEO cost?', titleEl: 'Πόσο κοστίζει το SEO;' },
+        { path: costSite, titleEn: 'How much does a website cost?', titleEl: 'Πόσο κοστίζει μια ιστοσελίδα;' },
+        { path: costEshop, titleEn: 'E-shop cost guide', titleEl: 'Οδηγός κατασκευής e-shop' },
         { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
         { path: '/work', titleEn: 'Portfolio & case studies', titleEl: 'Έργα & case studies' },
     ];
@@ -146,6 +155,8 @@ export const BLOG_MONEY_LINKS: Record<
         { path: '/services/eshop-woocommerce', titleEn: 'WooCommerce e-shop', titleEl: 'Κατασκευή e-shop WooCommerce' },
         { path: '/services/eshop-seo', titleEn: 'E-shop SEO', titleEl: 'SEO για e-shop' },
         { path: '/pricing', titleEn: 'Pricing & packages', titleEl: 'Τιμές & πακέτα' },
+        { path: '/work', titleEn: 'E-shop portfolio', titleEl: 'Έργα e-shop' },
+        { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
     ],
     'ecommerce-website-cost-guide': [
         { path: '/services/eshop-woocommerce', titleEn: 'WooCommerce e-shop', titleEl: 'Κατασκευή e-shop WooCommerce' },
@@ -173,8 +184,11 @@ export const BLOG_MONEY_LINKS: Record<
     ],
     'seo-gia-xenodoxeia': [
         { path: '/solutions/hotels', titleEn: 'Hotel solutions', titleEl: 'Λύσεις για ξενοδοχεία' },
+        { path: '/blog/kataskevi-istoselidas-xenodoxeia', titleEn: 'Hotel website design', titleEl: 'Κατασκευή ιστοσελίδας ξενοδοχείου' },
         { path: '/services/local-seo', titleEn: 'Local SEO', titleEl: 'Τοπικό SEO' },
         { path: '/services/ai-visibility', titleEn: 'AI visibility', titleEl: 'Ορατότητα σε AI' },
+        { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
+        { path: '/work', titleEn: 'Hotel portfolio', titleEl: 'Έργα ξενοδοχείων' },
     ],
     'seo-gia-xenodoxeia-odigos-2026': [
         { path: '/solutions/hotels', titleEn: 'Hotel solutions', titleEl: 'Λύσεις για ξενοδοχεία' },
@@ -194,6 +208,27 @@ export const BLOG_MONEY_LINKS: Record<
     'geo-agency-ellada': [
         { path: '/services/ai-visibility', titleEn: 'AI visibility (GEO/AEO)', titleEl: 'AI Visibility (GEO/AEO)' },
         { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
+        { path: '/solutions/hotels', titleEn: 'Hotel solutions', titleEl: 'Λύσεις για ξενοδοχεία' },
+        { path: '/work', titleEn: 'Portfolio', titleEl: 'Έργα' },
+        { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
+    ],
+    'kataskevi-istoselidas-xenodoxeia': [
+        { path: '/solutions/hotels', titleEn: 'Hotel solutions', titleEl: 'Λύσεις για ξενοδοχεία' },
+        { path: '/blog/seo-gia-xenodoxeia', titleEn: 'Hotel SEO guide', titleEl: 'SEO για ξενοδοχεία' },
+        { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
+        { path: '/work', titleEn: 'Portfolio', titleEl: 'Έργα' },
+        { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
+    ],
+    'hotel-website-design': [
+        { path: '/solutions/hotels', titleEn: 'Hotel solutions', titleEl: 'Λύσεις για ξενοδοχεία' },
+        { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
+        { path: '/work', titleEn: 'Portfolio', titleEl: 'Έργα' },
+        { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
+    ],
+    'google-search-operators-2026': [
+        { path: '/blog/gsc-weekly-ops-playbook', titleEn: 'GSC weekly ops', titleEl: 'Εβδομαδιαίο GSC playbook' },
+        { path: '/blog/technical-seo-guide', titleEn: 'Technical SEO', titleEl: 'Τεχνικό SEO' },
+        { path: '/tools/free-seo-tools', titleEn: 'Free SEO tools', titleEl: 'Δωρεάν εργαλεία SEO' },
         { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
     ],
     'ai-seo-agency-geo-aeo': [

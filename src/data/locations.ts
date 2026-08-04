@@ -931,58 +931,20 @@ export const getTier1LocationSlugs = (): string[] =>
   allLocations.filter((l) => l.tier === 1).map((l) => l.slug);
 
 /**
- * EN service×location index allowlist: curated metros with unique EN content packs.
- * Greek cities are gated separately via hasLocationContent (EL/EN packs).
- * Everything else stays crawlable but noindex.
+ * EN service×location index allowlist (Greece-first moonshot).
+ * Non-GR metros are noindex + out of sitemaps — US/AU/CA thin pages burned
+ * GSC impressions with ~0 CTR. Keep only portfolio-backed EN hubs outside GR.
+ * Greek cities are gated separately via hasLocationContent.
  */
 const SERVICE_LOCATION_INDEX_ALLOWLIST = new Set([
-  // Core US
-  'new-york-ny',
-  'los-angeles-ca',
-  'chicago-il',
-  'miami-fl',
-  'san-francisco-ca',
-  'austin-tx',
-  'houston-tx',
-  'seattle-wa',
-  'boston-ma',
-  'atlanta-ga',
-  'dallas-tx',
-  'denver-co',
-  'philadelphia-pa',
-  'washington-dc',
-  'phoenix-az',
-  // Expanded US (content-gated)
-  'san-diego-ca',
-  'portland-or',
-  'tampa-fl',
-  'nashville-tn',
-  'charlotte-nc',
-  'las-vegas-nv',
-  'detroit-mi',
-  'minneapolis-mn',
-  'orlando-fl',
-  'san-antonio-tx',
-  // UK / CA / AU / EU hubs
+  // Portfolio-backed EN hub only (UK tourism / agency work)
   'london-uk',
-  'manchester-uk',
-  'birmingham-uk',
-  'edinburgh-uk',
-  'toronto-ca',
-  'vancouver-ca',
-  'sydney-au',
-  'melbourne-au',
-  'brisbane-au',
-  'paris-fr',
-  'berlin-de',
-  'rome-it',
-  'dubai-ae',
 ]);
 
 /**
  * Index when geo is eligible AND uniqueness gate passes for the locale.
  * - EL: Greek cities with EL content packs only
- * - EN: allowlisted metros OR Greek cities, with EN content packs
+ * - EN: Greek cities (EL pack) OR tiny allowlisted EN hubs with EN packs
  */
 export function shouldIndexServiceLocation(
   location: Location,

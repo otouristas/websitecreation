@@ -27,9 +27,6 @@ export const MONEY_HUB_SLUGS = new Set([
   'rhodes-gr',
   'corfu-gr',
   'zakynthos-gr',
-  'new-york-ny',
-  'los-angeles-ca',
-  'miami-fl',
   'london-uk',
 ]);
 

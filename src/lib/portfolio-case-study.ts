@@ -2,6 +2,7 @@ import {
   PORTFOLIO_CATEGORIES,
   type PortfolioProject,
 } from '@/data/portfolio';
+import { PORTFOLIO_CASE_STUDIES } from '@/data/portfolio-case-studies';
 import type { SiteLocale } from '@/lib/i18n/locale';
 
 export interface CaseStudySection {
@@ -228,6 +229,41 @@ export function buildProjectCaseStudy(
   locale: SiteLocale = 'en',
 ): ProjectCaseStudy {
   const isEl = locale === 'el';
+  const override = PORTFOLIO_CASE_STUDIES[project.slug];
+
+  if (override) {
+    const outcomes =
+      isEl && project.resultsEl && project.resultsEl.length > 0
+        ? project.resultsEl
+        : !isEl && project.results && project.results.length > 0
+          ? project.results
+          : override.outcomes[isEl ? 'el' : 'en'];
+
+    return {
+      overview: override.overview[isEl ? 'el' : 'en'],
+      challenge: override.challenge[isEl ? 'el' : 'en'],
+      approach: override.approach[isEl ? 'el' : 'en'],
+      seo: {
+        title: isEl ? 'SEO - Τεχνικό & On-page' : 'SEO - Technical & On-page',
+        items: override.seo[isEl ? 'el' : 'en'],
+      },
+      geoAeo: {
+        title: isEl ? 'GEO & AEO - AI αναζήτηση' : 'GEO & AEO - AI search',
+        items: override.geoAeo[isEl ? 'el' : 'en'],
+      },
+      technical: {
+        title: isEl ? 'Τεχνική υλοποίηση' : 'Technical delivery',
+        items: override.technical[isEl ? 'el' : 'en'],
+      },
+      content: {
+        title: isEl ? 'Περιεχόμενο & μετατροπές' : 'Content & conversions',
+        items: override.content[isEl ? 'el' : 'en'],
+      },
+      outcomes,
+    };
+  }
+
+  // Fallback templates (should not be used once all slugs have overrides)
   const cat = PORTFOLIO_CATEGORIES[project.category];
   const catLabel = isEl ? cat.labelEl : cat.label;
   const markets = project.markets.join(', ');
