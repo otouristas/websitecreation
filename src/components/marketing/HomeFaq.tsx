@@ -20,7 +20,7 @@ export function HomeFaq({ locale = "en" }: HomeFaqProps) {
     <section className="border-t border-border py-20 lg:py-28">
       <SchemaMarkup schemas={[schema]} />
       <div className="container max-w-3xl">
-        <h2 className="font-display mb-3 text-center text-3xl font-semibold md:text-4xl">
+        <h2 className="mb-3 text-center text-3xl font-bold md:text-4xl">
           {isEl ? elHome.faqTitle : "Questions buyers actually ask"}
         </h2>
         <p className="mx-auto mb-10 max-w-xl text-center text-muted-foreground">

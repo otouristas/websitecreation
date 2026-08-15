@@ -102,7 +102,7 @@ export function HomePageView({ locale }: { locale: SiteLocale }) {
           </section>
           <section className="bg-foreground py-[var(--marketing-section-y)] text-center text-background">
             <div className="container max-w-2xl">
-              <h2 className="font-display mb-4 text-3xl font-semibold md:text-4xl">{elHome.finalCta.title}</h2>
+              <h2 className="mb-4 text-3xl font-bold md:text-4xl">{elHome.finalCta.title}</h2>
               <p className="mb-8 text-background/80">{elHome.finalCta.body}</p>
               <div className="flex flex-col justify-center gap-4 sm:flex-row">
                 <Link href={lp('/get-started')} className="btn bg-background px-8 py-4 font-semibold text-foreground hover:bg-background/90">
@@ -184,7 +184,7 @@ export function HomePageView({ locale }: { locale: SiteLocale }) {
         </section>
         <section className="bg-foreground py-[var(--marketing-section-y)] text-center text-background">
           <div className="container max-w-2xl">
-            <h2 className="font-display mb-6 text-3xl font-semibold md:text-4xl">Ready for a site that wins bookings?</h2>
+            <h2 className="mb-6 text-3xl font-bold md:text-4xl">Ready for a site that wins bookings?</h2>
             <p className="mb-10 text-lg text-background/80">
               Tell us about your hotel, rent-a-car or tour brand — free quote within 24 hours.
             </p>

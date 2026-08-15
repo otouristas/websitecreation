@@ -6,53 +6,53 @@
    ========================================================================== */
 
 :root {
-  /* Editorial Mediterranean: warm paper, ink, copper */
-  --background: 36 33% 97%;
-  --foreground: 28 18% 10%;
+  /* Background & Surface */
+  --background: 210 20% 98%;
+  --foreground: 222 47% 11%;
 
-  --card: 36 40% 99%;
-  --card-foreground: 28 18% 10%;
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
 
-  --popover: 36 40% 99%;
-  --popover-foreground: 28 18% 10%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 47% 11%;
 
   /* Brand Colors */
-  --primary: 24 72% 38%;
-  --primary-foreground: 36 40% 98%;
-  --primary-glow: 24 80% 52%;
+  --primary: 217 91% 60%;
+  --primary-foreground: 0 0% 100%;
+  --primary-glow: 217 91% 70%;
 
-  --secondary: 188 38% 24%;
-  --secondary-foreground: 36 40% 98%;
+  --secondary: 142 76% 36%;
+  --secondary-foreground: 0 0% 100%;
 
-  --accent: 24 55% 92%;
-  --accent-foreground: 24 72% 28%;
+  --accent: 142 69% 58%;
+  --accent-foreground: 0 0% 100%;
 
   /* Utility Colors */
-  --muted: 32 22% 93%;
-  --muted-foreground: 28 10% 36%;
+  --muted: 210 20% 96%;
+  --muted-foreground: 215 20% 38%;
 
-  --success: 152 42% 32%;
+  --success: 142 76% 36%;
   --success-foreground: 0 0% 100%;
 
   --warning: 38 92% 50%;
   --warning-foreground: 0 0% 100%;
 
-  --destructive: 0 72% 46%;
+  --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 100%;
 
   /* Borders & Inputs */
-  --border: 32 16% 86%;
-  --input: 32 16% 86%;
-  --ring: 24 72% 38%;
+  --border: 214 32% 91%;
+  --input: 214 32% 91%;
+  --ring: 217 91% 60%;
 
   /* Border Radius */
-  --radius: 0.75rem;
+  --radius: 1rem;
 
   /* Marketing / hero glow (used by ProductHero) */
-  --glow: hsl(24 72% 38% / 0.16);
+  --glow: hsl(217 91% 60% / 0.22);
 
-  /* Fixed marketing header */
-  --site-header-height: 4.25rem;
+  /* Fixed marketing header (brand lockup + tagline + vertical padding) */
+  --site-header-height: 5rem;
 
   /* Marketing layout (shared homepage / platform / blog) */
   --marketing-section-y: 5rem;
@@ -60,11 +60,11 @@
   --marketing-container-narrow: 48rem;
 
   /* Gradients */
-  --gradient-primary: linear-gradient(135deg, hsl(24 72% 38%) 0%, hsl(18 78% 28%) 100%);
-  --gradient-secondary: linear-gradient(135deg, hsl(188 38% 24%) 0%, hsl(188 32% 36%) 100%);
-  --gradient-hero: linear-gradient(180deg, hsl(36 40% 98%) 0%, hsl(32 28% 94%) 100%);
-  --gradient-card: linear-gradient(135deg, hsl(36 40% 99%) 0%, hsl(36 28% 96%) 100%);
-  --gradient-accent: linear-gradient(135deg, hsl(24 72% 38%) 0%, hsl(24 80% 48%) 100%);
+  --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(142 69% 58%) 100%);
+  --gradient-secondary: linear-gradient(135deg, hsl(142 76% 36%) 0%, hsl(158 64% 52%) 100%);
+  --gradient-hero: linear-gradient(180deg, hsl(210 20% 98%) 0%, hsl(217 91% 95%) 100%);
+  --gradient-card: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(210 20% 99%) 100%);
+  --gradient-accent: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(217 91% 70%) 100%);
 
   /* Shadows */
   --shadow-soft: 0 1px 3px hsl(222 47% 11% / 0.06), 0 1px 2px hsl(222 47% 11% / 0.04);
@@ -81,33 +81,33 @@
 
 @media (min-width: 768px) {
   :root {
-    --site-header-height: 4.75rem;
+    --site-header-height: 6rem;
   }
 }
 
 /* 🌙 Dark Mode */
 .dark {
-  --background: 28 16% 7%;
-  --foreground: 36 28% 96%;
+  --background: 222 47% 11%;
+  --foreground: 210 20% 98%;
 
-  --card: 28 14% 11%;
-  --card-foreground: 36 28% 96%;
+  --card: 217 19% 15%;
+  --card-foreground: 210 20% 98%;
 
-  --popover: 28 14% 11%;
-  --popover-foreground: 36 28% 96%;
+  --popover: 217 19% 15%;
+  --popover-foreground: 210 20% 98%;
 
-  --primary: 28 78% 58%;
-  --primary-foreground: 28 18% 8%;
-  --primary-glow: 28 86% 68%;
+  --primary: 217 91% 60%;
+  --primary-foreground: 0 0% 100%;
+  --primary-glow: 217 91% 70%;
 
-  --secondary: 188 32% 42%;
-  --secondary-foreground: 36 28% 96%;
+  --secondary: 142 76% 36%;
+  --secondary-foreground: 0 0% 100%;
 
-  --accent: 28 20% 16%;
-  --accent-foreground: 28 78% 72%;
+  --accent: 142 69% 58%;
+  --accent-foreground: 0 0% 100%;
 
-  --muted: 28 12% 14%;
-  --muted-foreground: 32 12% 68%;
+  --muted: 217 19% 20%;
+  --muted-foreground: 215 16% 65%;
 
   --success: 142 76% 36%;
   --success-foreground: 0 0% 100%;
@@ -118,12 +118,12 @@
   --destructive: 0 62% 50%;
   --destructive-foreground: 0 0% 100%;
 
-  --border: 28 12% 20%;
-  --input: 28 12% 20%;
-  --ring: 28 78% 58%;
+  --border: 217 19% 25%;
+  --input: 217 19% 25%;
+  --ring: 217 91% 60%;
 
-  --gradient-hero: linear-gradient(180deg, hsl(28 16% 7%) 0%, hsl(28 18% 12%) 100%);
-  --gradient-card: linear-gradient(135deg, hsl(28 14% 11%) 0%, hsl(28 14% 14%) 100%);
+  --gradient-hero: linear-gradient(180deg, hsl(222 47% 11%) 0%, hsl(217 91% 18%) 100%);
+  --gradient-card: linear-gradient(135deg, hsl(217 19% 15%) 0%, hsl(217 19% 17%) 100%);
 
   --shadow-soft: 0 1px 3px hsl(0 0% 0% / 0.3);
   --shadow-medium: 0 4px 6px hsl(0 0% 0% / 0.4);
@@ -160,12 +160,6 @@
   --radius-sm: calc(var(--radius) - 4px);
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
-  --font-serif: var(--font-display), ui-serif, Georgia, "Times New Roman", serif;
-}
-
-.font-display {
-  font-family: var(--font-serif);
-  letter-spacing: -0.03em;
 }
 
 /* ==========================================================================

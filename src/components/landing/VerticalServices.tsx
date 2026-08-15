@@ -63,7 +63,7 @@ export function VerticalServices({ locale = 'en' }: VerticalServicesProps) {
     <section className="py-[var(--marketing-section-y)]">
       <div className="container">
         <div className="mb-10 text-center">
-          <h2 className="font-display text-3xl font-semibold tracking-tight md:text-4xl">
+          <h2 className="text-3xl font-bold tracking-tight">
             {isEl ? 'Εξειδίκευση στον τουρισμό' : 'Built for tourism & travel'}
           </h2>
           <p className="mx-auto mt-2 max-w-2xl text-muted-foreground">
