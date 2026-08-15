@@ -141,18 +141,15 @@ export default function Header({ locale: localeProp }: { locale?: SiteLocale }):
       <nav
         className={`fixed left-0 right-0 top-0 z-50 overflow-visible transition-[box-shadow,background-color,border-color] duration-300 ease-out ${
           isScrolled
-            ? "border-b border-border/70 bg-background/85 shadow-[0_12px_40px_-12px_hsl(217_91%_60%_/_0.12)] backdrop-blur-xl dark:bg-background/80 dark:shadow-[0_8px_32px_-8px_hsl(0_0%_0%_/_0.4)]"
+            ? "border-b border-border/70 bg-background/90 shadow-[0_12px_40px_-16px_hsl(28_18%_10%_/_0.12)] backdrop-blur-xl dark:bg-background/80 dark:shadow-[0_8px_32px_-8px_hsl(0_0%_0%_/_0.4)]"
             : "border-b border-transparent bg-transparent"
         }`}
         aria-label="Main"
       >
         <div className="container mx-auto px-3 py-1.5 transition-all duration-300 sm:px-4 md:min-h-20 md:px-6 md:py-2">
           <div className="flex min-h-14 items-center justify-between gap-3 md:min-h-[4.25rem]">
-            <div className="flex min-w-0 flex-col justify-center gap-0.5">
-              <BrandLogo size="md" className="shrink-0 transition-transform hover:opacity-90" homeHref={lp("/")} />
-              <p className="max-w-[14rem] text-[9px] leading-snug text-muted-foreground sm:max-w-none sm:text-[10px] md:text-xs">
-                {nav.tagline}
-              </p>
+            <div className="flex min-w-0 items-center">
+              <BrandLogo size="md" className="shrink-0 transition-opacity hover:opacity-90" homeHref={lp("/")} />
             </div>
             <div className="hidden items-center gap-1 lg:flex lg:gap-2 xl:gap-3">
               <AgencyMegaMenu locale={locale} label={nav.agency} />

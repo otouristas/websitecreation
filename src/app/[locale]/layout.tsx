@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Geist, Geist_Mono, Source_Serif_4 } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import '../globals.css';
 import CookieConsent from '@/components/CookieConsent';
@@ -15,12 +15,19 @@ const SITE_URL = 'https://anotherseoguru.com';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
-  subsets: ['latin'],
+  subsets: ['latin', 'latin-ext'],
 });
 
 const geistMono = Geist_Mono({
   variable: '--font-geist-mono',
   subsets: ['latin'],
+});
+
+const displaySerif = Source_Serif_4({
+  variable: '--font-display',
+  subsets: ['latin', 'latin-ext', 'greek'],
+  weight: ['400', '600', '700'],
+  display: 'swap',
 });
 
 export function generateStaticParams() {
@@ -243,7 +250,11 @@ export default async function LocaleLayout({
   const isEl = locale === 'el';
 
   return (
-    <html lang={isEl ? 'el' : 'en'} className="scroll-smooth" suppressHydrationWarning>
+    <html
+      lang={isEl ? 'el' : 'en'}
+      className={`${displaySerif.variable} scroll-smooth`}
+      suppressHydrationWarning
+    >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         <link rel="alternate" type="text/plain" href="/llms.txt" title="LLMs documentation for AnotherSEOGuru" />
@@ -252,13 +263,13 @@ export default async function LocaleLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(buildStructuredDataGraph(isEl)) }}
         />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} relative antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${displaySerif.variable} relative antialiased`}>
         <GoogleAnalytics />
         <CookieConsent />
         <div className="pointer-events-none fixed inset-0 -z-10" aria-hidden>
           <MarketingPageBackground />
         </div>
-        <div className="relative z-0 min-h-dvh" data-locale={locale}>
+        <div className="relative z-0 min-h-dvh pb-20 lg:pb-0" data-locale={locale}>
           {children}
         </div>
         <StickyMobileCta />

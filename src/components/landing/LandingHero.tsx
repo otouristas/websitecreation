@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Check, Sparkles } from "lucide-react";
 import { elHome } from "@/data/translations/el-home";
 import { localizedPath, type SiteLocale } from "@/lib/i18n/locale";
 
@@ -9,108 +8,85 @@ export function LandingHero({ locale = "en" }: { locale?: SiteLocale }) {
   const t = isEl ? elHome.hero : null;
 
   return (
-    <section className="hero-below-header relative flex min-h-[70vh] items-center overflow-hidden border-b border-border/80 pb-12 lg:pb-16">
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-background/80 via-background/40 to-background" />
+    <section className="hero-below-header relative overflow-hidden pb-16 lg:pb-24">
       <div className="container relative z-10 mx-auto max-w-7xl px-4 sm:px-8">
-        <div className="grid items-center gap-10 lg:grid-cols-2">
-          <div className="text-center lg:text-left">
-            <div className="mb-5 flex justify-center lg:justify-start">
-              <div className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
-                <Sparkles className="h-4 w-4 shrink-0" aria-hidden />
-                {isEl ? t!.badge : "Tourism websites · Hotels · Rent-a-car · Travel AI"}
-              </div>
-            </div>
-            <h1 className="mb-5 text-4xl font-medium leading-[1.08] tracking-[-0.03em] text-foreground md:text-5xl lg:text-6xl">
-              <span className="gradient-text">
-                {isEl ? t!.h1Line1 : "AnotherSEOGuru"}
-              </span>
-              <br />
-              <span className="text-foreground">
-                {isEl ? t!.h1Line2 : "Websites for hotels & tours that win bookings"}
-              </span>
+        <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+          <div className="max-w-2xl">
+            <p className="mb-5 text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">
+              {isEl ? t!.badge : "Website design · E-shop · SEO · GEO / AEO"}
+            </p>
+            <h1 className="font-display mb-6 text-4xl font-semibold leading-[1.08] text-foreground sm:text-5xl lg:text-[3.4rem]">
+              {isEl ? (
+                <>
+                  {t!.h1Line1}
+                  <span className="block text-primary">{t!.h1Line2}</span>
+                </>
+              ) : (
+                <>
+                  Websites and SEO that
+                  <span className="block text-primary">win the booking</span>
+                </>
+              )}
             </h1>
-            <p className="mb-3 text-lg text-muted-foreground md:text-xl">
+            <p className="mb-4 text-lg leading-relaxed text-foreground/85 md:text-xl">
               {isEl
                 ? t!.sub
-                : "Web design, SEO, GEO & AEO for hotels, rent-a-car and travel brands — from €899 / €299 mo."}
+                : "AnotherSEOGuru designs and ranks websites, WooCommerce shops, and hotel sites for Greece and international markets — from €899, with GEO and AEO built in."}
             </p>
-            <p className="mx-auto mb-8 max-w-xl text-base text-muted-foreground lg:mx-0">
+            <p className="mb-8 text-base leading-relaxed text-muted-foreground">
               {isEl
                 ? t!.proof
-                : "70+ live projects across Greece and Europe. Built to rank on Google and AI search — free quote in EUR."}
+                : "70+ live projects. Transparent EUR pricing. One team for design, technical SEO, and AI-search visibility."}
             </p>
-            <div className="mb-8 flex flex-col justify-center gap-3 sm:flex-row lg:justify-start">
+            <div className="mb-8 flex flex-col gap-3 sm:flex-row">
               <Link
                 href={localizedPath(isEl ? "el" : "en", "/get-started")}
-                className="btn btn-gradient px-8 py-4 text-lg font-semibold"
+                className="inline-flex items-center justify-center rounded-full bg-foreground px-7 py-3.5 text-base font-semibold text-background transition hover:opacity-90"
               >
-                {isEl ? t!.ctaQuote : "Get a quote"}
+                {isEl ? t!.ctaQuote : "Get a free quote"}
               </Link>
-              <Link href={localizedPath(isEl ? "el" : "en", "/work")} className="btn btn-outline text-lg px-8 py-4">
-                {isEl ? t!.ctaWork : "See our work"}
-              </Link>
-              <Link href={localizedPath(isEl ? "el" : "en", "/contact")} className="btn btn-outline text-lg px-8 py-4">
-                {isEl ? t!.ctaContact : "Talk to us"}
+              <Link
+                href={localizedPath(isEl ? "el" : "en", "/work")}
+                className="inline-flex items-center justify-center rounded-full border border-border bg-card px-7 py-3.5 text-base font-semibold text-foreground transition hover:border-foreground/30"
+              >
+                {isEl ? t!.ctaWork : "See the work"}
               </Link>
             </div>
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-5 text-sm text-muted-foreground">
+            <dl className="grid grid-cols-2 gap-6 border-t border-border pt-6 sm:grid-cols-4">
               {(isEl
-                ? [t!.trust1, t!.trust2, t!.trust3]
-                : ["SEO-ready from day one", "Multilingual sites", "Agency + technical support"]
-              ).map((label) => (
-                <span key={label} className="inline-flex items-center gap-2">
-                  <Check className="w-4 h-4 text-[hsl(var(--success))]" aria-hidden />
-                  {label}
-                </span>
+                ? [
+                    [t!.stats.projectsVal, t!.stats.projects],
+                    [t!.stats.marketsVal, t!.stats.markets],
+                    [t!.stats.languagesVal, t!.stats.languages],
+                    [t!.stats.supportVal, t!.stats.support],
+                  ]
+                : [
+                    ["70+", "Projects"],
+                    ["€899", "Website from"],
+                    ["€299", "SEO / month"],
+                    ["EN / EL", "Languages"],
+                  ]
+              ).map(([value, label]) => (
+                <div key={label}>
+                  <dt className="sr-only">{label}</dt>
+                  <dd className="font-display text-2xl font-semibold text-foreground">{value}</dd>
+                  <p className="mt-1 text-xs uppercase tracking-wider text-muted-foreground">{label}</p>
+                </div>
               ))}
-            </div>
+            </dl>
           </div>
           <div className="relative mx-auto w-full max-w-xl lg:max-w-none">
-            <div className="relative z-10 overflow-hidden rounded-2xl border-2 border-border shadow-strong">
+            <div className="overflow-hidden rounded-[1.5rem] border border-border bg-card shadow-strong">
               <Image
                 src="/portfolio/discover-cyclades.webp"
-                alt={isEl ? t!.imageAlt : "Tourism website example by AnotherSEOGuru"}
+                alt={isEl ? t!.imageAlt : "Tourism website designed by AnotherSEOGuru"}
                 width={1200}
                 height={800}
-                className="w-full h-auto object-cover object-top"
+                className="h-auto w-full object-cover object-top"
                 sizes="(max-width: 1024px) 100vw, 630px"
                 priority
                 fetchPriority="high"
               />
-            </div>
-            <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-2xl blur-2xl -z-10" />
-          </div>
-        </div>
-        <div className="mt-12 mx-auto max-w-4xl">
-          <div className="rounded-2xl border border-border bg-card p-6 shadow-medium">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-              {isEl ? (
-                <>
-                  <div>
-                    <div className="text-2xl md:text-3xl font-bold">{t!.stats.projectsVal}</div>
-                    <div className="text-sm text-muted-foreground">{t!.stats.projects}</div>
-                  </div>
-                  <div>
-                    <div className="text-2xl md:text-3xl font-bold">{t!.stats.marketsVal}</div>
-                    <div className="text-sm text-muted-foreground">{t!.stats.markets}</div>
-                  </div>
-                  <div>
-                    <div className="text-2xl md:text-3xl font-bold">{t!.stats.languagesVal}</div>
-                    <div className="text-sm text-muted-foreground">{t!.stats.languages}</div>
-                  </div>
-                  <div>
-                    <div className="text-2xl md:text-3xl font-bold">{t!.stats.supportVal}</div>
-                    <div className="text-sm text-muted-foreground">{t!.stats.support}</div>
-                  </div>
-                </>
-              ) : (
-                <>
-                  <div><div className="text-2xl md:text-3xl font-bold">70+</div><div className="text-sm text-muted-foreground">Projects</div></div>
-                  <div><div className="text-2xl md:text-3xl font-bold">5</div><div className="text-sm text-muted-foreground">Markets</div></div>
-                  <div><div className="text-2xl md:text-3xl font-bold">EN/EL</div><div className="text-sm text-muted-foreground">Languages</div></div>
-                  <div><div className="text-2xl md:text-3xl font-bold">24/7</div><div className="text-sm text-muted-foreground">Support</div></div>
-                </>
-              )}
             </div>
           </div>
         </div>

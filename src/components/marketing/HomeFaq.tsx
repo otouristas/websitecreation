@@ -17,20 +17,32 @@ export function HomeFaq({ locale = "en" }: HomeFaqProps) {
   });
 
   return (
-    <section className="py-20 lg:py-28 border-t border-border">
+    <section className="border-t border-border py-20 lg:py-28">
       <SchemaMarkup schemas={[schema]} />
       <div className="container max-w-3xl">
-        <h2 className="text-3xl font-bold text-center mb-12">
-          {isEl ? elHome.faqTitle : "Frequently asked questions"}
+        <h2 className="font-display mb-3 text-center text-3xl font-semibold md:text-4xl">
+          {isEl ? elHome.faqTitle : "Questions buyers actually ask"}
         </h2>
-        <dl className="space-y-8">
+        <p className="mx-auto mb-10 max-w-xl text-center text-muted-foreground">
+          {isEl
+            ? "Άμεσες απαντήσεις για κόστος, SEO, GEO/AEO και χρόνο παράδοσης."
+            : "Direct answers on cost, SEO, GEO/AEO, and delivery time."}
+        </p>
+        <div className="divide-y divide-border rounded-2xl border border-border bg-card">
           {items.map((f) => (
-            <div key={f.question}>
-              <dt className="font-semibold text-foreground mb-2">{f.question}</dt>
-              <dd className="text-muted-foreground leading-relaxed">{f.answer}</dd>
-            </div>
+            <details key={f.question} className="group px-5 py-1">
+              <summary className="cursor-pointer list-none py-4 font-semibold text-foreground [&::-webkit-details-marker]:hidden">
+                <span className="flex items-start justify-between gap-4">
+                  {f.question}
+                  <span className="mt-0.5 text-muted-foreground transition group-open:rotate-45" aria-hidden>
+                    +
+                  </span>
+                </span>
+              </summary>
+              <p className="pb-5 text-sm leading-relaxed text-muted-foreground">{f.answer}</p>
+            </details>
           ))}
-        </dl>
+        </div>
       </div>
     </section>
   );

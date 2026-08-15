@@ -3,48 +3,46 @@ export interface HomeFaqItem {
   readonly answer: string;
 }
 
-/**
- * Single FAQ source for homepage schema + UI (Vite landing + Next positioning merged).
- */
+/** Agency FAQ aligned to GSC commercial queries — not the software product. */
 export const HOME_FAQ_ITEMS: readonly HomeFaqItem[] = [
   {
-    question: "What is AnotherSEOGuru?",
+    question: 'What does AnotherSEOGuru do?',
     answer:
-      "AnotherSEOGuru is SEO software built around Google Search Console, with multi-model AI workflows and modules for clustering, tracking, audits, and LLM visibility. We also offer agency services when you want done-for-you execution.",
+      'AnotherSEOGuru is a web design and SEO agency. We build websites, WooCommerce shops, and hotel sites, then grow them with technical SEO, local SEO, GEO, and AEO so you win bookings and leads — not just traffic.',
   },
   {
-    question: "How does AnotherSEOGuru compare to Ahrefs or Semrush?",
+    question: 'How much does a website cost?',
     answer:
-      "Those tools excel at large-scale keyword indexes and historical links. We focus on operational SEO: connecting your verified property, prioritizing queries and pages, clustering intent, and shipping a weekly backlog - plus optional AI execution. See our comparison pages for nuance.",
+      'Website packages start at €899 for small businesses. Hotel and multi-property projects typically sit in the €1,799–€2,999+ range. Every site ships SEO-ready: speed, schema, metadata, and a content plan.',
   },
   {
-    question: "Do I need to connect Google Search Console?",
+    question: 'How much does SEO cost in Greece?',
     answer:
-      "Connecting Search Console unlocks queries, pages, and performance data in the workspace. Many recommendations assume that connection; some tools accept other inputs - check in-product for your use case.",
+      'Monthly SEO starts at €299 for local businesses and scales with competition and keyword scope. A full retainer includes technical work, on-page, schema, content, links, and GEO/AEO for AI answers.',
   },
   {
-    question: "What AI models can I use?",
+    question: 'What is GEO vs SEO vs AEO?',
     answer:
-      "The product integrates multiple providers (for example OpenAI, Anthropic, Google) depending on plan and feature. Exact models and availability are shown in the app.",
+      'SEO ranks you in classic Google results. AEO (Answer Engine Optimization) structures content so AI systems can extract a direct answer. GEO (Generative Engine Optimization) helps your brand get cited in ChatGPT, Perplexity, Gemini, and Google AI Overviews. We implement all three on every site.',
   },
   {
-    question: "Can I use free tools without signing up?",
+    question: 'Do you build hotel and rent-a-car websites?',
     answer:
-      "Some utilities run on the marketing site; deeper generators and saved projects typically require an account. Many free-tool URLs route to the app for the full experience.",
+      'Yes. Tourism is our deepest vertical: hotels, villas, rent-a-car, and tours. We design for direct bookings, multilingual pages, and island/city SEO so you rely less on OTAs.',
   },
   {
-    question: "Is the platform the same as your agency services?",
+    question: 'How long until SEO shows results?',
     answer:
-      "No. The platform is self-serve software. Agency services are retainers for web design, local SEO, content, and campaigns - we can work alongside your in-house use of the product.",
+      'Search Console impressions usually move in 3–6 months. Meaningful booking or lead growth typically takes 6–12 months, depending on competition and how fast content ships.',
   },
   {
-    question: "What happens to my data if I cancel?",
+    question: 'Is SEO included in the website price?',
     answer:
-      "Export policies and retention are defined in the product terms at signup. Export important reports before you churn; we recommend treating the app as the system of record while active.",
+      'Yes. Every website includes technical SEO, schema, Core Web Vitals work, and metadata. Ongoing ranking work is a separate monthly package from €299.',
   },
   {
-    question: "Do you offer white-label reports?",
+    question: 'SEO or Google Ads — which should I buy first?',
     answer:
-      "Agency-oriented plans in the product may include client-ready reporting; confirm current plan details in-app. Our agency team can also deliver branded deliverables on retainer.",
+      'If you need leads this week, ads can fill the gap. If you want compounding demand you own, start with the website and SEO. Most clients do a short ads burst while organic rankings build.',
   },
 ];

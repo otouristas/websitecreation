@@ -1,4 +1,5 @@
 export { LandingHero } from "./LandingHero";
+export { HomeOfferGrid } from "./HomeOfferGrid";
 export { ProblemSolutionSection } from "./ProblemSolutionSection";
 export { LandingComparisonTable } from "./LandingComparisonTable";
 export { LandingTestimonials } from "./LandingTestimonials";
