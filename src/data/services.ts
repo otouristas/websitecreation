@@ -84,7 +84,7 @@ export const services: Service[] = [
         name: 'AI Visibility (GEO / AEO)',
         shortName: 'AI SEO',
         description:
-            'AI SEO agency services for Generative Engine Optimization (GEO) and Answer Engine Optimization (AEO). Get cited in ChatGPT, Perplexity and Google AI Overviews — not just classic rankings.',
+            'AI SEO agency services for Generative Engine Optimization (GEO) and Answer Engine Optimization (AEO). Get cited in ChatGPT, Perplexity and Google AI Overviews, not just classic rankings.',
         metaTitle: 'AI SEO Agency | GEO & AEO Services',
         metaDescription:
             'Hire an AI SEO agency for GEO and AEO. Schema, entities, citation-ready content and monitoring so your brand shows up in AI answers and search.',
@@ -119,8 +119,8 @@ export const services: Service[] = [
         slug: 'content-creation',
         name: 'Content Creation',
         shortName: 'Content',
-        description: 'SEO content services: service pages, location pages, and blogs mapped to real search demand — built to rank and convert.',
-        metaTitle: 'SEO Content Services — Pages & Blogs That Rank',
+        description: 'SEO content services: service pages, location pages, and blogs mapped to real search demand, built to rank and convert.',
+        metaTitle: 'SEO Content Services, Pages & Blogs That Rank',
         metaDescription: 'SEO content creation for service pages, location pages, and blogs. Intent-led copy with FAQs and internal linking for organic growth.',
         features: [
             'SEO copywriting',
@@ -137,7 +137,7 @@ export const services: Service[] = [
         name: 'Local SEO & GBP',
         shortName: 'Local SEO',
         description: 'Local SEO services for map pack and “near me” growth. We optimize Google Business Profile, citations, reviews, and location pages.',
-        metaTitle: 'Local SEO Services — Map Pack, GBP & Near Me',
+        metaTitle: 'Local SEO Services, Map Pack, GBP & Near Me',
         metaDescription: 'Local SEO services and local SEO agency support: Google Business Profile, citations, reviews, and city pages that win map pack rankings.',
         features: [
             'GBP optimization',
@@ -153,8 +153,8 @@ export const services: Service[] = [
         slug: 'link-building',
         name: 'Link Building',
         shortName: 'Backlinks',
-        description: 'White-hat link building services that earn relevant, editorial backlinks — not spam directories — to grow authority and rankings.',
-        metaTitle: 'Link Building Services — White-Hat Authority Growth',
+        description: 'White-hat link building services that earn relevant, editorial backlinks, not spam directories, to grow authority and rankings.',
+        metaTitle: 'Link Building Services, White-Hat Authority Growth',
         metaDescription: 'Professional link building services: high-authority guest posts, digital PR, and niche-relevant placements with spam monitoring.',
         features: [
             'High DA guest posts',
@@ -172,7 +172,7 @@ export const services: Service[] = [
         shortName: 'Audits',
         description: 'SEO audit services and technical SEO services: prioritized crawl, indexation, Core Web Vitals, and on-page fixes that unlock rankings.',
         metaTitle: 'SEO Audit Services & Technical SEO Audits',
-        metaDescription: 'Professional SEO audit services: technical health, Core Web Vitals, crawlability, indexation, competitor gaps — plus a clear fix roadmap.',
+        metaDescription: 'Professional SEO audit services: technical health, Core Web Vitals, crawlability, indexation, competitor gaps, plus a clear fix roadmap.',
         features: [
             'Technical health check',
             'Core Web Vitals analysis',
@@ -205,7 +205,7 @@ export const services: Service[] = [
         name: 'E-shop SEO',
         shortName: 'E-shop SEO',
         description: 'Ecommerce SEO services for online stores: category and product optimization, schema, speed, and content that drives organic sales.',
-        metaTitle: 'Ecommerce SEO Services — Categories, Products & Sales',
+        metaTitle: 'Ecommerce SEO Services, Categories, Products & Sales',
         metaDescription: 'Ecommerce SEO services for WooCommerce and online stores: category/product SEO, product schema, mobile speed, and conversion-focused content.',
         features: [
             'E-shop technical audit',

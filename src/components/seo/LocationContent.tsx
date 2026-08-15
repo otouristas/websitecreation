@@ -60,10 +60,10 @@ export function LocationContent({ location, service, industry, locale: localePro
                   : `Pricing in ${location.currency ?? 'USD'} for ${location.country ?? 'your market'}.`;
 
     return (
-        <div className="prose prose-lg max-w-none text-gray-700">
+        <div className="prose prose-lg max-w-none text-foreground">
             <p className="text-sm font-medium text-primary not-prose mb-6">{currencyNote}</p>
             <div className="mb-12">
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                <h2 className="text-3xl font-bold text-foreground mb-6">
                     The Smart Choice for {city} Businesses
                 </h2>
                 <p className="mb-4">
@@ -82,37 +82,37 @@ export function LocationContent({ location, service, industry, locale: localePro
                     <p className="mt-4">{serviceDepth}</p>
                 ) : null}
                 <p className="mt-4">
-                    <strong>Transparent pricing:</strong> websites start at €899 and monthly SEO from €299/mo - see our{' '}
-                    <Link href={lp('/pricing')} className="text-blue-600 underline">pricing &amp; packages</Link> or{' '}
-                    <Link href={lp('/get-started')} className="text-blue-600 underline">request a free quote</Link>.
+                    <strong>Transparent pricing:</strong> websites start at €1.200 and monthly SEO from €400/mo - see our{' '}
+                    <Link href={lp('/pricing')} className="text-primary underline">pricing &amp; packages</Link> or{' '}
+                    <Link href={lp('/get-started')} className="text-primary underline">request a free quote</Link>.
                 </p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-8 mb-16">
-                <div className="bg-gray-50 p-8 rounded-xl border border-gray-100">
-                    <h3 className="text-xl font-bold text-blue-600 mb-3">1. Data-Driven Research</h3>
-                    <p className="text-gray-600">
+                <div className="bg-surface-raised p-8 rounded-xl border border-hairline">
+                    <h3 className="text-xl font-bold text-primary mb-3">1. Data-Driven Research</h3>
+                    <p className="text-muted-foreground">
                         We start by analyzing your top competitors in {city}. We identify the exact keywords driving their traffic and
                         reverse-engineer their success to give you a competitive advantage.
                     </p>
                 </div>
-                <div className="bg-gray-50 p-8 rounded-xl border border-gray-100">
-                    <h3 className="text-xl font-bold text-blue-600 mb-3">2. Technical Foundation</h3>
-                    <p className="text-gray-600">
+                <div className="bg-surface-raised p-8 rounded-xl border border-hairline">
+                    <h3 className="text-xl font-bold text-primary mb-3">2. Technical Foundation</h3>
+                    <p className="text-muted-foreground">
                         Speed matters. We perform a deep technical audit to ensure your site loads instantly for users in {city},
                         passing all Core Web Vitals checks with flying colors.
                     </p>
                 </div>
-                <div className="bg-gray-50 p-8 rounded-xl border border-gray-100">
-                    <h3 className="text-xl font-bold text-blue-600 mb-3">3. Semantic Authority</h3>
-                    <p className="text-gray-600">
+                <div className="bg-surface-raised p-8 rounded-xl border border-hairline">
+                    <h3 className="text-xl font-bold text-primary mb-3">3. Semantic Authority</h3>
+                    <p className="text-muted-foreground">
                         We optimize your pages for &quot;Entities&quot; and &quot;Topics&quot;, not just keywords. This modern approach helps
                         Google understand exactly what services you offer to the {city} community.
                     </p>
                 </div>
-                <div className="bg-gray-50 p-8 rounded-xl border border-gray-100">
-                    <h3 className="text-xl font-bold text-blue-600 mb-3">4. Local Growth</h3>
-                    <p className="text-gray-600">
+                <div className="bg-surface-raised p-8 rounded-xl border border-hairline">
+                    <h3 className="text-xl font-bold text-primary mb-3">4. Local Growth</h3>
+                    <p className="text-muted-foreground">
                         From citation building to earning authoritative backlinks, we build the external signals that verify
                         your business as a trusted leader in the {state} market.
                     </p>
@@ -120,8 +120,8 @@ export function LocationContent({ location, service, industry, locale: localePro
             </div>
 
             {location.neighborhoods && location.neighborhoods.length > 0 && (
-                <div className="mb-12 bg-blue-50 p-8 rounded-2xl">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                <div className="mb-12 bg-primary/5 p-8 rounded-[10px]">
+                    <h3 className="text-2xl font-bold text-foreground mb-4">
                         Serving All of {city} & Surrounding Areas
                     </h3>
                     <p className="mb-6">
@@ -130,7 +130,7 @@ export function LocationContent({ location, service, industry, locale: localePro
                     </p>
                     <div className="flex flex-wrap gap-3">
                         {location.neighborhoods.map((hood) => (
-                            <span key={hood} className="px-4 py-2 bg-white rounded-full text-sm font-medium text-blue-800 shadow-sm border border-blue-100">
+                            <span key={hood} className="px-4 py-2 bg-surface rounded-full text-sm font-medium text-primary shadow-sm border border-hairline">
                                 {hood}
                             </span>
                         ))}
@@ -139,41 +139,41 @@ export function LocationContent({ location, service, industry, locale: localePro
             )}
 
             <div className="not-prose mb-12">
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Explore more</h3>
+                <h3 className="text-xl font-bold text-foreground mb-4">Explore more</h3>
                 <div className="flex flex-wrap gap-3 text-sm">
                     {service ? (
-                        <Link href={lp(`/services/${service.slug}`)} className="rounded-full border border-gray-200 px-4 py-2 text-blue-700 hover:bg-blue-50">
+                        <Link href={lp(`/services/${service.slug}`)} className="rounded-full border border-hairline px-4 py-2 text-primary hover:bg-primary/5">
                             {service.name} overview
                         </Link>
                     ) : null}
-                    <Link href={lp('/services')} className="rounded-full border border-gray-200 px-4 py-2 text-blue-700 hover:bg-blue-50">All services</Link>
-                    <Link href={lp('/solutions')} className="rounded-full border border-gray-200 px-4 py-2 text-blue-700 hover:bg-blue-50">Solutions by industry</Link>
-                    <Link href={lp('/pricing')} className="rounded-full border border-gray-200 px-4 py-2 text-blue-700 hover:bg-blue-50">Pricing &amp; packages</Link>
+                    <Link href={lp('/services')} className="rounded-full border border-hairline px-4 py-2 text-primary hover:bg-primary/5">All services</Link>
+                    <Link href={lp('/solutions')} className="rounded-full border border-hairline px-4 py-2 text-primary hover:bg-primary/5">Solutions by industry</Link>
+                    <Link href={lp('/pricing')} className="rounded-full border border-hairline px-4 py-2 text-primary hover:bg-primary/5">Pricing &amp; packages</Link>
                     {(() => {
                         const guide = service ? SERVICE_GUIDE_EN[service.slug] : null;
                         const g = guide ?? { href: '/blog/how-much-does-seo-cost', label: 'How much does SEO cost?' };
                         return (
-                            <Link href={lp(g.href)} className="rounded-full border border-gray-200 px-4 py-2 text-blue-700 hover:bg-blue-50">{g.label}</Link>
+                            <Link href={lp(g.href)} className="rounded-full border border-hairline px-4 py-2 text-primary hover:bg-primary/5">{g.label}</Link>
                         );
                     })()}
-                    <Link href={lp('/work')} className="rounded-full border border-gray-200 px-4 py-2 text-blue-700 hover:bg-blue-50">See our work</Link>
+                    <Link href={lp('/work')} className="rounded-full border border-hairline px-4 py-2 text-primary hover:bg-primary/5">See our work</Link>
                     {(pack?.portfolioSlugs ?? []).slice(0, 2).map((slug) => (
-                        <Link key={slug} href={lp(`/work/${slug}`)} className="rounded-full border border-gray-200 px-4 py-2 text-blue-700 hover:bg-blue-50">
+                        <Link key={slug} href={lp(`/work/${slug}`)} className="rounded-full border border-hairline px-4 py-2 text-primary hover:bg-primary/5">
                             Case: {slug.replace(/-/g, ' ')}
                         </Link>
                     ))}
                 </div>
             </div>
 
-            <div className="text-center py-12 border-t border-gray-100 mt-12">
+            <div className="text-center py-12 border-t border-hairline mt-12">
                 <h3 className="text-2xl font-bold mb-4">Ready to Grow Your Business in {city}?</h3>
-                <p className="mb-8 text-gray-600 max-w-2xl mx-auto">
+                <p className="mb-8 text-muted-foreground max-w-2xl mx-auto">
                     Don&apos;t settle for &quot;average&quot; results. Partner with the agency that understands the {city} market
                     and has the technology to get you to #1.
                 </p>
                 <Link
                     href={lp('/contact')}
-                    className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-200 bg-blue-600 rounded-lg hover:bg-blue-700 hover:shadow-lg transform hover:-translate-y-0.5"
+                    className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-primary-foreground transition-all duration-200 bg-primary rounded-lg hover:bg-primary hover:shadow-lg transform hover:-translate-y-0.5"
                 >
                     Get Your Free {city} SEO Proposal
                 </Link>

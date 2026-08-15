@@ -1,7 +1,7 @@
 ---
 slug: pillar-search-console-mastery
-title: Search Console Mastery — From Raw Data to a Weekly SEO System
-description: Hub for editorial content on Google Search Console — queries, pages, debugging, and turning exports into prioritized work.
+title: Search Console Mastery - From Raw Data to a Weekly SEO System
+description: Hub for editorial content on Google Search Console - queries, pages, debugging, and turning exports into prioritized work.
 date: 2026-02-01
 author: AnotherSEOGuru Editorial Team
 pillarHub: true
@@ -14,36 +14,36 @@ faq:
   - question: "Should I separate properties by subdomain?"
     answer: "Prefer verified domain property when possible; segment by subdirectory in reports. Hreflang sites need careful URL inspection."
   - question: "What's the first fix for new tourism sites?"
-    answer: "Indexation and money page clicks — ensure location and fleet/room pages are indexed and linked from homepage."
+    answer: "Indexation and money page clicks - ensure location and fleet/room pages are indexed and linked from homepage."
   - question: "When do I need agency help with GSC?"
-    answer: "When backlog exceeds 8 weeks, redesign migration pending, or multi-property clustering exceeds team capacity — get scoped."
+    answer: "When backlog exceeds 8 weeks, redesign migration pending, or multi-property clustering exceeds team capacity - get scoped."
 ---
 
-Search Console is the ground truth for how Google surfaces your site: queries, pages, countries, devices, and core technical status. The gap is rarely "more data" — it is **a repeatable way to decide what to ship this week**. This pillar connects guides on local visibility, tourism SEO, and GBP with workflows that cluster queries, spot cannibalization, and tie recommendations to verified properties.
+Search Console is the ground truth for how Google surfaces your site: queries, pages, countries, devices, and core technical status. The gap is rarely "more data" - it is **a repeatable way to decide what to ship this week**. This pillar connects guides on local visibility, tourism SEO, and GBP with workflows that cluster queries, spot cannibalization, and tie recommendations to verified properties.
 
-Whether you operate a home services business, a [hotel in the Cyclades](/en/blog/topiko-seo-kykladon), or a [rent-a-car desk](/en/solutions/rent-a-car) at the airport, Search Console tells you where opportunity already exists — if you know how to read it.
+Whether you operate a home services business, a [hotel in the Cyclades](/en/blog/topiko-seo-kykladon), or a [rent-a-car desk](/en/solutions/rent-a-car) at the airport, Search Console tells you where opportunity already exists - if you know how to read it.
 
 ## What to read first
 
 ### Local and map visibility
 
-- [The ultimate guide to local SEO](/en/blog/local-seo-guide) — map pack plus on-site reinforcement for home services and tourism.
-- [Google Business Profile masterclass](/en/blog/google-business-profile-masterclass) — the surface many users see before they click organic.
+- [The ultimate guide to local SEO](/en/blog/local-seo-guide) - map pack plus on-site reinforcement for home services and tourism.
+- [Google Business Profile masterclass](/en/blog/google-business-profile-masterclass) - the surface many users see before they click organic.
 
-Pair GBP Insights with GSC landing-page data — mismatches between map clicks and site clicks reveal UX or messaging gaps.
+Pair GBP Insights with GSC landing-page data - mismatches between map clicks and site clicks reveal UX or messaging gaps.
 
 ### Operational workflows
 
-- [GSC query prioritization framework](/en/blog/gsc-query-prioritization-framework) — four buckets: protect winners, fix near-misses, test new intent, deprioritize noise.
-- [GSC weekly ops playbook](/en/blog/gsc-weekly-ops-playbook) — one-hour loop: segment, cluster, ship three fixes, validate.
+- [GSC query prioritization framework](/en/blog/gsc-query-prioritization-framework) - four buckets: protect winners, fix near-misses, test new intent, deprioritize noise.
+- [GSC weekly ops playbook](/en/blog/gsc-weekly-ops-playbook) - one-hour loop: segment, cluster, ship three fixes, validate.
 
 These two articles are the **minimum viable SEO ops system** for in-house teams and agency client leads.
 
 ### Tourism-specific guides
 
-- [Rent-a-car website SEO (EL)](/en/blog/istoselida-enikiasis-autokinitou-seo) — airport and island query patterns
-- [Hotel website design (EL)](/en/blog/kataskevi-istoselidas-xenodoxeia) — room and location page strategy
-- [Cyclades local SEO (EL)](/en/blog/topiko-seo-kykladon) — island GBP and citations
+- [Rent-a-car website SEO (EL)](/en/blog/istoselida-enikiasis-autokinitou-seo) - airport and island query patterns
+- [Hotel website design (EL)](/en/blog/kataskevi-istoselidas-xenodoxeia) - room and location page strategy
+- [Cyclades local SEO (EL)](/en/blog/topiko-seo-kykladon) - island GBP and citations
 
 Use GSC language filters to segment Greek vs English queries on bilingual sites.
 
@@ -51,14 +51,14 @@ Use GSC language filters to segment Greek vs English queries on bilingual sites.
 
 Operational Search Console mastery uses:
 
-- **Keyword research & clustering** — group intent so you stop treating every query as a one-off
-- **Cannibalization detection** — when multiple URLs compete for the same intent
-- **Semantic keyword clustering** — align content architecture with how people search
-- **SEO health score** — roll technical and content signals into one prioritized view
+- **Keyword research & clustering** - group intent so you stop treating every query as a one-off
+- **Cannibalization detection** - when multiple URLs compete for the same intent
+- **Semantic keyword clustering** - align content architecture with how people search
+- **SEO health score** - roll technical and content signals into one prioritized view
 
 Software accelerates clustering; judgment still picks the three weekly fixes.
 
-## Search Console reports — priority order
+## Search Console reports - priority order
 
 | Report | Weekly use |
 |--------|------------|
@@ -85,28 +85,28 @@ For [hotels](/en/solutions/hotels), attribute direct booking engine conversions.
 
 ## Common Search Console mistakes
 
-1. **Chasing impressions without position context** — 50k impressions at position 45 isn't urgent
-2. **Ignoring mobile segment** — tourism skews mobile; desktop-only review misses reality
-3. **No cannibalization check** — two URLs split one intent; both underperform
-4. **Quarterly-only review** — seasonal businesses miss peak prep window
-5. **Fixing without hypothesis log** — can't learn what worked
+1. **Chasing impressions without position context** - 50k impressions at position 45 isn't urgent
+2. **Ignoring mobile segment** - tourism skews mobile; desktop-only review misses reality
+3. **No cannibalization check** - two URLs split one intent; both underperform
+4. **Quarterly-only review** - seasonal businesses miss peak prep window
+5. **Fixing without hypothesis log** - can't learn what worked
 
 ## Who this pillar is for
 
 - **In-house SEO leads** who own Search Console but need faster stakeholder narratives
-- **Agencies** standardizing weekly client reviews — see [agency playbooks pillar](/en/blog/pillar-agency-playbooks)
+- **Agencies** standardizing weekly client reviews - see [agency playbooks pillar](/en/blog/pillar-agency-playbooks)
 - **Local operators** who need Maps and organic to tell one story
 - **Tourism marketers** managing seasonal query spikes and multilingual properties
 
 ## Upstream and downstream hubs
 
-- **AI visibility:** [GEO/AEO playbook](/en/blog/geo-aeo-global-seo-playbook) — use GSC queries to inform FAQ and AEO content
-- **Technical SEO:** [Internal linking checklist](/en/blog/internal-linking-audit-checklist) — GSC pages with impressions but weak links
-- **Content architecture:** [Glossary strategy](/en/blog/glossary-strategy-internal-linking) — rising definitional queries
+- **AI visibility:** [GEO/AEO playbook](/en/blog/geo-aeo-global-seo-playbook) - use GSC queries to inform FAQ and AEO content
+- **Technical SEO:** [Internal linking checklist](/en/blog/internal-linking-audit-checklist) - GSC pages with impressions but weak links
+- **Content architecture:** [Glossary strategy](/en/blog/glossary-strategy-internal-linking) - rising definitional queries
 
 ## GEO/AEO tie-in
 
-Export top informational queries — "rent a car Greece license", "hotel near Parikia ferry" — into FAQ blocks with [structured data](/en/glossary?term=structured-data). GSC is your AEO brief generator; see [GEO Ellada](/en/blog/geo-aeo-ellada) for Greek market examples.
+Export top informational queries - "rent a car Greece license", "hotel near Parikia ferry" - into FAQ blocks with [structured data](/en/glossary?term=structured-data). GSC is your AEO brief generator; see [GEO Ellada](/en/blog/geo-aeo-ellada) for Greek market examples.
 
 ## Debugging common GSC anomalies
 
@@ -119,7 +119,7 @@ Export top informational queries — "rent a car Greece license", "hotel near Pa
 
 Escalate indexation blockers to [technical SEO pillar](/en/blog/pillar-technical-seo-in-house) before content work.
 
-## Benchmarks — what "good" looks like
+## Benchmarks - what "good" looks like
 
 Tourism sites after 6 months of weekly ops:
 
@@ -128,7 +128,7 @@ Tourism sites after 6 months of weekly ops:
 - Zero orphan location pages
 - GBP website clicks correlating with GSC landing page trends
 
-Use [portfolio case studies](/en/work) for vertical-specific timelines — Mykonos head terms take longer than Milos long-tail.
+Use [portfolio case studies](/en/work) for vertical-specific timelines - Mykonos head terms take longer than Milos long-tail.
 
 
 ## Weekly ops checklist (print this)
@@ -158,16 +158,16 @@ Prefer verified domain property when possible; segment by subdirectory in report
 
 ### What's the first fix for new tourism sites?
 
-Indexation and money page clicks — ensure location and fleet/room pages are indexed and linked from homepage.
+Indexation and money page clicks - ensure location and fleet/room pages are indexed and linked from homepage.
 
 ### When do I need agency help with GSC?
 
-When backlog exceeds 8 weeks, redesign migration pending, or multi-property clustering exceeds team capacity — [get scoped](/en/get-started).
+When backlog exceeds 8 weeks, redesign migration pending, or multi-property clustering exceeds team capacity - [get scoped](/en/get-started).
 
 ---
 
 ## Ready to Get Started?
 
-Tell us about your site, locations, and goals — we'll recommend a scoped plan with Search Console ops, content priorities, and clear next steps.
+Tell us about your site, locations, and goals - we'll recommend a scoped plan with Search Console ops, content priorities, and clear next steps.
 
 [Get started](/en/get-started) · [See our work](/en/work) · [Pricing](/en/pricing)

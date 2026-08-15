@@ -1,21 +1,30 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Inter, Geist_Mono } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import '../globals.css';
 import CookieConsent from '@/components/CookieConsent';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
 import StickyMobileCta from '@/components/StickyMobileCta';
 import FloatingContactCta from '@/components/FloatingContactCta';
-import { MarketingPageBackground } from '@/components/marketing';
 import { Analytics } from '@vercel/analytics/next';
 import { isValidLocale } from '@/lib/i18n/locale';
 import { CONTACT_EMAIL, PHONE_E164 } from '@/lib/contact-info';
 
 const SITE_URL = 'https://anotherseoguru.com';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin', 'latin-ext'],
+/**
+ * Inter is the design system's only text face, at weights 400-700.
+ *
+ * It also fixes a real bug: Geist ships no `greek` subset (cyrillic,
+ * cyrillic-ext, latin, latin-ext, vietnamese only), so Greek copy was
+ * rendering in a system fallback and mixed strings like "SEO για ξενοδοχεία"
+ * split across two typefaces. Greek is ~74% of our clicks.
+ */
+const inter = Inter({
+  variable: '--font-inter',
+  subsets: ['latin', 'latin-ext', 'greek', 'greek-ext'],
+  weight: ['400', '500', '600', '700'],
+  display: 'swap',
 });
 
 const geistMono = Geist_Mono({
@@ -252,12 +261,9 @@ export default async function LocaleLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(buildStructuredDataGraph(isEl)) }}
         />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} relative antialiased`}>
+      <body className={`${inter.variable} ${geistMono.variable} relative antialiased`}>
         <GoogleAnalytics />
         <CookieConsent />
-        <div className="pointer-events-none fixed inset-0 -z-10" aria-hidden>
-          <MarketingPageBackground />
-        </div>
         <div className="relative z-0 min-h-dvh pb-20 lg:pb-0" data-locale={locale}>
           {children}
         </div>

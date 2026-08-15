@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { IndustryPageView } from '@/components/pages/IndustryPageView';
+import { getBespokeIndustryPage } from '@/components/solutions/registry';
 import { getAllIndustrySlugs } from '@/data/industries';
 import { getLocalizedIndustry, getIndustryMeta } from '@/lib/industry-locale';
 import { buildMetadata } from '@/lib/seo';
@@ -35,5 +36,11 @@ export default async function IndustryPage({ params }: PageProps) {
   if (!isValidLocale(locale)) notFound();
   const industry = getLocalizedIndustry(slug, locale as SiteLocale);
   if (!industry) notFound();
+
+  // Each industry gets its own hand-built page. Slugs not yet rebuilt fall
+  // through to the shared template so the rollout can ship in waves.
+  const Bespoke = getBespokeIndustryPage(slug);
+  if (Bespoke) return <Bespoke locale={locale as SiteLocale} />;
+
   return <IndustryPageView industrySlug={slug} locale={locale as SiteLocale} />;
 }

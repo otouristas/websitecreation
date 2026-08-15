@@ -1,7 +1,7 @@
 ---
 slug: real-estate-seo
-title: Real Estate SEO — Win Listings and Buyers from Google
-description: SEO for real estate agencies — rank for area searches, attract sellers who want an agent, and turn Google traffic into listings and buyer enquiries.
+title: Real Estate SEO - Win Listings and Buyers from Google
+description: SEO for real estate agencies - rank for area searches, attract sellers who want an agent, and turn Google traffic into listings and buyer enquiries.
 date: 2026-07-06
 author: AnotherSEOGuru Editorial Team
 translationOf: seo-gia-akinita
@@ -9,19 +9,19 @@ category: SEO
 categoryColor: bg-emerald-100 text-emerald-800
 pillar: industry-playbooks
 faq:
-  - question: I already post to property portals — what does SEO add?
+  - question: I already post to property portals - what does SEO add?
     answer: Portals rent you an audience. Your site captures one you own. Listings and seller leads that come through your pages avoid per-listing fees and side-by-side competitor clutter.
   - question: How fast will real estate SEO show results?
-    answer: Seller searches in specific areas often have lower competition — top rankings in 2–4 months are realistic. Area guides and valuation content compound for years.
+    answer: Seller searches in specific areas often have lower competition - top rankings in 2–4 months are realistic. Area guides and valuation content compound for years.
   - question: Do real estate agencies need a new website for SEO?
     answer: If the current site cannot support area pages and fast mobile listing search, yes. Structure and speed decide whether enquiries convert.
   - question: How much does real estate SEO cost?
     answer: Agencies targeting two or three areas often fit Starter at €299/mo. Multi-area, international, or portal-style sites usually need Growth at €599/mo or higher.
   - question: Should agencies target buyers or sellers first?
-    answer: Both, but sellers are usually higher value. “How much is my home worth” and “estate agent + area” pages win listings — the root of agency income.
+    answer: Both, but sellers are usually higher value. “How much is my home worth” and “estate agent + area” pages win listings - the root of agency income.
 ---
 
-The property market runs online: “apartment for sale [area],” “real estate agent [neighborhood],” “holiday home [island].” **Real estate SEO** has a dual goal: bring **buyers** to your listings and — the more valuable one — bring **sellers** looking for an agent to list with. Portals dominate generic listing searches; smart agencies win the gaps portals leave open.
+The property market runs online: “apartment for sale [area],” “real estate agent [neighborhood],” “holiday home [island].” **Real estate SEO** has a dual goal: bring **buyers** to your listings and - the more valuable one - bring **sellers** looking for an agent to list with. Portals dominate generic listing searches; smart agencies win the gaps portals leave open.
 
 Explore [real-estate solutions](/en/solutions/real-estate), [local SEO](/en/services/local-seo), and [how much SEO costs](/en/blog/how-much-does-seo-cost).
 
@@ -29,11 +29,11 @@ Explore [real-estate solutions](/en/solutions/real-estate), [local SEO](/en/serv
 
 Big portals own head-term listing inventory. An agency should not fight them with thin “for sale” clones. Win instead on:
 
-1. **Local expertise** — “estate agent + area” and “property valuation + area” are seller searches that deliver listings.
-2. **Area content** — neighborhood guides, price bands, transfer processes, taxes, and residency schemes build authority portals rarely match.
-3. **International demand** — tourist zones and golden-visa-style buyers need English (and often more) with correct hreflang.
+1. **Local expertise** - “estate agent + area” and “property valuation + area” are seller searches that deliver listings.
+2. **Area content** - neighborhood guides, price bands, transfer processes, taxes, and residency schemes build authority portals rarely match.
+3. **International demand** - tourist zones and golden-visa-style buyers need English (and often more) with correct hreflang.
 
-AI assistants also answer “best areas to buy near…” questions. Structured area pages and FAQs improve citation odds — see the [GEO/AEO playbook](/en/blog/geo-aeo-global-seo-playbook).
+AI assistants also answer “best areas to buy near…” questions. Structured area pages and FAQs improve citation odds - see the [GEO/AEO playbook](/en/blog/geo-aeo-global-seo-playbook).
 
 ## Strategy in Five Steps
 
@@ -43,7 +43,7 @@ An “Apartments in [area]” hub with market notes, price ranges, and current l
 
 ### 2. Target sellers deliberately
 
-“How much is my home worth,” “what commission does an agent charge,” “how to sell without stress.” These pages bring listings — the root of agency income. Put valuation CTAs and WhatsApp above the fold on mobile.
+“How much is my home worth,” “what commission does an agent charge,” “how to sell without stress.” These pages bring listings - the root of agency income. Put valuation CTAs and WhatsApp above the fold on mobile.
 
 ### 3. Local SEO and Google Business Profile
 
@@ -55,7 +55,7 @@ For islands and city investment demand, English pages with correct hreflang open
 
 ### 5. Schema and listing clarity
 
-RealEstateListing (or equivalent) structured data helps Google understand price, size, and location. Keep listing detail pages fast — heavy galleries without compression kill mobile enquiries. Pair with [on-page SEO](/en/blog/on-page-seo) discipline: one primary intent per URL.
+RealEstateListing (or equivalent) structured data helps Google understand price, size, and location. Keep listing detail pages fast - heavy galleries without compression kill mobile enquiries. Pair with [on-page SEO](/en/blog/on-page-seo) discipline: one primary intent per URL.
 
 ## Cost, Timeline and Benchmarks
 
@@ -67,7 +67,7 @@ RealEstateListing (or equivalent) structured data helps Google understand price,
 | Custom listing portal | Growth–Scale | Faceted UX + indexation | 4–8 months |
 | Site rebuild needed | from €899 + SEO | Mobile search + CTAs | Parallel 60–90 days |
 
-Measure **listing appointments**, seller form fills, and organic enquiry quality — not only listing views. Transparent [pricing](/en/pricing) keeps scope comparable across vendors.
+Measure **listing appointments**, seller form fills, and organic enquiry quality - not only listing views. Transparent [pricing](/en/pricing) keeps scope comparable across vendors.
 
 ## Mistakes Agencies Still Make
 
@@ -86,7 +86,7 @@ Measure **listing appointments**, seller form fills, and organic enquiry quality
 
 **Month three:** measure seller form fills and listing appointments from organic, tighten titles on underperforming hubs, and expand the next area only after the first hubs earn clicks. Resist chasing national “apartments for sale” head terms until local seller demand is compounding.
 
-Agencies with custom portals should also watch faceted URL indexation — thin filter combinations create crawl waste. Keep indexable templates to real areas and property types with unique copy. Weekly reporting belongs in Search Console plus CRM lead source, not sessions alone — see the [GSC weekly ops playbook](/en/blog/gsc-weekly-ops-playbook).
+Agencies with custom portals should also watch faceted URL indexation - thin filter combinations create crawl waste. Keep indexable templates to real areas and property types with unique copy. Weekly reporting belongs in Search Console plus CRM lead source, not sessions alone - see the [GSC weekly ops playbook](/en/blog/gsc-weekly-ops-playbook).
 
 If your team still answers “what is my home worth?” only on the phone, you are training Google that portals own that intent. Put a short valuation explainer and form on-site, then nurture with human follow-up. That single asset often outperforms another year of portal boosts for seller acquisition and brand trust.
 
@@ -98,7 +98,7 @@ Ownership. Your site builds an audience you do not rent per listing, and seller 
 
 ### How fast will I see results?
 
-Seller and area queries often move in 2–4 months. Broader buyer head terms take longer and may never beat portals — that is fine if listings keep arriving.
+Seller and area queries often move in 2–4 months. Broader buyer head terms take longer and may never beat portals - that is fine if listings keep arriving.
 
 ### Do I need a new site?
 
@@ -106,7 +106,7 @@ If you cannot ship area pages and fast mobile listing search, yes. Start with [r
 
 ### Buyers or sellers first?
 
-Sellers first when budget is tight — one listing funds months of SEO. Then expand buyer hubs.
+Sellers first when budget is tight - one listing funds months of SEO. Then expand buyer hubs.
 
 ### Does AI search matter for property?
 
@@ -114,4 +114,4 @@ Yes for area advice and process questions. Clear FAQs and original local data he
 
 ## Ready to Get Started?
 
-Send us your site and the areas you target — we show what people search and how to win it. [Free analysis here](/en/get-started). Review [real-estate solutions](/en/solutions/real-estate) and [pricing](/en/pricing) when you want a scoped plan for listings and buyer demand.
+Send us your site and the areas you target - we show what people search and how to win it. [Free analysis here](/en/get-started). Review [real-estate solutions](/en/solutions/real-estate) and [pricing](/en/pricing) when you want a scoped plan for listings and buyer demand.

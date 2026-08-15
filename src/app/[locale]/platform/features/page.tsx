@@ -30,10 +30,10 @@ export default async function PlatformFeaturesIndexPage({ params }: PageProps) {
   return (
     <>
       <Header />
-      <main className="main-below-header pb-20">
+      <main className="blueprint-grid relative z-0 main-below-header pb-20">
         <div className="container">
           <div className="max-w-3xl mb-14">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Platform capabilities</h1>
+            <h1 className="font-display text-4xl font-medium tracking-[-0.04em] md:text-5xl mb-4">Platform capabilities</h1>
             <p className="text-lg text-muted-foreground">
               Every module below opens a deep-dive with benefits, how it works, and a direct link into the product.
             </p>
@@ -43,7 +43,7 @@ export default async function PlatformFeaturesIndexPage({ params }: PageProps) {
               <li key={f.slug}>
                 <Link
                   href={lp(`/platform/features/${f.slug}`)}
-                  className="block rounded-2xl border border-border p-6 hover:border-primary/40 hover:bg-muted/20 transition-smooth"
+                  className="block rounded-[10px] border border-hairline p-6 hover:border-primary/40 hover:bg-surface-raised/40 transition-smooth"
                 >
                   <h2 className="font-semibold text-lg text-foreground mb-2">{f.title}</h2>
                   <p className="text-sm text-muted-foreground">{f.shortDescription}</p>

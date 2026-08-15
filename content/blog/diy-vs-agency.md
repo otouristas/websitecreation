@@ -1,7 +1,7 @@
 ---
 slug: diy-vs-agency
-title: DIY SEO vs. Hiring an Agency — The Honest Truth for Business Owners
-description: Should you do your own SEO or hire an agency? Costs, time commitment, and results — with a clear decision framework for home services and tourism brands.
+title: DIY SEO vs. Hiring an Agency - The Honest Truth for Business Owners
+description: Should you do your own SEO or hire an agency? Costs, time commitment, and results - with a clear decision framework for home services and tourism brands.
 date: 2026-01-08
 author: AnotherSEOGuru Editorial Team
 category: Business Strategy
@@ -9,26 +9,26 @@ categoryColor: bg-green-100 text-green-700
 pillar: agency-playbooks
 faq:
   - question: "How much does agency SEO cost?"
-    answer: "Retainers vary by scope — single-location local SEO vs multi-island tourism build. Get a scoped proposal rather than guessing from generic pricing pages."
+    answer: "Retainers vary by scope - single-location local SEO vs multi-island tourism build. Get a scoped proposal rather than guessing from generic pricing pages."
   - question: "Can I start DIY and switch to agency later?"
-    answer: "Yes — and it's common. Bring your Search Console history and content; a good agency picks up from data, not zero."
+    answer: "Yes - and it's common. Bring your Search Console history and content; a good agency picks up from data, not zero."
   - question: "Is SEO software enough without an agency?"
-    answer: "Software provides leverage — clustering, audits, tracking — but someone must execute. Software without ops cadence fails."
+    answer: "Software provides leverage - clustering, audits, tracking - but someone must execute. Software without ops cadence fails."
   - question: "How do I know if DIY is working?"
     answer: "Track commercial clicks in GSC, map actions, calls, and bookings monthly. Rankings alone mislead."
   - question: "Should tourism brands ever fully outsource SEO?"
-    answer: "Outsource execution, not oversight. You know seasonality, pricing, and guest questions — the agency knows search systems. Stay involved on content accuracy."
+    answer: "Outsource execution, not oversight. You know seasonality, pricing, and guest questions - the agency knows search systems. Stay involved on content accuracy."
 ---
 
-You know you need to be on Google. The question is whether you have the time to put yourself there — and whether software plus a light process can get you far enough before you need hands-on help. Every small business owner reaches this crossroads: the website is live, but bookings and calls aren't where they should be.
+You know you need to be on Google. The question is whether you have the time to put yourself there - and whether software plus a light process can get you far enough before you need hands-on help. Every small business owner reaches this crossroads: the website is live, but bookings and calls aren't where they should be.
 
-This guide gives you an honest framework — no scare tactics, no "agencies always win" bias. Whether you run an HVAC company, a Cyclades hotel, or a rent-a-car fleet at the airport, the tradeoffs are similar: time, money, skill, and speed.
+This guide gives you an honest framework - no scare tactics, no "agencies always win" bias. Whether you run an HVAC company, a Cyclades hotel, or a rent-a-car fleet at the airport, the tradeoffs are similar: time, money, skill, and speed.
 
 ## Option 1: The DIY approach
 
-**Best for:** Solopreneurs, businesses under roughly $200k/year, or teams with more time than cash — and operators willing to learn Search Console.
+**Best for:** Solopreneurs, businesses under roughly $200k/year, or teams with more time than cash - and operators willing to learn Search Console.
 
-The basics of [local SEO](/en/blog/local-seo-guide) are learnable. Google wants to rank good businesses with clear entities and helpful content. If you are willing to invest 5–10 hours per week, you can achieve meaningful groundwork yourself — especially with a structured weekly loop like our [GSC ops playbook](/en/blog/gsc-weekly-ops-playbook).
+The basics of [local SEO](/en/blog/local-seo-guide) are learnable. Google wants to rank good businesses with clear entities and helpful content. If you are willing to invest 5–10 hours per week, you can achieve meaningful groundwork yourself - especially with a structured weekly loop like our [GSC ops playbook](/en/blog/gsc-weekly-ops-playbook).
 
 ### What DIY actually involves
 
@@ -43,10 +43,10 @@ For tourism brands, DIY also means keeping [hotel](/en/solutions/hotels) or [ren
 
 ### The pros
 
-- **Lower cash cost** — time is still a cost, but no retainer
-- **Total control** — you decide priorities and brand voice
-- **Internal skill** — compounds year over year
-- **Faster iteration** — no ticket queue for small fixes
+- **Lower cash cost** - time is still a cost, but no retainer
+- **Total control** - you decide priorities and brand voice
+- **Internal skill** - compounds year over year
+- **Faster iteration** - no ticket queue for small fixes
 
 ### The cons
 
@@ -59,33 +59,33 @@ For tourism brands, DIY also means keeping [hotel](/en/solutions/hotels) or [ren
 
 **Best for:** Established businesses ready to scale, multi-location operators, or owners who value their time highly.
 
-An agency brings systems, tools, and pattern recognition. The best partners do not only "do SEO" — they build a durable acquisition asset: website, entity graph, content library, and measurement.
+An agency brings systems, tools, and pattern recognition. The best partners do not only "do SEO" - they build a durable acquisition asset: website, entity graph, content library, and measurement.
 
 ### What good agencies deliver
 
 - Technical audit and fix roadmap tied to [indexation](/en/glossary?term=indexing) and [Core Web Vitals](/en/glossary?term=page-experience)
-- Content architecture — hubs, spokes, [topic clusters](/en/glossary?term=topic-clusters)
-- Local stack — GBP, citations, review velocity
-- Design and development when the site is the bottleneck — see our [SEO web design guide](/en/blog/seo-web-design-development-platform)
-- Reporting tied to calls, bookings, and revenue — not rank grids alone
+- Content architecture - hubs, spokes, [topic clusters](/en/glossary?term=topic-clusters)
+- Local stack - GBP, citations, review velocity
+- Design and development when the site is the bottleneck - see our [SEO web design guide](/en/blog/seo-web-design-development-platform)
+- Reporting tied to calls, bookings, and revenue - not rank grids alone
 
 We build [hotel websites](/en/solutions/hotels), [rent-a-car platforms](/en/solutions/rent-a-car), and [travel AI chatbots](/en/solutions/travel-ai-chatbots) with search built in. Browse [case studies](/en/work) for examples.
 
 ### The pros
 
-- **Speed:** Parallel workstreams — technical, content, local, reporting
-- **Expertise:** Playbooks tuned to what works now — not forum advice from five years ago
+- **Speed:** Parallel workstreams - technical, content, local, reporting
+- **Expertise:** Playbooks tuned to what works now - not forum advice from five years ago
 - **ROI focus:** Leading teams anchor on leads and revenue
-- **Seasonal surge capacity:** Critical for tourism — pre-season blitz without hiring internally
+- **Seasonal surge capacity:** Critical for tourism - pre-season blitz without hiring internally
 
 ### The cons
 
-- Requires budget — quality retainers aren't cheap
+- Requires budget - quality retainers aren't cheap
 - Requires good briefing and access (CMS, GBP, analytics)
-- Bad agencies exist — vanity metrics, black-hat shortcuts, no transparency
+- Bad agencies exist - vanity metrics, black-hat shortcuts, no transparency
 - You still need internal point person for approvals and brand decisions
 
-## The third path — software-first, agency when needed
+## The third path - software-first, agency when needed
 
 Many teams connect Search Console, ship weekly priorities from [keyword clustering](/en/glossary?term=keyword-clustering) and health scores, and only bring in an agency for execution-heavy quarters: migrations, redesigns, multi-island launches.
 
@@ -111,7 +111,7 @@ Use our [query prioritization framework](/en/blog/gsc-query-prioritization-frame
 
 ### Hotels and villas
 
-OTA commissions eat margin. DIY local SEO can work for a single boutique property with owner-operated GBP. Multi-property groups almost always need agency or dedicated in-house — [local SEO for Cyclades](/en/blog/topiko-seo-kykladon) complexity scales fast.
+OTA commissions eat margin. DIY local SEO can work for a single boutique property with owner-operated GBP. Multi-property groups almost always need agency or dedicated in-house - [local SEO for Cyclades](/en/blog/topiko-seo-kykladon) complexity scales fast.
 
 ### Rent-a-car
 
@@ -119,7 +119,7 @@ Airport and island keywords are competitive. Fleet page production, schema, and 
 
 ### Travel AI
 
-[AI chatbots for tourism](/en/solutions/travel-ai-chatbots) require integration expertise — rarely pure DIY.
+[AI chatbots for tourism](/en/solutions/travel-ai-chatbots) require integration expertise - rarely pure DIY.
 
 ## Red flags when choosing an agency
 
@@ -133,15 +133,15 @@ Airport and island keywords are competitive. Fleet page production, schema, and 
 
 ### How much does agency SEO cost?
 
-Retainers vary by scope — single-location local SEO vs multi-island tourism build. [Get a scoped proposal](/en/get-started) rather than guessing from generic pricing pages.
+Retainers vary by scope - single-location local SEO vs multi-island tourism build. [Get a scoped proposal](/en/get-started) rather than guessing from generic pricing pages.
 
 ### Can I start DIY and switch to agency later?
 
-Yes — and it's common. Bring your Search Console history and content; a good agency picks up from data, not zero.
+Yes - and it's common. Bring your Search Console history and content; a good agency picks up from data, not zero.
 
 ### Is SEO software enough without an agency?
 
-Software provides leverage — clustering, audits, tracking — but someone must execute. Software without ops cadence fails.
+Software provides leverage - clustering, audits, tracking - but someone must execute. Software without ops cadence fails.
 
 ### How do I know if DIY is working?
 
@@ -149,12 +149,12 @@ Track commercial clicks in GSC, map actions, calls, and bookings monthly. Rankin
 
 ### Should tourism brands ever fully outsource SEO?
 
-Outsource execution, not oversight. You know seasonality, pricing, and guest questions — the agency knows search systems. Stay involved on content accuracy.
+Outsource execution, not oversight. You know seasonality, pricing, and guest questions - the agency knows search systems. Stay involved on content accuracy.
 
 ---
 
 ## Ready to Get Started?
 
-Tell us about your site, locations, and goals — we'll recommend a scoped plan with Search Console ops, content priorities, and clear next steps.
+Tell us about your site, locations, and goals - we'll recommend a scoped plan with Search Console ops, content priorities, and clear next steps.
 
 [Get started](/en/get-started) · [See our work](/en/work) · [Pricing](/en/pricing)

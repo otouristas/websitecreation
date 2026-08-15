@@ -5,7 +5,7 @@ import { trackCtaClick } from '@/lib/analytics';
 import { PHONE_DISPLAY, WHATSAPP_HREF } from '@/lib/contact-info';
 import type { SiteLocale } from '@/lib/i18n/locale';
 
-/** Single desktop WhatsApp control — no extra quote panel competing with the header. */
+/** Single desktop WhatsApp control, no extra quote panel competing with the header. */
 export function FloatingContactCta({ locale = 'en' }: { locale?: SiteLocale }) {
   const pathname = usePathname() ?? '';
   const isEl = locale === 'el';

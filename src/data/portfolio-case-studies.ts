@@ -8,8 +8,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Aggelos Rentals είναι ζωντανό έργο ενοικίαση αυτοκινήτων με παράδοση σε λιμάνι και αεροδρόμιο στον Πειραιά και Πάρο. Παραδώσαμε κατασκευή ιστοσελίδας, τοπικό SEO και βελτιστοποίηση ταχύτητας, με στόχο «ενοικίαση αυτοκινήτου Πειραιά» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Piraeus and Paros, competitors compete for “rent a car Piraeus” and related queries. Aggelos Rentals needed a site that stands out through port and airport handoff for ferry and flight arrivals, ranks locally, and turns visitors into a booking—without looking generic.",
-      "el": "Στον Πειραιά και Πάρο, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «ενοικίαση αυτοκινήτου Πειραιά». Το Aggelos Rentals χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε παράδοση σε λιμάνι και αεροδρόμιο για αφίξεις με πλοίο ή πτήση, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Piraeus and Paros, competitors compete for “rent a car Piraeus” and related queries. Aggelos Rentals needed a site that stands out through port and airport handoff for ferry and flight arrivals, ranks locally, and turns visitors into a booking - without looking generic.",
+      "el": "Στον Πειραιά και Πάρο, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «ενοικίαση αυτοκινήτου Πειραιά». Το Aggelos Rentals χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε παράδοση σε λιμάνι και αεροδρόμιο για αφίξεις με πλοίο ή πτήση, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Piraeus and Paros, structured pages for rent a car Piraeus and airport car delivery Greece, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Port and airport handoff for ferry and flight arrivals. Live site signals informed content priorities.",
@@ -108,8 +108,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Antiparos Rent a Car είναι ζωντανό έργο ενοικίαση αυτοκινήτων και μηχανών στο νησί στην Αντίπαρο. Παραδώσαμε κατασκευή ιστοσελίδας, σχεδιασμός ιστοσελίδας με SEO και τοπικό SEO, με στόχο «ενοικίαση αυτοκινήτου Αντίπαρος» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Antiparos, competitors compete for “rent a car Antiparos” and related queries. Antiparos Rent a Car needed a site that stands out through ferry-arrival pickup and compact fleet for narrow island roads, ranks locally, and turns visitors into a booking—without looking generic.",
-      "el": "Στην Αντίπαρο, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «ενοικίαση αυτοκινήτου Αντίπαρος». Το Antiparos Rent a Car χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε παραλαβή από το ferry και μικρός στόλος για στενούς δρόμους, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Antiparos, competitors compete for “rent a car Antiparos” and related queries. Antiparos Rent a Car needed a site that stands out through ferry-arrival pickup and compact fleet for narrow island roads, ranks locally, and turns visitors into a booking - without looking generic.",
+      "el": "Στην Αντίπαρο, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «ενοικίαση αυτοκινήτου Αντίπαρος». Το Antiparos Rent a Car χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε παραλαβή από το ferry και μικρός στόλος για στενούς δρόμους, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Antiparos, structured pages for rent a car Antiparos and Antiparos scooter hire, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Ferry-arrival pickup and compact fleet for narrow island roads. Live site signals informed content priorities.",
@@ -208,8 +208,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Cyclades Rent a Car είναι ζωντανό έργο πλατφόρμα σύγκρισης ενοικίασης αυτοκινήτων στα νησιά στις Κυκλάδες. Παραδώσαμε κατασκευή ιστοσελίδας, τοπικό SEO και δημιουργία περιεχομένου, με στόχο «ενοικίαση αυτοκινήτου Κυκλάδες» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Cyclades islands, competitors compete for “rent a car Cyclades” and related queries. Cyclades Rent a Car needed a site that stands out through compare agencies across 24 islands with clear booking paths, ranks locally, and turns visitors into a booking—without looking generic.",
-      "el": "Στις Κυκλάδες, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «ενοικίαση αυτοκινήτου Κυκλάδες». Το Cyclades Rent a Car χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε σύγκριση πρακτορείων σε πολλά νησιά με καθαρή διαδρομή κράτησης, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Cyclades islands, competitors compete for “rent a car Cyclades” and related queries. Cyclades Rent a Car needed a site that stands out through compare agencies across 24 islands with clear booking paths, ranks locally, and turns visitors into a booking - without looking generic.",
+      "el": "Στις Κυκλάδες, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «ενοικίαση αυτοκινήτου Κυκλάδες». Το Cyclades Rent a Car χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε σύγκριση πρακτορείων σε πολλά νησιά με καθαρή διαδρομή κράτησης, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Cyclades islands, structured pages for rent a car Cyclades and Greek islands car hire, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Compare agencies across 24 islands with clear booking paths. Live site signals informed content priorities.",
@@ -308,8 +308,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Cretan Ways Rentals είναι ζωντανό έργο ενοικίαση αυτοκινήτων και scooters στην Κρήτη στην Κρήτη. Παραδώσαμε κατασκευή ιστοσελίδας και τοπικό SEO, με στόχο «ενοικίαση αυτοκινήτου Κρήτη» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Crete, competitors compete for “rent a car Crete” and related queries. Cretan Ways Rentals needed a site that stands out through airport-to-resort routes for independent Crete travelers, ranks locally, and turns visitors into a booking—without looking generic.",
-      "el": "Στην Κρήτη, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «ενοικίαση αυτοκινήτου Κρήτη». Το Cretan Ways Rentals χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε διαδρομές από αεροδρόμιο προς θέρετρα για ανεξάρτητους ταξιδιώτες, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Crete, competitors compete for “rent a car Crete” and related queries. Cretan Ways Rentals needed a site that stands out through airport-to-resort routes for independent Crete travelers, ranks locally, and turns visitors into a booking - without looking generic.",
+      "el": "Στην Κρήτη, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «ενοικίαση αυτοκινήτου Κρήτη». Το Cretan Ways Rentals χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε διαδρομές από αεροδρόμιο προς θέρετρα για ανεξάρτητους ταξιδιώτες, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Crete, structured pages for rent a car Crete and Heraklion car rental, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Airport-to-resort routes for independent Crete travelers. Live site signals informed content priorities.",
@@ -408,8 +408,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Naxos Car Rentals είναι ζωντανό έργο ενοικίαση αυτοκινήτων στη Νάξο στη Νάξο. Παραδώσαμε κατασκευή ιστοσελίδας και σχεδιασμός ιστοσελίδας με SEO, με στόχο «ενοικίαση αυτοκινήτου Νάξος» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Naxos, competitors compete for “rent a car Naxos” and related queries. Naxos Car Rentals needed a site that stands out through port pickup and beach-day fleet pages for island itineraries, ranks locally, and turns visitors into a booking—without looking generic.",
-      "el": "Στη Νάξο, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «ενοικίαση αυτοκινήτου Νάξος». Το Naxos Car Rentals χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε παραλαβή στο λιμάνι και σελίδες στόλου για εκδρομές σε παραλίες, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Naxos, competitors compete for “rent a car Naxos” and related queries. Naxos Car Rentals needed a site that stands out through port pickup and beach-day fleet pages for island itineraries, ranks locally, and turns visitors into a booking - without looking generic.",
+      "el": "Στη Νάξο, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «ενοικίαση αυτοκινήτου Νάξος». Το Naxos Car Rentals χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε παραλαβή στο λιμάνι και σελίδες στόλου για εκδρομές σε παραλίες, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Naxos, structured pages for rent a car Naxos and Naxos car rental, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Port pickup and beach-day fleet pages for island itineraries. Live site signals informed content priorities.",
@@ -508,8 +508,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Rent a Car Antiparos είναι ζωντανό έργο τοπική ενοικίαση αυτοκινήτων Αντιπάρου στην Αντίπαρο. Παραδώσαμε κατασκευή ιστοσελίδας και τοπικό SEO, με στόχο «ενοικίαση αυτοκινήτου Αντίπαρος» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Antiparos, competitors compete for “Antiparos rent a car” and related queries. Rent a Car Antiparos needed a site that stands out through Greek-first local SEO for Antiparos visitors booking on mobile, ranks locally, and turns visitors into a booking—without looking generic.",
-      "el": "Στην Αντίπαρο, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «ενοικίαση αυτοκινήτου Αντίπαρος». Το Rent a Car Antiparos χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε τοπικό SEO στα ελληνικά για επισκέπτες που κλείνουν από κινητό, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Antiparos, competitors compete for “Antiparos rent a car” and related queries. Rent a Car Antiparos needed a site that stands out through Greek-first local SEO for Antiparos visitors booking on mobile, ranks locally, and turns visitors into a booking - without looking generic.",
+      "el": "Στην Αντίπαρο, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «ενοικίαση αυτοκινήτου Αντίπαρος». Το Rent a Car Antiparos χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε τοπικό SEO στα ελληνικά για επισκέπτες που κλείνουν από κινητό, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Antiparos, structured pages for Antiparos rent a car and car hire Antiparos Greece, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Greek-first local SEO for Antiparos visitors booking on mobile. Live site signals informed content priorities.",
@@ -604,8 +604,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Rent a Car in Paros είναι ζωντανό έργο ενοικίαση αυτοκινήτων στην Πάρο στην Πάρο. Παραδώσαμε κατασκευή ιστοσελίδας και τοπικό SEO, με στόχο «ενοικίαση αυτοκινήτου στην Πάρο» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Paros, competitors compete for “rent a car in Paros” and related queries. Rent a Car in Paros needed a site that stands out through conversion-led vehicle cards for summer peak demand, ranks locally, and turns visitors into a booking—without looking generic.",
-      "el": "Στην Πάρο, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «ενοικίαση αυτοκινήτου στην Πάρο». Το Rent a Car in Paros χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε κάρτες οχημάτων βελτιστοποιημένες για καλοκαιρινή αιχμή, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Paros, competitors compete for “rent a car in Paros” and related queries. Rent a Car in Paros needed a site that stands out through conversion-led vehicle cards for summer peak demand, ranks locally, and turns visitors into a booking - without looking generic.",
+      "el": "Στην Πάρο, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «ενοικίαση αυτοκινήτου στην Πάρο». Το Rent a Car in Paros χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε κάρτες οχημάτων βελτιστοποιημένες για καλοκαιρινή αιχμή, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Paros, structured pages for rent a car in Paros and Paros car hire, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Conversion-led vehicle cards for summer peak demand. Live site signals informed content priorities.",
@@ -704,8 +704,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Rent a Car Piraeus είναι ζωντανό έργο ενοικίαση αυτοκινήτων στον Πειραιά στον Πειραιά. Παραδώσαμε κατασκευή ιστοσελίδας και τοπικό SEO, με στόχο «ενοικίαση αυτοκινήτου Πειραιάς» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Piraeus, competitors compete for “rent a car Piraeus” and related queries. Rent a Car Piraeus needed a site that stands out through ferry-day and neighborhood pickup around the port, ranks locally, and turns visitors into a booking—without looking generic.",
-      "el": "Στον Πειραιά, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «ενοικίαση αυτοκινήτου Πειραιάς». Το Rent a Car Piraeus χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε παραλαβή για ημέρα ferry και γειτονιές γύρω από το λιμάνι, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Piraeus, competitors compete for “rent a car Piraeus” and related queries. Rent a Car Piraeus needed a site that stands out through ferry-day and neighborhood pickup around the port, ranks locally, and turns visitors into a booking - without looking generic.",
+      "el": "Στον Πειραιά, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «ενοικίαση αυτοκινήτου Πειραιάς». Το Rent a Car Piraeus χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε παραλαβή για ημέρα ferry και γειτονιές γύρω από το λιμάνι, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Piraeus, structured pages for rent a car Piraeus and Piraeus port car rental, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Ferry-day and neighborhood pickup around the port. Live site signals informed content priorities.",
@@ -804,8 +804,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Athens Rent a Car είναι ζωντανό έργο ενοικίαση αυτοκινήτων στην Αθήνα στην Αθήνα. Παραδώσαμε κατασκευή ιστοσελίδας και βελτιστοποίηση ταχύτητας, με στόχο «ενοικίαση αυτοκινήτου Αθήνα» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Athens, competitors compete for “rent a car Athens” and related queries. Athens Rent a Car needed a site that stands out through airport and city delivery for business and tourism, ranks locally, and turns visitors into a booking—without looking generic.",
-      "el": "Στην Αθήνα, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «ενοικίαση αυτοκινήτου Αθήνα». Το Athens Rent a Car χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε παράδοση σε αεροδρόμιο και πόλη για επαγγελματίες και τουρίστες, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Athens, competitors compete for “rent a car Athens” and related queries. Athens Rent a Car needed a site that stands out through airport and city delivery for business and tourism, ranks locally, and turns visitors into a booking - without looking generic.",
+      "el": "Στην Αθήνα, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «ενοικίαση αυτοκινήτου Αθήνα». Το Athens Rent a Car χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε παράδοση σε αεροδρόμιο και πόλη για επαγγελματίες και τουρίστες, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Athens, structured pages for rent a car Athens and Athens airport car rental, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Airport and city delivery for business and tourism. Live site signals informed content priorities.",
@@ -904,8 +904,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Rent a Car Paros είναι ζωντανό έργο ενοικίαση αυτοκινήτων στην Πάρο στην Πάρο. Παραδώσαμε κατασκευή ιστοσελίδας και τοπικό SEO, με στόχο «ενοικίαση αυτοκινήτου Πάρος» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Paros, competitors compete for “rentacar Paros” and related queries. Rent a Car Paros needed a site that stands out through local .gr domain for Greek-language Paros searchers, ranks locally, and turns visitors into a booking—without looking generic.",
-      "el": "Στην Πάρο, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «ενοικίαση αυτοκινήτου Πάρος». Το Rent a Car Paros χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε τοπικό domain .gr για ελληνικές αναζητήσεις στην Πάρο, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Paros, competitors compete for “rentacar Paros” and related queries. Rent a Car Paros needed a site that stands out through local .gr domain for Greek-language Paros searchers, ranks locally, and turns visitors into a booking - without looking generic.",
+      "el": "Στην Πάρο, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «ενοικίαση αυτοκινήτου Πάρος». Το Rent a Car Paros χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε τοπικό domain .gr για ελληνικές αναζητήσεις στην Πάρο, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Paros, structured pages for rentacar Paros and Paros car rental Greece, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Local .gr domain for Greek-language Paros searchers.",
@@ -1000,8 +1000,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Hotels Santorini είναι ζωντανό έργο κατάλογος και κρατήσεις ξενοδοχείων Σαντορίνης στη Σαντορίνη. Παραδώσαμε κατασκευή ιστοσελίδας, σχεδιασμός ιστοσελίδας με SEO και δημιουργία περιεχομένου, με στόχο «ξενοδοχεία Σαντορίνη» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Santorini, competitors compete for “hotels Santorini” and related queries. Hotels Santorini needed a site that stands out through caldera and beach hotel discovery with direct booking calls to action, ranks locally, and turns visitors into a booking—without looking generic.",
-      "el": "Στη Σαντορίνη, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «ξενοδοχεία Σαντορίνη». Το Hotels Santorini χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε ανακάλυψη ξενοδοχείων καλντέρας και παραλίας με άμεση κράτηση, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Santorini, competitors compete for “hotels Santorini” and related queries. Hotels Santorini needed a site that stands out through caldera and beach hotel discovery with direct booking calls to action, ranks locally, and turns visitors into a booking - without looking generic.",
+      "el": "Στη Σαντορίνη, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «ξενοδοχεία Σαντορίνη». Το Hotels Santorini χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε ανακάλυψη ξενοδοχείων καλντέρας και παραλίας με άμεση κράτηση, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Santorini, structured pages for hotels Santorini and Santorini hotel booking, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Caldera and beach hotel discovery with direct booking calls to action. Live site signals informed content priorities.",
@@ -1100,8 +1100,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Hotels Sifnos είναι ζωντανό έργο ιστοσελίδα για ξενοδοχεία και διαμονή στη Σίφνο στη Σίφνο. Παραδώσαμε κατασκευή ιστοσελίδας και δημιουργία περιεχομένου, με στόχο «ξενοδοχεία Σίφνος» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Sifnos, competitors compete for “hotels Sifnos” and related queries. Hotels Sifnos needed a site that stands out through boutique island stay hubs for travelers researching lodging, ranks locally, and turns visitors into a booking—without looking generic.",
-      "el": "Στη Σίφνο, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «ξενοδοχεία Σίφνος». Το Hotels Sifnos χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε κόμβοι boutique διαμονής για ταξιδιώτες που ερευνούν κατάλυμα, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Sifnos, competitors compete for “hotels Sifnos” and related queries. Hotels Sifnos needed a site that stands out through boutique island stay hubs for travelers researching lodging, ranks locally, and turns visitors into a booking - without looking generic.",
+      "el": "Στη Σίφνο, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «ξενοδοχεία Σίφνος». Το Hotels Sifnos χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε κόμβοι boutique διαμονής για ταξιδιώτες που ερευνούν κατάλυμα, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Sifnos, structured pages for hotels Sifnos and Sifnos accommodation, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Boutique island stay hubs for travelers researching lodging. Live site signals informed content priorities.",
@@ -1200,8 +1200,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Onoma Hotel είναι ζωντανό έργο ιστοσελίδα boutique ξενοδοχείου στην Ελλάδα. Παραδώσαμε κατασκευή ιστοσελίδας και σχεδιασμός ιστοσελίδας με SEO, με στόχο «Onoma Hotel» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Greece, competitors compete for “Onoma Hotel” and related queries. Onoma Hotel needed a site that stands out through brand storytelling with room-type pages for direct bookings, ranks locally, and turns visitors into a booking—without looking generic.",
-      "el": "Στην Ελλάδα, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «Onoma Hotel». Το Onoma Hotel χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε αφήγηση brand και σελίδες τύπων δωματίων για άμεσες κρατήσεις, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Greece, competitors compete for “Onoma Hotel” and related queries. Onoma Hotel needed a site that stands out through brand storytelling with room-type pages for direct bookings, ranks locally, and turns visitors into a booking - without looking generic.",
+      "el": "Στην Ελλάδα, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «Onoma Hotel». Το Onoma Hotel χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε αφήγηση brand και σελίδες τύπων δωματίων για άμεσες κρατήσεις, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Greece, structured pages for Onoma Hotel and boutique hotel Greece, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Brand storytelling with room-type pages for direct bookings. Live site signals informed content priorities.",
@@ -1300,8 +1300,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Kipos Hotel είναι ζωντανό έργο ξενοδοχείο στο κέντρο κοντά στην Παλιά Πόλη στο Ρέθυμνο. Παραδώσαμε κατασκευή ιστοσελίδας και τοπικό SEO, με στόχο «Kipos Hotel Ρέθυμνο» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Rethymno, competitors compete for “Kipos Hotel Rethymno” and related queries. Kipos Hotel needed a site that stands out through city-centre location with easy access to shops, cafes and the Old Town, ranks locally, and turns visitors into a booking—without looking generic.",
-      "el": "Στο Ρέθυμνο, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «Kipos Hotel Ρέθυμνο». Το Kipos Hotel χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε τοποθεσία στο κέντρο με εύκολη πρόσβαση σε μαγαζιά, καφέ και την Παλιά Πόλη, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Rethymno, competitors compete for “Kipos Hotel Rethymno” and related queries. Kipos Hotel needed a site that stands out through city-centre location with easy access to shops, cafes and the Old Town, ranks locally, and turns visitors into a booking - without looking generic.",
+      "el": "Στο Ρέθυμνο, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «Kipos Hotel Ρέθυμνο». Το Kipos Hotel χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε τοποθεσία στο κέντρο με εύκολη πρόσβαση σε μαγαζιά, καφέ και την Παλιά Πόλη, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Rethymno, structured pages for Kipos Hotel Rethymno and hotel Old Town Rethymno, and shipped mobile-first UX with technical SEO, schema and clear calls to action. City-centre location with easy access to shops, cafes and the Old Town. Live site signals informed content priorities.",
@@ -1400,8 +1400,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Eolides Villas είναι ζωντανό έργο ιστοσελίδα για οικογενειακές βίλες στη Λαμπινή Ρεθύμνου στην Κρήτη. Παραδώσαμε κατασκευή ιστοσελίδας και σχεδιασμός ιστοσελίδας με SEO, με στόχο «Eolides Villas» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Lampini, Rethymno Crete, competitors compete for “Eolides Villas” and related queries. Eolides Villas needed a site that stands out through multi-villa portfolio with inquiry forms for family groups, ranks locally, and turns visitors into a inquiry—without looking generic.",
-      "el": "Στη Λαμπινή Ρεθύμνου στην Κρήτη, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «Eolides Villas». Το Eolides Villas χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε portfolio πολλών βιλών με φόρμες αιτήματος για οικογένειες, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε αίτημα προσφοράς — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Lampini, Rethymno Crete, competitors compete for “Eolides Villas” and related queries. Eolides Villas needed a site that stands out through multi-villa portfolio with inquiry forms for family groups, ranks locally, and turns visitors into a inquiry - without looking generic.",
+      "el": "Στη Λαμπινή Ρεθύμνου στην Κρήτη, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «Eolides Villas». Το Eolides Villas χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε portfolio πολλών βιλών με φόρμες αιτήματος για οικογένειες, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε αίτημα προσφοράς, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Lampini, Rethymno Crete, structured pages for Eolides Villas and family villas Rethymno, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Multi-villa portfolio with inquiry forms for family groups. Live site signals informed content priorities.",
@@ -1500,8 +1500,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Villa Olivia Clara είναι ζωντανό έργο ιστοσελίδα για πολυτελής ιδιωτική βίλα στην Κρήτη. Παραδώσαμε κατασκευή ιστοσελίδας, τοπικό SEO και ai-visibility, με στόχο «Villa Olivia Clara» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Crete, competitors compete for “Villa Olivia Clara” and related queries. Villa Olivia Clara needed a site that stands out through photo-led conversion for high-intent luxury villa searches, ranks locally, and turns visitors into a inquiry—without looking generic.",
-      "el": "Στην Κρήτη, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «Villa Olivia Clara». Το Villa Olivia Clara χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε μετατροπή μέσω φωτογραφίας για αναζητήσεις πολυτελούς βίλας, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε αίτημα προσφοράς — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Crete, competitors compete for “Villa Olivia Clara” and related queries. Villa Olivia Clara needed a site that stands out through photo-led conversion for high-intent luxury villa searches, ranks locally, and turns visitors into a inquiry - without looking generic.",
+      "el": "Στην Κρήτη, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «Villa Olivia Clara». Το Villa Olivia Clara χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε μετατροπή μέσω φωτογραφίας για αναζητήσεις πολυτελούς βίλας, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε αίτημα προσφοράς, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Crete, structured pages for Villa Olivia Clara and luxury villa Crete, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Photo-led conversion for high-intent luxury villa searches. Live site signals informed content priorities.",
@@ -1600,8 +1600,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Villas Katerina είναι ζωντανό έργο ιστοσελίδα για συγκρότημα βιλών για διακοπές στην Κρήτη. Παραδώσαμε κατασκευή ιστοσελίδας και τοπικό SEO, με στόχο «Villas Katerina» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Crete, competitors compete for “Villas Katerina” and related queries. Villas Katerina needed a site that stands out through unit comparison pages so guests pick the right villa quickly, ranks locally, and turns visitors into a booking—without looking generic.",
-      "el": "Στην Κρήτη, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «Villas Katerina». Το Villas Katerina χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε σελίδες σύγκρισης μονάδων ώστε ο επισκέπτης να επιλέγει γρήγορα, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Crete, competitors compete for “Villas Katerina” and related queries. Villas Katerina needed a site that stands out through unit comparison pages so guests pick the right villa quickly, ranks locally, and turns visitors into a booking - without looking generic.",
+      "el": "Στην Κρήτη, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «Villas Katerina». Το Villas Katerina χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε σελίδες σύγκρισης μονάδων ώστε ο επισκέπτης να επιλέγει γρήγορα, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Crete, structured pages for Villas Katerina and villas for rent Crete, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Unit comparison pages so guests pick the right villa quickly. Live site signals informed content priorities.",
@@ -1696,8 +1696,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Spili Apartments είναι ζωντανό έργο ιστοσελίδα για οικογενειακά διαμερίσματα διακοπών στο Σπήλι Ρεθύμνου στην Κρήτη. Παραδώσαμε κατασκευή ιστοσελίδας και τοπικό SEO, με στόχο «διαμερίσματα Σπήλι» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Spili, Rethymno Crete, competitors compete for “Spili apartments” and related queries. Spili Apartments needed a site that stands out through Crete hinterland stay SEO versus coastal competitors, ranks locally, and turns visitors into a booking—without looking generic.",
-      "el": "Στο Σπήλι Ρεθύμνου στην Κρήτη, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «διαμερίσματα Σπήλι». Το Spili Apartments χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε SEO διαμονής στην ενδοχώρα της Κρήτης έναντι παραθαλάσσιου ανταγωνισμού, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Spili, Rethymno Crete, competitors compete for “Spili apartments” and related queries. Spili Apartments needed a site that stands out through Crete hinterland stay SEO versus coastal competitors, ranks locally, and turns visitors into a booking - without looking generic.",
+      "el": "Στο Σπήλι Ρεθύμνου στην Κρήτη, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «διαμερίσματα Σπήλι». Το Spili Apartments χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε SEO διαμονής στην ενδοχώρα της Κρήτης έναντι παραθαλάσσιου ανταγωνισμού, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Spili, Rethymno Crete, structured pages for Spili apartments and Spili Crete accommodation, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Crete hinterland stay SEO versus coastal competitors. Live site signals informed content priorities.",
@@ -1796,8 +1796,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Mykonos Luxury είναι ζωντανό έργο ιστοσελίδα για πολυτελής διαμονή και concierge στη Μύκονο στη Μύκονο. Παραδώσαμε κατασκευή ιστοσελίδας και σχεδιασμός ιστοσελίδας με SEO, με στόχο «πολυτελής βίλα Μύκονος» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Mykonos, competitors compete for “Mykonos luxury villa” and related queries. Mykonos Luxury needed a site that stands out through complete luxury journey packaging for international guests, ranks locally, and turns visitors into a inquiry—without looking generic.",
-      "el": "Στη Μύκονο, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «πολυτελής βίλα Μύκονος». Το Mykonos Luxury χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε ολοκληρωμένο πακέτο πολυτελούς ταξιδιού για διεθνείς επισκέπτες, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε αίτημα προσφοράς — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Mykonos, competitors compete for “Mykonos luxury villa” and related queries. Mykonos Luxury needed a site that stands out through complete luxury journey packaging for international guests, ranks locally, and turns visitors into a inquiry - without looking generic.",
+      "el": "Στη Μύκονο, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «πολυτελής βίλα Μύκονος». Το Mykonos Luxury χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε ολοκληρωμένο πακέτο πολυτελούς ταξιδιού για διεθνείς επισκέπτες, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε αίτημα προσφοράς, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Mykonos, structured pages for Mykonos luxury villa and Mykonos concierge, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Complete luxury journey packaging for international guests. Live site signals informed content priorities.",
@@ -1896,8 +1896,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Discover Cyclades είναι ζωντανό έργο ταξιδιωτικός οδηγός και πλατφόρμα ανακάλυψης Κυκλάδων στις Κυκλάδες. Παραδώσαμε κατασκευή ιστοσελίδας, δημιουργία περιεχομένου και τοπικό SEO, με στόχο «οδηγός Κυκλάδες» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Cyclades, competitors compete for “Discover Cyclades” and related queries. Discover Cyclades needed a site that stands out through island hub architecture that funnels discovery traffic to commercial pages, ranks locally, and turns visitors into a inquiry—without looking generic.",
-      "el": "Στις Κυκλάδες, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «οδηγός Κυκλάδες». Το Discover Cyclades χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε αρχιτεκτονική κόμβων ανά νησί που οδηγεί κίνηση ανακάλυψης σε εμπορικές σελίδες, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε επικοινωνία — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Cyclades, competitors compete for “Discover Cyclades” and related queries. Discover Cyclades needed a site that stands out through island hub architecture that funnels discovery traffic to commercial pages, ranks locally, and turns visitors into a inquiry - without looking generic.",
+      "el": "Στις Κυκλάδες, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «οδηγός Κυκλάδες». Το Discover Cyclades χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε αρχιτεκτονική κόμβων ανά νησί που οδηγεί κίνηση ανακάλυψης σε εμπορικές σελίδες, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε επικοινωνία, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Cyclades, structured pages for Discover Cyclades and Cyclades travel guide, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Island hub architecture that funnels discovery traffic to commercial pages. Live site signals informed content priorities.",
@@ -1996,8 +1996,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Discover Crete είναι ζωντανό έργο πλατφόρμα ανακάλυψης και εκδρομών Κρήτης στην Κρήτη και Παλαιόχωρα. Παραδώσαμε κατασκευή ιστοσελίδας, δημιουργία περιεχομένου και σχεδιασμός ιστοσελίδας με SEO, με στόχο «εκδρομές Κρήτη» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Crete / Paleochora, competitors compete for “Discover Crete” and related queries. Discover Crete needed a site that stands out through region silos for west and east Crete travel intents, ranks locally, and turns visitors into a inquiry—without looking generic.",
-      "el": "Στην Κρήτη και Παλαιόχωρα, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «εκδρομές Κρήτη». Το Discover Crete χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε χωριστά hubs για δυτική και ανατολική Κρήτη, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε επικοινωνία — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Crete / Paleochora, competitors compete for “Discover Crete” and related queries. Discover Crete needed a site that stands out through region silos for west and east Crete travel intents, ranks locally, and turns visitors into a inquiry - without looking generic.",
+      "el": "Στην Κρήτη και Παλαιόχωρα, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «εκδρομές Κρήτη». Το Discover Crete χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε χωριστά hubs για δυτική και ανατολική Κρήτη, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε επικοινωνία, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Crete / Paleochora, structured pages for Discover Crete and Crete tours, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Region silos for west and east Crete travel intents. Live site signals informed content priorities.",
@@ -2096,8 +2096,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Way to Crete είναι ζωντανό έργο ιστοσελίδα για εκδρομές storytelling και εμπειρίες στην Κρήτη στην Κρήτη. Παραδώσαμε κατασκευή ιστοσελίδας και δημιουργία περιεχομένου, με στόχο «εμπειρίες Κρήτη» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Crete, competitors compete for “Way to Crete” and related queries. Way to Crete needed a site that stands out through experience-led booking pages that sell belonging, not just sightseeing, ranks locally, and turns visitors into a booking—without looking generic.",
-      "el": "Στην Κρήτη, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «εμπειρίες Κρήτη». Το Way to Crete χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε σελίδες εμπειριών που πουλούν συμμετοχή, όχι απλή θέαση, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Crete, competitors compete for “Way to Crete” and related queries. Way to Crete needed a site that stands out through experience-led booking pages that sell belonging, not just sightseeing, ranks locally, and turns visitors into a booking - without looking generic.",
+      "el": "Στην Κρήτη, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «εμπειρίες Κρήτη». Το Way to Crete χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε σελίδες εμπειριών που πουλούν συμμετοχή, όχι απλή θέαση, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Crete, structured pages for Way to Crete and Crete experiences, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Experience-led booking pages that sell belonging, not just sightseeing. Live site signals informed content priorities.",
@@ -2196,8 +2196,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Santorini Daily Tours είναι ζωντανό έργο ιστοσελίδα για ημερήσιες εκδρομές στη Σαντορίνη στη Σαντορίνη. Παραδώσαμε κατασκευή ιστοσελίδας και τοπικό SEO, με στόχο «ημερήσιες εκδρομές Σαντορίνη» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Santorini, competitors compete for “Santorini daily tours” and related queries. Santorini Daily Tours needed a site that stands out through product pages for volcano, boat and day-trip intents, ranks locally, and turns visitors into a booking—without looking generic.",
-      "el": "Στη Σαντορίνη, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «ημερήσιες εκδρομές Σαντορίνη». Το Santorini Daily Tours χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε σελίδες προϊόντων για ηφαίστειο, βάρκα και ημερήσιες εκδρομές, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Santorini, competitors compete for “Santorini daily tours” and related queries. Santorini Daily Tours needed a site that stands out through product pages for volcano, boat and day-trip intents, ranks locally, and turns visitors into a booking - without looking generic.",
+      "el": "Στη Σαντορίνη, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «ημερήσιες εκδρομές Σαντορίνη». Το Santorini Daily Tours χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε σελίδες προϊόντων για ηφαίστειο, βάρκα και ημερήσιες εκδρομές, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Santorini, structured pages for Santorini daily tours and Santorini boat tour, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Product pages for volcano, boat and day-trip intents. Live site signals informed content priorities.",
@@ -2296,8 +2296,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Santo Tours Marinakis είναι ζωντανό έργο ιστοσελίδα για τοπικός tour operator στη Σαντορίνη στη Σαντορίνη. Παραδώσαμε κατασκευή ιστοσελίδας και σχεδιασμός ιστοσελίδας με SEO, με στόχο «εκδρομές Σαντορίνη» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Santorini, competitors compete for “Santo Tours Marinakis” and related queries. Santo Tours Marinakis needed a site that stands out through family operator trust and licensed excursion SEO since 2000, ranks locally, and turns visitors into a booking—without looking generic.",
-      "el": "Στη Σαντορίνη, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «εκδρομές Σαντορίνη». Το Santo Tours Marinakis χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε εμπιστοσύνη οικογενειακού operator και SEO εκδρομών με άδεια από το 2000, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Santorini, competitors compete for “Santo Tours Marinakis” and related queries. Santo Tours Marinakis needed a site that stands out through family operator trust and licensed excursion SEO since 2000, ranks locally, and turns visitors into a booking - without looking generic.",
+      "el": "Στη Σαντορίνη, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «εκδρομές Σαντορίνη». Το Santo Tours Marinakis χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε εμπιστοσύνη οικογενειακού operator και SEO εκδρομών με άδεια από το 2000, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Santorini, structured pages for Santo Tours Marinakis and Santorini tours, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Family operator trust and licensed excursion SEO since 2000. Live site signals informed content priorities.",
@@ -2396,8 +2396,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Quad Safari Rethymno είναι ζωντανό έργο ιστοσελίδα για εκδρομές quad safari στο Ρέθυμνο στην Κρήτη. Παραδώσαμε κατασκευή ιστοσελίδας και τοπικό SEO, με στόχο «quad safari Ρέθυμνο» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Rethymno, Crete, competitors compete for “quad safari Rethymno” and related queries. Quad Safari Rethymno needed a site that stands out through adventure activity keywords around Rethymno with book-now paths, ranks locally, and turns visitors into a booking—without looking generic.",
-      "el": "Στο Ρέθυμνο στην Κρήτη, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «quad safari Ρέθυμνο». Το Quad Safari Rethymno χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε λέξεις-κλειδιά περιπέτειας γύρω από το Ρέθυμνο με διαδρομές κράτησης, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Rethymno, Crete, competitors compete for “quad safari Rethymno” and related queries. Quad Safari Rethymno needed a site that stands out through adventure activity keywords around Rethymno with book-now paths, ranks locally, and turns visitors into a booking - without looking generic.",
+      "el": "Στο Ρέθυμνο στην Κρήτη, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «quad safari Ρέθυμνο». Το Quad Safari Rethymno χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε λέξεις-κλειδιά περιπέτειας γύρω από το Ρέθυμνο με διαδρομές κράτησης, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Rethymno, Crete, structured pages for quad safari Rethymno and Crete ATV tour, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Adventure activity keywords around Rethymno with book-now paths. Live site signals informed content priorities.",
@@ -2496,8 +2496,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Skydream Travel είναι ζωντανό έργο ταξιδιωτικό γραφείο και πακέτα διακοπών στην Ελλάδα. Παραδώσαμε κατασκευή ιστοσελίδας, σχεδιασμός ιστοσελίδας με SEO και δημιουργία περιεχομένου, με στόχο «ταξιδιωτικό γραφείο» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Greece, competitors compete for “SkyDream Travel” and related queries. Skydream Travel needed a site that stands out through package and destination landing pages for commercial travel intent, ranks locally, and turns visitors into a inquiry—without looking generic.",
-      "el": "Στην Ελλάδα, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «ταξιδιωτικό γραφείο». Το Skydream Travel χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε σελίδες πακέτων και προορισμών για εμπορική ταξιδιωτική πρόθεση, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε επικοινωνία — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Greece, competitors compete for “SkyDream Travel” and related queries. Skydream Travel needed a site that stands out through package and destination landing pages for commercial travel intent, ranks locally, and turns visitors into a inquiry - without looking generic.",
+      "el": "Στην Ελλάδα, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «ταξιδιωτικό γραφείο». Το Skydream Travel χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε σελίδες πακέτων και προορισμών για εμπορική ταξιδιωτική πρόθεση, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε επικοινωνία, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Greece, structured pages for SkyDream Travel and travel agency Greece, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Package and destination landing pages for commercial travel intent. Live site signals informed content priorities.",
@@ -2596,8 +2596,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Cuba Travel Academy είναι ζωντανό έργο ακαδημία εκπαίδευσης για ταξίδι στην Κούβα στην Ελλάδα με στόχο ταξίδι στην Κούβα. Παραδώσαμε κατασκευή ιστοσελίδας και δημιουργία περιεχομένου, με στόχο «ταξίδι Κούβα» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Cuba travel (Greek audience), competitors compete for “Cuba Travel Academy” and related queries. Cuba Travel Academy needed a site that stands out through education-led content that answers document and itinerary questions before booking, ranks locally, and turns visitors into a signup—without looking generic.",
-      "el": "Στην Ελλάδα με στόχο ταξίδι στην Κούβα, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «ταξίδι Κούβα». Το Cuba Travel Academy χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε εκπαιδευτικό περιεχόμενο για έγγραφα και οργάνωση πριν την κράτηση, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε εγγραφή — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Cuba travel (Greek audience), competitors compete for “Cuba Travel Academy” and related queries. Cuba Travel Academy needed a site that stands out through education-led content that answers document and itinerary questions before booking, ranks locally, and turns visitors into a signup - without looking generic.",
+      "el": "Στην Ελλάδα με στόχο ταξίδι στην Κούβα, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «ταξίδι Κούβα». Το Cuba Travel Academy χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε εκπαιδευτικό περιεχόμενο για έγγραφα και οργάνωση πριν την κράτηση, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε εγγραφή, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Cuba travel (Greek audience), structured pages for Cuba Travel Academy and Cuba travel guide Greek, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Education-led content that answers document and itinerary questions before booking. Live site signals informed content priorities.",
@@ -2696,8 +2696,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Kaffatos VIP Transfers είναι ζωντανό έργο ιστοσελίδα για VIP μεταφορές με οδηγό στην Ελλάδα και ευρύτερη Αθήνα. Παραδώσαμε κατασκευή ιστοσελίδας και τοπικό SEO, με στόχο «VIP μεταφορές» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Greece / Athens region, competitors compete for “VIP transfers Greece” and related queries. Kaffatos VIP Transfers needed a site that stands out through airport and port VIP route landing pages, ranks locally, and turns visitors into a booking—without looking generic.",
-      "el": "Στην Ελλάδα και ευρύτερη Αθήνα, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «VIP μεταφορές». Το Kaffatos VIP Transfers χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε σελίδες διαδρομών VIP για αεροδρόμιο και λιμάνι, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Greece / Athens region, competitors compete for “VIP transfers Greece” and related queries. Kaffatos VIP Transfers needed a site that stands out through airport and port VIP route landing pages, ranks locally, and turns visitors into a booking - without looking generic.",
+      "el": "Στην Ελλάδα και ευρύτερη Αθήνα, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «VIP μεταφορές». Το Kaffatos VIP Transfers χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε σελίδες διαδρομών VIP για αεροδρόμιο και λιμάνι, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Greece / Athens region, structured pages for VIP transfers Greece and private driver Athens, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Airport and port VIP route landing pages. Live site signals informed content priorities.",
@@ -2796,8 +2796,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το The Ace VIP είναι ζωντανό έργο ιστοσελίδα για πολυτελείς βίλες και premium concierge στη Μύκονο στη Μύκονο. Παραδώσαμε κατασκευή ιστοσελίδας και σχεδιασμός ιστοσελίδας με SEO, με στόχο «βίλες Μύκονος VIP» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Mykonos, competitors compete for “Mykonos VIP villas” and related queries. The Ace VIP needed a site that stands out through exclusive villa and concierge packaging for high-spend guests, ranks locally, and turns visitors into a inquiry—without looking generic.",
-      "el": "Στη Μύκονο, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «βίλες Μύκονος VIP». Το The Ace VIP χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε πακέτα αποκλειστικών βιλών και concierge για επισκέπτες υψηλής δαπάνης, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε αίτημα προσφοράς — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Mykonos, competitors compete for “Mykonos VIP villas” and related queries. The Ace VIP needed a site that stands out through exclusive villa and concierge packaging for high-spend guests, ranks locally, and turns visitors into a inquiry - without looking generic.",
+      "el": "Στη Μύκονο, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «βίλες Μύκονος VIP». Το The Ace VIP χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε πακέτα αποκλειστικών βιλών και concierge για επισκέπτες υψηλής δαπάνης, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε αίτημα προσφοράς, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Mykonos, structured pages for Mykonos VIP villas and Mykonos concierge, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Exclusive villa and concierge packaging for high-spend guests. Live site signals informed content priorities.",
@@ -2896,8 +2896,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Antiparos Transfer είναι ζωντανό έργο υπηρεσία πολυτελών μεταφορών στο νησί στην Αντίπαρο και Πάρο. Παραδώσαμε κατασκευή ιστοσελίδας και τοπικό SEO, με στόχο «μεταφορά Αντίπαρος» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Antiparos and Paros, competitors compete for “Antiparos transfer” and related queries. Antiparos Transfer needed a site that stands out through family-run door-to-door transfers since 1994 including weddings, ranks locally, and turns visitors into a booking—without looking generic.",
-      "el": "Στην Αντίπαρο και Πάρο, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «μεταφορά Αντίπαρος». Το Antiparos Transfer χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε οικογενειακές μεταφορές πόρτα-πόρτα από το 1994, συμπεριλαμβανομένων γάμων, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Antiparos and Paros, competitors compete for “Antiparos transfer” and related queries. Antiparos Transfer needed a site that stands out through family-run door-to-door transfers since 1994 including weddings, ranks locally, and turns visitors into a booking - without looking generic.",
+      "el": "Στην Αντίπαρο και Πάρο, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «μεταφορά Αντίπαρος». Το Antiparos Transfer χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε οικογενειακές μεταφορές πόρτα-πόρτα από το 1994, συμπεριλαμβανομένων γάμων, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Antiparos and Paros, structured pages for Antiparos transfer and Antiparos taxi, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Family-run door-to-door transfers since 1994 including weddings. Live site signals informed content priorities.",
@@ -2996,8 +2996,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Navos AI είναι ζωντανό έργο πλατφόρμα τεχνητής νοημοσύνης για επιχειρηματικές αποφάσεις στη διεθνή αγορά SaaS. Παραδώσαμε κατασκευή ιστοσελίδας, ai-visibility και σχεδιασμός ιστοσελίδας με SEO, με στόχο «Navos AI» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In global SaaS market, competitors compete for “Navos AI” and related queries. Navos AI needed a site that stands out through product and use-case pages that explain decisions needing attention now, ranks locally, and turns visitors into a demo—without looking generic.",
-      "el": "Στη διεθνή αγορά SaaS, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «Navos AI». Το Navos AI χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε σελίδες προϊόντος και περιπτώσεων χρήσης για αποφάσεις που χρειάζονται προσοχή τώρα, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε επίδειξη — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In global SaaS market, competitors compete for “Navos AI” and related queries. Navos AI needed a site that stands out through product and use-case pages that explain decisions needing attention now, ranks locally, and turns visitors into a demo - without looking generic.",
+      "el": "Στη διεθνή αγορά SaaS, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «Navos AI». Το Navos AI χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε σελίδες προϊόντος και περιπτώσεων χρήσης για αποφάσεις που χρειάζονται προσοχή τώρα, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε επίδειξη, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around global SaaS market, structured pages for Navos AI and AI strategy advisor, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Product and use-case pages that explain decisions needing attention now. Live site signals informed content priorities.",
@@ -3096,8 +3096,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Project Shadow AI είναι ζωντανό έργο ιστοσελίδα για εργαλεία τεχνητής νοημοσύνης για ηλεκτρονικά καταστήματα στη διεθνές αγορά e-commerce. Παραδώσαμε κατασκευή ιστοσελίδας και ai-visibility, με στόχο «Project Shadow AI» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In global e-commerce, competitors compete for “Project Shadow AI” and related queries. Project Shadow AI needed a site that stands out through technical brand pages for AI store assistance (scrape was thin), ranks locally, and turns visitors into a inquiry—without looking generic.",
-      "el": "Στη διεθνές αγορά e-commerce, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «Project Shadow AI». Το Project Shadow AI χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε τεχνικές σελίδες brand για βοήθεια AI σε ηλεκτρονικό κατάστημα, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε επικοινωνία — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In global e-commerce, competitors compete for “Project Shadow AI” and related queries. Project Shadow AI needed a site that stands out through technical brand pages for AI store assistance (scrape was thin), ranks locally, and turns visitors into a inquiry - without looking generic.",
+      "el": "Στη διεθνές αγορά e-commerce, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «Project Shadow AI». Το Project Shadow AI χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε τεχνικές σελίδες brand για βοήθεια AI σε ηλεκτρονικό κατάστημα, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε επικοινωνία, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around global e-commerce, structured pages for Project Shadow AI and AI for WordPress stores, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Technical brand pages for AI store assistance (scrape was thin).",
@@ -3196,8 +3196,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Rethemnos είναι ζωντανό έργο τουριστική πύλη και τοπικός οδηγός Ρεθύμνου στο Ρέθυμνο. Παραδώσαμε κατασκευή ιστοσελίδας και δημιουργία περιεχομένου, με στόχο «τουρισμός Ρέθυμνο» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Rethymno, competitors compete for “Rethymno tourism” and related queries. Rethemnos needed a site that stands out through city guide hubs that feed commercial tourism and local business pages, ranks locally, and turns visitors into a inquiry—without looking generic.",
-      "el": "Στο Ρέθυμνο, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «τουρισμός Ρέθυμνο». Το Rethemnos χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε οδηγοί πόλης που τροφοδοτούν εμπορικές και τοπικές σελίδες, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε επικοινωνία — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Rethymno, competitors compete for “Rethymno tourism” and related queries. Rethemnos needed a site that stands out through city guide hubs that feed commercial tourism and local business pages, ranks locally, and turns visitors into a inquiry - without looking generic.",
+      "el": "Στο Ρέθυμνο, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «τουρισμός Ρέθυμνο». Το Rethemnos χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε οδηγοί πόλης που τροφοδοτούν εμπορικές και τοπικές σελίδες, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε επικοινωνία, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Rethymno, structured pages for Rethymno tourism and visit Rethymno, and shipped mobile-first UX with technical SEO, schema and clear calls to action. City guide hubs that feed commercial tourism and local business pages. Live site signals informed content priorities.",
@@ -3296,8 +3296,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Ktima Orion είναι ζωντανό έργο κτήμα γάμων και εκδηλώσεων στην Κερατέα Αττικής. Παραδώσαμε κατασκευή ιστοσελίδας και σχεδιασμός ιστοσελίδας με SEO, με στόχο «Κτήμα Ωρίων» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Keratea, Attica, competitors compete for “Ktima Orion” and related queries. Ktima Orion needed a site that stands out through wedding, baptism and event venue SEO for Attica couples, ranks locally, and turns visitors into a inquiry—without looking generic.",
-      "el": "Στην Κερατέα Αττικής, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «Κτήμα Ωρίων». Το Ktima Orion χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε SEO για γάμους, βαπτίσεις και εκδηλώσεις στην Αττική, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε αίτημα προσφοράς — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Keratea, Attica, competitors compete for “Ktima Orion” and related queries. Ktima Orion needed a site that stands out through wedding, baptism and event venue SEO for Attica couples, ranks locally, and turns visitors into a inquiry - without looking generic.",
+      "el": "Στην Κερατέα Αττικής, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «Κτήμα Ωρίων». Το Ktima Orion χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε SEO για γάμους, βαπτίσεις και εκδηλώσεις στην Αττική, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε αίτημα προσφοράς, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Keratea, Attica, structured pages for Ktima Orion and wedding estate Attica, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Wedding, baptism and event venue SEO for Attica couples. Live site signals informed content priorities.",
@@ -3396,8 +3396,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Weddings Folegandros είναι ζωντανό έργο ιστοσελίδα για οργάνωση γάμων προορισμού στη Φολέγανδρο. Παραδώσαμε κατασκευή ιστοσελίδας και τοπικό SEO, με στόχο «γάμοι Φολέγανδρος» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Folegandros, competitors compete for “Folegandros weddings” and related queries. Weddings Folegandros needed a site that stands out through Aegean wedding storytelling with planning inquiry paths, ranks locally, and turns visitors into a inquiry—without looking generic.",
-      "el": "Στη Φολέγανδρο, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «γάμοι Φολέγανδρος». Το Weddings Folegandros χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε αφήγηση γάμου στο Αιγαίο με διαδρομές αιτήματος οργάνωσης, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε αίτημα προσφοράς — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Folegandros, competitors compete for “Folegandros weddings” and related queries. Weddings Folegandros needed a site that stands out through Aegean wedding storytelling with planning inquiry paths, ranks locally, and turns visitors into a inquiry - without looking generic.",
+      "el": "Στη Φολέγανδρο, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «γάμοι Φολέγανδρος». Το Weddings Folegandros χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε αφήγηση γάμου στο Αιγαίο με διαδρομές αιτήματος οργάνωσης, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε αίτημα προσφοράς, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Folegandros, structured pages for Folegandros weddings and destination wedding Greece, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Aegean wedding storytelling with planning inquiry paths. Live site signals informed content priorities.",
@@ -3496,8 +3496,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το My Honeymoon είναι ζωντανό έργο ιστοσελίδα για οργάνωση ταξιδιού του μέλιτος στην Ελλάδα. Παραδώσαμε κατασκευή ιστοσελίδας και δημιουργία περιεχομένου, με στόχο «ταξίδι του μέλιτος Ελλάδα» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Greece, competitors compete for “My Honeymoon” and related queries. My Honeymoon needed a site that stands out through romantic itinerary and package keyword clusters for couples, ranks locally, and turns visitors into a inquiry—without looking generic.",
-      "el": "Στην Ελλάδα, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «ταξίδι του μέλιτος Ελλάδα». Το My Honeymoon χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε clusters ρομαντικών itineraries και πακέτων για ζευγάρια, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε αίτημα προσφοράς — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Greece, competitors compete for “My Honeymoon” and related queries. My Honeymoon needed a site that stands out through romantic itinerary and package keyword clusters for couples, ranks locally, and turns visitors into a inquiry - without looking generic.",
+      "el": "Στην Ελλάδα, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «ταξίδι του μέλιτος Ελλάδα». Το My Honeymoon χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε clusters ρομαντικών itineraries και πακέτων για ζευγάρια, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε αίτημα προσφοράς, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Greece, structured pages for My Honeymoon and Greece honeymoon packages, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Romantic itinerary and package keyword clusters for couples. Live site signals informed content priorities.",
@@ -3596,8 +3596,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Arion Farm είναι ζωντανό έργο ιστοσελίδα για αγροτικές εμπειρίες και αγροτουρισμός στην Κρήτη στην Κρήτη. Παραδώσαμε κατασκευή ιστοσελίδας, με στόχο «Arion Farm» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Crete, competitors compete for “Arion Farm” and related queries. Arion Farm needed a site that stands out through tours, traditional food and participatory farm experiences, ranks locally, and turns visitors into a booking—without looking generic.",
-      "el": "Στην Κρήτη, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «Arion Farm». Το Arion Farm χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε εκδρομές, παραδοσιακό φαγητό και συμμετοχικές εμπειρίες αγροκτήματος, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Crete, competitors compete for “Arion Farm” and related queries. Arion Farm needed a site that stands out through tours, traditional food and participatory farm experiences, ranks locally, and turns visitors into a booking - without looking generic.",
+      "el": "Στην Κρήτη, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «Arion Farm». Το Arion Farm χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε εκδρομές, παραδοσιακό φαγητό και συμμετοχικές εμπειρίες αγροκτήματος, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Crete, structured pages for Arion Farm and Crete farm experiences, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Tours, traditional food and participatory farm experiences. Live site signals informed content priorities.",
@@ -3696,8 +3696,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Plati Taverna είναι ζωντανό έργο παραδοσιακή ελληνική ταβέρνα στο Σπήλι Ρεθύμνου. Παραδώσαμε κατασκευή ιστοσελίδας και τοπικό SEO, με στόχο «Ταβέρνα Πλατεία Σπήλι» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Spili, Rethymno, competitors compete for “Plati Taverna Spili” and related queries. Plati Taverna needed a site that stands out through menu and wine pages with local village storytelling, ranks locally, and turns visitors into a reservation—without looking generic.",
-      "el": "Στο Σπήλι Ρεθύμνου, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «Ταβέρνα Πλατεία Σπήλι». Το Plati Taverna χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε σελίδες μενού και κρασιών με τοπική αφήγηση του χωριού, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση τραπεζιού — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Spili, Rethymno, competitors compete for “Plati Taverna Spili” and related queries. Plati Taverna needed a site that stands out through menu and wine pages with local village storytelling, ranks locally, and turns visitors into a reservation - without looking generic.",
+      "el": "Στο Σπήλι Ρεθύμνου, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «Ταβέρνα Πλατεία Σπήλι». Το Plati Taverna χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε σελίδες μενού και κρασιών με τοπική αφήγηση του χωριού, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση τραπεζιού, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Spili, Rethymno, structured pages for Plati Taverna Spili and taverna Spili Rethymno, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Menu and wine pages with local village storytelling. Live site signals informed content priorities.",
@@ -3796,8 +3796,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Fabrica Cafe είναι ζωντανό έργο καφέ και χώρος συνάντησης στο Σπήλι Ρεθύμνου. Παραδώσαμε κατασκευή ιστοσελίδας, με στόχο «Fabrica Cafe Σπήλι» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Spili, Rethymno, competitors compete for “Fabrica Cafe Spili” and related queries. Fabrica Cafe needed a site that stands out through local cafe discovery with menu and visit highlights, ranks locally, and turns visitors into a visit—without looking generic.",
-      "el": "Στο Σπήλι Ρεθύμνου, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «Fabrica Cafe Σπήλι». Το Fabrica Cafe χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε τοπική ανακάλυψη καφέ με highlights μενού και επίσκεψης, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε επικοινωνία — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Spili, Rethymno, competitors compete for “Fabrica Cafe Spili” and related queries. Fabrica Cafe needed a site that stands out through local cafe discovery with menu and visit highlights, ranks locally, and turns visitors into a visit - without looking generic.",
+      "el": "Στο Σπήλι Ρεθύμνου, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «Fabrica Cafe Σπήλι». Το Fabrica Cafe χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε τοπική ανακάλυψη καφέ με highlights μενού και επίσκεψης, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε επικοινωνία, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Spili, Rethymno, structured pages for Fabrica Cafe Spili and cafe Spili Rethymno, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Local cafe discovery with menu and visit highlights. Live site signals informed content priorities.",
@@ -3896,8 +3896,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Cocktails in the City είναι ζωντανό έργο cocktail bar και nightlife brand στην Ελλάδα. Παραδώσαμε κατασκευή ιστοσελίδας και δημιουργία περιεχομένου, με στόχο «Cocktails in the City» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Greece, competitors compete for “Cocktails in the City” and related queries. Cocktails in the City needed a site that stands out through events and signature drinks as content SEO hooks, ranks locally, and turns visitors into a reservation—without looking generic.",
-      "el": "Στην Ελλάδα, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «Cocktails in the City». Το Cocktails in the City χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε εκδηλώσεις και signature ποτά ως hooks περιεχομένου, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Greece, competitors compete for “Cocktails in the City” and related queries. Cocktails in the City needed a site that stands out through events and signature drinks as content SEO hooks, ranks locally, and turns visitors into a reservation - without looking generic.",
+      "el": "Στην Ελλάδα, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «Cocktails in the City». Το Cocktails in the City χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε εκδηλώσεις και signature ποτά ως hooks περιεχομένου, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Greece, structured pages for Cocktails in the City and cocktail bar Greece, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Events and signature drinks as content SEO hooks. Live site signals informed content priorities.",
@@ -3996,8 +3996,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το DailyHost είναι ζωντανό έργο διαχείριση βραχυχρόνιας μίσθωσης στην Ελλάδα. Παραδώσαμε κατασκευή ιστοσελίδας και σχεδιασμός ιστοσελίδας με SEO, με στόχο «DailyHost» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Greece, competitors compete for “DailyHost” and related queries. DailyHost needed a site that stands out through host onboarding and property listing conversion paths, ranks locally, and turns visitors into a inquiry—without looking generic.",
-      "el": "Στην Ελλάδα, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «DailyHost». Το DailyHost χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε διαδρομές εγγραφής hosts και μετατροπής καταχωρήσεων, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε επικοινωνία — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Greece, competitors compete for “DailyHost” and related queries. DailyHost needed a site that stands out through host onboarding and property listing conversion paths, ranks locally, and turns visitors into a inquiry - without looking generic.",
+      "el": "Στην Ελλάδα, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «DailyHost». Το DailyHost χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε διαδρομές εγγραφής hosts και μετατροπής καταχωρήσεων, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε επικοινωνία, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Greece, structured pages for DailyHost and holiday hosting Greece, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Host onboarding and property listing conversion paths. Live site signals informed content priorities.",
@@ -4096,8 +4096,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το DailyHost EU είναι ζωντανό έργο ευρωπαϊκό brand διαχείρισης καταλυμάτων στην ευρωπαϊκή αγορά. Παραδώσαμε κατασκευή ιστοσελίδας, με στόχο «DailyHost EU» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In European market, competitors compete for “DailyHost EU” and related queries. DailyHost EU needed a site that stands out through multi-market English positioning for EU guests and owners, ranks locally, and turns visitors into a inquiry—without looking generic.",
-      "el": "Στην ευρωπαϊκή αγορά, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «DailyHost EU». Το DailyHost EU χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε πολυαγοραία τοποθέτηση στα αγγλικά για επισκέπτες και ιδιοκτήτες στην ΕΕ, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε επικοινωνία — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In European market, competitors compete for “DailyHost EU” and related queries. DailyHost EU needed a site that stands out through multi-market English positioning for EU guests and owners, ranks locally, and turns visitors into a inquiry - without looking generic.",
+      "el": "Στην ευρωπαϊκή αγορά, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «DailyHost EU». Το DailyHost EU χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε πολυαγοραία τοποθέτηση στα αγγλικά για επισκέπτες και ιδιοκτήτες στην ΕΕ, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε επικοινωνία, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around European market, structured pages for DailyHost EU and Europe vacation hosting, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Multi-market English positioning for EU guests and owners. Live site signals informed content priorities.",
@@ -4192,8 +4192,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το George Xipolitas είναι ζωντανό έργο επαγγελματικό brand συμβουλευτικής εστίασης στην Ελλάδα. Παραδώσαμε κατασκευή ιστοσελίδας και σχεδιασμός ιστοσελίδας με SEO, με στόχο «George Xipolitas» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Greece, competitors compete for “George Xipolitas” and related queries. George Xipolitas needed a site that stands out through authority pages for local professional and hospitality search, ranks locally, and turns visitors into a inquiry—without looking generic.",
-      "el": "Στην Ελλάδα, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «George Xipolitas». Το George Xipolitas χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε σελίδες κύρους για τοπική επαγγελματική και hospitality αναζήτηση, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε επικοινωνία — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Greece, competitors compete for “George Xipolitas” and related queries. George Xipolitas needed a site that stands out through authority pages for local professional and hospitality search, ranks locally, and turns visitors into a inquiry - without looking generic.",
+      "el": "Στην Ελλάδα, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «George Xipolitas». Το George Xipolitas χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε σελίδες κύρους για τοπική επαγγελματική και hospitality αναζήτηση, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε επικοινωνία, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Greece, structured pages for George Xipolitas and hospitality consulting Greece, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Authority pages for local professional and hospitality search. Live site signals informed content priorities.",
@@ -4292,8 +4292,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Helicro είναι ζωντανό έργο υπηρεσία ιδιωτικών και αεροδρομικών μεταφορών στο Βέλγιο και διαδρομές προς Ελλάδα. Παραδώσαμε κατασκευή ιστοσελίδας και seo-audits, με στόχο «Helicro μεταφορές» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Belgium and Greece corridors, competitors compete for “Helicro transport” and related queries. Helicro needed a site that stands out through bilingual Belgium–Greece transfer booking with loyalty offers, ranks locally, and turns visitors into a booking—without looking generic.",
-      "el": "Στο Βέλγιο και διαδρομές προς Ελλάδα, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «Helicro μεταφορές». Το Helicro χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε δίγλωσσες κρατήσεις μεταφορών Βέλγιο–Ελλάδα με προγράμματα επιβράβευσης, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Belgium and Greece corridors, competitors compete for “Helicro transport” and related queries. Helicro needed a site that stands out through bilingual Belgium–Greece transfer booking with loyalty offers, ranks locally, and turns visitors into a booking - without looking generic.",
+      "el": "Στο Βέλγιο και διαδρομές προς Ελλάδα, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «Helicro μεταφορές». Το Helicro χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε δίγλωσσες κρατήσεις μεταφορών Βέλγιο–Ελλάδα με προγράμματα επιβράβευσης, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Belgium and Greece corridors, structured pages for Helicro transport and Belgium airport transfer, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Bilingual Belgium–Greece transfer booking with loyalty offers. Live site signals informed content priorities.",
@@ -4392,8 +4392,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Mastorush είναι ζωντανό έργο αγορά αιτημάτων προσφορών από μάστορες στην Ελλάδα. Παραδώσαμε κατασκευή ιστοσελίδας και τοπικό SEO, με στόχο «Mastorush» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Greece, competitors compete for “Mastorush” and related queries. Mastorush needed a site that stands out through post a job, get verified craftsman quotes with photos, ranks locally, and turns visitors into a signup—without looking generic.",
-      "el": "Στην Ελλάδα, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «Mastorush». Το Mastorush χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε δημοσίευση έργου και προσφορές από επαληθευμένους τεχνίτες με φωτογραφίες, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε εγγραφή — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Greece, competitors compete for “Mastorush” and related queries. Mastorush needed a site that stands out through post a job, get verified craftsman quotes with photos, ranks locally, and turns visitors into a signup - without looking generic.",
+      "el": "Στην Ελλάδα, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «Mastorush». Το Mastorush χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε δημοσίευση έργου και προσφορές από επαληθευμένους τεχνίτες με φωτογραφίες, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε εγγραφή, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Greece, structured pages for Mastorush and find craftsman Greece, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Post a job, get verified craftsman quotes with photos. Live site signals informed content priorities.",
@@ -4492,8 +4492,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Opticore Store είναι ζωντανό έργο ηλεκτρονικό κατάστημα οπτικών στην Ελλάδα. Παραδώσαμε κατασκευή ιστοσελίδας και σχεδιασμός ιστοσελίδας με SEO, με στόχο «αγορά γυαλιών online» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Greece, competitors compete for “Opticore Store” and related queries. Opticore Store needed a site that stands out through category SEO for frames and lenses with clear add-to-cart paths, ranks locally, and turns visitors into a order—without looking generic.",
-      "el": "Στην Ελλάδα, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «αγορά γυαλιών online». Το Opticore Store χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε SEO κατηγοριών για σκελετούς και φακούς με καθαρή διαδρομή αγοράς, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε παραγγελία — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Greece, competitors compete for “Opticore Store” and related queries. Opticore Store needed a site that stands out through category SEO for frames and lenses with clear add-to-cart paths, ranks locally, and turns visitors into a order - without looking generic.",
+      "el": "Στην Ελλάδα, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «αγορά γυαλιών online». Το Opticore Store χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε SEO κατηγοριών για σκελετούς και φακούς με καθαρή διαδρομή αγοράς, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε παραγγελία, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Greece, structured pages for Opticore Store and buy glasses online Greece, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Category SEO for frames and lenses with clear add-to-cart paths. Live site signals informed content priorities.",
@@ -4592,8 +4592,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Phytomore είναι ζωντανό έργο brand φυτικών προϊόντων wellness στην Ελλάδα και ΕΕ. Παραδώσαμε κατασκευή ιστοσελίδας και δημιουργία περιεχομένου, με στόχο «Phytomore» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Greece / EU, competitors compete for “Phytomore” and related queries. Phytomore needed a site that stands out through product education content that supports organic discovery, ranks locally, and turns visitors into a order—without looking generic.",
-      "el": "Στην Ελλάδα και ΕΕ, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «Phytomore». Το Phytomore χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε εκπαιδευτικό περιεχόμενο προϊόντων για οργανική ανακάλυψη, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε παραγγελία — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Greece / EU, competitors compete for “Phytomore” and related queries. Phytomore needed a site that stands out through product education content that supports organic discovery, ranks locally, and turns visitors into a order - without looking generic.",
+      "el": "Στην Ελλάδα και ΕΕ, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «Phytomore». Το Phytomore χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε εκπαιδευτικό περιεχόμενο προϊόντων για οργανική ανακάλυψη, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε παραγγελία, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Greece / EU, structured pages for Phytomore and plant based products, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Product education content that supports organic discovery. Live site signals informed content priorities.",
@@ -4692,8 +4692,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το The Nutri Nest είναι ζωντανό έργο κλινική διαιτολογία και διατροφολογία στην Ελλάδα. Παραδώσαμε κατασκευή ιστοσελίδας και τοπικό SEO, με στόχο «κλινική διαιτολόγος» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Greece, competitors compete for “clinical dietitian Greece” and related queries. The Nutri Nest needed a site that stands out through practitioner authority pages and appointment inquiry paths, ranks locally, and turns visitors into a inquiry—without looking generic.",
-      "el": "Στην Ελλάδα, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «κλινική διαιτολόγος». Το The Nutri Nest χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε σελίδες επαγγελματικής αυθεντίας και αιτημάτων ραντεβού, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε επικοινωνία — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Greece, competitors compete for “clinical dietitian Greece” and related queries. The Nutri Nest needed a site that stands out through practitioner authority pages and appointment inquiry paths, ranks locally, and turns visitors into a inquiry - without looking generic.",
+      "el": "Στην Ελλάδα, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «κλινική διαιτολόγος». Το The Nutri Nest χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε σελίδες επαγγελματικής αυθεντίας και αιτημάτων ραντεβού, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε επικοινωνία, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Greece, structured pages for clinical dietitian Greece and The Nutri Nest, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Practitioner authority pages and appointment inquiry paths. Live site signals informed content priorities.",
@@ -4792,8 +4792,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Folegandros Hair Salon είναι ζωντανό έργο κομμωτήριο, νύχια και μακιγιάζ στη Φολέγανδρο. Παραδώσαμε κατασκευή ιστοσελίδας και τοπικό SEO, με στόχο «κομμωτήριο Φολέγανδρος» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Folegandros, competitors compete for “Folegandros hair salon” and related queries. Folegandros Hair Salon needed a site that stands out through beauty services for island visitors and residents with book-now, ranks locally, and turns visitors into a booking—without looking generic.",
-      "el": "Στη Φολέγανδρο, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «κομμωτήριο Φολέγανδρος». Το Folegandros Hair Salon χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε υπηρεσίες ομορφιάς για επισκέπτες και κατοίκους με άμεση κράτηση, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Folegandros, competitors compete for “Folegandros hair salon” and related queries. Folegandros Hair Salon needed a site that stands out through beauty services for island visitors and residents with book-now, ranks locally, and turns visitors into a booking - without looking generic.",
+      "el": "Στη Φολέγανδρο, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «κομμωτήριο Φολέγανδρος». Το Folegandros Hair Salon χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε υπηρεσίες ομορφιάς για επισκέπτες και κατοίκους με άμεση κράτηση, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Folegandros, structured pages for Folegandros hair salon and Sousi Hair Salon, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Beauty services for island visitors and residents with book-now. Live site signals informed content priorities.",
@@ -4892,8 +4892,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Folegandros Moto είναι ζωντανό έργο ενοικίαση μηχανών και scooters στη Φολέγανδρο. Παραδώσαμε κατασκευή ιστοσελίδας και τοπικό SEO, με στόχο «ενοικίαση μηχανής Φολέγανδρος» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Folegandros, competitors compete for “Folegandros scooter rental” and related queries. Folegandros Moto needed a site that stands out through two-wheel fleet for island mobility since 1998, ranks locally, and turns visitors into a booking—without looking generic.",
-      "el": "Στη Φολέγανδρο, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «ενοικίαση μηχανής Φολέγανδρος». Το Folegandros Moto χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε στόλος δύο τροχών για μετακίνηση στο νησί από το 1998, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Folegandros, competitors compete for “Folegandros scooter rental” and related queries. Folegandros Moto needed a site that stands out through two-wheel fleet for island mobility since 1998, ranks locally, and turns visitors into a booking - without looking generic.",
+      "el": "Στη Φολέγανδρο, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «ενοικίαση μηχανής Φολέγανδρος». Το Folegandros Moto χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε στόλος δύο τροχών για μετακίνηση στο νησί από το 1998, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Folegandros, structured pages for Folegandros scooter rental and rent a moto Folegandros, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Two-wheel fleet for island mobility since 1998. Live site signals informed content priorities.",
@@ -4992,8 +4992,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Vape and More είναι ζωντανό έργο ηλεκτρονικό κατάστημα vape στην Ελλάδα. Παραδώσαμε κατασκευή ιστοσελίδας, με στόχο «κατάστημα vape» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Greece, competitors compete for “Vape and More” and related queries. Vape and More needed a site that stands out through product category architecture for retail search and fast checkout, ranks locally, and turns visitors into a order—without looking generic.",
-      "el": "Στην Ελλάδα, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «κατάστημα vape». Το Vape and More χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε αρχιτεκτονική κατηγοριών για λιανική αναζήτηση και γρήγορη αγορά, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε παραγγελία — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Greece, competitors compete for “Vape and More” and related queries. Vape and More needed a site that stands out through product category architecture for retail search and fast checkout, ranks locally, and turns visitors into a order - without looking generic.",
+      "el": "Στην Ελλάδα, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «κατάστημα vape». Το Vape and More χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε αρχιτεκτονική κατηγοριών για λιανική αναζήτηση και γρήγορη αγορά, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε παραγγελία, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Greece, structured pages for Vape and More and vape shop Greece, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Product category architecture for retail search and fast checkout. Live site signals informed content priorities.",
@@ -5092,8 +5092,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Ilektronika Tsigara είναι ζωντανό έργο ηλεκτρονικό κατάστημα ηλεκτρονικών τσιγάρων στην Ελλάδα. Παραδώσαμε κατασκευή ιστοσελίδας και βελτιστοποίηση ταχύτητας, με στόχο «ηλεκτρονικά τσιγάρα» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Greece, competitors compete for “electronic cigarettes Greece” and related queries. Ilektronika Tsigara needed a site that stands out through Greek commercial category SEO with free-shipping conversion hooks, ranks locally, and turns visitors into a order—without looking generic.",
-      "el": "Στην Ελλάδα, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «ηλεκτρονικά τσιγάρα». Το Ilektronika Tsigara χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε ελληνικό εμπορικό SEO κατηγοριών με hooks δωρεάν αποστολής, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε παραγγελία — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Greece, competitors compete for “electronic cigarettes Greece” and related queries. Ilektronika Tsigara needed a site that stands out through Greek commercial category SEO with free-shipping conversion hooks, ranks locally, and turns visitors into a order - without looking generic.",
+      "el": "Στην Ελλάδα, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «ηλεκτρονικά τσιγάρα». Το Ilektronika Tsigara χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε ελληνικό εμπορικό SEO κατηγοριών με hooks δωρεάν αποστολής, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε παραγγελία, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Greece, structured pages for electronic cigarettes Greece and e-cig shop Greece, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Greek commercial category SEO with free-shipping conversion hooks. Live site signals informed content priorities.",
@@ -5190,8 +5190,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Best Pumpkin Near Me είναι ζωντανό έργο κατάλογος τοπικών pumpkin patches στις ΗΠΑ στις Ηνωμένες Πολιτείες. Παραδώσαμε κατασκευή ιστοσελίδας, τοπικό SEO και δημιουργία περιεχομένου, με στόχο «best pumpkin near me» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In United States, competitors compete for “best pumpkin near me” and related queries. Best Pumpkin Near Me needed a site that stands out through hyperlocal near-me SEO for seasonal autumn demand, ranks locally, and turns visitors into a visit—without looking generic.",
-      "el": "Στις Ηνωμένες Πολιτείες, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «best pumpkin near me». Το Best Pumpkin Near Me χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε υπερτοπικό SEO «κοντά μου» για εποχιακή φθινοπωρινή ζήτηση, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε επικοινωνία — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In United States, competitors compete for “best pumpkin near me” and related queries. Best Pumpkin Near Me needed a site that stands out through hyperlocal near-me SEO for seasonal autumn demand, ranks locally, and turns visitors into a visit - without looking generic.",
+      "el": "Στις Ηνωμένες Πολιτείες, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «best pumpkin near me». Το Best Pumpkin Near Me χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε υπερτοπικό SEO «κοντά μου» για εποχιακή φθινοπωρινή ζήτηση, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε επικοινωνία, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around United States, structured pages for best pumpkin near me and pumpkin patch near me, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Hyperlocal near-me SEO for seasonal autumn demand. Live site signals informed content priorities.",
@@ -5286,8 +5286,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Stretcher Stopper είναι ζωντανό έργο ιστοσελίδα για προϊόν προστασίας τοίχων από φορεία στις ΗΠΑ και χώροι υγείας. Παραδώσαμε κατασκευή ιστοσελίδας, με στόχο «Stretcher Stopper» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In United States / healthcare facilities, competitors compete for “Stretcher Stopper” and related queries. Stretcher Stopper needed a site that stands out through product education pages with direct quote requests, ranks locally, and turns visitors into a quote—without looking generic.",
-      "el": "Στις ΗΠΑ και χώροι υγείας, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «Stretcher Stopper». Το Stretcher Stopper χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε σελίδες εκπαίδευσης προϊόντος με άμεσα αιτήματα προσφοράς, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε αίτημα προσφοράς — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In United States / healthcare facilities, competitors compete for “Stretcher Stopper” and related queries. Stretcher Stopper needed a site that stands out through product education pages with direct quote requests, ranks locally, and turns visitors into a quote - without looking generic.",
+      "el": "Στις ΗΠΑ και χώροι υγείας, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «Stretcher Stopper». Το Stretcher Stopper χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε σελίδες εκπαίδευσης προϊόντος με άμεσα αιτήματα προσφοράς, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε αίτημα προσφοράς, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around United States / healthcare facilities, structured pages for Stretcher Stopper and medical stretcher safety, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Product education pages with direct quote requests. Live site signals informed content priorities.",
@@ -5386,8 +5386,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Antiparos Rooms είναι ζωντανό έργο ιστοσελίδα για παραθαλάσσια δωμάτια και διαμερίσματα στην Αντίπαρο. Παραδώσαμε κατασκευή ιστοσελίδας και τοπικό SEO, με στόχο «δωμάτια Αντίπαρος» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Antiparos, competitors compete for “Antiparos rooms” and related queries. Antiparos Rooms needed a site that stands out through direct booking for Cycladic seaside apartments versus OTA dependence, ranks locally, and turns visitors into a booking—without looking generic.",
-      "el": "Στην Αντίπαρο, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «δωμάτια Αντίπαρος». Το Antiparos Rooms χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε άμεση κράτηση για παραθαλάσσια διαμερίσματα έναντι εξάρτησης από OTAs, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Antiparos, competitors compete for “Antiparos rooms” and related queries. Antiparos Rooms needed a site that stands out through direct booking for Cycladic seaside apartments versus OTA dependence, ranks locally, and turns visitors into a booking - without looking generic.",
+      "el": "Στην Αντίπαρο, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «δωμάτια Αντίπαρος». Το Antiparos Rooms χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε άμεση κράτηση για παραθαλάσσια διαμερίσματα έναντι εξάρτησης από OTAs, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Antiparos, structured pages for Antiparos rooms and Antiparos apartments, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Direct booking for Cycladic seaside apartments versus OTA dependence. Live site signals informed content priorities.",
@@ -5486,8 +5486,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Travel Sifnos είναι ζωντανό έργο ταξιδιωτικός οδηγός Σίφνου στη Σίφνο. Παραδώσαμε κατασκευή ιστοσελίδας και δημιουργία περιεχομένου, με στόχο «οδηγός Σίφνος» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Sifnos, competitors compete for “Travel Sifnos” and related queries. Travel Sifnos needed a site that stands out through local experiences and stay discovery for Sifnos visitors, ranks locally, and turns visitors into a inquiry—without looking generic.",
-      "el": "Στη Σίφνο, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «οδηγός Σίφνος». Το Travel Sifnos χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε τοπικές εμπειρίες και ανακάλυψη διαμονής για επισκέπτες της Σίφνου, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε επικοινωνία — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Sifnos, competitors compete for “Travel Sifnos” and related queries. Travel Sifnos needed a site that stands out through local experiences and stay discovery for Sifnos visitors, ranks locally, and turns visitors into a inquiry - without looking generic.",
+      "el": "Στη Σίφνο, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «οδηγός Σίφνος». Το Travel Sifnos χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε τοπικές εμπειρίες και ανακάλυψη διαμονής για επισκέπτες της Σίφνου, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε επικοινωνία, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Sifnos, structured pages for Travel Sifnos and Sifnos travel guide, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Local experiences and stay discovery for Sifnos visitors.",
@@ -5586,8 +5586,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Greece Cyclades είναι ζωντανό έργο ταξιδιωτικό brand Κυκλάδων στις Κυκλάδες. Παραδώσαμε κατασκευή ιστοσελίδας, δημιουργία περιεχομένου και σχεδιασμός ιστοσελίδας με SEO, με στόχο «Κυκλάδες Ελλάδα» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Cyclades, Greece, competitors compete for “Greece Cyclades” and related queries. Greece Cyclades needed a site that stands out through broad Cyclades discovery positioning versus island-specific siblings, ranks locally, and turns visitors into a inquiry—without looking generic.",
-      "el": "Στις Κυκλάδες, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «Κυκλάδες Ελλάδα». Το Greece Cyclades χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε ευρεία τοποθέτηση ανακάλυψης Κυκλάδων έναντι εξειδικευμένων siblings, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε επικοινωνία — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Cyclades, Greece, competitors compete for “Greece Cyclades” and related queries. Greece Cyclades needed a site that stands out through broad Cyclades discovery positioning versus island-specific siblings, ranks locally, and turns visitors into a inquiry - without looking generic.",
+      "el": "Στις Κυκλάδες, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «Κυκλάδες Ελλάδα». Το Greece Cyclades χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε ευρεία τοποθέτηση ανακάλυψης Κυκλάδων έναντι εξειδικευμένων siblings, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε επικοινωνία, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Cyclades, Greece, structured pages for Greece Cyclades and Cyclades holidays, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Broad Cyclades discovery positioning versus island-specific siblings.",
@@ -5686,8 +5686,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Agrocult είναι ζωντανό έργο απεντόμωση, έργα πρασίνου και αγροτικές υπηρεσίες στο Ρέθυμνο. Παραδώσαμε κατασκευή ιστοσελίδας και τοπικό SEO, με στόχο «Agrocult Ρέθυμνο» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Rethymno, competitors compete for “Agrocult Rethymno” and related queries. Agrocult needed a site that stands out through public health, green projects and agri service landing pages, ranks locally, and turns visitors into a inquiry—without looking generic.",
-      "el": "Στο Ρέθυμνο, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «Agrocult Ρέθυμνο». Το Agrocult χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε σελίδες για δημόσια υγεία, έργα πρασίνου και αγροτικές υπηρεσίες, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε αίτημα προσφοράς — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Rethymno, competitors compete for “Agrocult Rethymno” and related queries. Agrocult needed a site that stands out through public health, green projects and agri service landing pages, ranks locally, and turns visitors into a inquiry - without looking generic.",
+      "el": "Στο Ρέθυμνο, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «Agrocult Ρέθυμνο». Το Agrocult χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε σελίδες για δημόσια υγεία, έργα πρασίνου και αγροτικές υπηρεσίες, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε αίτημα προσφοράς, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Rethymno, structured pages for Agrocult Rethymno and pest control Rethymno, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Public health, green projects and agri service landing pages. Live site signals informed content priorities.",
@@ -5786,8 +5786,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Erebos είναι ζωντανό έργο πλατφόρμα παρακολούθησης οχημάτων σε πραγματικό χρόνο στην Ελλάδα και την ΕΕ. Παραδώσαμε κατασκευή ιστοσελίδας και σχεδιασμός ιστοσελίδας με SEO, με στόχο «παρακολούθηση οχημάτων» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Greece and the EU, competitors compete for “Erebos GPS tracking” and related queries. Erebos needed a site that stands out through phone or hardware tracker setup with free start tracking CTA, ranks locally, and turns visitors into a signup—without looking generic.",
-      "el": "Στην Ελλάδα και την ΕΕ, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «παρακολούθηση οχημάτων». Το Erebos χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε εγκατάσταση μέσω τηλεφώνου ή συσκευής με ξεκάθαρη κλήση έναρξης παρακολούθησης, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε εγγραφή — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Greece and the EU, competitors compete for “Erebos GPS tracking” and related queries. Erebos needed a site that stands out through phone or hardware tracker setup with free start tracking CTA, ranks locally, and turns visitors into a signup - without looking generic.",
+      "el": "Στην Ελλάδα και την ΕΕ, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «παρακολούθηση οχημάτων». Το Erebos χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε εγκατάσταση μέσω τηλεφώνου ή συσκευής με ξεκάθαρη κλήση έναρξης παρακολούθησης, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε εγγραφή, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Greece and the EU, structured pages for Erebos GPS tracking and vehicle tracking platform, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Phone or hardware tracker setup with free start tracking CTA. Live site signals informed content priorities.",
@@ -5886,8 +5886,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Ergo & Art είναι ζωντανό έργο στούντιο αρχιτεκτονικής και σχεδιασμού χώρων στην Ελλάδα. Παραδώσαμε κατασκευή ιστοσελίδας, τοπικό SEO και σχεδιασμός ιστοσελίδας με SEO, με στόχο «Ergo and Art» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Greece, competitors compete for “Ergo and Art” and related queries. Ergo & Art needed a site that stands out through human-centred space design portfolio for project inquiries, ranks locally, and turns visitors into a inquiry—without looking generic.",
-      "el": "Στην Ελλάδα, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «Ergo and Art». Το Ergo & Art χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε portfolio ανθρωποκεντρικού σχεδιασμού χώρων για αιτήματα έργων, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε αίτημα προσφοράς — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Greece, competitors compete for “Ergo and Art” and related queries. Ergo & Art needed a site that stands out through human-centred space design portfolio for project inquiries, ranks locally, and turns visitors into a inquiry - without looking generic.",
+      "el": "Στην Ελλάδα, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «Ergo and Art». Το Ergo & Art χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε portfolio ανθρωποκεντρικού σχεδιασμού χώρων για αιτήματα έργων, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε αίτημα προσφοράς, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Greece, structured pages for Ergo and Art and architecture studio Greece, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Human-centred space design portfolio for project inquiries. Live site signals informed content priorities.",
@@ -5986,8 +5986,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Fitness Hood Training Center είναι ζωντανό έργο κέντρο προπόνησης δύναμης και πειθαρχίας στην Ελλάδα. Παραδώσαμε κατασκευή ιστοσελίδας και τοπικό SEO, με στόχο «Fitness Hood» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Greece, competitors compete for “Fitness Hood” and related queries. Fitness Hood Training Center needed a site that stands out through local gym SEO with class and program pages, ranks locally, and turns visitors into a inquiry—without looking generic.",
-      "el": "Στην Ελλάδα, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «Fitness Hood». Το Fitness Hood Training Center χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε τοπικό SEO γυμναστηρίου με σελίδες προγραμμάτων, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε επικοινωνία — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Greece, competitors compete for “Fitness Hood” and related queries. Fitness Hood Training Center needed a site that stands out through local gym SEO with class and program pages, ranks locally, and turns visitors into a inquiry - without looking generic.",
+      "el": "Στην Ελλάδα, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «Fitness Hood». Το Fitness Hood Training Center χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε τοπικό SEO γυμναστηρίου με σελίδες προγραμμάτων, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε επικοινωνία, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Greece, structured pages for Fitness Hood and training center Greece, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Local gym SEO with class and program pages. Live site signals informed content priorities.",
@@ -6086,8 +6086,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Huqqa King είναι ζωντανό έργο brand ναργιλέ / lounge στην Ελλάδα. Παραδώσαμε κατασκευή ιστοσελίδας, eshop-woocommerce και βελτιστοποίηση ταχύτητας, με στόχο «Huqqa King» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Greece, competitors compete for “Huqqa King” and related queries. Huqqa King needed a site that stands out through local nightlife discovery with age-gated brand presence, ranks locally, and turns visitors into a visit—without looking generic.",
-      "el": "Στην Ελλάδα, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «Huqqa King». Το Huqqa King χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε τοπική ανακάλυψη nightlife με age-gate παρουσία brand, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε επικοινωνία — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Greece, competitors compete for “Huqqa King” and related queries. Huqqa King needed a site that stands out through local nightlife discovery with age-gated brand presence, ranks locally, and turns visitors into a visit - without looking generic.",
+      "el": "Στην Ελλάδα, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «Huqqa King». Το Huqqa King χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε τοπική ανακάλυψη nightlife με age-gate παρουσία brand, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε επικοινωνία, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Greece, structured pages for Huqqa King and hookah lounge Greece, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Local nightlife discovery with age-gated brand presence. Live site signals informed content priorities.",
@@ -6186,8 +6186,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Κοινή Λύση είναι ζωντανό έργο διαμεσολάβηση και εξωδικαστική επίλυση διαφορών στην Ελλάδα. Παραδώσαμε κατασκευή ιστοσελίδας, τοπικό SEO και δημιουργία περιεχομένου, με στόχο «διαμεσολάβηση» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Greece, competitors compete for “mediation Greece” and related queries. Κοινή Λύση needed a site that stands out through confidential mediation service pages for Greek commercial queries, ranks locally, and turns visitors into a inquiry—without looking generic.",
-      "el": "Στην Ελλάδα, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «διαμεσολάβηση». Το Κοινή Λύση χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε σελίδες υπηρεσιών διαμεσολάβησης με εμπιστευτικότητα για ελληνικά αιτήματα, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε επικοινωνία — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Greece, competitors compete for “mediation Greece” and related queries. Κοινή Λύση needed a site that stands out through confidential mediation service pages for Greek commercial queries, ranks locally, and turns visitors into a inquiry - without looking generic.",
+      "el": "Στην Ελλάδα, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «διαμεσολάβηση». Το Κοινή Λύση χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε σελίδες υπηρεσιών διαμεσολάβησης με εμπιστευτικότητα για ελληνικά αιτήματα, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε επικοινωνία, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Greece, structured pages for mediation Greece and Koini Lisi, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Confidential mediation service pages for Greek commercial queries. Live site signals informed content priorities.",
@@ -6286,8 +6286,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Logopedia είναι ζωντανό έργο λογοθεραπεία και εκπαίδευση στην Ελλάδα. Παραδώσαμε κατασκευή ιστοσελίδας, τοπικό SEO και δημιουργία περιεχομένου, με στόχο «λογοθεραπεία» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Greece, competitors compete for “Logopedia” and related queries. Logopedia needed a site that stands out through educational authority plus local therapy booking SEO, ranks locally, and turns visitors into a booking—without looking generic.",
-      "el": "Στην Ελλάδα, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «λογοθεραπεία». Το Logopedia χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε εκπαιδευτική αυθεντία και SEO κρατήσεων θεραπείας, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Greece, competitors compete for “Logopedia” and related queries. Logopedia needed a site that stands out through educational authority plus local therapy booking SEO, ranks locally, and turns visitors into a booking - without looking generic.",
+      "el": "Στην Ελλάδα, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «λογοθεραπεία». Το Logopedia χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε εκπαιδευτική αυθεντία και SEO κρατήσεων θεραπείας, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Greece, structured pages for Logopedia and speech therapy Greece, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Educational authority plus local therapy booking SEO. Live site signals informed content priorities.",
@@ -6384,8 +6384,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Naxos Car Rental είναι ζωντανό έργο ενοικίαση αυτοκινήτων στη Νάξο στη Νάξο. Παραδώσαμε κατασκευή ιστοσελίδας, τοπικό SEO και σχεδιασμός ιστοσελίδας με SEO, με στόχο «ενοικίαση αυτοκινήτου Νάξος» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Naxos, competitors compete for “Naxos car rental” and related queries. Naxos Car Rental needed a site that stands out through distinct fleet taxonomy versus sibling Naxos rental brands, ranks locally, and turns visitors into a booking—without looking generic.",
-      "el": "Στη Νάξο, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «ενοικίαση αυτοκινήτου Νάξος». Το Naxos Car Rental χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε διακριτή ταξινόμηση στόλου έναντι άλλων brands στη Νάξο, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Naxos, competitors compete for “Naxos car rental” and related queries. Naxos Car Rental needed a site that stands out through distinct fleet taxonomy versus sibling Naxos rental brands, ranks locally, and turns visitors into a booking - without looking generic.",
+      "el": "Στη Νάξο, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «ενοικίαση αυτοκινήτου Νάξος». Το Naxos Car Rental χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε διακριτή ταξινόμηση στόλου έναντι άλλων brands στη Νάξο, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Naxos, structured pages for Naxos car rental and rent a car Naxos airport, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Distinct fleet taxonomy versus sibling Naxos rental brands. Live site signals informed content priorities.",
@@ -6480,8 +6480,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Naxos Auto Rent είναι ζωντανό έργο online ενοικίαση αυτοκινήτων στη Νάξο στη Νάξο. Παραδώσαμε κατασκευή ιστοσελίδας, τοπικό SEO και βελτιστοποίηση ταχύτητας, με στόχο «ενοικίαση αυτοκινήτου Νάξος online» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Naxos, competitors compete for “Naxos auto rent” and related queries. Naxos Auto Rent needed a site that stands out through English-first booking UX for international guests, ranks locally, and turns visitors into a booking—without looking generic.",
-      "el": "Στη Νάξο, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «ενοικίαση αυτοκινήτου Νάξος online». Το Naxos Auto Rent χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε διεπαφή κράτησης στα αγγλικά για διεθνείς επισκέπτες, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Naxos, competitors compete for “Naxos auto rent” and related queries. Naxos Auto Rent needed a site that stands out through English-first booking UX for international guests, ranks locally, and turns visitors into a booking - without looking generic.",
+      "el": "Στη Νάξο, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «ενοικίαση αυτοκινήτου Νάξος online». Το Naxos Auto Rent χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε διεπαφή κράτησης στα αγγλικά για διεθνείς επισκέπτες, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Naxos, structured pages for Naxos auto rent and Naxos car hire online, and shipped mobile-first UX with technical SEO, schema and clear calls to action. English-first booking UX for international guests. Live site signals informed content priorities.",
@@ -6576,8 +6576,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Politidis Fitness είναι ζωντανό έργο προσωπική προπόνηση και online προγράμματα fitness στην Ελλάδα. Παραδώσαμε κατασκευή ιστοσελίδας και τοπικό SEO, με στόχο «Politidis Fitness» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Greece, competitors compete for “Politidis Fitness” and related queries. Politidis Fitness needed a site that stands out through trainer authority pages and program SEO for coaching leads, ranks locally, and turns visitors into a inquiry—without looking generic.",
-      "el": "Στην Ελλάδα, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «Politidis Fitness». Το Politidis Fitness χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε σελίδες κύρους προπονητή και SEO προγραμμάτων για leads coaching, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε επικοινωνία — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Greece, competitors compete for “Politidis Fitness” and related queries. Politidis Fitness needed a site that stands out through trainer authority pages and program SEO for coaching leads, ranks locally, and turns visitors into a inquiry - without looking generic.",
+      "el": "Στην Ελλάδα, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «Politidis Fitness». Το Politidis Fitness χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε σελίδες κύρους προπονητή και SEO προγραμμάτων για leads coaching, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε επικοινωνία, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Greece, structured pages for Politidis Fitness and personal trainer Greece, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Trainer authority pages and program SEO for coaching leads. Live site signals informed content priorities.",
@@ -6676,8 +6676,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Artemis Rental Sifnos είναι ζωντανό έργο ενοικίαση αυτοκινήτων και scooters στη Σίφνο. Παραδώσαμε κατασκευή ιστοσελίδας και τοπικό SEO, με στόχο «ενοικίαση αυτοκινήτου Σίφνος» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Sifnos, competitors compete for “rent a car Sifnos” and related queries. Artemis Rental Sifnos needed a site that stands out through reliable fleet from Apollonia since 1988 with free Kamares port pickup, ranks locally, and turns visitors into a booking—without looking generic.",
-      "el": "Στη Σίφνο, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «ενοικίαση αυτοκινήτου Σίφνος». Το Artemis Rental Sifnos χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε αξιόπιστος στόλος από την Απολλωνία από το 1988 με δωρεάν παραλαβή στις Καμάρες, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Sifnos, competitors compete for “rent a car Sifnos” and related queries. Artemis Rental Sifnos needed a site that stands out through reliable fleet from Apollonia since 1988 with free Kamares port pickup, ranks locally, and turns visitors into a booking - without looking generic.",
+      "el": "Στη Σίφνο, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «ενοικίαση αυτοκινήτου Σίφνος». Το Artemis Rental Sifnos χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε αξιόπιστος στόλος από την Απολλωνία από το 1988 με δωρεάν παραλαβή στις Καμάρες, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Sifnos, structured pages for rent a car Sifnos and Sifnos scooter rental, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Reliable fleet from Apollonia since 1988 with free Kamares port pickup. Live site signals informed content priorities.",
@@ -6776,8 +6776,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Smart Dog Training είναι ζωντανό έργο εκπαίδευση σκύλων με θετική ενίσχυση στην Ελλάδα. Παραδώσαμε κατασκευή ιστοσελίδας και δημιουργία περιεχομένου, με στόχο «εκπαίδευση σκύλων» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Greece, competitors compete for “Smart Dog Training” and related queries. Smart Dog Training needed a site that stands out through relationship-first training funnels with program pages, ranks locally, and turns visitors into a inquiry—without looking generic.",
-      "el": "Στην Ελλάδα, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «εκπαίδευση σκύλων». Το Smart Dog Training χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε διαδρομές εκπαίδευσης με έμφαση στη σχέση και σελίδες προγραμμάτων, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε επικοινωνία — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Greece, competitors compete for “Smart Dog Training” and related queries. Smart Dog Training needed a site that stands out through relationship-first training funnels with program pages, ranks locally, and turns visitors into a inquiry - without looking generic.",
+      "el": "Στην Ελλάδα, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «εκπαίδευση σκύλων». Το Smart Dog Training χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε διαδρομές εκπαίδευσης με έμφαση στη σχέση και σελίδες προγραμμάτων, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε επικοινωνία, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Greece, structured pages for Smart Dog Training and dog training Greece, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Relationship-first training funnels with program pages. Live site signals informed content priorities.",
@@ -6876,8 +6876,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το Taverna Yiannis είναι ζωντανό έργο οικογενειακή παραδοσιακή κρητική ταβέρνα στους Πλατανές Ρεθύμνου. Παραδώσαμε κατασκευή ιστοσελίδας και τοπικό SEO, με στόχο «Ταβέρνα Γιάννης Πλατανές» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Platanes, Rethymno, competitors compete for “Taverna Yiannis Platanes” and related queries. Taverna Yiannis needed a site that stands out through local food keywords and Maps-driven visit conversion, ranks locally, and turns visitors into a reservation—without looking generic.",
-      "el": "Στους Πλατανές Ρεθύμνου, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «Ταβέρνα Γιάννης Πλατανές». Το Taverna Yiannis χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε τοπικές λέξεις-κλειδιά φαγητού και μετατροπή από Google Maps, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση τραπεζιού — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Platanes, Rethymno, competitors compete for “Taverna Yiannis Platanes” and related queries. Taverna Yiannis needed a site that stands out through local food keywords and Maps-driven visit conversion, ranks locally, and turns visitors into a reservation - without looking generic.",
+      "el": "Στους Πλατανές Ρεθύμνου, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «Ταβέρνα Γιάννης Πλατανές». Το Taverna Yiannis χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε τοπικές λέξεις-κλειδιά φαγητού και μετατροπή από Google Maps, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε κράτηση τραπεζιού, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Platanes, Rethymno, structured pages for Taverna Yiannis Platanes and traditional Cretan taverna, and shipped mobile-first UX with technical SEO, schema and clear calls to action. Local food keywords and Maps-driven visit conversion. Live site signals informed content priorities.",
@@ -6976,8 +6976,8 @@ export const PORTFOLIO_CASE_STUDIES: PortfolioCaseStudyMap = {
       "el": "Το vwanaki είναι ζωντανό έργο κινητό cocktail bar για εκδηλώσεις στην Ελλάδα. Παραδώσαμε κατασκευή ιστοσελίδας, τοπικό SEO και δημιουργία περιεχομένου, με στόχο «κινητό cocktail bar» και σχετικές εμπορικές προθέσεις."
     },
     "challenge": {
-      "en": "In Greece, competitors compete for “mobile cocktail bar Greece” and related queries. vwanaki needed a site that stands out through a mobile bar that comes to the client for cocktails and events, ranks locally, and turns visitors into a inquiry—without looking generic.",
-      "el": "Στην Ελλάδα, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «κινητό cocktail bar». Το vwanaki χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε κινητό μπαρ που πηγαίνει στον πελάτη για κοκτέιλ και εκδηλώσεις, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε αίτημα προσφοράς — χωρίς εμφάνιση έτοιμου προτύπου."
+      "en": "In Greece, competitors compete for “mobile cocktail bar Greece” and related queries. vwanaki needed a site that stands out through a mobile bar that comes to the client for cocktails and events, ranks locally, and turns visitors into a inquiry - without looking generic.",
+      "el": "Στην Ελλάδα, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «κινητό cocktail bar». Το vwanaki χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε κινητό μπαρ που πηγαίνει στον πελάτη για κοκτέιλ και εκδηλώσεις, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε αίτημα προσφοράς, χωρίς εμφάνιση έτοιμου προτύπου."
     },
     "approach": {
       "en": "We mapped search intent around Greece, structured pages for mobile cocktail bar Greece and Vwanaki cocktail bar, and shipped mobile-first UX with technical SEO, schema and clear calls to action. A mobile bar that comes to the client for cocktails and events. Live site signals informed content priorities.",

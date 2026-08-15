@@ -8,7 +8,7 @@ interface AgencyServicesGridProps {
 
 const enServices = {
   heading: "What every tourism project includes",
-  subheading: "Each site ships with SEO-ready architecture — not a template bolted on later.",
+  subheading: "Each site ships with SEO-ready architecture, not a template bolted on later.",
   items: [
     {
       title: "Website creation",

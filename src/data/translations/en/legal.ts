@@ -43,7 +43,7 @@ export const legalEn = {
       },
       {
         heading: '4. Contact Us',
-        body: 'If you have any questions about this Privacy Policy, please contact us at hello@anotherseoguru.com.',
+        body: 'If you have any questions about this Privacy Policy, please contact us at anotherseoguru@gmail.com.',
       },
     ],
   },

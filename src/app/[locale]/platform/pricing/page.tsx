@@ -49,10 +49,10 @@ export default async function PlatformPricingPage({ params }: PageProps) {
   return (
     <>
       <Header />
-      <main className="main-below-header pb-20">
+      <main className="blueprint-grid relative z-0 main-below-header pb-20">
         <div className="container max-w-5xl">
           <header className="text-center max-w-2xl mx-auto mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Platform pricing</h1>
+            <h1 className="font-display text-4xl font-medium tracking-[-0.04em] md:text-5xl mb-4">Platform pricing</h1>
             <p className="text-lg text-muted-foreground">
               Software plans, credits, and checkout are managed inside the product. Start free - upgrade when your team is
               ready. Looking for done-for-you execution? See{" "}
@@ -66,9 +66,9 @@ export default async function PlatformPricingPage({ params }: PageProps) {
             {PLANS.map((p) => (
               <div
                 key={p.name}
-                className={`rounded-2xl border p-8 flex flex-col ${p.highlighted ? "border-primary shadow-glow bg-primary/5" : "border-border bg-card"}`}
+                className={`rounded-[10px] border p-8 flex flex-col ${p.highlighted ? "border-primary shadow-glow bg-primary/5" : "border-hairline bg-card"}`}
               >
-                <h2 className="text-xl font-bold mb-2">{p.name}</h2>
+                <h2 className="font-display text-xl font-medium tracking-[-0.02em] mb-2">{p.name}</h2>
                 <p className="text-sm text-muted-foreground mb-6 flex-1">{p.blurb}</p>
                 <ul className="text-sm space-y-2 text-muted-foreground mb-8">
                   {p.bullets.map((b) => (
@@ -80,7 +80,7 @@ export default async function PlatformPricingPage({ params }: PageProps) {
                 </ul>
                 <a
                   href={getAppPath("/signup")}
-                  className={`btn w-full text-center ${p.highlighted ? "btn-gradient" : "btn-outline"}`}
+                  className={`btn w-full text-center ${p.highlighted ? "btn-primary" : "btn-outline"}`}
                   rel="noopener noreferrer"
                 >
                   Open app to view plans
@@ -88,13 +88,13 @@ export default async function PlatformPricingPage({ params }: PageProps) {
               </div>
             ))}
           </div>
-          <div className="rounded-2xl border border-border bg-muted/30 p-8 text-center">
+          <div className="rounded-[10px] border border-hairline bg-surface-raised/40 p-8 text-center">
             <p className="text-muted-foreground mb-4">
               Exact prices, credit bundles, and add-ons ship in-product and may change - this marketing page stays focused
               on positioning.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <a href={getAppPath("/signup")} className="btn btn-gradient px-8" rel="noopener noreferrer">
+              <a href={getAppPath("/signup")} className="btn btn-primary px-8" rel="noopener noreferrer">
                 Create account
               </a>
               <Link href={lp("/contact")} className="btn btn-outline px-8">

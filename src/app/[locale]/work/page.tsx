@@ -53,8 +53,8 @@ export default async function WorkPage({ params }: PageProps) {
   return (
     <>
       <Header locale={locale as SiteLocale} />
-      <main className="main-below-header">
-        <section className="section gradient-hero">
+      <main className="blueprint-grid relative z-0 main-below-header">
+        <section className="section ">
           <div className="container max-w-3xl">
             <h1 className="mb-4 text-4xl font-bold sm:text-5xl">{t.h1}</h1>
             <p className="text-lg text-muted-foreground">{t.desc}</p>

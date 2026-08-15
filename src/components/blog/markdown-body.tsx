@@ -1,6 +1,7 @@
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import { rehypeHeadingIds } from "@/lib/rehype-heading-ids";
 import type { SiteLocale } from "@/lib/i18n/locale";
 
 interface MarkdownBodyProps {
@@ -27,6 +28,7 @@ export function MarkdownBody({ markdown, locale = "en" }: MarkdownBodyProps) {
   return (
     <ReactMarkdown
       remarkPlugins={[remarkGfm]}
+      rehypePlugins={[rehypeHeadingIds]}
       components={{
         a: ({ href, children }) => {
           if (href?.startsWith("/")) {

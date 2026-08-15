@@ -1,188 +1,242 @@
 import Link from "next/link";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { ArrowUpRight } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { industries } from "@/data/industries";
-import { services } from "@/data/services";
+import SchemaMarkup from "@/components/seo/SchemaMarkup";
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
+import { industries, TOURISM_INDUSTRY_SLUGS } from "@/data/industries";
 import { industriesEl } from "@/data/industries-i18n";
+import { services } from "@/data/services";
 import { getServiceEl } from "@/data/services-i18n";
 import { isValidLocale, localizedPath, type SiteLocale } from "@/lib/i18n/locale";
 import { buildMetadata } from "@/lib/seo";
+import {
+  generateBreadcrumbSchema,
+  generateCollectionPageSchema,
+  combineSchemas,
+  BASE_URL,
+} from "@/lib/seo/schema";
+import { generateBreadcrumbs } from "@/lib/linking";
+import {
+  Section,
+  SectionHeading,
+  MeshGrid,
+  Bloom,
+  PrimaryButtonLink,
+  GhostButtonLink,
+} from "@/components/landing/primitives";
+import { PROJECT_COUNT } from "@/data/company-facts";
 
 type PageProps = { params: Promise<{ locale: string }> };
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { locale } = await params;
   if (!isValidLocale(locale)) return {};
-
-  if (locale === 'el') {
-    return buildMetadata({
-      title: "Κλαδικές Λύσεις SEO & Web Design",
-      description:
-        "Εξειδικευμένες ιστοσελίδες και λύσεις SEO για ενοικίαση αυτοκινήτου, ξενοδοχεία, τουρισμό, εστιατόρια, e-commerce και άλλα. Ζητήστε δωρεάν προσφορά.",
-      path: localizedPath('el', '/solutions'),
-      hreflangPath: "/solutions",
-    });
-  }
+  const isEl = locale === "el";
 
   return buildMetadata({
-    title: "Tourism & Industry Website Solutions | Hotels, Rent-a-Car, Tours",
-    description:
-      "Industry website design and SEO for hotels, rent-a-car, tour operators and more. Playbooks built to rank globally and convert bookings.",
-    path: localizedPath('en', '/solutions'),
+    title: isEl ? "Λύσεις SEO & Ιστοσελίδων ανά Κλάδο" : "SEO & Website Solutions by Industry",
+    description: isEl
+      ? "Ιστοσελίδες και SEO ανά κλάδο: ξενοδοχεία, ενοικίαση αυτοκινήτου, τουρισμός, εστίαση και υπηρεσίες. Στρατηγική με βάση τη ζήτηση του κλάδου σας."
+      : "Websites and SEO by industry: hotels, rent-a-car, tourism, restaurants and service businesses. Strategy built around the demand in your sector.",
+    path: localizedPath(locale, "/solutions"),
     hreflangPath: "/solutions",
+    primaryKeyword: isEl ? "λύσεις ανά κλάδο" : "industry solutions",
   });
 }
 
 export default async function SolutionsPage({ params }: PageProps) {
   const { locale } = await params;
   if (!isValidLocale(locale)) notFound();
-  
-  const isEl = locale === 'el';
-  const lp = (path: string) => localizedPath(locale as SiteLocale, path);
+  const siteLocale = locale as SiteLocale;
+  const isEl = siteLocale === "el";
+  const lp = (path: string) => localizedPath(siteLocale, path);
 
-  const t = isEl
-    ? {
-        home: "Αρχική",
-        solutions: "Λύσεις",
-        h1: "Κλαδικές Λύσεις",
-        sub: "Κάθε κλάδος έχει μοναδικές ανάγκες. Κατασκευάζουμε ιστοσελίδες ειδικά σχεδιασμένες για τον δικό σας κλάδο - με τα χαρακτηριστικά, το design και το SEO που σας βοηθά να ξεχωρίσετε.",
-        viewPricing: "Δείτε τις Τιμές",
-        startProject: "Ξεκινήστε το έργο",
-        ourServicesTitle: "Οι Υπηρεσίες Μας",
-        ourServicesSub: "Κάθε κλαδική λύση περιλαμβάνει πρόσβαση σε όλο το φάσμα των υπηρεσιών μας",
-        readyTitle: "Έτοιμοι να Κατασκευάσετε την Ιστοσελίδα Σας;",
-        readySub: "Λάβετε μια προσαρμοσμένη προσφορά ειδικά για τον κλάδο της επιχείρησής σας.",
-        viewSolutionsFor: (name: string) => `Λύσεις για ${name} →`,
-      }
-    : {
-        home: "Home",
-        solutions: "Solutions",
-        h1: "Industry Solutions",
-        sub: "Every industry has unique needs. We build websites specifically designed for your business type - with the features, design, and SEO focus that helps you stand out and get found by your ideal customers.",
-        viewPricing: "View Pricing",
-        startProject: "Start Your Project",
-        ourServicesTitle: "Our Services",
-        ourServicesSub: "Every industry solution includes access to our full range of services",
-        readyTitle: "Ready to Build Your Industry Website?",
-        readySub: "Get a custom quote tailored for your business type.",
-        viewSolutionsFor: (name: string) => `View ${name} Solutions →`,
-      };
+  const breadcrumbItems = generateBreadcrumbs(
+    [{ name: isEl ? "Λύσεις" : "Solutions", url: "/solutions" }],
+    siteLocale,
+  );
+
+  const named = industries.map((i) => ({
+    ...i,
+    displayName: isEl ? industriesEl[i.slug]?.name ?? i.name : i.name,
+    displayDescription: isEl
+      ? industriesEl[i.slug]?.description ?? i.description
+      : i.description,
+    displayPainPoints: isEl
+      ? industriesEl[i.slug]?.painPoints ?? i.painPoints
+      : i.painPoints,
+  }));
+
+  // Tourism is where the portfolio proof lives, so it leads. Everything else
+  // keeps its own indexable page and is listed in full below.
+  const tourism = named.filter((i) => TOURISM_INDUSTRY_SLUGS.includes(i.slug as never));
+  const rest = named.filter((i) => !TOURISM_INDUSTRY_SLUGS.includes(i.slug as never));
+
+  const schemas = combineSchemas(
+    generateBreadcrumbSchema({ items: breadcrumbItems }),
+    generateCollectionPageSchema({
+      name: isEl ? "Λύσεις ανά κλάδο" : "Solutions by industry",
+      url: `${BASE_URL}${lp("/solutions")}`,
+      inLanguage: siteLocale,
+      items: named.map((i) => ({
+        url: `${BASE_URL}${lp(`/solutions/${i.slug}`)}`,
+        name: i.displayName,
+      })),
+    }),
+  );
 
   return (
     <>
-      <Header locale={locale as SiteLocale} />
-      <main className="main-below-header">
-        <section className="section-compact gradient-hero">
-          <div className="container">
-            <div className="max-w-3xl">
-              <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
-                <Link href={lp("/")} className="hover:text-primary">{t.home}</Link>
-                <span>/</span>
-                <span className="text-foreground">{t.solutions}</span>
-              </nav>
-
-              <h1 className="text-4xl sm:text-5xl font-bold mb-6">
-                {t.h1}
-              </h1>
-              <p className="text-lg text-muted-foreground mb-8">
-                {t.sub}
-              </p>
-
-              <div className="flex flex-wrap gap-4">
-                <Link href={lp("/pricing")} className="btn btn-gradient">
-                  {t.viewPricing}
-                </Link>
-                <Link href={lp("/get-started")} className="btn btn-outline">
-                  {t.startProject}
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="section">
-          <div className="container">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {industries.map((industry) => {
-                const indEl = isEl ? industriesEl[industry.slug] : null;
-                const name = indEl?.name ?? industry.name;
-                const desc = indEl?.description ?? industry.description;
-                const points = isEl && indEl?.painPoints ? indEl.painPoints : industry.painPoints;
-                return (
-                  <Link
-                    key={industry.slug}
-                    href={lp(`/solutions/${industry.slug}`)}
-                    className="glass-card hover-glow card p-6 group"
-                  >
-                    <h2 className="text-xl font-bold mb-3 group-hover:text-primary transition-smooth">
-                      {name}
-                    </h2>
-                    <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
-                      {desc}
-                    </p>
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {points.slice(0, 3).map((point, i) => (
-                        <span
-                          key={i}
-                          className="px-2 py-1 text-xs bg-muted rounded"
-                        >
-                          {point}
-                        </span>
-                      ))}
-                    </div>
-                    <span className="text-primary text-sm font-medium">
-                      {t.viewSolutionsFor(name)}
-                    </span>
-                  </Link>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-
-        <section className="section bg-muted/30">
-          <div className="container">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-center">
-              {t.ourServicesTitle}
-            </h2>
-            <p className="text-muted-foreground text-center mb-8 max-w-2xl mx-auto">
-              {t.ourServicesSub}
+      <SchemaMarkup schemas={schemas} />
+      <Header locale={siteLocale} />
+      <main className="blueprint-grid relative z-0">
+        <section className="relative overflow-hidden border-b border-hairline">
+          <Bloom className="left-1/2 top-[-8rem] h-[26rem] w-[60rem] -translate-x-1/2" />
+          <div className="main-below-header relative mx-auto max-w-6xl px-6 pb-14 pt-6">
+            <Breadcrumbs items={breadcrumbItems} className="mb-6" />
+            <h1 className="rise-in max-w-3xl font-display text-4xl font-medium leading-[1.05] tracking-[-0.04em] text-foreground md:text-6xl">
+              {isEl ? "Λύσεις ανά κλάδο" : "Solutions by industry"}
+            </h1>
+            <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
+              {isEl
+                ? `Η ζήτηση αναζήτησης διαφέρει ριζικά ανά κλάδο. Έχουμε παραδώσει ${PROJECT_COUNT} έργα, με το μεγαλύτερο βάθος σε τουρισμό και φιλοξενία.`
+                : `Search demand differs sharply by sector. We have delivered ${PROJECT_COUNT} projects, with the most depth in tourism and hospitality.`}
             </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3">
-              {services.map((service) => {
-                const svcEl = isEl ? getServiceEl(service.slug) : null;
-                const name = svcEl?.shortName ?? svcEl?.name ?? service.shortName;
-                return (
-                  <Link
-                    key={service.slug}
-                    href={lp(`/services/${service.slug}`)}
-                    className="glass-card hover-glow p-3 text-center rounded-lg border border-border transition-smooth text-sm font-medium"
-                  >
-                    {name}
-                  </Link>
-                );
-              })}
+            <div className="mt-9 flex flex-wrap gap-3">
+              <PrimaryButtonLink href={lp("/get-started")}>
+                {isEl ? "Ζητήστε Προσφορά" : "Request a Quote"}
+              </PrimaryButtonLink>
+              <GhostButtonLink href={lp("/work")}>
+                {isEl ? "Δείτε τα Έργα μας" : "View Our Work"}
+              </GhostButtonLink>
             </div>
           </div>
         </section>
 
-        <section className="section gradient-primary text-white">
-          <div className="container text-center">
-            <h2 className="text-3xl font-bold mb-4">
-              {t.readyTitle}
+        <Section>
+          <SectionHeading
+            align="left"
+            eyebrow={isEl ? "Εξειδίκευση" : "Where we are strongest"}
+            title={isEl ? "Τουρισμός και φιλοξενία" : "Tourism and hospitality"}
+            body={
+              isEl
+                ? "Εδώ βρίσκεται το μεγαλύτερο μέρος του portfolio μας: εποχικότητα, πολυγλωσσικά sites, απευθείας κρατήσεις και ανταγωνισμός με τα OTAs."
+                : "This is where most of our portfolio sits: seasonality, multilingual sites, direct bookings and competing with the OTAs."
+            }
+            className="mb-12"
+          />
+          <MeshGrid className="sm:grid-cols-2 lg:grid-cols-3">
+            {tourism.map((industry) => (
+              <Link
+                key={industry.slug}
+                href={lp(`/solutions/${industry.slug}`)}
+                className="group flex flex-col bg-surface p-7 transition-colors hover:bg-surface-raised"
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <h2 className="font-display text-lg font-medium tracking-[-0.02em] text-foreground">
+                    {industry.displayName}
+                  </h2>
+                  <ArrowUpRight
+                    className="size-4 shrink-0 text-muted-foreground transition-colors group-hover:text-primary"
+                    aria-hidden
+                  />
+                </div>
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
+                  {industry.displayDescription}
+                </p>
+                <ul className="mt-5 space-y-2 border-t border-hairline pt-4">
+                  {industry.displayPainPoints.slice(0, 3).map((p) => (
+                    <li key={p} className="flex gap-2.5 text-[13px] text-muted-foreground">
+                      <span aria-hidden className="mt-2 h-px w-3 shrink-0 bg-brand" />
+                      {p}
+                    </li>
+                  ))}
+                </ul>
+              </Link>
+            ))}
+          </MeshGrid>
+        </Section>
+
+        <Section className="pt-0">
+          <SectionHeading
+            align="left"
+            eyebrow={isEl ? "Και ακόμη" : "Also covered"}
+            title={isEl ? "Υπόλοιποι κλάδοι" : "Other industries"}
+            body={
+              isEl
+                ? "Η ίδια μεθοδολογία εφαρμόζεται και εδώ: ανάλυση ζήτησης, τεχνικά θεμέλια, περιεχόμενο και μετρήσιμα leads."
+                : "The same method applies here: demand analysis, technical foundations, content and measurable leads."
+            }
+            className="mb-12"
+          />
+          <MeshGrid className="sm:grid-cols-2 lg:grid-cols-4">
+            {rest.map((industry) => (
+              <Link
+                key={industry.slug}
+                href={lp(`/solutions/${industry.slug}`)}
+                className="group flex items-start justify-between gap-3 bg-surface p-5 transition-colors hover:bg-surface-raised"
+              >
+                <span className="text-sm font-medium leading-snug text-foreground">
+                  {industry.displayName}
+                </span>
+                <ArrowUpRight
+                  className="mt-0.5 size-3.5 shrink-0 text-muted-foreground transition-colors group-hover:text-primary"
+                  aria-hidden
+                />
+              </Link>
+            ))}
+          </MeshGrid>
+        </Section>
+
+        <Section className="pt-0">
+          <SectionHeading
+            align="left"
+            eyebrow={isEl ? "Υπηρεσίες" : "Services"}
+            title={isEl ? "Τι εφαρμόζουμε σε κάθε κλάδο" : "What we apply in every sector"}
+            className="mb-10"
+          />
+          <div className="flex flex-wrap gap-2">
+            {services.map((s) => {
+              const el = isEl ? getServiceEl(s.slug) : null;
+              return (
+                <Link
+                  key={s.slug}
+                  href={lp(`/services/${s.slug}`)}
+                  className="rounded-full border border-hairline bg-surface px-4 py-2 text-[13px] text-muted-foreground transition-colors hover:border-brand/40 hover:text-foreground"
+                >
+                  {el?.shortName ?? el?.name ?? s.shortName}
+                </Link>
+              );
+            })}
+          </div>
+        </Section>
+
+        <section className="relative overflow-hidden border-t border-hairline">
+          <Bloom className="left-1/2 top-1/4 h-[24rem] w-[56rem] -translate-x-1/2" />
+          <div className="relative mx-auto max-w-3xl px-6 py-24 text-center">
+            <h2 className="font-display text-3xl font-medium leading-[1.05] tracking-[-0.04em] text-foreground md:text-5xl">
+              {isEl ? "Ο κλάδος σας δεν είναι στη λίστα;" : "Sector not on the list?"}
             </h2>
-            <p className="text-white/80 mb-8">
-              {t.readySub}
+            <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">
+              {isEl
+                ? "Η μεθοδολογία δεν αλλάζει. Πείτε μας τι κάνετε και σε ποια αγορά, και θα δούμε αν υπάρχει πραγματική ζήτηση αναζήτησης να αξιοποιήσουμε."
+                : "The method does not change. Tell us what you do and which market, and we will look at whether there is real search demand to work with."}
             </p>
-            <Link href={lp("/get-started")} className="btn bg-white text-primary hover:bg-white/90">
-              {t.startProject}
-            </Link>
+            <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
+              <PrimaryButtonLink href={lp("/get-started")}>
+                {isEl ? "Συζητήστε το Project σας" : "Discuss Your Project"}
+              </PrimaryButtonLink>
+              <GhostButtonLink href={lp("/pricing")}>
+                {isEl ? "Δείτε τις Τιμές" : "View Pricing"}
+              </GhostButtonLink>
+            </div>
           </div>
         </section>
       </main>
-      <Footer locale={locale as SiteLocale} />
+      <Footer locale={siteLocale} />
     </>
   );
 }

@@ -30,9 +30,9 @@ export default async function PlatformForAgenciesPage({ params }: PageProps) {
   return (
     <>
       <Header />
-      <main className="main-below-header pb-20">
+      <main className="blueprint-grid relative z-0 main-below-header pb-20">
         <div className="container max-w-3xl">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Built for agencies shipping every week</h1>
+          <h1 className="font-display text-4xl font-medium tracking-[-0.04em] md:text-5xl mb-6">Built for agencies shipping every week</h1>
           <p className="text-lg text-muted-foreground mb-10 leading-relaxed">
             Your clients do not pay for another export - they pay for clarity and velocity. AnotherSEOGuru ties each property to
             query-level reality, clusters intent, surfaces cannibalization, and turns recommendations into sprint tasks your
@@ -53,7 +53,7 @@ export default async function PlatformForAgenciesPage({ params }: PageProps) {
             </li>
           </ul>
           <div className="flex flex-wrap gap-4">
-            <a href={getAppPath("/signup")} className="btn btn-gradient px-6 py-3" rel="noopener noreferrer">
+            <a href={getAppPath("/signup")} className="btn btn-primary px-6 py-3" rel="noopener noreferrer">
               Start free
             </a>
             <Link href={lp("/platform/features")} className="btn btn-outline px-6 py-3">

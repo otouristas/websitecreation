@@ -15,14 +15,14 @@ faq:
   - question: "Why invest in direct bookings?"
     answer: "Every Booking/Expedia reservation costs 15–25% commission. Direct bookings from your own site cut that cost and give you the guest relationship."
   - question: "Do I need a booking engine?"
-    answer: "Yes if you want real direct reservations. For very small properties, an availability form plus WhatsApp can work — we design the flow with you."
+    answer: "Yes if you want real direct reservations. For very small properties, an availability form plus WhatsApp can work - we design the flow with you."
   - question: "Can my site compete with Booking.com in SEO?"
     answer: "On broad head terms it is hard, but on brand and long-tail queries (e.g. luxury suites with private pool) your site can win the top spots."
   - question: "How long does a hotel website take?"
     answer: "Usually 3–5 weeks once photos, room details, and policies are ready. Content readiness is the usual bottleneck."
 ---
 
-A hotel’s website is its most profitable sales channel — or its most expensive missed opportunity. Great **hotel website design** turns a browser into a direct booking; a slow, dated site sends that guest straight to an OTA that charges you commission. Here’s what a booking-driving hotel site needs in 2026, what it costs, and how to build it for SEO.
+A hotel’s website is its most profitable sales channel - or its most expensive missed opportunity. Great **hotel website design** turns a browser into a direct booking; a slow, dated site sends that guest straight to an OTA that charges you commission. Here’s what a booking-driving hotel site needs in 2026, what it costs, and how to build it for SEO.
 
 > **Related:** [hotel solutions](/en/solutions/hotels) · [pricing](/en/pricing) · [SEO for hotels](/en/blog/seo-for-hotels-guide) · [website cost guide](/en/blog/how-much-does-a-website-cost) · [free quote](/en/get-started).
 
@@ -61,7 +61,7 @@ Separate, rich pages for each room type and experience (spa, breakfast, weddings
 
 ### 4. Destination storytelling
 
-Guests choose the place before the property. Content about your location builds desire early — see the [hotel SEO guide](/en/blog/seo-for-hotels-guide).
+Guests choose the place before the property. Content about your location builds desire early - see the [hotel SEO guide](/en/blog/seo-for-hotels-guide).
 
 ### 5. Multilingual and international-ready
 
@@ -69,7 +69,7 @@ Local language plus English (and more where it pays) with correct hreflang so ea
 
 ### 6. Trust signals
 
-Genuine photography, reviews, clear policies, and fast responses — the elements that convince a guest to book direct.
+Genuine photography, reviews, clear policies, and fast responses - the elements that convince a guest to book direct.
 
 ## Built for SEO from Day One
 
@@ -77,11 +77,11 @@ We build hotel websites with technical SEO, schema (Hotel/Offer/FAQ), Core Web V
 
 ## Common Mistakes on Hotel Sites
 
-1. **Homepage + gallery only** — no dedicated room pages.
+1. **Homepage + gallery only** - no dedicated room pages.
 2. **Primary CTA pushing guests to Booking.com**.
 3. **Heavy video backgrounds** that destroy LCP on mobile.
 4. **English pages without hreflang** (duplicate risk).
-5. **No content plan after launch** — SEO does not end at go-live.
+5. **No content plan after launch** - SEO does not end at go-live.
 
 If the current site ranks but looks dated, prefer a [redesign with SEO migration](/en/blog/website-redesign-guide) over a blind rebuild.
 
@@ -90,16 +90,16 @@ If the current site ranks but looks dated, prefer a [redesign with SEO migration
 - Professional photos per room type (not only shared spaces)
 - Amenities, cancellation policies, check-in/out times
 - Channel stack (which booking engine or channel manager)
-- Copy in your markets’ languages — or budget for [content creation](/en/services/content-creation)
+- Copy in your markets’ languages - or budget for [content creation](/en/services/content-creation)
 - Access to Google Business Profile, Analytics, and Search Console
 
 The fuller the brief, the closer delivery stays to the 3–5 week timeline. Delays are almost always content and approvals, not “engineering ran late.”
 
 ## Measure Direct Bookings Properly
 
-Set targets: share of direct vs OTA bookings, average booking value, commission saved. Without those numbers, a “nice site” does not prove ROI. Connect the booking engine to Analytics events and watch mobile separately — that is where most abandonments happen.
+Set targets: share of direct vs OTA bookings, average booking value, commission saved. Without those numbers, a “nice site” does not prove ROI. Connect the booking engine to Analytics events and watch mobile separately - that is where most abandonments happen.
 
-After launch, plan ongoing [hotel SEO](/en/blog/seo-for-hotels-guide) and destination content each season — not a one-off launch burst. Pair the site with honest rate incentives for direct guests so marketing and UX pull in the same direction.
+After launch, plan ongoing [hotel SEO](/en/blog/seo-for-hotels-guide) and destination content each season - not a one-off launch burst. Pair the site with honest rate incentives for direct guests so marketing and UX pull in the same direction.
 
 ## Design Details That Quietly Lift Conversion
 
@@ -107,13 +107,13 @@ Keep the date picker visible without endless scroll, show total price early, and
 
 ## Booking Engine vs Enquiry Flow
 
-Mid-size and larger hotels benefit from a live booking engine synced to channels. Very small properties (few rooms) often start with a strong availability form, WhatsApp, and fast human reply — cheaper and less complex. The wrong move is installing a heavy engine before photos, policies, and rates are ready; software does not fix missing content.
+Mid-size and larger hotels benefit from a live booking engine synced to channels. Very small properties (few rooms) often start with a strong availability form, WhatsApp, and fast human reply - cheaper and less complex. The wrong move is installing a heavy engine before photos, policies, and rates are ready; software does not fix missing content.
 
 Whatever flow you choose, the primary CTA should be yours. If the main button sends guests to Booking.com, you fund your competitor on every click. Keep OTAs as distribution, not as the hero of the site.
 
 ## Schema and Search Appearance
 
-Hotel/LodgingBusiness schema, offers where appropriate, FAQ, and reviews help Google and AI assistants understand the property. Pair them with fast room pages and clean NAP on Google Business Profile. That technical base belongs in [SEO-ready development](/en/services/seo-web-design) — not a “plugin later.”
+Hotel/LodgingBusiness schema, offers where appropriate, FAQ, and reviews help Google and AI assistants understand the property. Pair them with fast room pages and clean NAP on Google Business Profile. That technical base belongs in [SEO-ready development](/en/services/seo-web-design) - not a “plugin later.”
 
 ## Seasonality and Content Cadence
 
@@ -123,7 +123,7 @@ Before peak season, publish experience pages and FAQs that answer practical ques
 
 ### Can I keep my current booking provider?
 
-Usually yes — we integrate with common booking engines and channel managers, or build a clean enquiry-to-booking flow.
+Usually yes - we integrate with common booking engines and channel managers, or build a clean enquiry-to-booking flow.
 
 ### How long does a hotel site take?
 
@@ -131,12 +131,12 @@ Typically 3–5 weeks once photos, room details, and copy are ready. Content rea
 
 ### Will it reduce my OTA commissions?
 
-That’s the point: a fast, well-optimized direct site grows your commission-free bookings season over season — without cutting distribution entirely.
+That’s the point: a fast, well-optimized direct site grows your commission-free bookings season over season - without cutting distribution entirely.
 
 ### Do I need both Greek and English?
 
-If you sell to international travellers, yes — with proper hreflang. Skipping it either loses market share or creates duplicate-content issues.
+If you sell to international travellers, yes - with proper hreflang. Skipping it either loses market share or creates duplicate-content issues.
 
 ## When You're Ready to Launch, Get Started
 
-[Request a free quote](/en/get-started) — we’ll show you what a booking-first website would change for your property and reply within 24 hours with cost and timeline.
+[Request a free quote](/en/get-started) - we’ll show you what a booking-first website would change for your property and reply within 24 hours with cost and timeline.

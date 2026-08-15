@@ -30,9 +30,9 @@ export default async function PlatformForEcommercePage({ params }: PageProps) {
   return (
     <>
       <Header />
-      <main className="main-below-header pb-20">
+      <main className="blueprint-grid relative z-0 main-below-header pb-20">
         <div className="container max-w-3xl">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Organic revenue needs operational SEO</h1>
+          <h1 className="font-display text-4xl font-medium tracking-[-0.04em] md:text-5xl mb-6">Organic revenue needs operational SEO</h1>
           <p className="text-lg text-muted-foreground mb-10 leading-relaxed">
             Product grids, faceted navigation, and seasonal demand punish slow teams. AnotherSEOGuru helps you see which
             queries and templates actually drive revenue, where content is decaying, and which SERP features you can
@@ -53,7 +53,7 @@ export default async function PlatformForEcommercePage({ params }: PageProps) {
             </li>
           </ul>
           <div className="flex flex-wrap gap-4">
-            <a href={getAppPath("/signup")} className="btn btn-gradient px-6 py-3" rel="noopener noreferrer">
+            <a href={getAppPath("/signup")} className="btn btn-primary px-6 py-3" rel="noopener noreferrer">
               Start free
             </a>
             <Link href={lp("/platform/features/shopping-product-research")} className="btn btn-outline px-6 py-3">

@@ -165,7 +165,7 @@ export function FreeToolsMegaMenu(): ReactElement {
       {isOpen ? (
         /*
           Full-width panel BELOW the header only.
-          Do NOT pull a hit-area up into the header (-mt) — that blocked sibling nav clicks.
+          Do NOT pull a hit-area up into the header (-mt), that blocked sibling nav clicks.
           Close delay bridges the small gap between trigger and panel.
         */
         <div

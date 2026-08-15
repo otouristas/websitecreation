@@ -32,7 +32,7 @@ export default async function GlossaryPage({ params }: PageProps) {
       <Header />
       <Suspense
         fallback={
-          <main className="main-below-header min-h-screen">
+          <main className="blueprint-grid relative z-0 main-below-header min-h-screen">
             <div className="max-w-6xl mx-auto px-4 py-8 text-center">
               <h1 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">{ui.title}</h1>
               <p className="text-muted-foreground">{ui.loading}</p>

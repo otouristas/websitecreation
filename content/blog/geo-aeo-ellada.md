@@ -16,7 +16,7 @@ faq:
   - question: Από πού ξεκινά μια μικρή επιχείρηση στην Ελλάδα;
     answer: Τεχνικό SEO και τοπικό SEO πρώτα, μετά FAQ/schema AEO στις εμπορικές σελίδες, μετά πρόγραμμα GEO citations όταν τα θεμέλια είναι σταθερά.
   - question: Πόσο γρήγορα φαίνονται αποτελέσματα GEO;
-    answer: Τα AEO wins (FAQ, snippets) συχνά σε 4–8 εβδομάδες. Τα GEO citations χρειάζονται 1–3 τρίμηνα σταθερής μέτρησης — όχι μία συνεδρία ChatGPT.
+    answer: Τα AEO wins (FAQ, snippets) συχνά σε 4–8 εβδομάδες. Τα GEO citations χρειάζονται 1–3 τρίμηνα σταθερής μέτρησης - όχι μία συνεδρία ChatGPT.
   - question: Χρειάζομαι GEO agency ή αρκεί το κλασικό SEO;
     answer: Αν οι αγοραστές σας ήδη ρωτούν AI για shortlists (τουρισμός, υπηρεσίες), χρειάζεστε και τα δύο σε ένα πρόγραμμα. Δείτε την υπηρεσία Ορατότητα σε AI.
 ---
@@ -42,32 +42,32 @@ faq:
 * **Σχεδιασμός και ταχύτητα μετράνε:** Γρήγορα, crawlable sites έχουν προβάδισμα σε AI αναφορές.
 * **Ο τουρισμός είναι hyper-local:** Κάθε νησί, λιμάνι ή αεροδρόμιο είναι ξεχωριστό keyword cluster.
 
-Συνδέστε ορατότητα με μετατροπές: κράτηση, κλήση ή WhatsApp. Citation σε σπασμένη φόρμα εξακολουθεί να χάνει ζήτηση — δείτε και [SEO για αρχάριους](/el/blog/seo-gia-arxarious).
+Συνδέστε ορατότητα με μετατροπές: κράτηση, κλήση ή WhatsApp. Citation σε σπασμένη φόρμα εξακολουθεί να χάνει ζήτηση - δείτε και [SEO για αρχάριους](/el/blog/seo-gia-arxarious).
 
-## SEO — τα θεμέλια που παραμένουν σταθερά
+## SEO - τα θεμέλια που παραμένουν σταθερά
 
 ### Τεχνικό SEO
 
 * Καθαρά URLs, ενημερωμένο sitemap, σωστό robots.txt.
-* [Core Web Vitals](/glossary?term=page-experience) σε κινητά — κρίσιμο για bookings στο αεροδρόμιο.
+* [Core Web Vitals](/glossary?term=page-experience) σε κινητά - κρίσιμο για bookings στο αεροδρόμιο.
 * [Hreflang](/glossary?term=hreflang) για EL/EN χωρίς διπλότυπα.
-* Structured data: LocalBusiness, LodgingBusiness, FAQ — που ταιριάζει με ορατό κείμενο.
+* Structured data: LocalBusiness, LodgingBusiness, FAQ - που ταιριάζει με ορατό κείμενο.
 
 ### On-page SEO
 
 * Ένα H1, λογική ιεραρχία, titles/descriptions που απαντούν στο intent.
 * [Εσωτερική διασύνδεση](/en/blog/internal-linking-audit-checklist) από υψηλή επισκεψιμότητα προς money pages.
-* Τοπικά σήματα: GBP, NAP, reviews — δείτε [τοπικό SEO Κυκλάδων](/el/blog/topiko-seo-kykladon) και [local SEO guide](/en/blog/local-seo-guide).
+* Τοπικά σήματα: GBP, NAP, reviews - δείτε [τοπικό SEO Κυκλάδων](/el/blog/topiko-seo-kykladon) και [local SEO guide](/en/blog/local-seo-guide).
 
-## GEO — πώς να κερδίσετε citations από AI
+## GEO - πώς να κερδίσετε citations από AI
 
 Το GEO δεν είναι keyword stuffing. Είναι entity-rich, citable περιεχόμενο που τα μοντέλα μπορούν να παραθέσουν με ασφάλεια.
 
 1. **About page με αποδείξεις:** Έτος ίδρυσης, τοποθεσίες, επικοινωνία, πιστοποιήσεις.
 2. **Συνέπεια brand:** Ίδιο όνομα σε site, GBP, social και directories.
-3. **Πρωτότυπα δεδομένα:** Πολιτικές ακύρωσης, χάρτες, τιμές, πραγματικοί οδηγοί — όχι generic AI copy.
+3. **Πρωτότυπα δεδομένα:** Πολιτικές ακύρωσης, χάρτες, τιμές, πραγματικοί οδηγοί - όχι generic AI copy.
 4. **Εξωτερικοί σύνδεσμοι** προς επίσημους φορείς (τουρισμός, λιμεναρχεία, αεροδρόμια) για E-E-A-T.
-5. **Σταθερή βιβλιοθήκη prompts** (20–50) και μηνιαία δειγματοληψία — μέθοδος στο [LLM citations guide](/en/blog/llm-citations-brand-visibility).
+5. **Σταθερή βιβλιοθήκη prompts** (20–50) και μηνιαία δειγματοληψία - μέθοδος στο [LLM citations guide](/en/blog/llm-citations-brand-visibility).
 
 Για ξενοδοχεία και rent-a-car, συγκεκριμένα prompts («ξενοδοχείο κοντά στο λιμάνι Παροικίας», «εγγύηση rent a car Σαντορίνη») κερδίζουν citations πιο εύκολα από generic «καλύτερο ξενοδοχείο Ελλάδα» που ευνοεί OTAs.
 
@@ -77,9 +77,9 @@ faq:
 
 **Rent-a-car:** Σελίδες στόλου με κιβώτιο, ηλικία οδηγού, εγγύηση και ασφαλιστικά πακέτα σε απλή γλώσσα. Image galleries χωρίς facts σπάνια παίρνουν citation.
 
-**Τοπικές υπηρεσίες:** Το map pack παραμένει κρίσιμο για κλήσεις· τα AI Overviews συνοψίζουν ολοένα περισσότερο «καλύτερο [υπηρεσία] κοντά μου». FAQ + συνέπεια GBP καλύπτουν και τα δύο — δείτε [τοπικό SEO Θεσσαλονίκης](/el/blog/topiko-seo-thessaloniki) αν λειτουργείτε σε πόλη.
+**Τοπικές υπηρεσίες:** Το map pack παραμένει κρίσιμο για κλήσεις· τα AI Overviews συνοψίζουν ολοένα περισσότερο «καλύτερο [υπηρεσία] κοντά μου». FAQ + συνέπεια GBP καλύπτουν και τα δύο - δείτε [τοπικό SEO Θεσσαλονίκης](/el/blog/topiko-seo-thessaloniki) αν λειτουργείτε σε πόλη.
 
-## AEO — κερδίζοντας featured snippets και Overviews
+## AEO - κερδίζοντας featured snippets και Overviews
 
 * **Ερωτήσεις σε H2** όπως εμφανίζονται στο Search Console.
 * **Απάντηση 40–60 λέξεων** αμέσως κάτω από την επικεφαλίδα.
@@ -90,17 +90,17 @@ faq:
 
 ## Σχέδιο δράσης 90 ημερών
 
-### Μήνας 1 — Θεμέλια
+### Μήνας 1 - Θεμέλια
 * Σύνδεση GSC· ομαδοποίηση queries σε clusters.
 * Audit τεχνικού SEO (ταχύτητα, indexation, canonicals).
 * Βελτιστοποίηση GBP ανά τοποθεσία.
 
-### Μήνας 2 — Περιεχόμενο
+### Μήνας 2 - Περιεχόμενο
 * FAQ Schema στις 10 κορυφαίες σελίδες σε εμφανίσεις.
 * Location pages για κάθε προορισμό που εξυπηρετείτε.
 * Εσωτερική διασύνδεση και καθαρές πολιτικές (ακύρωση, παραλαβή, parking).
 
-### Μήνας 3 — GEO + μέτρηση
+### Μήνας 3 - GEO + μέτρηση
 * Baseline AI sampling σε ChatGPT, Perplexity, Gemini.
 * A/B titles/meta για θέσεις 6–15.
 * Κλείσιμο content gaps όπου αναφέρονται ανταγωνιστές και εσείς όχι.
@@ -143,6 +143,6 @@ AEO wins συχνά σε εβδομάδες. GEO citations χρειάζοντα�
 
 ## Θέλετε ορατότητα σε Google και AI; Ξεκινήστε εδώ
 
-Σχεδιάζουμε, αναπτύσσουμε και βελτιστοποιούμε ιστοσελίδες τουρισμού που ξεχωρίζουν στη Google και στις μηχανές τεχνητής νοημοσύνης — με μέτρηση που συνδέεται με κρατήσεις, όχι vanity scores.
+Σχεδιάζουμε, αναπτύσσουμε και βελτιστοποιούμε ιστοσελίδες τουρισμού που ξεχωρίζουν στη Google και στις μηχανές τεχνητής νοημοσύνης - με μέτρηση που συνδέεται με κρατήσεις, όχι vanity scores.
 
 [Ξεκινήστε](/el/get-started?service=ai-visibility) · [Ορατότητα σε AI](/el/services/ai-visibility) · [Έργα](/el/work) · [AI & LLM Visibility Pillar](/en/blog/pillar-ai-llm-visibility)

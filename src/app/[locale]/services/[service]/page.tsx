@@ -12,11 +12,15 @@ import { isValidLocale, localizedPath, type SiteLocale } from '@/lib/i18n/locale
 import { buildServiceMetadata, generateArticleSchema, generateBreadcrumbSchema, generateServiceSchema, generateFAQSchema, combineSchemas } from '@/lib/seo';
 import { SchemaMarkup, Breadcrumbs, FAQSection } from '@/components/seo';
 import ServiceHubCommercialBody from '@/components/seo/ServiceHubCommercialBody';
+import { Section, SectionHeading, Bloom, PrimaryButtonLink, GhostButtonLink, MeshGrid, Tick } from '@/components/landing/primitives';
+import { NotForYou } from '@/components/positioning/NotForYou';
+import { SeoTimeline } from '@/components/positioning/SeoTimeline';
 import { getServiceBreadcrumbs, getServiceHubRelatedPaths } from '@/lib/linking';
 import { getServiceFaqs } from '@/data/service-faq-data';
 import { getServiceHubCommercial } from '@/data/service-hub-commercial';
-import { getFeaturedPortfolio } from '@/data/portfolio';
+import { getFeaturedPortfolio, portfolioProjects } from '@/data/portfolio';
 import RelatedPages from '@/components/seo/RelatedPages';
+import { getBespokeServicePage } from '@/components/services/registry';
 
 interface PageProps {
     params: Promise<{ locale: string; service: string }>;
@@ -24,6 +28,10 @@ interface PageProps {
 
 // ISR: Revalidate every hour
 export const revalidate = 3600;
+
+/** Stable content dates for Article schema on generated service hubs. */
+const SERVICE_CONTENT_PUBLISHED = '2026-02-01T00:00:00.000Z';
+const SERVICE_CONTENT_UPDATED = '2026-08-15T00:00:00.000Z';
 
 // Generate static paths for all services
 export async function generateStaticParams() {
@@ -53,6 +61,11 @@ export default async function ServicePage({ params }: PageProps) {
     if (!service) {
         notFound();
     }
+
+    // Each service hub gets its own hand-built page. Slugs not yet rebuilt fall
+    // through to the shared template so the rollout can ship in waves.
+    const Bespoke = getBespokeServicePage(serviceSlug);
+    if (Bespoke) return <Bespoke locale={locale as SiteLocale} />;
 
     const isEl = locale === 'el';
     const serviceEl = isEl ? getServiceEl(serviceSlug) : null;
@@ -109,7 +122,10 @@ export default async function ServicePage({ params }: PageProps) {
         question: f.question,
         answer: f.answer,
     }));
-    const proofProjects = getFeaturedPortfolio(3);
+    // Proof filtered to projects that actually used this service, so a local-SEO
+    // page does not illustrate itself with a logo-design project.
+    const matching = portfolioProjects.filter((p) => p.services?.includes(serviceSlug) && p.featured);
+    const proofProjects = (matching.length >= 3 ? matching : getFeaturedPortfolio(6)).slice(0, 3);
 
     // Generate schema markup
     const schemas = combineSchemas(
@@ -120,11 +136,13 @@ export default async function ServicePage({ params }: PageProps) {
             provider: { name: 'AnotherSEOGuru', url: 'https://anotherseoguru.com' },
             serviceType: 'Web Development',
         }),
+        // Stable dates. These were `new Date().toISOString()`, so every hourly
+        // ISR revalidate republished the page with a fresh datePublished.
         generateArticleSchema({
             headline: displayName,
             description: displayDesc,
-            datePublished: new Date().toISOString(),
-            dateModified: new Date().toISOString(),
+            datePublished: SERVICE_CONTENT_PUBLISHED,
+            dateModified: SERVICE_CONTENT_UPDATED,
             author: { name: 'AnotherSEOGuru' },
         }),
         generateFAQSchema({ faqs: faqItems })
@@ -141,42 +159,28 @@ export default async function ServicePage({ params }: PageProps) {
         title: isEl ? p.titleEl : p.titleEn,
     }));
     const commercial = getServiceHubCommercial(serviceSlug, isEl ? 'el' : 'en');
+    // SEO retainers get the expectation-setting timeline; one-off builds do not.
+    const isSeoService = ['local-seo', 'seo-audits', 'eshop-seo', 'ai-visibility', 'link-building', 'content-creation'].includes(serviceSlug);
 
     return (
         <>
             <SchemaMarkup schemas={schemas} />
-            <Header />
-            <main className="main-below-header">
-                {/* Hero */}
-                <section className="section-compact gradient-hero">
-                    <div className="container">
-                        <div className="max-w-3xl">
-                            {/* Breadcrumb */}
-                            <Breadcrumbs items={breadcrumbs} className="mb-6" />
-
-                            <h1 className="text-4xl sm:text-5xl font-bold mb-6">
-                                {displayName}
-                            </h1>
-
-                            {/* Description under H1 */}
-                            <p className="text-lg text-muted-foreground mb-8">
-                                {displayDesc}
-                            </p>
-
-                            <div className="flex flex-wrap gap-4">
-                                <Link href={lp(`/get-started?service=${serviceSlug}`)} className="btn btn-gradient">
-                                    {t.getQuote}
-                                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                                    </svg>
-                                </Link>
-                                <Link href="#locations" className="btn btn-outline">
-                                    {t.viewByLocation}
-                                </Link>
-                                <Link href={lp('/pricing')} className="btn btn-outline">
-                                    {t.pricingLink}
-                                </Link>
-                            </div>
+            <Header locale={locale as SiteLocale} />
+            <main className="blueprint-grid relative z-0">
+                <section className="relative overflow-hidden border-b border-hairline">
+                    <Bloom className="left-1/2 top-[-8rem] h-[26rem] w-[58rem] -translate-x-1/2" />
+                    <div className="main-below-header relative mx-auto max-w-6xl px-6 pb-14 pt-6">
+                        <Breadcrumbs items={breadcrumbs} className="mb-6" />
+                        <h1 className="rise-in max-w-3xl font-display text-4xl font-medium leading-[1.05] tracking-[-0.04em] text-foreground md:text-6xl">
+                            {displayName}
+                        </h1>
+                        <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
+                            {displayDesc}
+                        </p>
+                        <div className="mt-9 flex flex-wrap gap-3">
+                            <PrimaryButtonLink href={lp('/get-started')}>{t.getQuote}</PrimaryButtonLink>
+                            <GhostButtonLink href="#locations">{t.viewByLocation}</GhostButtonLink>
+                            <GhostButtonLink href={lp('/pricing')}>{t.pricingLink}</GhostButtonLink>
                         </div>
                     </div>
                 </section>
@@ -186,31 +190,28 @@ export default async function ServicePage({ params }: PageProps) {
                 ) : null}
 
                 {/* Features */}
-                <section className="section">
-                    <div className="container">
-                        <h2 className="text-2xl sm:text-3xl font-bold mb-8">{t.whatsIncluded}</h2>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <Section>
+                    <SectionHeading align="left" eyebrow={isEl ? 'Παραδοτέα' : 'Deliverables'} title={t.whatsIncluded} className="mb-10" />
+                    <div>
+                        <MeshGrid className="md:grid-cols-2 lg:grid-cols-3">
                             {displayFeatures.map((feature, i) => (
-                                <div key={i} className="glass-card hover-glow flex items-start gap-3 p-4 rounded-xl">
-                                    <svg className="w-5 h-5 text-success mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                    </svg>
-                                    <span>{feature}</span>
+                                <div key={i} className="flex items-start gap-3 bg-surface p-6">
+                                    <Tick />
+                                    <span className="text-sm leading-relaxed text-muted-foreground">{feature}</span>
                                 </div>
                             ))}
-                        </div>
+                        </MeshGrid>
                     </div>
-                </section>
+                </Section>
+
+                <NotForYou locale={locale as SiteLocale} />
+
+                {isSeoService ? <SeoTimeline locale={locale as SiteLocale} /> : null}
 
                 {/* Location Pages */}
-                <section className="section bg-muted/30" id="locations">
-                    <div className="container">
-                        <h2 className="text-2xl sm:text-3xl font-bold mb-4">
-                            {t.byCity}
-                        </h2>
-                        <p className="text-muted-foreground mb-8 max-w-2xl">
-                            {t.byCityDesc}
-                        </p>
+                <Section id="locations">
+                    <SectionHeading align="left" eyebrow={isEl ? 'Περιοχές' : 'Locations'} title={t.byCity} body={t.byCityDesc} className="mb-10" />
+                    <div>
 
                         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
                             {locationsToShow.map((location) => (
@@ -223,13 +224,13 @@ export default async function ServicePage({ params }: PageProps) {
                                 </Link>
                             ))}
                         </div>
-                        <div className="text-center mt-6">
-                            <Link href={lp("/locations")} className="text-primary hover:underline text-sm font-medium">
+                        <div className="mt-8">
+                            <Link href={lp("/locations")} className="text-sm font-medium text-primary hover:underline">
                                 {t.allCities}
                             </Link>
                         </div>
                     </div>
-                </section>
+                </Section>
 
                 {/* Industry Pages */}
                 <section className="section">

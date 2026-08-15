@@ -1,6 +1,6 @@
 ---
 slug: google-business-profile-masterclass
-title: Google Business Profile Masterclass — Dominate Local Search
+title: Google Business Profile Masterclass - Dominate Local Search
 description: Step-by-step guide to optimizing your Google Business Profile. Categories, photos, reviews, and the Posts strategy that keeps your profile active.
 date: 2026-01-10
 author: AnotherSEOGuru Team
@@ -11,24 +11,24 @@ faq:
   - question: "How long until GBP optimization shows results?"
     answer: "Category fixes and photo uploads often move within 2–4 weeks. Review velocity and posts compound over 60–90 days."
   - question: "Can I manage multiple locations in one dashboard?"
-    answer: "Yes — use Business Profile Manager for chains, hotel groups, and multi-desk rent-a-car operators."
+    answer: "Yes - use Business Profile Manager for chains, hotel groups, and multi-desk rent-a-car operators."
   - question: "Do Google Posts affect rankings directly?"
-    answer: "Google doesn't confirm Posts as a core ranking factor, but they drive engagement signals and prove activity — especially vs dormant competitors."
+    answer: "Google doesn't confirm Posts as a core ranking factor, but they drive engagement signals and prove activity - especially vs dormant competitors."
   - question: "What if Google suspends my listing?"
-    answer: "Fix guideline violations, gather documentation (utility bill, signage photos), submit reinstatement request. Prevention beats recovery — no keyword stuffing in name."
+    answer: "Fix guideline violations, gather documentation (utility bill, signage photos), submit reinstatement request. Prevention beats recovery - no keyword stuffing in name."
   - question: "Should I use a third-party GBP tool?"
     answer: "Tools help scheduling and multi-location QA, but understand Google's policies. Over-automation without quality control hurts more than helps."
 ---
 
-For local businesses, your [Google Business Profile](/en/glossary?term=google-business-profile) (GBP) is often more important than your website. It appears **before** the organic search results in the [local pack](/en/glossary?term=local-pack). If you ignore it, you are handing customers to competitors — whether you're a pizza shop, a Paros hotel, or a Mykonos rent-a-car desk.
+For local businesses, your [Google Business Profile](/en/glossary?term=google-business-profile) (GBP) is often more important than your website. It appears **before** the organic search results in the [local pack](/en/glossary?term=local-pack). If you ignore it, you are handing customers to competitors - whether you're a pizza shop, a Paros hotel, or a Mykonos rent-a-car desk.
 
-This masterclass walks through every high-impact GBP lever: categories, photos, posts, Q&A, reviews, and spam defense — with tourism examples throughout.
+This masterclass walks through every high-impact GBP lever: categories, photos, posts, Q&A, reviews, and spam defense - with tourism examples throughout.
 
 ## Why GBP is the "kill shot" of local SEO
 
 Google wants to keep users on Google. The Local Pack gives fast answers: map, hours, phone, photos, reviews. A fully optimized profile earns **more clicks** than a bare-bones listing because it answers questions before the first tap.
 
-For travelers searching "hotel near Parikia port" or "car rental Mykonos airport open now", GBP is often the decision surface. Your website closes the booking — but GBP starts the journey.
+For travelers searching "hotel near Parikia port" or "car rental Mykonos airport open now", GBP is often the decision surface. Your website closes the booking - but GBP starts the journey.
 
 Pair GBP work with [local SEO fundamentals](/en/blog/local-seo-guide) and Search Console landing-page data.
 
@@ -56,7 +56,7 @@ Wrong categories confuse Google and attract irrelevant queries that hurt [CTR](/
 
 ### Name
 
-Use real-world brand name — no keyword stuffing ("Best Mykonos Hotel Cheap Rooms" violates guidelines and risks suspension).
+Use real-world brand name - no keyword stuffing ("Best Mykonos Hotel Cheap Rooms" violates guidelines and risks suspension).
 
 ### Address and service area
 
@@ -68,16 +68,16 @@ Seasonal tourism operators: update hours before peak and shoulder seasons. "Open
 
 ### Phone and website
 
-Track calls with a dedicated number if possible. Website URL should land on the most relevant page — homepage or location hub, not a broken redirect.
+Track calls with a dedicated number if possible. Website URL should land on the most relevant page - homepage or location hub, not a broken redirect.
 
 ## Step 3: The Posts strategy
 
-Most owners ignore Google Posts. Posts are free billboards in search results — and an activity signal.
+Most owners ignore Google Posts. Posts are free billboards in search results - and an activity signal.
 
 ### Post types
 
-- **Offer posts:** "Book direct — 10% off June stays" — urgency and clear CTA
-- **Update posts:** "New automatic fleet — 2026 models available"
+- **Offer posts:** "Book direct - 10% off June stays" - urgency and clear CTA
+- **Update posts:** "New automatic fleet - 2026 models available"
 - **Event posts:** Seasonal festivals, hotel events, local partnerships
 
 ### Cadence
@@ -96,21 +96,21 @@ Profiles with 100+ photos outperform sparse listings.
 - **Rent-a-car:** fleet, desk, airport pickup, interior cleanliness
 - **Home services:** completed jobs, team, branded vehicles
 
-Geo-tag where accurate. Refresh seasonally — stale photos signal inactive business.
+Geo-tag where accurate. Refresh seasonally - stale photos signal inactive business.
 
-## Step 5: Reviews — quantity, recency, keywords
+## Step 5: Reviews - quantity, recency, keywords
 
 [Review management](/en/glossary?term=review-management) affects rankings and conversion.
 
-- Ask after successful service — checkout email, SMS, QR at desk
-- Reply to every review — thank guests, address issues professionally
+- Ask after successful service - checkout email, SMS, QR at desk
+- Reply to every review - thank guests, address issues professionally
 - Encourage natural keywords: "great sea view", "easy airport pickup", "fixed our AC same day"
 
-Never buy fake reviews — suspension risk destroys years of work.
+Never buy fake reviews - suspension risk destroys years of work.
 
 ## Step 6: Q&A hacking
 
-Anyone can ask questions on your profile — and anyone can answer. That is risk and opportunity.
+Anyone can ask questions on your profile - and anyone can answer. That is risk and opportunity.
 
 **Strategy:** Seed compliant Q&A from your business account:
 
@@ -132,7 +132,7 @@ Align with on-site pages and [internal linking](/en/glossary?term=internal-linki
 
 ## Step 8: Fighting spam
 
-Competitors sometimes keyword-stuff business names or use fake addresses. You can suggest edits where guidelines are violated. Cleaning map spam improves relative visibility for legitimate businesses — especially in saturated tourism markets.
+Competitors sometimes keyword-stuff business names or use fake addresses. You can suggest edits where guidelines are violated. Cleaning map spam improves relative visibility for legitimate businesses - especially in saturated tourism markets.
 
 Document violations with photos and report through Google's tools.
 
@@ -172,7 +172,7 @@ Correlate with Search Console branded query trends and booking data.
 
 ## Master checklist (print and tick)
 
-Use this as a living ops list — not a one-time audit PDF.
+Use this as a living ops list - not a one-time audit PDF.
 
 - [ ] Claim and verify every location
 - [ ] Primary category matches real-world business type
@@ -199,15 +199,15 @@ Category fixes and photo uploads often move within 2–4 weeks. Review velocity 
 
 ### Can I manage multiple locations in one dashboard?
 
-Yes — use Business Profile Manager for chains, hotel groups, and multi-desk rent-a-car operators.
+Yes - use Business Profile Manager for chains, hotel groups, and multi-desk rent-a-car operators.
 
 ### Do Google Posts affect rankings directly?
 
-Google doesn't confirm Posts as a core ranking factor, but they drive engagement signals and prove activity — especially vs dormant competitors.
+Google doesn't confirm Posts as a core ranking factor, but they drive engagement signals and prove activity - especially vs dormant competitors.
 
 ### What if Google suspends my listing?
 
-Fix guideline violations, gather documentation (utility bill, signage photos), submit reinstatement request. Prevention beats recovery — no keyword stuffing in name.
+Fix guideline violations, gather documentation (utility bill, signage photos), submit reinstatement request. Prevention beats recovery - no keyword stuffing in name.
 
 ### Should I use a third-party GBP tool?
 
@@ -217,6 +217,6 @@ Tools help scheduling and multi-location QA, but understand Google's policies. O
 
 ## Ready to Get Started?
 
-Tell us about your site, locations, and goals — we'll recommend a scoped plan with Search Console ops, content priorities, and clear next steps.
+Tell us about your site, locations, and goals - we'll recommend a scoped plan with Search Console ops, content priorities, and clear next steps.
 
 [Get started](/en/get-started) · [See our work](/en/work) · [Pricing](/en/pricing)

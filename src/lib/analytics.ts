@@ -12,7 +12,7 @@ export function loadGoogleAnalytics(): void {
   if (document.getElementById('ga-script')) return;
 
   window.dataLayer = window.dataLayer || [];
-  // gtag.js only processes `arguments` objects pushed to dataLayer — a plain
+  // gtag.js only processes `arguments` objects pushed to dataLayer, a plain
   // array is silently ignored, so this must NOT use rest parameters.
   window.gtag = function gtag() {
     // eslint-disable-next-line prefer-rest-params
@@ -53,7 +53,8 @@ export function trackEvent(
 }
 
 export function trackLead(formName: string, extra?: Record<string, string>): void {
-  trackEvent('generate_lead', { form_name: formName, ...extra });
+  trackEvent('generate_lead', { form_name: formName,
+    ...extra });
 }
 
 export function trackFormStart(formName: string): void {
@@ -68,9 +69,6 @@ export function trackCtaClick(ctaName: string): void {
   trackEvent('cta_click', { cta_name: ctaName });
 }
 
-export function trackPlanSelection(planName: string): void {
-  trackEvent('plan_selection', { plan_name: planName });
-}
 
 export function captureUtmParams(): Record<string, string> {
   if (typeof window === 'undefined') return {};

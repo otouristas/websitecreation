@@ -8,6 +8,20 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import matter from 'gray-matter';
+// Run under tsx so pricing comes from the real source rather than being
+// restated here. These files are served to AI crawlers, so a hardcoded copy
+// drifting from /pricing publishes wrong figures to ChatGPT and Perplexity -
+// which is exactly what happened: they advertised the retired 899/1799/2999
+// ladder under package names that no longer exist.
+import {
+  websitePackages,
+  seoPackages,
+  addOns,
+  VAT_RATE,
+  currentPrice,
+  isOfferActive,
+} from '../src/data/pricing.ts';
+import { PROJECT_COUNT, SEO_MIN_TERM_MONTHS } from '../src/data/company-facts.ts';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
@@ -26,6 +40,11 @@ const TOURISM_INDUSTRY_SLUGS = [
 
 function read(rel) {
   return fs.readFileSync(path.join(ROOT, rel), 'utf8');
+}
+
+/** Net EUR figure, thousands-separated, as published to AI crawlers. */
+function eur(amount) {
+  return `€${amount.toLocaleString('en-GB')}`;
 }
 
 function write(rel, content) {
@@ -204,11 +223,11 @@ function url(locale, p) {
 }
 
 function hubLine(label, href, blurb) {
-  return `- **${label}** (<${href}>) — ${blurb}`;
+  return `- **${label}** (<${href}>) - ${blurb}`;
 }
 
 function mdLink(label, href, blurb) {
-  return `- [${label}](${href}) — ${blurb}`;
+  return `- [${label}](${href}) - ${blurb}`;
 }
 
 function buildShort({ services, servicesEl, industries, industriesEl, greece, projects, posts }) {
@@ -218,7 +237,7 @@ function buildShort({ services, servicesEl, industries, industriesEl, greece, pr
   lines.push(`Long-form: ${BASE}/llms-full.txt`);
   lines.push(`Sitemap: ${BASE}/sitemap.xml`);
   lines.push('');
-  lines.push('# AnotherSEOGuru — Platform Index & Directory');
+  lines.push('# AnotherSEOGuru - Platform Index & Directory');
   lines.push(`Source: ${BASE}`);
   lines.push(`Last Updated: ${TODAY}`);
   lines.push('');
@@ -240,7 +259,7 @@ function buildShort({ services, servicesEl, industries, industriesEl, greece, pr
     hubLine('Τιμές & Πακέτα', url('el', '/pricing'), 'Διαφανείς τιμές σε ευρώ για κατασκευή ιστοσελίδας και SEO.'),
   );
   lines.push(
-    hubLine('Get a Quote', url('en', '/get-started'), 'Scoped quote request — reply within 24 hours.'),
+    hubLine('Get a Quote', url('en', '/get-started'), 'Scoped quote request - reply within 24 hours.'),
   );
   lines.push(
     hubLine('Ξεκινήστε / Προσφορά', url('el', '/get-started'), 'Φόρμα προσφοράς στα ελληνικά.'),
@@ -276,7 +295,7 @@ function buildShort({ services, servicesEl, industries, industriesEl, greece, pr
     hubLine('Blog', url('en', '/blog'), 'SEO, GEO/AEO, hotel, and e-shop guides (EN + EL).'),
   );
   lines.push(
-    hubLine('SEO Platform (secondary)', `${BASE}/en/platform`, 'GSC-native SEO software — English-canonical marketing pages.'),
+    hubLine('SEO Platform (secondary)', `${BASE}/en/platform`, 'GSC-native SEO software - English-canonical marketing pages.'),
   );
   lines.push('');
   lines.push('## Machine-Readable Feeds for AI Agents');
@@ -352,7 +371,7 @@ function buildShort({ services, servicesEl, industries, industriesEl, greece, pr
   );
   for (const loc of greece) {
     lines.push(
-      `- **${loc.city} (${loc.cityLocal})** — slug \`${loc.slug}\` · pattern: \`/el/services/{service}/${loc.slug}\``,
+      `- **${loc.city} (${loc.cityLocal})** - slug \`${loc.slug}\` · pattern: \`/el/services/{service}/${loc.slug}\``,
     );
   }
   lines.push('');
@@ -383,20 +402,23 @@ function buildShort({ services, servicesEl, industries, industriesEl, greece, pr
   lines.push('');
   lines.push('## Pricing Facts (EUR, transparent)');
   lines.push(
-    '- **Website creation:** Starter €899 (up to 5 pages), Professional €1,799 (up to 10 pages), Business €2,999 (up to 20 pages, e-commerce ready).',
+    `- **Website creation:** ${websitePackages.map((t) => `${t.name} ${eur(currentPrice(t))}`).join(', ')}. One-time, net of VAT.`,
   );
   lines.push(
-    '- **Monthly SEO retainers:** Starter €299/mo, Growth €599/mo, Scale €999/mo.',
+    `- **Monthly SEO retainers:** ${seoPackages.map((t) => `${t.name} ${eur(currentPrice(t))}/mo`).join(', ')}. Net of VAT.`,
   );
   lines.push(
-    '- **E-shop projects:** typically from ~€1,800–€2,300 depending on scope (Professional + e-commerce setup or Business package).',
+    `- **VAT:** all figures above are NET. Greek VAT of ${Math.round(VAT_RATE * 100)}% is added on top.`,
   );
+  if (isOfferActive()) {
+    lines.push('- **Current offer:** promotional pricing is live; see /pricing for the end date.');
+  }
   lines.push(
     `- Full details: <${url('en', '/pricing')}> · <${url('el', '/pricing')}>`,
   );
   lines.push('');
   lines.push('## Contact');
-  lines.push('- Email: hello@anotherseoguru.com');
+  lines.push('- Email: anotherseoguru@gmail.com');
   lines.push('- WhatsApp (messages only): +33 6 89 60 59 00 (https://wa.me/33689605900)');
   lines.push('- Languages: Greek, English. Response within 24 hours.');
   lines.push('');
@@ -422,7 +444,7 @@ function buildFull({ services, servicesEl, industries, industriesEl, greece, pro
   lines.push(`Short-form: ${BASE}/llms.txt`);
   lines.push(`Sitemap: ${BASE}/sitemap.xml`);
   lines.push('');
-  lines.push('# AnotherSEOGuru — Complete Knowledge Base');
+  lines.push('# AnotherSEOGuru - Complete Knowledge Base');
   lines.push(`Source: ${BASE}`);
   lines.push(`Last Updated: ${TODAY}`);
   lines.push('');
@@ -438,16 +460,16 @@ function buildFull({ services, servicesEl, industries, industriesEl, greece, pro
     'AnotherSEOGuru combines a **web design & SEO agency** (primary) with a **GSC-native SEO software platform** (secondary):',
   );
   lines.push(
-    '1. **Agency delivery** — Custom websites, WooCommerce e-shops, SEO retainers, local SEO / GBP, GEO/AEO (AI visibility), redesign, speed, content, and link building. Primary niche: **tourism & hospitality** (hotels, rent-a-car, tour operators, villas, travel agencies).',
+    '1. **Agency delivery** - Custom websites, WooCommerce e-shops, SEO retainers, local SEO / GBP, GEO/AEO (AI visibility), redesign, speed, content, and link building. Primary niche: **tourism & hospitality** (hotels, rent-a-car, tour operators, villas, travel agencies).',
   );
   lines.push(
-    '2. **Bilingual surface** — Greek under `/el`, English under `/en`, with hreflang on shared pages.',
+    '2. **Bilingual surface** - Greek under `/el`, English under `/en`, with hreflang on shared pages.',
   );
   lines.push(
-    '3. **Proof inventory** — 70+ live client projects documented under `/work` with homepage screenshots and case-study summaries.',
+    `3. **Proof inventory** - ${PROJECT_COUNT} live client projects documented under \`/work\` with homepage screenshots and case-study summaries.`,
   );
   lines.push(
-    '4. **Platform modules** — Semantic keyword clustering, rank tracking from GSC, technical audits / Core Web Vitals, GEO/AEO citation tracking, AI-assisted workflows, sprint/task board. Marketing: `/en/platform`.',
+    '4. **Platform modules** - Semantic keyword clustering, rank tracking from GSC, technical audits / Core Web Vitals, GEO/AEO citation tracking, AI-assisted workflows, sprint/task board. Marketing: `/en/platform`.',
   );
   lines.push('');
   lines.push('---');
@@ -476,31 +498,28 @@ function buildFull({ services, servicesEl, industries, industriesEl, greece, pro
   lines.push('');
   lines.push('## 3. Pricing Packages (EUR)');
   lines.push('');
-  lines.push('### A. Website Creation (one-time)');
+  lines.push('### A. Website Creation (one-time, net of VAT)');
+  for (const t of websitePackages) {
+    const delivery = t.deliveryEn ? `, delivery ${t.deliveryEn}` : '';
+    lines.push(
+      `- **${t.name} (${eur(currentPrice(t))}):** ${t.forEn} Includes: ${t.includesEn.join('; ')}${delivery}.`,
+    );
+  }
+  lines.push('');
+  lines.push('### B. Monthly SEO Retainers (net of VAT)');
+  for (const t of seoPackages) {
+    lines.push(
+      `- **${t.name} (${eur(currentPrice(t))}/mo):** ${t.forEn} Includes: ${t.includesEn.join('; ')}.`,
+    );
+  }
+  lines.push('');
   lines.push(
-    '- **Starter (€899):** Up to 5 pages, mobile responsive, contact form, basic SEO, speed optimized, 1 revision, ~2-week delivery.',
-  );
-  lines.push(
-    '- **Professional (€1,799):** Up to 10 pages, custom design, advanced forms, full SEO, blog/news, social, 2 revisions, ~3-week delivery, analytics.',
-  );
-  lines.push(
-    '- **Business (€2,999):** Up to 20 pages, premium design, e-commerce ready, full SEO + local SEO, CMS, email setup, unlimited revisions, ~4-week delivery, priority support, 3 months maintenance.',
+    `> All prices are NET. Greek VAT of ${Math.round(VAT_RATE * 100)}% is added on top. SEO retainers have a ${SEO_MIN_TERM_MONTHS}-month minimum term, rolling thereafter.`,
   );
   lines.push('');
-  lines.push('### B. Monthly SEO Retainers');
+  lines.push('### C. Common add-ons (from, net of VAT)');
   lines.push(
-    '- **Starter SEO (€299/mo):** Up to 10 keywords, basic on-page, GBP optimization, 1 article/mo, ranking report, CWV check.',
-  );
-  lines.push(
-    '- **Growth SEO (€599/mo):** Up to 30 keywords, full on-page & technical, local SEO, 3 articles/mo, link building (2), GEO/AEO, strategy call.',
-  );
-  lines.push(
-    '- **Scale SEO (€999/mo):** 60+ keywords, e-commerce SEO, international/hreflang, 6+ articles/mo, premium links (5+), GEO/AEO & AI chatbot, priority support.',
-  );
-  lines.push('');
-  lines.push('### C. Common add-ons');
-  lines.push(
-    '- Logo €299 · Content per page €99 · Extra pages €149 · E-commerce setup €499 · Monthly maintenance €199 · AI chatbot €399.',
+    `- ${addOns.map((a) => `${a.nameEn} ${eur(a.from)}${a.recurring ? '/mo' : ''}`).join(' · ')}.`,
   );
   lines.push(`- Canonical pricing pages: ${url('en', '/pricing')} · ${url('el', '/pricing')}`);
   lines.push('');
@@ -532,7 +551,7 @@ function buildFull({ services, servicesEl, industries, industriesEl, greece, pro
   );
   lines.push('');
   for (const loc of greece) {
-    lines.push(`### ${loc.city} (${loc.cityLocal}) — \`${loc.slug}\``);
+    lines.push(`### ${loc.city} (${loc.cityLocal}) - \`${loc.slug}\``);
     lines.push(
       `- Website creation: ${url('el', `/services/website-creation/${loc.slug}`)}`,
     );
@@ -617,7 +636,7 @@ function buildFull({ services, servicesEl, industries, industriesEl, greece, pro
   lines.push('');
   lines.push('### Q: Do you only work in Greece?');
   lines.push(
-    'A: No — Greece-based with strong tourism niche, serving clients across EU, UK, US, and Canada. Portfolio: ' +
+    'A: No - Greece-based with strong tourism niche, serving clients across EU, UK, US, and Canada. Portfolio: ' +
       url('en', '/work'),
   );
   lines.push('');
@@ -648,7 +667,7 @@ function buildFull({ services, servicesEl, industries, industriesEl, greece, pro
   lines.push('');
   lines.push('## 10. Contact');
   lines.push('');
-  lines.push('- **Email:** hello@anotherseoguru.com');
+  lines.push('- **Email:** anotherseoguru@gmail.com');
   lines.push('- **WhatsApp (messages only):** +33 6 89 60 59 00 · https://wa.me/33689605900');
   lines.push('- **Languages:** Greek, English');
   lines.push('- **Response time:** within 24 hours');

@@ -1,6 +1,6 @@
 export const footerEn = {
   tagline:
-    'The most powerful SEO platform with AI-powered content generation. Dominate search rankings and scale your content like a pro.',
+    'A Search Console-native SEO platform and an agency that builds the strategy around your data. Organic growth, without the guarantees nobody can keep.',
   agency: 'Services',
   resources: 'Resources',
   company: 'Company',

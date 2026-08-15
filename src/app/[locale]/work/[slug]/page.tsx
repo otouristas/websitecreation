@@ -50,7 +50,7 @@ export default async function WorkDetailPage({
   return (
     <>
       <Header />
-      <main className="main-below-header">
+      <main className="blueprint-grid relative z-0 main-below-header">
         <WorkDetail project={project} locale={locale as SiteLocale} />
       </main>
       <StickyMobileCta />

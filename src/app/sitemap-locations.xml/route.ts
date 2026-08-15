@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 
 /**
- * Legacy single EN locations sitemap — permanently redirect crawlers to the
+ * Legacy single EN locations sitemap, permanently redirect crawlers to the
  * locale/country shards listed in sitemap-index.xml.
  */
 export async function GET() {

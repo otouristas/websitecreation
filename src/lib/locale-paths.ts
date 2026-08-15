@@ -73,7 +73,7 @@ export function elServiceLocationPath(service: string, location: string): string
 /** @deprecated use elServiceLocationPath */
 export const grServiceLocationPath = elServiceLocationPath;
 
-/** EN-first product paths with no dedicated EL twin — lang switch falls back to home. */
+/** EN-first product paths with no dedicated EL twin, lang switch falls back to home. */
 const EN_ONLY_PATH_PREFIXES = ['/platform', '/tools', '/resources', '/glossary'] as const;
 
 function isEnOnlyBarePath(bare: string): boolean {
@@ -117,7 +117,7 @@ const HREFLANG_BASE = 'https://anotherseoguru.com';
 
 /**
  * hreflang alternates for a bare (locale-less) path. Only emit when the page
- * genuinely exists in more than one locale — advertising an alternate that
+ * genuinely exists in more than one locale, advertising an alternate that
  * 404s or serves untranslated content hurts more than no hreflang at all.
  */
 export function getHreflangAlternates(

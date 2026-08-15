@@ -27,14 +27,14 @@ export default async function TermsPage({ params }: PageProps) {
   return (
     <>
       <Header />
-      <main className="main-below-header pb-20">
+      <main className="blueprint-grid relative z-0 main-below-header pb-20">
         <div className="container max-w-4xl">
           <h1 className="mb-8 text-4xl font-bold">{t.terms.title}</h1>
           <div className="prose prose-lg text-gray-700">
             <p className="mb-4">{t.terms.lastUpdated}</p>
             {t.terms.sections.map((section) => (
               <div key={section.heading}>
-                <h2 className="mb-4 mt-8 text-2xl font-bold">{section.heading}</h2>
+                <h2 className="mb-4 mt-8 font-display text-2xl font-medium tracking-[-0.02em]">{section.heading}</h2>
                 <p>{section.body}</p>
               </div>
             ))}

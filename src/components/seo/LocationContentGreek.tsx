@@ -42,9 +42,9 @@ export function LocationContentGreek({ location, service, locale: localeProp }: 
     service && pack?.serviceDepth?.[service.slug] ? pack.serviceDepth[service.slug] : null;
 
   return (
-    <div className="prose prose-lg max-w-none text-gray-700" lang="el">
+    <div className="prose prose-lg max-w-none text-foreground" lang="el">
       <div className="mb-12">
-        <h2 className="text-3xl font-bold text-gray-900 mb-6">
+        <h2 className="text-3xl font-bold text-foreground mb-6">
           Η έξυπνη επιλογή για επιχειρήσεις στην {city}
         </h2>
         <p className="mb-4">
@@ -64,15 +64,15 @@ export function LocationContentGreek({ location, service, locale: localeProp }: 
             {pack.tourism ? (
               <p className="mt-4">
                 Εξειδικευόμαστε σε{' '}
-                <Link href={lp('/solutions/hotels/website-creation')} className="text-blue-600 underline">
+                <Link href={lp('/solutions/hotels/website-creation')} className="text-primary underline">
                   κατασκευή ιστοσελίδας ξενοδοχείου
                 </Link>{' '}
                 και{' '}
-                <Link href={lp('/solutions/hotels')} className="text-blue-600 underline">
+                <Link href={lp('/solutions/hotels')} className="text-primary underline">
                   SEO για ξενοδοχεία
                 </Link>{' '}
                 - δείτε και τον{' '}
-                <Link href={lp('/blog/kataskevi-istoselidas-xenodoxeia')} className="text-blue-600 underline">
+                <Link href={lp('/blog/kataskevi-istoselidas-xenodoxeia')} className="text-primary underline">
                   οδηγό μας για ιστοσελίδες ξενοδοχείων
                 </Link>
                 .
@@ -83,11 +83,11 @@ export function LocationContentGreek({ location, service, locale: localeProp }: 
         {serviceDepth ? (
           <p className="mt-4">
             {serviceDepth}{' '}
-            <Link href={lp('/pricing')} className="text-blue-600 underline">
+            <Link href={lp('/pricing')} className="text-primary underline">
               Δείτε τιμές
             </Link>{' '}
             ή{' '}
-            <Link href={lp('/get-started')} className="text-blue-600 underline">
+            <Link href={lp('/get-started')} className="text-primary underline">
               ζητήστε δωρεάν προσφορά
             </Link>
             .
@@ -104,7 +104,7 @@ export function LocationContentGreek({ location, service, locale: localeProp }: 
                   {i > 0 ? ', ' : null}
                   <Link
                     href={lp(`/services/${service?.slug ?? 'website-creation'}/${slug}`)}
-                    className="text-blue-600 underline"
+                    className="text-primary underline"
                   >
                     {label}
                   </Link>
@@ -117,30 +117,30 @@ export function LocationContentGreek({ location, service, locale: localeProp }: 
       </div>
 
       <div className="grid md:grid-cols-2 gap-8 mb-16">
-        <div className="bg-gray-50 p-8 rounded-xl border border-gray-100">
-          <h3 className="text-xl font-bold text-blue-600 mb-3">1. Έρευνα με δεδομένα</h3>
-          <p className="text-gray-600">
+        <div className="bg-surface-raised p-8 rounded-xl border border-hairline">
+          <h3 className="text-xl font-bold text-primary mb-3">1. Έρευνα με δεδομένα</h3>
+          <p className="text-muted-foreground">
             Αναλύουμε ανταγωνιστές στην {city}: keywords, σελίδες που φέρνουν traffic και ευκαιρίες
             «striking distance» από το Search Console - όχι εικασίες.
           </p>
         </div>
-        <div className="bg-gray-50 p-8 rounded-xl border border-gray-100">
-          <h3 className="text-xl font-bold text-blue-600 mb-3">2. Τεχνική βάση</h3>
-          <p className="text-gray-600">
+        <div className="bg-surface-raised p-8 rounded-xl border border-hairline">
+          <h3 className="text-xl font-bold text-primary mb-3">2. Τεχνική βάση</h3>
+          <p className="text-muted-foreground">
             Core Web Vitals, indexability και καθαρή αρχιτεκτονική ώστε το site να φορτώνει γρήγορα για
             χρήστες στην {city} και σε κινητά.
           </p>
         </div>
-        <div className="bg-gray-50 p-8 rounded-xl border border-gray-100">
-          <h3 className="text-xl font-bold text-blue-600 mb-3">3. GEO &amp; AEO</h3>
-          <p className="text-gray-600">
+        <div className="bg-surface-raised p-8 rounded-xl border border-hairline">
+          <h3 className="text-xl font-bold text-primary mb-3">3. GEO &amp; AEO</h3>
+          <p className="text-muted-foreground">
             Δομημένο περιεχόμενο, schema και οντότητες για ChatGPT Search, Perplexity και Gemini - ώστε η
             μάρκα σας να εμφανίζεται στις απαντήσεις AI, όχι μόνο στα blue links.
           </p>
         </div>
-        <div className="bg-gray-50 p-8 rounded-xl border border-gray-100">
-          <h3 className="text-xl font-bold text-blue-600 mb-3">4. Τοπική ανάπτυξη</h3>
-          <p className="text-gray-600">
+        <div className="bg-surface-raised p-8 rounded-xl border border-hairline">
+          <h3 className="text-xl font-bold text-primary mb-3">4. Τοπική ανάπτυξη</h3>
+          <p className="text-muted-foreground">
             Google Business Profile, τοπικές σελίδες και εσωτερική σύνδεση με γειτονικές περιοχές - κρίσιμο
             για ελληνικές αναζητήσεις «κοντά μου».
           </p>
@@ -148,19 +148,19 @@ export function LocationContentGreek({ location, service, locale: localeProp }: 
       </div>
 
       {location.neighborhoods && location.neighborhoods.length > 0 && (
-        <div className="mb-12 bg-blue-50 p-8 rounded-2xl">
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">
+        <div className="mb-12 bg-primary/5 p-8 rounded-[10px]">
+          <h3 className="text-2xl font-bold text-foreground mb-4">
             Καλύπτουμε όλη την {city} και τις γειτονιές
           </h3>
           <p className="mb-6">
-            Η τοπική SEO δεν είναι μόνο «{target} {city}» - στοχεύουμε γειτονιές και
+            Το τοπικό SEO δεν είναι μόνο «{target} {city}» - στοχεύουμε γειτονιές και
             micro-intent όπου βρίσκονται οι πελάτες σας.
           </p>
           <div className="flex flex-wrap gap-3">
             {location.neighborhoods.map((hood) => (
               <span
                 key={hood}
-                className="px-4 py-2 bg-white rounded-full text-sm font-medium text-blue-800 shadow-sm border border-blue-100"
+                className="px-4 py-2 bg-surface rounded-full text-sm font-medium text-primary shadow-sm border border-hairline"
               >
                 {hood}
               </span>
@@ -170,27 +170,27 @@ export function LocationContentGreek({ location, service, locale: localeProp }: 
       )}
 
       {service && SERVICE_GUIDE[service.slug] ? (
-        <div className="mb-12 bg-gray-50 p-8 rounded-2xl border border-gray-100 not-prose">
-          <h3 className="text-xl font-bold text-gray-900 mb-3">Χρήσιμος οδηγός πριν ξεκινήσετε</h3>
-          <p className="text-gray-600 mb-4">
+        <div className="mb-12 bg-surface-raised p-8 rounded-[10px] border border-hairline not-prose">
+          <h3 className="text-xl font-bold text-foreground mb-3">Χρήσιμος οδηγός πριν ξεκινήσετε</h3>
+          <p className="text-muted-foreground mb-4">
             Διαβάστε τον αναλυτικό μας οδηγό ώστε να ξέρετε ακριβώς τι να περιμένετε σε κόστος, χρόνο και
             αποτέλεσμα για {target} στην {city}.
           </p>
-          <Link href={lp(SERVICE_GUIDE[service.slug].href)} className="text-blue-600 underline font-medium">
+          <Link href={lp(SERVICE_GUIDE[service.slug].href)} className="text-primary underline font-medium">
             {SERVICE_GUIDE[service.slug].label} →
           </Link>
         </div>
       ) : null}
 
-      <div className="text-center py-12 border-t border-gray-100 mt-12">
+      <div className="text-center py-12 border-t border-hairline mt-12">
         <h3 className="text-2xl font-bold mb-4">Έτοιμοι να αναπτύξετε την επιχείρησή σας στην {city};</h3>
-        <p className="mb-8 text-gray-600 max-w-2xl mx-auto">
+        <p className="mb-8 text-muted-foreground max-w-2xl mx-auto">
           Ζητήστε δωρεάν προσφορά - ή ξεκινήστε δοκιμή 7 ημερών της πλατφόρμας SEO μας.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
             href={lp('/contact')}
-            className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white bg-blue-600 rounded-lg hover:bg-blue-700"
+            className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-primary-foreground bg-primary rounded-lg hover:bg-primary"
           >
             Δωρεάν προσφορά - {city}
           </Link>

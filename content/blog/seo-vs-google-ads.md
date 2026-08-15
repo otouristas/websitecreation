@@ -21,7 +21,7 @@ faq:
     answer: The strategy pays off when Ads and SEO share keyword and landing-page data. One partner (or tightly aligned teams) prevents conflicting offers and wasted spend.
 ---
 
-"Should I put my money into Google Ads or SEO?" is one of the most common questions in digital marketing. The right answer depends on your time horizon and margins. Let's put them side by side, with numbers — and a practical mix most Greek SMEs can actually run.
+"Should I put my money into Google Ads or SEO?" is one of the most common questions in digital marketing. The right answer depends on your time horizon and margins. Let's put them side by side, with numbers - and a practical mix most Greek SMEs can actually run.
 
 Greek version: [SEO ή Google Ads](/el/blog/seo-i-google-ads). New to organic search? Start with [What is SEO?](/en/blog/what-is-seo) or [SEO for beginners](/en/blog/seo-for-beginners).
 
@@ -44,14 +44,14 @@ Greek version: [SEO ή Google Ads](/el/blog/seo-i-google-ads). New to organic se
 - **High margins, instant conversion**: if each customer is worth hundreds, a €2-3 CPC pays off comfortably.
 - **Coverage gaps**: new services or cities SEO does not rank for yet.
 
-The catch: CPCs keep rising, and the moment the budget stops, so do the customers. Weak landing pages also raise CPC via low Quality Score — fix [on-page SEO](/en/blog/on-page-seo) even if you stay Ads-heavy.
+The catch: CPCs keep rising, and the moment the budget stops, so do the customers. Weak landing pages also raise CPC via low Quality Score - fix [on-page SEO](/en/blog/on-page-seo) even if you stay Ads-heavy.
 
 ## When SEO Wins
 
-- **You're building for the next five years**: content and rankings are an asset — they work while you sleep.
+- **You're building for the next five years**: content and rankings are an asset - they work while you sleep.
 - **Cost per customer falls over time**: by month 12, the same monthly fee brings multiples of the traffic it did in month 3.
 - **Your customers research before buying**: in services (lawyers, doctors, construction) the organic result builds trust that advertising can't buy.
-- **AI search**: ChatGPT and Gemini recommend businesses from organic content — not ads. SEO puts you in that game too (see [GEO/AEO](/en/blog/geo-aeo-global-seo-playbook) and [AI visibility](/en/services/ai-visibility)).
+- **AI search**: ChatGPT and Gemini recommend businesses from organic content - not ads. SEO puts you in that game too (see [GEO/AEO](/en/blog/geo-aeo-global-seo-playbook) and [AI visibility](/en/services/ai-visibility)).
 - **Local map pack**: [local SEO](/en/services/local-seo) often beats paid for "near me" intent at lower long-term cost.
 
 ## The Strategy We Recommend: 70/30
@@ -62,11 +62,11 @@ For most SMEs, the best answer isn't either/or but a ratio:
 2. **Months 4-8**: as organic rankings climb, gradually shift budget from Ads to content.
 3. **Month 9+**: Ads remain only for what SEO doesn't yet cover (new services, seasonal campaigns, remarketing).
 
-That way you're never without customers — and every euro leaving Ads goes into something that stays. Technical blockers first: [technical SEO guide](/en/blog/technical-seo-guide).
+That way you're never without customers - and every euro leaving Ads goes into something that stays. Technical blockers first: [technical SEO guide](/en/blog/technical-seo-guide).
 
 ## The Numbers in Practice
 
-For a local service business: €500/mo in Ads at a €1.50 CPC buys ~330 clicks/month — forever at the same rate. With €299-599/mo in an [SEO package](/en/pricing), month one brings little, but by month six organic traffic usually exceeds those 330 clicks — and keeps climbing with no per-click cost.
+For a local service business: €500/mo in Ads at a €1.50 CPC buys ~330 clicks/month - forever at the same rate. With €299-599/mo in an [SEO package](/en/pricing), month one brings little, but by month six organic traffic usually exceeds those 330 clicks - and keeps climbing with no per-click cost.
 
 | Month | Ads (€500/mo) | SEO (€399/mo typical) | Combined goal |
 | :--- | :--- | :--- | :--- |
@@ -79,17 +79,17 @@ See the full [SEO cost breakdown](/en/blog/how-much-does-seo-cost).
 
 ## Common Mistakes When Choosing
 
-1. **Ads forever with no landing-page work** — you pay premium CPCs for thin pages.
-2. **SEO only with zero patience** — quitting at month two wastes the foundation.
-3. **Separate agencies that never share keywords** — Ads and SEO fight each other.
-4. **Buying “guaranteed #1 SEO”** — usually spam; burn budget and risk.
+1. **Ads forever with no landing-page work** - you pay premium CPCs for thin pages.
+2. **SEO only with zero patience** - quitting at month two wastes the foundation.
+3. **Separate agencies that never share keywords** - Ads and SEO fight each other.
+4. **Buying “guaranteed #1 SEO”** - usually spam; burn budget and risk.
 5. **Ignoring local pack** while bidding on the same geo terms in Ads.
-6. **Measuring clicks, not leads** — channel vanity metrics hide real ROI.
-7. **Launching Ads on a slow mobile site** — bounce rates kill conversion and Quality Score.
+6. **Measuring clicks, not leads** - channel vanity metrics hide real ROI.
+7. **Launching Ads on a slow mobile site** - bounce rates kill conversion and Quality Score.
 
 ## Decision Framework by Business Stage
 
-**Brand new, need cash flow this month:** Ads primary, SEO foundations in parallel (titles, speed, GBP). Do not skip the landing-page rewrite — it lowers CPC and raises conversion for both channels.
+**Brand new, need cash flow this month:** Ads primary, SEO foundations in parallel (titles, speed, GBP). Do not skip the landing-page rewrite - it lowers CPC and raises conversion for both channels.
 
 **Established local business renting traffic:** Shift toward SEO aggressively. Keep a thin Ads layer for competitors’ brand terms and seasonal spikes while you climb map pack and service pages.
 
@@ -115,8 +115,8 @@ The strategy pays off when Ads and SEO share data (keywords, landing pages). Ask
 
 ### Is SEO dead because of AI Overviews?
 
-No — clear, citable pages still win clicks and assistant mentions. Ads do not replace that organic surface.
+No - clear, citable pages still win clicks and assistant mentions. Ads do not replace that organic surface.
 
 ## Ready to Get Started with a Budget Split?
 
-Tell us your niche, area and goal — we'll reply with a specific budget split and a realistic timeline. [Get Started](/en/get-started) free within 24 hours, or review [pricing](/en/pricing) if you already know you want an SEO-led mix.
+Tell us your niche, area and goal - we'll reply with a specific budget split and a realistic timeline. [Get Started](/en/get-started) free within 24 hours, or review [pricing](/en/pricing) if you already know you want an SEO-led mix.

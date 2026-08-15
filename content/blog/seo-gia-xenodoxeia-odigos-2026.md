@@ -1,6 +1,6 @@
 ---
 slug: seo-gia-xenodoxeia-odigos-2026
-title: SEO για Ξενοδοχεία 2026 — Άμεσες Κρατήσεις χωρίς Εξάρτηση από OTAs
+title: SEO για Ξενοδοχεία 2026 - Άμεσες Κρατήσεις χωρίς Εξάρτηση από OTAs
 description: Πρακτικός οδηγός SEO για ξενοδοχεία - σελίδες δωματίων, schema, τοπική αναζήτηση, GEO/AEO και πώς ελληνικά hospitality brands κερδίζουν direct bookings.
 date: 2026-07-23
 author: AnotherSEOGuru Editorial Team
@@ -11,7 +11,7 @@ categoryColor: bg-amber-100 text-amber-800
 pillar: industry-playbooks
 faq:
   - question: Τι είναι το SEO για ξενοδοχεία;
-    answer: Είναι η βελτιστοποίηση της ιστοσελίδας του καταλύματος ώστε οι επισκέπτες να βρίσκουν και να κλείνουν απευθείας μέσω Google και AI βοηθών — με σελίδες δωματίων, schema, τοπικό SEO και περιεχόμενο που μειώνει την εξάρτηση από OTAs.
+    answer: Είναι η βελτιστοποίηση της ιστοσελίδας του καταλύματος ώστε οι επισκέπτες να βρίσκουν και να κλείνουν απευθείας μέσω Google και AI βοηθών - με σελίδες δωματίων, schema, τοπικό SEO και περιεχόμενο που μειώνει την εξάρτηση από OTAs.
   - question: Σε πόσο καιρό φέρνει αποτέλεσμα το hotel SEO;
     answer: Τοπικές και branded αναζητήσεις συχνά σε 2–3 μήνες. Ανταγωνιστικοί προορισμοί (Σαντορίνη, Μύκονος, Κρήτη) συχνά χρειάζονται 4–6+ μήνες περιεχομένου, τεχνικών διορθώσεων και authority.
   - question: Χρειάζονται τα ξενοδοχεία GEO / AEO εκτός από SEO;
@@ -34,11 +34,11 @@ faq:
 
 ### Schema και τεχνικά θεμέλια
 
-Hotel / LodgingBusiness schema με check-in, geo, προσφορές και room types βοηθά Google και AI συστήματα να καταλάβουν το κατάλυμα. Παράλληλα: Core Web Vitals κάτω από τα όρια, mobile-first booking widget, hreflang EL/EN όταν πουλάτε σε δύο αγορές. Χωρίς τεχνική βάση, το περιεχόμενο δεν αποδίδει — δείτε τον οδηγό [τεχνικού SEO](/el/blog/techniko-seo) και τις [υπηρεσίες website για ξενοδοχεία](/el/solutions/hotels/website-creation).
+Hotel / LodgingBusiness schema με check-in, geo, προσφορές και room types βοηθά Google και AI συστήματα να καταλάβουν το κατάλυμα. Παράλληλα: Core Web Vitals κάτω από τα όρια, mobile-first booking widget, hreflang EL/EN όταν πουλάτε σε δύο αγορές. Χωρίς τεχνική βάση, το περιεχόμενο δεν αποδίδει - δείτε τον οδηγό [τεχνικού SEO](/el/blog/techniko-seo) και τις [υπηρεσίες website για ξενοδοχεία](/el/solutions/hotels/website-creation).
 
 ### Τοπικό και destination SEO
 
-Οι περισσότερες κρατήσεις ξεκινούν από τοπική πρόθεση: «ξενοδοχείο κοντά στο αεροδρόμιο Ηρακλείου», «μικρό boutique hotel Ναύπλιο». Χτίστε landing pages για παραλίες, χωριά, αεροδρόμια και εμπειρίες — όχι copy-paste templates. Το [τοπικό SEO](/el/blog/local-seo-guide) και το Google Business Profile είναι υποχρεωτικά για Maps και Local Pack.
+Οι περισσότερες κρατήσεις ξεκινούν από τοπική πρόθεση: «ξενοδοχείο κοντά στο αεροδρόμιο Ηρακλείου», «μικρό boutique hotel Ναύπλιο». Χτίστε landing pages για παραλίες, χωριά, αεροδρόμια και εμπειρίες - όχι copy-paste templates. Το [τοπικό SEO](/el/blog/local-seo-guide) και το Google Business Profile είναι υποχρεωτικά για Maps και Local Pack.
 
 ### GEO / AEO για AI συστάσεις ταξιδιού
 
@@ -59,11 +59,11 @@ Hotel / LodgingBusiness schema με check-in, geo, προσφορές και roo
 
 ## Checklist Περιεχομένου και On-Page για 2026
 
-1. **Μία κύρια πρόθεση ανά URL** — όχι «όλα τα δωμάτια» σε μία λεπτή σελίδα.
+1. **Μία κύρια πρόθεση ανά URL** - όχι «όλα τα δωμάτια» σε μία λεπτή σελίδα.
 2. **Title + H1** με τύπο δωματίου και προορισμό, χωρίς keyword stuffing.
-3. **Απάντηση στην πρώτη οθόνη** — τι είναι το δωμάτιο, για ποιον, τιμή από, CTA.
-4. **Φωτογραφίες με compression και alt** — galleries χωρίς WebP σκοτώνουν Core Web Vitals.
-5. **FAQ ορατά στη σελίδα** — για PAA και AI Overviews.
+3. **Απάντηση στην πρώτη οθόνη** - τι είναι το δωμάτιο, για ποιον, τιμή από, CTA.
+4. **Φωτογραφίες με compression και alt** - galleries χωρίς WebP σκοτώνουν Core Web Vitals.
+5. **FAQ ορατά στη σελίδα** - για PAA και AI Overviews.
 6. **Εσωτερικοί σύνδεσμοι** από blog και destination pages προς room + booking.
 7. **Reviews και social proof** πάνω από το fold στο mobile.
 8. **WhatsApp / τηλέφωνο / form** δίπλα στο booking engine.
@@ -72,12 +72,12 @@ Hotel / LodgingBusiness schema με check-in, geo, προσφορές και roo
 
 ## Τα 6 Συχνότερα Λάθη στα Ελληνικά Ξενοδοχεία
 
-1. **Thin template pages** που μοιάζουν με κάθε ανταγωνιστή στο νησί — η Google δεν έχει λόγο να σας προτιμήσει.
-2. **Εικόνες χωρίς βελτιστοποίηση** — 4MB galleries, χωρίς alt, χωρίς lazy load.
-3. **Εξάρτηση μόνο από branding Booking.com** — εκπαιδεύετε τους χρήστες (και τη Google) ότι τα OTAs «κατέχουν» το query.
-4. **Χωρίς hreflang** όταν έχετε ελληνικά και αγγλικά — cannibalization και λάθος γλώσσα στα SERPs.
-5. **Homepage ως μοναδική landing** — καμία σελίδα για «honeymoon suite» ή «rooms with jacuzzi».
-6. **Αγνόηση Google Business Profile** — φωτογραφίες, posts, Q&A και απαντήσεις σε κριτικές μένουν αδρανείς όλη τη σεζόν.
+1. **Thin template pages** που μοιάζουν με κάθε ανταγωνιστή στο νησί - η Google δεν έχει λόγο να σας προτιμήσει.
+2. **Εικόνες χωρίς βελτιστοποίηση** - 4MB galleries, χωρίς alt, χωρίς lazy load.
+3. **Εξάρτηση μόνο από branding Booking.com** - εκπαιδεύετε τους χρήστες (και τη Google) ότι τα OTAs «κατέχουν» το query.
+4. **Χωρίς hreflang** όταν έχετε ελληνικά και αγγλικά - cannibalization και λάθος γλώσσα στα SERPs.
+5. **Homepage ως μοναδική landing** - καμία σελίδα για «honeymoon suite» ή «rooms with jacuzzi».
+6. **Αγνόηση Google Business Profile** - φωτογραφίες, posts, Q&A και απαντήσεις σε κριτικές μένουν αδρανείς όλη τη σεζόν.
 
 ## Πλάνο 90 Ημερών για Direct Bookings
 
@@ -85,7 +85,7 @@ Hotel / LodgingBusiness schema με check-in, geo, προσφορές και roo
 
 **Ημέρες 31–60:** δημοσίευση ή rewrite 4–8 σελίδων δωματίων/παροχών, 2–3 destination landings, ορατά FAQ και εσωτερική διασύνδεση από blog προς booking. Εκκίνηση απαντήσεων σε κριτικές και posts στο GBP κάθε εβδομάδα.
 
-**Ημέρες 61–90:** μέτρηση CTR και direct booking share, A/B σε titles, πρώτα digital PR / τοπικά links, GEO βελτιώσεις (σαφείς απαντήσεις για AI planners). Αναφορά με οργανικά κλικ, θέσεις και κρατήσεις site vs OTA — όχι μόνο sessions.
+**Ημέρες 61–90:** μέτρηση CTR και direct booking share, A/B σε titles, πρώτα digital PR / τοπικά links, GEO βελτιώσεις (σαφείς απαντήσεις για AI planners). Αναφορά με οργανικά κλικ, θέσεις και κρατήσεις site vs OTA - όχι μόνο sessions.
 
 Για ξενοδοχεία που χρειάζονται και νέο site, συνδυάστε με [κατασκευή ιστοσελίδας ξενοδοχείου](/el/blog/kataskevi-istoselidas-xenodoxeia) και [σχεδιασμό για τουρισμό](/el/blog/sxediasmos-istoselidas-tourismos-2026). Το SEO χωρίς booking UX χάνει conversions ακόμη κι αν κερδίσει κατατάξεις.
 
@@ -95,7 +95,7 @@ Hotel / LodgingBusiness schema με check-in, geo, προσφορές και roo
 
 ### Τι είναι το SEO για ξενοδοχεία;
 
-Είναι η βελτιστοποίηση site, τοπικών σημάτων και περιεχομένου ώστε οι επισκέπτες να βρίσκουν και να κλείνουν **απευθείας** — μειώνοντας προμήθειες OTA χωρίς να εξαφανιστείτε από τα κανάλια διανομής.
+Είναι η βελτιστοποίηση site, τοπικών σημάτων και περιεχομένου ώστε οι επισκέπτες να βρίσκουν και να κλείνουν **απευθείας** - μειώνοντας προμήθειες OTA χωρίς να εξαφανιστείτε από τα κανάλια διανομής.
 
 ### Σε πόσο καιρό φέρνει αποτέλεσμα;
 
@@ -115,4 +115,4 @@ Hotel / LodgingBusiness schema με check-in, geo, προσφορές και roo
 
 ## Ξεκινήστε Direct Bookings Σχέδιο
 
-Αν θέλετε μετρήσιμο πλάνο για το 2026 — τεχνικό audit, room architecture, τοπικό SEO και GEO — δείτε τις [λύσεις για ξενοδοχεία](/el/solutions/hotels), τις [τιμές](/el/pricing) ή [ζητήστε προσφορά](/el/get-started?project=hotel). Φέρτε το ποσοστό OTA dependency και τους στόχους σεζόν· εμείς χτίζουμε το roadmap άμεσων κρατήσεων.
+Αν θέλετε μετρήσιμο πλάνο για το 2026 - τεχνικό audit, room architecture, τοπικό SEO και GEO - δείτε τις [λύσεις για ξενοδοχεία](/el/solutions/hotels), τις [τιμές](/el/pricing) ή [ζητήστε προσφορά](/el/get-started?project=hotel). Φέρτε το ποσοστό OTA dependency και τους στόχους σεζόν· εμείς χτίζουμε το roadmap άμεσων κρατήσεων.

@@ -77,6 +77,11 @@ export function listLocationSitemapPaths(): string[] {
 
   for (const shard of ['el', 'en-us', 'en-intl'] as const) {
     const locale: SiteLocale = shard === 'el' ? 'el' : 'en';
+    // Skip shards with nothing in them. No US location currently passes the
+    // uniqueness gate, so advertising an empty en-us sitemap in the index just
+    // gives Search Console a 0-URL child to report on.
+    if (buildLocationServiceUrls(locale, shard).length === 0) continue;
+
     const { chunkCount } = buildLocationSitemapXml(locale, shard, 0);
     if (chunkCount <= 1) {
       paths.push(`/sitemap-locations-${shard}.xml`);

@@ -1,25 +1,25 @@
 ---
 slug: pillar-agency-playbooks
-title: Agency Playbooks — Delivery, Reporting, and Scaling Client SEO
-description: Hub for operators running retainers — scoping, narrative reporting, and when software augments headcount.
+title: Agency Playbooks - Delivery, Reporting, and Scaling Client SEO
+description: Hub for operators running retainers - scoping, narrative reporting, and when software augments headcount.
 date: 2026-02-01
 author: AnotherSEOGuru Editorial Team
 pillarHub: true
 pillar: agency-playbooks
 faq:
   - question: "What's a healthy agency client retention?"
-    answer: "When you ship visible work monthly and reports tie to their KPIs — 12–24 month tourism retainers are common with seasonal flex."
+    answer: "When you ship visible work monthly and reports tie to their KPIs - 12–24 month tourism retainers are common with seasonal flex."
   - question: "Should agencies guarantee rankings?"
-    answer: "No — guarantee process: weekly ops, shipped fixes, transparent reporting. Rankings follow; guarantees create bad incentives."
+    answer: "No - guarantee process: weekly ops, shipped fixes, transparent reporting. Rankings follow; guarantees create bad incentives."
   - question: "How do I pitch GEO/AEO without hype?"
-    answer: "Use LLM citations guide framing — directional sampling, not fake scores."
+    answer: "Use LLM citations guide framing - directional sampling, not fake scores."
   - question: "White-label vs co-branded delivery?"
     answer: "White-label software dashboards; co-branded thought leadership builds your authority. Match client preference."
   - question: "When to refer a project instead of taking it?"
     answer: "YMYL without compliance reviewer, markets outside your expertise, clients who won't grant GSC access."
 ---
 
-Agency SEO fails for predictable reasons: unclear scope, dashboards nobody reads, and strategies that ignore client constraints (CMS, legal, seasonality). Strong operators **productize** delivery — templates, QA, and a single source of truth for performance. This hub collects playbooks for agencies and for business owners evaluating agency partnerships — with examples from home services, [hotels](/en/solutions/hotels), [rent-a-car](/en/solutions/rent-a-car), and [travel AI](/en/solutions/travel-ai-chatbots).
+Agency SEO fails for predictable reasons: unclear scope, dashboards nobody reads, and strategies that ignore client constraints (CMS, legal, seasonality). Strong operators **productize** delivery - templates, QA, and a single source of truth for performance. This hub collects playbooks for agencies and for business owners evaluating agency partnerships - with examples from home services, [hotels](/en/solutions/hotels), [rent-a-car](/en/solutions/rent-a-car), and [travel AI](/en/solutions/travel-ai-chatbots).
 
 ## Who this pillar serves
 
@@ -32,27 +32,27 @@ Agency SEO fails for predictable reasons: unclear scope, dashboards nobody reads
 
 ### Client education and sales
 
-- [DIY SEO vs. hiring an agency](/en/blog/diy-vs-agency) — framing for prospects and realistic expectations. Use in discovery calls to qualify fit.
-- [Why we split software and agency pricing](/en/blog/pricing-page-seo-software-vs-agency) — reduces procurement confusion; mirror in your proposals.
+- [DIY SEO vs. hiring an agency](/en/blog/diy-vs-agency) - framing for prospects and realistic expectations. Use in discovery calls to qualify fit.
+- [Why we split software and agency pricing](/en/blog/pricing-page-seo-software-vs-agency) - reduces procurement confusion; mirror in your proposals.
 
 ### Operational SEO
 
-- [GSC query prioritization framework](/en/blog/gsc-query-prioritization-framework) — turn client Search Console into a sprint backlog with four buckets.
-- [GSC weekly ops playbook](/en/blog/gsc-weekly-ops-playbook) — one-hour client rhythm; assign as standing meeting agenda.
-- [Local SEO guide](/en/blog/local-seo-guide) — map pack + on-site reinforcement for local retainers.
-- [Google Business Profile masterclass](/en/blog/google-business-profile-masterclass) — high-impact GBP delivery checklist.
+- [GSC query prioritization framework](/en/blog/gsc-query-prioritization-framework) - turn client Search Console into a sprint backlog with four buckets.
+- [GSC weekly ops playbook](/en/blog/gsc-weekly-ops-playbook) - one-hour client rhythm; assign as standing meeting agenda.
+- [Local SEO guide](/en/blog/local-seo-guide) - map pack + on-site reinforcement for local retainers.
+- [Google Business Profile masterclass](/en/blog/google-business-profile-masterclass) - high-impact GBP delivery checklist.
 
 ### AI-era delivery
 
-- [GEO, AEO & AI SEO playbook](/en/blog/geo-aeo-global-seo-playbook) — scope GEO/AEO without overpromising.
-- [LLM citations guide](/en/blog/llm-citations-brand-visibility) — sober AI reporting for QBRs.
-- [AI & LLM visibility pillar](/en/blog/pillar-ai-llm-visibility) — upstream hub for generative search content.
+- [GEO, AEO & AI SEO playbook](/en/blog/geo-aeo-global-seo-playbook) - scope GEO/AEO without overpromising.
+- [LLM citations guide](/en/blog/llm-citations-brand-visibility) - sober AI reporting for QBRs.
+- [AI & LLM visibility pillar](/en/blog/pillar-ai-llm-visibility) - upstream hub for generative search content.
 
 ### Tourism verticals
 
-- [Cyclades local SEO](/en/blog/topiko-seo-kykladon) — island playbook for hospitality clients
-- [Hotel website design (EL)](/en/blog/kataskevi-istoselidas-xenodoxeia) — scoping hotel builds
-- [Rent-a-car SEO (EL)](/en/blog/istoselida-enikiasis-autokinitou-seo) — fleet and airport keywords
+- [Cyclades local SEO](/en/blog/topiko-seo-kykladon) - island playbook for hospitality clients
+- [Hotel website design (EL)](/en/blog/kataskevi-istoselidas-xenodoxeia) - scoping hotel builds
+- [Rent-a-car SEO (EL)](/en/blog/istoselida-enikiasis-autokinitou-seo) - fleet and airport keywords
 
 ## Productized delivery components
 
@@ -67,11 +67,11 @@ Document before contract:
 - Compliance (YMYL, tourism advertising)
 - Baseline GSC and analytics access
 
-Use [get-started](/en/get-started) intake patterns for your own agency — clarity prevents scope creep.
+Use [get-started](/en/get-started) intake patterns for your own agency - clarity prevents scope creep.
 
 ### Weekly ship cadence
 
-Cap at **three fixes per week per client** — title test, content block, internal link. Logged in shared backlog. Clients see momentum; teams avoid analysis paralysis.
+Cap at **three fixes per week per client** - title test, content block, internal link. Logged in shared backlog. Clients see momentum; teams avoid analysis paralysis.
 
 ### Monthly narrative report
 
@@ -89,14 +89,14 @@ Avoid 40-page rank grids. Executives want decisions, not data vomit.
 - [Internal linking audit](/en/blog/internal-linking-audit-checklist)
 - Content decay refresh on top URLs
 - GBP photo and Q&A update
-- Competitor SERP layout changes — [AI overviews](/en/glossary?term=ai-overview), [local pack](/en/glossary?term=local-pack)
+- Competitor SERP layout changes - [AI overviews](/en/glossary?term=ai-overview), [local pack](/en/glossary?term=local-pack)
 
 ## Where product helps agencies
 
-- Sprint board & task management — client-facing roadmaps without losing nuance
-- AI autopilot mode — automate repetitive execution with human review
-- Competitor analysis — faster differentiation stories in pitches and QBRs
-- Semantic clustering — scale query prioritization across clients
+- Sprint board & task management - client-facing roadmaps without losing nuance
+- AI autopilot mode - automate repetitive execution with human review
+- Competitor analysis - faster differentiation stories in pitches and QBRs
+- Semantic clustering - scale query prioritization across clients
 
 Software augments headcount; it doesn't replace strategy or client communication.
 
@@ -108,48 +108,48 @@ Scale content and GBP posts pre-season; maintenance mode off-season with plannin
 
 ### OTA vs direct narrative
 
-Clients fear leaving Booking.com. Frame SEO as **commission savings math** — direct booking value vs retainer cost.
+Clients fear leaving Booking.com. Frame SEO as **commission savings math** - direct booking value vs retainer cost.
 
 ### Multi-island complexity
 
-One GBP per desk, one location page per island minimum, hub-spoke linking — see [portfolio examples](/en/work).
+One GBP per desk, one location page per island minimum, hub-spoke linking - see [portfolio examples](/en/work).
 
 ## For agencies on this site
 
-We also deliver done-for-you services and location-scale programs. Software and agency are complementary: many partners run diagnostics in-house and use our team for heavy execution quarters — redesigns, island expansions, [chatbot launches](/en/solutions/travel-ai-chatbots).
+We also deliver done-for-you services and location-scale programs. Software and agency are complementary: many partners run diagnostics in-house and use our team for heavy execution quarters - redesigns, island expansions, [chatbot launches](/en/solutions/travel-ai-chatbots).
 
 ## Principles for sustainable retainers
 
-- **Scope in writing** — pages per month, GBP locations, report cadence
-- **Access clauses** — delays when client CMS blocked cost you margin
-- **Kill criteria** — when client won't implement, pause retainer honestly
-- **Teach clients** — [glossary](/en/glossary) links and GSC literacy reduce support burden
-- **Measure revenue** — tie work to calls, bookings, not vanity ranks
+- **Scope in writing** - pages per month, GBP locations, report cadence
+- **Access clauses** - delays when client CMS blocked cost you margin
+- **Kill criteria** - when client won't implement, pause retainer honestly
+- **Teach clients** - [glossary](/en/glossary) links and GSC literacy reduce support burden
+- **Measure revenue** - tie work to calls, bookings, not vanity ranks
 
 ## Onboarding checklist for new retainer clients
 
 Week 1 deliverables that set tone:
 
 1. GSC + GA4 + GBP access verified
-2. Baseline click export — top 100 queries, top 50 pages
-3. Cannibalization scan — duplicate intent URLs
-4. Competitor SERP snapshot — [local pack](/en/glossary?term=local-pack) and organic top 5
-5. 90-day roadmap — max 12 initiatives, sequenced by season
-6. Communication rhythm — weekly ship list + monthly narrative report
+2. Baseline click export - top 100 queries, top 50 pages
+3. Cannibalization scan - duplicate intent URLs
+4. Competitor SERP snapshot - [local pack](/en/glossary?term=local-pack) and organic top 5
+5. 90-day roadmap - max 12 initiatives, sequenced by season
+6. Communication rhythm - weekly ship list + monthly narrative report
 
 Clients who see structured onboarding stay longer than clients who receive a generic "audit PDF" in week 3.
 
 ## QBR agenda template (45 minutes)
 
 1. Clicks and bookings trend (5 min)
-2. Shipped work review — three fixes per week × 4 weeks (10 min)
+2. Shipped work review - three fixes per week × 4 weeks (10 min)
 3. Near-miss query opportunities next month (10 min)
-4. Seasonal prep — content, GBP, [chatbot](/en/solutions/travel-ai-chatbots) updates (10 min)
+4. Seasonal prep - content, GBP, [chatbot](/en/solutions/travel-ai-chatbots) updates (10 min)
 5. Questions and scope adjustments (10 min)
 
-Send pre-read 24 hours ahead — stakeholders arrive prepared.
+Send pre-read 24 hours ahead - stakeholders arrive prepared.
 
-Agencies that teach clients to read [Search Console](/en/blog/pillar-search-console-mastery) weekly reduce "why aren't we ranking yet?" tickets and build trust — clients see the same data you do.
+Agencies that teach clients to read [Search Console](/en/blog/pillar-search-console-mastery) weekly reduce "why aren't we ranking yet?" tickets and build trust - clients see the same data you do.
 
 ## Agency delivery cadence at a glance
 
@@ -161,7 +161,7 @@ Agencies that teach clients to read [Search Console](/en/blog/pillar-search-cons
 | Project | Redesign / island launch / migration | Kickoff + launch |
 
 
-## Scope worksheet — copy for proposals
+## Scope worksheet - copy for proposals
 
 Before you send a retainer PDF, fill one row per client:
 
@@ -174,21 +174,21 @@ Before you send a retainer PDF, fill one row per client:
 | Reporting | Monthly narrative + QBR | |
 | Out of scope | Paid ads, OTA account mgmt | |
 
-Writing scope this way prevents "we thought SEO included a full redesign" surprises — and pairs cleanly with the [software vs agency pricing](/en/blog/pricing-page-seo-software-vs-agency) conversation.
+Writing scope this way prevents "we thought SEO included a full redesign" surprises - and pairs cleanly with the [software vs agency pricing](/en/blog/pricing-page-seo-software-vs-agency) conversation.
 
 ## FAQ
 
 ### What's a healthy agency client retention?
 
-When you ship visible work monthly and reports tie to their KPIs — 12–24 month tourism retainers are common with seasonal flex.
+When you ship visible work monthly and reports tie to their KPIs - 12–24 month tourism retainers are common with seasonal flex.
 
 ### Should agencies guarantee rankings?
 
-No — guarantee process: weekly ops, shipped fixes, transparent reporting. Rankings follow; guarantees create bad incentives.
+No - guarantee process: weekly ops, shipped fixes, transparent reporting. Rankings follow; guarantees create bad incentives.
 
 ### How do I pitch GEO/AEO without hype?
 
-Use [LLM citations guide](/en/blog/llm-citations-brand-visibility) framing — directional sampling, not fake scores.
+Use [LLM citations guide](/en/blog/llm-citations-brand-visibility) framing - directional sampling, not fake scores.
 
 ### White-label vs co-branded delivery?
 
@@ -202,6 +202,6 @@ YMYL without compliance reviewer, markets outside your expertise, clients who wo
 
 ## Ready to Get Started?
 
-Tell us about your site, locations, and goals — we'll recommend a scoped plan with Search Console ops, content priorities, and clear next steps.
+Tell us about your site, locations, and goals - we'll recommend a scoped plan with Search Console ops, content priorities, and clear next steps.
 
 [Get started](/en/get-started) · [See our work](/en/work) · [Pricing](/en/pricing)

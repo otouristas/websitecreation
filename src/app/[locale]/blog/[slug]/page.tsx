@@ -11,11 +11,20 @@ import {
   getAllBlogPosts,
   getBlogPostBySlug,
   getTranslationCounterpart,
+  getRelatedPosts,
+  getPillarNeighbours,
+  normalizePillar,
 } from "@/lib/blog";
+import { getPillarCopy } from "@/data/blog-pillars";
+import { TableOfContents } from "@/components/blog/TableOfContents";
+import { BlogProductCta } from "@/components/blog/BlogProductCta";
+import FAQSection from "@/components/seo/FAQSection";
+import { Bloom } from "@/components/landing/primitives";
 import { isValidLocale, localizedPath, type SiteLocale } from "@/lib/i18n/locale";
 import { buildHreflangMapFromPaths } from "@/lib/locale-paths";
 import { buildMetadata } from "@/lib/seo";
 import { getBlogMoneyLinks } from "@/lib/linking";
+import { getAppPath } from "@/lib/app-links";
 import {
   generateArticleSchema,
   generateBreadcrumbSchema,
@@ -46,7 +55,7 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
     return {};
   }
   if (post.locale !== locale) {
-    // Wrong-locale URL redirects to the post's real locale — never index the bad URL.
+    // Wrong-locale URL redirects to the post's real locale, never index the bad URL.
     return { robots: { index: false, follow: true } };
   }
   const counterpart = getTranslationCounterpart(post);
@@ -102,13 +111,22 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     faqItems.length > 0
       ? generateFAQSchema({ faqs: faqItems.map((f) => ({ question: f.question, answer: f.answer })) })
       : null;
-  const schemas = combineSchemas(articleSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : []));
+  const schemas = combineSchemas(articleSchema, breadcrumbSchema,
+    ...(faqSchema ? [faqSchema] : []));
 
-  // Related posts: same pillar, other slugs, newest first, capped at 4.
-  const relatedPosts = getAllBlogPosts(locale as SiteLocale)
-    .filter((p) => p.slug !== post.slug && post.pillar && p.pillar === post.pillar)
-    .slice(0, 4)
-    .map((p) => ({ slug: lp(`/blog/${p.slug}`), title: p.title, description: p.description }));
+  /**
+   * Related posts fall back from pillar to category. The pillar-only version
+   * left Greek posts in the thin pillars with a single suggestion.
+   */
+  const relatedPosts = getRelatedPosts(post, 4).map((p) => ({
+    slug: lp(`/blog/${p.slug}`),
+    title: p.title,
+    description: p.description,
+  }));
+
+  const pillarSlug = normalizePillar(post.pillar);
+  const pillarCopy = pillarSlug ? getPillarCopy(pillarSlug, locale as SiteLocale) : undefined;
+  const { prev, next } = getPillarNeighbours(post);
 
   const moneyPages = getBlogMoneyLinks(post.slug).map((p) => ({
     slug: lp(p.path),
@@ -118,82 +136,177 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   return (
     <>
       <SchemaMarkup schemas={schemas} />
-      <Header />
-      <main className="main-below-header pb-20">
-        <article className="container max-w-[var(--marketing-container-narrow)]">
-          <header className="mb-12">
+      <Header locale={locale as SiteLocale} />
+      <main className="blueprint-grid relative z-0 pb-20">
+        {/* Article header */}
+        <section className="relative overflow-hidden border-b border-hairline">
+          <Bloom className="left-1/2 top-[-10rem] h-[24rem] w-[52rem] -translate-x-1/2" />
+          <div className="main-below-header relative mx-auto max-w-6xl px-6 pb-12 pt-6">
             <Breadcrumbs items={breadcrumbItems} className="mb-6" />
-            {post.isPillarHub ? (
-              <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
-                {isEl ? "Οδηγός-πυλώνας" : "Content pillar"}
-              </span>
-            ) : null}
-            {post.category && !post.isPillarHub ? (
-              <span
-                className={`inline-block px-3 py-1 rounded-full text-sm font-medium mb-6 ${post.categoryColor ?? "bg-muted text-foreground"}`}
-              >
-                {post.category}
-              </span>
-            ) : null}
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground leading-tight">{post.title}</h1>
-            <p className="text-muted-foreground text-lg mb-6">{post.description}</p>
-            <div className="text-sm text-muted-foreground">
-              <span className="font-medium text-foreground">{post.author}</span>
-              <span className="mx-2">·</span>
-              <time dateTime={post.date}>{post.date}</time>
-            </div>
-          </header>
-          <div className="markdown-body">
-            <MarkdownBody markdown={post.content} locale={locale as SiteLocale} />
-          </div>
-          <footer className="mt-16 pt-10 border-t border-border">
-            {counterpart ? (
-              <p className="text-sm text-muted-foreground mb-6">
-                {isEl ? "Read this article in English: " : "Διαβάστε το άρθρο στα Ελληνικά: "}
+
+            <div className="mb-5 flex flex-wrap items-center gap-x-3 gap-y-2">
+              {pillarCopy ? (
                 <Link
-                  href={localizedPath(counterpart.locale, `/blog/${counterpart.slug}`)}
-                  className="text-primary underline"
+                  href={lp(`/blog/topics/${pillarSlug}`)}
+                  className="text-[11px] font-medium uppercase tracking-[0.18em] text-brand hover:underline"
                 >
-                  {counterpart.title}
+                  {pillarCopy.title}
                 </Link>
-              </p>
-            ) : null}
-            <div className="rounded-2xl glass-card p-6 sm:p-8">
-              <h2 className="text-xl font-bold text-foreground mb-2">
-                {isEl ? "Θέλετε αποτελέσματα σαν αυτά;" : "Want results like these?"}
-              </h2>
-              <p className="text-sm text-muted-foreground mb-4">
-                {isEl
-                  ? "Ζητήστε δωρεάν προσφορά για κατασκευή ιστοσελίδας ή SEO - απάντηση εντός 24 ωρών."
-                  : "Get a free quote for web design or SEO - we reply within 24 hours."}
-              </p>
-              <div className="flex flex-wrap gap-3">
-                <Link href={lp("/get-started")} className="btn btn-gradient rounded-xl px-5 py-2.5 text-sm font-bold">
-                  {isEl ? "Δωρεάν Προσφορά" : "Free Quote"}
-                </Link>
-                <Link href={lp("/pricing")} className="btn btn-outline rounded-xl px-5 py-2.5 text-sm font-bold">
-                  {isEl ? "Δείτε Τιμές" : "See Pricing"}
-                </Link>
-              </div>
+              ) : null}
+              {post.category ? (
+                <span className="text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
+                  {post.category}
+                </span>
+              ) : null}
             </div>
-            {moneyPages.length > 0 ? (
-              <RelatedPages
-                className="mt-10"
-                title={isEl ? "Υπηρεσίες & Τιμές" : "Services & Pricing"}
-                pages={moneyPages}
+
+            <h1 className="rise-in max-w-4xl font-display text-4xl font-medium leading-[1.06] tracking-[-0.04em] text-foreground md:text-5xl">
+              {post.title}
+            </h1>
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
+              {post.description}
+            </p>
+
+            <div className="mt-7 flex flex-wrap items-center gap-x-3 gap-y-1 text-[13px] text-muted-foreground">
+              <span className="font-medium text-foreground">{post.author}</span>
+              <span aria-hidden>·</span>
+              <time dateTime={post.date}>
+                {new Date(post.date).toLocaleDateString(isEl ? "el-GR" : "en-GB", {
+                  day: "numeric",
+                  month: "long",
+                  year: "numeric",
+                })}
+              </time>
+              <span aria-hidden>·</span>
+              <span>
+                {post.readingTime} {isEl ? "λεπτά ανάγνωσης" : "min read"}
+              </span>
+            </div>
+          </div>
+        </section>
+
+        {/* Body + sticky TOC rail */}
+        <div className="mx-auto grid max-w-6xl gap-12 px-6 py-14 lg:grid-cols-[minmax(0,1fr)_16rem] lg:gap-16">
+          <article className="min-w-0">
+            <div className="markdown-body">
+              <MarkdownBody markdown={post.content} locale={locale as SiteLocale} />
+            </div>
+
+            {/* FAQ: same source as the FAQPage schema, so the two cannot drift */}
+            {faqItems.length > 0 ? (
+              <FAQSection
+                className="mt-14"
+                faqs={faqItems.map((f) => ({ question: f.question, answer: f.answer }))}
+                title={isEl ? "Συχνές ερωτήσεις" : "Frequently asked questions"}
+                locale={locale as SiteLocale}
               />
             ) : null}
-            {relatedPosts.length > 0 ? (
-              <RelatedPages
-                className="mt-10"
-                title={isEl ? "Σχετικά Άρθρα" : "Related Articles"}
-                pages={relatedPosts}
-              />
+
+            {/* Prev / next within the pillar */}
+            {prev || next ? (
+              <nav
+                aria-label={isEl ? "Πλοήγηση άρθρων" : "Article navigation"}
+                className="mt-14 grid gap-px overflow-hidden rounded-[10px] border border-hairline bg-hairline sm:grid-cols-2"
+              >
+                {prev ? (
+                  <Link href={lp(`/blog/${prev.slug}`)} className="group bg-surface p-5 transition-colors hover:bg-surface-raised">
+                    <span className="text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
+                      {isEl ? "Προηγούμενο" : "Previous"}
+                    </span>
+                    <span className="mt-2 block text-sm font-medium text-foreground group-hover:text-primary">
+                      {prev.title}
+                    </span>
+                  </Link>
+                ) : <span className="bg-surface" />}
+                {next ? (
+                  <Link href={lp(`/blog/${next.slug}`)} className="group bg-surface p-5 text-right transition-colors hover:bg-surface-raised">
+                    <span className="text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
+                      {isEl ? "Επόμενο" : "Next"}
+                    </span>
+                    <span className="mt-2 block text-sm font-medium text-foreground group-hover:text-primary">
+                      {next.title}
+                    </span>
+                  </Link>
+                ) : <span className="bg-surface" />}
+              </nav>
             ) : null}
-          </footer>
-        </article>
+
+            <footer className="mt-14 border-t border-hairline pt-10">
+              {counterpart ? (
+                <p className="mb-6 text-sm text-muted-foreground">
+                  {isEl ? "Read this article in English: " : "Διαβάστε το άρθρο στα Ελληνικά: "}
+                  <Link
+                    href={localizedPath(counterpart.locale, `/blog/${counterpart.slug}`)}
+                    className="text-primary underline"
+                  >
+                    {counterpart.title}
+                  </Link>
+                </p>
+              ) : null}
+
+              {moneyPages.length > 0 ? (
+                <RelatedPages
+                  title={isEl ? "Υπηρεσίες & Τιμές" : "Services & Pricing"}
+                  pages={moneyPages}
+                />
+              ) : null}
+
+              {relatedPosts.length > 0 ? (
+                <RelatedPages
+                  className="mt-10"
+                  title={isEl ? "Σχετικά Άρθρα" : "Related Articles"}
+                  pages={relatedPosts}
+                />
+              ) : null}
+            </footer>
+          </article>
+
+          {/* Rail */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-28 space-y-8">
+              <TableOfContents
+                headings={post.headings}
+                label={isEl ? "Περιεχόμενα" : "On this page"}
+              />
+
+              <div className="rounded-[10px] border border-hairline bg-surface p-5">
+                <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-brand">
+                  {isEl ? "Η πλατφόρμα μας" : "Our platform"}
+                </p>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                  {isEl
+                    ? "Συνδέστε το Search Console και δείτε ποια queries απέχουν μία θέση από κλικ."
+                    : "Connect Search Console and see which queries are one position from real clicks."}
+                </p>
+                <a
+                  href={getAppPath("/signup")}
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-flex h-9 items-center justify-center rounded-[8px] bg-primary px-4 font-display text-[13px] font-medium text-primary-foreground transition-opacity hover:opacity-90"
+                >
+                  {isEl ? "Δοκιμάστε δωρεάν" : "Try it free"}
+                </a>
+              </div>
+
+              {pillarCopy ? (
+                <div className="rounded-[10px] border border-hairline bg-surface p-5">
+                  <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
+                    {isEl ? "Μέρος του κόμβου" : "Part of the hub"}
+                  </p>
+                  <Link
+                    href={lp(`/blog/topics/${pillarSlug}`)}
+                    className="mt-2 block font-display text-sm font-medium text-foreground hover:text-primary"
+                  >
+                    {pillarCopy.heading}
+                  </Link>
+                </div>
+              ) : null}
+            </div>
+          </aside>
+        </div>
+
+        <BlogProductCta locale={locale as SiteLocale} />
       </main>
-      <Footer />
+      <Footer locale={locale as SiteLocale} />
     </>
   );
 }

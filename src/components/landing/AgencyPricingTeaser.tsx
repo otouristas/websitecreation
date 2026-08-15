@@ -12,19 +12,19 @@ const enPricing = {
   tiers: [
     {
       name: "Starter",
-      price: "from €899",
+      price: "from €1.200",
       blurb: "Small businesses & rent-a-car",
       bullets: ["Up to 5 pages", "Mobile-first design", "Basic SEO setup"],
     },
     {
       name: "Professional",
-      price: "from €1,799",
+      price: "from €2,000",
       blurb: "Hotels & tours",
       bullets: ["Up to 10 pages", "Galleries & booking CTAs", "Full SEO"],
     },
     {
       name: "Business",
-      price: "from €2,999",
+      price: "from €3,200",
       blurb: "Multi-property & multilingual",
       bullets: ["Up to 20 pages", "AI chatbot", "GEO/AEO"],
     },

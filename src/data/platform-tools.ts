@@ -20,9 +20,9 @@ export interface PlatformToolDefinition {
 export const PLATFORM_TOOLS: readonly PlatformToolDefinition[] = [
   {
     slug: "keyword-research",
-    title: "Free keyword research tool — ideas, clusters & intent",
+    title: "Free keyword research tool, ideas, clusters & intent",
     description:
-      "Find SEO keywords and topic clusters from your seeds or Search Console themes. Group by intent, then map one primary phrase per page. Built for keyword research that turns into content — not endless spreadsheets.",
+      "Find SEO keywords and topic clusters from your seeds or Search Console themes. Group by intent, then map one primary phrase per page. Built for keyword research that turns into content, not endless spreadsheets.",
     primaryKeyword: "keyword research",
     appPath: "/keyword-clustering",
     faqs: [
@@ -45,9 +45,9 @@ export const PLATFORM_TOOLS: readonly PlatformToolDefinition[] = [
   },
   {
     slug: "free-seo-audit",
-    title: "Free SEO audit — health score & prioritized fixes",
+    title: "Free SEO audit, health score & prioritized fixes",
     description:
-      "Run a free SEO audit checklist against your site priorities: indexation, Core Web Vitals, titles, and internal links. Get a clear health score path — then upgrade to full SEO audit services when you want done-for-you fixes.",
+      "Run a free SEO audit checklist against your site priorities: indexation, Core Web Vitals, titles, and internal links. Get a clear health score path, then upgrade to full SEO audit services when you want done-for-you fixes.",
     primaryKeyword: "free seo audit",
     appPath: "/seo-health",
     faqs: [
@@ -64,7 +64,7 @@ export const PLATFORM_TOOLS: readonly PlatformToolDefinition[] = [
       {
         question: "Free vs paid SEO audit?",
         answer:
-          "Free checkers catch common issues quickly. A professional audit adds prioritization, competitor context, and a roadmap tied to business goals — then implementation, which free tools never do alone.",
+          "Free checkers catch common issues quickly. A professional audit adds prioritization, competitor context, and a roadmap tied to business goals, then implementation, which free tools never do alone.",
       },
     ],
   },
@@ -137,7 +137,7 @@ export const PLATFORM_TOOLS: readonly PlatformToolDefinition[] = [
       {
         question: "Free vs paid SEO tools?",
         answer:
-          "Free tools are enough for audits, meta tags, and basic research. Paid tools win on depth of keyword indexes, historical backlinks, and competitor coverage — useful once you publish consistently.",
+          "Free tools are enough for audits, meta tags, and basic research. Paid tools win on depth of keyword indexes, historical backlinks, and competitor coverage, useful once you publish consistently.",
       },
     ],
   },

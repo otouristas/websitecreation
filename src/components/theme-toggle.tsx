@@ -26,7 +26,7 @@ export function ThemeToggle(): ReactElement {
       type="button"
       onClick={toggleTheme}
       aria-label="Toggle theme"
-      className="relative inline-flex h-9 w-9 items-center justify-center rounded-md text-foreground transition-colors hover:bg-muted/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+      className="grid size-9 place-items-center rounded-full border border-hairline text-muted-foreground transition-colors hover:bg-foreground/5 hover:text-foreground"
     >
       <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
       <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />

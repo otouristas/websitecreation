@@ -56,7 +56,7 @@ export function WorkIndexClient({ locale = 'en' }: WorkIndexClientProps) {
             key={m}
             type="button"
             onClick={() => setMarket(m)}
-            className={`rounded-full border px-3 py-1 text-xs font-medium transition ${market === m ? 'border-primary bg-primary/10 text-primary' : 'border-border text-muted-foreground'}`}
+            className={`rounded-full border px-3 py-1 text-xs font-medium transition ${market === m ? 'border-primary bg-primary/10 text-primary' : 'border-hairline text-muted-foreground'}`}
           >
             {m === 'all' ? (isEl ? 'Όλες οι αγορές' : 'All markets') : m}
           </button>

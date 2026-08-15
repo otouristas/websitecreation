@@ -51,7 +51,7 @@ export default async function PlatformToolPage({ params }: ToolPageProps) {
     <>
       <Header />
       {faqSchema ? <SchemaMarkup schemas={[faqSchema]} /> : null}
-      <main className="main-below-header pb-16">
+      <main className="blueprint-grid relative z-0 main-below-header pb-16">
         <div className="container max-w-3xl">
           <nav className="text-sm text-muted-foreground mb-6">
             <Link href={lp("/")} className="hover:text-primary">
@@ -69,7 +69,7 @@ export default async function PlatformToolPage({ params }: ToolPageProps) {
           <div className="flex flex-wrap gap-4">
             <a
               href={appUrl}
-              className="btn btn-gradient px-6 py-3"
+              className="btn btn-primary px-6 py-3"
               rel="noopener noreferrer"
             >
               Open in platform

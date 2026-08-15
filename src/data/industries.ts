@@ -158,7 +158,7 @@ export const industries: Industry[] = [
         name: 'Hotels',
         description: 'Hotel and hospitality websites with booking integrations, gallery showcases, and tourism-focused SEO.',
         metaDescription:
-          'Hotel website design with booking CTAs, galleries and tourism SEO. Win direct bookings vs OTAs. Free quote from €899.',
+          'Hotel website design with booking CTAs, room galleries and tourism SEO. Built to win direct bookings back from the OTAs. Request a quote.',
         painPoints: ['Direct bookings', 'Room showcases', 'OTA competition', 'Guest reviews'],
         icon: 'building',
     },

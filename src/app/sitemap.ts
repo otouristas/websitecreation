@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { PLATFORM_TOOLS } from '@/data/platform-tools';
 import { MARKETING_FEATURES } from '@/data/marketing-features';
 import { COMPARE_PAGES } from '@/data/compare-pages';
-import { getAllBlogPosts } from '@/lib/blog';
+import { getAllBlogPosts, getPillarSummary } from '@/lib/blog';
 import { portfolioProjects } from '@/data/portfolio';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 
@@ -42,7 +42,7 @@ function forEnOnly(
 export default function sitemap(): MetadataRoute.Sitemap {
   const blogPosts = getAllBlogPosts();
 
-  // Shared agency/marketing pages — bilingual.
+  // Shared agency/marketing pages, bilingual.
   const bilingualPaths = [
     { path: '/', priority: 1, changeFrequency: 'weekly' as const },
     { path: '/glossary', priority: 0.86 },
@@ -59,7 +59,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/blog', priority: 0.8 },
   ];
 
-  // Platform / tools / resources canonicalize to EN — do not list /el duplicates.
+  // Platform / tools / resources canonicalize to EN, do not list /el duplicates.
   const enOnlyPaths = [
     { path: '/platform', priority: 0.95 },
     { path: '/platform/features', priority: 0.92 },
@@ -95,7 +95,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }),
   );
 
-  // Posts are single-locale files — only list them under the locale they exist in.
+  // Posts are single-locale files, only list them under the locale they exist in.
+  // Pillar hubs are aggregation pages; emit them per locale where posts exist.
+  const pillarPages: MetadataRoute.Sitemap = (['en', 'el'] as const).flatMap((loc) =>
+    getPillarSummary(loc).map((p) => ({
+      url: localeUrl(loc, `/blog/topics/${p.pillar}`),
+      lastModified: p.latest ? new Date(p.latest.date) : new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.75,
+    })),
+  );
+
   const blogPages: MetadataRoute.Sitemap = blogPosts.map((p) => ({
     url: localeUrl(p.locale, `/blog/${p.slug}`),
     lastModified: new Date(p.date),
@@ -107,5 +117,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     forEnOnly(`/tools/${tool.slug}`, { priority: 0.75, changeFrequency: 'monthly' }),
   );
 
-  return [...staticPages, ...comparePages, ...featurePages, ...portfolioPages, ...blogPages, ...toolPages];
+  return [...staticPages,
+    ...comparePages,
+    ...featurePages,
+    ...portfolioPages,
+    ...pillarPages,
+    ...blogPages,
+    ...toolPages];
 }

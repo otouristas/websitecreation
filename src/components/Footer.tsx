@@ -77,13 +77,13 @@ const EN_SEO_HUB_LINKS: { label: string; href: string }[] = [
 ];
 
 const columnLinkClass =
-  "text-sm text-muted-foreground transition-colors hover:text-foreground";
+  "text-sm text-muted-foreground transition-colors hover:text-primary";
 
 const columnHeadingClass =
-  "mb-5 text-sm font-semibold tracking-tight text-foreground";
+  "mb-5 block text-[11px] font-medium uppercase tracking-[0.18em] text-brand";
 
 const socialButtonClass =
-  "flex h-10 w-10 items-center justify-center rounded-xl border border-border/60 bg-card/50 text-muted-foreground transition-colors hover:border-primary/40 hover:bg-primary/10 hover:text-primary";
+  "grid size-9 place-items-center rounded-full border border-hairline text-muted-foreground transition-colors hover:border-primary/40 hover:text-primary";
 
 export default function Footer({ locale: localeProp }: { locale?: SiteLocale }): ReactElement {
   const pathname = usePathname() ?? "/en";
@@ -93,12 +93,8 @@ export default function Footer({ locale: localeProp }: { locale?: SiteLocale }):
   const lp = (path: string) => localizedPath(locale, path);
   const t = getFooterDictionary(locale);
   return (
-    <footer className="relative border-t border-border/80 bg-gradient-to-b from-primary/[0.07] via-muted/35 to-muted/45 dark:from-primary/[0.1] dark:via-background dark:to-muted/20">
-      <div
-        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/35 to-transparent"
-        aria-hidden
-      />
-      <div className="container mx-auto px-4 pb-16 pt-14 sm:px-6 md:pb-20 md:pt-16 lg:pb-24 lg:pt-20">
+    <footer className="border-t border-hairline bg-surface/40">
+      <div className="mx-auto max-w-6xl px-6 pb-16 pt-16 md:pb-20 md:pt-20">
         <div className="mb-12 grid grid-cols-2 gap-x-10 gap-y-10 md:grid-cols-4 lg:grid-cols-6">
           <div className="col-span-2">
             <BrandLogo size="lg" className="mb-4" homeHref={lp("/")} />
@@ -358,8 +354,8 @@ export default function Footer({ locale: localeProp }: { locale?: SiteLocale }):
             </ul>
           </div>
         </div>
-        <div className="mb-12 border-t border-border pt-10">
-          <p className="mb-5 text-sm font-semibold tracking-tight text-foreground">
+        <div className="mb-12 border-t border-hairline pt-10">
+          <p className="mb-5 block text-[11px] font-medium uppercase tracking-[0.18em] text-brand">
             {isEl ? "Υπηρεσίες ανά Πόλη" : "Services by City"}
           </p>
           <ul className="grid grid-cols-2 gap-x-6 gap-y-2 sm:grid-cols-3 lg:grid-cols-4">
@@ -372,7 +368,7 @@ export default function Footer({ locale: localeProp }: { locale?: SiteLocale }):
             ))}
           </ul>
         </div>
-        <div className="border-t border-border pt-10 md:pt-12">
+        <div className="border-t border-hairline pt-10">
           <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
             <div className="flex flex-col items-center gap-3 md:items-start">
               <p className="text-sm text-muted-foreground">
@@ -384,16 +380,16 @@ export default function Footer({ locale: localeProp }: { locale?: SiteLocale }):
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => trackCtaClick("footer_whatsapp")}
-                  className="transition-colors hover:text-foreground"
+                  className="transition-colors hover:text-primary"
                 >
                   WhatsApp {PHONE_DISPLAY}
                 </a>
                 <span aria-hidden>•</span>
-                <a href={`mailto:${CONTACT_EMAIL}`} className="transition-colors hover:text-foreground">
+                <a href={`mailto:${CONTACT_EMAIL}`} className="transition-colors hover:text-primary">
                   {CONTACT_EMAIL}
                 </a>
                 <span aria-hidden>•</span>
-                <Link href={lp("/contact")} className="transition-colors hover:text-foreground">
+                <Link href={lp("/contact")} className="transition-colors hover:text-primary">
                   {isEl ? t!.contact : "Contact"}
                 </Link>
               </div>
@@ -411,7 +407,7 @@ export default function Footer({ locale: localeProp }: { locale?: SiteLocale }):
                       alt={logo.alt}
                       width={logo.width}
                       height={28}
-                      className="h-7 w-auto rounded-sm opacity-90 transition-opacity hover:opacity-100"
+                      className="h-6 w-auto rounded-sm opacity-60 transition-opacity hover:opacity-100"
                       loading="lazy"
                       decoding="async"
                     />

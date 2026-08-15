@@ -1,7 +1,7 @@
 ---
 slug: google-search-operators-2026
 title: Google Search Operators Guide (2026)
-description: Working Google search operators in 2026 — site:, intitle:, inurl:, filetype:, and combos for SEO audits, competitor research, and content gaps.
+description: Working Google search operators in 2026 - site:, intitle:, inurl:, filetype:, and combos for SEO audits, competitor research, and content gaps.
 date: 2026-08-04
 author: AnotherSEOGuru Editorial Team
 category: SEO
@@ -15,12 +15,12 @@ faq:
   - question: "Which operators help with SEO audits?"
     answer: "Start with site:, then intitle:, inurl:, filetype:pdf, and minus (-) exclusions. Combine them to find thin pages, duplicate titles, and indexed PDFs you forgot about."
   - question: "Can operators replace Google Search Console?"
-    answer: "No. Operators are for discovery and spot checks. Use Search Console for clicks, impressions, position, and coverage decisions — especially on commercial tourism queries."
+    answer: "No. Operators are for discovery and spot checks. Use Search Console for clicks, impressions, position, and coverage decisions - especially on commercial tourism queries."
   - question: "Which operators are unreliable in 2026?"
     answer: "Treat intext:, public link:, and some related: behaviors as unstable or retired. Prefer Search Console, server logs, and documented operators for decisions."
 ---
 
-**Google search operators** are still one of the fastest ways to audit a site, check indexing, and steal competitor content ideas — without opening another SaaS tab. This guide lists operators that still work in 2026, with copy-paste recipes for agencies and in-house SEOs running [hotels](/en/solutions/hotels), [rent-a-car fleets](/en/solutions/rent-a-car), or local service sites.
+**Google search operators** are still one of the fastest ways to audit a site, check indexing, and steal competitor content ideas - without opening another SaaS tab. This guide lists operators that still work in 2026, with copy-paste recipes for agencies and in-house SEOs running [hotels](/en/solutions/hotels), [rent-a-car fleets](/en/solutions/rent-a-car), or local service sites.
 
 > **Related:** [GSC weekly ops playbook](/en/blog/gsc-weekly-ops-playbook) · [technical SEO guide](/en/blog/technical-seo-guide) · [keyword research](/en/blog/keyword-research-guide) · [Search Console pillar](/en/blog/pillar-search-console-mastery)
 
@@ -37,7 +37,7 @@ faq:
 | `OR` | Either term | `GEO OR AEO SEO` |
 | `*` (wildcard) | Fills unknown words in a phrase | `"rent a car * airport"` |
 
-Operators are **filters**, not ranking hacks. They narrow what Google shows you so you can audit faster. Decisions — which title to rewrite, which URL to canonicalize — still belong in [Search Console](/en/blog/gsc-query-prioritization-framework) with click and impression data.
+Operators are **filters**, not ranking hacks. They narrow what Google shows you so you can audit faster. Decisions - which title to rewrite, which URL to canonicalize - still belong in [Search Console](/en/blog/gsc-query-prioritization-framework) with click and impression data.
 
 ## SEO audit recipes
 
@@ -47,7 +47,7 @@ Operators are **filters**, not ranking hacks. They narrow what Google shows you 
 site:yourdomain.com
 ```
 
-Compare the rough count to Search Console → Pages. Big gaps mean crawl/index issues — start with our [technical SEO checklist](/en/blog/technical-seo-guide) and the [technical SEO pillar](/en/blog/pillar-technical-seo-in-house).
+Compare the rough count to Search Console → Pages. Big gaps mean crawl/index issues - start with our [technical SEO checklist](/en/blog/technical-seo-guide) and the [technical SEO pillar](/en/blog/pillar-technical-seo-in-house).
 
 **2. Find thin or accidental indexation**
 
@@ -57,7 +57,7 @@ site:yourdomain.com inurl:?
 site:yourdomain.com filetype:pdf
 ```
 
-Facet URLs and PDFs often waste crawl budget. Noindex or canonicalize them. Tourism booking engines frequently leak `?currency=` and `?utm_` variants into the index — catch them early.
+Facet URLs and PDFs often waste crawl budget. Noindex or canonicalize them. Tourism booking engines frequently leak `?currency=` and `?utm_` variants into the index - catch them early.
 
 **3. Title cannibalization**
 
@@ -76,7 +76,7 @@ site:competitor.com inurl:blog "hotel"
 site:competitor.com intitle:"airport" "car rental"
 ```
 
-List topics they cover that you do not — then ship a better page with proof, photos, and a clear CTA. Validate demand in Search Console or a keyword tool before writing ten thin posts.
+List topics they cover that you do not - then ship a better page with proof, photos, and a clear CTA. Validate demand in Search Console or a keyword tool before writing ten thin posts.
 
 **5. Language and market checks (EL/EN sites)**
 
@@ -89,11 +89,11 @@ Bilingual tourism sites often under-link one language. Operators help you spot t
 
 ## Operators that are unreliable or retired
 
-Google has narrowed or retired several classic operators (`intext:`, public `link:`, some `related:` behavior). Treat anything undocumented as unstable. Prefer **Search Console** for your own queries and **server logs** for crawl truth. Do not build a link-building report on a retired `link:` operator — use the Links report in GSC and a verified backlink tool instead.
+Google has narrowed or retired several classic operators (`intext:`, public `link:`, some `related:` behavior). Treat anything undocumented as unstable. Prefer **Search Console** for your own queries and **server logs** for crawl truth. Do not build a link-building report on a retired `link:` operator - use the Links report in GSC and a verified backlink tool instead.
 
 ## Combine with Search Console (not instead of it)
 
-Operators are for discovery. Decisions should use GSC clicks, impressions, and position — especially for Greece commercial queries like κατασκευή eshop, SEO Αθήνα, and hotel SEO. See our [query prioritization framework](/en/blog/gsc-query-prioritization-framework) and [weekly ops playbook](/en/blog/gsc-weekly-ops-playbook).
+Operators are for discovery. Decisions should use GSC clicks, impressions, and position - especially for Greece commercial queries like κατασκευή eshop, SEO Αθήνα, and hotel SEO. See our [query prioritization framework](/en/blog/gsc-query-prioritization-framework) and [weekly ops playbook](/en/blog/gsc-weekly-ops-playbook).
 
 ### A practical weekly combo
 
@@ -115,7 +115,7 @@ site:yourdomain.com inurl:locations
 "hotel near Parikia port" -site:booking.com
 ```
 
-The last query (minus OTAs) surfaces independent competitors and inspiration for your own destination FAQs — then reinforce with [GBP](/en/blog/google-business-profile-masterclass) and [local SEO](/en/blog/local-seo-guide).
+The last query (minus OTAs) surfaces independent competitors and inspiration for your own destination FAQs - then reinforce with [GBP](/en/blog/google-business-profile-masterclass) and [local SEO](/en/blog/local-seo-guide).
 
 **Rent-a-car fleet and policy**
 
@@ -134,7 +134,7 @@ Policy pages earn [AEO](/en/blog/geo-aeo-global-seo-playbook) citations when fac
 intitle:"car rental" "Mykonos" "book now"
 ```
 
-Useful for sales research — not for ranking manipulation. Scope honestly via [DIY vs agency](/en/blog/diy-vs-agency) when you pitch.
+Useful for sales research - not for ranking manipulation. Scope honestly via [DIY vs agency](/en/blog/diy-vs-agency) when you pitch.
 
 ## Quick reference card
 
