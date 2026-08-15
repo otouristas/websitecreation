@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { loadGoogleAnalytics } from '@/lib/analytics';
+import { enableGoogleAnalytics } from '@/lib/analytics';
 import { localizedPath, siteLocaleFromPath } from '@/lib/i18n/locale';
 
 export default function CookieConsent() {
@@ -20,7 +20,7 @@ export default function CookieConsent() {
 
   const accept = () => {
     localStorage.setItem('cookie-consent', 'accepted');
-    loadGoogleAnalytics();
+    enableGoogleAnalytics();
     setShow(false);
   };
 

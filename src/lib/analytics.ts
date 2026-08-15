@@ -29,6 +29,13 @@ export function loadGoogleAnalytics(): void {
   document.head.appendChild(script);
 }
 
+/** Load gtag and record the current URL. Used when the visitor accepts cookies. */
+export function enableGoogleAnalytics(): void {
+  loadGoogleAnalytics();
+  if (typeof window === 'undefined') return;
+  trackPageView(window.location.href);
+}
+
 export function trackPageView(url: string): void {
   trackEvent('page_view', {
     page_location: url,
