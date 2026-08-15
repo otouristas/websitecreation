@@ -1,7 +1,7 @@
 ---
 slug: on-page-seo
-title: On-Page SEO — How to Optimize a Page That Ranks
-description: What on-page SEO is and how to do it — titles, headings, content, internal links, schema and a practical 2026 checklist with costs and timelines.
+title: On-Page SEO - How to Optimize a Page That Ranks
+description: What on-page SEO is and how to do it - titles, headings, content, internal links, schema and a practical 2026 checklist with costs and timelines.
 date: 2026-07-23
 author: AnotherSEOGuru Editorial Team
 category: SEO
@@ -20,7 +20,7 @@ faq:
     answer: Page rewrites often run €150–€450 per URL depending on research depth. Ongoing on-page work is usually included in retainers from €299/mo.
 ---
 
-**On-page SEO** is everything you control on a URL to match search intent: title tags, headings, body copy, media, internal links and structured data. It is the highest-control lever after [technical SEO](/en/blog/technical-seo-guide) — and the place most Greek businesses still leave easy wins on the table. This guide gives a practical 2026 process, a checklist, realistic costs and the mistakes that keep good sites stuck on page two.
+**On-page SEO** is everything you control on a URL to match search intent: title tags, headings, body copy, media, internal links and structured data. It is the highest-control lever after [technical SEO](/en/blog/technical-seo-guide) - and the place most Greek businesses still leave easy wins on the table. This guide gives a practical 2026 process, a checklist, realistic costs and the mistakes that keep good sites stuck on page two.
 
 Pair this with [keyword research](/en/blog/keyword-research-guide), [SEO content](/en/blog/seo-content-guide) and, when needed, [content creation services](/en/services/content-creation).
 
@@ -32,7 +32,7 @@ Every URL should win one job: book a room type, hire a service in a city, or ans
 
 ### 2. Align title, H1 and first screen
 
-Put the primary phrase near the front of the title naturally. Mirror it in a human H1. Answer the query in the first screenful — definition, outcome or offer — before biography or fluff. Meta descriptions do not rank directly but drive CTR; write them like ads for the SERP.
+Put the primary phrase near the front of the title naturally. Mirror it in a human H1. Answer the query in the first screenful - definition, outcome or offer - before biography or fluff. Meta descriptions do not rank directly but drive CTR; write them like ads for the SERP.
 
 ### 3. Structure with useful H2/H3s
 
@@ -40,7 +40,7 @@ Use headings for related questions people ask next: pricing, process, timelines,
 
 ### 4. Prove it and link it
 
-Add unique proof: local detail, photos, data, examples, schema-ready FAQs. Internally link to related [services](/en/services) and supporting guides. Externally, earn trust later via [off-page SEO](/en/blog/off-page-seo) — but do not skip internal links first ([checklist](/en/blog/internal-linking-audit-checklist)).
+Add unique proof: local detail, photos, data, examples, schema-ready FAQs. Internally link to related [services](/en/services) and supporting guides. Externally, earn trust later via [off-page SEO](/en/blog/off-page-seo) - but do not skip internal links first ([checklist](/en/blog/internal-linking-audit-checklist)).
 
 ### 5. Media and schema
 
@@ -69,35 +69,35 @@ Compress images, use descriptive alt text, lazy-load galleries. Add schema only 
 | Pillar guide (1,000–2,000 words) | €250 – €700 | 1–3 days | 1–4 months |
 | Ongoing on-page in retainer | from €299/mo | Continuous | Compounds |
 
-If the site is slow or poorly indexed, fix technical issues first — otherwise on-page gains leak. See [pricing](/en/pricing) and [how much SEO costs](/en/blog/how-much-does-seo-cost).
+If the site is slow or poorly indexed, fix technical issues first - otherwise on-page gains leak. See [pricing](/en/pricing) and [how much SEO costs](/en/blog/how-much-does-seo-cost).
 
 ## Common On-Page Mistakes
 
-1. **Keyword stuffing** — repeats that read like a bot wrote them.
-2. **Thin location pages** — same paragraph with city name swapped.
-3. **Ignoring CTR** — good rankings, weak titles, wasted impressions.
-4. **No internal links from strong pages** — new content stays orphaned.
-5. **Multiple H1s or heading chaos** — structure that confuses people and parsers.
-6. **Schema that invents FAQs** — markup for content that is not on the page.
-7. **Buried answers** — the query is answered only after a long brand story.
-8. **Cannibalization** — blog post and service page targeting the identical intent.
+1. **Keyword stuffing** - repeats that read like a bot wrote them.
+2. **Thin location pages** - same paragraph with city name swapped.
+3. **Ignoring CTR** - good rankings, weak titles, wasted impressions.
+4. **No internal links from strong pages** - new content stays orphaned.
+5. **Multiple H1s or heading chaos** - structure that confuses people and parsers.
+6. **Schema that invents FAQs** - markup for content that is not on the page.
+7. **Buried answers** - the query is answered only after a long brand story.
+8. **Cannibalization** - blog post and service page targeting the identical intent.
 
 ## How On-Page Ties to Traffic and AI Visibility
 
-Better on-page clarity raises relevance and CTR, which feeds [organic traffic growth](/en/blog/how-to-increase-organic-traffic). Structured answers and FAQs also improve citation odds in AI assistants — see [AI Visibility](/en/services/ai-visibility) and [GEO vs SEO vs AEO](/en/blog/geo-vs-seo-vs-aeo). On-page is not “old SEO”; it is the layer models quote when they recommend you.
+Better on-page clarity raises relevance and CTR, which feeds [organic traffic growth](/en/blog/how-to-increase-organic-traffic). Structured answers and FAQs also improve citation odds in AI assistants - see [AI Visibility](/en/services/ai-visibility) and [GEO vs SEO vs AEO](/en/blog/geo-vs-seo-vs-aeo). On-page is not “old SEO”; it is the layer models quote when they recommend you.
 
 ## Example: Turning a Weak Service Page into a Ranking URL
 
 Imagine a page titled “SEO Services | Company” with a 90-word blurb and a contact form. Impressions exist for “SEO agency Athens” but CTR is 1.2% and average position is 18. An on-page rewrite would:
 
-1. Retitle to a specific promise (e.g. “SEO Agency in Athens — Local & National Growth”).
+1. Retitle to a specific promise (e.g. “SEO Agency in Athens - Local & National Growth”).
 2. Open with who it is for, outcomes and a transparent price band (€299–€999/mo) linking to [pricing](/en/pricing).
 3. Add H2s for process, timeline, included work and FAQs.
 4. Insert unique proof (cities served, case snapshots, audit CTA).
 5. Internally link from [What is SEO?](/en/blog/what-is-seo), [how to increase organic traffic](/en/blog/how-to-increase-organic-traffic) and related city pages.
 6. Add FAQ schema only for questions visible on the page.
 
-Within weeks you often see CTR and engagement lift; within 1–3 months relevance signals catch up if technical health is fine. The same pattern applies to hotel room pages, law-firm practice areas and gym membership pages — change the proof, keep the structure.
+Within weeks you often see CTR and engagement lift; within 1–3 months relevance signals catch up if technical health is fine. The same pattern applies to hotel room pages, law-firm practice areas and gym membership pages - change the proof, keep the structure.
 
 If you manage dozens of URLs, batch by opportunity: high impressions + weak CTR first, then thin pages with commercial intent, then net-new coverage. That sequencing beats random blog publishing every time.
 
@@ -105,7 +105,7 @@ If you manage dozens of URLs, batch by opportunity: high impressions + weak CTR 
 
 ### What is on-page SEO?
 
-Optimizing the elements on a URL — titles, headings, copy, media, links, schema — so the page clearly matches intent and earns clicks.
+Optimizing the elements on a URL - titles, headings, copy, media, links, schema - so the page clearly matches intent and earns clicks.
 
 ### How do I do it well?
 
@@ -125,4 +125,4 @@ Use [content creation](/en/services/content-creation), run a [free SEO audit](/e
 
 ## Optimize the Pages That Already Almost Win
 
-Most growth comes from improving URLs that already get impressions — not inventing random blogs. Review [pricing](/en/pricing), book an [SEO audit](/en/services/seo-audits), or [Get Started](/en/get-started) and we will prioritize which pages to rewrite first.
+Most growth comes from improving URLs that already get impressions - not inventing random blogs. Review [pricing](/en/pricing), book an [SEO audit](/en/services/seo-audits), or [Get Started](/en/get-started) and we will prioritize which pages to rewrite first.

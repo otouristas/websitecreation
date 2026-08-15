@@ -59,7 +59,7 @@ export default async function PlatformFeatureDetailPage({ params }: PageProps) {
     <>
       <SchemaMarkup schemas={[breadcrumbs]} />
       <Header />
-      <main className="main-below-header pb-20">
+      <main className="blueprint-grid relative z-0 main-below-header pb-20">
         <article className="container max-w-3xl">
           <nav className="text-sm text-muted-foreground mb-8">
             <Link href={lp("/")} className="hover:text-primary">
@@ -77,11 +77,11 @@ export default async function PlatformFeatureDetailPage({ params }: PageProps) {
             <span className="text-foreground">{f.title}</span>
           </nav>
           <header className="mb-10">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">{f.title}</h1>
+            <h1 className="font-display text-4xl font-medium tracking-[-0.04em] md:text-5xl text-foreground mb-4">{f.title}</h1>
             <p className="text-xl text-muted-foreground leading-relaxed">{f.shortDescription}</p>
           </header>
           <div className="flex flex-wrap gap-4 mb-12">
-            <a href={appUrl} className="btn btn-gradient px-6 py-3" rel="noopener noreferrer">
+            <a href={appUrl} className="btn btn-primary px-6 py-3" rel="noopener noreferrer">
               Open in app
             </a>
             <a href={getAppPath("/signup")} className="btn btn-outline px-6 py-3" rel="noopener noreferrer">
@@ -92,7 +92,7 @@ export default async function PlatformFeatureDetailPage({ params }: PageProps) {
             <p className="text-lg">{f.overview}</p>
             {f.benefits.length > 0 ? (
               <section>
-                <h2 className="text-2xl font-bold text-foreground mb-4">Benefits</h2>
+                <h2 className="font-display text-2xl font-medium tracking-[-0.02em] text-foreground mb-4">Benefits</h2>
                 <ul className="list-disc pl-6 space-y-2">
                   {f.benefits.map((b) => (
                     <li key={b}>{b}</li>
@@ -102,7 +102,7 @@ export default async function PlatformFeatureDetailPage({ params }: PageProps) {
             ) : null}
             {f.howItWorks.length > 0 ? (
               <section>
-                <h2 className="text-2xl font-bold text-foreground mb-4">How it works</h2>
+                <h2 className="font-display text-2xl font-medium tracking-[-0.02em] text-foreground mb-4">How it works</h2>
                 <ol className="list-decimal pl-6 space-y-2">
                   {f.howItWorks.map((h) => (
                     <li key={h}>{h}</li>
@@ -112,7 +112,7 @@ export default async function PlatformFeatureDetailPage({ params }: PageProps) {
             ) : null}
             {f.useCases.length > 0 ? (
               <section>
-                <h2 className="text-2xl font-bold text-foreground mb-4">Ideal for</h2>
+                <h2 className="font-display text-2xl font-medium tracking-[-0.02em] text-foreground mb-4">Ideal for</h2>
                 <ul className="list-disc pl-6 space-y-2">
                   {f.useCases.map((u) => (
                     <li key={u}>{u}</li>
@@ -122,8 +122,8 @@ export default async function PlatformFeatureDetailPage({ params }: PageProps) {
             ) : null}
           </div>
           {related.length > 0 ? (
-            <section className="mt-16 pt-10 border-t border-border">
-              <h2 className="text-xl font-bold mb-4">Related capabilities</h2>
+            <section className="mt-16 pt-10 border-t border-hairline">
+              <h2 className="font-display text-xl font-medium tracking-[-0.02em] mb-4">Related capabilities</h2>
               <ul className="grid gap-3 sm:grid-cols-2">
                 {related.map((r) =>
                   r ? (

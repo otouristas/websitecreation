@@ -17,13 +17,13 @@ import { getServiceEl } from "@/data/services-i18n";
 import { trackCtaClick } from "@/lib/analytics";
 
 const linkClass =
-  "text-sm font-medium text-muted-foreground transition-colors hover:text-primary";
+  "rounded-full px-3.5 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-foreground/5 hover:text-foreground";
 
 const dropdownPanelInnerClass =
-  "min-w-[15rem] max-w-[22rem] rounded-2xl border border-border/80 bg-background/95 p-3 shadow-[0_20px_50px_-12px_hsl(217_91%_60%_/_0.18)] backdrop-blur-xl dark:shadow-[0_20px_50px_-12px_hsl(0_0%_0%_/_0.45)]";
+  "min-w-[15rem] max-w-[22rem] rounded-2xl border border-hairline bg-surface/95 p-2 shadow-[0_20px_50px_-24px_oklch(0_0_0_/_35%)] backdrop-blur-xl";
 
 const dropdownItemClass =
-  "block rounded-xl px-4 py-3 text-sm text-foreground transition-colors hover:bg-primary/10 hover:text-primary";
+  "block rounded-xl px-4 py-2.5 text-sm text-muted-foreground transition-colors hover:bg-surface-raised hover:text-foreground";
 
 function sortAgencyServices() {
   const websiteCreation = services.find((s) => s.slug === "website-creation");
@@ -139,22 +139,19 @@ export default function Header({ locale: localeProp }: { locale?: SiteLocale }):
   return (
     <>
       <nav
-        className={`fixed left-0 right-0 top-0 z-50 overflow-visible transition-[box-shadow,background-color,border-color] duration-300 ease-out ${
-          isScrolled
-            ? "border-b border-border/70 bg-background/85 shadow-[0_12px_40px_-12px_hsl(217_91%_60%_/_0.12)] backdrop-blur-xl dark:bg-background/80 dark:shadow-[0_8px_32px_-8px_hsl(0_0%_0%_/_0.4)]"
-            : "border-b border-transparent bg-transparent"
-        }`}
+        className="pointer-events-none fixed left-0 right-0 top-0 z-50 px-3 pt-3 sm:px-6"
         aria-label="Main"
       >
-        <div className="container mx-auto px-3 py-1.5 transition-all duration-300 sm:px-4 md:min-h-20 md:px-6 md:py-2">
-          <div className="flex min-h-14 items-center justify-between gap-3 md:min-h-[4.25rem]">
-            <div className="flex min-w-0 flex-col justify-center gap-0.5">
-              <BrandLogo size="md" className="shrink-0 transition-opacity hover:opacity-90" homeHref={lp("/")} />
-              <p className="max-w-[14rem] text-[9px] leading-snug text-muted-foreground sm:max-w-none sm:text-[10px] md:text-xs">
-                {nav.tagline}
-              </p>
-            </div>
-            <div className="hidden items-center gap-1 lg:flex lg:gap-2 xl:gap-3">
+        <div
+          className={`pointer-events-auto mx-auto flex max-w-6xl items-center gap-2 rounded-2xl border px-3 py-2.5 transition-[background-color,border-color,box-shadow] duration-300 sm:gap-4 sm:px-5 sm:py-3 lg:rounded-full ${
+            isScrolled
+              ? "border-hairline bg-surface/80 shadow-[0_12px_40px_-20px_oklch(0_0_0_/_35%),0_0_0_1px_var(--hairline)] backdrop-blur-xl"
+              : "border-transparent bg-surface/50 backdrop-blur-md"
+          }`}
+        >
+          <div className="flex flex-1 items-center justify-between gap-3">
+            <BrandLogo size="md" className="shrink-0" homeHref={lp("/")} />
+            <div className="hidden items-center gap-1 lg:flex">
               <AgencyMegaMenu locale={locale} label={nav.agency} />
               <NavDropdown label={nav.solutions}>
                 <Link href={lp("/solutions/rent-a-car")} className={dropdownItemClass}>
@@ -170,25 +167,22 @@ export default function Header({ locale: localeProp }: { locale?: SiteLocale }):
                   {nav.allSolutions}
                 </Link>
               </NavDropdown>
-              <Link href={lp("/pricing")} className={`rounded-lg px-1 py-1 ${linkClass}`}>
+              <Link href={lp("/pricing")} className={linkClass}>
                 {nav.pricing}
               </Link>
-            </div>
-            <div className="flex shrink-0 items-center gap-1 sm:gap-2 md:gap-3">
-              <LanguageSwitcher />
-              <ThemeToggle />
-              <Link href={lp("/work")} className={`hidden sm:inline-flex md:px-3 rounded-xl px-2 py-2 ${linkClass}`}>
+              <Link href={lp("/work")} className={linkClass}>
                 {nav.ourWork}
               </Link>
-              <Link href={lp("/blog")} className={`hidden sm:inline-flex md:px-3 rounded-xl px-2 py-2 ${linkClass}`}>
-                {nav.blog}
-              </Link>
+            </div>
+            <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
+              <LanguageSwitcher />
+              <ThemeToggle />
               <a
                 href={WHATSAPP_HREF}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackCtaClick("header_whatsapp")}
-                className={`hidden items-center gap-1.5 rounded-xl px-2 py-2 lg:inline-flex ${linkClass}`}
+                className="hidden items-center gap-1.5 rounded-full px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-foreground/5 hover:text-foreground xl:inline-flex"
                 aria-label={`WhatsApp ${PHONE_DISPLAY}`}
               >
                 <svg className="h-4 w-4 text-[#25D366]" fill="currentColor" viewBox="0 0 24 24" aria-hidden>
@@ -199,13 +193,13 @@ export default function Header({ locale: localeProp }: { locale?: SiteLocale }):
               <Link
                 href={lp("/get-started")}
                 onClick={() => trackCtaClick("header_get_quote")}
-                className="hidden rounded-xl px-3 py-2 text-sm font-semibold text-primary-foreground shadow-md shadow-primary/25 transition-[transform,opacity] hover:opacity-95 md:inline-flex gradient-primary md:px-4"
+                className="hidden h-9 items-center gap-1.5 rounded-full bg-primary px-4 font-display text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90 md:inline-flex"
               >
                 {nav.getQuote}
               </Link>
               <button
                 type="button"
-                className="inline-flex rounded-xl p-2 text-foreground transition-colors hover:bg-primary/10 lg:hidden"
+                className="grid size-9 place-items-center rounded-full border border-hairline text-foreground transition-colors hover:bg-foreground/5 lg:hidden"
                 onClick={() => setIsMobileMenuOpen(true)}
                 aria-expanded={isMobileMenuOpen}
                 aria-label={nav.openMenu}

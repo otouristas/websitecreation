@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { CONTACT_EMAIL } from '@/lib/contact-info';
 import type { ReactElement } from "react";
 import Link from "next/link";
 import { submitToFormspree } from "@/lib/formspree";
@@ -70,7 +71,7 @@ export function ContactFormClient({ locale = "en" }: { locale?: SiteLocale }): R
 
   if (isSubmitted) {
     return (
-      <main className="main-below-header flex min-h-[80vh] items-center">
+      <main className="blueprint-grid relative z-0 main-below-header flex min-h-[80vh] items-center">
         <div className="container">
           <div className="mx-auto max-w-xl text-center">
             <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full gradient-primary">
@@ -78,7 +79,7 @@ export function ContactFormClient({ locale = "en" }: { locale?: SiteLocale }): R
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <h1 className="mb-4 text-3xl font-bold">{isEl ? t!.successTitle : "Message Sent!"}</h1>
+            <h1 className="mb-4 font-display text-3xl font-medium tracking-[-0.03em]">{isEl ? t!.successTitle : "Message Sent!"}</h1>
             <p className="mb-8 text-muted-foreground">
               {isEl ? t!.successBody : "Thank you for reaching out. We'll get back to you within 24 hours."}
             </p>
@@ -86,7 +87,7 @@ export function ContactFormClient({ locale = "en" }: { locale?: SiteLocale }): R
               <Link href={home} className="btn btn-outline">
                 {isEl ? t!.backHome : "Back to Home"}
               </Link>
-              <Link href={pricing} className="btn btn-gradient">
+              <Link href={pricing} className="btn btn-primary">
                 {isEl ? t!.viewPricing : "View Pricing"}
               </Link>
             </div>
@@ -97,8 +98,8 @@ export function ContactFormClient({ locale = "en" }: { locale?: SiteLocale }): R
   }
 
   return (
-    <main className="main-below-header" lang={isEl ? "el" : undefined}>
-      <section className="section gradient-hero">
+    <main className="blueprint-grid relative z-0 main-below-header" lang={isEl ? "el" : undefined}>
+      <section className="section ">
         <div className="container">
           <div className="max-w-2xl">
             <nav className="mb-6 flex items-center gap-2 text-sm text-muted-foreground">
@@ -123,13 +124,13 @@ export function ContactFormClient({ locale = "en" }: { locale?: SiteLocale }): R
           <div className="grid gap-12 lg:grid-cols-5">
             <div className="space-y-8 lg:col-span-2">
               <div>
-                <h2 className="mb-6 text-2xl font-bold">{isEl ? t!.getInTouch : "Get in Touch"}</h2>
+                <h2 className="mb-6 font-display text-2xl font-medium tracking-[-0.02em]">{isEl ? t!.getInTouch : "Get in Touch"}</h2>
                 <div className="mb-6">
                   <ContactChannels variant="buttons" locale={locale} />
                 </div>
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
-                    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-[8px] bg-primary/10 text-primary">
                       <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path
                           strokeLinecap="round"
@@ -142,16 +143,16 @@ export function ContactFormClient({ locale = "en" }: { locale?: SiteLocale }): R
                     <div>
                       <h3 className="mb-1 font-semibold">{isEl ? t!.email : "Email"}</h3>
                       <a
-                        href="mailto:hello@anotherseoguru.com"
+                        href={`mailto:${CONTACT_EMAIL}`}
                         className="text-muted-foreground transition-smooth hover:text-primary"
                       >
-                        hello@anotherseoguru.com
+                        {CONTACT_EMAIL}
                       </a>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-[8px] bg-primary/10 text-primary">
                       <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path
                           strokeLinecap="round"
@@ -168,7 +169,7 @@ export function ContactFormClient({ locale = "en" }: { locale?: SiteLocale }): R
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-[8px] bg-primary/10 text-primary">
                       <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path
                           strokeLinecap="round"
@@ -193,7 +194,7 @@ export function ContactFormClient({ locale = "en" }: { locale?: SiteLocale }): R
                     ? t!.readyBody
                     : "Skip the form and go straight to our onboarding wizard to choose your package and get started today."}
                 </p>
-                <Link href={getStarted} className="btn btn-gradient w-full">
+                <Link href={getStarted} className="btn btn-primary w-full">
                   {isEl ? t!.readyCta : "Start Your Project"}
                 </Link>
               </div>
@@ -201,7 +202,7 @@ export function ContactFormClient({ locale = "en" }: { locale?: SiteLocale }): R
 
             <div className="lg:col-span-3">
               <div className="card p-6 sm:p-8">
-                <h2 className="mb-6 text-xl font-bold">{isEl ? t!.formTitle : "Send a Message"}</h2>
+                <h2 className="mb-6 font-display text-xl font-medium tracking-[-0.02em]">{isEl ? t!.formTitle : "Send a Message"}</h2>
 
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <input
@@ -323,7 +324,7 @@ export function ContactFormClient({ locale = "en" }: { locale?: SiteLocale }): R
                     />
                   </div>
 
-                  <button type="submit" disabled={isSubmitting} className="btn btn-gradient w-full py-4 text-lg">
+                  <button type="submit" disabled={isSubmitting} className="btn btn-primary w-full py-4 text-lg">
                     {isSubmitting ? (
                       <>
                         <svg className="h-5 w-5 animate-spin" fill="none" viewBox="0 0 24 24">

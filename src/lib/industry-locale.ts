@@ -31,7 +31,7 @@ const EN_INDUSTRY_META: Record<string, { title: string; description: string }> =
   hotels: {
     title: 'Hotel Website Design & SEO Agency',
     description:
-      'Hotel website design with booking CTAs, galleries and tourism SEO. Win direct bookings vs OTAs. Free quote from €899.',
+      'Hotel website design with booking CTAs, room galleries and tourism SEO. Built to win direct bookings back from the OTAs. Request a quote.',
   },
   'rent-a-car': {
     title: 'Rent-a-Car Website Design & SEO',

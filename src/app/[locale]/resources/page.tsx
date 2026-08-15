@@ -32,7 +32,7 @@ export default async function ResourcesPage({ params }: PageProps) {
   return (
     <>
       <Header />
-      <main className="main-below-header pb-20">
+      <main className="blueprint-grid relative z-0 main-below-header pb-20">
         <div className="container">
           <header className="max-w-3xl mb-14">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Resources</h1>
@@ -42,7 +42,7 @@ export default async function ResourcesPage({ params }: PageProps) {
           </header>
           <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-10 lg:gap-12">
             <section>
-              <h2 className="text-xl font-bold mb-4">Glossary</h2>
+              <h2 className="font-display text-xl font-medium tracking-[-0.02em] mb-4">Glossary</h2>
               <p className="text-sm text-muted-foreground mb-3">
                 <Link href={lp("/glossary")} className="text-primary font-medium hover:underline">
                   SEO glossary
@@ -51,7 +51,7 @@ export default async function ResourcesPage({ params }: PageProps) {
               </p>
             </section>
             <section>
-              <h2 className="text-xl font-bold mb-4">Blog</h2>
+              <h2 className="font-display text-xl font-medium tracking-[-0.02em] mb-4">Blog</h2>
               <ul className="space-y-3">
                 {posts.map((p) => (
                   <li key={`${p.locale}-${p.slug}`}>
@@ -70,7 +70,7 @@ export default async function ResourcesPage({ params }: PageProps) {
               </Link>
             </section>
             <section>
-              <h2 className="text-xl font-bold mb-4">Product intents</h2>
+              <h2 className="font-display text-xl font-medium tracking-[-0.02em] mb-4">Product intents</h2>
               <ul className="space-y-3">
                 {PLATFORM_TOOLS.map((t) => (
                   <li key={t.slug}>
@@ -88,7 +88,7 @@ export default async function ResourcesPage({ params }: PageProps) {
               </Link>
             </section>
             <section>
-              <h2 className="text-xl font-bold mb-4">Compare</h2>
+              <h2 className="font-display text-xl font-medium tracking-[-0.02em] mb-4">Compare</h2>
               <ul className="space-y-3">
                 <li>
                   <Link href={lp("/compare/ahrefs")} className="text-primary hover:underline">

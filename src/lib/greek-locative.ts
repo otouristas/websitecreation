@@ -1,4 +1,4 @@
-/** Greek locative phrases ("in {city}") for location slugs — shared by metadata and page copy. */
+/** Greek locative phrases ("in {city}") for location slugs, shared by metadata and page copy. */
 export function getGreekLocative(slug: string, cityFallback?: string): string {
   const locMap: Record<string, string> = {
     'athens-gr': 'στην Αθήνα',
@@ -48,7 +48,7 @@ export function getGreekLocative(slug: string, cityFallback?: string): string {
     'pyrgos-gr': 'στον Πύργο',
   };
   if (locMap[slug]) return locMap[slug];
-  // Never collapse unknown cities to "στην Ελλάδα" — that created hundreds of duplicate H1/meta strings.
+  // Never collapse unknown cities to "στην Ελλάδα", that created hundreds of duplicate H1/meta strings.
   if (cityFallback?.trim()) return `στο ${cityFallback.trim()}`;
   return 'στην περιοχή σας';
 }

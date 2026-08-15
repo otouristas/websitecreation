@@ -18,7 +18,7 @@ interface Cluster {
     spokes: string[];
 }
 
-/** Live hubs only — dead stub clusters removed to avoid linking to 404s. */
+/** Live hubs only, dead stub clusters removed to avoid linking to 404s. */
 export const clusters: Record<string, Cluster> = {
     'seo-services': {
         hub: '/services',
@@ -41,7 +41,7 @@ export const clusters: Record<string, Cluster> = {
         focusKeyword: 'website solutions',
         spokes: [
             ...industries.map((i) => `/solutions/${i.slug}`),
-            ...TOURISM_INDUSTRY_SLUGS.map((slug) => `/solutions/${slug}/website-creation`),
+    ...TOURISM_INDUSTRY_SLUGS.map((slug) => `/solutions/${slug}/website-creation`),
             '/pricing',
             '/get-started',
         ],
@@ -63,8 +63,8 @@ export const clusters: Record<string, Cluster> = {
             '/platform/for/agencies',
             '/platform/for/in-house',
             '/platform/for/ecommerce',
-            ...MARKETING_FEATURES.map((f) => `/platform/features/${f.slug}`),
-            ...COMPARE_PAGES.map((c) => `/compare/${c.slug}`),
+    ...MARKETING_FEATURES.map((f) => `/platform/features/${f.slug}`),
+    ...COMPARE_PAGES.map((c) => `/compare/${c.slug}`),
         ],
     },
 };
@@ -101,7 +101,8 @@ export function getSpokesForHub(hubUrl: string): string[] {
 export function getRelatedPages(pageUrl: string, limit = 5): string[] {
     for (const cluster of Object.values(clusters)) {
         if (cluster.spokes.includes(pageUrl) || cluster.hub === pageUrl) {
-            const allPages = [cluster.hub, ...cluster.spokes];
+            const allPages = [cluster.hub,
+    ...cluster.spokes];
             return allPages
                 .filter((p) => p !== pageUrl)
                 .slice(0, limit);
@@ -468,7 +469,7 @@ export function generateBreadcrumbs(
     const lp = (path: string) => localizedPath(locale, path);
     return [
         { name: locale === 'el' ? 'Αρχική' : 'Home', url: lp('/') },
-        ...segments.map((s) => ({
+    ...segments.map((s) => ({
             name: s.name,
             url: s.url.startsWith('http') || s.url.startsWith('/en/') || s.url.startsWith('/el/')
                 ? s.url

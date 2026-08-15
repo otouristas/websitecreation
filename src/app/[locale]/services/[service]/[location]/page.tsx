@@ -168,8 +168,8 @@ export default async function ServiceLocationPage({ params }: PageProps) {
         {
             question: `Πόσο κοστίζει ${serviceName} ${cityLocative};`,
             answer: ['local-seo', 'seo-audits', 'ai-visibility', 'link-building', 'eshop-seo', 'content-creation'].includes(serviceSlug)
-                ? `Τα πακέτα SEO ξεκινούν από €299/μήνα (Starter), €599/μήνα (Growth) και €999/μήνα (Scale). Η τιμή εξαρτάται από τον ανταγωνισμό ${cityLocative} και τους στόχους σας. Δείτε αναλυτικές τιμές στη σελίδα τιμών μας ή ζητήστε δωρεάν προσφορά.`
-                : `Οι ιστοσελίδες ξεκινούν από €899 (Starter, έως 5 σελίδες), €1.799 (Professional, έως 10 σελίδες) και €2.999 (Business, έως 20 σελίδες). Χωρίς κρυφές χρεώσεις - όλες οι τιμές σε Ευρώ. Ζητήστε δωρεάν προσφορά για ${cityName}.`,
+                ? `Τα πακέτα SEO ξεκινούν από €400/μήνα (Starter), €720/μήνα (Growth) και €1.200/μήνα (Scale). Η τιμή εξαρτάται από τον ανταγωνισμό ${cityLocative} και τους στόχους σας. Δείτε αναλυτικές τιμές στη σελίδα τιμών μας ή ζητήστε δωρεάν προσφορά.`
+                : `Οι ιστοσελίδες ξεκινούν από €1.200 (Starter, έως 5 σελίδες), €2.000 (Professional, έως 10 σελίδες) και €3.200 (Business, έως 20 σελίδες). Χωρίς κρυφές χρεώσεις - όλες οι τιμές σε Ευρώ. Ζητήστε δωρεάν προσφορά για ${cityName}.`,
         },
         {
             question: `Θα εμφανίζεται η επιχείρησή μου σε ChatGPT και AI αναζητήσεις;`,
@@ -191,8 +191,8 @@ export default async function ServiceLocationPage({ params }: PageProps) {
         {
             question: `How much does ${service.name.toLowerCase()} cost in ${location.city}?`,
             answer: ['local-seo', 'seo-audits', 'ai-visibility', 'link-building', 'eshop-seo', 'content-creation'].includes(serviceSlug)
-                ? `SEO packages start at €299/mo (Starter), €599/mo (Growth), and €999/mo (Scale). The price depends on competition in ${location.city} and your goals. All pricing is transparent - see our pricing page or request a free quote.`
-                : `Websites start at €899 (Starter, up to 5 pages), €1,799 (Professional, up to 10 pages), and €2,999 (Business, up to 20 pages). No hidden fees. Request a free quote for ${location.city}.`,
+                ? `SEO packages start at €400/mo (Starter), €720/mo (Growth), and €1.200/mo (Scale). The price depends on competition in ${location.city} and your goals. All pricing is transparent - see our pricing page or request a free quote.`
+                : `Websites start at €1.200 (Starter, up to 5 pages), €2,000 (Professional, up to 10 pages), and €3,200 (Business, up to 20 pages). No hidden fees. Request a free quote for ${location.city}.`,
         },
         {
             question: `Will my business show up in ChatGPT and AI search?`,
@@ -242,8 +242,8 @@ export default async function ServiceLocationPage({ params }: PageProps) {
         <>
             <SchemaMarkup schemas={schemas} />
             <Header />
-            <main className="main-below-header">
-                <section className="section-compact gradient-hero">
+            <main className="blueprint-grid relative z-0 main-below-header">
+                <section className="section-compact ">
                     <div className="container">
                         <div className="max-w-3xl">
                             <Breadcrumbs items={breadcrumbs} className="mb-6" />
@@ -269,7 +269,7 @@ export default async function ServiceLocationPage({ params }: PageProps) {
                             )}
 
                             <div className="flex flex-wrap gap-4">
-                                <Link href={lp("/get-started")} className="btn btn-gradient">
+                                <Link href={lp("/get-started")} className="btn btn-primary">
                                     {t.getQuote}
                                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -288,7 +288,7 @@ export default async function ServiceLocationPage({ params }: PageProps) {
 
                 <section className="section">
                     <div className="container">
-                        <h2 className="text-2xl sm:text-3xl font-bold mb-4">
+                        <h2 className="font-display text-2xl font-medium tracking-[-0.03em] sm:text-3xl mb-4">
                             {t.whatsIncludedTitle}
                         </h2>
                         <p className="text-muted-foreground mb-8 max-w-2xl">
@@ -297,7 +297,7 @@ export default async function ServiceLocationPage({ params }: PageProps) {
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                             {serviceFeatures.map((feature, i) => (
-                                <div key={i} className="glass-card hover-glow flex items-start gap-3 p-4 rounded-xl">
+                                <div key={i} className="card card-interactive flex items-start gap-3 p-4 rounded-[8px]">
                                     <svg className="w-5 h-5 text-success mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                     </svg>
@@ -316,7 +316,7 @@ export default async function ServiceLocationPage({ params }: PageProps) {
 
                 <section className="section">
                     <div className="container">
-                        <h2 className="text-2xl sm:text-3xl font-bold mb-4">
+                        <h2 className="font-display text-2xl font-medium tracking-[-0.03em] sm:text-3xl mb-4">
                             {t.industriesTitle}
                         </h2>
                         <p className="text-muted-foreground mb-8">
@@ -330,7 +330,7 @@ export default async function ServiceLocationPage({ params }: PageProps) {
                                     <Link
                                         key={industry.slug}
                                         href={lp(`/solutions/${industry.slug}/${serviceSlug}`)}
-                                        className="glass-card hover-glow px-4 py-3 text-sm text-center rounded-lg border border-border transition-smooth"
+                                        className="card card-interactive px-4 py-3 text-sm text-center rounded-lg border border-hairline transition-smooth"
                                     >
                                         {indName}
                                     </Link>
@@ -341,9 +341,9 @@ export default async function ServiceLocationPage({ params }: PageProps) {
                 </section>
 
                 {nearbyCities.length > 0 && (
-                    <section className="section bg-muted/30">
+                    <section className="section bg-surface-raised/40">
                         <div className="container">
-                            <h2 className="text-2xl sm:text-3xl font-bold mb-4">
+                            <h2 className="font-display text-2xl font-medium tracking-[-0.03em] sm:text-3xl mb-4">
                                 {t.nearbyTitle}
                             </h2>
                             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
@@ -351,7 +351,7 @@ export default async function ServiceLocationPage({ params }: PageProps) {
                                     <Link
                                         key={city.slug}
                                         href={lp(`/services/${serviceSlug}/${city.slug}`)}
-                                        className="glass-card hover-glow px-3 py-2 text-sm text-center rounded-lg border border-border transition-smooth"
+                                        className="card card-interactive px-3 py-2 text-sm text-center rounded-lg border border-hairline transition-smooth"
                                     >
                                         {isEl && city.cityLocal ? city.cityLocal : city.city}
                                     </Link>
@@ -363,7 +363,7 @@ export default async function ServiceLocationPage({ params }: PageProps) {
 
                 <section className="section">
                     <div className="container">
-                        <h2 className="text-2xl sm:text-3xl font-bold mb-8">
+                        <h2 className="font-display text-2xl font-medium tracking-[-0.03em] sm:text-3xl mb-8">
                             {t.otherServicesTitle}
                         </h2>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -375,7 +375,7 @@ export default async function ServiceLocationPage({ params }: PageProps) {
                                     <Link
                                         key={related.slug}
                                         href={lp(`/services/${related.slug}/${locationSlug}`)}
-                                        className="glass-card hover-glow card p-6"
+                                        className="card card-interactive card p-6"
                                     >
                                         <h3 className="font-semibold mb-2">{relName}</h3>
                                         <p className="text-sm text-muted-foreground line-clamp-2">{relDesc}</p>
@@ -386,14 +386,14 @@ export default async function ServiceLocationPage({ params }: PageProps) {
                     </div>
                 </section>
 
-                <section className="section bg-muted/30">
+                <section className="section bg-surface-raised/40">
                     <div className="container max-w-3xl">
-                        <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-center">
+                        <h2 className="font-display text-2xl font-medium tracking-[-0.03em] sm:text-3xl mb-8 text-center">
                             {t.faqTitle}
                         </h2>
                         <div className="space-y-4">
                             {faqItems.map((item) => (
-                                <div key={item.question} className="glass-card hover-glow card p-6">
+                                <div key={item.question} className="card card-interactive card p-6">
                                     <h3 className="font-semibold mb-2">{item.question}</h3>
                                     <p className="text-muted-foreground text-sm">{item.answer}</p>
                                 </div>
@@ -404,7 +404,7 @@ export default async function ServiceLocationPage({ params }: PageProps) {
 
                 <section className="section gradient-primary text-white">
                     <div className="container text-center">
-                        <h2 className="text-3xl font-bold mb-4">
+                        <h2 className="font-display text-3xl font-medium tracking-[-0.03em] mb-4">
                             {t.ctaTitle}
                         </h2>
                         <p className="text-white/80 mb-8">

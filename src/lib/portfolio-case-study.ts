@@ -277,7 +277,7 @@ export function buildProjectCaseStudy(
     : `${name} is a live ${catLabel.toLowerCase()} project serving ${markets} markets in ${langs}. We delivered ${serviceList} focused on organic traffic, bookings and visibility across Google and AI answer engines.`;
 
   const challenge = isEl
-    ? `Ο πελάτης χρειαζόταν ιστοσελίδα που να εμπιστεύονται οι ταξιδιώτες, να rankάρει για competitive tourism keywords και να μετατρέπει επισκέψεις σε κρατήσεις ή αιτήματα - χωρίς να εξαρτάται μόνο από OTAs ή aggregators.`
+    ? `Ο πελάτης χρειαζόταν ιστοσελίδα που να εμπιστεύονται οι ταξιδιώτες, να κατατάσσεται σε ανταγωνιστικές τουριστικές αναζητήσεις και να μετατρέπει επισκέψεις σε κρατήσεις ή αιτήματα - χωρίς να εξαρτάται μόνο από OTAs ή aggregators.`
     : `The client needed a site tourists trust, that ranks for competitive tourism keywords and converts visits into bookings or inquiries - without relying solely on OTAs or aggregators.`;
 
   const approach = isEl

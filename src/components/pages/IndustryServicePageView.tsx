@@ -82,19 +82,19 @@ export function IndustryServicePageView({
     <>
       <SchemaMarkup schemas={schemas} />
       <Header />
-      <main className="main-below-header">
-        <section className="section-compact gradient-hero">
+      <main className="blueprint-grid relative z-0 main-below-header">
+        <section className="section-compact ">
           <div className="container">
             <div className="max-w-3xl">
               <Breadcrumbs items={breadcrumbs} className="mb-6" />
-              <h1 className="mb-6 text-3xl font-bold sm:text-4xl lg:text-5xl">
+              <h1 className="mb-6 font-display text-3xl font-medium tracking-[-0.03em] sm:text-4xl lg:text-5xl">
                 {ui.serviceForIndustry(serviceName, industry.name)}
               </h1>
               <p className="mb-8 text-lg text-muted-foreground">
                 {ui.serviceHeroDesc(serviceName, industry.name)}
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link href={lp('/contact')} className="btn btn-gradient">
+                <Link href={lp('/contact')} className="btn btn-primary">
                   {ui.getIndustryQuote(industry.name)}
                   <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -110,13 +110,13 @@ export function IndustryServicePageView({
 
         <section className="section">
           <div className="container">
-            <h2 className="mb-4 text-2xl font-bold sm:text-3xl">{ui.whatsIncluded(industry.name)}</h2>
+            <h2 className="mb-4 font-display text-2xl font-medium tracking-[-0.02em] sm:text-3xl">{ui.whatsIncluded(industry.name)}</h2>
             <p className="mb-8 max-w-2xl text-muted-foreground">
               {ui.whatsIncludedDesc(serviceName, industry.name)}
             </p>
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
               {features.map((feature) => (
-                <div key={feature} className="flex items-start gap-3 rounded-xl bg-muted/50 p-4">
+                <div key={feature} className="flex items-start gap-3 rounded-[8px] bg-muted/50 p-4">
                   <svg className="mt-0.5 h-5 w-5 flex-shrink-0 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
@@ -127,9 +127,9 @@ export function IndustryServicePageView({
           </div>
         </section>
 
-        <section className="section bg-muted/30">
+        <section className="section bg-surface-raised/40">
           <div className="container">
-            <h2 className="mb-4 text-2xl font-bold sm:text-3xl">{ui.builtFor(industry.name)}</h2>
+            <h2 className="mb-4 font-display text-2xl font-medium tracking-[-0.02em] sm:text-3xl">{ui.builtFor(industry.name)}</h2>
             <p className="mb-8 text-muted-foreground">{ui.builtForDesc(industry.name)}</p>
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
               {industry.painPoints.map((point) => (
@@ -148,7 +148,7 @@ export function IndustryServicePageView({
 
         <section className="section">
           <div className="container">
-            <h2 className="mb-4 text-2xl font-bold sm:text-3xl">
+            <h2 className="mb-4 font-display text-2xl font-medium tracking-[-0.02em] sm:text-3xl">
               {ui.byCityService(serviceName, industry.name)}
             </h2>
             <p className="mb-8 text-muted-foreground">
@@ -159,7 +159,7 @@ export function IndustryServicePageView({
                 <Link
                   key={location.slug}
                   href={lp(`/services/${serviceSlug}/${location.slug}`)}
-                  className="rounded-lg border border-border bg-background px-3 py-2 text-center text-sm transition-smooth hover:border-primary hover:text-primary"
+                  className="rounded-lg border border-hairline bg-background px-3 py-2 text-center text-sm transition-smooth hover:border-primary hover:text-primary"
                 >
                   {'cityLocal' in location && location.cityLocal ? location.cityLocal : location.city}
                 </Link>
@@ -168,15 +168,15 @@ export function IndustryServicePageView({
           </div>
         </section>
 
-        <section className="section bg-muted/30">
+        <section className="section bg-surface-raised/40">
           <div className="container">
-            <h2 className="mb-8 text-2xl font-bold sm:text-3xl">{ui.otherServicesFor(industry.name)}</h2>
+            <h2 className="mb-8 font-display text-2xl font-medium tracking-[-0.02em] sm:text-3xl">{ui.otherServicesFor(industry.name)}</h2>
             <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
               {relatedServices.map((related) => (
                 <Link
                   key={related.slug}
                   href={lp(`/solutions/${industrySlug}/${related.slug}`)}
-                  className="card p-6 hover-glow"
+                  className="card p-6 card-interactive"
                 >
                   <h3 className="mb-2 font-semibold">{related.name}</h3>
                   <p className="line-clamp-2 text-sm text-muted-foreground">{related.description}</p>
@@ -188,7 +188,7 @@ export function IndustryServicePageView({
 
         <section className="section">
           <div className="container">
-            <h2 className="mb-8 text-2xl font-bold sm:text-3xl">
+            <h2 className="mb-8 font-display text-2xl font-medium tracking-[-0.02em] sm:text-3xl">
               {ui.serviceForOtherIndustries(serviceName)}
             </h2>
             <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
@@ -196,7 +196,7 @@ export function IndustryServicePageView({
                 <Link
                   key={related.slug}
                   href={lp(`/solutions/${related.slug}/${serviceSlug}`)}
-                  className="card p-4 text-center hover-glow"
+                  className="card p-4 text-center card-interactive"
                 >
                   <span className="text-sm font-medium">{related.name}</span>
                 </Link>
@@ -207,7 +207,7 @@ export function IndustryServicePageView({
 
         <section className="section gradient-primary text-white">
           <div className="container text-center">
-            <h2 className="mb-4 text-3xl font-bold">{ui.readyForService(serviceName)}</h2>
+            <h2 className="mb-4 font-display text-3xl font-medium tracking-[-0.03em]">{ui.readyForService(serviceName)}</h2>
             <p className="mb-8 text-white/80">{ui.readyForServiceSub(industry.name)}</p>
             <Link href={lp('/contact')} className="btn bg-white text-primary hover:bg-white/90">
               {ui.freeQuote}

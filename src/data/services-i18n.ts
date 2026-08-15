@@ -77,7 +77,7 @@ export const serviceNamesEl: Record<
     name: 'AI SEO Agency (GEO / AEO)',
     shortName: 'AI SEO',
     description:
-      'Υπηρεσίες AI SEO agency για Generative Engine Optimization (GEO) και Answer Engine Optimization (AEO). Εμφανιστείτε σε ChatGPT, Perplexity και Google AI Overviews — όχι μόνο στα κλασικά αποτελέσματα.',
+      'Υπηρεσίες AI SEO agency για Generative Engine Optimization (GEO) και Answer Engine Optimization (AEO). Εμφανιστείτε σε ChatGPT, Perplexity και Google AI Overviews, όχι μόνο στα κλασικά αποτελέσματα.',
     features: [
       'GEO / generative engine optimization',
       'AEO για AI Overviews & chat απαντήσεις',
@@ -150,7 +150,7 @@ export const serviceNamesEl: Record<
     name: 'Υπηρεσίες SEO & Τεχνικός Έλεγχος',
     shortName: 'Υπηρεσίες SEO',
     description:
-      'Υπηρεσίες SEO για ιστοσελίδες στην Ελλάδα: τεχνικός έλεγχος, on-page, λέξεις-κλειδιά, τοπικό SEO και μηνιαία προώθηση. Διαφανή πακέτα από €299/μήνα.',
+      'Υπηρεσίες SEO για ιστοσελίδες στην Ελλάδα: τεχνικός έλεγχος, on-page, λέξεις-κλειδιά, τοπικό SEO και μηνιαία προώθηση. Διαφανή πακέτα από €400/μήνα.',
     features: [
       'Πλήρης τεχνικός SEO audit',
       'Core Web Vitals & ταχύτητα',

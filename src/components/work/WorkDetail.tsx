@@ -28,7 +28,7 @@ function CaseStudyBlock({
 }) {
   return (
     <div className="mb-10">
-      <h2 className="mb-4 text-2xl font-bold">{title}</h2>
+      <h2 className="mb-4 font-display text-2xl font-medium tracking-[-0.02em]">{title}</h2>
       <ul className="space-y-3">
         {items.map((item) => (
           <li key={item} className="flex items-start gap-3 text-muted-foreground">
@@ -74,7 +74,7 @@ export function WorkDetail({ project, locale = 'en' }: WorkDetailProps) {
   return (
     <>
       <SchemaMarkup schemas={combineSchemas(articleSchema, breadcrumbSchema)} />
-      <section className="section gradient-hero">
+      <section className="section ">
         <div className="container">
           <Breadcrumbs items={breadcrumbs} className="mb-6" />
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
@@ -88,12 +88,12 @@ export function WorkDetail({ project, locale = 'en' }: WorkDetailProps) {
               </p>
               <div className="mb-6 flex flex-wrap gap-2">
                 {project.markets.map((m) => (
-                  <span key={m} className="rounded-md border border-border px-2 py-1 text-xs">
+                  <span key={m} className="rounded-md border border-hairline px-2 py-1 text-xs">
                     {m}
                   </span>
                 ))}
                 {project.languages.map((l) => (
-                  <span key={l} className="rounded-md border border-border px-2 py-1 text-xs uppercase">
+                  <span key={l} className="rounded-md border border-hairline px-2 py-1 text-xs uppercase">
                     {l}
                   </span>
                 ))}
@@ -109,7 +109,7 @@ export function WorkDetail({ project, locale = 'en' }: WorkDetailProps) {
                 </a>
                 <Link
                   href={localizedPath(isEl ? 'el' : 'en', `/get-started?project=${project.category}`)}
-                  className="btn btn-gradient"
+                  className="btn btn-primary"
                 >
                   {isEl ? 'Ζητήστε παρόμοιο έργο' : 'Get a similar project'}
                 </Link>
@@ -135,7 +135,7 @@ export function WorkDetail({ project, locale = 'en' }: WorkDetailProps) {
                 </div>
               ) : null}
             </div>
-            <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-border shadow-lg">
+            <div className="relative aspect-[16/10] overflow-hidden rounded-[10px] border border-hairline shadow-lg">
               <PortfolioThumbnail src={project.screenshot} alt={isEl ? `${project.name} - αρχική σελίδα` : `${project.name} homepage`} />
             </div>
           </div>
@@ -144,13 +144,13 @@ export function WorkDetail({ project, locale = 'en' }: WorkDetailProps) {
 
       <section className="section">
         <div className="container max-w-3xl">
-          <h2 className="mb-4 text-2xl font-bold">{isEl ? 'Επισκόπηση έργου' : 'Project overview'}</h2>
+          <h2 className="mb-4 font-display text-2xl font-medium tracking-[-0.02em]">{isEl ? 'Επισκόπηση έργου' : 'Project overview'}</h2>
           <p className="mb-8 text-muted-foreground">{caseStudy.overview}</p>
 
-          <h2 className="mb-4 text-2xl font-bold">{isEl ? 'Πρόκληση' : 'Challenge'}</h2>
+          <h2 className="mb-4 font-display text-2xl font-medium tracking-[-0.02em]">{isEl ? 'Πρόκληση' : 'Challenge'}</h2>
           <p className="mb-8 text-muted-foreground">{caseStudy.challenge}</p>
 
-          <h2 className="mb-4 text-2xl font-bold">{isEl ? 'Προσέγγιση' : 'Approach'}</h2>
+          <h2 className="mb-4 font-display text-2xl font-medium tracking-[-0.02em]">{isEl ? 'Προσέγγιση' : 'Approach'}</h2>
           <p className="mb-10 text-muted-foreground">{caseStudy.approach}</p>
 
           <CaseStudyBlock title={caseStudy.seo.title} items={caseStudy.seo.items} />
@@ -158,7 +158,7 @@ export function WorkDetail({ project, locale = 'en' }: WorkDetailProps) {
           <CaseStudyBlock title={caseStudy.technical.title} items={caseStudy.technical.items} />
           <CaseStudyBlock title={caseStudy.content.title} items={caseStudy.content.items} />
 
-          <h2 className="mb-4 text-2xl font-bold">{isEl ? 'Υπηρεσίες που παραδόθηκαν' : 'Services delivered'}</h2>
+          <h2 className="mb-4 font-display text-2xl font-medium tracking-[-0.02em]">{isEl ? 'Υπηρεσίες που παραδόθηκαν' : 'Services delivered'}</h2>
           <ul className="mb-10 flex flex-wrap gap-2">
             {project.services.map((s) => {
               const label = isEl ? getServiceEl(s)?.shortName ?? s.replace(/-/g, ' ') : s.replace(/-/g, ' ');
@@ -176,8 +176,8 @@ export function WorkDetail({ project, locale = 'en' }: WorkDetailProps) {
           </ul>
 
           {(project.seoTitle || project.seoDescription) && (
-            <div className="mb-10 rounded-xl border border-border bg-muted/30 p-6">
-              <h2 className="mb-4 text-xl font-bold">{isEl ? 'Στιγμιότυπο SEO' : 'Live SEO snapshot'}</h2>
+            <div className="mb-10 rounded-[8px] border border-hairline bg-surface-raised/40 p-6">
+              <h2 className="mb-4 font-display text-xl font-medium tracking-[-0.02em]">{isEl ? 'Στιγμιότυπο SEO' : 'Live SEO snapshot'}</h2>
               {project.seoTitle && (
                 <p className="mb-2 text-sm">
                   <strong>{isEl ? 'Τίτλος:' : 'Title:'}</strong> {project.seoTitle}
@@ -191,7 +191,7 @@ export function WorkDetail({ project, locale = 'en' }: WorkDetailProps) {
             </div>
           )}
 
-          <h2 className="mb-4 text-2xl font-bold">{isEl ? 'Αποτελέσματα' : 'Outcomes'}</h2>
+          <h2 className="mb-4 font-display text-2xl font-medium tracking-[-0.02em]">{isEl ? 'Αποτελέσματα' : 'Outcomes'}</h2>
           <ul className="mb-10 list-disc space-y-2 pl-5 text-muted-foreground">
             {caseStudy.outcomes.map((r) => (
               <li key={r}>{r}</li>
@@ -213,9 +213,9 @@ export function WorkDetail({ project, locale = 'en' }: WorkDetailProps) {
       </section>
 
       {related.length > 0 && (
-        <section className="section border-t border-border bg-muted/20">
+        <section className="section border-t border-hairline bg-surface-raised/40">
           <div className="container">
-            <h2 className="mb-6 text-2xl font-bold">{isEl ? 'Σχετικά έργα' : 'Related projects'}</h2>
+            <h2 className="mb-6 font-display text-2xl font-medium tracking-[-0.02em]">{isEl ? 'Σχετικά έργα' : 'Related projects'}</h2>
             <div className="grid gap-6 sm:grid-cols-3">
               {related.map((p) => (
                 <Link key={p.slug} href={lp(`/work/${p.slug}`)} className="card p-4 hover:border-primary/40">

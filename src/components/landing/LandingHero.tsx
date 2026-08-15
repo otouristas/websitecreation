@@ -1,110 +1,143 @@
-import Image from "next/image";
-import Link from "next/link";
-import { Check, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { elHome } from "@/data/translations/el-home";
 import { localizedPath, type SiteLocale } from "@/lib/i18n/locale";
+import { getTrustStats } from "@/data/trust-stats";
+import { Bloom, GhostButtonLink, PrimaryButtonLink } from "./primitives";
+import { ProductFrame, SearchChart } from "./graphics";
 
+/**
+ * Homepage hero.
+ *
+ * Copy follows `docs/keyword-research/`: /el is the C1 pillar (21 of 51 P0
+ * keywords resolve to it), so the H1 leads with `seo υπηρεσίες` +
+ * `προώθηση ιστοσελίδων`, and the paragraph beneath is the 40-55 word
+ * answer-first opener the AEO rules require. The retired "seo guru" vanity
+ * framing - 4,633 impressions at ~0% CTR - is gone.
+ */
 export function LandingHero({ locale = "en" }: { locale?: SiteLocale }) {
   const isEl = locale === "el";
   const t = isEl ? elHome.hero : null;
+  const lp = (path: string) => localizedPath(locale, path);
+  const stats = getTrustStats(locale);
+
+  const proofs = isEl
+    ? [
+        "Τεχνικό SEO, τοπικό SEO και GEO/AEO από μία ομάδα",
+        "Κατασκευή ιστοσελίδων και e-shop έτοιμων για SEO",
+        "Δική μας πλατφόρμα συνδεδεμένη με το Search Console",
+        "Διαφανή πακέτα και δωρεάν αξιολόγηση σε 24 ώρες",
+      ]
+    : [
+        "Technical SEO, local SEO and GEO/AEO from one team",
+        "Websites and e-shops that ship SEO-ready",
+        "Our own platform, wired into Search Console",
+        "Transparent packages and a free audit in 24 hours",
+      ];
 
   return (
-    <section className="hero-below-header relative flex min-h-[70vh] items-center overflow-hidden border-b border-border/80 pb-12 lg:pb-16">
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-background/80 via-background/40 to-background" />
-      <div className="container relative z-10 mx-auto max-w-7xl px-4 sm:px-8">
-        <div className="grid items-center gap-10 lg:grid-cols-2">
-          <div className="text-center lg:text-left">
-            <div className="mb-5 flex justify-center lg:justify-start">
-              <div className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
-                <Sparkles className="h-4 w-4 shrink-0" aria-hidden />
-                {isEl ? t!.badge : "Website design · E-shop · SEO · GEO / AEO"}
+    <section className="relative overflow-hidden">
+      <Bloom className="left-1/2 top-[-6rem] h-[32rem] w-[72rem] -translate-x-1/2" />
+
+      <div className="hero-below-header relative mx-auto max-w-6xl px-6 pb-10 text-center md:pb-14">
+        <span className="rise-in inline-flex items-center gap-2 rounded-full border border-hairline bg-surface/70 px-4 py-1.5 text-[11px] font-medium uppercase tracking-[0.16em] text-brand backdrop-blur">
+          {isEl ? t!.badge : "SEO · GEO / AEO · Web design · E-shop"}
+        </span>
+
+        <h1 className="rise-in mt-7 font-display text-[2.6rem] font-medium leading-[1.02] tracking-[-0.04em] text-foreground sm:text-6xl md:text-[4.5rem]">
+          {isEl ? t!.h1Line1 : "SEO services & web design"}
+          <br />
+          <span className="text-primary">{isEl ? t!.h1Line2 : "that bring in customers"}</span>
+        </h1>
+
+        {/* Answer-first opener: 40-55 words, entity named. Targets PAA / AI Overviews. */}
+        <p className="mx-auto mt-7 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
+          {isEl
+            ? t!.sub
+            : "AnotherSEOGuru is a Greek SEO and web design agency. We handle technical SEO, local SEO, GEO/AEO and website or e-shop builds, with transparent packages from €400 a month. Every engagement starts with a free SEO audit, so you see what works before you commit."}
+        </p>
+
+        <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
+          <PrimaryButtonLink href={lp("/get-started")}>
+            {isEl ? t!.ctaQuote : "Get a free SEO audit"}
+            <ArrowRight className="size-4" aria-hidden />
+          </PrimaryButtonLink>
+          <GhostButtonLink href={lp("/work")}>
+            {isEl ? t!.ctaWork : "See the work"}
+          </GhostButtonLink>
+        </div>
+      </div>
+
+      {/* Coded product mockup - the platform half of the positioning */}
+      <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
+        <div className="rise-in relative">
+          <Bloom className="left-1/2 top-1/3 h-[24rem] w-[46rem] -translate-x-1/2 opacity-80" />
+          <div className="relative">
+            <ProductFrame url="app.anotherseoguru.com/dashboard">
+              <div className="mb-4 flex flex-wrap items-baseline justify-between gap-3">
+                <div>
+                  <p className="font-display text-sm font-medium text-foreground">
+                    {isEl ? "Οργανική απόδοση" : "Organic performance"}
+                  </p>
+                  <p className="mt-0.5 text-[11px] text-muted-foreground">
+                    {isEl
+                      ? "Κλικ και εμφανίσεις, 12 μήνες"
+                      : "Clicks and impressions, last 12 months"}
+                  </p>
+                </div>
+                <div className="flex items-center gap-4 text-[11px] text-muted-foreground">
+                  <span className="inline-flex items-center gap-1.5">
+                    <span className="size-2 rounded-full bg-primary" />
+                    {isEl ? "Κλικ" : "Clicks"}
+                  </span>
+                  <span className="inline-flex items-center gap-1.5">
+                    <span className="size-2 rounded-full bg-brand" />
+                    {isEl ? "Εμφανίσεις" : "Impressions"}
+                  </span>
+                </div>
               </div>
-            </div>
-            <h1 className="mb-5 text-4xl font-medium leading-[1.08] tracking-[-0.03em] text-foreground md:text-5xl lg:text-6xl">
-              <span className="gradient-text">
-                {isEl ? t!.h1Line1 : "Websites and SEO that"}
-              </span>
-              <br />
-              <span className="text-foreground">
-                {isEl ? t!.h1Line2 : "win the booking"}
-              </span>
-            </h1>
-            <p className="mb-3 text-lg text-muted-foreground md:text-xl">
-              {isEl
-                ? t!.sub
-                : "AnotherSEOGuru designs and ranks websites, WooCommerce shops, and hotel sites for Greece and international markets — from €899, with GEO and AEO built in."}
-            </p>
-            <p className="mx-auto mb-8 max-w-xl text-base text-muted-foreground lg:mx-0">
-              {isEl
-                ? t!.proof
-                : "70+ live projects. Transparent EUR pricing. One team for design, technical SEO, and AI-search visibility."}
-            </p>
-            <div className="mb-8 flex flex-col justify-center gap-3 sm:flex-row lg:justify-start">
-              <Link
-                href={localizedPath(isEl ? "el" : "en", "/get-started")}
-                className="btn btn-gradient px-8 py-4 text-lg font-semibold"
-              >
-                {isEl ? t!.ctaQuote : "Get a free quote"}
-              </Link>
-              <Link href={localizedPath(isEl ? "el" : "en", "/work")} className="btn btn-outline px-8 py-4 text-lg">
-                {isEl ? t!.ctaWork : "See the work"}
-              </Link>
-              <Link href={localizedPath(isEl ? "el" : "en", "/contact")} className="btn btn-outline px-8 py-4 text-lg">
-                {isEl ? t!.ctaContact : "Talk to us"}
-              </Link>
-            </div>
-            <div className="flex flex-wrap items-center justify-center gap-5 text-sm text-muted-foreground lg:justify-start">
-              {(isEl
-                ? [t!.trust1, t!.trust2, t!.trust3]
-                : ["SEO-ready from day one", "Multilingual sites", "Agency + technical support"]
-              ).map((label) => (
-                <span key={label} className="inline-flex items-center gap-2">
-                  <Check className="h-4 w-4 text-[hsl(var(--success))]" aria-hidden />
-                  {label}
-                </span>
-              ))}
-            </div>
-          </div>
-          <div className="relative mx-auto w-full max-w-xl lg:max-w-none">
-            <div className="relative z-10 overflow-hidden rounded-2xl border-2 border-border shadow-strong">
-              <Image
-                src="/portfolio/discover-cyclades.webp"
-                alt={isEl ? t!.imageAlt : "Tourism website designed by AnotherSEOGuru"}
-                width={1200}
-                height={800}
-                className="h-auto w-full object-cover object-top"
-                sizes="(max-width: 1024px) 100vw, 630px"
-                priority
-                fetchPriority="high"
-              />
-            </div>
-            <div className="absolute -inset-4 -z-10 rounded-2xl bg-gradient-to-r from-primary/20 to-secondary/20 blur-2xl" />
+              <SearchChart />
+            </ProductFrame>
           </div>
         </div>
-        <div className="mx-auto mt-12 max-w-4xl">
-          <div className="rounded-2xl border border-border bg-card p-6 shadow-medium">
-            <div className="grid grid-cols-2 gap-6 text-center md:grid-cols-4">
-              {(isEl
-                ? [
-                    [t!.stats.projectsVal, t!.stats.projects],
-                    [t!.stats.marketsVal, t!.stats.markets],
-                    [t!.stats.languagesVal, t!.stats.languages],
-                    [t!.stats.supportVal, t!.stats.support],
-                  ]
-                : [
-                    ["70+", "Projects"],
-                    ["€899", "Website from"],
-                    ["€299", "SEO / month"],
-                    ["EN / EL", "Languages"],
-                  ]
-              ).map(([value, label]) => (
-                <div key={label}>
-                  <div className="text-2xl font-bold md:text-3xl">{value}</div>
-                  <div className="text-sm text-muted-foreground">{label}</div>
-                </div>
-              ))}
+      </div>
+
+      {/* Hairline proof grid */}
+      <div className="relative mx-auto max-w-6xl px-6 pt-12">
+        <div className="grid grid-cols-1 border-y border-hairline sm:grid-cols-2 lg:grid-cols-4">
+          {proofs.map((p, i) => (
+            <div
+              key={p}
+              className={`px-5 py-6 text-sm leading-snug text-muted-foreground ${
+                i > 0 ? "border-t border-hairline lg:border-l lg:border-t-0" : ""
+              } ${i === 1 ? "sm:border-l sm:border-t-0" : ""} ${i === 3 ? "sm:border-l" : ""}`}
+            >
+              <span className="mb-3 block font-display text-[11px] tracking-[0.18em] text-brand">
+                0{i + 1}
+              </span>
+              {p}
             </div>
-          </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Metrics strip */}
+      <div className="relative border-b border-hairline bg-surface/40">
+        <div className="mx-auto grid max-w-6xl grid-cols-2 lg:grid-cols-4">
+          {stats.map((s, i) => (
+            <div
+              key={s.label}
+              className={`px-6 py-8 ${i % 2 === 1 ? "border-l border-hairline" : ""} ${
+                i >= 2 ? "border-t border-hairline lg:border-t-0" : ""
+              } ${i === 2 ? "lg:border-l" : ""}`}
+            >
+              <div className="font-display text-3xl font-medium tabular-nums tracking-[-0.04em] text-foreground sm:text-4xl">
+                {s.value}
+              </div>
+              <div className="mt-2 text-xs uppercase tracking-[0.14em] text-muted-foreground">
+                {s.label}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

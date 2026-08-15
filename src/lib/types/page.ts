@@ -45,7 +45,9 @@ export type SchemaType =
     | 'LocalBusiness'
     | 'Service'
     | 'Product'
-    | 'SoftwareApplication';
+    | 'SoftwareApplication'
+    | 'CollectionPage'
+    | 'ItemList';
 
 // Traffic/priority tiers
 export type Priority = 'high' | 'medium' | 'low';

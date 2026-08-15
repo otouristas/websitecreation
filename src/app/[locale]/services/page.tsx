@@ -1,157 +1,187 @@
 import Link from "next/link";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { ArrowUpRight } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SchemaMarkup from "@/components/seo/SchemaMarkup";
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import { services } from "@/data/services";
 import { getServiceEl } from "@/data/services-i18n";
 import { isValidLocale, localizedPath, type SiteLocale } from "@/lib/i18n/locale";
 import { buildMetadata } from "@/lib/seo";
+import {
+  generateBreadcrumbSchema,
+  generateCollectionPageSchema,
+  combineSchemas,
+  BASE_URL,
+} from "@/lib/seo/schema";
+import { generateBreadcrumbs } from "@/lib/linking";
+import {
+  Section,
+  SectionHeading,
+  MeshGrid,
+  Bloom,
+  PrimaryButtonLink,
+  GhostButtonLink,
+} from "@/components/landing/primitives";
+import { NotForYou } from "@/components/positioning/NotForYou";
+import { ENTRY_SEO_NET, formatPrice } from "@/data/pricing";
 
 type PageProps = { params: Promise<{ locale: string }> };
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { locale } = await params;
   if (!isValidLocale(locale)) return {};
-
-  if (locale === 'el') {
-    return buildMetadata({
-      title: "Υπηρεσίες Κατασκευής Ιστοσελίδων & SEO",
-      description:
-        "Κατασκευή ιστοσελίδων, ανασχεδιασμός, SEO, GEO, AEO, τοπικό SEO, link building και τεχνικός έλεγχος. Δείτε τις τιμές μας και ζητήστε δωρεάν προσφορά.",
-      path: localizedPath('el', '/services'),
-      hreflangPath: "/services",
-    });
-  }
+  const isEl = locale === "el";
 
   return buildMetadata({
-    title: "Web Design & SEO Services",
-    description:
-      "Website creation, redesign, SEO web design, GEO, AEO, local SEO, content, link building, and technical audits. Full-service agency plus GSC-native software.",
-    path: localizedPath('en', '/services'),
+    title: isEl ? "Υπηρεσίες SEO & Κατασκευής Ιστοσελίδων" : "SEO & Web Design Services",
+    description: isEl
+      ? "Τεχνικό SEO, τοπικό SEO, GEO και AEO, κατασκευή ιστοσελίδων και e-shop. Στρατηγική βασισμένη στα δεδομένα σας, όχι έτοιμα πακέτα."
+      : "Technical SEO, local SEO, GEO and AEO, website and e-shop builds. Strategy built on your own data rather than a prepackaged checklist.",
+    path: localizedPath(locale, "/services"),
     hreflangPath: "/services",
+    primaryKeyword: isEl ? "υπηρεσίες SEO" : "SEO services",
   });
 }
 
 export default async function ServicesPage({ params }: PageProps) {
   const { locale } = await params;
   if (!isValidLocale(locale)) notFound();
-  
-  const isEl = locale === 'el';
-  const lp = (path: string) => localizedPath(locale as SiteLocale, path);
+  const siteLocale = locale as SiteLocale;
+  const isEl = siteLocale === "el";
+  const lp = (path: string) => localizedPath(siteLocale, path);
 
-  const t = isEl
-    ? {
-        h1Pre: "Οι",
-        h1Post: "Υπηρεσίες μας",
-        sub: "Ολοκληρωμένες ψηφιακές λύσεις που βοηθούν την επιχείρησή σας να αναπτυχθεί. Από premium web design μέχρι τεχνική βελτιστοποίηση SEO.",
-        learnMore: "Μάθετε περισσότερα",
-        moreFeatures: (count: number) => `+ ${count} επιπλέον χαρακτηριστικά`,
-        notSureTitle: "Δεν είστε σίγουροι τι χρειάζεστε;",
-        notSureDesc: "Κλείστε μια δωρεάν διαβούλευση με τους ειδικούς μας. Θα αναλύσουμε την online παρουσία σας και θα σας προτείνουμε την καλύτερη στρατηγική ανάπτυξης.",
-        getQuote: "Λάβετε Δωρεάν Προσφορά",
-        viewPricing: "Δείτε τις Τιμές",
-      }
-    : {
-        h1Pre: "Our",
-        h1Post: "Services",
-        sub: "Comprehensive digital solutions to help your business grow. From stunning web design to technical SEO optimization.",
-        learnMore: "Learn more",
-        moreFeatures: (count: number) => `+ ${count} more features`,
-        notSureTitle: "Not sure what you need?",
-        notSureDesc: "Book a free consultation with our experts. We'll analyze your current online presence and recommend the best strategy for your growth.",
-        getQuote: "Get a Free Quote",
-        viewPricing: "View Pricing",
-      };
+  const breadcrumbItems = generateBreadcrumbs(
+    [{ name: isEl ? "Υπηρεσίες" : "Services", url: "/services" }],
+    siteLocale,
+  );
+
+  const schemas = combineSchemas(
+    generateBreadcrumbSchema({ items: breadcrumbItems }),
+    generateCollectionPageSchema({
+      name: isEl ? "Υπηρεσίες SEO και κατασκευής ιστοσελίδων" : "SEO and web design services",
+      description: isEl
+        ? "Όλες οι υπηρεσίες SEO, GEO, AEO και κατασκευής ιστοσελίδων."
+        : "Every SEO, GEO, AEO and website service we deliver.",
+      url: `${BASE_URL}${lp("/services")}`,
+      inLanguage: siteLocale,
+      items: services.map((s) => {
+        const el = isEl ? getServiceEl(s.slug) : null;
+        return {
+          url: `${BASE_URL}${lp(`/services/${s.slug}`)}`,
+          name: el?.name ?? s.name,
+        };
+      }),
+    }),
+  );
 
   return (
     <>
-      <Header locale={locale as SiteLocale} />
-      <main className="main-below-header min-h-screen pb-16">
-        <section className="container">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h1 className="text-4xl sm:text-5xl font-bold mb-6">
-              {t.h1Pre} <span className="gradient-text">{t.h1Post}</span>
+      <SchemaMarkup schemas={schemas} />
+      <Header locale={siteLocale} />
+      <main className="blueprint-grid relative z-0">
+        <section className="relative overflow-hidden border-b border-hairline">
+          <Bloom className="left-1/2 top-[-8rem] h-[26rem] w-[60rem] -translate-x-1/2" />
+          <div className="main-below-header relative mx-auto max-w-6xl px-6 pb-14 pt-6">
+            <Breadcrumbs items={breadcrumbItems} className="mb-6" />
+            <h1 className="rise-in max-w-3xl font-display text-4xl font-medium leading-[1.05] tracking-[-0.04em] text-foreground md:text-6xl">
+              {isEl ? "Υπηρεσίες SEO και κατασκευής ιστοσελίδων" : "SEO and web design services"}
             </h1>
-            <p className="text-xl text-muted-foreground">
-              {t.sub}
+            <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
+              {isEl
+                ? "Κάθε συνεργασία ξεκινά με ανάλυση της επιχείρησης, της αγοράς και του ανταγωνισμού σας. Τα πακέτα ορίζουν το αρχικό scope, η στρατηγική προσαρμόζεται στο δικό σας project."
+                : "Every engagement starts with analysis of your business, market and competition. Packages define the initial scope; the strategy adapts to your project."}
             </p>
+            <div className="mt-9 flex flex-wrap gap-3">
+              <PrimaryButtonLink href={lp("/get-started")}>
+                {isEl ? "Ζητήστε Προσφορά" : "Request a Quote"}
+              </PrimaryButtonLink>
+              <GhostButtonLink href={lp("/pricing")}>
+                {isEl ? "Δείτε τις Τιμές" : "View Pricing"}
+              </GhostButtonLink>
+            </div>
           </div>
+        </section>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <Section>
+          <SectionHeading
+            align="left"
+            eyebrow={isEl ? "Τι αναλαμβάνουμε" : "What we deliver"}
+            title={isEl ? "Όλες οι υπηρεσίες" : "Every service"}
+            body={
+              isEl
+                ? `Μηνιαία συνεργασία SEO από €${formatPrice(ENTRY_SEO_NET, siteLocale)} + ΦΠΑ 24%. Έργα κατασκευής τιμολογούνται ανά project.`
+                : `Monthly SEO engagements from €${formatPrice(ENTRY_SEO_NET, siteLocale)} + 24% VAT. Website projects are quoted per project.`
+            }
+            className="mb-12"
+          />
+
+          <MeshGrid className="sm:grid-cols-2 lg:grid-cols-3">
             {services.map((service) => {
-              const svcEl = isEl ? getServiceEl(service.slug) : null;
-              const name = svcEl?.name ?? service.name;
-              const desc = svcEl?.description ?? service.description;
-              const features = isEl && svcEl?.features ? svcEl.features : service.features;
-              
+              const el = isEl ? getServiceEl(service.slug) : null;
+              const name = el?.name ?? service.name;
+              const description = el?.description ?? service.description;
+              const features = (el?.features ?? service.features).slice(0, 3);
+
               return (
                 <Link
                   key={service.slug}
                   href={lp(`/services/${service.slug}`)}
-                  className="glass-card hover-glow card p-8 group flex flex-col h-full"
+                  className="group flex flex-col bg-surface p-7 transition-colors hover:bg-surface-raised"
                 >
-                  <div className="w-14 h-14 rounded-2xl gradient-primary flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-smooth shadow-lg shadow-primary/20">
-                    <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
+                  <div className="flex items-start justify-between gap-4">
+                    <h2 className="font-display text-lg font-medium tracking-[-0.02em] text-foreground">
+                      {name}
+                    </h2>
+                    <ArrowUpRight
+                      className="size-4 shrink-0 text-muted-foreground transition-colors group-hover:text-primary"
+                      aria-hidden
+                    />
                   </div>
-
-                  <h2 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">
-                    {name}
-                  </h2>
-
-                  <p className="text-muted-foreground mb-6 flex-grow line-clamp-3">
-                    {desc}
+                  <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
+                    {description}
                   </p>
-
-                  <div className="space-y-2 mb-6">
-                    {features.slice(0, 3).map((feature, i) => (
-                      <div key={i} className="flex items-center gap-2 text-sm text-foreground/80">
-                        <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                        {feature}
-                      </div>
+                  <ul className="mt-5 space-y-2 border-t border-hairline pt-4">
+                    {features.map((f) => (
+                      <li key={f} className="flex gap-2.5 text-[13px] text-muted-foreground">
+                        <span aria-hidden className="mt-2 h-px w-3 shrink-0 bg-brand" />
+                        {f}
+                      </li>
                     ))}
-                    {features.length > 3 && (
-                      <div className="text-xs text-muted-foreground pl-3.5">{t.moreFeatures(features.length - 3)}</div>
-                    )}
-                  </div>
-
-                  <div className="flex items-center text-primary font-medium mt-auto group-hover:translate-x-1 transition-transform">
-                    {t.learnMore}
-                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </div>
+                  </ul>
                 </Link>
               );
             })}
-          </div>
-        </section>
+          </MeshGrid>
+        </Section>
 
-        <section className="container mt-24">
-          <div className="glass-card hover-glow rounded-3xl p-8 sm:p-12 text-center border border-border relative overflow-hidden bg-muted/10">
-            <div className="relative z-10">
-              <h2 className="text-3xl font-bold mb-4">{t.notSureTitle}</h2>
-              <p className="text-muted-foreground max-w-xl mx-auto mb-8">
-                {t.notSureDesc}
-              </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <Link href={lp("/get-started")} className="btn btn-gradient px-8 py-3">
-                  {t.getQuote}
-                </Link>
-                <Link href={lp("/pricing")} className="btn btn-outline px-8 py-3 bg-background">
-                  {t.viewPricing}
-                </Link>
-              </div>
+        <NotForYou locale={siteLocale} />
+
+        <section className="relative overflow-hidden border-t border-hairline">
+          <Bloom className="left-1/2 top-1/4 h-[24rem] w-[56rem] -translate-x-1/2" />
+          <div className="relative mx-auto max-w-3xl px-6 py-24 text-center">
+            <h2 className="font-display text-3xl font-medium leading-[1.05] tracking-[-0.04em] text-foreground md:text-5xl">
+              {isEl ? "Δεν είστε σίγουροι τι χρειάζεστε;" : "Not sure what you need?"}
+            </h2>
+            <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">
+              {isEl
+                ? "Πείτε μας τι θέλετε να πετύχετε. Θα κοιτάξουμε το site και την αγορά σας και θα σας πούμε τι έχει νόημα να γίνει πρώτο."
+                : "Tell us what you want to achieve. We will look at your site and your market and tell you what is worth doing first."}
+            </p>
+            <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
+              <PrimaryButtonLink href={lp("/get-started")}>
+                {isEl ? "Συζητήστε το Project σας" : "Discuss Your Project"}
+              </PrimaryButtonLink>
+              <GhostButtonLink href={lp("/work")}>
+                {isEl ? "Δείτε τα Έργα μας" : "View Our Work"}
+              </GhostButtonLink>
             </div>
-
-            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-secondary/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
           </div>
         </section>
       </main>
-      <Footer locale={locale as SiteLocale} />
+      <Footer locale={siteLocale} />
     </>
   );
 }

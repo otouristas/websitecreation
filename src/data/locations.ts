@@ -911,15 +911,15 @@ export const internationalLocations: Location[] = [
 
 export const globalTier1Locations: Location[] = [
   ...tier1Locations,
-  ...greeceLocations.filter((l) => l.tier === 1),
-  ...internationalLocations.filter((l) => l.tier === 1),
+    ...greeceLocations.filter((l) => l.tier === 1),
+    ...internationalLocations.filter((l) => l.tier === 1),
 ];
 
 export const allLocations: Location[] = [
   ...tier1Locations,
-  ...usTier2,
-  ...greeceLocations,
-  ...internationalLocations,
+    ...usTier2,
+    ...greeceLocations,
+    ...internationalLocations,
 ];
 
 export const getLocationBySlug = (slug: string): Location | undefined =>
@@ -932,7 +932,7 @@ export const getTier1LocationSlugs = (): string[] =>
 
 /**
  * EN service×location index allowlist (Greece-first moonshot).
- * Non-GR metros are noindex + out of sitemaps — US/AU/CA thin pages burned
+ * Non-GR metros are noindex + out of sitemaps, US/AU/CA thin pages burned
  * GSC impressions with ~0 CTR. Keep only portfolio-backed EN hubs outside GR.
  * Greek cities are gated separately via hasLocationContent.
  */

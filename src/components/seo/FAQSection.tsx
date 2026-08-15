@@ -10,9 +10,12 @@ import type { FAQ } from '@/lib/types/page';
 
 interface FAQSectionProps {
     faqs: FAQ[];
+    /** Pass an empty string to render the accordion with no heading of its own. */
     title?: string;
     focusKeyword?: string;
     className?: string;
+    /** Needed for the fallback heading; the default was English-only. */
+    locale?: 'en' | 'el';
 }
 
 /**
@@ -24,6 +27,7 @@ export default function FAQSection({
     title,
     focusKeyword,
     className = '',
+    locale = 'en',
 }: FAQSectionProps) {
     const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
@@ -31,9 +35,16 @@ export default function FAQSection({
         return null;
     }
 
-    const sectionTitle = title || (focusKeyword
-        ? `Frequently Asked Questions about ${focusKeyword}`
-        : 'Frequently Asked Questions');
+    // `title === ''` means the caller renders its own heading, so emit none.
+    const isEl = locale === 'el';
+    const fallbackTitle = focusKeyword
+        ? isEl
+            ? `Συχνές ερωτήσεις για ${focusKeyword}`
+            : `Frequently asked questions about ${focusKeyword}`
+        : isEl
+            ? 'Συχνές ερωτήσεις'
+            : 'Frequently asked questions';
+    const sectionTitle = title === '' ? '' : (title ?? fallbackTitle);
 
     const toggleItem = (index: number) => {
         setExpandedIndex(expandedIndex === index ? null : index);
@@ -41,7 +52,9 @@ export default function FAQSection({
 
     return (
         <section className={`py-12 ${className}`}>
-            <h2 className="text-2xl sm:text-3xl font-bold mb-8">{sectionTitle}</h2>
+            {sectionTitle ? (
+                <h2 className="mb-8 font-display text-2xl font-medium tracking-[-0.03em] sm:text-3xl">{sectionTitle}</h2>
+            ) : null}
 
             <div className="space-y-3">
                 {faqs.map((faq, index) => {

@@ -1,7 +1,7 @@
 ---
 slug: law-firm-seo
-title: Law Firm SEO — How Attorneys Win Cases from Google
-description: A practical SEO guide for law firms and attorneys — local targeting, practice-area pages, trust-building content, and the technical basics that bring cases.
+title: Law Firm SEO - How Attorneys Win Cases from Google
+description: A practical SEO guide for law firms and attorneys - local targeting, practice-area pages, trust-building content, and the technical basics that bring cases.
 date: 2026-07-06
 author: AnotherSEOGuru Editorial Team
 translationOf: seo-gia-dikigorous
@@ -12,34 +12,34 @@ faq:
   - question: How long until a law firm sees cases from Google?
     answer: In smaller markets, first qualified calls often arrive within 2–3 months. In competitive metros for divorce or personal injury, expect 4–6 months of systematic practice-area and local work.
   - question: Do law firms need a new website for SEO?
-    answer: If the site is five-plus years old, slow, or not mobile-friendly, yes — a modern website is a prerequisite. Trust and speed decide whether a prospect books a consultation.
+    answer: If the site is five-plus years old, slow, or not mobile-friendly, yes - a modern website is a prerequisite. Trust and speed decide whether a prospect books a consultation.
   - question: Can one firm target more than one city?
-    answer: Yes, with separate local pages per city and real local proof — not copy-paste templates with a swapped city name. Thin geo pages underperform and can hurt the whole site.
+    answer: Yes, with separate local pages per city and real local proof - not copy-paste templates with a swapped city name. Thin geo pages underperform and can hurt the whole site.
   - question: How much does law firm SEO cost?
     answer: Competitive metros usually need the Growth tier around €599/mo. Smaller markets often succeed on Starter at €299/mo for local dominance. Scope depends on practice areas and cities.
   - question: Is SEO compliant for legal advertising?
     answer: SEO is typically the most compatible channel because you answer people already searching for help. Still follow bar advertising rules, avoid guarantees, and keep claims evidence-based.
 ---
 
-When someone needs a lawyer, they search Google: “divorce attorney near me,” “employment lawyer,” “car accident lawyer.” **Law firm SEO** is one of the most competitive — and most profitable — areas of digital marketing: a single retained matter can pay for a year of investment. The firms that win are not the ones with the flashiest homepage; they own practice-area pages, local proof, and answers prospects trust before the first call.
+When someone needs a lawyer, they search Google: “divorce attorney near me,” “employment lawyer,” “car accident lawyer.” **Law firm SEO** is one of the most competitive - and most profitable - areas of digital marketing: a single retained matter can pay for a year of investment. The firms that win are not the ones with the flashiest homepage; they own practice-area pages, local proof, and answers prospects trust before the first call.
 
 See our [solutions for lawyers](/en/solutions/lawyers), [local SEO](/en/services/local-seo), and [how much SEO costs](/en/blog/how-much-does-seo-cost).
 
 ## Why SEO Fits Law Firms
 
-The client has an **immediate, serious need** — they are not browsing for entertainment. Intent is **local**: office location, courts you serve, and languages define the map. **Trust** matters more than almost any other vertical: clear bios, process explainers, and honest FAQs build confidence before the consultation. Paid ads work, but organic ownership compounds; you stop renting every click the day the campaign pauses.
+The client has an **immediate, serious need** - they are not browsing for entertainment. Intent is **local**: office location, courts you serve, and languages define the map. **Trust** matters more than almost any other vertical: clear bios, process explainers, and honest FAQs build confidence before the consultation. Paid ads work, but organic ownership compounds; you stop renting every click the day the campaign pauses.
 
-AI overviews and assistants also surface legal Q&A. Responsible, well-structured content — never guarantees — improves odds of citation. Pair practice pages with the [GEO/AEO playbook](/en/blog/geo-aeo-global-seo-playbook) where commercial questions already trigger AI answers.
+AI overviews and assistants also surface legal Q&A. Responsible, well-structured content - never guarantees - improves odds of citation. Pair practice pages with the [GEO/AEO playbook](/en/blog/geo-aeo-global-seo-playbook) where commercial questions already trigger AI answers.
 
 ## The Strategy in Five Steps
 
 ### 1. A page per practice area
 
-One “Services” page will not rank. You need thorough URLs for family law, employment, criminal defense, real estate, personal injury, and wills — each answering the questions clients actually ask: process, timelines, documents, and when to call. One primary intent per URL prevents cannibalization.
+One “Services” page will not rank. You need thorough URLs for family law, employment, criminal defense, real estate, personal injury, and wills - each answering the questions clients actually ask: process, timelines, documents, and when to call. One primary intent per URL prevents cannibalization.
 
 ### 2. Local presence that converts calls
 
-Google Business Profile with the correct primary category, office photos, service areas, and consistent review management captures “attorney near me” — almost always searched on mobile with intent to call. Pair GBP with location pages that name neighborhoods and courthouses you serve. Full playbook: [local SEO guide](/en/blog/local-seo-guide).
+Google Business Profile with the correct primary category, office photos, service areas, and consistent review management captures “attorney near me” - almost always searched on mobile with intent to call. Pair GBP with location pages that name neighborhoods and courthouses you serve. Full playbook: [local SEO guide](/en/blog/local-seo-guide).
 
 ### 3. Content that answers hard questions
 
@@ -78,11 +78,11 @@ If the site cannot support practice pages and fast mobile contact, start with [w
 
 ## How to Prioritize Practice Areas
 
-Not every practice deserves equal investment in month one. Rank opportunities by **case value × search demand × competition**. Employment and family matters often convert faster in secondary cities; personal injury and divorce head terms in major metros need longer content and citation runway. Use Search Console to find queries that already impress but do not click — those titles and meta descriptions are the cheapest wins.
+Not every practice deserves equal investment in month one. Rank opportunities by **case value × search demand × competition**. Employment and family matters often convert faster in secondary cities; personal injury and divorce head terms in major metros need longer content and citation runway. Use Search Console to find queries that already impress but do not click - those titles and meta descriptions are the cheapest wins.
 
 Publish one definitive practice page before spinning blogs. Then support it with three to five educational articles that answer process questions and link back to the money page. Keep attorney bios current with credentials and speaking or publication notes; those E-E-A-T signals matter when Google evaluates legal YMYL-adjacent topics. For weekly measurement discipline, borrow the cadence in the [GSC weekly ops playbook](/en/blog/gsc-weekly-ops-playbook).
 
-Intake forms should ask for practice area and urgency so you can attribute organic leads correctly. Pair organic with call tracking on practice pages — otherwise you will under-count mobile callers who never submit a form. When expanding to a second city, ship proof (office address, counsel on the ground, local reviews) before the page goes live.
+Intake forms should ask for practice area and urgency so you can attribute organic leads correctly. Pair organic with call tracking on practice pages - otherwise you will under-count mobile callers who never submit a form. When expanding to a second city, ship proof (office address, counsel on the ground, local reviews) before the page goes live.
 
 ## FAQ
 
@@ -92,11 +92,11 @@ Smaller markets: often 2–3 months for local queries. Competitive metros and pr
 
 ### Do I need a new website?
 
-If it is outdated, slow, or not mobile-friendly, yes. Trust signals and speed are prerequisites — see [lawyer solutions](/en/solutions/lawyers).
+If it is outdated, slow, or not mobile-friendly, yes. Trust signals and speed are prerequisites - see [lawyer solutions](/en/solutions/lawyers).
 
 ### Can I target more than one city?
 
-Yes, with separate local pages and real local proof — not copy-paste city swaps.
+Yes, with separate local pages and real local proof - not copy-paste city swaps.
 
 ### Is SEO better than Google Ads for lawyers?
 
@@ -108,4 +108,4 @@ Process explainers, FAQs, and educational guides without outcome guarantees. Hav
 
 ## Ready to Get Started?
 
-We review your site, practice areas, and local competition, then tell you realistically what is needed and what it costs. [Request the free analysis](/en/get-started) — reply within 24 hours. Compare [pricing](/en/pricing) and deepen local tactics with the [local SEO guide](/en/blog/local-seo-guide).
+We review your site, practice areas, and local competition, then tell you realistically what is needed and what it costs. [Request the free analysis](/en/get-started) - reply within 24 hours. Compare [pricing](/en/pricing) and deepen local tactics with the [local SEO guide](/en/blog/local-seo-guide).

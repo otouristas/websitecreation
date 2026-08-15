@@ -42,7 +42,7 @@ export function ProblemSolutionSection({ locale = "en" }: ProblemSolutionSection
             </ul>
           </div>
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[hsl(var(--success)/0.15)] text-[hsl(var(--success))] mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-success/15 text-success mb-6">
               <CheckCircle2 className="w-4 h-4" aria-hidden />
               <span className="text-sm font-semibold">{isEl ? t!.solutionBadge : "The solution"}</span>
             </div>
@@ -59,7 +59,7 @@ export function ProblemSolutionSection({ locale = "en" }: ProblemSolutionSection
                   ]
               ).map((item) => (
                 <li key={item.strong} className="flex gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-[hsl(var(--success))] shrink-0 mt-0.5" aria-hidden />
+                  <CheckCircle2 className="w-5 h-5 text-success shrink-0 mt-0.5" aria-hidden />
                   <span>
                     <strong className="text-foreground">{item.strong}</strong> {item.text}
                   </span>

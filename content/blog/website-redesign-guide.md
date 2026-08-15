@@ -15,14 +15,14 @@ faq:
   - question: "How much does a website redesign cost?"
     answer: "Typically €899–€2,999 depending on size, because it includes carrying over SEO history. Cheap redesigns that skip migration cost far more in lost traffic."
   - question: "Can I keep the same domain?"
-    answer: "Yes — and you should. The domain carries your credibility. Changing domain and redesigning at once is double risk and needs special handling."
+    answer: "Yes - and you should. The domain carries your credibility. Changing domain and redesigning at once is double risk and needs special handling."
   - question: "Redesign or a brand-new site?"
     answer: "If the site has organic traffic, redesign with migration. If it is invisible in Google and technically broken, a new build is often cleaner."
   - question: "How long does a safe redesign take?"
     answer: "Typically 3–6 weeks after inventory and redirect mapping, depending on page count, languages, and booking/e-commerce complexity."
 ---
 
-A **website redesign** is one of the riskiest moments in a site’s life: done right, it lifts the business; done carelessly, it wipes out years of organic work overnight. This guide covers when it’s worth it, what it costs, and the right migration process — before you touch anything.
+A **website redesign** is one of the riskiest moments in a site’s life: done right, it lifts the business; done carelessly, it wipes out years of organic work overnight. This guide covers when it’s worth it, what it costs, and the right migration process - before you touch anything.
 
 > **Related:** [website redesign service](/en/services/website-redesign) · [pricing](/en/pricing) · [website cost guide](/en/blog/how-much-does-a-website-cost) · [free assessment](/en/get-started).
 
@@ -50,10 +50,10 @@ Result: **-40% to -80% organic traffic**, with months to recover. In tourism and
 ## The Correct SEO Migration Process
 
 1. **Inventory**: full record of pages, rankings, and backlinks before anything changes.
-2. **Redirect map**: every old URL 301s to the right new one — not all to the homepage.
+2. **Redirect map**: every old URL 301s to the right new one - not all to the homepage.
 3. **Preserve what performs**: pages that bring traffic get redesigned, not deleted.
 4. **Speed as a spec**: the new site must be measurably faster (Core Web Vitals), not just prettier.
-5. **Pre-launch check**: crawl the new site on staging — broken links, meta, schema, mobile.
+5. **Pre-launch check**: crawl the new site on staging - broken links, meta, schema, mobile.
 6. **Post-launch monitoring**: Search Console daily for the first weeks so any issue is caught immediately.
 
 The same discipline applies when you change CMS or move to a [new build](/en/services/website-creation) while keeping the domain.
@@ -87,11 +87,11 @@ If you need ongoing rankings after redesign, see [how much SEO costs](/en/blog/h
 5. Is there staging for review before DNS cutover?
 6. Who watches Search Console for the first 14 days?
 
-If two or more answers are “we’ll see,” you do not have a migration plan — you have risk. Require the plan in writing as a deliverable inside the quote.
+If two or more answers are “we’ll see,” you do not have a migration plan - you have risk. Require the plan in writing as a deliverable inside the quote.
 
 ## What to Do If Traffic Drops After Launch
 
-Do not panic in week one if the dip is small and redirects are clean. Check: index coverage, Search Console 404s, drops on specific URLs, real-user speed. Fix broken redirects and orphan pages first. If the drop exceeds 20–30% after two weeks, demand an immediate technical review — not “let’s wait three months.”
+Do not panic in week one if the dip is small and redirects are clean. Check: index coverage, Search Console 404s, drops on specific URLs, real-user speed. Fix broken redirects and orphan pages first. If the drop exceeds 20–30% after two weeks, demand an immediate technical review - not “let’s wait three months.”
 
 ## Redesign Timing Tips
 
@@ -115,7 +115,7 @@ With proper migration, the dip is limited to a few positions for 1–2 weeks and
 
 ### Can I keep the same domain?
 
-Yes — and you should. The domain carries your credibility. Changing domain and redesigning at once is double risk and needs special handling.
+Yes - and you should. The domain carries your credibility. Changing domain and redesigning at once is double risk and needs special handling.
 
 ### Redesign or a brand-new site?
 
@@ -123,8 +123,8 @@ If the site has organic traffic, redesign with migration. If it’s invisible in
 
 ### Do I need new hosting with the redesign?
 
-Not always — but if TTFB is poor, combine the work. See the [hosting & domain guide](/en/blog/web-hosting-domain-guide).
+Not always - but if TTFB is poor, combine the work. See the [hosting & domain guide](/en/blog/web-hosting-domain-guide).
 
 ## Still Need a Free Assessment Before You Touch Anything?
 
-Request a free assessment: we’ll see how much SEO value your current site holds and tell you whether a redesign or a new build makes sense — with a concrete cost and timeline. [Start here](/en/get-started).
+Request a free assessment: we’ll see how much SEO value your current site holds and tell you whether a redesign or a new build makes sense - with a concrete cost and timeline. [Start here](/en/get-started).

@@ -1,7 +1,7 @@
 ---
 slug: internal-linking-audit-checklist
 title: Internal Linking Audit Checklist for In-House SEO Teams
-description: Find orphan pages, over-linked footers, and anchor text patterns that waste crawl budget — with a pragmatic fix order for tourism and local sites.
+description: Find orphan pages, over-linked footers, and anchor text patterns that waste crawl budget - with a pragmatic fix order for tourism and local sites.
 date: 2026-02-18
 author: AnotherSEOGuru Editorial Team
 category: Technical SEO
@@ -9,20 +9,20 @@ categoryColor: bg-amber-100 text-amber-800
 pillar: technical-seo-in-house
 faq:
   - question: "How many internal links per page?"
-    answer: "No fixed limit — prioritize relevance. Long guides may have 10–20 contextual links; short pages need fewer. Avoid footer spam."
+    answer: "No fixed limit - prioritize relevance. Long guides may have 10–20 contextual links; short pages need fewer. Avoid footer spam."
   - question: "Should I link to external sites?"
-    answer: "Yes — authoritative outbound links support E-E-A-T. Link to tourism boards, official airport sites, medical sources as appropriate."
+    answer: "Yes - authoritative outbound links support E-E-A-T. Link to tourism boards, official airport sites, medical sources as appropriate."
   - question: "Do internal links pass PageRank?"
-    answer: "Google uses links to understand importance and discovery. Internal links distribute signals within your site — link equity concepts still apply internally."
+    answer: "Google uses links to understand importance and discovery. Internal links distribute signals within your site - link equity concepts still apply internally."
   - question: "Can I automate internal linking?"
-    answer: "Plugins and rules help at scale — but review for relevance. Automated \"related posts\" often link irrelevant URLs."
+    answer: "Plugins and rules help at scale - but review for relevance. Automated \"related posts\" often link irrelevant URLs."
   - question: "How do I measure impact?"
     answer: "Compare GSC clicks on target URLs 4–8 weeks post-fix. Track orphan count monthly."
 ---
 
 Internal links distribute relevance, define site architecture for crawlers, and guide users to conversion paths. Most sites drift: new pages launch without parents, footers repeat the same targets, and blogs become dead ends. For [hotel websites](/en/solutions/hotels) with dozens of room and island pages, or [rent-a-car fleets](/en/solutions/rent-a-car) with location landing pages, poor internal linking leaves money URLs orphaned while blog posts hoard authority.
 
-This checklist gives in-house teams a pragmatic audit order — fix orphans and money-page support first, then refine anchors and global modules.
+This checklist gives in-house teams a pragmatic audit order - fix orphans and money-page support first, then refine anchors and global modules.
 
 ## Why internal linking matters in 2026
 
@@ -37,18 +37,18 @@ Pages with few or no internal inlinks struggle to rank despite good content.
 
 ### How to find orphans
 
-- Export crawl (Screaming Frog, Sitebulb) — filter URLs with 0–1 inlinks
-- Search Console Links report — top linked pages vs impressions without links
+- Export crawl (Screaming Frog, Sitebulb) - filter URLs with 0–1 inlinks
+- Search Console Links report - top linked pages vs impressions without links
 - Compare sitemap URLs to crawled inlink counts
 
 ### Prioritize fixes
 
-1. Money pages — booking, fleet categories, room types
-2. Location pages — islands, airports, neighborhoods
+1. Money pages - booking, fleet categories, room types
+2. Location pages - islands, airports, neighborhoods
 3. High-impression GSC pages with weak internal support
 4. New blog posts before they go stale
 
-For tourism sites, orphan **location pages** are the most common leak — e.g. "/paros" launched without links from homepage or hub.
+For tourism sites, orphan **location pages** are the most common leak - e.g. "/paros" launched without links from homepage or hub.
 
 ## 2. Map hubs and spokes
 
@@ -70,7 +70,7 @@ Spokes: /locations/mykonos-airport, /fleet/automatic, /blog/istoselida-enikiasis
 
 - Spokes link **up** to hub
 - Hubs cross-link to related hubs where it helps users ([travel AI chatbots](/en/solutions/travel-ai-chatbots) ↔ rent-a-car)
-- Blog posts link to 2–3 relevant commercial URLs — not zero, not twenty
+- Blog posts link to 2–3 relevant commercial URLs - not zero, not twenty
 
 [Semantic clustering](/en/glossary?term=keyword-clustering) informs this map from query data, not gut feel. See [glossary linking strategy](/en/blog/glossary-strategy-internal-linking).
 
@@ -100,13 +100,13 @@ Global modules are powerful but easy to overuse. If everything is "important," n
 
 - Primary commercial pillars ([hotels](/en/solutions/hotels), [rent-a-car](/en/solutions/rent-a-car))
 - [Get started](/en/get-started) / contact
-- Top locations or services — not every blog post ever written
+- Top locations or services - not every blog post ever written
 
 ### Rotate seasonal links
 
 Shoulder season: promote island guides. Peak season: fleet availability and direct booking.
 
-After redesigns, rerun the audit — CMS refactors often break contextual links.
+After redesigns, rerun the audit - CMS refactors often break contextual links.
 
 ## 5. Blog and resource linking
 
@@ -137,11 +137,11 @@ After redesign or CMS migration:
 - Rerun crawl for orphan count
 - Watch Search Console index coverage
 - Monitor ranking URLs for 4–6 weeks
-- Check [Core Web Vitals](/en/glossary?term=page-experience) — template changes affect performance
+- Check [Core Web Vitals](/en/glossary?term=page-experience) - template changes affect performance
 
 [Technical SEO audits](/en/glossary?term=crawling) catch regressions early.
 
-## 8. Fix order — one sprint
+## 8. Fix order - one sprint
 
 | Week | Focus |
 |------|-------|
@@ -150,13 +150,13 @@ After redesign or CMS migration:
 | 3 | Blog retrolinks to commercial URLs |
 | 4 | Footer/nav cleanup + anchor audit |
 
-Ship incrementally — perfect link graphs aren't required on day one.
+Ship incrementally - perfect link graphs aren't required on day one.
 
 ## Linking from high-authority pages
 
-Identify top 10 pages by GSC clicks or external backlinks. From each, add 2–3 contextual links to underperforming money pages, new location launches, or updated FAQ hubs. This "authority redistribution" often moves near-miss queries faster than creating new pages — especially on mature [hotel](/en/solutions/hotels) and [rent-a-car](/en/solutions/rent-a-car) sites with strong blogs but weak fleet or island links.
+Identify top 10 pages by GSC clicks or external backlinks. From each, add 2–3 contextual links to underperforming money pages, new location launches, or updated FAQ hubs. This "authority redistribution" often moves near-miss queries faster than creating new pages - especially on mature [hotel](/en/solutions/hotels) and [rent-a-car](/en/solutions/rent-a-car) sites with strong blogs but weak fleet or island links.
 
-Audit quarterly alongside [glossary strategy](/en/blog/glossary-strategy-internal-linking) updates — new terms create new link opportunities from existing high-traffic posts.
+Audit quarterly alongside [glossary strategy](/en/blog/glossary-strategy-internal-linking) updates - new terms create new link opportunities from existing high-traffic posts.
 
 
 ## Quick win: five links in one afternoon
@@ -169,25 +169,25 @@ If you only have two hours this week, do this:
 4. From the homepage or hub, add links to any orphan location pages
 5. Re-crawl those URLs and note inlinks in your tracker
 
-This "afternoon batch" often moves near-miss commercial queries faster than writing a new guide — especially when [Search Console](/en/blog/pillar-search-console-mastery) already shows impressions without clicks.
+This "afternoon batch" often moves near-miss commercial queries faster than writing a new guide - especially when [Search Console](/en/blog/pillar-search-console-mastery) already shows impressions without clicks.
 
 ## FAQ
 
 ### How many internal links per page?
 
-No fixed limit — prioritize relevance. Long guides may have 10–20 contextual links; short pages need fewer. Avoid footer spam.
+No fixed limit - prioritize relevance. Long guides may have 10–20 contextual links; short pages need fewer. Avoid footer spam.
 
 ### Should I link to external sites?
 
-Yes — authoritative outbound links support E-E-A-T. Link to tourism boards, official airport sites, medical sources as appropriate.
+Yes - authoritative outbound links support E-E-A-T. Link to tourism boards, official airport sites, medical sources as appropriate.
 
 ### Do internal links pass PageRank?
 
-Google uses links to understand importance and discovery. Internal links distribute signals within your site — [link equity](/en/glossary?term=link-equity) concepts still apply internally.
+Google uses links to understand importance and discovery. Internal links distribute signals within your site - [link equity](/en/glossary?term=link-equity) concepts still apply internally.
 
 ### Can I automate internal linking?
 
-Plugins and rules help at scale — but review for relevance. Automated "related posts" often link irrelevant URLs.
+Plugins and rules help at scale - but review for relevance. Automated "related posts" often link irrelevant URLs.
 
 ### How do I measure impact?
 
@@ -197,6 +197,6 @@ Compare GSC clicks on target URLs 4–8 weeks post-fix. Track orphan count month
 
 ## Ready to Get Started?
 
-Tell us about your site, locations, and goals — we'll recommend a scoped plan with Search Console ops, content priorities, and clear next steps.
+Tell us about your site, locations, and goals - we'll recommend a scoped plan with Search Console ops, content priorities, and clear next steps.
 
 [Get started](/en/get-started) · [See our work](/en/work) · [Pricing](/en/pricing)

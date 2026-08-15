@@ -10,7 +10,7 @@
 User-agent: *
 Allow: /
 
-# Next.js / Vercel assets (often carry ?dpl= — must remain crawlable for rendering)
+# Next.js / Vercel assets (often carry ?dpl= - must remain crawlable for rendering)
 Allow: /_next/static/
 Allow: /_next/image
 Allow: /images/
@@ -18,16 +18,16 @@ Allow: /portfolio/
 Allow: /logos/
 Allow: /payments/
 
-# AI-readable site corpus (llms.txt standard — https://llmstxt.org/)
+# AI-readable site corpus (llms.txt standard - https://llmstxt.org/)
 Allow: /llms.txt
 Allow: /llms-full.txt
 
-# AI content preferences (draft Content-Signal — not valid as a robots.txt directive;
+# AI content preferences (draft Content-Signal - not valid as a robots.txt directive;
 # see https://contentsignals.org/). Expressed here as comments for humans; crawlers
 # that support the draft may read llms.txt / llms-full.txt on this site.
-#   search=yes   — allow indexing for traditional search results
-#   ai-input=yes — allow grounding/RAG use as live input to AI answers about this brand
-#   ai-train=no  — prefer no use of this content to train foundation models
+#   search=yes   - allow indexing for traditional search results
+#   ai-input=yes - allow grounding/RAG use as live input to AI answers about this brand
+#   ai-train=no  - prefer no use of this content to train foundation models
 # Content-Signal: search=yes, ai-input=yes, ai-train=no
 
 # Disallow API and admin surfaces
@@ -164,7 +164,7 @@ Crawl-delay: 1
 # SITEMAPS
 # =============================================================================
 
-# Single entry point — child sitemaps (including /sitemap.xml) are listed inside the index
+# Single entry point - child sitemaps (including /sitemap.xml) are listed inside the index
 Sitemap: https://anotherseoguru.com/sitemap-index.xml
 
 # =============================================================================

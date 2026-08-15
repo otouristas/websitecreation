@@ -43,7 +43,7 @@ export default async function ComparePage({ params }: PageProps) {
   return (
     <>
       <Header />
-      <main className="main-below-header pb-20">
+      <main className="blueprint-grid relative z-0 main-below-header pb-20">
         <article className="container max-w-3xl">
           <nav className="text-sm text-muted-foreground mb-8">
             <Link href={lp("/")} className="hover:text-primary">
@@ -52,10 +52,10 @@ export default async function ComparePage({ params }: PageProps) {
             <span className="mx-2">/</span>
             <span className="text-foreground">{c.headline}</span>
           </nav>
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">{c.headline}</h1>
+          <h1 className="font-display text-4xl font-medium tracking-[-0.04em] md:text-5xl mb-6">{c.headline}</h1>
           <p className="text-xl text-muted-foreground mb-12 leading-relaxed">{c.summary}</p>
           <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <div className="rounded-2xl border border-primary/30 bg-primary/5 p-6">
+            <div className="rounded-[10px] border border-primary/30 bg-primary/5 p-6">
               <h2 className="font-bold text-lg mb-4">When AnotherSEOGuru fits</h2>
               <ul className="space-y-3 text-sm text-muted-foreground">
                 {c.whenChooseUs.map((x) => (
@@ -66,7 +66,7 @@ export default async function ComparePage({ params }: PageProps) {
                 ))}
               </ul>
             </div>
-            <div className="rounded-2xl border border-border p-6">
+            <div className="rounded-[10px] border border-hairline p-6">
               <h2 className="font-bold text-lg mb-4">When {c.competitorName} may fit</h2>
               <ul className="space-y-3 text-sm text-muted-foreground">
                 {c.whenChooseThem.map((x) => (
@@ -79,7 +79,7 @@ export default async function ComparePage({ params }: PageProps) {
             </div>
           </div>
           <div className="flex flex-wrap gap-4">
-            <a href={getAppPath("/signup")} className="btn btn-gradient px-6 py-3" rel="noopener noreferrer">
+            <a href={getAppPath("/signup")} className="btn btn-primary px-6 py-3" rel="noopener noreferrer">
               Try the platform
             </a>
             <Link href={lp("/platform/features")} className="btn btn-outline px-6 py-3">

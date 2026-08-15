@@ -43,7 +43,7 @@ export const legalEl = {
       },
       {
         heading: '4. Επικοινωνία',
-        body: 'Για ερωτήσεις σχετικά με την πολιτική απορρήτου, επικοινωνήστε στο hello@anotherseoguru.com.',
+        body: 'Για ερωτήσεις σχετικά με την πολιτική απορρήτου, επικοινωνήστε στο anotherseoguru@gmail.com.',
       },
     ],
   },

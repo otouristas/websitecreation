@@ -12,9 +12,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (locale === 'el') {
     return buildMetadata({
-      title: 'Κατασκευή Ιστοσελίδων & SEO',
+      title: 'SEO & Κατασκευή Ιστοσελίδων στην Ελλάδα',
       description:
-        'Κατασκευή ιστοσελίδων, e-shop και SEO στην Ελλάδα από €899 / €299 μήνα. 70+ έργα, GEO/AEO, δωρεάν προσφορά σε 24 ώρες.',
+        'Τεχνικό SEO, τοπικό SEO και GEO/AEO, με κατασκευή ιστοσελίδων και e-shop. Στρατηγική βάσει των δικών σας δεδομένων, όχι έτοιμο πακέτο. Ζητήστε προσφορά.',
       path: localizedPath('el', '/'),
       primaryKeyword: 'κατασκευή ιστοσελίδων',
       hreflangPath: '/',
@@ -22,9 +22,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   return buildMetadata({
-    title: 'Website Design, E-shop & SEO',
+    title: 'SEO & Web Design Agency in Greece',
     description:
-      'Website design, WooCommerce and SEO for Greece and beyond. From €899 / €299 mo. GEO & AEO included. Free quote in 24 hours.',
+      'Technical SEO, local SEO and GEO/AEO, plus website and e-shop builds. Strategy built on your own Search Console data, not a template. Request a quote.',
     path: localizedPath('en', '/'),
     primaryKeyword: 'website design',
     hreflangPath: '/',

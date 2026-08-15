@@ -41,7 +41,7 @@ export default async function PlatformHubPage({ params }: PageProps) {
     <>
       <SchemaMarkup schemas={[softwareSchema]} />
       <Header />
-      <main className="main-below-header">
+      <main className="blueprint-grid relative z-0 main-below-header">
         <ProductHero
           badge="Product · Connects to Google Search Console"
           title="The SEO command center for teams who"
@@ -80,7 +80,7 @@ export default async function PlatformHubPage({ params }: PageProps) {
           features={MARKETING_FEATURES}
           limit={9}
         />
-        <section className="py-16 border-t border-border">
+        <section className="py-16 border-t border-hairline">
           <div className="container flex flex-col sm:flex-row gap-4 justify-center">
             <Link href={lp("/platform/pricing")} className="btn btn-outline px-8 py-3 text-center">
               Software plans

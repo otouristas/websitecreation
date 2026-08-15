@@ -1,24 +1,24 @@
 import type { LocationContentPack } from './types';
 
 /**
- * English location content packs — unique intros (≥70 words) + FAQs for hybrid pSEO uniqueness.
+ * English location content packs, unique intros (≥70 words) + FAQs for hybrid pSEO uniqueness.
  */
 export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
   'new-york-ny': {
     slug: 'new-york-ny',
     intro:
-      'New York City is the most competitive local search market on the planet. Law firms in Midtown, medical practices in Brooklyn, restaurants in the Village, and startups across Manhattan all fight for the same first-page real estate—and a pretty website alone will not win here. You need technical SEO, Core Web Vitals that hold up under mobile traffic, borough-aware landing pages, and content that matches exactly what New Yorkers type into Google and ask AI assistants. We reverse-engineer ranking signals from Search Console and competitor SERPs, then build websites and local SEO programs that target Manhattan, Brooklyn, Queens, the Bronx, and Staten Island with distinct buyer intent. Pricing is quoted in USD with US local SEO best practices baked in from day one.',
+      'New York City is the most competitive local search market on the planet. Law firms in Midtown, medical practices in Brooklyn, restaurants in the Village, and startups across Manhattan all fight for the same first-page real estate - and a pretty website alone will not win here. You need technical SEO, Core Web Vitals that hold up under mobile traffic, borough-aware landing pages, and content that matches exactly what New Yorkers type into Google and ask AI assistants. We reverse-engineer ranking signals from Search Console and competitor SERPs, then build websites and local SEO programs that target Manhattan, Brooklyn, Queens, the Bronx, and Staten Island with distinct buyer intent. Pricing is quoted in USD with US local SEO best practices baked in from day one.',
     nearbySlugs: ['philadelphia-pa', 'boston-ma', 'washington-dc'],
     faqs: [
       {
         question: 'How competitive is SEO in New York City?',
         answer:
-          'Extremely competitive. National brands and well-funded local players already occupy most map-pack and organic spots for commercial keywords. Winning requires technical excellence, strong Google Business Profile signals, borough-level content, and consistent review velocity—not generic citywide pages.',
+          'Extremely competitive. National brands and well-funded local players already occupy most map-pack and organic spots for commercial keywords. Winning requires technical excellence, strong Google Business Profile signals, borough-level content, and consistent review velocity - not generic citywide pages.',
       },
       {
         question: 'Do you build websites for specific NYC boroughs?',
         answer:
-          'Yes. We structure service and location pages around borough and neighborhood intent—Manhattan vs Brooklyn vs Queens—so you rank for the searches that actually convert, not just broad “New York” terms that attract the wrong traffic.',
+          'Yes. We structure service and location pages around borough and neighborhood intent - Manhattan vs Brooklyn vs Queens - so you rank for the searches that actually convert, not just broad “New York” terms that attract the wrong traffic.',
       },
       {
         question: 'How long does it take to rank for local SEO in NYC?',
@@ -28,7 +28,7 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
     ],
     serviceDepth: {
       'website-creation':
-        'For website creation in New York we ship conversion-first sites with clear value propositions, borough or service-area pages where they earn rankings, schema, and Core Web Vitals from launch. The goal is to rank for commercial queries like website design New York and your industry long-tails—not only your brand. Packages start with transparent USD pricing and a free quote.',
+        'For website creation in New York we ship conversion-first sites with clear value propositions, borough or service-area pages where they earn rankings, schema, and Core Web Vitals from launch. The goal is to rank for commercial queries like website design New York and your industry long-tails - not only your brand. Packages start with transparent USD pricing and a free quote.',
       'local-seo':
         'Local SEO in New York is decided in the map pack and on your Google Business Profile: accurate NAP, categories, photos, reviews, and service-area pages. We combine on-page SEO, GBP optimization, and citation consistency so you appear for near-me and borough-specific commercial searches. Monthly programs are scoped to competitive niches with clear call and direction tracking.',
     },
@@ -36,7 +36,7 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
   'los-angeles-ca': {
     slug: 'los-angeles-ca',
     intro:
-      'Los Angeles is a sprawling, neighborhood-driven market where near-me searches decide who gets the phone call. From Santa Monica and Venice to Downtown, Hollywood, Pasadena, and the Valley, buyers rarely search “Los Angeles” alone—they search by neighborhood, service, and urgency. We build fast, mobile-first websites and local SEO systems that put you in the Google map pack for the pockets of the metro that actually matter to your pipeline. Technical foundations, Google Business Profile strategy, and location-aware content work together so you win organic and AI-assisted discovery across LA County. Pricing is quoted in USD with US local SEO practices.',
+      'Los Angeles is a sprawling, neighborhood-driven market where near-me searches decide who gets the phone call. From Santa Monica and Venice to Downtown, Hollywood, Pasadena, and the Valley, buyers rarely search “Los Angeles” alone - they search by neighborhood, service, and urgency. We build fast, mobile-first websites and local SEO systems that put you in the Google map pack for the pockets of the metro that actually matter to your pipeline. Technical foundations, Google Business Profile strategy, and location-aware content work together so you win organic and AI-assisted discovery across LA County. Pricing is quoted in USD with US local SEO practices.',
     nearbySlugs: ['san-diego-ca', 'san-francisco-ca', 'las-vegas-nv'],
     faqs: [
       {
@@ -57,7 +57,7 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
     ],
     serviceDepth: {
       'website-creation':
-        'Los Angeles website projects prioritize mobile speed, clear service CTAs, and neighborhood landing architecture where it supports rankings. We ship schema, clean IA, and conversion paths built for how Angelenos actually book—calls, forms, and map directions—rather than brochure sites that look good but do not rank.',
+        'Los Angeles website projects prioritize mobile speed, clear service CTAs, and neighborhood landing architecture where it supports rankings. We ship schema, clean IA, and conversion paths built for how Angelenos actually book - calls, forms, and map directions - rather than brochure sites that look good but do not rank.',
       'local-seo':
         'LA local SEO focuses on map-pack coverage across the neighborhoods you serve, GBP excellence, citation consistency, and content that captures near-me and neighborhood modifiers. We track pack visibility, calls, and directions by location so spend maps to revenue, not vanity rankings.',
     },
@@ -65,7 +65,7 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
   'chicago-il': {
     slug: 'chicago-il',
     intro:
-      'Chicago businesses compete across dozens of distinct neighborhoods and a massive metro that stretches deep into the suburbs. Buyers in Lincoln Park, Wicker Park, the Loop, and Naperville search differently—and Google rewards sites that reflect those micro-markets. We build location-aware pages, technical SEO foundations, and Google Business Profile programs that help you rank for commercial and near-me queries across the city and suburbs. Whether you are a professional service, restaurant group, or multi-location brand, we reverse-engineer what already ranks in Chicago SERPs and close the gaps with content, speed, and local authority signals. Pricing is quoted in USD.',
+      'Chicago businesses compete across dozens of distinct neighborhoods and a massive metro that stretches deep into the suburbs. Buyers in Lincoln Park, Wicker Park, the Loop, and Naperville search differently - and Google rewards sites that reflect those micro-markets. We build location-aware pages, technical SEO foundations, and Google Business Profile programs that help you rank for commercial and near-me queries across the city and suburbs. Whether you are a professional service, restaurant group, or multi-location brand, we reverse-engineer what already ranks in Chicago SERPs and close the gaps with content, speed, and local authority signals. Pricing is quoted in USD.',
     nearbySlugs: ['minneapolis-mn', 'detroit-mi'],
     faqs: [
       {
@@ -81,14 +81,14 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
       {
         question: 'How do you measure SEO success in Chicago?',
         answer:
-          'We report rankings for priority keywords, map-pack presence, organic traffic, and conversion events—calls, form fills, and direction requests—tied to Chicago and suburb landing pages.',
+          'We report rankings for priority keywords, map-pack presence, organic traffic, and conversion events - calls, form fills, and direction requests - tied to Chicago and suburb landing pages.',
       },
     ],
   },
   'miami-fl': {
     slug: 'miami-fl',
     intro:
-      'Miami is a bilingual, tourism-heavy market where speed and mobile experience decide conversions. Visitors and locals alike research on phones—often in English and Spanish—and increasingly ask AI assistants where to book dinner, clinics, rentals, and professional services. We build fast, English/Spanish-ready websites with local SEO and GEO/AEO so you show up in Google’s map pack and in AI answers that travelers and residents now use to plan. From Brickell and South Beach to Coral Gables and Wynwood, we align technical SEO, content, and Google Business Profile signals with how Miami actually searches. Pricing is quoted in USD.',
+      'Miami is a bilingual, tourism-heavy market where speed and mobile experience decide conversions. Visitors and locals alike research on phones - often in English and Spanish - and increasingly ask AI assistants where to book dinner, clinics, rentals, and professional services. We build fast, English/Spanish-ready websites with local SEO and GEO/AEO so you show up in Google’s map pack and in AI answers that travelers and residents now use to plan. From Brickell and South Beach to Coral Gables and Wynwood, we align technical SEO, content, and Google Business Profile signals with how Miami actually searches. Pricing is quoted in USD.',
     tourism: true,
     nearbySlugs: ['tampa-fl', 'orlando-fl', 'atlanta-ga'],
     faqs: [
@@ -105,7 +105,7 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
       {
         question: 'Can Miami businesses rank for both locals and tourists?',
         answer:
-          'Yes—with separate intent coverage. Local near-me queries and tourist destination queries need different pages, schema, and CTAs. We design that architecture up front.',
+          'Yes - with separate intent coverage. Local near-me queries and tourist destination queries need different pages, schema, and CTAs. We design that architecture up front.',
       },
     ],
     serviceDepth: {
@@ -118,13 +118,13 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
   'san-francisco-ca': {
     slug: 'san-francisco-ca',
     intro:
-      'San Francisco’s market is tech-savvy, research-heavy, and unforgiving of slow or outdated websites. Buyers in SoMa, Mission, Marina, and across the Bay Area compare options carefully before they call—and they expect polished UX, clear proof, and instant mobile performance. We build SEO-ready websites and local strategies that earn trust early, target neighborhood and service intent, and hold up against well-funded competitors. Technical SEO, content authority, and Google Business Profile excellence work together so SF businesses rank in organic results and AI-assisted discovery. Pricing is quoted in USD with Bay Area local SEO practices.',
+      'San Francisco’s market is tech-savvy, research-heavy, and unforgiving of slow or outdated websites. Buyers in SoMa, Mission, Marina, and across the Bay Area compare options carefully before they call - and they expect polished UX, clear proof, and instant mobile performance. We build SEO-ready websites and local strategies that earn trust early, target neighborhood and service intent, and hold up against well-funded competitors. Technical SEO, content authority, and Google Business Profile excellence work together so SF businesses rank in organic results and AI-assisted discovery. Pricing is quoted in USD with Bay Area local SEO practices.',
     nearbySlugs: ['san-diego-ca', 'los-angeles-ca', 'portland-or'],
     faqs: [
       {
         question: 'Is San Francisco SEO more expensive than other cities?',
         answer:
-          'Competitive categories often require more content depth and stronger authority signals, which can mean larger scopes—but we size packages to your niche and service area rather than a one-size city premium.',
+          'Competitive categories often require more content depth and stronger authority signals, which can mean larger scopes - but we size packages to your niche and service area rather than a one-size city premium.',
       },
       {
         question: 'Do you cover the broader Bay Area?',
@@ -134,7 +134,7 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
       {
         question: 'What industries do you work with in SF?',
         answer:
-          'Professional services, SaaS-adjacent local businesses, healthcare, hospitality, and specialty retail—any category where search and AI discovery drive qualified leads.',
+          'Professional services, SaaS-adjacent local businesses, healthcare, hospitality, and specialty retail - any category where search and AI discovery drive qualified leads.',
       },
     ],
   },
@@ -164,7 +164,7 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
   'houston-tx': {
     slug: 'houston-tx',
     intro:
-      'Houston is one of the fastest-growing metros in the US, and its businesses are increasingly won or lost online. Energy, healthcare, logistics, restaurants, and professional services compete across a vast geographic footprint—from Downtown and Midtown to The Woodlands, Katy, and Sugar Land. With the right technical SEO and local strategy, a Houston business can dominate its category before slower competitors catch up. We reverse-engineer ranking pages, build fast websites, and run Google Business Profile programs that capture near-me and suburb-level demand. Pricing is quoted in USD.',
+      'Houston is one of the fastest-growing metros in the US, and its businesses are increasingly won or lost online. Energy, healthcare, logistics, restaurants, and professional services compete across a vast geographic footprint - from Downtown and Midtown to The Woodlands, Katy, and Sugar Land. With the right technical SEO and local strategy, a Houston business can dominate its category before slower competitors catch up. We reverse-engineer ranking pages, build fast websites, and run Google Business Profile programs that capture near-me and suburb-level demand. Pricing is quoted in USD.',
     nearbySlugs: ['dallas-tx', 'austin-tx', 'san-antonio-tx'],
     faqs: [
       {
@@ -216,7 +216,7 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
       {
         question: 'Why is trust so important for Boston SEO?',
         answer:
-          'Many top queries sit in YMYL categories—health, legal, finance—where Google and users demand clear expertise signals, credentials, and high-quality content.',
+          'Many top queries sit in YMYL categories - health, legal, finance - where Google and users demand clear expertise signals, credentials, and high-quality content.',
       },
       {
         question: 'Do you cover Cambridge and surrounding cities?',
@@ -226,7 +226,7 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
       {
         question: 'How do you approach content for Boston professional firms?',
         answer:
-          'With depth, clarity, and proof—not fluff. We map intent clusters, answer FAQs, and structure pages for both classic SEO and AI citation.',
+          'With depth, clarity, and proof - not fluff. We map intent clusters, answer FAQs, and structure pages for both classic SEO and AI citation.',
       },
     ],
   },
@@ -244,7 +244,7 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
       {
         question: 'How competitive is Atlanta local SEO?',
         answer:
-          'Competitive in major categories, but many niches still have gaps—especially for businesses that invest in technical quality and consistent reviews.',
+          'Competitive in major categories, but many niches still have gaps - especially for businesses that invest in technical quality and consistent reviews.',
       },
       {
         question: 'Do you help restaurants and hospitality in Atlanta?',
@@ -256,7 +256,7 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
   'dallas-tx': {
     slug: 'dallas-tx',
     intro:
-      'Dallas–Fort Worth is a massive, competitive metro where local SEO and site speed separate leaders from everyone else. Businesses across Downtown Dallas, Uptown, Plano, Frisco, and Fort Worth fight for map-pack visibility while customers bounce from slow or confusing sites. We reverse-engineer what ranks today and build the technical and content foundation to get you there—service pages, suburb coverage where it matters, Google Business Profile excellence, and conversion-focused design. Whether you are expanding DFW coverage or dominating one niche, we make search a growth channel. Pricing is quoted in USD.',
+      'Dallas–Fort Worth is a massive, competitive metro where local SEO and site speed separate leaders from everyone else. Businesses across Downtown Dallas, Uptown, Plano, Frisco, and Fort Worth fight for map-pack visibility while customers bounce from slow or confusing sites. We reverse-engineer what ranks today and build the technical and content foundation to get you there - service pages, suburb coverage where it matters, Google Business Profile excellence, and conversion-focused design. Whether you are expanding DFW coverage or dominating one niche, we make search a growth channel. Pricing is quoted in USD.',
     nearbySlugs: ['houston-tx', 'austin-tx', 'san-antonio-tx'],
     faqs: [
       {
@@ -272,7 +272,7 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
       {
         question: 'Can you support multi-location DFW brands?',
         answer:
-          'Yes—with templates that stay unique, consistent NAP, and reporting broken out by location.',
+          'Yes - with templates that stay unique, consistent NAP, and reporting broken out by location.',
       },
     ],
   },
@@ -285,7 +285,7 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
       {
         question: 'Does Denver SEO need to cover surrounding cities?',
         answer:
-          'Often yes—Aurora, Lakewood, and other Front Range cities generate high-intent searches. We expand only into areas you can serve well.',
+          'Often yes - Aurora, Lakewood, and other Front Range cities generate high-intent searches. We expand only into areas you can serve well.',
       },
       {
         question: 'How important is mobile speed in Denver?',
@@ -295,14 +295,14 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
       {
         question: 'What verticals perform well with local SEO in Denver?',
         answer:
-          'Home services, healthcare, professional services, hospitality, and specialty retail—any category with strong near-me demand.',
+          'Home services, healthcare, professional services, hospitality, and specialty retail - any category with strong near-me demand.',
       },
     ],
   },
   'philadelphia-pa': {
     slug: 'philadelphia-pa',
     intro:
-      'Philadelphia is a dense, neighborhood-driven market where local relevance and authority win. From Center City and Fishtown to South Philly, University City, and the Main Line, buyers search with neighborhood modifiers and expect businesses to feel local—not generic Mid-Atlantic. We build location pages, earn authoritative relevance through content and citations, and structure sites so Philly businesses rank for competitive commercial and near-me searches. Technical SEO plus Google Business Profile discipline keep you visible as competitors spend more on ads. Pricing is quoted in USD.',
+      'Philadelphia is a dense, neighborhood-driven market where local relevance and authority win. From Center City and Fishtown to South Philly, University City, and the Main Line, buyers search with neighborhood modifiers and expect businesses to feel local - not generic Mid-Atlantic. We build location pages, earn authoritative relevance through content and citations, and structure sites so Philly businesses rank for competitive commercial and near-me searches. Technical SEO plus Google Business Profile discipline keep you visible as competitors spend more on ads. Pricing is quoted in USD.',
     nearbySlugs: ['new-york-ny', 'washington-dc', 'boston-ma'],
     faqs: [
       {
@@ -313,7 +313,7 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
       {
         question: 'Do you help with Google reviews strategy?',
         answer:
-          'Yes. Ethical review velocity and response workflows are part of local SEO—especially in restaurant, medical, and home-service niches.',
+          'Yes. Ethical review velocity and response workflows are part of local SEO - especially in restaurant, medical, and home-service niches.',
       },
       {
         question: 'Can suburban Main Line businesses benefit too?',
@@ -325,7 +325,7 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
   'washington-dc': {
     slug: 'washington-dc',
     intro:
-      'Washington, DC combines government, professional services, associations, and a competitive hospitality scene—all fighting for search visibility across the District and nearby Virginia and Maryland. Buyers research carefully, compare credentials, and often search with DC, Arlington, Bethesda, or Alexandria modifiers. We build authority-driven websites and local SEO programs that respect YMYL expectations, strengthen Google Business Profile signals, and target the metro corridors you actually serve. Speed, clarity, and trust signals matter as much as keywords in this market. Pricing is quoted in USD.',
+      'Washington, DC combines government, professional services, associations, and a competitive hospitality scene - all fighting for search visibility across the District and nearby Virginia and Maryland. Buyers research carefully, compare credentials, and often search with DC, Arlington, Bethesda, or Alexandria modifiers. We build authority-driven websites and local SEO programs that respect YMYL expectations, strengthen Google Business Profile signals, and target the metro corridors you actually serve. Speed, clarity, and trust signals matter as much as keywords in this market. Pricing is quoted in USD.',
     nearbySlugs: ['philadelphia-pa', 'new-york-ny', 'boston-ma'],
     faqs: [
       {
@@ -336,12 +336,12 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
       {
         question: 'How do you handle highly regulated niches in DC?',
         answer:
-          'With accurate, expertise-forward content, clear disclosures where needed, and technical SEO that supports trust—never aggressive claims.',
+          'With accurate, expertise-forward content, clear disclosures where needed, and technical SEO that supports trust - never aggressive claims.',
       },
       {
         question: 'Is map pack important for DC professional services?',
         answer:
-          'For many categories yes—especially when users want nearby consultations. For national association or policy brands, organic authority pages may matter more.',
+          'For many categories yes - especially when users want nearby consultations. For national association or policy brands, organic authority pages may matter more.',
       },
     ],
   },
@@ -364,14 +364,14 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
       {
         question: 'What is a quick win for Phoenix local SEO?',
         answer:
-          'Completing and actively managing GBP—categories, services, photos, posts, and reviews—often moves map-pack visibility faster than new blog posts alone.',
+          'Completing and actively managing GBP - categories, services, photos, posts, and reviews - often moves map-pack visibility faster than new blog posts alone.',
       },
     ],
   },
   'san-diego-ca': {
     slug: 'san-diego-ca',
     intro:
-      'San Diego blends strong local demand with a competitive services and hospitality market. From Gaslamp and North Park to La Jolla, Pacific Beach, Hillcrest, and Little Italy, neighborhood identity drives how people search and book. We build location pages, Google Business Profile strategy, and fast websites so your business wins the map pack and organic results across the county. Tourism and resident intent often overlap—so architecture, language, and CTAs need to serve both without diluting relevance. Pricing is quoted in USD.',
+      'San Diego blends strong local demand with a competitive services and hospitality market. From Gaslamp and North Park to La Jolla, Pacific Beach, Hillcrest, and Little Italy, neighborhood identity drives how people search and book. We build location pages, Google Business Profile strategy, and fast websites so your business wins the map pack and organic results across the county. Tourism and resident intent often overlap - so architecture, language, and CTAs need to serve both without diluting relevance. Pricing is quoted in USD.',
     tourism: true,
     nearbySlugs: ['los-angeles-ca', 'phoenix-az', 'las-vegas-nv'],
     faqs: [
@@ -383,7 +383,7 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
       {
         question: 'Which neighborhoods matter most for SEO?',
         answer:
-          'The ones you can serve profitably and where search volume exists—often coastal and central neighborhoods first. We validate with keyword and map data.',
+          'The ones you can serve profitably and where search volume exists - often coastal and central neighborhoods first. We validate with keyword and map data.',
       },
       {
         question: 'Do you handle website redesigns for San Diego businesses?',
@@ -395,7 +395,7 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
   'portland-or': {
     slug: 'portland-or',
     intro:
-      'Portland is a design-conscious, mobile-first market where a slow or dated website costs you customers fast. Local buyers expect polished UX, clear values messaging, and fast performance—whether they are hiring a contractor in Alberta, booking a clinic downtown, or comparing restaurants across the east side. We build SEO-ready sites and local strategy that rank across the metro, and we handle website redesigns with safe SEO migration so you keep the rankings you already have. Technical quality and authentic local content outperform generic templates here. Pricing is quoted in USD.',
+      'Portland is a design-conscious, mobile-first market where a slow or dated website costs you customers fast. Local buyers expect polished UX, clear values messaging, and fast performance - whether they are hiring a contractor in Alberta, booking a clinic downtown, or comparing restaurants across the east side. We build SEO-ready sites and local strategy that rank across the metro, and we handle website redesigns with safe SEO migration so you keep the rankings you already have. Technical quality and authentic local content outperform generic templates here. Pricing is quoted in USD.',
     nearbySlugs: ['seattle-wa', 'san-francisco-ca', 'denver-co'],
     faqs: [
       {
@@ -418,7 +418,7 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
   'tampa-fl': {
     slug: 'tampa-fl',
     intro:
-      'Tampa Bay is a competitive, high-growth market where speed and mobile experience drive conversions. Businesses across Tampa, St. Petersburg, Clearwater, and surrounding suburbs compete for map-pack and organic visibility in healthcare, home services, hospitality, and professional niches. We build fast, SEO-ready websites and local strategy—including redesigns that keep your existing rankings—so you win across the metro. Technical SEO, Google Business Profile optimization, and intent-matched content turn search demand into booked work. Pricing is quoted in USD.',
+      'Tampa Bay is a competitive, high-growth market where speed and mobile experience drive conversions. Businesses across Tampa, St. Petersburg, Clearwater, and surrounding suburbs compete for map-pack and organic visibility in healthcare, home services, hospitality, and professional niches. We build fast, SEO-ready websites and local strategy - including redesigns that keep your existing rankings - so you win across the metro. Technical SEO, Google Business Profile optimization, and intent-matched content turn search demand into booked work. Pricing is quoted in USD.',
     tourism: true,
     nearbySlugs: ['orlando-fl', 'miami-fl', 'atlanta-ga'],
     faqs: [
@@ -442,7 +442,7 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
   'nashville-tn': {
     slug: 'nashville-tn',
     intro:
-      'Nashville’s growth in hospitality, healthcare, music-adjacent business, and professional services has made local search more competitive every year. Visitors and locals both research on mobile—whether booking a clinic in Midtown, a contractor in East Nashville, or a hospitality brand near downtown. We build fast websites and local SEO systems that capture neighborhood and metro intent, strengthen Google Business Profile signals, and convert traffic with clear CTAs. Authority content and technical foundations help Nashville brands stand out beyond paid ads. Pricing is quoted in USD.',
+      'Nashville’s growth in hospitality, healthcare, music-adjacent business, and professional services has made local search more competitive every year. Visitors and locals both research on mobile - whether booking a clinic in Midtown, a contractor in East Nashville, or a hospitality brand near downtown. We build fast websites and local SEO systems that capture neighborhood and metro intent, strengthen Google Business Profile signals, and convert traffic with clear CTAs. Authority content and technical foundations help Nashville brands stand out beyond paid ads. Pricing is quoted in USD.',
     tourism: true,
     nearbySlugs: ['atlanta-ga', 'charlotte-nc', 'orlando-fl'],
     faqs: [
@@ -454,7 +454,7 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
       {
         question: 'How do new Nashville businesses compete?',
         answer:
-          'By winning GBP early, building clean service pages, and earning reviews consistently—often faster than waiting on broad content alone.',
+          'By winning GBP early, building clean service pages, and earning reviews consistently - often faster than waiting on broad content alone.',
       },
       {
         question: 'Do you work with multi-location Tennessee brands?',
@@ -466,7 +466,7 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
   'charlotte-nc': {
     slug: 'charlotte-nc',
     intro:
-      'Charlotte is a fast-growing banking and business hub with expanding demand across Uptown, South End, NoDa, and the surrounding suburbs. Companies competing for local customers need more than a brochure site—they need technical SEO, suburb-aware pages where relevant, and a Google Business Profile that wins the map pack. We build SEO-ready websites and local programs that match how Charlotte searches, from professional services to home services and hospitality. Measurable growth beats vanity traffic: we track rankings, calls, and conversions. Pricing is quoted in USD.',
+      'Charlotte is a fast-growing banking and business hub with expanding demand across Uptown, South End, NoDa, and the surrounding suburbs. Companies competing for local customers need more than a brochure site - they need technical SEO, suburb-aware pages where relevant, and a Google Business Profile that wins the map pack. We build SEO-ready websites and local programs that match how Charlotte searches, from professional services to home services and hospitality. Measurable growth beats vanity traffic: we track rankings, calls, and conversions. Pricing is quoted in USD.',
     nearbySlugs: ['atlanta-ga', 'nashville-tn', 'washington-dc'],
     faqs: [
       {
@@ -489,7 +489,7 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
   'las-vegas-nv': {
     slug: 'las-vegas-nv',
     intro:
-      'Las Vegas is a tourism powerhouse with a serious local economy underneath the Strip. Visitors search for experiences, dining, and services in real time, while residents look for healthcare, home services, and professional help across Summerlin, Henderson-adjacent corridors, and the valley. We build fast, conversion-focused websites and local SEO that capture both visitor and resident intent without confusing Google—or your funnel. Speed, mobile UX, Google Business Profile excellence, and clear service architecture are the foundation. Pricing is quoted in USD.',
+      'Las Vegas is a tourism powerhouse with a serious local economy underneath the Strip. Visitors search for experiences, dining, and services in real time, while residents look for healthcare, home services, and professional help across Summerlin, Henderson-adjacent corridors, and the valley. We build fast, conversion-focused websites and local SEO that capture both visitor and resident intent without confusing Google - or your funnel. Speed, mobile UX, Google Business Profile excellence, and clear service architecture are the foundation. Pricing is quoted in USD.',
     tourism: true,
     nearbySlugs: ['los-angeles-ca', 'phoenix-az', 'san-diego-ca'],
     faqs: [
@@ -513,13 +513,13 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
   'detroit-mi': {
     slug: 'detroit-mi',
     intro:
-      'Detroit’s comeback story includes a growing digital competition curve. Businesses across Downtown, Midtown, Corktown, and the wider metro are investing in websites and local SEO—yet many categories still have room for a well-executed challenger to win. We build fast, technically sound sites and local programs that capture near-me demand, strengthen Google Business Profile signals, and convert mobile traffic into calls. Whether you serve the city core or broader metro suburbs, we align architecture with real service areas and measurable outcomes. Pricing is quoted in USD.',
+      'Detroit’s comeback story includes a growing digital competition curve. Businesses across Downtown, Midtown, Corktown, and the wider metro are investing in websites and local SEO - yet many categories still have room for a well-executed challenger to win. We build fast, technically sound sites and local programs that capture near-me demand, strengthen Google Business Profile signals, and convert mobile traffic into calls. Whether you serve the city core or broader metro suburbs, we align architecture with real service areas and measurable outcomes. Pricing is quoted in USD.',
     nearbySlugs: ['chicago-il', 'minneapolis-mn'],
     faqs: [
       {
         question: 'Is Detroit SEO less competitive than coastal cities?',
         answer:
-          'In many niches, yes—which is an opportunity. Early movers who invest in technical quality and reviews can own categories before saturation rises.',
+          'In many niches, yes - which is an opportunity. Early movers who invest in technical quality and reviews can own categories before saturation rises.',
       },
       {
         question: 'Should we target Metro Detroit suburbs?',
@@ -559,7 +559,7 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
   'orlando-fl': {
     slug: 'orlando-fl',
     intro:
-      'Orlando is defined by tourism at massive scale—and by a growing local economy that serves residents year-round. Theme-park visitors, conference travelers, and locals all search differently, which means generic city pages rarely convert well. We build fast websites and local SEO programs that separate visitor booking intent from resident near-me demand, strengthen Google Business Profiles, and capture suburb and corridor opportunities around the metro. Technical performance and clear CTAs matter when users decide in seconds on a phone. Pricing is quoted in USD.',
+      'Orlando is defined by tourism at massive scale - and by a growing local economy that serves residents year-round. Theme-park visitors, conference travelers, and locals all search differently, which means generic city pages rarely convert well. We build fast websites and local SEO programs that separate visitor booking intent from resident near-me demand, strengthen Google Business Profiles, and capture suburb and corridor opportunities around the metro. Technical performance and clear CTAs matter when users decide in seconds on a phone. Pricing is quoted in USD.',
     tourism: true,
     nearbySlugs: ['tampa-fl', 'miami-fl', 'atlanta-ga'],
     faqs: [
@@ -590,7 +590,7 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
       {
         question: 'Is San Antonio less competitive than Dallas or Houston SEO?',
         answer:
-          'In many niches, yes—creating a window to win map pack and organic positions with consistent execution.',
+          'In many niches, yes - creating a window to win map pack and organic positions with consistent execution.',
       },
       {
         question: 'Should tourism businesses in San Antonio invest in SEO?',
@@ -607,7 +607,7 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
   'london-uk': {
     slug: 'london-uk',
     intro:
-      'London is one of the most competitive search markets in Europe. Agencies, clinics, restaurants, professional services, and e-commerce brands fight for visibility across boroughs—from Westminster and Shoreditch to Kensington, Canary Wharf, and beyond. We build fast, SEO-ready websites with local strategy and GEO/AEO so you rank across boroughs and appear in the AI answers customers increasingly rely on. Technical excellence, Google Business Profile discipline, and borough-aware content are essential when national competitors already occupy the easy wins. Pricing is quoted in GBP with UK local SEO and Google Business Profile optimization.',
+      'London is one of the most competitive search markets in Europe. Agencies, clinics, restaurants, professional services, and e-commerce brands fight for visibility across boroughs - from Westminster and Shoreditch to Kensington, Canary Wharf, and beyond. We build fast, SEO-ready websites with local strategy and GEO/AEO so you rank across boroughs and appear in the AI answers customers increasingly rely on. Technical excellence, Google Business Profile discipline, and borough-aware content are essential when national competitors already occupy the easy wins. Pricing is quoted in GBP with UK local SEO and Google Business Profile optimization.',
     nearbySlugs: ['manchester-uk', 'birmingham-uk', 'edinburgh-uk'],
     faqs: [
       {
@@ -628,7 +628,7 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
     ],
     serviceDepth: {
       'website-creation':
-        'London website builds prioritize Core Web Vitals, clear conversion paths, and borough or service-area architecture where it supports rankings. We ship schema, accessible UX, and commercial page templates designed for UK search behaviour—not US clones with a currency swap.',
+        'London website builds prioritize Core Web Vitals, clear conversion paths, and borough or service-area architecture where it supports rankings. We ship schema, accessible UX, and commercial page templates designed for UK search behaviour - not US clones with a currency swap.',
       'local-seo':
         'London local SEO centres on Google Business Profile excellence, citation consistency, borough landing pages, and review velocity. We track map-pack visibility and enquiry volume so you compete where your customers actually search.',
     },
@@ -659,7 +659,7 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
   'birmingham-uk': {
     slug: 'birmingham-uk',
     intro:
-      'Birmingham is the UK’s second city with a broad commercial base—professional services, retail, manufacturing-adjacent firms, and hospitality all competing online. Search demand spans the city centre and surrounding West Midlands towns, where near-me queries decide many purchasing decisions. We build fast websites and local SEO programs that capture that regional footprint, improve Google Business Profile performance, and create content that answers commercial intent clearly. Measurable growth in rankings, traffic, and enquiries is the goal—not vanity traffic. Pricing is quoted in GBP.',
+      'Birmingham is the UK’s second city with a broad commercial base - professional services, retail, manufacturing-adjacent firms, and hospitality all competing online. Search demand spans the city centre and surrounding West Midlands towns, where near-me queries decide many purchasing decisions. We build fast websites and local SEO programs that capture that regional footprint, improve Google Business Profile performance, and create content that answers commercial intent clearly. Measurable growth in rankings, traffic, and enquiries is the goal - not vanity traffic. Pricing is quoted in GBP.',
     nearbySlugs: ['manchester-uk', 'london-uk', 'edinburgh-uk'],
     faqs: [
       {
@@ -682,7 +682,7 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
   'edinburgh-uk': {
     slug: 'edinburgh-uk',
     intro:
-      'Edinburgh blends a strong professional economy with world-class tourism—creating dual search intent that generic websites rarely handle well. Locals look for clinics, firms, and services near them; visitors search for hotels, experiences, and hospitality with booking urgency. We build SEO-ready websites and local strategies that separate resident and visitor journeys, strengthen Google Business Profiles, and rank for the queries that drive revenue. Technical performance and clear Scottish/UK localisation matter for trust and conversion. Pricing is quoted in GBP.',
+      'Edinburgh blends a strong professional economy with world-class tourism - creating dual search intent that generic websites rarely handle well. Locals look for clinics, firms, and services near them; visitors search for hotels, experiences, and hospitality with booking urgency. We build SEO-ready websites and local strategies that separate resident and visitor journeys, strengthen Google Business Profiles, and rank for the queries that drive revenue. Technical performance and clear Scottish/UK localisation matter for trust and conversion. Pricing is quoted in GBP.',
     tourism: true,
     nearbySlugs: ['manchester-uk', 'london-uk', 'birmingham-uk'],
     faqs: [
@@ -694,7 +694,7 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
       {
         question: 'Do local Edinburgh service businesses need tourism pages?',
         answer:
-          'Usually not. Resident near-me intent needs GBP excellence, reviews, and service pages—not festival content.',
+          'Usually not. Resident near-me intent needs GBP excellence, reviews, and service pages - not festival content.',
       },
       {
         question: 'Is Edinburgh competitive for hospitality SEO?',
@@ -746,14 +746,14 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
       {
         question: 'Do you support tourism and hospitality SEO in Vancouver?',
         answer:
-          'Yes—with booking-focused architecture and content that captures visitor planning queries as well as local demand.',
+          'Yes - with booking-focused architecture and content that captures visitor planning queries as well as local demand.',
       },
     ],
   },
   'sydney-au': {
     slug: 'sydney-au',
     intro:
-      'Sydney businesses compete across a wide, suburb-driven metro where local relevance decides who gets the enquiry. From the CBD and Inner West to the Northern Beaches, Eastern Suburbs, and Parramatta corridor, buyers search with suburb modifiers and expect fast mobile experiences. We build SEO-ready websites and local SEO that rank for the suburbs and services your Sydney customers actually search—backed by Google Business Profile excellence and technical foundations. Clear conversion paths turn rankings into revenue. Pricing is quoted in AUD.',
+      'Sydney businesses compete across a wide, suburb-driven metro where local relevance decides who gets the enquiry. From the CBD and Inner West to the Northern Beaches, Eastern Suburbs, and Parramatta corridor, buyers search with suburb modifiers and expect fast mobile experiences. We build SEO-ready websites and local SEO that rank for the suburbs and services your Sydney customers actually search - backed by Google Business Profile excellence and technical foundations. Clear conversion paths turn rankings into revenue. Pricing is quoted in AUD.',
     nearbySlugs: ['melbourne-au', 'brisbane-au'],
     faqs: [
       {
@@ -783,7 +783,7 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
       {
         question: 'Should Melbourne businesses create suburb landing pages?',
         answer:
-          'When search volume and service capacity support it, yes. Thin duplicates do not help—unique, useful suburb pages do.',
+          'When search volume and service capacity support it, yes. Thin duplicates do not help - unique, useful suburb pages do.',
       },
       {
         question: 'Is Melbourne competitive for hospitality SEO?',
@@ -800,13 +800,13 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
   'brisbane-au': {
     slug: 'brisbane-au',
     intro:
-      'Brisbane businesses compete across a wide, suburb-driven metro with growing demand in professional services, home services, and hospitality. Customers search by suburb and expect mobile-fast experiences—whether they are booking locally or planning a visit. We build SEO-ready websites and local SEO that rank for the suburbs and services Brisbane customers actually search, with Google Business Profile optimisation and technical foundations from day one. Consistent execution still wins categories before competition hardens further. Pricing is quoted in AUD.',
+      'Brisbane businesses compete across a wide, suburb-driven metro with growing demand in professional services, home services, and hospitality. Customers search by suburb and expect mobile-fast experiences - whether they are booking locally or planning a visit. We build SEO-ready websites and local SEO that rank for the suburbs and services Brisbane customers actually search, with Google Business Profile optimisation and technical foundations from day one. Consistent execution still wins categories before competition hardens further. Pricing is quoted in AUD.',
     nearbySlugs: ['sydney-au', 'melbourne-au'],
     faqs: [
       {
         question: 'Is Brisbane SEO less competitive than Sydney or Melbourne?',
         answer:
-          'In many niches, yes—creating a practical window to own map-pack and organic positions with steady work.',
+          'In many niches, yes - creating a practical window to own map-pack and organic positions with steady work.',
       },
       {
         question: 'Do you cover Gold Coast as well?',
@@ -835,7 +835,7 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
       {
         question: 'Do you support multilingual Paris websites?',
         answer:
-          'Yes. We plan language architecture based on audience mix—French-first with English or other languages where demand justifies it.',
+          'Yes. We plan language architecture based on audience mix - French-first with English or other languages where demand justifies it.',
       },
       {
         question: 'Is tourism SEO important for Paris businesses?',
@@ -863,7 +863,7 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
       {
         question: 'Do you help Berlin hospitality and local services?',
         answer:
-          'Yes—with map-pack strategy, booking or lead CTAs, and technical SEO that holds up on mobile.',
+          'Yes - with map-pack strategy, booking or lead CTAs, and technical SEO that holds up on mobile.',
       },
     ],
   },
@@ -882,7 +882,7 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
       {
         question: 'Do local Roman businesses need English pages?',
         answer:
-          'Sometimes. If your customers include expats or tourists, selective English coverage helps—without diluting Italian local relevance.',
+          'Sometimes. If your customers include expats or tourists, selective English coverage helps - without diluting Italian local relevance.',
       },
       {
         question: 'Can SEO reduce OTA dependence for Rome hospitality?',
@@ -911,7 +911,7 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
       {
         question: 'How competitive is Dubai SEO?',
         answer:
-          'High in premium niches. Winning requires strong technical SEO, content depth, and consistent local signals—not generic templates.',
+          'High in premium niches. Winning requires strong technical SEO, content depth, and consistent local signals - not generic templates.',
       },
     ],
   },
@@ -935,21 +935,21 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
       {
         question: 'Can local service businesses win SEO in such a tourist city?',
         answer:
-          'Yes—by focusing on resident near-me intent, GBP excellence, and neighbourhood relevance instead of competing only on tourist keywords.',
+          'Yes - by focusing on resident near-me intent, GBP excellence, and neighbourhood relevance instead of competing only on tourist keywords.',
       },
     ],
   },
   'athens-gr': {
     slug: 'athens-gr',
     intro:
-      'Athens is Greece’s most competitive digital market: law firms, clinics, e-shops, hospitality, and B2B companies all fight for the same first-page spots. A beautiful website is not enough—you need technical SEO, Core Web Vitals that hold up on mobile, and content that answers exactly what Athenians search for across Syntagma, Kolonaki, Glyfada, Piraeus, and Kifisia. We work from real Search Console data and build pages that target specific districts and buyer intent, with transparent EUR pricing and clear paths to a free quote. Local SEO and GEO/AEO keep you visible as customers move between Google and AI assistants.',
+      'Athens is Greece’s most competitive digital market: law firms, clinics, e-shops, hospitality, and B2B companies all fight for the same first-page spots. A beautiful website is not enough - you need technical SEO, Core Web Vitals that hold up on mobile, and content that answers exactly what Athenians search for across Syntagma, Kolonaki, Glyfada, Piraeus, and Kifisia. We work from real Search Console data and build pages that target specific districts and buyer intent, with transparent EUR pricing and clear paths to a free quote. Local SEO and GEO/AEO keep you visible as customers move between Google and AI assistants.',
     nearbySlugs: ['thessaloniki-gr', 'patras-gr', 'santorini-gr'],
     portfolioSlugs: ['athens-rentacar', 'rentacar-piraeus', 'cocktails-in-the-city'],
     faqs: [
       {
         question: 'How much does a website cost in Athens?',
         answer:
-          'Packages typically start from €899 depending on scope. We provide transparent pricing and a free quote after understanding your services and goals.',
+          'Packages typically start from €1.200 depending on scope. We provide transparent pricing and a free quote after understanding your services and goals.',
       },
       {
         question: 'Is local SEO worth it for Athens businesses?',
@@ -964,22 +964,22 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
     ],
     serviceDepth: {
       'website-creation':
-        'For website creation in Athens we build sites with a clear value proposition, district or service-area pages where they earn rankings, Core Web Vitals, and schema from day one. The goal is to rank for commercial queries like website design Athens and your industry long-tails—not only your brand. Packages from €899 with transparent pricing and a free quote.',
+        'For website creation in Athens we build sites with a clear value proposition, district or service-area pages where they earn rankings, Core Web Vitals, and schema from day one. The goal is to rank for commercial queries like website design Athens and your industry long-tails - not only your brand. Packages from €1.200 with transparent pricing and a free quote.',
       'local-seo':
-        'Local SEO in Athens is decided in the map pack and on your Google Business Profile: accurate NAP, categories, photos, reviews, and service pages by area. We combine on-page SEO, GBP optimisation, and citations so you appear for SEO Athens and near-me queries in your niche. Monthly programs from €299.',
+        'Local SEO in Athens is decided in the map pack and on your Google Business Profile: accurate NAP, categories, photos, reviews, and service pages by area. We combine on-page SEO, GBP optimisation, and citations so you appear for SEO Athens and near-me queries in your niche. Monthly programs from €400.',
     },
   },
   'thessaloniki-gr': {
     slug: 'thessaloniki-gr',
     intro:
-      'Thessaloniki combines a strong local economy with lower advertising costs than Athens—an ideal setup for organic growth. Shops, tutoring centres, clinics, e-shops, and service companies win customers from searches like website design Thessaloniki and SEO Thessaloniki when their technical foundation and local signals are solid. We design websites and local SEO strategy that put you ahead of city competitors, with clear EUR pricing and CTAs for a free quote. Neighbourhood relevance across Ladadika, Ano Poli, Kalamaria, and Toumba helps you capture near-me demand that generic citywide pages miss.',
+      'Thessaloniki combines a strong local economy with lower advertising costs than Athens - an ideal setup for organic growth. Shops, tutoring centres, clinics, e-shops, and service companies win customers from searches like website design Thessaloniki and SEO Thessaloniki when their technical foundation and local signals are solid. We design websites and local SEO strategy that put you ahead of city competitors, with clear EUR pricing and CTAs for a free quote. Neighbourhood relevance across Ladadika, Ano Poli, Kalamaria, and Toumba helps you capture near-me demand that generic citywide pages miss.',
     nearbySlugs: ['athens-gr', 'patras-gr'],
     portfolioSlugs: ['politidis-fitness', 'fitness-hood'],
     faqs: [
       {
         question: 'Is SEO easier in Thessaloniki than Athens?',
         answer:
-          'Often yes in comparable niches. Lower competition means a well-built site and consistent GBP work can rank faster—if you execute before rivals catch up.',
+          'Often yes in comparable niches. Lower competition means a well-built site and consistent GBP work can rank faster - if you execute before rivals catch up.',
       },
       {
         question: 'What should Thessaloniki businesses prioritise?',
@@ -994,15 +994,15 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
     ],
     serviceDepth: {
       'website-creation':
-        'In Thessaloniki, website competition is lower than Athens, so a well-structured presence can win faster. We deliver corporate sites and e-shops with SEO foundations, fast mobile performance, and clear CTAs for calls and appointments. Ideal if you want website design Thessaloniki with measurable results—packages from €899.',
+        'In Thessaloniki, website competition is lower than Athens, so a well-structured presence can win faster. We deliver corporate sites and e-shops with SEO foundations, fast mobile performance, and clear CTAs for calls and appointments. Ideal if you want website design Thessaloniki with measurable results - packages from €1.200.',
       'local-seo':
-        'For SEO Thessaloniki we focus on the local pack: GBP optimisation, local keywords, internal linking, and steady reviews. The market rewards consistency—so we measure positions, calls, and directions monthly. Starter programs from €299/month.',
+        'For SEO Thessaloniki we focus on the local pack: GBP optimisation, local keywords, internal linking, and steady reviews. The market rewards consistency - so we measure positions, calls, and directions monthly. Starter programs from €400/month.',
     },
   },
   'heraklion-gr': {
     slug: 'heraklion-gr',
     intro:
-      'Heraklion is Crete’s largest commercial hub with intense tourism and local business activity. Hotels, car rentals, restaurants, and city services need websites that sell direct—without handing margins to OTAs and marketplaces. At the same time, local businesses win from near-me searches that grow every year across the city and surrounding areas. We build bilingual-ready, SEO-focused sites and local programs that capture visitor booking intent and resident demand, with technical speed and Google Business Profile excellence as the foundation. Pricing is quoted in EUR.',
+      'Heraklion is Crete’s largest commercial hub with intense tourism and local business activity. Hotels, car rentals, restaurants, and city services need websites that sell direct - without handing margins to OTAs and marketplaces. At the same time, local businesses win from near-me searches that grow every year across the city and surrounding areas. We build bilingual-ready, SEO-focused sites and local programs that capture visitor booking intent and resident demand, with technical speed and Google Business Profile excellence as the foundation. Pricing is quoted in EUR.',
     tourism: true,
     nearbySlugs: ['crete-gr', 'rethymno-gr', 'chania-gr'],
     portfolioSlugs: ['discover-crete', 'cretanways-rentals', 'way-to-crete'],
@@ -1010,7 +1010,7 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
       {
         question: 'Should Heraklion hospitality sites be bilingual?',
         answer:
-          'Usually yes—Greek and English cover most demand, with additional languages when your guest mix justifies them.',
+          'Usually yes - Greek and English cover most demand, with additional languages when your guest mix justifies them.',
       },
       {
         question: 'Can SEO reduce Booking.com dependence in Heraklion?',
@@ -1027,7 +1027,7 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
   'santorini-gr': {
     slug: 'santorini-gr',
     intro:
-      'Santorini is one of the world’s most competitive tourism destinations—and bookings are won online. Hotels, villas, tour operators, and boat rentals that invest in their own SEO-ready website reduce dependence on Booking and Airbnb and keep commissions in-house. We target Greek and English searches with GEO/AEO so you appear in Google results and in AI assistants travellers now use to plan Oia, Fira, Imerovigli, and Kamari stays. Fast mobile performance, clear booking CTAs, and local authority signals separate direct-booking winners from listing-dependent properties. Pricing is quoted in EUR.',
+      'Santorini is one of the world’s most competitive tourism destinations - and bookings are won online. Hotels, villas, tour operators, and boat rentals that invest in their own SEO-ready website reduce dependence on Booking and Airbnb and keep commissions in-house. We target Greek and English searches with GEO/AEO so you appear in Google results and in AI assistants travellers now use to plan Oia, Fira, Imerovigli, and Kamari stays. Fast mobile performance, clear booking CTAs, and local authority signals separate direct-booking winners from listing-dependent properties. Pricing is quoted in EUR.',
     tourism: true,
     nearbySlugs: ['mykonos-gr', 'paros-gr', 'naxos-gr', 'crete-gr'],
     portfolioSlugs: ['hotels-santorini', 'santorini-daily-tours', 'santo-tours-marinakis'],
@@ -1050,7 +1050,7 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
     ],
     serviceDepth: {
       'website-creation':
-        'Santorini website projects focus on direct bookings: fast mobile UX, bilingual architecture, schema for lodging and tours, and conversion paths that reduce OTA dependence. We design for how travellers compare Oia and Fira options—and make your property the easy choice to book.',
+        'Santorini website projects focus on direct bookings: fast mobile UX, bilingual architecture, schema for lodging and tours, and conversion paths that reduce OTA dependence. We design for how travellers compare Oia and Fira options - and make your property the easy choice to book.',
       'local-seo':
         'Santorini local SEO targets high-intent lodging and experience queries in Greek and English, strengthens GBP where relevant, and builds content that earns visibility in Google and AI trip planning. The goal is qualified direct enquiries and bookings, not vanity traffic.',
     },
@@ -1058,7 +1058,7 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
   'mykonos-gr': {
     slug: 'mykonos-gr',
     intro:
-      'On Mykonos, premium travellers search for villas, hotels, restaurants, and services online—often in English and increasingly through AI search. A fast, multilingual website with a strong SEO strategy brings high-value direct bookings without third-party commissions eating your margin. We build hospitality and service sites that match how guests research Chora, Ornos, Paradise, and Ano Mera, with technical speed, clear CTAs, and local SEO that supports discovery before they hit OTAs. Pricing is quoted in EUR.',
+      'On Mykonos, premium travellers search for villas, hotels, restaurants, and services online - often in English and increasingly through AI search. A fast, multilingual website with a strong SEO strategy brings high-value direct bookings without third-party commissions eating your margin. We build hospitality and service sites that match how guests research Chora, Ornos, Paradise, and Ano Mera, with technical speed, clear CTAs, and local SEO that supports discovery before they hit OTAs. Pricing is quoted in EUR.',
     tourism: true,
     nearbySlugs: ['santorini-gr', 'paros-gr', 'naxos-gr'],
     portfolioSlugs: ['mykonos-luxury', 'discover-cyclades'],
@@ -1076,7 +1076,7 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
       {
         question: 'Do you build villa and hotel sites for Mykonos?',
         answer:
-          'Yes—with booking-focused architecture, multilingual SEO, and performance suited to mobile travellers.',
+          'Yes - with booking-focused architecture, multilingual SEO, and performance suited to mobile travellers.',
       },
     ],
   },
@@ -1091,7 +1091,7 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
       {
         question: 'Is it too late to invest in SEO on Paros?',
         answer:
-          'No—growth means rising competition, but many niches are still winnable with strong execution now.',
+          'No - growth means rising competition, but many niches are still winnable with strong execution now.',
       },
       {
         question: 'Do car rental companies on Paros need SEO?',
@@ -1108,7 +1108,7 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
   'naxos-gr': {
     slug: 'naxos-gr',
     intro:
-      'Naxos attracts families and travellers looking for authentic experiences—and they research on Google and AI assistants before they book. Hotels, rentals, and car hire companies with a well-structured website win reservations before visitors ever reach marketplace listings. We build SEO-ready sites and local strategies that capture high-intent travel queries, strengthen direct booking paths, and keep your brand visible across seasonal peaks. Speed, clarity, and bilingual coverage are the fundamentals. Pricing is quoted in EUR.',
+      'Naxos attracts families and travellers looking for authentic experiences - and they research on Google and AI assistants before they book. Hotels, rentals, and car hire companies with a well-structured website win reservations before visitors ever reach marketplace listings. We build SEO-ready sites and local strategies that capture high-intent travel queries, strengthen direct booking paths, and keep your brand visible across seasonal peaks. Speed, clarity, and bilingual coverage are the fundamentals. Pricing is quoted in EUR.',
     tourism: true,
     nearbySlugs: ['paros-gr', 'mykonos-gr', 'santorini-gr'],
     portfolioSlugs: ['naxos-carrentals', 'naxos-car-rental', 'naxos-auto-rent'],
@@ -1126,14 +1126,14 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
       {
         question: 'Do you work with Naxos car rental brands?',
         answer:
-          'Yes—we have delivered multiple Cyclades rental sites focused on direct bookings and local SEO.',
+          'Yes - we have delivered multiple Cyclades rental sites focused on direct bookings and local SEO.',
       },
     ],
   },
   'crete-gr': {
     slug: 'crete-gr',
     intro:
-      'Crete is Greece’s largest tourism market, with thousands of accommodations and services competing online. The difference between a full season and an empty one is often decided on Google’s first page—and in AI answers travellers trust when planning Heraklion, Chania, Rethymno, and Agios Nikolaos trips. We build websites and SEO programs that drive direct bookings across the island, with bilingual architecture, technical speed, and local authority signals tailored to hospitality and related services. Island-wide strategy plus city-level depth is how Crete brands scale beyond OTAs. Pricing is quoted in EUR.',
+      'Crete is Greece’s largest tourism market, with thousands of accommodations and services competing online. The difference between a full season and an empty one is often decided on Google’s first page - and in AI answers travellers trust when planning Heraklion, Chania, Rethymno, and Agios Nikolaos trips. We build websites and SEO programs that drive direct bookings across the island, with bilingual architecture, technical speed, and local authority signals tailored to hospitality and related services. Island-wide strategy plus city-level depth is how Crete brands scale beyond OTAs. Pricing is quoted in EUR.',
     tourism: true,
     nearbySlugs: ['heraklion-gr', 'chania-gr', 'rethymno-gr', 'santorini-gr'],
     portfolioSlugs: ['discover-crete', 'way-to-crete', 'cretanways-rentals', 'spili-apartments'],
@@ -1151,12 +1151,12 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
       {
         question: 'Do you cover car rentals and tours as well as hotels?',
         answer:
-          'Yes. Crete demand spans lodging, mobility, and experiences—we build SEO systems for each commercial intent.',
+          'Yes. Crete demand spans lodging, mobility, and experiences - we build SEO systems for each commercial intent.',
       },
     ],
     serviceDepth: {
       'website-creation':
-        'Crete website builds prioritise direct bookings across a large geography: fast bilingual sites, clear area navigation, lodging or tour schema, and conversion paths that work on mobile. We design for travellers comparing multiple Cretan bases—and make your offer easy to book without an OTA detour.',
+        'Crete website builds prioritise direct bookings across a large geography: fast bilingual sites, clear area navigation, lodging or tour schema, and conversion paths that work on mobile. We design for travellers comparing multiple Cretan bases - and make your offer easy to book without an OTA detour.',
       'local-seo':
         'Crete local SEO combines island-wide authority with city and resort intent coverage, GBP optimisation where relevant, and content that ranks for Greek and English travel queries. We measure visibility and enquiry quality so SEO supports occupancy, not just traffic charts.',
     },
@@ -1164,7 +1164,7 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
   'rethymno-gr': {
     slug: 'rethymno-gr',
     intro:
-      'Rethymno combines strong tourism traffic with a living local market. Accommodations and restaurants win with bilingual websites and SEO, while local businesses can still dominate city searches thanks to relatively lower competition than larger Cretan hubs. We build fast sites and local programs that capture visitor booking intent and resident near-me demand—supported by Google Business Profile excellence and clear conversion paths. Technical foundations keep you visible through seasonal peaks and quieter months. Pricing is quoted in EUR.',
+      'Rethymno combines strong tourism traffic with a living local market. Accommodations and restaurants win with bilingual websites and SEO, while local businesses can still dominate city searches thanks to relatively lower competition than larger Cretan hubs. We build fast sites and local programs that capture visitor booking intent and resident near-me demand - supported by Google Business Profile excellence and clear conversion paths. Technical foundations keep you visible through seasonal peaks and quieter months. Pricing is quoted in EUR.',
     tourism: true,
     nearbySlugs: ['crete-gr', 'heraklion-gr', 'chania-gr'],
     portfolioSlugs: ['quad-safari-rethymno', 'rethemnos', 'spili-apartments'],
@@ -1177,7 +1177,7 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
       {
         question: 'Do restaurants in Rethymno benefit from SEO?',
         answer:
-          'Yes—especially with GBP optimisation, review strategy, and pages that capture visitor dining intent.',
+          'Yes - especially with GBP optimisation, review strategy, and pages that capture visitor dining intent.',
       },
       {
         question: 'Should Rethymno tourism sites be bilingual?',
@@ -1189,7 +1189,7 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
   'chania-gr': {
     slug: 'chania-gr',
     intro:
-      'Chania is one of Crete’s most loved destinations, and online competition in hospitality grows every year. Hotels, villas, and tourism services with their own SEO-ready website take bookings directly—with better margins than platform-only strategies. We build bilingual sites and local SEO systems that capture high-intent travel searches, strengthen technical performance, and convert mobile visitors into reservations. Whether you serve the Old Town, surrounding resorts, or island-wide travellers using Chania as a base, search should be a growth channel you own. Pricing is quoted in EUR.',
+      'Chania is one of Crete’s most loved destinations, and online competition in hospitality grows every year. Hotels, villas, and tourism services with their own SEO-ready website take bookings directly - with better margins than platform-only strategies. We build bilingual sites and local SEO systems that capture high-intent travel searches, strengthen technical performance, and convert mobile visitors into reservations. Whether you serve the Old Town, surrounding resorts, or island-wide travellers using Chania as a base, search should be a growth channel you own. Pricing is quoted in EUR.',
     tourism: true,
     nearbySlugs: ['crete-gr', 'rethymno-gr', 'heraklion-gr'],
     portfolioSlugs: ['discover-crete', 'way-to-crete', 'eolides-villas'],
@@ -1214,7 +1214,7 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
   'kos-gr': {
     slug: 'kos-gr',
     intro:
-      'Kos lives on tourism, and bookings start with search. Accommodations, car rentals, and activities with a fast bilingual website and local SEO appear where visitors look—on Google and increasingly inside AI chat tools. We build conversion-focused sites and search strategies that reduce OTA dependence while capturing high-intent travel queries before guests arrive. Technical speed, clear CTAs, and consistent local signals are the difference between being discovered and being invisible next to larger competitors. Pricing is quoted in EUR.',
+      'Kos lives on tourism, and bookings start with search. Accommodations, car rentals, and activities with a fast bilingual website and local SEO appear where visitors look - on Google and increasingly inside AI chat tools. We build conversion-focused sites and search strategies that reduce OTA dependence while capturing high-intent travel queries before guests arrive. Technical speed, clear CTAs, and consistent local signals are the difference between being discovered and being invisible next to larger competitors. Pricing is quoted in EUR.',
     tourism: true,
     nearbySlugs: ['rhodes-gr', 'crete-gr', 'santorini-gr'],
     portfolioSlugs: ['discover-cyclades', 'cretanways-rentals'],
@@ -1232,7 +1232,7 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
       {
         question: 'Do car rentals on Kos need local SEO?',
         answer:
-          'Definitely. Travellers compare mobility options before landing—organic visibility drives direct reservations.',
+          'Definitely. Travellers compare mobility options before landing - organic visibility drives direct reservations.',
       },
     ],
   },
@@ -1295,7 +1295,7 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
       {
         question: 'Is SEO less competitive in Patras than Athens?',
         answer:
-          'Generally yes in comparable niches—making it a strong market for early movers who invest in technical quality and reviews.',
+          'Generally yes in comparable niches - making it a strong market for early movers who invest in technical quality and reviews.',
       },
       {
         question: 'What industries do you serve in Patras?',

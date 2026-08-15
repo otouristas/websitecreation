@@ -1,5 +1,5 @@
 /**
- * Location content packs — unique copy required before a service×location
+ * Location content packs, unique copy required before a service×location
  * URL may be indexed or listed in sitemaps (hybrid pSEO uniqueness gate).
  */
 

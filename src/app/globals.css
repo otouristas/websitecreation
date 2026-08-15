@@ -1,536 +1,541 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
 
 /* ==========================================================================
-   🎨 AnotherSEOGuru Agency - Complete Design System
-   All colors use HSL format for theme flexibility
+   AnotherSEOGuru design system
+
+   Ported from the Growth OS studio design and re-skinned in the brand:
+   blue leads (buttons, links, active states), green carries the accent
+   (eyebrows, ticks, numerals, blooms, product-frame halos). The bloom glow is
+   a blue -> green radial, i.e. the brand gradient rendered as light.
+
+   Colours are oklch so `color-mix(in oklab, ...)` works in the glow and halo
+   recipes. Light is the default theme; `.dark` is the toggle.
+
+   To add a semantic colour:
+   1. add the variable to :root (light) and .dark (dark)
+   2. register it in @theme inline as --color-<name>: var(--<name>)
    ========================================================================== */
 
+@theme inline {
+  --font-display: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  --color-brand: var(--brand);
+  --color-brand-foreground: var(--brand-foreground);
+  --color-brand-deep: var(--brand-deep);
+  --color-signature: var(--signature);
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
+  --color-hairline: var(--hairline);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-glow: var(--primary-glow);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+}
+
+/* --------------------------------------------------------------------------
+   LIGHT - the default theme
+   -------------------------------------------------------------------------- */
 :root {
-  /* Background & Surface */
-  --background: 210 20% 98%;
-  --foreground: 222 47% 11%;
+  --radius: 0.625rem;
+  color-scheme: light;
 
-  --card: 0 0% 100%;
-  --card-foreground: 222 47% 11%;
+  --background: oklch(0.988 0.004 250);
+  --foreground: oklch(0.21 0.03 259);
 
-  --popover: 0 0% 100%;
-  --popover-foreground: 222 47% 11%;
+  --surface: oklch(1 0 0);
+  --surface-raised: oklch(0.972 0.006 250);
+  --hairline: oklch(0.21 0.03 259 / 11%);
 
-  /* Brand Colors */
-  --primary: 217 91% 60%;
-  --primary-foreground: 0 0% 100%;
-  --primary-glow: 217 91% 70%;
+  /* Brand blue - primary action colour */
+  --primary: oklch(0.62 0.19 259);
+  --primary-foreground: oklch(0.99 0.003 250);
+  --primary-glow: oklch(0.7 0.16 259);
 
-  --secondary: 142 76% 36%;
-  --secondary-foreground: 0 0% 100%;
+  /* Brand green - accent: eyebrows, ticks, numerals, glow */
+  --brand: oklch(0.6 0.15 150);
+  --brand-foreground: oklch(0.99 0.003 150);
+  --brand-deep: oklch(0.52 0.13 150);
 
-  --accent: 142 69% 58%;
-  --accent-foreground: 0 0% 100%;
+  /* Per-page signature hue.
+     Bespoke service and industry pages give each page its own accent by
+     overriding ONLY the hue angle - lightness and chroma stay on the brand
+     values below, and the .dark block re-tunes them once for every page. That
+     is why a page can set `--signature-h` inline and still be correct in both
+     themes: it can shift hue, it cannot shift the brand's tonal character.
+     Keep hues in the 150-290 band (green -> teal -> blue -> indigo). */
+  --signature-h: 259;
+  --signature-l: 0.62;
+  --signature-c: 0.17;
+  --signature: oklch(var(--signature-l) var(--signature-c) var(--signature-h));
 
-  /* Utility Colors */
-  --muted: 210 20% 96%;
-  --muted-foreground: 215 20% 38%;
+  --secondary: oklch(0.94 0.012 250);
+  --secondary-foreground: oklch(0.26 0.03 259);
+  --muted: oklch(0.955 0.008 250);
+  --muted-foreground: oklch(0.5 0.025 258);
+  --accent: oklch(0.94 0.014 250);
+  --accent-foreground: oklch(0.26 0.03 259);
 
-  --success: 142 76% 36%;
-  --success-foreground: 0 0% 100%;
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.21 0.03 259);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.21 0.03 259);
 
-  --warning: 38 92% 50%;
-  --warning-foreground: 0 0% 100%;
+  --success: oklch(0.6 0.15 150);
+  --warning: oklch(0.75 0.15 75);
+  --destructive: oklch(0.58 0.21 25);
+  --destructive-foreground: oklch(0.99 0.003 250);
 
-  --destructive: 0 84% 60%;
-  --destructive-foreground: 0 0% 100%;
+  --border: oklch(0.21 0.03 259 / 12%);
+  --input: oklch(0.21 0.03 259 / 14%);
+  --ring: oklch(0.62 0.19 259 / 40%);
 
-  /* Borders & Inputs */
-  --border: 214 32% 91%;
-  --input: 214 32% 91%;
-  --ring: 217 91% 60%;
+  --chart-1: oklch(0.62 0.19 259);
+  --chart-2: oklch(0.6 0.15 150);
+  --chart-3: oklch(0.66 0.14 215);
+  --chart-4: oklch(0.7 0.15 135);
+  --chart-5: oklch(0.58 0.16 285);
 
-  /* Border Radius */
-  --radius: 1rem;
+  /* Blueprint grid + glow strength, tuned for a white canvas */
+  --grid-line: oklch(0.21 0.03 259 / 4.5%);
+  --bloom-strength: 22%;
+  --bloom-strength-soft: 14%;
 
-  /* Marketing / hero glow (used by ProductHero) */
-  --glow: hsl(217 91% 60% / 0.22);
-
-  /* Fixed marketing header (brand lockup + tagline + vertical padding) */
-  --site-header-height: 5rem;
-
-  /* Marketing layout (shared homepage / platform / blog) */
-  --marketing-section-y: 5rem;
-  --marketing-section-y-lg: 7rem;
+  /* Marketing layout vars referenced by page shells.
+     Measured against the floating pill: it bottoms out at ~70px on mobile and
+     ~74px from md up (pt-3 wrapper + pill padding). The old 5rem/5.5rem values
+     described the previous solid bar and left the hero eyebrow overlapping. */
+  --site-header-height: 4.5rem;
+  --marketing-section-y: 6rem;
+  --marketing-section-y-lg: 8rem;
   --marketing-container-narrow: 48rem;
-
-  /* Gradients */
-  --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(142 69% 58%) 100%);
-  --gradient-secondary: linear-gradient(135deg, hsl(142 76% 36%) 0%, hsl(158 64% 52%) 100%);
-  --gradient-hero: linear-gradient(180deg, hsl(210 20% 98%) 0%, hsl(217 91% 95%) 100%);
-  --gradient-card: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(210 20% 99%) 100%);
-  --gradient-accent: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(217 91% 70%) 100%);
-
-  /* Shadows */
-  --shadow-soft: 0 1px 3px hsl(222 47% 11% / 0.06), 0 1px 2px hsl(222 47% 11% / 0.04);
-  --shadow-medium: 0 4px 6px hsl(222 47% 11% / 0.07), 0 2px 4px hsl(222 47% 11% / 0.05);
-  --shadow-strong: 0 10px 15px hsl(222 47% 11% / 0.1), 0 4px 6px hsl(222 47% 11% / 0.05);
-  --shadow-glow: 0 0 30px hsl(217 91% 60% / 0.25);
-  --shadow-xl: 0 20px 25px hsl(222 47% 11% / 0.1), 0 8px 10px hsl(222 47% 11% / 0.04);
-
-  /* Animations */
-  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @media (min-width: 768px) {
   :root {
-    --site-header-height: 6rem;
+    --site-header-height: 4.75rem;
   }
 }
 
-/* 🌙 Dark Mode */
+/* --------------------------------------------------------------------------
+   DARK - the toggle
+   -------------------------------------------------------------------------- */
 .dark {
-  --background: 222 47% 11%;
-  --foreground: 210 20% 98%;
+  color-scheme: dark;
 
-  --card: 217 19% 15%;
-  --card-foreground: 210 20% 98%;
+  --background: oklch(0.16 0.022 259);
+  --foreground: oklch(0.975 0.004 250);
 
-  --popover: 217 19% 15%;
-  --popover-foreground: 210 20% 98%;
+  --surface: oklch(0.2 0.024 259);
+  --surface-raised: oklch(0.24 0.026 259);
+  --hairline: oklch(1 0 0 / 9%);
 
-  --primary: 217 91% 60%;
-  --primary-foreground: 0 0% 100%;
-  --primary-glow: 217 91% 70%;
+  --primary: oklch(0.68 0.17 259);
+  --primary-foreground: oklch(0.16 0.03 259);
+  --primary-glow: oklch(0.76 0.15 259);
 
-  --secondary: 142 76% 36%;
-  --secondary-foreground: 0 0% 100%;
+  --brand: oklch(0.8 0.18 152);
+  --brand-foreground: oklch(0.18 0.04 152);
+  --brand-deep: oklch(0.68 0.16 150);
 
-  --accent: 142 69% 58%;
-  --accent-foreground: 0 0% 100%;
+  /* Signature lifts and desaturates on the dark canvas. Pages override only
+     --signature-h, so they inherit this automatically. */
+  --signature-l: 0.76;
+  --signature-c: 0.15;
 
-  --muted: 217 19% 20%;
-  --muted-foreground: 215 16% 65%;
+  --secondary: oklch(0.26 0.026 259);
+  --secondary-foreground: oklch(0.975 0.004 250);
+  --muted: oklch(0.24 0.026 259);
+  --muted-foreground: oklch(0.7 0.022 258);
+  --accent: oklch(0.27 0.03 259);
+  --accent-foreground: oklch(0.975 0.004 250);
 
-  --success: 142 76% 36%;
-  --success-foreground: 0 0% 100%;
+  --card: oklch(0.2 0.024 259);
+  --card-foreground: oklch(0.975 0.004 250);
+  --popover: oklch(0.2 0.024 259);
+  --popover-foreground: oklch(0.975 0.004 250);
 
-  --warning: 38 92% 50%;
-  --warning-foreground: 0 0% 100%;
+  --success: oklch(0.8 0.18 152);
+  --warning: oklch(0.8 0.15 80);
+  --destructive: oklch(0.65 0.2 25);
+  --destructive-foreground: oklch(0.975 0.004 250);
 
-  --destructive: 0 62% 50%;
-  --destructive-foreground: 0 0% 100%;
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 14%);
+  --ring: oklch(0.68 0.17 259 / 45%);
 
-  --border: 217 19% 25%;
-  --input: 217 19% 25%;
-  --ring: 217 91% 60%;
+  --chart-1: oklch(0.68 0.17 259);
+  --chart-2: oklch(0.8 0.18 152);
+  --chart-3: oklch(0.72 0.13 215);
+  --chart-4: oklch(0.78 0.15 135);
+  --chart-5: oklch(0.68 0.15 285);
 
-  --gradient-hero: linear-gradient(180deg, hsl(222 47% 11%) 0%, hsl(217 91% 18%) 100%);
-  --gradient-card: linear-gradient(135deg, hsl(217 19% 15%) 0%, hsl(217 19% 17%) 100%);
-
-  --shadow-soft: 0 1px 3px hsl(0 0% 0% / 0.3);
-  --shadow-medium: 0 4px 6px hsl(0 0% 0% / 0.4);
-  --shadow-strong: 0 10px 15px hsl(0 0% 0% / 0.5);
-  --shadow-glow: 0 0 30px hsl(217 91% 60% / 0.4);
-  --shadow-xl: 0 20px 25px hsl(0 0% 0% / 0.5);
-}
-
-/* Theme inline for Tailwind v4 */
-@theme inline {
-  --color-background: hsl(var(--background));
-  --color-foreground: hsl(var(--foreground));
-  --color-card: hsl(var(--card));
-  --color-card-foreground: hsl(var(--card-foreground));
-  --color-popover: hsl(var(--popover));
-  --color-popover-foreground: hsl(var(--popover-foreground));
-  --color-primary: hsl(var(--primary));
-  --color-primary-foreground: hsl(var(--primary-foreground));
-  --color-primary-glow: hsl(var(--primary-glow));
-  --color-secondary: hsl(var(--secondary));
-  --color-secondary-foreground: hsl(var(--secondary-foreground));
-  --color-accent: hsl(var(--accent));
-  --color-accent-foreground: hsl(var(--accent-foreground));
-  --color-muted: hsl(var(--muted));
-  --color-muted-foreground: hsl(var(--muted-foreground));
-  --color-success: hsl(var(--success));
-  --color-warning: hsl(var(--warning));
-  --color-destructive: hsl(var(--destructive));
-  --color-border: hsl(var(--border));
-  --color-input: hsl(var(--input));
-  --color-ring: hsl(var(--ring));
-  --radius-lg: var(--radius);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-sm: calc(var(--radius) - 4px);
-  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, sans-serif;
-  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --grid-line: oklch(1 0 0 / 3.5%);
+  --bloom-strength: 30%;
+  --bloom-strength-soft: 18%;
 }
 
 /* ==========================================================================
-   Base Styles
+   Base
    ========================================================================== */
 
-* {
-  border-color: hsl(var(--border));
-}
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
 
-body {
-  background: hsl(var(--background));
-  color: hsl(var(--foreground));
-  font-feature-settings: "tnum" 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-feature-settings: "tnum" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--primary) 22%, transparent);
+  }
 }
 
 /* ==========================================================================
-   Utility Classes
+   Signature utilities
    ========================================================================== */
 
-/* Gradient utilities */
-.gradient-primary {
-  background: var(--gradient-primary);
+/* 64px graph paper behind the whole page */
+@utility blueprint-grid {
+  background-image:
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: 64px 64px;
 }
 
-.gradient-secondary {
-  background: var(--gradient-secondary);
+/* The brand glow: blue core fading through green. Slowly breathes. */
+@utility bloom {
+  background: radial-gradient(
+    60% 60% at 50% 40%,
+    color-mix(in oklab, var(--primary) var(--bloom-strength), transparent) 0%,
+    color-mix(in oklab, var(--brand) calc(var(--bloom-strength) / 2), transparent) 42%,
+    transparent 72%
+  );
+  filter: blur(40px);
+  animation: bloom-pulse 8s ease-in-out infinite;
 }
 
-.gradient-hero {
-  background: var(--gradient-hero);
+@utility bloom-soft {
+  background: radial-gradient(
+    55% 55% at 50% 50%,
+    color-mix(in oklab, var(--primary) var(--bloom-strength-soft), transparent) 0%,
+    color-mix(in oklab, var(--brand) calc(var(--bloom-strength-soft) / 2), transparent) 45%,
+    transparent 70%
+  );
+  filter: blur(48px);
 }
 
-.gradient-card {
-  background: var(--gradient-card);
+/* Same glow, tinted by the page's signature hue instead of the fixed blue
+   core. Bespoke pages use this so the hero light matches their accent. */
+@utility bloom-signature {
+  background: radial-gradient(
+    60% 60% at 50% 40%,
+    color-mix(in oklab, var(--signature) var(--bloom-strength), transparent) 0%,
+    color-mix(in oklab, var(--brand) calc(var(--bloom-strength) / 2), transparent) 45%,
+    transparent 72%
+  );
+  filter: blur(40px);
+  animation: bloom-pulse 8s ease-in-out infinite;
 }
 
-.gradient-accent {
-  background: var(--gradient-accent);
+@keyframes bloom-pulse {
+  0%,
+  100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 
-/* Gradient text */
-.gradient-text {
-  background: var(--gradient-primary);
+/* Hairline ruled sheet used by pages that want a denser technical ground than
+   the 64px blueprint grid (audit, architecture and matrix layouts). */
+@utility rule-sheet {
+  background-image: linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: 100% 32px;
+}
+
+@utility hairline-t {
+  border-top: 1px solid var(--hairline);
+}
+
+@utility scrollbar-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Entrance animation. CSS-only and `both`-filled, so the browser paints it
+   without JS - the live problem is CTR on ~15k impressions, so nothing may
+   depend on scripting to be readable. */
+@utility rise-in {
+  animation: rise-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Brand gradient, kept for the wordmark and primary CTAs */
+@utility gradient-text {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--brand) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Shadow utilities */
-.shadow-soft {
-  box-shadow: var(--shadow-soft);
+@utility gradient-primary {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--brand) 100%);
 }
 
-.shadow-medium {
-  box-shadow: var(--shadow-medium);
-}
-
-.shadow-strong {
-  box-shadow: var(--shadow-strong);
-}
-
-.shadow-glow {
-  box-shadow: var(--shadow-glow);
-}
-
-/* Markdown from content/blog (react-markdown) */
-.markdown-body {
-  font-size: 1.0625rem;
-  line-height: 1.75;
-  color: hsl(var(--foreground) / 0.9);
-}
-.markdown-body > * + * {
-  margin-top: 1.25em;
-}
-.markdown-body h2 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: hsl(var(--foreground));
-  margin-top: 2.5rem;
-  margin-bottom: 0.75rem;
-}
-.markdown-body h3 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: hsl(var(--foreground));
-  margin-top: 1.75rem;
-  margin-bottom: 0.5rem;
-}
-.markdown-body a {
-  color: hsl(var(--primary));
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-.markdown-body a:hover {
-  opacity: 0.9;
-}
-.markdown-body ul,
-.markdown-body ol {
-  padding-left: 1.5rem;
-}
-.markdown-body li + li {
-  margin-top: 0.5em;
-}
-.markdown-body strong {
-  font-weight: 600;
-  color: hsl(var(--foreground));
-}
-.markdown-body blockquote {
-  border-left: 4px solid hsl(var(--primary));
-  padding-left: 1.25rem;
-  font-style: italic;
-  color: hsl(var(--muted-foreground));
-}
-.markdown-body hr {
-  border: 0;
-  border-top: 1px solid hsl(var(--border));
-  margin: 2.5rem 0;
-}
-
-.shadow-xl {
-  box-shadow: var(--shadow-xl);
-}
-
-/* Transition utilities */
-.transition-smooth {
-  transition: var(--transition-smooth);
-}
-
-.transition-bounce {
-  transition: var(--transition-bounce);
-}
-
-.transition-fast {
-  transition: var(--transition-fast);
-}
-
-/* Glassmorphism */
-.glass-card {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: var(--radius);
-}
-
-.dark .glass-card {
-  background: rgba(0, 0, 0, 0.2);
-  border-color: rgba(255, 255, 255, 0.1);
-}
-
-/* Glow hover effect */
-.hover-glow {
-  transition: var(--transition-smooth);
-}
-
-.hover-glow:hover {
-  box-shadow: var(--shadow-glow);
-  transform: translateY(-2px);
-}
-
-/* Animated background pattern */
-.bg-pattern {
-  background-image:
-    radial-gradient(circle at 25% 25%, hsl(217 91% 60% / 0.05) 0%, transparent 50%),
-    radial-gradient(circle at 75% 75%, hsl(142 69% 58% / 0.05) 0%, transparent 50%);
-}
-
-/* Floating animation */
-@keyframes float {
-
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-.animate-float {
-  animation: float 3s ease-in-out infinite;
-}
-
-/* Pulse glow animation */
-@keyframes pulse-glow {
-
-  0%,
-  100% {
-    box-shadow: 0 0 20px hsl(217 91% 60% / 0.3);
-  }
-
-  50% {
-    box-shadow: 0 0 40px hsl(217 91% 60% / 0.5);
-  }
-}
-
-.animate-pulse-glow {
-  animation: pulse-glow 2s ease-in-out infinite;
-}
-
-/* Shimmer effect */
-@keyframes shimmer {
-  0% {
-    background-position: -200% 0;
-  }
-
-  100% {
-    background-position: 200% 0;
-  }
-}
-
-.animate-shimmer {
-  background: linear-gradient(90deg,
-      transparent,
-      hsl(217 91% 60% / 0.1),
-      transparent);
-  background-size: 200% 100%;
-  animation: shimmer 2s linear infinite;
+/* Product-frame halo: the coloured glow around browser/phone mockups */
+@utility frame-halo {
+  box-shadow:
+    0 0 60px -16px color-mix(in oklab, var(--primary) 40%, transparent),
+    0 28px 60px -28px oklch(0 0 0 / 22%);
 }
 
 /* ==========================================================================
-   Button Styles
+   Layout helpers
    ========================================================================== */
 
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
-  font-weight: 500;
-  border-radius: var(--radius);
-  transition: var(--transition-smooth);
-  cursor: pointer;
-  border: none;
-  text-decoration: none;
+.container {
+  width: 100%;
+  max-width: 72rem;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
 }
 
-.btn-primary {
-  background: hsl(var(--primary));
-  color: hsl(var(--primary-foreground));
-}
-
-.btn-primary:hover {
-  background: hsl(var(--primary) / 0.9);
-  box-shadow: var(--shadow-glow);
-  transform: translateY(-2px);
-}
-
-.btn-secondary {
-  background: hsl(var(--secondary));
-  color: hsl(var(--secondary-foreground));
-}
-
-.btn-secondary:hover {
-  background: hsl(var(--secondary) / 0.9);
-}
-
-.btn-outline {
-  background: transparent;
-  color: hsl(var(--foreground));
-  border: 1px solid hsl(var(--border));
-}
-
-.btn-outline:hover {
-  background: hsl(var(--accent));
-  color: hsl(var(--accent-foreground));
-}
-
-.btn-ghost {
-  background: transparent;
-  color: hsl(var(--foreground));
-}
-
-.btn-ghost:hover {
-  background: hsl(var(--muted));
-}
-
-.btn-gradient {
-  background: var(--gradient-primary);
-  color: white;
-}
-
-.btn-gradient:hover {
-  box-shadow: var(--shadow-glow);
-  transform: translateY(-2px);
-}
-
-/* ==========================================================================
-   Card Styles
-   ========================================================================== */
-
-.card {
-  background: hsl(var(--card));
-  color: hsl(var(--card-foreground));
-  border-radius: var(--radius);
-  border: 1px solid hsl(var(--border));
-  box-shadow: var(--shadow-soft);
-  transition: var(--transition-smooth);
-}
-
-.card:hover {
-  box-shadow: var(--shadow-medium);
-  transform: translateY(-2px);
-}
-
-.card-gradient {
-  background: var(--gradient-card);
-}
-
-/* ==========================================================================
-   Section Styles
-   ========================================================================== */
-
-/* Main content offset below fixed site header (replaces ad-hoc pt-32) */
 .main-below-header {
-  padding-top: calc(var(--site-header-height) + 0.25rem);
+  padding-top: calc(var(--site-header-height) + 1.5rem);
 }
 
-/* Homepage / landing hero: intentional space below fixed nav */
 .hero-below-header {
-  padding-top: calc(var(--site-header-height) + 1rem);
+  padding-top: calc(var(--site-header-height) + 1.5rem);
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .hero-below-header {
-    padding-top: calc(var(--site-header-height) + 1.5rem);
+    padding-top: calc(var(--site-header-height) + 3rem);
   }
 }
 
 .section {
-  padding: 5rem 0;
+  padding-block: var(--marketing-section-y);
 }
 
-.section-compact {
-  padding: 3rem 0;
+/* ==========================================================================
+   Markdown (content/blog via react-markdown)
+   ========================================================================== */
+
+.markdown-body {
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: var(--muted-foreground);
+  max-width: 68ch;
 }
 
-/* CTA section with extra bottom padding for footer separation */
-.section-cta {
-  padding: 5rem 0 6rem 0;
+.markdown-body > * + * {
+  margin-top: 1.3em;
 }
 
-.section-hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  background: var(--gradient-hero);
-  position: relative;
-  overflow: hidden;
+.markdown-body h2 {
+  font-size: 1.75rem;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  color: var(--foreground);
+  margin-top: 2.75rem;
+  margin-bottom: 0.75rem;
 }
 
-/* Use padding-inline only so Tailwind pt-/pb- on the same node are not reset by shorthand padding. */
-.container {
+.markdown-body h3 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--foreground);
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.markdown-body a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.markdown-body a:hover {
+  color: var(--brand-deep);
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 1.25rem;
+}
+
+.markdown-body li::marker {
+  color: var(--brand);
+}
+
+.markdown-body li + li {
+  margin-top: 0.5em;
+}
+
+.markdown-body strong {
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.markdown-body code {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  background: var(--surface-raised);
+  border: 1px solid var(--hairline);
+  border-radius: 4px;
+  padding: 0.1em 0.35em;
+}
+
+.markdown-body pre {
+  background: var(--surface-raised);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  overflow-x: auto;
+}
+
+.markdown-body pre code {
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+
+.markdown-body blockquote {
+  border-left: 2px solid var(--brand);
+  padding-left: 1.25rem;
+  color: var(--muted-foreground);
+}
+
+.markdown-body table {
   width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding-inline: 1.5rem;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
 }
 
-@media (min-width: 1400px) {
-  .container {
-    max-width: 1400px;
-  }
+.markdown-body th,
+.markdown-body td {
+  border: 1px solid var(--hairline);
+  padding: 0.625rem 0.875rem;
+  text-align: left;
 }
 
-/* Footer client logo strip - global keyframes avoid styled-jsx SSR/client class hash drift */
+.markdown-body th {
+  background: var(--surface-raised);
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.markdown-body hr {
+  border: 0;
+  border-top: 1px solid var(--hairline);
+  margin: 3rem 0;
+}
+
+/* ==========================================================================
+   Accessibility & chrome
+   ========================================================================== */
+
+*:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface-raised);
+}
+
+::-webkit-scrollbar-thumb {
+  background: color-mix(in oklab, var(--foreground) 20%, transparent);
+  border-radius: 999px;
+  border: 2px solid var(--surface-raised);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in oklab, var(--primary) 60%, transparent);
+}
+
+/* Footer client logo marquee */
 @keyframes footer-logo-marquee {
   0% {
     transform: translateX(0);
@@ -548,9 +553,184 @@ body {
   animation-play-state: paused;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 /* ==========================================================================
-   Scrollbar Styles
+   Shared component classes
+
+   These are used across all 30 route templates. They are defined here in the
+   new token system so every page inherits the design without a per-file
+   rewrite: `btn-gradient` now means "brand gradient button", `card` now means
+   "hairline surface", and so on.
    ========================================================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 2.75rem;
+  padding-inline: 1.25rem;
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    opacity 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.btn-primary,
+.btn-gradient {
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+
+.btn-primary:hover,
+.btn-gradient:hover {
+  opacity: 0.9;
+}
+
+.btn-secondary {
+  background: var(--brand);
+  color: var(--brand-foreground);
+}
+
+.btn-secondary:hover {
+  opacity: 0.9;
+}
+
+.btn-outline {
+  background: color-mix(in oklab, var(--surface-raised) 60%, transparent);
+  color: var(--foreground);
+  border-color: var(--hairline);
+}
+
+.btn-outline:hover {
+  border-color: color-mix(in oklab, var(--brand) 40%, transparent);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--muted-foreground);
+}
+
+.btn-ghost:hover {
+  background: color-mix(in oklab, var(--foreground) 5%, transparent);
+  color: var(--foreground);
+}
+
+.card {
+  background: var(--surface);
+  color: var(--card-foreground);
+  border: 1px solid var(--hairline);
+  border-radius: 10px;
+  transition: border-color 0.2s ease;
+}
+
+.card-gradient {
+  background: var(--surface-raised);
+}
+
+.glass-card {
+  background: color-mix(in oklab, var(--surface) 80%, transparent);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--hairline);
+  border-radius: 10px;
+}
+
+.hover-glow {
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.hover-glow:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in oklab, var(--brand) 35%, transparent);
+}
+
+/* Shadows are intentionally restrained - the design separates surfaces with
+   hairlines, and reserves glow for the bloom and product frames. */
+.shadow-soft {
+  box-shadow: 0 1px 2px oklch(0 0 0 / 5%);
+}
+
+.shadow-medium {
+  box-shadow: 0 4px 16px -6px oklch(0 0 0 / 10%);
+}
+
+.shadow-strong,
+.shadow-xl {
+  box-shadow: 0 20px 50px -24px oklch(0 0 0 / 22%);
+}
+
+.shadow-glow {
+  box-shadow: 0 0 40px -12px color-mix(in oklab, var(--primary) 45%, transparent);
+}
+
+.gradient-secondary {
+  background: linear-gradient(135deg, var(--brand) 0%, var(--brand-deep) 100%);
+}
+
+.gradient-accent {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-glow) 100%);
+}
+
+.gradient-hero,
+.gradient-card,
+.bg-pattern,
+.bg-mesh-glow {
+  background: transparent;
+}
+
+.transition-smooth,
+.transition-bounce {
+  transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.transition-fast {
+  transition: all 0.15s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.section-compact {
+  padding-block: 3rem;
+}
+
+.section-cta {
+  padding-block: var(--marketing-section-y);
+}
+
+.section-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Decorative-only animations from the previous system are retired; the design
+   uses `rise-in` and `bloom-pulse` instead. Kept as no-ops so pages that still
+   reference them do not error. */
+.animate-float,
+.animate-pulse-glow,
+.animate-shimmer {
+  animation: none;
+}
 
 .scrollbar-hide {
   -ms-overflow-style: none;
@@ -559,268 +739,4 @@ body {
 
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
-}
-
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: hsl(var(--muted));
-}
-
-::-webkit-scrollbar-thumb {
-  background: hsl(var(--muted-foreground));
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: hsl(var(--primary));
-}
-
-/* ==========================================================================
-   Focus Visible Styles (Accessibility)
-   ========================================================================== */
-
-*:focus-visible {
-  outline: 2px solid hsl(var(--ring));
-  outline-offset: 2px;
-}
-
-/* Screen reader only */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
-}
-
-/* ==========================================================================
-   Paddle-style marketing canvas (PaddleHQ/paddle-nextjs-starter-kit) + ASG tokens
-   ========================================================================== */
-
-.asg-paddle-canvas {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  min-height: 100dvh;
-  width: 100%;
-  pointer-events: none;
-  overflow: hidden;
-}
-
-.asg-paddle-grain-blur {
-  position: absolute;
-  left: 0;
-  top: -220px;
-  z-index: 0;
-  width: 100%;
-  min-height: 1400px;
-  background: url("/assets/background/grain-blur.svg") no-repeat 50% 0;
-  opacity: 0.5;
-  filter: saturate(1.1);
-}
-
-.asg-paddle-grain {
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 0;
-  width: 100%;
-  min-height: 1400px;
-  background: url("/assets/background/grain-bg.svg") repeat;
-  opacity: 0.22;
-  mix-blend-mode: overlay;
-}
-
-.dark .asg-paddle-grain {
-  opacity: 0.12;
-}
-
-.asg-paddle-grid {
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 0;
-  width: 100%;
-  min-height: 1400px;
-  background: url("/assets/background/grid-bg.svg") no-repeat 50% 0;
-  opacity: 0.35;
-  mix-blend-mode: multiply;
-}
-
-.dark .asg-paddle-grid {
-  opacity: 0.2;
-  mix-blend-mode: screen;
-}
-
-.asg-paddle-orb-primary {
-  position: absolute;
-  left: 50%;
-  top: -680px;
-  z-index: 0;
-  width: 1500px;
-  height: 1500px;
-  margin-left: -750px;
-  min-height: 0;
-  border-radius: 750px;
-  opacity: 0.22;
-  background: radial-gradient(
-    70.71% 70.71% at 50% 50%,
-    hsl(217 91% 60% / 0.45) 0%,
-    hsl(142 69% 58% / 0.12) 45%,
-    transparent 70%
-  );
-  filter: blur(48px);
-}
-
-/* Hide decorative orbs/blur on mobile so they cannot steal LCP from the hero image. */
-@media (max-width: 767px) {
-  .asg-paddle-orb-primary,
-  .asg-paddle-orb-small,
-  .asg-paddle-grain-blur {
-    display: none !important;
-  }
-}
-
-.dark .asg-paddle-orb-primary {
-  opacity: 0.32;
-  background: radial-gradient(
-    70.71% 70.71% at 50% 50%,
-    hsl(217 91% 60% / 0.35) 0%,
-    hsl(142 76% 36% / 0.2) 50%,
-    transparent 72%
-  );
-}
-
-.asg-paddle-orb-small {
-  position: absolute;
-  left: 50%;
-  top: 80px;
-  z-index: 0;
-  width: 900px;
-  height: 400px;
-  min-height: 0;
-  margin-left: -450px;
-  background: url("/assets/background/small-blur.svg") no-repeat 50% 0;
-  background-size: 100% auto;
-  opacity: 0.45;
-  filter: hue-rotate(-8deg) saturate(1.2);
-  mask-image: linear-gradient(180deg, black 0%, transparent 85%);
-  -webkit-mask-image: linear-gradient(180deg, black 0%, transparent 85%);
-}
-
-.dark .asg-paddle-orb-small {
-  opacity: 0.3;
-  filter: hue-rotate(0deg) saturate(0.9);
-}
-
-/* ==========================================================================
-   ✨ Global Interactive Hover, Redesign & Glassmorphism Aesthetics
-   ========================================================================== */
-
-.glass-card {
-  background: rgba(255, 255, 255, 0.45);
-  backdrop-filter: blur(16px) saturate(120%);
-  -webkit-backdrop-filter: blur(16px) saturate(120%);
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
-  transition: var(--transition-smooth);
-}
-
-.dark .glass-card {
-  background: rgba(30, 41, 59, 0.45);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-}
-
-/* Card hover scaling and ambient glow */
-.hover-glow {
-  transition: var(--transition-smooth);
-}
-
-.hover-glow:hover {
-  transform: translateY(-4px) scale(1.015);
-  box-shadow: 0 12px 30px -10px hsl(var(--primary) / 0.22),
-              0 0 15px -3px hsl(var(--primary) / 0.15);
-  border-color: hsl(var(--primary) / 0.4);
-}
-
-.dark .hover-glow:hover {
-  box-shadow: 0 12px 40px -10px rgba(0, 0, 0, 0.6),
-              0 0 20px -3px hsl(var(--primary) / 0.25);
-  border-color: hsl(var(--primary) / 0.5);
-}
-
-/* Interactive buttons feedback */
-.btn-gradient {
-  background: var(--gradient-primary);
-  color: white;
-  transition: var(--transition-smooth);
-}
-
-.btn-gradient:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px -6px hsl(var(--primary) / 0.45),
-              0 0 10px -2px hsl(var(--accent) / 0.3);
-  filter: brightness(1.05);
-}
-
-.btn-gradient:active {
-  transform: translateY(0) scale(0.97);
-  filter: brightness(0.95);
-}
-
-.btn-outline {
-  transition: var(--transition-smooth);
-}
-
-.btn-outline:hover {
-  background: hsl(var(--primary) / 0.06);
-  border-color: hsl(var(--primary) / 0.5);
-  transform: translateY(-1px);
-}
-
-.btn-outline:active {
-  transform: translateY(0) scale(0.97);
-}
-
-/* Background animated mesh overlay */
-.bg-mesh-glow {
-  position: relative;
-}
-
-.bg-mesh-glow::before {
-  content: "";
-  position: absolute;
-  top: 10%;
-  left: 20%;
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  background: radial-gradient(circle, hsl(var(--primary) / 0.15) 0%, transparent 70%);
-  filter: blur(40px);
-  pointer-events: none;
-  z-index: -1;
-}
-
-.bg-mesh-glow::after {
-  content: "";
-  position: absolute;
-  bottom: 10%;
-  right: 15%;
-  width: 400px;
-  height: 400px;
-  border-radius: 50%;
-  background: radial-gradient(circle, hsl(var(--accent) / 0.1) 0%, transparent 70%);
-  filter: blur(50px);
-  pointer-events: none;
-  z-index: -1;
 }

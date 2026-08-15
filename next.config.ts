@@ -4,6 +4,11 @@ const nextConfig: NextConfig = {
   // React Compiler for performance
   reactCompiler: true,
 
+  // Next 16.3 writes AGENTS.md + CLAUDE.md into the repo root on every dev
+  // start. Off by default here so the upgrade does not add files nobody asked
+  // for; flip to true (or delete this line) to opt back in.
+  agentRules: false,
+
   async redirects() {
     const appOrigin = process.env.NEXT_PUBLIC_APP_ORIGIN?.replace(/\/$/, '') || 'https://app.anotherseoguru.com';
     return [

@@ -63,8 +63,8 @@ export function IndustryPageView({
     <>
       <SchemaMarkup schemas={schemas} />
       <Header />
-      <main className="main-below-header">
-        <section className="section-compact gradient-hero">
+      <main className="blueprint-grid relative z-0 main-below-header">
+        <section className="section-compact ">
           <div className="container">
             <div className="max-w-3xl">
               <Breadcrumbs items={breadcrumbs} className="mb-6" />
@@ -73,7 +73,7 @@ export function IndustryPageView({
               </h1>
               <p className="mb-8 text-lg text-muted-foreground">{industry.description}</p>
               <div className="flex flex-wrap gap-4">
-                <Link href={lp(`/get-started?project=${industrySlug}`)} className="btn btn-gradient">
+                <Link href={lp(`/get-started?project=${industrySlug}`)} className="btn btn-primary">
                   {ui.getQuoteFor(industry.name)}
                 </Link>
                 <Link href="#services" className="btn btn-outline">
@@ -88,11 +88,11 @@ export function IndustryPageView({
 
         <section className="section">
           <div className="container">
-            <h2 className="mb-4 text-2xl font-bold sm:text-3xl">{ui.whatWebsitesNeed(industry.name)}</h2>
+            <h2 className="mb-4 font-display text-2xl font-medium tracking-[-0.02em] sm:text-3xl">{ui.whatWebsitesNeed(industry.name)}</h2>
             <p className="mb-8 max-w-2xl text-muted-foreground">{ui.painIntro(industry.name)}</p>
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
               {industry.painPoints.map((point) => (
-                <div key={point} className="card p-6 text-center hover-glow">
+                <div key={point} className="card p-6 text-center card-interactive">
                   <span className="font-medium">{point}</span>
                 </div>
               ))}
@@ -100,9 +100,9 @@ export function IndustryPageView({
           </div>
         </section>
 
-        <section className="section bg-muted/30" id="services">
+        <section className="section bg-surface-raised/40" id="services">
           <div className="container">
-            <h2 className="mb-4 text-2xl font-bold sm:text-3xl">{ui.servicesFor(industry.name)}</h2>
+            <h2 className="mb-4 font-display text-2xl font-medium tracking-[-0.02em] sm:text-3xl">{ui.servicesFor(industry.name)}</h2>
             <p className="mb-8 max-w-2xl text-muted-foreground">{ui.servicesIntro(industry.name)}</p>
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
               {services.map((service) => {
@@ -111,7 +111,7 @@ export function IndustryPageView({
                   <Link
                     key={service.slug}
                     href={lp(`/solutions/${industrySlug}/${service.slug}`)}
-                    className="card p-6 hover-glow"
+                    className="card p-6 card-interactive"
                   >
                     <h3 className="mb-2 font-semibold">{svc?.name ?? service.name}</h3>
                     <p className="mb-4 text-sm text-muted-foreground">{svc?.description ?? service.description}</p>
@@ -125,14 +125,14 @@ export function IndustryPageView({
 
         <section className="section">
           <div className="container">
-            <h2 className="mb-4 text-2xl font-bold sm:text-3xl">{ui.byCity(industry.name)}</h2>
+            <h2 className="mb-4 font-display text-2xl font-medium tracking-[-0.02em] sm:text-3xl">{ui.byCity(industry.name)}</h2>
             <p className="mb-8 text-muted-foreground">{ui.locationsIntro(industry.name, isEl)}</p>
             <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
               {locations.map((location) => (
                 <Link
                   key={location.slug}
                   href={lp(`/services/website-creation/${location.slug}`)}
-                  className="rounded-lg border border-border bg-background px-3 py-2 text-center text-sm transition-smooth hover:border-primary hover:text-primary"
+                  className="rounded-lg border border-hairline bg-background px-3 py-2 text-center text-sm transition-smooth hover:border-primary hover:text-primary"
                 >
                   {'cityLocal' in location && location.cityLocal ? location.cityLocal : location.city}
                 </Link>
@@ -141,12 +141,12 @@ export function IndustryPageView({
           </div>
         </section>
 
-        <section className="section bg-muted/30">
+        <section className="section bg-surface-raised/40">
           <div className="container">
-            <h2 className="mb-8 text-2xl font-bold sm:text-3xl">{ui.relatedIndustries}</h2>
+            <h2 className="mb-8 font-display text-2xl font-medium tracking-[-0.02em] sm:text-3xl">{ui.relatedIndustries}</h2>
             <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
               {relatedIndustries.map((related) => (
-                <Link key={related.slug} href={lp(`/solutions/${related.slug}`)} className="card p-4 text-center hover-glow">
+                <Link key={related.slug} href={lp(`/solutions/${related.slug}`)} className="card p-4 text-center card-interactive">
                   <span className="font-medium">{related.name}</span>
                 </Link>
               ))}
@@ -156,7 +156,7 @@ export function IndustryPageView({
 
         <section className="section gradient-primary text-white">
           <div className="container text-center">
-            <h2 className="mb-4 text-3xl font-bold">{ui.readyCta(industry.name)}</h2>
+            <h2 className="mb-4 font-display text-3xl font-medium tracking-[-0.03em]">{ui.readyCta(industry.name)}</h2>
             <p className="mb-8 text-white/80">{ui.readySub(industry.name)}</p>
             <Link href={lp('/contact')} className="btn bg-white text-primary hover:bg-white/90">
               {ui.freeQuote}

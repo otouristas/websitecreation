@@ -1,7 +1,7 @@
 ---
 slug: glossary-strategy-internal-linking
 title: Using an SEO glossary to strengthen internal links (without spam)
-description: How glossary hubs support entity clarity, hub-and-spoke linking, and safer anchor patterns — with a workflow that points to product modules.
+description: How glossary hubs support entity clarity, hub-and-spoke linking, and safer anchor patterns - with a workflow that points to product modules.
 date: 2026-03-05
 author: AnotherSEOGuru Editorial Team
 category: Content SEO
@@ -9,18 +9,18 @@ categoryColor: bg-indigo-100 text-indigo-800
 pillar: technical-seo-in-house
 faq:
   - question: "How many glossary terms do I need?"
-    answer: "Start with 20–30 tied to your top queries and sales conversations. Expand as content gaps appear — don't publish 500 thin definitions day one."
+    answer: "Start with 20–30 tied to your top queries and sales conversations. Expand as content gaps appear - don't publish 500 thin definitions day one."
   - question: "Should glossary pages index?"
-    answer: "Yes — if they provide unique definitions. No — if they're thin duplicates of blog content. Merge or differentiate."
+    answer: "Yes - if they provide unique definitions. No - if they're thin duplicates of blog content. Merge or differentiate."
   - question: "Can glossary replace FAQ?"
-    answer: "No — FAQ answers customer-specific questions on commercial pages. Glossary defines concepts. Use both."
+    answer: "No - FAQ answers customer-specific questions on commercial pages. Glossary defines concepts. Use both."
   - question: "Multilingual glossaries?"
     answer: "For EL/EN tourism sites, mirror key terms with hreflang. See GEO/AEO Ellada."
   - question: "Who writes glossary entries?"
     answer: "SEO lead outlines entities; subject expert validates accuracy; developer implements linking templates. For hotel and rent-a-car sites, involve front-desk or fleet managers who field guest questions daily."
 ---
 
-A glossary is not only a definitions page. Used well, it is a **controlled vocabulary** that connects concepts your commercial pages already target — without stuffing exact-match anchors sitewide. For [hotel](/en/solutions/hotels), [rent-a-car](/en/solutions/rent-a-car), and [travel AI](/en/solutions/travel-ai-chatbots) sites, glossary links clarify entities for users, crawlers, and AI retrieval systems.
+A glossary is not only a definitions page. Used well, it is a **controlled vocabulary** that connects concepts your commercial pages already target - without stuffing exact-match anchors sitewide. For [hotel](/en/solutions/hotels), [rent-a-car](/en/solutions/rent-a-car), and [travel AI](/en/solutions/travel-ai-chatbots) sites, glossary links clarify entities for users, crawlers, and AI retrieval systems.
 
 ## Why glossaries help SEO
 
@@ -40,13 +40,13 @@ This pattern supports [internal linking audits](/en/blog/internal-linking-audit-
 
 ### Support for YMYL and E-E-A-T
 
-Transparent explanations and citations signal helpfulness — critical for [medical SEO](/en/blog/medical-marketing) and increasingly for tourism brands competing on trust signals.
+Transparent explanations and citations signal helpfulness - critical for [medical SEO](/en/blog/medical-marketing) and increasingly for tourism brands competing on trust signals.
 
 ### AEO and featured snippets
 
 Definition-style glossary entries match [featured snippet](/en/glossary?term=featured-snippet) and [People Also Ask](/en/glossary?term=people-also-ask) formats. Pair glossary content with FAQ sections on commercial pages for [GEO/AEO](/en/blog/geo-aeo-global-seo-playbook).
 
-## Glossary vs blog vs pillar — when to use what
+## Glossary vs blog vs pillar - when to use what
 
 | Asset | Best for | Example |
 |-------|----------|---------|
@@ -55,9 +55,9 @@ Definition-style glossary entries match [featured snippet](/en/glossary?term=fea
 | Pillar hub | Broad commercial intent | [AI visibility pillar](/en/blog/pillar-ai-llm-visibility) |
 | Solution page | Conversion | [Hotels](/en/solutions/hotels) |
 
-Don't duplicate — glossary defines; blog applies; solution page converts.
+Don't duplicate - glossary defines; blog applies; solution page converts.
 
-## Workflow — building your glossary map
+## Workflow - building your glossary map
 
 ### Step 1: Map money queries to entities
 
@@ -72,9 +72,9 @@ Use [keyword clustering](/en/glossary?term=keyword-clustering) to accelerate gro
 
 For each entity, decide:
 
-- **Pillar page** — commercial hub
-- **Glossary entry** — definition
-- **Supporting blog** — application guide
+- **Pillar page** - commercial hub
+- **Glossary entry** - definition
+- **Supporting blog** - application guide
 
 Example: "local pack" → glossary; "local SEO Cyclades" → blog ([topiko SEO Kykladon](/en/blog/topiko-seo-kykladon)); "hotel solutions" → solution page.
 
@@ -86,17 +86,17 @@ From blogs and tools pages:
 - Link **sideways** to glossary where it helps the reader
 - Link **down** from glossary related terms to deeper entries
 
-Browse the public [SEO glossary](/en/glossary) for structure examples — terms like [title tag](/en/glossary?term=title-tag), [internal linking](/en/glossary?term=internal-linking), [E-E-A-T](/en/glossary?term=e-e-a-t).
+Browse the public [SEO glossary](/en/glossary) for structure examples - terms like [title tag](/en/glossary?term=title-tag), [internal linking](/en/glossary?term=internal-linking), [E-E-A-T](/en/glossary?term=e-e-a-t).
 
 ### Step 4: Maintain quarterly
 
-Search language shifts — "AI overview" wasn't a glossary term five years ago. Refresh definitions when SERP features change.
+Search language shifts - "AI overview" wasn't a glossary term five years ago. Refresh definitions when SERP features change.
 
 ## Tie-ins to platform workflows
 
-- [Semantic clustering](/en/platform/features/semantic-keyword-clustering) — group terms by intent before publishing
-- [Cannibalization doctor](/en/platform/features/cannibalization-doctor) — when glossary and commercial URLs compete for the same SERP
-- [Content gap analysis](/en/glossary?term=content-gap-analysis) — find undefined entities competitors explain
+- [Semantic clustering](/en/platform/features/semantic-keyword-clustering) - group terms by intent before publishing
+- [Cannibalization doctor](/en/platform/features/cannibalization-doctor) - when glossary and commercial URLs compete for the same SERP
+- [Content gap analysis](/en/glossary?term=content-gap-analysis) - find undefined entities competitors explain
 
 ## Tourism-specific glossary opportunities
 
@@ -127,7 +127,7 @@ Link each definition to relevant [work samples](/en/work) and location pages.
 Track at page-set level in Search Console:
 
 - Impressions and clicks on `/glossary` URLs
-- Assisted conversions — glossary → solution page → /get-started
+- Assisted conversions - glossary → solution page → /get-started
 - Reduced cannibalization between blog and money pages after glossary split
 
 Pair with quarterly [internal linking checklist](/en/blog/internal-linking-audit-checklist) refresh.
@@ -136,20 +136,20 @@ Pair with quarterly [internal linking checklist](/en/blog/internal-linking-audit
 
 For multi-property hospitality or rent-a-car brands:
 
-- **Central glossary** — one `/glossary` hub, linked from all properties
-- **Template partials** — auto-link first mention of defined terms in blog CMS
-- **Governance** — one owner approves new terms; prevents duplicate entries ("Local Pack" vs "Map Pack")
-- **Analytics segment** — track glossary-assisted paths to booking in GA4 explorations
+- **Central glossary** - one `/glossary` hub, linked from all properties
+- **Template partials** - auto-link first mention of defined terms in blog CMS
+- **Governance** - one owner approves new terms; prevents duplicate entries ("Local Pack" vs "Map Pack")
+- **Analytics segment** - track glossary-assisted paths to booking in GA4 explorations
 
-When glossary traffic grows, resist creating commercial pages for every term — keep definitions neutral and link out to [solution pages](/en/solutions/hotels).
+When glossary traffic grows, resist creating commercial pages for every term - keep definitions neutral and link out to [solution pages](/en/solutions/hotels).
 
 ## Cross-linking glossary to /get-started
 
-Commercial glossary entries (e.g. "local pack", "direct booking") should include one soft CTA path: "Need help implementing this?" → [/get-started](/en/get-started). Keep educational tone — the glossary educates; the solution page converts.
+Commercial glossary entries (e.g. "local pack", "direct booking") should include one soft CTA path: "Need help implementing this?" → [/get-started](/en/get-started). Keep educational tone - the glossary educates; the solution page converts.
 
 Example entry flow: blog mentions [local pack](/en/glossary?term=local-pack) → glossary defines it → related link to [local SEO guide](/en/blog/local-seo-guide) → CTA to [get started](/en/get-started) for operators who want done-for-you execution.
 
-Review glossary quarterly against Search Console — rising definitional queries ("AI overview", "GEO") deserve new entries before competitors publish thin explainers. For tourism operators, prioritize terms guests actually search — parking, check-in, transmission type — not only marketing jargon.
+Review glossary quarterly against Search Console - rising definitional queries ("AI overview", "GEO") deserve new entries before competitors publish thin explainers. For tourism operators, prioritize terms guests actually search - parking, check-in, transmission type - not only marketing jargon.
 
 
 ## Glossary entry template (copy/paste)
@@ -169,15 +169,15 @@ Publish only when the definition is unique versus your blog. If the blog already
 
 ### How many glossary terms do I need?
 
-Start with 20–30 tied to your top queries and sales conversations. Expand as content gaps appear — don't publish 500 thin definitions day one.
+Start with 20–30 tied to your top queries and sales conversations. Expand as content gaps appear - don't publish 500 thin definitions day one.
 
 ### Should glossary pages index?
 
-Yes — if they provide unique definitions. No — if they're thin duplicates of blog content. Merge or differentiate.
+Yes - if they provide unique definitions. No - if they're thin duplicates of blog content. Merge or differentiate.
 
 ### Can glossary replace FAQ?
 
-No — FAQ answers customer-specific questions on commercial pages. Glossary defines concepts. Use both.
+No - FAQ answers customer-specific questions on commercial pages. Glossary defines concepts. Use both.
 
 ### Multilingual glossaries?
 
@@ -191,6 +191,6 @@ SEO lead outlines entities; subject expert validates accuracy; developer impleme
 
 ## Ready to Get Started?
 
-Tell us about your site, locations, and goals — we'll recommend a scoped plan with Search Console ops, content priorities, and clear next steps.
+Tell us about your site, locations, and goals - we'll recommend a scoped plan with Search Console ops, content priorities, and clear next steps.
 
 [Get started](/en/get-started) · [See our work](/en/work) · [Pricing](/en/pricing)

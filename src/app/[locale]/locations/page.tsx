@@ -110,8 +110,8 @@ export default async function LocationsPage({ params }: PageProps) {
   return (
     <>
       <Header locale={locale as SiteLocale} />
-      <main className="main-below-header">
-        <section className="section-compact gradient-hero">
+      <main className="blueprint-grid relative z-0 main-below-header">
+        <section className="section-compact ">
           <div className="container">
             <div className="max-w-3xl">
               <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
@@ -120,7 +120,7 @@ export default async function LocationsPage({ params }: PageProps) {
                 <span className="text-foreground">{t.locations}</span>
               </nav>
 
-              <h1 className="text-4xl sm:text-5xl font-bold mb-6">
+              <h1 className="font-display text-4xl font-medium tracking-[-0.04em] sm:text-5xl mb-6">
                 {t.h1}
               </h1>
               <p className="text-lg text-muted-foreground mb-4">
@@ -141,7 +141,7 @@ export default async function LocationsPage({ params }: PageProps) {
               )}
 
               <div className="flex flex-wrap gap-4">
-                <Link href={lp("/get-started")} className="btn btn-gradient">
+                <Link href={lp("/get-started")} className="btn btn-primary">
                   {t.getStarted}
                 </Link>
                 <Link href={lp("/pricing")} className="btn btn-outline">
@@ -154,7 +154,7 @@ export default async function LocationsPage({ params }: PageProps) {
 
         <section className="section">
           <div className="container">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-4">{t.topCitiesTitle}</h2>
+            <h2 className="font-display text-2xl font-medium tracking-[-0.03em] sm:text-3xl mb-4">{t.topCitiesTitle}</h2>
             <p className="text-muted-foreground mb-8">
               {t.topCitiesSub}
             </p>
@@ -165,7 +165,7 @@ export default async function LocationsPage({ params }: PageProps) {
                   <Link
                     key={location.slug}
                     href={lp(`/services/website-creation/${location.slug}`)}
-                    className="glass-card hover-glow card p-4 text-center"
+                    className="card card-interactive card p-4 text-center"
                   >
                     <div className="font-semibold">{cityName}</div>
                     <div className="text-xs text-muted-foreground">
@@ -188,10 +188,10 @@ export default async function LocationsPage({ params }: PageProps) {
           return (
             <section
               key={countryCode}
-              className={`section ${countryCode === "US" ? "" : "bg-muted/30"}`}
+              className={`section ${countryCode === "US" ? "" : "bg-surface-raised/40"}`}
             >
               <div className="container">
-                <h2 className="text-2xl sm:text-3xl font-bold mb-2">
+                <h2 className="font-display text-2xl font-medium tracking-[-0.03em] sm:text-3xl mb-2">
                   {countryLabel}
                 </h2>
                 <p className="text-muted-foreground mb-8">
@@ -201,7 +201,7 @@ export default async function LocationsPage({ params }: PageProps) {
                 {countryCode === "US" ? (
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {usStates.map((state) => (
-                      <div key={state} className="glass-card hover-glow card p-6">
+                      <div key={state} className="card card-interactive card p-6">
                         <h3 className="font-bold mb-4">{state}</h3>
                         <div className="flex flex-wrap gap-2">
                           {usByState[state].map((loc) => (
@@ -225,7 +225,7 @@ export default async function LocationsPage({ params }: PageProps) {
                         <Link
                           key={loc.slug}
                           href={lp(`/services/website-creation/${loc.slug}`)}
-                          className="glass-card hover-glow px-4 py-2 rounded-lg border border-border transition-smooth text-sm font-medium"
+                          className="card card-interactive px-4 py-2 rounded-lg border border-hairline transition-smooth text-sm font-medium"
                         >
                           {cityName}
                         </Link>
@@ -240,7 +240,7 @@ export default async function LocationsPage({ params }: PageProps) {
 
         <section className="section">
           <div className="container text-center">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-4">{t.allServicesTitle}</h2>
+            <h2 className="font-display text-2xl font-medium tracking-[-0.03em] sm:text-3xl mb-4">{t.allServicesTitle}</h2>
             <p className="text-muted-foreground mb-8">{t.allServicesSub}</p>
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3 max-w-4xl mx-auto">
               {services.map((service) => {
@@ -250,7 +250,7 @@ export default async function LocationsPage({ params }: PageProps) {
                   <Link
                     key={service.slug}
                     href={lp(`/services/${service.slug}`)}
-                    className="glass-card hover-glow p-3 text-center rounded-lg border border-border transition-smooth text-sm font-medium"
+                    className="card card-interactive p-3 text-center rounded-lg border border-hairline transition-smooth text-sm font-medium"
                   >
                     {name}
                   </Link>
@@ -262,7 +262,7 @@ export default async function LocationsPage({ params }: PageProps) {
 
         <section className="section gradient-primary text-white">
           <div className="container text-center">
-            <h2 className="text-3xl font-bold mb-4">{t.readyTitle}</h2>
+            <h2 className="font-display text-3xl font-medium tracking-[-0.03em] mb-4">{t.readyTitle}</h2>
             <p className="text-white/80 mb-8">{t.readySub}</p>
             <Link href={lp("/get-started")} className="btn bg-white text-primary hover:bg-white/90">
               {t.getStarted}

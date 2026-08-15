@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { locale } = await params;
   if (!isValidLocale(locale)) return {};
   return buildMetadata({
-    title: "SEO Tools — Free Keyword Research, Audits & Checkers",
+    title: "SEO Tools, Free Keyword Research, Audits & Checkers",
     description:
       "Free SEO tools for keyword research, SEO audits, Search Console clustering, LLM citations, health scores, and browser checkers for meta, schema, and Core Web Vitals.",
     path: localizedPath(locale as SiteLocale, "/tools"),
@@ -31,18 +31,18 @@ export default async function ToolsHubPage({ params }: PageProps) {
   return (
     <>
       <Header />
-      <main className="main-below-header pb-20">
+      <main className="blueprint-grid relative z-0 main-below-header pb-20">
         <div className="container max-w-4xl">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">SEO tools</h1>
           <p className="text-lg text-muted-foreground mb-10">
-            Free SEO tools for keyword research, audits, Search Console clustering, and AI visibility — plus
+            Free SEO tools for keyword research, audits, Search Console clustering, and AI visibility, plus
             browser checkers in the app. Start with keyword research or a free SEO audit, then deepen with our
             guides.
           </p>
           <ul className="space-y-4">
             {PLATFORM_TOOLS.map((t) => (
               <li key={t.slug}>
-                <Link href={lp(`/tools/${t.slug}`)} className="block rounded-xl border border-border p-6 hover:border-primary/40 hover:bg-muted/20 transition-smooth">
+                <Link href={lp(`/tools/${t.slug}`)} className="block rounded-[8px] border border-hairline p-6 hover:border-primary/40 hover:bg-surface-raised/40 transition-smooth">
                   <span className="font-semibold text-foreground text-lg">{t.title}</span>
                   <p className="text-sm text-muted-foreground mt-2">{t.description}</p>
                   <span className="inline-block mt-3 text-sm font-medium text-primary">Read intent page →</span>
@@ -50,12 +50,12 @@ export default async function ToolsHubPage({ params }: PageProps) {
               </li>
             ))}
           </ul>
-          <div className="mt-12 p-6 rounded-2xl border border-border bg-muted/20">
+          <div className="mt-12 p-6 rounded-[10px] border border-hairline bg-surface-raised/40">
             <h2 className="font-bold text-lg mb-2">More in the app</h2>
             <p className="text-sm text-muted-foreground mb-4">
               Meta generators, schema, robots.txt, CWV helpers, and the full free-tools directory live in the product.
             </p>
-            <a href={getAppPath("/free-tools")} className="btn btn-gradient text-sm" rel="noopener noreferrer">
+            <a href={getAppPath("/free-tools")} className="btn btn-primary text-sm" rel="noopener noreferrer">
               Open free tools in app
             </a>
           </div>

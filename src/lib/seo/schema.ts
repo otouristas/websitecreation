@@ -233,3 +233,101 @@ export function generateSoftwareApplicationSchema(input: {
 }
 
 export { BASE_URL, BRAND_NAME };
+
+
+export interface CollectionItem {
+  readonly url: string;
+  readonly name: string;
+}
+
+export interface CollectionPageSchemaData {
+  readonly name: string;
+  readonly description?: string;
+  readonly url: string;
+  readonly inLanguage?: string;
+  readonly items: readonly CollectionItem[];
+}
+
+/**
+ * CollectionPage + nested ItemList for archive surfaces (blog index, pillar
+ * hubs, services, solutions, work). These pages previously emitted no
+ * structured data, so an index of 69 posts looked like an ordinary page.
+ *
+ * Item URLs must already be absolute and locale-prefixed.
+ */
+export function generateCollectionPageSchema(
+  data: CollectionPageSchemaData,
+): SchemaOutput {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: data.name,
+    ...(data.description ? { description: data.description } : {}),
+    url: data.url,
+    ...(data.inLanguage ? { inLanguage: data.inLanguage } : {}),
+    isPartOf: { '@id': `${BASE_URL}/#website` },
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: data.items.length,
+      itemListElement: data.items.map((item, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        url: item.url,
+        name: item.name,
+      })),
+    },
+  };
+}
+
+export interface OfferTier {
+  readonly id: string;
+  readonly name: string;
+  readonly regular: number;
+  readonly offer: number;
+}
+
+export interface OfferCatalogSchemaData {
+  readonly name: string;
+  readonly url: string;
+  readonly locale: 'en' | 'el';
+  readonly tiers: readonly OfferTier[];
+  /** Net -> gross converter, injected so the VAT rate lives in one place. */
+  readonly priceOf?: (tier: OfferTier) => number;
+}
+
+/**
+ * OfferCatalog for the pricing page.
+ *
+ * The pricing page rendered a full price table while emitting no price schema
+ * at all. Prices published here are NET of VAT, matching the figure shown as
+ * the headline on each card; `priceSpecification.valueAddedTaxIncluded` says so
+ * explicitly rather than leaving it ambiguous.
+ */
+export function generateOfferCatalogSchema(data: OfferCatalogSchemaData): SchemaOutput {
+  const price = data.priceOf ?? ((t: OfferTier) => t.offer);
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: data.name,
+    url: data.url,
+    provider: {
+      '@type': 'Organization',
+      '@id': `${BASE_URL}/#organization`,
+      name: BRAND_NAME,
+    },
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: data.name,
+      itemListElement: data.tiers.map((t) => ({
+        '@type': 'Offer',
+        name: t.name,
+        priceSpecification: {
+          '@type': 'PriceSpecification',
+          price: price(t),
+          priceCurrency: 'EUR',
+          valueAddedTaxIncluded: false,
+        },
+      })),
+    },
+  };
+}

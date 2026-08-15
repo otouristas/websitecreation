@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 import { getTrustStats, MARKETS_LABEL } from '@/data/trust-stats';
 
-/** Truthful proof band (project count, markets, languages, response time) — reused on both homepages. */
+/** Truthful proof band (project count, markets, languages, response time), reused on both homepages. */
 export function ResultsBand({ locale = 'en' }: { locale?: SiteLocale }) {
   const isEl = locale === 'el';
   const stats = getTrustStats(locale);

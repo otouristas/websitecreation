@@ -20,7 +20,7 @@ const rows: { label: string; us: boolean; them: "all" | "none" | "mixed" }[] = [
 
 function competitorCell(ok: boolean) {
   return ok ? (
-    <Check className="w-5 h-5 text-[hsl(var(--success))] mx-auto" aria-label="Included" />
+    <Check className="w-5 h-5 text-success mx-auto" aria-label="Included" />
   ) : (
     <X className="w-5 h-5 text-muted-foreground mx-auto" aria-label="Not included" />
   );

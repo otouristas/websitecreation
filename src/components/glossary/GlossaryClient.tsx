@@ -10,7 +10,7 @@ import { getGlossaryUi } from "@/lib/i18n/get-dictionary";
 import { localizedPath, type SiteLocale } from "@/lib/i18n/locale";
 
 const categoryBadgeClass: Record<string, string> = {
-  blue: "bg-blue-500/10 text-blue-700 border border-blue-500/20",
+  blue: "bg-blue-500/10 text-primary border border-blue-500/20",
   purple: "bg-purple-500/10 text-purple-700 border border-purple-500/20",
   green: "bg-green-500/10 text-green-700 border border-green-500/20",
   orange: "bg-orange-500/10 text-orange-700 border border-orange-500/20",
@@ -47,7 +47,7 @@ function RelatedResourceLink(props: {
   const href = resolveMarketingPath(props.url, props.locale ?? "en");
   const isExternal = href.startsWith("http");
   const className =
-    "flex items-center justify-between p-3 rounded-lg border border-border hover:border-primary/50 hover:bg-muted/50 text-left w-full";
+    "flex items-center justify-between p-3 rounded-lg border border-hairline hover:border-primary/50 hover:bg-muted/50 text-left w-full";
   if (isExternal) {
     return (
       <a href={href} className={className} rel="noopener noreferrer" target="_blank">
@@ -161,7 +161,7 @@ export function GlossaryClient({ locale = "en" }: { locale?: SiteLocale }) {
 
   return (
     <div className="main-below-header flex min-h-[calc(100vh-var(--site-header-height))] flex-col lg:flex-row">
-      <aside className="shrink-0 border-border bg-muted/20 lg:min-h-screen lg:w-72 lg:border-r border-b lg:border-b-0">
+      <aside className="shrink-0 border-hairline bg-surface-raised/40 lg:min-h-screen lg:w-72 lg:border-r border-b lg:border-b-0">
         <div className="sticky top-[calc(var(--site-header-height)+0.25rem)] max-h-[calc(100vh-var(--site-header-height)-0.5rem)] overflow-y-auto p-4">
           <div className="relative mb-4">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
@@ -170,7 +170,7 @@ export function GlossaryClient({ locale = "en" }: { locale?: SiteLocale }) {
               placeholder={ui.searchPlaceholder}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-3 py-2 rounded-lg border border-border bg-background text-sm"
+              className="w-full pl-10 pr-3 py-2 rounded-lg border border-hairline bg-background text-sm"
             />
           </div>
           <button
@@ -205,7 +205,7 @@ export function GlossaryClient({ locale = "en" }: { locale?: SiteLocale }) {
                     <ChevronRight className={`h-4 w-4 shrink-0 transition ${isExpanded ? "rotate-90" : ""}`} />
                   </button>
                   {isExpanded ? (
-                    <div className="ml-4 pl-3 border-l border-border mt-1 space-y-0.5">
+                    <div className="ml-4 pl-3 border-l border-hairline mt-1 space-y-0.5">
                       {category.terms.map((term) => (
                         <button
                           key={term.id}
@@ -236,7 +236,7 @@ export function GlossaryClient({ locale = "en" }: { locale?: SiteLocale }) {
                   <button
                     type="button"
                     onClick={() => selectTerm(category.id, term.id)}
-                    className="w-full text-left p-3 rounded-lg border border-border hover:border-primary/50"
+                    className="w-full text-left p-3 rounded-lg border border-hairline hover:border-primary/50"
                   >
                     <span className="font-medium text-foreground">{tName(term)}</span>
                     <span className="block text-sm text-muted-foreground line-clamp-2">{tShort(term)}</span>
@@ -259,7 +259,7 @@ export function GlossaryClient({ locale = "en" }: { locale?: SiteLocale }) {
             <span className={`inline-block text-xs font-medium px-2 py-1 rounded-md mb-3 ${categoryBadgeClass[currentTerm.category.color] ?? "bg-muted"}`}>
               {currentTerm.category.title}
             </span>
-            <h1 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">{tName(currentTerm.term)}</h1>
+            <h1 className="font-display text-3xl font-medium tracking-[-0.03em] md:text-4xl mb-4 text-foreground">{tName(currentTerm.term)}</h1>
             <p className="text-lg text-muted-foreground mb-8">{tShort(currentTerm.term)}</p>
             <section className="mb-8">
               <h2 className="text-xl font-semibold mb-3 text-foreground">Definition</h2>
@@ -268,7 +268,7 @@ export function GlossaryClient({ locale = "en" }: { locale?: SiteLocale }) {
             {currentTerm.term.example ? (
               <section className="mb-8">
                 <h2 className="text-xl font-semibold mb-3 text-foreground">Example</h2>
-                <div className="bg-muted/50 rounded-lg p-4 border border-border flex gap-3">
+                <div className="bg-muted/50 rounded-lg p-4 border border-hairline flex gap-3">
                   <Code className="h-5 w-5 text-primary shrink-0 mt-0.5" />
                   <code className="text-sm whitespace-pre-wrap text-foreground">{currentTerm.term.example}</code>
                 </div>
@@ -308,7 +308,7 @@ export function GlossaryClient({ locale = "en" }: { locale?: SiteLocale }) {
               </section>
             ) : null}
             {currentTerm.term.relatedTerms && currentTerm.term.relatedTerms.length > 0 ? (
-              <section className="pt-6 border-t border-border">
+              <section className="pt-6 border-t border-hairline">
                 <h3 className="text-sm font-medium text-muted-foreground mb-3">Related terms</h3>
                 <div className="flex flex-wrap gap-2">
                   {currentTerm.term.relatedTerms.map((termId) => {
@@ -348,7 +348,7 @@ export function GlossaryClient({ locale = "en" }: { locale?: SiteLocale }) {
                       <CategoryIcon className="h-5 w-5" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <h2 className="text-2xl font-bold text-foreground">{category.title}</h2>
+                      <h2 className="font-display text-2xl font-medium tracking-[-0.02em] text-foreground">{category.title}</h2>
                       <p className="text-sm text-muted-foreground">{category.description}</p>
                     </div>
                     <span className="text-sm text-muted-foreground">{category.terms.length} terms</span>
@@ -359,7 +359,7 @@ export function GlossaryClient({ locale = "en" }: { locale?: SiteLocale }) {
                         key={term.id}
                         type="button"
                         onClick={() => selectTerm(category.id, term.id)}
-                        className="text-left p-4 rounded-xl border border-border bg-card hover:border-primary/50 hover:shadow-md transition-all"
+                        className="text-left p-4 rounded-[8px] border border-hairline bg-card hover:border-primary/50 hover:shadow-md transition-all"
                       >
                         <h3 className="font-semibold mb-2 text-foreground">{tName(term)}</h3>
                         <p className="text-sm text-muted-foreground line-clamp-3">{tShort(term)}</p>

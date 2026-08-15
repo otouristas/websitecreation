@@ -1,8 +1,13 @@
 export { LandingHero } from "./LandingHero";
 export { HomeOfferGrid } from "./HomeOfferGrid";
+export { VerticalServices } from "./VerticalServices";
+export { Different } from "./Different";
+export { Showcase } from "./Showcase";
+export { ClientLogoWall } from "./ClientLogoWall";
+export { SeoPricingBlock } from "./SeoPricingBlock";
+export { LandingTestimonials } from "./LandingTestimonials";
+export { FinalCta } from "./FinalCta";
+export { PortfolioGrid } from "./PortfolioGrid";
 export { ProblemSolutionSection } from "./ProblemSolutionSection";
 export { LandingComparisonTable } from "./LandingComparisonTable";
-export { LandingTestimonials } from "./LandingTestimonials";
 export { LandingPricingTeaser } from "./LandingPricingTeaser";
-export { PortfolioGrid } from "./PortfolioGrid";
-export { VerticalServices } from "./VerticalServices";

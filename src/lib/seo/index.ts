@@ -7,7 +7,6 @@ export {
     META_DESC_MAX,
     BASE_URL,
     BRAND_NAME,
-    DEFAULT_USP,
 } from './description';
 export { buildFullTitle, cleanPageTitle, MAX_TITLE_TOTAL, MAX_TITLE_PRIMARY, TITLE_BRAND_SUFFIX } from './metadata';
 export {

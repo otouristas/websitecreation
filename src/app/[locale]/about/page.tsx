@@ -47,7 +47,7 @@ export default async function AboutPage({ params }: PageProps) {
         storyLabel: "Η Ιστορία Μας",
         storyTitle: "Από την Απογοήτευση στη Λύση",
         storyP1: "Ξεκινήσαμε την AnotherSEOGuru επειδή κουραστήκαμε να βλέπουμε επιχειρήσεις να πληρώνουν ακριβά σε agencies που παραδίδουν αργές, ξεπερασμένες ιστοσελίδες που δεν κατατάσσονται ούτε φέρνουν κρατήσεις.",
-        storyP2: "Πάρα πολλοί σχεδιαστές ιστοσελίδων εστιάζουν μόνο στο να κάνουν τα πράγματα να φαίνονται όμορφα, αγνοώντας εντελώς την ταχύτητα και τη βελτιστοποίηση SEO. Το αποτέλεσμα? Όμορφες ιστοσελίδες που κανείς δεν μπορεί να βρει.",
+        storyP2: "Πάρα πολλοί σχεδιαστές ιστοσελίδων εστιάζουν μόνο στο να κάνουν τα πράγματα να φαίνονται όμορφα, αγνοώντας εντελώς την ταχύτητα και τη βελτιστοποίηση SEO. Το αποτέλεσμα; Όμορφες ιστοσελίδες που δεν τις βρίσκει κανείς.",
         storyP3: "Ακολουθήσαμε μια διαφορετική προσέγγιση. Κάθε ιστοσελίδα που κατασκευάζουμε ξεκινά με βάση την ταχύτητα και το SEO. Στη συνέχεια προσθέτουμε εξαιρετικό σχεδιασμό. Το αποτέλεσμα είναι ιστοσελίδες που δείχνουν εκπληκτικές ΚΑΙ φέρνουν πραγματικά αποτελέσματα.",
         quote: "«Μια ιστοσελίδα που κανείς δεν μπορεί να βρει είναι μια ιστοσελίδα που δεν υπάρχει. Κατασκευάζουμε ιστοσελίδες που ανακαλύπτονται από τους πελάτες.»",
         author: "Η Ομάδα της AnotherSEOGuru",
@@ -153,8 +153,8 @@ export default async function AboutPage({ params }: PageProps) {
   return (
     <>
       <Header locale={locale as SiteLocale} />
-      <main className="main-below-header">
-        <section className="section-compact gradient-hero">
+      <main className="blueprint-grid relative z-0 main-below-header">
+        <section className="section-compact ">
           <div className="container">
             <div className="max-w-3xl">
               <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
@@ -163,7 +163,7 @@ export default async function AboutPage({ params }: PageProps) {
                 <span className="text-foreground">{t.about}</span>
               </nav>
 
-              <h1 className="text-4xl sm:text-5xl font-bold mb-6">
+              <h1 className="font-display text-4xl font-medium tracking-[-0.04em] sm:text-5xl mb-6">
                 {t.h1}
               </h1>
               <p className="text-lg text-muted-foreground">
@@ -177,8 +177,8 @@ export default async function AboutPage({ params }: PageProps) {
           <div className="container">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
               {t.stats.map((stat) => (
-                <div key={stat.label} className="glass-card hover-glow card p-6 text-center">
-                  <div className="text-3xl font-bold gradient-text mb-1">{stat.value}</div>
+                <div key={stat.label} className="card card-interactive card p-6 text-center">
+                  <div className="font-display text-3xl font-medium tracking-[-0.03em] gradient-text mb-1">{stat.value}</div>
                   <div className="text-sm text-muted-foreground">{stat.label}</div>
                 </div>
               ))}
@@ -193,7 +193,7 @@ export default async function AboutPage({ params }: PageProps) {
                 <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
                   {t.storyLabel}
                 </span>
-                <h2 className="text-3xl font-bold mb-6">
+                <h2 className="font-display text-3xl font-medium tracking-[-0.03em] mb-6">
                   {t.storyTitle}
                 </h2>
                 <div className="space-y-4 text-muted-foreground">
@@ -202,7 +202,7 @@ export default async function AboutPage({ params }: PageProps) {
                   <p>{t.storyP3}</p>
                 </div>
               </div>
-              <div className="glass-card hover-glow card p-8 bg-muted/50">
+              <div className="card card-interactive card p-8 bg-muted/50">
                 <blockquote className="text-lg italic mb-4">
                   {t.quote}
                 </blockquote>
@@ -212,16 +212,16 @@ export default async function AboutPage({ params }: PageProps) {
           </div>
         </section>
 
-        <section className="section bg-muted/30">
+        <section className="section bg-surface-raised/40">
           <div className="container">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">{t.beliefsTitle}</h2>
+              <h2 className="font-display text-3xl font-medium tracking-[-0.03em] mb-4">{t.beliefsTitle}</h2>
               <p className="text-muted-foreground">{t.beliefsSub}</p>
             </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {t.values.map((value) => (
-                <div key={value.title} className="glass-card hover-glow card p-6 text-center">
+                <div key={value.title} className="card card-interactive card p-6 text-center">
                   <div className="text-4xl mb-4">{value.icon}</div>
                   <h3 className="font-semibold mb-2">{value.title}</h3>
                   <p className="text-sm text-muted-foreground">{value.description}</p>
@@ -234,14 +234,14 @@ export default async function AboutPage({ params }: PageProps) {
         <section className="section">
           <div className="container max-w-4xl">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">{t.howWeWorkTitle}</h2>
+              <h2 className="font-display text-3xl font-medium tracking-[-0.03em] mb-4">{t.howWeWorkTitle}</h2>
               <p className="text-muted-foreground">{t.howWeWorkSub}</p>
             </div>
 
             <div className="space-y-6">
               {t.steps.map((item) => (
                 <div key={item.step} className="flex gap-6 items-start">
-                  <div className="w-12 h-12 rounded-xl gradient-primary flex items-center justify-center text-white font-bold flex-shrink-0">
+                  <div className="w-12 h-12 rounded-[8px] gradient-primary flex items-center justify-center text-white font-bold flex-shrink-0">
                     {item.step}
                   </div>
                   <div>
@@ -256,7 +256,7 @@ export default async function AboutPage({ params }: PageProps) {
 
         <section className="section gradient-primary text-white">
           <div className="container text-center">
-            <h2 className="text-3xl font-bold mb-4">{t.ctaTitle}</h2>
+            <h2 className="font-display text-3xl font-medium tracking-[-0.03em] mb-4">{t.ctaTitle}</h2>
             <p className="text-white/80 mb-8 max-w-xl mx-auto">
               {t.ctaSub}
             </p>

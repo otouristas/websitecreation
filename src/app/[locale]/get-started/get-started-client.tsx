@@ -6,33 +6,46 @@ import Link from 'next/link';
 import { industries } from '@/data/industries';
 import { industriesEl } from '@/data/industries-i18n';
 import { submitToFormspree } from '@/lib/formspree';
-import { captureUtmParams, trackFormStart, trackLead, trackPlanSelection } from '@/lib/analytics';
+import { captureUtmParams, trackFormStart, trackLead } from '@/lib/analytics';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 
-const packagesEn = [
-  { id: 'starter', name: 'Starter', price: 899, originalPrice: 1499, pages: 5 },
-  { id: 'professional', name: 'Professional', price: 1799, originalPrice: 2999, pages: 10 },
-  { id: 'business', name: 'Business', price: 2999, originalPrice: 4999, pages: 20 },
+/**
+ * Step 1 is an outcome menu, not a price menu.
+ *
+ * Asking a cold visitor to pick a package before they have spoken to anyone
+ * puts a pricing decision ahead of a fit decision, which suppresses leads.
+ * Prices still live in the site's CONTENT (the /el pricing block and /pricing)
+ * because the keyword research shows pricing intent is the largest winnable
+ * Greek cluster - but the FORM sells the outcome and lets us scope the quote.
+ */
+const goalsEn = [
+  { id: 'bookings', label: 'More direct bookings or enquiries', hint: 'Hotels, rentals, tours' },
+  { id: 'local', label: 'Rank for my services in my city', hint: 'Local SEO and Google Maps' },
+  { id: 'new-site', label: 'A new website that converts', hint: 'Design and build from scratch' },
+  { id: 'recover', label: 'Fix a site that is losing traffic', hint: 'Audit, technical SEO, recovery' },
+  { id: 'ai', label: 'Show up in AI answers', hint: 'ChatGPT, Perplexity, AI Overviews' },
+  { id: 'eshop', label: 'Sell more through my e-shop', hint: 'E-commerce SEO and WooCommerce' },
 ];
 
-const packagesEl = [
-  { id: 'starter', name: 'Starter', price: 899, originalPrice: 1499, pages: 5 },
-  { id: 'professional', name: 'Professional', price: 1799, originalPrice: 2999, pages: 10 },
-  { id: 'business', name: 'Business', price: 2999, originalPrice: 4999, pages: 20 },
+const goalsEl = [
+  { id: 'bookings', label: 'Περισσότερες απευθείας κρατήσεις', hint: 'Ξενοδοχεία, ενοικιάσεις, εκδρομές' },
+  { id: 'local', label: 'Να με βρίσκουν στην περιοχή μου', hint: 'Τοπικό SEO και Χάρτες Google' },
+  { id: 'new-site', label: 'Νέα ιστοσελίδα που φέρνει πελάτες', hint: 'Σχεδιασμός και κατασκευή' },
+  { id: 'recover', label: 'Να διορθώσω πτώση επισκεψιμότητας', hint: 'Έλεγχος, τεχνικό SEO, ανάκαμψη' },
+  { id: 'ai', label: 'Να εμφανίζομαι σε απαντήσεις AI', hint: 'ChatGPT, Perplexity, AI Overviews' },
+  { id: 'eshop', label: 'Περισσότερες πωλήσεις στο e-shop', hint: 'SEO για e-shop και WooCommerce' },
 ];
 
-const addOnsEn = [
-  { id: 'logo', name: 'Logo Design', price: 299 },
-  { id: 'content', name: 'Content Writing (5 pages)', price: 399 },
-  { id: 'ecommerce', name: 'E-commerce Setup', price: 499 },
-  { id: 'maintenance', name: '3 Months Maintenance', price: 499 },
+const projectTypesEn = [
+  { id: 'existing', label: 'I have a website already' },
+  { id: 'new', label: 'I need a new website' },
+  { id: 'eshop', label: 'I have or need an e-shop' },
 ];
 
-const addOnsEl = [
-  { id: 'logo', name: 'Σχεδιασμός Λογοτύπου', price: 299 },
-  { id: 'content', name: 'Συγγραφή Κειμένων (5 σελίδες)', price: 399 },
-  { id: 'ecommerce', name: 'Ρύθμιση E-commerce', price: 499 },
-  { id: 'maintenance', name: '3 Μήνες Συντήρηση', price: 499 },
+const projectTypesEl = [
+  { id: 'existing', label: 'Έχω ήδη ιστοσελίδα' },
+  { id: 'new', label: 'Χρειάζομαι νέα ιστοσελίδα' },
+  { id: 'eshop', label: 'Έχω ή χρειάζομαι e-shop' },
 ];
 
 const featureOptionsEn = [
@@ -84,8 +97,8 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
   const lp = (path: string) => localizedPath(locale, path);
   const isEl = locale === 'el';
 
-  const packages = isEl ? packagesEl : packagesEn;
-  const addOns = isEl ? addOnsEl : addOnsEn;
+  const goals = isEl ? goalsEl : goalsEn;
+  const projectTypes = isEl ? projectTypesEl : projectTypesEn;
   const featureOptions = isEl ? featureOptionsEl : featureOptionsEn;
   const existingAssets = isEl ? existingAssetsEl : existingAssetsEn;
 
@@ -97,8 +110,8 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
   const [hasTrackedStart, setHasTrackedStart] = useState(false);
 
   const [formData, setFormData] = useState({
-    package: '',
-    addOns: [] as string[],
+    goal: '',
+    projectType: '',
     businessName: '',
     industry: '',
     website: '',
@@ -119,32 +132,27 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
     fullName: '',
     email: '',
     phone: '',
-    // Honeypot — humans never see or fill this ("website" is a real field in this form).
+    // Honeypot, humans never see or fill this ("website" is a real field in this form).
     gotcha: '',
   });
 
   useEffect(() => {
     setUtmParams(captureUtmParams());
-    const pkg = searchParams.get('package');
+    const goal = searchParams.get('goal');
     const project = searchParams.get('project');
-    if (pkg) {
-      trackPlanSelection(pkg);
-    }
     setFormData((prev) => {
       let next = { ...prev };
-      if (pkg && packages.some((p) => p.id === pkg)) {
-        next = { ...next, package: pkg };
+      if (goal && goals.some((g) => g.id === goal)) {
+        next = { ...next, goal };
       }
       if (project) {
         next = { ...next, industry: project };
       }
       return next;
     });
-  }, [searchParams, packages]);
+  }, [searchParams, goals]);
 
-  const selectedPackage = packages.find(p => p.id === formData.package);
-  const selectedAddOns = addOns.filter(a => formData.addOns.includes(a.id));
-  const totalPrice = (selectedPackage?.price || 0) + selectedAddOns.reduce((sum, a) => sum + a.price, 0);
+  const selectedGoal = goals.find((g) => g.id === formData.goal);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     if (!hasTrackedStart) {
@@ -153,15 +161,6 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
     }
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
-  };
-
-  const handleAddOnToggle = (addOnId: string) => {
-    setFormData(prev => ({
-      ...prev,
-      addOns: prev.addOns.includes(addOnId)
-        ? prev.addOns.filter(id => id !== addOnId)
-        : [...prev.addOns, addOnId],
-    }));
   };
 
   const handleFeatureToggle = (featureId: string) => {
@@ -185,7 +184,7 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
   const isStepValid = () => {
     switch (step) {
       case 1:
-        return !!formData.package;
+        return !!formData.goal && !!formData.projectType;
       case 2:
         return !!formData.businessName && !!formData.industry;
       case 3:
@@ -211,7 +210,7 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
 
   const handleSubmit = async () => {
     if (formData.gotcha) {
-      // Bot filled the honeypot — pretend success, send nothing.
+      // Bot filled the honeypot, pretend success, send nothing.
       setIsComplete(true);
       return;
     }
@@ -219,10 +218,8 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
     setSubmitError('');
 
     const submissionData = {
-      'Package': selectedPackage?.name || 'Not selected',
-      'Package Price': selectedPackage ? `€${selectedPackage.price}` : 'N/A',
-      'Add-ons': selectedAddOns.map(a => a.name).join(', ') || 'None',
-      'Total Estimated Price': `€${totalPrice}`,
+      'Goal': selectedGoal?.label || 'Not selected',
+      'Project Type': projectTypes.find((pt) => pt.id === formData.projectType)?.label || 'Not selected',
       'Business Name': formData.businessName,
       'Industry': formData.industry,
       'Current Website': formData.website || 'None',
@@ -244,14 +241,14 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
       'Phone': formData.phone || 'Not provided',
       '_subject': `New Website Project Request from ${formData.businessName}`,
       'Form Type': 'Get Started Wizard',
-      ...utmParams,
+    ...utmParams,
     };
 
     const result = await submitToFormspree(submissionData);
 
     if (result.ok) {
       trackLead('get-started', {
-        package: selectedPackage?.name ?? 'unknown',
+        goal: selectedGoal?.id ?? 'unknown',
         industry: formData.industry,
       });
       setIsComplete(true);
@@ -265,10 +262,17 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
     ? {
         title: "Ξεκινήστε το Έργο Σας",
         subtitle: "Συμπληρώστε τον οδηγό για να λάβετε μια προσαρμοσμένη προσφορά σε 24 ώρες.",
-        stepLabels: ['Πακέτο', 'Επιχείρηση', 'Project', 'Επικοινωνία'],
+        stepLabels: ['Στόχος', 'Επιχείρηση', 'Project', 'Επικοινωνία'],
         currency: "€",
-        choosePkg: "Επιλέξτε Πακέτο",
-        choosePkgSub: "Επιλέξτε το πακέτο που ταιριάζει στις ανάγκες σας",
+        choosePkg: "Τι θέλετε να πετύχετε;",
+        choosePkgSub: "Πείτε μας τον στόχο σας και θα προτείνουμε το κατάλληλο πλάνο. Χωρίς δέσμευση.",
+        projectTypeLabel: "Πού βρίσκεστε τώρα",
+        goalLabel: "Στόχος",
+        sidebarSteps: [
+          "Διαβάζουμε το αίτημά σας και ελέγχουμε την ιστοσελίδα και τον ανταγωνισμό σας.",
+          "Σας στέλνουμε δωρεάν αξιολόγηση με τα σημεία που αποδίδουν πιο γρήγορα.",
+          "Κλείνουμε μια σύντομη κλήση και σας δίνουμε συγκεκριμένη προσφορά.",
+        ],
         pagesCount: (count: number) => `Έως ${count} σελίδες`,
         optionalAddons: "Προαιρετικά Add-ons",
         bizInfoTitle: "Πείτε μας για την Επιχείρησή σας",
@@ -376,10 +380,17 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
     : {
         title: "Start Your Project",
         subtitle: "Complete our wizard to receive a custom quote in 24 hours.",
-        stepLabels: ['Package', 'Business', 'Project', 'Contact'],
+        stepLabels: ['Goal', 'Business', 'Project', 'Contact'],
         currency: "€",
-        choosePkg: "Choose Your Package",
-        choosePkgSub: "Select the package that fits your needs",
+        choosePkg: "What do you want to fix?",
+        choosePkgSub: "Tell us the outcome you are after and we will recommend the right plan. No commitment.",
+        projectTypeLabel: "Where you are now",
+        goalLabel: "Goal",
+        sidebarSteps: [
+          "We read your brief and review your site and competitors.",
+          "You get a free assessment showing the fastest wins available.",
+          "We hop on a short call and send a concrete quote.",
+        ],
         pagesCount: (count: number) => `Up to ${count} pages`,
         optionalAddons: "Optional Add-ons",
         bizInfoTitle: "Tell Us About Your Business",
@@ -487,7 +498,7 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
 
   if (isComplete) {
     return (
-      <main className="main-below-header flex min-h-[80vh] items-center">
+      <main className="blueprint-grid relative z-0 main-below-header flex min-h-[80vh] items-center">
         <div className="container">
           <div className="max-w-xl mx-auto text-center">
             <div className="w-24 h-24 rounded-full gradient-primary flex items-center justify-center mx-auto mb-8 shadow-lg shadow-primary/20">
@@ -496,12 +507,12 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
               </svg>
             </div>
 
-            <h1 className="text-3xl font-bold mb-4">{t.submittedTitle}</h1>
+            <h1 className="font-display text-3xl font-medium tracking-[-0.03em] mb-4">{t.submittedTitle}</h1>
             <p className="text-lg text-muted-foreground mb-6">
               {t.submittedSub(formData.fullName.split(' ')[0])}
             </p>
 
-            <div className="glass-card card p-6 text-left mb-8">
+            <div className="card card p-6 text-left mb-8">
               <h2 className="font-semibold mb-4">{t.nextStepsTitle}</h2>
               <ul className="space-y-3 text-sm">
                 {t.nextSteps.map((stepText, idx) => (
@@ -513,13 +524,12 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
               </ul>
             </div>
 
-            <div className="glass-card card p-4 bg-muted/10 text-sm text-muted-foreground mb-8">
-              <strong>{t.estBudget}:</strong> {t.currency}{totalPrice.toLocaleString()} •
-              <strong> {t.pkgLabel}:</strong> {selectedPackage?.name} •
+            <div className="card mb-8 p-4 text-sm text-muted-foreground">
+              <strong>{t.goalLabel}:</strong> {selectedGoal?.label} &middot;
               <strong> {t.bizLabel}:</strong> {formData.businessName}
             </div>
 
-            <Link href={lp("/")} className="btn btn-gradient">
+            <Link href={lp("/")} className="btn btn-primary">
               {t.backHome}
             </Link>
           </div>
@@ -529,11 +539,11 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
   }
 
   return (
-    <main className="main-below-header pb-24">
+    <main className="blueprint-grid relative z-0 main-below-header pb-24">
       {/* Hero Section */}
-      <section className="section-compact gradient-hero mb-8">
+      <section className="section-compact  mb-8">
         <div className="container text-center">
-          <h1 className="text-4xl sm:text-5xl font-bold mb-4">{t.title}</h1>
+          <h1 className="font-display text-4xl font-medium tracking-[-0.04em] sm:text-5xl mb-4">{t.title}</h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">{t.subtitle}</p>
         </div>
       </section>
@@ -543,17 +553,17 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
           
           {/* Left Column: Before / After Marketing Comparison */}
           <div className="lg:col-span-2 space-y-6">
-            <div className="glass-card card p-6 bg-gradient-to-br from-primary/[0.03] to-secondary/[0.03]">
-              <h3 className="text-xl font-bold mb-2 text-foreground">{t.beforeAfterTitle}</h3>
+            <div className="card card p-6 bg-gradient-to-br from-primary/[0.03] to-secondary/[0.03]">
+              <h3 className="font-display text-xl font-medium tracking-[-0.02em] mb-2 text-foreground">{t.beforeAfterTitle}</h3>
               <p className="text-sm text-muted-foreground mb-6">{t.beforeAfterSub}</p>
 
               <div className="space-y-6">
                 {t.metrics.map((metric) => (
-                  <div key={metric.title} className="border-b border-border/60 pb-6 last:border-0 last:pb-0">
+                  <div key={metric.title} className="border-b border-hairline pb-6 last:border-0 last:pb-0">
                     <h4 className="font-semibold text-sm mb-3 text-foreground/90">{metric.title}</h4>
                     <div className="grid grid-cols-2 gap-3">
                       {/* Before (Red) */}
-                      <div className="p-3 rounded-xl bg-destructive/5 border border-destructive/10">
+                      <div className="p-3 rounded-[8px] bg-destructive/5 border border-destructive/10">
                         <div className="flex items-center gap-1.5 mb-1">
                           <span className="w-1.5 h-1.5 rounded-full bg-destructive" />
                           <span className="text-[10px] font-bold uppercase tracking-wider text-destructive">
@@ -565,7 +575,7 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
                       </div>
 
                       {/* After (Green) */}
-                      <div className="p-3 rounded-xl bg-success/5 border border-success/10">
+                      <div className="p-3 rounded-[8px] bg-success/5 border border-success/10">
                         <div className="flex items-center gap-1.5 mb-1">
                           <span className="w-1.5 h-1.5 rounded-full bg-success" />
                           <span className="text-[10px] font-bold uppercase tracking-wider text-success">
@@ -585,7 +595,7 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
           {/* Right Column: Dynamic Form Wizard */}
           <div className="lg:col-span-3 space-y-6">
             {/* Step Progress indicators */}
-            <div className="glass-card card p-4 mb-4">
+            <div className="card card p-4 mb-4">
               <div className="flex items-center justify-between mb-3">
                 {t.stepLabels.map((label, i) => (
                   <div
@@ -610,68 +620,61 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
               </div>
             </div>
 
-            <div className="glass-card card p-6 sm:p-8 relative">
-              {/* Step 1: Package Selection */}
+            <div className="card card p-6 sm:p-8 relative">
+              {/* Step 1: what the visitor actually wants to achieve */}
               {step === 1 && (
                 <div>
-                  <h2 className="text-2xl font-bold mb-2">{t.choosePkg}</h2>
+                  <h2 className="font-display text-2xl font-medium tracking-[-0.02em] mb-2">{t.choosePkg}</h2>
                   <p className="text-muted-foreground mb-6 text-sm">{t.choosePkgSub}</p>
 
-                  <div className="space-y-3 mb-8">
-                    {packages.map((pkg) => (
+                  <div className="grid gap-2.5 sm:grid-cols-2 mb-8">
+                    {goals.map((goal) => (
                       <label
-                        key={pkg.id}
-                        className={`flex items-center justify-between p-4 rounded-xl border-2 cursor-pointer transition-smooth ${formData.package === pkg.id
-                          ? 'border-primary bg-primary/5'
-                          : 'border-border hover:border-primary/50'
-                          }`}
+                        key={goal.id}
+                        className={`flex cursor-pointer items-start gap-3 rounded-[10px] border p-4 transition-colors ${
+                          formData.goal === goal.id
+                            ? 'border-primary bg-primary/5'
+                            : 'border-hairline hover:border-primary/40'
+                        }`}
                       >
-                        <div className="flex items-center gap-4">
-                          <input
-                            type="radio"
-                            name="package"
-                            value={pkg.id}
-                            checked={formData.package === pkg.id}
-                            onChange={handleInputChange}
-                            className="w-5 h-5 text-primary focus:ring-primary focus:ring-2"
-                          />
-                          <div>
-                            <div className="font-semibold text-foreground">{pkg.name}</div>
-                            <div className="text-xs text-muted-foreground">{t.pagesCount(pkg.pages)}</div>
-                          </div>
-                        </div>
-                        <div className="flex flex-col items-end">
-                          <span className="text-xs text-muted-foreground line-through decoration-destructive/50 decoration-1">
-                            {t.currency}{pkg.originalPrice?.toLocaleString()}
-                          </span>
-                          <span className="font-bold text-lg text-primary">
-                            {t.currency}{pkg.price.toLocaleString()}
-                          </span>
-                        </div>
+                        <input
+                          type="radio"
+                          name="goal"
+                          value={goal.id}
+                          checked={formData.goal === goal.id}
+                          onChange={handleInputChange}
+                          className="mt-0.5 size-4 shrink-0 text-primary focus:ring-2 focus:ring-primary"
+                        />
+                        <span className="min-w-0">
+                          <span className="block text-sm font-medium text-foreground">{goal.label}</span>
+                          <span className="mt-0.5 block text-xs text-muted-foreground">{goal.hint}</span>
+                        </span>
                       </label>
                     ))}
                   </div>
 
-                  <h3 className="font-semibold text-sm mb-3">{t.optionalAddons}</h3>
-                  <div className="grid sm:grid-cols-2 gap-2">
-                    {addOns.map((addon) => (
+                  <h3 className="mb-3 text-[11px] font-medium uppercase tracking-[0.18em] text-brand">
+                    {t.projectTypeLabel}
+                  </h3>
+                  <div className="grid gap-2.5 sm:grid-cols-3">
+                    {projectTypes.map((pt) => (
                       <label
-                        key={addon.id}
-                        className={`flex items-center justify-between p-3 rounded-lg border cursor-pointer transition-smooth text-sm ${formData.addOns.includes(addon.id)
-                          ? 'border-primary bg-primary/5'
-                          : 'border-border hover:border-primary/50'
-                          }`}
+                        key={pt.id}
+                        className={`flex cursor-pointer items-center gap-3 rounded-[10px] border p-3.5 text-sm transition-colors ${
+                          formData.projectType === pt.id
+                            ? 'border-primary bg-primary/5'
+                            : 'border-hairline hover:border-primary/40'
+                        }`}
                       >
-                        <div className="flex items-center gap-3">
-                          <input
-                            type="checkbox"
-                            checked={formData.addOns.includes(addon.id)}
-                            onChange={() => handleAddOnToggle(addon.id)}
-                            className="w-4 h-4 text-primary rounded focus:ring-primary focus:ring-2"
-                          />
-                          <span className="text-foreground/90">{addon.name}</span>
-                        </div>
-                        <span className="font-semibold text-primary">+{t.currency}{addon.price}</span>
+                        <input
+                          type="radio"
+                          name="projectType"
+                          value={pt.id}
+                          checked={formData.projectType === pt.id}
+                          onChange={handleInputChange}
+                          className="size-4 shrink-0 text-primary focus:ring-2 focus:ring-primary"
+                        />
+                        <span className="text-foreground">{pt.label}</span>
                       </label>
                     ))}
                   </div>
@@ -681,7 +684,7 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
               {/* Step 2: Business Info */}
               {step === 2 && (
                 <div>
-                  <h2 className="text-2xl font-bold mb-2">{t.bizInfoTitle}</h2>
+                  <h2 className="font-display text-2xl font-medium tracking-[-0.02em] mb-2">{t.bizInfoTitle}</h2>
                   <p className="text-muted-foreground mb-6 text-sm">{t.bizInfoSub}</p>
 
                   <div className="space-y-4">
@@ -693,7 +696,7 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
                         value={formData.businessName}
                         onChange={handleInputChange}
                         placeholder={t.bizNamePlaceholder}
-                        className="w-full px-4 py-3 rounded-lg border border-border/80 bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-smooth text-sm"
+                        className="w-full px-4 py-3 rounded-lg border border-hairline bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-smooth text-sm"
                       />
                     </div>
 
@@ -703,7 +706,7 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
                         name="industry"
                         value={formData.industry}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 rounded-lg border border-border/80 bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-smooth text-sm"
+                        className="w-full px-4 py-3 rounded-lg border border-hairline bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-smooth text-sm"
                       >
                         <option value="">{t.industrySelect}</option>
                         {industries.map((ind) => {
@@ -724,7 +727,7 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
                         value={formData.website}
                         onChange={handleInputChange}
                         placeholder="https://..."
-                        className="w-full px-4 py-3 rounded-lg border border-border/80 bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-smooth text-sm"
+                        className="w-full px-4 py-3 rounded-lg border border-hairline bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-smooth text-sm"
                       />
                     </div>
 
@@ -736,7 +739,7 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
                         onChange={handleInputChange}
                         placeholder={t.bizDescPlaceholder}
                         rows={3}
-                        className="w-full px-4 py-3 rounded-lg border border-border/80 bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-smooth text-sm resize-none"
+                        className="w-full px-4 py-3 rounded-lg border border-hairline bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-smooth text-sm resize-none"
                       />
                     </div>
                   </div>
@@ -746,7 +749,7 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
               {/* Step 3: Project Details */}
               {step === 3 && (
                 <div>
-                  <h2 className="text-2xl font-bold mb-2">{t.projDetailsTitle}</h2>
+                  <h2 className="font-display text-2xl font-medium tracking-[-0.02em] mb-2">{t.projDetailsTitle}</h2>
                   <p className="text-muted-foreground mb-6 text-sm">{t.projDetailsSub}</p>
 
                   <div className="space-y-6">
@@ -756,7 +759,7 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
                         {t.domainOptions.map((option) => (
                           <label
                             key={option.value}
-                            className={`flex items-center gap-3 p-3 rounded-lg border cursor-pointer transition-smooth ${formData.hasDomain === option.value ? 'border-primary bg-primary/5' : 'border-border hover:border-primary/50'}`}
+                            className={`flex items-center gap-3 p-3 rounded-lg border cursor-pointer transition-smooth ${formData.hasDomain === option.value ? 'border-primary bg-primary/5' : 'border-hairline hover:border-primary/50'}`}
                           >
                             <input
                               type="radio"
@@ -777,7 +780,7 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
                           value={formData.domainName}
                           onChange={handleInputChange}
                           placeholder="yourdomain.com"
-                          className="w-full mt-3 px-4 py-3 rounded-lg border border-border/80 bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-smooth text-sm"
+                          className="w-full mt-3 px-4 py-3 rounded-lg border border-hairline bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-smooth text-sm"
                         />
                       )}
                     </div>
@@ -790,7 +793,7 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
                         onChange={handleInputChange}
                         placeholder={t.competitorsPlaceholder}
                         rows={3}
-                        className="w-full px-4 py-3 rounded-lg border border-border/80 bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-smooth text-sm resize-none"
+                        className="w-full px-4 py-3 rounded-lg border border-hairline bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-smooth text-sm resize-none"
                       />
                     </div>
 
@@ -802,7 +805,7 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
                         onChange={handleInputChange}
                         placeholder={t.designRefsPlaceholder}
                         rows={3}
-                        className="w-full px-4 py-3 rounded-lg border border-border/80 bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-smooth text-sm resize-none"
+                        className="w-full px-4 py-3 rounded-lg border border-hairline bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-smooth text-sm resize-none"
                       />
                     </div>
 
@@ -814,7 +817,7 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
                         value={formData.targetAudience}
                         onChange={handleInputChange}
                         placeholder={t.targetAudiencePlaceholder}
-                        className="w-full px-4 py-3 rounded-lg border border-border/80 bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-smooth text-sm"
+                        className="w-full px-4 py-3 rounded-lg border border-hairline bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-smooth text-sm"
                       />
                     </div>
 
@@ -824,7 +827,7 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
                         {featureOptions.map((feature) => (
                           <label
                             key={feature.id}
-                            className={`flex items-center gap-2 p-2 rounded-lg border cursor-pointer transition-smooth text-xs ${formData.features.includes(feature.id) ? 'border-primary bg-primary/5' : 'border-border hover:border-primary/50'}`}
+                            className={`flex items-center gap-2 p-2 rounded-lg border cursor-pointer transition-smooth text-xs ${formData.features.includes(feature.id) ? 'border-primary bg-primary/5' : 'border-hairline hover:border-primary/50'}`}
                           >
                             <input
                               type="checkbox"
@@ -844,7 +847,7 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
                         {t.timelineOptions.map((option) => (
                           <label
                             key={option.value}
-                            className={`flex items-center gap-2 p-3 rounded-lg border cursor-pointer transition-smooth ${formData.timeline === option.value ? 'border-primary bg-primary/5' : 'border-border hover:border-primary/50'}`}
+                            className={`flex items-center gap-2 p-3 rounded-lg border cursor-pointer transition-smooth ${formData.timeline === option.value ? 'border-primary bg-primary/5' : 'border-hairline hover:border-primary/50'}`}
                           >
                             <input
                               type="radio"
@@ -866,7 +869,7 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
                         {existingAssets.map((asset) => (
                           <label
                             key={asset.id}
-                            className={`flex items-center gap-2 p-2 rounded-lg border cursor-pointer transition-smooth text-xs ${formData.existingAssets.includes(asset.id) ? 'border-primary bg-primary/5' : 'border-border hover:border-primary/50'}`}
+                            className={`flex items-center gap-2 p-2 rounded-lg border cursor-pointer transition-smooth text-xs ${formData.existingAssets.includes(asset.id) ? 'border-primary bg-primary/5' : 'border-hairline hover:border-primary/50'}`}
                           >
                             <input
                               type="checkbox"
@@ -889,7 +892,7 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
                           value={formData.facebookUrl}
                           onChange={handleInputChange}
                           placeholder="Facebook URL"
-                          className="px-3 py-2 rounded-lg border border-border/80 bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-smooth text-xs"
+                          className="px-3 py-2 rounded-lg border border-hairline bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-smooth text-xs"
                         />
                         <input
                           type="url"
@@ -897,7 +900,7 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
                           value={formData.instagramUrl}
                           onChange={handleInputChange}
                           placeholder="Instagram URL"
-                          className="px-3 py-2 rounded-lg border border-border/80 bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-smooth text-xs"
+                          className="px-3 py-2 rounded-lg border border-hairline bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-smooth text-xs"
                         />
                         <input
                           type="url"
@@ -905,7 +908,7 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
                           value={formData.linkedinUrl}
                           onChange={handleInputChange}
                           placeholder="LinkedIn URL"
-                          className="px-3 py-2 rounded-lg border border-border/80 bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-smooth text-xs"
+                          className="px-3 py-2 rounded-lg border border-hairline bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-smooth text-xs"
                         />
                         <input
                           type="url"
@@ -913,7 +916,7 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
                           value={formData.twitterUrl}
                           onChange={handleInputChange}
                           placeholder="Twitter / X URL"
-                          className="px-3 py-2 rounded-lg border border-border/80 bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-smooth text-xs"
+                          className="px-3 py-2 rounded-lg border border-hairline bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-smooth text-xs"
                         />
                       </div>
                     </div>
@@ -926,7 +929,7 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
                         onChange={handleInputChange}
                         placeholder={isEl ? "Κάτι άλλο που θα θέλατε να μοιραστείτε μαζί μας..." : "Anything else we should know about your project?"}
                         rows={3}
-                        className="w-full px-4 py-3 rounded-lg border border-border/80 bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-smooth text-sm resize-none"
+                        className="w-full px-4 py-3 rounded-lg border border-hairline bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-smooth text-sm resize-none"
                       />
                     </div>
                   </div>
@@ -936,7 +939,7 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
               {/* Step 4: Contact Info */}
               {step === 4 && (
                 <div>
-                  <h2 className="text-2xl font-bold mb-2">{t.contactTitle}</h2>
+                  <h2 className="font-display text-2xl font-medium tracking-[-0.02em] mb-2">{t.contactTitle}</h2>
                   <p className="text-muted-foreground mb-6 text-sm">{t.contactSub}</p>
 
                   <div className="space-y-4">
@@ -960,7 +963,7 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
                         value={formData.fullName}
                         onChange={handleInputChange}
                         placeholder="John Doe"
-                        className="w-full px-4 py-3 rounded-lg border border-border/80 bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-smooth text-sm"
+                        className="w-full px-4 py-3 rounded-lg border border-hairline bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-smooth text-sm"
                       />
                     </div>
 
@@ -972,7 +975,7 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
                         value={formData.email}
                         onChange={handleInputChange}
                         placeholder="john@company.com"
-                        className="w-full px-4 py-3 rounded-lg border border-border/80 bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-smooth text-sm"
+                        className="w-full px-4 py-3 rounded-lg border border-hairline bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-smooth text-sm"
                       />
                     </div>
 
@@ -984,7 +987,7 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
                         value={formData.phone}
                         onChange={handleInputChange}
                         placeholder="+30 690 000 0000"
-                        className="w-full px-4 py-3 rounded-lg border border-border/80 bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-smooth text-sm"
+                        className="w-full px-4 py-3 rounded-lg border border-hairline bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-smooth text-sm"
                       />
                     </div>
                   </div>
@@ -998,7 +1001,7 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
               )}
 
               {/* Wizard Form Navigation */}
-              <div className="flex items-center justify-between mt-8 pt-6 border-t border-border/60">
+              <div className="flex items-center justify-between mt-8 pt-6 border-t border-hairline">
                 {step > 1 ? (
                   <button onClick={handleBack} className="btn btn-outline py-2.5 text-xs font-bold">
                     {t.back}
@@ -1011,7 +1014,7 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
                   <button
                     onClick={handleNext}
                     disabled={!isStepValid()}
-                    className="btn btn-gradient disabled:opacity-50 py-2.5 text-xs font-bold"
+                    className="btn btn-primary disabled:opacity-50 py-2.5 text-xs font-bold"
                   >
                     {t.continue}
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1022,7 +1025,7 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
                   <button
                     onClick={handleSubmit}
                     disabled={isSubmitting || !isStepValid()}
-                    className="btn btn-gradient disabled:opacity-50 py-2.5 text-xs font-bold"
+                    className="btn btn-primary disabled:opacity-50 py-2.5 text-xs font-bold"
                   >
                     {isSubmitting ? (
                       <>
@@ -1046,36 +1049,21 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
             </div>
 
             {/* Quote Summary Sidebar / Panel */}
-            <div className="glass-card card p-6">
-              <h3 className="font-bold text-sm mb-4 text-foreground/90">{t.summaryTitle}</h3>
+            <div className="card card p-6">
+              <h3 className="mb-4 text-[11px] font-medium uppercase tracking-[0.18em] text-brand">{t.nextStepsTitle}</h3>
 
-              {selectedPackage ? (
-                <div className="space-y-4 text-xs">
-                  <div className="flex justify-between font-medium">
-                    <span>{selectedPackage.name} {isEl ? "Πακέτο" : "Package"}</span>
-                    <span>{t.currency}{selectedPackage.price.toLocaleString()}</span>
-                  </div>
+              <ol className="space-y-4 text-xs">
+                {t.sidebarSteps.map((stepText: string, i: number) => (
+                  <li key={stepText} className="flex gap-3">
+                    <span className="grid size-5 shrink-0 place-items-center rounded-full bg-primary/10 font-medium text-primary">
+                      {i + 1}
+                    </span>
+                    <span className="text-muted-foreground">{stepText}</span>
+                  </li>
+                ))}
+              </ol>
 
-                  {selectedAddOns.map((addon) => (
-                    <div key={addon.id} className="flex justify-between text-muted-foreground">
-                      <span>{addon.name}</span>
-                      <span>+{t.currency}{addon.price}</span>
-                    </div>
-                  ))}
-
-                  <div className="pt-4 border-t border-border/60">
-                    <div className="flex justify-between text-base font-bold text-foreground">
-                      <span>{t.summaryEstimated}</span>
-                      <span className="gradient-text">{t.currency}{totalPrice.toLocaleString()}</span>
-                    </div>
-                    <p className="text-[10px] text-muted-foreground mt-1.5">{t.summaryFinalQuote}</p>
-                  </div>
-                </div>
-              ) : (
-                <p className="text-xs text-muted-foreground">{t.noPkgSelected}</p>
-              )}
-
-              <div className="mt-6 pt-4 border-t border-border/60 text-[10px] text-muted-foreground space-y-2.5">
+              <div className="mt-6 pt-4 border-t border-hairline text-[10px] text-muted-foreground space-y-2.5">
                 <div className="flex items-center gap-2">
                   <svg className="w-4 h-4 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -1110,10 +1098,10 @@ export function GetStartedClient({ locale }: { locale: SiteLocale }) {
   return (
     <Suspense
       fallback={
-        <main className="main-below-header pb-24">
-          <section className="section-compact gradient-hero mb-8">
+        <main className="blueprint-grid relative z-0 main-below-header pb-24">
+          <section className="section-compact  mb-8">
             <div className="container text-center">
-              <h1 className="text-4xl sm:text-5xl font-bold mb-4">{fallbackTitle}</h1>
+              <h1 className="font-display text-4xl font-medium tracking-[-0.04em] sm:text-5xl mb-4">{fallbackTitle}</h1>
               <div className="mx-auto mt-8 flex justify-center">
                 <div className="animate-spin w-8 h-8 border-2 border-primary border-t-transparent rounded-full" />
               </div>
