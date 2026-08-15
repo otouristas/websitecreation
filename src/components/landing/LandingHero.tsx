@@ -17,49 +17,49 @@ export function LandingHero({ locale = "en" }: { locale?: SiteLocale }) {
             <div className="mb-5 flex justify-center lg:justify-start">
               <div className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
                 <Sparkles className="h-4 w-4 shrink-0" aria-hidden />
-                {isEl ? t!.badge : "Tourism websites · Hotels · Rent-a-car · Travel AI"}
+                {isEl ? t!.badge : "Website design · E-shop · SEO · GEO / AEO"}
               </div>
             </div>
             <h1 className="mb-5 text-4xl font-medium leading-[1.08] tracking-[-0.03em] text-foreground md:text-5xl lg:text-6xl">
               <span className="gradient-text">
-                {isEl ? t!.h1Line1 : "AnotherSEOGuru"}
+                {isEl ? t!.h1Line1 : "Websites and SEO that"}
               </span>
               <br />
               <span className="text-foreground">
-                {isEl ? t!.h1Line2 : "Websites for hotels & tours that win bookings"}
+                {isEl ? t!.h1Line2 : "win the booking"}
               </span>
             </h1>
             <p className="mb-3 text-lg text-muted-foreground md:text-xl">
               {isEl
                 ? t!.sub
-                : "Web design, SEO, GEO & AEO for hotels, rent-a-car and travel brands — from €899 / €299 mo."}
+                : "AnotherSEOGuru designs and ranks websites, WooCommerce shops, and hotel sites for Greece and international markets — from €899, with GEO and AEO built in."}
             </p>
             <p className="mx-auto mb-8 max-w-xl text-base text-muted-foreground lg:mx-0">
               {isEl
                 ? t!.proof
-                : "70+ live projects across Greece and Europe. Built to rank on Google and AI search — free quote in EUR."}
+                : "70+ live projects. Transparent EUR pricing. One team for design, technical SEO, and AI-search visibility."}
             </p>
             <div className="mb-8 flex flex-col justify-center gap-3 sm:flex-row lg:justify-start">
               <Link
                 href={localizedPath(isEl ? "el" : "en", "/get-started")}
                 className="btn btn-gradient px-8 py-4 text-lg font-semibold"
               >
-                {isEl ? t!.ctaQuote : "Get a quote"}
+                {isEl ? t!.ctaQuote : "Get a free quote"}
               </Link>
-              <Link href={localizedPath(isEl ? "el" : "en", "/work")} className="btn btn-outline text-lg px-8 py-4">
-                {isEl ? t!.ctaWork : "See our work"}
+              <Link href={localizedPath(isEl ? "el" : "en", "/work")} className="btn btn-outline px-8 py-4 text-lg">
+                {isEl ? t!.ctaWork : "See the work"}
               </Link>
-              <Link href={localizedPath(isEl ? "el" : "en", "/contact")} className="btn btn-outline text-lg px-8 py-4">
+              <Link href={localizedPath(isEl ? "el" : "en", "/contact")} className="btn btn-outline px-8 py-4 text-lg">
                 {isEl ? t!.ctaContact : "Talk to us"}
               </Link>
             </div>
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-5 text-sm text-muted-foreground">
+            <div className="flex flex-wrap items-center justify-center gap-5 text-sm text-muted-foreground lg:justify-start">
               {(isEl
                 ? [t!.trust1, t!.trust2, t!.trust3]
                 : ["SEO-ready from day one", "Multilingual sites", "Agency + technical support"]
               ).map((label) => (
                 <span key={label} className="inline-flex items-center gap-2">
-                  <Check className="w-4 h-4 text-[hsl(var(--success))]" aria-hidden />
+                  <Check className="h-4 w-4 text-[hsl(var(--success))]" aria-hidden />
                   {label}
                 </span>
               ))}
@@ -69,48 +69,40 @@ export function LandingHero({ locale = "en" }: { locale?: SiteLocale }) {
             <div className="relative z-10 overflow-hidden rounded-2xl border-2 border-border shadow-strong">
               <Image
                 src="/portfolio/discover-cyclades.webp"
-                alt={isEl ? t!.imageAlt : "Tourism website example by AnotherSEOGuru"}
+                alt={isEl ? t!.imageAlt : "Tourism website designed by AnotherSEOGuru"}
                 width={1200}
                 height={800}
-                className="w-full h-auto object-cover object-top"
+                className="h-auto w-full object-cover object-top"
                 sizes="(max-width: 1024px) 100vw, 630px"
                 priority
                 fetchPriority="high"
               />
             </div>
-            <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-2xl blur-2xl -z-10" />
+            <div className="absolute -inset-4 -z-10 rounded-2xl bg-gradient-to-r from-primary/20 to-secondary/20 blur-2xl" />
           </div>
         </div>
-        <div className="mt-12 mx-auto max-w-4xl">
+        <div className="mx-auto mt-12 max-w-4xl">
           <div className="rounded-2xl border border-border bg-card p-6 shadow-medium">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-              {isEl ? (
-                <>
-                  <div>
-                    <div className="text-2xl md:text-3xl font-bold">{t!.stats.projectsVal}</div>
-                    <div className="text-sm text-muted-foreground">{t!.stats.projects}</div>
-                  </div>
-                  <div>
-                    <div className="text-2xl md:text-3xl font-bold">{t!.stats.marketsVal}</div>
-                    <div className="text-sm text-muted-foreground">{t!.stats.markets}</div>
-                  </div>
-                  <div>
-                    <div className="text-2xl md:text-3xl font-bold">{t!.stats.languagesVal}</div>
-                    <div className="text-sm text-muted-foreground">{t!.stats.languages}</div>
-                  </div>
-                  <div>
-                    <div className="text-2xl md:text-3xl font-bold">{t!.stats.supportVal}</div>
-                    <div className="text-sm text-muted-foreground">{t!.stats.support}</div>
-                  </div>
-                </>
-              ) : (
-                <>
-                  <div><div className="text-2xl md:text-3xl font-bold">70+</div><div className="text-sm text-muted-foreground">Projects</div></div>
-                  <div><div className="text-2xl md:text-3xl font-bold">5</div><div className="text-sm text-muted-foreground">Markets</div></div>
-                  <div><div className="text-2xl md:text-3xl font-bold">EN/EL</div><div className="text-sm text-muted-foreground">Languages</div></div>
-                  <div><div className="text-2xl md:text-3xl font-bold">24/7</div><div className="text-sm text-muted-foreground">Support</div></div>
-                </>
-              )}
+            <div className="grid grid-cols-2 gap-6 text-center md:grid-cols-4">
+              {(isEl
+                ? [
+                    [t!.stats.projectsVal, t!.stats.projects],
+                    [t!.stats.marketsVal, t!.stats.markets],
+                    [t!.stats.languagesVal, t!.stats.languages],
+                    [t!.stats.supportVal, t!.stats.support],
+                  ]
+                : [
+                    ["70+", "Projects"],
+                    ["€899", "Website from"],
+                    ["€299", "SEO / month"],
+                    ["EN / EL", "Languages"],
+                  ]
+              ).map(([value, label]) => (
+                <div key={label}>
+                  <div className="text-2xl font-bold md:text-3xl">{value}</div>
+                  <div className="text-sm text-muted-foreground">{label}</div>
+                </div>
+              ))}
             </div>
           </div>
         </div>

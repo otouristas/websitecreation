@@ -149,7 +149,7 @@ export default function Header({ locale: localeProp }: { locale?: SiteLocale }):
         <div className="container mx-auto px-3 py-1.5 transition-all duration-300 sm:px-4 md:min-h-20 md:px-6 md:py-2">
           <div className="flex min-h-14 items-center justify-between gap-3 md:min-h-[4.25rem]">
             <div className="flex min-w-0 flex-col justify-center gap-0.5">
-              <BrandLogo size="md" className="shrink-0 transition-transform hover:opacity-90" homeHref={lp("/")} />
+              <BrandLogo size="md" className="shrink-0 transition-opacity hover:opacity-90" homeHref={lp("/")} />
               <p className="max-w-[14rem] text-[9px] leading-snug text-muted-foreground sm:max-w-none sm:text-[10px] md:text-xs">
                 {nav.tagline}
               </p>

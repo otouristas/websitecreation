@@ -15,7 +15,7 @@ const SITE_URL = 'https://anotherseoguru.com';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
-  subsets: ['latin'],
+  subsets: ['latin', 'latin-ext'],
 });
 
 const geistMono = Geist_Mono({
@@ -258,7 +258,7 @@ export default async function LocaleLayout({
         <div className="pointer-events-none fixed inset-0 -z-10" aria-hidden>
           <MarketingPageBackground />
         </div>
-        <div className="relative z-0 min-h-dvh" data-locale={locale}>
+        <div className="relative z-0 min-h-dvh pb-20 lg:pb-0" data-locale={locale}>
           {children}
         </div>
         <StickyMobileCta />

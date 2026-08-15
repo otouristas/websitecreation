@@ -6,6 +6,7 @@ import SchemaMarkup from '@/components/seo/SchemaMarkup';
 import { HowItWorks, AgencyBand, HomeFaq, ResultsBand } from '@/components/marketing';
 import {
   LandingHero,
+  HomeOfferGrid,
   ProblemSolutionSection,
   LandingTestimonials,
   PortfolioGrid,
@@ -46,6 +47,7 @@ export function HomePageView({ locale }: { locale: SiteLocale }) {
         <Header />
         <main className="relative z-0 overflow-hidden">
           <LandingHero locale="el" />
+          <HomeOfferGrid locale="el" />
           <VerticalServices locale="el" />
           <PortfolioGrid locale="el" />
           <ProblemSolutionSection locale="el" />
@@ -81,13 +83,15 @@ export function HomePageView({ locale }: { locale: SiteLocale }) {
                 className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-muted-foreground"
               >
                 {[
-                  { href: lp('/pricing'), label: 'Τιμές' },
+                  { href: lp('/pricing'), label: 'Τιμές ιστοσελίδας' },
+                  { href: lp('/blog/poso-kostizei-mia-istoselida'), label: 'Πόσο κοστίζει' },
+                  { href: lp('/blog/poso-kostizei-to-seo'), label: 'Κόστος SEO' },
+                  { href: lp('/blog/kataskevi-eshop-odigos'), label: 'Κατασκευή e-shop' },
                   { href: lp('/services/ai-visibility'), label: 'GEO / AEO' },
                   { href: lp('/solutions/hotels'), label: 'Ξενοδοχεία' },
                   { href: lp('/services/website-creation/athens-gr'), label: 'Αθήνα' },
                   { href: lp('/services/local-seo/thessaloniki-gr'), label: 'Θεσσαλονίκη' },
                   { href: lp('/work'), label: 'Έργα' },
-                  { href: lp('/get-started'), label: 'Προσφορά' },
                 ].map((item) => (
                   <Link key={item.href} href={item.href} className="hover:text-primary transition-colors">
                     {item.label}
@@ -98,7 +102,7 @@ export function HomePageView({ locale }: { locale: SiteLocale }) {
           </section>
           <section className="bg-foreground py-[var(--marketing-section-y)] text-center text-background">
             <div className="container max-w-2xl">
-              <h2 className="mb-4 text-3xl font-bold">{elHome.finalCta.title}</h2>
+              <h2 className="mb-4 text-3xl font-bold md:text-4xl">{elHome.finalCta.title}</h2>
               <p className="mb-8 text-background/80">{elHome.finalCta.body}</p>
               <div className="flex flex-col justify-center gap-4 sm:flex-row">
                 <Link href={lp('/get-started')} className="btn bg-background px-8 py-4 font-semibold text-foreground hover:bg-background/90">
@@ -122,6 +126,7 @@ export function HomePageView({ locale }: { locale: SiteLocale }) {
       <Header />
       <main className="relative z-0 overflow-hidden">
         <LandingHero locale="en" />
+        <HomeOfferGrid locale="en" />
         <VerticalServices />
         <PortfolioGrid />
         <ProblemSolutionSection />
