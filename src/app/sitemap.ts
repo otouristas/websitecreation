@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next';
-import { PLATFORM_TOOLS } from '@/data/platform-tools';
+import { isPlatformFeatureIndexable } from '@/lib/indexability/platform-feature';
 import { MARKETING_FEATURES } from '@/data/marketing-features';
 import { COMPARE_PAGES } from '@/data/compare-pages';
 import { getAllBlogPosts, getPillarSummary } from '@/lib/blog';
@@ -84,7 +84,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     forEnOnly(`/compare/${c.slug}`, { priority: 0.82, changeFrequency: 'monthly' }),
   );
 
-  const featurePages = MARKETING_FEATURES.flatMap((f) =>
+  const featurePages = MARKETING_FEATURES.filter((f) => isPlatformFeatureIndexable(f.slug)).flatMap((f) =>
     forEnOnly(`/platform/features/${f.slug}`, { priority: 0.8, changeFrequency: 'monthly' }),
   );
 
@@ -113,9 +113,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: p.isPillarHub ? 0.85 : 0.7,
   }));
 
-  const toolPages = PLATFORM_TOOLS.flatMap((tool) =>
-    forEnOnly(`/tools/${tool.slug}`, { priority: 0.75, changeFrequency: 'monthly' }),
-  );
+  // Tool detail pages are deliberately absent: they are noindex because they
+  // contain no tool, only a description and a deep link into the app. Listing
+  // them would put noindex URLs in the sitemap.
 
   return [...staticPages,
     ...comparePages,
@@ -123,5 +123,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...portfolioPages,
     ...pillarPages,
     ...blogPages,
-    ...toolPages];
+  ];
 }

@@ -82,7 +82,7 @@ faq:
 7. Reviews και social proof πάνω από το fold στο mobile.
 8. WhatsApp / τηλέφωνο δίπλα στο booking engine.
 
-Για βαθύτερη βελτιστοποίηση: [on-page SEO](/el/blog/on-page-seo) και [κατασκευή ιστοσελίδας ξενοδοχείου](/el/blog/kataskevi-istoselidas-xenodoxeia).
+Για βαθύτερη βελτιστοποίηση: [on-page SEO](/en/blog/on-page-seo) και [κατασκευή ιστοσελίδας ξενοδοχείου](/el/blog/kataskevi-istoselidas-xenodoxeia).
 
 Μετρήστε την πρόοδο στο Google Search Console (κλικ και CTR σε room/destination URLs), στο booking engine (direct bookings vs OTA referrals) και στο GBP (κλήσεις, οδηγίες, μηνύματα). Αν η οργανική κίνηση ανεβαίνει αλλά οι κρατήσεις όχι, το πρόβλημα είναι UX/τιμολόγηση - όχι μόνο rankings. Σε αυτή την περίπτωση προτεραιότητα έχει το mobile booking flow και η σύγκριση «best rate guarantee» έναντι Booking.
 

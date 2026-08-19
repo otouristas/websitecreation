@@ -8,6 +8,7 @@ import { getServiceEl } from '@/data/services-i18n';
 import { industries } from '@/data/industries';
 import { industriesEl } from '@/data/industries-i18n';
 import { greeceLocations, getIndexableServiceLocationSlugs, getLocationBySlug } from '@/data/locations';
+import { isIndustryServiceIndexable } from '@/lib/indexability/industry-service';
 import { isValidLocale, localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 import { buildServiceMetadata, generateArticleSchema, generateBreadcrumbSchema, generateServiceSchema, generateFAQSchema, combineSchemas } from '@/lib/seo';
 import { SchemaMarkup, Breadcrumbs, FAQSection } from '@/components/seo';
@@ -64,7 +65,10 @@ export default async function ServicePage({ params }: PageProps) {
 
     // Each service hub gets its own hand-built page. Slugs not yet rebuilt fall
     // through to the shared template so the rollout can ship in waves.
+    // Registry lookup, not a component defined during render: the module-level
+    // map is stable across renders. react-hooks cannot see that through the call.
     const Bespoke = getBespokeServicePage(serviceSlug);
+    // eslint-disable-next-line react-hooks/static-components
     if (Bespoke) return <Bespoke locale={locale as SiteLocale} />;
 
     const isEl = locale === 'el';
@@ -250,7 +254,11 @@ export default async function ServicePage({ params }: PageProps) {
                                 return (
                                     <Link
                                         key={industry.slug}
-                                        href={lp(`/solutions/${industry.slug}/${serviceSlug}`)}
+                                        href={lp(
+                                            isIndustryServiceIndexable(industry.slug, serviceSlug, locale as SiteLocale)
+                                                ? `/solutions/${industry.slug}/${serviceSlug}`
+                                                : `/solutions/${industry.slug}`,
+                                        )}
                                         className="glass-card hover-glow px-4 py-3 text-sm text-center rounded-lg border border-border transition-smooth"
                                     >
                                         {indName}

@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { FAQSection, SchemaMarkup } from "@/components/seo";
 import { PLATFORM_TOOLS, getPlatformToolBySlug } from "@/data/platform-tools";
 import { getAppPath } from "@/lib/app-links";
+import { blogHref } from '@/lib/blog';
 import { isValidLocale, localizedPath, type SiteLocale } from "@/lib/i18n/locale";
 import { buildMetadata, generateFAQSchema } from "@/lib/seo";
 
@@ -29,6 +30,10 @@ export async function generateMetadata({ params }: ToolPageProps) {
     path: localizedPath(locale as SiteLocale, `/tools/${tool.slug}`),
     canonicalPath: localizedPath("en", `/tools/${tool.slug}`),
     primaryKeyword: tool.primaryKeyword,
+    // The interactive tool runs on the app subdomain; this page is a heading,
+    // a description and a deep link. Indexing it would be indexing an ad for a
+    // tool rather than the tool. Route stays for navigation.
+    noIndex: true,
   });
 }
 
@@ -88,7 +93,7 @@ export default async function PlatformToolPage({ params }: ToolPageProps) {
               local SEO
             </Link>
             , or our{" "}
-            <Link href={lp("/blog/what-is-seo")} className="text-primary hover:underline">
+            <Link href={blogHref("what-is-seo", locale as SiteLocale)} className="text-primary hover:underline">
               SEO pillar guide
             </Link>
             .

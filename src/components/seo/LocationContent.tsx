@@ -125,7 +125,7 @@ export function LocationContent({ location, service, industry, locale: localePro
                         Serving All of {city} & Surrounding Areas
                     </h3>
                     <p className="mb-6">
-                        Local SEO is about hyper-local relevance. We help you rank not just for &quot;plumber in {city}&quot; but for specific
+                        Local SEO is about hyper-local relevance. We help you rank not just for &quot;{target.toLowerCase()} in {city}&quot; but for specific
                         neighborhood searches where your customers actually live.
                     </p>
                     <div className="flex flex-wrap gap-3">

@@ -11,15 +11,15 @@ import {
     getLocationBySlug,
     getTier1LocationSlugs,
     formatLocationName,
+    countryNameEl,
     stateNames,
     getNearbyLocations,
     isGreekLocation,
 } from '@/data/locations';
-import { getLocationPack } from '@/data/location-content';
+import { getLocationPack, packFaqsForService } from '@/data/location-content';
 import {
     buildServiceLocationMetadata,
     generateBreadcrumbSchema,
-    generateLocalBusinessSchema,
     generateServiceSchema,
     generateFAQSchema,
     combineSchemas,
@@ -28,6 +28,7 @@ import {
 import { SchemaMarkup, Breadcrumbs, LocationContent } from '@/components/seo';
 import { getServiceLocationBreadcrumbs } from '@/lib/linking';
 import { grServiceLocationPath } from '@/lib/locale-paths';
+import { isIndustryServiceIndexable } from '@/lib/indexability/industry-service';
 import { isValidLocale, localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 import { getGreekLocative } from '@/lib/greek-locative';
 import { getServiceFaqs } from '@/data/service-faq-data';
@@ -77,11 +78,16 @@ export default async function ServiceLocationPage({ params }: PageProps) {
 
     const serviceEl = isEl ? getServiceEl(serviceSlug) : null;
     const serviceName = serviceEl?.name ?? service.name;
+    /**
+     * Greek inflects: `serviceName` is nominative and reads broken after "για"/"σε"
+     * ("για Υπηρεσίες SEO & Τεχνικός Έλεγχος"). Use this in running copy instead.
+     */
+    const serviceFor = serviceEl?.nameAccusative ?? service.name.toLowerCase();
     const serviceDesc = serviceEl?.description ?? service.description;
     const serviceFeatures = serviceEl?.features ?? service.features;
 
     const cityState = isEl && location.cityLocal
-        ? `${location.cityLocal}, ${location.country || 'Ελλάδα'}`
+        ? `${location.cityLocal}, ${countryNameEl(location)}`
         : formatLocationName(location);
 
     const cityName = isEl && location.cityLocal ? location.cityLocal : location.city;
@@ -108,32 +114,31 @@ export default async function ServiceLocationPage({ params }: PageProps) {
         locale as SiteLocale,
     );
 
-    const pageUrl = `${BASE_URL}${localizedPath(locale as SiteLocale, `/services/${serviceSlug}/${locationSlug}`)}`;
 
     const t = isEl ? {
         heroTitle: `${serviceName} ${cityLocative}`,
-        heroDesc: `Ψάχνετε για επαγγελματικές υπηρεσίες ${serviceName} ${cityLocative}; Δημιουργούμε γρήγορες, SEO-ready ιστοσελίδες που κατατάσσονται ψηλά στη Google και σε AI μηχανές αναζήτησης - με διαφανείς τιμές σε ${location.currency === 'EUR' ? 'Ευρώ (€)' : location.currency}.`,
+        heroDesc: `Ψάχνετε για ${serviceFor} ${cityLocative}; Δουλεύουμε με δεδομένα από το Google Search Console και παραδίδουμε αποτελέσματα που κατατάσσονται ψηλά στη Google και σε μηχανές αναζήτησης AI - με διαφανείς τιμές σε ${location.currency === 'EUR' ? 'Ευρώ (€)' : location.currency}.`,
         getQuote: `Προσφορά για ${cityName}`,
         allLocations: 'Όλες οι Τοποθεσίες',
         browseCities: 'Πλοήγηση σε Πόλεις',
         whatsIncludedTitle: `Τι Περιλαμβάνεται ${cityLocative}`,
-        whatsIncludedDesc: `Οι υπηρεσίες μας για ${serviceName} για επιχειρήσεις ${cityLocative} περιλαμβάνουν όλα όσα χρειάζεστε για μια ιστοσελίδα υψηλών επιδόσεων στην ${location.countryCode === 'GR' ? 'Ελλάδα' : 'χώρα εξυπηρέτησης'}.`,
+        whatsIncludedDesc: `Το πακέτο μας για ${serviceFor} καλύπτει όσα χρειάζονται οι επιχειρήσεις ${cityLocative} για μετρήσιμα αποτελέσματα ${location.countryCode === 'GR' ? 'στην Ελλάδα' : 'στη χώρα εξυπηρέτησης'}.`,
         industriesTitle: `${serviceName} για Κλάδους ${cityLocative}`,
         industriesDesc: `Εξειδικευμένες λύσεις για διαφορετικούς τύπους επιχειρήσεων ${cityLocative}.`,
         nearbyTitle: `Επίσης Εξυπηρετούμε Κοντινές Περιοχές ${cityLocative}`,
         otherServicesTitle: `Άλλες Υπηρεσίες ${cityLocative}`,
         faqTitle: `Συχνές Ερωτήσεις - ${cityName}`,
-        ctaTitle: `Έτοιμοι για ${serviceName} ${cityLocative};`,
+        ctaTitle: `Έτοιμοι για ${serviceFor} ${cityLocative};`,
         ctaDesc: `Ζητήστε μια δωρεάν προσφορά προσαρμοσμένη για τη δική σας επιχείρηση ${cityLocative} - τιμές σε ${location.currency === 'EUR' ? 'Ευρώ' : location.currency}.`,
         ctaBtn: `Δωρεάν Προσφορά για ${cityName}`,
     } : {
         heroTitle: `${service.name} in ${cityState}`,
-        heroDesc: `Looking for professional ${service.name.toLowerCase()} in ${location.city}, ${regionLabel}? We build fast, SEO-ready websites that rank in Google and AI search - with transparent pricing in ${location.currency}.`,
+        heroDesc: `Looking for professional ${service.name.toLowerCase()} in ${location.city}, ${regionLabel}? We work from Google Search Console data and deliver work that ranks in Google and AI search - with transparent pricing in ${location.currency}.`,
         getQuote: `Get ${location.city} Quote`,
         allLocations: 'All Locations',
         browseCities: 'Browse Cities',
         whatsIncludedTitle: `What's Included in ${location.city}`,
-        whatsIncludedDesc: `Our ${service.name.toLowerCase()} services for ${location.city} businesses include everything you need for a high-performing website in ${location.country}.`,
+        whatsIncludedDesc: `Our ${service.name.toLowerCase()} engagements for ${location.city} businesses cover everything you need to compete in ${location.country}.`,
         industriesTitle: `${service.name} for ${location.city} Industries`,
         industriesDesc: `Specialized solutions for different business types in ${location.city}.`,
         nearbyTitle: `Also Serving Nearby ${regionLabel} Cities`,
@@ -152,13 +157,13 @@ export default async function ServiceLocationPage({ params }: PageProps) {
         'ai-visibility',
     ]);
 
-    const cityFaqItems = isEl ? [
+    const cityFaqItems: { key?: string; question: string; answer: string }[] = isEl ? [
         {
-            question: `Πόσο γρήγορα μπορεί να παραδοθεί η ιστοσελίδα μου ${cityLocative};`,
-            answer: `Ανάλογα με το εύρος, τα περισσότερα projects για ${serviceName} ${cityLocative} παραδίδονται σε 2-8 εβδομάδες μόλις είναι έτοιμο το υλικό. Οι τιμές μας είναι σε ${location.currency === 'EUR' ? 'Ευρώ (€)' : location.currency}.`,
+            question: `Πόσο γρήγορα ξεκινάει το project μου ${cityLocative};`,
+            answer: `Ανάλογα με το εύρος, τα περισσότερα projects για ${serviceFor} ${cityLocative} ξεκινούν μέσα σε λίγες ημέρες και αποδίδουν τα πρώτα παραδοτέα σε 2-8 εβδομάδες. Οι τιμές μας είναι σε ${location.currency === 'EUR' ? 'Ευρώ (€)' : location.currency}.`,
         },
         {
-            question: `Παρέχετε ${serviceName} με τοπικό SEO ${cityLocative};`,
+            question: `Συνδυάζετε ${serviceFor} με τοπικό SEO ${cityLocative};`,
             answer: `Ναι. Σχεδιάζουμε τοπικές σελίδες, δομή εσωτερικών συνδέσμων, schema markup και στρατηγική Google Business Profile ώστε οι επιχειρήσεις ${cityLocative} να κατατάσσονται ψηλά για τοπικές αναζητήσεις.`,
         },
         {
@@ -166,7 +171,8 @@ export default async function ServiceLocationPage({ params }: PageProps) {
             answer: `Το τεχνικό SEO, το semantic clustering από το Search Console, το GEO/AEO βελτιστοποιημένο περιεχόμενο και οι κορυφαίες επιδόσεις Core Web Vitals - όχι οι απλές, λεπτές σελίδες προτύπων.`,
         },
         {
-            question: `Πόσο κοστίζει ${serviceName} ${cityLocative};`,
+            key: 'pricing',
+            question: `Ποιο είναι το κόστος για ${serviceFor} ${cityLocative};`,
             answer: ['local-seo', 'seo-audits', 'ai-visibility', 'link-building', 'eshop-seo', 'content-creation'].includes(serviceSlug)
                 ? `Τα πακέτα SEO ξεκινούν από €400/μήνα (Starter), €720/μήνα (Growth) και €1.200/μήνα (Scale). Η τιμή εξαρτάται από τον ανταγωνισμό ${cityLocative} και τους στόχους σας. Δείτε αναλυτικές τιμές στη σελίδα τιμών μας ή ζητήστε δωρεάν προσφορά.`
                 : `Οι ιστοσελίδες ξεκινούν από €1.200 (Starter, έως 5 σελίδες), €2.000 (Professional, έως 10 σελίδες) και €3.200 (Business, έως 20 σελίδες). Χωρίς κρυφές χρεώσεις - όλες οι τιμές σε Ευρώ. Ζητήστε δωρεάν προσφορά για ${cityName}.`,
@@ -189,6 +195,7 @@ export default async function ServiceLocationPage({ params }: PageProps) {
             answer: `Technical SEO, semantic clustering from Search Console, GEO/AEO structured content, and fast Core Web Vitals - not thin template pages.`,
         },
         {
+            key: 'pricing',
             question: `How much does ${service.name.toLowerCase()} cost in ${location.city}?`,
             answer: ['local-seo', 'seo-audits', 'ai-visibility', 'link-building', 'eshop-seo', 'content-creation'].includes(serviceSlug)
                 ? `SEO packages start at €400/mo (Starter), €720/mo (Growth), and €1.200/mo (Scale). The price depends on competition in ${location.city} and your goals. All pricing is transparent - see our pricing page or request a free quote.`
@@ -200,12 +207,17 @@ export default async function ServiceLocationPage({ params }: PageProps) {
         },
     ];
 
-    const packFaqs = (getLocationPack(location.slug, isEl ? 'el' : 'en')?.faqs ?? []).slice(0, 4);
+    // City FAQs are filtered by topic: the unfiltered merge put website-build
+    // questions on audit pages and shipped the mismatch as FAQPage schema.
+    const packFaqs = packFaqsForService(
+        getLocationPack(location.slug, isEl ? 'el' : 'en')?.faqs,
+        serviceSlug,
+    );
 
     const faqItems = hubFaqSlugs.has(serviceSlug)
         ? [
             ...getServiceFaqs(serviceSlug, isEl ? 'el' : 'en'),
-            cityFaqItems.find((f) => /κοστίζει|How much/i.test(f.question)) ?? cityFaqItems[0],
+            cityFaqItems.find((f) => f.key === 'pricing') ?? cityFaqItems[0],
             ...packFaqs,
           ]
         : [...packFaqs, ...cityFaqItems];
@@ -213,27 +225,15 @@ export default async function ServiceLocationPage({ params }: PageProps) {
     const schemas = combineSchemas(
         generateBreadcrumbSchema({ items: breadcrumbs }),
         generateFAQSchema({ faqs: faqItems }),
-        generateLocalBusinessSchema({
-            name: `${serviceName} - ${cityName}`,
-            description: isEl
-                ? `Επαγγελματικές υπηρεσίες ${serviceName} στην περιοχή ${cityName}`
-                : `Professional ${serviceName.toLowerCase()} services in ${cityName}`,
-            url: pageUrl,
-            address: {
-                addressLocality: cityName,
-                addressRegion: location.stateCode,
-                addressCountry: location.countryCode,
-            },
-            geo: {
-                latitude: location.latitude,
-                longitude: location.longitude,
-            },
-        }),
+        // No LocalBusiness here on purpose. We have no physical premises in these
+        // cities, and LocalBusiness + PostalAddress asserts exactly that. Service
+        // with areaServed is the correct markup for a service-area business and
+        // keeps the structured data aligned with what the page actually claims.
         generateServiceSchema({
             name: serviceName,
             description: serviceDesc,
             provider: { name: 'AnotherSEOGuru', url: BASE_URL },
-            areaServed: [cityName, location.country],
+            areaServed: [cityName, isEl ? countryNameEl(location) : location.country],
             serviceType: serviceName,
         }),
     );
@@ -308,7 +308,7 @@ export default async function ServiceLocationPage({ params }: PageProps) {
                     </div>
                 </section>
 
-                <section className="section bg-white">
+                <section className="section bg-surface-raised/40">
                     <div className="container">
                         <LocationContent location={location} service={service} locale={locale as SiteLocale} />
                     </div>
@@ -329,7 +329,11 @@ export default async function ServiceLocationPage({ params }: PageProps) {
                                 return (
                                     <Link
                                         key={industry.slug}
-                                        href={lp(`/solutions/${industry.slug}/${serviceSlug}`)}
+                                        href={lp(
+                                            isIndustryServiceIndexable(industry.slug, serviceSlug, locale as SiteLocale)
+                                                ? `/solutions/${industry.slug}/${serviceSlug}`
+                                                : `/solutions/${industry.slug}`,
+                                        )}
                                         className="card card-interactive px-4 py-3 text-sm text-center rounded-lg border border-hairline transition-smooth"
                                     >
                                         {indName}

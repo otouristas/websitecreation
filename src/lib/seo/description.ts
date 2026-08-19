@@ -52,7 +52,7 @@ export function smartTruncate(text: string, maxLength: number): string {
   }
 
   // Otherwise cut on a word boundary and drop trailing connectives.
-  let words = window.split(' ');
+  const words = window.split(' ');
   words.pop(); // the word the cut landed inside
   while (words.length > 1 && CONNECTIVES.has(words[words.length - 1].toLowerCase().replace(/[^\p{L}]/gu, ''))) {
     words.pop();

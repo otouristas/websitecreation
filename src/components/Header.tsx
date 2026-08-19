@@ -86,7 +86,10 @@ function NavDropdown(props: NavDropdownProps): ReactElement {
   );
 }
 
-export default function Header({ locale: localeProp }: { locale?: SiteLocale }): ReactElement {
+export default function Header({
+  locale: localeProp,
+  alternateHref,
+}: { locale?: SiteLocale; alternateHref?: string }): ReactElement {
   const pathname = usePathname() ?? "/en";
   const locale = localeProp ?? siteLocaleFromPath(pathname);
   const nav = getNavDictionary(locale);
@@ -117,6 +120,9 @@ export default function Header({ locale: localeProp }: { locale?: SiteLocale }):
   }, [isMobileMenuOpen]);
 
   useEffect(() => {
+    // Post-mount sync is the point here: close the mobile menu on client-side navigation,
+    // so the first paint has to be the SSR value and this corrects it.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsMobileMenuOpen(false);
   }, [pathname]);
 
@@ -175,7 +181,7 @@ export default function Header({ locale: localeProp }: { locale?: SiteLocale }):
               </Link>
             </div>
             <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
-              <LanguageSwitcher />
+              <LanguageSwitcher alternateHref={alternateHref} />
               <ThemeToggle />
               <a
                 href={WHATSAPP_HREF}
@@ -212,6 +218,7 @@ export default function Header({ locale: localeProp }: { locale?: SiteLocale }):
       </nav>
 
       <MobileNav
+        alternateHref={alternateHref}
         locale={locale}
         isOpen={isMobileMenuOpen}
         onClose={() => setIsMobileMenuOpen(false)}

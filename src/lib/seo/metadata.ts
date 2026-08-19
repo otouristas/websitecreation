@@ -8,6 +8,9 @@ import { LOCALES } from '@/lib/i18n/locale';
 import { shouldIndexServiceLocation, type Location } from '@/data/locations';
 
 export const TITLE_BRAND_SUFFIX = ` | ${BRAND_NAME}`;
+/** Shipped by src/app/opengraph-image.png. Every page needs one: twitter:card is summary_large_image. */
+export const DEFAULT_OG_IMAGE = '/opengraph-image.png';
+
 export const MAX_TITLE_TOTAL = 60;
 export const MAX_TITLE_PRIMARY = MAX_TITLE_TOTAL - TITLE_BRAND_SUFFIX.length;
 /**
@@ -123,11 +126,23 @@ interface MetadataInput {
   canonicalPath?: string;
 }
 
+/**
+ * Words a title must never end on. Truncating "X for Hotels" to "X for" left
+ * dozens of pages sharing one dangling title, so trailing function words are
+ * stripped after the cut.
+ */
+const TITLE_TRAILING_STOPWORDS =
+  /(?:\s+(?:για|σε|με|και|στη|στην|στο|στα|στους|του|της|των|for|and|with|in|on|to|the|a|an|of))+$/i;
+
 function smartTruncateTitle(text: string, max: number): string {
   if (text.length <= max) return text;
   const cut = text.slice(0, max);
   const lastSpace = cut.lastIndexOf(' ');
-  return (lastSpace > 20 ? cut.slice(0, lastSpace) : cut).replace(/\s*[;:\-–&|]+$/, '').trim();
+  return (lastSpace > 20 ? cut.slice(0, lastSpace) : cut)
+    .replace(/\s*[;:\-–&|]+$/, '')
+    .replace(TITLE_TRAILING_STOPWORDS, '')
+    .replace(/\s*[;:\-–&|]+$/, '')
+    .trim();
 }
 
 /** Strip brand duplication and enforce primary segment length before suffix */
@@ -169,6 +184,7 @@ export function buildFullTitle(raw: string): string {
 import { getServiceEl } from '@/data/services-i18n';
 import { industriesEl } from '@/data/industries-i18n';
 import { getGreekLocative } from '@/lib/greek-locative';
+import { isIndustryServiceIndexable } from '@/lib/indexability/industry-service';
 
 export function buildMetadata(input: MetadataInput): Metadata {
   const {
@@ -240,17 +256,20 @@ export function buildMetadata(input: MetadataInput): Metadata {
             section: article.section,
           }
         : { type: 'website' as const }),
-      ...(ogImage ? { images: [{ url: ogImage }] } : {}),
+      images: [{ url: ogImage ?? DEFAULT_OG_IMAGE, width: 1200, height: 630, alt: BRAND_NAME }],
     },
     twitter: {
       card: 'summary_large_image',
       title: fullTitle,
       description,
+      images: [ogImage ?? DEFAULT_OG_IMAGE],
     },
   };
  
   if (noIndex) {
-    metadata.robots = { index: false, follow: false };
+    // follow, not nofollow: these pages stay reachable and their outgoing links
+    // still count. nofollow would strand the equity passing through them.
+    metadata.robots = { index: false, follow: true };
   }
  
   return metadata;
@@ -381,11 +400,26 @@ function enTitleSuffixes(slug: string): readonly string[] {
 }
 
 
-/** Append the longest suffix that keeps the primary title within the locale-aware max. */
+const titleWords = (t: string) =>
+  t.toLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
+
+/**
+ * Append the longest suffix that keeps the primary title within the locale-aware
+ * max *and* adds something new.
+ *
+ * The ladders repeat the service keyword, so a base that already contains it
+ * produced "Κατασκευή Ιστοσελίδων Αθήνα - Κατασκευή" and
+ * "Τοπικό SEO Θεσσαλονίκη - Τοπικό SEO" - boilerplate that spends SERP pixels
+ * saying the same thing twice.
+ */
 function fitTitleWithSuffix(base: string, suffixes: readonly string[]): string {
   const max = primaryTitleMax(base);
+  const baseWords = titleWords(base);
   for (const suffix of suffixes) {
-    if (base.length + suffix.length <= max) return base + suffix;
+    if (base.length + suffix.length > max) continue;
+    const suffixWords = titleWords(suffix);
+    if (suffixWords && baseWords.includes(suffixWords)) continue;
+    return base + suffix;
   }
   return base;
 }
@@ -407,6 +441,19 @@ const EL_SHORT_TITLE_KEYWORD: Record<string, string> = {
   'link-building': 'Link Building',
   'content-creation': 'SEO Content',
 };
+
+/**
+ * Greek industry x service title. The full service name plus industry blows the
+ * Greek character budget, and truncation used to drop the industry - leaving 26
+ * pages titled "Υπηρεσίες SEO & Τεχνικός Έλεγχος για". The industry name is the
+ * distinguishing token, so the service name is what gets shortened.
+ */
+function elIndustryServiceTitleBase(serviceSlug: string, svcName: string, indName: string): string {
+  const full = `${svcName} για ${indName}`;
+  if (full.length <= MAX_TITLE_PRIMARY_GREEK) return full;
+  const short = EL_SHORT_TITLE_KEYWORD[serviceSlug] ?? svcName;
+  return `${short} για ${indName}`;
+}
 
 function elLocationTitleBase(serviceSlug: string, keyword: string, city: string): string {
   const full = `${keyword} ${city}`;
@@ -464,11 +511,13 @@ export function buildIndustryMetadata(
   locale: SiteLocale = 'en',
 ): Metadata {
   let indName = industry.name;
+  let indFor = industry.name;
   let indDesc = industry.metaDescription;
   if (locale === 'el') {
     const indEl = industriesEl[industry.slug];
     if (indEl) {
       indName = indEl.name;
+      indFor = indEl.nameAccusative ?? indEl.name;
       indDesc = indEl.metaDescription;
     }
   }
@@ -491,7 +540,7 @@ export function buildIndustryMetadata(
     description:
       composed ||
       (locale === 'el'
-        ? `Ιστοσελίδες και SEO για ${indName}: στρατηγικές ανά κλάδο, γρήγορη υλοποίηση και δεδομένα από το Google Search Console. Δείτε πακέτα και ζητήστε προσφορά.`
+        ? `Ιστοσελίδες και SEO για ${indFor}: στρατηγικές ανά κλάδο, γρήγορη υλοποίηση και δεδομένα από το Google Search Console. Δείτε πακέτα και ζητήστε προσφορά.`
         : `Website design and SEO built for ${indName}: industry playbooks, fast builds, and measurable growth. Transparent pricing. See packages and get a free quote.`),
     path: localizedPath(locale, `/solutions/${industry.slug}`),
     hreflangPath: `/solutions/${industry.slug}`,
@@ -506,12 +555,14 @@ export function buildIndustryServiceMetadata(
   locale: SiteLocale = 'en',
 ): Metadata {
   let indName = industry.name;
+  let indFor = industry.name;
   let svcName = service.name;
   let pains: readonly string[] = industry.painPoints ?? [];
   if (locale === 'el') {
     const indEl = industriesEl[industry.slug];
     if (indEl) {
       indName = indEl.name;
+      indFor = indEl.nameAccusative ?? indEl.name;
       pains = indEl.painPoints ?? pains;
     }
     const svcEl = getServiceEl(service.slug);
@@ -523,7 +574,7 @@ export function buildIndustryServiceMetadata(
   const punct = (t?: string) => (t ? (/[.!?]$/.test(t.trim()) ? t.trim() + ' ' : t.trim() + '. ') : '');
   const tail = punct(pains[0]) + punct(pains[1]);
 
-  const descEl = fitDescription((svcName + ' για ' + indName + '. ' + tail).replace(/\s+/g, ' '), [
+  const descEl = fitDescription((svcName + ' για ' + indFor + '. ' + tail).replace(/\s+/g, ' '), [
     'Στρατηγική βάσει της πραγματικής ζήτησης του κλάδου σας, όχι έτοιμο πακέτο. Ζητήστε προσφορά.',
     'Στρατηγική βάσει της πραγματικής ζήτησης του κλάδου σας. Ζητήστε προσφορά.',
     'Στρατηγική προσαρμοσμένη στον κλάδο σας. Ζητήστε προσφορά.',
@@ -536,14 +587,24 @@ export function buildIndustryServiceMetadata(
     "Strategy built on your sector's search demand.",
   ]);
 
+  // Only advertise a locale twin that is itself indexable. A pairing can pass
+  // the review in one locale and not the other (one side earned clicks), and
+  // hreflang pointing at a noindex page is a contradictory signal.
+  const indexableLocales = LOCALES.filter((l) =>
+    isIndustryServiceIndexable(industry.slug, service.slug, l),
+  );
+  const hreflangLocales = indexableLocales.length >= 2 ? LOCALES : undefined;
+
   return buildMetadata({
     title:
       locale === 'el'
-        ? fitTitleWithSuffix(svcName + ' για ' + indName, [' | Στρατηγική', ''])
+        ? fitTitleWithSuffix(elIndustryServiceTitleBase(service.slug, svcName, indFor), [' | Στρατηγική', ''])
         : fitTitleWithSuffix(svcName + ' for ' + indName, [' | Strategy', '']),
     description: locale === 'el' ? descEl : descEn,
     path: localizedPath(locale, '/solutions/' + industry.slug + '/' + service.slug),
-    hreflangPath: '/solutions/' + industry.slug + '/' + service.slug,
+    ...(hreflangLocales
+      ? { hreflangPath: '/solutions/' + industry.slug + '/' + service.slug }
+      : {}),
     service: svcName,
     industry: indName,
   });

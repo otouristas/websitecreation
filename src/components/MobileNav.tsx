@@ -13,6 +13,7 @@ import { getTrustChips } from '@/data/trust-stats';
 
 interface MobileNavProps {
   locale: SiteLocale;
+  alternateHref?: string;
   isOpen: boolean;
   onClose: () => void;
   agencyLinks: readonly (readonly [string, string])[];
@@ -22,6 +23,7 @@ interface MobileNavProps {
 
 export function MobileNav({
   locale,
+  alternateHref,
   isOpen,
   onClose,
   agencyLinks,
@@ -60,7 +62,7 @@ export function MobileNav({
         <div className="flex items-center justify-between px-4 py-3">
           <BrandLogo size="md" homeHref={lp('/')} onClick={onClose} />
           <div className="flex items-center gap-1">
-            <LanguageSwitcher />
+            <LanguageSwitcher alternateHref={alternateHref} />
             <ThemeToggle />
             <button
               type="button"

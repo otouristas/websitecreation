@@ -372,6 +372,18 @@ export function getBlogPostBySlug(slug: string): BlogPostParsed | null {
   return null;
 }
 
+/**
+ * Locale-correct href for a blog slug.
+ *
+ * Posts exist in exactly one locale, so prefixing with the *reader's* locale
+ * produced links that 308'd to the other locale. Resolve against the post's own
+ * locale instead, and fall back to the caller's locale for unknown slugs.
+ */
+export function blogHref(slug: string, fallbackLocale: 'en' | 'el' = 'en'): string {
+  const post = readAllPosts().find((p) => p.slug === slug);
+  return `/${post?.locale ?? fallbackLocale}/blog/${slug}`;
+}
+
 export function getAllBlogSlugs(): string[] {
   return getAllBlogPosts().map((p) => p.slug);
 }

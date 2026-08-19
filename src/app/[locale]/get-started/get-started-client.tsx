@@ -137,6 +137,9 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
   });
 
   useEffect(() => {
+    // Post-mount sync is the point here: utm params and ?goal/?project only exist in the browser,
+    // so the first paint has to be the SSR value and this corrects it.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setUtmParams(captureUtmParams());
     const goal = searchParams.get('goal');
     const project = searchParams.get('project');

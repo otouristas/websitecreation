@@ -31,7 +31,7 @@ LLM visibility is not a replacement for SEO. It's a **second lens** on the same 
 
 - [LLM citations and brand visibility](/en/blog/llm-citations-brand-visibility) - what to track, what not to pretend you can control, and how to report to leadership.
 - [GEO, AEO & AI SEO - Global Playbook for 2026](/en/blog/geo-aeo-global-seo-playbook) - how SEO, Generative Engine Optimization, and Answer Engine Optimization fit together.
-- [GEO, AEO και SEO στην Ελλάδα](/en/blog/geo-aeo-ellada) - Greek-market specifics for tourism and hospitality brands.
+- [GEO, AEO και SEO στην Ελλάδα](/el/blog/geo-aeo-ellada) - Greek-market specifics for tourism and hospitality brands.
 
 ## Website design patterns that earn citations
 

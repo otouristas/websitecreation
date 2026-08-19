@@ -47,6 +47,20 @@ const nextConfig: NextConfig = {
         destination: `${appOrigin}/:path*`,
         permanent: false,
       },
+      // English-only product sections. Serving them under /el produced an
+      // English page with lang="el" that canonicalised to the /en twin, so
+      // consolidate at the URL level instead of leaving the duplicate live.
+      // /el/glossary is intentionally untouched: that one has Greek content.
+      {
+        source: '/el/:section(platform|tools|resources|compare)',
+        destination: '/en/:section',
+        permanent: true,
+      },
+      {
+        source: '/el/:section(platform|tools|resources|compare)/:path*',
+        destination: '/en/:section/:path*',
+        permanent: true,
+      },
       {
         source: '/gr',
         destination: '/el',

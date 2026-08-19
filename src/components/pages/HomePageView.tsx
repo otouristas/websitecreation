@@ -9,7 +9,6 @@ import {
   VerticalServices,
   Different,
   Showcase,
-  ClientLogoWall,
   SeoPricingBlock,
   LandingTestimonials,
   FinalCta,
@@ -70,7 +69,6 @@ export function HomePageView({ locale }: { locale: SiteLocale }) {
       <Header locale={locale} />
       <main className="blueprint-grid relative z-0">
         <LandingHero locale={locale} />
-        <ClientLogoWall locale={locale} />
         <HomeOfferGrid locale={locale} />
         <Different locale={locale} />
         <VerticalServices locale={locale} />

@@ -52,7 +52,7 @@ faq:
 
 ### 2. FAQ + schema για AEO
 
-Οι answer engines αγαπούν ξεκάθαρα Q&A με αντίστοιχο FAQPage markup. Βάλτε εμπορικές ερωτήσεις στις money pages - τιμές, inclusions, σημεία παραλαβής, ακυρώσεις - όχι μόνο σε θαμμένο FAQ archive. Συνδυάστε με ισχυρό [on-page SEO](/el/blog/on-page-seo) ώστε άνθρωποι και parsers να βλέπουν την ίδια απάντηση.
+Οι answer engines αγαπούν ξεκάθαρα Q&A με αντίστοιχο FAQPage markup. Βάλτε εμπορικές ερωτήσεις στις money pages - τιμές, inclusions, σημεία παραλαβής, ακυρώσεις - όχι μόνο σε θαμμένο FAQ archive. Συνδυάστε με ισχυρό [on-page SEO](/en/blog/on-page-seo) ώστε άνθρωποι και parsers να βλέπουν την ίδια απάντηση.
 
 ### 3. Citation-ready σελίδες
 
@@ -116,7 +116,7 @@ faq:
 
 ### Χρειάζονται ακόμα backlinks;
 
-Η αρχή εξακολουθεί να βοηθά. Το GEO δεν ακυρώνει το [off-page SEO](/el/blog/off-page-seo)· μειώνει την αποκλειστική εξάρτηση από links όταν η σελίδα σας είναι η καθαρότερη πραγματική πηγή για ένα niche prompt.
+Η αρχή εξακολουθεί να βοηθά. Το GEO δεν ακυρώνει το [off-page SEO](/en/blog/off-page-seo)· μειώνει την αποκλειστική εξάρτηση από links όταν η σελίδα σας είναι η καθαρότερη πραγματική πηγή για ένα niche prompt.
 
 ### Μια μικρή επιχείρηση ξεκινά από GEO ή SEO;
 

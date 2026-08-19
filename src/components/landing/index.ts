@@ -3,7 +3,6 @@ export { HomeOfferGrid } from "./HomeOfferGrid";
 export { VerticalServices } from "./VerticalServices";
 export { Different } from "./Different";
 export { Showcase } from "./Showcase";
-export { ClientLogoWall } from "./ClientLogoWall";
 export { SeoPricingBlock } from "./SeoPricingBlock";
 export { LandingTestimonials } from "./LandingTestimonials";
 export { FinalCta } from "./FinalCta";

@@ -76,7 +76,7 @@ For each entity, decide:
 - **Glossary entry** - definition
 - **Supporting blog** - application guide
 
-Example: "local pack" → glossary; "local SEO Cyclades" → blog ([topiko SEO Kykladon](/en/blog/topiko-seo-kykladon)); "hotel solutions" → solution page.
+Example: "local pack" → glossary; "local SEO Cyclades" → blog ([topiko SEO Kykladon](/el/blog/topiko-seo-kykladon)); "hotel solutions" → solution page.
 
 ### Step 3: Link deliberately
 
@@ -181,7 +181,7 @@ No - FAQ answers customer-specific questions on commercial pages. Glossary defin
 
 ### Multilingual glossaries?
 
-For EL/EN tourism sites, mirror key terms with [hreflang](/en/glossary?term=hreflang). See [GEO/AEO Ellada](/en/blog/geo-aeo-ellada).
+For EL/EN tourism sites, mirror key terms with [hreflang](/en/glossary?term=hreflang). See [GEO/AEO Ellada](/el/blog/geo-aeo-ellada).
 
 ### Who writes glossary entries?
 

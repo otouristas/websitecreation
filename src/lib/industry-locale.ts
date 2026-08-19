@@ -10,17 +10,25 @@ export interface LocalizedIndustry {
   metaDescription: string;
   painPoints: string[];
   icon: string;
+  /**
+   * Accusative form for Greek. Anything rendered after "για" must use this:
+   * "για Δικηγόροι" is ungrammatical, "για Δικηγόρους" is correct. Equals
+   * `name` for English and for Greek nouns whose cases coincide.
+   */
+  nameFor: string;
 }
 
 export function getLocalizedIndustry(slug: string, locale: SiteLocale): LocalizedIndustry | undefined {
   const base = getIndustryBySlug(slug);
   if (!base) return undefined;
-  if (locale === 'en') return base;
+  if (locale === 'en') return { ...base, nameFor: base.name };
   const el = industriesEl[slug];
-  if (!el) return base;
+  if (!el) return { ...base, nameFor: base.name };
   return {
     ...base,
     name: el.name,
+    /** Accusative: everything rendered after "για" must use this, not `name`. */
+    nameFor: el.nameAccusative ?? el.name,
     description: el.description,
     metaDescription: el.metaDescription,
     painPoints: el.painPoints,

@@ -6,6 +6,12 @@ export const serviceNamesEl: Record<
   {
     name: string;
     shortName: string;
+    /**
+     * Accusative form, used after prepositions like "για" / "σε".
+     * Greek inflects, so `name` (nominative) reads broken in running copy:
+     * "για Υπηρεσίες SEO & Τεχνικός Έλεγχος" -> "για υπηρεσίες SEO & τεχνικό έλεγχο".
+     */
+    nameAccusative: string;
     description: string;
     features?: string[];
     /** Nominative commercial keyword used to front-load SERP titles (matches real Greek queries). */
@@ -16,6 +22,7 @@ export const serviceNamesEl: Record<
     titleKeyword: 'Κατασκευή Ιστοσελίδων',
     name: 'Κατασκευή Ιστοσελίδων',
     shortName: 'Ιστοσελίδες',
+    nameAccusative: 'κατασκευή ιστοσελίδων',
     description:
       'Γρήγορες, όμορφες ιστοσελίδες με SEO από την πρώτη μέρα. Σχεδιασμός, ανάπτυξη και βελτιστοποίηση για μετατροπές.',
     features: [
@@ -31,6 +38,7 @@ export const serviceNamesEl: Record<
     titleKeyword: 'Ανασχεδιασμός Ιστοσελίδας',
     name: 'Ανασχεδιασμός Ιστοσελίδας',
     shortName: 'Ανασχεδιασμός',
+    nameAccusative: 'ανασχεδιασμό ιστοσελίδας',
     description:
       'Μετατρέψτε παλιές ιστοσελίδες σε σύγχρονες, γρήγορες και φιλικές προς την αναζήτηση - με ασφαλή μεταφορά SEO.',
     features: [
@@ -46,6 +54,7 @@ export const serviceNamesEl: Record<
     titleKeyword: 'SEO Web Design',
     name: 'Σχεδιασμός με SEO',
     shortName: 'SEO Design',
+    nameAccusative: 'σχεδιασμό με SEO',
     description:
       'Σχεδιασμός με τεχνικό SEO, schema, εσωτερικούς συνδέσμους και αρχιτεκτονική που κατατάσσεται ψηλά.',
     features: [
@@ -61,6 +70,7 @@ export const serviceNamesEl: Record<
     titleKeyword: 'Βελτιστοποίηση Ταχύτητας',
     name: 'Βελτιστοποίηση Ταχύτητας',
     shortName: 'Ταχύτητα',
+    nameAccusative: 'βελτιστοποίηση ταχύτητας',
     description:
       'Core Web Vitals, caching και βελτιστοποίηση κώδικα για ταχύτερη ιστοσελίδα και καλύτερες κατατάξεις.',
     features: [
@@ -76,6 +86,7 @@ export const serviceNamesEl: Record<
     titleKeyword: 'AI SEO Agency / GEO / AEO',
     name: 'AI SEO Agency (GEO / AEO)',
     shortName: 'AI SEO',
+    nameAccusative: 'AI SEO (GEO / AEO)',
     description:
       'Υπηρεσίες AI SEO agency για Generative Engine Optimization (GEO) και Answer Engine Optimization (AEO). Εμφανιστείτε σε ChatGPT, Perplexity και Google AI Overviews, όχι μόνο στα κλασικά αποτελέσματα.',
     features: [
@@ -91,6 +102,7 @@ export const serviceNamesEl: Record<
     titleKeyword: 'Σχεδιασμός Λογοτύπου',
     name: 'Σχεδιασμός Λογοτύπου',
     shortName: 'Εταιρική ταυτότητα',
+    nameAccusative: 'σχεδιασμό λογοτύπου',
     description: 'Επαγγελματικό λογότυπο και πλήρες κιτ εταιρικής ταυτότητας για αναγνωρισιμότητα στην αγορά σας.',
     features: [
       'Σχεδιασμός λογοτύπου στα μέτρα σας',
@@ -105,6 +117,7 @@ export const serviceNamesEl: Record<
     titleKeyword: 'Δημιουργία Περιεχομένου',
     name: 'Δημιουργία Περιεχομένου',
     shortName: 'Περιεχόμενο',
+    nameAccusative: 'δημιουργία περιεχομένου',
     description:
       'Κείμενα με SEO για σελίδες υπηρεσιών, τοπικές σελίδες και blog που φέρνουν οργανική επισκεψιμότητα.',
     features: [
@@ -120,6 +133,7 @@ export const serviceNamesEl: Record<
     titleKeyword: 'Τοπικό SEO',
     name: 'Τοπικό SEO & Google Business',
     shortName: 'Τοπικό SEO',
+    nameAccusative: 'τοπικό SEO & Google Business',
     description:
       'Τοπικό SEO για Ελλάδα: βελτιστοποίηση Google Business Profile, καταχωρήσεις, κριτικές και τοπικές σελίδες ώστε να εμφανίζεστε στο map pack για Αθήνα, Θεσσαλονίκη και άλλες πόλεις.',
     features: [
@@ -135,6 +149,7 @@ export const serviceNamesEl: Record<
     titleKeyword: 'Link Building',
     name: 'Δημιουργία Backlinks',
     shortName: 'Backlinks',
+    nameAccusative: 'δημιουργία backlinks',
     description: 'Ποιοτικά backlinks, digital PR και τοποθετήσεις σε σχετικές ιστοσελίδες για αύξηση της αυθεντίας του domain σας.',
     features: [
       'Guest posts σε ιστοσελίδες υψηλού κύρους',
@@ -149,6 +164,7 @@ export const serviceNamesEl: Record<
     titleKeyword: 'Υπηρεσίες SEO',
     name: 'Υπηρεσίες SEO & Τεχνικός Έλεγχος',
     shortName: 'Υπηρεσίες SEO',
+    nameAccusative: 'υπηρεσίες SEO & τεχνικό έλεγχο',
     description:
       'Υπηρεσίες SEO για ιστοσελίδες στην Ελλάδα: τεχνικός έλεγχος, on-page, λέξεις-κλειδιά, τοπικό SEO και μηνιαία προώθηση. Διαφανή πακέτα από €400/μήνα.',
     features: [
@@ -164,6 +180,7 @@ export const serviceNamesEl: Record<
     titleKeyword: 'Κατασκευή E-shop',
     name: 'Κατασκευή E-shop WooCommerce',
     shortName: 'Κατασκευή E-shop',
+    nameAccusative: 'κατασκευή e-shop WooCommerce',
     description:
       'Υψηλής μετατροπής, πλήρως προσαρμοσμένα ηλεκτρονικά καταστήματα (e-shops) WooCommerce με ενσωματωμένες πληρωμές, μεταφορικά και SEO.',
     features: [
@@ -179,6 +196,7 @@ export const serviceNamesEl: Record<
     titleKeyword: 'SEO για E-shop',
     name: 'SEO για E-shop',
     shortName: 'E-shop SEO',
+    nameAccusative: 'SEO ηλεκτρονικού καταστήματος',
     description:
       'Εξειδικευμένες υπηρεσίες SEO για ηλεκτρονικά καταστήματα. Αυξήστε την οργανική εμφάνιση κατηγοριών και προϊόντων για περισσότερες πωλήσεις.',
     features: [

@@ -20,7 +20,7 @@ faq:
     answer: "If three fixes/week backlog exceeds 8 weeks consistently - get scoped help."
 ---
 
-Search Console is noisy if you open it without a script. This **one-hour loop** keeps decisions small and shippable - whether you run SEO for a plumbing company, a [Cyclades hotel group](/en/blog/topiko-seo-kykladon), or a [rent-a-car operator](/en/solutions/rent-a-car). The goal isn't to analyze everything; it's to ship three meaningful fixes every week and validate them.
+Search Console is noisy if you open it without a script. This **one-hour loop** keeps decisions small and shippable - whether you run SEO for a plumbing company, a [Cyclades hotel group](/el/blog/topiko-seo-kykladon), or a [rent-a-car operator](/en/solutions/rent-a-car). The goal isn't to analyze everything; it's to ship three meaningful fixes every week and validate them.
 
 ## Why a weekly loop beats monthly deep dives
 
@@ -149,7 +149,7 @@ Map weekly fixes to editorial rhythm:
 - **Week 3:** Internal link batch to orphan location or fleet page
 - **Week 4:** Review prior fixes; update hypothesis log
 
-Tourism teams align monthly with pre-season pushes - coordinate with [Cyclades local SEO](/en/blog/topiko-seo-kykladon) seasonal calendar so content ships before query volume spikes.
+Tourism teams align monthly with pre-season pushes - coordinate with [Cyclades local SEO](/el/blog/topiko-seo-kykladon) seasonal calendar so content ships before query volume spikes.
 
 
 ## Sample one-hour agenda (copy into your calendar)

@@ -21,7 +21,7 @@ faq:
 
 Search Console is the ground truth for how Google surfaces your site: queries, pages, countries, devices, and core technical status. The gap is rarely "more data" - it is **a repeatable way to decide what to ship this week**. This pillar connects guides on local visibility, tourism SEO, and GBP with workflows that cluster queries, spot cannibalization, and tie recommendations to verified properties.
 
-Whether you operate a home services business, a [hotel in the Cyclades](/en/blog/topiko-seo-kykladon), or a [rent-a-car desk](/en/solutions/rent-a-car) at the airport, Search Console tells you where opportunity already exists - if you know how to read it.
+Whether you operate a home services business, a [hotel in the Cyclades](/el/blog/topiko-seo-kykladon), or a [rent-a-car desk](/en/solutions/rent-a-car) at the airport, Search Console tells you where opportunity already exists - if you know how to read it.
 
 ## What to read first
 
@@ -41,9 +41,9 @@ These two articles are the **minimum viable SEO ops system** for in-house teams 
 
 ### Tourism-specific guides
 
-- [Rent-a-car website SEO (EL)](/en/blog/istoselida-enikiasis-autokinitou-seo) - airport and island query patterns
-- [Hotel website design (EL)](/en/blog/kataskevi-istoselidas-xenodoxeia) - room and location page strategy
-- [Cyclades local SEO (EL)](/en/blog/topiko-seo-kykladon) - island GBP and citations
+- [Rent-a-car website SEO (EL)](/el/blog/istoselida-enikiasis-autokinitou-seo) - airport and island query patterns
+- [Hotel website design (EL)](/en/blog/hotel-website-design) - room and location page strategy
+- [Cyclades local SEO (EL)](/el/blog/topiko-seo-kykladon) - island GBP and citations
 
 Use GSC language filters to segment Greek vs English queries on bilingual sites.
 
@@ -106,7 +106,7 @@ For [hotels](/en/solutions/hotels), attribute direct booking engine conversions.
 
 ## GEO/AEO tie-in
 
-Export top informational queries - "rent a car Greece license", "hotel near Parikia ferry" - into FAQ blocks with [structured data](/en/glossary?term=structured-data). GSC is your AEO brief generator; see [GEO Ellada](/en/blog/geo-aeo-ellada) for Greek market examples.
+Export top informational queries - "rent a car Greece license", "hotel near Parikia ferry" - into FAQ blocks with [structured data](/en/glossary?term=structured-data). GSC is your AEO brief generator; see [GEO Ellada](/el/blog/geo-aeo-ellada) for Greek market examples.
 
 ## Debugging common GSC anomalies
 

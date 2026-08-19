@@ -949,7 +949,7 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
       {
         question: 'How much does a website cost in Athens?',
         answer:
-          'Packages typically start from €1.200 depending on scope. We provide transparent pricing and a free quote after understanding your services and goals.',
+          'Packages typically start from {{ENTRY_WEBSITE}} depending on scope. We provide transparent pricing and a free quote after understanding your services and goals.',
       },
       {
         question: 'Is local SEO worth it for Athens businesses?',
@@ -964,9 +964,9 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
     ],
     serviceDepth: {
       'website-creation':
-        'For website creation in Athens we build sites with a clear value proposition, district or service-area pages where they earn rankings, Core Web Vitals, and schema from day one. The goal is to rank for commercial queries like website design Athens and your industry long-tails - not only your brand. Packages from €1.200 with transparent pricing and a free quote.',
+        'For website creation in Athens we build sites with a clear value proposition, district or service-area pages where they earn rankings, Core Web Vitals, and schema from day one. The goal is to rank for commercial queries like website design Athens and your industry long-tails - not only your brand. Packages from {{ENTRY_WEBSITE}} with transparent pricing and a free quote.',
       'local-seo':
-        'Local SEO in Athens is decided in the map pack and on your Google Business Profile: accurate NAP, categories, photos, reviews, and service pages by area. We combine on-page SEO, GBP optimisation, and citations so you appear for SEO Athens and near-me queries in your niche. Monthly programs from €400.',
+        'Local SEO in Athens is decided in the map pack and on your Google Business Profile: accurate NAP, categories, photos, reviews, and service pages by area. We combine on-page SEO, GBP optimisation, and citations so you appear for SEO Athens and near-me queries in your niche. Monthly programs from {{ENTRY_SEO}}.',
     },
   },
   'thessaloniki-gr': {
@@ -994,9 +994,9 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
     ],
     serviceDepth: {
       'website-creation':
-        'In Thessaloniki, website competition is lower than Athens, so a well-structured presence can win faster. We deliver corporate sites and e-shops with SEO foundations, fast mobile performance, and clear CTAs for calls and appointments. Ideal if you want website design Thessaloniki with measurable results - packages from €1.200.',
+        'In Thessaloniki, website competition is lower than Athens, so a well-structured presence can win faster. We deliver corporate sites and e-shops with SEO foundations, fast mobile performance, and clear CTAs for calls and appointments. Ideal if you want website design Thessaloniki with measurable results - packages from {{ENTRY_WEBSITE}}.',
       'local-seo':
-        'For SEO Thessaloniki we focus on the local pack: GBP optimisation, local keywords, internal linking, and steady reviews. The market rewards consistency - so we measure positions, calls, and directions monthly. Starter programs from €400/month.',
+        'For SEO Thessaloniki we focus on the local pack: GBP optimisation, local keywords, internal linking, and steady reviews. The market rewards consistency - so we measure positions, calls, and directions monthly. Starter programs from {{ENTRY_SEO}}/month.',
     },
   },
   'heraklion-gr': {

@@ -535,24 +535,6 @@
   background: color-mix(in oklab, var(--primary) 60%, transparent);
 }
 
-/* Footer client logo marquee */
-@keyframes footer-logo-marquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-.footer-logo-marquee {
-  animation: footer-logo-marquee 60s linear infinite;
-}
-
-.footer-logo-marquee:hover {
-  animation-play-state: paused;
-}
-
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

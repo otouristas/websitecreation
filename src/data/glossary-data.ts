@@ -738,7 +738,7 @@ export const glossaryCategories: GlossaryCategory[] = [
         relatedTerms: ["paid-traffic", "direct-traffic", "referral-traffic"],
         relatedLinks: [
           { title: "How to increase organic traffic", url: "/blog/how-to-increase-organic-traffic", type: "blog" },
-          { title: "What is SEO?", url: "/blog/what-is-seo", type: "blog" },
+          { title: "What is SEO?", url: "/en/blog/what-is-seo", type: "blog" },
           { title: "Connect Search Console", url: "/help/connect-search-console", type: "help" }
         ]
       },

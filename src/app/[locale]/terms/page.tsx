@@ -30,7 +30,7 @@ export default async function TermsPage({ params }: PageProps) {
       <main className="blueprint-grid relative z-0 main-below-header pb-20">
         <div className="container max-w-4xl">
           <h1 className="mb-8 text-4xl font-bold">{t.terms.title}</h1>
-          <div className="prose prose-lg text-gray-700">
+          <div className="prose prose-lg text-muted-foreground">
             <p className="mb-4">{t.terms.lastUpdated}</p>
             {t.terms.sections.map((section) => (
               <div key={section.heading}>

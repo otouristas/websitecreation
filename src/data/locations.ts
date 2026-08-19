@@ -19,6 +19,8 @@ export interface Location {
   latitude: number;
   longitude: number;
   neighborhoods?: string[];
+  /** Localized (Greek) neighborhood names, used by the `el` renderers. */
+  neighborhoodsLocal?: string[];
   tier?: LocationTier;
 }
 
@@ -35,6 +37,24 @@ export const COUNTRY_LABELS: Record<string, string> = {
   AE: 'United Arab Emirates',
   SG: 'Singapore',
 };
+
+/** Greek country names, so `el` pages never render "Αθήνα, Greece". */
+export const COUNTRY_LABELS_EL: Record<string, string> = {
+  US: 'ΗΠΑ',
+  GR: 'Ελλάδα',
+  GB: 'Ηνωμένο Βασίλειο',
+  CA: 'Καναδάς',
+  AU: 'Αυστραλία',
+  FR: 'Γαλλία',
+  DE: 'Γερμανία',
+  IT: 'Ιταλία',
+  JP: 'Ιαπωνία',
+  AE: 'Ηνωμένα Αραβικά Εμιράτα',
+  SG: 'Σιγκαπούρη',
+};
+
+export const countryNameEl = (location: Location): string =>
+  COUNTRY_LABELS_EL[location.countryCode] ?? location.country;
 
 function us(
   loc: Omit<Location, 'country' | 'countryCode' | 'currency' | 'locale'> & { tier?: LocationTier },
@@ -180,6 +200,7 @@ export const greeceLocations: Location[] = [
     latitude: 37.98381,
     longitude: 23.72754,
     neighborhoods: ['Syntagma', 'Kolonaki', 'Glyfada', 'Piraeus', 'Kifisia', 'Exarchia'],
+    neighborhoodsLocal: ['Σύνταγμα', 'Κολωνάκι', 'Γλυφάδα', 'Πειραιάς', 'Κηφισιά', 'Εξάρχεια'],
     tier: 1,
   }),
   intl({
@@ -196,6 +217,7 @@ export const greeceLocations: Location[] = [
     latitude: 40.64006,
     longitude: 22.94442,
     neighborhoods: ['Ladadika', 'Ano Poli', 'Kalamaria', 'Toumba'],
+    neighborhoodsLocal: ['Λαδάδικα', 'Άνω Πόλη', 'Καλαμαριά', 'Τούμπα'],
     tier: 1,
   }),
   intl({
@@ -276,6 +298,7 @@ export const greeceLocations: Location[] = [
     latitude: 36.3932,
     longitude: 25.4615,
     neighborhoods: ['Oia', 'Fira', 'Imerovigli', 'Kamari'],
+    neighborhoodsLocal: ['Οία', 'Φηρά', 'Ημεροβίγλι', 'Καμάρι'],
     tier: 1,
   }),
   intl({
@@ -292,6 +315,7 @@ export const greeceLocations: Location[] = [
     latitude: 37.4467,
     longitude: 25.3289,
     neighborhoods: ['Chora', 'Ornos', 'Paradise', 'Ano Mera'],
+    neighborhoodsLocal: ['Χώρα', 'Όρνος', 'Παράδεισος', 'Άνω Μερά'],
     tier: 1,
   }),
   intl({
@@ -308,6 +332,7 @@ export const greeceLocations: Location[] = [
     latitude: 37.0853,
     longitude: 25.1522,
     neighborhoods: ['Parikia', 'Naoussa', 'Lefkes'],
+    neighborhoodsLocal: ['Παροικιά', 'Νάουσα', 'Λεύκες'],
     tier: 1,
   }),
   intl({
@@ -340,6 +365,7 @@ export const greeceLocations: Location[] = [
     latitude: 35.2401,
     longitude: 24.8093,
     neighborhoods: ['Heraklion', 'Chania', 'Rethymno', 'Agios Nikolaos'],
+    neighborhoodsLocal: ['Ηράκλειο', 'Χανιά', 'Ρέθυμνο', 'Άγιος Νικόλαος'],
     tier: 1,
   }),
   intl({
@@ -1004,7 +1030,9 @@ export const formatLocationName = (location: Location): string => {
 };
 
 export const formatLocationNameEl = (location: Location): string =>
-  location.cityLocal ? `${location.cityLocal}, ${location.country}` : formatLocationName(location);
+  location.cityLocal
+    ? `${location.cityLocal}, ${countryNameEl(location)}`
+    : formatLocationName(location);
 
 export function getNearbyLocations(location: Location, limit = 6): Location[] {
   return allLocations

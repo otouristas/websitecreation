@@ -20,7 +20,7 @@ faq:
     answer: "Yes - segment by language in GSC. Tag EL vs EN buckets separately for hreflang sites."
 ---
 
-Search Console exports are infinite. The mistake is treating every row as equally important. A practical weekly workflow buckets queries into **four actions**: protect winners, fix near-misses, test new intent, and deprioritize noise. Whether you manage SEO for a home services company, a [hotel group in the Cyclades](/en/blog/topiko-seo-kykladon), or a [rent-a-car fleet](/en/solutions/rent-a-car), this framework keeps your backlog tied to revenue - not spreadsheet anxiety.
+Search Console exports are infinite. The mistake is treating every row as equally important. A practical weekly workflow buckets queries into **four actions**: protect winners, fix near-misses, test new intent, and deprioritize noise. Whether you manage SEO for a home services company, a [hotel group in the Cyclades](/el/blog/topiko-seo-kykladon), or a [rent-a-car fleet](/en/solutions/rent-a-car), this framework keeps your backlog tied to revenue - not spreadsheet anxiety.
 
 ## Why prioritization beats "fix everything"
 
@@ -131,7 +131,7 @@ Prioritize location pages and room types by impression volume.
 - Vehicle type ("automatic Mykonos")
 - Policy ("rent a car Greece license")
 
-Prioritize location + fleet pages - see [rent-a-car SEO guide](/en/blog/istoselida-enikiasis-autokinitou-seo).
+Prioritize location + fleet pages - see [rent-a-car SEO guide](/el/blog/istoselida-enikiasis-autokinitou-seo).
 
 ### Home services
 

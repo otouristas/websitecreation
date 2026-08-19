@@ -111,7 +111,7 @@ Use our [query prioritization framework](/en/blog/gsc-query-prioritization-frame
 
 ### Hotels and villas
 
-OTA commissions eat margin. DIY local SEO can work for a single boutique property with owner-operated GBP. Multi-property groups almost always need agency or dedicated in-house - [local SEO for Cyclades](/en/blog/topiko-seo-kykladon) complexity scales fast.
+OTA commissions eat margin. DIY local SEO can work for a single boutique property with owner-operated GBP. Multi-property groups almost always need agency or dedicated in-house - [local SEO for Cyclades](/el/blog/topiko-seo-kykladon) complexity scales fast.
 
 ### Rent-a-car
 

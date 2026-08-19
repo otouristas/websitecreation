@@ -30,7 +30,7 @@ export default async function PrivacyPage({ params }: PageProps) {
       <main className="blueprint-grid relative z-0 main-below-header pb-20">
         <div className="container max-w-4xl">
           <h1 className="mb-8 text-4xl font-bold">{t.privacy.title}</h1>
-          <div className="prose prose-lg text-gray-700">
+          <div className="prose prose-lg text-muted-foreground">
             <p className="mb-4">{t.privacy.lastUpdated}</p>
             {t.privacy.sections.map((section) => (
               <div key={section.heading}>

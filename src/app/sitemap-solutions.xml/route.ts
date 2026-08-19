@@ -1,8 +1,9 @@
 // Sitemap for solutions (industry) pages - /en and /el
 import { NextResponse } from 'next/server';
-import { getAllIndustrySlugs, TOURISM_INDUSTRY_SLUGS } from '@/data/industries';
+import { getAllIndustrySlugs } from '@/data/industries';
 import { getAllServiceSlugs } from '@/data/services';
 import { localizedPath } from '@/lib/i18n/locale';
+import { evaluateIndustryService } from '@/lib/indexability/industry-service';
 
 const BASE_URL = 'https://anotherseoguru.com';
 const LOCALES = ['en', 'el'] as const;
@@ -24,14 +25,18 @@ export async function GET() {
       });
     });
 
-    // Industry×service spokes: tourism niches only (money pages).
-    TOURISM_INDUSTRY_SLUGS.forEach((industry) => {
+    // Industry×service spokes: only combinations that pass the indexability
+    // review. Listing the full Cartesian product submitted 744 URLs of which
+    // most were thin variants the industry hub already covered.
+    industrySlugs.forEach((industry) => {
       serviceSlugs.forEach((service) => {
+        const verdict = evaluateIndustryService(industry, service, locale);
+        if (!verdict.indexable) return;
         urls.push({
           loc: `${BASE_URL}${localizedPath(locale, `/solutions/${industry}/${service}`)}`,
           lastmod: new Date().toISOString(),
           changefreq: 'weekly',
-          priority: '0.7',
+          priority: verdict.tier === 'A' ? '0.8' : '0.6',
         });
       });
     });

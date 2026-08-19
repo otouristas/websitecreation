@@ -10,6 +10,7 @@ import {
 } from './types';
 import { LOCATION_PACKS_EL } from './packs-el';
 import { LOCATION_PACKS_EN } from './packs-en';
+import { resolvePriceTokens } from '@/data/pricing';
 
 /** Hubs that must ship website-creation + local-seo depth before indexing. */
 export const MONEY_HUB_SLUGS = new Set([
@@ -30,11 +31,26 @@ export const MONEY_HUB_SLUGS = new Set([
   'london-uk',
 ]);
 
+/**
+ * Packs are authored with `{{ENTRY_WEBSITE}}`-style price tokens rather than
+ * literal figures, so every rendered surface resolves against `data/pricing.ts`
+ * and follows the live offer window instead of going stale in prose.
+ */
 export function getLocationPack(
   slug: string,
   locale: LocationContentLocale,
 ): LocationContentPack | undefined {
-  return locale === 'el' ? LOCATION_PACKS_EL[slug] : LOCATION_PACKS_EN[slug];
+  const pack = locale === 'el' ? LOCATION_PACKS_EL[slug] : LOCATION_PACKS_EN[slug];
+  if (!pack) return undefined;
+  const r = (t: string) => resolvePriceTokens(t, locale);
+  return {
+    ...pack,
+    intro: r(pack.intro),
+    faqs: pack.faqs?.map((f) => ({ question: r(f.question), answer: r(f.answer) })),
+    serviceDepth: pack.serviceDepth
+      ? Object.fromEntries(Object.entries(pack.serviceDepth).map(([k, v]) => [k, r(v)]))
+      : undefined,
+  };
 }
 
 export interface LocationContentGateResult {
@@ -101,3 +117,6 @@ export function hasLocationContent(
 ): boolean {
   return evaluateLocationContent(location, locale).ok;
 }
+
+export { getServiceCopyEl, SERVICES_WITH_EL_COPY, type ServiceCopyBlock, type ServiceCopyContext } from './service-copy-el';
+export { packFaqsForService, classifyFaq, type FaqTopic } from './faq-relevance';
