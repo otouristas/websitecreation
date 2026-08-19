@@ -5,6 +5,7 @@ import { PortfolioThumbnail } from '@/components/landing/PortfolioThumbnail';
 import { PrimaryButtonLink, GhostButtonLink, Bloom, Tick } from '@/components/landing/primitives';
 import { getPortfolioByCategory } from '@/data/portfolio';
 import { services } from '@/data/services';
+import { isIndustryServiceIndexable } from '@/lib/indexability/industry-service';
 import { getServiceEl } from '@/data/services-i18n';
 import { getLocalizedIndustry } from '@/lib/industry-locale';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
@@ -530,7 +531,7 @@ export function HotelsPage({ locale }: { locale: SiteLocale }) {
             {t.servicesBlock.title}
           </h2>
           <div className="mt-10 flex flex-wrap gap-2">
-            {services.map((s) => {
+            {services.filter((s) => isIndustryServiceIndexable('hotels', s.slug, locale)).map((s) => {
               const el = isEl ? getServiceEl(s.slug) : null;
               return (
                 <Link

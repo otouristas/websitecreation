@@ -10,12 +10,14 @@ import {
   generateArticleSchema,
   generateBreadcrumbSchema,
   generateServiceSchema,
+  generateFAQSchema,
   combineSchemas,
 } from '@/lib/seo';
 import { SchemaMarkup, Breadcrumbs } from '@/components/seo';
 import { getLocalizedIndustry } from '@/lib/industry-locale';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 import { solutionsUi } from '@/data/translations/solutions-ui';
+import { getServiceAngle, getServiceFaqs, ANGLE_HEADINGS, FAQ_HEADING } from '@/data/industry-service-copy';
 
 export function IndustryServicePageView({
   industrySlug,
@@ -36,6 +38,14 @@ export function IndustryServicePageView({
   const serviceDesc = svcEl?.description ?? baseService.description;
   const features = svcEl?.features ?? baseService.features;
   const ui = isEl ? solutionsUi.el : solutionsUi.en;
+  /**
+   * Differentiation on the service axis. Composed with the industry's authored
+   * pain points below, this is what stops the page being the same template with
+   * a noun swapped in.
+   */
+  const angle = getServiceAngle(serviceSlug, locale);
+  const angleHeadings = isEl ? ANGLE_HEADINGS.el : ANGLE_HEADINGS.en;
+  const serviceFaqs = getServiceFaqs(serviceSlug, locale);
   const lp = (path: string) => localizedPath(locale, path);
 
   const relatedServices = services
@@ -62,13 +72,13 @@ export function IndustryServicePageView({
   const schemas = combineSchemas(
     generateBreadcrumbSchema({ items: breadcrumbs }),
     generateServiceSchema({
-      name: ui.serviceForIndustry(serviceName, industry.name),
+      name: ui.serviceForIndustry(serviceName, industry.nameFor),
       description: ui.serviceHeroDesc(serviceName, industry.name),
       provider: { name: 'AnotherSEOGuru', url: 'https://anotherseoguru.com' },
       serviceType: 'Web Development',
     }),
     generateArticleSchema({
-      headline: ui.serviceForIndustry(serviceName, industry.name),
+      headline: ui.serviceForIndustry(serviceName, industry.nameFor),
       description: ui.serviceHeroDesc(serviceName, industry.name),
       datePublished: new Date().toISOString(),
       dateModified: new Date().toISOString(),
@@ -88,7 +98,7 @@ export function IndustryServicePageView({
             <div className="max-w-3xl">
               <Breadcrumbs items={breadcrumbs} className="mb-6" />
               <h1 className="mb-6 font-display text-3xl font-medium tracking-[-0.03em] sm:text-4xl lg:text-5xl">
-                {ui.serviceForIndustry(serviceName, industry.name)}
+                {ui.serviceForIndustry(serviceName, industry.nameFor)}
               </h1>
               <p className="mb-8 text-lg text-muted-foreground">
                 {ui.serviceHeroDesc(serviceName, industry.name)}
@@ -108,11 +118,35 @@ export function IndustryServicePageView({
           </div>
         </section>
 
+        {serviceFaqs.length > 0 ? (
+          <SchemaMarkup schemas={[generateFAQSchema({ faqs: [...serviceFaqs] })]} />
+        ) : null}
+        {angle ? (
+          <section className="section">
+            <div className="container max-w-3xl space-y-8">
+              {(
+                [
+                  [angleHeadings.approach, angle.approach],
+                  [angleHeadings.process, angle.process],
+                  [angleHeadings.outcome, angle.outcome],
+                ] as const
+              ).map(([heading, body]) => (
+                <div key={heading}>
+                  <h2 className="mb-3 font-display text-2xl font-medium tracking-[-0.02em] sm:text-3xl">
+                    {heading}
+                  </h2>
+                  <p className="text-muted-foreground leading-relaxed">{body}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        ) : null}
+
         <section className="section">
           <div className="container">
-            <h2 className="mb-4 font-display text-2xl font-medium tracking-[-0.02em] sm:text-3xl">{ui.whatsIncluded(industry.name)}</h2>
+            <h2 className="mb-4 font-display text-2xl font-medium tracking-[-0.02em] sm:text-3xl">{ui.whatsIncluded(industry.nameFor)}</h2>
             <p className="mb-8 max-w-2xl text-muted-foreground">
-              {ui.whatsIncludedDesc(serviceName, industry.name)}
+              {ui.whatsIncludedDesc(serviceName, industry.nameFor)}
             </p>
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
               {features.map((feature) => (
@@ -127,9 +161,27 @@ export function IndustryServicePageView({
           </div>
         </section>
 
+        {serviceFaqs.length > 0 ? (
+          <section className="section">
+            <div className="container max-w-3xl">
+              <h2 className="mb-6 font-display text-2xl font-medium tracking-[-0.02em] sm:text-3xl">
+                {isEl ? FAQ_HEADING.el : FAQ_HEADING.en}
+              </h2>
+              <div className="space-y-5">
+                {serviceFaqs.map((q) => (
+                  <div key={q.question}>
+                    <h3 className="mb-1 font-semibold text-foreground">{q.question}</h3>
+                    <p className="text-muted-foreground leading-relaxed">{q.answer}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        ) : null}
+
         <section className="section bg-surface-raised/40">
           <div className="container">
-            <h2 className="mb-4 font-display text-2xl font-medium tracking-[-0.02em] sm:text-3xl">{ui.builtFor(industry.name)}</h2>
+            <h2 className="mb-4 font-display text-2xl font-medium tracking-[-0.02em] sm:text-3xl">{ui.builtFor(industry.nameFor)}</h2>
             <p className="mb-8 text-muted-foreground">{ui.builtForDesc(industry.name)}</p>
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
               {industry.painPoints.map((point) => (
@@ -152,7 +204,7 @@ export function IndustryServicePageView({
               {ui.byCityService(serviceName, industry.name)}
             </h2>
             <p className="mb-8 text-muted-foreground">
-              {ui.byCityServiceDesc(industry.name, isEl)}
+              {ui.byCityServiceDesc(industry.nameFor, isEl)}
             </p>
             <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
               {locations.map((location) => (
@@ -170,7 +222,7 @@ export function IndustryServicePageView({
 
         <section className="section bg-surface-raised/40">
           <div className="container">
-            <h2 className="mb-8 font-display text-2xl font-medium tracking-[-0.02em] sm:text-3xl">{ui.otherServicesFor(industry.name)}</h2>
+            <h2 className="mb-8 font-display text-2xl font-medium tracking-[-0.02em] sm:text-3xl">{ui.otherServicesFor(industry.nameFor)}</h2>
             <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
               {relatedServices.map((related) => (
                 <Link

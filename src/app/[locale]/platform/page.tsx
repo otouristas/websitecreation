@@ -80,6 +80,33 @@ export default async function PlatformHubPage({ params }: PageProps) {
           features={MARKETING_FEATURES}
           limit={9}
         />
+        {/*
+          These three pages sat in the sitemap and the hub-spoke config but had
+          zero inbound links anywhere in the rendered site - unreachable by
+          crawl. The platform hub is their natural parent.
+        */}
+        <section className="py-16 border-t border-hairline">
+          <div className="container">
+            <h2 className="font-display text-2xl font-medium tracking-[-0.03em] sm:text-3xl mb-2">
+              Built for your team
+            </h2>
+            <p className="text-muted-foreground mb-8 max-w-2xl">
+              The same platform, framed around how each kind of team actually works.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {[
+                { href: "/platform/for/agencies", title: "SEO platform for agencies", copy: "Built for agencies shipping client work every week." },
+                { href: "/platform/for/in-house", title: "SEO platform for in-house teams", copy: "One stack for the whole marketing org." },
+                { href: "/platform/for/ecommerce", title: "SEO platform for ecommerce", copy: "Organic revenue needs operational SEO." },
+              ].map((c) => (
+                <Link key={c.href} href={lp(c.href)} className="card card-interactive p-6">
+                  <h3 className="font-semibold mb-2">{c.title}</h3>
+                  <p className="text-sm text-muted-foreground">{c.copy}</p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
         <section className="py-16 border-t border-hairline">
           <div className="container flex flex-col sm:flex-row gap-4 justify-center">
             <Link href={lp("/platform/pricing")} className="btn btn-outline px-8 py-3 text-center">

@@ -38,7 +38,7 @@ Hotel / LodgingBusiness schema με check-in, geo, προσφορές και roo
 
 ### Τοπικό και destination SEO
 
-Οι περισσότερες κρατήσεις ξεκινούν από τοπική πρόθεση: «ξενοδοχείο κοντά στο αεροδρόμιο Ηρακλείου», «μικρό boutique hotel Ναύπλιο». Χτίστε landing pages για παραλίες, χωριά, αεροδρόμια και εμπειρίες - όχι copy-paste templates. Το [τοπικό SEO](/el/blog/local-seo-guide) και το Google Business Profile είναι υποχρεωτικά για Maps και Local Pack.
+Οι περισσότερες κρατήσεις ξεκινούν από τοπική πρόθεση: «ξενοδοχείο κοντά στο αεροδρόμιο Ηρακλείου», «μικρό boutique hotel Ναύπλιο». Χτίστε landing pages για παραλίες, χωριά, αεροδρόμια και εμπειρίες - όχι copy-paste templates. Το [τοπικό SEO](/en/blog/local-seo-guide) και το Google Business Profile είναι υποχρεωτικά για Maps και Local Pack.
 
 ### GEO / AEO για AI συστάσεις ταξιδιού
 
@@ -68,7 +68,7 @@ Hotel / LodgingBusiness schema με check-in, geo, προσφορές και roo
 7. **Reviews και social proof** πάνω από το fold στο mobile.
 8. **WhatsApp / τηλέφωνο / form** δίπλα στο booking engine.
 
-Για βαθύτερη βελτιστοποίηση σελίδας δείτε [on-page SEO](/el/blog/on-page-seo) και [SEO content](/el/blog/seo-content-guide).
+Για βαθύτερη βελτιστοποίηση σελίδας δείτε [on-page SEO](/en/blog/on-page-seo) και [SEO content](/en/blog/seo-content-guide).
 
 ## Τα 6 Συχνότερα Λάθη στα Ελληνικά Ξενοδοχεία
 

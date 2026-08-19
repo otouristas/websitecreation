@@ -144,7 +144,7 @@ GBP and website must tell one story:
 - Same amenities and services
 - Same primary categories reflected in [title tags](/en/glossary?term=title-tag) and [H1 tags](/en/glossary?term=h1-tag)
 
-Mismatch confuses crawlers and users. See [Cyclades local SEO](/en/blog/topiko-seo-kykladon) for island-specific sync patterns.
+Mismatch confuses crawlers and users. See [Cyclades local SEO](/el/blog/topiko-seo-kykladon) for island-specific sync patterns.
 
 ## Measuring GBP ROI
 

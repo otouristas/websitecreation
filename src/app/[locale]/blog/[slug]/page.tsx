@@ -11,6 +11,7 @@ import {
   getAllBlogPosts,
   getBlogPostBySlug,
   getTranslationCounterpart,
+  blogHref,
   getRelatedPosts,
   getPillarNeighbours,
   normalizePillar,
@@ -128,15 +129,27 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const pillarCopy = pillarSlug ? getPillarCopy(pillarSlug, locale as SiteLocale) : undefined;
   const { prev, next } = getPillarNeighbours(post);
 
+  /**
+   * Blog slugs differ per locale, so the header's default prefix-swap pointed at
+   * a URL that 308s straight back. Send the switcher to the real counterpart, or
+   * to the other locale's blog index when the post has no translation.
+   */
+  const alternateHref = counterpart
+    ? localizedPath(counterpart.locale as SiteLocale, `/blog/${counterpart.slug}`)
+    : localizedPath(isEl ? 'en' : 'el', '/blog');
+
   const moneyPages = getBlogMoneyLinks(post.slug).map((p) => ({
-    slug: lp(p.path),
+    // Blog targets resolve to the post's own locale; everything else follows the reader's.
+    slug: p.path.startsWith('/blog/')
+      ? blogHref(p.path.slice('/blog/'.length), locale as 'en' | 'el')
+      : lp(p.path),
     title: isEl ? p.titleEl : p.titleEn,
   }));
 
   return (
     <>
       <SchemaMarkup schemas={schemas} />
-      <Header locale={locale as SiteLocale} />
+      <Header locale={locale as SiteLocale} alternateHref={alternateHref} />
       <main className="blueprint-grid relative z-0 pb-20">
         {/* Article header */}
         <section className="relative overflow-hidden border-b border-hairline">

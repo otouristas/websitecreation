@@ -34,7 +34,7 @@ Tourism sites often launch location and fleet pages faster than internal links -
 
 - [Medical SEO guide](/en/blog/medical-marketing) - YMYL example of [E-E-A-T](/en/glossary?term=e-e-a-t) plus performance discipline.
 - [SEO web design & development platform](/en/blog/seo-web-design-development-platform) - performance and schema baked into design specs.
-- [Tourism website design 2026 (EL)](/en/blog/sxediasmos-istoselidas-tourismos-2026) - mobile booking, chat widgets, vitals budgets.
+- [Tourism website design 2026 (EL)](/el/blog/sxediasmos-istoselidas-tourismos-2026) - mobile booking, chat widgets, vitals budgets.
 
 ### Search Console ops
 
@@ -108,7 +108,7 @@ Third-party widgets hurt [page speed](/en/glossary?term=page-speed). Mitigate: d
 /el/locations/{island}  + hreflang
 ```
 
-Consistent patterns simplify audits - see [rent-a-car SEO](/en/blog/istoselida-enikiasis-autokinitou-seo).
+Consistent patterns simplify audits - see [rent-a-car SEO](/el/blog/istoselida-enikiasis-autokinitou-seo).
 
 ### Image-heavy hospitality
 
@@ -116,7 +116,7 @@ Responsive images, WebP/AVIF, lazy load below fold - galleries can't tank LCP on
 
 ### Travel AI chat widgets
 
-Load after first paint; don't block [crawling](/en/glossary?term=crawling) of primary content - [chatbot guide](/en/blog/ai-chatbots-tourismos).
+Load after first paint; don't block [crawling](/en/glossary?term=crawling) of primary content - [chatbot guide](/el/blog/ai-chatbots-tourismos).
 
 ## GEO/AEO technical requirements
 

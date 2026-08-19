@@ -102,7 +102,7 @@ export function IndustryPageView({
 
         <section className="section bg-surface-raised/40" id="services">
           <div className="container">
-            <h2 className="mb-4 font-display text-2xl font-medium tracking-[-0.02em] sm:text-3xl">{ui.servicesFor(industry.name)}</h2>
+            <h2 className="mb-4 font-display text-2xl font-medium tracking-[-0.02em] sm:text-3xl">{ui.servicesFor(industry.nameFor)}</h2>
             <p className="mb-8 max-w-2xl text-muted-foreground">{ui.servicesIntro(industry.name)}</p>
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
               {services.map((service) => {

@@ -150,14 +150,22 @@ Allow: /
 # SEARCH ENGINE SPECIFIC DIRECTIVES
 # =============================================================================
 
+# A named group replaces the "*" group for that crawler, so the API/admin
+# disallows above have to be repeated here or they do not apply to Googlebot.
 User-agent: Googlebot
 Allow: /
+Disallow: /api/
+Disallow: /admin/
 
 User-agent: Googlebot-Image
 Allow: /
+Disallow: /api/
+Disallow: /admin/
 
 User-agent: Bingbot
 Allow: /
+Disallow: /api/
+Disallow: /admin/
 Crawl-delay: 1
 
 # =============================================================================

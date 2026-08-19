@@ -44,3 +44,10 @@ next-env.d.ts
 
 # Local agent config
 .claude/
+
+# Raw Search Console exports and analytics workbooks.
+# This repository is public: query-level performance data is competitive
+# intelligence and does not belong in it. The derived page metrics the build
+# actually needs live in src/data/gsc-pages.ts.
+lets-rank-first/
+*Performance-on-Search*.zip

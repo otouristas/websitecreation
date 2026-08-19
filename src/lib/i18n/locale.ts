@@ -11,9 +11,22 @@ export function localePrefix(locale: SiteLocale): string {
   return locale === 'el' ? EL_PREFIX : EN_PREFIX;
 }
 
+/**
+ * Product sections that exist only in English. There is no Greek copy behind
+ * these routes, so an /el/... link served English text under `lang="el"` and
+ * created a duplicate that canonicalised away. Link straight to /en instead.
+ *
+ * /glossary is deliberately NOT here: it has real Greek content at /el/glossary.
+ */
+const EN_ONLY_SECTIONS = ['/platform', '/tools', '/resources', '/compare'] as const;
+
+export function isEnOnlySection(barePath: string): boolean {
+  return EN_ONLY_SECTIONS.some((p) => barePath === p || barePath.startsWith(`${p}/`));
+}
+
 export function localizedPath(locale: SiteLocale, path: string): string {
   const normalized = path.startsWith('/') ? path : `/${path}`;
-  const prefix = localePrefix(locale);
+  const prefix = localePrefix(isEnOnlySection(normalized) ? 'en' : locale);
   if (normalized === '/') return prefix;
   return `${prefix}${normalized}`;
 }

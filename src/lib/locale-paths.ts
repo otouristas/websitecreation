@@ -3,6 +3,7 @@
  */
 
 import {
+  isEnOnlySection,
   localizedPath,
   siteLocaleFromPath,
   stripLocalePrefix,
@@ -73,13 +74,14 @@ export function elServiceLocationPath(service: string, location: string): string
 /** @deprecated use elServiceLocationPath */
 export const grServiceLocationPath = elServiceLocationPath;
 
-/** EN-first product paths with no dedicated EL twin, lang switch falls back to home. */
-const EN_ONLY_PATH_PREFIXES = ['/platform', '/tools', '/resources', '/glossary'] as const;
-
+/**
+ * EN-first product paths with no dedicated EL twin: the lang switch falls back
+ * to the other locale's home. /glossary used to be listed here by mistake - it
+ * has real Greek content, so the switcher was dumping Greek readers on the
+ * homepage instead of /el/glossary.
+ */
 function isEnOnlyBarePath(bare: string): boolean {
-  return EN_ONLY_PATH_PREFIXES.some(
-    (prefix) => bare === prefix || bare.startsWith(`${prefix}/`),
-  );
+  return isEnOnlySection(bare);
 }
 
 /**

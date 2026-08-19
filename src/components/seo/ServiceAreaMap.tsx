@@ -22,10 +22,10 @@ export function ServiceAreaMap({ location, className = '', locale = 'en' }: Serv
     ].join(',');
 
     return (
-        <div className={`rounded-xl overflow-hidden border border-gray-200 shadow-sm bg-gray-50 ${className}`}>
-            <div className="p-4 border-b border-gray-200 bg-white">
-                <h3 className="font-bold text-gray-900 flex items-center gap-2">
-                    <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div className={`rounded-xl overflow-hidden border border-hairline shadow-sm bg-surface-raised ${className}`}>
+            <div className="p-4 border-b border-hairline bg-surface">
+                <h3 className="font-bold text-foreground flex items-center gap-2">
+                    <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
@@ -45,7 +45,7 @@ export function ServiceAreaMap({ location, className = '', locale = 'en' }: Serv
                     className="absolute inset-0"
                 />
             </div>
-            <div className="p-3 text-xs text-gray-500 bg-gray-50 flex justify-between">
+            <div className="p-3 text-xs text-muted-foreground bg-surface-raised flex justify-between">
                 <span>
                     {isEl
                         ? `Εξυπηρετούμε ${cityName} και τις γύρω περιοχές`

@@ -39,7 +39,10 @@ export default async function IndustryPage({ params }: PageProps) {
 
   // Each industry gets its own hand-built page. Slugs not yet rebuilt fall
   // through to the shared template so the rollout can ship in waves.
+  // Registry lookup, not a component defined during render: the module-level
+  // map is stable across renders. react-hooks cannot see that through the call.
   const Bespoke = getBespokeIndustryPage(slug);
+  // eslint-disable-next-line react-hooks/static-components
   if (Bespoke) return <Bespoke locale={locale as SiteLocale} />;
 
   return <IndustryPageView industrySlug={slug} locale={locale as SiteLocale} />;

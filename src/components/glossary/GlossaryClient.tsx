@@ -11,18 +11,18 @@ import { localizedPath, type SiteLocale } from "@/lib/i18n/locale";
 
 const categoryBadgeClass: Record<string, string> = {
   blue: "bg-blue-500/10 text-primary border border-blue-500/20",
-  purple: "bg-purple-500/10 text-purple-700 border border-purple-500/20",
-  green: "bg-green-500/10 text-green-700 border border-green-500/20",
-  orange: "bg-orange-500/10 text-orange-700 border border-orange-500/20",
-  cyan: "bg-cyan-500/10 text-cyan-700 border border-cyan-500/20",
-  yellow: "bg-yellow-500/10 text-yellow-800 border border-yellow-500/20",
-  red: "bg-red-500/10 text-red-700 border border-red-500/20",
-  indigo: "bg-indigo-500/10 text-indigo-700 border border-indigo-500/20",
-  emerald: "bg-emerald-500/10 text-emerald-700 border border-emerald-500/20",
-  amber: "bg-amber-500/10 text-amber-800 border border-amber-500/20",
-  violet: "bg-violet-500/10 text-violet-700 border border-violet-500/20",
-  slate: "bg-slate-500/10 text-slate-700 border border-slate-500/20",
-  pink: "bg-pink-500/10 text-pink-700 border border-pink-500/20",
+  purple: "bg-purple-500/10 text-purple-700 dark:text-purple-300 border border-purple-500/20",
+  green: "bg-green-500/10 text-green-700 dark:text-green-300 border border-green-500/20",
+  orange: "bg-orange-500/10 text-orange-700 dark:text-orange-300 border border-orange-500/20",
+  cyan: "bg-cyan-500/10 text-cyan-700 dark:text-cyan-300 border border-cyan-500/20",
+  yellow: "bg-yellow-500/10 text-yellow-800 dark:text-yellow-300 border border-yellow-500/20",
+  red: "bg-red-500/10 text-red-700 dark:text-red-300 border border-red-500/20",
+  indigo: "bg-indigo-500/10 text-indigo-700 dark:text-indigo-300 border border-indigo-500/20",
+  emerald: "bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border border-emerald-500/20",
+  amber: "bg-amber-500/10 text-amber-800 dark:text-amber-300 border border-amber-500/20",
+  violet: "bg-violet-500/10 text-violet-700 dark:text-violet-300 border border-violet-500/20",
+  slate: "bg-slate-500/10 text-slate-700 dark:text-slate-300 border border-slate-500/20",
+  pink: "bg-pink-500/10 text-pink-700 dark:text-pink-300 border border-pink-500/20",
 };
 
 function getAllTerms(): { category: GlossaryCategory; term: GlossaryTerm }[] {

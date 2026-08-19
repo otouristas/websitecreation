@@ -252,3 +252,34 @@ export const ENTRY_SEO_NET = seoPackages[0].offer;
 export function getTierById(id: string): Tier | undefined {
   return [...websitePackages, ...seoPackages].find((t) => t.id === id);
 }
+
+/**
+ * Price tokens for authored copy.
+ *
+ * The location packs used to hardcode figures like "€1.200" and "από €600" in
+ * Greek prose. Those were *offer* prices gated by `isOfferActive()`, so they
+ * would have gone stale on their own the day the window closed, and some had
+ * already drifted (e-commerce was written as €600 against a real €1.200).
+ * Authored copy now writes `{{ENTRY_WEBSITE}}` and the number is resolved here
+ * at render time, against the same data the pricing page uses.
+ */
+const PRICE_TOKENS: Record<string, () => number> = {
+  ENTRY_WEBSITE: () => currentPrice(websitePackages[0]),
+  WEBSITE_PRO: () => currentPrice(websitePackages[1]),
+  WEBSITE_BUSINESS: () => currentPrice(websitePackages[2]),
+  ENTRY_SEO: () => currentPrice(seoPackages[0]),
+  SEO_GROWTH: () => currentPrice(seoPackages[1]),
+  SEO_AUTHORITY: () => currentPrice(seoPackages[2]),
+  ADDON_ECOMMERCE: () => addOns.find((a) => a.id === 'ecommerce')!.from,
+  ADDON_TECHNICAL_AUDIT: () => addOns.find((a) => a.id === 'technical-audit')!.from,
+  ADDON_ADVANCED_AUDIT: () => addOns.find((a) => a.id === 'advanced-audit')!.from,
+  ADDON_LOGO: () => addOns.find((a) => a.id === 'logo')!.from,
+};
+
+/** Replace `{{TOKEN}}` with the live net price, formatted for the locale. */
+export function resolvePriceTokens(text: string, locale: SiteLocale): string {
+  return text.replace(/\{\{([A-Z_]+)\}\}/g, (whole, token: string) => {
+    const get = PRICE_TOKENS[token];
+    return get ? `€${formatPrice(get(), locale)}` : whole;
+  });
+}

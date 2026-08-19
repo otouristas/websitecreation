@@ -12,7 +12,7 @@ faq:
     answer: "Lower cash cost - higher time cost. Total cost of ownership includes your hours or opportunity cost."
   - question: "Can I switch from software to agency mid-year?"
     answer: "Yes - export GSC history and backlog. Good agencies start from data."
-  - question: "Do you need agency for [GEO/AEO](/en/blog/geo-aeo-ellada)?"
+  - question: "Do you need agency for [GEO/AEO](/el/blog/geo-aeo-ellada)?"
     answer: "FAQ and entity content can be agency or in-house. LLM measurement discipline benefits from experienced guidance initially."
   - question: "Should startups buy agency day one?"
     answer: "If website doesn't exist or doesn't rank - agency project often beats software alone. If learning phase - software + DIY path."
@@ -67,7 +67,7 @@ Agency pricing sells **delivery** - implementation, content, technical fixes, de
 ### Best for
 
 - Multi-location [hotel groups](/en/solutions/hotels) and [rent-a-car fleets](/en/solutions/rent-a-car)
-- Competitive island markets ([Cyclades local SEO](/en/blog/topiko-seo-kykladon))
+- Competitive island markets ([Cyclades local SEO](/el/blog/topiko-seo-kykladon))
 - Teams with budget but no SEO headcount
 - Redesign quarters where SEO must not regress
 
@@ -133,7 +133,7 @@ Software stays flat - good for year-round ops discipline.
 
 ### Project vs retainer
 
-- **Project:** new [hotel website](/en/blog/kataskevi-istoselidas-xenodoxeia), island expansion, chatbot launch
+- **Project:** new [hotel website](/en/blog/hotel-website-design), island expansion, chatbot launch
 - **Retainer:** GBP, content, link hygiene, GSC ops
 
 Quote projects separately from ongoing visibility.
@@ -205,7 +205,7 @@ Lower cash cost - higher time cost. Total cost of ownership includes your hours 
 
 Yes - export GSC history and backlog. Good agencies start from data.
 
-### Do you need agency for [GEO/AEO](/en/blog/geo-aeo-ellada)?
+### Do you need agency for [GEO/AEO](/el/blog/geo-aeo-ellada)?
 
 FAQ and entity content can be agency or in-house. LLM measurement discipline benefits from experienced guidance initially.
 

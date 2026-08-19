@@ -15,6 +15,9 @@ export default function CookieConsent() {
   useEffect(() => {
     const consent = localStorage.getItem('cookie-consent');
     if (!consent) {
+      // Post-mount sync is the point here: consent lives in localStorage, unreadable during SSR,
+      // so the first paint has to be the SSR value and this corrects it.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setShow(true);
     }
   }, []);

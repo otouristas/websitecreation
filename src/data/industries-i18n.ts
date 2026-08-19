@@ -3,10 +3,22 @@
  */
 export const industriesEl: Record<
   string,
-  { name: string; description: string; metaDescription: string; painPoints: string[] }
+  {
+    name: string;
+    /**
+     * Accusative form, used after "για" in titles and H1s. Greek inflects, so the
+     * nominative reads broken in running copy: "για Δικηγόροι" -> "για Δικηγόρους".
+     * Neuter plurals (Ξενοδοχεία, Ακίνητα) are identical in both cases.
+     */
+    nameAccusative: string;
+    description: string;
+    metaDescription: string;
+    painPoints: string[];
+  }
 > = {
   restaurants: {
     name: 'Εστιατόρια',
+    nameAccusative: 'Εστιατόρια',
     description:
       'Ιστοσελίδες για εστιατόρια, καφέ και επιχειρήσεις εστίασης. Online μενού, κρατήσεις τραπεζιών και τοπικό SEO.',
     metaDescription:
@@ -15,6 +27,7 @@ export const industriesEl: Record<
   },
   plumbers: {
     name: 'Υδραυλικοί',
+    nameAccusative: 'Υδραυλικούς',
     description:
       'Ιστοσελίδες υψηλής μετατροπής για υδραυλικούς. Κράτηση επείγοντος, επιβεβαίωση περιοχής εξυπηρέτησης και σήματα εμπιστοσύνης.',
     metaDescription:
@@ -23,6 +36,7 @@ export const industriesEl: Record<
   },
   hvac: {
     name: 'Κλιματισμός & Θέρμανση',
+    nameAccusative: 'Κλιματισμό & Θέρμανση',
     description:
       'Επαγγελματικές ιστοσελίδες για εταιρείες HVAC. Εποχιακές προσφορές, συμβόλαια συντήρησης και παρουσίαση εξοπλισμού.',
     metaDescription:
@@ -31,22 +45,27 @@ export const industriesEl: Record<
   },
   electricians: {
     name: 'Ηλεκτρολόγοι',
+    nameAccusative: 'Ηλεκτρολόγους',
     description:
       'Ιστοσελίδες που χτίζουν εμπιστοσύνη για αδειοδοτημένους ηλεκτρολόγους. Γκαλερί έργων, πιστοποιήσεις ασφαλείας και φόρμες προσφορών.',
     metaDescription:
       'Ιστοσελίδες ηλεκτρολόγων που χτίζουν εμπιστοσύνη. Παρουσίαση έργων, πιστοποιήσεις και περισσότερες προσφορές.',
     painPoints: ['Διασφάλιση ασφαλείας', 'Προσφορές έργων', 'Επείγουσα εξυπηρέτηση', 'Απόδειξη αδειοδότησης'],
   },
+  // "Στεγαστικοί" reads as housing/mortgage in Greek (στεγαστικό δάνειο), not as
+  // a roofing trade. The trade term is κατασκευαστές στεγών.
   roofers: {
-    name: 'Στεγαστικοί',
+    name: 'Κατασκευαστές Στεγών',
+    nameAccusative: 'Κατασκευαστές Στεγών',
     description:
-      'Ιστοσελίδες στεγαστικών για υψηλής αξίας leads. Γκαλερί έργων, παρουσίαση υλικών και landing pages για ζημιές από καταιγίδες.',
+      'Ιστοσελίδες για κατασκευαστές στεγών και τεχνίτες στέγης, με στόχο leads υψηλής αξίας. Γκαλερί έργων, παρουσίαση υλικών και landing pages για επισκευή στέγης μετά από κακοκαιρία.',
     metaDescription:
-      'Ιστοσελίδες στεγαστικών εταιρειών βελτιστοποιημένες για υψηλής αξίας leads. Ζημιές από καταιγίδες και αντικαταστάσεις.',
-    painPoints: ['Εμπιστοσύνη υψηλής αξίας', 'Leads ζημιών καταιγίδας', 'Επιλογή υλικών', 'Ασφαλιστικές αποζημιώσεις'],
+      'Ιστοσελίδες για συνεργεία κατασκευής και επισκευής στέγης, βελτιστοποιημένες για leads υψηλής αξίας. Εργασίες στέγης και αντικαταστάσεις.',
+    painPoints: ['Εμπιστοσύνη υψηλής αξίας', 'Leads επισκευής στέγης', 'Επιλογή υλικών', 'Ασφαλιστικές αποζημιώσεις'],
   },
   landscapers: {
     name: 'Κηπουρική',
+    nameAccusative: 'Κηπουρική',
     description:
       'Οπτικά πρώτες ιστοσελίδες για εταιρείες κηπουρικής. Γκαλερί portfolio, προγραμματισμός συντήρησης και εποχιακές υπηρεσίες.',
     metaDescription:
@@ -55,6 +74,7 @@ export const industriesEl: Record<
   },
   painters: {
     name: 'Βαφείς',
+    nameAccusative: 'Βαφείς',
     description:
       'Ιστοσελίδες δημιουργίας leads για βαφείς. Οπτικοποίηση χρωμάτων, γκαλερί έργων και άμεσες εκτιμήσεις προσφορών.',
     metaDescription:
@@ -63,6 +83,7 @@ export const industriesEl: Record<
   },
   carpenters: {
     name: 'Ξυλουργοί',
+    nameAccusative: 'Ξυλουργούς',
     description:
       'Ιστοσελίδες ξυλουργικής και κατασκευών στα μέτρα σας. Παρουσίαση portfolio για ντουλάπια, σκελετό και φινίρισμα.',
     metaDescription:
@@ -71,6 +92,7 @@ export const industriesEl: Record<
   },
   flooring: {
     name: 'Δάπεδα',
+    nameAccusative: 'Δάπεδα',
     description:
       'Ιστοσελίδες τοποθέτησης δαπέδων. Κατάλογοι υλικών, οπτικοποίηση χώρων και υπολογιστές προσφορών εγκατάστασης.',
     metaDescription:
@@ -79,6 +101,7 @@ export const industriesEl: Record<
   },
   'cleaning-services': {
     name: 'Καθαρισμοί',
+    nameAccusative: 'Καθαρισμούς',
     description:
       'Ιστοσελίδες με focus στις κρατήσεις για οικιακούς και επαγγελματικούς καθαρισμούς. Επαναλαμβανόμενες υπηρεσίες και άμεση τιμολόγηση.',
     metaDescription:
@@ -87,6 +110,7 @@ export const industriesEl: Record<
   },
   movers: {
     name: 'Μετακομίσεις',
+    nameAccusative: 'Μετακομίσεις',
     description:
       'Ιστοσελίδες μετακομιστικών με υπολογιστές προσφορών, εκτίμηση αποστάσεων και κριτικές που χτίζουν εμπιστοσύνη.',
     metaDescription:
@@ -95,6 +119,7 @@ export const industriesEl: Record<
   },
   locksmiths: {
     name: 'Κλειδαράδες',
+    nameAccusative: 'Κλειδαράδες',
     description:
       'Ιστοσελίδες βελτιστοποιημένες για επείγοντα για κλειδαράδες. Click-to-call, δείκτες 24/7 διαθεσιμότητας και χάρτες περιοχής.',
     metaDescription:
@@ -103,6 +128,7 @@ export const industriesEl: Record<
   },
   'pest-control': {
     name: 'Απεντόμωση',
+    nameAccusative: 'Απεντόμωση',
     description:
       'Ιστοσελίδες απεντόμωσης με οδηγούς αναγνώρισης εντόμων, πλάνα θεραπείας και κράτηση επείγουσας εξυπηρέτησης.',
     metaDescription:
@@ -111,6 +137,7 @@ export const industriesEl: Record<
   },
   lawyers: {
     name: 'Δικηγόροι',
+    nameAccusative: 'Δικηγόρους',
     description:
       'Ιστοσελίδες δικηγορικών γραφείων που χτίζουν εμπιστοσύνη, παρουσιάζουν εξειδίκευση και δημιουργούν qualified leads μέσω SEO.',
     metaDescription:
@@ -119,6 +146,7 @@ export const industriesEl: Record<
   },
   dentists: {
     name: 'Οδοντίατροι',
+    nameAccusative: 'Οδοντιάτρους',
     description:
       'Ιστοσελίδες οδοντιατρείων με online ραντεβού, μαρτυρίες ασθενών και εκπαιδευτικό περιεχόμενο για υπηρεσίες.',
     metaDescription:
@@ -127,6 +155,7 @@ export const industriesEl: Record<
   },
   chiropractors: {
     name: 'Χειροπράκτες',
+    nameAccusative: 'Χειροπράκτες',
     description:
       'Ιστοσελίδες χειροπρακτικής με focus στην εκπαίδευση για ανακούφιση πόνου, προσφορές νέων ασθενών και online προγραμματισμό.',
     metaDescription:
@@ -135,6 +164,7 @@ export const industriesEl: Record<
   },
   therapists: {
     name: 'Ψυχοθεραπευτές',
+    nameAccusative: 'Ψυχοθεραπευτές',
     description:
       'Ιστοσελίδες ιδιωτικής πρακτικής για θεραπευτές. Ασφαλείς φόρμες επικοινωνίας, περιγραφές ειδικοτήτων και οδηγοί «καλής αντιστοίχισης».',
     metaDescription:
@@ -143,6 +173,7 @@ export const industriesEl: Record<
   },
   'real-estate': {
     name: 'Ακίνητα',
+    nameAccusative: 'Ακίνητα',
     description:
       'Ιστοσελίδες ακινήτων με καταχωρήσεις, λειτουργικότητα αναζήτησης και στρατηγικές τοπικού SEO για την αγορά.',
     metaDescription:
@@ -151,6 +182,7 @@ export const industriesEl: Record<
   },
   hotels: {
     name: 'Ξενοδοχεία',
+    nameAccusative: 'Ξενοδοχεία',
     description:
       'Ιστοσελίδες ξενοδοχείων και φιλοξενίας με ενσωμάτωση κρατήσεων, εντυπωσιακές γκαλερί δωματίων και SEO εστιασμένο στον τουρισμό - για ξενοδοχεία σε νησιά, πόλεις και παραθαλάσσιους προορισμούς που θέλουν άμεσες κρατήσεις αντί για υψηλές προμήθειες OTA.',
     metaDescription:
@@ -164,6 +196,7 @@ export const industriesEl: Record<
   },
   gyms: {
     name: 'Γυμναστήρια',
+    nameAccusative: 'Γυμναστήρια',
     description:
       'Ιστοσελίδες γυμναστηρίων με πρόγραμμα μαθημάτων, πληροφορίες συνδρομών και τοπικό SEO για fitness.',
     metaDescription:
@@ -172,6 +205,7 @@ export const industriesEl: Record<
   },
   salons: {
     name: 'Κομμωτήρια & Spa',
+    nameAccusative: 'Κομμωτήρια & Spa',
     description:
       'Ιστοσελίδες κομμωτηρίων και spa με μενού υπηρεσιών, συστήματα κράτησης και τοπικό SEO ομορφιάς.',
     metaDescription:
@@ -180,6 +214,7 @@ export const industriesEl: Record<
   },
   'plastic-surgeons': {
     name: 'Πλαστικοί Χειρουργοί',
+    nameAccusative: 'Πλαστικούς Χειρουργούς',
     description:
       'Premium ιστοσελίδες για κλινικές πλαστικής χειρουργικής. Γκαλερί αποτελεσμάτων, οδηγοί επεμβάσεων και χτίσιμο εμπιστοσύνης ασθενών.',
     metaDescription:
@@ -188,6 +223,7 @@ export const industriesEl: Record<
   },
   'med-spas': {
     name: 'Med Spas',
+    nameAccusative: 'Med Spas',
     description:
       'Κομψές, υψηλής μετατροπής ιστοσελίδες για Medical Spas. Ενσωμάτωση κρατήσεων, μενού θεραπειών και οπτική αφήγηση.',
     metaDescription:
@@ -196,6 +232,7 @@ export const industriesEl: Record<
   },
   'dui-lawyers': {
     name: 'Δικηγόροι DUI',
+    nameAccusative: 'Δικηγόρους DUI',
     description:
       'Υψηλής επείγοντος δημιουργία leads για δικηγόρους DUI. Click-to-call, χτίσιμο αυθεντίας και τοπική κυριαρχία.',
     metaDescription:
@@ -204,6 +241,7 @@ export const industriesEl: Record<
   },
   'personal-injury': {
     name: 'Προσωπικοί Τραυματισμοί',
+    nameAccusative: 'Προσωπικούς Τραυματισμούς',
     description:
       'Επιθετικές στρατηγικές SEO για δικηγορικά γραφεία PI. Παρουσίαση αποτελεσμάτων, landing pages πρακτικών τομέων και lead capture.',
     metaDescription:
@@ -212,6 +250,7 @@ export const industriesEl: Record<
   },
   'financial-advisors': {
     name: 'Οικονομικοί Σύμβουλοι',
+    nameAccusative: 'Οικονομικούς Συμβούλους',
     description:
       'Επαγγελματικές, συμβατές με κανονισμούς ιστοσελίδες για wealth managers. Χτίσιμο εμπιστοσύνης, resource hubs και κλείσιμο ραντεβού.',
     metaDescription:
@@ -220,6 +259,7 @@ export const industriesEl: Record<
   },
   'rent-a-car': {
     name: 'Ενοικίαση Αυτοκινήτου',
+    nameAccusative: 'Ενοικίαση Αυτοκινήτου',
     description:
       'Ιστοσελίδες rent-a-car με κατάλογο στόλου, funnels κρατήσεων, εποχιακές προσφορές και τοπικό SEO για νησιά, αεροδρόμια και τουριστικούς προορισμούς - ιδανικές για επιχειρήσεις ενοικίασης στην Ελλάδα που θέλουν κρατήσεις απευθείας από Google.',
     metaDescription:
@@ -233,6 +273,7 @@ export const industriesEl: Record<
   },
   'tour-operators': {
     name: 'Οργανωτές Εκδρομών',
+    nameAccusative: 'Οργανωτές Εκδρομών',
     description:
       'Ιστοσελίδες ημερήσιων εκδρομών και excursions με κατάλογο πακέτων, πλούσιες γκαλερί και SEO clusters ανά προορισμό - για tour operators που πουλούν κρουαζιέρες, island hopping, wine tours και εμπειρίες σε Σαντορίνη, Μύκονο, Κρήτη και άλλους ελληνικούς προορισμούς.',
     metaDescription:
@@ -246,6 +287,7 @@ export const industriesEl: Record<
   },
   'villas-apartments': {
     name: 'Βίλες & Διαμερίσματα',
+    nameAccusative: 'Βίλες & Διαμερίσματα',
     description:
       'Ιστοσελίδες vacation rentals και βίλας με immersive galleries, φόρμες άμεσης κράτησης και διεθνές SEO - για ιδιοκτήτες βίλας και διαμερισμάτων που θέλουν να μειώσουν τις προμήθειες Airbnb/Booking και να προσελκύσουν ξένους επισκέπτες.',
     metaDescription:
@@ -259,6 +301,7 @@ export const industriesEl: Record<
   },
   'travel-agencies': {
     name: 'Ταξιδιωτικά Γραφεία',
+    nameAccusative: 'Ταξιδιωτικά Γραφεία',
     description:
       'Ιστοσελίδες ταξιδιωτικών γραφείων με παρουσίαση πακέτων, θεματικοί κόμβοι ανά προορισμό και συλλογή αιτημάτων για εξατομικευμένα δρομολόγια - ιδανικές για γραφεία που πουλούν πακέτα διακοπών, κρουαζιέρες και οργανωμένα ταξίδια στην Ελλάδα και το εξωτερικό.',
     metaDescription:
@@ -272,6 +315,7 @@ export const industriesEl: Record<
   },
   'travel-ai-chatbots': {
     name: 'AI Chatbots Τουρισμού',
+    nameAccusative: 'AI Chatbots Τουρισμού',
     description:
       'Υλοποιήσεις AI βοηθών για τον τουρισμό - πολύγλωσση υποστήριξη κρατήσεων, αυτοματοποίηση FAQ και ορατότητα σε AI αναζήτηση (AEO) - για ξενοδοχεία, rent-a-car και tour operators που θέλουν 24/7 εξυπηρέτηση χωρίς να χάνουν κρατήσεις.',
     metaDescription:

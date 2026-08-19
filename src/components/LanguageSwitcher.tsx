@@ -9,11 +9,16 @@ function localeLabel(locale: SiteLocale): string {
   return locale === "el" ? "ΕΛ" : "EN";
 }
 
-export function LanguageSwitcher() {
+/**
+ * `alternateHref` lets a page override the path-swap default. Blog posts need
+ * it: slugs differ per locale, so swapping only the prefix pointed at a URL
+ * that redirects straight back (69 such internal links before this).
+ */
+export function LanguageSwitcher({ alternateHref }: { alternateHref?: string }) {
   const pathname = usePathname() ?? "/en";
   const locale = siteLocaleFromPath(pathname);
   const target: SiteLocale = locale === "el" ? "en" : "el";
-  const href = getAlternateLocalePath(pathname);
+  const href = alternateHref ?? getAlternateLocalePath(pathname);
   const ariaLabel =
     target === "en" ? "Switch to English" : "Μετάβαση στα Ελληνικά";
 

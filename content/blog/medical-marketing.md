@@ -44,7 +44,7 @@ Before/after claims without context, guaranteed outcomes, keyword-stuffed condit
 
 Patients want convenience. They search “Botox near me,” “best dermatologist in [city],” or “rhinoplasty surgeon [metro].” Your Google Business Profile must be accurate: facility photos (not stock), updated hours including consultation slots, privacy-safe review replies with no PHI, and the correct primary category.
 
-Pair GBP with location pages that reference neighborhoods, parking, and transit - the same operational pattern used in [hotel local SEO](/en/solutions/hotels) and [Cyclades local SEO](/en/blog/topiko-seo-kykladon), adapted for healthcare compliance.
+Pair GBP with location pages that reference neighborhoods, parking, and transit - the same operational pattern used in [hotel local SEO](/en/solutions/hotels) and [Cyclades local SEO](/el/blog/topiko-seo-kykladon), adapted for healthcare compliance.
 
 Map queries to dedicated URLs: service + city, condition education, and provider branded searches. Use intent grouping so you do not cannibalize with overlapping thin pages - cannibalization hurts YMYL sites especially hard.
 

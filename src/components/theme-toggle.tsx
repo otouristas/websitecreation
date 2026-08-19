@@ -12,6 +12,9 @@ export function ThemeToggle(): ReactElement {
     const savedTheme = localStorage.getItem("theme") as "light" | "dark" | null;
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
     const initialTheme = savedTheme ?? (prefersDark ? "dark" : "light");
+    // Post-mount sync is the point here: theme comes from localStorage / prefers-color-scheme, both browser-only,
+    // so the first paint has to be the SSR value and this corrects it.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setTheme(initialTheme);
     document.documentElement.classList.toggle("dark", initialTheme === "dark");
   }, []);

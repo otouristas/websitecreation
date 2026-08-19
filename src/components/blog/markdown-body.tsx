@@ -2,7 +2,8 @@ import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { rehypeHeadingIds } from "@/lib/rehype-heading-ids";
-import type { SiteLocale } from "@/lib/i18n/locale";
+import { isEnOnlySection, type SiteLocale } from "@/lib/i18n/locale";
+import { blogHref } from "@/lib/blog";
 
 interface MarkdownBodyProps {
   readonly markdown: string;
@@ -20,7 +21,20 @@ function localizeHref(href: string, locale: SiteLocale): string {
   // Only skip when the first path segment is exactly a locale (avoids matching
   // paths like "/energy-seo"). Otherwise prefix so the link resolves in-locale.
   const firstSeg = href.split(/[/?#]/)[1] ?? "";
-  if (firstSeg === "en" || firstSeg === "el") return href;
+  const hasLocale = firstSeg === "en" || firstSeg === "el";
+  const bare = hasLocale ? href.slice(3) || "/" : href;
+  const barePath = bare.split(/[?#]/)[0];
+  // Platform/tools/resources/compare exist only in English - including when the
+  // author already typed an /el prefix, which then 308'd.
+  if (isEnOnlySection(barePath)) return `/en${bare}`;
+  if (hasLocale) return href;
+  // A post exists in exactly one locale. Prefixing a bare /blog/<slug> with the
+  // reader's locale pointed at a URL that 308s to the other one, so resolve the
+  // slug against the post's own locale instead.
+  if (firstSeg === "blog") {
+    const slug = barePath.split("/")[2];
+    if (slug) return blogHref(slug, locale);
+  }
   return `/${locale}${href}`;
 }
 

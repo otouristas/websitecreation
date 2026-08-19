@@ -7,6 +7,7 @@ import { getLocalizedIndustry } from '@/lib/industry-locale';
 import { getServiceEl } from '@/data/services-i18n';
 import { buildIndustryServiceMetadata } from '@/lib/seo';
 import { isValidLocale, localizedPath, type SiteLocale } from '@/lib/i18n/locale';
+import { evaluateIndustryService } from '@/lib/indexability/industry-service';
 
 export const revalidate = 3600;
 
@@ -37,7 +38,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const service = getServiceBySlug(serviceSlug);
   if (!industry || !service) return {};
   // Shared builder, so this page and scripts/seo-audit.ts cannot drift apart.
-  return buildIndustryServiceMetadata(industry, service, locale as SiteLocale);
+  const meta = buildIndustryServiceMetadata(industry, service, locale as SiteLocale);
+  // Combinations the industry hub already satisfies stay reachable for users but
+  // out of the index. See lib/indexability/industry-service.ts for the reasoning.
+  const verdict = evaluateIndustryService(industrySlug, serviceSlug, locale as SiteLocale);
+  if (!verdict.indexable) {
+    return { ...meta, robots: { index: false, follow: true } };
+  }
+  return meta;
 }
 
 export default async function IndustryServicePage({ params }: PageProps) {

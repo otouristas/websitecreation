@@ -50,9 +50,9 @@ Agency SEO fails for predictable reasons: unclear scope, dashboards nobody reads
 
 ### Tourism verticals
 
-- [Cyclades local SEO](/en/blog/topiko-seo-kykladon) - island playbook for hospitality clients
-- [Hotel website design (EL)](/en/blog/kataskevi-istoselidas-xenodoxeia) - scoping hotel builds
-- [Rent-a-car SEO (EL)](/en/blog/istoselida-enikiasis-autokinitou-seo) - fleet and airport keywords
+- [Cyclades local SEO](/el/blog/topiko-seo-kykladon) - island playbook for hospitality clients
+- [Hotel website design (EL)](/en/blog/hotel-website-design) - scoping hotel builds
+- [Rent-a-car SEO (EL)](/el/blog/istoselida-enikiasis-autokinitou-seo) - fleet and airport keywords
 
 ## Productized delivery components
 

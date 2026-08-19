@@ -54,7 +54,7 @@ faq:
 **Παρασκευή:** PSI μετά από deploys· σύντομο SERP check για 2–3 money terms.  
 **Μηνιαία:** Keyword gaps ή ανταγωνισμός αν έχετε πληρωμένο suite· αλλιώς cluster από GSC + autocomplete.
 
-Συνδέστε τη ρουτίνα με [on-page SEO](/el/blog/on-page-seo) και [τεχνικό SEO](/el/blog/techniko-seo) ώστε τα findings να γίνονται tickets με owners.
+Συνδέστε τη ρουτίνα με [on-page SEO](/en/blog/on-page-seo) και [τεχνικό SEO](/el/blog/techniko-seo) ώστε τα findings να γίνονται tickets με owners.
 
 ## Πληρωμένα suites - Πότε κλιμακώνετε
 
