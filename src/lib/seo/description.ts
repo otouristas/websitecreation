@@ -156,21 +156,44 @@ export function fitDescription(
   max = META_DESC_MAX,
 ): string {
   const b = base.replace(/\s+/g, ' ').trim();
-
-  // Score every candidate and take the one closest to the middle of the window.
   const target = (min + max) / 2;
-  let best = b;
+
+  // First pass: find the candidate closest to target that fits within max.
+  let best: string | null = null;
   let bestScore = Number.POSITIVE_INFINITY;
 
   for (const clause of clauses) {
     const candidate = `${b} ${clause}`.replace(/\s+/g, ' ').trim();
     const len = candidate.length;
-    // Overflowing the ceiling is disqualifying; being short is merely suboptimal.
-    const score = len > max ? Number.POSITIVE_INFINITY : Math.abs(len - target);
+    if (len > max) continue; // strict ceiling
+    const score = Math.abs(len - target);
     if (score < bestScore) {
       bestScore = score;
       best = candidate;
     }
   }
-  return finalizeDescription(best);
+
+  // If a candidate fit within the window, use it.
+  if (best !== null) return finalizeDescription(best);
+
+  // Second pass: all clauses overflow max. Pick the shortest overflow that
+  // stays under hard_max — still better than a bare 86-char base.
+  let overflow: string | null = null;
+  let overflowLen = Number.POSITIVE_INFINITY;
+
+  for (const clause of clauses) {
+    const candidate = `${b} ${clause}`.replace(/\s+/g, ' ').trim();
+    const len = candidate.length;
+    if (len <= META_DESC_HARD_MAX && len < overflowLen) {
+      overflow = candidate;
+      overflowLen = len;
+    }
+  }
+
+  // Prefer a slight overflow (truncated by finalizeDescription) over bare base.
+  if (overflow !== null && b.length < min) {
+    return finalizeDescription(overflow, max);
+  }
+
+  return finalizeDescription(b);
 }
