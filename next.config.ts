@@ -161,7 +161,8 @@ const nextConfig: NextConfig = {
       {
         key: 'Content-Security-Policy',
         // GA4 collect hits go to regional hosts (e.g. region1.google-analytics.com)
-        // for EU/UK/CH visitors. Exact www.* hosts do not match those subdomains.
+        // for EU/UK/CH visitors, and to the bare analytics.google.com host,
+        // which a *.analytics.google.com wildcard does not cover.
         // Google Ads conversion tracking adds googleadservices/doubleclick for
         // the conversion linker script, its pings, and its measurement frames.
         // https://developers.google.com/tag-platform/security/guides/csp
@@ -171,7 +172,7 @@ const nextConfig: NextConfig = {
           "style-src 'self' 'unsafe-inline'",
           "img-src 'self' data: blob: https:",
           "font-src 'self' data:",
-          "connect-src 'self' https://va.vercel-scripts.com https://vitals.vercel-insights.com https://formspree.io https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://www.googleadservices.com https://*.doubleclick.net https://pagead2.googlesyndication.com https://www.google.com https://www.google.gr https://www.google.co.uk https://www.google.ie https://www.google.ca https://www.google.com.au",
+          "connect-src 'self' https://va.vercel-scripts.com https://vitals.vercel-insights.com https://formspree.io https://*.google-analytics.com https://analytics.google.com https://*.analytics.google.com https://*.googletagmanager.com https://www.googleadservices.com https://*.doubleclick.net https://pagead2.googlesyndication.com https://www.google.com https://www.google.gr https://www.google.co.uk https://www.google.ie https://www.google.ca https://www.google.com.au",
           "frame-src 'self' https://*.doubleclick.net https://www.googletagmanager.com",
           "frame-ancestors 'self'",
           "base-uri 'self'",
