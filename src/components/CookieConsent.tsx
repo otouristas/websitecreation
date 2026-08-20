@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { enableGoogleAnalytics } from '@/lib/analytics';
+import { COOKIE_CONSENT_KEY, denyTrackingConsent, enableGoogleAnalytics } from '@/lib/analytics';
 import { localizedPath, siteLocaleFromPath } from '@/lib/i18n/locale';
 
 export default function CookieConsent() {
@@ -13,20 +13,21 @@ export default function CookieConsent() {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-    const consent = localStorage.getItem('cookie-consent');
+    const consent = localStorage.getItem(COOKIE_CONSENT_KEY);
     if (!consent) {
       setShow(true);
     }
   }, []);
 
   const accept = () => {
-    localStorage.setItem('cookie-consent', 'accepted');
+    localStorage.setItem(COOKIE_CONSENT_KEY, 'accepted');
     enableGoogleAnalytics();
     setShow(false);
   };
 
   const decline = () => {
-    localStorage.setItem('cookie-consent', 'declined');
+    localStorage.setItem(COOKIE_CONSENT_KEY, 'declined');
+    denyTrackingConsent();
     setShow(false);
   };
 
@@ -41,12 +42,12 @@ export default function CookieConsent() {
       <div className="mx-auto flex max-w-6xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div className="min-w-0">
           <p id="cookie-consent-title" className="text-sm font-semibold text-foreground">
-            {isEl ? 'Cookies για μετρήσεις' : 'Analytics cookies'}
+            {isEl ? 'Cookies για μετρήσεις και διαφημίσεις' : 'Analytics and ads cookies'}
           </p>
           <p className="text-xs leading-relaxed text-muted-foreground sm:text-sm">
             {isEl
-              ? 'Χρησιμοποιούμε cookies μόνο για στατιστικά, μετά την αποδοχή σας.'
-              : 'We use cookies only for analytics, after you accept.'}{' '}
+              ? 'Χρησιμοποιούμε cookies για στατιστικά και μέτρηση Google Ads, μετά την αποδοχή σας.'
+              : 'We use cookies for analytics and Google Ads measurement, after you accept.'}{' '}
             <Link
               href={localizedPath(locale, '/privacy')}
               className="font-medium text-primary underline underline-offset-2 hover:text-primary/80"

@@ -161,15 +161,17 @@ const nextConfig: NextConfig = {
       {
         key: 'Content-Security-Policy',
         // GA4 collect hits go to regional hosts (e.g. region1.google-analytics.com)
-        // for EU/UK/CH visitors. Exact www.* hosts do not match those subdomains.
+        // for EU/UK/CH visitors. Google Ads conversion/remarketing needs extra
+        // googleadservices / doubleclick / google.<TLD> endpoints.
         // https://developers.google.com/tag-platform/security/guides/csp
         value: [
           "default-src 'self'",
-          "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com https://vitals.vercel-insights.com https://*.googletagmanager.com https://*.google-analytics.com",
+          "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com https://vitals.vercel-insights.com https://*.googletagmanager.com https://*.google-analytics.com https://www.googleadservices.com https://www.google.com https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net",
           "style-src 'self' 'unsafe-inline'",
           "img-src 'self' data: blob: https:",
           "font-src 'self' data:",
-          "connect-src 'self' https://va.vercel-scripts.com https://vitals.vercel-insights.com https://formspree.io https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com",
+          "connect-src 'self' https://va.vercel-scripts.com https://vitals.vercel-insights.com https://formspree.io https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://pagead2.googlesyndication.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://ad.doubleclick.net https://*.g.doubleclick.net https://www.google.com https://google.com https://www.google.gr https://google.gr https://*.google.com https://*.google.gr",
+          "frame-src https://www.googletagmanager.com https://td.doubleclick.net https://www.google.com",
           "frame-ancestors 'self'",
           "base-uri 'self'",
           "form-action 'self' https://formspree.io",

@@ -9,6 +9,7 @@ import FloatingContactCta from '@/components/FloatingContactCta';
 import { Analytics } from '@vercel/analytics/next';
 import { isValidLocale } from '@/lib/i18n/locale';
 import { CONTACT_EMAIL, PHONE_E164 } from '@/lib/contact-info';
+import { AW_CONVERSION_ID, GOOGLE_TAG_INIT_SCRIPT } from '@/lib/analytics';
 
 const SITE_URL = 'https://anotherseoguru.com';
 
@@ -255,6 +256,13 @@ export default async function LocaleLayout({
     <html lang={isEl ? 'el' : 'en'} className="scroll-smooth" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+        {/* Google tag (gtag.js) — Google Ads AW-18400993971 + GA4 */}
+        <script
+          async
+          id="google-tag-gtag-js"
+          src={`https://www.googletagmanager.com/gtag/js?id=${AW_CONVERSION_ID}`}
+        />
+        <script id="google-tag-init" dangerouslySetInnerHTML={{ __html: GOOGLE_TAG_INIT_SCRIPT }} />
         <link rel="alternate" type="text/plain" href="/llms.txt" title="LLMs documentation for AnotherSEOGuru" />
         <script
           type="application/ld+json"

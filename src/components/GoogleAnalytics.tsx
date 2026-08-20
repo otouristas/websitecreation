@@ -2,11 +2,11 @@
 
 import { Suspense, useEffect } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
-import { loadGoogleAnalytics, trackPageView } from '@/lib/analytics';
+import { COOKIE_CONSENT_KEY, loadGoogleAnalytics, trackPageView } from '@/lib/analytics';
 
 function hasAnalyticsConsent(): boolean {
   try {
-    return localStorage.getItem('cookie-consent') === 'accepted';
+    return localStorage.getItem(COOKIE_CONSENT_KEY) === 'accepted';
   } catch {
     return false;
   }
@@ -17,7 +17,6 @@ function PageViewTracker() {
   const searchParams = useSearchParams();
 
   useEffect(() => {
-    if (!hasAnalyticsConsent()) return;
     loadGoogleAnalytics();
   }, []);
 

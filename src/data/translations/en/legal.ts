@@ -39,7 +39,7 @@ export const legalEn = {
       },
       {
         heading: '3. Cookies',
-        body: 'We use cookies to analyze website traffic and optimize your website experience. You can instruct your browser to refuse all cookies.',
+        body: 'We use cookies to analyze website traffic, measure Google Ads campaigns, and optimize your website experience. Google Analytics 4 (G-FGFJEKZHB1) and the Google Ads tag (AW-18400993971) load on every page; advertising and analytics cookies are set only after you accept. You can instruct your browser to refuse all cookies.',
       },
       {
         heading: '4. Contact Us',
