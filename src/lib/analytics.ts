@@ -1,4 +1,5 @@
 export const GA_MEASUREMENT_ID = 'G-FGFJEKZHB1';
+export const GOOGLE_ADS_ID = 'AW-18400993971';
 
 declare global {
   interface Window {
@@ -21,11 +22,12 @@ export function loadGoogleAnalytics(): void {
   window.gtag!('js', new Date());
   // Pageviews are sent manually (trackPageView) so SPA route changes count.
   window.gtag!('config', GA_MEASUREMENT_ID, { anonymize_ip: true, send_page_view: false });
+  window.gtag!('config', GOOGLE_ADS_ID);
 
   const script = document.createElement('script');
   script.id = 'ga-script';
   script.async = true;
-  script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+  script.src = `https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ADS_ID}`;
   document.head.appendChild(script);
 }
 
