@@ -1,4 +1,17 @@
 export const GA_MEASUREMENT_ID = 'G-FGFJEKZHB1';
+export const GOOGLE_ADS_ID = 'AW-18400993971';
+
+/**
+ * gtag.js is loaded once with the Ads ID and both destinations are configured
+ * from it, so a single request serves GA4 and Google Ads on every page.
+ */
+export const GOOGLE_TAG_SRC = `https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ADS_ID}`;
+export const GOOGLE_TAG_ORIGIN = 'https://www.googletagmanager.com';
+const GOOGLE_TAG_SCRIPT_ID = 'google-tag-script';
+
+export const CONSENT_STORAGE_KEY = 'cookie-consent';
+
+export type ConsentChoice = 'accepted' | 'declined';
 
 declare global {
   interface Window {
@@ -7,33 +20,84 @@ declare global {
   }
 }
 
-export function loadGoogleAnalytics(): void {
-  if (typeof window === 'undefined') return;
-  if (document.getElementById('ga-script')) return;
+/**
+ * Optional Google Ads conversion action label (the part after the slash in
+ * `AW-18400993971/AbC-D_efG`). Without it, Ads still receives the GA4 events
+ * below and they can be imported as conversions from the Ads UI.
+ */
+const ADS_LEAD_LABEL = process.env.NEXT_PUBLIC_GOOGLE_ADS_LEAD_LABEL;
 
-  window.dataLayer = window.dataLayer || [];
-  // gtag.js only processes `arguments` objects pushed to dataLayer, a plain
-  // array is silently ignored, so this must NOT use rest parameters.
-  window.gtag = function gtag() {
-    // eslint-disable-next-line prefer-rest-params
-    window.dataLayer!.push(arguments);
-  } as Window['gtag'];
-  window.gtag!('js', new Date());
-  // Pageviews are sent manually (trackPageView) so SPA route changes count.
-  window.gtag!('config', GA_MEASUREMENT_ID, { anonymize_ip: true, send_page_view: false });
+/**
+ * Inline head script, rendered on every page.
+ *
+ * Consent Mode v2: ad and analytics storage start denied, so no Google cookies
+ * are written until the visitor accepts the banner, while the tag itself is
+ * still present site-wide for Ads conversion measurement. `wait_for_update` is
+ * omitted on purpose - the stored choice is read synchronously here, so there
+ * is no async CMP for gtag to wait on.
+ *
+ * The loader is appended from this script rather than written as a
+ * `<script async src>` tag because React 19 hoists async scripts to the top of
+ * <head>, which would let gtag.js run before the consent defaults are set.
+ */
+export const GOOGLE_TAG_BOOTSTRAP = `(function(){
+window.dataLayer=window.dataLayer||[];
+function gtag(){window.dataLayer.push(arguments);}
+window.gtag=gtag;
+var granted=false;
+try{granted=localStorage.getItem('${CONSENT_STORAGE_KEY}')==='accepted';}catch(e){}
+var storage=granted?'granted':'denied';
+gtag('consent','default',{ad_storage:storage,ad_user_data:storage,ad_personalization:storage,analytics_storage:storage});
+gtag('set','ads_data_redaction',!granted);
+gtag('set','url_passthrough',true);
+gtag('js',new Date());
+gtag('config','${GA_MEASUREMENT_ID}',{anonymize_ip:true,send_page_view:false});
+gtag('config','${GOOGLE_ADS_ID}');
+if(!document.getElementById('${GOOGLE_TAG_SCRIPT_ID}')){
+var s=document.createElement('script');
+s.id='${GOOGLE_TAG_SCRIPT_ID}';
+s.async=true;
+s.src='${GOOGLE_TAG_SRC}';
+document.head.appendChild(s);
+}
+})();`;
 
-  const script = document.createElement('script');
-  script.id = 'ga-script';
-  script.async = true;
-  script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
-  document.head.appendChild(script);
+export function readConsent(): ConsentChoice | null {
+  if (typeof window === 'undefined') return null;
+  try {
+    const stored = localStorage.getItem(CONSENT_STORAGE_KEY);
+    return stored === 'accepted' || stored === 'declined' ? stored : null;
+  } catch {
+    return null;
+  }
 }
 
-/** Load gtag and record the current URL. Used when the visitor accepts cookies. */
-export function enableGoogleAnalytics(): void {
-  loadGoogleAnalytics();
+export function hasConsent(): boolean {
+  return readConsent() === 'accepted';
+}
+
+/**
+ * Persist the visitor's banner choice and tell gtag about it. Accepting also
+ * records the current page, which the initial page_view skipped.
+ */
+export function setConsent(choice: ConsentChoice): void {
   if (typeof window === 'undefined') return;
-  trackPageView(window.location.href);
+  try {
+    localStorage.setItem(CONSENT_STORAGE_KEY, choice);
+  } catch {
+    // Private browsing modes can reject writes; consent stays denied.
+  }
+
+  const storage = choice === 'accepted' ? 'granted' : 'denied';
+  window.gtag?.('consent', 'update', {
+    ad_storage: storage,
+    ad_user_data: storage,
+    ad_personalization: storage,
+    analytics_storage: storage,
+  });
+  window.gtag?.('set', 'ads_data_redaction', choice !== 'accepted');
+
+  if (choice === 'accepted') trackPageView(window.location.href);
 }
 
 export function trackPageView(url: string): void {
@@ -52,9 +116,19 @@ export function trackEvent(
   window.gtag('event', eventName, params);
 }
 
+/** Fire a Google Ads conversion action. No-op until a label is configured. */
+export function trackAdsConversion(
+  label: string | undefined,
+  params?: Record<string, string | number | boolean | undefined>,
+): void {
+  if (!label) return;
+  trackEvent('conversion', { send_to: `${GOOGLE_ADS_ID}/${label}`, ...params });
+}
+
 export function trackLead(formName: string, extra?: Record<string, string>): void {
   trackEvent('generate_lead', { form_name: formName,
     ...extra });
+  trackAdsConversion(ADS_LEAD_LABEL, { form_name: formName });
 }
 
 export function trackFormStart(formName: string): void {

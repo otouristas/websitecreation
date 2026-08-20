@@ -3,7 +3,8 @@ import { Inter, Geist_Mono } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import '../globals.css';
 import CookieConsent from '@/components/CookieConsent';
-import GoogleAnalytics from '@/components/GoogleAnalytics';
+import GoogleTag from '@/components/GoogleTag';
+import GoogleTagPageView from '@/components/GoogleTagPageView';
 import StickyMobileCta from '@/components/StickyMobileCta';
 import FloatingContactCta from '@/components/FloatingContactCta';
 import { Analytics } from '@vercel/analytics/next';
@@ -255,6 +256,7 @@ export default async function LocaleLayout({
     <html lang={isEl ? 'el' : 'en'} className="scroll-smooth" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+        <GoogleTag />
         <link rel="alternate" type="text/plain" href="/llms.txt" title="LLMs documentation for AnotherSEOGuru" />
         <script
           type="application/ld+json"
@@ -262,7 +264,7 @@ export default async function LocaleLayout({
         />
       </head>
       <body className={`${inter.variable} ${geistMono.variable} relative antialiased`}>
-        <GoogleAnalytics />
+        <GoogleTagPageView />
         <CookieConsent />
         <div className="relative z-0 min-h-dvh pb-20 lg:pb-0" data-locale={locale}>
           {children}

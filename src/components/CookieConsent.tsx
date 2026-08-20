@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { enableGoogleAnalytics } from '@/lib/analytics';
+import { readConsent, setConsent } from '@/lib/analytics';
 import { localizedPath, siteLocaleFromPath } from '@/lib/i18n/locale';
 
 export default function CookieConsent() {
@@ -13,20 +13,18 @@ export default function CookieConsent() {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-    const consent = localStorage.getItem('cookie-consent');
-    if (!consent) {
+    if (!readConsent()) {
       setShow(true);
     }
   }, []);
 
   const accept = () => {
-    localStorage.setItem('cookie-consent', 'accepted');
-    enableGoogleAnalytics();
+    setConsent('accepted');
     setShow(false);
   };
 
   const decline = () => {
-    localStorage.setItem('cookie-consent', 'declined');
+    setConsent('declined');
     setShow(false);
   };
 
@@ -41,12 +39,12 @@ export default function CookieConsent() {
       <div className="mx-auto flex max-w-6xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div className="min-w-0">
           <p id="cookie-consent-title" className="text-sm font-semibold text-foreground">
-            {isEl ? 'Cookies για μετρήσεις' : 'Analytics cookies'}
+            {isEl ? 'Cookies μετρήσεων & διαφημίσεων' : 'Analytics & advertising cookies'}
           </p>
           <p className="text-xs leading-relaxed text-muted-foreground sm:text-sm">
             {isEl
-              ? 'Χρησιμοποιούμε cookies μόνο για στατιστικά, μετά την αποδοχή σας.'
-              : 'We use cookies only for analytics, after you accept.'}{' '}
+              ? 'Χρησιμοποιούμε cookies για στατιστικά και μέτρηση διαφημίσεων (Google Analytics, Google Ads), μόνο μετά την αποδοχή σας.'
+              : 'We use cookies for analytics and advertising measurement (Google Analytics, Google Ads), only after you accept.'}{' '}
             <Link
               href={localizedPath(locale, '/privacy')}
               className="font-medium text-primary underline underline-offset-2 hover:text-primary/80"

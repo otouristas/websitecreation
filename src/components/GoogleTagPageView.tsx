@@ -2,27 +2,17 @@
 
 import { Suspense, useEffect } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
-import { loadGoogleAnalytics, trackPageView } from '@/lib/analytics';
+import { trackPageView } from '@/lib/analytics';
 
-function hasAnalyticsConsent(): boolean {
-  try {
-    return localStorage.getItem('cookie-consent') === 'accepted';
-  } catch {
-    return false;
-  }
-}
-
+/**
+ * Pageviews are sent manually (the tag is configured with
+ * `send_page_view: false`) so client-side route changes are counted too.
+ */
 function PageViewTracker() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
   useEffect(() => {
-    if (!hasAnalyticsConsent()) return;
-    loadGoogleAnalytics();
-  }, []);
-
-  useEffect(() => {
-    if (!hasAnalyticsConsent()) return;
     const query = searchParams?.toString();
     trackPageView(window.location.origin + pathname + (query ? `?${query}` : ''));
   }, [pathname, searchParams]);
@@ -30,7 +20,7 @@ function PageViewTracker() {
   return null;
 }
 
-export default function GoogleAnalytics() {
+export default function GoogleTagPageView() {
   return (
     <Suspense fallback={null}>
       <PageViewTracker />
