@@ -47,7 +47,7 @@ const BY_SERVICE: Record<string, { en: ServiceFaqItem[]; el: ServiceFaqItem[] }>
       {
         question: 'How much does a website cost?',
         answer:
-          'Packages start at €1.200 (Starter, up to 5 pages), €2,000 (Professional) and €3,200 (Business). See Pricing for full details and add-ons.',
+          'Packages start at €1,200 (Starter, up to 5 pages), €2,000 (Professional) and €3,200 (Business). See Pricing for full details and add-ons.',
       },
       {
         question: 'Do you build websites for Athens and Thessaloniki businesses?',
@@ -278,7 +278,7 @@ const BY_SERVICE: Record<string, { en: ServiceFaqItem[]; el: ServiceFaqItem[] }>
       {
         question: 'Πόσο κοστίζουν οι υπηρεσίες SEO / εταιρεία SEO στην Ελλάδα;',
         answer:
-          'Τα μηνιαία πακέτα ξεκινούν από €400 (Starter), €720 (Growth) και €1.200 (Scale). Εφάπαξ audits κοστολογούνται ξεχωριστά. Δείτε τις Τιμές για λεπτομέρειες.',
+          'Τα μηνιαία πακέτα ξεκινούν από €400 (Foundations), €720 (Growth) και €1.200 (Authority). Εφάπαξ audits κοστολογούνται ξεχωριστά. Δείτε τις Τιμές για λεπτομέρειες.',
       },
       {
         question: 'Πότε θα δω αποτελέσματα από προώθηση SEO;',

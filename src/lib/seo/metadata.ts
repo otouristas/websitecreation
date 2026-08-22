@@ -1,4 +1,4 @@
-// SEO Metadata Builder - titles ≤60 chars total, descriptions 150–160 chars
+// SEO Metadata Builder - titles ≤60 chars total, descriptions 145–155 chars
 
 import { Metadata } from 'next';
 import { buildMetaDescription, finalizeDescription, fitDescription, BRAND_NAME, BASE_URL } from './description';
@@ -6,6 +6,10 @@ import { getHreflangAlternates, isGreekLocationSlug } from '@/lib/locale-paths';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 import { LOCALES } from '@/lib/i18n/locale';
 import { shouldIndexServiceLocation, type Location } from '@/data/locations';
+import { getServiceEl } from '@/data/services-i18n';
+import { industriesEl } from '@/data/industries-i18n';
+import { getGreekLocative } from '@/lib/greek-locative';
+import { isIndustryServiceIndexable } from '@/lib/indexability/industry-service';
 
 export const TITLE_BRAND_SUFFIX = ` | ${BRAND_NAME}`;
 /** Shipped by src/app/opengraph-image.png. Every page needs one: twitter:card is summary_large_image. */
@@ -174,17 +178,12 @@ export function cleanPageTitle(raw: string): string {
 
   return cleanTitle;
 }
- 
+
 export function buildFullTitle(raw: string): string {
   const primary = cleanPageTitle(raw);
   if (primary === BRAND_NAME) return BRAND_NAME;
   return `${primary}${TITLE_BRAND_SUFFIX}`;
 }
- 
-import { getServiceEl } from '@/data/services-i18n';
-import { industriesEl } from '@/data/industries-i18n';
-import { getGreekLocative } from '@/lib/greek-locative';
-import { isIndustryServiceIndexable } from '@/lib/indexability/industry-service';
 
 export function buildMetadata(input: MetadataInput): Metadata {
   const {
@@ -235,11 +234,12 @@ export function buildMetadata(input: MetadataInput): Metadata {
     customLanguages ?? (hreflangPath ? getHreflangAlternates(hreflangPath, hreflangLocales) : undefined);
 
   const metadata: Metadata = {
+    metadataBase: new URL(BASE_URL),
     title: fullTitle,
     description,
     alternates: {
       canonical,
-    ...(languages ? { languages } : {}),
+      ...(languages ? { languages } : {}),
     },
     openGraph: {
       title: ogTitle ?? fullTitle,
@@ -265,16 +265,16 @@ export function buildMetadata(input: MetadataInput): Metadata {
       images: [ogImage ?? DEFAULT_OG_IMAGE],
     },
   };
- 
+
   if (noIndex) {
     // follow, not nofollow: these pages stay reachable and their outgoing links
     // still count. nofollow would strand the equity passing through them.
     metadata.robots = { index: false, follow: true };
   }
- 
+
   return metadata;
 }
- 
+
 export function buildServiceMetadata(
   service: {
     name: string;
@@ -292,11 +292,20 @@ export function buildServiceMetadata(
     const hubSuffixes = retainer
       ? [' - Στρατηγική & Υλοποίηση', ' - Στρατηγική', ' - Υπηρεσίες', '']
       : [' - Σχεδιασμός & Υλοποίηση', ' - Υλοποίηση', ' - Υπηρεσίες', ''];
+
+    const descRetainer = fitDescription(`${keyword} από εξειδικευμένη ελληνική ομάδα:`, [
+      'τεχνικός έλεγχος, περιεχόμενο βάσει πραγματικής ζήτησης, τοπικά σήματα και μετρήσιμα leads. Ζητήστε δωρεάν προσφορά.',
+      'τεχνικός έλεγχος, περιεχόμενο βάσει ζήτησης, τοπικά σήματα και μετρήσιμα leads. Ζητήστε προσφορά.',
+      'τεχνικός έλεγχος, περιεχόμενο βάσει ζήτησης και μετρήσιμα leads. Ζητήστε προσφορά.',
+    ]);
+    const descBuild = fitDescription(`${keyword} με τεχνικά θεμέλια από την πρώτη μέρα:`, [
+      'καθαρή αρχιτεκτονική, mobile-first ταχύτητα, Core Web Vitals και δομή μετατροπών. Ζητήστε δωρεάν προσφορά.',
+      'καθαρή αρχιτεκτονική, ταχύτητα, Core Web Vitals και δομή μετατροπών. Ζητήστε προσφορά.',
+    ]);
+
     return buildMetadata({
       title: fitTitleWithSuffix(keyword, hubSuffixes),
-      description: retainer
-        ? `${keyword} από ελληνική ομάδα: τεχνικός έλεγχος, περιεχόμενο βάσει ζήτησης και μετρήσιμα leads. Στρατηγική προσαρμοσμένη στο project σας.`
-        : `${keyword} με τεχνικά θεμέλια από την πρώτη μέρα: αρχιτεκτονική, ταχύτητα και δομή που μπορεί να αναπτυχθεί. Ζητήστε προσφορά για το project σας.`,
+      description: retainer ? descRetainer : descBuild,
       path: localizedPath('el', `/services/${service.slug}`),
       hreflangPath: `/services/${service.slug}`,
       service: name,
@@ -304,6 +313,18 @@ export function buildServiceMetadata(
       ctaHint: 'Δείτε πακέτα και ζητήστε προσφορά.',
     });
   }
+
+  const descRetainerEn = fitDescription(`${service.name} services for business growth:`, [
+    'technical audits, search-demand content strategy, local signals, and reporting tied to revenue. Request a quote.',
+    'technical audits, demand-led content, and monthly reporting tied to revenue. Request a free quote.',
+    'technical audits, demand-led content, and reporting tied to commercial goals. Request a quote.',
+  ]);
+  const descBuildEn = fitDescription(`${service.name} with technical SEO from day one:`, [
+    'custom UX architecture, mobile-first performance, Core Web Vitals and conversion structure. Request a free quote.',
+    'clean UX architecture, mobile speed, Core Web Vitals and conversion structure. Request a free quote.',
+    'clean architecture, mobile speed and conversion structure. Request a quote.',
+  ]);
+
   return buildMetadata({
     title: fitTitleWithSuffix(
       service.name,
@@ -311,9 +332,7 @@ export function buildServiceMetadata(
         ? [' - Strategy & Implementation', ' - Strategy', ' - Services', '']
         : [' - Design & Build', ' - Build', ' - Services', ''],
     ),
-    description: isSeoRetainerService(service.slug)
-      ? `${service.name} built on a technical audit, content against real search demand, and reporting tied to your commercial goals. Request a quote.`
-      : `${service.name} with the technical foundations in place from day one: architecture, speed and a structure that can grow. Request a quote.`,
+    description: isSeoRetainerService(service.slug) ? descRetainerEn : descBuildEn,
     path: localizedPath(locale, `/services/${service.slug}`),
     hreflangPath: `/services/${service.slug}`,
     service: service.name,
@@ -321,7 +340,7 @@ export function buildServiceMetadata(
     ctaHint: 'View packages and request a quote.',
   });
 }
- 
+
 export function buildServiceLocationMetadata(
   service: { name: string; slug: string },
   location: {
@@ -357,11 +376,14 @@ export function buildServiceLocationMetadata(
     // Front-load keyword + city so truncation drops the hook, never the keyword.
     title: fitTitleWithSuffix(`${service.name} ${location.city}`, enTitleSuffixes(service.slug)),
     description: fitDescription(`${service.name} in ${placeLabel}.`, [
-      'Local search strategy, technical foundations and content built around how people there actually search. Request a quote.',
+      'Local search strategy, technical SEO foundations, Core Web Vitals and content built around local customer search demand. Request a quote.',
+      'Local search strategy, technical SEO foundations, and content built around local customer search demand. Request a quote.',
+      'Local search strategy, technical foundations, and content built around how people there actually search. Request a quote.',
       'Local search strategy, technical foundations and content built around how people there search. Request a quote.',
-      'Local search strategy, technical foundations and content that matches local intent. Request a quote.',
-      'Local search strategy, technical foundations and content that matches local intent.',
-      'Local search strategy and technical foundations for the area.',
+      'Local search strategy, technical foundations and content that matches local search intent. Request a quote.',
+      'Local search strategy, technical SEO foundations and local content. Request a free quote from our team.',
+      'Local search strategy, technical SEO foundations and locally-targeted content. Request a free quote.',
+      'Local search strategy and technical SEO foundations for the area. Request a free quote.',
     ]),
     path: localizedPath(locale, `/services/${service.slug}/${location.slug}`),
     hreflangPath: `/services/${service.slug}/${location.slug}`,
@@ -374,7 +396,7 @@ export function buildServiceLocationMetadata(
     noIndex,
   });
 }
- 
+
 /** Services sold as monthly retainers vs one-off fixed-scope projects. */
 function isSeoRetainerService(slug: string): boolean {
   return ['local-seo', 'seo-audits', 'ai-visibility', 'link-building', 'eshop-seo', 'content-creation'].includes(slug);
@@ -488,10 +510,12 @@ export function buildServiceLocationMetadataEl(
     // Prefer short keyword when needed so truncation never drops the city.
     title: fitTitleWithSuffix(titleBase, elTitleSuffixes(service.slug)),
     description: fitDescription(`${keyword} ${locative}.`, [
-      'Τοπική στρατηγική αναζήτησης, τεχνικά θεμέλια και περιεχόμενο βασισμένο στο πώς ψάχνουν πραγματικά στην περιοχή. Ζητήστε προσφορά.',
-      'Τοπική στρατηγική αναζήτησης, τεχνικά θεμέλια και περιεχόμενο για την τοπική ζήτηση. Ζητήστε προσφορά.',
-      'Τοπική στρατηγική αναζήτησης, τεχνικά θεμέλια και περιεχόμενο για την περιοχή σας.',
-      'Τοπική στρατηγική αναζήτησης και τεχνικά θεμέλια. Ζητήστε προσφορά.',
+      'Τοπική στρατηγική αναζήτησης, τεχνικά θεμέλια SEO, Core Web Vitals και περιεχόμενο για τη ζήτηση της περιοχής. Ζητήστε δωρεάν προσφορά.',
+      'Τοπική στρατηγική αναζήτησης, τεχνικά θεμέλια SEO και περιεχόμενο βασισμένο στο πώς ψάχνουν στην περιοχή. Ζητήστε προσφορά.',
+      'Τοπική στρατηγική αναζήτησης, τεχνικά θεμέλια και περιεχόμενο βασισμένο στο πώς ψάχνουν στην περιοχή. Ζητήστε προσφορά.',
+      'Τοπική στρατηγική αναζήτησης, τεχνικά θεμέλια SEO και στοχευμένο τοπικό περιεχόμενο. Ζητήστε δωρεάν προσφορά.',
+      'Τοπική στρατηγική αναζήτησης, τεχνικά θεμέλια SEO και τοπικό περιεχόμενο. Ζητήστε δωρεάν προσφορά.',
+      'Τοπική στρατηγική αναζήτησης και τεχνικά θεμέλια SEO. Ζητήστε δωρεάν προσφορά από την ομάδα μας.',
     ]),
     path: localizedPath('el', `/services/${service.slug}/${location.slug}`),
     hreflangPath: `/services/${service.slug}/${location.slug}`,
@@ -501,7 +525,7 @@ export function buildServiceLocationMetadataEl(
     noIndex,
   });
 }
- 
+
 export function buildIndustryMetadata(
   industry: {
     name: string;
@@ -548,7 +572,25 @@ export function buildIndustryMetadata(
     ctaHint: locale === 'el' ? 'Δείτε πακέτα ανά κλάδο.' : 'Explore industry packages.',
   });
 }
- 
+
+// The Greek short-title map that shipped alongside EN_SHORT_INDUSTRY_SERVICE_TITLE
+// is gone: elIndustryServiceTitleBase already substitutes EL_SHORT_TITLE_KEYWORD,
+// and only when the full title busts the Greek budget rather than always.
+const EN_SHORT_INDUSTRY_SERVICE_TITLE: Record<string, string> = {
+  'website-creation': 'Web Design',
+  'website-redesign': 'Redesign',
+  'seo-web-design': 'SEO Web Design',
+  'speed-optimization': 'Speed Optimization',
+  'ai-visibility': 'GEO & AEO',
+  'logo-design': 'Logo Design',
+  'content-creation': 'SEO Content',
+  'local-seo': 'Local SEO',
+  'link-building': 'Link Building',
+  'seo-audits': 'SEO Audits',
+  'eshop-woocommerce': 'E-commerce',
+  'eshop-seo': 'E-shop SEO',
+};
+
 export function buildIndustryServiceMetadata(
   industry: { name: string; slug: string; painPoints?: readonly string[] },
   service: { name: string; slug: string },
@@ -574,17 +616,32 @@ export function buildIndustryServiceMetadata(
   const punct = (t?: string) => (t ? (/[.!?]$/.test(t.trim()) ? t.trim() + ' ' : t.trim() + '. ') : '');
   const tail = punct(pains[0]) + punct(pains[1]);
 
-  const descEl = fitDescription((svcName + ' για ' + indFor + '. ' + tail).replace(/\s+/g, ' '), [
+  const descEl = fitDescription(`${svcName} για ${indFor}. ${tail}`.replace(/\s+/g, ' '), [
+    'Στρατηγική SEO και σχεδιασμός βάσει της πραγματικής ζήτησης του κλάδου σας, όχι έτοιμο πακέτο. Ζητήστε δωρεάν προσφορά.',
+    'Στρατηγική βάσει της πραγματικής ζήτησης του κλάδου σας, όχι έτοιμο πακέτο. Ζητήστε δωρεάν προσφορά.',
     'Στρατηγική βάσει της πραγματικής ζήτησης του κλάδου σας, όχι έτοιμο πακέτο. Ζητήστε προσφορά.',
-    'Στρατηγική βάσει της πραγματικής ζήτησης του κλάδου σας. Ζητήστε προσφορά.',
-    'Στρατηγική προσαρμοσμένη στον κλάδο σας. Ζητήστε προσφορά.',
-    'Στρατηγική βάσει της ζήτησης του κλάδου σας.',
+    'Στρατηγική βάσει της πραγματικής ζήτησης του κλάδου σας. Ζητήστε δωρεάν προσφορά.',
+    'Στρατηγική προσαρμοσμένη στη ζήτηση του κλάδου σας. Ζητήστε δωρεάν προσφορά σήμερα.',
+    'Στρατηγική προσαρμοσμένη στον κλάδο σας. Ζητήστε δωρεάν προσφορά σήμερα.',
+    'Στρατηγική προσαρμοσμένη στον κλάδο σας. Ζητήστε δωρεάν προσφορά.',
+    'Στρατηγική στα μέτρα σας. Ζητήστε δωρεάν προσφορά σήμερα.',
+    'Στρατηγική στα μέτρα σας. Ζητήστε δωρεάν προσφορά.',
+    'Ζητήστε δωρεάν προσφορά από την ομάδα μας.',
+    'Ζητήστε δωρεάν προσφορά σήμερα.',
+    'Ζητήστε δωρεάν προσφορά.',
+    'Ζητήστε προσφορά.',
   ]);
-  const descEn = fitDescription((svcName + ' for ' + indName.toLowerCase() + '. ' + tail).replace(/\s+/g, ' '), [
+  const descEn = fitDescription(`${svcName} for ${indName.toLowerCase()}. ${tail}`.replace(/\s+/g, ' '), [
+    "Custom web design and SEO strategy built on your sector's real search demand, not a template. Request a free quote.",
+    "Web design and SEO strategy built on your sector's real search demand, not a template. Request a quote.",
     "Strategy built on your sector's real search demand, not a template. Request a quote.",
-    "Strategy built on your sector's real search demand. Request a quote.",
-    "Strategy shaped by your sector's demand. Request a quote.",
-    "Strategy built on your sector's search demand.",
+    "Strategy built on your sector's real search demand. Request a free quote from our team.",
+    "Strategy shaped by your sector's real search demand. Request a free quote from our team.",
+    "Strategy shaped by your sector's demand, not a template. Request a free quote.",
+    "Strategy shaped by your sector's real demand. Request a free quote today.",
+    "Strategy shaped by your sector's demand. Request a free quote today.",
+    "Strategy tailored to your sector. Request a free quote today.",
+    "Request a free quote from our team today.",
   ]);
 
   // Only advertise a locale twin that is itself indexable. A pairing can pass
@@ -595,11 +652,13 @@ export function buildIndustryServiceMetadata(
   );
   const hreflangLocales = indexableLocales.length >= 2 ? LOCALES : undefined;
 
+  const shortSvcEn = EN_SHORT_INDUSTRY_SERVICE_TITLE[service.slug] ?? service.name;
+
   return buildMetadata({
     title:
       locale === 'el'
         ? fitTitleWithSuffix(elIndustryServiceTitleBase(service.slug, svcName, indFor), [' | Στρατηγική', ''])
-        : fitTitleWithSuffix(svcName + ' for ' + indName, [' | Strategy', '']),
+        : fitTitleWithSuffix(`${shortSvcEn} for ${indName}`, [' | Strategy', '']),
     description: locale === 'el' ? descEl : descEn,
     path: localizedPath(locale, '/solutions/' + industry.slug + '/' + service.slug),
     ...(hreflangLocales
@@ -609,5 +668,5 @@ export function buildIndustryServiceMetadata(
     industry: indName,
   });
 }
- 
+
 export { BASE_URL, BRAND_NAME };
