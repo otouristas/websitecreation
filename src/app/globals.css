@@ -535,6 +535,26 @@
   background: color-mix(in oklab, var(--primary) 60%, transparent);
 }
 
+/* Client logo marquee - the track is rendered twice, so translating the
+   first copy by -50% of the flex row lands the second copy exactly where the
+   first began. Pauses on hover so a visitor can read a logo. */
+@keyframes client-logo-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.client-logo-marquee {
+  animation: client-logo-marquee 60s linear infinite;
+}
+
+.client-logo-marquee:hover {
+  animation-play-state: paused;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

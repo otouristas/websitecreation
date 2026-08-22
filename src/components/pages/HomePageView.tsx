@@ -5,6 +5,7 @@ import SchemaMarkup from '@/components/seo/SchemaMarkup';
 import { HomeFaq } from '@/components/marketing';
 import {
   LandingHero,
+  ClientLogoWall,
   HomeOfferGrid,
   VerticalServices,
   Different,
@@ -69,6 +70,7 @@ export function HomePageView({ locale }: { locale: SiteLocale }) {
       <Header locale={locale} />
       <main className="blueprint-grid relative z-0">
         <LandingHero locale={locale} />
+        <ClientLogoWall locale={locale} />
         <HomeOfferGrid locale={locale} />
         <Different locale={locale} />
         <VerticalServices locale={locale} />

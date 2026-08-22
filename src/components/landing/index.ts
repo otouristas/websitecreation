@@ -1,4 +1,5 @@
 export { LandingHero } from "./LandingHero";
+export { ClientLogoWall } from "./ClientLogoWall";
 export { HomeOfferGrid } from "./HomeOfferGrid";
 export { VerticalServices } from "./VerticalServices";
 export { Different } from "./Different";
