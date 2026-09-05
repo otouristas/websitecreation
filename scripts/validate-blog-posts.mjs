@@ -40,6 +40,7 @@ const ALLOW_LONG = new Set([
   'internal-linking-audit-checklist',
   'glossary-strategy-internal-linking',
   'poso-kostizei-to-seo',
+  'backlink-checker',
 ]);
 
 const CTA_RE =
