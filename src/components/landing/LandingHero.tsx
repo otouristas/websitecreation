@@ -53,7 +53,7 @@ export function LandingHero({ locale = "en" }: { locale?: SiteLocale }) {
         {/* Answer-first opener: 40-55 words, entity named. Targets PAA / AI Overviews. */}
         <p className="mx-auto mt-7 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
           {isEl
-            ? t!.sub
+            ? resolvePriceTokens(t!.sub, locale)
             : resolvePriceTokens("AnotherSEOGuru is a Greek SEO and web design agency. We handle technical SEO, local SEO, GEO/AEO and website or e-shop builds, with transparent packages from {{ENTRY_SEO}} a month. Every engagement starts with a free SEO audit, so you see what works before you commit.", locale)}
         </p>
 

@@ -17,7 +17,7 @@ faq:
   - question: Χρειάζονται τα ξενοδοχεία GEO / AEO εκτός από SEO;
     answer: Ναι. Οι ταξιδιώτες ρωτούν ChatGPT και Perplexity για συστάσεις. Το GEO/AEO βοηθά το κατάλυμά σας να εμφανίζεται σε αυτές τις απαντήσεις, όχι μόνο στα κλασικά αποτελέσματα Google.
   - question: Πόσο κοστίζει το SEO για ξενοδοχείο στην Ελλάδα;
-    answer: Τυπικά €299–€999/μήνα ανάλογα με μέγεθος, γλώσσες και ανταγωνισμό προορισμού. Εφάπαξ τεχνικό audit συχνά €400–€800. Πακέτα website ξενοδοχείου από €899.
+    answer: Τυπικά {{ENTRY_SEO}}–{{SEO_AUTHORITY}}/μήνα ανάλογα με μέγεθος, γλώσσες και ανταγωνισμό προορισμού. Εφάπαξ τεχνικό audit συχνά €400–€800. Πακέτα website ξενοδοχείου από €899.
   - question: Μπορώ να μειώσω τις προμήθειες OTA με SEO;
     answer: Ναι, όταν οι άμεσες κρατήσεις αυξάνονται. Πολλοί πελάτες στοχεύουν 10–25% μετατόπιση από OTA σε direct μέσα σε 6–12 μήνες, χωρίς να κόψουν τελείως τα κανάλια διανομής.
 ---
@@ -48,8 +48,8 @@ Hotel / LodgingBusiness schema με check-in, geo, προσφορές και roo
 
 | Στοιχείο | Τυπικό εύρος 2026 | Σημειώσεις |
 | :--- | :--- | :--- |
-| Μηνιαίο hotel SEO (Starter–Growth) | €299 – €599/μήνα | 1–2 γλώσσες, τοπικός ανταγωνισμός |
-| Μηνιαίο Scale / ανταγωνιστικός προορισμός | €599 – €999+/μήνα | Σαντορίνη, Μύκονος, Αθήνα city hotels |
+| Μηνιαίο hotel SEO (Foundations-Growth) | {{ENTRY_SEO}} – {{SEO_GROWTH}}/μήνα | 1–2 γλώσσες, τοπικός ανταγωνισμός |
+| Μηνιαίο Authority / ανταγωνιστικός προορισμός | {{SEO_GROWTH}} – {{SEO_AUTHORITY}}+/μήνα | Σαντορίνη, Μύκονος, Αθήνα city hotels |
 | Εφάπαξ τεχνικό + content audit | €400 – €800 | Πριν από migration ή redesign |
 | Website πακέτο hospitality | από €899 | Booking UX, schema, πολύγλωσσο |
 | Χρόνος έως πρώτα local wins | 2–3 μήνες | Branded + «ξενοδοχείο + πόλη» |
@@ -107,7 +107,7 @@ Hotel / LodgingBusiness schema με check-in, geo, προσφορές και roo
 
 ### Πόσο κοστίζει;
 
-Τυπικά €299–€999/μήνα. Website packages από €899. Ζητήστε scoped πρόταση στο [get-started](/el/get-started?project=hotel) με στόχο μείωσης OTA dependency.
+Τυπικά {{ENTRY_SEO}}–{{SEO_AUTHORITY}}/μήνα. Website packages από €899. Ζητήστε scoped πρόταση στο [get-started](/el/get-started?project=hotel) με στόχο μείωσης OTA dependency.
 
 ### Κόβω τελείως τα OTAs;
 

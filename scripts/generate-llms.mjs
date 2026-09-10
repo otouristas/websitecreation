@@ -20,6 +20,7 @@ import {
   VAT_RATE,
   currentPrice,
   isOfferActive,
+  resolvePriceTokens,
 } from '../src/data/pricing.ts';
 import { PROJECT_COUNT, SEO_MIN_TERM_MONTHS } from '../src/data/company-facts.ts';
 
@@ -83,7 +84,7 @@ function parseServices() {
     services.push({
       slug,
       name: field(block, 'name') ?? slug,
-      description: field(block, 'description') ?? '',
+      description: resolvePriceTokens(field(block, 'description') ?? '', 'en'),
       features: fieldArray(block, 'features'),
     });
   }
@@ -99,7 +100,8 @@ function parseServiceNamesEl() {
     const block = m[2];
     map[m[1]] = {
       name: field(block, 'name') ?? m[1],
-      description: field(block, 'description') ?? '',
+      // Authored copy carries `{{ENTRY_SEO}}`-style price tokens.
+      description: resolvePriceTokens(field(block, 'description') ?? '', 'el'),
       features: fieldArray(block, 'features'),
     };
   }
@@ -213,7 +215,9 @@ function parseBlogPosts() {
     posts.push({
       slug,
       title: data.title,
-      description: data.description,
+      // Authored copy uses `{{ENTRY_SEO}}`-style tokens so prices cannot go
+      // stale; resolve them here or the token itself reaches AI crawlers.
+      description: resolvePriceTokens(data.description, locale),
       date: normalizePostDate(data.date, slug),
       locale,
       isPillarHub: Boolean(data.pillarHub),
@@ -221,7 +225,7 @@ function parseBlogPosts() {
         ? data.faq
             .map((f) => ({
               question: f?.question ?? f?.q,
-              answer: f?.answer ?? f?.a,
+              answer: resolvePriceTokens(f?.answer ?? f?.a ?? '', locale),
             }))
             .filter((f) => typeof f.question === 'string' && typeof f.answer === 'string')
         : [],

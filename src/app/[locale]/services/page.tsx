@@ -26,7 +26,7 @@ import {
   GhostButtonLink,
 } from "@/components/landing/primitives";
 import { NotForYou } from "@/components/positioning/NotForYou";
-import { entrySeoNet, formatPrice } from "@/data/pricing";
+import { entrySeoNet, formatPrice, resolvePriceTokens } from "@/data/pricing";
 
 type PageProps = { params: Promise<{ locale: string }> };
 
@@ -122,7 +122,7 @@ export default async function ServicesPage({ params }: PageProps) {
             {services.map((service) => {
               const el = isEl ? getServiceEl(service.slug) : null;
               const name = el?.name ?? service.name;
-              const description = el?.description ?? service.description;
+              const description = resolvePriceTokens(el?.description ?? service.description, siteLocale);
               const features = (el?.features ?? service.features).slice(0, 3);
 
               return (

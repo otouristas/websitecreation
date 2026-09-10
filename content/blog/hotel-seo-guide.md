@@ -16,7 +16,7 @@ faq:
   - question: Do I need a new hotel website or just SEO?
     answer: If the site is slow, not mobile-friendly, or lacks a booking path, a new hotel website delivers more than SEO on a broken base. Fix conversion and crawl first.
   - question: How much does hotel SEO cost?
-    answer: Independent hotels typically budget €299–€599/mo. Multilingual properties in competitive destinations often need €599–€999+/mo. See our pricing page for transparent EUR packages.
+    answer: Independent hotels typically budget {{ENTRY_SEO}}–{{SEO_GROWTH}}/mo. Multilingual properties in competitive destinations often need {{SEO_GROWTH}}–{{SEO_AUTHORITY}}+/mo. See our pricing page for transparent EUR packages.
   - question: Does hotel SEO help with AI trip planners?
     answer: Yes. Clear room FAQs, schema, and proof pages help ChatGPT, Gemini, and Perplexity cite your property - not only classic blue-link rankings.
 ---
@@ -61,8 +61,8 @@ Hotel, Offer, and FAQ structured data help Google show prices, ratings, and answ
 
 | Item | Typical 2026 range | What it covers |
 | :--- | :--- | :--- |
-| Monthly SEO (Starter–Growth) | €299 – €599/mo | Room pages, GBP, local content |
-| Competitive destination / Scale | €599 – €999+/mo | Santorini, Mykonos, multilingual |
+| Monthly SEO (Foundations-Growth) | {{ENTRY_SEO}} – {{SEO_GROWTH}}/mo | Room pages, GBP, local content |
+| Competitive destination / Authority | {{SEO_GROWTH}} – {{SEO_AUTHORITY}}+/mo | Santorini, Mykonos, multilingual |
 | Technical + content audit | €400 – €800 | Pre-season or pre-redesign |
 | Hospitality website package | from €899 | Booking UX, schema, speed |
 | Time to local / branded wins | 2–3 months | Maps + “hotel + town” |

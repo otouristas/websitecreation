@@ -1,7 +1,7 @@
 ---
 slug: geo-agency-ellada
 title: GEO Agency Ελλάδα - Ορατότητα σε AI
-description: GEO agency στην Ελλάδα για ChatGPT, Perplexity και Gemini. Τι να ζητήσετε, κόστος από €599/μήνα και πώς μετράτε AI citations. Δωρεάν έλεγχος ορατότητας.
+description: GEO agency στην Ελλάδα για ChatGPT, Perplexity και Gemini. Τι να ζητήσετε, κόστος από {{SEO_GROWTH}}/μήνα και πώς μετράτε AI citations. Δωρεάν έλεγχος ορατότητας.
 date: 2026-07-06
 author: AnotherSEOGuru Editorial Team
 locale: el
@@ -12,7 +12,7 @@ faq:
   - question: Τι κάνει ένα GEO agency;
     answer: Ελέγχει την AI ορατότητά σας, δομεί περιεχόμενο για ChatGPT/Perplexity/Gemini, χτίζει οντότητες με schema και μετρά citations - ώστε να εμφανίζεστε όταν οι πελάτες ρωτούν για τον κλάδο σας.
   - question: Πόσο κοστίζει το GEO στην Ελλάδα;
-    answer: Συνήθως ως μέρος πακέτου SEO. Στην AnotherSEOGuru περιλαμβάνεται στα Growth (€599/μήνα) και Scale (€999/μήνα). Αυτόνομα GEO audits από €300–500.
+    answer: Συνήθως ως μέρος πακέτου SEO. Στην AnotherSEOGuru περιλαμβάνεται στα Growth ({{SEO_GROWTH}}/μήνα) και Authority ({{SEO_AUTHORITY}}/μήνα). Αυτόνομα GEO audits από €300–500.
   - question: Μπορώ να κάνω GEO χωρίς SEO;
     answer: Όχι ουσιαστικά. Τα AI μοντέλα αντλούν από τις ίδιες σελίδες που κατατάσσει η Google. GEO χωρίς γερό SEO είναι σκεπή χωρίς τοίχους.
   - question: Τι είναι το AEO και πώς διαφέρει από το GEO;
@@ -62,7 +62,7 @@ faq:
 
 ## Πόσο κοστίζει το GEO;
 
-Στην ελληνική αγορά το GEO προσφέρεται συνήθως μέσα σε ολοκληρωμένο SEO retainer. Στην AnotherSEOGuru η [AI Visibility (GEO/AEO)](/el/services/ai-visibility) περιλαμβάνεται στα Growth (€599/μήνα) και Scale (€999/μήνα) - δείτε [τιμές](/el/pricing). Αυτόνομα GEO audits από €300–500. Για γενικό πλαίσιο κόστους SEO: [πόσο κοστίζει το SEO](/el/blog/poso-kostizei-to-seo).
+Στην ελληνική αγορά το GEO προσφέρεται συνήθως μέσα σε ολοκληρωμένο SEO retainer. Στην AnotherSEOGuru η [AI Visibility (GEO/AEO)](/el/services/ai-visibility) περιλαμβάνεται στα Growth ({{SEO_GROWTH}}/μήνα) και Authority ({{SEO_AUTHORITY}}/μήνα) - δείτε [τιμές](/el/pricing). Αυτόνομα GEO audits από €300–500. Για γενικό πλαίσιο κόστους SEO: [πόσο κοστίζει το SEO](/el/blog/poso-kostizei-to-seo).
 
 Μην αγοράζετε τρία ξεχωριστά retainers (SEO + AEO + GEO). Ένα πρόγραμμα με φάσεις είναι πιο αποδοτικό για SMBs.
 
@@ -112,7 +112,7 @@ faq:
 
 ### Πόσο κοστίζει;
 
-Συνήθως μέσα σε Growth/Scale retainers (€599–€999/μήνα) ή ως scoped audit. Διαφάνεια στις [τιμές](/el/pricing).
+Συνήθως μέσα σε Growth/Authority retainers ({{SEO_GROWTH}}–{{SEO_AUTHORITY}}/μήνα) ή ως scoped audit. Διαφάνεια στις [τιμές](/el/pricing).
 
 ### Πώς ξεκινάω χωρίς μεγάλο budget;
 

@@ -10,6 +10,7 @@ import { getServiceEl } from '@/data/services-i18n';
 import { industriesEl } from '@/data/industries-i18n';
 import { getGreekLocative } from '@/lib/greek-locative';
 import { isIndustryServiceIndexable } from '@/lib/indexability/industry-service';
+import { resolvePriceTokens } from '@/data/pricing';
 
 export const TITLE_BRAND_SUFFIX = ` | ${BRAND_NAME}`;
 /** Shipped by src/app/opengraph-image.png. Every page needs one: twitter:card is summary_large_image. */
@@ -207,16 +208,24 @@ export function buildMetadata(input: MetadataInput): Metadata {
     article,
   } = input;
 
+  // Resolve `{{ENTRY_SEO}}`-style price tokens before anything measures or
+  // truncates the string. Authored copy uses tokens so a price cannot go stale;
+  // without this the token itself would reach the SERP.
+  const metaLocale: SiteLocale = path.startsWith('/el') ? 'el' : 'en';
+
   const description = finalizeDescription(
-    customDescription ||
-      buildMetaDescription({
-        primaryKeyword: primaryKeyword || title,
-        location,
-        industry,
-        service,
-        usp,
-        ctaHint,
-      }),
+    resolvePriceTokens(
+      customDescription ||
+        buildMetaDescription({
+          primaryKeyword: primaryKeyword || title,
+          location,
+          industry,
+          service,
+          usp,
+          ctaHint,
+        }),
+      metaLocale,
+    ),
   );
 
   const canonicalSource = canonicalPath ?? path;
@@ -225,7 +234,7 @@ export function buildMetadata(input: MetadataInput): Metadata {
       ? BASE_URL
       : `${BASE_URL}${canonicalSource.startsWith('/') ? canonicalSource : `/${canonicalSource}`}`;
 
-  const fullTitle = buildFullTitle(title);
+  const fullTitle = resolvePriceTokens(buildFullTitle(title), metaLocale);
 
   assertMetadataClean('title', fullTitle, path);
   assertMetadataClean('description', description, path);

@@ -17,7 +17,7 @@ faq:
   - question: Why did my organic traffic drop?
     answer: Common causes include algorithm updates, lost backlinks, indexation bugs, cannibalization, site migrations without redirects, or seasonality. Audit Search Console before rewriting everything.
   - question: What budget grows organic traffic meaningfully?
-    answer: Serious work in Greece typically runs €299–€999 per month depending on competition. One-off audits often cost €300–€800 before a retainer starts.
+    answer: Serious work in Greece typically runs {{ENTRY_SEO}}–{{SEO_AUTHORITY}} per month depending on competition. One-off audits often cost €300–€800 before a retainer starts.
 ---
 
 **Organic traffic** is visits from unpaid search - and, increasingly, from AI systems that cite your pages. Growing it is the outcome of disciplined [SEO](/en/blog/what-is-seo), not a single hack. If impressions are flat, clicks are weak, or rankings stall on page two, you usually need a mix of coverage, CTR work, technical fixes, stronger pages and authority. This playbook walks through the levers that actually move Search Console numbers in 2026.
@@ -51,10 +51,10 @@ Competitive queries need external trust. Focus on niche-relevant editorial links
 | Lever | Typical time to first lift | Typical monthly investment (GR) |
 | :--- | :--- | :--- |
 | CTR rewrites on existing URLs | 2–6 weeks | Included in retainer or €300–€600 one-off |
-| Local / long-tail content | 2–3 months | €299 – €599/mo Starter–Growth |
-| Competitive commercial terms | 4–6+ months | €599 – €999+/mo |
+| Local / long-tail content | 2–3 months | {{ENTRY_SEO}} – {{SEO_GROWTH}}/mo Foundations-Growth |
+| Competitive commercial terms | 4–6+ months | {{SEO_GROWTH}} – {{SEO_AUTHORITY}}+/mo |
 | Technical unblock + migration | 4–12 weeks | Audit €300–€800 + build |
-| Link earning for head terms | 3–6+ months | Often inside Growth/Scale |
+| Link earning for head terms | 3–6+ months | Often inside Growth/Authority |
 
 Seasonal businesses (tourism, hospitality) should compare **year-over-year**, not month-over-month alone. A July spike after a quiet April is often seasonality, not failure. Transparent [pricing](/en/pricing) helps you match budget to ambition.
 
@@ -85,7 +85,7 @@ Seasonal businesses (tourism, hospitality) should compare **year-over-year**, no
 
 **Days 31–60 - build coverage:** ship or rewrite the highest-ROI commercial and local pages identified in keyword research. Add FAQs and proof. For tourism and seasonal businesses, align publishing with the booking window so pages exist before demand spikes.
 
-Budget reality for Greek SMBs: a [Starter retainer](/en/pricing) around €299/mo can cover local coverage and CTR work; competitive national terms usually need Growth (€599) or Scale (€999+) with content plus links. Pair this playbook with [off-page SEO](/en/blog/off-page-seo) when you plateau on page two despite strong pages.
+Budget reality for Greek SMBs: a [Foundations retainer](/en/pricing) around {{ENTRY_SEO}}/mo can cover local coverage and CTR work; competitive national terms usually need Growth ({{SEO_GROWTH}}) or Authority ({{SEO_AUTHORITY}}+) with content plus links. Pair this playbook with [off-page SEO](/en/blog/off-page-seo) when you plateau on page two despite strong pages.
 
 Document everything in a simple ops sheet: URL, intent, owner, status, last change date. Teams that improvise weekly lose compounding gains. For weekly Search Console habits, see the [GSC weekly ops playbook](/en/blog/gsc-weekly-ops-playbook).
 
@@ -109,7 +109,7 @@ Usually both, sequenced: fix and strengthen commercial pages first, then publish
 
 ### What should I budget?
 
-Meaningful retainers in Greece typically start around €299/mo. See [how much SEO costs](/en/blog/how-much-does-seo-cost) and [local SEO services](/en/services/local-seo) if local intent dominates.
+Meaningful retainers in Greece typically start around {{ENTRY_SEO}}/mo. See [how much SEO costs](/en/blog/how-much-does-seo-cost) and [local SEO services](/en/services/local-seo) if local intent dominates.
 
 ## Get a Growth Plan
 

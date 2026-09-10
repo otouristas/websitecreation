@@ -110,7 +110,14 @@ function validatePost(filePath) {
   // buildMetadata() hard-caps descriptions at 160 and cuts at a word boundary,
   // which amputated the closing noun or verb on 15 posts before this check
   // existed ("...με χαμηλότερο κόστος από την."). Catch it at author time.
-  const desc = String(data.description ?? '').replace(/\s+/g, ' ').trim();
+  // Measure what actually ships. `{{ENTRY_SEO}}` is 14 characters in the file
+  // and resolves to something like "€500" at render, so measuring the raw
+  // string would fail a description that is comfortably inside the window.
+  // Six characters covers every price in src/data/pricing.ts ("€1.500").
+  const desc = String(data.description ?? '')
+    .replace(/\{\{[A-Z_]+\}\}/g, '\u20ac1.500')
+    .replace(/\s+/g, ' ')
+    .trim();
   if (!desc) {
     errors.push('missing description');
   } else if (desc.length > 158) {

@@ -1,3 +1,5 @@
+import { resolvePriceTokens } from '@/data/pricing';
+
 /**
  * Greek translations for service slugs (programmatic SEO).
  */
@@ -210,6 +212,15 @@ export const serviceNamesEl: Record<
   },
 };
 
+/**
+ * Greek service copy, with `{{ENTRY_SEO}}`-style price tokens resolved.
+ *
+ * Resolved here rather than in each consumer: these descriptions render on the
+ * services hub, the mega menu, the mobile sheet, service x location pages and
+ * llms.txt, and a token reaching any one of those is a visible bug.
+ */
 export function getServiceEl(slug: string) {
-  return serviceNamesEl[slug];
+  const entry = serviceNamesEl[slug];
+  if (!entry) return entry;
+  return { ...entry, description: resolvePriceTokens(entry.description, 'el') };
 }

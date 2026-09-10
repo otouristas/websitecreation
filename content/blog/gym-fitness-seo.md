@@ -16,7 +16,7 @@ faq:
   - question: What results should a gym expect from SEO?
     answer: A realistic first-half goal is top-three map pack for main area queries plus a steady flow of calls and trial bookings from Google - all measurable in GBP insights and call tracking.
   - question: How much does gym and fitness SEO cost?
-    answer: A single-location gym often fits Starter at €299/mo for GBP, local pages, and basic content. Multi-location chains usually need Growth at €599/mo.
+    answer: A single-location gym often fits Foundations at {{ENTRY_SEO}}/mo for GBP, local pages, and basic content. Multi-location chains usually need Growth at {{SEO_GROWTH}}/mo.
   - question: When should gyms start SEO for January signups?
     answer: Start in October–November. SEO needs 2–3 months to compound, so waiting until January means you miss the peak decision window.
 ---
@@ -51,10 +51,10 @@ Signups peak in January (new-year decisions) and September (back from holidays).
 
 | Gym type | Typical budget | Focus | First useful wins |
 | :--- | :--- | :--- | :--- |
-| Single studio / boutique | €299/mo | GBP + 3–5 program pages | 8–12 weeks |
-| Large gym, one location | €299–€599/mo | Programs + neighborhood pages | 2–4 months |
-| Multi-location chain | €599+/mo | Per-location GBP + local URLs | 3–6 months |
-| Personal trainer (solo) | €299/mo | Profile + service + content | 6–10 weeks |
+| Single studio / boutique | {{ENTRY_SEO}}/mo | GBP + 3–5 program pages | 8–12 weeks |
+| Large gym, one location | {{ENTRY_SEO}}–{{SEO_GROWTH}}/mo | Programs + neighborhood pages | 2–4 months |
+| Multi-location chain | {{SEO_GROWTH}}+/mo | Per-location GBP + local URLs | 3–6 months |
+| Personal trainer (solo) | {{ENTRY_SEO}}/mo | Profile + service + content | 6–10 weeks |
 | Website needed first | from €899 + SEO | Mobile trial forms | Parallel sprint |
 
 Track **trial bookings and membership starts from Google**, map-pack position for core queries, and review velocity. Compare packages via [how much SEO costs](/en/blog/how-much-does-seo-cost).

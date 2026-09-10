@@ -16,7 +16,7 @@ faq:
   - question: Do hotels need GEO / AEO as well as SEO?
     answer: Yes. Travelers increasingly ask ChatGPT and Perplexity for hotel recommendations. GEO/AEO helps your property get cited in those answers, not only classic search results.
   - question: How much does hotel SEO cost in Greece?
-    answer: Typically €299–€999 per month depending on size, languages and destination competition. One-off technical audits often run €400–€800. Hospitality website packages start from €899.
+    answer: Typically {{ENTRY_SEO}}–{{SEO_AUTHORITY}} per month depending on size, languages and destination competition. One-off technical audits often run €400–€800. Hospitality website packages start from €899.
   - question: Can SEO reduce OTA commission spend?
     answer: Yes, when direct bookings rise. Many properties target a 10–25% shift from OTA to direct within 6–12 months without cutting distribution channels entirely.
 ---
@@ -47,8 +47,8 @@ Travelers ask “best family hotel in Crete with pool” inside ChatGPT. You nee
 
 | Item | Typical 2026 range | Notes |
 | :--- | :--- | :--- |
-| Monthly hotel SEO (Starter–Growth) | €299 – €599/mo | 1–2 languages, local competition |
-| Monthly Scale / competitive destination | €599 – €999+/mo | Santorini, Mykonos, Athens city hotels |
+| Monthly hotel SEO (Foundations-Growth) | {{ENTRY_SEO}} – {{SEO_GROWTH}}/mo | 1–2 languages, local competition |
+| Monthly Authority / competitive destination | {{SEO_GROWTH}} – {{SEO_AUTHORITY}}+/mo | Santorini, Mykonos, Athens city hotels |
 | One-off technical + content audit | €400 – €800 | Before migration or redesign |
 | Hospitality website package | from €899 | Booking UX, schema, multilingual |
 | Time to first local wins | 2–3 months | Branded + “hotel + city” |
@@ -106,7 +106,7 @@ Yes if you want visibility in AI trip planners. It complements classic SEO with 
 
 ### How much does it cost?
 
-Typically €299–€999 per month. Website packages from €899. Request a scoped plan via [Get Started](/en/get-started?project=hotel) with your OTA-dependency goal.
+Typically {{ENTRY_SEO}}–{{SEO_AUTHORITY}} per month. Website packages from €899. Request a scoped plan via [Get Started](/en/get-started?project=hotel) with your OTA-dependency goal.
 
 ### Should I cut OTAs completely?
 

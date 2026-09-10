@@ -2,6 +2,8 @@ import fs from "fs";
 import path from "path";
 import { cache } from "react";
 import matter from "gray-matter";
+import { resolvePriceTokens } from "@/data/pricing";
+import type { SiteLocale } from "@/lib/i18n/locale";
 
 export interface BlogFaqItem {
   readonly question: string;
@@ -110,23 +112,30 @@ function parsePostFile(filePath: string, fileBase: string): BlogPostParsed | nul
     return null;
   }
   const date = normalizePostDate(d.date, slug);
+  const locale: SiteLocale = d.locale === "el" ? "el" : "en";
+  // Prices are authored as `{{ENTRY_SEO}}`-style tokens so a figure cannot go
+  // stale. Resolve here, at the data boundary, rather than in each consumer:
+  // post descriptions surface on /blog, the pillar hubs, /resources, related
+  // -post rails and llms.txt, and a token was reaching the HTML on 116 built
+  // pages when only the post template resolved them.
+  const rp = (text: string) => resolvePriceTokens(text, locale);
   const wordCount = countBodyWords(content);
   return {
     slug,
-    title: d.title,
-    description: d.description,
+    title: rp(d.title),
+    description: rp(d.description),
     date,
     author: typeof d.author === "string" ? d.author : "AnotherSEOGuru Editorial Team",
     category: typeof d.category === "string" ? d.category : undefined,
     categoryColor: typeof d.categoryColor === "string" ? d.categoryColor : undefined,
     pillar: typeof d.pillar === "string" ? d.pillar : undefined,
     isPillarHub: Boolean(d.pillarHub),
-    locale: d.locale === "el" ? "el" : "en",
+    locale,
     translationOf: typeof d.translationOf === "string" ? d.translationOf : undefined,
-    faq: parseFaq(d.faq),
+    faq: parseFaq(d.faq)?.map((f) => ({ question: rp(f.question), answer: rp(f.answer) })),
     wordCount,
     readingTime: Math.max(1, Math.round(wordCount / 200)),
-    content,
+    content: rp(content),
     headings: extractHeadings(content),
   };
 }

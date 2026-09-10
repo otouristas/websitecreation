@@ -14,7 +14,7 @@ faq:
   - question: What is the difference between GEO and SEO?
     answer: SEO targets traditional blue-link rankings. GEO (Generative Engine Optimization) structures entities, FAQs and evidence so generative engines select and cite your brand in AI answers.
   - question: How much do generative engine optimization services cost?
-    answer: Serious GEO/AEO programs usually sit inside monthly SEO retainers from roughly €299–€999+/mo depending on competition, or as scoped projects. See our pricing page for transparent EUR packages.
+    answer: Serious GEO/AEO programs usually sit inside monthly SEO retainers from roughly {{ENTRY_SEO}}–{{SEO_AUTHORITY}}+/mo depending on competition, or as scoped projects. See our pricing page for transparent EUR packages.
   - question: Does GEO replace technical SEO?
     answer: No. Crawlable, fast, authoritative pages remain the foundation. GEO adds entity clarity, citation-worthy proof, and monitoring of AI mentions on top of that stack.
   - question: Who benefits most from an AI SEO agency?
@@ -95,7 +95,7 @@ Use this as a monthly review checklist with your agency or in-house team.
 
 ## How budgets and retainers usually work
 
-GEO/AEO rarely stand alone as a €50 side project. They sit inside retainers that already cover technical work, content, and reporting - typically in the €299–€999+/mo band depending on competition and language scope - or as scoped sprints after an audit. Transparent packages live on our [pricing page](/en/pricing). If you need a scoped start, [get started](/en/get-started?service=ai-visibility) with AI Visibility selected.
+GEO/AEO rarely stand alone as a €50 side project. They sit inside retainers that already cover technical work, content, and reporting - typically in the {{ENTRY_SEO}}–{{SEO_AUTHORITY}}+/mo band depending on competition and language scope - or as scoped sprints after an audit. Transparent packages live on our [pricing page](/en/pricing). If you need a scoped start, [get started](/en/get-started?service=ai-visibility) with AI Visibility selected.
 
 Compare software-only stacks vs agency execution in [SEO software vs agency pricing](/en/blog/pricing-page-seo-software-vs-agency) when you are deciding build vs buy.
 

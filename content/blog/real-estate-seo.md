@@ -16,7 +16,7 @@ faq:
   - question: Do real estate agencies need a new website for SEO?
     answer: If the current site cannot support area pages and fast mobile listing search, yes. Structure and speed decide whether enquiries convert.
   - question: How much does real estate SEO cost?
-    answer: Agencies targeting two or three areas often fit Starter at €299/mo. Multi-area, international, or portal-style sites usually need Growth at €599/mo or higher.
+    answer: Agencies targeting two or three areas often fit Foundations at {{ENTRY_SEO}}/mo. Multi-area, international, or portal-style sites usually need Growth at {{SEO_GROWTH}}/mo or higher.
   - question: Should agencies target buyers or sellers first?
     answer: Both, but sellers are usually higher value. “How much is my home worth” and “estate agent + area” pages win listings - the root of agency income.
 ---
@@ -61,10 +61,10 @@ RealEstateListing (or equivalent) structured data helps Google understand price,
 
 | Agency profile | Typical budget | Priority assets | First wins |
 | :--- | :--- | :--- | :--- |
-| 2–3 local areas | €299/mo | Area hubs + GBP | 2–4 months |
-| Multi-area domestic | €599/mo | Seller content + hubs | 3–5 months |
-| International / bilingual | €599–€999+/mo | Hreflang + EN hubs | 4–6 months |
-| Custom listing portal | Growth–Scale | Faceted UX + indexation | 4–8 months |
+| 2–3 local areas | {{ENTRY_SEO}}/mo | Area hubs + GBP | 2–4 months |
+| Multi-area domestic | {{SEO_GROWTH}}/mo | Seller content + hubs | 3–5 months |
+| International / bilingual | {{SEO_GROWTH}}–{{SEO_AUTHORITY}}+/mo | Hreflang + EN hubs | 4–6 months |
+| Custom listing portal | Growth-Authority | Faceted UX + indexation | 4–8 months |
 | Site rebuild needed | from €899 + SEO | Mobile search + CTAs | Parallel 60–90 days |
 
 Measure **listing appointments**, seller form fills, and organic enquiry quality - not only listing views. Transparent [pricing](/en/pricing) keeps scope comparable across vendors.

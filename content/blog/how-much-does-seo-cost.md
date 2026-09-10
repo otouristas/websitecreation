@@ -11,7 +11,7 @@ categoryColor: bg-emerald-100 text-emerald-800
 pillar: agency-playbooks
 faq:
   - question: "How much does SEO cost in 2026?"
-    answer: "Serious work typically runs €250 to €1,500+ per month depending on competition and goals. Our packages are Starter €299/mo, Growth €599/mo, and Scale €999/mo - always in EUR, no hidden fees."
+    answer: "Serious work typically runs €250 to €1,500+ per month depending on competition and goals. Our packages are Foundations {{ENTRY_SEO}}/mo, Growth {{SEO_GROWTH}}/mo, and Authority {{SEO_AUTHORITY}}/mo - always in EUR, no hidden fees."
   - question: "What are typical SEO prices for small businesses?"
     answer: "Local businesses usually invest €250–€400/mo. Competitive niches €500–€800. E-commerce and national brands €900–€1,500+. One-off audits often €300–€800."
   - question: "Why does SEO feel expensive?"
@@ -24,19 +24,19 @@ faq:
 
 “How much does SEO cost?” is the first question every business asks - and the honest 2026 answer is **€250 to €1,500+ per month** for serious work, depending on competition and goals. This guide breaks down what sits behind those numbers so you can compare quotes with confidence - without #1 guarantees and without fluff.
 
-> **Compare packages:** see transparent [SEO pricing](/en/pricing) (Starter from €299/mo), our [work](/en/work), or [request a quote](/en/get-started).
+> **Compare packages:** see transparent [SEO pricing](/en/pricing) (Foundations from {{ENTRY_SEO}}/mo), our [work](/en/work), or [request a quote](/en/get-started).
 
 ## SEO Pricing at a Glance
 
 | Engagement | Typical cost | Best for |
 | :--- | :--- | :--- |
-| Monthly retainer – Starter | €250 – €400/mo | Local businesses, single city |
+| Monthly retainer - Foundations | €250 – €400/mo | Local businesses, single city |
 | Monthly retainer – Growth | €500 – €800/mo | Competitive niches, multiple services |
-| Monthly retainer – Scale | €900 – €1,500+/mo | E-commerce, national brands |
+| Monthly retainer - Authority | €900 – €1,500+/mo | E-commerce, national brands |
 | One-off SEO audit | €300 – €800 | Diagnosis before investing |
 | Hourly consulting | €50 – €120/hr | Targeted fixes |
 
-Our own [SEO packages](/en/pricing) are public and transparent: **Starter €299/mo**, **Growth €599/mo**, **Scale €999/mo** - always in EUR, no hidden fees.
+Our own [SEO packages](/en/pricing) are public and transparent: **Foundations {{ENTRY_SEO}}/mo**, **Growth {{SEO_GROWTH}}/mo**, **Authority {{SEO_AUTHORITY}}/mo** - always in EUR, no hidden fees.
 
 ## What Drives the Cost of SEO
 
@@ -80,7 +80,7 @@ For the full digital cost picture (site + SEO), also read [how much a website co
 
 ## How to Think About SEO ROI
 
-SEO is not a one-day ad buy. Estimate how many leads organic search already brings, your average profit per lead, and how many extra leads you need to cover the monthly retainer. If a lead is worth €80 net and the package is €299, you need roughly four extra leads per month to break even - often realistic in local markets within a quarter.
+SEO is not a one-day ad buy. Estimate how many leads organic search already brings, your average profit per lead, and how many extra leads you need to cover the monthly retainer. If a lead is worth €80 net and the package is {{ENTRY_SEO}}, you need roughly four extra leads per month to break even - often realistic in local markets within a quarter.
 
 Demand a baseline before you start: rankings, Search Console clicks, form submits. Without a starting line, every report is a story. End partnerships that only report “position for one keyword” with no leads or revenue.
 
@@ -97,11 +97,11 @@ If the site cannot support the work technically, SEO budget disappears into patc
 
 Month one is diagnosis and technical cleanup. Months two and three expand on-page and local signals. From month four onward you should see compounding gains on the keywords you agreed - not a surprise list of vanity terms. Ask for that roadmap in writing before you pay the first invoice.
 
-## When to Choose Starter, Growth, or Scale
+## When to Choose Foundations, Growth or Authority
 
-- **Starter (€299)**: one city, few services, need for steady local presence and monthly improvement.
-- **Growth (€599)**: more keywords, competitive niche, systematic content and a stronger local profile.
-- **Scale (€999)**: e-commerce or national targeting, many categories/locations, link building and GEO/AEO.
+- **Foundations ({{ENTRY_SEO}})**: one city, few services, need for steady local presence and monthly improvement.
+- **Growth ({{SEO_GROWTH}})**: more keywords, competitive niche, systematic content and a stronger local profile.
+- **Authority ({{SEO_AUTHORITY}})**: e-commerce or national targeting, many categories/locations, link building and GEO/AEO.
 
 If you are unsure which package fits, start with an audit or discovery call - cheaper than the wrong locked contract. Review public [packages](/en/pricing) and compare with the [website cost guide](/en/blog/how-much-does-a-website-cost) if the site needs an upgrade first.
 
@@ -109,7 +109,7 @@ If you are unsure which package fits, start with an audit or discovery call - ch
 
 ### How much does SEO cost for a small business?
 
-For local visibility in one city, a €299/mo package is usually enough to see meaningful improvement within 3–4 months.
+For local visibility in one city, a {{ENTRY_SEO}}/mo package is usually enough to see meaningful improvement within 3–4 months.
 
 ### Is SEO worth it, or should I spend on Google Ads?
 
