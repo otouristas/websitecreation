@@ -33,6 +33,17 @@ export interface PortfolioProject {
   /** Greek outcome bullets when they differ from EN results */
   resultsEl?: string[];
   featured: boolean;
+  /**
+   * Set when the client's site is no longer serving.
+   *
+   * `docs/portfolio-audits/*.md` records the scrape result per project, and
+   * four came back dead: greececyclades.com is a parked Sedo for-sale page
+   * (and was `featured: true`, so it sat on the homepage grid), two are
+   * offline, one returned a broken page. We still built them, so the record
+   * stays - but a dead domain must not be featured as proof and must not be
+   * linked to as a "live site".
+   */
+  liveStatus?: 'offline';
 }
 
 export const PORTFOLIO_CATEGORIES: Record<
@@ -358,6 +369,7 @@ export const portfolioProjects: PortfolioProject[] = [
     seoDescription: 'Rent a Car Paros, Paros car rental (.gr domain) in Paros. SEO for “rentacar Paros”.',
     seoTitleEl: 'Rent a Car Paros | ενοικίαση αυτοκινήτου Πάρος',
     seoDescriptionEl: 'Rent a Car Paros, ενοικίαση αυτοκινήτων στην Πάρο στην Πάρο. SEO για «ενοικίαση αυτοκινήτου Πάρος».',
+    liveStatus: 'offline', // site offline at scrape time
     featured: false,
   },
   {
@@ -1039,7 +1051,8 @@ export const portfolioProjects: PortfolioProject[] = [
     seoDescription: 'Project Shadow AI, AI tooling for online stores in global e-commerce. SEO for “Project Shadow AI”.',
     seoTitleEl: 'Project Shadow AI | AI για ηλεκτρονικό κατάστημα',
     seoDescriptionEl: 'Project Shadow AI, εργαλεία τεχνητής νοημοσύνης για ηλεκτρονικά καταστήματα στη διεθνές αγορά e-commerce. SEO για «Project Shadow AI».',
-    featured: true,
+    liveStatus: 'offline', // thin or broken page at scrape time
+    featured: false,
   },
   {
     slug: 'rethemnos',
@@ -1783,6 +1796,7 @@ export const portfolioProjects: PortfolioProject[] = [
     seoDescription: 'Travel Sifnos, Sifnos travel guide in Sifnos. SEO for “Travel Sifnos”.',
     seoTitleEl: 'Travel Sifnos | οδηγός Σίφνος',
     seoDescriptionEl: 'Travel Sifnos, ταξιδιωτικός οδηγός Σίφνου στη Σίφνο. SEO για «οδηγός Σίφνος».',
+    liveStatus: 'offline', // site offline at scrape time
     featured: false,
   },
   {
@@ -1813,7 +1827,8 @@ export const portfolioProjects: PortfolioProject[] = [
     seoDescription: 'Greece Cyclades, Cyclades travel brand in Cyclades, Greece. SEO for “Greece Cyclades”.',
     seoTitleEl: 'Greece Cyclades | Κυκλάδες Ελλάδα',
     seoDescriptionEl: 'Greece Cyclades, ταξιδιωτικό brand Κυκλάδων στις Κυκλάδες. SEO για «Κυκλάδες Ελλάδα».',
-    featured: true,
+    liveStatus: 'offline', // parked / for-sale page at scrape time
+    featured: false,
   },
   {
     slug: 'agrocult',
@@ -2242,7 +2257,7 @@ export function getPortfolioBySlug(slug: string): PortfolioProject | undefined {
 }
 
 export function getFeaturedPortfolio(limit = 12): PortfolioProject[] {
-  return portfolioProjects.filter((p) => p.featured).slice(0, limit);
+  return portfolioProjects.filter((p) => p.featured && !p.liveStatus).slice(0, limit);
 }
 
 export function getPortfolioByCategory(category: PortfolioCategory): PortfolioProject[] {

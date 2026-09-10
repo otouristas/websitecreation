@@ -100,14 +100,23 @@ export function WorkDetail({ project, locale = 'en' }: WorkDetailProps) {
                 ))}
               </div>
               <div className="flex flex-wrap gap-3">
-                <a
-                  href={project.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-outline"
-                >
-                  {isEl ? 'Δείτε τη ζωντανή ιστοσελίδα' : 'View live site'} ↗
-                </a>
+                {/* Four projects' domains no longer serve - one is a parked
+                    for-sale page. Sending a visitor to a parking page under
+                    "View live site" is worse than saying so. */}
+                {project.liveStatus === 'offline' ? (
+                  <span className="btn btn-outline pointer-events-none opacity-70">
+                    {isEl ? 'Η ιστοσελίδα δεν είναι πλέον ενεργή' : 'Site no longer live'}
+                  </span>
+                ) : (
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-outline"
+                  >
+                    {isEl ? 'Δείτε τη ζωντανή ιστοσελίδα' : 'View live site'} ↗
+                  </a>
+                )}
                 <Link
                   href={localizedPath(isEl ? 'el' : 'en', `/get-started?project=${project.category}`)}
                   className="btn btn-primary"
