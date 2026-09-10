@@ -179,7 +179,7 @@ export function MobileNav({
       cta: 'website_creation',
     },
     {
-      href: lp('/services/seo-audits'),
+      href: lp('/seo-services'),
       title: copy.seoOffer,
       meta: copy.seoMeta(formatPrice(entrySeoNet(), locale)),
       cta: 'seo',

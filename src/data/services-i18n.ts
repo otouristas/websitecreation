@@ -163,8 +163,11 @@ export const serviceNamesEl: Record<
     ],
   },
   'seo-audits': {
-    titleKeyword: 'Υπηρεσίες SEO',
-    name: 'Υπηρεσίες SEO & Τεχνικός Έλεγχος',
+    // Was `titleKeyword: 'Υπηρεσίες SEO'`, which put this audit page in
+    // competition with /el/seo-services for the head term. This page sells an
+    // audit; the pillar sells the retainer.
+    titleKeyword: 'SEO Audit',
+    name: 'SEO Audit & Τεχνικός Έλεγχος',
     shortName: 'Υπηρεσίες SEO',
     nameAccusative: 'υπηρεσίες SEO & τεχνικό έλεγχο',
     description:

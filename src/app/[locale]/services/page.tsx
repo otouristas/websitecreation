@@ -35,14 +35,18 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!isValidLocale(locale)) return {};
   const isEl = locale === "el";
 
+  // This page is a directory of twelve services. It used to declare
+  // `primaryKeyword: "υπηρεσίες SEO"`, competing with /seo-services (the
+  // commercial pillar) and /services/seo-audits for one term that all three
+  // wanted. The listing keeps the listing intent; the pillar keeps the term.
   return buildMetadata({
-    title: isEl ? "Υπηρεσίες SEO & Κατασκευής Ιστοσελίδων" : "SEO & Web Design Services",
+    title: isEl ? "Όλες οι Υπηρεσίες SEO & Κατασκευής Ιστοσελίδων" : "All SEO & Web Design Services",
     description: isEl
-      ? "Τεχνικό SEO, τοπικό SEO, GEO και AEO, κατασκευή ιστοσελίδων και e-shop. Στρατηγική βασισμένη στα δεδομένα σας, όχι έτοιμα πακέτα."
-      : "Technical SEO, local SEO, GEO and AEO, website and e-shop builds. Strategy built on your own data rather than a prepackaged checklist.",
+      ? "Όλες οι υπηρεσίες μας σε μία σελίδα: κατασκευή ιστοσελίδων και e-shop, τεχνικό SEO, τοπικό SEO, GEO και AEO, περιεχόμενο και ανασχεδιασμός."
+      : "Every service in one place: website and e-shop builds, technical SEO, local SEO, GEO and AEO, content, and redesigns.",
     path: localizedPath(locale, "/services"),
     hreflangPath: "/services",
-    primaryKeyword: isEl ? "υπηρεσίες SEO" : "SEO services",
+    primaryKeyword: isEl ? "υπηρεσίες κατασκευής ιστοσελίδων" : "web design and SEO services",
   });
 }
 

@@ -45,6 +45,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Shared agency/marketing pages, bilingual.
   const bilingualPaths = [
+    // The SEO-services commercial pillar. Not part of /services/[service],
+    // which is the axis of the location and industry matrices.
+    { path: '/seo-services', priority: 0.95 },
     { path: '/', priority: 1, changeFrequency: 'weekly' as const },
     { path: '/glossary', priority: 0.86 },
     { path: '/services', priority: 0.9 },

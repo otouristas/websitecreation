@@ -164,11 +164,13 @@ export const BLOG_MONEY_LINKS: Record<
         { path: '/pricing', titleEn: 'Pricing & packages', titleEl: 'Τιμές & πακέτα' },
     ],
     'poso-kostizei-to-seo': [
+        { path: '/seo-services', titleEn: 'SEO services', titleEl: 'Υπηρεσίες SEO' },
         { path: '/pricing', titleEn: 'SEO pricing', titleEl: 'Τιμές SEO' },
         { path: '/services/seo-audits', titleEn: 'SEO services', titleEl: 'Υπηρεσίες SEO' },
         { path: '/services/local-seo', titleEn: 'Local SEO', titleEl: 'Τοπικό SEO' },
     ],
     'how-much-does-seo-cost': [
+        { path: '/seo-services', titleEn: 'SEO services', titleEl: 'Υπηρεσίες SEO' },
         { path: '/pricing', titleEn: 'SEO pricing', titleEl: 'Τιμές SEO' },
         { path: '/services/seo-audits', titleEn: 'SEO audits', titleEl: 'Υπηρεσίες SEO' },
         { path: '/services/local-seo', titleEn: 'Local SEO', titleEl: 'Τοπικό SEO' },
@@ -234,11 +236,13 @@ export const BLOG_MONEY_LINKS: Record<
         { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
     ],
     'what-is-seo': [
+        { path: '/seo-services', titleEn: 'SEO services', titleEl: 'Υπηρεσίες SEO' },
         { path: '/services/seo-audits', titleEn: 'SEO services', titleEl: 'Υπηρεσίες SEO' },
         { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
         { path: '/glossary', titleEn: 'SEO glossary', titleEl: 'Γλωσσάρι SEO' },
     ],
     'seo-gia-arxarious': [
+        { path: '/seo-services', titleEn: 'SEO services', titleEl: 'Υπηρεσίες SEO' },
         { path: '/services/seo-audits', titleEn: 'SEO services', titleEl: 'Υπηρεσίες SEO' },
         { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
         { path: '/glossary', titleEn: 'SEO glossary', titleEl: 'Γλωσσάρι SEO' },

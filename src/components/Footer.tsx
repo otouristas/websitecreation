@@ -38,6 +38,7 @@ const EL_SEO_HUB_LINKS: { label: string; href: string }[] = [
   { label: "SEO Μύκονος", href: elServiceLocationPath("local-seo", "mykonos-gr") },
   { label: "SEO Κως", href: elServiceLocationPath("local-seo", "kos-gr") },
   { label: "SEO Χανιά", href: elServiceLocationPath("local-seo", "chania-gr") },
+  { label: "Υπηρεσίες SEO", href: "/el/seo-services" },
   { label: "Κατασκευή E-shop", href: "/el/services/eshop-woocommerce" },
   { label: "SEO για E-shop", href: "/el/services/eshop-seo" },
   { label: "Κατασκευή E-shop Αθήνα", href: elServiceLocationPath("eshop-woocommerce", "athens-gr") },
@@ -59,7 +60,7 @@ const EL_SEO_HUB_LINKS: { label: string; href: string }[] = [
 
 const EN_SEO_HUB_LINKS: { label: string; href: string }[] = [
   // Head-term service pages (C10: "seo services", "web development agency", "modern web design")
-  { label: "SEO Services", href: "/en/services/local-seo" },
+  { label: "SEO Services", href: "/en/seo-services" },
   { label: "Web Development Agency", href: "/en/services/website-creation" },
   { label: "SEO Web Design", href: "/en/services/seo-web-design" },
   { label: "E-commerce / E-shop", href: "/en/services/eshop-woocommerce" },
