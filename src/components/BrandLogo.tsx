@@ -11,9 +11,11 @@ export interface BrandLogoProps {
   readonly homeHref?: string;
   readonly onClick?: () => void;
   /**
-   * Extra classes for the wordmark. The header lockup uses it to step the
-   * wordmark down (and drop it entirely under 360px) so the hamburger stays
-   * inside the viewport on small phones.
+   * Replaces the size-derived wordmark classes. The header lockup uses it to
+   * step the wordmark down (and hide it under 360px) so the hamburger stays
+   * inside the viewport on small phones. It replaces rather than appends
+   * because Tailwind emits utilities in its own canonical order, so an
+   * appended `text-base` does not reliably beat the default `text-lg`.
    */
   readonly textClassName?: string;
   /** Extra classes for the mark. Same reason as `textClassName`. */
@@ -58,9 +60,9 @@ export function BrandLogo({
       />
       {showText ? (
         <span
-          className={`font-bold leading-tight ${textClasses[size]} ${
+          className={`font-bold leading-tight ${textClassName || textClasses[size]} ${
             variant === "light" ? "text-white" : "gradient-text"
-          } ${textClassName}`}
+          }`}
         >
           AnotherSEOGuru
         </span>

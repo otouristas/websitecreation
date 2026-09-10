@@ -213,7 +213,7 @@ export function MobileNav({
             homeHref={lp('/')}
             onClick={onClose}
             imageClassName="h-7 w-7 min-[400px]:h-8 min-[400px]:w-8"
-            textClassName="sr-only whitespace-nowrap min-[360px]:not-sr-only min-[360px]:text-base min-[400px]:text-lg"
+            textClassName="max-[359px]:sr-only whitespace-nowrap text-base min-[400px]:text-lg"
           />
           <div className="flex shrink-0 items-center gap-1 min-[400px]:gap-1.5">
             <LanguageSwitcher alternateHref={alternateHref} />
