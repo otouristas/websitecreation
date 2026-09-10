@@ -1,11 +1,11 @@
-Last-Updated: 2026-08-19
+Last-Updated: 2026-09-10
 Canonical: https://anotherseoguru.com/llms-full.txt
 Short-form: https://anotherseoguru.com/llms.txt
 Sitemap: https://anotherseoguru.com/sitemap.xml
 
 # AnotherSEOGuru - Complete Knowledge Base
 Source: https://anotherseoguru.com
-Last Updated: 2026-08-19
+Last Updated: 2026-09-10
 
 This document is the comprehensive, machine-readable reference for LLM crawlers, AI search engines, and assistants synthesizing answers about AnotherSEOGuru services, pricing, portfolio, Greek local SEO positioning, and the secondary SEO software platform.
 
@@ -136,14 +136,14 @@ AnotherSEOGuru combines a **web design & SEO agency** (primary) with a **GSC-nat
 ## 3. Pricing Packages (EUR)
 
 ### A. Website Creation (one-time, net of VAT)
-- **Website Starter (€1,200):** Small but serious businesses that need a professional, SEO-ready website. Includes: Custom design on your brand, not a template; Mobile-first build and Core Web Vitals work; Technical SEO foundations and clean architecture; Analytics and Search Console configured; Training so you can run it yourself, delivery 3 to 5 weeks.
-- **Website Professional (€2,000):** Hotels, tourism and service businesses that need deeper SEO architecture and conversion work. Includes: Everything in Starter; Deeper information architecture and keyword mapping; Conversion paths designed around enquiries or bookings; Multilingual structure where the market needs it; Structured data matched to what is on the page, delivery 5 to 8 weeks.
-- **Website Business (€3,200):** Complex, multilingual, multi-location, e-commerce and custom projects. Includes: Everything in Professional; E-commerce or booking integrations; Multi-location or multi-property structure; Custom functionality scoped to the project; Migration planning that protects existing rankings, delivery 8 to 12+ weeks.
+- **Website Starter (€1,500):** Small but serious businesses that need a professional, SEO-ready website. Includes: Custom design on your brand, not a template; Mobile-first build and Core Web Vitals work; Technical SEO foundations and clean architecture; Analytics and Search Console configured; Training so you can run it yourself, delivery 3 to 5 weeks.
+- **Website Professional (€2,500):** Hotels, tourism and service businesses that need deeper SEO architecture and conversion work. Includes: Everything in Starter; Deeper information architecture and keyword mapping; Conversion paths designed around enquiries or bookings; Multilingual structure where the market needs it; Structured data matched to what is on the page, delivery 5 to 8 weeks.
+- **Website Business (€4,000):** Complex, multilingual, multi-location, e-commerce and custom projects. Includes: Everything in Professional; E-commerce or booking integrations; Multi-location or multi-property structure; Custom functionality scoped to the project; Migration planning that protects existing rankings, delivery 8 to 12+ weeks.
 
 ### B. Monthly SEO Retainers (net of VAT)
-- **SEO Foundations (€400/mo):** The minimum engagement at which serious SEO work is possible. Includes: Technical audit and prioritised fix roadmap; Priority commercial keyword clusters, mapped to pages; On-page work on the pages that can convert; Google Business Profile and local signals; Monthly reporting tied to your commercial goals.
-- **SEO Growth (€720/mo):** Businesses investing systematically in organic growth. Includes: Everything in Foundations; Broader topical coverage across your commercial clusters; Content produced against real search demand; Authority and backlink gap analysis; AEO and GEO work for AI answer engines; Monthly strategy call.
-- **SEO Authority (€1,200/mo):** Competitive markets, e-commerce, national and international programmes. Includes: Everything in Growth; E-commerce, national or international scope; Larger content programme and topical depth; Digital PR and relevant link acquisition strategy; Conversion analysis alongside the organic work; Fortnightly performance review.
+- **SEO Foundations (€500/mo):** The minimum engagement at which serious SEO work is possible. Includes: Technical audit and prioritised fix roadmap; Priority commercial keyword clusters, mapped to pages; On-page work on the pages that can convert; Google Business Profile and local signals; Monthly reporting tied to your commercial goals.
+- **SEO Growth (€900/mo):** Businesses investing systematically in organic growth. Includes: Everything in Foundations; Broader topical coverage across your commercial clusters; Content produced against real search demand; Authority and backlink gap analysis; AEO and GEO work for AI answer engines; Monthly strategy call.
+- **SEO Authority (€1,500/mo):** Competitive markets, e-commerce, national and international programmes. Includes: Everything in Growth; E-commerce, national or international scope; Larger content programme and topical depth; Digital PR and relevant link acquisition strategy; Conversion analysis alongside the organic work; Fortnightly performance review.
 
 > All prices are NET. Greek VAT of 24% is added on top. SEO retainers have a 6-month minimum term, rolling thereafter.
 
@@ -1034,27 +1034,63 @@ All Greek cities below are indexable for service×location pages. Pattern: `/el/
 
 ---
 
-## 7. Blog & Guides (69)
+## 7. Blog & Guides (71)
 
-### AI Chatbots στον Τουρισμό - 24/7 Κρατήσεις και AEO
-- **URL:** https://anotherseoguru.com/el/blog/ai-chatbots-tourismos
-- **Locale:** el · **Date:** 2026-08-19
-- **Description:** Πώς τα έξυπνα AI Chatbots μεταμορφώνουν την εξυπηρέτηση πελατών στον τουρισμό. Αυτοματοποίηση κρατήσεων, απαντήσεις σε FAQ και GEO/AEO ορατότητα.
+### Backlink Checker - How to Check Backlinks of Any Website (Free + Paid)
+- **URL:** https://anotherseoguru.com/en/blog/backlink-checker
+- **Locale:** en · **Date:** 2026-09-05
+- **Description:** What a backlink checker does, how to check backlinks for free in Google Search Console, how to check competitor backlinks, spot toxic links, and which backlink checker tool to use in 2026.
 - **Embedded FAQ:**
-  - Q: Μπορεί το AI Chatbot να κάνει λάθη στις απαντήσεις του;
-    A: Με guardrails και RAG πάνω στη δική σας knowledge base, το bot απαντά μόνο από τιμές, πολιτικές και παροχές σας. Χωρίς αυτά, οι γενικοί LLMs επινοούν - γι’ αυτό δεν αρκεί «ένα ChatGPT widget».
-  - Q: Πώς συνδέεται το Chatbot με τις κρατήσεις;
-    A: Καθοδηγεί τον χρήστη σε διαθέσιμα δωμάτια/οχήματα και δίνει deep link στη σελίδα ολοκλήρωσης κράτησης - δεν αντικαθιστά απαραίτητα το booking engine.
-  - Q: Βοηθάει το chatbot το SEO και το AEO;
-    A: Ναι όταν οι συχνές ερωτήσεις του chat γίνονται FAQ στη σελίδα με schema. Έτσι κερδίζετε snippets/Overviews και τροφοδοτείτε GEO citations από τις ίδιες κανονικές απαντήσεις.
-  - Q: Επιβαρύνει την ταχύτητα της ιστοσελίδας;
-    A: Μόνο αν φορτώνει blocking. Το widget πρέπει να φορτώνει ασύγχρονα μετά το LCP. Κακό chatbot που σκοτώνει Core Web Vitals βλάπτει SEO και μετατροπές.
-  - Q: Χρειάζομαι chatbot ή πρώτα Ορατότητα σε AI;
-    A: Συχνά και τα δύο - το chatbot εξυπηρετεί επισκέπτες· η υπηρεσία GEO/AEO κάνει τις σελίδες σας citable σε ChatGPT/Perplexity. Ξεκινήστε από καθαρή knowledge base κοινής χρήσης.
+  - Q: What is a backlink checker?
+    A: A backlink checker is a tool that lists the pages linking to a website or URL, along with metrics like referring domains, anchor text, follow vs nofollow status, and the authority of each linking site. Ahrefs, Semrush, Moz and Google Search Console are the most used.
+  - Q: How do I check backlinks for free?
+    A: Open Google Search Console, go to Links, and export "Top linking sites" and "Top linked pages" for your own site. For any other domain, use the free tiers of Ahrefs Backlink Checker, Semrush Backlink Analytics, Moz Link Explorer or SE Ranking, which show the top 100 links and referring domains.
+  - Q: How do I check competitor backlinks?
+    A: Paste the competitor domain into a backlink checker, sort referring domains by traffic or Domain Rating, filter to followed links, and export the list. Then run a link gap report to find sites linking to two or more competitors but not to you - those are your best outreach targets.
+  - Q: How many backlinks do I have?
+    A: Google Search Console shows the total external links Google knows about for your site under Links. Third-party backlink checkers will show a different number because each crawls its own index - compare referring domains, not raw link counts, and track the trend rather than the absolute figure.
+  - Q: How many backlinks do I need to rank?
+    A: There is no fixed number. Run a backlink checker on the top 5 pages ranking for your target keyword and compare their referring domains to yours. The gap in relevant, followed referring domains is the number to close - usually far fewer than the raw backlink totals suggest.
+  - Q: What is a toxic backlink and should I disavow it?
+    A: A toxic backlink comes from spam, hacked, or link-scheme sites. Google says it ignores most of these automatically, so disavow only when you have a manual action or clear evidence of a paid link scheme pointing at you. Do not disavow links just because a tool labels them "toxic".
+  - Q: Which backlink checker is the most accurate?
+    A: Ahrefs has the largest live link index, Semrush is close and updates fast, Majestic stores the deepest historical data, and Moz is the easiest free option. No third-party tool matches Google's own view, so use Search Console for your site and one paid index for competitors.
+
+### Semantic Keyword Clustering - A Practical Guide
+- **URL:** https://anotherseoguru.com/en/blog/semantic-keyword-clustering
+- **Locale:** en · **Date:** 2026-08-19
+- **Description:** What semantic keyword clustering is, how embeddings and intent grouping work, how to do it in Python or without code, and how to turn clusters into a content plan.
+- **Embedded FAQ:**
+  - Q: What is semantic keyword clustering?
+    A: Grouping keywords by the meaning and intent behind them rather than by shared words, so each group maps to one page you should build. It answers how many pages a topic needs and what each one covers.
+  - Q: How do you cluster keywords in Python?
+    A: Convert each keyword to an embedding with a sentence-transformer model, compute pairwise cosine similarity, then group with agglomerative clustering at a distance threshold you tune by inspecting the output. Roughly thirty lines end to end.
+  - Q: What similarity threshold should I use?
+    A: There is no universal value. Start around 0.75 cosine similarity, read fifty clusters by hand, and move it. Too loose merges different intents; too tight produces near-duplicate groups that imply near-duplicate pages.
+  - Q: Can you cluster keywords without code?
+    A: Yes. Group by SERP overlap instead - if two queries return largely the same results, one page can serve both. It is slower to gather but reflects how the search engine already treats the queries.
+  - Q: How is semantic clustering different from keyword grouping?
+    A: Ordinary grouping matches shared text, so paraphrases split apart and different intents merge together. Semantic clustering compares meaning, then separates by intent, which maps far more closely to how pages actually rank.
+
+### Google Search Operators Guide (2026)
+- **URL:** https://anotherseoguru.com/en/blog/google-search-operators-2026
+- **Locale:** en · **Date:** 2026-08-04
+- **Description:** Working Google search operators in 2026 - site:, intitle:, inurl:, filetype:, and combos for SEO audits, competitor research, and content gaps.
+- **Embedded FAQ:**
+  - Q: What are Google search operators?
+    A: Special query prefixes (like site: or intitle:) that filter Google results so you can audit indexing, find content gaps, and research competitors faster than browsing alone.
+  - Q: Does site: still work in 2026?
+    A: Yes. site:example.com still shows indexed URLs Google is willing to surface. It is not a complete index dump, but it is the fastest indexing sanity check.
+  - Q: Which operators help with SEO audits?
+    A: Start with site:, then intitle:, inurl:, filetype:pdf, and minus (-) exclusions. Combine them to find thin pages, duplicate titles, and indexed PDFs you forgot about.
+  - Q: Can operators replace Google Search Console?
+    A: No. Operators are for discovery and spot checks. Use Search Console for clicks, impressions, position, and coverage decisions - especially on commercial tourism queries.
+  - Q: Which operators are unreliable in 2026?
+    A: Treat intext:, public link:, and some related: behaviors as unstable or retired. Prefer Search Console, server logs, and documented operators for decisions.
 
 ### AI SEO Agency - GEO, AEO και Citations σε Απαντήσεις AI
 - **URL:** https://anotherseoguru.com/el/blog/ai-seo-agency-geo-aeo-el
-- **Locale:** el · **Date:** 2026-08-19
+- **Locale:** el · **Date:** 2026-07-23
 - **Description:** Τι κάνει ένα AI SEO agency το 2026. GEO vs SEO, AEO για AI Overviews και πώς τουριστικά brands κερδίζουν citations σε ChatGPT και Perplexity.
 - **Embedded FAQ:**
   - Q: Τι είναι ένα AI SEO agency;
@@ -1070,7 +1106,7 @@ All Greek cities below are indexable for service×location pages. Pattern: `/el/
 
 ### AI SEO Agency Guide - GEO, AEO & Getting Cited in AI Answers
 - **URL:** https://anotherseoguru.com/en/blog/ai-seo-agency-geo-aeo
-- **Locale:** en · **Date:** 2026-08-19
+- **Locale:** en · **Date:** 2026-07-23
 - **Description:** What an AI SEO agency actually does in 2026. GEO vs SEO, AEO for AI Overviews, and how tourism and local brands win citations in ChatGPT and Perplexity.
 - **Embedded FAQ:**
   - Q: What is an AI SEO agency?
@@ -1084,25 +1120,9 @@ All Greek cities below are indexable for service×location pages. Pattern: `/el/
   - Q: Who benefits most from an AI SEO agency?
     A: Hotels, villas, rent-a-car, tour operators, and local service brands competing for commercial queries where AI Overviews and chat answers already influence shortlists.
 
-### Ανασχεδιασμός Ιστοσελίδας Χωρίς να Χάσετε το SEO σας
-- **URL:** https://anotherseoguru.com/el/blog/anasxediasmos-istoselidas
-- **Locale:** el · **Date:** 2026-08-19
-- **Description:** Πότε χρειάζεται ανασχεδιασμός ιστοσελίδας, πόσο κοστίζει και πώς γίνεται με ασφαλές SEO migration ώστε να μη χαθούν κατατάξεις και οργανική κίνηση.
-- **Embedded FAQ:**
-  - Q: Θα χάσω κατατάξεις κατά τον ανασχεδιασμό;
-    A: Με σωστό migration, η βύθιση περιορίζεται σε λίγες θέσεις για 1–2 εβδομάδες και συχνά ακολουθεί άνοδος, γιατί το νέο site είναι ταχύτερο και καλύτερα δομημένο.
-  - Q: Πόσο κοστίζει ο ανασχεδιασμός ιστοσελίδας;
-    A: Συνήθως €899–€2.999 ανάλογα με το μέγεθος, γιατί περιλαμβάνει και τη μεταφορά του SEO ιστορικού. Οι φθηνοί ανασχεδιασμοί χωρίς migration κοστίζουν περισσότερο σε χαμένη κίνηση.
-  - Q: Μπορώ να κρατήσω το ίδιο domain;
-    A: Ναι - και πρέπει. Το domain κουβαλά την αξιοπιστία σας. Αλλαγή domain μαζί με ανασχεδιασμό είναι διπλό ρίσκο και θέλει ειδικό χειρισμό.
-  - Q: Ανασχεδιασμός ή νέο site από το μηδέν;
-    A: Αν το site έχει οργανική κίνηση, ανασχεδιασμός με migration. Αν είναι αόρατο στη Google και τεχνικά προβληματικό, νέα κατασκευή είναι συχνά πιο καθαρή λύση.
-  - Q: Πόσο διαρκεί ένας ασφαλής ανασχεδιασμός;
-    A: Τυπικά 3–6 εβδομάδες μετά την απογραφή και το redirect map, ανάλογα με αριθμό σελίδων, γλώσσες και πολυπλοκότητα booking/e-shop.
-
 ### Best SEO Tools in 2026 (Free + Paid)
 - **URL:** https://anotherseoguru.com/en/blog/best-seo-tools-2026
-- **Locale:** en · **Date:** 2026-08-19
+- **Locale:** en · **Date:** 2026-07-23
 - **Description:** The SEO tools we recommend in 2026 - free checkers, keyword research, audits, and when to upgrade to paid suites. Includes AnotherSEOGuru free tools.
 - **Embedded FAQ:**
   - Q: What are the SEO tools?
@@ -1116,41 +1136,9 @@ All Greek cities below are indexable for service×location pages. Pattern: `/el/
   - Q: What tools help with AI visibility / GEO?
     A: Start with a fixed prompt sampling workflow plus GSC. Dedicated citation trackers help at scale; pair them with AI Visibility services when you need execution.
 
-### DIY SEO vs. Hiring an Agency - The Honest Truth for Business Owners
-- **URL:** https://anotherseoguru.com/en/blog/diy-vs-agency
-- **Locale:** en · **Date:** 2026-08-19
-- **Description:** Should you do your own SEO or hire an agency? Costs, time commitment, and results - with a clear decision framework for home services and tourism brands.
-- **Embedded FAQ:**
-  - Q: How much does agency SEO cost?
-    A: Retainers vary by scope - single-location local SEO vs multi-island tourism build. Get a scoped proposal rather than guessing from generic pricing pages.
-  - Q: Can I start DIY and switch to agency later?
-    A: Yes - and it's common. Bring your Search Console history and content; a good agency picks up from data, not zero.
-  - Q: Is SEO software enough without an agency?
-    A: Software provides leverage - clustering, audits, tracking - but someone must execute. Software without ops cadence fails.
-  - Q: How do I know if DIY is working?
-    A: Track commercial clicks in GSC, map actions, calls, and bookings monthly. Rankings alone mislead.
-  - Q: Should tourism brands ever fully outsource SEO?
-    A: Outsource execution, not oversight. You know seasonality, pricing, and guest questions - the agency knows search systems. Stay involved on content accuracy.
-
-### E-commerce Website Cost & Build Guide (2026)
-- **URL:** https://anotherseoguru.com/en/blog/ecommerce-website-cost-guide
-- **Locale:** en · **Date:** 2026-08-19
-- **Description:** What an e-shop costs to build in 2026, WooCommerce vs Shopify, and what to get right on payments, shipping, and SEO so your store sells from day one.
-- **Embedded FAQ:**
-  - Q: How much does an e-commerce website cost in 2026?
-    A: A basic store up to ~100 products typically costs €1,800–€2,500, mid-tier with many categories and integrations €2,500–€4,000, and complex B2B or multilingual builds €4,000+. Our Professional package (€1,799) plus e-commerce setup is a common starting point.
-  - Q: WooCommerce or Shopify - which should I choose?
-    A: For most businesses that want full ownership and SEO control, WooCommerce. Shopify suits fast launches if you accept monthly fees, transaction costs, and URL-structure limits.
-  - Q: How long does an e-shop take to build?
-    A: A basic e-shop: 4–6 weeks once products, photos, and copy exist. The usual delay is product content, not development.
-  - Q: I have a store that doesn't sell - rebuild or fix?
-    A: If the base is healthy (WooCommerce, sensible structure), e-shop SEO and conversion work often suffice. If it is on a closed platform or technically broken, redesign with migration is cleaner.
-  - Q: How will the e-shop get customers?
-    A: A mix: SEO for categories and products for steady organic flow, Google Shopping/Ads for instant sales, and email for repeat orders.
-
 ### Εργαλεία SEO 2026 - Δωρεάν Stack + Google Analytics για SEO
 - **URL:** https://anotherseoguru.com/el/blog/ergaleia-seo
-- **Locale:** el · **Date:** 2026-08-19
+- **Locale:** el · **Date:** 2026-07-23
 - **Description:** Τα καλύτερα εργαλεία SEO για ελληνικές επιχειρήσεις: Search Console, Analytics (GA4), PageSpeed, και πώς τα χρησιμοποιείτε χωρίς ακριβά suites στην αρχή.
 - **Embedded FAQ:**
   - Q: Ποια εργαλεία SEO χρειάζομαι στην αρχή;
@@ -1164,57 +1152,9 @@ All Greek cities below are indexable for service×location pages. Pattern: `/el/
   - Q: Τα AI SEO tools αντικαθιστούν τα suites το 2026;
     A: Επιταχύνουν briefs και περιλήψεις. Δεν αντικαθιστούν crawl data, backlink graphs ή analytics μετατροπών. Αντιμετωπίστε τα ως assistants μέσα στη στοίβα.
 
-### GEO, AEO και SEO στην Ελλάδα - Οδηγός 2026
-- **URL:** https://anotherseoguru.com/el/blog/geo-aeo-ellada
-- **Locale:** el · **Date:** 2026-08-19
-- **Description:** Βελτιστοποίηση για Google, ChatGPT, Perplexity και Gemini. Οδηγός SEO, Generative Engine Optimization και Answer Engine Optimization για ελληνικές επιχειρήσεις.
-- **Embedded FAQ:**
-  - Q: Ποια είναι η διαφορά μεταξύ SEO και GEO;
-    A: Το SEO εστιάζει στην κατάταξη και στα clicks από Google/Bing. Το GEO εστιάζει στο αν το brand σας εμφανίζεται ως αξιόπιστη πηγή στις απαντήσεις ChatGPT, Perplexity και Gemini.
-  - Q: Χρειάζομαι ξεχωριστό περιεχόμενο για το ChatGPT και τη Google;
-    A: Όχι. Και τα δύο επιβραβεύουν σαφές, έγκυρο, πρωτότυπο και καλά δομημένο περιεχόμενο. Γράψτε για ανθρώπους· δομήστε για απαντήσεις.
-  - Q: Από πού ξεκινά μια μικρή επιχείρηση στην Ελλάδα;
-    A: Τεχνικό SEO και τοπικό SEO πρώτα, μετά FAQ/schema AEO στις εμπορικές σελίδες, μετά πρόγραμμα GEO citations όταν τα θεμέλια είναι σταθερά.
-  - Q: Πόσο γρήγορα φαίνονται αποτελέσματα GEO;
-    A: Τα AEO wins (FAQ, snippets) συχνά σε 4–8 εβδομάδες. Τα GEO citations χρειάζονται 1–3 τρίμηνα σταθερής μέτρησης - όχι μία συνεδρία ChatGPT.
-  - Q: Χρειάζομαι GEO agency ή αρκεί το κλασικό SEO;
-    A: Αν οι αγοραστές σας ήδη ρωτούν AI για shortlists (τουρισμός, υπηρεσίες), χρειάζεστε και τα δύο σε ένα πρόγραμμα. Δείτε την υπηρεσία Ορατότητα σε AI.
-
-### GEO, AEO & AI SEO - Global Playbook for 2026
-- **URL:** https://anotherseoguru.com/en/blog/geo-aeo-global-seo-playbook
-- **Locale:** en · **Date:** 2026-08-19
-- **Description:** Generative Engine Optimization (GEO), Answer Engine Optimization (AEO), and traditional SEO - how teams rank on Google, ChatGPT, Perplexity, and Gemini.
-- **Embedded FAQ:**
-  - Q: Is GEO replacing SEO?
-    A: No. Most commercial traffic still comes from Google blue links and map packs. GEO is additive - a visibility layer for AI-mediated discovery. Neglect SEO and you lose the foundation.
-  - Q: What's the fastest AEO win?
-    A: Add FAQ sections with schema to your top 10 GSC pages by impressions. Match questions to real queries. Keep answers concise and visible on-page.
-  - Q: Can small tourism businesses compete in AI answers?
-    A: Yes. Models often cite specific, authoritative local sources over generic OTAs when the content is clearer and more recent.
-  - Q: How do I measure GEO success?
-    A: Track citation rate across a fixed prompt set, citation accuracy, and competitor coverage gaps. Pair with branded organic click trends.
-  - Q: Do I need separate content for ChatGPT vs Google?
-    A: No. Write clear, factual, well-structured content for humans. Both classic search and generative systems reward clarity, authority, and freshness.
-
-### GEO Agency Ελλάδα - Ορατότητα σε AI
-- **URL:** https://anotherseoguru.com/el/blog/geo-agency-ellada
-- **Locale:** el · **Date:** 2026-08-19
-- **Description:** GEO agency στην Ελλάδα για ChatGPT, Perplexity και Gemini. Τι να ζητήσετε, κόστος από €599/μήνα και πώς μετράτε AI citations. Δωρεάν έλεγχος ορατότητας.
-- **Embedded FAQ:**
-  - Q: Τι κάνει ένα GEO agency;
-    A: Ελέγχει την AI ορατότητά σας, δομεί περιεχόμενο για ChatGPT/Perplexity/Gemini, χτίζει οντότητες με schema και μετρά citations - ώστε να εμφανίζεστε όταν οι πελάτες ρωτούν για τον κλάδο σας.
-  - Q: Πόσο κοστίζει το GEO στην Ελλάδα;
-    A: Συνήθως ως μέρος πακέτου SEO. Στην AnotherSEOGuru περιλαμβάνεται στα Growth (€599/μήνα) και Scale (€999/μήνα). Αυτόνομα GEO audits από €300–500.
-  - Q: Μπορώ να κάνω GEO χωρίς SEO;
-    A: Όχι ουσιαστικά. Τα AI μοντέλα αντλούν από τις ίδιες σελίδες που κατατάσσει η Google. GEO χωρίς γερό SEO είναι σκεπή χωρίς τοίχους.
-  - Q: Τι είναι το AEO και πώς διαφέρει από το GEO;
-    A: Το AEO στοχεύει έτοιμες απαντήσεις (featured snippets, AI Overviews), ενώ το GEO τις παραπομπές μέσα σε chatbots. Στην πράξη δουλεύονται μαζί.
-  - Q: Πώς ξέρω αν ένα GEO agency είναι σοβαρό;
-    A: Ζητήστε screenshots citations πελατών, σταθερή βιβλιοθήκη prompts, reporting με trends - όχι εγγυήσεις «AI rank
-
 ### GEO vs SEO vs AEO - Τι Χρειάζεστε το 2026;
 - **URL:** https://anotherseoguru.com/el/blog/geo-vs-seo-vs-aeo-el
-- **Locale:** el · **Date:** 2026-08-19
+- **Locale:** el · **Date:** 2026-07-23
 - **Description:** Σύγκριση SEO, GEO (generative engine optimization) και AEO. Πότε επενδύετε σε καθένα και πώς τα συνδυάζουμε για leads.
 - **Embedded FAQ:**
   - Q: Το GEO αντικαθιστά το SEO;
@@ -1230,7 +1170,7 @@ All Greek cities below are indexable for service×location pages. Pattern: `/el/
 
 ### GEO vs SEO vs AEO - Which Do You Need in 2026?
 - **URL:** https://anotherseoguru.com/en/blog/geo-vs-seo-vs-aeo
-- **Locale:** en · **Date:** 2026-08-19
+- **Locale:** en · **Date:** 2026-07-23
 - **Description:** Clear comparison of SEO, GEO (generative engine optimization) and AEO. When to invest in each, and how agencies combine them for leads.
 - **Embedded FAQ:**
   - Q: Is GEO replacing SEO?
@@ -1244,89 +1184,345 @@ All Greek cities below are indexable for service×location pages. Pattern: `/el/
   - Q: How do you measure GEO success?
     A: Track a fixed prompt set monthly across models, log brand mentions and links, and correlate with Search Console clicks and leads - not vanity “AI rank” scores.
 
-### Using an SEO glossary to strengthen internal links (without spam)
-- **URL:** https://anotherseoguru.com/en/blog/glossary-strategy-internal-linking
-- **Locale:** en · **Date:** 2026-08-19
-- **Description:** How glossary hubs support entity clarity, hub-and-spoke linking, and safer anchor patterns - with a workflow that points to product modules.
+### How to Increase Organic Traffic (Practical Playbook)
+- **URL:** https://anotherseoguru.com/en/blog/how-to-increase-organic-traffic
+- **Locale:** en · **Date:** 2026-07-23
+- **Description:** How to grow organic traffic - more impressions, better CTR, technical fixes, content, and links - with a realistic timeline and 2026 checklist.
 - **Embedded FAQ:**
-  - Q: How many glossary terms do I need?
-    A: Start with 20–30 tied to your top queries and sales conversations. Expand as content gaps appear - don't publish 500 thin definitions day one.
-  - Q: Should glossary pages index?
-    A: Yes - if they provide unique definitions. No - if they're thin duplicates of blog content. Merge or differentiate.
-  - Q: Can glossary replace FAQ?
-    A: No - FAQ answers customer-specific questions on commercial pages. Glossary defines concepts. Use both.
-  - Q: Multilingual glossaries?
-    A: For EL/EN tourism sites, mirror key terms with hreflang. See GEO/AEO Ellada.
-  - Q: Who writes glossary entries?
-    A: SEO lead outlines entities; subject expert validates accuracy; developer implements linking templates. For hotel and rent-a-car sites, involve front-desk or fleet managers who field guest questions daily.
+  - Q: How to increase organic traffic?
+    A: Win more impressions by covering the right topics, improve CTR with better titles, fix indexation issues, and build internal links from strong pages. Compound with consistent publishing and relevant links.
+  - Q: What is organic traffic?
+    A: Organic traffic is visits from unpaid search results (and increasingly AI referrals that cite your pages). It excludes paid ads, email, and most social clicks.
+  - Q: How long does it take to grow organic traffic?
+    A: Local and long-tail pages often move in 2–3 months. Competitive head terms usually need 4–6+ months of content, technical fixes and authority. Gains compound month over month.
+  - Q: Why did my organic traffic drop?
+    A: Common causes include algorithm updates, lost backlinks, indexation bugs, cannibalization, site migrations without redirects, or seasonality. Audit Search Console before rewriting everything.
+  - Q: What budget grows organic traffic meaningfully?
+    A: Serious work in Greece typically runs €299–€999 per month depending on competition. One-off audits often cost €300–€800 before a retainer starts.
 
-### Google Business Profile Masterclass - Dominate Local Search
-- **URL:** https://anotherseoguru.com/en/blog/google-business-profile-masterclass
-- **Locale:** en · **Date:** 2026-08-19
-- **Description:** Step-by-step guide to optimizing your Google Business Profile. Categories, photos, reviews, and the Posts strategy that keeps your profile active.
+### How to Do Keyword Research for SEO (Step-by-Step)
+- **URL:** https://anotherseoguru.com/en/blog/keyword-research-guide
+- **Locale:** en · **Date:** 2026-07-23
+- **Description:** A practical keyword research process for SEO - seeds, intent, clustering, and prioritization - plus free tools to find SEO keywords that convert.
 - **Embedded FAQ:**
-  - Q: How long until GBP optimization shows results?
-    A: Category fixes and photo uploads often move within 2–4 weeks. Review velocity and posts compound over 60–90 days.
-  - Q: Can I manage multiple locations in one dashboard?
-    A: Yes - use Business Profile Manager for chains, hotel groups, and multi-desk rent-a-car operators.
-  - Q: Do Google Posts affect rankings directly?
-    A: Google doesn't confirm Posts as a core ranking factor, but they drive engagement signals and prove activity - especially vs dormant competitors.
-  - Q: What if Google suspends my listing?
-    A: Fix guideline violations, gather documentation (utility bill, signage photos), submit reinstatement request. Prevention beats recovery - no keyword stuffing in name.
-  - Q: Should I use a third-party GBP tool?
-    A: Tools help scheduling and multi-location QA, but understand Google's policies. Over-automation without quality control hurts more than helps.
+  - Q: How do you do keyword research for SEO?
+    A: Start from seed topics, expand with related terms and questions, group by search intent, then prioritize by volume, difficulty, and business value. Map one primary keyword per page.
+  - Q: What are SEO keywords?
+    A: SEO keywords are the words and phrases people type into search engines. Good research matches those phrases to pages that can convert.
+  - Q: What are the 4 types of keywords for SEO?
+    A: Informational, navigational, commercial, and transactional. Local modifiers often cut across commercial and transactional intent.
+  - Q: How many keywords should one page target?
+    A: One primary intent plus natural variants in headings and FAQs - not a stuffed list of unrelated phrases.
+  - Q: How often should you refresh keyword research?
+    A: Quarterly for competitive niches, and after every major product, location, or seasonality change. Always reconcile with fresh Search Console data.
 
-### Google Search Operators Guide (2026)
-- **URL:** https://anotherseoguru.com/en/blog/google-search-operators-2026
-- **Locale:** en · **Date:** 2026-08-19
-- **Description:** Working Google search operators in 2026 - site:, intitle:, inurl:, filetype:, and combos for SEO audits, competitor research, and content gaps.
+### Λέξεις-Κλειδιά SEO - Πώς να Βρείτε Τι Ψάχνει το Κοινό σας
+- **URL:** https://anotherseoguru.com/el/blog/lexeis-kleidia-seo
+- **Locale:** el · **Date:** 2026-07-23
+- **Description:** Οδηγός έρευνας λέξεων-κλειδιών SEO στην Ελλάδα. Πρόθεση αναζήτησης, long-tail, εργαλεία και πώς να χαρτογραφήσετε όρους σε σελίδες.
 - **Embedded FAQ:**
-  - Q: What are Google search operators?
-    A: Special query prefixes (like site: or intitle:) that filter Google results so you can audit indexing, find content gaps, and research competitors faster than browsing alone.
-  - Q: Does site: still work in 2026?
-    A: Yes. site:example.com still shows indexed URLs Google is willing to surface. It is not a complete index dump, but it is the fastest indexing sanity check.
-  - Q: Which operators help with SEO audits?
-    A: Start with site:, then intitle:, inurl:, filetype:pdf, and minus (-) exclusions. Combine them to find thin pages, duplicate titles, and indexed PDFs you forgot about.
-  - Q: Can operators replace Google Search Console?
-    A: No. Operators are for discovery and spot checks. Use Search Console for clicks, impressions, position, and coverage decisions - especially on commercial tourism queries.
-  - Q: Which operators are unreliable in 2026?
-    A: Treat intext:, public link:, and some related: behaviors as unstable or retired. Prefer Search Console, server logs, and documented operators for decisions.
+  - Q: Τι είναι οι λέξεις-κλειδιά στο SEO;
+    A: Είναι οι όροι που πληκτρολογούν οι χρήστες στη Google. Η έρευνα λέξεων-κλειδιών δείχνει τι ψάχνουν, πόσο συχνά και με ποια πρόθεση - ώστε κάθε σελίδα να στοχεύει μια πραγματική αναζήτηση.
+  - Q: Ποιες λέξεις-κλειδιά να στοχεύσω πρώτα;
+    A: Ξεκινήστε από εμπορικές και τοπικές long-tail με σαφή πρόθεση αγοράς (π.χ. «πόσο κοστίζει το SEO», «δικηγόρος Αθήνα»), όχι μόνο από γενικούς όρους υψηλού όγκου όπως «SEO».
+  - Q: Πού βρίσκω δεδομένα λέξεων-κλειδιών;
+    A: Ξεκινήστε από Google Search Console (τι ήδη σας δείχνει), συμπληρώστε με Keyword Planner / Ahrefs και τις προτάσεις της ίδιας της Google (PAA, related searches).
+  - Q: Πόσες λέξεις-κλειδιά στοχεύει μία σελίδα;
+    A: Μία κύρια πρόθεση συν φυσικές παραλλαγές σε επικεφαλίδες και FAQ - όχι stuffed λίστα άσχετων φράσεων.
+  - Q: Πόσο συχνά ανανεώνω την έρευνα;
+    A: Κάθε τρίμηνο σε ανταγωνιστικά niches, και μετά από μεγάλες αλλαγές προϊόντος, τοποθεσίας ή σεζόν. Πάντα με νέα δεδομένα GSC.
 
-### A Practical Framework for Prioritizing Search Console Queries
-- **URL:** https://anotherseoguru.com/en/blog/gsc-query-prioritization-framework
-- **Locale:** en · **Date:** 2026-08-19
-- **Description:** Score impressions, clicks, position, and intent so your backlog reflects revenue - not spreadsheet anxiety.
+### Link Building Guide - Earn Authority Without Spam
+- **URL:** https://anotherseoguru.com/en/blog/link-building-guide
+- **Locale:** en · **Date:** 2026-07-23
+- **Description:** What link building is, how it works in modern SEO, white-hat tactics, realistic costs and timelines, and how professional link building services should run.
 - **Embedded FAQ:**
-  - Q: How many queries should I prioritize per week?
-    A: Three shipped fixes maximum for small teams. More rarely completes; unfinished backlog demoralizes.
-  - Q: Position or impressions - which matters more?
-    A: Impressions show opportunity; clicks show reality. Near-miss bucket uses both - high impressions at position 8–15 is the sweet spot.
-  - Q: Should branded queries go in bucket 1?
-    A: Yes - protect branded clicks. But don't spend hours optimizing typos with 3 impressions.
-  - Q: How do I handle seasonality?
-    A: Compare year-over-year where possible. Rising shoulder-season queries in bucket 3 may need content 8–12 weeks before peak.
-  - Q: Can this framework work for Greek and English queries?
-    A: Yes - segment by language in GSC. Tag EL vs EN buckets separately for hreflang sites.
+  - Q: What is link building?
+    A: Link building is earning hyperlinks from other sites to yours. Quality and relevance matter more than volume - one editorial link from a trusted site beats dozens of spam directories.
+  - Q: How many backlinks do I need?
+    A: There is no magic number. Compete against the sites already ranking for your query - match relevance and authority, then exceed them with better pages.
+  - Q: Is paid link building safe?
+    A: Paying for pure PageRank manipulation violates Google guidelines. Paying for content production, digital PR and legitimate sponsorships with editorial standards is different - transparency and relevance are non-negotiable.
+  - Q: How much does link building cost in Greece?
+    A: White-hat campaigns typically run €400–€1,500+ per month depending on niche difficulty, or sit inside Growth/Scale SEO retainers (€599–€999+/mo). Cheap “50 links for €99” packages are almost always spam.
+  - Q: Do you guarantee rankings from links?
+    A: No ethical provider does. Guarantees process quality, relevance and reporting - not a specific Google position.
 
-### A one-hour Google Search Console ops loop for in-house teams
-- **URL:** https://anotherseoguru.com/en/blog/gsc-weekly-ops-playbook
-- **Locale:** en · **Date:** 2026-08-19
-- **Description:** A repeatable weekly checklist - segment performance, cluster queries, pick three ship items, and validate in rank tracking (aligned with platform workflows).
+### Off-Page SEO - Links, Mentions & Reputation
+- **URL:** https://anotherseoguru.com/en/blog/off-page-seo
+- **Locale:** en · **Date:** 2026-07-23
+- **Description:** What off-page SEO is, how it differs from on-page, and practical ways to improve authority without spammy links - with costs, timelines and a 2026 checklist.
 - **Embedded FAQ:**
-  - Q: What if I miss a week?
-    A: Don't double the workload - resume with one week export and three fixes. Consistency beats catch-up marathons.
-  - Q: Is one hour enough for large sites?
-    A: For enterprise, scale clustering with tools - but keep three-fix ship cap per property or cluster. Multi-property hotel groups run loop per brand or region.
-  - Q: Should I include Bing Webmaster Tools?
-    A: Optional monthly - Google priority for most tourism and local markets.
-  - Q: How do I involve developers?
-    A: Ticket only technical fixes with repro steps and expected measurable outcome - indexation count, LCP on template, structured data validation.
-  - Q: When do I need an agency instead?
-    A: If three fixes/week backlog exceeds 8 weeks consistently - get scoped help.
+  - Q: What is off-page SEO?
+    A: Off-page SEO is signals earned outside your site - mainly backlinks, brand mentions, and reputation. It supports pages that already deserve to rank on-page.
+  - Q: How to improve off-page SEO?
+    A: Earn relevant editorial links, clean up toxic spam, strengthen brand mentions, and keep Google Business Profile and reviews healthy for local queries.
+  - Q: Is off-page SEO the same as link building?
+    A: Link building is the core tactic inside off-page SEO, but off-page also includes brand mentions, digital PR, reviews and local citations.
+  - Q: How much does off-page SEO cost?
+    A: Professional white-hat outreach in Greece often sits inside Growth or Scale retainers (€599–€999+/mo) or as scoped campaigns from roughly €400–€1,500+ per month depending on niche difficulty.
+  - Q: Can bad off-page SEO hurt rankings?
+    A: Yes. Spam networks, irrelevant paid links and sudden unnatural spikes can trigger manual or algorithmic distrust. Quality and relevance beat volume every time.
+
+### On-Page SEO - How to Optimize a Page That Ranks
+- **URL:** https://anotherseoguru.com/en/blog/on-page-seo
+- **Locale:** en · **Date:** 2026-07-23
+- **Description:** What on-page SEO is and how to do it - titles, headings, content, internal links, schema and a practical 2026 checklist with costs and timelines.
+- **Embedded FAQ:**
+  - Q: What is on-page SEO?
+    A: On-page SEO is optimizing titles, headings, content, internal links, and media on a URL so it clearly matches search intent and earns clicks.
+  - Q: How to do on-page SEO?
+    A: Pick one primary intent, put the keyword in the title and H1 naturally, answer the query early, use clear H2s for related questions, add internal links, and improve CTR with a compelling meta description.
+  - Q: On-page vs technical SEO?
+    A: Technical SEO covers crawl, indexation, speed and architecture. On-page SEO covers relevance and clarity of the content on the URL. You need both.
+  - Q: How long does on-page SEO take to work?
+    A: CTR and clarity fixes on already-indexed pages can move within 2–6 weeks. New or heavily rewritten pages often need 1–3 months to stabilize, longer in competitive niches.
+  - Q: How much does on-page optimization cost?
+    A: Page rewrites often run €150–€450 per URL depending on research depth. Ongoing on-page work is usually included in retainers from €299/mo.
+
+### Πόσο Κοστίζει το SEO; Τιμές 2026
+- **URL:** https://anotherseoguru.com/el/blog/poso-kostizei-to-seo
+- **Locale:** el · **Date:** 2026-07-23
+- **Description:** Πόσο κοστίζει το SEO στην Ελλάδα; Πακέτα από €299/μήνα, πίνακας τιμών SEO και τι περιλαμβάνει κάθε πακέτο. Διαφανείς τιμές σε € - χωρίς κρυφές χρεώσεις.
+- **Embedded FAQ:**
+  - Q: Πόσο κοστίζει το SEO στην Ελλάδα;
+    A: Για σοβαρή δουλειά, από €250 έως €1.500+ τον μήνα ανάλογα με τον ανταγωνισμό και τους στόχους. Τα πακέτα μας είναι Starter €299/μήνα, Growth €599/μήνα και Scale €999/μήνα, πάντα σε Ευρώ και χωρίς κρυφές χρεώσεις.
+  - Q: Ποιες είναι οι τυπικές τιμές SEO στην Ελλάδα;
+    A: Τοπικές επιχειρήσεις συνήθως επενδύουν €250–€400/μήνα. Ανταγωνιστικοί κλάδοι €500–€800. E-shop και πανελλαδικά brands €900–€1.500+. Εφάπαξ audit συχνά €300–€800.
+  - Q: Γιατί το SEO είναι ακριβό;
+    A: Γιατί δεν είναι αυτοματοποιημένη αναφορά - είναι συνεχής εργασία σε τεχνικό SEO, περιεχόμενο, τοπικό προφίλ και links. Φθηνές προσφορές €80–€100/μήνα σχεδόν πάντα σημαίνουν μηδενική πραγματική εργασία ή ριψοκίνδυνες τακτικές.
+  - Q: Πόσο κοστίζει το SEO για μια μικρή επιχείρηση;
+    A: Για τοπική προβολή σε μία πόλη, ένα πακέτο των €299/μήνα συνήθως αρκεί για να δείτε ουσιαστική βελτίωση μέσα σε 3-4 μήνες.
+  - Q: Αξίζει το SEO ή να βάλω τα χρήματα σε Google Ads;
+    A: Είναι διαφορετικά εργαλεία. Τα Google Ads φέρνουν άμεση κίνηση όσο πληρώνετε, ενώ το SEO χτίζει σταθερή οργανική ροή που μένει και μακροπρόθεσμα κοστίζει λιγότερο ανά επισκέπτη.
+
+### SEO Content - How to Write Pages That Rank and Convert
+- **URL:** https://anotherseoguru.com/en/blog/seo-content-guide
+- **Locale:** en · **Date:** 2026-07-23
+- **Description:** What SEO content is and how to write it - intent, structure, FAQs, proof and internal links - plus formats, costs, timelines and when to use SEO content services.
+- **Embedded FAQ:**
+  - Q: How to write SEO content?
+    A: Pick one primary intent, answer it in the first screen, use clear headings for related questions, add proof, and link to related services. Write for humans first; keywords guide structure, not stuffing.
+  - Q: What is SEO content?
+    A: SEO content answers a clear search intent with useful structure, proof, and internal links so it can rank and convert - service pages, guides, FAQs and location pages.
+  - Q: How long should SEO content be?
+    A: As long as needed to be the best answer - not an arbitrary word count. Many commercial pages win at 600–1,200 words; competitive guides often need 1,000–2,000+ with unique proof.
+  - Q: How much does SEO content cost?
+    A: In Greece, professional pages often run €150–€450 each; pillar guides €250–€700. Monthly content retainers typically start around €299–€599 depending on volume and research depth.
+  - Q: Does SEO content still matter with AI Overviews?
+    A: Yes. Clear, cited, experience-rich pages are what AI systems quote. Thin keyword dumps get ignored. Pair content with GEO/AEO practices for answer engines.
+
+### SEO for Hotels in 2026 - Direct Bookings Without OTA Dependency
+- **URL:** https://anotherseoguru.com/en/blog/seo-for-hotels-guide
+- **Locale:** en · **Date:** 2026-07-23
+- **Description:** Practical SEO for hotels guide - room pages, schema, local search, GEO/AEO for AI trip planning, and how Greek hospitality brands win direct bookings.
+- **Embedded FAQ:**
+  - Q: What is SEO for hotels?
+    A: Hotel SEO is optimizing property websites so guests find and book rooms directly via Google and AI assistants - using room pages, schema, local SEO and content that reduces OTA dependency.
+  - Q: How long does hotel SEO take to work?
+    A: Local and branded queries can move in 2–3 months. Competitive destination terms (Santorini, Mykonos, Crete) often need 4–6+ months of content, technical fixes and authority building.
+  - Q: Do hotels need GEO / AEO as well as SEO?
+    A: Yes. Travelers increasingly ask ChatGPT and Perplexity for hotel recommendations. GEO/AEO helps your property get cited in those answers, not only classic search results.
+  - Q: How much does hotel SEO cost in Greece?
+    A: Typically €299–€999 per month depending on size, languages and destination competition. One-off technical audits often run €400–€800. Hospitality website packages start from €899.
+  - Q: Can SEO reduce OTA commission spend?
+    A: Yes, when direct bookings rise. Many properties target a 10–25% shift from OTA to direct within 6–12 months without cutting distribution channels entirely.
+
+### Τι Είναι το SEO; Οδηγός για Αρχάριους (2026)
+- **URL:** https://anotherseoguru.com/el/blog/seo-gia-arxarious
+- **Locale:** el · **Date:** 2026-07-23
+- **Description:** Τι είναι το SEO με απλά λόγια. Πώς κατατάσσει η Google, on-page, τεχνικό, off-page και τοπικό SEO, λέξεις-κλειδιά, κόστος, λάθη αρχαρίων και από πού να ξεκινήσετε στην Ελλάδα.
+- **Embedded FAQ:**
+  - Q: Τι είναι το SEO;
+    A: Το SEO (Search Engine Optimization) είναι η διαδικασία βελτιστοποίησης μιας ιστοσελίδας ώστε να εμφανίζεται ψηλότερα στα οργανικά αποτελέσματα της Google. Περιλαμβάνει τεχνικές βελτιώσεις, περιεχόμενο και εξωτερικά σήματα αξιοπιστίας.
+  - Q: Πώς λειτουργεί το SEO;
+    A: Η Google ανιχνεύει (crawling), ευρετηριάζει (indexing) και κατατάσσει (ranking) τις σελίδες σας με βάση σχετικότητα, ποιότητα, ταχύτητα και κύρος. Το SEO βελτιώνει αυτά τα σήματα.
+  - Q: Μπορώ να κάνω SEO μόνος μου;
+    A: Τα βασικά ναι - σωστοί τίτλοι, Google Business Profile, περιεχόμενο που απαντά ερωτήσεις πελατών. Το τεχνικό κομμάτι, η στρατηγική και τα links είναι εκεί που ένας συνεργάτης κάνει τη διαφορά.
+  - Q: Ποια είναι η διαφορά on-page, off-page και τεχνικού SEO;
+    A: On-page είναι ό,τι βελτιώνετε στη σελίδα (τίτλοι, περιεχόμενο, σύνδεσμοι). Τεχνικό είναι τα θεμέλια (ταχύτητα, ευρετηρίαση, schema). Off-page είναι εξωτερικά σήματα, κυρίως ποιοτικά backlinks.
+  - Q: SEO ή διαφημίσεις Google;
+    A: Διαφορετικά εργαλεία. Τα Ads φέρνουν άμεση κίνηση όσο πληρώνετε· το SEO χτίζει σταθερή οργανική ροή που μένει μακροπρόθεσμα.
+
+### SEO για Ξενοδοχεία 2026 - Άμεσες Κρατήσεις χωρίς Εξάρτηση από OTAs
+- **URL:** https://anotherseoguru.com/el/blog/seo-gia-xenodoxeia-odigos-2026
+- **Locale:** el · **Date:** 2026-07-23
+- **Description:** Πρακτικός οδηγός SEO για ξενοδοχεία - σελίδες δωματίων, schema, τοπική αναζήτηση, GEO/AEO και πώς ελληνικά hospitality brands κερδίζουν direct bookings.
+- **Embedded FAQ:**
+  - Q: Τι είναι το SEO για ξενοδοχεία;
+    A: Είναι η βελτιστοποίηση της ιστοσελίδας του καταλύματος ώστε οι επισκέπτες να βρίσκουν και να κλείνουν απευθείας μέσω Google και AI βοηθών - με σελίδες δωματίων, schema, τοπικό SEO και περιεχόμενο που μειώνει την εξάρτηση από OTAs.
+  - Q: Σε πόσο καιρό φέρνει αποτέλεσμα το hotel SEO;
+    A: Τοπικές και branded αναζητήσεις συχνά σε 2–3 μήνες. Ανταγωνιστικοί προορισμοί (Σαντορίνη, Μύκονος, Κρήτη) συχνά χρειάζονται 4–6+ μήνες περιεχομένου, τεχνικών διορθώσεων και authority.
+  - Q: Χρειάζονται τα ξενοδοχεία GEO / AEO εκτός από SEO;
+    A: Ναι. Οι ταξιδιώτες ρωτούν ChatGPT και Perplexity για συστάσεις. Το GEO/AEO βοηθά το κατάλυμά σας να εμφανίζεται σε αυτές τις απαντήσεις, όχι μόνο στα κλασικά αποτελέσματα Google.
+  - Q: Πόσο κοστίζει το SEO για ξενοδοχείο στην Ελλάδα;
+    A: Τυπικά €299–€999/μήνα ανάλογα με μέγεθος, γλώσσες και ανταγωνισμό προορισμού. Εφάπαξ τεχνικό audit συχνά €400–€800. Πακέτα website ξενοδοχείου από €899.
+  - Q: Μπορώ να μειώσω τις προμήθειες OTA με SEO;
+    A: Ναι, όταν οι άμεσες κρατήσεις αυξάνονται. Πολλοί πελάτες στοχεύουν 10–25% μετατόπιση από OTA σε direct μέσα σε 6–12 μήνες, χωρίς να κόψουν τελείως τα κανάλια διανομής.
+
+### SEO Στρατηγική για Μικρές Επιχειρήσεις - Πλάνο 90 Ημερών
+- **URL:** https://anotherseoguru.com/el/blog/seo-stratigiki-mikres-epicheiriseis
+- **Locale:** el · **Date:** 2026-07-23
+- **Description:** SEO συμβουλές και στρατηγική για μικρές επιχειρήσεις στην Ελλάδα. Τι να κάνετε τις πρώτες 90 μέρες, κόστος, λάθη να αποφύγετε και πότε να προσλάβετε agency.
+- **Embedded FAQ:**
+  - Q: Από πού ξεκινά το SEO για μικρή επιχείρηση;
+    A: Από Google Business Profile (αν είστε τοπικοί), τεχνική υγεία του site, βελτιστοποίηση 5–10 σελίδων υπηρεσιών και σταθερό περιεχόμενο που απαντά ερωτήσεις πελατών - όχι από αγορά εκατοντάδων links.
+  - Q: Ποιες SEO συμβουλές αξίζουν πραγματικά;
+    A: Μία πρόθεση ανά σελίδα, μετρήστε με Search Console, απαντήστε κριτικές, βελτιώστε ταχύτητα κινητού και γράψτε για ανθρώπους. Αποφύγετε εγγυήσεις «πρώτης θέσης» και φθηνά πακέτα €80/μήνα.
+  - Q: Πότε να προσλάβω εταιρεία SEO;
+    A: Όταν δεν έχετε χρόνο για συστηματική δουλειά, όταν το site χρειάζεται τεχνικό audit, ή όταν ο ανταγωνισμός στην πόλη/κλάδο σας είναι ήδη ενεργός. Ζητήστε διαφανείς τιμές και μηνιαία deliverables.
+  - Q: Πόσο κοστίζει το SEO για μικρή επιχείρηση;
+    A: Σοβαρή δουλειά ξεκινά περίπου από €299/μήνα. One-off audit συνήθως €299–€1.200. Αποφύγετε πακέτα που υπόσχονται
+  - Q: DIY ή agency στις πρώτες 90 μέρες;
+    A: DIY για Search Console, GBP και βασικά titles. Agency όταν χρειάζεστε τεχνικό audit, συστηματικό περιεχόμενο, τοπική κάλυψη πόλεων ή links με μετρήσιμα deliverables.
+
+### Technical SEO Guide - Crawl, Index, Speed & Schema
+- **URL:** https://anotherseoguru.com/en/blog/technical-seo-guide
+- **Locale:** en · **Date:** 2026-07-23
+- **Description:** What technical SEO is, a practical 2026 checklist, Core Web Vitals, schema, common mistakes, costs and when to hire technical SEO services or run an audit.
+- **Embedded FAQ:**
+  - Q: What is technical SEO?
+    A: Technical SEO makes your site easy to crawl, index, and render - speed, mobile usability, HTTPS, sitemaps, canonicals, structured data, and clean architecture.
+  - Q: Technical SEO vs on-page SEO?
+    A: Technical SEO is how the site works for crawlers and performance. On-page SEO is how each URL’s content matches search intent. You need both.
+  - Q: Do I need a technical SEO audit?
+    A: Yes if rankings stall, pages aren’t indexed, Core Web Vitals fail, or you shipped a redesign. A technical audit finds blockers content alone cannot fix.
+  - Q: Does site speed affect rankings?
+    A: Yes as part of page experience - and it heavily affects conversion even when ranking impact is modest. Fix LCP and INP on money templates first.
+  - Q: How much does a technical SEO audit cost?
+    A: In Greece, focused technical audits typically run €299–€1,200 depending on site size and JS complexity. Fixes are scoped separately or included in retainers.
+
+### Τεχνικό SEO - Checklist για Καλύτερη Κατάταξη Google (2026)
+- **URL:** https://anotherseoguru.com/el/blog/techniko-seo
+- **Locale:** el · **Date:** 2026-07-23
+- **Description:** Τι είναι το τεχνικό SEO και πώς βελτιώνει την κατάταξη στη Google. Crawl, index, Core Web Vitals, schema, λάθη, κόστος και πρακτικό checklist για ελληνικές ιστοσελίδες.
+- **Embedded FAQ:**
+  - Q: Τι είναι το τεχνικό SEO;
+    A: Το τεχνικό SEO βελτιστοποιεί την υποδομή του site ώστε η Google να ανιχνεύει, να ευρετηριάζει και να κατανοεί τις σελίδες σας - ταχύτητα, mobile, HTTPS, sitemap, schema και καθαρή αρχιτεκτονική.
+  - Q: Πώς βοηθά το τεχνικό SEO στη βελτίωση κατάταξης Google;
+    A: Χωρίς crawl και index, το καλύτερο περιεχόμενο δεν εμφανίζεται. Τα Core Web Vitals και το mobile επηρεάζουν κατάταξη και μετατροπές. Το τεχνικό SEO αφαιρεί εμπόδια ώστε on-page και links να αποδώσουν.
+  - Q: Χρειάζομαι τεχνικό SEO audit;
+    A: Ναι αν το site είναι αργό, έχει προβλήματα ευρετηρίασης στο Search Console, ή πριν από μεγάλη επένδυση σε περιεχόμενο και backlinks. Ένα audit δίνει προτεραιοποιημένο πλάνο διορθώσεων.
+  - Q: Επηρεάζει η ταχύτητα την κατάταξη;
+    A: Ναι ως μέρος της εμπειρίας σελίδας - και επηρεάζει έντονα τις μετατροπές ακόμα κι όταν η επίδραση στην κατάταξη είναι μέτρια. Διορθώστε πρώτα LCP/INP στα templates που φέρνουν πελάτες.
+  - Q: Πόσο κοστίζει ένα τεχνικό audit;
+    A: Στην Ελλάδα, εστιασμένα τεχνικά audits συνήθως κυμαίνονται από €299 έως €1.200 ανάλογα με μέγεθος site και πολυπλοκότητα JS. Οι διορθώσεις κοστολογούνται ξεχωριστά ή εντάσσονται σε retainer.
+
+### What Is SEO? Search Engine Optimization Explained (2026)
+- **URL:** https://anotherseoguru.com/en/blog/what-is-seo
+- **Locale:** en · **Date:** 2026-07-23
+- **Description:** SEO (Search Engine Optimization) is how you improve organic visibility in Google and AI answers. Learn how it works, the four types, best practices, costs and where to start.
+- **Embedded FAQ:**
+  - Q: What is SEO and how does it work?
+    A: SEO (Search Engine Optimization) improves a website so it ranks higher in unpaid Google results. Google crawls pages, indexes them, then ranks by relevance, quality, and trust. On-page content, technical health, and authoritative links are the main levers.
+  - Q: What does SEO stand for?
+    A: SEO stands for Search Engine Optimization - making your site more visible in organic search for the queries your buyers actually type.
+  - Q: Is SEO dead or evolving in 2026?
+    A: SEO is evolving, not dead. Classic rankings still drive traffic, while AI Overviews and ChatGPT-style answers reward clear definitions, FAQs, and citable expertise.
+  - Q: Can ChatGPT do SEO?
+    A: ChatGPT can help with outlines and FAQs, but it cannot replace crawl fixes, real demand data, or earning links. Use AI inside a measured SEO process - not as the whole strategy.
+  - Q: How long does SEO take to work?
+    A: Expect early movement in 2–3 months and meaningful growth in 4–12 months, depending on competition, site history, and publishing cadence.
+
+### SEO για Εστιατόρια & Καφέ - Γεμίστε Τραπέζια από τη Google
+- **URL:** https://anotherseoguru.com/el/blog/seo-gia-estiatoria
+- **Locale:** el · **Date:** 2026-07-07
+- **Description:** Τοπικό SEO για εστιατόρια, καφέ και μπαρ στην Ελλάδα. Google Business Profile, μενού HTML, κριτικές, πίνακας κόστους και checklist που γεμίζει τραπέζια κάθε βράδυ.
+- **Embedded FAQ:**
+  - Q: Τι είναι το SEO για εστιατόρια;
+    A: Είναι η βελτιστοποίηση του Google Business Profile, των κριτικών και του site (μενού HTML, κρατήσεις, ταχύτητα) ώστε να εμφανίζεστε στο τοπικό pack και να γεμίζετε τραπέζια από οργανική αναζήτηση.
+  - Q: Πόσο κοστίζει το SEO για εστιατόριο;
+    A: Για ένα κατάστημα, το Starter (€299/μήνα) καλύπτει GBP, τοπικές σελίδες και περιεχόμενο. Σε ανταγωνιστικές γειτονιές ή αλυσίδες χρειάζεται Growth (€599/μήνα).
+  - Q: Έχω Instagram - χρειάζομαι SEO;
+    A: Ναι. Το Instagram κρατά επαφή με υπάρχοντες πελάτες. Η Google φέρνει νέους τη στιγμή που ψάχνουν πού θα φάνε. Είναι συμπληρωματικά κανάλια.
+  - Q: Το μενού σε PDF πειράζει;
+    A: Ναι. Η Google δεν διαβάζει εύκολα PDF και ανοίγει δύσκολα στο κινητό. Μεταφέρετέ το σε HTML με τιμές και κατηγορίες.
+  - Q: Πόσες κριτικές χρειάζομαι;
+    A: Μετράει η σταθερότητα και η βαθμολογία, όχι ένας μαγικός αριθμός. Στόχος: 2–4 νέες κριτικές τον μήνα με απαντήσεις.
+
+### SEO για Οδοντιάτρους - Γεμίστε την Ατζέντα από τη Google
+- **URL:** https://anotherseoguru.com/el/blog/seo-gia-odontiatrous
+- **Locale:** el · **Date:** 2026-07-07
+- **Description:** Στρατηγική SEO για οδοντιατρεία στην Ελλάδα. Τοπική προβολή, Google Business Profile, κριτικές, σελίδες υπηρεσιών, E-E-A-T και πίνακας κόστους για νέα ραντεβού.
+- **Embedded FAQ:**
+  - Q: Πόσο κοστίζει το SEO για οδοντιατρείο;
+    A: Για ιατρείο σε μία περιοχή, Starter €299/μήνα. Πολυϊατρεία σε Αθήνα/Θεσσαλονίκη συνήθως Growth €599/μήνα για περισσότερο περιεχόμενο και link building.
+  - Q: Πόσο γρήγορα θα δω νέα ραντεβού;
+    A: Σε μέτριο τοπικό ανταγωνισμό, 2–3 μήνες. Σε μεγάλες πόλεις με πολλά ιατρεία, υπολογίστε 4–6 μήνες για σταθερή ροή.
+  - Q: Επιτρέπεται η προβολή οδοντιατρείου μέσω SEO;
+    A: Το SEO είναι το πλέον συμβατό κανάλι: απαντάτε τεκμηριωμένα σε όσους ήδη σας αναζητούν. Το περιεχόμενο πρέπει να είναι ενημερωτικό και υπεύθυνο.
+  - Q: Χρειάζομαι ξεχωριστή σελίδα για τα εμφυτεύματα;
+    A: Ναι. Τα εμφυτεύματα έχουν δικό τους όγκο αναζήτησης και υψηλή αξία ασθενούς. Αποκλειστική σελίδα με κόστος, διαδικασία και FAQ κατατάσσεται καλύτερα.
+  - Q: Τι είναι το E-E-A-T για οδοντιάτρους;
+    A: Σήματα εμπειρίας, εξειδίκευσης, αυθεντίας και αξιοπιστίας. Υπογραφή άρθρων από τον γιατρό, βιογραφικό με άδεια και παραπομπές σε αξιόπιστες πηγές.
+
+### Τοπικό SEO Θεσσαλονίκη - Οδηγός για Επιχειρήσεις 2026
+- **URL:** https://anotherseoguru.com/el/blog/topiko-seo-thessaloniki
+- **Locale:** el · **Date:** 2026-07-07
+- **Description:** Πώς μια επιχείρηση στη Θεσσαλονίκη κυριαρχεί στις τοπικές αναζητήσεις. Google Business Profile, τοπικές σελίδες και στρατηγική SEO με χαμηλότερο κόστος από την Αθήνα.
+- **Embedded FAQ:**
+  - Q: Σε πόσο καιρό φέρνει αποτέλεσμα το τοπικό SEO στη Θεσσαλονίκη;
+    A: Λόγω χαμηλότερου ανταγωνισμού από την Αθήνα, οι πρώτες τοπικές κατατάξεις έρχονται συχνά σε 2–3 μήνες για σωστά στοχευμένες υπηρεσίες και περιοχές.
+  - Q: Χρειάζομαι νέα ιστοσελίδα για τοπικό SEO στη Θεσσαλονίκη;
+    A: Αν το site είναι αργό ή δεν είναι mobile-friendly, ναι - είναι προϋπόθεση. Οι τοπικές αναζητήσεις γίνονται κυρίως από κινητό με πρόθεση κλήσης.
+  - Q: Πόσο κοστίζει το τοπικό SEO στη Θεσσαλονίκη;
+    A: Για μία περιοχή και μία κύρια υπηρεσία, το Starter (€299/μήνα) συχνά αρκεί. Πολλαπλά σημεία ή πολύ ανταγωνιστικοί κλάδοι χρειάζονται Growth (€599/μήνα).
+  - Q: Αρκεί μόνο το Google Business Profile;
+    A: Το GBP είναι κρίσιμο για το map pack, αλλά χωρίς τοπικές σελίδες, ταχύτητα και κριτικές η ανάπτυξη σταματά. Χρειάζεστε ολοκληρωμένο τοπικό stack.
+  - Q: Ποιες περιοχές της Θεσσαλονίκης αξίζει να στοχεύσω;
+    A: Κέντρο, Καλαμαριά, Τούμπα, Εύοσμος, Πυλαία και άλλες ζώνες με πραγματική παρουσία ή εξυπηρέτηση - όχι copy-paste σελίδες μόνο με αλλαγή ονόματος.
+
+### Ανασχεδιασμός Ιστοσελίδας Χωρίς να Χάσετε το SEO σας
+- **URL:** https://anotherseoguru.com/el/blog/anasxediasmos-istoselidas
+- **Locale:** el · **Date:** 2026-07-06
+- **Description:** Πότε χρειάζεται ανασχεδιασμός ιστοσελίδας, πόσο κοστίζει και πώς γίνεται με ασφαλές SEO migration ώστε να μη χαθούν κατατάξεις και οργανική κίνηση.
+- **Embedded FAQ:**
+  - Q: Θα χάσω κατατάξεις κατά τον ανασχεδιασμό;
+    A: Με σωστό migration, η βύθιση περιορίζεται σε λίγες θέσεις για 1–2 εβδομάδες και συχνά ακολουθεί άνοδος, γιατί το νέο site είναι ταχύτερο και καλύτερα δομημένο.
+  - Q: Πόσο κοστίζει ο ανασχεδιασμός ιστοσελίδας;
+    A: Συνήθως €899–€2.999 ανάλογα με το μέγεθος, γιατί περιλαμβάνει και τη μεταφορά του SEO ιστορικού. Οι φθηνοί ανασχεδιασμοί χωρίς migration κοστίζουν περισσότερο σε χαμένη κίνηση.
+  - Q: Μπορώ να κρατήσω το ίδιο domain;
+    A: Ναι - και πρέπει. Το domain κουβαλά την αξιοπιστία σας. Αλλαγή domain μαζί με ανασχεδιασμό είναι διπλό ρίσκο και θέλει ειδικό χειρισμό.
+  - Q: Ανασχεδιασμός ή νέο site από το μηδέν;
+    A: Αν το site έχει οργανική κίνηση, ανασχεδιασμός με migration. Αν είναι αόρατο στη Google και τεχνικά προβληματικό, νέα κατασκευή είναι συχνά πιο καθαρή λύση.
+  - Q: Πόσο διαρκεί ένας ασφαλής ανασχεδιασμός;
+    A: Τυπικά 3–6 εβδομάδες μετά την απογραφή και το redirect map, ανάλογα με αριθμό σελίδων, γλώσσες και πολυπλοκότητα booking/e-shop.
+
+### E-commerce Website Cost & Build Guide (2026)
+- **URL:** https://anotherseoguru.com/en/blog/ecommerce-website-cost-guide
+- **Locale:** en · **Date:** 2026-07-06
+- **Description:** What an e-shop costs to build in 2026, WooCommerce vs Shopify, and what to get right on payments, shipping, and SEO so your store sells from day one.
+- **Embedded FAQ:**
+  - Q: How much does an e-commerce website cost in 2026?
+    A: A basic store up to ~100 products typically costs €1,800–€2,500, mid-tier with many categories and integrations €2,500–€4,000, and complex B2B or multilingual builds €4,000+. Our Professional package (€1,799) plus e-commerce setup is a common starting point.
+  - Q: WooCommerce or Shopify - which should I choose?
+    A: For most businesses that want full ownership and SEO control, WooCommerce. Shopify suits fast launches if you accept monthly fees, transaction costs, and URL-structure limits.
+  - Q: How long does an e-shop take to build?
+    A: A basic e-shop: 4–6 weeks once products, photos, and copy exist. The usual delay is product content, not development.
+  - Q: I have a store that doesn't sell - rebuild or fix?
+    A: If the base is healthy (WooCommerce, sensible structure), e-shop SEO and conversion work often suffice. If it is on a closed platform or technically broken, redesign with migration is cleaner.
+  - Q: How will the e-shop get customers?
+    A: A mix: SEO for categories and products for steady organic flow, Google Shopping/Ads for instant sales, and email for repeat orders.
+
+### GEO Agency Ελλάδα - Ορατότητα σε AI
+- **URL:** https://anotherseoguru.com/el/blog/geo-agency-ellada
+- **Locale:** el · **Date:** 2026-07-06
+- **Description:** GEO agency στην Ελλάδα για ChatGPT, Perplexity και Gemini. Τι να ζητήσετε, κόστος από €599/μήνα και πώς μετράτε AI citations. Δωρεάν έλεγχος ορατότητας.
+- **Embedded FAQ:**
+  - Q: Τι κάνει ένα GEO agency;
+    A: Ελέγχει την AI ορατότητά σας, δομεί περιεχόμενο για ChatGPT/Perplexity/Gemini, χτίζει οντότητες με schema και μετρά citations - ώστε να εμφανίζεστε όταν οι πελάτες ρωτούν για τον κλάδο σας.
+  - Q: Πόσο κοστίζει το GEO στην Ελλάδα;
+    A: Συνήθως ως μέρος πακέτου SEO. Στην AnotherSEOGuru περιλαμβάνεται στα Growth (€599/μήνα) και Scale (€999/μήνα). Αυτόνομα GEO audits από €300–500.
+  - Q: Μπορώ να κάνω GEO χωρίς SEO;
+    A: Όχι ουσιαστικά. Τα AI μοντέλα αντλούν από τις ίδιες σελίδες που κατατάσσει η Google. GEO χωρίς γερό SEO είναι σκεπή χωρίς τοίχους.
+  - Q: Τι είναι το AEO και πώς διαφέρει από το GEO;
+    A: Το AEO στοχεύει έτοιμες απαντήσεις (featured snippets, AI Overviews), ενώ το GEO τις παραπομπές μέσα σε chatbots. Στην πράξη δουλεύονται μαζί.
+  - Q: Πώς ξέρω αν ένα GEO agency είναι σοβαρό;
+    A: Ζητήστε screenshots citations πελατών, σταθερή βιβλιοθήκη prompts, reporting με trends - όχι εγγυήσεις «AI rank
 
 ### Gym & Fitness SEO - Fill Your Gym from Google
 - **URL:** https://anotherseoguru.com/en/blog/gym-fitness-seo
-- **Locale:** en · **Date:** 2026-08-19
+- **Locale:** en · **Date:** 2026-07-06
 - **Description:** Local SEO for gyms, studios and personal trainers - win the Google map pack, rank per program, and turn “gym near me” searches into new memberships.
 - **Embedded FAQ:**
   - Q: I already have Instagram - do I still need gym SEO?
@@ -1342,7 +1538,7 @@ All Greek cities below are indexable for service×location pages. Pattern: `/el/
 
 ### Hotel SEO - How to Win Direct Bookings in 2026
 - **URL:** https://anotherseoguru.com/en/blog/hotel-seo-guide
-- **Locale:** en · **Date:** 2026-08-19
+- **Locale:** en · **Date:** 2026-07-06
 - **Description:** A practical hotel SEO guide - cut OTA commissions, rank in Google, and win direct bookings with technical SEO, destination content, and AI search visibility.
 - **Embedded FAQ:**
   - Q: Can I do hotel SEO while listing on Booking.com?
@@ -1358,7 +1554,7 @@ All Greek cities below are indexable for service×location pages. Pattern: `/el/
 
 ### Hotel Website Design - Turn Visitors into Direct Bookings
 - **URL:** https://anotherseoguru.com/en/blog/hotel-website-design
-- **Locale:** en · **Date:** 2026-08-19
+- **Locale:** en · **Date:** 2026-07-06
 - **Description:** What a hotel website needs in 2026 - fast mobile UX, a booking engine, room pages, multilingual SEO, and schema - to cut OTA commissions and win direct bookings.
 - **Embedded FAQ:**
   - Q: How much does a hotel website cost?
@@ -1374,7 +1570,7 @@ All Greek cities below are indexable for service×location pages. Pattern: `/el/
 
 ### How Much Does a Website Cost in 2026? Full Pricing Guide
 - **URL:** https://anotherseoguru.com/en/blog/how-much-does-a-website-cost
-- **Locale:** en · **Date:** 2026-08-19
+- **Locale:** en · **Date:** 2026-07-06
 - **Description:** What a website really costs in 2026 - business sites, e-shops, and hotel websites - plus the hidden costs of hosting, content, and SEO. Transparent EUR pricing.
 - **Embedded FAQ:**
   - Q: How much does a website cost in 2026?
@@ -1390,7 +1586,7 @@ All Greek cities below are indexable for service×location pages. Pattern: `/el/
 
 ### How Much Does SEO Cost in 2026? Prices & Packages Explained
 - **URL:** https://anotherseoguru.com/en/blog/how-much-does-seo-cost
-- **Locale:** en · **Date:** 2026-08-19
+- **Locale:** en · **Date:** 2026-07-06
 - **Description:** A clear breakdown of SEO pricing in 2026 - monthly retainers, one-off audits, what packages include, and how to avoid the cheap-SEO trap. EUR pricing, no fluff.
 - **Embedded FAQ:**
   - Q: How much does SEO cost in 2026?
@@ -1404,57 +1600,9 @@ All Greek cities below are indexable for service×location pages. Pattern: `/el/
   - Q: How long until SEO pays off?
     A: Low-competition local searches: 2–3 months. Competitive national keywords: 4–6+ months. SEO compounds - each month builds on the last.
 
-### How to Increase Organic Traffic (Practical Playbook)
-- **URL:** https://anotherseoguru.com/en/blog/how-to-increase-organic-traffic
-- **Locale:** en · **Date:** 2026-08-19
-- **Description:** How to grow organic traffic - more impressions, better CTR, technical fixes, content, and links - with a realistic timeline and 2026 checklist.
-- **Embedded FAQ:**
-  - Q: How to increase organic traffic?
-    A: Win more impressions by covering the right topics, improve CTR with better titles, fix indexation issues, and build internal links from strong pages. Compound with consistent publishing and relevant links.
-  - Q: What is organic traffic?
-    A: Organic traffic is visits from unpaid search results (and increasingly AI referrals that cite your pages). It excludes paid ads, email, and most social clicks.
-  - Q: How long does it take to grow organic traffic?
-    A: Local and long-tail pages often move in 2–3 months. Competitive head terms usually need 4–6+ months of content, technical fixes and authority. Gains compound month over month.
-  - Q: Why did my organic traffic drop?
-    A: Common causes include algorithm updates, lost backlinks, indexation bugs, cannibalization, site migrations without redirects, or seasonality. Audit Search Console before rewriting everything.
-  - Q: What budget grows organic traffic meaningfully?
-    A: Serious work in Greece typically runs €299–€999 per month depending on competition. One-off audits often cost €300–€800 before a retainer starts.
-
-### Internal Linking Audit Checklist for In-House SEO Teams
-- **URL:** https://anotherseoguru.com/en/blog/internal-linking-audit-checklist
-- **Locale:** en · **Date:** 2026-08-19
-- **Description:** Find orphan pages, over-linked footers, and anchor text patterns that waste crawl budget - with a pragmatic fix order for tourism and local sites.
-- **Embedded FAQ:**
-  - Q: How many internal links per page?
-    A: No fixed limit - prioritize relevance. Long guides may have 10–20 contextual links; short pages need fewer. Avoid footer spam.
-  - Q: Should I link to external sites?
-    A: Yes - authoritative outbound links support E-E-A-T. Link to tourism boards, official airport sites, medical sources as appropriate.
-  - Q: Do internal links pass PageRank?
-    A: Google uses links to understand importance and discovery. Internal links distribute signals within your site - link equity concepts still apply internally.
-  - Q: Can I automate internal linking?
-    A: Plugins and rules help at scale - but review for relevance. Automated "related posts" often link irrelevant URLs.
-  - Q: How do I measure impact?
-    A: Compare GSC clicks on target URLs 4–8 weeks post-fix. Track orphan count monthly.
-
-### SEO Ιστοσελίδας Ενοικίασης Αυτοκινήτου - Οδηγός 2026
-- **URL:** https://anotherseoguru.com/el/blog/istoselida-enikiasis-autokinitou-seo
-- **Locale:** el · **Date:** 2026-08-19
-- **Description:** Πώς να βελτιστοποιήσετε την ιστοσελίδα ενοικίασης αυτοκινήτου για τη Google. Λέξεις-κλειδιά αεροδρομίων, λιμανιών, τοπικό SEO, πίνακας κόστους και checklist για άμεσες κρατήσεις.
-- **Embedded FAQ:**
-  - Q: Πόσος χρόνος χρειάζεται για κατάταξη σε «rent a car Mykonos»;
-    A: Σε πολύ ανταγωνιστικούς προορισμούς 6–12 μήνες. Σε νησιά με μικρότερο ανταγωνισμό, συχνά 8–16 εβδομάδες με συστηματική δουλειά.
-  - Q: Χρειάζομαι ξεχωριστή σελίδα για κάθε νησί ή αεροδρόμιο;
-    A: Ναι, εφόσον διατηρείτε σταθμό εξυπηρέτησης εκεί. Κάθε σελίδα πρέπει να έχει μοναδικό περιεχόμενο και οδηγίες παραλαβής - όχι copy-paste.
-  - Q: Πόσο κοστίζει το SEO για rent-a-car;
-    A: Τυπικά €299–€599/μήνα για τοπικό/νησιωτικό ανταγωνισμό. Πολυνησιωτικά brands με EN/DE στόχευση συχνά Growth ή Scale (€599–€999/μήνα).
-  - Q: Μπορώ να μειώσω τις προμήθειες aggregators με SEO;
-    A: Ναι. Όταν ανεβαίνει το ποσοστό άμεσων κρατήσεων από το site σας, μειώνεται η εξάρτηση από metasearch που χρεώνουν 20–30%.
-  - Q: Τι μετράει περισσότερο - στόλος ή τοποθεσίες;
-    A: Και τα δύο, αλλά οι location pages (αεροδρόμιο/λιμάνι) συχνά φέρνουν τις υψηλότερης πρόθεσης κρατήσεις. Ο στόλος κλείνει τη σύγκριση τιμής/τύπου.
-
 ### Κατασκευή E-shop από €1.799
 - **URL:** https://anotherseoguru.com/el/blog/kataskevi-eshop-odigos
-- **Locale:** el · **Date:** 2026-08-19
+- **Locale:** el · **Date:** 2026-07-06
 - **Description:** Κατασκευή e-shop WooCommerce στην Ελλάδα από €1.799. Πληρωμές, courier, myDATA και SEO κατηγοριών για να πουλάει από την 1η μέρα. Δείτε τιμές.
 - **Embedded FAQ:**
   - Q: Πόσο κοστίζει η κατασκευή e-shop στην Ελλάδα;
@@ -1474,41 +1622,9 @@ All Greek cities below are indexable for service×location pages. Pattern: `/el/
   - Q: Πώς θα φέρει πελάτες το e-shop;
     A: Με συνδυασμό - SEO κατηγοριών και προϊόντων για σταθερή οργανική ροή, Google Shopping/Ads για άμεσες πωλήσεις και email marketing για επαναγορές. Το SEO είναι ο φθηνότερος μακροπρόθεσμα, οι διαφημίσεις ο ταχύτερος βραχυπρόθεσμα.
 
-### Κατασκευή Ιστοσελίδας Ξενοδοχείου
-- **URL:** https://anotherseoguru.com/el/blog/kataskevi-istoselidas-xenodoxeia
-- **Locale:** el · **Date:** 2026-08-19
-- **Description:** Κατασκευή ιστοσελίδας για ξενοδοχεία με direct bookings και SEO. Μείωση προμηθειών OTA, Google Maps και κρατήσεις από €1.799. Δείτε τι περιλαμβάνει.
-- **Embedded FAQ:**
-  - Q: Πόσο κοστίζει ιστοσελίδα ξενοδοχείου;
-    A: Τυπικά €1.500–€3.500 για site με κρατήσεις. Στα πακέτα μας, Professional (€1.799) ή Business (€2.999) καλύπτουν τις περισσότερες μονάδες, με SEO θεμέλια από την 1η μέρα.
-  - Q: Γιατί να επενδύσω σε direct bookings;
-    A: Κάθε κράτηση μέσω Booking/Expedia κοστίζει 15–25% προμήθεια. Άμεσες κρατήσεις από το δικό σας site μειώνουν το κόστος και σας δίνουν τον πελάτη.
-  - Q: Χρειάζομαι booking engine;
-    A: Ναι αν θέλετε πραγματικές απευθείας κρατήσεις. Εναλλακτικά, φόρμα διαθεσιμότητας + WhatsApp μπορεί να αρκεί για μικρές μονάδες - το σχεδιάζουμε μαζί σας.
-  - Q: Μπορεί η ιστοσελίδα μου να ανταγωνιστεί το Booking.com στο SEO;
-    A: Σε γενικούς όρους είναι δύσκολο, αλλά σε brand και long-tail (π.χ. luxury suites με ιδιωτική πισίνα) η δική σας ιστοσελίδα μπορεί να κατακτήσει την πρώτη θέση.
-  - Q: Πόσο διαρκεί η κατασκευή ιστοσελίδας ξενοδοχείου;
-    A: Συνήθως 3–5 εβδομάδες μόλις είναι έτοιμες φωτογραφίες, περιγραφές δωματίων και πολιτικές. Το περιεχόμενο είναι ο συνηθέστερος λόγος καθυστέρησης.
-
-### How to Do Keyword Research for SEO (Step-by-Step)
-- **URL:** https://anotherseoguru.com/en/blog/keyword-research-guide
-- **Locale:** en · **Date:** 2026-08-19
-- **Description:** A practical keyword research process for SEO - seeds, intent, clustering, and prioritization - plus free tools to find SEO keywords that convert.
-- **Embedded FAQ:**
-  - Q: How do you do keyword research for SEO?
-    A: Start from seed topics, expand with related terms and questions, group by search intent, then prioritize by volume, difficulty, and business value. Map one primary keyword per page.
-  - Q: What are SEO keywords?
-    A: SEO keywords are the words and phrases people type into search engines. Good research matches those phrases to pages that can convert.
-  - Q: What are the 4 types of keywords for SEO?
-    A: Informational, navigational, commercial, and transactional. Local modifiers often cut across commercial and transactional intent.
-  - Q: How many keywords should one page target?
-    A: One primary intent plus natural variants in headings and FAQs - not a stuffed list of unrelated phrases.
-  - Q: How often should you refresh keyword research?
-    A: Quarterly for competitive niches, and after every major product, location, or seasonality change. Always reconcile with fresh Search Console data.
-
 ### Law Firm SEO - How Attorneys Win Cases from Google
 - **URL:** https://anotherseoguru.com/en/blog/law-firm-seo
-- **Locale:** en · **Date:** 2026-08-19
+- **Locale:** en · **Date:** 2026-07-06
 - **Description:** A practical SEO guide for law firms and attorneys - local targeting, practice-area pages, trust-building content, and the technical basics that bring cases.
 - **Embedded FAQ:**
   - Q: How long until a law firm sees cases from Google?
@@ -1522,183 +1638,9 @@ All Greek cities below are indexable for service×location pages. Pattern: `/el/
   - Q: Is SEO compliant for legal advertising?
     A: SEO is typically the most compatible channel because you answer people already searching for help. Still follow bar advertising rules, avoid guarantees, and keep claims evidence-based.
 
-### Λέξεις-Κλειδιά SEO - Πώς να Βρείτε Τι Ψάχνει το Κοινό σας
-- **URL:** https://anotherseoguru.com/el/blog/lexeis-kleidia-seo
-- **Locale:** el · **Date:** 2026-08-19
-- **Description:** Οδηγός έρευνας λέξεων-κλειδιών SEO στην Ελλάδα. Πρόθεση αναζήτησης, long-tail, εργαλεία και πώς να χαρτογραφήσετε όρους σε σελίδες.
-- **Embedded FAQ:**
-  - Q: Τι είναι οι λέξεις-κλειδιά στο SEO;
-    A: Είναι οι όροι που πληκτρολογούν οι χρήστες στη Google. Η έρευνα λέξεων-κλειδιών δείχνει τι ψάχνουν, πόσο συχνά και με ποια πρόθεση - ώστε κάθε σελίδα να στοχεύει μια πραγματική αναζήτηση.
-  - Q: Ποιες λέξεις-κλειδιά να στοχεύσω πρώτα;
-    A: Ξεκινήστε από εμπορικές και τοπικές long-tail με σαφή πρόθεση αγοράς (π.χ. «πόσο κοστίζει το SEO», «δικηγόρος Αθήνα»), όχι μόνο από γενικούς όρους υψηλού όγκου όπως «SEO».
-  - Q: Πού βρίσκω δεδομένα λέξεων-κλειδιών;
-    A: Ξεκινήστε από Google Search Console (τι ήδη σας δείχνει), συμπληρώστε με Keyword Planner / Ahrefs και τις προτάσεις της ίδιας της Google (PAA, related searches).
-  - Q: Πόσες λέξεις-κλειδιά στοχεύει μία σελίδα;
-    A: Μία κύρια πρόθεση συν φυσικές παραλλαγές σε επικεφαλίδες και FAQ - όχι stuffed λίστα άσχετων φράσεων.
-  - Q: Πόσο συχνά ανανεώνω την έρευνα;
-    A: Κάθε τρίμηνο σε ανταγωνιστικά niches, και μετά από μεγάλες αλλαγές προϊόντος, τοποθεσίας ή σεζόν. Πάντα με νέα δεδομένα GSC.
-
-### Link Building Guide - Earn Authority Without Spam
-- **URL:** https://anotherseoguru.com/en/blog/link-building-guide
-- **Locale:** en · **Date:** 2026-08-19
-- **Description:** What link building is, how it works in modern SEO, white-hat tactics, realistic costs and timelines, and how professional link building services should run.
-- **Embedded FAQ:**
-  - Q: What is link building?
-    A: Link building is earning hyperlinks from other sites to yours. Quality and relevance matter more than volume - one editorial link from a trusted site beats dozens of spam directories.
-  - Q: How many backlinks do I need?
-    A: There is no magic number. Compete against the sites already ranking for your query - match relevance and authority, then exceed them with better pages.
-  - Q: Is paid link building safe?
-    A: Paying for pure PageRank manipulation violates Google guidelines. Paying for content production, digital PR and legitimate sponsorships with editorial standards is different - transparency and relevance are non-negotiable.
-  - Q: How much does link building cost in Greece?
-    A: White-hat campaigns typically run €400–€1,500+ per month depending on niche difficulty, or sit inside Growth/Scale SEO retainers (€599–€999+/mo). Cheap “50 links for €99” packages are almost always spam.
-  - Q: Do you guarantee rankings from links?
-    A: No ethical provider does. Guarantees process quality, relevance and reporting - not a specific Google position.
-
-### LLM Citations and Brand Visibility - A Sober Measurement Guide
-- **URL:** https://anotherseoguru.com/en/blog/llm-citations-brand-visibility
-- **Locale:** en · **Date:** 2026-08-19
-- **Description:** What "being cited by AI" means, how to sample responsibly, and how to connect efforts to real business outcomes.
-- **Embedded FAQ:**
-  - Q: How is LLM visibility different from featured snippets?
-    A: Featured snippets are Google's direct answers with known SERP tracking. LLM citations happen across multiple models with less transparency. Optimize for both with FAQ-rich, factual content.
-  - Q: Should I pay for "AI SEO" tools?
-    A: Evaluate tools on workflow value - prompt batching, logging, trend charts - not magic scores. Ground decisions in Search Console and bookings.
-  - Q: Do AI models use my site in real time?
-    A: Some products retrieve live web results; others rely on training data and retrieval indexes. Behavior varies by model and query - log version and date every sample.
-  - Q: Can negative AI mentions hurt my brand?
-    A: Inaccurate paraphrases happen. Monitor accuracy, publish corrections on-site, and strengthen entity signals. You cannot delete model outputs, but you can improve source material.
-  - Q: Where do I start?
-    A: Run a 20-prompt baseline. Fix top three on-site gaps - About, FAQ, service clarity. Re-sample in 30 days and connect gaps to content tickets.
-
-### The Ultimate Guide to Local SEO for Home Services
-- **URL:** https://anotherseoguru.com/en/blog/local-seo-guide
-- **Locale:** en · **Date:** 2026-08-19
-- **Description:** How plumbers, HVAC techs, contractors, hotels, and rent-a-car operators can dominate Google Maps. Stop buying leads and start owning them.
-- **Embedded FAQ:**
-  - Q: What is local SEO?
-    A: Local SEO is how you rank in Google’s map pack and local results for “near me” and city searches. It centers on Google Business Profile, NAP consistency, reviews, local pages, and citations.
-  - Q: Does local SEO still work?
-    A: Yes. Map pack and “near me” searches remain high-intent. Complete profiles, recent reviews, and unique location pages still beat generic national sites for local demand.
-  - Q: How much does local SEO cost?
-    A: Retainers depend on competition and number of locations. Most small businesses start with a focused GBP + citations + location pages package, then scale monthly content and reviews.
-  - Q: How to do local SEO for beginners?
-    A: Claim and fully complete Google Business Profile, match NAP everywhere, collect recent reviews, build one strong location/service page, and track calls or directions.
-
-### Medical SEO - The Ultimate Guide for Growing Your Practice
-- **URL:** https://anotherseoguru.com/en/blog/medical-marketing
-- **Locale:** en · **Date:** 2026-08-19
-- **Description:** SEO for doctors, surgeons, and med spas - YMYL, E-E-A-T, local patient intent, and compliance-friendly content patterns that earn trust and rankings.
-- **Embedded FAQ:**
-  - Q: Is medical SEO different from local SEO?
-    A: It layers YMYL and E-E-A-T requirements on top of local fundamentals - Google Business Profile, citations, and location pages. The local playbook still applies; the content and compliance bar is higher.
-  - Q: Can AI write medical content for SEO?
-    A: AI drafts can accelerate production but require clinician review before publish. Unreviewed AI content is a YMYL risk and can damage trust and rankings.
-  - Q: How long until medical SEO shows results?
-    A: Competitive metros often need 6–12 months for procedure keywords. Long-tail education content can rank in 8–16 weeks with strong E-E-A-T signals.
-  - Q: Do med spas follow the same SEO rules as clinics?
-    A: Yes - injectables and device treatments fall under YMYL. Marketing claims must align with regional advertising rules and platform policies.
-  - Q: Should medical practices blog?
-    A: Yes - educational content builds authority, internal links, and AEO eligibility when it is medically accurate and professionally reviewed.
-
-### Off-Page SEO - Links, Mentions & Reputation
-- **URL:** https://anotherseoguru.com/en/blog/off-page-seo
-- **Locale:** en · **Date:** 2026-08-19
-- **Description:** What off-page SEO is, how it differs from on-page, and practical ways to improve authority without spammy links - with costs, timelines and a 2026 checklist.
-- **Embedded FAQ:**
-  - Q: What is off-page SEO?
-    A: Off-page SEO is signals earned outside your site - mainly backlinks, brand mentions, and reputation. It supports pages that already deserve to rank on-page.
-  - Q: How to improve off-page SEO?
-    A: Earn relevant editorial links, clean up toxic spam, strengthen brand mentions, and keep Google Business Profile and reviews healthy for local queries.
-  - Q: Is off-page SEO the same as link building?
-    A: Link building is the core tactic inside off-page SEO, but off-page also includes brand mentions, digital PR, reviews and local citations.
-  - Q: How much does off-page SEO cost?
-    A: Professional white-hat outreach in Greece often sits inside Growth or Scale retainers (€599–€999+/mo) or as scoped campaigns from roughly €400–€1,500+ per month depending on niche difficulty.
-  - Q: Can bad off-page SEO hurt rankings?
-    A: Yes. Spam networks, irrelevant paid links and sudden unnatural spikes can trigger manual or algorithmic distrust. Quality and relevance beat volume every time.
-
-### On-Page SEO - How to Optimize a Page That Ranks
-- **URL:** https://anotherseoguru.com/en/blog/on-page-seo
-- **Locale:** en · **Date:** 2026-08-19
-- **Description:** What on-page SEO is and how to do it - titles, headings, content, internal links, schema and a practical 2026 checklist with costs and timelines.
-- **Embedded FAQ:**
-  - Q: What is on-page SEO?
-    A: On-page SEO is optimizing titles, headings, content, internal links, and media on a URL so it clearly matches search intent and earns clicks.
-  - Q: How to do on-page SEO?
-    A: Pick one primary intent, put the keyword in the title and H1 naturally, answer the query early, use clear H2s for related questions, add internal links, and improve CTR with a compelling meta description.
-  - Q: On-page vs technical SEO?
-    A: Technical SEO covers crawl, indexation, speed and architecture. On-page SEO covers relevance and clarity of the content on the URL. You need both.
-  - Q: How long does on-page SEO take to work?
-    A: CTR and clarity fixes on already-indexed pages can move within 2–6 weeks. New or heavily rewritten pages often need 1–3 months to stabilize, longer in competitive niches.
-  - Q: How much does on-page optimization cost?
-    A: Page rewrites often run €150–€450 per URL depending on research depth. Ongoing on-page work is usually included in retainers from €299/mo.
-
-### Agency Playbooks - Delivery, Reporting, and Scaling Client SEO
-- **URL:** https://anotherseoguru.com/en/blog/pillar-agency-playbooks
-- **Locale:** en · **Date:** 2026-08-19 · pillar hub
-- **Description:** Hub for operators running retainers - scoping, narrative reporting, and when software augments headcount.
-- **Embedded FAQ:**
-  - Q: What's a healthy agency client retention?
-    A: When you ship visible work monthly and reports tie to their KPIs - 12–24 month tourism retainers are common with seasonal flex.
-  - Q: Should agencies guarantee rankings?
-    A: No - guarantee process: weekly ops, shipped fixes, transparent reporting. Rankings follow; guarantees create bad incentives.
-  - Q: How do I pitch GEO/AEO without hype?
-    A: Use LLM citations guide framing - directional sampling, not fake scores.
-  - Q: White-label vs co-branded delivery?
-    A: White-label software dashboards; co-branded thought leadership builds your authority. Match client preference.
-  - Q: When to refer a project instead of taking it?
-    A: YMYL without compliance reviewer, markets outside your expertise, clients who won't grant GSC access.
-
-### AI & LLM Visibility - Measure What Models Say About Your Brand
-- **URL:** https://anotherseoguru.com/en/blog/pillar-ai-llm-visibility
-- **Locale:** en · **Date:** 2026-08-19 · pillar hub
-- **Description:** Pillar hub for generative search, citation tracking, and building content that earns mentions in AI answers - responsibly.
-- **Embedded FAQ:**
-  - Q: How is LLM visibility different from SEO?
-    A: SEO measures rankings and clicks in search engines. LLM visibility measures whether AI assistants mention or cite your brand for category prompts. The levers overlap - clear content, strong entities, authoritative links - but the metrics differ.
-  - Q: Should tourism brands prioritize GEO over local SEO?
-    A: No. Map pack and organic traffic still drive most bookings for hotels and rent-a-car. GEO is additive. Fix GBP, citations, and location pages first; layer LLM tracking second.
-  - Q: How often should we sample LLM outputs?
-    A: Monthly for trend reporting; weekly for active campaigns or launches. Use the same prompts each time for comparability.
-  - Q: Can AI-written content improve LLM visibility?
-    A: Only if edited for accuracy and entity clarity. Unedited AI fluff rarely earns citations and can harm E-E-A-T. Use AI for drafts and scaling - not for publishing unchecked claims.
-  - Q: Where do I start if I've never tracked this before?
-    A: Run a 20-prompt baseline across ChatGPT, Perplexity, and Gemini. Fix the top three on-site gaps (about page, FAQ, service clarity). Re-sample in 30 days.
-
-### Search Console Mastery - From Raw Data to a Weekly SEO System
-- **URL:** https://anotherseoguru.com/en/blog/pillar-search-console-mastery
-- **Locale:** en · **Date:** 2026-08-19 · pillar hub
-- **Description:** Hub for editorial content on Google Search Console - queries, pages, debugging, and turning exports into prioritized work.
-- **Embedded FAQ:**
-  - Q: How often should I check Search Console?
-    A: Weekly one-hour ops minimum; daily during launch weeks or algorithm turbulence.
-  - Q: Why don't GSC clicks match Analytics?
-    A: Different attribution, sampling, and URL grouping. Directional alignment matters more than pixel match.
-  - Q: Should I separate properties by subdomain?
-    A: Prefer verified domain property when possible; segment by subdirectory in reports. Hreflang sites need careful URL inspection.
-  - Q: What's the first fix for new tourism sites?
-    A: Indexation and money page clicks - ensure location and fleet/room pages are indexed and linked from homepage.
-  - Q: When do I need agency help with GSC?
-    A: When backlog exceeds 8 weeks, redesign migration pending, or multi-property clustering exceeds team capacity - get scoped.
-
-### Technical SEO for In-House Teams - Audits, Priorities, and Buy-In
-- **URL:** https://anotherseoguru.com/en/blog/pillar-technical-seo-in-house
-- **Locale:** en · **Date:** 2026-08-19 · pillar hub
-- **Description:** Hub for crawl budget, rendering, structured data, and performance - written for teams shipping through engineering queues.
-- **Embedded FAQ:**
-  - Q: How often run full technical crawls?
-    A: Monthly for active sites; weekly after major releases. Automated monitoring daily for index coverage.
-  - Q: Next.js vs WordPress for technical SEO?
-    A: Both rank. Next.js offers performance control; WordPress requires plugin discipline. Choose based on team skills - see web design platform guide.
-  - Q: Do Core Web Vitals still matter?
-    A: Yes - ranking signal and conversion factor, especially mobile tourism traffic.
-  - Q: Should devs own structured data?
-    A: SEO defines schema map; dev implements in templates. QA validates with Rich Results Test.
-  - Q: When to hire agency for technical SEO?
-    A: Migrations, multi-language launches, indexation crises - get scoped.
-
 ### Πόσο Κοστίζει μια Ιστοσελίδα;
 - **URL:** https://anotherseoguru.com/el/blog/poso-kostizei-mia-istoselida
-- **Locale:** el · **Date:** 2026-08-19
+- **Locale:** el · **Date:** 2026-07-06
 - **Description:** Πόσο κοστίζει μια ιστοσελίδα στην Ελλάδα το 2026; Από €899 εταιρικό site έως e-shop. Πίνακας τιμών, κρυφά κόστη και διαφανή πακέτα AnotherSEOGuru.
 - **Embedded FAQ:**
   - Q: Πόσο κοστίζει μια ιστοσελίδα στην Ελλάδα το 2026;
@@ -1712,41 +1654,9 @@ All Greek cities below are indexable for service×location pages. Pattern: `/el/
   - Q: Πόσο κοστίζει η συντήρηση μετά την παράδοση;
     A: Domain €10–20/χρόνο, hosting €5–30/μήνα για τυπικό site, SSL συνήθως δωρεάν, και τεχνική συντήρηση από €199/μήνα ή ανά ώρα για ενημερώσεις, backups και ασφάλεια.
 
-### Πόσο Κοστίζει το SEO; Τιμές 2026
-- **URL:** https://anotherseoguru.com/el/blog/poso-kostizei-to-seo
-- **Locale:** el · **Date:** 2026-08-19
-- **Description:** Πόσο κοστίζει το SEO στην Ελλάδα; Πακέτα από €299/μήνα, πίνακας τιμών SEO και τι περιλαμβάνει κάθε πακέτο. Διαφανείς τιμές σε € - χωρίς κρυφές χρεώσεις.
-- **Embedded FAQ:**
-  - Q: Πόσο κοστίζει το SEO στην Ελλάδα;
-    A: Για σοβαρή δουλειά, από €250 έως €1.500+ τον μήνα ανάλογα με τον ανταγωνισμό και τους στόχους. Τα πακέτα μας είναι Starter €299/μήνα, Growth €599/μήνα και Scale €999/μήνα, πάντα σε Ευρώ και χωρίς κρυφές χρεώσεις.
-  - Q: Ποιες είναι οι τυπικές τιμές SEO στην Ελλάδα;
-    A: Τοπικές επιχειρήσεις συνήθως επενδύουν €250–€400/μήνα. Ανταγωνιστικοί κλάδοι €500–€800. E-shop και πανελλαδικά brands €900–€1.500+. Εφάπαξ audit συχνά €300–€800.
-  - Q: Γιατί το SEO είναι ακριβό;
-    A: Γιατί δεν είναι αυτοματοποιημένη αναφορά - είναι συνεχής εργασία σε τεχνικό SEO, περιεχόμενο, τοπικό προφίλ και links. Φθηνές προσφορές €80–€100/μήνα σχεδόν πάντα σημαίνουν μηδενική πραγματική εργασία ή ριψοκίνδυνες τακτικές.
-  - Q: Πόσο κοστίζει το SEO για μια μικρή επιχείρηση;
-    A: Για τοπική προβολή σε μία πόλη, ένα πακέτο των €299/μήνα συνήθως αρκεί για να δείτε ουσιαστική βελτίωση μέσα σε 3-4 μήνες.
-  - Q: Αξίζει το SEO ή να βάλω τα χρήματα σε Google Ads;
-    A: Είναι διαφορετικά εργαλεία. Τα Google Ads φέρνουν άμεση κίνηση όσο πληρώνετε, ενώ το SEO χτίζει σταθερή οργανική ροή που μένει και μακροπρόθεσμα κοστίζει λιγότερο ανά επισκέπτη.
-
-### Why we split software pricing and agency pricing (and how to choose)
-- **URL:** https://anotherseoguru.com/en/blog/pricing-page-seo-software-vs-agency
-- **Locale:** en · **Date:** 2026-08-19
-- **Description:** Clear positioning between self-serve SEO software and done-for-you retainers - reduces confusion and improves conversion quality.
-- **Embedded FAQ:**
-  - Q: Is software cheaper than agency?
-    A: Lower cash cost - higher time cost. Total cost of ownership includes your hours or opportunity cost.
-  - Q: Can I switch from software to agency mid-year?
-    A: Yes - export GSC history and backlog. Good agencies start from data.
-  - Q: Do you need agency for [GEO/AEO](/en/blog/geo-aeo-ellada)?
-    A: FAQ and entity content can be agency or in-house. LLM measurement discipline benefits from experienced guidance initially.
-  - Q: Should startups buy agency day one?
-    A: If website doesn't exist or doesn't rank - agency project often beats software alone. If learning phase - software + DIY path.
-  - Q: How do I compare agency quotes?
-    A: Same scope definition: pages delivered, GBP locations, reporting cadence, redesign inclusion. Apples-to-apples.
-
 ### Real Estate SEO - Win Listings and Buyers from Google
 - **URL:** https://anotherseoguru.com/en/blog/real-estate-seo
-- **Locale:** en · **Date:** 2026-08-19
+- **Locale:** en · **Date:** 2026-07-06
 - **Description:** SEO for real estate agencies - rank for area searches, attract sellers who want an agent, and turn Google traffic into listings and buyer enquiries.
 - **Embedded FAQ:**
   - Q: I already post to property portals - what does SEO add?
@@ -1760,25 +1670,9 @@ All Greek cities below are indexable for service×location pages. Pattern: `/el/
   - Q: Should agencies target buyers or sellers first?
     A: Both, but sellers are usually higher value. “How much is my home worth” and “estate agent + area” pages win listings - the root of agency income.
 
-### SEO Content - How to Write Pages That Rank and Convert
-- **URL:** https://anotherseoguru.com/en/blog/seo-content-guide
-- **Locale:** en · **Date:** 2026-08-19
-- **Description:** What SEO content is and how to write it - intent, structure, FAQs, proof and internal links - plus formats, costs, timelines and when to use SEO content services.
-- **Embedded FAQ:**
-  - Q: How to write SEO content?
-    A: Pick one primary intent, answer it in the first screen, use clear headings for related questions, add proof, and link to related services. Write for humans first; keywords guide structure, not stuffing.
-  - Q: What is SEO content?
-    A: SEO content answers a clear search intent with useful structure, proof, and internal links so it can rank and convert - service pages, guides, FAQs and location pages.
-  - Q: How long should SEO content be?
-    A: As long as needed to be the best answer - not an arbitrary word count. Many commercial pages win at 600–1,200 words; competitive guides often need 1,000–2,000+ with unique proof.
-  - Q: How much does SEO content cost?
-    A: In Greece, professional pages often run €150–€450 each; pillar guides €250–€700. Monthly content retainers typically start around €299–€599 depending on volume and research depth.
-  - Q: Does SEO content still matter with AI Overviews?
-    A: Yes. Clear, cited, experience-rich pages are what AI systems quote. Thin keyword dumps get ignored. Pair content with GEO/AEO practices for answer engines.
-
 ### SEO for Beginners - What It Is and How It Works (Simply)
 - **URL:** https://anotherseoguru.com/en/blog/seo-for-beginners
-- **Locale:** en · **Date:** 2026-08-19
+- **Locale:** en · **Date:** 2026-07-06
 - **Description:** What SEO is in plain English - how Google ranks pages, what keywords, on-page, technical SEO and backlinks mean, realistic costs, common mistakes, and where to start today.
 - **Embedded FAQ:**
   - Q: Can I do SEO myself?
@@ -1792,25 +1686,9 @@ All Greek cities below are indexable for service×location pages. Pattern: `/el/
   - Q: What should I do first?
     A: Set up Search Console, fix indexation and mobile speed, optimize your top 5 service pages, and complete Google Business Profile if you serve a local area.
 
-### SEO for Hotels in 2026 - Direct Bookings Without OTA Dependency
-- **URL:** https://anotherseoguru.com/en/blog/seo-for-hotels-guide
-- **Locale:** en · **Date:** 2026-08-19
-- **Description:** Practical SEO for hotels guide - room pages, schema, local search, GEO/AEO for AI trip planning, and how Greek hospitality brands win direct bookings.
-- **Embedded FAQ:**
-  - Q: What is SEO for hotels?
-    A: Hotel SEO is optimizing property websites so guests find and book rooms directly via Google and AI assistants - using room pages, schema, local SEO and content that reduces OTA dependency.
-  - Q: How long does hotel SEO take to work?
-    A: Local and branded queries can move in 2–3 months. Competitive destination terms (Santorini, Mykonos, Crete) often need 4–6+ months of content, technical fixes and authority building.
-  - Q: Do hotels need GEO / AEO as well as SEO?
-    A: Yes. Travelers increasingly ask ChatGPT and Perplexity for hotel recommendations. GEO/AEO helps your property get cited in those answers, not only classic search results.
-  - Q: How much does hotel SEO cost in Greece?
-    A: Typically €299–€999 per month depending on size, languages and destination competition. One-off technical audits often run €400–€800. Hospitality website packages start from €899.
-  - Q: Can SEO reduce OTA commission spend?
-    A: Yes, when direct bookings rise. Many properties target a 10–25% shift from OTA to direct within 6–12 months without cutting distribution channels entirely.
-
 ### SEO για Μεσιτικά Γραφεία & Ακίνητα - Οδηγός 2026
 - **URL:** https://anotherseoguru.com/el/blog/seo-gia-akinita
-- **Locale:** el · **Date:** 2026-08-19
+- **Locale:** el · **Date:** 2026-07-06
 - **Description:** Πώς μεσιτικά γραφεία στην Ελλάδα κερδίζουν εντολές και αγοραστές από τη Google. Τοπικό SEO, σελίδες περιοχών, περιεχόμενο ιδιοκτητών, πίνακας κόστους και checklist.
 - **Embedded FAQ:**
   - Q: Πόσο κοστίζει το SEO για μεσιτικό γραφείο;
@@ -1824,25 +1702,9 @@ All Greek cities below are indexable for service×location pages. Pattern: `/el/
   - Q: Αξίζει αγγλικό SEO για Golden Visa;
     A: Ναι σε τουριστικές περιοχές και αγοραστές από εξωτερικό. Χρειάζονται ξεχωριστές σελίδες με σωστά hreflang, όχι αυτόματη μετάφραση.
 
-### Τι Είναι το SEO; Οδηγός για Αρχάριους (2026)
-- **URL:** https://anotherseoguru.com/el/blog/seo-gia-arxarious
-- **Locale:** el · **Date:** 2026-08-19
-- **Description:** Τι είναι το SEO με απλά λόγια. Πώς κατατάσσει η Google, on-page, τεχνικό, off-page και τοπικό SEO, λέξεις-κλειδιά, κόστος, λάθη αρχαρίων και από πού να ξεκινήσετε στην Ελλάδα.
-- **Embedded FAQ:**
-  - Q: Τι είναι το SEO;
-    A: Το SEO (Search Engine Optimization) είναι η διαδικασία βελτιστοποίησης μιας ιστοσελίδας ώστε να εμφανίζεται ψηλότερα στα οργανικά αποτελέσματα της Google. Περιλαμβάνει τεχνικές βελτιώσεις, περιεχόμενο και εξωτερικά σήματα αξιοπιστίας.
-  - Q: Πώς λειτουργεί το SEO;
-    A: Η Google ανιχνεύει (crawling), ευρετηριάζει (indexing) και κατατάσσει (ranking) τις σελίδες σας με βάση σχετικότητα, ποιότητα, ταχύτητα και κύρος. Το SEO βελτιώνει αυτά τα σήματα.
-  - Q: Μπορώ να κάνω SEO μόνος μου;
-    A: Τα βασικά ναι - σωστοί τίτλοι, Google Business Profile, περιεχόμενο που απαντά ερωτήσεις πελατών. Το τεχνικό κομμάτι, η στρατηγική και τα links είναι εκεί που ένας συνεργάτης κάνει τη διαφορά.
-  - Q: Ποια είναι η διαφορά on-page, off-page και τεχνικού SEO;
-    A: On-page είναι ό,τι βελτιώνετε στη σελίδα (τίτλοι, περιεχόμενο, σύνδεσμοι). Τεχνικό είναι τα θεμέλια (ταχύτητα, ευρετηρίαση, schema). Off-page είναι εξωτερικά σήματα, κυρίως ποιοτικά backlinks.
-  - Q: SEO ή διαφημίσεις Google;
-    A: Διαφορετικά εργαλεία. Τα Ads φέρνουν άμεση κίνηση όσο πληρώνετε· το SEO χτίζει σταθερή οργανική ροή που μένει μακροπρόθεσμα.
-
 ### SEO για Δικηγόρους & Δικηγορικά Γραφεία - Οδηγός 2026
 - **URL:** https://anotherseoguru.com/el/blog/seo-gia-dikigorous
-- **Locale:** el · **Date:** 2026-08-19
+- **Locale:** el · **Date:** 2026-07-06
 - **Description:** Πώς ένα δικηγορικό γραφείο κερδίζει υποθέσεις από τη Google. Στρατηγική SEO για δικηγόρους στην Ελλάδα με τοπική στόχευση, περιεχόμενο, δεοντολογία και πίνακα κόστους.
 - **Embedded FAQ:**
   - Q: Πόσο κοστίζει το SEO για δικηγορικό γραφείο;
@@ -1856,25 +1718,9 @@ All Greek cities below are indexable for service×location pages. Pattern: `/el/
   - Q: Μπορώ να στοχεύσω περισσότερες από μία πόλεις;
     A: Ναι, με ξεχωριστές τοπικές σελίδες ανά πόλη και πραγματική αξία ανά σελίδα - όχι copy-paste με αλλαγμένο όνομα πόλης.
 
-### SEO για Εστιατόρια & Καφέ - Γεμίστε Τραπέζια από τη Google
-- **URL:** https://anotherseoguru.com/el/blog/seo-gia-estiatoria
-- **Locale:** el · **Date:** 2026-08-19
-- **Description:** Τοπικό SEO για εστιατόρια, καφέ και μπαρ στην Ελλάδα. Google Business Profile, μενού HTML, κριτικές, πίνακας κόστους και checklist που γεμίζει τραπέζια κάθε βράδυ.
-- **Embedded FAQ:**
-  - Q: Τι είναι το SEO για εστιατόρια;
-    A: Είναι η βελτιστοποίηση του Google Business Profile, των κριτικών και του site (μενού HTML, κρατήσεις, ταχύτητα) ώστε να εμφανίζεστε στο τοπικό pack και να γεμίζετε τραπέζια από οργανική αναζήτηση.
-  - Q: Πόσο κοστίζει το SEO για εστιατόριο;
-    A: Για ένα κατάστημα, το Starter (€299/μήνα) καλύπτει GBP, τοπικές σελίδες και περιεχόμενο. Σε ανταγωνιστικές γειτονιές ή αλυσίδες χρειάζεται Growth (€599/μήνα).
-  - Q: Έχω Instagram - χρειάζομαι SEO;
-    A: Ναι. Το Instagram κρατά επαφή με υπάρχοντες πελάτες. Η Google φέρνει νέους τη στιγμή που ψάχνουν πού θα φάνε. Είναι συμπληρωματικά κανάλια.
-  - Q: Το μενού σε PDF πειράζει;
-    A: Ναι. Η Google δεν διαβάζει εύκολα PDF και ανοίγει δύσκολα στο κινητό. Μεταφέρετέ το σε HTML με τιμές και κατηγορίες.
-  - Q: Πόσες κριτικές χρειάζομαι;
-    A: Μετράει η σταθερότητα και η βαθμολογία, όχι ένας μαγικός αριθμός. Στόχος: 2–4 νέες κριτικές τον μήνα με απαντήσεις.
-
 ### SEO για Γυμναστήρια - Γεμίστε το Γυμναστήριο από τη Google
 - **URL:** https://anotherseoguru.com/el/blog/seo-gia-gymnastiria
-- **Locale:** el · **Date:** 2026-08-19
+- **Locale:** el · **Date:** 2026-07-06
 - **Description:** Στρατηγική SEO για γυμναστήρια και στούντιο στην Ελλάδα. Τοπική προβολή, Google Maps, προγράμματα, κριτικές, εποχικό πλάνο και πίνακας κόστους για νέες εγγραφές.
 - **Embedded FAQ:**
   - Q: Πόσο κοστίζει το SEO για γυμναστήριο;
@@ -1888,41 +1734,9 @@ All Greek cities below are indexable for service×location pages. Pattern: `/el/
   - Q: Έχει νόημα σε ανταγωνιστική γειτονιά;
     A: Ναι - ειδικά εκεί. Οι περισσότεροι ανταγωνιστές έχουν ελλιπή προφίλ και sites χωρίς δομή. Με 3–4 μήνες συστηματικής δουλειάς η υπεροχή στο Maps είναι εφικτή.
 
-### SEO για Οδοντιάτρους - Γεμίστε την Ατζέντα από τη Google
-- **URL:** https://anotherseoguru.com/el/blog/seo-gia-odontiatrous
-- **Locale:** el · **Date:** 2026-08-19
-- **Description:** Στρατηγική SEO για οδοντιατρεία στην Ελλάδα. Τοπική προβολή, Google Business Profile, κριτικές, σελίδες υπηρεσιών, E-E-A-T και πίνακας κόστους για νέα ραντεβού.
-- **Embedded FAQ:**
-  - Q: Πόσο κοστίζει το SEO για οδοντιατρείο;
-    A: Για ιατρείο σε μία περιοχή, Starter €299/μήνα. Πολυϊατρεία σε Αθήνα/Θεσσαλονίκη συνήθως Growth €599/μήνα για περισσότερο περιεχόμενο και link building.
-  - Q: Πόσο γρήγορα θα δω νέα ραντεβού;
-    A: Σε μέτριο τοπικό ανταγωνισμό, 2–3 μήνες. Σε μεγάλες πόλεις με πολλά ιατρεία, υπολογίστε 4–6 μήνες για σταθερή ροή.
-  - Q: Επιτρέπεται η προβολή οδοντιατρείου μέσω SEO;
-    A: Το SEO είναι το πλέον συμβατό κανάλι: απαντάτε τεκμηριωμένα σε όσους ήδη σας αναζητούν. Το περιεχόμενο πρέπει να είναι ενημερωτικό και υπεύθυνο.
-  - Q: Χρειάζομαι ξεχωριστή σελίδα για τα εμφυτεύματα;
-    A: Ναι. Τα εμφυτεύματα έχουν δικό τους όγκο αναζήτησης και υψηλή αξία ασθενούς. Αποκλειστική σελίδα με κόστος, διαδικασία και FAQ κατατάσσεται καλύτερα.
-  - Q: Τι είναι το E-E-A-T για οδοντιάτρους;
-    A: Σήματα εμπειρίας, εξειδίκευσης, αυθεντίας και αξιοπιστίας. Υπογραφή άρθρων από τον γιατρό, βιογραφικό με άδεια και παραπομπές σε αξιόπιστες πηγές.
-
-### SEO για Ξενοδοχεία 2026 - Άμεσες Κρατήσεις χωρίς Εξάρτηση από OTAs
-- **URL:** https://anotherseoguru.com/el/blog/seo-gia-xenodoxeia-odigos-2026
-- **Locale:** el · **Date:** 2026-08-19
-- **Description:** Πρακτικός οδηγός SEO για ξενοδοχεία - σελίδες δωματίων, schema, τοπική αναζήτηση, GEO/AEO και πώς ελληνικά hospitality brands κερδίζουν direct bookings.
-- **Embedded FAQ:**
-  - Q: Τι είναι το SEO για ξενοδοχεία;
-    A: Είναι η βελτιστοποίηση της ιστοσελίδας του καταλύματος ώστε οι επισκέπτες να βρίσκουν και να κλείνουν απευθείας μέσω Google και AI βοηθών - με σελίδες δωματίων, schema, τοπικό SEO και περιεχόμενο που μειώνει την εξάρτηση από OTAs.
-  - Q: Σε πόσο καιρό φέρνει αποτέλεσμα το hotel SEO;
-    A: Τοπικές και branded αναζητήσεις συχνά σε 2–3 μήνες. Ανταγωνιστικοί προορισμοί (Σαντορίνη, Μύκονος, Κρήτη) συχνά χρειάζονται 4–6+ μήνες περιεχομένου, τεχνικών διορθώσεων και authority.
-  - Q: Χρειάζονται τα ξενοδοχεία GEO / AEO εκτός από SEO;
-    A: Ναι. Οι ταξιδιώτες ρωτούν ChatGPT και Perplexity για συστάσεις. Το GEO/AEO βοηθά το κατάλυμά σας να εμφανίζεται σε αυτές τις απαντήσεις, όχι μόνο στα κλασικά αποτελέσματα Google.
-  - Q: Πόσο κοστίζει το SEO για ξενοδοχείο στην Ελλάδα;
-    A: Τυπικά €299–€999/μήνα ανάλογα με μέγεθος, γλώσσες και ανταγωνισμό προορισμού. Εφάπαξ τεχνικό audit συχνά €400–€800. Πακέτα website ξενοδοχείου από €899.
-  - Q: Μπορώ να μειώσω τις προμήθειες OTA με SEO;
-    A: Ναι, όταν οι άμεσες κρατήσεις αυξάνονται. Πολλοί πελάτες στοχεύουν 10–25% μετατόπιση από OTA σε direct μέσα σε 6–12 μήνες, χωρίς να κόψουν τελείως τα κανάλια διανομής.
-
 ### SEO για Ξενοδοχεία - Άμεσες Κρατήσεις χωρίς Προμήθειες OTA
 - **URL:** https://anotherseoguru.com/el/blog/seo-gia-xenodoxeia
-- **Locale:** el · **Date:** 2026-08-19
+- **Locale:** el · **Date:** 2026-07-06
 - **Description:** SEO για ξενοδοχεία στην Ελλάδα: μειώστε προμήθειες OTA 15-25%, ανεβείτε στη Google και κερδίστε άμεσες κρατήσεις. Οδηγός 2026, πίνακας κόστους και checklist.
 - **Embedded FAQ:**
   - Q: Τι είναι το SEO για ξενοδοχεία;
@@ -1938,7 +1752,7 @@ All Greek cities below are indexable for service×location pages. Pattern: `/el/
 
 ### SEO ή Google Ads; Τι Συμφέρει την Επιχείρησή σας το 2026
 - **URL:** https://anotherseoguru.com/el/blog/seo-i-google-ads
-- **Locale:** el · **Date:** 2026-08-19
+- **Locale:** el · **Date:** 2026-07-06
 - **Description:** Σύγκριση SEO και Google Ads για ελληνικές επιχειρήσεις. Κόστος, ταχύτητα αποτελεσμάτων, ROI, λάθη και πότε αξίζει ο συνδυασμός 70/30 των δύο καναλιών.
 - **Embedded FAQ:**
   - Q: Μπορώ να κάνω μόνο Ads και καθόλου SEO;
@@ -1952,25 +1766,9 @@ All Greek cities below are indexable for service×location pages. Pattern: `/el/
   - Q: Ποιος πρέπει να τρέχει και τα δύο;
     A: Η στρατηγική αποδίδει όταν Ads και SEO μοιράζονται δεδομένα λέξεων-κλειδιών και landing pages. Ένας συνεργάτης (ή στενά συντονισμένες ομάδες) αποφεύγει αντικρουόμενες προσφορές και σπατάλη.
 
-### SEO Στρατηγική για Μικρές Επιχειρήσεις - Πλάνο 90 Ημερών
-- **URL:** https://anotherseoguru.com/el/blog/seo-stratigiki-mikres-epicheiriseis
-- **Locale:** el · **Date:** 2026-08-19
-- **Description:** SEO συμβουλές και στρατηγική για μικρές επιχειρήσεις στην Ελλάδα. Τι να κάνετε τις πρώτες 90 μέρες, κόστος, λάθη να αποφύγετε και πότε να προσλάβετε agency.
-- **Embedded FAQ:**
-  - Q: Από πού ξεκινά το SEO για μικρή επιχείρηση;
-    A: Από Google Business Profile (αν είστε τοπικοί), τεχνική υγεία του site, βελτιστοποίηση 5–10 σελίδων υπηρεσιών και σταθερό περιεχόμενο που απαντά ερωτήσεις πελατών - όχι από αγορά εκατοντάδων links.
-  - Q: Ποιες SEO συμβουλές αξίζουν πραγματικά;
-    A: Μία πρόθεση ανά σελίδα, μετρήστε με Search Console, απαντήστε κριτικές, βελτιώστε ταχύτητα κινητού και γράψτε για ανθρώπους. Αποφύγετε εγγυήσεις «πρώτης θέσης» και φθηνά πακέτα €80/μήνα.
-  - Q: Πότε να προσλάβω εταιρεία SEO;
-    A: Όταν δεν έχετε χρόνο για συστηματική δουλειά, όταν το site χρειάζεται τεχνικό audit, ή όταν ο ανταγωνισμός στην πόλη/κλάδο σας είναι ήδη ενεργός. Ζητήστε διαφανείς τιμές και μηνιαία deliverables.
-  - Q: Πόσο κοστίζει το SEO για μικρή επιχείρηση;
-    A: Σοβαρή δουλειά ξεκινά περίπου από €299/μήνα. One-off audit συνήθως €299–€1.200. Αποφύγετε πακέτα που υπόσχονται
-  - Q: DIY ή agency στις πρώτες 90 μέρες;
-    A: DIY για Search Console, GBP και βασικά titles. Agency όταν χρειάζεστε τεχνικό audit, συστηματικό περιεχόμενο, τοπική κάλυψη πόλεων ή links με μετρήσιμα deliverables.
-
 ### SEO vs Google Ads - Which Is Right for Your Business in 2026?
 - **URL:** https://anotherseoguru.com/en/blog/seo-vs-google-ads
-- **Locale:** en · **Date:** 2026-08-19
+- **Locale:** en · **Date:** 2026-07-06
 - **Description:** SEO or Google Ads? A clear comparison of cost, speed, ROI, common mistakes and when the 70/30 mix wins - so you invest your marketing budget where it actually pays.
 - **Embedded FAQ:**
   - Q: Can I run only Ads and skip SEO?
@@ -1984,105 +1782,9 @@ All Greek cities below are indexable for service×location pages. Pattern: `/el/
   - Q: Who should run both channels?
     A: The strategy pays off when Ads and SEO share keyword and landing-page data. One partner (or tightly aligned teams) prevents conflicting offers and wasted spend.
 
-### SEO Software, Web Design & Development Platform
-- **URL:** https://anotherseoguru.com/en/blog/seo-web-design-development-platform
-- **Locale:** en · **Date:** 2026-08-19
-- **Description:** How teams combine SEO tools, website design for rankings, and development best practices with AI search optimization (GEO/AEO) to grow revenue.
-- **Embedded FAQ:**
-  - Q: Should SEO come before or after design?
-    A: At the same time. SEO informs information architecture, URL planning, and template requirements before high-fidelity design. Bolting SEO on after development costs more and works worse.
-  - Q: Do I need custom development or is WordPress enough?
-    A: Both can rank. Custom Next.js stacks offer performance and component consistency at scale - valuable for multi-property hospitality and rent-a-car fleets. WordPress works for smaller footprints with strict maintenance discipline.
-  - Q: How do Core Web Vitals affect AI visibility?
-    A: Indirectly but meaningfully. Slow, poorly indexed pages are less likely to be retrieved and cited. Performance is a baseline eligibility factor, not a vanity metric.
-  - Q: Can one agency handle design, dev, and SEO?
-    A: Yes - if they show integrated case studies with Search Console outcomes, not only design shots. Ask for work samples with measurable search results.
-  - Q: What's the first step for a redesign without losing rankings?
-    A: Crawl the current site, map URL redirects, export top GSC pages, and lock the redirect + content migration plan before touching the new design system.
-
-### Σχεδιασμός Ιστοσελίδας Τουρισμού 2026 - Τάσεις, SEO και UX
-- **URL:** https://anotherseoguru.com/el/blog/sxediasmos-istoselidas-tourismos-2026
-- **Locale:** el · **Date:** 2026-08-19
-- **Description:** Τι αλλάζει στον σχεδιασμό ιστοσελίδας τουρισμού το 2026. Τάσεις για direct bookings, ταχύτητα, mobile εμπειρία και AI βελτιστοποίηση.
-- **Embedded FAQ:**
-  - Q: Τι είναι προτιμότερο: μινιμαλιστικό ή πλούσιο σε περιεχόμενο design;
-    A: Το πλούσιο σε περιεχόμενο design κερδίζει στο SEO και το AEO. Διατηρήστε καθαρή αισθητική με accordions και ξεκάθαρη ιεραρχία - το κείμενο πρέπει να είναι προσβάσιμο στα bots.
-  - Q: Πόσο συχνά πρέπει να γίνεται ανασχεδιασμός;
-    A: Ριζικός ανασχεδιασμός κάθε 3–4 χρόνια. Περιεχόμενο, FAQs και έλεγχοι ταχύτητας ανά τρίμηνο. Αν έχετε κατατάξεις, προτιμήστε migration - δείτε τον οδηγό ανασχεδιασμού.
-  - Q: Πόσο κοστίζει μια ιστοσελίδα τουρισμού το 2026;
-    A: Τυπικά €1.500–€3.500 για ξενοδοχείο/ενοικιάσεις με κρατήσεις, €899–€2.999 για εταιρικό τουριστικό site. Τα πακέτα Professional και Business καλύπτουν τις περισσότερες περιπτώσεις.
-  - Q: Χρειάζομαι chatbot AI στην ιστοσελίδα τουρισμού;
-    A: Όχι υποχρεωτικά την πρώτη μέρα, αλλά βοηθά σε άμεσες απαντήσεις εκτός ωραρίου. Συνδυάστε το με καθαρά FAQs και booking CTA - δείτε τον οδηγό AI chatbots στον τουρισμό.
-  - Q: Ποιες γλώσσες χρειάζομαι;
-    A: Ελληνικά και Αγγλικά είναι η βάση. Γερμανικά/Γαλλικά αξίζουν όταν στοχεύετε αγορές υψηλής αξίας - πάντα με σωστό hreflang.
-
-### Technical SEO Guide - Crawl, Index, Speed & Schema
-- **URL:** https://anotherseoguru.com/en/blog/technical-seo-guide
-- **Locale:** en · **Date:** 2026-08-19
-- **Description:** What technical SEO is, a practical 2026 checklist, Core Web Vitals, schema, common mistakes, costs and when to hire technical SEO services or run an audit.
-- **Embedded FAQ:**
-  - Q: What is technical SEO?
-    A: Technical SEO makes your site easy to crawl, index, and render - speed, mobile usability, HTTPS, sitemaps, canonicals, structured data, and clean architecture.
-  - Q: Technical SEO vs on-page SEO?
-    A: Technical SEO is how the site works for crawlers and performance. On-page SEO is how each URL’s content matches search intent. You need both.
-  - Q: Do I need a technical SEO audit?
-    A: Yes if rankings stall, pages aren’t indexed, Core Web Vitals fail, or you shipped a redesign. A technical audit finds blockers content alone cannot fix.
-  - Q: Does site speed affect rankings?
-    A: Yes as part of page experience - and it heavily affects conversion even when ranking impact is modest. Fix LCP and INP on money templates first.
-  - Q: How much does a technical SEO audit cost?
-    A: In Greece, focused technical audits typically run €299–€1,200 depending on site size and JS complexity. Fixes are scoped separately or included in retainers.
-
-### Τεχνικό SEO - Checklist για Καλύτερη Κατάταξη Google (2026)
-- **URL:** https://anotherseoguru.com/el/blog/techniko-seo
-- **Locale:** el · **Date:** 2026-08-19
-- **Description:** Τι είναι το τεχνικό SEO και πώς βελτιώνει την κατάταξη στη Google. Crawl, index, Core Web Vitals, schema, λάθη, κόστος και πρακτικό checklist για ελληνικές ιστοσελίδες.
-- **Embedded FAQ:**
-  - Q: Τι είναι το τεχνικό SEO;
-    A: Το τεχνικό SEO βελτιστοποιεί την υποδομή του site ώστε η Google να ανιχνεύει, να ευρετηριάζει και να κατανοεί τις σελίδες σας - ταχύτητα, mobile, HTTPS, sitemap, schema και καθαρή αρχιτεκτονική.
-  - Q: Πώς βοηθά το τεχνικό SEO στη βελτίωση κατάταξης Google;
-    A: Χωρίς crawl και index, το καλύτερο περιεχόμενο δεν εμφανίζεται. Τα Core Web Vitals και το mobile επηρεάζουν κατάταξη και μετατροπές. Το τεχνικό SEO αφαιρεί εμπόδια ώστε on-page και links να αποδώσουν.
-  - Q: Χρειάζομαι τεχνικό SEO audit;
-    A: Ναι αν το site είναι αργό, έχει προβλήματα ευρετηρίασης στο Search Console, ή πριν από μεγάλη επένδυση σε περιεχόμενο και backlinks. Ένα audit δίνει προτεραιοποιημένο πλάνο διορθώσεων.
-  - Q: Επηρεάζει η ταχύτητα την κατάταξη;
-    A: Ναι ως μέρος της εμπειρίας σελίδας - και επηρεάζει έντονα τις μετατροπές ακόμα κι όταν η επίδραση στην κατάταξη είναι μέτρια. Διορθώστε πρώτα LCP/INP στα templates που φέρνουν πελάτες.
-  - Q: Πόσο κοστίζει ένα τεχνικό audit;
-    A: Στην Ελλάδα, εστιασμένα τεχνικά audits συνήθως κυμαίνονται από €299 έως €1.200 ανάλογα με μέγεθος site και πολυπλοκότητα JS. Οι διορθώσεις κοστολογούνται ξεχωριστά ή εντάσσονται σε retainer.
-
-### Τοπικό SEO στις Κυκλάδες - Οδηγός για Ξενοδοχεία και Rent-a-Car
-- **URL:** https://anotherseoguru.com/el/blog/topiko-seo-kykladon
-- **Locale:** el · **Date:** 2026-08-19
-- **Description:** Πώς να ξεχωρίσετε στο Google Maps και στην οργανική αναζήτηση στις Κυκλάδες. Οδηγός για Πάρο, Μύκονο, Σαντορίνη, Νάξο με GBP, NAP και location pages.
-- **Embedded FAQ:**
-  - Q: Ποιο νησί είναι πιο εύκολο για τοπικό SEO στις Κυκλάδες;
-    A: Νησιά με χαμηλότερο ανταγωνισμό (Μήλος, Σίφνος, Τήνος, Φολέγανδρος) δίνουν πιο γρήγορα αποτελέσματα από Μύκονο και Σαντορίνη. Η στρατηγική προσαρμόζεται στη δυσκολία της αγοράς.
-  - Q: Χρειάζομαι ξεχωριστό Google Business Profile για κάθε νησί;
-    A: Ναι, εφόσον διατηρείτε φυσικό γραφείο ή σημείο εξυπηρέτησης στο συγκεκριμένο νησί. Αυτό αυξάνει κατακόρυφα την εμφάνιση στους τοπικούς χάρτες.
-  - Q: Πόσος χρόνος χρειάζεται για το Map Pack στις Κυκλάδες;
-    A: Με σωστό GBP, citations και location pages, τα πρώτα αποτελέσματα εμφανίζονται σε 8–12 εβδομάδες. Σε πολύ ανταγωνιστικά νησιά η διαδικασία μπορεί να διαρκέσει 4–6 μήνες.
-  - Q: Πρέπει το SEO να είναι πολύγλωσσο στις Κυκλάδες;
-    A: Ναι για τα περισσότερα τουριστικά brands. Ελληνικά και Αγγλικά είναι βάση· Γερμανικά/Γαλλικά όπου η ζήτηση το δικαιολογεί, πάντα με σωστό hreflang.
-  - Q: Πόσο κοστίζει το τοπικό SEO για ξενοδοχείο ή rent-a-car στις Κυκλάδες;
-    A: Τυπικά €299–€599/μήνα για ένα νησί· €599–€999+/μήνα για ανταγωνιστικούς προορισμούς ή πολλά σημεία. Δείτε τα πακέτα τιμολόγησης.
-
-### Τοπικό SEO Θεσσαλονίκη - Οδηγός για Επιχειρήσεις 2026
-- **URL:** https://anotherseoguru.com/el/blog/topiko-seo-thessaloniki
-- **Locale:** el · **Date:** 2026-08-19
-- **Description:** Πώς μια επιχείρηση στη Θεσσαλονίκη κυριαρχεί στις τοπικές αναζητήσεις. Google Business Profile, τοπικές σελίδες και στρατηγική SEO με χαμηλότερο κόστος από την Αθήνα.
-- **Embedded FAQ:**
-  - Q: Σε πόσο καιρό φέρνει αποτέλεσμα το τοπικό SEO στη Θεσσαλονίκη;
-    A: Λόγω χαμηλότερου ανταγωνισμού από την Αθήνα, οι πρώτες τοπικές κατατάξεις έρχονται συχνά σε 2–3 μήνες για σωστά στοχευμένες υπηρεσίες και περιοχές.
-  - Q: Χρειάζομαι νέα ιστοσελίδα για τοπικό SEO στη Θεσσαλονίκη;
-    A: Αν το site είναι αργό ή δεν είναι mobile-friendly, ναι - είναι προϋπόθεση. Οι τοπικές αναζητήσεις γίνονται κυρίως από κινητό με πρόθεση κλήσης.
-  - Q: Πόσο κοστίζει το τοπικό SEO στη Θεσσαλονίκη;
-    A: Για μία περιοχή και μία κύρια υπηρεσία, το Starter (€299/μήνα) συχνά αρκεί. Πολλαπλά σημεία ή πολύ ανταγωνιστικοί κλάδοι χρειάζονται Growth (€599/μήνα).
-  - Q: Αρκεί μόνο το Google Business Profile;
-    A: Το GBP είναι κρίσιμο για το map pack, αλλά χωρίς τοπικές σελίδες, ταχύτητα και κριτικές η ανάπτυξη σταματά. Χρειάζεστε ολοκληρωμένο τοπικό stack.
-  - Q: Ποιες περιοχές της Θεσσαλονίκης αξίζει να στοχεύσω;
-    A: Κέντρο, Καλαμαριά, Τούμπα, Εύοσμος, Πυλαία και άλλες ζώνες με πραγματική παρουσία ή εξυπηρέτηση - όχι copy-paste σελίδες μόνο με αλλαγή ονόματος.
-
 ### Web Hosting & Domain - A 2026 Buyer's Guide
 - **URL:** https://anotherseoguru.com/en/blog/web-hosting-domain-guide
-- **Locale:** en · **Date:** 2026-08-19
+- **Locale:** en · **Date:** 2026-07-06
 - **Description:** How to choose hosting and a domain for your website - pricing, speed, security, and the mistakes that quietly cost you SEO rankings and credibility.
 - **Embedded FAQ:**
   - Q: What's the total cost of ownership of a website?
@@ -2098,7 +1800,7 @@ All Greek cities below are indexable for service×location pages. Pattern: `/el/
 
 ### Web Hosting & Domain στην Ελλάδα - Οδηγός Επιλογής 2026
 - **URL:** https://anotherseoguru.com/el/blog/web-hosting-domain-odigos
-- **Locale:** el · **Date:** 2026-08-19
+- **Locale:** el · **Date:** 2026-07-06
 - **Description:** Πώς να επιλέξετε hosting και domain για την ιστοσελίδα σας. Τιμές, .gr ή .com, ταχύτητα, ασφάλεια και τα λάθη που κοστίζουν σε SEO και αξιοπιστία.
 - **Embedded FAQ:**
   - Q: Πόσο κοστίζει συνολικά η συντήρηση ζωής μιας ιστοσελίδας;
@@ -2114,7 +1816,7 @@ All Greek cities below are indexable for service×location pages. Pattern: `/el/
 
 ### Website Redesign Without Losing Your SEO
 - **URL:** https://anotherseoguru.com/en/blog/website-redesign-guide
-- **Locale:** en · **Date:** 2026-08-19
+- **Locale:** en · **Date:** 2026-07-06
 - **Description:** When to redesign a website, what it costs, and how to do it with a safe SEO migration so you don't lose rankings and organic traffic.
 - **Embedded FAQ:**
   - Q: Will I lose rankings during a redesign?
@@ -2128,21 +1830,355 @@ All Greek cities below are indexable for service×location pages. Pattern: `/el/
   - Q: How long does a safe redesign take?
     A: Typically 3–6 weeks after inventory and redirect mapping, depending on page count, languages, and booking/e-commerce complexity.
 
-### What Is SEO? Search Engine Optimization Explained (2026)
-- **URL:** https://anotherseoguru.com/en/blog/what-is-seo
-- **Locale:** en · **Date:** 2026-08-19
-- **Description:** SEO (Search Engine Optimization) is how you improve organic visibility in Google and AI answers. Learn how it works, the four types, best practices, costs and where to start.
+### Σχεδιασμός Ιστοσελίδας Τουρισμού 2026 - Τάσεις, SEO και UX
+- **URL:** https://anotherseoguru.com/el/blog/sxediasmos-istoselidas-tourismos-2026
+- **Locale:** el · **Date:** 2026-06-19
+- **Description:** Τι αλλάζει στον σχεδιασμό ιστοσελίδας τουρισμού το 2026. Τάσεις για direct bookings, ταχύτητα, mobile εμπειρία και AI βελτιστοποίηση.
 - **Embedded FAQ:**
-  - Q: What is SEO and how does it work?
-    A: SEO (Search Engine Optimization) improves a website so it ranks higher in unpaid Google results. Google crawls pages, indexes them, then ranks by relevance, quality, and trust. On-page content, technical health, and authoritative links are the main levers.
-  - Q: What does SEO stand for?
-    A: SEO stands for Search Engine Optimization - making your site more visible in organic search for the queries your buyers actually type.
-  - Q: Is SEO dead or evolving in 2026?
-    A: SEO is evolving, not dead. Classic rankings still drive traffic, while AI Overviews and ChatGPT-style answers reward clear definitions, FAQs, and citable expertise.
-  - Q: Can ChatGPT do SEO?
-    A: ChatGPT can help with outlines and FAQs, but it cannot replace crawl fixes, real demand data, or earning links. Use AI inside a measured SEO process - not as the whole strategy.
-  - Q: How long does SEO take to work?
-    A: Expect early movement in 2–3 months and meaningful growth in 4–12 months, depending on competition, site history, and publishing cadence.
+  - Q: Τι είναι προτιμότερο: μινιμαλιστικό ή πλούσιο σε περιεχόμενο design;
+    A: Το πλούσιο σε περιεχόμενο design κερδίζει στο SEO και το AEO. Διατηρήστε καθαρή αισθητική με accordions και ξεκάθαρη ιεραρχία - το κείμενο πρέπει να είναι προσβάσιμο στα bots.
+  - Q: Πόσο συχνά πρέπει να γίνεται ανασχεδιασμός;
+    A: Ριζικός ανασχεδιασμός κάθε 3–4 χρόνια. Περιεχόμενο, FAQs και έλεγχοι ταχύτητας ανά τρίμηνο. Αν έχετε κατατάξεις, προτιμήστε migration - δείτε τον οδηγό ανασχεδιασμού.
+  - Q: Πόσο κοστίζει μια ιστοσελίδα τουρισμού το 2026;
+    A: Τυπικά €1.500–€3.500 για ξενοδοχείο/ενοικιάσεις με κρατήσεις, €899–€2.999 για εταιρικό τουριστικό site. Τα πακέτα Professional και Business καλύπτουν τις περισσότερες περιπτώσεις.
+  - Q: Χρειάζομαι chatbot AI στην ιστοσελίδα τουρισμού;
+    A: Όχι υποχρεωτικά την πρώτη μέρα, αλλά βοηθά σε άμεσες απαντήσεις εκτός ωραρίου. Συνδυάστε το με καθαρά FAQs και booking CTA - δείτε τον οδηγό AI chatbots στον τουρισμό.
+  - Q: Ποιες γλώσσες χρειάζομαι;
+    A: Ελληνικά και Αγγλικά είναι η βάση. Γερμανικά/Γαλλικά αξίζουν όταν στοχεύετε αγορές υψηλής αξίας - πάντα με σωστό hreflang.
+
+### Τοπικό SEO στις Κυκλάδες - Οδηγός για Ξενοδοχεία και Rent-a-Car
+- **URL:** https://anotherseoguru.com/el/blog/topiko-seo-kykladon
+- **Locale:** el · **Date:** 2026-06-18
+- **Description:** Πώς να ξεχωρίσετε στο Google Maps και στην οργανική αναζήτηση στις Κυκλάδες. Οδηγός για Πάρο, Μύκονο, Σαντορίνη, Νάξο με GBP, NAP και location pages.
+- **Embedded FAQ:**
+  - Q: Ποιο νησί είναι πιο εύκολο για τοπικό SEO στις Κυκλάδες;
+    A: Νησιά με χαμηλότερο ανταγωνισμό (Μήλος, Σίφνος, Τήνος, Φολέγανδρος) δίνουν πιο γρήγορα αποτελέσματα από Μύκονο και Σαντορίνη. Η στρατηγική προσαρμόζεται στη δυσκολία της αγοράς.
+  - Q: Χρειάζομαι ξεχωριστό Google Business Profile για κάθε νησί;
+    A: Ναι, εφόσον διατηρείτε φυσικό γραφείο ή σημείο εξυπηρέτησης στο συγκεκριμένο νησί. Αυτό αυξάνει κατακόρυφα την εμφάνιση στους τοπικούς χάρτες.
+  - Q: Πόσος χρόνος χρειάζεται για το Map Pack στις Κυκλάδες;
+    A: Με σωστό GBP, citations και location pages, τα πρώτα αποτελέσματα εμφανίζονται σε 8–12 εβδομάδες. Σε πολύ ανταγωνιστικά νησιά η διαδικασία μπορεί να διαρκέσει 4–6 μήνες.
+  - Q: Πρέπει το SEO να είναι πολύγλωσσο στις Κυκλάδες;
+    A: Ναι για τα περισσότερα τουριστικά brands. Ελληνικά και Αγγλικά είναι βάση· Γερμανικά/Γαλλικά όπου η ζήτηση το δικαιολογεί, πάντα με σωστό hreflang.
+  - Q: Πόσο κοστίζει το τοπικό SEO για ξενοδοχείο ή rent-a-car στις Κυκλάδες;
+    A: Τυπικά €299–€599/μήνα για ένα νησί· €599–€999+/μήνα για ανταγωνιστικούς προορισμούς ή πολλά σημεία. Δείτε τα πακέτα τιμολόγησης.
+
+### Κατασκευή Ιστοσελίδας Ξενοδοχείου
+- **URL:** https://anotherseoguru.com/el/blog/kataskevi-istoselidas-xenodoxeia
+- **Locale:** el · **Date:** 2026-06-17
+- **Description:** Κατασκευή ιστοσελίδας για ξενοδοχεία με direct bookings και SEO. Μείωση προμηθειών OTA, Google Maps και κρατήσεις από €1.799. Δείτε τι περιλαμβάνει.
+- **Embedded FAQ:**
+  - Q: Πόσο κοστίζει ιστοσελίδα ξενοδοχείου;
+    A: Τυπικά €1.500–€3.500 για site με κρατήσεις. Στα πακέτα μας, Professional (€1.799) ή Business (€2.999) καλύπτουν τις περισσότερες μονάδες, με SEO θεμέλια από την 1η μέρα.
+  - Q: Γιατί να επενδύσω σε direct bookings;
+    A: Κάθε κράτηση μέσω Booking/Expedia κοστίζει 15–25% προμήθεια. Άμεσες κρατήσεις από το δικό σας site μειώνουν το κόστος και σας δίνουν τον πελάτη.
+  - Q: Χρειάζομαι booking engine;
+    A: Ναι αν θέλετε πραγματικές απευθείας κρατήσεις. Εναλλακτικά, φόρμα διαθεσιμότητας + WhatsApp μπορεί να αρκεί για μικρές μονάδες - το σχεδιάζουμε μαζί σας.
+  - Q: Μπορεί η ιστοσελίδα μου να ανταγωνιστεί το Booking.com στο SEO;
+    A: Σε γενικούς όρους είναι δύσκολο, αλλά σε brand και long-tail (π.χ. luxury suites με ιδιωτική πισίνα) η δική σας ιστοσελίδα μπορεί να κατακτήσει την πρώτη θέση.
+  - Q: Πόσο διαρκεί η κατασκευή ιστοσελίδας ξενοδοχείου;
+    A: Συνήθως 3–5 εβδομάδες μόλις είναι έτοιμες φωτογραφίες, περιγραφές δωματίων και πολιτικές. Το περιεχόμενο είναι ο συνηθέστερος λόγος καθυστέρησης.
+
+### SEO Ιστοσελίδας Ενοικίασης Αυτοκινήτου - Οδηγός 2026
+- **URL:** https://anotherseoguru.com/el/blog/istoselida-enikiasis-autokinitou-seo
+- **Locale:** el · **Date:** 2026-06-16
+- **Description:** Πώς να βελτιστοποιήσετε την ιστοσελίδα ενοικίασης αυτοκινήτου για τη Google. Λέξεις-κλειδιά αεροδρομίων, λιμανιών, τοπικό SEO, πίνακας κόστους και checklist για άμεσες κρατήσεις.
+- **Embedded FAQ:**
+  - Q: Πόσος χρόνος χρειάζεται για κατάταξη σε «rent a car Mykonos»;
+    A: Σε πολύ ανταγωνιστικούς προορισμούς 6–12 μήνες. Σε νησιά με μικρότερο ανταγωνισμό, συχνά 8–16 εβδομάδες με συστηματική δουλειά.
+  - Q: Χρειάζομαι ξεχωριστή σελίδα για κάθε νησί ή αεροδρόμιο;
+    A: Ναι, εφόσον διατηρείτε σταθμό εξυπηρέτησης εκεί. Κάθε σελίδα πρέπει να έχει μοναδικό περιεχόμενο και οδηγίες παραλαβής - όχι copy-paste.
+  - Q: Πόσο κοστίζει το SEO για rent-a-car;
+    A: Τυπικά €299–€599/μήνα για τοπικό/νησιωτικό ανταγωνισμό. Πολυνησιωτικά brands με EN/DE στόχευση συχνά Growth ή Scale (€599–€999/μήνα).
+  - Q: Μπορώ να μειώσω τις προμήθειες aggregators με SEO;
+    A: Ναι. Όταν ανεβαίνει το ποσοστό άμεσων κρατήσεων από το site σας, μειώνεται η εξάρτηση από metasearch που χρεώνουν 20–30%.
+  - Q: Τι μετράει περισσότερο - στόλος ή τοποθεσίες;
+    A: Και τα δύο, αλλά οι location pages (αεροδρόμιο/λιμάνι) συχνά φέρνουν τις υψηλότερης πρόθεσης κρατήσεις. Ο στόλος κλείνει τη σύγκριση τιμής/τύπου.
+
+### AI Chatbots στον Τουρισμό - 24/7 Κρατήσεις και AEO
+- **URL:** https://anotherseoguru.com/el/blog/ai-chatbots-tourismos
+- **Locale:** el · **Date:** 2026-06-15
+- **Description:** Πώς τα έξυπνα AI Chatbots μεταμορφώνουν την εξυπηρέτηση πελατών στον τουρισμό. Αυτοματοποίηση κρατήσεων, απαντήσεις σε FAQ και GEO/AEO ορατότητα.
+- **Embedded FAQ:**
+  - Q: Μπορεί το AI Chatbot να κάνει λάθη στις απαντήσεις του;
+    A: Με guardrails και RAG πάνω στη δική σας knowledge base, το bot απαντά μόνο από τιμές, πολιτικές και παροχές σας. Χωρίς αυτά, οι γενικοί LLMs επινοούν - γι’ αυτό δεν αρκεί «ένα ChatGPT widget».
+  - Q: Πώς συνδέεται το Chatbot με τις κρατήσεις;
+    A: Καθοδηγεί τον χρήστη σε διαθέσιμα δωμάτια/οχήματα και δίνει deep link στη σελίδα ολοκλήρωσης κράτησης - δεν αντικαθιστά απαραίτητα το booking engine.
+  - Q: Βοηθάει το chatbot το SEO και το AEO;
+    A: Ναι όταν οι συχνές ερωτήσεις του chat γίνονται FAQ στη σελίδα με schema. Έτσι κερδίζετε snippets/Overviews και τροφοδοτείτε GEO citations από τις ίδιες κανονικές απαντήσεις.
+  - Q: Επιβαρύνει την ταχύτητα της ιστοσελίδας;
+    A: Μόνο αν φορτώνει blocking. Το widget πρέπει να φορτώνει ασύγχρονα μετά το LCP. Κακό chatbot που σκοτώνει Core Web Vitals βλάπτει SEO και μετατροπές.
+  - Q: Χρειάζομαι chatbot ή πρώτα Ορατότητα σε AI;
+    A: Συχνά και τα δύο - το chatbot εξυπηρετεί επισκέπτες· η υπηρεσία GEO/AEO κάνει τις σελίδες σας citable σε ChatGPT/Perplexity. Ξεκινήστε από καθαρή knowledge base κοινής χρήσης.
+
+### GEO, AEO και SEO στην Ελλάδα - Οδηγός 2026
+- **URL:** https://anotherseoguru.com/el/blog/geo-aeo-ellada
+- **Locale:** el · **Date:** 2026-05-31
+- **Description:** Βελτιστοποίηση για Google, ChatGPT, Perplexity και Gemini. Οδηγός SEO, Generative Engine Optimization και Answer Engine Optimization για ελληνικές επιχειρήσεις.
+- **Embedded FAQ:**
+  - Q: Ποια είναι η διαφορά μεταξύ SEO και GEO;
+    A: Το SEO εστιάζει στην κατάταξη και στα clicks από Google/Bing. Το GEO εστιάζει στο αν το brand σας εμφανίζεται ως αξιόπιστη πηγή στις απαντήσεις ChatGPT, Perplexity και Gemini.
+  - Q: Χρειάζομαι ξεχωριστό περιεχόμενο για το ChatGPT και τη Google;
+    A: Όχι. Και τα δύο επιβραβεύουν σαφές, έγκυρο, πρωτότυπο και καλά δομημένο περιεχόμενο. Γράψτε για ανθρώπους· δομήστε για απαντήσεις.
+  - Q: Από πού ξεκινά μια μικρή επιχείρηση στην Ελλάδα;
+    A: Τεχνικό SEO και τοπικό SEO πρώτα, μετά FAQ/schema AEO στις εμπορικές σελίδες, μετά πρόγραμμα GEO citations όταν τα θεμέλια είναι σταθερά.
+  - Q: Πόσο γρήγορα φαίνονται αποτελέσματα GEO;
+    A: Τα AEO wins (FAQ, snippets) συχνά σε 4–8 εβδομάδες. Τα GEO citations χρειάζονται 1–3 τρίμηνα σταθερής μέτρησης - όχι μία συνεδρία ChatGPT.
+  - Q: Χρειάζομαι GEO agency ή αρκεί το κλασικό SEO;
+    A: Αν οι αγοραστές σας ήδη ρωτούν AI για shortlists (τουρισμός, υπηρεσίες), χρειάζεστε και τα δύο σε ένα πρόγραμμα. Δείτε την υπηρεσία Ορατότητα σε AI.
+
+### GEO, AEO & AI SEO - Global Playbook for 2026
+- **URL:** https://anotherseoguru.com/en/blog/geo-aeo-global-seo-playbook
+- **Locale:** en · **Date:** 2026-05-31
+- **Description:** Generative Engine Optimization (GEO), Answer Engine Optimization (AEO), and traditional SEO - how teams rank on Google, ChatGPT, Perplexity, and Gemini.
+- **Embedded FAQ:**
+  - Q: Is GEO replacing SEO?
+    A: No. Most commercial traffic still comes from Google blue links and map packs. GEO is additive - a visibility layer for AI-mediated discovery. Neglect SEO and you lose the foundation.
+  - Q: What's the fastest AEO win?
+    A: Add FAQ sections with schema to your top 10 GSC pages by impressions. Match questions to real queries. Keep answers concise and visible on-page.
+  - Q: Can small tourism businesses compete in AI answers?
+    A: Yes. Models often cite specific, authoritative local sources over generic OTAs when the content is clearer and more recent.
+  - Q: How do I measure GEO success?
+    A: Track citation rate across a fixed prompt set, citation accuracy, and competitor coverage gaps. Pair with branded organic click trends.
+  - Q: Do I need separate content for ChatGPT vs Google?
+    A: No. Write clear, factual, well-structured content for humans. Both classic search and generative systems reward clarity, authority, and freshness.
+
+### SEO Software, Web Design & Development Platform
+- **URL:** https://anotherseoguru.com/en/blog/seo-web-design-development-platform
+- **Locale:** en · **Date:** 2026-05-31
+- **Description:** How teams combine SEO tools, website design for rankings, and development best practices with AI search optimization (GEO/AEO) to grow revenue.
+- **Embedded FAQ:**
+  - Q: Should SEO come before or after design?
+    A: At the same time. SEO informs information architecture, URL planning, and template requirements before high-fidelity design. Bolting SEO on after development costs more and works worse.
+  - Q: Do I need custom development or is WordPress enough?
+    A: Both can rank. Custom Next.js stacks offer performance and component consistency at scale - valuable for multi-property hospitality and rent-a-car fleets. WordPress works for smaller footprints with strict maintenance discipline.
+  - Q: How do Core Web Vitals affect AI visibility?
+    A: Indirectly but meaningfully. Slow, poorly indexed pages are less likely to be retrieved and cited. Performance is a baseline eligibility factor, not a vanity metric.
+  - Q: Can one agency handle design, dev, and SEO?
+    A: Yes - if they show integrated case studies with Search Console outcomes, not only design shots. Ask for work samples with measurable search results.
+  - Q: What's the first step for a redesign without losing rankings?
+    A: Crawl the current site, map URL redirects, export top GSC pages, and lock the redirect + content migration plan before touching the new design system.
+
+### Why we split software pricing and agency pricing (and how to choose)
+- **URL:** https://anotherseoguru.com/en/blog/pricing-page-seo-software-vs-agency
+- **Locale:** en · **Date:** 2026-03-10
+- **Description:** Clear positioning between self-serve SEO software and done-for-you retainers - reduces confusion and improves conversion quality.
+- **Embedded FAQ:**
+  - Q: Is software cheaper than agency?
+    A: Lower cash cost - higher time cost. Total cost of ownership includes your hours or opportunity cost.
+  - Q: Can I switch from software to agency mid-year?
+    A: Yes - export GSC history and backlog. Good agencies start from data.
+  - Q: Do you need agency for [GEO/AEO](/el/blog/geo-aeo-ellada)?
+    A: FAQ and entity content can be agency or in-house. LLM measurement discipline benefits from experienced guidance initially.
+  - Q: Should startups buy agency day one?
+    A: If website doesn't exist or doesn't rank - agency project often beats software alone. If learning phase - software + DIY path.
+  - Q: How do I compare agency quotes?
+    A: Same scope definition: pages delivered, GBP locations, reporting cadence, redesign inclusion. Apples-to-apples.
+
+### A one-hour Google Search Console ops loop for in-house teams
+- **URL:** https://anotherseoguru.com/en/blog/gsc-weekly-ops-playbook
+- **Locale:** en · **Date:** 2026-03-08
+- **Description:** A repeatable weekly checklist - segment performance, cluster queries, pick three ship items, and validate in rank tracking (aligned with platform workflows).
+- **Embedded FAQ:**
+  - Q: What if I miss a week?
+    A: Don't double the workload - resume with one week export and three fixes. Consistency beats catch-up marathons.
+  - Q: Is one hour enough for large sites?
+    A: For enterprise, scale clustering with tools - but keep three-fix ship cap per property or cluster. Multi-property hotel groups run loop per brand or region.
+  - Q: Should I include Bing Webmaster Tools?
+    A: Optional monthly - Google priority for most tourism and local markets.
+  - Q: How do I involve developers?
+    A: Ticket only technical fixes with repro steps and expected measurable outcome - indexation count, LCP on template, structured data validation.
+  - Q: When do I need an agency instead?
+    A: If three fixes/week backlog exceeds 8 weeks consistently - get scoped help.
+
+### Using an SEO glossary to strengthen internal links (without spam)
+- **URL:** https://anotherseoguru.com/en/blog/glossary-strategy-internal-linking
+- **Locale:** en · **Date:** 2026-03-05
+- **Description:** How glossary hubs support entity clarity, hub-and-spoke linking, and safer anchor patterns - with a workflow that points to product modules.
+- **Embedded FAQ:**
+  - Q: How many glossary terms do I need?
+    A: Start with 20–30 tied to your top queries and sales conversations. Expand as content gaps appear - don't publish 500 thin definitions day one.
+  - Q: Should glossary pages index?
+    A: Yes - if they provide unique definitions. No - if they're thin duplicates of blog content. Merge or differentiate.
+  - Q: Can glossary replace FAQ?
+    A: No - FAQ answers customer-specific questions on commercial pages. Glossary defines concepts. Use both.
+  - Q: Multilingual glossaries?
+    A: For EL/EN tourism sites, mirror key terms with hreflang. See GEO/AEO Ellada.
+  - Q: Who writes glossary entries?
+    A: SEO lead outlines entities; subject expert validates accuracy; developer implements linking templates. For hotel and rent-a-car sites, involve front-desk or fleet managers who field guest questions daily.
+
+### Internal Linking Audit Checklist for In-House SEO Teams
+- **URL:** https://anotherseoguru.com/en/blog/internal-linking-audit-checklist
+- **Locale:** en · **Date:** 2026-02-18
+- **Description:** Find orphan pages, over-linked footers, and anchor text patterns that waste crawl budget - with a pragmatic fix order for tourism and local sites.
+- **Embedded FAQ:**
+  - Q: How many internal links per page?
+    A: No fixed limit - prioritize relevance. Long guides may have 10–20 contextual links; short pages need fewer. Avoid footer spam.
+  - Q: Should I link to external sites?
+    A: Yes - authoritative outbound links support E-E-A-T. Link to tourism boards, official airport sites, medical sources as appropriate.
+  - Q: Do internal links pass PageRank?
+    A: Google uses links to understand importance and discovery. Internal links distribute signals within your site - link equity concepts still apply internally.
+  - Q: Can I automate internal linking?
+    A: Plugins and rules help at scale - but review for relevance. Automated "related posts" often link irrelevant URLs.
+  - Q: How do I measure impact?
+    A: Compare GSC clicks on target URLs 4–8 weeks post-fix. Track orphan count monthly.
+
+### LLM Citations and Brand Visibility - A Sober Measurement Guide
+- **URL:** https://anotherseoguru.com/en/blog/llm-citations-brand-visibility
+- **Locale:** en · **Date:** 2026-02-14
+- **Description:** What "being cited by AI" means, how to sample responsibly, and how to connect efforts to real business outcomes.
+- **Embedded FAQ:**
+  - Q: How is LLM visibility different from featured snippets?
+    A: Featured snippets are Google's direct answers with known SERP tracking. LLM citations happen across multiple models with less transparency. Optimize for both with FAQ-rich, factual content.
+  - Q: Should I pay for "AI SEO" tools?
+    A: Evaluate tools on workflow value - prompt batching, logging, trend charts - not magic scores. Ground decisions in Search Console and bookings.
+  - Q: Do AI models use my site in real time?
+    A: Some products retrieve live web results; others rely on training data and retrieval indexes. Behavior varies by model and query - log version and date every sample.
+  - Q: Can negative AI mentions hurt my brand?
+    A: Inaccurate paraphrases happen. Monitor accuracy, publish corrections on-site, and strengthen entity signals. You cannot delete model outputs, but you can improve source material.
+  - Q: Where do I start?
+    A: Run a 20-prompt baseline. Fix top three on-site gaps - About, FAQ, service clarity. Re-sample in 30 days and connect gaps to content tickets.
+
+### A Practical Framework for Prioritizing Search Console Queries
+- **URL:** https://anotherseoguru.com/en/blog/gsc-query-prioritization-framework
+- **Locale:** en · **Date:** 2026-02-12
+- **Description:** Score impressions, clicks, position, and intent so your backlog reflects revenue - not spreadsheet anxiety.
+- **Embedded FAQ:**
+  - Q: How many queries should I prioritize per week?
+    A: Three shipped fixes maximum for small teams. More rarely completes; unfinished backlog demoralizes.
+  - Q: Position or impressions - which matters more?
+    A: Impressions show opportunity; clicks show reality. Near-miss bucket uses both - high impressions at position 8–15 is the sweet spot.
+  - Q: Should branded queries go in bucket 1?
+    A: Yes - protect branded clicks. But don't spend hours optimizing typos with 3 impressions.
+  - Q: How do I handle seasonality?
+    A: Compare year-over-year where possible. Rising shoulder-season queries in bucket 3 may need content 8–12 weeks before peak.
+  - Q: Can this framework work for Greek and English queries?
+    A: Yes - segment by language in GSC. Tag EL vs EN buckets separately for hreflang sites.
+
+### Agency Playbooks - Delivery, Reporting, and Scaling Client SEO
+- **URL:** https://anotherseoguru.com/en/blog/pillar-agency-playbooks
+- **Locale:** en · **Date:** 2026-02-01 · pillar hub
+- **Description:** Hub for operators running retainers - scoping, narrative reporting, and when software augments headcount.
+- **Embedded FAQ:**
+  - Q: What's a healthy agency client retention?
+    A: When you ship visible work monthly and reports tie to their KPIs - 12–24 month tourism retainers are common with seasonal flex.
+  - Q: Should agencies guarantee rankings?
+    A: No - guarantee process: weekly ops, shipped fixes, transparent reporting. Rankings follow; guarantees create bad incentives.
+  - Q: How do I pitch GEO/AEO without hype?
+    A: Use LLM citations guide framing - directional sampling, not fake scores.
+  - Q: White-label vs co-branded delivery?
+    A: White-label software dashboards; co-branded thought leadership builds your authority. Match client preference.
+  - Q: When to refer a project instead of taking it?
+    A: YMYL without compliance reviewer, markets outside your expertise, clients who won't grant GSC access.
+
+### AI & LLM Visibility - Measure What Models Say About Your Brand
+- **URL:** https://anotherseoguru.com/en/blog/pillar-ai-llm-visibility
+- **Locale:** en · **Date:** 2026-02-01 · pillar hub
+- **Description:** Pillar hub for generative search, citation tracking, and building content that earns mentions in AI answers - responsibly.
+- **Embedded FAQ:**
+  - Q: How is LLM visibility different from SEO?
+    A: SEO measures rankings and clicks in search engines. LLM visibility measures whether AI assistants mention or cite your brand for category prompts. The levers overlap - clear content, strong entities, authoritative links - but the metrics differ.
+  - Q: Should tourism brands prioritize GEO over local SEO?
+    A: No. Map pack and organic traffic still drive most bookings for hotels and rent-a-car. GEO is additive. Fix GBP, citations, and location pages first; layer LLM tracking second.
+  - Q: How often should we sample LLM outputs?
+    A: Monthly for trend reporting; weekly for active campaigns or launches. Use the same prompts each time for comparability.
+  - Q: Can AI-written content improve LLM visibility?
+    A: Only if edited for accuracy and entity clarity. Unedited AI fluff rarely earns citations and can harm E-E-A-T. Use AI for drafts and scaling - not for publishing unchecked claims.
+  - Q: Where do I start if I've never tracked this before?
+    A: Run a 20-prompt baseline across ChatGPT, Perplexity, and Gemini. Fix the top three on-site gaps (about page, FAQ, service clarity). Re-sample in 30 days.
+
+### Search Console Mastery - From Raw Data to a Weekly SEO System
+- **URL:** https://anotherseoguru.com/en/blog/pillar-search-console-mastery
+- **Locale:** en · **Date:** 2026-02-01 · pillar hub
+- **Description:** Hub for editorial content on Google Search Console - queries, pages, debugging, and turning exports into prioritized work.
+- **Embedded FAQ:**
+  - Q: How often should I check Search Console?
+    A: Weekly one-hour ops minimum; daily during launch weeks or algorithm turbulence.
+  - Q: Why don't GSC clicks match Analytics?
+    A: Different attribution, sampling, and URL grouping. Directional alignment matters more than pixel match.
+  - Q: Should I separate properties by subdomain?
+    A: Prefer verified domain property when possible; segment by subdirectory in reports. Hreflang sites need careful URL inspection.
+  - Q: What's the first fix for new tourism sites?
+    A: Indexation and money page clicks - ensure location and fleet/room pages are indexed and linked from homepage.
+  - Q: When do I need agency help with GSC?
+    A: When backlog exceeds 8 weeks, redesign migration pending, or multi-property clustering exceeds team capacity - get scoped.
+
+### Technical SEO for In-House Teams - Audits, Priorities, and Buy-In
+- **URL:** https://anotherseoguru.com/en/blog/pillar-technical-seo-in-house
+- **Locale:** en · **Date:** 2026-02-01 · pillar hub
+- **Description:** Hub for crawl budget, rendering, structured data, and performance - written for teams shipping through engineering queues.
+- **Embedded FAQ:**
+  - Q: How often run full technical crawls?
+    A: Monthly for active sites; weekly after major releases. Automated monitoring daily for index coverage.
+  - Q: Next.js vs WordPress for technical SEO?
+    A: Both rank. Next.js offers performance control; WordPress requires plugin discipline. Choose based on team skills - see web design platform guide.
+  - Q: Do Core Web Vitals still matter?
+    A: Yes - ranking signal and conversion factor, especially mobile tourism traffic.
+  - Q: Should devs own structured data?
+    A: SEO defines schema map; dev implements in templates. QA validates with Rich Results Test.
+  - Q: When to hire agency for technical SEO?
+    A: Migrations, multi-language launches, indexation crises - get scoped.
+
+### The Ultimate Guide to Local SEO for Home Services
+- **URL:** https://anotherseoguru.com/en/blog/local-seo-guide
+- **Locale:** en · **Date:** 2026-01-15
+- **Description:** How plumbers, HVAC techs, contractors, hotels, and rent-a-car operators can dominate Google Maps. Stop buying leads and start owning them.
+- **Embedded FAQ:**
+  - Q: What is local SEO?
+    A: Local SEO is how you rank in Google’s map pack and local results for “near me” and city searches. It centers on Google Business Profile, NAP consistency, reviews, local pages, and citations.
+  - Q: Does local SEO still work?
+    A: Yes. Map pack and “near me” searches remain high-intent. Complete profiles, recent reviews, and unique location pages still beat generic national sites for local demand.
+  - Q: How much does local SEO cost?
+    A: Retainers depend on competition and number of locations. Most small businesses start with a focused GBP + citations + location pages package, then scale monthly content and reviews.
+  - Q: How to do local SEO for beginners?
+    A: Claim and fully complete Google Business Profile, match NAP everywhere, collect recent reviews, build one strong location/service page, and track calls or directions.
+
+### Google Business Profile Masterclass - Dominate Local Search
+- **URL:** https://anotherseoguru.com/en/blog/google-business-profile-masterclass
+- **Locale:** en · **Date:** 2026-01-10
+- **Description:** Step-by-step guide to optimizing your Google Business Profile. Categories, photos, reviews, and the Posts strategy that keeps your profile active.
+- **Embedded FAQ:**
+  - Q: How long until GBP optimization shows results?
+    A: Category fixes and photo uploads often move within 2–4 weeks. Review velocity and posts compound over 60–90 days.
+  - Q: Can I manage multiple locations in one dashboard?
+    A: Yes - use Business Profile Manager for chains, hotel groups, and multi-desk rent-a-car operators.
+  - Q: Do Google Posts affect rankings directly?
+    A: Google doesn't confirm Posts as a core ranking factor, but they drive engagement signals and prove activity - especially vs dormant competitors.
+  - Q: What if Google suspends my listing?
+    A: Fix guideline violations, gather documentation (utility bill, signage photos), submit reinstatement request. Prevention beats recovery - no keyword stuffing in name.
+  - Q: Should I use a third-party GBP tool?
+    A: Tools help scheduling and multi-location QA, but understand Google's policies. Over-automation without quality control hurts more than helps.
+
+### DIY SEO vs. Hiring an Agency - The Honest Truth for Business Owners
+- **URL:** https://anotherseoguru.com/en/blog/diy-vs-agency
+- **Locale:** en · **Date:** 2026-01-08
+- **Description:** Should you do your own SEO or hire an agency? Costs, time commitment, and results - with a clear decision framework for home services and tourism brands.
+- **Embedded FAQ:**
+  - Q: How much does agency SEO cost?
+    A: Retainers vary by scope - single-location local SEO vs multi-island tourism build. Get a scoped proposal rather than guessing from generic pricing pages.
+  - Q: Can I start DIY and switch to agency later?
+    A: Yes - and it's common. Bring your Search Console history and content; a good agency picks up from data, not zero.
+  - Q: Is SEO software enough without an agency?
+    A: Software provides leverage - clustering, audits, tracking - but someone must execute. Software without ops cadence fails.
+  - Q: How do I know if DIY is working?
+    A: Track commercial clicks in GSC, map actions, calls, and bookings monthly. Rankings alone mislead.
+  - Q: Should tourism brands ever fully outsource SEO?
+    A: Outsource execution, not oversight. You know seasonality, pricing, and guest questions - the agency knows search systems. Stay involved on content accuracy.
+
+### Medical SEO - The Ultimate Guide for Growing Your Practice
+- **URL:** https://anotherseoguru.com/en/blog/medical-marketing
+- **Locale:** en · **Date:** 2026-01-05
+- **Description:** SEO for doctors, surgeons, and med spas - YMYL, E-E-A-T, local patient intent, and compliance-friendly content patterns that earn trust and rankings.
+- **Embedded FAQ:**
+  - Q: Is medical SEO different from local SEO?
+    A: It layers YMYL and E-E-A-T requirements on top of local fundamentals - Google Business Profile, citations, and location pages. The local playbook still applies; the content and compliance bar is higher.
+  - Q: Can AI write medical content for SEO?
+    A: AI drafts can accelerate production but require clinician review before publish. Unreviewed AI content is a YMYL risk and can damage trust and rankings.
+  - Q: How long until medical SEO shows results?
+    A: Competitive metros often need 6–12 months for procedure keywords. Long-tail education content can rank in 8–16 weeks with strong E-E-A-T signals.
+  - Q: Do med spas follow the same SEO rules as clinics?
+    A: Yes - injectables and device treatments fall under YMYL. Marketing claims must align with regional advertising rules and platform policies.
+  - Q: Should medical practices blog?
+    A: Yes - educational content builds authority, internal links, and AEO eligibility when it is medically accurate and professionally reviewed.
 
 ---
 

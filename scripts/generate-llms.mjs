@@ -187,6 +187,20 @@ function parsePortfolio() {
 function parseBlogPosts() {
   const dir = path.join(ROOT, 'content/blog');
   if (!fs.existsSync(dir)) return [];
+  /**
+   * Unquoted YAML dates arrive as `Date` objects, so a `typeof === 'string'`
+   * test misses every post and stamps the generation date on all of them.
+   */
+  const normalizePostDate = (value, slug) => {
+    if (value instanceof Date && !Number.isNaN(value.getTime())) {
+      return value.toISOString().slice(0, 10);
+    }
+    if (typeof value === 'string' && /^\d{4}-\d{2}-\d{2}/.test(value.trim())) {
+      return value.trim().slice(0, 10);
+    }
+    throw new Error(`Blog post "${slug}" has a missing or unparseable \`date\` in its frontmatter.`);
+  };
+
   const files = fs.readdirSync(dir).filter((f) => f.endsWith('.md'));
   const posts = [];
   for (const file of files) {
@@ -200,7 +214,7 @@ function parseBlogPosts() {
       slug,
       title: data.title,
       description: data.description,
-      date: typeof data.date === 'string' ? data.date : TODAY,
+      date: normalizePostDate(data.date, slug),
       locale,
       isPillarHub: Boolean(data.pillarHub),
       faq: Array.isArray(data.faq)
@@ -289,7 +303,7 @@ function buildShort({ services, servicesEl, industries, industriesEl, greece, pr
     hubLine('Rent-a-Car', url('en', '/solutions/rent-a-car'), 'Fleet catalogs, booking funnels, island/airport local SEO.'),
   );
   lines.push(
-    hubLine('Portfolio / Case Studies', url('en', '/work'), `${projects.length}+ live client projects with homepage screenshots.`),
+    hubLine('Portfolio / Case Studies', url('en', '/work'), `${projects.length} live client projects with homepage screenshots.`),
   );
   lines.push(
     hubLine('Blog', url('en', '/blog'), 'SEO, GEO/AEO, hotel, and e-shop guides (EN + EL).'),

@@ -77,6 +77,30 @@ function getContentDir(): string {
   return path.join(process.cwd(), "content/blog");
 }
 
+/**
+ * Frontmatter dates are unquoted YAML (`date: 2026-06-15`), so gray-matter
+ * hands back a `Date`, not a string. The old `typeof d.date === "string"` test
+ * therefore missed on every post and fell through to "today": all 71 posts
+ * rendered the build date, `datePublished` and `dateModified` in Article schema
+ * were the build date, sitemap `lastmod` was the build date, and "newest first"
+ * ordering compared 71 identical values. Accept both shapes.
+ */
+function normalizePostDate(value: unknown, slug: string): string {
+  if (value instanceof Date && !Number.isNaN(value.getTime())) {
+    return value.toISOString().slice(0, 10);
+  }
+  if (typeof value === "string") {
+    const trimmed = value.trim();
+    if (/^\d{4}-\d{2}-\d{2}/.test(trimmed)) return trimmed.slice(0, 10);
+    const parsed = new Date(trimmed);
+    if (!Number.isNaN(parsed.getTime())) return parsed.toISOString().slice(0, 10);
+  }
+  throw new Error(
+    `Blog post "${slug}" has a missing or unparseable \`date\` in its frontmatter. ` +
+      `Publication dates drive Article schema and sitemap lastmod, so they cannot be guessed.`,
+  );
+}
+
 function parsePostFile(filePath: string, fileBase: string): BlogPostParsed | null {
   const raw = fs.readFileSync(filePath, "utf8");
   const { data, content } = matter(raw);
@@ -85,8 +109,7 @@ function parsePostFile(filePath: string, fileBase: string): BlogPostParsed | nul
   if (typeof d.title !== "string" || typeof d.description !== "string") {
     return null;
   }
-  const date =
-    typeof d.date === "string" ? d.date : new Date().toISOString().slice(0, 10);
+  const date = normalizePostDate(d.date, slug);
   const wordCount = countBodyWords(content);
   return {
     slug,
