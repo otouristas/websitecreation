@@ -17,6 +17,7 @@ import { getLocalizedIndustry } from '@/lib/industry-locale';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 import { solutionsUi } from '@/data/translations/solutions-ui';
 import { getServiceAngle, getServiceFaqs, ANGLE_HEADINGS, FAQ_HEADING } from '@/data/industry-service-copy';
+import { GENERATED_CONTENT_PUBLISHED, GENERATED_CONTENT_UPDATED } from '@/lib/seo/content-dates';
 
 export function IndustryServicePageView({
   industrySlug,
@@ -79,8 +80,8 @@ export function IndustryServicePageView({
     generateArticleSchema({
       headline: ui.serviceForIndustry(serviceName, industry.nameFor),
       description: ui.serviceHeroDesc(serviceName, industry.name),
-      datePublished: new Date().toISOString(),
-      dateModified: new Date().toISOString(),
+      datePublished: GENERATED_CONTENT_PUBLISHED,
+      dateModified: GENERATED_CONTENT_UPDATED,
       author: { name: 'AnotherSEOGuru' },
     }),
   );

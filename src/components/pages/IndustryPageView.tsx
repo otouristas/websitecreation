@@ -11,6 +11,7 @@ import { AdsLandingBand } from '@/components/marketing/AdsLandingBand';
 import { getLocalizedIndustry } from '@/lib/industry-locale';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 import { solutionsUi } from '@/data/translations/solutions-ui';
+import { GENERATED_CONTENT_PUBLISHED, GENERATED_CONTENT_UPDATED } from '@/lib/seo/content-dates';
 
 const TOURISM_SLUGS = new Set([
   'hotels',
@@ -50,8 +51,8 @@ export function IndustryPageView({
     generateArticleSchema({
       headline: `${ui.websiteSolutionsFor} ${industry.name}`,
       description: industry.description,
-      datePublished: new Date().toISOString(),
-      dateModified: new Date().toISOString(),
+      datePublished: GENERATED_CONTENT_PUBLISHED,
+      dateModified: GENERATED_CONTENT_UPDATED,
       author: { name: 'AnotherSEOGuru' },
     }),
   );

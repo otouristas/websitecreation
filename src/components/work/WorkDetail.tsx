@@ -13,6 +13,7 @@ import { buildProjectCaseStudy } from '@/lib/portfolio-case-study';
 import { getServiceEl } from '@/data/services-i18n';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 import { generateBreadcrumbs } from '@/lib/linking';
+import { GENERATED_CONTENT_PUBLISHED, GENERATED_CONTENT_UPDATED } from '@/lib/seo/content-dates';
 
 interface WorkDetailProps {
   project: PortfolioProject;
@@ -53,8 +54,8 @@ export function WorkDetail({ project, locale = 'en' }: WorkDetailProps) {
   const articleSchema = generateArticleSchema({
     headline: `${project.name} - ${isEl ? 'Μελέτη περίπτωσης' : 'Case Study'}`,
     description: isEl && project.summaryEl ? project.summaryEl : project.summary,
-    datePublished: new Date().toISOString(),
-    dateModified: new Date().toISOString(),
+    datePublished: GENERATED_CONTENT_PUBLISHED,
+    dateModified: GENERATED_CONTENT_UPDATED,
     author: { name: 'AnotherSEOGuru', url: 'https://anotherseoguru.com' },
     image: {
       url: `https://anotherseoguru.com${project.screenshot}`,

@@ -2,6 +2,7 @@
 import { NextResponse } from 'next/server';
 import { getAllServiceSlugs } from '@/data/services';
 import { localizedPath } from '@/lib/i18n/locale';
+import { GENERATED_CONTENT_UPDATED } from '@/lib/seo/content-dates';
 
 const BASE_URL = 'https://anotherseoguru.com';
 
@@ -12,7 +13,7 @@ export async function GET() {
   const urls = locales.flatMap((locale) =>
     serviceSlugs.map((slug) => ({
       loc: `${BASE_URL}${localizedPath(locale, `/services/${slug}`)}`,
-      lastmod: new Date().toISOString(),
+      lastmod: GENERATED_CONTENT_UPDATED,
       changefreq: 'weekly',
       priority: '0.9',
     })),

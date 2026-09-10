@@ -4,6 +4,7 @@ import { getAllIndustrySlugs } from '@/data/industries';
 import { getAllServiceSlugs } from '@/data/services';
 import { localizedPath } from '@/lib/i18n/locale';
 import { evaluateIndustryService } from '@/lib/indexability/industry-service';
+import { GENERATED_CONTENT_UPDATED } from '@/lib/seo/content-dates';
 
 const BASE_URL = 'https://anotherseoguru.com';
 const LOCALES = ['en', 'el'] as const;
@@ -19,7 +20,7 @@ export async function GET() {
     industrySlugs.forEach((industry) => {
       urls.push({
         loc: `${BASE_URL}${localizedPath(locale, `/solutions/${industry}`)}`,
-        lastmod: new Date().toISOString(),
+        lastmod: GENERATED_CONTENT_UPDATED,
         changefreq: 'weekly',
         priority: '0.8',
       });
@@ -34,7 +35,7 @@ export async function GET() {
         if (!verdict.indexable) return;
         urls.push({
           loc: `${BASE_URL}${localizedPath(locale, `/solutions/${industry}/${service}`)}`,
-          lastmod: new Date().toISOString(),
+          lastmod: GENERATED_CONTENT_UPDATED,
           changefreq: 'weekly',
           priority: verdict.tier === 'A' ? '0.8' : '0.6',
         });

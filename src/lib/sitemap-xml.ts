@@ -2,6 +2,8 @@
  * Helpers for XML sitemap generation with optional sharding.
  */
 
+import { GENERATED_CONTENT_UPDATED } from '@/lib/seo/content-dates';
+
 export const SITEMAP_MAX_URLS = 50000;
 
 export interface SitemapUrlEntry {
@@ -12,7 +14,9 @@ export interface SitemapUrlEntry {
 }
 
 export function buildUrlsetXml(urls: SitemapUrlEntry[]): string {
-  const lastmodDefault = new Date().toISOString();
+  // Not "now". These handlers are dynamic, so a request-time lastmod told
+  // crawlers every URL in the file had changed on every fetch.
+  const lastmodDefault = GENERATED_CONTENT_UPDATED;
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls
@@ -29,7 +33,7 @@ ${urls
 }
 
 export function buildSitemapIndexXml(sitemapLocs: string[]): string {
-  const lastmod = new Date().toISOString();
+  const lastmod = GENERATED_CONTENT_UPDATED;
   return `<?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${sitemapLocs

@@ -22,6 +22,7 @@ import { getServiceHubCommercial } from '@/data/service-hub-commercial';
 import { getFeaturedPortfolio, portfolioProjects } from '@/data/portfolio';
 import RelatedPages from '@/components/seo/RelatedPages';
 import { getBespokeServicePage } from '@/components/services/registry';
+import { GENERATED_CONTENT_PUBLISHED, GENERATED_CONTENT_UPDATED } from '@/lib/seo/content-dates';
 
 interface PageProps {
     params: Promise<{ locale: string; service: string }>;
@@ -30,9 +31,7 @@ interface PageProps {
 // ISR: Revalidate every hour
 export const revalidate = 3600;
 
-/** Stable content dates for Article schema on generated service hubs. */
-const SERVICE_CONTENT_PUBLISHED = '2026-02-01T00:00:00.000Z';
-const SERVICE_CONTENT_UPDATED = '2026-08-15T00:00:00.000Z';
+
 
 // Generate static paths for all services
 export async function generateStaticParams() {
@@ -145,8 +144,8 @@ export default async function ServicePage({ params }: PageProps) {
         generateArticleSchema({
             headline: displayName,
             description: displayDesc,
-            datePublished: SERVICE_CONTENT_PUBLISHED,
-            dateModified: SERVICE_CONTENT_UPDATED,
+            datePublished: GENERATED_CONTENT_PUBLISHED,
+            dateModified: GENERATED_CONTENT_UPDATED,
             author: { name: 'AnotherSEOGuru' },
         }),
         generateFAQSchema({ faqs: faqItems })
