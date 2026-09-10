@@ -1,7 +1,7 @@
 ---
 slug: seo-gia-arxarious
 title: Τι Είναι το SEO; Οδηγός για Αρχάριους (2026)
-description: Τι είναι το SEO με απλά λόγια. Πώς κατατάσσει η Google, on-page, τεχνικό, off-page και τοπικό SEO, λέξεις-κλειδιά, κόστος, λάθη αρχαρίων και από πού να ξεκινήσετε στην Ελλάδα.
+description: "Τι είναι το SEO με απλά λόγια. Πώς κατατάσσει η Google, on-page, τεχνικό, off-page και τοπικό SEO, λέξεις-κλειδιά, κόστος και από πού ξεκινάτε."
 date: 2026-07-23
 author: AnotherSEOGuru Editorial Team
 locale: el

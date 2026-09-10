@@ -1,7 +1,7 @@
 ---
 slug: istoselida-enikiasis-autokinitou-seo
 title: SEO Ιστοσελίδας Ενοικίασης Αυτοκινήτου - Οδηγός 2026
-description: Πώς να βελτιστοποιήσετε την ιστοσελίδα ενοικίασης αυτοκινήτου για τη Google. Λέξεις-κλειδιά αεροδρομίων, λιμανιών, τοπικό SEO, πίνακας κόστους και checklist για άμεσες κρατήσεις.
+description: "Πώς να βελτιστοποιήσετε την ιστοσελίδα ενοικίασης αυτοκινήτου για τη Google: λέξεις-κλειδιά αεροδρομίων και λιμανιών, τοπικό SEO, κόστος και checklist."
 date: 2026-06-16
 author: AnotherSEOGuru Editorial Team
 locale: el

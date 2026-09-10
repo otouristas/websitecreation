@@ -1,7 +1,7 @@
 ---
 slug: how-much-does-a-website-cost
 title: How Much Does a Website Cost in 2026? Full Pricing Guide
-description: What a website really costs in 2026 - business sites, e-shops, and hotel websites - plus the hidden costs of hosting, content, and SEO. Transparent EUR pricing.
+description: "What a website really costs in 2026: business sites, e-shops and hotel websites, plus the hidden costs of hosting, content and SEO. Transparent EUR pricing."
 date: 2026-07-06
 author: AnotherSEOGuru Editorial Team
 locale: en

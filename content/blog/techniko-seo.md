@@ -1,7 +1,7 @@
 ---
 slug: techniko-seo
 title: Τεχνικό SEO - Checklist για Καλύτερη Κατάταξη Google (2026)
-description: Τι είναι το τεχνικό SEO και πώς βελτιώνει την κατάταξη στη Google. Crawl, index, Core Web Vitals, schema, λάθη, κόστος και πρακτικό checklist για ελληνικές ιστοσελίδες.
+description: "Τι είναι το τεχνικό SEO και πώς βελτιώνει την κατάταξη στη Google. Crawl, index, Core Web Vitals, schema, λάθη, κόστος και πρακτικό checklist."
 date: 2026-07-23
 author: AnotherSEOGuru Editorial Team
 locale: el

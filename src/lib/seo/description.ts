@@ -32,7 +32,12 @@ interface DescriptionInput {
 
 const CONNECTIVES = new Set([
   'and', 'or', 'with', 'for', 'to', 'the', 'a', 'of', 'in', 'on', 'from', 'plus', 'built',
-  'και', 'ή', 'με', 'για', 'στο', 'στη', 'στην', 'από', 'που', 'το', 'η', 'ο', 'σε',
+  'where', 'when', 'which', 'what', 'how', 'why', 'into', 'about',
+  'και', 'ή', 'με', 'για', 'στο', 'στη', 'στην', 'στον', 'στους', 'στις', 'από', 'που', 'σε',
+  // Bare Greek articles. Their absence is why `...με χαμηλότερο κόστος από την.`
+  // shipped: `από` was dropped as a connective but `την` was not, so the cut
+  // left a dangling article and deleted the object of the comparison.
+  'το', 'η', 'ο', 'τη', 'την', 'τον', 'της', 'του', 'των', 'τα', 'τους', 'οι',
 ]);
 
 /**
@@ -46,7 +51,13 @@ export function smartTruncate(text: string, maxLength: number): string {
 
   // Prefer the last complete sentence that fits.
   const window = clean.slice(0, maxLength);
-  const lastStop = Math.max(window.lastIndexOf('. '), window.lastIndexOf('! '), window.lastIndexOf('; '));
+  // '; ' also catches Greek questions, whose question mark is ';'.
+  const lastStop = Math.max(
+    window.lastIndexOf('. '),
+    window.lastIndexOf('! '),
+    window.lastIndexOf('? '),
+    window.lastIndexOf('; '),
+  );
   if (lastStop > maxLength * 0.6) {
     return window.slice(0, lastStop + 1).trim();
   }

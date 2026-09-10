@@ -107,6 +107,18 @@ function validatePost(filePath) {
     errors.push(`internal links ${links} < 5`);
   }
 
+  // buildMetadata() hard-caps descriptions at 160 and cuts at a word boundary,
+  // which amputated the closing noun or verb on 15 posts before this check
+  // existed ("...με χαμηλότερο κόστος από την."). Catch it at author time.
+  const desc = String(data.description ?? '').replace(/\s+/g, ' ').trim();
+  if (!desc) {
+    errors.push('missing description');
+  } else if (desc.length > 158) {
+    errors.push(`description ${desc.length} > 158 (would be truncated mid-phrase in the SERP)`);
+  } else if (desc.length < 120) {
+    warnings.push(`description ${desc.length} < 120 (short for the SERP window)`);
+  }
+
   if (!data.categoryColor || !String(data.categoryColor).includes('bg-')) {
     warnings.push(`categoryColor may be invalid: ${data.categoryColor ?? '(none)'}`);
   }

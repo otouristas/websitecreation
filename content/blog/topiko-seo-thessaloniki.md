@@ -1,7 +1,7 @@
 ---
 slug: topiko-seo-thessaloniki
 title: Τοπικό SEO Θεσσαλονίκη - Οδηγός για Επιχειρήσεις 2026
-description: Πώς μια επιχείρηση στη Θεσσαλονίκη κυριαρχεί στις τοπικές αναζητήσεις. Google Business Profile, τοπικές σελίδες και στρατηγική SEO με χαμηλότερο κόστος από την Αθήνα.
+description: "Πώς μια επιχείρηση στη Θεσσαλονίκη κυριαρχεί στις τοπικές αναζητήσεις. Google Business Profile, τοπικές σελίδες και SEO φθηνότερα από την Αθήνα."
 date: 2026-07-07
 author: AnotherSEOGuru Editorial Team
 locale: el

@@ -1,7 +1,7 @@
 ---
 slug: hotel-website-design
 title: Hotel Website Design - Turn Visitors into Direct Bookings
-description: What a hotel website needs in 2026 - fast mobile UX, a booking engine, room pages, multilingual SEO, and schema - to cut OTA commissions and win direct bookings.
+description: "What a hotel website needs in 2026: fast mobile UX, a booking engine, room pages, multilingual SEO and schema, to cut OTA commissions and win direct bookings."
 date: 2026-07-06
 author: AnotherSEOGuru Editorial Team
 locale: en

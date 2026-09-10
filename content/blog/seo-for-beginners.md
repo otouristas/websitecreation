@@ -1,7 +1,7 @@
 ---
 slug: seo-for-beginners
 title: SEO for Beginners - What It Is and How It Works (Simply)
-description: What SEO is in plain English - how Google ranks pages, what keywords, on-page, technical SEO and backlinks mean, realistic costs, common mistakes, and where to start today.
+description: "What SEO is in plain English: how Google ranks pages, what keywords, on-page, technical SEO and backlinks mean, realistic costs, and where to start."
 date: 2026-07-06
 author: AnotherSEOGuru Editorial Team
 translationOf: seo-gia-arxarious

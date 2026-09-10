@@ -1,7 +1,7 @@
 ---
 slug: seo-content-guide
 title: SEO Content - How to Write Pages That Rank and Convert
-description: What SEO content is and how to write it - intent, structure, FAQs, proof and internal links - plus formats, costs, timelines and when to use SEO content services.
+description: "What SEO content is and how to write it: intent, structure, FAQs, proof and internal links, plus formats, costs, timelines and when to outsource it."
 date: 2026-07-23
 author: AnotherSEOGuru Editorial Team
 category: SEO

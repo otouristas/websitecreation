@@ -1,7 +1,7 @@
 ---
 slug: backlink-checker
 title: Backlink Checker - How to Check Backlinks of Any Website (Free + Paid)
-description: What a backlink checker does, how to check backlinks for free in Google Search Console, how to check competitor backlinks, spot toxic links, and which backlink checker tool to use in 2026.
+description: "What a backlink checker does, how to check backlinks free in Google Search Console, how to check competitor backlinks, spot toxic links, and which to use."
 date: 2026-09-05
 author: AnotherSEOGuru Editorial Team
 category: SEO

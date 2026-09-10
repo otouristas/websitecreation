@@ -1,7 +1,7 @@
 ---
 slug: what-is-seo
 title: What Is SEO? Search Engine Optimization Explained (2026)
-description: SEO (Search Engine Optimization) is how you improve organic visibility in Google and AI answers. Learn how it works, the four types, best practices, costs and where to start.
+description: "SEO is how you improve organic visibility in Google and AI answers. Learn how it works, the four types, best practices, costs and where to start."
 date: 2026-07-23
 author: AnotherSEOGuru Editorial Team
 category: SEO
