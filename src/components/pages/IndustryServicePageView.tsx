@@ -17,6 +17,7 @@ import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 import { solutionsUi } from '@/data/translations/solutions-ui';
 import { getServiceAngle, getServiceFaqs, ANGLE_HEADINGS, FAQ_HEADING } from '@/data/industry-service-copy';
 import { GENERATED_CONTENT_PUBLISHED, GENERATED_CONTENT_UPDATED } from '@/lib/seo/content-dates';
+import { shouldIndexServiceLocation } from '@/data/locations';
 
 export function IndustryServicePageView({
   industrySlug,
@@ -85,7 +86,15 @@ export function IndustryServicePageView({
     }),
   );
 
-  const locations = isEl ? greeceLocations : tier1Locations.slice(0, 18);
+  // Only link cities whose service x location page is indexable in this locale.
+  // The EN branch used to be `tier1Locations.slice(0, 18)` - eighteen US cities,
+  // every one of them noindex - so each indexed English industry x service page
+  // spent 18 links on pages it was telling Google to drop. The EL branch was
+  // already fine, and `services/[service]/[location]/page.tsx` already filters
+  // its industry grid the same way.
+  const locations = (isEl ? greeceLocations : tier1Locations).filter((location) =>
+    shouldIndexServiceLocation(location, isEl ? 'el' : 'en'),
+  );
 
   return (
     <>

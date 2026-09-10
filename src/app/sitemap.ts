@@ -69,6 +69,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/platform/for/ecommerce', priority: 0.85, changeFrequency: 'monthly' as const },
     { path: '/resources', priority: 0.88 },
     { path: '/tools', priority: 0.84 },
+    // The hub the three /compare/[slug] pages hang off. It did not exist until
+    // now, which is why /el/compare's redirect landed on a 404.
+    { path: '/compare', priority: 0.86, changeFrequency: 'monthly' as const },
   ];
 
   const staticPages = [

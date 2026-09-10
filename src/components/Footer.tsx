@@ -65,12 +65,15 @@ const EN_SEO_HUB_LINKS: { label: string; href: string }[] = [
   { label: "E-commerce / E-shop", href: "/en/services/eshop-woocommerce" },
   { label: "AI Visibility (GEO/AEO)", href: "/en/services/ai-visibility" },
   { label: "Website Redesign", href: "/en/services/website-redesign" },
-  // Top international markets
-  { label: "Web Design New York", href: "/en/services/website-creation/new-york-ny" },
-  { label: "SEO Los Angeles", href: "/en/services/local-seo/los-angeles-ca" },
+  // Cities whose English page is actually indexable. New York and Los Angeles
+  // were here on every page of the site, and both are noindex - roughly 2,000
+  // sitewide links each into pages we ask Google to drop.
+  { label: "Web Design London", href: "/en/services/website-creation/london-uk" },
+  { label: "SEO London", href: "/en/services/local-seo/london-uk" },
   { label: "Web Design Athens", href: "/en/services/website-creation/athens-gr" },
   { label: "SEO Thessaloniki", href: "/en/services/local-seo/thessaloniki-gr" },
-  { label: "Website Creation Thessaloniki", href: "/en/services/website-creation/thessaloniki-gr" },
+  { label: "Web Design Crete", href: "/en/services/website-creation/crete-gr" },
+  { label: "SEO Santorini", href: "/en/services/local-seo/santorini-gr" },
   { label: "Hotel SEO", href: "/en/solutions/hotels" },
   { label: "Pricing & Packages", href: "/en/pricing" },
   { label: "All Locations", href: "/en/locations" },
@@ -234,11 +237,6 @@ export default function Footer({ locale: localeProp }: { locale?: SiteLocale }):
                       Login
                     </a>
                   </li>
-                  <li>
-                    <Link href={lp("/resources")} className={columnLinkClass}>
-                      Roadmap
-                    </Link>
-                  </li>
                 </>
               )}
             </ul>
@@ -278,15 +276,56 @@ export default function Footer({ locale: localeProp }: { locale?: SiteLocale }):
                       SEO guides
                     </Link>
                   </li>
-                  <li>
-                    <Link href={lp("/platform/features")} className={columnLinkClass}>
-                      Platform features
-                    </Link>
-                  </li>
+
                 </>
               )}
             </ul>
           </div>
+          {/* Platform column.
+              /platform/pricing had 2 inbound links sitewide, the three
+              /platform/for/* pages had 1 each, and the three /compare/* pages
+              1-2 each - seven bottom-of-funnel pages one link from being
+              orphans, while /contact held 14,660. `hub-spoke.ts:49-69` already
+              declares exactly this cluster; it was never wired to anything.
+              English only, because these routes are English-only by design
+              (`locale.ts:21`). */}
+          {!isEl && (
+            <div>
+              <h3 className={columnHeadingClass}>Platform</h3>
+              <ul className="space-y-3.5">
+                <li>
+                  <Link href={lp("/platform")} className={columnLinkClass}>
+                    Platform overview
+                  </Link>
+                </li>
+                <li>
+                  <Link href={lp("/platform/pricing")} className={columnLinkClass}>
+                    Software plans
+                  </Link>
+                </li>
+                <li>
+                  <Link href={lp("/platform/for/agencies")} className={columnLinkClass}>
+                    For agencies
+                  </Link>
+                </li>
+                <li>
+                  <Link href={lp("/platform/for/in-house")} className={columnLinkClass}>
+                    For in-house teams
+                  </Link>
+                </li>
+                <li>
+                  <Link href={lp("/platform/for/ecommerce")} className={columnLinkClass}>
+                    For ecommerce
+                  </Link>
+                </li>
+                <li>
+                  <Link href={lp("/compare")} className={columnLinkClass}>
+                    Compare alternatives
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          )}
           <div>
             <h3 className={columnHeadingClass}>{isEl ? t!.company : "Company"}</h3>
             <ul className="space-y-3.5">
@@ -300,24 +339,17 @@ export default function Footer({ locale: localeProp }: { locale?: SiteLocale }):
                   {isEl ? t!.contact : "Contact"}
                 </Link>
               </li>
+              {/* Careers, Partners and Affiliates all pointed at /contact, as
+                  did Security in the legal column. Four labels promising four
+                  destinations and delivering one made /contact the single
+                  most-linked page on the site, ahead of /pricing, and told a
+                  visitor something untrue about each. */}
               {!isEl && (
-                <>
-                  <li>
-                    <Link href={lp("/contact")} className={columnLinkClass}>
-                      Careers
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href={lp("/contact")} className={columnLinkClass}>
-                      Partners
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href={lp("/contact")} className={columnLinkClass}>
-                      Affiliates
-                    </Link>
-                  </li>
-                </>
+                <li>
+                  <Link href={lp("/work")} className={columnLinkClass}>
+                    Case studies
+                  </Link>
+                </li>
               )}
             </ul>
           </div>
@@ -334,23 +366,16 @@ export default function Footer({ locale: localeProp }: { locale?: SiteLocale }):
                   {isEl ? t!.terms : "Terms of service"}
                 </Link>
               </li>
+              {/* Privacy was linked three times per page (policy, cookies,
+                  GDPR) and terms once, which between them held 4.4% of the
+                  whole internal link graph on pages with no commercial value.
+                  One link each. The cookie and GDPR sections are still reachable
+                  from inside the policy. */}
               <li>
                 <Link href={lp("/privacy#cookies")} className={columnLinkClass}>
                   {isEl ? t!.cookies : "Cookie policy"}
                 </Link>
               </li>
-              <li>
-                <Link href={lp("/privacy")} className={columnLinkClass}>
-                  {isEl ? t!.gdpr : "GDPR"}
-                </Link>
-              </li>
-              {!isEl && (
-                <li>
-                  <Link href={lp("/contact")} className={columnLinkClass}>
-                    Security
-                  </Link>
-                </li>
-              )}
             </ul>
           </div>
         </div>
