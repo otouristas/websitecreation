@@ -7,7 +7,7 @@ import { PLATFORM_TOOLS, getPlatformToolBySlug } from "@/data/platform-tools";
 import { getAppPath } from "@/lib/app-links";
 import { blogHref } from '@/lib/blog';
 import { isValidLocale, localizedPath, type SiteLocale } from "@/lib/i18n/locale";
-import { buildMetadata, generateFAQSchema } from "@/lib/seo";
+import { buildMetadata } from "@/lib/seo";
 
 interface ToolPageProps {
   params: Promise<{ locale: string; slug: string }>;
@@ -50,12 +50,12 @@ export default async function PlatformToolPage({ params }: ToolPageProps) {
     question: f.question,
     answer: f.answer,
   }));
-  const faqSchema = faqItems.length > 0 ? generateFAQSchema({ faqs: faqItems }) : null;
+  // No FAQPage: every /tools/[slug] route is noIndex, so this was structured
+  // data on a page explicitly asking not to be indexed.
 
   return (
     <>
       <Header />
-      {faqSchema ? <SchemaMarkup schemas={[faqSchema]} /> : null}
       <main className="blueprint-grid relative z-0 main-below-header pb-16">
         <div className="container max-w-3xl">
           <nav className="text-sm text-muted-foreground mb-6">

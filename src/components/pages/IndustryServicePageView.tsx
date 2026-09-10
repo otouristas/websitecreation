@@ -9,7 +9,6 @@ import {
   generateArticleSchema,
   generateBreadcrumbSchema,
   generateServiceSchema,
-  generateFAQSchema,
   combineSchemas,
 } from '@/lib/seo';
 import { SchemaMarkup, Breadcrumbs } from '@/components/seo';
@@ -118,9 +117,10 @@ export function IndustryServicePageView({
           </div>
         </section>
 
-        {serviceFaqs.length > 0 ? (
-          <SchemaMarkup schemas={[generateFAQSchema({ faqs: [...serviceFaqs] })]} />
-        ) : null}
+        {/* No FAQPage: `getServiceFaqs` serves the same shared default block
+            to most industry x service combinations, so this marked up
+            identical Q&A across hundreds of URLs for a rich result an agency
+            cannot earn. The visible FAQ below is the part that matters. */}
         {angle ? (
           <section className="section">
             <div className="container max-w-3xl space-y-8">

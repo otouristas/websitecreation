@@ -21,7 +21,6 @@ import {
     buildServiceLocationMetadata,
     generateBreadcrumbSchema,
     generateServiceSchema,
-    generateFAQSchema,
     combineSchemas,
     BASE_URL,
 } from '@/lib/seo';
@@ -224,7 +223,13 @@ export default async function ServiceLocationPage({ params }: PageProps) {
 
     const schemas = combineSchemas(
         generateBreadcrumbSchema({ items: breadcrumbs }),
-        generateFAQSchema({ faqs: faqItems }),
+        // No FAQPage. `getServiceFaqs` falls back to one shared DEFAULT_EL /
+        // DEFAULT_EN block for any service without its own entry, so the same
+        // Q&A pairs were marked up across hundreds of city URLs. FAQ rich
+        // results have been restricted to authoritative government and health
+        // sites since 2023, so there was no result to win in exchange - only
+        // duplicate structured data at template scale. The visible FAQ stays:
+        // that copy is what earns People Also Ask and AI-answer citations.
         // No LocalBusiness here on purpose. We have no physical premises in these
         // cities, and LocalBusiness + PostalAddress asserts exactly that. Service
         // with areaServed is the correct markup for a service-area business and
