@@ -31,6 +31,7 @@ import { isIndustryServiceIndexable } from '@/lib/indexability/industry-service'
 import { isValidLocale, localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 import { getGreekLocative } from '@/lib/greek-locative';
 import { getServiceFaqs } from '@/data/service-faq-data';
+import { currentPrice, entrySeoNet, entryWebsiteNet, formatPrice, seoPackages, websitePackages } from '@/data/pricing';
 
 interface PageProps {
     params: Promise<{ locale: string; service: string; location: string }>;
@@ -173,8 +174,8 @@ export default async function ServiceLocationPage({ params }: PageProps) {
             key: 'pricing',
             question: `Ποιο είναι το κόστος για ${serviceFor} ${cityLocative};`,
             answer: ['local-seo', 'seo-audits', 'ai-visibility', 'link-building', 'eshop-seo', 'content-creation'].includes(serviceSlug)
-                ? `Τα πακέτα SEO ξεκινούν από €400/μήνα (Starter), €720/μήνα (Growth) και €1.200/μήνα (Scale). Η τιμή εξαρτάται από τον ανταγωνισμό ${cityLocative} και τους στόχους σας. Δείτε αναλυτικές τιμές στη σελίδα τιμών μας ή ζητήστε δωρεάν προσφορά.`
-                : `Οι ιστοσελίδες ξεκινούν από €1.200 (Starter, έως 5 σελίδες), €2.000 (Professional, έως 10 σελίδες) και €3.200 (Business, έως 20 σελίδες). Χωρίς κρυφές χρεώσεις - όλες οι τιμές σε Ευρώ. Ζητήστε δωρεάν προσφορά για ${cityName}.`,
+                ? `Τα πακέτα SEO ξεκινούν από €${formatPrice(entrySeoNet(), 'el')}/μήνα (Foundations), €${formatPrice(currentPrice(seoPackages[1]), 'el')}/μήνα (Growth) και €${formatPrice(currentPrice(seoPackages[2]), 'el')}/μήνα (Authority). Η τιμή εξαρτάται από τον ανταγωνισμό ${cityLocative} και τους στόχους σας. Δείτε αναλυτικές τιμές στη σελίδα τιμών μας ή ζητήστε δωρεάν προσφορά.`
+                : `Οι ιστοσελίδες ξεκινούν από €${formatPrice(entryWebsiteNet(), 'el')} (Starter, έως 5 σελίδες), €${formatPrice(currentPrice(websitePackages[1]), 'el')} (Professional, έως 10 σελίδες) και €${formatPrice(currentPrice(websitePackages[2]), 'el')} (Business, έως 20 σελίδες). Χωρίς κρυφές χρεώσεις - όλες οι τιμές σε Ευρώ. Ζητήστε δωρεάν προσφορά για ${cityName}.`,
         },
         {
             question: `Θα εμφανίζεται η επιχείρησή μου σε ChatGPT και AI αναζητήσεις;`,
@@ -197,8 +198,8 @@ export default async function ServiceLocationPage({ params }: PageProps) {
             key: 'pricing',
             question: `How much does ${service.name.toLowerCase()} cost in ${location.city}?`,
             answer: ['local-seo', 'seo-audits', 'ai-visibility', 'link-building', 'eshop-seo', 'content-creation'].includes(serviceSlug)
-                ? `SEO packages start at €400/mo (Starter), €720/mo (Growth), and €1.200/mo (Scale). The price depends on competition in ${location.city} and your goals. All pricing is transparent - see our pricing page or request a free quote.`
-                : `Websites start at €1.200 (Starter, up to 5 pages), €2,000 (Professional, up to 10 pages), and €3,200 (Business, up to 20 pages). No hidden fees. Request a free quote for ${location.city}.`,
+                ? `SEO packages start at €${formatPrice(entrySeoNet(), 'en')}/mo (Foundations), €${formatPrice(currentPrice(seoPackages[1]), 'en')}/mo (Growth), and €${formatPrice(currentPrice(seoPackages[2]), 'en')}/mo (Authority). The price depends on competition in ${location.city} and your goals. All pricing is transparent - see our pricing page or request a free quote.`
+                : `Websites start at €${formatPrice(entryWebsiteNet(), 'en')} (Starter, up to 5 pages), €${formatPrice(currentPrice(websitePackages[1]), 'en')} (Professional, up to 10 pages), and €${formatPrice(currentPrice(websitePackages[2]), 'en')} (Business, up to 20 pages). No hidden fees. Request a free quote for ${location.city}.`,
         },
         {
             question: `Will my business show up in ChatGPT and AI search?`,

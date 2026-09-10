@@ -26,7 +26,7 @@ import {
   GhostButtonLink,
 } from "@/components/landing/primitives";
 import { NotForYou } from "@/components/positioning/NotForYou";
-import { ENTRY_SEO_NET, formatPrice } from "@/data/pricing";
+import { entrySeoNet, formatPrice } from "@/data/pricing";
 
 type PageProps = { params: Promise<{ locale: string }> };
 
@@ -112,8 +112,8 @@ export default async function ServicesPage({ params }: PageProps) {
             title={isEl ? "Όλες οι υπηρεσίες" : "Every service"}
             body={
               isEl
-                ? `Μηνιαία συνεργασία SEO από €${formatPrice(ENTRY_SEO_NET, siteLocale)} + ΦΠΑ 24%. Έργα κατασκευής τιμολογούνται ανά project.`
-                : `Monthly SEO engagements from €${formatPrice(ENTRY_SEO_NET, siteLocale)} + 24% VAT. Website projects are quoted per project.`
+                ? `Μηνιαία συνεργασία SEO από €${formatPrice(entrySeoNet(), siteLocale)} + ΦΠΑ 24%. Έργα κατασκευής τιμολογούνται ανά project.`
+                : `Monthly SEO engagements from €${formatPrice(entrySeoNet(), siteLocale)} + 24% VAT. Website projects are quoted per project.`
             }
             className="mb-12"
           />

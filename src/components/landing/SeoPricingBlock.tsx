@@ -1,7 +1,7 @@
 import { ArrowRight } from 'lucide-react';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 import { Bloom, Section, SectionHeading } from './primitives';
-import { seoPackages, formatPrice, currentPrice, ENTRY_SEO_NET } from '@/data/pricing';
+import { seoPackages, formatPrice, currentPrice, entrySeoNet } from '@/data/pricing';
 import { PriceCard } from '@/components/pricing/PriceCard';
 
 /**
@@ -33,8 +33,8 @@ export function SeoPricingBlock({ locale = 'en' }: { locale?: SiteLocale }) {
         title={isEl ? 'Πόσο κοστίζει το SEO στην Ελλάδα;' : 'How much does SEO cost?'}
         body={
           isEl
-            ? `Το μηνιαίο SEO στην Ελλάδα ξεκινά από €${formatPrice(ENTRY_SEO_NET, locale)} τον μήνα συν ΦΠΑ 24% για τοπικές επιχειρήσεις και φτάνει τα €${formatPrice(currentPrice(seoPackages[2]), locale)} για e-shop και ανταγωνιστικούς κλάδους. Η AnotherSEOGuru τιμολογεί με βάση τον ανταγωνισμό, τη ζήτηση αναζήτησης και τον όγκο περιεχομένου, όχι με βάση αριθμό λέξεων-κλειδιών.`
-            : `Monthly SEO starts at €${formatPrice(ENTRY_SEO_NET, locale)} a month plus 24% VAT for local businesses and reaches €${formatPrice(currentPrice(seoPackages[2]), locale)} for e-shops and competitive markets. We price on competition, search demand and content volume, not on a keyword count.`
+            ? `Το μηνιαίο SEO στην Ελλάδα ξεκινά από €${formatPrice(entrySeoNet(), locale)} τον μήνα συν ΦΠΑ 24% για τοπικές επιχειρήσεις και φτάνει τα €${formatPrice(currentPrice(seoPackages[2]), locale)} για e-shop και ανταγωνιστικούς κλάδους. Η AnotherSEOGuru τιμολογεί με βάση τον ανταγωνισμό, τη ζήτηση αναζήτησης και τον όγκο περιεχομένου, όχι με βάση αριθμό λέξεων-κλειδιών.`
+            : `Monthly SEO starts at €${formatPrice(entrySeoNet(), locale)} a month plus 24% VAT for local businesses and reaches €${formatPrice(currentPrice(seoPackages[2]), locale)} for e-shops and competitive markets. We price on competition, search demand and content volume, not on a keyword count.`
         }
       />
 

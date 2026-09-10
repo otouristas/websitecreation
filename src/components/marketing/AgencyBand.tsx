@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { elHome } from "@/data/translations/el-home";
 import { localizedPath, type SiteLocale } from "@/lib/i18n/locale";
+import { PROJECT_COUNT } from '@/data/company-facts';
 
 interface AgencyBandProps {
   locale?: SiteLocale;
@@ -23,7 +24,7 @@ export function AgencyBand({ locale = "en" }: AgencyBandProps) {
           <p className="text-lg text-background/80 mb-8 leading-relaxed">
             {isEl
               ? t!.body
-              : "Specialists in tourism, hotels, rent-a-car and travel AI. 55+ live projects - from the Greek islands to global markets."}
+              : `Specialists in tourism, hotels, rent-a-car and travel AI. ${PROJECT_COUNT} live projects - from the Greek islands to global markets.`}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

@@ -13,7 +13,7 @@ import { getNavDictionary } from '@/lib/i18n/get-dictionary';
 import { trackCtaClick } from '@/lib/analytics';
 import { WHATSAPP_HREF } from '@/lib/contact-info';
 import { getTrustStats, MARKETS_LABEL } from '@/data/trust-stats';
-import { ENTRY_SEO_NET, ENTRY_WEBSITE_NET, formatPrice } from '@/data/pricing';
+import { entrySeoNet, entryWebsiteNet, formatPrice } from '@/data/pricing';
 
 interface MobileNavProps {
   locale: SiteLocale;
@@ -175,13 +175,13 @@ export function MobileNav({
     {
       href: lp('/services/website-creation'),
       title: copy.websiteOffer,
-      meta: copy.websiteMeta(formatPrice(ENTRY_WEBSITE_NET, locale)),
+      meta: copy.websiteMeta(formatPrice(entryWebsiteNet(), locale)),
       cta: 'website_creation',
     },
     {
       href: lp('/services/seo-audits'),
       title: copy.seoOffer,
-      meta: copy.seoMeta(formatPrice(ENTRY_SEO_NET, locale)),
+      meta: copy.seoMeta(formatPrice(entrySeoNet(), locale)),
       cta: 'seo',
     },
   ];

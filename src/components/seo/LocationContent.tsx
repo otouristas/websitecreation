@@ -8,6 +8,7 @@ import { Industry } from '@/data/industries';
 import { getLocationPack } from '@/data/location-content';
 import { localizedPath, siteLocaleFromPath, type SiteLocale } from '@/lib/i18n/locale';
 import { LocationContentGreek } from './LocationContentGreek';
+import { entrySeoNet, entryWebsiteNet, formatPrice } from '@/data/pricing';
 
 interface LocationContentProps {
     location: Location;
@@ -82,7 +83,7 @@ export function LocationContent({ location, service, industry, locale: localePro
                     <p className="mt-4">{serviceDepth}</p>
                 ) : null}
                 <p className="mt-4">
-                    <strong>Transparent pricing:</strong> websites start at €1.200 and monthly SEO from €400/mo - see our{' '}
+                    <strong>Transparent pricing:</strong> websites start at €{formatPrice(entryWebsiteNet(), 'en')} and monthly SEO from €{formatPrice(entrySeoNet(), 'en')}/mo - see our{' '}
                     <Link href={lp('/pricing')} className="text-primary underline">pricing &amp; packages</Link> or{' '}
                     <Link href={lp('/get-started')} className="text-primary underline">request a free quote</Link>.
                 </p>

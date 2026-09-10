@@ -29,6 +29,7 @@ import {
 import { usePathname } from "next/navigation";
 import { getAppPath } from "@/lib/app-links";
 import { localizedPath, siteLocaleFromPath } from "@/lib/i18n/locale";
+import { PLATFORM_TOOLS } from "@/data/platform-tools";
 
 interface ToolItem {
   readonly name: string;
@@ -158,8 +159,9 @@ export function FreeToolsMegaMenu(): ReactElement {
           className={`h-4 w-4 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
           aria-hidden
         />
+        {/* Derived: PLATFORM_TOOLS holds 9, the badge claimed 15+. */}
         <span className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-[8px] font-bold text-primary-foreground">
-          15+
+          {PLATFORM_TOOLS.length}
         </span>
       </button>
       {isOpen ? (
@@ -273,7 +275,7 @@ export function FreeToolsMegaMenu(): ReactElement {
                   </div>
                   <div className="mt-5 grid grid-cols-2 gap-3">
                     <div className="rounded-lg bg-muted/50 p-3 text-center">
-                      <div className="text-2xl font-black text-primary">15+</div>
+                      <div className="text-2xl font-black text-primary">{PLATFORM_TOOLS.length}</div>
                       <div className="text-[10px] text-muted-foreground">Live Tools</div>
                     </div>
                     <div className="rounded-lg bg-muted/50 p-3 text-center">

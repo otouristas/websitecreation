@@ -237,9 +237,23 @@ export const addOns: readonly AddOn[] = [
   { id: 'ecommerce', from: 1200, nameEn: 'E-commerce functionality', nameEl: 'Λειτουργικότητα e-commerce' },
 ];
 
-/** Lowest entry points, for copy that references a starting figure. */
-export const ENTRY_WEBSITE_NET = websitePackages[0].offer;
-export const ENTRY_SEO_NET = seoPackages[0].offer;
+/**
+ * Lowest entry points, for copy that references a starting figure.
+ *
+ * Functions, not constants. As constants these read `.offer` - the *promotional*
+ * price - and froze it at module load, so the day `OFFER_ENDS` passed the
+ * pricing page switched to the regular €1.500 / €500 via `currentPrice()` while
+ * the mobile menu, the services hub and the homepage SEO block carried on
+ * advertising €1.200 / €400. Same hazard the `PRICE_TOKENS` block below was
+ * written to avoid, and the same reason it resolves at render time.
+ */
+export function entryWebsiteNet(now?: Date): number {
+  return currentPrice(websitePackages[0], now);
+}
+
+export function entrySeoNet(now?: Date): number {
+  return currentPrice(seoPackages[0], now);
+}
 
 /**
  * Look a tier up by id across both ladders.
