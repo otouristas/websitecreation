@@ -7,7 +7,7 @@ author: AnotherSEOGuru Editorial Team
 locale: el
 category: Local SEO
 categoryColor: bg-blue-100 text-blue-700
-pillar: search-console-mastery
+pillar: local-seo
 faq:
   - question: Σε πόσο καιρό φέρνει αποτέλεσμα το τοπικό SEO στη Θεσσαλονίκη;
     answer: Λόγω χαμηλότερου ανταγωνισμού από την Αθήνα, οι πρώτες τοπικές κατατάξεις έρχονται συχνά σε 2–3 μήνες για σωστά στοχευμένες υπηρεσίες και περιοχές.

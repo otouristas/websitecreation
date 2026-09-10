@@ -6,7 +6,7 @@ date: 2026-01-10
 author: AnotherSEOGuru Team
 category: Tactical Guide
 categoryColor: bg-red-100 text-red-700
-pillar: search-console-mastery
+pillar: local-seo
 faq:
   - question: "How long until GBP optimization shows results?"
     answer: "Category fixes and photo uploads often move within 2–4 weeks. Review velocity and posts compound over 60–90 days."

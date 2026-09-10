@@ -7,6 +7,7 @@ author: AnotherSEOGuru Editorial Team
 category: SEO
 categoryColor: bg-emerald-100 text-emerald-800
 pillar: technical-seo-in-house
+translationOf: techniko-seo
 faq:
   - question: What is technical SEO?
     answer: Technical SEO makes your site easy to crawl, index, and render - speed, mobile usability, HTTPS, sitemaps, canonicals, structured data, and clean architecture.

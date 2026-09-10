@@ -8,7 +8,7 @@ locale: el
 translationOf: ai-seo-agency-geo-aeo
 category: AI SEO
 categoryColor: bg-sky-100 text-sky-800
-pillar: ai-visibility
+pillar: ai-llm-visibility
 faq:
   - question: Τι είναι ένα AI SEO agency;
     answer: Συνδυάζει κλασικό SEO με Generative Engine Optimization (GEO) και Answer Engine Optimization (AEO) ώστε το brand σας να κατατάσσεται στη Google και να αναφέρεται σε απαντήσεις AI όπως ChatGPT, Perplexity και Google AI Overviews.

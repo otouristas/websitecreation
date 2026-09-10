@@ -95,7 +95,7 @@ Off-page never replaces weak pages. Fix intent match and [SEO content](/en/blog/
 
 **E-commerce and national brands:** you need topical authority - category guides, digital PR and links that support money categories. Fix thin product copy first; then earn links to category hubs, not only the homepage.
 
-**Hotels and tourism:** destination publishers, travel blogs, tourism boards and experience partners matter more than generic tech blogs. Combine off-page with room-page architecture from the [hotel SEO guide](/en/blog/seo-for-hotels-guide).
+**Hotels and tourism:** destination publishers, travel blogs, tourism boards and experience partners matter more than generic tech blogs. Combine off-page with room-page architecture from the [hotel SEO guide](/en/blog/hotel-seo-guide).
 
 **B2B / agencies:** original research, tools and thought-leadership assets outperform directory submissions. One cited study can earn more qualified links than months of low-quality guest posts.
 

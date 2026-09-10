@@ -3,6 +3,7 @@ slug: hotel-seo-guide
 title: Hotel SEO - How to Win Direct Bookings in 2026
 description: A practical hotel SEO guide - cut OTA commissions, rank in Google, and win direct bookings with technical SEO, destination content, and AI search visibility.
 date: 2026-07-06
+updated: 2026-09-10
 author: AnotherSEOGuru Editorial Team
 translationOf: seo-gia-xenodoxeia
 category: Tourism
@@ -23,7 +24,7 @@ faq:
 
 Every booking that comes through Booking.com or Expedia costs you **15–25%** in commission. **Hotel SEO** is the most cost-effective way to reclaim that margin: a guest who finds you on Google books on your site, with no middleman. In 2026 that also means showing up in Maps, Google Hotels, and AI trip planners - not only ranking a thin homepage for “hotel + destination.”
 
-We run hospitality SEO across Greece - see [hotel solutions](/en/solutions/hotels), [Hotels Santorini](/en/work/hotels-santorini), and the deeper [SEO for hotels guide](/en/blog/seo-for-hotels-guide).
+We run hospitality SEO across Greece - see [hotel solutions](/en/solutions/hotels), [Hotels Santorini](/en/work/hotels-santorini) and [hotel website design](/en/blog/hotel-website-design).
 
 ## Why Hotel SEO Beats Paying More OTA Fees
 
@@ -56,6 +57,12 @@ Local language for domestic guests; English (and German or French where relevant
 ### 6. Schema markup for rich results
 
 Hotel, Offer, and FAQ structured data help Google show prices, ratings, and answers - and help AI models recommend you accurately. Align visible FAQ text with markup; never hide answers that schema claims exist.
+
+### 7. GEO / AEO for AI trip planners
+
+Travellers now ask "best family hotel in Crete with a pool" inside ChatGPT, Perplexity or a Google AI Overview and read one summary instead of ten results. For an answer engine to cite you, it needs something citable: visible questions and answers, unambiguous property facts (room types, amenities, distance to the airport and the beach), and proof that is not marketing copy - reviews and specific, checkable features.
+
+No engine guarantees it will mention you. What you control is whether your content is in a shape it can use. Pair the classic work with [AI Visibility](/en/services/ai-visibility) and the [GEO vs SEO vs AEO](/en/blog/geo-vs-seo-vs-aeo) primer.
 
 ## Cost, Timeline and Benchmarks
 
@@ -100,6 +107,10 @@ Yes. OTAs are a channel, not a strategy. Grow direct bookings every year while k
 ### How long until I see results?
 
 Local searches often move in 2–3 months. Competitive destination terms need a longer content and authority runway - typically 4–6+ months.
+
+### Do I need GEO / AEO, or is SEO enough?
+
+GEO and AEO do not replace SEO, they extend it. The same work - clean room pages, visible answers, structured data that matches what is on the page - serves Google and the answer engines. Start with the foundations; AI visibility comes from the same content in a citable shape.
 
 ### Do I need a new website or just SEO?
 

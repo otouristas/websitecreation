@@ -30,6 +30,21 @@ export const BLOG_PILLARS: readonly PillarMeta[] = [
     },
   },
   {
+    slug: 'local-seo',
+    en: {
+      title: 'Local SEO',
+      heading: 'Local SEO',
+      intro:
+        'Winning the map pack and "near me" searches: Google Business Profile, NAP consistency, reviews, citations, and city pages that answer local intent instead of substituting a place name.',
+    },
+    el: {
+      title: 'Τοπικό SEO',
+      heading: 'Τοπικό SEO',
+      intro:
+        'Πώς κερδίζετε το Map Pack και τις αναζητήσεις «κοντά μου»: Google Business Profile, συνέπεια στοιχείων, κριτικές, καταχωρήσεις και σελίδες πόλης που απαντούν σε πραγματική τοπική πρόθεση, όχι απλή αντικατάσταση ονόματος.',
+    },
+  },
+  {
     slug: 'industry-playbooks',
     en: {
       title: 'Industry Playbooks',

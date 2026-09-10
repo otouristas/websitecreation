@@ -7,7 +7,7 @@ author: AnotherSEOGuru Editorial Team
 translationOf: geo-vs-seo-vs-aeo-el
 category: AI SEO
 categoryColor: bg-sky-100 text-sky-800
-pillar: ai-visibility
+pillar: ai-llm-visibility
 faq:
   - question: Is GEO replacing SEO?
     answer: No. GEO builds on SEO. You still need crawlable, fast, authoritative pages. GEO adds entity and citation optimization for generative engines.

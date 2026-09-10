@@ -8,7 +8,7 @@ locale: el
 translationOf: geo-vs-seo-vs-aeo
 category: AI SEO
 categoryColor: bg-sky-100 text-sky-800
-pillar: ai-visibility
+pillar: ai-llm-visibility
 faq:
   - question: Το GEO αντικαθιστά το SEO;
     answer: Όχι. Το GEO χτίζει πάνω στο SEO. Χρειάζεστε ακόμα crawlable, γρήγορες, authoritative σελίδες. Το GEO προσθέτει βελτιστοποίηση entities και citations για generative engines.

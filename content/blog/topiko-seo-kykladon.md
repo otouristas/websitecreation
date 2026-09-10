@@ -7,7 +7,7 @@ author: AnotherSEOGuru Editorial Team
 locale: el
 category: Local SEO
 categoryColor: bg-blue-100 text-blue-700
-pillar: search-console-mastery
+pillar: local-seo
 faq:
   - question: Ποιο νησί είναι πιο εύκολο για τοπικό SEO στις Κυκλάδες;
     answer: Νησιά με χαμηλότερο ανταγωνισμό (Μήλος, Σίφνος, Τήνος, Φολέγανδρος) δίνουν πιο γρήγορα αποτελέσματα από Μύκονο και Σαντορίνη. Η στρατηγική προσαρμόζεται στη δυσκολία της αγοράς.
@@ -35,7 +35,7 @@ faq:
 - **Ανισόρροπος ανταγωνισμός** - Μύκονος/Σαντορίνη κορεσμένες· Πάρος, Νάξος, Μήλος αναπτυσσόμενες.
 - **Mobile-first** - αναζητήσεις εν κινήσει, συχνά με αδύναμο σήμα στο πλοίο.
 
-Ξεκινήστε το SEO **πριν** την αιχμή (ιδανικά φθινόπωρο–χειμώνας) ώστε οι σελίδες να προλάβουν indexation. Οδηγός βάσης: [τοπικό SEO](/en/blog/local-seo-guide) και [SEO για ξενοδοχεία](/el/blog/seo-gia-xenodoxeia-odigos-2026).
+Ξεκινήστε το SEO **πριν** την αιχμή (ιδανικά φθινόπωρο–χειμώνας) ώστε οι σελίδες να προλάβουν indexation. Οδηγός βάσης: [τοπικό SEO](/en/blog/local-seo-guide) και [SEO για ξενοδοχεία](/el/blog/seo-gia-xenodoxeia).
 
 ## Google Business Profile - Βελτιστοποίηση για Νησιά
 

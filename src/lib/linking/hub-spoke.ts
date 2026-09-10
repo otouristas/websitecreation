@@ -191,18 +191,9 @@ export const BLOG_MONEY_LINKS: Record<
         { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
         { path: '/work', titleEn: 'Hotel portfolio', titleEl: 'Έργα ξενοδοχείων' },
     ],
-    'seo-gia-xenodoxeia-odigos-2026': [
-        { path: '/solutions/hotels', titleEn: 'Hotel solutions', titleEl: 'Λύσεις για ξενοδοχεία' },
-        { path: '/services/ai-visibility', titleEn: 'AI visibility', titleEl: 'Ορατότητα σε AI' },
-        { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
-    ],
     'hotel-seo-guide': [
         { path: '/solutions/hotels', titleEn: 'Hotel solutions', titleEl: 'Λύσεις για ξενοδοχεία' },
         { path: '/services/local-seo', titleEn: 'Local SEO', titleEl: 'Τοπικό SEO' },
-        { path: '/services/ai-visibility', titleEn: 'AI visibility', titleEl: 'Ορατότητα σε AI' },
-    ],
-    'seo-for-hotels-guide': [
-        { path: '/solutions/hotels', titleEn: 'Hotel solutions', titleEl: 'Λύσεις για ξενοδοχεία' },
         { path: '/services/ai-visibility', titleEn: 'AI visibility', titleEl: 'Ορατότητα σε AI' },
         { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
     ],

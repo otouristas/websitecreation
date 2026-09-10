@@ -5,6 +5,7 @@ import { COMPARE_PAGES } from '@/data/compare-pages';
 import { getAllBlogPosts, getPillarSummary } from '@/lib/blog';
 import { portfolioProjects } from '@/data/portfolio';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
+import { GENERATED_CONTENT_UPDATED } from '@/lib/seo/content-dates';
 
 const BASE_URL = 'https://anotherseoguru.com';
 const LOCALES: SiteLocale[] = ['en', 'el'];
@@ -19,7 +20,7 @@ function forBothLocales(
 ): MetadataRoute.Sitemap {
   return LOCALES.map((locale) => ({
     url: localeUrl(locale, path),
-    lastModified: opts.lastModified ?? new Date(),
+    lastModified: opts.lastModified ?? new Date(GENERATED_CONTENT_UPDATED),
     changeFrequency: opts.changeFrequency ?? 'weekly',
     priority: opts.priority ?? 0.8,
   }));
@@ -32,7 +33,7 @@ function forEnOnly(
   return [
     {
       url: localeUrl('en', path),
-      lastModified: opts.lastModified ?? new Date(),
+      lastModified: opts.lastModified ?? new Date(GENERATED_CONTENT_UPDATED),
       changeFrequency: opts.changeFrequency ?? 'weekly',
       priority: opts.priority ?? 0.8,
     },
@@ -103,7 +104,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const pillarPages: MetadataRoute.Sitemap = (['en', 'el'] as const).flatMap((loc) =>
     getPillarSummary(loc).map((p) => ({
       url: localeUrl(loc, `/blog/topics/${p.pillar}`),
-      lastModified: p.latest ? new Date(p.latest.date) : new Date(),
+      lastModified: new Date(p.latest ? (p.latest.updated ?? p.latest.date) : GENERATED_CONTENT_UPDATED),
       changeFrequency: 'weekly' as const,
       priority: 0.75,
     })),
@@ -111,7 +112,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const blogPages: MetadataRoute.Sitemap = blogPosts.map((p) => ({
     url: localeUrl(p.locale, `/blog/${p.slug}`),
-    lastModified: new Date(p.date),
+    lastModified: new Date(p.updated ?? p.date),
     changeFrequency: 'monthly',
     priority: p.isPillarHub ? 0.85 : 0.7,
   }));

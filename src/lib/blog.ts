@@ -15,6 +15,8 @@ export interface BlogPostListItem {
   readonly title: string;
   readonly description: string;
   readonly date: string;
+  /** Last substantive revision, when there has been one. Drives `dateModified`. */
+  readonly updated?: string;
   readonly author: string;
   readonly category?: string;
   readonly categoryColor?: string;
@@ -49,6 +51,7 @@ interface MatterData {
   readonly title?: string;
   readonly description?: string;
   readonly date?: string;
+  readonly updated?: unknown;
   readonly author?: string;
   readonly category?: string;
   readonly categoryColor?: string;
@@ -112,6 +115,9 @@ function parsePostFile(filePath: string, fileBase: string): BlogPostParsed | nul
     return null;
   }
   const date = normalizePostDate(d.date, slug);
+  // Optional. Without it `dateModified` equalled `datePublished` on every post,
+  // so a genuine rewrite was indistinguishable from an untouched page.
+  const updated = d.updated === undefined ? undefined : normalizePostDate(d.updated, slug);
   const locale: SiteLocale = d.locale === "el" ? "el" : "en";
   // Prices are authored as `{{ENTRY_SEO}}`-style tokens so a figure cannot go
   // stale. Resolve here, at the data boundary, rather than in each consumer:
@@ -125,6 +131,7 @@ function parsePostFile(filePath: string, fileBase: string): BlogPostParsed | nul
     title: rp(d.title),
     description: rp(d.description),
     date,
+    updated,
     author: typeof d.author === "string" ? d.author : "AnotherSEOGuru Editorial Team",
     category: typeof d.category === "string" ? d.category : undefined,
     categoryColor: typeof d.categoryColor === "string" ? d.categoryColor : undefined,

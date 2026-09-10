@@ -8,6 +8,7 @@ locale: el
 category: SEO
 categoryColor: bg-emerald-100 text-emerald-800
 pillar: technical-seo-in-house
+translationOf: technical-seo-guide
 faq:
   - question: Τι είναι το τεχνικό SEO;
     answer: Το τεχνικό SEO βελτιστοποιεί την υποδομή του site ώστε η Google να ανιχνεύει, να ευρετηριάζει και να κατανοεί τις σελίδες σας - ταχύτητα, mobile, HTTPS, sitemap, schema και καθαρή αρχιτεκτονική.

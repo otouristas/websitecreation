@@ -106,6 +106,45 @@ const nextConfig: NextConfig = {
         destination: '/en/get-started',
         permanent: true,
       },
+      // Slug-specific blog redirects must precede the `/blog/:path*` prefix
+      // rule below: redirects are evaluated in array order and the first match
+      // wins, so anything placed after it is unreachable. That is why the
+      // `google-search-operators-2025` rule never fired.
+      //
+      // Consolidated duplicates: two EL posts and two EN posts targeted
+      // "SEO για ξενοδοχεία" / "SEO for hotels" - four URLs for one intent,
+      // each EL post paired to a different EN post so both competed on both
+      // sides. The unique material moved into the surviving post.
+      {
+        source: '/:locale(en|el)/blog/seo-gia-xenodoxeia-odigos-2026',
+        destination: '/el/blog/seo-gia-xenodoxeia',
+        permanent: true,
+      },
+      {
+        source: '/blog/seo-gia-xenodoxeia-odigos-2026',
+        destination: '/el/blog/seo-gia-xenodoxeia',
+        permanent: true,
+      },
+      {
+        source: '/:locale(en|el)/blog/seo-for-hotels-guide',
+        destination: '/en/blog/hotel-seo-guide',
+        permanent: true,
+      },
+      {
+        source: '/blog/seo-for-hotels-guide',
+        destination: '/en/blog/hotel-seo-guide',
+        permanent: true,
+      },
+      {
+        source: '/:locale(en|el)/blog/google-search-operators-2025',
+        destination: '/:locale/blog/google-search-operators-2026',
+        permanent: true,
+      },
+      {
+        source: '/blog/google-search-operators-2025',
+        destination: '/en/blog/google-search-operators-2026',
+        permanent: true,
+      },
       {
         source: '/blog/:path*',
         destination: '/en/blog/:path*',
@@ -120,16 +159,6 @@ const nextConfig: NextConfig = {
         source: '/status',
         destination: '/en/contact',
         permanent: false,
-      },
-      {
-        source: '/blog/google-search-operators-2025',
-        destination: '/en/blog/google-search-operators-2026',
-        permanent: true,
-      },
-      {
-        source: '/:locale(en|el)/blog/google-search-operators-2025',
-        destination: '/:locale/blog/google-search-operators-2026',
-        permanent: true,
       },
     ];
   },

@@ -7,7 +7,7 @@ author: AnotherSEOGuru Editorial Team
 translationOf: ai-seo-agency-geo-aeo-el
 category: AI SEO
 categoryColor: bg-sky-100 text-sky-800
-pillar: ai-visibility
+pillar: ai-llm-visibility
 faq:
   - question: What is an AI SEO agency?
     answer: An AI SEO agency combines classic SEO with Generative Engine Optimization (GEO) and Answer Engine Optimization (AEO) so your brand ranks in Google and gets cited in AI answers like ChatGPT, Perplexity and Google AI Overviews.
