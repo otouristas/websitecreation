@@ -46,13 +46,9 @@ export function buildLocationServiceUrls(
     }
   }
 
-  if (shard === 'el') {
-    urls.push({
-      loc: `${BASE_URL}${localizedPath('el', '/locations')}`,
-      changefreq: 'weekly',
-      priority: '0.8',
-    });
-  }
+  // /el/locations is not re-added here. It is already in the main sitemap via
+  // `bilingualPaths` (src/app/sitemap.ts), so this submitted it twice - and
+  // asymmetrically, since /en/locations was never added to the en-intl shard.
 
   return urls;
 }
