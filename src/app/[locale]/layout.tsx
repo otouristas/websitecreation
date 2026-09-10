@@ -5,7 +5,7 @@ import '../globals.css';
 import CookieConsent from '@/components/CookieConsent';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
 import StickyMobileCta from '@/components/StickyMobileCta';
-import FloatingContactCta from '@/components/FloatingContactCta';
+import WhatsAppPill from '@/components/WhatsAppPill';
 import { Analytics } from '@vercel/analytics/next';
 import { isValidLocale } from '@/lib/i18n/locale';
 import { CONTACT_EMAIL, PHONE_E164 } from '@/lib/contact-info';
@@ -264,11 +264,18 @@ export default async function LocaleLayout({
       <body className={`${inter.variable} ${geistMono.variable} relative antialiased`}>
         <GoogleAnalytics />
         <CookieConsent />
-        <div className="relative z-0 min-h-dvh pb-20 lg:pb-0" data-locale={locale}>
+        {/* Bottom padding tracks the sticky bar's real height instead of a
+            hardcoded 5rem, so content never hides behind it on a notched
+            device and no dead space is reserved on pages without the bar. */}
+        <div
+          className="relative z-0 min-h-dvh"
+          style={{ paddingBottom: 'var(--chrome-bottom-bar)' }}
+          data-locale={locale}
+        >
           {children}
         </div>
         <StickyMobileCta />
-        <FloatingContactCta locale={isEl ? 'el' : 'en'} />
+        <WhatsAppPill locale={isEl ? 'el' : 'en'} />
         <Analytics />
       </body>
     </html>

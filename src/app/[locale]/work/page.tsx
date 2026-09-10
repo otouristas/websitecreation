@@ -2,7 +2,6 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import StickyMobileCta from '@/components/StickyMobileCta';
 import { WorkIndexClient } from '@/components/work/WorkIndexClient';
 import { buildMetadata } from '@/lib/seo';
 import { isValidLocale, localizedPath, type SiteLocale } from '@/lib/i18n/locale';

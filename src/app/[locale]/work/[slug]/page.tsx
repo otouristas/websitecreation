@@ -1,7 +1,6 @@
 import { notFound } from 'next/navigation';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import StickyMobileCta from '@/components/StickyMobileCta';
 import { WorkDetail, getWorkProject, getWorkStaticParams } from '@/components/work/WorkDetail';
 import { buildMetadata } from '@/lib/seo';
 import { portfolioProjects } from '@/data/portfolio';
@@ -53,7 +52,6 @@ export default async function WorkDetailPage({
       <main className="blueprint-grid relative z-0 main-below-header">
         <WorkDetail project={project} locale={locale as SiteLocale} />
       </main>
-      <StickyMobileCta />
       <Footer />
     </>
   );

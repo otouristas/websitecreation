@@ -10,6 +10,14 @@ export interface BrandLogoProps {
   /** Home link - defaults to / */
   readonly homeHref?: string;
   readonly onClick?: () => void;
+  /**
+   * Extra classes for the wordmark. The header lockup uses it to step the
+   * wordmark down (and drop it entirely under 360px) so the hamburger stays
+   * inside the viewport on small phones.
+   */
+  readonly textClassName?: string;
+  /** Extra classes for the mark. Same reason as `textClassName`. */
+  readonly imageClassName?: string;
 }
 
 const imagePixels: Record<NonNullable<BrandLogoProps["size"]>, number> = {
@@ -34,6 +42,8 @@ export function BrandLogo({
   variant = "default",
   homeHref = "/",
   onClick,
+  textClassName = "",
+  imageClassName = "",
 }: BrandLogoProps) {
   const px = imagePixels[size];
   return (
@@ -43,14 +53,14 @@ export function BrandLogo({
         alt={showText ? "" : "AnotherSEOGuru"}
         width={px}
         height={px}
-        className="flex-shrink-0 object-contain"
+        className={`flex-shrink-0 object-contain ${imageClassName}`}
         priority={size === "md"}
       />
       {showText ? (
         <span
           className={`font-bold leading-tight ${textClasses[size]} ${
             variant === "light" ? "text-white" : "gradient-text"
-          }`}
+          } ${textClassName}`}
         >
           AnotherSEOGuru
         </span>

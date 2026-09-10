@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import StickyMobileCta from '@/components/StickyMobileCta';
 import { services, getServiceBySlug } from '@/data/services';
 import { getServiceEl } from '@/data/services-i18n';
 import { industries } from '@/data/industries';
@@ -267,7 +266,6 @@ export function IndustryServicePageView({
           </div>
         </section>
       </main>
-      <StickyMobileCta />
       <Footer />
     </>
   );
