@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { enableGoogleAnalytics } from '@/lib/analytics';
@@ -12,6 +12,8 @@ export default function CookieConsent() {
   const isEl = locale === 'el';
   const [show, setShow] = useState(false);
 
+  const bannerRef = useRef<HTMLDivElement | null>(null);
+
   useEffect(() => {
     const consent = localStorage.getItem('cookie-consent');
     if (!consent) {
@@ -21,6 +23,31 @@ export default function CookieConsent() {
       setShow(true);
     }
   }, []);
+
+  /**
+   * Publish the height this banner occupies so the floating WhatsApp pill can
+   * sit above it instead of behind it. It has to be measured rather than
+   * assumed: the copy wraps to two, three or four lines depending on viewport
+   * width and language, so the banner is anywhere between ~5rem and ~9rem tall.
+   */
+  useEffect(() => {
+    const root = document.documentElement;
+    const el = bannerRef.current;
+    if (!show || !el) {
+      root.style.setProperty('--chrome-cookie-bar', '0px');
+      return;
+    }
+    const publish = () => {
+      root.style.setProperty('--chrome-cookie-bar', `${Math.round(el.getBoundingClientRect().height)}px`);
+    };
+    publish();
+    const observer = new ResizeObserver(publish);
+    observer.observe(el);
+    return () => {
+      observer.disconnect();
+      root.style.setProperty('--chrome-cookie-bar', '0px');
+    };
+  }, [show]);
 
   const accept = () => {
     localStorage.setItem('cookie-consent', 'accepted');
@@ -37,9 +64,12 @@ export default function CookieConsent() {
 
   return (
     <div
+      ref={bannerRef}
       role="dialog"
       aria-labelledby="cookie-consent-title"
-      className="fixed inset-x-0 bottom-[4.75rem] z-[60] border-t border-border bg-background/95 px-4 py-3 shadow-[0_-8px_32px_-12px_hsl(217_91%_60%_/_0.18)] backdrop-blur-md lg:bottom-0"
+      data-chrome="cookie-consent"
+      style={{ bottom: 'max(var(--chrome-bottom-bar), var(--chrome-safe-bottom))' }}
+      className="fixed inset-x-0 z-[60] border-t border-border bg-background/95 px-4 py-3 shadow-[0_-8px_32px_-12px_hsl(217_91%_60%_/_0.18)] backdrop-blur-md"
     >
       <div className="mx-auto flex max-w-6xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div className="min-w-0">

@@ -33,7 +33,7 @@ const SIGNATURE_HUE = 165;
 const copy = {
   en: {
     eyebrow: 'Local SEO',
-    h1: 'Show up in the map pack, where local searches actually end',
+    h1: 'Local SEO that puts you in the map pack, where local searches actually end',
     lede:
       'For "near me" and city searches, most people never scroll past the three map results. Getting into that block is a different job from ranking a web page, and it is the one that brings a local business the phone call.',
     ctaPrimary: 'Get a local SEO quote',
@@ -139,7 +139,7 @@ const copy = {
   },
   el: {
     eyebrow: 'Τοπικό SEO',
-    h1: 'Εμφανιστείτε στο τοπικό πακέτο χάρτη, εκεί που καταλήγουν οι τοπικές αναζητήσεις',
+    h1: 'Τοπικό SEO: εμφανιστείτε στο πακέτο χάρτη, εκεί που καταλήγουν οι τοπικές αναζητήσεις',
     lede:
       'Στις αναζητήσεις «κοντά μου» και με όνομα πόλης, οι περισσότεροι δεν κατεβαίνουν ποτέ κάτω από τα τρία αποτελέσματα του χάρτη. Το να μπείτε εκεί είναι διαφορετική δουλειά από το να ανεβάσετε μια σελίδα, και είναι αυτή που φέρνει το τηλεφώνημα σε μια τοπική επιχείρηση.',
     ctaPrimary: 'Ζητήστε προσφορά για τοπικό SEO',

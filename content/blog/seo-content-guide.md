@@ -1,7 +1,7 @@
 ---
 slug: seo-content-guide
 title: SEO Content - How to Write Pages That Rank and Convert
-description: What SEO content is and how to write it - intent, structure, FAQs, proof and internal links - plus formats, costs, timelines and when to use SEO content services.
+description: "What SEO content is and how to write it: intent, structure, FAQs, proof and internal links, plus formats, costs, timelines and when to outsource it."
 date: 2026-07-23
 author: AnotherSEOGuru Editorial Team
 category: SEO
@@ -15,7 +15,7 @@ faq:
   - question: How long should SEO content be?
     answer: As long as needed to be the best answer - not an arbitrary word count. Many commercial pages win at 600–1,200 words; competitive guides often need 1,000–2,000+ with unique proof.
   - question: How much does SEO content cost?
-    answer: In Greece, professional pages often run €150–€450 each; pillar guides €250–€700. Monthly content retainers typically start around €299–€599 depending on volume and research depth.
+    answer: In Greece, professional pages often run €150–€450 each; pillar guides €250–€700. Monthly content retainers typically start around {{ENTRY_SEO}}–{{SEO_GROWTH}} depending on volume and research depth.
   - question: Does SEO content still matter with AI Overviews?
     answer: Yes. Clear, cited, experience-rich pages are what AI systems quote. Thin keyword dumps get ignored. Pair content with GEO/AEO practices for answer engines.
 ---
@@ -89,7 +89,7 @@ Pillars like [What is SEO?](/en/blog/what-is-seo) support clusters. How-tos such
 
 New informational guides often need **1–3 months** to gain traction; competitive commercial terms need **3–6+ months** alongside [off-page SEO](/en/blog/off-page-seo) and [link building](/en/blog/link-building-guide). A monthly cadence of 2–4 quality URLs usually beats sporadic bursts.
 
-Use an agency when you lack research capacity, writers who understand intent, or editors who enforce proof. Retainers commonly start €299–€599/mo for ongoing production - see [pricing](/en/pricing) and [how to increase organic traffic](/en/blog/how-to-increase-organic-traffic).
+Use an agency when you lack research capacity, writers who understand intent, or editors who enforce proof. Retainers commonly start {{ENTRY_SEO}}–{{SEO_GROWTH}}/mo for ongoing production - see [pricing](/en/pricing) and [how to increase organic traffic](/en/blog/how-to-increase-organic-traffic).
 
 ## SEO Content vs Brand Content vs AI Drafts
 

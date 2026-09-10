@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import StickyMobileCta from '@/components/StickyMobileCta';
 import { services } from '@/data/services';
 import { getServiceEl } from '@/data/services-i18n';
 import { industries, getIndustryBySlug } from '@/data/industries';
@@ -12,6 +11,7 @@ import { AdsLandingBand } from '@/components/marketing/AdsLandingBand';
 import { getLocalizedIndustry } from '@/lib/industry-locale';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 import { solutionsUi } from '@/data/translations/solutions-ui';
+import { GENERATED_CONTENT_PUBLISHED, GENERATED_CONTENT_UPDATED } from '@/lib/seo/content-dates';
 
 const TOURISM_SLUGS = new Set([
   'hotels',
@@ -51,8 +51,8 @@ export function IndustryPageView({
     generateArticleSchema({
       headline: `${ui.websiteSolutionsFor} ${industry.name}`,
       description: industry.description,
-      datePublished: new Date().toISOString(),
-      dateModified: new Date().toISOString(),
+      datePublished: GENERATED_CONTENT_PUBLISHED,
+      dateModified: GENERATED_CONTENT_UPDATED,
       author: { name: 'AnotherSEOGuru' },
     }),
   );
@@ -164,7 +164,6 @@ export function IndustryPageView({
           </div>
         </section>
       </main>
-      <StickyMobileCta />
       <Footer />
     </>
   );

@@ -1,3 +1,5 @@
+import { resolvePriceTokens } from '@/data/pricing';
+
 /**
  * Service-hub FAQ content (EN + EL) for commercial money pages.
  * Used by /services/[service] with FAQPage schema.
@@ -14,7 +16,7 @@ const DEFAULT_EN: ServiceFaqItem[] = [
   {
     question: 'Do you work with businesses outside Greece?',
     answer:
-      'Yes. We build and optimize sites for tourism and local brands across the EU, UK, US and Canada, with EN/EL bilingual setups when needed.',
+      'Yes. We build and optimize sites for tourism and local brands across Greece, the EU, the UK and the US, with EN/EL bilingual setups when needed.',
   },
   {
     question: 'How do I get a quote?',
@@ -47,7 +49,7 @@ const BY_SERVICE: Record<string, { en: ServiceFaqItem[]; el: ServiceFaqItem[] }>
       {
         question: 'How much does a website cost?',
         answer:
-          'Packages start at €1,200 (Starter, up to 5 pages), €2,000 (Professional) and €3,200 (Business). See Pricing for full details and add-ons.',
+          'Packages start at {{ENTRY_WEBSITE}} (Starter, up to 5 pages), {{WEBSITE_PRO}} (Professional) and {{WEBSITE_BUSINESS}} (Business). See Pricing for full details and add-ons.',
       },
       {
         question: 'Do you build websites for Athens and Thessaloniki businesses?',
@@ -65,7 +67,7 @@ const BY_SERVICE: Record<string, { en: ServiceFaqItem[]; el: ServiceFaqItem[] }>
       {
         question: 'Πόσο κοστίζει μια ιστοσελίδα;',
         answer:
-          'Τα πακέτα ξεκινούν από €1.200 (Starter, έως 5 σελίδες), €2.000 (Professional) και €3.200 (Business). Δείτε τις Τιμές για λεπτομέρειες και add-ons.',
+          'Τα πακέτα ξεκινούν από {{ENTRY_WEBSITE}} (Starter, έως 5 σελίδες), {{WEBSITE_PRO}} (Professional) και {{WEBSITE_BUSINESS}} (Business). Δείτε τις Τιμές για λεπτομέρειες και add-ons.',
       },
       {
         question: 'Φτιάχνετε ιστοσελίδες για Αθήνα και Θεσσαλονίκη;',
@@ -278,7 +280,7 @@ const BY_SERVICE: Record<string, { en: ServiceFaqItem[]; el: ServiceFaqItem[] }>
       {
         question: 'Πόσο κοστίζουν οι υπηρεσίες SEO / εταιρεία SEO στην Ελλάδα;',
         answer:
-          'Τα μηνιαία πακέτα ξεκινούν από €400 (Foundations), €720 (Growth) και €1.200 (Authority). Εφάπαξ audits κοστολογούνται ξεχωριστά. Δείτε τις Τιμές για λεπτομέρειες.',
+          'Τα μηνιαία πακέτα ξεκινούν από {{ENTRY_SEO}} (Foundations), {{SEO_GROWTH}} (Growth) και {{SEO_AUTHORITY}} (Authority). Εφάπαξ audits κοστολογούνται ξεχωριστά. Δείτε τις Τιμές για λεπτομέρειες.',
       },
       {
         question: 'Πότε θα δω αποτελέσματα από προώθηση SEO;',
@@ -394,6 +396,17 @@ export function getServiceFaqs(
   locale: 'en' | 'el'
 ): ServiceFaqItem[] {
   const entry = BY_SERVICE[serviceSlug];
-  if (entry) return locale === 'el' ? entry.el : entry.en;
-  return locale === 'el' ? DEFAULT_EL : DEFAULT_EN;
+  const items = entry
+    ? locale === 'el'
+      ? entry.el
+      : entry.en
+    : locale === 'el'
+      ? DEFAULT_EL
+      : DEFAULT_EN;
+  // Prices are authored as `{{TOKEN}}` so they cannot go stale the way the
+  // literals did when the summer offer expired.
+  return items.map((f) => ({
+    ...f,
+    answer: resolvePriceTokens(f.answer, locale),
+  }));
 }

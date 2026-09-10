@@ -3,7 +3,14 @@ export interface HomeFaqItem {
   readonly answer: string;
 }
 
-/** Agency FAQ aligned to GSC commercial queries, not the software product. */
+/**
+ * Agency FAQ aligned to GSC commercial queries, not the software product.
+ *
+ * Prices are `{{TOKEN}}` placeholders resolved by `resolvePriceTokens` at
+ * render. They used to be literals holding the *promotional* figures, so when
+ * the summer offer expired this FAQ kept quoting €1.200 / €400 while /pricing
+ * had moved to €1.500 / €500.
+ */
 export const HOME_FAQ_ITEMS: readonly HomeFaqItem[] = [
   {
     question: 'What does AnotherSEOGuru do?',
@@ -13,12 +20,12 @@ export const HOME_FAQ_ITEMS: readonly HomeFaqItem[] = [
   {
     question: 'How much does a website cost?',
     answer:
-      'Website packages start at €1.200 for small businesses. Hotel and multi-property projects typically sit in the €2,000–€3,200+ range. Every site ships SEO-ready: speed, schema, metadata, and a content plan.',
+      'Website packages start at {{ENTRY_WEBSITE}} for small businesses. Hotel and multi-property projects typically sit in the {{WEBSITE_PRO}}-{{WEBSITE_BUSINESS}}+ range. Every site ships SEO-ready: speed, schema, metadata, and a content plan.',
   },
   {
     question: 'How much does SEO cost in Greece?',
     answer:
-      'Monthly SEO starts at €400 for local businesses and scales with competition and keyword scope. A full retainer includes technical work, on-page, schema, content, links, and GEO/AEO for AI answers.',
+      'Monthly SEO starts at {{ENTRY_SEO}} for local businesses and scales with competition and keyword scope. A full retainer includes technical work, on-page, schema, content, links, and GEO/AEO for AI answers.',
   },
   {
     question: 'What is GEO vs SEO vs AEO?',
@@ -38,7 +45,7 @@ export const HOME_FAQ_ITEMS: readonly HomeFaqItem[] = [
   {
     question: 'Is SEO included in the website price?',
     answer:
-      'Yes. Every website includes technical SEO, schema, Core Web Vitals work, and metadata. Ongoing ranking work is a separate monthly package from €400.',
+      'Yes. Every website includes technical SEO, schema, Core Web Vitals work, and metadata. Ongoing ranking work is a separate monthly package from {{ENTRY_SEO}}.',
   },
   {
     question: 'SEO or Google Ads, which should I buy first?',

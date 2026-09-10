@@ -343,39 +343,43 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
         pkgLabel: "Πακέτο",
         bizLabel: "Επιχείρηση",
         other: "Άλλο",
-        beforeAfterTitle: "Η Διαφορά της AnotherSEOGuru",
-        beforeAfterSub: "Σύγκριση της ιστοσελίδας σας πριν και μετά τη συνεργασία μας",
+        beforeAfterTitle: "Τι δουλεύουμε",
+        beforeAfterSub: "Τα τέσσερα σημεία που εξετάζουμε πρώτα σε κάθε έργο, και τι αλλάζει σε καθένα",
+        // Δεν υπόσχονται νούμερα. Η προηγούμενη έκδοση έδινε συγκεκριμένα
+        // αποτελέσματα ("1η Θέση", "4.8% - 8.2%", "0% χαμένοι πελάτες") χωρίς
+        // πελάτη από πίσω, και σε αντίθεση με τη δική μας πολιτική στη σελίδα
+        // τιμών: καμία εταιρεία δεν ελέγχει τα συστήματα κατάταξης της Google.
         metrics: [
           {
             title: "Ταχύτητα (Core Web Vitals)",
-            before: "24/100 Mobile",
-            beforeDesc: "Κόκκινο, αργό φόρτωμα. Χάνετε το 50% των επισκεπτών.",
-            after: "99/100 Mobile",
-            afterDesc: "Πράσινο, ακαριαίο φόρτωμα. 0% χαμένοι πελάτες.",
+            before: "Τι βρίσκουμε συνήθως",
+            beforeDesc: "Αργό φόρτωμα σε κινητό, εικόνες χωρίς συμπίεση, scripts που μπλοκάρουν το rendering.",
+            after: "Τι κάνουμε",
+            afterDesc: "Μετράμε LCP, CLS και INP με πραγματικά δεδομένα πεδίου και διορθώνουμε ό,τι τα κρατά εκτός ορίων.",
             status: "speed"
           },
           {
-            title: "Κατάταξη στο Google (SEO)",
-            before: "3η Σελίδα",
-            beforeDesc: "Αόρατοι για εμπορικές αναζητήσεις, μηδενικά leads.",
-            after: "1η Θέση & Snippet",
-            afterDesc: "Κυριαρχία στα local searches και organic leads.",
+            title: "Οργανική ορατότητα",
+            before: "Τι βρίσκουμε συνήθως",
+            beforeDesc: "Σελίδες που δεν αντιστοιχούν σε καμία εμπορική αναζήτηση, ή δύο σελίδες που ανταγωνίζονται την ίδια.",
+            after: "Τι κάνουμε",
+            afterDesc: "Αντιστοιχίζουμε κάθε εμπορική ομάδα λέξεων-κλειδιών σε μία σελίδα και δουλεύουμε τα τεχνικά εμπόδια ευρετηρίασης.",
             status: "seo"
           },
           {
-            title: "Ορατότητα σε AI & LLMs",
-            before: "Μηδενική πρόταση",
-            beforeDesc: "Το ChatGPT και το Gemini προτείνουν ανταγωνιστές.",
-            after: "Πρώτη Πρόταση με Links",
-            afterDesc: "GEO/AEO optimized δομημένος κώδικας για AI Engines.",
+            title: "Ορατότητα σε AI και LLMs",
+            before: "Τι βρίσκουμε συνήθως",
+            beforeDesc: "Καμία απάντηση σε μορφή που μπορεί να παραθέσει μια μηχανή απαντήσεων, ασαφή στοιχεία εταιρείας.",
+            after: "Τι κάνουμε",
+            afterDesc: "Γράφουμε απαντήσεις πρώτα, με δομημένα δεδομένα που αντιστοιχούν στο ορατό περιεχόμενο, και μετράμε αναφορές. Καμία μηχανή δεν εγγυάται παράθεση.",
             status: "ai"
           },
           {
-            title: "Μετατροπή σε Πελάτες",
-            before: "Κάτω από 0.5%",
-            beforeDesc: "Ξεπερασμένο UI/UX, μη λειτουργικές φόρμες.",
-            after: "4.8% - 8.2%",
-            afterDesc: "Premium UI, Dynamic Forms, Sticky Mobile CTAs.",
+            title: "Μετατροπή επισκεπτών",
+            before: "Τι βρίσκουμε συνήθως",
+            beforeDesc: "Φόρμες που δεν δουλεύουν σε κινητό, ασαφές επόμενο βήμα, καμία μέτρηση.",
+            after: "Τι κάνουμε",
+            afterDesc: "Ξεκάθαρη διαδρομή προς το αίτημα, φόρμες που δουλεύουν σε κινητό και παρακολούθηση ώστε να ξέρετε τι αποδίδει.",
             status: "conversion"
           }
         ]
@@ -461,39 +465,43 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
         pkgLabel: "Package",
         bizLabel: "Business",
         other: "Other",
-        beforeAfterTitle: "The AnotherSEOGuru Difference",
-        beforeAfterSub: "Compare your website performance before and after working with us",
+        beforeAfterTitle: "What we work on",
+        beforeAfterSub: "The four things we look at first on every project, and what changes in each",
+        // No promised numbers. The previous version asserted specific outcomes
+        // ("Page 1 Position 1", "4.8% - 8.2%", "Zero lost traffic") with no
+        // client behind them, and against our own line on the pricing page:
+        // no agency controls Google's ranking systems.
         metrics: [
           {
             title: "Performance (Core Web Vitals)",
-            before: "24/100 Mobile",
-            beforeDesc: "Red zone. Slow load times. Losing 50%+ of mobile visitors.",
-            after: "99/100 Mobile",
-            afterDesc: "Green zone. Instant loads. Zero lost traffic.",
+            before: "What we usually find",
+            beforeDesc: "Slow mobile loads, uncompressed images, render-blocking scripts.",
+            after: "What we do",
+            afterDesc: "Measure LCP, CLS and INP against real field data, then fix whatever is keeping them outside the thresholds.",
             status: "speed"
           },
           {
-            title: "Google Ranking (SEO)",
-            before: "Page 3 or lower",
-            beforeDesc: "Invisible to prospective buyers searching for services.",
-            after: "Page 1 Position 1",
-            afterDesc: "Dominating local search results with featured snippets.",
+            title: "Organic visibility",
+            before: "What we usually find",
+            beforeDesc: "Pages that match no commercial search, or two pages competing for the same one.",
+            after: "What we do",
+            afterDesc: "Map each commercial keyword cluster to a single page, and clear the technical blockers stopping it being indexed.",
             status: "seo"
           },
           {
-            title: "AI Search & LLM Presence",
-            before: "Not Recommended",
-            beforeDesc: "ChatGPT & Gemini recommend competitor websites instead.",
-            after: "Top Recommendation",
-            afterDesc: "AEO/GEO structured schemas optimized for LLM search agents.",
+            title: "AI search and LLM presence",
+            before: "What we usually find",
+            beforeDesc: "Nothing written in a shape an answer engine can quote, and no clear company facts to ground it.",
+            after: "What we do",
+            afterDesc: "Answer-first copy, structured data that matches what is visible, and measurement of mentions. No engine guarantees a citation.",
             status: "ai"
           },
           {
-            title: "Conversion Rates",
-            before: "Under 0.5%",
-            beforeDesc: "Outdated design, broken contact forms, no trust elements.",
-            after: "4.8% - 8.2%",
-            afterDesc: "Premium interactive UX, mobile-friendly forms, sticky CTAs.",
+            title: "Turning visits into enquiries",
+            before: "What we usually find",
+            beforeDesc: "Forms that fail on mobile, no obvious next step, and nothing tracked.",
+            after: "What we do",
+            afterDesc: "One clear path to an enquiry, forms that work on a phone, and tracking so you know what is paying.",
             status: "conversion"
           }
         ]

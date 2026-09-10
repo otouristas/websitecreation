@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { elHome } from "@/data/translations/el-home";
 import { localizedPath, type SiteLocale } from "@/lib/i18n/locale";
+import { resolvePriceTokens } from "@/data/pricing";
 
 interface AgencyPricingTeaserProps {
   locale?: SiteLocale;
@@ -12,19 +13,19 @@ const enPricing = {
   tiers: [
     {
       name: "Starter",
-      price: "from €1.200",
+      price: "from {{ENTRY_WEBSITE}}",
       blurb: "Small businesses & rent-a-car",
       bullets: ["Up to 5 pages", "Mobile-first design", "Basic SEO setup"],
     },
     {
       name: "Professional",
-      price: "from €2,000",
+      price: "from {{WEBSITE_PRO}}",
       blurb: "Hotels & tours",
       bullets: ["Up to 10 pages", "Galleries & booking CTAs", "Full SEO"],
     },
     {
       name: "Business",
-      price: "from €3,200",
+      price: "from {{WEBSITE_BUSINESS}}",
       blurb: "Multi-property & multilingual",
       bullets: ["Up to 20 pages", "AI chatbot", "GEO/AEO"],
     },
@@ -54,7 +55,7 @@ export function AgencyPricingTeaser({ locale = "en" }: AgencyPricingTeaserProps)
               }`}
             >
               <div className="text-sm font-semibold text-primary mb-1">{tier.name}</div>
-              <div className="text-lg font-bold text-foreground mb-2">{tier.price}</div>
+              <div className="text-lg font-bold text-foreground mb-2">{resolvePriceTokens(tier.price, locale)}</div>
               <p className="text-sm text-muted-foreground mb-4">{tier.blurb}</p>
               <ul className="text-sm text-muted-foreground space-y-2 mb-6 flex-1">
                 {tier.bullets.map((b) => (

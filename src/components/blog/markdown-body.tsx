@@ -12,6 +12,12 @@ interface MarkdownBodyProps {
 }
 
 /**
+ * Post bodies arrive with `{{ENTRY_SEO}}`-style price tokens already resolved
+ * by `parsePostFile` in src/lib/blog.ts, so nothing here needs to know about
+ * pricing.
+ */
+
+/**
  * Prefix a bare internal href with the current locale so in-body markdown links
  * never trigger the middleware 307 hop (or cross-locale 404s). Links that are
  * already localized (/en, /el) or non-navigational (#, mailto:, tel:, http) pass through.

@@ -8,14 +8,14 @@ locale: el
 translationOf: ai-seo-agency-geo-aeo
 category: AI SEO
 categoryColor: bg-sky-100 text-sky-800
-pillar: ai-visibility
+pillar: ai-llm-visibility
 faq:
   - question: Τι είναι ένα AI SEO agency;
     answer: Συνδυάζει κλασικό SEO με Generative Engine Optimization (GEO) και Answer Engine Optimization (AEO) ώστε το brand σας να κατατάσσεται στη Google και να αναφέρεται σε απαντήσεις AI όπως ChatGPT, Perplexity και Google AI Overviews.
   - question: Ποια είναι η διαφορά GEO και SEO;
     answer: Το SEO στοχεύει κλασικές κατατάξεις. Το GEO δομεί entities, FAQ και αποδείξεις ώστε τα generative engines να επιλέγουν και να αναφέρουν το brand σας.
   - question: Πόσο κοστίζουν οι υπηρεσίες generative engine optimization;
-    answer: Σοβαρά προγράμματα GEO/AEO συνήθως εντάσσονται σε μηνιαία SEO retainers περίπου €299–€999+/μήνα ανάλογα με τον ανταγωνισμό, ή ως scoped projects. Δείτε τη σελίδα τιμών για διαφανή πακέτα σε EUR.
+    answer: Σοβαρά προγράμματα GEO/AEO συνήθως εντάσσονται σε μηνιαία SEO retainers περίπου {{ENTRY_SEO}}–{{SEO_AUTHORITY}}+/μήνα ανάλογα με τον ανταγωνισμό, ή ως scoped projects. Δείτε τη σελίδα τιμών για διαφανή πακέτα σε EUR.
   - question: Το GEO αντικαθιστά το τεχνικό SEO;
     answer: Όχι. Crawlable, γρήγορες και authoritative σελίδες παραμένουν θεμέλιο. Το GEO προσθέτει καθαρότητα entities, citation-worthy αποδείξεις και παρακολούθηση AI mentions πάνω σε αυτή τη στοίβα.
   - question: Ποιος επωφελείται περισσότερο από AI SEO agency;
@@ -96,7 +96,7 @@ faq:
 
 ## Πώς συνήθως δουλεύουν budgets και retainers
 
-Το GEO/AEO σπάνια στέκεται μόνο του ως side project €50. Εντάσσεται σε retainers που καλύπτουν ήδη τεχνική εργασία, περιεχόμενο και reporting - συνήθως στη ζώνη €299–€999+/μήνα ανάλογα με ανταγωνισμό και γλωσσικό εύρος - ή ως scoped sprints μετά από audit. Διαφανή πακέτα στη [σελίδα τιμών](/el/pricing). Για scoped έναρξη, [ξεκινήστε](/el/get-started?service=ai-visibility) με επιλεγμένο AI Visibility.
+Το GEO/AEO σπάνια στέκεται μόνο του ως side project €50. Εντάσσεται σε retainers που καλύπτουν ήδη τεχνική εργασία, περιεχόμενο και reporting - συνήθως στη ζώνη {{ENTRY_SEO}}–{{SEO_AUTHORITY}}+/μήνα ανάλογα με ανταγωνισμό και γλωσσικό εύρος - ή ως scoped sprints μετά από audit. Διαφανή πακέτα στη [σελίδα τιμών](/el/pricing). Για scoped έναρξη, [ξεκινήστε](/el/get-started?service=ai-visibility) με επιλεγμένο AI Visibility.
 
 Αν συγκρίνετε κόστος SEO γενικότερα, δείτε [πόσο κοστίζει το SEO](/el/blog/poso-kostizei-to-seo).
 

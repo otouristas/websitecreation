@@ -35,7 +35,7 @@ const SIGNATURE_HUE = 259;
 const copy = {
   en: {
     eyebrow: 'Website creation',
-    h1: 'Websites built to be found, not just to look finished',
+    h1: 'Website creation built to be found, not just to look finished',
     lede:
       'A site that wins design awards and no search traffic is a brochure. We build the design and the search foundation as one job, so the thing you launch can actually bring you work.',
     ctaPrimary: 'Start your project',
@@ -128,7 +128,7 @@ const copy = {
   },
   el: {
     eyebrow: 'Κατασκευή ιστοσελίδων',
-    h1: 'Ιστοσελίδες φτιαγμένες για να βρίσκονται, όχι απλώς για να δείχνουν έτοιμες',
+    h1: 'Κατασκευή ιστοσελίδων που βρίσκονται στη Google, όχι απλώς δείχνουν έτοιμες',
     lede:
       'Ένα site που κερδίζει βραβεία σχεδιασμού και δεν φέρνει επισκεψιμότητα είναι φυλλάδιο. Χτίζουμε τον σχεδιασμό και τα θεμέλια για το SEO ως μία δουλειά, ώστε αυτό που βγαίνει live να μπορεί πραγματικά να σας φέρνει πελάτες.',
     ctaPrimary: 'Ξεκινήστε το project σας',

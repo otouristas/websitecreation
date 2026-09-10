@@ -26,7 +26,7 @@ import {
   GhostButtonLink,
 } from "@/components/landing/primitives";
 import { NotForYou } from "@/components/positioning/NotForYou";
-import { ENTRY_SEO_NET, formatPrice } from "@/data/pricing";
+import { entrySeoNet, formatPrice, resolvePriceTokens } from "@/data/pricing";
 
 type PageProps = { params: Promise<{ locale: string }> };
 
@@ -35,14 +35,18 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!isValidLocale(locale)) return {};
   const isEl = locale === "el";
 
+  // This page is a directory of twelve services. It used to declare
+  // `primaryKeyword: "υπηρεσίες SEO"`, competing with /seo-services (the
+  // commercial pillar) and /services/seo-audits for one term that all three
+  // wanted. The listing keeps the listing intent; the pillar keeps the term.
   return buildMetadata({
-    title: isEl ? "Υπηρεσίες SEO & Κατασκευής Ιστοσελίδων" : "SEO & Web Design Services",
+    title: isEl ? "Όλες οι Υπηρεσίες SEO & Κατασκευής Ιστοσελίδων" : "All SEO & Web Design Services",
     description: isEl
-      ? "Τεχνικό SEO, τοπικό SEO, GEO και AEO, κατασκευή ιστοσελίδων και e-shop. Στρατηγική βασισμένη στα δεδομένα σας, όχι έτοιμα πακέτα."
-      : "Technical SEO, local SEO, GEO and AEO, website and e-shop builds. Strategy built on your own data rather than a prepackaged checklist.",
+      ? "Όλες οι υπηρεσίες μας σε μία σελίδα: κατασκευή ιστοσελίδων και e-shop, τεχνικό SEO, τοπικό SEO, GEO και AEO, περιεχόμενο και ανασχεδιασμός."
+      : "Every service in one place: website and e-shop builds, technical SEO, local SEO, GEO and AEO, content, and redesigns.",
     path: localizedPath(locale, "/services"),
     hreflangPath: "/services",
-    primaryKeyword: isEl ? "υπηρεσίες SEO" : "SEO services",
+    primaryKeyword: isEl ? "υπηρεσίες κατασκευής ιστοσελίδων" : "web design and SEO services",
   });
 }
 
@@ -112,8 +116,8 @@ export default async function ServicesPage({ params }: PageProps) {
             title={isEl ? "Όλες οι υπηρεσίες" : "Every service"}
             body={
               isEl
-                ? `Μηνιαία συνεργασία SEO από €${formatPrice(ENTRY_SEO_NET, siteLocale)} + ΦΠΑ 24%. Έργα κατασκευής τιμολογούνται ανά project.`
-                : `Monthly SEO engagements from €${formatPrice(ENTRY_SEO_NET, siteLocale)} + 24% VAT. Website projects are quoted per project.`
+                ? `Μηνιαία συνεργασία SEO από €${formatPrice(entrySeoNet(), siteLocale)} + ΦΠΑ 24%. Έργα κατασκευής τιμολογούνται ανά project.`
+                : `Monthly SEO engagements from €${formatPrice(entrySeoNet(), siteLocale)} + 24% VAT. Website projects are quoted per project.`
             }
             className="mb-12"
           />
@@ -122,7 +126,7 @@ export default async function ServicesPage({ params }: PageProps) {
             {services.map((service) => {
               const el = isEl ? getServiceEl(service.slug) : null;
               const name = el?.name ?? service.name;
-              const description = el?.description ?? service.description;
+              const description = resolvePriceTokens(el?.description ?? service.description, siteLocale);
               const features = (el?.features ?? service.features).slice(0, 3);
 
               return (

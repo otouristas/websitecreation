@@ -20,6 +20,7 @@ import {
   VAT_RATE,
   currentPrice,
   isOfferActive,
+  resolvePriceTokens,
 } from '../src/data/pricing.ts';
 import { PROJECT_COUNT, SEO_MIN_TERM_MONTHS } from '../src/data/company-facts.ts';
 
@@ -83,7 +84,7 @@ function parseServices() {
     services.push({
       slug,
       name: field(block, 'name') ?? slug,
-      description: field(block, 'description') ?? '',
+      description: resolvePriceTokens(field(block, 'description') ?? '', 'en'),
       features: fieldArray(block, 'features'),
     });
   }
@@ -99,7 +100,8 @@ function parseServiceNamesEl() {
     const block = m[2];
     map[m[1]] = {
       name: field(block, 'name') ?? m[1],
-      description: field(block, 'description') ?? '',
+      // Authored copy carries `{{ENTRY_SEO}}`-style price tokens.
+      description: resolvePriceTokens(field(block, 'description') ?? '', 'el'),
       features: fieldArray(block, 'features'),
     };
   }
@@ -187,6 +189,20 @@ function parsePortfolio() {
 function parseBlogPosts() {
   const dir = path.join(ROOT, 'content/blog');
   if (!fs.existsSync(dir)) return [];
+  /**
+   * Unquoted YAML dates arrive as `Date` objects, so a `typeof === 'string'`
+   * test misses every post and stamps the generation date on all of them.
+   */
+  const normalizePostDate = (value, slug) => {
+    if (value instanceof Date && !Number.isNaN(value.getTime())) {
+      return value.toISOString().slice(0, 10);
+    }
+    if (typeof value === 'string' && /^\d{4}-\d{2}-\d{2}/.test(value.trim())) {
+      return value.trim().slice(0, 10);
+    }
+    throw new Error(`Blog post "${slug}" has a missing or unparseable \`date\` in its frontmatter.`);
+  };
+
   const files = fs.readdirSync(dir).filter((f) => f.endsWith('.md'));
   const posts = [];
   for (const file of files) {
@@ -199,15 +215,17 @@ function parseBlogPosts() {
     posts.push({
       slug,
       title: data.title,
-      description: data.description,
-      date: typeof data.date === 'string' ? data.date : TODAY,
+      // Authored copy uses `{{ENTRY_SEO}}`-style tokens so prices cannot go
+      // stale; resolve them here or the token itself reaches AI crawlers.
+      description: resolvePriceTokens(data.description, locale),
+      date: normalizePostDate(data.date, slug),
       locale,
       isPillarHub: Boolean(data.pillarHub),
       faq: Array.isArray(data.faq)
         ? data.faq
             .map((f) => ({
               question: f?.question ?? f?.q,
-              answer: f?.answer ?? f?.a,
+              answer: resolvePriceTokens(f?.answer ?? f?.a ?? '', locale),
             }))
             .filter((f) => typeof f.question === 'string' && typeof f.answer === 'string')
         : [],
@@ -289,7 +307,7 @@ function buildShort({ services, servicesEl, industries, industriesEl, greece, pr
     hubLine('Rent-a-Car', url('en', '/solutions/rent-a-car'), 'Fleet catalogs, booking funnels, island/airport local SEO.'),
   );
   lines.push(
-    hubLine('Portfolio / Case Studies', url('en', '/work'), `${projects.length}+ live client projects with homepage screenshots.`),
+    hubLine('Portfolio / Case Studies', url('en', '/work'), `${projects.length} live client projects with homepage screenshots.`),
   );
   lines.push(
     hubLine('Blog', url('en', '/blog'), 'SEO, GEO/AEO, hotel, and e-shop guides (EN + EL).'),

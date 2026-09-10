@@ -15,7 +15,7 @@ faq:
   - question: Is off-page SEO the same as link building?
     answer: Link building is the core tactic inside off-page SEO, but off-page also includes brand mentions, digital PR, reviews and local citations.
   - question: How much does off-page SEO cost?
-    answer: Professional white-hat outreach in Greece often sits inside Growth or Scale retainers (€599–€999+/mo) or as scoped campaigns from roughly €400–€1,500+ per month depending on niche difficulty.
+    answer: Professional white-hat outreach in Greece often sits inside Growth or Authority retainers ({{SEO_GROWTH}}–{{SEO_AUTHORITY}}+/mo) or as scoped campaigns from roughly €400–€1,500+ per month depending on niche difficulty.
   - question: Can bad off-page SEO hurt rankings?
     answer: Yes. Spam networks, irrelevant paid links and sudden unnatural spikes can trigger manual or algorithmic distrust. Quality and relevance beat volume every time.
 ---
@@ -60,13 +60,13 @@ One editorial link from a trusted industry publisher usually beats fifty junk li
 
 | Activity | Typical cost (GR, 2026) | Time to meaningful signal | Best for |
 | :--- | :--- | :--- | :--- |
-| Digital PR / editorial outreach | €599 – €999+/mo retainer | 3–6 months | Competitive commercial terms |
+| Digital PR / editorial outreach | {{SEO_GROWTH}} – {{SEO_AUTHORITY}}+/mo retainer | 3–6 months | Competitive commercial terms |
 | Scoped link campaign | €400 – €1,500+/mo | 2–4 months | Launching a money page |
-| Local citations + GBP hygiene | Often in Starter €299/mo | 4–8 weeks | Local pack / Maps |
+| Local citations + GBP hygiene | Often in Foundations {{ENTRY_SEO}}/mo | 4–8 weeks | Local pack / Maps |
 | Toxic link cleanup | €300 – €800 one-off | 4–12 weeks | Recovering from spam |
 | Linkable asset production | €800 – €3,000+ per asset | 1–3 months to earn | Brands that need PR hooks |
 
-Off-page never replaces weak pages. Fix intent match and [SEO content](/en/blog/seo-content-guide) first, then amplify. Transparent [pricing](/en/pricing) shows how link work usually sits in Growth and Scale packages.
+Off-page never replaces weak pages. Fix intent match and [SEO content](/en/blog/seo-content-guide) first, then amplify. Transparent [pricing](/en/pricing) shows how link work usually sits in Growth and Authority packages.
 
 ## Off-Page Checklist (Do This in Order)
 
@@ -95,7 +95,7 @@ Off-page never replaces weak pages. Fix intent match and [SEO content](/en/blog/
 
 **E-commerce and national brands:** you need topical authority - category guides, digital PR and links that support money categories. Fix thin product copy first; then earn links to category hubs, not only the homepage.
 
-**Hotels and tourism:** destination publishers, travel blogs, tourism boards and experience partners matter more than generic tech blogs. Combine off-page with room-page architecture from the [hotel SEO guide](/en/blog/seo-for-hotels-guide).
+**Hotels and tourism:** destination publishers, travel blogs, tourism boards and experience partners matter more than generic tech blogs. Combine off-page with room-page architecture from the [hotel SEO guide](/en/blog/hotel-seo-guide).
 
 **B2B / agencies:** original research, tools and thought-leadership assets outperform directory submissions. One cited study can earn more qualified links than months of low-quality guest posts.
 
@@ -117,7 +117,7 @@ Link building is the primary tactic inside off-page SEO. Off-page also covers PR
 
 ### How much should I spend?
 
-White-hat programs often run €599–€999+/mo inside retainers, or scoped campaigns from ~€400/mo. See [how much SEO costs](/en/blog/how-much-does-seo-cost).
+White-hat programs often run {{SEO_GROWTH}}–{{SEO_AUTHORITY}}+/mo inside retainers, or scoped campaigns from ~€400/mo. See [how much SEO costs](/en/blog/how-much-does-seo-cost).
 
 ### Will bad links tank my site?
 

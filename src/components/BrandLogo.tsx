@@ -10,6 +10,16 @@ export interface BrandLogoProps {
   /** Home link - defaults to / */
   readonly homeHref?: string;
   readonly onClick?: () => void;
+  /**
+   * Replaces the size-derived wordmark classes. The header lockup uses it to
+   * step the wordmark down (and hide it under 360px) so the hamburger stays
+   * inside the viewport on small phones. It replaces rather than appends
+   * because Tailwind emits utilities in its own canonical order, so an
+   * appended `text-base` does not reliably beat the default `text-lg`.
+   */
+  readonly textClassName?: string;
+  /** Extra classes for the mark. Same reason as `textClassName`. */
+  readonly imageClassName?: string;
 }
 
 const imagePixels: Record<NonNullable<BrandLogoProps["size"]>, number> = {
@@ -34,6 +44,8 @@ export function BrandLogo({
   variant = "default",
   homeHref = "/",
   onClick,
+  textClassName = "",
+  imageClassName = "",
 }: BrandLogoProps) {
   const px = imagePixels[size];
   return (
@@ -43,12 +55,12 @@ export function BrandLogo({
         alt={showText ? "" : "AnotherSEOGuru"}
         width={px}
         height={px}
-        className="flex-shrink-0 object-contain"
+        className={`flex-shrink-0 object-contain ${imageClassName}`}
         priority={size === "md"}
       />
       {showText ? (
         <span
-          className={`font-bold leading-tight ${textClasses[size]} ${
+          className={`font-bold leading-tight ${textClassName || textClasses[size]} ${
             variant === "light" ? "text-white" : "gradient-text"
           }`}
         >

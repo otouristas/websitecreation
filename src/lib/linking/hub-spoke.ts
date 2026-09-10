@@ -164,11 +164,13 @@ export const BLOG_MONEY_LINKS: Record<
         { path: '/pricing', titleEn: 'Pricing & packages', titleEl: 'Τιμές & πακέτα' },
     ],
     'poso-kostizei-to-seo': [
+        { path: '/seo-services', titleEn: 'SEO services', titleEl: 'Υπηρεσίες SEO' },
         { path: '/pricing', titleEn: 'SEO pricing', titleEl: 'Τιμές SEO' },
         { path: '/services/seo-audits', titleEn: 'SEO services', titleEl: 'Υπηρεσίες SEO' },
         { path: '/services/local-seo', titleEn: 'Local SEO', titleEl: 'Τοπικό SEO' },
     ],
     'how-much-does-seo-cost': [
+        { path: '/seo-services', titleEn: 'SEO services', titleEl: 'Υπηρεσίες SEO' },
         { path: '/pricing', titleEn: 'SEO pricing', titleEl: 'Τιμές SEO' },
         { path: '/services/seo-audits', titleEn: 'SEO audits', titleEl: 'Υπηρεσίες SEO' },
         { path: '/services/local-seo', titleEn: 'Local SEO', titleEl: 'Τοπικό SEO' },
@@ -191,18 +193,9 @@ export const BLOG_MONEY_LINKS: Record<
         { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
         { path: '/work', titleEn: 'Hotel portfolio', titleEl: 'Έργα ξενοδοχείων' },
     ],
-    'seo-gia-xenodoxeia-odigos-2026': [
-        { path: '/solutions/hotels', titleEn: 'Hotel solutions', titleEl: 'Λύσεις για ξενοδοχεία' },
-        { path: '/services/ai-visibility', titleEn: 'AI visibility', titleEl: 'Ορατότητα σε AI' },
-        { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
-    ],
     'hotel-seo-guide': [
         { path: '/solutions/hotels', titleEn: 'Hotel solutions', titleEl: 'Λύσεις για ξενοδοχεία' },
         { path: '/services/local-seo', titleEn: 'Local SEO', titleEl: 'Τοπικό SEO' },
-        { path: '/services/ai-visibility', titleEn: 'AI visibility', titleEl: 'Ορατότητα σε AI' },
-    ],
-    'seo-for-hotels-guide': [
-        { path: '/solutions/hotels', titleEn: 'Hotel solutions', titleEl: 'Λύσεις για ξενοδοχεία' },
         { path: '/services/ai-visibility', titleEn: 'AI visibility', titleEl: 'Ορατότητα σε AI' },
         { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
     ],
@@ -243,11 +236,13 @@ export const BLOG_MONEY_LINKS: Record<
         { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
     ],
     'what-is-seo': [
+        { path: '/seo-services', titleEn: 'SEO services', titleEl: 'Υπηρεσίες SEO' },
         { path: '/services/seo-audits', titleEn: 'SEO services', titleEl: 'Υπηρεσίες SEO' },
         { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
         { path: '/glossary', titleEn: 'SEO glossary', titleEl: 'Γλωσσάρι SEO' },
     ],
     'seo-gia-arxarious': [
+        { path: '/seo-services', titleEn: 'SEO services', titleEl: 'Υπηρεσίες SEO' },
         { path: '/services/seo-audits', titleEn: 'SEO services', titleEl: 'Υπηρεσίες SEO' },
         { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
         { path: '/glossary', titleEn: 'SEO glossary', titleEl: 'Γλωσσάρι SEO' },

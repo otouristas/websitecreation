@@ -1,7 +1,7 @@
 ---
 slug: seo-gia-akinita
 title: SEO για Μεσιτικά Γραφεία & Ακίνητα - Οδηγός 2026
-description: Πώς μεσιτικά γραφεία στην Ελλάδα κερδίζουν εντολές και αγοραστές από τη Google. Τοπικό SEO, σελίδες περιοχών, περιεχόμενο ιδιοκτητών, πίνακας κόστους και checklist.
+description: "Πώς τα μεσιτικά γραφεία κερδίζουν εντολές και αγοραστές από τη Google. Τοπικό SEO, σελίδες περιοχών, περιεχόμενο ιδιοκτητών, κόστος και checklist."
 date: 2026-07-06
 author: AnotherSEOGuru Editorial Team
 locale: el
@@ -11,7 +11,7 @@ categoryColor: bg-emerald-100 text-emerald-800
 pillar: industry-playbooks
 faq:
   - question: "Πόσο κοστίζει το SEO για μεσιτικό γραφείο;"
-    answer: "Με στόχευση 2–3 περιοχών: Starter €299/μήνα. Πολλές περιοχές, διεθνές κοινό ή portal αγγελιών: Growth €599/μήνα ή Scale €999/μήνα."
+    answer: "Με στόχευση 2–3 περιοχών: Foundations {{ENTRY_SEO}}/μήνα. Πολλές περιοχές, διεθνές κοινό ή portal αγγελιών: Growth {{SEO_GROWTH}}/μήνα ή Authority {{SEO_AUTHORITY}}/μήνα."
   - question: "Ανεβάζω ήδη αγγελίες στα portals. Τι παραπάνω δίνει το SEO;"
     answer: "Τα portals νοικιάζουν κοινό - το site σας το κατακτά. Κάθε εντολή από τη δική σας σελίδα είναι πελάτης χωρίς κόστος ανά αγγελία και χωρίς 10 ανταγωνιστές δίπλα σας."
   - question: "Πόσο γρήγορα θα δω αποτελέσματα;"
@@ -61,9 +61,9 @@ RealEstateListing (τιμή, τετραγωνικά, τοποθεσία) και 
 
 | Στοιχείο | Τυπικό εύρος 2026 | Σημειώσεις |
 | :--- | :--- | :--- |
-| Starter SEO (2–3 περιοχές) | €299/μήνα | Τοπική εξειδίκευση + GBP |
-| Growth SEO | €599/μήνα | Πολλές περιοχές / διεθνές σελίδες |
-| Scale / portal-style | €999/μήνα | Μεγάλος όγκος αγγελιών + content |
+| Foundations SEO (2–3 περιοχές) | {{ENTRY_SEO}}/μήνα | Τοπική εξειδίκευση + GBP |
+| Growth SEO | {{SEO_GROWTH}}/μήνα | Πολλές περιοχές / διεθνές σελίδες |
+| Authority / portal-style | {{SEO_AUTHORITY}}/μήνα | Μεγάλος όγκος αγγελιών + content |
 | Εφάπαξ audit | €400 – €800 | Τεχνικό + content gaps |
 | Website real estate | από €899 | Αναζήτηση αγγελιών, περιοχές |
 | Πρώτες εντολές από Google | 2–4 μήνες | Queries ιδιοκτητών |

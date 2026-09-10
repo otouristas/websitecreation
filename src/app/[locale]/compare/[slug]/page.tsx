@@ -6,6 +6,9 @@ import { COMPARE_PAGES, getComparePageBySlug } from "@/data/compare-pages";
 import { getAppPath } from "@/lib/app-links";
 import { isValidLocale, localizedPath, type SiteLocale } from "@/lib/i18n/locale";
 import { buildMetadata } from "@/lib/seo";
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
+import SchemaMarkup from "@/components/seo/SchemaMarkup";
+import { generateBreadcrumbSchema } from "@/lib/seo/schema";
 
 interface PageProps {
   params: Promise<{ locale: string; slug: string }>;
@@ -39,19 +42,21 @@ export default async function ComparePage({ params }: PageProps) {
     notFound();
   }
   const lp = (path: string) => localizedPath(locale as SiteLocale, path);
+  // The comparison pages sat one level under a hub that did not exist, with a
+  // hand-rolled two-item trail and no BreadcrumbList at all.
+  const breadcrumbItems = [
+    { name: "Home", url: lp("/") },
+    { name: "Compare", url: lp("/compare") },
+    { name: c.competitorName, url: lp(`/compare/${c.slug}`) },
+  ];
 
   return (
     <>
       <Header />
       <main className="blueprint-grid relative z-0 main-below-header pb-20">
         <article className="container max-w-3xl">
-          <nav className="text-sm text-muted-foreground mb-8">
-            <Link href={lp("/")} className="hover:text-primary">
-              Home
-            </Link>
-            <span className="mx-2">/</span>
-            <span className="text-foreground">{c.headline}</span>
-          </nav>
+          <SchemaMarkup schemas={[generateBreadcrumbSchema({ items: breadcrumbItems })]} />
+          <Breadcrumbs items={breadcrumbItems} className="mb-8" />
           <h1 className="font-display text-4xl font-medium tracking-[-0.04em] md:text-5xl mb-6">{c.headline}</h1>
           <p className="text-xl text-muted-foreground mb-12 leading-relaxed">{c.summary}</p>
           <div className="grid md:grid-cols-2 gap-8 mb-12">

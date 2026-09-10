@@ -6,7 +6,7 @@ date: 2026-01-15
 author: AnotherSEOGuru Editorial Team
 category: Local SEO
 categoryColor: bg-blue-100 text-blue-700
-pillar: search-console-mastery
+pillar: local-seo
 faq:
   - question: What is local SEO?
     answer: Local SEO is how you rank in Google’s map pack and local results for “near me” and city searches. It centers on Google Business Profile, NAP consistency, reviews, local pages, and citations.

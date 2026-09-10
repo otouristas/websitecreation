@@ -13,6 +13,7 @@ import { buildProjectCaseStudy } from '@/lib/portfolio-case-study';
 import { getServiceEl } from '@/data/services-i18n';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 import { generateBreadcrumbs } from '@/lib/linking';
+import { GENERATED_CONTENT_PUBLISHED, GENERATED_CONTENT_UPDATED } from '@/lib/seo/content-dates';
 
 interface WorkDetailProps {
   project: PortfolioProject;
@@ -53,8 +54,8 @@ export function WorkDetail({ project, locale = 'en' }: WorkDetailProps) {
   const articleSchema = generateArticleSchema({
     headline: `${project.name} - ${isEl ? 'Μελέτη περίπτωσης' : 'Case Study'}`,
     description: isEl && project.summaryEl ? project.summaryEl : project.summary,
-    datePublished: new Date().toISOString(),
-    dateModified: new Date().toISOString(),
+    datePublished: GENERATED_CONTENT_PUBLISHED,
+    dateModified: GENERATED_CONTENT_UPDATED,
     author: { name: 'AnotherSEOGuru', url: 'https://anotherseoguru.com' },
     image: {
       url: `https://anotherseoguru.com${project.screenshot}`,
@@ -99,14 +100,23 @@ export function WorkDetail({ project, locale = 'en' }: WorkDetailProps) {
                 ))}
               </div>
               <div className="flex flex-wrap gap-3">
-                <a
-                  href={project.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-outline"
-                >
-                  {isEl ? 'Δείτε τη ζωντανή ιστοσελίδα' : 'View live site'} ↗
-                </a>
+                {/* Four projects' domains no longer serve - one is a parked
+                    for-sale page. Sending a visitor to a parking page under
+                    "View live site" is worse than saying so. */}
+                {project.liveStatus === 'offline' ? (
+                  <span className="btn btn-outline pointer-events-none opacity-70">
+                    {isEl ? 'Η ιστοσελίδα δεν είναι πλέον ενεργή' : 'Site no longer live'}
+                  </span>
+                ) : (
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-outline"
+                  >
+                    {isEl ? 'Δείτε τη ζωντανή ιστοσελίδα' : 'View live site'} ↗
+                  </a>
+                )}
                 <Link
                   href={localizedPath(isEl ? 'el' : 'en', `/get-started?project=${project.category}`)}
                   className="btn btn-primary"

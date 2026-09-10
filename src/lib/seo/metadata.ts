@@ -2,7 +2,7 @@
 
 import { Metadata } from 'next';
 import { buildMetaDescription, finalizeDescription, fitDescription, BRAND_NAME, BASE_URL } from './description';
-import { getHreflangAlternates, isGreekLocationSlug } from '@/lib/locale-paths';
+import { getHreflangAlternates } from '@/lib/locale-paths';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 import { LOCALES } from '@/lib/i18n/locale';
 import { shouldIndexServiceLocation, type Location } from '@/data/locations';
@@ -10,6 +10,7 @@ import { getServiceEl } from '@/data/services-i18n';
 import { industriesEl } from '@/data/industries-i18n';
 import { getGreekLocative } from '@/lib/greek-locative';
 import { isIndustryServiceIndexable } from '@/lib/indexability/industry-service';
+import { resolvePriceTokens } from '@/data/pricing';
 
 export const TITLE_BRAND_SUFFIX = ` | ${BRAND_NAME}`;
 /** Shipped by src/app/opengraph-image.png. Every page needs one: twitter:card is summary_large_image. */
@@ -207,16 +208,24 @@ export function buildMetadata(input: MetadataInput): Metadata {
     article,
   } = input;
 
+  // Resolve `{{ENTRY_SEO}}`-style price tokens before anything measures or
+  // truncates the string. Authored copy uses tokens so a price cannot go stale;
+  // without this the token itself would reach the SERP.
+  const metaLocale: SiteLocale = path.startsWith('/el') ? 'el' : 'en';
+
   const description = finalizeDescription(
-    customDescription ||
-      buildMetaDescription({
-        primaryKeyword: primaryKeyword || title,
-        location,
-        industry,
-        service,
-        usp,
-        ctaHint,
-      }),
+    resolvePriceTokens(
+      customDescription ||
+        buildMetaDescription({
+          primaryKeyword: primaryKeyword || title,
+          location,
+          industry,
+          service,
+          usp,
+          ctaHint,
+        }),
+      metaLocale,
+    ),
   );
 
   const canonicalSource = canonicalPath ?? path;
@@ -225,7 +234,7 @@ export function buildMetadata(input: MetadataInput): Metadata {
       ? BASE_URL
       : `${BASE_URL}${canonicalSource.startsWith('/') ? canonicalSource : `/${canonicalSource}`}`;
 
-  const fullTitle = buildFullTitle(title);
+  const fullTitle = resolvePriceTokens(buildFullTitle(title), metaLocale);
 
   assertMetadataClean('title', fullTitle, path);
   assertMetadataClean('description', description, path);
@@ -387,14 +396,33 @@ export function buildServiceLocationMetadata(
     ]),
     path: localizedPath(locale, `/services/${service.slug}/${location.slug}`),
     hreflangPath: `/services/${service.slug}/${location.slug}`,
-    // English city pages don't have Greek counterparts unless the city is Greek.
-    hreflangLocales: isGreekLocationSlug(location.slug) ? ['en', 'el'] : ['en'],
+    // English city pages don't have Greek counterparts unless the city is Greek -
+    // and the counterpart only counts if it is actually indexable, otherwise we
+    // announce an alternate that tells crawlers not to index it.
+    hreflangLocales: serviceLocationHreflangLocales(location as Location),
     service: service.name,
     location: placeLabel,
     usp: `${service.name} for businesses in ${location.city}`,
     ctaHint: 'Request a free local quote.',
     noIndex,
   });
+}
+
+/**
+ * Which locales to declare as alternates for a service x location URL.
+ *
+ * The pair is only announced when *both* twins are indexable. It used to key
+ * off `isGreekLocationSlug` alone, so an indexable Greek page advertised an
+ * `hreflang` alternate that carried `noindex` - a self-cancelling pair, where
+ * the annotation invites the crawler to a page the same response tells it to
+ * drop. `getHreflangAlternates` treats fewer than two locales as "no
+ * alternates", which is the behaviour we want in that case.
+ */
+function serviceLocationHreflangLocales(location: Location): SiteLocale[] {
+  const locales: SiteLocale[] = [];
+  if (shouldIndexServiceLocation(location, 'en')) locales.push('en');
+  if (shouldIndexServiceLocation(location, 'el')) locales.push('el');
+  return locales;
 }
 
 /** Services sold as monthly retainers vs one-off fixed-scope projects. */
@@ -519,7 +547,7 @@ export function buildServiceLocationMetadataEl(
     ]),
     path: localizedPath('el', `/services/${service.slug}/${location.slug}`),
     hreflangPath: `/services/${service.slug}/${location.slug}`,
-    hreflangLocales: isGreekLocationSlug(location.slug) ? ['en', 'el'] : ['el'],
+    hreflangLocales: serviceLocationHreflangLocales(location as Location),
     primaryKeyword: `${keyword} ${city}`,
     ctaHint: 'Ζητήστε προσφορά.',
     noIndex,

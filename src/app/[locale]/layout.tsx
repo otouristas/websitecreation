@@ -5,7 +5,7 @@ import '../globals.css';
 import CookieConsent from '@/components/CookieConsent';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
 import StickyMobileCta from '@/components/StickyMobileCta';
-import FloatingContactCta from '@/components/FloatingContactCta';
+import WhatsAppPill from '@/components/WhatsAppPill';
 import { Analytics } from '@vercel/analytics/next';
 import { isValidLocale } from '@/lib/i18n/locale';
 import { CONTACT_EMAIL, PHONE_E164 } from '@/lib/contact-info';
@@ -158,7 +158,7 @@ function buildStructuredDataGraph(isEl: boolean) {
           contactType: 'customer service',
           email: CONTACT_EMAIL,
           telephone: PHONE_E164,
-          areaServed: ['GR', 'US', 'GB', 'CA', 'AU', 'IE', 'EU'],
+          areaServed: ['GR', 'GB', 'US', 'EU'],
           availableLanguage: ['Greek', 'English'],
         },
         sameAs: [
@@ -166,13 +166,13 @@ function buildStructuredDataGraph(isEl: boolean) {
           'https://twitter.com/anotherseoguru',
           'https://www.youtube.com/@anotherseoguru',
         ],
+        // Only the markets the portfolio actually covers. Canada, Australia and
+        // Ireland were asserted here with zero client work behind them, and
+        // `MARKET_COUNT` derives to 4: GR, EU, UK, US.
         areaServed: [
           { '@type': 'Country', name: 'Greece' },
-          { '@type': 'Country', name: 'United States' },
           { '@type': 'Country', name: 'United Kingdom' },
-          { '@type': 'Country', name: 'Canada' },
-          { '@type': 'Country', name: 'Australia' },
-          { '@type': 'Country', name: 'Ireland' },
+          { '@type': 'Country', name: 'United States' },
           { '@type': 'AdministrativeArea', name: 'Europe' },
         ],
         knowsAbout: [
@@ -264,11 +264,18 @@ export default async function LocaleLayout({
       <body className={`${inter.variable} ${geistMono.variable} relative antialiased`}>
         <GoogleAnalytics />
         <CookieConsent />
-        <div className="relative z-0 min-h-dvh pb-20 lg:pb-0" data-locale={locale}>
+        {/* Bottom padding tracks the sticky bar's real height instead of a
+            hardcoded 5rem, so content never hides behind it on a notched
+            device and no dead space is reserved on pages without the bar. */}
+        <div
+          className="relative z-0 min-h-dvh"
+          style={{ paddingBottom: 'var(--chrome-bottom-bar)' }}
+          data-locale={locale}
+        >
           {children}
         </div>
         <StickyMobileCta />
-        <FloatingContactCta locale={isEl ? 'el' : 'en'} />
+        <WhatsAppPill locale={isEl ? 'el' : 'en'} />
         <Analytics />
       </body>
     </html>

@@ -8,6 +8,7 @@ import { PHONE_DISPLAY, WHATSAPP_HREF } from "@/lib/contact-info";
 import { BrandLogo } from "@/components/BrandLogo";
 import { AgencyMegaMenu } from "@/components/AgencyMegaMenu";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { MobileNav } from "@/components/MobileNav";
 import { localizedPath, siteLocaleFromPath, type SiteLocale } from "@/lib/i18n/locale";
@@ -145,18 +146,30 @@ export default function Header({
   return (
     <>
       <nav
-        className="pointer-events-none fixed left-0 right-0 top-0 z-50 px-3 pt-3 sm:px-6"
+        className="pointer-events-none fixed left-0 right-0 top-0 z-50 px-2 pt-3 min-[400px]:px-3 sm:px-6"
         aria-label="Main"
       >
         <div
-          className={`pointer-events-auto mx-auto flex max-w-6xl items-center gap-2 rounded-2xl border px-3 py-2.5 transition-[background-color,border-color,box-shadow] duration-300 sm:gap-4 sm:px-5 sm:py-3 lg:rounded-full ${
+          className={`pointer-events-auto mx-auto flex max-w-6xl items-center gap-2 rounded-2xl border px-2.5 py-2.5 transition-[background-color,border-color,box-shadow] duration-300 min-[400px]:px-3 sm:gap-4 sm:px-5 sm:py-3 lg:rounded-full ${
             isScrolled
               ? "border-hairline bg-surface/80 shadow-[0_12px_40px_-20px_oklch(0_0_0_/_35%),0_0_0_1px_var(--hairline)] backdrop-blur-xl"
               : "border-transparent bg-surface/50 backdrop-blur-md"
           }`}
         >
-          <div className="flex flex-1 items-center justify-between gap-3">
-            <BrandLogo size="md" className="shrink-0" homeHref={lp("/")} />
+          <div className="flex min-w-0 flex-1 items-center justify-between gap-2 sm:gap-3">
+            {/* The wordmark is 170px at text-lg. With the language switcher,
+                theme toggle and hamburger on the same row that pushed the
+                hamburger past the right edge of a 320-375px viewport, i.e. the
+                menu could not be opened at all on an iPhone SE. It steps down
+                with the viewport and falls back to screen-reader-only under
+                360px, where only the mark fits. */}
+            <BrandLogo
+              size="md"
+              className="min-w-0 shrink-0"
+              homeHref={lp("/")}
+              imageClassName="h-7 w-7 min-[400px]:h-8 min-[400px]:w-8"
+              textClassName="max-[359px]:sr-only whitespace-nowrap text-base min-[400px]:text-lg"
+            />
             <div className="hidden items-center gap-1 lg:flex">
               <AgencyMegaMenu locale={locale} label={nav.agency} />
               <NavDropdown label={nav.solutions}>
@@ -180,9 +193,9 @@ export default function Header({
                 {nav.ourWork}
               </Link>
             </div>
-            <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
+            <div className="flex shrink-0 items-center gap-1 min-[400px]:gap-1.5 sm:gap-2">
               <LanguageSwitcher alternateHref={alternateHref} />
-              <ThemeToggle />
+              <ThemeToggle locale={locale} />
               <a
                 href={WHATSAPP_HREF}
                 target="_blank"
@@ -191,9 +204,7 @@ export default function Header({
                 className="hidden items-center gap-1.5 rounded-full px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-foreground/5 hover:text-foreground xl:inline-flex"
                 aria-label={`WhatsApp ${PHONE_DISPLAY}`}
               >
-                <svg className="h-4 w-4 text-[#25D366]" fill="currentColor" viewBox="0 0 24 24" aria-hidden>
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-                </svg>
+                <WhatsAppIcon className="h-4 w-4 text-[#25D366]" />
                 <span className="hidden xl:inline">{PHONE_DISPLAY}</span>
               </a>
               <Link
@@ -205,7 +216,7 @@ export default function Header({
               </Link>
               <button
                 type="button"
-                className="grid size-9 place-items-center rounded-full border border-hairline text-foreground transition-colors hover:bg-foreground/5 lg:hidden"
+                className="grid size-9 shrink-0 place-items-center rounded-full border border-hairline text-foreground transition-colors hover:bg-foreground/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring lg:hidden"
                 onClick={() => setIsMobileMenuOpen(true)}
                 aria-expanded={isMobileMenuOpen}
                 aria-label={nav.openMenu}

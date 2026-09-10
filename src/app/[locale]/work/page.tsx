@@ -2,10 +2,10 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import StickyMobileCta from '@/components/StickyMobileCta';
 import { WorkIndexClient } from '@/components/work/WorkIndexClient';
 import { buildMetadata } from '@/lib/seo';
 import { isValidLocale, localizedPath, type SiteLocale } from '@/lib/i18n/locale';
+import { PROJECT_COUNT } from '@/data/company-facts';
 
 type PageProps = { params: Promise<{ locale: string }> };
 
@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return buildMetadata({
       title: 'Έργα & Portfolio - Τουρισμός, Ξενοδοχεία & Ενοικίαση Αυτοκινήτου',
       description:
-        '55+ live ιστοσελίδες για ξενοδοχεία, ενοικίαση αυτοκινήτου, εκδρομές, βίλες και travel AI. Δείτε το portfolio μας με SEO βελτιστοποιημένα έργα σε Ελλάδα και Ευρώπη.',
+        `${PROJECT_COUNT} ζωντανές ιστοσελίδες για ξενοδοχεία, ενοικίαση αυτοκινήτου, εκδρομές, βίλες και travel AI. Δείτε το portfolio μας με SEO βελτιστοποιημένα έργα σε Ελλάδα και Ευρώπη.`,
       path: localizedPath('el', '/work'),
       primaryKeyword: 'τουριστικές ιστοσελίδες portfolio',
       hreflangPath: '/work',
@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return buildMetadata({
     title: 'Portfolio - Tourism, Hotels & Rent-a-car',
     description:
-      '55+ live websites for hotels, rent-a-car, tours, villas and travel AI. Browse our portfolio of SEO-optimized tourism projects across Greece, UK, US, Canada and Europe.',
+      `${PROJECT_COUNT} live websites for hotels, rent-a-car, tours, villas and travel AI. Browse our portfolio of SEO-optimized tourism projects across Greece, the UK, the US and Europe.`,
     path: localizedPath('en', '/work'),
     primaryKeyword: 'tourism website portfolio',
     hreflangPath: '/work',
@@ -47,7 +47,7 @@ export default async function WorkPage({ params }: PageProps) {
       }
     : {
         h1: 'Our work',
-        desc: 'Live websites we designed, built and optimized for tourism, hospitality, rent-a-car and travel AI - across Greece, UK, US, Canada and Europe.',
+        desc: 'Live websites we designed, built and optimized for tourism, hospitality, rent-a-car and travel AI - across Greece, the UK, the US and Europe.',
       };
 
   return (

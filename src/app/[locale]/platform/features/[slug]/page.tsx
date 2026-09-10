@@ -10,6 +10,7 @@ import { buildMetadata } from "@/lib/seo";
 import { generateBreadcrumbSchema, generateFAQSchema } from "@/lib/seo/schema";
 import { getFeatureExplainer } from "@/data/platform-feature-explainers";
 import { evaluatePlatformFeature } from "@/lib/indexability/platform-feature";
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
 
 interface PageProps {
   params: Promise<{ locale: string; slug: string }>;
@@ -44,14 +45,16 @@ export default async function PlatformFeatureDetailPage({ params }: PageProps) {
     notFound();
   }
   const lp = (path: string) => localizedPath(locale as SiteLocale, path);
-  const breadcrumbs = generateBreadcrumbSchema({
-    items: [
-      { name: "Home", url: lp("/") },
-      { name: "Platform", url: lp("/platform") },
-      { name: "Features", url: lp("/platform/features") },
-      { name: f.title, url: lp(`/platform/features/${f.slug}`) },
-    ],
-  });
+  // One list, used for both the visible trail and the JSON-LD, so the two
+  // cannot disagree. The visible trail used to be hand-rolled `<nav>` markup
+  // with no `aria-label`, alongside a separate copy of the same items.
+  const breadcrumbItems = [
+    { name: "Home", url: lp("/") },
+    { name: "Platform", url: lp("/platform") },
+    { name: "Features", url: lp("/platform/features") },
+    { name: f.title, url: lp(`/platform/features/${f.slug}`) },
+  ];
+  const breadcrumbs = generateBreadcrumbSchema({ items: breadcrumbItems });
   const appUrl = getAppPath(getAppFeaturePath(f.slug));
   const related = f.relatedFeatures
     .map((s) => getMarketingFeatureBySlug(s))
@@ -68,21 +71,7 @@ export default async function PlatformFeatureDetailPage({ params }: PageProps) {
       <Header />
       <main className="blueprint-grid relative z-0 main-below-header pb-20">
         <article className="container max-w-3xl">
-          <nav className="text-sm text-muted-foreground mb-8">
-            <Link href={lp("/")} className="hover:text-primary">
-              Home
-            </Link>
-            <span className="mx-2">/</span>
-            <Link href={lp("/platform")} className="hover:text-primary">
-              Platform
-            </Link>
-            <span className="mx-2">/</span>
-            <Link href={lp("/platform/features")} className="hover:text-primary">
-              Features
-            </Link>
-            <span className="mx-2">/</span>
-            <span className="text-foreground">{f.title}</span>
-          </nav>
+          <Breadcrumbs items={breadcrumbItems} className="mb-8" />
           <header className="mb-10">
             <h1 className="font-display text-4xl font-medium tracking-[-0.04em] md:text-5xl text-foreground mb-4">{f.title}</h1>
             <p className="text-xl text-muted-foreground leading-relaxed">{f.shortDescription}</p>

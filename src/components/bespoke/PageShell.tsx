@@ -1,7 +1,6 @@
 import type { CSSProperties, ReactNode } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { StickyMobileCta } from '@/components/StickyMobileCta';
 import SchemaMarkup from '@/components/seo/SchemaMarkup';
 import Breadcrumbs from '@/components/seo/Breadcrumbs';
 import { cn } from '@/lib/cn';
@@ -47,7 +46,6 @@ export function PageShell({
       >
         {children}
       </main>
-      <StickyMobileCta />
       <Footer locale={locale} />
     </>
   );

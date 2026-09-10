@@ -1,3 +1,5 @@
+import { resolvePriceTokens } from '@/data/pricing';
+
 /**
  * Greek translations for service slugs (programmatic SEO).
  */
@@ -161,12 +163,15 @@ export const serviceNamesEl: Record<
     ],
   },
   'seo-audits': {
-    titleKeyword: 'Υπηρεσίες SEO',
-    name: 'Υπηρεσίες SEO & Τεχνικός Έλεγχος',
+    // Was `titleKeyword: 'Υπηρεσίες SEO'`, which put this audit page in
+    // competition with /el/seo-services for the head term. This page sells an
+    // audit; the pillar sells the retainer.
+    titleKeyword: 'SEO Audit',
+    name: 'SEO Audit & Τεχνικός Έλεγχος',
     shortName: 'Υπηρεσίες SEO',
     nameAccusative: 'υπηρεσίες SEO & τεχνικό έλεγχο',
     description:
-      'Υπηρεσίες SEO για ιστοσελίδες στην Ελλάδα: τεχνικός έλεγχος, on-page, λέξεις-κλειδιά, τοπικό SEO και μηνιαία προώθηση. Διαφανή πακέτα από €400/μήνα.',
+      'Υπηρεσίες SEO για ιστοσελίδες στην Ελλάδα: τεχνικός έλεγχος, on-page, λέξεις-κλειδιά, τοπικό SEO και μηνιαία προώθηση. Διαφανή πακέτα από {{ENTRY_SEO}}/μήνα.',
     features: [
       'Πλήρης τεχνικός SEO audit',
       'Core Web Vitals & ταχύτητα',
@@ -210,6 +215,15 @@ export const serviceNamesEl: Record<
   },
 };
 
+/**
+ * Greek service copy, with `{{ENTRY_SEO}}`-style price tokens resolved.
+ *
+ * Resolved here rather than in each consumer: these descriptions render on the
+ * services hub, the mega menu, the mobile sheet, service x location pages and
+ * llms.txt, and a token reaching any one of those is a visible bug.
+ */
 export function getServiceEl(slug: string) {
-  return serviceNamesEl[slug];
+  const entry = serviceNamesEl[slug];
+  if (!entry) return entry;
+  return { ...entry, description: resolvePriceTokens(entry.description, 'el') };
 }

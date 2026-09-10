@@ -5,6 +5,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { isValidLocale, localizedPath, type SiteLocale } from "@/lib/i18n/locale";
 import { buildMetadata } from "@/lib/seo";
+import { MARKET_COUNT, PROJECT_COUNT } from '@/data/company-facts';
+import { industries } from '@/data/industries';
 
 type PageProps = { params: Promise<{ locale: string }> };
 
@@ -25,7 +27,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return buildMetadata({
     title: "About - SEO Agency & Software",
     description:
-      "AnotherSEOGuru combines a GSC-native SEO platform with an execution-focused agency. Fast websites, GEO, AEO, and measurable growth. 500+ projects delivered.",
+      `AnotherSEOGuru combines a GSC-native SEO platform with an execution-focused agency. Fast websites, GEO, AEO, and measurable growth across ${PROJECT_COUNT} live client projects.`,
     path: localizedPath('en', '/about'),
     hreflangPath: "/about",
   });
@@ -81,11 +83,15 @@ export default async function AboutPage({ params }: PageProps) {
             icon: "📈",
           },
         ],
+        // Every figure derives from repo data. These read "500+", "98%" and
+        // "50+" against real values of 71 and 31, and the satisfaction number
+        // had no survey, NPS or source behind it at all - so it is gone rather
+        // than corrected.
         stats: [
-          { value: "500+", label: "Ιστοσελίδες που Παραδόθηκαν" },
-          { value: "98%", label: "Ικανοποίηση Πελατών" },
-          { value: "50+", label: "Κλάδοι που Εξυπηρετήθηκαν" },
-          { value: "2-4", label: "Εβδομάδες για Λανσάρισμα" },
+          { value: `${PROJECT_COUNT}`, label: "Ζωντανά έργα" },
+          { value: `${industries.length}`, label: "Κλάδοι που εξυπηρετούμε" },
+          { value: `${MARKET_COUNT}`, label: "Αγορές" },
+          { value: "2-4", label: "Εβδομάδες για δημοσίευση" },
         ],
         steps: [
           { step: "01", title: "Ανακάλυψη", description: "Μαθαίνουμε για την επιχείρησή σας, τους στόχους και το κοινό σας. Επιλέγετε το πακέτο σας και παρέχετε το υλικό." },
@@ -137,10 +143,10 @@ export default async function AboutPage({ params }: PageProps) {
           },
         ],
         stats: [
-          { value: "500+", label: "Websites Delivered" },
-          { value: "98%", label: "Client Satisfaction" },
-          { value: "50+", label: "Industries Served" },
-          { value: "2-4", label: "Weeks to Launch" },
+          { value: `${PROJECT_COUNT}`, label: "Live projects" },
+          { value: `${industries.length}`, label: "Industries served" },
+          { value: `${MARKET_COUNT}`, label: "Markets" },
+          { value: "2-4", label: "Weeks to launch" },
         ],
         steps: [
           { step: "01", title: "Discovery", description: "We learn about your business, goals, and target audience. You choose your package and provide content." },

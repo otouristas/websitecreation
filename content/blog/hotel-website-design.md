@@ -1,7 +1,7 @@
 ---
 slug: hotel-website-design
 title: Hotel Website Design - Turn Visitors into Direct Bookings
-description: What a hotel website needs in 2026 - fast mobile UX, a booking engine, room pages, multilingual SEO, and schema - to cut OTA commissions and win direct bookings.
+description: "What a hotel website needs in 2026: fast mobile UX, a booking engine, room pages, multilingual SEO and schema, to cut OTA commissions and win direct bookings."
 date: 2026-07-06
 author: AnotherSEOGuru Editorial Team
 locale: en
@@ -24,7 +24,7 @@ faq:
 
 A hotel’s website is its most profitable sales channel - or its most expensive missed opportunity. Great **hotel website design** turns a browser into a direct booking; a slow, dated site sends that guest straight to an OTA that charges you commission. Here’s what a booking-driving hotel site needs in 2026, what it costs, and how to build it for SEO.
 
-> **Related:** [hotel solutions](/en/solutions/hotels) · [pricing](/en/pricing) · [SEO for hotels](/en/blog/seo-for-hotels-guide) · [website cost guide](/en/blog/how-much-does-a-website-cost) · [free quote](/en/get-started).
+> **Related:** [hotel solutions](/en/solutions/hotels) · [pricing](/en/pricing) · [SEO for hotels](/en/blog/hotel-seo-guide) · [website cost guide](/en/blog/how-much-does-a-website-cost) · [free quote](/en/get-started).
 
 ## Why Direct Bookings Matter
 
@@ -61,7 +61,7 @@ Separate, rich pages for each room type and experience (spa, breakfast, weddings
 
 ### 4. Destination storytelling
 
-Guests choose the place before the property. Content about your location builds desire early - see the [hotel SEO guide](/en/blog/seo-for-hotels-guide).
+Guests choose the place before the property. Content about your location builds desire early - see the [hotel SEO guide](/en/blog/hotel-seo-guide).
 
 ### 5. Multilingual and international-ready
 
@@ -99,7 +99,7 @@ The fuller the brief, the closer delivery stays to the 3–5 week timeline. Dela
 
 Set targets: share of direct vs OTA bookings, average booking value, commission saved. Without those numbers, a “nice site” does not prove ROI. Connect the booking engine to Analytics events and watch mobile separately - that is where most abandonments happen.
 
-After launch, plan ongoing [hotel SEO](/en/blog/seo-for-hotels-guide) and destination content each season - not a one-off launch burst. Pair the site with honest rate incentives for direct guests so marketing and UX pull in the same direction.
+After launch, plan ongoing [hotel SEO](/en/blog/hotel-seo-guide) and destination content each season - not a one-off launch burst. Pair the site with honest rate incentives for direct guests so marketing and UX pull in the same direction.
 
 ## Design Details That Quietly Lift Conversion
 

@@ -2,6 +2,8 @@ import fs from "fs";
 import path from "path";
 import { cache } from "react";
 import matter from "gray-matter";
+import { resolvePriceTokens } from "@/data/pricing";
+import type { SiteLocale } from "@/lib/i18n/locale";
 
 export interface BlogFaqItem {
   readonly question: string;
@@ -13,6 +15,8 @@ export interface BlogPostListItem {
   readonly title: string;
   readonly description: string;
   readonly date: string;
+  /** Last substantive revision, when there has been one. Drives `dateModified`. */
+  readonly updated?: string;
   readonly author: string;
   readonly category?: string;
   readonly categoryColor?: string;
@@ -47,6 +51,7 @@ interface MatterData {
   readonly title?: string;
   readonly description?: string;
   readonly date?: string;
+  readonly updated?: unknown;
   readonly author?: string;
   readonly category?: string;
   readonly categoryColor?: string;
@@ -77,6 +82,30 @@ function getContentDir(): string {
   return path.join(process.cwd(), "content/blog");
 }
 
+/**
+ * Frontmatter dates are unquoted YAML (`date: 2026-06-15`), so gray-matter
+ * hands back a `Date`, not a string. The old `typeof d.date === "string"` test
+ * therefore missed on every post and fell through to "today": all 71 posts
+ * rendered the build date, `datePublished` and `dateModified` in Article schema
+ * were the build date, sitemap `lastmod` was the build date, and "newest first"
+ * ordering compared 71 identical values. Accept both shapes.
+ */
+function normalizePostDate(value: unknown, slug: string): string {
+  if (value instanceof Date && !Number.isNaN(value.getTime())) {
+    return value.toISOString().slice(0, 10);
+  }
+  if (typeof value === "string") {
+    const trimmed = value.trim();
+    if (/^\d{4}-\d{2}-\d{2}/.test(trimmed)) return trimmed.slice(0, 10);
+    const parsed = new Date(trimmed);
+    if (!Number.isNaN(parsed.getTime())) return parsed.toISOString().slice(0, 10);
+  }
+  throw new Error(
+    `Blog post "${slug}" has a missing or unparseable \`date\` in its frontmatter. ` +
+      `Publication dates drive Article schema and sitemap lastmod, so they cannot be guessed.`,
+  );
+}
+
 function parsePostFile(filePath: string, fileBase: string): BlogPostParsed | null {
   const raw = fs.readFileSync(filePath, "utf8");
   const { data, content } = matter(raw);
@@ -85,25 +114,35 @@ function parsePostFile(filePath: string, fileBase: string): BlogPostParsed | nul
   if (typeof d.title !== "string" || typeof d.description !== "string") {
     return null;
   }
-  const date =
-    typeof d.date === "string" ? d.date : new Date().toISOString().slice(0, 10);
+  const date = normalizePostDate(d.date, slug);
+  // Optional. Without it `dateModified` equalled `datePublished` on every post,
+  // so a genuine rewrite was indistinguishable from an untouched page.
+  const updated = d.updated === undefined ? undefined : normalizePostDate(d.updated, slug);
+  const locale: SiteLocale = d.locale === "el" ? "el" : "en";
+  // Prices are authored as `{{ENTRY_SEO}}`-style tokens so a figure cannot go
+  // stale. Resolve here, at the data boundary, rather than in each consumer:
+  // post descriptions surface on /blog, the pillar hubs, /resources, related
+  // -post rails and llms.txt, and a token was reaching the HTML on 116 built
+  // pages when only the post template resolved them.
+  const rp = (text: string) => resolvePriceTokens(text, locale);
   const wordCount = countBodyWords(content);
   return {
     slug,
-    title: d.title,
-    description: d.description,
+    title: rp(d.title),
+    description: rp(d.description),
     date,
+    updated,
     author: typeof d.author === "string" ? d.author : "AnotherSEOGuru Editorial Team",
     category: typeof d.category === "string" ? d.category : undefined,
     categoryColor: typeof d.categoryColor === "string" ? d.categoryColor : undefined,
     pillar: typeof d.pillar === "string" ? d.pillar : undefined,
     isPillarHub: Boolean(d.pillarHub),
-    locale: d.locale === "el" ? "el" : "en",
+    locale,
     translationOf: typeof d.translationOf === "string" ? d.translationOf : undefined,
-    faq: parseFaq(d.faq),
+    faq: parseFaq(d.faq)?.map((f) => ({ question: rp(f.question), answer: rp(f.answer) })),
     wordCount,
     readingTime: Math.max(1, Math.round(wordCount / 200)),
-    content,
+    content: rp(content),
     headings: extractHeadings(content),
   };
 }

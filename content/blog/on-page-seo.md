@@ -17,7 +17,7 @@ faq:
   - question: How long does on-page SEO take to work?
     answer: CTR and clarity fixes on already-indexed pages can move within 2–6 weeks. New or heavily rewritten pages often need 1–3 months to stabilize, longer in competitive niches.
   - question: How much does on-page optimization cost?
-    answer: Page rewrites often run €150–€450 per URL depending on research depth. Ongoing on-page work is usually included in retainers from €299/mo.
+    answer: Page rewrites often run €150–€450 per URL depending on research depth. Ongoing on-page work is usually included in retainers from {{ENTRY_SEO}}/mo.
 ---
 
 **On-page SEO** is everything you control on a URL to match search intent: title tags, headings, body copy, media, internal links and structured data. It is the highest-control lever after [technical SEO](/en/blog/technical-seo-guide) - and the place most Greek businesses still leave easy wins on the table. This guide gives a practical 2026 process, a checklist, realistic costs and the mistakes that keep good sites stuck on page two.
@@ -67,7 +67,7 @@ Compress images, use descriptive alt text, lazy-load galleries. Add schema only 
 | Full service page rewrite | €150 – €450 / page | 0.5–2 days | 1–3 months |
 | Location page uniqueization | €120 – €300 / page | Research-heavy | 1–3 months |
 | Pillar guide (1,000–2,000 words) | €250 – €700 | 1–3 days | 1–4 months |
-| Ongoing on-page in retainer | from €299/mo | Continuous | Compounds |
+| Ongoing on-page in retainer | from {{ENTRY_SEO}}/mo | Continuous | Compounds |
 
 If the site is slow or poorly indexed, fix technical issues first - otherwise on-page gains leak. See [pricing](/en/pricing) and [how much SEO costs](/en/blog/how-much-does-seo-cost).
 
@@ -91,7 +91,7 @@ Better on-page clarity raises relevance and CTR, which feeds [organic traffic gr
 Imagine a page titled “SEO Services | Company” with a 90-word blurb and a contact form. Impressions exist for “SEO agency Athens” but CTR is 1.2% and average position is 18. An on-page rewrite would:
 
 1. Retitle to a specific promise (e.g. “SEO Agency in Athens - Local & National Growth”).
-2. Open with who it is for, outcomes and a transparent price band (€299–€999/mo) linking to [pricing](/en/pricing).
+2. Open with who it is for, outcomes and a transparent price band ({{ENTRY_SEO}}–{{SEO_AUTHORITY}}/mo) linking to [pricing](/en/pricing).
 3. Add H2s for process, timeline, included work and FAQs.
 4. Insert unique proof (cities served, case snapshots, audit CTA).
 5. Internally link from [What is SEO?](/en/blog/what-is-seo), [how to increase organic traffic](/en/blog/how-to-increase-organic-traffic) and related city pages.

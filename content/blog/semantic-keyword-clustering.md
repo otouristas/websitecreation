@@ -1,7 +1,7 @@
 ---
 slug: semantic-keyword-clustering
 title: Semantic Keyword Clustering - A Practical Guide
-description: What semantic keyword clustering is, how embeddings and intent grouping work, how to do it in Python or without code, and how to turn clusters into a content plan.
+description: "What semantic keyword clustering is, how embeddings and intent grouping work, how to do it with or without Python, and how to turn clusters into a plan."
 date: 2026-08-19
 author: AnotherSEOGuru Editorial Team
 category: SEO
@@ -93,6 +93,12 @@ The cluster list is a means, not the deliverable. Four things get built from it.
 
 If you have never done this, start with the no-code method on your thirty most commercially important queries. It takes an afternoon and usually surfaces at least one pair of pages competing for the same intent.
 
-If you are working at the scale of a few thousand keywords, the Python route pays for itself quickly — but budget the time to read the output, not just to run it.
+If you are working at the scale of a few thousand keywords, the Python route pays for itself quickly - but budget the time to read the output, not just to run it.
 
 Related reading: [Semantic Keyword Clustering in the platform](/en/platform/features/semantic-keyword-clustering), the [technical SEO guide](/en/blog/technical-seo-guide), and [how to prioritise Search Console queries](/en/blog/gsc-query-prioritization-framework).
+
+## Want the clustering done against your own Search Console data?
+
+Clustering a keyword export is the easy half. The hard half is deciding which cluster becomes a page, which becomes a section of an existing page, and which is already served by something you published two years ago and forgot about. That decision needs your own impression and position data, not a generic volume file.
+
+That mapping is the first thing we do on an [SEO engagement](/en/services/seo-audits), and it is what stops a content plan turning into forty pages that compete with each other. If you would rather see the numbers before committing to anything, [tell us what you sell and where](/en/get-started) and we will come back with the clusters that are actually worth a page.

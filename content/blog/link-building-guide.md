@@ -15,7 +15,7 @@ faq:
   - question: Is paid link building safe?
     answer: Paying for pure PageRank manipulation violates Google guidelines. Paying for content production, digital PR and legitimate sponsorships with editorial standards is different - transparency and relevance are non-negotiable.
   - question: How much does link building cost in Greece?
-    answer: White-hat campaigns typically run €400–€1,500+ per month depending on niche difficulty, or sit inside Growth/Scale SEO retainers (€599–€999+/mo). Cheap “50 links for €99” packages are almost always spam.
+    answer: White-hat campaigns typically run €400–€1,500+ per month depending on niche difficulty, or sit inside Growth/Authority SEO retainers ({{SEO_GROWTH}}–{{SEO_AUTHORITY}}+/mo). Cheap “50 links for €99” packages are almost always spam.
   - question: Do you guarantee rankings from links?
     answer: No ethical provider does. Guarantees process quality, relevance and reporting - not a specific Google position.
 ---
@@ -66,8 +66,8 @@ If a vendor cannot show you the placement URL before or after publishing, walk a
 | :--- | :--- | :--- | :--- |
 | DIY founder outreach | Time only | 0–3 | 3–6+ months |
 | Scoped white-hat campaign | €400 – €1,500+/mo | 2–8 relevant | 2–4 months to signals |
-| Inside Growth retainer | €599/mo package band | Steady drip | Compounds with content |
-| Inside Scale retainer | €999+/mo package band | Higher capacity | Competitive niches |
+| Inside Growth retainer | {{SEO_GROWTH}}/mo package band | Steady drip | Compounds with content |
+| Inside Authority retainer | {{SEO_AUTHORITY}}+/mo package band | Higher capacity | Competitive niches |
 | Spam packages | €50 – €200 “lots of links” | Dozens of junk | Risk > reward |
 
 There is **no magic number** of backlinks. Compete against who already ranks for your money query: match topical relevance, then exceed with better pages and steadier acquisition. See [pricing](/en/pricing) and [how much SEO costs](/en/blog/how-much-does-seo-cost).
@@ -119,7 +119,7 @@ Paying for pure ranking manipulation is against guidelines. Paying for PR, conte
 
 ### How much does it cost?
 
-Serious white-hat work often €400–€1,500+/mo or inside €599–€999+ retainers. Cheap bulk packages are usually spam.
+Serious white-hat work often €400–€1,500+/mo or inside {{SEO_GROWTH}}–{{SEO_AUTHORITY}}+ retainers. Cheap bulk packages are usually spam.
 
 ### Do you guarantee rankings?
 

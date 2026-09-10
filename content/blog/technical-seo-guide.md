@@ -7,6 +7,7 @@ author: AnotherSEOGuru Editorial Team
 category: SEO
 categoryColor: bg-emerald-100 text-emerald-800
 pillar: technical-seo-in-house
+translationOf: techniko-seo
 faq:
   - question: What is technical SEO?
     answer: Technical SEO makes your site easy to crawl, index, and render - speed, mobile usability, HTTPS, sitemaps, canonicals, structured data, and clean architecture.
@@ -17,7 +18,7 @@ faq:
   - question: Does site speed affect rankings?
     answer: Yes as part of page experience - and it heavily affects conversion even when ranking impact is modest. Fix LCP and INP on money templates first.
   - question: How much does a technical SEO audit cost?
-    answer: In Greece, focused technical audits typically run €299–€1,200 depending on site size and JS complexity. Fixes are scoped separately or included in retainers.
+    answer: In Greece, focused technical audits typically run {{ENTRY_SEO}}–€1,200 depending on site size and JS complexity. Fixes are scoped separately or included in retainers.
 ---
 
 **Technical SEO** is the foundation under content and links: making your site easy for Google to crawl, index and render - fast on mobile, with clean canonicals and structured data. If technical health is broken, publishing more blogs rarely helps.
@@ -52,7 +53,7 @@ Run a [free SEO audit](/en/tools/free-seo-audit) for a quick health snapshot, th
 
 | Work type | Typical cost (GR, 2026) | Effort | First signals |
 | :--- | :--- | :--- | :--- |
-| Technical audit (SMB site) | €299 – €1,200 | 3–10 days | Roadmap in week 1 |
+| Technical audit (SMB site) | {{ENTRY_SEO}} – €1,200 | 3–10 days | Roadmap in week 1 |
 | Indexation / robots / canonicals | Often in audit fix pack | 1–5 days | 1–4 weeks |
 | Core Web Vitals template pass | €400 – €2,000+ | Dev-dependent | 2–8 weeks |
 | Schema rollout (key templates) | €200 – €800 | 1–3 days | Rich-result eligibility |

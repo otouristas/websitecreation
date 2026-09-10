@@ -4,6 +4,7 @@ import { EL_HOME_FAQ, elHome } from "@/data/translations/el-home";
 import { generateFAQSchema } from "@/lib/seo/schema";
 import type { SiteLocale } from "@/lib/i18n/locale";
 import { Section, SectionHeading } from "@/components/landing/primitives";
+import { resolvePriceTokens } from "@/data/pricing";
 
 /**
  * Homepage FAQ. The visible text and the FAQPage schema come from the same
@@ -11,7 +12,12 @@ import { Section, SectionHeading } from "@/components/landing/primitives";
  */
 export function HomeFaq({ locale = "en" }: { locale?: SiteLocale }) {
   const isEl = locale === "el";
-  const items = isEl ? EL_HOME_FAQ : HOME_FAQ_ITEMS;
+  // Resolve `{{ENTRY_WEBSITE}}`-style price tokens once, so the visible answer
+  // and the FAQPage schema below carry the same live figure.
+  const items = (isEl ? EL_HOME_FAQ : HOME_FAQ_ITEMS).map((f) => ({
+    ...f,
+    answer: resolvePriceTokens(f.answer, locale),
+  }));
 
   const schema = generateFAQSchema({
     faqs: items.map((f) => ({ question: f.question, answer: f.answer })),

@@ -1,7 +1,7 @@
 ---
 slug: geo-aeo-ellada
 title: GEO, AEO και SEO στην Ελλάδα - Οδηγός 2026
-description: Βελτιστοποίηση για Google, ChatGPT, Perplexity και Gemini. Οδηγός SEO, Generative Engine Optimization και Answer Engine Optimization για ελληνικές επιχειρήσεις.
+description: "Βελτιστοποίηση για Google, ChatGPT, Perplexity και Gemini. Οδηγός SEO, Generative Engine Optimization και Answer Engine Optimization για ελληνικά brands."
 date: 2026-05-31
 author: AnotherSEOGuru Editorial Team
 locale: el

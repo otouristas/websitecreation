@@ -5,6 +5,7 @@ import { COMPARE_PAGES } from '@/data/compare-pages';
 import { getAllBlogPosts, getPillarSummary } from '@/lib/blog';
 import { portfolioProjects } from '@/data/portfolio';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
+import { GENERATED_CONTENT_UPDATED } from '@/lib/seo/content-dates';
 
 const BASE_URL = 'https://anotherseoguru.com';
 const LOCALES: SiteLocale[] = ['en', 'el'];
@@ -19,7 +20,7 @@ function forBothLocales(
 ): MetadataRoute.Sitemap {
   return LOCALES.map((locale) => ({
     url: localeUrl(locale, path),
-    lastModified: opts.lastModified ?? new Date(),
+    lastModified: opts.lastModified ?? new Date(GENERATED_CONTENT_UPDATED),
     changeFrequency: opts.changeFrequency ?? 'weekly',
     priority: opts.priority ?? 0.8,
   }));
@@ -32,7 +33,7 @@ function forEnOnly(
   return [
     {
       url: localeUrl('en', path),
-      lastModified: opts.lastModified ?? new Date(),
+      lastModified: opts.lastModified ?? new Date(GENERATED_CONTENT_UPDATED),
       changeFrequency: opts.changeFrequency ?? 'weekly',
       priority: opts.priority ?? 0.8,
     },
@@ -44,6 +45,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Shared agency/marketing pages, bilingual.
   const bilingualPaths = [
+    // The SEO-services commercial pillar. Not part of /services/[service],
+    // which is the axis of the location and industry matrices.
+    { path: '/seo-services', priority: 0.95 },
     { path: '/', priority: 1, changeFrequency: 'weekly' as const },
     { path: '/glossary', priority: 0.86 },
     { path: '/services', priority: 0.9 },
@@ -69,6 +73,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/platform/for/ecommerce', priority: 0.85, changeFrequency: 'monthly' as const },
     { path: '/resources', priority: 0.88 },
     { path: '/tools', priority: 0.84 },
+    // The hub the three /compare/[slug] pages hang off. It did not exist until
+    // now, which is why /el/compare's redirect landed on a 404.
+    { path: '/compare', priority: 0.86, changeFrequency: 'monthly' as const },
   ];
 
   const staticPages = [
@@ -100,7 +107,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const pillarPages: MetadataRoute.Sitemap = (['en', 'el'] as const).flatMap((loc) =>
     getPillarSummary(loc).map((p) => ({
       url: localeUrl(loc, `/blog/topics/${p.pillar}`),
-      lastModified: p.latest ? new Date(p.latest.date) : new Date(),
+      lastModified: new Date(p.latest ? (p.latest.updated ?? p.latest.date) : GENERATED_CONTENT_UPDATED),
       changeFrequency: 'weekly' as const,
       priority: 0.75,
     })),
@@ -108,7 +115,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const blogPages: MetadataRoute.Sitemap = blogPosts.map((p) => ({
     url: localeUrl(p.locale, `/blog/${p.slug}`),
-    lastModified: new Date(p.date),
+    lastModified: new Date(p.updated ?? p.date),
     changeFrequency: 'monthly',
     priority: p.isPillarHub ? 0.85 : 0.7,
   }));

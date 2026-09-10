@@ -981,9 +981,14 @@ export function shouldIndexServiceLocation(
     return hasLocationContent(location, 'el');
   }
 
-  // Greek cities: index EN alternate when EL uniqueness pack exists
+  // Greek cities used to index their EN twin whenever the *Greek* pack existed.
+  // That is the wrong locale to gate on: of 46 EN-indexable locations only 6
+  // had an English pack, so 480 of the 552 indexed and sitemapped EN URLs
+  // rendered the shared English template with the city name substituted and
+  // nothing else - zero authored English words. The Greek pack says the Greek
+  // page is worth indexing; it says nothing about the English one.
   if (location.countryCode === 'GR') {
-    return hasLocationContent(location, 'el');
+    return hasLocationContent(location, 'en');
   }
 
   if (!SERVICE_LOCATION_INDEX_ALLOWLIST.has(location.slug)) return false;

@@ -1,7 +1,7 @@
 ---
 slug: seo-for-beginners
 title: SEO for Beginners - What It Is and How It Works (Simply)
-description: What SEO is in plain English - how Google ranks pages, what keywords, on-page, technical SEO and backlinks mean, realistic costs, common mistakes, and where to start today.
+description: "What SEO is in plain English: how Google ranks pages, what keywords, on-page, technical SEO and backlinks mean, realistic costs, and where to start."
 date: 2026-07-06
 author: AnotherSEOGuru Editorial Team
 translationOf: seo-gia-arxarious
@@ -66,12 +66,12 @@ SEO isn't a switch - it's an investment with compounding returns. Realistic expe
 
 | Stage | Focus | Typical spend (GR) | What you should see |
 | :--- | :--- | :--- | :--- |
-| Weeks 1–4 | Search Console, crawl, titles | Audit €299–€1,200 or DIY | Indexation clarity |
-| Months 2–3 | Service pages + GBP | from €299/mo | Early ranking movement |
+| Weeks 1–4 | Search Console, crawl, titles | Audit {{ENTRY_SEO}}–€1,200 or DIY | Indexation clarity |
+| Months 2–3 | Service pages + GBP | from {{ENTRY_SEO}}/mo | Early ranking movement |
 | Months 4–6 | Content + CTR fixes | retainer | Traffic past Ads baseline |
-| Months 6–12 | Authority + AI-ready FAQs | €299–€999/mo | Compounding growth |
+| Months 6–12 | Authority + AI-ready FAQs | {{ENTRY_SEO}}–{{SEO_AUTHORITY}}/mo | Compounding growth |
 
-Full numbers: [SEO pricing guide](/en/blog/how-much-does-seo-cost) - serious work starts around €299/mo.
+Full numbers: [SEO pricing guide](/en/blog/how-much-does-seo-cost) - serious work starts around {{ENTRY_SEO}}/mo.
 
 ## What AI Search Changes
 

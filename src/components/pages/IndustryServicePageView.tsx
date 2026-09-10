@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import StickyMobileCta from '@/components/StickyMobileCta';
 import { services, getServiceBySlug } from '@/data/services';
 import { getServiceEl } from '@/data/services-i18n';
 import { industries } from '@/data/industries';
@@ -10,7 +9,6 @@ import {
   generateArticleSchema,
   generateBreadcrumbSchema,
   generateServiceSchema,
-  generateFAQSchema,
   combineSchemas,
 } from '@/lib/seo';
 import { SchemaMarkup, Breadcrumbs } from '@/components/seo';
@@ -18,6 +16,8 @@ import { getLocalizedIndustry } from '@/lib/industry-locale';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 import { solutionsUi } from '@/data/translations/solutions-ui';
 import { getServiceAngle, getServiceFaqs, ANGLE_HEADINGS, FAQ_HEADING } from '@/data/industry-service-copy';
+import { GENERATED_CONTENT_PUBLISHED, GENERATED_CONTENT_UPDATED } from '@/lib/seo/content-dates';
+import { shouldIndexServiceLocation } from '@/data/locations';
 
 export function IndustryServicePageView({
   industrySlug,
@@ -80,13 +80,21 @@ export function IndustryServicePageView({
     generateArticleSchema({
       headline: ui.serviceForIndustry(serviceName, industry.nameFor),
       description: ui.serviceHeroDesc(serviceName, industry.name),
-      datePublished: new Date().toISOString(),
-      dateModified: new Date().toISOString(),
+      datePublished: GENERATED_CONTENT_PUBLISHED,
+      dateModified: GENERATED_CONTENT_UPDATED,
       author: { name: 'AnotherSEOGuru' },
     }),
   );
 
-  const locations = isEl ? greeceLocations : tier1Locations.slice(0, 18);
+  // Only link cities whose service x location page is indexable in this locale.
+  // The EN branch used to be `tier1Locations.slice(0, 18)` - eighteen US cities,
+  // every one of them noindex - so each indexed English industry x service page
+  // spent 18 links on pages it was telling Google to drop. The EL branch was
+  // already fine, and `services/[service]/[location]/page.tsx` already filters
+  // its industry grid the same way.
+  const locations = (isEl ? greeceLocations : tier1Locations).filter((location) =>
+    shouldIndexServiceLocation(location, isEl ? 'el' : 'en'),
+  );
 
   return (
     <>
@@ -118,9 +126,10 @@ export function IndustryServicePageView({
           </div>
         </section>
 
-        {serviceFaqs.length > 0 ? (
-          <SchemaMarkup schemas={[generateFAQSchema({ faqs: [...serviceFaqs] })]} />
-        ) : null}
+        {/* No FAQPage: `getServiceFaqs` serves the same shared default block
+            to most industry x service combinations, so this marked up
+            identical Q&A across hundreds of URLs for a rich result an agency
+            cannot earn. The visible FAQ below is the part that matters. */}
         {angle ? (
           <section className="section">
             <div className="container max-w-3xl space-y-8">
@@ -267,7 +276,6 @@ export function IndustryServicePageView({
           </div>
         </section>
       </main>
-      <StickyMobileCta />
       <Footer />
     </>
   );

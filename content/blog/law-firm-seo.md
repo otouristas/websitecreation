@@ -16,7 +16,7 @@ faq:
   - question: Can one firm target more than one city?
     answer: Yes, with separate local pages per city and real local proof - not copy-paste templates with a swapped city name. Thin geo pages underperform and can hurt the whole site.
   - question: How much does law firm SEO cost?
-    answer: Competitive metros usually need the Growth tier around €599/mo. Smaller markets often succeed on Starter at €299/mo for local dominance. Scope depends on practice areas and cities.
+    answer: Competitive metros usually need the Growth tier around {{SEO_GROWTH}}/mo. Smaller markets often succeed on Foundations at {{ENTRY_SEO}}/mo for local dominance. Scope depends on practice areas and cities.
   - question: Is SEO compliant for legal advertising?
     answer: SEO is typically the most compatible channel because you answer people already searching for help. Still follow bar advertising rules, avoid guarantees, and keep claims evidence-based.
 ---
@@ -57,11 +57,11 @@ Legal advertising has rules. SEO is compatible when you educate rather than prom
 
 | Scenario | Typical monthly budget | Timeline to first calls | Primary KPI |
 | :--- | :--- | :--- | :--- |
-| Single practice, smaller city | €299/mo (Starter) | 2–3 months | Map pack + branded calls |
-| Multi-practice metro firm | €599/mo (Growth) | 4–6 months | Practice-page leads |
-| Multi-city expansion | €599–€999+/mo | 4–8 months | Per-city landing conversions |
+| Single practice, smaller city | {{ENTRY_SEO}}/mo (Foundations) | 2–3 months | Map pack + branded calls |
+| Multi-practice metro firm | {{SEO_GROWTH}}/mo (Growth) | 4–6 months | Practice-page leads |
+| Multi-city expansion | {{SEO_GROWTH}}–{{SEO_AUTHORITY}}+/mo | 4–8 months | Per-city landing conversions |
 | Website rebuild + SEO kickoff | from €899 site + retainer | Parallel 60–90 days | Mobile form completion rate |
-| Competitive PI / divorce head terms | Growth–Scale | 6+ months | Qualified consult bookings |
+| Competitive PI / divorce head terms | Growth-Authority | 6+ months | Qualified consult bookings |
 
 Track **qualified consultations**, not vanity traffic. Log call tracking by practice page, Search Console queries, and GBP insights. Transparent [pricing](/en/pricing) keeps scope honest.
 
