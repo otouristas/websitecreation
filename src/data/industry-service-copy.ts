@@ -85,11 +85,11 @@ const EN: Record<string, ServiceAngle> = {
   },
   'ai-visibility': {
     approach:
-      'A growing share of research now ends inside an AI answer rather than on a website. Being cited in that answer is a different problem from ranking, and it depends on whether a machine can identify who you are and quote you cleanly.',
+      'A growing share of research now ends inside an AI answer rather than on a website. Being usable in that answer is a different problem from ranking, and it depends on whether a machine can identify who you are and quote you cleanly. No engine is promised to cite you.',
     process:
-      'We work on entity clarity and schema so the business is unambiguous to a model, and restructure key pages so they answer questions directly enough to be quoted.',
+      'We work on entity clarity and schema so the business is unambiguous to a model, and restructure key pages so they answer questions directly enough to be used.',
     outcome:
-      'Pages built to be cited in AI answers as well as ranked, with mentions tracked so the effect is visible.',
+      'Pages shaped so an answer engine can use them, with mention sampling so you can see the trend rather than a promised citation rate.',
   },
   'eshop-woocommerce': {
     approach:
@@ -185,11 +185,11 @@ const EL: Record<string, ServiceAngle> = {
   },
   'ai-visibility': {
     approach:
-      'Όλο και μεγαλύτερο μέρος της έρευνας τελειώνει μέσα σε μια απάντηση AI και όχι σε μια ιστοσελίδα. Το να αναφέρεστε εκεί είναι διαφορετικό πρόβλημα από το να κατατάσσεστε.',
+      'Όλο και μεγαλύτερο μέρος της έρευνας τελειώνει μέσα σε μια απάντηση AI και όχι σε μια ιστοσελίδα. Το να είναι το περιεχόμενο χρησιμοποιήσιμο εκεί είναι διαφορετικό πρόβλημα από το να κατατάσσεστε. Καμία μηχανή δεν εγγυάται ότι θα σας αναφέρει.',
     process:
       'Δουλεύουμε στη σαφήνεια της οντότητας και στο schema ώστε η επιχείρηση να είναι αναγνωρίσιμη από ένα μοντέλο, και αναδομούμε τις βασικές σελίδες ώστε να απαντούν ευθέως.',
     outcome:
-      'Σελίδες φτιαγμένες για να παρατίθενται σε απαντήσεις AI εκτός από το να κατατάσσονται, με παρακολούθηση αναφορών.',
+      'Σελίδες σε μορφή που μια μηχανή απάντησης μπορεί να χρησιμοποιήσει, με δειγματοληψία αναφορών ώστε να φαίνεται η τάση - όχι υποσχεμένο ποσοστό αναφορών.',
   },
   'eshop-woocommerce': {
     approach:

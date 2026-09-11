@@ -193,7 +193,7 @@ belongs inside an existing page, not on a new URL — most fan-outs do.
 | Search Console | EN only | EL gap |
 | keyword research | `/el/blog/lexeis-kleidia-seo` | exists |
 | ROI / leads | `/el/seo-services` §choosing | done |
-| AI Overviews / ChatGPT / AEO / GEO | `/el/services/ai-visibility` (276 words) | **thin, and four blog posts outrank it** |
+| AI Overviews / ChatGPT / AEO / GEO | `/el/services/ai-visibility` (commercial hub, seo-services shape) | rebuilt; blogs now point here for the commercial intent |
 | επιλογή agency / red flags | `/el/seo-services` §choosing | done |
 | case studies | `/el/work` | exists, no metrics |
 
@@ -207,6 +207,9 @@ belongs inside an existing page, not on a new URL — most fan-outs do.
    blog posts on the same terms. It is the commercial destination for the one
    cluster where the site already ranks (`geo agency ελλάδα`, position 13.9).
    Rebuild it to the shape of `/el/seo-services`.
+   **Done (this follow-on):** bespoke hub in `src/components/services/ai-visibility.tsx`,
+   bilingual copy in `src/data/ai-visibility-pillar.ts`, EN twin on the same
+   route. No citation promises, no invented metrics, FAQ answers in server HTML.
 2. **Own «τι είναι το GEO» and «τι είναι το AEO».** Seven posts define them in
    parallel, so no page can win either. One definitional page each, and the
    other six link to it instead of redefining.
