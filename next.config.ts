@@ -14,13 +14,9 @@ const nextConfig: NextConfig = {
     return [
       // WordPress-style underscore alias. robots.txt and the live index use
       // the hyphen file; keep that route intact and send the typo here.
+      // Next.js already 308s the trailing-slash form to this source first.
       {
         source: '/sitemap_index.xml',
-        destination: '/sitemap-index.xml',
-        permanent: true,
-      },
-      {
-        source: '/sitemap_index.xml/',
         destination: '/sitemap-index.xml',
         permanent: true,
       },
