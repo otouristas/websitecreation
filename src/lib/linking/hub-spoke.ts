@@ -120,6 +120,7 @@ export function getPricingRelatedPaths(
     const costEshop = locale === 'el' ? '/blog/kataskevi-eshop-odigos' : '/blog/ecommerce-website-cost-guide';
 
     return [
+        { path: '/seo-services', titleEn: 'SEO services', titleEl: 'Υπηρεσίες SEO' },
         { path: '/services/website-creation', titleEn: 'Website creation', titleEl: 'Κατασκευή ιστοσελίδων' },
         { path: '/services/eshop-woocommerce', titleEn: 'E-shop WooCommerce', titleEl: 'Κατασκευή e-shop' },
         { path: '/services/ai-visibility', titleEn: 'AI visibility (GEO/AEO)', titleEl: 'Ορατότητα σε AI (GEO/AEO)' },
