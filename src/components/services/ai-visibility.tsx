@@ -113,7 +113,7 @@ export function AiVisibilityPage({ locale }: { locale: SiteLocale }) {
     <PageShell locale={locale} signatureHue={SIGNATURE_HUE} schemas={schemas}>
       <section className="relative overflow-hidden border-b border-hairline">
         <Bloom signature className="left-1/2 top-[-12rem] h-[30rem] w-[56rem] -translate-x-1/2" />
-        <div className="relative mx-auto max-w-3xl px-6 pb-16 pt-6">
+        <div className="main-below-header relative mx-auto max-w-3xl px-6 pb-16 pt-6">
           <ShellCrumbs items={breadcrumbs} />
           <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-signature">
             {t.eyebrow}
