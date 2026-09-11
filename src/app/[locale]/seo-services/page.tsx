@@ -15,7 +15,11 @@ import {
   PrimaryButtonLink,
   GhostButtonLink,
   Tick,
+  ghostBtnClass,
 } from '@/components/landing/primitives';
+import { WhatsAppIcon } from '@/components/icons/WhatsAppIcon';
+import { WHATSAPP_HREF } from '@/lib/contact-info';
+import { cn } from '@/lib/cn';
 import { isValidLocale, localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 import { buildMetadata } from '@/lib/seo';
 import {
@@ -28,10 +32,15 @@ import {
 import { generateBreadcrumbs } from '@/lib/linking';
 import { getSeoServicesPillarCopy } from '@/data/seo-services-pillar';
 import { currentPrice, formatPrice, resolvePriceTokens, seoPackages } from '@/data/pricing';
-import { SEO_MIN_TERM_MONTHS } from '@/data/company-facts';
+import { PROJECT_COUNT, SEO_MIN_TERM_MONTHS } from '@/data/company-facts';
 import { portfolioProjects } from '@/data/portfolio';
 
 type PageProps = { params: Promise<{ locale: string }> };
+
+function workHref(slug: string, lp: (path: string) => string): string {
+  const project = portfolioProjects.find((p) => p.slug === slug && !p.liveStatus);
+  return project ? lp(`/work/${project.slug}`) : lp('/work');
+}
 
 export function generateStaticParams() {
   return [{ locale: 'en' }, { locale: 'el' }];
@@ -128,9 +137,19 @@ export default async function SeoServicesPillarPage({ params }: PageProps) {
             {/* Answer-first: the whole proposition in one paragraph, directly
                 under the H1, so a snippet or an answer engine can lift it. */}
             <p className="mt-6 text-lg leading-relaxed text-muted-foreground">{rp(t.answer)}</p>
+            <p className="mt-4 text-base leading-relaxed text-muted-foreground">{t.answerExtra}</p>
             <div className="mt-8 flex flex-wrap gap-3">
               <PrimaryButtonLink href={lp('/get-started')}>{t.cta.primary}</PrimaryButtonLink>
               <GhostButtonLink href={lp('/pricing')}>{t.cta.secondary}</GhostButtonLink>
+              <a
+                href={WHATSAPP_HREF}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={ghostBtnClass}
+              >
+                <WhatsAppIcon className="h-4 w-4 text-[#25D366]" />
+                {t.cta.whatsapp}
+              </a>
             </div>
           </div>
         </section>
@@ -138,12 +157,27 @@ export default async function SeoServicesPillarPage({ params }: PageProps) {
         <Section>
           <SectionHeading eyebrow={isEl ? 'Παραδοτέα' : 'Deliverables'} title={t.includes.title} body={t.includes.intro} />
           <div className="mx-auto mt-10 grid max-w-4xl gap-4 sm:grid-cols-2">
-            {t.includes.items.map((item) => (
-              <div key={item.title} className="rounded-[14px] border border-hairline bg-surface p-6">
-                <h3 className="font-display text-lg font-medium text-foreground">{item.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
-              </div>
-            ))}
+            {t.includes.items.map((item) => {
+              const cardClass = cn(
+                'rounded-[14px] border border-hairline bg-surface p-6',
+                item.href && 'transition-colors hover:border-primary/40',
+              );
+              const inner = (
+                <>
+                  <h3 className="font-display text-lg font-medium text-foreground">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
+                </>
+              );
+              return item.href ? (
+                <Link key={item.title} href={lp(item.href)} className={cardClass}>
+                  {inner}
+                </Link>
+              ) : (
+                <div key={item.title} className={cardClass}>
+                  {inner}
+                </div>
+              );
+            })}
           </div>
         </Section>
 
@@ -165,10 +199,44 @@ export default async function SeoServicesPillarPage({ params }: PageProps) {
         </Section>
 
         <Section className="border-t border-hairline">
+          <SectionHeading
+            eyebrow={t.tourism.eyebrow}
+            title={t.tourism.title}
+            body={t.tourism.intro}
+          />
+          <ul className="mx-auto mt-10 grid max-w-4xl gap-4 sm:grid-cols-3">
+            {t.tourism.chips.map((chip) => (
+              <li key={chip.slug}>
+                <Link
+                  href={workHref(chip.slug, lp)}
+                  className="block h-full rounded-[14px] border border-hairline bg-surface p-6 transition-colors hover:border-primary/40"
+                >
+                  <span className="block font-display text-sm font-medium text-foreground">
+                    {chip.label}
+                  </span>
+                  <span className="mt-2 block text-sm leading-relaxed text-muted-foreground">
+                    {chip.line}
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <p className="mx-auto mt-8 max-w-2xl text-center text-sm text-muted-foreground">
+            <Link href={lp('/work')} className="underline-offset-4 hover:underline">
+              {PROJECT_COUNT}+ {t.tourism.portfolioLabel}
+            </Link>
+          </p>
+        </Section>
+
+        <Section className="border-t border-hairline">
           <SectionHeading eyebrow={isEl ? 'Τιμές' : 'Pricing'} title={t.pricing.title} body={t.pricing.intro} />
           <div className="mx-auto mt-10 grid max-w-4xl gap-4 sm:grid-cols-3">
             {seoPackages.map((tier) => (
-              <div key={tier.id} className="rounded-[14px] border border-hairline bg-surface p-6">
+              <Link
+                key={tier.id}
+                href={lp('/pricing')}
+                className="rounded-[14px] border border-hairline bg-surface p-6 transition-colors hover:border-primary/40"
+              >
                 <div className="font-display text-sm font-medium text-brand">{tier.name}</div>
                 <div className="mt-2 font-display text-2xl font-medium text-foreground">
                   €{formatPrice(currentPrice(tier), siteLocale)}
@@ -177,7 +245,7 @@ export default async function SeoServicesPillarPage({ params }: PageProps) {
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                   {isEl ? tier.forEl : tier.forEn}
                 </p>
-              </div>
+              </Link>
             ))}
           </div>
           <p className="mx-auto mt-6 max-w-2xl text-center text-sm text-muted-foreground">
@@ -260,6 +328,15 @@ export default async function SeoServicesPillarPage({ params }: PageProps) {
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <PrimaryButtonLink href={lp('/get-started')}>{t.cta.primary}</PrimaryButtonLink>
               <GhostButtonLink href={lp('/pricing')}>{t.cta.secondary}</GhostButtonLink>
+              <a
+                href={WHATSAPP_HREF}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={ghostBtnClass}
+              >
+                <WhatsAppIcon className="h-4 w-4 text-[#25D366]" />
+                {t.cta.whatsapp}
+              </a>
             </div>
           </div>
         </Section>
