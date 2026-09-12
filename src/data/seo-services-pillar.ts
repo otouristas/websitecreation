@@ -26,6 +26,15 @@ export interface PillarSection {
   readonly title: string;
   readonly body: string;
   readonly bullets?: readonly string[];
+  /** Existing service URL, locale-prefixed at render. */
+  readonly href?: string;
+}
+
+export interface TourismChip {
+  readonly label: string;
+  readonly line: string;
+  /** Portfolio slug; the page falls back to /work when the project is missing. */
+  readonly slug: string;
 }
 
 export interface SeoServicesPillarCopy {
@@ -33,30 +42,47 @@ export interface SeoServicesPillarCopy {
   readonly h1: string;
   /** The answer-first paragraph, directly under the H1. */
   readonly answer: string;
+  /** One-sentence GSC platform + tourism ICP, above the fold. */
+  readonly answerExtra: string;
   readonly metaTitle: string;
   readonly metaDescription: string;
   readonly primaryKeyword: string;
   readonly includes: { readonly title: string; readonly intro: string; readonly items: readonly PillarSection[] };
   readonly process: { readonly title: string; readonly intro: string; readonly steps: readonly PillarSection[] };
+  readonly tourism: {
+    readonly eyebrow: string;
+    readonly title: string;
+    readonly intro: string;
+    readonly chips: readonly TourismChip[];
+    readonly portfolioLabel: string;
+  };
   readonly pricing: { readonly title: string; readonly intro: string; readonly note: string; readonly cta: string };
   readonly choosing: { readonly title: string; readonly intro: string; readonly items: readonly PillarSection[] };
   readonly notForYou: { readonly title: string; readonly items: readonly string[] };
   readonly proof: { readonly title: string; readonly intro: string; readonly caveat: string };
   readonly faqTitle: string;
   readonly faqs: readonly PillarFaq[];
-  readonly cta: { readonly title: string; readonly body: string; readonly primary: string; readonly secondary: string };
+  readonly cta: {
+    readonly title: string;
+    readonly body: string;
+    readonly primary: string;
+    readonly secondary: string;
+    readonly whatsapp: string;
+  };
   readonly relatedTitle: string;
 }
 
 const el: SeoServicesPillarCopy = {
   eyebrow: 'Υπηρεσίες SEO',
-  h1: 'SEO για επιχειρήσεις: υπηρεσίες που φέρνουν αιτήματα πελατών, όχι αναφορές',
+  h1: 'SEO Ελλάδα: υπηρεσίες SEO για επιχειρήσεις που φέρνουν αιτήματα, όχι αναφορές',
   answer:
     'Το SEO για επιχειρήσεις είναι συνεχής εργασία σε τρία μέτωπα: τεχνική υγεία της ιστοσελίδας, περιεχόμενο που αντιστοιχεί σε πραγματικές αναζητήσεις, και σήματα εμπιστοσύνης εκτός του site. Στην AnotherSEOGuru ξεκινάει με έλεγχο και αντιστοίχιση λέξεων-κλειδιών σε σελίδες, τρέχει μηνιαία από {{ENTRY_SEO}} και μετριέται σε κλικ και αιτήματα, όχι σε κατατάξεις που δεν φέρνουν πελάτες.',
-  metaTitle: 'Υπηρεσίες SEO για Επιχειρήσεις',
+  answerExtra:
+    'Δουλεύουμε κυρίως με ξενοδοχεία, ενοικίαση αυτοκινήτου και εκδρομές στην Ελλάδα, πάνω στη δική μας πλατφόρμα που συνδέεται στο Google Search Console.',
+  metaTitle: 'SEO Ελλάδα | Υπηρεσίες SEO για επιχειρήσεις',
   metaDescription:
-    'Υπηρεσίες SEO για ελληνικές επιχειρήσεις: τεχνικό SEO, τοπικό SEO, περιεχόμενο και GEO/AEO. Τι περιλαμβάνουν, πώς τιμολογούνται και πώς μετριούνται.',
-  primaryKeyword: 'υπηρεσίες SEO',
+    'Υπηρεσίες SEO για τουρισμό και μικρές επιχειρήσεις στην Ελλάδα. Τεχνικό SEO, τοπικό SEO και περιεχόμενο από {{ENTRY_SEO}} τον μήνα, με μέτρηση σε αιτήματα.',
+  primaryKeyword: 'SEO Ελλάδα',
   includes: {
     title: 'Τι περιλαμβάνει μια σοβαρή υπηρεσία SEO',
     intro:
@@ -64,6 +90,7 @@ const el: SeoServicesPillarCopy = {
     items: [
       {
         title: 'Τεχνικό SEO',
+        href: '/services/seo-audits',
         body:
           'Ό,τι εμποδίζει τη Google να διαβάσει και να ευρετηριάσει τις σελίδες που πουλάνε: σφάλματα ευρετηρίασης, canonical, ταχύτητα και Core Web Vitals, δομημένα δεδομένα που αντιστοιχούν στο ορατό περιεχόμενο, αρχιτεκτονική εσωτερικών συνδέσμων. Είναι το πρώτο που κοιτάμε, γιατί κάθε άλλη εργασία χτίζεται πάνω του.',
       },
@@ -79,11 +106,13 @@ const el: SeoServicesPillarCopy = {
       },
       {
         title: 'Τοπικό SEO',
+        href: '/services/local-seo',
         body:
           'Google Business Profile, συνέπεια στοιχείων επικοινωνίας, κριτικές και καταχωρήσεις, σελίδες περιοχής όπου υπάρχει πραγματική τοπική πρόθεση. Για επιχειρήσεις με φυσικό σημείο ή περιοχή εξυπηρέτησης, εδώ κρίνεται το τηλεφώνημα.',
       },
       {
         title: 'GEO και AEO',
+        href: '/services/ai-visibility',
         body:
           'Απαντήσεις γραμμένες σε μορφή που μπορεί να παραθέσει μια μηχανή απάντησης, σαφή στοιχεία εταιρείας και δομημένα δεδομένα που συμφωνούν με τη σελίδα. Καμία μηχανή δεν εγγυάται ότι θα σας αναφέρει· αυτό που ελέγχετε είναι αν το περιεχόμενό σας μπορεί να χρησιμοποιηθεί.',
       },
@@ -115,6 +144,33 @@ const el: SeoServicesPillarCopy = {
           'Αναφορά με οργανικά κλικ, θέσεις στις εμπορικές αναζητήσεις και αιτήματα που ήρθαν από την οργανική αναζήτηση. Αν κάτι δεν αποδίδει, αλλάζει· δεν επαναλαμβάνεται επειδή ήταν στο πλάνο.',
       },
     ],
+  },
+  tourism: {
+    eyebrow: 'Τουρισμός και φιλοξενία',
+    title: 'Τουρισμός, φιλοξενία και τοπικές επιχειρήσεις',
+    intro:
+      'Δουλεύουμε κυρίως με ξενοδοχεία, ενοικίαση αυτοκινήτου, βίλες και τοπικές επιχειρήσεις στην Ελλάδα - με έμφαση σε άμεσες κρατήσεις και αιτήματα πελατών, όχι μόνο σε επισκεψιμότητα.',
+    chips: [
+      {
+        label: 'Discover Cyclades',
+        line:
+          'Θεματικοί κόμβοι νησιών και εσωτερική διασύνδεση - σταθερή οργανική ανάπτυξη στις σελίδες των νησιών.',
+        slug: 'discover-cyclades',
+      },
+      {
+        label: 'Villa Olivia Clara',
+        line:
+          'Πολυτελής βίλα στην Κρήτη - brand + luxury villa SEO με έμφαση σε μετατροπή μέσω φωτογραφίας· καλύτερα leads από την πρώτη σεζόν.',
+        slug: 'villa-olivia-clara',
+      },
+      {
+        label: 'Aggelos Rentals',
+        line:
+          'Ενοικίαση αυτοκινήτου στην Πάρο - στόλος + τοπικό SEO νησιού· περισσότερες άμεσες κρατήσεις αντί μόνο μέσω aggregators.',
+        slug: 'aggelos-rentals',
+      },
+    ],
+    portfolioLabel: 'ολοκληρωμένα έργα στο portfolio',
   },
   pricing: {
     title: 'Πόσο κοστίζει',
@@ -211,19 +267,22 @@ const el: SeoServicesPillarCopy = {
       'Πείτε μας τι πουλάτε και πού. Κοιτάμε το site σας, το Search Console και τους ανταγωνιστές που πραγματικά εμφανίζονται, και επιστρέφουμε με το τι χρειάζεται και τι κοστίζει - μέσα σε 24 ώρες σε εργάσιμες ημέρες.',
     primary: 'Ζητήστε δωρεάν έλεγχο',
     secondary: 'Δείτε τιμές',
+    whatsapp: 'Μίλα μας στο WhatsApp',
   },
   relatedTitle: 'Σχετικές σελίδες',
 };
 
 const en: SeoServicesPillarCopy = {
   eyebrow: 'SEO services',
-  h1: 'SEO services for businesses that need enquiries, not reports',
+  h1: 'SEO Greece: SEO services for businesses that bring enquiries, not reports',
   answer:
     'SEO for a business is continuous work on three fronts: the technical health of the site, content that matches what people actually search, and trust signals off the site. Ours starts with an audit and a keyword-to-page map, runs monthly from {{ENTRY_SEO}}, and is measured in clicks and enquiries rather than rankings that bring nobody.',
-  metaTitle: 'SEO Services for Businesses',
+  answerExtra:
+    'We work mainly with hotels, rent-a-car and tours in Greece, on our own platform connected to Google Search Console.',
+  metaTitle: 'SEO Greece | SEO Services for Businesses',
   metaDescription:
-    'SEO services for businesses in Greece and beyond: technical SEO, local SEO, content and GEO/AEO. What each includes, how it is priced, and how it is measured.',
-  primaryKeyword: 'SEO services',
+    'SEO services for tourism, hotels and SMEs in Greece. Technical SEO, local SEO and content from {{ENTRY_SEO}} a month, measured in enquiries, not reports.',
+  primaryKeyword: 'SEO Greece',
   includes: {
     title: 'What a serious SEO service includes',
     intro:
@@ -231,6 +290,7 @@ const en: SeoServicesPillarCopy = {
     items: [
       {
         title: 'Technical SEO',
+        href: '/services/seo-audits',
         body:
           'Whatever stops Google reading and indexing the pages that sell: indexation errors, canonicals, speed and Core Web Vitals, structured data that matches what is visible, internal link architecture. It comes first because everything else is built on it.',
       },
@@ -246,11 +306,13 @@ const en: SeoServicesPillarCopy = {
       },
       {
         title: 'Local SEO',
+        href: '/services/local-seo',
         body:
           'Google Business Profile, consistent contact details, reviews and citations, and area pages where there is real local intent. For a business with premises or a service area, this is where the phone call is won.',
       },
       {
         title: 'GEO and AEO',
+        href: '/services/ai-visibility',
         body:
           'Answers written in a shape an answer engine can quote, clear company facts, and structured data that agrees with the page. No engine guarantees it will cite you; what you control is whether your content can be used.',
       },
@@ -282,6 +344,33 @@ const en: SeoServicesPillarCopy = {
           'A report covering organic clicks, positions on the commercial searches, and enquiries that came from organic. If something is not working it changes - it does not get repeated because it was in the plan.',
       },
     ],
+  },
+  tourism: {
+    eyebrow: 'Tourism and hospitality',
+    title: 'Tourism, hospitality and local businesses',
+    intro:
+      'Most of our work is hotels, rent-a-car, villas and local businesses in Greece - with the emphasis on direct bookings and enquiries, not traffic alone.',
+    chips: [
+      {
+        label: 'Discover Cyclades',
+        line:
+          'Island content hubs and internal linking - steady organic growth on the island pages.',
+        slug: 'discover-cyclades',
+      },
+      {
+        label: 'Villa Olivia Clara',
+        line:
+          'Luxury villa in Crete - brand and luxury villa SEO with photo-led conversion; stronger enquiries from the first season.',
+        slug: 'villa-olivia-clara',
+      },
+      {
+        label: 'Aggelos Rentals',
+        line:
+          'Car rental on Paros - fleet plus island local SEO; more direct bookings instead of aggregator-only demand.',
+        slug: 'aggelos-rentals',
+      },
+    ],
+    portfolioLabel: 'completed projects in the portfolio',
   },
   pricing: {
     title: 'What it costs',
@@ -377,6 +466,7 @@ const en: SeoServicesPillarCopy = {
       'Tell us what you sell and where. We will look at your site, your Search Console and the competitors who actually appear, and come back with what is needed and what it costs - within 24 working hours.',
     primary: 'Request a free audit',
     secondary: 'See pricing',
+    whatsapp: 'Chat on WhatsApp',
   },
   relatedTitle: 'Related pages',
 };
