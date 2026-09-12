@@ -11,7 +11,7 @@ import { MeshGrid, Section, SectionHeading } from './primitives';
  */
 const FEATURES = [
   {
-    href: '/services/local-seo',
+    href: '/seo-services',
     eyebrowEn: 'Organic', eyebrowEl: 'Οργανικά',
     titleEn: 'SEO services', titleEl: 'Υπηρεσίες SEO',
     bodyEn: 'Technical foundations, content and internal linking built around the queries that actually convert.',

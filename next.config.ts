@@ -12,6 +12,14 @@ const nextConfig: NextConfig = {
   async redirects() {
     const appOrigin = process.env.NEXT_PUBLIC_APP_ORIGIN?.replace(/\/$/, '') || 'https://app.anotherseoguru.com';
     return [
+      // WordPress-style underscore alias. robots.txt and the live index use
+      // the hyphen file; keep that route intact and send the typo here.
+      // Next.js already 308s the trailing-slash form to this source first.
+      {
+        source: '/sitemap_index.xml',
+        destination: '/sitemap-index.xml',
+        permanent: true,
+      },
       {
         source: '/landing',
         destination: '/en',
