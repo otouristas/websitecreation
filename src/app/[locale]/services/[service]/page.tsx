@@ -10,7 +10,8 @@ import { industriesEl } from '@/data/industries-i18n';
 import { greeceLocations, getIndexableServiceLocationSlugs, getLocationBySlug } from '@/data/locations';
 import { isIndustryServiceIndexable } from '@/lib/indexability/industry-service';
 import { isValidLocale, localizedPath, type SiteLocale } from '@/lib/i18n/locale';
-import { buildServiceMetadata, generateArticleSchema, generateBreadcrumbSchema, generateServiceSchema, generateFAQSchema, combineSchemas } from '@/lib/seo';
+import { buildMetadata, buildServiceMetadata, generateArticleSchema, generateBreadcrumbSchema, generateServiceSchema, generateFAQSchema, combineSchemas } from '@/lib/seo';
+import { getAiVisibilityPillarCopy } from '@/data/ai-visibility-pillar';
 import { SchemaMarkup, Breadcrumbs, FAQSection } from '@/components/seo';
 import ServiceHubCommercialBody from '@/components/seo/ServiceHubCommercialBody';
 import { Section, SectionHeading, Bloom, PrimaryButtonLink, GhostButtonLink, MeshGrid, Tick } from '@/components/landing/primitives';
@@ -48,6 +49,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
     if (!service) {
         return { title: 'Service Not Found' };
+    }
+
+    if (serviceSlug === 'ai-visibility') {
+        const t = getAiVisibilityPillarCopy(locale as SiteLocale);
+        return buildMetadata({
+            title: t.metaTitle,
+            description: t.metaDescription,
+            path: localizedPath(locale as SiteLocale, '/services/ai-visibility'),
+            hreflangPath: '/services/ai-visibility',
+            primaryKeyword: t.primaryKeyword,
+        });
     }
 
     return buildServiceMetadata(service, locale as SiteLocale);

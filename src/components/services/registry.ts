@@ -2,6 +2,7 @@ import type { ReactElement } from 'react';
 import type { SiteLocale } from '@/lib/i18n/locale';
 import { WebsiteCreationPage } from './website-creation';
 import { LocalSeoPage } from './local-seo';
+import { AiVisibilityPage } from './ai-visibility';
 
 /**
  * Bespoke service page registry.
@@ -15,6 +16,7 @@ export type BespokeServicePage = (props: { locale: SiteLocale }) => ReactElement
 export const bespokeServicePages: Partial<Record<string, BespokeServicePage>> = {
   'website-creation': WebsiteCreationPage,
   'local-seo': LocalSeoPage,
+  'ai-visibility': AiVisibilityPage,
 };
 
 export function getBespokeServicePage(slug: string): BespokeServicePage | undefined {

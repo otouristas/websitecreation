@@ -139,7 +139,7 @@ AEO wins συχνά σε εβδομάδες. GEO citations χρειάζοντα�
 
 ### Χρειάζομαι GEO agency ή αρκεί το κλασικό SEO;
 
-Αν οι αγοραστές σας ήδη ρωτούν AI για shortlists, χρειάζεστε ενιαίο πρόγραμμα. Δείτε [AI SEO agency](/el/blog/ai-seo-agency-geo-aeo-el) και διαφανείς [τιμές](/el/pricing).
+Αν οι αγοραστές σας ήδη ρωτούν AI για shortlists, χρειάζεστε ενιαίο πρόγραμμα. Η εμπορική υλοποίηση είναι στην [υπηρεσία ορατότητας σε AI](/el/services/ai-visibility)· για το τι να ζητήσετε από συνεργάτη δείτε [AI SEO agency](/el/blog/ai-seo-agency-geo-aeo-el) και τις [τιμές](/el/pricing).
 
 ## Θέλετε ορατότητα σε Google και AI; Ξεκινήστε εδώ
 

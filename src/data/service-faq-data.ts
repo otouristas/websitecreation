@@ -133,44 +133,44 @@ const BY_SERVICE: Record<string, { en: ServiceFaqItem[]; el: ServiceFaqItem[] }>
       {
         question: 'What is GEO / AEO and how is it different from SEO?',
         answer:
-          'SEO ranks you in classic Google results. GEO (Generative Engine Optimization) and AEO (Answer Engine Optimization) help your brand get cited in AI answers, ChatGPT, Perplexity, Google AI Overviews.',
+          'SEO ranks you in classic Google results. AEO structures pages so an answer engine can lift a short answer (AI Overviews, snippets). GEO makes the business a consistent source when ChatGPT, Perplexity or Gemini compose an answer. Neither replaces SEO, and neither guarantees a citation.',
       },
       {
-        question: 'Do you offer AI SEO agency services internationally?',
+        question: 'Do you offer GEO / AEO services outside Greece?',
         answer:
-          'Yes. We run GEO/AEO programs for tourism and local brands targeting Greece, EU, UK and US search, with schema, FAQ entities and citation-ready content.',
+          'Yes. The same programme runs for tourism and local brands that sell into Greece, the EU, the UK and the US: entity consistency, visible FAQs with matching schema, and monthly mention sampling next to Search Console.',
       },
       {
         question: 'What do AI visibility packages include?',
         answer:
-          'Entity cleanup, FAQ/schema, citation-worthy pages, internal linking and monitoring of AI mentions alongside classic rankings.',
+          'Dedicated GEO and AEO work is included in the SEO Growth and Authority retainers: entity cleanup, answer-shaped commercial pages, schema that matches visible text, and measurement against a fixed question set. Foundations does not include a separate GEO programme.',
       },
       {
-        question: 'How soon will we see AI citation results?',
+        question: 'How soon will we see a result?',
         answer:
-          'Technical and content foundations ship in weeks. Measurable citation and branded mention lifts usually appear over 1–3 months depending on competition.',
+          'Entity and FAQ fixes can affect short answers within weeks on some queries. A stable mention trend on competitive questions usually takes quarters of measurement, not one ChatGPT session. We do not promise that any engine will cite you.',
       },
     ],
     el: [
       {
         question: 'Τι είναι GEO / AEO και πώς διαφέρει από το SEO;',
         answer:
-          'Το SEO σας κατατάσσει στα κλασικά αποτελέσματα Google. Το GEO και το AEO βοηθούν το brand σας να αναφέρεται σε απαντήσεις AI, ChatGPT, Perplexity, Google AI Overviews.',
+          'Το SEO σας κατατάσσει στα κλασικά αποτελέσματα Google. Το AEO δομεί τις σελίδες ώστε μια μηχανή απάντησης να σηκώσει σύντομη απάντηση (AI Overviews, snippets). Το GEO κάνει την επιχείρηση συνεπή πηγή όταν το ChatGPT, το Perplexity ή το Gemini συνθέτουν απάντηση. Κανένα δεν αντικαθιστά το SEO και κανένα δεν εγγυάται αναφορά.',
       },
       {
-        question: 'Προσφέρετε υπηρεσίες AI SEO / GEO agency;',
+        question: 'Προσφέρετε υπηρεσίες GEO / AEO εκτός Ελλάδας;',
         answer:
-          'Ναι. Τρέχουμε προγράμματα GEO/AEO για τουρισμό και τοπικές επιχειρήσεις σε Ελλάδα, ΕΕ, UK και ΗΠΑ, με schema, FAQ entities και citation-ready περιεχόμενο.',
+          'Ναι. Το ίδιο πρόγραμμα τρέχει για τουρισμό και τοπικές επιχειρήσεις που πουλάνε σε Ελλάδα, ΕΕ, Ηνωμένο Βασίλειο και ΗΠΑ: συνέπεια οντότητας, ορατά FAQ με αντίστοιχο schema και μηνιαία δειγματοληψία αναφορών δίπλα στο Search Console.',
       },
       {
-        question: 'Τι περιλαμβάνει ένα πακέτο AI visibility;',
+        question: 'Τι περιλαμβάνει ένα πακέτο ορατότητας σε AI;',
         answer:
-          'Καθαρισμό entities, FAQ/schema, σελίδες έτοιμες για citations, εσωτερική σύνδεση και παρακολούθηση AI mentions παράλληλα με τις κλασικές κατατάξεις.',
+          'Αφιερωμένη εργασία GEO και AEO περιλαμβάνεται στα πακέτα SEO Growth και Authority: καθαρισμός οντότητας, εμπορικές σελίδες σε μορφή απάντησης, schema που συμφωνεί με το ορατό κείμενο και μέτρηση σε σταθερό σύνολο ερωτημάτων. Το Foundations δεν περιλαμβάνει ξεχωριστό πρόγραμμα GEO.',
       },
       {
-        question: 'Πότε θα δούμε αποτελέσματα σε AI citations;',
+        question: 'Πότε θα δούμε αποτέλεσμα;',
         answer:
-          'Τα τεχνικά και content foundations παραδίδονται σε εβδομάδες. Μετρήσιμη αύξηση citations εμφανίζεται συνήθως σε 1–3 μήνες ανάλογα με τον ανταγωνισμό.',
+          'Διορθώσεις οντότητας και FAQ μπορούν να επηρεάσουν σύντομες απαντήσεις σε εβδομάδες, σε ορισμένα ερωτήματα. Σταθερή τάση αναφορών σε ανταγωνιστικά ερωτήματα θέλει συνήθως τρίμηνα μέτρησης, όχι μία συνεδρία ChatGPT. Δεν υπόσχομαστε ότι κάποια μηχανή θα σας αναφέρει.',
       },
     ],
   },

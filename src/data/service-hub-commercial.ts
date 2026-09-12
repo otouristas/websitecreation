@@ -136,37 +136,37 @@ const COMMERCIAL: Record<MoneyServiceSlug, { en: ServiceHubCommercial; el: Servi
   'ai-visibility': {
     en: {
       definition:
-        'AI Visibility (GEO/AEO) is how brands get cited in ChatGPT, Perplexity, and Google AI Overviews, with entities, schema, and answer-shaped content, not just classic blue-link rankings.',
+        'AI visibility (GEO/AEO) is the work that makes a business usable by answer engines: consistent entities, schema that matches the page, and content written in a shape ChatGPT, Perplexity or Google AI Overviews can quote. It does not replace classic rankings, and it does not guarantee a citation.',
       processTitle: 'GEO / AEO process',
       process: [
-        'Entity and brand consistency audit',
-        'Citation-ready service and FAQ pages',
-        'Schema + structured definitions for AI parsers',
-        'Prompt / mention monitoring for priority queries',
-        'Monthly iteration tied to Search Console + AI mentions',
+        'Entity and brand-fact consistency audit',
+        'Answer-shaped service and FAQ pages',
+        'Schema that matches the visible text',
+        'Monthly sampling of a fixed question set',
+        'Iteration tied to Search Console clicks and mention trends',
       ],
       pricingTeaser:
-        'Pricing and packages are on the pricing page, with 24% VAT shown separately. Final scope follows the project.',
+        'Dedicated GEO and AEO work is included in the SEO Growth and Authority retainers. Prices and VAT are on the pricing page.',
       audienceTitle: 'Who this is for',
       audience:
-        'Tourism, hospitality, and local brands that already rank in Google and want to show up when buyers ask AI assistants for recommendations.',
+        'Tourism, hospitality and local brands whose buyers already ask AI assistants before they book or call, and whose site can already be crawled.',
     },
     el: {
       definition:
-        'Η AI Visibility (GEO/AEO) είναι πώς εμφανίζεται η μάρκα σας σε ChatGPT, Perplexity και Google AI Overviews, με οντότητες, schema και περιεχόμενο σε μορφή απάντησης, όχι μόνο με κλασικά blue links.',
+        'Η ορατότητα σε AI (GEO/AEO) είναι η δουλειά που κάνει μια επιχείρηση χρησιμοποιήσιμη από μηχανές απάντησης: συνεπείς οντότητες, schema που συμφωνεί με τη σελίδα και περιεχόμενο σε μορφή που μπορούν να παραθέσουν το ChatGPT, το Perplexity ή τα AI Overviews. Δεν αντικαθιστά τις κλασικές κατατάξεις και δεν εγγυάται αναφορά.',
       processTitle: 'Διαδικασία GEO / AEO',
       process: [
-        'Έλεγχος οντοτήτων και συνέπειας brand',
-        'Citation-ready σελίδες υπηρεσιών και FAQ',
-        'Schema + δομημένοι ορισμοί για AI parsers',
-        'Παρακολούθηση prompts / mentions σε κρίσιμα queries',
-        'Μηνιαία επανάληψη με Search Console + AI mentions',
+        'Έλεγχος οντοτήτων και συνέπειας στοιχείων',
+        'Σελίδες υπηρεσιών και FAQ σε μορφή απάντησης',
+        'Schema που συμφωνεί με το ορατό κείμενο',
+        'Μηνιαία δειγματοληψία σταθερού συνόλου ερωτημάτων',
+        'Επανάληψη με κλικ Search Console και τάση αναφορών',
       ],
       pricingTeaser:
-        'Οι τιμές και τα πακέτα βρίσκονται στη σελίδα τιμών, με τον ΦΠΑ 24% να εμφανίζεται ξεχωριστά. Το τελικό εύρος προκύπτει από το project.',
+        'Αφιερωμένη εργασία GEO και AEO περιλαμβάνεται στα πακέτα SEO Growth και Authority. Τιμές και ΦΠΑ στη σελίδα τιμών.',
       audienceTitle: 'Για ποιον είναι',
       audience:
-        'Τουρισμός, φιλοξενία και τοπικά brands που ήδη κατατάσσονται στη Google και θέλουν να εμφανίζονται όταν οι αγοραστές ρωτούν AI βοηθούς.',
+        'Τουρισμός, φιλοξενία και τοπικές επιχειρήσεις των οποίων οι αγοραστές ήδη ρωτούν βοηθούς AI πριν κλείσουν ή καλέσουν, και των οποίων το site ήδη διαβάζεται.',
     },
   },
 };
