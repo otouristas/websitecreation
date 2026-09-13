@@ -69,7 +69,7 @@ export default function CookieConsent() {
       aria-labelledby="cookie-consent-title"
       data-chrome="cookie-consent"
       style={{ bottom: 'max(var(--chrome-bottom-bar), var(--chrome-safe-bottom))' }}
-      className="fixed inset-x-0 z-[60] border-t border-border bg-background/95 px-4 py-3 shadow-[0_-8px_32px_-12px_hsl(217_91%_60%_/_0.18)] backdrop-blur-md"
+      className="fixed inset-x-0 z-[60] border-t border-hairline bg-background/85 px-4 py-3 shadow-[0_-8px_32px_-12px_color-mix(in_oklab,var(--primary)_25%,transparent)] backdrop-blur-md"
     >
       <div className="mx-auto flex max-w-6xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div className="min-w-0">
@@ -93,14 +93,14 @@ export default function CookieConsent() {
           <button
             type="button"
             onClick={decline}
-            className="rounded-lg border border-border bg-background px-4 py-2 text-sm font-bold text-foreground transition hover:bg-muted"
+            className="btn btn-outline h-10 px-4 text-sm"
           >
             {isEl ? 'Όχι' : 'Decline'}
           </button>
           <button
             type="button"
             onClick={accept}
-            className="rounded-lg bg-primary px-4 py-2 text-sm font-bold text-primary-foreground transition hover:opacity-90"
+            className="btn btn-primary h-10 px-4 text-sm"
           >
             {isEl ? 'Αποδοχή' : 'Accept'}
           </button>

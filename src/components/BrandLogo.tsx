@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 export interface BrandLogoProps {
@@ -22,10 +21,10 @@ export interface BrandLogoProps {
   readonly imageClassName?: string;
 }
 
-const imagePixels: Record<NonNullable<BrandLogoProps["size"]>, number> = {
-  sm: 24,
-  md: 32,
-  lg: 40,
+const markClasses: Record<NonNullable<BrandLogoProps["size"]>, string> = {
+  sm: "size-6",
+  md: "size-8",
+  lg: "size-10",
 };
 
 const textClasses: Record<NonNullable<BrandLogoProps["size"]>, string> = {
@@ -35,7 +34,33 @@ const textClasses: Record<NonNullable<BrandLogoProps["size"]>, string> = {
 };
 
 /**
- * Site-wide brand lockup: PNG mark + gradient or light wordmark (matches Vite marketing).
+ * The mark, inline. A magnifier whose lens holds a rising line that breaks
+ * out of the glass as a tick: search, growth, done. Drawn with strokes in
+ * `currentColor` so it takes the surface's text colour and stays crisp at
+ * any size; `public/logo.png` remains the raster for schema and social cards.
+ */
+export function BrandMark({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 1024 1024"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="66"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      className={className}
+    >
+      <circle cx="410" cy="450" r="205" />
+      <path d="M556 596 655 785" />
+      <path d="M300 462 385 350 625 635 825 400" />
+    </svg>
+  );
+}
+
+/**
+ * Site-wide brand lockup: inline SVG mark in the primary blue + a display-face
+ * wordmark carrying the blue-to-cyan gradient.
  */
 export function BrandLogo({
   size = "md",
@@ -47,22 +72,23 @@ export function BrandLogo({
   textClassName = "",
   imageClassName = "",
 }: BrandLogoProps) {
-  const px = imagePixels[size];
   return (
-    <Link href={homeHref} onClick={onClick} className={`flex items-center gap-2 hover:opacity-90 transition-opacity ${className}`}>
-      <Image
-        src="/logo.png"
-        alt={showText ? "" : "AnotherSEOGuru"}
-        width={px}
-        height={px}
-        className={`flex-shrink-0 object-contain ${imageClassName}`}
-        priority={size === "md"}
+    <Link
+      href={homeHref}
+      onClick={onClick}
+      aria-label={showText ? undefined : "AnotherSEOGuru"}
+      className={`flex items-center gap-2.5 transition-opacity hover:opacity-90 ${className}`}
+    >
+      <BrandMark
+        className={`shrink-0 ${variant === "light" ? "text-white" : "text-primary-glow"} ${
+          imageClassName || markClasses[size]
+        }`}
       />
       {showText ? (
         <span
-          className={`font-bold leading-tight ${textClassName || textClasses[size]} ${
-            variant === "light" ? "text-white" : "gradient-text"
-          }`}
+          className={`font-display font-semibold leading-tight tracking-[-0.03em] ${
+            textClassName || textClasses[size]
+          } ${variant === "light" ? "text-white" : "gradient-text"}`}
         >
           AnotherSEOGuru
         </span>

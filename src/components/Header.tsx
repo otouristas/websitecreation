@@ -18,10 +18,10 @@ import { getServiceEl } from "@/data/services-i18n";
 import { trackCtaClick } from "@/lib/analytics";
 
 const linkClass =
-  "rounded-full px-3.5 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-foreground/5 hover:text-foreground";
+  "rounded-full px-3.5 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-foreground/6 hover:text-foreground";
 
 const dropdownPanelInnerClass =
-  "min-w-[15rem] max-w-[22rem] rounded-2xl border border-hairline bg-surface/95 p-2 shadow-[0_20px_50px_-24px_oklch(0_0_0_/_35%)] backdrop-blur-xl";
+  "glass min-w-[15rem] max-w-[22rem] rounded-2xl bg-popover/90 p-2 shadow-[0_24px_60px_-28px_oklch(0_0_0/70%)]";
 
 const dropdownItemClass =
   "block rounded-xl px-4 py-2.5 text-sm text-muted-foreground transition-colors hover:bg-surface-raised hover:text-foreground";
@@ -152,8 +152,8 @@ export default function Header({
         <div
           className={`pointer-events-auto mx-auto flex max-w-6xl items-center gap-2 rounded-2xl border px-2.5 py-2.5 transition-[background-color,border-color,box-shadow] duration-300 min-[400px]:px-3 sm:gap-4 sm:px-5 sm:py-3 lg:rounded-full ${
             isScrolled
-              ? "border-hairline bg-surface/80 shadow-[0_12px_40px_-20px_oklch(0_0_0_/_35%),0_0_0_1px_var(--hairline)] backdrop-blur-xl"
-              : "border-transparent bg-surface/50 backdrop-blur-md"
+              ? "border-hairline bg-surface/70 shadow-[inset_0_1px_0_0_oklch(1_0_0/6%),0_0_0_1px_color-mix(in_oklab,var(--primary)_25%,transparent),0_20px_60px_-30px_color-mix(in_oklab,var(--primary)_60%,transparent),0_16px_40px_-24px_oklch(0_0_0/60%)] backdrop-blur-xl"
+              : "border-transparent bg-surface/30 backdrop-blur-md"
           }`}
         >
           <div className="flex min-w-0 flex-1 items-center justify-between gap-2 sm:gap-3">
@@ -210,7 +210,7 @@ export default function Header({
               <Link
                 href={lp("/get-started")}
                 onClick={() => trackCtaClick("header_get_quote")}
-                className="hidden h-9 items-center gap-1.5 rounded-full bg-primary px-4 font-display text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90 md:inline-flex"
+                className="hidden h-9 items-center gap-1.5 rounded-full px-4 font-display text-sm font-semibold text-primary-foreground bg-[linear-gradient(180deg,var(--primary),var(--primary-deep))] shadow-[inset_0_1px_0_0_oklch(1_0_0/18%),0_0_0_1px_color-mix(in_oklab,var(--primary-glow)_35%,transparent),0_8px_24px_-10px_color-mix(in_oklab,var(--primary)_80%,transparent)] transition-[transform,box-shadow] duration-200 hover:-translate-y-px md:inline-flex motion-reduce:transition-none"
               >
                 {nav.getQuote}
               </Link>

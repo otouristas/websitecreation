@@ -28,7 +28,13 @@ npm run dev:all      # marketing + dashboard together
 
 Edit the homepage in `src/app/page.tsx`. Deploy from this repo to Vercel (see `websitecreation-seven.vercel.app`).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Design system
+
+The whole visual language lives in `src/app/globals.css` (Tailwind v4, CSS-first: tokens in `@theme inline`, dark theme on `:root`, light theme on `.light`, `@utility` recipes for the ground, blooms, glass and reveals) and in `src/components/landing/primitives.tsx`. Dark is the default; the toggle adds `.light` to `<html>`.
+
+Fonts load through [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) in `src/app/[locale]/layout.tsx`: Inter Tight (display), Inter (text) and JetBrains Mono (micro-labels). All three ship Greek subsets.
+
+The homepage's instant scan posts to `src/app/api/scan/route.ts`, which fetches the visitor's homepage server-side (public hosts only) and scores thirteen checks from `src/lib/scan/`.
 
 ## Learn More
 

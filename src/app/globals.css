@@ -1,36 +1,51 @@
 @import "tailwindcss";
-@import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
+/* `dark:` utilities mean "the brand look", which is now the default. Only an
+   explicit `.light` on <html> switches them off, so the handful of existing
+   `dark:` variants keep working without edits. */
+@custom-variant dark (&:not(.light *));
 
 /* ==========================================================================
    AnotherSEOGuru design system
 
-   Ported from the Growth OS studio design and re-skinned in the brand:
-   blue leads (buttons, links, active states), green carries the accent
-   (eyebrows, ticks, numerals, blooms, product-frame halos). The bloom glow is
-   a blue -> green radial, i.e. the brand gradient rendered as light.
+   Dark-first. The canvas is the deep navy of the brand artwork, the logo's
+   royal blue leads every action, cyan carries the accent (eyebrows, ticks,
+   numerals, blooms) and a single warm "signal" green is reserved for the
+   moments that prove AI visibility: a cited row, a live indicator, a passed
+   check. Light is the toggle (`.light` on <html>), not the default.
 
-   Colours are oklch so `color-mix(in oklab, ...)` works in the glow and halo
-   recipes. Light is the default theme; `.dark` is the toggle.
+   Type: Inter Tight for display, Inter for text, JetBrains Mono for the
+   uppercase micro-labels. All three ship Greek glyphs - Greek is most of
+   our traffic.
+
+   Colours are oklch so `color-mix(in oklab, ...)` works in the glow recipes.
 
    To add a semantic colour:
-   1. add the variable to :root (light) and .dark (dark)
+   1. add the variable to :root (dark) and .light
    2. register it in @theme inline as --color-<name>: var(--<name>)
    ========================================================================== */
 
-@theme inline {
-  --font-display: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
+/* Fonts are a plain @theme block, not `inline`: that way Tailwind emits them
+   as real CSS variables on :root, so `var(--font-display)` works in hand-written
+   CSS and the preflight `html` rule resolves to Inter instead of the system
+   stack. The next/font variables they reference are set on <html>. */
+@theme {
+  --font-display: var(--font-inter-tight), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
-  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, "SFMono-Regular", monospace;
+}
 
+@theme inline {
   --color-brand: var(--brand);
   --color-brand-foreground: var(--brand-foreground);
   --color-brand-deep: var(--brand-deep);
+  --color-signal: var(--signal);
+  --color-signal-foreground: var(--signal-foreground);
   --color-signature: var(--signature);
   --color-surface: var(--surface);
   --color-surface-raised: var(--surface-raised);
   --color-hairline: var(--hairline);
+  --color-link: var(--link);
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -49,6 +64,7 @@
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
   --color-primary-glow: var(--primary-glow);
+  --color-primary-deep: var(--primary-deep);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
   --color-muted: var(--muted);
@@ -70,77 +86,84 @@
 }
 
 /* --------------------------------------------------------------------------
-   LIGHT - the default theme
+   DARK - the default (brand) theme
    -------------------------------------------------------------------------- */
 :root {
-  --radius: 0.625rem;
-  color-scheme: light;
+  --radius: 0.75rem;
+  color-scheme: dark;
 
-  --background: oklch(0.988 0.004 250);
-  --foreground: oklch(0.21 0.03 259);
+  --background: oklch(0.14 0.045 265);
+  --foreground: oklch(0.97 0.006 250);
 
-  --surface: oklch(1 0 0);
-  --surface-raised: oklch(0.972 0.006 250);
-  --hairline: oklch(0.21 0.03 259 / 11%);
+  --surface: oklch(0.175 0.04 265);
+  --surface-raised: oklch(0.215 0.04 264);
+  --hairline: oklch(1 0 0 / 8%);
 
-  /* Brand blue - primary action colour */
-  --primary: oklch(0.62 0.19 259);
+  /* Royal blue - primary action colour. `deep` is the logo blue (#0859DC)
+     and anchors the bottom of every button gradient so white text keeps
+     its contrast; `glow` is the lifted tint used for links on the canvas. */
+  --primary: oklch(0.61 0.21 261);
+  --primary-deep: oklch(0.5 0.23 262);
+  --primary-glow: oklch(0.74 0.16 255);
   --primary-foreground: oklch(0.99 0.003 250);
-  --primary-glow: oklch(0.7 0.16 259);
+  --link: var(--primary-glow);
 
-  /* Brand green - accent: eyebrows, ticks, numerals, glow */
-  --brand: oklch(0.6 0.15 150);
-  --brand-foreground: oklch(0.99 0.003 150);
-  --brand-deep: oklch(0.52 0.13 150);
+  /* Cyan - accent: eyebrows, ticks, numerals, mono labels, glow tail */
+  --brand: oklch(0.8 0.13 220);
+  --brand-foreground: oklch(0.16 0.04 240);
+  --brand-deep: oklch(0.68 0.13 222);
+
+  /* Signal green - "cited", "live", "passed". Nothing else. */
+  --signal: oklch(0.86 0.18 128);
+  --signal-foreground: oklch(0.2 0.05 130);
 
   /* Per-page signature hue.
      Bespoke service and industry pages give each page its own accent by
      overriding ONLY the hue angle - lightness and chroma stay on the brand
-     values below, and the .dark block re-tunes them once for every page. That
-     is why a page can set `--signature-h` inline and still be correct in both
-     themes: it can shift hue, it cannot shift the brand's tonal character.
-     Keep hues in the 150-290 band (green -> teal -> blue -> indigo). */
+     values below, and the .light block re-tunes them once for every page.
+     Keep hues in the 200-290 band (cyan -> blue -> indigo). */
   --signature-h: 259;
-  --signature-l: 0.62;
-  --signature-c: 0.17;
+  --signature-l: 0.72;
+  --signature-c: 0.16;
   --signature: oklch(var(--signature-l) var(--signature-c) var(--signature-h));
 
-  --secondary: oklch(0.94 0.012 250);
-  --secondary-foreground: oklch(0.26 0.03 259);
-  --muted: oklch(0.955 0.008 250);
-  --muted-foreground: oklch(0.5 0.025 258);
-  --accent: oklch(0.94 0.014 250);
-  --accent-foreground: oklch(0.26 0.03 259);
+  --secondary: oklch(0.24 0.035 262);
+  --secondary-foreground: oklch(0.97 0.006 250);
+  --muted: oklch(0.22 0.035 262);
+  --muted-foreground: oklch(0.74 0.025 255);
+  --accent: oklch(0.26 0.04 262);
+  --accent-foreground: oklch(0.97 0.006 250);
 
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.21 0.03 259);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.21 0.03 259);
+  --card: oklch(0.175 0.04 265);
+  --card-foreground: oklch(0.97 0.006 250);
+  --popover: oklch(0.215 0.04 264);
+  --popover-foreground: oklch(0.97 0.006 250);
 
-  --success: oklch(0.6 0.15 150);
-  --warning: oklch(0.75 0.15 75);
-  --destructive: oklch(0.58 0.21 25);
-  --destructive-foreground: oklch(0.99 0.003 250);
+  --success: oklch(0.8 0.17 145);
+  --warning: oklch(0.82 0.15 80);
+  --destructive: oklch(0.66 0.2 25);
+  --destructive-foreground: oklch(0.97 0.006 250);
 
-  --border: oklch(0.21 0.03 259 / 12%);
-  --input: oklch(0.21 0.03 259 / 14%);
-  --ring: oklch(0.62 0.19 259 / 40%);
+  --border: oklch(1 0 0 / 9%);
+  --input: oklch(1 0 0 / 14%);
+  --ring: oklch(0.74 0.16 255 / 55%);
 
-  --chart-1: oklch(0.62 0.19 259);
-  --chart-2: oklch(0.6 0.15 150);
-  --chart-3: oklch(0.66 0.14 215);
-  --chart-4: oklch(0.7 0.15 135);
-  --chart-5: oklch(0.58 0.16 285);
+  --chart-1: oklch(0.61 0.21 261);
+  --chart-2: oklch(0.8 0.13 220);
+  --chart-3: oklch(0.72 0.15 285);
+  --chart-4: oklch(0.86 0.18 128);
+  --chart-5: oklch(0.7 0.12 200);
 
-  /* Blueprint grid + glow strength, tuned for a white canvas */
-  --grid-line: oklch(0.21 0.03 259 / 4.5%);
-  --bloom-strength: 22%;
-  --bloom-strength-soft: 14%;
+  /* Ground: dot grid, aurora and grain strengths, tuned for the navy canvas */
+  --grid-line: oklch(1 0 0 / 5%);
+  --aurora-opacity: 1;
+  --grain-opacity: 0.05;
+  --bloom-strength: 34%;
+  --bloom-strength-soft: 20%;
 
   /* Marketing layout vars referenced by page shells.
      Measured against the floating pill: it bottoms out at ~70px on mobile and
-     ~74px from md up (pt-3 wrapper + pill padding). The old 5rem/5.5rem values
-     described the previous solid bar and left the hero eyebrow overlapping. */
+     ~74px from md up (pt-3 wrapper + pill padding). */
   --site-header-height: 4.5rem;
   --marketing-section-y: 6rem;
   --marketing-section-y-lg: 8rem;
@@ -167,61 +190,68 @@
 }
 
 /* --------------------------------------------------------------------------
-   DARK - the toggle
+   LIGHT - the toggle
    -------------------------------------------------------------------------- */
-.dark {
-  color-scheme: dark;
+.light {
+  color-scheme: light;
 
-  --background: oklch(0.16 0.022 259);
-  --foreground: oklch(0.975 0.004 250);
+  --background: oklch(0.985 0.004 250);
+  --foreground: oklch(0.2 0.03 262);
 
-  --surface: oklch(0.2 0.024 259);
-  --surface-raised: oklch(0.24 0.026 259);
-  --hairline: oklch(1 0 0 / 9%);
+  --surface: oklch(1 0 0);
+  --surface-raised: oklch(0.97 0.006 250);
+  --hairline: oklch(0.2 0.03 262 / 10%);
 
-  --primary: oklch(0.68 0.17 259);
-  --primary-foreground: oklch(0.16 0.03 259);
-  --primary-glow: oklch(0.76 0.15 259);
+  --primary: oklch(0.5 0.23 262);
+  --primary-deep: oklch(0.42 0.22 263);
+  --primary-glow: oklch(0.68 0.17 259);
+  --primary-foreground: oklch(0.99 0.003 250);
+  --link: var(--primary);
 
-  --brand: oklch(0.8 0.18 152);
-  --brand-foreground: oklch(0.18 0.04 152);
-  --brand-deep: oklch(0.68 0.16 150);
+  --brand: oklch(0.52 0.12 228);
+  --brand-foreground: oklch(0.99 0.003 250);
+  --brand-deep: oklch(0.44 0.11 230);
 
-  /* Signature lifts and desaturates on the dark canvas. Pages override only
+  --signal: oklch(0.5 0.15 142);
+  --signal-foreground: oklch(0.99 0.003 250);
+
+  /* Signature darkens and saturates on the light canvas. Pages override only
      --signature-h, so they inherit this automatically. */
-  --signature-l: 0.76;
-  --signature-c: 0.15;
+  --signature-l: 0.55;
+  --signature-c: 0.18;
 
-  --secondary: oklch(0.26 0.026 259);
-  --secondary-foreground: oklch(0.975 0.004 250);
-  --muted: oklch(0.24 0.026 259);
-  --muted-foreground: oklch(0.7 0.022 258);
-  --accent: oklch(0.27 0.03 259);
-  --accent-foreground: oklch(0.975 0.004 250);
+  --secondary: oklch(0.94 0.012 250);
+  --secondary-foreground: oklch(0.26 0.03 259);
+  --muted: oklch(0.955 0.008 250);
+  --muted-foreground: oklch(0.48 0.025 258);
+  --accent: oklch(0.94 0.014 250);
+  --accent-foreground: oklch(0.26 0.03 259);
 
-  --card: oklch(0.2 0.024 259);
-  --card-foreground: oklch(0.975 0.004 250);
-  --popover: oklch(0.2 0.024 259);
-  --popover-foreground: oklch(0.975 0.004 250);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.2 0.03 262);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.2 0.03 262);
 
-  --success: oklch(0.8 0.18 152);
-  --warning: oklch(0.8 0.15 80);
-  --destructive: oklch(0.65 0.2 25);
-  --destructive-foreground: oklch(0.975 0.004 250);
+  --success: oklch(0.5 0.15 142);
+  --warning: oklch(0.55 0.15 60);
+  --destructive: oklch(0.58 0.21 25);
+  --destructive-foreground: oklch(0.99 0.003 250);
 
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 14%);
-  --ring: oklch(0.68 0.17 259 / 45%);
+  --border: oklch(0.2 0.03 262 / 11%);
+  --input: oklch(0.2 0.03 262 / 14%);
+  --ring: oklch(0.5 0.23 262 / 40%);
 
-  --chart-1: oklch(0.68 0.17 259);
-  --chart-2: oklch(0.8 0.18 152);
-  --chart-3: oklch(0.72 0.13 215);
-  --chart-4: oklch(0.78 0.15 135);
-  --chart-5: oklch(0.68 0.15 285);
+  --chart-1: oklch(0.5 0.23 262);
+  --chart-2: oklch(0.55 0.12 228);
+  --chart-3: oklch(0.58 0.16 285);
+  --chart-4: oklch(0.6 0.16 140);
+  --chart-5: oklch(0.6 0.12 200);
 
-  --grid-line: oklch(1 0 0 / 3.5%);
-  --bloom-strength: 30%;
-  --bloom-strength-soft: 18%;
+  --grid-line: oklch(0.2 0.03 262 / 6%);
+  --aurora-opacity: 0.7;
+  --grain-opacity: 0.035;
+  --bloom-strength: 20%;
+  --bloom-strength-soft: 12%;
 }
 
 /* ==========================================================================
@@ -240,13 +270,29 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-sans);
     font-feature-settings: "tnum" 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
+  /* Every heading on the site sits in the display face. Components that set
+     their own scale keep it; this only carries the typeface to the route
+     templates that never declared one. */
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    letter-spacing: -0.03em;
+    text-wrap: balance;
+  }
+
+  strong {
+    font-weight: 600;
+  }
+
   ::selection {
-    background: color-mix(in oklab, var(--primary) 22%, transparent);
+    background: color-mix(in oklab, var(--brand) 30%, transparent);
   }
 }
 
@@ -254,15 +300,74 @@
    Signature utilities
    ========================================================================== */
 
-/* 64px graph paper behind the whole page */
+/* The page ground.
+
+   Kept under the historical name because every <main> on the site asks for
+   it. The recipe is new: a faint dot grid on the canvas, an aurora of the
+   brand colours drifting slowly behind the content, and a film of grain so
+   the gradients never band. Both layers are pseudo-elements behind the
+   content, transform-only, and stop under prefers-reduced-motion.
+
+   `overflow: clip` (not hidden) keeps the aurora's overscan from widening or
+   lengthening the page without turning <main> into a scroll container, so
+   sticky children still stick. */
 @utility blueprint-grid {
-  background-image:
-    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
-  background-size: 64px 64px;
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+  background-image: radial-gradient(circle at 1px 1px, var(--grid-line) 1px, transparent 1.6px);
+  background-size: 48px 48px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -12% -15%;
+    z-index: -1;
+    pointer-events: none;
+    opacity: var(--aurora-opacity);
+    background:
+      radial-gradient(
+        38% 30% at 22% 12%,
+        color-mix(in oklab, var(--primary) 26%, transparent) 0%,
+        transparent 70%
+      ),
+      radial-gradient(
+        30% 26% at 78% 6%,
+        color-mix(in oklab, var(--brand) 16%, transparent) 0%,
+        transparent 70%
+      ),
+      radial-gradient(
+        42% 32% at 62% 92%,
+        color-mix(in oklab, var(--signature) 14%, transparent) 0%,
+        transparent 70%
+      );
+    animation: aurora-drift 28s ease-in-out infinite alternate;
+    will-change: transform;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: var(--grain-opacity);
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 240px 240px;
+  }
 }
 
-/* The brand glow: blue core fading through green. Slowly breathes. */
+@keyframes aurora-drift {
+  from {
+    transform: translate3d(-3%, -2%, 0) scale(1);
+  }
+  to {
+    transform: translate3d(3%, 3%, 0) scale(1.08);
+  }
+}
+
+/* The brand glow: royal blue core fading through cyan. Slowly breathes. */
 @utility bloom {
   background: radial-gradient(
     60% 60% at 50% 40%,
@@ -297,6 +402,17 @@
   animation: bloom-pulse 8s ease-in-out infinite;
 }
 
+/* The proof glow behind the AI-visibility panel: signal green, quieter. */
+@utility bloom-signal {
+  background: radial-gradient(
+    55% 55% at 50% 50%,
+    color-mix(in oklab, var(--signal) calc(var(--bloom-strength-soft) * 0.9), transparent) 0%,
+    color-mix(in oklab, var(--brand) calc(var(--bloom-strength-soft) / 2), transparent) 45%,
+    transparent 70%
+  );
+  filter: blur(48px);
+}
+
 @keyframes bloom-pulse {
   0%,
   100% {
@@ -308,7 +424,7 @@
 }
 
 /* Hairline ruled sheet used by pages that want a denser technical ground than
-   the 64px blueprint grid (audit, architecture and matrix layouts). */
+   the dot grid (audit, architecture and matrix layouts). */
 @utility rule-sheet {
   background-image: linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
   background-size: 100% 32px;
@@ -326,11 +442,29 @@
   }
 }
 
+/* Glass surface: translucent card with a hairline and a top highlight. */
+@utility glass {
+  background: color-mix(in oklab, var(--surface) 72%, transparent);
+  border: 1px solid var(--hairline);
+  box-shadow: inset 0 1px 0 0 oklch(1 0 0 / 6%);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+}
+
 /* Entrance animation. CSS-only and `both`-filled, so the browser paints it
-   without JS - the live problem is CTR on ~15k impressions, so nothing may
-   depend on scripting to be readable. */
+   without JS - nothing may depend on scripting to be readable. */
 @utility rise-in {
   animation: rise-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Kinetic headline: each direct child (a word) rises in turn. Set
+   `--i` on the child to stagger. Server-rendered, no JS. */
+@utility rise-words {
+  & > * {
+    display: inline-block;
+    animation: rise-in 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-delay: calc(var(--i, 0) * 70ms);
+  }
 }
 
 @keyframes rise-in {
@@ -344,9 +478,34 @@
   }
 }
 
-/* Brand gradient, kept for the wordmark and primary CTAs */
+/* Scroll-driven reveal. Plays as the element enters the viewport, on the
+   compositor, with no JavaScript. Browsers without `animation-timeline`
+   simply show the content; reduced-motion users see it still. `--rv` shifts
+   the entry range so siblings can stagger. */
+@utility reveal {
+  @media (prefers-reduced-motion: no-preference) {
+    @supports (animation-timeline: view()) {
+      animation: reveal-up linear both;
+      animation-timeline: view();
+      animation-range: entry calc(0% + var(--rv, 0%)) entry calc(45% + var(--rv, 0%));
+    }
+  }
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Brand gradient text: lifted blue into cyan. Wordmark and hero accents. */
 @utility gradient-text {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--brand) 100%);
+  background: linear-gradient(120deg, var(--primary-glow) 0%, var(--brand) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -359,8 +518,86 @@
 /* Product-frame halo: the coloured glow around browser/phone mockups */
 @utility frame-halo {
   box-shadow:
-    0 0 60px -16px color-mix(in oklab, var(--primary) 40%, transparent),
-    0 28px 60px -28px oklch(0 0 0 / 22%);
+    0 0 0 1px color-mix(in oklab, var(--primary) 30%, transparent),
+    0 0 80px -20px color-mix(in oklab, var(--primary) 55%, transparent),
+    0 40px 80px -40px oklch(0 0 0 / 60%);
+}
+
+/* Spotlight border: a radial highlight that follows the pointer.
+   `--mx`/`--my` are set in px by the useSpotlight hook; without them the
+   highlight sits at the top-left and the card still reads correctly. */
+@utility spotlight {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    pointer-events: none;
+    background: radial-gradient(
+      280px circle at var(--mx, 0px) var(--my, 0px),
+      color-mix(in oklab, var(--signature) 70%, transparent),
+      transparent 60%
+    );
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  &:hover::before {
+    opacity: 1;
+  }
+}
+
+/* Live dot: the tiny pulsing signal beside "cited" / "live" labels */
+@utility live-dot {
+  position: relative;
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 999px;
+  background: var(--signal);
+  &::after {
+    content: "";
+    position: absolute;
+    inset: -3px;
+    border-radius: inherit;
+    border: 1px solid var(--signal);
+    animation: live-ring 1.8s ease-out infinite;
+  }
+}
+
+@keyframes live-ring {
+  from {
+    transform: scale(0.6);
+    opacity: 0.9;
+  }
+  to {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+/* Marquee: the track is rendered twice, so translating by -50% lands the
+   second copy exactly where the first began. Pauses on hover. */
+@utility marquee {
+  animation: marquee 60s linear infinite;
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 /* ==========================================================================
@@ -408,17 +645,20 @@
 }
 
 .markdown-body h2 {
-  font-size: 1.75rem;
-  font-weight: 500;
-  letter-spacing: -0.025em;
+  font-family: var(--font-display);
+  font-size: 1.875rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
   color: var(--foreground);
   margin-top: 2.75rem;
   margin-bottom: 0.75rem;
 }
 
 .markdown-body h3 {
-  font-size: 1.25rem;
-  font-weight: 500;
+  font-family: var(--font-display);
+  font-size: 1.3125rem;
+  font-weight: 600;
   letter-spacing: -0.02em;
   color: var(--foreground);
   margin-top: 2rem;
@@ -426,13 +666,15 @@
 }
 
 .markdown-body a {
-  color: var(--primary);
+  color: var(--link);
   text-decoration: underline;
   text-underline-offset: 3px;
+  text-decoration-color: color-mix(in oklab, var(--link) 40%, transparent);
 }
 
 .markdown-body a:hover {
-  color: var(--brand-deep);
+  color: var(--brand);
+  text-decoration-color: currentColor;
 }
 
 .markdown-body ul,
@@ -512,7 +754,7 @@
    ========================================================================== */
 
 *:focus-visible {
-  outline: 2px solid var(--primary);
+  outline: 2px solid var(--primary-glow);
   outline-offset: 2px;
   border-radius: 3px;
 }
@@ -548,20 +790,9 @@
   background: color-mix(in oklab, var(--primary) 60%, transparent);
 }
 
-/* Client logo marquee - the track is rendered twice, so translating the
-   first copy by -50% of the flex row lands the second copy exactly where the
-   first began. Pauses on hover so a visitor can read a logo. */
-@keyframes client-logo-marquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
+/* Legacy alias for the marquee utility; the logo wall used this name. */
 .client-logo-marquee {
-  animation: client-logo-marquee 60s linear infinite;
+  animation: marquee 60s linear infinite;
 }
 
 .client-logo-marquee:hover {
@@ -583,9 +814,9 @@
    Shared component classes
 
    These are used across all 30 route templates. They are defined here in the
-   new token system so every page inherits the design without a per-file
-   rewrite: `btn-gradient` now means "brand gradient button", `card` now means
-   "hairline surface", and so on.
+   token system so every page inherits the design without a per-file rewrite:
+   `btn-gradient` means "brand gradient button", `card` means "glass surface",
+   and so on.
    ========================================================================== */
 
 .btn {
@@ -594,31 +825,42 @@
   justify-content: center;
   gap: 0.5rem;
   height: 2.75rem;
-  padding-inline: 1.25rem;
+  padding-inline: 1.375rem;
   font-family: var(--font-display);
   font-size: 0.875rem;
-  font-weight: 500;
-  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  border-radius: 999px;
   border: 1px solid transparent;
   cursor: pointer;
   text-decoration: none;
   white-space: nowrap;
   transition:
-    opacity 0.2s ease,
+    transform 0.2s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.2s ease,
     background-color 0.2s ease,
     border-color 0.2s ease,
-    color 0.2s ease;
+    color 0.2s ease,
+    opacity 0.2s ease;
 }
 
 .btn-primary,
 .btn-gradient {
-  background: var(--primary);
+  background: linear-gradient(180deg, var(--primary) 0%, var(--primary-deep) 100%);
   color: var(--primary-foreground);
+  box-shadow:
+    inset 0 1px 0 0 oklch(1 0 0 / 18%),
+    0 0 0 1px color-mix(in oklab, var(--primary-glow) 35%, transparent),
+    0 10px 30px -12px color-mix(in oklab, var(--primary) 80%, transparent);
 }
 
 .btn-primary:hover,
 .btn-gradient:hover {
-  opacity: 0.9;
+  transform: translateY(-1px);
+  box-shadow:
+    inset 0 1px 0 0 oklch(1 0 0 / 22%),
+    0 0 0 1px color-mix(in oklab, var(--primary-glow) 55%, transparent),
+    0 16px 40px -14px color-mix(in oklab, var(--primary) 90%, transparent);
 }
 
 .btn-secondary {
@@ -627,17 +869,20 @@
 }
 
 .btn-secondary:hover {
-  opacity: 0.9;
+  opacity: 0.92;
 }
 
 .btn-outline {
-  background: color-mix(in oklab, var(--surface-raised) 60%, transparent);
+  background: color-mix(in oklab, var(--surface) 60%, transparent);
   color: var(--foreground);
   border-color: var(--hairline);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .btn-outline:hover {
-  border-color: color-mix(in oklab, var(--brand) 40%, transparent);
+  border-color: color-mix(in oklab, var(--brand) 50%, transparent);
+  background: color-mix(in oklab, var(--surface-raised) 80%, transparent);
 }
 
 .btn-ghost {
@@ -646,15 +891,16 @@
 }
 
 .btn-ghost:hover {
-  background: color-mix(in oklab, var(--foreground) 5%, transparent);
+  background: color-mix(in oklab, var(--foreground) 6%, transparent);
   color: var(--foreground);
 }
 
 .card {
-  background: var(--surface);
+  background: color-mix(in oklab, var(--surface) 82%, transparent);
   color: var(--card-foreground);
   border: 1px solid var(--hairline);
-  border-radius: 10px;
+  border-radius: var(--radius);
+  box-shadow: inset 0 1px 0 0 oklch(1 0 0 / 5%);
   transition: border-color 0.2s ease;
 }
 
@@ -663,41 +909,44 @@
 }
 
 .glass-card {
-  background: color-mix(in oklab, var(--surface) 80%, transparent);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: color-mix(in oklab, var(--surface) 72%, transparent);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
   border: 1px solid var(--hairline);
-  border-radius: 10px;
+  border-radius: var(--radius);
+  box-shadow: inset 0 1px 0 0 oklch(1 0 0 / 6%);
 }
 
 .hover-glow {
   transition:
     border-color 0.2s ease,
-    transform 0.2s ease;
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .hover-glow:hover {
   transform: translateY(-2px);
-  border-color: color-mix(in oklab, var(--brand) 35%, transparent);
+  border-color: color-mix(in oklab, var(--brand) 40%, transparent);
+  box-shadow: 0 20px 50px -30px color-mix(in oklab, var(--primary) 60%, transparent);
 }
 
-/* Shadows are intentionally restrained - the design separates surfaces with
-   hairlines, and reserves glow for the bloom and product frames. */
+/* Shadows are restrained - surfaces separate with hairlines, and glow is
+   reserved for blooms, product frames and primary actions. */
 .shadow-soft {
-  box-shadow: 0 1px 2px oklch(0 0 0 / 5%);
+  box-shadow: 0 1px 2px oklch(0 0 0 / 20%);
 }
 
 .shadow-medium {
-  box-shadow: 0 4px 16px -6px oklch(0 0 0 / 10%);
+  box-shadow: 0 4px 16px -6px oklch(0 0 0 / 35%);
 }
 
 .shadow-strong,
 .shadow-xl {
-  box-shadow: 0 20px 50px -24px oklch(0 0 0 / 22%);
+  box-shadow: 0 24px 60px -28px oklch(0 0 0 / 60%);
 }
 
 .shadow-glow {
-  box-shadow: 0 0 40px -12px color-mix(in oklab, var(--primary) 45%, transparent);
+  box-shadow: 0 0 40px -12px color-mix(in oklab, var(--primary) 55%, transparent);
 }
 
 .gradient-secondary {
@@ -738,9 +987,9 @@
   align-items: center;
 }
 
-/* Decorative-only animations from the previous system are retired; the design
-   uses `rise-in` and `bloom-pulse` instead. Kept as no-ops so pages that still
-   reference them do not error. */
+/* Decorative-only animations from an older system are retired; the design
+   uses `rise-in`, `bloom-pulse` and `aurora-drift` instead. Kept as no-ops so
+   pages that still reference them do not error. */
 .animate-float,
 .animate-pulse-glow,
 .animate-shimmer {

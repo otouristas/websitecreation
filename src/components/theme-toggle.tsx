@@ -18,38 +18,42 @@ const LABELS: Record<SiteLocale, { neutral: string; toDark: string; toLight: str
 };
 
 /**
- * Toggles the Tailwind `dark` class on `document.documentElement`.
+ * Toggles the `light` class on `document.documentElement`.
+ *
+ * Dark is the default and carries no class; `light` is the explicit opt-in.
+ * The pre-paint script in the locale layout applies the stored choice before
+ * hydration, so this component only has to mirror it after mount.
  *
  * The moon is absolutely positioned so it can cross-fade with the sun inside
  * the same 36px box. That needs `relative` on the button: without it the
  * containing block was whatever ancestor happened to be positioned - the
  * `fixed` header `<nav>` on desktop, the `fixed inset-0` overlay inside the
- * mobile menu - so in dark mode the moon detached from its button and painted
- * over the logo. `inset-0 m-auto` centres it in both axes regardless of the
- * button's own layout mode.
+ * mobile menu - so the moon detached from its button and painted over the
+ * logo. `inset-0 m-auto` centres it in both axes regardless of the button's
+ * own layout mode.
  */
 export function ThemeToggle({ locale = "en" }: { locale?: SiteLocale }): ReactElement {
-  const [theme, setTheme] = useState<"light" | "dark">("light");
+  const [theme, setTheme] = useState<"light" | "dark">("dark");
   const [mounted, setMounted] = useState(false);
   const labels = LABELS[locale] ?? LABELS.en;
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme") as "light" | "dark" | null;
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const initialTheme = savedTheme ?? (prefersDark ? "dark" : "light");
-    // Post-mount sync is the point here: theme comes from localStorage / prefers-color-scheme, both browser-only,
-    // so the first paint has to be the SSR value and this corrects it.
+    const savedTheme = localStorage.getItem("theme");
+    const initialTheme: "light" | "dark" = savedTheme === "light" ? "light" : "dark";
+    // Post-mount sync is the point here: theme comes from localStorage, which
+    // is browser-only, so the first paint has to be the SSR value and this
+    // corrects it.
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setTheme(initialTheme);
     setMounted(true);
-    document.documentElement.classList.toggle("dark", initialTheme === "dark");
+    document.documentElement.classList.toggle("light", initialTheme === "light");
   }, []);
 
   function toggleTheme(): void {
     const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
     localStorage.setItem("theme", newTheme);
-    document.documentElement.classList.toggle("dark", newTheme === "dark");
+    document.documentElement.classList.toggle("light", newTheme === "light");
   }
 
   // Before mount the DOM class comes from the pre-paint inline script, which the

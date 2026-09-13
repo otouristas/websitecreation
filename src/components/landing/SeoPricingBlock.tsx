@@ -1,6 +1,5 @@
-import { ArrowRight } from 'lucide-react';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
-import { Bloom, Section, SectionHeading } from './primitives';
+import { Section, SectionHeading } from './primitives';
 import { seoPackages, formatPrice, currentPrice, entrySeoNet } from '@/data/pricing';
 import { PriceCard } from '@/components/pricing/PriceCard';
 

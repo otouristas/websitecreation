@@ -28,7 +28,7 @@ import {
  * business names, star ratings or review counts.
  */
 
-const SIGNATURE_HUE = 165;
+const SIGNATURE_HUE = 200;
 
 const copy = {
   en: {
