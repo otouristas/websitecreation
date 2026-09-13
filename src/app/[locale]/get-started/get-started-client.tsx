@@ -143,6 +143,9 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
     setUtmParams(captureUtmParams());
     const goal = searchParams.get('goal');
     const project = searchParams.get('project');
+    // `website` arrives from the homepage instant scan, so the visitor never
+    // types their domain twice.
+    const website = searchParams.get('website');
     setFormData((prev) => {
       let next = { ...prev };
       if (goal && goals.some((g) => g.id === goal)) {
@@ -150,6 +153,9 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
       }
       if (project) {
         next = { ...next, industry: project };
+      }
+      if (website && !prev.website) {
+        next = { ...next, website: website.slice(0, 200), projectType: prev.projectType || 'existing' };
       }
       return next;
     });

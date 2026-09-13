@@ -33,7 +33,7 @@ export function ContactChannels({ variant = 'buttons', locale = 'en', className 
           onClick={() => trackCtaClick('contact_whatsapp')}
           aria-label={label}
           title={`WhatsApp: ${PHONE_DISPLAY}`}
-          className="flex h-10 w-10 items-center justify-center rounded-full bg-[#25D366] text-white shadow-md transition hover:opacity-90"
+          className="flex h-10 w-10 items-center justify-center rounded-full bg-[#25D366] text-[#062a14] shadow-md transition hover:opacity-90"
         >
           <WhatsAppIcon className="h-5 w-5" />
         </a>
@@ -63,7 +63,7 @@ export function ContactChannels({ variant = 'buttons', locale = 'en', className 
         target="_blank"
         rel="noopener noreferrer"
         onClick={() => trackCtaClick('contact_whatsapp')}
-        className="inline-flex items-center gap-2 rounded-xl bg-[#25D366] px-4 py-2.5 text-sm font-bold text-white shadow-md transition hover:opacity-90"
+        className="inline-flex items-center gap-2 rounded-xl bg-[#25D366] px-4 py-2.5 text-sm font-bold text-[#062a14] shadow-md transition hover:opacity-90"
       >
         <WhatsAppIcon />
         {label}

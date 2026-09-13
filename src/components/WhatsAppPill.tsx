@@ -55,7 +55,7 @@ export function WhatsAppPill({ locale: localeProp }: { locale?: SiteLocale } = {
       }}
       className="
         fixed right-4 z-[55] inline-flex h-12 min-h-12 items-center gap-2 rounded-full
-        bg-[#25D366] pl-3.5 pr-4 text-[0.9375rem] font-semibold text-white
+        bg-[#25D366] pl-3.5 pr-4 text-[0.9375rem] font-semibold text-[#062a14]
         shadow-[0_10px_30px_-8px_oklch(0_0_0_/_35%),0_2px_6px_-2px_oklch(0_0_0_/_25%)]
         ring-1 ring-black/5 transition-[transform,box-shadow] duration-200
         hover:-translate-y-0.5 hover:shadow-[0_16px_38px_-10px_oklch(0_0_0_/_40%)]

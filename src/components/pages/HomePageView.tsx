@@ -4,15 +4,16 @@ import Footer from '@/components/Footer';
 import SchemaMarkup from '@/components/seo/SchemaMarkup';
 import { HomeFaq } from '@/components/marketing';
 import {
-  LandingHero,
-  ClientLogoWall,
-  HomeOfferGrid,
-  VerticalServices,
-  Different,
-  Showcase,
+  HeroKinetic,
+  ProofRail,
+  AiSearchSplit,
+  ServicesBento,
+  VerticalsStrip,
+  WorkRail,
   SeoPricingBlock,
-  LandingTestimonials,
-  FinalCta,
+  WhyUsTimeline,
+  TestimonialsWall,
+  ClosingCta,
 } from '@/components/landing';
 import { generateOrganizationSchema } from '@/lib/seo/schema';
 import { BASE_URL } from '@/lib/seo/description';
@@ -21,12 +22,17 @@ import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 /**
  * Homepage.
  *
- * Section order is ported from the Growth OS studio design; the content is
- * ours. `/el` is the C1 pillar in docs/keyword-research (21 of 51 P0 keywords
- * resolve here, most of them pricing terms), which is why the transparent
- * pricing block sits high on the page rather than being deferred to /pricing.
+ * Order: hero (with the instant scan) -> proof numbers and logos -> the GEO /
+ * AEO story -> services bento -> tourism verticals -> live work -> pricing ->
+ * why us -> testimonials -> FAQ -> closing statement -> internal links.
  *
- * The whole page sits on the blueprint grid.
+ * `/el` is the C1 pillar in docs/keyword-research (21 of 51 P0 keywords
+ * resolve here, most of them pricing terms), which is why the transparent
+ * pricing block sits in the middle of the page rather than being deferred to
+ * /pricing, and why the H1 and the answer-first paragraph are unchanged.
+ *
+ * The whole page sits on the aurora ground. Section reveals are CSS
+ * scroll-driven animations, so nothing below the hero depends on JavaScript.
  */
 export function HomePageView({ locale }: { locale: SiteLocale }) {
   const isEl = locale === 'el';
@@ -69,16 +75,17 @@ export function HomePageView({ locale }: { locale: SiteLocale }) {
       <SchemaMarkup schemas={[orgSchema]} />
       <Header locale={locale} />
       <main className="blueprint-grid relative z-0">
-        <LandingHero locale={locale} />
-        <ClientLogoWall locale={locale} />
-        <HomeOfferGrid locale={locale} />
-        <Different locale={locale} />
-        <VerticalServices locale={locale} />
-        <Showcase locale={locale} />
+        <HeroKinetic locale={locale} />
+        <ProofRail locale={locale} />
+        <AiSearchSplit locale={locale} />
+        <ServicesBento locale={locale} />
+        <VerticalsStrip locale={locale} />
+        <WorkRail locale={locale} />
         <SeoPricingBlock locale={locale} />
-        <LandingTestimonials locale={locale} />
+        <WhyUsTimeline locale={locale} />
+        <TestimonialsWall locale={locale} />
         <HomeFaq locale={locale} />
-        <FinalCta locale={locale} />
+        <ClosingCta locale={locale} />
 
         {/* Internal-link strip: hub-and-spoke paths the keyword research calls for */}
         <section className="border-t border-hairline py-8">
@@ -88,7 +95,7 @@ export function HomePageView({ locale }: { locale: SiteLocale }) {
               className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-muted-foreground"
             >
               {relatedLinks.map((item) => (
-                <Link key={item.href} href={item.href} className="transition-colors hover:text-primary">
+                <Link key={item.href} href={item.href} className="transition-colors hover:text-link">
                   {item.label}
                 </Link>
               ))}

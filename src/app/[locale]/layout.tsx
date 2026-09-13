@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter, Geist_Mono } from 'next/font/google';
+import { Inter, Inter_Tight, JetBrains_Mono } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import '../globals.css';
 import CookieConsent from '@/components/CookieConsent';
@@ -13,13 +13,21 @@ import { CONTACT_EMAIL, PHONE_E164 } from '@/lib/contact-info';
 const SITE_URL = 'https://anotherseoguru.com';
 
 /**
- * Inter is the design system's only text face, at weights 400-700.
+ * Three faces, all of them shipping Greek glyphs - Greek is ~74% of our
+ * clicks, and a display or mono face without a `greek` subset would split
+ * strings like "SEO για ξενοδοχεία" across two typefaces.
  *
- * It also fixes a real bug: Geist ships no `greek` subset (cyrillic,
- * cyrillic-ext, latin, latin-ext, vietnamese only), so Greek copy was
- * rendering in a system fallback and mixed strings like "SEO για ξενοδοχεία"
- * split across two typefaces. Greek is ~74% of our clicks.
+ * - Inter Tight (variable) is the display face: headlines, prices, numerals.
+ * - Inter is the text face at 400-600.
+ * - JetBrains Mono carries the uppercase micro-labels and metadata.
  */
+const interTight = Inter_Tight({
+  variable: '--font-inter-tight',
+  subsets: ['latin', 'latin-ext', 'greek', 'greek-ext'],
+  weight: 'variable',
+  display: 'swap',
+});
+
 const inter = Inter({
   variable: '--font-inter',
   subsets: ['latin', 'latin-ext', 'greek', 'greek-ext'],
@@ -27,9 +35,11 @@ const inter = Inter({
   display: 'swap',
 });
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
+const jetbrainsMono = JetBrains_Mono({
+  variable: '--font-jetbrains-mono',
+  subsets: ['latin', 'greek'],
+  weight: ['400', '500'],
+  display: 'swap',
 });
 
 export function generateStaticParams() {
@@ -238,7 +248,12 @@ function buildStructuredDataGraph(isEl: boolean) {
   };
 }
 
-const themeInitScript = `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark');}}catch(e){}})();`;
+/**
+ * Dark is the brand default and needs no class. Only a visitor who explicitly
+ * chose the light theme gets `.light` on <html>, before first paint so there
+ * is no flash. The stored key is unchanged from the previous toggle.
+ */
+const themeInitScript = `(function(){try{if(localStorage.getItem('theme')==='light'){document.documentElement.classList.add('light');}}catch(e){}})();`;
 
 export default async function LocaleLayout({
   children,
@@ -252,7 +267,13 @@ export default async function LocaleLayout({
   const isEl = locale === 'el';
 
   return (
-    <html lang={isEl ? 'el' : 'en'} className="scroll-smooth" suppressHydrationWarning>
+    <html
+      lang={isEl ? 'el' : 'en'}
+      // The next/font variables sit on <html> so they resolve everywhere,
+      // including Tailwind's preflight font rule on the root element.
+      className={`${interTight.variable} ${inter.variable} ${jetbrainsMono.variable} scroll-smooth`}
+      suppressHydrationWarning
+    >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         <link rel="alternate" type="text/plain" href="/llms.txt" title="LLMs documentation for AnotherSEOGuru" />
@@ -261,7 +282,7 @@ export default async function LocaleLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(buildStructuredDataGraph(isEl)) }}
         />
       </head>
-      <body className={`${inter.variable} ${geistMono.variable} relative antialiased`}>
+      <body className="relative antialiased">
         <GoogleAnalytics />
         <CookieConsent />
         {/* Bottom padding tracks the sticky bar's real height instead of a

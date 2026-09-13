@@ -81,13 +81,13 @@ const EN_SEO_HUB_LINKS: { label: string; href: string }[] = [
 ];
 
 const columnLinkClass =
-  "text-sm text-muted-foreground transition-colors hover:text-primary";
+  "text-sm text-muted-foreground transition-colors hover:text-link";
 
 const columnHeadingClass =
-  "mb-5 block text-[11px] font-medium uppercase tracking-[0.18em] text-brand";
+  "mb-5 block font-mono text-[11px] font-medium uppercase tracking-[0.18em] text-brand";
 
 const socialButtonClass =
-  "grid size-9 place-items-center rounded-full border border-hairline text-muted-foreground transition-colors hover:border-primary/40 hover:text-primary";
+  "grid size-9 place-items-center rounded-full border border-hairline text-muted-foreground transition-colors hover:border-brand/50 hover:text-brand";
 
 export default function Footer({ locale: localeProp }: { locale?: SiteLocale }): ReactElement {
   const pathname = usePathname() ?? "/en";
@@ -97,7 +97,7 @@ export default function Footer({ locale: localeProp }: { locale?: SiteLocale }):
   const lp = (path: string) => localizedPath(locale, path);
   const t = getFooterDictionary(locale);
   return (
-    <footer className="border-t border-hairline bg-surface/40">
+    <footer className="relative border-t border-hairline bg-surface/40 before:absolute before:inset-x-0 before:top-[-1px] before:h-px before:bg-[linear-gradient(90deg,transparent,var(--primary-glow)_30%,var(--brand)_70%,transparent)] before:opacity-70 before:content-['']">
       <div className="mx-auto max-w-6xl px-6 pb-16 pt-16 md:pb-20 md:pt-20">
         <div className="mb-12 grid grid-cols-2 gap-x-10 gap-y-10 md:grid-cols-4 lg:grid-cols-6">
           <div className="col-span-2">
@@ -381,7 +381,7 @@ export default function Footer({ locale: localeProp }: { locale?: SiteLocale }):
           </div>
         </div>
         <div className="mb-12 border-t border-hairline pt-10">
-          <p className="mb-5 block text-[11px] font-medium uppercase tracking-[0.18em] text-brand">
+          <p className="mb-5 block font-mono text-[11px] font-medium uppercase tracking-[0.18em] text-brand">
             {isEl ? "Υπηρεσίες ανά Πόλη" : "Services by City"}
           </p>
           <ul className="grid grid-cols-2 gap-x-6 gap-y-2 sm:grid-cols-3 lg:grid-cols-4">
@@ -433,7 +433,7 @@ export default function Footer({ locale: localeProp }: { locale?: SiteLocale }):
                       alt={logo.alt}
                       width={logo.width}
                       height={28}
-                      className="h-6 w-auto rounded-sm opacity-60 transition-opacity hover:opacity-100"
+                      className="h-6 w-auto rounded-sm opacity-70 transition-opacity hover:opacity-100 dark:brightness-110"
                       loading="lazy"
                       decoding="async"
                     />

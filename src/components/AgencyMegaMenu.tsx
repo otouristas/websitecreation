@@ -106,7 +106,7 @@ export function AgencyMegaMenu({ locale, label }: { locale: SiteLocale; label: s
             onMouseEnter={openMenu}
             onMouseLeave={scheduleClose}
           >
-            <div className="overflow-hidden rounded-3xl border border-border/80 bg-background/95 shadow-[0_30px_70px_-20px_hsl(217_91%_60%_/_0.25)] backdrop-blur-xl dark:shadow-[0_30px_70px_-20px_hsl(0_0%_0%_/_0.55)]">
+            <div className="overflow-hidden rounded-3xl border border-border/80 bg-background/95 shadow-[0_30px_70px_-20px_color-mix(in_oklab,var(--primary)_35%,transparent),0_30px_70px_-30px_oklch(0_0_0/55%)] backdrop-blur-xl">
             <div className="grid gap-0 lg:grid-cols-[1fr_1fr_0.8fr]">
               {/* Services (2 columns) */}
               <div className="col-span-2 grid grid-cols-2 gap-1 p-5">
@@ -155,7 +155,7 @@ export function AgencyMegaMenu({ locale, label }: { locale: SiteLocale; label: s
                   </div>
                 </div>
 
-                <div className="rounded-2xl bg-gradient-to-br from-primary to-[hsl(142_69%_50%)] p-4 text-primary-foreground shadow-lg">
+                <div className="rounded-2xl bg-[linear-gradient(135deg,var(--primary-deep),var(--primary)_55%,var(--brand))] p-4 text-primary-foreground shadow-lg">
                   <p className="text-sm font-bold">{isEl ? "Δωρεάν προσφορά σε 24 ώρες" : "Free quote in 24 hours"}</p>
                   <p className="mt-1 text-xs text-primary-foreground/85">
                     {isEl ? "Πείτε μας για το έργο σας και λάβετε πλάνο & τιμή." : "Tell us about your project and get a plan & price."}

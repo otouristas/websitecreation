@@ -202,7 +202,7 @@ export function MobileNav({
       aria-label={nav.agency}
     >
       {/* Header: edge to edge, hairline only, no inner card. */}
-      <div className="shrink-0 border-b border-hairline bg-gradient-to-b from-primary/[0.07] to-transparent">
+      <div className="shrink-0 border-b border-hairline bg-[linear-gradient(180deg,color-mix(in_oklab,var(--primary)_10%,transparent),transparent)]">
         <div className="flex items-center justify-between gap-2 px-4 pb-3 pt-[max(0.75rem,env(safe-area-inset-top))] min-[400px]:px-5">
           {/* Same lockup rules as the site header: at 320px the wordmark and
               three controls cannot share a row without pushing the close
@@ -253,7 +253,7 @@ export function MobileNav({
       <div className="flex-1 overflow-y-auto overscroll-contain">
         {/* Commercial offers first: this is the highest-intent surface on
             mobile and it used to open on a services accordion. */}
-        <p className="px-5 pb-1.5 pt-4 text-[0.6875rem] font-semibold uppercase tracking-[0.08em] text-muted-foreground">
+        <p className="px-5 pb-1.5 pt-4 font-mono text-[0.6875rem] uppercase tracking-[0.16em] text-brand">
           {copy.offersTitle}
         </p>
         <div className="divide-y divide-hairline border-y border-hairline">
@@ -308,7 +308,7 @@ export function MobileNav({
           </div>
         ))}
 
-        <p className="px-5 pb-1.5 pt-5 text-[0.6875rem] font-semibold uppercase tracking-[0.08em] text-muted-foreground">
+        <p className="px-5 pb-1.5 pt-5 font-mono text-[0.6875rem] uppercase tracking-[0.16em] text-brand">
           {copy.moreTitle}
         </p>
         <div className="divide-y divide-hairline border-y border-hairline">
@@ -326,13 +326,13 @@ export function MobileNav({
       </div>
 
       <div className="shrink-0 border-t border-hairline bg-background px-5 pb-[max(1rem,env(safe-area-inset-bottom))] pt-3">
-        <p className="pb-2 text-[0.6875rem] font-semibold uppercase tracking-[0.08em] text-muted-foreground">
+        <p className="pb-2 font-mono text-[0.6875rem] uppercase tracking-[0.16em] text-brand">
           {copy.talkTitle}
         </p>
         <div className="flex flex-col gap-2">
           <Link
             href={lp('/get-started')}
-            className="btn btn-gradient flex h-12 w-full items-center justify-center rounded-xl text-[0.9375rem] font-semibold"
+            className="btn btn-gradient flex h-12 w-full items-center justify-center text-[0.9375rem]"
             onClick={() => {
               trackCtaClick('mobile_nav_quote');
               onClose();
@@ -348,7 +348,7 @@ export function MobileNav({
               trackCtaClick('mobile_nav_whatsapp');
               onClose();
             }}
-            className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl border border-hairline text-[0.9375rem] font-semibold text-foreground transition-colors active:bg-surface-raised"
+            className="btn btn-outline h-12 w-full text-[0.9375rem]"
           >
             <WhatsAppIcon className="h-5 w-5 text-[#25D366]" />
             {copy.whatsapp}

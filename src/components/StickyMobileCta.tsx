@@ -37,7 +37,7 @@ export function StickyMobileCta(): ReactElement | null {
       <style>{BAR_HEIGHT_STYLE}</style>
       <div
         data-chrome="sticky-cta"
-        className="fixed inset-x-0 bottom-0 z-50 border-t border-border bg-background/95 px-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-2 backdrop-blur-md lg:hidden"
+        className="fixed inset-x-0 bottom-0 z-50 border-t border-hairline bg-background/85 px-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-2 backdrop-blur-xl lg:hidden"
       >
         {/* One destination only. WhatsApp used to share this row as a square
             icon button, which turned a conversion bar into something that read
@@ -46,7 +46,7 @@ export function StickyMobileCta(): ReactElement | null {
           <Link
             href={lp('/get-started')}
             onClick={() => trackCtaClick('sticky_mobile_quote')}
-            className="btn btn-gradient flex h-12 w-full items-center justify-center rounded-xl text-sm font-bold"
+            className="btn btn-gradient flex h-12 w-full items-center justify-center text-sm"
           >
             {nav.getQuote}
           </Link>
