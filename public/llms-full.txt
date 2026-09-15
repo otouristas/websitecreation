@@ -1,11 +1,11 @@
-Last-Updated: 2026-09-10
+Last-Updated: 2026-09-15
 Canonical: https://anotherseoguru.com/llms-full.txt
 Short-form: https://anotherseoguru.com/llms.txt
 Sitemap: https://anotherseoguru.com/sitemap.xml
 
 # AnotherSEOGuru - Complete Knowledge Base
 Source: https://anotherseoguru.com
-Last Updated: 2026-09-10
+Last Updated: 2026-09-15
 
 This document is the comprehensive, machine-readable reference for LLM crawlers, AI search engines, and assistants synthesizing answers about AnotherSEOGuru services, pricing, portfolio, Greek local SEO positioning, and the secondary SEO software platform.
 
@@ -62,11 +62,11 @@ AnotherSEOGuru combines a **web design & SEO agency** (primary) with a **GSC-nat
 ### AI Visibility (GEO / AEO) (`ai-visibility`)
 - **EN URL:** https://anotherseoguru.com/en/services/ai-visibility
 - **EL URL:** https://anotherseoguru.com/el/services/ai-visibility
-- **Description (EN):** AI SEO agency services for Generative Engine Optimization (GEO) and Answer Engine Optimization (AEO). Get cited in ChatGPT, Perplexity and Google AI Overviews, not just classic rankings.
-- **Greek name:** AI SEO Agency (GEO / AEO)
-- **Description (EL):** Υπηρεσίες AI SEO agency για Generative Engine Optimization (GEO) και Answer Engine Optimization (AEO). Εμφανιστείτε σε ChatGPT, Perplexity και Google AI Overviews, όχι μόνο στα κλασικά αποτελέσματα.
-- **Features (EN):** GEO / generative engine optimization; AEO for AI Overviews & chat answers; Schema + entity cleanup; Citation-ready service pages; AI mention monitoring; Tourism & local brand playbooks
-- **Features (EL):** GEO / generative engine optimization; AEO για AI Overviews & chat απαντήσεις; Schema + καθαρισμός οντοτήτων; Citation-ready σελίδες υπηρεσιών; Παρακολούθηση AI mentions; Playbooks για τουρισμό & τοπικά brands
+- **Description (EN):** GEO and AEO for businesses: entity clarity, answer-shaped pages and measurement so answer engines can use your content. No citation promises.
+- **Greek name:** Ορατότητα σε AI (GEO / AEO)
+- **Description (EL):** GEO και AEO για επιχειρήσεις: σαφή στοιχεία, σελίδες σε μορφή απάντησης και μέτρηση, ώστε οι μηχανές απάντησης να μπορούν να χρησιμοποιήσουν το περιεχόμενό σας. Χωρίς υποσχέσεις αναφοράς.
+- **Features (EN):** Entity and brand-fact consistency; Answer-shaped FAQs for AEO; Schema that matches visible text; Commercial pages with quotable facts; Monthly mention sampling, not AI-rank theatre; Tourism and local-business programmes
+- **Features (EL):** Συνέπεια οντότητας και στοιχείων επιχείρησης; FAQ σε μορφή απάντησης για AEO; Schema που συμφωνεί με το ορατό κείμενο; Εμπορικές σελίδες με σαφή γεγονότα; Μηνιαία δειγματοληψία αναφορών, όχι «AI rank»; Προγράμματα για τουρισμό και τοπικές επιχειρήσεις
 
 ### Logo Design (`logo-design`)
 - **EN URL:** https://anotherseoguru.com/en/services/logo-design
@@ -108,7 +108,7 @@ AnotherSEOGuru combines a **web design & SEO agency** (primary) with a **GSC-nat
 - **EN URL:** https://anotherseoguru.com/en/services/seo-audits
 - **EL URL:** https://anotherseoguru.com/el/services/seo-audits
 - **Description (EN):** SEO audit services and technical SEO services: prioritized crawl, indexation, Core Web Vitals, and on-page fixes that unlock rankings.
-- **Greek name:** Υπηρεσίες SEO & Τεχνικός Έλεγχος
+- **Greek name:** SEO Audit & Τεχνικός Έλεγχος
 - **Description (EL):** Υπηρεσίες SEO για ιστοσελίδες στην Ελλάδα: τεχνικός έλεγχος, on-page, λέξεις-κλειδιά, τοπικό SEO και μηνιαία προώθηση. Διαφανή πακέτα από €500/μήνα.
 - **Features (EN):** Technical health check; Core Web Vitals analysis; Crawl budget optimization; Internal linking audit; Competitor gap analysis; Penalty recovery
 - **Features (EL):** Πλήρης τεχνικός SEO audit; Core Web Vitals & ταχύτητα; On-page βελτιστοποίηση & περιεχόμενο; Έρευνα λέξεων-κλειδιών; Ανάλυση ανταγωνισμού; Πλάνο προώθησης & μηνιαία αναφορά
@@ -675,7 +675,7 @@ All Greek cities below are indexable for service×location pages. Pattern: `/el/
 ### Project Shadow AI (`project-shadow-ai`)
 - **Case study:** https://anotherseoguru.com/en/work/project-shadow-ai · https://anotherseoguru.com/el/work/project-shadow-ai
 - **Live site:** https://projectshadow.ai
-- **Category:** travel-ai · featured
+- **Category:** travel-ai
 - **Summary (EN):** Project Shadow AI: AI tooling for online stores for global e-commerce, SEO for “Project Shadow AI”, with technical SEO from day one.
 - **Summary (EL):** Project Shadow AI: ιστοσελίδα για εργαλεία τεχνητής νοημοσύνης για ηλεκτρονικά καταστήματα στη διεθνές αγορά e-commerce, SEO για «Project Shadow AI», με τεχνικό SEO από την πρώτη μέρα.
 - **Services delivered:** website-creation, ai-visibility
@@ -900,7 +900,7 @@ All Greek cities below are indexable for service×location pages. Pattern: `/el/
 ### Greece Cyclades (`greece-cyclades`)
 - **Case study:** https://anotherseoguru.com/en/work/greece-cyclades · https://anotherseoguru.com/el/work/greece-cyclades
 - **Live site:** https://greececyclades.com
-- **Category:** tours · featured
+- **Category:** tours
 - **Summary (EN):** Greece Cyclades: Cyclades travel brand website for Cyclades, Greece, SEO for “Greece Cyclades”, focused on broad Cyclades discovery positioning versus island-specific siblings.
 - **Summary (EL):** Greece Cyclades: ταξιδιωτικό brand Κυκλάδων στις Κυκλάδες, SEO για «Κυκλάδες Ελλάδα», με έμφαση σε ευρεία τοποθέτηση ανακάλυψης Κυκλάδων έναντι εξειδικευμένων siblings.
 - **Services delivered:** website-creation, content-creation, seo-web-design
@@ -1034,7 +1034,87 @@ All Greek cities below are indexable for service×location pages. Pattern: `/el/
 
 ---
 
-## 7. Blog & Guides (71)
+## 7. Blog & Guides (73)
+
+### Κατασκευή Ιστοσελίδας το 2026: Τι Αγοράζετε
+- **URL:** https://anotherseoguru.com/el/blog/kataskevi-istoselidas-2026
+- **Locale:** el · **Date:** 2026-09-15
+- **Description:** Κατασκευή ιστοσελίδας το 2026: WordPress ή Next.js, κόστος, ταχύτητα, SEO, GEO/AEO, ασφάλεια και τι πρέπει να περιλαμβάνει μια σύγχρονη κατασκευή.
+- **Embedded FAQ:**
+  - Q: Είναι κακό το WordPress για SEO;
+    A: Όχι. Ένα σωστά υλοποιημένο WordPress site μπορεί να έχει εξαιρετικό SEO. Το πρόβλημα είναι το μοντέλο «template, page builder, δεκάδες plugins και φθηνό hosting», όχι το CMS από μόνο του.
+  - Q: Είναι το Next.js καλύτερο για SEO;
+    A: Όχι αυτόματα. Δίνει πολύ μεγαλύτερο έλεγχο στο rendering, στην ταχύτητα και στα δομημένα δεδομένα, αλλά μια πρόχειρη υλοποίηση Next.js μπορεί να δημιουργήσει προβλήματα ευρετηρίασης όπως και ένα κακό WordPress.
+  - Q: Πόσο κοστίζει η κατασκευή ιστοσελίδας το 2026;
+    A: Η αγορά έχει προσφορές από 500€ για ένα απλό site μέχρι 5.000€ και άνω για e-shop. Τα πακέτα της AnotherSEOGuru ξεκινούν από €1.500 (Starter), €2.500 (Professional) και €4.000 (Business), συν ΦΠΑ 24%, με τεχνικό SEO και μετρήσεις μέσα στην τιμή.
+  - Q: Πόσο χρόνο παίρνει η κατασκευή μιας ιστοσελίδας;
+    A: Ενδεικτικά 3 έως 5 εβδομάδες για ένα Starter site, 5 έως 8 εβδομάδες για Professional και 8 έως 12 και πλέον εβδομάδες για Business έργα με e-shop, κρατήσεις ή πολλές γλώσσες. Ο χρόνος εξαρτάται από το περιεχόμενο και τις εγκρίσεις.
+  - Q: Μπορεί μια νέα ιστοσελίδα να βγει πρώτη στη Google σε δύο ημέρες;
+    A: Όχι. Μπορεί να ευρετηριαστεί γρήγορα, αλλά η ευρετηρίαση δεν είναι κατάταξη. Κανείς δεν μπορεί να εγγυηθεί συγκεκριμένη θέση ή προθεσμία. Η δημοσίευση είναι η αρχή της συλλογής δεδομένων, όχι το τέλος του SEO.
+  - Q: Τι πρέπει να περιλαμβάνει μια προσφορά για κατασκευή ιστοσελίδας;
+    A: Έρευνα λέξεων-κλειδιών, αρχιτεκτονική σελίδων, σχεδιασμό UX/UI, ανάπτυξη, τεχνικό SEO, δομημένα δεδομένα, ανακατευθύνσεις, ρύθμιση Search Console και Analytics, έλεγχο ποιότητας πριν τη δημοσίευση και ξεκάθαρο πλάνο συντήρησης.
+  - Q: Χρειάζομαι ανασχεδιασμό ή νέα κατασκευή;
+    A: Αν το site έχει κατατάξεις και backlinks αλλά παλιά εμφάνιση, ένας ανασχεδιασμός με σχέδιο μετάπτωσης προστατεύει ό,τι έχετε κερδίσει. Αν η βάση είναι αργή, γεμάτη plugins και χωρίς αρχιτεκτονική SEO, η νέα κατασκευή συνήθως κοστίζει λιγότερο μακροπρόθεσμα.
+
+### Προώθηση Ιστοσελίδας 2026: Κόστος SEO & ROI
+- **URL:** https://anotherseoguru.com/el/blog/proothisi-istoselidas-2026
+- **Locale:** el · **Date:** 2026-09-15
+- **Description:** Προώθηση ιστοσελίδας το 2026: τι κοστίζει το SEO, γιατί θέλει έξι και πλέον μήνες, τι γίνεται κάθε μήνα και πώς μετράμε την απόδοση, χωρίς εγγυήσεις.
+- **Embedded FAQ:**
+  - Q: Πόσο κοστίζει το SEO τον μήνα;
+    A: Εξαρτάται από το εύρος εργασίας και τον ανταγωνισμό. Στην αγορά, μια τοπική επιχείρηση επενδύει συνήθως 250€ έως 700€ τον μήνα και ένα e-shop 900€ και πλέον. Τα πακέτα της AnotherSEOGuru είναι Foundations €500, Growth €900 και Authority €1.500 τον μήνα, συν ΦΠΑ 24%, με ελάχιστη διάρκεια έξι μηνών.
+  - Q: Πόσο χρόνο θέλει το SEO;
+    A: Δεν υπάρχει σταθερή προθεσμία. Το εξάμηνο είναι χρήσιμος ορίζοντας σχεδιασμού για να γίνουν θεμέλια, περιεχόμενο, επαναλήψεις και μετρήσεις. Δεν είναι εγγύηση αποτελέσματος μέχρι τον έκτο μήνα.
+  - Q: Μπορεί κάποιος να εγγυηθεί πρώτη σελίδα Google;
+    A: Όχι αξιόπιστα, για συγκεκριμένο ανταγωνιστικό ερώτημα και συγκεκριμένη προθεσμία. Η ευρετηρίαση μιας σελίδας δεν είναι το ίδιο με την κατάταξή της. Όποιος υπόσχεται θέσεις που δεν ελέγχει, πουλά κάτι άλλο.
+  - Q: Τι πρέπει να παίρνω κάθε μήνα από τη συνεργασία SEO;
+    A: Αρχείο αλλαγών με ό,τι έγινε, κίνηση των βασικών δεικτών, ευρήματα από Search Console και Analytics, τις επόμενες προτεραιότητες και ξεκάθαρη σύνδεση με τους επιχειρηματικούς στόχους. Μια λίστα με 50 θέσεις λέξεων δεν είναι αναφορά.
+  - Q: Γιατί το SEO ενός e-shop κοστίζει περισσότερο;
+    A: Γιατί η επιφάνεια είναι πολύ μεγαλύτερη. Κατηγορίες, φίλτρα, προϊόντα, σελιδοποίηση, δομημένα δεδομένα, προϊόντα εκτός αποθέματος, διπλότυπες διευθύνσεις και εσωτερική διασύνδεση απαιτούν περισσότερη τεχνική και συντακτική εργασία κάθε μήνα.
+  - Q: Τι διαφορά έχει η προώθηση ιστοσελίδας από τα Google Ads;
+    A: Τα Ads φέρνουν κίνηση όσο πληρώνετε και σταματούν όταν σταματήσετε. Το SEO χτίζει οργανική ζήτηση που μένει και μακροπρόθεσμα κοστίζει λιγότερο ανά επισκέπτη. Οι περισσότερες επιχειρήσεις χρησιμοποιούν και τα δύο, με το SEO ως βάση.
+  - Q: Τι είναι το GEO και το AEO και χρειάζονται στην προώθηση;
+    A: Το AEO δομεί το περιεχόμενο ώστε οι μηχανές απάντησης να εξάγουν άμεση απάντηση. Το GEO βοηθά το brand να αναφέρεται σε ChatGPT, Perplexity, Gemini και AI Overviews. Και τα δύο χτίζονται πάνω στο κλασικό SEO, δεν το αντικαθιστούν.
+
+### Website Development 2026: What to Pay For
+- **URL:** https://anotherseoguru.com/en/blog/website-development-2026
+- **Locale:** en · **Date:** 2026-09-15
+- **Description:** Website development in 2026: WordPress vs modern stacks, cost, speed, SEO, GEO/AEO, security and what a serious website build should include to earn its keep.
+- **Embedded FAQ:**
+  - Q: Is WordPress bad for SEO?
+    A: No. A well-engineered WordPress site can have excellent SEO. The problem is the cheap formula of a generic template, a page builder, a large plugin stack and shared hosting, not the CMS label.
+  - Q: Is Next.js automatically better for SEO?
+    A: No. It gives far more control over rendering, performance and structured data, but a careless Next.js implementation can create the same indexing problems as a careless WordPress one.
+  - Q: How much does website development cost in 2026?
+    A: The market ranges from about €500 for a simple brochure site to €5,000 and more for an e-shop. AnotherSEOGuru packages start at €1,500 (Starter), €2,500 (Professional) and €4,000 (Business), plus 24% VAT, with technical SEO and measurement included.
+  - Q: How long does a website build take?
+    A: Indicatively 3 to 5 weeks for a Starter site, 5 to 8 weeks for Professional and 8 to 12 or more weeks for Business projects with e-commerce, bookings or several languages. Content readiness and approval speed decide most of it.
+  - Q: Can a new website rank first on Google two days after launch?
+    A: No. It can be indexed quickly, but indexed is not ranked. No credible provider can promise a specific position or deadline. Launch is the start of collecting signals and data, not the end of SEO.
+  - Q: What should a website quote include?
+    A: Keyword research, page architecture, UX/UI design, development, technical SEO, structured data, redirects, Search Console and analytics setup, pre-launch QA and a written maintenance plan.
+  - Q: Do I need a redesign or a rebuild?
+    A: If the site already ranks and has backlinks but looks dated, a redesign with a migration plan protects what you have earned. If the foundation is slow, plugin-heavy and has no SEO architecture, a rebuild usually costs less over time.
+
+### Website Promotion in 2026: SEO Cost & ROI
+- **URL:** https://anotherseoguru.com/en/blog/website-promotion-seo-investment-2026
+- **Locale:** en · **Date:** 2026-09-15
+- **Description:** Website promotion in 2026: SEO pricing, realistic timelines, what happens in each month of a six-month plan and how to measure ROI beyond rankings.
+- **Embedded FAQ:**
+  - Q: How much does SEO cost per month?
+    A: It depends on scope and competition. In the market, a local business typically invests €250 to €700 a month and an e-shop €900 and up. AnotherSEOGuru packages are Foundations €500, Growth €900 and Authority €1,500 a month, plus 24% VAT, with a six-month minimum term.
+  - Q: How long does SEO take?
+    A: There is no fixed deadline. Six months is a useful planning horizon for foundations, content, iteration and measurement. It is not a guarantee that a result arrives by month six.
+  - Q: Can anyone guarantee page-one Google rankings?
+    A: Not credibly, for a competitive query by a fixed date. A page being indexed is not the same as it ranking. Anyone promising positions they do not control is selling something else.
+  - Q: What should I receive from an SEO engagement every month?
+    A: A change log of what was done, movement in the core metrics, findings from Search Console and Analytics, the next priorities and a clear link to business objectives. A list of 50 keyword positions is not a report.
+  - Q: Why does e-commerce SEO cost more?
+    A: Because the surface is far larger. Categories, filters, products, pagination, structured data, out-of-stock states, duplicate URLs and internal linking need more technical and editorial work every month.
+  - Q: How is website promotion different from Google Ads?
+    A: Ads bring traffic while you pay and stop when you stop. SEO builds organic demand that stays and costs less per visitor over time. Most businesses use both, with SEO as the base.
+  - Q: What are GEO and AEO, and does promotion need them?
+    A: AEO structures content so answer engines can extract a direct answer. GEO helps a brand get cited in ChatGPT, Perplexity, Gemini and AI Overviews. Both build on classic SEO; neither replaces it.
 
 ### Backlink Checker - How to Check Backlinks of Any Website (Free + Paid)
 - **URL:** https://anotherseoguru.com/en/blog/backlink-checker
@@ -1312,22 +1392,6 @@ All Greek cities below are indexable for service×location pages. Pattern: `/el/
   - Q: Does SEO content still matter with AI Overviews?
     A: Yes. Clear, cited, experience-rich pages are what AI systems quote. Thin keyword dumps get ignored. Pair content with GEO/AEO practices for answer engines.
 
-### SEO for Hotels in 2026 - Direct Bookings Without OTA Dependency
-- **URL:** https://anotherseoguru.com/en/blog/seo-for-hotels-guide
-- **Locale:** en · **Date:** 2026-07-23
-- **Description:** Practical SEO for hotels guide - room pages, schema, local search, GEO/AEO for AI trip planning, and how Greek hospitality brands win direct bookings.
-- **Embedded FAQ:**
-  - Q: What is SEO for hotels?
-    A: Hotel SEO is optimizing property websites so guests find and book rooms directly via Google and AI assistants - using room pages, schema, local SEO and content that reduces OTA dependency.
-  - Q: How long does hotel SEO take to work?
-    A: Local and branded queries can move in 2–3 months. Competitive destination terms (Santorini, Mykonos, Crete) often need 4–6+ months of content, technical fixes and authority building.
-  - Q: Do hotels need GEO / AEO as well as SEO?
-    A: Yes. Travelers increasingly ask ChatGPT and Perplexity for hotel recommendations. GEO/AEO helps your property get cited in those answers, not only classic search results.
-  - Q: How much does hotel SEO cost in Greece?
-    A: Typically €500–€1,500 per month depending on size, languages and destination competition. One-off technical audits often run €400–€800. Hospitality website packages start from €899.
-  - Q: Can SEO reduce OTA commission spend?
-    A: Yes, when direct bookings rise. Many properties target a 10–25% shift from OTA to direct within 6–12 months without cutting distribution channels entirely.
-
 ### Τι Είναι το SEO; Οδηγός για Αρχάριους (2026)
 - **URL:** https://anotherseoguru.com/el/blog/seo-gia-arxarious
 - **Locale:** el · **Date:** 2026-07-23
@@ -1343,22 +1407,6 @@ All Greek cities below are indexable for service×location pages. Pattern: `/el/
     A: On-page είναι ό,τι βελτιώνετε στη σελίδα (τίτλοι, περιεχόμενο, σύνδεσμοι). Τεχνικό είναι τα θεμέλια (ταχύτητα, ευρετηρίαση, schema). Off-page είναι εξωτερικά σήματα, κυρίως ποιοτικά backlinks.
   - Q: SEO ή διαφημίσεις Google;
     A: Διαφορετικά εργαλεία. Τα Ads φέρνουν άμεση κίνηση όσο πληρώνετε· το SEO χτίζει σταθερή οργανική ροή που μένει μακροπρόθεσμα.
-
-### SEO για Ξενοδοχεία 2026 - Άμεσες Κρατήσεις χωρίς Εξάρτηση από OTAs
-- **URL:** https://anotherseoguru.com/el/blog/seo-gia-xenodoxeia-odigos-2026
-- **Locale:** el · **Date:** 2026-07-23
-- **Description:** Πρακτικός οδηγός SEO για ξενοδοχεία - σελίδες δωματίων, schema, τοπική αναζήτηση, GEO/AEO και πώς ελληνικά hospitality brands κερδίζουν direct bookings.
-- **Embedded FAQ:**
-  - Q: Τι είναι το SEO για ξενοδοχεία;
-    A: Είναι η βελτιστοποίηση της ιστοσελίδας του καταλύματος ώστε οι επισκέπτες να βρίσκουν και να κλείνουν απευθείας μέσω Google και AI βοηθών - με σελίδες δωματίων, schema, τοπικό SEO και περιεχόμενο που μειώνει την εξάρτηση από OTAs.
-  - Q: Σε πόσο καιρό φέρνει αποτέλεσμα το hotel SEO;
-    A: Τοπικές και branded αναζητήσεις συχνά σε 2–3 μήνες. Ανταγωνιστικοί προορισμοί (Σαντορίνη, Μύκονος, Κρήτη) συχνά χρειάζονται 4–6+ μήνες περιεχομένου, τεχνικών διορθώσεων και authority.
-  - Q: Χρειάζονται τα ξενοδοχεία GEO / AEO εκτός από SEO;
-    A: Ναι. Οι ταξιδιώτες ρωτούν ChatGPT και Perplexity για συστάσεις. Το GEO/AEO βοηθά το κατάλυμά σας να εμφανίζεται σε αυτές τις απαντήσεις, όχι μόνο στα κλασικά αποτελέσματα Google.
-  - Q: Πόσο κοστίζει το SEO για ξενοδοχείο στην Ελλάδα;
-    A: Τυπικά €500–€1.500/μήνα ανάλογα με μέγεθος, γλώσσες και ανταγωνισμό προορισμού. Εφάπαξ τεχνικό audit συχνά €400–€800. Πακέτα website ξενοδοχείου από €899.
-  - Q: Μπορώ να μειώσω τις προμήθειες OTA με SEO;
-    A: Ναι, όταν οι άμεσες κρατήσεις αυξάνονται. Πολλοί πελάτες στοχεύουν 10–25% μετατόπιση από OTA σε direct μέσα σε 6–12 μήνες, χωρίς να κόψουν τελείως τα κανάλια διανομής.
 
 ### SEO Στρατηγική για Μικρές Επιχειρήσεις - Πλάνο 90 Ημερών
 - **URL:** https://anotherseoguru.com/el/blog/seo-stratigiki-mikres-epicheiriseis

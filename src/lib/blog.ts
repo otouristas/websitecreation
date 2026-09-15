@@ -143,7 +143,7 @@ function parsePostFile(filePath: string, fileBase: string): BlogPostParsed | nul
     wordCount,
     readingTime: Math.max(1, Math.round(wordCount / 200)),
     content: rp(content),
-    headings: extractHeadings(content),
+    headings: extractHeadings(rp(content)),
   };
 }
 

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 480" width="880" height="480" role="img" aria-labelledby="t d">
+<title id="t">Illustrative progression across a six-month SEO programme</title>
+<desc id="d">Illustrative, not a forecast. Normalised index (0 to 100).</desc>
+<text x="64" y="30" font-family="Inter, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="17" font-weight="600" fill="#777777">Illustrative progression across a six-month SEO programme</text>
+<text x="856" y="30" font-family="Inter, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-style="italic" fill="#777777" text-anchor="end">Illustrative, not a forecast</text>
+<rect x="64" y="48" width="14" height="14" rx="3" fill="#4379bc"/><text x="84" y="60" font-family="Inter, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#777777">Technical foundation</text>
+<rect x="258" y="48" width="14" height="14" rx="3" fill="#1d8c5e"/><text x="278" y="60" font-family="Inter, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#777777">Organic visibility</text>
+<rect x="437.20000000000005" y="48" width="14" height="14" rx="3" fill="#a06b01"/><text x="457.20000000000005" y="60" font-family="Inter, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#777777">Qualified traffic</text>
+<line x1="64" x2="690" y1="424" y2="424" stroke="#808080" stroke-opacity="0.6" stroke-width="1"/><text x="54" y="428" font-family="Inter, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#777777" text-anchor="end">0</text>
+<line x1="64" x2="690" y1="339" y2="339" stroke="#808080" stroke-opacity="0.28" stroke-width="1"/><text x="54" y="343" font-family="Inter, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#777777" text-anchor="end">25</text>
+<line x1="64" x2="690" y1="254" y2="254" stroke="#808080" stroke-opacity="0.28" stroke-width="1"/><text x="54" y="258" font-family="Inter, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#777777" text-anchor="end">50</text>
+<line x1="64" x2="690" y1="169" y2="169" stroke="#808080" stroke-opacity="0.28" stroke-width="1"/><text x="54" y="173" font-family="Inter, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#777777" text-anchor="end">75</text>
+<line x1="64" x2="690" y1="84" y2="84" stroke="#808080" stroke-opacity="0.28" stroke-width="1"/><text x="54" y="88" font-family="Inter, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#777777" text-anchor="end">100</text>
+<text transform="translate(18 254) rotate(-90)" font-family="Inter, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#777777" text-anchor="middle">Normalised index (0 to 100)</text>
+<text x="64" y="448" font-family="Inter, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#777777" text-anchor="middle">Launch</text>
+<text x="168.33333333333331" y="448" font-family="Inter, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#777777" text-anchor="middle">Month 1</text>
+<text x="272.66666666666663" y="448" font-family="Inter, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#777777" text-anchor="middle">Month 2</text>
+<text x="377" y="448" font-family="Inter, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#777777" text-anchor="middle">Month 3</text>
+<text x="481.3333333333333" y="448" font-family="Inter, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#777777" text-anchor="middle">Month 4</text>
+<text x="585.6666666666667" y="448" font-family="Inter, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#777777" text-anchor="middle">Month 5</text>
+<text x="690" y="448" font-family="Inter, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#777777" text-anchor="middle">Month 6</text>
+<path d="M64.0 356.0 L168.3 203.0 L272.7 145.2 L377.0 118.0 L481.3 104.4 L585.7 94.2 L690.0 84.0" fill="none" stroke="#4379bc" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M64.0 407.0 L168.3 383.2 L272.7 342.4 L377.0 291.4 L481.3 237.0 L585.7 179.2 L690.0 131.6" fill="none" stroke="#1d8c5e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M64.0 413.8 L168.3 400.2 L272.7 376.4 L377.0 339.0 L481.3 291.4 L585.7 237.0 L690.0 186.0" fill="none" stroke="#a06b01" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="64.0" cy="356.0" r="4" fill="#4379bc"/><circle cx="168.3" cy="203.0" r="4" fill="#4379bc"/><circle cx="272.7" cy="145.2" r="4" fill="#4379bc"/><circle cx="377.0" cy="118.0" r="4" fill="#4379bc"/><circle cx="481.3" cy="104.4" r="4" fill="#4379bc"/><circle cx="585.7" cy="94.2" r="4" fill="#4379bc"/><circle cx="690.0" cy="84.0" r="4" fill="#4379bc"/>
+<circle cx="64.0" cy="407.0" r="4" fill="#1d8c5e"/><circle cx="168.3" cy="383.2" r="4" fill="#1d8c5e"/><circle cx="272.7" cy="342.4" r="4" fill="#1d8c5e"/><circle cx="377.0" cy="291.4" r="4" fill="#1d8c5e"/><circle cx="481.3" cy="237.0" r="4" fill="#1d8c5e"/><circle cx="585.7" cy="179.2" r="4" fill="#1d8c5e"/><circle cx="690.0" cy="131.6" r="4" fill="#1d8c5e"/>
+<circle cx="64.0" cy="413.8" r="4" fill="#a06b01"/><circle cx="168.3" cy="400.2" r="4" fill="#a06b01"/><circle cx="272.7" cy="376.4" r="4" fill="#a06b01"/><circle cx="377.0" cy="339.0" r="4" fill="#a06b01"/><circle cx="481.3" cy="291.4" r="4" fill="#a06b01"/><circle cx="585.7" cy="237.0" r="4" fill="#a06b01"/><circle cx="690.0" cy="186.0" r="4" fill="#a06b01"/>
+<text x="702" y="88" font-family="Inter, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#777777"><tspan font-weight="600">100</tspan> Technical foundation</text>
+<text x="702" y="135.60000000000002" font-family="Inter, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#777777"><tspan font-weight="600">86</tspan> Organic visibility</text>
+<text x="702" y="190.00000000000003" font-family="Inter, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#777777"><tspan font-weight="600">70</tspan> Qualified traffic</text>
+</svg>

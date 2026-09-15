@@ -1,11 +1,11 @@
-Last-Updated: 2026-09-10
+Last-Updated: 2026-09-15
 Canonical: https://anotherseoguru.com/llms.txt
 Long-form: https://anotherseoguru.com/llms-full.txt
 Sitemap: https://anotherseoguru.com/sitemap.xml
 
 # AnotherSEOGuru - Platform Index & Directory
 Source: https://anotherseoguru.com
-Last Updated: 2026-09-10
+Last Updated: 2026-09-15
 
 > AnotherSEOGuru is a web design & SEO agency based in Greece (serving Greek and international clients), specializing in tourism & hospitality websites, with GEO/AEO (AI visibility) services and a secondary GSC-native SEO software platform.
 
@@ -44,8 +44,8 @@ Structured context so AI assistants and AI search engines can cite accurate Anot
 - [Σχεδιασμός με SEO](https://anotherseoguru.com/el/services/seo-web-design) - Σχεδιασμός με τεχνικό SEO, schema, εσωτερικούς συνδέσμους και αρχιτεκτονική που κατατάσσεται ψηλά.
 - [Speed Optimization](https://anotherseoguru.com/en/services/speed-optimization) - Website performance optimization for faster load times. Improve user experience and boost your search rankings.
 - [Βελτιστοποίηση Ταχύτητας](https://anotherseoguru.com/el/services/speed-optimization) - Core Web Vitals, caching και βελτιστοποίηση κώδικα για ταχύτερη ιστοσελίδα και καλύτερες κατατάξεις.
-- [AI Visibility (GEO / AEO)](https://anotherseoguru.com/en/services/ai-visibility) - AI SEO agency services for Generative Engine Optimization (GEO) and Answer Engine Optimization (AEO). Get cited in ChatGPT, Perplexity and Google AI Overviews, not just classic rankings.
-- [AI SEO Agency (GEO / AEO)](https://anotherseoguru.com/el/services/ai-visibility) - Υπηρεσίες AI SEO agency για Generative Engine Optimization (GEO) και Answer Engine Optimization (AEO). Εμφανιστείτε σε ChatGPT, Perplexity και Google AI Overviews, όχι μόνο στα κλασικά αποτελέσματα.
+- [AI Visibility (GEO / AEO)](https://anotherseoguru.com/en/services/ai-visibility) - GEO and AEO for businesses: entity clarity, answer-shaped pages and measurement so answer engines can use your content. No citation promises.
+- [Ορατότητα σε AI (GEO / AEO)](https://anotherseoguru.com/el/services/ai-visibility) - GEO και AEO για επιχειρήσεις: σαφή στοιχεία, σελίδες σε μορφή απάντησης και μέτρηση, ώστε οι μηχανές απάντησης να μπορούν να χρησιμοποιήσουν το περιεχόμενό σας. Χωρίς υποσχέσεις αναφοράς.
 - [Logo Design](https://anotherseoguru.com/en/services/logo-design) - Professional logo design and brand kit creation. Build a memorable brand identity that stands out.
 - [Σχεδιασμός Λογοτύπου](https://anotherseoguru.com/el/services/logo-design) - Επαγγελματικό λογότυπο και πλήρες κιτ εταιρικής ταυτότητας για αναγνωρισιμότητα στην αγορά σας.
 - [Content Creation](https://anotherseoguru.com/en/services/content-creation) - SEO content services: service pages, location pages, and blogs mapped to real search demand, built to rank and convert.
@@ -55,7 +55,7 @@ Structured context so AI assistants and AI search engines can cite accurate Anot
 - [Link Building](https://anotherseoguru.com/en/services/link-building) - White-hat link building services that earn relevant, editorial backlinks, not spam directories, to grow authority and rankings.
 - [Δημιουργία Backlinks](https://anotherseoguru.com/el/services/link-building) - Ποιοτικά backlinks, digital PR και τοποθετήσεις σε σχετικές ιστοσελίδες για αύξηση της αυθεντίας του domain σας.
 - [SEO Audits](https://anotherseoguru.com/en/services/seo-audits) - SEO audit services and technical SEO services: prioritized crawl, indexation, Core Web Vitals, and on-page fixes that unlock rankings.
-- [Υπηρεσίες SEO & Τεχνικός Έλεγχος](https://anotherseoguru.com/el/services/seo-audits) - Υπηρεσίες SEO για ιστοσελίδες στην Ελλάδα: τεχνικός έλεγχος, on-page, λέξεις-κλειδιά, τοπικό SEO και μηνιαία προώθηση. Διαφανή πακέτα από €500/μήνα.
+- [SEO Audit & Τεχνικός Έλεγχος](https://anotherseoguru.com/el/services/seo-audits) - Υπηρεσίες SEO για ιστοσελίδες στην Ελλάδα: τεχνικός έλεγχος, on-page, λέξεις-κλειδιά, τοπικό SEO και μηνιαία προώθηση. Διαφανή πακέτα από €500/μήνα.
 - [E-shop WooCommerce](https://anotherseoguru.com/en/services/eshop-woocommerce) - High-converting, fully customized WooCommerce e-shops. Integrated secure payments, shipping calculators, and automated inventory systems.
 - [Κατασκευή E-shop WooCommerce](https://anotherseoguru.com/el/services/eshop-woocommerce) - Υψηλής μετατροπής, πλήρως προσαρμοσμένα ηλεκτρονικά καταστήματα (e-shops) WooCommerce με ενσωματωμένες πληρωμές, μεταφορικά και SEO.
 - [E-shop SEO](https://anotherseoguru.com/en/services/eshop-seo) - Ecommerce SEO services for online stores: category and product optimization, schema, speed, and content that drives organic sales.
@@ -140,8 +140,6 @@ Nationwide Greece coverage with service×city landing pages. Money-page examples
 - [Skydream Travel](https://anotherseoguru.com/en/work/skydream-travel) - Skydream Travel: travel agency and holiday packages for Greece, SEO for “SkyDream Travel”, with trust signals and a clear inquiry path. · Live: https://www.skydream.travel
 - [Kaffatos VIP Transfers](https://anotherseoguru.com/en/work/kaffatos-vip-transfers) - Kaffatos VIP Transfers: VIP chauffeur transfers website for Greece / Athens region, SEO for “VIP transfers Greece”, ready for organic growth in Greece / Athens region. · Live: https://kaffatosviptransfers.com
 - [Navos AI](https://anotherseoguru.com/en/work/navos-ai) - Navos AI: AI strategy advisor SaaS website for global SaaS market, SEO for “Navos AI”, structured around “Navos AI”. · Live: https://navos.ai
-- [Project Shadow AI](https://anotherseoguru.com/en/work/project-shadow-ai) - Project Shadow AI: AI tooling for online stores for global e-commerce, SEO for “Project Shadow AI”, with technical SEO from day one. · Live: https://projectshadow.ai
-- [Greece Cyclades](https://anotherseoguru.com/en/work/greece-cyclades) - Greece Cyclades: Cyclades travel brand website for Cyclades, Greece, SEO for “Greece Cyclades”, focused on broad Cyclades discovery positioning versus island-specific siblings. · Live: https://greececyclades.com
 - [Erebos](https://anotherseoguru.com/en/work/erebos) - Erebos: real-time GPS vehicle tracking platform for Greece and the EU, SEO for “Erebos GPS tracking”, with trust signals and a clear signup path. · Live: https://erebos.gr
 - [Logopedia](https://anotherseoguru.com/en/work/logopedia) - Logopedia: speech therapy education and practice website for Greece, SEO for “Logopedia”, with technical SEO from day one. · Live: https://logopedia.edu.gr
 - [Naxos Car Rental](https://anotherseoguru.com/en/work/naxos-car-rental) - Naxos Car Rental: Naxos car rental brand for Naxos, SEO for “Naxos car rental”, structured around “Naxos car rental”. · Live: https://naxos-car-rental.com
@@ -160,6 +158,7 @@ Nationwide Greece coverage with service×city landing pages. Money-page examples
 - [Cuba Travel Academy](https://anotherseoguru.com/en/work/cuba-travel-academy) - Cuba Travel Academy: Cuba travel education academy for Cuba travel (Greek audience), SEO for “Cuba Travel Academy”, ready for organic growth in Cuba travel (Greek audience). · Live: https://www.cubatravel.academy
 - [The Ace VIP](https://anotherseoguru.com/en/work/the-ace-vip) - The Ace VIP: Mykonos luxury villas and premium concierge for Mykonos, SEO for “Mykonos VIP villas”, with technical SEO from day one. · Live: https://theacevip.com
 - [Antiparos Transfer](https://anotherseoguru.com/en/work/antiparos-transfer) - Antiparos Transfer: luxury island transfer service for Antiparos and Paros, SEO for “Antiparos transfer”, with trust signals and a clear booking path. · Live: https://antiparostransfer.gr
+- [Project Shadow AI](https://anotherseoguru.com/en/work/project-shadow-ai) - Project Shadow AI: AI tooling for online stores for global e-commerce, SEO for “Project Shadow AI”, with technical SEO from day one. · Live: https://projectshadow.ai
 - [Rethemnos](https://anotherseoguru.com/en/work/rethemnos) - Rethemnos: Rethymno tourism portal and local guide for Rethymno, SEO for “Rethymno tourism”, with trust signals and a clear inquiry path. · Live: https://rethemnos.gr
 - [Ktima Orion](https://anotherseoguru.com/en/work/ktima-orion) - Ktima Orion: wedding and events estate for Keratea, Attica, SEO for “Ktima Orion”, focused on wedding, baptism and event venue SEO for Attica couples. · Live: https://ktimaorion.gr
 - [Weddings Folegandros](https://anotherseoguru.com/en/work/weddings-folegandros) - Weddings Folegandros: destination wedding planning website for Folegandros, SEO for “Folegandros weddings”, with technical SEO from day one. · Live: https://weddings-folegandros.gr
@@ -184,6 +183,7 @@ Nationwide Greece coverage with service×city landing pages. Money-page examples
 - [Stretcher Stopper](https://anotherseoguru.com/en/work/stretcher-stopper) - Stretcher Stopper: medical stretcher wall-protection product website for United States / healthcare facilities, SEO for “Stretcher Stopper”, ready for organic growth in United States / healthcare facilities. · Live: https://stretcherstopper.com
 - [Antiparos Rooms](https://anotherseoguru.com/en/work/antiparos-rooms) - Antiparos Rooms: seaside rooms and apartments website for Antiparos, SEO for “Antiparos rooms”, with trust signals and a clear booking path. · Live: https://antiparosrooms.com
 - [Travel Sifnos](https://anotherseoguru.com/en/work/travel-sifnos) - Travel Sifnos: Sifnos travel guide for Sifnos, SEO for “Travel Sifnos”, ready for organic growth in Sifnos. · Live: https://travelsifnos.com
+- [Greece Cyclades](https://anotherseoguru.com/en/work/greece-cyclades) - Greece Cyclades: Cyclades travel brand website for Cyclades, Greece, SEO for “Greece Cyclades”, focused on broad Cyclades discovery positioning versus island-specific siblings. · Live: https://greececyclades.com
 - [Agrocult](https://anotherseoguru.com/en/work/agrocult) - Agrocult: pest control, landscaping and agri services for Rethymno, SEO for “Agrocult Rethymno”, with trust signals and a clear inquiry path. · Live: https://agrocult.gr
 - [Ergo & Art](https://anotherseoguru.com/en/work/ergo-and-art) - Ergo & Art: architecture and spatial design studio for Greece, SEO for “Ergo and Art”, with trust signals and a clear inquiry path. · Live: https://ergoandart.gr
 - [Fitness Hood Training Center](https://anotherseoguru.com/en/work/fitness-hood) - Fitness Hood Training Center: strength and discipline training center for Greece, SEO for “Fitness Hood”, ready for organic growth in Greece. · Live: https://fitnesshoodtrainingcenter.gr
@@ -195,7 +195,11 @@ Nationwide Greece coverage with service×city landing pages. Money-page examples
 - [Taverna Yiannis](https://anotherseoguru.com/en/work/taverna-yiannis) - Taverna Yiannis: family traditional Cretan taverna for Platanes, Rethymno, SEO for “Taverna Yiannis Platanes”, with technical SEO from day one. · Live: https://tavernayiannis.gr
 - [vwanaki](https://anotherseoguru.com/en/work/vwanaki) - vwanaki: mobile cocktail bar for events for Greece, SEO for “mobile cocktail bar Greece”, with trust signals and a clear inquiry path. · Live: https://vwanaki.gr
 
-## Blog & Guides (71 posts)
+## Blog & Guides (73 posts)
+- [Κατασκευή Ιστοσελίδας το 2026: Τι Αγοράζετε](https://anotherseoguru.com/el/blog/kataskevi-istoselidas-2026) - Κατασκευή ιστοσελίδας το 2026: WordPress ή Next.js, κόστος, ταχύτητα, SEO, GEO/AEO, ασφάλεια και τι πρέπει να περιλαμβάνει μια σύγχρονη κατασκευή.
+- [Προώθηση Ιστοσελίδας 2026: Κόστος SEO & ROI](https://anotherseoguru.com/el/blog/proothisi-istoselidas-2026) - Προώθηση ιστοσελίδας το 2026: τι κοστίζει το SEO, γιατί θέλει έξι και πλέον μήνες, τι γίνεται κάθε μήνα και πώς μετράμε την απόδοση, χωρίς εγγυήσεις.
+- [Website Development 2026: What to Pay For](https://anotherseoguru.com/en/blog/website-development-2026) - Website development in 2026: WordPress vs modern stacks, cost, speed, SEO, GEO/AEO, security and what a serious website build should include to earn its keep.
+- [Website Promotion in 2026: SEO Cost & ROI](https://anotherseoguru.com/en/blog/website-promotion-seo-investment-2026) - Website promotion in 2026: SEO pricing, realistic timelines, what happens in each month of a six-month plan and how to measure ROI beyond rankings.
 - [Backlink Checker - How to Check Backlinks of Any Website (Free + Paid)](https://anotherseoguru.com/en/blog/backlink-checker) - What a backlink checker does, how to check backlinks free in Google Search Console, how to check competitor backlinks, spot toxic links, and which to use.
 - [Semantic Keyword Clustering - A Practical Guide](https://anotherseoguru.com/en/blog/semantic-keyword-clustering) - What semantic keyword clustering is, how embeddings and intent grouping work, how to do it with or without Python, and how to turn clusters into a plan.
 - [Google Search Operators Guide (2026)](https://anotherseoguru.com/en/blog/google-search-operators-2026) - Working Google search operators in 2026 - site:, intitle:, inurl:, filetype:, and combos for SEO audits, competitor research, and content gaps.
@@ -213,9 +217,7 @@ Nationwide Greece coverage with service×city landing pages. Money-page examples
 - [On-Page SEO - How to Optimize a Page That Ranks](https://anotherseoguru.com/en/blog/on-page-seo) - What on-page SEO is and how to do it - titles, headings, content, internal links, schema and a practical 2026 checklist with costs and timelines.
 - [Πόσο Κοστίζει το SEO; Τιμές 2026](https://anotherseoguru.com/el/blog/poso-kostizei-to-seo) - Πόσο κοστίζει το SEO στην Ελλάδα; Πίνακας τιμών SEO και τι περιλαμβάνει κάθε πακέτο. Διαφανείς τιμές σε € - χωρίς κρυφές χρεώσεις.
 - [SEO Content - How to Write Pages That Rank and Convert](https://anotherseoguru.com/en/blog/seo-content-guide) - What SEO content is and how to write it: intent, structure, FAQs, proof and internal links, plus formats, costs, timelines and when to outsource it.
-- [SEO for Hotels in 2026 - Direct Bookings Without OTA Dependency](https://anotherseoguru.com/en/blog/seo-for-hotels-guide) - Practical SEO for hotels guide - room pages, schema, local search, GEO/AEO for AI trip planning, and how Greek hospitality brands win direct bookings.
 - [Τι Είναι το SEO; Οδηγός για Αρχάριους (2026)](https://anotherseoguru.com/el/blog/seo-gia-arxarious) - Τι είναι το SEO με απλά λόγια. Πώς κατατάσσει η Google, on-page, τεχνικό, off-page και τοπικό SEO, λέξεις-κλειδιά, κόστος και από πού ξεκινάτε.
-- [SEO για Ξενοδοχεία 2026 - Άμεσες Κρατήσεις χωρίς Εξάρτηση από OTAs](https://anotherseoguru.com/el/blog/seo-gia-xenodoxeia-odigos-2026) - Πρακτικός οδηγός SEO για ξενοδοχεία - σελίδες δωματίων, schema, τοπική αναζήτηση, GEO/AEO και πώς ελληνικά hospitality brands κερδίζουν direct bookings.
 - [SEO Στρατηγική για Μικρές Επιχειρήσεις - Πλάνο 90 Ημερών](https://anotherseoguru.com/el/blog/seo-stratigiki-mikres-epicheiriseis) - SEO συμβουλές και στρατηγική για μικρές επιχειρήσεις στην Ελλάδα. Τι να κάνετε τις πρώτες 90 μέρες, κόστος, λάθη να αποφύγετε και πότε να προσλάβετε agency.
 - [Technical SEO Guide - Crawl, Index, Speed & Schema](https://anotherseoguru.com/en/blog/technical-seo-guide) - What technical SEO is, a practical 2026 checklist, Core Web Vitals, schema, common mistakes, costs and when to hire technical SEO services or run an audit.
 - [Τεχνικό SEO - Checklist για Καλύτερη Κατάταξη Google (2026)](https://anotherseoguru.com/el/blog/techniko-seo) - Τι είναι το τεχνικό SEO και πώς βελτιώνει την κατάταξη στη Google. Crawl, index, Core Web Vitals, schema, λάθη, κόστος και πρακτικό checklist.

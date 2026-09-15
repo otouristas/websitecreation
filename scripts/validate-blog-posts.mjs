@@ -41,6 +41,11 @@ const ALLOW_LONG = new Set([
   'glossary-strategy-internal-linking',
   'poso-kostizei-to-seo',
   'backlink-checker',
+  // 2026-09 pillar pair: website development + website promotion, EL and EN
+  'kataskevi-istoselidas-2026',
+  'website-development-2026',
+  'proothisi-istoselidas-2026',
+  'website-promotion-seo-investment-2026',
 ]);
 
 const CTA_RE =
