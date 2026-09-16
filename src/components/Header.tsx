@@ -20,8 +20,12 @@ import { trackCtaClick } from "@/lib/analytics";
 const linkClass =
   "rounded-full px-3.5 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-foreground/6 hover:text-foreground";
 
+/* Not `glass`: the pill's own backdrop-filter makes it the backdrop root, so
+   a nested blur only samples the pill, never the page underneath, and at 72%
+   the heading of the page read straight through the open menu. Even 95%
+   left a 60px display heading ghosting through, so the panel is opaque. */
 const dropdownPanelInnerClass =
-  "glass min-w-[15rem] max-w-[22rem] rounded-2xl bg-popover/90 p-2 shadow-[0_24px_60px_-28px_oklch(0_0_0/70%)]";
+  "min-w-[15rem] max-w-[22rem] rounded-2xl border border-hairline bg-popover p-2 shadow-[inset_0_1px_0_0_oklch(1_0_0/6%),0_24px_60px_-28px_oklch(0_0_0/70%)]";
 
 const dropdownItemClass =
   "block rounded-xl px-4 py-2.5 text-sm text-muted-foreground transition-colors hover:bg-surface-raised hover:text-foreground";
@@ -149,10 +153,22 @@ export default function Header({
         className="pointer-events-none fixed left-0 right-0 top-0 z-50 px-2 pt-3 min-[400px]:px-3 sm:px-6"
         aria-label="Main"
       >
+        {/* Full-width ground behind the floating pill. The pill is narrower
+            than the viewport and translucent, so page content (breadcrumbs,
+            headings) used to stay visible in the gutters beside it, in the
+            gap above it and through it as it scrolled underneath. This band
+            fades that content out across the whole header height; it is
+            transparent at the top of the page so the hero keeps its light. */}
         <div
-          className={`pointer-events-auto mx-auto flex max-w-6xl items-center gap-2 rounded-2xl border px-2.5 py-2.5 transition-[background-color,border-color,box-shadow] duration-300 min-[400px]:px-3 sm:gap-4 sm:px-5 sm:py-3 lg:rounded-full ${
+          aria-hidden="true"
+          className={`pointer-events-none absolute inset-x-0 top-0 -z-10 h-[calc(var(--site-header-height)+0.75rem)] bg-[linear-gradient(to_bottom,var(--background)_calc(100%_-_1rem),transparent_100%)] transition-opacity duration-300 ${
+            isScrolled ? "opacity-100" : "opacity-0"
+          }`}
+        />
+        <div
+          className={`pointer-events-auto relative mx-auto flex max-w-6xl items-center gap-2 rounded-2xl border px-2.5 py-2.5 transition-[background-color,border-color,box-shadow] duration-300 min-[400px]:px-3 sm:gap-4 sm:px-5 sm:py-3 lg:rounded-full ${
             isScrolled
-              ? "border-hairline bg-surface/70 shadow-[inset_0_1px_0_0_oklch(1_0_0/6%),0_0_0_1px_color-mix(in_oklab,var(--primary)_25%,transparent),0_20px_60px_-30px_color-mix(in_oklab,var(--primary)_60%,transparent),0_16px_40px_-24px_oklch(0_0_0/60%)] backdrop-blur-xl"
+              ? "border-hairline bg-surface/85 shadow-[inset_0_1px_0_0_oklch(1_0_0/6%),0_0_0_1px_color-mix(in_oklab,var(--primary)_25%,transparent),0_20px_60px_-30px_color-mix(in_oklab,var(--primary)_60%,transparent),0_16px_40px_-24px_oklch(0_0_0/60%)] backdrop-blur-xl"
               : "border-transparent bg-surface/30 backdrop-blur-md"
           }`}
         >

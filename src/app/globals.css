@@ -724,10 +724,24 @@
   color: var(--muted-foreground);
 }
 
+/* Tables swipe sideways on narrow screens instead of being clipped by the
+   page ground. The wrapper carries the paragraph rhythm; the table itself
+   never goes below its content width. */
+.markdown-body .markdown-table {
+  max-width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
 .markdown-body table {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.9375rem;
+}
+
+.markdown-body .markdown-table > table {
+  margin: 0;
 }
 
 .markdown-body th,

@@ -162,7 +162,7 @@ export function GlossaryClient({ locale = "en" }: { locale?: SiteLocale }) {
   return (
     <div className="main-below-header flex min-h-[calc(100vh-var(--site-header-height))] flex-col lg:flex-row">
       <aside className="shrink-0 border-hairline bg-surface-raised/40 lg:min-h-screen lg:w-72 lg:border-r border-b lg:border-b-0">
-        <div className="sticky top-[calc(var(--site-header-height)+0.25rem)] max-h-[calc(100vh-var(--site-header-height)-0.5rem)] overflow-y-auto p-4">
+        <div className="sticky top-[calc(var(--site-header-height)+1rem)] max-h-[calc(100vh-var(--site-header-height)-1.25rem)] overflow-y-auto p-4">
           <div className="relative mb-4">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
             <input

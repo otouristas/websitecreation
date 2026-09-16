@@ -50,8 +50,13 @@ export function HeroKinetic({ locale = "en" }: { locale?: SiteLocale }) {
       <Bloom className="left-[20%] top-[-8rem] h-[36rem] w-[64rem] -translate-x-1/2" />
       <Bloom signal className="right-[-10%] top-[10rem] h-[28rem] w-[40rem]" />
 
-      <div className="hero-below-header relative mx-auto grid max-w-6xl items-center gap-14 px-6 pb-20 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-10 lg:pb-28">
-        <div className="relative">
+      {/* Both columns are `min-w-0`: a grid item's automatic minimum is its
+          min-content width, and the answer-engine panel's nowrap labels and
+          the scan result card each measure wider than a 375px phone. Without
+          it the single mobile column grew past the viewport and the
+          headline, the scan widget and the panel were cut off at the edge. */}
+      <div className="hero-below-header relative mx-auto grid grid-cols-[minmax(0,1fr)] max-w-6xl items-center gap-14 px-6 pb-20 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-10 lg:pb-28">
+        <div className="relative min-w-0">
           <Eyebrow className="rise-in">
             {isEl ? t!.badge : "SEO · GEO / AEO · Websites · E-shop"}
           </Eyebrow>
@@ -85,8 +90,8 @@ export function HeroKinetic({ locale = "en" }: { locale?: SiteLocale }) {
           <Kicker items={proofs} className="rise-in mt-10 justify-start [animation-delay:640ms]" />
         </div>
 
-        <div className="relative flex justify-center lg:justify-end">
-          <div className="rise-in relative w-full max-w-[520px] [animation-delay:300ms]">
+        <div className="relative flex min-w-0 justify-center lg:justify-end">
+          <div className="rise-in relative w-full min-w-0 max-w-[520px] [animation-delay:300ms]">
             <Bloom soft className="left-1/2 top-1/2 h-[30rem] w-[36rem] -translate-x-1/2 -translate-y-1/2" />
             <AnswerEnginePanel locale={locale} />
           </div>

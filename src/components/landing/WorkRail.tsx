@@ -95,7 +95,7 @@ export function WorkRail({ locale = "en" }: { locale?: SiteLocale }) {
         <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
           {isEl ? "Σύρετε για περισσότερα" : "Scroll for more"} →
         </p>
-        <GhostButtonLink href={lp("/work")}>
+        <GhostButtonLink href={lp("/work")} className="shrink-0">
           {isEl ? "Όλα τα έργα" : "View all projects"}
         </GhostButtonLink>
       </div>
