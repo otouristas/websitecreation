@@ -130,9 +130,9 @@ export function ServicesBento({ locale = "en" }: { locale?: SiteLocale }) {
 
           {/* Website design: wide hero cell with the Search Console chart */}
           <BentoCell href={lp(web.href)} className="md:col-span-6 lg:col-span-6">
-            <div className="grid gap-6 sm:grid-cols-[1.1fr_1fr] sm:items-center">
-              <div>{cellHeader(web, true)}</div>
-              <div className="hidden sm:block">
+            <div className="grid grid-cols-[minmax(0,1fr)] gap-6 sm:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] sm:items-center">
+              <div className="min-w-0">{cellHeader(web, true)}</div>
+              <div className="hidden min-w-0 sm:block">
                 <ProductFrame url="app.anotherseoguru.com" className="text-left" padded={false}>
                   <div className="p-3">
                     <SearchChart />

@@ -29,8 +29,8 @@ export function BlogProductCta({ locale = 'en' }: { locale?: SiteLocale }) {
     <section className="relative mx-auto w-full max-w-6xl px-6 py-10">
       <div className="relative overflow-hidden rounded-[10px] border border-hairline bg-surface p-8 md:p-10">
         <Bloom soft className="-right-20 top-0 h-64 w-96" />
-        <div className="relative grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-          <div>
+        <div className="relative grid grid-cols-[minmax(0,1fr)] gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-center">
+          <div className="min-w-0">
             <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-brand">
               {isEl ? 'Η πλατφόρμα μας' : 'Our platform'}
             </span>

@@ -277,8 +277,8 @@ export function LocalSeoPage({ locale }: { locale: SiteLocale }) {
       {/* 1 - Hero with the local pack mockup */}
       <section className="relative overflow-hidden border-b border-hairline">
         <Bloom signature className="left-[60%] top-[-10rem] h-[30rem] w-[46rem]" />
-        <div className="main-below-header relative mx-auto grid max-w-6xl gap-12 px-6 pb-16 pt-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-16">
-          <div>
+        <div className="main-below-header relative mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)] gap-12 px-6 pb-16 pt-6 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-center lg:gap-16">
+          <div className="min-w-0">
             <ShellCrumbs items={breadcrumbs} />
             <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-signature">
               {t.eyebrow}
@@ -297,7 +297,7 @@ export function LocalSeoPage({ locale }: { locale: SiteLocale }) {
             </div>
           </div>
 
-          <div>
+          <div className="min-w-0">
             <div className="overflow-hidden rounded-[14px] border border-signature/25 bg-surface ring-1 ring-hairline">
               <div className="border-b border-hairline bg-surface-raised/80 px-4 py-3">
                 <div className="flex items-center gap-2 rounded-full border border-hairline bg-background px-3 py-1.5">

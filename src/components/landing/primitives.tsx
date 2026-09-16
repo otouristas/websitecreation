@@ -207,11 +207,15 @@ export function Kicker({
   );
 }
 
+/* `min-h-12` + vertical padding rather than a fixed `h-12`: a label that has
+   to wrap on a narrow phone ("Get the full audit and a plan in 24h" at 320px)
+   grows the pill instead of spilling out of it. Single-line buttons measure
+   exactly 3rem either way. */
 const primaryBtnClass =
-  "inline-flex h-12 items-center justify-center gap-2 rounded-full px-6 font-display text-sm font-semibold text-primary-foreground bg-[linear-gradient(180deg,var(--primary),var(--primary-deep))] shadow-[inset_0_1px_0_0_oklch(1_0_0/18%),0_0_0_1px_color-mix(in_oklab,var(--primary-glow)_35%,transparent),0_10px_30px_-12px_color-mix(in_oklab,var(--primary)_80%,transparent)] transition-[transform,box-shadow] duration-200 hover:-translate-y-px hover:shadow-[inset_0_1px_0_0_oklch(1_0_0/22%),0_0_0_1px_color-mix(in_oklab,var(--primary-glow)_55%,transparent),0_16px_40px_-14px_color-mix(in_oklab,var(--primary)_90%,transparent)] motion-reduce:transition-none motion-reduce:hover:translate-y-0";
+  "inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-6 py-2.5 text-center font-display text-sm font-semibold text-primary-foreground bg-[linear-gradient(180deg,var(--primary),var(--primary-deep))] shadow-[inset_0_1px_0_0_oklch(1_0_0/18%),0_0_0_1px_color-mix(in_oklab,var(--primary-glow)_35%,transparent),0_10px_30px_-12px_color-mix(in_oklab,var(--primary)_80%,transparent)] transition-[transform,box-shadow] duration-200 hover:-translate-y-px hover:shadow-[inset_0_1px_0_0_oklch(1_0_0/22%),0_0_0_1px_color-mix(in_oklab,var(--primary-glow)_55%,transparent),0_16px_40px_-14px_color-mix(in_oklab,var(--primary)_90%,transparent)] motion-reduce:transition-none motion-reduce:hover:translate-y-0";
 
 const ghostBtnClass =
-  "inline-flex h-12 items-center justify-center gap-2 rounded-full border border-hairline bg-surface/60 px-6 font-display text-sm font-semibold text-foreground backdrop-blur-md transition-colors hover:border-brand/50 hover:bg-surface-raised/80";
+  "inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-hairline bg-surface/60 px-6 py-2.5 text-center font-display text-sm font-semibold text-foreground backdrop-blur-md transition-colors hover:border-brand/50 hover:bg-surface-raised/80";
 
 export { primaryBtnClass, ghostBtnClass };
 

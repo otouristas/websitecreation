@@ -331,8 +331,8 @@ export function RentACarPage({ locale }: { locale: SiteLocale }) {
       {/* 1 - Hero: copy left, booking widget right */}
       <section className="relative overflow-hidden border-b border-hairline">
         <Bloom signature className="left-[62%] top-[-10rem] h-[30rem] w-[46rem]" />
-        <div className="main-below-header relative mx-auto grid max-w-6xl gap-12 px-6 pb-16 pt-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-16">
-          <div>
+        <div className="main-below-header relative mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)] gap-12 px-6 pb-16 pt-6 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-center lg:gap-16">
+          <div className="min-w-0">
             <ShellCrumbs items={breadcrumbs} />
             <span className="inline-flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.18em] text-signature">
               {t.eyebrow}
@@ -351,7 +351,7 @@ export function RentACarPage({ locale }: { locale: SiteLocale }) {
             </div>
           </div>
 
-          <div className="relative">
+          <div className="relative min-w-0">
             <div className="overflow-hidden rounded-[14px] border border-signature/25 bg-surface ring-1 ring-hairline">
               <div className="flex items-center justify-between border-b border-hairline bg-surface-raised/80 px-5 py-3">
                 <span className="text-[11px] font-medium uppercase tracking-[0.16em] text-signature">
@@ -377,7 +377,7 @@ export function RentACarPage({ locale }: { locale: SiteLocale }) {
                     <span className="w-24 shrink-0 text-[11px] uppercase tracking-[0.12em] text-muted-foreground">
                       {label}
                     </span>
-                    <span className="truncate text-sm font-medium text-foreground">{value}</span>
+                    <span className="min-w-0 truncate text-sm font-medium text-foreground">{value}</span>
                   </div>
                 ))}
                 <div className="flex h-11 items-center justify-center rounded-[8px] bg-signature px-5 font-display text-sm font-medium text-white">
@@ -406,8 +406,8 @@ export function RentACarPage({ locale }: { locale: SiteLocale }) {
 
       {/* 3 - Season */}
       <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
-        <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-center lg:gap-16">
-          <div>
+        <div className="grid grid-cols-[minmax(0,1fr)] gap-12 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:items-center lg:gap-16">
+          <div className="min-w-0">
             <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-signature">
               {t.season.eyebrow}
             </span>
@@ -424,7 +424,7 @@ export function RentACarPage({ locale }: { locale: SiteLocale }) {
               ))}
             </ul>
           </div>
-          <div className="rounded-[12px] border border-hairline bg-surface p-6 md:p-8">
+          <div className="min-w-0 rounded-[12px] border border-hairline bg-surface p-6 md:p-8">
             <SeasonCurve months={t.season.months} />
             <p className="mt-5 border-t border-hairline pt-4 text-[11px] leading-relaxed text-muted-foreground">
               {t.season.caption}
@@ -482,8 +482,8 @@ export function RentACarPage({ locale }: { locale: SiteLocale }) {
 
       {/* 5 - Fleet architecture */}
       <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
-        <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
-          <div>
+        <div className="grid grid-cols-[minmax(0,1fr)] gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-16">
+          <div className="min-w-0">
             <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-signature">
               {t.fleet.eyebrow}
             </span>
@@ -501,11 +501,13 @@ export function RentACarPage({ locale }: { locale: SiteLocale }) {
             </ul>
           </div>
 
-          <div className="rule-sheet rounded-[12px] border border-hairline bg-surface p-6 font-mono text-[13px] md:p-7">
+          <div className="rule-sheet min-w-0 rounded-[12px] border border-hairline bg-surface p-6 font-mono text-[13px] md:p-7">
             {t.fleet.tree.map((n) => (
               <div
                 key={n.path}
-                className="flex items-baseline gap-3 py-[7px]"
+                // Wraps so the label drops under the path on a 320px phone
+                // instead of pushing past the edge of the sheet.
+                className="flex flex-wrap items-baseline gap-x-3 gap-y-1 py-[7px]"
                 style={{ paddingLeft: `${n.depth * 1.15}rem` }}
               >
                 {n.depth > 0 && (

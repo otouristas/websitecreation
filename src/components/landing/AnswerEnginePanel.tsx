@@ -125,11 +125,11 @@ export function AnswerEnginePanel({ locale = "en" }: { locale?: SiteLocale }) {
       <div className="rounded-[1.25rem] border border-hairline bg-background/70">
         {/* Title bar */}
         <div className="flex items-center justify-between gap-3 border-b border-hairline px-4 py-3">
-          <span className="inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
+          <span className="inline-flex shrink-0 items-center gap-2 whitespace-nowrap font-mono text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
             <span className="live-dot" aria-hidden />
             {copy.live}
           </span>
-          <span className="truncate font-mono text-[10px] uppercase tracking-[0.14em] text-brand">
+          <span className="min-w-0 truncate font-mono text-[10px] uppercase tracking-[0.14em] text-brand">
             {copy.label}
           </span>
         </div>

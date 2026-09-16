@@ -327,11 +327,11 @@ export function HotelsPage({ locale }: { locale: SiteLocale }) {
 
         <ol className="mt-14 space-y-px overflow-hidden rounded-[12px] border border-hairline bg-hairline">
           {t.leaks.items.map((it) => (
-            <li key={it.n} className="grid gap-4 bg-surface p-7 sm:grid-cols-[4rem_1fr] sm:gap-8 md:p-9">
+            <li key={it.n} className="grid gap-4 bg-surface p-7 sm:grid-cols-[4rem_minmax(0,1fr)] sm:gap-8 md:p-9">
               <span className="font-display text-3xl font-medium tracking-[-0.03em] text-signature/40">
                 {it.n}
               </span>
-              <div>
+              <div className="min-w-0">
                 <h3 className="font-display text-lg font-medium tracking-[-0.02em] text-foreground">
                   {it.t}
                 </h3>

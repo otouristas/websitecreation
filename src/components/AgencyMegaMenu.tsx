@@ -106,8 +106,12 @@ export function AgencyMegaMenu({ locale, label }: { locale: SiteLocale; label: s
             onMouseEnter={openMenu}
             onMouseLeave={scheduleClose}
           >
-            <div className="overflow-hidden rounded-3xl border border-border/80 bg-background/95 shadow-[0_30px_70px_-20px_color-mix(in_oklab,var(--primary)_35%,transparent),0_30px_70px_-30px_oklch(0_0_0/55%)] backdrop-blur-xl">
-            <div className="grid gap-0 lg:grid-cols-[1fr_1fr_0.8fr]">
+            {/* Opaque on purpose: this panel lives inside the header pill,
+                whose backdrop-filter is the backdrop root, so a blur here
+                never samples the page and any translucency let the section
+                headings underneath ghost through the menu. */}
+            <div className="overflow-hidden rounded-3xl border border-border/80 bg-background shadow-[0_30px_70px_-20px_color-mix(in_oklab,var(--primary)_35%,transparent),0_30px_70px_-30px_oklch(0_0_0/55%)]">
+            <div className="grid gap-0 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_minmax(0,0.8fr)]">
               {/* Services (2 columns) */}
               <div className="col-span-2 grid grid-cols-2 gap-1 p-5">
                 <div className="col-span-2 mb-1 px-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">

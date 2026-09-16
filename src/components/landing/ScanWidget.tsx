@@ -343,9 +343,13 @@ export function ScanWidget({ locale = "en", className }: { locale?: SiteLocale; 
           </div>
 
           <div className="mt-6 flex flex-wrap items-center gap-3">
-            <button type="button" onClick={() => setStage("capture")} className={primaryBtnClass}>
+            <button
+              type="button"
+              onClick={() => setStage("capture")}
+              className={cn(primaryBtnClass, "w-full sm:w-auto")}
+            >
               {t.next}
-              <ArrowRight className="size-4" aria-hidden />
+              <ArrowRight className="size-4 shrink-0" aria-hidden />
             </button>
             <button type="button" onClick={reset} className="inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-foreground">
               <RotateCcw className="size-3.5" aria-hidden />
@@ -409,9 +413,13 @@ export function ScanWidget({ locale = "en", className }: { locale?: SiteLocale; 
             {t.thanks}
           </p>
           <div className="mt-5 flex flex-wrap items-center gap-3">
-            <Link href={briefHref} onClick={() => trackCtaClick("scan_continue_brief")} className={ghostBtnClass}>
+            <Link
+              href={briefHref}
+              onClick={() => trackCtaClick("scan_continue_brief")}
+              className={cn(ghostBtnClass, "w-full sm:w-auto")}
+            >
               {t.continueBrief}
-              <ArrowRight className="size-4" aria-hidden />
+              <ArrowRight className="size-4 shrink-0" aria-hidden />
             </Link>
             <a
               href={WHATSAPP_HREF}

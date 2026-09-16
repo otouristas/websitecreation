@@ -50,6 +50,15 @@ export function MarkdownBody({ markdown, locale = "en" }: MarkdownBodyProps) {
       remarkPlugins={[remarkGfm]}
       rehypePlugins={[rehypeHeadingIds]}
       components={{
+        // A GFM table keeps its columns' min-content width, so a four-column
+        // pricing table is ~415px wide on a 375px phone and <main>'s
+        // `overflow: clip` simply cut the last column off. The wrapper turns
+        // that into a horizontal swipe instead.
+        table: ({ children }) => (
+          <div className="markdown-table">
+            <table>{children}</table>
+          </div>
+        ),
         a: ({ href, children }) => {
           if (href?.startsWith("/")) {
             return <Link href={localizeHref(href, locale)}>{children}</Link>;
