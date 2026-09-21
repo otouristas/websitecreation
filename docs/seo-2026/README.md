@@ -213,6 +213,22 @@ belongs inside an existing page, not on a new URL — most fan-outs do.
 2. **Own «τι είναι το GEO» and «τι είναι το AEO».** Seven posts define them in
    parallel, so no page can win either. One definitional page each, and the
    other six link to it instead of redefining.
+   **Partly done (this follow-on):** the English definitional owners now exist
+   under `/resources`, which is EN-only, so there is no Greek duplicate to
+   canonicalise away:
+   - `/en/resources/search-optimization-layers` — the layer model (SEO, AEO,
+     GEO, AIO, DEO, SXO): goal, focus areas, requirements and measurable
+     signals per layer, each linking to the service that does the work.
+     Data in `src/data/search-layers.ts`, rendered by
+     `src/components/ai-search/SearchLayersStack.tsx`.
+   - `/en/resources/ai-search-page-anatomy` — the on-page checklist rebuilt for
+     a model deciding what to cite: twelve annotated parts of a page, on a
+     worked example that is labelled fiction throughout. Data in
+     `src/data/ai-page-anatomy.ts`, rendered by
+     `src/components/ai-search/AiPageAnatomy.tsx`.
+
+   Still open: the **Greek** definitional owners, and pointing the seven posts
+   that currently redefine GEO/AEO at whichever page owns the term.
 3. **Own «Google AI Overview».** Named in 25 of 71 posts, defined by none.
 
 ### P1 — the demand that is already arriving

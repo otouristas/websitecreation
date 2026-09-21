@@ -72,6 +72,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/platform/for/in-house', priority: 0.85, changeFrequency: 'monthly' as const },
     { path: '/platform/for/ecommerce', priority: 0.85, changeFrequency: 'monthly' as const },
     { path: '/resources', priority: 0.88 },
+    // The two framework pages under /resources. They own the definitional
+    // GEO/AEO queries that seven blog posts currently answer in parallel.
+    { path: '/resources/search-optimization-layers', priority: 0.86, changeFrequency: 'monthly' as const },
+    { path: '/resources/ai-search-page-anatomy', priority: 0.86, changeFrequency: 'monthly' as const },
     { path: '/tools', priority: 0.84 },
     // The hub the three /compare/[slug] pages hang off. It did not exist until
     // now, which is why /el/compare's redirect landed on a 404.
