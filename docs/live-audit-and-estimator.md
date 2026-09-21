@@ -47,7 +47,7 @@ self-test asserts that loopback is refused without it.
 Per-IP rate limit is 8 audits a minute, in module memory — per instance on a
 serverless platform, so it is a brake on a browser rather than a quota.
 
-## The estimator
+## The plan panel
 
 `src/lib/estimate/model.ts` is pure: inputs in, line items out. Every line is
 traceable to `src/data/pricing.ts` — the same source the pricing page reads —
@@ -55,8 +55,27 @@ so a price cannot drift between the two. What the price list does not state
 (pages covered per tier, what a second language costs) lives in
 `src/data/estimator-rates.ts` as named constants with the reasoning attached.
 
-Totals shown: one-off, per month, due at kick-off, and the commitment over the
-planned months with a ±15% scoping band. It is an estimate, and the UI says so.
+**The visitor never sees an amount.** The panel names the work — what it
+covers, whether each line is `once` or `monthly`, the minimum term in words,
+and a link to `/pricing` for anyone who wants figures. The quote follows a
+call, which is how the business actually sells.
+
+This started as a cost estimator and it drove leads away. A real audit of a
+Greek hotel site put **"Σύνολο σε 6 μήνες: €11.890"** in front of somebody who
+had typed a domain thirty seconds earlier. A cold visitor cannot evaluate that
+number, so they close the tab — and the lead, which was the point of the whole
+surface, is gone. An earlier pass had already removed a *24-month* slider whose
+total was four times the real `SEO_MIN_TERM_MONTHS` of 6.
+
+The money did not disappear, it moved: `buildEstimate` still runs on every
+input, and its figures — one-off, monthly, and the value over the minimum term
+— travel with the brief, so whoever picks up the call knows the shape of the
+deal before they dial.
+
+Two assertions in the self-test hold the line, because "just show the total" is
+a one-line change somebody will make in good faith: no string in `SCOPE_COPY`
+and no rendered line label or note may contain a currency symbol, and the brief
+must still carry real money.
 
 ## The handover
 

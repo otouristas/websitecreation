@@ -8,6 +8,7 @@ import {
   withVat,
   type Tier,
 } from '@/data/pricing';
+import { SEO_MIN_TERM_MONTHS } from '@/data/company-facts';
 import {
   ESTIMATE_BAND,
   EXTRA_LANGUAGE_SHARE,
@@ -40,7 +41,6 @@ export interface EstimateInput {
   readonly languages: number;
   readonly features: readonly string[];
   readonly seoTier: SeoTierId;
-  readonly seoMonths: number;
   readonly contentPagesPerMonth: number;
   readonly auditDepth: AuditDepth;
   readonly maintenance: boolean;
@@ -67,16 +67,27 @@ export interface Estimate {
   readonly oneOffGross: number;
   readonly monthlyGross: number;
   readonly vatRate: number;
-  /** What is invoiced at kick-off: the build plus the first month. */
-  readonly firstInvoiceNet: number;
-  readonly firstInvoiceGross: number;
-  /** Build plus `seoMonths` of retainer. */
-  readonly commitmentNet: number;
-  readonly commitmentGross: number;
-  readonly commitmentMonths: number;
-  /** The honest scoping band around the commitment figure. */
-  readonly bandLowNet: number;
-  readonly bandHighNet: number;
+  /**
+   * The scoping band, on the one-off only.
+   *
+   * The build is the figure a brief actually moves; the retainer is a
+   * published list price plus a page rate, so bracketing it would imply a
+   * vagueness that is not there.
+   */
+  readonly oneOffLowNet: number;
+  readonly oneOffHighNet: number;
+  /**
+   * Build plus the contractual minimum term, for OUR qualification only.
+   *
+   * It travels with the brief and is never rendered to the visitor. Putting a
+   * multiplied figure on screen turns a monthly decision into a five-figure
+   * one, and the visitor declines a number they were never being asked for.
+   * The minimum term itself is stated in words, exactly as /pricing states it.
+   */
+  readonly minTermNet: number;
+  readonly minTermMonths: number;
+  /** True when there is a retainer, so the term note applies. */
+  readonly hasRetainer: boolean;
   readonly offerActive: boolean;
   /** What the active promotion takes off the packaged prices. */
   readonly savingNet: number;
@@ -90,7 +101,6 @@ export const DEFAULT_ESTIMATE_INPUT: EstimateInput = {
   languages: 1,
   features: ['contact-form'],
   seoTier: 'growth',
-  seoMonths: 6,
   contentPagesPerMonth: 2,
   auditDepth: 'technical',
   maintenance: false,
@@ -98,7 +108,6 @@ export const DEFAULT_ESTIMATE_INPUT: EstimateInput = {
 
 export const PAGE_RANGE = { min: 1, max: 60 } as const;
 export const LANGUAGE_RANGE = { min: 1, max: 5 } as const;
-export const MONTHS_RANGE = { min: 3, max: 24 } as const;
 export const CONTENT_RANGE = { min: 0, max: 8 } as const;
 
 function clamp(value: number, min: number, max: number): number {
@@ -116,7 +125,6 @@ export function normalizeInput(input: Partial<EstimateInput>): EstimateInput {
     features: Array.from(new Set(base.features)).filter((id) => featureRate(id) !== undefined),
     seoTier:
       base.seoTier === 'foundations' || base.seoTier === 'authority' ? base.seoTier : 'growth',
-    seoMonths: clamp(base.seoMonths, MONTHS_RANGE.min, MONTHS_RANGE.max),
     contentPagesPerMonth: clamp(base.contentPagesPerMonth, CONTENT_RANGE.min, CONTENT_RANGE.max),
     auditDepth:
       base.auditDepth === 'none' || base.auditDepth === 'advanced' ? base.auditDepth : 'technical',
@@ -166,8 +174,8 @@ export function buildEstimate(raw: Partial<EstimateInput>, now?: Date): Estimate
         labelEl: `${extraPages} επιπλέον σελίδ${extraPages === 1 ? 'α' : 'ες'}`,
         kind: 'oneoff',
         net: extraPages * rate,
-        noteEn: `${extraPages} × €${rate}`,
-        noteEl: `${extraPages} × €${rate}`,
+        noteEn: 'Designed, written and built like the rest',
+        noteEl: 'Σχεδιασμένες, γραμμένες και φτιαγμένες όπως οι υπόλοιπες',
       });
     }
 
@@ -194,8 +202,8 @@ export function buildEstimate(raw: Partial<EstimateInput>, now?: Date): Estimate
         labelEl: rate.labelEl,
         kind: 'oneoff',
         net: rate.net,
-        noteEn: 'From price; scope moves it',
-        noteEl: 'Τιμή «από». Το scope τη μετακινεί',
+        noteEn: 'Scoped with you before anything is built',
+        noteEl: 'Καθορίζεται μαζί σας πριν φτιαχτεί οτιδήποτε',
       });
     }
   }
@@ -213,8 +221,8 @@ export function buildEstimate(raw: Partial<EstimateInput>, now?: Date): Estimate
       labelEl: `Μηνιαία συνεργασία ${seoTier.name}`,
       kind: 'monthly',
       net: monthly,
-      noteEn: `${input.seoMonths} months planned`,
-      noteEl: `${input.seoMonths} μήνες στο πλάνο`,
+      noteEn: 'Billed monthly',
+      noteEl: 'Χρεώνεται μηνιαία',
     });
 
     if (input.contentPagesPerMonth > 0) {
@@ -225,8 +233,8 @@ export function buildEstimate(raw: Partial<EstimateInput>, now?: Date): Estimate
         labelEl: `${input.contentPagesPerMonth} σελίδ${input.contentPagesPerMonth === 1 ? 'α' : 'ες'} περιεχομένου / μήνα`,
         kind: 'monthly',
         net: input.contentPagesPerMonth * rate,
-        noteEn: `${input.contentPagesPerMonth} × €${rate}`,
-        noteEl: `${input.contentPagesPerMonth} × €${rate}`,
+        noteEn: 'Written against real search demand',
+        noteEl: 'Γραμμένες με βάση την πραγματική ζήτηση αναζήτησης',
       });
     }
   }
@@ -263,8 +271,7 @@ export function buildEstimate(raw: Partial<EstimateInput>, now?: Date): Estimate
   // ---------------------------------------------------------------- totals
   const oneOffNet = lines.filter((l) => l.kind === 'oneoff').reduce((n, l) => n + l.net, 0);
   const monthlyNet = lines.filter((l) => l.kind === 'monthly').reduce((n, l) => n + l.net, 0);
-  const commitmentMonths = wantsSeo || input.maintenance ? input.seoMonths : 0;
-  const commitmentNet = oneOffNet + monthlyNet * commitmentMonths;
+  const hasRetainer = monthlyNet > 0;
 
   return {
     lines,
@@ -273,13 +280,11 @@ export function buildEstimate(raw: Partial<EstimateInput>, now?: Date): Estimate
     oneOffGross: withVat(oneOffNet),
     monthlyGross: withVat(monthlyNet),
     vatRate: VAT_RATE,
-    firstInvoiceNet: oneOffNet + monthlyNet,
-    firstInvoiceGross: withVat(oneOffNet + monthlyNet),
-    commitmentNet,
-    commitmentGross: withVat(commitmentNet),
-    commitmentMonths,
-    bandLowNet: Math.round(commitmentNet * (1 - ESTIMATE_BAND)),
-    bandHighNet: Math.round(commitmentNet * (1 + ESTIMATE_BAND)),
+    oneOffLowNet: Math.round(oneOffNet * (1 - ESTIMATE_BAND)),
+    oneOffHighNet: Math.round(oneOffNet * (1 + ESTIMATE_BAND)),
+    minTermNet: oneOffNet + monthlyNet * SEO_MIN_TERM_MONTHS,
+    minTermMonths: SEO_MIN_TERM_MONTHS,
+    hasRetainer,
     offerActive: isOfferActive(now),
     savingNet: Math.max(0, listPriceOfPackages - paidPriceOfPackages),
     websiteTier,

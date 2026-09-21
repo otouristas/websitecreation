@@ -7,9 +7,9 @@ import { buildEstimate, normalizeInput, type EstimateInput } from '@/lib/estimat
 import { presetForService, recommendFromAudit } from '@/lib/estimate/recommend';
 import { formatPrice } from '@/data/pricing';
 import type { SiteLocale } from '@/lib/i18n/locale';
-import { AUDIT_COPY, ESTIMATE_COPY, PILLAR_LABELS } from './plan-copy';
+import { AUDIT_COPY, SCOPE_COPY, PILLAR_LABELS } from './plan-copy';
 import { LiveAudit } from './LiveAudit';
-import { CostEstimator } from './CostEstimator';
+import { ScopeBuilder } from './ScopeBuilder';
 
 /**
  * Test, then price - the two halves of the same question.
@@ -40,16 +40,17 @@ export function summarizePlan(snapshot: PlanSnapshot, locale: SiteLocale): Recor
   const estimate = buildEstimate(snapshot.input);
   const out: Record<string, string> = {
     'Estimate: scope': `${snapshot.input.track}, ${snapshot.input.pages} pages, ${snapshot.input.languages} language(s)`,
-    'Estimate: SEO': `${snapshot.input.seoTier}, ${snapshot.input.seoMonths} months, ${snapshot.input.contentPagesPerMonth} content pages/month`,
+    'Estimate: SEO': `${snapshot.input.seoTier}, ${snapshot.input.contentPagesPerMonth} content pages/month`,
     'Estimate: audit': snapshot.input.auditDepth,
     'Estimate: features': snapshot.input.features.join(', ') || 'none',
-    'Estimate: one-off net': `€${formatPrice(estimate.oneOffNet, locale)}`,
+    'Estimate: one-off net': `€${formatPrice(estimate.oneOffNet, locale)} (band €${formatPrice(estimate.oneOffLowNet, locale)}–€${formatPrice(estimate.oneOffHighNet, locale)})`,
     'Estimate: monthly net': `€${formatPrice(estimate.monthlyNet, locale)}`,
-    'Estimate: first invoice net': `€${formatPrice(estimate.firstInvoiceNet, locale)}`,
   };
-  if (estimate.commitmentMonths > 0) {
-    out['Estimate: commitment net'] =
-      `€${formatPrice(estimate.commitmentNet, locale)} over ${estimate.commitmentMonths} months (band €${formatPrice(estimate.bandLowNet, locale)}–€${formatPrice(estimate.bandHighNet, locale)})`;
+  // Our qualification figure, not theirs: the visitor is shown a monthly
+  // decision and never a multiple of it.
+  if (estimate.hasRetainer) {
+    out['Estimate: value over min term (not shown to visitor)'] =
+      `€${formatPrice(estimate.minTermNet, locale)} over ${estimate.minTermMonths} months`;
   }
 
   const result = snapshot.result;
@@ -88,7 +89,7 @@ export function InstantPlan({
   className?: string;
 }) {
   const at = AUDIT_COPY[locale];
-  const et = ESTIMATE_COPY[locale];
+  const st = SCOPE_COPY[locale];
 
   const [input, setInput] = useState<EstimateInput>(() =>
     normalizeInput(presetForService(service ?? null)),
@@ -152,16 +153,16 @@ export function InstantPlan({
       <section aria-labelledby="live-estimate-title">
         <p className="inline-flex items-center gap-2 font-mono text-[11px] font-medium uppercase tracking-[0.18em] text-brand">
           <span aria-hidden className="size-1.5 rounded-full bg-brand" />
-          {et.eyebrow}
+          {st.eyebrow}
         </p>
         <h2
           id="live-estimate-title"
           className="mt-4 font-display text-[clamp(1.75rem,3.6vw,2.75rem)] font-semibold leading-[1.05] tracking-[-0.04em] text-foreground"
         >
-          {et.title}
+          {st.title}
         </h2>
-        <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground">{et.intro}</p>
-        <CostEstimator
+        <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground">{st.intro}</p>
+        <ScopeBuilder
           id="live-estimate"
           locale={locale}
           input={input}
