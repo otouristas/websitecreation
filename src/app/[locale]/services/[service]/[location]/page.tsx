@@ -23,6 +23,7 @@ import {
     generateServiceSchema,
     combineSchemas,
     BASE_URL,
+    EL_CITY_HEAD_TERM_SERVICE as CITY_SEO_HUB_SLUG,
 } from '@/lib/seo';
 import { SchemaMarkup, Breadcrumbs, LocationContent } from '@/components/seo';
 import { getServiceLocationBreadcrumbs } from '@/lib/linking';
@@ -103,7 +104,22 @@ export default async function ServiceLocationPage({ params }: PageProps) {
         location.countryCode === 'US' ? stateFull : location.country;
 
     const nearbyCities = getNearbyLocations(location, 6);
-    const relatedServices = services.filter((s) => s.slug !== serviceSlug).slice(0, 3);
+
+    /**
+     * On a Greek city, `local-seo` is the page that owns the bare "SEO {city}"
+     * head term (see EL_CITY_HEAD_TERM_SERVICE in lib/seo/metadata.ts). The
+     * related-services block took the first three services in `services` order
+     * every time, so the hub was never linked from the other eleven pages in
+     * its own city - the consolidation had no internal links behind it. Put the
+     * hub first on Greek pages and fill the rest from the default order.
+     */
+    const isElCityHub = isEl && isGreekLocation(location) && serviceSlug === CITY_SEO_HUB_SLUG;
+    const promoteCityHub = isEl && isGreekLocation(location) && serviceSlug !== CITY_SEO_HUB_SLUG;
+    const cityHubService = promoteCityHub ? getServiceBySlug(CITY_SEO_HUB_SLUG) : undefined;
+    const relatedServices = [
+        ...(cityHubService ? [cityHubService] : []),
+        ...services.filter((s) => s.slug !== serviceSlug && s.slug !== cityHubService?.slug),
+    ].slice(0, 3);
     
     // Breadcrumbs translated
     const breadcrumbs = getServiceLocationBreadcrumbs(
@@ -116,8 +132,18 @@ export default async function ServiceLocationPage({ params }: PageProps) {
 
 
     const t = isEl ? {
-        heroTitle: `${serviceName} ${cityLocative}`,
-        heroDesc: `Ψάχνετε για ${serviceFor} ${cityLocative}; Δουλεύουμε με δεδομένα από το Google Search Console και παραδίδουμε αποτελέσματα που κατατάσσονται ψηλά στη Google και σε μηχανές αναζήτησης AI - με διαφανείς τιμές σε ${location.currency === 'EUR' ? 'Ευρώ (€)' : location.currency}.`,
+        // The city hub's H1 matches the head term its title claims ("SEO Κως")
+        // instead of restating the service name; heroDesc below still carries
+        // the locative ("στην Κω"), so the page reads naturally either way.
+        heroTitle: isElCityHub ? `SEO ${cityName}` : `${serviceName} ${cityLocative}`,
+        // The hub opens on the vocabulary Greek searchers actually use for this
+        // intent. GSC has 141 impressions on "προώθηση ιστοσελίδων {city}" at
+        // positions 24-84 and ~325 on "υπηρεσίες SEO" variants, while the phrase
+        // "προώθηση ιστοσελίδων" appeared on three pages of the whole site and on
+        // no city page at all - we were answering the query in different words.
+        heroDesc: isElCityHub
+            ? `Υπηρεσίες SEO και προώθηση ιστοσελίδων ${cityLocative}, για επιχειρήσεις που θέλουν να εμφανίζονται όταν τις ψάχνουν οι πελάτες τους. Δουλεύουμε με δεδομένα από το Google Search Console και παραδίδουμε αποτελέσματα που κατατάσσονται ψηλά στη Google και σε μηχανές αναζήτησης AI - με διαφανείς τιμές σε ${location.currency === 'EUR' ? 'Ευρώ (€)' : location.currency}.`
+            : `Ψάχνετε για ${serviceFor} ${cityLocative}; Δουλεύουμε με δεδομένα από το Google Search Console και παραδίδουμε αποτελέσματα που κατατάσσονται ψηλά στη Google και σε μηχανές αναζήτησης AI - με διαφανείς τιμές σε ${location.currency === 'EUR' ? 'Ευρώ (€)' : location.currency}.`,
         getQuote: `Προσφορά για ${cityName}`,
         allLocations: 'Όλες οι Τοποθεσίες',
         browseCities: 'Πλοήγηση σε Πόλεις',
@@ -379,7 +405,12 @@ export default async function ServiceLocationPage({ params }: PageProps) {
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                             {relatedServices.map((related) => {
                                 const relEl = isEl ? getServiceEl(related.slug) : null;
-                                const relName = relEl?.name ?? related.name;
+                                const isHubCard = promoteCityHub && related.slug === CITY_SEO_HUB_SLUG;
+                                // Anchor the hub with the head term itself, so the
+                                // internal links pointing at it say what it ranks for.
+                                const relName = isHubCard
+                                    ? `SEO ${cityName}`
+                                    : relEl?.name ?? related.name;
                                 const relDesc = relEl?.description ?? related.description;
                                 return (
                                     <Link

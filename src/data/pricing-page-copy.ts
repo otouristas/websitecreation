@@ -62,10 +62,16 @@ export interface PricingPageCopy {
 }
 
 const el: PricingPageCopy = {
-  metaTitle: 'Πόσο κοστίζει το SEO',
+  // The verb phrase "πόσο κοστίζει το SEO" had the title to itself, but GSC
+  // shows the bare noun forms are the larger half of this cluster and the ones
+  // we rank worst on: "seo κοστοσ" (187 impr, pos 60) and "seo τιμεσ" (116,
+  // pos 47) against "ποσο κοστιζει το seo" (148, pos 37). The verb phrase is
+  // still the H2, the first FAQ question and the `cost.title` below, so this
+  // trades a duplicated phrase for the nouns nothing on the page carried.
+  metaTitle: 'Κόστος SEO και τιμές στην Ελλάδα',
   metaDescription:
     'Πόσο κοστίζει το SEO στην Ελλάδα: μηνιαία πακέτα από {{ENTRY_SEO}} έως {{SEO_AUTHORITY}} (προ ΦΠΑ 24%). Ιστοσελίδα από {{ENTRY_WEBSITE}} έως {{WEBSITE_BUSINESS}}+. Χωρίς εγγυήσεις θέσης. Δείτε πακέτα.',
-  primaryKeyword: 'πόσο κοστίζει το seo',
+  primaryKeyword: 'κόστος seo',
   h1: 'Τιμές SEO και κατασκευής ιστοσελίδων',
   heroLead:
     'Οι τιμές μας δεν βασίζονται στο πόσο φθηνά μπορούμε να παραδώσουμε μια λίστα εργασιών. Βασίζονται στον χρόνο, την τεχνική εργασία, την έρευνα, το περιεχόμενο και τη στρατηγική που απαιτείται για πραγματική οργανική ανάπτυξη.',
@@ -75,8 +81,12 @@ const el: PricingPageCopy = {
     title: 'Πόσο κοστίζει το SEO στην Ελλάδα',
     answer:
       'Στην Ελλάδα ένα σοβαρό μηνιαίο SEO ξεκινά από {{ENTRY_SEO}} και φτάνει {{SEO_AUTHORITY}} τον μήνα, προ ΦΠΑ 24%. Στην AnotherSEOGuru αυτό αντιστοιχεί στα πακέτα Foundations, Growth και Authority: η τιμή ακολουθεί το εύρος της εργασίας, όχι έναν αριθμό λέξεων-κλειδιών.',
+    // "Κόστος ιστοσελίδας" is the noun form ~350 impressions a month arrive on
+    // ("ιστοσελιδα κοστος", "κοστος ιστοσελιδας", "κοστος κατασκευης
+    // ιστοσελιδας"); the band used to describe the same number only as
+    // "η κατασκευή ιστοσελίδας ξεκινά από".
     websiteBand:
-      'Η κατασκευή ιστοσελίδας ξεκινά από {{ENTRY_WEBSITE}} και φτάνει {{WEBSITE_BUSINESS}}+ για e-shop, πολυγλωσσικά ή πολλαπλών καταλυμάτων έργα. Κάθε τιμή παρακάτω εμφανίζεται καθαρή και με ΦΠΑ.',
+      'Το κόστος ιστοσελίδας ξεκινά από {{ENTRY_WEBSITE}} και φτάνει {{WEBSITE_BUSINESS}}+ για e-shop, πολυγλωσσικά ή πολλαπλών καταλυμάτων έργα. Κάθε τιμή παρακάτω εμφανίζεται καθαρή και με ΦΠΑ.',
     determinantsTitle: 'Τι καθορίζει την τιμή',
     determinantsIntro:
       'Δύο επιχειρήσεις στον ίδιο κλάδο σπάνια χρειάζονται την ίδια εργασία. Η προσφορά ακολουθεί τέσσερα πράγματα που φαίνονται στα δεδομένα, όχι μια λίστα λέξεων-κλειδιών.',
@@ -166,6 +176,20 @@ const el: PricingPageCopy = {
       question: 'Πόσο κοστίζει μια επαγγελματική ιστοσελίδα;',
       answer:
         'Τα πακέτα κατασκευής ξεκινούν από {{ENTRY_WEBSITE}} (Starter) και φτάνουν {{WEBSITE_BUSINESS}}+ (Business) για e-shop, πολλές γλώσσες ή πολλά καταλύματα. Το Professional ({{WEBSITE_PRO}}) είναι το σύνηθες σημείο για ξενοδοχεία και τουριστικές επιχειρήσεις. Όλες οι τιμές είναι προ ΦΠΑ 24%.',
+    },
+    {
+      // 376 impressions a month land on e-shop cost queries ("κατασκευη eshop
+      // τιμεσ", "κατασκευη eshop κοστοσ", "κοστοσ eshop") with no click and no
+      // question on this page that answers them: e-shop was named only in
+      // passing, inside the website-cost answer.
+      question: 'Πόσο κοστίζει η κατασκευή e-shop;',
+      answer:
+        'Ένα e-shop τιμολογείται ως ιστοσελίδα συν λειτουργικότητα e-commerce. Η βάση ξεκινά από {{ENTRY_WEBSITE}} (Starter) ή {{WEBSITE_PRO}} (Professional) και η λειτουργικότητα e-commerce - κατάλογος προϊόντων, καλάθι, πληρωμές, αποστολές - από {{ADDON_ECOMMERCE}}. Για μεγάλους καταλόγους, πολλές γλώσσες ή σύνδεση με ERP το σύνηθες σημείο είναι το Business ({{WEBSITE_BUSINESS}}+). Όλες οι τιμές είναι προ ΦΠΑ 24%.',
+    },
+    {
+      question: 'Πόσο κοστίζει η προώθηση ιστοσελίδων;',
+      answer:
+        'Η προώθηση ιστοσελίδων στα οργανικά αποτελέσματα είναι η ίδια εργασία με το SEO και τιμολογείται το ίδιο: μηνιαία πακέτα από {{ENTRY_SEO}} έως {{SEO_AUTHORITY}}, προ ΦΠΑ 24%. Αν κάποιος σας δίνει τιμή χωρίς να έχει δει το site και τον ανταγωνισμό σας, δίνει τιμή για μια λίστα εργασιών, όχι για αποτέλεσμα.',
     },
     {
       question: 'Γιατί δεν προσφέρετε SEO με 100 ευρώ τον μήνα;',

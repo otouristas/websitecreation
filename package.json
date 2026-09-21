@@ -12,6 +12,7 @@
     "lint": "eslint",
     "audit:portfolio": "node scripts/portfolio-audit.mjs",
     "audit:locations": "npx tsx scripts/audit-locations.ts",
+    "audit:greek-titles": "npx tsx scripts/greek-title-audit.ts",
     "screenshots:portfolio": "node scripts/portfolio-audit.mjs --screenshot-only",
     "screenshots:portfolio:force": "node scripts/portfolio-audit.mjs --screenshot-only --force",
     "generate:llms": "npx tsx scripts/generate-llms.mjs",

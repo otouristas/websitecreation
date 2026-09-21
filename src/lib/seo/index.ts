@@ -16,6 +16,7 @@ export {
     buildServiceLocationMetadataEl,
     buildIndustryMetadata,
     buildIndustryServiceMetadata,
+    EL_CITY_HEAD_TERM_SERVICE,
 } from './metadata';
 export {
     generateArticleSchema,

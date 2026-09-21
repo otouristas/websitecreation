@@ -431,12 +431,36 @@ function isSeoRetainerService(slug: string): boolean {
 }
 
 /**
- * Greek SERP title suffix ladder (richest first). Leads with a value/outcome hook
- * per the premium positioning ("value, not cheapest") while keeping a compact
- * price-transparency token, since a large share of Greek queries carry
- * τιμή/κόστος/τιμές intent. `fitTitleWithSuffix` picks the longest that fits ≤43 chars.
+ * Greek SERP title suffix ladders, per service, richest first. Each leads with a
+ * value/outcome hook per the premium positioning ("value, not cheapest") while
+ * keeping a compact price-transparency token, since a large share of Greek
+ * queries carry τιμή/κόστος/τιμές intent. `fitTitleWithSuffix` picks the longest
+ * that fits ≤43 chars.
+ *
+ * These are per service because every retainer service used to share the
+ * local-SEO ladder, so the tail " - Τοπικό SEO" was appended to audit, GEO/AEO,
+ * link-building, e-shop-SEO and content titles as well - putting the city hub's
+ * own term on five rival titles per city and undoing the consolidation that
+ * `EL_CITY_HEAD_TERM_SERVICE` exists for. Each service now ends on its own term,
+ * and only the hub keeps "Τοπικό SEO".
  */
+const EL_TITLE_SUFFIXES: Record<string, readonly string[]> = {
+  'local-seo': [' - Τοπική Στρατηγική SEO', ' - Τοπικό SEO', ' | Προσφορά', ''],
+  'seo-audits': [' - Τεχνικός Έλεγχος', ' - Έλεγχος SEO', ' | Προσφορά', ''],
+  'ai-visibility': [' - GEO & AEO', ' | Προσφορά', ''],
+  'link-building': [' - Ποιοτικά Backlinks', ' | Προσφορά', ''],
+  'eshop-seo': [' - Οργανικές Πωλήσεις', ' | Προσφορά', ''],
+  'content-creation': [' - Κείμενα με SEO', ' | Προσφορά', ''],
+  // A logo is σχεδιασμένο, not κατασκευασμένο: the shared build ladder gave
+  // this page " - Κατασκευή". "Δημιουργία Λογοτύπου" also matches the second
+  // form of the query (168 impr on "σχεδιασμός λογοτύπου θεσσαλονίκη", 155 on
+  // "δημιουργία λογοτύπου θεσσαλονίκη").
+  'logo-design': [' - Δημιουργία Λογοτύπου', ' - Σχεδιασμός', ' | Προσφορά', ''],
+};
+
 function elTitleSuffixes(slug: string): readonly string[] {
+  const own = EL_TITLE_SUFFIXES[slug];
+  if (own) return own;
   return isSeoRetainerService(slug)
     ? [' - Τοπική Στρατηγική SEO', ' - Τοπικό SEO', ' | Προσφορά', '']
     : [' - Σχεδιασμός & Υλοποίηση', ' - Κατασκευή', ' | Προσφορά', ''];
@@ -478,18 +502,24 @@ function fitTitleWithSuffix(base: string, suffixes: readonly string[]): string {
  * Short Greek SERP keywords when full titleKeyword + city exceeds the 30-char primary
  * budget, city name must never be dropped by truncation.
  */
-const EL_SHORT_TITLE_KEYWORD: Record<string, string> = {
+export const EL_SHORT_TITLE_KEYWORD: Record<string, string> = {
   'website-creation': 'Ιστοσελίδες',
   'website-redesign': 'Ανασχεδιασμός',
   'seo-web-design': 'SEO Web Design',
   'local-seo': 'Τοπικό SEO',
-  'seo-audits': 'Υπηρεσίες SEO',
+  // Not 'Υπηρεσίες SEO': that is the bare head term the city hub owns, and
+  // reintroducing it here put the audit page back into the fight it was
+  // renamed to leave (see the titleKeyword comment in services-i18n.ts).
+  'seo-audits': 'SEO Audit',
   'eshop-woocommerce': 'E-shop',
   'eshop-seo': 'E-shop SEO',
   'ai-visibility': 'GEO / AEO',
   'speed-optimization': 'Ταχύτητα Site',
   'link-building': 'Link Building',
   'content-creation': 'SEO Content',
+  // Was missing, so `?? 'SEO'` below titled the Alexandroupoli logo page
+  // "SEO Αλεξανδρούπολη" - a branding page competing for the city's SEO term.
+  'logo-design': 'Λογότυπο',
 };
 
 /**
@@ -505,10 +535,33 @@ function elIndustryServiceTitleBase(serviceSlug: string, svcName: string, indNam
   return `${short} για ${indName}`;
 }
 
+/**
+ * The one service×city page allowed to claim the bare "SEO {city}" head term.
+ *
+ * Greek searchers type the head term both ways round - GSC has "seo καλαμάτα"
+ * and "καλαμάτα seo", "seo θεσσαλονικη" and "θεσσαλονίκη seo" - but they type
+ * it bare, not qualified. Four to six EL titles per city carried a standalone
+ * "SEO" token (183 across the 45 Greek cities), so every one of those queries
+ * had several of our own pages to choose between and none of them accumulated
+ * the signals. Local SEO is the page that actually answers the intent, so it
+ * leads with "SEO {city}" and the rest stay qualified ("SEO Audit {city}",
+ * "SEO για E-shop {city}", "SEO Content {city}") and compete for their own term.
+ */
+export const EL_CITY_HEAD_TERM_SERVICE = 'local-seo';
+
 function elLocationTitleBase(serviceSlug: string, keyword: string, city: string): string {
+  // "SEO {city}" leads; the ' - Τοπικό SEO' suffix from elTitleSuffixes then
+  // restores the qualifier, so one title covers "seo {city}" and
+  // "τοπικό seo {city}" without spending the budget twice.
+  if (serviceSlug === EL_CITY_HEAD_TERM_SERVICE) {
+    const headTerm = `SEO ${city}`;
+    if (headTerm.length <= MAX_TITLE_PRIMARY_GREEK) return headTerm;
+  }
   const full = `${keyword} ${city}`;
   if (full.length <= MAX_TITLE_PRIMARY_GREEK) return full;
-  const short = EL_SHORT_TITLE_KEYWORD[serviceSlug] ?? 'SEO';
+  // Falling back to a literal 'SEO' made non-SEO pages claim the city head
+  // term; the service's own keyword is the right last resort.
+  const short = EL_SHORT_TITLE_KEYWORD[serviceSlug] ?? keyword;
   const shortBase = `${short} ${city}`;
   if (shortBase.length <= MAX_TITLE_PRIMARY_GREEK) return shortBase;
   // Last resort: city-first so the place name survives smartTruncate
@@ -533,11 +586,18 @@ export function buildServiceLocationMetadataEl(
   // EL indexes only Greek locations that pass the uniqueness content gate.
   const noIndex = !shouldIndexServiceLocation(location as Location, 'el');
   const titleBase = elLocationTitleBase(service.slug, keyword, city);
+  const isCityHub = service.slug === EL_CITY_HEAD_TERM_SERVICE;
+  // The hub's description leads with the bare head term the title claims, then
+  // restates it in the locative so the snippet matches both "seo {city}" and
+  // "τοπικό seo στη {city}" without reading like a keyword list.
+  const descLead = isCityHub
+    ? `SEO ${city}: τοπικό SEO ${locative}.`
+    : `${keyword} ${locative}.`;
 
   return buildMetadata({
     // Prefer short keyword when needed so truncation never drops the city.
     title: fitTitleWithSuffix(titleBase, elTitleSuffixes(service.slug)),
-    description: fitDescription(`${keyword} ${locative}.`, [
+    description: fitDescription(descLead, [
       'Τοπική στρατηγική αναζήτησης, τεχνικά θεμέλια SEO, Core Web Vitals και περιεχόμενο για τη ζήτηση της περιοχής. Ζητήστε δωρεάν προσφορά.',
       'Τοπική στρατηγική αναζήτησης, τεχνικά θεμέλια SEO και περιεχόμενο βασισμένο στο πώς ψάχνουν στην περιοχή. Ζητήστε προσφορά.',
       'Τοπική στρατηγική αναζήτησης, τεχνικά θεμέλια και περιεχόμενο βασισμένο στο πώς ψάχνουν στην περιοχή. Ζητήστε προσφορά.',
@@ -548,7 +608,7 @@ export function buildServiceLocationMetadataEl(
     path: localizedPath('el', `/services/${service.slug}/${location.slug}`),
     hreflangPath: `/services/${service.slug}/${location.slug}`,
     hreflangLocales: serviceLocationHreflangLocales(location as Location),
-    primaryKeyword: `${keyword} ${city}`,
+    primaryKeyword: isCityHub ? `SEO ${city}` : `${keyword} ${city}`,
     ctaHint: 'Ζητήστε προσφορά.',
     noIndex,
   });
