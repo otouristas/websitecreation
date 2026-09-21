@@ -1,9 +1,9 @@
 'use client';
 
-import { useMemo, type ReactNode } from 'react';
+import { useMemo } from 'react';
+import Link from 'next/link';
 import { ArrowRight, Info } from 'lucide-react';
 import { cn } from '@/lib/cn';
-import { formatPrice } from '@/data/pricing';
 import { FEATURE_RATES } from '@/data/estimator-rates';
 import {
   CONTENT_RANGE,
@@ -17,25 +17,28 @@ import {
   type Track,
 } from '@/lib/estimate/model';
 import type { Localized } from '@/lib/audit/types';
-import type { SiteLocale } from '@/lib/i18n/locale';
-import { ESTIMATE_COPY } from './plan-copy';
+import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
+import { SCOPE_COPY } from './plan-copy';
 
 /**
- * The live cost generator.
+ * The plan panel: what the site needs, not what it costs.
  *
- * Controlled from the outside: the parent owns the input so the audit can seed
- * it and so the wizard can file the exact figures the visitor was looking at.
- * The estimate itself is recomputed on every render from `buildEstimate`,
- * which is pure and cheap - memoised on the input rather than cached, because
- * a stale total next to a moved slider is the one failure this component
- * cannot have.
+ * This was a cost estimator. It computed correctly and it drove leads away -
+ * a real audit of a Greek hotel site put "Total over 6 months" at almost
+ * twelve thousand euro in front of somebody who had typed a domain thirty
+ * seconds earlier. A cold visitor cannot evaluate that number, so they do the
+ * only safe thing and leave.
+ *
+ * The money did not disappear, it moved: `buildEstimate` still runs, and its
+ * figures still travel with the brief so whoever picks up the call knows the
+ * shape of the deal before they dial. The visitor sees the work.
+ *
+ * Nothing in this component may render a currency amount. The self-test
+ * asserts that, because this is exactly the kind of thing that creeps back in
+ * one "helpful" line at a time.
  */
 
-function euro(amount: number, locale: SiteLocale): string {
-  return `€${formatPrice(amount, locale)}`;
-}
-
-function Field({ label, hint, children }: { label: string; hint?: string; children: ReactNode }) {
+function Field({ label, hint, children }: { label: string; hint?: string; children: React.ReactNode }) {
   return (
     <div>
       <div className="flex items-baseline justify-between gap-3">
@@ -110,56 +113,7 @@ function Segmented<T extends string>({
   );
 }
 
-function Total({
-  label,
-  net,
-  gross,
-  locale,
-  emphasis = false,
-  netLabel,
-  vatLabel,
-  suffix,
-  note,
-}: {
-  label: string;
-  net: number;
-  gross: number;
-  locale: SiteLocale;
-  emphasis?: boolean;
-  netLabel: string;
-  vatLabel: string;
-  /** Rendered against the figure itself, e.g. "/month". */
-  suffix?: string;
-  note?: string;
-}) {
-  return (
-    <div className={cn('bg-surface p-4', emphasis && 'bg-surface-raised')}>
-      <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">{label}</p>
-      <p
-        className={cn(
-          'mt-1 font-display font-semibold tabular-nums tracking-[-0.03em] text-foreground',
-          emphasis ? 'text-3xl' : 'text-xl',
-        )}
-      >
-        {euro(net, locale)}
-        {suffix ? (
-          <span className="font-display text-base font-medium text-muted-foreground">{suffix}</span>
-        ) : null}
-        <span className="ml-1.5 font-mono text-[11px] font-normal tracking-normal text-muted-foreground">
-          {netLabel}
-        </span>
-      </p>
-      <p className="mt-0.5 font-mono text-[11px] tabular-nums text-muted-foreground">
-        {euro(gross, locale)} {vatLabel}
-      </p>
-      {note ? (
-        <p className="mt-1.5 font-mono text-[11px] tabular-nums text-muted-foreground">{note}</p>
-      ) : null}
-    </div>
-  );
-}
-
-export function CostEstimator({
+export function ScopeBuilder({
   locale,
   input,
   onChange,
@@ -177,8 +131,11 @@ export function CostEstimator({
   className?: string;
   id?: string;
 }) {
-  const t = ESTIMATE_COPY[locale];
-  const estimate = useMemo(() => buildEstimate(input), [input]);
+  const t = SCOPE_COPY[locale];
+  // The same model the brief is built from, so what the visitor reads and what
+  // we receive can never describe two different projects. Only the labels are
+  // rendered here; the amounts on each line stay behind.
+  const plan = useMemo(() => buildEstimate(input), [input]);
   const set = <K extends keyof EstimateInput>(key: K, value: EstimateInput[K]): void =>
     onChange({ ...input, [key]: value });
 
@@ -187,10 +144,7 @@ export function CostEstimator({
 
   const toggleFeature = (featureId: string): void => {
     const has = input.features.includes(featureId);
-    set(
-      'features',
-      has ? input.features.filter((f) => f !== featureId) : [...input.features, featureId],
-    );
+    set('features', has ? input.features.filter((f) => f !== featureId) : [...input.features, featureId]);
   };
 
   return (
@@ -250,11 +204,6 @@ export function CostEstimator({
                       )}
                     >
                       {locale === 'el' ? feature.labelEl : feature.labelEn}
-                      {feature.net !== null ? (
-                        <span className="ml-1.5 font-mono text-[10px] text-muted-foreground">
-                          +{euro(feature.net, locale)}
-                        </span>
-                      ) : null}
                     </button>
                   );
                 })}
@@ -326,83 +275,53 @@ export function CostEstimator({
         ) : null}
       </div>
 
-      {/* ------------------------------------------------------------ totals */}
+      {/* -------------------------------------------------- the work, no cost */}
       <div className="glass flex flex-col rounded-3xl p-5 sm:p-6 lg:col-span-2">
-        {/* Two figures, and neither is a multiple of the other.
-            A retainer is a monthly decision; rendering six or twelve months of
-            it as one number turns that decision into a five-figure one and
-            gets declined on sight. The minimum term is stated in words below,
-            the way /pricing states it. */}
-        <div className="grid gap-px overflow-hidden rounded-2xl border border-hairline bg-hairline">
-          <Total
-            label={estimate.monthlyNet > 0 ? t.monthly : t.monthlyNone}
-            net={estimate.monthlyNet}
-            gross={estimate.monthlyGross}
-            locale={locale}
-            emphasis={estimate.monthlyNet > 0}
-            netLabel={t.net}
-            vatLabel={t.vat}
-            suffix={estimate.monthlyNet > 0 ? t.perMonth : undefined}
-          />
-          <Total
-            label={estimate.oneOffNet > 0 ? t.oneOff : t.oneOffNone}
-            net={estimate.oneOffNet}
-            gross={estimate.oneOffGross}
-            locale={locale}
-            emphasis={estimate.monthlyNet === 0 && estimate.oneOffNet > 0}
-            netLabel={t.net}
-            vatLabel={t.vat}
-            note={
-              estimate.oneOffNet > 0
-                ? t.band(euro(estimate.oneOffLowNet, locale), euro(estimate.oneOffHighNet, locale))
-                : undefined
-            }
-          />
-        </div>
-
-        {estimate.hasRetainer ? (
-          <p className="mt-4 text-[12px] leading-relaxed text-muted-foreground">
-            {t.minTerm(estimate.minTermMonths)}
-          </p>
-        ) : null}
-
-        {estimate.offerActive && estimate.savingNet > 0 ? (
-          <p className="mt-4 inline-flex items-center gap-2 self-start rounded-full border border-signal/30 bg-signal/10 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.14em] text-foreground">
-            <span className="live-dot" aria-hidden />
-            {t.offer} · {t.saving(formatPrice(estimate.savingNet, locale))}
-          </p>
-        ) : null}
-
-        <div className="mt-5 border-t border-hairline pt-4">
-          <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">{t.breakdown}</p>
-          {estimate.lines.length === 0 ? (
-            <p className="mt-2 text-[13px] text-muted-foreground">{t.empty}</p>
-          ) : (
-            <ul className="mt-2.5 space-y-2">
-              {estimate.lines.map((line) => (
-                <li key={line.id} className="flex items-baseline justify-between gap-3 text-[13px]">
-                  <span className="min-w-0">
-                    <span className="text-foreground">{locale === 'el' ? line.labelEl : line.labelEn}</span>
+        <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">{t.included}</p>
+        {plan.lines.length === 0 ? (
+          <p className="mt-3 text-[13px] leading-relaxed text-muted-foreground">{t.empty}</p>
+        ) : (
+          <ul className="mt-3 space-y-3">
+            {plan.lines.map((line) => (
+              <li key={line.id} className="flex gap-3">
+                <span aria-hidden className="mt-1.5 size-1.5 shrink-0 rounded-full bg-brand" />
+                <span className="min-w-0">
+                  <span className="block text-sm font-medium leading-snug text-foreground">
+                    {locale === 'el' ? line.labelEl : line.labelEn}
+                  </span>
+                  <span className="mt-0.5 flex flex-wrap items-center gap-x-2 gap-y-1">
+                    <span className="font-mono text-[10px] uppercase tracking-[0.12em] text-brand">
+                      {line.kind === 'monthly' ? t.monthlyTag : t.oneOffTag}
+                    </span>
                     {line.noteEn ? (
-                      <span className="block font-mono text-[10px] text-muted-foreground">
+                      <span className="text-[12px] leading-relaxed text-muted-foreground">
                         {locale === 'el' ? line.noteEl : line.noteEn}
                       </span>
                     ) : null}
                   </span>
-                  <span className="shrink-0 whitespace-nowrap font-mono tabular-nums text-muted-foreground">
-                    {euro(line.net, locale)}
-                    {line.kind === 'monthly' ? <span className="text-[10px]">{t.perMonth}</span> : null}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
+                </span>
+              </li>
+            ))}
+          </ul>
+        )}
 
-        <p className="mt-5 text-[12px] leading-relaxed text-muted-foreground">{t.disclaimer}</p>
+        {plan.hasRetainer ? (
+          <p className="mt-5 border-t border-hairline pt-4 text-[12px] leading-relaxed text-muted-foreground">
+            {t.minTerm(plan.minTermMonths)}
+          </p>
+        ) : null}
+
+        {/* Prices are published, just not computed at a stranger. */}
+        <p className={cn('text-[12px] leading-relaxed text-muted-foreground', plan.hasRetainer ? 'mt-2' : 'mt-5 border-t border-hairline pt-4')}>
+          {t.priceNote}{' '}
+          <Link href={localizedPath(locale, '/pricing')} className="text-link underline underline-offset-2 hover:text-foreground">
+            {t.priceLink}
+          </Link>
+          .
+        </p>
 
         {onSubmit ? (
-          <div className="mt-5">
+          <div className="mt-6">
             <button type="button" onClick={onSubmit} className="btn btn-primary w-full">
               {t.send}
               <ArrowRight className="size-4 shrink-0" aria-hidden />

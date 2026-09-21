@@ -24,6 +24,7 @@ import { judgeItemList, groundingProfileFor } from '../src/data/ai-mode-tags';
 import type { AuditResult } from '../src/lib/audit/types';
 import { buildEstimate, normalizeInput } from '../src/lib/estimate/model';
 import { recommendFromAudit } from '../src/lib/estimate/recommend';
+import { SCOPE_COPY } from '../src/components/tools/plan-copy';
 import { withVat, currentPrice, websitePackages, seoPackages } from '../src/data/pricing';
 import { SEO_MIN_TERM_MONTHS } from '../src/data/company-facts';
 
@@ -493,6 +494,49 @@ Disallow:
     'e-commerce bills, blog does not',
     ecommerce.oneOffNet,
     currentPrice(websitePackages[0]) + 1200,
+  );
+
+  // ---------------------------------------------- 9. no prices on the screen
+  //
+  // The panel names the work; the money reaches us through the brief. This is
+  // the assertion that keeps it that way, because "just show the total" is a
+  // one-line change somebody will make in good faith.
+  console.log('\nno currency in visitor-facing plan copy');
+  const scopeStrings: string[] = [];
+  const collect = (node: unknown): void => {
+    if (typeof node === 'string') scopeStrings.push(node);
+    else if (typeof node === 'function') scopeStrings.push(String((node as (n: number) => string)(6)));
+    else if (node && typeof node === 'object') Object.values(node).forEach(collect);
+  };
+  collect(SCOPE_COPY);
+  const currency = /[€$£]|\bEUR\b/;
+  ok(
+    `${scopeStrings.length} plan strings carry no currency`,
+    scopeStrings.every((text) => !currency.test(text)),
+    scopeStrings.filter((text) => currency.test(text)),
+  );
+
+  // The line labels and notes are rendered too, so they are held to the same rule.
+  const everyScope = [
+    buildEstimate({ track: 'both', pages: 30, languages: 3, features: ['ecommerce', 'chatbot', 'logo', 'booking', 'members'], contentPagesPerMonth: 8, auditDepth: 'advanced', maintenance: true }),
+    buildEstimate({ track: 'seo', contentPagesPerMonth: 1, auditDepth: 'technical' }),
+    buildEstimate({ track: 'website', pages: 3, auditDepth: 'none' }),
+  ];
+  const lineText = everyScope.flatMap((e) =>
+    e.lines.flatMap((l) => [l.labelEn, l.labelEl, l.noteEn ?? '', l.noteEl ?? '']),
+  );
+  ok(
+    `${lineText.length} rendered line strings carry no currency`,
+    lineText.every((text) => !currency.test(text)),
+    lineText.filter((text) => currency.test(text)),
+  );
+
+  // The figures still exist - they just travel with the brief instead.
+  const forTheBrief = everyScope[0];
+  ok(
+    'the brief still carries real money',
+    forTheBrief.oneOffNet > 0 && forTheBrief.monthlyNet > 0 && forTheBrief.minTermNet > 0,
+    [forTheBrief.oneOffNet, forTheBrief.monthlyNet, forTheBrief.minTermNet],
   );
 
   console.log(`\n${checks - failures}/${checks} passed`);

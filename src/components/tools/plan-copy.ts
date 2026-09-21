@@ -142,12 +142,25 @@ export const AUDIT_COPY = {
   },
 } as const;
 
-export const ESTIMATE_COPY = {
+/**
+ * The plan panel names the work, and nothing else.
+ *
+ * It used to price it: a headline total, VAT, a scoping band, a euro figure
+ * against every line. On a real Greek hotel site that read "Total over 6
+ * months: EUR 11.890" before the visitor had spoken to anybody, and a cold
+ * lead does not negotiate a number like that - they close the tab. The price
+ * list is published at /pricing for anyone who wants it, and the quote follows
+ * a call, which is how the business actually sells.
+ *
+ * So there is no currency in this file, and the guard in the self-test keeps
+ * it that way.
+ */
+export const SCOPE_COPY = {
   en: {
-    eyebrow: 'Live estimate',
-    title: 'What it costs, updated as you change it',
+    eyebrow: 'Your plan',
+    title: 'What your site needs',
     intro:
-      'Every figure below comes from the published price list. Move a slider and the total moves with it, so you can see the shape of the budget before anyone calls you.',
+      'Built from what we just measured. Adjust anything that does not match your plans - it is your brief, and it reaches a person, not a pipeline.',
     track: 'What do you need?',
     tracks: { website: 'A website', seo: 'SEO', both: 'Both' },
     pages: 'Pages',
@@ -158,30 +171,22 @@ export const ESTIMATE_COPY = {
     audit: 'Audit first',
     auditOptions: { none: 'Not needed', technical: 'Technical', advanced: 'Advanced' },
     maintenance: 'Add monthly maintenance',
-    breakdown: 'Breakdown',
-    oneOff: 'Build, billed once',
-    oneOffNone: 'No build cost',
-    monthly: 'Per month',
-    monthlyNone: 'No monthly cost',
-    perMonth: '/mo',
-    band: (low: string, high: string) => `Scoping band ${low} – ${high}`,
-    minTerm: (months: number) => `Monthly work runs on a ${months} month minimum, then month to month. The build is invoiced separately.`,
-    net: 'net',
-    vat: 'incl. VAT 24%',
-    offer: 'Current offer applied',
-    saving: (amount: string) => `You save €${amount} net`,
-    fromAudit: 'Starting scope, from your test',
-    disclaimer:
-      'An estimate, not a quote. Published prices, your inputs, and a ±15% band on the build for what scoping usually moves. The quote follows a call.',
+    included: 'What this covers',
+    oneOffTag: 'once',
+    monthlyTag: 'monthly',
+    fromAudit: 'Why this scope, from your test',
+    priceNote: 'We price this on a short call, once we have seen the site properly.',
+    priceLink: 'Package prices are published here',
+    minTerm: (months: number) => `Monthly SEO work runs on a ${months} month minimum, then month to month.`,
     send: 'Send this brief',
-    sendHint: 'Your figures travel with the brief, so nobody starts from zero on the call.',
-    empty: 'Pick what you need and the estimate builds itself.',
+    sendHint: 'Everything above travels with it, so nobody starts from zero on the call.',
+    empty: 'Pick what you need and the plan builds itself.',
   },
   el: {
-    eyebrow: 'Ζωντανή εκτίμηση',
-    title: 'Τι κοστίζει, καθώς το αλλάζετε',
+    eyebrow: 'Το πλάνο σας',
+    title: 'Τι χρειάζεται το site σας',
     intro:
-      'Κάθε νούμερο παρακάτω προέρχεται από τον δημοσιευμένο τιμοκατάλογο. Μετακινήστε έναν διακόπτη και το σύνολο αλλάζει μαζί, ώστε να δείτε το μέγεθος του budget πριν σας καλέσει κανείς.',
+      'Φτιάχτηκε από όσα μόλις μετρήσαμε. Αλλάξτε ό,τι δεν ταιριάζει στα σχέδιά σας. Είναι το δικό σας brief και το διαβάζει άνθρωπος.',
     track: 'Τι χρειάζεστε;',
     tracks: { website: 'Ιστοσελίδα', seo: 'SEO', both: 'Και τα δύο' },
     pages: 'Σελίδες',
@@ -192,30 +197,22 @@ export const ESTIMATE_COPY = {
     audit: 'Έλεγχος πρώτα',
     auditOptions: { none: 'Δεν χρειάζεται', technical: 'Τεχνικός', advanced: 'Εκτενής' },
     maintenance: 'Προσθήκη μηνιαίας συντήρησης',
-    breakdown: 'Ανάλυση',
-    oneOff: 'Κατασκευή, εφάπαξ',
-    oneOffNone: 'Χωρίς κόστος κατασκευής',
-    monthly: 'Ανά μήνα',
-    monthlyNone: 'Χωρίς μηνιαίο κόστος',
-    perMonth: '/μήνα',
-    band: (low: string, high: string) => `Εύρος scoping ${low} – ${high}`,
-    minTerm: (months: number) => `Η μηνιαία συνεργασία έχει ελάχιστη διάρκεια ${months} μηνών και μετά συνεχίζεται μηνιαία. Η κατασκευή τιμολογείται ξεχωριστά.`,
-    net: 'καθαρά',
-    vat: 'με ΦΠΑ 24%',
-    offer: 'Εφαρμόστηκε η τρέχουσα προσφορά',
-    saving: (amount: string) => `Κερδίζετε €${amount} καθαρά`,
-    fromAudit: 'Αρχικό scope, από τον έλεγχό σας',
-    disclaimer:
-      'Εκτίμηση, όχι προσφορά. Δημοσιευμένες τιμές, τα δικά σας δεδομένα και εύρος ±15% στην κατασκευή για όσα συνήθως μετακινεί το scoping. Η προσφορά ακολουθεί μετά από κλήση.',
+    included: 'Τι περιλαμβάνει',
+    oneOffTag: 'εφάπαξ',
+    monthlyTag: 'μηνιαία',
+    fromAudit: 'Γιατί αυτό το scope, από τον έλεγχό σας',
+    priceNote: 'Η τιμή βγαίνει σε μια σύντομη κλήση, αφού δούμε σωστά το site.',
+    priceLink: 'Οι τιμές των πακέτων είναι δημοσιευμένες εδώ',
+    minTerm: (months: number) => `Η μηνιαία συνεργασία SEO έχει ελάχιστη διάρκεια ${months} μηνών και μετά συνεχίζεται μηνιαία.`,
     send: 'Στείλτε αυτό το brief',
-    sendHint: 'Τα νούμερά σας ταξιδεύουν μαζί με το brief, ώστε κανείς να μην ξεκινά από το μηδέν στην κλήση.',
-    empty: 'Επιλέξτε τι χρειάζεστε και η εκτίμηση χτίζεται μόνη της.',
+    sendHint: 'Όλα τα παραπάνω ταξιδεύουν μαζί, ώστε κανείς να μην ξεκινά από το μηδέν στην κλήση.',
+    empty: 'Επιλέξτε τι χρειάζεστε και το πλάνο χτίζεται μόνο του.',
   },
 } as const;
 
 /** The copy bundle for one locale; the `as const` above makes the two differ. */
 export type AuditCopy = (typeof AUDIT_COPY)[SiteLocale];
-export type EstimateCopy = (typeof ESTIMATE_COPY)[SiteLocale];
+export type ScopeCopy = (typeof SCOPE_COPY)[SiteLocale];
 
 export function pick<T>(locale: SiteLocale, values: { en: T; el: T }): T {
   return locale === 'el' ? values.el : values.en;

@@ -174,8 +174,8 @@ export function buildEstimate(raw: Partial<EstimateInput>, now?: Date): Estimate
         labelEl: `${extraPages} επιπλέον σελίδ${extraPages === 1 ? 'α' : 'ες'}`,
         kind: 'oneoff',
         net: extraPages * rate,
-        noteEn: `${extraPages} × €${rate}`,
-        noteEl: `${extraPages} × €${rate}`,
+        noteEn: 'Designed, written and built like the rest',
+        noteEl: 'Σχεδιασμένες, γραμμένες και φτιαγμένες όπως οι υπόλοιπες',
       });
     }
 
@@ -202,8 +202,8 @@ export function buildEstimate(raw: Partial<EstimateInput>, now?: Date): Estimate
         labelEl: rate.labelEl,
         kind: 'oneoff',
         net: rate.net,
-        noteEn: 'From price; scope moves it',
-        noteEl: 'Τιμή «από». Το scope τη μετακινεί',
+        noteEn: 'Scoped with you before anything is built',
+        noteEl: 'Καθορίζεται μαζί σας πριν φτιαχτεί οτιδήποτε',
       });
     }
   }
@@ -233,8 +233,8 @@ export function buildEstimate(raw: Partial<EstimateInput>, now?: Date): Estimate
         labelEl: `${input.contentPagesPerMonth} σελίδ${input.contentPagesPerMonth === 1 ? 'α' : 'ες'} περιεχομένου / μήνα`,
         kind: 'monthly',
         net: input.contentPagesPerMonth * rate,
-        noteEn: `${input.contentPagesPerMonth} × €${rate}`,
-        noteEl: `${input.contentPagesPerMonth} × €${rate}`,
+        noteEn: 'Written against real search demand',
+        noteEl: 'Γραμμένες με βάση την πραγματική ζήτηση αναζήτησης',
       });
     }
   }
