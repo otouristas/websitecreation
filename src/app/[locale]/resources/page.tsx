@@ -8,6 +8,21 @@ import { isValidLocale, localizedPath, type SiteLocale } from "@/lib/i18n/locale
 import { buildMetadata } from "@/lib/seo";
 import { getAllBlogPosts } from "@/lib/blog";
 
+const FRAMEWORKS = [
+  {
+    path: "/resources/search-optimization-layers",
+    eyebrow: "Framework",
+    title: "The layers of modern search optimization",
+    body: "SEO, AEO, GEO, AIO, DEO and SXO in one model: what each layer optimizes for, what it asks of a page, and how it is measured.",
+  },
+  {
+    path: "/resources/ai-search-page-anatomy",
+    eyebrow: "Answer engine optimization",
+    title: "Anatomy of a page built for AI search",
+    body: "Twelve parts of a page that decide whether an answer engine can read it, quote it and cite it, annotated on a worked example.",
+  },
+] as const;
+
 type PageProps = { params: Promise<{ locale: string }> };
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
@@ -37,9 +52,28 @@ export default async function ResourcesPage({ params }: PageProps) {
           <header className="max-w-3xl mb-14">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Resources</h1>
             <p className="text-lg text-muted-foreground">
-              Deep reads, product deep-links, and the same modules our agency uses with clients.
+              Frameworks, deep reads, product deep-links, and the same modules our agency uses with clients.
             </p>
           </header>
+          {/* Frameworks lead: these two are the definitional owners for the
+              GEO/AEO cluster, and everything else here is a list of links. */}
+          <section className="mb-14 grid gap-4 md:grid-cols-2">
+            {FRAMEWORKS.map((f) => (
+              <Link
+                key={f.path}
+                href={lp(f.path)}
+                className="glass rounded-2xl p-6 transition-colors hover:border-brand/40"
+              >
+                <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-brand">
+                  {f.eyebrow}
+                </span>
+                <h2 className="mt-3 font-display text-xl font-medium tracking-[-0.02em]">
+                  {f.title}
+                </h2>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{f.body}</p>
+              </Link>
+            ))}
+          </section>
           <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-10 lg:gap-12">
             <section>
               <h2 className="font-display text-xl font-medium tracking-[-0.02em] mb-4">Glossary</h2>

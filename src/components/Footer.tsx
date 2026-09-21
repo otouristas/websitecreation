@@ -277,6 +277,16 @@ export default function Footer({ locale: localeProp }: { locale?: SiteLocale }):
                       SEO guides
                     </Link>
                   </li>
+                  <li>
+                    <Link href={lp("/resources/search-optimization-layers")} className={columnLinkClass}>
+                      SEO, AEO, GEO explained
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href={lp("/resources/ai-search-page-anatomy")} className={columnLinkClass}>
+                      AI search page anatomy
+                    </Link>
+                  </li>
 
                 </>
               )}
