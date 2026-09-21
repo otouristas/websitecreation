@@ -64,6 +64,7 @@ export default async function BlogIndexPage({
     items: posts.slice(0, 30).map((p) => ({
       url: `${BASE_URL}${lp(`/blog/${p.slug}`)}`,
       name: p.title,
+      itemType: 'BlogPosting',
     })),
   });
 

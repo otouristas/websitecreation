@@ -84,6 +84,7 @@ export default async function SolutionsPage({ params }: PageProps) {
       items: named.map((i) => ({
         url: `${BASE_URL}${lp(`/solutions/${i.slug}`)}`,
         name: i.displayName,
+        itemType: 'WebPage',
       })),
     }),
   );

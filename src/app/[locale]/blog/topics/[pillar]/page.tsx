@@ -86,6 +86,7 @@ export default async function PillarHubPage({
       items: posts.map((p) => ({
         url: `${BASE_URL}${lp(`/blog/${p.slug}`)}`,
         name: p.title,
+        itemType: 'BlogPosting',
       })),
     }),
     generateBreadcrumbSchema({ items: breadcrumbItems }),
