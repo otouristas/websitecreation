@@ -39,6 +39,21 @@ export default async function ToolsHubPage({ params }: PageProps) {
             browser checkers in the app. Start with keyword research or a free SEO audit, then deepen with our
             guides.
           </p>
+          {/* The one tool that runs on this site rather than in the app. */}
+          <Link
+            href={lp("/ai-visibility-check")}
+            className="mb-8 block rounded-[10px] border border-primary/40 bg-surface-raised/40 p-6 transition-smooth hover:border-primary/70"
+          >
+            <span className="font-mono text-[11px] uppercase tracking-[0.16em] text-primary">Runs here, no signup</span>
+            <span className="mt-2 block text-lg font-semibold text-foreground">
+              AI visibility check: Google, AI Overview &amp; ChatGPT
+            </span>
+            <p className="mt-2 text-sm text-muted-foreground">
+              Type one keyword and see all three surfaces side by side, with your own domain marked wherever it
+              appears. Live SERP and chat data, free.
+            </p>
+            <span className="mt-3 inline-block text-sm font-medium text-primary">Run a check →</span>
+          </Link>
           <ul className="space-y-4">
             {PLATFORM_TOOLS.map((t) => (
               <li key={t.slug}>

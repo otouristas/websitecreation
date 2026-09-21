@@ -1,6 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { localizedPath, type SiteLocale } from "@/lib/i18n/locale";
-import { Bloom, Eyebrow, GhostButtonLink, Section, SectionHeading } from "./primitives";
+import { Bloom, Eyebrow, GhostButtonLink, PrimaryButtonLink, Section, SectionHeading } from "./primitives";
 import { Reveal } from "@/components/motion/Reveal";
 
 /**
@@ -41,6 +41,7 @@ const COPY = {
       cite: "[1] your-hotel.gr/rooms",
     },
     caveat: "No engine guarantees a citation. Our work makes your pages usable by one, and tracks where you appear month over month.",
+    tool: "Try it with your own keyword",
     cta: "How we do GEO & AEO",
   },
   el: {
@@ -74,6 +75,7 @@ const COPY = {
       cite: "[1] your-hotel.gr/rooms",
     },
     caveat: "Καμία μηχανή δεν εγγυάται αναφορά. Η δουλειά μας κάνει τις σελίδες σας αξιοποιήσιμες από μηχανές απάντησης και παρακολουθεί πού εμφανίζεστε κάθε μήνα.",
+    tool: "Δοκιμάστε το με τη δική σας λέξη-κλειδί",
     cta: "Πώς κάνουμε GEO & AEO",
   },
 } as const;
@@ -201,10 +203,18 @@ export function AiSearchSplit({ locale = "en" }: { locale?: SiteLocale }) {
 
       <div className="mx-auto mt-10 flex max-w-3xl flex-col items-center gap-5 text-center">
         <p className="text-sm leading-relaxed text-muted-foreground">{c.caveat}</p>
-        <GhostButtonLink href={lp("/services/ai-visibility")}>
-          {c.cta}
-          <ArrowRight className="size-4" aria-hidden />
-        </GhostButtonLink>
+        {/* The panels above are a worked example. The tool runs the same three
+            for a keyword the visitor types, against live data. */}
+        <div className="flex flex-wrap items-center justify-center gap-3">
+          <PrimaryButtonLink href={lp("/ai-visibility-check")}>
+            {c.tool}
+            <ArrowRight className="size-4" aria-hidden />
+          </PrimaryButtonLink>
+          <GhostButtonLink href={lp("/services/ai-visibility")}>
+            {c.cta}
+            <ArrowRight className="size-4" aria-hidden />
+          </GhostButtonLink>
+        </div>
       </div>
       <Eyebrow className="sr-only">{c.eyebrow}</Eyebrow>
     </Section>
