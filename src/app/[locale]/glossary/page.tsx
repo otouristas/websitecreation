@@ -2,8 +2,10 @@ import { Suspense } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { GlossaryClient } from "@/components/glossary/GlossaryClient";
+import SchemaMarkup from "@/components/seo/SchemaMarkup";
 import { glossaryCategories } from "@/data/glossary-data";
-import { buildMetadata } from "@/lib/seo";
+import { buildMetadata, generateDefinedTermSetSchema } from "@/lib/seo";
+import { BASE_URL } from "@/lib/seo/schema";
 import { getGlossaryUi } from "@/lib/i18n/get-dictionary";
 import { isValidLocale, localizedPath, type SiteLocale } from "@/lib/i18n/locale";
 import { notFound } from "next/navigation";
@@ -29,8 +31,29 @@ export default async function GlossaryPage({ params }: PageProps) {
   const ui = getGlossaryUi(locale as SiteLocale);
   const isEl = locale === 'el';
 
+  // Same strings the server-rendered list below renders, so the markup and the
+  // visible text cannot disagree. Greek falls back to English per term, which
+  // is what the UI does too - 28 of the 105 terms are translated so far.
+  const glossaryUrl = `${BASE_URL}${localizedPath(locale as SiteLocale, "/glossary")}`;
+  const termSetSchema = generateDefinedTermSetSchema({
+    name: ui.title,
+    description: ui.metaDescription,
+    url: glossaryUrl,
+    inLanguage: locale,
+    terms: glossaryCategories.flatMap((category) =>
+      category.terms.map((term) => ({
+        id: term.id,
+        name: isEl ? (term.termEl ?? term.term) : term.term,
+        description: isEl
+          ? (term.shortDefinitionEl ?? term.shortDefinition)
+          : term.shortDefinition,
+      })),
+    ),
+  });
+
   return (
     <>
+      <SchemaMarkup schemas={[termSetSchema]} />
       <Header />
       <Suspense
         fallback={

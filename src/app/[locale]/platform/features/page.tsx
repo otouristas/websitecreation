@@ -5,7 +5,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { MARKETING_FEATURES } from "@/data/marketing-features";
 import { isValidLocale, localizedPath, type SiteLocale } from "@/lib/i18n/locale";
-import { buildMetadata } from "@/lib/seo";
+import { buildMetadata, generateCollectionPageSchema } from "@/lib/seo";
+import { BASE_URL } from "@/lib/seo/schema";
+import SchemaMarkup from "@/components/seo/SchemaMarkup";
 
 type PageProps = { params: Promise<{ locale: string }> };
 
@@ -27,8 +29,20 @@ export default async function PlatformFeaturesIndexPage({ params }: PageProps) {
   if (!isValidLocale(locale)) notFound();
   const lp = (path: string) => localizedPath(locale as SiteLocale, path);
 
+  const collectionSchema = generateCollectionPageSchema({
+    name: "Platform capabilities",
+    url: `${BASE_URL}${lp("/platform/features")}`,
+    inLanguage: locale,
+    items: MARKETING_FEATURES.map((feature) => ({
+      url: `${BASE_URL}${lp(`/platform/features/${feature.slug}`)}`,
+      name: feature.title,
+      itemType: "WebPage",
+    })),
+  });
+
   return (
     <>
+      <SchemaMarkup schemas={[collectionSchema]} />
       <Header />
       <main className="blueprint-grid relative z-0 main-below-header pb-20">
         <div className="container">

@@ -833,3 +833,35 @@ export function entityTypesForVertical(category: string): readonly EntityTypeSpe
 export function requiredGrounding(spec: EntityTypeSpec): readonly GroundingAttribute[] {
   return spec.grounding.filter((g) => g.required);
 }
+
+/**
+ * What a portfolio client's business *is*, for the `about` node on its case
+ * study at `/work/[slug]`.
+ *
+ * Read alongside `clientVerticals` above, which answers a different question
+ * and so gives different answers. This map says what the business is, and it
+ * is the only one of the two that produces markup we publish. `clientVerticals`
+ * says which card a client's *own* site could ground if it published the right
+ * content - a rental firm is an AutoRental either way, but it only grounds a
+ * VehicleModel comparison if it publishes per-model pages, and a tour operator
+ * only grounds an Event if it publishes dated departures. Most publish
+ * neither, which is why that mapping belongs in a rubric we advise from and
+ * not in schema we emit.
+ */
+export const PORTFOLIO_ENTITY_MAP: Readonly<
+  Record<string, { readonly schemaType: string; readonly entity: AiModeEntityType }>
+> = {
+  hotel: { schemaType: 'LodgingBusiness', entity: 'LodgingPlace' },
+  villa: { schemaType: 'LodgingBusiness', entity: 'LodgingPlace' },
+  'rent-a-car': { schemaType: 'AutoRental', entity: 'LocalServiceOrTradeBusiness' },
+  restaurant: { schemaType: 'Restaurant', entity: 'PhysicalStoreOrLocalBusiness' },
+  tours: { schemaType: 'TravelAgency', entity: 'LocalServiceOrTradeBusiness' },
+  transfers: { schemaType: 'LocalBusiness', entity: 'LocalServiceOrTradeBusiness' },
+  'travel-ai': { schemaType: 'Organization', entity: 'Corporation' },
+  other: { schemaType: 'Organization', entity: 'Corporation' },
+};
+
+/** Falls back to Organization, which is true of every client. */
+export function schemaTypeForPortfolioCategory(category: string): string {
+  return PORTFOLIO_ENTITY_MAP[category]?.schemaType ?? 'Organization';
+}

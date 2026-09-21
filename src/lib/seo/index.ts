@@ -25,6 +25,10 @@ export {
     generateServiceSchema,
     generateOrganizationSchema,
     generateSoftwareApplicationSchema,
+    generateCollectionPageSchema,
+    generateOfferCatalogSchema,
+    generateDefinedTermSetSchema,
+    generatePersonSchema,
     combineSchemas,
     serializeSchemas,
 } from './schema';
