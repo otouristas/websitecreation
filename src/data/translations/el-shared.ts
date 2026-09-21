@@ -13,6 +13,7 @@ export const elShared = {
     pricing: 'Τιμές',
     work: 'Έργα & μελέτες περίπτωσης',
     blog: 'Άρθρα',
+    aiVisibilityCheck: 'Έλεγχος ορατότητας σε AI',
     locations: 'Πόλεις & νησιά',
     contact: 'Επικοινωνία',
     about: 'Σχετικά με εμάς',

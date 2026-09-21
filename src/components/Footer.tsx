@@ -245,6 +245,12 @@ export default function Footer({ locale: localeProp }: { locale?: SiteLocale }):
           <div>
             <h3 className={columnHeadingClass}>{isEl ? t!.resources : "Resources"}</h3>
             <ul className="space-y-3.5">
+              {/* The one interactive tool on this site rather than in the app. */}
+              <li>
+                <Link href={lp("/ai-visibility-check")} className={columnLinkClass}>
+                  {isEl ? t!.aiVisibilityCheck : "AI visibility check"}
+                </Link>
+              </li>
               <li>
                 <Link href={lp("/blog")} className={columnLinkClass}>
                   {isEl ? t!.blog : "Blog"}

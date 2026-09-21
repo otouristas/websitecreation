@@ -56,6 +56,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/contact', priority: 0.8, changeFrequency: 'monthly' as const },
     { path: '/pricing', priority: 0.8, changeFrequency: 'monthly' as const },
     { path: '/get-started', priority: 0.9, changeFrequency: 'monthly' as const },
+    // The live GEO/AEO check. Bilingual, unlike /tools, which redirects to /en.
+    { path: '/ai-visibility-check', priority: 0.86 },
     { path: '/locations', priority: 0.8 },
     { path: '/privacy', priority: 0.3, changeFrequency: 'yearly' as const },
     { path: '/terms', priority: 0.3, changeFrequency: 'yearly' as const },

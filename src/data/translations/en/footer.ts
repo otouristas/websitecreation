@@ -10,6 +10,7 @@ export const footerEn = {
   pricing: 'Agency pricing',
   work: 'Case studies',
   blog: 'Blog',
+  aiVisibilityCheck: 'AI visibility check',
   locations: 'Cities & regions',
   contact: 'Contact',
   about: 'About us',
