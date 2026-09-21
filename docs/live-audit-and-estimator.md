@@ -138,3 +138,53 @@ reverse-engineered source (see `docs/ai-mode-readiness.md`); a widget a
 prospect is reading is the wrong place to relay an unverified claim about a
 search engine. Each check is defensible as ordinary structured-data practice
 on its own, which is the test each one had to pass to be added at all.
+
+
+## The site crawl
+
+`POST /api/crawl` streams a bounded breadth-first crawl: robots-aware,
+sitemap-seeded, concurrency 5, stopping on a URL cap (40 by default), a depth
+cap (3) or a 22-second wall clock — whichever comes first, and the response
+says which one stopped it.
+
+It lives on `/en/tools/free-seo-audit`, a page that was already built to rank
+for "free seo audit" and until now sent everyone to another subdomain to
+actually get one. `/el/tools/*` 308-redirects to `/en/tools/*` by an existing
+rule in `next.config.ts`, so the crawler is English-only on that route; the
+Greek strings exist in `CRAWL_COPY` and ship with every finding from the API,
+ready for a Greek surface.
+
+### What a crawl finds that one page cannot
+
+Broken internal links (with the page that links them), internal links pointing
+at redirects, duplicate titles, duplicate meta descriptions, near-duplicate
+pages, orphan pages listed in the sitemap that nothing links to, plus rollups
+of the per-page problems across every page crawled.
+
+The near-duplicate detector is adapted from LibreCrawl — a weighted Dice
+comparison over title, description and H1 token sets with a word-count length
+term, short-circuiting as soon as the remaining weights cannot reach the
+threshold. See `NOTICE.md` for what is adapted and the MIT notice.
+
+### Two bugs the fixture caught
+
+Worth recording, because both looked correct in review:
+
+1. A redirect resolving onto a URL already in the frontier (`/old-page` →
+   `/offers`, where `/offers` is also in the sitemap) crawled the destination
+   twice and then reported it as a duplicate of itself. Pages are now
+   deduplicated by final URL.
+2. Deduplicating by final URL then deleted the redirect finding along with the
+   duplicate row — the redirect is a fact about the *link*, not the
+   destination. Redirects are now recorded separately from pages, in
+   `CrawlSummary.redirects`.
+
+### Tests
+
+`npm run test:crawl` boots a fixture site containing one of each thing the
+crawl exists to find — a broken link, a redirect, shared titles, shared
+descriptions, a near-duplicate pair, a sitemap orphan, a noindexed page, a thin
+page and a robots-disallowed section — drives the real crawler against it over
+a real socket, and asserts every one is reported, that nothing healthy is
+falsely flagged, that robots.txt is obeyed, that budgets are enforced and that
+loopback is still refused without the test seam.

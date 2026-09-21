@@ -210,9 +210,120 @@ export const SCOPE_COPY = {
   },
 } as const;
 
+/** The crawl phases, in the order the generator reports them. */
+export const CRAWL_PHASE_LABELS: Record<string, { en: string; el: string }> = {
+  resolve: { en: 'Resolving the domain', el: 'Εύρεση domain' },
+  robots: { en: 'Reading robots.txt', el: 'Ανάγνωση robots.txt' },
+  sitemap: { en: 'Reading the sitemap', el: 'Ανάγνωση sitemap' },
+  crawl: { en: 'Crawling pages', el: 'Σάρωση σελίδων' },
+  analyse: { en: 'Comparing pages against each other', el: 'Σύγκριση σελίδων μεταξύ τους' },
+};
+
+export const SEVERITY_LABELS = {
+  critical: { en: 'Critical', el: 'Κρίσιμο' },
+  warning: { en: 'Warning', el: 'Προειδοποίηση' },
+  notice: { en: 'Notice', el: 'Σημείωση' },
+} as const;
+
+export const CRAWL_COPY = {
+  en: {
+    placeholder: 'your-website.gr',
+    run: 'Crawl my site',
+    running: 'Crawling',
+    rerun: 'Crawl another site',
+    hint: 'Free · no signup · we obey your robots.txt',
+    pages: 'Pages crawled',
+    findings: 'Site-wide findings',
+    stats: 'Across the crawl',
+    table: { url: 'Page', status: 'Status', depth: 'Depth', words: 'Words', ttfb: 'TTFB', title: 'Title' },
+    statLabels: {
+      pages: 'Pages',
+      ok: 'Answered 200',
+      broken: 'Broken',
+      redirected: 'Redirects',
+      noindexed: 'Noindexed',
+      avgWordCount: 'Avg words',
+      avgTtfbMs: 'Avg TTFB',
+      maxDepth: 'Max depth',
+    },
+    affected: (n: number) => `${n} affected`,
+    andMore: (n: number) => `and ${n} more`,
+    clean: 'Nothing site-wide to report across the pages we crawled.',
+    scope: (crawled: number, reason: string) => `${crawled} pages crawled — stopped on ${reason}.`,
+    stopReason: {
+      urls: 'the page limit',
+      time: 'the time limit',
+      depth: 'the depth limit',
+      exhausted: 'running out of links',
+    },
+    caveat:
+      'A bounded crawl: the first pages reachable from your homepage and sitemap, within one request. Findings describe what we crawled, not necessarily the whole site.',
+    cta: 'Get these fixed',
+    ctaHint: 'Send us the site and we come back with a plan in 24 working hours.',
+    errors: {
+      invalid_url: 'That does not look like a website address.',
+      blocked_host: 'We can only crawl public websites.',
+      dns: 'We could not find that domain.',
+      timeout: 'The site took too long to answer.',
+      unreachable: 'The site did not answer.',
+      not_html: 'That address does not return a web page.',
+      too_many_redirects: 'The site redirects too many times.',
+      rate_limited: 'A crawl costs the target site real requests, so they are limited. Try again in a couple of minutes.',
+      generic: 'Something went wrong. Try again, or send us the address.',
+    },
+  },
+  el: {
+    placeholder: 'to-site-sas.gr',
+    run: 'Σάρωση του site μου',
+    running: 'Σάρωση',
+    rerun: 'Σάρωση άλλου site',
+    hint: 'Δωρεάν · χωρίς εγγραφή · σεβόμαστε το robots.txt σας',
+    pages: 'Σελίδες που σαρώθηκαν',
+    findings: 'Ευρήματα σε όλο το site',
+    stats: 'Σε όλη τη σάρωση',
+    table: { url: 'Σελίδα', status: 'Κατάσταση', depth: 'Βάθος', words: 'Λέξεις', ttfb: 'TTFB', title: 'Τίτλος' },
+    statLabels: {
+      pages: 'Σελίδες',
+      ok: 'Απάντησαν 200',
+      broken: 'Σπασμένες',
+      redirected: 'Ανακατευθύνσεις',
+      noindexed: 'Με noindex',
+      avgWordCount: 'Μ.ό. λέξεων',
+      avgTtfbMs: 'Μ.ό. TTFB',
+      maxDepth: 'Μέγιστο βάθος',
+    },
+    affected: (n: number) => `${n} επηρεάζονται`,
+    andMore: (n: number) => `και ${n} ακόμη`,
+    clean: 'Δεν εντοπίστηκε κάτι σε επίπεδο site στις σελίδες που σαρώσαμε.',
+    scope: (crawled: number, reason: string) => `${crawled} σελίδες σαρώθηκαν — σταματήσαμε λόγω ${reason}.`,
+    stopReason: {
+      urls: 'του ορίου σελίδων',
+      time: 'του ορίου χρόνου',
+      depth: 'του ορίου βάθους',
+      exhausted: 'εξάντλησης των συνδέσμων',
+    },
+    caveat:
+      'Οριοθετημένη σάρωση: οι πρώτες σελίδες που φτάνουμε από την αρχική και το sitemap σας, μέσα σε ένα αίτημα. Τα ευρήματα αφορούν όσα σαρώσαμε, όχι απαραίτητα όλο το site.',
+    cta: 'Διορθώστε τα',
+    ctaHint: 'Στείλτε μας το site και επιστρέφουμε με πλάνο σε 24 εργάσιμες ώρες.',
+    errors: {
+      invalid_url: 'Αυτό δεν μοιάζει με διεύθυνση ιστοσελίδας.',
+      blocked_host: 'Μπορούμε να σαρώσουμε μόνο δημόσιες ιστοσελίδες.',
+      dns: 'Δεν βρήκαμε αυτό το domain.',
+      timeout: 'Η ιστοσελίδα άργησε πολύ να απαντήσει.',
+      unreachable: 'Η ιστοσελίδα δεν απάντησε.',
+      not_html: 'Η διεύθυνση δεν επιστρέφει ιστοσελίδα.',
+      too_many_redirects: 'Η ιστοσελίδα κάνει πάρα πολλές ανακατευθύνσεις.',
+      rate_limited: 'Μια σάρωση κοστίζει πραγματικά αιτήματα στο site-στόχο, γι\' αυτό είναι περιορισμένη. Δοκιμάστε σε δυο λεπτά.',
+      generic: 'Κάτι πήγε στραβά. Δοκιμάστε ξανά ή στείλτε μας τη διεύθυνση.',
+    },
+  },
+} as const;
+
 /** The copy bundle for one locale; the `as const` above makes the two differ. */
 export type AuditCopy = (typeof AUDIT_COPY)[SiteLocale];
 export type ScopeCopy = (typeof SCOPE_COPY)[SiteLocale];
+export type CrawlCopy = (typeof CRAWL_COPY)[SiteLocale];
 
 export function pick<T>(locale: SiteLocale, values: { en: T; el: T }): T {
   return locale === 'el' ? values.el : values.en;

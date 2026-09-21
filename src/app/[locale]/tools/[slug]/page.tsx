@@ -7,6 +7,7 @@ import { PLATFORM_TOOLS, getPlatformToolBySlug } from "@/data/platform-tools";
 import { getAppPath } from "@/lib/app-links";
 import { blogHref } from '@/lib/blog';
 import { isValidLocale, localizedPath, type SiteLocale } from "@/lib/i18n/locale";
+import { LiveCrawl } from "@/components/tools/LiveCrawl";
 import { buildMetadata } from "@/lib/seo";
 
 interface ToolPageProps {
@@ -71,6 +72,12 @@ export default async function PlatformToolPage({ params }: ToolPageProps) {
           </nav>
           <h1 className="text-4xl font-bold mb-4">{tool.title}</h1>
           <p className="text-lg text-muted-foreground mb-8">{tool.description}</p>
+          {/* This page has been ranking for "free seo audit" while sending
+              everyone to another subdomain to actually get one. The crawler
+              runs here, so the page delivers what the query asked for. */}
+          {slug === "free-seo-audit" ? (
+            <LiveCrawl locale={locale as SiteLocale} className="mb-10" />
+          ) : null}
           <div className="flex flex-wrap gap-4">
             <a
               href={appUrl}
