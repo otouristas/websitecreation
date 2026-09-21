@@ -79,3 +79,43 @@ homepage, a robots.txt blocking two answer engines, a sitemap and an llms.txt,
 drives the real generator against it over a real socket, and asserts on the
 metrics, the verdicts, the crawler judgements, the SSRF refusal, the
 recommendation and the cost arithmetic.
+
+## Weight change: the AI pillar, 2026-09-21
+
+Three checks were added to the `ai` pillar — `entity_completeness` (6),
+`collection_shape` (4) and `media_assets` (3). The pillar went from 58 to 71
+points, and from 21.7% to 25.4% of the 280-point total. Pillar scores are
+normalised within a pillar, so the other three are unaffected in isolation,
+but the overall score is a weighted roll-up and therefore moved.
+
+**A visitor who ran the audit before this date and reruns it will see a
+different number with no change to their site.** Nothing is stored, so no
+saved result is invalidated, but the discrepancy is real and worth knowing
+about before someone asks about it on a call.
+
+Why these three, and why in the existing pillar:
+
+- `entity_completeness` judges the entity block against what its own declared
+  type is expected to carry, rather than asking the same properties of
+  everyone. A hotel with no opening hours is a gap; a SaaS homepage with none
+  is not. The profiles live in `src/data/ai-mode-tags.ts` so the audit and the
+  client-facing readiness rubric score the same way.
+- `collection_shape` reads whether a page publishes a list a machine can treat
+  as a set: at least three entries, all declaring one type. Breadcrumbs are
+  excluded — a `BreadcrumbList` is an item list, and counting it would make
+  every site with a breadcrumb look like it publishes a collection.
+- `media_assets` counts images with a real URL, alt text and declared
+  dimensions. An inline `data:` URI cannot be linked to and an unlabelled
+  image cannot be described.
+
+No fifth pillar: `result.pillars` renders into a two-column grid, four bars
+fill it and five leave a hole. The self-test asserts `pillars.length === 4` so
+that decision has to be made deliberately rather than by accident.
+
+The check copy states what was measured and what to do about it. It does not
+mention Google AI Mode, and it does not claim that fixing any of this gets a
+page rendered or cited. The reasoning behind the three checks comes from a
+reverse-engineered source (see `docs/ai-mode-readiness.md`); a widget a
+prospect is reading is the wrong place to relay an unverified claim about a
+search engine. Each check is defensible as ordinary structured-data practice
+on its own, which is the test each one had to pass to be added at all.

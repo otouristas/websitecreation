@@ -2,6 +2,7 @@ import type { Signals } from './signals';
 import { AI_AGENTS, SEARCH_AGENTS, type AgentVerdict, type RobotsFile } from './robots';
 import type { AuditCheck, CheckState, Localized, Pillar, PillarScore } from './types';
 import { PILLARS } from './types';
+import { groundingProfileFor, judgeItemList, GROUNDING_PROFILES } from '@/data/ai-mode-tags';
 
 /**
  * The verdicts.
@@ -69,6 +70,33 @@ export function buildChecks(input: CheckInput): AuditCheck[] {
     .filter((a) => a.allowed)
     .reduce((n, a) => n + a.weight, 0);
   const aiTotalWeight = input.aiAccess.reduce((n, a) => n + a.weight, 0);
+
+  // Judge the entity block against what its own type is expected to carry,
+  // rather than demanding the same properties of everyone: a hotel without
+  // opening hours is a gap, a SaaS homepage without them is not. An
+  // unrecognised type falls back to the Organization floor, which every
+  // entity meets or fails on its own terms.
+  const entityProfile =
+    (s.jsonLd.entityType ? groundingProfileFor(s.jsonLd.entityType) : undefined) ??
+    GROUNDING_PROFILES[0];
+  const entityWanted = entityProfile
+    ? [...entityProfile.required, ...entityProfile.recommended]
+    : [];
+  const entityFilled = entityWanted.filter((prop) =>
+    s.jsonLd.entityProps.includes(prop),
+  ).length;
+
+  // The list most likely to be a published collection rather than an
+  // incidental one: prefer a homogeneous list, then the longest.
+  const listVerdicts = s.jsonLd.itemLists.map((list) =>
+    judgeItemList(list.childTypes, list.count),
+  );
+  const bestList =
+    listVerdicts.slice().sort((a, b) => {
+      const aGood = a.homogeneous && a.meetsThreshold ? 1 : 0;
+      const bGood = b.homogeneous && b.meetsThreshold ? 1 : 0;
+      return bGood - aGood || b.count - a.count;
+    })[0] ?? null;
   const aiShare = aiTotalWeight === 0 ? 1 : aiAllowedWeight / aiTotalWeight;
   const aiBlocked = input.aiAccess.filter((a) => !a.allowed);
 
@@ -607,6 +635,60 @@ export function buildChecks(input: CheckInput): AuditCheck[] {
       fix: {
         en: 'Add BreadcrumbList so results and assistants show where the page sits in your site.',
         el: 'Προσθέστε BreadcrumbList ώστε αποτελέσματα και βοηθοί να δείχνουν πού βρίσκεται η σελίδα στο site σας.',
+      },
+    },
+    {
+      id: 'entity_completeness',
+      pillar: 'ai',
+      weight: 6,
+      state: grade(entityFilled >= 5, entityFilled >= 3),
+      value: s.jsonLd.entityType
+        ? `${s.jsonLd.entityType}: ${entityFilled}/${entityWanted.length} properties`
+        : 'no entity block',
+      label: {
+        en: 'The entity block is filled in',
+        el: 'Το μπλοκ οντότητας είναι συμπληρωμένο',
+      },
+      fix: {
+        en: 'Declaring the type is the easy half. Add the properties that identify you - name, url, address, phone, opening hours, sameAs - so a machine can name you rather than only note that a business exists here.',
+        el: 'Η δήλωση του τύπου είναι το εύκολο μισό. Προσθέστε τις ιδιότητες που σας ταυτοποιούν: όνομα, url, διεύθυνση, τηλέφωνο, ώρες λειτουργίας, sameAs. Έτσι μια μηχανή μπορεί να σας ονομάσει, αντί απλώς να καταγράψει ότι εδώ υπάρχει μια επιχείρηση.',
+      },
+    },
+    {
+      id: 'collection_shape',
+      pillar: 'ai',
+      weight: 4,
+      state: bestList
+        ? grade(
+            bestList.homogeneous && bestList.meetsThreshold,
+            bestList.meetsThreshold || bestList.typed,
+          )
+        : 'fail',
+      value: bestList
+        ? `${bestList.count} items, ${bestList.childTypes.length || 'no'} child type${bestList.childTypes.length === 1 ? '' : 's'}`
+        : 'no item list',
+      label: {
+        en: 'Lists are typed and long enough to read as a set',
+        el: 'Οι λίστες έχουν τύπο και αρκετό μήκος ώστε να διαβαστούν ως σύνολο',
+      },
+      fix: {
+        en: 'Publish your rooms, fleet, tours or services as an ItemList of at least three entries that all carry the same type. A list of links with no type on the entries is read as loose text, and a list of two is read as an example.',
+        el: 'Δημοσιεύστε δωμάτια, στόλο, εκδρομές ή υπηρεσίες ως ItemList με τουλάχιστον τρεις καταχωρήσεις που έχουν όλες τον ίδιο τύπο. Μια λίστα συνδέσμων χωρίς τύπο διαβάζεται ως χαλαρό κείμενο, και μια λίστα δύο ως παράδειγμα.',
+      },
+    },
+    {
+      id: 'media_assets',
+      pillar: 'ai',
+      weight: 3,
+      state: grade(s.images.addressable >= 3, s.images.addressable >= 1),
+      value: `${s.images.addressable} of ${s.images.total} usable`,
+      label: {
+        en: 'Images usable as answer material',
+        el: 'Εικόνες αξιοποιήσιμες ως υλικό απάντησης',
+      },
+      fix: {
+        en: 'Give each meaningful image a real URL, alt text and declared width and height. Anything assembling a visual answer can only use an image it can both address and describe.',
+        el: 'Δώστε σε κάθε ουσιαστική εικόνα πραγματικό URL, alt και δηλωμένο πλάτος και ύψος. Ό,τι συνθέτει οπτική απάντηση μπορεί να χρησιμοποιήσει μόνο εικόνα που μπορεί και να διευθυνσιοδοτήσει και να περιγράψει.',
       },
     },
     {

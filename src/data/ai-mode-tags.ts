@@ -865,3 +865,134 @@ export const PORTFOLIO_ENTITY_MAP: Readonly<
 export function schemaTypeForPortfolioCategory(category: string): string {
   return PORTFOLIO_ENTITY_MAP[category]?.schemaType ?? 'Organization';
 }
+
+/**
+ * What a page carrying a given schema.org type should actually fill in.
+ *
+ * The audit reads this to judge an entity block it found on a stranger's site,
+ * and the readiness rubric scores against the same rows, so advice and
+ * measurement cannot drift apart. Kept to the types this agency and its
+ * clients publish - a profile nobody is ever measured against is dead weight.
+ *
+ * `required` is the identity floor: below it an assistant cannot name the
+ * thing. `recommended` is what turns a name into something answerable.
+ */
+export interface GroundingProfile {
+  readonly schemaType: string;
+  readonly entity: AiModeEntityType;
+  readonly required: readonly string[];
+  readonly recommended: readonly string[];
+}
+
+const LOCAL_REQUIRED = ['name', 'url', 'address'] as const;
+const LOCAL_RECOMMENDED = ['telephone', 'geo', 'image', 'openingHoursSpecification', 'sameAs'] as const;
+
+export const GROUNDING_PROFILES: readonly GroundingProfile[] = [
+  {
+    schemaType: 'Organization',
+    entity: 'Corporation',
+    required: ['name', 'url'],
+    recommended: ['logo', 'sameAs', 'description', 'areaServed', 'contactPoint'],
+  },
+  {
+    schemaType: 'LocalBusiness',
+    entity: 'LocalServiceOrTradeBusiness',
+    required: [...LOCAL_REQUIRED],
+    recommended: [...LOCAL_RECOMMENDED],
+  },
+  {
+    schemaType: 'LodgingBusiness',
+    entity: 'LodgingPlace',
+    required: [...LOCAL_REQUIRED],
+    recommended: [...LOCAL_RECOMMENDED, 'priceRange'],
+  },
+  {
+    schemaType: 'AutoRental',
+    entity: 'LocalServiceOrTradeBusiness',
+    required: [...LOCAL_REQUIRED],
+    recommended: [...LOCAL_RECOMMENDED, 'areaServed'],
+  },
+  {
+    schemaType: 'Restaurant',
+    entity: 'PhysicalStoreOrLocalBusiness',
+    required: [...LOCAL_REQUIRED],
+    recommended: [...LOCAL_RECOMMENDED, 'servesCuisine', 'hasMenu'],
+  },
+  {
+    schemaType: 'TravelAgency',
+    entity: 'LocalServiceOrTradeBusiness',
+    required: [...LOCAL_REQUIRED],
+    recommended: [...LOCAL_RECOMMENDED, 'areaServed'],
+  },
+  {
+    schemaType: 'SoftwareApplication',
+    entity: 'SpecificPurchasableSoftwareSystem',
+    required: ['name', 'url', 'applicationCategory'],
+    recommended: ['featureList', 'operatingSystem', 'offers', 'description'],
+  },
+  {
+    schemaType: 'Person',
+    entity: 'SpecificPerson',
+    required: ['name', 'url'],
+    recommended: ['jobTitle', 'description', 'knowsAbout', 'sameAs', 'worksFor'],
+  },
+];
+
+const PROFILE_ALIASES: Readonly<Record<string, string>> = {
+  hotel: 'LodgingBusiness',
+  motel: 'LodgingBusiness',
+  resort: 'LodgingBusiness',
+  bedandbreakfast: 'LodgingBusiness',
+  vacationrental: 'LodgingBusiness',
+  professionalservice: 'LocalBusiness',
+  travelagency: 'TravelAgency',
+  autorental: 'AutoRental',
+  corporation: 'Organization',
+  ngo: 'Organization',
+  store: 'LocalBusiness',
+  webapplication: 'SoftwareApplication',
+  softwareapplication: 'SoftwareApplication',
+};
+
+/**
+ * Tolerant of a `https://schema.org/` prefix and of the common subtypes, so a
+ * site marking itself up as a Hotel is measured as lodging rather than falling
+ * through to the generic Organization floor.
+ */
+export function groundingProfileFor(schemaType: string): GroundingProfile | undefined {
+  const bare = schemaType.replace(/^https?:\/\/schema\.org\//i, '').trim().toLowerCase();
+  const target = PROFILE_ALIASES[bare] ?? schemaType.replace(/^https?:\/\/schema\.org\//i, '').trim();
+  return GROUNDING_PROFILES.find(
+    (p) => p.schemaType.toLowerCase() === target.toLowerCase(),
+  );
+}
+
+export interface ItemListVerdict {
+  readonly count: number;
+  readonly childTypes: readonly string[];
+  /** Exactly one distinct child type - the Homogeneity Law. */
+  readonly homogeneous: boolean;
+  /** Children declare a type at all. */
+  readonly typed: boolean;
+  /** At or above the Minimum Asset Threshold. */
+  readonly meetsThreshold: boolean;
+}
+
+/**
+ * Takes primitives rather than a signals object so the audit's parser stays
+ * free of anything it would have to import from here.
+ */
+export function judgeItemList(
+  childTypes: readonly string[],
+  count: number,
+): ItemListVerdict {
+  const distinct = Array.from(new Set(childTypes.filter((t) => t && t !== '(untyped)')));
+  const untyped = childTypes.some((t) => !t || t === '(untyped)');
+  return {
+    count,
+    childTypes: distinct,
+    homogeneous: distinct.length === 1 && !untyped,
+    typed: distinct.length > 0 && !untyped,
+    meetsThreshold: count >= RENDER_RULES.minChildren,
+  };
+}
