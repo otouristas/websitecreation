@@ -1,11 +1,11 @@
-Last-Updated: 2026-09-10
+Last-Updated: 2026-09-21
 Canonical: https://anotherseoguru.com/llms-full.txt
 Short-form: https://anotherseoguru.com/llms.txt
 Sitemap: https://anotherseoguru.com/sitemap.xml
 
 # AnotherSEOGuru - Complete Knowledge Base
 Source: https://anotherseoguru.com
-Last Updated: 2026-09-10
+Last Updated: 2026-09-21
 
 This document is the comprehensive, machine-readable reference for LLM crawlers, AI search engines, and assistants synthesizing answers about AnotherSEOGuru services, pricing, portfolio, Greek local SEO positioning, and the secondary SEO software platform.
 
@@ -62,11 +62,11 @@ AnotherSEOGuru combines a **web design & SEO agency** (primary) with a **GSC-nat
 ### AI Visibility (GEO / AEO) (`ai-visibility`)
 - **EN URL:** https://anotherseoguru.com/en/services/ai-visibility
 - **EL URL:** https://anotherseoguru.com/el/services/ai-visibility
-- **Description (EN):** AI SEO agency services for Generative Engine Optimization (GEO) and Answer Engine Optimization (AEO). Get cited in ChatGPT, Perplexity and Google AI Overviews, not just classic rankings.
-- **Greek name:** AI SEO Agency (GEO / AEO)
-- **Description (EL):** Υπηρεσίες AI SEO agency για Generative Engine Optimization (GEO) και Answer Engine Optimization (AEO). Εμφανιστείτε σε ChatGPT, Perplexity και Google AI Overviews, όχι μόνο στα κλασικά αποτελέσματα.
-- **Features (EN):** GEO / generative engine optimization; AEO for AI Overviews & chat answers; Schema + entity cleanup; Citation-ready service pages; AI mention monitoring; Tourism & local brand playbooks
-- **Features (EL):** GEO / generative engine optimization; AEO για AI Overviews & chat απαντήσεις; Schema + καθαρισμός οντοτήτων; Citation-ready σελίδες υπηρεσιών; Παρακολούθηση AI mentions; Playbooks για τουρισμό & τοπικά brands
+- **Description (EN):** GEO and AEO for businesses: entity clarity, answer-shaped pages and measurement so answer engines can use your content. No citation promises.
+- **Greek name:** Ορατότητα σε AI (GEO / AEO)
+- **Description (EL):** GEO και AEO για επιχειρήσεις: σαφή στοιχεία, σελίδες σε μορφή απάντησης και μέτρηση, ώστε οι μηχανές απάντησης να μπορούν να χρησιμοποιήσουν το περιεχόμενό σας. Χωρίς υποσχέσεις αναφοράς.
+- **Features (EN):** Entity and brand-fact consistency; Answer-shaped FAQs for AEO; Schema that matches visible text; Commercial pages with quotable facts; Monthly mention sampling, not AI-rank theatre; Tourism and local-business programmes
+- **Features (EL):** Συνέπεια οντότητας και στοιχείων επιχείρησης; FAQ σε μορφή απάντησης για AEO; Schema που συμφωνεί με το ορατό κείμενο; Εμπορικές σελίδες με σαφή γεγονότα; Μηνιαία δειγματοληψία αναφορών, όχι «AI rank»; Προγράμματα για τουρισμό και τοπικές επιχειρήσεις
 
 ### Logo Design (`logo-design`)
 - **EN URL:** https://anotherseoguru.com/en/services/logo-design
@@ -108,7 +108,7 @@ AnotherSEOGuru combines a **web design & SEO agency** (primary) with a **GSC-nat
 - **EN URL:** https://anotherseoguru.com/en/services/seo-audits
 - **EL URL:** https://anotherseoguru.com/el/services/seo-audits
 - **Description (EN):** SEO audit services and technical SEO services: prioritized crawl, indexation, Core Web Vitals, and on-page fixes that unlock rankings.
-- **Greek name:** Υπηρεσίες SEO & Τεχνικός Έλεγχος
+- **Greek name:** SEO Audit & Τεχνικός Έλεγχος
 - **Description (EL):** Υπηρεσίες SEO για ιστοσελίδες στην Ελλάδα: τεχνικός έλεγχος, on-page, λέξεις-κλειδιά, τοπικό SEO και μηνιαία προώθηση. Διαφανή πακέτα από €500/μήνα.
 - **Features (EN):** Technical health check; Core Web Vitals analysis; Crawl budget optimization; Internal linking audit; Competitor gap analysis; Penalty recovery
 - **Features (EL):** Πλήρης τεχνικός SEO audit; Core Web Vitals & ταχύτητα; On-page βελτιστοποίηση & περιεχόμενο; Έρευνα λέξεων-κλειδιών; Ανάλυση ανταγωνισμού; Πλάνο προώθησης & μηνιαία αναφορά
@@ -675,7 +675,7 @@ All Greek cities below are indexable for service×location pages. Pattern: `/el/
 ### Project Shadow AI (`project-shadow-ai`)
 - **Case study:** https://anotherseoguru.com/en/work/project-shadow-ai · https://anotherseoguru.com/el/work/project-shadow-ai
 - **Live site:** https://projectshadow.ai
-- **Category:** travel-ai · featured
+- **Category:** travel-ai
 - **Summary (EN):** Project Shadow AI: AI tooling for online stores for global e-commerce, SEO for “Project Shadow AI”, with technical SEO from day one.
 - **Summary (EL):** Project Shadow AI: ιστοσελίδα για εργαλεία τεχνητής νοημοσύνης για ηλεκτρονικά καταστήματα στη διεθνές αγορά e-commerce, SEO για «Project Shadow AI», με τεχνικό SEO από την πρώτη μέρα.
 - **Services delivered:** website-creation, ai-visibility
@@ -900,7 +900,7 @@ All Greek cities below are indexable for service×location pages. Pattern: `/el/
 ### Greece Cyclades (`greece-cyclades`)
 - **Case study:** https://anotherseoguru.com/en/work/greece-cyclades · https://anotherseoguru.com/el/work/greece-cyclades
 - **Live site:** https://greececyclades.com
-- **Category:** tours · featured
+- **Category:** tours
 - **Summary (EN):** Greece Cyclades: Cyclades travel brand website for Cyclades, Greece, SEO for “Greece Cyclades”, focused on broad Cyclades discovery positioning versus island-specific siblings.
 - **Summary (EL):** Greece Cyclades: ταξιδιωτικό brand Κυκλάδων στις Κυκλάδες, SEO για «Κυκλάδες Ελλάδα», με έμφαση σε ευρεία τοποθέτηση ανακάλυψης Κυκλάδων έναντι εξειδικευμένων siblings.
 - **Services delivered:** website-creation, content-creation, seo-web-design
@@ -1035,6 +1035,38 @@ All Greek cities below are indexable for service×location pages. Pattern: `/el/
 ---
 
 ## 7. Blog & Guides (71)
+
+### Τα tags του Google AI Mode και τι τα τροφοδοτεί
+- **URL:** https://anotherseoguru.com/el/blog/google-ai-mode-tags-el
+- **Locale:** el · **Date:** 2026-09-21
+- **Description:** Τι φαίνεται να είναι τα tags εξόδου του AI Mode, γιατί ένα site δεν μπορεί να τα παράγει και τι πρέπει να δημοσιεύει μια σελίδα για να τα τροφοδοτήσει.
+- **Embedded FAQ:**
+  - Q: Μπορώ να προσθέσω αυτά τα tags στο HTML μου;
+    A: Όχι. Είναι το λεξιλόγιο εξόδου του μοντέλου και τα αποδίδει το front end της Google. Η σελίδα σας δίνει τα δεδομένα από τα οποία χτίζεται η κάρτα, και εκεί τελειώνει ο έλεγχός σας.
+  - Q: Τα τεκμηριώνει η Google;
+    A: Όχι. Προέκυψαν από διαρροές prompt. Η Google δεν έχει επιβεβαιώσει το λεξιλόγιο, και το δημοσιευμένο κείμενο περιέχει υπολείμματα επεξεργασίας και ένα παράδειγμα με άκυρο JSON.
+  - Q: Το schema κάνει το AI Mode να δείξει την επιχείρησή μου;
+    A: Δεν μπορεί να το επιβάλει. Τα δομημένα δεδομένα κάνουν μια σελίδα αναγνώσιμη χωρίς εικασίες. Το αν θα τη χρησιμοποιήσει η μηχανή είναι δική της απόφαση.
+  - Q: Πόσα στοιχεία χρειάζεται μια λίστα;
+    A: Η πηγή λέει τρία, με κοινό τύπο οντότητας. Κάτω από τα όρια αυτά η λίστα λέγεται ότι εκφυλίζεται σε απλές κουκκίδες. Είναι ούτως ή άλλως ένα λογικό κατώφλι.
+  - Q: Τι να κάνω πρώτα αν κάνω ένα μόνο πράγμα;
+    A: Συμπληρώστε το μπλοκ οντότητας που ήδη έχετε. Τα περισσότερα site δηλώνουν τύπο και σταματούν, που λέει σε μια μηχανή ότι υπάρχει μια επιχείρηση χωρίς να λέει ποια.
+
+### Google AI Mode tags and what grounds them
+- **URL:** https://anotherseoguru.com/en/blog/google-ai-mode-tags
+- **Locale:** en · **Date:** 2026-09-21
+- **Description:** What AI Mode's leaked output tags appear to be, why a website cannot emit them, and what a page has to publish to fill one of those slots.
+- **Embedded FAQ:**
+  - Q: Can I add these tags to my HTML?
+    A: No. They are the model's output vocabulary, rendered by Google's front end. Your page supplies the data a card is built from, and that is the whole of your control.
+  - Q: Is this documented by Google?
+    A: No. It is reverse-engineered from prompt leaks. Google has not acknowledged the vocabulary, and the published source contains editing artifacts and one invalid JSON example.
+  - Q: Does schema markup make AI Mode show my business?
+    A: It cannot make anything happen. Structured data makes a page readable without guessing. Whether an engine uses it is the engine's decision, and nobody can promise otherwise.
+  - Q: How many items does a list need?
+    A: The source says three, sharing one entity type. Below either threshold the container is said to flatten to plain bullets. Treat it as a floor worth meeting anyway.
+  - Q: What should I do first if I only do one thing?
+    A: Fill in the entity block you already have. Most sites declare a type and stop, which tells a machine that a business exists without telling it which one.
 
 ### Backlink Checker - How to Check Backlinks of Any Website (Free + Paid)
 - **URL:** https://anotherseoguru.com/en/blog/backlink-checker
@@ -1312,22 +1344,6 @@ All Greek cities below are indexable for service×location pages. Pattern: `/el/
   - Q: Does SEO content still matter with AI Overviews?
     A: Yes. Clear, cited, experience-rich pages are what AI systems quote. Thin keyword dumps get ignored. Pair content with GEO/AEO practices for answer engines.
 
-### SEO for Hotels in 2026 - Direct Bookings Without OTA Dependency
-- **URL:** https://anotherseoguru.com/en/blog/seo-for-hotels-guide
-- **Locale:** en · **Date:** 2026-07-23
-- **Description:** Practical SEO for hotels guide - room pages, schema, local search, GEO/AEO for AI trip planning, and how Greek hospitality brands win direct bookings.
-- **Embedded FAQ:**
-  - Q: What is SEO for hotels?
-    A: Hotel SEO is optimizing property websites so guests find and book rooms directly via Google and AI assistants - using room pages, schema, local SEO and content that reduces OTA dependency.
-  - Q: How long does hotel SEO take to work?
-    A: Local and branded queries can move in 2–3 months. Competitive destination terms (Santorini, Mykonos, Crete) often need 4–6+ months of content, technical fixes and authority building.
-  - Q: Do hotels need GEO / AEO as well as SEO?
-    A: Yes. Travelers increasingly ask ChatGPT and Perplexity for hotel recommendations. GEO/AEO helps your property get cited in those answers, not only classic search results.
-  - Q: How much does hotel SEO cost in Greece?
-    A: Typically €500–€1,500 per month depending on size, languages and destination competition. One-off technical audits often run €400–€800. Hospitality website packages start from €899.
-  - Q: Can SEO reduce OTA commission spend?
-    A: Yes, when direct bookings rise. Many properties target a 10–25% shift from OTA to direct within 6–12 months without cutting distribution channels entirely.
-
 ### Τι Είναι το SEO; Οδηγός για Αρχάριους (2026)
 - **URL:** https://anotherseoguru.com/el/blog/seo-gia-arxarious
 - **Locale:** el · **Date:** 2026-07-23
@@ -1343,22 +1359,6 @@ All Greek cities below are indexable for service×location pages. Pattern: `/el/
     A: On-page είναι ό,τι βελτιώνετε στη σελίδα (τίτλοι, περιεχόμενο, σύνδεσμοι). Τεχνικό είναι τα θεμέλια (ταχύτητα, ευρετηρίαση, schema). Off-page είναι εξωτερικά σήματα, κυρίως ποιοτικά backlinks.
   - Q: SEO ή διαφημίσεις Google;
     A: Διαφορετικά εργαλεία. Τα Ads φέρνουν άμεση κίνηση όσο πληρώνετε· το SEO χτίζει σταθερή οργανική ροή που μένει μακροπρόθεσμα.
-
-### SEO για Ξενοδοχεία 2026 - Άμεσες Κρατήσεις χωρίς Εξάρτηση από OTAs
-- **URL:** https://anotherseoguru.com/el/blog/seo-gia-xenodoxeia-odigos-2026
-- **Locale:** el · **Date:** 2026-07-23
-- **Description:** Πρακτικός οδηγός SEO για ξενοδοχεία - σελίδες δωματίων, schema, τοπική αναζήτηση, GEO/AEO και πώς ελληνικά hospitality brands κερδίζουν direct bookings.
-- **Embedded FAQ:**
-  - Q: Τι είναι το SEO για ξενοδοχεία;
-    A: Είναι η βελτιστοποίηση της ιστοσελίδας του καταλύματος ώστε οι επισκέπτες να βρίσκουν και να κλείνουν απευθείας μέσω Google και AI βοηθών - με σελίδες δωματίων, schema, τοπικό SEO και περιεχόμενο που μειώνει την εξάρτηση από OTAs.
-  - Q: Σε πόσο καιρό φέρνει αποτέλεσμα το hotel SEO;
-    A: Τοπικές και branded αναζητήσεις συχνά σε 2–3 μήνες. Ανταγωνιστικοί προορισμοί (Σαντορίνη, Μύκονος, Κρήτη) συχνά χρειάζονται 4–6+ μήνες περιεχομένου, τεχνικών διορθώσεων και authority.
-  - Q: Χρειάζονται τα ξενοδοχεία GEO / AEO εκτός από SEO;
-    A: Ναι. Οι ταξιδιώτες ρωτούν ChatGPT και Perplexity για συστάσεις. Το GEO/AEO βοηθά το κατάλυμά σας να εμφανίζεται σε αυτές τις απαντήσεις, όχι μόνο στα κλασικά αποτελέσματα Google.
-  - Q: Πόσο κοστίζει το SEO για ξενοδοχείο στην Ελλάδα;
-    A: Τυπικά €500–€1.500/μήνα ανάλογα με μέγεθος, γλώσσες και ανταγωνισμό προορισμού. Εφάπαξ τεχνικό audit συχνά €400–€800. Πακέτα website ξενοδοχείου από €899.
-  - Q: Μπορώ να μειώσω τις προμήθειες OTA με SEO;
-    A: Ναι, όταν οι άμεσες κρατήσεις αυξάνονται. Πολλοί πελάτες στοχεύουν 10–25% μετατόπιση από OTA σε direct μέσα σε 6–12 μήνες, χωρίς να κόψουν τελείως τα κανάλια διανομής.
 
 ### SEO Στρατηγική για Μικρές Επιχειρήσεις - Πλάνο 90 Ημερών
 - **URL:** https://anotherseoguru.com/el/blog/seo-stratigiki-mikres-epicheiriseis
