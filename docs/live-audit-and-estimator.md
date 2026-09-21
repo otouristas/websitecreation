@@ -55,8 +55,19 @@ so a price cannot drift between the two. What the price list does not state
 (pages covered per tier, what a second language costs) lives in
 `src/data/estimator-rates.ts` as named constants with the reasoning attached.
 
-Totals shown: one-off, per month, due at kick-off, and the commitment over the
-planned months with a ±15% scoping band. It is an estimate, and the UI says so.
+Two figures are shown, and neither is a multiple of the other: **per month**
+(the headline, because a retainer is a monthly decision) and **the build,
+billed once**, with a ±15% scoping band on the build alone — the retainer is a
+published list price plus a page rate, so bracketing it would imply a vagueness
+that is not there.
+
+Nothing on screen multiplies the retainer. An earlier version rendered "total
+over N months" from a slider that ran to 24, which turned a €1.440/month
+decision into a €22.050 one and stated a commitment the business does not ask
+for — `SEO_MIN_TERM_MONTHS` is 6. The minimum term is now stated in words under
+the figures, exactly as `/pricing` states it, and the multiplied value survives
+only as `minTermNet` in the brief we receive, for qualification. The self-test
+asserts that every visitor-facing figure stays below twice the monthly.
 
 ## The handover
 

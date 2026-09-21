@@ -40,16 +40,17 @@ export function summarizePlan(snapshot: PlanSnapshot, locale: SiteLocale): Recor
   const estimate = buildEstimate(snapshot.input);
   const out: Record<string, string> = {
     'Estimate: scope': `${snapshot.input.track}, ${snapshot.input.pages} pages, ${snapshot.input.languages} language(s)`,
-    'Estimate: SEO': `${snapshot.input.seoTier}, ${snapshot.input.seoMonths} months, ${snapshot.input.contentPagesPerMonth} content pages/month`,
+    'Estimate: SEO': `${snapshot.input.seoTier}, ${snapshot.input.contentPagesPerMonth} content pages/month`,
     'Estimate: audit': snapshot.input.auditDepth,
     'Estimate: features': snapshot.input.features.join(', ') || 'none',
-    'Estimate: one-off net': `€${formatPrice(estimate.oneOffNet, locale)}`,
+    'Estimate: one-off net': `€${formatPrice(estimate.oneOffNet, locale)} (band €${formatPrice(estimate.oneOffLowNet, locale)}–€${formatPrice(estimate.oneOffHighNet, locale)})`,
     'Estimate: monthly net': `€${formatPrice(estimate.monthlyNet, locale)}`,
-    'Estimate: first invoice net': `€${formatPrice(estimate.firstInvoiceNet, locale)}`,
   };
-  if (estimate.commitmentMonths > 0) {
-    out['Estimate: commitment net'] =
-      `€${formatPrice(estimate.commitmentNet, locale)} over ${estimate.commitmentMonths} months (band €${formatPrice(estimate.bandLowNet, locale)}–€${formatPrice(estimate.bandHighNet, locale)})`;
+  // Our qualification figure, not theirs: the visitor is shown a monthly
+  // decision and never a multiple of it.
+  if (estimate.hasRetainer) {
+    out['Estimate: value over min term (not shown to visitor)'] =
+      `€${formatPrice(estimate.minTermNet, locale)} over ${estimate.minTermMonths} months`;
   }
 
   const result = snapshot.result;

@@ -8,7 +8,6 @@ import { FEATURE_RATES } from '@/data/estimator-rates';
 import {
   CONTENT_RANGE,
   LANGUAGE_RANGE,
-  MONTHS_RANGE,
   PAGE_RANGE,
   SEO_TIERS,
   buildEstimate,
@@ -119,6 +118,8 @@ function Total({
   emphasis = false,
   netLabel,
   vatLabel,
+  suffix,
+  note,
 }: {
   label: string;
   net: number;
@@ -127,6 +128,9 @@ function Total({
   emphasis?: boolean;
   netLabel: string;
   vatLabel: string;
+  /** Rendered against the figure itself, e.g. "/month". */
+  suffix?: string;
+  note?: string;
 }) {
   return (
     <div className={cn('bg-surface p-4', emphasis && 'bg-surface-raised')}>
@@ -134,10 +138,13 @@ function Total({
       <p
         className={cn(
           'mt-1 font-display font-semibold tabular-nums tracking-[-0.03em] text-foreground',
-          emphasis ? 'text-2xl' : 'text-xl',
+          emphasis ? 'text-3xl' : 'text-xl',
         )}
       >
         {euro(net, locale)}
+        {suffix ? (
+          <span className="font-display text-base font-medium text-muted-foreground">{suffix}</span>
+        ) : null}
         <span className="ml-1.5 font-mono text-[11px] font-normal tracking-normal text-muted-foreground">
           {netLabel}
         </span>
@@ -145,6 +152,9 @@ function Total({
       <p className="mt-0.5 font-mono text-[11px] tabular-nums text-muted-foreground">
         {euro(gross, locale)} {vatLabel}
       </p>
+      {note ? (
+        <p className="mt-1.5 font-mono text-[11px] tabular-nums text-muted-foreground">{note}</p>
+      ) : null}
     </div>
   );
 }
@@ -263,16 +273,6 @@ export function CostEstimator({
                 options={SEO_TIERS.map((tier) => ({ id: tier.id as SeoTierId, label: tier.name }))}
               />
             </Field>
-            <Field label={t.seoMonths} hint={String(input.seoMonths)}>
-              <Slider
-                id="est-months"
-                label={t.seoMonths}
-                value={input.seoMonths}
-                min={MONTHS_RANGE.min}
-                max={MONTHS_RANGE.max}
-                onChange={(value) => set('seoMonths', value)}
-              />
-            </Field>
             <Field label={t.contentPages} hint={String(input.contentPagesPerMonth)}>
               <Slider
                 id="est-content"
@@ -328,49 +328,42 @@ export function CostEstimator({
 
       {/* ------------------------------------------------------------ totals */}
       <div className="glass flex flex-col rounded-3xl p-5 sm:p-6 lg:col-span-2">
+        {/* Two figures, and neither is a multiple of the other.
+            A retainer is a monthly decision; rendering six or twelve months of
+            it as one number turns that decision into a five-figure one and
+            gets declined on sight. The minimum term is stated in words below,
+            the way /pricing states it. */}
         <div className="grid gap-px overflow-hidden rounded-2xl border border-hairline bg-hairline">
           <Total
-            label={t.oneOff}
-            net={estimate.oneOffNet}
-            gross={estimate.oneOffGross}
-            locale={locale}
-            netLabel={t.net}
-            vatLabel={t.vat}
-          />
-          <Total
-            label={t.monthly}
+            label={estimate.monthlyNet > 0 ? t.monthly : t.monthlyNone}
             net={estimate.monthlyNet}
             gross={estimate.monthlyGross}
             locale={locale}
+            emphasis={estimate.monthlyNet > 0}
             netLabel={t.net}
             vatLabel={t.vat}
+            suffix={estimate.monthlyNet > 0 ? t.perMonth : undefined}
           />
           <Total
-            label={t.firstInvoice}
-            net={estimate.firstInvoiceNet}
-            gross={estimate.firstInvoiceGross}
+            label={estimate.oneOffNet > 0 ? t.oneOff : t.oneOffNone}
+            net={estimate.oneOffNet}
+            gross={estimate.oneOffGross}
             locale={locale}
-            emphasis
+            emphasis={estimate.monthlyNet === 0 && estimate.oneOffNet > 0}
             netLabel={t.net}
             vatLabel={t.vat}
+            note={
+              estimate.oneOffNet > 0
+                ? t.band(euro(estimate.oneOffLowNet, locale), euro(estimate.oneOffHighNet, locale))
+                : undefined
+            }
           />
         </div>
 
-        {estimate.commitmentMonths > 0 ? (
-          <div className="mt-4 rounded-2xl border border-hairline bg-surface p-4">
-            <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
-              {t.commitment(estimate.commitmentMonths)}
-            </p>
-            <p className="mt-1 font-display text-xl font-semibold tabular-nums tracking-[-0.03em] text-foreground">
-              {euro(estimate.commitmentNet, locale)}
-              <span className="ml-1.5 font-mono text-[11px] font-normal tracking-normal text-muted-foreground">
-                {t.net}
-              </span>
-            </p>
-            <p className="mt-1.5 font-mono text-[11px] tabular-nums text-muted-foreground">
-              {t.band}: {euro(estimate.bandLowNet, locale)} – {euro(estimate.bandHighNet, locale)}
-            </p>
-          </div>
+        {estimate.hasRetainer ? (
+          <p className="mt-4 text-[12px] leading-relaxed text-muted-foreground">
+            {t.minTerm(estimate.minTermMonths)}
+          </p>
         ) : null}
 
         {estimate.offerActive && estimate.savingNet > 0 ? (
@@ -398,7 +391,7 @@ export function CostEstimator({
                   </span>
                   <span className="shrink-0 whitespace-nowrap font-mono tabular-nums text-muted-foreground">
                     {euro(line.net, locale)}
-                    {line.kind === 'monthly' ? <span className="text-[10px]">/m</span> : null}
+                    {line.kind === 'monthly' ? <span className="text-[10px]">{t.perMonth}</span> : null}
                   </span>
                 </li>
               ))}

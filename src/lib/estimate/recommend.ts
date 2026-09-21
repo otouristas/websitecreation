@@ -149,7 +149,7 @@ export function recommendFromAudit(result: AuditResult): Recommendation {
 export const SERVICE_PRESETS: Readonly<Record<string, Partial<EstimateInput>>> = {
   'ai-visibility': { track: 'seo', seoTier: 'growth', contentPagesPerMonth: 3, auditDepth: 'technical' },
   'local-seo': { track: 'seo', seoTier: 'foundations', contentPagesPerMonth: 2, auditDepth: 'technical' },
-  'seo-audits': { track: 'seo', seoTier: 'foundations', seoMonths: 3, auditDepth: 'advanced', contentPagesPerMonth: 0 },
+  'seo-audits': { track: 'seo', seoTier: 'foundations', auditDepth: 'advanced', contentPagesPerMonth: 0 },
   'link-building': { track: 'seo', seoTier: 'authority', contentPagesPerMonth: 2, auditDepth: 'none' },
   'content-creation': { track: 'seo', seoTier: 'growth', contentPagesPerMonth: 4, auditDepth: 'none' },
   'eshop-seo': { track: 'seo', seoTier: 'authority', contentPagesPerMonth: 3, auditDepth: 'advanced' },

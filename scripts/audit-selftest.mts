@@ -25,6 +25,7 @@ import type { AuditResult } from '../src/lib/audit/types';
 import { buildEstimate, normalizeInput } from '../src/lib/estimate/model';
 import { recommendFromAudit } from '../src/lib/estimate/recommend';
 import { withVat, currentPrice, websitePackages, seoPackages } from '../src/data/pricing';
+import { SEO_MIN_TERM_MONTHS } from '../src/data/company-facts';
 
 let failures = 0;
 let checks = 0;
@@ -440,27 +441,47 @@ Disallow:
   const seoOnly = buildEstimate({
     track: 'seo',
     seoTier: 'growth',
-    seoMonths: 6,
     contentPagesPerMonth: 2,
     auditDepth: 'technical',
     maintenance: false,
   });
   eq('retainer matches the price list', seoOnly.monthlyNet, currentPrice(seoPackages[1]) + 2 * 180);
   eq('audit is a one-off', seoOnly.oneOffNet, 450);
+  eq('a retainer is flagged', seoOnly.hasRetainer, true);
+  eq('the band sits on the build, not the retainer', seoOnly.oneOffHighNet, Math.round(450 * 1.15));
+
+  // The regression that matters commercially: no figure the visitor sees may
+  // be a multiple of the retainer. The minimum-term value exists for our own
+  // qualification and travels with the brief, never onto the screen.
+  eq('minimum term matches company policy', seoOnly.minTermMonths, SEO_MIN_TERM_MONTHS);
   eq(
-    'six-month commitment adds up',
-    seoOnly.commitmentNet,
-    seoOnly.oneOffNet + seoOnly.monthlyNet * 6,
+    'the qualification figure is build plus the minimum term',
+    seoOnly.minTermNet,
+    seoOnly.oneOffNet + seoOnly.monthlyNet * SEO_MIN_TERM_MONTHS,
   );
-  eq('first invoice is build plus month one', seoOnly.firstInvoiceNet, seoOnly.oneOffNet + seoOnly.monthlyNet);
+  const visitorFacing = [
+    seoOnly.oneOffNet,
+    seoOnly.monthlyNet,
+    seoOnly.oneOffGross,
+    seoOnly.monthlyGross,
+    seoOnly.oneOffLowNet,
+    seoOnly.oneOffHighNet,
+  ];
   ok(
-    'the band brackets the commitment',
-    seoOnly.bandLowNet < seoOnly.commitmentNet && seoOnly.bandHighNet > seoOnly.commitmentNet,
-    [seoOnly.bandLowNet, seoOnly.commitmentNet, seoOnly.bandHighNet],
+    'nothing on screen multiplies the retainer',
+    visitorFacing.every((figure) => figure < seoOnly.monthlyNet * 2),
+    visitorFacing,
   );
 
-  const clamped = buildEstimate({ track: 'seo', pages: -5, seoMonths: 999, contentPagesPerMonth: 99 });
-  ok('out-of-range input is clamped, not crashed', clamped.commitmentMonths === 24, clamped.commitmentMonths);
+  const websiteNoRetainer = buildEstimate({ track: 'website', pages: 5, auditDepth: 'none' });
+  eq('a build-only scope has no retainer', websiteNoRetainer.hasRetainer, false);
+
+  const clamped = buildEstimate({ track: 'seo', pages: -5, contentPagesPerMonth: 99 });
+  ok(
+    'out-of-range input is clamped, not crashed',
+    clamped.monthlyNet === currentPrice(seoPackages[1]) + 8 * 180,
+    clamped.monthlyNet,
+  );
 
   const ecommerce = buildEstimate({
     track: 'website',
