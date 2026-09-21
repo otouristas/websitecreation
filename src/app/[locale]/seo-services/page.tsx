@@ -30,6 +30,8 @@ import {
   generateServiceSchema,
 } from '@/lib/seo/schema';
 import { generateBreadcrumbs } from '@/lib/linking';
+import { LastUpdated } from '@/components/ai-search';
+import { GENERATED_CONTENT_PUBLISHED, GENERATED_CONTENT_UPDATED } from '@/lib/seo/content-dates';
 import { getSeoServicesPillarCopy } from '@/data/seo-services-pillar';
 import { currentPrice, formatPrice, resolvePriceTokens, seoPackages } from '@/data/pricing';
 import { PROJECT_COUNT, SEO_MIN_TERM_MONTHS } from '@/data/company-facts';
@@ -87,6 +89,18 @@ export default async function SeoServicesPillarPage({ params }: PageProps) {
   const faqs = t.faqs.map((f) => ({ question: f.question, answer: rp(f.answer) }));
 
   const schemas = combineSchemas(
+    {
+      '@context': 'https://schema.org' as const,
+      '@type': 'WebPage' as const,
+      '@id': `${BASE_URL}${localizedPath(siteLocale, '/seo-services')}`,
+      name: t.metaTitle,
+      description: rp(t.metaDescription),
+      inLanguage: siteLocale,
+      datePublished: GENERATED_CONTENT_PUBLISHED,
+      dateModified: GENERATED_CONTENT_UPDATED,
+      isPartOf: { '@id': `${BASE_URL}/#website` },
+      publisher: { '@id': `${BASE_URL}/#organization` },
+    },
     generateBreadcrumbSchema({ items: breadcrumbItems }),
     generateServiceSchema({
       name: t.metaTitle,
@@ -138,6 +152,13 @@ export default async function SeoServicesPillarPage({ params }: PageProps) {
                 under the H1, so a snippet or an answer engine can lift it. */}
             <p className="mt-6 text-lg leading-relaxed text-muted-foreground">{rp(t.answer)}</p>
             <p className="mt-4 text-base leading-relaxed text-muted-foreground">{t.answerExtra}</p>
+            <p className="mt-4 text-sm text-muted-foreground">
+              <LastUpdated
+                date={GENERATED_CONTENT_UPDATED}
+                published={GENERATED_CONTENT_PUBLISHED}
+                locale={siteLocale}
+              />
+            </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <PrimaryButtonLink href={lp('/get-started')}>{t.cta.primary}</PrimaryButtonLink>
               <GhostButtonLink href={lp('/pricing')}>{t.cta.secondary}</GhostButtonLink>

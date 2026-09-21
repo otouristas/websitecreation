@@ -8,9 +8,11 @@ import {
 import { PortfolioThumbnail } from '@/components/landing/PortfolioThumbnail';
 import SchemaMarkup from '@/components/seo/SchemaMarkup';
 import Breadcrumbs from '@/components/seo/Breadcrumbs';
+import { KeyTakeaways, LastUpdated } from '@/components/ai-search';
 import { generateArticleSchema, generateBreadcrumbSchema, combineSchemas } from '@/lib/seo/schema';
 import { buildProjectCaseStudy } from '@/lib/portfolio-case-study';
 import { getServiceEl } from '@/data/services-i18n';
+import { getServiceBySlug } from '@/data/services';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 import { generateBreadcrumbs } from '@/lib/linking';
 import { GENERATED_CONTENT_PUBLISHED, GENERATED_CONTENT_UPDATED } from '@/lib/seo/content-dates';
@@ -72,6 +74,29 @@ export function WorkDetail({ project, locale = 'en' }: WorkDetailProps) {
   );
   const breadcrumbSchema = generateBreadcrumbSchema({ items: breadcrumbs });
 
+  /**
+   * The answer above the fold, composed from the project record rather than
+   * written per page: what this is, who it was for, what the scope was, and
+   * whether the site is still live. The audit flagged case studies for having
+   * ~150 characters between the H1 and the first H2, which is not enough for
+   * any of those questions to be answered before a reader or a retrieval
+   * system moves on. Every line here is a field, so none of it can drift.
+   */
+  const takeaways = [
+    `${project.name} is a ${(isEl ? cat.labelEl : cat.label).toLowerCase()} project built by AnotherSEOGuru for the ${project.markets.join(', ')} market${project.markets.length > 1 ? 's' : ''}.`,
+    `${isEl ? 'Αντικείμενο' : 'Scope'}: ${project.services
+      .map((slug) => (isEl ? (getServiceEl(slug)?.name ?? slug) : (getServiceBySlug(slug)?.name ?? slug)))
+      .join(', ')}.`,
+    `${isEl ? 'Γλώσσες' : 'Languages'}: ${project.languages.map((l) => l.toUpperCase()).join(', ')}.`,
+    project.liveStatus === 'offline'
+      ? isEl
+        ? 'Η ιστοσελίδα δεν είναι πλέον ενεργή. Το έργο παραμένει στο αρχείο.'
+        : 'The site is no longer live. The record stays because the work happened.'
+      : isEl
+        ? 'Η ιστοσελίδα είναι ενεργή και συνδέεται παρακάτω.'
+        : 'The site is live and linked below.',
+  ];
+
   return (
     <>
       <SchemaMarkup schemas={combineSchemas(articleSchema, breadcrumbSchema)} />
@@ -86,6 +111,21 @@ export function WorkDetail({ project, locale = 'en' }: WorkDetailProps) {
               <h1 className="mb-4 text-4xl font-bold">{project.name}</h1>
               <p className="mb-6 text-lg text-muted-foreground">
                 {isEl && project.summaryEl ? project.summaryEl : project.summary}
+              </p>
+              <KeyTakeaways
+                className="mb-6"
+                items={takeaways}
+                title={isEl ? 'Με μια ματιά' : 'At a glance'}
+              />
+              {/* The case study's Article node asserts GENERATED_CONTENT_UPDATED.
+                  Showing it is what turns that from an unverifiable claim into
+                  a freshness signal a reader and a model can both check. */}
+              <p className="mb-6 text-sm text-muted-foreground">
+                <LastUpdated
+                  date={GENERATED_CONTENT_UPDATED}
+                  published={GENERATED_CONTENT_PUBLISHED}
+                  locale={locale}
+                />
               </p>
               <div className="mb-6 flex flex-wrap gap-2">
                 {project.markets.map((m) => (

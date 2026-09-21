@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { PageShell, ShellCrumbs } from '@/components/bespoke/PageShell';
 import FAQSection from '@/components/seo/FAQSection';
+import { LastUpdated } from '@/components/ai-search';
 import { AiPageAnatomy } from '@/components/ai-search';
 import {
   Section,
@@ -146,6 +147,10 @@ export default async function AiSearchPageAnatomyPage({ params }: PageProps) {
             <PrimaryButtonLink href={lp('/get-started')}>Get your pages audited</PrimaryButtonLink>
             <GhostButtonLink href={lp(LAYERS_PATH)}>The six layers &rarr;</GhostButtonLink>
           </div>
+          {/* The visible half of the Article node's `dateModified`. */}
+          <p className="mt-6 text-sm text-muted-foreground">
+            <LastUpdated date={ANATOMY_UPDATED} published={ANATOMY_PUBLISHED} locale="en" />
+          </p>
         </div>
       </section>
 

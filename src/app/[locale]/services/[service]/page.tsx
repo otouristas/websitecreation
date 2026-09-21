@@ -13,6 +13,7 @@ import { isValidLocale, localizedPath, type SiteLocale } from '@/lib/i18n/locale
 import { buildMetadata, buildServiceMetadata, generateArticleSchema, generateBreadcrumbSchema, generateServiceSchema, generateFAQSchema, combineSchemas } from '@/lib/seo';
 import { getAiVisibilityPillarCopy } from '@/data/ai-visibility-pillar';
 import { SchemaMarkup, Breadcrumbs, FAQSection } from '@/components/seo';
+import { LastUpdated } from '@/components/ai-search';
 import ServiceHubCommercialBody from '@/components/seo/ServiceHubCommercialBody';
 import { Section, SectionHeading, Bloom, PrimaryButtonLink, GhostButtonLink, MeshGrid, Tick } from '@/components/landing/primitives';
 import { NotForYou } from '@/components/positioning/NotForYou';
@@ -191,6 +192,14 @@ export default async function ServicePage({ params }: PageProps) {
                         </h1>
                         <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
                             {displayDesc}
+                        </p>
+                        {/* The visible half of `dateModified` in the Article node. */}
+                        <p className="mt-4 text-sm text-muted-foreground">
+                            <LastUpdated
+                                date={GENERATED_CONTENT_UPDATED}
+                                published={GENERATED_CONTENT_PUBLISHED}
+                                locale={locale as SiteLocale}
+                            />
                         </p>
                         <div className="mt-9 flex flex-wrap gap-3">
                             <PrimaryButtonLink href={lp('/get-started')}>{t.getQuote}</PrimaryButtonLink>

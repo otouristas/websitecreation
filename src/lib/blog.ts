@@ -27,6 +27,13 @@ export interface BlogPostListItem {
   readonly translationOf?: string;
   /** Optional Q&A pairs (frontmatter `faq:`) surfaced into FAQPage JSON-LD. */
   readonly faq?: readonly BlogFaqItem[];
+  /**
+   * Answer-first summary (frontmatter `takeaways:`). Rendered directly under
+   * the H1 and emitted as the Article node's `abstract`, so the answer a
+   * retrieval system lifts is the same text a reader sees. Each line has to
+   * stand on its own: no "as above", no pronoun pointing backwards.
+   */
+  readonly takeaways?: readonly string[];
   /** Body word count, used for reading time and Article schema. */
   readonly wordCount: number;
   /** Estimated minutes to read, at 200 wpm, floored to 1. */
@@ -60,6 +67,7 @@ interface MatterData {
   readonly locale?: 'en' | 'el';
   readonly translationOf?: string;
   readonly faq?: unknown;
+  readonly takeaways?: unknown;
 }
 
 /** Normalize the frontmatter `faq:` list into clean {question, answer} pairs. */
@@ -74,6 +82,32 @@ function parseFaq(raw: unknown): BlogFaqItem[] | undefined {
         items.push({ question: q.trim(), answer: a.trim() });
       }
     }
+  }
+  return items.length > 0 ? items : undefined;
+}
+
+/**
+ * Normalize `takeaways:` into clean strings.
+ *
+ * A takeaway that opens with a backward reference cannot be lifted out of the
+ * page on its own, which is the only reason the block exists, so those are
+ * dropped rather than published: the check that would flag them in the audit
+ * is cheaper to enforce here, at the data boundary.
+ */
+function parseTakeaways(raw: unknown, slug: string): string[] | undefined {
+  if (!Array.isArray(raw)) return undefined;
+  const items: string[] = [];
+  for (const entry of raw) {
+    if (typeof entry !== "string") continue;
+    const text = entry.trim();
+    if (!text) continue;
+    if (/^(this|that|these|those|it|they)\b/i.test(text)) {
+      if (process.env.NODE_ENV !== "production") {
+        console.warn(`[blog] takeaway in "${slug}" opens with a backward reference, dropped: ${text.slice(0, 60)}`);
+      }
+      continue;
+    }
+    items.push(text);
   }
   return items.length > 0 ? items : undefined;
 }
@@ -140,6 +174,7 @@ function parsePostFile(filePath: string, fileBase: string): BlogPostParsed | nul
     locale,
     translationOf: typeof d.translationOf === "string" ? d.translationOf : undefined,
     faq: parseFaq(d.faq)?.map((f) => ({ question: rp(f.question), answer: rp(f.answer) })),
+    takeaways: parseTakeaways(d.takeaways, slug)?.map(rp),
     wordCount,
     readingTime: Math.max(1, Math.round(wordCount / 200)),
     content: rp(content),

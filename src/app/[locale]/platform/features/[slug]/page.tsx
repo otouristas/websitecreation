@@ -8,6 +8,9 @@ import { getAppPath } from "@/lib/app-links";
 import { isValidLocale, localizedPath, type SiteLocale } from "@/lib/i18n/locale";
 import { buildMetadata } from "@/lib/seo";
 import { generateBreadcrumbSchema, generateFAQSchema } from "@/lib/seo/schema";
+import { buildWebPageNode } from "@/lib/ai-search";
+import { LastUpdated } from "@/components/ai-search";
+import { GENERATED_CONTENT_PUBLISHED, GENERATED_CONTENT_UPDATED } from "@/lib/seo/content-dates";
 import { getFeatureExplainer } from "@/data/platform-feature-explainers";
 import { evaluatePlatformFeature } from "@/lib/indexability/platform-feature";
 import Breadcrumbs from "@/components/seo/Breadcrumbs";
@@ -65,9 +68,27 @@ export default async function PlatformFeatureDetailPage({ params }: PageProps) {
   const faqSchema =
     explainer && explainer.faqs.length > 0 ? generateFAQSchema({ faqs: [...explainer.faqs] }) : null;
 
+  /*
+   * Before this, a feature page's only JSON-LD was a breadcrumb and the
+   * site-wide Organization node: nothing said what the page itself was, and
+   * nothing said when it was last true. Both are cheap, and a model has no
+   * other way to tell a current feature page from an abandoned one.
+   */
+  const pageNode = buildWebPageNode({
+    siteUrl: "https://anotherseoguru.com",
+    url: `https://anotherseoguru.com${lp(`/platform/features/${f.slug}`)}`,
+    name: f.title,
+    description: f.shortDescription,
+    locale: "en",
+    datePublished: GENERATED_CONTENT_PUBLISHED,
+    dateModified: GENERATED_CONTENT_UPDATED,
+  });
+
   return (
     <>
-      <SchemaMarkup schemas={faqSchema ? [breadcrumbs, faqSchema] : [breadcrumbs]} />
+      <SchemaMarkup
+        schemas={[pageNode, breadcrumbs, ...(faqSchema ? [faqSchema] : [])]}
+      />
       <Header />
       <main className="blueprint-grid relative z-0 main-below-header pb-20">
         <article className="container max-w-3xl">
@@ -75,6 +96,13 @@ export default async function PlatformFeatureDetailPage({ params }: PageProps) {
           <header className="mb-10">
             <h1 className="font-display text-4xl font-medium tracking-[-0.04em] md:text-5xl text-foreground mb-4">{f.title}</h1>
             <p className="text-xl text-muted-foreground leading-relaxed">{f.shortDescription}</p>
+            <p className="mt-4 text-sm text-muted-foreground">
+              <LastUpdated
+                date={GENERATED_CONTENT_UPDATED}
+                published={GENERATED_CONTENT_PUBLISHED}
+                locale="en"
+              />
+            </p>
             {explainer ? (
               <p className="mt-6 rounded-[10px] border border-hairline bg-surface-raised p-5 text-base leading-relaxed text-foreground">
                 {explainer.directAnswer}

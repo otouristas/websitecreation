@@ -3,10 +3,10 @@
  * Renders JSON-LD structured data in the document head
  */
 
-import type { SchemaOutput } from '@/lib/types/seo';
+import type { SchemaBlock } from '@/lib/types/seo';
 
 interface SchemaMarkupProps {
-    schemas: SchemaOutput[];
+    schemas: SchemaBlock[];
 }
 
 /**

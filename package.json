@@ -16,7 +16,8 @@
     "screenshots:portfolio:force": "node scripts/portfolio-audit.mjs --screenshot-only --force",
     "generate:llms": "npx tsx scripts/generate-llms.mjs",
     "validate:blog": "node scripts/validate-blog-posts.mjs",
-    "test:audit": "npx tsx scripts/audit-selftest.mts"
+    "test:audit": "npx tsx scripts/audit-selftest.mts",
+    "audit:ai-search": "npx tsx scripts/audit-ai-search.mjs"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.4",

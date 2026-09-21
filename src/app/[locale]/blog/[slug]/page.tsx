@@ -26,12 +26,10 @@ import { buildHreflangMapFromPaths } from "@/lib/locale-paths";
 import { buildMetadata } from "@/lib/seo";
 import { getBlogMoneyLinks } from "@/lib/linking";
 import { getAppPath } from "@/lib/app-links";
-import {
-  generateArticleSchema,
-  generateBreadcrumbSchema,
-  generateFAQSchema,
-  combineSchemas,
-} from "@/lib/seo/schema";
+
+import { buildPageGraph, validateContract, type AiPageContract } from "@/lib/ai-search";
+import { KeyTakeaways, LastUpdated, AuthorByline } from "@/components/ai-search";
+import { resolveAuthor } from "@/data/authors";
 
 interface BlogPostPageProps {
   readonly params: Promise<{ locale: string; slug: string }>;
@@ -87,33 +85,54 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const lp = (path: string) => localizedPath(locale as SiteLocale, path);
   const isEl = locale === "el";
   const counterpart = getTranslationCounterpart(post);
-  const articleSchema = generateArticleSchema({
-    headline: post.title,
-    description: post.description,
-    datePublished: post.date,
-    dateModified: post.updated ?? post.date,
-    author: { name: post.author },
-    schemaType: "BlogPosting",
-    inLanguage: post.locale,
-    mainEntityOfPage: `https://anotherseoguru.com${lp(`/blog/${post.slug}`)}`,
-  });
+  const author = resolveAuthor(post.author);
+  const dateModified = post.updated ?? post.date;
   const breadcrumbItems = [
     { name: isEl ? "Αρχική" : "Home", url: lp("/") },
     { name: "Blog", url: lp("/blog") },
     { name: post.title, url: lp(`/blog/${post.slug}`) },
   ];
-  const breadcrumbSchema = generateBreadcrumbSchema({
-    items: breadcrumbItems,
-  });
   // Prefer explicit frontmatter FAQ; otherwise derive from the body's FAQ section.
   const faqItems =
     post.faq && post.faq.length > 0 ? post.faq : extractFaqFromMarkdown(post.content);
-  const faqSchema =
-    faqItems.length > 0
-      ? generateFAQSchema({ faqs: faqItems.map((f) => ({ question: f.question, answer: f.answer })) })
-      : null;
-  const schemas = combineSchemas(articleSchema, breadcrumbSchema,
-    ...(faqSchema ? [faqSchema] : []));
+
+  /**
+   * One contract, three consumers: the JSON-LD `@graph` below, the takeaways
+   * block and the byline in the markup, and `scripts/audit-ai-search.mjs`,
+   * which reads the rendered page back. They cannot disagree, because there is
+   * only one place any of it is declared.
+   */
+  const contract: AiPageContract = {
+    url: `https://anotherseoguru.com${lp(`/blog/${post.slug}`)}`,
+    headline: post.title,
+    description: post.description,
+    locale: post.locale,
+    datePublished: post.date,
+    dateModified,
+    author,
+    publisher: { name: "AnotherSEOGuru", url: "https://anotherseoguru.com" },
+    takeaways: post.takeaways,
+    faqs: faqItems.map((f) => ({ question: f.question, answer: f.answer })),
+    breadcrumbs: breadcrumbItems,
+    // The H1 and the answer under it: the two things worth reading aloud.
+    speakableSelectors: ["h1", '[data-ai="takeaways"]'],
+    schemaType: "BlogPosting",
+  };
+
+  if (process.env.NODE_ENV !== "production") {
+    const problems = validateContract(contract);
+    if (problems.length) {
+      console.warn(`[blog] ${post.slug} contract: ${problems.join("; ")}`);
+    }
+  }
+
+  /**
+   * One `@graph` rather than three loose blocks. The article's `author` is now
+   * an `@id` reference to the author node in the same graph, so the entity a
+   * model meets here is the entity it meets on /about and in the site-wide
+   * Organization node, instead of three unrelated strings that happen to match.
+   */
+  const schemas = [buildPageGraph(contract, { siteUrl: "https://anotherseoguru.com" })];
 
   /**
    * Related posts fall back from pillar to category. The pillar-only version
@@ -180,16 +199,18 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               {post.description}
             </p>
 
+            {/* The byline is the visible half of the author node in the graph
+                above, and the date is the visible half of `dateModified`. A
+                page that asserts either one without showing it is asking to be
+                believed on a fact its reader cannot check. */}
             <div className="mt-7 flex flex-wrap items-center gap-x-3 gap-y-1 text-[13px] text-muted-foreground">
-              <span className="font-medium text-foreground">{post.author}</span>
+              <AuthorByline author={author} />
               <span aria-hidden>·</span>
-              <time dateTime={post.date}>
-                {new Date(post.date).toLocaleDateString(isEl ? "el-GR" : "en-GB", {
-                  day: "numeric",
-                  month: "long",
-                  year: "numeric",
-                })}
-              </time>
+              <LastUpdated
+                date={dateModified}
+                published={post.updated ? post.date : undefined}
+                locale={locale as SiteLocale}
+              />
               <span aria-hidden>·</span>
               <span>
                 {post.readingTime} {isEl ? "λεπτά ανάγνωσης" : "min read"}
@@ -201,6 +222,15 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         {/* Body + sticky TOC rail */}
         <div className="mx-auto grid max-w-6xl gap-12 px-6 py-14 lg:grid-cols-[minmax(0,1fr)_16rem] lg:gap-16">
           <article className="min-w-0">
+            {/* Answer first. Rendered here and emitted as the Article node's
+                `abstract`, from the same `post.takeaways` array. */}
+            {post.takeaways?.length ? (
+              <KeyTakeaways
+                className="mb-10"
+                items={post.takeaways}
+                title={isEl ? "Με μια ματιά" : "Key takeaways"}
+              />
+            ) : null}
             <div className="markdown-body">
               <MarkdownBody markdown={post.content} locale={locale as SiteLocale} />
             </div>
@@ -214,6 +244,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 locale={locale as SiteLocale}
               />
             ) : null}
+
+            {/* The entity behind the byline, spelled out once per article. */}
+            <AuthorByline author={author} showBio className="mt-14" />
 
             {/* Prev / next within the pillar */}
             {prev || next ? (

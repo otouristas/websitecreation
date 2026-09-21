@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { PageShell, ShellCrumbs } from '@/components/bespoke/PageShell';
 import FAQSection from '@/components/seo/FAQSection';
+import { LastUpdated } from '@/components/ai-search';
 import { SearchLayersStack } from '@/components/ai-search';
 import {
   Section,
@@ -159,6 +160,10 @@ export default async function SearchOptimizationLayersPage({ params }: PageProps
               How we work on AI visibility
             </GhostButtonLink>
           </div>
+          {/* The visible half of the Article node's `dateModified`. */}
+          <p className="mt-6 text-sm text-muted-foreground">
+            <LastUpdated date={SEARCH_LAYERS_UPDATED} published={SEARCH_LAYERS_PUBLISHED} locale="en" />
+          </p>
 
           {/* The six, as anchors, so a reader can jump and a link can land. */}
           <ul className="mt-10 flex flex-wrap gap-2">

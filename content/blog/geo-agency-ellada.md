@@ -8,6 +8,12 @@ locale: el
 category: AI & Αναζήτηση
 categoryColor: bg-violet-100 text-violet-800
 pillar: ai-llm-visibility
+takeaways:
+  - Ένα GEO agency κάνει Generative Engine Optimization: AI visibility audit σε σταθερό prompt set, answer-ready περιεχόμενο, entity hygiene, citation program και reporting μαζί με το Search Console.
+  - Το GEO δεν αντικαθιστά το SEO, πατάει πάνω του. Η σειρά είναι SEO θεμέλια, μετά AEO στις εμπορικές σελίδες, μετά citation program.
+  - Αν το site δεν ευρετηριάζεται, καμία βελτιστοποίηση για AI δεν αποδίδει.
+  - Στην ελληνική αγορά το GEO προσφέρεται συνήθως μέσα σε ολοκληρωμένο SEO retainer. Αυτόνομα GEO audits κοστίζουν από 300 έως 500 ευρώ.
+  - Κανένα agency δεν ελέγχει τι θα αναφέρει ένα μοντέλο. Μετριέται mention και link rate ανά μοντέλο, όχι εγγυημένη θέση.
 faq:
   - question: Τι κάνει ένα GEO agency;
     answer: Ελέγχει την AI ορατότητά σας, δομεί περιεχόμενο για ChatGPT/Perplexity/Gemini, χτίζει οντότητες με schema και μετρά citations - ώστε να εμφανίζεστε όταν οι πελάτες ρωτούν για τον κλάδο σας.

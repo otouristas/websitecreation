@@ -12,6 +12,7 @@ import {
   combineSchemas,
 } from '@/lib/seo';
 import { SchemaMarkup, Breadcrumbs } from '@/components/seo';
+import { LastUpdated } from '@/components/ai-search';
 import { getLocalizedIndustry } from '@/lib/industry-locale';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 import { solutionsUi } from '@/data/translations/solutions-ui';
@@ -108,8 +109,12 @@ export function IndustryServicePageView({
               <h1 className="mb-6 font-display text-3xl font-medium tracking-[-0.03em] sm:text-4xl lg:text-5xl">
                 {ui.serviceForIndustry(serviceName, industry.nameFor)}
               </h1>
-              <p className="mb-8 text-lg text-muted-foreground">
+              <p className="mb-6 text-lg text-muted-foreground">
                 {ui.serviceHeroDesc(serviceName, industry.name)}
+              </p>
+              {/* The visible half of `dateModified` above. */}
+              <p className="mb-8 text-sm text-muted-foreground">
+                <LastUpdated date={GENERATED_CONTENT_UPDATED} published={GENERATED_CONTENT_PUBLISHED} locale={locale} />
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link href={lp('/contact')} className="btn btn-primary">

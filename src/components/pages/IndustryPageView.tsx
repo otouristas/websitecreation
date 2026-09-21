@@ -7,6 +7,7 @@ import { industries, getIndustryBySlug } from '@/data/industries';
 import { greeceLocations, tier1Locations } from '@/data/locations';
 import { generateArticleSchema, generateBreadcrumbSchema, combineSchemas } from '@/lib/seo';
 import { SchemaMarkup, Breadcrumbs } from '@/components/seo';
+import { LastUpdated } from '@/components/ai-search';
 import { AdsLandingBand } from '@/components/marketing/AdsLandingBand';
 import { getLocalizedIndustry } from '@/lib/industry-locale';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
@@ -71,7 +72,11 @@ export function IndustryPageView({
               <h1 className="mb-6 text-4xl font-bold sm:text-5xl">
                 {ui.websiteSolutionsFor} {industry.name}
               </h1>
-              <p className="mb-8 text-lg text-muted-foreground">{industry.description}</p>
+              <p className="mb-6 text-lg text-muted-foreground">{industry.description}</p>
+              {/* The visible half of `dateModified` above. */}
+              <p className="mb-8 text-sm text-muted-foreground">
+                <LastUpdated date={GENERATED_CONTENT_UPDATED} published={GENERATED_CONTENT_PUBLISHED} locale={locale} />
+              </p>
               <div className="flex flex-wrap gap-4">
                 <Link href={lp(`/get-started?project=${industrySlug}`)} className="btn btn-primary">
                   {ui.getQuoteFor(industry.name)}

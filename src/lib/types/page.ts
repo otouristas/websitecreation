@@ -47,7 +47,14 @@ export type SchemaType =
     | 'Product'
     | 'SoftwareApplication'
     | 'CollectionPage'
-    | 'ItemList';
+    | 'ItemList'
+    // The page-level type a hub or pillar carries when it is neither an
+    // article nor a product. Without one, a page's only JSON-LD is the
+    // site-wide Organization node, and nothing in the markup is about the page.
+    | 'WebPage'
+    | 'AboutPage'
+    | 'ContactPage'
+    | 'Dataset';
 
 // Traffic/priority tiers
 export type Priority = 'high' | 'medium' | 'low';

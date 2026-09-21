@@ -91,6 +91,19 @@ export interface SchemaOutput {
     [key: string]: unknown;
 }
 
+/**
+ * A `@graph` container: several nodes that reference each other by `@id`
+ * rather than several disconnected blocks. `@type` sits on the nodes inside,
+ * not on the container, which is why this cannot be a `SchemaOutput`.
+ */
+export interface SchemaGraph {
+    '@context': 'https://schema.org';
+    '@graph': Record<string, unknown>[];
+}
+
+/** Anything `SchemaMarkup` can serialise into a single ld+json block. */
+export type SchemaBlock = SchemaOutput | SchemaGraph;
+
 // Export all types for convenience
 export type {
     FAQ,
