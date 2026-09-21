@@ -47,7 +47,14 @@ export type SchemaType =
     | 'Product'
     | 'SoftwareApplication'
     | 'CollectionPage'
-    | 'ItemList';
+    | 'ItemList'
+    | 'DefinedTermSet'
+    | 'DefinedTerm'
+    | 'Person'
+    | 'VideoObject'
+    | 'Place'
+    | 'ProfessionalService'
+    | 'WebPage';
 
 // Traffic/priority tiers
 export type Priority = 'high' | 'medium' | 'low';
