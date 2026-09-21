@@ -26,6 +26,49 @@ export interface ArticleSchemaData {
     inLanguage?: string;
     /** Canonical URL of the page this article is the main entity of. */
     mainEntityOfPage?: string;
+    /**
+     * The real-world thing the article is about.
+     *
+     * A case study names a business and describes its market while saying
+     * nothing machine-readable about the business existing. This closes that,
+     * and is deliberately limited to identity: name, url, and a coarse area.
+     * No address, phone, geo, hours, rating or price - we do not hold those
+     * for clients, and `src/data/company-facts.ts` forbids inventing them.
+     */
+    about?: {
+        /** schema.org type, e.g. 'LodgingBusiness', 'AutoRental'. */
+        type: string;
+        name: string;
+        url: string;
+        /** Coarse market codes, e.g. ['GR', 'EU']. */
+        areaServed?: readonly string[];
+    };
+}
+
+/** One term in a glossary. */
+export interface DefinedTermData {
+    /** Stable id, used as the fragment of the term's @id. */
+    readonly id: string;
+    readonly name: string;
+    readonly description: string;
+}
+
+export interface DefinedTermSetSchemaData {
+    readonly name: string;
+    readonly description?: string;
+    readonly url: string;
+    readonly inLanguage?: string;
+    readonly terms: readonly DefinedTermData[];
+}
+
+export interface PersonSchemaData {
+    readonly name: string;
+    readonly url?: string;
+    readonly jobTitle?: string;
+    readonly description?: string;
+    readonly knowsAbout?: readonly string[];
+    readonly sameAs?: readonly string[];
+    readonly worksFor?: { readonly name: string; readonly url: string };
 }
 
 // FAQ schema data (uses FAQ from page.ts)

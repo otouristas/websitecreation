@@ -28,6 +28,12 @@ export interface ImageSignals {
   readonly lazy: number;
   readonly withDimensions: number;
   readonly modernFormats: number;
+  /**
+   * Real src (not a data: URI), alt present, width and height declared.
+   * Anything assembling a visual answer can only use an image it can both
+   * address and caption.
+   */
+  readonly addressable: number;
 }
 
 export interface ScriptSignals {
@@ -46,6 +52,13 @@ export interface LinkSignals {
   readonly uniqueInternal: number;
 }
 
+/** One ItemList found in the graph, breadcrumbs excluded. */
+export interface ItemListSignal {
+  readonly count: number;
+  /** Distinct `@type` of the entries, or `(untyped)` where they declare none. */
+  readonly childTypes: readonly string[];
+}
+
 export interface JsonLdSignals {
   readonly types: readonly string[];
   readonly blocks: number;
@@ -55,6 +68,17 @@ export interface JsonLdSignals {
   readonly hasArticle: boolean;
   readonly hasBreadcrumb: boolean;
   readonly hasSameAs: boolean;
+  /**
+   * Non-breadcrumb ItemLists. A BreadcrumbList is an item list too, and
+   * counting it here would make every site with a breadcrumb look like it
+   * publishes a collection.
+   */
+  readonly itemLists: readonly ItemListSignal[];
+  /** `@type` of the first entity block, verbatim. */
+  readonly entityType: string | null;
+  /** Which of the properties we look for that block actually carries. */
+  readonly entityProps: readonly string[];
+  readonly hasVideoObject: boolean;
 }
 
 export interface Signals {
@@ -82,6 +106,8 @@ export interface Signals {
   readonly wordCount: number;
   readonly iframes: number;
   readonly landmarks: readonly string[];
+  /** Server-rendered tables with >=2 columns and >=3 rows. */
+  readonly dataTables: number;
   readonly preconnects: number;
   /** The rendered-text share of the raw bytes. Thin shells sit near zero. */
   readonly textRatio: number;
@@ -169,10 +195,50 @@ function countWords(html: string): number {
   return words.length;
 }
 
+/** Properties we look for on an entity block. Bounded on purpose - an open
+ *  dump of every key would make the signal unreadable and unstable. */
+const ENTITY_PROPS_WATCHED = [
+  'name',
+  'url',
+  'address',
+  'telephone',
+  'geo',
+  'image',
+  'logo',
+  'openingHoursSpecification',
+  'priceRange',
+  'sameAs',
+  'areaServed',
+  'description',
+  'contactPoint',
+  'applicationCategory',
+  'featureList',
+  'operatingSystem',
+  'offers',
+  'jobTitle',
+  'knowsAbout',
+  'worksFor',
+  'servesCuisine',
+  'hasMenu',
+] as const;
+
+function typeNames(raw: unknown): string[] {
+  if (typeof raw === 'string') return [raw];
+  if (Array.isArray(raw)) return raw.filter((t): t is string => typeof t === 'string');
+  return [];
+}
+
+function bareType(t: string): string {
+  return t.replace(/^https?:\/\/schema\.org\//i, '').toLowerCase();
+}
+
 function readJsonLd(html: string): JsonLdSignals {
   const types: string[] = [];
   let invalidBlocks = 0;
   let hasSameAs = false;
+  const itemLists: ItemListSignal[] = [];
+  let entityType: string | null = null;
+  let entityProps: string[] = [];
   const blocks =
     html.match(/<script\b[^>]*application\/ld\+json[^>]*>([\s\S]*?)<\/script>/gi) ?? [];
 
@@ -184,9 +250,44 @@ function readJsonLd(html: string): JsonLdSignals {
     }
     const record = node as Record<string, unknown>;
     const type = record['@type'];
-    if (typeof type === 'string') types.push(type);
-    else if (Array.isArray(type)) for (const t of type) if (typeof t === 'string') types.push(t);
+    const names = typeNames(type);
+    for (const t of names) types.push(t);
     if ('sameAs' in record) hasSameAs = true;
+
+    const bare = names.map(bareType);
+
+    // First entity block wins, and we record what it carries rather than only
+    // that it exists - "has Organization schema" says nothing about whether an
+    // assistant could actually name the thing.
+    if (entityType === null && bare.some((t) => ENTITY_TYPES.has(t))) {
+      entityType = names[0] ?? null;
+      entityProps = ENTITY_PROPS_WATCHED.filter((prop) => {
+        const value = record[prop];
+        return value !== undefined && value !== null && value !== '';
+      });
+    }
+
+    // Breadcrumbs are item lists too; counting them would make a breadcrumb
+    // look like a published collection.
+    if (bare.includes('itemlist') && !bare.includes('breadcrumblist')) {
+      const entries = record['itemListElement'];
+      if (Array.isArray(entries)) {
+        const childTypes = entries.map((entry) => {
+          if (!entry || typeof entry !== 'object') return '(untyped)';
+          const e = entry as Record<string, unknown>;
+          const inner = e['item'];
+          if (inner && typeof inner === 'object') {
+            const t = typeNames((inner as Record<string, unknown>)['@type'])[0];
+            if (t) return t;
+          }
+          // A bare ListItem with no nested item declares no type of its own.
+          const own = typeNames(e['@type']).filter((t) => bareType(t) !== 'listitem')[0];
+          return own ?? '(untyped)';
+        });
+        itemLists.push({ count: entries.length, childTypes });
+      }
+    }
+
     for (const key of ['@graph', 'mainEntity', 'itemListElement', 'about', 'hasPart', 'publisher', 'author']) {
       if (key in record) walk(record[key], depth + 1);
     }
@@ -211,6 +312,10 @@ function readJsonLd(html: string): JsonLdSignals {
     hasArticle: lower.some((t) => ARTICLE_TYPES.has(t)),
     hasBreadcrumb: lower.includes('breadcrumblist'),
     hasSameAs,
+    itemLists,
+    entityType,
+    entityProps,
+    hasVideoObject: lower.includes('videoobject'),
   };
 }
 
@@ -252,6 +357,7 @@ function readImages(html: string): ImageSignals {
   let lazy = 0;
   let withDimensions = 0;
   let modernFormats = 0;
+  let addressable = 0;
   for (const tag of tags) {
     const a = attrs(tag);
     if ('alt' in a) withAlt += 1;
@@ -259,10 +365,34 @@ function readImages(html: string): ImageSignals {
     if (a.width && a.height) withDimensions += 1;
     const src = `${a.src ?? ''} ${a.srcset ?? ''}`;
     if (MODERN_IMAGE.test(src)) modernFormats += 1;
+    // An inline data: URI cannot be linked to, and an image with no alt cannot
+    // be described, so neither is usable as an answer asset however good it
+    // looks on the page.
+    if (a.src && !/^data:/i.test(a.src) && 'alt' in a && a.alt !== '' && a.width && a.height) {
+      addressable += 1;
+    }
   }
   // <picture> sources carry the modern formats when <img> keeps the fallback.
   modernFormats += (html.match(/<source\b[^>]*type=["']image\/(webp|avif)["'][^>]*>/gi) ?? []).length;
-  return { total: tags.length, withAlt, lazy, withDimensions, modernFormats };
+  return { total: tags.length, withAlt, lazy, withDimensions, modernFormats, addressable };
+}
+
+/**
+ * Tables carrying data rather than layout: at least two columns in the first
+ * row and at least three rows overall. A parallel table is what a side-by-side
+ * comparison is read from; a one-column list of rows is prose in a box.
+ */
+function readDataTables(html: string): number {
+  const tables = html.match(/<table\b[^>]*>[\s\S]*?<\/table\s*>/gi) ?? [];
+  let count = 0;
+  for (const table of tables) {
+    const rows = table.match(/<tr\b[^>]*>[\s\S]*?<\/tr\s*>/gi) ?? [];
+    const firstRow = rows[0];
+    if (rows.length < 3 || !firstRow) continue;
+    const cells = (firstRow.match(/<(th|td)\b/gi) ?? []).length;
+    if (cells >= 2) count += 1;
+  }
+  return count;
 }
 
 function readScripts(html: string, head: string, host: string | null): ScriptSignals {
@@ -445,6 +575,7 @@ export function extractSignals(rawHtml: string, pageUrl: string): Signals {
     wordCount,
     iframes: (html.match(/<iframe\b/gi) ?? []).length,
     landmarks,
+    dataTables: readDataTables(html),
     preconnects,
     textRatio: rawHtml.length === 0 ? 0 : Math.min(1, (wordCount * 6) / rawHtml.length),
   };

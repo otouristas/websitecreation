@@ -9,6 +9,7 @@ import { PortfolioThumbnail } from '@/components/landing/PortfolioThumbnail';
 import SchemaMarkup from '@/components/seo/SchemaMarkup';
 import Breadcrumbs from '@/components/seo/Breadcrumbs';
 import { generateArticleSchema, generateBreadcrumbSchema, combineSchemas } from '@/lib/seo/schema';
+import { schemaTypeForPortfolioCategory } from '@/data/ai-mode-tags';
 import { buildProjectCaseStudy } from '@/lib/portfolio-case-study';
 import { getServiceEl } from '@/data/services-i18n';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
@@ -62,6 +63,26 @@ export function WorkDetail({ project, locale = 'en' }: WorkDetailProps) {
       width: 1200,
       height: 630,
     },
+    // Say what the business is, not just that we wrote about it. Without this
+    // the page names a real company and describes its market while asserting
+    // nothing machine-readable about the company existing.
+    //
+    // Identity only: type, name, url, and the coarse markets already recorded
+    // in portfolio.ts. No address, phone, geo, hours, price or rating - we do
+    // not hold those for clients, and nothing here may be aspirational.
+    // Skipped entirely when the site is offline: four of these domains are
+    // dead, one is a parked for-sale page, and asserting a live business for a
+    // parked domain is the class of untruth this repo keeps removing.
+    ...(project.liveStatus === 'offline'
+      ? {}
+      : {
+          about: {
+            type: schemaTypeForPortfolioCategory(project.category),
+            name: project.name,
+            url: project.url,
+            areaServed: project.markets,
+          },
+        }),
   });
   const breadcrumbs = generateBreadcrumbs(
     [

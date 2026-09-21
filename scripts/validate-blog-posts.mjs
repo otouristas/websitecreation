@@ -41,6 +41,10 @@ const ALLOW_LONG = new Set([
   'glossary-strategy-internal-linking',
   'poso-kostizei-to-seo',
   'backlink-checker',
+  // The AI Mode pair carries a seven-row entity table plus the caveats about
+  // the source, which do not compress without losing the point of the post.
+  'google-ai-mode-tags',
+  'google-ai-mode-tags-el',
 ]);
 
 const CTA_RE =

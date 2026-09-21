@@ -8,7 +8,7 @@ import { isValidLocale, localizedPath, type SiteLocale } from "@/lib/i18n/locale
 import { buildMetadata } from "@/lib/seo";
 import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
-import { generateBreadcrumbSchema } from "@/lib/seo/schema";
+import { generateBreadcrumbSchema, generateSoftwareApplicationSchema, combineSchemas, BASE_URL } from "@/lib/seo/schema";
 
 interface PageProps {
   params: Promise<{ locale: string; slug: string }>;
@@ -55,7 +55,27 @@ export default async function ComparePage({ params }: PageProps) {
       <Header />
       <main className="blueprint-grid relative z-0 main-below-header pb-20">
         <article className="container max-w-3xl">
-          <SchemaMarkup schemas={[generateBreadcrumbSchema({ items: breadcrumbItems })]} />
+          {/*
+            Our own product, declared. The page compares two tools and said
+            nothing structured about either.
+
+            Only our side is marked up. Emitting a SoftwareApplication for a
+            competitor would mean publishing claims about their feature set and
+            licensing that we cannot verify and that go stale the moment they
+            ship, and the prose below is already careful to describe where they
+            fit rather than score them. A comparison table of unverifiable
+            competitor specs would read as more rigorous and be less true.
+          */}
+          <SchemaMarkup
+            schemas={combineSchemas(
+              generateBreadcrumbSchema({ items: breadcrumbItems }),
+              generateSoftwareApplicationSchema({
+                name: "AnotherSEOGuru",
+                description: c.summary,
+                url: `${BASE_URL}${localizedPath("en", "/platform")}`,
+              }),
+            )}
+          />
           <Breadcrumbs items={breadcrumbItems} className="mb-8" />
           <h1 className="font-display text-4xl font-medium tracking-[-0.04em] md:text-5xl mb-6">{c.headline}</h1>
           <p className="text-xl text-muted-foreground mb-12 leading-relaxed">{c.summary}</p>

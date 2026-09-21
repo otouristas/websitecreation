@@ -1270,6 +1270,38 @@ export const glossaryCategories: GlossaryCategory[] = [
     color: "violet",
     terms: [
       {
+        id: "ai-mode",
+        term: "AI Mode",
+        termEl: "AI Mode",
+        shortDefinition: "Google's conversational search surface, which renders answers as interactive cards rather than a list of links.",
+        shortDefinitionEl: "Η συνομιλιακή επιφάνεια αναζήτησης της Google, που αποδίδει απαντήσεις ως διαδραστικές κάρτες αντί για λίστα συνδέσμων.",
+        fullDefinition: "AI Mode is distinct from AI Overviews. An AI Overview is a summary above the classic results; AI Mode is a conversational surface where the whole answer is assembled, and can include maps, carousels, comparison tables and generated widgets. A site cannot produce those elements. It can only publish the data one is assembled from, which is why entity markup and parallel, typed lists matter more here than page-level copy.",
+        fullDefinitionEl: "Το AI Mode διαφέρει από τα AI Overviews. Ένα AI Overview είναι μια σύνοψη πάνω από τα κλασικά αποτελέσματα. Το AI Mode είναι μια συνομιλιακή επιφάνεια όπου συναρμολογείται ολόκληρη η απάντηση και μπορεί να περιλαμβάνει χάρτες, carousels, πίνακες σύγκρισης και δημιουργούμενα εργαλεία. Ένα site δεν μπορεί να παράγει αυτά τα στοιχεία. Μπορεί μόνο να δημοσιεύει τα δεδομένα από τα οποία συναρμολογούνται.",
+        example: "Asking a follow-up question about hotels and getting a carousel of three properties with prices, rather than ten blue links.",
+        technique: "Publish a complete entity block, keep lists parallel and at least three items long with one type per list, and serve the text without JavaScript.",
+        proTip: "AI Mode and AI Overviews get used interchangeably and are not the same thing. Being clear about which one a client means changes what you measure.",
+        relatedTerms: ["ai-overview", "grounding", "llm-seo"],
+        relatedLinks: [
+          { title: "Google AI Mode tags and what grounds them", url: "/blog/google-ai-mode-tags", type: "blog" }
+        ]
+      },
+      {
+        id: "grounding",
+        term: "Grounding",
+        termEl: "Τεκμηρίωση (grounding)",
+        shortDefinition: "Tying a generated answer to a retrievable source, so the claim can be attributed rather than invented.",
+        shortDefinitionEl: "Η σύνδεση μιας παραγόμενης απάντησης με ανακτήσιμη πηγή, ώστε ο ισχυρισμός να αποδίδεται αντί να επινοείται.",
+        fullDefinition: "Grounding is how an answer engine anchors what it says to something it retrieved. For a website, being useful as a grounding source is the whole of the available leverage: you cannot control how an answer is rendered, only whether your page supplies data clean enough to be quoted. That favours structured data matching the visible content, and answers stated plainly near the question.",
+        fullDefinitionEl: "Η τεκμηρίωση είναι ο τρόπος με τον οποίο μια μηχανή απαντήσεων αγκυρώνει όσα λέει σε κάτι που ανέκτησε. Για ένα site, το να είναι αξιοποιήσιμη πηγή τεκμηρίωσης είναι όλο το διαθέσιμο περιθώριο: δεν ελέγχετε πώς αποδίδεται μια απάντηση, μόνο αν η σελίδα σας δίνει δεδομένα αρκετά καθαρά ώστε να παρατεθούν.",
+        example: "A hotel page publishing price, coordinates and three captioned images gives an assistant something to attribute; a page of prose does not.",
+        technique: "Match structured data to what is visibly on the page, answer the question in the first two sentences under the heading, and render the text server-side.",
+        proTip: "Grounding is retrieval, not training. Being in a model's training data and being retrievable today are different problems with different fixes.",
+        relatedTerms: ["ai-mode", "llm-seo", "schema-markup"],
+        relatedLinks: [
+          { title: "Google AI Mode tags and what grounds them", url: "/blog/google-ai-mode-tags", type: "blog" }
+        ]
+      },
+      {
         id: "llm-seo",
         term: "LLM SEO",
         shortDefinition: "Optimizing content to appear in Large Language Model responses.",

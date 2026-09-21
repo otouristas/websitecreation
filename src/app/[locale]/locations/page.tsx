@@ -13,7 +13,9 @@ import {
 import { services } from "@/data/services";
 import { getServiceEl } from "@/data/services-i18n";
 import { isValidLocale, localizedPath, type SiteLocale } from "@/lib/i18n/locale";
-import { buildMetadata } from "@/lib/seo";
+import { buildMetadata, generateCollectionPageSchema } from "@/lib/seo";
+import { BASE_URL } from "@/lib/seo/schema";
+import SchemaMarkup from "@/components/seo/SchemaMarkup";
 
 type PageProps = { params: Promise<{ locale: string }> };
 
@@ -65,6 +67,20 @@ export default async function LocationsPage({ params }: PageProps) {
   const isEl = locale === 'el';
   const lp = (path: string) => localizedPath(locale as SiteLocale, path);
 
+  // The index lists every city it serves and emitted nothing. One type across
+  // all 161 entries: these are pages about a service in a place, not markup
+  // about the places themselves.
+  const collectionSchema = generateCollectionPageSchema({
+    name: isEl ? "Κατασκευή Ιστοσελίδων ανά Πόλη" : "Website creation by city",
+    url: `${BASE_URL}${lp("/locations")}`,
+    inLanguage: locale,
+    items: allLocations.map((location) => ({
+      url: `${BASE_URL}${lp(`/services/website-creation/${location.slug}`)}`,
+      name: location.city,
+      itemType: "WebPage",
+    })),
+  });
+
   const byCountry = groupLocationsByCountry();
   const usByState = groupUSLocationsByState();
   const usStates = Object.keys(usByState).sort();
@@ -109,6 +125,7 @@ export default async function LocationsPage({ params }: PageProps) {
 
   return (
     <>
+      <SchemaMarkup schemas={[collectionSchema]} />
       <Header locale={locale as SiteLocale} />
       <main className="blueprint-grid relative z-0 main-below-header">
         <section className="section-compact ">

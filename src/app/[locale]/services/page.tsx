@@ -76,6 +76,7 @@ export default async function ServicesPage({ params }: PageProps) {
         return {
           url: `${BASE_URL}${lp(`/services/${s.slug}`)}`,
           name: el?.name ?? s.name,
+          itemType: 'Service',
         };
       }),
     }),

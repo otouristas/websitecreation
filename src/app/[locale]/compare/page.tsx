@@ -66,6 +66,7 @@ export default async function CompareHubPage({ params }: PageProps) {
         name: c.headline,
         url: `${BASE_URL}${localizedPath("en", `/compare/${c.slug}`)}`,
         description: c.summary,
+        itemType: "WebPage",
       })),
     }),
   );

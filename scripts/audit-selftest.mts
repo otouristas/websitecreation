@@ -20,6 +20,7 @@ import type { AddressInfo } from 'node:net';
 import { runAudit } from '../src/lib/audit/run';
 import { parseRobots, isAllowed, judgeAgents, AI_AGENTS } from '../src/lib/audit/robots';
 import { extractSignals } from '../src/lib/audit/signals';
+import { judgeItemList, groundingProfileFor } from '../src/data/ai-mode-tags';
 import type { AuditResult } from '../src/lib/audit/types';
 import { buildEstimate, normalizeInput } from '../src/lib/estimate/model';
 import { recommendFromAudit } from '../src/lib/estimate/recommend';
@@ -204,7 +205,18 @@ async function main(): Promise<void> {
     eq('llms.txt check', byId.get('llms_txt')?.state, 'pass');
     eq('ai access degraded by the two blocks', byId.get('ai_access')?.state, 'warn');
     eq('img alt warns', byId.get('img_alt')?.state, 'warn');
+    // The fixture's LocalBusiness carries a name and a sameAs and nothing
+    // else, which is the common real-world shape: type declared, identity
+    // absent.
+    eq('entity block is thin', byId.get('entity_completeness')?.state, 'fail');
+    // Its only item list is an empty BreadcrumbList, which this check
+    // deliberately does not count as a published collection.
+    eq('no collection to read', byId.get('collection_shape')?.state, 'fail');
+    // Two of the three images carry alt and dimensions; the third has neither.
+    eq('two usable images warns', byId.get('media_assets')?.state, 'warn');
     ok('score in range', result.score > 0 && result.score < 100, result.score);
+    // Four, not five. The AI Mode checks went into the existing ai pillar
+    // rather than adding a bar the widget's two-column grid cannot fill.
     eq('pillars reported', result.pillars.length, 4);
     ok(
       'priorities are the non-passing checks',
@@ -281,6 +293,101 @@ Disallow:
   );
   eq('no server-rendered words', shell.wordCount, 0);
   eq('no structured data', shell.jsonLd.blocks, 0);
+
+  // ------------------------------------------- 7b. the two AI Mode render rules
+  //
+  // Three children of one type, or the container is not read as a set. These
+  // are the only two claims in the source that are measurable on a page, so
+  // the boundary is the thing worth pinning down: two items must fail where
+  // three pass, and a mixed list must fail however long it is.
+  console.log('\nitem list shape');
+  const listMarkup = (items: string) =>
+    `<!doctype html><html><body><script type="application/ld+json">
+     {"@context":"https://schema.org","@type":"ItemList","itemListElement":[${items}]}
+     </script></body></html>`;
+  const entry = (type: string, i: number) =>
+    `{"@type":"ListItem","position":${i},"item":{"@type":"${type}","name":"n${i}"}}`;
+
+  const three = extractSignals(
+    listMarkup([1, 2, 3].map((i) => entry('LodgingBusiness', i)).join(',')),
+    'https://list.test/',
+  );
+  const threeVerdict = judgeItemList(
+    three.jsonLd.itemLists[0]?.childTypes ?? [],
+    three.jsonLd.itemLists[0]?.count ?? 0,
+  );
+  ok('three of one type is a readable set', threeVerdict.homogeneous && threeVerdict.meetsThreshold, threeVerdict);
+
+  const two = extractSignals(
+    listMarkup([1, 2].map((i) => entry('LodgingBusiness', i)).join(',')),
+    'https://list.test/',
+  );
+  const twoVerdict = judgeItemList(
+    two.jsonLd.itemLists[0]?.childTypes ?? [],
+    two.jsonLd.itemLists[0]?.count ?? 0,
+  );
+  eq('two is below the threshold', twoVerdict.meetsThreshold, false);
+  eq('two of one type is still homogeneous', twoVerdict.homogeneous, true);
+
+  const mixed = extractSignals(
+    listMarkup([entry('LodgingBusiness', 1), entry('Restaurant', 2), entry('Event', 3)].join(',')),
+    'https://list.test/',
+  );
+  const mixedVerdict = judgeItemList(
+    mixed.jsonLd.itemLists[0]?.childTypes ?? [],
+    mixed.jsonLd.itemLists[0]?.count ?? 0,
+  );
+  eq('mixed types are not homogeneous', mixedVerdict.homogeneous, false);
+  eq('mixed types still meet the count', mixedVerdict.meetsThreshold, true);
+
+  const untyped = extractSignals(
+    listMarkup([1, 2, 3].map((i) => `{"@type":"ListItem","position":${i},"url":"/u${i}"}`).join(',')),
+    'https://list.test/',
+  );
+  const untypedVerdict = judgeItemList(
+    untyped.jsonLd.itemLists[0]?.childTypes ?? [],
+    untyped.jsonLd.itemLists[0]?.count ?? 0,
+  );
+  eq('entries with no type are untyped', untypedVerdict.typed, false);
+
+  // A breadcrumb is an item list. Counting it would make every site with a
+  // breadcrumb look like it publishes a collection.
+  const crumb = extractSignals(
+    `<!doctype html><html><body><script type="application/ld+json">
+     {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://a.test/"},
+      {"@type":"ListItem","position":2,"name":"Rooms","item":"https://a.test/rooms"},
+      {"@type":"ListItem","position":3,"name":"Suite","item":"https://a.test/rooms/suite"}]}
+     </script></body></html>`,
+    'https://a.test/',
+  );
+  eq('breadcrumbs are not a collection', crumb.jsonLd.itemLists.length, 0);
+  eq('but they are still a breadcrumb', crumb.jsonLd.hasBreadcrumb, true);
+
+  console.log('\nentity completeness and tables');
+  const filled = extractSignals(
+    `<!doctype html><html><body><script type="application/ld+json">
+     {"@context":"https://schema.org","@type":"Hotel","name":"N","url":"https://h.test/",
+      "address":{"@type":"PostalAddress","addressLocality":"Chania"},"telephone":"+30",
+      "priceRange":"EUR","sameAs":["https://facebook.com/h"]}
+     </script>
+     <table><tr><th>Model</th><th>Seats</th></tr><tr><td>A</td><td>4</td></tr><tr><td>B</td><td>5</td></tr></table>
+     <table><tr><td>layout</td></tr></table>
+     </body></html>`,
+    'https://h.test/',
+  );
+  eq('entity type is recorded verbatim', filled.jsonLd.entityType, 'Hotel');
+  ok(
+    'a Hotel is measured against the lodging profile',
+    groundingProfileFor(filled.jsonLd.entityType ?? '')?.schemaType === 'LodgingBusiness',
+    groundingProfileFor(filled.jsonLd.entityType ?? '')?.schemaType,
+  );
+  ok(
+    'its filled properties are counted',
+    filled.jsonLd.entityProps.length >= 5,
+    filled.jsonLd.entityProps,
+  );
+  eq('only the parallel table counts', filled.dataTables, 1);
 
   // ------------------------------------------------------- 8. the cost model
   console.log('\ncost model');

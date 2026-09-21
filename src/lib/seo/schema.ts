@@ -5,6 +5,8 @@
 
 import type {
     ArticleSchemaData,
+    DefinedTermSetSchemaData,
+    PersonSchemaData,
     FAQSchemaData,
     BreadcrumbSchemaData,
     LocalBusinessSchemaData,
@@ -53,6 +55,17 @@ export function generateArticleSchema(data: ArticleSchemaData): SchemaOutput {
                 url: data.image.url,
                 width: data.image.width,
                 height: data.image.height,
+            },
+        }),
+        ...(data.about && {
+            about: {
+                '@type': data.about.type,
+                '@id': `${data.about.url}#entity`,
+                name: data.about.name,
+                url: data.about.url,
+                ...(data.about.areaServed?.length
+                    ? { areaServed: data.about.areaServed }
+                    : {}),
             },
         }),
     };
@@ -238,6 +251,15 @@ export { BASE_URL, BRAND_NAME };
 export interface CollectionItem {
   readonly url: string;
   readonly name: string;
+  /**
+   * schema.org type of the thing the entry points at, e.g. 'BlogPosting'.
+   *
+   * Without it a ListItem carries a position and a link and nothing saying
+   * what it is, which is an untyped list - the exact shape we would flag on a
+   * client's site. Optional so existing callers keep working, but every
+   * caller in this repo passes it.
+   */
+  readonly itemType?: string;
 }
 
 export interface CollectionPageSchemaData {
@@ -274,6 +296,9 @@ export function generateCollectionPageSchema(
         position: i + 1,
         url: item.url,
         name: item.name,
+        ...(item.itemType
+          ? { item: { '@type': item.itemType, '@id': item.url, name: item.name } }
+          : {}),
       })),
     },
   };
@@ -329,5 +354,73 @@ export function generateOfferCatalogSchema(data: OfferCatalogSchemaData): Schema
         },
       })),
     },
+  };
+}
+
+/**
+ * DefinedTermSet + DefinedTerm for the glossary.
+ *
+ * `/[locale]/glossary` renders 105 definitions - and, before this, no
+ * structured data at all, so a page whose entire job is defining terms said
+ * nothing machine-readable about any of them. A term set is also the one
+ * place on this site where a long list of genuinely homogeneous entries
+ * exists, which is what makes it readable as a set rather than as prose.
+ *
+ * Descriptions are the short definitions, matching the server-rendered list
+ * in the page: markup that disagrees with the visible text is worse than no
+ * markup.
+ */
+export function generateDefinedTermSetSchema(
+  data: DefinedTermSetSchemaData,
+): SchemaOutput {
+  const setId = `${data.url}#glossary`;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'DefinedTermSet',
+    '@id': setId,
+    name: data.name,
+    ...(data.description ? { description: data.description } : {}),
+    url: data.url,
+    ...(data.inLanguage ? { inLanguage: data.inLanguage } : {}),
+    isPartOf: { '@id': `${BASE_URL}/#website` },
+    hasDefinedTerm: data.terms.map((term) => ({
+      '@type': 'DefinedTerm',
+      '@id': `${data.url}#${term.id}`,
+      name: term.name,
+      description: term.description,
+      inDefinedTermSet: { '@id': setId },
+    })),
+  };
+}
+
+/**
+ * Person schema.
+ *
+ * The seam, not the content. The site has no author bios and no team page, so
+ * there is no real name, role or profile URL in this repo to put here, and
+ * inventing one would be exactly the kind of aspirational claim
+ * `src/data/company-facts.ts` rules out. Wire this up when a real person is
+ * ready to be named.
+ */
+export function generatePersonSchema(data: PersonSchemaData): SchemaOutput {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: data.name,
+    ...(data.url ? { url: data.url, '@id': `${data.url}#person` } : {}),
+    ...(data.jobTitle ? { jobTitle: data.jobTitle } : {}),
+    ...(data.description ? { description: data.description } : {}),
+    ...(data.knowsAbout?.length ? { knowsAbout: data.knowsAbout } : {}),
+    ...(data.sameAs?.length ? { sameAs: data.sameAs } : {}),
+    ...(data.worksFor
+      ? {
+          worksFor: {
+            '@type': 'Organization',
+            '@id': `${BASE_URL}/#organization`,
+            name: data.worksFor.name,
+            url: data.worksFor.url,
+          },
+        }
+      : {}),
   };
 }
