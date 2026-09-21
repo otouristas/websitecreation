@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, Suspense } from 'react';
+import { useState, useEffect, useCallback, useRef, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { industries } from '@/data/industries';
@@ -8,6 +8,8 @@ import { industriesEl } from '@/data/industries-i18n';
 import { submitToFormspree } from '@/lib/formspree';
 import { captureUtmParams, trackFormStart, trackLead } from '@/lib/analytics';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
+import { InstantPlan, summarizePlan, type PlanSnapshot } from '@/components/tools/InstantPlan';
+import { SERVICE_GOALS } from '@/lib/estimate/recommend';
 
 /**
  * Step 1 is an outcome menu, not a price menu.
@@ -108,6 +110,14 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
   const [submitError, setSubmitError] = useState('');
   const [utmParams, setUtmParams] = useState<Record<string, string>>({});
   const [hasTrackedStart, setHasTrackedStart] = useState(false);
+  // The live test and the estimator sit above this form; whatever the visitor
+  // ended up looking at travels with the brief so the call starts from their
+  // figures rather than from a blank page.
+  const [plan, setPlan] = useState<PlanSnapshot | null>(null);
+  const briefRef = useRef<HTMLDivElement>(null);
+  const scrollToBrief = useCallback(() => {
+    briefRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, []);
 
   const [formData, setFormData] = useState({
     goal: '',
@@ -143,6 +153,10 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
     setUtmParams(captureUtmParams());
     const goal = searchParams.get('goal');
     const project = searchParams.get('project');
+    // Service pages link here as `?service=<slug>`. Until now nothing read it,
+    // so a visitor who had just finished reading about one service landed on a
+    // blank wizard and was asked to pick their goal from scratch.
+    const service = searchParams.get('service');
     // `website` arrives from the homepage instant scan, so the visitor never
     // types their domain twice.
     const website = searchParams.get('website');
@@ -150,6 +164,8 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
       let next = { ...prev };
       if (goal && goals.some((g) => g.id === goal)) {
         next = { ...next, goal };
+      } else if (service && SERVICE_GOALS[service] && goals.some((g) => g.id === SERVICE_GOALS[service])) {
+        next = { ...next, goal: SERVICE_GOALS[service] };
       }
       if (project) {
         next = { ...next, industry: project };
@@ -160,6 +176,22 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
       return next;
     });
   }, [searchParams, goals]);
+
+  // A completed audit is proof the visitor has a site, and it already knows the
+  // address after redirects. Asking them to type it again below - and to answer
+  // "where are you now?" - is asking for something we just measured. Anything
+  // they have already filled in by hand wins.
+  const handleAudited = useCallback((result: { finalUrl: string }) => {
+    setFormData((prev) =>
+      prev.website && prev.projectType
+        ? prev
+        : {
+            ...prev,
+            website: prev.website || result.finalUrl.slice(0, 200),
+            projectType: prev.projectType || 'existing',
+          },
+    );
+  }, []);
 
   const selectedGoal = goals.find((g) => g.id === formData.goal);
 
@@ -250,6 +282,7 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
       'Phone': formData.phone || 'Not provided',
       '_subject': `New Website Project Request from ${formData.businessName}`,
       'Form Type': 'Get Started Wizard',
+      ...(plan ? summarizePlan(plan, locale) : {}),
     ...utmParams,
     };
 
@@ -565,7 +598,23 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
         </div>
       </section>
 
-      <div className="container max-w-6xl px-4">
+      {/* Live site test and live estimate, above the brief.
+          A visitor who can see what their own site scores and what fixing it
+          costs arrives at the form already knowing what they are asking for -
+          and we receive a brief with real figures attached instead of a name
+          and an email. */}
+      <section className="container max-w-6xl px-4 mb-16">
+        <InstantPlan
+          locale={locale}
+          service={searchParams.get('service')}
+          initialUrl={searchParams.get('website') ?? ''}
+          onChange={setPlan}
+          onAudited={handleAudited}
+          onSendBrief={scrollToBrief}
+        />
+      </section>
+
+      <div ref={briefRef} className="container max-w-6xl px-4 scroll-mt-28">
         <div className="grid lg:grid-cols-5 gap-8 items-start">
           
           {/* Left Column: Before / After Marketing Comparison */}
