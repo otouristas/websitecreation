@@ -51,3 +51,21 @@ next-env.d.ts
 # actually needs live in src/data/gsc-pages.ts.
 lets-rank-first/
 *Performance-on-Search*.zip
+/dist/
+.vinext/
+.wrangler/
+
+node_modules/
+.wrangler/
+.dev.vars*
+.env*.local
+
+node_modules/
+.wrangler/
+.dev.vars*
+.env*.local
+
+node_modules/
+.wrangler/
+.dev.vars*
+.env*.local

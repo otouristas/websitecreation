@@ -17,7 +17,11 @@
     "generate:llms": "npx tsx scripts/generate-llms.mjs",
     "validate:blog": "node scripts/validate-blog-posts.mjs",
     "test:audit": "npx tsx scripts/audit-selftest.mts",
-    "report:ai-mode": "npx tsx scripts/ai-mode-report.mts"
+    "report:ai-mode": "npx tsx scripts/ai-mode-report.mts",
+    "dev:vinext": "vite dev --port 3001",
+    "build:vinext": "vite build && node scripts/cloudflare-build-config.mjs",
+    "start:vinext": "wrangler dev --config dist/server/wrangler.json",
+    "deploy:vinext": "vinext-cloudflare deploy --config dist/server/wrangler.json"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.4",
@@ -36,16 +40,25 @@
     "tailwind-merge": "^3.6.0"
   },
   "devDependencies": {
+    "@cloudflare/vite-plugin": "^1.62.5",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@vinext/cloudflare": "^1.0.1",
+    "@vitejs/plugin-react": "^6.1.2",
+    "@vitejs/plugin-rsc": "^0.5.35",
     "babel-plugin-react-compiler": "1.0.0",
     "eslint": "^9",
     "eslint-config-next": "^16.3.1",
     "playwright": "^1.61.1",
+    "react-server-dom-webpack": "^19.3.0",
     "sharp": "^0.35.2",
     "tailwindcss": "^4",
-    "typescript": "^5"
-  }
+    "typescript": "^5",
+    "vinext": "^1.0.1",
+    "vite": "^8.3.2",
+    "wrangler": "^4.147.0"
+  },
+  "type": "module"
 }
