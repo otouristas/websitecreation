@@ -19,7 +19,7 @@
     "test:audit": "npx tsx scripts/audit-selftest.mts",
     "report:ai-mode": "npx tsx scripts/ai-mode-report.mts",
     "dev:vinext": "vite dev --port 3001",
-    "build:vinext": "vite build",
+    "build:vinext": "vite build && node scripts/cloudflare-build-config.mjs",
     "start:vinext": "wrangler dev --config dist/server/wrangler.json",
     "deploy:vinext": "vinext-cloudflare deploy --config dist/server/wrangler.json"
   },
