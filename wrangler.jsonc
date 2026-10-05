@@ -1,0 +1,30 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "websitecreation",
+  "compatibility_date": "2026-10-05",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "main": "vinext/server/fetch-handler",
+  "assets": {
+    "directory": "dist/client",
+    "not_found_handling": "none",
+    "binding": "ASSETS",
+    "run_worker_first": [
+      "/_vinext/static-cache/*"
+    ]
+  },
+  "account_id": "3ae246eded35e99220b461c2ca5ff158",
+  "workers_dev": true,
+  "preview_urls": false,
+  "rules": [
+    {
+      "type": "Text",
+      "globs": [
+        "**/*.txt",
+        "**/*.sql"
+      ],
+      "fallthrough": false
+    }
+  ]
+}
