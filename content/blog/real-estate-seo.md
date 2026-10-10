@@ -65,7 +65,7 @@ RealEstateListing (or equivalent) structured data helps Google understand price,
 | Multi-area domestic | {{SEO_GROWTH}}/mo | Seller content + hubs | 3–5 months |
 | International / bilingual | {{SEO_GROWTH}}–{{SEO_AUTHORITY}}+/mo | Hreflang + EN hubs | 4–6 months |
 | Custom listing portal | Growth-Authority | Faceted UX + indexation | 4–8 months |
-| Site rebuild needed | from €899 + SEO | Mobile search + CTAs | Parallel 60–90 days |
+| Site rebuild needed | from {{ENTRY_WEBSITE}} + SEO | Mobile search + CTAs | Parallel 60–90 days |
 
 Measure **listing appointments**, seller form fills, and organic enquiry quality - not only listing views. Transparent [pricing](/en/pricing) keeps scope comparable across vendors.
 

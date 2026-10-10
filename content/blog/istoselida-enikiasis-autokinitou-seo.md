@@ -76,7 +76,7 @@ Title δομής τύπου «Ενοικίαση Αυτοκινήτου Αερο
 | Growth SEO (πολλαπλά νησιά / EN) | {{SEO_GROWTH}}/μήνα | Περισσότερο περιεχόμενο + links |
 | Authority / brand πολυνησιωτικό | {{SEO_AUTHORITY}}/μήνα | Aggregator ανταγωνισμός |
 | Εφάπαξ audit | €400 – €800 | Τεχνικό + keyword map |
-| Website rent-a-car | από €899 | Στόλος, booking, locations |
+| Website rent-a-car | από {{ENTRY_WEBSITE}} | Στόλος, booking, locations |
 | Wins σε χαμηλό ανταγωνισμό | 8–16 εβδομάδες | Μικρότερα νησιά |
 | Head terms ανταγωνιστικών νησιών | 6–12 μήνες | Μύκονος, Σαντορίνη, Κρήτη |
 

@@ -55,7 +55,7 @@ Signups peak in January (new-year decisions) and September (back from holidays).
 | Large gym, one location | {{ENTRY_SEO}}–{{SEO_GROWTH}}/mo | Programs + neighborhood pages | 2–4 months |
 | Multi-location chain | {{SEO_GROWTH}}+/mo | Per-location GBP + local URLs | 3–6 months |
 | Personal trainer (solo) | {{ENTRY_SEO}}/mo | Profile + service + content | 6–10 weeks |
-| Website needed first | from €899 + SEO | Mobile trial forms | Parallel sprint |
+| Website needed first | from {{ENTRY_WEBSITE}} + SEO | Mobile trial forms | Parallel sprint |
 
 Track **trial bookings and membership starts from Google**, map-pack position for core queries, and review velocity. Compare packages via [how much SEO costs](/en/blog/how-much-does-seo-cost).
 
