@@ -5,7 +5,7 @@ import { buildMetaDescription, finalizeDescription, fitDescription, BRAND_NAME, 
 import { getHreflangAlternates } from '@/lib/locale-paths';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 import { LOCALES } from '@/lib/i18n/locale';
-import { shouldIndexServiceLocation, type Location } from '@/data/locations';
+import { isServiceLocationIndexable, type Location } from '@/data/locations';
 import { getServiceEl } from '@/data/services-i18n';
 import { industriesEl } from '@/data/industries-i18n';
 import { getGreekLocative } from '@/lib/greek-locative';
@@ -379,7 +379,7 @@ export function buildServiceLocationMetadata(
       ? `${location.city}, ${location.country ?? location.countryCode}`
       : `${location.city}, ${location.stateCode}`;
 
-  const noIndex = !shouldIndexServiceLocation(location as Location, 'en');
+  const noIndex = !isServiceLocationIndexable(service.slug, location as Location, 'en');
 
   return buildMetadata({
     // Front-load keyword + city so truncation drops the hook, never the keyword.
@@ -399,7 +399,7 @@ export function buildServiceLocationMetadata(
     // English city pages don't have Greek counterparts unless the city is Greek -
     // and the counterpart only counts if it is actually indexable, otherwise we
     // announce an alternate that tells crawlers not to index it.
-    hreflangLocales: serviceLocationHreflangLocales(location as Location),
+    hreflangLocales: serviceLocationHreflangLocales(service.slug, location as Location),
     service: service.name,
     location: placeLabel,
     usp: `${service.name} for businesses in ${location.city}`,
@@ -418,10 +418,10 @@ export function buildServiceLocationMetadata(
  * drop. `getHreflangAlternates` treats fewer than two locales as "no
  * alternates", which is the behaviour we want in that case.
  */
-function serviceLocationHreflangLocales(location: Location): SiteLocale[] {
+function serviceLocationHreflangLocales(serviceSlug: string, location: Location): SiteLocale[] {
   const locales: SiteLocale[] = [];
-  if (shouldIndexServiceLocation(location, 'en')) locales.push('en');
-  if (shouldIndexServiceLocation(location, 'el')) locales.push('el');
+  if (isServiceLocationIndexable(serviceSlug, location, 'en')) locales.push('en');
+  if (isServiceLocationIndexable(serviceSlug, location, 'el')) locales.push('el');
   return locales;
 }
 
@@ -530,8 +530,8 @@ export function buildServiceLocationMetadataEl(
   const keyword = svcEl?.titleKeyword ?? service.name;
   const city = location.cityLocal ?? location.city;
   const locative = getGreekLocative(location.slug, city);
-  // EL indexes only Greek locations that pass the uniqueness content gate.
-  const noIndex = !shouldIndexServiceLocation(location as Location, 'el');
+  // EL indexes only the kept Greek service × city pages (the rest are 410).
+  const noIndex = !isServiceLocationIndexable(service.slug, location as Location, 'el');
   const titleBase = elLocationTitleBase(service.slug, keyword, city);
 
   return buildMetadata({
@@ -547,7 +547,7 @@ export function buildServiceLocationMetadataEl(
     ]),
     path: localizedPath('el', `/services/${service.slug}/${location.slug}`),
     hreflangPath: `/services/${service.slug}/${location.slug}`,
-    hreflangLocales: serviceLocationHreflangLocales(location as Location),
+    hreflangLocales: serviceLocationHreflangLocales(service.slug, location as Location),
     primaryKeyword: `${keyword} ${city}`,
     ctaHint: 'Ζητήστε προσφορά.',
     noIndex,

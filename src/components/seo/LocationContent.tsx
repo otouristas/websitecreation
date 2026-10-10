@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 import { Location } from '@/data/locations';
 import { Service } from '@/data/services';
 import { Industry } from '@/data/industries';
-import { getLocationPack } from '@/data/location-content';
+import { getLocationPack, getServiceCopyEn } from '@/data/location-content';
 import { localizedPath, siteLocaleFromPath, type SiteLocale } from '@/lib/i18n/locale';
 import { LocationContentGreek } from './LocationContentGreek';
 import { entrySeoNet, entryWebsiteNet, formatPrice } from '@/data/pricing';
@@ -48,6 +48,14 @@ export function LocationContent({ location, service, industry, locale: localePro
     const pack = getLocationPack(location.slug, 'en');
     const serviceDepth =
         service && pack?.serviceDepth?.[service.slug] ? pack.serviceDepth[service.slug] : null;
+    /** Service-specific block, so an audit page does not read like a website-build page. */
+    const serviceCopy = service
+        ? getServiceCopyEn(service.slug, {
+              city,
+              neighborhoods: location.neighborhoods ?? [],
+              tourism: pack?.tourism ?? false,
+          })
+        : null;
 
     const currencyNote =
         location.countryCode === 'GB'
@@ -78,6 +86,21 @@ export function LocationContent({ location, service, industry, locale: localePro
                 </p>
                 {pack?.intro ? (
                     <p className="mt-4">{pack.intro}</p>
+                ) : null}
+                {serviceCopy ? (
+                    <div className="mt-8">
+                        <h3 className="text-2xl font-bold text-foreground mb-4">{serviceCopy.heading}</h3>
+                        {serviceCopy.paragraphs.map((para) => (
+                            <p key={para.slice(0, 40)} className="mb-4">
+                                {para}
+                            </p>
+                        ))}
+                        <ul className="mt-4 grid gap-2 sm:grid-cols-2">
+                            {serviceCopy.deliverables.map((d) => (
+                                <li key={d}>{d}</li>
+                            ))}
+                        </ul>
+                    </div>
                 ) : null}
                 {serviceDepth ? (
                     <p className="mt-4">{serviceDepth}</p>
@@ -158,11 +181,6 @@ export function LocationContent({ location, service, industry, locale: localePro
                         );
                     })()}
                     <Link href={lp('/work')} className="rounded-full border border-hairline px-4 py-2 text-primary hover:bg-primary/5">See our work</Link>
-                    {(pack?.portfolioSlugs ?? []).slice(0, 2).map((slug) => (
-                        <Link key={slug} href={lp(`/work/${slug}`)} className="rounded-full border border-hairline px-4 py-2 text-primary hover:bg-primary/5">
-                            Case: {slug.replace(/-/g, ' ')}
-                        </Link>
-                    ))}
                 </div>
             </div>
 

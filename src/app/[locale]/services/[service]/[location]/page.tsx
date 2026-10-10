@@ -3,20 +3,19 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { services, getServiceBySlug, getAllServiceSlugs } from '@/data/services';
+import { getServiceBySlug } from '@/data/services';
 import { getServiceEl } from '@/data/services-i18n';
-import { industries } from '@/data/industries';
-import { industriesEl } from '@/data/industries-i18n';
 import {
     getLocationBySlug,
-    getTier1LocationSlugs,
     formatLocationName,
     countryNameEl,
     stateNames,
     getNearbyLocations,
     isGreekLocation,
+    isServiceLocationIndexable,
 } from '@/data/locations';
 import { getLocationPack, packFaqsForService } from '@/data/location-content';
+import { getPortfolioBySlug } from '@/data/portfolio';
 import {
     buildServiceLocationMetadata,
     generateBreadcrumbSchema,
@@ -27,7 +26,11 @@ import {
 import { SchemaMarkup, Breadcrumbs, LocationContent } from '@/components/seo';
 import { getServiceLocationBreadcrumbs } from '@/lib/linking';
 import { grServiceLocationPath } from '@/lib/locale-paths';
-import { isIndustryServiceIndexable } from '@/lib/indexability/industry-service';
+import {
+    CITY_PAGE_SERVICES,
+    isServiceLocationKept,
+    listKeptServiceLocations,
+} from '@/lib/indexability/service-location';
 import { isValidLocale, localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 import { getGreekLocative } from '@/lib/greek-locative';
 import { getServiceFaqs } from '@/data/service-faq-data';
@@ -38,16 +41,18 @@ interface PageProps {
 }
 
 export const revalidate = 3600;
-export const dynamicParams = true;
+/**
+ * Only the kept service × city pages exist (2026-10 city cut, see
+ * `src/lib/indexability/service-location.ts`). Every other combination is
+ * answered with 410 Gone by `src/middleware.ts` before it reaches this route;
+ * `dynamicParams = false` plus the `notFound()` below are the backstop if the
+ * middleware is ever bypassed.
+ */
+export const dynamicParams = false;
 
-/** Pre-render tier-1 hubs only; all other combos use on-demand ISR */
-export async function generateStaticParams() {
-    const serviceSlugs = getAllServiceSlugs();
-    const locationSlugs = getTier1LocationSlugs();
-
-    return serviceSlugs.flatMap((service) =>
-        locationSlugs.map((location) => ({ service, location })),
-    );
+export async function generateStaticParams({ params }: { params: { locale: string } }) {
+    if (!isValidLocale(params.locale)) return [];
+    return listKeptServiceLocations(params.locale as SiteLocale);
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
@@ -56,7 +61,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     const service = getServiceBySlug(serviceSlug);
     const location = getLocationBySlug(locationSlug);
 
-    if (!service || !location) {
+    if (!service || !location || !isServiceLocationIndexable(serviceSlug, location, locale as SiteLocale)) {
         return { title: 'Page Not Found' };
     }
 
@@ -69,7 +74,7 @@ export default async function ServiceLocationPage({ params }: PageProps) {
     const service = getServiceBySlug(serviceSlug);
     const location = getLocationBySlug(locationSlug);
 
-    if (!service || !location) {
+    if (!service || !location || !isServiceLocationIndexable(serviceSlug, location, locale as SiteLocale)) {
         notFound();
     }
 
@@ -86,9 +91,13 @@ export default async function ServiceLocationPage({ params }: PageProps) {
     const serviceDesc = serviceEl?.description ?? service.description;
     const serviceFeatures = serviceEl?.features ?? service.features;
 
+    // English pages use the Latin name only: formatLocationName renders Greek
+    // cities as "Τρίπολη (Tripoli)", which put two scripts in the English H1.
     const cityState = isEl && location.cityLocal
         ? `${location.cityLocal}, ${countryNameEl(location)}`
-        : formatLocationName(location);
+        : location.countryCode === 'US'
+          ? formatLocationName(location)
+          : `${location.city}, ${location.country}`;
 
     const cityName = isEl && location.cityLocal ? location.cityLocal : location.city;
     const cityLocative = isEl
@@ -102,8 +111,33 @@ export default async function ServiceLocationPage({ params }: PageProps) {
     const regionLabel =
         location.countryCode === 'US' ? stateFull : location.country;
 
-    const nearbyCities = getNearbyLocations(location, 6);
-    const relatedServices = services.filter((s) => s.slug !== serviceSlug).slice(0, 3);
+    const siteLocale = locale as SiteLocale;
+    const otherLocale: SiteLocale = isEl ? 'en' : 'el';
+    // Real neighbours only (same region, short distance) that have a live page.
+    const nearbyCities = getNearbyLocations(location, serviceSlug, siteLocale, 4);
+    // Other kept services for this city. The old list was the first three
+    // services in the catalogue, most of which no longer have city pages.
+    const relatedServices = CITY_PAGE_SERVICES
+        .filter((slug) => slug !== serviceSlug && isServiceLocationKept(siteLocale, slug, locationSlug))
+        .map((slug) => getServiceBySlug(slug))
+        .filter((s): s is NonNullable<typeof s> => Boolean(s));
+    const hasOtherLocaleTwin = isServiceLocationKept(otherLocale, serviceSlug, locationSlug);
+    // Language switch: the twin page when it exists, otherwise the service hub,
+    // so the switcher never links to a removed (410) city URL.
+    const alternateHref = localizedPath(
+        otherLocale,
+        hasOtherLocaleTwin ? `/services/${serviceSlug}/${locationSlug}` : `/services/${serviceSlug}`,
+    );
+    // Local proof: portfolio projects the city packs already reference.
+    const proofProjects = Array.from(
+        new Set([
+            ...(getLocationPack(location.slug, 'en')?.portfolioSlugs ?? []),
+            ...(getLocationPack(location.slug, 'el')?.portfolioSlugs ?? []),
+        ]),
+    )
+        .map((slug) => getPortfolioBySlug(slug))
+        .filter((p): p is NonNullable<typeof p> => Boolean(p) && p?.liveStatus !== 'offline')
+        .slice(0, 3);
     
     // Breadcrumbs translated
     const breadcrumbs = getServiceLocationBreadcrumbs(
@@ -123,9 +157,9 @@ export default async function ServiceLocationPage({ params }: PageProps) {
         browseCities: 'Πλοήγηση σε Πόλεις',
         whatsIncludedTitle: `Τι Περιλαμβάνεται ${cityLocative}`,
         whatsIncludedDesc: `Το πακέτο μας για ${serviceFor} καλύπτει όσα χρειάζονται οι επιχειρήσεις ${cityLocative} για μετρήσιμα αποτελέσματα ${location.countryCode === 'GR' ? 'στην Ελλάδα' : 'στη χώρα εξυπηρέτησης'}.`,
-        industriesTitle: `${serviceName} για Κλάδους ${cityLocative}`,
-        industriesDesc: `Εξειδικευμένες λύσεις για διαφορετικούς τύπους επιχειρήσεων ${cityLocative}.`,
-        nearbyTitle: `Επίσης Εξυπηρετούμε Κοντινές Περιοχές ${cityLocative}`,
+        proofTitle: 'Σχετικά έργα μας',
+        proofDesc: 'Ιστοσελίδες που έχουμε φτιάξει για επιχειρήσεις με παρόμοιο κοινό.',
+        nearbyTitle: 'Κοντινές περιοχές που εξυπηρετούμε',
         otherServicesTitle: `Άλλες Υπηρεσίες ${cityLocative}`,
         faqTitle: `Συχνές Ερωτήσεις - ${cityName}`,
         ctaTitle: `Έτοιμοι για ${serviceFor} ${cityLocative};`,
@@ -139,9 +173,9 @@ export default async function ServiceLocationPage({ params }: PageProps) {
         browseCities: 'Browse Cities',
         whatsIncludedTitle: `What's Included in ${location.city}`,
         whatsIncludedDesc: `Our ${service.name.toLowerCase()} engagements for ${location.city} businesses cover everything you need to compete in ${location.country}.`,
-        industriesTitle: `${service.name} for ${location.city} Industries`,
-        industriesDesc: `Specialized solutions for different business types in ${location.city}.`,
-        nearbyTitle: `Also Serving Nearby ${regionLabel} Cities`,
+        proofTitle: 'Related client work',
+        proofDesc: 'Websites we have built for businesses with a similar audience.',
+        nearbyTitle: 'Nearby areas we also serve',
         otherServicesTitle: `Other Services in ${location.city}`,
         faqTitle: `Frequently Asked Questions - ${location.city}`,
         ctaTitle: `Ready for ${service.name} in ${location.city}?`,
@@ -247,7 +281,7 @@ export default async function ServiceLocationPage({ params }: PageProps) {
     return (
         <>
             <SchemaMarkup schemas={schemas} />
-            <Header />
+            <Header locale={siteLocale} alternateHref={alternateHref} />
             <main className="blueprint-grid relative z-0 main-below-header">
                 <section className="section-compact ">
                     <div className="container">
@@ -262,7 +296,7 @@ export default async function ServiceLocationPage({ params }: PageProps) {
                                 {t.heroDesc}
                             </p>
 
-                            {isGreekLocation(location) && !isEl && (
+                            {isGreekLocation(location) && !isEl && hasOtherLocaleTwin && (
                                 <p className="text-sm text-muted-foreground mb-6">
                                     <Link
                                         href={grServiceLocationPath(serviceSlug, locationSlug)}
@@ -320,35 +354,32 @@ export default async function ServiceLocationPage({ params }: PageProps) {
                     </div>
                 </section>
 
-                <section className="section">
-                    <div className="container">
-                        <h2 className="font-display text-2xl font-medium tracking-[-0.03em] sm:text-3xl mb-4">
-                            {t.industriesTitle}
-                        </h2>
-                        <p className="text-muted-foreground mb-8">
-                            {t.industriesDesc}
-                        </p>
-                        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
-                            {industries.map((industry) => {
-                                const indEl = isEl ? industriesEl[industry.slug] : null;
-                                const indName = indEl?.name ?? industry.name;
-                                return (
+                {proofProjects.length > 0 && (
+                    <section className="section">
+                        <div className="container">
+                            <h2 className="font-display text-2xl font-medium tracking-[-0.03em] sm:text-3xl mb-4">
+                                {t.proofTitle}
+                            </h2>
+                            <p className="text-muted-foreground mb-8">
+                                {t.proofDesc}
+                            </p>
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                {proofProjects.map((project) => (
                                     <Link
-                                        key={industry.slug}
-                                        href={lp(
-                                            isIndustryServiceIndexable(industry.slug, serviceSlug, locale as SiteLocale)
-                                                ? `/solutions/${industry.slug}/${serviceSlug}`
-                                                : `/solutions/${industry.slug}`,
-                                        )}
-                                        className="card card-interactive px-4 py-3 text-sm text-center rounded-lg border border-hairline transition-smooth"
+                                        key={project.slug}
+                                        href={lp(`/work/${project.slug}`)}
+                                        className="card card-interactive p-6"
                                     >
-                                        {indName}
+                                        <h3 className="font-semibold mb-2">{project.name}</h3>
+                                        <p className="text-sm text-muted-foreground line-clamp-3">
+                                            {isEl ? (project.summaryEl ?? project.summary) : project.summary}
+                                        </p>
                                     </Link>
-                                );
-                            })}
+                                ))}
+                            </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
+                )}
 
                 {nearbyCities.length > 0 && (
                     <section className="section bg-surface-raised/40">
@@ -371,6 +402,7 @@ export default async function ServiceLocationPage({ params }: PageProps) {
                     </section>
                 )}
 
+                {relatedServices.length > 0 && (
                 <section className="section">
                     <div className="container">
                         <h2 className="font-display text-2xl font-medium tracking-[-0.03em] sm:text-3xl mb-8">
@@ -395,6 +427,7 @@ export default async function ServiceLocationPage({ params }: PageProps) {
                         </div>
                     </div>
                 </section>
+                )}
 
                 <section className="section bg-surface-raised/40">
                     <div className="container max-w-3xl">

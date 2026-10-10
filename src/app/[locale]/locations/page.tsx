@@ -3,15 +3,10 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import {
-  allLocations,
-  groupLocationsByCountry,
-  groupUSLocationsByState,
-  COUNTRY_LABELS,
-  globalTier1Locations,
-} from "@/data/locations";
-import { services } from "@/data/services";
+import { getIndexableServiceLocations, countryNameEl } from "@/data/locations";
+import { getServiceBySlug, services } from "@/data/services";
 import { getServiceEl } from "@/data/services-i18n";
+import { CITY_PAGE_SERVICES } from "@/lib/indexability/service-location";
 import { isValidLocale, localizedPath, type SiteLocale } from "@/lib/i18n/locale";
 import { buildMetadata, generateCollectionPageSchema } from "@/lib/seo";
 import { BASE_URL } from "@/lib/seo/schema";
@@ -19,29 +14,15 @@ import SchemaMarkup from "@/components/seo/SchemaMarkup";
 
 type PageProps = { params: Promise<{ locale: string }> };
 
-const COUNTRY_LABELS_EL: Record<string, string> = {
-  US: 'Ηνωμένες Πολιτείες',
-  GR: 'Ελλάδα',
-  GB: 'Ηνωμένο Βασίλειο',
-  CA: 'Καναδάς',
-  AU: 'Αυστραλία',
-  FR: 'Γαλλία',
-  DE: 'Γερμανία',
-  IT: 'Ιταλία',
-  JP: 'Ιαπωνία',
-  AE: 'Ηνωμένα Αραβικά Εμιράτα',
-  SG: 'Σιγκαπούρη',
-};
-
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { locale } = await params;
   if (!isValidLocale(locale)) return {};
 
   if (locale === 'el') {
     return buildMetadata({
-      title: "Κατασκευή Ιστοσελίδων ανά Πόλη",
+      title: "Κατασκευή Ιστοσελίδων & SEO ανά Πόλη",
       description:
-        "Κατασκευή ιστοσελίδων, SEO, GEO και AEO σε 120+ πόλεις σε Ελλάδα, ΗΠΑ, Ευρώπη. Δείτε τις πόλεις, μάθετε τιμές και ζητήστε δωρεάν προσφορά.",
+        "Κατασκευή ιστοσελίδων, τοπικό SEO, υπηρεσίες SEO και e-shop σε Αθήνα, Θεσσαλονίκη, Κρήτη, Κυκλάδες, Δωδεκάνησα και Ιόνιο. Δείτε την πόλη σας και ζητήστε προσφορά.",
       path: localizedPath('el', '/locations'),
       hreflangPath: "/locations",
       primaryKeyword: "κατασκευή ιστοσελίδων ανά πόλη",
@@ -49,84 +30,80 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   return buildMetadata({
-    title: "Website Creation by City - Worldwide",
+    title: "Website Creation & SEO by City",
     description:
-      "Website creation, SEO, GEO, and AEO services in 120+ cities: USA, Greece, UK, Canada, Australia, and global hubs. Local pricing, rich city pages, and free quotes.",
+      "Website creation, local SEO, SEO services and e-shops in London and the main Greek destinations: Athens, Crete, the Cyclades, Rhodes, Kos and Corfu. Request a quote.",
     path: localizedPath('en', '/locations'),
     hreflangPath: "/locations",
     primaryKeyword: "website creation by city",
   });
 }
 
-const REGION_ORDER = ["US", "GR", "GB", "CA", "AU", "FR", "DE", "IT", "JP", "AE", "SG"] as const;
-
 export default async function LocationsPage({ params }: PageProps) {
   const { locale } = await params;
   if (!isValidLocale(locale)) notFound();
-  
-  const isEl = locale === 'el';
-  const lp = (path: string) => localizedPath(locale as SiteLocale, path);
 
-  // The index lists every city it serves and emitted nothing. One type across
-  // all 161 entries: these are pages about a service in a place, not markup
-  // about the places themselves.
+  const siteLocale = locale as SiteLocale;
+  const isEl = siteLocale === 'el';
+  const lp = (path: string) => localizedPath(siteLocale, path);
+
+  // Only cities with live service pages (2026-10 city cut, see
+  // src/lib/indexability/service-location.ts). This page used to link all 161
+  // locations, most of them noindex and now 410 Gone.
+  const cities = getIndexableServiceLocations(siteLocale);
+  const cityServices = CITY_PAGE_SERVICES
+    .map((slug) => getServiceBySlug(slug))
+    .filter((s): s is NonNullable<typeof s> => Boolean(s));
+  const serviceLabel = (slug: string, fallback: string) => {
+    const el = isEl ? getServiceEl(slug) : null;
+    return el?.shortName ?? el?.name ?? fallback;
+  };
+
   const collectionSchema = generateCollectionPageSchema({
-    name: isEl ? "Κατασκευή Ιστοσελίδων ανά Πόλη" : "Website creation by city",
+    name: isEl ? "Κατασκευή Ιστοσελίδων & SEO ανά Πόλη" : "Website creation & SEO by city",
     url: `${BASE_URL}${lp("/locations")}`,
-    inLanguage: locale,
-    items: allLocations.map((location) => ({
+    inLanguage: siteLocale,
+    items: cities.map((location) => ({
       url: `${BASE_URL}${lp(`/services/website-creation/${location.slug}`)}`,
-      name: location.city,
+      name: isEl && location.cityLocal ? location.cityLocal : location.city,
       itemType: "WebPage",
     })),
   });
-
-  const byCountry = groupLocationsByCountry();
-  const usByState = groupUSLocationsByState();
-  const usStates = Object.keys(usByState).sort();
 
   const t = isEl
     ? {
         home: "Αρχική",
         locations: "Τοποθεσίες",
-        h1: "Κατασκευή Ιστοσελίδων ανά Πόλη",
-        sub: `Παρέχουμε υπηρεσίες κατασκευής ιστοσελίδων, SEO web design, GEO/AEO και ανάπτυξης κώδικα σε επιχειρήσεις σε ${allLocations.length}+ πόλεις σε Ελλάδα, ΗΠΑ και Ευρώπη.`,
+        h1: "Κατασκευή Ιστοσελίδων & SEO ανά Πόλη",
+        sub: "Σελίδες για τις πόλεις και τα νησιά όπου δουλεύουμε περισσότερο. Για κάθε άλλη περιοχή, οι σελίδες υπηρεσιών και η προσφορά ισχύουν το ίδιο.",
         getStarted: "Ξεκινήστε",
         viewPricing: "Δείτε τις Τιμές",
-        topCitiesTitle: "Κορυφαίες Πόλεις",
-        topCitiesSub: "Επιλέξτε την πόλη σας για να δείτε τιμές, διαθεσιμότητα και τοπικές υπηρεσίες",
-        showingCities: (count: number, total: number) => `Εμφάνιση ${count} από ${total} κύριες πόλεις`,
-        citiesCount: (count: number) => `${count} πόλεις · Όλες οι υπηρεσίες διαθέσιμες`,
-        allServicesTitle: "Διαθέσιμο σε Κάθε Πόλη",
-        allServicesSub: "Όλες οι υπηρεσίες μας σε κάθε τοποθεσία που καλύπτουμε",
+        citiesTitle: "Πόλεις και νησιά",
+        allServicesTitle: "Όλες οι υπηρεσίες",
+        allServicesSub: "Δουλεύουμε με επιχειρήσεις σε όλη την Ελλάδα, όχι μόνο στις πόλεις παραπάνω.",
         readyTitle: "Έτοιμοι να Ξεκινήσετε το Project Σας;",
-        readySub: "Λάβετε μια προσαρμοσμένη προσφορά για την πόλη σας.",
-        grCitiesLink: "Πόλεις στην Ελλάδα (Ελληνικά) →",
-        enCitiesLink: "Cities worldwide (English) →",
+        readySub: "Λάβετε μια προσαρμοσμένη προσφορά για την επιχείρησή σας.",
+        otherLocaleLink: "Cities in English →",
       }
     : {
         home: "Home",
         locations: "Locations",
-        h1: "Website Creation by City - Worldwide",
-        sub: `We provide website creation, SEO web design, GEO/AEO, and development services to businesses in ${allLocations.length}+ cities across the United States, Greece, Europe, and global hubs.`,
+        h1: "Website Creation & SEO by City",
+        sub: "Pages for London and the Greek destinations where we do most of our work. Anywhere else, the service pages and quotes apply just the same.",
         getStarted: "Get Started",
         viewPricing: "View Pricing",
-        topCitiesTitle: "Top Cities Globally",
-        topCitiesSub: "Select your city for local pricing, availability, and service pages",
-        showingCities: (count: number, total: number) => `Showing ${count} of ${total} priority cities`,
-        citiesCount: (count: number) => `${count} cities · All services available`,
-        allServicesTitle: "Available in Every City",
-        allServicesSub: "Every service × every location we cover",
+        citiesTitle: "Cities and islands",
+        allServicesTitle: "All services",
+        allServicesSub: "We work with businesses well beyond the cities above.",
         readyTitle: "Ready to Start Your Project?",
-        readySub: "Get a custom quote for your city.",
-        grCitiesLink: "Cities in Greece (Greek) →",
-        enCitiesLink: "Cities worldwide (English) →",
+        readySub: "Get a custom quote for your business.",
+        otherLocaleLink: "Πόλεις στα Ελληνικά →",
       };
 
   return (
     <>
       <SchemaMarkup schemas={[collectionSchema]} />
-      <Header locale={locale as SiteLocale} />
+      <Header locale={siteLocale} />
       <main className="blueprint-grid relative z-0 main-below-header">
         <section className="section-compact ">
           <div className="container">
@@ -143,19 +120,15 @@ export default async function LocationsPage({ params }: PageProps) {
               <p className="text-lg text-muted-foreground mb-4">
                 {t.sub}
               </p>
-              {isEl ? (
-                <p className="text-sm text-muted-foreground mb-8">
-                  <Link href={localizedPath("en", "/locations")} hrefLang="en" className="text-primary font-medium hover:underline">
-                    {t.enCitiesLink}
-                  </Link>
-                </p>
-              ) : (
-                <p className="text-sm text-muted-foreground mb-8">
-                  <Link href={localizedPath("el", "/locations")} hrefLang="el" className="text-primary font-medium hover:underline">
-                    {t.grCitiesLink}
-                  </Link>
-                </p>
-              )}
+              <p className="text-sm text-muted-foreground mb-8">
+                <Link
+                  href={localizedPath(isEl ? "en" : "el", "/locations")}
+                  hrefLang={isEl ? "en" : "el"}
+                  className="text-primary font-medium hover:underline"
+                >
+                  {t.otherLocaleLink}
+                </Link>
+              </p>
 
               <div className="flex flex-wrap gap-4">
                 <Link href={lp("/get-started")} className="btn btn-primary">
@@ -171,108 +144,48 @@ export default async function LocationsPage({ params }: PageProps) {
 
         <section className="section">
           <div className="container">
-            <h2 className="font-display text-2xl font-medium tracking-[-0.03em] sm:text-3xl mb-4">{t.topCitiesTitle}</h2>
-            <p className="text-muted-foreground mb-8">
-              {t.topCitiesSub}
-            </p>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-              {globalTier1Locations.slice(0, 36).map((location) => {
+            <h2 className="font-display text-2xl font-medium tracking-[-0.03em] sm:text-3xl mb-8">{t.citiesTitle}</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {cities.map((location) => {
                 const cityName = isEl && location.cityLocal ? location.cityLocal : location.city;
+                const country = isEl ? countryNameEl(location) : location.country;
                 return (
-                  <Link
-                    key={location.slug}
-                    href={lp(`/services/website-creation/${location.slug}`)}
-                    className="card card-interactive card p-4 text-center"
-                  >
+                  <div key={location.slug} className="card p-5">
                     <div className="font-semibold">{cityName}</div>
-                    <div className="text-xs text-muted-foreground">
-                      {location.countryCode === "US"
-                        ? location.stateCode
-                        : location.countryCode}
-                    </div>
-                  </Link>
+                    <div className="text-xs text-muted-foreground mb-3">{country}</div>
+                    <ul className="flex flex-wrap gap-2">
+                      {cityServices.map((service) => (
+                        <li key={service.slug}>
+                          <Link
+                            href={lp(`/services/${service.slug}/${location.slug}`)}
+                            className="inline-block rounded-full border border-hairline px-3 py-1 text-xs text-muted-foreground transition-smooth hover:border-primary hover:text-primary"
+                          >
+                            {serviceLabel(service.slug, service.shortName)}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 );
               })}
             </div>
-            <p className="text-center mt-6 text-sm text-muted-foreground">
-              {t.showingCities(36, globalTier1Locations.length)}
-            </p>
           </div>
         </section>
 
-        {REGION_ORDER.filter((code) => byCountry[code]?.length).map((countryCode) => {
-          const countryLabel = isEl ? (COUNTRY_LABELS_EL[countryCode] ?? countryCode) : (COUNTRY_LABELS[countryCode] ?? countryCode);
-          return (
-            <section
-              key={countryCode}
-              className={`section ${countryCode === "US" ? "" : "bg-surface-raised/40"}`}
-            >
-              <div className="container">
-                <h2 className="font-display text-2xl font-medium tracking-[-0.03em] sm:text-3xl mb-2">
-                  {countryLabel}
-                </h2>
-                <p className="text-muted-foreground mb-8">
-                  {t.citiesCount(byCountry[countryCode].length)}
-                </p>
-
-                {countryCode === "US" ? (
-                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {usStates.map((state) => (
-                      <div key={state} className="card card-interactive card p-6">
-                        <h3 className="font-bold mb-4">{state}</h3>
-                        <div className="flex flex-wrap gap-2">
-                          {usByState[state].map((loc) => (
-                            <Link
-                              key={loc.slug}
-                              href={lp(`/services/website-creation/${loc.slug}`)}
-                              className="text-sm text-muted-foreground hover:text-primary transition-smooth"
-                            >
-                              {loc.city}
-                            </Link>
-                          ))}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                ) : (
-                  <div className="flex flex-wrap gap-3">
-                    {byCountry[countryCode].map((loc) => {
-                      const cityName = isEl && loc.cityLocal ? loc.cityLocal : loc.city;
-                      return (
-                        <Link
-                          key={loc.slug}
-                          href={lp(`/services/website-creation/${loc.slug}`)}
-                          className="card card-interactive px-4 py-2 rounded-lg border border-hairline transition-smooth text-sm font-medium"
-                        >
-                          {cityName}
-                        </Link>
-                      );
-                    })}
-                  </div>
-                )}
-              </div>
-            </section>
-          );
-        })}
-
-        <section className="section">
+        <section className="section bg-surface-raised/40">
           <div className="container text-center">
             <h2 className="font-display text-2xl font-medium tracking-[-0.03em] sm:text-3xl mb-4">{t.allServicesTitle}</h2>
             <p className="text-muted-foreground mb-8">{t.allServicesSub}</p>
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3 max-w-4xl mx-auto">
-              {services.map((service) => {
-                const svcEl = isEl ? getServiceEl(service.slug) : null;
-                const name = svcEl?.shortName ?? svcEl?.name ?? service.shortName;
-                return (
-                  <Link
-                    key={service.slug}
-                    href={lp(`/services/${service.slug}`)}
-                    className="card card-interactive p-3 text-center rounded-lg border border-hairline transition-smooth text-sm font-medium"
-                  >
-                    {name}
-                  </Link>
-                );
-              })}
+              {services.map((service) => (
+                <Link
+                  key={service.slug}
+                  href={lp(`/services/${service.slug}`)}
+                  className="card card-interactive p-3 text-center rounded-lg border border-hairline transition-smooth text-sm font-medium"
+                >
+                  {serviceLabel(service.slug, service.shortName)}
+                </Link>
+              ))}
             </div>
           </div>
         </section>
@@ -287,7 +200,7 @@ export default async function LocationsPage({ params }: PageProps) {
           </div>
         </section>
       </main>
-      <Footer locale={locale as SiteLocale} />
+      <Footer locale={siteLocale} />
     </>
   );
 }

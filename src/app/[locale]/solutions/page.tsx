@@ -6,7 +6,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
 import Breadcrumbs from "@/components/seo/Breadcrumbs";
-import { industries, TOURISM_INDUSTRY_SLUGS } from "@/data/industries";
+import { getIndustriesForLocale, TOURISM_INDUSTRY_SLUGS } from "@/data/industries";
 import { industriesEl } from "@/data/industries-i18n";
 import { services } from "@/data/services";
 import { getServiceEl } from "@/data/services-i18n";
@@ -59,7 +59,8 @@ export default async function SolutionsPage({ params }: PageProps) {
     siteLocale,
   );
 
-  const named = industries.map((i) => ({
+  // US-only verticals (DUI lawyers, personal injury...) are left out of /el.
+  const named = getIndustriesForLocale(siteLocale).map((i) => ({
     ...i,
     displayName: isEl ? industriesEl[i.slug]?.name ?? i.name : i.name,
     displayDescription: isEl

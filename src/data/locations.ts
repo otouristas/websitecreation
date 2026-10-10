@@ -1,6 +1,11 @@
 // Global locations for programmatic SEO (US + international hubs)
 
 import { hasLocationContent } from '@/data/location-content';
+import {
+  CITY_PAGE_LOCATIONS,
+  isCityPageLocation,
+  isServiceLocationKept,
+} from '@/lib/indexability/service-location';
 
 export type LocationTier = 1 | 2;
 
@@ -957,47 +962,40 @@ export const getTier1LocationSlugs = (): string[] =>
   allLocations.filter((l) => l.tier === 1).map((l) => l.slug);
 
 /**
- * EN service×location index allowlist (Greece-first moonshot).
- * Non-GR metros are noindex + out of sitemaps, US/AU/CA thin pages burned
- * GSC impressions with ~0 CTR. Keep only portfolio-backed EN hubs outside GR.
- * Greek cities are gated separately via hasLocationContent.
- */
-const SERVICE_LOCATION_INDEX_ALLOWLIST = new Set([
-  // Portfolio-backed EN hub only (UK tourism / agency work)
-  'london-uk',
-]);
-
-/**
- * Index when geo is eligible AND uniqueness gate passes for the locale.
- * - EL: Greek cities with EL content packs only
- * - EN: Greek cities (EL pack) OR tiny allowlisted EN hubs with EN packs
+ * A city keeps service pages in a locale only when it is on the kept list
+ * (`src/lib/indexability/service-location.ts`) AND its content pack passes the
+ * uniqueness gate for that locale. `npm run audit:locations` fails if a kept
+ * city does not pass the gate, so in practice the two agree; the gate stays
+ * here as a safety net so a deleted pack can never ship an empty page as
+ * indexable.
  */
 export function shouldIndexServiceLocation(
   location: Location,
   locale: 'en' | 'el' = 'en',
 ): boolean {
-  if (locale === 'el') {
-    if (location.countryCode !== 'GR') return false;
-    return hasLocationContent(location, 'el');
-  }
-
-  // Greek cities used to index their EN twin whenever the *Greek* pack existed.
-  // That is the wrong locale to gate on: of 46 EN-indexable locations only 6
-  // had an English pack, so 480 of the 552 indexed and sitemapped EN URLs
-  // rendered the shared English template with the city name substituted and
-  // nothing else - zero authored English words. The Greek pack says the Greek
-  // page is worth indexing; it says nothing about the English one.
-  if (location.countryCode === 'GR') {
-    return hasLocationContent(location, 'en');
-  }
-
-  if (!SERVICE_LOCATION_INDEX_ALLOWLIST.has(location.slug)) return false;
-  return hasLocationContent(location, 'en');
+  if (!isCityPageLocation(locale, location.slug)) return false;
+  return hasLocationContent(location, locale);
 }
 
-/** Slugs safe to list in EN service×location sitemaps. */
+/** True when the service × city page exists and is indexable in this locale. */
+export function isServiceLocationIndexable(
+  serviceSlug: string,
+  location: Location,
+  locale: 'en' | 'el' = 'en',
+): boolean {
+  return isServiceLocationKept(locale, serviceSlug, location.slug) && shouldIndexServiceLocation(location, locale);
+}
+
+/** Cities with live service pages in this locale, in display order. */
+export function getIndexableServiceLocations(locale: 'en' | 'el' = 'en'): Location[] {
+  return CITY_PAGE_LOCATIONS[locale]
+    .map((slug) => getLocationBySlug(slug))
+    .filter((l): l is Location => Boolean(l) && shouldIndexServiceLocation(l as Location, locale));
+}
+
+/** Slugs safe to list in service×location sitemaps. */
 export function getIndexableServiceLocationSlugs(locale: 'en' | 'el' = 'en'): string[] {
-  return allLocations.filter((l) => shouldIndexServiceLocation(l, locale)).map((l) => l.slug);
+  return getIndexableServiceLocations(locale).map((l) => l.slug);
 }
 
 export const getLocationsByCountry = (countryCode: string): Location[] =>
@@ -1039,16 +1037,46 @@ export const formatLocationNameEl = (location: Location): string =>
     ? `${location.cityLocal}, ${countryNameEl(location)}`
     : formatLocationName(location);
 
-export function getNearbyLocations(location: Location, limit = 6): Location[] {
-  return allLocations
+/** Great-circle distance in km. */
+export function distanceKm(a: Location, b: Location): number {
+  const toRad = (d: number) => (d * Math.PI) / 180;
+  const dLat = toRad(b.latitude - a.latitude);
+  const dLon = toRad(b.longitude - a.longitude);
+  const h =
+    Math.sin(dLat / 2) ** 2 +
+    Math.cos(toRad(a.latitude)) * Math.cos(toRad(b.latitude)) * Math.sin(dLon / 2) ** 2;
+  return 6371 * 2 * Math.asin(Math.sqrt(h));
+}
+
+/** Straight-line radius that still counts as a neighbour. */
+export const NEARBY_RADIUS_KM = 130;
+
+/**
+ * Real neighbours that have a live page for this service in this locale,
+ * closest first: same region (stateCode) and within NEARBY_RADIUS_KM.
+ *
+ * This used to return any city in the same country, in array order, so the
+ * Larissa page listed Athens, Thessaloniki and Santorini as "nearby areas",
+ * and most of those links went to noindex pages. Now a neighbour must share
+ * the region, be within NEARBY_RADIUS_KM and have a live page; a city with no neighbour
+ * shows no block at all.
+ */
+export function getNearbyLocations(
+  location: Location,
+  serviceSlug: string,
+  locale: 'en' | 'el',
+  limit = 4,
+): Location[] {
+  return getIndexableServiceLocations(locale)
     .filter(
       (l) =>
         l.slug !== location.slug &&
+        isServiceLocationKept(locale, serviceSlug, l.slug) &&
         l.countryCode === location.countryCode &&
-        (location.countryCode === 'US'
-          ? l.stateCode === location.stateCode
-          : l.stateCode === location.stateCode || l.countryCode === location.countryCode),
+        l.stateCode === location.stateCode &&
+        distanceKm(location, l) <= NEARBY_RADIUS_KM,
     )
+    .sort((a, b) => distanceKm(location, a) - distanceKm(location, b))
     .slice(0, limit);
 }
 

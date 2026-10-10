@@ -8,7 +8,8 @@
 
 import { services } from '../src/data/services';
 import { industries } from '../src/data/industries';
-import { tier1Locations } from '../src/data/locations';
+import { getIndexableServiceLocations } from '../src/data/locations';
+import { isCityPageService } from '../src/lib/indexability/service-location';
 import { buildMetaDescription, getDescriptionStatus } from '../src/lib/seo/description';
 
 interface PageCheck {
@@ -90,13 +91,14 @@ industries.forEach(industry => {
 });
 
 // Check service × location pages (sample)
-const sampleLocations = tier1Locations.slice(0, 10);
-services.forEach(service => {
+// Only live service x city pages; the rest return 410 Gone.
+const sampleLocations = getIndexableServiceLocations('en').slice(0, 10);
+services.filter((service) => isCityPageService(service.slug)).forEach(service => {
     sampleLocations.forEach(location => {
         const description = buildMetaDescription({
             primaryKeyword: service.name,
             service: service.name,
-            location: `${location.city}, ${location.stateCode}`,
+            location: `${location.city}, ${location.country}`,
             usp: `Fast, beautiful websites for ${location.city} businesses`,
             ctaHint: 'Get a free quote today.',
         });

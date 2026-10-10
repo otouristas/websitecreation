@@ -118,5 +118,6 @@ export function hasLocationContent(
   return evaluateLocationContent(location, locale).ok;
 }
 
+export { getServiceCopyEn, SERVICES_WITH_EN_COPY, type ServiceCopyContextEn } from './service-copy-en';
 export { getServiceCopyEl, SERVICES_WITH_EL_COPY, type ServiceCopyBlock, type ServiceCopyContext } from './service-copy-el';
 export { packFaqsForService, classifyFaq, type FaqTopic } from './faq-relevance';

@@ -5,9 +5,10 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { services, getServiceBySlug, getAllServiceSlugs } from '@/data/services';
 import { getServiceEl } from '@/data/services-i18n';
-import { industries } from '@/data/industries';
+import { getIndustriesForLocale } from '@/data/industries';
 import { industriesEl } from '@/data/industries-i18n';
-import { greeceLocations, getIndexableServiceLocationSlugs, getLocationBySlug } from '@/data/locations';
+import { getIndexableServiceLocations } from '@/data/locations';
+import { isCityPageService } from '@/lib/indexability/service-location';
 import { isIndustryServiceIndexable } from '@/lib/indexability/industry-service';
 import { isValidLocale, localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 import { buildMetadata, buildServiceMetadata, generateArticleSchema, generateBreadcrumbSchema, generateServiceSchema, generateFAQSchema, combineSchemas } from '@/lib/seo';
@@ -93,7 +94,7 @@ export default async function ServicePage({ params }: PageProps) {
         ? {
             whatsIncluded: 'Τι Περιλαμβάνεται',
             byCity: `${displayName} ανά Πόλη`,
-            byCityDesc: `Παρέχουμε υπηρεσίες ${displayName} σε επιχειρήσεις σε όλη την Ελλάδα και διεθνώς. Επιλέξτε την πόλη σας για τοπικές λεπτομέρειες.`,
+            byCityDesc: `Επιλέξτε την πόλη σας για τοπικές λεπτομέρειες.`,
             allCities: 'Δείτε όλες τις τοποθεσίες →',
             forIndustries: `${displayName} για Κλάδους & Επιχειρήσεις`,
             forIndustriesDesc: `Εξειδικευμένες λύσεις ${displayName} προσαρμοσμένες στις ανάγκες της δικής σας δραστηριότητας.`,
@@ -110,8 +111,8 @@ export default async function ServicePage({ params }: PageProps) {
         : {
             whatsIncluded: "What's Included",
             byCity: `${displayName} by City`,
-            byCityDesc: `We provide ${displayName.toLowerCase()} services to businesses across the United States and internationally. Select your city for local pricing and availability.`,
-            allCities: 'View all 100+ cities →',
+            byCityDesc: `Select your city for local details.`,
+            allCities: 'View all locations →',
             forIndustries: `${displayName} for Industries`,
             forIndustriesDesc: `Specialized ${displayName.toLowerCase()} tailored for specific business types and niches.`,
             relatedServices: 'Related Services',
@@ -163,13 +164,12 @@ export default async function ServicePage({ params }: PageProps) {
         generateFAQSchema({ faqs: faqItems })
     );
 
-    const locationsToShow = isEl
-        ? greeceLocations
-        : getIndexableServiceLocationSlugs()
-            .map((slug) => getLocationBySlug(slug))
-            .filter((loc): loc is NonNullable<typeof loc> => Boolean(loc))
-            .slice(0, 30);
-    const hubRelated = getServiceHubRelatedPaths(serviceSlug).map((p) => ({
+    // Only services that kept city pages list cities, and only the live ones.
+    // The EL branch used to link all 45 Greek cities for every service.
+    const locationsToShow = isCityPageService(serviceSlug)
+        ? getIndexableServiceLocations(isEl ? 'el' : 'en')
+        : [];
+    const hubRelated = getServiceHubRelatedPaths(serviceSlug, locale as SiteLocale).map((p) => ({
         slug: lp(p.path),
         title: isEl ? p.titleEl : p.titleEn,
     }));
@@ -194,7 +194,9 @@ export default async function ServicePage({ params }: PageProps) {
                         </p>
                         <div className="mt-9 flex flex-wrap gap-3">
                             <PrimaryButtonLink href={lp('/get-started')}>{t.getQuote}</PrimaryButtonLink>
-                            <GhostButtonLink href="#locations">{t.viewByLocation}</GhostButtonLink>
+                            {locationsToShow.length > 0 ? (
+                                <GhostButtonLink href="#locations">{t.viewByLocation}</GhostButtonLink>
+                            ) : null}
                             <GhostButtonLink href={lp('/pricing')}>{t.pricingLink}</GhostButtonLink>
                         </div>
                     </div>
@@ -224,6 +226,7 @@ export default async function ServicePage({ params }: PageProps) {
                 {isSeoService ? <SeoTimeline locale={locale as SiteLocale} /> : null}
 
                 {/* Location Pages */}
+                {locationsToShow.length > 0 ? (
                 <Section id="locations">
                     <SectionHeading align="left" eyebrow={isEl ? 'Περιοχές' : 'Locations'} title={t.byCity} body={t.byCityDesc} className="mb-10" />
                     <div>
@@ -246,6 +249,7 @@ export default async function ServicePage({ params }: PageProps) {
                         </div>
                     </div>
                 </Section>
+                ) : null}
 
                 {/* Industry Pages */}
                 <section className="section">
@@ -258,7 +262,7 @@ export default async function ServicePage({ params }: PageProps) {
                         </p>
 
                         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
-                            {industries.map((industry) => {
+                            {getIndustriesForLocale(isEl ? 'el' : 'en').map((industry) => {
                                 const indName = isEl
                                   ? (industriesEl[industry.slug]?.name ?? industry.name)
                                   : industry.name;

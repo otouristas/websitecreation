@@ -3,8 +3,8 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { services } from '@/data/services';
 import { getServiceEl } from '@/data/services-i18n';
-import { industries, getIndustryBySlug } from '@/data/industries';
-import { greeceLocations, tier1Locations } from '@/data/locations';
+import { getIndustriesForLocale } from '@/data/industries';
+import { getIndexableServiceLocations } from '@/data/locations';
 import { generateArticleSchema, generateBreadcrumbSchema, combineSchemas } from '@/lib/seo';
 import { SchemaMarkup, Breadcrumbs } from '@/components/seo';
 import { AdsLandingBand } from '@/components/marketing/AdsLandingBand';
@@ -35,7 +35,7 @@ export function IndustryPageView({
   const isEl = locale === 'el';
   const ui = isEl ? solutionsUi.el : solutionsUi.en;
   const lp = (path: string) => localizedPath(locale, path);
-  const relatedIndustries = industries
+  const relatedIndustries = getIndustriesForLocale(locale)
     .filter((i) => i.slug !== industrySlug)
     .slice(0, 4)
     .map((i) => getLocalizedIndustry(i.slug, locale)!);
@@ -57,7 +57,9 @@ export function IndustryPageView({
     }),
   );
 
-  const locations = isEl ? greeceLocations : tier1Locations.slice(0, 18);
+  // Live website-creation city pages only (2026-10 city cut). This listed all
+  // 45 Greek cities on /el and 18 US cities on /en; most are now 410.
+  const locations = getIndexableServiceLocations(isEl ? 'el' : 'en');
 
   return (
     <>

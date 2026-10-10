@@ -1001,6 +1001,13 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
   },
   'heraklion-gr': {
     slug: 'heraklion-gr',
+    // Translated from the Greek pack (packs-el.ts) for the 2026-10 city cut.
+    serviceDepth: {
+      'website-creation':
+        'In Heraklion we build websites for hotels, rent-a-car companies and retail businesses, with fast pages, booking schema and a clear path to a form or a phone call. We target the searches around the airport, the port and the city centre, with packages from {{ENTRY_WEBSITE}} and SEO foundations in place at launch.',
+      'local-seo':
+        'Local SEO in Heraklion combines Google Business Profile work for tourism and local businesses, bilingual destination pages and citations across Crete. We measure bookings, calls and Map Pack appearances for "Heraklion" and related services, with monthly plans from {{ENTRY_SEO}}.',
+    },
     intro:
       'Heraklion is Crete’s largest commercial hub with intense tourism and local business activity. Hotels, car rentals, restaurants, and city services need websites that sell direct - without handing margins to OTAs and marketplaces. At the same time, local businesses win from near-me searches that grow every year across the city and surrounding areas. We build bilingual-ready, SEO-focused sites and local programs that capture visitor booking intent and resident demand, with technical speed and Google Business Profile excellence as the foundation. Pricing is quoted in EUR.',
     tourism: true,
@@ -1057,6 +1064,13 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
   },
   'mykonos-gr': {
     slug: 'mykonos-gr',
+    // Translated from the Greek pack (packs-el.ts) for the 2026-10 city cut.
+    serviceDepth: {
+      'website-creation':
+        'In Mykonos we deliver multilingual websites for hotels, villas and lifestyle brands, with the emphasis on speed, a premium feel and conversion: booking CTAs, protected high-resolution imagery and SEO for Chora, Ornos and Ano Mera, so you book premium guests directly.',
+      'local-seo':
+        'SEO in Mykonos focuses on high-intent international and Greek searches: Google Business Profile, reviews, local pages and GEO for AI answers. We measure enquiries and bookings, not only positions, which suits accommodation and services that want to depend less on OTAs.',
+    },
     intro:
       'On Mykonos, premium travellers search for villas, hotels, restaurants, and services online - often in English and increasingly through AI search. A fast, multilingual website with a strong SEO strategy brings high-value direct bookings without third-party commissions eating your margin. We build hospitality and service sites that match how guests research Chora, Ornos, Paradise, and Ano Mera, with technical speed, clear CTAs, and local SEO that supports discovery before they hit OTAs. Pricing is quoted in EUR.',
     tourism: true,
@@ -1082,6 +1096,13 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
   },
   'paros-gr': {
     slug: 'paros-gr',
+    // Translated from the Greek pack (packs-el.ts) for the 2026-10 city cut.
+    serviceDepth: {
+      'website-creation':
+        'For Paros we build websites for accommodation and tourism services, with booking CTAs, galleries and SEO for Parikia, Naoussa and Lefkes. Mobile speed and a multilingual setup are in place at launch, with transparent packages from {{ENTRY_WEBSITE}}.',
+      'local-seo':
+        'Local SEO in Paros improves Map Pack and organic visibility for accommodation, restaurants and rentals: Google Business Profile, reviews, local keywords and beach and experience pages, with monthly tracking of bookings and calls from {{ENTRY_SEO}}.',
+    },
     intro:
       'Paros is growing rapidly as a destination, and hospitality businesses that build their online presence now win the next decade of demand. Hotels, rentals, and tourism services with local SEO capture direct bookings from Greek and international visitors researching Parikia, Naoussa, and Lefkes. We build fast, bilingual-ready websites and search strategies that reduce platform dependence while still supporting the channels you already use. Technical foundations and clear booking paths turn seasonal interest into owned demand. Pricing is quoted in EUR.',
     tourism: true,
@@ -1107,6 +1128,13 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
   },
   'naxos-gr': {
     slug: 'naxos-gr',
+    // Translated from the Greek pack (packs-el.ts) for the 2026-10 city cut.
+    serviceDepth: {
+      'website-creation':
+        'In Naxos we design websites for rooms, hotels and tourism services, with the emphasis on a family-run, authentic positioning. Bilingual content, fast pages and a booking CTA for Chora, Plaka and the mountain villages, from {{ENTRY_WEBSITE}}.',
+      'local-seo':
+        'SEO in Naxos builds Map Pack and organic visibility for stays and services. We optimise the Google Business Profile, local beach pages and reviews, with monthly plans from {{ENTRY_SEO}} aimed at direct bookings.',
+    },
     intro:
       'Naxos attracts families and travellers looking for authentic experiences - and they research on Google and AI assistants before they book. Hotels, rentals, and car hire companies with a well-structured website win reservations before visitors ever reach marketplace listings. We build SEO-ready sites and local strategies that capture high-intent travel queries, strengthen direct booking paths, and keep your brand visible across seasonal peaks. Speed, clarity, and bilingual coverage are the fundamentals. Pricing is quoted in EUR.',
     tourism: true,
@@ -1163,6 +1191,13 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
   },
   'rethymno-gr': {
     slug: 'rethymno-gr',
+    // Translated from the Greek pack (packs-el.ts) for the 2026-10 city cut.
+    serviceDepth: {
+      'website-creation':
+        'In Rethymno we design websites for hotels, studios and local businesses, with the focus on the old town and the beachfront. Fast pages, bilingual content and a booking or call CTA, with packages from {{ENTRY_WEBSITE}} and SEO foundations included.',
+      'local-seo':
+        'SEO in Rethymno targets the Map Pack and organic results for stays and services in the town and on the south coast. Google Business Profile, local pages and reviews, monthly from {{ENTRY_SEO}}, with calls and bookings tracked.',
+    },
     intro:
       'Rethymno combines strong tourism traffic with a living local market. Accommodations and restaurants win with bilingual websites and SEO, while local businesses can still dominate city searches thanks to relatively lower competition than larger Cretan hubs. We build fast sites and local programs that capture visitor booking intent and resident near-me demand - supported by Google Business Profile excellence and clear conversion paths. Technical foundations keep you visible through seasonal peaks and quieter months. Pricing is quoted in EUR.',
     tourism: true,
@@ -1188,6 +1223,13 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
   },
   'chania-gr': {
     slug: 'chania-gr',
+    // Translated from the Greek pack (packs-el.ts) for the 2026-10 city cut.
+    serviceDepth: {
+      'website-creation':
+        'In Chania we deliver websites for hospitality and tourism brands, with strong visual storytelling, booking and SEO for the Old Harbour, Platanias and western Crete. Core Web Vitals and multilingual setup are in place at launch, from {{ENTRY_WEBSITE}}.',
+      'local-seo':
+        'Local SEO in Chania improves Map Pack and organic visibility for hotels, villas and activities: a Google Business Profile per location, reviews and destination pages, monthly from {{ENTRY_SEO}}, with the focus on direct bookings.',
+    },
     intro:
       'Chania is one of Crete’s most loved destinations, and online competition in hospitality grows every year. Hotels, villas, and tourism services with their own SEO-ready website take bookings directly - with better margins than platform-only strategies. We build bilingual sites and local SEO systems that capture high-intent travel searches, strengthen technical performance, and convert mobile visitors into reservations. Whether you serve the Old Town, surrounding resorts, or island-wide travellers using Chania as a base, search should be a growth channel you own. Pricing is quoted in EUR.',
     tourism: true,
@@ -1213,6 +1255,13 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
   },
   'kos-gr': {
     slug: 'kos-gr',
+    // Translated from the Greek pack (packs-el.ts) for the 2026-10 city cut.
+    serviceDepth: {
+      'website-creation':
+        'In Kos we build bilingual websites for accommodation, rentals and activities, with booking CTAs and fast pages for travellers on mobile, and SEO for Kardamena, Mastichari and Kos Town, with packages from {{ENTRY_WEBSITE}}.',
+      'local-seo':
+        'Local SEO in Kos targets the Map Pack and organic results in Greek and English for stays and transfers: Google Business Profile, reviews and area pages, monthly from {{ENTRY_SEO}}, with bookings tracked.',
+    },
     intro:
       'Kos lives on tourism, and bookings start with search. Accommodations, car rentals, and activities with a fast bilingual website and local SEO appear where visitors look - on Google and increasingly inside AI chat tools. We build conversion-focused sites and search strategies that reduce OTA dependence while capturing high-intent travel queries before guests arrive. Technical speed, clear CTAs, and consistent local signals are the difference between being discovered and being invisible next to larger competitors. Pricing is quoted in EUR.',
     tourism: true,
@@ -1238,6 +1287,13 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
   },
   'rhodes-gr': {
     slug: 'rhodes-gr',
+    // Translated from the Greek pack (packs-el.ts) for the 2026-10 city cut.
+    serviceDepth: {
+      'website-creation':
+        'In Rhodes we design hospitality websites with booking, multiple languages and SEO for Ixia, Faliraki, Lindos and the Old Town. Speed and a conversion funnel are in place at launch, with packages from {{ENTRY_WEBSITE}}.',
+      'local-seo':
+        'Local SEO in Rhodes targets the Map Pack and organic results across several markets and languages: a Google Business Profile per location, reviews and destination pages, monthly from {{ENTRY_SEO}}, with the focus on direct bookings.',
+    },
     intro:
       'Rhodes is a major Aegean tourism hub where hotels, rentals, tours, and local services compete for visitors who research heavily before they book. Direct websites with strong SEO capture high-intent lodging and experience queries in Greek and English, reducing commission leakage to OTAs. We build fast, bilingual-ready sites and local strategies that convert mobile travellers, strengthen Google Business Profile signals where relevant, and position your brand for both classic search and AI trip planning. Technical foundations and clear booking paths turn seasonal demand into owned revenue. Pricing is quoted in EUR.',
     tourism: true,
@@ -1263,6 +1319,13 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
   },
   'corfu-gr': {
     slug: 'corfu-gr',
+    // Translated from the Greek pack (packs-el.ts) for the 2026-10 city cut.
+    serviceDepth: {
+      'website-creation':
+        'In Corfu we deliver websites for hotels, villas and tourism services, with multiple languages and booking CTAs, and SEO for Paleokastritsa, Sidari and Corfu Town, from {{ENTRY_WEBSITE}} with the technical foundations in place from day one.',
+      'local-seo':
+        'SEO in Corfu improves Map Pack and organic visibility for stays and activities: Google Business Profile, reviews and local pages, monthly from {{ENTRY_SEO}}, with bookings tracked.',
+    },
     intro:
       'Corfu combines Ionian tourism appeal with a year-round local economy that many island strategies ignore. Hotels, villas, and experience brands need bilingual SEO to win visitor bookings, while local services can still capture near-me demand with strong Google Business Profile fundamentals. We build fast websites and local programs that separate resident and visitor intent, improve conversion paths, and keep your brand visible through peak season and quieter months. Technical quality and clear offers outperform thin template sites that never rank. Pricing is quoted in EUR.',
     tourism: true,

@@ -282,3 +282,21 @@ export const TOURISM_INDUSTRY_SLUGS = [
 ] as const;
 
 export type TourismIndustrySlug = (typeof TOURISM_INDUSTRY_SLUGS)[number];
+
+/**
+ * Verticals that only make sense in the US market (DUI lawyers, personal
+ * injury, chiropractors, roofers, plastic surgeons). They were translated
+ * literally into Greek and linked from every Greek city and service page.
+ * Grids rendered in the `el` locale leave them out.
+ */
+export const US_ONLY_INDUSTRY_SLUGS: ReadonlySet<string> = new Set([
+    'dui-lawyers',
+    'personal-injury',
+    'chiropractors',
+    'roofers',
+    'plastic-surgeons',
+]);
+
+/** Industries to show in link grids for a locale. */
+export const getIndustriesForLocale = (locale: 'en' | 'el'): Industry[] =>
+    locale === 'el' ? industries.filter((i) => !US_ONLY_INDUSTRY_SLUGS.has(i.slug)) : industries;

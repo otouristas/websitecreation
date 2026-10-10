@@ -17,8 +17,8 @@ import { industries } from '../src/data/industries';
 import {
   getIndexableServiceLocationSlugs,
   getLocationBySlug,
-  greeceLocations,
 } from '../src/data/locations';
+import { isServiceLocationKept } from '../src/lib/indexability/service-location';
 import { getAllBlogPosts } from '../src/lib/blog';
 import {
   buildServiceMetadata,
@@ -110,11 +110,10 @@ for (const locale of locales) {
 
 // --- service x location -----------------------------------------------------
 for (const locale of locales) {
-  const slugs = locale === 'el'
-    ? greeceLocations.map((l) => l.slug)
-    : getIndexableServiceLocationSlugs('en');
+  // Only live pages; every other service x city URL is 410 Gone.
   for (const s of services) {
-    for (const slug of slugs) {
+    for (const slug of getIndexableServiceLocationSlugs(locale)) {
+      if (!isServiceLocationKept(locale, s.slug, slug)) continue;
       const loc = getLocationBySlug(slug);
       if (!loc) continue;
       const md = locale === 'el'
