@@ -319,7 +319,7 @@ export function CtaBand({
               <KitEyebrow icon={<MessageCircle />}>{BAND.agencyTag[locale]}</KitEyebrow>
               <h3 className="mt-3 font-display text-[22px] font-semibold tracking-[-0.025em] text-foreground">{BAND.agencyTitle[locale]}</h3>
               <p className="mt-2 flex-1 text-[14.5px] leading-relaxed text-muted-foreground">{BAND.agencyBody[locale]}</p>
-              <AgencyCtas locale={locale} align="left" className="mt-6 [&>*]:flex-1" />
+              <AgencyCtas locale={locale} align="left" className="mt-6 sm:!flex-col sm:!items-stretch" />
             </div>
             <div className="flex flex-col rounded-2xl border border-signal/30 bg-[linear-gradient(180deg,color-mix(in_oklab,var(--signal)_7%,var(--background)),var(--background))] p-6">
               <KitEyebrow icon={<span className="size-1.5 rounded-full bg-signal" />} className="text-signal">
@@ -327,7 +327,7 @@ export function CtaBand({
               </KitEyebrow>
               <h3 className="mt-3 font-display text-[22px] font-semibold tracking-[-0.025em] text-foreground">{BAND.softwareTitle[locale]}</h3>
               <p className="mt-2 flex-1 text-[14.5px] leading-relaxed text-muted-foreground">{BAND.softwareBody[locale]}</p>
-              <SoftwareCtas locale={locale} align="left" source={source ?? "cta-band"} className="mt-6 [&>*]:flex-1" />
+              <SoftwareCtas locale={locale} align="left" source={source ?? "cta-band"} className="mt-6 sm:!flex-col sm:!items-stretch" />
             </div>
           </div>
         </div>
