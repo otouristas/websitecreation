@@ -5,11 +5,12 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import SchemaMarkup from '@/components/seo/SchemaMarkup';
 import RelatedPages from '@/components/seo/RelatedPages';
-import { ArrowUpRight, ListChecks, Plane, X } from 'lucide-react';
+import { ArrowUpRight, ListChecks, MapPin, Plane, X } from 'lucide-react';
 import { CtaBand, FeatureRow, KitHeading, KitSection, OpportunitiesPreview, ReportPreview, Stage } from '@/components/kit';
 import {
   AccentTitle,
   CardGrid,
+  ChipLinks,
   DiyRow,
   FaqBlock,
   PriceTiers,
@@ -31,6 +32,10 @@ import { getSeoServicesPillarCopy } from '@/data/seo-services-pillar';
 import { resolvePriceTokens } from '@/data/pricing';
 import { PROJECT_COUNT, SEO_MIN_TERM_MONTHS } from '@/data/company-facts';
 import { portfolioProjects } from '@/data/portfolio';
+import { getIndexableServiceLocations } from '@/data/locations';
+import { getGreekLocative } from '@/lib/greek-locative';
+import { TopicSections, renderInlineLinks } from '@/components/services/topic-sections';
+import { withExactTitle } from '../services/_lib/exact-title';
 
 type PageProps = { params: Promise<{ locale: string }> };
 
@@ -58,13 +63,16 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!isValidLocale(locale)) return {};
   const t = getSeoServicesPillarCopy(locale);
 
-  return buildMetadata({
+  const metadata = buildMetadata({
     title: t.metaTitle,
     description: t.metaDescription,
     path: localizedPath(locale, '/seo-services'),
     hreflangPath: '/seo-services',
     primaryKeyword: t.primaryKeyword,
   });
+  // The Greek title is the exact SERP string from the keyword map (it already
+  // carries the brand), so it bypasses the 43-character primary-part cap.
+  return locale === 'el' ? withExactTitle(metadata, t.metaTitle) : metadata;
 }
 
 export default async function SeoServicesPillarPage({ params }: PageProps) {
@@ -92,7 +100,7 @@ export default async function SeoServicesPillarPage({ params }: PageProps) {
       serviceType: 'Search engine optimization',
       areaServed: ['GR'],
     }),
-    // FAQPage stays here: these seven questions are written for this page,
+    // FAQPage stays here: these questions are written for this page,
     // rendered visibly on it, and are not repeated on any other URL.
     generateFAQSchema({ faqs }),
   );
@@ -110,6 +118,7 @@ export default async function SeoServicesPillarPage({ params }: PageProps) {
     { path: '/services/ai-visibility', title: isEl ? 'AI Visibility (GEO/AEO)' : 'AI visibility (GEO/AEO)' },
     { path: '/services/website-creation', title: isEl ? 'Κατασκευή ιστοσελίδων' : 'Website creation' },
     { path: '/pricing', title: isEl ? 'Τιμές και πακέτα' : 'Pricing and packages' },
+    ...(isEl ? [{ path: '/blog/pos-na-epilexete-etaireia-seo', title: 'Πώς να επιλέξετε εταιρεία SEO' }] : []),
     {
       path: isEl ? '/blog/poso-kostizei-to-seo' : '/blog/how-much-does-seo-cost',
       title: isEl ? 'Πόσο κοστίζει το SEO' : 'How much SEO costs',
@@ -117,6 +126,7 @@ export default async function SeoServicesPillarPage({ params }: PageProps) {
   ];
 
   const tx = (en: string, el: string) => (isEl ? el : en);
+  const seoCities = isEl && t.cities ? getIndexableServiceLocations('el') : [];
 
   return (
     <>
@@ -223,6 +233,26 @@ export default async function SeoServicesPillarPage({ params }: PageProps) {
             </ul>
           </div>
         </KitSection>
+
+        <TopicSections topics={t.topics} locale={siteLocale} tinted id="topics" />
+
+        {t.cities && seoCities.length > 0 ? (
+          <KitSection id="locations">
+            <KitHeading
+              eyebrow="Περιοχές"
+              eyebrowIcon={<MapPin />}
+              title={<AccentTitle text={t.cities.title} />}
+              description={renderInlineLinks(t.cities.intro, siteLocale)}
+            />
+            <ChipLinks
+              className="mt-10"
+              items={seoCities.map((l) => ({
+                href: lp(`/services/seo-audits/${l.slug}`),
+                label: `SEO ${getGreekLocative(l.slug, l.cityLocal ?? l.city)}`,
+              }))}
+            />
+          </KitSection>
+        ) : null}
 
         <DiyRow locale={siteLocale} source="seo-services" />
 

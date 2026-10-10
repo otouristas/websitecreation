@@ -481,9 +481,9 @@ function fitTitleWithSuffix(base: string, suffixes: readonly string[]): string {
 const EL_SHORT_TITLE_KEYWORD: Record<string, string> = {
   'website-creation': 'Ιστοσελίδες',
   'website-redesign': 'Ανασχεδιασμός',
-  'seo-web-design': 'SEO Web Design',
+  'seo-web-design': 'Σχεδιασμός Ιστοσελίδων',
   'local-seo': 'Τοπικό SEO',
-  'seo-audits': 'Υπηρεσίες SEO',
+  'seo-audits': 'SEO Audit',
   'eshop-woocommerce': 'E-shop',
   'eshop-seo': 'E-shop SEO',
   'ai-visibility': 'GEO / AEO',

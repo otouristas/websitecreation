@@ -40,7 +40,7 @@ Three shifts matter for operators:
 2. **Entity clarity is non-negotiable.** Models resolve brands, locations, and categories. Ambiguous naming ("Island Rentals LLC" vs "Island Rentals Paros") hurts both classic SEO and AI citations.
 3. **First-party data still wins.** Search Console tells you which pages earn clicks; LLM sampling tells you if assistants mention you. Neither replaces the other.
 
-Read the companion piece for Greek markets: [GEO, AEO και SEO στην Ελλάδα](/blog/geo-aeo-ellada).
+Read the companion piece for Greek markets: [GEO, AEO και SEO στην Ελλάδα](/el/blog/geo-vs-seo-vs-aeo-el).
 
 ## Website design & development that ranks
 

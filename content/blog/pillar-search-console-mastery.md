@@ -106,7 +106,7 @@ For [hotels](/en/solutions/hotels), attribute direct booking engine conversions.
 
 ## GEO/AEO tie-in
 
-Export top informational queries - "rent a car Greece license", "hotel near Parikia ferry" - into FAQ blocks with [structured data](/en/glossary?term=structured-data). GSC is your AEO brief generator; see [GEO Ellada](/el/blog/geo-aeo-ellada) for Greek market examples.
+Export top informational queries - "rent a car Greece license", "hotel near Parikia ferry" - into FAQ blocks with [structured data](/en/glossary?term=structured-data). GSC is your AEO brief generator; see [GEO Ellada](/el/blog/geo-vs-seo-vs-aeo-el) for Greek market examples.
 
 ## Debugging common GSC anomalies
 

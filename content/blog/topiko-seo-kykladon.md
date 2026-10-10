@@ -74,11 +74,11 @@ faq:
 
 ## GEO / AEO και Συχνά Λάθη
 
-Οι ταξιδιώτες ρωτούν AI: «ποιο ήσυχο ξενοδοχείο στην Πάρο;», «rent-a-car Μύκονος χωρίς εγγύηση;». Χρειάζεστε ορατά FAQs, πρωτογενή δεδομένα και αποδείξεις. Δείτε [GEO/AEO Ελλάδα](/el/blog/geo-aeo-ellada) και [AI Visibility](/el/services/ai-visibility).
+Οι ταξιδιώτες ρωτούν AI: «ποιο ήσυχο ξενοδοχείο στην Πάρο;», «rent-a-car Μύκονος χωρίς εγγύηση;». Χρειάζεστε ορατά FAQs, πρωτογενή δεδομένα και αποδείξεις. Δείτε [GEO/AEO Ελλάδα](/el/blog/geo-vs-seo-vs-aeo-el) και [AI Visibility](/el/services/ai-visibility).
 
 Συχνά λάθη: ένα GBP για πολλά νησιά χωρίς φυσική παρουσία· copy-paste location pages· αγνόηση αεροδρομίου/λιμανιού στα titles· βαριές galleries που σκοτώνουν το mobile· έναρξη SEO τον Μάιο αντί για χειμώνα· πλήρης εξάρτηση από OTAs χωρίς direct booking path.
 
-Σχετικά: [σχεδιασμός ιστοσελίδας τουρισμού](/el/blog/sxediasmos-istoselidas-tourismos-2026) και [on-page SEO](/en/blog/on-page-seo).
+Σχετικά: [σχεδιασμός ιστοσελίδας τουρισμού](/el/blog/sxediasmos-istoselidas-tourismos-2026) και [on-page SEO](/el/blog/on-page-seo-el).
 
 ## Πλάνο πριν τη Σεζόν (90 Ημέρες)
 

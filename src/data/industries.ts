@@ -130,6 +130,14 @@ export const industries: Industry[] = [
         icon: 'smile',
     },
     {
+        slug: 'doctors',
+        name: 'Doctors & Medical Practices',
+        description: 'Medical SEO and websites for doctors and private practices: local search and Google Business Profile, specialty pages written for medical E-E-A-T, online booking and patient privacy handled properly.',
+        metaDescription: 'SEO for doctors and medical practices: local search, Google Business Profile, specialty pages, online booking and GDPR-aware forms. Request a free audit.',
+        painPoints: ['Patients searching nearby', 'Trust in medical content', 'Online appointment booking', 'Patient privacy and GDPR'],
+        icon: 'stethoscope',
+    },
+    {
         slug: 'chiropractors',
         name: 'Chiropractors',
         description: 'Chiropractic websites focusing on pain relief education, new patient offers, and online scheduling.',

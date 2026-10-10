@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { getServiceBySlug } from '@/data/services';
-import { getServiceEl } from '@/data/services-i18n';
+import { getServiceEl, serviceCityCopyEl, type CityCopyContext } from '@/data/services-i18n';
 import {
     getLocationBySlug,
     formatLocationName,
@@ -26,7 +26,7 @@ import {
 import { SchemaMarkup, LocationContent } from '@/components/seo';
 import { MapPin } from 'lucide-react';
 import { CtaBand, FeatureRow, KitHeading, KitSection, Stage } from '@/components/kit';
-import { AccentTitle, ChipLinks, FaqBlock, LinkCards, ProofGrid, ServiceHero, getServiceKit } from '@/components/service-kit';
+import { AccentTitle, AddOnCards, ChipLinks, FaqBlock, LinkCards, PriceTiers, ProofGrid, ServiceHero, getServiceKit } from '@/components/service-kit';
 import { getServiceLocationBreadcrumbs } from '@/lib/linking';
 import { grServiceLocationPath } from '@/lib/locale-paths';
 import {
@@ -37,7 +37,19 @@ import {
 import { isValidLocale, localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 import { getGreekLocative } from '@/lib/greek-locative';
 import { getServiceFaqs } from '@/data/service-faq-data';
-import { currentPrice, entrySeoNet, entryWebsiteNet, formatPrice, seoPackages, websitePackages } from '@/data/pricing';
+import { currentPrice, entrySeoNet, entryWebsiteNet, formatPrice, resolvePriceTokens, seoPackages, websitePackages } from '@/data/pricing';
+
+import { TopicSections } from '@/components/services/topic-sections';
+import { withExactTitle } from '../../_lib/exact-title';
+import type { Location } from '@/data/locations';
+
+/** Greek city context for `serviceCityCopyEl`. */
+function cityContextEl(location: Location): CityCopyContext {
+    const city = location.cityLocal ?? location.city;
+    const hoods = (location.neighborhoodsLocal ?? location.neighborhoods ?? []).slice(0, 3);
+    const hoodList = hoods.length > 1 ? `${hoods.slice(0, -1).join(', ')} και ${hoods[hoods.length - 1]}` : (hoods[0] ?? '');
+    return { city, inCity: getGreekLocative(location.slug, city), slug: location.slug, hoods: hoodList };
+}
 
 interface PageProps {
     params: Promise<{ locale: string; service: string; location: string }>;
@@ -68,7 +80,21 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         return { title: 'Page Not Found' };
     }
 
-    return buildServiceLocationMetadata(service, location, locale as SiteLocale);
+    const metadata = buildServiceLocationMetadata(service, location, locale as SiteLocale);
+    // Greek city pages use the keyword map's one-phrase-per-service titles.
+    const cityCopy = locale === 'el' ? serviceCityCopyEl[serviceSlug] : undefined;
+    if (!cityCopy) return metadata;
+    const ctx = cityContextEl(location);
+    const description = cityCopy.description(ctx);
+    return withExactTitle(
+        {
+            ...metadata,
+            description,
+            openGraph: { ...(metadata.openGraph ?? {}), description },
+            twitter: { ...(metadata.twitter ?? {}), description },
+        },
+        cityCopy.title(ctx),
+    );
 }
 
 export default async function ServiceLocationPage({ params }: PageProps) {
@@ -152,6 +178,9 @@ export default async function ServiceLocationPage({ params }: PageProps) {
     );
 
 
+    const cityCopy = isEl ? serviceCityCopyEl[serviceSlug] : undefined;
+    const cityCtx = isEl ? cityContextEl(location) : null;
+
     const t = isEl ? {
         heroTitle: `${serviceName} ${cityLocative}`,
         heroDesc: `Ψάχνετε για ${serviceFor} ${cityLocative}; Δουλεύουμε με δεδομένα από το Google Search Console και παραδίδουμε αποτελέσματα που κατατάσσονται ψηλά στη Google και σε μηχανές αναζήτησης AI - με διαφανείς τιμές σε ${location.currency === 'EUR' ? 'Ευρώ (€)' : location.currency}.`,
@@ -185,6 +214,12 @@ export default async function ServiceLocationPage({ params }: PageProps) {
         ctaDesc: `Get a free quote tailored for your ${location.city} business - pricing in ${location.currency}.`,
         ctaBtn: `Get Free ${location.city} Quote`,
     };
+    if (cityCopy && cityCtx) {
+        t.heroTitle = cityCopy.h1(cityCtx);
+        t.heroDesc = resolvePriceTokens(cityCopy.lead(cityCtx), siteLocale);
+        t.whatsIncludedTitle = cityCopy.includedTitle(cityCtx);
+        t.ctaTitle = cityCopy.ctaTitle(cityCtx);
+    }
 
     const hubFaqSlugs = new Set([
         'website-creation',
@@ -209,7 +244,7 @@ export default async function ServiceLocationPage({ params }: PageProps) {
         },
         {
             key: 'pricing',
-            question: `Ποιο είναι το κόστος για ${serviceFor} ${cityLocative};`,
+            question: cityCopy && cityCtx ? cityCopy.pricingQuestion(cityCtx) : `Ποιο είναι το κόστος για ${serviceFor} ${cityLocative};`,
             answer: ['local-seo', 'seo-audits', 'ai-visibility', 'link-building', 'eshop-seo', 'content-creation'].includes(serviceSlug)
                 ? `Τα πακέτα SEO ξεκινούν από €${formatPrice(entrySeoNet(), 'el')}/μήνα (Foundations), €${formatPrice(currentPrice(seoPackages[1]), 'el')}/μήνα (Growth) και €${formatPrice(currentPrice(seoPackages[2]), 'el')}/μήνα (Authority). Η τιμή εξαρτάται από τον ανταγωνισμό ${cityLocative} και τους στόχους σας. Δείτε αναλυτικές τιμές στη σελίδα τιμών μας ή ζητήστε δωρεάν προσφορά.`
                 : `Οι ιστοσελίδες ξεκινούν από €${formatPrice(entryWebsiteNet(), 'el')} (Starter, έως 5 σελίδες), €${formatPrice(currentPrice(websitePackages[1]), 'el')} (Professional, έως 10 σελίδες) και €${formatPrice(currentPrice(websitePackages[2]), 'el')} (Business, έως 20 σελίδες). Χωρίς κρυφές χρεώσεις - όλες οι τιμές σε Ευρώ. Ζητήστε δωρεάν προσφορά για ${cityName}.`,
@@ -251,11 +286,15 @@ export default async function ServiceLocationPage({ params }: PageProps) {
         serviceSlug,
     );
 
+    // Greek city pages answer the cost question once, in the keyword map's
+    // wording («Πόσο κοστίζει μια ιστοσελίδα στην Αθήνα;»), instead of three
+    // near-identical cost questions from the hub, the template and the pack.
+    const notCost = (f: { question: string }) => !(cityCopy && /κοστίζ/i.test(f.question));
     const faqItems = hubFaqSlugs.has(serviceSlug)
         ? [
-            ...getServiceFaqs(serviceSlug, isEl ? 'el' : 'en'),
+            ...getServiceFaqs(serviceSlug, isEl ? 'el' : 'en').filter(notCost),
             cityFaqItems.find((f) => f.key === 'pricing') ?? cityFaqItems[0],
-            ...packFaqs,
+            ...packFaqs.filter(notCost),
           ]
         : [...packFaqs, ...cityFaqItems];
 
@@ -282,7 +321,7 @@ export default async function ServiceLocationPage({ params }: PageProps) {
     );
 
     const kit = getServiceKit(serviceSlug);
-    const heroAccent = isEl ? cityLocative : `in ${cityState}`;
+    const heroAccent = cityCopy && cityCtx ? cityCopy.h1Accent(cityCtx) : isEl ? cityLocative : `in ${cityState}`;
     const local = isEl
         ? {
             pillTag: 'Τοπικά',
@@ -347,7 +386,25 @@ export default async function ServiceLocationPage({ params }: PageProps) {
                     />
                 </KitSection>
 
-                <KitSection tinted id="local">
+                {cityCopy && cityCtx ? (
+                    <>
+                        <TopicSections topics={cityCopy.topics(cityCtx)} locale={siteLocale} id="topics" />
+                        <KitSection tinted id="pricing">
+                            <KitHeading align="center" eyebrow="Τιμές" title={<AccentTitle text={cityCopy.pricingTitle(cityCtx)} />} />
+                            {kit.addOns.length > 0 ? (
+                                <AddOnCards ids={kit.addOns} locale={siteLocale} className="mx-auto mt-12 max-w-3xl" />
+                            ) : null}
+                            {kit.pricing ? <PriceTiers kind={kit.pricing} locale={siteLocale} className="mt-12" /> : null}
+                            <p className="mt-10 text-center text-[14px]">
+                                <Link href={lp('/pricing')} className="font-medium text-link underline-offset-4 hover:underline">
+                                    Δείτε όλες τις τιμές και τα πακέτα →
+                                </Link>
+                            </p>
+                        </KitSection>
+                    </>
+                ) : null}
+
+                <KitSection tinted={!cityCopy} id="local">
                     <LocationContent location={location} service={service} locale={siteLocale} />
                 </KitSection>
 

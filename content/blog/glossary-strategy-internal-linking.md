@@ -181,7 +181,7 @@ No - FAQ answers customer-specific questions on commercial pages. Glossary defin
 
 ### Multilingual glossaries?
 
-For EL/EN tourism sites, mirror key terms with [hreflang](/en/glossary?term=hreflang). See [GEO/AEO Ellada](/el/blog/geo-aeo-ellada).
+For EL/EN tourism sites, mirror key terms with [hreflang](/en/glossary?term=hreflang). See [GEO/AEO Ellada](/el/blog/geo-vs-seo-vs-aeo-el).
 
 ### Who writes glossary entries?
 

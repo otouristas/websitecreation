@@ -163,6 +163,29 @@ const nextConfig: NextConfig = {
         destination: '/en/blog/hotel-seo-guide',
         permanent: true,
       },
+      // Greek keyword map: the GEO agency post competed with the AI visibility
+      // service for «GEO agency», and the GEO/AEO guide duplicated the
+      // GEO vs SEO vs AEO post. Both posts were removed.
+      {
+        source: '/:locale(en|el)/blog/geo-agency-ellada',
+        destination: '/el/services/ai-visibility',
+        permanent: true,
+      },
+      {
+        source: '/blog/geo-agency-ellada',
+        destination: '/el/services/ai-visibility',
+        permanent: true,
+      },
+      {
+        source: '/:locale(en|el)/blog/geo-aeo-ellada',
+        destination: '/el/blog/geo-vs-seo-vs-aeo-el',
+        permanent: true,
+      },
+      {
+        source: '/blog/geo-aeo-ellada',
+        destination: '/el/blog/geo-vs-seo-vs-aeo-el',
+        permanent: true,
+      },
       {
         source: '/:locale(en|el)/blog/google-search-operators-2025',
         destination: '/:locale/blog/google-search-operators-2026',

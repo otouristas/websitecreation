@@ -38,6 +38,7 @@ import { resolvePriceTokens } from '@/data/pricing';
 import { generateOrganizationSchema } from '@/lib/seo/schema';
 import { BASE_URL } from '@/lib/seo/description';
 import { getAppPath } from '@/lib/app-links';
+import { FOUNDER, FOUNDER_SCHEMA_ID, FOUNDER_YEARS, PROJECTS_DELIVERED, consultantPath, consultantUrl } from '@/data/founder';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 
 /**
@@ -67,6 +68,8 @@ export function HomePageView({ locale }: { locale: SiteLocale }) {
     description: isEl
       ? 'AnotherSEOGuru - ελληνική εταιρεία SEO και κατασκευής ιστοσελίδων. Τεχνικό SEO, τοπικό SEO, GEO/AEO, e-shop και δική της πλατφόρμα συνδεδεμένη με το Google Search Console.'
       : 'AnotherSEOGuru - Greek SEO and web design agency. Technical SEO, local SEO, GEO/AEO, e-shops, plus a Search Console-native SEO platform.',
+    address: { addressLocality: FOUNDER.city, addressCountry: FOUNDER.country },
+    founder: { id: FOUNDER_SCHEMA_ID, name: FOUNDER.name, url: consultantUrl(locale) },
   });
 
   const line1 = isEl ? elHome.hero.h1Line1 : 'SEO services & web design';
@@ -74,7 +77,7 @@ export function HomePageView({ locale }: { locale: SiteLocale }) {
   const lead = isEl
     ? resolvePriceTokens(elHome.hero.sub, locale)
     : resolvePriceTokens(
-        'AnotherSEOGuru is a Greek SEO and web design agency. We handle technical SEO, local SEO, GEO/AEO and website or e-shop builds, with transparent packages from {{ENTRY_SEO}} a month. Every engagement starts with a free SEO audit, so you see what works before you commit.',
+        `AnotherSEOGuru is a Greek SEO and web design agency based in Athens, with ${FOUNDER_YEARS}+ years of experience and more than ${PROJECTS_DELIVERED} projects delivered. We handle technical SEO, local SEO, GEO/AEO and website or e-shop builds, with transparent packages from {{ENTRY_SEO}} a month. Every engagement starts with a free SEO audit, so you see what works before you commit.`,
         locale,
       );
 
@@ -127,7 +130,25 @@ export function HomePageView({ locale }: { locale: SiteLocale }) {
               <ScanWidget locale={locale} />
             </div>
           }
-          trust={<TrustLine items={agencyTrust(locale)} />}
+          trust={
+            <>
+              <TrustLine items={agencyTrust(locale)} />
+              {/* Exact-anchor links out of the hero: «υπηρεσίες SEO» is the
+                  /el/seo-services keyword, and the founder page carries the
+                  named-person queries («σύμβουλος SEO»). */}
+              <p className="mx-auto mt-4 max-w-xl text-pretty text-[14px] leading-relaxed text-muted-foreground">
+                {tx('See our ', 'Δείτε τις ')}
+                <Link href={lp('/seo-services')} className="font-medium text-foreground underline decoration-hairline underline-offset-4 hover:decoration-foreground">
+                  {tx('SEO services', 'υπηρεσίες SEO')}
+                </Link>
+                {tx(' or meet ', ' ή γνωρίστε τον ')}
+                <Link href={consultantPath(locale)} className="font-medium text-foreground underline decoration-hairline underline-offset-4 hover:decoration-foreground">
+                  {isEl ? `${FOUNDER.nameElAcc}, τον σύμβουλο SEO μας` : `${FOUNDER.name}, our SEO consultant`}
+                </Link>
+                .
+              </p>
+            </>
+          }
         >
           <div className="mx-auto mt-14 w-full max-w-[1240px] px-3 sm:px-6">
             <div className="relative">

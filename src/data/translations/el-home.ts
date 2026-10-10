@@ -1,4 +1,5 @@
 import { PROJECT_COUNT } from '@/data/company-facts';
+import { FOUNDER_YEARS, PROJECTS_DELIVERED } from '@/data/founder';
 
 /** Professional Greek copy for homepage & shared marketing sections */
 
@@ -8,10 +9,13 @@ export const elHome = {
 
   hero: {
     badge: 'SEO · GEO / AEO · Κατασκευή ιστοσελίδων · E-shop',
-    h1Line1: 'SEO υπηρεσίες & προώθηση',
-    h1Line2: 'ιστοσελίδων στην Ελλάδα',
+    // H1 per the Greek keyword map: the homepage owns «εταιρεία SEO»
+    // («υπηρεσίες SEO» belongs to /el/seo-services). Line 2 takes the accent.
+    h1Line1: 'Εταιρεία SEO και κατασκευής ιστοσελίδων',
+    h1Line2: 'για επιχειρήσεις στην Ελλάδα',
+    // Owner-supplied wording (2026-10); the facts are in src/data/founder.ts.
     sub:
-      'Η AnotherSEOGuru είναι ελληνική εταιρεία SEO και κατασκευής ιστοσελίδων. Αναλαμβάνουμε τεχνικό SEO, τοπικό SEO, GEO/AEO και κατασκευή ιστοσελίδων ή e-shop, με διαφανή πακέτα από {{ENTRY_SEO}} τον μήνα. Ξεκινάμε πάντα με δωρεάν SEO audit και σας δείχνουμε τι αποδίδει πριν δεσμευτείτε.',
+      `Η AnotherSEOGuru είναι εταιρεία SEO και κατασκευής ιστοσελίδων με έδρα την Αθήνα. Με ${FOUNDER_YEARS}+ χρόνια εμπειρίας έχουμε παραδώσει πάνω από ${PROJECTS_DELIVERED} έργα, κυρίως για ξενοδοχεία, ενοικιάσεις αυτοκινήτων και τοπικές επιχειρήσεις. Κάθε συνεργασία ξεκινά με δωρεάν έλεγχο της ιστοσελίδας σας μέσα σε 24 ώρες.`,
     proof:
       `${PROJECT_COUNT} ζωντανά έργα σε Κυκλάδες, Κρήτη, Αθήνα και Ευρώπη. Διαφανείς τιμές σε ευρώ και δωρεάν αξιολόγηση μέσα σε 24 ώρες.`,
     ctaQuote: 'Δωρεάν SEO audit',

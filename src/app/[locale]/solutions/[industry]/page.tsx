@@ -5,6 +5,7 @@ import { getBespokeIndustryPage } from '@/components/solutions/registry';
 import { getAllIndustrySlugs } from '@/data/industries';
 import { getLocalizedIndustry, getIndustryMeta } from '@/lib/industry-locale';
 import { buildMetadata } from '@/lib/seo';
+import { withExactTitle } from '../../services/_lib/exact-title';
 import { isValidLocale, localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 
 export const revalidate = 3600;
@@ -23,12 +24,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const industry = getLocalizedIndustry(slug, locale as SiteLocale);
   if (!industry) return { title: 'Not Found' };
   const meta = getIndustryMeta(industry, locale as SiteLocale);
-  return buildMetadata({
+  const metadata = buildMetadata({
     title: meta.title,
     description: meta.description,
     path: localizedPath(locale as SiteLocale, `/solutions/${slug}`),
     hreflangPath: `/solutions/${slug}`,
   });
+  return meta.exact ? withExactTitle(metadata, meta.title) : metadata;
 }
 
 export default async function IndustryPage({ params }: PageProps) {

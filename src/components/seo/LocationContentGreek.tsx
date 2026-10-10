@@ -31,15 +31,15 @@ interface LocationContentGreekProps {
 
 /** Maps each service to its most relevant Greek blog guide for contextual A->B internal linking. */
 const SERVICE_GUIDE: Record<string, { href: string; label: string }> = {
-  'eshop-woocommerce': { href: '/blog/kataskevi-eshop-odigos', label: 'Οδηγός: Κατασκευή E-shop & Κόστος 2026' },
-  'eshop-seo': { href: '/blog/kataskevi-eshop-odigos', label: 'Οδηγός: Κατασκευή E-shop & Κόστος 2026' },
+  'eshop-woocommerce': { href: '/blog/ti-xreiazetai-gia-eshop', label: 'Τι χρειάζεται για να ανοίξετε eshop στην Ελλάδα' },
+  'eshop-seo': { href: '/blog/kataskevi-eshop-odigos', label: 'Πόσο κοστίζει ένα eshop και πώς φτιάχνεται' },
   'website-creation': { href: '/blog/poso-kostizei-mia-istoselida', label: 'Πόσο κοστίζει μια ιστοσελίδα το 2026' },
-  'website-redesign': { href: '/blog/anasxediasmos-istoselidas', label: 'Οδηγός ανασχεδιασμού ιστοσελίδας χωρίς απώλεια SEO' },
-  'local-seo': { href: '/blog/poso-kostizei-to-seo', label: 'Πόσο κοστίζει το τοπικό SEO στην Ελλάδα' },
-  'seo-audits': { href: '/blog/techniko-seo', label: 'Οδηγός τεχνικού SEO' },
+  'website-redesign': { href: '/blog/anasxediasmos-istoselidas', label: 'Μετάβαση ιστοσελίδας χωρίς απώλεια SEO' },
+  'local-seo': { href: '/blog/epixeirisi-sto-google-maps', label: 'Πώς βάζω την επιχείρησή μου στο Google Maps' },
+  'seo-audits': { href: '/blog/poso-kostizei-to-seo', label: 'Πόσο κοστίζει το SEO στην Ελλάδα' },
   'seo-web-design': { href: '/blog/poso-kostizei-to-seo', label: 'Πόσο κοστίζει το SEO στην Ελλάδα' },
-  'ai-visibility': { href: '/blog/geo-aeo-ellada', label: 'Οδηγός GEO & AEO για την Ελλάδα' },
-  'link-building': { href: '/blog/poso-kostizei-to-seo', label: 'Πόσο κοστίζει το SEO στην Ελλάδα' },
+  'ai-visibility': { href: '/blog/geo-vs-seo-vs-aeo-el', label: 'GEO vs SEO vs AEO: ποια η διαφορά' },
+  'link-building': { href: '/blog/ti-einai-ta-backlinks', label: 'Τι είναι τα backlinks' },
   'content-creation': { href: '/blog/poso-kostizei-to-seo', label: 'Πόσο κοστίζει το SEO στην Ελλάδα' },
   'speed-optimization': { href: '/blog/poso-kostizei-to-seo', label: 'Πόσο κοστίζει το SEO στην Ελλάδα' },
 };
@@ -58,7 +58,9 @@ export function LocationContentGreek({ location, service, locale: localeProp }: 
   /** Accusative, for running copy after "για" / "σε". */
   const targetFor = serviceEl?.nameAccusative ?? service?.name?.toLowerCase() ?? 'SEO';
   /** Short commercial keyword, for the "«keyword city»" query example. */
-  const targetKeyword = serviceEl?.titleKeyword ?? serviceEl?.shortName ?? target;
+  // The audit's city pages own «SEO {πόλη}», not «SEO Audit {πόλη}».
+  const targetKeyword =
+    service?.slug === 'seo-audits' ? 'SEO' : (serviceEl?.titleKeyword ?? serviceEl?.shortName ?? target);
   const neighborhoods = location.neighborhoodsLocal ?? location.neighborhoods;
   const pack = getLocationPack(location.slug, 'el');
   /**
@@ -119,16 +121,16 @@ export function LocationContentGreek({ location, service, locale: localeProp }: 
             {pack?.intro && pack.tourism ? (
               <p>
                 Εξειδικευόμαστε σε{' '}
-                <Link href={lp('/solutions/hotels/website-creation')} className={inlineLink}>
+                <Link href={lp('/solutions/hotels')} className={inlineLink}>
                   κατασκευή ιστοσελίδας ξενοδοχείου
                 </Link>{' '}
                 και{' '}
-                <Link href={lp('/solutions/hotels')} className={inlineLink}>
+                <Link href={lp('/blog/seo-gia-xenodoxeia')} className={inlineLink}>
                   SEO για ξενοδοχεία
                 </Link>{' '}
-                - δείτε και τον{' '}
+                - δείτε και{' '}
                 <Link href={lp('/blog/kataskevi-istoselidas-xenodoxeia')} className={inlineLink}>
-                  οδηγό μας για ιστοσελίδες ξενοδοχείων
+                  τι πρέπει να έχει μια ιστοσελίδα ξενοδοχείου
                 </Link>
                 .
               </p>
@@ -213,8 +215,8 @@ export function LocationContentGreek({ location, service, locale: localeProp }: 
           <Link href={lp('/contact')} className={kitPrimaryBtn}>
             Δωρεάν προσφορά - {city}
           </Link>
-          <Link href={lp('/blog/geo-aeo-ellada')} className={kitSecondaryBtn}>
-            Οδηγός GEO &amp; AEO Ελλάδα
+          <Link href={lp('/blog/geo-vs-seo-vs-aeo-el')} className={kitSecondaryBtn}>
+            GEO vs SEO vs AEO
           </Link>
         </div>
       </div>

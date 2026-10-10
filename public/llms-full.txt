@@ -27,28 +27,25 @@ AnotherSEOGuru combines a **web design & SEO agency** (primary) with a **GSC-nat
 - **EN URL:** https://anotherseoguru.com/en/services/website-creation
 - **EL URL:** https://anotherseoguru.com/el/services/website-creation
 - **Description (EN):** Beautiful, fast websites built for real business results. Custom design, full SEO setup, and optimized for conversions from day one.
-- **Greek name:** Κατασκευή Ιστοσελίδων
-- **Description (EL):** Γρήγορες, όμορφες ιστοσελίδες με SEO από την πρώτη μέρα. Σχεδιασμός, ανάπτυξη και βελτιστοποίηση για μετατροπές.
+- **Greek name:** website-creation
+- **Description (EL):** 
 - **Features (EN):** Custom UX/UI design; Fast-loading pages; Mobile-first responsive; Performance optimized; SEO foundations included; Analytics setup
-- **Features (EL):** Σχεδιασμός UX/UI στα μέτρα σας; Γρήγορες σελίδες; Απόλυτα προσαρμοσμένο σε κινητά; Βελτιστοποίηση επιδόσεων; Ενσωματωμένες βάσεις SEO; Ρύθμιση Google Analytics
 
 ### Website Redesign (`website-redesign`)
 - **EN URL:** https://anotherseoguru.com/en/services/website-redesign
 - **EL URL:** https://anotherseoguru.com/el/services/website-redesign
 - **Description (EN):** Transform your outdated website into a fast, modern, conversion-focused machine with our redesign services.
 - **Greek name:** Ανασχεδιασμός Ιστοσελίδας
-- **Description (EL):** Μετατρέψτε παλιές ιστοσελίδες σε σύγχρονες, γρήγορες και φιλικές προς την αναζήτηση - με ασφαλή μεταφορά SEO.
+- **Description (EL):** Ανασχεδιασμός ιστοσελίδας ή e-shop με σχέδιο redirects, ώστε να κρατήσετε κατατάξεις και επισκεψιμότητα. Νέος σχεδιασμός, ίδια ή καλύτερη θέση στη Google.
 - **Features (EN):** Speed optimization; Modern UI refresh; SEO migration; Content restructuring; Mobile optimization; Performance audit
-- **Features (EL):** Βελτιστοποίηση ταχύτητας; Σύγχρονη ανανέωση σχεδιασμού; Ασφαλής μεταφορά SEO; Αναδόμηση περιεχομένου; Βελτιστοποίηση για κινητά; Έλεγχος επιδόσεων
 
 ### SEO Web Design (`seo-web-design`)
 - **EN URL:** https://anotherseoguru.com/en/services/seo-web-design
 - **EL URL:** https://anotherseoguru.com/el/services/seo-web-design
 - **Description (EN):** Websites designed with SEO at the core. Technical SEO, schema markup, and internal linking built-in.
-- **Greek name:** Σχεδιασμός με SEO
-- **Description (EL):** Σχεδιασμός με τεχνικό SEO, schema, εσωτερικούς συνδέσμους και αρχιτεκτονική που κατατάσσεται ψηλά.
+- **Greek name:** Σχεδιασμός Ιστοσελίδων (Web Design)
+- **Description (EL):** Σχεδιασμός ιστοσελίδων με UX και SEO από την αρχή: δομή, κείμενα και ταχύτητα που μετατρέπουν επισκέπτες σε πελάτες. Web design για ελληνικές επιχειρήσεις.
 - **Features (EN):** Technical SEO audit; Schema markup; Internal linking strategy; Site architecture; Meta optimization; Speed optimization
-- **Features (EL):** Τεχνικός έλεγχος SEO; Schema markup; Στρατηγική εσωτερικών συνδέσμων; Αρχιτεκτονική ιστοσελίδας; Βελτιστοποίηση meta ετικετών; Βελτιστοποίηση ταχύτητας
 
 ### Speed Optimization (`speed-optimization`)
 - **EN URL:** https://anotherseoguru.com/en/services/speed-optimization
@@ -63,10 +60,9 @@ AnotherSEOGuru combines a **web design & SEO agency** (primary) with a **GSC-nat
 - **EN URL:** https://anotherseoguru.com/en/services/ai-visibility
 - **EL URL:** https://anotherseoguru.com/el/services/ai-visibility
 - **Description (EN):** GEO and AEO for businesses: entity clarity, answer-shaped pages and measurement so answer engines can use your content. No citation promises.
-- **Greek name:** Ορατότητα σε AI (GEO / AEO)
-- **Description (EL):** GEO και AEO για επιχειρήσεις: σαφή στοιχεία, σελίδες σε μορφή απάντησης και μέτρηση, ώστε οι μηχανές απάντησης να μπορούν να χρησιμοποιήσουν το περιεχόμενό σας. Χωρίς υποσχέσεις αναφοράς.
+- **Greek name:** AI SEO: Ορατότητα σε AI (GEO / AEO)
+- **Description (EL):** Υπηρεσίες AI SEO (GEO/AEO): δουλεύουμε ώστε η επιχείρησή σας να μπορεί να αναφέρεται στις απαντήσεις του ChatGPT, του Gemini και των AI Overviews.
 - **Features (EN):** Entity and brand-fact consistency; Answer-shaped FAQs for AEO; Schema that matches visible text; Commercial pages with quotable facts; Monthly mention sampling, not AI-rank theatre; Tourism and local-business programmes
-- **Features (EL):** Συνέπεια οντότητας και στοιχείων επιχείρησης; FAQ σε μορφή απάντησης για AEO; Schema που συμφωνεί με το ορατό κείμενο; Εμπορικές σελίδες με σαφή γεγονότα; Μηνιαία δειγματοληψία αναφορών, όχι «AI rank»; Προγράμματα για τουρισμό και τοπικές επιχειρήσεις
 
 ### Logo Design (`logo-design`)
 - **EN URL:** https://anotherseoguru.com/en/services/logo-design
@@ -81,55 +77,49 @@ AnotherSEOGuru combines a **web design & SEO agency** (primary) with a **GSC-nat
 - **EN URL:** https://anotherseoguru.com/en/services/content-creation
 - **EL URL:** https://anotherseoguru.com/el/services/content-creation
 - **Description (EN):** SEO content services: service pages, location pages, and blogs mapped to real search demand, built to rank and convert.
-- **Greek name:** Δημιουργία Περιεχομένου
-- **Description (EL):** Κείμενα με SEO για σελίδες υπηρεσιών, τοπικές σελίδες και blog που φέρνουν οργανική επισκεψιμότητα.
+- **Greek name:** SEO Copywriting & Δημιουργία Περιεχομένου
+- **Description (EL):** Υπηρεσίες SEO copywriting: κείμενα σελίδων, άρθρα blog και περιγραφές προϊόντων γραμμένα για αναγνώστες και για τη Google, στα ελληνικά και αγγλικά.
 - **Features (EN):** SEO copywriting; Service page content; Location page content; Blog articles; Conversion copy; Content strategy
-- **Features (EL):** Συγγραφή κειμένων με SEO; Περιεχόμενο σελίδων υπηρεσιών; Τοπικό περιεχόμενο; Άρθρα blog; Κείμενα που μετατρέπουν; Στρατηγική περιεχομένου
 
 ### Local SEO & GBP (`local-seo`)
 - **EN URL:** https://anotherseoguru.com/en/services/local-seo
 - **EL URL:** https://anotherseoguru.com/el/services/local-seo
 - **Description (EN):** Local SEO services for map pack and “near me” growth. We optimize Google Business Profile, citations, reviews, and location pages.
-- **Greek name:** Τοπικό SEO & Google Business
-- **Description (EL):** Τοπικό SEO για Ελλάδα: βελτιστοποίηση Google Business Profile, καταχωρήσεις, κριτικές και τοπικές σελίδες ώστε να εμφανίζεστε στο map pack για Αθήνα, Θεσσαλονίκη και άλλες πόλεις.
+- **Greek name:** local-seo
+- **Description (EL):** 
 - **Features (EN):** GBP optimization; Local citation building; Review management strategy; Local keyword targeting; Map pack ranking; Neighborhood targeting
-- **Features (EL):** Βελτιστοποίηση Google Business Profile; Τοπικές καταχωρήσεις (citations) & NAP; Στρατηγική κριτικών; Τοπικές λέξεις-κλειδιά & landing pages; Κατάταξη στον χάρτη της Google (map pack); Στόχευση ανά πόλη / περιοχή
 
 ### Link Building (`link-building`)
 - **EN URL:** https://anotherseoguru.com/en/services/link-building
 - **EL URL:** https://anotherseoguru.com/el/services/link-building
 - **Description (EN):** White-hat link building services that earn relevant, editorial backlinks, not spam directories, to grow authority and rankings.
-- **Greek name:** Δημιουργία Backlinks
-- **Description (EL):** Ποιοτικά backlinks, digital PR και τοποθετήσεις σε σχετικές ιστοσελίδες για αύξηση της αυθεντίας του domain σας.
+- **Greek name:** Link Building & Backlinks
+- **Description (EL):** Υπηρεσίες link building: ποιοτικά backlinks από σχετικά ελληνικά sites, digital PR και καθαρισμός spam συνδέσμων. Χωρίς αγορά συνδέσμων από δίκτυα.
 - **Features (EN):** High DA guest posts; Niche relevant links; Digital PR outreach; Broken link building; Anchor text strategy; Spam monitoring
-- **Features (EL):** Guest posts σε ιστοσελίδες υψηλού κύρους; Σύνδεσμοι από σχετικές ιστοσελίδες; Digital PR; Αξιοποίηση σπασμένων συνδέσμων; Στρατηγική anchor text; Παρακολούθηση για spam συνδέσμους
 
 ### SEO Audits (`seo-audits`)
 - **EN URL:** https://anotherseoguru.com/en/services/seo-audits
 - **EL URL:** https://anotherseoguru.com/el/services/seo-audits
 - **Description (EN):** SEO audit services and technical SEO services: prioritized crawl, indexation, Core Web Vitals, and on-page fixes that unlock rankings.
-- **Greek name:** SEO Audit & Τεχνικός Έλεγχος
-- **Description (EL):** Υπηρεσίες SEO για ιστοσελίδες στην Ελλάδα: τεχνικός έλεγχος, on-page, λέξεις-κλειδιά, τοπικό SEO και μηνιαία προώθηση. Διαφανή πακέτα από €500/μήνα.
+- **Greek name:** seo-audits
+- **Description (EL):** 
 - **Features (EN):** Technical health check; Core Web Vitals analysis; Crawl budget optimization; Internal linking audit; Competitor gap analysis; Penalty recovery
-- **Features (EL):** Πλήρης τεχνικός SEO audit; Core Web Vitals & ταχύτητα; On-page βελτιστοποίηση & περιεχόμενο; Έρευνα λέξεων-κλειδιών; Ανάλυση ανταγωνισμού; Πλάνο προώθησης & μηνιαία αναφορά
 
 ### E-shop WooCommerce (`eshop-woocommerce`)
 - **EN URL:** https://anotherseoguru.com/en/services/eshop-woocommerce
 - **EL URL:** https://anotherseoguru.com/el/services/eshop-woocommerce
 - **Description (EN):** High-converting, fully customized WooCommerce e-shops. Integrated secure payments, shipping calculators, and automated inventory systems.
-- **Greek name:** Κατασκευή E-shop WooCommerce
-- **Description (EL):** Υψηλής μετατροπής, πλήρως προσαρμοσμένα ηλεκτρονικά καταστήματα (e-shops) WooCommerce με ενσωματωμένες πληρωμές, μεταφορικά και SEO.
+- **Greek name:** eshop-woocommerce
+- **Description (EL):** 
 - **Features (EN):** WooCommerce setup; Custom product page design; Payment gateway integration; Shipping rules & checkout optimization; SEO category structure; Inventory management
-- **Features (EL):** Εγκατάσταση & ρύθμιση WooCommerce; Σχεδιασμός σελίδων προϊόντων; Σύνδεση με πύλες πληρωμών; Ρύθμιση μεταφορικών & ολοκλήρωσης παραγγελίας; SEO δομή κατηγοριών; Διαχείριση αποθέματος
 
 ### E-shop SEO (`eshop-seo`)
 - **EN URL:** https://anotherseoguru.com/en/services/eshop-seo
 - **EL URL:** https://anotherseoguru.com/el/services/eshop-seo
 - **Description (EN):** Ecommerce SEO services for online stores: category and product optimization, schema, speed, and content that drives organic sales.
-- **Greek name:** SEO για E-shop
-- **Description (EL):** Εξειδικευμένες υπηρεσίες SEO για ηλεκτρονικά καταστήματα. Αυξήστε την οργανική εμφάνιση κατηγοριών και προϊόντων για περισσότερες πωλήσεις.
+- **Greek name:** SEO για Eshop
+- **Description (EL):** SEO για eshop: κατηγορίες, σελίδες προϊόντων, φίλτρα και ταχύτητα, ώστε το ηλεκτρονικό σας κατάστημα να πουλάει από την οργανική αναζήτηση στη Google.
 - **Features (EN):** E-shop technical audit; Category & product optimization; Product schema markup; E-commerce keyword research; Speed & mobile optimization; Conversion rate optimization
-- **Features (EL):** Τεχνικός έλεγχος για e-shop; Βελτιστοποίηση κατηγοριών & προϊόντων; Schema markup προϊόντων (JSON-LD); Έρευνα λέξεων-κλειδιών e-commerce; Ταχύτητα & βελτιστοποίηση για κινητά; Βελτιστοποίηση ποσοστού μετατροπής (CRO)
 
 ---
 
@@ -301,7 +291,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Live site:** https://cretanwaysrentals.com
 - **Category:** rent-a-car · featured
 - **Summary (EN):** Cretan Ways Rentals: Crete car and scooter rentals for Crete, SEO for “rent a car Crete”, focused on airport-to-resort routes for independent Crete travelers.
-- **Summary (EL):** Cretan Ways Rentals: ενοικίαση αυτοκινήτων και scooters στην Κρήτη στην Κρήτη, SEO για «ενοικίαση αυτοκινήτου Κρήτη», με έμφαση σε διαδρομές από αεροδρόμιο προς θέρετρα για ανεξάρτητους ταξιδιώτες.
+- **Summary (EL):** Cretan Ways Rentals: ενοικίαση αυτοκινήτων και scooters στην Κρήτη, SEO για «ενοικίαση αυτοκινήτου Κρήτη», με έμφαση σε διαδρομές από αεροδρόμιο προς θέρετρα για ανεξάρτητους ταξιδιώτες.
 - **Services delivered:** website-creation, local-seo
 - **Results:** Crete: pages aimed at “rent a car Crete” and “Heraklion car rental”; Differentiation: airport-to-resort routes for independent Crete travelers; Stack: website creation, local SEO
 
@@ -310,7 +300,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Live site:** https://naxos-carrentals.com
 - **Category:** rent-a-car · featured
 - **Summary (EN):** Naxos Car Rentals: Naxos car rental for Naxos, SEO for “rent a car Naxos”, with a clear path to booking.
-- **Summary (EL):** Naxos Car Rentals: ενοικίαση αυτοκινήτων στη Νάξο στη Νάξο, SEO για «ενοικίαση αυτοκινήτου Νάξος», με καθαρή διαδρομή προς κράτηση.
+- **Summary (EL):** Naxos Car Rentals: ενοικίαση αυτοκινήτων στη Νάξο, SEO για «ενοικίαση αυτοκινήτου Νάξος», με καθαρή διαδρομή προς κράτηση.
 - **Services delivered:** website-creation, seo-web-design
 - **Results:** Naxos: pages aimed at “rent a car Naxos” and “Naxos car rental”; Differentiation: port pickup and beach-day fleet pages for island itineraries; Stack: website creation, SEO web design
 
@@ -409,7 +399,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Live site:** https://villaoliviaclara.com
 - **Category:** villa · featured
 - **Summary (EN):** Villa Olivia Clara: luxury private villa for Crete, SEO for “Villa Olivia Clara”, focused on photo-led conversion for high-intent luxury villa searches.
-- **Summary (EL):** Villa Olivia Clara: ιστοσελίδα για πολυτελής ιδιωτική βίλα στην Κρήτη, SEO για «Villa Olivia Clara», με έμφαση σε μετατροπή μέσω φωτογραφίας για αναζητήσεις πολυτελούς βίλας.
+- **Summary (EL):** Villa Olivia Clara: ιστοσελίδα για πολυτελή ιδιωτική βίλα στην Κρήτη, SEO για «Villa Olivia Clara», με έμφαση σε μετατροπή μέσω φωτογραφίας για αναζητήσεις πολυτελούς βίλας.
 - **Services delivered:** website-creation, local-seo, ai-visibility
 - **Results:** Crete: pages aimed at “Villa Olivia Clara” and “luxury villa Crete”; Differentiation: photo-led conversion for high-intent luxury villa searches; Stack: website creation, local SEO, ai-visibility
 
@@ -463,7 +453,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Live site:** https://waytocrete.com
 - **Category:** tours
 - **Summary (EN):** Way to Crete: storytelling tours and Crete experiences website for Crete, SEO for “Way to Crete”, with technical SEO from day one.
-- **Summary (EL):** Way to Crete: ιστοσελίδα για εκδρομές storytelling και εμπειρίες στην Κρήτη στην Κρήτη, SEO για «εμπειρίες Κρήτη», με τεχνικό SEO από την πρώτη μέρα.
+- **Summary (EL):** Way to Crete: ιστοσελίδα για εκδρομές storytelling και εμπειρίες στην Κρήτη, SEO για «εμπειρίες Κρήτη», με τεχνικό SEO από την πρώτη μέρα.
 - **Services delivered:** website-creation, content-creation
 - **Results:** Crete: pages aimed at “Way to Crete” and “Crete experiences”; Differentiation: experience-led booking pages that sell belonging, not just sightseeing; Stack: website creation, content creation
 
@@ -598,7 +588,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Live site:** https://arionfarm.gr
 - **Category:** other
 - **Summary (EN):** Arion Farm: Cretan farm experiences and agritourism website for Crete, SEO for “Arion Farm”, optimized for mobile and local search.
-- **Summary (EL):** Arion Farm: ιστοσελίδα για αγροτικές εμπειρίες και αγροτουρισμός στην Κρήτη στην Κρήτη, SEO για «Arion Farm», βελτιστοποιημένη για κινητά και τοπική αναζήτηση.
+- **Summary (EL):** Arion Farm: ιστοσελίδα για αγροτικές εμπειρίες και αγροτουρισμό στην Κρήτη, SEO για «Arion Farm», βελτιστοποιημένη για κινητά και τοπική αναζήτηση.
 - **Services delivered:** website-creation
 - **Results:** Crete: pages aimed at “Arion Farm” and “Crete farm experiences”; Differentiation: tours, traditional food and participatory farm experiences; Stack: website creation
 
@@ -850,7 +840,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Live site:** https://naxos-car-rental.com
 - **Category:** rent-a-car · featured
 - **Summary (EN):** Naxos Car Rental: Naxos car rental brand for Naxos, SEO for “Naxos car rental”, structured around “Naxos car rental”.
-- **Summary (EL):** Naxos Car Rental: ενοικίαση αυτοκινήτων στη Νάξο στη Νάξο, SEO για «ενοικίαση αυτοκινήτου Νάξος», με δομή περιεχομένου για «ενοικίαση αυτοκινήτου Νάξος».
+- **Summary (EL):** Naxos Car Rental: ενοικίαση αυτοκινήτων στη Νάξο, SEO για «ενοικίαση αυτοκινήτου Νάξος», με δομή περιεχομένου για «ενοικίαση αυτοκινήτου Νάξος».
 - **Services delivered:** website-creation, local-seo, seo-web-design
 - **Results:** Naxos: pages aimed at “Naxos car rental” and “rent a car Naxos airport”; Differentiation: distinct fleet taxonomy versus sibling Naxos rental brands; Stack: website creation, local SEO, SEO web design
 
@@ -859,7 +849,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Live site:** https://naxosautorent.com
 - **Category:** rent-a-car
 - **Summary (EN):** Naxos Auto Rent: online Naxos auto rent website for Naxos, SEO for “Naxos auto rent”, with technical SEO from day one.
-- **Summary (EL):** Naxos Auto Rent: online ενοικίαση αυτοκινήτων στη Νάξο στη Νάξο, SEO για «ενοικίαση αυτοκινήτου Νάξος online», με τεχνικό SEO από την πρώτη μέρα.
+- **Summary (EL):** Naxos Auto Rent: online ενοικίαση αυτοκινήτων στη Νάξο, SEO για «ενοικίαση αυτοκινήτου Νάξος online», με τεχνικό SEO από την πρώτη μέρα.
 - **Services delivered:** website-creation, local-seo, speed-optimization
 - **Results:** Naxos: pages aimed at “Naxos auto rent” and “Naxos car hire online”; Differentiation: English-first booking UX for international guests; Stack: website creation, local SEO, speed optimization
 
@@ -910,7 +900,81 @@ The Greek cities below have service×city pages for website creation, local SEO,
 
 ---
 
-## 7. Blog & Guides (71)
+## 7. Blog & Guides (74)
+
+### Πώς Βάζω την Επιχείρησή μου στο Google Maps
+- **URL:** https://anotherseoguru.com/el/blog/epixeirisi-sto-google-maps
+- **Locale:** el · **Date:** 2026-10-10
+- **Description:** Πώς να βάλετε την επιχείρησή σας στο Google Maps βήμα βήμα, γιατί μπορεί να μην εμφανίζεται και πώς να ανεβείτε στον χάρτη με το Google Business Profile.
+- **Embedded FAQ:**
+  - Q: Πώς βάζω την επιχείρησή μου στο Google Maps;
+    A: Δημιουργείτε δωρεάν Google Business Profile στο business.google.com, συμπληρώνετε όνομα, κατηγορία, διεύθυνση ή περιοχή εξυπηρέτησης και στοιχεία επικοινωνίας, και επαληθεύετε την επιχείρηση με τον τρόπο που σας προτείνει η Google. Μετά την επαλήθευση το προφίλ εμφανίζεται στον χάρτη.
+  - Q: Πόσο κοστίζει η καταχώρηση στο Google Maps;
+    A: Τίποτα. Το Google Business Profile είναι δωρεάν. Πληρώνετε μόνο αν επιλέξετε διαφήμιση στον χάρτη ή αν αναθέσετε τη βελτιστοποίηση του προφίλ σε κάποιον.
+  - Q: Γιατί η επιχείρησή μου δεν εμφανίζεται στο Google Maps;
+    A: Οι συνηθέστεροι λόγοι είναι ότι το προφίλ δεν έχει επαληθευτεί, έχει ανασταλεί, υπάρχει διπλή καταχώρηση, η κατηγορία είναι λάθος ή η επιχείρηση είναι νέα και δεν έχει ακόμη κριτικές και αναφορές. Ελέγξτε πρώτα την κατάσταση του προφίλ στον λογαριασμό σας.
+  - Q: Πόσο διαρκεί η επαλήθευση;
+    A: Από λίγα λεπτά έως δύο εβδομάδες, ανάλογα με τη μέθοδο. Η επαλήθευση με βίντεο, τηλέφωνο ή email ολοκληρώνεται συνήθως γρήγορα· όπου η Google ζητά ταχυδρομική κάρτα, η αναμονή είναι μεγαλύτερη.
+  - Q: Μπορώ να εμφανίζομαι στον χάρτη χωρίς φυσικό κατάστημα;
+    A: Ναι. Αν εξυπηρετείτε πελάτες στον χώρο τους (π.χ. υδραυλικός, καθαρισμός), δηλώνετε περιοχή εξυπηρέτησης και κρύβετε τη διεύθυνση. Το προφίλ εμφανίζεται για αναζητήσεις στις περιοχές που δηλώσατε.
+
+### On-Page SEO: Τι Είναι και Checklist 2026
+- **URL:** https://anotherseoguru.com/el/blog/on-page-seo-el
+- **Locale:** el · **Date:** 2026-10-10
+- **Description:** Τι είναι το on-page SEO και πώς διαφέρει από το off-page: checklist για τίτλους, επικεφαλίδες, περιεχόμενο και εσωτερικούς συνδέσμους, με παραδείγματα.
+- **Embedded FAQ:**
+  - Q: Τι είναι το on-page SEO;
+    A: On-page (ή on-site) SEO είναι ό,τι βελτιώνετε μέσα στην ίδια τη σελίδα για να καταλάβει η Google τι απαντά και να την προτείνει στη σωστή αναζήτηση - τίτλος, επικεφαλίδες, κείμενο, εικόνες, εσωτερικοί σύνδεσμοι και δομημένα δεδομένα.
+  - Q: Τι είναι το off-page SEO;
+    A: Off-page SEO είναι ό,τι γίνεται έξω από το site σας και επηρεάζει την κατάταξη - κυρίως backlinks από άλλα sites, αναφορές της επωνυμίας σας και κριτικές.
+  - Q: Ποια είναι η διαφορά on-page και τεχνικού SEO;
+    A: Το τεχνικό SEO φροντίζει να μπορεί η Google να βρει και να διαβάσει τη σελίδα (ταχύτητα, ευρετηρίαση, δομή). Το on-page SEO φροντίζει η σελίδα να απαντά σωστά σε αυτό που ψάχνει ο χρήστης.
+  - Q: Πόσο συχνά πρέπει να ελέγχω το on-page SEO;
+    A: Σε κάθε νέα σελίδα πριν δημοσιευτεί, και στις σημαντικές σελίδες κάθε λίγους μήνες με βάση τα δεδομένα του Search Console - ειδικά όταν μια σελίδα έχει πολλές εμφανίσεις αλλά λίγα κλικ.
+
+### Πώς να Επιλέξετε Εταιρεία SEO: 10 Ερωτήσεις
+- **URL:** https://anotherseoguru.com/el/blog/pos-na-epilexete-etaireia-seo
+- **Locale:** el · **Date:** 2026-10-10
+- **Description:** Πώς να επιλέξετε εταιρεία SEO στην Ελλάδα: 10 ερωτήσεις πριν υπογράψετε, σημάδια κινδύνου και σύγκριση εταιρείας, freelancer και εσωτερικού συνεργάτη.
+- **Embedded FAQ:**
+  - Q: Ποια είναι η καλύτερη εταιρεία SEO στην Ελλάδα;
+    A: Δεν υπάρχει μία καλύτερη για όλους. Η σωστή εταιρεία SEO για εσάς είναι αυτή που έχει δουλέψει στον κλάδο σας, σας δείχνει συγκεκριμένα παραδοτέα ανά μήνα, μετρά αιτήματα και όχι μόνο θέσεις, και σας αφήνει να κρατήσετε λογαριασμούς και περιεχόμενο αν φύγετε.
+  - Q: Εταιρεία SEO ή freelancer;
+    A: Ένας freelancer ταιριάζει σε μικρότερα έργα με σαφές αντικείμενο. Μια εταιρεία ταιριάζει όταν χρειάζεστε ταυτόχρονα τεχνικό SEO, περιεχόμενο και σύνδεσμους κάθε μήνα και θέλετε συνέχεια αν κάποιος λείψει.
+  - Q: Πότε φαίνονται τα πρώτα αποτελέσματα;
+    A: Οι πρώτες κινήσεις σε θέσεις φαίνονται συνήθως σε 2 έως 4 μήνες. Ουσιαστική διαφορά σε αιτήματα θέλει 6 μήνες και πάνω, και περισσότερο σε ανταγωνιστικούς κλάδους.
+  - Q: Είναι σήμα κινδύνου η εγγύηση πρώτης θέσης;
+    A: Ναι. Κανείς δεν ελέγχει τα συστήματα κατάταξης της Google, οπότε μια τέτοια εγγύηση δεν μπορεί να δοθεί ειλικρινά. Συνήθως σημαίνει ότι θα «κερδίσετε» μια λέξη που κανείς δεν ψάχνει.
+
+### Τι Είναι τα Backlinks και Πώς τα Αποκτάτε
+- **URL:** https://anotherseoguru.com/el/blog/ti-einai-ta-backlinks
+- **Locale:** el · **Date:** 2026-10-10
+- **Description:** Τι είναι τα backlinks, γιατί επηρεάζουν την κατάταξη στη Google και πώς αποκτάτε ποιοτικούς συνδέσμους από ελληνικά sites χωρίς ρίσκο ποινής.
+- **Embedded FAQ:**
+  - Q: Τι είναι τα backlinks;
+    A: Backlinks (εισερχόμενοι σύνδεσμοι) είναι οι σύνδεσμοι από άλλα sites προς τη δική σας ιστοσελίδα. Η Google τους χρησιμοποιεί ως ένδειξη ότι η σελίδα σας αξίζει να προταθεί.
+  - Q: Τι είναι το link building;
+    A: Link building είναι η συστηματική δουλειά για να αποκτήσει μια ιστοσελίδα backlinks από σχετικά και αξιόπιστα sites, μέσα από περιεχόμενο που αξίζει αναφορά, συνεργασίες, δημόσιες σχέσεις και επικοινωνία με διαχειριστές άλλων sites.
+  - Q: Αξίζει να αγοράσω backlinks;
+    A: Όχι. Οι πολιτικές της Google θεωρούν spam την αγορά συνδέσμων που μεταφέρουν αξία κατάταξης. Το ρίσκο είναι να αγνοηθούν οι σύνδεσμοι ή, σε σοβαρές περιπτώσεις, να πέσει η ιστοσελίδα. Οι πληρωμένες αναφορές πρέπει να σημειώνονται ως sponsored.
+  - Q: Πόσα backlinks χρειάζομαι;
+    A: Δεν υπάρχει αριθμός-στόχος. Μετράει η ποιότητα και η σχετικότητα. Λίγοι σύνδεσμοι από σοβαρά ελληνικά sites του κλάδου ή της περιοχής σας αξίζουν περισσότερο από εκατοντάδες από άσχετους καταλόγους.
+  - Q: Πώς βλέπω ποια sites με συνδέουν;
+    A: Στο Google Search Console, στην αναφορά «Σύνδεσμοι», βλέπετε ποια sites σας συνδέουν και προς ποιες σελίδες. Είναι δωρεάν και βασίζεται στα δεδομένα της ίδιας της Google.
+
+### Τι Χρειάζεται για Eshop: Εφορία & Επιδότηση
+- **URL:** https://anotherseoguru.com/el/blog/ti-xreiazetai-gia-eshop
+- **Locale:** el · **Date:** 2026-10-10
+- **Description:** Τι χρειάζεται για να ανοίξετε eshop στην Ελλάδα: έναρξη στην εφορία, ΚΑΔ, πληρωμές, όροι χρήσης και ποιες επιδοτήσεις καλύπτουν το κόστος κατασκευής.
+- **Embedded FAQ:**
+  - Q: Τι χρειάζεται για να ανοίξω eshop;
+    A: Έναρξη ή επέκταση δραστηριότητας στην εφορία με τον κατάλληλο ΚΑΔ για λιανικό εμπόριο μέσω διαδικτύου, τρόπο έκδοσης παραστατικών που διαβιβάζονται στο myDATA, τρόπους πληρωμής και αποστολής, όρους χρήσης, πολιτική επιστροφών και απορρήτου, και φυσικά το ίδιο το eshop.
+  - Q: Χρειάζεται έναρξη στην εφορία για eshop;
+    A: Ναι, για να πουλάτε συστηματικά μέσω eshop χρειάζεστε δραστηριότητα στην εφορία με ΚΑΔ που καλύπτει το ηλεκτρονικό εμπόριο. Αν έχετε ήδη επιχείρηση, συνήθως αρκεί επέκταση δραστηριότητας. Ο λογιστής σας θα επιβεβαιώσει τον σωστό ΚΑΔ και αν απαιτείται εγγραφή στο ΓΕΜΗ.
+  - Q: Υπάρχει επιδότηση για δημιουργία eshop;
+    A: Στο παρελθόν υπήρξαν προγράμματα όπως το «e-λιανικό» (2021) και το «Ψηφιακό Άλμα» (2023). Τα προγράμματα ανοίγουν και κλείνουν, οπότε ελέγξτε τι ισχύει σήμερα στο espa.gr πριν βασίσετε τον προϋπολογισμό σας σε επιδότηση.
+  - Q: Πόσο κοστίζει συνολικά ένα eshop;
+    A: Εξαρτάται από το αν το φτιάχνετε μόνοι σας ή με ομάδα, τον αριθμό προϊόντων και τις συνδέσεις (ERP, courier, τιμολόγηση). Αναλυτικά νούμερα θα βρείτε στον οδηγό «Πόσο κοστίζει ένα eshop».
 
 ### Τα tags του Google AI Mode και τι τα τροφοδοτεί
 - **URL:** https://anotherseoguru.com/el/blog/google-ai-mode-tags-el
@@ -996,20 +1060,20 @@ The Greek cities below have service×city pages for website creation, local SEO,
   - Q: Which operators are unreliable in 2026?
     A: Treat intext:, public link:, and some related: behaviors as unstable or retired. Prefer Search Console, server logs, and documented operators for decisions.
 
-### AI SEO Agency - GEO, AEO και Citations σε Απαντήσεις AI
+### Τι Είναι το AI SEO και Πώς Λειτουργεί
 - **URL:** https://anotherseoguru.com/el/blog/ai-seo-agency-geo-aeo-el
 - **Locale:** el · **Date:** 2026-07-23
-- **Description:** Τι κάνει ένα AI SEO agency το 2026. GEO vs SEO, AEO για AI Overviews και πώς τουριστικά brands κερδίζουν citations σε ChatGPT και Perplexity.
+- **Description:** Τι είναι το AI SEO και πώς λειτουργεί: πώς επιλέγουν πηγές το ChatGPT, το Gemini και τα AI Overviews και τι αλλάζετε στην ιστοσελίδα σας.
 - **Embedded FAQ:**
-  - Q: Τι είναι ένα AI SEO agency;
-    A: Συνδυάζει κλασικό SEO με Generative Engine Optimization (GEO) και Answer Engine Optimization (AEO) ώστε το brand σας να κατατάσσεται στη Google και να αναφέρεται σε απαντήσεις AI όπως ChatGPT, Perplexity και Google AI Overviews.
+  - Q: Τι είναι το AI SEO;
+    A: Το AI SEO είναι η βελτιστοποίηση μιας ιστοσελίδας ώστε να χρησιμοποιείται ως πηγή από εργαλεία τεχνητής νοημοσύνης. Συνδυάζει κλασικό SEO με Generative Engine Optimization (GEO) και Answer Engine Optimization (AEO) ώστε το brand σας να κατατάσσεται στη Google και να αναφέρεται σε απαντήσεις AI όπως ChatGPT, Perplexity και Google AI Overviews.
   - Q: Ποια είναι η διαφορά GEO και SEO;
     A: Το SEO στοχεύει κλασικές κατατάξεις. Το GEO δομεί entities, FAQ και αποδείξεις ώστε τα generative engines να επιλέγουν και να αναφέρουν το brand σας.
   - Q: Πόσο κοστίζουν οι υπηρεσίες generative engine optimization;
     A: Σοβαρά προγράμματα GEO/AEO συνήθως εντάσσονται σε μηνιαία SEO retainers περίπου €500–€1.500+/μήνα ανάλογα με τον ανταγωνισμό, ή ως scoped projects. Δείτε τη σελίδα τιμών για διαφανή πακέτα σε EUR.
   - Q: Το GEO αντικαθιστά το τεχνικό SEO;
     A: Όχι. Crawlable, γρήγορες και authoritative σελίδες παραμένουν θεμέλιο. Το GEO προσθέτει καθαρότητα entities, citation-worthy αποδείξεις και παρακολούθηση AI mentions πάνω σε αυτή τη στοίβα.
-  - Q: Ποιος επωφελείται περισσότερο από AI SEO agency;
+  - Q: Ποιος επωφελείται περισσότερο από το AI SEO;
     A: Ξενοδοχεία, villas, rent-a-car, tour operators και τοπικές υπηρεσίες που ανταγωνίζονται σε εμπορικά queries όπου τα AI Overviews και οι απαντήσεις chat ήδη επηρεάζουν shortlists.
 
 ### AI SEO Agency Guide - GEO, AEO & Getting Cited in AI Answers
@@ -1060,10 +1124,10 @@ The Greek cities below have service×city pages for website creation, local SEO,
   - Q: Τα AI SEO tools αντικαθιστούν τα suites το 2026;
     A: Επιταχύνουν briefs και περιλήψεις. Δεν αντικαθιστούν crawl data, backlink graphs ή analytics μετατροπών. Αντιμετωπίστε τα ως assistants μέσα στη στοίβα.
 
-### GEO vs SEO vs AEO - Τι Χρειάζεστε το 2026;
+### GEO vs SEO vs AEO: Ποια η Διαφορά; (2026)
 - **URL:** https://anotherseoguru.com/el/blog/geo-vs-seo-vs-aeo-el
 - **Locale:** el · **Date:** 2026-07-23
-- **Description:** Σύγκριση SEO, GEO (generative engine optimization) και AEO. Πότε επενδύετε σε καθένα και πώς τα συνδυάζουμε για leads.
+- **Description:** GEO, SEO και AEO εξηγημένα: τι αλλάζει όταν οι απαντήσεις έρχονται από AI, τι μένει ίδιο και τι χρειάζεται μια ελληνική ιστοσελίδα για να αναφέρεται.
 - **Embedded FAQ:**
   - Q: Το GEO αντικαθιστά το SEO;
     A: Όχι. Το GEO χτίζει πάνω στο SEO. Χρειάζεστε ακόμα crawlable, γρήγορες, authoritative σελίδες. Το GEO προσθέτει βελτιστοποίηση entities και citations για generative engines.
@@ -1188,15 +1252,17 @@ The Greek cities below have service×city pages for website creation, local SEO,
   - Q: How much does on-page optimization cost?
     A: Page rewrites often run €150–€450 per URL depending on research depth. Ongoing on-page work is usually included in retainers from €500/mo.
 
-### Πόσο Κοστίζει το SEO; Τιμές 2026
+### Πόσο Κοστίζει το SEO στην Ελλάδα; (2026)
 - **URL:** https://anotherseoguru.com/el/blog/poso-kostizei-to-seo
 - **Locale:** el · **Date:** 2026-07-23
-- **Description:** Πόσο κοστίζει το SEO στην Ελλάδα; Πίνακας τιμών SEO και τι περιλαμβάνει κάθε πακέτο. Διαφανείς τιμές σε € - χωρίς κρυφές χρεώσεις.
+- **Description:** Πόσο κοστίζει το SEO στην Ελλάδα το 2026: μηνιαίες τιμές ανά μέγεθος επιχείρησης, τι περιλαμβάνει ένα πακέτο και πότε το φθηνό SEO βγαίνει ακριβό.
 - **Embedded FAQ:**
   - Q: Πόσο κοστίζει το SEO στην Ελλάδα;
     A: Για σοβαρή δουλειά, από €250 έως €1.500+ τον μήνα ανάλογα με τον ανταγωνισμό και τους στόχους. Τα πακέτα μας είναι Foundations €500/μήνα, Growth €900/μήνα και Authority €1.500/μήνα, πάντα σε Ευρώ και χωρίς κρυφές χρεώσεις.
   - Q: Ποιες είναι οι τυπικές τιμές SEO στην Ελλάδα;
     A: Τοπικές επιχειρήσεις συνήθως επενδύουν €250–€400/μήνα. Ανταγωνιστικοί κλάδοι €500–€800. E-shop και πανελλαδικά brands €900–€1.500+. Εφάπαξ audit συχνά €300–€800.
+  - Q: Αξίζει το SEO;
+    A: Αξίζει όταν υπάρχει ζήτηση στην αναζήτηση για αυτό που πουλάτε και μπορείτε να περιμένετε 4–6 μήνες. Οι θέσεις που χτίζονται συνεχίζουν να φέρνουν επισκέψεις χωρίς κόστος ανά κλικ, οπότε το κόστος ανά πελάτη πέφτει με τον χρόνο.
   - Q: Γιατί το SEO είναι ακριβό;
     A: Γιατί δεν είναι αυτοματοποιημένη αναφορά - είναι συνεχής εργασία σε τεχνικό SEO, περιεχόμενο, τοπικό προφίλ και links. Φθηνές προσφορές €80–€100/μήνα σχεδόν πάντα σημαίνουν μηδενική πραγματική εργασία ή ριψοκίνδυνες τακτικές.
   - Q: Πόσο κοστίζει το SEO για μια μικρή επιχείρηση;
@@ -1220,21 +1286,21 @@ The Greek cities below have service×city pages for website creation, local SEO,
   - Q: Does SEO content still matter with AI Overviews?
     A: Yes. Clear, cited, experience-rich pages are what AI systems quote. Thin keyword dumps get ignored. Pair content with GEO/AEO practices for answer engines.
 
-### Τι Είναι το SEO; Οδηγός για Αρχάριους (2026)
+### Τι Είναι το SEO; Οδηγός για Αρχάριους 2026
 - **URL:** https://anotherseoguru.com/el/blog/seo-gia-arxarious
 - **Locale:** el · **Date:** 2026-07-23
 - **Description:** Τι είναι το SEO με απλά λόγια. Πώς κατατάσσει η Google, on-page, τεχνικό, off-page και τοπικό SEO, λέξεις-κλειδιά, κόστος και από πού ξεκινάτε.
 - **Embedded FAQ:**
-  - Q: Τι είναι το SEO;
-    A: Το SEO (Search Engine Optimization) είναι η διαδικασία βελτιστοποίησης μιας ιστοσελίδας ώστε να εμφανίζεται ψηλότερα στα οργανικά αποτελέσματα της Google. Περιλαμβάνει τεχνικές βελτιώσεις, περιεχόμενο και εξωτερικά σήματα αξιοπιστίας.
+  - Q: Τι σημαίνει SEO;
+    A: SEO σημαίνει search engine optimization, δηλαδή βελτιστοποίηση για μηχανές αναζήτησης. Είναι ό,τι κάνετε ώστε η ιστοσελίδα σας να εμφανίζεται ψηλά στα οργανικά, μη πληρωμένα αποτελέσματα της Google.
   - Q: Πώς λειτουργεί το SEO;
-    A: Η Google ανιχνεύει (crawling), ευρετηριάζει (indexing) και κατατάσσει (ranking) τις σελίδες σας με βάση σχετικότητα, ποιότητα, ταχύτητα και κύρος. Το SEO βελτιώνει αυτά τα σήματα.
-  - Q: Μπορώ να κάνω SEO μόνος μου;
-    A: Τα βασικά ναι - σωστοί τίτλοι, Google Business Profile, περιεχόμενο που απαντά ερωτήσεις πελατών. Το τεχνικό κομμάτι, η στρατηγική και τα links είναι εκεί που ένας συνεργάτης κάνει τη διαφορά.
+    A: Η Google ανιχνεύει (crawling), ευρετηριάζει (indexing) και κατατάσσει (ranking) τις σελίδες σας με βάση τη σχετικότητα, την ποιότητα, την ταχύτητα και το κύρος. Το SEO βελτιώνει αυτά τα σήματα.
+  - Q: Πώς κάνω SEO μόνος μου;
+    A: Ξεκινήστε από τα βασικά - Search Console, Google Business Profile, σωστοί τίτλοι και περιεχόμενο που απαντά σε ερωτήσεις πελατών. Το τεχνικό κομμάτι, η στρατηγική και οι σύνδεσμοι είναι εκεί που ένας συνεργάτης κάνει τη διαφορά.
+  - Q: Αξίζει το SEO;
+    A: Για τις περισσότερες επιχειρήσεις που έχουν ζήτηση στην αναζήτηση, ναι. Οι θέσεις που χτίζονται συνεχίζουν να φέρνουν επισκέψεις χωρίς κόστος ανά κλικ. Δεν αξίζει αν χρειάζεστε αποτελέσματα μέσα σε έναν μήνα ή αν κανείς δεν ψάχνει αυτό που πουλάτε.
   - Q: Ποια είναι η διαφορά on-page, off-page και τεχνικού SEO;
     A: On-page είναι ό,τι βελτιώνετε στη σελίδα (τίτλοι, περιεχόμενο, σύνδεσμοι). Τεχνικό είναι τα θεμέλια (ταχύτητα, ευρετηρίαση, schema). Off-page είναι εξωτερικά σήματα, κυρίως ποιοτικά backlinks.
-  - Q: SEO ή διαφημίσεις Google;
-    A: Διαφορετικά εργαλεία. Τα Ads φέρνουν άμεση κίνηση όσο πληρώνετε· το SEO χτίζει σταθερή οργανική ροή που μένει μακροπρόθεσμα.
 
 ### SEO Στρατηγική για Μικρές Επιχειρήσεις - Πλάνο 90 Ημερών
 - **URL:** https://anotherseoguru.com/el/blog/seo-stratigiki-mikres-epicheiriseis
@@ -1268,7 +1334,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
   - Q: How much does a technical SEO audit cost?
     A: In Greece, focused technical audits typically run €500–€1,200 depending on site size and JS complexity. Fixes are scoped separately or included in retainers.
 
-### Τεχνικό SEO - Checklist για Καλύτερη Κατάταξη Google (2026)
+### Τεχνικό SEO: Checklist για Κατάταξη (2026)
 - **URL:** https://anotherseoguru.com/el/blog/techniko-seo
 - **Locale:** el · **Date:** 2026-07-23
 - **Description:** Τι είναι το τεχνικό SEO και πώς βελτιώνει την κατάταξη στη Google. Crawl, index, Core Web Vitals, schema, λάθη, κόστος και πρακτικό checklist.
@@ -1332,7 +1398,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
   - Q: Τι είναι το E-E-A-T για οδοντιάτρους;
     A: Σήματα εμπειρίας, εξειδίκευσης, αυθεντίας και αξιοπιστίας. Υπογραφή άρθρων από τον γιατρό, βιογραφικό με άδεια και παραπομπές σε αξιόπιστες πηγές.
 
-### Τοπικό SEO Θεσσαλονίκη - Οδηγός για Επιχειρήσεις 2026
+### Οδηγός Τοπικού SEO για τη Θεσσαλονίκη
 - **URL:** https://anotherseoguru.com/el/blog/topiko-seo-thessaloniki
 - **Locale:** el · **Date:** 2026-07-07
 - **Description:** Πώς μια επιχείρηση στη Θεσσαλονίκη κυριαρχεί στις τοπικές αναζητήσεις. Google Business Profile, τοπικές σελίδες και SEO φθηνότερα από την Αθήνα.
@@ -1348,10 +1414,10 @@ The Greek cities below have service×city pages for website creation, local SEO,
   - Q: Ποιες περιοχές της Θεσσαλονίκης αξίζει να στοχεύσω;
     A: Κέντρο, Καλαμαριά, Τούμπα, Εύοσμος, Πυλαία και άλλες ζώνες με πραγματική παρουσία ή εξυπηρέτηση - όχι copy-paste σελίδες μόνο με αλλαγή ονόματος.
 
-### Ανασχεδιασμός Ιστοσελίδας Χωρίς να Χάσετε το SEO σας
+### Μετάβαση Ιστοσελίδας χωρίς Απώλεια SEO
 - **URL:** https://anotherseoguru.com/el/blog/anasxediasmos-istoselidas
 - **Locale:** el · **Date:** 2026-07-06
-- **Description:** Πότε χρειάζεται ανασχεδιασμός ιστοσελίδας, πόσο κοστίζει και πώς γίνεται με ασφαλές SEO migration ώστε να μη χαθούν κατατάξεις και οργανική κίνηση.
+- **Description:** Μετάβαση ιστοσελίδας χωρίς απώλεια SEO: checklist για redirects, URLs, Search Console και ελέγχους μετά το launch, ώστε να μη χαθούν κατατάξεις και κίνηση.
 - **Embedded FAQ:**
   - Q: Θα χάσω κατατάξεις κατά τον ανασχεδιασμό;
     A: Με σωστό migration, η βύθιση περιορίζεται σε λίγες θέσεις για 1–2 εβδομάδες και συχνά ακολουθεί άνοδος, γιατί το νέο site είναι ταχύτερο και καλύτερα δομημένο.
@@ -1379,22 +1445,6 @@ The Greek cities below have service×city pages for website creation, local SEO,
     A: If the base is healthy (WooCommerce, sensible structure), e-shop SEO and conversion work often suffice. If it is on a closed platform or technically broken, redesign with migration is cleaner.
   - Q: How will the e-shop get customers?
     A: A mix: SEO for categories and products for steady organic flow, Google Shopping/Ads for instant sales, and email for repeat orders.
-
-### GEO Agency Ελλάδα - Ορατότητα σε AI
-- **URL:** https://anotherseoguru.com/el/blog/geo-agency-ellada
-- **Locale:** el · **Date:** 2026-07-06
-- **Description:** GEO agency στην Ελλάδα για ChatGPT, Perplexity και Gemini. Τι να ζητήσετε, κόστος από €900/μήνα και πώς μετράτε AI citations. Δωρεάν έλεγχος ορατότητας.
-- **Embedded FAQ:**
-  - Q: Τι κάνει ένα GEO agency;
-    A: Ελέγχει την AI ορατότητά σας, δομεί περιεχόμενο για ChatGPT/Perplexity/Gemini, χτίζει οντότητες με schema και μετρά citations - ώστε να εμφανίζεστε όταν οι πελάτες ρωτούν για τον κλάδο σας.
-  - Q: Πόσο κοστίζει το GEO στην Ελλάδα;
-    A: Συνήθως ως μέρος πακέτου SEO. Στην AnotherSEOGuru περιλαμβάνεται στα Growth (€900/μήνα) και Authority (€1.500/μήνα). Αυτόνομα GEO audits από €300–500.
-  - Q: Μπορώ να κάνω GEO χωρίς SEO;
-    A: Όχι ουσιαστικά. Τα AI μοντέλα αντλούν από τις ίδιες σελίδες που κατατάσσει η Google. GEO χωρίς γερό SEO είναι σκεπή χωρίς τοίχους.
-  - Q: Τι είναι το AEO και πώς διαφέρει από το GEO;
-    A: Το AEO στοχεύει έτοιμες απαντήσεις (featured snippets, AI Overviews), ενώ το GEO τις παραπομπές μέσα σε chatbots. Στην πράξη δουλεύονται μαζί.
-  - Q: Πώς ξέρω αν ένα GEO agency είναι σοβαρό;
-    A: Ζητήστε screenshots citations πελατών, σταθερή βιβλιοθήκη prompts, reporting με trends - όχι εγγυήσεις «AI rank
 
 ### Gym & Fitness SEO - Fill Your Gym from Google
 - **URL:** https://anotherseoguru.com/en/blog/gym-fitness-seo
@@ -1476,16 +1526,16 @@ The Greek cities below have service×city pages for website creation, local SEO,
   - Q: How long until SEO pays off?
     A: Low-competition local searches: 2–3 months. Competitive national keywords: 4–6+ months. SEO compounds - each month builds on the last.
 
-### Κατασκευή E-shop από €2.500
+### Πόσο Κοστίζει ένα Eshop και Πώς Φτιάχνεται
 - **URL:** https://anotherseoguru.com/el/blog/kataskevi-eshop-odigos
 - **Locale:** el · **Date:** 2026-07-06
-- **Description:** Κατασκευή e-shop WooCommerce στην Ελλάδα από €2.500. Πληρωμές, courier, myDATA και SEO κατηγοριών για να πουλάει από την 1η μέρα. Δείτε τιμές.
+- **Description:** Πόσο κοστίζει ένα eshop το 2026: κόστος κατασκευής, πλατφόρμες, ετήσια έξοδα και αν αξίζει να φτιάξετε eshop μόνοι σας. Οδηγός με πραγματικά νούμερα.
 - **Embedded FAQ:**
-  - Q: Πόσο κοστίζει η κατασκευή e-shop στην Ελλάδα;
-    A: Ένα βασικό e-shop έως ~100 προϊόντα ξεκινά από €1.800 - €2.500, ένα μεσαίο με πολλές κατηγορίες και συνδέσεις ERP/courier κοστίζει €2.500 - €4.000, ενώ απαιτητικά B2B ή πολυγλωσσικά e-shops ξεκινούν από €4.000. Στα δικά μας πακέτα το e-shop ξεκινά από το Professional (€2.500) με προσθήκη e-commerce setup.
+  - Q: Πόσο κοστίζει ένα eshop στην Ελλάδα;
+    A: Στην αγορά, ένα βασικό eshop έως ~100 προϊόντα κοστίζει περίπου €1.800 - €2.500, ένα μεσαίο με πολλές κατηγορίες και συνδέσεις ERP/courier €2.500 - €4.000, ενώ απαιτητικά B2B ή πολυγλωσσικά ξεκινούν από €4.000. Σε εμάς η δημιουργία eshop ξεκινά από €1.200 επιπλέον του πακέτου ιστοσελίδας.
   - Q: WooCommerce ή Shopify - τι να διαλέξω;
     A: Για τις περισσότερες ελληνικές επιχειρήσεις προτείνουμε WooCommerce, γιατί έχετε πλήρη ιδιοκτησία, φυσική υποστήριξη αντικαταβολής και ελληνικών courier (ACS, Γενική, ELTA, Box Now), σύνδεση με myDATA και πλήρη ελευθερία στο SEO. Το Shopify βολεύει για γρήγορο ξεκίνημα, αλλά έχει μηνιαία συνδρομή, προμήθειες και περιορισμούς στη δομή URL.
-  - Q: Μπορώ να φτιάξω e-shop μόνος μου;
+  - Q: Μπορώ να φτιάξω eshop μόνος μου;
     A: Ναι, με WooCommerce ή έτοιμες πλατφόρμες μπορείτε να στήσετε ένα βασικό e-shop μόνοι σας. Το πρόβλημα δεν είναι το στήσιμο, αλλά το να πουλάει - σωστές πληρωμές και αντικαταβολή, ρυθμισμένα courier, SEO δομή κατηγοριών, ταχύτητα σε κινητό και myDATA. Ένα e-shop που δεν βρίσκεται στη Google ή δεν εμπνέει εμπιστοσύνη απλά δεν φέρνει παραγγελίες.
   - Q: Κατασκευή e-shop με WordPress και WooCommerce συμφέρει;
     A: Ναι. Το WooCommerce τρέχει πάνω σε WordPress και είναι η πιο διαδεδομένη λύση e-commerce στην Ελλάδα, με χιλιάδες πρόσθετα για πληρωμές, courier και τιμολόγηση. Σας δίνει πλήρη ιδιοκτησία του καταστήματος και τη μεγαλύτερη ευελιξία σε τεχνικό SEO, κάτι που κρίνει την οργανική επισκεψιμότητα.
@@ -1514,21 +1564,21 @@ The Greek cities below have service×city pages for website creation, local SEO,
   - Q: Is SEO compliant for legal advertising?
     A: SEO is typically the most compatible channel because you answer people already searching for help. Still follow bar advertising rules, avoid guarantees, and keep claims evidence-based.
 
-### Πόσο Κοστίζει μια Ιστοσελίδα;
+### Πόσο Κοστίζει μια Ιστοσελίδα το 2026;
 - **URL:** https://anotherseoguru.com/el/blog/poso-kostizei-mia-istoselida
 - **Locale:** el · **Date:** 2026-07-06
-- **Description:** Πόσο κοστίζει μια ιστοσελίδα στην Ελλάδα το 2026; Από €1.500 εταιρικό site έως e-shop. Πίνακας τιμών, κρυφά κόστη και διαφανή πακέτα AnotherSEOGuru.
+- **Description:** Πόσο κοστίζει μια ιστοσελίδα στην Ελλάδα: κόστος κατασκευής ανά τύπο site, τι ανεβάζει την τιμή και τι πληρώνετε κάθε χρόνο μετά την παράδοση.
 - **Embedded FAQ:**
   - Q: Πόσο κοστίζει μια ιστοσελίδα στην Ελλάδα το 2026;
-    A: Από περίπου €400–€800 για landing page, €800–€2.000 για εταιρική ιστοσελίδα 5–10 σελίδων, €1.500–€3.500 για ιστοσελίδα ξενοδοχείου με κρατήσεις και €1.800–€5.000+ για e-shop WooCommerce. Τα πακέτα μας ξεκινούν από Starter €1.500, Professional €2.500 και Business €4.000.
-  - Q: Γιατί οι προσφορές για ιστοσελίδα διαφέρουν τόσο πολύ μεταξύ τους;
-    A: Γιατί δεν συγκρίνετε το ίδιο πράγμα - έτοιμο template αντί custom σχεδιασμού, με ή χωρίς SEO θεμέλια, με ή χωρίς περιεχόμενο και συντήρηση. Ζητήστε πάντα αναλυτική προσφορά με όλα τα παραδοτέα γραμμένα.
-  - Q: Πόσο κοστίζει ένα e-shop;
-    A: Ένα λειτουργικό WooCommerce e-shop ξεκινά ρεαλιστικά από €1.800 με πληρωμές, μεταφορικά και SEO δομή από την πρώτη μέρα.
+    A: Στην αγορά, περίπου €400–€800 για landing page, €800–€2.000 για εταιρική ιστοσελίδα 5–10 σελίδων, €1.500–€3.500 για ιστοσελίδα ξενοδοχείου με κρατήσεις και €1.800–€5.000+ για e-shop WooCommerce. Τα δικά μας πακέτα είναι Starter €1.500, Professional €2.500 και Business €4.000.
+  - Q: Πόσο κοστίζει ένα site παρουσίασης;
+    A: Ένα site παρουσίασης 5–10 σελίδων κοστίζει συνήθως €800–€2.000 στην ελληνική αγορά. Το πακέτο Starter μας ξεκινά από €1.500 για έως 5 σελίδες, με SEO βάση από την αρχή.
+  - Q: Πόσο κοστίζει ένα eshop;
+    A: Ένα λειτουργικό WooCommerce eshop ξεκινά ρεαλιστικά από περίπου €1.800 στην αγορά, με πληρωμές, μεταφορικά και SEO δομή. Σε εμάς το eshop είναι πρόσθετο από €1.200 πάνω σε ένα πακέτο ιστοσελίδας.
+  - Q: Υπάρχει δωρεάν κατασκευή ιστοσελίδας;
+    A: Υπάρχουν δωρεάν builders, αλλά όχι δωρεάν επαγγελματική ιστοσελίδα. Οι δωρεάν εκδόσεις έχουν διαφημίσεις, subdomain και περιορισμένο SEO. Για δοκιμή μιας ιδέας αρκούν· για επιχείρηση που θέλει πελάτες από τη Google, συνήθως όχι.
   - Q: Η ιστοσελίδα θα είναι δική μου;
     A: Στην AnotherSEOGuru ναι - παραδίδουμε πλήρη πρόσβαση και όλα τα αρχεία. Ρωτήστε το πάντα, γιατί πολλοί κατασκευαστές κλειδώνουν τους πελάτες στο δικό τους σύστημα.
-  - Q: Πόσο κοστίζει η συντήρηση μετά την παράδοση;
-    A: Domain €10–20/χρόνο, hosting €5–30/μήνα για τυπικό site, SSL συνήθως δωρεάν, και τεχνική συντήρηση από €199/μήνα ή ανά ώρα για ενημερώσεις, backups και ασφάλεια.
 
 ### Real Estate SEO - Win Listings and Buyers from Google
 - **URL:** https://anotherseoguru.com/en/blog/real-estate-seo
@@ -1610,10 +1660,10 @@ The Greek cities below have service×city pages for website creation, local SEO,
   - Q: Έχει νόημα σε ανταγωνιστική γειτονιά;
     A: Ναι - ειδικά εκεί. Οι περισσότεροι ανταγωνιστές έχουν ελλιπή προφίλ και sites χωρίς δομή. Με 3–4 μήνες συστηματικής δουλειάς η υπεροχή στο Maps είναι εφικτή.
 
-### SEO για Ξενοδοχεία - Άμεσες Κρατήσεις χωρίς Προμήθειες OTA
+### SEO για Ξενοδοχεία: Άμεσες Κρατήσεις
 - **URL:** https://anotherseoguru.com/el/blog/seo-gia-xenodoxeia
 - **Locale:** el · **Date:** 2026-07-06
-- **Description:** SEO για ξενοδοχεία στην Ελλάδα: μειώστε προμήθειες OTA 15-25%, ανεβείτε στη Google και κερδίστε άμεσες κρατήσεις. Οδηγός 2026, πίνακας κόστους και checklist.
+- **Description:** SEO για ξενοδοχεία: πώς να κερδίσετε άμεσες κρατήσεις από τη Google, με τοπικό SEO, σελίδες δωματίων και περιεχόμενο για τον προορισμό σας.
 - **Embedded FAQ:**
   - Q: Τι είναι το SEO για ξενοδοχεία;
     A: Είναι η βελτιστοποίηση της ιστοσελίδας και του Google Business Profile ώστε ταξιδιώτες να σας βρίσκουν οργανικά στη Google και να κάνουν άμεση κράτηση - χωρίς προμήθεια OTA 15-25%.
@@ -1626,12 +1676,12 @@ The Greek cities below have service×city pages for website creation, local SEO,
   - Q: Χρειάζομαι νέα ιστοσελίδα ή αρκεί το SEO;
     A: Αν το site είναι αργό, όχι mobile-friendly ή χωρίς booking engine, η νέα κατασκευή αποδίδει περισσότερο από SEO σε προβληματική βάση.
 
-### SEO ή Google Ads; Τι Συμφέρει την Επιχείρησή σας το 2026
+### SEO ή Google Ads; Τι Συμφέρει το 2026
 - **URL:** https://anotherseoguru.com/el/blog/seo-i-google-ads
 - **Locale:** el · **Date:** 2026-07-06
-- **Description:** Σύγκριση SEO και Google Ads για ελληνικές επιχειρήσεις. Κόστος, ταχύτητα αποτελεσμάτων, ROI, λάθη και πότε αξίζει ο συνδυασμός 70/30 των δύο καναλιών.
+- **Description:** SEO ή Google Ads: κόστος, χρόνος και απόδοση σε σύγκριση, με παραδείγματα από ελληνικές επιχειρήσεις και πότε αξίζει να τρέχουν μαζί.
 - **Embedded FAQ:**
-  - Q: Μπορώ να κάνω μόνο Ads και καθόλου SEO;
+  - Q: Μπορώ να κάνω μόνο Google Ads;
     A: Μπορείτε, αλλά νοικιάζετε κίνηση για πάντα. Επιπλέον, μια αργή ιστοσελίδα με κακές σελίδες πληρώνει ακριβότερα και τα Ads (χαμηλό Quality Score = υψηλότερο CPC).
   - Q: Το SEO δουλεύει για μικρές επιχειρήσεις;
     A: Ειδικά για αυτές. Στις τοπικές αναζητήσεις ο ανταγωνισμός είναι μικρότερος και μια καλή στρατηγική τοπικού SEO φέρνει κυριαρχία στην περιοχή με λογικό κόστος έναντι αυξανόμενων CPC.
@@ -1738,10 +1788,10 @@ The Greek cities below have service×city pages for website creation, local SEO,
   - Q: Πόσο κοστίζει το τοπικό SEO για ξενοδοχείο ή rent-a-car στις Κυκλάδες;
     A: Τυπικά €500–€900/μήνα για ένα νησί· €900–€1.500+/μήνα για ανταγωνιστικούς προορισμούς ή πολλά σημεία. Δείτε τα πακέτα τιμολόγησης.
 
-### Κατασκευή Ιστοσελίδας Ξενοδοχείου
+### Τι Πρέπει να Έχει η Ιστοσελίδα Ξενοδοχείου
 - **URL:** https://anotherseoguru.com/el/blog/kataskevi-istoselidas-xenodoxeia
 - **Locale:** el · **Date:** 2026-06-17
-- **Description:** Κατασκευή ιστοσελίδας για ξενοδοχεία με direct bookings και SEO. Μείωση προμηθειών OTA, Google Maps και κρατήσεις από €2.500. Δείτε τι περιλαμβάνει.
+- **Description:** Τι πρέπει να έχει μια ιστοσελίδα ξενοδοχείου το 2026: σελίδες δωματίων, booking engine, ταχύτητα, SEO και schema για περισσότερες άμεσες κρατήσεις.
 - **Embedded FAQ:**
   - Q: Πόσο κοστίζει ιστοσελίδα ξενοδοχείου;
     A: Τυπικά €1.500–€3.500 για site με κρατήσεις. Στα πακέτα μας, Professional (€2.500) ή Business (€4.000) καλύπτουν τις περισσότερες μονάδες, με SEO θεμέλια από την 1η μέρα.
@@ -1786,22 +1836,6 @@ The Greek cities below have service×city pages for website creation, local SEO,
   - Q: Χρειάζομαι chatbot ή πρώτα Ορατότητα σε AI;
     A: Συχνά και τα δύο - το chatbot εξυπηρετεί επισκέπτες· η υπηρεσία GEO/AEO κάνει τις σελίδες σας citable σε ChatGPT/Perplexity. Ξεκινήστε από καθαρή knowledge base κοινής χρήσης.
 
-### GEO, AEO και SEO στην Ελλάδα - Οδηγός 2026
-- **URL:** https://anotherseoguru.com/el/blog/geo-aeo-ellada
-- **Locale:** el · **Date:** 2026-05-31
-- **Description:** Βελτιστοποίηση για Google, ChatGPT, Perplexity και Gemini. Οδηγός SEO, Generative Engine Optimization και Answer Engine Optimization για ελληνικά brands.
-- **Embedded FAQ:**
-  - Q: Ποια είναι η διαφορά μεταξύ SEO και GEO;
-    A: Το SEO εστιάζει στην κατάταξη και στα clicks από Google/Bing. Το GEO εστιάζει στο αν το brand σας εμφανίζεται ως αξιόπιστη πηγή στις απαντήσεις ChatGPT, Perplexity και Gemini.
-  - Q: Χρειάζομαι ξεχωριστό περιεχόμενο για το ChatGPT και τη Google;
-    A: Όχι. Και τα δύο επιβραβεύουν σαφές, έγκυρο, πρωτότυπο και καλά δομημένο περιεχόμενο. Γράψτε για ανθρώπους· δομήστε για απαντήσεις.
-  - Q: Από πού ξεκινά μια μικρή επιχείρηση στην Ελλάδα;
-    A: Τεχνικό SEO και τοπικό SEO πρώτα, μετά FAQ/schema AEO στις εμπορικές σελίδες, μετά πρόγραμμα GEO citations όταν τα θεμέλια είναι σταθερά.
-  - Q: Πόσο γρήγορα φαίνονται αποτελέσματα GEO;
-    A: Τα AEO wins (FAQ, snippets) συχνά σε 4–8 εβδομάδες. Τα GEO citations χρειάζονται 1–3 τρίμηνα σταθερής μέτρησης - όχι μία συνεδρία ChatGPT.
-  - Q: Χρειάζομαι GEO agency ή αρκεί το κλασικό SEO;
-    A: Αν οι αγοραστές σας ήδη ρωτούν AI για shortlists (τουρισμός, υπηρεσίες), χρειάζεστε και τα δύο σε ένα πρόγραμμα. Δείτε την υπηρεσία Ορατότητα σε AI.
-
 ### GEO, AEO & AI SEO - Global Playbook for 2026
 - **URL:** https://anotherseoguru.com/en/blog/geo-aeo-global-seo-playbook
 - **Locale:** en · **Date:** 2026-05-31
@@ -1843,7 +1877,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
     A: Lower cash cost - higher time cost. Total cost of ownership includes your hours or opportunity cost.
   - Q: Can I switch from software to agency mid-year?
     A: Yes - export GSC history and backlog. Good agencies start from data.
-  - Q: Do you need agency for [GEO/AEO](/el/blog/geo-aeo-ellada)?
+  - Q: Do you need agency for [GEO/AEO](/el/blog/geo-vs-seo-vs-aeo-el)?
     A: FAQ and entity content can be agency or in-house. LLM measurement discipline benefits from experienced guidance initially.
   - Q: Should startups buy agency day one?
     A: If website doesn't exist or doesn't rank - agency project often beats software alone. If learning phase - software + DIY path.

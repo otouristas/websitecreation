@@ -46,6 +46,14 @@ const IMPRESSION_FLOOR_CORE = 5;
 /** Impressions at which an off-topic page is worth a second look rather than removal. */
 const IMPRESSION_FLOOR_OFFTOPIC = 60;
 
+/**
+ * Pairs whose intent is exactly the industry hub's own head term. The Greek
+ * hotels hub targets «κατασκευή ιστοσελίδας ξενοδοχείου», so the
+ * hotels × website-creation child would cannibalise it. Consolidated before the
+ * clicks rule on purpose: two URLs for one query split the signal either way.
+ */
+const HUB_OWNS_INTENT: ReadonlySet<string> = new Set(['el:hotels/website-creation']);
+
 export function evaluateIndustryService(
   industrySlug: string,
   serviceSlug: string,
@@ -60,6 +68,20 @@ export function evaluateIndustryService(
   const position = stat?.p ?? null;
   const core = isCoreService(industrySlug, serviceSlug);
   const hub = `/${locale}/solutions/${industrySlug}`;
+
+  if (HUB_OWNS_INTENT.has(`${locale}:${industrySlug}/${serviceSlug}`)) {
+    return {
+      tier: 'C',
+      action: 'CONSOLIDATE',
+      indexable: false,
+      consolidateTo: hub,
+      clicks,
+      impressions,
+      position,
+      core,
+      reason: `The industry hub ${hub} owns this exact query; a second URL would cannibalise it.`,
+    };
+  }
 
   // 1. Anything that has earned a click stays, on or off matrix. Off-matrix
   //    winners are flagged for review rather than silently blessed.
