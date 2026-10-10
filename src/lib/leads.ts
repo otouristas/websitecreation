@@ -9,7 +9,7 @@ import { submitToFormspree } from '@/lib/formspree';
  *   2. Formspree, which emails it, as the safety net while the app endpoint is new.
  *
  * The visitor sees success when either one accepted it, so a lead is never lost to one outage.
- * The app endpoint answers CORS for anotherseoguru.com only; previews fall back to Formspree.
+ * The app endpoint answers CORS for anotherseoguru.com and this project's Vercel previews.
  */
 
 export type LeadSource = 'website-contact' | 'website-get-started' | 'website-scan';
@@ -41,19 +41,20 @@ function clip(value: string | undefined, max: number): string | undefined {
 }
 
 /**
- * Post to the app's lead endpoint. It needs a name, an email and a website to start the audit, so a
- * lead missing the email or website stays with Formspree only. Returns whether the app accepted it.
+ * Post to the app's lead endpoint. It needs an email or a phone number; the name defaults on the app
+ * side, and without a website the lead is stored without an audit. Returns whether the app accepted it.
  */
 export async function sendLeadToApp(lead: AppLead): Promise<boolean> {
   const email = lead.email?.trim().toLowerCase();
-  const website = lead.website?.trim();
-  if (!email || !EMAIL.test(email) || !website || website.length < 3) return false;
+  const validEmail = email && EMAIL.test(email) ? email : undefined;
+  const phone = clip(lead.phone, 40);
+  if (!validEmail && (phone?.replace(/\D/g, '').length ?? 0) < 6) return false;
 
   const body = {
-    name: clip(lead.name, 120) ?? nameFromEmail(email),
-    email,
-    website: website.slice(0, 300),
-    phone: clip(lead.phone, 40),
+    name: clip(lead.name, 120) ?? (validEmail ? nameFromEmail(validEmail) : undefined),
+    email: validEmail,
+    website: clip(lead.website, 300),
+    phone,
     company: clip(lead.company, 160),
     service: lead.service,
     message: clip(lead.message, 4000),
