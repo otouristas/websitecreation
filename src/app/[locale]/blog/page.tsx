@@ -3,7 +3,6 @@ import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
-import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import { buildMetadata } from "@/lib/seo";
 import {
   generateBreadcrumbSchema,
@@ -14,7 +13,9 @@ import {
 import { getAllBlogPosts, getPillarSummary } from "@/lib/blog";
 import { getBlogUi } from "@/lib/i18n/get-dictionary";
 import { isValidLocale, localizedPath, type SiteLocale } from "@/lib/i18n/locale";
-import { Section, SectionHeading, Bloom } from "@/components/landing/primitives";
+import { Archive, Layers, Sparkles } from "lucide-react";
+import { CtaBand, KitHeading, KitSection } from "@/components/kit";
+import { PageHero, accentTail } from "@/components/page-kit";
 import { PostCard } from "@/components/blog/PostCard";
 import { PillarGrid } from "@/components/blog/PillarGrid";
 import { BlogProductCta } from "@/components/blog/BlogProductCta";
@@ -78,72 +79,70 @@ export default async function BlogIndexPage({
       <SchemaMarkup schemas={schemas} />
       <Header locale={siteLocale} />
       <main className="blueprint-grid relative z-0">
-        <section className="relative overflow-hidden">
-          <Bloom className="left-1/2 top-[-8rem] h-[26rem] w-[60rem] -translate-x-1/2" />
-          <div className="main-below-header relative mx-auto max-w-6xl px-6 pb-12 pt-6">
-            <Breadcrumbs items={breadcrumbItems} className="mb-6" />
-            <h1 className="rise-in max-w-3xl font-display text-4xl font-medium leading-[1.05] tracking-[-0.04em] text-foreground md:text-6xl">
-              {ui.h1}
-            </h1>
-            <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
-              {ui.intro}
+        <PageHero
+          locale={siteLocale}
+          breadcrumbs={breadcrumbItems}
+          pill={{
+            href: lp("/glossary"),
+            kind: "free",
+            tag: isEl ? "Γλωσσάρι" : "Glossary",
+            text: isEl ? "Οι όροι του SEO με απλά λόγια" : "Every SEO term in plain words",
+          }}
+          title={accentTail(ui.h1, isEl ? 2 : 1)}
+          lead={ui.intro}
+          meta={
+            <p className="font-mono text-[11px] font-medium uppercase tracking-[0.12em] text-brand">
+              {posts.length} {isEl ? "άρθρα" : "articles"} · {pillars.length} {isEl ? "θεματικοί κόμβοι" : "topic hubs"}
             </p>
-            <p className="mt-6 text-[11px] font-medium uppercase tracking-[0.16em] text-brand">
-              {posts.length} {isEl ? "άρθρα" : "articles"} · {pillars.length}{" "}
-              {isEl ? "θεματικοί κόμβοι" : "topic hubs"}
-            </p>
-          </div>
-        </section>
+          }
+          actions={null}
+          trust={null}
+        />
 
         {/* Pillar hubs - the archive's primary navigation */}
-        <Section className="pt-4">
-          <SectionHeading
-            align="left"
+        <KitSection className="!pt-14">
+          <KitHeading
             eyebrow={isEl ? "Θεματικοί κόμβοι" : "Topic hubs"}
-            title={isEl ? "Ξεκινήστε από έναν κόμβο" : "Start with a hub"}
-            body={
+            eyebrowIcon={<Layers />}
+            title={accentTail(isEl ? "Ξεκινήστε από έναν κόμβο" : "Start with a hub", 1)}
+            description={
               isEl
                 ? "Κάθε κόμβος συγκεντρώνει τα άρθρα ενός θέματος, από τα βασικά μέχρι τις προχωρημένες τακτικές."
                 : "Each hub collects everything on one topic, from the fundamentals through to the advanced tactics."
             }
-            className="mb-10"
           />
-          <PillarGrid pillars={pillars} locale={siteLocale} />
-        </Section>
+          <div className="mt-10">
+            <PillarGrid pillars={pillars} locale={siteLocale} />
+          </div>
 
-        {/* Lead article */}
-        {lead ? (
-          <Section className="pt-0">
-            <SectionHeading
-              align="left"
-              eyebrow={isEl ? "Τελευταίο" : "Latest"}
-              title={isEl ? "Νέο στο blog" : "New on the blog"}
-              className="mb-10"
-            />
-            <div className="relative overflow-hidden rounded-[10px] border border-hairline">
-              <PostCard post={lead} locale={siteLocale} featured />
+          {/* Lead article */}
+          {lead ? (
+            <div className="mt-24">
+              <KitHeading
+                eyebrow={isEl ? "Τελευταίο" : "Latest"}
+                eyebrowIcon={<Sparkles />}
+                title={isEl ? "Νέο στο blog" : "New on the blog"}
+              />
+              <div className="mt-10">
+                <PostCard post={lead} locale={siteLocale} featured />
+              </div>
             </div>
-          </Section>
-        ) : null}
+          ) : null}
+        </KitSection>
 
         <BlogProductCta locale={siteLocale} />
 
         {/* All articles */}
-        <Section className="pt-0" id="all">
-          <SectionHeading
-            align="left"
-            eyebrow={isEl ? "Αρχείο" : "Archive"}
-            title={isEl ? "Όλα τα άρθρα" : "All articles"}
-            className="mb-10"
-          />
-          <div className="grid gap-px overflow-hidden rounded-[10px] border border-hairline bg-hairline sm:grid-cols-2 lg:grid-cols-3">
+        <KitSection id="all">
+          <KitHeading eyebrow={isEl ? "Αρχείο" : "Archive"} eyebrowIcon={<Archive />} title={isEl ? "Όλα τα άρθρα" : "All articles"} />
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {rest.map((post) => (
-              <div key={post.slug} className="relative">
-                <PostCard post={post} locale={siteLocale} />
-              </div>
+              <PostCard key={post.slug} post={post} locale={siteLocale} />
             ))}
           </div>
-        </Section>
+        </KitSection>
+
+        <CtaBand locale={siteLocale} source="blog-band" />
       </main>
       <Footer locale={siteLocale} />
     </>

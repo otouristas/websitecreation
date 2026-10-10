@@ -19,21 +19,21 @@ export function PostCard({
   const pillarCopy = pillar ? getPillarCopy(pillar, locale) : undefined;
 
   return (
-    <article className={`group flex h-full flex-col bg-surface p-7 transition-colors hover:bg-surface-raised ${featured ? 'md:p-9' : ''}`}>
+    <article className={`group relative flex h-full flex-col rounded-2xl border border-hairline bg-surface/60 p-6 transition-colors hover:border-brand/40 hover:bg-surface ${featured ? 'md:p-9' : ''}`}>
       <div className="mb-4 flex flex-wrap items-center gap-x-3 gap-y-2">
         {pillarCopy ? (
-          <span className="text-[11px] font-medium uppercase tracking-[0.16em] text-brand">
+          <span className="font-mono text-[11px] font-medium uppercase tracking-[0.1em] text-brand">
             {pillarCopy.title}
           </span>
         ) : null}
-        <span className="text-[11px] text-muted-foreground">
+        <span className="font-mono text-[11px] text-muted-foreground">
           {post.readingTime} {isEl ? 'λεπτά' : 'min'}
         </span>
       </div>
 
       <h3
-        className={`font-display font-medium tracking-[-0.02em] text-foreground ${
-          featured ? 'text-2xl md:text-3xl' : 'text-lg'
+        className={`text-balance font-display font-semibold tracking-[-0.025em] text-foreground ${
+          featured ? 'text-[26px] leading-[1.15] md:text-[34px]' : 'text-[17px] leading-snug'
         }`}
       >
         <Link href={localizedPath(locale, `/blog/${post.slug}`)} className="after:absolute after:inset-0">
@@ -41,11 +41,11 @@ export function PostCard({
         </Link>
       </h3>
 
-      <p className={`mt-3 flex-1 leading-relaxed text-muted-foreground ${featured ? 'text-base' : 'text-sm'}`}>
+      <p className={`mt-3 flex-1 leading-relaxed text-muted-foreground ${featured ? 'text-[16px]' : 'text-[14px]'}`}>
         {post.description}
       </p>
 
-      <div className="mt-6 flex items-center justify-between border-t border-hairline pt-4 text-[11px] text-muted-foreground">
+      <div className="mt-6 flex items-center justify-between border-t border-hairline pt-4 font-mono text-[11px] text-muted-foreground">
         <time dateTime={post.date}>
           {new Date(post.date).toLocaleDateString(isEl ? 'el-GR' : 'en-GB', {
             day: 'numeric',
