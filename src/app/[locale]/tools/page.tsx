@@ -7,6 +7,21 @@ import { PLATFORM_TOOLS } from "@/data/platform-tools";
 import { isValidLocale, localizedPath, type SiteLocale } from "@/lib/i18n/locale";
 import { buildMetadata } from "@/lib/seo";
 import { getAppPath } from "@/lib/app-links";
+import { ArrowRight } from "lucide-react";
+import {
+  Accent,
+  AiVisibilityPreview,
+  CtaBand,
+  KitHeading,
+  KitSection,
+  MarketingBadge,
+  SoftwareCtas,
+  Stage,
+  TrustLine,
+  kitSoftwareBtn,
+  softwareTrust,
+} from "@/components/kit";
+import { CardGrid, LinkCard, PageHero } from "@/components/page-kit";
 
 type PageProps = { params: Promise<{ locale: string }> };
 
@@ -30,53 +45,81 @@ export default async function ToolsHubPage({ params }: PageProps) {
 
   return (
     <>
-      <Header />
-      <main className="blueprint-grid relative z-0 main-below-header pb-20">
-        <div className="container max-w-4xl">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">SEO tools</h1>
-          <p className="text-lg text-muted-foreground mb-10">
-            Free SEO tools for keyword research, audits, Search Console clustering, and AI visibility, plus
-            browser checkers in the app. Start with keyword research or a free SEO audit, then deepen with our
-            guides.
-          </p>
+      <Header locale={locale as SiteLocale} />
+      <main className="blueprint-grid relative z-0">
+        <PageHero
+          locale={locale as SiteLocale}
+          breadcrumbs={[
+            { name: "Home", url: lp("/") },
+            { name: "Tools", url: lp("/tools") },
+          ]}
+          pill={{ href: lp("/ai-visibility-check"), kind: "ai", tag: "AI", text: "New: check one keyword in Google, AI Overview and ChatGPT" }}
+          title={
+            <>
+              SEO <Accent>tools</Accent>
+            </>
+          }
+          lead="Free SEO tools for keyword research, audits, Search Console clustering, and AI visibility, plus browser checkers in the app. Start with keyword research or a free SEO audit, then deepen with our guides."
+          actions={<SoftwareCtas locale={locale as SiteLocale} source="tools-hub" />}
+          trust={<TrustLine items={softwareTrust(locale as SiteLocale)} />}
+        />
+
+        <KitSection className="!pt-14">
           {/* The one tool that runs on this site rather than in the app. */}
           <Link
             href={lp("/ai-visibility-check")}
-            className="mb-8 block rounded-[10px] border border-primary/40 bg-surface-raised/40 p-6 transition-smooth hover:border-primary/70"
+            className="reveal group grid items-center gap-8 rounded-3xl border border-brand/35 bg-surface/60 p-6 transition-colors hover:border-brand/60 sm:p-8 lg:grid-cols-[1fr_1.1fr]"
           >
-            <span className="font-mono text-[11px] uppercase tracking-[0.16em] text-primary">Runs here, no signup</span>
-            <span className="mt-2 block text-lg font-semibold text-foreground">
-              AI visibility check: Google, AI Overview &amp; ChatGPT
-            </span>
-            <p className="mt-2 text-sm text-muted-foreground">
-              Type one keyword and see all three surfaces side by side, with your own domain marked wherever it
-              appears. Live SERP and chat data, free.
-            </p>
-            <span className="mt-3 inline-block text-sm font-medium text-primary">Run a check →</span>
+            <div className="min-w-0">
+              <span className="inline-flex items-center gap-2">
+                <MarketingBadge kind="free">Free</MarketingBadge>
+                <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-muted-foreground">Runs here, no signup</span>
+              </span>
+              <span className="mt-3 block font-display text-[26px] font-semibold leading-tight tracking-[-0.03em] text-foreground">
+                AI visibility check: Google, AI Overview &amp; ChatGPT
+              </span>
+              <p className="mt-3 text-[15px] leading-relaxed text-muted-foreground">
+                Type one keyword and see all three surfaces side by side, with your own domain marked wherever it
+                appears. Live SERP and chat data, free.
+              </p>
+              <span className="mt-5 inline-flex items-center gap-1.5 text-[14.5px] font-medium text-link">
+                Run a check <ArrowRight className="size-4" aria-hidden />
+              </span>
+            </div>
+            <Stage className="hidden min-w-0 sm:block">
+              <AiVisibilityPreview locale="en" />
+            </Stage>
           </Link>
-          <ul className="space-y-4">
+
+          <KitHeading className="mt-24" eyebrow="In the app" title={<>Tools that run on your <Accent>own data</Accent></>} />
+          <CardGrid cols={2} className="mt-10">
             {PLATFORM_TOOLS.map((t) => (
-              <li key={t.slug}>
-                <Link href={lp(`/tools/${t.slug}`)} className="block rounded-[8px] border border-hairline p-6 hover:border-primary/40 hover:bg-surface-raised/40 transition-smooth">
-                  <span className="font-semibold text-foreground text-lg">{t.title}</span>
-                  <p className="text-sm text-muted-foreground mt-2">{t.description}</p>
-                  <span className="inline-block mt-3 text-sm font-medium text-primary">Read intent page →</span>
-                </Link>
-              </li>
+              <LinkCard
+                key={t.slug}
+                href={lp(`/tools/${t.slug}`)}
+                title={t.title}
+                text={t.description}
+                footer={<span className="font-medium text-link">Read intent page →</span>}
+              />
             ))}
-          </ul>
-          <div className="mt-12 p-6 rounded-[10px] border border-hairline bg-surface-raised/40">
-            <h2 className="font-bold text-lg mb-2">More in the app</h2>
-            <p className="text-sm text-muted-foreground mb-4">
-              Meta generators, schema, robots.txt, CWV helpers, and the full free-tools directory live in the product.
-            </p>
-            <a href={getAppPath("/free-tools")} className="btn btn-primary text-sm" rel="noopener noreferrer">
+          </CardGrid>
+
+          <div className="reveal mt-12 flex flex-col gap-5 rounded-2xl border border-hairline bg-surface/60 p-6 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <h2 className="text-[18px] font-semibold text-foreground">More in the app</h2>
+              <p className="mt-1.5 text-[14.5px] text-muted-foreground">
+                Meta generators, schema, robots.txt, CWV helpers, and the full free-tools directory live in the product.
+              </p>
+            </div>
+            <a href={getAppPath("/free-tools")} className={`${kitSoftwareBtn} shrink-0 !pl-5`} rel="noopener noreferrer">
               Open free tools in app
             </a>
           </div>
-        </div>
+        </KitSection>
+
+        <CtaBand locale={locale as SiteLocale} source="tools-hub-band" />
       </main>
-      <Footer />
+      <Footer locale={locale as SiteLocale} />
     </>
   );
 }

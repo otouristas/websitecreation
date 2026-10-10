@@ -1,8 +1,22 @@
 import Link from 'next/link';
-import { ArrowUpRight } from 'lucide-react';
-import { PageShell, ShellCrumbs } from '@/components/bespoke/PageShell';
+import { ArrowRight, ArrowUpRight, BedDouble, Bot, Briefcase, Check, Languages, Layers, Stethoscope, Wallet } from 'lucide-react';
+import { PageShell } from '@/components/bespoke/PageShell';
 import { PortfolioThumbnail } from '@/components/landing/PortfolioThumbnail';
-import { PrimaryButtonLink, GhostButtonLink, Bloom, Tick } from '@/components/landing/primitives';
+import {
+  Accent,
+  AgencyCtas,
+  AiVisibilityPreview,
+  AppWindow,
+  CheckList,
+  CtaBand,
+  DecisionsPanel,
+  KitHeading,
+  KitSection,
+  LocalPackPreview,
+  OverviewPreview,
+  Stage,
+} from '@/components/kit';
+import { ChipLinks, KitFaq, PageHero, SplitRow } from '@/components/page-kit';
 import { getPortfolioByCategory } from '@/data/portfolio';
 import { services } from '@/data/services';
 import { isIndustryServiceIndexable } from '@/lib/indexability/industry-service';
@@ -286,307 +300,274 @@ export function HotelsPage({ locale }: { locale: SiteLocale }) {
     generateFAQSchema({ faqs: t.faq.items.map((f) => ({ question: f.q, answer: f.a })) }),
   );
 
+  const tx = (en: string, el: string) => (isEl ? el : en);
+  const cut = t.h1.lastIndexOf(', ');
+  const thCls = 'px-4 py-3 text-left font-mono text-[11px] font-medium uppercase tracking-[0.1em] text-muted-foreground';
+
   return (
     <PageShell locale={locale} signatureHue={SIGNATURE_HUE} schemas={schemas}>
-      {/* 1 - Centred editorial hero */}
-      <section className="relative overflow-hidden border-b border-hairline">
-        <Bloom signature className="left-1/2 top-[-12rem] h-[32rem] w-[64rem] -translate-x-1/2" />
-        <div className="main-below-header relative mx-auto max-w-4xl px-6 pb-20 pt-6 text-center">
-          <div className="flex justify-center">
-            <ShellCrumbs items={breadcrumbs} />
+      <PageHero
+        locale={locale}
+        size="md"
+        breadcrumbs={breadcrumbs}
+        pill={{
+          href: lp('/services/ai-visibility'),
+          kind: 'ai',
+          tag: 'AI',
+          text: tx('Be the hotel ChatGPT and Gemini recommend', 'Γίνετε το ξενοδοχείο που προτείνουν ChatGPT και Gemini'),
+        }}
+        title={
+          cut > 0 ? (
+            <>
+              {t.h1.slice(0, cut + 2)}
+              <Accent>{t.h1.slice(cut + 2)}</Accent>
+            </>
+          ) : (
+            t.h1
+          )
+        }
+        lead={t.lede}
+        actions={
+          <div className="flex flex-col items-center gap-3">
+            <AgencyCtas locale={locale} primaryHref={lp('/get-started?project=hotels')} primaryLabel={t.ctaPrimary} />
+            <Link href="#proof" className="text-[14px] font-medium text-muted-foreground underline decoration-hairline underline-offset-4 hover:text-foreground">
+              {t.ctaSecondary}
+            </Link>
           </div>
-          <span className="inline-flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.18em] text-signature">
-            {t.eyebrow}
-          </span>
-          <h1 className="rise-in mx-auto mt-5 max-w-3xl font-display text-4xl font-medium leading-[1.05] tracking-[-0.04em] text-foreground md:text-[3.5rem]">
-            {t.h1}
-          </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
-            {t.lede}
-          </p>
-          <div className="mt-9 flex flex-wrap justify-center gap-3">
-            <PrimaryButtonLink href={lp('/get-started?project=hotels')}>
-              {t.ctaPrimary}
-            </PrimaryButtonLink>
-            <GhostButtonLink href="#proof">{t.ctaSecondary}</GhostButtonLink>
-          </div>
-        </div>
-      </section>
-
-      {/* 2 - The four leaks, as a numbered diagnostic */}
-      <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
-        <div className="max-w-2xl">
-          <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-signature">
-            {t.leaks.eyebrow}
-          </span>
-          <h2 className="mt-4 font-display text-3xl font-medium leading-[1.06] tracking-[-0.03em] text-foreground sm:text-4xl">
-            {t.leaks.title}
-          </h2>
-          <p className="mt-4 text-base leading-relaxed text-muted-foreground">{t.leaks.body}</p>
-        </div>
-
-        <ol className="mt-14 space-y-px overflow-hidden rounded-[12px] border border-hairline bg-hairline">
-          {t.leaks.items.map((it) => (
-            <li key={it.n} className="grid gap-4 bg-surface p-7 sm:grid-cols-[4rem_minmax(0,1fr)] sm:gap-8 md:p-9">
-              <span className="font-display text-3xl font-medium tracking-[-0.03em] text-signature/40">
-                {it.n}
+        }
+      >
+        <div className="mx-auto mt-14 w-full max-w-[1240px] px-3 sm:px-6">
+          <AppWindow
+            label={tx(
+              'Search Console overview for a sample Paros hotel: clicks, impressions, CTR, position and the next fixes.',
+              'Επισκόπηση Search Console για δείγμα ξενοδοχείου στην Πάρο: κλικ, εμφανίσεις, CTR, θέση και οι επόμενες διορθώσεις.',
+            )}
+            badge={
+              <span className="rounded-full border border-hairline bg-background px-2 py-0.5 text-[11px] font-medium text-muted-foreground">
+                {tx('Sample hotel', 'Δείγμα ξενοδοχείου')}
               </span>
-              <div className="min-w-0">
-                <h3 className="font-display text-lg font-medium tracking-[-0.02em] text-foreground">
-                  {it.t}
-                </h3>
-                <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">{it.d}</p>
-              </div>
-            </li>
-          ))}
-        </ol>
-      </section>
-
-      {/* 3 - Direct vs marketplace comparison table */}
-      <section className="border-y border-hairline bg-surface-raised/30">
-        <div className="mx-auto max-w-5xl px-6 py-20 md:py-28">
-          <div className="max-w-2xl">
-            <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-signature">
-              {t.parity.eyebrow}
-            </span>
-            <h2 className="mt-4 font-display text-3xl font-medium leading-[1.06] tracking-[-0.03em] text-foreground sm:text-4xl">
-              {t.parity.title}
-            </h2>
-            <p className="mt-4 text-base leading-relaxed text-muted-foreground">{t.parity.body}</p>
-          </div>
-
-          <div className="mt-12 overflow-x-auto">
-            <table className="w-full min-w-[34rem] border-collapse text-left">
-              <thead>
-                <tr className="border-b border-hairline">
-                  <th className="py-3 pr-4 text-[11px] font-medium uppercase tracking-[0.14em] text-muted-foreground" />
-                  <th className="py-3 pr-4 text-[11px] font-medium uppercase tracking-[0.14em] text-muted-foreground">
-                    {t.parity.otaHead}
-                  </th>
-                  <th className="py-3 text-[11px] font-medium uppercase tracking-[0.14em] text-signature">
-                    {t.parity.directHead}
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {t.parity.rows.map((r) => (
-                  <tr key={r.k} className="border-b border-hairline">
-                    <td className="py-4 pr-4 text-sm font-medium text-foreground">{r.k}</td>
-                    <td className="py-4 pr-4 text-sm text-muted-foreground">{r.ota}</td>
-                    <td className="py-4 text-sm font-medium text-signature">{r.direct}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <p className="mt-6 text-[11px] leading-relaxed text-muted-foreground">{t.parity.note}</p>
+            }
+          >
+            <OverviewPreview locale={locale} />
+          </AppWindow>
         </div>
-      </section>
+      </PageHero>
 
-      {/* 4 - Language / market matrix */}
-      <section className="mx-auto max-w-5xl px-6 py-20 md:py-28">
-        <div className="max-w-2xl">
-          <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-signature">
-            {t.matrix.eyebrow}
-          </span>
-          <h2 className="mt-4 font-display text-3xl font-medium leading-[1.06] tracking-[-0.03em] text-foreground sm:text-4xl">
-            {t.matrix.title}
-          </h2>
-          <p className="mt-4 text-base leading-relaxed text-muted-foreground">{t.matrix.body}</p>
-        </div>
-
-        <div className="mt-12 overflow-x-auto">
-          <table className="w-full min-w-[36rem] border-collapse text-left">
-            <thead>
-              <tr className="border-b border-hairline">
-                <th className="py-3 pr-4 text-[11px] font-medium uppercase tracking-[0.14em] text-muted-foreground">
-                  {isEl ? 'Σελίδες' : 'Pages'}
-                </th>
-                {t.matrix.langs.map((l) => (
-                  <th
-                    key={l}
-                    className="py-3 pr-4 text-center text-[11px] font-medium uppercase tracking-[0.14em] text-muted-foreground"
-                  >
-                    {l}
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {t.matrix.rows.map((r) => (
-                <tr key={r.m} className="border-b border-hairline">
-                  <td className="py-4 pr-4 text-sm font-medium text-foreground">{r.m}</td>
-                  {r.v.map((on, i) => (
-                    <td key={i} className="py-4 pr-4 text-center">
-                      {on ? (
-                        <span
-                          className="inline-block size-2.5 rounded-full bg-signature"
-                          aria-label={isEl ? 'Ναι' : 'Yes'}
-                        />
-                      ) : (
-                        <span
-                          className="inline-block h-px w-3 bg-muted-foreground/40 align-middle"
-                          aria-label={isEl ? 'Όχι' : 'No'}
-                        />
-                      )}
-                    </td>
-                  ))}
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-        <p className="mt-6 text-[11px] leading-relaxed text-muted-foreground">{t.matrix.note}</p>
-      </section>
-
-      {/* 5 - Room structure */}
-      <section className="border-y border-hairline bg-surface-raised/30">
-        <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
-            <div>
-              <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-signature">
-                {t.rooms.eyebrow}
-              </span>
-              <h2 className="mt-4 font-display text-3xl font-medium leading-[1.06] tracking-[-0.03em] text-foreground sm:text-4xl">
-                {t.rooms.title}
-              </h2>
-              <p className="mt-4 text-base leading-relaxed text-muted-foreground">{t.rooms.body}</p>
-            </div>
-            <ul className="space-y-px overflow-hidden rounded-[12px] border border-hairline bg-hairline">
-              {t.rooms.points.map((p) => (
-                <li key={p} className="flex gap-3 bg-background p-5 text-sm text-muted-foreground">
-                  <Tick className="text-signature" />
-                  {p}
+      {/* The four leaks, as a numbered diagnostic beside the ranked fixes */}
+      <KitSection>
+        <div className="grid items-start gap-12 lg:grid-cols-[1fr_1fr] lg:gap-16">
+          <div className="min-w-0">
+            <KitHeading
+              eyebrow={t.leaks.eyebrow}
+              eyebrowIcon={<Stethoscope />}
+              title={t.leaks.title}
+              description={t.leaks.body}
+            />
+            <ol className="mt-10 divide-y divide-hairline overflow-hidden rounded-2xl border border-hairline bg-surface/60">
+              {t.leaks.items.map((it) => (
+                <li key={it.n} className="reveal flex gap-4 p-5 sm:p-6">
+                  <span className="font-mono text-[12px] font-medium text-brand">{it.n}</span>
+                  <div className="min-w-0">
+                    <h3 className="text-[16px] font-semibold text-foreground">{it.t}</h3>
+                    <p className="mt-1.5 text-[14.5px] leading-relaxed text-muted-foreground">{it.d}</p>
+                  </div>
                 </li>
               ))}
-            </ul>
+            </ol>
+          </div>
+          <div className="reveal min-w-0 lg:sticky lg:top-28">
+            <Stage>
+              <DecisionsPanel locale={locale} details />
+            </Stage>
+            <p className="mt-3 text-center text-[12.5px] text-muted-foreground">
+              {tx('Each leak becomes a ranked fix with the clicks it should bring.', 'Κάθε διαρροή γίνεται διόρθωση με σειρά και τα κλικ που αναμένεται να φέρει.')}
+            </p>
           </div>
         </div>
-      </section>
+      </KitSection>
 
-      {/* 6 - Proof as alternating wide rows */}
-      <section id="proof" className="mx-auto max-w-6xl px-6 py-20 md:py-28">
-        <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-signature">
-          {t.proof.eyebrow}
-        </span>
-        <h2 className="mt-4 max-w-2xl font-display text-3xl font-medium leading-[1.06] tracking-[-0.03em] text-foreground sm:text-4xl">
-          {t.proof.title}
-        </h2>
-        <p className="mt-4 max-w-xl text-base leading-relaxed text-muted-foreground">
-          {t.proof.body}
-        </p>
+      {/* Direct vs marketplace */}
+      <KitSection tinted>
+        <SplitRow
+          eyebrow={t.parity.eyebrow}
+          eyebrowIcon={<Wallet />}
+          title={t.parity.title}
+          body={t.parity.body}
+          note={t.parity.note}
+          preview={
+            <Stage>
+              <div className="overflow-x-auto rounded-xl border border-hairline bg-background">
+                <table className="w-full min-w-[22rem] border-collapse text-[14px]">
+                  <thead>
+                    <tr className="border-b border-hairline bg-surface/60">
+                      <th className={thCls} />
+                      <th className={thCls}>{t.parity.otaHead}</th>
+                      <th className={`${thCls} !text-brand`}>{t.parity.directHead}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {t.parity.rows.map((r) => (
+                      <tr key={r.k} className="border-b border-hairline last:border-0">
+                        <td className="px-4 py-3.5 font-medium text-foreground">{r.k}</td>
+                        <td className="px-4 py-3.5 text-muted-foreground">{r.ota}</td>
+                        <td className="px-4 py-3.5 font-medium text-brand">{r.direct}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </Stage>
+          }
+        />
+      </KitSection>
 
-        <div className="mt-14 space-y-14">
+      {/* Language / market matrix */}
+      <KitSection>
+        <SplitRow
+          flip
+          eyebrow={t.matrix.eyebrow}
+          eyebrowIcon={<Languages />}
+          title={t.matrix.title}
+          body={t.matrix.body}
+          note={t.matrix.note}
+          preview={
+            <Stage>
+              <div className="overflow-x-auto rounded-xl border border-hairline bg-background">
+                <table className="w-full min-w-[24rem] border-collapse text-[14px]">
+                  <thead>
+                    <tr className="border-b border-hairline bg-surface/60">
+                      <th className={thCls}>{isEl ? 'Σελίδες' : 'Pages'}</th>
+                      {t.matrix.langs.map((l) => (
+                        <th key={l} className={`${thCls} !text-center`}>
+                          {l}
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {t.matrix.rows.map((r) => (
+                      <tr key={r.m} className="border-b border-hairline last:border-0">
+                        <td className="px-4 py-3.5 font-medium text-foreground">{r.m}</td>
+                        {r.v.map((on, i) => (
+                          <td key={i} className="px-4 py-3.5 text-center">
+                            {on ? (
+                              <span className="inline-flex size-5 items-center justify-center rounded-full bg-brand/15 text-brand" aria-label={isEl ? 'Ναι' : 'Yes'}>
+                                <Check className="size-3" strokeWidth={3} aria-hidden />
+                              </span>
+                            ) : (
+                              <span className="inline-block h-px w-3 bg-muted-foreground/40 align-middle" aria-label={isEl ? 'Όχι' : 'No'} />
+                            )}
+                          </td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </Stage>
+          }
+        />
+      </KitSection>
+
+      {/* Room structure, then AI answers */}
+      <KitSection tinted>
+        <div className="grid gap-24 sm:gap-28">
+          <SplitRow
+            eyebrow={t.rooms.eyebrow}
+            eyebrowIcon={<BedDouble />}
+            title={t.rooms.title}
+            body={t.rooms.body}
+            bullets={t.rooms.points}
+            preview={
+              <Stage>
+                <LocalPackPreview locale={locale} />
+              </Stage>
+            }
+          />
+          <SplitRow
+            flip
+            eyebrow="GEO / AEO"
+            eyebrowIcon={<Bot />}
+            title={
+              <>
+                {tx('Recommended when guests', 'Να σας προτείνει η AI όταν οι επισκέπτες')} <Accent>{tx('ask AI', 'ρωτούν')}</Accent>
+              </>
+            }
+            body={tx(
+              'More guests now ask ChatGPT or Gemini where to stay. We track whether your hotel is mentioned and give your pages the clear facts those answers quote.',
+              'Όλο και περισσότεροι επισκέπτες ρωτούν το ChatGPT ή το Gemini πού να μείνουν. Μετράμε αν αναφέρεται το ξενοδοχείο σας και δίνουμε στις σελίδες σας τα σαφή στοιχεία που χρησιμοποιούν αυτές οι απαντήσεις.',
+            )}
+            links={[
+              { href: lp('/services/ai-visibility'), label: tx('AI visibility service', 'Υπηρεσία ορατότητας σε AI'), primary: true },
+              { href: lp('/ai-visibility-check'), label: tx('Free AI check', 'Δωρεάν έλεγχος AI') },
+            ]}
+            preview={
+              <Stage>
+                <AiVisibilityPreview locale={locale} />
+              </Stage>
+            }
+          />
+        </div>
+      </KitSection>
+
+      {/* Proof as alternating wide rows */}
+      <KitSection id="proof">
+        <KitHeading eyebrow={t.proof.eyebrow} eyebrowIcon={<Briefcase />} title={t.proof.title} description={t.proof.body} />
+        <div className="mt-14 grid gap-16">
           {projects.map((p, i) => (
-            <Link
-              key={p.slug}
-              href={lp(`/work/${p.slug}`)}
-              className="group grid items-center gap-8 md:grid-cols-2 md:gap-12"
-            >
-              <div
-                className={`relative aspect-[16/10] overflow-hidden rounded-[12px] border border-hairline ${
-                  i % 2 === 1 ? 'md:order-2' : ''
-                }`}
-              >
+            <Link key={p.slug} href={lp(`/work/${p.slug}`)} className="reveal group grid items-center gap-8 md:grid-cols-2 md:gap-12">
+              <div className={`relative aspect-[16/10] overflow-hidden rounded-2xl border border-hairline ${i % 2 === 1 ? 'md:order-2' : ''}`}>
                 <PortfolioThumbnail
                   src={p.screenshot}
                   alt={p.name}
                   className="transition-transform duration-500 group-hover:scale-[1.03]"
                 />
               </div>
-              <div>
+              <div className="min-w-0">
                 <div className="flex items-start gap-3">
-                  <h3 className="font-display text-xl font-medium tracking-[-0.02em] text-foreground">
-                    {p.name}
-                  </h3>
-                  <ArrowUpRight
-                    className="mt-1 size-4 shrink-0 text-muted-foreground transition-colors group-hover:text-signature"
-                    aria-hidden
-                  />
+                  <h3 className="font-display text-[24px] font-semibold tracking-[-0.025em] text-foreground">{p.name}</h3>
+                  <ArrowUpRight className="mt-1.5 size-4 shrink-0 text-muted-foreground transition-colors group-hover:text-brand" aria-hidden />
                 </div>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  {isEl ? p.summaryEl : p.summary}
-                </p>
-                <ul className="mt-5 space-y-2 border-t border-hairline pt-4">
-                  {((isEl ? p.resultsEl : p.results) ?? []).slice(0, 3).map((r) => (
-                    <li key={r} className="flex gap-2.5 text-[13px] text-muted-foreground">
-                      <span aria-hidden className="mt-2 h-px w-3 shrink-0 bg-signature" />
-                      {r}
-                    </li>
-                  ))}
-                </ul>
+                <p className="mt-3 text-[15px] leading-relaxed text-muted-foreground">{isEl ? p.summaryEl : p.summary}</p>
+                <CheckList size="sm" className="mt-5 border-t border-hairline pt-4" items={((isEl ? p.resultsEl : p.results) ?? []).slice(0, 3)} />
               </div>
             </Link>
           ))}
         </div>
-      </section>
+      </KitSection>
 
-      {/* 7 - Services */}
-      <section className="border-t border-hairline">
-        <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
-          <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-signature">
-            {t.servicesBlock.eyebrow}
-          </span>
-          <h2 className="mt-4 max-w-2xl font-display text-3xl font-medium leading-[1.06] tracking-[-0.03em] text-foreground sm:text-4xl">
-            {t.servicesBlock.title}
-          </h2>
-          <div className="mt-10 flex flex-wrap gap-2">
-            {services.filter((s) => isIndustryServiceIndexable('hotels', s.slug, locale)).map((s) => {
+      {/* Services */}
+      <KitSection tinted>
+        <KitHeading eyebrow={t.servicesBlock.eyebrow} eyebrowIcon={<Layers />} title={t.servicesBlock.title} />
+        <ChipLinks
+          className="mt-10"
+          items={services
+            .filter((s) => isIndustryServiceIndexable('hotels', s.slug, locale))
+            .map((s) => {
               const el = isEl ? getServiceEl(s.slug) : null;
-              return (
-                <Link
-                  key={s.slug}
-                  href={lp(`/solutions/hotels/${s.slug}`)}
-                  className="rounded-full border border-hairline bg-surface px-4 py-2 text-[13px] text-muted-foreground transition-colors hover:border-signature/40 hover:text-foreground"
-                >
-                  {el?.shortName ?? el?.name ?? s.shortName}
-                </Link>
-              );
+              return { href: lp(`/solutions/hotels/${s.slug}`), label: el?.shortName ?? el?.name ?? s.shortName };
             })}
-          </div>
-        </div>
-      </section>
+        />
+        <p className="mt-8 text-[14px]">
+          <Link href={lp('/pricing')} className="inline-flex items-center gap-1.5 font-medium text-link underline-offset-4 hover:underline">
+            {t.cta.secondary}
+            <ArrowRight className="size-4" aria-hidden />
+          </Link>
+        </p>
+      </KitSection>
 
-      {/* 8 - FAQ */}
-      <section className="border-t border-hairline bg-surface-raised/30">
-        <div className="mx-auto max-w-3xl px-6 py-20 md:py-28">
-          <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-signature">
-            {t.faq.eyebrow}
-          </span>
-          <h2 className="mt-4 font-display text-3xl font-medium leading-[1.06] tracking-[-0.03em] text-foreground sm:text-4xl">
-            {t.faq.title}
-          </h2>
-          <dl className="mt-10 space-y-px overflow-hidden rounded-[12px] border border-hairline bg-hairline">
-            {t.faq.items.map((f) => (
-              <div key={f.q} className="bg-background p-6">
-                <dt className="font-display text-[17px] font-medium tracking-[-0.01em] text-foreground">
-                  {f.q}
-                </dt>
-                <dd className="mt-3 text-sm leading-relaxed text-muted-foreground">{f.a}</dd>
-              </div>
-            ))}
-          </dl>
-        </div>
-      </section>
+      <KitFaq eyebrow={t.faq.eyebrow} title={t.faq.title} items={t.faq.items.map((f) => ({ question: f.q, answer: f.a }))} />
 
-      {/* 9 - CTA */}
-      <section className="relative overflow-hidden border-t border-hairline">
-        <Bloom signature className="left-1/2 top-1/4 h-[24rem] w-[52rem] -translate-x-1/2" />
-        <div className="relative mx-auto max-w-3xl px-6 py-24 text-center">
-          <h2 className="font-display text-3xl font-medium leading-[1.05] tracking-[-0.04em] text-foreground md:text-5xl">
-            {t.cta.title}
-          </h2>
-          <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">
-            {t.cta.body}
-          </p>
-          <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
-            <PrimaryButtonLink href={lp('/get-started?project=hotels')}>
-              {t.cta.primary}
-            </PrimaryButtonLink>
-            <GhostButtonLink href={lp('/pricing')}>{t.cta.secondary}</GhostButtonLink>
-          </div>
-        </div>
-      </section>
+      <CtaBand
+        locale={locale}
+        source="solutions-hotels"
+        title={
+          <>
+            {t.cta.title.split(' ').slice(0, -2).join(' ')} <Accent>{t.cta.title.split(' ').slice(-2).join(' ')}</Accent>
+          </>
+        }
+        description={t.cta.body}
+      />
     </PageShell>
   );
 }

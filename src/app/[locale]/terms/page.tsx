@@ -4,6 +4,8 @@ import { buildMetadata } from '@/lib/seo';
 import { getLegalDictionary } from '@/lib/i18n/get-dictionary';
 import { isValidLocale, localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 import { notFound } from 'next/navigation';
+import { Container } from '@/components/kit';
+import { KitProse } from '@/components/page-kit';
 
 type PageProps = { params: Promise<{ locale: string }> };
 
@@ -26,22 +28,24 @@ export default async function TermsPage({ params }: PageProps) {
 
   return (
     <>
-      <Header />
-      <main className="blueprint-grid relative z-0 main-below-header pb-20">
-        <div className="container max-w-4xl">
-          <h1 className="mb-8 text-4xl font-bold">{t.terms.title}</h1>
-          <div className="prose prose-lg text-muted-foreground">
-            <p className="mb-4">{t.terms.lastUpdated}</p>
+      <Header locale={locale as SiteLocale} />
+      <main className="blueprint-grid relative z-0">
+        <Container className="hero-below-header max-w-3xl pb-24">
+          <h1 className="font-display text-[34px] font-semibold leading-[1.08] tracking-[-0.04em] text-foreground sm:text-[48px]">
+            {t.terms.title}
+          </h1>
+          <p className="mt-4 font-mono text-[12px] uppercase tracking-[0.12em] text-muted-foreground">{t.terms.lastUpdated}</p>
+          <KitProse className="mt-10 border-t border-hairline pt-4 text-muted-foreground">
             {t.terms.sections.map((section) => (
-              <div key={section.heading}>
-                <h2 className="mb-4 mt-8 font-display text-2xl font-medium tracking-[-0.02em]">{section.heading}</h2>
+              <section key={section.heading}>
+                <h2>{section.heading}</h2>
                 <p>{section.body}</p>
-              </div>
+              </section>
             ))}
-          </div>
-        </div>
+          </KitProse>
+        </Container>
       </main>
-      <Footer />
+      <Footer locale={locale as SiteLocale} />
     </>
   );
 }

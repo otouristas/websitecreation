@@ -41,7 +41,7 @@ export function TableOfContents({
 
   return (
     <nav aria-label={label} className="scrollbar-none max-h-[calc(100vh-9rem)] overflow-y-auto">
-      <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.18em] text-brand">{label}</p>
+      <p className="mb-4 font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-brand">{label}</p>
       <ul className="space-y-1 border-l border-hairline">
         {headings.map((h) => (
           <li key={h.id}>

@@ -1,11 +1,10 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Layers, LineChart, Plane, Search, Target, Wrench } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
-import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import { getIndustriesForLocale, TOURISM_INDUSTRY_SLUGS } from "@/data/industries";
 import { industriesEl } from "@/data/industries-i18n";
 import { services } from "@/data/services";
@@ -20,13 +19,19 @@ import {
 } from "@/lib/seo/schema";
 import { generateBreadcrumbs } from "@/lib/linking";
 import {
-  Section,
-  SectionHeading,
-  MeshGrid,
-  Bloom,
-  PrimaryButtonLink,
-  GhostButtonLink,
-} from "@/components/landing/primitives";
+  Accent,
+  AiVisibilityPreview,
+  CheckList,
+  Container,
+  CtaBand,
+  DecisionsPanel,
+  KitHeading,
+  KitSection,
+  LocalPackPreview,
+  Stage,
+  ValueTrio,
+} from "@/components/kit";
+import { CardGrid, ChipLinks, LinkCard, PageHero, SplitRow } from "@/components/page-kit";
 import { PROJECT_COUNT } from "@/data/company-facts";
 
 type PageProps = { params: Promise<{ locale: string }> };
@@ -90,153 +95,187 @@ export default async function SolutionsPage({ params }: PageProps) {
     }),
   );
 
+  const tx = (en: string, el: string) => (isEl ? el : en);
+
   return (
     <>
       <SchemaMarkup schemas={schemas} />
       <Header locale={siteLocale} />
       <main className="blueprint-grid relative z-0">
-        <section className="relative overflow-hidden border-b border-hairline">
-          <Bloom className="left-1/2 top-[-8rem] h-[26rem] w-[60rem] -translate-x-1/2" />
-          <div className="main-below-header relative mx-auto max-w-6xl px-6 pb-14 pt-6">
-            <Breadcrumbs items={breadcrumbItems} className="mb-6" />
-            <h1 className="rise-in max-w-3xl font-display text-4xl font-medium leading-[1.05] tracking-[-0.04em] text-foreground md:text-6xl">
-              {isEl ? "Λύσεις ανά κλάδο" : "Solutions by industry"}
-            </h1>
-            <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
-              {isEl
-                ? `Η ζήτηση αναζήτησης διαφέρει ριζικά ανά κλάδο. Έχουμε παραδώσει ${PROJECT_COUNT} έργα, με το μεγαλύτερο βάθος σε τουρισμό και φιλοξενία.`
-                : `Search demand differs sharply by sector. We have delivered ${PROJECT_COUNT} projects, with the most depth in tourism and hospitality.`}
-            </p>
-            <div className="mt-9 flex flex-wrap gap-3">
-              <PrimaryButtonLink href={lp("/get-started")}>
-                {isEl ? "Ζητήστε Προσφορά" : "Request a Quote"}
-              </PrimaryButtonLink>
-              <GhostButtonLink href={lp("/work")}>
-                {isEl ? "Δείτε τα Έργα μας" : "View Our Work"}
-              </GhostButtonLink>
+        <PageHero
+          locale={siteLocale}
+          breadcrumbs={breadcrumbItems}
+          pill={{
+            href: lp("/solutions/hotels"),
+            kind: "popular",
+            tag: tx("Hotels", "Ξενοδοχεία"),
+            text: tx("SEO for more direct bookings", "SEO για περισσότερες απευθείας κρατήσεις"),
+          }}
+          title={
+            <>
+              {tx("Solutions by", "Λύσεις ανά")} <Accent>{tx("industry", "κλάδο")}</Accent>
+            </>
+          }
+          lead={
+            isEl
+              ? `Η ζήτηση αναζήτησης διαφέρει ριζικά ανά κλάδο. Έχουμε παραδώσει ${PROJECT_COUNT} έργα, με το μεγαλύτερο βάθος σε τουρισμό και φιλοξενία.`
+              : `Search demand differs sharply by sector. We have delivered ${PROJECT_COUNT} projects, with the most depth in tourism and hospitality.`
+          }
+        >
+          <Container className="mt-14">
+            <div className="grid gap-4 lg:grid-cols-2">
+              <Stage>
+                <LocalPackPreview locale={siteLocale} />
+              </Stage>
+              <Stage className="hidden lg:block">
+                <AiVisibilityPreview locale={siteLocale} />
+              </Stage>
             </div>
-          </div>
-        </section>
+            <p className="mt-5 text-center text-[13px] text-muted-foreground">
+              {tx("Sample data for a Paros hotel, the kind of view every client gets.", "Δείγμα δεδομένων για ξενοδοχείο στην Πάρο, η εικόνα που παίρνει κάθε πελάτης.")}{" "}
+              <Link href={lp("/work")} className="font-medium text-foreground underline decoration-hairline underline-offset-4 hover:decoration-foreground">
+                {isEl ? "Δείτε τα Έργα μας" : "View Our Work"}
+              </Link>
+            </p>
+          </Container>
+        </PageHero>
 
-        <Section>
-          <SectionHeading
-            align="left"
+        <KitSection>
+          <KitHeading
             eyebrow={isEl ? "Εξειδίκευση" : "Where we are strongest"}
-            title={isEl ? "Τουρισμός και φιλοξενία" : "Tourism and hospitality"}
-            body={
+            eyebrowIcon={<Plane />}
+            title={
+              <>
+                {tx("Tourism and", "Τουρισμός και")} <Accent>{tx("hospitality", "φιλοξενία")}</Accent>
+              </>
+            }
+            description={
               isEl
                 ? "Εδώ βρίσκεται το μεγαλύτερο μέρος του portfolio μας: εποχικότητα, πολυγλωσσικά sites, απευθείας κρατήσεις και ανταγωνισμός με τα OTAs."
                 : "This is where most of our portfolio sits: seasonality, multilingual sites, direct bookings and competing with the OTAs."
             }
-            className="mb-12"
           />
-          <MeshGrid className="sm:grid-cols-2 lg:grid-cols-3">
+          <CardGrid className="mt-12">
             {tourism.map((industry) => (
-              <Link
+              <LinkCard
                 key={industry.slug}
+                as="h2"
                 href={lp(`/solutions/${industry.slug}`)}
-                className="group flex flex-col bg-surface p-7 transition-colors hover:bg-surface-raised"
+                title={industry.displayName}
+                text={industry.displayDescription}
+                badge={industry.slug === "hotels" ? { kind: "popular", label: tx("Popular", "Δημοφιλές") } : undefined}
               >
-                <div className="flex items-start justify-between gap-4">
-                  <h2 className="font-display text-lg font-medium tracking-[-0.02em] text-foreground">
-                    {industry.displayName}
-                  </h2>
-                  <ArrowUpRight
-                    className="size-4 shrink-0 text-muted-foreground transition-colors group-hover:text-primary"
-                    aria-hidden
-                  />
-                </div>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
-                  {industry.displayDescription}
-                </p>
-                <ul className="mt-5 space-y-2 border-t border-hairline pt-4">
-                  {industry.displayPainPoints.slice(0, 3).map((p) => (
-                    <li key={p} className="flex gap-2.5 text-[13px] text-muted-foreground">
-                      <span aria-hidden className="mt-2 h-px w-3 shrink-0 bg-brand" />
-                      {p}
-                    </li>
-                  ))}
-                </ul>
-              </Link>
+                <CheckList size="sm" className="mt-5 border-t border-hairline pt-4" items={industry.displayPainPoints.slice(0, 3)} />
+              </LinkCard>
             ))}
-          </MeshGrid>
-        </Section>
+          </CardGrid>
+        </KitSection>
 
-        <Section className="pt-0">
-          <SectionHeading
-            align="left"
+        <KitSection tinted>
+          <KitHeading
             eyebrow={isEl ? "Και ακόμη" : "Also covered"}
-            title={isEl ? "Υπόλοιποι κλάδοι" : "Other industries"}
-            body={
+            eyebrowIcon={<Layers />}
+            title={
+              <>
+                {tx("Other", "Υπόλοιποι")} <Accent>{tx("industries", "κλάδοι")}</Accent>
+              </>
+            }
+            description={
               isEl
                 ? "Η ίδια μεθοδολογία εφαρμόζεται και εδώ: ανάλυση ζήτησης, τεχνικά θεμέλια, περιεχόμενο και μετρήσιμα leads."
                 : "The same method applies here: demand analysis, technical foundations, content and measurable leads."
             }
-            className="mb-12"
           />
-          <MeshGrid className="sm:grid-cols-2 lg:grid-cols-4">
+          <ValueTrio
+            className="mt-12"
+            items={[
+              {
+                icon: Search,
+                title: tx("Demand analysis", "Ανάλυση ζήτησης"),
+                text: tx(
+                  "What your customers actually type, in which language and season, before any page is planned.",
+                  "Τι πληκτρολογούν πραγματικά οι πελάτες σας, σε ποια γλώσσα και εποχή, πριν σχεδιαστεί οποιαδήποτε σελίδα.",
+                ),
+              },
+              {
+                icon: Wrench,
+                title: tx("Technical foundations", "Τεχνικά θεμέλια"),
+                text: tx(
+                  "Fast pages, clean indexing and schema, so the work that follows can rank.",
+                  "Γρήγορες σελίδες, σωστή ευρετηρίαση και schema, ώστε ό,τι ακολουθεί να μπορεί να κατατάσσεται.",
+                ),
+              },
+              {
+                icon: LineChart,
+                title: tx("Content and measurable leads", "Περιεχόμενο και μετρήσιμα leads"),
+                text: tx(
+                  "Pages written for the searches that bring enquiries, tracked through to the call or form.",
+                  "Σελίδες για τις αναζητήσεις που φέρνουν αιτήματα, με μέτρηση μέχρι το τηλέφωνο ή τη φόρμα.",
+                ),
+              },
+            ]}
+          />
+          <ul className="mt-14 grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
             {rest.map((industry) => (
-              <Link
-                key={industry.slug}
-                href={lp(`/solutions/${industry.slug}`)}
-                className="group flex items-start justify-between gap-3 bg-surface p-5 transition-colors hover:bg-surface-raised"
-              >
-                <span className="text-sm font-medium leading-snug text-foreground">
-                  {industry.displayName}
-                </span>
-                <ArrowUpRight
-                  className="mt-0.5 size-3.5 shrink-0 text-muted-foreground transition-colors group-hover:text-primary"
-                  aria-hidden
-                />
-              </Link>
-            ))}
-          </MeshGrid>
-        </Section>
-
-        <Section className="pt-0">
-          <SectionHeading
-            align="left"
-            eyebrow={isEl ? "Υπηρεσίες" : "Services"}
-            title={isEl ? "Τι εφαρμόζουμε σε κάθε κλάδο" : "What we apply in every sector"}
-            className="mb-10"
-          />
-          <div className="flex flex-wrap gap-2">
-            {services.map((s) => {
-              const el = isEl ? getServiceEl(s.slug) : null;
-              return (
+              <li key={industry.slug}>
                 <Link
-                  key={s.slug}
-                  href={lp(`/services/${s.slug}`)}
-                  className="rounded-full border border-hairline bg-surface px-4 py-2 text-[13px] text-muted-foreground transition-colors hover:border-brand/40 hover:text-foreground"
+                  href={lp(`/solutions/${industry.slug}`)}
+                  className="group flex h-full items-start justify-between gap-3 rounded-xl border border-hairline bg-background/60 px-4 py-3.5 transition-colors hover:border-brand/40 hover:bg-surface"
                 >
-                  {el?.shortName ?? el?.name ?? s.shortName}
+                  <span className="text-[14.5px] font-medium leading-snug text-foreground">{industry.displayName}</span>
+                  <ArrowUpRight
+                    className="mt-0.5 size-3.5 shrink-0 text-muted-foreground transition-colors group-hover:text-brand"
+                    aria-hidden
+                  />
                 </Link>
-              );
-            })}
-          </div>
-        </Section>
+              </li>
+            ))}
+          </ul>
+        </KitSection>
 
-        <section className="relative overflow-hidden border-t border-hairline">
-          <Bloom className="left-1/2 top-1/4 h-[24rem] w-[56rem] -translate-x-1/2" />
-          <div className="relative mx-auto max-w-3xl px-6 py-24 text-center">
-            <h2 className="font-display text-3xl font-medium leading-[1.05] tracking-[-0.04em] text-foreground md:text-5xl">
-              {isEl ? "Ο κλάδος σας δεν είναι στη λίστα;" : "Sector not on the list?"}
-            </h2>
-            <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">
-              {isEl
-                ? "Η μεθοδολογία δεν αλλάζει. Πείτε μας τι κάνετε και σε ποια αγορά, και θα δούμε αν υπάρχει πραγματική ζήτηση αναζήτησης να αξιοποιήσουμε."
-                : "The method does not change. Tell us what you do and which market, and we will look at whether there is real search demand to work with."}
-            </p>
-            <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
-              <PrimaryButtonLink href={lp("/get-started")}>
-                {isEl ? "Συζητήστε το Project σας" : "Discuss Your Project"}
-              </PrimaryButtonLink>
-              <GhostButtonLink href={lp("/pricing")}>
-                {isEl ? "Δείτε τις Τιμές" : "View Pricing"}
-              </GhostButtonLink>
-            </div>
-          </div>
-        </section>
+        <KitSection>
+          <SplitRow
+            eyebrow={isEl ? "Υπηρεσίες" : "Services"}
+            eyebrowIcon={<Target />}
+            title={
+              <>
+                {tx("What we apply in", "Τι εφαρμόζουμε σε")} <Accent>{tx("every sector", "κάθε κλάδο")}</Accent>
+              </>
+            }
+            body={tx(
+              "Every engagement starts from the same short list: the fixes that bring the most customers, ranked by what they are worth to you.",
+              "Κάθε συνεργασία ξεκινά από την ίδια σύντομη λίστα: τις διορθώσεις που φέρνουν τους περισσότερους πελάτες, με σειρά βάσει αξίας.",
+            )}
+            links={[{ href: lp("/pricing"), label: isEl ? "Δείτε τις Τιμές" : "View Pricing", primary: true }]}
+            preview={
+              <Stage>
+                <DecisionsPanel locale={siteLocale} />
+              </Stage>
+            }
+          />
+          <ChipLinks
+            className="mt-14"
+            items={services.map((s) => {
+              const el = isEl ? getServiceEl(s.slug) : null;
+              return { href: lp(`/services/${s.slug}`), label: el?.shortName ?? el?.name ?? s.shortName };
+            })}
+          />
+        </KitSection>
+
+        <CtaBand
+          locale={siteLocale}
+          source="solutions-band"
+          title={
+            <>
+              {tx("Sector not", "Ο κλάδος σας δεν είναι")} <Accent>{tx("on the list?", "στη λίστα;")}</Accent>
+            </>
+          }
+          description={
+            isEl
+              ? "Η μεθοδολογία δεν αλλάζει. Πείτε μας τι κάνετε και σε ποια αγορά, και θα δούμε αν υπάρχει πραγματική ζήτηση αναζήτησης να αξιοποιήσουμε."
+              : "The method does not change. Tell us what you do and which market, and we will look at whether there is real search demand to work with."
+          }
+        />
       </main>
       <Footer locale={siteLocale} />
     </>

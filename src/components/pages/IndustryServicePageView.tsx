@@ -10,7 +10,20 @@ import {
   generateServiceSchema,
   combineSchemas,
 } from '@/lib/seo';
-import { SchemaMarkup, Breadcrumbs } from '@/components/seo';
+import { SchemaMarkup } from '@/components/seo';
+import { ArrowUpRight, Compass, ListChecks, MapPin, Target, TrendingUp, Workflow } from 'lucide-react';
+import {
+  Accent,
+  AgencyCtas,
+  AuditPreview,
+  CtaBand,
+  DecisionsPanel,
+  KitHeading,
+  KitSection,
+  Stage,
+  kitSecondaryBtn,
+} from '@/components/kit';
+import { CardGrid, ChipLinks, InfoCard, KitFaq, LinkCard, PageHero, SplitRow } from '@/components/page-kit';
 import { getLocalizedIndustry } from '@/lib/industry-locale';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 import { solutionsUi } from '@/data/translations/solutions-ui';
@@ -35,7 +48,6 @@ export function IndustryServicePageView({
   const isEl = locale === 'el';
   const svcEl = isEl ? getServiceEl(serviceSlug) : null;
   const serviceName = svcEl?.name ?? baseService.name;
-  const serviceDesc = svcEl?.description ?? baseService.description;
   const features = svcEl?.features ?? baseService.features;
   const ui = isEl ? solutionsUi.el : solutionsUi.en;
   /**
@@ -92,189 +104,169 @@ export function IndustryServicePageView({
     ? getIndexableServiceLocations(isEl ? 'el' : 'en')
     : [];
 
+  const h1 = ui.serviceForIndustry(serviceName, industry.nameFor);
+  const cut = h1.lastIndexOf(industry.nameFor);
+  const tx = (en: string, el: string) => (isEl ? el : en);
+
   return (
     <>
       <SchemaMarkup schemas={schemas} />
-      <Header />
-      <main className="blueprint-grid relative z-0 main-below-header">
-        <section className="section-compact ">
-          <div className="container">
-            <div className="max-w-3xl">
-              <Breadcrumbs items={breadcrumbs} className="mb-6" />
-              <h1 className="mb-6 font-display text-3xl font-medium tracking-[-0.03em] sm:text-4xl lg:text-5xl">
-                {ui.serviceForIndustry(serviceName, industry.nameFor)}
-              </h1>
-              <p className="mb-8 text-lg text-muted-foreground">
-                {ui.serviceHeroDesc(serviceName, industry.name)}
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <Link href={lp('/contact')} className="btn btn-primary">
-                  {ui.getIndustryQuote(industry.name)}
-                  <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </Link>
-                <Link href={lp(`/solutions/${industrySlug}`)} className="btn btn-outline">
-                  {ui.allIndustryServices(industry.name)}
-                </Link>
-              </div>
+      <Header locale={locale} />
+      <main className="blueprint-grid relative z-0">
+        <PageHero
+          locale={locale}
+          size="md"
+          breadcrumbs={breadcrumbs}
+          pill={{
+            href: lp('/get-started#free-audit'),
+            kind: 'free',
+            tag: tx('Free', 'Δωρεάν'),
+            text: tx('SEO audit before any quote', 'Έλεγχος SEO πριν από κάθε προσφορά'),
+          }}
+          title={
+            cut > 0 ? (
+              <>
+                {h1.slice(0, cut)}
+                <Accent>{h1.slice(cut)}</Accent>
+              </>
+            ) : (
+              h1
+            )
+          }
+          lead={ui.serviceHeroDesc(serviceName, industry.name)}
+          actions={
+            <div className="flex flex-col items-center gap-3">
+              <AgencyCtas locale={locale} primaryHref={lp('/contact')} primaryLabel={ui.getIndustryQuote(industry.name)} />
+              <Link
+                href={lp(`/solutions/${industrySlug}`)}
+                className="text-[14px] font-medium text-muted-foreground underline decoration-hairline underline-offset-4 hover:text-foreground"
+              >
+                {ui.allIndustryServices(industry.name)}
+              </Link>
             </div>
-          </div>
-        </section>
+          }
+        />
 
         {/* No FAQPage: `getServiceFaqs` serves the same shared default block
             to most industry x service combinations, so this marked up
             identical Q&A across hundreds of URLs for a rich result an agency
             cannot earn. The visible FAQ below is the part that matters. */}
         {angle ? (
-          <section className="section">
-            <div className="container max-w-3xl space-y-8">
+          <KitSection>
+            <div className="grid gap-4 md:grid-cols-3">
               {(
                 [
-                  [angleHeadings.approach, angle.approach],
-                  [angleHeadings.process, angle.process],
-                  [angleHeadings.outcome, angle.outcome],
+                  [angleHeadings.approach, angle.approach, Compass],
+                  [angleHeadings.process, angle.process, Workflow],
+                  [angleHeadings.outcome, angle.outcome, TrendingUp],
                 ] as const
-              ).map(([heading, body]) => (
-                <div key={heading}>
-                  <h2 className="mb-3 font-display text-2xl font-medium tracking-[-0.02em] sm:text-3xl">
-                    {heading}
-                  </h2>
-                  <p className="text-muted-foreground leading-relaxed">{body}</p>
-                </div>
+              ).map(([heading, body, Icon]) => (
+                <InfoCard key={heading} as="h2" icon={<Icon />} title={heading} text={body} />
               ))}
             </div>
-          </section>
+          </KitSection>
         ) : null}
 
-        <section className="section">
-          <div className="container">
-            <h2 className="mb-4 font-display text-2xl font-medium tracking-[-0.02em] sm:text-3xl">{ui.whatsIncluded(industry.nameFor)}</h2>
-            <p className="mb-8 max-w-2xl text-muted-foreground">
-              {ui.whatsIncludedDesc(serviceName, industry.nameFor)}
-            </p>
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-              {features.map((feature) => (
-                <div key={feature} className="flex items-start gap-3 rounded-[8px] bg-muted/50 p-4">
-                  <svg className="mt-0.5 h-5 w-5 flex-shrink-0 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>{feature}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <KitSection className={angle ? '!pt-0' : undefined}>
+          <SplitRow
+            eyebrow={tx('Included', 'Περιλαμβάνεται')}
+            eyebrowIcon={<ListChecks />}
+            title={ui.whatsIncluded(industry.nameFor)}
+            body={ui.whatsIncludedDesc(serviceName, industry.nameFor)}
+            bullets={features}
+            preview={
+              <Stage>
+                <AuditPreview locale={locale} />
+              </Stage>
+            }
+          />
+        </KitSection>
+
+        <KitSection tinted>
+          <SplitRow
+            flip
+            eyebrow={industry.name}
+            eyebrowIcon={<Target />}
+            title={ui.builtFor(industry.nameFor)}
+            body={ui.builtForDesc(industry.name)}
+            bullets={industry.painPoints}
+            preview={
+              <Stage>
+                <DecisionsPanel locale={locale} />
+              </Stage>
+            }
+          />
+        </KitSection>
 
         {serviceFaqs.length > 0 ? (
-          <section className="section">
-            <div className="container max-w-3xl">
-              <h2 className="mb-6 font-display text-2xl font-medium tracking-[-0.02em] sm:text-3xl">
-                {isEl ? FAQ_HEADING.el : FAQ_HEADING.en}
-              </h2>
-              <div className="space-y-5">
-                {serviceFaqs.map((q) => (
-                  <div key={q.question}>
-                    <h3 className="mb-1 font-semibold text-foreground">{q.question}</h3>
-                    <p className="text-muted-foreground leading-relaxed">{q.answer}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
+          <KitFaq
+            title={isEl ? FAQ_HEADING.el : FAQ_HEADING.en}
+            items={serviceFaqs.map((q) => ({ question: q.question, answer: q.answer }))}
+          />
         ) : null}
-
-        <section className="section bg-surface-raised/40">
-          <div className="container">
-            <h2 className="mb-4 font-display text-2xl font-medium tracking-[-0.02em] sm:text-3xl">{ui.builtFor(industry.nameFor)}</h2>
-            <p className="mb-8 text-muted-foreground">{ui.builtForDesc(industry.name)}</p>
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
-              {industry.painPoints.map((point) => (
-                <div key={point} className="card p-6 text-center">
-                  <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                    <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <span className="text-sm font-medium">{point}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {locations.length > 0 ? (
-        <section className="section">
-          <div className="container">
-            <h2 className="mb-4 font-display text-2xl font-medium tracking-[-0.02em] sm:text-3xl">
-              {ui.byCityService(serviceName, industry.name)}
-            </h2>
-            <p className="mb-8 text-muted-foreground">
-              {ui.byCityServiceDesc(industry.nameFor, isEl)}
-            </p>
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
-              {locations.map((location) => (
-                <Link
-                  key={location.slug}
-                  href={lp(`/services/${serviceSlug}/${location.slug}`)}
-                  className="rounded-lg border border-hairline bg-background px-3 py-2 text-center text-sm transition-smooth hover:border-primary hover:text-primary"
-                >
-                  {'cityLocal' in location && location.cityLocal ? location.cityLocal : location.city}
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
+          <KitSection className="!pt-0">
+            <KitHeading
+              eyebrow={tx('Local', 'Τοπικά')}
+              eyebrowIcon={<MapPin />}
+              title={ui.byCityService(serviceName, industry.name)}
+              description={ui.byCityServiceDesc(industry.nameFor, isEl)}
+            />
+            <ChipLinks
+              className="mt-8"
+              items={locations.map((location) => ({
+                key: location.slug,
+                href: lp(`/services/${serviceSlug}/${location.slug}`),
+                label: 'cityLocal' in location && location.cityLocal ? location.cityLocal : location.city,
+              }))}
+            />
+          </KitSection>
         ) : null}
 
-        <section className="section bg-surface-raised/40">
-          <div className="container">
-            <h2 className="mb-8 font-display text-2xl font-medium tracking-[-0.02em] sm:text-3xl">{ui.otherServicesFor(industry.nameFor)}</h2>
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-              {relatedServices.map((related) => (
+        <KitSection tinted>
+          <KitHeading eyebrow={tx('More services', 'Περισσότερες υπηρεσίες')} title={ui.otherServicesFor(industry.nameFor)} />
+          <CardGrid className="mt-10">
+            {relatedServices.map((related) => (
+              <LinkCard
+                key={related.slug}
+                href={lp(`/solutions/${industrySlug}/${related.slug}`)}
+                title={related.name}
+                text={related.description}
+              />
+            ))}
+          </CardGrid>
+          <h2 className="mt-16 font-display text-[22px] font-semibold tracking-[-0.025em] text-foreground sm:text-[26px]">
+            {ui.serviceForOtherIndustries(serviceName)}
+          </h2>
+          <ul className="mt-6 grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-4">
+            {relatedIndustries.map((related) => (
+              <li key={related.slug}>
                 <Link
-                  key={related.slug}
-                  href={lp(`/solutions/${industrySlug}/${related.slug}`)}
-                  className="card p-6 card-interactive"
-                >
-                  <h3 className="mb-2 font-semibold">{related.name}</h3>
-                  <p className="line-clamp-2 text-sm text-muted-foreground">{related.description}</p>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="section">
-          <div className="container">
-            <h2 className="mb-8 font-display text-2xl font-medium tracking-[-0.02em] sm:text-3xl">
-              {ui.serviceForOtherIndustries(serviceName)}
-            </h2>
-            <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-              {relatedIndustries.map((related) => (
-                <Link
-                  key={related.slug}
                   href={lp(`/solutions/${related.slug}/${serviceSlug}`)}
-                  className="card p-4 text-center card-interactive"
+                  className="group flex items-center justify-between gap-3 rounded-xl border border-hairline bg-background/60 px-4 py-3.5 text-[14.5px] font-medium text-foreground transition-colors hover:border-brand/40"
                 >
-                  <span className="text-sm font-medium">{related.name}</span>
+                  {related.name}
+                  <ArrowUpRight className="size-3.5 text-muted-foreground group-hover:text-brand" aria-hidden />
                 </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="section gradient-primary text-white">
-          <div className="container text-center">
-            <h2 className="mb-4 font-display text-3xl font-medium tracking-[-0.03em]">{ui.readyForService(serviceName)}</h2>
-            <p className="mb-8 text-white/80">{ui.readyForServiceSub(industry.name)}</p>
-            <Link href={lp('/contact')} className="btn bg-white text-primary hover:bg-white/90">
+              </li>
+            ))}
+          </ul>
+          <p className="mt-10">
+            <Link href={lp('/contact')} className={kitSecondaryBtn}>
               {ui.freeQuote}
             </Link>
-          </div>
-        </section>
+          </p>
+        </KitSection>
+
+        <CtaBand
+          locale={locale}
+          source={`industry-service-${industrySlug}`}
+          title={<>{ui.readyForService(serviceName)}</>}
+          description={ui.readyForServiceSub(industry.name)}
+        />
       </main>
-      <Footer />
+      <Footer locale={locale} />
     </>
   );
 }

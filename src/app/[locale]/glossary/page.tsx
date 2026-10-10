@@ -9,6 +9,9 @@ import { BASE_URL } from "@/lib/seo/schema";
 import { getGlossaryUi } from "@/lib/i18n/get-dictionary";
 import { isValidLocale, localizedPath, type SiteLocale } from "@/lib/i18n/locale";
 import { notFound } from "next/navigation";
+import { Container, CtaBand } from "@/components/kit";
+import { PageHero, accentTail } from "@/components/page-kit";
+import { categoryTitle } from "@/components/glossary/category-labels";
 
 type PageProps = { params: Promise<{ locale: string }> };
 
@@ -54,19 +57,31 @@ export default async function GlossaryPage({ params }: PageProps) {
   return (
     <>
       <SchemaMarkup schemas={[termSetSchema]} />
-      <Header />
-      <Suspense
-        fallback={
-          <main className="blueprint-grid relative z-0 main-below-header min-h-screen">
-            <div className="max-w-6xl mx-auto px-4 py-8 text-center">
-              <h1 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">{ui.title}</h1>
-              <p className="text-muted-foreground">{ui.loading}</p>
-            </div>
-          </main>
-        }
-      >
-        <GlossaryClient locale={locale as SiteLocale} />
-      </Suspense>
+      <Header locale={locale as SiteLocale} />
+      <main className="blueprint-grid relative z-0">
+        <PageHero
+          locale={locale as SiteLocale}
+          pill={{
+            href: localizedPath(locale as SiteLocale, "/blog"),
+            kind: "free",
+            tag: "Blog",
+            text: isEl ? "Οδηγοί που βάζουν τους όρους σε πράξη" : "Guides that put the terms to work",
+          }}
+          title={accentTail(ui.heroTitle, 1)}
+          lead={
+            isEl
+              ? "Ορισμοί για τεχνικό SEO, GEO, AEO, αναζήτηση με AI και Search Console, με συνδέσμους σε οδηγούς και στην πλατφόρμα."
+              : "Definitions for technical SEO, GEO, AEO, AI search and Search Console, with links to guides and platform features."
+          }
+          actions={null}
+          trust={null}
+          size="md"
+        />
+        <Container className="pb-20 pt-12 sm:pt-16">
+          <Suspense fallback={<p className="text-center text-muted-foreground">{ui.loading}</p>}>
+            <GlossaryClient locale={locale as SiteLocale} />
+          </Suspense>
+        </Container>
       {/*
         Server-rendered copy of every term.
 
@@ -83,7 +98,7 @@ export default async function GlossaryPage({ params }: PageProps) {
         <h2>{isEl ? "Όλοι οι όροι του γλωσσαρίου" : "All glossary terms"}</h2>
         {glossaryCategories.map((category) => (
           <div key={category.id}>
-            <h3>{category.title}</h3>
+            <h3>{categoryTitle(category, locale as SiteLocale)}</h3>
             <dl>
               {category.terms.map((term) => (
                 <div key={term.id}>
@@ -99,7 +114,9 @@ export default async function GlossaryPage({ params }: PageProps) {
           </div>
         ))}
       </section>
-      <Footer />
+        <CtaBand locale={locale as SiteLocale} source="glossary-band" />
+      </main>
+      <Footer locale={locale as SiteLocale} />
     </>
   );
 }
