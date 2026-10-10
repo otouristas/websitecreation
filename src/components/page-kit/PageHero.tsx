@@ -4,6 +4,7 @@ import { ChevronRight } from "lucide-react";
 import { cn } from "@/lib/cn";
 import type { SiteLocale } from "@/lib/i18n/locale";
 import {
+  Accent,
   AgencyCtas,
   AnnouncePill,
   Container,
@@ -134,5 +135,21 @@ export function PageHero({
       </Container>
       {children ? <div className="rise-in [animation-delay:320ms]">{children}</div> : null}
     </section>
+  );
+}
+
+/**
+ * Splits a headline so its last `words` words take the serif accent, keeping
+ * the exact wording (H1s are keyword-bearing and must not change).
+ */
+export function accentTail(text: string, words = 1): ReactNode {
+  const parts = text.trim().split(" ");
+  if (parts.length <= words) return text;
+  const head = parts.slice(0, -words).join(" ");
+  const tail = parts.slice(-words).join(" ");
+  return (
+    <>
+      {head} <Accent>{tail}</Accent>
+    </>
   );
 }

@@ -18,13 +18,12 @@ import {
   AuditPreview,
   CtaBand,
   DecisionsPanel,
-  FeatureRow,
   KitHeading,
   KitSection,
   Stage,
   kitSecondaryBtn,
 } from '@/components/kit';
-import { CardGrid, ChipLinks, InfoCard, KitFaq, LinkCard, PageHero } from '@/components/page-kit';
+import { CardGrid, ChipLinks, InfoCard, KitFaq, LinkCard, PageHero, SplitRow } from '@/components/page-kit';
 import { getLocalizedIndustry } from '@/lib/industry-locale';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 import { solutionsUi } from '@/data/translations/solutions-ui';
@@ -169,7 +168,7 @@ export function IndustryServicePageView({
         ) : null}
 
         <KitSection className={angle ? '!pt-0' : undefined}>
-          <FeatureRow
+          <SplitRow
             eyebrow={tx('Included', 'Περιλαμβάνεται')}
             eyebrowIcon={<ListChecks />}
             title={ui.whatsIncluded(industry.nameFor)}
@@ -184,7 +183,7 @@ export function IndustryServicePageView({
         </KitSection>
 
         <KitSection tinted>
-          <FeatureRow
+          <SplitRow
             flip
             eyebrow={industry.name}
             eyebrowIcon={<Target />}

@@ -10,14 +10,13 @@ import {
   CheckList,
   CtaBand,
   DecisionsPanel,
-  FeatureRow,
   KitHeading,
   KitSection,
   LocalPackPreview,
   OverviewPreview,
   Stage,
 } from '@/components/kit';
-import { ChipLinks, KitFaq, PageHero } from '@/components/page-kit';
+import { ChipLinks, KitFaq, PageHero, SplitRow } from '@/components/page-kit';
 import { getPortfolioByCategory } from '@/data/portfolio';
 import { services } from '@/data/services';
 import { isIndustryServiceIndexable } from '@/lib/indexability/industry-service';
@@ -389,7 +388,7 @@ export function HotelsPage({ locale }: { locale: SiteLocale }) {
 
       {/* Direct vs marketplace */}
       <KitSection tinted>
-        <FeatureRow
+        <SplitRow
           eyebrow={t.parity.eyebrow}
           eyebrowIcon={<Wallet />}
           title={t.parity.title}
@@ -424,7 +423,7 @@ export function HotelsPage({ locale }: { locale: SiteLocale }) {
 
       {/* Language / market matrix */}
       <KitSection>
-        <FeatureRow
+        <SplitRow
           flip
           eyebrow={t.matrix.eyebrow}
           eyebrowIcon={<Languages />}
@@ -473,7 +472,7 @@ export function HotelsPage({ locale }: { locale: SiteLocale }) {
       {/* Room structure, then AI answers */}
       <KitSection tinted>
         <div className="grid gap-24 sm:gap-28">
-          <FeatureRow
+          <SplitRow
             eyebrow={t.rooms.eyebrow}
             eyebrowIcon={<BedDouble />}
             title={t.rooms.title}
@@ -485,7 +484,7 @@ export function HotelsPage({ locale }: { locale: SiteLocale }) {
               </Stage>
             }
           />
-          <FeatureRow
+          <SplitRow
             flip
             eyebrow="GEO / AEO"
             eyebrowIcon={<Bot />}

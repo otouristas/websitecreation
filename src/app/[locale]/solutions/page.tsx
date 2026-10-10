@@ -25,14 +25,13 @@ import {
   Container,
   CtaBand,
   DecisionsPanel,
-  FeatureRow,
   KitHeading,
   KitSection,
   LocalPackPreview,
   Stage,
   ValueTrio,
 } from "@/components/kit";
-import { CardGrid, ChipLinks, LinkCard, PageHero } from "@/components/page-kit";
+import { CardGrid, ChipLinks, LinkCard, PageHero, SplitRow } from "@/components/page-kit";
 import { PROJECT_COUNT } from "@/data/company-facts";
 
 type PageProps = { params: Promise<{ locale: string }> };
@@ -235,7 +234,7 @@ export default async function SolutionsPage({ params }: PageProps) {
         </KitSection>
 
         <KitSection>
-          <FeatureRow
+          <SplitRow
             eyebrow={isEl ? "Υπηρεσίες" : "Services"}
             eyebrowIcon={<Target />}
             title={

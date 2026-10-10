@@ -3,9 +3,7 @@ import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
-import Breadcrumbs from "@/components/seo/Breadcrumbs";
-import FAQSection from "@/components/seo/FAQSection";
-import RelatedPages from "@/components/seo/RelatedPages";
+import { Globe, Plus, TrendingUp } from "lucide-react";
 import { buildMetadata } from "@/lib/seo";
 import {
   generateBreadcrumbSchema,
@@ -27,13 +25,16 @@ import {
 } from "@/data/pricing";
 import { SEO_MIN_TERM_MONTHS } from "@/data/company-facts";
 import { getPricingPageCopy } from "@/data/pricing-page-copy";
+import { Accent, Container, CtaBand, KitHeading, KitSection } from "@/components/kit";
 import {
-  Section,
-  SectionHeading,
-  Bloom,
-  PrimaryButtonLink,
-  GhostButtonLink,
-} from "@/components/landing/primitives";
+  AuditFirstStrip,
+  ChipLinks,
+  DiyStrip,
+  KitFaq,
+  PageHero,
+  RelatedLinks,
+  accentTail,
+} from "@/components/page-kit";
 import { PriceCard } from "@/components/pricing/PriceCard";
 import { PricingCostGuide } from "@/components/pricing/PricingCostGuide";
 import { SeoPackageCompare } from "@/components/pricing/SeoPackageCompare";
@@ -107,74 +108,94 @@ export default async function PricingPage({
     generateFAQSchema({ faqs }),
   );
 
+  const tx = (en: string, el: string) => (isEl ? el : en);
+  const jump = [
+    { href: "#websites", label: tx("Websites", "Ιστοσελίδες") },
+    { href: "#seo", label: "SEO" },
+    { href: "#add-ons", label: tx("Add-ons", "Πρόσθετα") },
+    { href: "#software", label: tx("GSC Boost software", "Λογισμικό GSC Boost") },
+    { href: "#faq", label: "FAQ" },
+  ];
+
   return (
     <>
       <SchemaMarkup schemas={schemas} />
       <Header locale={siteLocale} />
       <main className="blueprint-grid relative z-0">
-        <section className="relative overflow-hidden border-b border-hairline">
-          <Bloom className="left-1/2 top-[-8rem] h-[26rem] w-[60rem] -translate-x-1/2" />
-          <div className="main-below-header relative mx-auto max-w-6xl px-6 pb-14 pt-6">
-            <Breadcrumbs items={breadcrumbItems} className="mb-6" />
-            <h1 className="rise-in max-w-3xl font-display text-4xl font-medium leading-[1.05] tracking-[-0.04em] text-foreground md:text-6xl">
-              {copy.h1}
-            </h1>
-            <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
-              {copy.heroLead}
-            </p>
-            <p className="mt-5 max-w-2xl text-sm font-medium text-foreground">
-              {copy.heroNote}
-            </p>
-
-            {offerLive ? (
-              <p className="mt-8 inline-flex max-w-2xl flex-wrap items-center gap-2 rounded-[8px] border border-brand/35 bg-brand/10 px-4 py-2.5 text-[13px] leading-relaxed text-brand">
-                {isEl
-                  ? "Summer Offer: 20% χαμηλότερη τιμή για νέα projects που θα επιβεβαιωθούν έως 31 Αυγούστου 2026."
-                  : "Summer Offer: 20% lower pricing for new projects confirmed by 31 August 2026."}
-              </p>
-            ) : null}
-          </div>
-        </section>
+        <PageHero
+          locale={siteLocale}
+          breadcrumbs={breadcrumbItems}
+          pill={
+            offerLive
+              ? { href: "#websites", kind: "save", tag: "-20%", text: tx("Summer Offer on new projects", "Summer Offer σε νέα έργα") }
+              : {
+                  href: lp("/get-started#free-audit"),
+                  kind: "free",
+                  tag: tx("Free", "Δωρεάν"),
+                  text: tx("Every engagement starts with an SEO audit", "Κάθε συνεργασία ξεκινά με έλεγχο SEO"),
+                }
+          }
+          title={accentTail(copy.h1, isEl ? 2 : 1)}
+          lead={copy.heroLead}
+          meta={
+            <div className="flex flex-col items-center gap-3">
+              <p className="max-w-2xl text-[14px] font-medium text-foreground">{copy.heroNote}</p>
+              {offerLive ? (
+                <p className="inline-flex max-w-2xl flex-wrap items-center gap-2 rounded-xl border border-warning/30 bg-warning/10 px-4 py-2.5 text-[13px] leading-relaxed text-warning">
+                  {isEl
+                    ? "Summer Offer: 20% χαμηλότερη τιμή για νέα projects που θα επιβεβαιωθούν έως 31 Αυγούστου 2026."
+                    : "Summer Offer: 20% lower pricing for new projects confirmed by 31 August 2026."}
+                </p>
+              ) : null}
+            </div>
+          }
+        >
+          <Container className="mt-10">
+            <ChipLinks align="center" items={jump} />
+          </Container>
+        </PageHero>
 
         <PricingCostGuide locale={siteLocale} copy={copy} />
 
-        <Section id="websites">
-          <SectionHeading
-            align="left"
+        <Container>
+          <AuditFirstStrip locale={siteLocale} />
+        </Container>
+
+        <KitSection id="websites">
+          <KitHeading
             eyebrow={isEl ? "Κατασκευή" : "Websites"}
-            title={isEl ? "Πακέτα κατασκευής ιστοσελίδας" : "Website packages"}
-            body={
+            eyebrowIcon={<Globe />}
+            title={accentTail(isEl ? "Πακέτα κατασκευής ιστοσελίδας" : "Website packages")}
+            description={
               isEl
                 ? "Οι χρόνοι παράδοσης ξεκινούν μετά την έγκριση του scope, την παράδοση προσβάσεων και υλικού και την ολοκλήρωση της εμπορικής συμφωνίας. Η πολυπλοκότητα, οι ενσωματώσεις και ο χρόνος ανατροφοδότησης επηρεάζουν την παράδοση."
                 : "Delivery windows begin after scope approval, access handover, receipt of required material and completion of the commercial agreement. Complexity, integrations and feedback cycles affect delivery."
             }
-            className="mb-12"
           />
-          <div className="grid gap-6 lg:grid-cols-3">
+          <div className="mt-12 grid gap-4 lg:grid-cols-3">
             {websitePackages.map((tier) => (
               <PriceCard key={tier.id} tier={tier} locale={siteLocale} />
             ))}
           </div>
-        </Section>
+        </KitSection>
 
-        <Section id="seo" className="pt-0">
-          <SectionHeading
-            align="left"
+        <KitSection id="seo" tinted>
+          <KitHeading
             eyebrow="SEO"
-            title={isEl ? "Μηνιαία πακέτα SEO" : "Monthly SEO engagements"}
-            body={
+            eyebrowIcon={<TrendingUp />}
+            title={accentTail(isEl ? "Μηνιαία πακέτα SEO" : "Monthly SEO engagements")}
+            description={
               isEl
                 ? `Ελάχιστη διάρκεια ${SEO_MIN_TERM_MONTHS} μηνών, στη συνέχεια μηνιαία ανανέωση. Δεν πουλάμε SEO με βάση τον αριθμό λέξεων-κλειδιών, αλλά με βάση την κάλυψη της πραγματικής ζήτησης αναζήτησης και την ποιότητα των leads.`
                 : `A ${SEO_MIN_TERM_MONTHS} month minimum term, then rolling monthly. We do not sell SEO by keyword count, but by coverage of real search demand and the quality of the leads it produces.`
             }
-            className="mb-12"
           />
-          <div className="grid gap-6 lg:grid-cols-3">
+          <div className="mt-12 grid gap-4 lg:grid-cols-3">
             {seoPackages.map((tier) => (
               <PriceCard key={tier.id} tier={tier} locale={siteLocale} recurring />
             ))}
           </div>
-        </Section>
+        </KitSection>
 
         <SeoPackageCompare
           locale={siteLocale}
@@ -185,86 +206,81 @@ export default async function PricingPage({
           footnote={copy.compare.footnote}
         />
 
-        <Section id="add-ons" className="pt-0">
-          <SectionHeading
-            align="left"
+        <KitSection id="add-ons">
+          <KitHeading
             eyebrow={isEl ? "Πρόσθετα" : "Add-ons"}
-            title={isEl ? "Πρόσθετες υπηρεσίες" : "Additional services"}
-            body={
+            eyebrowIcon={<Plus />}
+            title={accentTail(isEl ? "Πρόσθετες υπηρεσίες" : "Additional services")}
+            description={
               isEl
                 ? "Τιμές εκκίνησης. Το τελικό κόστος εξαρτάται από το εύρος της εργασίας."
                 : "Starting prices. Final cost depends on the scope of the work."
             }
-            className="mb-12"
           />
-          <div className="grid gap-px overflow-hidden rounded-[10px] border border-hairline bg-hairline sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {addOns.map((a) => (
-              <div key={a.id} className="bg-surface p-6">
-                <p className="text-sm font-medium leading-snug text-foreground">
-                  {isEl ? a.nameEl : a.nameEn}
-                </p>
-                <p className="mt-3 font-display text-xl font-medium tabular-nums tracking-[-0.03em] text-foreground">
+              <div key={a.id} className="reveal rounded-2xl border border-hairline bg-surface/60 p-5">
+                <p className="text-[14.5px] font-medium leading-snug text-foreground">{isEl ? a.nameEl : a.nameEn}</p>
+                <p className="mt-3 font-display text-[22px] font-semibold tabular-nums tracking-[-0.03em] text-foreground">
                   {isEl ? "από " : "from "}€{formatPrice(a.from, siteLocale)}
                   {a.recurring ? (isEl ? "/μήνα" : "/mo") : ""}
                 </p>
-                <p className="mt-1 text-[12px] text-muted-foreground">
-                  {isEl ? "+ ΦΠΑ 24%" : "+ 24% VAT"}
-                </p>
+                <p className="mt-1 font-mono text-[11px] text-muted-foreground">{isEl ? "+ ΦΠΑ 24%" : "+ 24% VAT"}</p>
               </div>
             ))}
           </div>
-          <p className="mt-6 max-w-3xl text-sm leading-relaxed text-muted-foreground">
+          <p className="mt-6 max-w-3xl text-[14px] leading-relaxed text-muted-foreground">
             {isEl
               ? "Τυχόν κόστη τρίτων για δημοσιεύσεις ή τοποθετήσεις σε εξωτερικά μέσα τιμολογούνται ξεχωριστά και συμφωνούνται εκ των προτέρων."
               : "Any third-party publisher or placement costs are quoted separately and agreed in advance."}
           </p>
-        </Section>
+        </KitSection>
+
+        <KitSection id="software" tinted>
+          <KitHeading
+            align="center"
+            eyebrow={tx("Software plans", "Πακέτα λογισμικού")}
+            title={
+              <>
+                {tx("The do-it-yourself", "Η επιλογή")} <Accent>{tx("option", "«μόνοι σας»")}</Accent>
+              </>
+            }
+            description={tx(
+              "If you have someone in-house to do the work, GSC Boost gives them the same ranked fix list our team works from, on a monthly software plan.",
+              "Αν έχετε άνθρωπο στην ομάδα σας να κάνει τη δουλειά, το GSC Boost του δίνει την ίδια λίστα διορθώσεων με την οποία δουλεύει η ομάδα μας, με μηνιαίο πακέτο λογισμικού.",
+            )}
+          />
+          <DiyStrip locale={siteLocale} source="pricing-diy" className="mt-12" />
+        </KitSection>
 
         <NotForYou locale={siteLocale} />
 
         <SeoTimeline locale={siteLocale} />
 
-        <Section id="faq" className="pt-0">
-          <SectionHeading
-            align="left"
-            eyebrow="FAQ"
-            title={copy.faqTitle}
-            className="mb-10"
-          />
-          <FAQSection faqs={faqs} title="" locale={siteLocale} />
-        </Section>
+        <KitFaq title={copy.faqTitle} items={faqs} />
 
-        <Section className="pt-0">
-          <RelatedPages
-            title={isEl ? "Σχετικές σελίδες" : "Related pages"}
-            pages={getPricingRelatedPaths(siteLocale).map((p) => ({
-              slug: lp(p.path),
-              title: isEl ? p.titleEl : p.titleEn,
-            }))}
-          />
-        </Section>
-
-        <section className="relative overflow-hidden border-t border-hairline">
-          <Bloom className="left-1/2 top-1/4 h-[24rem] w-[56rem] -translate-x-1/2" />
-          <div className="relative mx-auto max-w-3xl px-6 py-24 text-center">
-            <h2 className="font-display text-3xl font-medium leading-[1.05] tracking-[-0.04em] text-foreground md:text-5xl">
-              {isEl ? "Συζητήστε το έργο σας" : "Discuss your project"}
-            </h2>
-            <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">
-              {isEl
-                ? "Πείτε μας τι θέλετε να πετύχετε και σε τι κατάσταση είναι σήμερα το site σας. Θα σας πούμε ειλικρινά τι χρειάζεται και αν ταιριάζουμε."
-                : "Tell us what you want to achieve and where your site stands today. We will tell you honestly what it needs and whether we are the right fit."}
-            </p>
-            <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
-              <PrimaryButtonLink href={lp("/get-started")}>
-                {isEl ? "Ζητήστε Προσφορά" : "Request a Quote"}
-              </PrimaryButtonLink>
-              <GhostButtonLink href={lp("/seo-services")}>
-                {isEl ? "Υπηρεσίες SEO" : "SEO services"}
-              </GhostButtonLink>
-            </div>
-          </div>
+        <section className="border-t border-hairline py-16">
+          <Container>
+            <RelatedLinks
+              title={isEl ? "Σχετικές σελίδες" : "Related pages"}
+              items={getPricingRelatedPaths(siteLocale).map((p) => ({
+                href: lp(p.path),
+                title: isEl ? p.titleEl : p.titleEn,
+              }))}
+            />
+          </Container>
         </section>
+
+        <CtaBand
+          locale={siteLocale}
+          source="pricing-band"
+          title={accentTail(isEl ? "Συζητήστε το έργο σας" : "Discuss your project", 2)}
+          description={
+            isEl
+              ? "Πείτε μας τι θέλετε να πετύχετε και σε τι κατάσταση είναι σήμερα το site σας. Θα σας πούμε ειλικρινά τι χρειάζεται και αν ταιριάζουμε."
+              : "Tell us what you want to achieve and where your site stands today. We will tell you honestly what it needs and whether we are the right fit."
+          }
+        />
       </main>
       <Footer locale={siteLocale} />
     </>

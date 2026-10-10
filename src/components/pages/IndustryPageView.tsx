@@ -19,14 +19,13 @@ import {
   Container,
   CtaBand,
   DecisionsPanel,
-  FeatureRow,
   KitHeading,
   KitSection,
   LocalPackPreview,
   Stage,
   kitSecondaryBtn,
 } from '@/components/kit';
-import { CardGrid, ChipLinks, LinkCard, PageHero } from '@/components/page-kit';
+import { CardGrid, ChipLinks, LinkCard, PageHero, SplitRow } from '@/components/page-kit';
 
 const TOURISM_SLUGS = new Set([
   'hotels',
@@ -163,7 +162,7 @@ export function IndustryPageView({
         ) : null}
 
         <KitSection>
-          <FeatureRow
+          <SplitRow
             eyebrow={tx('The brief', 'Οι ανάγκες')}
             eyebrowIcon={<Target />}
             title={ui.whatWebsitesNeed(industry.name)}
@@ -203,7 +202,7 @@ export function IndustryPageView({
 
         {locations.length > 0 ? (
           <KitSection>
-            <FeatureRow
+            <SplitRow
               flip
               eyebrow={tx('Local', 'Τοπικά')}
               eyebrowIcon={<MapPin />}

@@ -8,13 +8,12 @@ import {
   Container,
   CtaBand,
   DecisionsPanel,
-  FeatureRow,
   KitEyebrow,
   KitHeading,
   KitSection,
   Stage,
 } from '@/components/kit';
-import { CardGrid, KitFaq, LinkCard, PageHero } from '@/components/page-kit';
+import { CardGrid, KitFaq, LinkCard, PageHero, SplitRow } from '@/components/page-kit';
 import { getPortfolioByCategory } from '@/data/portfolio';
 import { services } from '@/data/services';
 import { getServiceEl } from '@/data/services-i18n';
@@ -427,7 +426,7 @@ export function RentACarPage({ locale }: { locale: SiteLocale }) {
 
       <KitSection>
         <div className="grid gap-24 sm:gap-28">
-          <FeatureRow
+          <SplitRow
             eyebrow={t.season.eyebrow}
             eyebrowIcon={<CalendarRange />}
             title={t.season.title}
@@ -442,7 +441,7 @@ export function RentACarPage({ locale }: { locale: SiteLocale }) {
               </Stage>
             }
           />
-          <FeatureRow
+          <SplitRow
             flip
             eyebrow={t.fleet.eyebrow}
             eyebrowIcon={<Network />}
