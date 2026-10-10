@@ -179,7 +179,7 @@ const el: SeoServicesPillarCopy = {
         slug: 'aggelos-rentals',
       },
     ],
-    portfolioLabel: 'ολοκληρωμένα έργα στο portfolio',
+    portfolioLabel: 'ολοκληρωμένα έργα: δείτε το portfolio',
   },
   pricing: {
     title: 'Πακέτα και τιμές SEO',
@@ -412,7 +412,7 @@ const en: SeoServicesPillarCopy = {
         slug: 'aggelos-rentals',
       },
     ],
-    portfolioLabel: 'completed projects in the portfolio',
+    portfolioLabel: 'completed projects: see the portfolio',
   },
   pricing: {
     title: 'What it costs',

@@ -46,7 +46,7 @@ export function AppWindow({
           aria-hidden
         >
           <Lock className="size-3 shrink-0" />
-          <span className="truncate">{url}</span>
+          <span className="min-w-0 truncate">{url}</span>
         </div>
         {badge ? <div className="ml-auto hidden sm:block">{badge}</div> : null}
       </div>

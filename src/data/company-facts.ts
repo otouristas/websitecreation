@@ -1,4 +1,5 @@
 import { portfolioProjects } from '@/data/portfolio';
+import { PROJECTS_DELIVERED } from '@/data/founder';
 
 /**
  * Verifiable company facts, in one place.
@@ -11,8 +12,17 @@ import { portfolioProjects } from '@/data/portfolio';
  * something in the repo, it does not belong here.
  */
 
-/** Live client projects, counted from the portfolio dataset. */
+/**
+ * Live sites listed in the portfolio (/work), counted from the dataset. Use it
+ * only where the copy counts that list itself ("71 sites you can open today").
+ * It is a subset of everything delivered: for "projects delivered/completed"
+ * claims and bare trust stats use `PROJECTS_DELIVERED_LABEL`.
+ */
 export const PROJECT_COUNT = portfolioProjects.length;
+
+/** Total projects delivered, as the owner states it ("200+"). Source: founder.ts. */
+export { PROJECTS_DELIVERED };
+export const PROJECTS_DELIVERED_LABEL = `${PROJECTS_DELIVERED}+`;
 
 /** Distinct markets represented in the portfolio. */
 export const MARKET_COUNT = new Set(portfolioProjects.flatMap((p) => p.markets)).size;
