@@ -12,7 +12,7 @@ import { submitToFormspree } from '@/lib/formspree';
  * The app endpoint answers CORS for anotherseoguru.com and this project's Vercel previews.
  */
 
-export type LeadSource = 'website-contact' | 'website-get-started' | 'website-scan';
+export type LeadSource = 'website-contact' | 'website-get-started' | 'website-scan' | 'website-free-audit';
 export type LeadService = 'seo' | 'webdesign' | 'both';
 
 export interface AppLead {
