@@ -10,6 +10,7 @@ import { getFooterDictionary } from "@/lib/i18n/get-dictionary";
 import { elServiceLocationPath } from "@/lib/locale-paths";
 import { CONTACT_EMAIL, PHONE_DISPLAY, WHATSAPP_HREF } from "@/lib/contact-info";
 import { trackCtaClick } from "@/lib/analytics";
+import { consultantPath } from "@/data/founder";
 
 /** Official SVGs from https://github.com/datatrans/payment-logos (CC-BY-SA-4.0) */
 const PAYMENT_LOGOS = [
@@ -348,6 +349,11 @@ export default function Footer({ locale: localeProp }: { locale?: SiteLocale }):
               <li>
                 <Link href={lp("/about")} className={columnLinkClass}>
                   {isEl ? t!.about : "About us"}
+                </Link>
+              </li>
+              <li>
+                <Link href={consultantPath(isEl ? "el" : "en")} className={columnLinkClass}>
+                  {isEl ? "Σύμβουλος SEO" : "SEO consultant"}
                 </Link>
               </li>
               <li>

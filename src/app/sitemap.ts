@@ -4,6 +4,7 @@ import { getAllBlogPosts, getPillarSummary } from '@/lib/blog';
 import { portfolioProjects } from '@/data/portfolio';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 import { GENERATED_CONTENT_UPDATED } from '@/lib/seo/content-dates';
+import { consultantPath } from '@/data/founder';
 
 const BASE_URL = 'https://anotherseoguru.com';
 const LOCALES: SiteLocale[] = ['en', 'el'];
@@ -96,6 +97,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ),
   ];
 
+  // The founder / SEO-consultant page has a different slug per locale.
+  const consultantPages: MetadataRoute.Sitemap = LOCALES.map((locale) => ({
+    url: `${BASE_URL}${consultantPath(locale)}`,
+    lastModified: new Date(GENERATED_CONTENT_UPDATED),
+    changeFrequency: 'monthly' as const,
+    priority: 0.85,
+  }));
+
   const comparePages = COMPARE_PAGES.flatMap((c) =>
     forEnOnly(`/compare/${c.slug}`, { priority: 0.82, changeFrequency: 'monthly' }),
   );
@@ -131,6 +140,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // them would put noindex URLs in the sitemap.
 
   return [...staticPages,
+    ...consultantPages,
     ...comparePages,
     ...portfolioPages,
     ...pillarPages,
