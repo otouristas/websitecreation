@@ -9,9 +9,13 @@ import type { SiteLocale } from "@/lib/i18n/locale";
 import type { ScanResult } from "@/lib/scan/score";
 import { primaryBtnClass } from "./primitives";
 import { ScoreDial } from "./ScanWidget";
+import { FetchDetailsButton, FetchDetailsNote, SiteDetailsCard, siteDetailsFields, siteDetailsMessage, useSiteDetails } from "./SiteDetailsFetch";
 
 /**
  * The free SEO audit request: website, name, email, phone and a short brief.
+ * "Fetch my details" next to the website reads the homepage and fills the empty
+ * fields (phone, email, brief), and the site's own name, title, description and
+ * logo travel with the lead.
  *
  *   form     -> five fields and one button
  *   results  -> the instant homepage check (score + costliest issues) right away,
@@ -156,8 +160,20 @@ function TeamBoard({ locale, token }: { locale: SiteLocale; token: string | null
   );
 }
 
-export function FreeAuditForm({ locale = "en", initialWebsite = "", className }: { locale?: SiteLocale; initialWebsite?: string; className?: string }) {
+export function FreeAuditForm({
+  locale = "en",
+  initialWebsite = "",
+  context,
+  className,
+}: {
+  locale?: SiteLocale;
+  initialWebsite?: string;
+  /** Extra labelled answers for the lead's message (e.g. the industry a page linked from). */
+  context?: Record<string, string>;
+  className?: string;
+}) {
   const t = COPY[locale];
+  const details = useSiteDetails();
   const [website, setWebsite] = useState(initialWebsite);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -175,6 +191,16 @@ export function FreeAuditForm({ locale = "en", initialWebsite = "", className }:
     if (started) return;
     setStarted(true);
     trackFormStart("free_audit");
+  }
+
+  async function handleFetchDetails() {
+    markStarted();
+    const found = await details.fetchFor(website);
+    if (!found) return;
+    // Only empty fields: whatever the visitor typed wins.
+    if (found.email) setEmail((v) => v || (found.email as string));
+    if (found.phone) setPhone((v) => v || (found.phone as string));
+    if (found.description) setBrief((v) => v || (found.description as string));
   }
 
   async function handleSubmit(e: FormEvent) {
@@ -207,6 +233,9 @@ export function FreeAuditForm({ locale = "en", initialWebsite = "", className }:
           email: mail,
           phone: phone.trim(),
           brief: brief.trim(),
+          company: details.info?.siteName ?? "",
+          ...siteDetailsFields(details.info),
+          ...context,
           locale,
           page: typeof window !== "undefined" ? window.location.pathname : "",
           ...utm,
@@ -216,8 +245,11 @@ export function FreeAuditForm({ locale = "en", initialWebsite = "", className }:
           email: mail,
           phone: phone.trim() || undefined,
           website: site,
+          company: details.info?.siteName ?? undefined,
           service: "seo",
-          message: [brief.trim(), describeAnswers({ Request: "Free SEO audit", ...utm })].filter(Boolean).join("\n\n"),
+          message: [brief.trim(), describeAnswers({ Request: "Free SEO audit", ...context, ...utm }), siteDetailsMessage(details.info)]
+            .filter(Boolean)
+            .join("\n\n"),
           locale,
           source: "website-free-audit",
         },
@@ -287,10 +319,17 @@ export function FreeAuditForm({ locale = "en", initialWebsite = "", className }:
       <h2 className="mt-1 font-display text-xl font-semibold tracking-[-0.02em] text-foreground">{t.title}</h2>
       <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{t.body}</p>
       <div className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2">
-        <label className="grid min-w-0 gap-1">
-          <span className="sr-only">{t.website}</span>
-          <input name="website" type="text" inputMode="url" autoComplete="url" placeholder={`${t.website}: ${t.websitePh}`} value={website} onFocus={markStarted} onChange={(e) => setWebsite(e.target.value)} className={inputClass} />
-        </label>
+        <div className="grid min-w-0 gap-2 sm:col-span-2">
+          <div className="flex min-w-0 flex-col gap-2 sm:flex-row">
+            <label className="grid min-w-0 flex-1 gap-1">
+              <span className="sr-only">{t.website}</span>
+              <input name="website" type="text" inputMode="url" autoComplete="url" placeholder={`${t.website}: ${t.websitePh}`} value={website} onFocus={markStarted} onChange={(e) => setWebsite(e.target.value)} className={inputClass} />
+            </label>
+            <FetchDetailsButton locale={locale} state={details.state} onClick={handleFetchDetails} />
+          </div>
+          <FetchDetailsNote locale={locale} state={details.state} />
+          {details.info && <SiteDetailsCard locale={locale} info={details.info} onDismiss={details.dismiss} />}
+        </div>
         <label className="grid min-w-0 gap-1">
           <span className="sr-only">{t.name}</span>
           <input name="name" type="text" autoComplete="name" placeholder={t.name} value={name} onFocus={markStarted} onChange={(e) => setName(e.target.value)} className={inputClass} />
@@ -299,7 +338,7 @@ export function FreeAuditForm({ locale = "en", initialWebsite = "", className }:
           <span className="sr-only">{t.email}</span>
           <input name="email" type="email" inputMode="email" autoComplete="email" placeholder={t.email} value={email} onFocus={markStarted} onChange={(e) => setEmail(e.target.value)} className={inputClass} />
         </label>
-        <label className="grid min-w-0 gap-1">
+        <label className="grid min-w-0 gap-1 sm:col-span-2">
           <span className="sr-only">{t.phone}</span>
           <input name="phone" type="tel" inputMode="tel" autoComplete="tel" placeholder={t.phone} value={phone} onFocus={markStarted} onChange={(e) => setPhone(e.target.value)} className={inputClass} />
         </label>

@@ -161,22 +161,6 @@ export const SERVICE_PRESETS: Readonly<Record<string, Partial<EstimateInput>>> =
   'eshop-woocommerce': { track: 'website', auditDepth: 'none', features: ['ecommerce', 'contact-form'], pages: 15 },
 };
 
-/** The wizard goal a service slug implies, so step 1 arrives already answered. */
-export const SERVICE_GOALS: Readonly<Record<string, string>> = {
-  'ai-visibility': 'ai',
-  'local-seo': 'local',
-  'seo-audits': 'recover',
-  'link-building': 'local',
-  'content-creation': 'local',
-  'eshop-seo': 'eshop',
-  'eshop-woocommerce': 'eshop',
-  'website-creation': 'new-site',
-  'website-redesign': 'new-site',
-  'seo-web-design': 'new-site',
-  'speed-optimization': 'recover',
-  'logo-design': 'new-site',
-};
-
 export function presetForService(slug: string | null): Partial<EstimateInput> {
   if (!slug) return {};
   return SERVICE_PRESETS[slug] ?? {};
