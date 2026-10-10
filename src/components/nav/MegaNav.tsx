@@ -32,7 +32,7 @@ function ItemLink({ item, onNavigate }: { readonly item: NavItem; readonly onNav
       </span>
     </>
   );
-  const cls = 'group flex items-start gap-3 rounded-xl p-2.5 transition-colors hover:bg-foreground/[0.045] focus-visible:bg-foreground/[0.045] focus-visible:outline-none';
+  const cls = 'group flex min-w-0 items-start gap-3 rounded-xl p-2.5 transition-colors hover:bg-foreground/[0.045] focus-visible:bg-foreground/[0.045] focus-visible:outline-none';
   return item.external ? (
     <a href={item.href} className={cls} onClick={onNavigate}>
       {body}
@@ -76,27 +76,27 @@ function FeatureCard({ feature, menuId, onNavigate }: { readonly feature: NavFea
       <p className="mt-2 text-[13px] leading-relaxed text-muted-foreground">{feature.body}</p>
 
       {software ? (
-        <ul className="mt-4 grid gap-1.5 rounded-xl border border-hairline bg-background/70 p-2 text-[12px]" aria-hidden>
+        <ul className="mt-4 grid grid-cols-1 gap-1.5 rounded-xl border border-hairline bg-background/70 p-2 text-[12px]" aria-hidden>
           {[
             ['+412', 'boutique hotel paros → top 3'],
             ['+268', '/paros-hotel-with-pool · CTR'],
             ['+190', '/blog/best-beaches-paros'],
           ].map(([gain, label]) => (
-            <li key={label} className="flex items-center gap-2 rounded-lg px-2 py-1.5">
+            <li key={label} className="flex min-w-0 items-center gap-2 rounded-lg px-2 py-1.5">
               <Sparkles className="size-3.5 shrink-0 text-signal" />
               <span className="min-w-0 flex-1 truncate text-foreground/85">{label}</span>
-              <span className="font-semibold tabular-nums text-foreground">{gain}</span>
+              <span className="shrink-0 font-semibold tabular-nums text-foreground">{gain}</span>
             </li>
           ))}
         </ul>
       ) : null}
 
       {feature.points && feature.points.length > 0 ? (
-        <ul className="mt-4 grid gap-2 text-[12.5px] text-foreground/85">
+        <ul className="mt-4 grid grid-cols-1 gap-2 text-[12.5px] text-foreground/85">
           {feature.points.map((p) => (
             <li key={p} className="flex items-start gap-2">
               <Check className="mt-0.5 size-3.5 shrink-0 text-brand" aria-hidden />
-              {p}
+              <span className="min-w-0 break-words">{p}</span>
             </li>
           ))}
         </ul>
@@ -138,9 +138,12 @@ function Panel({ menu, onNavigate, chips }: { readonly menu: NavMenu; readonly o
     <div className="overflow-hidden rounded-3xl border border-hairline bg-popover shadow-[inset_0_1px_0_0_oklch(1_0_0/6%),0_30px_70px_-20px_color-mix(in_oklab,var(--primary)_35%,transparent),0_30px_70px_-30px_oklch(0_0_0/60%)]">
       <div className="grid grid-cols-[minmax(0,1fr)_minmax(0,1fr)_17.5rem] gap-2 p-3">
         {menu.columns.map((col) => (
-          <div key={col.title} className="p-2">
+          <div key={col.title} className="min-w-0 p-2">
             <p className="px-2.5 pb-2 font-mono text-[11px] font-medium uppercase tracking-[0.12em] text-muted-foreground">{col.title}</p>
-            <div className="grid gap-0.5">
+            {/* grid-cols-1, not an implicit `auto` track: the truncated
+                descriptions are nowrap, so an auto track sized itself to the
+                full sentence and pushed the links past the column at 1024px. */}
+            <div className="grid grid-cols-1 gap-0.5">
               {col.items.map((item) => (
                 <ItemLink key={item.href + item.label} item={item} onNavigate={onNavigate} />
               ))}
@@ -150,7 +153,7 @@ function Panel({ menu, onNavigate, chips }: { readonly menu: NavMenu; readonly o
         <FeatureCard feature={menu.feature} menuId={menu.id} onNavigate={onNavigate} />
       </div>
       <div className="flex items-center justify-between gap-4 border-t border-hairline bg-surface/60 px-6 py-3 text-[12.5px]">
-        <div className="flex flex-wrap gap-x-4 gap-y-1 text-muted-foreground">
+        <div className="flex min-w-0 flex-wrap gap-x-4 gap-y-1 text-muted-foreground">
           {chips.map((c) => (
             <span key={c} className="inline-flex items-center gap-1.5">
               <span aria-hidden className="size-1.5 rounded-full bg-signal" />
