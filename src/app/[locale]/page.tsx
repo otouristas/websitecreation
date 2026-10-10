@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { HomePageView } from '@/components/pages/HomePageView';
 import { buildMetadata } from '@/lib/seo';
 import { isValidLocale, localizedPath, type SiteLocale } from '@/lib/i18n/locale';
+import { withExactTitle } from './services/_lib/exact-title';
 
 type PageProps = { params: Promise<{ locale: string }> };
 
@@ -11,14 +12,20 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!isValidLocale(locale)) return {};
 
   if (locale === 'el') {
-    return buildMetadata({
-      title: 'SEO & Κατασκευή Ιστοσελίδων στην Ελλάδα',
-      description:
-        'Τεχνικό SEO, τοπικό SEO και GEO/AEO, με κατασκευή ιστοσελίδων και e-shop. Στρατηγική βάσει των δικών σας δεδομένων, όχι έτοιμο πακέτο. Ζητήστε προσφορά.',
-      path: localizedPath('el', '/'),
-      primaryKeyword: 'κατασκευή ιστοσελίδων',
-      hreflangPath: '/',
-    });
+    // Exact SERP title from the Greek keyword map: the homepage owns
+    // «εταιρεία SEO»; «υπηρεσίες SEO» belongs to /el/seo-services.
+    const title = 'Εταιρεία SEO & Κατασκευή Ιστοσελίδων | AnotherSEOGuru';
+    return withExactTitle(
+      buildMetadata({
+        title,
+        description:
+          'Εταιρεία SEO και κατασκευής ιστοσελίδων στην Ελλάδα. Δουλεύουμε με ξενοδοχεία, rent-a-car και τοπικές επιχειρήσεις και μετράμε αποτελέσματα σε αιτήματα.',
+        path: localizedPath('el', '/'),
+        primaryKeyword: 'εταιρεία SEO',
+        hreflangPath: '/',
+      }),
+      title,
+    );
   }
 
   return buildMetadata({

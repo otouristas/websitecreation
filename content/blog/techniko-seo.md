@@ -1,8 +1,9 @@
 ---
 slug: techniko-seo
-title: Τεχνικό SEO - Checklist για Καλύτερη Κατάταξη Google (2026)
+title: "Τεχνικό SEO: Checklist για Κατάταξη (2026)"
 description: "Τι είναι το τεχνικό SEO και πώς βελτιώνει την κατάταξη στη Google. Crawl, index, Core Web Vitals, schema, λάθη, κόστος και πρακτικό checklist."
 date: 2026-07-23
+updated: 2026-10-10
 author: AnotherSEOGuru Editorial Team
 locale: el
 category: SEO
@@ -24,7 +25,7 @@ faq:
 
 **Τεχνικό SEO** είναι το σύνολο των βελτιώσεων στην υποδομή της ιστοσελίδας ώστε οι μηχανές αναζήτησης να βρίσκουν, να καταλαβαίνουν και να εμπιστεύονται τις σελίδες σας. Χωρίς γερά θεμέλια, το περιεχόμενο και τα links αποδίδουν λιγότερο - και η **βελτίωση κατάταξης Google** μένει αργή.
 
-Για το ευρύτερο πλαίσιο δείτε [τι είναι SEO](/el/blog/seo-gia-arxarious) και τον αγγλικό [technical SEO guide](/en/blog/technical-seo-guide). Αν θέλετε έτοιμο πλάνο: [υπηρεσίες SEO audit](/el/services/seo-audits) ή [ξεκινήστε εδώ](/el/get-started).
+Για το ευρύτερο πλαίσιο δείτε [τι είναι SEO](/el/blog/seo-gia-arxarious) και τον αγγλικό [technical SEO guide](/en/blog/technical-seo-guide). Αν θέλετε έτοιμο πλάνο: [SEO audit](/el/services/seo-audits) ή [ξεκινήστε εδώ](/el/get-started).
 
 ## Τι Ελέγχει το Τεχνικό SEO
 
@@ -37,7 +38,7 @@ faq:
 7. **Εσωτερική σύνδεση** - οι money pages δεν είναι ορφανές.
 8. **Hreflang** - σωστά ζεύγη EN/EL σε δίγλωσσα ελληνικά sites.
 
-Το τεχνικό SEO δεν αντικαθιστά τη σχετικότητα. Αφαιρεί τριβές ώστε το [on-page SEO](/en/blog/on-page-seo) και τα [links](/en/blog/link-building-guide) να δουλέψουν.
+Το τεχνικό SEO δεν αντικαθιστά τη σχετικότητα. Αφαιρεί τριβές ώστε το [on-page SEO](/el/blog/on-page-seo-el) και τα [links](/en/blog/link-building-guide) να δουλέψουν.
 
 ## Πρακτικό Checklist (Ελλάδα)
 
@@ -85,7 +86,7 @@ faq:
 
 ## Πότε Να Ζητήσετε Audit
 
-Αν βλέπετε υψηλές εντυπώσεις με μηδενικά κλικ, σελίδες «ανακαλύφθηκαν – δεν ευρετηριάστηκαν», αργό LCP σε κινητό, ή πριν από μεγάλη επένδυση σε περιεχόμενο/backlinks, ξεκινήστε από [υπηρεσίες SEO / τεχνικό audit](/el/services/seo-audits). Συμπληρώστε με [on-page SEO](/en/blog/on-page-seo) και τον [οδηγό για αρχάριους](/el/blog/seo-gia-arxarious).
+Αν βλέπετε υψηλές εντυπώσεις με μηδενικά κλικ, σελίδες «ανακαλύφθηκαν – δεν ευρετηριάστηκαν», αργό LCP σε κινητό, ή πριν από μεγάλη επένδυση σε περιεχόμενο/backlinks, ξεκινήστε από [υπηρεσίες SEO / τεχνικό audit](/el/services/seo-audits). Συμπληρώστε με [on-page SEO](/el/blog/on-page-seo-el) και τον [οδηγό για αρχάριους](/el/blog/seo-gia-arxarious).
 
 ## Migrations, Redesign και Δίγλωσσα Sites
 
