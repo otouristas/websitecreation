@@ -621,7 +621,7 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
           href: '#free-audit',
           kind: 'free',
           tag: isEl ? 'Δωρεάν' : 'Free',
-          text: isEl ? 'Έλεγχος SEO σε 24 ώρες' : 'SEO audit in 24 hours, two fields',
+          text: isEl ? 'Έλεγχος SEO από την ομάδα μας' : 'Full SEO audit by our team',
         }}
         title={accentTail(t.title, 2)}
         lead={t.subtitle}

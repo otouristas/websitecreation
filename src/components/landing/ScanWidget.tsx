@@ -100,7 +100,7 @@ const COPY = {
   },
 } as const;
 
-function ScoreDial({ score, label }: { score: number; label: string }) {
+export function ScoreDial({ score, label }: { score: number; label: string }) {
   const r = 34;
   const c = 2 * Math.PI * r;
   const tone = score >= 80 ? "var(--signal)" : score >= 55 ? "var(--brand)" : "var(--warning)";
