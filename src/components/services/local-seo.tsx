@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { MapPin, Star, Clock, Phone } from 'lucide-react';
 import { PageShell, ShellCrumbs } from '@/components/bespoke/PageShell';
 import { PrimaryButtonLink, GhostButtonLink, Bloom, Tick } from '@/components/landing/primitives';
-import { greeceLocations, tier1Locations } from '@/data/locations';
+import { getIndexableServiceLocations } from '@/data/locations';
 import { getServiceBySlug } from '@/data/services';
 import { getServiceEl } from '@/data/services-i18n';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
@@ -252,7 +252,9 @@ export function LocalSeoPage({ locale }: { locale: SiteLocale }) {
   const service = getServiceBySlug('local-seo');
   const serviceEl = isEl ? getServiceEl('local-seo') : null;
 
-  const locations = isEl ? greeceLocations.slice(0, 18) : tier1Locations.slice(0, 18);
+  // Live local-seo city pages only. This listed 18 US cities on /en (all of
+  // them noindex, now 410) and the first 18 Greek cities on /el.
+  const locations = getIndexableServiceLocations(locale);
 
   const breadcrumbs = [
     { name: isEl ? 'Αρχική' : 'Home', url: lp('/') },

@@ -3,8 +3,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { services, getServiceBySlug } from '@/data/services';
 import { getServiceEl } from '@/data/services-i18n';
-import { industries } from '@/data/industries';
-import { greeceLocations, tier1Locations } from '@/data/locations';
+import { getIndustriesForLocale } from '@/data/industries';
 import {
   generateArticleSchema,
   generateBreadcrumbSchema,
@@ -17,7 +16,8 @@ import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 import { solutionsUi } from '@/data/translations/solutions-ui';
 import { getServiceAngle, getServiceFaqs, ANGLE_HEADINGS, FAQ_HEADING } from '@/data/industry-service-copy';
 import { GENERATED_CONTENT_PUBLISHED, GENERATED_CONTENT_UPDATED } from '@/lib/seo/content-dates';
-import { shouldIndexServiceLocation } from '@/data/locations';
+import { getIndexableServiceLocations } from '@/data/locations';
+import { isCityPageService } from '@/lib/indexability/service-location';
 
 export function IndustryServicePageView({
   industrySlug,
@@ -57,7 +57,7 @@ export function IndustryServicePageView({
       description: isEl ? (getServiceEl(s.slug)?.description ?? s.description) : s.description,
     }));
 
-  const relatedIndustries = industries
+  const relatedIndustries = getIndustriesForLocale(locale)
     .filter((i) => i.slug !== industrySlug)
     .slice(0, 4)
     .map((i) => getLocalizedIndustry(i.slug, locale)!);
@@ -86,15 +86,11 @@ export function IndustryServicePageView({
     }),
   );
 
-  // Only link cities whose service x location page is indexable in this locale.
-  // The EN branch used to be `tier1Locations.slice(0, 18)` - eighteen US cities,
-  // every one of them noindex - so each indexed English industry x service page
-  // spent 18 links on pages it was telling Google to drop. The EL branch was
-  // already fine, and `services/[service]/[location]/page.tsx` already filters
-  // its industry grid the same way.
-  const locations = (isEl ? greeceLocations : tier1Locations).filter((location) =>
-    shouldIndexServiceLocation(location, isEl ? 'el' : 'en'),
-  );
+  // Only link live service x city pages (2026-10 city cut): services without
+  // city pages show no city block at all.
+  const locations = isCityPageService(serviceSlug)
+    ? getIndexableServiceLocations(isEl ? 'el' : 'en')
+    : [];
 
   return (
     <>
@@ -207,6 +203,7 @@ export function IndustryServicePageView({
           </div>
         </section>
 
+        {locations.length > 0 ? (
         <section className="section">
           <div className="container">
             <h2 className="mb-4 font-display text-2xl font-medium tracking-[-0.02em] sm:text-3xl">
@@ -228,6 +225,7 @@ export function IndustryServicePageView({
             </div>
           </div>
         </section>
+        ) : null}
 
         <section className="section bg-surface-raised/40">
           <div className="container">

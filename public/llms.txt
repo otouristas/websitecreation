@@ -73,54 +73,23 @@ Structured context so AI assistants and AI search engines can cite accurate Anot
 - [Travel AI Chatbots](https://anotherseoguru.com/en/solutions/travel-ai-chatbots) - AI assistant implementations for tourism - multilingual booking support, FAQ automation, and AEO visibility.
 
 ## Greek Cities Serviced
-Nationwide Greece coverage with service×city landing pages. Money-page examples:
+Greece-wide service; dedicated service×city pages for the cities below. Money-page examples:
 - **Κατασκευή ιστοσελίδων Αθήνα** (<https://anotherseoguru.com/el/services/website-creation/athens-gr>) - Primary Athens commercial landing.
 - **Τοπικό SEO Θεσσαλονίκη** (<https://anotherseoguru.com/el/services/local-seo/thessaloniki-gr>) - Primary Thessaloniki local SEO landing.
-- **Athens (Αθήνα)** - slug `athens-gr` · pattern: `/el/services/{service}/athens-gr`
-- **Thessaloniki (Θεσσαλονίκη)** - slug `thessaloniki-gr` · pattern: `/el/services/{service}/thessaloniki-gr`
-- **Patras (Πάτρα)** - slug `patras-gr` · pattern: `/el/services/{service}/patras-gr`
-- **Heraklion (Ηράκλειο)** - slug `heraklion-gr` · pattern: `/el/services/{service}/heraklion-gr`
-- **Larissa (Λάρισα)** - slug `larissa-gr` · pattern: `/el/services/{service}/larissa-gr`
-- **Volos (Βόλος)** - slug `volos-gr` · pattern: `/el/services/{service}/volos-gr`
-- **Santorini (Σαντορίνη)** - slug `santorini-gr` · pattern: `/el/services/{service}/santorini-gr`
-- **Mykonos (Μύκονος)** - slug `mykonos-gr` · pattern: `/el/services/{service}/mykonos-gr`
-- **Paros (Πάρος)** - slug `paros-gr` · pattern: `/el/services/{service}/paros-gr`
-- **Naxos (Νάξος)** - slug `naxos-gr` · pattern: `/el/services/{service}/naxos-gr`
-- **Crete (Κρήτη)** - slug `crete-gr` · pattern: `/el/services/{service}/crete-gr`
-- **Rethymno (Ρέθυμνο)** - slug `rethymno-gr` · pattern: `/el/services/{service}/rethymno-gr`
-- **Chania (Χανιά)** - slug `chania-gr` · pattern: `/el/services/{service}/chania-gr`
-- **Kos (Κως)** - slug `kos-gr` · pattern: `/el/services/{service}/kos-gr`
-- **Corinth (Κόρινθος)** - slug `corinth-gr` · pattern: `/el/services/{service}/corinth-gr`
-- **Serres (Σέρρες)** - slug `serres-gr` · pattern: `/el/services/{service}/serres-gr`
-- **Lamia (Λαμία)** - slug `lamia-gr` · pattern: `/el/services/{service}/lamia-gr`
-- **Kavala (Καβάλα)** - slug `kavala-gr` · pattern: `/el/services/{service}/kavala-gr`
-- **Rhodes (Ρόδος)** - slug `rhodes-gr` · pattern: `/el/services/{service}/rhodes-gr`
-- **Corfu (Κέρκυρα)** - slug `corfu-gr` · pattern: `/el/services/{service}/corfu-gr`
-- **Zakynthos (Ζάκυνθος)** - slug `zakynthos-gr` · pattern: `/el/services/{service}/zakynthos-gr`
-- **Lefkada (Λευκάδα)** - slug `lefkada-gr` · pattern: `/el/services/{service}/lefkada-gr`
-- **Skiathos (Σκιάθος)** - slug `skiathos-gr` · pattern: `/el/services/{service}/skiathos-gr`
-- **Ios (Ίος)** - slug `ios-gr` · pattern: `/el/services/{service}/ios-gr`
-- **Milos (Μήλος)** - slug `milos-gr` · pattern: `/el/services/{service}/milos-gr`
-- **Syros (Σύρος)** - slug `syros-gr` · pattern: `/el/services/{service}/syros-gr`
-- **Tinos (Τήνος)** - slug `tinos-gr` · pattern: `/el/services/{service}/tinos-gr`
-- **Andros (Άνδρος)** - slug `andros-gr` · pattern: `/el/services/{service}/andros-gr`
-- **Karpathos (Κάρπαθος)** - slug `karpathos-gr` · pattern: `/el/services/{service}/karpathos-gr`
-- **Lemnos (Λήμνος)** - slug `lemnos-gr` · pattern: `/el/services/{service}/lemnos-gr`
-- **Chios (Χίος)** - slug `chios-gr` · pattern: `/el/services/{service}/chios-gr`
-- **Samos (Σάμος)** - slug `samos-gr` · pattern: `/el/services/{service}/samos-gr`
-- **Ikaria (Ικαρία)** - slug `ikaria-gr` · pattern: `/el/services/{service}/ikaria-gr`
-- **Mytilene (Μυτιλήνη)** - slug `mytilene-gr` · pattern: `/el/services/{service}/mytilene-gr`
-- **Ioannina (Ιωάννινα)** - slug `ioannina-gr` · pattern: `/el/services/{service}/ioannina-gr`
-- **Trikala (Τρίκαλα)** - slug `trikala-gr` · pattern: `/el/services/{service}/trikala-gr`
-- **Kalamata (Καλαμάτα)** - slug `kalamata-gr` · pattern: `/el/services/{service}/kalamata-gr`
-- **Agrinio (Αγρίνιο)** - slug `agrinio-gr` · pattern: `/el/services/{service}/agrinio-gr`
-- **Drama (Δράμα)** - slug `drama-gr` · pattern: `/el/services/{service}/drama-gr`
-- **Alexandroupoli (Αλεξανδρούπολη)** - slug `alexandroupoli-gr` · pattern: `/el/services/{service}/alexandroupoli-gr`
-- **Tripoli (Τρίπολη)** - slug `tripoli-gr` · pattern: `/el/services/{service}/tripoli-gr`
-- **Chalkida (Χαλκίδα)** - slug `chalkida-gr` · pattern: `/el/services/{service}/chalkida-gr`
-- **Komotini (Κομοτηνή)** - slug `komotini-gr` · pattern: `/el/services/{service}/komotini-gr`
-- **Nafplio (Ναύπλιο)** - slug `nafplio-gr` · pattern: `/el/services/{service}/nafplio-gr`
-- **Pyrgos (Πύργος)** - slug `pyrgos-gr` · pattern: `/el/services/{service}/pyrgos-gr`
+- **Athens (Αθήνα)** - slug `athens-gr` · pages: https://anotherseoguru.com/el/services/website-creation/athens-gr, https://anotherseoguru.com/el/services/local-seo/athens-gr
+- **Thessaloniki (Θεσσαλονίκη)** - slug `thessaloniki-gr` · pages: https://anotherseoguru.com/el/services/website-creation/thessaloniki-gr, https://anotherseoguru.com/el/services/local-seo/thessaloniki-gr
+- **Heraklion (Ηράκλειο)** - slug `heraklion-gr` · pages: https://anotherseoguru.com/el/services/website-creation/heraklion-gr, https://anotherseoguru.com/el/services/local-seo/heraklion-gr
+- **Chania (Χανιά)** - slug `chania-gr` · pages: https://anotherseoguru.com/el/services/website-creation/chania-gr, https://anotherseoguru.com/el/services/local-seo/chania-gr
+- **Rethymno (Ρέθυμνο)** - slug `rethymno-gr` · pages: https://anotherseoguru.com/el/services/website-creation/rethymno-gr, https://anotherseoguru.com/el/services/local-seo/rethymno-gr
+- **Santorini (Σαντορίνη)** - slug `santorini-gr` · pages: https://anotherseoguru.com/el/services/website-creation/santorini-gr, https://anotherseoguru.com/el/services/local-seo/santorini-gr
+- **Mykonos (Μύκονος)** - slug `mykonos-gr` · pages: https://anotherseoguru.com/el/services/website-creation/mykonos-gr, https://anotherseoguru.com/el/services/local-seo/mykonos-gr
+- **Paros (Πάρος)** - slug `paros-gr` · pages: https://anotherseoguru.com/el/services/website-creation/paros-gr, https://anotherseoguru.com/el/services/local-seo/paros-gr
+- **Naxos (Νάξος)** - slug `naxos-gr` · pages: https://anotherseoguru.com/el/services/website-creation/naxos-gr, https://anotherseoguru.com/el/services/local-seo/naxos-gr
+- **Rhodes (Ρόδος)** - slug `rhodes-gr` · pages: https://anotherseoguru.com/el/services/website-creation/rhodes-gr, https://anotherseoguru.com/el/services/local-seo/rhodes-gr
+- **Kos (Κως)** - slug `kos-gr` · pages: https://anotherseoguru.com/el/services/website-creation/kos-gr, https://anotherseoguru.com/el/services/local-seo/kos-gr
+- **Corfu (Κέρκυρα)** - slug `corfu-gr` · pages: https://anotherseoguru.com/el/services/website-creation/corfu-gr, https://anotherseoguru.com/el/services/local-seo/corfu-gr
+- **Patras (Πάτρα)** - slug `patras-gr` · pages: https://anotherseoguru.com/el/services/website-creation/patras-gr, https://anotherseoguru.com/el/services/local-seo/patras-gr
+- **Kalamata (Καλαμάτα)** - slug `kalamata-gr` · pages: https://anotherseoguru.com/el/services/website-creation/kalamata-gr, https://anotherseoguru.com/el/services/local-seo/kalamata-gr
 
 ## Portfolio & Case Studies (71 projects)
 - [Aggelos Rentals](https://anotherseoguru.com/en/work/aggelos-rentals) - Aggelos Rentals: car rental with port and airport delivery for Piraeus and Paros, SEO for “rent a car Piraeus”, focused on port and airport handoff for ferry and flight arrivals. · Live: https://aggelosrentals.com

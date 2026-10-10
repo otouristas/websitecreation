@@ -30,8 +30,8 @@ const EL_SEO_HUB_LINKS: { label: string; href: string }[] = [
   { label: "Κατασκευή Ιστοσελίδων Θεσσαλονίκη", href: elServiceLocationPath("website-creation", "thessaloniki-gr") },
   { label: "Κατασκευή Ιστοσελίδων Πάτρα", href: elServiceLocationPath("website-creation", "patras-gr") },
   { label: "Κατασκευή Ιστοσελίδων Ηράκλειο", href: elServiceLocationPath("website-creation", "heraklion-gr") },
-  { label: "Κατασκευή Ιστοσελίδων Λάρισα", href: elServiceLocationPath("website-creation", "larissa-gr") },
-  { label: "Κατασκευή Ιστοσελίδων Κόρινθος", href: elServiceLocationPath("website-creation", "corinth-gr") },
+  { label: "Κατασκευή Ιστοσελίδων Χανιά", href: elServiceLocationPath("website-creation", "chania-gr") },
+  { label: "Κατασκευή Ιστοσελίδων Ρόδος", href: elServiceLocationPath("website-creation", "rhodes-gr") },
   { label: "SEO Αθήνα", href: elServiceLocationPath("local-seo", "athens-gr") },
   { label: "SEO Θεσσαλονίκη", href: elServiceLocationPath("local-seo", "thessaloniki-gr") },
   { label: "SEO Σαντορίνη", href: elServiceLocationPath("local-seo", "santorini-gr") },
@@ -44,7 +44,6 @@ const EL_SEO_HUB_LINKS: { label: string; href: string }[] = [
   { label: "Κατασκευή E-shop Αθήνα", href: elServiceLocationPath("eshop-woocommerce", "athens-gr") },
   { label: "Κατασκευή E-shop Θεσσαλονίκη", href: elServiceLocationPath("eshop-woocommerce", "thessaloniki-gr") },
   { label: "Κατασκευή E-shop Πάτρα", href: elServiceLocationPath("eshop-woocommerce", "patras-gr") },
-  { label: "Σχεδιασμός Λογοτύπου Θεσσαλονίκη", href: elServiceLocationPath("logo-design", "thessaloniki-gr") },
   { label: "Ανασχεδιασμός Ιστοσελίδας", href: "/el/services/website-redesign" },
   { label: "SEO για Ξενοδοχεία", href: "/el/solutions/hotels" },
   { label: "Κατασκευή Ιστοσελίδας Ξενοδοχείου", href: "/el/solutions/hotels/website-creation" },
@@ -66,14 +65,13 @@ const EN_SEO_HUB_LINKS: { label: string; href: string }[] = [
   { label: "E-commerce / E-shop", href: "/en/services/eshop-woocommerce" },
   { label: "AI Visibility (GEO/AEO)", href: "/en/services/ai-visibility" },
   { label: "Website Redesign", href: "/en/services/website-redesign" },
-  // Cities whose English page is actually indexable. New York and Los Angeles
-  // were here on every page of the site, and both are noindex - roughly 2,000
-  // sitewide links each into pages we ask Google to drop.
+  // Only live service × city pages (src/lib/indexability/service-location.ts).
+  // `npm run audit:locations` fails if one of these points at a removed URL.
   { label: "Web Design London", href: "/en/services/website-creation/london-uk" },
   { label: "SEO London", href: "/en/services/local-seo/london-uk" },
   { label: "Web Design Athens", href: "/en/services/website-creation/athens-gr" },
-  { label: "SEO Thessaloniki", href: "/en/services/local-seo/thessaloniki-gr" },
-  { label: "Web Design Crete", href: "/en/services/website-creation/crete-gr" },
+  { label: "SEO Mykonos", href: "/en/services/local-seo/mykonos-gr" },
+  { label: "Web Design Heraklion", href: "/en/services/website-creation/heraklion-gr" },
   { label: "SEO Santorini", href: "/en/services/local-seo/santorini-gr" },
   { label: "Hotel SEO", href: "/en/solutions/hotels" },
   { label: "Pricing & Packages", href: "/en/pricing" },

@@ -9,6 +9,7 @@ import { MARKETING_FEATURES } from '@/data/marketing-features';
 import { COMPARE_PAGES } from '@/data/compare-pages';
 import type { Breadcrumb } from '@/lib/types/page';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
+import { isServiceLocationKept } from '@/lib/indexability/service-location';
 
 // Cluster type definition
 interface Cluster {
@@ -135,15 +136,30 @@ export function getPricingRelatedPaths(
     ];
 }
 
-/** Related money links for a service hub. */
-export function getServiceHubRelatedPaths(serviceSlug: string): { path: string; titleEn: string; titleEl: string }[] {
+const HUB_CITY_LINKS: { slug: string; titleEn: string; titleEl: string }[] = [
+    { slug: 'athens-gr', titleEn: 'Athens', titleEl: 'Αθήνα' },
+    { slug: 'thessaloniki-gr', titleEn: 'Thessaloniki', titleEl: 'Θεσσαλονίκη' },
+    { slug: 'london-uk', titleEn: 'London', titleEl: 'Λονδίνο' },
+];
+
+/**
+ * Related money links for a service hub. City links appear only when that
+ * service × city page is live in the locale (2026-10 city cut), so a hub never
+ * links to a 410 URL.
+ */
+export function getServiceHubRelatedPaths(
+    serviceSlug: string,
+    locale: SiteLocale,
+): { path: string; titleEn: string; titleEl: string }[] {
+    const cities = HUB_CITY_LINKS.filter((c) => isServiceLocationKept(locale, serviceSlug, c.slug))
+        .slice(0, 2)
+        .map((c) => ({ path: `/services/${serviceSlug}/${c.slug}`, titleEn: c.titleEn, titleEl: c.titleEl }));
     return [
         { path: '/pricing', titleEn: 'Pricing & packages', titleEl: 'Τιμές & πακέτα' },
         { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
         { path: '/solutions/hotels', titleEn: 'Hotels & hospitality', titleEl: 'Ξενοδοχεία & φιλοξενία' },
         { path: '/solutions/rent-a-car', titleEn: 'Rent-a-car websites', titleEl: 'Ενοικιάσεις αυτοκινήτων' },
-        { path: `/services/${serviceSlug}/athens-gr`, titleEn: 'Athens', titleEl: 'Αθήνα' },
-        { path: `/services/${serviceSlug}/thessaloniki-gr`, titleEn: 'Thessaloniki', titleEl: 'Θεσσαλονίκη' },
+        ...cities,
         { path: '/work', titleEn: 'Related work', titleEl: 'Σχετικά έργα' },
     ];
 }
