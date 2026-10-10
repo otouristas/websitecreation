@@ -9,6 +9,8 @@ import { captureUtmParams, trackFormStart, trackLead } from "@/lib/analytics";
 import { localizedPath, type SiteLocale } from "@/lib/i18n/locale";
 import { elContact } from "@/data/translations/el-contact";
 import ContactChannels from "@/components/ContactChannels";
+import { ArrowRight, Check, Clock3, Globe, Loader2, Mail } from "lucide-react";
+import { kitPrimaryBtn, kitSecondaryBtn } from "@/components/kit/sections";
 
 /** Contact-form interests mapped onto the app pipeline's service field. */
 const CONTACT_SERVICE: Record<string, LeadService> = {
@@ -41,6 +43,7 @@ export function ContactFormClient({ locale = "en" }: { locale?: SiteLocale }): R
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [hasTrackedStart, setHasTrackedStart] = useState(false);
+  const [errors, setErrors] = useState<{ name?: string; email?: string }>({});
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     if (!hasTrackedStart) {
@@ -49,11 +52,25 @@ export function ContactFormClient({ locale = "en" }: { locale?: SiteLocale }): R
     }
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+    if (name === "name" || name === "email") setErrors((prev) => ({ ...prev, [name]: undefined }));
+  };
+
+  /** Inline validation: only name and a valid email are required. */
+  const validate = () => {
+    const next: { name?: string; email?: string } = {};
+    if (!formData.name.trim()) next.name = isEl ? "Γράψτε το όνομά σας." : "Please add your name.";
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim()))
+      next.email = isEl ? "Γράψτε ένα έγκυρο email, π.χ. you@company.com." : "Please add a valid email, e.g. you@company.com.";
+    setErrors(next);
+    const first = next.name ? "name" : next.email ? "email" : null;
+    if (first) document.getElementById(first)?.focus();
+    return !first;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (formData.gotcha) return;
+    if (!validate()) return;
 
     setIsSubmitting(true);
     setSubmitError(null);
@@ -69,7 +86,7 @@ export function ContactFormClient({ locale = "en" }: { locale?: SiteLocale }): R
         Website: formData.website || "Not provided",
         Phone: formData.phone || "Not provided",
         Service: formData.service || "Not specified",
-        Message: formData.message,
+        Message: formData.message || "Not provided",
         ...utm,
       },
       {
@@ -95,305 +112,281 @@ export function ContactFormClient({ locale = "en" }: { locale?: SiteLocale }): R
     }
   };
 
+  const field =
+    "block min-h-12 w-full rounded-xl border border-hairline bg-background/80 px-4 py-3 text-[16px] text-foreground placeholder:text-muted-foreground/70 transition-colors focus:border-brand/60 focus:outline-none focus:ring-2 focus:ring-brand/30 aria-[invalid=true]:border-destructive/70";
+  const label = "mb-1.5 block text-[14px] font-medium text-foreground";
+  // Labels come with a typed " *"; required fields get a quiet marker instead.
+  const plain = (text: string) => text.replace(/\s*\*$/, "");
+  const req = (
+    <span className="ml-1 text-brand" aria-hidden>
+      *
+    </span>
+  );
+  const optional = <span className="ml-1.5 text-[12px] font-normal text-muted-foreground">{isEl ? "(προαιρετικό)" : "(optional)"}</span>;
+
   if (isSubmitted) {
     return (
-      <main className="blueprint-grid relative z-0 main-below-header flex min-h-[80vh] items-center">
-        <div className="container">
-          <div className="mx-auto max-w-xl text-center">
-            <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full gradient-primary">
-              <svg className="h-10 w-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-              </svg>
-            </div>
-            <h1 className="mb-4 font-display text-3xl font-medium tracking-[-0.03em]">{isEl ? t!.successTitle : "Message Sent!"}</h1>
-            <p className="mb-8 text-muted-foreground">
-              {isEl ? t!.successBody : "Thank you for reaching out. We'll get back to you within 24 hours."}
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Link href={home} className="btn btn-outline">
-                {isEl ? t!.backHome : "Back to Home"}
-              </Link>
-              <Link href={pricing} className="btn btn-primary">
-                {isEl ? t!.viewPricing : "View Pricing"}
-              </Link>
-            </div>
-          </div>
+      <div className="mx-auto max-w-xl rounded-3xl border border-hairline bg-surface/70 p-8 text-center sm:p-10" role="status">
+        <span className="mx-auto flex size-14 items-center justify-center rounded-full bg-brand/15 text-brand">
+          <Check className="size-7" strokeWidth={2.5} aria-hidden />
+        </span>
+        <h2 className="mt-6 font-display text-[28px] font-semibold tracking-[-0.03em] text-foreground">
+          {isEl ? t!.successTitle : "Message Sent!"}
+        </h2>
+        <p className="mt-3 text-[15.5px] leading-relaxed text-muted-foreground">
+          {isEl ? t!.successBody : "Thank you for reaching out. We'll get back to you within 24 hours."}
+        </p>
+        <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+          <Link href={home} className={kitSecondaryBtn}>
+            {isEl ? t!.backHome : "Back to Home"}
+          </Link>
+          <Link href={pricing} className={kitPrimaryBtn}>
+            {isEl ? t!.viewPricing : "View Pricing"}
+          </Link>
         </div>
-      </main>
+      </div>
     );
   }
 
   return (
-    <main className="blueprint-grid relative z-0 main-below-header" lang={isEl ? "el" : undefined}>
-      <section className="section ">
-        <div className="container">
-          <div className="max-w-2xl">
-            <nav className="mb-6 flex items-center gap-2 text-sm text-muted-foreground">
-              <Link href={home} className="hover:text-primary">
-                {isEl ? t!.breadcrumbHome : "Home"}
-              </Link>
-              <span>/</span>
-              <span className="text-foreground">{isEl ? t!.breadcrumbContact : "Contact"}</span>
-            </nav>
-            <h1 className="mb-6 text-4xl font-bold sm:text-5xl">
-              {isEl ? t!.h1 : "Let's Talk About Your Project"}
-            </h1>
-            <p className="text-lg text-muted-foreground">
-              {isEl ? t!.intro : "Have a question or ready to get started? Send us a message and we'll get back to you within 24 hours."}
-            </p>
-          </div>
-        </div>
-      </section>
+    <div className="grid gap-6 lg:grid-cols-[1.35fr_1fr] lg:items-start">
+      <div id="message" className="scroll-mt-28 rounded-3xl border border-hairline bg-surface/70 p-5 text-left shadow-[0_30px_80px_-40px_color-mix(in_oklab,var(--primary)_45%,transparent)] sm:p-8">
+        <h2 className="font-display text-[22px] font-semibold tracking-[-0.025em] text-foreground">{isEl ? t!.formTitle : "Send a Message"}</h2>
+        <p className="mt-1.5 text-[14px] text-muted-foreground">
+          {isEl ? "Μόνο όνομα και email είναι υποχρεωτικά." : "Only your name and email are required."}
+        </p>
 
-      <section className="section">
-        <div className="container">
-          <div className="grid gap-12 lg:grid-cols-5">
-            <div className="space-y-8 lg:col-span-2">
-              <div>
-                <h2 className="mb-6 font-display text-2xl font-medium tracking-[-0.02em]">{isEl ? t!.getInTouch : "Get in Touch"}</h2>
-                <div className="mb-6">
-                  <ContactChannels variant="buttons" locale={locale} />
-                </div>
-                <div className="space-y-6">
-                  <div className="flex items-start gap-4">
-                    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-[8px] bg-primary/10 text-primary">
-                      <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={1.5}
-                          d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                        />
-                      </svg>
-                    </div>
-                    <div>
-                      <h3 className="mb-1 font-semibold">{isEl ? t!.email : "Email"}</h3>
-                      <a
-                        href={`mailto:${CONTACT_EMAIL}`}
-                        className="text-muted-foreground transition-smooth hover:text-primary"
-                      >
-                        {CONTACT_EMAIL}
-                      </a>
-                    </div>
-                  </div>
+        <form onSubmit={handleSubmit} noValidate className="mt-6 space-y-5">
+          <input
+            type="text"
+            name="gotcha"
+            value={formData.gotcha}
+            onChange={handleChange}
+            tabIndex={-1}
+            autoComplete="off"
+            className="absolute -left-[9999px] opacity-0"
+            aria-hidden
+          />
 
-                  <div className="flex items-start gap-4">
-                    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-[8px] bg-primary/10 text-primary">
-                      <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={1.5}
-                          d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                        />
-                      </svg>
-                    </div>
-                    <div>
-                      <h3 className="mb-1 font-semibold">{isEl ? t!.responseTime : "Response Time"}</h3>
-                      <p className="text-muted-foreground">{isEl ? t!.responseValue : "Within 24 hours"}</p>
-                    </div>
-                  </div>
+          {submitError && (
+            <div role="alert" className="rounded-xl border border-destructive/50 bg-destructive/10 px-4 py-3 text-sm text-destructive">
+              {submitError}
+            </div>
+          )}
 
-                  <div className="flex items-start gap-4">
-                    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-[8px] bg-primary/10 text-primary">
-                      <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={1.5}
-                          d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                        />
-                      </svg>
-                    </div>
-                    <div>
-                      <h3 className="mb-1 font-semibold">{isEl ? t!.serving : "Serving"}</h3>
-                      <p className="text-muted-foreground">{isEl ? t!.servingValue : "Clients worldwide"}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="card bg-muted/50 p-6">
-                <h3 className="mb-4 font-semibold">{isEl ? t!.readyTitle : "Ready to start?"}</h3>
-                <p className="mb-4 text-sm text-muted-foreground">
-                  {isEl
-                    ? t!.readyBody
-                    : "Skip the form and go straight to our onboarding wizard to choose your package and get started today."}
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div>
+              <label htmlFor="name" className={label}>
+                {plain(isEl ? t!.name : "Full Name *")}
+                {req}
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                autoComplete="name"
+                enterKeyHint="next"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder={isEl ? t!.namePlaceholder : "Your name"}
+                aria-invalid={errors.name ? true : undefined}
+                aria-describedby={errors.name ? "name-error" : undefined}
+                className={field}
+              />
+              {errors.name ? (
+                <p id="name-error" className="mt-1.5 text-[13px] text-destructive">
+                  {errors.name}
                 </p>
-                <Link href={getStarted} className="btn btn-primary w-full">
-                  {isEl ? t!.readyCta : "Start Your Project"}
-                </Link>
-              </div>
+              ) : null}
             </div>
-
-            <div className="lg:col-span-3">
-              <div className="card p-6 sm:p-8">
-                <h2 className="mb-6 font-display text-xl font-medium tracking-[-0.02em]">{isEl ? t!.formTitle : "Send a Message"}</h2>
-
-                <form onSubmit={handleSubmit} className="space-y-5">
-                  <input
-                    type="text"
-                    name="gotcha"
-                    value={formData.gotcha}
-                    onChange={handleChange}
-                    tabIndex={-1}
-                    autoComplete="off"
-                    className="absolute -left-[9999px] opacity-0"
-                    aria-hidden
-                  />
-
-                  {submitError && (
-                    <div className="rounded-lg border border-destructive/50 bg-destructive/10 px-4 py-3 text-sm text-destructive">
-                      {submitError}
-                    </div>
-                  )}
-
-                  <div className="grid gap-4 sm:grid-cols-2">
-                    <div>
-                      <label htmlFor="name" className="mb-2 block text-sm font-medium">
-                        {isEl ? t!.name : "Full Name *"}
-                      </label>
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        required
-                        value={formData.name}
-                        onChange={handleChange}
-                        placeholder={isEl ? t!.namePlaceholder : "Your name"}
-                        className="w-full rounded-lg border border-input bg-background px-4 py-3 transition-smooth focus:ring-2 focus:ring-ring"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="email" className="mb-2 block text-sm font-medium">
-                        {isEl ? t!.emailLabel : "Email *"}
-                      </label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        required
-                        value={formData.email}
-                        onChange={handleChange}
-                        placeholder={isEl ? t!.emailPlaceholder : "you@company.com"}
-                        className="w-full rounded-lg border border-input bg-background px-4 py-3 transition-smooth focus:ring-2 focus:ring-ring"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid gap-4 sm:grid-cols-2">
-                    <div>
-                      <label htmlFor="company" className="mb-2 block text-sm font-medium">
-                        {isEl ? t!.company : "Company"}
-                      </label>
-                      <input
-                        type="text"
-                        id="company"
-                        name="company"
-                        value={formData.company}
-                        onChange={handleChange}
-                        placeholder={isEl ? t!.companyPlaceholder : "Your company"}
-                        className="w-full rounded-lg border border-input bg-background px-4 py-3 transition-smooth focus:ring-2 focus:ring-ring"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="phone" className="mb-2 block text-sm font-medium">
-                        {isEl ? t!.phone : "Phone"}
-                      </label>
-                      <input
-                        type="tel"
-                        id="phone"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        placeholder={isEl ? t!.phonePlaceholder : "+1 (555) 000-0000"}
-                        className="w-full rounded-lg border border-input bg-background px-4 py-3 transition-smooth focus:ring-2 focus:ring-ring"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label htmlFor="website" className="mb-2 block text-sm font-medium">
-                      {isEl ? t!.websiteLabel : "Your website"}
-                    </label>
-                    <input
-                      type="text"
-                      id="website"
-                      name="website"
-                      inputMode="url"
-                      autoComplete="url"
-                      value={formData.website}
-                      onChange={handleChange}
-                      placeholder={isEl ? t!.websitePlaceholder : "your-business.com"}
-                      aria-describedby="website-hint"
-                      className="w-full rounded-lg border border-input bg-background px-4 py-3 transition-smooth focus:ring-2 focus:ring-ring"
-                    />
-                    <p id="website-hint" className="mt-1.5 text-xs text-muted-foreground">
-                      {isEl ? t!.websiteHint : "Add it and we reply with a free SEO audit of your site."}
-                    </p>
-                  </div>
-
-                  <div>
-                    <label htmlFor="service" className="mb-2 block text-sm font-medium">
-                      {isEl ? t!.service : "What are you interested in?"}
-                    </label>
-                    <select
-                      id="service"
-                      name="service"
-                      value={formData.service}
-                      onChange={handleChange}
-                      className="w-full rounded-lg border border-input bg-background px-4 py-3 transition-smooth focus:ring-2 focus:ring-ring"
-                    >
-                      <option value="">{isEl ? t!.servicePlaceholder : "Select an option"}</option>
-                      <option value="website-creation">{isEl ? t!.services["website-creation"] : "New Website"}</option>
-                      <option value="website-redesign">{isEl ? t!.services["website-redesign"] : "Website Redesign"}</option>
-                      <option value="tourism-hotel">{isEl ? t!.services["tourism-hotel"] : "Tourism / Hotel Website"}</option>
-                      <option value="rent-a-car">{isEl ? t!.services["rent-a-car"] : "Rent-a-Car Website"}</option>
-                      <option value="travel-ai">{isEl ? t!.services["travel-ai"] : "Travel AI Chatbot"}</option>
-                      <option value="seo">{isEl ? t!.services.seo : "SEO / GEO / AEO Services"}</option>
-                      <option value="other">{isEl ? t!.services.other : "Other / Not Sure"}</option>
-                    </select>
-                  </div>
-
-                  <div>
-                    <label htmlFor="message" className="mb-2 block text-sm font-medium">
-                      {isEl ? t!.message : "Message *"}
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      required
-                      rows={5}
-                      value={formData.message}
-                      onChange={handleChange}
-                      placeholder={isEl ? t!.messagePlaceholder : "Tell us about your project..."}
-                      className="w-full resize-none rounded-lg border border-input bg-background px-4 py-3 transition-smooth focus:ring-2 focus:ring-ring"
-                    />
-                  </div>
-
-                  <button type="submit" disabled={isSubmitting} className="btn btn-primary w-full py-4 text-lg">
-                    {isSubmitting ? (
-                      <>
-                        <svg className="h-5 w-5 animate-spin" fill="none" viewBox="0 0 24 24">
-                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                          <path
-                            className="opacity-75"
-                            fill="currentColor"
-                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                          />
-                        </svg>
-                        {isEl ? t!.submitting : "Sending..."}
-                      </>
-                    ) : (
-                      isEl ? t!.submit : "Send Message"
-                    )}
-                  </button>
-                </form>
-              </div>
+            <div>
+              <label htmlFor="email" className={label}>
+                {plain(isEl ? t!.emailLabel : "Email *")}
+                {req}
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                inputMode="email"
+                autoComplete="email"
+                autoCapitalize="none"
+                spellCheck={false}
+                enterKeyHint="next"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder={isEl ? t!.emailPlaceholder : "you@company.com"}
+                aria-invalid={errors.email ? true : undefined}
+                aria-describedby={errors.email ? "email-error" : undefined}
+                className={field}
+              />
+              {errors.email ? (
+                <p id="email-error" className="mt-1.5 text-[13px] text-destructive">
+                  {errors.email}
+                </p>
+              ) : null}
             </div>
           </div>
+
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div>
+              <label htmlFor="phone" className={label}>
+                {isEl ? t!.phone : "Phone"}
+                {optional}
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                inputMode="tel"
+                autoComplete="tel"
+                enterKeyHint="next"
+                value={formData.phone}
+                onChange={handleChange}
+                placeholder={isEl ? t!.phonePlaceholder : "+30 690 000 0000"}
+                className={field}
+              />
+            </div>
+            <div>
+              <label htmlFor="website" className={label}>
+                {isEl ? t!.websiteLabel : "Your website"}
+                {optional}
+              </label>
+              <input
+                type="text"
+                id="website"
+                name="website"
+                inputMode="url"
+                autoComplete="url"
+                autoCapitalize="none"
+                spellCheck={false}
+                enterKeyHint="next"
+                value={formData.website}
+                onChange={handleChange}
+                placeholder={isEl ? t!.websitePlaceholder : "your-business.com"}
+                aria-describedby="website-hint"
+                className={field}
+              />
+            </div>
+          </div>
+          <p id="website-hint" className="-mt-2 text-[13px] text-muted-foreground">
+            {isEl ? t!.websiteHint : "Add it and we reply with a free SEO audit of your site."}
+          </p>
+
+          <div>
+            <label htmlFor="service" className={label}>
+              {isEl ? t!.service : "What are you interested in?"}
+              {optional}
+            </label>
+            <select id="service" name="service" value={formData.service} onChange={handleChange} className={field}>
+              <option value="">{isEl ? t!.servicePlaceholder : "Select an option"}</option>
+              <option value="website-creation">{isEl ? t!.services["website-creation"] : "New Website"}</option>
+              <option value="website-redesign">{isEl ? t!.services["website-redesign"] : "Website Redesign"}</option>
+              <option value="tourism-hotel">{isEl ? t!.services["tourism-hotel"] : "Tourism / Hotel Website"}</option>
+              <option value="rent-a-car">{isEl ? t!.services["rent-a-car"] : "Rent-a-Car Website"}</option>
+              <option value="travel-ai">{isEl ? t!.services["travel-ai"] : "Travel AI Chatbot"}</option>
+              <option value="seo">{isEl ? t!.services.seo : "SEO / GEO / AEO Services"}</option>
+              <option value="other">{isEl ? t!.services.other : "Other / Not Sure"}</option>
+            </select>
+          </div>
+
+          <div>
+            <label htmlFor="message" className={label}>
+              {plain(isEl ? t!.message : "Message *")}
+              {optional}
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              rows={4}
+              value={formData.message}
+              onChange={handleChange}
+              placeholder={isEl ? t!.messagePlaceholder : "Tell us about your project..."}
+              className={`${field} resize-y`}
+            />
+          </div>
+
+          <details className="group rounded-xl border border-hairline bg-background/40 px-4 py-3">
+            <summary className="cursor-pointer list-none text-[14px] font-medium text-muted-foreground transition-colors hover:text-foreground [&::-webkit-details-marker]:hidden">
+              + {isEl ? t!.company : "Company"} {optional}
+            </summary>
+            <input
+              type="text"
+              id="company"
+              name="company"
+              autoComplete="organization"
+              aria-label={isEl ? t!.company : "Company"}
+              value={formData.company}
+              onChange={handleChange}
+              placeholder={isEl ? t!.companyPlaceholder : "Your company"}
+              className={`${field} mt-3`}
+            />
+          </details>
+
+          <button type="submit" disabled={isSubmitting} className={`${kitPrimaryBtn} w-full !min-h-14 text-[16px] disabled:opacity-80`}>
+            {isSubmitting ? (
+              <>
+                <Loader2 className="size-5 animate-spin" aria-hidden />
+                {isEl ? t!.submitting : "Sending..."}
+              </>
+            ) : (
+              <>
+                {isEl ? t!.submit : "Send Message"}
+                <ArrowRight className="size-4" aria-hidden />
+              </>
+            )}
+          </button>
+        </form>
+      </div>
+
+      <aside className="space-y-4">
+        <div className="rounded-3xl border border-hairline bg-surface/60 p-6">
+          <h2 className="font-display text-[20px] font-semibold tracking-[-0.025em] text-foreground">{isEl ? t!.getInTouch : "Get in Touch"}</h2>
+          <ContactChannels variant="buttons" locale={locale} className="mt-5" />
+          <dl className="mt-6 divide-y divide-hairline border-t border-hairline">
+            <div className="flex items-start gap-3 py-4">
+              <Mail className="mt-0.5 size-4 shrink-0 text-brand" aria-hidden />
+              <div className="min-w-0">
+                <dt className="text-[13px] text-muted-foreground">{isEl ? t!.email : "Email"}</dt>
+                <dd>
+                  <a href={`mailto:${CONTACT_EMAIL}`} className="break-all text-[15px] font-medium text-foreground hover:text-brand">
+                    {CONTACT_EMAIL}
+                  </a>
+                </dd>
+              </div>
+            </div>
+            <div className="flex items-start gap-3 py-4">
+              <Clock3 className="mt-0.5 size-4 shrink-0 text-brand" aria-hidden />
+              <div>
+                <dt className="text-[13px] text-muted-foreground">{isEl ? t!.responseTime : "Response Time"}</dt>
+                <dd className="text-[15px] font-medium text-foreground">{isEl ? t!.responseValue : "Within 24 hours"}</dd>
+              </div>
+            </div>
+            <div className="flex items-start gap-3 pt-4">
+              <Globe className="mt-0.5 size-4 shrink-0 text-brand" aria-hidden />
+              <div>
+                <dt className="text-[13px] text-muted-foreground">{isEl ? t!.serving : "Serving"}</dt>
+                <dd className="text-[15px] font-medium text-foreground">{isEl ? t!.servingValue : "Clients worldwide"}</dd>
+              </div>
+            </div>
+          </dl>
         </div>
-      </section>
-    </main>
+
+        <div className="rounded-3xl border border-hairline bg-surface/60 p-6">
+          <h3 className="text-[16px] font-semibold text-foreground">{isEl ? t!.readyTitle : "Ready to start?"}</h3>
+          <p className="mt-2 text-[14px] leading-relaxed text-muted-foreground">
+            {isEl
+              ? t!.readyBody
+              : "Skip the form and go straight to our onboarding wizard to choose your package and get started today."}
+          </p>
+          <Link href={getStarted} className={`${kitSecondaryBtn} mt-5 w-full`}>
+            {isEl ? t!.readyCta : "Start Your Project"}
+            <ArrowRight className="size-4" aria-hidden />
+          </Link>
+        </div>
+      </aside>
+    </div>
   );
 }
