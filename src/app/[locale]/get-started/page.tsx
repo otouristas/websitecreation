@@ -15,9 +15,9 @@ export default async function GetStartedPage({
 
   return (
     <>
-      <Header />
+      <Header locale={locale as SiteLocale} />
       <GetStartedClient locale={locale as SiteLocale} />
-      <Footer />
+      <Footer locale={locale as SiteLocale} />
     </>
   );
 }
