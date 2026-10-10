@@ -137,6 +137,7 @@ export function HomePageView({ locale }: { locale: SiteLocale }) {
               />
               <AppWindow
                 href={demoHref}
+                bodyClassName="max-h-[520px] overflow-hidden [mask-image:linear-gradient(to_bottom,black_80%,transparent)] sm:max-h-none sm:[mask-image:none]"
                 ctaLabel={tx('Explore the live demo', 'Δείτε τη ζωντανή επίδειξη')}
                 label={tx(
                   'GSC Boost, our Search Console software, on a sample hotel: clicks, impressions, CTR and position, a clicks chart and the top fixes to ship next.',
