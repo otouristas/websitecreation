@@ -7,6 +7,13 @@ import { PLATFORM_TOOLS } from "@/data/platform-tools";
 import { isValidLocale, localizedPath, type SiteLocale } from "@/lib/i18n/locale";
 import { buildMetadata } from "@/lib/seo";
 import { getAllBlogPosts } from "@/lib/blog";
+import { ArrowRight, BookOpen, GitCompare, Library, Wrench } from "lucide-react";
+import { Accent, CtaBand, KitHeading, KitSection } from "@/components/kit";
+import { CardGrid, LinkCard, PageHero } from "@/components/page-kit";
+
+const colCard = "flex flex-col rounded-2xl border border-hairline bg-surface/70 p-6";
+const colTitle = "flex items-center gap-2 font-display text-lg font-semibold tracking-[-0.02em] text-foreground [&_svg]:size-4 [&_svg]:text-brand";
+const moreLink = "mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline";
 
 const FRAMEWORKS = [
   {
@@ -47,102 +54,110 @@ export default async function ResourcesPage({ params }: PageProps) {
   return (
     <>
       <Header />
-      <main className="blueprint-grid relative z-0 main-below-header pb-20">
-        <div className="container">
-          <header className="max-w-3xl mb-14">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Resources</h1>
-            <p className="text-lg text-muted-foreground">
-              Frameworks, deep reads, product deep-links, and the same modules our agency uses with clients.
-            </p>
-          </header>
-          {/* Frameworks lead: these two are the definitional owners for the
-              GEO/AEO cluster, and everything else here is a list of links. */}
-          <section className="mb-14 grid gap-4 md:grid-cols-2">
+      <main className="blueprint-grid relative z-0">
+        <PageHero
+          locale="en"
+          pill={{ href: lp("/glossary"), kind: "free", tag: "Glossary", text: "Every SEO term in plain words" }}
+          title={
+<Accent>Resources</Accent>
+          }
+          lead="Frameworks, deep reads, product deep-links, and the same modules our agency uses with clients."
+        />
+
+        {/* Frameworks lead: these two are the definitional owners for the
+            GEO/AEO cluster, and everything else here is a list of links. */}
+        <KitSection className="!pt-14">
+          <KitHeading eyebrow="Frameworks" eyebrowIcon={<Library />} title={<>Two models worth <Accent>bookmarking</Accent></>} />
+          <CardGrid cols={2} className="mt-10">
             {FRAMEWORKS.map((f) => (
-              <Link
-                key={f.path}
-                href={lp(f.path)}
-                className="glass rounded-2xl p-6 transition-colors hover:border-brand/40"
-              >
-                <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-brand">
-                  {f.eyebrow}
-                </span>
-                <h2 className="mt-3 font-display text-xl font-medium tracking-[-0.02em]">
-                  {f.title}
-                </h2>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{f.body}</p>
-              </Link>
+              <LinkCard key={f.path} href={lp(f.path)} eyebrow={f.eyebrow} title={f.title} text={f.body} as="h2" />
             ))}
-          </section>
-          <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-10 lg:gap-12">
-            <section>
-              <h2 className="font-display text-xl font-medium tracking-[-0.02em] mb-4">Glossary</h2>
-              <p className="text-sm text-muted-foreground mb-3">
-                <Link href={lp("/glossary")} className="text-primary font-medium hover:underline">
+          </CardGrid>
+        </KitSection>
+
+        <KitSection tinted>
+          <KitHeading eyebrow="Library" eyebrowIcon={<BookOpen />} title={<>Everything else, <Accent>in one place</Accent></>} />
+          <div className="mt-10 grid items-start gap-4 sm:grid-cols-2 xl:grid-cols-4">
+            <section className={colCard}>
+              <h2 className={colTitle}>
+                <BookOpen aria-hidden /> Glossary
+              </h2>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                <Link href={lp("/glossary")} className="font-medium text-primary hover:underline">
                   SEO glossary
                 </Link>{" "}
                 - definitions, examples, and links to features and tools.
               </p>
             </section>
-            <section>
-              <h2 className="font-display text-xl font-medium tracking-[-0.02em] mb-4">Blog</h2>
-              <ul className="space-y-3">
+            <section className={colCard}>
+              <h2 className={colTitle}>
+                <Library aria-hidden /> Blog
+              </h2>
+              <ul className="mt-4 max-h-[28rem] space-y-3 overflow-y-auto pr-1">
                 {posts.map((p) => (
                   <li key={`${p.locale}-${p.slug}`}>
                     <Link
                       href={localizedPath(p.locale, `/blog/${p.slug}`)}
-                      className="text-primary hover:underline font-medium"
+                      className="text-sm font-medium text-foreground hover:text-primary"
                     >
                       {p.title}
                     </Link>
-                    <p className="text-sm text-muted-foreground line-clamp-2">{p.description}</p>
+                    <p className="line-clamp-2 text-[13px] text-muted-foreground">{p.description}</p>
                   </li>
                 ))}
               </ul>
-              <Link href={lp("/blog")} className="inline-block mt-4 text-sm font-semibold text-primary hover:underline">
-                All articles →
+              <Link href={lp("/blog")} className={moreLink}>
+                All articles <ArrowRight className="size-3.5" aria-hidden />
               </Link>
             </section>
-            <section>
-              <h2 className="font-display text-xl font-medium tracking-[-0.02em] mb-4">Product intents</h2>
-              <ul className="space-y-3">
+            <section className={colCard}>
+              <h2 className={colTitle}>
+                <Wrench aria-hidden /> Product intents
+              </h2>
+              <ul className="mt-4 space-y-2.5">
                 {PLATFORM_TOOLS.map((t) => (
                   <li key={t.slug}>
-                    <Link href={lp(`/tools/${t.slug}`)} className="text-primary hover:underline font-medium">
+                    <Link href={lp(`/tools/${t.slug}`)} className="text-sm font-medium text-foreground hover:text-primary">
                       {t.title}
                     </Link>
                   </li>
                 ))}
               </ul>
-              <Link href={lp("/tools")} className="inline-block mt-4 text-sm font-semibold text-primary hover:underline">
-                Tools hub →
-              </Link>
-              <Link href={lp("/platform/features")} className="inline-block mt-4 ml-4 text-sm font-semibold text-primary hover:underline">
-                Feature library →
-              </Link>
+              <div className="flex flex-wrap gap-x-4">
+                <Link href={lp("/tools")} className={moreLink}>
+                  Tools hub <ArrowRight className="size-3.5" aria-hidden />
+                </Link>
+                <Link href={lp("/platform/features")} className={moreLink}>
+                  Feature library <ArrowRight className="size-3.5" aria-hidden />
+                </Link>
+              </div>
             </section>
-            <section>
-              <h2 className="font-display text-xl font-medium tracking-[-0.02em] mb-4">Compare</h2>
-              <ul className="space-y-3">
+            <section className={colCard}>
+              <h2 className={colTitle}>
+                <GitCompare aria-hidden /> Compare
+              </h2>
+              <ul className="mt-4 space-y-2.5">
                 <li>
-                  <Link href={lp("/compare/ahrefs")} className="text-primary hover:underline">
+                  <Link href={lp("/compare/ahrefs")} className="text-sm font-medium text-foreground hover:text-primary">
                     vs Ahrefs
                   </Link>
                 </li>
                 <li>
-                  <Link href={lp("/compare/semrush")} className="text-primary hover:underline">
+                  <Link href={lp("/compare/semrush")} className="text-sm font-medium text-foreground hover:text-primary">
                     vs Semrush
                   </Link>
                 </li>
                 <li>
-                  <Link href={lp("/compare/search-console-alone")} className="text-primary hover:underline">
+                  <Link href={lp("/compare/search-console-alone")} className="text-sm font-medium text-foreground hover:text-primary">
                     vs Search Console alone
                   </Link>
                 </li>
               </ul>
             </section>
           </div>
-        </div>
+        </KitSection>
+
+        <CtaBand locale="en" source="resources-band" />
       </main>
       <Footer />
     </>

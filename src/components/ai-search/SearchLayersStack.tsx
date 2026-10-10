@@ -43,7 +43,7 @@ function LayerRow({ layer, index, locale }: { layer: SearchLayer; index: number;
         <span className="size-2 rounded-full bg-signature" />
       </span>
 
-      <article className="glass rounded-2xl p-6 transition-colors hover:border-signature/40 md:ml-10 md:p-7">
+      <article className="rounded-2xl border border-hairline bg-surface/70 p-6 transition-colors hover:border-signature/40 md:ml-10 md:p-7">
         <div className="grid gap-6 lg:grid-cols-12 lg:gap-8">
           {/* Identity */}
           <header className="lg:col-span-3">
@@ -131,7 +131,7 @@ export function SearchLayersStack({
       </ol>
 
       {/* The closing bar: what every layer above is standing on. */}
-      <div className="glass mt-4 flex flex-col gap-4 rounded-2xl p-6 md:ml-10 md:flex-row md:items-center md:justify-between md:p-7">
+      <div className="mt-4 flex flex-col gap-4 rounded-2xl border border-hairline bg-surface/70 p-6 md:ml-10 md:flex-row md:items-center md:justify-between md:p-7">
         <div>
           <h2 className="font-display text-lg font-semibold tracking-[-0.02em] text-foreground">
             {LAYER_FOUNDATION.title}
