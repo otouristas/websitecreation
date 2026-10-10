@@ -7,7 +7,18 @@ import {
 } from '@/data/portfolio';
 import { PortfolioThumbnail } from '@/components/landing/PortfolioThumbnail';
 import SchemaMarkup from '@/components/seo/SchemaMarkup';
-import Breadcrumbs from '@/components/seo/Breadcrumbs';
+import { ArrowRight, Compass, FileText, Target, TrendingUp } from 'lucide-react';
+import {
+  AppWindow,
+  CheckList,
+  CtaBand,
+  KitHeading,
+  KitSection,
+  Stage,
+  kitPrimaryBtn,
+  kitSecondaryBtn,
+} from '@/components/kit';
+import { CardGrid, ChipLinks, InfoCard, LinkCard, PageHero, accentTail } from '@/components/page-kit';
 import { generateArticleSchema, generateBreadcrumbSchema, combineSchemas } from '@/lib/seo/schema';
 import { schemaTypeForPortfolioCategory } from '@/data/ai-mode-tags';
 import { buildProjectCaseStudy } from '@/lib/portfolio-case-study';
@@ -29,16 +40,9 @@ function CaseStudyBlock({
   items: string[];
 }) {
   return (
-    <div className="mb-10">
-      <h2 className="mb-4 font-display text-2xl font-medium tracking-[-0.02em]">{title}</h2>
-      <ul className="space-y-3">
-        {items.map((item) => (
-          <li key={item} className="flex items-start gap-3 text-muted-foreground">
-            <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" aria-hidden />
-            <span>{item}</span>
-          </li>
-        ))}
-      </ul>
+    <div className="reveal rounded-2xl border border-hairline bg-surface/60 p-6">
+      <h2 className="font-display text-[20px] font-semibold tracking-[-0.025em] text-foreground">{title}</h2>
+      <CheckList size="sm" className="mt-4" items={items} />
     </div>
   );
 }
@@ -93,173 +97,171 @@ export function WorkDetail({ project, locale = 'en' }: WorkDetailProps) {
   );
   const breadcrumbSchema = generateBreadcrumbSchema({ items: breadcrumbs });
 
+  const tx = (en: string, el: string) => (isEl ? el : en);
+  const domain = project.url.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '');
+
   return (
     <>
       <SchemaMarkup schemas={combineSchemas(articleSchema, breadcrumbSchema)} />
-      <section className="section ">
-        <div className="container">
-          <Breadcrumbs items={breadcrumbs} className="mb-6" />
-          <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
-            <div>
-              <span className="mb-3 inline-block rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
-                {isEl ? cat.labelEl : cat.label}
+      <PageHero
+        locale={locale}
+        size="md"
+        breadcrumbs={breadcrumbs}
+        pill={{
+          href: lp('/work'),
+          kind: project.liveStatus === 'offline' ? 'save' : 'live',
+          tag: isEl ? cat.labelEl : cat.label,
+          text: tx('Case study', 'Μελέτη περίπτωσης'),
+        }}
+        title={accentTail(project.name)}
+        lead={isEl && project.summaryEl ? project.summaryEl : project.summary}
+        meta={
+          <ul className="flex flex-wrap justify-center gap-1.5">
+            {project.markets.map((m) => (
+              <li key={m} className="rounded-md border border-hairline bg-surface/70 px-2 py-0.5 font-mono text-[11px] text-muted-foreground">
+                {m}
+              </li>
+            ))}
+            {project.languages.map((l) => (
+              <li key={l} className="rounded-md border border-hairline bg-surface/70 px-2 py-0.5 font-mono text-[11px] uppercase text-muted-foreground">
+                {l}
+              </li>
+            ))}
+          </ul>
+        }
+        actions={
+          <div className="flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
+            {/* Four projects' domains no longer serve - one is a parked
+                for-sale page. Sending a visitor to a parking page under
+                "View live site" is worse than saying so. */}
+            {project.liveStatus === 'offline' ? (
+              <span className={`${kitSecondaryBtn} pointer-events-none opacity-70`}>
+                {isEl ? 'Η ιστοσελίδα δεν είναι πλέον ενεργή' : 'Site no longer live'}
               </span>
-              <h1 className="mb-4 text-4xl font-bold">{project.name}</h1>
-              <p className="mb-6 text-lg text-muted-foreground">
-                {isEl && project.summaryEl ? project.summaryEl : project.summary}
-              </p>
-              <div className="mb-6 flex flex-wrap gap-2">
-                {project.markets.map((m) => (
-                  <span key={m} className="rounded-md border border-hairline px-2 py-1 text-xs">
-                    {m}
-                  </span>
-                ))}
-                {project.languages.map((l) => (
-                  <span key={l} className="rounded-md border border-hairline px-2 py-1 text-xs uppercase">
-                    {l}
-                  </span>
-                ))}
-              </div>
-              <div className="flex flex-wrap gap-3">
-                {/* Four projects' domains no longer serve - one is a parked
-                    for-sale page. Sending a visitor to a parking page under
-                    "View live site" is worse than saying so. */}
-                {project.liveStatus === 'offline' ? (
-                  <span className="btn btn-outline pointer-events-none opacity-70">
-                    {isEl ? 'Η ιστοσελίδα δεν είναι πλέον ενεργή' : 'Site no longer live'}
-                  </span>
-                ) : (
-                  <a
-                    href={project.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-outline"
-                  >
-                    {isEl ? 'Δείτε τη ζωντανή ιστοσελίδα' : 'View live site'} ↗
+            ) : (
+              <a href={project.url} target="_blank" rel="noopener noreferrer" className={kitSecondaryBtn}>
+                {isEl ? 'Δείτε τη ζωντανή ιστοσελίδα' : 'View live site'} ↗
+              </a>
+            )}
+            <Link href={localizedPath(isEl ? 'el' : 'en', `/get-started?project=${project.category}`)} className={kitPrimaryBtn}>
+              {isEl ? 'Ζητήστε παρόμοιο έργο' : 'Get a similar project'}
+              <ArrowRight className="size-4" aria-hidden />
+            </Link>
+          </div>
+        }
+        trust={
+          project.relatedUrls && project.relatedUrls.length > 0 ? (
+            <p className="text-[13px] text-muted-foreground">
+              <span className="font-medium text-foreground">{isEl ? 'Σχετικοί ιστότοποι: ' : 'Related domains: '}</span>
+              {project.relatedUrls.map((u, i) => (
+                <span key={u}>
+                  {i > 0 ? ', ' : ''}
+                  <a href={u} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 hover:text-foreground">
+                    {u.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')}
                   </a>
-                )}
-                <Link
-                  href={localizedPath(isEl ? 'el' : 'en', `/get-started?project=${project.category}`)}
-                  className="btn btn-primary"
-                >
-                  {isEl ? 'Ζητήστε παρόμοιο έργο' : 'Get a similar project'}
-                </Link>
-              </div>
-              {project.relatedUrls && project.relatedUrls.length > 0 ? (
-                <div className="mt-4 text-sm text-muted-foreground">
-                  <span className="font-medium text-foreground">
-                    {isEl ? 'Σχετικοί ιστότοποι: ' : 'Related domains: '}
-                  </span>
-                  {project.relatedUrls.map((u, i) => (
-                    <span key={u}>
-                      {i > 0 ? ', ' : ''}
-                      <a
-                        href={u}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="underline underline-offset-4 hover:text-primary"
-                      >
-                        {u.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')}
-                      </a>
-                    </span>
-                  ))}
-                </div>
-              ) : null}
-            </div>
-            <div className="relative aspect-[16/10] overflow-hidden rounded-[10px] border border-hairline shadow-lg">
+                </span>
+              ))}
+            </p>
+          ) : null
+        }
+      >
+        <div className="mx-auto mt-12 w-full max-w-[1000px] px-3 sm:px-6">
+          <AppWindow url={domain} label={isEl ? `${project.name} - αρχική σελίδα` : `${project.name} homepage`}>
+            <div className="relative aspect-[16/10] overflow-hidden">
               <PortfolioThumbnail src={project.screenshot} alt={isEl ? `${project.name} - αρχική σελίδα` : `${project.name} homepage`} />
             </div>
-          </div>
+          </AppWindow>
         </div>
-      </section>
+      </PageHero>
 
-      <section className="section">
-        <div className="container max-w-3xl">
-          <h2 className="mb-4 font-display text-2xl font-medium tracking-[-0.02em]">{isEl ? 'Επισκόπηση έργου' : 'Project overview'}</h2>
-          <p className="mb-8 text-muted-foreground">{caseStudy.overview}</p>
+      <KitSection>
+        <div className="grid gap-4 md:grid-cols-3">
+          <InfoCard as="h2" icon={<FileText />} title={isEl ? 'Επισκόπηση έργου' : 'Project overview'} text={caseStudy.overview} />
+          <InfoCard as="h2" icon={<Target />} title={isEl ? 'Πρόκληση' : 'Challenge'} text={caseStudy.challenge} />
+          <InfoCard as="h2" icon={<Compass />} title={isEl ? 'Προσέγγιση' : 'Approach'} text={caseStudy.approach} />
+        </div>
 
-          <h2 className="mb-4 font-display text-2xl font-medium tracking-[-0.02em]">{isEl ? 'Πρόκληση' : 'Challenge'}</h2>
-          <p className="mb-8 text-muted-foreground">{caseStudy.challenge}</p>
-
-          <h2 className="mb-4 font-display text-2xl font-medium tracking-[-0.02em]">{isEl ? 'Προσέγγιση' : 'Approach'}</h2>
-          <p className="mb-10 text-muted-foreground">{caseStudy.approach}</p>
-
+        <div className="mt-4 grid gap-4 md:grid-cols-2">
           <CaseStudyBlock title={caseStudy.seo.title} items={caseStudy.seo.items} />
           <CaseStudyBlock title={caseStudy.geoAeo.title} items={caseStudy.geoAeo.items} />
           <CaseStudyBlock title={caseStudy.technical.title} items={caseStudy.technical.items} />
           <CaseStudyBlock title={caseStudy.content.title} items={caseStudy.content.items} />
+        </div>
+      </KitSection>
 
-          <h2 className="mb-4 font-display text-2xl font-medium tracking-[-0.02em]">{isEl ? 'Υπηρεσίες που παραδόθηκαν' : 'Services delivered'}</h2>
-          <ul className="mb-10 flex flex-wrap gap-2">
-            {project.services.map((s) => {
-              const label = isEl ? getServiceEl(s)?.shortName ?? s.replace(/-/g, ' ') : s.replace(/-/g, ' ');
-              return (
-                <li key={s}>
-                  <Link
-                    href={localizedPath(isEl ? 'el' : 'en', `/services/${s}`)}
-                    className="rounded-lg bg-muted px-3 py-1.5 text-sm hover:bg-primary/10 hover:text-primary"
-                  >
-                    {label}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-
+      <KitSection tinted>
+        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
+          <div className="min-w-0">
+            <KitHeading
+              eyebrow={tx('Results', 'Αποτελέσματα')}
+              eyebrowIcon={<TrendingUp />}
+              title={isEl ? 'Αποτελέσματα' : 'Outcomes'}
+            />
+            <CheckList className="mt-6" items={caseStudy.outcomes} />
+            <h2 className="mt-12 font-display text-[22px] font-semibold tracking-[-0.025em] text-foreground">
+              {isEl ? 'Υπηρεσίες που παραδόθηκαν' : 'Services delivered'}
+            </h2>
+            <ChipLinks
+              className="mt-4"
+              items={project.services.map((sv) => ({
+                href: localizedPath(isEl ? 'el' : 'en', `/services/${sv}`),
+                label: isEl ? getServiceEl(sv)?.shortName ?? sv.replace(/-/g, ' ') : sv.replace(/-/g, ' '),
+                key: sv,
+              }))}
+            />
+            <p className="mt-8 text-[14px] text-muted-foreground">
+              {isEl ? 'Φιλοξενία: ' : 'Hosting: '}
+              <a
+                href="https://dailyhost.gr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-foreground underline underline-offset-4 hover:text-brand"
+              >
+                Dailyhost.gr
+              </a>
+            </p>
+          </div>
           {(project.seoTitle || project.seoDescription) && (
-            <div className="mb-10 rounded-[8px] border border-hairline bg-surface-raised/40 p-6">
-              <h2 className="mb-4 font-display text-xl font-medium tracking-[-0.02em]">{isEl ? 'Στιγμιότυπο SEO' : 'Live SEO snapshot'}</h2>
-              {project.seoTitle && (
-                <p className="mb-2 text-sm">
-                  <strong>{isEl ? 'Τίτλος:' : 'Title:'}</strong> {project.seoTitle}
-                </p>
-              )}
-              {project.seoDescription && (
-                <p className="text-sm text-muted-foreground">
-                  <strong>{isEl ? 'Meta περιγραφή:' : 'Meta:'}</strong> {project.seoDescription}
-                </p>
-              )}
+            <div className="min-w-0">
+              <Stage>
+                <div className="rounded-xl border border-hairline bg-background p-5 sm:p-6">
+                  <h2 className="font-display text-[20px] font-semibold tracking-[-0.025em] text-foreground">
+                    {isEl ? 'Στιγμιότυπο SEO' : 'Live SEO snapshot'}
+                  </h2>
+                  <div className="mt-4 rounded-lg border border-hairline bg-surface/60 p-4">
+                    <p className="truncate font-mono text-[12px] text-muted-foreground">{domain}</p>
+                    {project.seoTitle && (
+                      <p className="mt-1 text-[15.5px] font-medium leading-snug text-link">
+                        <span className="sr-only">{isEl ? 'Τίτλος:' : 'Title:'} </span>
+                        {project.seoTitle}
+                      </p>
+                    )}
+                    {project.seoDescription && (
+                      <p className="mt-1.5 text-[13.5px] leading-relaxed text-muted-foreground">
+                        <span className="sr-only">{isEl ? 'Meta περιγραφή:' : 'Meta:'} </span>
+                        {project.seoDescription}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              </Stage>
             </div>
           )}
-
-          <h2 className="mb-4 font-display text-2xl font-medium tracking-[-0.02em]">{isEl ? 'Αποτελέσματα' : 'Outcomes'}</h2>
-          <ul className="mb-10 list-disc space-y-2 pl-5 text-muted-foreground">
-            {caseStudy.outcomes.map((r) => (
-              <li key={r}>{r}</li>
-            ))}
-          </ul>
-
-          <p className="text-sm text-muted-foreground">
-            {isEl ? 'Φιλοξενία: ' : 'Hosting: '}
-            <a
-              href="https://dailyhost.gr"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-medium text-foreground underline underline-offset-4 hover:text-primary"
-            >
-              Dailyhost.gr
-            </a>
-          </p>
         </div>
-      </section>
+      </KitSection>
 
       {related.length > 0 && (
-        <section className="section border-t border-hairline bg-surface-raised/40">
-          <div className="container">
-            <h2 className="mb-6 font-display text-2xl font-medium tracking-[-0.02em]">{isEl ? 'Σχετικά έργα' : 'Related projects'}</h2>
-            <div className="grid gap-6 sm:grid-cols-3">
-              {related.map((p) => (
-                <Link key={p.slug} href={lp(`/work/${p.slug}`)} className="card p-4 hover:border-primary/40">
-                  <h3 className="font-semibold">{p.name}</h3>
-                  <p className="mt-1 line-clamp-2 text-sm text-muted-foreground">
-                    {isEl && p.summaryEl ? p.summaryEl : p.summary}
-                  </p>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
+        <KitSection>
+          <KitHeading eyebrow={isEl ? cat.labelEl : cat.label} title={isEl ? 'Σχετικά έργα' : 'Related projects'} />
+          <CardGrid className="mt-10">
+            {related.map((p) => (
+              <LinkCard key={p.slug} href={lp(`/work/${p.slug}`)} title={p.name} text={isEl && p.summaryEl ? p.summaryEl : p.summary} />
+            ))}
+          </CardGrid>
+        </KitSection>
       )}
+
+      <CtaBand locale={locale} source={`work-${project.slug}`} />
     </>
   );
 }

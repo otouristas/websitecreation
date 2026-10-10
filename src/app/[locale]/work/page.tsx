@@ -9,6 +9,9 @@ import SchemaMarkup from '@/components/seo/SchemaMarkup';
 import { isValidLocale, localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 import { PROJECT_COUNT } from '@/data/company-facts';
 import { portfolioProjects } from '@/data/portfolio';
+import { generateBreadcrumbs } from '@/lib/linking';
+import { CtaBand, KitSection } from '@/components/kit';
+import { PageHero, accentTail } from '@/components/page-kit';
 
 type PageProps = { params: Promise<{ locale: string }> };
 
@@ -68,22 +71,30 @@ export default async function WorkPage({ params }: PageProps) {
         desc: 'Live websites we designed, built and optimized for tourism, hospitality, rent-a-car and travel AI - across Greece, the UK, the US and Europe.',
       };
 
+  const tx = (en: string, el: string) => (isEl ? el : en);
+  const breadcrumbs = generateBreadcrumbs([{ name: isEl ? 'Έργα' : 'Work', url: '/work' }], locale as SiteLocale);
+
   return (
     <>
       <SchemaMarkup schemas={[collectionSchema]} />
       <Header locale={locale as SiteLocale} />
-      <main className="blueprint-grid relative z-0 main-below-header">
-        <section className="section ">
-          <div className="container max-w-3xl">
-            <h1 className="mb-4 text-4xl font-bold sm:text-5xl">{t.h1}</h1>
-            <p className="text-lg text-muted-foreground">{t.desc}</p>
-          </div>
-        </section>
-        <section className="section">
-          <div className="container">
-            <WorkIndexClient locale={locale as SiteLocale} />
-          </div>
-        </section>
+      <main className="blueprint-grid relative z-0">
+        <PageHero
+          locale={locale as SiteLocale}
+          breadcrumbs={breadcrumbs}
+          pill={{
+            href: lp('/solutions/hotels'),
+            kind: 'live',
+            tag: tx('Live', 'Live'),
+            text: tx(`${PROJECT_COUNT} sites you can open today`, `${PROJECT_COUNT} ιστοσελίδες που ανοίγουν σήμερα`),
+          }}
+          title={accentTail(t.h1, isEl ? 2 : 1)}
+          lead={t.desc}
+        />
+        <KitSection className="!pt-12">
+          <WorkIndexClient locale={locale as SiteLocale} />
+        </KitSection>
+        <CtaBand locale={locale as SiteLocale} source="work-band" />
       </main>
       <Footer locale={locale as SiteLocale} />
     </>

@@ -48,11 +48,11 @@ export default async function WorkDetailPage({
 
   return (
     <>
-      <Header />
-      <main className="blueprint-grid relative z-0 main-below-header">
+      <Header locale={locale as SiteLocale} />
+      <main className="blueprint-grid relative z-0">
         <WorkDetail project={project} locale={locale as SiteLocale} />
       </main>
-      <Footer />
+      <Footer locale={locale as SiteLocale} />
     </>
   );
 }
