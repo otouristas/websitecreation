@@ -107,7 +107,7 @@ export default async function ServicesPage({ params }: PageProps) {
           visual={
             <div className="grid gap-3 md:grid-cols-2">
               <ReportPreview locale={siteLocale} />
-              <div className="grid content-start gap-3">
+              <div className="grid min-w-0 grid-cols-1 content-start gap-3">
                 <LocalPackPreview locale={siteLocale} city={isEl ? 'Πάρος' : 'Paros'} />
                 <div className="hidden md:block">
                   <SpeedPreview locale={siteLocale} />

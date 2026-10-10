@@ -16,7 +16,7 @@ import {
   pick,
 } from '@/components/service-kit';
 import { portfolioProjects } from '@/data/portfolio';
-import { PROJECT_COUNT } from '@/data/company-facts';
+import { PROJECTS_DELIVERED_LABEL } from '@/data/company-facts';
 import { getServiceBySlug } from '@/data/services';
 import { getServiceEl, type ServiceTopicEl } from '@/data/services-i18n';
 import { getIndexableServiceLocations } from '@/data/locations';
@@ -127,7 +127,7 @@ const copy = {
     proof: {
       eyebrow: 'Work',
       title: 'Recent builds',
-      body: (n: number) => `A selection from ${n} delivered projects. Every screenshot is a live site.`,
+      body: (n: string) => `A selection from ${n} delivered projects. Every screenshot is a live site.`,
       all: 'See all work',
     },
     pricing: {
@@ -220,7 +220,7 @@ const copy = {
     proof: {
       eyebrow: 'Έργα',
       title: 'Πρόσφατες κατασκευές',
-      body: (n: number) =>
+      body: (n: string) =>
         `Μια επιλογή από ${n} έργα που έχουμε παραδώσει ως εταιρεία κατασκευής ιστοσελίδων. Κάθε screenshot είναι ενεργό site.`,
       all: 'Δείτε όλα τα έργα',
     },
@@ -374,7 +374,7 @@ export function WebsiteCreationPage({ locale }: { locale: SiteLocale }) {
       {/* 4 - Work */}
       <KitSection id="work">
         <div className="flex flex-wrap items-end justify-between gap-6">
-          <KitHeading eyebrow={t.proof.eyebrow} title={<AccentTitle text={t.proof.title} />} description={t.proof.body(PROJECT_COUNT)} />
+          <KitHeading eyebrow={t.proof.eyebrow} title={<AccentTitle text={t.proof.title} />} description={t.proof.body(PROJECTS_DELIVERED_LABEL)} />
           <Link href={lp('/work')} className="inline-flex items-center gap-1.5 text-[14px] font-medium text-link underline-offset-4 hover:underline">
             {t.proof.all}
             <ArrowUpRight className="size-4" aria-hidden />

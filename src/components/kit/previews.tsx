@@ -213,28 +213,34 @@ export function RawQueriesPanel({ locale: l }: { readonly locale: L }) {
   ];
   return (
     <PCard title={tx(l, "Queries", "Ερωτήματα")} meta={tx(l, "1,248 rows", "1.248 γραμμές")}>
-      <table className="w-full text-[12px]">
-        <thead>
-          <tr className="text-[10.5px] uppercase tracking-wide text-muted-foreground">
-            <th className="px-4 py-2 text-left font-medium">{tx(l, "Top queries", "Κορυφαία ερωτήματα")}</th>
-            <th className="px-2 py-2 text-right font-medium">{tx(l, "Clicks", "Κλικ")}</th>
-            <th className="hidden px-2 py-2 text-right font-medium sm:table-cell">{tx(l, "Impr.", "Εμφαν.")}</th>
-            <th className="px-2 py-2 text-right font-medium">CTR</th>
-            <th className="px-4 py-2 text-right font-medium">{tx(l, "Pos.", "Θέση")}</th>
-          </tr>
-        </thead>
-        <tbody className="divide-y divide-hairline">
-          {rows.map((r) => (
-            <tr key={r[0]}>
-              <td className="max-w-[12rem] truncate px-4 py-2 text-foreground/90">{r[0]}</td>
-              <td className="px-2 py-2 text-right tabular-nums text-muted-foreground">{r[1]}</td>
-              <td className="hidden px-2 py-2 text-right tabular-nums text-muted-foreground sm:table-cell">{r[2]}</td>
-              <td className="px-2 py-2 text-right tabular-nums text-muted-foreground">{r[3]}</td>
-              <td className="px-4 py-2 text-right tabular-nums text-muted-foreground">{r[4]}</td>
+      {/* The first column takes what is left and truncates (w-full + max-w-0);
+          the number columns never wrap. Columns appear with the card's own
+          width (container queries), not the viewport's, because the same card
+          sits full-width on phones and in a half-width column on desktop. */}
+      <div className="@container">
+        <table className="w-full text-[12px]">
+          <thead>
+            <tr className="whitespace-nowrap text-[10.5px] uppercase tracking-wide text-muted-foreground">
+              <th className="w-full max-w-0 truncate px-3 py-2 text-left font-medium @sm:px-4">{tx(l, "Top queries", "Κορυφαία ερωτήματα")}</th>
+              <th className="px-2 py-2 text-right font-medium">{tx(l, "Clicks", "Κλικ")}</th>
+              <th className="hidden px-2 py-2 text-right font-medium @md:table-cell">{tx(l, "Impr.", "Εμφαν.")}</th>
+              <th className="px-2 py-2 text-right font-medium">CTR</th>
+              <th className="px-3 py-2 text-right font-medium @sm:px-4">{tx(l, "Pos.", "Θέση")}</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody className="divide-y divide-hairline">
+            {rows.map((r) => (
+              <tr key={r[0]} className="whitespace-nowrap">
+                <td className="w-full max-w-0 truncate px-3 py-2 text-foreground/90 @sm:px-4">{r[0]}</td>
+                <td className="px-2 py-2 text-right tabular-nums text-muted-foreground">{r[1]}</td>
+                <td className="hidden px-2 py-2 text-right tabular-nums text-muted-foreground @md:table-cell">{r[2]}</td>
+                <td className="px-2 py-2 text-right tabular-nums text-muted-foreground">{r[3]}</td>
+                <td className="px-3 py-2 text-right tabular-nums text-muted-foreground @sm:px-4">{r[4]}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </PCard>
   );
 }
@@ -396,28 +402,30 @@ export function KeywordsPreview({ locale: l }: { readonly locale: L }) {
         subtitle={tx(l, "Greece · Greek and English", "Ελλάδα · Ελληνικά και Αγγλικά")}
         meta={tx(l, "sample data", "δείγμα")}
       >
-        <table className="w-full text-[12px]">
-          <thead>
-            <tr className="text-[10.5px] uppercase tracking-wide text-muted-foreground">
-              <th className="px-4 py-2 text-left font-medium">{tx(l, "Keyword", "Λέξη-κλειδί")}</th>
-              <th className="hidden px-2 py-2 text-left font-medium sm:table-cell">{tx(l, "Intent", "Πρόθεση")}</th>
-              <th className="px-2 py-2 text-right font-medium">{tx(l, "Volume", "Όγκος")}</th>
-              <th className="px-2 py-2 text-right font-medium">KD</th>
-              <th className="px-4 py-2 text-right font-medium">{tx(l, "You", "Εσείς")}</th>
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-hairline">
-            {rows.map((r) => (
-              <tr key={r[0]}>
-                <td className="max-w-[11rem] truncate px-4 py-2 text-foreground/90">{r[0]}</td>
-                <td className="hidden px-2 py-2 sm:table-cell"><Pill tone={r[5]}>{r[1]}</Pill></td>
-                <td className="px-2 py-2 text-right tabular-nums text-muted-foreground">{r[2]}</td>
-                <td className="px-2 py-2 text-right tabular-nums text-muted-foreground">{r[3]}</td>
-                <td className="px-4 py-2 text-right tabular-nums text-muted-foreground">{r[4]}</td>
+        <div className="@container">
+          <table className="w-full text-[12px]">
+            <thead>
+              <tr className="whitespace-nowrap text-[10.5px] uppercase tracking-wide text-muted-foreground">
+                <th className="w-full max-w-0 truncate px-3 py-2 text-left font-medium @sm:px-4">{tx(l, "Keyword", "Λέξη-κλειδί")}</th>
+                <th className="hidden px-2 py-2 text-left font-medium @lg:table-cell">{tx(l, "Intent", "Πρόθεση")}</th>
+                <th className="px-2 py-2 text-right font-medium">{tx(l, "Volume", "Όγκος")}</th>
+                <th className="px-2 py-2 text-right font-medium">KD</th>
+                <th className="px-3 py-2 text-right font-medium @sm:px-4">{tx(l, "You", "Εσείς")}</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody className="divide-y divide-hairline">
+              {rows.map((r) => (
+                <tr key={r[0]} className="whitespace-nowrap">
+                  <td className="w-full max-w-0 truncate px-3 py-2 text-foreground/90 @sm:px-4">{r[0]}</td>
+                  <td className="hidden px-2 py-2 @lg:table-cell"><Pill tone={r[5]}>{r[1]}</Pill></td>
+                  <td className="px-2 py-2 text-right tabular-nums text-muted-foreground">{r[2]}</td>
+                  <td className="px-2 py-2 text-right tabular-nums text-muted-foreground">{r[3]}</td>
+                  <td className="px-3 py-2 text-right tabular-nums text-muted-foreground @sm:px-4">{r[4]}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </PCard>
       <PCard title={tx(l, "Rank tracking", "Παρακολούθηση θέσεων")} subtitle={tx(l, "36 tracked keywords", "36 λέξεις-κλειδιά")} meta={tx(l, "daily", "καθημερινά")}>
         <div className="grid gap-3 px-4 py-3 sm:grid-cols-[1fr_1fr]">
@@ -442,7 +450,7 @@ export function KeywordsPreview({ locale: l }: { readonly locale: L }) {
               ["naoussa hotels", "9.6", "-0.4"],
             ].map(([k, p, d]) => (
               <li key={k} className="flex items-center justify-between gap-2">
-                <span className="truncate text-foreground/90">{k}</span>
+                <span className="min-w-0 truncate text-foreground/90">{k}</span>
                 <span className="flex shrink-0 items-center gap-2 tabular-nums">
                   <span className="text-foreground">{p}</span>
                   <span className={d.startsWith("-") ? "text-destructive" : "text-success"}>{d}</span>
@@ -467,19 +475,23 @@ export function AuditPreview({ locale: l }: { readonly locale: L }) {
   ];
   return (
     <PCard title={tx(l, "Site audit", "Έλεγχος ιστότοπου")} subtitle={tx(l, "312 pages crawled · sample data", "312 σελίδες · δείγμα")} meta={tx(l, "weekly", "εβδομαδιαία")}>
-      <div className="flex items-center gap-4 border-b border-hairline px-4 py-3">
-        <ScoreRing value={78} />
-        <div className="grid flex-1 grid-cols-3 gap-2">
-          {[
-            ["2", tx(l, "Critical", "Κρίσιμα"), "text-destructive"],
-            ["14", tx(l, "Warnings", "Προσοχή"), "text-warning"],
-            ["27", tx(l, "Notices", "Σημειώσεις"), "text-brand"],
-          ].map(([n, label, cls]) => (
-            <div key={label} className="rounded-lg border border-hairline bg-background px-2.5 py-2">
-              <div className="font-display text-[18px] font-semibold text-foreground">{n}</div>
-              <div className={cn("text-[11px]", cls)}>{label}</div>
-            </div>
-          ))}
+      {/* Score ring beside three tiles; on a narrow card the ring sits above
+          them so each tile keeps room for its one-word label. */}
+      <div className="@container border-b border-hairline">
+        <div className="flex flex-col items-start gap-3 px-4 py-3 @sm:flex-row @sm:items-center @sm:gap-4">
+          <ScoreRing value={78} />
+          <div className="grid w-full min-w-0 flex-1 grid-cols-3 gap-2">
+            {[
+              ["2", tx(l, "Critical", "Κρίσιμα"), "text-destructive"],
+              ["14", tx(l, "Warnings", "Προσοχή"), "text-warning"],
+              ["27", tx(l, "Notices", "Σημειώσεις"), "text-brand"],
+            ].map(([n, label, cls]) => (
+              <div key={label} className="min-w-0 rounded-lg border border-hairline bg-background px-2 py-2 @md:px-2.5">
+                <div className="font-display text-[18px] font-semibold tabular-nums text-foreground">{n}</div>
+                <div className={cn("text-[11px] leading-tight [overflow-wrap:anywhere]", cls)}>{label}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
       <ul className="divide-y divide-hairline">
@@ -530,25 +542,29 @@ export function AiVisibilityPreview({ locale: l }: { readonly locale: L }) {
       subtitle={tx(l, "How AI assistants answer your buyers’ questions · sample data", "Πώς απαντούν οι βοηθοί AI στους πελάτες σας · δείγμα")}
       meta={tx(l, "weekly", "εβδομαδιαία")}
     >
-      <div className="overflow-hidden">
+      {/* `truncate` on a <td> only stops wrapping, it never clips, so the
+          prompt column used to push the status columns out of the card. The
+          prompt cell now takes the leftover width (w-full + max-w-0) and the
+          extra engines appear by card width, not viewport width. */}
+      <div className="@container overflow-hidden">
         <table className="w-full text-[11.5px]">
           <thead>
-            <tr className="text-[10px] uppercase tracking-wide text-muted-foreground">
-              <th className="px-4 py-2 text-left font-medium">{tx(l, "Prompt", "Ερώτηση")}</th>
+            <tr className="whitespace-nowrap text-[10px] uppercase tracking-wide text-muted-foreground">
+              <th className="w-full max-w-0 truncate px-3 py-2 text-left font-medium @sm:px-4">{tx(l, "Prompt", "Ερώτηση")}</th>
               <th className="px-2 py-2 text-left font-medium">ChatGPT</th>
-              <th className="hidden px-2 py-2 text-left font-medium sm:table-cell">Gemini</th>
-              <th className="hidden px-2 py-2 text-left font-medium sm:table-cell">Perplexity</th>
-              <th className="px-2 py-2 text-left font-medium">AI Overviews</th>
+              <th className="hidden px-2 py-2 text-left font-medium @md:table-cell">Gemini</th>
+              <th className="hidden px-2 py-2 text-left font-medium @xl:table-cell">Perplexity</th>
+              <th className="py-2 pl-2 pr-3 text-left font-medium @sm:pr-4">AI Overviews</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-hairline">
             {rows.map((r) => (
-              <tr key={r[0]}>
-                <td className="max-w-[10rem] truncate px-4 py-2 text-foreground/90">{r[0]}</td>
+              <tr key={r[0]} className="whitespace-nowrap">
+                <td className="w-full max-w-0 truncate px-3 py-2 text-foreground/90 @sm:px-4">{r[0]}</td>
                 <td className="px-2 py-2">{cell(r[1])}</td>
-                <td className="hidden px-2 py-2 sm:table-cell">{cell(r[2])}</td>
-                <td className="hidden px-2 py-2 sm:table-cell">{cell(r[3])}</td>
-                <td className="px-2 py-2">{cell(r[4])}</td>
+                <td className="hidden px-2 py-2 @md:table-cell">{cell(r[2])}</td>
+                <td className="hidden px-2 py-2 @xl:table-cell">{cell(r[3])}</td>
+                <td className="py-2 pl-2 pr-3 @sm:pr-4">{cell(r[4])}</td>
               </tr>
             ))}
           </tbody>
@@ -665,11 +681,11 @@ export function CompetitorsPreview({ locale: l }: { readonly locale: L }) {
       <ul className="grid gap-2 px-4 py-3">
         {comps.map(([d, n, w]) => (
           <li key={d} className="flex items-center gap-3 text-[12px]">
-            <div className="relative h-6 flex-1 overflow-hidden rounded-md bg-foreground/5">
+            <div className="relative h-6 min-w-0 flex-1 overflow-hidden rounded-md bg-foreground/5">
               <div className={cn("absolute inset-y-0 left-0 rounded-md bg-primary/25", w)} />
-              <span className="relative flex h-full items-center px-2 text-foreground/90">{d}</span>
+              <span className="relative block truncate px-2 leading-6 text-foreground/90">{d}</span>
             </div>
-            <span className="w-10 text-right font-semibold tabular-nums text-foreground">{n}</span>
+            <span className="w-10 shrink-0 text-right font-semibold tabular-nums text-foreground">{n}</span>
           </li>
         ))}
       </ul>
@@ -702,16 +718,18 @@ export function PipelinePreview({ locale: l }: { readonly locale: L }) {
   ];
   return (
     <PCard icon={<Users />} title={tx(l, "Pipeline", "Pipeline")} subtitle={tx(l, "Requests from your website land here", "Τα αιτήματα από την ιστοσελίδα σας έρχονται εδώ")}>
-      <div className="grid grid-cols-3 gap-2 p-3">
+      <div className="grid grid-cols-3 gap-1.5 p-2.5 sm:gap-2 sm:p-3">
         {cols.map((c) => (
-          <div key={c.stage} className="rounded-lg bg-foreground/5 p-2">
-            <div className="flex items-center justify-between px-1 text-[11px] font-medium text-muted-foreground">
-              {c.stage}
-              <span>{c.items.length}</span>
+          <div key={c.stage} className="min-w-0 rounded-lg bg-foreground/5 p-1.5 sm:p-2">
+            <div className="flex items-center justify-between gap-1 px-1 text-[11px] font-medium text-muted-foreground">
+              <span className="min-w-0 truncate">{c.stage}</span>
+              <span className="shrink-0 tabular-nums">{c.items.length}</span>
             </div>
-            <ul className="mt-2 grid gap-1.5">
+            {/* grid-cols-1 = minmax(0,1fr): an implicit `auto` track would size
+                to the nowrap names and push the cards out of the column. */}
+            <ul className="mt-2 grid grid-cols-1 gap-1.5">
               {c.items.map(([n, m]) => (
-                <li key={n} className="rounded-md border border-hairline bg-surface px-2 py-1.5">
+                <li key={n} className="min-w-0 rounded-md border border-hairline bg-surface px-2 py-1.5">
                   <div className="truncate text-[12px] font-medium text-foreground">{n}</div>
                   <div className="truncate text-[11px] text-muted-foreground">{m}</div>
                 </li>
@@ -728,15 +746,15 @@ export function PipelinePreview({ locale: l }: { readonly locale: L }) {
 export function ReportPreview({ locale: l }: { readonly locale: L }) {
   return (
     <PCard title={tx(l, "Monthly report · September", "Μηνιαία αναφορά · Σεπτέμβριος")} subtitle="aegean-suites.example" meta="PDF">
-      <div className="grid grid-cols-3 gap-2 px-4 py-3">
+      <div className="grid grid-cols-3 gap-2 px-3 py-3 sm:px-4">
         {[
           [tx(l, "Organic clicks", "Οργανικά κλικ"), "14.8K", 23],
           [tx(l, "Booking-page visits", "Επισκέψεις κρατήσεων"), "2,940", 31],
           [tx(l, "Top-3 keywords", "Λέξεις στο top 3"), "8", 60],
         ].map(([label, v, d]) => (
-          <div key={label as string} className="rounded-lg border border-hairline bg-background px-2.5 py-2">
-            <div className="truncate text-[11px] text-muted-foreground">{label}</div>
-            <div className="font-display text-[17px] font-semibold text-foreground">{v}</div>
+          <div key={label as string} className="flex min-w-0 flex-col rounded-lg border border-hairline bg-background px-2 py-2 sm:px-2.5">
+            <div className="text-[11px] leading-tight text-muted-foreground [overflow-wrap:anywhere]">{label}</div>
+            <div className="mt-auto pt-0.5 font-display text-[17px] font-semibold tabular-nums text-foreground">{v}</div>
             <Delta v={d as number} />
           </div>
         ))}
@@ -783,12 +801,12 @@ export function LocalPackPreview({ locale: l, city = "Paros" }: { readonly local
 
 export function PropertiesMini({ locale: l }: { readonly locale: L }) {
   return (
-    <div className="grid gap-1.5 rounded-xl border border-hairline bg-background p-2 text-[12px]">
+    <div className="grid grid-cols-1 gap-1.5 rounded-xl border border-hairline bg-background p-2 text-[12px]">
       {[SAMPLE_SITE, "villa-thalassa.example"].map((d, i) => (
-        <div key={d} className={cn("flex items-center gap-2 rounded-lg border px-2.5 py-2", i === 0 ? "border-primary/60 bg-primary/8" : "border-hairline")}>
-          <span className={cn("size-3 rounded-full border-2", i === 0 ? "border-primary bg-primary" : "border-foreground/30")} />
-          <span className="flex-1 truncate text-foreground/90">{d}</span>
-          <span className="text-[10.5px] text-muted-foreground">{tx(l, "Domain", "Domain")}</span>
+        <div key={d} className={cn("flex min-w-0 items-center gap-2 rounded-lg border px-2.5 py-2", i === 0 ? "border-primary/60 bg-primary/8" : "border-hairline")}>
+          <span className={cn("size-3 shrink-0 rounded-full border-2", i === 0 ? "border-primary bg-primary" : "border-foreground/30")} />
+          <span className="min-w-0 flex-1 truncate text-foreground/90">{d}</span>
+          <span className="shrink-0 text-[10.5px] text-muted-foreground">{tx(l, "Domain", "Domain")}</span>
         </div>
       ))}
     </div>
@@ -798,8 +816,8 @@ export function PropertiesMini({ locale: l }: { readonly locale: L }) {
 export function PlanMini({ locale: l }: { readonly locale: L }) {
   return (
     <div className="rounded-xl border border-hairline bg-background p-3 text-[12px]">
-      <div className="flex items-baseline justify-between">
-        <span className="font-display text-[20px] font-semibold text-foreground">38</span>
+      <div className="flex flex-wrap items-baseline justify-between gap-x-2">
+        <span className="font-display text-[20px] font-semibold tabular-nums text-foreground">38</span>
         <span className="text-muted-foreground">{tx(l, "up to +966 clicks/mo", "έως +966 κλικ/μήνα")}</span>
       </div>
       {[
@@ -808,9 +826,9 @@ export function PlanMini({ locale: l }: { readonly locale: L }) {
         [tx(l, "Low CTR", "Χαμηλό CTR"), "w-[24%]", 6],
       ].map(([k, w, n]) => (
         <div key={k as string} className="mt-1.5 flex items-center gap-2">
-          <span className="w-28 truncate text-muted-foreground">{k}</span>
+          <span className="w-24 shrink-0 truncate text-muted-foreground sm:w-28">{k}</span>
           <span className="h-1.5 flex-1 rounded-full bg-foreground/8"><span className={cn("block h-full rounded-full bg-primary", w as string)} /></span>
-          <span className="w-5 text-right tabular-nums text-foreground">{n}</span>
+          <span className="w-5 shrink-0 text-right tabular-nums text-foreground">{n}</span>
         </div>
       ))}
     </div>

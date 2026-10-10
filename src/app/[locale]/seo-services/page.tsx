@@ -30,7 +30,7 @@ import {
 import { generateBreadcrumbs } from '@/lib/linking';
 import { getSeoServicesPillarCopy } from '@/data/seo-services-pillar';
 import { resolvePriceTokens } from '@/data/pricing';
-import { PROJECT_COUNT, SEO_MIN_TERM_MONTHS } from '@/data/company-facts';
+import { PROJECTS_DELIVERED_LABEL, SEO_MIN_TERM_MONTHS } from '@/data/company-facts';
 import { portfolioProjects } from '@/data/portfolio';
 import { getIndexableServiceLocations } from '@/data/locations';
 import { getGreekLocative } from '@/lib/greek-locative';
@@ -198,7 +198,7 @@ export default async function SeoServicesPillarPage({ params }: PageProps) {
           </div>
           <p className="mt-8 text-[14px]">
             <Link href={lp('/work')} className="font-medium text-link underline-offset-4 hover:underline">
-              {PROJECT_COUNT}+ {t.tourism.portfolioLabel}
+              {PROJECTS_DELIVERED_LABEL} {t.tourism.portfolioLabel}
             </Link>
           </p>
         </KitSection>

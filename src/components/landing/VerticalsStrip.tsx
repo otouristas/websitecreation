@@ -48,7 +48,7 @@ export function VerticalsStrip({ locale = "en" }: { locale?: SiteLocale }) {
               <div className="relative p-7">
                 <Eyebrow>{isEl ? "Λύση" : "Solution"}</Eyebrow>
                 <div className="mt-3 flex items-start justify-between gap-4">
-                  <h3 className="font-display text-2xl font-semibold tracking-[-0.03em] text-foreground">
+                  <h3 className="min-w-0 break-words font-display text-2xl font-semibold tracking-[-0.03em] text-foreground md:text-[22px] lg:text-2xl">
                     {isEl ? v.titleEl : v.titleEn}
                   </h3>
                   <ArrowUpRight

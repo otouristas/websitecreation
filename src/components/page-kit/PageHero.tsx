@@ -115,10 +115,10 @@ export function PageHero({
         {pillNode ? <div className="rise-in">{pillNode}</div> : null}
         <h1
           className={cn(
-            "rise-in mx-auto text-balance font-display font-semibold text-foreground [animation-delay:60ms]",
+            "rise-in mx-auto text-balance break-words font-display font-semibold text-foreground [animation-delay:60ms]",
             pillNode ? "mt-6" : "mt-2",
             size === "lg"
-              ? "max-w-[18ch] text-[38px] leading-[1.04] tracking-[-0.045em] sm:max-w-4xl sm:text-[56px] lg:text-[68px]"
+              ? "max-w-[18ch] text-[clamp(2rem,9.5vw,2.375rem)] leading-[1.04] tracking-[-0.045em] sm:max-w-4xl sm:text-[56px] lg:text-[68px]"
               : "max-w-4xl text-[32px] leading-[1.08] tracking-[-0.04em] sm:text-[44px] lg:text-[52px]",
           )}
         >

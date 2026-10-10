@@ -32,7 +32,7 @@ import {
   ValueTrio,
 } from "@/components/kit";
 import { CardGrid, ChipLinks, LinkCard, PageHero, SplitRow } from "@/components/page-kit";
-import { PROJECT_COUNT } from "@/data/company-facts";
+import { PROJECTS_DELIVERED } from "@/data/company-facts";
 
 type PageProps = { params: Promise<{ locale: string }> };
 
@@ -118,8 +118,8 @@ export default async function SolutionsPage({ params }: PageProps) {
           }
           lead={
             isEl
-              ? `Η ζήτηση αναζήτησης διαφέρει ριζικά ανά κλάδο. Έχουμε παραδώσει ${PROJECT_COUNT} έργα, με το μεγαλύτερο βάθος σε τουρισμό και φιλοξενία.`
-              : `Search demand differs sharply by sector. We have delivered ${PROJECT_COUNT} projects, with the most depth in tourism and hospitality.`
+              ? `Η ζήτηση αναζήτησης διαφέρει ριζικά ανά κλάδο. Έχουμε παραδώσει πάνω από ${PROJECTS_DELIVERED} έργα, με το μεγαλύτερο βάθος σε τουρισμό και φιλοξενία.`
+              : `Search demand differs sharply by sector. We have delivered more than ${PROJECTS_DELIVERED} projects, with the most depth in tourism and hospitality.`
           }
         >
           <Container className="mt-14">

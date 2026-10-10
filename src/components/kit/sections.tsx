@@ -88,7 +88,7 @@ export function AnnouncePill({
       <MarketingBadge kind={kind} className="h-6 px-2 text-[10.5px]">
         {tag}
       </MarketingBadge>
-      <span className="truncate">{text}</span>
+      <span className="min-w-0 truncate">{text}</span>
       <ArrowRight className="size-3.5 shrink-0 transition-transform group-hover:translate-x-0.5" />
     </>
   );
@@ -132,7 +132,7 @@ export function HeroCentered({
       <HeroBackdrop />
       <Container className="pt-6 text-center sm:pt-10">
         {pill ? <div className="rise-in">{pill}</div> : null}
-        <h1 className="rise-in mx-auto mt-6 max-w-[16ch] text-balance font-display text-[40px] font-semibold leading-[1.03] tracking-[-0.045em] text-foreground [animation-delay:60ms] sm:max-w-4xl sm:text-[60px] lg:text-[72px]">
+        <h1 className="rise-in mx-auto mt-6 max-w-[16ch] text-balance break-words font-display text-[clamp(2.125rem,10vw,2.5rem)] font-semibold leading-[1.03] tracking-[-0.045em] text-foreground [animation-delay:60ms] sm:max-w-4xl sm:text-[60px] lg:text-[72px]">
           {title}
         </h1>
         {lead ? (
@@ -302,7 +302,7 @@ export function CtaBand({
             aria-hidden
             className="absolute left-1/2 top-0 -z-10 h-72 w-[760px] max-w-[160%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(closest-side,color-mix(in_oklab,var(--primary)_35%,transparent),transparent)]"
           />
-          <h2 className="mx-auto max-w-3xl text-balance text-center font-display text-[30px] font-semibold leading-[1.08] tracking-[-0.035em] text-foreground sm:text-[46px]">
+          <h2 className="mx-auto max-w-3xl text-balance break-words text-center font-display text-[30px] font-semibold leading-[1.08] tracking-[-0.035em] text-foreground sm:text-[46px]">
             {title ?? (
               <>
                 {BAND.title[locale]} <Accent>{BAND.accent[locale]}</Accent>.

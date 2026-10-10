@@ -8,7 +8,7 @@ import { Container, CtaBand, KitHeading, KitSection, Stage, StepsGrid } from "@/
 import { InfoCard, PageHero, SplitRow, StatRow, accentTail } from "@/components/page-kit";
 import { isValidLocale, localizedPath, type SiteLocale } from "@/lib/i18n/locale";
 import { buildMetadata } from "@/lib/seo";
-import { MARKET_COUNT, PROJECT_COUNT } from '@/data/company-facts';
+import { MARKET_COUNT } from '@/data/company-facts';
 import { industries } from '@/data/industries';
 import { FOUNDER, FOUNDER_YEARS, PROJECTS_DELIVERED, consultantPath } from '@/data/founder';
 
@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return buildMetadata({
     title: "About - SEO Agency & Software",
     description:
-      `AnotherSEOGuru combines a GSC-native SEO platform with an execution-focused agency. Fast websites, GEO, AEO, and measurable growth across ${PROJECT_COUNT} live client projects.`,
+      `AnotherSEOGuru combines a GSC-native SEO platform with an execution-focused agency. Fast websites, GEO, AEO, and measurable growth across ${PROJECTS_DELIVERED}+ delivered projects.`,
     path: localizedPath('en', '/about'),
     hreflangPath: "/about",
   });
@@ -102,7 +102,7 @@ export default async function AboutPage({ params }: PageProps) {
         // had no survey, NPS or source behind it at all - so it is gone rather
         // than corrected.
         stats: [
-          { value: `${PROJECT_COUNT}`, label: "Ζωντανά έργα" },
+          { value: `${PROJECTS_DELIVERED}+`, label: "Ολοκληρωμένα έργα" },
           { value: `${industries.length}`, label: "Κλάδοι που εξυπηρετούμε" },
           { value: `${MARKET_COUNT}`, label: "Αγορές" },
           { value: "2-4", label: "Εβδομάδες για δημοσίευση" },
@@ -167,7 +167,7 @@ export default async function AboutPage({ params }: PageProps) {
           },
         ],
         stats: [
-          { value: `${PROJECT_COUNT}`, label: "Live projects" },
+          { value: `${PROJECTS_DELIVERED}+`, label: "Projects delivered" },
           { value: `${industries.length}`, label: "Industries served" },
           { value: `${MARKET_COUNT}`, label: "Markets" },
           { value: "2-4", label: "Weeks to launch" },
