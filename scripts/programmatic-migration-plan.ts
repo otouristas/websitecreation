@@ -9,9 +9,6 @@ import { getAllServiceSlugs } from '@/data/services';
 import { evaluateIndustryService } from '@/lib/indexability/industry-service';
 import { relevanceRationale } from '@/data/industry-service-relevance';
 import { getGscStat } from '@/data/gsc-pages';
-import { MARKETING_FEATURES } from '@/data/marketing-features';
-import { FEATURES_WITH_EXPLAINER } from '@/data/platform-feature-explainers';
-import { evaluatePlatformFeature } from '@/lib/indexability/platform-feature';
 import { PLATFORM_TOOLS } from '@/data/platform-tools';
 
 const q = (v: unknown) => `"${String(v ?? '').replace(/"/g, '""').replace(/\r?\n/g, ' ')}"`;
@@ -50,31 +47,8 @@ for (const locale of locales) {
 }
 
 // --- platform features ---------------------------------------------------
-for (const f of MARKETING_FEATURES) {
-  const path = `/en/platform/features/${f.slug}`;
-  const g = getGscStat(path) ?? getGscStat(`/platform/features/${f.slug}`);
-  const expanded = FEATURES_WITH_EXPLAINER.has(f.slug);
-  const imp = g?.i ?? 0;
-  const v = evaluatePlatformFeature(f.slug);
-  rows.push({
-    URL: `https://anotherseoguru.com${path}`,
-    Family: 'platform-feature',
-    CurrentIndexability: 'index',
-    Clicks: g?.c ?? 0,
-    Impressions: imp,
-    Position: g?.p ?? '',
-    ContentWords: expanded ? '600+' : 115,
-    UniqueContentAssessment: expanded
-      ? 'Expanded with discipline-level explainer, FAQs and further reading'
-      : 'Product claims only (overview, benefits, how it works, use cases)',
-    IntentAssessment: 'Product/capability intent',
-    StrategicValue: v.tier === 'A' ? 'High' : v.tier === 'B' ? 'Medium (measured demand)' : 'Low',
-    FinalTier: v.tier,
-    FinalAction: expanded ? 'KEEP_EXPAND' : v.indexable ? 'KEEP' : 'NOINDEX',
-    RedirectDestination: '',
-    Reason: v.reason,
-  });
-}
+// Retired in 2026-10: the 27 /platform/features/<slug> pages now 308 to the
+// module anchors on /platform/features (src/data/marketing-features.ts).
 
 // --- tools ---------------------------------------------------------------
 for (const t of PLATFORM_TOOLS) {
@@ -115,7 +89,6 @@ const tally = (f: string, k: string) => {
 console.log('rows:', rows.length);
 console.log('industry-x-service tiers :', JSON.stringify(tally('industry-x-service', 'FinalTier')));
 console.log('industry-x-service action:', JSON.stringify(tally('industry-x-service', 'FinalAction')));
-console.log('platform-feature action  :', JSON.stringify(tally('platform-feature', 'FinalAction')));
 console.log('tool action              :', JSON.stringify(tally('tool', 'FinalAction')));
 const kept = ix.filter((r) => r.FinalAction !== 'CONSOLIDATE');
 console.log('industry-x-service kept  :', kept.length, 'of', ix.length);
