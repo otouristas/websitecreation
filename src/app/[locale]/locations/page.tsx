@@ -11,6 +11,9 @@ import { isValidLocale, localizedPath, type SiteLocale } from "@/lib/i18n/locale
 import { buildMetadata, generateCollectionPageSchema } from "@/lib/seo";
 import { BASE_URL } from "@/lib/seo/schema";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
+import { LayoutGrid, MapPin } from "lucide-react";
+import { CtaBand, KitHeading, KitSection, kitPrimaryBtn, kitSecondaryBtn } from "@/components/kit";
+import { PageHero, accentTail } from "@/components/page-kit";
 
 type PageProps = { params: Promise<{ locale: string }> };
 
@@ -104,101 +107,95 @@ export default async function LocationsPage({ params }: PageProps) {
     <>
       <SchemaMarkup schemas={[collectionSchema]} />
       <Header locale={siteLocale} />
-      <main className="blueprint-grid relative z-0 main-below-header">
-        <section className="section-compact ">
-          <div className="container">
-            <div className="max-w-3xl">
-              <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
-                <Link href={lp("/")} className="hover:text-primary">{t.home}</Link>
-                <span>/</span>
-                <span className="text-foreground">{t.locations}</span>
-              </nav>
-
-              <h1 className="font-display text-4xl font-medium tracking-[-0.04em] sm:text-5xl mb-6">
-                {t.h1}
-              </h1>
-              <p className="text-lg text-muted-foreground mb-4">
-                {t.sub}
-              </p>
-              <p className="text-sm text-muted-foreground mb-8">
-                <Link
-                  href={localizedPath(isEl ? "en" : "el", "/locations")}
-                  hrefLang={isEl ? "en" : "el"}
-                  className="text-primary font-medium hover:underline"
-                >
-                  {t.otherLocaleLink}
-                </Link>
-              </p>
-
-              <div className="flex flex-wrap gap-4">
-                <Link href={lp("/get-started")} className="btn btn-primary">
-                  {t.getStarted}
-                </Link>
-                <Link href={lp("/pricing")} className="btn btn-outline">
-                  {t.viewPricing}
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="section">
-          <div className="container">
-            <h2 className="font-display text-2xl font-medium tracking-[-0.03em] sm:text-3xl mb-8">{t.citiesTitle}</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {cities.map((location) => {
-                const cityName = isEl && location.cityLocal ? location.cityLocal : location.city;
-                const country = isEl ? countryNameEl(location) : location.country;
-                return (
-                  <div key={location.slug} className="card p-5">
-                    <div className="font-semibold">{cityName}</div>
-                    <div className="text-xs text-muted-foreground mb-3">{country}</div>
-                    <ul className="flex flex-wrap gap-2">
-                      {cityServices.map((service) => (
-                        <li key={service.slug}>
-                          <Link
-                            href={lp(`/services/${service.slug}/${location.slug}`)}
-                            className="inline-block rounded-full border border-hairline px-3 py-1 text-xs text-muted-foreground transition-smooth hover:border-primary hover:text-primary"
-                          >
-                            {serviceLabel(service.slug, service.shortName)}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-
-        <section className="section bg-surface-raised/40">
-          <div className="container text-center">
-            <h2 className="font-display text-2xl font-medium tracking-[-0.03em] sm:text-3xl mb-4">{t.allServicesTitle}</h2>
-            <p className="text-muted-foreground mb-8">{t.allServicesSub}</p>
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3 max-w-4xl mx-auto">
-              {services.map((service) => (
-                <Link
-                  key={service.slug}
-                  href={lp(`/services/${service.slug}`)}
-                  className="card card-interactive p-3 text-center rounded-lg border border-hairline transition-smooth text-sm font-medium"
-                >
-                  {serviceLabel(service.slug, service.shortName)}
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="section gradient-primary text-white">
-          <div className="container text-center">
-            <h2 className="font-display text-3xl font-medium tracking-[-0.03em] mb-4">{t.readyTitle}</h2>
-            <p className="text-white/80 mb-8">{t.readySub}</p>
-            <Link href={lp("/get-started")} className="btn bg-white text-primary hover:bg-white/90">
-              {t.getStarted}
+      <main className="blueprint-grid relative z-0">
+        <PageHero
+          locale={siteLocale}
+          breadcrumbs={[
+            { name: t.home, url: lp("/") },
+            { name: t.locations, url: lp("/locations") },
+          ]}
+          pill={{
+            href: lp("/get-started"),
+            kind: "free",
+            tag: isEl ? "Δωρεάν" : "Free",
+            text: isEl ? "Έλεγχος SEO για την πόλη σας" : "An SEO audit for your city",
+          }}
+          title={accentTail(t.h1, 2)}
+          lead={t.sub}
+          meta={
+            <Link
+              href={localizedPath(isEl ? "en" : "el", "/locations")}
+              hrefLang={isEl ? "en" : "el"}
+              className="text-sm font-medium text-primary hover:underline"
+            >
+              {t.otherLocaleLink}
             </Link>
+          }
+          actions={
+            <div className="flex flex-col justify-center gap-3 sm:flex-row">
+              <Link href={lp("/get-started")} className={kitPrimaryBtn}>
+                {t.getStarted}
+              </Link>
+              <Link href={lp("/pricing")} className={kitSecondaryBtn}>
+                {t.viewPricing}
+              </Link>
+            </div>
+          }
+        />
+
+        <KitSection className="!pt-14">
+          <KitHeading eyebrow={t.locations} eyebrowIcon={<MapPin />} title={accentTail(t.citiesTitle, isEl ? 1 : 2)} />
+          <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {cities.map((location) => {
+              const cityName = isEl && location.cityLocal ? location.cityLocal : location.city;
+              const country = isEl ? countryNameEl(location) : location.country;
+              return (
+                <div key={location.slug} className="rounded-2xl border border-hairline bg-surface/70 p-5 sm:p-6">
+                  <div className="flex items-center gap-2 font-display text-[17px] font-semibold text-foreground">
+                    <MapPin className="size-4 text-brand" aria-hidden />
+                    {cityName}
+                  </div>
+                  <div className="mt-0.5 font-mono text-[11px] uppercase tracking-[0.12em] text-muted-foreground">{country}</div>
+                  <ul className="mt-4 flex flex-wrap gap-2">
+                    {cityServices.map((service) => (
+                      <li key={service.slug}>
+                        <Link
+                          href={lp(`/services/${service.slug}/${location.slug}`)}
+                          className="inline-flex min-h-9 items-center rounded-full border border-hairline bg-background/50 px-3 text-[13px] text-muted-foreground transition-colors hover:border-primary/50 hover:text-foreground"
+                        >
+                          {serviceLabel(service.slug, service.shortName)}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              );
+            })}
           </div>
-        </section>
+        </KitSection>
+
+        <KitSection tinted>
+          <KitHeading
+            align="center"
+            eyebrow={isEl ? "Υπηρεσίες" : "Services"}
+            eyebrowIcon={<LayoutGrid />}
+            title={accentTail(t.allServicesTitle, 1)}
+            description={t.allServicesSub}
+          />
+          <div className="mx-auto mt-10 grid max-w-4xl grid-cols-2 gap-3 md:grid-cols-4 lg:grid-cols-5">
+            {services.map((service) => (
+              <Link
+                key={service.slug}
+                href={lp(`/services/${service.slug}`)}
+                className="flex min-h-12 items-center justify-center rounded-xl border border-hairline bg-surface/70 p-3 text-center text-sm font-medium text-foreground transition-colors hover:border-primary/50"
+              >
+                {serviceLabel(service.slug, service.shortName)}
+              </Link>
+            ))}
+          </div>
+        </KitSection>
+
+        <CtaBand locale={siteLocale} source="locations-band" title={accentTail(t.readyTitle, 2)} description={t.readySub} />
       </main>
       <Footer locale={siteLocale} />
     </>
