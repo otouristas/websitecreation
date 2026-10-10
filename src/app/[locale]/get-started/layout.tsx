@@ -8,11 +8,11 @@ export async function generateMetadata({ params }: LayoutProps): Promise<Metadat
   const { locale } = await params;
   if (!isValidLocale(locale)) return {};
   return buildMetadata({
-    title: locale === 'el' ? 'Ξεκινήστε - Έργο ιστοσελίδας & SEO' : 'Get Started - Website & SEO Project',
+    title: locale === 'el' ? 'Ξεκινήστε - Δωρεάν έλεγχος SEO ή νέα ιστοσελίδα' : 'Get Started - Free SEO Audit or New Website',
     description:
       locale === 'el'
-        ? 'Ξεκινήστε το έργο σας: επιλέξτε πακέτο, μοιραστείτε στόχους και λάβετε SEO-ready ιστοσελίδα σε εβδομάδες.'
-        : 'Start your website or SEO project: choose a package, share your goals, and launch a fast, SEO-ready site in weeks. Platform trial or full agency delivery available.',
+        ? 'Ζητήστε δωρεάν έλεγχο SEO για την ιστοσελίδα σας ή πείτε μας τι νέα ιστοσελίδα ή e-shop χρειάζεστε. Δύο λεπτά, χωρίς δέσμευση, απάντηση σε 24 εργάσιμες ώρες.'
+        : 'Get a free SEO audit of your site, or tell us about the new website or e-shop you need. Two minutes, no commitment, and a reply within 24 working hours.',
     path: localizedPath(locale as SiteLocale, '/get-started'),
     hreflangPath: '/get-started',
   });

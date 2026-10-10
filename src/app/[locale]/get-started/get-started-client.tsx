@@ -1,1239 +1,456 @@
 'use client';
 
-import { useState, useEffect, useCallback, useRef, Suspense } from 'react';
-import { useSearchParams } from 'next/navigation';
+import { useEffect, useId, useState, type FormEvent } from 'react';
 import Link from 'next/link';
-import { industries } from '@/data/industries';
-import { industriesEl } from '@/data/industries-i18n';
-import { describeAnswers, submitLead, type LeadService } from '@/lib/leads';
-import { FreeAuditForm } from '@/components/landing/FreeAuditForm';
+import { ArrowRight, Briefcase, Check, Clock3, MapPin, MonitorSmartphone, Search, Trophy } from 'lucide-react';
+import { cn } from '@/lib/cn';
+import { describeAnswers, submitLead } from '@/lib/leads';
 import { captureUtmParams, trackFormStart, trackLead } from '@/lib/analytics';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
-import { InstantPlan, summarizePlan, type PlanSnapshot } from '@/components/tools/InstantPlan';
-import { SERVICE_GOALS } from '@/lib/estimate/recommend';
-import { Check } from 'lucide-react';
-import { CtaBand, HeroBackdrop, kitPrimaryBtn, kitSecondaryBtn } from '@/components/kit';
+import { FreeAuditForm } from '@/components/landing/FreeAuditForm';
+import { primaryBtnClass } from '@/components/landing/primitives';
+import {
+  FetchDetailsButton,
+  FetchDetailsNote,
+  SiteDetailsCard,
+  looksLikeUrl,
+  siteDetailsFields,
+  siteDetailsMessage,
+  useSiteDetails,
+} from '@/components/landing/SiteDetailsFetch';
+import { TrustLine, kitSecondaryBtn } from '@/components/kit';
 import { PageHero, accentTail } from '@/components/page-kit';
+import { PROJECTS_DELIVERED_LABEL, RESPONSE_HOURS } from '@/data/company-facts';
+import { FOUNDER, FOUNDER_YEARS } from '@/data/founder';
 
 /**
- * Step 1 is an outcome menu, not a price menu.
+ * /get-started: one short page with two doors.
  *
- * Asking a cold visitor to pick a package before they have spoken to anyone
- * puts a pricing decision ahead of a fit decision, which suppresses leads.
- * Prices still live in the site's CONTENT (the /el pricing block and /pricing)
- * because the keyword research shows pricing intent is the largest winnable
- * Greek cluster - but the FORM sells the outcome and lets us scope the quote.
+ *   SEO      -> the free audit form (instant homepage check + live SEO team board)
+ *   Website  -> a short brief for a new site, a redesign or an e-shop
+ *
+ * The door comes from `?service=`: `seo` / `website`, or a service slug from the
+ * service pages (website slugs open the Website door, everything else SEO).
+ * Switching updates the URL in place. Both forms post to the app's lead
+ * pipeline with Formspree as the backup (submitLead).
  */
-const goalsEn = [
-  { id: 'bookings', label: 'More direct bookings or enquiries', hint: 'Hotels, rentals, tours' },
-  { id: 'local', label: 'Rank for my services in my city', hint: 'Local SEO and Google Maps' },
-  { id: 'new-site', label: 'A new website that converts', hint: 'Design and build from scratch' },
-  { id: 'recover', label: 'Fix a site that is losing traffic', hint: 'Audit, technical SEO, recovery' },
-  { id: 'ai', label: 'Show up in AI answers', hint: 'ChatGPT, Perplexity, AI Overviews' },
-  { id: 'eshop', label: 'Sell more through my e-shop', hint: 'E-commerce SEO and WooCommerce' },
-];
 
-const goalsEl = [
-  { id: 'bookings', label: 'Περισσότερες απευθείας κρατήσεις', hint: 'Ξενοδοχεία, ενοικιάσεις, εκδρομές' },
-  { id: 'local', label: 'Να με βρίσκουν στην περιοχή μου', hint: 'Τοπικό SEO και Χάρτες Google' },
-  { id: 'new-site', label: 'Νέα ιστοσελίδα που φέρνει πελάτες', hint: 'Σχεδιασμός και κατασκευή' },
-  { id: 'recover', label: 'Να διορθώσω πτώση επισκεψιμότητας', hint: 'Έλεγχος, τεχνικό SEO, ανάκαμψη' },
-  { id: 'ai', label: 'Να εμφανίζομαι σε απαντήσεις AI', hint: 'ChatGPT, Perplexity, AI Overviews' },
-  { id: 'eshop', label: 'Περισσότερες πωλήσεις στο e-shop', hint: 'SEO για e-shop και WooCommerce' },
-];
+type Service = 'seo' | 'website';
 
-const projectTypesEn = [
-  { id: 'existing', label: 'I have a website already' },
-  { id: 'new', label: 'I need a new website' },
-  { id: 'eshop', label: 'I have or need an e-shop' },
-];
+/** Service-page slugs that are about building a site rather than ranking one. */
+const WEBSITE_SLUGS = new Set([
+  'website',
+  'websites',
+  'webdesign',
+  'web-design',
+  'website-creation',
+  'website-redesign',
+  'seo-web-design',
+  'eshop',
+  'e-shop',
+  'eshop-woocommerce',
+  'logo-design',
+]);
 
-const projectTypesEl = [
-  { id: 'existing', label: 'Έχω ήδη ιστοσελίδα' },
-  { id: 'new', label: 'Χρειάζομαι νέα ιστοσελίδα' },
-  { id: 'eshop', label: 'Έχω ή χρειάζομαι e-shop' },
-];
+function serviceFromParam(value: string | null): Service {
+  return value && WEBSITE_SLUGS.has(value.toLowerCase()) ? 'website' : 'seo';
+}
 
-const featureOptionsEn = [
-  { id: 'contact-form', label: 'Contact Form' },
-  { id: 'booking', label: 'Booking / Scheduling' },
-  { id: 'ecommerce', label: 'E-commerce / Online Store' },
-  { id: 'blog', label: 'Blog' },
-  { id: 'gallery', label: 'Gallery / Portfolio' },
-  { id: 'social', label: 'Social Media Integration' },
-  { id: 'chat', label: 'Live Chat' },
-  { id: 'multilang', label: 'Multi-language' },
-  { id: 'members', label: 'Member Login Area' },
-  { id: 'animations', label: 'Custom Animations' },
-];
+const COPY = {
+  en: {
+    title: 'Get started with SEO or a new website',
+    lead: `Pick what you need. It takes two minutes, there is no commitment, and you hear back within ${RESPONSE_HOURS} working hours.`,
+    tabsLabel: 'What do you need?',
+    tabs: {
+      seo: { label: 'Free SEO audit', sub: 'I have a site and want more customers from Google' },
+      website: { label: 'New website', sub: 'A new site, a redesign or an e-shop' },
+    },
+    trust: [`${PROJECTS_DELIVERED_LABEL} projects delivered`, `${FOUNDER_YEARS}+ years in SEO`, `Based in ${FOUNDER.city}`, `Reply within ${RESPONSE_HOURS} hours`],
+  },
+  el: {
+    title: 'Ξεκινήστε με SEO ή νέα ιστοσελίδα',
+    lead: `Διαλέξτε τι χρειάζεστε. Θέλει δύο λεπτά, χωρίς δέσμευση, και σας απαντάμε μέσα σε ${RESPONSE_HOURS} εργάσιμες ώρες.`,
+    tabsLabel: 'Τι χρειάζεστε;',
+    tabs: {
+      seo: { label: 'Δωρεάν έλεγχος SEO', sub: 'Έχω ιστοσελίδα και θέλω περισσότερους πελάτες από το Google' },
+      website: { label: 'Νέα ιστοσελίδα', sub: 'Νέα ιστοσελίδα, ανανέωση ή e-shop' },
+    },
+    trust: [`${PROJECTS_DELIVERED_LABEL} έργα`, `${FOUNDER_YEARS}+ χρόνια στο SEO`, `Με έδρα την ${FOUNDER.cityEl}`, `Απάντηση σε ${RESPONSE_HOURS} ώρες`],
+  },
+} as const;
 
-const featureOptionsEl = [
-  { id: 'contact-form', label: 'Φόρμα Επικοινωνίας' },
-  { id: 'booking', label: 'Σύστημα Κρατήσεων / Ραντεβού' },
-  { id: 'ecommerce', label: 'Ηλεκτρονικό Κατάστημα (E-shop)' },
-  { id: 'blog', label: 'Ιστολόγιο (Blog)' },
-  { id: 'gallery', label: 'Γκαλερί / Portfolio' },
-  { id: 'social', label: 'Σύνδεση με Social Media' },
-  { id: 'chat', label: 'Live Chat / WhatsApp' },
-  { id: 'multilang', label: 'Πολυγλωσσικό site' },
-  { id: 'members', label: 'Περιοχή Μελών (Login)' },
-  { id: 'animations', label: 'Προσαρμοσμένα Animations' },
-];
+const TRUST_ICONS = [Briefcase, Trophy, MapPin, Clock3];
 
-const existingAssetsEn = [
-  { id: 'logo', label: 'Logo / Branding' },
-  { id: 'brand-guidelines', label: 'Brand Guidelines' },
-  { id: 'photos', label: 'Professional Photos' },
-  { id: 'content', label: 'Written Content' },
-  { id: 'social', label: 'Social Media Accounts' },
-  { id: 'domain', label: 'Domain Name' },
-];
+/* ------------------------------------------------------------------ website brief */
 
-const existingAssetsEl = [
-  { id: 'logo', label: 'Λογότυπο / Branding' },
-  { id: 'brand-guidelines', label: 'Οδηγός Brand (Guidelines)' },
-  { id: 'photos', label: 'Επαγγελματικές Φωτογραφίες' },
-  { id: 'content', label: 'Έτοιμα Κείμενα' },
-  { id: 'social', label: 'Λογαριασμοί Social Media' },
-  { id: 'domain', label: 'Domain Name' },
-];
+type ProjectType = 'has-site' | 'new-site' | 'eshop';
 
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const WEBSITE_COPY = {
+  en: {
+    eyebrow: 'New website',
+    title: 'Tell us about the site you need. We reply with ideas and a quote.',
+    body: 'A few details are enough. If you already have a site, we read it first so you do not have to repeat yourself.',
+    types: { 'has-site': 'I have a website', 'new-site': 'I need a new website', eshop: 'I need an e-shop' } as Record<ProjectType, string>,
+    typesLabel: 'Where are you now?',
+    website: 'Your current website',
+    websitePh: 'your-business.com',
+    business: 'Business name',
+    name: 'Your name',
+    email: 'Email',
+    phone: 'Phone or WhatsApp (optional)',
+    need: 'What do you need? (optional)',
+    needPh: 'e.g. A bilingual site for our 8-room guesthouse with direct booking, ready before the summer.',
+    submit: 'Send my brief',
+    sending: 'Sending...',
+    doneTitle: (first: string) => (first ? `Thanks, ${first}. We have your brief.` : 'Thanks. We have your brief.'),
+    doneBody: `We will reply within ${RESPONSE_HOURS} working hours with first ideas and a quote. Keep an eye on your inbox, and your spam folder just in case.`,
+    seeWork: 'See websites we have built',
+    errors: {
+      website: 'Enter your website address, like your-business.com.',
+      business: 'Add your business name.',
+      name: 'Add your name.',
+      email: 'Enter a valid email address.',
+      generic: 'Something went wrong. Please try again or message us on WhatsApp.',
+    },
+  },
+  el: {
+    eyebrow: 'Νέα ιστοσελίδα',
+    title: 'Πείτε μας τι ιστοσελίδα χρειάζεστε. Σας στέλνουμε ιδέες και προσφορά.',
+    body: 'Λίγα στοιχεία αρκούν. Αν έχετε ήδη ιστοσελίδα, τη διαβάζουμε πρώτα, για να μη χρειαστεί να τα γράψετε ξανά.',
+    types: { 'has-site': 'Έχω ιστοσελίδα', 'new-site': 'Χρειάζομαι νέα ιστοσελίδα', eshop: 'Χρειάζομαι e-shop' } as Record<ProjectType, string>,
+    typesLabel: 'Πού βρίσκεστε τώρα;',
+    website: 'Η τωρινή σας ιστοσελίδα',
+    websitePh: 'h-epixeirisi-sas.gr',
+    business: 'Όνομα επιχείρησης',
+    name: 'Το όνομά σας',
+    email: 'Email',
+    phone: 'Τηλέφωνο ή WhatsApp (προαιρετικό)',
+    need: 'Τι χρειάζεστε; (προαιρετικό)',
+    needPh: 'π.χ. Δίγλωσση ιστοσελίδα για τον ξενώνα μας με 8 δωμάτια και απευθείας κρατήσεις, έτοιμη πριν το καλοκαίρι.',
+    submit: 'Στείλτε το αίτημα',
+    sending: 'Αποστολή...',
+    doneTitle: (first: string) => (first ? `Ευχαριστούμε, ${first}. Λάβαμε το αίτημά σας.` : 'Ευχαριστούμε. Λάβαμε το αίτημά σας.'),
+    doneBody: `Θα σας απαντήσουμε μέσα σε ${RESPONSE_HOURS} εργάσιμες ώρες με πρώτες ιδέες και προσφορά. Ρίξτε μια ματιά στο email σας, και στα ανεπιθύμητα για σιγουριά.`,
+    seeWork: 'Δείτε ιστοσελίδες που έχουμε φτιάξει',
+    errors: {
+      website: 'Γράψτε τη διεύθυνση της ιστοσελίδας σας, π.χ. h-epixeirisi-sas.gr.',
+      business: 'Προσθέστε το όνομα της επιχείρησής σας.',
+      name: 'Προσθέστε το όνομά σας.',
+      email: 'Γράψτε ένα έγκυρο email.',
+      generic: 'Κάτι πήγε στραβά. Δοκιμάστε ξανά ή στείλτε μας μήνυμα στο WhatsApp.',
+    },
+  },
+} as const;
 
-function OnboardingWizard({ locale }: { locale: SiteLocale }) {
-  const searchParams = useSearchParams();
-  const lp = (path: string) => localizedPath(locale, path);
-  const isEl = locale === 'el';
+/** English labels for the lead record, whatever language the visitor used. */
+const TYPE_EN: Record<ProjectType, string> = WEBSITE_COPY.en.types;
 
-  const goals = isEl ? goalsEl : goalsEn;
-  const projectTypes = isEl ? projectTypesEl : projectTypesEn;
-  const featureOptions = isEl ? featureOptionsEl : featureOptionsEn;
-  const existingAssets = isEl ? existingAssetsEl : existingAssetsEn;
+const inputClass =
+  'h-12 w-full min-w-0 rounded-2xl border border-hairline bg-background/60 px-4 text-base text-foreground placeholder:text-muted-foreground/70 focus:border-brand/60 focus:outline-none';
 
-  const [step, setStep] = useState(1);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isComplete, setIsComplete] = useState(false);
-  const [submitError, setSubmitError] = useState('');
-  const [utmParams, setUtmParams] = useState<Record<string, string>>({});
-  const [hasTrackedStart, setHasTrackedStart] = useState(false);
-  const [emailTouched, setEmailTouched] = useState(false);
-  // The live test and the estimator sit above this form; whatever the visitor
-  // ended up looking at travels with the brief so the call starts from their
-  // figures rather than from a blank page.
-  const [plan, setPlan] = useState<PlanSnapshot | null>(null);
-  const briefRef = useRef<HTMLDivElement>(null);
-  const scrollToBrief = useCallback(() => {
-    briefRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }, []);
+function WebsiteBriefForm({
+  locale,
+  initialWebsite,
+  context,
+  className,
+}: {
+  locale: SiteLocale;
+  initialWebsite: string;
+  context?: Record<string, string>;
+  className?: string;
+}) {
+  const t = WEBSITE_COPY[locale];
+  const details = useSiteDetails();
+  const [projectType, setProjectType] = useState<ProjectType>(initialWebsite ? 'has-site' : 'new-site');
+  const [website, setWebsite] = useState(initialWebsite);
+  const [business, setBusiness] = useState('');
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [need, setNeed] = useState('');
+  const [gotcha, setGotcha] = useState('');
+  const [sending, setSending] = useState(false);
+  const [done, setDone] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [started, setStarted] = useState(false);
+  const typesId = useId();
+  const showWebsite = projectType !== 'new-site';
 
-  const [formData, setFormData] = useState({
-    goal: '',
-    projectType: '',
-    businessName: '',
-    industry: '',
-    website: '',
-    description: '',
-    hasDomain: '' as '' | 'yes' | 'no' | 'need-help',
-    domainName: '',
-    competitors: '',
-    designReferences: '',
-    targetAudience: '',
-    features: [] as string[],
-    timeline: '' as '' | 'asap' | '2-4-weeks' | '1-2-months' | 'flexible',
-    existingAssets: [] as string[],
-    facebookUrl: '',
-    instagramUrl: '',
-    linkedinUrl: '',
-    twitterUrl: '',
-    additionalNotes: '',
-    fullName: '',
-    email: '',
-    phone: '',
-    // Honeypot, humans never see or fill this ("website" is a real field in this form).
-    gotcha: '',
-  });
+  function markStarted() {
+    if (started) return;
+    setStarted(true);
+    trackFormStart('get-started');
+  }
 
-  useEffect(() => {
-    // Post-mount sync is the point here: utm params and ?goal/?project only exist in the browser,
-    // so the first paint has to be the SSR value and this corrects it.
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setUtmParams(captureUtmParams());
-    const goal = searchParams.get('goal');
-    const project = searchParams.get('project');
-    // Service pages link here as `?service=<slug>`. Until now nothing read it,
-    // so a visitor who had just finished reading about one service landed on a
-    // blank wizard and was asked to pick their goal from scratch.
-    const service = searchParams.get('service');
-    // `website` arrives from the homepage instant scan, so the visitor never
-    // types their domain twice.
-    const website = searchParams.get('website');
-    setFormData((prev) => {
-      let next = { ...prev };
-      if (goal && goals.some((g) => g.id === goal)) {
-        next = { ...next, goal };
-      } else if (service && SERVICE_GOALS[service] && goals.some((g) => g.id === SERVICE_GOALS[service])) {
-        next = { ...next, goal: SERVICE_GOALS[service] };
-      }
-      if (project) {
-        next = { ...next, industry: project };
-      }
-      if (website && !prev.website) {
-        next = { ...next, website: website.slice(0, 200), projectType: prev.projectType || 'existing' };
-      }
-      return next;
-    });
-  }, [searchParams, goals]);
+  async function handleFetchDetails() {
+    markStarted();
+    const found = await details.fetchFor(website);
+    if (!found) return;
+    // Only empty fields: whatever the visitor typed wins.
+    if (found.siteName) setBusiness((v) => v || (found.siteName as string));
+    if (found.email) setEmail((v) => v || (found.email as string));
+    if (found.phone) setPhone((v) => v || (found.phone as string));
+  }
 
-  // A completed audit is proof the visitor has a site, and it already knows the
-  // address after redirects. Asking them to type it again below - and to answer
-  // "where are you now?" - is asking for something we just measured. Anything
-  // they have already filled in by hand wins.
-  const handleAudited = useCallback((result: { finalUrl: string }) => {
-    setFormData((prev) =>
-      prev.website && prev.projectType
-        ? prev
-        : {
-            ...prev,
-            website: prev.website || result.finalUrl.slice(0, 200),
-            projectType: prev.projectType || 'existing',
-          },
-    );
-  }, []);
-
-  const selectedGoal = goals.find((g) => g.id === formData.goal);
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    if (!hasTrackedStart) {
-      trackFormStart('get-started');
-      setHasTrackedStart(true);
-    }
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
-
-  const handleFeatureToggle = (featureId: string) => {
-    setFormData(prev => ({
-      ...prev,
-      features: prev.features.includes(featureId)
-        ? prev.features.filter(id => id !== featureId)
-        : [...prev.features, featureId],
-    }));
-  };
-
-  const handleAssetToggle = (assetId: string) => {
-    setFormData(prev => ({
-      ...prev,
-      existingAssets: prev.existingAssets.includes(assetId)
-        ? prev.existingAssets.filter(id => id !== assetId)
-        : [...prev.existingAssets, assetId],
-    }));
-  };
-
-  const isStepValid = () => {
-    switch (step) {
-      case 1:
-        return !!formData.goal && !!formData.projectType;
-      // Only what we cannot quote without. Industry, domain and timeline are
-      // optional: an empty answer is sent as "Needs help choosing" / "Flexible".
-      case 2:
-        return !!formData.businessName;
-      case 3:
-        return true;
-      case 4:
-        return !!formData.fullName.trim() && EMAIL_RE.test(formData.email.trim());
-      default:
-        return false;
-    }
-  };
-
-  const handleNext = () => {
-    if (isStepValid() && step < 4) {
-      setStep(step + 1);
-    }
-  };
-
-  const handleBack = () => {
-    if (step > 1) {
-      setStep(step - 1);
-    }
-  };
-
-  const handleSubmit = async () => {
-    if (formData.gotcha) {
-      // Bot filled the honeypot, pretend success, send nothing.
-      setIsComplete(true);
+  async function handleSubmit(e: FormEvent) {
+    e.preventDefault();
+    const site = showWebsite ? website.trim() : '';
+    const mail = email.trim();
+    if (projectType === 'has-site' && !looksLikeUrl(site)) return setError(t.errors.website);
+    if (site && !looksLikeUrl(site)) return setError(t.errors.website);
+    if (!business.trim()) return setError(t.errors.business);
+    if (!name.trim()) return setError(t.errors.name);
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail)) return setError(t.errors.email);
+    if (gotcha) {
+      // Bot filled the honeypot: pretend success, send nothing.
+      setDone(true);
       return;
     }
-    setIsSubmitting(true);
-    setSubmitError('');
-
-    const submissionData = {
-      'Goal': selectedGoal?.label || 'Not selected',
-      'Project Type': projectTypes.find((pt) => pt.id === formData.projectType)?.label || 'Not selected',
-      'Business Name': formData.businessName,
-      'Industry': formData.industry,
-      'Current Website': formData.website || 'None',
-      'Business Description': formData.description || 'Not provided',
-      'Has Domain': formData.hasDomain === 'yes' ? `Yes - ${formData.domainName}` : formData.hasDomain === 'no' ? 'No, needs to register' : 'Needs help choosing',
-      'Competitors': formData.competitors || 'Not provided',
-      'Design Inspiration': formData.designReferences || 'Not provided',
-      'Target Audience': formData.targetAudience || 'Not provided',
-      'Features Needed': formData.features.map(f => featureOptions.find(o => o.id === f)?.label).filter(Boolean).join(', ') || 'None selected',
-      'Timeline': formData.timeline === 'asap' ? 'ASAP' : formData.timeline === '2-4-weeks' ? '2-4 Weeks' : formData.timeline === '1-2-months' ? '1-2 Months' : 'Flexible',
-      'Existing Assets': formData.existingAssets.map(a => existingAssets.find(o => o.id === a)?.label).filter(Boolean).join(', ') || 'None',
-      'Facebook': formData.facebookUrl || 'Not provided',
-      'Instagram': formData.instagramUrl || 'Not provided',
-      'LinkedIn': formData.linkedinUrl || 'Not provided',
-      'Twitter': formData.twitterUrl || 'Not provided',
-      'Additional Notes': formData.additionalNotes || 'None',
-      'Full Name': formData.fullName,
-      'Email': formData.email,
-      'Phone': formData.phone || 'Not provided',
-      '_subject': `New Website Project Request from ${formData.businessName}`,
-      'Form Type': 'Get Started Wizard',
-      ...(plan ? summarizePlan(plan, locale) : {}),
-    ...utmParams,
+    setError(null);
+    setSending(true);
+    const utm = captureUtmParams();
+    const info = showWebsite ? details.info : null;
+    const answers = {
+      Request: 'New website',
+      'Project type': TYPE_EN[projectType],
+      'What they need': need.trim(),
+      ...context,
+      ...utm,
     };
-
-    const service: LeadService =
-      formData.goal === 'new-site' || formData.projectType === 'new' ? 'webdesign'
-      : formData.goal === 'eshop' || formData.projectType === 'eshop' ? 'both'
-      : 'seo';
-    const contactKeys = new Set(['_subject', 'Form Type', 'Full Name', 'Email', 'Phone']);
-    const answers = Object.fromEntries(Object.entries(submissionData).filter(([k]) => !contactKeys.has(k)));
-    const result = await submitLead(submissionData, {
-      name: formData.fullName,
-      email: formData.email,
-      phone: formData.phone,
-      company: formData.businessName,
-      website: formData.website || (formData.hasDomain === 'yes' ? formData.domainName : ''),
-      service,
-      message: describeAnswers(answers),
-      locale,
-      source: 'website-get-started',
-    });
-
-    if (result.ok) {
-      trackLead('get-started', {
-        goal: selectedGoal?.id ?? 'unknown',
-        industry: formData.industry,
-      });
-      setIsComplete(true);
+    const res = await submitLead(
+      {
+        form: 'get_started_website',
+        'Form Type': 'Get Started - Website',
+        _subject: `New website request from ${business.trim()}`,
+        'Project Type': TYPE_EN[projectType],
+        'Business Name': business.trim(),
+        'Current Website': site || 'None',
+        'What They Need': need.trim() || 'Not provided',
+        'Full Name': name.trim(),
+        Email: mail,
+        Phone: phone.trim() || 'Not provided',
+        ...siteDetailsFields(info),
+        ...context,
+        locale,
+        page: typeof window !== 'undefined' ? window.location.pathname : '',
+        ...utm,
+      },
+      {
+        name: name.trim(),
+        email: mail,
+        phone: phone.trim() || undefined,
+        website: site || undefined,
+        company: business.trim() || info?.siteName || undefined,
+        service: 'webdesign',
+        message: [describeAnswers(answers), siteDetailsMessage(info)].filter(Boolean).join('\n\n'),
+        locale,
+        source: 'website-get-started',
+      },
+    );
+    setSending(false);
+    if (res.ok) {
+      trackLead('get-started', { project_type: projectType, ...(context?.Industry ? { industry: context.Industry } : {}) });
+      setDone(true);
     } else {
-      setSubmitError(result.error ?? (isEl ? 'Παρουσιάστηκε σφάλμα κατά την υποβολή. Παρακαλώ δοκιμάστε ξανά.' : 'There was an error submitting your request. Please try again.'));
+      setError(res.error ?? t.errors.generic);
     }
-    setIsSubmitting(false);
-  };
+  }
 
-  const t = isEl
-    ? {
-        title: "Ξεκινήστε το Έργο Σας",
-        subtitle: "Συμπληρώστε τον οδηγό για να λάβετε μια προσαρμοσμένη προσφορά σε 24 ώρες.",
-        stepLabels: ['Στόχος', 'Επιχείρηση', 'Project', 'Επικοινωνία'],
-        currency: "€",
-        choosePkg: "Τι θέλετε να πετύχετε;",
-        choosePkgSub: "Πείτε μας τον στόχο σας και θα προτείνουμε το κατάλληλο πλάνο. Χωρίς δέσμευση.",
-        projectTypeLabel: "Πού βρίσκεστε τώρα",
-        goalLabel: "Στόχος",
-        sidebarSteps: [
-          "Διαβάζουμε το αίτημά σας και ελέγχουμε την ιστοσελίδα και τον ανταγωνισμό σας.",
-          "Σας στέλνουμε δωρεάν αξιολόγηση με τα σημεία που αποδίδουν πιο γρήγορα.",
-          "Κλείνουμε μια σύντομη κλήση και σας δίνουμε συγκεκριμένη προσφορά.",
-        ],
-        pagesCount: (count: number) => `Έως ${count} σελίδες`,
-        optionalAddons: "Προαιρετικά Add-ons",
-        bizInfoTitle: "Πείτε μας για την Επιχείρησή σας",
-        bizInfoSub: "Βοηθήστε μας να κατανοήσουμε τις ανάγκες σας",
-        bizName: "Όνομα Επιχείρησης *",
-        bizNamePlaceholder: "Η Εταιρεία Σας",
-        industryLabel: "Κλάδος",
-        industrySelect: "Επιλέξτε κλάδο",
-        currWeb: "Τρέχουσα Ιστοσελίδα (αν υπάρχει)",
-        bizDesc: "Σύντομη Περιγραφή",
-        bizDescPlaceholder: "Πείτε μας λίγα λόγια για την επιχείρησή σας και τους στόχους της νέας ιστοσελίδας...",
-        projDetailsTitle: "Λεπτομέρειες Project",
-        projDetailsSub: "Βοηθήστε μας να κατανοήσουμε καλύτερα τις απαιτήσεις",
-        hasDomain: "Έχετε domain name;",
-        domainOptions: [
-          { value: 'yes', label: 'Ναι, έχω ήδη domain' },
-          { value: 'no', label: 'Όχι, θέλω να κατοχυρώσω νέο' },
-          { value: 'need-help', label: 'Χρειάζομαι βοήθεια στην επιλογή' },
-        ],
-        competitors: "Ανταγωνιστές (προαιρετικά)",
-        competitorsPlaceholder: "Καταγράψτε 1-3 ιστοσελίδες ανταγωνιστών (μία ανά σειρά)",
-        designRefs: "Έμπνευση & Σχεδιασμός (προαιρετικά)",
-        designRefsPlaceholder: "Προσθέστε ιστοσελίδες που σας αρέσει το design τους (μία ανά σειρά)",
-        targetAudience: "Κοινό-Στόχος (προαιρετικά)",
-        targetAudiencePlaceholder: "π.χ. Ιδιοκτήτες σκαφών, ηλικίες 30-60, τουρίστες",
-        featuresTitle: "Ποια χαρακτηριστικά χρειάζεστε;",
-        timelineTitle: "Χρονοδιάγραμμα Project",
-        timelineOptions: [
-          { value: 'asap', label: 'Άμεσα (ASAP)' },
-          { value: '2-4-weeks', label: '2-4 Εβδομάδες' },
-          { value: '1-2-months', label: '1-2 Μήνες' },
-          { value: 'flexible', label: 'Ευέλικτο' },
-        ],
-        assetsTitle: "Τι έχετε ήδη έτοιμο;",
-        socialsTitle: "Λογαριασμοί Social Media (προαιρετικά)",
-        addNotes: "Επιπλέον Σημειώσεις (προαιρετικά)",
-        contactTitle: "Στοιχεία Επικοινωνίας",
-        contactSub: "Θα τα χρησιμοποιήσουμε για να σας στείλουμε την προσφορά",
-        fullName: "Ονοματεπώνυμο *",
-        email: "Email *",
-        phone: "Τηλέφωνο",
-        back: "Πίσω",
-        cancel: "Ακύρωση",
-        continue: "Συνέχεια",
-        submitting: "Υποβολή...",
-        submitBtn: "Υποβολή Αιτήματος",
-        summaryTitle: "Σύνοψη Αιτήματος",
-        summaryEstimated: "Εκτιμώμενο Σύνολο",
-        summaryFinalQuote: "Η τελική προσφορά θα διαμορφωθεί μετά τον έλεγχο",
-        noPkgSelected: "Επιλέξτε πακέτο για εκτίμηση",
-        freeConsult: "Δωρεάν διαβούλευση",
-        customProposal: "Προσαρμοσμένη πρόταση σε 24 ώρες",
-        noCommitment: "Χωρίς καμία δέσμευση",
-        submittedTitle: "Το αίτημα υποβλήθηκε!",
-        submittedSub: (name: string) => `Ευχαριστούμε, ${name}! Λάβαμε τις λεπτομέρειες του project σας.`,
-        nextStepsTitle: "Τι γίνεται στη συνέχεια;",
-        nextSteps: [
-          "Ελέγξτε το email σας για την επιβεβαίωση υποβολής",
-          "Η ομάδα μας θα εξετάσει το project σας εντός 24 ωρών",
-          "Θα σας στείλουμε μια προσαρμοσμένη πρόταση βάσει των αναγκών σας",
-          "Μόλις συμφωνήσουμε, ξεκινάμε την κατασκευή!"
-        ],
-        backHome: "Επιστροφή στην Αρχική",
-        estBudget: "Εκτιμώμενο Budget",
-        pkgLabel: "Πακέτο",
-        bizLabel: "Επιχείρηση",
-        other: "Άλλο",
-        beforeAfterTitle: "Τι δουλεύουμε",
-        beforeAfterSub: "Τα τέσσερα σημεία που εξετάζουμε πρώτα σε κάθε έργο, και τι αλλάζει σε καθένα",
-        // Δεν υπόσχονται νούμερα. Η προηγούμενη έκδοση έδινε συγκεκριμένα
-        // αποτελέσματα ("1η Θέση", "4.8% - 8.2%", "0% χαμένοι πελάτες") χωρίς
-        // πελάτη από πίσω, και σε αντίθεση με τη δική μας πολιτική στη σελίδα
-        // τιμών: καμία εταιρεία δεν ελέγχει τα συστήματα κατάταξης της Google.
-        metrics: [
-          {
-            title: "Ταχύτητα (Core Web Vitals)",
-            before: "Τι βρίσκουμε συνήθως",
-            beforeDesc: "Αργό φόρτωμα σε κινητό, εικόνες χωρίς συμπίεση, scripts που μπλοκάρουν το rendering.",
-            after: "Τι κάνουμε",
-            afterDesc: "Μετράμε LCP, CLS και INP με πραγματικά δεδομένα πεδίου και διορθώνουμε ό,τι τα κρατά εκτός ορίων.",
-            status: "speed"
-          },
-          {
-            title: "Οργανική ορατότητα",
-            before: "Τι βρίσκουμε συνήθως",
-            beforeDesc: "Σελίδες που δεν αντιστοιχούν σε καμία εμπορική αναζήτηση, ή δύο σελίδες που ανταγωνίζονται την ίδια.",
-            after: "Τι κάνουμε",
-            afterDesc: "Αντιστοιχίζουμε κάθε εμπορική ομάδα λέξεων-κλειδιών σε μία σελίδα και δουλεύουμε τα τεχνικά εμπόδια ευρετηρίασης.",
-            status: "seo"
-          },
-          {
-            title: "Ορατότητα σε AI και LLMs",
-            before: "Τι βρίσκουμε συνήθως",
-            beforeDesc: "Καμία απάντηση σε μορφή που μπορεί να παραθέσει μια μηχανή απαντήσεων, ασαφή στοιχεία εταιρείας.",
-            after: "Τι κάνουμε",
-            afterDesc: "Γράφουμε απαντήσεις πρώτα, με δομημένα δεδομένα που αντιστοιχούν στο ορατό περιεχόμενο, και μετράμε αναφορές. Καμία μηχανή δεν εγγυάται παράθεση.",
-            status: "ai"
-          },
-          {
-            title: "Μετατροπή επισκεπτών",
-            before: "Τι βρίσκουμε συνήθως",
-            beforeDesc: "Φόρμες που δεν δουλεύουν σε κινητό, ασαφές επόμενο βήμα, καμία μέτρηση.",
-            after: "Τι κάνουμε",
-            afterDesc: "Ξεκάθαρη διαδρομή προς το αίτημα, φόρμες που δουλεύουν σε κινητό και παρακολούθηση ώστε να ξέρετε τι αποδίδει.",
-            status: "conversion"
-          }
-        ]
-      }
-    : {
-        title: "Start Your Project",
-        subtitle: "Complete our wizard to receive a custom quote in 24 hours.",
-        stepLabels: ['Goal', 'Business', 'Project', 'Contact'],
-        currency: "€",
-        choosePkg: "What do you want to fix?",
-        choosePkgSub: "Tell us the outcome you are after and we will recommend the right plan. No commitment.",
-        projectTypeLabel: "Where you are now",
-        goalLabel: "Goal",
-        sidebarSteps: [
-          "We read your brief and review your site and competitors.",
-          "You get a free assessment showing the fastest wins available.",
-          "We hop on a short call and send a concrete quote.",
-        ],
-        pagesCount: (count: number) => `Up to ${count} pages`,
-        optionalAddons: "Optional Add-ons",
-        bizInfoTitle: "Tell Us About Your Business",
-        bizInfoSub: "Help us understand your needs",
-        bizName: "Business Name *",
-        bizNamePlaceholder: "Your Company Name",
-        industryLabel: "Industry",
-        industrySelect: "Select your industry",
-        currWeb: "Current Website (if any)",
-        bizDesc: "Brief Description",
-        bizDescPlaceholder: "Tell us about your business and what you want to achieve with your new website...",
-        projDetailsTitle: "Project Details",
-        projDetailsSub: "Help us better understand your project requirements",
-        hasDomain: "Do you have a domain name?",
-        domainOptions: [
-          { value: 'yes', label: 'Yes, I have a domain' },
-          { value: 'no', label: 'No, I need to register one' },
-          { value: 'need-help', label: 'I need help choosing a domain' },
-        ],
-        competitors: "Competitor Websites (optional)",
-        competitorsPlaceholder: "List 1-3 competitor websites we should look at (one per line)",
-        designRefs: "Design Inspiration (optional)",
-        designRefsPlaceholder: "Share websites you like the design of (one per line)",
-        targetAudience: "Target Audience (optional)",
-        targetAudiencePlaceholder: "e.g., Small business owners, ages 35-55, local area",
-        featuresTitle: "What features do you need?",
-        timelineTitle: "Project Timeline",
-        timelineOptions: [
-          { value: 'asap', label: 'ASAP' },
-          { value: '2-4-weeks', label: '2-4 Weeks' },
-          { value: '1-2-months', label: '1-2 Months' },
-          { value: 'flexible', label: 'Flexible' },
-        ],
-        assetsTitle: "What do you already have?",
-        socialsTitle: "Social Media Accounts (optional)",
-        addNotes: "Additional Notes (optional)",
-        contactTitle: "Your Contact Information",
-        contactSub: "We'll use this to send you a custom proposal",
-        fullName: "Full Name *",
-        email: "Email Address *",
-        phone: "Phone Number",
-        back: "Back",
-        cancel: "Cancel",
-        continue: "Continue",
-        submitting: "Submitting...",
-        submitBtn: "Submit Request",
-        summaryTitle: "Request Summary",
-        summaryEstimated: "Estimated Total",
-        summaryFinalQuote: "Final quote provided after review",
-        noPkgSelected: "Select a package to see estimate",
-        freeConsult: "Free consultation",
-        customProposal: "Custom proposal in 24h",
-        noCommitment: "No commitment required",
-        submittedTitle: "Request Submitted!",
-        submittedSub: (name: string) => `Thank you, ${name}! We've received your project request.`,
-        nextStepsTitle: "What happens next?",
-        nextSteps: [
-          "Check your email for confirmation",
-          "Our team will review your project details within 24 hours",
-          "We'll send you a custom proposal based on your requirements",
-          "Once approved, we'll kick off your project!"
-        ],
-        backHome: "Back to Home",
-        estBudget: "Estimated Budget",
-        pkgLabel: "Package",
-        bizLabel: "Business",
-        other: "Other",
-        beforeAfterTitle: "What we work on",
-        beforeAfterSub: "The four things we look at first on every project, and what changes in each",
-        // No promised numbers. The previous version asserted specific outcomes
-        // ("Page 1 Position 1", "4.8% - 8.2%", "Zero lost traffic") with no
-        // client behind them, and against our own line on the pricing page:
-        // no agency controls Google's ranking systems.
-        metrics: [
-          {
-            title: "Performance (Core Web Vitals)",
-            before: "What we usually find",
-            beforeDesc: "Slow mobile loads, uncompressed images, render-blocking scripts.",
-            after: "What we do",
-            afterDesc: "Measure LCP, CLS and INP against real field data, then fix whatever is keeping them outside the thresholds.",
-            status: "speed"
-          },
-          {
-            title: "Organic visibility",
-            before: "What we usually find",
-            beforeDesc: "Pages that match no commercial search, or two pages competing for the same one.",
-            after: "What we do",
-            afterDesc: "Map each commercial keyword cluster to a single page, and clear the technical blockers stopping it being indexed.",
-            status: "seo"
-          },
-          {
-            title: "AI search and LLM presence",
-            before: "What we usually find",
-            beforeDesc: "Nothing written in a shape an answer engine can quote, and no clear company facts to ground it.",
-            after: "What we do",
-            afterDesc: "Answer-first copy, structured data that matches what is visible, and measurement of mentions. No engine guarantees a citation.",
-            status: "ai"
-          },
-          {
-            title: "Turning visits into enquiries",
-            before: "What we usually find",
-            beforeDesc: "Forms that fail on mobile, no obvious next step, and nothing tracked.",
-            after: "What we do",
-            afterDesc: "One clear path to an enquiry, forms that work on a phone, and tracking so you know what is paying.",
-            status: "conversion"
-          }
-        ]
-      };
-
-  if (isComplete) {
+  if (done) {
     return (
-      <main className="blueprint-grid relative z-0">
-        <section className="hero-below-header relative isolate overflow-hidden pb-24">
-          <HeroBackdrop />
-          <div className="mx-auto max-w-xl px-5 pt-6 text-center">
-            <span className="mx-auto flex size-16 items-center justify-center rounded-full bg-brand/15 text-brand">
-              <Check className="size-8" strokeWidth={2.5} aria-hidden />
-            </span>
-            <h1 className="mt-8 font-display text-[34px] font-semibold leading-[1.08] tracking-[-0.04em] text-foreground sm:text-[44px]">{t.submittedTitle}</h1>
-            <p className="mt-4 text-[17px] leading-relaxed text-muted-foreground">
-              {t.submittedSub(formData.fullName.split(' ')[0])}
-            </p>
-
-            <div className="mt-8 rounded-2xl border border-hairline bg-surface/70 p-6 text-left">
-              <h2 className="text-[16px] font-semibold text-foreground">{t.nextStepsTitle}</h2>
-              <ol className="mt-4 space-y-3 text-[14.5px]">
-                {t.nextSteps.map((stepText, idx) => (
-                  <li key={idx} className="flex items-start gap-3">
-                    <span className="font-mono text-[12px] font-medium text-brand">{String(idx + 1).padStart(2, '0')}</span>
-                    <span className="text-foreground/90">{stepText}</span>
-                  </li>
-                ))}
-              </ol>
-            </div>
-
-            <div className="mt-4 rounded-2xl border border-hairline bg-surface/50 p-4 text-[14px] text-muted-foreground">
-              <strong className="text-foreground">{t.goalLabel}:</strong> {selectedGoal?.label} &middot;
-              <strong className="text-foreground"> {t.bizLabel}:</strong> {formData.businessName}
-            </div>
-
-            <Link href={lp("/")} className={`${kitPrimaryBtn} mt-8`}>
-              {t.backHome}
-            </Link>
-          </div>
-        </section>
-      </main>
+      <div className={cn('glass rounded-3xl p-6 text-center sm:p-8', className)} role="status">
+        <span className="mx-auto flex size-14 items-center justify-center rounded-full bg-brand/15 text-brand">
+          <Check className="size-7" strokeWidth={2.5} aria-hidden />
+        </span>
+        <h2 className="mt-5 font-display text-2xl font-semibold tracking-[-0.03em] text-foreground">{t.doneTitle(name.trim().split(/\s+/)[0] ?? '')}</h2>
+        <p className="mx-auto mt-2 max-w-xl text-[15px] leading-relaxed text-muted-foreground">{t.doneBody}</p>
+        <Link href={localizedPath(locale, '/work')} className={cn(kitSecondaryBtn, 'mt-6')}>
+          {t.seeWork}
+          <ArrowRight className="size-4 shrink-0" aria-hidden />
+        </Link>
+      </div>
     );
   }
 
   return (
-    <main className="blueprint-grid relative z-0">
-      {/* Hero: the two-field free audit is the fast path. Menus and CTAs
-          across the site link to #free-audit, which FreeAuditForm carries. */}
-      <PageHero
-        locale={locale}
-        pill={{
-          href: '#free-audit',
-          kind: 'free',
-          tag: isEl ? 'Δωρεάν' : 'Free',
-          text: isEl ? 'Έλεγχος SEO από την ομάδα μας' : 'Full SEO audit by our team',
-        }}
-        title={accentTail(t.title, 2)}
-        lead={t.subtitle}
-        actions={
-          <FreeAuditForm
-            locale={locale}
-            initialWebsite={searchParams.get('website') ?? ''}
-            className="mx-auto max-w-4xl"
-          />
-        }
-      />
+    <form onSubmit={handleSubmit} noValidate className={cn('glass rounded-3xl p-5 text-left sm:p-6', className)}>
+      <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-brand">{t.eyebrow}</p>
+      <h2 className="mt-1 font-display text-xl font-semibold tracking-[-0.02em] text-foreground">{t.title}</h2>
+      <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{t.body}</p>
 
-      {/* Live site test and live estimate, above the brief.
-          A visitor who can see what their own site scores and what fixing it
-          costs arrives at the form already knowing what they are asking for -
-          and we receive a brief with real figures attached instead of a name
-          and an email. */}
-      <section className="mx-auto mt-16 mb-16 w-full max-w-6xl px-5 sm:px-8">
-        <InstantPlan
-          locale={locale}
-          service={searchParams.get('service')}
-          initialUrl={searchParams.get('website') ?? ''}
-          onChange={setPlan}
-          onAudited={handleAudited}
-          onSendBrief={scrollToBrief}
-        />
-      </section>
-
-      <div ref={briefRef} className="mx-auto w-full max-w-6xl scroll-mt-28 px-5 sm:px-8">
-        <div className="grid lg:grid-cols-5 gap-8 items-start">
-          
-          {/* Left Column: Before / After Marketing Comparison */}
-          <div className="lg:col-span-2 space-y-6">
-            <div className="rounded-3xl border border-hairline bg-surface/60 p-6">
-              <h3 className="font-display text-xl font-medium tracking-[-0.02em] mb-2 text-foreground">{t.beforeAfterTitle}</h3>
-              <p className="text-sm text-muted-foreground mb-6">{t.beforeAfterSub}</p>
-
-              <div className="space-y-6">
-                {t.metrics.map((metric) => (
-                  <div key={metric.title} className="border-b border-hairline pb-6 last:border-0 last:pb-0">
-                    <h4 className="font-semibold text-sm mb-3 text-foreground/90">{metric.title}</h4>
-                    <div className="grid grid-cols-2 gap-3">
-                      {/* Before (Red) */}
-                      <div className="p-3 rounded-[8px] bg-destructive/5 border border-destructive/10">
-                        <div className="flex items-center gap-1.5 mb-1">
-                          <span className="w-1.5 h-1.5 rounded-full bg-destructive" />
-                          <span className="text-[10px] font-bold uppercase tracking-wider text-destructive">
-                            {isEl ? "ΠΡΙΝ" : "BEFORE"}
-                          </span>
-                        </div>
-                        <div className="font-bold text-xs text-destructive mb-1">{metric.before}</div>
-                        <p className="text-[10px] text-muted-foreground leading-snug">{metric.beforeDesc}</p>
-                      </div>
-
-                      {/* After (Green) */}
-                      <div className="p-3 rounded-[8px] bg-success/5 border border-success/10">
-                        <div className="flex items-center gap-1.5 mb-1">
-                          <span className="w-1.5 h-1.5 rounded-full bg-success" />
-                          <span className="text-[10px] font-bold uppercase tracking-wider text-success">
-                            {isEl ? "ΜΕΤΑ" : "AFTER"}
-                          </span>
-                        </div>
-                        <div className="font-bold text-xs text-success mb-1">{metric.after}</div>
-                        <p className="text-[10px] text-muted-foreground leading-snug">{metric.afterDesc}</p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Right Column: Dynamic Form Wizard */}
-          <div className="lg:col-span-3 space-y-6">
-            {/* Step Progress indicators */}
-            <div className="mb-4 rounded-2xl border border-hairline bg-surface/60 p-4">
-              <div className="flex items-center justify-between mb-3">
-                {t.stepLabels.map((label, i) => (
-                  <div
-                    key={label}
-                    className={`flex items-center gap-2 ${i + 1 <= step ? 'text-primary' : 'text-muted-foreground'}`}
-                  >
-                    <div className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold ${i + 1 < step ? 'gradient-primary text-white' :
-                      i + 1 === step ? 'border-2 border-primary text-primary' :
-                        'border-2 border-muted-foreground/30'
-                      }`}>
-                      {i + 1 < step ? '✓' : i + 1}
-                    </div>
-                    <span className="hidden sm:block text-xs font-semibold">{label}</span>
-                  </div>
-                ))}
-              </div>
-              <div className="h-1.5 bg-muted rounded-full overflow-hidden">
-                <div
-                  className="h-full gradient-primary transition-all duration-300"
-                  style={{ width: `${(step / 4) * 100}%` }}
-                />
-              </div>
-            </div>
-
-            <div className="relative rounded-3xl border border-hairline bg-surface/70 p-5 sm:p-8">
-              {/* Step 1: what the visitor actually wants to achieve */}
-              {step === 1 && (
-                <div>
-                  <h2 className="font-display text-[24px] font-semibold tracking-[-0.03em] text-foreground mb-2">{t.choosePkg}</h2>
-                  <p className="text-muted-foreground mb-6 text-sm">{t.choosePkgSub}</p>
-
-                  <div className="grid gap-2.5 sm:grid-cols-2 mb-8">
-                    {goals.map((goal) => (
-                      <label
-                        key={goal.id}
-                        className={`flex cursor-pointer items-start gap-3 rounded-[10px] border p-4 transition-colors ${
-                          formData.goal === goal.id
-                            ? 'border-primary bg-primary/5'
-                            : 'border-hairline hover:border-primary/40'
-                        }`}
-                      >
-                        <input
-                          type="radio"
-                          name="goal"
-                          value={goal.id}
-                          checked={formData.goal === goal.id}
-                          onChange={handleInputChange}
-                          className="mt-0.5 size-4 shrink-0 text-primary focus:ring-2 focus:ring-primary"
-                        />
-                        <span className="min-w-0">
-                          <span className="block text-sm font-medium text-foreground">{goal.label}</span>
-                          <span className="mt-0.5 block text-xs text-muted-foreground">{goal.hint}</span>
-                        </span>
-                      </label>
-                    ))}
-                  </div>
-
-                  <h3 className="mb-3 text-[11px] font-medium uppercase tracking-[0.18em] text-brand">
-                    {t.projectTypeLabel}
-                  </h3>
-                  <div className="grid gap-2.5 sm:grid-cols-3">
-                    {projectTypes.map((pt) => (
-                      <label
-                        key={pt.id}
-                        className={`flex cursor-pointer items-center gap-3 rounded-[10px] border p-3.5 text-sm transition-colors ${
-                          formData.projectType === pt.id
-                            ? 'border-primary bg-primary/5'
-                            : 'border-hairline hover:border-primary/40'
-                        }`}
-                      >
-                        <input
-                          type="radio"
-                          name="projectType"
-                          value={pt.id}
-                          checked={formData.projectType === pt.id}
-                          onChange={handleInputChange}
-                          className="size-4 shrink-0 text-primary focus:ring-2 focus:ring-primary"
-                        />
-                        <span className="text-foreground">{pt.label}</span>
-                      </label>
-                    ))}
-                  </div>
-                </div>
+      <p id={typesId} className="sr-only">
+        {t.typesLabel}
+      </p>
+      <div role="radiogroup" aria-labelledby={typesId} className="mt-4 flex flex-wrap gap-2">
+        {(Object.keys(t.types) as ProjectType[]).map((id) => {
+          const active = projectType === id;
+          return (
+            <button
+              key={id}
+              type="button"
+              role="radio"
+              aria-checked={active}
+              onClick={() => {
+                markStarted();
+                setProjectType(id);
+              }}
+              className={cn(
+                'inline-flex min-h-10 items-center gap-1.5 rounded-full border px-4 py-2 text-sm font-medium transition-colors',
+                active ? 'border-brand/70 bg-brand/15 text-foreground' : 'border-hairline bg-background/40 text-muted-foreground hover:border-brand/40 hover:text-foreground',
               )}
-
-              {/* Step 2: Business Info */}
-              {step === 2 && (
-                <div>
-                  <h2 className="font-display text-[24px] font-semibold tracking-[-0.03em] text-foreground mb-2">{t.bizInfoTitle}</h2>
-                  <p className="text-muted-foreground mb-6 text-sm">{t.bizInfoSub}</p>
-
-                  <div className="space-y-4">
-                    <div>
-                      <label className="block text-[14px] font-medium text-foreground mb-2">{t.bizName}</label>
-                      <input
-                        type="text"
-                        name="businessName"
-                        value={formData.businessName}
-                        onChange={handleInputChange}
-                        placeholder={t.bizNamePlaceholder}
-                        className="w-full min-h-12 px-4 py-3 rounded-xl border border-hairline bg-background/70 text-[16px] text-foreground placeholder:text-muted-foreground/70 focus:border-brand/60 focus:outline-none focus:ring-2 focus:ring-brand/30 transition-colors"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-[14px] font-medium text-foreground mb-2">{t.industryLabel}</label>
-                      <select
-                        name="industry"
-                        value={formData.industry}
-                        onChange={handleInputChange}
-                        className="w-full min-h-12 px-4 py-3 rounded-xl border border-hairline bg-background/70 text-[16px] text-foreground placeholder:text-muted-foreground/70 focus:border-brand/60 focus:outline-none focus:ring-2 focus:ring-brand/30 transition-colors"
-                      >
-                        <option value="">{t.industrySelect}</option>
-                        {industries.map((ind) => {
-                          const name = isEl && industriesEl[ind.slug] ? industriesEl[ind.slug].name : ind.name;
-                          return (
-                            <option key={ind.slug} value={ind.slug}>{name}</option>
-                          );
-                        })}
-                        <option value="other">{t.other}</option>
-                      </select>
-                    </div>
-
-                    <div>
-                      <label className="block text-[14px] font-medium text-foreground mb-2">{t.currWeb}</label>
-                      <input
-                        type="url"
-                        name="website"
-                        value={formData.website}
-                        onChange={handleInputChange}
-                        placeholder="https://..."
-                        className="w-full min-h-12 px-4 py-3 rounded-xl border border-hairline bg-background/70 text-[16px] text-foreground placeholder:text-muted-foreground/70 focus:border-brand/60 focus:outline-none focus:ring-2 focus:ring-brand/30 transition-colors"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-[14px] font-medium text-foreground mb-2">{t.bizDesc}</label>
-                      <textarea
-                        name="description"
-                        value={formData.description}
-                        onChange={handleInputChange}
-                        placeholder={t.bizDescPlaceholder}
-                        rows={3}
-                        className="w-full min-h-12 px-4 py-3 rounded-xl border border-hairline bg-background/70 text-[16px] text-foreground placeholder:text-muted-foreground/70 focus:border-brand/60 focus:outline-none focus:ring-2 focus:ring-brand/30 transition-colors resize-none"
-                      />
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {/* Step 3: Project Details */}
-              {step === 3 && (
-                <div>
-                  <h2 className="font-display text-[24px] font-semibold tracking-[-0.03em] text-foreground mb-2">{t.projDetailsTitle}</h2>
-                  <p className="text-muted-foreground mb-6 text-sm">{t.projDetailsSub}</p>
-
-                  <div className="space-y-6">
-                    <div>
-                      <label className="block text-[14px] font-medium text-foreground mb-3">{t.hasDomain}</label>
-                      <div className="space-y-2">
-                        {t.domainOptions.map((option) => (
-                          <label
-                            key={option.value}
-                            className={`flex items-center gap-3 p-3 rounded-lg border cursor-pointer transition-smooth ${formData.hasDomain === option.value ? 'border-primary bg-primary/5' : 'border-hairline hover:border-primary/50'}`}
-                          >
-                            <input
-                              type="radio"
-                              name="hasDomain"
-                              value={option.value}
-                              checked={formData.hasDomain === option.value}
-                              onChange={handleInputChange}
-                              className="w-4 h-4 text-primary focus:ring-primary focus:ring-2"
-                            />
-                            <span className="text-sm font-medium">{option.label}</span>
-                          </label>
-                        ))}
-                      </div>
-                      {formData.hasDomain === 'yes' && (
-                        <input
-                          type="text"
-                          name="domainName"
-                          value={formData.domainName}
-                          onChange={handleInputChange}
-                          placeholder="yourdomain.com"
-                          className="w-full mt-3 px-4 py-3 rounded-lg border border-hairline bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-smooth text-sm"
-                        />
-                      )}
-                    </div>
-
-                    <div>
-                      <label className="block text-[14px] font-medium text-foreground mb-2">{t.competitors}</label>
-                      <textarea
-                        name="competitors"
-                        value={formData.competitors}
-                        onChange={handleInputChange}
-                        placeholder={t.competitorsPlaceholder}
-                        rows={3}
-                        className="w-full min-h-12 px-4 py-3 rounded-xl border border-hairline bg-background/70 text-[16px] text-foreground placeholder:text-muted-foreground/70 focus:border-brand/60 focus:outline-none focus:ring-2 focus:ring-brand/30 transition-colors resize-none"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-[14px] font-medium text-foreground mb-2">{t.designRefs}</label>
-                      <textarea
-                        name="designReferences"
-                        value={formData.designReferences}
-                        onChange={handleInputChange}
-                        placeholder={t.designRefsPlaceholder}
-                        rows={3}
-                        className="w-full min-h-12 px-4 py-3 rounded-xl border border-hairline bg-background/70 text-[16px] text-foreground placeholder:text-muted-foreground/70 focus:border-brand/60 focus:outline-none focus:ring-2 focus:ring-brand/30 transition-colors resize-none"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-[14px] font-medium text-foreground mb-2">{t.targetAudience}</label>
-                      <input
-                        type="text"
-                        name="targetAudience"
-                        value={formData.targetAudience}
-                        onChange={handleInputChange}
-                        placeholder={t.targetAudiencePlaceholder}
-                        className="w-full min-h-12 px-4 py-3 rounded-xl border border-hairline bg-background/70 text-[16px] text-foreground placeholder:text-muted-foreground/70 focus:border-brand/60 focus:outline-none focus:ring-2 focus:ring-brand/30 transition-colors"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-[14px] font-medium text-foreground mb-3">{t.featuresTitle}</label>
-                      <div className="grid grid-cols-2 gap-2">
-                        {featureOptions.map((feature) => (
-                          <label
-                            key={feature.id}
-                            className={`flex items-center gap-2 p-2 rounded-lg border cursor-pointer transition-smooth text-xs ${formData.features.includes(feature.id) ? 'border-primary bg-primary/5' : 'border-hairline hover:border-primary/50'}`}
-                          >
-                            <input
-                              type="checkbox"
-                              checked={formData.features.includes(feature.id)}
-                              onChange={() => handleFeatureToggle(feature.id)}
-                              className="w-3.5 h-3.5 text-primary rounded focus:ring-primary focus:ring-2"
-                            />
-                            <span>{feature.label}</span>
-                          </label>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div>
-                      <label className="block text-[14px] font-medium text-foreground mb-3">{t.timelineTitle}</label>
-                      <div className="grid grid-cols-2 gap-2">
-                        {t.timelineOptions.map((option) => (
-                          <label
-                            key={option.value}
-                            className={`flex items-center gap-2 p-3 rounded-lg border cursor-pointer transition-smooth ${formData.timeline === option.value ? 'border-primary bg-primary/5' : 'border-hairline hover:border-primary/50'}`}
-                          >
-                            <input
-                              type="radio"
-                              name="timeline"
-                              value={option.value}
-                              checked={formData.timeline === option.value}
-                              onChange={handleInputChange}
-                              className="w-4 h-4 text-primary focus:ring-primary focus:ring-2"
-                            />
-                            <span className="text-sm font-medium">{option.label}</span>
-                          </label>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div>
-                      <label className="block text-[14px] font-medium text-foreground mb-3">{t.assetsTitle}</label>
-                      <div className="grid grid-cols-2 gap-2">
-                        {existingAssets.map((asset) => (
-                          <label
-                            key={asset.id}
-                            className={`flex items-center gap-2 p-2 rounded-lg border cursor-pointer transition-smooth text-xs ${formData.existingAssets.includes(asset.id) ? 'border-primary bg-primary/5' : 'border-hairline hover:border-primary/50'}`}
-                          >
-                            <input
-                              type="checkbox"
-                              checked={formData.existingAssets.includes(asset.id)}
-                              onChange={() => handleAssetToggle(asset.id)}
-                              className="w-3.5 h-3.5 text-primary rounded focus:ring-primary focus:ring-2"
-                            />
-                            <span>{asset.label}</span>
-                          </label>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div>
-                      <label className="block text-[14px] font-medium text-foreground mb-3">{t.socialsTitle}</label>
-                      <div className="grid grid-cols-2 gap-3">
-                        <input
-                          type="url"
-                          name="facebookUrl"
-                          value={formData.facebookUrl}
-                          onChange={handleInputChange}
-                          placeholder="Facebook URL"
-                          className="min-h-11 px-3 py-2 rounded-xl border border-hairline bg-background/70 text-[16px] focus:border-brand/60 focus:outline-none focus:ring-2 focus:ring-brand/30 transition-colors"
-                        />
-                        <input
-                          type="url"
-                          name="instagramUrl"
-                          value={formData.instagramUrl}
-                          onChange={handleInputChange}
-                          placeholder="Instagram URL"
-                          className="min-h-11 px-3 py-2 rounded-xl border border-hairline bg-background/70 text-[16px] focus:border-brand/60 focus:outline-none focus:ring-2 focus:ring-brand/30 transition-colors"
-                        />
-                        <input
-                          type="url"
-                          name="linkedinUrl"
-                          value={formData.linkedinUrl}
-                          onChange={handleInputChange}
-                          placeholder="LinkedIn URL"
-                          className="min-h-11 px-3 py-2 rounded-xl border border-hairline bg-background/70 text-[16px] focus:border-brand/60 focus:outline-none focus:ring-2 focus:ring-brand/30 transition-colors"
-                        />
-                        <input
-                          type="url"
-                          name="twitterUrl"
-                          value={formData.twitterUrl}
-                          onChange={handleInputChange}
-                          placeholder="Twitter / X URL"
-                          className="min-h-11 px-3 py-2 rounded-xl border border-hairline bg-background/70 text-[16px] focus:border-brand/60 focus:outline-none focus:ring-2 focus:ring-brand/30 transition-colors"
-                        />
-                      </div>
-                    </div>
-
-                    <div>
-                      <label className="block text-[14px] font-medium text-foreground mb-2">{t.addNotes}</label>
-                      <textarea
-                        name="additionalNotes"
-                        value={formData.additionalNotes}
-                        onChange={handleInputChange}
-                        placeholder={isEl ? "Κάτι άλλο που θα θέλατε να μοιραστείτε μαζί μας..." : "Anything else we should know about your project?"}
-                        rows={3}
-                        className="w-full min-h-12 px-4 py-3 rounded-xl border border-hairline bg-background/70 text-[16px] text-foreground placeholder:text-muted-foreground/70 focus:border-brand/60 focus:outline-none focus:ring-2 focus:ring-brand/30 transition-colors resize-none"
-                      />
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {/* Step 4: Contact Info */}
-              {step === 4 && (
-                <div>
-                  <h2 className="font-display text-[24px] font-semibold tracking-[-0.03em] text-foreground mb-2">{t.contactTitle}</h2>
-                  <p className="text-muted-foreground mb-6 text-sm">{t.contactSub}</p>
-
-                  <div className="space-y-4">
-                    <div className="absolute -left-[9999px] top-0 opacity-0" aria-hidden="true">
-                      <label htmlFor="gs-gotcha">Leave this field empty</label>
-                      <input
-                        type="text"
-                        id="gs-gotcha"
-                        name="gotcha"
-                        value={formData.gotcha}
-                        onChange={handleInputChange}
-                        tabIndex={-1}
-                        autoComplete="off"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="gs-name" className="block text-[14px] font-medium text-foreground mb-2">{t.fullName}</label>
-                      <input
-                        type="text"
-                        id="gs-name"
-                        autoComplete="name"
-                        enterKeyHint="next"
-                        name="fullName"
-                        value={formData.fullName}
-                        onChange={handleInputChange}
-                        placeholder="John Doe"
-                        className="w-full min-h-12 px-4 py-3 rounded-xl border border-hairline bg-background/70 text-[16px] text-foreground placeholder:text-muted-foreground/70 focus:border-brand/60 focus:outline-none focus:ring-2 focus:ring-brand/30 transition-colors"
-                      />
-                    </div>
-
-                    <div>
-                      <label htmlFor="gs-email" className="block text-[14px] font-medium text-foreground mb-2">{t.email}</label>
-                      <input
-                        type="email"
-                        id="gs-email"
-                        inputMode="email"
-                        autoComplete="email"
-                        autoCapitalize="none"
-                        spellCheck={false}
-                        enterKeyHint="next"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        onBlur={() => setEmailTouched(true)}
-                        aria-invalid={emailTouched && !!formData.email && !EMAIL_RE.test(formData.email.trim()) ? true : undefined}
-                        aria-describedby="gs-email-error"
-                        placeholder="john@company.com"
-                        className="w-full min-h-12 px-4 py-3 rounded-xl border border-hairline bg-background/70 text-[16px] text-foreground placeholder:text-muted-foreground/70 focus:border-brand/60 focus:outline-none focus:ring-2 focus:ring-brand/30 transition-colors"
-                      />
-                      {emailTouched && formData.email && !EMAIL_RE.test(formData.email.trim()) ? (
-                        <p id="gs-email-error" className="mt-1.5 text-[13px] text-destructive">
-                          {isEl ? 'Γράψτε ένα έγκυρο email, π.χ. you@company.com.' : 'Please add a valid email, e.g. you@company.com.'}
-                        </p>
-                      ) : null}
-                    </div>
-
-                    <div>
-                      <label htmlFor="gs-phone" className="block text-[14px] font-medium text-foreground mb-2">{t.phone}</label>
-                      <input
-                        type="tel"
-                        id="gs-phone"
-                        inputMode="tel"
-                        autoComplete="tel"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleInputChange}
-                        placeholder="+30 690 000 0000"
-                        className="w-full min-h-12 px-4 py-3 rounded-xl border border-hairline bg-background/70 text-[16px] text-foreground placeholder:text-muted-foreground/70 focus:border-brand/60 focus:outline-none focus:ring-2 focus:ring-brand/30 transition-colors"
-                      />
-                    </div>
-                  </div>
-
-                  {submitError && (
-                    <div className="mt-4 p-4 rounded-lg bg-destructive/10 text-destructive text-sm font-medium">
-                      {submitError}
-                    </div>
-                  )}
-                </div>
-              )}
-
-              {/* Wizard Form Navigation */}
-              <div className="flex items-center justify-between mt-8 pt-6 border-t border-hairline">
-                {step > 1 ? (
-                  <button onClick={handleBack} className={kitSecondaryBtn}>
-                    {t.back}
-                  </button>
-                ) : (
-                  <Link href={lp("/pricing")} className={kitSecondaryBtn}>{t.cancel}</Link>
-                )}
-
-                {step < 4 ? (
-                  <button
-                    onClick={handleNext}
-                    disabled={!isStepValid()}
-                    className={`${kitPrimaryBtn} disabled:opacity-50`}
-                  >
-                    {t.continue}
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </button>
-                ) : (
-                  <button
-                    onClick={handleSubmit}
-                    disabled={isSubmitting || !isStepValid()}
-                    className={`${kitPrimaryBtn} disabled:opacity-50`}
-                  >
-                    {isSubmitting ? (
-                      <>
-                        <svg className="animate-spin w-4 h-4" fill="none" viewBox="0 0 24 24">
-                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
-                        </svg>
-                        {t.submitting}
-                      </>
-                    ) : (
-                      <>
-                        {t.submitBtn}
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                      </>
-                    )}
-                  </button>
-                )}
-              </div>
-            </div>
-
-            {/* Quote Summary Sidebar / Panel */}
-            <div className="rounded-3xl border border-hairline bg-surface/60 p-6">
-              <h3 className="mb-4 text-[11px] font-medium uppercase tracking-[0.18em] text-brand">{t.nextStepsTitle}</h3>
-
-              <ol className="space-y-4 text-xs">
-                {t.sidebarSteps.map((stepText: string, i: number) => (
-                  <li key={stepText} className="flex gap-3">
-                    <span className="grid size-5 shrink-0 place-items-center rounded-full bg-primary/10 font-medium text-primary">
-                      {i + 1}
-                    </span>
-                    <span className="text-muted-foreground">{stepText}</span>
-                  </li>
-                ))}
-              </ol>
-
-              <div className="mt-6 pt-4 border-t border-hairline text-[10px] text-muted-foreground space-y-2.5">
-                <div className="flex items-center gap-2">
-                  <svg className="w-4 h-4 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  {t.freeConsult}
-                </div>
-                <div className="flex items-center gap-2">
-                  <svg className="w-4 h-4 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  {t.customProposal}
-                </div>
-                <div className="flex items-center gap-2">
-                  <svg className="w-4 h-4 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  {t.noCommitment}
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
+            >
+              {active && <Check className="size-3.5 shrink-0 text-brand" aria-hidden />}
+              {t.types[id]}
+            </button>
+          );
+        })}
       </div>
-      <CtaBand locale={locale} source="get-started-band" className="mt-12" />
-    </main>
+
+      <div className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2">
+        {showWebsite && (
+          <div className="grid min-w-0 gap-2 sm:col-span-2">
+            <div className="flex min-w-0 flex-col gap-2 sm:flex-row">
+              <label className="grid min-w-0 flex-1 gap-1">
+                <span className="sr-only">{t.website}</span>
+                <input name="website" type="text" inputMode="url" autoComplete="url" placeholder={`${t.website}: ${t.websitePh}`} value={website} onFocus={markStarted} onChange={(e) => setWebsite(e.target.value)} className={inputClass} />
+              </label>
+              <FetchDetailsButton locale={locale} state={details.state} onClick={handleFetchDetails} />
+            </div>
+            <FetchDetailsNote locale={locale} state={details.state} />
+            {details.info && <SiteDetailsCard locale={locale} info={details.info} onDismiss={details.dismiss} />}
+          </div>
+        )}
+        <label className="grid min-w-0 gap-1">
+          <span className="sr-only">{t.business}</span>
+          <input name="company" type="text" autoComplete="organization" placeholder={t.business} value={business} onFocus={markStarted} onChange={(e) => setBusiness(e.target.value)} className={inputClass} />
+        </label>
+        <label className="grid min-w-0 gap-1">
+          <span className="sr-only">{t.name}</span>
+          <input name="name" type="text" autoComplete="name" placeholder={t.name} value={name} onFocus={markStarted} onChange={(e) => setName(e.target.value)} className={inputClass} />
+        </label>
+        <label className="grid min-w-0 gap-1">
+          <span className="sr-only">{t.email}</span>
+          <input name="email" type="email" inputMode="email" autoComplete="email" placeholder={t.email} value={email} onFocus={markStarted} onChange={(e) => setEmail(e.target.value)} className={inputClass} />
+        </label>
+        <label className="grid min-w-0 gap-1">
+          <span className="sr-only">{t.phone}</span>
+          <input name="phone" type="tel" inputMode="tel" autoComplete="tel" placeholder={t.phone} value={phone} onFocus={markStarted} onChange={(e) => setPhone(e.target.value)} className={inputClass} />
+        </label>
+        <label className="grid min-w-0 gap-1 sm:col-span-2">
+          <span className="text-[13px] text-muted-foreground">{t.need}</span>
+          <textarea name="need" rows={3} maxLength={2000} placeholder={t.needPh} value={need} onFocus={markStarted} onChange={(e) => setNeed(e.target.value)} className={cn(inputClass, 'h-auto min-h-24 resize-y py-3')} />
+        </label>
+        {/* Honeypot: humans never see or fill this. */}
+        <input
+          type="text"
+          name="_gotcha"
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden
+          value={gotcha}
+          onChange={(e) => setGotcha(e.target.value)}
+          className="absolute -left-[9999px] h-0 w-0 opacity-0"
+        />
+      </div>
+      <div className="mt-3 flex flex-wrap items-center gap-3">
+        <button type="submit" disabled={sending} className={cn(primaryBtnClass, 'w-full shrink-0 disabled:opacity-80 sm:w-auto')}>
+          {sending ? t.sending : t.submit}
+          {!sending && <ArrowRight className="size-4 shrink-0" aria-hidden />}
+        </button>
+        {error && (
+          <p className="text-sm text-destructive" role="alert">
+            {error}
+          </p>
+        )}
+      </div>
+    </form>
+  );
+}
+
+/* ------------------------------------------------------------------ page */
+
+function ServiceSwitch({ locale, value, onChange }: { locale: SiteLocale; value: Service; onChange: (next: Service) => void }) {
+  const t = COPY[locale];
+  const options: Array<{ id: Service; icon: typeof Search }> = [
+    { id: 'seo', icon: Search },
+    { id: 'website', icon: MonitorSmartphone },
+  ];
+  return (
+    <div role="tablist" aria-label={t.tabsLabel} className="grid grid-cols-2 gap-1.5 rounded-3xl border border-hairline bg-surface/70 p-1.5 backdrop-blur">
+      {options.map(({ id, icon: Icon }) => {
+        const active = value === id;
+        return (
+          <button
+            key={id}
+            id={`gs-tab-${id}`}
+            type="button"
+            role="tab"
+            aria-selected={active}
+            aria-controls={`gs-panel-${id}`}
+            onClick={() => onChange(id)}
+            className={cn(
+              'flex min-w-0 flex-col items-center gap-1 rounded-[20px] px-3 py-3 text-center transition-colors sm:flex-row sm:gap-3 sm:px-5 sm:py-4 sm:text-left',
+              active
+                ? 'bg-[linear-gradient(180deg,var(--primary),var(--primary-deep))] text-primary-foreground shadow-[0_10px_30px_-12px_color-mix(in_oklab,var(--primary)_80%,transparent)]'
+                : 'text-foreground hover:bg-background/60',
+            )}
+          >
+            <Icon className={cn('size-5 shrink-0', active ? 'text-primary-foreground' : 'text-brand')} aria-hidden />
+            <span className="min-w-0">
+              <span className="block font-display text-[15px] font-semibold leading-tight tracking-[-0.01em] sm:text-[17px]">{t.tabs[id].label}</span>
+              <span className={cn('mt-0.5 hidden text-[13px] leading-snug sm:block', active ? 'text-primary-foreground/80' : 'text-muted-foreground')}>{t.tabs[id].sub}</span>
+            </span>
+          </button>
+        );
+      })}
+    </div>
   );
 }
 
 export function GetStartedClient({ locale }: { locale: SiteLocale }) {
-  const fallbackTitle = locale === 'el' ? 'Ξεκινήστε το Έργο Σας' : 'Start Your Project';
+  const t = COPY[locale];
+  const [service, setService] = useState<Service>('seo');
+  const [initial, setInitial] = useState<{ website: string; context?: Record<string, string> }>({ website: '' });
+
+  useEffect(() => {
+    // The page is static, so the query string is only known in the browser: the first paint is the
+    // SEO door and this corrects it. `website` arrives from the homepage scan, `project` from industry pages.
+    const params = new URLSearchParams(window.location.search);
+    const project = params.get('project')?.slice(0, 60);
+    /* eslint-disable react-hooks/set-state-in-effect */
+    setService(window.location.hash === '#free-audit' ? 'seo' : serviceFromParam(params.get('service')));
+    setInitial({ website: params.get('website')?.slice(0, 200) ?? '', context: project ? { Industry: project } : undefined });
+    /* eslint-enable react-hooks/set-state-in-effect */
+  }, []);
+
+  function switchService(next: Service) {
+    setService(next);
+    const url = new URL(window.location.href);
+    url.searchParams.set('service', next);
+    window.history.replaceState(window.history.state, '', `${url.pathname}${url.search}${url.hash}`);
+  }
+
   return (
-    <Suspense
-      fallback={
-        <main className="blueprint-grid relative z-0">
-          <section className="hero-below-header pb-24">
-            <div className="mx-auto max-w-[1200px] px-5 pt-6 text-center sm:px-8">
-              <h1 className="mx-auto max-w-4xl font-display text-[38px] font-semibold leading-[1.04] tracking-[-0.045em] text-foreground sm:text-[56px] lg:text-[68px]">{fallbackTitle}</h1>
-              <div className="mx-auto mt-8 flex justify-center">
-                <div className="animate-spin w-8 h-8 border-2 border-primary border-t-transparent rounded-full" />
-              </div>
+    <main className="blueprint-grid relative z-0">
+      <PageHero
+        locale={locale}
+        size="md"
+        title={accentTail(t.title, 2)}
+        lead={t.lead}
+        actions={
+          <div className="mx-auto w-full max-w-4xl">
+            <ServiceSwitch locale={locale} value={service} onChange={switchService} />
+            <div id="gs-panel-seo" role="tabpanel" aria-labelledby="gs-tab-seo" hidden={service !== 'seo'} className="mt-4">
+              <FreeAuditForm key={`seo-${initial.website}`} locale={locale} initialWebsite={initial.website} context={initial.context} />
             </div>
-          </section>
-        </main>
-      }
-    >
-      <OnboardingWizard locale={locale} />
-    </Suspense>
+            <div id="gs-panel-website" role="tabpanel" aria-labelledby="gs-tab-website" hidden={service !== 'website'} className="mt-4">
+              <WebsiteBriefForm key={`web-${initial.website}`} locale={locale} initialWebsite={initial.website} context={initial.context} />
+            </div>
+          </div>
+        }
+        trust={<TrustLine items={t.trust.map((label, i) => ({ icon: TRUST_ICONS[i], label }))} />}
+        className="pb-20"
+      />
+    </main>
   );
 }
