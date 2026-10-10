@@ -1,6 +1,7 @@
 import type { SiteLocale } from '@/lib/i18n/locale';
 import { portfolioProjects } from '@/data/portfolio';
 import { MARKET_COUNT } from '@/data/company-facts';
+import { PROJECTS_DELIVERED } from '@/data/founder';
 
 /**
  * Derived from the portfolio so the count can never drift from what /work
@@ -18,14 +19,14 @@ export interface TrustStat {
 export function getTrustStats(locale: SiteLocale): TrustStat[] {
   if (locale === 'el') {
     return [
-      { value: `${PROJECT_COUNT}`, label: 'Ολοκληρωμένα έργα' },
+      { value: `${PROJECTS_DELIVERED}+`, label: 'Ολοκληρωμένα έργα' },
       { value: `${MARKET_COUNT}`, label: 'Αγορές' },
       { value: 'EL/EN', label: 'Γλώσσες' },
       { value: '24 ώρες', label: 'Χρόνος απάντησης' },
     ];
   }
   return [
-    { value: `${PROJECT_COUNT}`, label: 'Projects delivered' },
+    { value: `${PROJECTS_DELIVERED}+`, label: 'Projects delivered' },
     { value: `${MARKET_COUNT}`, label: 'Markets' },
     { value: 'EN/EL', label: 'Languages' },
     { value: '24h', label: 'Response time' },
@@ -35,8 +36,8 @@ export function getTrustStats(locale: SiteLocale): TrustStat[] {
 /** Compact trust chips for nav surfaces (menu headers, mobile). */
 export function getTrustChips(locale: SiteLocale): string[] {
   return locale === 'el'
-    ? [`${PROJECT_COUNT} έργα`, 'Απάντηση σε 24 ώρες', 'EL/EN']
-    : [`${PROJECT_COUNT} projects`, '24h response', 'EN/EL'];
+    ? [`${PROJECTS_DELIVERED}+ έργα`, 'Απάντηση σε 24 ώρες', 'EL/EN']
+    : [`${PROJECTS_DELIVERED}+ projects`, '24h response', 'EN/EL'];
 }
 
 /**
