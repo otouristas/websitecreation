@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowRight, ArrowUpRight, BedDouble, Bot, Briefcase, Check, Languages, Layers, Stethoscope, Wallet } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, BedDouble, Bot, Briefcase, Check, Languages, Layers, Search, Stethoscope, Wallet } from 'lucide-react';
 import { PageShell } from '@/components/bespoke/PageShell';
 import { PortfolioThumbnail } from '@/components/landing/PortfolioThumbnail';
 import {
@@ -14,6 +14,7 @@ import {
   KitSection,
   LocalPackPreview,
   OverviewPreview,
+  PerformancePreview,
   Stage,
 } from '@/components/kit';
 import { ChipLinks, KitFaq, PageHero, SplitRow } from '@/components/page-kit';
@@ -127,6 +128,21 @@ const copy = {
       title: 'Accommodation sites we have built',
       body: 'Live projects. Real screenshots.',
     },
+    seoBlock: {
+      eyebrow: 'SEO',
+      title: 'SEO services for hotels',
+      body:
+        'A new site is the start, not the finish. Hotel SEO keeps your own name, room types and destination searches pointing at your site rather than a marketplace: technical health, room and offer pages, Google Business Profile, reviews and multilingual content, reviewed against Search Console every month.',
+      points: [
+        'Brand searches: your site above the booking platforms for your own name',
+        'Room, offer and destination pages that answer what guests search',
+        'Google Business Profile, photos and review replies kept current',
+        'Correct hreflang so each market sees its own language',
+      ],
+      guide: 'Read the hotel SEO guide',
+      guideHref: '/blog/hotel-seo-guide',
+      service: 'SEO services',
+    },
     servicesBlock: {
       eyebrow: 'Services',
       title: 'What we apply to a hotel site',
@@ -162,9 +178,9 @@ const copy = {
   },
   el: {
     eyebrow: 'Ξενοδοχεία και καταλύματα',
-    h1: 'SEO για ξενοδοχεία: όταν κάποιος ψάχνει το ξενοδοχείο σας, πρέπει να καταλήγει σε εσάς',
+    h1: 'Κατασκευή ιστοσελίδας ξενοδοχείου για άμεσες κρατήσεις',
     lede:
-      'Στα περισσότερα ανεξάρτητα ξενοδοχεία οι πλατφόρμες κρατήσεων εμφανίζονται πάνω από το ίδιο το ξενοδοχείο για το όνομά του. Έτσι ένας επισκέπτης που σας έχει ήδη επιλέξει κλείνει μέσω πλατφόρμας και εσείς πληρώνετε προμήθεια. Η διόρθωση αυτού είναι η πιο κερδοφόρα δουλειά σε ένα site ξενοδοχείου.',
+      'Φτιάχνουμε ιστοσελίδες ξενοδοχείων που φέρνουν άμεσες κρατήσεις: σύνδεση με τη μηχανή κρατήσεών σας, σελίδες δωματίων με φωτογραφίες, πολύγλωσσο περιεχόμενο και SEO για τον προορισμό σας. Στα περισσότερα ανεξάρτητα ξενοδοχεία οι πλατφόρμες εμφανίζονται πάνω από το ίδιο το ξενοδοχείο για το όνομά του, οπότε ξεκινάμε από εκεί.',
     ctaPrimary: 'Ζητήστε προσφορά για το site σας',
     ctaSecondary: 'Δείτε έργα ξενοδοχείων',
     leaks: {
@@ -239,6 +255,21 @@ const copy = {
       eyebrow: 'Έργα',
       title: 'Sites καταλυμάτων που έχουμε φτιάξει',
       body: 'Ενεργά έργα. Πραγματικά screenshots.',
+    },
+    seoBlock: {
+      eyebrow: 'SEO',
+      title: 'Υπηρεσίες SEO για ξενοδοχεία',
+      body:
+        'Η νέα ιστοσελίδα είναι η αρχή, όχι το τέλος. Το SEO για ξενοδοχεία κρατά το όνομά σας, τους τύπους δωματίων και τις αναζητήσεις του προορισμού στραμμένα στο δικό σας site αντί για μια πλατφόρμα: τεχνική υγεία, σελίδες δωματίων και προσφορών, Google Business Profile, κριτικές και πολύγλωσσο περιεχόμενο, με μηνιαίο έλεγχο στο Search Console.',
+      points: [
+        'Αναζητήσεις με το όνομά σας: το site σας πάνω από τις πλατφόρμες κρατήσεων',
+        'Σελίδες δωματίων, προσφορών και προορισμού που απαντούν σε ό,τι ψάχνουν οι επισκέπτες',
+        'Google Business Profile, φωτογραφίες και απαντήσεις σε κριτικές πάντα ενημερωμένα',
+        'Σωστό hreflang ώστε κάθε αγορά να βλέπει τη δική της γλώσσα',
+      ],
+      guide: 'Διαβάστε τον οδηγό SEO για ξενοδοχεία',
+      guideHref: '/blog/seo-gia-xenodoxeia',
+      service: 'Υπηρεσίες SEO',
     },
     servicesBlock: {
       eyebrow: 'Υπηρεσίες',
@@ -323,7 +354,9 @@ export function HotelsPage({ locale }: { locale: SiteLocale }) {
               <Accent>{t.h1.slice(cut + 2)}</Accent>
             </>
           ) : (
-            t.h1
+            <>
+              {t.h1.split(' ').slice(0, -2).join(' ')} <Accent>{t.h1.split(' ').slice(-2).join(' ')}</Accent>
+            </>
           )
         }
         lead={t.lede}
@@ -534,6 +567,26 @@ export function HotelsPage({ locale }: { locale: SiteLocale }) {
             </Link>
           ))}
         </div>
+      </KitSection>
+
+      {/* Hotel SEO as an ongoing service */}
+      <KitSection>
+        <SplitRow
+          eyebrow={t.seoBlock.eyebrow}
+          eyebrowIcon={<Search />}
+          title={t.seoBlock.title}
+          body={t.seoBlock.body}
+          bullets={t.seoBlock.points}
+          links={[
+            { href: lp(t.seoBlock.guideHref), label: t.seoBlock.guide, primary: true },
+            { href: lp('/seo-services'), label: t.seoBlock.service },
+          ]}
+          preview={
+            <Stage>
+              <PerformancePreview locale={locale} />
+            </Stage>
+          }
+        />
       </KitSection>
 
       {/* Services */}

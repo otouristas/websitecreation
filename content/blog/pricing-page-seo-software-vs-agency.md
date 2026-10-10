@@ -12,7 +12,7 @@ faq:
     answer: "Lower cash cost - higher time cost. Total cost of ownership includes your hours or opportunity cost."
   - question: "Can I switch from software to agency mid-year?"
     answer: "Yes - export GSC history and backlog. Good agencies start from data."
-  - question: "Do you need agency for [GEO/AEO](/el/blog/geo-aeo-ellada)?"
+  - question: "Do you need agency for [GEO/AEO](/el/blog/geo-vs-seo-vs-aeo-el)?"
     answer: "FAQ and entity content can be agency or in-house. LLM measurement discipline benefits from experienced guidance initially."
   - question: "Should startups buy agency day one?"
     answer: "If website doesn't exist or doesn't rank - agency project often beats software alone. If learning phase - software + DIY path."
@@ -205,7 +205,7 @@ Lower cash cost - higher time cost. Total cost of ownership includes your hours 
 
 Yes - export GSC history and backlog. Good agencies start from data.
 
-### Do you need agency for [GEO/AEO](/el/blog/geo-aeo-ellada)?
+### Do you need agency for [GEO/AEO](/el/blog/geo-vs-seo-vs-aeo-el)?
 
 FAQ and entity content can be agency or in-house. LLM measurement discipline benefits from experienced guidance initially.
 

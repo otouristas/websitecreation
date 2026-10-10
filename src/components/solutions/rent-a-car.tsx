@@ -7,13 +7,13 @@ import {
   AgencyCtas,
   Container,
   CtaBand,
-  DecisionsPanel,
   KitEyebrow,
   KitHeading,
   KitSection,
   Stage,
 } from '@/components/kit';
 import { CardGrid, KitFaq, LinkCard, PageHero, SplitRow } from '@/components/page-kit';
+import { RentalFixesPreview } from './RentalFixesPreview';
 import { getPortfolioByCategory } from '@/data/portfolio';
 import { services } from '@/data/services';
 import { getServiceEl } from '@/data/services-i18n';
@@ -158,7 +158,7 @@ const copy = {
   },
   el: {
     eyebrow: 'Ενοικίαση αυτοκινήτων',
-    h1: 'Κατασκευή ιστοσελίδας rent a car που κλείνει την κράτηση απευθείας',
+    h1: 'Κατασκευή ιστοσελίδας ενοικίασης αυτοκινήτων (rent a car)',
     lede:
       'Η ζήτηση έρχεται σε στενή σεζόν, από ανθρώπους που σας συγκρίνουν με ένα OTA από το κινητό τους στο αεροδρόμιο. Το site πρέπει να φορτώνει γρήγορα, να δίνει πραγματική τιμή και να τους αφήνει να ολοκληρώσουν. Αυτό χτίζουμε.',
     ctaPrimary: 'Ζητήστε προσφορά για το site σας',
@@ -386,7 +386,9 @@ export function RentACarPage({ locale }: { locale: SiteLocale }) {
               <Accent>{t.h1.slice(splitAt + 1)}</Accent>
             </>
           ) : (
-            t.h1
+            <>
+              {t.h1.split(' ').slice(0, 2).join(' ')} <Accent>{t.h1.split(' ').slice(2).join(' ')}</Accent>
+            </>
           )
         }
         lead={t.lede}
@@ -406,7 +408,7 @@ export function RentACarPage({ locale }: { locale: SiteLocale }) {
               <p className="mt-3 text-center text-[11.5px] text-muted-foreground">{t.widget.note}</p>
             </Stage>
             <Stage>
-              <DecisionsPanel locale={locale} count={3} />
+              <RentalFixesPreview locale={locale} count={3} />
             </Stage>
           </div>
           <div className="mt-8">

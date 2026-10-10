@@ -1,5 +1,4 @@
 import type { SiteLocale } from '@/lib/i18n/locale';
-import type { Industry } from '@/data/industries';
 import { getIndustryBySlug } from '@/data/industries';
 import { industriesEl } from '@/data/industries-i18n';
 import { fitDescription } from '@/lib/seo/description';
@@ -36,7 +35,13 @@ export function getLocalizedIndustry(slug: string, locale: SiteLocale): Localize
   };
 }
 
-const EN_INDUSTRY_META: Record<string, { title: string; description: string }> = {
+/**
+ * `exact: true` ships the title verbatim (no 43-char cut, no brand suffix).
+ * Used for the Greek keyword map's titles, which are already sized to ≤60.
+ */
+type IndustryMeta = { title: string; description: string; exact?: boolean };
+
+const EN_INDUSTRY_META: Record<string, IndustryMeta> = {
   hotels: {
     title: 'Hotel Website Design & SEO Agency',
     description:
@@ -47,6 +52,11 @@ const EN_INDUSTRY_META: Record<string, { title: string; description: string }> =
     description:
       'Car rental website design with fleet catalogs, booking funnels, mobile speed and local SEO for airports and islands. Request a free quote for your fleet.',
   },
+  doctors: {
+    title: 'SEO for Doctors & Medical Practices',
+    description:
+      'SEO for doctors and medical practices: local search, Google Business Profile, specialty pages, online booking and GDPR-aware forms. Request a free audit.',
+  },
   'tour-operators': {
     title: 'Tour Operator Website Design & SEO',
     description:
@@ -54,16 +64,30 @@ const EN_INDUSTRY_META: Record<string, { title: string; description: string }> =
   },
 };
 
-const EL_INDUSTRY_META: Record<string, { title: string; description: string }> = {
+const EL_INDUSTRY_META: Record<string, IndustryMeta> = {
   hotels: {
-    title: 'Ξενοδοχεία - Ιστοσελίδες & SEO',
+    title: 'Κατασκευή Ιστοσελίδας Ξενοδοχείου με Κρατήσεις & SEO',
     description:
-      'Κατασκευή ιστοσελίδων για ξενοδοχεία με άμεσες κρατήσεις, παρουσίαση δωματίων και SEO τουρισμού. Απευθείας κρατήσεις χωρίς προμήθειες OTA. Ζητήστε προσφορά.',
+      'Κατασκευή ιστοσελίδας ξενοδοχείου με μηχανή κρατήσεων, πολύγλωσσο περιεχόμενο και SEO για τον προορισμό σας, για περισσότερες άμεσες κρατήσεις.',
+    exact: true,
   },
   'rent-a-car': {
-    title: 'Ενοικίαση Αυτοκινήτου - Ιστοσελίδες & SEO',
+    title: 'Κατασκευή Ιστοσελίδας Rent a Car με Online Κρατήσεις',
     description:
-      'Κατασκευή ιστοσελίδων rent-a-car με στόλο οχημάτων, online κρατήσεις και τοπικό SEO για αεροδρόμια και τουριστικά νησιά. Ζητήστε δωρεάν προσφορά.',
+      'Ιστοσελίδα rent a car με στόλο, τιμές ανά εποχή και online κρατήσεις, στημένη για αναζητήσεις ανά νησί, λιμάνι και αεροδρόμιο.',
+    exact: true,
+  },
+  'real-estate': {
+    title: 'Κατασκευή Ιστοσελίδας για Μεσιτικά Γραφεία & SEO',
+    description:
+      'Ιστοσελίδες για μεσιτικά γραφεία με καταχώρηση ακινήτων, φίλτρα και σελίδες περιοχών, στημένες για τοπικό SEO ώστε να σας βρίσκουν αγοραστές.',
+    exact: true,
+  },
+  doctors: {
+    title: 'Ιατρικό SEO: SEO για Γιατρούς & Ιατρεία',
+    description:
+      'Ιατρικό SEO για γιατρούς και ιατρεία: τοπικό SEO, Google Business Profile, σελίδες ειδικοτήτων, online ραντεβού και φόρμες σύμφωνες με τον GDPR.',
+    exact: true,
   },
   'tour-operators': {
     title: 'Tour Operators - Ιστοσελίδες & SEO',
@@ -82,7 +106,7 @@ const EL_INDUSTRY_META: Record<string, { title: string; description: string }> =
   },
 };
 
-export function getIndustryMeta(industry: LocalizedIndustry, locale: SiteLocale) {
+export function getIndustryMeta(industry: LocalizedIndustry, locale: SiteLocale): IndustryMeta {
   if (locale === 'en') {
     const override = EN_INDUSTRY_META[industry.slug];
     if (override) return override;

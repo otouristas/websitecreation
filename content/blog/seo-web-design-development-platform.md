@@ -105,7 +105,7 @@ In 2026, launch criteria should include answer-ready content:
 - Original data - fleet specs, seasonal pricing guides, island transport notes
 - Author and organization markup for [E-E-A-T](/glossary?term=e-e-a-t)
 
-Read the full playbook: [GEO, AEO & AI SEO - Global Playbook](/blog/geo-aeo-global-seo-playbook). For Greek tourism brands, see [GEO, AEO και SEO στην Ελλάδα](/blog/geo-aeo-ellada).
+Read the full playbook: [GEO, AEO & AI SEO - Global Playbook](/blog/geo-aeo-global-seo-playbook). For Greek tourism brands, see [GEO, AEO και SEO στην Ελλάδα](/el/blog/geo-vs-seo-vs-aeo-el).
 
 [Travel AI chatbots](/solutions/travel-ai-chatbots) extend the same knowledge base - but only if the site remains the canonical source.
 

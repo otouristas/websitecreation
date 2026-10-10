@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowUpRight, Layers, MapPin, Target, TrendingUp } from 'lucide-react';
+import { ArrowUpRight, BookOpen, ClipboardCheck, Layers, MapPin, Target, TrendingUp } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { services } from '@/data/services';
@@ -7,7 +7,9 @@ import { getServiceEl } from '@/data/services-i18n';
 import { getIndustriesForLocale } from '@/data/industries';
 import { getIndexableServiceLocations } from '@/data/locations';
 import { getFeaturedPortfolio, PORTFOLIO_CATEGORIES, type PortfolioCategory } from '@/data/portfolio';
-import { generateArticleSchema, generateBreadcrumbSchema, combineSchemas } from '@/lib/seo';
+import { generateArticleSchema, generateBreadcrumbSchema, generateFAQSchema, combineSchemas } from '@/lib/seo';
+import { getIndustryPageCopy } from '@/data/industry-page-copy';
+import { resolvePriceTokens } from '@/data/pricing';
 import { SchemaMarkup } from '@/components/seo';
 import { getLocalizedIndustry } from '@/lib/industry-locale';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
@@ -16,16 +18,18 @@ import { GENERATED_CONTENT_PUBLISHED, GENERATED_CONTENT_UPDATED } from '@/lib/se
 import {
   Accent,
   AgencyCtas,
+  CheckList,
   Container,
   CtaBand,
   DecisionsPanel,
   KitHeading,
   KitSection,
   LocalPackPreview,
+  PCard,
   Stage,
   kitSecondaryBtn,
 } from '@/components/kit';
-import { CardGrid, ChipLinks, LinkCard, PageHero, SplitRow } from '@/components/page-kit';
+import { CardGrid, ChipLinks, KitFaq, LinkCard, PageHero, SplitRow } from '@/components/page-kit';
 
 const TOURISM_SLUGS = new Set([
   'hotels',
@@ -60,6 +64,10 @@ export function IndustryPageView({
   const tx = (en: string, el: string) => (isEl ? el : en);
   const ui = isEl ? solutionsUi.el : solutionsUi.en;
   const lp = (path: string) => localizedPath(locale, path);
+  const copy = getIndustryPageCopy(industrySlug, locale);
+  const faqs = (copy?.faqs ?? []).map((f) => ({ question: f.question, answer: resolvePriceTokens(f.answer, locale) }));
+  const h1Words = copy?.h1?.split(' ') ?? [];
+  const accentFrom = Math.max(1, h1Words.length - (copy?.accentWords ?? 2));
   const relatedIndustries = getIndustriesForLocale(locale)
     .filter((i) => i.slug !== industrySlug)
     .slice(0, 4)
@@ -74,12 +82,13 @@ export function IndustryPageView({
   const schemas = combineSchemas(
     generateBreadcrumbSchema({ items: breadcrumbs }),
     generateArticleSchema({
-      headline: `${ui.websiteSolutionsFor} ${industry.name}`,
-      description: industry.description,
+      headline: copy?.h1 ?? `${ui.websiteSolutionsFor} ${industry.name}`,
+      description: copy?.lead ?? industry.description,
       datePublished: GENERATED_CONTENT_PUBLISHED,
       dateModified: GENERATED_CONTENT_UPDATED,
       author: { name: 'AnotherSEOGuru' },
     }),
+    ...(faqs.length > 0 ? [generateFAQSchema({ faqs })] : []),
   );
 
   // Live website-creation city pages only (2026-10 city cut). This listed all
@@ -108,11 +117,17 @@ export function IndustryPageView({
             text: tx('SEO audit for your business in 24 hours', 'Έλεγχος SEO για την επιχείρησή σας σε 24 ώρες'),
           }}
           title={
-            <>
-              {ui.websiteSolutionsFor} <Accent>{industry.name}</Accent>
-            </>
+            copy?.h1 ? (
+              <>
+                {h1Words.slice(0, accentFrom).join(' ')} <Accent>{h1Words.slice(accentFrom).join(' ')}</Accent>
+              </>
+            ) : (
+              <>
+                {ui.websiteSolutionsFor} <Accent>{industry.name}</Accent>
+              </>
+            )
           }
-          lead={industry.description}
+          lead={copy?.lead ?? industry.description}
           actions={
             <div className="flex flex-col items-center gap-3">
               <AgencyCtas
@@ -165,23 +180,64 @@ export function IndustryPageView({
           <SplitRow
             eyebrow={tx('The brief', 'Οι ανάγκες')}
             eyebrowIcon={<Target />}
-            title={ui.whatWebsitesNeed(industry.name)}
-            body={ui.painIntro(industry.name)}
+            title={copy?.needsTitle ?? ui.whatWebsitesNeed(industry.name)}
+            body={copy?.needsBody ?? ui.painIntro(industry.name)}
             bullets={industry.painPoints}
             links={[{ href: lp('/get-started#free-audit'), label: tx('Get a free SEO audit', 'Δωρεάν έλεγχος SEO'), primary: true }]}
             preview={
               <Stage>
-                <DecisionsPanel locale={locale} />
+                {copy?.checklist ? (
+                  <PCard icon={<ClipboardCheck />} title={copy.checklist.title}>
+                    <div className="px-4 py-4">
+                      <CheckList size="sm" items={copy.checklist.items} />
+                    </div>
+                  </PCard>
+                ) : (
+                  <DecisionsPanel locale={locale} />
+                )}
               </Stage>
             }
           />
         </KitSection>
 
-        <KitSection tinted id="services">
+        {copy?.topics && copy.topics.length > 0 ? (
+          <KitSection tinted id="guide">
+            <KitHeading
+              eyebrow={copy.topicsEyebrow}
+              eyebrowIcon={<BookOpen />}
+              title={copy.topicsTitle ?? ''}
+            />
+            <div className="mt-12 grid gap-x-12 gap-y-14 lg:grid-cols-2">
+              {copy.topics.map((topic) => (
+                <article key={topic.title} className="reveal min-w-0">
+                  <p className="font-mono text-[11px] font-medium uppercase tracking-[0.1em] text-brand">{topic.eyebrow}</p>
+                  <h2 className="mt-3 text-balance font-display text-[24px] font-semibold leading-[1.15] tracking-[-0.03em] text-foreground sm:text-[28px]">
+                    {topic.title}
+                  </h2>
+                  <p className="mt-4 text-pretty text-[15.5px] leading-relaxed text-muted-foreground">
+                    {resolvePriceTokens(topic.body, locale)}
+                  </p>
+                  {topic.bullets && topic.bullets.length > 0 ? (
+                    <CheckList size="sm" className="mt-5" items={topic.bullets} />
+                  ) : null}
+                  {topic.link ? (
+                    <p className="mt-5 text-[14px]">
+                      <Link href={lp(topic.link.href)} className="font-medium text-link underline-offset-4 hover:underline">
+                        {topic.link.label}
+                      </Link>
+                    </p>
+                  ) : null}
+                </article>
+              ))}
+            </div>
+          </KitSection>
+        ) : null}
+
+        <KitSection tinted={!copy?.topics?.length} id="services">
           <KitHeading
             eyebrow={tx('Services', 'Υπηρεσίες')}
             eyebrowIcon={<Layers />}
-            title={ui.servicesFor(industry.nameFor)}
+            title={copy?.servicesTitle ?? ui.servicesFor(industry.nameFor)}
             description={ui.servicesIntro(industry.name)}
           />
           <CardGrid className="mt-12">
@@ -202,18 +258,28 @@ export function IndustryPageView({
 
         {locations.length > 0 ? (
           <KitSection>
-            <SplitRow
-              flip
-              eyebrow={tx('Local', 'Τοπικά')}
-              eyebrowIcon={<MapPin />}
-              title={ui.byCity(industry.name)}
-              body={ui.locationsIntro(industry.name, isEl)}
-              preview={
-                <Stage>
-                  <LocalPackPreview locale={locale} />
-                </Stage>
-              }
-            />
+            {copy?.checklist ? (
+              // Hand-written non-tourism pages skip the sample-hotel map preview.
+              <KitHeading
+                eyebrow={tx('Local', 'Τοπικά')}
+                eyebrowIcon={<MapPin />}
+                title={ui.byCity(industry.name)}
+                description={ui.locationsIntro(industry.name, isEl)}
+              />
+            ) : (
+              <SplitRow
+                flip
+                eyebrow={tx('Local', 'Τοπικά')}
+                eyebrowIcon={<MapPin />}
+                title={ui.byCity(industry.name)}
+                body={ui.locationsIntro(industry.name, isEl)}
+                preview={
+                  <Stage>
+                    <LocalPackPreview locale={locale} />
+                  </Stage>
+                }
+              />
+            )}
             <ChipLinks
               className="mt-12"
               items={locations.map((location) => ({
@@ -253,11 +319,13 @@ export function IndustryPageView({
           </Container>
         </section>
 
+        {faqs.length > 0 ? <KitFaq title={copy?.faqTitle ?? 'FAQ'} items={faqs} /> : null}
+
         <CtaBand
           locale={locale}
           source={`industry-${industrySlug}`}
-          title={<>{ui.readyCta(industry.name)}</>}
-          description={ui.readySub(industry.name)}
+          title={<>{copy?.ctaTitle ?? ui.readyCta(industry.name)}</>}
+          description={copy?.ctaBody ?? ui.readySub(industry.name)}
         />
       </main>
       <Footer locale={locale} />

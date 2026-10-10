@@ -177,6 +177,7 @@ export function getNavModel(locale: SiteLocale): NavModel {
           { href: lp('/solutions/real-estate'), label: t('Real estate', 'Μεσιτικά γραφεία'), desc: t('Leads from property searches', 'Πελάτες από αναζητήσεις ακινήτων'), icon: 'building' },
           { href: lp('/solutions/lawyers'), label: t('Law firms', 'Δικηγορικά γραφεία'), desc: t('Clients who search by case', 'Πελάτες που ψάχνουν ανά υπόθεση'), icon: 'scale' },
           { href: lp('/solutions/dentists'), label: t('Dentists & clinics', 'Οδοντίατροι & κλινικές'), desc: t('Booked appointments, locally', 'Ραντεβού από την περιοχή σας'), icon: 'tooth' },
+          { href: lp('/solutions/doctors'), label: t('Doctors & practices', 'Γιατροί & ιατρεία'), desc: t('Patients searching nearby', 'Ασθενείς που ψάχνουν κοντά τους'), icon: 'shield' },
           { href: lp('/solutions'), label: t('All industries', 'Όλοι οι κλάδοι'), desc: t('See every sector we serve', 'Όλοι οι κλάδοι που εξυπηρετούμε'), icon: 'grid' },
         ],
       },

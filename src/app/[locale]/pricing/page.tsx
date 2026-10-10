@@ -5,6 +5,8 @@ import Footer from "@/components/Footer";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
 import { Globe, Plus, TrendingUp } from "lucide-react";
 import { buildMetadata } from "@/lib/seo";
+import Link from "next/link";
+import { withExactTitle } from "../services/_lib/exact-title";
 import {
   generateBreadcrumbSchema,
   generateFAQSchema,
@@ -50,13 +52,15 @@ export async function generateMetadata({
   if (!isValidLocale(locale)) return {};
   const copy = getPricingPageCopy(locale);
 
-  return buildMetadata({
+  const metadata = buildMetadata({
     title: copy.metaTitle,
     description: copy.metaDescription,
     path: localizedPath(locale, "/pricing"),
     hreflangPath: "/pricing",
     primaryKeyword: copy.primaryKeyword,
   });
+  // The Greek title is the keyword map's, already sized to 48 characters.
+  return locale === "el" ? withExactTitle(metadata, copy.metaTitle) : metadata;
 }
 
 export default async function PricingPage({
@@ -168,7 +172,15 @@ export default async function PricingPage({
             title={accentTail(isEl ? "Πακέτα κατασκευής ιστοσελίδας" : "Website packages")}
             description={
               isEl
-                ? "Οι χρόνοι παράδοσης ξεκινούν μετά την έγκριση του scope, την παράδοση προσβάσεων και υλικού και την ολοκλήρωση της εμπορικής συμφωνίας. Η πολυπλοκότητα, οι ενσωματώσεις και ο χρόνος ανατροφοδότησης επηρεάζουν την παράδοση."
+                ? (
+                    <>
+                      Τι περιλαμβάνει κάθε έργο θα το βρείτε στη σελίδα για την{" "}
+                      <Link href={lp("/services/website-creation")} className="font-medium text-link underline-offset-4 hover:underline">
+                        κατασκευή ιστοσελίδων
+                      </Link>
+                      . Οι χρόνοι παράδοσης ξεκινούν μετά την έγκριση του scope, την παράδοση προσβάσεων και υλικού και την ολοκλήρωση της εμπορικής συμφωνίας. Η πολυπλοκότητα, οι ενσωματώσεις και ο χρόνος ανατροφοδότησης επηρεάζουν την παράδοση.
+                    </>
+                  )
                 : "Delivery windows begin after scope approval, access handover, receipt of required material and completion of the commercial agreement. Complexity, integrations and feedback cycles affect delivery."
             }
           />

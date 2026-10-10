@@ -215,13 +215,6 @@ export const BLOG_MONEY_LINKS: Record<
         { path: '/services/ai-visibility', titleEn: 'AI visibility', titleEl: 'Ορατότητα σε AI' },
         { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
     ],
-    'geo-agency-ellada': [
-        { path: '/services/ai-visibility', titleEn: 'AI visibility (GEO/AEO)', titleEl: 'AI Visibility (GEO/AEO)' },
-        { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
-        { path: '/solutions/hotels', titleEn: 'Hotel solutions', titleEl: 'Λύσεις για ξενοδοχεία' },
-        { path: '/work', titleEn: 'Portfolio', titleEl: 'Έργα' },
-        { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
-    ],
     'kataskevi-istoselidas-xenodoxeia': [
         { path: '/solutions/hotels', titleEn: 'Hotel solutions', titleEl: 'Λύσεις για ξενοδοχεία' },
         { path: '/blog/seo-gia-xenodoxeia', titleEn: 'Hotel SEO guide', titleEl: 'SEO για ξενοδοχεία' },
@@ -362,11 +355,6 @@ export const BLOG_MONEY_LINKS: Record<
     'topiko-seo-kykladon': [
         { path: '/services/local-seo', titleEn: 'Local SEO', titleEl: 'Τοπικό SEO' },
         { path: '/solutions/hotels', titleEn: 'Hotel solutions', titleEl: 'Λύσεις για ξενοδοχεία' },
-        { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
-        { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
-    ],
-    'geo-aeo-ellada': [
-        { path: '/services/ai-visibility', titleEn: 'AI visibility (GEO/AEO)', titleEl: 'AI Visibility (GEO/AEO)' },
         { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
         { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
     ],
