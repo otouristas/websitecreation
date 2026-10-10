@@ -4,11 +4,22 @@ import { useState } from "react";
 import { CONTACT_EMAIL } from '@/lib/contact-info';
 import type { ReactElement } from "react";
 import Link from "next/link";
-import { submitToFormspree } from "@/lib/formspree";
+import { describeAnswers, submitLead, type LeadService } from "@/lib/leads";
 import { captureUtmParams, trackFormStart, trackLead } from "@/lib/analytics";
 import { localizedPath, type SiteLocale } from "@/lib/i18n/locale";
 import { elContact } from "@/data/translations/el-contact";
 import ContactChannels from "@/components/ContactChannels";
+
+/** Contact-form interests mapped onto the app pipeline's service field. */
+const CONTACT_SERVICE: Record<string, LeadService> = {
+  "website-creation": "webdesign",
+  "website-redesign": "webdesign",
+  "tourism-hotel": "webdesign",
+  "rent-a-car": "webdesign",
+  "travel-ai": "webdesign",
+  seo: "seo",
+  other: "both",
+};
 
 export function ContactFormClient({ locale = "en" }: { locale?: SiteLocale }): ReactElement {
   const isEl = locale === "el";
@@ -24,6 +35,7 @@ export function ContactFormClient({ locale = "en" }: { locale?: SiteLocale }): R
     service: "",
     message: "",
     website: "",
+    gotcha: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -41,23 +53,37 @@ export function ContactFormClient({ locale = "en" }: { locale?: SiteLocale }): R
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (formData.website) return;
+    if (formData.gotcha) return;
 
     setIsSubmitting(true);
     setSubmitError(null);
 
     const utm = captureUtmParams();
-    const result = await submitToFormspree({
-      _subject: `Contact form: ${formData.name}`,
-      "Form Type": "Contact",
-      "Full Name": formData.name,
-      Email: formData.email,
-      Company: formData.company || "Not provided",
-      Phone: formData.phone || "Not provided",
-      Service: formData.service || "Not specified",
-      Message: formData.message,
-      ...utm,
-    });
+    const result = await submitLead(
+      {
+        _subject: `Contact form: ${formData.name}`,
+        "Form Type": "Contact",
+        "Full Name": formData.name,
+        Email: formData.email,
+        Company: formData.company || "Not provided",
+        Website: formData.website || "Not provided",
+        Phone: formData.phone || "Not provided",
+        Service: formData.service || "Not specified",
+        Message: formData.message,
+        ...utm,
+      },
+      {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        company: formData.company,
+        website: formData.website,
+        service: CONTACT_SERVICE[formData.service] ?? "both",
+        message: describeAnswers({ Interest: formData.service, Message: formData.message, ...utm }),
+        locale,
+        source: "website-contact",
+      },
+    );
 
     setIsSubmitting(false);
 
@@ -207,8 +233,8 @@ export function ContactFormClient({ locale = "en" }: { locale?: SiteLocale }): R
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <input
                     type="text"
-                    name="website"
-                    value={formData.website}
+                    name="gotcha"
+                    value={formData.gotcha}
                     onChange={handleChange}
                     tabIndex={-1}
                     autoComplete="off"
@@ -284,6 +310,27 @@ export function ContactFormClient({ locale = "en" }: { locale?: SiteLocale }): R
                         className="w-full rounded-lg border border-input bg-background px-4 py-3 transition-smooth focus:ring-2 focus:ring-ring"
                       />
                     </div>
+                  </div>
+
+                  <div>
+                    <label htmlFor="website" className="mb-2 block text-sm font-medium">
+                      {isEl ? t!.websiteLabel : "Your website"}
+                    </label>
+                    <input
+                      type="text"
+                      id="website"
+                      name="website"
+                      inputMode="url"
+                      autoComplete="url"
+                      value={formData.website}
+                      onChange={handleChange}
+                      placeholder={isEl ? t!.websitePlaceholder : "your-business.com"}
+                      aria-describedby="website-hint"
+                      className="w-full rounded-lg border border-input bg-background px-4 py-3 transition-smooth focus:ring-2 focus:ring-ring"
+                    />
+                    <p id="website-hint" className="mt-1.5 text-xs text-muted-foreground">
+                      {isEl ? t!.websiteHint : "Add it and we reply with a free SEO audit of your site."}
+                    </p>
                   </div>
 
                   <div>

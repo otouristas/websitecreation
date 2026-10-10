@@ -5,7 +5,7 @@ import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { industries } from '@/data/industries';
 import { industriesEl } from '@/data/industries-i18n';
-import { submitToFormspree } from '@/lib/formspree';
+import { describeAnswers, submitLead, type LeadService } from '@/lib/leads';
 import { captureUtmParams, trackFormStart, trackLead } from '@/lib/analytics';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 import { InstantPlan, summarizePlan, type PlanSnapshot } from '@/components/tools/InstantPlan';
@@ -286,7 +286,23 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
     ...utmParams,
     };
 
-    const result = await submitToFormspree(submissionData);
+    const service: LeadService =
+      formData.goal === 'new-site' || formData.projectType === 'new' ? 'webdesign'
+      : formData.goal === 'eshop' || formData.projectType === 'eshop' ? 'both'
+      : 'seo';
+    const contactKeys = new Set(['_subject', 'Form Type', 'Full Name', 'Email', 'Phone']);
+    const answers = Object.fromEntries(Object.entries(submissionData).filter(([k]) => !contactKeys.has(k)));
+    const result = await submitLead(submissionData, {
+      name: formData.fullName,
+      email: formData.email,
+      phone: formData.phone,
+      company: formData.businessName,
+      website: formData.website || (formData.hasDomain === 'yes' ? formData.domainName : ''),
+      service,
+      message: describeAnswers(answers),
+      locale,
+      source: 'website-get-started',
+    });
 
     if (result.ok) {
       trackLead('get-started', {

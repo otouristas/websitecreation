@@ -23,6 +23,9 @@ export const elContact = {
   companyPlaceholder: 'Η εταιρεία σας',
   phone: 'Τηλέφωνο',
   phonePlaceholder: '+30 210 000 0000',
+  websiteLabel: 'Η ιστοσελίδα σας',
+  websitePlaceholder: 'h-epixeirisi-sas.gr',
+  websiteHint: 'Συμπληρώστε τη και θα σας στείλουμε δωρεάν έλεγχο SEO της ιστοσελίδας σας.',
   service: 'Τι σας ενδιαφέρει;',
   servicePlaceholder: 'Επιλέξτε',
   services: {

@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import Link from "next/link";
 import { ArrowRight, RotateCcw } from "lucide-react";
-import { submitToFormspree } from "@/lib/formspree";
+import { describeAnswers, submitLead } from "@/lib/leads";
 import { captureUtmParams, trackCtaClick, trackFormStart, trackLead } from "@/lib/analytics";
 import { WHATSAPP_HREF } from "@/lib/contact-info";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
@@ -205,18 +205,32 @@ export function ScanWidget({ locale = "en", className }: { locale?: SiteLocale; 
     }
     setError(null);
     setSending(true);
-    const res = await submitToFormspree({
-      form: "instant_scan",
-      _subject: `Instant scan lead: ${result?.finalUrl ?? url}`,
-      website: result?.finalUrl ?? url,
-      contact: value,
-      contact_type: looksEmail ? "email" : "whatsapp",
-      score: String(result?.score ?? ""),
-      issues: (result?.topIssues ?? []).map((i) => i.label.en).join(" | "),
-      locale,
-      page: typeof window !== "undefined" ? window.location.pathname : "",
-      ...captureUtmParams(),
-    });
+    const site = result?.finalUrl ?? url;
+    const issues = (result?.topIssues ?? []).map((i) => i.label.en).join(" | ");
+    const utm = captureUtmParams();
+    const res = await submitLead(
+      {
+        form: "instant_scan",
+        _subject: `Instant scan lead: ${site}`,
+        website: site,
+        contact: value,
+        contact_type: looksEmail ? "email" : "whatsapp",
+        score: String(result?.score ?? ""),
+        issues,
+        locale,
+        page: typeof window !== "undefined" ? window.location.pathname : "",
+        ...utm,
+      },
+      {
+        email: looksEmail ? value : undefined,
+        phone: looksEmail ? undefined : value,
+        website: site,
+        service: "seo",
+        message: describeAnswers({ "Instant scan score": String(result?.score ?? ""), "Top issues": issues, ...utm }),
+        locale,
+        source: "website-scan",
+      },
+    );
     setSending(false);
     if (res.ok) {
       trackLead("instant_scan", { score: String(result?.score ?? "") });
