@@ -13,7 +13,8 @@ const COPY: Record<SiteLocale, { full: string; short: string; aria: string }> = 
 };
 
 /**
- * Floating WhatsApp conversion CTA.
+ * Floating WhatsApp conversion CTA, desktop only. On phones WhatsApp sits
+ * inside the floating glass pill (StickyMobileCta) next to the quote button.
  *
  * Replaces two things: the square WhatsApp button that used to sit inside the
  * sticky mobile bar - where it read as one more bottom-navigation tab rather
@@ -54,14 +55,14 @@ export function WhatsAppPill({ locale: localeProp }: { locale?: SiteLocale } = {
           'calc(max(var(--chrome-bottom-bar), var(--chrome-safe-bottom)) + var(--chrome-cookie-bar) + var(--chrome-gutter))',
       }}
       className="
-        fixed right-4 z-[55] inline-flex h-12 min-h-12 items-center gap-2 rounded-full
+        fixed right-4 z-[55] hidden h-12 min-h-12 items-center gap-2 rounded-full
         bg-[#25D366] pl-3.5 pr-4 text-[0.9375rem] font-semibold text-[#062a14]
         shadow-[0_10px_30px_-8px_oklch(0_0_0_/_35%),0_2px_6px_-2px_oklch(0_0_0_/_25%)]
         ring-1 ring-black/5 transition-[transform,box-shadow] duration-200
         hover:-translate-y-0.5 hover:shadow-[0_16px_38px_-10px_oklch(0_0_0_/_40%)]
         focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#25D366]
         active:translate-y-0 motion-reduce:transition-none motion-reduce:hover:translate-y-0
-        sm:right-5 lg:right-6
+        sm:right-5 lg:right-6 lg:inline-flex
       "
     >
       <WhatsAppIcon className="h-5 w-5 shrink-0" />

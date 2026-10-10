@@ -25,14 +25,17 @@ export function Section({
   return (
     <section
       id={id}
-      className={cn("relative mx-auto w-full max-w-6xl px-6 py-16 md:py-24", className)}
+      className={cn("relative mx-auto w-full max-w-[1200px] scroll-mt-24 px-5 py-20 sm:px-8 sm:py-28", className)}
     >
       {children}
     </section>
   );
 }
 
-/** Uppercase mono micro-label. The cyan dot is the brand's punctuation. */
+/**
+ * Uppercase mono micro-label, as on the app's landing page: muted text with
+ * the cyan dot as its icon.
+ */
 export function Eyebrow({
   children,
   className,
@@ -45,7 +48,7 @@ export function Eyebrow({
   return (
     <span
       className={cn(
-        "inline-flex items-center gap-2 font-mono text-[11px] font-medium uppercase tracking-[0.18em] text-brand",
+        "inline-flex items-center gap-2 font-mono text-[12px] font-medium uppercase tracking-[0.1em] text-muted-foreground",
         className,
       )}
     >
@@ -64,6 +67,24 @@ export function Numeral({ n, className }: { n: number; className?: string }) {
   );
 }
 
+/**
+ * Puts the last word of a plain-string headline in the serif italic accent,
+ * the app landing's signature. Trailing punctuation stays upright. Titles
+ * passed as JSX are left alone, so a page can place its own accent.
+ */
+export function withAccent(title: ReactNode): ReactNode {
+  if (typeof title !== "string") return title;
+  const m = title.trim().match(/^(.*\s)([^\s]+?)([.?!;:,…»”"]*)$/u);
+  if (!m || m[1].trim().length === 0) return title;
+  return (
+    <>
+      {m[1]}
+      <span className="font-serif text-[1.08em] font-normal italic leading-none tracking-[-0.01em] text-brand">{m[2]}</span>
+      {m[3]}
+    </>
+  );
+}
+
 export function SectionHeading({
   eyebrow,
   title,
@@ -71,6 +92,7 @@ export function SectionHeading({
   align = "center",
   className,
   as: Tag = "h2",
+  accent = true,
 }: {
   eyebrow?: string;
   title: ReactNode;
@@ -78,15 +100,31 @@ export function SectionHeading({
   align?: "center" | "left";
   className?: string;
   as?: "h1" | "h2" | "h3";
+  /** Set false to keep a string title fully upright. */
+  accent?: boolean;
 }) {
   return (
-    <div className={cn("max-w-2xl", align === "center" && "mx-auto text-center", className)}>
+    <div className={cn("reveal max-w-3xl", align === "center" && "mx-auto text-center", className)}>
       {eyebrow ? <Eyebrow>{eyebrow}</Eyebrow> : null}
-      <Tag className="mt-5 font-display text-[clamp(2rem,4.6vw,3.75rem)] font-semibold leading-[1.02] tracking-[-0.04em] text-foreground">
-        {title}
+      <Tag
+        className={cn(
+          "mt-4 text-balance font-display font-semibold tracking-[-0.035em] text-foreground",
+          Tag === "h1"
+            ? "text-[38px] leading-[1.04] sm:text-[52px] lg:text-[60px]"
+            : "text-[30px] leading-[1.1] sm:text-[40px] lg:text-[44px]",
+        )}
+      >
+        {accent ? withAccent(title) : title}
       </Tag>
       {body ? (
-        <p className="mt-5 text-base leading-relaxed text-muted-foreground md:text-lg">{body}</p>
+        <p
+          className={cn(
+            "mt-4 text-pretty text-[16px] leading-relaxed text-muted-foreground sm:text-[18px]",
+            align === "center" && "mx-auto max-w-2xl",
+          )}
+        >
+          {body}
+        </p>
       ) : null}
     </div>
   );

@@ -33,6 +33,7 @@
   --font-display: var(--font-inter-tight), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-mono: var(--font-jetbrains-mono), ui-monospace, "SFMono-Regular", monospace;
+  --font-serif: var(--font-instrument-serif), var(--font-noto-serif), Georgia, "Times New Roman", serif;
 }
 
 @theme inline {
@@ -521,6 +522,22 @@
     0 0 0 1px color-mix(in oklab, var(--primary) 30%, transparent),
     0 0 80px -20px color-mix(in oklab, var(--primary) 55%, transparent),
     0 40px 80px -40px oklch(0 0 0 / 60%);
+}
+
+/* App-landing textures. `kit-grid` is the square grid behind centered
+   heroes and CTA bands; `kit-dots` is the finer dot field on the stage
+   behind product previews. Both draw with the theme's own hairline colours,
+   so they read the same on the dark ground and in light mode. */
+@utility kit-grid {
+  background-image:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+@utility kit-dots {
+  background-image: radial-gradient(circle at 1px 1px, var(--hairline) 1px, transparent 1.4px);
+  background-size: 14px 14px;
 }
 
 /* Spotlight border: a radial highlight that follows the pointer.

@@ -1,4 +1,5 @@
 import { getAppPath } from "@/lib/app-links";
+import { legacyFeatureAnchor } from "@/data/marketing-features";
 import { localizedPath, type SiteLocale } from "@/lib/i18n/locale";
 
 /**
@@ -10,8 +11,10 @@ export function resolveMarketingPath(path: string, locale: SiteLocale = "en"): s
     return path;
   }
   if (path.startsWith("/features/")) {
-    const slug = path.replace(/^\/features\//, "");
-    return localizedPath(locale, `/platform/features/${slug}`);
+    // The per-feature pages are retired; land on the matching module anchor.
+    const slug = path.replace(/^\/features\//, "").split(/[/?#]/)[0];
+    const anchor = legacyFeatureAnchor(slug);
+    return `${localizedPath(locale, "/platform/features")}${anchor ? `#${anchor}` : ""}`;
   }
   if (path.startsWith("/free-tools/") || path.startsWith("/help/")) {
     return getAppPath(path);

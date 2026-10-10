@@ -1,18 +1,20 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { PageShell, ShellCrumbs } from '@/components/bespoke/PageShell';
-import FAQSection from '@/components/seo/FAQSection';
+import { ArrowRight, Layers, MessageSquare, Search, Sparkles, Workflow } from 'lucide-react';
+import { PageShell } from '@/components/bespoke/PageShell';
 import { SearchPreview } from '@/components/tools/SearchPreview';
 import {
-  Bloom,
-  Eyebrow,
-  GhostButtonLink,
-  PrimaryButtonLink,
-  Section,
-  SectionHeading,
-  Tick,
-} from '@/components/landing/primitives';
+  AgencyCtas,
+  AiVisibilityPreview,
+  CheckList,
+  Container,
+  CtaBand,
+  KitHeading,
+  KitSection,
+  Stage,
+} from '@/components/kit';
+import { ChipLinks, InfoCard, KitFaq, PageHero, accentTail } from '@/components/page-kit';
 import { isValidLocale, localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 import { buildMetadata } from '@/lib/seo';
 import {
@@ -241,88 +243,93 @@ export default async function AiVisibilityCheckPage({ params }: PageProps) {
       ];
 
   return (
-    <PageShell locale={siteLocale} signatureHue={214} schemas={schemas} className="main-below-header">
-      <section className="relative overflow-hidden">
-        <Bloom className="left-1/2 top-[-12rem] h-[30rem] w-[56rem] -translate-x-1/2" />
-        <Bloom signal className="right-[-10%] top-[8rem] h-[24rem] w-[34rem]" />
-        <div className="relative mx-auto max-w-6xl px-6 pb-8">
-          <ShellCrumbs items={breadcrumbItems} />
-          <div className="max-w-3xl">
-            <Eyebrow>{c.eyebrow}</Eyebrow>
-            <h1 className="mt-4 font-display text-[clamp(2rem,4.4vw,3.25rem)] font-semibold leading-[1.04] tracking-[-0.04em] text-foreground">
-              {c.h1}
-            </h1>
-            {/* Answer-first opener: what the tool does, in the first paragraph. */}
-            <p className="mt-6 text-lg leading-relaxed text-muted-foreground">{c.intro}</p>
-            <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
-              {c.note}
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="relative">
-        <div className="mx-auto max-w-6xl px-6 pb-4">
+    <PageShell locale={siteLocale} signatureHue={214} schemas={schemas}>
+      <PageHero
+        locale={siteLocale}
+        size="md"
+        breadcrumbs={breadcrumbItems}
+        pill={{ href: '#check', kind: 'free', tag: isEl ? 'Δωρεάν' : 'Free', text: isEl ? 'Εργαλείο GEO / AEO, χωρίς εγγραφή' : 'GEO / AEO tool, no signup' }}
+        title={accentTail(c.h1, 2)}
+        lead={c.intro}
+        meta={<p className="font-mono text-[11px] uppercase tracking-[0.12em] text-muted-foreground">{c.note}</p>}
+        actions={null}
+        trust={null}
+      >
+        <div id="check" className="mx-auto mt-10 w-full max-w-[1200px] scroll-mt-28 px-5 text-left sm:px-8">
           <SearchPreview locale={siteLocale} />
         </div>
+      </PageHero>
+
+      <KitSection>
+        <KitHeading
+          align="center"
+          eyebrow={isEl ? 'Τα τρία σημεία' : 'The three surfaces'}
+          eyebrowIcon={<Layers />}
+          title={accentTail(c.surfacesTitle, 2)}
+          description={c.surfacesBody}
+        />
+        <div className="mt-12 grid gap-4 md:grid-cols-3">
+          {c.surfaces.map((sf, i) => {
+            const Icon = [Search, Sparkles, MessageSquare][i] ?? Search;
+            return <InfoCard key={sf.title} as="h2" icon={<Icon />} title={sf.title} text={sf.body} />;
+          })}
+        </div>
+      </KitSection>
+
+      <KitSection tinted>
+        <div className="grid items-start gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-16">
+          <div className="min-w-0">
+            <KitHeading eyebrow={isEl ? 'Μεθοδολογία' : 'Method'} eyebrowIcon={<Workflow />} title={c.howTitle} />
+            <CheckList className="mt-6" items={[...c.how]} />
+            <h2 className="mt-12 font-display text-[24px] font-semibold tracking-[-0.03em] text-foreground">{c.limitsTitle}</h2>
+            <p className="mt-4 text-[15.5px] leading-relaxed text-muted-foreground">{c.limits}</p>
+          </div>
+          <div className="reveal min-w-0">
+            <Stage>
+              <AiVisibilityPreview locale={siteLocale} />
+            </Stage>
+            <p className="mt-3 text-center text-[12.5px] text-muted-foreground">
+              {isEl
+                ? 'Η μηνιαία παρακολούθηση στο GSC Boost, σε δείγμα ξενοδοχείου.'
+                : 'Month-over-month tracking in GSC Boost, on a sample hotel.'}
+            </p>
+            <div className="mt-8 rounded-2xl border border-hairline bg-background/70 p-6">
+              <h3 className="font-display text-[20px] font-semibold tracking-[-0.025em] text-foreground">{c.ctaTitle}</h3>
+              <p className="mt-2 text-[14.5px] leading-relaxed text-muted-foreground">{c.ctaBody}</p>
+              <AgencyCtas
+                locale={siteLocale}
+                align="left"
+                primaryHref={lp('/get-started')}
+                primaryLabel={c.cta}
+                className="mt-6"
+              />
+              <Link
+                href={lp('/services/ai-visibility')}
+                className="mt-4 inline-flex items-center gap-1.5 text-[14px] font-medium text-link underline-offset-4 hover:underline"
+              >
+                {c.ctaSecondary}
+                <ArrowRight className="size-4" aria-hidden />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </KitSection>
+
+      <KitFaq
+        title={isEl ? 'Συχνές ερωτήσεις για ορατότητα σε AI' : 'Frequently asked questions about AI visibility'}
+        items={[...c.faqs]}
+      />
+
+      <section className="border-t border-hairline py-12">
+        <Container>
+          <nav aria-label={c.relatedTitle} className="flex flex-col items-center gap-4">
+            <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-muted-foreground">{c.relatedTitle}</span>
+            <ChipLinks align="center" items={related} />
+          </nav>
+        </Container>
       </section>
 
-      <Section className="border-t border-hairline">
-        <SectionHeading eyebrow={isEl ? 'Τα τρία σημεία' : 'The three surfaces'} title={c.surfacesTitle} body={c.surfacesBody} />
-        <div className="mt-12 grid gap-4 md:grid-cols-3">
-          {c.surfaces.map((s) => (
-            <div key={s.title} className="glass rounded-2xl p-6">
-              <h2 className="font-display text-lg font-medium text-foreground">{s.title}</h2>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
-            </div>
-          ))}
-        </div>
-      </Section>
-
-      <Section className="border-t border-hairline">
-        <div className="grid gap-12 lg:grid-cols-2">
-          <div>
-            <h2 className="font-display text-2xl font-semibold tracking-[-0.03em] text-foreground">{c.howTitle}</h2>
-            <ul className="mt-6 space-y-3">
-              {c.how.map((item) => (
-                <li key={item} className="flex gap-3 text-sm leading-relaxed text-muted-foreground">
-                  <Tick />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h2 className="font-display text-2xl font-semibold tracking-[-0.03em] text-foreground">{c.limitsTitle}</h2>
-            <p className="mt-6 text-sm leading-relaxed text-muted-foreground">{c.limits}</p>
-            <div className="mt-8 rounded-2xl border border-hairline bg-surface/50 p-6">
-              <h3 className="font-display text-lg font-medium text-foreground">{c.ctaTitle}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{c.ctaBody}</p>
-              <div className="mt-6 flex flex-wrap gap-3">
-                <PrimaryButtonLink href={lp('/get-started')}>{c.cta}</PrimaryButtonLink>
-                <GhostButtonLink href={lp('/services/ai-visibility')}>{c.ctaSecondary} &rarr;</GhostButtonLink>
-              </div>
-            </div>
-          </div>
-        </div>
-      </Section>
-
-      <Section className="border-t border-hairline">
-        <div className="mx-auto max-w-3xl">
-          <FAQSection faqs={[...c.faqs]} locale={siteLocale} focusKeyword={isEl ? 'ορατότητα σε AI' : 'AI visibility'} />
-          <nav
-            aria-label={c.relatedTitle}
-            className="mt-12 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-hairline pt-8 text-sm text-muted-foreground"
-          >
-            <span className="font-mono text-[11px] uppercase tracking-[0.14em]">{c.relatedTitle}</span>
-            {related.map((item) => (
-              <Link key={item.href} href={item.href} className="transition-colors hover:text-link">
-                {item.label}
-              </Link>
-            ))}
-          </nav>
-        </div>
-      </Section>
+      <CtaBand locale={siteLocale} source="ai-visibility-check-band" />
     </PageShell>
   );
 }

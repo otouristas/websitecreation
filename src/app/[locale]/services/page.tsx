@@ -5,7 +5,6 @@ import { ArrowUpRight } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
-import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import { services } from "@/data/services";
 import { getServiceEl } from "@/data/services-i18n";
 import { isValidLocale, localizedPath, type SiteLocale } from "@/lib/i18n/locale";
@@ -17,14 +16,8 @@ import {
   BASE_URL,
 } from "@/lib/seo/schema";
 import { generateBreadcrumbs } from "@/lib/linking";
-import {
-  Section,
-  SectionHeading,
-  MeshGrid,
-  Bloom,
-  PrimaryButtonLink,
-  GhostButtonLink,
-} from "@/components/landing/primitives";
+import { CheckList, CtaBand, KitHeading, KitSection, LocalPackPreview, MarketingBadge, ReportPreview, type MarketingBadgeKind } from "@/components/kit";
+import { AccentTitle, DiyRow, ServiceHero, SpeedPreview, getServiceKit } from "@/components/service-kit";
 import { NotForYou } from "@/components/positioning/NotForYou";
 import { entrySeoNet, formatPrice, resolvePriceTokens } from "@/data/pricing";
 
@@ -82,111 +75,120 @@ export default async function ServicesPage({ params }: PageProps) {
     }),
   );
 
+  const tx = (en: string, el: string) => (isEl ? el : en);
+
   return (
     <>
       <SchemaMarkup schemas={schemas} />
       <Header locale={siteLocale} />
       <main className="blueprint-grid relative z-0">
-        <section className="relative overflow-hidden border-b border-hairline">
-          <Bloom className="left-1/2 top-[-8rem] h-[26rem] w-[60rem] -translate-x-1/2" />
-          <div className="main-below-header relative mx-auto max-w-6xl px-6 pb-14 pt-6">
-            <Breadcrumbs items={breadcrumbItems} className="mb-6" />
-            <h1 className="rise-in max-w-3xl font-display text-4xl font-medium leading-[1.05] tracking-[-0.04em] text-foreground md:text-6xl">
-              {isEl ? "Υπηρεσίες SEO και κατασκευής ιστοσελίδων" : "SEO and web design services"}
-            </h1>
-            <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
-              {isEl
-                ? "Κάθε συνεργασία ξεκινά με ανάλυση της επιχείρησης, της αγοράς και του ανταγωνισμού σας. Τα πακέτα ορίζουν το αρχικό scope, η στρατηγική προσαρμόζεται στο δικό σας project."
-                : "Every engagement starts with analysis of your business, market and competition. Packages define the initial scope; the strategy adapts to your project."}
-            </p>
-            <div className="mt-9 flex flex-wrap gap-3">
-              <PrimaryButtonLink href={lp("/get-started")}>
-                {isEl ? "Ζητήστε Προσφορά" : "Request a Quote"}
-              </PrimaryButtonLink>
-              <GhostButtonLink href={lp("/pricing")}>
-                {isEl ? "Δείτε τις Τιμές" : "View Pricing"}
-              </GhostButtonLink>
+        <ServiceHero
+          locale={siteLocale}
+          breadcrumbs={breadcrumbItems}
+          pill={{
+            kind: 'ai',
+            tag: 'AI',
+            text: tx('Get recommended by ChatGPT, Gemini and Google AI', 'Να σας προτείνουν ChatGPT, Gemini και Google AI'),
+            href: lp('/services/ai-visibility'),
+          }}
+          h1={isEl ? 'Υπηρεσίες SEO και κατασκευής ιστοσελίδων' : 'SEO and web design services'}
+          lead={
+            isEl
+              ? 'Κάθε συνεργασία ξεκινά με ανάλυση της επιχείρησης, της αγοράς και του ανταγωνισμού σας. Τα πακέτα ορίζουν το αρχικό scope, η στρατηγική προσαρμόζεται στο δικό σας project.'
+              : 'Every engagement starts with analysis of your business, market and competition. Packages define the initial scope; the strategy adapts to your project.'
+          }
+          primaryHref={lp('/get-started')}
+          primaryLabel={isEl ? 'Ζητήστε Προσφορά' : 'Request a Quote'}
+          links={[
+            { href: lp('/pricing'), label: isEl ? 'Δείτε τις Τιμές' : 'View Pricing' },
+            { href: lp('/work'), label: isEl ? 'Δείτε τα Έργα μας' : 'View Our Work' },
+          ]}
+          wideVisual
+          visual={
+            <div className="grid gap-3 md:grid-cols-2">
+              <ReportPreview locale={siteLocale} />
+              <div className="grid content-start gap-3">
+                <LocalPackPreview locale={siteLocale} city={isEl ? 'Πάρος' : 'Paros'} />
+                <div className="hidden md:block">
+                  <SpeedPreview locale={siteLocale} />
+                </div>
+              </div>
             </div>
-          </div>
-        </section>
+          }
+          visualLabel={tx(
+            'Sample work on a hotel website: a monthly SEO report and its Google Maps results.',
+            'Δείγμα δουλειάς σε ιστοσελίδα ξενοδοχείου: μηνιαία αναφορά SEO και τα αποτελέσματα στους Χάρτες Google.',
+          )}
+        />
 
-        <Section>
-          <SectionHeading
-            align="left"
-            eyebrow={isEl ? "Τι αναλαμβάνουμε" : "What we deliver"}
-            title={isEl ? "Όλες οι υπηρεσίες" : "Every service"}
-            body={
+        <KitSection className="mt-6 sm:mt-10">
+          <KitHeading
+            eyebrow={isEl ? 'Τι αναλαμβάνουμε' : 'What we deliver'}
+            title={<AccentTitle text={isEl ? 'Όλες οι υπηρεσίες' : 'Every service'} />}
+            description={
               isEl
                 ? `Μηνιαία συνεργασία SEO από €${formatPrice(entrySeoNet(), siteLocale)} + ΦΠΑ 24%. Έργα κατασκευής τιμολογούνται ανά project.`
                 : `Monthly SEO engagements from €${formatPrice(entrySeoNet(), siteLocale)} + 24% VAT. Website projects are quoted per project.`
             }
-            className="mb-12"
           />
 
-          <MeshGrid className="sm:grid-cols-2 lg:grid-cols-3">
-            {services.map((service) => {
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {services.map((service, i) => {
               const el = isEl ? getServiceEl(service.slug) : null;
               const name = el?.name ?? service.name;
               const description = resolvePriceTokens(el?.description ?? service.description, siteLocale);
               const features = (el?.features ?? service.features).slice(0, 3);
+              const kit = getServiceKit(service.slug);
+              const Icon = kit.icon;
+              const badge = SERVICE_BADGES[service.slug];
 
               return (
                 <Link
                   key={service.slug}
                   href={lp(`/services/${service.slug}`)}
-                  className="group flex flex-col bg-surface p-7 transition-colors hover:bg-surface-raised"
+                  className="reveal group flex flex-col rounded-2xl border border-hairline bg-surface/60 p-6 transition-colors hover:border-brand/40 hover:bg-surface"
+                  style={{ ['--rv' as string]: `${(i % 3) * 5}%` }}
                 >
-                  <div className="flex items-start justify-between gap-4">
-                    <h2 className="font-display text-lg font-medium tracking-[-0.02em] text-foreground">
-                      {name}
-                    </h2>
-                    <ArrowUpRight
-                      className="size-4 shrink-0 text-muted-foreground transition-colors group-hover:text-primary"
-                      aria-hidden
-                    />
+                  <div className="flex items-center justify-between gap-3">
+                    <span className="flex size-9 items-center justify-center rounded-lg border border-hairline bg-background text-brand">
+                      <Icon className="size-4" aria-hidden />
+                    </span>
+                    <span className="flex items-center gap-2">
+                      {badge ? <MarketingBadge kind={badge.kind}>{badge.label[siteLocale]}</MarketingBadge> : null}
+                      <ArrowUpRight className="size-4 shrink-0 text-muted-foreground transition-colors group-hover:text-brand" aria-hidden />
+                    </span>
                   </div>
-                  <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
-                    {description}
-                  </p>
-                  <ul className="mt-5 space-y-2 border-t border-hairline pt-4">
-                    {features.map((f) => (
-                      <li key={f} className="flex gap-2.5 text-[13px] text-muted-foreground">
-                        <span aria-hidden className="mt-2 h-px w-3 shrink-0 bg-brand" />
-                        {f}
-                      </li>
-                    ))}
-                  </ul>
+                  <h2 className="mt-5 text-[18px] font-semibold tracking-[-0.015em] text-foreground">{name}</h2>
+                  <p className="mt-2 flex-1 text-[14.5px] leading-relaxed text-muted-foreground">{description}</p>
+                  <CheckList items={features} size="sm" className="mt-5 border-t border-hairline pt-4" />
                 </Link>
               );
             })}
-          </MeshGrid>
-        </Section>
+          </div>
+        </KitSection>
 
         <NotForYou locale={siteLocale} />
 
-        <section className="relative overflow-hidden border-t border-hairline">
-          <Bloom className="left-1/2 top-1/4 h-[24rem] w-[56rem] -translate-x-1/2" />
-          <div className="relative mx-auto max-w-3xl px-6 py-24 text-center">
-            <h2 className="font-display text-3xl font-medium leading-[1.05] tracking-[-0.04em] text-foreground md:text-5xl">
-              {isEl ? "Δεν είστε σίγουροι τι χρειάζεστε;" : "Not sure what you need?"}
-            </h2>
-            <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">
-              {isEl
-                ? "Πείτε μας τι θέλετε να πετύχετε. Θα κοιτάξουμε το site και την αγορά σας και θα σας πούμε τι έχει νόημα να γίνει πρώτο."
-                : "Tell us what you want to achieve. We will look at your site and your market and tell you what is worth doing first."}
-            </p>
-            <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
-              <PrimaryButtonLink href={lp("/get-started")}>
-                {isEl ? "Συζητήστε το Project σας" : "Discuss Your Project"}
-              </PrimaryButtonLink>
-              <GhostButtonLink href={lp("/work")}>
-                {isEl ? "Δείτε τα Έργα μας" : "View Our Work"}
-              </GhostButtonLink>
-            </div>
-          </div>
-        </section>
+        <DiyRow locale={siteLocale} source="services-index" />
+
+        <CtaBand
+          locale={siteLocale}
+          source="services-index"
+          title={<AccentTitle text={isEl ? 'Δεν είστε σίγουροι τι χρειάζεστε;' : 'Not sure what you need?'} />}
+          description={
+            isEl
+              ? 'Πείτε μας τι θέλετε να πετύχετε. Θα κοιτάξουμε το site και την αγορά σας και θα σας πούμε τι έχει νόημα να γίνει πρώτο.'
+              : 'Tell us what you want to achieve. We will look at your site and your market and tell you what is worth doing first.'
+          }
+        />
       </main>
       <Footer locale={siteLocale} />
     </>
   );
 }
+
+const SERVICE_BADGES: Partial<Record<string, { kind: MarketingBadgeKind; label: Record<SiteLocale, string> }>> = {
+  'website-creation': { kind: 'popular', label: { en: 'Popular', el: 'Δημοφιλές' } },
+  'ai-visibility': { kind: 'ai', label: { en: 'AI', el: 'AI' } },
+  'local-seo': { kind: 'popular', label: { en: 'Popular', el: 'Δημοφιλές' } },
+};

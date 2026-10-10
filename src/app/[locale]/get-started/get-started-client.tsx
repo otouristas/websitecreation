@@ -11,6 +11,9 @@ import { captureUtmParams, trackFormStart, trackLead } from '@/lib/analytics';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 import { InstantPlan, summarizePlan, type PlanSnapshot } from '@/components/tools/InstantPlan';
 import { SERVICE_GOALS } from '@/lib/estimate/recommend';
+import { Check } from 'lucide-react';
+import { CtaBand, HeroBackdrop, kitPrimaryBtn, kitSecondaryBtn } from '@/components/kit';
+import { PageHero, accentTail } from '@/components/page-kit';
 
 /**
  * Step 1 is an outcome menu, not a price menu.
@@ -95,6 +98,8 @@ const existingAssetsEl = [
   { id: 'domain', label: 'Domain Name' },
 ];
 
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 function OnboardingWizard({ locale }: { locale: SiteLocale }) {
   const searchParams = useSearchParams();
   const lp = (path: string) => localizedPath(locale, path);
@@ -111,6 +116,7 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
   const [submitError, setSubmitError] = useState('');
   const [utmParams, setUtmParams] = useState<Record<string, string>>({});
   const [hasTrackedStart, setHasTrackedStart] = useState(false);
+  const [emailTouched, setEmailTouched] = useState(false);
   // The live test and the estimator sit above this form; whatever the visitor
   // ended up looking at travels with the brief so the call starts from their
   // figures rather than from a blank page.
@@ -227,12 +233,14 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
     switch (step) {
       case 1:
         return !!formData.goal && !!formData.projectType;
+      // Only what we cannot quote without. Industry, domain and timeline are
+      // optional: an empty answer is sent as "Needs help choosing" / "Flexible".
       case 2:
-        return !!formData.businessName && !!formData.industry;
+        return !!formData.businessName;
       case 3:
-        return !!formData.hasDomain && !!formData.timeline;
+        return true;
       case 4:
-        return !!formData.fullName && !!formData.email;
+        return !!formData.fullName.trim() && EMAIL_RE.test(formData.email.trim());
       default:
         return false;
     }
@@ -338,14 +346,14 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
         bizInfoSub: "Βοηθήστε μας να κατανοήσουμε τις ανάγκες σας",
         bizName: "Όνομα Επιχείρησης *",
         bizNamePlaceholder: "Η Εταιρεία Σας",
-        industryLabel: "Κλάδος *",
+        industryLabel: "Κλάδος",
         industrySelect: "Επιλέξτε κλάδο",
         currWeb: "Τρέχουσα Ιστοσελίδα (αν υπάρχει)",
         bizDesc: "Σύντομη Περιγραφή",
         bizDescPlaceholder: "Πείτε μας λίγα λόγια για την επιχείρησή σας και τους στόχους της νέας ιστοσελίδας...",
         projDetailsTitle: "Λεπτομέρειες Project",
         projDetailsSub: "Βοηθήστε μας να κατανοήσουμε καλύτερα τις απαιτήσεις",
-        hasDomain: "Έχετε domain name; *",
+        hasDomain: "Έχετε domain name;",
         domainOptions: [
           { value: 'yes', label: 'Ναι, έχω ήδη domain' },
           { value: 'no', label: 'Όχι, θέλω να κατοχυρώσω νέο' },
@@ -358,7 +366,7 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
         targetAudience: "Κοινό-Στόχος (προαιρετικά)",
         targetAudiencePlaceholder: "π.χ. Ιδιοκτήτες σκαφών, ηλικίες 30-60, τουρίστες",
         featuresTitle: "Ποια χαρακτηριστικά χρειάζεστε;",
-        timelineTitle: "Χρονοδιάγραμμα Project *",
+        timelineTitle: "Χρονοδιάγραμμα Project",
         timelineOptions: [
           { value: 'asap', label: 'Άμεσα (ASAP)' },
           { value: '2-4-weeks', label: '2-4 Εβδομάδες' },
@@ -460,14 +468,14 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
         bizInfoSub: "Help us understand your needs",
         bizName: "Business Name *",
         bizNamePlaceholder: "Your Company Name",
-        industryLabel: "Industry *",
+        industryLabel: "Industry",
         industrySelect: "Select your industry",
         currWeb: "Current Website (if any)",
         bizDesc: "Brief Description",
         bizDescPlaceholder: "Tell us about your business and what you want to achieve with your new website...",
         projDetailsTitle: "Project Details",
         projDetailsSub: "Help us better understand your project requirements",
-        hasDomain: "Do you have a domain name? *",
+        hasDomain: "Do you have a domain name?",
         domainOptions: [
           { value: 'yes', label: 'Yes, I have a domain' },
           { value: 'no', label: 'No, I need to register one' },
@@ -480,7 +488,7 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
         targetAudience: "Target Audience (optional)",
         targetAudiencePlaceholder: "e.g., Small business owners, ages 35-55, local area",
         featuresTitle: "What features do you need?",
-        timelineTitle: "Project Timeline *",
+        timelineTitle: "Project Timeline",
         timelineOptions: [
           { value: 'asap', label: 'ASAP' },
           { value: '2-4-weeks', label: '2-4 Weeks' },
@@ -565,67 +573,73 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
 
   if (isComplete) {
     return (
-      <main className="blueprint-grid relative z-0 main-below-header flex min-h-[80vh] items-center">
-        <div className="container">
-          <div className="max-w-xl mx-auto text-center">
-            <div className="w-24 h-24 rounded-full gradient-primary flex items-center justify-center mx-auto mb-8 shadow-lg shadow-primary/20">
-              <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-              </svg>
-            </div>
-
-            <h1 className="font-display text-3xl font-medium tracking-[-0.03em] mb-4">{t.submittedTitle}</h1>
-            <p className="text-lg text-muted-foreground mb-6">
+      <main className="blueprint-grid relative z-0">
+        <section className="hero-below-header relative isolate overflow-hidden pb-24">
+          <HeroBackdrop />
+          <div className="mx-auto max-w-xl px-5 pt-6 text-center">
+            <span className="mx-auto flex size-16 items-center justify-center rounded-full bg-brand/15 text-brand">
+              <Check className="size-8" strokeWidth={2.5} aria-hidden />
+            </span>
+            <h1 className="mt-8 font-display text-[34px] font-semibold leading-[1.08] tracking-[-0.04em] text-foreground sm:text-[44px]">{t.submittedTitle}</h1>
+            <p className="mt-4 text-[17px] leading-relaxed text-muted-foreground">
               {t.submittedSub(formData.fullName.split(' ')[0])}
             </p>
 
-            <div className="card card p-6 text-left mb-8">
-              <h2 className="font-semibold mb-4">{t.nextStepsTitle}</h2>
-              <ul className="space-y-3 text-sm">
+            <div className="mt-8 rounded-2xl border border-hairline bg-surface/70 p-6 text-left">
+              <h2 className="text-[16px] font-semibold text-foreground">{t.nextStepsTitle}</h2>
+              <ol className="mt-4 space-y-3 text-[14.5px]">
                 {t.nextSteps.map((stepText, idx) => (
                   <li key={idx} className="flex items-start gap-3">
-                    <span className="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-semibold flex-shrink-0">{idx + 1}</span>
+                    <span className="font-mono text-[12px] font-medium text-brand">{String(idx + 1).padStart(2, '0')}</span>
                     <span className="text-foreground/90">{stepText}</span>
                   </li>
                 ))}
-              </ul>
+              </ol>
             </div>
 
-            <div className="card mb-8 p-4 text-sm text-muted-foreground">
-              <strong>{t.goalLabel}:</strong> {selectedGoal?.label} &middot;
-              <strong> {t.bizLabel}:</strong> {formData.businessName}
+            <div className="mt-4 rounded-2xl border border-hairline bg-surface/50 p-4 text-[14px] text-muted-foreground">
+              <strong className="text-foreground">{t.goalLabel}:</strong> {selectedGoal?.label} &middot;
+              <strong className="text-foreground"> {t.bizLabel}:</strong> {formData.businessName}
             </div>
 
-            <Link href={lp("/")} className="btn btn-primary">
+            <Link href={lp("/")} className={`${kitPrimaryBtn} mt-8`}>
               {t.backHome}
             </Link>
           </div>
-        </div>
+        </section>
       </main>
     );
   }
 
   return (
-    <main className="blueprint-grid relative z-0 main-below-header pb-24">
-      {/* Hero Section */}
-      <section className="section-compact  mb-8">
-        <div className="container text-center">
-          <h1 className="font-display text-4xl font-medium tracking-[-0.04em] sm:text-5xl mb-4">{t.title}</h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">{t.subtitle}</p>
+    <main className="blueprint-grid relative z-0">
+      {/* Hero: the two-field free audit is the fast path. Menus and CTAs
+          across the site link to #free-audit, which FreeAuditForm carries. */}
+      <PageHero
+        locale={locale}
+        pill={{
+          href: '#free-audit',
+          kind: 'free',
+          tag: isEl ? 'Δωρεάν' : 'Free',
+          text: isEl ? 'Έλεγχος SEO σε 24 ώρες' : 'SEO audit in 24 hours, two fields',
+        }}
+        title={accentTail(t.title, 2)}
+        lead={t.subtitle}
+        actions={
           <FreeAuditForm
             locale={locale}
             initialWebsite={searchParams.get('website') ?? ''}
-            className="mx-auto mt-8 max-w-4xl"
+            className="mx-auto max-w-4xl"
           />
-        </div>
-      </section>
+        }
+      />
 
       {/* Live site test and live estimate, above the brief.
           A visitor who can see what their own site scores and what fixing it
           costs arrives at the form already knowing what they are asking for -
           and we receive a brief with real figures attached instead of a name
           and an email. */}
-      <section className="container max-w-6xl px-4 mb-16">
+      <section className="mx-auto mt-16 mb-16 w-full max-w-6xl px-5 sm:px-8">
         <InstantPlan
           locale={locale}
           service={searchParams.get('service')}
@@ -636,12 +650,12 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
         />
       </section>
 
-      <div ref={briefRef} className="container max-w-6xl px-4 scroll-mt-28">
+      <div ref={briefRef} className="mx-auto w-full max-w-6xl scroll-mt-28 px-5 sm:px-8">
         <div className="grid lg:grid-cols-5 gap-8 items-start">
           
           {/* Left Column: Before / After Marketing Comparison */}
           <div className="lg:col-span-2 space-y-6">
-            <div className="card card p-6 bg-gradient-to-br from-primary/[0.03] to-secondary/[0.03]">
+            <div className="rounded-3xl border border-hairline bg-surface/60 p-6">
               <h3 className="font-display text-xl font-medium tracking-[-0.02em] mb-2 text-foreground">{t.beforeAfterTitle}</h3>
               <p className="text-sm text-muted-foreground mb-6">{t.beforeAfterSub}</p>
 
@@ -683,7 +697,7 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
           {/* Right Column: Dynamic Form Wizard */}
           <div className="lg:col-span-3 space-y-6">
             {/* Step Progress indicators */}
-            <div className="card card p-4 mb-4">
+            <div className="mb-4 rounded-2xl border border-hairline bg-surface/60 p-4">
               <div className="flex items-center justify-between mb-3">
                 {t.stepLabels.map((label, i) => (
                   <div
@@ -708,11 +722,11 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
               </div>
             </div>
 
-            <div className="card card p-6 sm:p-8 relative">
+            <div className="relative rounded-3xl border border-hairline bg-surface/70 p-5 sm:p-8">
               {/* Step 1: what the visitor actually wants to achieve */}
               {step === 1 && (
                 <div>
-                  <h2 className="font-display text-2xl font-medium tracking-[-0.02em] mb-2">{t.choosePkg}</h2>
+                  <h2 className="font-display text-[24px] font-semibold tracking-[-0.03em] text-foreground mb-2">{t.choosePkg}</h2>
                   <p className="text-muted-foreground mb-6 text-sm">{t.choosePkgSub}</p>
 
                   <div className="grid gap-2.5 sm:grid-cols-2 mb-8">
@@ -772,29 +786,29 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
               {/* Step 2: Business Info */}
               {step === 2 && (
                 <div>
-                  <h2 className="font-display text-2xl font-medium tracking-[-0.02em] mb-2">{t.bizInfoTitle}</h2>
+                  <h2 className="font-display text-[24px] font-semibold tracking-[-0.03em] text-foreground mb-2">{t.bizInfoTitle}</h2>
                   <p className="text-muted-foreground mb-6 text-sm">{t.bizInfoSub}</p>
 
                   <div className="space-y-4">
                     <div>
-                      <label className="block text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">{t.bizName}</label>
+                      <label className="block text-[14px] font-medium text-foreground mb-2">{t.bizName}</label>
                       <input
                         type="text"
                         name="businessName"
                         value={formData.businessName}
                         onChange={handleInputChange}
                         placeholder={t.bizNamePlaceholder}
-                        className="w-full px-4 py-3 rounded-lg border border-hairline bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-smooth text-sm"
+                        className="w-full min-h-12 px-4 py-3 rounded-xl border border-hairline bg-background/70 text-[16px] text-foreground placeholder:text-muted-foreground/70 focus:border-brand/60 focus:outline-none focus:ring-2 focus:ring-brand/30 transition-colors"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">{t.industryLabel}</label>
+                      <label className="block text-[14px] font-medium text-foreground mb-2">{t.industryLabel}</label>
                       <select
                         name="industry"
                         value={formData.industry}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 rounded-lg border border-hairline bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-smooth text-sm"
+                        className="w-full min-h-12 px-4 py-3 rounded-xl border border-hairline bg-background/70 text-[16px] text-foreground placeholder:text-muted-foreground/70 focus:border-brand/60 focus:outline-none focus:ring-2 focus:ring-brand/30 transition-colors"
                       >
                         <option value="">{t.industrySelect}</option>
                         {industries.map((ind) => {
@@ -808,26 +822,26 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">{t.currWeb}</label>
+                      <label className="block text-[14px] font-medium text-foreground mb-2">{t.currWeb}</label>
                       <input
                         type="url"
                         name="website"
                         value={formData.website}
                         onChange={handleInputChange}
                         placeholder="https://..."
-                        className="w-full px-4 py-3 rounded-lg border border-hairline bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-smooth text-sm"
+                        className="w-full min-h-12 px-4 py-3 rounded-xl border border-hairline bg-background/70 text-[16px] text-foreground placeholder:text-muted-foreground/70 focus:border-brand/60 focus:outline-none focus:ring-2 focus:ring-brand/30 transition-colors"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">{t.bizDesc}</label>
+                      <label className="block text-[14px] font-medium text-foreground mb-2">{t.bizDesc}</label>
                       <textarea
                         name="description"
                         value={formData.description}
                         onChange={handleInputChange}
                         placeholder={t.bizDescPlaceholder}
                         rows={3}
-                        className="w-full px-4 py-3 rounded-lg border border-hairline bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-smooth text-sm resize-none"
+                        className="w-full min-h-12 px-4 py-3 rounded-xl border border-hairline bg-background/70 text-[16px] text-foreground placeholder:text-muted-foreground/70 focus:border-brand/60 focus:outline-none focus:ring-2 focus:ring-brand/30 transition-colors resize-none"
                       />
                     </div>
                   </div>
@@ -837,12 +851,12 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
               {/* Step 3: Project Details */}
               {step === 3 && (
                 <div>
-                  <h2 className="font-display text-2xl font-medium tracking-[-0.02em] mb-2">{t.projDetailsTitle}</h2>
+                  <h2 className="font-display text-[24px] font-semibold tracking-[-0.03em] text-foreground mb-2">{t.projDetailsTitle}</h2>
                   <p className="text-muted-foreground mb-6 text-sm">{t.projDetailsSub}</p>
 
                   <div className="space-y-6">
                     <div>
-                      <label className="block text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">{t.hasDomain}</label>
+                      <label className="block text-[14px] font-medium text-foreground mb-3">{t.hasDomain}</label>
                       <div className="space-y-2">
                         {t.domainOptions.map((option) => (
                           <label
@@ -874,43 +888,43 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">{t.competitors}</label>
+                      <label className="block text-[14px] font-medium text-foreground mb-2">{t.competitors}</label>
                       <textarea
                         name="competitors"
                         value={formData.competitors}
                         onChange={handleInputChange}
                         placeholder={t.competitorsPlaceholder}
                         rows={3}
-                        className="w-full px-4 py-3 rounded-lg border border-hairline bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-smooth text-sm resize-none"
+                        className="w-full min-h-12 px-4 py-3 rounded-xl border border-hairline bg-background/70 text-[16px] text-foreground placeholder:text-muted-foreground/70 focus:border-brand/60 focus:outline-none focus:ring-2 focus:ring-brand/30 transition-colors resize-none"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">{t.designRefs}</label>
+                      <label className="block text-[14px] font-medium text-foreground mb-2">{t.designRefs}</label>
                       <textarea
                         name="designReferences"
                         value={formData.designReferences}
                         onChange={handleInputChange}
                         placeholder={t.designRefsPlaceholder}
                         rows={3}
-                        className="w-full px-4 py-3 rounded-lg border border-hairline bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-smooth text-sm resize-none"
+                        className="w-full min-h-12 px-4 py-3 rounded-xl border border-hairline bg-background/70 text-[16px] text-foreground placeholder:text-muted-foreground/70 focus:border-brand/60 focus:outline-none focus:ring-2 focus:ring-brand/30 transition-colors resize-none"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">{t.targetAudience}</label>
+                      <label className="block text-[14px] font-medium text-foreground mb-2">{t.targetAudience}</label>
                       <input
                         type="text"
                         name="targetAudience"
                         value={formData.targetAudience}
                         onChange={handleInputChange}
                         placeholder={t.targetAudiencePlaceholder}
-                        className="w-full px-4 py-3 rounded-lg border border-hairline bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-smooth text-sm"
+                        className="w-full min-h-12 px-4 py-3 rounded-xl border border-hairline bg-background/70 text-[16px] text-foreground placeholder:text-muted-foreground/70 focus:border-brand/60 focus:outline-none focus:ring-2 focus:ring-brand/30 transition-colors"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">{t.featuresTitle}</label>
+                      <label className="block text-[14px] font-medium text-foreground mb-3">{t.featuresTitle}</label>
                       <div className="grid grid-cols-2 gap-2">
                         {featureOptions.map((feature) => (
                           <label
@@ -930,7 +944,7 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">{t.timelineTitle}</label>
+                      <label className="block text-[14px] font-medium text-foreground mb-3">{t.timelineTitle}</label>
                       <div className="grid grid-cols-2 gap-2">
                         {t.timelineOptions.map((option) => (
                           <label
@@ -952,7 +966,7 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">{t.assetsTitle}</label>
+                      <label className="block text-[14px] font-medium text-foreground mb-3">{t.assetsTitle}</label>
                       <div className="grid grid-cols-2 gap-2">
                         {existingAssets.map((asset) => (
                           <label
@@ -972,7 +986,7 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">{t.socialsTitle}</label>
+                      <label className="block text-[14px] font-medium text-foreground mb-3">{t.socialsTitle}</label>
                       <div className="grid grid-cols-2 gap-3">
                         <input
                           type="url"
@@ -980,7 +994,7 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
                           value={formData.facebookUrl}
                           onChange={handleInputChange}
                           placeholder="Facebook URL"
-                          className="px-3 py-2 rounded-lg border border-hairline bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-smooth text-xs"
+                          className="min-h-11 px-3 py-2 rounded-xl border border-hairline bg-background/70 text-[16px] focus:border-brand/60 focus:outline-none focus:ring-2 focus:ring-brand/30 transition-colors"
                         />
                         <input
                           type="url"
@@ -988,7 +1002,7 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
                           value={formData.instagramUrl}
                           onChange={handleInputChange}
                           placeholder="Instagram URL"
-                          className="px-3 py-2 rounded-lg border border-hairline bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-smooth text-xs"
+                          className="min-h-11 px-3 py-2 rounded-xl border border-hairline bg-background/70 text-[16px] focus:border-brand/60 focus:outline-none focus:ring-2 focus:ring-brand/30 transition-colors"
                         />
                         <input
                           type="url"
@@ -996,7 +1010,7 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
                           value={formData.linkedinUrl}
                           onChange={handleInputChange}
                           placeholder="LinkedIn URL"
-                          className="px-3 py-2 rounded-lg border border-hairline bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-smooth text-xs"
+                          className="min-h-11 px-3 py-2 rounded-xl border border-hairline bg-background/70 text-[16px] focus:border-brand/60 focus:outline-none focus:ring-2 focus:ring-brand/30 transition-colors"
                         />
                         <input
                           type="url"
@@ -1004,20 +1018,20 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
                           value={formData.twitterUrl}
                           onChange={handleInputChange}
                           placeholder="Twitter / X URL"
-                          className="px-3 py-2 rounded-lg border border-hairline bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-smooth text-xs"
+                          className="min-h-11 px-3 py-2 rounded-xl border border-hairline bg-background/70 text-[16px] focus:border-brand/60 focus:outline-none focus:ring-2 focus:ring-brand/30 transition-colors"
                         />
                       </div>
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">{t.addNotes}</label>
+                      <label className="block text-[14px] font-medium text-foreground mb-2">{t.addNotes}</label>
                       <textarea
                         name="additionalNotes"
                         value={formData.additionalNotes}
                         onChange={handleInputChange}
                         placeholder={isEl ? "Κάτι άλλο που θα θέλατε να μοιραστείτε μαζί μας..." : "Anything else we should know about your project?"}
                         rows={3}
-                        className="w-full px-4 py-3 rounded-lg border border-hairline bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-smooth text-sm resize-none"
+                        className="w-full min-h-12 px-4 py-3 rounded-xl border border-hairline bg-background/70 text-[16px] text-foreground placeholder:text-muted-foreground/70 focus:border-brand/60 focus:outline-none focus:ring-2 focus:ring-brand/30 transition-colors resize-none"
                       />
                     </div>
                   </div>
@@ -1027,7 +1041,7 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
               {/* Step 4: Contact Info */}
               {step === 4 && (
                 <div>
-                  <h2 className="font-display text-2xl font-medium tracking-[-0.02em] mb-2">{t.contactTitle}</h2>
+                  <h2 className="font-display text-[24px] font-semibold tracking-[-0.03em] text-foreground mb-2">{t.contactTitle}</h2>
                   <p className="text-muted-foreground mb-6 text-sm">{t.contactSub}</p>
 
                   <div className="space-y-4">
@@ -1044,38 +1058,58 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">{t.fullName}</label>
+                      <label htmlFor="gs-name" className="block text-[14px] font-medium text-foreground mb-2">{t.fullName}</label>
                       <input
                         type="text"
+                        id="gs-name"
+                        autoComplete="name"
+                        enterKeyHint="next"
                         name="fullName"
                         value={formData.fullName}
                         onChange={handleInputChange}
                         placeholder="John Doe"
-                        className="w-full px-4 py-3 rounded-lg border border-hairline bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-smooth text-sm"
+                        className="w-full min-h-12 px-4 py-3 rounded-xl border border-hairline bg-background/70 text-[16px] text-foreground placeholder:text-muted-foreground/70 focus:border-brand/60 focus:outline-none focus:ring-2 focus:ring-brand/30 transition-colors"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">{t.email}</label>
+                      <label htmlFor="gs-email" className="block text-[14px] font-medium text-foreground mb-2">{t.email}</label>
                       <input
                         type="email"
+                        id="gs-email"
+                        inputMode="email"
+                        autoComplete="email"
+                        autoCapitalize="none"
+                        spellCheck={false}
+                        enterKeyHint="next"
                         name="email"
                         value={formData.email}
                         onChange={handleInputChange}
+                        onBlur={() => setEmailTouched(true)}
+                        aria-invalid={emailTouched && !!formData.email && !EMAIL_RE.test(formData.email.trim()) ? true : undefined}
+                        aria-describedby="gs-email-error"
                         placeholder="john@company.com"
-                        className="w-full px-4 py-3 rounded-lg border border-hairline bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-smooth text-sm"
+                        className="w-full min-h-12 px-4 py-3 rounded-xl border border-hairline bg-background/70 text-[16px] text-foreground placeholder:text-muted-foreground/70 focus:border-brand/60 focus:outline-none focus:ring-2 focus:ring-brand/30 transition-colors"
                       />
+                      {emailTouched && formData.email && !EMAIL_RE.test(formData.email.trim()) ? (
+                        <p id="gs-email-error" className="mt-1.5 text-[13px] text-destructive">
+                          {isEl ? 'Γράψτε ένα έγκυρο email, π.χ. you@company.com.' : 'Please add a valid email, e.g. you@company.com.'}
+                        </p>
+                      ) : null}
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">{t.phone}</label>
+                      <label htmlFor="gs-phone" className="block text-[14px] font-medium text-foreground mb-2">{t.phone}</label>
                       <input
                         type="tel"
+                        id="gs-phone"
+                        inputMode="tel"
+                        autoComplete="tel"
                         name="phone"
                         value={formData.phone}
                         onChange={handleInputChange}
                         placeholder="+30 690 000 0000"
-                        className="w-full px-4 py-3 rounded-lg border border-hairline bg-background/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-smooth text-sm"
+                        className="w-full min-h-12 px-4 py-3 rounded-xl border border-hairline bg-background/70 text-[16px] text-foreground placeholder:text-muted-foreground/70 focus:border-brand/60 focus:outline-none focus:ring-2 focus:ring-brand/30 transition-colors"
                       />
                     </div>
                   </div>
@@ -1091,18 +1125,18 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
               {/* Wizard Form Navigation */}
               <div className="flex items-center justify-between mt-8 pt-6 border-t border-hairline">
                 {step > 1 ? (
-                  <button onClick={handleBack} className="btn btn-outline py-2.5 text-xs font-bold">
+                  <button onClick={handleBack} className={kitSecondaryBtn}>
                     {t.back}
                   </button>
                 ) : (
-                  <Link href={lp("/pricing")} className="btn btn-outline py-2.5 text-xs font-bold">{t.cancel}</Link>
+                  <Link href={lp("/pricing")} className={kitSecondaryBtn}>{t.cancel}</Link>
                 )}
 
                 {step < 4 ? (
                   <button
                     onClick={handleNext}
                     disabled={!isStepValid()}
-                    className="btn btn-primary disabled:opacity-50 py-2.5 text-xs font-bold"
+                    className={`${kitPrimaryBtn} disabled:opacity-50`}
                   >
                     {t.continue}
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1113,7 +1147,7 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
                   <button
                     onClick={handleSubmit}
                     disabled={isSubmitting || !isStepValid()}
-                    className="btn btn-primary disabled:opacity-50 py-2.5 text-xs font-bold"
+                    className={`${kitPrimaryBtn} disabled:opacity-50`}
                   >
                     {isSubmitting ? (
                       <>
@@ -1137,7 +1171,7 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
             </div>
 
             {/* Quote Summary Sidebar / Panel */}
-            <div className="card card p-6">
+            <div className="rounded-3xl border border-hairline bg-surface/60 p-6">
               <h3 className="mb-4 text-[11px] font-medium uppercase tracking-[0.18em] text-brand">{t.nextStepsTitle}</h3>
 
               <ol className="space-y-4 text-xs">
@@ -1177,6 +1211,7 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
 
         </div>
       </div>
+      <CtaBand locale={locale} source="get-started-band" className="mt-12" />
     </main>
   );
 }
@@ -1186,10 +1221,10 @@ export function GetStartedClient({ locale }: { locale: SiteLocale }) {
   return (
     <Suspense
       fallback={
-        <main className="blueprint-grid relative z-0 main-below-header pb-24">
-          <section className="section-compact  mb-8">
-            <div className="container text-center">
-              <h1 className="font-display text-4xl font-medium tracking-[-0.04em] sm:text-5xl mb-4">{fallbackTitle}</h1>
+        <main className="blueprint-grid relative z-0">
+          <section className="hero-below-header pb-24">
+            <div className="mx-auto max-w-[1200px] px-5 pt-6 text-center sm:px-8">
+              <h1 className="mx-auto max-w-4xl font-display text-[38px] font-semibold leading-[1.04] tracking-[-0.045em] text-foreground sm:text-[56px] lg:text-[68px]">{fallbackTitle}</h1>
               <div className="mx-auto mt-8 flex justify-center">
                 <div className="animate-spin w-8 h-8 border-2 border-primary border-t-transparent rounded-full" />
               </div>

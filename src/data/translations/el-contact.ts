@@ -33,7 +33,7 @@ export const elContact = {
     'website-redesign': 'Ανασχεδιασμός ιστοσελίδας',
     'tourism-hotel': 'Ιστοσελίδα ξενοδοχείου / τουρισμού',
     'rent-a-car': 'Ιστοσελίδα rent-a-car',
-    'travel-ai': 'Travel AI chatbot',
+    'travel-ai': 'AI chatbot για τουρισμό',
     seo: 'SEO / GEO / AEO',
     other: 'Άλλο / Δεν είμαι σίγουρος',
   },

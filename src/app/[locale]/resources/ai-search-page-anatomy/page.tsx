@@ -1,18 +1,20 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { PageShell, ShellCrumbs } from '@/components/bespoke/PageShell';
-import FAQSection from '@/components/seo/FAQSection';
+import { Compass, ListChecks, ScanSearch, ShieldAlert } from 'lucide-react';
+import { PageShell } from '@/components/bespoke/PageShell';
 import { AiPageAnatomy } from '@/components/ai-search';
 import {
-  Section,
-  SectionHeading,
-  Bloom,
-  Eyebrow,
-  PrimaryButtonLink,
-  GhostButtonLink,
-  Tick,
-} from '@/components/landing/primitives';
+  Accent,
+  CheckList,
+  CtaBand,
+  KitHeading,
+  KitSection,
+  StepsGrid,
+  kitPrimaryBtn,
+  kitSecondaryBtn,
+} from '@/components/kit';
+import { ChipLinks, KitFaq, PageHero, accentTail } from '@/components/page-kit';
 import { ANATOMY_FAQS, ANATOMY_PUBLISHED, ANATOMY_UPDATED } from '@/data/ai-page-anatomy';
 import { isValidLocale, localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 import { buildMetadata } from '@/lib/seo';
@@ -123,115 +125,98 @@ export default async function AiSearchPageAnatomyPage({ params }: PageProps) {
 
   return (
     <PageShell locale={siteLocale} signatureHue={262} schemas={schemas}>
-      <section className="relative overflow-hidden border-b border-hairline">
-        <Bloom className="left-1/2 top-[-12rem] h-[30rem] w-[56rem] -translate-x-1/2" />
-        <div className="relative mx-auto max-w-3xl px-6 pb-16 pt-6">
-          <ShellCrumbs items={breadcrumbItems} />
-          <Eyebrow>Answer engine optimization</Eyebrow>
-          <h1 className="mt-4 font-display text-[2.4rem] font-medium leading-[1.05] tracking-[-0.04em] sm:text-5xl">
-            Anatomy of a page built for AI search
-          </h1>
-          {/* Answer-first, and practising what the page preaches. */}
-          <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-            The classic on-page checklist assumed a person scanning results and deciding what to
-            click. This one assumes a language model deciding what to quote. The two want different
-            things from the same HTML: liftable answers rather than clever introductions, tables
-            rather than prose, attributed numbers rather than adjectives, and text the server sent
-            rather than text a browser drew.
-          </p>
-          <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+      <PageHero
+        locale={siteLocale}
+        breadcrumbs={breadcrumbItems}
+        pill={{ href: lp(LAYERS_PATH), kind: 'ai', tag: 'AEO', text: 'Answer engine optimization' }}
+        title={accentTail('Anatomy of a page built for AI search', 2)}
+        size="md"
+        /* Answer-first, and practising what the page preaches. */
+        lead="The classic on-page checklist assumed a person scanning results and deciding what to click. This one assumes a language model deciding what to quote. The two want different things from the same HTML: liftable answers rather than clever introductions, tables rather than prose, attributed numbers rather than adjectives, and text the server sent rather than text a browser drew."
+        meta={
+          <p className="text-[15px] text-muted-foreground">
             Twelve parts of a page, each one annotated on a worked example below.
           </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <PrimaryButtonLink href={lp('/get-started')}>Get your pages audited</PrimaryButtonLink>
-            <GhostButtonLink href={lp(LAYERS_PATH)}>The six layers &rarr;</GhostButtonLink>
+        }
+        actions={
+          <div className="flex flex-col justify-center gap-3 sm:flex-row">
+            <Link href={lp('/get-started')} className={kitPrimaryBtn}>
+              Get your pages audited
+            </Link>
+            <Link href={lp(LAYERS_PATH)} className={kitSecondaryBtn}>
+              The six layers &rarr;
+            </Link>
           </div>
-        </div>
-      </section>
+        }
+      />
 
-      <Section className="max-w-7xl">
-        <SectionHeading
+      <KitSection className="!pt-14">
+        <KitHeading
           eyebrow="The page, annotated"
-          title="Twelve parts of one page"
-          body="A worked example in the middle, the notes in the margins. Everything in the sample is invented, including the figures; the points around it are not."
+          eyebrowIcon={<ScanSearch />}
+          title={accentTail('Twelve parts of one page', 2)}
+          description="A worked example in the middle, the notes in the margins. Everything in the sample is invented, including the figures; the points around it are not."
         />
         <AiPageAnatomy className="mt-12" />
-      </Section>
+      </KitSection>
 
-      <Section className="border-t border-hairline">
-        <SectionHeading
+      <KitSection tinted>
+        <KitHeading
           eyebrow="How to check a page"
-          title="Auditing one of your own, in five minutes"
-          body="Read the page the way a retrieval system does rather than the way its author does. Most of what is wrong shows up in the first two steps."
+          eyebrowIcon={<ListChecks />}
+          title={accentTail('Auditing one of your own, in five minutes', 2)}
+          description="Read the page the way a retrieval system does rather than the way its author does. Most of what is wrong shows up in the first two steps."
         />
-        <ol className="mx-auto mt-10 max-w-2xl space-y-6">
-          {AUDIT_STEPS.map((step, i) => (
-            <li key={step.title} className="flex gap-4">
-              <span className="mt-0.5 grid size-8 shrink-0 place-items-center rounded-full border border-hairline font-display text-sm text-brand">
-                {i + 1}
-              </span>
-              <div>
-                <h3 className="font-display text-lg font-medium text-foreground">{step.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{step.body}</p>
-              </div>
-            </li>
-          ))}
-        </ol>
-      </Section>
+        <StepsGrid className="mt-10" steps={AUDIT_STEPS.map((step) => ({ title: step.title, text: step.body }))} />
+      </KitSection>
 
-      <Section className="border-t border-hairline">
+      <KitSection>
         <div className="mx-auto max-w-3xl">
-          <SectionHeading
+          <KitHeading
             eyebrow="Honest limits"
-            title="What this is not"
-            body="Checklists turn into scorecards, and scorecards turn into pages written for a machine that nobody wants to read."
+            eyebrowIcon={<ShieldAlert />}
+            title={<>What this is <Accent>not</Accent></>}
+            description="Checklists turn into scorecards, and scorecards turn into pages written for a machine that nobody wants to read."
           />
-          <ul className="mt-10 space-y-3">
-            {NOT_A_SCORE.map((item) => (
-              <li key={item} className="flex gap-2.5 text-base leading-relaxed text-foreground">
-                <Tick className="text-signature" />
-                {item}
-              </li>
-            ))}
-          </ul>
-          <p className="mt-8 text-sm leading-relaxed text-muted-foreground">
-            The order the effort pays in is set out on{' '}
-            <Link href={lp(LAYERS_PATH)} className="text-link underline-offset-4 hover:underline">
-              the layer model
-            </Link>
-            : access first, then the shape of the answer, then the material worth quoting.
-          </p>
-        </div>
-      </Section>
-
-      <Section className="border-t border-hairline">
-        <SectionHeading
-          eyebrow="FAQ"
-          title="Questions about writing for answer engines"
-          body="Asked often enough to belong on the page rather than in a reply."
-        />
-        <div className="mx-auto mt-10 max-w-3xl">
-          <FAQSection faqs={[...ANATOMY_FAQS]} title="" locale="en" />
-        </div>
-      </Section>
-
-      <Section className="border-t border-hairline">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-display text-3xl font-semibold tracking-[-0.03em] text-foreground">
-            Run this over your own pages
-          </h2>
-          <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-            We audit the pages that already have demand, fix what blocks retrieval, and track which
-            assistants start citing them.
-          </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <PrimaryButtonLink href={lp('/get-started')}>Request an audit</PrimaryButtonLink>
-            <GhostButtonLink href={lp('/tools/llm-citation-tracking')}>
-              LLM citation tracking
-            </GhostButtonLink>
+          <div className="mt-8 rounded-2xl border border-hairline bg-surface/70 p-6 sm:p-8">
+            <CheckList items={NOT_A_SCORE} />
+            <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
+              The order the effort pays in is set out on{' '}
+              <Link href={lp(LAYERS_PATH)} className="text-primary underline-offset-4 hover:underline">
+                the layer model
+              </Link>
+              : access first, then the shape of the answer, then the material worth quoting.
+            </p>
           </div>
         </div>
-      </Section>
+      </KitSection>
+
+      <KitFaq
+        items={[...ANATOMY_FAQS]}
+        title={accentTail('Questions about writing for answer engines', 2)}
+        description="Asked often enough to belong on the page rather than in a reply."
+      />
+
+      <KitSection className="!pb-0">
+        <KitHeading
+          align="center"
+          eyebrow="Keep going"
+          eyebrowIcon={<Compass />}
+          title={accentTail('Run this over your own pages', 2)}
+          description="We audit the pages that already have demand, fix what blocks retrieval, and track which assistants start citing them."
+        />
+        <ChipLinks
+          align="center"
+          className="mt-8"
+          items={[
+            { href: lp('/get-started'), label: 'Request an audit' },
+            { href: lp('/tools/llm-citation-tracking'), label: 'LLM citation tracking' },
+            { href: lp(LAYERS_PATH), label: 'The layers of search optimization' },
+          ]}
+        />
+      </KitSection>
+
+      <CtaBand locale={siteLocale} source="resources-anatomy-band" />
     </PageShell>
   );
 }

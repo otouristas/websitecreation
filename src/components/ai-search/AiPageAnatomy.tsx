@@ -60,7 +60,7 @@ function Note({ note, index }: { note: AnatomyNote; index: number }) {
   return (
     <article
       className={cn(
-        'glass rounded-2xl p-5 transition-colors hover:border-brand/40 xl:col-span-3',
+        'rounded-2xl border border-hairline bg-surface/70 p-5 transition-colors hover:border-brand/40 xl:col-span-3',
         note.side === 'left' ? 'xl:col-start-1' : 'xl:col-start-10',
         ROW_START[Math.floor(index / 2)],
       )}
@@ -104,7 +104,7 @@ function SampleDocument() {
   const s = SAMPLE_PAGE;
 
   return (
-    <div className="glass overflow-hidden rounded-2xl xl:col-span-6 xl:col-start-4 xl:row-span-6 xl:row-start-1">
+    <div className="overflow-hidden rounded-2xl border border-hairline bg-surface/70 xl:col-span-6 xl:col-start-4 xl:row-span-6 xl:row-start-1">
       {/* Chrome. The placeholder domain is the first of three notices that
           this document is illustrative. */}
       <div className="flex items-center gap-3 border-b border-hairline bg-surface/60 px-4 py-2.5">
@@ -302,7 +302,7 @@ export function AiPageAnatomy({ className }: { className?: string }) {
     <figure className={cn('not-prose m-0', className)}>
       {/* Title, meta and crawl elements: everything that decides what the page
           is and whether a model may read it at all. */}
-      <div className="glass overflow-hidden rounded-2xl">
+      <div className="overflow-hidden rounded-2xl border border-hairline bg-surface/70">
         <p className="border-b border-hairline bg-surface/60 px-5 py-3 font-mono text-[10px] uppercase tracking-[0.16em] text-brand">
           Title, meta and crawl elements
         </p>

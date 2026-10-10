@@ -218,7 +218,7 @@ export const glossaryCategories: GlossaryCategory[] = [
         relatedTerms: ["indexing", "robots-txt", "xml-sitemap", "crawl-budget"],
         relatedLinks: [
           { title: "Technical SEO Guide", url: "/blog/technical-seo-guide", type: "blog" },
-          { title: "Technical SEO Audits", url: "/platform/features/technical-seo-audits", type: "feature" }
+          { title: "Site audit in GSC Boost", url: "/platform/features#audit", type: "feature" }
         ]
       },
       {
@@ -423,10 +423,10 @@ export const glossaryCategories: GlossaryCategory[] = [
         id: "domain-authority",
         termEl: "Domain Authority (Κύρος Domain)",
         shortDefinitionEl: "Μετρική (0-100) που εκτιμά τη συνολική δύναμη ενός domain στις κατατάξεις.",
-        fullDefinitionEl: "Το Domain Authority (Moz) και το αντίστοιχο Domain Rating (Ahrefs) εκτιμούν πόσο «δυνατό» είναι ένα site με βάση το προφίλ των backlinks του. Δεν είναι επίσημη μετρική της Google, αλλά χρήσιμος δείκτης σύγκρισης με ανταγωνιστές και αξιολόγησης ευκαιριών για guest posts και συνεργασίες.",
+        fullDefinitionEl: "Το Domain Authority και οι παρόμοιες μετρικές «δύναμης domain» εκτιμούν πόσο «δυνατό» είναι ένα site με βάση το προφίλ των backlinks του. Δεν είναι επίσημη μετρική της Google, αλλά χρήσιμος δείκτης σύγκρισης με ανταγωνιστές και αξιολόγησης ευκαιριών για guest posts και συνεργασίες.",
         term: "Domain Authority (DA)",
         shortDefinition: "A metric predicting a website's ability to rank, based on its backlink profile.",
-        fullDefinition: "Domain Authority is a search engine ranking score (developed by Moz) that predicts how likely a website is to rank in search results. It's calculated based on the quantity and quality of backlinks, scored from 1-100.",
+        fullDefinition: "Domain Authority is a third-party score that estimates how likely a website is to rank in search results. It's calculated based on the quantity and quality of backlinks, scored from 1-100.",
         example: "Wikipedia has DA 100, while a new blog might have DA 10-20. Higher DA sites pass more value when linking to you.",
         technique: "Build DA by earning quality backlinks, creating valuable content, and maintaining a clean link profile. Focus on your niche authority rather than raw DA numbers.",
         proTip: "DA is a third-party metric, not a Google ranking factor. Use it comparatively within your niche, not as an absolute target.",

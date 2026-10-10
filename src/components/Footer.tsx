@@ -30,8 +30,8 @@ const EL_SEO_HUB_LINKS: { label: string; href: string }[] = [
   { label: "Κατασκευή Ιστοσελίδων Θεσσαλονίκη", href: elServiceLocationPath("website-creation", "thessaloniki-gr") },
   { label: "Κατασκευή Ιστοσελίδων Πάτρα", href: elServiceLocationPath("website-creation", "patras-gr") },
   { label: "Κατασκευή Ιστοσελίδων Ηράκλειο", href: elServiceLocationPath("website-creation", "heraklion-gr") },
-  { label: "Κατασκευή Ιστοσελίδων Λάρισα", href: elServiceLocationPath("website-creation", "larissa-gr") },
-  { label: "Κατασκευή Ιστοσελίδων Κόρινθος", href: elServiceLocationPath("website-creation", "corinth-gr") },
+  { label: "Κατασκευή Ιστοσελίδων Χανιά", href: elServiceLocationPath("website-creation", "chania-gr") },
+  { label: "Κατασκευή Ιστοσελίδων Ρόδος", href: elServiceLocationPath("website-creation", "rhodes-gr") },
   { label: "SEO Αθήνα", href: elServiceLocationPath("local-seo", "athens-gr") },
   { label: "SEO Θεσσαλονίκη", href: elServiceLocationPath("local-seo", "thessaloniki-gr") },
   { label: "SEO Σαντορίνη", href: elServiceLocationPath("local-seo", "santorini-gr") },
@@ -44,7 +44,6 @@ const EL_SEO_HUB_LINKS: { label: string; href: string }[] = [
   { label: "Κατασκευή E-shop Αθήνα", href: elServiceLocationPath("eshop-woocommerce", "athens-gr") },
   { label: "Κατασκευή E-shop Θεσσαλονίκη", href: elServiceLocationPath("eshop-woocommerce", "thessaloniki-gr") },
   { label: "Κατασκευή E-shop Πάτρα", href: elServiceLocationPath("eshop-woocommerce", "patras-gr") },
-  { label: "Σχεδιασμός Λογοτύπου Θεσσαλονίκη", href: elServiceLocationPath("logo-design", "thessaloniki-gr") },
   { label: "Ανασχεδιασμός Ιστοσελίδας", href: "/el/services/website-redesign" },
   { label: "SEO για Ξενοδοχεία", href: "/el/solutions/hotels" },
   { label: "Κατασκευή Ιστοσελίδας Ξενοδοχείου", href: "/el/solutions/hotels/website-creation" },
@@ -66,14 +65,13 @@ const EN_SEO_HUB_LINKS: { label: string; href: string }[] = [
   { label: "E-commerce / E-shop", href: "/en/services/eshop-woocommerce" },
   { label: "AI Visibility (GEO/AEO)", href: "/en/services/ai-visibility" },
   { label: "Website Redesign", href: "/en/services/website-redesign" },
-  // Cities whose English page is actually indexable. New York and Los Angeles
-  // were here on every page of the site, and both are noindex - roughly 2,000
-  // sitewide links each into pages we ask Google to drop.
+  // Only live service × city pages (src/lib/indexability/service-location.ts).
+  // `npm run audit:locations` fails if one of these points at a removed URL.
   { label: "Web Design London", href: "/en/services/website-creation/london-uk" },
   { label: "SEO London", href: "/en/services/local-seo/london-uk" },
   { label: "Web Design Athens", href: "/en/services/website-creation/athens-gr" },
-  { label: "SEO Thessaloniki", href: "/en/services/local-seo/thessaloniki-gr" },
-  { label: "Web Design Crete", href: "/en/services/website-creation/crete-gr" },
+  { label: "SEO Mykonos", href: "/en/services/local-seo/mykonos-gr" },
+  { label: "Web Design Heraklion", href: "/en/services/website-creation/heraklion-gr" },
   { label: "SEO Santorini", href: "/en/services/local-seo/santorini-gr" },
   { label: "Hotel SEO", href: "/en/solutions/hotels" },
   { label: "Pricing & Packages", href: "/en/pricing" },
@@ -81,13 +79,13 @@ const EN_SEO_HUB_LINKS: { label: string; href: string }[] = [
 ];
 
 const columnLinkClass =
-  "text-sm text-muted-foreground transition-colors hover:text-link";
+  "inline-block py-0.5 text-[14px] leading-snug text-muted-foreground transition-colors hover:text-foreground";
 
 const columnHeadingClass =
-  "mb-5 block font-mono text-[11px] font-medium uppercase tracking-[0.18em] text-brand";
+  "mb-5 block font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-foreground/70";
 
 const socialButtonClass =
-  "grid size-9 place-items-center rounded-full border border-hairline text-muted-foreground transition-colors hover:border-brand/50 hover:text-brand";
+  "grid size-10 place-items-center rounded-xl border border-hairline bg-surface/60 text-muted-foreground transition-colors hover:border-brand/50 hover:text-foreground";
 
 export default function Footer({ locale: localeProp }: { locale?: SiteLocale }): ReactElement {
   const pathname = usePathname() ?? "/en";
@@ -98,9 +96,9 @@ export default function Footer({ locale: localeProp }: { locale?: SiteLocale }):
   const t = getFooterDictionary(locale);
   return (
     <footer className="relative border-t border-hairline bg-surface/40 before:absolute before:inset-x-0 before:top-[-1px] before:h-px before:bg-[linear-gradient(90deg,transparent,var(--primary-glow)_30%,var(--brand)_70%,transparent)] before:opacity-70 before:content-['']">
-      <div className="mx-auto max-w-6xl px-6 pb-16 pt-16 md:pb-20 md:pt-20">
-        <div className="mb-12 grid grid-cols-2 gap-x-10 gap-y-10 md:grid-cols-4 lg:grid-cols-6">
-          <div className="col-span-2">
+      <div className="mx-auto w-full max-w-[1200px] px-5 pb-14 pt-16 sm:px-8 md:pb-16 md:pt-20">
+        <div className="mb-14 grid gap-12 lg:grid-cols-[minmax(0,19rem)_1fr] lg:gap-16">
+          <div>
             <BrandLogo size="lg" className="mb-4" homeHref={lp("/")} />
             <p className="mb-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
               {t.tagline}
@@ -180,9 +178,10 @@ export default function Footer({ locale: localeProp }: { locale?: SiteLocale }):
               </a>
             </div>
           </div>
+          <div className={isEl ? "grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-4" : "grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-3 xl:grid-cols-5"}>
           <div>
             <h3 className={columnHeadingClass}>{isEl ? t!.agency : "Product"}</h3>
-            <ul className="space-y-3.5">
+            <ul className="space-y-2.5">
               {isEl ? (
                 <>
                   <li>
@@ -244,7 +243,7 @@ export default function Footer({ locale: localeProp }: { locale?: SiteLocale }):
           </div>
           <div>
             <h3 className={columnHeadingClass}>{isEl ? t!.resources : "Resources"}</h3>
-            <ul className="space-y-3.5">
+            <ul className="space-y-2.5">
               {/* The one interactive tool on this site rather than in the app. */}
               <li>
                 <Link href={lp("/ai-visibility-check")} className={columnLinkClass}>
@@ -309,7 +308,7 @@ export default function Footer({ locale: localeProp }: { locale?: SiteLocale }):
           {!isEl && (
             <div>
               <h3 className={columnHeadingClass}>Platform</h3>
-              <ul className="space-y-3.5">
+              <ul className="space-y-2.5">
                 <li>
                   <Link href={lp("/platform")} className={columnLinkClass}>
                     Platform overview
@@ -345,7 +344,7 @@ export default function Footer({ locale: localeProp }: { locale?: SiteLocale }):
           )}
           <div>
             <h3 className={columnHeadingClass}>{isEl ? t!.company : "Company"}</h3>
-            <ul className="space-y-3.5">
+            <ul className="space-y-2.5">
               <li>
                 <Link href={lp("/about")} className={columnLinkClass}>
                   {isEl ? t!.about : "About us"}
@@ -372,7 +371,7 @@ export default function Footer({ locale: localeProp }: { locale?: SiteLocale }):
           </div>
           <div>
             <h3 className={columnHeadingClass}>{isEl ? t!.legal : "Legal"}</h3>
-            <ul className="space-y-3.5">
+            <ul className="space-y-2.5">
               <li>
                 <Link href={lp("/privacy")} className={columnLinkClass}>
                   {isEl ? t!.privacy : "Privacy policy"}
@@ -395,9 +394,10 @@ export default function Footer({ locale: localeProp }: { locale?: SiteLocale }):
               </li>
             </ul>
           </div>
+          </div>
         </div>
-        <div className="mb-12 border-t border-hairline pt-10">
-          <p className="mb-5 block font-mono text-[11px] font-medium uppercase tracking-[0.18em] text-brand">
+        <div className="mb-12 rounded-2xl border border-hairline bg-surface/50 p-6 sm:p-8">
+          <p className="mb-5 block font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-foreground/70">
             {isEl ? "Υπηρεσίες ανά Πόλη" : "Services by City"}
           </p>
           <ul className="grid grid-cols-2 gap-x-6 gap-y-2 sm:grid-cols-3 lg:grid-cols-4">

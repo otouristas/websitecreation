@@ -165,7 +165,7 @@ export const portfolioProjects: PortfolioProject[] = [
     summary:
       'Cretan Ways Rentals: Crete car and scooter rentals for Crete, SEO for “rent a car Crete”, focused on airport-to-resort routes for independent Crete travelers.',
     summaryEl:
-      'Cretan Ways Rentals: ενοικίαση αυτοκινήτων και scooters στην Κρήτη στην Κρήτη, SEO για «ενοικίαση αυτοκινήτου Κρήτη», με έμφαση σε διαδρομές από αεροδρόμιο προς θέρετρα για ανεξάρτητους ταξιδιώτες.',
+      'Cretan Ways Rentals: ενοικίαση αυτοκινήτων και scooters στην Κρήτη, SEO για «ενοικίαση αυτοκινήτου Κρήτη», με έμφαση σε διαδρομές από αεροδρόμιο προς θέρετρα για ανεξάρτητους ταξιδιώτες.',
     results: [
       'Crete: pages aimed at “rent a car Crete” and “Heraklion car rental”',
       'Differentiation: airport-to-resort routes for independent Crete travelers',
@@ -182,7 +182,7 @@ export const portfolioProjects: PortfolioProject[] = [
                                                     seoTitle: 'Cretan Ways Rentals | rent a car Crete',
     seoDescription: 'Cretan Ways Rentals, Crete car and scooter rentals in Crete. SEO for “rent a car Crete”.',
     seoTitleEl: 'Cretan Ways Rentals | ενοικίαση αυτοκινήτου Κρήτη',
-    seoDescriptionEl: 'Cretan Ways Rentals, ενοικίαση αυτοκινήτων και scooters στην Κρήτη στην Κρήτη. SEO για «ενοικίαση αυτοκινήτου Κρήτη».',
+    seoDescriptionEl: 'Cretan Ways Rentals, ενοικίαση αυτοκινήτων και scooters στην Κρήτη. SEO για «ενοικίαση αυτοκινήτου Κρήτη».',
     featured: true,
   },
   {
@@ -196,7 +196,7 @@ export const portfolioProjects: PortfolioProject[] = [
     summary:
       'Naxos Car Rentals: Naxos car rental for Naxos, SEO for “rent a car Naxos”, with a clear path to booking.',
     summaryEl:
-      'Naxos Car Rentals: ενοικίαση αυτοκινήτων στη Νάξο στη Νάξο, SEO για «ενοικίαση αυτοκινήτου Νάξος», με καθαρή διαδρομή προς κράτηση.',
+      'Naxos Car Rentals: ενοικίαση αυτοκινήτων στη Νάξο, SEO για «ενοικίαση αυτοκινήτου Νάξος», με καθαρή διαδρομή προς κράτηση.',
     results: [
       'Naxos: pages aimed at “rent a car Naxos” and “Naxos car rental”',
       'Differentiation: port pickup and beach-day fleet pages for island itineraries',
@@ -213,7 +213,7 @@ export const portfolioProjects: PortfolioProject[] = [
                                                     seoTitle: 'Naxos Car Rentals | rent a car Naxos',
     seoDescription: 'Naxos Car Rentals, Naxos car rental in Naxos. SEO for “rent a car Naxos”.',
     seoTitleEl: 'Naxos Car Rentals | ενοικίαση αυτοκινήτου Νάξος',
-    seoDescriptionEl: 'Naxos Car Rentals, ενοικίαση αυτοκινήτων στη Νάξο στη Νάξο. SEO για «ενοικίαση αυτοκινήτου Νάξος».',
+    seoDescriptionEl: 'Naxos Car Rentals, ενοικίαση αυτοκινήτων στη Νάξο. SEO για «ενοικίαση αυτοκινήτου Νάξος».',
     featured: true,
   },
   {
@@ -538,7 +538,7 @@ export const portfolioProjects: PortfolioProject[] = [
     summary:
       'Villa Olivia Clara: luxury private villa for Crete, SEO for “Villa Olivia Clara”, focused on photo-led conversion for high-intent luxury villa searches.',
     summaryEl:
-      'Villa Olivia Clara: ιστοσελίδα για πολυτελής ιδιωτική βίλα στην Κρήτη, SEO για «Villa Olivia Clara», με έμφαση σε μετατροπή μέσω φωτογραφίας για αναζητήσεις πολυτελούς βίλας.',
+      'Villa Olivia Clara: ιστοσελίδα για πολυτελή ιδιωτική βίλα στην Κρήτη, SEO για «Villa Olivia Clara», με έμφαση σε μετατροπή μέσω φωτογραφίας για αναζητήσεις πολυτελούς βίλας.',
     results: [
       'Crete: pages aimed at “Villa Olivia Clara” and “luxury villa Crete”',
       'Differentiation: photo-led conversion for high-intent luxury villa searches',
@@ -546,7 +546,7 @@ export const portfolioProjects: PortfolioProject[] = [
     ],
     resultsEl: [
       'Τοπική αφήγηση για Κρήτη με έμφαση σε «Villa Olivia Clara»',
-      'Αρχιτεκτονική υπηρεσιών και προϊόντων για εμπορικές προθέσεις πολυτελής ιδιωτική βίλα',
+      'Αρχιτεκτονική υπηρεσιών και προϊόντων για εμπορικές προθέσεις: πολυτελής ιδιωτική βίλα',
       'Βάση σήμανσης schema και τεχνικού SEO για Villa Olivia Clara',
       'Διαδρομές αιτήματος προσφοράς από κινητό έτοιμες για περιόδους αιχμής',
     ],
@@ -723,7 +723,7 @@ export const portfolioProjects: PortfolioProject[] = [
     summary:
       'Way to Crete: storytelling tours and Crete experiences website for Crete, SEO for “Way to Crete”, with technical SEO from day one.',
     summaryEl:
-      'Way to Crete: ιστοσελίδα για εκδρομές storytelling και εμπειρίες στην Κρήτη στην Κρήτη, SEO για «εμπειρίες Κρήτη», με τεχνικό SEO από την πρώτη μέρα.',
+      'Way to Crete: ιστοσελίδα για εκδρομές storytelling και εμπειρίες στην Κρήτη, SEO για «εμπειρίες Κρήτη», με τεχνικό SEO από την πρώτη μέρα.',
     results: [
       'Crete: pages aimed at “Way to Crete” and “Crete experiences”',
       'Differentiation: experience-led booking pages that sell belonging, not just sightseeing',
@@ -740,7 +740,7 @@ export const portfolioProjects: PortfolioProject[] = [
                                                     seoTitle: 'Way to Crete | Crete experiences',
     seoDescription: 'Way to Crete, storytelling tours and Crete experiences in Crete. SEO for “Way to Crete”.',
     seoTitleEl: 'Way to Crete | εμπειρίες Κρήτη',
-    seoDescriptionEl: 'Way to Crete, εκδρομές storytelling και εμπειρίες στην Κρήτη στην Κρήτη. SEO για «εμπειρίες Κρήτη».',
+    seoDescriptionEl: 'Way to Crete, εκδρομές storytelling και εμπειρίες στην Κρήτη. SEO για «εμπειρίες Κρήτη».',
     featured: false,
   },
   {
@@ -1189,7 +1189,7 @@ export const portfolioProjects: PortfolioProject[] = [
     summary:
       'Arion Farm: Cretan farm experiences and agritourism website for Crete, SEO for “Arion Farm”, optimized for mobile and local search.',
     summaryEl:
-      'Arion Farm: ιστοσελίδα για αγροτικές εμπειρίες και αγροτουρισμός στην Κρήτη στην Κρήτη, SEO για «Arion Farm», βελτιστοποιημένη για κινητά και τοπική αναζήτηση.',
+      'Arion Farm: ιστοσελίδα για αγροτικές εμπειρίες και αγροτουρισμό στην Κρήτη, SEO για «Arion Farm», βελτιστοποιημένη για κινητά και τοπική αναζήτηση.',
     results: [
       'Crete: pages aimed at “Arion Farm” and “Crete farm experiences”',
       'Differentiation: tours, traditional food and participatory farm experiences',
@@ -1197,7 +1197,7 @@ export const portfolioProjects: PortfolioProject[] = [
     ],
     resultsEl: [
       'Τοπική αφήγηση για Κρήτη με έμφαση σε «Arion Farm»',
-      'Αρχιτεκτονική υπηρεσιών και προϊόντων για εμπορικές προθέσεις αγροτικές εμπειρίες και αγροτουρισμός στην Κρήτη',
+      'Αρχιτεκτονική υπηρεσιών και προϊόντων για εμπορικές προθέσεις αγροτικές εμπειρίες και αγροτουρισμό στην Κρήτη',
       'Βάση σήμανσης schema και τεχνικού SEO για Arion Farm',
       'Διαδρομές κράτησης από κινητό έτοιμες για περιόδους αιχμής',
     ],
@@ -1206,7 +1206,7 @@ export const portfolioProjects: PortfolioProject[] = [
                                                     seoTitle: 'Arion Farm | Crete farm experiences',
     seoDescription: 'Arion Farm, Cretan farm experiences and agritourism in Crete. SEO for “Arion Farm”.',
     seoTitleEl: 'Arion Farm | αγροτουρισμός Κρήτη',
-    seoDescriptionEl: 'Arion Farm, αγροτικές εμπειρίες και αγροτουρισμός στην Κρήτη στην Κρήτη. SEO για «Arion Farm».',
+    seoDescriptionEl: 'Arion Farm, αγροτικές εμπειρίες και αγροτουρισμό στην Κρήτη. SEO για «Arion Farm».',
     featured: false,
   },
   {
@@ -2051,7 +2051,7 @@ export const portfolioProjects: PortfolioProject[] = [
     summary:
       'Naxos Car Rental: Naxos car rental brand for Naxos, SEO for “Naxos car rental”, structured around “Naxos car rental”.',
     summaryEl:
-      'Naxos Car Rental: ενοικίαση αυτοκινήτων στη Νάξο στη Νάξο, SEO για «ενοικίαση αυτοκινήτου Νάξος», με δομή περιεχομένου για «ενοικίαση αυτοκινήτου Νάξος».',
+      'Naxos Car Rental: ενοικίαση αυτοκινήτων στη Νάξο, SEO για «ενοικίαση αυτοκινήτου Νάξος», με δομή περιεχομένου για «ενοικίαση αυτοκινήτου Νάξος».',
             results: [
       'Naxos: pages aimed at “Naxos car rental” and “rent a car Naxos airport”',
       'Differentiation: distinct fleet taxonomy versus sibling Naxos rental brands',
@@ -2067,7 +2067,7 @@ export const portfolioProjects: PortfolioProject[] = [
                                                     seoTitle: 'Naxos Car Rental | rent a car Naxos airport',
     seoDescription: 'Naxos Car Rental, Naxos car rental brand in Naxos. SEO for “Naxos car rental”.',
     seoTitleEl: 'Naxos Car Rental | ενοικίαση αυτοκινήτου Νάξος',
-    seoDescriptionEl: 'Naxos Car Rental, ενοικίαση αυτοκινήτων στη Νάξο στη Νάξο. SEO για «ενοικίαση αυτοκινήτου Νάξος».',
+    seoDescriptionEl: 'Naxos Car Rental, ενοικίαση αυτοκινήτων στη Νάξο. SEO για «ενοικίαση αυτοκινήτου Νάξος».',
     featured: true,
   },
   {
@@ -2081,7 +2081,7 @@ export const portfolioProjects: PortfolioProject[] = [
     summary:
       'Naxos Auto Rent: online Naxos auto rent website for Naxos, SEO for “Naxos auto rent”, with technical SEO from day one.',
     summaryEl:
-      'Naxos Auto Rent: online ενοικίαση αυτοκινήτων στη Νάξο στη Νάξο, SEO για «ενοικίαση αυτοκινήτου Νάξος online», με τεχνικό SEO από την πρώτη μέρα.',
+      'Naxos Auto Rent: online ενοικίαση αυτοκινήτων στη Νάξο, SEO για «ενοικίαση αυτοκινήτου Νάξος online», με τεχνικό SEO από την πρώτη μέρα.',
             results: [
       'Naxos: pages aimed at “Naxos auto rent” and “Naxos car hire online”',
       'Differentiation: English-first booking UX for international guests',
@@ -2097,7 +2097,7 @@ export const portfolioProjects: PortfolioProject[] = [
                                                     seoTitle: 'Naxos Auto Rent | Naxos car hire online',
     seoDescription: 'Naxos Auto Rent, online Naxos auto rent in Naxos. SEO for “Naxos auto rent”.',
     seoTitleEl: 'Naxos Auto Rent | ενοικίαση αυτοκινήτου Νάξος online',
-    seoDescriptionEl: 'Naxos Auto Rent, online ενοικίαση αυτοκινήτων στη Νάξο στη Νάξο. SEO για «ενοικίαση αυτοκινήτου Νάξος online».',
+    seoDescriptionEl: 'Naxos Auto Rent, online ενοικίαση αυτοκινήτων στη Νάξο. SEO για «ενοικίαση αυτοκινήτου Νάξος online».',
     featured: false,
   },
   {

@@ -2,7 +2,17 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { FAQSection, SchemaMarkup } from "@/components/seo";
+import {
+  AuditPreview,
+  Container,
+  CtaBand,
+  Stage,
+  TrustLine,
+  kitSecondaryBtn,
+  kitSoftwareBtn,
+  softwareTrust,
+} from "@/components/kit";
+import { KitFaq, PageHero, accentTail } from "@/components/page-kit";
 import { PLATFORM_TOOLS, getPlatformToolBySlug } from "@/data/platform-tools";
 import { getAppPath } from "@/lib/app-links";
 import { blogHref } from '@/lib/blog';
@@ -55,55 +65,58 @@ export default async function PlatformToolPage({ params }: ToolPageProps) {
 
   return (
     <>
-      <Header />
-      <main className="blueprint-grid relative z-0 main-below-header pb-16">
-        <div className="container max-w-3xl">
-          <nav className="text-sm text-muted-foreground mb-6">
-            <Link href={lp("/")} className="hover:text-primary">
-              Home
-            </Link>
-            <span className="mx-2">/</span>
-            <Link href={lp("/tools")} className="hover:text-primary">
-              SEO tools
-            </Link>
-            <span className="mx-2">/</span>
-            <span className="text-foreground">{tool.title}</span>
-          </nav>
-          <h1 className="text-4xl font-bold mb-4">{tool.title}</h1>
-          <p className="text-lg text-muted-foreground mb-8">{tool.description}</p>
-          <div className="flex flex-wrap gap-4">
-            <a
-              href={appUrl}
-              className="btn btn-primary px-6 py-3"
-              rel="noopener noreferrer"
-            >
-              Open in platform
-            </a>
-            <Link href={lp("/services/seo-audits")} className="btn btn-outline px-6 py-3">
-              SEO audit services
-            </Link>
-          </div>
-          <p className="mt-10 text-sm text-muted-foreground">
-            The interactive tool runs on our secure app subdomain. Need done-for-you help? See{" "}
-            <Link href={lp("/services")} className="text-primary hover:underline">
-              SEO services
-            </Link>
-            ,{" "}
-            <Link href={lp("/services/local-seo")} className="text-primary hover:underline">
-              local SEO
-            </Link>
-            , or our{" "}
-            <Link href={blogHref("what-is-seo", locale as SiteLocale)} className="text-primary hover:underline">
-              SEO pillar guide
-            </Link>
-            .
-          </p>
-          {faqItems.length > 0 ? (
-            <FAQSection faqs={faqItems} focusKeyword={tool.primaryKeyword} className="mt-4" />
-          ) : null}
-        </div>
+      <Header locale={locale as SiteLocale} />
+      <main className="blueprint-grid relative z-0">
+        <PageHero
+          locale={locale as SiteLocale}
+          size="md"
+          breadcrumbs={[
+            { name: "Home", url: lp("/") },
+            { name: "SEO tools", url: lp("/tools") },
+            { name: tool.title, url: lp(`/tools/${tool.slug}`) },
+          ]}
+          pill={{ href: appUrl, kind: "free", tag: "Free", text: "Runs in the GSC Boost app" }}
+          title={accentTail(tool.title, 1)}
+          lead={tool.description}
+          actions={
+            <div className="flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
+              <a href={appUrl} className={`${kitSoftwareBtn} !pl-5`} rel="noopener noreferrer">
+                Open in platform
+              </a>
+              <Link href={lp("/services/seo-audits")} className={kitSecondaryBtn}>
+                SEO audit services
+              </Link>
+            </div>
+          }
+          trust={<TrustLine items={softwareTrust(locale as SiteLocale)} />}
+        >
+          <Container className="mt-12 max-w-[900px]">
+            <Stage>
+              <AuditPreview locale="en" />
+            </Stage>
+            <p className="mx-auto mt-6 max-w-2xl text-center text-[14px] leading-relaxed text-muted-foreground">
+              The interactive tool runs on our secure app subdomain. Need done-for-you help? See{" "}
+              <Link href={lp("/services")} className="text-link hover:underline">
+                SEO services
+              </Link>
+              ,{" "}
+              <Link href={lp("/services/local-seo")} className="text-link hover:underline">
+                local SEO
+              </Link>
+              , or our{" "}
+              <Link href={blogHref("what-is-seo", locale as SiteLocale)} className="text-link hover:underline">
+                SEO pillar guide
+              </Link>
+              .
+            </p>
+          </Container>
+        </PageHero>
+        {faqItems.length > 0 ? (
+          <KitFaq title={`Frequently asked questions about ${tool.primaryKeyword}`} items={faqItems} />
+        ) : null}
+        <CtaBand locale={locale as SiteLocale} source={`tool-${tool.slug}`} />
       </main>
-      <Footer />
+      <Footer locale={locale as SiteLocale} />
     </>
   );
 }

@@ -5,7 +5,6 @@ import Footer from "@/components/Footer";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
 import { MarkdownBody } from "@/components/blog/markdown-body";
 import RelatedPages from "@/components/seo/RelatedPages";
-import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import {
   extractFaqFromMarkdown,
   getAllBlogPosts,
@@ -20,7 +19,9 @@ import { getPillarCopy } from "@/data/blog-pillars";
 import { TableOfContents } from "@/components/blog/TableOfContents";
 import { BlogProductCta } from "@/components/blog/BlogProductCta";
 import FAQSection from "@/components/seo/FAQSection";
-import { Bloom } from "@/components/landing/primitives";
+import { CtaBand, kitSoftwareBtn } from "@/components/kit";
+import { cn } from "@/lib/cn";
+import { KitProse, PageHero, accentTail } from "@/components/page-kit";
 import { isValidLocale, localizedPath, type SiteLocale } from "@/lib/i18n/locale";
 import { buildHreflangMapFromPaths } from "@/lib/locale-paths";
 import { buildMetadata } from "@/lib/seo";
@@ -150,37 +151,25 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     <>
       <SchemaMarkup schemas={schemas} />
       <Header locale={locale as SiteLocale} alternateHref={alternateHref} />
-      <main className="blueprint-grid relative z-0 pb-20">
+      <main className="blueprint-grid relative z-0">
         {/* Article header */}
-        <section className="relative overflow-hidden border-b border-hairline">
-          <Bloom className="left-1/2 top-[-10rem] h-[24rem] w-[52rem] -translate-x-1/2" />
-          <div className="main-below-header relative mx-auto max-w-6xl px-6 pb-12 pt-6">
-            <Breadcrumbs items={breadcrumbItems} className="mb-6" />
-
-            <div className="mb-5 flex flex-wrap items-center gap-x-3 gap-y-2">
-              {pillarCopy ? (
-                <Link
-                  href={lp(`/blog/topics/${pillarSlug}`)}
-                  className="text-[11px] font-medium uppercase tracking-[0.18em] text-brand hover:underline"
-                >
-                  {pillarCopy.title}
-                </Link>
-              ) : null}
-              {post.category ? (
-                <span className="text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
-                  {post.category}
-                </span>
-              ) : null}
-            </div>
-
-            <h1 className="rise-in max-w-4xl font-display text-4xl font-medium leading-[1.06] tracking-[-0.04em] text-foreground md:text-5xl">
-              {post.title}
-            </h1>
-            <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
-              {post.description}
-            </p>
-
-            <div className="mt-7 flex flex-wrap items-center gap-x-3 gap-y-1 text-[13px] text-muted-foreground">
+        <PageHero
+          locale={locale as SiteLocale}
+          breadcrumbs={breadcrumbItems}
+          pill={
+            pillarCopy
+              ? {
+                  href: lp(`/blog/topics/${pillarSlug}`),
+                  kind: "new",
+                  tag: post.category || (isEl ? "Κόμβος" : "Hub"),
+                  text: pillarCopy.title,
+                }
+              : undefined
+          }
+          title={accentTail(post.title, 1)}
+          lead={post.description}
+          meta={
+            <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 font-mono text-[12px] text-muted-foreground">
               <span className="font-medium text-foreground">{post.author}</span>
               <span aria-hidden>·</span>
               <time dateTime={post.date}>
@@ -195,15 +184,18 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 {post.readingTime} {isEl ? "λεπτά ανάγνωσης" : "min read"}
               </span>
             </div>
-          </div>
-        </section>
+          }
+          actions={null}
+          trust={null}
+          size="md"
+        />
 
         {/* Body + sticky TOC rail */}
         <div className="mx-auto grid max-w-6xl gap-12 px-6 py-14 lg:grid-cols-[minmax(0,1fr)_16rem] lg:gap-16">
           <article className="min-w-0">
-            <div className="markdown-body">
+            <KitProse>
               <MarkdownBody markdown={post.content} locale={locale as SiteLocale} />
-            </div>
+            </KitProse>
 
             {/* FAQ: same source as the FAQPage schema, so the two cannot drift */}
             {faqItems.length > 0 ? (
@@ -219,28 +211,28 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             {prev || next ? (
               <nav
                 aria-label={isEl ? "Πλοήγηση άρθρων" : "Article navigation"}
-                className="mt-14 grid gap-px overflow-hidden rounded-[10px] border border-hairline bg-hairline sm:grid-cols-2"
+                className="mt-14 grid gap-4 sm:grid-cols-2"
               >
                 {prev ? (
-                  <Link href={lp(`/blog/${prev.slug}`)} className="group bg-surface p-5 transition-colors hover:bg-surface-raised">
-                    <span className="text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
+                  <Link href={lp(`/blog/${prev.slug}`)} className="group rounded-2xl border border-hairline bg-surface p-5 transition-colors hover:border-primary/40">
+                    <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
                       {isEl ? "Προηγούμενο" : "Previous"}
                     </span>
                     <span className="mt-2 block text-sm font-medium text-foreground group-hover:text-primary">
                       {prev.title}
                     </span>
                   </Link>
-                ) : <span className="bg-surface" />}
+                ) : <span aria-hidden />}
                 {next ? (
-                  <Link href={lp(`/blog/${next.slug}`)} className="group bg-surface p-5 text-right transition-colors hover:bg-surface-raised">
-                    <span className="text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
+                  <Link href={lp(`/blog/${next.slug}`)} className="group rounded-2xl border border-hairline bg-surface p-5 text-right transition-colors hover:border-primary/40">
+                    <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
                       {isEl ? "Επόμενο" : "Next"}
                     </span>
                     <span className="mt-2 block text-sm font-medium text-foreground group-hover:text-primary">
                       {next.title}
                     </span>
                   </Link>
-                ) : <span className="bg-surface" />}
+                ) : <span aria-hidden />}
               </nav>
             ) : null}
 
@@ -282,8 +274,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 label={isEl ? "Περιεχόμενα" : "On this page"}
               />
 
-              <div className="rounded-[10px] border border-hairline bg-surface p-5">
-                <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-brand">
+              <div className="rounded-2xl border border-hairline bg-surface p-5">
+                <p className="font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-brand">
                   {isEl ? "Η πλατφόρμα μας" : "Our platform"}
                 </p>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
@@ -294,15 +286,15 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 <a
                   href={getAppPath("/signup")}
                   rel="noopener noreferrer"
-                  className="mt-4 inline-flex h-9 items-center justify-center rounded-[8px] bg-primary px-4 font-display text-[13px] font-medium text-primary-foreground transition-opacity hover:opacity-90"
+                  className={cn(kitSoftwareBtn, "mt-4 min-h-10 px-4 text-[13px]")}
                 >
                   {isEl ? "Δοκιμάστε δωρεάν" : "Try it free"}
                 </a>
               </div>
 
               {pillarCopy ? (
-                <div className="rounded-[10px] border border-hairline bg-surface p-5">
-                  <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
+                <div className="rounded-2xl border border-hairline bg-surface p-5">
+                  <p className="font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-muted-foreground">
                     {isEl ? "Μέρος του κόμβου" : "Part of the hub"}
                   </p>
                   <Link
@@ -318,6 +310,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         </div>
 
         <BlogProductCta locale={locale as SiteLocale} />
+
+        <CtaBand locale={locale as SiteLocale} source="blog-post-band" />
       </main>
       <Footer locale={locale as SiteLocale} />
     </>

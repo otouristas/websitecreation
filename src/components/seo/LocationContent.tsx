@@ -5,10 +5,25 @@ import { usePathname } from 'next/navigation';
 import { Location } from '@/data/locations';
 import { Service } from '@/data/services';
 import { Industry } from '@/data/industries';
-import { getLocationPack } from '@/data/location-content';
+import { getLocationPack, getServiceCopyEn } from '@/data/location-content';
 import { localizedPath, siteLocaleFromPath, type SiteLocale } from '@/lib/i18n/locale';
 import { LocationContentGreek } from './LocationContentGreek';
 import { entrySeoNet, entryWebsiteNet, formatPrice } from '@/data/pricing';
+import { CheckList } from '@/components/kit/primitives';
+import {
+    accentCls,
+    approachCard,
+    closingBox,
+    exploreChip,
+    hoodChip,
+    inlineLink,
+    kitPrimaryBtn,
+    localH2,
+    localH3,
+    localPill,
+    localProse,
+    neighbourhoodBox,
+} from './location-styles';
 
 interface LocationContentProps {
     location: Location;
@@ -48,6 +63,14 @@ export function LocationContent({ location, service, industry, locale: localePro
     const pack = getLocationPack(location.slug, 'en');
     const serviceDepth =
         service && pack?.serviceDepth?.[service.slug] ? pack.serviceDepth[service.slug] : null;
+    /** Service-specific block, so an audit page does not read like a website-build page. */
+    const serviceCopy = service
+        ? getServiceCopyEn(service.slug, {
+              city,
+              neighborhoods: location.neighborhoods ?? [],
+              tourism: pack?.tourism ?? false,
+          })
+        : null;
 
     const currencyNote =
         location.countryCode === 'GB'
@@ -60,122 +83,123 @@ export function LocationContent({ location, service, industry, locale: localePro
                   ? 'Pricing quoted in USD with US local SEO best practices.'
                   : `Pricing in ${location.currency ?? 'USD'} for ${location.country ?? 'your market'}.`;
 
-    return (
-        <div className="prose prose-lg max-w-none text-foreground">
-            <p className="text-sm font-medium text-primary not-prose mb-6">{currencyNote}</p>
-            <div className="mb-12">
-                <h2 className="text-3xl font-bold text-foreground mb-6">
-                    The Smart Choice for {city} Businesses
-                </h2>
-                <p className="mb-4">
-                    Stop relying on outdated SEO tactics. At AnotherSEOGuru, we bring enterprise-grade search intelligence to {city}, {state}.
-                    Whether you are in {location.neighborhoods && location.neighborhoods.length > 0 ? location.neighborhoods[0] : 'downtown'} or the surrounding areas,
-                    our data-driven approach ensures your business dominates local search results.
-                </p>
-                <p>
-                    We don&apos;t just &quot;guess&quot; what works. We analyze the exact signals Google uses to rank businesses in {city} and deploy
-                    a custom {target.toLowerCase()} strategy designed for maximum ROI.
-                </p>
-                {pack?.intro ? (
-                    <p className="mt-4">{pack.intro}</p>
-                ) : null}
-                {serviceDepth ? (
-                    <p className="mt-4">{serviceDepth}</p>
-                ) : null}
-                <p className="mt-4">
-                    <strong>Transparent pricing:</strong> websites start at €{formatPrice(entryWebsiteNet(), 'en')} and monthly SEO from €{formatPrice(entrySeoNet(), 'en')}/mo - see our{' '}
-                    <Link href={lp('/pricing')} className="text-primary underline">pricing &amp; packages</Link> or{' '}
-                    <Link href={lp('/get-started')} className="text-primary underline">request a free quote</Link>.
-                </p>
-            </div>
+    const guide = (service ? SERVICE_GUIDE_EN[service.slug] : null) ?? { href: '/blog/how-much-does-seo-cost', label: 'How much does SEO cost?' };
+    const approach = [
+        {
+            title: 'Data-Driven Research',
+            body: `We start by analyzing your top competitors in ${city}. We identify the exact keywords driving their traffic and reverse-engineer their success to give you a competitive advantage.`,
+        },
+        {
+            title: 'Technical Foundation',
+            body: `Speed matters. We perform a deep technical audit to ensure your site loads instantly for users in ${city}, passing all Core Web Vitals checks with flying colors.`,
+        },
+        {
+            title: 'Semantic Authority',
+            body: `We optimize your pages for "Entities" and "Topics", not just keywords. This modern approach helps Google understand exactly what services you offer to the ${city} community.`,
+        },
+        {
+            title: 'Local Growth',
+            body: `From citation building to earning authoritative backlinks, we build the external signals that verify your business as a trusted leader in the ${state} market.`,
+        },
+    ];
 
-            <div className="grid md:grid-cols-2 gap-8 mb-16">
-                <div className="bg-surface-raised p-8 rounded-xl border border-hairline">
-                    <h3 className="text-xl font-bold text-primary mb-3">1. Data-Driven Research</h3>
-                    <p className="text-muted-foreground">
-                        We start by analyzing your top competitors in {city}. We identify the exact keywords driving their traffic and
-                        reverse-engineer their success to give you a competitive advantage.
-                    </p>
+    return (
+        <div className="text-foreground">
+            <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+                <div className="min-w-0">
+                    <p className={localPill}>{currencyNote}</p>
+                    <h2 className={localH2}>
+                        The Smart Choice for <span className={accentCls}>{city} Businesses</span>
+                    </h2>
+                    <div className={localProse}>
+                        <p>
+                            Stop relying on outdated SEO tactics. At AnotherSEOGuru, we bring enterprise-grade search intelligence to {city}, {state}.
+                            Whether you are in {location.neighborhoods && location.neighborhoods.length > 0 ? location.neighborhoods[0] : 'downtown'} or the surrounding areas,
+                            our data-driven approach ensures your business dominates local search results.
+                        </p>
+                        <p>
+                            We don&apos;t just &quot;guess&quot; what works. We analyze the exact signals Google uses to rank businesses in {city} and deploy
+                            a custom {target.toLowerCase()} strategy designed for maximum ROI.
+                        </p>
+                        {pack?.intro ? <p>{pack.intro}</p> : null}
+                    </div>
+                    {serviceCopy ? (
+                        <div className="mt-10">
+                            <h3 className={localH3}>{serviceCopy.heading}</h3>
+                            <div className={localProse}>
+                                {serviceCopy.paragraphs.map((para) => (
+                                    <p key={para.slice(0, 40)}>{para}</p>
+                                ))}
+                            </div>
+                            <CheckList items={serviceCopy.deliverables} className="mt-6 sm:grid-cols-2" />
+                        </div>
+                    ) : null}
+                    <div className={localProse}>
+                        {serviceDepth ? <p className="mt-4">{serviceDepth}</p> : null}
+                        <p className="mt-4">
+                            <strong className="font-semibold text-foreground">Transparent pricing:</strong> websites start at €{formatPrice(entryWebsiteNet(), 'en')} and monthly SEO from €{formatPrice(entrySeoNet(), 'en')}/mo - see our{' '}
+                            <Link href={lp('/pricing')} className={inlineLink}>pricing &amp; packages</Link> or{' '}
+                            <Link href={lp('/get-started')} className={inlineLink}>request a free quote</Link>.
+                        </p>
+                    </div>
                 </div>
-                <div className="bg-surface-raised p-8 rounded-xl border border-hairline">
-                    <h3 className="text-xl font-bold text-primary mb-3">2. Technical Foundation</h3>
-                    <p className="text-muted-foreground">
-                        Speed matters. We perform a deep technical audit to ensure your site loads instantly for users in {city},
-                        passing all Core Web Vitals checks with flying colors.
-                    </p>
-                </div>
-                <div className="bg-surface-raised p-8 rounded-xl border border-hairline">
-                    <h3 className="text-xl font-bold text-primary mb-3">3. Semantic Authority</h3>
-                    <p className="text-muted-foreground">
-                        We optimize your pages for &quot;Entities&quot; and &quot;Topics&quot;, not just keywords. This modern approach helps
-                        Google understand exactly what services you offer to the {city} community.
-                    </p>
-                </div>
-                <div className="bg-surface-raised p-8 rounded-xl border border-hairline">
-                    <h3 className="text-xl font-bold text-primary mb-3">4. Local Growth</h3>
-                    <p className="text-muted-foreground">
-                        From citation building to earning authoritative backlinks, we build the external signals that verify
-                        your business as a trusted leader in the {state} market.
-                    </p>
-                </div>
+
+                <ol className="grid content-start gap-4 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+                    {approach.map((a, i) => (
+                        <li key={a.title} className={approachCard}>
+                            <h3 className="text-[16px] font-semibold text-foreground">
+                                {i + 1}. {a.title}
+                            </h3>
+                            <p className="mt-2 text-[14px] leading-relaxed text-muted-foreground">{a.body}</p>
+                        </li>
+                    ))}
+                </ol>
             </div>
 
             {location.neighborhoods && location.neighborhoods.length > 0 && (
-                <div className="mb-12 bg-primary/5 p-8 rounded-[10px]">
-                    <h3 className="text-2xl font-bold text-foreground mb-4">
-                        Serving All of {city} & Surrounding Areas
+                <div className={neighbourhoodBox}>
+                    <h3 className={localH3}>
+                        Serving All of {city} &amp; Surrounding Areas
                     </h3>
-                    <p className="mb-6">
+                    <p className="mt-3 max-w-3xl text-[15.5px] leading-relaxed text-muted-foreground">
                         Local SEO is about hyper-local relevance. We help you rank not just for &quot;{target.toLowerCase()} in {city}&quot; but for specific
                         neighborhood searches where your customers actually live.
                     </p>
-                    <div className="flex flex-wrap gap-3">
+                    <ul className="mt-6 flex flex-wrap gap-2">
                         {location.neighborhoods.map((hood) => (
-                            <span key={hood} className="px-4 py-2 bg-surface rounded-full text-sm font-medium text-primary shadow-sm border border-hairline">
+                            <li key={hood} className={hoodChip}>
                                 {hood}
-                            </span>
+                            </li>
                         ))}
-                    </div>
+                    </ul>
                 </div>
             )}
 
-            <div className="not-prose mb-12">
-                <h3 className="text-xl font-bold text-foreground mb-4">Explore more</h3>
-                <div className="flex flex-wrap gap-3 text-sm">
+            <div className="mt-12">
+                <h3 className="font-mono text-[12px] font-medium uppercase tracking-[0.1em] text-muted-foreground">Explore more</h3>
+                <div className="mt-4 flex flex-wrap gap-2 text-sm">
                     {service ? (
-                        <Link href={lp(`/services/${service.slug}`)} className="rounded-full border border-hairline px-4 py-2 text-primary hover:bg-primary/5">
+                        <Link href={lp(`/services/${service.slug}`)} className={exploreChip}>
                             {service.name} overview
                         </Link>
                     ) : null}
-                    <Link href={lp('/services')} className="rounded-full border border-hairline px-4 py-2 text-primary hover:bg-primary/5">All services</Link>
-                    <Link href={lp('/solutions')} className="rounded-full border border-hairline px-4 py-2 text-primary hover:bg-primary/5">Solutions by industry</Link>
-                    <Link href={lp('/pricing')} className="rounded-full border border-hairline px-4 py-2 text-primary hover:bg-primary/5">Pricing &amp; packages</Link>
-                    {(() => {
-                        const guide = service ? SERVICE_GUIDE_EN[service.slug] : null;
-                        const g = guide ?? { href: '/blog/how-much-does-seo-cost', label: 'How much does SEO cost?' };
-                        return (
-                            <Link href={lp(g.href)} className="rounded-full border border-hairline px-4 py-2 text-primary hover:bg-primary/5">{g.label}</Link>
-                        );
-                    })()}
-                    <Link href={lp('/work')} className="rounded-full border border-hairline px-4 py-2 text-primary hover:bg-primary/5">See our work</Link>
-                    {(pack?.portfolioSlugs ?? []).slice(0, 2).map((slug) => (
-                        <Link key={slug} href={lp(`/work/${slug}`)} className="rounded-full border border-hairline px-4 py-2 text-primary hover:bg-primary/5">
-                            Case: {slug.replace(/-/g, ' ')}
-                        </Link>
-                    ))}
+                    <Link href={lp('/services')} className={exploreChip}>All services</Link>
+                    <Link href={lp('/solutions')} className={exploreChip}>Solutions by industry</Link>
+                    <Link href={lp('/pricing')} className={exploreChip}>Pricing &amp; packages</Link>
+                    <Link href={lp(guide.href)} className={exploreChip}>{guide.label}</Link>
+                    <Link href={lp('/work')} className={exploreChip}>See our work</Link>
                 </div>
             </div>
 
-            <div className="text-center py-12 border-t border-hairline mt-12">
-                <h3 className="text-2xl font-bold mb-4">Ready to Grow Your Business in {city}?</h3>
-                <p className="mb-8 text-muted-foreground max-w-2xl mx-auto">
+            <div className={closingBox}>
+                <h3 className="text-balance font-display text-[24px] font-semibold tracking-[-0.03em] text-foreground sm:text-[28px]">
+                    Ready to Grow Your Business in {city}?
+                </h3>
+                <p className="mx-auto mt-3 max-w-2xl text-[15.5px] leading-relaxed text-muted-foreground">
                     Don&apos;t settle for &quot;average&quot; results. Partner with the agency that understands the {city} market
                     and has the technology to get you to #1.
                 </p>
-                <Link
-                    href={lp('/contact')}
-                    className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-primary-foreground transition-all duration-200 bg-primary rounded-lg hover:bg-primary hover:shadow-lg transform hover:-translate-y-0.5"
-                >
+                <Link href={lp('/contact')} className={`${kitPrimaryBtn} mt-7`}>
                     Get Your Free {city} SEO Proposal
                 </Link>
             </div>

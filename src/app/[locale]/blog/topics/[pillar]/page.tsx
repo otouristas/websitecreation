@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
-import Breadcrumbs from "@/components/seo/Breadcrumbs";
+import Link from "next/link";
 import { buildMetadata } from "@/lib/seo";
 import {
   generateBreadcrumbSchema,
@@ -14,7 +14,9 @@ import {
 import { getPostsByPillar, getPillarSummary, getAllPillarSlugs } from "@/lib/blog";
 import { BLOG_PILLARS, getPillarCopy } from "@/data/blog-pillars";
 import { isValidLocale, localizedPath, type SiteLocale } from "@/lib/i18n/locale";
-import { Section, SectionHeading, Bloom, GhostButtonLink } from "@/components/landing/primitives";
+import { Layers } from "lucide-react";
+import { CtaBand, KitHeading, KitSection, kitSecondaryBtn } from "@/components/kit";
+import { PageHero, accentTail } from "@/components/page-kit";
 import { PostCard } from "@/components/blog/PostCard";
 import { PillarGrid } from "@/components/blog/PillarGrid";
 import { BlogProductCta } from "@/components/blog/BlogProductCta";
@@ -97,51 +99,54 @@ export default async function PillarHubPage({
       <SchemaMarkup schemas={schemas} />
       <Header locale={siteLocale} />
       <main className="blueprint-grid relative z-0">
-        <section className="relative overflow-hidden">
-          <Bloom className="left-1/2 top-[-8rem] h-[26rem] w-[56rem] -translate-x-1/2" />
-          <div className="main-below-header relative mx-auto max-w-6xl px-6 pb-12 pt-6">
-            <Breadcrumbs items={breadcrumbItems} className="mb-6" />
-            <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-brand">
-              {isEl ? "Θεματικός κόμβος" : "Topic hub"}
-            </span>
-            <h1 className="rise-in mt-4 max-w-3xl font-display text-4xl font-medium leading-[1.05] tracking-[-0.04em] text-foreground md:text-6xl">
-              {copy.heading}
-            </h1>
-            <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
-              {copy.intro}
-            </p>
-            <p className="mt-6 text-[11px] font-medium uppercase tracking-[0.16em] text-muted-foreground">
+        <PageHero
+          locale={siteLocale}
+          breadcrumbs={breadcrumbItems}
+          pill={{
+            href: lp("/blog"),
+            kind: "new",
+            tag: isEl ? "Θεματικός κόμβος" : "Topic hub",
+            text: isEl ? "Όλα τα άρθρα του blog" : "Browse the whole blog",
+          }}
+          title={accentTail(copy.heading, 1)}
+          lead={copy.intro}
+          meta={
+            <p className="font-mono text-[11px] font-medium uppercase tracking-[0.12em] text-brand">
               {posts.length} {isEl ? "άρθρα" : "articles"}
             </p>
-          </div>
-        </section>
+          }
+          actions={null}
+          trust={null}
+          size="md"
+        />
 
-        <Section className="pt-4">
-          <div className="grid gap-px overflow-hidden rounded-[10px] border border-hairline bg-hairline sm:grid-cols-2 lg:grid-cols-3">
+        <KitSection className="!pt-14">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {posts.map((post) => (
-              <div key={post.slug} className="relative">
-                <PostCard post={post} locale={siteLocale} />
-              </div>
+              <PostCard key={post.slug} post={post} locale={siteLocale} />
             ))}
           </div>
-        </Section>
+        </KitSection>
 
         <BlogProductCta locale={siteLocale} />
 
-        <Section className="pt-0">
-          <SectionHeading
-            align="left"
+        <KitSection>
+          <KitHeading
             eyebrow={isEl ? "Άλλοι κόμβοι" : "Other hubs"}
-            title={isEl ? "Συνεχίστε το διάβασμα" : "Keep reading"}
-            className="mb-10"
+            eyebrowIcon={<Layers />}
+            title={accentTail(isEl ? "Συνεχίστε το διάβασμα" : "Keep reading", 1)}
           />
-          <PillarGrid pillars={pillars} locale={siteLocale} currentSlug={pillar} />
           <div className="mt-10">
-            <GhostButtonLink href={lp("/blog")}>
-              {isEl ? "Όλα τα άρθρα" : "All articles"}
-            </GhostButtonLink>
+            <PillarGrid pillars={pillars} locale={siteLocale} currentSlug={pillar} />
           </div>
-        </Section>
+          <div className="mt-10 flex justify-center">
+            <Link href={lp("/blog")} className={kitSecondaryBtn}>
+              {isEl ? "Όλα τα άρθρα" : "All articles"}
+            </Link>
+          </div>
+        </KitSection>
+
+        <CtaBand locale={siteLocale} source="blog-topic-band" />
       </main>
       <Footer locale={siteLocale} />
     </>

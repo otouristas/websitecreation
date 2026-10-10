@@ -1,9 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { BookOpen, ChevronRight, Code, Lightbulb, Search, Zap } from "lucide-react";
+import { ArrowRight, BookOpen, ChevronRight, Code, Lightbulb, Search, Zap } from "lucide-react";
+import { cn } from "@/lib/cn";
+import { categoryDescription, categoryTitle, isTermTranslated } from "./category-labels";
 import { glossaryCategories, type GlossaryCategory, type GlossaryTerm } from "@/data/glossary-data";
 import { resolveMarketingPath } from "@/lib/marketing-links";
 import { getGlossaryUi } from "@/lib/i18n/get-dictionary";
@@ -25,18 +27,21 @@ const categoryBadgeClass: Record<string, string> = {
   pink: "bg-pink-500/10 text-pink-700 dark:text-pink-300 border border-pink-500/20",
 };
 
-function getAllTerms(): { category: GlossaryCategory; term: GlossaryTerm }[] {
-  const terms: { category: GlossaryCategory; term: GlossaryTerm }[] = [];
-  glossaryCategories.forEach((category) => {
-    category.terms.forEach((term) => {
-      terms.push({ category, term });
-    });
-  });
-  return terms;
+/**
+ * The categories a locale can show. On /el only fully translated terms are
+ * listed, so the Greek page never drops into English mid-list; categories
+ * left empty by that filter are hidden. The server-rendered list on the page
+ * still carries every term for crawlers.
+ */
+function categoriesFor(locale: SiteLocale): GlossaryCategory[] {
+  if (locale !== "el") return glossaryCategories;
+  return glossaryCategories
+    .map((category) => ({ ...category, terms: category.terms.filter(isTermTranslated) }))
+    .filter((category) => category.terms.length > 0);
 }
 
-function getTotalTermCount(): number {
-  return glossaryCategories.reduce((acc, cat) => acc + cat.terms.length, 0);
+function flattenTerms(categories: GlossaryCategory[]): { category: GlossaryCategory; term: GlossaryTerm }[] {
+  return categories.flatMap((category) => category.terms.map((term) => ({ category, term })));
 }
 
 function RelatedResourceLink(props: {
@@ -47,19 +52,19 @@ function RelatedResourceLink(props: {
   const href = resolveMarketingPath(props.url, props.locale ?? "en");
   const isExternal = href.startsWith("http");
   const className =
-    "flex items-center justify-between p-3 rounded-lg border border-hairline hover:border-primary/50 hover:bg-muted/50 text-left w-full";
+    "flex min-h-12 w-full items-center justify-between gap-3 rounded-xl border border-hairline bg-surface/70 px-4 py-3 text-left transition-colors hover:border-primary/50";
   if (isExternal) {
     return (
       <a href={href} className={className} rel="noopener noreferrer" target="_blank">
         <span className="font-medium text-foreground">{props.title}</span>
-        <span className="text-xs text-muted-foreground">App</span>
+        <span className="text-xs text-muted-foreground">{props.locale === "el" ? "Εφαρμογή" : "App"}</span>
       </a>
     );
   }
   return (
     <Link href={href} className={className}>
       <span className="font-medium text-foreground">{props.title}</span>
-      <span className="text-muted-foreground text-sm">→</span>
+      <ArrowRight className="size-4 shrink-0 text-muted-foreground" aria-hidden />
     </Link>
   );
 }
@@ -70,15 +75,17 @@ export function GlossaryClient({ locale = "en" }: { locale?: SiteLocale }) {
   const tName = (t: GlossaryTerm) => (isEl && t.termEl) || t.term;
   const tShort = (t: GlossaryTerm) => (isEl && t.shortDefinitionEl) || t.shortDefinition;
   const tFull = (t: GlossaryTerm) => (isEl && t.fullDefinitionEl) || t.fullDefinition;
+  const catTitle = (c: GlossaryCategory) => categoryTitle(c, locale);
   const glossaryBase = localizedPath(locale, "/glossary");
+  const categories = useMemo(() => categoriesFor(locale), [locale]);
+  const allTerms = useMemo(() => flattenTerms(categories), [categories]);
   const router = useRouter();
   const searchParams = useSearchParams();
+  const contentRef = useRef<HTMLDivElement>(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string | null>(searchParams.get("category"));
   const [selectedTerm, setSelectedTerm] = useState<string | null>(searchParams.get("term"));
-  const [expandedCategories, setExpandedCategories] = useState<Set<string>>(
-    () => new Set(glossaryCategories.map((c) => c.id)),
-  );
+  const [expandedCategories, setExpandedCategories] = useState<Set<string>>(() => new Set());
 
   useEffect(() => {
     setSelectedCategory(searchParams.get("category"));
@@ -100,10 +107,34 @@ export function GlossaryClient({ locale = "en" }: { locale?: SiteLocale }) {
     [router, glossaryBase],
   );
 
+  // After a term opens, bring the top of the panel into view - but only when
+  // the reader has scrolled past it (mobile, or deep in a long category);
+  // otherwise the jump is just noise. Runs after render, so it measures the
+  // new content rather than the list that was just replaced.
+  const pendingReveal = useRef(false);
+  const revealContent = () => {
+    pendingReveal.current = true;
+  };
+  useEffect(() => {
+    if (!pendingReveal.current) return;
+    pendingReveal.current = false;
+    const el = contentRef.current;
+    if (el && el.getBoundingClientRect().top < 0) el.scrollIntoView({ block: "start" });
+  }, [selectedTerm]);
+
   const selectTerm = (categoryId: string, termId: string) => {
+    setSearchQuery("");
     setSelectedCategory(categoryId);
     setSelectedTerm(termId);
     syncUrl(categoryId, termId);
+    revealContent();
+  };
+
+  const selectCategory = (categoryId: string | null) => {
+    setSearchQuery("");
+    setSelectedCategory(categoryId);
+    setSelectedTerm(null);
+    syncUrl(categoryId, null);
   };
 
   const searchResults = useMemo(() => {
@@ -111,7 +142,7 @@ export function GlossaryClient({ locale = "en" }: { locale?: SiteLocale }) {
       return null;
     }
     const query = searchQuery.toLowerCase();
-    return getAllTerms().filter(
+    return allTerms.filter(
       ({ term }) =>
         term.term.toLowerCase().includes(query) ||
         term.shortDefinition.toLowerCase().includes(query) ||
@@ -119,27 +150,22 @@ export function GlossaryClient({ locale = "en" }: { locale?: SiteLocale }) {
         (term.termEl ?? "").toLowerCase().includes(query) ||
         (term.shortDefinitionEl ?? "").toLowerCase().includes(query),
     );
-  }, [searchQuery]);
+  }, [searchQuery, allTerms]);
 
   const currentTerm = useMemo(() => {
     if (!selectedTerm) {
       return null;
     }
-    for (const category of glossaryCategories) {
-      const term = category.terms.find((t) => t.id === selectedTerm);
-      if (term) {
-        return { category, term };
-      }
-    }
-    return null;
-  }, [selectedTerm]);
+    return allTerms.find(({ term }) => term.id === selectedTerm) ?? null;
+  }, [selectedTerm, allTerms]);
 
   const filteredCategories = useMemo(() => {
     if (selectedCategory) {
-      return glossaryCategories.filter((c) => c.id === selectedCategory);
+      const match = categories.filter((c) => c.id === selectedCategory);
+      if (match.length > 0) return match;
     }
-    return glossaryCategories;
-  }, [selectedCategory]);
+    return categories;
+  }, [selectedCategory, categories]);
 
   const toggleCategory = (categoryId: string) => {
     setExpandedCategories((prev) => {
@@ -153,148 +179,200 @@ export function GlossaryClient({ locale = "en" }: { locale?: SiteLocale }) {
     });
   };
 
-  const clearSelection = () => {
-    setSelectedCategory(null);
-    setSelectedTerm(null);
-    syncUrl(null, null);
-  };
+  const clearSelection = () => selectCategory(null);
+
+  const chip = (active: boolean) =>
+    cn(
+      "inline-flex min-h-10 shrink-0 items-center gap-1.5 rounded-full border px-3.5 text-[13px] font-medium transition-colors",
+      active
+        ? "border-primary/50 bg-primary/10 text-foreground"
+        : "border-hairline bg-surface/60 text-muted-foreground hover:text-foreground",
+    );
+
+  const sectionTitle = "mb-3 font-display text-lg font-semibold tracking-[-0.02em] text-foreground";
 
   return (
-    <div className="main-below-header flex min-h-[calc(100vh-var(--site-header-height))] flex-col lg:flex-row">
-      <aside className="shrink-0 border-hairline bg-surface-raised/40 lg:min-h-screen lg:w-72 lg:border-r border-b lg:border-b-0">
-        <div className="sticky top-[calc(var(--site-header-height)+1rem)] max-h-[calc(100vh-var(--site-header-height)-1.25rem)] overflow-y-auto p-4">
-          <div className="relative mb-4">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+    <div className="grid gap-8 lg:grid-cols-[17rem_minmax(0,1fr)] lg:gap-10">
+      <aside className="min-w-0">
+        <div className="lg:sticky lg:top-[calc(var(--site-header-height)+1rem)] lg:max-h-[calc(100vh-var(--site-header-height)-2rem)] lg:overflow-y-auto lg:rounded-2xl lg:border lg:border-hairline lg:bg-surface/70 lg:p-4">
+          <label className="relative block">
+            <span className="sr-only">{ui.searchPlaceholder}</span>
+            <Search className="pointer-events-none absolute left-3.5 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" aria-hidden />
             <input
               type="search"
+              inputMode="search"
+              enterKeyHint="search"
+              autoComplete="off"
               placeholder={ui.searchPlaceholder}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-3 py-2 rounded-lg border border-hairline bg-background text-sm"
+              className="min-h-12 w-full rounded-xl border border-hairline bg-background/70 pl-10 pr-3 text-[16px] text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-primary/60 lg:text-sm"
             />
+          </label>
+
+          {/* Mobile: one scrollable row of category chips instead of the tree. */}
+          <div className="scrollbar-none -mx-4 mt-3 flex gap-2 overflow-x-auto px-4 pb-1 lg:hidden">
+            <button type="button" onClick={clearSelection} className={chip(!selectedCategory && !selectedTerm)} aria-pressed={!selectedCategory && !selectedTerm}>
+              {ui.allCategories}
+            </button>
+            {categories.map((category) => (
+              <button
+                key={category.id}
+                type="button"
+                onClick={() => selectCategory(category.id)}
+                className={chip(selectedCategory === category.id)}
+                aria-pressed={selectedCategory === category.id}
+              >
+                {catTitle(category)}
+                <span className="font-mono text-[10px] text-muted-foreground">{category.terms.length}</span>
+              </button>
+            ))}
           </div>
-          <button
-            type="button"
-            onClick={clearSelection}
-            className={`w-full flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium mb-2 ${
-              !selectedCategory && !selectedTerm ? "bg-primary/10 text-primary" : "hover:bg-muted"
-            }`}
-          >
-            <BookOpen className="h-4 w-4" />
-            {ui.allCategories}
-          </button>
-          <nav className="space-y-1">
-            {glossaryCategories.map((category) => {
-              const CategoryIcon = category.icon;
-              const isExpanded = expandedCategories.has(category.id);
-              const isActive = selectedCategory === category.id;
-              return (
-                <div key={category.id} className="mb-1">
-                  <button
-                    type="button"
-                    onClick={() => toggleCategory(category.id)}
-                    className={`w-full flex items-center justify-between px-3 py-2 rounded-md text-sm font-medium ${
-                      isActive ? "bg-primary/10 text-primary" : "text-foreground hover:bg-muted"
-                    }`}
-                  >
-                    <span className="flex items-center gap-2 truncate">
-                      <CategoryIcon className="h-4 w-4 shrink-0" />
-                      <span className="truncate">{category.title}</span>
-                      <span className="text-[10px] px-1.5 py-0 rounded bg-muted text-muted-foreground">{category.terms.length}</span>
-                    </span>
-                    <ChevronRight className={`h-4 w-4 shrink-0 transition ${isExpanded ? "rotate-90" : ""}`} />
-                  </button>
-                  {isExpanded ? (
-                    <div className="ml-4 pl-3 border-l border-hairline mt-1 space-y-0.5">
-                      {category.terms.map((term) => (
-                        <button
-                          key={term.id}
-                          type="button"
-                          onClick={() => selectTerm(category.id, term.id)}
-                          className={`w-full text-left px-3 py-1.5 rounded-md text-sm truncate ${
-                            selectedTerm === term.id ? "bg-primary/10 text-primary font-medium" : "text-muted-foreground hover:bg-muted"
-                          }`}
-                        >
-                          {tName(term)}
-                        </button>
-                      ))}
+
+          {/* Desktop: the category tree. */}
+          <div className="hidden lg:block">
+            <button
+              type="button"
+              onClick={clearSelection}
+              className={cn(
+                "mb-2 mt-4 flex w-full items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition-colors",
+                !selectedCategory && !selectedTerm ? "bg-primary/10 text-foreground" : "text-muted-foreground hover:bg-surface-raised hover:text-foreground",
+              )}
+            >
+              <BookOpen className="size-4 text-brand" aria-hidden />
+              {ui.allCategories}
+            </button>
+            <nav className="space-y-0.5" aria-label={isEl ? "Κατηγορίες" : "Categories"}>
+              {categories.map((category) => {
+                const CategoryIcon = category.icon;
+                const isExpanded = expandedCategories.has(category.id) || selectedCategory === category.id;
+                const isActive = selectedCategory === category.id;
+                return (
+                  <div key={category.id}>
+                    <div className="flex items-center">
+                      <button
+                        type="button"
+                        onClick={() => selectCategory(category.id)}
+                        className={cn(
+                          "flex min-w-0 flex-1 items-center gap-2 rounded-lg px-3 py-2 text-left text-sm font-medium transition-colors",
+                          isActive ? "bg-primary/10 text-foreground" : "text-foreground/85 hover:bg-surface-raised",
+                        )}
+                      >
+                        <CategoryIcon className="size-4 shrink-0 text-brand" />
+                        <span className="truncate">{catTitle(category)}</span>
+                        <span className="ml-auto font-mono text-[10px] text-muted-foreground">{category.terms.length}</span>
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => toggleCategory(category.id)}
+                        aria-expanded={isExpanded}
+                        aria-label={isEl ? `Όροι: ${catTitle(category)}` : `Terms in ${catTitle(category)}`}
+                        className="grid size-8 shrink-0 place-items-center rounded-lg text-muted-foreground hover:bg-surface-raised hover:text-foreground"
+                      >
+                        <ChevronRight className={cn("size-4 transition-transform", isExpanded && "rotate-90")} />
+                      </button>
                     </div>
-                  ) : null}
-                </div>
-              );
-            })}
-          </nav>
+                    {isExpanded ? (
+                      <div className="mb-1 ml-5 mt-0.5 space-y-0.5 border-l border-hairline pl-3">
+                        {category.terms.map((term) => (
+                          <button
+                            key={term.id}
+                            type="button"
+                            onClick={() => selectTerm(category.id, term.id)}
+                            className={cn(
+                              "w-full truncate rounded-md px-3 py-1.5 text-left text-[13px] transition-colors",
+                              selectedTerm === term.id ? "bg-primary/10 font-medium text-foreground" : "text-muted-foreground hover:bg-surface-raised hover:text-foreground",
+                            )}
+                          >
+                            {tName(term)}
+                          </button>
+                        ))}
+                      </div>
+                    ) : null}
+                  </div>
+                );
+              })}
+            </nav>
+          </div>
         </div>
       </aside>
-      <main className="flex-1 min-w-0 overflow-y-auto">
+
+      <div ref={contentRef} className="min-w-0 scroll-mt-28">
         {searchResults ? (
-          <div className="max-w-3xl mx-auto px-4 py-8">
-            <h2 className="text-lg font-semibold mb-4">Search results</h2>
-            <ul className="space-y-2">
-              {searchResults.map(({ category, term }) => (
-                <li key={term.id}>
-                  <button
-                    type="button"
-                    onClick={() => selectTerm(category.id, term.id)}
-                    className="w-full text-left p-3 rounded-lg border border-hairline hover:border-primary/50"
-                  >
-                    <span className="font-medium text-foreground">{tName(term)}</span>
-                    <span className="block text-sm text-muted-foreground line-clamp-2">{tShort(term)}</span>
-                  </button>
-                </li>
-              ))}
-            </ul>
+          <div className="mx-auto max-w-3xl">
+            <h2 className={sectionTitle}>{isEl ? "Αποτελέσματα αναζήτησης" : "Search results"}</h2>
+            {searchResults.length === 0 ? (
+              <p className="rounded-2xl border border-hairline bg-surface/70 p-6 text-sm text-muted-foreground">{ui.noResults}</p>
+            ) : (
+              <ul className="space-y-2">
+                {searchResults.map(({ category, term }) => (
+                  <li key={term.id}>
+                    <button
+                      type="button"
+                      onClick={() => selectTerm(category.id, term.id)}
+                      className="w-full rounded-2xl border border-hairline bg-surface/70 p-4 text-left transition-colors hover:border-primary/50"
+                    >
+                      <span className="font-medium text-foreground">{tName(term)}</span>
+                      <span className="mt-1 block text-sm text-muted-foreground line-clamp-2">{tShort(term)}</span>
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
         ) : currentTerm ? (
-          <div className="max-w-3xl mx-auto px-4 py-8">
-            <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-6 flex-wrap">
-              <button type="button" onClick={clearSelection} className="hover:text-primary">
-                Glossary
+          <article className="mx-auto max-w-3xl rounded-3xl border border-hairline bg-surface/70 p-6 sm:p-10">
+            <nav className="mb-6 flex flex-wrap items-center gap-1.5 text-[13px] text-muted-foreground" aria-label={isEl ? "Διαδρομή γλωσσαρίου" : "Glossary path"}>
+              <button type="button" onClick={clearSelection} className="hover:text-foreground">
+                {isEl ? "Γλωσσάρι" : "Glossary"}
               </button>
-              <ChevronRight className="h-3.5 w-3.5" />
-              <span>{currentTerm.category.title}</span>
-              <ChevronRight className="h-3.5 w-3.5" />
-              <span className="text-foreground font-medium">{tName(currentTerm.term)}</span>
+              <ChevronRight className="size-3.5" aria-hidden />
+              <button type="button" onClick={() => selectCategory(currentTerm.category.id)} className="hover:text-foreground">
+                {catTitle(currentTerm.category)}
+              </button>
+              <ChevronRight className="size-3.5" aria-hidden />
+              <span className="font-medium text-foreground">{tName(currentTerm.term)}</span>
             </nav>
-            <span className={`inline-block text-xs font-medium px-2 py-1 rounded-md mb-3 ${categoryBadgeClass[currentTerm.category.color] ?? "bg-muted"}`}>
-              {currentTerm.category.title}
+            <span className={`mb-3 inline-block rounded-md px-2 py-1 text-xs font-medium ${categoryBadgeClass[currentTerm.category.color] ?? "bg-muted"}`}>
+              {catTitle(currentTerm.category)}
             </span>
-            <h1 className="font-display text-3xl font-medium tracking-[-0.03em] md:text-4xl mb-4 text-foreground">{tName(currentTerm.term)}</h1>
-            <p className="text-lg text-muted-foreground mb-8">{tShort(currentTerm.term)}</p>
+            <h2 className="mb-4 font-display text-3xl font-semibold tracking-[-0.035em] text-foreground md:text-4xl">{tName(currentTerm.term)}</h2>
+            <p className="mb-8 text-lg leading-relaxed text-muted-foreground">{tShort(currentTerm.term)}</p>
             <section className="mb-8">
-              <h2 className="text-xl font-semibold mb-3 text-foreground">Definition</h2>
-              <p className="text-muted-foreground leading-relaxed">{tFull(currentTerm.term)}</p>
+              <h3 className={sectionTitle}>{isEl ? "Ορισμός" : "Definition"}</h3>
+              <p className="leading-relaxed text-muted-foreground">{tFull(currentTerm.term)}</p>
             </section>
             {currentTerm.term.example ? (
               <section className="mb-8">
-                <h2 className="text-xl font-semibold mb-3 text-foreground">Example</h2>
-                <div className="bg-muted/50 rounded-lg p-4 border border-hairline flex gap-3">
-                  <Code className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                  <code className="text-sm whitespace-pre-wrap text-foreground">{currentTerm.term.example}</code>
+                <h3 className={sectionTitle}>{isEl ? "Παράδειγμα" : "Example"}</h3>
+                <div className="flex gap-3 rounded-xl border border-hairline bg-background/60 p-4">
+                  <Code className="mt-0.5 size-5 shrink-0 text-brand" aria-hidden />
+                  <code className="whitespace-pre-wrap break-words text-sm text-foreground">{currentTerm.term.example}</code>
                 </div>
               </section>
             ) : null}
-            {currentTerm.term.technique ? (
+            {/* Implementation notes and tips exist in English only, so /el skips them. */}
+            {currentTerm.term.technique && !isEl ? (
               <section className="mb-8">
-                <h2 className="text-xl font-semibold mb-3 text-foreground">How to implement</h2>
-                <div className="rounded-lg p-4 border border-primary/20 bg-primary/5 flex gap-3">
-                  <Zap className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                <h3 className={sectionTitle}>How to implement</h3>
+                <div className="flex gap-3 rounded-xl border border-primary/25 bg-primary/5 p-4">
+                  <Zap className="mt-0.5 size-5 shrink-0 text-primary" aria-hidden />
                   <p className="text-sm text-foreground">{currentTerm.term.technique}</p>
                 </div>
               </section>
             ) : null}
-            {currentTerm.term.proTip ? (
+            {currentTerm.term.proTip && !isEl ? (
               <section className="mb-8">
-                <h2 className="text-xl font-semibold mb-3 text-foreground">Pro tip</h2>
-                <div className="rounded-lg p-4 border border-secondary/30 bg-secondary/5 flex gap-3">
-                  <Lightbulb className="h-5 w-5 text-secondary shrink-0 mt-0.5" />
+                <h3 className={sectionTitle}>Pro tip</h3>
+                <div className="flex gap-3 rounded-xl border border-signal/30 bg-signal/5 p-4">
+                  <Lightbulb className="mt-0.5 size-5 shrink-0 text-signal" aria-hidden />
                   <p className="text-sm text-foreground">{currentTerm.term.proTip}</p>
                 </div>
               </section>
             ) : null}
             {currentTerm.term.relatedLinks && currentTerm.term.relatedLinks.length > 0 ? (
               <section className="mb-8">
-                <h2 className="text-xl font-semibold mb-3 text-foreground">{ui.relatedResources}</h2>
+                <h3 className={sectionTitle}>{ui.relatedResources}</h3>
                 <div className="grid gap-2">
                   {currentTerm.term.relatedLinks.map((link) => (
                     <RelatedResourceLink
@@ -308,21 +386,18 @@ export function GlossaryClient({ locale = "en" }: { locale?: SiteLocale }) {
               </section>
             ) : null}
             {currentTerm.term.relatedTerms && currentTerm.term.relatedTerms.length > 0 ? (
-              <section className="pt-6 border-t border-hairline">
-                <h3 className="text-sm font-medium text-muted-foreground mb-3">Related terms</h3>
+              <section className="border-t border-hairline pt-6">
+                <h3 className="mb-3 font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-muted-foreground">
+                  {isEl ? "Σχετικοί όροι" : "Related terms"}
+                </h3>
                 <div className="flex flex-wrap gap-2">
                   {currentTerm.term.relatedTerms.map((termId) => {
-                    const found = getAllTerms().find((t) => t.term.id === termId);
+                    const found = allTerms.find((t) => t.term.id === termId);
                     if (!found) {
                       return null;
                     }
                     return (
-                      <button
-                        key={termId}
-                        type="button"
-                        onClick={() => selectTerm(found.category.id, termId)}
-                        className="px-3 py-1.5 text-sm bg-muted rounded-full hover:bg-muted/80"
-                      >
+                      <button key={termId} type="button" onClick={() => selectTerm(found.category.id, termId)} className={chip(false)}>
                         {tName(found.term)}
                       </button>
                     );
@@ -330,48 +405,46 @@ export function GlossaryClient({ locale = "en" }: { locale?: SiteLocale }) {
                 </div>
               </section>
             ) : null}
-          </div>
+          </article>
         ) : (
-          <div className="max-w-6xl mx-auto px-4 py-8">
-            <div className="text-center mb-12">
-              <h1 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
-                SEO <span className="gradient-text">Glossary</span>
-              </h1>
-              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">{getTotalTermCount()}+ terms with examples and tactics.</p>
-            </div>
+          <div className="space-y-16">
             {filteredCategories.map((category) => {
               const CategoryIcon = category.icon;
               return (
-                <div key={category.id} className="mb-12">
-                  <div className="flex items-center gap-3 mb-6 flex-wrap">
-                    <div className={`p-2 rounded-lg ${categoryBadgeClass[category.color] ?? ""}`}>
-                      <CategoryIcon className="h-5 w-5" />
+                <section key={category.id} aria-labelledby={`cat-${category.id}`}>
+                  <div className="mb-6 flex flex-wrap items-start gap-3">
+                    <span className="flex size-10 shrink-0 items-center justify-center rounded-xl border border-hairline bg-surface text-brand">
+                      <CategoryIcon className="size-5" />
+                    </span>
+                    <div className="min-w-0 flex-1">
+                      <h2 id={`cat-${category.id}`} className="font-display text-2xl font-semibold tracking-[-0.03em] text-foreground">
+                        {catTitle(category)}
+                      </h2>
+                      <p className="mt-1 text-sm text-muted-foreground">{categoryDescription(category, locale)}</p>
                     </div>
-                    <div className="flex-1 min-w-0">
-                      <h2 className="font-display text-2xl font-medium tracking-[-0.02em] text-foreground">{category.title}</h2>
-                      <p className="text-sm text-muted-foreground">{category.description}</p>
-                    </div>
-                    <span className="text-sm text-muted-foreground">{category.terms.length} terms</span>
+                    <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-muted-foreground">
+                      {category.terms.length} {isEl ? "όροι" : "terms"}
+                    </span>
                   </div>
-                  <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+                  <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
                     {category.terms.map((term) => (
                       <button
                         key={term.id}
                         type="button"
                         onClick={() => selectTerm(category.id, term.id)}
-                        className="text-left p-4 rounded-[8px] border border-hairline bg-card hover:border-primary/50 hover:shadow-md transition-all"
+                        className="group flex flex-col rounded-2xl border border-hairline bg-surface/70 p-5 text-left transition-colors hover:border-primary/50"
                       >
-                        <h3 className="font-semibold mb-2 text-foreground">{tName(term)}</h3>
-                        <p className="text-sm text-muted-foreground line-clamp-3">{tShort(term)}</p>
+                        <h3 className="font-display text-[16px] font-semibold text-foreground">{tName(term)}</h3>
+                        <p className="mt-2 text-sm leading-relaxed text-muted-foreground line-clamp-3">{tShort(term)}</p>
                       </button>
                     ))}
                   </div>
-                </div>
+                </section>
               );
             })}
           </div>
         )}
-      </main>
+      </div>
     </div>
   );
 }

@@ -1,18 +1,21 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { PageShell, ShellCrumbs } from '@/components/bespoke/PageShell';
-import FAQSection from '@/components/seo/FAQSection';
+import { BookOpenText, ListOrdered, Shuffle } from 'lucide-react';
+import { PageShell } from '@/components/bespoke/PageShell';
 import { SearchLayersStack } from '@/components/ai-search';
 import {
-  Section,
-  SectionHeading,
-  Bloom,
-  Eyebrow,
-  PrimaryButtonLink,
-  GhostButtonLink,
-  Tick,
-} from '@/components/landing/primitives';
+  Accent,
+  CheckList,
+  CtaBand,
+  KitEyebrow,
+  KitHeading,
+  KitSection,
+  StepsGrid,
+  kitPrimaryBtn,
+  kitSecondaryBtn,
+} from '@/components/kit';
+import { ChipLinks, KitFaq, PageHero, accentTail } from '@/components/page-kit';
 import {
   SEARCH_LAYERS,
   SEARCH_LAYERS_FAQS,
@@ -134,39 +137,38 @@ export default async function SearchOptimizationLayersPage({ params }: PageProps
 
   return (
     <PageShell locale={siteLocale} signatureHue={240} schemas={schemas}>
-      <section className="relative overflow-hidden border-b border-hairline">
-        <Bloom className="left-1/2 top-[-12rem] h-[30rem] w-[56rem] -translate-x-1/2" />
-        <div className="relative mx-auto max-w-3xl px-6 pb-16 pt-6">
-          <ShellCrumbs items={breadcrumbItems} />
-          <Eyebrow>Framework</Eyebrow>
-          <h1 className="mt-4 font-display text-[2.4rem] font-medium leading-[1.05] tracking-[-0.04em] sm:text-5xl">
-            The layers of modern search optimization
-          </h1>
-          {/* Answer-first: the whole model in one liftable paragraph. */}
-          <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-            SEO, AEO, GEO, AIO, DEO and SXO are not six competing strategies. They are six
-            successive moments in the same journey: being found, being quoted, being cited, being
-            understood, being recommended, and being chosen. Each one asks something different of
-            the same page, and none of them replaces the one below it.
-          </p>
-          <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+      <PageHero
+        locale={siteLocale}
+        breadcrumbs={breadcrumbItems}
+        pill={{ href: lp(ANATOMY_PATH), kind: 'ai', tag: 'Framework', text: 'From discovery to decision' }}
+        title={accentTail('The layers of modern search optimization', 2)}
+        size="md"
+        /* Answer-first: the whole model in one liftable paragraph. */
+        lead="SEO, AEO, GEO, AIO, DEO and SXO are not six competing strategies. They are six successive moments in the same journey: being found, being quoted, being cited, being understood, being recommended, and being chosen. Each one asks something different of the same page, and none of them replaces the one below it."
+        meta={
+          <p className="mx-auto max-w-2xl text-[15px] leading-relaxed text-muted-foreground">
             From discovery to decision. Below, each layer gets its goal, what it optimizes for,
             what it needs from your content, and the signals that tell you whether it is working.
           </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <PrimaryButtonLink href={lp('/get-started')}>Get a visibility audit</PrimaryButtonLink>
-            <GhostButtonLink href={lp('/services/ai-visibility')}>
+        }
+        actions={
+          <div className="flex flex-col justify-center gap-3 sm:flex-row">
+            <Link href={lp('/get-started')} className={kitPrimaryBtn}>
+              Get a visibility audit
+            </Link>
+            <Link href={lp('/services/ai-visibility')} className={kitSecondaryBtn}>
               How we work on AI visibility
-            </GhostButtonLink>
+            </Link>
           </div>
-
-          {/* The six, as anchors, so a reader can jump and a link can land. */}
-          <ul className="mt-10 flex flex-wrap gap-2">
+        }
+        trust={
+          /* The six, as anchors, so a reader can jump and a link can land. */
+          <ul className="flex flex-wrap justify-center gap-2">
             {SEARCH_LAYERS.map((layer) => (
               <li key={layer.abbr}>
                 <a
                   href={`#${layer.id}`}
-                  className="inline-flex items-baseline gap-2 rounded-full border border-hairline bg-surface/60 px-3.5 py-2 text-sm transition-colors hover:border-brand/50 hover:bg-surface-raised/80"
+                  className="inline-flex min-h-10 items-baseline gap-2 rounded-full border border-hairline bg-surface/60 px-3.5 py-2 text-sm transition-colors hover:border-brand/50 hover:bg-surface-raised/80"
                 >
                   <span className="font-display font-semibold text-foreground">{layer.abbr}</span>
                   <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
@@ -176,79 +178,51 @@ export default async function SearchOptimizationLayersPage({ params }: PageProps
               </li>
             ))}
           </ul>
-        </div>
-      </section>
+        }
+      />
 
-      <Section className="max-w-6xl">
+      <KitSection className="!pt-14">
         <SearchLayersStack locale={siteLocale} />
-      </Section>
+      </KitSection>
 
-      <Section className="border-t border-hairline">
-        <SectionHeading
+      <KitSection tinted>
+        <KitHeading
           eyebrow="Order of operations"
-          title="The layers stack, so the work does too"
-          body="Nobody buys their way to a citation while the site is uncrawlable. This is the sequence, and the reason each step is where it is."
+          eyebrowIcon={<ListOrdered />}
+          title={accentTail('The layers stack, so the work does too', 3)}
+          description="Nobody buys their way to a citation while the site is uncrawlable. This is the sequence, and the reason each step is where it is."
         />
-        <ol className="mx-auto mt-10 max-w-2xl space-y-6">
-          {SEQUENCE.map((step, i) => (
-            <li key={step.title} className="flex gap-4">
-              <span className="mt-0.5 grid size-8 shrink-0 place-items-center rounded-full border border-hairline font-display text-sm text-brand">
-                {i + 1}
-              </span>
-              <div>
-                <h3 className="font-display text-lg font-medium text-foreground">{step.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{step.body}</p>
-              </div>
-            </li>
-          ))}
-        </ol>
-      </Section>
+        <StepsGrid className="mt-10" steps={SEQUENCE.map((step) => ({ title: step.title, text: step.body }))} />
+      </KitSection>
 
-      <Section className="border-t border-hairline">
-        <SectionHeading
+      <KitSection>
+        <KitHeading
           eyebrow="What actually changed"
-          title="New acronyms, older obligations"
-          body="Most of the list on the left has been true for a decade. The list on the right is what the answer engines added to it."
+          eyebrowIcon={<Shuffle />}
+          title={accentTail('New acronyms, older obligations', 2)}
+          description="Most of the list on the left has been true for a decade. The list on the right is what the answer engines added to it."
         />
-        <div className="mx-auto mt-10 grid max-w-4xl gap-4 md:grid-cols-2">
-          <div className="glass rounded-2xl p-6">
-            <h3 className="font-display text-lg font-medium text-foreground">
-              Unchanged since 2015
-            </h3>
-            <ul className="mt-4 space-y-3">
-              {CONSTANT.map((item) => (
-                <li key={item} className="flex gap-2.5 text-sm leading-relaxed text-foreground">
-                  <Tick />
-                  {item}
-                </li>
-              ))}
-            </ul>
+        <div className="mt-10 grid gap-4 md:grid-cols-2">
+          <div className="rounded-2xl border border-hairline bg-surface/70 p-6 sm:p-8">
+            <h3 className="font-display text-lg font-semibold text-foreground">Unchanged since 2015</h3>
+            <CheckList className="mt-5" items={CONSTANT} />
           </div>
-          <div className="glass rounded-2xl p-6">
-            <h3 className="font-display text-lg font-medium text-foreground">
-              New since generative answers
-            </h3>
-            <ul className="mt-4 space-y-3">
-              {CHANGED.map((item) => (
-                <li key={item} className="flex gap-2.5 text-sm leading-relaxed text-foreground">
-                  <Tick className="text-signature" />
-                  {item}
-                </li>
-              ))}
-            </ul>
+          <div className="rounded-2xl border border-primary/30 bg-surface/70 p-6 sm:p-8">
+            <h3 className="font-display text-lg font-semibold text-foreground">New since generative answers</h3>
+            <CheckList className="mt-5" items={CHANGED} />
           </div>
         </div>
         <p className="mx-auto mt-8 max-w-2xl text-center text-sm leading-relaxed text-muted-foreground">
           No engine exposes a ranking lever, and none of this makes a citation owed to anyone. The
           layers describe what you can control.
         </p>
-      </Section>
+      </KitSection>
 
-      <Section className="border-t border-hairline">
-        <div className="glass rounded-2xl p-8 md:p-10">
-          <Eyebrow>Companion piece</Eyebrow>
+      <KitSection className="!pt-0">
+        <div className="rounded-3xl border border-hairline bg-surface/70 p-8 md:p-10">
+          <KitEyebrow icon={<BookOpenText />}>Companion piece</KitEyebrow>
           <h2 className="mt-4 font-display text-2xl font-semibold tracking-[-0.03em] text-foreground md:text-3xl">
-            What the layers look like on one page
+            What the layers look like on <Accent>one page</Accent>
           </h2>
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground">
             The model says what to optimize for. The anatomy shows where it lands in the HTML:
@@ -256,46 +230,37 @@ export default async function SearchOptimizationLayersPage({ params }: PageProps
             schema, author and freshness, annotated block by block on a sample page.
           </p>
           <div className="mt-6">
-            <GhostButtonLink href={lp(ANATOMY_PATH)}>
+            <Link href={lp(ANATOMY_PATH)} className={kitSecondaryBtn}>
               Read the page anatomy &rarr;
-            </GhostButtonLink>
-          </div>
-        </div>
-      </Section>
-
-      <Section className="border-t border-hairline">
-        <SectionHeading
-          eyebrow="FAQ"
-          title="Questions this model gets asked"
-          body="Short answers. Longer ones live on the service pages each layer links to."
-        />
-        <div className="mx-auto mt-10 max-w-3xl">
-          <FAQSection faqs={[...SEARCH_LAYERS_FAQS]} title="" locale="en" />
-        </div>
-      </Section>
-
-      <Section className="border-t border-hairline">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-display text-3xl font-semibold tracking-[-0.03em] text-foreground">
-            Where does your site sit on the stack?
-          </h2>
-          <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-            An audit tells you which layer is actually blocking the next one, which is usually not
-            the layer people arrive worried about.
-          </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <PrimaryButtonLink href={lp('/get-started')}>Request an audit</PrimaryButtonLink>
-            <GhostButtonLink href={lp('/services/ai-visibility')}>AI visibility</GhostButtonLink>
-          </div>
-          <p className="mt-8 text-sm text-muted-foreground">
-            More definitions in the{' '}
-            <Link href={lp('/glossary')} className="text-link underline-offset-4 hover:underline">
-              SEO glossary
             </Link>
-            .
-          </p>
+          </div>
         </div>
-      </Section>
+      </KitSection>
+
+      <KitFaq
+        items={[...SEARCH_LAYERS_FAQS]}
+        title={accentTail('Questions this model gets asked', 2)}
+        description="Short answers. Longer ones live on the service pages each layer links to."
+      />
+
+      <KitSection className="!pb-0">
+        <KitHeading
+          align="center"
+          title={accentTail('Where does your site sit on the stack?', 2)}
+          description="An audit tells you which layer is actually blocking the next one, which is usually not the layer people arrive worried about."
+        />
+        <ChipLinks
+          align="center"
+          className="mt-8"
+          items={[
+            { href: lp('/get-started'), label: 'Request an audit' },
+            { href: lp('/services/ai-visibility'), label: 'AI visibility' },
+            { href: lp('/glossary'), label: 'SEO glossary' },
+          ]}
+        />
+      </KitSection>
+
+      <CtaBand locale={siteLocale} source="resources-layers-band" />
     </PageShell>
   );
 }

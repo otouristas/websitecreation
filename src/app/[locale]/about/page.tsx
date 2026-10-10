@@ -3,6 +3,9 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { ArrowRight, BookOpen, Gem, Quote, Search, TrendingUp, Zap } from "lucide-react";
+import { Container, CtaBand, KitHeading, KitSection, Stage, StepsGrid } from "@/components/kit";
+import { InfoCard, PageHero, SplitRow, StatRow, accentTail } from "@/components/page-kit";
 import { isValidLocale, localizedPath, type SiteLocale } from "@/lib/i18n/locale";
 import { buildMetadata } from "@/lib/seo";
 import { MARKET_COUNT, PROJECT_COUNT } from '@/data/company-facts';
@@ -156,126 +159,95 @@ export default async function AboutPage({ params }: PageProps) {
         ],
       };
 
+  const tx = (en: string, el: string) => (isEl ? el : en);
+  const breadcrumbs = [
+    { name: t.home, url: lp("/") },
+    { name: t.about, url: lp("/about") },
+  ];
+  const icons = [Zap, Search, Gem, TrendingUp];
+
   return (
     <>
       <Header locale={locale as SiteLocale} />
-      <main className="blueprint-grid relative z-0 main-below-header">
-        <section className="section-compact ">
-          <div className="container">
-            <div className="max-w-3xl">
-              <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
-                <Link href={lp("/")} className="hover:text-primary">{t.home}</Link>
-                <span>/</span>
-                <span className="text-foreground">{t.about}</span>
-              </nav>
+      <main className="blueprint-grid relative z-0">
+        <PageHero
+          locale={locale as SiteLocale}
+          breadcrumbs={breadcrumbs}
+          pill={{
+            href: lp("/platform"),
+            kind: "new",
+            tag: tx("New", "Νέο"),
+            text: tx("We also build GSC Boost, our own SEO software", "Φτιάχνουμε και το GSC Boost, το δικό μας λογισμικό SEO"),
+          }}
+          title={accentTail(t.h1, 3)}
+          lead={t.sub}
+        >
+          <Container className="mt-14">
+            <StatRow items={t.stats.map((s) => ({ value: s.value, label: s.label }))} />
+          </Container>
+        </PageHero>
 
-              <h1 className="font-display text-4xl font-medium tracking-[-0.04em] sm:text-5xl mb-6">
-                {t.h1}
-              </h1>
-              <p className="text-lg text-muted-foreground">
-                {t.sub}
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section className="section -mt-8">
-          <div className="container">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
-              {t.stats.map((stat) => (
-                <div key={stat.label} className="card card-interactive card p-6 text-center">
-                  <div className="font-display text-3xl font-medium tracking-[-0.03em] gradient-text mb-1">{stat.value}</div>
-                  <div className="text-sm text-muted-foreground">{stat.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="section">
-          <div className="container">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-                  {t.storyLabel}
-                </span>
-                <h2 className="font-display text-3xl font-medium tracking-[-0.03em] mb-6">
-                  {t.storyTitle}
-                </h2>
-                <div className="space-y-4 text-muted-foreground">
-                  <p>{t.storyP1}</p>
-                  <p>{t.storyP2}</p>
-                  <p>{t.storyP3}</p>
-                </div>
+        <KitSection>
+          <SplitRow
+            eyebrow={t.storyLabel}
+            eyebrowIcon={<BookOpen />}
+            title={t.storyTitle}
+            body={
+              <div className="space-y-4">
+                <p>{t.storyP1}</p>
+                <p>{t.storyP2}</p>
+                <p>{t.storyP3}</p>
               </div>
-              <div className="card card-interactive card p-8 bg-muted/50">
-                <blockquote className="text-lg italic mb-4">
-                  {t.quote}
-                </blockquote>
-                <div className="font-semibold">{t.author}</div>
-              </div>
-            </div>
+            }
+            preview={
+              <Stage>
+                <figure className="rounded-xl border border-hairline bg-background p-7 sm:p-9">
+                  <Quote className="size-6 text-brand" aria-hidden />
+                  <blockquote className="mt-4 font-serif text-[22px] italic leading-snug text-foreground sm:text-[26px]">
+                    {t.quote}
+                  </blockquote>
+                  <figcaption className="mt-5 font-mono text-[12px] uppercase tracking-[0.1em] text-muted-foreground">{t.author}</figcaption>
+                </figure>
+              </Stage>
+            }
+          />
+        </KitSection>
+
+        <KitSection tinted>
+          <KitHeading
+            align="center"
+            eyebrow={tx("Principles", "Αρχές")}
+            title={accentTail(t.beliefsTitle, 1)}
+            description={t.beliefsSub}
+          />
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {t.values.map((value, i) => {
+              const Icon = icons[i] ?? Zap;
+              return <InfoCard key={value.title} icon={<Icon />} title={value.title} text={value.description} />;
+            })}
           </div>
-        </section>
+        </KitSection>
 
-        <section className="section bg-surface-raised/40">
-          <div className="container">
-            <div className="text-center mb-12">
-              <h2 className="font-display text-3xl font-medium tracking-[-0.03em] mb-4">{t.beliefsTitle}</h2>
-              <p className="text-muted-foreground">{t.beliefsSub}</p>
-            </div>
+        <KitSection>
+          <KitHeading
+            align="center"
+            eyebrow={tx("Process", "Διαδικασία")}
+            title={accentTail(t.howWeWorkTitle, 1)}
+            description={t.howWeWorkSub}
+          />
+          <StepsGrid
+            className="mt-12 md:grid-cols-2 lg:grid-cols-4"
+            steps={t.steps.map((st) => ({ title: st.title, text: st.description }))}
+          />
+          <p className="mt-10 text-center text-[14px]">
+            <Link href={lp("/pricing")} className="inline-flex items-center gap-1.5 font-medium text-link underline-offset-4 hover:underline">
+              {t.viewPricing}
+              <ArrowRight className="size-4" aria-hidden />
+            </Link>
+          </p>
+        </KitSection>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {t.values.map((value) => (
-                <div key={value.title} className="card card-interactive card p-6 text-center">
-                  <div className="text-4xl mb-4">{value.icon}</div>
-                  <h3 className="font-semibold mb-2">{value.title}</h3>
-                  <p className="text-sm text-muted-foreground">{value.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="section">
-          <div className="container max-w-4xl">
-            <div className="text-center mb-12">
-              <h2 className="font-display text-3xl font-medium tracking-[-0.03em] mb-4">{t.howWeWorkTitle}</h2>
-              <p className="text-muted-foreground">{t.howWeWorkSub}</p>
-            </div>
-
-            <div className="space-y-6">
-              {t.steps.map((item) => (
-                <div key={item.step} className="flex gap-6 items-start">
-                  <div className="w-12 h-12 rounded-[8px] gradient-primary flex items-center justify-center text-white font-bold flex-shrink-0">
-                    {item.step}
-                  </div>
-                  <div>
-                    <h3 className="font-semibold mb-1">{item.title}</h3>
-                    <p className="text-muted-foreground">{item.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="section gradient-primary text-white">
-          <div className="container text-center">
-            <h2 className="font-display text-3xl font-medium tracking-[-0.03em] mb-4">{t.ctaTitle}</h2>
-            <p className="text-white/80 mb-8 max-w-xl mx-auto">
-              {t.ctaSub}
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Link href={lp("/pricing")} className="btn bg-white text-primary hover:bg-white/90">
-                {t.viewPricing}
-              </Link>
-              <Link href={lp("/get-started")} className="btn border-2 border-white text-white hover:bg-white/10">
-                {t.startProject}
-              </Link>
-            </div>
-          </div>
-        </section>
+        <CtaBand locale={locale as SiteLocale} source="about-band" title={accentTail(t.ctaTitle, 1)} description={t.ctaSub} />
       </main>
       <Footer locale={locale as SiteLocale} />
     </>
