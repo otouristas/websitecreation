@@ -1,11 +1,11 @@
-Last-Updated: 2026-09-21
+Last-Updated: 2026-10-10
 Canonical: https://anotherseoguru.com/llms.txt
 Long-form: https://anotherseoguru.com/llms-full.txt
 Sitemap: https://anotherseoguru.com/sitemap.xml
 
 # AnotherSEOGuru - Platform Index & Directory
 Source: https://anotherseoguru.com
-Last Updated: 2026-09-21
+Last Updated: 2026-10-10
 
 > AnotherSEOGuru is a web design & SEO agency based in Greece (serving Greek and international clients), specializing in tourism & hospitality websites, with GEO/AEO (AI visibility) services and a secondary GSC-native SEO software platform.
 
@@ -231,9 +231,9 @@ Nationwide Greece coverage with service×city landing pages. Money-page examples
 - [Hotel Website Design - Turn Visitors into Direct Bookings](https://anotherseoguru.com/en/blog/hotel-website-design) - What a hotel website needs in 2026: fast mobile UX, a booking engine, room pages, multilingual SEO and schema, to cut OTA commissions and win direct bookings.
 - [How Much Does a Website Cost in 2026? Full Pricing Guide](https://anotherseoguru.com/en/blog/how-much-does-a-website-cost) - What a website really costs in 2026: business sites, e-shops and hotel websites, plus the hidden costs of hosting, content and SEO. Transparent EUR pricing.
 - [How Much Does SEO Cost in 2026? Prices & Packages Explained](https://anotherseoguru.com/en/blog/how-much-does-seo-cost) - A clear breakdown of SEO pricing in 2026: monthly retainers, one-off audits, what packages include, and how to avoid the cheap-SEO trap. EUR pricing.
-- [Κατασκευή E-shop από €1.799](https://anotherseoguru.com/el/blog/kataskevi-eshop-odigos) - Κατασκευή e-shop WooCommerce στην Ελλάδα από €1.799. Πληρωμές, courier, myDATA και SEO κατηγοριών για να πουλάει από την 1η μέρα. Δείτε τιμές.
+- [Κατασκευή E-shop από €2.500](https://anotherseoguru.com/el/blog/kataskevi-eshop-odigos) - Κατασκευή e-shop WooCommerce στην Ελλάδα από €2.500. Πληρωμές, courier, myDATA και SEO κατηγοριών για να πουλάει από την 1η μέρα. Δείτε τιμές.
 - [Law Firm SEO - How Attorneys Win Cases from Google](https://anotherseoguru.com/en/blog/law-firm-seo) - A practical SEO guide for law firms and attorneys - local targeting, practice-area pages, trust-building content, and the technical basics that bring cases.
-- [Πόσο Κοστίζει μια Ιστοσελίδα;](https://anotherseoguru.com/el/blog/poso-kostizei-mia-istoselida) - Πόσο κοστίζει μια ιστοσελίδα στην Ελλάδα το 2026; Από €899 εταιρικό site έως e-shop. Πίνακας τιμών, κρυφά κόστη και διαφανή πακέτα AnotherSEOGuru.
+- [Πόσο Κοστίζει μια Ιστοσελίδα;](https://anotherseoguru.com/el/blog/poso-kostizei-mia-istoselida) - Πόσο κοστίζει μια ιστοσελίδα στην Ελλάδα το 2026; Από €1.500 εταιρικό site έως e-shop. Πίνακας τιμών, κρυφά κόστη και διαφανή πακέτα AnotherSEOGuru.
 - [Real Estate SEO - Win Listings and Buyers from Google](https://anotherseoguru.com/en/blog/real-estate-seo) - SEO for real estate agencies - rank for area searches, attract sellers who want an agent, and turn Google traffic into listings and buyer enquiries.
 - [SEO for Beginners - What It Is and How It Works (Simply)](https://anotherseoguru.com/en/blog/seo-for-beginners) - What SEO is in plain English: how Google ranks pages, what keywords, on-page, technical SEO and backlinks mean, realistic costs, and where to start.
 - [SEO για Μεσιτικά Γραφεία & Ακίνητα - Οδηγός 2026](https://anotherseoguru.com/el/blog/seo-gia-akinita) - Πώς τα μεσιτικά γραφεία κερδίζουν εντολές και αγοραστές από τη Google. Τοπικό SEO, σελίδες περιοχών, περιεχόμενο ιδιοκτητών, κόστος και checklist.
@@ -247,7 +247,7 @@ Nationwide Greece coverage with service×city landing pages. Money-page examples
 - [Website Redesign Without Losing Your SEO](https://anotherseoguru.com/en/blog/website-redesign-guide) - When to redesign a website, what it costs, and how to do it with a safe SEO migration so you don't lose rankings and organic traffic.
 - [Σχεδιασμός Ιστοσελίδας Τουρισμού 2026 - Τάσεις, SEO και UX](https://anotherseoguru.com/el/blog/sxediasmos-istoselidas-tourismos-2026) - Τι αλλάζει στον σχεδιασμό ιστοσελίδας τουρισμού το 2026. Τάσεις για direct bookings, ταχύτητα, mobile εμπειρία και AI βελτιστοποίηση.
 - [Τοπικό SEO στις Κυκλάδες - Οδηγός για Ξενοδοχεία και Rent-a-Car](https://anotherseoguru.com/el/blog/topiko-seo-kykladon) - Πώς να ξεχωρίσετε στο Google Maps και στην οργανική αναζήτηση στις Κυκλάδες. Οδηγός για Πάρο, Μύκονο, Σαντορίνη, Νάξο με GBP, NAP και location pages.
-- [Κατασκευή Ιστοσελίδας Ξενοδοχείου](https://anotherseoguru.com/el/blog/kataskevi-istoselidas-xenodoxeia) - Κατασκευή ιστοσελίδας για ξενοδοχεία με direct bookings και SEO. Μείωση προμηθειών OTA, Google Maps και κρατήσεις από €1.799. Δείτε τι περιλαμβάνει.
+- [Κατασκευή Ιστοσελίδας Ξενοδοχείου](https://anotherseoguru.com/el/blog/kataskevi-istoselidas-xenodoxeia) - Κατασκευή ιστοσελίδας για ξενοδοχεία με direct bookings και SEO. Μείωση προμηθειών OTA, Google Maps και κρατήσεις από €2.500. Δείτε τι περιλαμβάνει.
 - [SEO Ιστοσελίδας Ενοικίασης Αυτοκινήτου - Οδηγός 2026](https://anotherseoguru.com/el/blog/istoselida-enikiasis-autokinitou-seo) - Πώς να βελτιστοποιήσετε την ιστοσελίδα ενοικίασης αυτοκινήτου για τη Google: λέξεις-κλειδιά αεροδρομίων και λιμανιών, τοπικό SEO, κόστος και checklist.
 - [AI Chatbots στον Τουρισμό - 24/7 Κρατήσεις και AEO](https://anotherseoguru.com/el/blog/ai-chatbots-tourismos) - Πώς τα έξυπνα AI Chatbots μεταμορφώνουν την εξυπηρέτηση πελατών στον τουρισμό. Αυτοματοποίηση κρατήσεων, απαντήσεις σε FAQ και GEO/AEO ορατότητα.
 - [GEO, AEO και SEO στην Ελλάδα - Οδηγός 2026](https://anotherseoguru.com/el/blog/geo-aeo-ellada) - Βελτιστοποίηση για Google, ChatGPT, Perplexity και Gemini. Οδηγός SEO, Generative Engine Optimization και Answer Engine Optimization για ελληνικά brands.

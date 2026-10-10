@@ -72,7 +72,7 @@ faq:
 | Μηνιαίο hotel SEO (Foundations-Growth) | {{ENTRY_SEO}} – {{SEO_GROWTH}}/μήνα | 1–2 γλώσσες, τοπικός ανταγωνισμός |
 | Authority / ανταγωνιστικός προορισμός | {{SEO_GROWTH}} – {{SEO_AUTHORITY}}+/μήνα | Σαντορίνη, Μύκονος, city hotels |
 | Εφάπαξ τεχνικό + content audit | €400 – €800 | Πριν από redesign ή migration |
-| Website hospitality πακέτο | από €899 | Booking UX, schema, πολύγλωσσο |
+| Website hospitality πακέτο | από {{ENTRY_WEBSITE}} | Booking UX, schema, πολύγλωσσο |
 | Πρώτα local wins | 2–3 μήνες | «ξενοδοχείο + πόλη», branded |
 | Destination head terms | 4–6+ μήνες | Περιεχόμενο + authority |
 

@@ -214,7 +214,7 @@ function parseBlogPosts() {
       typeof data.slug === 'string' ? data.slug : file.replace(/\.md$/, '');
     posts.push({
       slug,
-      title: data.title,
+      title: resolvePriceTokens(String(data.title), locale),
       // Authored copy uses `{{ENTRY_SEO}}`-style tokens so prices cannot go
       // stale; resolve them here or the token itself reaches AI crawlers.
       description: resolvePriceTokens(data.description, locale),
@@ -619,19 +619,19 @@ function buildFull({ services, servicesEl, industries, industriesEl, greece, pro
   lines.push('');
   lines.push('### Q: Πόσο κοστίζει το SEO στην Ελλάδα;');
   lines.push(
-    'A: Τα μηνιαία πακέτα SEO ξεκινούν από €299/μήνα (Starter), €599/μήνα (Growth) και €999/μήνα (Scale). Το κόστος εξαρτάται από ανταγωνισμό, μέγεθος site και στόχους. Λεπτομέρειες: ' +
+    resolvePriceTokens('A: Τα μηνιαία πακέτα SEO ξεκινούν από {{ENTRY_SEO}}/μήνα (Foundations), {{SEO_GROWTH}}/μήνα (Growth) και {{SEO_AUTHORITY}}/μήνα (Authority), συν ΦΠΑ 24%. Το κόστος εξαρτάται από ανταγωνισμό, μέγεθος site και στόχους. Λεπτομέρειες: ', 'el') +
       url('el', '/pricing'),
   );
   lines.push('');
   lines.push('### Q: Πόσο κοστίζει μια ιστοσελίδα;');
   lines.push(
-    'A: Starter €899 (έως 5 σελίδες), Professional €1.799 (έως 10), Business €2.999 (έως 20, e-commerce ready). ' +
+    resolvePriceTokens('A: Starter {{ENTRY_WEBSITE}}, Professional {{WEBSITE_PRO}}, Business {{WEBSITE_BUSINESS}} (σύνθετα, πολυγλωσσικά και e-commerce έργα), συν ΦΠΑ 24%. ', 'el') +
       url('el', '/pricing'),
   );
   lines.push('');
   lines.push('### Q: Πόσο κοστίζει κατασκευή e-shop WooCommerce;');
   lines.push(
-    'A: Ρεαλιστικά από ~€1.800–€2.300 (π.χ. Professional + e-commerce setup €499, ή Business €2.999). Υπηρεσία: ' +
+    resolvePriceTokens('A: Συνήθως Professional {{WEBSITE_PRO}} συν λειτουργικότητα e-commerce από {{ADDON_ECOMMERCE}}, ή Business {{WEBSITE_BUSINESS}} για μεγαλύτερους καταλόγους, συν ΦΠΑ 24%. Υπηρεσία: ', 'el') +
       url('el', '/services/eshop-woocommerce'),
   );
   lines.push('');
@@ -643,7 +643,7 @@ function buildFull({ services, servicesEl, industries, industriesEl, greece, pro
   lines.push('');
   lines.push('### Q: How much does SEO cost?');
   lines.push(
-    'A: Monthly retainers start at €299 (Starter), €599 (Growth), €999 (Scale). See ' +
+    resolvePriceTokens('A: Monthly retainers are {{ENTRY_SEO}} (Foundations), {{SEO_GROWTH}} (Growth) and {{SEO_AUTHORITY}} (Authority) a month, plus 24% VAT. See ', 'en') +
       url('en', '/pricing'),
   );
   lines.push('');

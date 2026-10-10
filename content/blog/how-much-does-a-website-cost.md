@@ -11,7 +11,7 @@ categoryColor: bg-rose-100 text-rose-800
 pillar: agency-playbooks
 faq:
   - question: "How much does a website cost in 2026?"
-    answer: "Roughly €400–€800 for a landing page, €800–€2,000 for a 5–10 page business site, €1,500–€3,500 for a hotel site with bookings, and €1,800–€5,000+ for a WooCommerce store. Our packages start at Starter €899, Professional €1,799, and Business €2,999."
+    answer: "Roughly €400–€800 for a landing page, €800–€2,000 for a 5–10 page business site, €1,500–€3,500 for a hotel site with bookings, and €1,800–€5,000+ for a WooCommerce store. Our packages start at Starter {{ENTRY_WEBSITE}}, Professional {{WEBSITE_PRO}}, and Business {{WEBSITE_BUSINESS}}."
   - question: "Why do website quotes vary so much?"
     answer: "Because you are not comparing the same thing - template vs custom design, with or without SEO foundations, with or without content and maintenance. Always ask for an itemized list of deliverables."
   - question: "How much does an e-shop cost?"
@@ -24,7 +24,7 @@ faq:
 
 A website in 2026 costs anywhere from **€500 for a simple site** to **€5,000+ for a custom e-shop**. The huge range has real reasons behind it - this guide shows them so you know exactly what you’re paying for before you compare quotes on price alone.
 
-> **Transparent packages:** [website pricing](/en/pricing) from €899 · [our work](/en/work) · [website creation](/en/services/website-creation) · [free quote](/en/get-started) within 24 hours.
+> **Transparent packages:** [website pricing](/en/pricing) from {{ENTRY_WEBSITE}} · [our work](/en/work) · [website creation](/en/services/website-creation) · [free quote](/en/get-started) within 24 hours.
 
 ## Website Pricing in 2026
 
@@ -36,7 +36,7 @@ A website in 2026 costs anywhere from **€500 for a simple site** to **€5,000
 | E-shop (WooCommerce) | €1,800 – €5,000+ | 4–8 weeks |
 | Custom app / portal | €5,000+ | 2–4 months |
 
-Our packages are public: **Starter €899** (up to 5 pages), **Professional €1,799** (up to 10 pages), **Business €2,999** (up to 20 pages). See the details on our [pricing page](/en/pricing). For hospitality, also see [hotel solutions](/en/solutions/hotels).
+Our packages are public: **Starter {{ENTRY_WEBSITE}}** (up to 5 pages), **Professional {{WEBSITE_PRO}}** (up to 10 pages), **Business {{WEBSITE_BUSINESS}}** (up to 20 pages). See the details on our [pricing page](/en/pricing). For hospitality, also see [hotel solutions](/en/solutions/hotels).
 
 ## What Determines the Price
 

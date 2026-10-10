@@ -57,7 +57,7 @@ faq:
 | Πολλές υπηρεσίες / μία πόλη | {{ENTRY_SEO}}–{{SEO_GROWTH}}/μήνα | Service pages + κριτικές | 2–4 μήνες |
 | Πολλαπλά σημεία στη Θεσσαλονίκη | {{SEO_GROWTH}}+/μήνα | GBP ανά σημείο + τοπικά URLs | 3–6 μήνες |
 | Ανταγωνιστικός κλάδος (ιατρική, νομική) | {{SEO_GROWTH}}+/μήνα | E-E-A-T + local | 4–6 μήνες |
-| Νέο site + SEO | από €899 + retainer | Mobile CTA + ταχύτητα | Παράλληλο sprint |
+| Νέο site + SEO | από {{ENTRY_WEBSITE}} + retainer | Mobile CTA + ταχύτητα | Παράλληλο sprint |
 
 Μετρήστε **κλήσεις και φόρμες από Google**, θέσεις στο map pack και ρυθμό νέων κριτικών - όχι μόνο sessions. Διαφανή [πακέτα](/el/pricing) και [κόστος SEO](/el/blog/poso-kostizei-to-seo).
 

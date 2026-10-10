@@ -60,7 +60,7 @@ Legal advertising has rules. SEO is compatible when you educate rather than prom
 | Single practice, smaller city | {{ENTRY_SEO}}/mo (Foundations) | 2–3 months | Map pack + branded calls |
 | Multi-practice metro firm | {{SEO_GROWTH}}/mo (Growth) | 4–6 months | Practice-page leads |
 | Multi-city expansion | {{SEO_GROWTH}}–{{SEO_AUTHORITY}}+/mo | 4–8 months | Per-city landing conversions |
-| Website rebuild + SEO kickoff | from €899 site + retainer | Parallel 60–90 days | Mobile form completion rate |
+| Website rebuild + SEO kickoff | from {{ENTRY_WEBSITE}} site + retainer | Parallel 60–90 days | Mobile form completion rate |
 | Competitive PI / divorce head terms | Growth-Authority | 6+ months | Qualified consult bookings |
 
 Track **qualified consultations**, not vanity traffic. Log call tracking by practice page, Search Console queries, and GBP insights. Transparent [pricing](/en/pricing) keeps scope honest.

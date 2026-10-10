@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import Link from "next/link";
 import { ArrowRight, RotateCcw } from "lucide-react";
-import { submitToFormspree } from "@/lib/formspree";
+import { describeAnswers, submitLead } from "@/lib/leads";
 import { captureUtmParams, trackCtaClick, trackFormStart, trackLead } from "@/lib/analytics";
 import { WHATSAPP_HREF } from "@/lib/contact-info";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
@@ -19,15 +19,15 @@ import { primaryBtnClass, ghostBtnClass } from "./primitives";
  *   idle      -> a URL and one button
  *   scanning  -> a mono log while /api/scan works (minimum 2.2 s so the log
  *                is readable even when the scan is instant)
- *   results   -> score dial, the three costliest issues, one next step
- *   capture   -> email or WhatsApp number, one field
+ *   results   -> score dial, the three costliest issues, and the email or
+ *                WhatsApp field for the full audit
  *   sent      -> thank you + the two ways to continue
  *
  * Every state renders without the previous one's height jumping around, and
  * the whole thing degrades to a plain link to /get-started without JS.
  */
 
-type Stage = "idle" | "scanning" | "results" | "capture" | "sent";
+type Stage = "idle" | "scanning" | "results" | "sent";
 
 const MIN_SCAN_MS = 2200;
 
@@ -205,18 +205,32 @@ export function ScanWidget({ locale = "en", className }: { locale?: SiteLocale; 
     }
     setError(null);
     setSending(true);
-    const res = await submitToFormspree({
-      form: "instant_scan",
-      _subject: `Instant scan lead: ${result?.finalUrl ?? url}`,
-      website: result?.finalUrl ?? url,
-      contact: value,
-      contact_type: looksEmail ? "email" : "whatsapp",
-      score: String(result?.score ?? ""),
-      issues: (result?.topIssues ?? []).map((i) => i.label.en).join(" | "),
-      locale,
-      page: typeof window !== "undefined" ? window.location.pathname : "",
-      ...captureUtmParams(),
-    });
+    const site = result?.finalUrl ?? url;
+    const issues = (result?.topIssues ?? []).map((i) => i.label.en).join(" | ");
+    const utm = captureUtmParams();
+    const res = await submitLead(
+      {
+        form: "instant_scan",
+        _subject: `Instant scan lead: ${site}`,
+        website: site,
+        contact: value,
+        contact_type: looksEmail ? "email" : "whatsapp",
+        score: String(result?.score ?? ""),
+        issues,
+        locale,
+        page: typeof window !== "undefined" ? window.location.pathname : "",
+        ...utm,
+      },
+      {
+        email: looksEmail ? value : undefined,
+        phone: looksEmail ? undefined : value,
+        website: site,
+        service: "seo",
+        message: describeAnswers({ "Instant scan score": String(result?.score ?? ""), "Top issues": issues, ...utm }),
+        locale,
+        source: "website-scan",
+      },
+    );
     setSending(false);
     if (res.ok) {
       trackLead("instant_scan", { score: String(result?.score ?? "") });
@@ -342,68 +356,53 @@ export function ScanWidget({ locale = "en", className }: { locale?: SiteLocale; 
             )}
           </div>
 
-          <div className="mt-6 flex flex-wrap items-center gap-3">
-            <button
-              type="button"
-              onClick={() => setStage("capture")}
-              className={cn(primaryBtnClass, "w-full sm:w-auto")}
-            >
-              {t.next}
-              <ArrowRight className="size-4 shrink-0" aria-hidden />
-            </button>
-            <button type="button" onClick={reset} className="inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-foreground">
+          {/* The capture sits inside the results, not behind another click:
+              the score is the moment the visitor cares most. */}
+          <form onSubmit={handleCapture} className="mt-6 border-t border-hairline pt-5" noValidate>
+            <p className="font-display text-base font-semibold tracking-[-0.02em] text-foreground">{t.captureTitle}</p>
+            <p className="mt-1 text-[13px] leading-relaxed text-muted-foreground">{t.captureBody}</p>
+            <label htmlFor="scan-contact-inline" className="sr-only">
+              {t.contact}
+            </label>
+            <div className="mt-3 flex flex-col gap-2 sm:flex-row">
+              <input
+                id="scan-contact-inline"
+                name="contact"
+                type="text"
+                inputMode="email"
+                autoComplete="email"
+                placeholder={t.contact}
+                value={contact}
+                onChange={(e) => setContact(e.target.value)}
+                className="h-12 min-w-0 flex-1 rounded-full border border-hairline bg-background/60 px-5 text-base text-foreground placeholder:text-muted-foreground/70 focus:border-brand/60 focus:outline-none"
+              />
+              {/* Honeypot: humans never see or fill this. */}
+              <input
+                type="text"
+                name="_gotcha"
+                tabIndex={-1}
+                autoComplete="off"
+                value={gotcha}
+                onChange={(e) => setGotcha(e.target.value)}
+                className="hidden"
+                aria-hidden
+              />
+              <button type="submit" disabled={sending} className={cn(primaryBtnClass, "shrink-0 disabled:opacity-80")}>
+                {sending ? `${t.sending}…` : t.next}
+                {!sending ? <ArrowRight className="size-4 shrink-0" aria-hidden /> : null}
+              </button>
+            </div>
+            {error ? (
+              <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.14em] text-warning" role="alert">
+                {error}
+              </p>
+            ) : null}
+            <button type="button" onClick={reset} className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-foreground">
               <RotateCcw className="size-3.5" aria-hidden />
               {t.again}
             </button>
-          </div>
+          </form>
         </div>
-      )}
-
-      {stage === "capture" && (
-        <form onSubmit={handleCapture} className="glass rounded-3xl p-5 sm:p-6" noValidate>
-          <p className="font-display text-lg font-semibold tracking-[-0.02em] text-foreground">{t.captureTitle}</p>
-          <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{t.captureBody}</p>
-          <label htmlFor="scan-contact" className="sr-only">
-            {t.contact}
-          </label>
-          <div className="mt-4 flex flex-col gap-2 sm:flex-row">
-            <input
-              id="scan-contact"
-              name="contact"
-              type="text"
-              inputMode="email"
-              autoComplete="email"
-              placeholder={t.contact}
-              value={contact}
-              onChange={(e) => setContact(e.target.value)}
-              autoFocus
-              className="h-12 min-w-0 flex-1 rounded-full border border-hairline bg-background/60 px-5 text-base text-foreground placeholder:text-muted-foreground/70 focus:border-brand/60 focus:outline-none"
-            />
-            {/* Honeypot: humans never see or fill this. */}
-            <input
-              type="text"
-              name="_gotcha"
-              tabIndex={-1}
-              autoComplete="off"
-              value={gotcha}
-              onChange={(e) => setGotcha(e.target.value)}
-              className="hidden"
-              aria-hidden
-            />
-            <button type="submit" disabled={sending} className={cn(primaryBtnClass, "shrink-0 disabled:opacity-80")}>
-              {sending ? `${t.sending}…` : t.send}
-              {!sending ? <ArrowRight className="size-4" aria-hidden /> : null}
-            </button>
-          </div>
-          {error ? (
-            <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.14em] text-warning" role="alert">
-              {error}
-            </p>
-          ) : null}
-          <button type="button" onClick={() => setStage("results")} className="mt-4 text-sm text-muted-foreground hover:text-foreground">
-            ← {result ? result.finalUrl.replace(/^https?:\/\//, "").replace(/\/$/, "") : ""}
-          </button>
-        </form>
       )}
 
       {stage === "sent" && (

@@ -576,7 +576,7 @@ export function SearchPreview({ locale = "en" }: { locale?: SiteLocale }) {
       <div className="mt-8 flex flex-col items-center gap-5 text-center">
         <p className="max-w-3xl text-sm leading-relaxed text-muted-foreground">{t.caveat}</p>
         <Link
-          href={`${lp("/get-started")}${result.domain && !result.sample ? `?website=${encodeURIComponent(result.domain)}` : ""}`}
+          href={`${lp("/get-started")}${result.domain && !result.sample ? `?website=${encodeURIComponent(result.domain)}` : ""}#free-audit`}
           onClick={() => trackCtaClick("ai_visibility_check_plan")}
           className={primaryBtnClass}
         >

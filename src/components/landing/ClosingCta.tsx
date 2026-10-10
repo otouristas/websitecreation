@@ -34,7 +34,7 @@ export function ClosingCta({ locale = "en" }: { locale?: SiteLocale }) {
             : "Tell us what you want to achieve. We send back a free assessment and a concrete plan within 24 hours."}
         </p>
         <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-          <PrimaryButtonLink href={lp("/get-started")}>
+          <PrimaryButtonLink href={`${lp("/get-started")}#free-audit`}>
             {isEl ? "Δωρεάν αξιολόγηση" : "Get your free audit"}
             <ArrowRight className="size-4" aria-hidden />
           </PrimaryButtonLink>
