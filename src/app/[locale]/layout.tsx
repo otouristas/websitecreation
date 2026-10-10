@@ -9,6 +9,7 @@ import WhatsAppPill from '@/components/WhatsAppPill';
 import { Analytics } from '@vercel/analytics/next';
 import { isValidLocale } from '@/lib/i18n/locale';
 import { CONTACT_EMAIL, PHONE_E164 } from '@/lib/contact-info';
+import { FOUNDER, FOUNDER_SCHEMA_ID, consultantUrl } from '@/data/founder';
 
 const SITE_URL = 'https://anotherseoguru.com';
 
@@ -192,6 +193,20 @@ function buildStructuredDataGraph(isEl: boolean) {
           telephone: PHONE_E164,
           areaServed: ['GR', 'GB', 'US', 'EU'],
           availableLanguage: ['Greek', 'English'],
+        },
+        // Owner-confirmed (src/data/founder.ts): based in Athens, founded by
+        // George K. The Person node lives on the consultant page under the
+        // same @id.
+        address: {
+          '@type': 'PostalAddress',
+          addressLocality: 'Athens',
+          addressCountry: 'GR',
+        },
+        founder: {
+          '@type': 'Person',
+          '@id': FOUNDER_SCHEMA_ID,
+          name: FOUNDER.name,
+          url: consultantUrl(isEl ? 'el' : 'en'),
         },
         sameAs: [
           'https://www.linkedin.com/company/anotherseoguru',

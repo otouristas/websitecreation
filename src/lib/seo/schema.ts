@@ -12,6 +12,7 @@ import type {
     LocalBusinessSchemaData,
     ServiceSchemaData,
     OrganizationSchemaData,
+    PostalAddressData,
     SchemaOutput,
 } from '@/lib/types/seo';
 
@@ -198,6 +199,24 @@ export function generateOrganizationSchema(data: OrganizationSchemaData): Schema
             },
         }),
         ...(data.sameAs && { sameAs: data.sameAs }),
+        ...(data.address && { address: postalAddress(data.address) }),
+        ...(data.founder && {
+            founder: {
+                '@type': 'Person',
+                '@id': data.founder.id,
+                name: data.founder.name,
+                ...(data.founder.url ? { url: data.founder.url } : {}),
+            },
+        }),
+    };
+}
+
+function postalAddress(a: PostalAddressData) {
+    return {
+        '@type': 'PostalAddress',
+        addressLocality: a.addressLocality,
+        ...(a.addressRegion ? { addressRegion: a.addressRegion } : {}),
+        addressCountry: a.addressCountry,
     };
 }
 
@@ -396,20 +415,22 @@ export function generateDefinedTermSetSchema(
 /**
  * Person schema.
  *
- * The seam, not the content. The site has no author bios and no team page, so
- * there is no real name, role or profile URL in this repo to put here, and
- * inventing one would be exactly the kind of aspirational claim
- * `src/data/company-facts.ts` rules out. Wire this up when a real person is
- * ready to be named.
+ * Used for the founder (src/data/founder.ts), whose details the owner
+ * confirmed. Pass `id` so the node can be referenced from
+ * Organization.founder; otherwise the @id derives from `url`.
  */
 export function generatePersonSchema(data: PersonSchemaData): SchemaOutput {
+  const id = data.id ?? (data.url ? `${data.url}#person` : undefined);
   return {
     '@context': 'https://schema.org',
     '@type': 'Person',
+    ...(id ? { '@id': id } : {}),
     name: data.name,
-    ...(data.url ? { url: data.url, '@id': `${data.url}#person` } : {}),
+    ...(data.alternateName ? { alternateName: data.alternateName } : {}),
+    ...(data.url ? { url: data.url } : {}),
     ...(data.jobTitle ? { jobTitle: data.jobTitle } : {}),
     ...(data.description ? { description: data.description } : {}),
+    ...(data.address ? { address: postalAddress(data.address) } : {}),
     ...(data.knowsAbout?.length ? { knowsAbout: data.knowsAbout } : {}),
     ...(data.sameAs?.length ? { sameAs: data.sameAs } : {}),
     ...(data.worksFor

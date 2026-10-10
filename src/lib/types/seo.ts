@@ -69,6 +69,16 @@ export interface PersonSchemaData {
     readonly knowsAbout?: readonly string[];
     readonly sameAs?: readonly string[];
     readonly worksFor?: { readonly name: string; readonly url: string };
+    /** Stable @id when the person is referenced from other nodes (e.g. Organization.founder). */
+    readonly id?: string;
+    readonly alternateName?: string;
+    readonly address?: PostalAddressData;
+}
+
+export interface PostalAddressData {
+    readonly addressLocality: string;
+    readonly addressCountry: string;
+    readonly addressRegion?: string;
 }
 
 // FAQ schema data (uses FAQ from page.ts)
@@ -125,6 +135,8 @@ export interface OrganizationSchemaData {
         telephone?: string;
     };
     sameAs?: string[];
+    address?: PostalAddressData;
+    founder?: { id: string; name: string; url?: string };
 }
 
 // Schema output type
