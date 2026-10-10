@@ -1,9 +1,9 @@
-import { getAllServiceSlugs } from '@/data/services';
 import {
-  allLocations,
-  getIndexableServiceLocationSlugs,
+  getLocationBySlug,
+  isServiceLocationIndexable,
   type Location,
 } from '@/data/locations';
+import { listKeptServiceLocations } from '@/lib/indexability/service-location';
 import {
   buildUrlsetXml,
   chunkUrls,
@@ -29,21 +29,18 @@ export function buildLocationServiceUrls(
   locale: SiteLocale,
   shard: LocationSitemapShard,
 ): SitemapUrlEntry[] {
-  const serviceSlugs = getAllServiceSlugs();
-  const indexable = new Set(getIndexableServiceLocationSlugs(locale));
-  const locations = allLocations.filter(
-    (l) => indexable.has(l.slug) && matchesShard(l, shard),
-  );
-
+  // Only the kept service × city pages (2026-10 city cut). Everything else
+  // under /services/{service}/{location} is 410 Gone and must not be listed.
   const urls: SitemapUrlEntry[] = [];
-  for (const service of serviceSlugs) {
-    for (const location of locations) {
-      urls.push({
-        loc: `${BASE_URL}${localizedPath(locale, `/services/${service}/${location.slug}`)}`,
-        changefreq: 'monthly',
-        priority: shard === 'el' ? '0.65' : '0.6',
-      });
-    }
+  for (const { service, location: slug } of listKeptServiceLocations(locale)) {
+    const location = getLocationBySlug(slug);
+    if (!location || !matchesShard(location, shard)) continue;
+    if (!isServiceLocationIndexable(service, location, locale)) continue;
+    urls.push({
+      loc: `${BASE_URL}${localizedPath(locale, `/services/${service}/${location.slug}`)}`,
+      changefreq: 'monthly',
+      priority: shard === 'el' ? '0.65' : '0.6',
+    });
   }
 
   // /el/locations is not re-added here. It is already in the main sitemap via
@@ -73,8 +70,8 @@ export function listLocationSitemapPaths(): string[] {
 
   for (const shard of ['el', 'en-us', 'en-intl'] as const) {
     const locale: SiteLocale = shard === 'el' ? 'el' : 'en';
-    // Skip shards with nothing in them. No US location currently passes the
-    // uniqueness gate, so advertising an empty en-us sitemap in the index just
+    // Skip shards with nothing in them. US city pages were removed in the
+    // 2026-10 city cut, so advertising an empty en-us sitemap in the index just
     // gives Search Console a 0-URL child to report on.
     if (buildLocationServiceUrls(locale, shard).length === 0) continue;
 
