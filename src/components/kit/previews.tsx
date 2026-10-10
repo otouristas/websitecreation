@@ -472,7 +472,7 @@ export function AuditPreview({ locale: l }: { readonly locale: L }) {
         <div className="grid flex-1 grid-cols-3 gap-2">
           {[
             ["2", tx(l, "Critical", "Κρίσιμα"), "text-destructive"],
-            ["14", tx(l, "Warnings", "Προειδοποιήσεις"), "text-warning"],
+            ["14", tx(l, "Warnings", "Προσοχή"), "text-warning"],
             ["27", tx(l, "Notices", "Σημειώσεις"), "text-brand"],
           ].map(([n, label, cls]) => (
             <div key={label} className="rounded-lg border border-hairline bg-background px-2.5 py-2">
