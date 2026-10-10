@@ -1,95 +1,21 @@
 "use client";
 
-import { useEffect, useRef, useState, type ReactElement } from "react";
+import { useEffect, useMemo, useState, type ReactElement } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ChevronDown, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { PHONE_DISPLAY, WHATSAPP_HREF } from "@/lib/contact-info";
 import { BrandLogo } from "@/components/BrandLogo";
-import { AgencyMegaMenu } from "@/components/AgencyMegaMenu";
+import { MegaNav } from "@/components/nav/MegaNav";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { MobileNav } from "@/components/MobileNav";
 import { localizedPath, siteLocaleFromPath, type SiteLocale } from "@/lib/i18n/locale";
 import { getNavDictionary } from "@/lib/i18n/get-dictionary";
-import { services } from "@/data/services";
-import { getServiceEl } from "@/data/services-i18n";
+import { getNavModel } from "@/data/nav-menu";
+import { getTrustChips } from "@/data/trust-stats";
 import { trackCtaClick } from "@/lib/analytics";
-
-const linkClass =
-  "rounded-full px-3.5 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-foreground/6 hover:text-foreground";
-
-/* Not `glass`: the pill's own backdrop-filter makes it the backdrop root, so
-   a nested blur only samples the pill, never the page underneath, and at 72%
-   the heading of the page read straight through the open menu. Even 95%
-   left a 60px display heading ghosting through, so the panel is opaque. */
-const dropdownPanelInnerClass =
-  "min-w-[15rem] max-w-[22rem] rounded-2xl border border-hairline bg-popover p-2 shadow-[inset_0_1px_0_0_oklch(1_0_0/6%),0_24px_60px_-28px_oklch(0_0_0/70%)]";
-
-const dropdownItemClass =
-  "block rounded-xl px-4 py-2.5 text-sm text-muted-foreground transition-colors hover:bg-surface-raised hover:text-foreground";
-
-function sortAgencyServices() {
-  const websiteCreation = services.find((s) => s.slug === "website-creation");
-  const rest = services.filter((s) => s.slug !== "website-creation");
-  const head = websiteCreation ? [websiteCreation] : [];
-  return [...head, ...rest].slice(0, 6);
-}
-
-interface NavDropdownProps {
-  readonly label: string;
-  readonly children: React.ReactNode;
-}
-
-function NavDropdown(props: NavDropdownProps): ReactElement {
-  const [open, setOpen] = useState(false);
-  const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  function openMenu(): void {
-    if (closeTimerRef.current !== null) {
-      clearTimeout(closeTimerRef.current);
-      closeTimerRef.current = null;
-    }
-    setOpen(true);
-  }
-
-  function scheduleClose(): void {
-    if (closeTimerRef.current !== null) clearTimeout(closeTimerRef.current);
-    closeTimerRef.current = setTimeout(() => {
-      setOpen(false);
-      closeTimerRef.current = null;
-    }, 150);
-  }
-
-  useEffect(
-    () => () => {
-      if (closeTimerRef.current !== null) clearTimeout(closeTimerRef.current);
-    },
-    [],
-  );
-
-  return (
-    <div className="relative" onMouseEnter={openMenu} onMouseLeave={scheduleClose}>
-      <button
-        type="button"
-        className={`inline-flex items-center gap-0.5 rounded-lg px-1 py-1 ${linkClass}`}
-        aria-expanded={open}
-        aria-haspopup="true"
-      >
-        {props.label}
-        <ChevronDown className={`h-4 w-4 transition-transform ${open ? "rotate-180" : ""}`} />
-      </button>
-      {open ? (
-        <div className="absolute left-0 top-full z-[70] pt-1">
-          <div className={dropdownPanelInnerClass} onMouseEnter={openMenu} onMouseLeave={scheduleClose}>
-            {props.children}
-          </div>
-        </div>
-      ) : null}
-    </div>
-  );
-}
 
 export default function Header({
   locale: localeProp,
@@ -100,9 +26,8 @@ export default function Header({
   const nav = getNavDictionary(locale);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState<string | null>("agency");
-  const agencyNavServices = sortAgencyServices();
-  const isEl = locale === "el";
+  const model = useMemo(() => getNavModel(locale), [locale]);
+  const chips = getTrustChips(locale);
   const lp = (path: string) => localizedPath(locale, path);
 
   useEffect(() => {
@@ -130,22 +55,6 @@ export default function Header({
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsMobileMenuOpen(false);
   }, [pathname]);
-
-  function toggleMobile(id: string): void {
-    setMobileOpen((prev) => (prev === id ? null : id));
-  }
-
-  const agencyMobileLinks: (readonly [string, string])[] = [
-    [lp("/services"), nav.allServices],
-    [lp("/services/website-creation"), nav.websiteCreation],
-    ...agencyNavServices
-      .filter((s) => s.slug !== "website-creation")
-      .map((s) => {
-        const svcEl = isEl ? getServiceEl(s.slug) : null;
-        const dispName = svcEl?.shortName ?? svcEl?.name ?? s.shortName;
-        return [lp(`/services/${s.slug}`), dispName] as const;
-      }),
-  ];
 
   return (
     <>
@@ -186,28 +95,8 @@ export default function Header({
               imageClassName="h-7 w-7 min-[400px]:h-8 min-[400px]:w-8"
               textClassName="max-[359px]:sr-only whitespace-nowrap text-base min-[400px]:text-lg"
             />
-            <div className="hidden items-center gap-1 lg:flex">
-              <AgencyMegaMenu locale={locale} label={nav.agency} />
-              <NavDropdown label={nav.solutions}>
-                <Link href={lp("/solutions/rent-a-car")} className={dropdownItemClass}>
-                  {nav.rentACar}
-                </Link>
-                <Link href={lp("/solutions/hotels")} className={dropdownItemClass}>
-                  {nav.hotels}
-                </Link>
-                <Link href={lp("/solutions/tour-operators")} className={dropdownItemClass}>
-                  {nav.tours}
-                </Link>
-                <Link href={lp("/solutions")} className={dropdownItemClass}>
-                  {nav.allSolutions}
-                </Link>
-              </NavDropdown>
-              <Link href={lp("/pricing")} className={linkClass}>
-                {nav.pricing}
-              </Link>
-              <Link href={lp("/work")} className={linkClass}>
-                {nav.ourWork}
-              </Link>
+            <div className="hidden items-center lg:flex">
+              <MegaNav model={model} chips={chips} />
             </div>
             <div className="flex shrink-0 items-center gap-1 min-[400px]:gap-1.5 sm:gap-2">
               <LanguageSwitcher alternateHref={alternateHref} />
@@ -221,7 +110,7 @@ export default function Header({
                 aria-label={`WhatsApp ${PHONE_DISPLAY}`}
               >
                 <WhatsAppIcon className="h-4 w-4 text-[#25D366]" />
-                <span className="hidden xl:inline">{PHONE_DISPLAY}</span>
+                <span className="hidden 2xl:inline">{PHONE_DISPLAY}</span>
               </a>
               <Link
                 href={lp("/get-started")}
@@ -249,9 +138,7 @@ export default function Header({
         locale={locale}
         isOpen={isMobileMenuOpen}
         onClose={() => setIsMobileMenuOpen(false)}
-        agencyLinks={agencyMobileLinks}
-        mobileOpen={mobileOpen}
-        onToggleSection={toggleMobile}
+        model={model}
       />
     </>
   );

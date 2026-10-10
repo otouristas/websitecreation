@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter, Inter_Tight, JetBrains_Mono } from 'next/font/google';
+import { Instrument_Serif, Inter, Inter_Tight, JetBrains_Mono, Noto_Serif } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import '../globals.css';
 import CookieConsent from '@/components/CookieConsent';
@@ -39,6 +39,28 @@ const jetbrainsMono = JetBrains_Mono({
   variable: '--font-jetbrains-mono',
   subsets: ['latin', 'greek'],
   weight: ['400', '500'],
+  display: 'swap',
+});
+
+/**
+ * The serif accent: one to three italic words inside a headline, the same
+ * device the app's landing page uses. Instrument Serif has no Greek, so
+ * Noto Serif italic (Greek subset only) sits behind it in the stack and the
+ * browser picks it per glyph for Greek accent words.
+ */
+const instrumentSerif = Instrument_Serif({
+  variable: '--font-instrument-serif',
+  subsets: ['latin', 'latin-ext'],
+  weight: '400',
+  style: 'italic',
+  display: 'swap',
+});
+
+const notoSerifGreek = Noto_Serif({
+  variable: '--font-noto-serif',
+  subsets: ['greek'],
+  weight: '400',
+  style: 'italic',
   display: 'swap',
 });
 
@@ -271,7 +293,7 @@ export default async function LocaleLayout({
       lang={isEl ? 'el' : 'en'}
       // The next/font variables sit on <html> so they resolve everywhere,
       // including Tailwind's preflight font rule on the root element.
-      className={`${interTight.variable} ${inter.variable} ${jetbrainsMono.variable} scroll-smooth`}
+      className={`${interTight.variable} ${inter.variable} ${jetbrainsMono.variable} ${instrumentSerif.variable} ${notoSerifGreek.variable} scroll-smooth`}
       suppressHydrationWarning
     >
       <head>
