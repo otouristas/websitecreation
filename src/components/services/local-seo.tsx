@@ -1,7 +1,19 @@
 import Link from 'next/link';
-import { MapPin, Star, Clock, Phone } from 'lucide-react';
-import { PageShell, ShellCrumbs } from '@/components/bespoke/PageShell';
-import { PrimaryButtonLink, GhostButtonLink, Bloom, Tick } from '@/components/landing/primitives';
+import { MapPin, Phone, Star } from 'lucide-react';
+import { PageShell } from '@/components/bespoke/PageShell';
+import { BeforeAfter, CtaBand, FeatureRow, KitHeading, KitSection, LocalPackPreview, MarketingBadge, Stage } from '@/components/kit';
+import {
+  AccentTitle,
+  ChipLinks,
+  FaqBlock,
+  GbpProfilePreview,
+  NapListPreview,
+  PriceTiers,
+  ServiceHero,
+  getServiceKit,
+  pick,
+} from '@/components/service-kit';
+import { cn } from '@/lib/cn';
 import { getIndexableServiceLocations } from '@/data/locations';
 import { getServiceBySlug } from '@/data/services';
 import { getServiceEl } from '@/data/services-i18n';
@@ -24,8 +36,9 @@ import {
  * generic feature grid, and the NAP section is shown as a diff because that is
  * how the problem actually looks in the wild.
  *
- * Integrity: the pack mockup uses placeholder slots and carries no invented
- * business names, star ratings or review counts.
+ * Integrity: the hero uses the kit's sample-hotel local pack (clearly labelled
+ * as sample data, with the "illustrative, not a promise of placement" note as
+ * its caption); nothing on the page claims a real client's ranking.
  */
 
 const SIGNATURE_HUE = 200;
@@ -274,269 +287,139 @@ export function LocalSeoPage({ locale }: { locale: SiteLocale }) {
     generateFAQSchema({ faqs: t.faq.items.map((f) => ({ question: f.q, answer: f.a })) }),
   );
 
+  const kit = getServiceKit('local-seo');
+  const pricing = isEl
+    ? { eyebrow: 'Τιμές', title: 'Τιμές & πακέτα', body: 'Το τοπικό SEO περιλαμβάνεται σε όλα τα μηνιαία πακέτα SEO. Ο ΦΠΑ 24% φαίνεται σε κάθε τιμή.', all: 'Δείτε όλες τις τιμές' }
+    : { eyebrow: 'Pricing', title: 'Pricing & packages', body: 'Local SEO is part of every monthly SEO package. 24% VAT is shown on every figure.', all: 'See all pricing' };
+
   return (
     <PageShell locale={locale} signatureHue={SIGNATURE_HUE} schemas={schemas}>
-      {/* 1 - Hero with the local pack mockup */}
-      <section className="relative overflow-hidden border-b border-hairline">
-        <Bloom signature className="left-[60%] top-[-10rem] h-[30rem] w-[46rem]" />
-        <div className="main-below-header relative mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)] gap-12 px-6 pb-16 pt-6 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-center lg:gap-16">
-          <div className="min-w-0">
-            <ShellCrumbs items={breadcrumbs} />
-            <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-signature">
-              {t.eyebrow}
-            </span>
-            <h1 className="rise-in mt-4 font-display text-4xl font-medium leading-[1.04] tracking-[-0.04em] text-foreground md:text-[3.3rem]">
-              {t.h1}
-            </h1>
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
-              {t.lede}
-            </p>
-            <div className="mt-9 flex flex-wrap gap-3">
-              <PrimaryButtonLink href={lp('/get-started?service=local-seo')}>
-                {t.ctaPrimary}
-              </PrimaryButtonLink>
-              <GhostButtonLink href="#factors">{t.ctaSecondary}</GhostButtonLink>
-            </div>
-          </div>
-
-          <div className="min-w-0">
-            <div className="overflow-hidden rounded-[14px] border border-signature/25 bg-surface ring-1 ring-hairline">
-              <div className="border-b border-hairline bg-surface-raised/80 px-4 py-3">
-                <div className="flex items-center gap-2 rounded-full border border-hairline bg-background px-3 py-1.5">
-                  <span className="text-[11px] text-muted-foreground">{t.pack.query}</span>
-                </div>
-              </div>
-
-              {/* map plate */}
-              <div className="relative h-28 border-b border-hairline bg-signature/5">
-                <div
-                  aria-hidden
-                  className="absolute inset-0 opacity-60"
-                  style={{
-                    backgroundImage:
-                      'linear-gradient(to right, var(--grid-line) 1px, transparent 1px), linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px)',
-                    backgroundSize: '24px 24px',
-                  }}
-                />
-                {[
-                  { l: '24%', tp: '52%' },
-                  { l: '52%', tp: '30%' },
-                  { l: '74%', tp: '62%' },
-                ].map((p, i) => (
-                  <span
-                    key={i}
-                    className="absolute -translate-x-1/2 -translate-y-full"
-                    style={{ left: p.l, top: p.tp }}
-                  >
-                    <MapPin className="size-5 text-signature" aria-hidden />
-                  </span>
-                ))}
-              </div>
-
-              <div className="divide-y divide-hairline">
-                {t.pack.slots.map((s, i) => (
-                  <div key={s} className="flex items-start gap-3 px-4 py-3.5">
-                    <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-signature/15 text-[10px] font-medium text-signature">
-                      {i + 1}
-                    </span>
-                    <div className="min-w-0 flex-1">
-                      <div className="h-2.5 w-28 rounded-[2px] bg-foreground/15" />
-                      <div className="mt-2 flex items-center gap-3 text-[10px] text-muted-foreground">
-                        <span className="inline-flex items-center gap-1">
-                          <Star className="size-3" aria-hidden />
-                          <span className="inline-block h-1.5 w-6 rounded-[2px] bg-foreground/10" />
-                        </span>
-                        <span className="inline-flex items-center gap-1">
-                          <Clock className="size-3" aria-hidden />
-                          {t.pack.meta[0]}
-                        </span>
-                        <span className="inline-flex items-center gap-1">
-                          <Phone className="size-3" aria-hidden />
-                          {t.pack.meta[1]}
-                        </span>
-                      </div>
-                    </div>
-                    <span className="shrink-0 text-[10px] uppercase tracking-[0.1em] text-muted-foreground">
-                      {s}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <p className="mt-3 text-center text-[11px] leading-relaxed text-muted-foreground">
-              {t.pack.note}
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* 1 - Hero with the local pack */}
+      <ServiceHero
+        locale={locale}
+        breadcrumbs={breadcrumbs}
+        pill={{ kind: kit.pill.kind, tag: pick(kit.pill.tag, locale), text: kit.pill.text[locale], href: lp(kit.pill.href) }}
+        h1={t.h1}
+        lead={t.lede}
+        primaryLabel={t.ctaPrimary}
+        primaryHref={lp('/get-started?service=local-seo')}
+        links={[
+          { href: '#factors', label: t.ctaSecondary },
+          { href: lp('/pricing'), label: t.cta.secondary },
+        ]}
+        visual={<LocalPackPreview locale={locale} city={isEl ? 'Πάρος' : 'Paros'} />}
+        visualLabel={kit.heroLabel[locale]}
+        caption={t.pack.note}
+      />
 
       {/* 2 - The three ranking factors */}
-      <section id="factors" className="mx-auto max-w-6xl px-6 py-20 md:py-28">
-        <div className="max-w-2xl">
-          <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-signature">
-            {t.factors.eyebrow}
-          </span>
-          <h2 className="mt-4 font-display text-3xl font-medium leading-[1.06] tracking-[-0.03em] text-foreground sm:text-4xl">
-            {t.factors.title}
-          </h2>
-          <p className="mt-4 text-base leading-relaxed text-muted-foreground">{t.factors.body}</p>
-        </div>
-
-        <div className="mt-12 grid gap-px overflow-hidden rounded-[12px] border border-hairline bg-hairline md:grid-cols-3">
-          {t.factors.items.map((f) => (
-            <div key={f.k} className="flex flex-col bg-surface p-7">
-              <span
-                className={`inline-flex w-fit items-center rounded-full px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.1em] ${
-                  f.movable
-                    ? 'bg-signature/12 text-signature'
-                    : 'bg-foreground/8 text-muted-foreground'
-                }`}
-              >
+      <KitSection id="factors" className="mt-6 sm:mt-10">
+        <KitHeading eyebrow={t.factors.eyebrow} eyebrowIcon={<MapPin />} title={<AccentTitle text={t.factors.title} />} description={t.factors.body} />
+        <div className="mt-12 grid gap-4 md:grid-cols-3">
+          {t.factors.items.map((f, i) => (
+            <div
+              key={f.k}
+              className={cn(
+                'reveal flex flex-col rounded-2xl border p-6',
+                f.movable ? 'border-hairline bg-surface/60' : 'border-dashed border-hairline bg-transparent',
+              )}
+              style={{ ['--rv' as string]: `${i * 6}%` }}
+            >
+              <MarketingBadge kind={f.movable ? 'live' : 'save'} className="w-fit">
                 {f.movable ? t.factors.movableLabel : t.factors.fixedLabel}
-              </span>
-              <h3 className="mt-5 font-display text-lg font-medium tracking-[-0.02em] text-foreground">
-                {f.k}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{f.d}</p>
+              </MarketingBadge>
+              <h3 className="mt-5 text-[18px] font-semibold tracking-[-0.01em] text-foreground">{f.k}</h3>
+              <p className="mt-2 text-[14.5px] leading-relaxed text-muted-foreground">{f.d}</p>
             </div>
           ))}
         </div>
-      </section>
+      </KitSection>
 
       {/* 3 - Google Business Profile */}
-      <section className="border-y border-hairline bg-surface-raised/30">
-        <div className="mx-auto grid max-w-6xl gap-12 px-6 py-20 md:py-28 lg:grid-cols-2 lg:gap-16">
-          <div>
-            <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-signature">
-              {t.profile.eyebrow}
-            </span>
-            <h2 className="mt-4 font-display text-3xl font-medium leading-[1.06] tracking-[-0.03em] text-foreground sm:text-4xl">
-              {t.profile.title}
-            </h2>
-            <p className="mt-4 text-base leading-relaxed text-muted-foreground">{t.profile.body}</p>
-          </div>
-          <ul className="space-y-px self-center overflow-hidden rounded-[12px] border border-hairline bg-hairline">
-            {t.profile.points.map((p) => (
-              <li key={p} className="flex gap-3 bg-background p-5 text-sm text-muted-foreground">
-                <Tick className="text-signature" />
-                {p}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
+      <KitSection tinted>
+        <FeatureRow
+          flip
+          eyebrow={t.profile.eyebrow}
+          eyebrowIcon={<Star />}
+          title={<AccentTitle text={t.profile.title} />}
+          body={t.profile.body}
+          bullets={t.profile.points}
+          preview={
+            <Stage>
+              <GbpProfilePreview locale={locale} />
+            </Stage>
+          }
+        />
+      </KitSection>
 
-      {/* 4 - NAP consistency, shown as a diff */}
-      <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
-        <div className="max-w-2xl">
-          <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-signature">
-            {t.nap.eyebrow}
-          </span>
-          <h2 className="mt-4 font-display text-3xl font-medium leading-[1.06] tracking-[-0.03em] text-foreground sm:text-4xl">
-            {t.nap.title}
-          </h2>
-          <p className="mt-4 text-base leading-relaxed text-muted-foreground">{t.nap.body}</p>
+      {/* 4 - NAP consistency, shown as before / after */}
+      <KitSection>
+        <KitHeading eyebrow={t.nap.eyebrow} eyebrowIcon={<Phone />} title={<AccentTitle text={t.nap.title} />} description={t.nap.body} />
+        <div className="mt-12">
+          <BeforeAfter
+            before={{
+              tag: t.nap.badLabel,
+              title: 'NAP',
+              text: isEl ? 'Επωνυμία, διεύθυνση, τηλέφωνο' : 'Name, address, phone',
+              node: (
+                <Stage className="p-2.5 sm:p-4">
+                  <NapListPreview title={t.nap.badLabel} lines={t.nap.bad} tone="bad" />
+                </Stage>
+              ),
+            }}
+            after={{
+              tag: t.nap.goodLabel,
+              title: 'NAP',
+              text: isEl ? 'Ίδια παντού' : 'The same everywhere',
+              node: (
+                <Stage className="p-2.5 sm:p-4">
+                  <NapListPreview title={t.nap.goodLabel} lines={t.nap.good} tone="good" />
+                </Stage>
+              ),
+            }}
+          />
         </div>
+      </KitSection>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-2">
-          <div className="overflow-hidden rounded-[12px] border border-hairline">
-            <div className="border-b border-hairline bg-destructive/8 px-5 py-3 text-[11px] font-medium uppercase tracking-[0.12em] text-destructive">
-              {t.nap.badLabel}
-            </div>
-            <ul className="divide-y divide-hairline bg-surface font-mono text-[12px] leading-relaxed">
-              {t.nap.bad.map((l, i) => (
-                <li key={i} className="px-5 py-3.5 text-muted-foreground">
-                  {l}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="overflow-hidden rounded-[12px] border border-signature/30">
-            <div className="border-b border-hairline bg-signature/8 px-5 py-3 text-[11px] font-medium uppercase tracking-[0.12em] text-signature">
-              {t.nap.goodLabel}
-            </div>
-            <ul className="divide-y divide-hairline bg-surface font-mono text-[12px] leading-relaxed">
-              {t.nap.good.map((l, i) => (
-                <li key={i} className="px-5 py-3.5 text-foreground">
-                  {l}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
+      {/* 5 - Pricing, from src/data/pricing.ts */}
+      <KitSection tinted id="pricing">
+        <KitHeading align="center" eyebrow={pricing.eyebrow} title={<AccentTitle text={pricing.title} />} description={pricing.body} />
+        <PriceTiers kind="seo" locale={locale} className="mt-12" />
+        <p className="mt-10 text-center text-[14px]">
+          <Link href={lp('/pricing')} className="font-medium text-link underline-offset-4 hover:underline">
+            {pricing.all}
+          </Link>
+        </p>
+      </KitSection>
 
-      {/* 5 - Coverage */}
-      <section className="border-y border-hairline bg-surface-raised/30">
-        <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
-          <div className="max-w-2xl">
-            <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-signature">
-              {t.coverage.eyebrow}
-            </span>
-            <h2 className="mt-4 font-display text-3xl font-medium leading-[1.06] tracking-[-0.03em] text-foreground sm:text-4xl">
-              {t.coverage.title}
-            </h2>
-            <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-              {t.coverage.body}
-            </p>
-          </div>
-          <div className="mt-10 flex flex-wrap gap-2">
-            {locations.map((l) => (
-              <Link
-                key={l.slug}
-                href={lp(`/services/local-seo/${l.slug}`)}
-                className="rounded-full border border-hairline bg-surface px-4 py-2 text-[13px] text-muted-foreground transition-colors hover:border-signature/40 hover:text-foreground"
-              >
-                {'cityLocal' in l && l.cityLocal ? l.cityLocal : l.city}
-              </Link>
-            ))}
-          </div>
-          <p className="mt-6 text-sm">
-            <Link href={lp('/locations')} className="font-medium text-signature hover:underline">
-              {t.coverage.more}
-            </Link>
-          </p>
-        </div>
-      </section>
+      {/* 6 - Coverage */}
+      <KitSection id="locations">
+        <KitHeading eyebrow={t.coverage.eyebrow} eyebrowIcon={<MapPin />} title={<AccentTitle text={t.coverage.title} />} description={t.coverage.body} />
+        <ChipLinks
+          className="mt-10"
+          items={locations.map((l) => ({
+            href: lp(`/services/local-seo/${l.slug}`),
+            label: 'cityLocal' in l && l.cityLocal ? l.cityLocal : l.city,
+          }))}
+        />
+        <p className="mt-8 text-[14px]">
+          <Link href={lp('/locations')} className="font-medium text-link underline-offset-4 hover:underline">
+            {t.coverage.more}
+          </Link>
+        </p>
+      </KitSection>
 
-      {/* 6 - FAQ */}
-      <section className="mx-auto max-w-3xl px-6 py-20 md:py-28">
-        <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-signature">
-          {t.faq.eyebrow}
-        </span>
-        <h2 className="mt-4 font-display text-3xl font-medium leading-[1.06] tracking-[-0.03em] text-foreground sm:text-4xl">
-          {t.faq.title}
-        </h2>
-        <dl className="mt-10 divide-y divide-hairline border-y border-hairline">
-          {t.faq.items.map((f) => (
-            <div key={f.q} className="py-6">
-              <dt className="font-display text-[17px] font-medium tracking-[-0.01em] text-foreground">
-                {f.q}
-              </dt>
-              <dd className="mt-3 text-sm leading-relaxed text-muted-foreground">{f.a}</dd>
-            </div>
-          ))}
-        </dl>
-      </section>
+      {/* 7 - FAQ */}
+      <FaqBlock
+        locale={locale}
+        tinted
+        eyebrow={t.faq.eyebrow}
+        title={<AccentTitle text={t.faq.title} />}
+        faqs={t.faq.items.map((f) => ({ question: f.q, answer: f.a }))}
+      />
 
-      {/* 7 - CTA */}
-      <section className="relative overflow-hidden border-t border-hairline">
-        <Bloom signature className="left-1/2 top-1/4 h-[24rem] w-[52rem] -translate-x-1/2" />
-        <div className="relative mx-auto max-w-3xl px-6 py-24 text-center">
-          <h2 className="font-display text-3xl font-medium leading-[1.05] tracking-[-0.04em] text-foreground md:text-5xl">
-            {t.cta.title}
-          </h2>
-          <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">
-            {t.cta.body}
-          </p>
-          <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
-            <PrimaryButtonLink href={lp('/get-started?service=local-seo')}>
-              {t.cta.primary}
-            </PrimaryButtonLink>
-            <GhostButtonLink href={lp('/pricing')}>{t.cta.secondary}</GhostButtonLink>
-          </div>
-        </div>
-      </section>
+      {/* 8 - CTA */}
+      <CtaBand locale={locale} source="service-local-seo" title={<AccentTitle text={t.cta.title} />} description={t.cta.body} />
     </PageShell>
   );
 }

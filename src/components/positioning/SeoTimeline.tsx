@@ -62,15 +62,17 @@ export function SeoTimeline({ locale = 'en' }: { locale?: SiteLocale }) {
         className="mb-10"
       />
 
-      <ol className="grid gap-px overflow-hidden rounded-[10px] border border-hairline bg-hairline md:grid-cols-3">
+      <ol className="grid gap-4 md:grid-cols-3">
         {phases.map((p, i) => (
-          <li key={p.range} className="bg-surface p-7">
-            <span className="font-display text-sm tabular-nums text-brand">0{i + 1}</span>
-            <p className="mt-4 font-display text-lg font-medium tracking-[-0.02em] text-foreground">
+          <li key={p.range} className="reveal flex flex-col rounded-2xl border border-hairline bg-surface/60 p-6 sm:p-7">
+            <span className="flex items-center justify-between gap-3">
+              <span className="font-mono text-[12px] font-medium text-brand">0{i + 1}</span>
+              <span className="rounded-full border border-hairline bg-background px-2.5 py-0.5 font-mono text-[11px] text-muted-foreground">{p.range}</span>
+            </span>
+            <p className="mt-4 text-[17px] font-semibold tracking-[-0.01em] text-foreground">
               {p.title}
             </p>
-            <p className="mt-1 text-[13px] font-medium text-muted-foreground">{p.range}</p>
-            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{p.body}</p>
+            <p className="mt-2 text-[14.5px] leading-relaxed text-muted-foreground">{p.body}</p>
           </li>
         ))}
       </ol>

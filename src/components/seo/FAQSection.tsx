@@ -68,7 +68,7 @@ export default function FAQSection({
     return (
         <section className={`py-12 ${className}`}>
             {sectionTitle ? (
-                <h2 className="mb-8 font-display text-2xl font-medium tracking-[-0.03em] sm:text-3xl">{sectionTitle}</h2>
+                <h2 className="mb-8 font-display text-[28px] font-semibold leading-[1.1] tracking-[-0.035em] text-foreground sm:text-[36px]">{sectionTitle}</h2>
             ) : null}
 
             <div className="space-y-3">
@@ -79,7 +79,7 @@ export default function FAQSection({
                     return (
                         <div
                             key={index}
-                            className="border border-border rounded-xl overflow-hidden bg-background"
+                            className="overflow-hidden rounded-2xl border border-hairline bg-surface/60 transition-colors hover:border-foreground/15"
                         >
                             <button
                                 type="button"
@@ -87,11 +87,11 @@ export default function FAQSection({
                                 aria-expanded={isExpanded}
                                 aria-controls={`${itemId}-content`}
                                 id={`${itemId}-button`}
-                                className="w-full px-6 py-4 text-left flex justify-between items-center gap-4 hover:bg-muted/50 transition-colors"
+                                className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left transition-colors sm:px-6"
                             >
-                                <span className="font-semibold text-foreground">{faq.question}</span>
+                                <span className="text-[15.5px] font-semibold tracking-[-0.01em] text-foreground">{faq.question}</span>
                                 <span
-                                    className="text-2xl text-muted-foreground flex-shrink-0 transition-transform"
+                                    className="flex size-7 shrink-0 items-center justify-center rounded-full border border-hairline text-lg leading-none text-muted-foreground transition-transform"
                                     style={{ transform: isExpanded ? 'rotate(45deg)' : 'none' }}
                                     aria-hidden
                                 >
@@ -103,10 +103,10 @@ export default function FAQSection({
                                 id={`${itemId}-content`}
                                 role="region"
                                 aria-labelledby={`${itemId}-button`}
-                                className="px-6 pb-4"
+                                className="px-5 pb-5 sm:px-6"
                                 hidden={!isExpanded}
                             >
-                                <p className="text-muted-foreground leading-relaxed">
+                                <p className="text-[15px] leading-relaxed text-muted-foreground">
                                     {faq.answer}
                                 </p>
                             </div>

@@ -1,11 +1,20 @@
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
-import { PageShell, ShellCrumbs } from '@/components/bespoke/PageShell';
-import { PortfolioThumbnail } from '@/components/landing/PortfolioThumbnail';
-import { PrimaryButtonLink, GhostButtonLink, Bloom, Tick } from '@/components/landing/primitives';
-import { PriceCard } from '@/components/pricing/PriceCard';
+import { PageShell } from '@/components/bespoke/PageShell';
+import { KeyRound, Layers } from 'lucide-react';
+import { CtaBand, FeatureRow, KitHeading, KitSection, Stage, StepsGrid } from '@/components/kit';
+import {
+  AccentTitle,
+  BuildStagesPreview,
+  FaqBlock,
+  OwnershipPreview,
+  PriceTiers,
+  ProofGrid,
+  ServiceHero,
+  getServiceKit,
+  pick,
+} from '@/components/service-kit';
 import { portfolioProjects } from '@/data/portfolio';
-import { websitePackages } from '@/data/pricing';
 import { PROJECT_COUNT } from '@/data/company-facts';
 import { getServiceBySlug } from '@/data/services';
 import { getServiceEl } from '@/data/services-i18n';
@@ -21,10 +30,9 @@ import {
 /**
  * /services/website-creation - bespoke.
  *
- * Signature: 259 (brand blue - this is the flagship service, so it holds the
- * house colour). Structure is the build itself: a wireframe -> design -> live
- * progression carries the hero, then the phases, then what you actually own at
- * the end. Ownership is the argument that closes this sale, so it gets its own
+ * App-landing layout (service-kit): centered hero with a pre-launch audit
+ * preview, then the four phases with the wireframe -> design -> live frames,
+ * then what you actually own at the end. Ownership is the argument that closes this sale, so it gets its own
  * section rather than a bullet.
  *
  * Prices come from src/data/pricing.ts. Nothing here quotes a figure directly.
@@ -221,66 +229,6 @@ const copy = {
   },
 } as const;
 
-/** Wireframe -> design -> live, drawn rather than photographed. */
-function StageFrame({ variant }: { variant: 'wire' | 'design' | 'live' }) {
-  const bar = (w: string, tone: string) => (
-    <span className={`block h-2 rounded-[2px] ${tone}`} style={{ width: w }} />
-  );
-
-  return (
-    <div className="overflow-hidden rounded-[10px] border border-hairline bg-background">
-      <div className="flex gap-1.5 border-b border-hairline bg-surface-raised/70 px-3 py-2">
-        <span className="size-1.5 rounded-full bg-foreground/15" />
-        <span className="size-1.5 rounded-full bg-foreground/15" />
-        <span
-          className={`size-1.5 rounded-full ${variant === 'live' ? 'bg-signature' : 'bg-foreground/15'}`}
-        />
-      </div>
-      <div className="space-y-2.5 p-4">
-        {variant === 'wire' && (
-          <>
-            {bar('60%', 'bg-foreground/12')}
-            {bar('85%', 'bg-foreground/8')}
-            {bar('45%', 'bg-foreground/8')}
-            <div className="grid grid-cols-3 gap-2 pt-1">
-              {[0, 1, 2].map((i) => (
-                <span key={i} className="block h-8 rounded-[3px] bg-foreground/6" />
-              ))}
-            </div>
-          </>
-        )}
-        {variant === 'design' && (
-          <>
-            {bar('60%', 'bg-signature/50')}
-            {bar('85%', 'bg-foreground/12')}
-            {bar('45%', 'bg-foreground/10')}
-            <div className="grid grid-cols-3 gap-2 pt-1">
-              {[0, 1, 2].map((i) => (
-                <span key={i} className="block h-8 rounded-[3px] bg-signature/12" />
-              ))}
-            </div>
-          </>
-        )}
-        {variant === 'live' && (
-          <>
-            {bar('60%', 'bg-signature')}
-            {bar('85%', 'bg-foreground/20')}
-            {bar('45%', 'bg-foreground/14')}
-            <div className="grid grid-cols-3 gap-2 pt-1">
-              {[0, 1, 2].map((i) => (
-                <span key={i} className="block h-8 rounded-[3px] bg-signature/25" />
-              ))}
-            </div>
-            <span className="mt-1 inline-flex h-5 items-center rounded-full bg-brand/15 px-2 text-[9px] font-medium uppercase tracking-[0.1em] text-brand">
-              indexed
-            </span>
-          </>
-        )}
-      </div>
-    </div>
-  );
-}
-
 export function WebsiteCreationPage({ locale }: { locale: SiteLocale }) {
   const isEl = locale === 'el';
   const t = isEl ? copy.el : copy.en;
@@ -308,212 +256,97 @@ export function WebsiteCreationPage({ locale }: { locale: SiteLocale }) {
     generateFAQSchema({ faqs: t.faq.items.map((f) => ({ question: f.q, answer: f.a })) }),
   );
 
+  const kit = getServiceKit('website-creation');
+  const quoteHref = lp('/get-started?service=website-creation');
+
   return (
     <PageShell locale={locale} signatureHue={SIGNATURE_HUE} schemas={schemas}>
-      {/* 1 - Hero with the three build stages */}
-      <section className="relative overflow-hidden border-b border-hairline">
-        <Bloom signature className="left-1/2 top-[-11rem] h-[28rem] w-[58rem] -translate-x-1/2" />
-        <div className="main-below-header relative mx-auto max-w-6xl px-6 pb-16 pt-6">
-          <ShellCrumbs items={breadcrumbs} />
-          <div className="max-w-3xl">
-            <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-signature">
-              {t.eyebrow}
-            </span>
-            <h1 className="rise-in mt-4 font-display text-4xl font-medium leading-[1.04] tracking-[-0.04em] text-foreground md:text-[3.4rem]">
-              {t.h1}
-            </h1>
-            <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
-              {t.lede}
-            </p>
-            <div className="mt-9 flex flex-wrap gap-3">
-              <PrimaryButtonLink href={lp('/get-started?service=website-creation')}>
-                {t.ctaPrimary}
-              </PrimaryButtonLink>
-              <GhostButtonLink href="#work">{t.ctaSecondary}</GhostButtonLink>
-            </div>
-          </div>
+      {/* 1 - Hero */}
+      <ServiceHero
+        locale={locale}
+        breadcrumbs={breadcrumbs}
+        pill={{ kind: kit.pill.kind, tag: pick(kit.pill.tag, locale), text: kit.pill.text[locale], href: lp(kit.pill.href) }}
+        h1={t.h1}
+        lead={t.lede}
+        primaryLabel={t.ctaPrimary}
+        primaryHref={quoteHref}
+        links={[
+          { href: '#work', label: t.ctaSecondary },
+          { href: lp('/pricing'), label: t.cta.secondary },
+        ]}
+        visual={kit.hero(locale)}
+        visualLabel={kit.heroLabel[locale]}
+      />
 
-          <div className="mt-16 grid gap-6 sm:grid-cols-3">
-            {(['wire', 'design', 'live'] as const).map((v, i) => (
-              <div key={v} className="relative">
-                <StageFrame variant={v} />
-                <div className="mt-4">
-                  <div className="font-display text-sm font-medium text-foreground">
-                    {t.stages[i].k}
-                  </div>
-                  <p className="mt-1 text-[13px] leading-relaxed text-muted-foreground">
-                    {t.stages[i].d}
-                  </p>
+      {/* 2 - The three build stages and the four phases */}
+      <KitSection id="process" className="mt-6 sm:mt-10">
+        <KitHeading eyebrow={t.phases.eyebrow} eyebrowIcon={<Layers />} title={<AccentTitle text={t.phases.title} />} description={t.phases.body} />
+        <StepsGrid
+          className="mt-12 md:grid-cols-2 lg:grid-cols-4"
+          steps={t.phases.items.map((it, i) => ({
+            title: it.t,
+            text: it.d,
+            preview:
+              i < 3 ? (
+                <div className="grid gap-2">
+                  <BuildStagesPreview locale={locale} only={(['wire', 'design', 'live'] as const)[i]} />
+                  <p className="text-[12px] leading-snug text-muted-foreground">{t.stages[i].d}</p>
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 2 - Phases */}
-      <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
-        <div className="max-w-2xl">
-          <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-signature">
-            {t.phases.eyebrow}
-          </span>
-          <h2 className="mt-4 font-display text-3xl font-medium leading-[1.06] tracking-[-0.03em] text-foreground sm:text-4xl">
-            {t.phases.title}
-          </h2>
-          <p className="mt-4 text-base leading-relaxed text-muted-foreground">{t.phases.body}</p>
-        </div>
-
-        <ol className="mt-14 grid gap-px overflow-hidden rounded-[12px] border border-hairline bg-hairline md:grid-cols-2">
-          {t.phases.items.map((it) => (
-            <li key={it.n} className="bg-surface p-7 md:p-9">
-              <span className="font-display text-2xl font-medium tracking-[-0.03em] text-signature/40">
-                {it.n}
-              </span>
-              <h3 className="mt-4 font-display text-lg font-medium tracking-[-0.02em] text-foreground">
-                {it.t}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{it.d}</p>
-            </li>
-          ))}
-        </ol>
-      </section>
+              ) : undefined,
+          }))}
+        />
+      </KitSection>
 
       {/* 3 - Ownership */}
-      <section className="border-y border-hairline bg-surface-raised/30">
-        <div className="mx-auto grid max-w-6xl gap-12 px-6 py-20 md:py-28 lg:grid-cols-2 lg:gap-16">
-          <div>
-            <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-signature">
-              {t.ownership.eyebrow}
-            </span>
-            <h2 className="mt-4 font-display text-3xl font-medium leading-[1.06] tracking-[-0.03em] text-foreground sm:text-4xl">
-              {t.ownership.title}
-            </h2>
-            <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-              {t.ownership.body}
-            </p>
-          </div>
-          <ul className="space-y-4 self-center">
-            {t.ownership.points.map((p) => (
-              <li key={p} className="flex gap-3 text-sm text-muted-foreground">
-                <Tick className="text-signature" />
-                {p}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
+      <KitSection tinted>
+        <FeatureRow
+          flip
+          eyebrow={t.ownership.eyebrow}
+          eyebrowIcon={<KeyRound />}
+          title={<AccentTitle text={t.ownership.title} />}
+          body={t.ownership.body}
+          bullets={t.ownership.points}
+          preview={
+            <Stage>
+              <OwnershipPreview locale={locale} />
+            </Stage>
+          }
+        />
+      </KitSection>
 
       {/* 4 - Work */}
-      <section id="work" className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+      <KitSection id="work">
         <div className="flex flex-wrap items-end justify-between gap-6">
-          <div className="max-w-xl">
-            <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-signature">
-              {t.proof.eyebrow}
-            </span>
-            <h2 className="mt-4 font-display text-3xl font-medium leading-[1.06] tracking-[-0.03em] text-foreground sm:text-4xl">
-              {t.proof.title}
-            </h2>
-            <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-              {t.proof.body(PROJECT_COUNT)}
-            </p>
-          </div>
-          <Link
-            href={lp('/work')}
-            className="inline-flex items-center gap-2 text-sm font-medium text-signature hover:underline"
-          >
+          <KitHeading eyebrow={t.proof.eyebrow} title={<AccentTitle text={t.proof.title} />} description={t.proof.body(PROJECT_COUNT)} />
+          <Link href={lp('/work')} className="inline-flex items-center gap-1.5 text-[14px] font-medium text-link underline-offset-4 hover:underline">
             {t.proof.all}
             <ArrowUpRight className="size-4" aria-hidden />
           </Link>
         </div>
-
-        <div className="mt-12 grid gap-px overflow-hidden rounded-[12px] border border-hairline bg-hairline sm:grid-cols-2 lg:grid-cols-3">
-          {showcase.map((p) => (
-            <Link
-              key={p.slug}
-              href={lp(`/work/${p.slug}`)}
-              className="group bg-surface transition-colors hover:bg-background"
-            >
-              <div className="relative aspect-[16/10] overflow-hidden border-b border-hairline">
-                <PortfolioThumbnail
-                  src={p.screenshot}
-                  alt={p.name}
-                  className="transition-transform duration-500 group-hover:scale-[1.03]"
-                />
-              </div>
-              <div className="p-5">
-                <h3 className="font-display text-[15px] font-medium text-foreground">{p.name}</h3>
-                <p className="mt-2 line-clamp-2 text-[13px] leading-relaxed text-muted-foreground">
-                  {isEl ? p.summaryEl : p.summary}
-                </p>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </section>
+        <ProofGrid className="mt-12" projects={showcase} locale={locale} />
+      </KitSection>
 
       {/* 5 - Packages */}
-      <section className="border-y border-hairline bg-surface-raised/30">
-        <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
-          <div className="max-w-2xl">
-            <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-signature">
-              {t.pricing.eyebrow}
-            </span>
-            <h2 className="mt-4 font-display text-3xl font-medium leading-[1.06] tracking-[-0.03em] text-foreground sm:text-4xl">
-              {t.pricing.title}
-            </h2>
-            <p className="mt-4 text-base leading-relaxed text-muted-foreground">{t.pricing.body}</p>
-          </div>
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {websitePackages.map((tier) => (
-              <PriceCard key={tier.id} tier={tier} locale={locale} />
-            ))}
-          </div>
-          <p className="mt-8 text-sm text-muted-foreground">
-            <Link href={lp('/pricing')} className="font-medium text-signature hover:underline">
-              {t.pricing.all}
-            </Link>
-          </p>
-        </div>
-      </section>
+      <KitSection tinted id="pricing">
+        <KitHeading align="center" eyebrow={t.pricing.eyebrow} title={<AccentTitle text={t.pricing.title} />} description={t.pricing.body} />
+        <PriceTiers kind="website" locale={locale} className="mt-12" />
+        <p className="mt-10 text-center text-[14px]">
+          <Link href={lp('/pricing')} className="font-medium text-link underline-offset-4 hover:underline">
+            {t.pricing.all}
+          </Link>
+        </p>
+      </KitSection>
 
       {/* 6 - FAQ */}
-      <section className="mx-auto max-w-3xl px-6 py-20 md:py-28">
-        <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-signature">
-          {t.faq.eyebrow}
-        </span>
-        <h2 className="mt-4 font-display text-3xl font-medium leading-[1.06] tracking-[-0.03em] text-foreground sm:text-4xl">
-          {t.faq.title}
-        </h2>
-        <dl className="mt-10 divide-y divide-hairline border-y border-hairline">
-          {t.faq.items.map((f) => (
-            <div key={f.q} className="py-6">
-              <dt className="font-display text-[17px] font-medium tracking-[-0.01em] text-foreground">
-                {f.q}
-              </dt>
-              <dd className="mt-3 text-sm leading-relaxed text-muted-foreground">{f.a}</dd>
-            </div>
-          ))}
-        </dl>
-      </section>
+      <FaqBlock
+        locale={locale}
+        eyebrow={t.faq.eyebrow}
+        title={<AccentTitle text={t.faq.title} />}
+        faqs={t.faq.items.map((f) => ({ question: f.q, answer: f.a }))}
+      />
 
       {/* 7 - CTA */}
-      <section className="relative overflow-hidden border-t border-hairline">
-        <Bloom signature className="left-1/2 top-1/4 h-[24rem] w-[52rem] -translate-x-1/2" />
-        <div className="relative mx-auto max-w-3xl px-6 py-24 text-center">
-          <h2 className="font-display text-3xl font-medium leading-[1.05] tracking-[-0.04em] text-foreground md:text-5xl">
-            {t.cta.title}
-          </h2>
-          <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">
-            {t.cta.body}
-          </p>
-          <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
-            <PrimaryButtonLink href={lp('/get-started?service=website-creation')}>
-              {t.cta.primary}
-            </PrimaryButtonLink>
-            <GhostButtonLink href={lp('/pricing')}>{t.cta.secondary}</GhostButtonLink>
-          </div>
-        </div>
-      </section>
+      <CtaBand locale={locale} source="service-website-creation" title={<AccentTitle text={t.cta.title} />} description={t.cta.body} />
     </PageShell>
   );
 }

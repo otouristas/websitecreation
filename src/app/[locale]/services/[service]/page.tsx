@@ -13,9 +13,24 @@ import { isIndustryServiceIndexable } from '@/lib/indexability/industry-service'
 import { isValidLocale, localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 import { buildMetadata, buildServiceMetadata, generateArticleSchema, generateBreadcrumbSchema, generateServiceSchema, generateFAQSchema, combineSchemas } from '@/lib/seo';
 import { getAiVisibilityPillarCopy } from '@/data/ai-visibility-pillar';
-import { SchemaMarkup, Breadcrumbs, FAQSection } from '@/components/seo';
-import ServiceHubCommercialBody from '@/components/seo/ServiceHubCommercialBody';
-import { Section, SectionHeading, Bloom, PrimaryButtonLink, GhostButtonLink, MeshGrid, Tick } from '@/components/landing/primitives';
+import { SchemaMarkup } from '@/components/seo';
+import { MapPin } from 'lucide-react';
+import { CtaBand, FeatureRow, KitHeading, KitSection, Stage } from '@/components/kit';
+import {
+    AccentTitle,
+    AddOnCards,
+    ChipLinks,
+    DiyRow,
+    FaqBlock,
+    LinkCards,
+    PriceTiers,
+    ProcessGrid,
+    ProofGrid,
+    ServiceHero,
+    getServiceKit,
+    pick,
+} from '@/components/service-kit';
+import { resolvePriceTokens } from '@/data/pricing';
 import { NotForYou } from '@/components/positioning/NotForYou';
 import { SeoTimeline } from '@/components/positioning/SeoTimeline';
 import { getServiceBreadcrumbs, getServiceHubRelatedPaths } from '@/lib/linking';
@@ -83,12 +98,15 @@ export default async function ServicePage({ params }: PageProps) {
     // eslint-disable-next-line react-hooks/static-components
     if (Bespoke) return <Bespoke locale={locale as SiteLocale} />;
 
+
     const isEl = locale === 'el';
+    const siteLocale = locale as SiteLocale;
     const serviceEl = isEl ? getServiceEl(serviceSlug) : null;
 
     const displayName = serviceEl?.name ?? service.name;
-    const displayDesc = serviceEl?.description ?? service.description;
+    const displayDesc = resolvePriceTokens(serviceEl?.description ?? service.description, siteLocale);
     const displayFeatures = serviceEl?.features ?? service.features;
+    const kit = getServiceKit(serviceSlug);
 
     const t = isEl
         ? {
@@ -101,12 +119,22 @@ export default async function ServicePage({ params }: PageProps) {
             relatedServices: 'Σχετικές Υπηρεσίες',
             ctaTitle: 'Έτοιμοι να ξεκινήσουμε;',
             ctaDesc: `Ζητήστε μια δωρεάν προσφορά για ${displayName} σήμερα.`,
-            ctaButton: 'Δωρεάν Προσφορά',
             getQuote: 'Ζητήστε Προσφορά',
             viewByLocation: 'Δείτε ανά Τοποθεσία',
             faqTitle: 'Συχνές Ερωτήσεις',
             proofTitle: 'Σχετικά έργα',
             pricingLink: 'Δείτε τιμές & πακέτα →',
+            pricingTitle: 'Τιμές & πακέτα',
+            deliverables: 'Παραδοτέα',
+            process: 'Διαδικασία',
+            pricing: 'Τιμές',
+            audience: 'Για ποιον',
+            locations: 'Περιοχές',
+            industries: 'Κλάδοι',
+            work: 'Έργα',
+            allWork: 'Όλα τα έργα →',
+            more: 'Περισσότερα',
+            alsoExplore: 'Εξερευνήστε επίσης',
           }
         : {
             whatsIncluded: "What's Included",
@@ -118,21 +146,31 @@ export default async function ServicePage({ params }: PageProps) {
             relatedServices: 'Related Services',
             ctaTitle: 'Ready to Start?',
             ctaDesc: `Get a free quote for ${displayName.toLowerCase()} today.`,
-            ctaButton: 'Get Free Quote',
             getQuote: 'Get a Quote',
             viewByLocation: 'View by Location',
             faqTitle: 'Frequently Asked Questions',
             proofTitle: 'Related work',
             pricingLink: 'See pricing & packages →',
+            pricingTitle: 'Pricing & packages',
+            deliverables: 'Deliverables',
+            process: 'Process',
+            pricing: 'Pricing',
+            audience: 'Who it is for',
+            locations: 'Locations',
+            industries: 'Industries',
+            work: 'Work',
+            allWork: 'View all work →',
+            more: 'More',
+            alsoExplore: 'Also explore',
           };
 
-    const lp = (path: string) => localizedPath(locale as SiteLocale, path);
+    const lp = (path: string) => localizedPath(siteLocale, path);
 
     // Related services (excluding current)
     const relatedServices = services.filter((s) => s.slug !== serviceSlug).slice(0, 3);
 
     // Generate breadcrumbs for navigation
-    const breadcrumbs = getServiceBreadcrumbs(displayName, service.slug, locale as SiteLocale);
+    const breadcrumbs = getServiceBreadcrumbs(displayName, service.slug, siteLocale);
 
     const faqItems = getServiceFaqs(serviceSlug, isEl ? 'el' : 'en').map((f) => ({
         question: f.question,
@@ -148,7 +186,7 @@ export default async function ServicePage({ params }: PageProps) {
         generateBreadcrumbSchema({ items: breadcrumbs }),
         generateServiceSchema({
             name: displayName,
-            description: displayDesc,
+            description: serviceEl?.description ?? service.description,
             provider: { name: 'AnotherSEOGuru', url: 'https://anotherseoguru.com' },
             serviceType: 'Web Development',
         }),
@@ -156,7 +194,7 @@ export default async function ServicePage({ params }: PageProps) {
         // ISR revalidate republished the page with a fresh datePublished.
         generateArticleSchema({
             headline: displayName,
-            description: displayDesc,
+            description: serviceEl?.description ?? service.description,
             datePublished: GENERATED_CONTENT_PUBLISHED,
             dateModified: GENERATED_CONTENT_UPDATED,
             author: { name: 'AnotherSEOGuru' },
@@ -169,7 +207,7 @@ export default async function ServicePage({ params }: PageProps) {
     const locationsToShow = isCityPageService(serviceSlug)
         ? getIndexableServiceLocations(isEl ? 'el' : 'en')
         : [];
-    const hubRelated = getServiceHubRelatedPaths(serviceSlug, locale as SiteLocale).map((p) => ({
+    const hubRelated = getServiceHubRelatedPaths(serviceSlug, siteLocale).map((p) => ({
         slug: lp(p.path),
         title: isEl ? p.titleEl : p.titleEn,
     }));
@@ -177,202 +215,170 @@ export default async function ServicePage({ params }: PageProps) {
     // SEO retainers get the expectation-setting timeline; one-off builds do not.
     const isSeoService = ['local-seo', 'seo-audits', 'eshop-seo', 'ai-visibility', 'link-building', 'content-creation'].includes(serviceSlug);
 
+    const quoteHref = lp(`/get-started?service=${serviceSlug}`);
+    const heroLinks = [
+        { href: lp('/pricing'), label: t.pricingLink.replace(' →', '') },
+        ...(locationsToShow.length > 0 ? [{ href: '#locations', label: t.viewByLocation }] : []),
+    ];
+
     return (
         <>
             <SchemaMarkup schemas={schemas} />
-            <Header locale={locale as SiteLocale} />
+            <Header locale={siteLocale} />
             <main className="blueprint-grid relative z-0">
-                <section className="relative overflow-hidden border-b border-hairline">
-                    <Bloom className="left-1/2 top-[-8rem] h-[26rem] w-[58rem] -translate-x-1/2" />
-                    <div className="main-below-header relative mx-auto max-w-6xl px-6 pb-14 pt-6">
-                        <Breadcrumbs items={breadcrumbs} className="mb-6" />
-                        <h1 className="rise-in max-w-3xl font-display text-4xl font-medium leading-[1.05] tracking-[-0.04em] text-foreground md:text-6xl">
-                            {displayName}
-                        </h1>
-                        <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
-                            {displayDesc}
-                        </p>
-                        <div className="mt-9 flex flex-wrap gap-3">
-                            <PrimaryButtonLink href={lp('/get-started')}>{t.getQuote}</PrimaryButtonLink>
-                            {locationsToShow.length > 0 ? (
-                                <GhostButtonLink href="#locations">{t.viewByLocation}</GhostButtonLink>
-                            ) : null}
-                            <GhostButtonLink href={lp('/pricing')}>{t.pricingLink}</GhostButtonLink>
-                        </div>
-                    </div>
-                </section>
+                <ServiceHero
+                    locale={siteLocale}
+                    breadcrumbs={breadcrumbs}
+                    pill={{
+                        kind: kit.pill.kind,
+                        tag: pick(kit.pill.tag, siteLocale),
+                        text: kit.pill.text[siteLocale],
+                        href: lp(kit.pill.href),
+                    }}
+                    h1={displayName}
+                    lead={displayDesc}
+                    primaryLabel={kit.cta === 'quote' ? t.getQuote : undefined}
+                    primaryHref={kit.cta === 'quote' ? quoteHref : `${quoteHref}#free-audit`}
+                    links={heroLinks}
+                    visual={kit.hero(siteLocale)}
+                    visualLabel={kit.heroLabel[siteLocale]}
+                    wideVisual={kit.wide}
+                />
+
+                {/* What it is + deliverables */}
+                <KitSection className="mt-6 sm:mt-10">
+                    <FeatureRow
+                        eyebrow={t.deliverables}
+                        eyebrowIcon={<kit.icon />}
+                        title={<AccentTitle text={t.whatsIncluded} />}
+                        body={commercial?.definition}
+                        bullets={displayFeatures}
+                        links={[
+                            { href: lp('/pricing'), label: t.pricingLink.replace(' →', ''), primary: true },
+                            { href: lp('/work'), label: t.allWork.replace(' →', '') },
+                        ]}
+                        preview={<Stage>{kit.detail(siteLocale)}</Stage>}
+                    />
+                </KitSection>
 
                 {commercial ? (
-                    <ServiceHubCommercialBody commercial={commercial} locale={locale as SiteLocale} />
-                ) : null}
-
-                {/* Features */}
-                <Section>
-                    <SectionHeading align="left" eyebrow={isEl ? 'Παραδοτέα' : 'Deliverables'} title={t.whatsIncluded} className="mb-10" />
-                    <div>
-                        <MeshGrid className="md:grid-cols-2 lg:grid-cols-3">
-                            {displayFeatures.map((feature, i) => (
-                                <div key={i} className="flex items-start gap-3 bg-surface p-6">
-                                    <Tick />
-                                    <span className="text-sm leading-relaxed text-muted-foreground">{feature}</span>
-                                </div>
-                            ))}
-                        </MeshGrid>
-                    </div>
-                </Section>
-
-                <NotForYou locale={locale as SiteLocale} />
-
-                {isSeoService ? <SeoTimeline locale={locale as SiteLocale} /> : null}
-
-                {/* Location Pages */}
-                {locationsToShow.length > 0 ? (
-                <Section id="locations">
-                    <SectionHeading align="left" eyebrow={isEl ? 'Περιοχές' : 'Locations'} title={t.byCity} body={t.byCityDesc} className="mb-10" />
-                    <div>
-
-                        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
-                            {locationsToShow.map((location) => (
-                                <Link
-                                    key={location.slug}
-                                    href={lp(`/services/${serviceSlug}/${location.slug}`)}
-                                    className="glass-card hover-glow px-3 py-2 text-sm text-center rounded-lg border border-border transition-smooth"
-                                >
-                                    {isEl && location.cityLocal ? location.cityLocal : location.city}
-                                </Link>
-                            ))}
-                        </div>
-                        <div className="mt-8">
-                            <Link href={lp("/locations")} className="text-sm font-medium text-primary hover:underline">
-                                {t.allCities}
-                            </Link>
-                        </div>
-                    </div>
-                </Section>
-                ) : null}
-
-                {/* Industry Pages */}
-                <section className="section">
-                    <div className="container">
-                        <h2 className="text-2xl sm:text-3xl font-bold mb-4">
-                            {t.forIndustries}
-                        </h2>
-                        <p className="text-muted-foreground mb-8 max-w-2xl">
-                            {t.forIndustriesDesc}
-                        </p>
-
-                        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
-                            {getIndustriesForLocale(isEl ? 'el' : 'en').map((industry) => {
-                                const indName = isEl
-                                  ? (industriesEl[industry.slug]?.name ?? industry.name)
-                                  : industry.name;
-                                return (
-                                    <Link
-                                        key={industry.slug}
-                                        href={lp(
-                                            isIndustryServiceIndexable(industry.slug, serviceSlug, locale as SiteLocale)
-                                                ? `/solutions/${industry.slug}/${serviceSlug}`
-                                                : `/solutions/${industry.slug}`,
-                                        )}
-                                        className="glass-card hover-glow px-4 py-3 text-sm text-center rounded-lg border border-border transition-smooth"
-                                    >
-                                        {indName}
-                                    </Link>
-                                );
-                            })}
-                        </div>
-                    </div>
-                </section>
-
-                {/* Related Services */}
-                <section className="section bg-muted/30">
-                    <div className="container">
-                        <h2 className="text-2xl sm:text-3xl font-bold mb-8">{t.relatedServices}</h2>
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                            {relatedServices.map((related) => {
-                                const relEl = isEl ? getServiceEl(related.slug) : null;
-                                const relName = relEl?.name ?? related.name;
-                                const relDesc = relEl?.description ?? related.description;
-                                return (
-                                    <Link
-                                        key={related.slug}
-                                        href={lp(`/services/${related.slug}`)}
-                                        className="glass-card hover-glow card p-6"
-                                    >
-                                        <h3 className="font-semibold mb-2">{relName}</h3>
-                                        <p className="text-sm text-muted-foreground">{relDesc}</p>
-                                    </Link>
-                                );
-                            })}
-                        </div>
-                    </div>
-                </section>
-
-                {/* Money-page internal links */}
-                <section className="section">
-                    <div className="container max-w-3xl">
-                        <RelatedPages
-                            title={isEl ? 'Εξερευνήστε επίσης' : 'Also explore'}
-                            pages={hubRelated}
+                    <KitSection tinted id="process">
+                        <KitHeading eyebrow={t.process} title={<AccentTitle text={commercial.processTitle} />} />
+                        <ProcessGrid
+                            className="mt-12"
+                            steps={commercial.process.map((step) => ({ title: step }))}
                         />
-                    </div>
-                </section>
+                    </KitSection>
+                ) : null}
+
+                {/* Pricing, straight from src/data/pricing.ts */}
+                <KitSection id="pricing">
+                    <KitHeading
+                        align="center"
+                        eyebrow={t.pricing}
+                        title={<AccentTitle text={t.pricingTitle} />}
+                        description={commercial?.pricingTeaser}
+                    />
+                    {kit.addOns.length > 0 ? (
+                        <AddOnCards ids={kit.addOns} locale={siteLocale} className="mx-auto mt-12 max-w-3xl" />
+                    ) : null}
+                    {kit.pricing ? <PriceTiers kind={kit.pricing} locale={siteLocale} className="mt-12" /> : null}
+                    <p className="mt-10 text-center text-[14px]">
+                        <Link href={lp('/pricing')} className="font-medium text-link underline-offset-4 hover:underline">
+                            {t.pricingLink}
+                        </Link>
+                    </p>
+                </KitSection>
+
+                {commercial ? (
+                    <KitSection id="audience" className="border-t border-hairline pb-0 sm:pb-0">
+                        <KitHeading
+                            eyebrow={t.audience}
+                            title={<AccentTitle text={commercial.audienceTitle} />}
+                            description={commercial.audience}
+                        />
+                    </KitSection>
+                ) : null}
+
+                <NotForYou locale={siteLocale} />
+
+                {isSeoService ? <SeoTimeline locale={siteLocale} /> : null}
+
+                {kit.diy ? <DiyRow locale={siteLocale} source={`service-${serviceSlug}`} /> : null}
+
+                {/* Locations and industries */}
+                <KitSection id="locations" tinted={!kit.diy}>
+                    {locationsToShow.length > 0 ? (
+                        <div className="mb-20">
+                            <KitHeading eyebrow={t.locations} eyebrowIcon={<MapPin />} title={<AccentTitle text={t.byCity} />} description={t.byCityDesc} />
+                            <ChipLinks
+                                className="mt-10"
+                                items={locationsToShow.map((location) => ({
+                                    href: lp(`/services/${serviceSlug}/${location.slug}`),
+                                    label: isEl && location.cityLocal ? location.cityLocal : location.city,
+                                }))}
+                            />
+                            <p className="mt-8 text-[14px]">
+                                <Link href={lp('/locations')} className="font-medium text-link underline-offset-4 hover:underline">
+                                    {t.allCities}
+                                </Link>
+                            </p>
+                        </div>
+                    ) : null}
+                    <KitHeading eyebrow={t.industries} title={<AccentTitle text={t.forIndustries} />} description={t.forIndustriesDesc} />
+                    <ChipLinks
+                        className="mt-10"
+                        items={getIndustriesForLocale(isEl ? 'el' : 'en').map((industry) => ({
+                            href: lp(
+                                isIndustryServiceIndexable(industry.slug, serviceSlug, siteLocale)
+                                    ? `/solutions/${industry.slug}/${serviceSlug}`
+                                    : `/solutions/${industry.slug}`,
+                            ),
+                            label: isEl ? (industriesEl[industry.slug]?.name ?? industry.name) : industry.name,
+                        }))}
+                    />
+                </KitSection>
 
                 {/* Portfolio proof */}
-                <section className="section bg-muted/20">
-                    <div className="container">
-                        <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
-                            <h2 className="text-2xl sm:text-3xl font-bold">{t.proofTitle}</h2>
-                            <Link href={lp('/work')} className="text-sm font-medium text-primary hover:underline">
-                                {isEl ? 'Όλα τα έργα →' : 'View all work →'}
-                            </Link>
-                        </div>
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                            {proofProjects.map((project) => (
-                                <Link
-                                    key={project.slug}
-                                    href={lp(`/work/${project.slug}`)}
-                                    className="glass-card hover-glow card overflow-hidden"
-                                >
-                                    <div className="aspect-[16/10] bg-muted">
-                                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                                        <img
-                                            src={project.screenshot}
-                                            alt={`${project.name} homepage`}
-                                            className="h-full w-full object-cover object-top"
-                                        />
-                                    </div>
-                                    <div className="p-4">
-                                        <h3 className="font-semibold">{project.name}</h3>
-                                        <p className="mt-1 line-clamp-2 text-sm text-muted-foreground">
-                                            {isEl && project.summaryEl ? project.summaryEl : project.summary}
-                                        </p>
-                                    </div>
-                                </Link>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-
-                {/* FAQ */}
-                <section className="section bg-muted/30">
-                    <div className="container max-w-3xl">
-                        <FAQSection faqs={faqItems} title={t.faqTitle} />
-                    </div>
-                </section>
-
-                {/* CTA */}
-                <section className="section gradient-primary text-white">
-                    <div className="container text-center">
-                        <h2 className="text-3xl font-bold mb-4">{t.ctaTitle}</h2>
-                        <p className="text-white/80 mb-8">{t.ctaDesc}</p>
-                        <Link href={lp(`/get-started?service=${serviceSlug}`)} className="btn bg-white text-primary hover:bg-white/90">
-                            {t.ctaButton}
+                <KitSection>
+                    <div className="flex flex-wrap items-end justify-between gap-4">
+                        <KitHeading eyebrow={t.work} title={<AccentTitle text={t.proofTitle} />} />
+                        <Link href={lp('/work')} className="text-[14px] font-medium text-link underline-offset-4 hover:underline">
+                            {t.allWork}
                         </Link>
                     </div>
-                </section>
+                    <ProofGrid className="mt-12" projects={proofProjects} locale={siteLocale} />
+                </KitSection>
+
+                {/* Related services and money-page links */}
+                <KitSection tinted>
+                    <KitHeading eyebrow={t.more} title={<AccentTitle text={t.relatedServices} />} />
+                    <LinkCards
+                        className="mt-12"
+                        items={relatedServices.map((related) => {
+                            const relEl = isEl ? getServiceEl(related.slug) : null;
+                            return {
+                                href: lp(`/services/${related.slug}`),
+                                title: relEl?.name ?? related.name,
+                                body: resolvePriceTokens(relEl?.description ?? related.description, siteLocale),
+                            };
+                        })}
+                    />
+                    <div className="mt-12 max-w-3xl">
+                        <RelatedPages title={t.alsoExplore} pages={hubRelated} />
+                    </div>
+                </KitSection>
+
+                <FaqBlock locale={siteLocale} title={<AccentTitle text={t.faqTitle} />} faqs={faqItems} />
+
+                <CtaBand
+                    locale={siteLocale}
+                    source={`service-${serviceSlug}`}
+                    title={<AccentTitle text={t.ctaTitle} />}
+                    description={t.ctaDesc}
+                />
             </main>
-            <Footer />
+            <Footer locale={siteLocale} />
         </>
     );
 }
