@@ -1,11 +1,12 @@
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import { PageShell } from '@/components/bespoke/PageShell';
-import { KeyRound, Layers } from 'lucide-react';
+import { KeyRound, Layers, MapPin } from 'lucide-react';
 import { CtaBand, FeatureRow, KitHeading, KitSection, Stage, StepsGrid } from '@/components/kit';
 import {
   AccentTitle,
   BuildStagesPreview,
+  ChipLinks,
   FaqBlock,
   OwnershipPreview,
   PriceTiers,
@@ -17,7 +18,11 @@ import {
 import { portfolioProjects } from '@/data/portfolio';
 import { PROJECT_COUNT } from '@/data/company-facts';
 import { getServiceBySlug } from '@/data/services';
-import { getServiceEl } from '@/data/services-i18n';
+import { getServiceEl, type ServiceTopicEl } from '@/data/services-i18n';
+import { getIndexableServiceLocations } from '@/data/locations';
+import { resolvePriceTokens } from '@/data/pricing';
+import { getGreekLocative } from '@/lib/greek-locative';
+import { TopicSections, renderInlineLinks } from './topic-sections';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 import {
   generateBreadcrumbSchema,
@@ -39,6 +44,32 @@ import {
  */
 
 const SIGNATURE_HUE = 259;
+
+/**
+ * Greek keyword-map H2s that have no English counterpart on this page
+ * (κατασκευή ιστοσελίδας: τι περιλαμβάνει / παρουσίασης ή e-shop / WordPress).
+ */
+const topicsEl: readonly ServiceTopicEl[] = [
+  {
+    title: 'Τι περιλαμβάνει η κατασκευή ιστοσελίδας',
+    paragraphs: [
+      'Σχεδιασμό στα μέτρα του brand σας (όχι έτοιμο template), responsive κατασκευή mobile-first, τεχνικά θεμέλια SEO, ρύθμιση Analytics και Search Console και εκπαίδευση για να τη διαχειρίζεστε μόνοι σας. Τα κείμενα μπορούμε να τα γράψουμε εμείς ή να σας δώσουμε brief ανά σελίδα.',
+      'Για τη συνεχή ανάπτυξη μετά το λανσάρισμα υπάρχουν οι [υπηρεσίες SEO](/seo-services), και για το συνολικό κόστος ο οδηγός [πόσο κοστίζει μια ιστοσελίδα](/blog/poso-kostizei-mia-istoselida).',
+    ],
+  },
+  {
+    title: 'Ιστοσελίδα παρουσίασης ή e-shop;',
+    paragraphs: [
+      'Μια ιστοσελίδα παρουσίασης φέρνει τηλεφωνήματα, αιτήματα και κρατήσεις: υπηρεσίες, περιοχές, έργα και φόρμα επικοινωνίας. Αν πουλάτε προϊόντα online, χρειάζεστε ηλεκτρονικό κατάστημα με πληρωμές, μεταφορικά και τιμολόγηση, δηλαδή [κατασκευή eshop](/services/eshop-woocommerce).',
+    ],
+  },
+  {
+    title: 'Κατασκευή ιστοσελίδας με WordPress ή custom;',
+    paragraphs: [
+      'Το WordPress ταιριάζει όταν θέλετε να αλλάζετε μόνοι σας κείμενα και σελίδες, και είναι η βάση κάθε e-shop που στήνουμε σε WooCommerce. Η custom κατασκευή ταιριάζει όταν χρειάζεστε ειδική λειτουργικότητα ή μέγιστη ταχύτητα. Η τιμή ορίζεται από το εύρος (σελίδες, γλώσσες, λειτουργίες), και σε κάθε περίπτωση το site μένει δικό σας.',
+    ],
+  },
+];
 
 const copy = {
   en: {
@@ -136,10 +167,10 @@ const copy = {
   },
   el: {
     eyebrow: 'Κατασκευή ιστοσελίδων',
-    h1: 'Κατασκευή ιστοσελίδων που βρίσκονται στη Google, όχι απλώς δείχνουν έτοιμες',
+    h1: 'Κατασκευή ιστοσελίδων που φέρνουν πελάτες από τη Google',
     lede:
-      'Ένα site που κερδίζει βραβεία σχεδιασμού και δεν φέρνει επισκεψιμότητα είναι φυλλάδιο. Χτίζουμε τον σχεδιασμό και τα θεμέλια για το SEO ως μία δουλειά, ώστε αυτό που βγαίνει live να μπορεί πραγματικά να σας φέρνει πελάτες.',
-    ctaPrimary: 'Ξεκινήστε το project σας',
+      'Η κατασκευή ιστοσελίδας στην AnotherSEOGuru περιλαμβάνει σχεδιασμό, ανάπτυξη και βασικό SEO από την πρώτη μέρα. Η δημιουργία ιστοσελίδας ξεκινά από {{ENTRY_WEBSITE}} και ένα site παρουσίασης παραδίδεται συνήθως σε 3–5 εβδομάδες.',
+    ctaPrimary: 'Ζητήστε προσφορά',
     ctaSecondary: 'Δείτε έργα',
     stages: [
       { k: 'Wireframe', d: 'Πρώτα η δομή και η αρχιτεκτονική σελίδων' },
@@ -148,7 +179,7 @@ const copy = {
     ],
     phases: {
       eyebrow: 'Διαδικασία',
-      title: 'Πώς τρέχει πραγματικά μια κατασκευή',
+      title: 'Η διαδικασία κατασκευής ιστοσελίδας σε 4 βήματα',
       body:
         'Τέσσερις φάσεις. Βλέπετε δουλειά στο τέλος κάθε μίας, οπότε τίποτα δεν είναι έκπληξη στο λανσάρισμα.',
       items: [
@@ -189,22 +220,39 @@ const copy = {
     proof: {
       eyebrow: 'Έργα',
       title: 'Πρόσφατες κατασκευές',
-      body: (n: number) => `Μια επιλογή από ${n} έργα που έχουμε παραδώσει. Κάθε screenshot είναι ενεργό site.`,
+      body: (n: number) =>
+        `Μια επιλογή από ${n} έργα που έχουμε παραδώσει ως εταιρεία κατασκευής ιστοσελίδων. Κάθε screenshot είναι ενεργό site.`,
       all: 'Δείτε όλα τα έργα',
     },
     pricing: {
       eyebrow: 'Πακέτα',
-      title: 'Πόσο κοστίζει μια κατασκευή',
-      body: 'Σταθερό εύρος, σταθερή τιμή, συμφωνημένα πριν ξεκινήσουμε. Ο ΦΠΑ φαίνεται σε κάθε τιμή.',
+      title: 'Πακέτα και τιμές κατασκευής ιστοσελίδων',
+      body: 'Σταθερό εύρος, σταθερή τιμή, συμφωνημένα πριν ξεκινήσουμε. Το Starter είναι η οικονομική επιλογή για μικρές επιχειρήσεις. Ο ΦΠΑ φαίνεται σε κάθε τιμή.',
       all: 'Συγκρίνετε όλα τα πακέτα',
     },
     faq: {
       eyebrow: 'Ερωτήσεις',
-      title: 'Πριν μας δώσετε brief',
+      title: 'Συχνές ερωτήσεις για την κατασκευή ιστοσελίδας',
       items: [
         {
-          q: 'Πόσο χρόνο παίρνει μια ιστοσελίδα;',
-          a: 'Από τρεις έως δώδεκα εβδομάδες ανάλογα με το εύρος, το οποίο ορίζεται από το πόσες σελίδες χρειάζονται πραγματικό περιεχόμενο και αν υπάρχει ηλεκτρονικό κατάστημα. Ο χρόνος παράδοσης αναγράφεται σε κάθε πακέτο. Πρόκειται για ενδεικτικές φάσεις, όχι εγγυημένες ημερομηνίες.',
+          q: 'Πόσο κοστίζει η κατασκευή μιας ιστοσελίδας;',
+          a: 'Τα πακέτα ξεκινούν από {{ENTRY_WEBSITE}} (Starter), με {{WEBSITE_PRO}} (Professional) και {{WEBSITE_BUSINESS}} (Business) για μεγαλύτερα, πολύγλωσσα ή σύνθετα έργα. Όλες οι τιμές είναι χωρίς ΦΠΑ και η τελική προσφορά ορίζεται από το εύρος πριν ξεκινήσουμε.',
+        },
+        {
+          q: 'Πόσο χρόνο χρειάζεται η κατασκευή ιστοσελίδας;',
+          a: 'Ένα site παρουσίασης παραδίδεται συνήθως σε 3 έως 5 εβδομάδες. Μεγαλύτερα έργα χρειάζονται 5 έως 12 εβδομάδες, ανάλογα με το πόσες σελίδες χρειάζονται πραγματικό περιεχόμενο και αν υπάρχει ηλεκτρονικό κατάστημα. Ο χρόνος αναγράφεται σε κάθε πακέτο και είναι ενδεικτικός, όχι εγγυημένη ημερομηνία.',
+        },
+        {
+          q: 'Φτιάχνετε ιστοσελίδες με WordPress;',
+          a: 'Ναι, όταν ταιριάζει στο έργο: τα e-shop τα στήνουμε σε WooCommerce, που τρέχει πάνω σε WordPress, και σε site παρουσίασης το WordPress βολεύει όταν θέλετε να διαχειρίζεστε μόνοι σας κείμενα και σελίδες. Για ειδικές λειτουργίες ή μέγιστη ταχύτητα προτείνουμε custom κατασκευή.',
+        },
+        {
+          q: 'Η ιστοσελίδα θα είναι δική μου;',
+          a: 'Ναι. Το domain και το hosting μένουν στο όνομά σας, παίρνετε πλήρη πρόσβαση διαχειριστή και η τεχνολογία είναι τυπική και μεταφέρσιμη. Αν αλλάξετε συνεργάτη, το site φεύγει μαζί σας.',
+        },
+        {
+          q: 'Τι πληρώνω μετά την παράδοση (hosting, συντήρηση);',
+          a: 'Το hosting και το domain πληρώνονται απευθείας στον πάροχο, στο όνομά σας. Η συντήρηση (ενημερώσεις, αντίγραφα ασφαλείας, μικρές αλλαγές) είναι προαιρετική μηνιαία υπηρεσία με την τιμή της στη σελίδα τιμών. Δεν υπάρχει υποχρεωτική συνδρομή σε εμάς.',
         },
         {
           q: 'Γράφετε εσείς το περιεχόμενο;',
@@ -218,12 +266,16 @@ const copy = {
           q: 'Μπορούμε να επεξεργαζόμαστε μόνοι μας το site μετά;',
           a: 'Ναι, και σας εκπαιδεύουμε στην παράδοση. Αλλαγές ρουτίνας όπως κείμενα, εικόνες, τιμές και νέες σελίδες δεν πρέπει να απαιτούν γραφείο.',
         },
+        {
+          q: 'Χρησιμοποιείτε AI στην κατασκευή;',
+          a: 'Ως εργαλείο, όπου επιταχύνει τη δουλειά χωρίς να ρίχνει την ποιότητα. Η δομή, ο σχεδιασμός, τα κείμενα και ο κώδικας περνούν από έλεγχο της ομάδας πριν βγει οτιδήποτε live, και η ιστοσελίδα στήνεται ώστε να μπορεί να αναφέρεται και στις απαντήσεις AI.',
+        },
       ],
     },
     cta: {
-      title: 'Πείτε μας τι θέλετε να χτιστεί',
+      title: 'Ζητήστε προσφορά για την ιστοσελίδα σας',
       body: 'Στείλτε μας τι έχετε τώρα και τι πρέπει να κάνει. Θα επανέλθουμε με εύρος και σταθερή τιμή.',
-      primary: 'Ξεκινήστε το project σας',
+      primary: 'Ζητήστε προσφορά',
       secondary: 'Δείτε τιμές',
     },
   },
@@ -237,6 +289,9 @@ export function WebsiteCreationPage({ locale }: { locale: SiteLocale }) {
   const serviceEl = isEl ? getServiceEl('website-creation') : null;
 
   const showcase = portfolioProjects.filter((p) => p.featured).slice(0, 6);
+  const cities = isEl ? getIndexableServiceLocations('el') : [];
+  const rp = (text: string) => resolvePriceTokens(text, locale);
+  const faqs = t.faq.items.map((f) => ({ question: f.q, answer: rp(f.a) }));
 
   const breadcrumbs = [
     { name: isEl ? 'Αρχική' : 'Home', url: lp('/') },
@@ -253,7 +308,7 @@ export function WebsiteCreationPage({ locale }: { locale: SiteLocale }) {
       areaServed: isEl ? ['GR'] : ['GR', 'US', 'GB'],
       serviceType: isEl ? 'Κατασκευή ιστοσελίδων' : 'Website design and development',
     }),
-    generateFAQSchema({ faqs: t.faq.items.map((f) => ({ question: f.q, answer: f.a })) }),
+    generateFAQSchema({ faqs }),
   );
 
   const kit = getServiceKit('website-creation');
@@ -267,7 +322,7 @@ export function WebsiteCreationPage({ locale }: { locale: SiteLocale }) {
         breadcrumbs={breadcrumbs}
         pill={{ kind: kit.pill.kind, tag: pick(kit.pill.tag, locale), text: kit.pill.text[locale], href: lp(kit.pill.href) }}
         h1={t.h1}
-        lead={t.lede}
+        lead={rp(t.lede)}
         primaryLabel={t.ctaPrimary}
         primaryHref={quoteHref}
         links={[
@@ -296,6 +351,8 @@ export function WebsiteCreationPage({ locale }: { locale: SiteLocale }) {
           }))}
         />
       </KitSection>
+
+      {isEl ? <TopicSections topics={topicsEl} locale={locale} id="whats-included" /> : null}
 
       {/* 3 - Ownership */}
       <KitSection tinted>
@@ -337,12 +394,33 @@ export function WebsiteCreationPage({ locale }: { locale: SiteLocale }) {
         </p>
       </KitSection>
 
+      {isEl ? (
+        <KitSection id="locations">
+          <KitHeading
+            eyebrow="Περιοχές"
+            eyebrowIcon={<MapPin />}
+            title={<AccentTitle text="Κατασκευή ιστοσελίδων σε Αθήνα, Θεσσαλονίκη, Κρήτη και νησιά" />}
+            description={renderInlineLinks(
+              'Δουλεύουμε με επιχειρήσεις σε όλη την Ελλάδα. Δείτε για παράδειγμα την [κατασκευή ιστοσελίδων στην Αθήνα](/services/website-creation/athens-gr), στη [Θεσσαλονίκη](/services/website-creation/thessaloniki-gr) και στο [Ηράκλειο](/services/website-creation/heraklion-gr), ή επιλέξτε την πόλη σας:',
+              locale,
+            )}
+          />
+          <ChipLinks
+            className="mt-10"
+            items={cities.map((l) => ({
+              href: lp(`/services/website-creation/${l.slug}`),
+              label: `Ιστοσελίδες ${getGreekLocative(l.slug, l.cityLocal ?? l.city)}`,
+            }))}
+          />
+        </KitSection>
+      ) : null}
+
       {/* 6 - FAQ */}
       <FaqBlock
         locale={locale}
         eyebrow={t.faq.eyebrow}
         title={<AccentTitle text={t.faq.title} />}
-        faqs={t.faq.items.map((f) => ({ question: f.q, answer: f.a }))}
+        faqs={faqs}
       />
 
       {/* 7 - CTA */}

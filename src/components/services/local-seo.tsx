@@ -16,7 +16,9 @@ import {
 import { cn } from '@/lib/cn';
 import { getIndexableServiceLocations } from '@/data/locations';
 import { getServiceBySlug } from '@/data/services';
-import { getServiceEl } from '@/data/services-i18n';
+import { getServiceEl, type ServiceTopicEl } from '@/data/services-i18n';
+import { resolvePriceTokens } from '@/data/pricing';
+import { TopicSections } from './topic-sections';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 import {
   generateBreadcrumbSchema,
@@ -42,6 +44,23 @@ import {
  */
 
 const SIGNATURE_HUE = 200;
+
+/** Greek keyword-map H2s with no English counterpart on this page. */
+const topicsEl: readonly ServiceTopicEl[] = [
+  {
+    title: 'Κριτικές: πώς τις αυξάνετε σωστά',
+    paragraphs: [
+      'Ζητήστε κριτική τη στιγμή που ο πελάτης είναι ικανοποιημένος, με έναν απευθείας σύνδεσμο προς το προφίλ σας, και απαντήστε σε κάθε κριτική, θετική ή αρνητική. Δεν γράφουμε, δεν αγοράζουμε και δεν «φιλτράρουμε» κριτικές: παραβιάζουν τις οδηγίες της Google και μπορεί να οδηγήσουν σε αναστολή του προφίλ.',
+    ],
+  },
+  {
+    title: 'Τοπικό SEO για ξενοδοχεία και rent-a-car στα νησιά',
+    paragraphs: [
+      'Στα νησιά ο επισκέπτης ψάχνει πριν φτάσει, συχνά στα αγγλικά και με όνομα λιμανιού ή αεροδρομίου. Το προφίλ, οι φωτογραφίες και οι σελίδες σας πρέπει να απαντούν σε αυτές τις αναζητήσεις. Δείτε πώς το εφαρμόζουμε στις [ιστοσελίδες ξενοδοχείων](/solutions/hotels) και στις [ιστοσελίδες rent a car](/solutions/rent-a-car).',
+      'Αν η επιχείρησή σας δεν είναι ακόμα στον χάρτη, ξεκινήστε από τον οδηγό [πώς βάζω την επιχείρησή μου στο Google Maps](/blog/epixeirisi-sto-google-maps).',
+    ],
+  },
+];
 
 const copy = {
   en: {
@@ -152,9 +171,9 @@ const copy = {
   },
   el: {
     eyebrow: 'Τοπικό SEO',
-    h1: 'Τοπικό SEO: εμφανιστείτε στο πακέτο χάρτη, εκεί που καταλήγουν οι τοπικές αναζητήσεις',
+    h1: 'Τοπικό SEO: εμφάνιση στο Google Maps και στις τοπικές αναζητήσεις',
     lede:
-      'Στις αναζητήσεις «κοντά μου» και με όνομα πόλης, οι περισσότεροι δεν κατεβαίνουν ποτέ κάτω από τα τρία αποτελέσματα του χάρτη. Το να μπείτε εκεί είναι διαφορετική δουλειά από το να ανεβάσετε μια σελίδα, και είναι αυτή που φέρνει το τηλεφώνημα σε μια τοπική επιχείρηση.',
+      'Το τοπικό SEO κάνει την επιχείρησή σας να εμφανίζεται στον χάρτη της Google και στα τοπικά αποτελέσματα όταν κάποιος ψάχνει «κοντά μου» ή με όνομα πόλης. Ξεκινάμε από το Google Business Profile (πρώην Google My Business) και τη συνέπεια των στοιχείων σας σε όλο το διαδίκτυο.',
     ctaPrimary: 'Ζητήστε προσφορά για τοπικό SEO',
     ctaSecondary: 'Πώς δουλεύει',
     pack: {
@@ -166,9 +185,9 @@ const copy = {
     },
     factors: {
       eyebrow: 'Τι το κρίνει',
-      title: 'Τρεις παράγοντες, και μόνο ο ένας είναι δεδομένος',
+      title: 'Τι είναι το τοπικό SEO και τι κρίνει τη θέση σας',
       body:
-        'Η Google αναφέρει ότι τα τοπικά αποτελέσματα κατατάσσονται με βάση τη συνάφεια, την απόσταση και την αναγνωρισιμότητα. Την έδρα σας δεν τη μετακινείτε, οπότε η δουλειά πάει στα άλλα δύο.',
+        'Οι περισσότεροι δεν κατεβαίνουν ποτέ κάτω από τα τρία αποτελέσματα του χάρτη. Η Google αναφέρει ότι αυτά κατατάσσονται με βάση τη συνάφεια, την απόσταση και την αναγνωρισιμότητα. Την έδρα σας δεν τη μετακινείτε, οπότε η δουλειά πάει στα άλλα δύο.',
       items: [
         {
           k: 'Συνάφεια',
@@ -191,7 +210,7 @@ const copy = {
     },
     profile: {
       eyebrow: 'Προφίλ',
-      title: 'Το Google Business Profile είναι σελίδα προϊόντος που δεν σας ανήκει',
+      title: 'Βελτιστοποίηση Google Business Profile',
       body:
         'Συχνά είναι το πρώτο που βλέπει ο πελάτης και η τελευταία σελίδα που χρειάζεται. Τα μισογεμισμένα προφίλ χάνουν από τα πλήρη στην ίδια αναζήτηση.',
       points: [
@@ -222,15 +241,27 @@ const copy = {
     },
     coverage: {
       eyebrow: 'Κάλυψη',
-      title: 'Μία σελίδα για κάθε περιοχή που πραγματικά εξυπηρετείτε',
+      title: 'Σελίδες ανά περιοχή και τοπικά backlinks',
       body:
-        'Μια σελίδα επικοινωνίας με είκοσι πόλεις δεν κατατάσσεται σε καμία. Πραγματικές σελίδες περιοχών, μόνο για μέρη όπου όντως δραστηριοποιείστε.',
+        'Μια σελίδα επικοινωνίας με είκοσι πόλεις δεν κατατάσσεται σε καμία. Φτιάχνουμε πραγματικές σελίδες περιοχών, μόνο για μέρη όπου όντως δραστηριοποιείστε, και τις στηρίζουμε με συνδέσμους από τοπικά sites, συλλόγους και καταλόγους της περιοχής.',
       more: 'Δείτε όλες τις περιοχές',
     },
     faq: {
       eyebrow: 'Ερωτήσεις',
       title: 'Συχνές ερωτήσεις για το τοπικό SEO',
       items: [
+        {
+          q: 'Γιατί η επιχείρησή μου δεν εμφανίζεται στο Google Maps;',
+          a: 'Οι πιο συχνές αιτίες είναι ότι το προφίλ δεν έχει επαληθευτεί, η κύρια κατηγορία δεν ταιριάζει με αυτό που ψάχνει ο πελάτης, τα στοιχεία διαφέρουν από site σε site ή απλώς άλλοι ανταγωνιστές είναι πιο κοντά και πιο γνωστοί. Ξεκινάμε από έναν έλεγχο του προφίλ για να δούμε ποιο από αυτά ισχύει.',
+        },
+        {
+          q: 'Πώς βάζω την επιχείρησή μου στο Google Maps;',
+          a: 'Δημιουργείτε δωρεάν Google Business Profile, δηλώνετε διεύθυνση ή περιοχή εξυπηρέτησης, επιλέγετε κατηγορία και ολοκληρώνετε την επαλήθευση. Τα βήματα αναλυτικά είναι στον οδηγό μας «Πώς βάζω την επιχείρησή μου στο Google Maps».',
+        },
+        {
+          q: 'Πόσο κοστίζει το τοπικό SEO;',
+          a: 'Το τοπικό SEO περιλαμβάνεται σε όλα τα μηνιαία πακέτα SEO, από {{ENTRY_SEO}} τον μήνα χωρίς ΦΠΑ. Για μία τοποθεσία σε μία πόλη συνήθως αρκεί το Foundations· περισσότερες τοποθεσίες ή ανταγωνιστικοί κλάδοι χρειάζονται μεγαλύτερο πακέτο.',
+        },
         {
           q: 'Σε πόσο καιρό θα εμφανιστούμε στο πακέτο χάρτη;',
           a: 'Η δουλειά στο προφίλ και στη συνέπεια μπορεί να δείξει κίνηση μέσα σε εβδομάδες, ενώ η αναγνωρισιμότητα χτίζεται σε μήνες. Όποιος σας δίνει ημερομηνία μαντεύει. Δουλεύουμε σε ενδεικτικές φάσεις και αναφέρουμε τι πραγματικά άλλαξε.',
@@ -250,7 +281,7 @@ const copy = {
       ],
     },
     cta: {
-      title: 'Δείτε πού βρίσκεστε τοπικά',
+      title: 'Δείτε πού βρίσκεστε στον χάρτη',
       body: 'Πείτε μας την επιχείρηση και την περιοχή σας. Θα κοιτάξουμε το προφίλ σας, τις αναφορές σας και ποιος κρατά σήμερα το πακέτο.',
       primary: 'Ζητήστε προσφορά',
       secondary: 'Δείτε τιμές',
@@ -269,6 +300,8 @@ export function LocalSeoPage({ locale }: { locale: SiteLocale }) {
   // them noindex, now 410) and the first 18 Greek cities on /el.
   const locations = getIndexableServiceLocations(locale);
 
+  const faqs = t.faq.items.map((f) => ({ question: f.q, answer: resolvePriceTokens(f.a, locale) }));
+
   const breadcrumbs = [
     { name: isEl ? 'Αρχική' : 'Home', url: lp('/') },
     { name: isEl ? 'Υπηρεσίες' : 'Services', url: lp('/services') },
@@ -284,7 +317,7 @@ export function LocalSeoPage({ locale }: { locale: SiteLocale }) {
       areaServed: isEl ? ['GR'] : ['GR', 'US', 'GB'],
       serviceType: isEl ? 'Τοπικό SEO' : 'Local SEO',
     }),
-    generateFAQSchema({ faqs: t.faq.items.map((f) => ({ question: f.q, answer: f.a })) }),
+    generateFAQSchema({ faqs }),
   );
 
   const kit = getServiceKit('local-seo');
@@ -381,6 +414,8 @@ export function LocalSeoPage({ locale }: { locale: SiteLocale }) {
         </div>
       </KitSection>
 
+      {isEl ? <TopicSections topics={topicsEl} locale={locale} id="reviews" /> : null}
+
       {/* 5 - Pricing, from src/data/pricing.ts */}
       <KitSection tinted id="pricing">
         <KitHeading align="center" eyebrow={pricing.eyebrow} title={<AccentTitle text={pricing.title} />} description={pricing.body} />
@@ -415,7 +450,7 @@ export function LocalSeoPage({ locale }: { locale: SiteLocale }) {
         tinted
         eyebrow={t.faq.eyebrow}
         title={<AccentTitle text={t.faq.title} />}
-        faqs={t.faq.items.map((f) => ({ question: f.q, answer: f.a }))}
+        faqs={faqs}
       />
 
       {/* 8 - CTA */}

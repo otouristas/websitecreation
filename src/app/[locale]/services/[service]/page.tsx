@@ -40,6 +40,8 @@ import { getFeaturedPortfolio, portfolioProjects } from '@/data/portfolio';
 import RelatedPages from '@/components/seo/RelatedPages';
 import { getBespokeServicePage } from '@/components/services/registry';
 import { GENERATED_CONTENT_PUBLISHED, GENERATED_CONTENT_UPDATED } from '@/lib/seo/content-dates';
+import { TopicSections } from '@/components/services/topic-sections';
+import { withExactTitle } from '../_lib/exact-title';
 
 interface PageProps {
     params: Promise<{ locale: string; service: string }>;
@@ -65,6 +67,21 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
     if (!service) {
         return { title: 'Service Not Found' };
+    }
+
+    // Greek hubs with keyword-map SERP strings ship them verbatim.
+    const seoEl = locale === 'el' ? getServiceEl(serviceSlug)?.seo : undefined;
+    if (seoEl) {
+        return withExactTitle(
+            buildMetadata({
+                title: seoEl.title,
+                description: seoEl.description,
+                path: localizedPath('el', `/services/${serviceSlug}`),
+                hreflangPath: `/services/${serviceSlug}`,
+                primaryKeyword: getServiceEl(serviceSlug)?.titleKeyword,
+            }),
+            seoEl.title,
+        );
     }
 
     if (serviceSlug === 'ai-visibility') {
@@ -107,6 +124,8 @@ export default async function ServicePage({ params }: PageProps) {
     const displayDesc = resolvePriceTokens(serviceEl?.description ?? service.description, siteLocale);
     const displayFeatures = serviceEl?.features ?? service.features;
     const kit = getServiceKit(serviceSlug);
+    // Keyword-map copy (H1, lead, H2s) for Greek hubs that have it.
+    const pageEl = serviceEl?.page;
 
     const t = isEl
         ? {
@@ -115,10 +134,10 @@ export default async function ServicePage({ params }: PageProps) {
             byCityDesc: `Επιλέξτε την πόλη σας για τοπικές λεπτομέρειες.`,
             allCities: 'Δείτε όλες τις τοποθεσίες →',
             forIndustries: `${displayName} για Κλάδους & Επιχειρήσεις`,
-            forIndustriesDesc: `Εξειδικευμένες λύσεις ${displayName} προσαρμοσμένες στις ανάγκες της δικής σας δραστηριότητας.`,
+            forIndustriesDesc: `Λύσεις για ${serviceEl?.nameAccusative ?? displayName}, προσαρμοσμένες στις ανάγκες κάθε κλάδου.`,
             relatedServices: 'Σχετικές Υπηρεσίες',
             ctaTitle: 'Έτοιμοι να ξεκινήσουμε;',
-            ctaDesc: `Ζητήστε μια δωρεάν προσφορά για ${displayName} σήμερα.`,
+            ctaDesc: `Ζητήστε μια δωρεάν προσφορά για ${serviceEl?.nameAccusative ?? displayName} σήμερα.`,
             getQuote: 'Ζητήστε Προσφορά',
             viewByLocation: 'Δείτε ανά Τοποθεσία',
             faqTitle: 'Συχνές Ερωτήσεις',
@@ -235,8 +254,8 @@ export default async function ServicePage({ params }: PageProps) {
                         text: kit.pill.text[siteLocale],
                         href: lp(kit.pill.href),
                     }}
-                    h1={displayName}
-                    lead={displayDesc}
+                    h1={pageEl?.h1 ?? displayName}
+                    lead={pageEl ? resolvePriceTokens(pageEl.lead, siteLocale) : displayDesc}
                     primaryLabel={kit.cta === 'quote' ? t.getQuote : undefined}
                     primaryHref={kit.cta === 'quote' ? quoteHref : `${quoteHref}#free-audit`}
                     links={heroLinks}
@@ -250,7 +269,7 @@ export default async function ServicePage({ params }: PageProps) {
                     <FeatureRow
                         eyebrow={t.deliverables}
                         eyebrowIcon={<kit.icon />}
-                        title={<AccentTitle text={t.whatsIncluded} />}
+                        title={<AccentTitle text={pageEl?.includedTitle ?? t.whatsIncluded} />}
                         body={commercial?.definition}
                         bullets={displayFeatures}
                         links={[
@@ -263,7 +282,7 @@ export default async function ServicePage({ params }: PageProps) {
 
                 {commercial ? (
                     <KitSection tinted id="process">
-                        <KitHeading eyebrow={t.process} title={<AccentTitle text={commercial.processTitle} />} />
+                        <KitHeading eyebrow={t.process} title={<AccentTitle text={pageEl?.processTitle ?? commercial.processTitle} />} />
                         <ProcessGrid
                             className="mt-12"
                             steps={commercial.process.map((step) => ({ title: step }))}
@@ -276,7 +295,7 @@ export default async function ServicePage({ params }: PageProps) {
                     <KitHeading
                         align="center"
                         eyebrow={t.pricing}
-                        title={<AccentTitle text={t.pricingTitle} />}
+                        title={<AccentTitle text={pageEl?.pricingTitle ?? t.pricingTitle} />}
                         description={commercial?.pricingTeaser}
                     />
                     {kit.addOns.length > 0 ? (
@@ -289,6 +308,8 @@ export default async function ServicePage({ params }: PageProps) {
                         </Link>
                     </p>
                 </KitSection>
+
+                <TopicSections topics={pageEl?.topics} locale={siteLocale} tinted id="topics" />
 
                 {commercial ? (
                     <KitSection id="audience" className="border-t border-hairline pb-0 sm:pb-0">
@@ -310,7 +331,7 @@ export default async function ServicePage({ params }: PageProps) {
                 <KitSection id="locations" tinted={!kit.diy}>
                     {locationsToShow.length > 0 ? (
                         <div className="mb-20">
-                            <KitHeading eyebrow={t.locations} eyebrowIcon={<MapPin />} title={<AccentTitle text={t.byCity} />} description={t.byCityDesc} />
+                            <KitHeading eyebrow={t.locations} eyebrowIcon={<MapPin />} title={<AccentTitle text={pageEl?.citiesTitle ?? t.byCity} />} description={t.byCityDesc} />
                             <ChipLinks
                                 className="mt-10"
                                 items={locationsToShow.map((location) => ({
@@ -369,7 +390,7 @@ export default async function ServicePage({ params }: PageProps) {
                     </div>
                 </KitSection>
 
-                <FaqBlock locale={siteLocale} title={<AccentTitle text={t.faqTitle} />} faqs={faqItems} />
+                <FaqBlock locale={siteLocale} title={<AccentTitle text={pageEl?.faqTitle ?? t.faqTitle} />} faqs={faqItems} />
 
                 <CtaBand
                     locale={siteLocale}

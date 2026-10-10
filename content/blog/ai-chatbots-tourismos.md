@@ -23,7 +23,7 @@ faq:
 
 Η ενσωμάτωση **AI Chatbots στον τουρισμό** είναι πλέον βασικό στοιχείο για σύγχρονες ιστοσελίδες ξενοδοχείων, villas και ενοικίασης αυτοκινήτων. Οι ταξιδιώτες θέλουν άμεσες απαντήσεις για διαθεσιμότητα, ακύρωση, παροχές ή παραλαβή - οποιαδήποτε ώρα. Ένας σωστά στημένος ψηφιακός βοηθός βελτιώνει UX, αυξάνει direct bookings και τροφοδοτεί **AEO/GEO**: οι ίδιες απαντήσεις γίνονται FAQ στη σελίδα και πηγές που μπορούν να παραθέσουν τα μοντέλα AI.
 
-Συνδέουμε chatbots με την [Ορατότητα σε AI](/el/services/ai-visibility) και τις [λύσεις Travel AI Chatbots](/el/solutions/travel-ai-chatbots). Για το ευρύτερο πλαίσιο στην Ελλάδα: [GEO & AEO](/el/blog/geo-aeo-ellada).
+Συνδέουμε chatbots με την [Ορατότητα σε AI](/el/services/ai-visibility) και τις [λύσεις Travel AI Chatbots](/el/solutions/travel-ai-chatbots). Για το ευρύτερο πλαίσιο στην Ελλάδα: [GEO & AEO](/el/blog/geo-vs-seo-vs-aeo-el).
 
 ## Πλεονεκτήματα για ξενοδοχεία και rent-a-car
 
@@ -42,7 +42,7 @@ faq:
 Τα σύγχρονα bots χρησιμοποιούν NLP/RAG πάνω στη δική σας βάση γνώσης - όχι μόνο decision trees.
 
 1. **FAQ από πραγματικές ερωτήσεις chat:** Οι top ερωτήσεις γίνονται ενότητες στη σελίδα με schema → καλύτερες πιθανότητες [featured snippets](/glossary?term=featured-snippet) και AI Overviews.
-2. **Φυσική γλώσσα = AEO gold:** «Μπορώ να παραλάβω μετά τα μεσάνυχτα;» είναι ακριβώς το είδος query που στοχεύει το [AEO](/el/blog/geo-aeo-ellada).
+2. **Φυσική γλώσσα = AEO gold:** «Μπορώ να παραλάβω μετά τα μεσάνυχτα;» είναι ακριβώς το είδος query που στοχεύει το [AEO](/el/blog/geo-vs-seo-vs-aeo-el).
 3. **Internal links στις απαντήσεις:** Κάθε απάντηση δείχνει σε room/fleet/policy URL → αύξηση εσωτερικής επισκεψιμότητας και σήματα για GEO.
 4. **Κοινή knowledge base:** Το ίδιο corpus τροφοδοτεί bot, FAQ pages και citation sampling - δείτε μέτρηση στο [LLM citations guide](/en/blog/llm-citations-brand-visibility).
 
@@ -56,7 +56,7 @@ GEO χωρίς on-page αποδείξεις αποτυγχάνει. Chatbot χω
 * «Είναι οικογενειακό / pet-friendly το κατάλυμα;»
 * «Τι περιλαμβάνει το πρωινό / η ασφάλεια πλήρους κάλυψης;»
 
-Κάθε μία από αυτές, με απάντηση 40–60 λέξεων και schema, γίνεται AEO asset. Το chatbot απαντά ζωντανά· η σελίδα παραμένει η πηγή αλήθειας για Google και LLMs. Για agency-level GEO framing δείτε [GEO agency Ελλάδα](/el/blog/geo-agency-ellada) και [AI SEO agency](/el/blog/ai-seo-agency-geo-aeo-el).
+Κάθε μία από αυτές, με απάντηση 40–60 λέξεων και schema, γίνεται AEO asset. Το chatbot απαντά ζωντανά· η σελίδα παραμένει η πηγή αλήθειας για Google και LLMs. Για agency-level GEO framing δείτε [GEO agency Ελλάδα](/el/services/ai-visibility) και [AI SEO agency](/el/blog/ai-seo-agency-geo-aeo-el).
 
 ## Σωστή ενσωμάτωση χωρίς να σκοτώσετε το SEO
 
@@ -113,7 +113,7 @@ GEO χωρίς on-page αποδείξεις αποτυγχάνει. Chatbot χω
 
 ### Βοηθάει στο SEO και το AEO;
 
-Ναι όταν οι ερωτήσεις γίνονται ορατό FAQ με schema και εσωτερικούς συνδέσμους. Έτσι κερδίζετε snippets και τροφοδοτείτε GEO. Δείτε επίσης [GEO agency Ελλάδα](/el/blog/geo-agency-ellada).
+Ναι όταν οι ερωτήσεις γίνονται ορατό FAQ με schema και εσωτερικούς συνδέσμους. Έτσι κερδίζετε snippets και τροφοδοτείτε GEO. Δείτε επίσης [GEO agency Ελλάδα](/el/services/ai-visibility).
 
 ### Επιβαρύνει την ταχύτητα;
 

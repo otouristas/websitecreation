@@ -101,17 +101,16 @@ export function AiVisibilityPage({ locale }: { locale: SiteLocale }) {
     { path: '/services/local-seo', title: isEl ? 'Τοπικό SEO' : 'Local SEO' },
     { path: '/pricing', title: isEl ? 'Τιμές και πακέτα' : 'Pricing and packages' },
     {
-      path: isEl ? '/blog/geo-agency-ellada' : '/blog/ai-seo-agency-geo-aeo',
-      title: isEl ? 'GEO agency Ελλάδα' : 'AI SEO agency (GEO / AEO)',
+      path: isEl ? '/blog/ai-seo-agency-geo-aeo-el' : '/blog/ai-seo-agency-geo-aeo',
+      title: isEl ? 'Τι είναι το AI SEO' : 'AI SEO agency (GEO / AEO)',
     },
     {
       path: isEl ? '/blog/geo-vs-seo-vs-aeo-el' : '/blog/geo-vs-seo-vs-aeo',
       title: isEl ? 'GEO vs SEO vs AEO' : 'GEO vs SEO vs AEO',
     },
-    {
-      path: isEl ? '/blog/geo-aeo-ellada' : '/blog/geo-aeo-global-seo-playbook',
-      title: isEl ? 'GEO και AEO στην Ελλάδα' : 'GEO / AEO playbook',
-    },
+    ...(isEl
+      ? []
+      : [{ path: '/blog/geo-aeo-global-seo-playbook', title: 'GEO / AEO playbook' }]),
   ];
 
   const kit = getServiceKit('ai-visibility');
