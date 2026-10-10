@@ -71,7 +71,7 @@ No engine guarantees it will mention you. What you control is whether your conte
 | Monthly SEO (Foundations-Growth) | {{ENTRY_SEO}} – {{SEO_GROWTH}}/mo | Room pages, GBP, local content |
 | Competitive destination / Authority | {{SEO_GROWTH}} – {{SEO_AUTHORITY}}+/mo | Santorini, Mykonos, multilingual |
 | Technical + content audit | €400 – €800 | Pre-season or pre-redesign |
-| Hospitality website package | from €899 | Booking UX, schema, speed |
+| Hospitality website package | from {{ENTRY_WEBSITE}} | Booking UX, schema, speed |
 | Time to local / branded wins | 2–3 months | Maps + “hotel + town” |
 | Time to destination head terms | 4–6+ months | Needs content + authority |
 

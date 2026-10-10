@@ -11,7 +11,7 @@ categoryColor: bg-sky-100 text-sky-800
 pillar: industry-playbooks
 faq:
   - question: "How much does a hotel website cost?"
-    answer: "Typically €1,500–€3,500 for a site with bookings. Our Professional (€1,799) and Business (€2,999) packages cover most properties, with SEO foundations from day one."
+    answer: "Typically €1,500–€3,500 for a site with bookings. Our Professional ({{WEBSITE_PRO}}) and Business ({{WEBSITE_BUSINESS}}) packages cover most properties, with SEO foundations from day one."
   - question: "Why invest in direct bookings?"
     answer: "Every Booking/Expedia reservation costs 15–25% commission. Direct bookings from your own site cut that cost and give you the guest relationship."
   - question: "Do I need a booking engine?"
@@ -40,10 +40,10 @@ Explore our [hotel solutions](/en/solutions/hotels) and [portfolio](/en/work).
 | Project type | Typical cost | Includes |
 | :--- | :--- | :--- |
 | Boutique / small property | €1,500 – €2,000 | Rooms, enquiry flow, SEO base |
-| Hotel with booking engine | €1,799 – €2,999 | Live availability, multilingual |
+| Hotel with booking engine | {{WEBSITE_PRO}} – {{WEBSITE_BUSINESS}} | Live availability, multilingual |
 | Large property / many languages | €3,000 – €5,000+ | Channel manager, complex experiences |
 
-**Professional €1,799** and **Business €2,999** cover most units. Compare with the general [website cost guide](/en/blog/how-much-does-a-website-cost).
+**Professional {{WEBSITE_PRO}}** and **Business {{WEBSITE_BUSINESS}}** cover most units. Compare with the general [website cost guide](/en/blog/how-much-does-a-website-cost).
 
 ## What Sets a Booking-Driving Hotel Site Apart
 

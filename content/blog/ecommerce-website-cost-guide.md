@@ -11,7 +11,7 @@ categoryColor: bg-rose-100 text-rose-800
 pillar: agency-playbooks
 faq:
   - question: "How much does an e-commerce website cost in 2026?"
-    answer: "A basic store up to ~100 products typically costs €1,800–€2,500, mid-tier with many categories and integrations €2,500–€4,000, and complex B2B or multilingual builds €4,000+. Our Professional package (€1,799) plus e-commerce setup is a common starting point."
+    answer: "A basic store up to ~100 products typically costs €1,800–€2,500, mid-tier with many categories and integrations €2,500–€4,000, and complex B2B or multilingual builds €4,000+. Our Professional package ({{WEBSITE_PRO}}) plus e-commerce setup is a common starting point."
   - question: "WooCommerce or Shopify - which should I choose?"
     answer: "For most businesses that want full ownership and SEO control, WooCommerce. Shopify suits fast launches if you accept monthly fees, transaction costs, and URL-structure limits."
   - question: "How long does an e-shop take to build?"

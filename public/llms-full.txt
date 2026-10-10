@@ -1,11 +1,11 @@
-Last-Updated: 2026-09-21
+Last-Updated: 2026-10-10
 Canonical: https://anotherseoguru.com/llms-full.txt
 Short-form: https://anotherseoguru.com/llms.txt
 Sitemap: https://anotherseoguru.com/sitemap.xml
 
 # AnotherSEOGuru - Complete Knowledge Base
 Source: https://anotherseoguru.com
-Last Updated: 2026-09-21
+Last Updated: 2026-10-10
 
 This document is the comprehensive, machine-readable reference for LLM crawlers, AI search engines, and assistants synthesizing answers about AnotherSEOGuru services, pricing, portfolio, Greek local SEO positioning, and the secondary SEO software platform.
 
@@ -1480,7 +1480,7 @@ All Greek cities below are indexable for service×location pages. Pattern: `/el/
   - Q: Θα χάσω κατατάξεις κατά τον ανασχεδιασμό;
     A: Με σωστό migration, η βύθιση περιορίζεται σε λίγες θέσεις για 1–2 εβδομάδες και συχνά ακολουθεί άνοδος, γιατί το νέο site είναι ταχύτερο και καλύτερα δομημένο.
   - Q: Πόσο κοστίζει ο ανασχεδιασμός ιστοσελίδας;
-    A: Συνήθως €899–€2.999 ανάλογα με το μέγεθος, γιατί περιλαμβάνει και τη μεταφορά του SEO ιστορικού. Οι φθηνοί ανασχεδιασμοί χωρίς migration κοστίζουν περισσότερο σε χαμένη κίνηση.
+    A: Συνήθως €1.500–€4.000 ανάλογα με το μέγεθος, γιατί περιλαμβάνει και τη μεταφορά του SEO ιστορικού. Οι φθηνοί ανασχεδιασμοί χωρίς migration κοστίζουν περισσότερο σε χαμένη κίνηση.
   - Q: Μπορώ να κρατήσω το ίδιο domain;
     A: Ναι - και πρέπει. Το domain κουβαλά την αξιοπιστία σας. Αλλαγή domain μαζί με ανασχεδιασμό είναι διπλό ρίσκο και θέλει ειδικό χειρισμό.
   - Q: Ανασχεδιασμός ή νέο site από το μηδέν;
@@ -1494,7 +1494,7 @@ All Greek cities below are indexable for service×location pages. Pattern: `/el/
 - **Description:** What an e-shop costs to build in 2026, WooCommerce vs Shopify, and what to get right on payments, shipping, and SEO so your store sells from day one.
 - **Embedded FAQ:**
   - Q: How much does an e-commerce website cost in 2026?
-    A: A basic store up to ~100 products typically costs €1,800–€2,500, mid-tier with many categories and integrations €2,500–€4,000, and complex B2B or multilingual builds €4,000+. Our Professional package (€1,799) plus e-commerce setup is a common starting point.
+    A: A basic store up to ~100 products typically costs €1,800–€2,500, mid-tier with many categories and integrations €2,500–€4,000, and complex B2B or multilingual builds €4,000+. Our Professional package (€2,500) plus e-commerce setup is a common starting point.
   - Q: WooCommerce or Shopify - which should I choose?
     A: For most businesses that want full ownership and SEO control, WooCommerce. Shopify suits fast launches if you accept monthly fees, transaction costs, and URL-structure limits.
   - Q: How long does an e-shop take to build?
@@ -1558,7 +1558,7 @@ All Greek cities below are indexable for service×location pages. Pattern: `/el/
 - **Description:** What a hotel website needs in 2026: fast mobile UX, a booking engine, room pages, multilingual SEO and schema, to cut OTA commissions and win direct bookings.
 - **Embedded FAQ:**
   - Q: How much does a hotel website cost?
-    A: Typically €1,500–€3,500 for a site with bookings. Our Professional (€1,799) and Business (€2,999) packages cover most properties, with SEO foundations from day one.
+    A: Typically €1,500–€3,500 for a site with bookings. Our Professional (€2,500) and Business (€4,000) packages cover most properties, with SEO foundations from day one.
   - Q: Why invest in direct bookings?
     A: Every Booking/Expedia reservation costs 15–25% commission. Direct bookings from your own site cut that cost and give you the guest relationship.
   - Q: Do I need a booking engine?
@@ -1574,7 +1574,7 @@ All Greek cities below are indexable for service×location pages. Pattern: `/el/
 - **Description:** What a website really costs in 2026: business sites, e-shops and hotel websites, plus the hidden costs of hosting, content and SEO. Transparent EUR pricing.
 - **Embedded FAQ:**
   - Q: How much does a website cost in 2026?
-    A: Roughly €400–€800 for a landing page, €800–€2,000 for a 5–10 page business site, €1,500–€3,500 for a hotel site with bookings, and €1,800–€5,000+ for a WooCommerce store. Our packages start at Starter €899, Professional €1,799, and Business €2,999.
+    A: Roughly €400–€800 for a landing page, €800–€2,000 for a 5–10 page business site, €1,500–€3,500 for a hotel site with bookings, and €1,800–€5,000+ for a WooCommerce store. Our packages start at Starter €1,500, Professional €2,500, and Business €4,000.
   - Q: Why do website quotes vary so much?
     A: Because you are not comparing the same thing - template vs custom design, with or without SEO foundations, with or without content and maintenance. Always ask for an itemized list of deliverables.
   - Q: How much does an e-shop cost?
@@ -1600,13 +1600,13 @@ All Greek cities below are indexable for service×location pages. Pattern: `/el/
   - Q: How long until SEO pays off?
     A: Low-competition local searches: 2–3 months. Competitive national keywords: 4–6+ months. SEO compounds - each month builds on the last.
 
-### Κατασκευή E-shop από €1.799
+### Κατασκευή E-shop από €2.500
 - **URL:** https://anotherseoguru.com/el/blog/kataskevi-eshop-odigos
 - **Locale:** el · **Date:** 2026-07-06
-- **Description:** Κατασκευή e-shop WooCommerce στην Ελλάδα από €1.799. Πληρωμές, courier, myDATA και SEO κατηγοριών για να πουλάει από την 1η μέρα. Δείτε τιμές.
+- **Description:** Κατασκευή e-shop WooCommerce στην Ελλάδα από €2.500. Πληρωμές, courier, myDATA και SEO κατηγοριών για να πουλάει από την 1η μέρα. Δείτε τιμές.
 - **Embedded FAQ:**
   - Q: Πόσο κοστίζει η κατασκευή e-shop στην Ελλάδα;
-    A: Ένα βασικό e-shop έως ~100 προϊόντα ξεκινά από €1.800 - €2.500, ένα μεσαίο με πολλές κατηγορίες και συνδέσεις ERP/courier κοστίζει €2.500 - €4.000, ενώ απαιτητικά B2B ή πολυγλωσσικά e-shops ξεκινούν από €4.000. Στα δικά μας πακέτα το e-shop ξεκινά από το Professional (€1.799) με προσθήκη e-commerce setup.
+    A: Ένα βασικό e-shop έως ~100 προϊόντα ξεκινά από €1.800 - €2.500, ένα μεσαίο με πολλές κατηγορίες και συνδέσεις ERP/courier κοστίζει €2.500 - €4.000, ενώ απαιτητικά B2B ή πολυγλωσσικά e-shops ξεκινούν από €4.000. Στα δικά μας πακέτα το e-shop ξεκινά από το Professional (€2.500) με προσθήκη e-commerce setup.
   - Q: WooCommerce ή Shopify - τι να διαλέξω;
     A: Για τις περισσότερες ελληνικές επιχειρήσεις προτείνουμε WooCommerce, γιατί έχετε πλήρη ιδιοκτησία, φυσική υποστήριξη αντικαταβολής και ελληνικών courier (ACS, Γενική, ELTA, Box Now), σύνδεση με myDATA και πλήρη ελευθερία στο SEO. Το Shopify βολεύει για γρήγορο ξεκίνημα, αλλά έχει μηνιαία συνδρομή, προμήθειες και περιορισμούς στη δομή URL.
   - Q: Μπορώ να φτιάξω e-shop μόνος μου;
@@ -1641,10 +1641,10 @@ All Greek cities below are indexable for service×location pages. Pattern: `/el/
 ### Πόσο Κοστίζει μια Ιστοσελίδα;
 - **URL:** https://anotherseoguru.com/el/blog/poso-kostizei-mia-istoselida
 - **Locale:** el · **Date:** 2026-07-06
-- **Description:** Πόσο κοστίζει μια ιστοσελίδα στην Ελλάδα το 2026; Από €899 εταιρικό site έως e-shop. Πίνακας τιμών, κρυφά κόστη και διαφανή πακέτα AnotherSEOGuru.
+- **Description:** Πόσο κοστίζει μια ιστοσελίδα στην Ελλάδα το 2026; Από €1.500 εταιρικό site έως e-shop. Πίνακας τιμών, κρυφά κόστη και διαφανή πακέτα AnotherSEOGuru.
 - **Embedded FAQ:**
   - Q: Πόσο κοστίζει μια ιστοσελίδα στην Ελλάδα το 2026;
-    A: Από περίπου €400–€800 για landing page, €800–€2.000 για εταιρική ιστοσελίδα 5–10 σελίδων, €1.500–€3.500 για ιστοσελίδα ξενοδοχείου με κρατήσεις και €1.800–€5.000+ για e-shop WooCommerce. Τα πακέτα μας ξεκινούν από Starter €899, Professional €1.799 και Business €2.999.
+    A: Από περίπου €400–€800 για landing page, €800–€2.000 για εταιρική ιστοσελίδα 5–10 σελίδων, €1.500–€3.500 για ιστοσελίδα ξενοδοχείου με κρατήσεις και €1.800–€5.000+ για e-shop WooCommerce. Τα πακέτα μας ξεκινούν από Starter €1.500, Professional €2.500 και Business €4.000.
   - Q: Γιατί οι προσφορές για ιστοσελίδα διαφέρουν τόσο πολύ μεταξύ τους;
     A: Γιατί δεν συγκρίνετε το ίδιο πράγμα - έτοιμο template αντί custom σχεδιασμού, με ή χωρίς SEO θεμέλια, με ή χωρίς περιεχόμενο και συντήρηση. Ζητήστε πάντα αναλυτική προσφορά με όλα τα παραδοτέα γραμμένα.
   - Q: Πόσο κοστίζει ένα e-shop;
@@ -1822,7 +1822,7 @@ All Greek cities below are indexable for service×location pages. Pattern: `/el/
   - Q: Will I lose rankings during a redesign?
     A: With a proper migration, the dip is usually limited to a few positions for 1–2 weeks and is often followed by a rise because the new site is faster and better structured.
   - Q: How much does a website redesign cost?
-    A: Typically €899–€2,999 depending on size, because it includes carrying over SEO history. Cheap redesigns that skip migration cost far more in lost traffic.
+    A: Typically €1,500–€4,000 depending on size, because it includes carrying over SEO history. Cheap redesigns that skip migration cost far more in lost traffic.
   - Q: Can I keep the same domain?
     A: Yes - and you should. The domain carries your credibility. Changing domain and redesigning at once is double risk and needs special handling.
   - Q: Redesign or a brand-new site?
@@ -1840,7 +1840,7 @@ All Greek cities below are indexable for service×location pages. Pattern: `/el/
   - Q: Πόσο συχνά πρέπει να γίνεται ανασχεδιασμός;
     A: Ριζικός ανασχεδιασμός κάθε 3–4 χρόνια. Περιεχόμενο, FAQs και έλεγχοι ταχύτητας ανά τρίμηνο. Αν έχετε κατατάξεις, προτιμήστε migration - δείτε τον οδηγό ανασχεδιασμού.
   - Q: Πόσο κοστίζει μια ιστοσελίδα τουρισμού το 2026;
-    A: Τυπικά €1.500–€3.500 για ξενοδοχείο/ενοικιάσεις με κρατήσεις, €899–€2.999 για εταιρικό τουριστικό site. Τα πακέτα Professional και Business καλύπτουν τις περισσότερες περιπτώσεις.
+    A: Τυπικά €1.500–€3.500 για ξενοδοχείο/ενοικιάσεις με κρατήσεις, €1.500–€4.000 για εταιρικό τουριστικό site. Τα πακέτα Professional και Business καλύπτουν τις περισσότερες περιπτώσεις.
   - Q: Χρειάζομαι chatbot AI στην ιστοσελίδα τουρισμού;
     A: Όχι υποχρεωτικά την πρώτη μέρα, αλλά βοηθά σε άμεσες απαντήσεις εκτός ωραρίου. Συνδυάστε το με καθαρά FAQs και booking CTA - δείτε τον οδηγό AI chatbots στον τουρισμό.
   - Q: Ποιες γλώσσες χρειάζομαι;
@@ -1865,10 +1865,10 @@ All Greek cities below are indexable for service×location pages. Pattern: `/el/
 ### Κατασκευή Ιστοσελίδας Ξενοδοχείου
 - **URL:** https://anotherseoguru.com/el/blog/kataskevi-istoselidas-xenodoxeia
 - **Locale:** el · **Date:** 2026-06-17
-- **Description:** Κατασκευή ιστοσελίδας για ξενοδοχεία με direct bookings και SEO. Μείωση προμηθειών OTA, Google Maps και κρατήσεις από €1.799. Δείτε τι περιλαμβάνει.
+- **Description:** Κατασκευή ιστοσελίδας για ξενοδοχεία με direct bookings και SEO. Μείωση προμηθειών OTA, Google Maps και κρατήσεις από €2.500. Δείτε τι περιλαμβάνει.
 - **Embedded FAQ:**
   - Q: Πόσο κοστίζει ιστοσελίδα ξενοδοχείου;
-    A: Τυπικά €1.500–€3.500 για site με κρατήσεις. Στα πακέτα μας, Professional (€1.799) ή Business (€2.999) καλύπτουν τις περισσότερες μονάδες, με SEO θεμέλια από την 1η μέρα.
+    A: Τυπικά €1.500–€3.500 για site με κρατήσεις. Στα πακέτα μας, Professional (€2.500) ή Business (€4.000) καλύπτουν τις περισσότερες μονάδες, με SEO θεμέλια από την 1η μέρα.
   - Q: Γιατί να επενδύσω σε direct bookings;
     A: Κάθε κράτηση μέσω Booking/Expedia κοστίζει 15–25% προμήθεια. Άμεσες κρατήσεις από το δικό σας site μειώνουν το κόστος και σας δίνουν τον πελάτη.
   - Q: Χρειάζομαι booking engine;
@@ -2185,19 +2185,19 @@ All Greek cities below are indexable for service×location pages. Pattern: `/el/
 ## 8. FAQ Bank (AEO Direct-Answer Style)
 
 ### Q: Πόσο κοστίζει το SEO στην Ελλάδα;
-A: Τα μηνιαία πακέτα SEO ξεκινούν από €299/μήνα (Starter), €599/μήνα (Growth) και €999/μήνα (Scale). Το κόστος εξαρτάται από ανταγωνισμό, μέγεθος site και στόχους. Λεπτομέρειες: https://anotherseoguru.com/el/pricing
+A: Τα μηνιαία πακέτα SEO ξεκινούν από €500/μήνα (Foundations), €900/μήνα (Growth) και €1.500/μήνα (Authority), συν ΦΠΑ 24%. Το κόστος εξαρτάται από ανταγωνισμό, μέγεθος site και στόχους. Λεπτομέρειες: https://anotherseoguru.com/el/pricing
 
 ### Q: Πόσο κοστίζει μια ιστοσελίδα;
-A: Starter €899 (έως 5 σελίδες), Professional €1.799 (έως 10), Business €2.999 (έως 20, e-commerce ready). https://anotherseoguru.com/el/pricing
+A: Starter €1.500, Professional €2.500, Business €4.000 (σύνθετα, πολυγλωσσικά και e-commerce έργα), συν ΦΠΑ 24%. https://anotherseoguru.com/el/pricing
 
 ### Q: Πόσο κοστίζει κατασκευή e-shop WooCommerce;
-A: Ρεαλιστικά από ~€1.800–€2.300 (π.χ. Professional + e-commerce setup €499, ή Business €2.999). Υπηρεσία: https://anotherseoguru.com/el/services/eshop-woocommerce
+A: Συνήθως Professional €2.500 συν λειτουργικότητα e-commerce από €1.200, ή Business €4.000 για μεγαλύτερους καταλόγους, συν ΦΠΑ 24%. Υπηρεσία: https://anotherseoguru.com/el/services/eshop-woocommerce
 
 ### Q: Τι είναι GEO και AEO;
 A: GEO (Generative Engine Optimization) και AEO (Answer Engine Optimization) βελτιστοποιούν το brand ώστε να εμφανίζεται σε απαντήσεις AI (ChatGPT, Perplexity, Gemini, Google AI Overviews). Υπηρεσία: https://anotherseoguru.com/el/services/ai-visibility
 
 ### Q: How much does SEO cost?
-A: Monthly retainers start at €299 (Starter), €599 (Growth), €999 (Scale). See https://anotherseoguru.com/en/pricing
+A: Monthly retainers are €500 (Foundations), €900 (Growth) and €1,500 (Authority) a month, plus 24% VAT. See https://anotherseoguru.com/en/pricing
 
 ### Q: How long until SEO results?
 A: Early GSC impression movement often in 2–3 months for lower-competition local terms; competitive national keywords typically 4–6+ months. SEO compounds monthly.

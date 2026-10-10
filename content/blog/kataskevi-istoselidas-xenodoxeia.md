@@ -1,7 +1,7 @@
 ---
 slug: kataskevi-istoselidas-xenodoxeia
 title: Κατασκευή Ιστοσελίδας Ξενοδοχείου
-description: Κατασκευή ιστοσελίδας για ξενοδοχεία με direct bookings και SEO. Μείωση προμηθειών OTA, Google Maps και κρατήσεις από €1.799. Δείτε τι περιλαμβάνει.
+description: Κατασκευή ιστοσελίδας για ξενοδοχεία με direct bookings και SEO. Μείωση προμηθειών OTA, Google Maps και κρατήσεις από {{WEBSITE_PRO}}. Δείτε τι περιλαμβάνει.
 date: 2026-06-17
 author: AnotherSEOGuru Editorial Team
 locale: el
@@ -11,7 +11,7 @@ categoryColor: bg-sky-100 text-sky-800
 pillar: industry-playbooks
 faq:
   - question: "Πόσο κοστίζει ιστοσελίδα ξενοδοχείου;"
-    answer: "Τυπικά €1.500–€3.500 για site με κρατήσεις. Στα πακέτα μας, Professional (€1.799) ή Business (€2.999) καλύπτουν τις περισσότερες μονάδες, με SEO θεμέλια από την 1η μέρα."
+    answer: "Τυπικά €1.500–€3.500 για site με κρατήσεις. Στα πακέτα μας, Professional ({{WEBSITE_PRO}}) ή Business ({{WEBSITE_BUSINESS}}) καλύπτουν τις περισσότερες μονάδες, με SEO θεμέλια από την 1η μέρα."
   - question: "Γιατί να επενδύσω σε direct bookings;"
     answer: "Κάθε κράτηση μέσω Booking/Expedia κοστίζει 15–25% προμήθεια. Άμεσες κρατήσεις από το δικό σας site μειώνουν το κόστος και σας δίνουν τον πελάτη."
   - question: "Χρειάζομαι booking engine;"
@@ -40,10 +40,10 @@ faq:
 | Είδος έργου | Τυπικό κόστος | Τι περιλαμβάνει |
 | :--- | :--- | :--- |
 | Boutique / μικρή μονάδα | €1.500 – €2.000 | Δωμάτια, φόρμα/enquiry, SEO βάση |
-| Ξενοδοχείο με booking engine | €1.799 – €2.999 | Live διαθεσιμότητα, πολυγλωσσικό |
+| Ξενοδοχείο με booking engine | {{WEBSITE_PRO}} – {{WEBSITE_BUSINESS}} | Live διαθεσιμότητα, πολυγλωσσικό |
 | Μεγάλη μονάδα / πολλές γλώσσες | €3.000 – €5.000+ | Channel manager, σύνθετες εμπειρίες |
 
-Τα πακέτα **Professional €1.799** και **Business €2.999** καλύπτουν τις περισσότερες μονάδες. Συγκρίνετε με τον γενικό οδηγό [πόσο κοστίζει μια ιστοσελίδα](/el/blog/poso-kostizei-mia-istoselida).
+Τα πακέτα **Professional {{WEBSITE_PRO}}** και **Business {{WEBSITE_BUSINESS}}** καλύπτουν τις περισσότερες μονάδες. Συγκρίνετε με τον γενικό οδηγό [πόσο κοστίζει μια ιστοσελίδα](/el/blog/poso-kostizei-mia-istoselida).
 
 ## Στρατηγική SEO για Ξενοδοχεία
 

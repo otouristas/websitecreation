@@ -28,7 +28,7 @@ export default function ServiceHubCommercialBody({ commercial, locale }: Props) 
 
         <div className="mb-10 rounded-xl border border-border bg-muted/30 p-6">
           <h2 className="text-xl font-bold mb-3">
-            {isEl ? 'Τιμές & πακέτα' : 'Pricing teaser'}
+            {isEl ? 'Τιμές & πακέτα' : 'Pricing & packages'}
           </h2>
           <p className="text-muted-foreground mb-4">{commercial.pricingTeaser}</p>
           <Link href={lp('/pricing')} className="text-primary font-medium hover:underline">

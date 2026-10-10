@@ -65,7 +65,7 @@ RealEstateListing (τιμή, τετραγωνικά, τοποθεσία) και 
 | Growth SEO | {{SEO_GROWTH}}/μήνα | Πολλές περιοχές / διεθνές σελίδες |
 | Authority / portal-style | {{SEO_AUTHORITY}}/μήνα | Μεγάλος όγκος αγγελιών + content |
 | Εφάπαξ audit | €400 – €800 | Τεχνικό + content gaps |
-| Website real estate | από €899 | Αναζήτηση αγγελιών, περιοχές |
+| Website real estate | από {{ENTRY_WEBSITE}} | Αναζήτηση αγγελιών, περιοχές |
 | Πρώτες εντολές από Google | 2–4 μήνες | Queries ιδιοκτητών |
 | Authority σε περιοχή | 6–12 μήνες | Pillar content + links |
 

@@ -51,7 +51,7 @@ const COPY = {
     h1: 'Check one keyword across Google, AI Overview and ChatGPT',
     intro:
       'Type a keyword and this runs it through three surfaces at once: the classic Google results, the AI Overview above them, and what ChatGPT answers when someone asks the same thing. Add your domain and each panel marks where you already appear.',
-    note: 'Free, no signup. Live data from DataForSEO, read at the moment you press the button.',
+    note: 'Free, no signup. Live search data, read at the moment you press the button.',
     surfacesTitle: 'What each surface asks of a page',
     surfacesBody:
       'The three panels are not three rankings. They are three different readers of the same page, and each one rewards something different.',
@@ -120,7 +120,7 @@ const COPY = {
     h1: 'Ελέγξτε μία λέξη-κλειδί σε Google, AI Overview και ChatGPT',
     intro:
       'Γράψτε μια λέξη-κλειδί και ο έλεγχος την τρέχει ταυτόχρονα σε τρία σημεία: στα κλασικά αποτελέσματα της Google, στο AI Overview από πάνω τους, και στην απάντηση που δίνει το ChatGPT όταν κάποιος ρωτά το ίδιο. Προσθέστε το domain σας και κάθε πλαίσιο σημειώνει πού εμφανίζεστε ήδη.',
-    note: 'Δωρεάν, χωρίς εγγραφή. Ζωντανά δεδομένα από το DataForSEO, τη στιγμή που πατάτε το κουμπί.',
+    note: 'Δωρεάν, χωρίς εγγραφή. Ζωντανά δεδομένα αναζήτησης, τη στιγμή που πατάτε το κουμπί.',
     surfacesTitle: 'Τι ζητά κάθε σημείο από μια σελίδα',
     surfacesBody:
       'Τα τρία πλαίσια δεν είναι τρεις κατατάξεις. Είναι τρεις διαφορετικοί αναγνώστες της ίδιας σελίδας, και ο καθένας ανταμείβει κάτι άλλο.',

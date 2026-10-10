@@ -13,7 +13,7 @@ faq:
   - question: "Will I lose rankings during a redesign?"
     answer: "With a proper migration, the dip is usually limited to a few positions for 1–2 weeks and is often followed by a rise because the new site is faster and better structured."
   - question: "How much does a website redesign cost?"
-    answer: "Typically €899–€2,999 depending on size, because it includes carrying over SEO history. Cheap redesigns that skip migration cost far more in lost traffic."
+    answer: "Typically {{ENTRY_WEBSITE}}–{{WEBSITE_BUSINESS}} depending on size, because it includes carrying over SEO history. Cheap redesigns that skip migration cost far more in lost traffic."
   - question: "Can I keep the same domain?"
     answer: "Yes - and you should. The domain carries your credibility. Changing domain and redesigning at once is double risk and needs special handling."
   - question: "Redesign or a brand-new site?"
@@ -62,8 +62,8 @@ The same discipline applies when you change CMS or move to a [new build](/en/ser
 
 | Project type | Typical cost | Includes |
 | :--- | :--- | :--- |
-| Small business (≈10 pages) | €899 – €1,799 | Design + redirects + basic SEO migration |
-| Mid-size / multilingual | €1,799 – €2,999 | Full inventory, schema, CWV |
+| Small business (≈10 pages) | {{ENTRY_WEBSITE}} – {{WEBSITE_PRO}} | Design + redirects + basic SEO migration |
+| Mid-size / multilingual | {{WEBSITE_PRO}} – {{WEBSITE_BUSINESS}} | Full inventory, schema, CWV |
 | E-shop or hotel with bookings | €2,500 – €4,000+ | Category/room maps, booking, complex redirects |
 
 A redesign with proper migration typically costs the same as a new build because it includes carrying over SEO history. “Cheap” redesigns that ignore migration cost far more in lost traffic. See [pricing](/en/pricing) and the [website cost guide](/en/blog/how-much-does-a-website-cost).
