@@ -1,11 +1,22 @@
 import Link from 'next/link';
-import { ArrowUpRight, CalendarRange, MapPin } from 'lucide-react';
-import { PageShell, ShellCrumbs } from '@/components/bespoke/PageShell';
+import { ArrowRight, ArrowUpRight, Briefcase, CalendarRange, Layers, MapPin, Network, Wallet } from 'lucide-react';
+import { PageShell } from '@/components/bespoke/PageShell';
 import { PortfolioThumbnail } from '@/components/landing/PortfolioThumbnail';
-import { PrimaryButtonLink, GhostButtonLink, Bloom, Tick } from '@/components/landing/primitives';
+import {
+  Accent,
+  AgencyCtas,
+  Container,
+  CtaBand,
+  DecisionsPanel,
+  FeatureRow,
+  KitEyebrow,
+  KitHeading,
+  KitSection,
+  Stage,
+} from '@/components/kit';
+import { CardGrid, KitFaq, LinkCard, PageHero } from '@/components/page-kit';
 import { getPortfolioByCategory } from '@/data/portfolio';
 import { services } from '@/data/services';
-import { isIndustryServiceIndexable } from '@/lib/indexability/industry-service';
 import { getServiceEl } from '@/data/services-i18n';
 import { getLocalizedIndustry } from '@/lib/industry-locale';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
@@ -282,14 +293,14 @@ function SeasonCurve({ months }: { months: readonly string[] }) {
       >
         <defs>
           <linearGradient id="rac-season" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="var(--signature)" stopOpacity="0.28" />
-            <stop offset="100%" stopColor="var(--signature)" stopOpacity="0" />
+            <stop offset="0%" stopColor="var(--brand)" stopOpacity="0.28" />
+            <stop offset="100%" stopColor="var(--brand)" stopOpacity="0" />
           </linearGradient>
         </defs>
         <path d={area} fill="url(#rac-season)" />
-        <path d={line} fill="none" stroke="var(--signature)" strokeWidth="2" strokeLinecap="round" />
+        <path d={line} fill="none" stroke="var(--brand)" strokeWidth="2" strokeLinecap="round" />
         {pts.map(([x, yy], i) => (
-          <circle key={i} cx={x} cy={yy} r="3" fill="var(--signature)" />
+          <circle key={i} cx={x} cy={yy} r="3" fill="var(--brand)" />
         ))}
       </svg>
       <div className="mt-3 grid grid-cols-7 text-center text-[11px] text-muted-foreground">
@@ -326,330 +337,231 @@ export function RentACarPage({ locale }: { locale: SiteLocale }) {
     generateFAQSchema({ faqs: t.faq.items.map((f) => ({ question: f.q, answer: f.a })) }),
   );
 
+  const tx = (en: string, el: string) => (isEl ? el : en);
+  const splitAt = Math.max(t.h1.lastIndexOf(' that '), t.h1.lastIndexOf(' που '));
+
+  const widget = (
+    <div className="overflow-hidden rounded-xl border border-hairline bg-background text-left">
+      <div className="flex items-center justify-between border-b border-hairline bg-surface px-4 py-3">
+        <span className="font-mono text-[11px] font-medium uppercase tracking-[0.1em] text-brand">{t.widget.label}</span>
+        <span className="flex gap-1.5" aria-hidden>
+          <span className="size-2 rounded-full bg-foreground/15" />
+          <span className="size-2 rounded-full bg-foreground/15" />
+          <span className="size-2 rounded-full bg-brand/60" />
+        </span>
+      </div>
+      <div className="space-y-2.5 p-4">
+        {[
+          { icon: MapPin, label: t.widget.pickup, value: t.widget.pickupValue },
+          { icon: MapPin, label: t.widget.dropoff, value: t.widget.dropoffValue },
+          { icon: CalendarRange, label: t.widget.dates, value: t.widget.datesValue },
+        ].map(({ icon: Icon, label, value }) => (
+          <div key={label} className="flex items-center gap-3 rounded-lg border border-hairline bg-surface/60 px-3.5 py-2.5">
+            <Icon className="size-4 shrink-0 text-brand" aria-hidden />
+            <span className="min-w-20 shrink-0 pr-1 text-[11px] uppercase tracking-[0.06em] text-muted-foreground">{label}</span>
+            <span className="min-w-0 truncate text-[13.5px] font-medium text-foreground">{value}</span>
+          </div>
+        ))}
+        <div className="flex h-10 items-center justify-center rounded-lg bg-[linear-gradient(180deg,var(--primary),var(--primary-deep))] px-5 font-display text-[14px] font-semibold text-primary-foreground">
+          {t.widget.cta}
+        </div>
+      </div>
+    </div>
+  );
+
   return (
     <PageShell locale={locale} signatureHue={SIGNATURE_HUE} schemas={schemas}>
-      {/* 1 - Hero: copy left, booking widget right */}
-      <section className="relative overflow-hidden border-b border-hairline">
-        <Bloom signature className="left-[62%] top-[-10rem] h-[30rem] w-[46rem]" />
-        <div className="main-below-header relative mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)] gap-12 px-6 pb-16 pt-6 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-center lg:gap-16">
-          <div className="min-w-0">
-            <ShellCrumbs items={breadcrumbs} />
-            <span className="inline-flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.18em] text-signature">
-              {t.eyebrow}
-            </span>
-            <h1 className="rise-in mt-4 font-display text-4xl font-medium leading-[1.04] tracking-[-0.04em] text-foreground md:text-[3.4rem]">
-              {t.h1}
-            </h1>
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
-              {t.lede}
-            </p>
-            <div className="mt-9 flex flex-wrap gap-3">
-              <PrimaryButtonLink href={lp('/get-started?project=rent-a-car')}>
-                {t.ctaPrimary}
-              </PrimaryButtonLink>
-              <GhostButtonLink href="#proof">{t.ctaSecondary}</GhostButtonLink>
-            </div>
+      <PageHero
+        locale={locale}
+        breadcrumbs={breadcrumbs}
+        pill={{
+          href: '#proof',
+          kind: 'popular',
+          tag: t.stats[0].v,
+          text: tx('rental sites delivered, all live projects', 'sites ενοικίασης που έχουμε παραδώσει'),
+        }}
+        title={
+          splitAt > 0 ? (
+            <>
+              {t.h1.slice(0, splitAt + 1)}
+              <Accent>{t.h1.slice(splitAt + 1)}</Accent>
+            </>
+          ) : (
+            t.h1
+          )
+        }
+        lead={t.lede}
+        actions={
+          <div className="flex flex-col items-center gap-3">
+            <AgencyCtas locale={locale} primaryHref={lp('/get-started?project=rent-a-car')} primaryLabel={t.ctaPrimary} />
+            <Link href="#proof" className="text-[14px] font-medium text-muted-foreground underline decoration-hairline underline-offset-4 hover:text-foreground">
+              {t.ctaSecondary}
+            </Link>
           </div>
-
-          <div className="relative min-w-0">
-            <div className="overflow-hidden rounded-[14px] border border-signature/25 bg-surface ring-1 ring-hairline">
-              <div className="flex items-center justify-between border-b border-hairline bg-surface-raised/80 px-5 py-3">
-                <span className="text-[11px] font-medium uppercase tracking-[0.16em] text-signature">
-                  {t.widget.label}
-                </span>
-                <span className="flex gap-1.5">
-                  <span className="size-2 rounded-full bg-foreground/15" />
-                  <span className="size-2 rounded-full bg-foreground/15" />
-                  <span className="size-2 rounded-full bg-signature/60" />
-                </span>
-              </div>
-              <div className="space-y-3 p-5">
-                {[
-                  { icon: MapPin, label: t.widget.pickup, value: t.widget.pickupValue },
-                  { icon: MapPin, label: t.widget.dropoff, value: t.widget.dropoffValue },
-                  { icon: CalendarRange, label: t.widget.dates, value: t.widget.datesValue },
-                ].map(({ icon: Icon, label, value }) => (
-                  <div
-                    key={label}
-                    className="flex items-center gap-3 rounded-[8px] border border-hairline bg-background px-4 py-3"
-                  >
-                    <Icon className="size-4 shrink-0 text-signature" aria-hidden />
-                    <span className="w-24 shrink-0 text-[11px] uppercase tracking-[0.12em] text-muted-foreground">
-                      {label}
-                    </span>
-                    <span className="min-w-0 truncate text-sm font-medium text-foreground">{value}</span>
-                  </div>
-                ))}
-                <div className="flex h-11 items-center justify-center rounded-[8px] bg-signature px-5 font-display text-sm font-medium text-white">
-                  {t.widget.cta}
+        }
+      >
+        <Container className="mt-14">
+          <div className="grid gap-4 lg:grid-cols-[0.9fr_1.1fr]">
+            <Stage className="flex flex-col justify-center">
+              {widget}
+              <p className="mt-3 text-center text-[11.5px] text-muted-foreground">{t.widget.note}</p>
+            </Stage>
+            <Stage>
+              <DecisionsPanel locale={locale} count={3} />
+            </Stage>
+          </div>
+          <div className="mt-8">
+            <KitEyebrow className="mb-3">{t.atAGlance}</KitEyebrow>
+            <dl className="grid overflow-hidden rounded-2xl border border-hairline bg-surface/60 text-left sm:grid-cols-3">
+              {t.stats.map((s, i) => (
+                <div key={s.k} className={`px-6 py-5 ${i > 0 ? 'border-t border-hairline sm:border-l sm:border-t-0' : ''}`}>
+                  <dt className="sr-only">{s.k}</dt>
+                  <dd className="font-display text-[24px] font-semibold tracking-[-0.03em] text-foreground">{s.v}</dd>
+                  <dd className="mt-1 text-[13.5px] text-muted-foreground">{s.k}</dd>
                 </div>
-              </div>
+              ))}
+            </dl>
+          </div>
+        </Container>
+      </PageHero>
+
+      <KitSection>
+        <div className="grid gap-24 sm:gap-28">
+          <FeatureRow
+            eyebrow={t.season.eyebrow}
+            eyebrowIcon={<CalendarRange />}
+            title={t.season.title}
+            body={t.season.body}
+            bullets={t.season.points}
+            preview={
+              <Stage>
+                <div className="rounded-xl border border-hairline bg-background p-5 sm:p-6">
+                  <SeasonCurve months={t.season.months} />
+                  <p className="mt-5 border-t border-hairline pt-4 text-[11.5px] leading-relaxed text-muted-foreground">{t.season.caption}</p>
+                </div>
+              </Stage>
+            }
+          />
+          <FeatureRow
+            flip
+            eyebrow={t.fleet.eyebrow}
+            eyebrowIcon={<Network />}
+            title={t.fleet.title}
+            body={t.fleet.body}
+            bullets={t.fleet.points}
+            preview={
+              <Stage>
+                <div className="rounded-xl border border-hairline bg-background p-5 font-mono text-[13px] sm:p-6">
+                  {t.fleet.tree.map((n) => (
+                    <div
+                      key={n.path}
+                      // Wraps so the label drops under the path on a 320px phone
+                      // instead of pushing past the edge of the sheet.
+                      className="flex flex-wrap items-baseline gap-x-3 gap-y-1 py-[7px]"
+                      style={{ paddingLeft: `${n.depth * 1.15}rem` }}
+                    >
+                      {n.depth > 0 && (
+                        <span aria-hidden className="text-muted-foreground/40">
+                          └
+                        </span>
+                      )}
+                      <span className="text-brand">{n.path}</span>
+                      <span className="ml-auto shrink-0 font-sans text-[11px] text-muted-foreground">{n.label}</span>
+                    </div>
+                  ))}
+                </div>
+              </Stage>
+            }
+          />
+        </div>
+      </KitSection>
+
+      {/* Channel math */}
+      <KitSection tinted>
+        <KitHeading eyebrow={t.channel.eyebrow} eyebrowIcon={<Wallet />} title={t.channel.title} description={t.channel.body} />
+        <div className="mt-12 grid gap-4 md:grid-cols-2">
+          <div className="reveal rounded-2xl border border-hairline bg-background/70 p-6 sm:p-7">
+            <KitEyebrow>{t.channel.otaLabel}</KitEyebrow>
+            <div className="mt-3 font-display text-[22px] font-semibold tracking-[-0.025em] text-foreground">{t.channel.otaValue}</div>
+            <div className="mt-6 flex h-2 overflow-hidden rounded-full bg-hairline" aria-hidden>
+              <span className="h-full w-[78%] bg-foreground/25" />
+              <span className="h-full w-[22%] bg-destructive/70" />
             </div>
-            <p className="mt-3 text-center text-[11px] text-muted-foreground">{t.widget.note}</p>
+            <p className="mt-4 text-[14.5px] leading-relaxed text-muted-foreground">{t.channel.otaNote}</p>
+          </div>
+          <div className="reveal rounded-2xl border border-brand/30 bg-background/70 p-6 sm:p-7">
+            <KitEyebrow className="text-brand">{t.channel.directLabel}</KitEyebrow>
+            <div className="mt-3 font-display text-[22px] font-semibold tracking-[-0.025em] text-foreground">{t.channel.directValue}</div>
+            <div className="mt-6 flex h-2 overflow-hidden rounded-full bg-hairline" aria-hidden>
+              <span className="h-full w-full bg-brand" />
+            </div>
+            <p className="mt-4 text-[14.5px] leading-relaxed text-muted-foreground">{t.channel.directNote}</p>
           </div>
         </div>
-      </section>
+        <p className="mt-6 text-[12px] text-muted-foreground">{t.channel.footnote}</p>
+      </KitSection>
 
-      {/* 2 - At a glance strip */}
-      <section className="border-b border-hairline bg-surface-raised/30">
-        <div className="mx-auto grid max-w-6xl gap-px bg-hairline px-0 sm:grid-cols-3">
-          {t.stats.map((s) => (
-            <div key={s.k} className="bg-background px-6 py-7">
-              <div className="font-display text-2xl font-medium tracking-[-0.03em] text-signature">
-                {s.v}
+      {/* Proof wall: the real rental projects */}
+      <KitSection id="proof">
+        <KitHeading eyebrow={t.proof.eyebrow} eyebrowIcon={<Briefcase />} title={t.proof.title} description={t.proof.body} />
+        <CardGrid className="mt-12">
+          {projects.map((p) => (
+            <Link
+              key={p.slug}
+              href={lp(`/work/${p.slug}`)}
+              className="reveal group flex flex-col overflow-hidden rounded-2xl border border-hairline bg-surface/60 transition-colors hover:border-brand/40"
+            >
+              <div className="relative aspect-[16/10] overflow-hidden border-b border-hairline">
+                <PortfolioThumbnail src={p.screenshot} alt={p.name} className="transition-transform duration-500 group-hover:scale-[1.03]" />
               </div>
-              <div className="mt-1 text-sm text-muted-foreground">{s.k}</div>
-            </div>
+              <div className="flex flex-1 flex-col p-5">
+                <div className="flex items-start justify-between gap-3">
+                  <h3 className="text-[16px] font-semibold text-foreground">{p.name}</h3>
+                  <ArrowUpRight className="size-4 shrink-0 text-muted-foreground transition-colors group-hover:text-brand" aria-hidden />
+                </div>
+                <p className="mt-2 line-clamp-3 flex-1 text-[13.5px] leading-relaxed text-muted-foreground">{isEl ? p.summaryEl : p.summary}</p>
+              </div>
+            </Link>
           ))}
-        </div>
-      </section>
+        </CardGrid>
+      </KitSection>
 
-      {/* 3 - Season */}
-      <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
-        <div className="grid grid-cols-[minmax(0,1fr)] gap-12 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:items-center lg:gap-16">
-          <div className="min-w-0">
-            <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-signature">
-              {t.season.eyebrow}
-            </span>
-            <h2 className="mt-4 font-display text-3xl font-medium leading-[1.06] tracking-[-0.03em] text-foreground sm:text-4xl">
-              {t.season.title}
-            </h2>
-            <p className="mt-4 text-base leading-relaxed text-muted-foreground">{t.season.body}</p>
-            <ul className="mt-7 space-y-3">
-              {t.season.points.map((p) => (
-                <li key={p} className="flex gap-3 text-sm text-muted-foreground">
-                  <Tick className="text-signature" />
-                  {p}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="min-w-0 rounded-[12px] border border-hairline bg-surface p-6 md:p-8">
-            <SeasonCurve months={t.season.months} />
-            <p className="mt-5 border-t border-hairline pt-4 text-[11px] leading-relaxed text-muted-foreground">
-              {t.season.caption}
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* 4 - Channel math */}
-      <section className="border-y border-hairline bg-surface-raised/30">
-        <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
-          <div className="max-w-2xl">
-            <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-signature">
-              {t.channel.eyebrow}
-            </span>
-            <h2 className="mt-4 font-display text-3xl font-medium leading-[1.06] tracking-[-0.03em] text-foreground sm:text-4xl">
-              {t.channel.title}
-            </h2>
-            <p className="mt-4 text-base leading-relaxed text-muted-foreground">{t.channel.body}</p>
-          </div>
-
-          <div className="mt-12 grid gap-6 md:grid-cols-2">
-            <div className="rounded-[12px] border border-hairline bg-background p-7">
-              <div className="text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
-                {t.channel.otaLabel}
-              </div>
-              <div className="mt-3 font-display text-xl font-medium tracking-[-0.02em] text-foreground">
-                {t.channel.otaValue}
-              </div>
-              <div className="mt-6 flex h-2 overflow-hidden rounded-full bg-hairline">
-                <span className="h-full w-[78%] bg-foreground/25" />
-                <span className="h-full w-[22%] bg-destructive/70" />
-              </div>
-              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{t.channel.otaNote}</p>
-            </div>
-
-            <div className="rounded-[12px] border border-signature/30 bg-background p-7">
-              <div className="text-[11px] uppercase tracking-[0.14em] text-signature">
-                {t.channel.directLabel}
-              </div>
-              <div className="mt-3 font-display text-xl font-medium tracking-[-0.02em] text-foreground">
-                {t.channel.directValue}
-              </div>
-              <div className="mt-6 flex h-2 overflow-hidden rounded-full bg-hairline">
-                <span className="h-full w-full bg-signature" />
-              </div>
-              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                {t.channel.directNote}
-              </p>
-            </div>
-          </div>
-          <p className="mt-6 text-[11px] text-muted-foreground">{t.channel.footnote}</p>
-        </div>
-      </section>
-
-      {/* 5 - Fleet architecture */}
-      <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
-        <div className="grid grid-cols-[minmax(0,1fr)] gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-16">
-          <div className="min-w-0">
-            <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-signature">
-              {t.fleet.eyebrow}
-            </span>
-            <h2 className="mt-4 font-display text-3xl font-medium leading-[1.06] tracking-[-0.03em] text-foreground sm:text-4xl">
-              {t.fleet.title}
-            </h2>
-            <p className="mt-4 text-base leading-relaxed text-muted-foreground">{t.fleet.body}</p>
-            <ul className="mt-7 space-y-3">
-              {t.fleet.points.map((p) => (
-                <li key={p} className="flex gap-3 text-sm text-muted-foreground">
-                  <Tick className="text-signature" />
-                  {p}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="rule-sheet min-w-0 rounded-[12px] border border-hairline bg-surface p-6 font-mono text-[13px] md:p-7">
-            {t.fleet.tree.map((n) => (
-              <div
-                key={n.path}
-                // Wraps so the label drops under the path on a 320px phone
-                // instead of pushing past the edge of the sheet.
-                className="flex flex-wrap items-baseline gap-x-3 gap-y-1 py-[7px]"
-                style={{ paddingLeft: `${n.depth * 1.15}rem` }}
-              >
-                {n.depth > 0 && (
-                  <span aria-hidden className="text-muted-foreground/40">
-                    └
-                  </span>
-                )}
-                <span className="text-signature">{n.path}</span>
-                <span className="ml-auto shrink-0 font-sans text-[11px] text-muted-foreground">
-                  {n.label}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 6 - Proof wall: the 14 real rental projects */}
-      <section id="proof" className="border-y border-hairline bg-surface-raised/30">
-        <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
-          <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-signature">
-            {t.proof.eyebrow}
-          </span>
-          <h2 className="mt-4 max-w-2xl font-display text-3xl font-medium leading-[1.06] tracking-[-0.03em] text-foreground sm:text-4xl">
-            {t.proof.title}
-          </h2>
-          <p className="mt-4 max-w-xl text-base leading-relaxed text-muted-foreground">
-            {t.proof.body}
-          </p>
-
-          <div className="mt-12 grid gap-px overflow-hidden rounded-[12px] border border-hairline bg-hairline sm:grid-cols-2 lg:grid-cols-3">
-            {projects.map((p) => (
-              <Link
-                key={p.slug}
-                href={lp(`/work/${p.slug}`)}
-                className="group flex flex-col bg-surface transition-colors hover:bg-background"
-              >
-                <div className="relative aspect-[16/10] overflow-hidden border-b border-hairline">
-                  <PortfolioThumbnail
-                    src={p.screenshot}
-                    alt={p.name}
-                    className="transition-transform duration-500 group-hover:scale-[1.03]"
-                  />
-                </div>
-                <div className="flex flex-1 flex-col p-5">
-                  <div className="flex items-start justify-between gap-3">
-                    <h3 className="font-display text-[15px] font-medium tracking-[-0.01em] text-foreground">
-                      {p.name}
-                    </h3>
-                    <ArrowUpRight
-                      className="size-4 shrink-0 text-muted-foreground transition-colors group-hover:text-signature"
-                      aria-hidden
-                    />
-                  </div>
-                  <p className="mt-2 line-clamp-3 flex-1 text-[13px] leading-relaxed text-muted-foreground">
-                    {isEl ? p.summaryEl : p.summary}
-                  </p>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 7 - Services applied */}
-      <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
-        <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-signature">
-          {t.servicesBlock.eyebrow}
-        </span>
-        <h2 className="mt-4 max-w-2xl font-display text-3xl font-medium leading-[1.06] tracking-[-0.03em] text-foreground sm:text-4xl">
-          {t.servicesBlock.title}
-        </h2>
-        <p className="mt-4 max-w-xl text-base leading-relaxed text-muted-foreground">
-          {t.servicesBlock.body}
-        </p>
-        <div className="mt-10 grid gap-px overflow-hidden rounded-[12px] border border-hairline bg-hairline sm:grid-cols-2 lg:grid-cols-3">
+      {/* Services applied */}
+      <KitSection tinted>
+        <KitHeading eyebrow={t.servicesBlock.eyebrow} eyebrowIcon={<Layers />} title={t.servicesBlock.title} description={t.servicesBlock.body} />
+        <CardGrid className="mt-10">
           {services.map((s) => {
             const el = isEl ? getServiceEl(s.slug) : null;
             return (
-              <Link
+              <LinkCard
                 key={s.slug}
                 href={lp(`/solutions/rent-a-car/${s.slug}`)}
-                className="group bg-surface p-6 transition-colors hover:bg-background"
-              >
-                <div className="flex items-start justify-between gap-3">
-                  <h3 className="font-display text-[15px] font-medium text-foreground">
-                    {el?.name ?? s.name}
-                  </h3>
-                  <ArrowUpRight
-                    className="size-4 shrink-0 text-muted-foreground transition-colors group-hover:text-signature"
-                    aria-hidden
-                  />
-                </div>
-                <p className="mt-2 text-[13px] leading-relaxed text-muted-foreground">
-                  {el?.description ?? s.description}
-                </p>
-              </Link>
+                title={el?.name ?? s.name}
+                text={el?.description ?? s.description}
+              />
             );
           })}
-        </div>
-      </section>
+        </CardGrid>
+        <p className="mt-8 text-[14px]">
+          <Link href={lp('/pricing')} className="inline-flex items-center gap-1.5 font-medium text-link underline-offset-4 hover:underline">
+            {t.cta.secondary}
+            <ArrowRight className="size-4" aria-hidden />
+          </Link>
+        </p>
+      </KitSection>
 
-      {/* 8 - FAQ */}
-      <section className="border-t border-hairline">
-        <div className="mx-auto max-w-3xl px-6 py-20 md:py-28">
-          <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-signature">
-            {t.faq.eyebrow}
-          </span>
-          <h2 className="mt-4 font-display text-3xl font-medium leading-[1.06] tracking-[-0.03em] text-foreground sm:text-4xl">
-            {t.faq.title}
-          </h2>
-          <dl className="mt-10 divide-y divide-hairline border-y border-hairline">
-            {t.faq.items.map((f) => (
-              <div key={f.q} className="py-6">
-                <dt className="font-display text-[17px] font-medium tracking-[-0.01em] text-foreground">
-                  {f.q}
-                </dt>
-                <dd className="mt-3 text-sm leading-relaxed text-muted-foreground">{f.a}</dd>
-              </div>
-            ))}
-          </dl>
-        </div>
-      </section>
+      <KitFaq eyebrow={t.faq.eyebrow} title={t.faq.title} items={t.faq.items.map((f) => ({ question: f.q, answer: f.a }))} />
 
-      {/* 9 - CTA */}
-      <section className="relative overflow-hidden border-t border-hairline">
-        <Bloom signature className="left-1/2 top-1/4 h-[24rem] w-[52rem] -translate-x-1/2" />
-        <div className="relative mx-auto max-w-3xl px-6 py-24 text-center">
-          <h2 className="font-display text-3xl font-medium leading-[1.05] tracking-[-0.04em] text-foreground md:text-5xl">
-            {t.cta.title}
-          </h2>
-          <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">
-            {t.cta.body}
-          </p>
-          <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
-            <PrimaryButtonLink href={lp('/get-started?project=rent-a-car')}>
-              {t.cta.primary}
-            </PrimaryButtonLink>
-            <GhostButtonLink href={lp('/pricing')}>{t.cta.secondary}</GhostButtonLink>
-          </div>
-        </div>
-      </section>
+      <CtaBand
+        locale={locale}
+        source="solutions-rent-a-car"
+        title={
+          <>
+            {t.cta.title.split(' ').slice(0, -2).join(' ')} <Accent>{t.cta.title.split(' ').slice(-2).join(' ')}</Accent>
+          </>
+        }
+        description={t.cta.body}
+      />
     </PageShell>
   );
 }
