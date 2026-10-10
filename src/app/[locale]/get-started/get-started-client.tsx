@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { industries } from '@/data/industries';
 import { industriesEl } from '@/data/industries-i18n';
 import { describeAnswers, submitLead, type LeadService } from '@/lib/leads';
+import { FreeAuditForm } from '@/components/landing/FreeAuditForm';
 import { captureUtmParams, trackFormStart, trackLead } from '@/lib/analytics';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 import { InstantPlan, summarizePlan, type PlanSnapshot } from '@/components/tools/InstantPlan';
@@ -611,6 +612,11 @@ function OnboardingWizard({ locale }: { locale: SiteLocale }) {
         <div className="container text-center">
           <h1 className="font-display text-4xl font-medium tracking-[-0.04em] sm:text-5xl mb-4">{t.title}</h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">{t.subtitle}</p>
+          <FreeAuditForm
+            locale={locale}
+            initialWebsite={searchParams.get('website') ?? ''}
+            className="mx-auto mt-8 max-w-4xl"
+          />
         </div>
       </section>
 
