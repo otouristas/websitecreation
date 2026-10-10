@@ -234,16 +234,18 @@ const nextConfig: NextConfig = {
         // GA4 collect hits go to regional hosts (e.g. region1.google-analytics.com)
         // for EU/UK/CH visitors. Exact www.* hosts do not match those subdomains.
         // https://developers.google.com/tag-platform/security/guides/csp
+        // app.anotherseoguru.com receives every lead (src/lib/leads.ts); without it
+        // the browser blocks the POST and only the Formspree copy goes out.
         value: [
           "default-src 'self'",
           "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com https://vitals.vercel-insights.com https://*.googletagmanager.com https://*.google-analytics.com",
           "style-src 'self' 'unsafe-inline'",
           "img-src 'self' data: blob: https:",
           "font-src 'self' data:",
-          "connect-src 'self' https://va.vercel-scripts.com https://vitals.vercel-insights.com https://formspree.io https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com",
+          "connect-src 'self' https://va.vercel-scripts.com https://vitals.vercel-insights.com https://formspree.io https://app.anotherseoguru.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com",
           "frame-ancestors 'self'",
           "base-uri 'self'",
-          "form-action 'self' https://formspree.io",
+          "form-action 'self' https://formspree.io https://app.anotherseoguru.com",
         ].join('; '),
       },
     ];
