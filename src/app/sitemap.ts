@@ -1,6 +1,4 @@
 import { MetadataRoute } from 'next';
-import { isPlatformFeatureIndexable } from '@/lib/indexability/platform-feature';
-import { MARKETING_FEATURES } from '@/data/marketing-features';
 import { COMPARE_PAGES } from '@/data/compare-pages';
 import { getAllBlogPosts, getPillarSummary } from '@/lib/blog';
 import { portfolioProjects } from '@/data/portfolio';
@@ -63,16 +61,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/terms', priority: 0.3, changeFrequency: 'yearly' as const },
     { path: '/work', priority: 0.88 },
     { path: '/blog', priority: 0.8 },
-  ];
-
-  // Platform / tools / resources canonicalize to EN, do not list /el duplicates.
-  const enOnlyPaths = [
+    // GSC Boost, the software (/platform). Bilingual since 2026-10: the
+    // module pages and pricing have real Greek copy from the app's own
+    // dictionary. The old /platform/features/<slug> pages are gone (308s
+    // in next.config.ts to the module anchors on /platform/features).
     { path: '/platform', priority: 0.95 },
     { path: '/platform/features', priority: 0.92 },
     { path: '/platform/pricing', priority: 0.9, changeFrequency: 'monthly' as const },
     { path: '/platform/for/agencies', priority: 0.85, changeFrequency: 'monthly' as const },
     { path: '/platform/for/in-house', priority: 0.85, changeFrequency: 'monthly' as const },
     { path: '/platform/for/ecommerce', priority: 0.85, changeFrequency: 'monthly' as const },
+    { path: '/platform/security', priority: 0.6, changeFrequency: 'monthly' as const },
+  ];
+
+  // Tools / resources canonicalize to EN, do not list /el duplicates.
+  const enOnlyPaths = [
     { path: '/resources', priority: 0.88 },
     // The two framework pages under /resources. They own the definitional
     // GEO/AEO queries that seven blog posts currently answer in parallel.
@@ -97,9 +100,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     forEnOnly(`/compare/${c.slug}`, { priority: 0.82, changeFrequency: 'monthly' }),
   );
 
-  const featurePages = MARKETING_FEATURES.filter((f) => isPlatformFeatureIndexable(f.slug)).flatMap((f) =>
-    forEnOnly(`/platform/features/${f.slug}`, { priority: 0.8, changeFrequency: 'monthly' }),
-  );
 
   const portfolioPages = portfolioProjects.flatMap((p) =>
     forBothLocales(`/work/${p.slug}`, {
@@ -132,7 +132,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [...staticPages,
     ...comparePages,
-    ...featurePages,
     ...portfolioPages,
     ...pillarPages,
     ...blogPages,

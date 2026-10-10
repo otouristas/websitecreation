@@ -5,7 +5,6 @@
 
 import { services } from '@/data/services';
 import { industries, TOURISM_INDUSTRY_SLUGS } from '@/data/industries';
-import { MARKETING_FEATURES } from '@/data/marketing-features';
 import { COMPARE_PAGES } from '@/data/compare-pages';
 import type { Breadcrumb } from '@/lib/types/page';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
@@ -64,7 +63,7 @@ export const clusters: Record<string, Cluster> = {
             '/platform/for/agencies',
             '/platform/for/in-house',
             '/platform/for/ecommerce',
-    ...MARKETING_FEATURES.map((f) => `/platform/features/${f.slug}`),
+            '/platform/security',
     ...COMPARE_PAGES.map((c) => `/compare/${c.slug}`),
         ],
     },

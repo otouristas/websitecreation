@@ -218,7 +218,7 @@ export const glossaryCategories: GlossaryCategory[] = [
         relatedTerms: ["indexing", "robots-txt", "xml-sitemap", "crawl-budget"],
         relatedLinks: [
           { title: "Technical SEO Guide", url: "/blog/technical-seo-guide", type: "blog" },
-          { title: "Technical SEO Audits", url: "/platform/features/technical-seo-audits", type: "feature" }
+          { title: "Site audit in GSC Boost", url: "/platform/features#audit", type: "feature" }
         ]
       },
       {
