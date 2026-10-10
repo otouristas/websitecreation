@@ -8,6 +8,20 @@ import { getServiceEl } from '@/data/services-i18n';
 import { getLocationPack, getServiceCopyEl } from '@/data/location-content';
 import { localizedPath, siteLocaleFromPath, type SiteLocale } from '@/lib/i18n/locale';
 import { getGreekLocative } from '@/lib/greek-locative';
+import { CheckList } from '@/components/kit/primitives';
+import { kitSecondaryBtn } from '@/components/kit/sections';
+import {
+  accentCls,
+  approachCard,
+  closingBox,
+  hoodChip,
+  inlineLink,
+  kitPrimaryBtn,
+  localH2,
+  localH3,
+  localProse,
+  neighbourhoodBox,
+} from './location-styles';
 
 interface LocationContentGreekProps {
   location: Location;
@@ -63,159 +77,143 @@ export function LocationContentGreek({ location, service, locale: localeProp }: 
   const serviceDepth =
     service && pack?.serviceDepth?.[service.slug] ? pack.serviceDepth[service.slug] : null;
 
+  const approach = [
+    {
+      title: '1. Έρευνα με δεδομένα',
+      body: `Αναλύουμε ανταγωνιστές ${inCity}: keywords, σελίδες που φέρνουν traffic και ευκαιρίες «striking distance» από το Search Console - όχι εικασίες.`,
+    },
+    {
+      title: '2. Τεχνική βάση',
+      body: `Core Web Vitals, indexability και καθαρή αρχιτεκτονική ώστε το site να φορτώνει γρήγορα για χρήστες ${inCity} και σε κινητά.`,
+    },
+    {
+      title: '3. GEO & AEO',
+      body: 'Δομημένο περιεχόμενο, schema και οντότητες για ChatGPT Search, Perplexity και Gemini - ώστε η μάρκα σας να εμφανίζεται στις απαντήσεις AI, όχι μόνο στα blue links.',
+    },
+    {
+      title: '4. Τοπική ανάπτυξη',
+      body: 'Google Business Profile, τοπικές σελίδες και εσωτερική σύνδεση με γειτονικές περιοχές - κρίσιμο για ελληνικές αναζητήσεις «κοντά μου».',
+    },
+  ];
+
   return (
-    <div className="prose prose-lg max-w-none text-foreground" lang="el">
-      <div className="mb-12">
-        <h2 className="text-3xl font-bold text-foreground mb-6">
-          Η έξυπνη επιλογή για επιχειρήσεις {inCity}
-        </h2>
-        <p className="mb-4">
-          Στην AnotherSEOGuru συνδυάζουμε πλατφόρμα SEO με Google Search Console, GEO (Generative Engine
-          Optimization) και AEO (Answer Engine Optimization) {inCity} ({country}). Δεν χρησιμοποιούμε
-          παλιές τακτικές - αναλύουμε τα πραγματικά σήματα κατάταξης και χτίζουμε στρατηγική για{' '}
-          {targetFor} με μετρήσιμο ROI.
-        </p>
-        <p>
-          Έχουμε εμπειρία με ελληνικές αγορές φιλοξενίας και τουρισμού (π.χ. ξενοδοχεία, ενοικιάσεις
-          οχημάτων) - κατανοούμε πώς η τοπική αναζήτηση και η ορατότητα σε AI αλλάζουν τις κρατήσεις και
-          τα αιτήματα πελατών {inCity}.
-        </p>
-        {pack?.intro ? (
-          <>
-            <p className="mt-4">{pack.intro}</p>
-            {pack.tourism ? (
-              <p className="mt-4">
+    <div className="text-foreground" lang="el">
+      <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+        <div className="min-w-0">
+          <h2 className={localH2}>
+            Η έξυπνη επιλογή για <span className={accentCls}>επιχειρήσεις {inCity}</span>
+          </h2>
+          <div className={localProse}>
+            <p>
+              Στην AnotherSEOGuru συνδυάζουμε πλατφόρμα SEO με Google Search Console, GEO (Generative Engine
+              Optimization) και AEO (Answer Engine Optimization) {inCity} ({country}). Δεν χρησιμοποιούμε
+              παλιές τακτικές - αναλύουμε τα πραγματικά σήματα κατάταξης και χτίζουμε στρατηγική για{' '}
+              {targetFor} με μετρήσιμο ROI.
+            </p>
+            <p>
+              Έχουμε εμπειρία με ελληνικές αγορές φιλοξενίας και τουρισμού (π.χ. ξενοδοχεία, ενοικιάσεις
+              οχημάτων) - κατανοούμε πώς η τοπική αναζήτηση και η ορατότητα σε AI αλλάζουν τις κρατήσεις και
+              τα αιτήματα πελατών {inCity}.
+            </p>
+            {pack?.intro ? <p>{pack.intro}</p> : null}
+            {pack?.intro && pack.tourism ? (
+              <p>
                 Εξειδικευόμαστε σε{' '}
-                <Link href={lp('/solutions/hotels/website-creation')} className="text-primary underline">
+                <Link href={lp('/solutions/hotels/website-creation')} className={inlineLink}>
                   κατασκευή ιστοσελίδας ξενοδοχείου
                 </Link>{' '}
                 και{' '}
-                <Link href={lp('/solutions/hotels')} className="text-primary underline">
+                <Link href={lp('/solutions/hotels')} className={inlineLink}>
                   SEO για ξενοδοχεία
                 </Link>{' '}
                 - δείτε και τον{' '}
-                <Link href={lp('/blog/kataskevi-istoselidas-xenodoxeia')} className="text-primary underline">
+                <Link href={lp('/blog/kataskevi-istoselidas-xenodoxeia')} className={inlineLink}>
                   οδηγό μας για ιστοσελίδες ξενοδοχείων
                 </Link>
                 .
               </p>
             ) : null}
-          </>
-        ) : null}
-        {serviceCopy ? (
-          <div className="mt-8">
-            <h3 className="text-2xl font-bold text-foreground mb-4">{serviceCopy.heading}</h3>
-            {serviceCopy.paragraphs.map((para) => (
-              <p key={para.slice(0, 40)} className="mb-4">
-                {para}
-              </p>
-            ))}
-            <ul className="mt-4 grid gap-2 sm:grid-cols-2">
-              {serviceCopy.deliverables.map((d) => (
-                <li key={d} className="flex items-start gap-2 text-muted-foreground">
-                  <svg className="mt-1 h-4 w-4 flex-shrink-0 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>{d}</span>
-                </li>
-              ))}
-            </ul>
           </div>
-        ) : null}
-        {serviceDepth ? (
-          <p className="mt-4">
-            {serviceDepth}{' '}
-            <Link href={lp('/pricing')} className="text-primary underline">
-              Δείτε τιμές
-            </Link>{' '}
-            ή{' '}
-            <Link href={lp('/get-started')} className="text-primary underline">
-              ζητήστε δωρεάν προσφορά
-            </Link>
-            .
-          </p>
-        ) : null}
-      </div>
+          {serviceCopy ? (
+            <div className="mt-10">
+              <h3 className={localH3}>{serviceCopy.heading}</h3>
+              <div className={localProse}>
+                {serviceCopy.paragraphs.map((para) => (
+                  <p key={para.slice(0, 40)}>{para}</p>
+                ))}
+              </div>
+              <CheckList items={serviceCopy.deliverables} className="mt-6 sm:grid-cols-2" />
+            </div>
+          ) : null}
+          {serviceDepth ? (
+            <div className={localProse}>
+              <p>
+                {serviceDepth}{' '}
+                <Link href={lp('/pricing')} className={inlineLink}>
+                  Δείτε τιμές
+                </Link>{' '}
+                ή{' '}
+                <Link href={lp('/get-started')} className={inlineLink}>
+                  ζητήστε δωρεάν προσφορά
+                </Link>
+                .
+              </p>
+            </div>
+          ) : null}
+        </div>
 
-      <div className="grid md:grid-cols-2 gap-8 mb-16">
-        <div className="bg-surface-raised p-8 rounded-xl border border-hairline">
-          <h3 className="text-xl font-bold text-primary mb-3">1. Έρευνα με δεδομένα</h3>
-          <p className="text-muted-foreground">
-            Αναλύουμε ανταγωνιστές {inCity}: keywords, σελίδες που φέρνουν traffic και ευκαιρίες
-            «striking distance» από το Search Console - όχι εικασίες.
-          </p>
-        </div>
-        <div className="bg-surface-raised p-8 rounded-xl border border-hairline">
-          <h3 className="text-xl font-bold text-primary mb-3">2. Τεχνική βάση</h3>
-          <p className="text-muted-foreground">
-            Core Web Vitals, indexability και καθαρή αρχιτεκτονική ώστε το site να φορτώνει γρήγορα για
-            χρήστες {inCity} και σε κινητά.
-          </p>
-        </div>
-        <div className="bg-surface-raised p-8 rounded-xl border border-hairline">
-          <h3 className="text-xl font-bold text-primary mb-3">3. GEO &amp; AEO</h3>
-          <p className="text-muted-foreground">
-            Δομημένο περιεχόμενο, schema και οντότητες για ChatGPT Search, Perplexity και Gemini - ώστε η
-            μάρκα σας να εμφανίζεται στις απαντήσεις AI, όχι μόνο στα blue links.
-          </p>
-        </div>
-        <div className="bg-surface-raised p-8 rounded-xl border border-hairline">
-          <h3 className="text-xl font-bold text-primary mb-3">4. Τοπική ανάπτυξη</h3>
-          <p className="text-muted-foreground">
-            Google Business Profile, τοπικές σελίδες και εσωτερική σύνδεση με γειτονικές περιοχές - κρίσιμο
-            για ελληνικές αναζητήσεις «κοντά μου».
-          </p>
-        </div>
+        <ol className="grid content-start gap-4 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+          {approach.map((a) => (
+            <li key={a.title} className={approachCard}>
+              <h3 className="text-[16px] font-semibold text-foreground">{a.title}</h3>
+              <p className="mt-2 text-[14px] leading-relaxed text-muted-foreground">{a.body}</p>
+            </li>
+          ))}
+        </ol>
       </div>
 
       {neighborhoods && neighborhoods.length > 0 && (
-        <div className="mb-12 bg-primary/5 p-8 rounded-[10px]">
-          <h3 className="text-2xl font-bold text-foreground mb-4">
-            Καλύπτουμε όλες τις γειτονιές {inCity}
-          </h3>
-          <p className="mb-6">
+        <div className={neighbourhoodBox}>
+          <h3 className={localH3}>Καλύπτουμε όλες τις γειτονιές {inCity}</h3>
+          <p className="mt-3 max-w-3xl text-[15.5px] leading-relaxed text-muted-foreground">
             Το τοπικό SEO δεν είναι μόνο «{targetKeyword} {city}» - στοχεύουμε γειτονιές και
             micro-intent όπου βρίσκονται οι πελάτες σας.
           </p>
-          <div className="flex flex-wrap gap-3">
+          <ul className="mt-6 flex flex-wrap gap-2">
             {neighborhoods.map((hood) => (
-              <span
-                key={hood}
-                className="px-4 py-2 bg-surface rounded-full text-sm font-medium text-primary shadow-sm border border-hairline"
-              >
+              <li key={hood} className={hoodChip}>
                 {hood}
-              </span>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       )}
 
       {service && SERVICE_GUIDE[service.slug] ? (
-        <div className="mb-12 bg-surface-raised p-8 rounded-[10px] border border-hairline not-prose">
-          <h3 className="text-xl font-bold text-foreground mb-3">Χρήσιμος οδηγός πριν ξεκινήσετε</h3>
-          <p className="text-muted-foreground mb-4">
+        <div className={neighbourhoodBox}>
+          <h3 className={localH3}>Χρήσιμος οδηγός πριν ξεκινήσετε</h3>
+          <p className="mt-3 max-w-3xl text-[15.5px] leading-relaxed text-muted-foreground">
             Διαβάστε τον αναλυτικό μας οδηγό ώστε να ξέρετε ακριβώς τι να περιμένετε σε κόστος, χρόνο και
             αποτέλεσμα για {targetFor} {inCity}.
           </p>
-          <Link href={lp(SERVICE_GUIDE[service.slug].href)} className="text-primary underline font-medium">
+          <Link href={lp(SERVICE_GUIDE[service.slug].href)} className={`${inlineLink} mt-4 inline-block`}>
             {SERVICE_GUIDE[service.slug].label} →
           </Link>
         </div>
       ) : null}
 
-      <div className="text-center py-12 border-t border-hairline mt-12">
-        <h3 className="text-2xl font-bold mb-4">Έτοιμοι να αναπτύξετε την επιχείρησή σας {inCity};</h3>
-        <p className="mb-8 text-muted-foreground max-w-2xl mx-auto">
+      <div className={closingBox}>
+        <h3 className="text-balance font-display text-[24px] font-semibold tracking-[-0.03em] text-foreground sm:text-[28px]">
+          Έτοιμοι να αναπτύξετε την επιχείρησή σας {inCity};
+        </h3>
+        <p className="mx-auto mt-3 max-w-2xl text-[15.5px] leading-relaxed text-muted-foreground">
           Ζητήστε δωρεάν προσφορά - ή ξεκινήστε δοκιμή 7 ημερών της πλατφόρμας SEO μας.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link
-            href={lp('/contact')}
-            className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-primary-foreground bg-primary rounded-lg hover:bg-primary"
-          >
+        <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
+          <Link href={lp('/contact')} className={kitPrimaryBtn}>
             Δωρεάν προσφορά - {city}
           </Link>
-          <Link href={lp('/blog/geo-aeo-ellada')} className="btn btn-outline text-lg px-8 py-4">
+          <Link href={lp('/blog/geo-aeo-ellada')} className={kitSecondaryBtn}>
             Οδηγός GEO &amp; AEO Ελλάδα
           </Link>
         </div>

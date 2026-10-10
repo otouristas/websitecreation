@@ -1,18 +1,23 @@
 import Link from 'next/link';
-import { PageShell, ShellCrumbs } from '@/components/bespoke/PageShell';
+import { Bot, Eye, Library, ListChecks, Sparkles, X } from 'lucide-react';
+import { PageShell } from '@/components/bespoke/PageShell';
+import { AiVisibilityPreview, AssistantPreview, CtaBand, FeatureRow, KitHeading, KitSection, Stage, ValueTrio } from '@/components/kit';
 import {
-  Section,
-  SectionHeading,
-  Bloom,
-  PrimaryButtonLink,
-  GhostButtonLink,
-  Tick,
-} from '@/components/landing/primitives';
-import { PortfolioThumbnail } from '@/components/landing/PortfolioThumbnail';
-import FAQSection from '@/components/seo/FAQSection';
+  AccentTitle,
+  CardGrid,
+  DiyRow,
+  FaqBlock,
+  PriceTiers,
+  ProcessGrid,
+  ProofGrid,
+  ServiceHero,
+  getServiceKit,
+  pick,
+} from '@/components/service-kit';
 import RelatedPages from '@/components/seo/RelatedPages';
+import { cn } from '@/lib/cn';
 import { getAiVisibilityPillarCopy } from '@/data/ai-visibility-pillar';
-import { currentPrice, formatPrice, resolvePriceTokens, seoPackages } from '@/data/pricing';
+import { resolvePriceTokens, seoPackages } from '@/data/pricing';
 import { SEO_MIN_TERM_MONTHS } from '@/data/company-facts';
 import { portfolioProjects } from '@/data/portfolio';
 import { getServiceBySlug } from '@/data/services';
@@ -109,144 +114,96 @@ export function AiVisibilityPage({ locale }: { locale: SiteLocale }) {
     },
   ];
 
+  const kit = getServiceKit('ai-visibility');
+  const tx = (en: string, el: string) => (isEl ? el : en);
+
   return (
     <PageShell locale={locale} signatureHue={SIGNATURE_HUE} schemas={schemas}>
-      <section className="relative overflow-hidden border-b border-hairline">
-        <Bloom signature className="left-1/2 top-[-12rem] h-[30rem] w-[56rem] -translate-x-1/2" />
-        <div className="main-below-header relative mx-auto max-w-3xl px-6 pb-16 pt-6">
-          <ShellCrumbs items={breadcrumbs} />
-          <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-signature">
-            {t.eyebrow}
-          </span>
-          <h1 className="mt-3 font-display text-[2.4rem] font-medium leading-[1.05] tracking-[-0.04em] sm:text-5xl">
-            {t.h1}
-          </h1>
-          <p className="mt-6 text-lg leading-relaxed text-muted-foreground">{rp(t.answer)}</p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <PrimaryButtonLink href={lp('/get-started?service=ai-visibility')}>
-              {t.cta.primary}
-            </PrimaryButtonLink>
-            <GhostButtonLink href={lp('/pricing')}>{t.cta.secondary}</GhostButtonLink>
-          </div>
-        </div>
-      </section>
+      <ServiceHero
+        locale={locale}
+        breadcrumbs={breadcrumbs}
+        pill={{ kind: kit.pill.kind, tag: pick(kit.pill.tag, locale), text: kit.pill.text[locale], href: lp(kit.pill.href) }}
+        h1={t.h1}
+        lead={rp(t.answer)}
+        primaryLabel={t.cta.primary}
+        primaryHref={lp('/get-started?service=ai-visibility')}
+        links={[
+          { href: lp('/pricing'), label: t.cta.secondary },
+          { href: lp('/ai-visibility-check'), label: tx('Free AI visibility check', 'Δωρεάν έλεγχος ορατότητας σε AI') },
+        ]}
+        visual={<AiVisibilityPreview locale={locale} />}
+        visualLabel={kit.heroLabel[locale]}
+      />
 
-      <Section>
-        <SectionHeading
-          eyebrow={isEl ? 'Πλαίσιο' : 'Context'}
-          title={t.problem.title}
-          body={t.problem.intro}
+      <KitSection className="mt-6 sm:mt-10">
+        <KitHeading eyebrow={isEl ? 'Πλαίσιο' : 'Context'} eyebrowIcon={<Bot />} title={<AccentTitle text={t.problem.title} />} description={t.problem.intro} />
+        <ValueTrio
+          className="mt-14"
+          items={t.problem.items.map((item, i) => ({ icon: [Eye, Library, Sparkles][i % 3], title: item.title, text: item.body }))}
         />
-        <div className="mx-auto mt-10 grid max-w-4xl gap-4 sm:grid-cols-3">
-          {t.problem.items.map((item) => (
-            <div key={item.title} className="rounded-[14px] border border-hairline bg-surface p-6">
-              <h3 className="font-display text-lg font-medium text-foreground">{item.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
-            </div>
-          ))}
-        </div>
-      </Section>
+      </KitSection>
 
-      <Section className="border-t border-hairline">
-        <SectionHeading
-          eyebrow={isEl ? 'Ορισμοί' : 'Definitions'}
-          title={t.definitions.title}
-          body={t.definitions.intro}
-        />
-        <div className="mx-auto mt-10 grid max-w-4xl gap-4 sm:grid-cols-3">
-          {t.definitions.items.map((item) => (
-            <div key={item.title} className="rounded-[14px] border border-hairline bg-surface p-6">
-              <h3 className="font-display text-lg font-medium text-foreground">{item.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
-            </div>
-          ))}
-        </div>
-      </Section>
+      <KitSection tinted>
+        <KitHeading align="center" eyebrow={isEl ? 'Ορισμοί' : 'Definitions'} title={<AccentTitle text={t.definitions.title} />} description={t.definitions.intro} />
+        <CardGrid className="mt-12" items={t.definitions.items} />
+      </KitSection>
 
-      <Section className="border-t border-hairline">
-        <SectionHeading
+      <KitSection>
+        <FeatureRow
           eyebrow={isEl ? 'Παραδοτέα' : 'Deliverables'}
-          title={t.includes.title}
+          eyebrowIcon={<ListChecks />}
+          title={<AccentTitle text={t.includes.title} />}
           body={t.includes.intro}
+          bullets={t.includes.items.slice(0, 3).map((item) => item.title)}
+          preview={
+            <Stage>
+              <AssistantPreview locale={locale} />
+            </Stage>
+          }
         />
-        <div className="mx-auto mt-10 grid max-w-4xl gap-4 sm:grid-cols-2">
-          {t.includes.items.map((item) => (
-            <div key={item.title} className="rounded-[14px] border border-hairline bg-surface p-6">
-              <h3 className="font-display text-lg font-medium text-foreground">{item.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
-            </div>
-          ))}
-        </div>
-      </Section>
+        <CardGrid className="mt-16" items={t.includes.items} />
+      </KitSection>
 
-      <Section className="border-t border-hairline">
-        <SectionHeading
-          eyebrow={isEl ? 'Κοινό' : 'Audience'}
-          title={t.audience.title}
-          body={t.audience.intro}
-        />
-        <div className="mx-auto mt-10 grid max-w-4xl gap-4 sm:grid-cols-2">
-          {t.audience.items.map((item) => (
-            <div key={item.title} className="rounded-[14px] border border-hairline bg-surface p-6">
-              <h3 className="font-display text-lg font-medium text-foreground">{item.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
-            </div>
-          ))}
-        </div>
-        <div className="mx-auto mt-10 max-w-2xl rounded-[14px] border border-hairline bg-surface-raised/50 p-6">
-          <h3 className="font-display text-lg font-medium text-foreground">{t.notForYou.title}</h3>
-          <ul className="mt-4 space-y-3">
+      <KitSection tinted>
+        <KitHeading eyebrow={isEl ? 'Κοινό' : 'Audience'} title={<AccentTitle text={t.audience.title} />} description={t.audience.intro} />
+        <CardGrid className="mt-12" cols={2} items={t.audience.items} />
+        <div className="reveal mt-10 rounded-2xl border border-dashed border-hairline p-6 sm:p-7">
+          <h3 className="font-mono text-[12px] font-medium uppercase tracking-[0.1em] text-muted-foreground">{t.notForYou.title}</h3>
+          <ul className="mt-5 grid gap-2.5 sm:grid-cols-2">
             {t.notForYou.items.map((item) => (
-              <li key={item} className="flex gap-3 text-sm leading-relaxed text-muted-foreground">
-                <Tick className="mt-1 shrink-0" />
-                <span>{item}</span>
+              <li key={item} className="flex items-start gap-2.5 text-[15px] leading-6 text-muted-foreground">
+                <span aria-hidden className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-foreground/8 [&_svg]:size-3">
+                  <X strokeWidth={3} />
+                </span>
+                {item}
               </li>
             ))}
           </ul>
         </div>
-      </Section>
+      </KitSection>
 
-      <Section className="border-t border-hairline">
-        <SectionHeading
-          eyebrow={isEl ? 'Διαδικασία' : 'Process'}
-          title={t.process.title}
-          body={t.process.intro}
-        />
-        <ol className="mx-auto mt-10 max-w-2xl space-y-6">
-          {t.process.steps.map((step, i) => (
-            <li key={step.title} className="flex gap-4">
-              <span className="mt-0.5 grid size-8 shrink-0 place-items-center rounded-full border border-hairline font-display text-sm text-signature">
-                {i + 1}
-              </span>
-              <div>
-                <h3 className="font-display text-lg font-medium text-foreground">{step.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{step.body}</p>
-              </div>
-            </li>
-          ))}
-        </ol>
-      </Section>
+      <KitSection id="process">
+        <KitHeading eyebrow={isEl ? 'Διαδικασία' : 'Process'} title={<AccentTitle text={t.process.title} />} description={t.process.intro} />
+        <ProcessGrid className="mt-12" steps={t.process.steps} />
+      </KitSection>
 
-      <Section className="border-t border-hairline">
-        <SectionHeading
-          eyebrow={isEl ? 'Τιμές' : 'Pricing'}
-          title={t.pricing.title}
-          body={t.pricing.intro}
-        />
-        <div className="mx-auto mt-10 grid max-w-4xl gap-4 sm:grid-cols-3">
+      <KitSection tinted id="pricing">
+        <KitHeading align="center" eyebrow={isEl ? 'Τιμές' : 'Pricing'} title={<AccentTitle text={t.pricing.title} />} description={t.pricing.intro} />
+        <PriceTiers kind="seo" locale={locale} className="mt-12" />
+        <ul className="mt-6 grid gap-3 md:grid-cols-3">
           {seoPackages.map((tier) => {
             const includesGeo = GEO_PACKAGE_IDS.has(tier.id);
             return (
-              <div key={tier.id} className="rounded-[14px] border border-hairline bg-surface p-6">
-                <div className="font-display text-sm font-medium text-signature">{tier.name}</div>
-                <div className="mt-2 font-display text-2xl font-medium text-foreground">
-                  €{formatPrice(currentPrice(tier), locale)}
-                  <span className="text-sm text-muted-foreground">{isEl ? '/μήνα' : '/mo'}</span>
-                </div>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  {isEl ? tier.forEl : tier.forEn}
-                </p>
-                <p className="mt-4 text-xs leading-relaxed text-muted-foreground">
+              <li
+                key={tier.id}
+                className={cn(
+                  'flex items-start gap-2 rounded-xl border px-4 py-3 text-[13px] leading-snug',
+                  includesGeo ? 'border-brand/30 bg-brand/5 text-foreground/90' : 'border-hairline text-muted-foreground',
+                )}
+              >
+                {includesGeo ? <Bot className="mt-0.5 size-3.5 shrink-0 text-brand" aria-hidden /> : <X className="mt-0.5 size-3.5 shrink-0" aria-hidden />}
+                <span>
+                  <b className="font-semibold text-foreground">{tier.name}:</b>{' '}
                   {includesGeo
                     ? isEl
                       ? 'Περιλαμβάνει αφιερωμένη εργασία AEO και GEO.'
@@ -254,83 +211,48 @@ export function AiVisibilityPage({ locale }: { locale: SiteLocale }) {
                     : isEl
                       ? 'Δεν περιλαμβάνει ξεχωριστό πρόγραμμα GEO.'
                       : 'Does not include a separate GEO programme.'}
-                </p>
-              </div>
+                </span>
+              </li>
             );
           })}
-        </div>
-        <p className="mx-auto mt-6 max-w-2xl text-center text-sm text-muted-foreground">
+        </ul>
+        <p className="mx-auto mt-8 max-w-2xl text-center text-[14px] text-muted-foreground">
           {t.pricing.note.replace('6', String(SEO_MIN_TERM_MONTHS))}
         </p>
-        <div className="mt-8 flex justify-center">
-          <GhostButtonLink href={lp('/pricing')}>{t.pricing.cta}</GhostButtonLink>
-        </div>
-      </Section>
+        <p className="mt-4 text-center text-[14px]">
+          <Link href={lp('/pricing')} className="font-medium text-link underline-offset-4 hover:underline">
+            {t.pricing.cta}
+          </Link>
+        </p>
+      </KitSection>
+
+      <DiyRow
+        locale={locale}
+        source="service-ai-visibility"
+        body={tx(
+          'GSC Boost tracks whether ChatGPT, Gemini, Perplexity and Google’s AI mention you, next to your Search Console clicks. It is the same software our team uses for this service.',
+          'Το GSC Boost μετρά αν σας αναφέρουν το ChatGPT, το Gemini, το Perplexity και η AI της Google, δίπλα στα κλικ του Search Console. Είναι το ίδιο λογισμικό που χρησιμοποιεί η ομάδα μας σε αυτή την υπηρεσία.',
+        )}
+        preview={<AiVisibilityPreview locale={locale} />}
+      />
 
       {proof.length > 0 ? (
-        <Section className="border-t border-hairline">
-          <SectionHeading
-            eyebrow={isEl ? 'Έργα' : 'Work'}
-            title={t.proof.title}
-            body={t.proof.intro}
-          />
-          <ul className="mx-auto mt-10 grid max-w-4xl gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {proof.map((project) => (
-              <li key={project.slug}>
-                <Link
-                  href={lp(`/work/${project.slug}`)}
-                  className="group block overflow-hidden rounded-[14px] border border-hairline bg-surface transition-colors hover:border-primary/40"
-                >
-                  <PortfolioThumbnail
-                    src={project.screenshot}
-                    alt={project.name}
-                    className="border-b border-hairline"
-                  />
-                  <span className="block px-4 py-3">
-                    <span className="block font-display text-sm font-medium text-foreground">
-                      {project.name}
-                    </span>
-                    <span className="mt-1 block text-xs leading-relaxed text-muted-foreground">
-                      {isEl && project.summaryEl ? project.summaryEl : project.summary}
-                    </span>
-                  </span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <p className="mx-auto mt-8 max-w-2xl text-center text-sm text-muted-foreground">
-            {t.proof.caveat}
-          </p>
-        </Section>
+        <KitSection>
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <KitHeading eyebrow={isEl ? 'Έργα' : 'Work'} title={<AccentTitle text={t.proof.title} />} description={t.proof.intro} />
+          </div>
+          <ProofGrid className="mt-12" projects={proof} locale={locale} />
+          <p className="mx-auto mt-8 max-w-2xl text-center text-[14px] text-muted-foreground">{t.proof.caveat}</p>
+        </KitSection>
       ) : null}
 
-      <Section className="border-t border-hairline">
-        <div className="mx-auto max-w-2xl">
-          <FAQSection faqs={faqs} title={t.faqTitle} locale={locale} />
-        </div>
-      </Section>
+      <FaqBlock locale={locale} tinted title={<AccentTitle text={t.faqTitle} />} faqs={faqs} />
 
-      <Section className="border-t border-hairline">
-        <RelatedPages
-          title={t.relatedTitle}
-          pages={related.map((r) => ({ slug: lp(r.path), title: r.title }))}
-        />
-      </Section>
+      <KitSection className="py-14 sm:py-16">
+        <RelatedPages title={t.relatedTitle} pages={related.map((r) => ({ slug: lp(r.path), title: r.title }))} />
+      </KitSection>
 
-      <Section className="border-t border-hairline">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-display text-2xl font-medium tracking-[-0.03em] sm:text-3xl">
-            {t.cta.title}
-          </h2>
-          <p className="mt-4 leading-relaxed text-muted-foreground">{t.cta.body}</p>
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <PrimaryButtonLink href={lp('/get-started?service=ai-visibility')}>
-              {t.cta.primary}
-            </PrimaryButtonLink>
-            <GhostButtonLink href={lp('/pricing')}>{t.cta.secondary}</GhostButtonLink>
-          </div>
-        </div>
-      </Section>
+      <CtaBand locale={locale} source="service-ai-visibility" title={<AccentTitle text={t.cta.title} />} description={t.cta.body} />
     </PageShell>
   );
 }

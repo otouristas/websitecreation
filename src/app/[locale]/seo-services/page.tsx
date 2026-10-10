@@ -4,22 +4,19 @@ import { notFound } from 'next/navigation';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import SchemaMarkup from '@/components/seo/SchemaMarkup';
-import Breadcrumbs from '@/components/seo/Breadcrumbs';
-import FAQSection from '@/components/seo/FAQSection';
 import RelatedPages from '@/components/seo/RelatedPages';
-import { PortfolioThumbnail } from '@/components/landing/PortfolioThumbnail';
+import { ArrowUpRight, ListChecks, Plane, X } from 'lucide-react';
+import { CtaBand, FeatureRow, KitHeading, KitSection, OpportunitiesPreview, ReportPreview, Stage } from '@/components/kit';
 import {
-  Section,
-  SectionHeading,
-  Bloom,
-  PrimaryButtonLink,
-  GhostButtonLink,
-  Tick,
-  ghostBtnClass,
-} from '@/components/landing/primitives';
-import { WhatsAppIcon } from '@/components/icons/WhatsAppIcon';
-import { WHATSAPP_HREF } from '@/lib/contact-info';
-import { cn } from '@/lib/cn';
+  AccentTitle,
+  CardGrid,
+  DiyRow,
+  FaqBlock,
+  PriceTiers,
+  ProcessGrid,
+  ProofGrid,
+  ServiceHero,
+} from '@/components/service-kit';
 import { isValidLocale, localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 import { buildMetadata } from '@/lib/seo';
 import {
@@ -31,7 +28,7 @@ import {
 } from '@/lib/seo/schema';
 import { generateBreadcrumbs } from '@/lib/linking';
 import { getSeoServicesPillarCopy } from '@/data/seo-services-pillar';
-import { currentPrice, formatPrice, resolvePriceTokens, seoPackages } from '@/data/pricing';
+import { resolvePriceTokens } from '@/data/pricing';
 import { PROJECT_COUNT, SEO_MIN_TERM_MONTHS } from '@/data/company-facts';
 import { portfolioProjects } from '@/data/portfolio';
 
@@ -119,227 +116,131 @@ export default async function SeoServicesPillarPage({ params }: PageProps) {
     },
   ];
 
+  const tx = (en: string, el: string) => (isEl ? el : en);
+
   return (
     <>
       <SchemaMarkup schemas={schemas} />
       <Header locale={siteLocale} />
-      <main className="blueprint-grid relative z-0 main-below-header">
-        <section className="relative overflow-hidden border-b border-hairline">
-          <Bloom className="left-1/2 top-[-12rem] h-[30rem] w-[56rem] -translate-x-1/2" />
-          <div className="relative mx-auto max-w-3xl px-6 pb-16 pt-6">
-            <Breadcrumbs items={breadcrumbItems} className="mb-6" />
-            <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-brand">
-              {t.eyebrow}
-            </span>
-            <h1 className="mt-3 font-display text-[2.4rem] font-medium leading-[1.05] tracking-[-0.04em] sm:text-5xl">
-              {t.h1}
-            </h1>
-            {/* Answer-first: the whole proposition in one paragraph, directly
-                under the H1, so a snippet or an answer engine can lift it. */}
-            <p className="mt-6 text-lg leading-relaxed text-muted-foreground">{rp(t.answer)}</p>
-            <p className="mt-4 text-base leading-relaxed text-muted-foreground">{t.answerExtra}</p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <PrimaryButtonLink href={lp('/get-started')}>{t.cta.primary}</PrimaryButtonLink>
-              <GhostButtonLink href={lp('/pricing')}>{t.cta.secondary}</GhostButtonLink>
-              <a
-                href={WHATSAPP_HREF}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={ghostBtnClass}
-              >
-                <WhatsAppIcon className="h-4 w-4 text-[#25D366]" />
-                {t.cta.whatsapp}
-              </a>
-            </div>
-          </div>
-        </section>
+      <main className="blueprint-grid relative z-0">
+        {/* Answer-first: the whole proposition in one paragraph, directly
+            under the H1, so a snippet or an answer engine can lift it. */}
+        <ServiceHero
+          locale={siteLocale}
+          breadcrumbs={breadcrumbItems}
+          pill={{
+            kind: 'free',
+            tag: tx('Free', 'Δωρεάν'),
+            text: tx('Every engagement starts with a free SEO audit', 'Κάθε συνεργασία ξεκινά με δωρεάν έλεγχο SEO'),
+            href: `${lp('/get-started')}#free-audit`,
+          }}
+          h1={t.h1}
+          lead={rp(t.answer)}
+          extra={t.answerExtra}
+          primaryHref={lp('/get-started')}
+          primaryLabel={t.cta.primary}
+          links={[{ href: lp('/pricing'), label: t.cta.secondary }]}
+          visual={<ReportPreview locale={siteLocale} />}
+          visualLabel={tx(
+            'A monthly SEO report on a sample hotel: organic clicks, booking-page visits, top-3 keywords and the changes shipped.',
+            'Μηνιαία αναφορά SEO σε δείγμα ξενοδοχείου: οργανικά κλικ, επισκέψεις κρατήσεων, λέξεις στο top 3 και οι αλλαγές που έγιναν.',
+          )}
+          caption={tx('A sample monthly report, the kind every client gets.', 'Δείγμα μηνιαίας αναφοράς, όπως αυτή που παίρνει κάθε πελάτης.')}
+        />
 
-        <Section>
-          <SectionHeading eyebrow={isEl ? 'Παραδοτέα' : 'Deliverables'} title={t.includes.title} body={t.includes.intro} />
-          <div className="mx-auto mt-10 grid max-w-4xl gap-4 sm:grid-cols-2">
-            {t.includes.items.map((item) => {
-              const cardClass = cn(
-                'rounded-[14px] border border-hairline bg-surface p-6',
-                item.href && 'transition-colors hover:border-primary/40',
-              );
-              const inner = (
-                <>
-                  <h3 className="font-display text-lg font-medium text-foreground">{item.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
-                </>
-              );
-              return item.href ? (
-                <Link key={item.title} href={lp(item.href)} className={cardClass}>
-                  {inner}
-                </Link>
-              ) : (
-                <div key={item.title} className={cardClass}>
-                  {inner}
-                </div>
-              );
-            })}
-          </div>
-        </Section>
-
-        <Section className="border-t border-hairline">
-          <SectionHeading eyebrow={isEl ? 'Διαδικασία' : 'Process'} title={t.process.title} body={t.process.intro} />
-          <ol className="mx-auto mt-10 max-w-2xl space-y-6">
-            {t.process.steps.map((step, i) => (
-              <li key={step.title} className="flex gap-4">
-                <span className="mt-0.5 grid size-8 shrink-0 place-items-center rounded-full border border-hairline font-display text-sm text-brand">
-                  {i + 1}
-                </span>
-                <div>
-                  <h3 className="font-display text-lg font-medium text-foreground">{step.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{step.body}</p>
-                </div>
-              </li>
-            ))}
-          </ol>
-        </Section>
-
-        <Section className="border-t border-hairline">
-          <SectionHeading
-            eyebrow={t.tourism.eyebrow}
-            title={t.tourism.title}
-            body={t.tourism.intro}
+        <KitSection className="mt-6 sm:mt-10">
+          <FeatureRow
+            eyebrow={isEl ? 'Παραδοτέα' : 'Deliverables'}
+            eyebrowIcon={<ListChecks />}
+            title={<AccentTitle text={t.includes.title} />}
+            body={t.includes.intro}
+            bullets={t.includes.items.slice(0, 3).map((item) => item.title)}
+            preview={
+              <Stage>
+                <OpportunitiesPreview locale={siteLocale} />
+              </Stage>
+            }
           />
-          <ul className="mx-auto mt-10 grid max-w-4xl gap-4 sm:grid-cols-3">
-            {t.tourism.chips.map((chip) => (
-              <li key={chip.slug}>
-                <Link
-                  href={workHref(chip.slug, lp)}
-                  className="block h-full rounded-[14px] border border-hairline bg-surface p-6 transition-colors hover:border-primary/40"
-                >
-                  <span className="block font-display text-sm font-medium text-foreground">
-                    {chip.label}
-                  </span>
-                  <span className="mt-2 block text-sm leading-relaxed text-muted-foreground">
-                    {chip.line}
-                  </span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <p className="mx-auto mt-8 max-w-2xl text-center text-sm text-muted-foreground">
-            <Link href={lp('/work')} className="underline-offset-4 hover:underline">
-              {PROJECT_COUNT}+ {t.tourism.portfolioLabel}
-            </Link>
-          </p>
-        </Section>
+          <CardGrid className="mt-16" items={t.includes.items} locale={siteLocale} />
+        </KitSection>
 
-        <Section className="border-t border-hairline">
-          <SectionHeading eyebrow={isEl ? 'Τιμές' : 'Pricing'} title={t.pricing.title} body={t.pricing.intro} />
-          <div className="mx-auto mt-10 grid max-w-4xl gap-4 sm:grid-cols-3">
-            {seoPackages.map((tier) => (
+        <KitSection tinted id="process">
+          <KitHeading eyebrow={isEl ? 'Διαδικασία' : 'Process'} title={<AccentTitle text={t.process.title} />} description={t.process.intro} />
+          <ProcessGrid className="mt-12" steps={t.process.steps} />
+        </KitSection>
+
+        <KitSection>
+          <KitHeading eyebrow={t.tourism.eyebrow} eyebrowIcon={<Plane />} title={<AccentTitle text={t.tourism.title} />} description={t.tourism.intro} />
+          <div className="mt-12 grid gap-4 sm:grid-cols-3">
+            {t.tourism.chips.map((chip) => (
               <Link
-                key={tier.id}
-                href={lp('/pricing')}
-                className="rounded-[14px] border border-hairline bg-surface p-6 transition-colors hover:border-primary/40"
+                key={chip.slug}
+                href={workHref(chip.slug, lp)}
+                className="reveal group flex flex-col rounded-2xl border border-hairline bg-surface/60 p-6 transition-colors hover:border-brand/40 hover:bg-surface"
               >
-                <div className="font-display text-sm font-medium text-brand">{tier.name}</div>
-                <div className="mt-2 font-display text-2xl font-medium text-foreground">
-                  €{formatPrice(currentPrice(tier), siteLocale)}
-                  <span className="text-sm text-muted-foreground">{isEl ? '/μήνα' : '/mo'}</span>
-                </div>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  {isEl ? tier.forEl : tier.forEn}
-                </p>
+                <span className="flex items-start justify-between gap-3 text-[16px] font-semibold text-foreground">
+                  {chip.label}
+                  <ArrowUpRight className="mt-0.5 size-4 shrink-0 text-muted-foreground transition-colors group-hover:text-brand" aria-hidden />
+                </span>
+                <span className="mt-2 text-[14.5px] leading-relaxed text-muted-foreground">{chip.line}</span>
               </Link>
             ))}
           </div>
-          <p className="mx-auto mt-6 max-w-2xl text-center text-sm text-muted-foreground">
+          <p className="mt-8 text-[14px]">
+            <Link href={lp('/work')} className="font-medium text-link underline-offset-4 hover:underline">
+              {PROJECT_COUNT}+ {t.tourism.portfolioLabel}
+            </Link>
+          </p>
+        </KitSection>
+
+        <KitSection tinted id="pricing">
+          <KitHeading align="center" eyebrow={isEl ? 'Τιμές' : 'Pricing'} title={<AccentTitle text={t.pricing.title} />} description={t.pricing.intro} />
+          <PriceTiers kind="seo" locale={siteLocale} className="mt-12" />
+          <p className="mx-auto mt-8 max-w-2xl text-center text-[14px] text-muted-foreground">
             {t.pricing.note.replace('6', String(SEO_MIN_TERM_MONTHS))}
           </p>
-          <div className="mt-8 flex justify-center">
-            <GhostButtonLink href={lp('/pricing')}>{t.pricing.cta}</GhostButtonLink>
-          </div>
-        </Section>
+          <p className="mt-4 text-center text-[14px]">
+            <Link href={lp('/pricing')} className="font-medium text-link underline-offset-4 hover:underline">
+              {t.pricing.cta}
+            </Link>
+          </p>
+        </KitSection>
 
-        <Section className="border-t border-hairline">
-          <SectionHeading eyebrow={isEl ? 'Επιλογή' : 'Choosing'} title={t.choosing.title} body={t.choosing.intro} />
-          <div className="mx-auto mt-10 grid max-w-4xl gap-4 sm:grid-cols-2">
-            {t.choosing.items.map((item) => (
-              <div key={item.title} className="rounded-[14px] border border-hairline bg-surface p-6">
-                <h3 className="font-display text-lg font-medium text-foreground">{item.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
-              </div>
-            ))}
-          </div>
-          <div className="mx-auto mt-10 max-w-2xl rounded-[14px] border border-hairline bg-surface-raised/50 p-6">
-            <h3 className="font-display text-lg font-medium text-foreground">{t.notForYou.title}</h3>
-            <ul className="mt-4 space-y-3">
+        <KitSection>
+          <KitHeading eyebrow={isEl ? 'Επιλογή' : 'Choosing'} title={<AccentTitle text={t.choosing.title} />} description={t.choosing.intro} />
+          <CardGrid className="mt-12" cols={2} items={t.choosing.items} />
+          <div className="reveal mt-10 rounded-2xl border border-dashed border-hairline p-6 sm:p-7">
+            <h3 className="font-mono text-[12px] font-medium uppercase tracking-[0.1em] text-muted-foreground">{t.notForYou.title}</h3>
+            <ul className="mt-5 grid gap-2.5 sm:grid-cols-2">
               {t.notForYou.items.map((item) => (
-                <li key={item} className="flex gap-3 text-sm leading-relaxed text-muted-foreground">
-                  <Tick className="mt-1 shrink-0" />
-                  <span>{item}</span>
+                <li key={item} className="flex items-start gap-2.5 text-[15px] leading-6 text-muted-foreground">
+                  <span aria-hidden className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-foreground/8 [&_svg]:size-3">
+                    <X strokeWidth={3} />
+                  </span>
+                  {item}
                 </li>
               ))}
             </ul>
           </div>
-        </Section>
+        </KitSection>
+
+        <DiyRow locale={siteLocale} source="seo-services" />
 
         {proof.length > 0 ? (
-          <Section className="border-t border-hairline">
-            <SectionHeading eyebrow={isEl ? 'Έργα' : 'Work'} title={t.proof.title} body={t.proof.intro} />
-            <ul className="mx-auto mt-10 grid max-w-4xl gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {proof.map((project) => (
-                <li key={project.slug}>
-                  <Link
-                    href={lp(`/work/${project.slug}`)}
-                    className="group block overflow-hidden rounded-[14px] border border-hairline bg-surface transition-colors hover:border-primary/40"
-                  >
-                    <PortfolioThumbnail
-                      src={project.screenshot}
-                      alt={project.name}
-                      className="border-b border-hairline"
-                    />
-                    <span className="block px-4 py-3">
-                      <span className="block font-display text-sm font-medium text-foreground">{project.name}</span>
-                      <span className="mt-1 block text-xs leading-relaxed text-muted-foreground">
-                        {isEl && project.summaryEl ? project.summaryEl : project.summary}
-                      </span>
-                    </span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <p className="mx-auto mt-8 max-w-2xl text-center text-sm text-muted-foreground">{t.proof.caveat}</p>
-          </Section>
+          <KitSection>
+            <KitHeading eyebrow={isEl ? 'Έργα' : 'Work'} title={<AccentTitle text={t.proof.title} />} description={t.proof.intro} />
+            <ProofGrid className="mt-12" projects={proof} locale={siteLocale} />
+            <p className="mx-auto mt-8 max-w-2xl text-center text-[14px] text-muted-foreground">{t.proof.caveat}</p>
+          </KitSection>
         ) : null}
 
-        <Section className="border-t border-hairline">
-          <div className="mx-auto max-w-2xl">
-            <FAQSection faqs={faqs} title={t.faqTitle} locale={siteLocale} />
-          </div>
-        </Section>
+        <FaqBlock locale={siteLocale} tinted title={<AccentTitle text={t.faqTitle} />} faqs={faqs} />
 
-        <Section className="border-t border-hairline">
-          <RelatedPages
-            title={t.relatedTitle}
-            pages={related.map((r) => ({ slug: lp(r.path), title: r.title }))}
-          />
-        </Section>
+        <KitSection className="py-14 sm:py-16">
+          <RelatedPages title={t.relatedTitle} pages={related.map((r) => ({ slug: lp(r.path), title: r.title }))} />
+        </KitSection>
 
-        <Section className="border-t border-hairline">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="font-display text-2xl font-medium tracking-[-0.03em] sm:text-3xl">{t.cta.title}</h2>
-            <p className="mt-4 leading-relaxed text-muted-foreground">{t.cta.body}</p>
-            <div className="mt-8 flex flex-wrap justify-center gap-3">
-              <PrimaryButtonLink href={lp('/get-started')}>{t.cta.primary}</PrimaryButtonLink>
-              <GhostButtonLink href={lp('/pricing')}>{t.cta.secondary}</GhostButtonLink>
-              <a
-                href={WHATSAPP_HREF}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={ghostBtnClass}
-              >
-                <WhatsAppIcon className="h-4 w-4 text-[#25D366]" />
-                {t.cta.whatsapp}
-              </a>
-            </div>
-          </div>
-        </Section>
+        <CtaBand locale={siteLocale} source="seo-services" title={<AccentTitle text={t.cta.title} />} description={t.cta.body} />
       </main>
       <Footer locale={siteLocale} />
     </>

@@ -23,7 +23,10 @@ import {
     combineSchemas,
     BASE_URL,
 } from '@/lib/seo';
-import { SchemaMarkup, Breadcrumbs, LocationContent } from '@/components/seo';
+import { SchemaMarkup, LocationContent } from '@/components/seo';
+import { MapPin } from 'lucide-react';
+import { CtaBand, FeatureRow, KitHeading, KitSection, Stage } from '@/components/kit';
+import { AccentTitle, ChipLinks, FaqBlock, LinkCards, ProofGrid, ServiceHero, getServiceKit } from '@/components/service-kit';
 import { getServiceLocationBreadcrumbs } from '@/lib/linking';
 import { grServiceLocationPath } from '@/lib/locale-paths';
 import {
@@ -278,188 +281,130 @@ export default async function ServiceLocationPage({ params }: PageProps) {
         }),
     );
 
+    const kit = getServiceKit(serviceSlug);
+    const heroAccent = isEl ? cityLocative : `in ${cityState}`;
+    const local = isEl
+        ? {
+            pillTag: 'Τοπικά',
+            pillText: `Δουλεύουμε ${cityLocative} και στις γύρω περιοχές`,
+            included: 'Παραδοτέα',
+            local: 'Τοπικά',
+            work: 'Έργα',
+            nearby: 'Περιοχές',
+            more: 'Περισσότερα',
+          }
+        : {
+            pillTag: 'Local',
+            pillText: `Serving ${location.city} and the surrounding areas`,
+            included: 'Deliverables',
+            local: 'Local',
+            work: 'Work',
+            nearby: 'Nearby',
+            more: 'More',
+          };
+
     return (
         <>
             <SchemaMarkup schemas={schemas} />
             <Header locale={siteLocale} alternateHref={alternateHref} />
-            <main className="blueprint-grid relative z-0 main-below-header">
-                <section className="section-compact ">
-                    <div className="container">
-                        <div className="max-w-3xl">
-                            <Breadcrumbs items={breadcrumbs} className="mb-6" />
+            <main className="blueprint-grid relative z-0">
+                <ServiceHero
+                    locale={siteLocale}
+                    breadcrumbs={breadcrumbs}
+                    pill={{ kind: 'live', tag: local.pillTag, text: local.pillText, href: lp('/locations') }}
+                    h1={t.heroTitle}
+                    h1Accent={heroAccent}
+                    lead={t.heroDesc}
+                    extra={
+                        isGreekLocation(location) && !isEl && hasOtherLocaleTwin ? (
+                            <Link
+                                href={grServiceLocationPath(serviceSlug, locationSlug)}
+                                hrefLang="el"
+                                className="font-medium text-link hover:underline"
+                            >
+                                Διαβάστε αυτή τη σελίδα στα Ελληνικά →
+                            </Link>
+                        ) : undefined
+                    }
+                    primaryLabel={t.getQuote}
+                    primaryHref={lp('/get-started')}
+                    links={[
+                        { href: lp(`/services/${serviceSlug}`), label: t.allLocations },
+                        { href: lp('/locations'), label: t.browseCities },
+                    ]}
+                    visual={kit.hero(siteLocale, cityName)}
+                    visualLabel={kit.heroLabel[siteLocale]}
+                />
 
-                            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-                                {t.heroTitle}
-                            </h1>
+                <KitSection className="mt-6 sm:mt-10">
+                    <FeatureRow
+                        eyebrow={local.included}
+                        eyebrowIcon={<kit.icon />}
+                        title={<AccentTitle text={t.whatsIncludedTitle} />}
+                        body={t.whatsIncludedDesc}
+                        bullets={serviceFeatures}
+                        preview={<Stage>{kit.detail(siteLocale)}</Stage>}
+                    />
+                </KitSection>
 
-                            <p className="text-lg text-muted-foreground mb-4">
-                                {t.heroDesc}
-                            </p>
-
-                            {isGreekLocation(location) && !isEl && hasOtherLocaleTwin && (
-                                <p className="text-sm text-muted-foreground mb-6">
-                                    <Link
-                                        href={grServiceLocationPath(serviceSlug, locationSlug)}
-                                        hrefLang="el"
-                                        className="text-primary font-medium hover:underline"
-                                    >
-                                        Διαβάστε αυτή τη σελίδα στα Ελληνικά →
-                                    </Link>
-                                </p>
-                            )}
-
-                            <div className="flex flex-wrap gap-4">
-                                <Link href={lp("/get-started")} className="btn btn-primary">
-                                    {t.getQuote}
-                                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                                    </svg>
-                                </Link>
-                                <Link href={lp(`/services/${serviceSlug}`)} className="btn btn-outline">
-                                    {t.allLocations}
-                                </Link>
-                                <Link href={lp("/locations")} className="btn btn-outline">
-                                    {t.browseCities}
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section className="section">
-                    <div className="container">
-                        <h2 className="font-display text-2xl font-medium tracking-[-0.03em] sm:text-3xl mb-4">
-                            {t.whatsIncludedTitle}
-                        </h2>
-                        <p className="text-muted-foreground mb-8 max-w-2xl">
-                            {t.whatsIncludedDesc}
-                        </p>
-
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                            {serviceFeatures.map((feature, i) => (
-                                <div key={i} className="card card-interactive flex items-start gap-3 p-4 rounded-[8px]">
-                                    <svg className="w-5 h-5 text-success mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                    </svg>
-                                    <span>{feature}</span>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-
-                <section className="section bg-surface-raised/40">
-                    <div className="container">
-                        <LocationContent location={location} service={service} locale={locale as SiteLocale} />
-                    </div>
-                </section>
+                <KitSection tinted id="local">
+                    <LocationContent location={location} service={service} locale={siteLocale} />
+                </KitSection>
 
                 {proofProjects.length > 0 && (
-                    <section className="section">
-                        <div className="container">
-                            <h2 className="font-display text-2xl font-medium tracking-[-0.03em] sm:text-3xl mb-4">
-                                {t.proofTitle}
-                            </h2>
-                            <p className="text-muted-foreground mb-8">
-                                {t.proofDesc}
-                            </p>
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                                {proofProjects.map((project) => (
-                                    <Link
-                                        key={project.slug}
-                                        href={lp(`/work/${project.slug}`)}
-                                        className="card card-interactive p-6"
-                                    >
-                                        <h3 className="font-semibold mb-2">{project.name}</h3>
-                                        <p className="text-sm text-muted-foreground line-clamp-3">
-                                            {isEl ? (project.summaryEl ?? project.summary) : project.summary}
-                                        </p>
-                                    </Link>
-                                ))}
+                    <KitSection>
+                        <KitHeading eyebrow={local.work} title={<AccentTitle text={t.proofTitle} />} description={t.proofDesc} />
+                        <ProofGrid className="mt-12" projects={proofProjects} locale={siteLocale} />
+                    </KitSection>
+                )}
+
+                {(nearbyCities.length > 0 || relatedServices.length > 0) && (
+                    <KitSection tinted={proofProjects.length > 0} id="nearby">
+                        {nearbyCities.length > 0 && (
+                            <div className={relatedServices.length > 0 ? 'mb-20' : undefined}>
+                                <KitHeading eyebrow={local.nearby} eyebrowIcon={<MapPin />} title={<AccentTitle text={t.nearbyTitle} />} />
+                                <ChipLinks
+                                    className="mt-10"
+                                    items={nearbyCities.map((city) => ({
+                                        href: lp(`/services/${serviceSlug}/${city.slug}`),
+                                        label: isEl && city.cityLocal ? city.cityLocal : city.city,
+                                    }))}
+                                />
                             </div>
-                        </div>
-                    </section>
+                        )}
+                        {relatedServices.length > 0 && (
+                            <>
+                                <KitHeading eyebrow={local.more} title={<AccentTitle text={t.otherServicesTitle} />} />
+                                <LinkCards
+                                    className="mt-10"
+                                    items={relatedServices.map((related) => {
+                                        const relEl = isEl ? getServiceEl(related.slug) : null;
+                                        return {
+                                            href: lp(`/services/${related.slug}/${locationSlug}`),
+                                            title: relEl?.name ?? related.name,
+                                            body: relEl?.description ?? related.description,
+                                        };
+                                    })}
+                                />
+                            </>
+                        )}
+                    </KitSection>
                 )}
 
-                {nearbyCities.length > 0 && (
-                    <section className="section bg-surface-raised/40">
-                        <div className="container">
-                            <h2 className="font-display text-2xl font-medium tracking-[-0.03em] sm:text-3xl mb-4">
-                                {t.nearbyTitle}
-                            </h2>
-                            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
-                                {nearbyCities.map((city) => (
-                                    <Link
-                                        key={city.slug}
-                                        href={lp(`/services/${serviceSlug}/${city.slug}`)}
-                                        className="card card-interactive px-3 py-2 text-sm text-center rounded-lg border border-hairline transition-smooth"
-                                    >
-                                        {isEl && city.cityLocal ? city.cityLocal : city.city}
-                                    </Link>
-                                ))}
-                            </div>
-                        </div>
-                    </section>
-                )}
+                <FaqBlock
+                    locale={siteLocale}
+                    title={<AccentTitle text={t.faqTitle} />}
+                    faqs={faqItems.map((item) => ({ question: item.question, answer: item.answer }))}
+                />
 
-                {relatedServices.length > 0 && (
-                <section className="section">
-                    <div className="container">
-                        <h2 className="font-display text-2xl font-medium tracking-[-0.03em] sm:text-3xl mb-8">
-                            {t.otherServicesTitle}
-                        </h2>
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                            {relatedServices.map((related) => {
-                                const relEl = isEl ? getServiceEl(related.slug) : null;
-                                const relName = relEl?.name ?? related.name;
-                                const relDesc = relEl?.description ?? related.description;
-                                return (
-                                    <Link
-                                        key={related.slug}
-                                        href={lp(`/services/${related.slug}/${locationSlug}`)}
-                                        className="card card-interactive card p-6"
-                                    >
-                                        <h3 className="font-semibold mb-2">{relName}</h3>
-                                        <p className="text-sm text-muted-foreground line-clamp-2">{relDesc}</p>
-                                    </Link>
-                                );
-                            })}
-                        </div>
-                    </div>
-                </section>
-                )}
-
-                <section className="section bg-surface-raised/40">
-                    <div className="container max-w-3xl">
-                        <h2 className="font-display text-2xl font-medium tracking-[-0.03em] sm:text-3xl mb-8 text-center">
-                            {t.faqTitle}
-                        </h2>
-                        <div className="space-y-4">
-                            {faqItems.map((item) => (
-                                <div key={item.question} className="card card-interactive card p-6">
-                                    <h3 className="font-semibold mb-2">{item.question}</h3>
-                                    <p className="text-muted-foreground text-sm">{item.answer}</p>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-
-                <section className="section gradient-primary text-white">
-                    <div className="container text-center">
-                        <h2 className="font-display text-3xl font-medium tracking-[-0.03em] mb-4">
-                            {t.ctaTitle}
-                        </h2>
-                        <p className="text-white/80 mb-8">
-                            {t.ctaDesc}
-                        </p>
-                        <Link href={lp("/get-started")} className="btn bg-white text-primary hover:bg-white/90">
-                            {t.ctaBtn}
-                        </Link>
-                    </div>
-                </section>
+                <CtaBand
+                    locale={siteLocale}
+                    source={`city-${serviceSlug}`}
+                    title={<AccentTitle text={t.ctaTitle} />}
+                    description={t.ctaDesc}
+                />
             </main>
-            <Footer />
+            <Footer locale={siteLocale} />
         </>
     );
 }

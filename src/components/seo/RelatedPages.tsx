@@ -30,23 +30,28 @@ export default function RelatedPages({
     }
 
     return (
-        <aside className={`bg-muted/30 rounded-2xl p-6 ${className}`}>
-            <h3 className="text-xl font-bold mb-4">{title}</h3>
-            <div className="space-y-3">
+        <aside className={`rounded-2xl border border-hairline bg-surface/50 p-5 sm:p-6 ${className}`}>
+            <h3 className="mb-4 font-mono text-[12px] font-medium uppercase tracking-[0.1em] text-muted-foreground">{title}</h3>
+            <div className="grid gap-2 sm:grid-cols-2">
                 {pages.map((page) => (
                     <Link
                         key={page.slug}
                         href={page.slug.startsWith('/') ? page.slug : `/${page.slug}`}
-                        className="block p-4 rounded-xl bg-background border border-border hover:border-primary transition-colors group"
+                        className="group flex items-start justify-between gap-3 rounded-xl border border-hairline bg-background/60 px-4 py-3 transition-colors hover:border-brand/45 hover:bg-surface"
                     >
-                        <h4 className="font-semibold group-hover:text-primary transition-colors">
-                            {page.title}
-                        </h4>
-                        {page.description && (
-                            <p className="text-sm text-muted-foreground mt-1 line-clamp-2">
-                                {page.description}
-                            </p>
-                        )}
+                        <span className="min-w-0">
+                            <span className="block text-[14.5px] font-medium text-foreground transition-colors group-hover:text-link">
+                                {page.title}
+                            </span>
+                            {page.description && (
+                                <span className="mt-1 line-clamp-2 block text-sm text-muted-foreground">
+                                    {page.description}
+                                </span>
+                            )}
+                        </span>
+                        <span aria-hidden className="mt-0.5 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-brand">
+                            →
+                        </span>
                     </Link>
                 ))}
             </div>

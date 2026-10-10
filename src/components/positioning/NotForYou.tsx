@@ -1,5 +1,7 @@
 import type { SiteLocale } from '@/lib/i18n/locale';
+import { X } from 'lucide-react';
 import { Section, SectionHeading } from '@/components/landing/primitives';
+import { CheckList } from '@/components/kit/primitives';
 
 /**
  * Lead qualification, stated plainly.
@@ -67,37 +69,35 @@ export function NotForYou({
 
   const Inner = (
     <>
-      <p className="max-w-3xl text-base leading-relaxed text-foreground md:text-lg">{body.lead}</p>
-      <p className="mt-4 max-w-3xl text-sm leading-relaxed text-muted-foreground md:text-base">
+      <p className="reveal max-w-3xl text-pretty text-[17px] leading-relaxed text-foreground sm:text-[19px]">{body.lead}</p>
+      <p className="mt-4 max-w-3xl text-pretty text-[15px] leading-relaxed text-muted-foreground sm:text-[16px]">
         {body.para}
       </p>
 
-      <div className="mt-10 grid gap-px overflow-hidden rounded-[10px] border border-hairline bg-hairline md:grid-cols-2">
-        <div className="bg-surface p-7">
-          <h3 className="font-display text-sm font-medium uppercase tracking-[0.14em] text-muted-foreground">
+      <div className="mt-10 grid gap-4 md:grid-cols-2">
+        <div className="rounded-2xl border border-hairline bg-surface/50 p-6 sm:p-7">
+          <h3 className="font-mono text-[12px] font-medium uppercase tracking-[0.1em] text-muted-foreground">
             {body.notTitle}
           </h3>
-          <ul className="mt-5 space-y-3">
+          <ul className="mt-5 grid gap-2.5">
             {body.not.map((item) => (
-              <li key={item} className="flex gap-3 text-sm leading-relaxed text-muted-foreground">
-                <span aria-hidden className="mt-2 h-px w-3 shrink-0 bg-muted-foreground/40" />
+              <li key={item} className="flex items-start gap-2.5 text-[15px] leading-6 text-muted-foreground">
+                <span
+                  aria-hidden
+                  className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-foreground/8 text-muted-foreground [&_svg]:size-3"
+                >
+                  <X strokeWidth={3} />
+                </span>
                 {item}
               </li>
             ))}
           </ul>
         </div>
-        <div className="bg-surface p-7">
-          <h3 className="font-display text-sm font-medium uppercase tracking-[0.14em] text-brand">
+        <div className="rounded-2xl border border-brand/30 bg-[linear-gradient(180deg,color-mix(in_oklab,var(--brand)_7%,var(--surface)),var(--surface))] p-6 sm:p-7">
+          <h3 className="font-mono text-[12px] font-medium uppercase tracking-[0.1em] text-brand">
             {body.yesTitle}
           </h3>
-          <ul className="mt-5 space-y-3">
-            {body.yes.map((item) => (
-              <li key={item} className="flex gap-3 text-sm leading-relaxed text-muted-foreground">
-                <span aria-hidden className="mt-2 h-px w-3 shrink-0 bg-brand" />
-                {item}
-              </li>
-            ))}
-          </ul>
+          <CheckList items={body.yes} className="mt-5" />
         </div>
       </div>
     </>
@@ -105,8 +105,8 @@ export function NotForYou({
 
   if (compact) {
     return (
-      <div className="rounded-[10px] border border-hairline bg-surface p-7 md:p-9">
-        <h2 className="font-display text-2xl font-medium tracking-[-0.03em] text-foreground">
+      <div className="rounded-2xl border border-hairline bg-surface/60 p-6 md:p-9">
+        <h2 className="text-balance font-display text-[26px] font-semibold leading-[1.1] tracking-[-0.035em] text-foreground sm:text-[32px]">
           {body.title}
         </h2>
         <div className="mt-5">{Inner}</div>
