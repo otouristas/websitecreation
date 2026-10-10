@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Location, getLocationBySlug, countryNameEl } from '@/data/locations';
+import { Location, countryNameEl } from '@/data/locations';
 import { Service } from '@/data/services';
 import { getServiceEl } from '@/data/services-i18n';
 import { getLocationPack, getServiceCopyEl } from '@/data/location-content';
@@ -132,27 +132,6 @@ export function LocationContentGreek({ location, service, locale: localeProp }: 
             <Link href={lp('/get-started')} className="text-primary underline">
               ζητήστε δωρεάν προσφορά
             </Link>
-            .
-          </p>
-        ) : null}
-        {pack?.nearbySlugs && pack.nearbySlugs.length > 0 ? (
-          <p className="mt-4 text-sm">
-            Δείτε επίσης υπηρεσίες σε κοντινές αγορές:{' '}
-            {pack.nearbySlugs.slice(0, 4).map((slug, i) => {
-              const nearby = getLocationBySlug(slug);
-              const label = nearby?.cityLocal ?? nearby?.city ?? slug;
-              return (
-                <span key={slug}>
-                  {i > 0 ? ' · ' : null}
-                  <Link
-                    href={lp(`/services/${service?.slug ?? 'website-creation'}/${slug}`)}
-                    className="text-primary underline"
-                  >
-                    {label}
-                  </Link>
-                </span>
-              );
-            })}
             .
           </p>
         ) : null}
