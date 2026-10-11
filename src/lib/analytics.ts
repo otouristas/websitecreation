@@ -11,7 +11,10 @@ export function loadGoogleAnalytics(): void {
   if (typeof window === 'undefined') return;
   try { if (localStorage.getItem('cookie-consent') !== 'accepted') return; } catch { return; }
   Object.assign(window, { [`ga-disable-${GA_MEASUREMENT_ID}`]: false });
-  if (document.getElementById('ga-script')) return;
+  if (document.getElementById('ga-script')) {
+    window.gtag?.('consent', 'update', { analytics_storage: 'granted' });
+    return;
+  }
 
   window.dataLayer = window.dataLayer || [];
   // gtag.js only processes `arguments` objects pushed to dataLayer, a plain
