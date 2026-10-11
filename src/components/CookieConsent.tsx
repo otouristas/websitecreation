@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { enableGoogleAnalytics } from '@/lib/analytics';
+import { enableGoogleAnalytics, disableGoogleAnalytics } from '@/lib/analytics';
 import { localizedPath, siteLocaleFromPath } from '@/lib/i18n/locale';
 
 export default function CookieConsent() {
@@ -57,10 +57,11 @@ export default function CookieConsent() {
 
   const decline = () => {
     localStorage.setItem('cookie-consent', 'declined');
+    disableGoogleAnalytics();
     setShow(false);
   };
 
-  if (!show) return null;
+  if (!show) return <button type="button" onClick={() => setShow(true)} className="fixed bottom-1 right-2 z-[60] rounded-lg border bg-background px-3 py-2 text-xs text-muted-foreground">{isEl ? 'Προτιμήσεις στατιστικών' : 'Analytics preferences'}</button>;
 
   return (
     <div

@@ -9,6 +9,8 @@ declare global {
 
 export function loadGoogleAnalytics(): void {
   if (typeof window === 'undefined') return;
+  try { if (localStorage.getItem('cookie-consent') !== 'accepted') return; } catch { return; }
+  Object.assign(window, { [`ga-disable-${GA_MEASUREMENT_ID}`]: false });
   if (document.getElementById('ga-script')) return;
 
   window.dataLayer = window.dataLayer || [];
@@ -20,7 +22,8 @@ export function loadGoogleAnalytics(): void {
   } as Window['gtag'];
   window.gtag!('js', new Date());
   // Pageviews are sent manually (trackPageView) so SPA route changes count.
-  window.gtag!('config', GA_MEASUREMENT_ID, { anonymize_ip: true, send_page_view: false });
+  window.gtag!('consent', 'default', { analytics_storage: 'granted', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
+  window.gtag!('config', GA_MEASUREMENT_ID, { send_page_view: false, allow_google_signals: false, allow_ad_personalization_signals: false, page_location: window.location.origin + window.location.pathname, page_referrer: '' });
 
   const script = document.createElement('script');
   script.id = 'ga-script';
@@ -38,7 +41,8 @@ export function enableGoogleAnalytics(): void {
 
 export function trackPageView(url: string): void {
   trackEvent('page_view', {
-    page_location: url,
+    page_location: new URL(url, window.location.origin).origin + new URL(url, window.location.origin).pathname,
+    page_referrer: '',
     page_path: new URL(url, window.location.origin).pathname,
     page_title: document.title,
   });
@@ -49,6 +53,7 @@ export function trackEvent(
   params?: Record<string, string | number | boolean | undefined>,
 ): void {
   if (typeof window === 'undefined' || !window.gtag) return;
+  try { if (localStorage.getItem('cookie-consent') !== 'accepted') return; } catch { return; }
   window.gtag('event', eventName, params);
 }
 
@@ -79,4 +84,16 @@ export function captureUtmParams(): Record<string, string> {
     if (val) utm[key] = val;
   }
   return utm;
+}
+
+/** Revocation stops future events and removes analytics cookies, not historical server data. */
+export function disableGoogleAnalytics(): void {
+  Object.assign(window, { [`ga-disable-${GA_MEASUREMENT_ID}`]: true });
+  window.gtag?.('consent', 'update', { analytics_storage: 'denied' });
+  for (const cookie of document.cookie.split(';')) {
+    const name = cookie.trim().split('=')[0];
+    if (!/^_ga(?:_|$)/.test(name)) continue;
+    for (const domain of ['', '; domain=.anotherseoguru.com'])
+      document.cookie = `${name}=; Max-Age=0; path=/${domain}`;
+  }
 }
