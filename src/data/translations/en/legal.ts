@@ -39,11 +39,11 @@ export const legalEn = {
       },
       {
         heading: '3. Cookies',
-        body: 'We use cookies to analyze website traffic and optimize your website experience. You can instruct your browser to refuse all cookies.',
+        body: 'Google Analytics cookies on this website load only after you accept analytics. Use Analytics preferences to decline or withdraw consent. URLs sent for measurement exclude query strings and fragments, and advertising personalization is disabled. The product web app and iPhone app use separate optional analytics: fixed screen names and basic application, device and session metadata. Client domains, emails, prompts and report content are excluded from product events. Native collection starts disabled and can be enabled or revoked in Settings. Withdrawing consent stops future collection but does not automatically erase historical events.',
       },
       {
         heading: '4. Contact Us',
-        body: 'If you have any questions about this Privacy Policy, please contact us at anotherseoguru@gmail.com.',
+        body: 'AnotherSEOGuru is operated under the trading name TOURISTAS TECHNOLOGIES, Kamares, Sifnos 84003, Greece. For privacy requests, including consent withdrawal and deletion requests, contact hello@anotherseoguru.com.',
       },
     ],
   },
