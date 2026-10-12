@@ -4,7 +4,7 @@ import { useEffect, useRef, useState, type FormEvent } from "react";
 import Link from "next/link";
 import { ArrowRight, RotateCcw } from "lucide-react";
 import { describeAnswers, submitLead } from "@/lib/leads";
-import { captureUtmParams, trackCtaClick, trackFormStart, trackLead } from "@/lib/analytics";
+import { captureUtmParams, trackCtaClick, trackFormStart } from "@/lib/analytics";
 import { WHATSAPP_HREF } from "@/lib/contact-info";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import { localizedPath, type SiteLocale } from "@/lib/i18n/locale";
@@ -233,7 +233,6 @@ export function ScanWidget({ locale = "en", className }: { locale?: SiteLocale; 
     );
     setSending(false);
     if (res.ok) {
-      trackLead("instant_scan", { score: String(result?.score ?? "") });
       setStage("sent");
     } else {
       setError(res.error ?? t.errors.generic);

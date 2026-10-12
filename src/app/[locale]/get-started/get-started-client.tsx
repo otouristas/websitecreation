@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { ArrowRight, Briefcase, Check, Clock3, MapPin, MonitorSmartphone, Search, Trophy } from 'lucide-react';
 import { cn } from '@/lib/cn';
 import { describeAnswers, submitLead } from '@/lib/leads';
-import { captureUtmParams, trackFormStart, trackLead } from '@/lib/analytics';
+import { captureUtmParams, trackFormStart } from '@/lib/analytics';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 import { FreeAuditForm } from '@/components/landing/FreeAuditForm';
 import { primaryBtnClass } from '@/components/landing/primitives';
@@ -249,7 +249,6 @@ function WebsiteBriefForm({
     );
     setSending(false);
     if (res.ok) {
-      trackLead('get-started', { project_type: projectType, ...(context?.Industry ? { industry: context.Industry } : {}) });
       setDone(true);
     } else {
       setError(res.error ?? t.errors.generic);

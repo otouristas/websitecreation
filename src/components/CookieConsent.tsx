@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { enableGoogleAnalytics, disableGoogleAnalytics } from '@/lib/analytics';
+import { ADS_CONSENT_KEY, applyMeasurementConsent } from '@/lib/analytics';
 import { localizedPath, siteLocaleFromPath } from '@/lib/i18n/locale';
 
 export default function CookieConsent() {
@@ -15,8 +15,13 @@ export default function CookieConsent() {
   const bannerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const consent = localStorage.getItem('cookie-consent');
-    if (!consent) {
+    let consent: string | null = null;
+    let adsConsent: string | null = null;
+    try {
+      consent = localStorage.getItem('cookie-consent');
+      adsConsent = localStorage.getItem(ADS_CONSENT_KEY);
+    } catch { /* Optional measurement stays off when storage is unavailable. */ }
+    if (!consent || !adsConsent) {
       // Post-mount sync is the point here: consent lives in localStorage, unreadable during SSR,
       // so the first paint has to be the SSR value and this corrects it.
       // eslint-disable-next-line react-hooks/set-state-in-effect
@@ -49,19 +54,12 @@ export default function CookieConsent() {
     };
   }, [show]);
 
-  const accept = () => {
-    localStorage.setItem('cookie-consent', 'accepted');
-    enableGoogleAnalytics();
+  const choose = (analytics: boolean, ads: boolean) => {
+    applyMeasurementConsent(analytics, ads);
     setShow(false);
   };
 
-  const decline = () => {
-    localStorage.setItem('cookie-consent', 'declined');
-    disableGoogleAnalytics();
-    setShow(false);
-  };
-
-  if (!show) return <button type="button" onClick={() => setShow(true)} className="fixed bottom-1 right-2 z-[60] rounded-lg border bg-background px-3 py-2 text-xs text-muted-foreground">{isEl ? 'Προτιμήσεις στατιστικών' : 'Analytics preferences'}</button>;
+  if (!show) return <button type="button" onClick={() => setShow(true)} className="fixed bottom-1 right-2 z-[60] rounded-lg border bg-background px-3 py-2 text-xs text-muted-foreground">{isEl ? 'Προτιμήσεις cookies' : 'Cookie preferences'}</button>;
 
   return (
     <div
@@ -75,12 +73,12 @@ export default function CookieConsent() {
       <div className="mx-auto flex max-w-6xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div className="min-w-0">
           <p id="cookie-consent-title" className="text-sm font-semibold text-foreground">
-            {isEl ? 'Cookies για μετρήσεις' : 'Analytics cookies'}
+            {isEl ? 'Προαιρετικά cookies μετρήσεων' : 'Optional measurement cookies'}
           </p>
           <p className="text-xs leading-relaxed text-muted-foreground sm:text-sm">
             {isEl
-              ? 'Χρησιμοποιούμε cookies μόνο για στατιστικά, μετά την αποδοχή σας.'
-              : 'We use cookies only for analytics, after you accept.'}{' '}
+              ? 'Επιλέξτε στατιστικά επισκέψεων ή και μέτρηση Google Ads, ώστε να γνωρίζουμε ποιες διαφημίσεις φέρνουν αιτήματα. Χωρίς εξατομίκευση διαφημίσεων. Μπορείτε να ανακαλέσετε την επιλογή σας ανά πάσα στιγμή.'
+              : 'Choose visit analytics, or also Google Ads measurement to learn which ads bring enquiries. No ad personalization. You can withdraw your choice at any time.'}{' '}
             <Link
               href={localizedPath(locale, '/privacy')}
               className="font-medium text-primary underline underline-offset-2 hover:text-primary/80"
@@ -90,20 +88,23 @@ export default function CookieConsent() {
             .
           </p>
         </div>
-        <div className="flex shrink-0 gap-2">
+        <div className="flex shrink-0 flex-wrap gap-2">
           <button
             type="button"
-            onClick={decline}
+            onClick={() => choose(false, false)}
             className="btn btn-outline h-10 px-4 text-sm"
           >
-            {isEl ? 'Όχι' : 'Decline'}
+            {isEl ? 'Απόρριψη προαιρετικών' : 'Decline optional'}
+          </button>
+          <button type="button" onClick={() => choose(true, false)} className="btn btn-outline h-10 px-4 text-sm">
+            {isEl ? 'Μόνο στατιστικά' : 'Analytics only'}
           </button>
           <button
             type="button"
-            onClick={accept}
+            onClick={() => choose(true, true)}
             className="btn btn-primary h-10 px-4 text-sm"
           >
-            {isEl ? 'Αποδοχή' : 'Accept'}
+            {isEl ? 'Αποδοχή και των δύο' : 'Accept both'}
           </button>
         </div>
       </div>

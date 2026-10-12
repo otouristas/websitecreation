@@ -3,7 +3,7 @@
 import { useEffect, useState, type FormEvent } from "react";
 import { ArrowRight, Check, Loader2 } from "lucide-react";
 import { cn } from "@/lib/cn";
-import { captureUtmParams, trackFormStart, trackLead } from "@/lib/analytics";
+import { captureUtmParams, trackFormStart } from "@/lib/analytics";
 import { describeAnswers, fetchTeamProgress, submitLead, type TeamAgent, type TeamProgress } from "@/lib/leads";
 import type { SiteLocale } from "@/lib/i18n/locale";
 import type { ScanResult } from "@/lib/scan/score";
@@ -258,7 +258,6 @@ export function FreeAuditForm({
     ]);
     setSending(false);
     if (res.ok) {
-      trackLead("free_audit", scanned ? { score: String(scanned.score) } : undefined);
       setScan(scanned);
       setToken(res.token ?? null);
       setDone(true);

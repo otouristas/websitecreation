@@ -27,7 +27,7 @@ export const legalEn = {
     title: 'Privacy Policy',
     metaDescription:
       'AnotherSEOGuru privacy policy: how we collect, use, store, and protect personal data for our SEO platform, agency services, analytics, and marketing communications.',
-    lastUpdated: 'Last Updated: January 1, 2026',
+    lastUpdated: 'Last Updated: October 12, 2026',
     sections: [
       {
         heading: '1. Information We Collect',
@@ -39,7 +39,7 @@ export const legalEn = {
       },
       {
         heading: '3. Cookies',
-        body: 'Google Analytics cookies on this website load only after you accept analytics. Use Analytics preferences to decline or withdraw consent. URLs sent for measurement exclude query strings and fragments, and advertising personalization is disabled. The product web app and iPhone app use separate optional analytics: fixed screen names and basic application, device and session metadata. Client domains, emails, prompts and report content are excluded from product events. Native collection starts disabled and can be enabled or revoked in Settings. Withdrawing consent stops future collection but does not automatically erase historical events.',
+        body: 'Google Analytics cookies load only after you accept analytics. Google Ads enquiry measurement requires a separate opt-in through Accept both; an earlier analytics choice does not enable it. Use Cookie preferences to decline or withdraw consent. Analytics URLs exclude query strings and fragments. Ads measurement may retain Google click identifiers for the browser session after your opt-in, but excludes other URL parameters, enquiry details and contact information. Advertising personalization and enhanced conversions are disabled. A conversion represents an accepted enquiry, not a sale. The product web app and iPhone app use separate optional analytics: fixed screen names and basic application, device and session metadata. Client domains, emails, prompts and report content are excluded from product events. Native collection starts disabled and can be enabled or revoked in Settings. Withdrawing consent stops future collection but does not automatically erase historical events.',
       },
       {
         heading: '4. Contact Us',

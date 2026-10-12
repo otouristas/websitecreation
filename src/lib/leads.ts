@@ -1,5 +1,6 @@
 import { getAppPath } from '@/lib/app-links';
 import { submitToFormspree } from '@/lib/formspree';
+import { trackLead } from '@/lib/analytics';
 
 /**
  * Every enquiry the site collects goes to two places at once:
@@ -106,7 +107,17 @@ export async function submitLead(
   const [email, app] = await Promise.allSettled([submitToFormspree(formspreeData), sendLeadToApp(lead)]);
   const emailResult = email.status === 'fulfilled' ? email.value : { ok: false, error: undefined };
   const appOk = app.status === 'fulfilled' && app.value.ok;
-  if (emailResult.ok || appOk) return { ok: true, token: app.status === 'fulfilled' ? app.value.token : undefined };
+  if (emailResult.ok || appOk) {
+    // Two accepting destinations still represent one enquiry; failed submissions never count.
+    try {
+      const formNames: Record<LeadSource, string> = {
+        'website-contact': 'contact', 'website-get-started': 'get-started',
+        'website-scan': 'instant_scan', 'website-free-audit': 'free_audit',
+      };
+      trackLead(formNames[lead.source], { service: lead.service, locale: lead.locale }, window.crypto.randomUUID());
+    } catch { /* Optional measurement must not prevent the success screen. */ }
+    return { ok: true, token: app.status === 'fulfilled' ? app.value.token : undefined };
+  }
   return { ok: false, error: emailResult.error };
 }
 
