@@ -22,7 +22,7 @@ import {
 import { cn } from "@/lib/cn";
 import type { SiteLocale } from "@/lib/i18n/locale";
 import { PCard } from "./AppWindow";
-import { LineChart, ScoreRing, Sparkline, series } from "./chart";
+import { LineChart, ScoreRing, series } from "./chart";
 
 /**
  * Static product previews in the app's visual language, drawn on a sample
@@ -52,10 +52,11 @@ export function Pill({ tone, children, className }: { readonly tone: KindTone; r
   return <span className={cn("inline-flex items-center rounded-md px-1.5 py-0.5 text-[11px] font-medium", TONE[tone], className)}>{children}</span>;
 }
 
-function Delta({ v, suffix = "%" }: { readonly v: number; readonly suffix?: string }) {
+/** `upIsGood={false}` for average position, where a smaller number is the improvement. */
+function Delta({ v, suffix = "%", upIsGood = true }: { readonly v: number; readonly suffix?: string; readonly upIsGood?: boolean }) {
   const up = v >= 0;
   return (
-    <span className={cn("text-[11.5px] font-medium", up ? "text-success" : "text-destructive")}>
+    <span className={cn("text-[11.5px] font-medium", up === upIsGood ? "text-success" : "text-destructive")}>
       {up ? "↗" : "↘"} {up ? "+" : ""}
       {v}
       {suffix}
@@ -257,11 +258,11 @@ const NAV_GROUPS = (l: L) => [
 export function OverviewPreview({ locale: l }: { readonly locale: L }) {
   const clicks = series(28, 1450, 1720, 0.1, 3);
   const prev = series(28, 1380, 1500, 0.09, 7);
-  const tiles: { label: string; value: string; delta: number; suffix?: string; tone: "primary" | "brand" | "success" | "warning"; vals: number[] }[] = [
-    { label: tx(l, "Clicks", "Κλικ"), value: "44.6K", delta: 12.4, tone: "primary", vals: clicks },
-    { label: tx(l, "Impressions", "Εμφανίσεις"), value: "1.2M", delta: 8.1, tone: "brand", vals: series(28, 38000, 43000, 0.08, 5) },
-    { label: "CTR", value: "3.7%", delta: 0.2, suffix: " pts", tone: "success", vals: series(28, 3.4, 3.7, 0.05, 2) },
-    { label: tx(l, "Avg. position", "Μέση θέση"), value: "9.4", delta: -0.6, suffix: "", tone: "warning", vals: series(28, 10, 9.4, 0.05, 9) },
+  const tiles: { label: string; value: string; delta: number; suffix?: string; upIsGood?: boolean }[] = [
+    { label: tx(l, "Clicks", "Κλικ"), value: "44.6K", delta: 12.4 },
+    { label: tx(l, "Impressions", "Εμφανίσεις"), value: "1.2M", delta: 8.1 },
+    { label: "CTR", value: "3.7%", delta: 0.2, suffix: " pts" },
+    { label: tx(l, "Avg. position", "Μέση θέση"), value: "9.4", delta: -0.6, suffix: "", upIsGood: false },
   ];
   return (
     <div className="flex min-h-[520px] bg-background text-[13px]">
@@ -297,8 +298,11 @@ export function OverviewPreview({ locale: l }: { readonly locale: L }) {
       <div className="min-w-0 flex-1 p-4 sm:p-5">
         <div className="flex flex-wrap items-center justify-between gap-2">
           <div>
-            <div className="text-[11.5px] text-muted-foreground">{tx(l, "Overview", "Επισκόπηση")} · {SAMPLE_SITE}</div>
-            <div className="mt-0.5 font-display text-[18px] font-semibold text-foreground">Aegean Suites</div>
+            <div className="inline-flex items-center gap-1.5 rounded-full border border-hairline bg-surface px-2 py-0.5 text-[10.5px] text-muted-foreground">
+              <span className="size-1.5 rounded-full bg-success" />
+              {SAMPLE_SITE} · {tx(l, "data through Oct 10", "δεδομένα έως 10 Οκτ")}
+            </div>
+            <div className="mt-1.5 font-display text-[18px] font-semibold text-foreground">{tx(l, "Good morning, Eleni", "Καλημέρα, Ελένη")}</div>
           </div>
           <div className="flex items-center gap-2 text-[11.5px] text-muted-foreground">
             <span className="hidden items-center gap-1.5 rounded-md border border-hairline px-2 py-1 sm:inline-flex">
@@ -312,35 +316,39 @@ export function OverviewPreview({ locale: l }: { readonly locale: L }) {
             </span>
           </div>
         </div>
-        <div className="mt-4 grid grid-cols-2 gap-3 lg:grid-cols-4">
-          {tiles.map((t, i) => (
-            <div key={t.label} className={cn("rounded-xl border bg-surface p-3", i === 0 ? "border-primary/60" : "border-hairline")}>
-              <div className="text-[11.5px] text-muted-foreground">{t.label}</div>
-              <div className="mt-1 font-display text-[22px] font-semibold tracking-tight text-foreground">{t.value}</div>
-              <Delta v={t.delta} suffix={t.suffix ?? "%"} />
-              <Sparkline values={t.vals} tone={t.tone} className="mt-1.5" />
-            </div>
-          ))}
-        </div>
-        <div className="mt-3 grid gap-3 lg:grid-cols-[1.35fr_1fr]">
+        <div className="mt-4 grid gap-3 lg:grid-cols-[1.35fr_1fr]">
+          {/* The app's Search performance card: metric tabs sit on the chart they switch. */}
           <div className="rounded-xl border border-hairline bg-surface p-3">
-            <div className="flex items-center justify-between">
+            <div className="flex items-start justify-between gap-2">
               <div>
-                <div className="font-semibold text-foreground">{tx(l, "Clicks over time", "Κλικ στον χρόνο")}</div>
-                <div className="text-[11.5px] text-muted-foreground">{tx(l, "Last 28 days vs previous period", "28 ημέρες έναντι προηγούμενης περιόδου")}</div>
+                <div className="font-semibold text-foreground">{tx(l, "Search performance", "Απόδοση αναζήτησης")}</div>
+                <div className="text-[11.5px] text-muted-foreground">{tx(l, "Last 28 days compared with the previous period", "28 ημέρες σε σύγκριση με την προηγούμενη περίοδο")}</div>
               </div>
-              <div className="flex gap-3 text-[11px] text-muted-foreground">
-                <span className="inline-flex items-center gap-1"><span className="h-0.5 w-3 bg-primary-glow" />{tx(l, "Current", "Τώρα")}</span>
-                <span className="inline-flex items-center gap-1"><span className="h-0.5 w-3 bg-muted-foreground/50" />{tx(l, "Previous", "Πριν")}</span>
-              </div>
+              <span className="hidden items-center gap-1 text-[10.5px] text-muted-foreground sm:inline-flex">
+                <span className="size-1.5 rounded-full bg-success" />
+                {tx(l, "Updated 4m ago", "Ενημερώθηκε πριν 4 λεπτά")}
+              </span>
+            </div>
+            <div className="mt-3 grid grid-cols-2 gap-1 rounded-xl border border-hairline bg-background/60 p-1 sm:grid-cols-4">
+              {tiles.map((t, i) => (
+                <div
+                  key={t.label}
+                  className={cn("relative overflow-hidden rounded-[0.6rem] px-2.5 pb-2 pt-2.5", i === 0 ? "bg-surface-raised shadow-[0_6px_18px_-10px_var(--primary)]" : "")}
+                >
+                  {i === 0 ? <span className="absolute inset-x-2.5 top-0 h-[3px] rounded-b-full bg-primary" /> : null}
+                  <div className={cn("text-[11px]", i === 0 ? "text-foreground" : "text-muted-foreground")}>{t.label}</div>
+                  <div className="mt-0.5 font-display text-[19px] font-semibold tracking-tight text-foreground">{t.value}</div>
+                  <Delta v={t.delta} suffix={t.suffix ?? "%"} upIsGood={t.upIsGood} />
+                </div>
+              ))}
             </div>
             <LineChart
-              className="mt-2"
+              className="mt-3"
               current={clicks}
               previous={prev}
               yTicks={[0, 500, 1000, 1500, 2000]}
               xLabels={l === "el" ? ["13 Σεπ", "20 Σεπ", "27 Σεπ", "4 Οκτ", "10 Οκτ"] : ["Sep 13", "Sep 20", "Sep 27", "Oct 4", "Oct 10"]}
-              height={190}
+              height={170}
             />
           </div>
           <DecisionsPanel locale={l} count={3} numbered={false} />
@@ -386,6 +394,15 @@ export function PerformancePreview({ locale: l }: { readonly locale: L }) {
 
 /* ------------------------------------------------------------------ keywords */
 
+/** The app's rank tracking tiers, best first, with moves in and out over 28 days. */
+const RANK_TIERS = [
+  { key: "top3", en: "Top 3", el: "Top 3", count: 8, gained: 2, lost: 0, bar: "bg-primary" },
+  { key: "page1", en: "Page 1", el: "Σελίδα 1", count: 11, gained: 3, lost: 2, bar: "bg-primary/70" },
+  { key: "page2", en: "Page 2", el: "Σελίδα 2", count: 10, gained: 1, lost: 3, bar: "bg-primary/45" },
+  { key: "deep", en: "Page 3+", el: "Σελίδα 3+", count: 5, gained: 0, lost: 1, bar: "bg-primary/25" },
+  { key: "none", en: "Not ranking", el: "Χωρίς θέση", count: 2, gained: 0, lost: 0, bar: "bg-foreground/20" },
+] as const;
+
 export function KeywordsPreview({ locale: l }: { readonly locale: L }) {
   const rows: [string, string, string, number, string, KindTone][] = [
     ["boutique hotel paros", tx(l, "Commercial", "Εμπορική"), "2.4K", 41, "6.4", "primary"],
@@ -427,23 +444,36 @@ export function KeywordsPreview({ locale: l }: { readonly locale: L }) {
           </table>
         </div>
       </PCard>
-      <PCard title={tx(l, "Rank tracking", "Παρακολούθηση θέσεων")} subtitle={tx(l, "36 tracked keywords", "36 λέξεις-κλειδιά")} meta={tx(l, "daily", "καθημερινά")}>
-        <div className="grid gap-3 px-4 py-3 sm:grid-cols-[1fr_1fr]">
-          <div>
-            <div className="flex h-2 overflow-hidden rounded-full">
-              <span className="w-[22%] bg-primary" />
-              <span className="w-[31%] bg-brand" />
-              <span className="w-[28%] bg-success" />
-              <span className="w-[19%] bg-warning" />
-            </div>
-            <div className="mt-2 grid grid-cols-2 gap-1 text-[11.5px] text-muted-foreground">
-              <span>Top 3 <b className="text-foreground">8</b></span>
-              <span>4–10 <b className="text-foreground">11</b></span>
-              <span>11–20 <b className="text-foreground">10</b></span>
-              <span>21+ <b className="text-foreground">7</b></span>
-            </div>
+      <PCard title={tx(l, "Rankings distribution", "Κατανομή θέσεων")} subtitle={tx(l, "36 tracked keywords · moves in the last 28 days", "36 λέξεις-κλειδιά · αλλαγές 28 ημερών")} meta={tx(l, "daily", "καθημερινά")}>
+        <div className="grid gap-3 px-4 py-3">
+          <div className="flex h-2 gap-[2px] overflow-hidden rounded-full">
+            {RANK_TIERS.map((tier) => (
+              <span key={tier.key} className={tier.bar} style={{ width: `${(tier.count / 36) * 100}%` }} />
+            ))}
           </div>
-          <ul className="grid gap-1.5 text-[12px]">
+          <div className="grid grid-cols-3 gap-1.5 sm:grid-cols-5">
+            {RANK_TIERS.map((tier, i) => (
+              <div key={tier.key} className={cn("rounded-lg border px-2 py-1.5", i === 1 ? "border-primary/60 bg-primary/10" : "border-hairline bg-background")}>
+                <div className="flex items-center gap-1 text-[10.5px] text-muted-foreground">
+                  <span className={cn("size-1.5 rounded-sm", tier.bar)} />
+                  <span className="truncate">{tx(l, tier.en, tier.el)}</span>
+                </div>
+                <div className="font-display text-[16px] font-semibold tabular-nums text-foreground">{tier.count}</div>
+                <div className="text-[10px] tabular-nums">
+                  {tier.gained === 0 && tier.lost === 0 ? (
+                    <span className="text-muted-foreground">{tx(l, "no change", "χωρίς αλλαγή")}</span>
+                  ) : (
+                    <>
+                      {tier.gained > 0 ? <span className="text-success">+{tier.gained}</span> : null}
+                      {tier.gained > 0 && tier.lost > 0 ? " " : null}
+                      {tier.lost > 0 ? <span className="text-destructive">−{tier.lost}</span> : null}
+                    </>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+          <ul className="grid gap-1.5 border-t border-hairline pt-2.5 text-[12px]">
             {[
               ["boutique hotel paros", "6.4", "+1.8"],
               [tx(l, "paros hotel with pool", "παρος ξενοδοχειο με πισινα"), "3.8", "+0.9"],
@@ -570,20 +600,35 @@ export function AiVisibilityPreview({ locale: l }: { readonly locale: L }) {
           </tbody>
         </table>
       </div>
+      {/* The app's "where you rank" leaderboard: your place first, then every tracked site. */}
       <div className="border-t border-hairline px-4 py-3">
-        <div className="text-[12px] font-medium text-foreground">{tx(l, "Share of voice across tracked prompts", "Μερίδιο φωνής στις ερωτήσεις")}</div>
-        <div className="mt-2 flex h-2 overflow-hidden rounded-full">
-          <span className="w-[34%] bg-primary" />
-          <span className="w-[27%] bg-warning" />
-          <span className="w-[21%] bg-success" />
-          <span className="w-[18%] bg-foreground/25" />
+        <div className="flex items-center gap-3 rounded-lg bg-primary/10 px-3 py-2">
+          <span className="font-display text-[24px] font-semibold leading-none tabular-nums text-foreground">#1</span>
+          <span className="text-[11px] text-muted-foreground">{tx(l, "of 4", "από 4")}</span>
+          <span className="ml-1 text-[11.5px] leading-snug text-muted-foreground">
+            {tx(l, "AI answers name you more than any site you track, in 62% of answers.", "Οι απαντήσεις AI σας αναφέρουν περισσότερο από κάθε άλλο site, στο 62% των απαντήσεων.")}
+          </span>
         </div>
-        <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-[11px] text-muted-foreground">
-          <span><span className="mr-1 inline-block size-2 rounded-full bg-primary" />Aegean Suites 34%</span>
-          <span><span className="mr-1 inline-block size-2 rounded-full bg-warning" />Port View 27%</span>
-          <span><span className="mr-1 inline-block size-2 rounded-full bg-success" />Naoussa Bay 21%</span>
-          <span><span className="mr-1 inline-block size-2 rounded-full bg-foreground/25" />{tx(l, "Others", "Άλλοι")} 18%</span>
-        </div>
+        <ol className="mt-2 grid gap-1 text-[11.5px]">
+          {[
+            ["Aegean Suites", 34, "bg-primary", true],
+            ["Port View", 27, "bg-warning", false],
+            ["Naoussa Bay", 21, "bg-success", false],
+            ["Paros Lux", 18, "bg-foreground/40", false],
+          ].map(([name, share, bar, you], i) => (
+            <li key={name as string} className={cn("grid grid-cols-[1rem_minmax(0,1fr)_auto] items-center gap-x-2 gap-y-1 rounded-md px-2 py-1", you ? "bg-primary/8" : "")}>
+              <span className="tabular-nums text-muted-foreground">{i + 1}</span>
+              <span className="flex min-w-0 items-center gap-1.5 truncate text-foreground/90">
+                {name as string}
+                {you ? <Pill tone="primary">{tx(l, "You", "Εσείς")}</Pill> : null}
+              </span>
+              <span className="font-medium tabular-nums text-foreground">{share as number}%</span>
+              <span className="col-start-2 col-end-4 h-1 overflow-hidden rounded-full bg-foreground/8">
+                <span className={cn("block h-full rounded-full", bar as string)} style={{ width: `${((share as number) / 34) * 100}%` }} />
+              </span>
+            </li>
+          ))}
+        </ol>
       </div>
     </PCard>
   );
@@ -677,7 +722,7 @@ export function CompetitorsPreview({ locale: l }: { readonly locale: L }) {
     ["cycladic-stays.example", 188, "w-[44%]"],
   ];
   return (
-    <PCard title={tx(l, "Keyword gap", "Κενό λέξεων-κλειδιών")} subtitle={tx(l, "Keywords competitors rank for and you don’t · sample data", "Όπου κατατάσσονται οι ανταγωνιστές κι εσείς όχι · δείγμα")}>
+    <PCard title={tx(l, "Keyword gap", "Keyword gap")} subtitle={tx(l, "Keywords competitors rank for and you don’t · sample data", "Όπου κατατάσσονται οι ανταγωνιστές κι εσείς όχι · δείγμα")}>
       <ul className="grid gap-2 px-4 py-3">
         {comps.map(([d, n, w]) => (
           <li key={d} className="flex items-center gap-3 text-[12px]">

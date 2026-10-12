@@ -221,7 +221,7 @@ const COPY: Record<string, Partial<Record<SiteLocale, IndustryPageCopy>>> = {
             'Βιογραφικό με ειδικότητα, εκπαίδευση και εγγραφή στον ιατρικό σύλλογο',
             'Ημερομηνία ιατρικού ελέγχου και βιβλιογραφία στις κλινικές σελίδες',
             'Απλή γλώσσα που εξηγεί, χωρίς υποσχέσεις αποτελέσματος',
-            'Δομημένα δεδομένα MedicalClinic, Physician και FAQ όπου ταιριάζουν',
+            'Structured data MedicalClinic, Physician και FAQ όπου ταιριάζουν',
           ],
         },
         {

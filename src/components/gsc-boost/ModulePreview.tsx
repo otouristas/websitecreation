@@ -38,7 +38,7 @@ const LABEL: Record<ModuleId, { en: string; el: string }> = {
   },
   competitors: {
     en: "Keyword gap against competitors, with gap keywords and referring domains.",
-    el: "Κενό λέξεων-κλειδιών έναντι ανταγωνιστών, με τις λέξεις-κλειδιά που λείπουν και τα referring domains.",
+    el: "Keyword gap έναντι ανταγωνιστών, με τις λέξεις-κλειδιά που λείπουν και τα referring domains.",
   },
   "ai-visibility": {
     en: "AI visibility: whether ChatGPT, Gemini, Perplexity and AI Overviews mention the brand.",

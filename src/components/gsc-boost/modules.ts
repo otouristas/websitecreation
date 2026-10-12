@@ -279,14 +279,14 @@ export const MODULES: ReadonlyArray<ProductModule> = [
     ),
     bullets: [
       c("Organic competitor discovery", "Εντοπισμός οργανικών ανταγωνιστών"),
-      c("Keyword gap: their rankings, your blind spots", "Κενό λέξεων-κλειδιών: οι δικές τους θέσεις, τα δικά σας τυφλά σημεία"),
+      c("Keyword gap: their rankings, your blind spots", "Keyword gap: οι δικές τους θέσεις, τα δικά σας τυφλά σημεία"),
       c("Backlinks and referring domains", "Backlinks και referring domains"),
     ],
     what: [
       c("Discovers the domains that compete with you for the same keywords.", "Εντοπίζει τα domains που ανταγωνίζονται μαζί σας για τις ίδιες λέξεις-κλειδιά."),
       c(
         "Keyword gap analysis: the keywords competitors rank for and you don’t.",
-        "Ανάλυση κενού λέξεων-κλειδιών: οι λέξεις-κλειδιά όπου κατατάσσονται οι ανταγωνιστές και εσείς όχι.",
+        "Ανάλυση keyword gap: οι λέξεις-κλειδιά όπου κατατάσσονται οι ανταγωνιστές και εσείς όχι.",
       ),
       c("Backlink and referring-domain lookups for any domain.", "Αναζήτηση backlinks και referring domains για οποιοδήποτε domain."),
       c(

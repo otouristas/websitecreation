@@ -261,17 +261,17 @@ export default function Footer({ locale: localeProp }: { locale?: SiteLocale }):
                   {isEl ? t!.work : "Case studies"}
                 </Link>
               </li>
+              <li>
+                <Link href={lp("/help")} className={columnLinkClass}>
+                  {isEl ? "Κέντρο βοήθειας" : "Help center"}
+                </Link>
+              </li>
               {!isEl && (
                 <>
                   <li>
                     <Link href={lp("/glossary")} className={columnLinkClass}>
                       SEO glossary
                     </Link>
-                  </li>
-                  <li>
-                    <a href={getAppPath("/help")} className={columnLinkClass} rel="noopener noreferrer">
-                      Help center
-                    </a>
                   </li>
                   <li>
                     <a href={getAppPath("/changelog")} className={columnLinkClass} rel="noopener noreferrer">

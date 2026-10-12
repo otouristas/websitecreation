@@ -328,6 +328,7 @@ function buildShort({ services, servicesEl, industries, industriesEl, greece, pr
   );
   lines.push(
     hubLine('SEO Platform (secondary)', `${BASE}/en/platform`, 'GSC-native SEO software - English-canonical marketing pages.'),
+    hubLine('GSC Boost help center', `${BASE}/en/help`, 'How the SEO software works: Search Console setup, opportunities, rank tracking, site audit, AI visibility, agency tools and billing (EN + EL).'),
   );
   lines.push('');
   lines.push('## Machine-Readable Feeds for AI Agents');

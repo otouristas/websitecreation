@@ -94,7 +94,7 @@ const SCOPES: ReadonlyArray<{ scope: string; allows: Copy; when: Copy }> = [
     scope: "webmasters.readonly",
     allows: {
       en: "Read Search Console performance data (queries, pages, clicks, impressions, CTR, position), your list of properties and URL inspection results.",
-      el: "Ανάγνωση δεδομένων απόδοσης του Search Console (αναζητήσεις, σελίδες, κλικ, εμφανίσεις, CTR, θέση), της λίστας των ιδιοτήτων σας και των αποτελεσμάτων επιθεώρησης URL.",
+      el: "Ανάγνωση δεδομένων απόδοσης του Search Console (αναζητήσεις, σελίδες, κλικ, εμφανίσεις, CTR, θέση), της λίστας των ιδιοτήτων σας και των αποτελεσμάτων URL Inspection.",
     },
     when: { en: "When you connect Google", el: "Όταν συνδέετε τη Google" },
   },

@@ -5,6 +5,7 @@ import { portfolioProjects } from '@/data/portfolio';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 import { GENERATED_CONTENT_UPDATED } from '@/lib/seo/content-dates';
 import { consultantPath } from '@/data/founder';
+import { helpContent } from '@/data/help';
 
 const BASE_URL = 'https://anotherseoguru.com';
 const LOCALES: SiteLocale[] = ['en', 'el'];
@@ -73,6 +74,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/platform/for/in-house', priority: 0.85, changeFrequency: 'monthly' as const },
     { path: '/platform/for/ecommerce', priority: 0.85, changeFrequency: 'monthly' as const },
     { path: '/platform/security', priority: 0.6, changeFrequency: 'monthly' as const },
+    // GSC Boost help center: same slugs in both locales.
+    { path: '/help', priority: 0.8 },
+    ...helpContent('en').flatMap((c) => [
+      { path: `/help/${c.slug}`, priority: 0.7, changeFrequency: 'monthly' as const },
+      ...c.articles.map((a) => ({ path: `/help/${c.slug}/${a.slug}`, priority: 0.65, changeFrequency: 'monthly' as const })),
+    ]),
   ];
 
   // Tools / resources canonicalize to EN, do not list /el duplicates.
