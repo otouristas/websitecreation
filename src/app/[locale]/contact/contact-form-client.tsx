@@ -5,7 +5,7 @@ import { CONTACT_EMAIL } from '@/lib/contact-info';
 import type { ReactElement } from "react";
 import Link from "next/link";
 import { describeAnswers, submitLead, type LeadService } from "@/lib/leads";
-import { captureUtmParams, trackFormStart, trackLead } from "@/lib/analytics";
+import { captureUtmParams, trackFormStart } from "@/lib/analytics";
 import { localizedPath, type SiteLocale } from "@/lib/i18n/locale";
 import { elContact } from "@/data/translations/el-contact";
 import ContactChannels from "@/components/ContactChannels";
@@ -105,7 +105,6 @@ export function ContactFormClient({ locale = "en" }: { locale?: SiteLocale }): R
     setIsSubmitting(false);
 
     if (result.ok) {
-      trackLead("contact", { service: formData.service || "unspecified" });
       setIsSubmitted(true);
     } else {
       setSubmitError(result.error ?? (isEl ? t!.error : "Something went wrong. Please try again."));
