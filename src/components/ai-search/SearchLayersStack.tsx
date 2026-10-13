@@ -1,4 +1,3 @@
-import type { CSSProperties } from 'react';
 import Link from 'next/link';
 import { SEARCH_LAYERS, LAYER_FOUNDATION, type SearchLayer } from '@/data/search-layers';
 import { Tick } from '@/components/landing/primitives';
@@ -9,11 +8,8 @@ import { cn } from '@/lib/cn';
  * The layer stack: six rows, SEO through SXO, each one a numeral, a goal, two
  * columns of substance and the metrics that tell you whether it is working.
  *
- * Colour comes from `--signature-h` per row rather than six hardcoded hues.
- * The theme owns lightness and chroma, so the ladder is legible on the dark
- * canvas and on the light one without a single `dark:` override, and it stays
- * inside the brand band instead of reaching for the source infographic's
- * orange and green.
+ * All rows use the same shared semantic identity. Labels and order identify
+ * categories independently of color.
  *
  * Server component, no JavaScript: the rail, the numerals and the reveal are
  * CSS. The whole thing is a list, so a screen reader and a crawler both get
@@ -26,7 +22,6 @@ function LayerRow({ layer, index, locale }: { layer: SearchLayer; index: number;
   return (
     <li
       id={layer.id}
-      style={{ '--signature-h': String(layer.hue) } as CSSProperties}
       className="reveal relative scroll-mt-28"
     >
       {/* The rail: a hairline down the left gutter with the layer's own dot on

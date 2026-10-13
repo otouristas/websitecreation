@@ -1,0 +1,31 @@
+{
+  "family": "Inter",
+  "provider_css": "https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap",
+  "retrieved_on": "2026-10-13",
+  "license_source": "https://raw.githubusercontent.com/google/fonts/main/ofl/inter/OFL.txt",
+  "scope": "Official static faces embedded into OG text rendering. Approved outlined logo artwork remains unchanged. Web UI still uses next/font.",
+  "faces": [
+    {
+      "file": "Inter-400.ttf",
+      "weight": 400,
+      "source": "https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfMZg.ttf",
+      "bytes": 324820,
+      "sha256": "1b08e7fc267a5c7e1d614100f604b83e7e8a0be241f0f288faa2b3ac93a683ba"
+    },
+    {
+      "file": "Inter-600.ttf",
+      "weight": 600,
+      "source": "https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuGKYMZg.ttf",
+      "bytes": 326048,
+      "sha256": "e7a1aaf7eda9f2fad4131725fa556265ec75ca7b2d756260173a040363e8d4f7"
+    },
+    {
+      "file": "Inter-700.ttf",
+      "weight": 700,
+      "source": "https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuFuYMZg.ttf",
+      "bytes": 326468,
+      "sha256": "b37284b5701b6b168dfc770aa1a4ac492106422fd3ba76bc7641e37434e8019c"
+    }
+  ],
+  "license_formatting": "Trailing whitespace normalized; license wording retained."
+}

@@ -390,7 +390,7 @@ function ServiceSwitch({ locale, value, onChange }: { locale: SiteLocale; value:
             className={cn(
               'flex min-w-0 flex-col items-center gap-1 rounded-[20px] px-3 py-3 text-center transition-colors sm:flex-row sm:gap-3 sm:px-5 sm:py-4 sm:text-left',
               active
-                ? 'bg-[linear-gradient(180deg,var(--primary),var(--primary-deep))] text-primary-foreground shadow-[0_10px_30px_-12px_color-mix(in_oklab,var(--primary)_80%,transparent)]'
+                ? 'asg-primary-action text-primary-foreground shadow-[0_10px_30px_-12px_color-mix(in_oklab,var(--primary)_80%,transparent)]'
                 : 'text-foreground hover:bg-background/60',
             )}
           >

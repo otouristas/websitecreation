@@ -45,9 +45,9 @@ export function generateArticleSchema(data: ArticleSchemaData): SchemaOutput {
             name: BRAND_NAME,
             logo: {
                 '@type': 'ImageObject',
-                url: `${BASE_URL}/logo.png`,
-                width: 200,
-                height: 60,
+                url: `${BASE_URL}/brand/asg-lockup-on-light@2x.png`,
+                width: 2256,
+                height: 512,
             },
         },
         ...(data.image && {

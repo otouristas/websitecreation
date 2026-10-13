@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
-import { Instrument_Serif, Inter, Inter_Tight, JetBrains_Mono, Noto_Serif } from 'next/font/google';
+import { geistMono, inter } from '@/brand/typography';
+import { THEME_INIT_SCRIPT } from '@/brand/theme';
 import { notFound } from 'next/navigation';
 import '../globals.css';
 import CookieConsent from '@/components/CookieConsent';
@@ -12,58 +13,6 @@ import { CONTACT_EMAIL, PHONE_E164 } from '@/lib/contact-info';
 import { FOUNDER, FOUNDER_SCHEMA_ID, consultantUrl } from '@/data/founder';
 
 const SITE_URL = 'https://anotherseoguru.com';
-
-/**
- * Three faces, all of them shipping Greek glyphs - Greek is ~74% of our
- * clicks, and a display or mono face without a `greek` subset would split
- * strings like "SEO για ξενοδοχεία" across two typefaces.
- *
- * - Inter Tight (variable) is the display face: headlines, prices, numerals.
- * - Inter is the text face at 400-600.
- * - JetBrains Mono carries the uppercase micro-labels and metadata.
- */
-const interTight = Inter_Tight({
-  variable: '--font-inter-tight',
-  subsets: ['latin', 'latin-ext', 'greek', 'greek-ext'],
-  weight: 'variable',
-  display: 'swap',
-});
-
-const inter = Inter({
-  variable: '--font-inter',
-  subsets: ['latin', 'latin-ext', 'greek', 'greek-ext'],
-  weight: ['400', '500', '600', '700'],
-  display: 'swap',
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  variable: '--font-jetbrains-mono',
-  subsets: ['latin', 'greek'],
-  weight: ['400', '500'],
-  display: 'swap',
-});
-
-/**
- * The serif accent: one to three italic words inside a headline, the same
- * device the app's landing page uses. Instrument Serif has no Greek, so
- * Noto Serif italic (Greek subset only) sits behind it in the stack and the
- * browser picks it per glyph for Greek accent words.
- */
-const instrumentSerif = Instrument_Serif({
-  variable: '--font-instrument-serif',
-  subsets: ['latin', 'latin-ext'],
-  weight: '400',
-  style: 'italic',
-  display: 'swap',
-});
-
-const notoSerifGreek = Noto_Serif({
-  variable: '--font-noto-serif',
-  subsets: ['greek'],
-  weight: '400',
-  style: 'italic',
-  display: 'swap',
-});
 
 export function generateStaticParams() {
   return [{ locale: 'en' }, { locale: 'el' }];
@@ -150,8 +99,10 @@ export async function generateMetadata({
       images: ['/opengraph-image.png'],
     },
     icons: {
-      icon: '/favicon.ico',
+      icon: [{ url: '/icon.svg', type: 'image/svg+xml' }, { url: '/favicon.ico' }],
+      apple: '/apple-icon.png',
     },
+    manifest: '/site.webmanifest',
     robots: {
       index: true,
       follow: true,
@@ -181,7 +132,7 @@ function buildStructuredDataGraph(isEl: boolean) {
         url: SITE_URL,
         logo: {
           '@type': 'ImageObject',
-          url: `${SITE_URL}/logo.png`,
+          url: `${SITE_URL}/brand/asg-lockup-on-light@2x.png`,
         },
         description: isEl
           ? 'Ψηφιακό γραφείο κατασκευής ιστοσελίδων και SEO με έδρα την Ελλάδα: κατασκευή ιστοσελίδων και e-shop, τοπικό SEO, GEO/AEO και περιεχόμενο για επιχειρήσεις στην Ελλάδα και το εξωτερικό. Διαθέτει και SEO πλατφόρμα συνδεδεμένη με το Google Search Console.'
@@ -290,7 +241,7 @@ function buildStructuredDataGraph(isEl: boolean) {
  * chose the light theme gets `.light` on <html>, before first paint so there
  * is no flash. The stored key is unchanged from the previous toggle.
  */
-const themeInitScript = `(function(){try{if(localStorage.getItem('theme')==='light'){document.documentElement.classList.add('light');}}catch(e){}})();`;
+const themeInitScript = THEME_INIT_SCRIPT;
 
 /**
  * The consent banner is server-rendered so it paints with the page instead of
@@ -314,9 +265,10 @@ export default async function LocaleLayout({
   return (
     <html
       lang={isEl ? 'el' : 'en'}
+      data-asg-theme="dark"
       // The next/font variables sit on <html> so they resolve everywhere,
       // including Tailwind's preflight font rule on the root element.
-      className={`${interTight.variable} ${inter.variable} ${jetbrainsMono.variable} ${instrumentSerif.variable} ${notoSerifGreek.variable} scroll-smooth`}
+      className={`${inter.variable} ${geistMono.variable} scroll-smooth`}
       suppressHydrationWarning
     >
       <head>

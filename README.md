@@ -30,9 +30,9 @@ Edit the homepage in `src/app/page.tsx`. Deploy from this repo to Vercel (see `w
 
 ## Design system
 
-The whole visual language lives in `src/app/globals.css` (Tailwind v4, CSS-first: tokens in `@theme inline`, dark theme on `:root`, light theme on `.light`, `@utility` recipes for the ground, blooms, glass and reveals) and in `src/components/landing/primitives.tsx`. Dark is the default; the toggle adds `.light` to `<html>`.
+The whole visual language lives in `src/app/globals.css` (Tailwind v4, CSS-first: tokens in `@theme inline`, approved colors on the root `data-asg-theme` attribute, the existing `.light` toggle, `@utility` recipes for the ground, blooms, glass and reveals) and in `src/components/landing/primitives.tsx`. Dark is the default; the toggle adds `.light` to `<html>`.
 
-Fonts load through [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) in `src/app/[locale]/layout.tsx`: Inter Tight (display), Inter (text) and JetBrains Mono (micro-labels). All three ship Greek subsets.
+Fonts load through `next/font` in shared `src/brand/typography.ts` and are applied by `src/app/[locale]/layout.tsx`: Greek-capable Inter for headings, body and labels, with Geist Mono reserved for code. The approved Inter Display wordmark is outlined SVG artwork. Semantic colors originate in `src/brand/tokens/brand.tokens.json`; run `npm run check:brand` to verify the generated exports and 82 opaque contrast pairs. The existing theme toggle also synchronizes `data-asg-theme` on the root; there is one theme controller.
 
 The homepage's instant scan posts to `src/app/api/scan/route.ts`, which fetches the visitor's homepage server-side (public hosts only) and scores thirteen checks from `src/lib/scan/`.
 

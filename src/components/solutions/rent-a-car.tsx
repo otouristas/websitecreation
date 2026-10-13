@@ -362,7 +362,7 @@ export function RentACarPage({ locale }: { locale: SiteLocale }) {
             <span className="min-w-0 truncate text-[13.5px] font-medium text-foreground">{value}</span>
           </div>
         ))}
-        <div className="flex h-10 items-center justify-center rounded-lg bg-[linear-gradient(180deg,var(--primary),var(--primary-deep))] px-5 font-display text-[14px] font-semibold text-primary-foreground">
+        <div className="flex h-10 items-center justify-center rounded-lg asg-primary-action px-5 font-display text-[14px] font-semibold text-primary-foreground">
           {t.widget.cta}
         </div>
       </div>

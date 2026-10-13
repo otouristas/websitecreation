@@ -103,12 +103,12 @@ function PlanCard({ plan, cycle, locale, source }: { readonly plan: Plan; readon
       className={cn(
         "relative flex flex-col rounded-2xl border p-6 sm:p-7",
         featured
-          ? "border-signal/45 bg-[linear-gradient(180deg,color-mix(in_oklab,var(--signal)_7%,var(--background)),var(--background))] ring-1 ring-signal/20"
+          ? "border-primary bg-accent ring-1 ring-primary/20"
           : "border-hairline bg-surface/60",
       )}
     >
       {featured ? (
-        <span className="absolute -top-3 left-6 inline-flex items-center rounded-full bg-signal px-2.5 py-0.5 text-[12px] font-semibold text-signal-foreground">
+        <span className="absolute -top-3 left-6 inline-flex items-center rounded-full bg-accent px-2.5 py-0.5 text-[12px] font-semibold text-accent-foreground">
           {T.recommended[locale]}
         </span>
       ) : null}

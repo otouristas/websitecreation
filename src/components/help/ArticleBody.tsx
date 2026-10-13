@@ -48,7 +48,7 @@ export function Inline({ text, locale }: { readonly text: string; readonly local
 const NOTE = {
   info: { icon: Info, en: "Note", el: "Σημείωση", className: "border-primary/30 bg-primary/[0.07] [&_svg]:text-primary-glow" },
   tip: { icon: Lightbulb, en: "Tip", el: "Συμβουλή", className: "border-signal/30 bg-signal/[0.07] [&_svg]:text-signal" },
-  warning: { icon: AlertTriangle, en: "Warning", el: "Προσοχή", className: "border-amber-400/35 bg-amber-400/[0.07] [&_svg]:text-amber-400" },
+  warning: { icon: AlertTriangle, en: "Warning", el: "Προσοχή", className: "border-warning bg-[var(--asg-warning-surface)] [&_svg]:text-warning" },
 } as const;
 
 function Heading({ level, id, children }: { readonly level: 2 | 3; readonly id: string; readonly children: ReactNode }) {
@@ -132,7 +132,13 @@ export function ArticleBody({ blocks, locale }: { readonly blocks: ReadonlyArray
           }
           case "table":
             return (
-              <div key={i} className="mt-7 overflow-x-auto rounded-2xl border border-hairline bg-surface">
+              <div
+                key={i}
+                role="region"
+                aria-label={`${locale === "el" ? "Πίνακας άρθρου" : "Article table"}: ${b.head.join(", ")}`}
+                tabIndex={0}
+                className="mt-7 overflow-x-auto rounded-2xl border border-hairline bg-surface focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-ring"
+              >
                 <table className="w-full min-w-[32rem] border-collapse text-left text-[14.5px]">
                   <thead>
                     <tr>

@@ -69,7 +69,7 @@ function FeatureCard({ feature, menuId, onNavigate }: { readonly feature: NavFea
         feature.tone === 'proof' && 'border-hairline bg-surface',
       )}
     >
-      <span className={cn('font-mono text-[11px] font-medium uppercase tracking-[0.12em]', software ? 'text-signal' : 'text-brand')}>
+      <span className={cn('font-mono text-[11px] font-medium uppercase tracking-[0.12em]', 'text-brand')}>
         {feature.eyebrow}
       </span>
       <p className="mt-2 font-display text-[19px] font-semibold leading-snug tracking-[-0.02em] text-foreground">{feature.title}</p>
@@ -117,7 +117,7 @@ function FeatureCard({ feature, menuId, onNavigate }: { readonly feature: NavFea
           feature.primary,
           cn(
             'inline-flex h-10 items-center justify-center gap-1.5 rounded-xl px-4 text-sm font-semibold transition-[transform,filter] hover:-translate-y-px',
-            software ? 'bg-signal text-signal-foreground hover:brightness-105' : 'bg-[linear-gradient(180deg,var(--primary),var(--primary-deep))] text-primary-foreground',
+            'asg-primary-action text-primary-foreground',
           ),
           `mega_${menuId}_primary`,
         )}
