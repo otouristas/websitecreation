@@ -345,30 +345,30 @@ export function ContactFormClient({ locale = "en" }: { locale?: SiteLocale }): R
           <h2 className="font-display text-[20px] font-semibold tracking-[-0.025em] text-foreground">{isEl ? t!.getInTouch : "Get in Touch"}</h2>
           <ContactChannels variant="buttons" locale={locale} className="mt-5" />
           <dl className="mt-6 divide-y divide-hairline border-t border-hairline">
-            <div className="flex items-start gap-3 py-4">
-              <Mail className="mt-0.5 size-4 shrink-0 text-brand" aria-hidden />
-              <div className="min-w-0">
-                <dt className="text-[13px] text-muted-foreground">{isEl ? t!.email : "Email"}</dt>
-                <dd>
-                  <a href={`mailto:${CONTACT_EMAIL}`} className="break-all text-[15px] font-medium text-foreground hover:text-brand">
-                    {CONTACT_EMAIL}
-                  </a>
-                </dd>
-              </div>
+            <div className="relative min-w-0 py-4 pl-7">
+              <dt className="text-[13px] text-muted-foreground">
+                <Mail className="absolute left-0 top-4 mt-0.5 size-4 text-brand" aria-hidden />
+                {isEl ? t!.email : "Email"}
+              </dt>
+              <dd>
+                <a href={`mailto:${CONTACT_EMAIL}`} className="break-all text-[15px] font-medium text-foreground hover:text-brand">
+                  {CONTACT_EMAIL}
+                </a>
+              </dd>
             </div>
-            <div className="flex items-start gap-3 py-4">
-              <Clock3 className="mt-0.5 size-4 shrink-0 text-brand" aria-hidden />
-              <div>
-                <dt className="text-[13px] text-muted-foreground">{isEl ? t!.responseTime : "Response Time"}</dt>
-                <dd className="text-[15px] font-medium text-foreground">{isEl ? t!.responseValue : "Within 24 hours"}</dd>
-              </div>
+            <div className="relative py-4 pl-7">
+              <dt className="text-[13px] text-muted-foreground">
+                <Clock3 className="absolute left-0 top-4 mt-0.5 size-4 text-brand" aria-hidden />
+                {isEl ? t!.responseTime : "Response Time"}
+              </dt>
+              <dd className="text-[15px] font-medium text-foreground">{isEl ? t!.responseValue : "Within 24 hours"}</dd>
             </div>
-            <div className="flex items-start gap-3 pt-4">
-              <Globe className="mt-0.5 size-4 shrink-0 text-brand" aria-hidden />
-              <div>
-                <dt className="text-[13px] text-muted-foreground">{isEl ? t!.serving : "Serving"}</dt>
-                <dd className="text-[15px] font-medium text-foreground">{isEl ? t!.servingValue : "Clients worldwide"}</dd>
-              </div>
+            <div className="relative pt-4 pl-7">
+              <dt className="text-[13px] text-muted-foreground">
+                <Globe className="absolute left-0 top-4 mt-0.5 size-4 text-brand" aria-hidden />
+                {isEl ? t!.serving : "Serving"}
+              </dt>
+              <dd className="text-[15px] font-medium text-foreground">{isEl ? t!.servingValue : "Clients worldwide"}</dd>
             </div>
           </dl>
         </div>

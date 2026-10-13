@@ -11,14 +11,14 @@ import { Accent, CheckList, Container, KitEyebrow, MarketingBadge, type Marketin
 /* ------------------------------------------------------------------ buttons */
 
 export const kitPrimaryBtn =
-  "inline-flex min-h-12 items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-center font-display text-[15px] font-semibold text-primary-foreground bg-[linear-gradient(180deg,var(--primary),var(--primary-deep))] shadow-[inset_0_1px_0_0_oklch(1_0_0/18%),0_0_0_1px_color-mix(in_oklab,var(--primary-glow)_35%,transparent),0_10px_30px_-12px_color-mix(in_oklab,var(--primary)_80%,transparent)] transition-[transform,box-shadow] duration-200 hover:-translate-y-px motion-reduce:transition-none motion-reduce:hover:translate-y-0";
+  "inline-flex min-h-12 items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-center font-display text-[15px] font-semibold text-primary-foreground asg-primary-action shadow-[inset_0_1px_0_0_oklch(1_0_0/18%),0_0_0_1px_color-mix(in_oklab,var(--primary-glow)_35%,transparent),0_10px_30px_-12px_color-mix(in_oklab,var(--primary)_80%,transparent)] transition-[transform,box-shadow] duration-200 hover:-translate-y-px motion-reduce:transition-none motion-reduce:hover:translate-y-0";
 
 export const kitSecondaryBtn =
   "inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-hairline bg-surface/70 px-5 py-2.5 text-center text-[15px] font-medium text-foreground backdrop-blur transition-colors hover:border-brand/50 hover:bg-surface-raised";
 
-/** Lime "software" button. Lime always means GSC Boost, the product. */
+/** Product CTAs use the same accessible action pair as every other primary CTA. */
 export const kitSoftwareBtn =
-  "inline-flex min-h-12 items-center justify-center gap-2.5 rounded-xl py-2 pl-2 pr-5 text-center font-display text-[15px] font-semibold text-signal-foreground bg-signal shadow-[inset_0_1px_0_0_oklch(1_0_0/30%),0_10px_30px_-14px_color-mix(in_oklab,var(--signal)_70%,transparent)] transition-[transform,filter] duration-200 hover:-translate-y-px hover:brightness-105 motion-reduce:transition-none motion-reduce:hover:translate-y-0";
+  "inline-flex min-h-12 items-center justify-center gap-2.5 rounded-xl py-2 pl-2 pr-5 text-center font-display text-[15px] font-semibold text-primary-foreground asg-primary-action shadow-[inset_0_1px_0_0_oklch(1_0_0/30%),0_10px_30px_-14px_color-mix(in_oklab,var(--signal)_70%,transparent)] transition-[transform,filter] duration-200 hover:-translate-y-px  motion-reduce:transition-none motion-reduce:hover:translate-y-0";
 
 /** The Google "G" on a white tile, as on the app's sign-in button. */
 export function GoogleTile({ className }: { readonly className?: string }) {

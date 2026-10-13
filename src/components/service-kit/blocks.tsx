@@ -303,7 +303,7 @@ const DIY = {
 
 /**
  * The quiet "Prefer to do it yourself?" row for SEO, audit, AI-visibility and
- * content pages: lime eyebrow, three checks, the software CTAs and a preview.
+ * content pages: semantic eyebrow, three checks, the software CTAs and a preview.
  */
 export function DiyRow({
   locale,

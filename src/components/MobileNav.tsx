@@ -107,7 +107,7 @@ function FeatureBlock({ menu, onClose }: { readonly menu: NavMenu; readonly onCl
           : 'border-primary/30 bg-[linear-gradient(180deg,color-mix(in_oklab,var(--primary)_18%,var(--background)),var(--background))]',
       )}
     >
-      <p className={cn('font-mono text-[0.6875rem] font-medium uppercase tracking-[0.14em]', software ? 'text-signal' : 'text-brand')}>{f.eyebrow}</p>
+      <p className={cn('font-mono text-[0.6875rem] font-medium uppercase tracking-[0.14em]', 'text-brand')}>{f.eyebrow}</p>
       <p className="mt-1.5 font-display text-lg font-semibold leading-snug tracking-[-0.02em] text-foreground">{f.title}</p>
       <p className="mt-1.5 text-[0.8125rem] leading-relaxed text-muted-foreground">{f.body}</p>
       {f.chips && f.chips.length > 0 ? (
@@ -124,7 +124,7 @@ function FeatureBlock({ menu, onClose }: { readonly menu: NavMenu; readonly onCl
           f.primary,
           cn(
             'col-span-2 flex h-12 items-center justify-center rounded-xl text-[0.9375rem] font-semibold',
-            software ? 'bg-signal text-signal-foreground' : 'bg-[linear-gradient(180deg,var(--primary),var(--primary-deep))] text-primary-foreground',
+            'asg-primary-action text-primary-foreground',
           ),
           `mobile_nav_${menu.id}_primary`,
         )}
@@ -218,8 +218,7 @@ export function MobileNav({ locale, alternateHref, isOpen, onClose, model }: Mob
             className="min-w-0 shrink-0"
             homeHref={lp('/')}
             onClick={onClose}
-            imageClassName="h-7 w-7 min-[400px]:h-8 min-[400px]:w-8"
-            textClassName="max-[359px]:sr-only whitespace-nowrap text-base min-[400px]:text-lg"
+            imageClassName="h-7 min-[400px]:h-8"
           />
           <div className="flex shrink-0 items-center gap-1 min-[400px]:gap-1.5">
             <LanguageSwitcher alternateHref={alternateHref} />
@@ -281,7 +280,7 @@ export function MobileNav({ locale, alternateHref, isOpen, onClose, model }: Mob
             >
               {m.label}
               {m.badge ? <span aria-label={m.badge.label} className="size-2 rounded-full bg-signal" /> : null}
-              <span className={cn('absolute inset-x-3 bottom-0 h-0.5 rounded-full', tab === m.id ? (m.id === 'software' ? 'bg-signal' : 'bg-primary') : 'bg-transparent')} />
+              <span className={cn('absolute inset-x-3 bottom-0 h-0.5 rounded-full', tab === m.id ? ('bg-primary') : 'bg-transparent')} />
             </button>
           ))}
         </div>
@@ -325,7 +324,7 @@ export function MobileNav({ locale, alternateHref, isOpen, onClose, model }: Mob
         <div className="grid grid-cols-[1fr_auto] gap-2">
           <Link
             href={model.freeAudit.href}
-            className="flex h-12 items-center justify-center gap-1.5 rounded-xl bg-[linear-gradient(180deg,var(--primary),var(--primary-deep))] text-[0.9375rem] font-semibold text-primary-foreground"
+            className="flex h-12 items-center justify-center gap-1.5 rounded-xl asg-primary-action text-[0.9375rem] font-semibold text-primary-foreground"
             onClick={() => {
               trackCtaClick('mobile_nav_free_audit');
               onClose();

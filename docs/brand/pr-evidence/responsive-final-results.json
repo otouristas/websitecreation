@@ -1,0 +1,1925 @@
+{
+  "results": [
+    {
+      "route": "/en",
+      "surface": "shared-header",
+      "width": 360,
+      "theme": "dark",
+      "mode": "responsive",
+      "status": 200,
+      "innerWidth": 360,
+      "scrollWidth": 360,
+      "devicePixelRatio": 1,
+      "visualViewport": {
+        "width": 360,
+        "scale": 1
+      },
+      "rootCssZoom": "1",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        },
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        }
+      ],
+      "formControls": [
+        {
+          "tag": "INPUT",
+          "name": "url",
+          "type": "text",
+          "left": 65,
+          "right": 319,
+          "width": 254
+        },
+        {
+          "tag": "BUTTON",
+          "name": null,
+          "type": "submit",
+          "left": 29,
+          "right": 331,
+          "width": 302
+        }
+      ],
+      "pass": true,
+      "screenshot": "responsive-shared-header-dark-360-responsive.png"
+    },
+    {
+      "route": "/en/contact",
+      "surface": "contact-form",
+      "width": 360,
+      "theme": "dark",
+      "mode": "responsive",
+      "status": 200,
+      "innerWidth": 360,
+      "scrollWidth": 360,
+      "devicePixelRatio": 1,
+      "visualViewport": {
+        "width": 360,
+        "scale": 1
+      },
+      "rootCssZoom": "1",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        },
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        }
+      ],
+      "formControls": [
+        {
+          "tag": "INPUT",
+          "name": "name",
+          "type": "text",
+          "left": 41,
+          "right": 319,
+          "width": 278
+        },
+        {
+          "tag": "INPUT",
+          "name": "email",
+          "type": "email",
+          "left": 41,
+          "right": 319,
+          "width": 278
+        },
+        {
+          "tag": "INPUT",
+          "name": "phone",
+          "type": "tel",
+          "left": 41,
+          "right": 319,
+          "width": 278
+        },
+        {
+          "tag": "INPUT",
+          "name": "website",
+          "type": "text",
+          "left": 41,
+          "right": 319,
+          "width": 278
+        },
+        {
+          "tag": "TEXTAREA",
+          "name": "message",
+          "type": null,
+          "left": 41,
+          "right": 319,
+          "width": 278
+        },
+        {
+          "tag": "INPUT",
+          "name": "company",
+          "type": "text",
+          "left": 58,
+          "right": 302,
+          "width": 244
+        },
+        {
+          "tag": "BUTTON",
+          "name": null,
+          "type": "submit",
+          "left": 41,
+          "right": 319,
+          "width": 278
+        }
+      ],
+      "pass": true,
+      "screenshot": "responsive-contact-form-dark-360-responsive.png"
+    },
+    {
+      "route": "/en/get-started",
+      "surface": "get-started-form",
+      "width": 360,
+      "theme": "dark",
+      "mode": "responsive",
+      "status": 200,
+      "innerWidth": 360,
+      "scrollWidth": 360,
+      "devicePixelRatio": 1,
+      "visualViewport": {
+        "width": 360,
+        "scale": 1
+      },
+      "rootCssZoom": "1",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        },
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        }
+      ],
+      "formControls": [
+        {
+          "tag": "INPUT",
+          "name": "website",
+          "type": "text",
+          "left": 41,
+          "right": 319,
+          "width": 278
+        },
+        {
+          "tag": "INPUT",
+          "name": "name",
+          "type": "text",
+          "left": 41,
+          "right": 319,
+          "width": 278
+        },
+        {
+          "tag": "INPUT",
+          "name": "email",
+          "type": "email",
+          "left": 41,
+          "right": 319,
+          "width": 278
+        },
+        {
+          "tag": "INPUT",
+          "name": "phone",
+          "type": "tel",
+          "left": 41,
+          "right": 319,
+          "width": 278
+        },
+        {
+          "tag": "TEXTAREA",
+          "name": "brief",
+          "type": null,
+          "left": 41,
+          "right": 319,
+          "width": 278
+        },
+        {
+          "tag": "BUTTON",
+          "name": null,
+          "type": "submit",
+          "left": 41,
+          "right": 319,
+          "width": 278
+        }
+      ],
+      "pass": true,
+      "screenshot": "responsive-get-started-form-dark-360-responsive.png"
+    },
+    {
+      "route": "/en/platform/pricing",
+      "surface": "pricing",
+      "width": 360,
+      "theme": "dark",
+      "mode": "responsive",
+      "status": 200,
+      "innerWidth": 360,
+      "scrollWidth": 360,
+      "devicePixelRatio": 1,
+      "visualViewport": {
+        "width": 360,
+        "scale": 1
+      },
+      "rootCssZoom": "1",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        },
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        }
+      ],
+      "formControls": [],
+      "pass": true,
+      "screenshot": "responsive-pricing-dark-360-responsive.png"
+    },
+    {
+      "route": "/en/help/keywords-content/content-studio",
+      "surface": "help-table",
+      "width": 360,
+      "theme": "dark",
+      "mode": "responsive",
+      "status": 200,
+      "innerWidth": 360,
+      "scrollWidth": 360,
+      "devicePixelRatio": 1,
+      "visualViewport": {
+        "width": 360,
+        "scale": 1
+      },
+      "rootCssZoom": "1",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        },
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        }
+      ],
+      "formControls": [
+        {
+          "tag": "INPUT",
+          "name": null,
+          "type": "search",
+          "left": 16,
+          "right": 344,
+          "width": 328
+        }
+      ],
+      "pass": true,
+      "screenshot": "responsive-help-table-dark-360-responsive.png"
+    },
+    {
+      "route": "/en/qa-brand-missing-page",
+      "surface": "404",
+      "status": 404,
+      "width": 360,
+      "theme": "dark",
+      "mode": "responsive",
+      "innerWidth": 360,
+      "scrollWidth": 360,
+      "devicePixelRatio": 1,
+      "visualViewport": {
+        "width": 360,
+        "scale": 1
+      },
+      "rootCssZoom": "1",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        }
+      ],
+      "formControls": [],
+      "pass": true,
+      "screenshot": "responsive-404-dark-360-responsive.png"
+    },
+    {
+      "route": "/en",
+      "surface": "shared-header",
+      "width": 768,
+      "theme": "dark",
+      "mode": "responsive",
+      "status": 200,
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "devicePixelRatio": 1,
+      "visualViewport": {
+        "width": 768,
+        "scale": 1
+      },
+      "rootCssZoom": "1",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        },
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        }
+      ],
+      "formControls": [
+        {
+          "tag": "INPUT",
+          "name": "url",
+          "type": "text",
+          "left": 141,
+          "right": 496.40625,
+          "width": 355.40625
+        },
+        {
+          "tag": "BUTTON",
+          "name": null,
+          "type": "submit",
+          "left": 504.40625,
+          "right": 663,
+          "width": 158.59375
+        }
+      ],
+      "pass": true
+    },
+    {
+      "route": "/en/contact",
+      "surface": "contact-form",
+      "width": 768,
+      "theme": "dark",
+      "mode": "responsive",
+      "status": 200,
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "devicePixelRatio": 1,
+      "visualViewport": {
+        "width": 768,
+        "scale": 1
+      },
+      "rootCssZoom": "1",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        },
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        }
+      ],
+      "formControls": [
+        {
+          "tag": "INPUT",
+          "name": "name",
+          "type": "text",
+          "left": 65,
+          "right": 376,
+          "width": 311
+        },
+        {
+          "tag": "INPUT",
+          "name": "email",
+          "type": "email",
+          "left": 392,
+          "right": 703,
+          "width": 311
+        },
+        {
+          "tag": "INPUT",
+          "name": "phone",
+          "type": "tel",
+          "left": 65,
+          "right": 376,
+          "width": 311
+        },
+        {
+          "tag": "INPUT",
+          "name": "website",
+          "type": "text",
+          "left": 392,
+          "right": 703,
+          "width": 311
+        },
+        {
+          "tag": "TEXTAREA",
+          "name": "message",
+          "type": null,
+          "left": 65,
+          "right": 703,
+          "width": 638
+        },
+        {
+          "tag": "INPUT",
+          "name": "company",
+          "type": "text",
+          "left": 82,
+          "right": 686,
+          "width": 604
+        },
+        {
+          "tag": "BUTTON",
+          "name": null,
+          "type": "submit",
+          "left": 65,
+          "right": 703,
+          "width": 638
+        }
+      ],
+      "pass": true
+    },
+    {
+      "route": "/en/get-started",
+      "surface": "get-started-form",
+      "width": 768,
+      "theme": "dark",
+      "mode": "responsive",
+      "status": 200,
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "devicePixelRatio": 1,
+      "visualViewport": {
+        "width": 768,
+        "scale": 1
+      },
+      "rootCssZoom": "1",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        },
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        }
+      ],
+      "formControls": [
+        {
+          "tag": "INPUT",
+          "name": "website",
+          "type": "text",
+          "left": 57,
+          "right": 534.171875,
+          "width": 477.171875
+        },
+        {
+          "tag": "INPUT",
+          "name": "name",
+          "type": "text",
+          "left": 57,
+          "right": 380,
+          "width": 323
+        },
+        {
+          "tag": "INPUT",
+          "name": "email",
+          "type": "email",
+          "left": 388,
+          "right": 711,
+          "width": 323
+        },
+        {
+          "tag": "INPUT",
+          "name": "phone",
+          "type": "tel",
+          "left": 57,
+          "right": 711,
+          "width": 654
+        },
+        {
+          "tag": "TEXTAREA",
+          "name": "brief",
+          "type": null,
+          "left": 57,
+          "right": 711,
+          "width": 654
+        },
+        {
+          "tag": "BUTTON",
+          "name": null,
+          "type": "submit",
+          "left": 57,
+          "right": 255.015625,
+          "width": 198.015625
+        }
+      ],
+      "pass": true
+    },
+    {
+      "route": "/en/platform/pricing",
+      "surface": "pricing",
+      "width": 768,
+      "theme": "dark",
+      "mode": "responsive",
+      "status": 200,
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "devicePixelRatio": 1,
+      "visualViewport": {
+        "width": 768,
+        "scale": 1
+      },
+      "rootCssZoom": "1",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        },
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        }
+      ],
+      "formControls": [],
+      "pass": true
+    },
+    {
+      "route": "/en/help/keywords-content/content-studio",
+      "surface": "help-table",
+      "width": 768,
+      "theme": "dark",
+      "mode": "responsive",
+      "status": 200,
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "devicePixelRatio": 1,
+      "visualViewport": {
+        "width": 768,
+        "scale": 1
+      },
+      "rootCssZoom": "1",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        },
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        }
+      ],
+      "formControls": [
+        {
+          "tag": "INPUT",
+          "name": null,
+          "type": "search",
+          "left": 328,
+          "right": 744,
+          "width": 416
+        }
+      ],
+      "pass": true
+    },
+    {
+      "route": "/en/qa-brand-missing-page",
+      "surface": "404",
+      "status": 404,
+      "width": 768,
+      "theme": "dark",
+      "mode": "responsive",
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "devicePixelRatio": 1,
+      "visualViewport": {
+        "width": 768,
+        "scale": 1
+      },
+      "rootCssZoom": "1",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        }
+      ],
+      "formControls": [],
+      "pass": true
+    },
+    {
+      "route": "/en",
+      "surface": "shared-header",
+      "width": 360,
+      "theme": "light",
+      "mode": "responsive",
+      "status": 200,
+      "innerWidth": 360,
+      "scrollWidth": 360,
+      "devicePixelRatio": 1,
+      "visualViewport": {
+        "width": 360,
+        "scale": 1
+      },
+      "rootCssZoom": "1",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-light.svg",
+          "loaded": true
+        },
+        {
+          "src": "/brand/asg-lockup-on-light.svg",
+          "loaded": true
+        }
+      ],
+      "formControls": [
+        {
+          "tag": "INPUT",
+          "name": "url",
+          "type": "text",
+          "left": 65,
+          "right": 319,
+          "width": 254
+        },
+        {
+          "tag": "BUTTON",
+          "name": null,
+          "type": "submit",
+          "left": 29,
+          "right": 331,
+          "width": 302
+        }
+      ],
+      "pass": true,
+      "screenshot": "responsive-shared-header-light-360-responsive.png"
+    },
+    {
+      "route": "/en/contact",
+      "surface": "contact-form",
+      "width": 360,
+      "theme": "light",
+      "mode": "responsive",
+      "status": 200,
+      "innerWidth": 360,
+      "scrollWidth": 360,
+      "devicePixelRatio": 1,
+      "visualViewport": {
+        "width": 360,
+        "scale": 1
+      },
+      "rootCssZoom": "1",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-light.svg",
+          "loaded": true
+        },
+        {
+          "src": "/brand/asg-lockup-on-light.svg",
+          "loaded": true
+        }
+      ],
+      "formControls": [
+        {
+          "tag": "INPUT",
+          "name": "name",
+          "type": "text",
+          "left": 41,
+          "right": 319,
+          "width": 278
+        },
+        {
+          "tag": "INPUT",
+          "name": "email",
+          "type": "email",
+          "left": 41,
+          "right": 319,
+          "width": 278
+        },
+        {
+          "tag": "INPUT",
+          "name": "phone",
+          "type": "tel",
+          "left": 41,
+          "right": 319,
+          "width": 278
+        },
+        {
+          "tag": "INPUT",
+          "name": "website",
+          "type": "text",
+          "left": 41,
+          "right": 319,
+          "width": 278
+        },
+        {
+          "tag": "TEXTAREA",
+          "name": "message",
+          "type": null,
+          "left": 41,
+          "right": 319,
+          "width": 278
+        },
+        {
+          "tag": "INPUT",
+          "name": "company",
+          "type": "text",
+          "left": 58,
+          "right": 302,
+          "width": 244
+        },
+        {
+          "tag": "BUTTON",
+          "name": null,
+          "type": "submit",
+          "left": 41,
+          "right": 319,
+          "width": 278
+        }
+      ],
+      "pass": true,
+      "screenshot": "responsive-contact-form-light-360-responsive.png"
+    },
+    {
+      "route": "/en/get-started",
+      "surface": "get-started-form",
+      "width": 360,
+      "theme": "light",
+      "mode": "responsive",
+      "status": 200,
+      "innerWidth": 360,
+      "scrollWidth": 360,
+      "devicePixelRatio": 1,
+      "visualViewport": {
+        "width": 360,
+        "scale": 1
+      },
+      "rootCssZoom": "1",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-light.svg",
+          "loaded": true
+        },
+        {
+          "src": "/brand/asg-lockup-on-light.svg",
+          "loaded": true
+        }
+      ],
+      "formControls": [
+        {
+          "tag": "INPUT",
+          "name": "website",
+          "type": "text",
+          "left": 41,
+          "right": 319,
+          "width": 278
+        },
+        {
+          "tag": "INPUT",
+          "name": "name",
+          "type": "text",
+          "left": 41,
+          "right": 319,
+          "width": 278
+        },
+        {
+          "tag": "INPUT",
+          "name": "email",
+          "type": "email",
+          "left": 41,
+          "right": 319,
+          "width": 278
+        },
+        {
+          "tag": "INPUT",
+          "name": "phone",
+          "type": "tel",
+          "left": 41,
+          "right": 319,
+          "width": 278
+        },
+        {
+          "tag": "TEXTAREA",
+          "name": "brief",
+          "type": null,
+          "left": 41,
+          "right": 319,
+          "width": 278
+        },
+        {
+          "tag": "BUTTON",
+          "name": null,
+          "type": "submit",
+          "left": 41,
+          "right": 319,
+          "width": 278
+        }
+      ],
+      "pass": true,
+      "screenshot": "responsive-get-started-form-light-360-responsive.png"
+    },
+    {
+      "route": "/en/platform/pricing",
+      "surface": "pricing",
+      "width": 360,
+      "theme": "light",
+      "mode": "responsive",
+      "status": 200,
+      "innerWidth": 360,
+      "scrollWidth": 360,
+      "devicePixelRatio": 1,
+      "visualViewport": {
+        "width": 360,
+        "scale": 1
+      },
+      "rootCssZoom": "1",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-light.svg",
+          "loaded": true
+        },
+        {
+          "src": "/brand/asg-lockup-on-light.svg",
+          "loaded": true
+        }
+      ],
+      "formControls": [],
+      "pass": true,
+      "screenshot": "responsive-pricing-light-360-responsive.png"
+    },
+    {
+      "route": "/en/help/keywords-content/content-studio",
+      "surface": "help-table",
+      "width": 360,
+      "theme": "light",
+      "mode": "responsive",
+      "status": 200,
+      "innerWidth": 360,
+      "scrollWidth": 360,
+      "devicePixelRatio": 1,
+      "visualViewport": {
+        "width": 360,
+        "scale": 1
+      },
+      "rootCssZoom": "1",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-light.svg",
+          "loaded": true
+        },
+        {
+          "src": "/brand/asg-lockup-on-light.svg",
+          "loaded": true
+        }
+      ],
+      "formControls": [
+        {
+          "tag": "INPUT",
+          "name": null,
+          "type": "search",
+          "left": 16,
+          "right": 344,
+          "width": 328
+        }
+      ],
+      "pass": true,
+      "screenshot": "responsive-help-table-light-360-responsive.png"
+    },
+    {
+      "route": "/en/qa-brand-missing-page",
+      "surface": "404",
+      "status": 404,
+      "width": 360,
+      "theme": "light",
+      "mode": "responsive",
+      "innerWidth": 360,
+      "scrollWidth": 360,
+      "devicePixelRatio": 1,
+      "visualViewport": {
+        "width": 360,
+        "scale": 1
+      },
+      "rootCssZoom": "1",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-light.svg",
+          "loaded": true
+        }
+      ],
+      "formControls": [],
+      "pass": true,
+      "screenshot": "responsive-404-light-360-responsive.png"
+    },
+    {
+      "route": "/en",
+      "surface": "shared-header",
+      "width": 768,
+      "theme": "light",
+      "mode": "responsive",
+      "status": 200,
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "devicePixelRatio": 1,
+      "visualViewport": {
+        "width": 768,
+        "scale": 1
+      },
+      "rootCssZoom": "1",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-light.svg",
+          "loaded": true
+        },
+        {
+          "src": "/brand/asg-lockup-on-light.svg",
+          "loaded": true
+        }
+      ],
+      "formControls": [
+        {
+          "tag": "INPUT",
+          "name": "url",
+          "type": "text",
+          "left": 141,
+          "right": 496.40625,
+          "width": 355.40625
+        },
+        {
+          "tag": "BUTTON",
+          "name": null,
+          "type": "submit",
+          "left": 504.40625,
+          "right": 663,
+          "width": 158.59375
+        }
+      ],
+      "pass": true
+    },
+    {
+      "route": "/en/contact",
+      "surface": "contact-form",
+      "width": 768,
+      "theme": "light",
+      "mode": "responsive",
+      "status": 200,
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "devicePixelRatio": 1,
+      "visualViewport": {
+        "width": 768,
+        "scale": 1
+      },
+      "rootCssZoom": "1",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-light.svg",
+          "loaded": true
+        },
+        {
+          "src": "/brand/asg-lockup-on-light.svg",
+          "loaded": true
+        }
+      ],
+      "formControls": [
+        {
+          "tag": "INPUT",
+          "name": "name",
+          "type": "text",
+          "left": 65,
+          "right": 376,
+          "width": 311
+        },
+        {
+          "tag": "INPUT",
+          "name": "email",
+          "type": "email",
+          "left": 392,
+          "right": 703,
+          "width": 311
+        },
+        {
+          "tag": "INPUT",
+          "name": "phone",
+          "type": "tel",
+          "left": 65,
+          "right": 376,
+          "width": 311
+        },
+        {
+          "tag": "INPUT",
+          "name": "website",
+          "type": "text",
+          "left": 392,
+          "right": 703,
+          "width": 311
+        },
+        {
+          "tag": "TEXTAREA",
+          "name": "message",
+          "type": null,
+          "left": 65,
+          "right": 703,
+          "width": 638
+        },
+        {
+          "tag": "INPUT",
+          "name": "company",
+          "type": "text",
+          "left": 82,
+          "right": 686,
+          "width": 604
+        },
+        {
+          "tag": "BUTTON",
+          "name": null,
+          "type": "submit",
+          "left": 65,
+          "right": 703,
+          "width": 638
+        }
+      ],
+      "pass": true
+    },
+    {
+      "route": "/en/get-started",
+      "surface": "get-started-form",
+      "width": 768,
+      "theme": "light",
+      "mode": "responsive",
+      "status": 200,
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "devicePixelRatio": 1,
+      "visualViewport": {
+        "width": 768,
+        "scale": 1
+      },
+      "rootCssZoom": "1",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-light.svg",
+          "loaded": true
+        },
+        {
+          "src": "/brand/asg-lockup-on-light.svg",
+          "loaded": true
+        }
+      ],
+      "formControls": [
+        {
+          "tag": "INPUT",
+          "name": "website",
+          "type": "text",
+          "left": 57,
+          "right": 534.171875,
+          "width": 477.171875
+        },
+        {
+          "tag": "INPUT",
+          "name": "name",
+          "type": "text",
+          "left": 57,
+          "right": 380,
+          "width": 323
+        },
+        {
+          "tag": "INPUT",
+          "name": "email",
+          "type": "email",
+          "left": 388,
+          "right": 711,
+          "width": 323
+        },
+        {
+          "tag": "INPUT",
+          "name": "phone",
+          "type": "tel",
+          "left": 57,
+          "right": 711,
+          "width": 654
+        },
+        {
+          "tag": "TEXTAREA",
+          "name": "brief",
+          "type": null,
+          "left": 57,
+          "right": 711,
+          "width": 654
+        },
+        {
+          "tag": "BUTTON",
+          "name": null,
+          "type": "submit",
+          "left": 57,
+          "right": 255.015625,
+          "width": 198.015625
+        }
+      ],
+      "pass": true
+    },
+    {
+      "route": "/en/platform/pricing",
+      "surface": "pricing",
+      "width": 768,
+      "theme": "light",
+      "mode": "responsive",
+      "status": 200,
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "devicePixelRatio": 1,
+      "visualViewport": {
+        "width": 768,
+        "scale": 1
+      },
+      "rootCssZoom": "1",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-light.svg",
+          "loaded": true
+        },
+        {
+          "src": "/brand/asg-lockup-on-light.svg",
+          "loaded": true
+        }
+      ],
+      "formControls": [],
+      "pass": true
+    },
+    {
+      "route": "/en/help/keywords-content/content-studio",
+      "surface": "help-table",
+      "width": 768,
+      "theme": "light",
+      "mode": "responsive",
+      "status": 200,
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "devicePixelRatio": 1,
+      "visualViewport": {
+        "width": 768,
+        "scale": 1
+      },
+      "rootCssZoom": "1",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-light.svg",
+          "loaded": true
+        },
+        {
+          "src": "/brand/asg-lockup-on-light.svg",
+          "loaded": true
+        }
+      ],
+      "formControls": [
+        {
+          "tag": "INPUT",
+          "name": null,
+          "type": "search",
+          "left": 328,
+          "right": 744,
+          "width": 416
+        }
+      ],
+      "pass": true
+    },
+    {
+      "route": "/en/qa-brand-missing-page",
+      "surface": "404",
+      "status": 404,
+      "width": 768,
+      "theme": "light",
+      "mode": "responsive",
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "devicePixelRatio": 1,
+      "visualViewport": {
+        "width": 768,
+        "scale": 1
+      },
+      "rootCssZoom": "1",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-light.svg",
+          "loaded": true
+        }
+      ],
+      "formControls": [],
+      "pass": true
+    },
+    {
+      "route": "/en",
+      "surface": "shared-header",
+      "width": 384,
+      "theme": "dark",
+      "mode": "emulated-200-reflow",
+      "status": 200,
+      "innerWidth": 384,
+      "scrollWidth": 384,
+      "devicePixelRatio": 1,
+      "visualViewport": {
+        "width": 384,
+        "scale": 1
+      },
+      "rootCssZoom": "1",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        },
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        }
+      ],
+      "formControls": [
+        {
+          "tag": "INPUT",
+          "name": "url",
+          "type": "text",
+          "left": 65,
+          "right": 343,
+          "width": 278
+        },
+        {
+          "tag": "BUTTON",
+          "name": null,
+          "type": "submit",
+          "left": 29,
+          "right": 355,
+          "width": 326
+        }
+      ],
+      "pass": true,
+      "screenshot": "responsive-shared-header-dark-384-emulated-200-reflow.png"
+    },
+    {
+      "route": "/en/contact",
+      "surface": "contact-form",
+      "width": 384,
+      "theme": "dark",
+      "mode": "emulated-200-reflow",
+      "status": 200,
+      "innerWidth": 384,
+      "scrollWidth": 384,
+      "devicePixelRatio": 1,
+      "visualViewport": {
+        "width": 384,
+        "scale": 1
+      },
+      "rootCssZoom": "1",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        },
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        }
+      ],
+      "formControls": [
+        {
+          "tag": "INPUT",
+          "name": "name",
+          "type": "text",
+          "left": 41,
+          "right": 343,
+          "width": 302
+        },
+        {
+          "tag": "INPUT",
+          "name": "email",
+          "type": "email",
+          "left": 41,
+          "right": 343,
+          "width": 302
+        },
+        {
+          "tag": "INPUT",
+          "name": "phone",
+          "type": "tel",
+          "left": 41,
+          "right": 343,
+          "width": 302
+        },
+        {
+          "tag": "INPUT",
+          "name": "website",
+          "type": "text",
+          "left": 41,
+          "right": 343,
+          "width": 302
+        },
+        {
+          "tag": "TEXTAREA",
+          "name": "message",
+          "type": null,
+          "left": 41,
+          "right": 343,
+          "width": 302
+        },
+        {
+          "tag": "INPUT",
+          "name": "company",
+          "type": "text",
+          "left": 58,
+          "right": 326,
+          "width": 268
+        },
+        {
+          "tag": "BUTTON",
+          "name": null,
+          "type": "submit",
+          "left": 41,
+          "right": 343,
+          "width": 302
+        }
+      ],
+      "pass": true,
+      "screenshot": "responsive-contact-form-dark-384-emulated-200-reflow.png"
+    },
+    {
+      "route": "/en/get-started",
+      "surface": "get-started-form",
+      "width": 384,
+      "theme": "dark",
+      "mode": "emulated-200-reflow",
+      "status": 200,
+      "innerWidth": 384,
+      "scrollWidth": 384,
+      "devicePixelRatio": 1,
+      "visualViewport": {
+        "width": 384,
+        "scale": 1
+      },
+      "rootCssZoom": "1",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        },
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        }
+      ],
+      "formControls": [
+        {
+          "tag": "INPUT",
+          "name": "website",
+          "type": "text",
+          "left": 41,
+          "right": 343,
+          "width": 302
+        },
+        {
+          "tag": "INPUT",
+          "name": "name",
+          "type": "text",
+          "left": 41,
+          "right": 343,
+          "width": 302
+        },
+        {
+          "tag": "INPUT",
+          "name": "email",
+          "type": "email",
+          "left": 41,
+          "right": 343,
+          "width": 302
+        },
+        {
+          "tag": "INPUT",
+          "name": "phone",
+          "type": "tel",
+          "left": 41,
+          "right": 343,
+          "width": 302
+        },
+        {
+          "tag": "TEXTAREA",
+          "name": "brief",
+          "type": null,
+          "left": 41,
+          "right": 343,
+          "width": 302
+        },
+        {
+          "tag": "BUTTON",
+          "name": null,
+          "type": "submit",
+          "left": 41,
+          "right": 343,
+          "width": 302
+        }
+      ],
+      "pass": true,
+      "screenshot": "responsive-get-started-form-dark-384-emulated-200-reflow.png"
+    },
+    {
+      "route": "/en/platform/pricing",
+      "surface": "pricing",
+      "width": 384,
+      "theme": "dark",
+      "mode": "emulated-200-reflow",
+      "status": 200,
+      "innerWidth": 384,
+      "scrollWidth": 384,
+      "devicePixelRatio": 1,
+      "visualViewport": {
+        "width": 384,
+        "scale": 1
+      },
+      "rootCssZoom": "1",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        },
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        }
+      ],
+      "formControls": [],
+      "pass": true,
+      "screenshot": "responsive-pricing-dark-384-emulated-200-reflow.png"
+    },
+    {
+      "route": "/en/help/keywords-content/content-studio",
+      "surface": "help-table",
+      "width": 384,
+      "theme": "dark",
+      "mode": "emulated-200-reflow",
+      "status": 200,
+      "innerWidth": 384,
+      "scrollWidth": 384,
+      "devicePixelRatio": 1,
+      "visualViewport": {
+        "width": 384,
+        "scale": 1
+      },
+      "rootCssZoom": "1",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        },
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        }
+      ],
+      "formControls": [
+        {
+          "tag": "INPUT",
+          "name": null,
+          "type": "search",
+          "left": 16,
+          "right": 368,
+          "width": 352
+        }
+      ],
+      "pass": true,
+      "screenshot": "responsive-help-table-dark-384-emulated-200-reflow.png"
+    },
+    {
+      "route": "/en/qa-brand-missing-page",
+      "surface": "404",
+      "status": 404,
+      "width": 384,
+      "theme": "dark",
+      "mode": "emulated-200-reflow",
+      "innerWidth": 384,
+      "scrollWidth": 384,
+      "devicePixelRatio": 1,
+      "visualViewport": {
+        "width": 384,
+        "scale": 1
+      },
+      "rootCssZoom": "1",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        }
+      ],
+      "formControls": [],
+      "pass": true,
+      "screenshot": "responsive-404-dark-384-emulated-200-reflow.png"
+    },
+    {
+      "route": "/en",
+      "surface": "shared-header",
+      "width": 384,
+      "theme": "light",
+      "mode": "emulated-200-reflow",
+      "status": 200,
+      "innerWidth": 384,
+      "scrollWidth": 384,
+      "devicePixelRatio": 1,
+      "visualViewport": {
+        "width": 384,
+        "scale": 1
+      },
+      "rootCssZoom": "1",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-light.svg",
+          "loaded": true
+        },
+        {
+          "src": "/brand/asg-lockup-on-light.svg",
+          "loaded": true
+        }
+      ],
+      "formControls": [
+        {
+          "tag": "INPUT",
+          "name": "url",
+          "type": "text",
+          "left": 65,
+          "right": 343,
+          "width": 278
+        },
+        {
+          "tag": "BUTTON",
+          "name": null,
+          "type": "submit",
+          "left": 29,
+          "right": 355,
+          "width": 326
+        }
+      ],
+      "pass": true,
+      "screenshot": "responsive-shared-header-light-384-emulated-200-reflow.png"
+    },
+    {
+      "route": "/en/contact",
+      "surface": "contact-form",
+      "width": 384,
+      "theme": "light",
+      "mode": "emulated-200-reflow",
+      "status": 200,
+      "innerWidth": 384,
+      "scrollWidth": 384,
+      "devicePixelRatio": 1,
+      "visualViewport": {
+        "width": 384,
+        "scale": 1
+      },
+      "rootCssZoom": "1",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-light.svg",
+          "loaded": true
+        },
+        {
+          "src": "/brand/asg-lockup-on-light.svg",
+          "loaded": true
+        }
+      ],
+      "formControls": [
+        {
+          "tag": "INPUT",
+          "name": "name",
+          "type": "text",
+          "left": 41,
+          "right": 343,
+          "width": 302
+        },
+        {
+          "tag": "INPUT",
+          "name": "email",
+          "type": "email",
+          "left": 41,
+          "right": 343,
+          "width": 302
+        },
+        {
+          "tag": "INPUT",
+          "name": "phone",
+          "type": "tel",
+          "left": 41,
+          "right": 343,
+          "width": 302
+        },
+        {
+          "tag": "INPUT",
+          "name": "website",
+          "type": "text",
+          "left": 41,
+          "right": 343,
+          "width": 302
+        },
+        {
+          "tag": "TEXTAREA",
+          "name": "message",
+          "type": null,
+          "left": 41,
+          "right": 343,
+          "width": 302
+        },
+        {
+          "tag": "INPUT",
+          "name": "company",
+          "type": "text",
+          "left": 58,
+          "right": 326,
+          "width": 268
+        },
+        {
+          "tag": "BUTTON",
+          "name": null,
+          "type": "submit",
+          "left": 41,
+          "right": 343,
+          "width": 302
+        }
+      ],
+      "pass": true,
+      "screenshot": "responsive-contact-form-light-384-emulated-200-reflow.png"
+    },
+    {
+      "route": "/en/get-started",
+      "surface": "get-started-form",
+      "width": 384,
+      "theme": "light",
+      "mode": "emulated-200-reflow",
+      "status": 200,
+      "innerWidth": 384,
+      "scrollWidth": 384,
+      "devicePixelRatio": 1,
+      "visualViewport": {
+        "width": 384,
+        "scale": 1
+      },
+      "rootCssZoom": "1",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-light.svg",
+          "loaded": true
+        },
+        {
+          "src": "/brand/asg-lockup-on-light.svg",
+          "loaded": true
+        }
+      ],
+      "formControls": [
+        {
+          "tag": "INPUT",
+          "name": "website",
+          "type": "text",
+          "left": 41,
+          "right": 343,
+          "width": 302
+        },
+        {
+          "tag": "INPUT",
+          "name": "name",
+          "type": "text",
+          "left": 41,
+          "right": 343,
+          "width": 302
+        },
+        {
+          "tag": "INPUT",
+          "name": "email",
+          "type": "email",
+          "left": 41,
+          "right": 343,
+          "width": 302
+        },
+        {
+          "tag": "INPUT",
+          "name": "phone",
+          "type": "tel",
+          "left": 41,
+          "right": 343,
+          "width": 302
+        },
+        {
+          "tag": "TEXTAREA",
+          "name": "brief",
+          "type": null,
+          "left": 41,
+          "right": 343,
+          "width": 302
+        },
+        {
+          "tag": "BUTTON",
+          "name": null,
+          "type": "submit",
+          "left": 41,
+          "right": 343,
+          "width": 302
+        }
+      ],
+      "pass": true,
+      "screenshot": "responsive-get-started-form-light-384-emulated-200-reflow.png"
+    },
+    {
+      "route": "/en/platform/pricing",
+      "surface": "pricing",
+      "width": 384,
+      "theme": "light",
+      "mode": "emulated-200-reflow",
+      "status": 200,
+      "innerWidth": 384,
+      "scrollWidth": 384,
+      "devicePixelRatio": 1,
+      "visualViewport": {
+        "width": 384,
+        "scale": 1
+      },
+      "rootCssZoom": "1",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-light.svg",
+          "loaded": true
+        },
+        {
+          "src": "/brand/asg-lockup-on-light.svg",
+          "loaded": true
+        }
+      ],
+      "formControls": [],
+      "pass": true,
+      "screenshot": "responsive-pricing-light-384-emulated-200-reflow.png"
+    },
+    {
+      "route": "/en/help/keywords-content/content-studio",
+      "surface": "help-table",
+      "width": 384,
+      "theme": "light",
+      "mode": "emulated-200-reflow",
+      "status": 200,
+      "innerWidth": 384,
+      "scrollWidth": 384,
+      "devicePixelRatio": 1,
+      "visualViewport": {
+        "width": 384,
+        "scale": 1
+      },
+      "rootCssZoom": "1",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-light.svg",
+          "loaded": true
+        },
+        {
+          "src": "/brand/asg-lockup-on-light.svg",
+          "loaded": true
+        }
+      ],
+      "formControls": [
+        {
+          "tag": "INPUT",
+          "name": null,
+          "type": "search",
+          "left": 16,
+          "right": 368,
+          "width": 352
+        }
+      ],
+      "pass": true,
+      "screenshot": "responsive-help-table-light-384-emulated-200-reflow.png"
+    },
+    {
+      "route": "/en/qa-brand-missing-page",
+      "surface": "404",
+      "status": 404,
+      "width": 384,
+      "theme": "light",
+      "mode": "emulated-200-reflow",
+      "innerWidth": 384,
+      "scrollWidth": 384,
+      "devicePixelRatio": 1,
+      "visualViewport": {
+        "width": 384,
+        "scale": 1
+      },
+      "rootCssZoom": "1",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-light.svg",
+          "loaded": true
+        }
+      ],
+      "formControls": [],
+      "pass": true,
+      "screenshot": "responsive-404-light-384-emulated-200-reflow.png"
+    }
+  ],
+  "zoom": {
+    "methodAttempted": "Isolated headless Chrome desktop Meta+Equal shortcut, five increments (100→110→125→150→175→200)",
+    "before": {
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "devicePixelRatio": 1,
+      "visualViewport": {
+        "width": 768,
+        "scale": 1
+      },
+      "rootCssZoom": "1",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "theme": "dark",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        },
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        }
+      ],
+      "formControls": [
+        {
+          "tag": "INPUT",
+          "name": "url",
+          "type": "text",
+          "left": 141,
+          "right": 496.40625,
+          "width": 355.40625
+        },
+        {
+          "tag": "BUTTON",
+          "name": null,
+          "type": "submit",
+          "left": 504.40625,
+          "right": 663,
+          "width": 158.59375
+        }
+      ]
+    },
+    "after": {
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "devicePixelRatio": 1,
+      "visualViewport": {
+        "width": 768,
+        "scale": 1
+      },
+      "rootCssZoom": "1",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "theme": "dark",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        },
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        }
+      ],
+      "formControls": [
+        {
+          "tag": "INPUT",
+          "name": "url",
+          "type": "text",
+          "left": 141,
+          "right": 496.40625,
+          "width": 355.40625
+        },
+        {
+          "tag": "BUTTON",
+          "name": null,
+          "type": "submit",
+          "left": 504.40625,
+          "right": 663,
+          "width": 158.59375
+        }
+      ]
+    },
+    "native200Verified": false,
+    "explanation": "The isolated headless setup did not verify true browser zoom. A separately named layout-reflow emulation halves 768 to 384 CSS pixels while keeping DPR 1. This checks narrow layout behavior; it does not test browser-native zoom, physical text enlargement, rasterization, pinch scaling, or browser chrome."
+  }
+}

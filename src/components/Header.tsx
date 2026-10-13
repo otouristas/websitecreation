@@ -82,18 +82,12 @@ export default function Header({
           }`}
         >
           <div className="flex min-w-0 flex-1 items-center justify-between gap-2 sm:gap-3">
-            {/* The wordmark is 170px at text-lg. With the language switcher,
-                theme toggle and hamburger on the same row that pushed the
-                hamburger past the right edge of a 320-375px viewport, i.e. the
-                menu could not be opened at all on an iPhone SE. It steps down
-                with the viewport and falls back to screen-reader-only under
-                360px, where only the mark fits. */}
+            {/* Preserve the approved lockup aspect ratio at phone widths. */}
             <BrandLogo
               size="md"
               className="min-w-0 shrink-0"
               homeHref={lp("/")}
-              imageClassName="h-7 w-7 min-[400px]:h-8 min-[400px]:w-8"
-              textClassName="max-[359px]:sr-only whitespace-nowrap text-base min-[400px]:text-lg"
+              imageClassName="h-7 min-[400px]:h-8"
             />
             <div className="hidden items-center lg:flex">
               <MegaNav model={model} chips={chips} />
@@ -115,7 +109,7 @@ export default function Header({
               <Link
                 href={lp("/get-started")}
                 onClick={() => trackCtaClick("header_get_quote")}
-                className="hidden h-9 items-center gap-1.5 rounded-full px-4 font-display text-sm font-semibold text-primary-foreground bg-[linear-gradient(180deg,var(--primary),var(--primary-deep))] shadow-[inset_0_1px_0_0_oklch(1_0_0/18%),0_0_0_1px_color-mix(in_oklab,var(--primary-glow)_35%,transparent),0_8px_24px_-10px_color-mix(in_oklab,var(--primary)_80%,transparent)] transition-[transform,box-shadow] duration-200 hover:-translate-y-px md:inline-flex motion-reduce:transition-none"
+                className="hidden h-9 items-center gap-1.5 rounded-full px-4 font-display text-sm font-semibold text-primary-foreground asg-primary-action shadow-[inset_0_1px_0_0_oklch(1_0_0/18%),0_0_0_1px_color-mix(in_oklab,var(--primary-glow)_35%,transparent),0_8px_24px_-10px_color-mix(in_oklab,var(--primary)_80%,transparent)] transition-[transform,box-shadow] duration-200 hover:-translate-y-px md:inline-flex motion-reduce:transition-none"
               >
                 {nav.getQuote}
               </Link>

@@ -64,7 +64,7 @@ export function HomePageView({ locale }: { locale: SiteLocale }) {
   const orgSchema = generateOrganizationSchema({
     name: 'AnotherSEOGuru',
     url: `${BASE_URL}${lp('/')}`,
-    logo: `${BASE_URL}/logo.png`,
+    logo: `${BASE_URL}/brand/asg-lockup-on-light@2x.png`,
     description: isEl
       ? 'AnotherSEOGuru - ελληνική εταιρεία SEO και κατασκευής ιστοσελίδων. Τεχνικό SEO, τοπικό SEO, GEO/AEO, e-shop και δική της πλατφόρμα συνδεδεμένη με το Google Search Console.'
       : 'AnotherSEOGuru - Greek SEO and web design agency. Technical SEO, local SEO, GEO/AEO, e-shops, plus a Search Console-native SEO platform.',
@@ -393,7 +393,7 @@ export function HomePageView({ locale }: { locale: SiteLocale }) {
             align="center"
             eyebrow={
               <span className="inline-flex items-center gap-2">
-                <span className="rounded-full bg-signal px-1.5 py-0.5 text-[10px] font-semibold text-signal-foreground">{tx('NEW', 'ΝΕΟ')}</span>
+                <span className="rounded-full bg-accent px-1.5 py-0.5 text-[10px] font-semibold text-accent-foreground">{tx('NEW', 'ΝΕΟ')}</span>
                 GSC Boost
               </span>
             }

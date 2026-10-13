@@ -55,7 +55,7 @@ export function ServiceAreaMap({ location, className = '', locale = 'en' }: Serv
                     href={`https://www.openstreetmap.org/?mlat=${location.latitude}&mlon=${location.longitude}#map=12/${location.latitude}/${location.longitude}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-blue-600 hover:underline"
+                    className="text-link hover:underline"
                 >
                     {isEl ? 'Μεγαλύτερος χάρτης' : 'View Larger Map'}
                 </a>

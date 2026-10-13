@@ -1,0 +1,1734 @@
+{
+  "base": "http://127.0.0.1:8086",
+  "results": [
+    {
+      "route": "/en/contact",
+      "kind": "corrected-contact",
+      "expectedStatus": 200,
+      "theme": "dark",
+      "width": 1440,
+      "status": 200,
+      "scrollWidth": 1440,
+      "lang": "en",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        },
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        }
+      ],
+      "grouping": [
+        {
+          "tags": [
+            "DT",
+            "DD"
+          ],
+          "text": "Emailanotherseoguru@gmail.com"
+        },
+        {
+          "tags": [
+            "DT",
+            "DD"
+          ],
+          "text": "Response TimeWithin 24 hours"
+        },
+        {
+          "tags": [
+            "DT",
+            "DD"
+          ],
+          "text": "ServingClients worldwide"
+        }
+      ],
+      "controlStyles": {
+        "border": "rgb(102, 121, 149)",
+        "borderWidth": "1px",
+        "outlineWidth": "2px",
+        "outlineOffset": "3px",
+        "outlineColor": "rgb(97, 207, 255)",
+        "focusVisible": true
+      },
+      "invalidStyleProbe": {
+        "border": "rgb(255, 141, 161)",
+        "danger": "#ff8da1",
+        "expected": "rgb(255, 141, 161)",
+        "settleMs": 300,
+        "pass": true
+      },
+      "renderedHeadingFonts": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 16
+        },
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular",
+          "isCustomFont": true,
+          "glyphCount": 12
+        }
+      ],
+      "accessibility": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 118
+          }
+        ]
+      },
+      "pass": true
+    },
+    {
+      "route": "/el/contact",
+      "kind": "corrected-contact",
+      "expectedStatus": 200,
+      "theme": "dark",
+      "width": 1440,
+      "status": 200,
+      "scrollWidth": 1440,
+      "lang": "el",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        },
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        }
+      ],
+      "grouping": [
+        {
+          "tags": [
+            "DT",
+            "DD"
+          ],
+          "text": "Emailanotherseoguru@gmail.com"
+        },
+        {
+          "tags": [
+            "DT",
+            "DD"
+          ],
+          "text": "Χρόνος απάντησηςΕντός 24 ωρών"
+        },
+        {
+          "tags": [
+            "DT",
+            "DD"
+          ],
+          "text": "ΕξυπηρετούμεΠελάτες σε Ελλάδα & διεθνώς"
+        }
+      ],
+      "controlStyles": {
+        "border": "rgb(102, 121, 149)",
+        "borderWidth": "1px",
+        "outlineWidth": "2px",
+        "outlineOffset": "3px",
+        "outlineColor": "rgb(97, 207, 255)",
+        "focusVisible": true
+      },
+      "invalidStyleProbe": {
+        "border": "rgb(255, 141, 161)",
+        "danger": "#ff8da1",
+        "expected": "rgb(255, 141, 161)",
+        "settleMs": 300,
+        "pass": true
+      },
+      "renderedHeadingFonts": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 19
+        },
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular",
+          "isCustomFont": true,
+          "glyphCount": 8
+        }
+      ],
+      "accessibility": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 115
+          }
+        ]
+      },
+      "pass": true
+    },
+    {
+      "route": "/en/qa-brand-missing-page",
+      "kind": "not-found",
+      "expectedStatus": 404,
+      "theme": "dark",
+      "width": 1440,
+      "status": 404,
+      "scrollWidth": 1440,
+      "lang": "en",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        }
+      ],
+      "renderedHeadingFonts": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular_Medium",
+          "isCustomFont": true,
+          "glyphCount": 37
+        }
+      ],
+      "accessibility": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 8
+          }
+        ]
+      },
+      "pass": true
+    },
+    {
+      "route": "/el/qa-brand-missing-page",
+      "kind": "not-found",
+      "expectedStatus": 404,
+      "theme": "dark",
+      "width": 1440,
+      "status": 404,
+      "scrollWidth": 1440,
+      "lang": "el",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        }
+      ],
+      "renderedHeadingFonts": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular_Medium",
+          "isCustomFont": true,
+          "glyphCount": 37
+        }
+      ],
+      "accessibility": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 8
+          }
+        ]
+      },
+      "pass": true
+    },
+    {
+      "route": "/en/blog/qa-brand-missing-article",
+      "kind": "not-found-dynamic",
+      "expectedStatus": 404,
+      "theme": "dark",
+      "width": 1440,
+      "status": 404,
+      "scrollWidth": 1440,
+      "lang": "en",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        }
+      ],
+      "renderedHeadingFonts": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular_Medium",
+          "isCustomFont": true,
+          "glyphCount": 37
+        }
+      ],
+      "accessibility": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 8
+          }
+        ]
+      },
+      "pass": true
+    },
+    {
+      "route": "/el/blog/qa-brand-missing-article",
+      "kind": "not-found-dynamic",
+      "expectedStatus": 404,
+      "theme": "dark",
+      "width": 1440,
+      "status": 404,
+      "scrollWidth": 1440,
+      "lang": "el",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        }
+      ],
+      "renderedHeadingFonts": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular_Medium",
+          "isCustomFont": true,
+          "glyphCount": 37
+        }
+      ],
+      "accessibility": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 8
+          }
+        ]
+      },
+      "pass": true
+    },
+    {
+      "route": "/en/help/keywords-content/content-studio",
+      "kind": "warning-note",
+      "expectedStatus": 200,
+      "theme": "dark",
+      "width": 1440,
+      "status": 200,
+      "scrollWidth": 1440,
+      "lang": "en",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        },
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        }
+      ],
+      "noteStyles": {
+        "background": "rgb(52, 40, 21)",
+        "border": "rgb(243, 195, 107)",
+        "text": "oklab(0.975748 -0.000502586 -0.00569397 / 0.85)",
+        "iconColor": "rgb(243, 195, 107)"
+      },
+      "keyboardTables": [
+        {
+          "label": "Article table: Tool, Use it to",
+          "focusVisible": true,
+          "outlineWidth": "2px",
+          "outlineOffset": "3px",
+          "outlineColor": "rgb(97, 207, 255)",
+          "scrollLeft": 0
+        }
+      ],
+      "renderedHeadingFonts": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 42
+        }
+      ],
+      "accessibility": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 61
+          }
+        ]
+      },
+      "pass": true
+    },
+    {
+      "route": "/en/platform/pricing",
+      "kind": "yearly-recommended-pricing",
+      "expectedStatus": 200,
+      "theme": "dark",
+      "width": 1440,
+      "status": 200,
+      "scrollWidth": 1440,
+      "lang": "en",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        },
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        }
+      ],
+      "badge": {
+        "foreground": "rgb(97, 207, 255)",
+        "background": "rgb(18, 49, 74)"
+      },
+      "faq": {
+        "before": false,
+        "after": true
+      },
+      "keyboardTables": [
+        {
+          "label": "Plan comparison",
+          "focusVisible": true,
+          "outlineWidth": "2px",
+          "outlineOffset": "3px",
+          "outlineColor": "rgb(97, 207, 255)",
+          "scrollLeft": 0
+        },
+        {
+          "label": "What a month of credits covers on each plan",
+          "focusVisible": true,
+          "outlineWidth": "2px",
+          "outlineOffset": "3px",
+          "outlineColor": "rgb(97, 207, 255)",
+          "scrollLeft": 0
+        }
+      ],
+      "renderedHeadingFonts": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 35
+        },
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular",
+          "isCustomFont": true,
+          "glyphCount": 13
+        }
+      ],
+      "accessibility": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 297
+          }
+        ]
+      },
+      "pass": true
+    },
+    {
+      "route": "/en/contact",
+      "kind": "corrected-contact",
+      "expectedStatus": 200,
+      "theme": "dark",
+      "width": 390,
+      "status": 200,
+      "scrollWidth": 390,
+      "lang": "en",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        },
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        }
+      ],
+      "grouping": [
+        {
+          "tags": [
+            "DT",
+            "DD"
+          ],
+          "text": "Emailanotherseoguru@gmail.com"
+        },
+        {
+          "tags": [
+            "DT",
+            "DD"
+          ],
+          "text": "Response TimeWithin 24 hours"
+        },
+        {
+          "tags": [
+            "DT",
+            "DD"
+          ],
+          "text": "ServingClients worldwide"
+        }
+      ],
+      "controlStyles": {
+        "border": "rgb(102, 121, 149)",
+        "borderWidth": "1px",
+        "outlineWidth": "2px",
+        "outlineOffset": "3px",
+        "outlineColor": "rgb(97, 207, 255)",
+        "focusVisible": true
+      },
+      "invalidStyleProbe": {
+        "border": "rgb(255, 141, 161)",
+        "danger": "#ff8da1",
+        "expected": "rgb(255, 141, 161)",
+        "settleMs": 300,
+        "pass": true
+      },
+      "renderedHeadingFonts": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 16
+        },
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular",
+          "isCustomFont": true,
+          "glyphCount": 12
+        }
+      ],
+      "accessibility": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 72
+          }
+        ]
+      },
+      "pass": true
+    },
+    {
+      "route": "/el/contact",
+      "kind": "corrected-contact",
+      "expectedStatus": 200,
+      "theme": "dark",
+      "width": 390,
+      "status": 200,
+      "scrollWidth": 390,
+      "lang": "el",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        },
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        }
+      ],
+      "grouping": [
+        {
+          "tags": [
+            "DT",
+            "DD"
+          ],
+          "text": "Emailanotherseoguru@gmail.com"
+        },
+        {
+          "tags": [
+            "DT",
+            "DD"
+          ],
+          "text": "Χρόνος απάντησηςΕντός 24 ωρών"
+        },
+        {
+          "tags": [
+            "DT",
+            "DD"
+          ],
+          "text": "ΕξυπηρετούμεΠελάτες σε Ελλάδα & διεθνώς"
+        }
+      ],
+      "controlStyles": {
+        "border": "rgb(102, 121, 149)",
+        "borderWidth": "1px",
+        "outlineWidth": "2px",
+        "outlineOffset": "3px",
+        "outlineColor": "rgb(97, 207, 255)",
+        "focusVisible": true
+      },
+      "invalidStyleProbe": {
+        "border": "rgb(255, 141, 161)",
+        "danger": "#ff8da1",
+        "expected": "rgb(255, 141, 161)",
+        "settleMs": 300,
+        "pass": true
+      },
+      "renderedHeadingFonts": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 19
+        },
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular",
+          "isCustomFont": true,
+          "glyphCount": 8
+        }
+      ],
+      "accessibility": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 65
+          }
+        ]
+      },
+      "pass": true
+    },
+    {
+      "route": "/en/qa-brand-missing-page",
+      "kind": "not-found",
+      "expectedStatus": 404,
+      "theme": "dark",
+      "width": 390,
+      "status": 404,
+      "scrollWidth": 390,
+      "lang": "en",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        }
+      ],
+      "renderedHeadingFonts": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular_Medium",
+          "isCustomFont": true,
+          "glyphCount": 36
+        }
+      ],
+      "accessibility": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 8
+          }
+        ]
+      },
+      "pass": true
+    },
+    {
+      "route": "/el/qa-brand-missing-page",
+      "kind": "not-found",
+      "expectedStatus": 404,
+      "theme": "dark",
+      "width": 390,
+      "status": 404,
+      "scrollWidth": 390,
+      "lang": "el",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        }
+      ],
+      "renderedHeadingFonts": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular_Medium",
+          "isCustomFont": true,
+          "glyphCount": 36
+        }
+      ],
+      "accessibility": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 8
+          }
+        ]
+      },
+      "pass": true
+    },
+    {
+      "route": "/en/blog/qa-brand-missing-article",
+      "kind": "not-found-dynamic",
+      "expectedStatus": 404,
+      "theme": "dark",
+      "width": 390,
+      "status": 404,
+      "scrollWidth": 390,
+      "lang": "en",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        }
+      ],
+      "renderedHeadingFonts": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular_Medium",
+          "isCustomFont": true,
+          "glyphCount": 36
+        }
+      ],
+      "accessibility": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 8
+          }
+        ]
+      },
+      "pass": true
+    },
+    {
+      "route": "/el/blog/qa-brand-missing-article",
+      "kind": "not-found-dynamic",
+      "expectedStatus": 404,
+      "theme": "dark",
+      "width": 390,
+      "status": 404,
+      "scrollWidth": 390,
+      "lang": "el",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        }
+      ],
+      "renderedHeadingFonts": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular_Medium",
+          "isCustomFont": true,
+          "glyphCount": 36
+        }
+      ],
+      "accessibility": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 8
+          }
+        ]
+      },
+      "pass": true
+    },
+    {
+      "route": "/en/help/keywords-content/content-studio",
+      "kind": "warning-note",
+      "expectedStatus": 200,
+      "theme": "dark",
+      "width": 390,
+      "status": 200,
+      "scrollWidth": 390,
+      "lang": "en",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        },
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        }
+      ],
+      "noteStyles": {
+        "background": "rgb(52, 40, 21)",
+        "border": "rgb(243, 195, 107)",
+        "text": "oklab(0.975748 -0.000502586 -0.00569397 / 0.85)",
+        "iconColor": "rgb(243, 195, 107)"
+      },
+      "keyboardTables": [
+        {
+          "label": "Article table: Tool, Use it to",
+          "focusVisible": true,
+          "outlineWidth": "2px",
+          "outlineOffset": "3px",
+          "outlineColor": "rgb(97, 207, 255)",
+          "scrollLeft": 40
+        }
+      ],
+      "renderedHeadingFonts": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 42
+        }
+      ],
+      "accessibility": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 21
+          }
+        ]
+      },
+      "pass": true
+    },
+    {
+      "route": "/en/platform/pricing",
+      "kind": "yearly-recommended-pricing",
+      "expectedStatus": 200,
+      "theme": "dark",
+      "width": 390,
+      "status": 200,
+      "scrollWidth": 390,
+      "lang": "en",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        },
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        }
+      ],
+      "badge": {
+        "foreground": "rgb(97, 207, 255)",
+        "background": "rgb(18, 49, 74)"
+      },
+      "faq": {
+        "before": false,
+        "after": true
+      },
+      "keyboardTables": [
+        {
+          "label": "Plan comparison",
+          "focusVisible": true,
+          "outlineWidth": "2px",
+          "outlineOffset": "3px",
+          "outlineColor": "rgb(97, 207, 255)",
+          "scrollLeft": 40
+        },
+        {
+          "label": "What a month of credits covers on each plan",
+          "focusVisible": true,
+          "outlineWidth": "2px",
+          "outlineOffset": "3px",
+          "outlineColor": "rgb(97, 207, 255)",
+          "scrollLeft": 40
+        }
+      ],
+      "renderedHeadingFonts": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 34
+        },
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular",
+          "isCustomFont": true,
+          "glyphCount": 13
+        }
+      ],
+      "accessibility": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 252
+          }
+        ]
+      },
+      "pass": true
+    },
+    {
+      "route": "/en/contact",
+      "kind": "corrected-contact",
+      "expectedStatus": 200,
+      "theme": "light",
+      "width": 390,
+      "status": 200,
+      "scrollWidth": 390,
+      "lang": "en",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-light.svg",
+          "loaded": true
+        },
+        {
+          "src": "/brand/asg-lockup-on-light.svg",
+          "loaded": true
+        }
+      ],
+      "grouping": [
+        {
+          "tags": [
+            "DT",
+            "DD"
+          ],
+          "text": "Emailanotherseoguru@gmail.com"
+        },
+        {
+          "tags": [
+            "DT",
+            "DD"
+          ],
+          "text": "Response TimeWithin 24 hours"
+        },
+        {
+          "tags": [
+            "DT",
+            "DD"
+          ],
+          "text": "ServingClients worldwide"
+        }
+      ],
+      "controlStyles": {
+        "border": "rgb(119, 135, 158)",
+        "borderWidth": "1px",
+        "outlineWidth": "2px",
+        "outlineOffset": "3px",
+        "outlineColor": "rgb(7, 92, 229)",
+        "focusVisible": true
+      },
+      "invalidStyleProbe": {
+        "border": "rgb(180, 35, 60)",
+        "danger": "#b4233c",
+        "expected": "rgb(180, 35, 60)",
+        "settleMs": 300,
+        "pass": true
+      },
+      "renderedHeadingFonts": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 16
+        },
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular",
+          "isCustomFont": true,
+          "glyphCount": 12
+        }
+      ],
+      "accessibility": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 72
+          }
+        ]
+      },
+      "pass": true
+    },
+    {
+      "route": "/el/contact",
+      "kind": "corrected-contact",
+      "expectedStatus": 200,
+      "theme": "light",
+      "width": 390,
+      "status": 200,
+      "scrollWidth": 390,
+      "lang": "el",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-light.svg",
+          "loaded": true
+        },
+        {
+          "src": "/brand/asg-lockup-on-light.svg",
+          "loaded": true
+        }
+      ],
+      "grouping": [
+        {
+          "tags": [
+            "DT",
+            "DD"
+          ],
+          "text": "Emailanotherseoguru@gmail.com"
+        },
+        {
+          "tags": [
+            "DT",
+            "DD"
+          ],
+          "text": "Χρόνος απάντησηςΕντός 24 ωρών"
+        },
+        {
+          "tags": [
+            "DT",
+            "DD"
+          ],
+          "text": "ΕξυπηρετούμεΠελάτες σε Ελλάδα & διεθνώς"
+        }
+      ],
+      "controlStyles": {
+        "border": "rgb(119, 135, 158)",
+        "borderWidth": "1px",
+        "outlineWidth": "2px",
+        "outlineOffset": "3px",
+        "outlineColor": "rgb(7, 92, 229)",
+        "focusVisible": true
+      },
+      "invalidStyleProbe": {
+        "border": "rgb(180, 35, 60)",
+        "danger": "#b4233c",
+        "expected": "rgb(180, 35, 60)",
+        "settleMs": 300,
+        "pass": true
+      },
+      "renderedHeadingFonts": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 19
+        },
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular",
+          "isCustomFont": true,
+          "glyphCount": 8
+        }
+      ],
+      "accessibility": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 65
+          }
+        ]
+      },
+      "pass": true
+    },
+    {
+      "route": "/en/qa-brand-missing-page",
+      "kind": "not-found",
+      "expectedStatus": 404,
+      "theme": "light",
+      "width": 390,
+      "status": 404,
+      "scrollWidth": 390,
+      "lang": "en",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-light.svg",
+          "loaded": true
+        }
+      ],
+      "renderedHeadingFonts": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular_Medium",
+          "isCustomFont": true,
+          "glyphCount": 36
+        }
+      ],
+      "accessibility": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 8
+          }
+        ]
+      },
+      "pass": true
+    },
+    {
+      "route": "/el/qa-brand-missing-page",
+      "kind": "not-found",
+      "expectedStatus": 404,
+      "theme": "light",
+      "width": 390,
+      "status": 404,
+      "scrollWidth": 390,
+      "lang": "el",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-light.svg",
+          "loaded": true
+        }
+      ],
+      "renderedHeadingFonts": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular_Medium",
+          "isCustomFont": true,
+          "glyphCount": 36
+        }
+      ],
+      "accessibility": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 8
+          }
+        ]
+      },
+      "pass": true
+    },
+    {
+      "route": "/en/blog/qa-brand-missing-article",
+      "kind": "not-found-dynamic",
+      "expectedStatus": 404,
+      "theme": "light",
+      "width": 390,
+      "status": 404,
+      "scrollWidth": 390,
+      "lang": "en",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-light.svg",
+          "loaded": true
+        }
+      ],
+      "renderedHeadingFonts": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular_Medium",
+          "isCustomFont": true,
+          "glyphCount": 36
+        }
+      ],
+      "accessibility": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 8
+          }
+        ]
+      },
+      "pass": true
+    },
+    {
+      "route": "/el/blog/qa-brand-missing-article",
+      "kind": "not-found-dynamic",
+      "expectedStatus": 404,
+      "theme": "light",
+      "width": 390,
+      "status": 404,
+      "scrollWidth": 390,
+      "lang": "el",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-light.svg",
+          "loaded": true
+        }
+      ],
+      "renderedHeadingFonts": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular_Medium",
+          "isCustomFont": true,
+          "glyphCount": 36
+        }
+      ],
+      "accessibility": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 8
+          }
+        ]
+      },
+      "pass": true
+    },
+    {
+      "route": "/en/help/keywords-content/content-studio",
+      "kind": "warning-note",
+      "expectedStatus": 200,
+      "theme": "light",
+      "width": 390,
+      "status": 200,
+      "scrollWidth": 390,
+      "lang": "en",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-light.svg",
+          "loaded": true
+        },
+        {
+          "src": "/brand/asg-lockup-on-light.svg",
+          "loaded": true
+        }
+      ],
+      "noteStyles": {
+        "background": "rgb(255, 243, 214)",
+        "border": "rgb(138, 80, 0)",
+        "text": "oklab(0.1961 -0.00619055 -0.0370496 / 0.85)",
+        "iconColor": "rgb(138, 80, 0)"
+      },
+      "keyboardTables": [
+        {
+          "label": "Article table: Tool, Use it to",
+          "focusVisible": true,
+          "outlineWidth": "2px",
+          "outlineOffset": "3px",
+          "outlineColor": "rgb(7, 92, 229)",
+          "scrollLeft": 40
+        }
+      ],
+      "renderedHeadingFonts": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 42
+        }
+      ],
+      "accessibility": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 21
+          }
+        ]
+      },
+      "pass": true
+    },
+    {
+      "route": "/en/platform/pricing",
+      "kind": "yearly-recommended-pricing",
+      "expectedStatus": 200,
+      "theme": "light",
+      "width": 390,
+      "status": 200,
+      "scrollWidth": 390,
+      "lang": "en",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-light.svg",
+          "loaded": true
+        },
+        {
+          "src": "/brand/asg-lockup-on-light.svg",
+          "loaded": true
+        }
+      ],
+      "badge": {
+        "foreground": "rgb(6, 79, 197)",
+        "background": "rgb(229, 240, 255)"
+      },
+      "faq": {
+        "before": false,
+        "after": true
+      },
+      "keyboardTables": [
+        {
+          "label": "Plan comparison",
+          "focusVisible": true,
+          "outlineWidth": "2px",
+          "outlineOffset": "3px",
+          "outlineColor": "rgb(7, 92, 229)",
+          "scrollLeft": 40
+        },
+        {
+          "label": "What a month of credits covers on each plan",
+          "focusVisible": true,
+          "outlineWidth": "2px",
+          "outlineOffset": "3px",
+          "outlineColor": "rgb(7, 92, 229)",
+          "scrollLeft": 40
+        }
+      ],
+      "renderedHeadingFonts": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 34
+        },
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular",
+          "isCustomFont": true,
+          "glyphCount": 13
+        }
+      ],
+      "accessibility": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 252
+          }
+        ]
+      },
+      "pass": true
+    },
+    {
+      "route": "/en/contact",
+      "kind": "corrected-contact",
+      "expectedStatus": 200,
+      "theme": "light",
+      "width": 1440,
+      "status": 200,
+      "scrollWidth": 1440,
+      "lang": "en",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-light.svg",
+          "loaded": true
+        },
+        {
+          "src": "/brand/asg-lockup-on-light.svg",
+          "loaded": true
+        }
+      ],
+      "grouping": [
+        {
+          "tags": [
+            "DT",
+            "DD"
+          ],
+          "text": "Emailanotherseoguru@gmail.com"
+        },
+        {
+          "tags": [
+            "DT",
+            "DD"
+          ],
+          "text": "Response TimeWithin 24 hours"
+        },
+        {
+          "tags": [
+            "DT",
+            "DD"
+          ],
+          "text": "ServingClients worldwide"
+        }
+      ],
+      "controlStyles": {
+        "border": "rgb(119, 135, 158)",
+        "borderWidth": "1px",
+        "outlineWidth": "2px",
+        "outlineOffset": "3px",
+        "outlineColor": "rgb(7, 92, 229)",
+        "focusVisible": true
+      },
+      "invalidStyleProbe": {
+        "border": "rgb(180, 35, 60)",
+        "danger": "#b4233c",
+        "expected": "rgb(180, 35, 60)",
+        "settleMs": 300,
+        "pass": true
+      },
+      "renderedHeadingFonts": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 16
+        },
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular",
+          "isCustomFont": true,
+          "glyphCount": 12
+        }
+      ],
+      "accessibility": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 118
+          }
+        ]
+      },
+      "pass": true
+    },
+    {
+      "route": "/el/contact",
+      "kind": "corrected-contact",
+      "expectedStatus": 200,
+      "theme": "light",
+      "width": 1440,
+      "status": 200,
+      "scrollWidth": 1440,
+      "lang": "el",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-light.svg",
+          "loaded": true
+        },
+        {
+          "src": "/brand/asg-lockup-on-light.svg",
+          "loaded": true
+        }
+      ],
+      "grouping": [
+        {
+          "tags": [
+            "DT",
+            "DD"
+          ],
+          "text": "Emailanotherseoguru@gmail.com"
+        },
+        {
+          "tags": [
+            "DT",
+            "DD"
+          ],
+          "text": "Χρόνος απάντησηςΕντός 24 ωρών"
+        },
+        {
+          "tags": [
+            "DT",
+            "DD"
+          ],
+          "text": "ΕξυπηρετούμεΠελάτες σε Ελλάδα & διεθνώς"
+        }
+      ],
+      "controlStyles": {
+        "border": "rgb(119, 135, 158)",
+        "borderWidth": "1px",
+        "outlineWidth": "2px",
+        "outlineOffset": "3px",
+        "outlineColor": "rgb(7, 92, 229)",
+        "focusVisible": true
+      },
+      "invalidStyleProbe": {
+        "border": "rgb(180, 35, 60)",
+        "danger": "#b4233c",
+        "expected": "rgb(180, 35, 60)",
+        "settleMs": 300,
+        "pass": true
+      },
+      "renderedHeadingFonts": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 19
+        },
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular",
+          "isCustomFont": true,
+          "glyphCount": 8
+        }
+      ],
+      "accessibility": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 115
+          }
+        ]
+      },
+      "pass": true
+    },
+    {
+      "route": "/en/qa-brand-missing-page",
+      "kind": "not-found",
+      "expectedStatus": 404,
+      "theme": "light",
+      "width": 1440,
+      "status": 404,
+      "scrollWidth": 1440,
+      "lang": "en",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-light.svg",
+          "loaded": true
+        }
+      ],
+      "renderedHeadingFonts": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular_Medium",
+          "isCustomFont": true,
+          "glyphCount": 37
+        }
+      ],
+      "accessibility": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 8
+          }
+        ]
+      },
+      "pass": true
+    },
+    {
+      "route": "/el/qa-brand-missing-page",
+      "kind": "not-found",
+      "expectedStatus": 404,
+      "theme": "light",
+      "width": 1440,
+      "status": 404,
+      "scrollWidth": 1440,
+      "lang": "el",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-light.svg",
+          "loaded": true
+        }
+      ],
+      "renderedHeadingFonts": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular_Medium",
+          "isCustomFont": true,
+          "glyphCount": 37
+        }
+      ],
+      "accessibility": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 8
+          }
+        ]
+      },
+      "pass": true
+    },
+    {
+      "route": "/en/blog/qa-brand-missing-article",
+      "kind": "not-found-dynamic",
+      "expectedStatus": 404,
+      "theme": "light",
+      "width": 1440,
+      "status": 404,
+      "scrollWidth": 1440,
+      "lang": "en",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-light.svg",
+          "loaded": true
+        }
+      ],
+      "renderedHeadingFonts": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular_Medium",
+          "isCustomFont": true,
+          "glyphCount": 37
+        }
+      ],
+      "accessibility": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 8
+          }
+        ]
+      },
+      "pass": true
+    },
+    {
+      "route": "/el/blog/qa-brand-missing-article",
+      "kind": "not-found-dynamic",
+      "expectedStatus": 404,
+      "theme": "light",
+      "width": 1440,
+      "status": 404,
+      "scrollWidth": 1440,
+      "lang": "el",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-light.svg",
+          "loaded": true
+        }
+      ],
+      "renderedHeadingFonts": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular_Medium",
+          "isCustomFont": true,
+          "glyphCount": 37
+        }
+      ],
+      "accessibility": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 8
+          }
+        ]
+      },
+      "pass": true
+    },
+    {
+      "route": "/en/help/keywords-content/content-studio",
+      "kind": "warning-note",
+      "expectedStatus": 200,
+      "theme": "light",
+      "width": 1440,
+      "status": 200,
+      "scrollWidth": 1440,
+      "lang": "en",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-light.svg",
+          "loaded": true
+        },
+        {
+          "src": "/brand/asg-lockup-on-light.svg",
+          "loaded": true
+        }
+      ],
+      "noteStyles": {
+        "background": "rgb(255, 243, 214)",
+        "border": "rgb(138, 80, 0)",
+        "text": "oklab(0.1961 -0.00619055 -0.0370496 / 0.85)",
+        "iconColor": "rgb(138, 80, 0)"
+      },
+      "keyboardTables": [
+        {
+          "label": "Article table: Tool, Use it to",
+          "focusVisible": true,
+          "outlineWidth": "2px",
+          "outlineOffset": "3px",
+          "outlineColor": "rgb(7, 92, 229)",
+          "scrollLeft": 0
+        }
+      ],
+      "renderedHeadingFonts": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 42
+        }
+      ],
+      "accessibility": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 61
+          }
+        ]
+      },
+      "pass": true
+    },
+    {
+      "route": "/en/platform/pricing",
+      "kind": "yearly-recommended-pricing",
+      "expectedStatus": 200,
+      "theme": "light",
+      "width": 1440,
+      "status": 200,
+      "scrollWidth": 1440,
+      "lang": "en",
+      "fontFamily": "Inter, \"Inter Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-light.svg",
+          "loaded": true
+        },
+        {
+          "src": "/brand/asg-lockup-on-light.svg",
+          "loaded": true
+        }
+      ],
+      "badge": {
+        "foreground": "rgb(6, 79, 197)",
+        "background": "rgb(229, 240, 255)"
+      },
+      "faq": {
+        "before": false,
+        "after": true
+      },
+      "keyboardTables": [
+        {
+          "label": "Plan comparison",
+          "focusVisible": true,
+          "outlineWidth": "2px",
+          "outlineOffset": "3px",
+          "outlineColor": "rgb(7, 92, 229)",
+          "scrollLeft": 0
+        },
+        {
+          "label": "What a month of credits covers on each plan",
+          "focusVisible": true,
+          "outlineWidth": "2px",
+          "outlineOffset": "3px",
+          "outlineColor": "rgb(7, 92, 229)",
+          "scrollLeft": 0
+        }
+      ],
+      "renderedHeadingFonts": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 35
+        },
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular",
+          "isCustomFont": true,
+          "glyphCount": 13
+        }
+      ],
+      "accessibility": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 297
+          }
+        ]
+      },
+      "pass": true
+    }
+  ],
+  "blocked": []
+}

@@ -1,0 +1,194 @@
+{
+  "base": "http://127.0.0.1:8086",
+  "sourceSelection": "website-redesign is a catalog service excluded from CITY_PAGE_SERVICES; athens-gr is a catalog/kept city; pair is removed in both locales.",
+  "results": [
+    {
+      "route": "/en/services/website-redesign/athens-gr",
+      "locale": "en",
+      "theme": "dark",
+      "status": 410,
+      "width": 390,
+      "scrollWidth": 390,
+      "lang": "en",
+      "bodyFont": "Inter, system-ui, sans-serif",
+      "background": "rgb(5, 13, 26)",
+      "text": "rgb(245, 247, 251)",
+      "h1": "This page has been removed",
+      "icons": [
+        {
+          "href": "/icon.svg",
+          "type": "image/svg+xml"
+        },
+        {
+          "href": "/favicon.ico",
+          "type": null
+        }
+      ],
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        }
+      ],
+      "headingFonts": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Bold",
+          "isCustomFont": true,
+          "glyphCount": 25
+        }
+      ],
+      "bodyFonts": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular",
+          "isCustomFont": true,
+          "glyphCount": 75
+        }
+      ],
+      "screenshot": "410-en-dark-390.png",
+      "pass": true
+    },
+    {
+      "route": "/en/services/website-redesign/athens-gr",
+      "locale": "en",
+      "theme": "light",
+      "status": 410,
+      "width": 390,
+      "scrollWidth": 390,
+      "lang": "en",
+      "bodyFont": "Inter, system-ui, sans-serif",
+      "background": "rgb(245, 247, 251)",
+      "text": "rgb(11, 21, 38)",
+      "h1": "This page has been removed",
+      "icons": [
+        {
+          "href": "/icon.svg",
+          "type": "image/svg+xml"
+        },
+        {
+          "href": "/favicon.ico",
+          "type": null
+        }
+      ],
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-light.svg",
+          "loaded": true
+        }
+      ],
+      "headingFonts": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Bold",
+          "isCustomFont": true,
+          "glyphCount": 25
+        }
+      ],
+      "bodyFonts": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular",
+          "isCustomFont": true,
+          "glyphCount": 75
+        }
+      ],
+      "screenshot": "410-en-light-390.png",
+      "pass": true
+    },
+    {
+      "route": "/el/services/website-redesign/athens-gr",
+      "locale": "el",
+      "theme": "dark",
+      "status": 410,
+      "width": 390,
+      "scrollWidth": 390,
+      "lang": "el",
+      "bodyFont": "Inter, system-ui, sans-serif",
+      "background": "rgb(5, 13, 26)",
+      "text": "rgb(245, 247, 251)",
+      "h1": "Η σελίδα αφαιρέθηκε",
+      "icons": [
+        {
+          "href": "/icon.svg",
+          "type": "image/svg+xml"
+        },
+        {
+          "href": "/favicon.ico",
+          "type": null
+        }
+      ],
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-dark.svg",
+          "loaded": true
+        }
+      ],
+      "headingFonts": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Bold",
+          "isCustomFont": true,
+          "glyphCount": 19
+        }
+      ],
+      "bodyFonts": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular",
+          "isCustomFont": true,
+          "glyphCount": 81
+        }
+      ],
+      "screenshot": "410-el-dark-390.png",
+      "pass": true
+    },
+    {
+      "route": "/el/services/website-redesign/athens-gr",
+      "locale": "el",
+      "theme": "light",
+      "status": 410,
+      "width": 390,
+      "scrollWidth": 390,
+      "lang": "el",
+      "bodyFont": "Inter, system-ui, sans-serif",
+      "background": "rgb(245, 247, 251)",
+      "text": "rgb(11, 21, 38)",
+      "h1": "Η σελίδα αφαιρέθηκε",
+      "icons": [
+        {
+          "href": "/icon.svg",
+          "type": "image/svg+xml"
+        },
+        {
+          "href": "/favicon.ico",
+          "type": null
+        }
+      ],
+      "brand": [
+        {
+          "src": "/brand/asg-lockup-on-light.svg",
+          "loaded": true
+        }
+      ],
+      "headingFonts": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Bold",
+          "isCustomFont": true,
+          "glyphCount": 19
+        }
+      ],
+      "bodyFonts": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular",
+          "isCustomFont": true,
+          "glyphCount": 81
+        }
+      ],
+      "screenshot": "410-el-light-390.png",
+      "pass": true
+    }
+  ]
+}

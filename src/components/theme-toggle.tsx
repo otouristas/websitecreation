@@ -47,6 +47,7 @@ export function ThemeToggle({ locale = "en" }: { locale?: SiteLocale }): ReactEl
     setTheme(initialTheme);
     setMounted(true);
     document.documentElement.classList.toggle("light", initialTheme === "light");
+    document.documentElement.dataset.asgTheme = initialTheme;
   }, []);
 
   function toggleTheme(): void {
@@ -54,6 +55,7 @@ export function ThemeToggle({ locale = "en" }: { locale?: SiteLocale }): ReactEl
     setTheme(newTheme);
     localStorage.setItem("theme", newTheme);
     document.documentElement.classList.toggle("light", newTheme === "light");
+    document.documentElement.dataset.asgTheme = newTheme;
   }
 
   // Before mount the DOM class comes from the pre-paint inline script, which the

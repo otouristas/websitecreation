@@ -1,4 +1,4 @@
-import type { CSSProperties, ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import SchemaMarkup from '@/components/seo/SchemaMarkup';
@@ -15,14 +15,11 @@ import type { SiteLocale } from '@/lib/i18n/locale';
  * deliberately does NOT impose is any section structure: `children` is free
  * markup, which is the whole point of the rebuild.
  *
- * `signatureHue` is an oklch hue angle. Keep it in the 150-290 band so accents
- * stay in the brand family (green -> teal -> blue -> indigo). Only the hue is
- * settable; lightness and chroma come from the theme, so a page is correct in
- * both light and dark without declaring anything twice.
+ * `signatureHue` is retained in the prop contract for existing callers;
+ * identity colors come exclusively from the shared approved theme.
  */
 export function PageShell({
   locale,
-  signatureHue,
   schemas,
   children,
   className,
@@ -41,7 +38,6 @@ export function PageShell({
       <SchemaMarkup schemas={schemas} />
       <Header locale={locale} />
       <main
-        style={{ '--signature-h': String(signatureHue) } as CSSProperties}
         className={cn('relative z-0', gridClassName, className)}
       >
         {children}

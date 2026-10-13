@@ -1,0 +1,3 @@
+/* The minimal410 response shares the actual Inter UI family. */
+@font-face { font-family: Inter; font-style: normal; font-weight:400; font-display:swap; src:url('/brand/fonts/Inter-400.ttf') format('truetype'); }
+@font-face { font-family: Inter; font-style: normal; font-weight:700; font-display:swap; src:url('/brand/fonts/Inter-700.ttf') format('truetype'); }

@@ -1,0 +1,10 @@
+{
+  "tokenContrastChecks": 82,
+  "tokenContrastFailures": 0,
+  "siteRoutesTested": 0,
+  "nativeScreensTested": 0,
+  "xcodeBuildPerformed": false,
+  "liveDeploymentChanged": false,
+  "svgReconstruction": "manually reconstructed from user-approved raster reference, compare reference before release",
+  "fontFilesIncluded": false
+}

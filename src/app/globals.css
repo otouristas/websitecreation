@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "../brand/tokens/brand.tokens.css";
 
 /* `dark:` utilities mean "the brand look", which is now the default. Only an
    explicit `.light` on <html> switches them off, so the handful of existing
@@ -8,21 +9,16 @@
 /* ==========================================================================
    AnotherSEOGuru design system
 
-   Dark-first. The canvas is the deep navy of the brand artwork, the logo's
-   royal blue leads every action, cyan carries the accent (eyebrows, ticks,
-   numerals, blooms) and a single warm "signal" green is reserved for the
-   moments that prove AI visibility: a cited row, a live indicator, a passed
-   check. Light is the toggle (`.light` on <html>), not the default.
+   Dark is the existing default; .light is the existing explicit toggle.
+   Exact sRGB color roles originate in src/brand/tokens/brand.tokens.json.
+   Cyan with Ink labels leads dark actions; blue with white labels leads light
+   actions. Selection, success, warning, danger and chart roles stay separate.
 
-   Type: Inter Tight for display, Inter for text, JetBrains Mono for the
-   uppercase micro-labels. All three ship Greek glyphs - Greek is most of
-   our traffic.
+   Shared Greek-capable Inter carries headings, body and labels. Geist Mono is
+   reserved for code. Logo lettering stays the supplied outlined artwork.
 
-   Colours are oklch so `color-mix(in oklab, ...)` works in the glow recipes.
-
-   To add a semantic colour:
-   1. add the variable to :root (dark) and .light
-   2. register it in @theme inline as --color-<name>: var(--<name>)
+   Add or change a color in the JSON, regenerate through sync_tokens.py, then
+   bridge its role here and register any new Tailwind utility in @theme inline.
    ========================================================================== */
 
 /* Fonts are a plain @theme block, not `inline`: that way Tailwind emits them
@@ -30,10 +26,11 @@
    CSS and the preflight `html` rule resolves to Inter instead of the system
    stack. The next/font variables they reference are set on <html>. */
 @theme {
-  --font-display: var(--font-inter-tight), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
-  --font-mono: var(--font-jetbrains-mono), ui-monospace, "SFMono-Regular", monospace;
-  --font-serif: var(--font-instrument-serif), var(--font-noto-serif), Georgia, "Times New Roman", serif;
+  --font-mono: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-code: var(--font-geist-mono), ui-monospace, "SFMono-Regular", monospace;
+  --font-serif: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
 
 @theme inline {
@@ -86,82 +83,53 @@
   --color-chart-5: var(--chart-5);
 }
 
-/* --------------------------------------------------------------------------
-   DARK - the default (brand) theme
-   -------------------------------------------------------------------------- */
-:root {
+/* Exact roles from the approved JSON; the existing controller remains dark-first.
+   Per-route signature hues no longer override the product identity. */
+:root, .light {
   --radius: 0.75rem;
-  color-scheme: dark;
-
-  --background: oklch(0.14 0.045 265);
-  --foreground: oklch(0.97 0.006 250);
-
-  --surface: oklch(0.175 0.04 265);
-  --surface-raised: oklch(0.215 0.04 264);
-  --hairline: oklch(1 0 0 / 8%);
-
-  /* Royal blue - primary action colour. `deep` is the logo blue (#0859DC)
-     and anchors the bottom of every button gradient so white text keeps
-     its contrast; `glow` is the lifted tint used for links on the canvas. */
-  --primary: oklch(0.61 0.21 261);
-  --primary-deep: oklch(0.5 0.23 262);
-  --primary-glow: oklch(0.74 0.16 255);
-  --primary-foreground: oklch(0.99 0.003 250);
-  --link: var(--primary-glow);
-
-  /* Cyan - accent: eyebrows, ticks, numerals, mono labels, glow tail */
-  --brand: oklch(0.8 0.13 220);
-  --brand-foreground: oklch(0.16 0.04 240);
-  --brand-deep: oklch(0.68 0.13 222);
-
-  /* Signal green - "cited", "live", "passed". Nothing else. */
-  --signal: oklch(0.86 0.18 128);
-  --signal-foreground: oklch(0.2 0.05 130);
-
-  /* Per-page signature hue.
-     Bespoke service and industry pages give each page its own accent by
-     overriding ONLY the hue angle - lightness and chroma stay on the brand
-     values below, and the .light block re-tunes them once for every page.
-     Keep hues in the 200-290 band (cyan -> blue -> indigo). */
-  --signature-h: 259;
-  --signature-l: 0.72;
-  --signature-c: 0.16;
-  --signature: oklch(var(--signature-l) var(--signature-c) var(--signature-h));
-
-  --secondary: oklch(0.24 0.035 262);
-  --secondary-foreground: oklch(0.97 0.006 250);
-  --muted: oklch(0.22 0.035 262);
-  --muted-foreground: oklch(0.74 0.025 255);
-  --accent: oklch(0.26 0.04 262);
-  --accent-foreground: oklch(0.97 0.006 250);
-
-  --card: oklch(0.175 0.04 265);
-  --card-foreground: oklch(0.97 0.006 250);
-  --popover: oklch(0.215 0.04 264);
-  --popover-foreground: oklch(0.97 0.006 250);
-
-  --success: oklch(0.8 0.17 145);
-  --warning: oklch(0.82 0.15 80);
-  --destructive: oklch(0.66 0.2 25);
-  --destructive-foreground: oklch(0.97 0.006 250);
-
-  --border: oklch(1 0 0 / 9%);
-  --input: oklch(1 0 0 / 14%);
-  --ring: oklch(0.74 0.16 255 / 55%);
-
-  --chart-1: oklch(0.61 0.21 261);
-  --chart-2: oklch(0.8 0.13 220);
-  --chart-3: oklch(0.72 0.15 285);
-  --chart-4: oklch(0.86 0.18 128);
-  --chart-5: oklch(0.7 0.12 200);
-
-  /* Ground: dot grid, aurora and grain strengths, tuned for the navy canvas */
-  --grid-line: oklch(1 0 0 / 5%);
-  --aurora-opacity: 1;
-  --grain-opacity: 0.05;
-  --bloom-strength: 34%;
-  --bloom-strength-soft: 20%;
-
+  --background: var(--asg-background);
+  --foreground: var(--asg-text);
+  --surface: var(--asg-surface);
+  --surface-raised: var(--asg-surface-raised);
+  --hairline: var(--asg-border-subtle);
+  --primary: var(--asg-action);
+  --primary-deep: var(--asg-action-hover);
+  --primary-glow: var(--asg-link);
+  --primary-foreground: var(--asg-action-foreground);
+  --link: var(--asg-link);
+  --brand: var(--asg-link);
+  --brand-foreground: var(--asg-action-foreground);
+  --brand-deep: var(--asg-action-pressed);
+  --signal: var(--asg-success);
+  --signal-foreground: var(--asg-action-foreground);
+  --signature: var(--asg-link);
+  --secondary: var(--asg-surface-raised);
+  --secondary-foreground: var(--asg-text);
+  --muted: var(--asg-surface-raised);
+  --muted-foreground: var(--asg-text-secondary);
+  --accent: var(--asg-selected);
+  --accent-foreground: var(--asg-selected-foreground);
+  --card: var(--asg-surface);
+  --card-foreground: var(--asg-text);
+  --popover: var(--asg-surface-raised);
+  --popover-foreground: var(--asg-text);
+  --success: var(--asg-success);
+  --warning: var(--asg-warning);
+  --destructive: var(--asg-danger);
+  --destructive-foreground: var(--asg-action-foreground);
+  --border: var(--asg-border-subtle);
+  --input: var(--asg-border-control);
+  --ring: var(--asg-focus);
+  --chart-1: var(--asg-chart1);
+  --chart-2: var(--asg-chart2);
+  --chart-3: var(--asg-chart3);
+  --chart-4: var(--asg-chart4);
+  --chart-5: var(--asg-chart5);
+  --grid-line: color-mix(in srgb, var(--asg-border-subtle) 35%, transparent);
+  --aurora-opacity: 0;
+  --grain-opacity: 0;
+  --bloom-strength: 10%;
+  --bloom-strength-soft: 5%;
   /* Marketing layout vars referenced by page shells.
      Measured against the floating pill: it bottoms out at ~70px on mobile and
      ~74px from md up (pt-3 wrapper + pill padding). */
@@ -185,74 +153,7 @@
 }
 
 @media (min-width: 768px) {
-  :root {
-    --site-header-height: 4.75rem;
-  }
-}
-
-/* --------------------------------------------------------------------------
-   LIGHT - the toggle
-   -------------------------------------------------------------------------- */
-.light {
-  color-scheme: light;
-
-  --background: oklch(0.985 0.004 250);
-  --foreground: oklch(0.2 0.03 262);
-
-  --surface: oklch(1 0 0);
-  --surface-raised: oklch(0.97 0.006 250);
-  --hairline: oklch(0.2 0.03 262 / 10%);
-
-  --primary: oklch(0.5 0.23 262);
-  --primary-deep: oklch(0.42 0.22 263);
-  --primary-glow: oklch(0.68 0.17 259);
-  --primary-foreground: oklch(0.99 0.003 250);
-  --link: var(--primary);
-
-  --brand: oklch(0.52 0.12 228);
-  --brand-foreground: oklch(0.99 0.003 250);
-  --brand-deep: oklch(0.44 0.11 230);
-
-  --signal: oklch(0.5 0.15 142);
-  --signal-foreground: oklch(0.99 0.003 250);
-
-  /* Signature darkens and saturates on the light canvas. Pages override only
-     --signature-h, so they inherit this automatically. */
-  --signature-l: 0.55;
-  --signature-c: 0.18;
-
-  --secondary: oklch(0.94 0.012 250);
-  --secondary-foreground: oklch(0.26 0.03 259);
-  --muted: oklch(0.955 0.008 250);
-  --muted-foreground: oklch(0.48 0.025 258);
-  --accent: oklch(0.94 0.014 250);
-  --accent-foreground: oklch(0.26 0.03 259);
-
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.2 0.03 262);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.2 0.03 262);
-
-  --success: oklch(0.5 0.15 142);
-  --warning: oklch(0.55 0.15 60);
-  --destructive: oklch(0.58 0.21 25);
-  --destructive-foreground: oklch(0.99 0.003 250);
-
-  --border: oklch(0.2 0.03 262 / 11%);
-  --input: oklch(0.2 0.03 262 / 14%);
-  --ring: oklch(0.5 0.23 262 / 40%);
-
-  --chart-1: oklch(0.5 0.23 262);
-  --chart-2: oklch(0.55 0.12 228);
-  --chart-3: oklch(0.58 0.16 285);
-  --chart-4: oklch(0.6 0.16 140);
-  --chart-5: oklch(0.6 0.12 200);
-
-  --grid-line: oklch(0.2 0.03 262 / 6%);
-  --aurora-opacity: 0.7;
-  --grain-opacity: 0.035;
-  --bloom-strength: 20%;
-  --bloom-strength-soft: 12%;
+  :root { --site-header-height: 4.75rem; }
 }
 
 /* ==========================================================================
@@ -443,9 +344,9 @@
   }
 }
 
-/* Glass surface: translucent card with a hairline and a top highlight. */
+/* Shared surface card with a subtle boundary and top highlight. */
 @utility glass {
-  background: color-mix(in oklab, var(--surface) 72%, transparent);
+  background: var(--asg-surface);
   border: 1px solid var(--hairline);
   box-shadow: inset 0 1px 0 0 oklch(1 0 0 / 6%);
   backdrop-filter: blur(20px) saturate(140%);
@@ -504,16 +405,13 @@
   }
 }
 
-/* Brand gradient text: lifted blue into cyan. Wordmark and hero accents. */
+/* Existing gradient-text utility uses the approved solid link foreground. */
 @utility gradient-text {
-  background: linear-gradient(120deg, var(--primary-glow) 0%, var(--brand) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--asg-link);
 }
 
 @utility gradient-primary {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--brand) 100%);
+  background: var(--asg-brand-gradient);
 }
 
 /* Product-frame halo: the coloured glow around browser/phone mockups */
@@ -790,8 +688,8 @@ html.consent-set [data-chrome="cookie-consent"] {
    ========================================================================== */
 
 *:focus-visible {
-  outline: 2px solid var(--primary-glow);
-  outline-offset: 2px;
+  outline: 2px solid var(--asg-focus);
+  outline-offset: 3px;
   border-radius: 3px;
 }
 
@@ -882,7 +780,7 @@ html.consent-set [data-chrome="cookie-consent"] {
 
 .btn-primary,
 .btn-gradient {
-  background: linear-gradient(180deg, var(--primary) 0%, var(--primary-deep) 100%);
+  background: var(--asg-action);
   color: var(--primary-foreground);
   box-shadow:
     inset 0 1px 0 0 oklch(1 0 0 / 18%),
@@ -900,8 +798,9 @@ html.consent-set [data-chrome="cookie-consent"] {
 }
 
 .btn-secondary {
-  background: var(--brand);
-  color: var(--brand-foreground);
+  background: var(--asg-surface-raised);
+  color: var(--asg-text);
+  border-color: var(--asg-border-control);
 }
 
 .btn-secondary:hover {
@@ -932,7 +831,7 @@ html.consent-set [data-chrome="cookie-consent"] {
 }
 
 .card {
-  background: color-mix(in oklab, var(--surface) 82%, transparent);
+  background: var(--asg-surface);
   color: var(--card-foreground);
   border: 1px solid var(--hairline);
   border-radius: var(--radius);
@@ -945,7 +844,7 @@ html.consent-set [data-chrome="cookie-consent"] {
 }
 
 .glass-card {
-  background: color-mix(in oklab, var(--surface) 72%, transparent);
+  background: var(--asg-surface);
   backdrop-filter: blur(20px) saturate(140%);
   -webkit-backdrop-filter: blur(20px) saturate(140%);
   border: 1px solid var(--hairline);
@@ -1040,3 +939,59 @@ html.consent-set [data-chrome="cookie-consent"] {
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+/* Approved logo assets switch with the same existing theme controller. */
+.asg-logo-light { display: none; }
+.light .asg-logo-dark { display: none; }
+.light .asg-logo-light { display: block; }
+
+/* Solid action states, including old shared CTA call sites. */
+.asg-primary-action,
+.btn-primary,
+.btn-gradient,
+:is(a, button).bg-primary {
+  background: var(--asg-action);
+  color: var(--asg-action-foreground);
+  border-color: transparent;
+  box-shadow: none;
+}
+:is(.asg-primary-action, .btn-primary, .btn-gradient, :is(a, button).bg-primary):hover {
+  background: var(--asg-action-hover);
+}
+:is(.asg-primary-action, .btn-primary, .btn-gradient, :is(a, button).bg-primary):active {
+  background: var(--asg-action-pressed);
+}
+:is(.asg-primary-action, .btn-primary, .btn-gradient, :is(a, button).bg-primary):disabled,
+.asg-primary-action[aria-disabled="true"] {
+  background: var(--asg-action-disabled);
+  color: var(--asg-action-disabled-foreground);
+  opacity: 1;
+  box-shadow: none;
+  transform: none;
+}
+:is(a, button, input, select, textarea, summary):focus-visible {
+  outline: 2px solid var(--asg-focus);
+  outline-offset: 3px;
+}
+:is(input:not([type="range"]):not([type="checkbox"]):not([type="radio"]), select, textarea):not([aria-invalid="true"]):not(:user-invalid) {
+  border-color: var(--asg-border-control);
+}
+.btn-outline, .btn-secondary {
+  background: var(--asg-surface);
+  color: var(--asg-text);
+  border-color: var(--asg-border-control);
+}
+:is(.btn-outline, .btn-secondary):hover {
+  background: var(--asg-selected);
+  color: var(--asg-selected-foreground);
+}
+.asg-category-badge {
+  background: var(--asg-info-surface);
+  color: var(--asg-info);
+  border: 1px solid var(--asg-info);
+}
+
+code, pre, kbd, samp { font-family: var(--font-code); }
+::placeholder { color: var(--asg-text-muted); opacity: 1; }
+
+:is(input, select, textarea):is([aria-invalid="true"], :user-invalid) { border-color: var(--asg-danger); }

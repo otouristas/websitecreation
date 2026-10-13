@@ -1,0 +1,79 @@
+/* Generated from tokens/brand.tokens.json; do not edit independently.
+Full CSS colors, NOT HSL channels. Keep the existing single theme controller. */
+:root {
+  --asg-brand-blue: #007BFF;
+  --asg-brand-cyan: #2FC6F4;
+  --asg-brand-teal: #18BFAE;
+  --asg-brand-mint: #78E6A3;
+  --asg-brand-ink: #050D1A;
+  --asg-brand-paper: #F5F7FB;
+  --asg-brand-gradient: linear-gradient(135deg, #007BFF 0%, #2FC6F4 38%, #18BFAE 68%, #78E6A3 100%);
+}
+:root, [data-asg-theme="light"] {
+  color-scheme: light;
+  --asg-background: #F5F7FB;
+  --asg-surface: #FFFFFF;
+  --asg-surface-raised: #EBF0F7;
+  --asg-text: #0B1526;
+  --asg-text-secondary: #42536B;
+  --asg-text-muted: #596A80;
+  --asg-border-subtle: #D8E1ED;
+  --asg-border-control: #77879E;
+  --asg-action: #075CE5;
+  --asg-action-foreground: #FFFFFF;
+  --asg-action-hover: #064FC5;
+  --asg-action-pressed: #0442A8;
+  --asg-action-disabled: #E2E8F0;
+  --asg-action-disabled-foreground: #586779;
+  --asg-link: #075CE5;
+  --asg-focus: #075CE5;
+  --asg-selected: #E5F0FF;
+  --asg-selected-foreground: #064FC5;
+  --asg-success: #137548;
+  --asg-success-surface: #E8F8EF;
+  --asg-warning: #8A5000;
+  --asg-warning-surface: #FFF3D6;
+  --asg-danger: #B4233C;
+  --asg-danger-surface: #FDECF0;
+  --asg-info: #075CE5;
+  --asg-info-surface: #E5F0FF;
+  --asg-chart1: #075CE5;
+  --asg-chart2: #087B86;
+  --asg-chart3: #137548;
+  --asg-chart4: #8A5000;
+  --asg-chart5: #B4233C;
+}
+:root.dark, :root[data-theme="dark"], [data-asg-theme="dark"] {
+  color-scheme: dark;
+  --asg-background: #050D1A;
+  --asg-surface: #0C1728;
+  --asg-surface-raised: #13223A;
+  --asg-text: #F5F7FB;
+  --asg-text-secondary: #BAC6D8;
+  --asg-text-muted: #94A4BC;
+  --asg-border-subtle: #26354D;
+  --asg-border-control: #667995;
+  --asg-action: #2FC6F4;
+  --asg-action-foreground: #050D1A;
+  --asg-action-hover: #65D5F6;
+  --asg-action-pressed: #1AA5D2;
+  --asg-action-disabled: #233249;
+  --asg-action-disabled-foreground: #A3B1C5;
+  --asg-link: #61CFFF;
+  --asg-focus: #61CFFF;
+  --asg-selected: #12314A;
+  --asg-selected-foreground: #61CFFF;
+  --asg-success: #78E6A3;
+  --asg-success-surface: #102D23;
+  --asg-warning: #F3C36B;
+  --asg-warning-surface: #342815;
+  --asg-danger: #FF8DA1;
+  --asg-danger-surface: #361C29;
+  --asg-info: #61CFFF;
+  --asg-info-surface: #12314A;
+  --asg-chart1: #61CFFF;
+  --asg-chart2: #37D3C5;
+  --asg-chart3: #78E6A3;
+  --asg-chart4: #F3C36B;
+  --asg-chart5: #FF8DA1;
+}

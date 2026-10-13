@@ -9,6 +9,7 @@ import {
 } from '@/lib/i18n/locale';
 import { decideServiceLocationRoute } from '@/lib/indexability/service-location';
 import { getAllServiceSlugs } from '@/data/services';
+import { THEME_INIT_SCRIPT } from '@/brand/theme';
 
 const LOCALE_COOKIE = 'locale';
 
@@ -46,7 +47,7 @@ function goneResponse(locale: SiteLocale, service: string): NextResponse {
     ? 'Αυτή η σελίδα πόλης δεν υπάρχει πια. Θα βρείτε την υπηρεσία στη βασική της σελίδα.'
     : 'This city page no longer exists. You will find the service on its main page.';
   const cta = isEl ? 'Δείτε την υπηρεσία' : 'See the service';
-  const html = `<!doctype html><html lang="${locale}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>${escapeHtml(title)}</title><style>body{font-family:system-ui,sans-serif;max-width:36rem;margin:4rem auto;padding:0 1rem;line-height:1.6;color:#111;background:#fff}a{color:#2563eb}</style></head><body><h1>${escapeHtml(title)}</h1><p>${escapeHtml(body)}</p><p><a href="${escapeHtml(hub)}">${escapeHtml(cta)}</a></p></body></html>`;
+  const html = `<!doctype html><html lang="${locale}" data-asg-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><link rel="icon" href="/icon.svg" type="image/svg+xml"><link rel="icon" href="/favicon.ico"><title>${escapeHtml(title)}</title><link rel="stylesheet" href="/brand/brand.tokens.css"><link rel="stylesheet" href="/brand/error-fonts.css"><script>${THEME_INIT_SCRIPT}</script><style>body{font-family:Inter,system-ui,sans-serif;max-width:36rem;margin:4rem auto;padding:0 1rem;line-height:1.6;color:var(--asg-text);background:var(--asg-background)}a{color:var(--asg-link)}a:focus-visible{outline:2px solid var(--asg-focus);outline-offset:3px}.brand{display:block;width:220px;max-width:100%;height:auto;margin-bottom:2rem}.on-light{display:none}[data-asg-theme="light"] .on-dark{display:none}[data-asg-theme="light"] .on-light{display:block}</style></head><body><a href="/${locale}" aria-label="AnotherSEOGuru"><img src="/brand/asg-lockup-on-dark.svg" class="brand on-dark" alt="AnotherSEOGuru"><img src="/brand/asg-lockup-on-light.svg" class="brand on-light" alt="AnotherSEOGuru"></a><h1>${escapeHtml(title)}</h1><p>${escapeHtml(body)}</p><p><a href="${escapeHtml(hub)}">${escapeHtml(cta)}</a></p></body></html>`;
   return new NextResponse(html, {
     status: 410,
     headers: {

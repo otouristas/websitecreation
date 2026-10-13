@@ -1,8 +1,13 @@
 import Link from 'next/link';
+import { BrandLogo } from '@/components/BrandLogo';
+import { ErrorAppearance } from '@/components/ErrorAppearance';
+import { inter } from '@/brand/typography';
 
 export default function NotFound() {
   return (
-    <main className="blueprint-grid relative z-0 flex min-h-dvh flex-col items-center justify-center gap-6 px-6 text-center">
+    <main className={`${inter.className} blueprint-grid relative z-0 flex min-h-dvh flex-col items-center justify-center gap-6 px-6 text-center`}>
+      <ErrorAppearance />
+      <BrandLogo size="lg" homeHref="/" />
       <p className="text-sm font-semibold uppercase tracking-widest text-primary">404</p>
       <h1 className="font-display text-3xl font-medium tracking-[-0.03em] text-foreground sm:text-4xl">
         Η σελίδα δεν βρέθηκε / Page not found

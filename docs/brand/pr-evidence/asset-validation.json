@@ -1,0 +1,108 @@
+{
+  "checked_on": "2026-10-13",
+  "server": "local final release build :8086",
+  "build_static_pages": 1352,
+  "checks": [
+    {
+      "path": "/favicon.ico",
+      "status": 200,
+      "content_type": "image/x-icon",
+      "bytes": 3452,
+      "sha256": "e04f09d7467f8db7493447e221dd613f0fe40e8694f28a8749cb62b3eaaa31a6",
+      "matches_checked_in_file": true
+    },
+    {
+      "path": "/icon.svg",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 1806,
+      "sha256": "94ea69cf00be8e73fbed6b60e1512eafdd6cf59e0c33316d5310e5c34c960295",
+      "matches_checked_in_file": true
+    },
+    {
+      "path": "/apple-icon.png",
+      "status": 200,
+      "content_type": "image/png",
+      "bytes": 8717,
+      "sha256": "b7093f0720ebe41f17eeb725f66b337f0c64bf08a118af112086e9605408d5ee",
+      "matches_checked_in_file": true
+    },
+    {
+      "path": "/opengraph-image.png",
+      "status": 200,
+      "content_type": "image/png",
+      "bytes": 71481,
+      "sha256": "79a1d47da83c9ed708a158235cf2ead4a36f47cc57656ec24ce6f1ba67a79510",
+      "matches_checked_in_file": true
+    },
+    {
+      "path": "/opengraph-image",
+      "status": 200,
+      "content_type": "image/png",
+      "bytes": 71481,
+      "sha256": "79a1d47da83c9ed708a158235cf2ead4a36f47cc57656ec24ce6f1ba67a79510",
+      "matches_checked_in_file": true
+    },
+    {
+      "path": "/site.webmanifest",
+      "status": 200,
+      "content_type": "application/manifest+json",
+      "bytes": 399,
+      "sha256": "637583577d2dfedbbe9b8747b52e288b4341994819d2d3453dbbaf72e90cb59d",
+      "matches_checked_in_file": true
+    },
+    {
+      "path": "/brand/pwa-icon-192.png",
+      "status": 200,
+      "content_type": "image/png",
+      "bytes": 9653,
+      "sha256": "c24fff838260e58f7af4247157bbeb87f5f43b1790bf1244949a37d9cadb4535",
+      "matches_checked_in_file": true
+    },
+    {
+      "path": "/brand/pwa-icon-512.png",
+      "status": 200,
+      "content_type": "image/png",
+      "bytes": 30911,
+      "sha256": "39358a2e569c629091f3bc10d48c9da9bea877185f95deb8ea076aacd080edd3",
+      "matches_checked_in_file": true
+    },
+    {
+      "path": "/brand/asg-lockup-on-light@2x.png",
+      "status": 200,
+      "content_type": "image/png",
+      "bytes": 85720,
+      "sha256": "459aed1132eac79b643b53349a0359cf80ed01e4d9ba930a7086c03731e01aa7",
+      "matches_checked_in_file": true
+    },
+    {
+      "path": "/brand/asg-lockup-on-dark.svg",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 10225,
+      "sha256": "f61bb2b0591ca8274a454203b20f0914a51e4032a48457687d2d7f7fc3cf3a9b",
+      "matches_checked_in_file": true
+    },
+    {
+      "path": "/brand/asg-lockup-on-light.svg",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 10225,
+      "sha256": "f93b7a33b7566c3125b90d39fb1034aec682dc7dd10a6b1ccb7fdfc6042f0d85",
+      "matches_checked_in_file": true
+    }
+  ],
+  "all_passed": true,
+  "production_deployment_verified": false,
+  "font_metadata": {
+    "family": "Inter",
+    "embedded_weights": [
+      400,
+      600,
+      700
+    ],
+    "sources": "src/brand/fonts/SOURCE.json",
+    "license": "src/brand/fonts/OFL.txt",
+    "next_output_tracing_includes_all_fonts": true
+  }
+}

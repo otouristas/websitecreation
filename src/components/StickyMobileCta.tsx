@@ -71,7 +71,7 @@ export function StickyMobileCta(): ReactElement | null {
           <Link
             href={lp('/get-started')}
             onClick={() => trackCtaClick('sticky_mobile_quote')}
-            className="relative flex h-12 min-w-0 flex-1 items-center justify-center gap-1.5 rounded-full bg-[linear-gradient(180deg,var(--primary),var(--primary-deep))] px-4 font-display text-[0.9375rem] font-semibold text-primary-foreground shadow-[inset_0_1px_0_0_oklch(1_0_0/25%),0_6px_18px_-8px_color-mix(in_oklab,var(--primary)_90%,transparent)] active:scale-[0.98] motion-reduce:active:scale-100"
+            className="relative flex h-12 min-w-0 flex-1 items-center justify-center gap-1.5 rounded-full asg-primary-action px-4 font-display text-[0.9375rem] font-semibold text-primary-foreground shadow-[inset_0_1px_0_0_oklch(1_0_0/25%),0_6px_18px_-8px_color-mix(in_oklab,var(--primary)_90%,transparent)] active:scale-[0.98] motion-reduce:active:scale-100"
           >
             <span className="truncate">{nav.getQuote}</span>
             <ArrowRight className="size-4 shrink-0" aria-hidden />

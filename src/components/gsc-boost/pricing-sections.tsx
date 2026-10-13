@@ -68,7 +68,12 @@ export function ComparisonTable({ locale, source }: { readonly locale: L; readon
     </tr>
   );
   return (
-    <div className="relative overflow-x-auto rounded-2xl border border-hairline bg-surface">
+    <div
+      role="region"
+      aria-label={isEl ? "Σύγκριση πακέτων" : "Plan comparison"}
+      tabIndex={0}
+      className="relative overflow-x-auto rounded-2xl border border-hairline bg-surface focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-ring"
+    >
       <table className="w-full min-w-[620px] border-collapse text-[14px]">
         <caption className="sr-only">{isEl ? "Σύγκριση πακέτων" : "Plan comparison"}</caption>
         <thead>
@@ -77,7 +82,7 @@ export function ComparisonTable({ locale, source }: { readonly locale: L; readon
               {isEl ? "Τιμές σε δολάρια ΗΠΑ" : "Prices in US dollars"}
             </th>
             {PLANS.map((p) => (
-              <th key={p.id} scope="col" className={cn("px-4 py-4 text-left align-bottom", p.highlight && "bg-signal/[0.06]")}>
+              <th key={p.id} scope="col" className={cn("px-4 py-4 text-left align-bottom", p.highlight && "bg-accent")}>
                 <div className="text-[15px] font-semibold text-foreground">{p.id}</div>
                 <div className="mt-0.5 text-[13px] font-normal tabular-nums text-muted-foreground">
                   {formatUsd(locale, p.monthly)} {isEl ? "/ μήνα" : "/ month"}
@@ -89,7 +94,7 @@ export function ComparisonTable({ locale, source }: { readonly locale: L; readon
                   href={appLink("/signup", locale, `${source}-${p.id.toLowerCase()}`, { plan: p.id, cycle: "monthly" })}
                   className={cn(
                     "mt-3 inline-flex h-8 items-center gap-1 whitespace-nowrap rounded-md px-3 text-[12.5px] font-semibold transition-colors",
-                    p.highlight ? "bg-signal text-signal-foreground hover:brightness-105" : "border border-hairline bg-background text-foreground hover:border-brand/50",
+                    p.highlight ? "asg-primary-action text-primary-foreground" : "border border-hairline bg-background text-foreground hover:border-brand/50",
                   )}
                 >
                   {isEl ? `Επιλογή ${p.id}` : `Choose ${p.id}`}
@@ -106,7 +111,7 @@ export function ComparisonTable({ locale, source }: { readonly locale: L; readon
                 {label}
               </th>
               {PLANS.map((p) => (
-                <td key={p.id} className={cn("px-4 py-3 font-medium tabular-nums text-foreground", p.highlight && "bg-signal/[0.06]")}>
+                <td key={p.id} className={cn("px-4 py-3 font-medium tabular-nums text-foreground", p.highlight && "bg-accent")}>
                   {value(p)}
                 </td>
               ))}
@@ -124,7 +129,7 @@ export function ComparisonTable({ locale, source }: { readonly locale: L; readon
                 ) : null}
               </th>
               {r.included.map((inc, i) => (
-                <td key={PLANS[i].id} className={cn("px-4 py-3", PLANS[i].highlight && "bg-signal/[0.06]")}>
+                <td key={PLANS[i].id} className={cn("px-4 py-3", PLANS[i].highlight && "bg-accent")}>
                   <Included included={inc} locale={locale} />
                 </td>
               ))}
@@ -140,7 +145,12 @@ export function ComparisonTable({ locale, source }: { readonly locale: L; readon
 export function CreditCapacity({ locale }: { readonly locale: L }) {
   const isEl = locale === "el";
   return (
-    <div className="relative overflow-x-auto rounded-2xl border border-hairline bg-surface">
+    <div
+      role="region"
+      aria-label={isEl ? "Τι καλύπτουν οι μονάδες ενός μήνα σε κάθε πακέτο" : "What a month of credits covers on each plan"}
+      tabIndex={0}
+      className="relative overflow-x-auto rounded-2xl border border-hairline bg-surface focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-ring"
+    >
       <table className="w-full min-w-[560px] text-[14px]">
         <caption className="sr-only">{isEl ? "Τι καλύπτουν οι μονάδες ενός μήνα σε κάθε πακέτο" : "What a month of credits covers on each plan"}</caption>
         <thead>

@@ -7,7 +7,7 @@ import { cn } from "@/lib/cn";
  * the website's own tokens. Same rhythm and devices as the app: a 1200px
  * column, mono eyebrows with an icon, tight semibold headlines with one to
  * three serif italic accent words, check lists and product previews on a
- * dotted stage. Colours stay the site's navy, royal blue, cyan and lime.
+ * dotted stage. Colors use the approved shared semantic token roles.
  *
  * Everything here is a server component. Reveals use the site's CSS
  * scroll-driven `reveal` utility, so nothing depends on JavaScript.
@@ -160,10 +160,10 @@ export function Stage({ className, children, ...props }: HTMLAttributes<HTMLDivE
 export type MarketingBadgeKind = "new" | "free" | "popular" | "ai" | "live" | "save";
 
 const BADGE_CLASS: Record<MarketingBadgeKind, string> = {
-  new: "bg-signal text-signal-foreground",
+  new: "bg-accent text-accent-foreground",
   free: "bg-brand/15 text-brand ring-1 ring-inset ring-brand/30",
   popular: "bg-primary/15 text-primary-glow ring-1 ring-inset ring-primary/35",
-  ai: "bg-[linear-gradient(120deg,var(--primary),var(--brand))] text-primary-foreground",
+  ai: "bg-accent text-accent-foreground",
   live: "bg-success/15 text-success ring-1 ring-inset ring-success/30",
   save: "bg-warning/15 text-warning ring-1 ring-inset ring-warning/30",
 };

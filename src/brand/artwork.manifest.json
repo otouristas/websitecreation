@@ -1,0 +1,27 @@
+{
+  "source": "AnotherSEOGuru-Brand-Handoff-v1.zip",
+  "sourceZipSha256": "c72e5837a88a9f169d0d6cc498460419155e852f5d14c355a70ce2991363ab7e",
+  "files": {
+    "public/brand/apple-touch-icon.png": "b7093f0720ebe41f17eeb725f66b337f0c64bf08a118af112086e9605408d5ee",
+    "public/brand/asg-app-icon-dark.svg": "94ea69cf00be8e73fbed6b60e1512eafdd6cf59e0c33316d5310e5c34c960295",
+    "public/brand/asg-app-icon-default.svg": "743f53e33166bf2e533fc9a2ee452fca048c62ce356c7cc6634a7ddd2ac7b71c",
+    "public/brand/asg-app-icon-tinted-source.svg": "c22388de19247fbbbd0d6dd32672d0d7d322d1229fb85a1b6198be286ba42b12",
+    "public/brand/asg-lockup-on-dark.svg": "f61bb2b0591ca8274a454203b20f0914a51e4032a48457687d2d7f7fc3cf3a9b",
+    "public/brand/asg-lockup-on-dark@2x.png": "9c56c677d9cbbb0fd8e26b162365cc365468468364e949786fdef90aa1962067",
+    "public/brand/asg-lockup-on-light.svg": "f93b7a33b7566c3125b90d39fb1034aec682dc7dd10a6b1ccb7fdfc6042f0d85",
+    "public/brand/asg-lockup-on-light@2x.png": "459aed1132eac79b643b53349a0359cf80ed01e4d9ba930a7086c03731e01aa7",
+    "public/brand/asg-mark-ink.svg": "fab182119c3ab2e0b570bebad54aca050b0e67dc4deedca983535709fe1549e6",
+    "public/brand/asg-mark-white.svg": "3c34f135e66cb4d79c5b5a4270bbbcfa2d798120d725571f73b8f33a54a8b8c4",
+    "public/brand/asg-mark.svg": "938abe059c1b58735870c2adb2a91474d91d5beac7517ec082aae0d9403a069d",
+    "public/brand/favicon-32.png": "6e79ec5763fef3365195cf50c7c606a15dee581b81119b3f440aeb8ee2fbe8a4",
+    "public/brand/favicon.ico": "e04f09d7467f8db7493447e221dd613f0fe40e8694f28a8749cb62b3eaaa31a6",
+    "public/brand/favicon.svg": "94ea69cf00be8e73fbed6b60e1512eafdd6cf59e0c33316d5310e5c34c960295",
+    "public/brand/pwa-icon-192.png": "c24fff838260e58f7af4247157bbeb87f5f43b1790bf1244949a37d9cadb4535",
+    "public/brand/pwa-icon-512.png": "39358a2e569c629091f3bc10d48c9da9bea877185f95deb8ea076aacd080edd3",
+    "public/favicon.ico": "e04f09d7467f8db7493447e221dd613f0fe40e8694f28a8749cb62b3eaaa31a6",
+    "public/logo.png": "459aed1132eac79b643b53349a0359cf80ed01e4d9ba930a7086c03731e01aa7",
+    "public/logo.svg": "f93b7a33b7566c3125b90d39fb1034aec682dc7dd10a6b1ccb7fdfc6042f0d85",
+    "src/app/apple-icon.png": "b7093f0720ebe41f17eeb725f66b337f0c64bf08a118af112086e9605408d5ee",
+    "src/app/icon.svg": "94ea69cf00be8e73fbed6b60e1512eafdd6cf59e0c33316d5310e5c34c960295"
+  }
+}
