@@ -43,6 +43,16 @@ export const POPULAR: ReadonlyArray<readonly [string, string]> = [
 export const helpPath = (locale: SiteLocale, category?: string, article?: string) =>
   localizedPath(locale, ["/help", category, article].filter(Boolean).join("/"));
 
+const META_SUFFIX: Record<SiteLocale, string> = {
+  en: "Step-by-step guide in the GSC Boost help center.",
+  el: "Οδηγός βήμα βήμα στο κέντρο βοήθειας του GSC Boost.",
+};
+
+/** One-line summaries read well in the UI but are too thin for a search snippet. */
+export function helpMetaDescription(summary: string, locale: SiteLocale): string {
+  return summary.length >= 90 ? summary : `${summary} ${META_SUFFIX[locale]}`;
+}
+
 /**
  * Article links are written as app paths. On the website the product lives on
  * the app origin and the legal pages under the locale.

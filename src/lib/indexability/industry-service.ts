@@ -168,3 +168,18 @@ export function isIndustryServiceIndexable(
 ): boolean {
   return evaluateIndustryService(industrySlug, serviceSlug, locale).indexable;
 }
+
+/**
+ * Locale-agnostic link target for an industry × service card: the combo page
+ * when it is indexable, otherwise the service hub, so internal links do not
+ * spend crawl budget on noindex pages.
+ */
+export function industryServicePath(
+  industrySlug: string,
+  serviceSlug: string,
+  locale: SiteLocale,
+): string {
+  return isIndustryServiceIndexable(industrySlug, serviceSlug, locale)
+    ? `/solutions/${industrySlug}/${serviceSlug}`
+    : `/services/${serviceSlug}`;
+}

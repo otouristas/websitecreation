@@ -92,9 +92,9 @@ Fleet and policy clarity wins citations. Models answer "do I need an internation
 
 We build LLM-ready sites and measure results through Search Console plus structured prompt sampling:
 
-- [Multi-LLM AI system](/en/platform/features/multi-llm-ai-system) - orchestrate prompts and workflows across models with guardrails.
-- [SERP feature hunter](/en/platform/features/serp-feature-hunter) - classic SERP still pays the bills; blend both lenses.
-- [Content gap analysis](/en/platform/features/content-gap-analysis) - find topics worth updating before you chase synthetic mentions.
+- [Multi-LLM AI system](/en/platform/features#assistant) - orchestrate prompts and workflows across models with guardrails.
+- [SERP feature hunter](/en/platform/features#keywords) - classic SERP still pays the bills; blend both lenses.
+- [Content gap analysis](/en/platform/features#competitors) - find topics worth updating before you chase synthetic mentions.
 
 For done-for-you execution - design, development, and search strategy - [get started here](/en/get-started).
 

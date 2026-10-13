@@ -132,7 +132,13 @@ export function getPricingRelatedPaths(
         { path: costEshop, titleEn: 'E-shop cost guide', titleEl: 'Οδηγός κατασκευής e-shop' },
         { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
         { path: '/work', titleEn: 'Portfolio & case studies', titleEl: 'Έργα & case studies' },
-    ];
+    ].filter((link) => isLiveServicePath(link.path, locale));
+}
+
+/** False for a `/services/{service}/{city}` path that is 410 in this locale. */
+function isLiveServicePath(path: string, locale: SiteLocale): boolean {
+    const m = /^\/services\/([^/]+)\/([^/]+)$/.exec(path);
+    return !m || isServiceLocationKept(locale, m[1], m[2]);
 }
 
 const HUB_CITY_LINKS: { slug: string; titleEn: string; titleEl: string }[] = [

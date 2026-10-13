@@ -7,10 +7,13 @@ export function PortfolioThumbnail({
   src,
   alt,
   className = '',
+  hero = false,
 }: {
   src: string;
   alt: string;
   className?: string;
+  /** Full-width case-study hero: responsive srcset up to 1920w. */
+  hero?: boolean;
 }) {
   const [failed, setFailed] = useState(false);
 
@@ -23,14 +26,18 @@ export function PortfolioThumbnail({
     );
   }
 
+  // Card thumbnails never render wider than ~600 CSS px, so a fixed width
+  // (1x 640w, 2x 1200w) keeps the 1920w candidate out of the srcset.
+  const dims = hero
+    ? { width: 1200, height: 750, sizes: '(max-width: 1024px) 100vw, 1000px' }
+    : { width: 600, height: 375 };
+
   return (
     <Image
       src={src}
       alt={alt}
-      width={1200}
-      height={750}
+      {...dims}
       className={`h-full w-full object-cover object-top ${className}`}
-      sizes="(max-width: 768px) 100vw, 25vw"
       onError={() => setFailed(true)}
     />
   );

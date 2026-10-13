@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: PageProps) {
   if (!isValidLocale(locale)) return {};
 
   return buildMetadata({
-    title: "Compare AnotherSEOGuru with other SEO tools",
+    title: "SEO tools compared: Ahrefs, Semrush, GSC",
     description:
       "How AnotherSEOGuru compares with Ahrefs, Semrush and Search Console on their own, and which one fits the job you are actually trying to do.",
     path: localizedPath("en", "/compare"),

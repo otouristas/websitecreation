@@ -94,8 +94,8 @@ Search language shifts - "AI overview" wasn't a glossary term five years ago. Re
 
 ## Tie-ins to platform workflows
 
-- [Semantic clustering](/en/platform/features/semantic-keyword-clustering) - group terms by intent before publishing
-- [Cannibalization doctor](/en/platform/features/cannibalization-doctor) - when glossary and commercial URLs compete for the same SERP
+- [Semantic clustering](/en/platform/features#keywords) - group terms by intent before publishing
+- [Cannibalization doctor](/en/platform/features#opportunities) - when glossary and commercial URLs compete for the same SERP
 - [Content gap analysis](/en/glossary?term=content-gap-analysis) - find undefined entities competitors explain
 
 ## Tourism-specific glossary opportunities

@@ -7,10 +7,18 @@ import type { SiteLocale } from '@/lib/i18n/locale';
  * it: hubs never linked down to their spokes and spokes never linked up. These
  * entries turn each pillar into a real, indexable hub page.
  */
+interface PillarCopy {
+  readonly title: string;
+  /** Page <title> when `title` alone is too short to describe the hub. */
+  readonly seoTitle?: string;
+  readonly heading: string;
+  readonly intro: string;
+}
+
 export interface PillarMeta {
   readonly slug: string;
-  readonly en: { title: string; heading: string; intro: string };
-  readonly el: { title: string; heading: string; intro: string };
+  readonly en: PillarCopy;
+  readonly el: PillarCopy;
 }
 
 export const BLOG_PILLARS: readonly PillarMeta[] = [
@@ -33,12 +41,14 @@ export const BLOG_PILLARS: readonly PillarMeta[] = [
     slug: 'local-seo',
     en: {
       title: 'Local SEO',
+      seoTitle: 'Local SEO guides & Google Business Profile',
       heading: 'Local SEO',
       intro:
         'Winning the map pack and "near me" searches: Google Business Profile, NAP consistency, reviews, citations, and city pages that answer local intent instead of substituting a place name.',
     },
     el: {
       title: 'Τοπικό SEO',
+      seoTitle: 'Οδηγοί τοπικού SEO και Google Maps',
       heading: 'Τοπικό SEO',
       intro:
         'Πώς κερδίζετε το Map Pack και τις αναζητήσεις «κοντά μου»: Google Business Profile, συνέπεια στοιχείων, κριτικές, καταχωρήσεις και σελίδες πόλης που απαντούν σε πραγματική τοπική πρόθεση, όχι απλή αντικατάσταση ονόματος.',
@@ -63,12 +73,14 @@ export const BLOG_PILLARS: readonly PillarMeta[] = [
     slug: 'technical-seo-in-house',
     en: {
       title: 'Technical SEO',
+      seoTitle: 'Technical SEO guides for in-house teams',
       heading: 'Technical SEO for in-house teams',
       intro:
         'Crawling, indexing, Core Web Vitals, hosting and migrations. The technical groundwork that has to be right before content can work.',
     },
     el: {
       title: 'Τεχνικό SEO',
+      seoTitle: 'Οδηγοί τεχνικού SEO για in-house ομάδες',
       heading: 'Τεχνικό SEO για in-house ομάδες',
       intro:
         'Ευρετηρίαση, Core Web Vitals, hosting και μεταπτώσεις. Τα τεχνικά θεμέλια που πρέπει να είναι σωστά πριν αποδώσει το περιεχόμενο.',

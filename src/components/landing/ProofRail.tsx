@@ -22,7 +22,7 @@ export function ProofRail({ locale = "en" }: { locale?: SiteLocale }) {
         <Image
           key={`${logo.alt}-${ariaHidden}`}
           src={logo.src}
-          alt={ariaHidden ? "" : logo.alt}
+          alt={logo.alt}
           width={140}
           height={44}
           // Next's optimizer refuses to serve SVG inline unless

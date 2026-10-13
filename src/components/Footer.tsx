@@ -47,7 +47,7 @@ const EL_SEO_HUB_LINKS: { label: string; href: string }[] = [
   { label: "Κατασκευή E-shop Πάτρα", href: elServiceLocationPath("eshop-woocommerce", "patras-gr") },
   { label: "Ανασχεδιασμός Ιστοσελίδας", href: "/el/services/website-redesign" },
   { label: "SEO για Ξενοδοχεία", href: "/el/solutions/hotels" },
-  { label: "Κατασκευή Ιστοσελίδας Ξενοδοχείου", href: "/el/solutions/hotels/website-creation" },
+  { label: "Κατασκευή Ιστοσελίδας Ξενοδοχείου", href: "/el/solutions/hotels" },
   { label: "SEO για Δικηγόρους", href: "/el/solutions/lawyers" },
   { label: "SEO για Ακίνητα", href: "/el/solutions/real-estate" },
   { label: "Οδηγός: Κατασκευή E-shop", href: "/el/blog/kataskevi-eshop-odigos" },

@@ -5,7 +5,7 @@ import { ChevronRight } from "lucide-react";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
 import { KitBreadcrumbs } from "@/components/page-kit";
 import { ContactCard, HelpShell, helpCopy } from "@/components/help/HelpShell";
-import { CATEGORY_ICON, helpContent, helpPath } from "@/data/help";
+import { CATEGORY_ICON, helpContent, helpMetaDescription, helpPath } from "@/data/help";
 import { isValidLocale, localizedPath, type SiteLocale } from "@/lib/i18n/locale";
 import { buildMetadata } from "@/lib/seo";
 import { combineSchemas, generateBreadcrumbSchema, generateCollectionPageSchema } from "@/lib/seo/schema";
@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!cat) return {};
   return buildMetadata({
     title: `${cat.title} · ${helpCopy(locale).home}`,
-    description: cat.description,
+    description: helpMetaDescription(cat.description, locale),
     path: helpPath(locale, cat.slug),
     hreflangPath: `/help/${cat.slug}`,
     hreflangLocales: ["en", "el"],

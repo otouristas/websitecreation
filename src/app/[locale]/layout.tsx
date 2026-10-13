@@ -292,6 +292,14 @@ function buildStructuredDataGraph(isEl: boolean) {
  */
 const themeInitScript = `(function(){try{if(localStorage.getItem('theme')==='light'){document.documentElement.classList.add('light');}}catch(e){}})();`;
 
+/**
+ * The consent banner is server-rendered so it paints with the page instead of
+ * after hydration (as a late client-only mount it was the mobile LCP element,
+ * ~7s on the Greek homepage). Visitors who already chose get `.consent-set`
+ * before first paint, which hides it in CSS, so they never see a flash.
+ */
+const consentInitScript = `(function(){try{if(localStorage.getItem('cookie-consent')&&localStorage.getItem('ads-measurement-consent')){document.documentElement.classList.add('consent-set');}}catch(e){}})();`;
+
 export default async function LocaleLayout({
   children,
   params,
@@ -313,6 +321,7 @@ export default async function LocaleLayout({
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+        <script dangerouslySetInnerHTML={{ __html: consentInitScript }} />
         <link rel="alternate" type="text/plain" href="/llms.txt" title="LLMs documentation for AnotherSEOGuru" />
         <script
           type="application/ld+json"
