@@ -27,6 +27,7 @@ Last Updated: 2026-10-10
 - **Portfolio / Case Studies** (<https://anotherseoguru.com/en/work>) - 71 live client projects with homepage screenshots.
 - **Blog** (<https://anotherseoguru.com/en/blog>) - SEO, GEO/AEO, hotel, and e-shop guides (EN + EL).
 - **SEO Platform (secondary)** (<https://anotherseoguru.com/en/platform>) - GSC-native SEO software - English-canonical marketing pages.
+- **GSC Boost help center** (<https://anotherseoguru.com/en/help>) - How the SEO software works: Search Console setup, opportunities, rank tracking, site audit, AI visibility, agency tools and billing (EN + EL).
 
 ## Machine-Readable Feeds for AI Agents
 Structured context so AI assistants and AI search engines can cite accurate AnotherSEOGuru facts:

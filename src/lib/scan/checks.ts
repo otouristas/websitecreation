@@ -215,7 +215,7 @@ export function runChecks(meta: ScanMeta, ctx: ScanContext): ScanCheck[] {
       weight: 10,
       pass: titleLen >= 10 && titleLen <= 65,
       detail: meta.title ? `${titleLen} chars` : 'missing',
-      label: { en: 'Title tag, 10-65 characters', el: 'Ετικέτα τίτλου, 10-65 χαρακτήρες' },
+      label: { en: 'Title tag, 10-65 characters', el: 'Title tag, 10-65 χαρακτήρες' },
       hint: {
         en: 'Write one title per page that names the service and the place, under 65 characters.',
         el: 'Γράψτε έναν τίτλο ανά σελίδα που ονομάζει υπηρεσία και τοποθεσία, κάτω από 65 χαρακτήρες.',
@@ -279,7 +279,7 @@ export function runChecks(meta: ScanMeta, ctx: ScanContext): ScanCheck[] {
       weight: 10,
       pass: meta.jsonLdTypes.length > 0,
       detail: meta.jsonLdTypes.length ? meta.jsonLdTypes.slice(0, 4).join(', ') : 'none',
-      label: { en: 'Structured data (JSON-LD)', el: 'Δομημένα δεδομένα (JSON-LD)' },
+      label: { en: 'Structured data (JSON-LD)', el: 'Structured data (JSON-LD)' },
       hint: {
         en: 'Add Organization or LocalBusiness schema, plus the type that matches the page (Hotel, AutoRental, TouristTrip).',
         el: 'Προσθέστε schema Organization ή LocalBusiness και τον τύπο που ταιριάζει στη σελίδα (Hotel, AutoRental, TouristTrip).',

@@ -89,7 +89,7 @@ export const AUDIT_COPY = {
     eyebrow: 'Ζωντανός έλεγχος',
     title: 'Μετρήστε το site, μετά κοστολογήστε τη διόρθωση',
     intro:
-      'Γράψτε ένα domain. Το κατεβάζουμε τώρα, σε αυτό το αίτημα, και αναφέρουμε ό,τι πραγματικά μετρήσαμε: χρόνους διακομιστή, markup, δομημένα δεδομένα και ποια AI crawlers επιτρέπει το robots.txt σας.',
+      'Γράψτε ένα domain. Το κατεβάζουμε τώρα, σε αυτό το αίτημα, και αναφέρουμε ό,τι πραγματικά μετρήσαμε: χρόνους διακομιστή, markup, structured data και ποια AI crawlers επιτρέπει το robots.txt σας.',
     placeholder: 'to-site-sas.gr',
     run: 'Ξεκινήστε τον έλεγχο',
     rerun: 'Έλεγχος άλλου site',
@@ -122,7 +122,7 @@ export const AUDIT_COPY = {
       thirdPartyHosts: 'Hosts τρίτων',
       internalLinks: 'Εσωτερικοί σύνδεσμοι',
       sitemapUrls: 'Διευθύνσεις sitemap',
-      jsonLdTypes: 'Δομημένα δεδομένα',
+      jsonLdTypes: 'Structured data',
       hreflangCount: 'Εναλλακτικές hreflang',
       notFoundStatus: 'Ανύπαρκτη διεύθυνση επιστρέφει',
       server: 'Διακομιστής',

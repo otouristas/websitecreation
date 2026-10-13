@@ -18,7 +18,8 @@
     "generate:llms": "npx tsx scripts/generate-llms.mjs",
     "validate:blog": "node scripts/validate-blog-posts.mjs",
     "test:audit": "npx tsx scripts/audit-selftest.mts",
-    "report:ai-mode": "npx tsx scripts/ai-mode-report.mts"
+    "report:ai-mode": "npx tsx scripts/ai-mode-report.mts",
+    "check:greek": "node scripts/check-greek-glossary.mjs"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.4",

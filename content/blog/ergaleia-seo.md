@@ -31,7 +31,7 @@ faq:
 | Google Search Console | Ερωτήματα, κλικ, ευρετηρίαση, Core Web Vitals | Εβδομαδιαία |
 | Google Analytics 4 | Συμπεριφορά, conversions από organic | Εβδομαδιαία |
 | PageSpeed Insights | Ταχύτητα LCP/INP/CLS | Μετά από αλλαγές theme/plugins |
-| Rich Results Test | Schema / δομημένα δεδομένα | Όταν προσθέτετε FAQ/LocalBusiness |
+| Rich Results Test | Schema / structured data | Όταν προσθέτετε FAQ/LocalBusiness |
 | Google Business Profile | Τοπικό map pack, reviews, posts | Για τοπικές επιχειρήσεις |
 | Το ίδιο το SERP | Intent, PAA, AI Overviews | Πριν γράψετε κάθε money page |
 

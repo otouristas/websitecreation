@@ -293,7 +293,7 @@ export function buildChecks(input: CheckInput): AuditCheck[] {
       weight: 10,
       state: grade(titleLen >= 15 && titleLen <= 65, titleLen > 0 && titleLen <= 78),
       value: s.title ? `${titleLen} chars` : 'missing',
-      label: { en: 'Title tag, 15-65 characters', el: 'Ετικέτα τίτλου, 15-65 χαρακτήρες' },
+      label: { en: 'Title tag, 15-65 characters', el: 'Title tag, 15-65 χαρακτήρες' },
       fix: {
         en: 'One title per page naming the service and the place, under 65 characters.',
         el: 'Ένας τίτλος ανά σελίδα που ονομάζει υπηρεσία και τοποθεσία, κάτω από 65 χαρακτήρες.',
@@ -368,7 +368,7 @@ export function buildChecks(input: CheckInput): AuditCheck[] {
       label: { en: 'Internal links out of the homepage', el: 'Εσωτερικοί σύνδεσμοι από την αρχική' },
       fix: {
         en: 'Link the homepage to every money page. Pages nothing links to get crawled last and rank worst.',
-        el: 'Συνδέστε την αρχική με κάθε εμπορική σελίδα. Όσες δεν δέχονται συνδέσμους σαρώνονται τελευταίες και κατατάσσονται χειρότερα.',
+        el: 'Συνδέστε την αρχική με κάθε εμπορική σελίδα. Σε όσες δεν δέχονται συνδέσμους η Google κάνει crawl τελευταία και κατατάσσονται χειρότερα.',
       },
     },
     {
@@ -559,7 +559,7 @@ export function buildChecks(input: CheckInput): AuditCheck[] {
         s.jsonLd.blocks > 0,
       ),
       value: s.jsonLd.types.length ? s.jsonLd.types.slice(0, 4).join(', ') : 'none',
-      label: { en: 'Structured data (JSON-LD)', el: 'Δομημένα δεδομένα (JSON-LD)' },
+      label: { en: 'Structured data (JSON-LD)', el: 'Structured data (JSON-LD)' },
       fix: {
         en: 'Add valid JSON-LD matching what is on the page. It is how machines read a page without guessing.',
         el: 'Προσθέστε έγκυρο JSON-LD που αντιστοιχεί στο ορατό περιεχόμενο. Έτσι διαβάζουν οι μηχανές χωρίς εικασίες.',

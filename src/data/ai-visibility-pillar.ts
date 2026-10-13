@@ -53,7 +53,7 @@ const el: AiVisibilityPillarCopy = {
   eyebrow: 'AI SEO (GEO / AEO)',
   h1: 'AI SEO: ορατότητα στο ChatGPT, στο Gemini και στα AI Overviews',
   answer:
-    'Το AI SEO (ή GEO, generative engine optimization) κάνει την ιστοσελίδα σας πηγή που μπορούν να παραθέσουν το ChatGPT, το Gemini και τα AI Overviews της Google. Συνδυάζει κλασικό SEO με σαφή στοιχεία οντότητας, δομημένα δεδομένα και περιεχόμενο που απαντά άμεσα. Στην AnotherSEOGuru εντάσσεται στα πακέτα SEO Growth και Authority, από {{SEO_GROWTH}} τον μήνα, και μετριέται σε τάσεις αναφορών δίπλα στα οργανικά κλικ. Καμία μηχανή δεν εγγυάται ότι θα σας αναφέρει.',
+    'Το AI SEO (ή GEO, generative engine optimization) κάνει την ιστοσελίδα σας πηγή που μπορούν να παραθέσουν το ChatGPT, το Gemini και τα AI Overviews της Google. Συνδυάζει κλασικό SEO με σαφή στοιχεία οντότητας, structured data και περιεχόμενο που απαντά άμεσα. Στην AnotherSEOGuru εντάσσεται στα πακέτα SEO Growth και Authority, από {{SEO_GROWTH}} τον μήνα, και μετριέται σε τάσεις αναφορών δίπλα στα οργανικά κλικ. Καμία μηχανή δεν εγγυάται ότι θα σας αναφέρει.',
   // The /el route ships the keyword-map title verbatim from services-i18n `seo`.
   metaTitle: 'AI SEO & GEO: Ορατότητα στο ChatGPT και AI Overviews',
   metaDescription:
@@ -126,7 +126,7 @@ const el: AiVisibilityPillarCopy = {
       {
         title: 'Τεχνικά θεμέλια',
         body:
-          'Ευρετηρίαση, ταχύτητα, αρχιτεκτονική εσωτερικών συνδέσμων και δομημένα δεδομένα που αντιστοιχούν στο ορατό περιεχόμενο. Το GEO χωρίς τεχνικό SEO είναι σκεπή χωρίς τοίχους. Αν το site δεν διαβάζεται, καμία «AI βελτιστοποίηση» δεν αποδίδει.',
+          'Ευρετηρίαση, ταχύτητα, αρχιτεκτονική εσωτερικών συνδέσμων και structured data που αντιστοιχούν στο ορατό περιεχόμενο. Το GEO χωρίς τεχνικό SEO είναι σκεπή χωρίς τοίχους. Αν το site δεν διαβάζεται, καμία «AI βελτιστοποίηση» δεν αποδίδει.',
       },
       {
         title: 'Μέτρηση χωρίς ψευδαισθήσεις',

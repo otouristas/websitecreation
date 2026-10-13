@@ -34,7 +34,7 @@ faq:
 3. **Ταχύτητα & Core Web Vitals** - LCP, INP, CLS σε κινητό.
 4. **Mobile-first** - το ίδιο περιεχόμενο σε κινητό και desktop.
 5. **Ασφάλεια & URLs** - HTTPS, καθαρά permalinks, σωστά redirects.
-6. **Δομημένα δεδομένα (schema)** - FAQ, LocalBusiness, Article όπου ταιριάζει.
+6. **Structured data (schema)** - FAQ, LocalBusiness, Article όπου ταιριάζει.
 7. **Εσωτερική σύνδεση** - οι money pages δεν είναι ορφανές.
 8. **Hreflang** - σωστά ζεύγη EN/EL σε δίγλωσσα ελληνικά sites.
 
@@ -111,7 +111,7 @@ faq:
 
 ### Τι είναι το τεχνικό SEO;
 
-Το τεχνικό SEO βελτιστοποιεί την υποδομή του site για ανίχνευση, ευρετηρίαση και κατανόηση από τη Google - ταχύτητα, mobile, HTTPS, sitemap και schema.
+Το τεχνικό SEO βελτιστοποιεί την υποδομή του site για crawl, ευρετηρίαση και κατανόηση από τη Google - ταχύτητα, mobile, HTTPS, sitemap και schema.
 
 ### Πώς βοηθά στη βελτίωση κατάταξης Google;
 

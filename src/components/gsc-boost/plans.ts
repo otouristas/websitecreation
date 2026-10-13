@@ -175,7 +175,7 @@ export const COST_LABELS: Readonly<Record<CreditFeature, Copy>> = {
   internal_links_analysis: c("Internal links analysis", "Ανάλυση εσωτερικών συνδέσμων"),
   site_audit: c("Full site audit", "Πλήρης έλεγχος ιστότοπου"),
   competitor_analysis: c("Competitor analysis", "Ανάλυση ανταγωνιστών"),
-  content_gap_analysis: c("Keyword gap analysis", "Ανάλυση κενού λέξεων-κλειδιών"),
+  content_gap_analysis: c("Keyword gap analysis", "Ανάλυση keyword gap"),
   backlink_lookup: c("Backlink lookup", "Αναζήτηση backlinks"),
   llm_citation_tracker: c("AI citation check (ChatGPT, Gemini, Perplexity)", "Έλεγχος παραπομπών AI (ChatGPT, Gemini, Perplexity)"),
   citation_optimization: c("Citation optimization plan", "Πρόγραμμα βελτιστοποίησης παραπομπών"),

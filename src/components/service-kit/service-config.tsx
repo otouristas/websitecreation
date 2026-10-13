@@ -154,7 +154,7 @@ export const SERVICE_KIT: Record<string, ServiceKitConfig> = {
     icon: Link2,
     pill: { kind: 'save', tag: c('White-hat', 'White-hat'), text: c('Editorial links, never spam directories', 'Editorial σύνδεσμοι, ποτέ spam κατάλογοι'), href: '/seo-services' },
     hero: (l) => <CompetitorsPreview locale={l} />,
-    heroLabel: c('A keyword gap against three sample competitors.', 'Κενό λέξεων-κλειδιών απέναντι σε τρεις ανταγωνιστές (δείγμα).'),
+    heroLabel: c('A keyword gap against three sample competitors.', 'Keyword gap απέναντι σε τρεις ανταγωνιστές (δείγμα).'),
     detail: (l) => <ReportPreview locale={l} />,
     pricing: 'seo',
     addOns: [],

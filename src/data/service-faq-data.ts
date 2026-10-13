@@ -285,7 +285,7 @@ const BY_SERVICE: Record<string, { en: ServiceFaqItem[]; el: ServiceFaqItem[] }>
       {
         question: 'Τι περιλαμβάνει το τεχνικό SEO;',
         answer:
-          'Crawlability, canonical, sitemaps, Core Web Vitals, προσαρμογή σε κινητά, δομημένα δεδομένα και εσωτερικούς συνδέσμους: τα θεμέλια που χρειάζονται το περιεχόμενο και οι σύνδεσμοι για να αποδώσουν.',
+          'Crawlability, canonical, sitemaps, Core Web Vitals, προσαρμογή σε κινητά, structured data και εσωτερικούς συνδέσμους: τα θεμέλια που χρειάζονται το περιεχόμενο και οι σύνδεσμοι για να αποδώσουν.',
       },
       {
         question: 'Πότε θα δω αποτελέσματα μετά το audit;',
