@@ -34,6 +34,7 @@ import {
   agencyTrust,
 } from '@/components/kit';
 import { elHome } from '@/data/translations/el-home';
+import { COMPANY_CONTACT_ADDRESS } from '@/data/company-contact';
 import { resolvePriceTokens } from '@/data/pricing';
 import { generateOrganizationSchema } from '@/lib/seo/schema';
 import { BASE_URL } from '@/lib/seo/description';
@@ -68,7 +69,7 @@ export function HomePageView({ locale }: { locale: SiteLocale }) {
     description: isEl
       ? 'AnotherSEOGuru - ελληνική εταιρεία SEO και κατασκευής ιστοσελίδων. Τεχνικό SEO, τοπικό SEO, GEO/AEO, e-shop και δική της πλατφόρμα συνδεδεμένη με το Google Search Console.'
       : 'AnotherSEOGuru - Greek SEO and web design agency. Technical SEO, local SEO, GEO/AEO, e-shops, plus a Search Console-native SEO platform.',
-    address: { addressLocality: FOUNDER.city, addressCountry: FOUNDER.country },
+    address: COMPANY_CONTACT_ADDRESS,
     founder: { id: FOUNDER_SCHEMA_ID, name: FOUNDER.name, url: consultantUrl(locale) },
   });
 
@@ -77,7 +78,7 @@ export function HomePageView({ locale }: { locale: SiteLocale }) {
   const lead = isEl
     ? resolvePriceTokens(elHome.hero.sub, locale)
     : resolvePriceTokens(
-        `AnotherSEOGuru is a Greek SEO and web design agency based in Athens, with ${FOUNDER_YEARS}+ years of experience and more than ${PROJECTS_DELIVERED} projects delivered. We handle technical SEO, local SEO, GEO/AEO and website or e-shop builds, with transparent packages from {{ENTRY_SEO}} a month. Every engagement starts with a free SEO audit, so you see what works before you commit.`,
+        `AnotherSEOGuru is a Greek SEO and web design agency based in Sifnos, Greece, with ${FOUNDER_YEARS}+ years of experience and more than ${PROJECTS_DELIVERED} projects delivered. We handle technical SEO, local SEO, GEO/AEO and website or e-shop builds, with transparent packages from {{ENTRY_SEO}} a month. Every engagement starts with a free SEO audit, so you see what works before you commit.`,
         locale,
       );
 

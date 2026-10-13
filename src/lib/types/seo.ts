@@ -79,6 +79,7 @@ export interface PostalAddressData {
     readonly addressLocality: string;
     readonly addressCountry: string;
     readonly addressRegion?: string;
+    readonly postalCode?: string;
 }
 
 // FAQ schema data (uses FAQ from page.ts)

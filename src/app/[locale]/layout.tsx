@@ -11,6 +11,7 @@ import { Analytics } from '@vercel/analytics/next';
 import { isValidLocale } from '@/lib/i18n/locale';
 import { CONTACT_EMAIL, PHONE_E164 } from '@/lib/contact-info';
 import { FOUNDER, FOUNDER_SCHEMA_ID, consultantUrl } from '@/data/founder';
+import { COMPANY_CONTACT_ADDRESS } from '@/data/company-contact';
 
 const SITE_URL = 'https://anotherseoguru.com';
 
@@ -145,13 +146,10 @@ function buildStructuredDataGraph(isEl: boolean) {
           areaServed: ['GR', 'GB', 'US', 'EU'],
           availableLanguage: ['Greek', 'English'],
         },
-        // Owner-confirmed (src/data/founder.ts): based in Athens, founded by
-        // George K. The Person node lives on the consultant page under the
-        // same @id.
+        // Company contact details are separate from the founder's personal base.
         address: {
           '@type': 'PostalAddress',
-          addressLocality: 'Athens',
-          addressCountry: 'GR',
+          ...COMPANY_CONTACT_ADDRESS,
         },
         founder: {
           '@type': 'Person',

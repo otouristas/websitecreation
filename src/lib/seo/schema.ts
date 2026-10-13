@@ -216,6 +216,7 @@ function postalAddress(a: PostalAddressData) {
         '@type': 'PostalAddress',
         addressLocality: a.addressLocality,
         ...(a.addressRegion ? { addressRegion: a.addressRegion } : {}),
+        ...(a.postalCode ? { postalCode: a.postalCode } : {}),
         addressCountry: a.addressCountry,
     };
 }
