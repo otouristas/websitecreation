@@ -8,7 +8,7 @@ import { ArticleBody } from "@/components/help/ArticleBody";
 import { HelpFeedback } from "@/components/help/HelpFeedback";
 import { HelpToc, type TocHeading } from "@/components/help/HelpNav";
 import { ContactCard, DemoCard, HelpShell, helpCopy } from "@/components/help/HelpShell";
-import { HELP_UPDATED, allArticles, findArticle, helpContent, helpPath } from "@/data/help";
+import { HELP_UPDATED, allArticles, findArticle, helpContent, helpMetaDescription, helpPath } from "@/data/help";
 import { isValidLocale, localizedPath, type SiteLocale } from "@/lib/i18n/locale";
 import { buildMetadata } from "@/lib/seo";
 import { combineSchemas, generateArticleSchema, generateBreadcrumbSchema } from "@/lib/seo/schema";
@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!found) return {};
   return buildMetadata({
     title: found.article.title,
-    description: found.article.description,
+    description: helpMetaDescription(found.article.description, locale),
     path: helpPath(locale, category, article),
     hreflangPath: `/help/${category}/${article}`,
     hreflangLocales: ["en", "el"],

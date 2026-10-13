@@ -168,7 +168,7 @@ export function WorkDetail({ project, locale = 'en' }: WorkDetailProps) {
         <div className="mx-auto mt-12 w-full max-w-[1000px] px-3 sm:px-6">
           <AppWindow url={domain} label={isEl ? `${project.name} - αρχική σελίδα` : `${project.name} homepage`}>
             <div className="relative aspect-[16/10] overflow-hidden">
-              <PortfolioThumbnail src={project.screenshot} alt={isEl ? `${project.name} - αρχική σελίδα` : `${project.name} homepage`} />
+              <PortfolioThumbnail hero src={project.screenshot} alt={isEl ? `${project.name} - αρχική σελίδα` : `${project.name} homepage`} />
             </div>
           </AppWindow>
         </div>

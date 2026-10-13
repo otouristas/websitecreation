@@ -31,6 +31,7 @@ import { getServiceAngle, getServiceFaqs, ANGLE_HEADINGS, FAQ_HEADING } from '@/
 import { GENERATED_CONTENT_PUBLISHED, GENERATED_CONTENT_UPDATED } from '@/lib/seo/content-dates';
 import { getIndexableServiceLocations } from '@/data/locations';
 import { isCityPageService } from '@/lib/indexability/service-location';
+import { industryServicePath, isIndustryServiceIndexable } from '@/lib/indexability/industry-service';
 
 export function IndustryServicePageView({
   industrySlug,
@@ -70,7 +71,7 @@ export function IndustryServicePageView({
     }));
 
   const relatedIndustries = getIndustriesForLocale(locale)
-    .filter((i) => i.slug !== industrySlug)
+    .filter((i) => i.slug !== industrySlug && isIndustryServiceIndexable(i.slug, serviceSlug, locale))
     .slice(0, 4)
     .map((i) => getLocalizedIndustry(i.slug, locale)!);
 
@@ -230,28 +231,32 @@ export function IndustryServicePageView({
             {relatedServices.map((related) => (
               <LinkCard
                 key={related.slug}
-                href={lp(`/solutions/${industrySlug}/${related.slug}`)}
+                href={lp(industryServicePath(industrySlug, related.slug, locale))}
                 title={related.name}
                 text={related.description}
               />
             ))}
           </CardGrid>
-          <h2 className="mt-16 font-display text-[22px] font-semibold tracking-[-0.025em] text-foreground sm:text-[26px]">
-            {ui.serviceForOtherIndustries(serviceName)}
-          </h2>
-          <ul className="mt-6 grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-4">
-            {relatedIndustries.map((related) => (
-              <li key={related.slug}>
-                <Link
-                  href={lp(`/solutions/${related.slug}/${serviceSlug}`)}
-                  className="group flex items-center justify-between gap-3 rounded-xl border border-hairline bg-background/60 px-4 py-3.5 text-[14.5px] font-medium text-foreground transition-colors hover:border-brand/40"
-                >
-                  {related.name}
-                  <ArrowUpRight className="size-3.5 text-muted-foreground group-hover:text-brand" aria-hidden />
-                </Link>
-              </li>
-            ))}
-          </ul>
+          {relatedIndustries.length > 0 ? (
+            <>
+              <h2 className="mt-16 font-display text-[22px] font-semibold tracking-[-0.025em] text-foreground sm:text-[26px]">
+                {ui.serviceForOtherIndustries(serviceName)}
+              </h2>
+              <ul className="mt-6 grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-4">
+                {relatedIndustries.map((related) => (
+                  <li key={related.slug}>
+                    <Link
+                      href={lp(`/solutions/${related.slug}/${serviceSlug}`)}
+                      className="group flex items-center justify-between gap-3 rounded-xl border border-hairline bg-background/60 px-4 py-3.5 text-[14.5px] font-medium text-foreground transition-colors hover:border-brand/40"
+                    >
+                      {related.name}
+                      <ArrowUpRight className="size-3.5 text-muted-foreground group-hover:text-brand" aria-hidden />
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </>
+          ) : null}
           <p className="mt-10">
             <Link href={lp('/contact')} className={kitSecondaryBtn}>
               {ui.freeQuote}

@@ -9,6 +9,7 @@ import { getIndexableServiceLocations } from '@/data/locations';
 import { getFeaturedPortfolio, PORTFOLIO_CATEGORIES, type PortfolioCategory } from '@/data/portfolio';
 import { generateArticleSchema, generateBreadcrumbSchema, generateFAQSchema, combineSchemas } from '@/lib/seo';
 import { getIndustryPageCopy } from '@/data/industry-page-copy';
+import { industryServicePath } from '@/lib/indexability/industry-service';
 import { resolvePriceTokens } from '@/data/pricing';
 import { SchemaMarkup } from '@/components/seo';
 import { getLocalizedIndustry } from '@/lib/industry-locale';
@@ -246,7 +247,7 @@ export function IndustryPageView({
               return (
                 <LinkCard
                   key={service.slug}
-                  href={lp(`/solutions/${industrySlug}/${service.slug}`)}
+                  href={lp(industryServicePath(industrySlug, service.slug, locale))}
                   title={svc?.name ?? service.name}
                   text={svc?.description ?? service.description}
                   footer={<span className="font-medium text-link">{ui.learnMore}</span>}

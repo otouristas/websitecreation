@@ -10,7 +10,9 @@ export default function CookieConsent() {
   const pathname = usePathname() ?? '/en';
   const locale = siteLocaleFromPath(pathname);
   const isEl = locale === 'el';
-  const [show, setShow] = useState(false);
+  // Rendered on the server so the banner paints with the page. Returning visitors are hidden
+  // before first paint by `.consent-set` (layout's consentInitScript) and closed here.
+  const [show, setShow] = useState(true);
 
   const bannerRef = useRef<HTMLDivElement | null>(null);
 
@@ -21,11 +23,11 @@ export default function CookieConsent() {
       consent = localStorage.getItem('cookie-consent');
       adsConsent = localStorage.getItem(ADS_CONSENT_KEY);
     } catch { /* Optional measurement stays off when storage is unavailable. */ }
-    if (!consent || !adsConsent) {
-      // Post-mount sync is the point here: consent lives in localStorage, unreadable during SSR,
-      // so the first paint has to be the SSR value and this corrects it.
+    if (consent && adsConsent) {
+      // Consent lives in localStorage, unreadable during SSR, so the server shows the banner
+      // and this closes it for visitors who already chose.
       // eslint-disable-next-line react-hooks/set-state-in-effect
-      setShow(true);
+      setShow(false);
     }
   }, []);
 
@@ -59,7 +61,12 @@ export default function CookieConsent() {
     setShow(false);
   };
 
-  if (!show) return <button type="button" onClick={() => setShow(true)} className="fixed bottom-1 right-2 z-[60] rounded-lg border bg-background px-3 py-2 text-xs text-muted-foreground">{isEl ? 'Προτιμήσεις cookies' : 'Cookie preferences'}</button>;
+  const reopen = () => {
+    document.documentElement.classList.remove('consent-set');
+    setShow(true);
+  };
+
+  if (!show) return <button type="button" onClick={reopen} className="fixed bottom-1 right-2 z-[60] rounded-lg border bg-background px-3 py-2 text-xs text-muted-foreground">{isEl ? 'Προτιμήσεις cookies' : 'Cookie preferences'}</button>;
 
   return (
     <div

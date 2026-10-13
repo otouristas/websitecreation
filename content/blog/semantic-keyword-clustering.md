@@ -95,7 +95,7 @@ If you have never done this, start with the no-code method on your thirty most c
 
 If you are working at the scale of a few thousand keywords, the Python route pays for itself quickly - but budget the time to read the output, not just to run it.
 
-Related reading: [Semantic Keyword Clustering in the platform](/en/platform/features/semantic-keyword-clustering), the [technical SEO guide](/en/blog/technical-seo-guide), and [how to prioritise Search Console queries](/en/blog/gsc-query-prioritization-framework).
+Related reading: [Semantic Keyword Clustering in the platform](/en/platform/features#keywords), the [technical SEO guide](/en/blog/technical-seo-guide), and [how to prioritise Search Console queries](/en/blog/gsc-query-prioritization-framework).
 
 ## Want the clustering done against your own Search Console data?
 

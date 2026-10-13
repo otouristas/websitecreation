@@ -45,11 +45,16 @@ export async function generateMetadata({
   if (!isValidLocale(locale)) return {};
   const copy = getPillarCopy(pillar, locale);
   if (!copy) return {};
+  // A hub only exists in the locales that have posts in it (the sitemap lists the same set),
+  // so hreflang must not point at an empty twin.
+  const live = (["en", "el"] as const).filter((l) => getPillarSummary(l).some((p) => p.pillar === pillar));
   return buildMetadata({
-    title: copy.title,
+    title: copy.seoTitle ?? copy.title,
     description: copy.intro,
     path: localizedPath(locale, `/blog/topics/${pillar}`),
     hreflangPath: `/blog/topics/${pillar}`,
+    hreflangLocales: live,
+    noIndex: !live.includes(locale),
   });
 }
 

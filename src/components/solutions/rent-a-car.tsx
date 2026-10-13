@@ -18,6 +18,7 @@ import { getPortfolioByCategory } from '@/data/portfolio';
 import { services } from '@/data/services';
 import { getServiceEl } from '@/data/services-i18n';
 import { getLocalizedIndustry } from '@/lib/industry-locale';
+import { industryServicePath } from '@/lib/indexability/industry-service';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 import {
   generateBreadcrumbSchema,
@@ -536,7 +537,7 @@ export function RentACarPage({ locale }: { locale: SiteLocale }) {
             return (
               <LinkCard
                 key={s.slug}
-                href={lp(`/solutions/rent-a-car/${s.slug}`)}
+                href={lp(industryServicePath('rent-a-car', s.slug, locale))}
                 title={el?.name ?? s.name}
                 text={el?.description ?? s.description}
               />

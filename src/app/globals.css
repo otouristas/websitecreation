@@ -628,6 +628,11 @@
   padding-inline: 1.5rem;
 }
 
+/* Visitors who already chose: hide the server-rendered consent banner before first paint. */
+html.consent-set [data-chrome="cookie-consent"] {
+  display: none;
+}
+
 .main-below-header {
   padding-top: calc(var(--site-header-height) + 1.5rem);
 }
