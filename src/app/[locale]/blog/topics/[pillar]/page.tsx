@@ -77,6 +77,11 @@ export default async function PillarHubPage({
   if (posts.length === 0) notFound();
 
   const pillars = getPillarSummary(siteLocale);
+  // The language switcher swaps the prefix by default. A hub with no posts in
+  // the other locale 404s there, so send the switch to that locale's blog index.
+  const otherLocale: SiteLocale = isEl ? "en" : "el";
+  const twinLive = getPostsByPillar(pillar, otherLocale).length > 0;
+  const alternateHref = localizedPath(otherLocale, twinLive ? `/blog/topics/${pillar}` : "/blog");
 
   const breadcrumbItems = [
     { name: isEl ? "Αρχική" : "Home", url: lp("/") },
@@ -102,7 +107,7 @@ export default async function PillarHubPage({
   return (
     <>
       <SchemaMarkup schemas={schemas} />
-      <Header locale={siteLocale} />
+      <Header locale={siteLocale} alternateHref={alternateHref} />
       <main className="blueprint-grid relative z-0">
         <PageHero
           locale={siteLocale}

@@ -47,6 +47,7 @@ export type SchemaType =
     | 'Product'
     | 'SoftwareApplication'
     | 'CollectionPage'
+    | 'AboutPage'
     | 'ItemList'
     | 'DefinedTermSet'
     | 'DefinedTerm'

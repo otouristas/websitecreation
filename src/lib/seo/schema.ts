@@ -186,6 +186,7 @@ export function generateOrganizationSchema(data: OrganizationSchemaData): Schema
     return {
         '@context': 'https://schema.org',
         '@type': 'Organization',
+        ...(data.id ? { '@id': data.id } : {}),
         name: data.name,
         url: data.url,
         logo: data.logo,

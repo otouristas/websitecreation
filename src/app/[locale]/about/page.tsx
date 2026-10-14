@@ -8,6 +8,9 @@ import { Container, CtaBand, KitHeading, KitSection, Stage, StepsGrid } from "@/
 import { InfoCard, PageHero, SplitRow, StatRow, accentTail } from "@/components/page-kit";
 import { isValidLocale, localizedPath, type SiteLocale } from "@/lib/i18n/locale";
 import { buildMetadata } from "@/lib/seo";
+import SchemaMarkup from "@/components/seo/SchemaMarkup";
+import type { SchemaOutput } from "@/lib/types/seo";
+import { BASE_URL, generateBreadcrumbSchema } from "@/lib/seo/schema";
 import { MARKET_COUNT } from '@/data/company-facts';
 import { industries } from '@/data/industries';
 import { FOUNDER, FOUNDER_YEARS, PROJECTS_DELIVERED, consultantPath } from '@/data/founder';
@@ -187,8 +190,24 @@ export default async function AboutPage({ params }: PageProps) {
   ];
   const icons = [Zap, Search, Gem, TrendingUp];
 
+  // AboutPage ties this URL to the Organization and founder nodes the layout
+  // already emits (same @ids), so AI engines read it as the entity's own page.
+  const aboutSchema: SchemaOutput = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "@id": `${BASE_URL}${lp("/about")}#webpage`,
+    url: `${BASE_URL}${lp("/about")}`,
+    name: t.about,
+    inLanguage: locale,
+    isPartOf: { "@id": `${BASE_URL}/#website` },
+    about: { "@id": `${BASE_URL}/#organization` },
+    mainEntity: { "@id": `${BASE_URL}/#organization` },
+    mentions: { "@id": `${BASE_URL}/#founder` },
+  };
+
   return (
     <>
+      <SchemaMarkup schemas={[aboutSchema, generateBreadcrumbSchema({ items: breadcrumbs })]} />
       <Header locale={locale as SiteLocale} />
       <main className="blueprint-grid relative z-0">
         <PageHero

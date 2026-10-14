@@ -126,6 +126,8 @@ export interface ServiceSchemaData {
 
 // Organization schema data
 export interface OrganizationSchemaData {
+    /** Stable @id so this node merges with the layout's Organization instead of declaring a second entity. */
+    id?: string;
     name: string;
     url: string;
     logo: string;
