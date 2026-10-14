@@ -46,7 +46,8 @@ export type NavIconKey =
   | 'scan'
   | 'tag'
   | 'grid'
-  | 'phone';
+  | 'phone'
+  | 'plug';
 
 export interface NavItem {
   readonly href: string;
@@ -223,7 +224,9 @@ export function getNavModel(locale: SiteLocale): NavModel {
           { href: lp('/platform/features#assistant'), label: t('AI assistant', 'Βοηθός AI'), desc: t('Answers from your own data', 'Απαντήσεις από τα δεδομένα σας'), icon: 'message', badge: AI },
           { href: lp('/platform/features#competitors'), label: t('Competitors', 'Ανταγωνιστές'), desc: t('Their wins, your gaps', 'Τα δικά τους κέρδη, τα δικά σας κενά'), icon: 'swords' },
           { href: lp('/platform/for/agencies'), label: t('For agencies', 'Για agencies'), desc: t('Clients, pipeline and reports', 'Πελάτες, pipeline και αναφορές'), icon: 'users' },
-          { href: lp('/platform/iphone'), label: t('iPhone app', 'Εφαρμογή iPhone'), desc: t('Your fixes and traffic, on the go', 'Διορθώσεις και κίνηση, στο κινητό'), icon: 'phone', badge: { kind: 'new' as const, label: t('Beta', 'Beta') } },
+          // One entry for every way in (iPhone, Chrome, WordPress, AI assistants), so the
+          // mobile sheet stays light; the hub links on to each product page.
+          { href: lp('/platform/integrations'), label: t('Apps & integrations', 'Εφαρμογές & ενσωματώσεις'), desc: t('iPhone, Chrome, WordPress, AI assistants', 'iPhone, Chrome, WordPress, βοηθοί AI'), icon: 'plug', badge: { kind: 'new' as const, label: t('New', 'Νέο') } },
           { href: lp('/platform/pricing'), label: t('Plans & pricing', 'Πακέτα & τιμές'), desc: t('Start free, upgrade when it pays', 'Ξεκινήστε δωρεάν'), icon: 'tag', badge: FREE },
         ],
       },

@@ -74,6 +74,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/platform/for/in-house', priority: 0.85, changeFrequency: 'monthly' as const },
     { path: '/platform/for/ecommerce', priority: 0.85, changeFrequency: 'monthly' as const },
     { path: '/platform/iphone', priority: 0.8, changeFrequency: 'monthly' as const },
+    // One login everywhere: the integrations hub and its three product pages.
+    { path: '/platform/integrations', priority: 0.8, changeFrequency: 'monthly' as const },
+    { path: '/platform/chrome-extension', priority: 0.8, changeFrequency: 'monthly' as const },
+    { path: '/platform/wordpress', priority: 0.8, changeFrequency: 'monthly' as const },
+    { path: '/platform/mcp', priority: 0.8, changeFrequency: 'monthly' as const },
     { path: '/platform/security', priority: 0.6, changeFrequency: 'monthly' as const },
     // GSC Boost help center: same slugs in both locales.
     { path: '/help', priority: 0.8 },

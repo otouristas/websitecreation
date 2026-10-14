@@ -18,6 +18,7 @@ AnotherSEOGuru combines a **web design & SEO agency** (primary) with a **GSC-nat
 2. **Bilingual surface** - Greek under `/el`, English under `/en`, with hreflang on shared pages.
 3. **Proof inventory** - 71 live client projects documented under `/work` with homepage screenshots and case-study summaries.
 4. **Platform modules** - Semantic keyword clustering, rank tracking from GSC, technical audits / Core Web Vitals, GEO/AEO citation tracking, AI-assisted workflows, sprint/task board. Marketing: `/en/platform`.
+5. **Integrations (one login)** - The same account works in a Chrome extension (`/en/platform/chrome-extension`), a WordPress plugin (`/en/platform/wordpress`), an MCP server for AI assistants (`/en/platform/mcp`, remote URL https://app.anotherseoguru.com/mcp or `npx @anotherseoguru/mcp`) and the iPhone app; hub: `/en/platform/integrations`. Greek versions under `/el/platform/...`.
 
 ---
 

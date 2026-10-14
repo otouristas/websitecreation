@@ -341,6 +341,11 @@ export default function Footer({ locale: localeProp }: { locale?: SiteLocale }):
                   </Link>
                 </li>
                 <li>
+                  <Link href={lp("/platform/integrations")} className={columnLinkClass}>
+                    Integrations
+                  </Link>
+                </li>
+                <li>
                   <Link href={lp("/compare")} className={columnLinkClass}>
                     Compare alternatives
                   </Link>

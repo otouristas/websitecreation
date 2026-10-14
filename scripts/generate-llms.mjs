@@ -329,6 +329,10 @@ function buildShort({ services, servicesEl, industries, industriesEl, greece, pr
   lines.push(
     hubLine('GSC Boost (SEO software)', `${BASE}/en/platform`, 'Google Search Console-native SEO software: ranked fixes with click estimates, rank tracking, site audit, AI visibility. Web app at app.anotherseoguru.com (EN + EL).'),
     hubLine('GSC Boost for iPhone (beta)', `${BASE}/en/platform/iphone`, 'Native iOS 17+ app on the same account: weekly fixes, rank tracking, alerts, AI evidence, widgets. In TestFlight beta, not yet on the App Store.'),
+    hubLine('GSC Boost integrations (one login)', `${BASE}/en/platform/integrations`, 'One AnotherSEOGuru account for the web app, iPhone, Chrome extension, WordPress plugin and AI assistants (MCP); manage them in Settings → Connected apps (EN + EL).'),
+    hubLine('SEO Chrome extension', `${BASE}/en/platform/chrome-extension`, 'Free on-page SEO checks (meta, headings, links, images, schema, Open Graph, hreflang, Core Web Vitals) and Google results tools without an account; signed in, the page\'s own Search Console data. Coming to the Chrome Web Store.'),
+    hubLine('WordPress Search Console plugin', `${BASE}/en/platform/wordpress`, 'Search Console numbers per post in the block and classic editor, tasks, one-click title/meta fixes into Rank Math, Yoast, AIOSEO, SEOPress or The SEO Framework (with undo), IndexNow. Free zip download; WordPress.org listing in review.'),
+    hubLine('Google Search Console MCP server', `${BASE}/en/platform/mcp`, 'Search Console data, fix list, tasks and AI visibility in Claude, ChatGPT, Cursor, VS Code and Windsurf. Remote server https://app.anotherseoguru.com/mcp (OAuth) or npx @anotherseoguru/mcp login.'),
     hubLine('GSC Boost help center', `${BASE}/en/help`, 'How the SEO software works: Search Console setup, opportunities, rank tracking, site audit, AI visibility, agency tools and billing (EN + EL).'),
   );
   lines.push('');
@@ -504,6 +508,9 @@ function buildFull({ services, servicesEl, industries, industriesEl, greece, pro
   );
   lines.push(
     '4. **Platform modules** - Semantic keyword clustering, rank tracking from GSC, technical audits / Core Web Vitals, GEO/AEO citation tracking, AI-assisted workflows, sprint/task board. Marketing: `/en/platform`.',
+  );
+  lines.push(
+    '5. **Integrations (one login)** - The same account works in a Chrome extension (`/en/platform/chrome-extension`), a WordPress plugin (`/en/platform/wordpress`), an MCP server for AI assistants (`/en/platform/mcp`, remote URL https://app.anotherseoguru.com/mcp or `npx @anotherseoguru/mcp`) and the iPhone app; hub: `/en/platform/integrations`. Greek versions under `/el/platform/...`.',
   );
   lines.push('');
   lines.push('---');
