@@ -15,7 +15,8 @@ import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 import { getNavDictionary } from '@/lib/i18n/get-dictionary';
 import { trackCtaClick } from '@/lib/analytics';
 import { WHATSAPP_HREF } from '@/lib/contact-info';
-import { getTrustStats, MARKETS_LABEL } from '@/data/trust-stats';
+import { appLink } from '@/components/gsc-boost/copy';
+import { GoogleTile } from '@/components/kit/sections';
 import type { NavItem, NavMenu, NavModel } from '@/data/nav-menu';
 
 interface MobileNavProps {
@@ -199,7 +200,8 @@ export function MobileNav({ locale, alternateHref, isOpen, onClose, model }: Mob
 
   if (!isOpen || !portalHost) return null;
 
-  const stats = getTrustStats(locale);
+  const signupHref = appLink('/signup', locale, 'mobile-nav');
+  const loginHref = appLink('/login', locale, 'mobile-nav');
   const menu = model.menus.find((m) => m.id === tab) ?? model.menus[0];
   const more: NavItem[] = [...model.links, { href: lp('/about'), label: locale === 'el' ? 'Ποιοι είμαστε' : 'About' }, { href: lp('/contact'), label: nav.contact }];
 
@@ -237,32 +239,27 @@ export function MobileNav({ locale, alternateHref, isOpen, onClose, model }: Mob
       </div>
 
       <div className="flex-1 overflow-y-auto overscroll-contain">
-        {/* Promo line, edge to edge. */}
-        <Link
-          href={model.promo.href}
-          onClick={() => {
-            trackCtaClick('mobile_nav_promo');
-            onClose();
-          }}
-          className="flex items-center gap-2.5 border-b border-signal/25 bg-signal/10 px-5 py-3"
-        >
-          <MarketingBadge kind="new">{model.promo.tag}</MarketingBadge>
-          <span className="min-w-0 flex-1 truncate text-[0.8125rem] font-medium text-foreground">{model.promo.text}</span>
-          <ArrowRight className="size-4 shrink-0 text-signal" />
-        </Link>
-
-        {/* Marketing indicators: numbers derived from the portfolio and company facts. */}
-        <dl className="grid grid-cols-4 divide-x divide-hairline border-b border-hairline">
-          {stats.map((stat) => (
-            <div key={stat.label} className="px-1.5 py-3 text-center min-[360px]:px-2">
-              <dt className="sr-only">{stat.label}</dt>
-              <dd>
-                <span className="block font-display text-base font-semibold leading-tight text-foreground">{stat.value}</span>
-                <span className="mt-0.5 block text-[0.625rem] leading-tight text-muted-foreground min-[360px]:text-[0.6875rem]">{stat.label}</span>
-              </dd>
-            </div>
-          ))}
-        </dl>
+        {/* Sign-up first: the software is the one thing a visitor can start
+            right now, so it leads the sheet instead of a promo line and stats. */}
+        <div className="border-b border-hairline px-4 py-4 min-[400px]:px-5">
+          <a
+            href={signupHref}
+            onClick={() => {
+              trackCtaClick('mobile_nav_signup');
+              onClose();
+            }}
+            className="flex h-12 items-center justify-center gap-2.5 rounded-xl asg-primary-action pl-2 pr-4 font-display text-[0.9375rem] font-semibold text-primary-foreground shadow-[inset_0_1px_0_0_oklch(1_0_0/30%)]"
+          >
+            <GoogleTile className="size-8" />
+            {model.startFree.label}
+          </a>
+          <div className="mt-2.5 flex items-center justify-between gap-3 text-[0.8125rem]">
+            <span className="min-w-0 truncate text-muted-foreground">{nav.signUpNote}</span>
+            <a href={loginHref} onClick={onClose} className="shrink-0 font-medium text-link">
+              {nav.logIn}
+            </a>
+          </div>
+        </div>
 
         {/* Tabs mirror the desktop mega menus. */}
         <div role="tablist" aria-label={nav.openMenu} className="sticky top-0 z-10 flex overflow-x-auto border-b border-hairline bg-background/95 backdrop-blur scrollbar-none">
@@ -315,9 +312,6 @@ export function MobileNav({ locale, alternateHref, isOpen, onClose, model }: Mob
             </Link>
           ))}
         </div>
-        <p className="px-5 py-4 text-xs leading-relaxed text-muted-foreground">
-          <span className="font-medium text-foreground">{copy.markets}:</span> {MARKETS_LABEL[locale]}
-        </p>
       </div>
 
       <div className="shrink-0 border-t border-hairline bg-background px-4 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-3">

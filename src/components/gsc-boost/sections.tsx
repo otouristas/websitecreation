@@ -223,8 +223,8 @@ export function HowItWorks({ locale, source, tinted = false }: { readonly locale
           {
             title: isEl ? "Συνδέστε τη Google" : "Connect Google",
             text: isEl
-              ? "Συνδεθείτε με Google και εγκρίνετε πρόσβαση μόνο για ανάγνωση. Εμφανίζονται όλα τα properties στα οποία έχει πρόσβαση ο λογαριασμός σας· επιλέξτε από πού θα ξεκινήσετε."
-              : "Sign in with Google and approve read-only access. Every property your account can see is listed; pick where to start.",
+              ? "Κάντε εγγραφή με Google και εγκρίνετε πρόσβαση μόνο για ανάγνωση. Εμφανίζονται όλα τα properties στα οποία έχει πρόσβαση ο λογαριασμός σας· επιλέξτε από πού θα ξεκινήσετε."
+              : "Sign up with Google and approve read-only access. Every property your account can see is listed; pick where to start.",
             preview: <PropertiesMini locale={locale} />,
           },
           {

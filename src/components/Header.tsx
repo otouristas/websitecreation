@@ -4,11 +4,9 @@ import { useEffect, useMemo, useState, type ReactElement } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
-import { PHONE_DISPLAY, WHATSAPP_HREF } from "@/lib/contact-info";
 import { BrandLogo } from "@/components/BrandLogo";
 import { MegaNav } from "@/components/nav/MegaNav";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { MobileNav } from "@/components/MobileNav";
 import { localizedPath, siteLocaleFromPath, type SiteLocale } from "@/lib/i18n/locale";
@@ -16,6 +14,7 @@ import { getNavDictionary } from "@/lib/i18n/get-dictionary";
 import { getNavModel } from "@/data/nav-menu";
 import { getTrustChips } from "@/data/trust-stats";
 import { trackCtaClick } from "@/lib/analytics";
+import { appLink } from "@/components/gsc-boost/copy";
 
 export default function Header({
   locale: localeProp,
@@ -29,6 +28,8 @@ export default function Header({
   const model = useMemo(() => getNavModel(locale), [locale]);
   const chips = getTrustChips(locale);
   const lp = (path: string) => localizedPath(locale, path);
+  const signupHref = appLink("/signup", locale, "header");
+  const loginHref = appLink("/login", locale, "header");
 
   useEffect(() => {
     function handleScroll(): void {
@@ -93,26 +94,39 @@ export default function Header({
               <MegaNav model={model} chips={chips} />
             </div>
             <div className="flex shrink-0 items-center gap-1 min-[400px]:gap-1.5 sm:gap-2">
-              <LanguageSwitcher alternateHref={alternateHref} />
-              <ThemeToggle locale={locale} />
+              {/* Below 360px the switcher lives only in the mobile menu, so the
+                  logo, Sign up and the menu button fit. */}
+              <div className="hidden min-[360px]:block">
+                <LanguageSwitcher alternateHref={alternateHref} />
+              </div>
+              {/* The theme toggle lives in the mobile menu below sm, to make room for Sign up. */}
+              <div className="hidden sm:block">
+                <ThemeToggle locale={locale} />
+              </div>
               <a
-                href={WHATSAPP_HREF}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => trackCtaClick("header_whatsapp")}
-                className="hidden items-center gap-1.5 rounded-full px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-foreground/5 hover:text-foreground xl:inline-flex"
-                aria-label={`WhatsApp ${PHONE_DISPLAY}`}
+                href={loginHref}
+                onClick={() => trackCtaClick("header_login")}
+                className="hidden h-9 items-center whitespace-nowrap rounded-full px-3 text-sm font-medium text-muted-foreground transition-colors hover:bg-foreground/5 hover:text-foreground 2xl:inline-flex"
               >
-                <WhatsAppIcon className="h-4 w-4 text-[#25D366]" />
-                <span className="hidden 2xl:inline">{PHONE_DISPLAY}</span>
+                {nav.logIn}
               </a>
+              {/* The quote is the secondary action. Below xl the mega menu needs the
+                  room; the mobile bar and menu carry the quote below lg. */}
               <Link
                 href={lp("/get-started")}
                 onClick={() => trackCtaClick("header_get_quote")}
-                className="hidden h-9 items-center gap-1.5 rounded-full px-4 font-display text-sm font-semibold text-primary-foreground asg-primary-action shadow-[inset_0_1px_0_0_oklch(1_0_0/18%),0_0_0_1px_color-mix(in_oklab,var(--primary-glow)_35%,transparent),0_8px_24px_-10px_color-mix(in_oklab,var(--primary)_80%,transparent)] transition-[transform,box-shadow] duration-200 hover:-translate-y-px md:inline-flex motion-reduce:transition-none"
+                className="hidden h-9 items-center whitespace-nowrap rounded-full border border-hairline px-3.5 text-sm font-medium text-foreground transition-colors hover:bg-foreground/5 xl:inline-flex"
               >
-                {nav.getQuote}
+                {nav.getQuoteShort}
               </Link>
+              <a
+                href={signupHref}
+                onClick={() => trackCtaClick("header_signup")}
+                className="inline-flex h-9 items-center gap-1.5 whitespace-nowrap rounded-full px-3.5 font-display text-sm font-semibold text-primary-foreground asg-primary-action shadow-[inset_0_1px_0_0_oklch(1_0_0/18%),0_0_0_1px_color-mix(in_oklab,var(--primary-glow)_35%,transparent),0_8px_24px_-10px_color-mix(in_oklab,var(--primary)_80%,transparent)] transition-[transform,box-shadow] duration-200 hover:-translate-y-px sm:px-4 motion-reduce:transition-none"
+              >
+                <span className="sm:hidden">{nav.signUpShort}</span>
+                <span className="hidden sm:inline">{nav.signUp}</span>
+              </a>
               <button
                 type="button"
                 className="grid size-9 shrink-0 place-items-center rounded-full border border-hairline text-foreground transition-colors hover:bg-foreground/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring lg:hidden"

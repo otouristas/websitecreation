@@ -414,7 +414,7 @@ export function HomePageView({ locale }: { locale: SiteLocale }) {
             steps={[
               {
                 title: tx('Connect Google', 'Συνδέστε τη Google'),
-                text: tx('Sign in with Google and approve read-only access. Pick the site to start with.', 'Συνδεθείτε με Google και δώστε πρόσβαση μόνο για ανάγνωση. Διαλέξτε ιστοσελίδα.'),
+                text: tx('Sign up with Google and approve read-only access. Pick the site to start with.', 'Κάντε εγγραφή με Google και δώστε πρόσβαση μόνο για ανάγνωση. Διαλέξτε ιστοσελίδα.'),
                 preview: <PropertiesMini locale={l} />,
               },
               {

@@ -9,6 +9,7 @@ import { getNavDictionary } from '@/lib/i18n/get-dictionary';
 import { trackCtaClick } from '@/lib/analytics';
 import { PHONE_DISPLAY, WHATSAPP_HREF } from '@/lib/contact-info';
 import { WhatsAppIcon } from '@/components/icons/WhatsAppIcon';
+import { appLink } from '@/components/gsc-boost/copy';
 
 /**
  * Space the floating pill takes at the bottom of the viewport: 3.5rem pill +
@@ -30,8 +31,8 @@ const WHATSAPP_ARIA = {
 } as const;
 
 /**
- * Mobile conversion bar: one floating glass pill holding both actions, the
- * quote and WhatsApp, in the iOS "liquid glass" style. It replaces the old
+ * Mobile conversion bar: one floating glass pill holding sign-up (primary),
+ * the quote and WhatsApp, in the iOS "liquid glass" style. It replaces the old
  * full-width bottom bar plus the separate green WhatsApp pill, which stacked
  * on top of each other and covered the page. On desktop only the WhatsApp
  * pill (WhatsAppPill) remains.
@@ -68,13 +69,20 @@ export function StickyMobileCta(): ReactElement | null {
             aria-hidden
             className="pointer-events-none absolute inset-x-3 top-0 h-1/2 rounded-t-full bg-[linear-gradient(to_bottom,oklch(1_0_0/18%),transparent)]"
           />
+          <a
+            href={appLink('/signup', locale, 'sticky-mobile')}
+            onClick={() => trackCtaClick('sticky_mobile_signup')}
+            className="relative flex h-12 min-w-0 flex-[1.15] items-center justify-center gap-1.5 rounded-full asg-primary-action px-3 font-display text-[0.875rem] font-semibold text-primary-foreground shadow-[inset_0_1px_0_0_oklch(1_0_0/25%),0_6px_18px_-8px_color-mix(in_oklab,var(--primary)_90%,transparent)] active:scale-[0.98] min-[400px]:text-[0.9375rem] motion-reduce:active:scale-100"
+          >
+            <span className="truncate">{locale === "el" ? nav.signUpShort : nav.signUp}</span>
+          </a>
           <Link
             href={lp('/get-started')}
             onClick={() => trackCtaClick('sticky_mobile_quote')}
-            className="relative flex h-12 min-w-0 flex-1 items-center justify-center gap-1.5 rounded-full asg-primary-action px-4 font-display text-[0.9375rem] font-semibold text-primary-foreground shadow-[inset_0_1px_0_0_oklch(1_0_0/25%),0_6px_18px_-8px_color-mix(in_oklab,var(--primary)_90%,transparent)] active:scale-[0.98] motion-reduce:active:scale-100"
+            className="relative flex h-12 min-w-0 flex-1 items-center justify-center gap-1 rounded-full border border-white/20 px-3 text-[0.875rem] font-semibold text-foreground active:scale-[0.98] light:border-black/10 min-[400px]:text-[0.9375rem] motion-reduce:active:scale-100"
           >
-            <span className="truncate">{nav.getQuote}</span>
-            <ArrowRight className="size-4 shrink-0" aria-hidden />
+            <span className="truncate">{nav.getQuoteShort}</span>
+            <ArrowRight className="size-4 shrink-0 max-[359px]:hidden" aria-hidden />
           </Link>
           <a
             href={WHATSAPP_HREF}
@@ -82,10 +90,9 @@ export function StickyMobileCta(): ReactElement | null {
             rel="noopener noreferrer"
             onClick={() => trackCtaClick('sticky_mobile_whatsapp')}
             aria-label={WHATSAPP_ARIA[locale] ?? WHATSAPP_ARIA.en}
-            className="relative flex h-12 shrink-0 items-center justify-center gap-1.5 rounded-full bg-[#25D366] px-4 text-[0.9375rem] font-semibold text-[#062a14] shadow-[inset_0_1px_0_0_oklch(1_0_0/35%)] active:scale-[0.98] motion-reduce:active:scale-100"
+            className="relative grid size-12 shrink-0 place-items-center rounded-full bg-[#25D366] text-[#062a14] shadow-[inset_0_1px_0_0_oklch(1_0_0/35%)] active:scale-[0.98] motion-reduce:active:scale-100"
           >
             <WhatsAppIcon className="size-5 shrink-0" />
-            <span className="max-[359px]:sr-only">WhatsApp</span>
           </a>
         </div>
       </div>

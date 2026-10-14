@@ -108,7 +108,7 @@ export function getNavModel(locale: SiteLocale): NavModel {
   const AI = { kind: 'ai' as const, label: 'AI' };
 
   const freeAudit = { href: `${lp('/get-started')}#free-audit`, label: t('Free SEO audit', 'Δωρεάν έλεγχος SEO') };
-  const startFree = { href: signup, label: t('Start free with Google', 'Δωρεάν έναρξη με Google') };
+  const startFree = { href: signup, label: t('Sign up free with Google', 'Δωρεάν εγγραφή με Google') };
 
   const services: NavMenu = {
     id: 'services',
