@@ -1,11 +1,14 @@
-import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { ChevronRight } from "lucide-react";
+import { Mail } from "lucide-react";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
-import { KitBreadcrumbs } from "@/components/page-kit";
-import { ContactCard, HelpShell, helpCopy } from "@/components/help/HelpShell";
-import { CATEGORY_ICON, helpContent, helpMetaDescription, helpPath } from "@/data/help";
+import { ArticleBody } from "@/components/help/ArticleBody";
+import { ContactCard, SUPPORT_EMAIL, helpCopy } from "@/components/help/HelpShell";
+import { DocsPage } from "@/components/docs/DocsPage";
+import { DocsShell } from "@/components/docs/DocsShell";
+import { SignupCard } from "@/components/docs/SignupCard";
+import { categoryIcon, tabForCategory } from "@/lib/docs/nav";
+import { IPHONE_CATEGORY, helpContent, helpMetaDescription, helpPath, type Block, type Shot } from "@/data/help";
 import { isValidLocale, localizedPath, type SiteLocale } from "@/lib/i18n/locale";
 import { buildMetadata } from "@/lib/seo";
 import { combineSchemas, generateBreadcrumbSchema, generateCollectionPageSchema } from "@/lib/seo/schema";
@@ -24,13 +27,21 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!isValidLocale(locale)) return {};
   const cat = helpContent(locale).find((c) => c.slug === category);
   if (!cat) return {};
-  return buildMetadata({
+  const meta = buildMetadata({
     title: `${cat.title} · ${helpCopy(locale).home}`,
     description: helpMetaDescription(cat.description, locale),
     path: helpPath(locale, cat.slug),
     hreflangPath: `/help/${cat.slug}`,
     hreflangLocales: ["en", "el"],
   });
+  return { ...meta, alternates: { ...meta.alternates, types: { "text/markdown": `https://anotherseoguru.com${helpPath(locale, cat.slug)}.md` } } };
+}
+
+/** Every iPhone screenshot used in the guides, once, for the overview gallery. */
+function iphoneShots(blocks: ReadonlyArray<Block>): Shot[] {
+  return blocks.flatMap((b): Shot[] =>
+    b.type === "image" && b.device === "iphone" ? [b] : b.type === "gallery" ? [...b.items] : b.type === "steps" ? b.items.flatMap((i) => (typeof i !== "string" && i.image?.device === "iphone" ? [i.image] : [])) : b.type === "tabs" ? b.items.flatMap((t) => iphoneShots(t.blocks)) : [],
+  );
 }
 
 export default async function HelpCategoryPage({ params }: PageProps) {
@@ -40,50 +51,71 @@ export default async function HelpCategoryPage({ params }: PageProps) {
   const cat = helpContent(locale).find((c) => c.slug === category);
   if (!cat) notFound();
   const t = helpCopy(locale);
-  const Icon = CATEGORY_ICON[cat.slug];
+  const el = locale === "el";
+  const isIphone = cat.slug === IPHONE_CATEGORY;
+  const path = helpPath(locale, cat.slug);
   const crumbs = [
     { name: t.homeCrumb, url: localizedPath(locale, "/") },
     { name: t.short, url: helpPath(locale) },
-    { name: cat.title, url: helpPath(locale, cat.slug) },
+    { name: cat.title, url: path },
   ];
   const schemas = combineSchemas(
     generateBreadcrumbSchema({ items: crumbs }),
     generateCollectionPageSchema({
       name: cat.title,
       description: cat.description,
-      url: `https://anotherseoguru.com${helpPath(locale, cat.slug)}`,
+      url: `https://anotherseoguru.com${path}`,
       inLanguage: locale,
       items: cat.articles.map((a) => ({ name: a.title, url: `https://anotherseoguru.com${helpPath(locale, cat.slug, a.slug)}`, itemType: "TechArticle" })),
     }),
   );
 
+  const seen = new Set<string>();
+  const shots = isIphone
+    ? cat.articles.flatMap((a) => iphoneShots(a.body)).filter((s) => (seen.has(s.src) ? false : (seen.add(s.src), true))).slice(0, 6)
+    : [];
+  const blocks: Block[] = [
+    { type: "h2", id: "articles", text: el ? "Οδηγοί" : "Guides" },
+    { type: "cards", cols: 2, items: cat.articles.map((a) => ({ title: a.title, text: a.description, href: helpPath(locale, cat.slug, a.slug), icon: categoryIcon(cat.slug) })) },
+    ...(shots.length
+      ? ([
+          { type: "h2", id: "screens", text: el ? "Οθόνες από τη beta" : "Screens from the beta" },
+          { type: "gallery", items: shots.slice(0, 3) },
+          ...(shots.length > 3 ? [{ type: "gallery", items: shots.slice(3, 6) } as Block] : []),
+        ] as Block[])
+      : []),
+  ];
+
   return (
-    <HelpShell locale={locale} current={cat.slug}>
+    <DocsShell locale={locale} tab={tabForCategory(cat.slug)} alternateHref={helpPath(el ? "en" : "el", cat.slug)}>
       <SchemaMarkup schemas={schemas} />
-      <div className="mx-auto max-w-3xl px-4 py-10 sm:px-8 lg:py-12">
-        <KitBreadcrumbs items={crumbs} align="left" />
-        <div className="mt-7 flex items-start gap-4">
-          <span className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-primary/12 text-primary-glow">{Icon ? <Icon className="size-6" aria-hidden /> : null}</span>
-          <div>
-            <h1 className="font-display text-[34px] font-semibold leading-tight tracking-[-0.035em] text-foreground">{cat.title}</h1>
-            <p className="mt-2 text-[17px] leading-relaxed text-muted-foreground">{cat.description}</p>
-          </div>
-        </div>
-        <ul className="mt-10 grid gap-3">
-          {cat.articles.map((a) => (
-            <li key={a.slug}>
-              <Link href={helpPath(locale, cat.slug, a.slug)} className="group flex items-center gap-4 rounded-2xl border border-hairline bg-surface px-6 py-5 transition-colors hover:border-primary/40">
-                <span className="min-w-0 flex-1">
-                  <span className="block font-display text-[16.5px] font-semibold tracking-[-0.015em] text-foreground">{a.title}</span>
-                  <span className="mt-1 block text-[14px] leading-relaxed text-muted-foreground">{a.description}</span>
-                </span>
-                <ChevronRight className="size-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5" aria-hidden />
-              </Link>
-            </li>
-          ))}
-        </ul>
+      <DocsPage
+        locale={locale}
+        eyebrow={isIphone ? "Beta" : t.short}
+        title={cat.title}
+        description={cat.description}
+        path={path}
+        headings={[
+          { id: "articles", text: el ? "Οδηγοί" : "Guides", level: 2 },
+          ...(shots.length ? [{ id: "screens", text: el ? "Οθόνες από τη beta" : "Screens from the beta", level: 2 as const }] : []),
+        ]}
+        rail={<SignupCard locale={locale} source={`help-category-${cat.slug}`} />}
+      >
+        {isIphone ? (
+          <a
+            href={`mailto:${SUPPORT_EMAIL}?subject=${encodeURIComponent("iPhone beta access")}`}
+            className="mt-6 flex items-center gap-3 rounded-2xl border border-primary/30 bg-primary/[0.07] px-5 py-4 text-[15px] text-foreground hover:border-primary/60"
+          >
+            <Mail className="size-4.5 shrink-0 text-primary-glow" aria-hidden />
+            <span className="flex-1">
+              {el ? "Η εφαρμογή είναι σε beta στο TestFlight. Ζητήστε πρόσκληση με ένα email." : "The app is in beta on TestFlight. Ask for an invite with one email."}
+            </span>
+            <span className="font-semibold text-primary-glow">{el ? "Ζητήστε πρόσβαση" : "Request access"}</span>
+          </a>
+        ) : null}
+        <ArticleBody blocks={blocks} locale={locale} />
         <ContactCard locale={locale} className="mt-12" />
-      </div>
-    </HelpShell>
+      </DocsPage>
+    </DocsShell>
   );
 }

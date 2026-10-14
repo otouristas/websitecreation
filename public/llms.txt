@@ -32,7 +32,47 @@ Last Updated: 2026-10-14
 - **SEO Chrome extension** (<https://anotherseoguru.com/en/platform/chrome-extension>) - Free on-page SEO checks (meta, headings, links, images, schema, Open Graph, hreflang, Core Web Vitals) and Google results tools without an account; signed in, the page's own Search Console data. Coming to the Chrome Web Store.
 - **WordPress Search Console plugin** (<https://anotherseoguru.com/en/platform/wordpress>) - Search Console numbers per post in the block and classic editor, tasks, one-click title/meta fixes into Rank Math, Yoast, AIOSEO, SEOPress or The SEO Framework (with undo), IndexNow. Free zip download; WordPress.org listing in review.
 - **Google Search Console MCP server** (<https://anotherseoguru.com/en/platform/mcp>) - Search Console data, fix list, tasks and AI visibility in Claude, ChatGPT, Cursor, VS Code and Windsurf. Remote server https://app.anotherseoguru.com/mcp (OAuth) or npx @anotherseoguru/mcp login.
-- **GSC Boost help center** (<https://anotherseoguru.com/en/help>) - How the SEO software works: Search Console setup, opportunities, rank tracking, site audit, AI visibility, agency tools and billing (EN + EL).
+- **GSC Boost docs** (<https://anotherseoguru.com/en/help>) - How the SEO software works on the web and iPhone: Search Console setup, opportunities, rank tracking, site audit, AI visibility, agency tools and billing (EN + EL). Every docs page has a Markdown twin at its URL + ".md".
+- **SEO glossary** (<https://anotherseoguru.com/en/glossary>) - Over 100 SEO, AEO and GEO terms, one page each with definition, example and how to apply it (EN + EL).
+
+## GSC Boost Docs (Markdown)
+- [Getting started: What GSC Boost does](https://anotherseoguru.com/en/help/getting-started/welcome.md) - A tour of the product: your Search Console data, turned into a ranked list of fixes.
+- [Getting started: Connect Google Search Console](https://anotherseoguru.com/en/help/getting-started/connect-search-console.md) - Sign in with Google, choose your properties and understand what we can and can't see.
+- [Getting started: Projects, brand terms and switching sites](https://anotherseoguru.com/en/help/getting-started/projects-and-sites.md) - How projects work, why brand terms matter and how to manage many sites.
+- [Getting started: A 10-minute weekly routine](https://anotherseoguru.com/en/help/getting-started/weekly-routine.md) - The quickest way to get value every week, step by step.
+- [Search performance: The This week dashboard](https://anotherseoguru.com/en/help/search-performance/this-week.md) - What each part of your home screen means and how to read it.
+- [Search performance: Queries, pages, countries and devices](https://anotherseoguru.com/en/help/search-performance/queries-and-pages.md) - Explore every row Search Console returns, filter it and export it.
+- [Search performance: Date ranges, comparisons and why numbers differ](https://anotherseoguru.com/en/help/search-performance/date-ranges.md) - Pick ranges, compare periods and understand differences from other tools.
+- [Search performance: Annotations and measuring changes](https://anotherseoguru.com/en/help/search-performance/annotations.md) - Mark what you shipped and Google's updates, then see their effect on the chart.
+- [Opportunities and tasks: How opportunities are found and estimated](https://anotherseoguru.com/en/help/opportunities-tasks/opportunities.md) - The five detectors, how click impact is estimated and how to use the list.
+- [Opportunities and tasks: Tasks, the board and measured results](https://anotherseoguru.com/en/help/opportunities-tasks/tasks-and-results.md) - Keep every fix in one list, ship it and see what it earned.
+- [Keywords and content: Keyword research, collections and clusters](https://anotherseoguru.com/en/help/keywords-content/keyword-research.md) - Find keywords, save them and group them into topics.
+- [Keywords and content: Rank tracking from Search Console](https://anotherseoguru.com/en/help/keywords-content/rank-tracking.md) - Track daily positions for the keywords you care about, free.
+- [Keywords and content: Briefs, the writer and WordPress publishing](https://anotherseoguru.com/en/help/keywords-content/content-studio.md) - Go from a keyword to a published page.
+- [Site audit: Running a site audit](https://anotherseoguru.com/en/help/site-audit/running-an-audit.md) - Crawl your site, read the issues and compare crawls over time.
+- [Site audit: Indexability, Core Web Vitals and internal links](https://anotherseoguru.com/en/help/site-audit/indexability-and-speed.md) - Find pages Google may not index, slow pages and weakly linked pages.
+- [Site audit: The page inspector](https://anotherseoguru.com/en/help/site-audit/page-inspector.md) - Check everything Google reads on a single page.
+- [Competitors and AI visibility: Competitors, keyword gap and backlinks](https://anotherseoguru.com/en/help/competitors-ai/competitors.md) - See how you compare, what they rank for that you don't and who links to them.
+- [Competitors and AI visibility: AI visibility: ChatGPT, Gemini, Perplexity and AI Overviews](https://anotherseoguru.com/en/help/competitors-ai/ai-visibility.md) - Track whether AI assistants name you, and what to do about it.
+- [Competitors and AI visibility: Local rankings](https://anotherseoguru.com/en/help/competitors-ai/local-rankings.md) - See your Google Maps rank on a grid around your business.
+- [Agencies: Clients and the client portal](https://anotherseoguru.com/en/help/agencies/clients-and-portal.md) - Keep accounts in one place and give clients their own live portal.
+- [Agencies: Leads, free audits and proposals](https://anotherseoguru.com/en/help/agencies/leads-and-proposals.md) - Turn website requests into audited leads and proposals ready to send.
+- [Agencies: Client reports and strategy workbooks](https://anotherseoguru.com/en/help/agencies/reports.md) - Send branded reports and full strategy workbooks.
+- [Account and billing: Plans and credits](https://anotherseoguru.com/en/help/account-billing/plans-and-credits.md) - What each plan includes and which actions use credits.
+- [Account and billing: Alerts, integrations and branding](https://anotherseoguru.com/en/help/account-billing/alerts-and-integrations.md) - Get notified about drops and connect the tools you use.
+- [Account and billing: Your data, privacy and Google access](https://anotherseoguru.com/en/help/account-billing/privacy-and-data.md) - What we read, what we store and how to remove it.
+- [Account and billing: Troubleshooting](https://anotherseoguru.com/en/help/account-billing/troubleshooting.md) - Fixes for the most common problems.
+- [iPhone app: Get the iPhone beta](https://anotherseoguru.com/en/help/iphone-app/get-the-beta.md) - The iPhone app is in beta through Apple's TestFlight. Here's how to request an invite and install it.
+- [iPhone app: Sign in and sync with the web app](https://anotherseoguru.com/en/help/iphone-app/sign-in-and-sync.md) - Use the same GSC Boost account on your iPhone. What syncs, what stays on the device and how to switch language.
+- [iPhone app: Today and this week's fixes](https://anotherseoguru.com/en/help/iphone-app/today.md) - Read the Today tab, act on this week's fixes and measure them in Work.
+- [iPhone app: Search performance on iPhone](https://anotherseoguru.com/en/help/iphone-app/search-performance.md) - Open any search or page in detail, change dates and compare periods, and read GA4 traffic acquisition.
+- [iPhone app: Keywords, rankings and the SERP explorer](https://anotherseoguru.com/en/help/iphone-app/keywords-and-rankings.md) - Research a keyword, track its position and check who gets the clicks on the live results page.
+- [iPhone app: Site audit on iPhone](https://anotherseoguru.com/en/help/iphone-app/site-audit-on-iphone.md) - Start a crawl, leave the app and follow it on the Lock Screen and in the Dynamic Island.
+- [iPhone app: AI visibility on iPhone](https://anotherseoguru.com/en/help/iphone-app/ai-visibility.md) - See where Google's AI Overview cites you, how many visits AI assistants send and how often AI answers mention you.
+- [iPhone app: The AI assistant on iPhone](https://anotherseoguru.com/en/help/iphone-app/assistant.md) - Ask questions about your own Search Console data and follow the assistant as it thinks, reads your data and writes.
+- [iPhone app: Notifications and background refresh](https://anotherseoguru.com/en/help/iphone-app/notifications-and-background-refresh.md) - Choose which push notifications you get, use their buttons and keep the app's numbers fresh in the background.
+- [iPhone app: Widgets and Siri](https://anotherseoguru.com/en/help/iphone-app/widgets.md) - Put your clicks, all your sites and this week's fixes on the Home and Lock Screen, and ask Siri how your site is doing.
+- [iPhone app: iPhone app FAQ](https://anotherseoguru.com/en/help/iphone-app/iphone-faq.md) - Quick answers about the iPhone beta, plans and credits, languages, data access and support.
 
 ## Machine-Readable Feeds for AI Agents
 Structured context so AI assistants and AI search engines can cite accurate AnotherSEOGuru facts:

@@ -12,6 +12,7 @@ export const en: ReadonlyArray<HelpCategory> = [
         description: "A tour of the product: your Search Console data, turned into a ranked list of fixes.",
         body: [
           { type: "p", text: "GSC Boost reads your **Google Search Console** data and turns it into a weekly plan: which pages and queries to work on, what to change, and how many clicks each fix is likely to bring. Everything else in the product (keyword research, the site audit, content, competitors, AI visibility and client work) feeds that same plan." },
+          { type: "image", device: "browser", src: "/images/docs/web/overview-light.webp", srcDark: "/images/docs/web/overview-dark.webp", width: 1600, height: 1000, alt: "The This week screen in GSC Boost with search performance, sales from Analytics and the sidebar navigation", caption: "This week is the home screen: how search is doing and what to fix first." },
           { type: "h2", id: "how-it-works", text: "How it works" },
           { type: "steps", items: [
             "You sign in with Google and pick the Search Console properties you want to work on. Access is read-only.",
@@ -36,6 +37,8 @@ export const en: ReadonlyArray<HelpCategory> = [
             "Use **Ask AI** in the top bar to ask questions about your own data in plain language.",
             "The site switcher at the top of the sidebar changes the property every screen works on.",
           ] },
+          { type: "image", device: "browser", src: "/images/docs/web/command-palette-light.webp", srcDark: "/images/docs/web/command-palette-dark.webp", width: 1600, height: 1000, alt: "The command palette open over the app, with search results for keyword pages and sections", caption: "Press ⌘K to jump to any page, section or site." },
+          { type: "image", device: "browser", src: "/images/docs/web/ask-ai-light.webp", srcDark: "/images/docs/web/ask-ai-dark.webp", width: 1600, height: 1000, alt: "The Ask AI panel open on the right, with suggested questions about the current site", caption: "Ask AI answers questions from the data on the screen you're looking at." },
         ],
       },
       {
@@ -44,6 +47,7 @@ export const en: ReadonlyArray<HelpCategory> = [
         description: "Sign in with Google, choose your properties and understand what we can and can't see.",
         body: [
           { type: "p", text: "GSC Boost works from your own Search Console data, so the first step is connecting the Google account that has access to your properties." },
+          { type: "image", device: "browser", src: "/images/docs/web/signup-light.webp", srcDark: "/images/docs/web/signup-dark.webp", width: 1600, height: 1000, alt: "The GSC Boost sign-up page with the Continue with Google button", caption: "Create your account with Google to connect Search Console in one step." },
           { type: "h2", id: "connect", text: "Connect your account" },
           { type: "steps", items: [
             "Choose **Start with Google** on the sign-up page, or open **Settings → Integrations** if you're already signed in.",
@@ -51,6 +55,7 @@ export const en: ReadonlyArray<HelpCategory> = [
             "Approve the read-only Search Console permission. We never ask for permission to change anything in your Google account.",
             "Choose the properties you want to work on. Each one becomes a project.",
           ] },
+          { type: "image", device: "browser", src: "/images/docs/web/settings-integrations-light.webp", srcDark: "/images/docs/web/settings-integrations-dark.webp", width: 1600, height: 1000, alt: "Settings, Integrations tab, showing Google, Search Console, Google Analytics 4 and WordPress as connected", caption: "Settings → Integrations shows which Google and WordPress connections are active." },
           { type: "h2", id: "property-types", text: "Domain and URL-prefix properties" },
           { type: "p", text: "Both kinds work. A **domain property** (`sc-domain:example.com`) covers every subdomain and protocol, so it usually shows the most complete numbers. A **URL-prefix property** (`https://www.example.com/`) only covers URLs that start with that prefix. If you have both, use the domain property." },
           { type: "h2", id: "data-delay", text: "How fresh the data is" },
@@ -74,6 +79,7 @@ export const en: ReadonlyArray<HelpCategory> = [
           ] },
           { type: "h2", id: "switching", text: "Switching between sites" },
           { type: "p", text: "Use the site switcher at the top of the sidebar, or press `⌘K` and type the domain. **All sites** shows every project on one screen with its trend, drops, top movers and open fixes, which is the fastest way to see where to look first when you manage many sites." },
+          { type: "image", device: "browser", src: "/images/docs/web/portfolio-light.webp", srcDark: "/images/docs/web/portfolio-dark.webp", width: 1600, height: 1000, alt: "The All sites screen with click totals and a card for each site showing its trend, top mover and open fixes", caption: "All sites shows every project on one screen, sorted by the biggest drop." },
           { type: "note", tone: "tip", text: "Your plan sets how many projects you can have: 3 on Launch, 10 on Growth and 30 on Agency." },
         ],
       },
@@ -111,6 +117,7 @@ export const en: ReadonlyArray<HelpCategory> = [
         description: "What each part of your home screen means and how to read it.",
         body: [
           { type: "p", text: "**This week** is your home screen. It answers three questions: how is search doing, what changed, and what should you do next." },
+          { type: "image", device: "browser", src: "/images/docs/web/overview-light.webp", srcDark: "/images/docs/web/overview-dark.webp", width: 1600, height: 1000, alt: "The This week dashboard with the site header, search performance summary and sales from Analytics", caption: "The This week dashboard for a sample site." },
           { type: "h2", id: "search-performance", text: "Search performance" },
           { type: "p", text: "The four tabs show clicks, impressions, CTR and average position for the selected range, with the change against the comparison period. Click a tab (or use the arrow keys) to chart that metric. Dotted markers on the chart are annotations: Google updates and changes you shipped." },
           { type: "h2", id: "health", text: "Search health and the ranking ladder" },
@@ -131,6 +138,7 @@ export const en: ReadonlyArray<HelpCategory> = [
         description: "Explore every row Search Console returns, filter it and export it.",
         body: [
           { type: "p", text: "**Performance** is the full explorer for your Search Console data. Use the tabs for queries, pages, countries, devices and annotations, and the filters at the top to narrow everything to one device or country." },
+          { type: "image", device: "browser", src: "/images/docs/web/performance-queries-light.webp", srcDark: "/images/docs/web/performance-queries-dark.webp", width: 1600, height: 1000, alt: "Performance, Queries tab, with a table of queries showing clicks, impressions, CTR, position and detected opportunities", caption: "Performance → Queries with quick filters and the opportunity column." },
           { type: "h2", id: "filters", text: "Filtering and quick filters" },
           { type: "list", items: [
             "Type in the filter box to match text. Wrap a pattern in slashes, like `/^how to/`, to use a regular expression.",
@@ -188,6 +196,7 @@ export const en: ReadonlyArray<HelpCategory> = [
         description: "The five detectors, how click impact is estimated and how to use the list.",
         body: [
           { type: "p", text: "**Opportunities** looks at every query and page in your data and lists the changes most likely to bring more clicks. Each query or page appears once, under its biggest opportunity." },
+          { type: "image", device: "browser", src: "/images/docs/web/opportunities-light.webp", srcDark: "/images/docs/web/opportunities-dark.webp", width: 1600, height: 1000, alt: "The Opportunities screen with the potential clicks summary, detector tabs and the ranked list of fixes", caption: "Opportunities ranks every fix by estimated clicks per month." },
           { type: "h2", id: "detectors", text: "The detectors" },
           { type: "table", head: ["Detector", "What it finds", "Typical fix"], rows: [
             ["Striking distance", "Non-brand queries ranking 4–20 with real demand.", "Strengthen the page and its internal links to reach the top 3."],
@@ -196,6 +205,7 @@ export const en: ReadonlyArray<HelpCategory> = [
             ["Cannibalization", "Several of your pages competing for the same query.", "Pick one page, merge or redirect the rest."],
             ["Missing content", "Demand you get impressions for but have no good page for.", "Write a dedicated page."],
           ] },
+          { type: "image", device: "browser", src: "/images/docs/web/striking-distance-light.webp", srcDark: "/images/docs/web/striking-distance-dark.webp", width: 1600, height: 1000, alt: "The Striking distance tab listing non-brand queries ranking 4 to 20 with their potential clicks and ranking page", caption: "Striking distance: queries close to the top 3, with the clicks they could add." },
           { type: "h2", id: "estimates", text: "How click impact is estimated" },
           { type: "p", text: "We compare where you rank today with the click-through rate a better position usually earns for that kind of query, and multiply by your impressions. It's an estimate of the size of the prize, not a promise, so use it to decide what to do first." },
           { type: "note", tone: "info", text: "Content decay needs a comparison period. Turn one on in the date control to run that detector." },
@@ -207,14 +217,17 @@ export const en: ReadonlyArray<HelpCategory> = [
         description: "Keep every fix in one list, ship it and see what it earned.",
         body: [
           { type: "p", text: "**Tasks** holds every fix and follow-up, whether it came from an opportunity, the audit, a client request or you." },
+          { type: "image", device: "browser", src: "/images/docs/web/tasks-light.webp", srcDark: "/images/docs/web/tasks-dark.webp", width: 1600, height: 1000, alt: "The Tasks list with counters for in progress, due, overdue and done, and the open tasks below", caption: "Tasks → List, filtered to all sites." },
           { type: "h2", id: "views", text: "List, board and results" },
           { type: "list", items: [
             "**List** for sorting and filtering by status, priority, site or source.",
             "**Board** to move work from to-do to in progress to done.",
             "**Results** for shipped fixes, with the clicks and impressions before and after.",
           ] },
+          { type: "image", device: "browser", src: "/images/docs/web/tasks-board-light.webp", srcDark: "/images/docs/web/tasks-board-dark.webp", width: 1600, height: 1000, alt: "The Tasks board with To do, In progress and Done & shipped columns", caption: "Tasks → Board: drag a card to change its status." },
           { type: "h2", id: "measurement", text: "How results are measured" },
           { type: "p", text: "When you mark a task shipped, we compare the page's Search Console data over the same number of days before and after the ship day, leaving the ship day itself out. We also measure the rest of your site over the same days as a control, so a sitewide rise or seasonal swing isn't credited to your fix." },
+          { type: "image", device: "browser", src: "/images/docs/web/tasks-results-light.webp", srcDark: "/images/docs/web/tasks-results-dark.webp", width: 1600, height: 1000, alt: "Tasks, Results tab, showing clicks gained from shipped fixes, a fix being measured and before-and-after results", caption: "Tasks → Results: what each shipped fix earned, measured against the rest of the site." },
           { type: "note", tone: "tip", text: "Give a fix at least two to four weeks before judging it. Google needs time to recrawl and re-rank the page." },
         ],
       },
@@ -231,6 +244,7 @@ export const en: ReadonlyArray<HelpCategory> = [
         description: "Find keywords, save them and group them into topics.",
         body: [
           { type: "p", text: "**Keywords → Research** shows search volume, difficulty, intent and the results page for any keyword in your market, alongside what you already rank for in Search Console." },
+          { type: "image", device: "browser", src: "/images/docs/web/keywords-research-light.webp", srcDark: "/images/docs/web/keywords-research-dark.webp", width: 1600, height: 1000, alt: "Keywords, Research tab, with the keyword search box, an assistant suggestion and keywords to start from", caption: "Keywords → Research starts from the queries you already rank for." },
           { type: "h2", id: "collections", text: "Collections" },
           { type: "p", text: "Save keywords into collections to build a list for a campaign, a page or a client. You can expand a collection from seed keywords and brainstorm related ideas." },
           { type: "h2", id: "clusters", text: "Clusters and groups" },
@@ -238,6 +252,7 @@ export const en: ReadonlyArray<HelpCategory> = [
             "**Clusters** group keywords that the same page can rank for, so you plan one page per topic instead of one per keyword.",
             "**Groups** let you define your own segments (a product line, a location, a campaign) and follow their clicks and impressions together.",
           ] },
+          { type: "image", device: "browser", src: "/images/docs/web/keywords-clusters-light.webp", srcDark: "/images/docs/web/keywords-clusters-dark.webp", width: 1600, height: 1000, alt: "Keywords, Clusters tab, with topic counts and a list of clusters showing clicks, impressions and average position", caption: "Keywords → Clusters groups your Search Console queries into topics." },
           { type: "note", tone: "info", text: "Keyword research uses live data and costs credits per lookup. The cost is shown on the button before you run it." },
         ],
       },
@@ -251,6 +266,7 @@ export const en: ReadonlyArray<HelpCategory> = [
           { type: "p", text: "Each keyword's position is the average over the last 7 days, weighted by impressions, which is exactly how Search Console reports it. The 7d and 28d columns compare with the 7 days before and with 28 days earlier. Search Console updates daily with about a 3-day delay, and can differ from a single live check of Google." },
           { type: "h2", id: "distribution", text: "Rankings distribution" },
           { type: "p", text: "The card at the top splits your tracked keywords into Top 3, Page 1, Page 2, Page 3+ and Not ranking, and shows how many moved into or out of each tier in the last 28 days. Click a tier to filter the table to it." },
+          { type: "image", device: "browser", src: "/images/docs/web/keywords-tracking-light.webp", srcDark: "/images/docs/web/keywords-tracking-dark.webp", width: 1600, height: 1000, alt: "Keywords, Rank tracking tab, with the rankings distribution card and the tracked keywords table", caption: "Rank tracking with the rankings distribution and 90-day trends." },
           { type: "h2", id: "targets", text: "Targets" },
           { type: "p", text: "Set a target position for a keyword to see how far it is from the goal. Keywords that are close to a target show up as suggestions for your next push." },
         ],
@@ -261,6 +277,7 @@ export const en: ReadonlyArray<HelpCategory> = [
         description: "Go from a keyword to a published page.",
         body: [
           { type: "p", text: "**Content** covers the whole path from idea to published page." },
+          { type: "image", device: "browser", src: "/images/docs/web/content-create-light.webp", srcDark: "/images/docs/web/content-create-dark.webp", width: 1600, height: 1000, alt: "Content, Create tab, with page types, the target keyword field and the site style read from the client's site", caption: "Content → Create: pick a page type and a keyword, and the draft follows the site's own style." },
           { type: "table", head: ["Tool", "Use it to"], rows: [
             ["Create", "Write a complete page (blog post, pillar page, hub or landing page) with schema and a preview."],
             ["Briefs", "Plan a page: the questions to answer, the headings, the competitors that rank and the People Also Ask questions."],
@@ -269,6 +286,7 @@ export const en: ReadonlyArray<HelpCategory> = [
             ["FAQs and Products", "Write FAQ answers and product descriptions with their structured data."],
             ["Templates", "Set your house style and brand voice so every draft sounds like you."],
           ] },
+          { type: "image", device: "browser", src: "/images/docs/web/content-briefs-light.webp", srcDark: "/images/docs/web/content-briefs-dark.webp", width: 1600, height: 1000, alt: "Content, Briefs tab, with saved briefs and a brief showing length, sections, related terms and the outline", caption: "Content → Briefs: the outline, terms and questions a page needs to cover." },
           { type: "h2", id: "wordpress", text: "Connect WordPress" },
           { type: "steps", items: [
             "In WordPress, create an application password under **Users → Profile**.",
@@ -291,6 +309,7 @@ export const en: ReadonlyArray<HelpCategory> = [
         description: "Crawl your site, read the issues and compare crawls over time.",
         body: [
           { type: "p", text: "**Site audit → Issues** crawls your site from the homepage and sitemap, checks every page for the problems that block rankings, and saves each crawl so you can compare them." },
+          { type: "image", device: "browser", src: "/images/docs/web/audit-issues-light.webp", srcDark: "/images/docs/web/audit-issues-dark.webp", width: 1600, height: 1000, alt: "Site audit, Issues tab, with the crawl history and what changed since the previous crawl", caption: "Site audit → Issues with crawl history and a comparison with the previous crawl." },
           { type: "h2", id: "settings", text: "Crawl settings" },
           { type: "list", items: [
             "**Page limit**: how many pages one crawl covers. It depends on your plan; raise it in Settings when a crawl stops at the limit.",
@@ -310,6 +329,7 @@ export const en: ReadonlyArray<HelpCategory> = [
         body: [
           { type: "h2", id: "indexability", text: "Indexability" },
           { type: "p", text: "The indexability report compares the pages Google shows in search with the URLs your site exposes. It finds pages that may not be indexed, pages missing from your sitemap and results that don't earn clicks. For Google's own answer on a URL, use **URL Inspection** in Search Console." },
+          { type: "image", device: "browser", src: "/images/docs/web/audit-indexability-light.webp", srcDark: "/images/docs/web/audit-indexability-dark.webp", width: 1600, height: 1000, alt: "Site audit, Indexability tab, with counts of discovered URLs and pages without impressions, and what to do about them", caption: "Site audit → Indexability compares what Google shows with what your site exposes." },
           { type: "h2", id: "speed", text: "Page speed" },
           { type: "p", text: "**Page speed** checks Core Web Vitals (LCP, INP and CLS) for your most important pages. Each metric uses field data from real Chrome users when Google has it for the URL, and the history shows the effect of a fix." },
           { type: "h2", id: "internal-links", text: "Internal links" },
@@ -342,6 +362,7 @@ export const en: ReadonlyArray<HelpCategory> = [
         description: "See how you compare, what they rank for that you don't and who links to them.",
         body: [
           { type: "p", text: "Add up to six competitors to a project. **Competitors** then shows how big each site is, your share of voice and where they're winning clicks you could get." },
+          { type: "image", device: "browser", src: "/images/docs/web/competitors-light.webp", srcDark: "/images/docs/web/competitors-dark.webp", width: 1600, height: 1000, alt: "The Competitors overview comparing keywords, estimated traffic and top 10 rankings, with share of voice", caption: "Competitors → Overview with share of voice across tracked sites." },
           { type: "h2", id: "tools", text: "The tools" },
           { type: "table", head: ["Tool", "What it shows"], rows: [
             ["Overview", "Keywords, estimated traffic and top-10 rankings for you and each competitor, your share of voice and where you rank."],
@@ -352,6 +373,7 @@ export const en: ReadonlyArray<HelpCategory> = [
             ["Articles", "Your competitors' strongest pages and an outline to beat them."],
           ] },
           { type: "note", tone: "info", text: "Competitor numbers are estimates from our data partners, not Search Console data, so they're best for comparing sites with each other." },
+          { type: "image", device: "browser", src: "/images/docs/web/competitors-gap-light.webp", srcDark: "/images/docs/web/competitors-gap-dark.webp", width: 1600, height: 1000, alt: "Competitors, Keyword gap tab, with gap keywords, monthly searches, easy wins and the keywords to win table", caption: "Competitors → Keyword gap: what competitors rank for that you don't." },
         ],
       },
       {
@@ -362,6 +384,7 @@ export const en: ReadonlyArray<HelpCategory> = [
           { type: "p", text: "**AI visibility** shows how often AI assistants mention your brand when people ask the questions your customers ask, and how that compares with your competitors." },
           { type: "h2", id: "first-party", text: "What your own data shows" },
           { type: "p", text: "From Search Console and Google Analytics we show which of your pages appear in AI Overviews, queries where an AI Overview shows but you aren't cited, and visits that arrive from AI assistants." },
+          { type: "image", device: "browser", src: "/images/docs/web/ai-visibility-light.webp", srcDark: "/images/docs/web/ai-visibility-dark.webp", width: 1600, height: 1000, alt: "The AI visibility overview with AI Overview impressions, clicks from those queries and visits from AI assistants", caption: "AI visibility starts from what your own Search Console and Analytics data show." },
           { type: "h2", id: "prompt-tracker", text: "The prompt tracker" },
           { type: "steps", items: [
             "Add the prompts you want to track, or describe a type of customer and we'll write the questions they'd ask.",
@@ -377,6 +400,7 @@ export const en: ReadonlyArray<HelpCategory> = [
         description: "See your Google Maps rank on a grid around your business.",
         body: [
           { type: "p", text: "**Local rankings** searches a keyword on Google Maps from every point of a grid around your business and records where you appear, so you can see how your local visibility changes street by street." },
+          { type: "image", device: "browser", src: "/images/docs/web/local-light.webp", srcDark: "/images/docs/web/local-dark.webp", width: 1600, height: 1000, alt: "Local rankings with tracked keywords, a grid of positions on the map and the share of points in the top 3", caption: "Local rankings: your Google Maps position at every point of the grid." },
           { type: "steps", items: [
             "Add your business as it appears on Google Business Profile.",
             "Add the keywords you want to rank for, like `dentist near me`.",
@@ -398,6 +422,7 @@ export const en: ReadonlyArray<HelpCategory> = [
         description: "Keep accounts in one place and give clients their own live portal.",
         body: [
           { type: "p", text: "**Clients** keeps each account's contacts, notes and linked sites. Every client can get a branded **client portal** with their search performance, the work you're doing and their invoices." },
+          { type: "image", device: "browser", src: "/images/docs/web/clients-light.webp", srcDark: "/images/docs/web/clients-dark.webp", width: 1600, height: 1000, alt: "The Clients screen with active clients, MRR, at-risk clients and open deal value, and the list of clients", caption: "Clients with retainer, linked sites and SEO trend for each account." },
           { type: "h2", id: "portal", text: "What clients see" },
           { type: "list", items: [
             "**Overview**: what needs their attention (open invoices, late work, their requests), the main search metrics with a trend chart, top searches and recent activity.",
@@ -405,6 +430,7 @@ export const en: ReadonlyArray<HelpCategory> = [
             "**Work**: tasks you share with them, and a form to send you requests that land on your task board.",
             "**Billing**: invoices and payments you share.",
           ] },
+          { type: "image", device: "browser", src: "/images/docs/web/portal-light.webp", srcDark: "/images/docs/web/portal-dark.webp", width: 1600, height: 1000, alt: "The client portal sign-in page where a client enters their email to receive a one-time link", caption: "Clients sign in to the portal with a one-time link, no password." },
           { type: "h2", id: "plans", text: "Portal plans" },
           { type: "table", head: ["Plan", "Includes"], rows: [
             ["Reports", "Overview and tasks."],
@@ -426,7 +452,9 @@ export const en: ReadonlyArray<HelpCategory> = [
             "Send a proposal. The client can read it, accept it with their name and you're notified straight away.",
             "Accepted proposals set up the project and invite the client to their portal.",
           ] },
+          { type: "image", device: "browser", src: "/images/docs/web/settings-agency-light.webp", srcDark: "/images/docs/web/settings-agency-dark.webp", width: 1600, height: 1000, alt: "Settings, Agency tab, with automation status and sender details for proposals and portal emails", caption: "Settings → Agency: lead form, proposals and the emails sent in your name." },
           { type: "p", text: "**Pipeline** tracks every deal from lead to signed, so nothing waits too long for a reply." },
+          { type: "image", device: "browser", src: "/images/docs/web/pipeline-light.webp", srcDark: "/images/docs/web/pipeline-dark.webp", width: 1600, height: 1000, alt: "The Pipeline board with deal totals and columns from Lead to Won and Lost", caption: "Pipeline: drag deals between stages; totals use each deal's probability." },
         ],
       },
       {
@@ -435,6 +463,7 @@ export const en: ReadonlyArray<HelpCategory> = [
         description: "Send branded reports and full strategy workbooks.",
         body: [
           { type: "p", text: "**Reports → Client report** builds a branded, printable report for any site and range: headline metrics, trends, wins, top queries and pages, and the work you shipped." },
+          { type: "image", device: "browser", src: "/images/docs/web/reports-light.webp", srcDark: "/images/docs/web/reports-dark.webp", width: 1600, height: 1000, alt: "Reports, Client report tab, with report settings on the left and an A4 preview of a branded SEO report", caption: "Reports → Client report with a live A4 preview." },
           { type: "list", items: [
             "Add your logo and colours in **Settings → Branding** for white-label reports.",
             "Print or save as PDF straight from the report, or schedule it by email for portal clients on Pro.",
@@ -477,6 +506,7 @@ export const en: ReadonlyArray<HelpCategory> = [
             "**WordPress**: import, edit and publish posts and pages.",
             "**Email**: proposal and portal emails, set up in **Settings → Agency**.",
           ] },
+          { type: "image", device: "browser", src: "/images/docs/web/settings-integrations-light.webp", srcDark: "/images/docs/web/settings-integrations-dark.webp", width: 1600, height: 1000, alt: "Settings, Integrations tab, with Google, Search Console, Google Analytics 4 and WordPress connected", caption: "Settings → Integrations: every connection and its status." },
           { type: "h2", id: "branding", text: "Branding" },
           { type: "p", text: "Your logo, colours and agency name appear on client reports, proposals and the client portal." },
         ],

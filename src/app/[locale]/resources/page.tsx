@@ -1,34 +1,15 @@
-import Link from "next/link";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import { ArticleBody } from "@/components/help/ArticleBody";
+import { DocsPage } from "@/components/docs/DocsPage";
+import { DocsShell } from "@/components/docs/DocsShell";
+import { SignupCard } from "@/components/docs/SignupCard";
+import type { Block } from "@/data/help";
 import { PLATFORM_TOOLS } from "@/data/platform-tools";
+import { getAllBlogPosts } from "@/lib/blog";
+import { glossaryPath } from "@/lib/docs/glossary";
 import { isValidLocale, localizedPath, type SiteLocale } from "@/lib/i18n/locale";
 import { buildMetadata } from "@/lib/seo";
-import { getAllBlogPosts } from "@/lib/blog";
-import { ArrowRight, BookOpen, GitCompare, Library, Wrench } from "lucide-react";
-import { Accent, CtaBand, KitHeading, KitSection } from "@/components/kit";
-import { CardGrid, LinkCard, PageHero } from "@/components/page-kit";
-
-const colCard = "flex flex-col rounded-2xl border border-hairline bg-surface/70 p-6";
-const colTitle = "flex items-center gap-2 font-display text-lg font-semibold tracking-[-0.02em] text-foreground [&_svg]:size-4 [&_svg]:text-brand";
-const moreLink = "mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline";
-
-const FRAMEWORKS = [
-  {
-    path: "/resources/search-optimization-layers",
-    eyebrow: "Framework",
-    title: "The layers of modern search optimization",
-    body: "SEO, AEO, GEO, AIO, DEO and SXO in one model: what each layer optimizes for, what it asks of a page, and how it is measured.",
-  },
-  {
-    path: "/resources/ai-search-page-anatomy",
-    eyebrow: "Answer engine optimization",
-    title: "Anatomy of a page built for AI search",
-    body: "Twelve parts of a page that decide whether an answer engine can read it, quote it and cite it, annotated on a worked example.",
-  },
-] as const;
 
 type PageProps = { params: Promise<{ locale: string }> };
 
@@ -36,130 +17,86 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { locale } = await params;
   if (!isValidLocale(locale)) return {};
   return buildMetadata({
-    title: "SEO Resources - Blog, Tools & Guides",
+    title: "SEO Resources - Frameworks, Tools & Guides",
     description:
-      "Free SEO resources: Search Console playbooks, GEO and AEO guides, technical SEO checklists, blog pillars, and links to clustering, audit, and AI visibility tools.",
+      "Free SEO resources: frameworks for SEO, AEO and GEO, the SEO glossary, Search Console playbooks, free tools and GSC Boost guides for the web and iPhone.",
     path: localizedPath(locale as SiteLocale, "/resources"),
     canonicalPath: localizedPath("en", "/resources"),
     primaryKeyword: "SEO resources",
   });
 }
 
+/** Resources are English-only (see EN_ONLY_SECTIONS); /el/resources redirects here. */
 export default async function ResourcesPage({ params }: PageProps) {
   const { locale } = await params;
   if (!isValidLocale(locale)) notFound();
-  const lp = (path: string) => localizedPath(locale as SiteLocale, path);
-  const posts = getAllBlogPosts();
+  const lp = (path: string) => localizedPath("en", path);
+  const posts = getAllBlogPosts().filter((p) => p.locale === "en").slice(0, 12);
+
+  const blocks: Block[] = [
+    { type: "h2", id: "frameworks", text: "Frameworks worth bookmarking" },
+    {
+      type: "cards",
+      cols: 2,
+      items: [
+        {
+          title: "The layers of modern search optimization",
+          text: "SEO, AEO, GEO, AIO, DEO and SXO in one model: what each layer optimizes for, what it asks of a page, and how it is measured.",
+          href: lp("/resources/search-optimization-layers"),
+          icon: "layers",
+        },
+        {
+          title: "Anatomy of a page built for AI search",
+          text: "Twelve parts of a page that decide whether an answer engine can read it, quote it and cite it, annotated on a worked example.",
+          href: lp("/resources/ai-search-page-anatomy"),
+          icon: "file",
+        },
+      ],
+    },
+    { type: "h2", id: "learn", text: "Learn" },
+    {
+      type: "cards",
+      cols: 3,
+      items: [
+        { title: "SEO glossary", text: "Over 100 terms, each on its own page with an example and how to apply it.", href: glossaryPath("en"), icon: "library" },
+        { title: "GSC Boost guides", text: "How to use every screen of the web app, with screenshots.", href: lp("/help"), icon: "book" },
+        { title: "iPhone app", text: "Get the beta, Live Activities, widgets and alerts.", href: lp("/help/iphone-app"), icon: "smartphone" },
+      ],
+    },
+    { type: "h2", id: "tools", text: "Free tools" },
+    {
+      type: "cards",
+      cols: 2,
+      items: PLATFORM_TOOLS.map((t) => ({ title: t.title, text: t.description ?? "", href: lp(`/tools/${t.slug}`), icon: "wrench" })),
+    },
+    { type: "h2", id: "blog", text: "From the blog" },
+    { type: "list", items: [...posts.map((p) => `[${p.title}](${localizedPath(p.locale, `/blog/${p.slug}`)})`), `[All articles](${lp("/blog")})`] },
+    { type: "h2", id: "compare", text: "Compare" },
+    {
+      type: "cards",
+      cols: 3,
+      items: [
+        { title: "GSC Boost vs Ahrefs", text: "Where each one fits, feature by feature.", href: lp("/compare/ahrefs") },
+        { title: "GSC Boost vs Semrush", text: "Price, data sources and workflow compared.", href: lp("/compare/semrush") },
+        { title: "vs Search Console alone", text: "What you get on top of the free Google tool.", href: lp("/compare/search-console-alone") },
+      ],
+    },
+  ];
 
   return (
-    <>
-      <Header />
-      <main className="blueprint-grid relative z-0">
-        <PageHero
-          locale="en"
-          pill={{ href: lp("/glossary"), kind: "free", tag: "Glossary", text: "Every SEO term in plain words" }}
-          title={
-<Accent>Resources</Accent>
-          }
-          lead="Frameworks, deep reads, product deep-links, and the same modules our agency uses with clients."
-        />
-
-        {/* Frameworks lead: these two are the definitional owners for the
-            GEO/AEO cluster, and everything else here is a list of links. */}
-        <KitSection className="!pt-14">
-          <KitHeading eyebrow="Frameworks" eyebrowIcon={<Library />} title={<>Two models worth <Accent>bookmarking</Accent></>} />
-          <CardGrid cols={2} className="mt-10">
-            {FRAMEWORKS.map((f) => (
-              <LinkCard key={f.path} href={lp(f.path)} eyebrow={f.eyebrow} title={f.title} text={f.body} as="h2" />
-            ))}
-          </CardGrid>
-        </KitSection>
-
-        <KitSection tinted>
-          <KitHeading eyebrow="Library" eyebrowIcon={<BookOpen />} title={<>Everything else, <Accent>in one place</Accent></>} />
-          <div className="mt-10 grid items-start gap-4 sm:grid-cols-2 xl:grid-cols-4">
-            <section className={colCard}>
-              <h2 className={colTitle}>
-                <BookOpen aria-hidden /> Glossary
-              </h2>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                <Link href={lp("/glossary")} className="font-medium text-primary hover:underline">
-                  SEO glossary
-                </Link>{" "}
-                - definitions, examples, and links to features and tools.
-              </p>
-            </section>
-            <section className={colCard}>
-              <h2 className={colTitle}>
-                <Library aria-hidden /> Blog
-              </h2>
-              <ul className="mt-4 max-h-[28rem] space-y-3 overflow-y-auto pr-1">
-                {posts.map((p) => (
-                  <li key={`${p.locale}-${p.slug}`}>
-                    <Link
-                      href={localizedPath(p.locale, `/blog/${p.slug}`)}
-                      className="text-sm font-medium text-foreground hover:text-primary"
-                    >
-                      {p.title}
-                    </Link>
-                    <p className="line-clamp-2 text-[13px] text-muted-foreground">{p.description}</p>
-                  </li>
-                ))}
-              </ul>
-              <Link href={lp("/blog")} className={moreLink}>
-                All articles <ArrowRight className="size-3.5" aria-hidden />
-              </Link>
-            </section>
-            <section className={colCard}>
-              <h2 className={colTitle}>
-                <Wrench aria-hidden /> Product intents
-              </h2>
-              <ul className="mt-4 space-y-2.5">
-                {PLATFORM_TOOLS.map((t) => (
-                  <li key={t.slug}>
-                    <Link href={lp(`/tools/${t.slug}`)} className="text-sm font-medium text-foreground hover:text-primary">
-                      {t.title}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-              <div className="flex flex-wrap gap-x-4">
-                <Link href={lp("/tools")} className={moreLink}>
-                  Tools hub <ArrowRight className="size-3.5" aria-hidden />
-                </Link>
-                <Link href={lp("/platform/features")} className={moreLink}>
-                  Feature library <ArrowRight className="size-3.5" aria-hidden />
-                </Link>
-              </div>
-            </section>
-            <section className={colCard}>
-              <h2 className={colTitle}>
-                <GitCompare aria-hidden /> Compare
-              </h2>
-              <ul className="mt-4 space-y-2.5">
-                <li>
-                  <Link href={lp("/compare/ahrefs")} className="text-sm font-medium text-foreground hover:text-primary">
-                    vs Ahrefs
-                  </Link>
-                </li>
-                <li>
-                  <Link href={lp("/compare/semrush")} className="text-sm font-medium text-foreground hover:text-primary">
-                    vs Semrush
-                  </Link>
-                </li>
-                <li>
-                  <Link href={lp("/compare/search-console-alone")} className="text-sm font-medium text-foreground hover:text-primary">
-                    vs Search Console alone
-                  </Link>
-                </li>
-              </ul>
-            </section>
-          </div>
-        </KitSection>
-
-        <CtaBand locale="en" source="resources-band" />
-      </main>
-      <Footer />
-    </>
+    <DocsShell locale="en" tab="resources">
+      <DocsPage
+        locale="en"
+        eyebrow="Resources"
+        title="SEO resources"
+        description="Frameworks, the glossary, free tools and guides: the same material our agency uses with clients."
+        path={lp("/resources")}
+        markdown={false}
+        headings={blocks.flatMap((b) => (b.type === "h2" ? [{ id: b.id, text: b.text, level: 2 as const }] : []))}
+        rail={<SignupCard locale="en" source="resources" />}
+      >
+        <ArticleBody blocks={blocks} locale="en" />
+      </DocsPage>
+    </DocsShell>
   );
 }

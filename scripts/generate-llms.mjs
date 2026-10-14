@@ -23,6 +23,9 @@ import {
   resolvePriceTokens,
 } from '../src/data/pricing.ts';
 import { PROJECT_COUNT, SEO_MIN_TERM_MONTHS } from '../src/data/company-facts.ts';
+// The docs (help center, iPhone guides, glossary) render from the same data as the site.
+import { markdownFor } from '../src/lib/docs/markdown.ts';
+import { helpContent } from '../src/data/help/index.ts';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
@@ -333,8 +336,14 @@ function buildShort({ services, servicesEl, industries, industriesEl, greece, pr
     hubLine('SEO Chrome extension', `${BASE}/en/platform/chrome-extension`, 'Free on-page SEO checks (meta, headings, links, images, schema, Open Graph, hreflang, Core Web Vitals) and Google results tools without an account; signed in, the page\'s own Search Console data. Coming to the Chrome Web Store.'),
     hubLine('WordPress Search Console plugin', `${BASE}/en/platform/wordpress`, 'Search Console numbers per post in the block and classic editor, tasks, one-click title/meta fixes into Rank Math, Yoast, AIOSEO, SEOPress or The SEO Framework (with undo), IndexNow. Free zip download; WordPress.org listing in review.'),
     hubLine('Google Search Console MCP server', `${BASE}/en/platform/mcp`, 'Search Console data, fix list, tasks and AI visibility in Claude, ChatGPT, Cursor, VS Code and Windsurf. Remote server https://app.anotherseoguru.com/mcp (OAuth) or npx @anotherseoguru/mcp login.'),
-    hubLine('GSC Boost help center', `${BASE}/en/help`, 'How the SEO software works: Search Console setup, opportunities, rank tracking, site audit, AI visibility, agency tools and billing (EN + EL).'),
+    hubLine('GSC Boost docs', `${BASE}/en/help`, 'How the SEO software works on the web and iPhone: Search Console setup, opportunities, rank tracking, site audit, AI visibility, agency tools and billing (EN + EL). Every docs page has a Markdown twin at its URL + ".md".'),
+    hubLine('SEO glossary', `${BASE}/en/glossary`, 'Over 100 SEO, AEO and GEO terms, one page each with definition, example and how to apply it (EN + EL).'),
   );
+  lines.push('');
+  lines.push('## GSC Boost Docs (Markdown)');
+  for (const c of helpContent('en')) {
+    for (const a of c.articles) lines.push(mdLink(`${c.title}: ${a.title}`, `${BASE}/en/help/${c.slug}/${a.slug}.md`, a.description));
+  }
   lines.push('');
   lines.push('## Machine-Readable Feeds for AI Agents');
   lines.push(
@@ -717,6 +726,16 @@ function buildFull({ services, servicesEl, industries, industriesEl, greece, pro
   return lines.join('\n');
 }
 
+/** The English docs in full, so "llms-full.txt" really holds everything the docs say. */
+function buildDocs() {
+  const parts = ['## 11. GSC Boost documentation', '', `The same guides are in Greek under ${BASE}/el/help. Each page has a Markdown twin at its URL + ".md".`, ''];
+  for (const c of helpContent('en')) {
+    for (const a of c.articles) parts.push(markdownFor(['en', 'help', c.slug, a.slug]).replace(/^# /, '### '), '');
+  }
+  parts.push(markdownFor(['en', 'glossary']).replace(/^# /, '### '));
+  return parts.join('\n');
+}
+
 function main() {
   const services = parseServices();
   const servicesEl = parseServiceNamesEl();
@@ -739,7 +758,7 @@ function main() {
 
   const ctx = { services, servicesEl, industries, industriesEl, greece, projects, posts };
   write('public/llms.txt', buildShort(ctx));
-  write('public/llms-full.txt', buildFull(ctx));
+  write('public/llms-full.txt', `${buildFull(ctx)}\n---\n\n${buildDocs()}`);
 }
 
 main();

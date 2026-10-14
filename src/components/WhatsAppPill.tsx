@@ -39,6 +39,10 @@ export function WhatsAppPill({ locale: localeProp }: { locale?: SiteLocale } = {
   if (pathname.includes('/get-started') || pathname.includes('/contact')) {
     return null;
   }
+  // The docs put Ask AI in this corner; support there is by email.
+  if (/^\/(en|el)\/(help|glossary|resources)(\/|$)/.test(pathname)) {
+    return null;
+  }
 
   return (
     <a
