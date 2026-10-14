@@ -241,7 +241,7 @@ function appSchema(locale: SiteLocale): SchemaOutput {
     operatingSystem: "iOS 17 or later",
     inLanguage: ["en", "el"],
     releaseNotes: "Beta (TestFlight)",
-    screenshot: SCREENS.map((s) => `${BASE_URL}/platform/iphone/${s.file}.webp`),
+    screenshot: SCREENS.map((s) => `${BASE_URL}/images/iphone/${s.file}.webp`),
     isPartOf: { "@type": "SoftwareApplication", name: "GSC Boost", url: `${BASE_URL}${localizedPath(locale, "/platform")}` },
     provider: { "@type": "Organization", "@id": `${BASE_URL}/#organization`, name: BRAND_NAME, url: BASE_URL },
   };
@@ -251,7 +251,7 @@ function Phone({ file, alt, priority }: { readonly file: string; readonly alt: s
   return (
     <div className="overflow-hidden rounded-[2rem] border border-hairline bg-surface p-1.5 shadow-[0_30px_80px_-40px_color-mix(in_oklab,var(--primary)_45%,transparent)]">
       <Image
-        src={`/platform/iphone/${file}.webp`}
+        src={`/images/iphone/${file}.webp`}
         alt={alt}
         width={601}
         height={1306}

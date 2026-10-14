@@ -273,7 +273,7 @@ export default async function PlatformHubPage({ params }: PageProps) {
                 <div key={file} className={i === 1 ? "" : "translate-y-5"}>
                   <div className="overflow-hidden rounded-[1.6rem] border border-hairline bg-surface p-1">
                     <Image
-                      src={`/platform/iphone/${file}.webp`}
+                      src={`/images/iphone/${file}.webp`}
                       alt={tx("GSC Boost iPhone app screen", "Οθόνη της εφαρμογής GSC Boost για iPhone")}
                       width={601}
                       height={1306}
