@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: PageProps) {
     return {};
   }
   return buildMetadata({
-    title: c.headline,
+    title: c.seoTitle,
     description: c.summary,
     path: localizedPath(locale as SiteLocale, `/compare/${c.slug}`),
     canonicalPath: localizedPath("en", `/compare/${c.slug}`),

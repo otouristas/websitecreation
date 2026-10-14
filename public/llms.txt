@@ -1,11 +1,11 @@
-Last-Updated: 2026-10-10
+Last-Updated: 2026-10-14
 Canonical: https://anotherseoguru.com/llms.txt
 Long-form: https://anotherseoguru.com/llms-full.txt
 Sitemap: https://anotherseoguru.com/sitemap.xml
 
 # AnotherSEOGuru - Platform Index & Directory
 Source: https://anotherseoguru.com
-Last Updated: 2026-10-10
+Last Updated: 2026-10-14
 
 > AnotherSEOGuru is a web design & SEO agency based in Greece (serving Greek and international clients), specializing in tourism & hospitality websites, with GEO/AEO (AI visibility) services and a secondary GSC-native SEO software platform.
 
@@ -26,7 +26,8 @@ Last Updated: 2026-10-10
 - **Rent-a-Car** (<https://anotherseoguru.com/en/solutions/rent-a-car>) - Fleet catalogs, booking funnels, island/airport local SEO.
 - **Portfolio / Case Studies** (<https://anotherseoguru.com/en/work>) - 71 live client projects with homepage screenshots.
 - **Blog** (<https://anotherseoguru.com/en/blog>) - SEO, GEO/AEO, hotel, and e-shop guides (EN + EL).
-- **SEO Platform (secondary)** (<https://anotherseoguru.com/en/platform>) - GSC-native SEO software - English-canonical marketing pages.
+- **GSC Boost (SEO software)** (<https://anotherseoguru.com/en/platform>) - Google Search Console-native SEO software: ranked fixes with click estimates, rank tracking, site audit, AI visibility. Web app at app.anotherseoguru.com (EN + EL).
+- **GSC Boost for iPhone (beta)** (<https://anotherseoguru.com/en/platform/iphone>) - Native iOS 17+ app on the same account: weekly fixes, rank tracking, alerts, AI evidence, widgets. In TestFlight beta, not yet on the App Store.
 - **GSC Boost help center** (<https://anotherseoguru.com/en/help>) - How the SEO software works: Search Console setup, opportunities, rank tracking, site audit, AI visibility, agency tools and billing (EN + EL).
 
 ## Machine-Readable Feeds for AI Agents
@@ -188,7 +189,7 @@ Greece-wide service; dedicated service×city pages for the cities below. Money-p
 - [Link Building Guide - Earn Authority Without Spam](https://anotherseoguru.com/en/blog/link-building-guide) - What link building is, how it works in modern SEO, white-hat tactics, realistic costs and timelines, and how professional link building services should run.
 - [Off-Page SEO - Links, Mentions & Reputation](https://anotherseoguru.com/en/blog/off-page-seo) - What off-page SEO is, how it differs from on-page, and practical ways to improve authority without spammy links - with costs, timelines and a 2026 checklist.
 - [On-Page SEO - How to Optimize a Page That Ranks](https://anotherseoguru.com/en/blog/on-page-seo) - What on-page SEO is and how to do it - titles, headings, content, internal links, schema and a practical 2026 checklist with costs and timelines.
-- [Πόσο Κοστίζει το SEO στην Ελλάδα; (2026)](https://anotherseoguru.com/el/blog/poso-kostizei-to-seo) - Πόσο κοστίζει το SEO στην Ελλάδα το 2026: μηνιαίες τιμές ανά μέγεθος επιχείρησης, τι περιλαμβάνει ένα πακέτο και πότε το φθηνό SEO βγαίνει ακριβό.
+- [Κόστος SEO 2026: Τιμές στην Ελλάδα](https://anotherseoguru.com/el/blog/poso-kostizei-to-seo) - Πόσο κοστίζει το SEO στην Ελλάδα το 2026: μηνιαίες τιμές ανά μέγεθος επιχείρησης, τι περιλαμβάνει ένα πακέτο και πότε το φθηνό SEO βγαίνει ακριβό.
 - [SEO Content - How to Write Pages That Rank and Convert](https://anotherseoguru.com/en/blog/seo-content-guide) - What SEO content is and how to write it: intent, structure, FAQs, proof and internal links, plus formats, costs, timelines and when to outsource it.
 - [Τι Είναι το SEO; Οδηγός για Αρχάριους 2026](https://anotherseoguru.com/el/blog/seo-gia-arxarious) - Τι είναι το SEO με απλά λόγια. Πώς κατατάσσει η Google, on-page, τεχνικό, off-page και τοπικό SEO, λέξεις-κλειδιά, κόστος και από πού ξεκινάτε.
 - [SEO Στρατηγική για Μικρές Επιχειρήσεις - Πλάνο 90 Ημερών](https://anotherseoguru.com/el/blog/seo-stratigiki-mikres-epicheiriseis) - SEO συμβουλές και στρατηγική για μικρές επιχειρήσεις στην Ελλάδα. Τι να κάνετε τις πρώτες 90 μέρες, κόστος, λάθη να αποφύγετε και πότε να προσλάβετε agency.
@@ -205,9 +206,9 @@ Greece-wide service; dedicated service×city pages for the cities below. Money-p
 - [Hotel Website Design - Turn Visitors into Direct Bookings](https://anotherseoguru.com/en/blog/hotel-website-design) - What a hotel website needs in 2026: fast mobile UX, a booking engine, room pages, multilingual SEO and schema, to cut OTA commissions and win direct bookings.
 - [How Much Does a Website Cost in 2026? Full Pricing Guide](https://anotherseoguru.com/en/blog/how-much-does-a-website-cost) - What a website really costs in 2026: business sites, e-shops and hotel websites, plus the hidden costs of hosting, content and SEO. Transparent EUR pricing.
 - [How Much Does SEO Cost in 2026? Prices & Packages Explained](https://anotherseoguru.com/en/blog/how-much-does-seo-cost) - A clear breakdown of SEO pricing in 2026: monthly retainers, one-off audits, what packages include, and how to avoid the cheap-SEO trap. EUR pricing.
-- [Πόσο Κοστίζει ένα Eshop και Πώς Φτιάχνεται](https://anotherseoguru.com/el/blog/kataskevi-eshop-odigos) - Πόσο κοστίζει ένα eshop το 2026: κόστος κατασκευής, πλατφόρμες, ετήσια έξοδα και αν αξίζει να φτιάξετε eshop μόνοι σας. Οδηγός με πραγματικά νούμερα.
+- [Κατασκευή Eshop 2026: Κόστος & Τιμές](https://anotherseoguru.com/el/blog/kataskevi-eshop-odigos) - Πόσο κοστίζει ένα eshop το 2026: κόστος κατασκευής, πλατφόρμες, ετήσια έξοδα και αν αξίζει να φτιάξετε eshop μόνοι σας. Οδηγός με πραγματικά νούμερα.
 - [Law Firm SEO - How Attorneys Win Cases from Google](https://anotherseoguru.com/en/blog/law-firm-seo) - A practical SEO guide for law firms and attorneys - local targeting, practice-area pages, trust-building content, and the technical basics that bring cases.
-- [Πόσο Κοστίζει μια Ιστοσελίδα το 2026;](https://anotherseoguru.com/el/blog/poso-kostizei-mia-istoselida) - Πόσο κοστίζει μια ιστοσελίδα στην Ελλάδα: κόστος κατασκευής ανά τύπο site, τι ανεβάζει την τιμή και τι πληρώνετε κάθε χρόνο μετά την παράδοση.
+- [Τιμές Κατασκευής Ιστοσελίδας 2026](https://anotherseoguru.com/el/blog/poso-kostizei-mia-istoselida) - Πόσο κοστίζει μια ιστοσελίδα στην Ελλάδα: κόστος κατασκευής ανά τύπο site, τι ανεβάζει την τιμή και τι πληρώνετε κάθε χρόνο μετά την παράδοση.
 - [Real Estate SEO - Win Listings and Buyers from Google](https://anotherseoguru.com/en/blog/real-estate-seo) - SEO for real estate agencies - rank for area searches, attract sellers who want an agent, and turn Google traffic into listings and buyer enquiries.
 - [SEO for Beginners - What It Is and How It Works (Simply)](https://anotherseoguru.com/en/blog/seo-for-beginners) - What SEO is in plain English: how Google ranks pages, what keywords, on-page, technical SEO and backlinks mean, realistic costs, and where to start.
 - [SEO για Μεσιτικά Γραφεία & Ακίνητα - Οδηγός 2026](https://anotherseoguru.com/el/blog/seo-gia-akinita) - Πώς τα μεσιτικά γραφεία κερδίζουν εντολές και αγοραστές από τη Google. Τοπικό SEO, σελίδες περιοχών, περιεχόμενο ιδιοκτητών, κόστος και checklist.

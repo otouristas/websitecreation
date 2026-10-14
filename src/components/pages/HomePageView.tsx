@@ -63,8 +63,9 @@ export function HomePageView({ locale }: { locale: SiteLocale }) {
   const demoHref = `${getAppPath('/demo')}?lang=${locale}&utm_source=website&utm_content=home-window`;
 
   const orgSchema = generateOrganizationSchema({
+    id: `${BASE_URL}/#organization`,
     name: 'AnotherSEOGuru',
-    url: `${BASE_URL}${lp('/')}`,
+    url: BASE_URL,
     logo: `${BASE_URL}/brand/asg-lockup-on-light@2x.png`,
     description: isEl
       ? 'AnotherSEOGuru - ελληνική εταιρεία SEO και κατασκευής ιστοσελίδων. Τεχνικό SEO, τοπικό SEO, GEO/AEO, e-shop και δική της πλατφόρμα συνδεδεμένη με το Google Search Console.'
@@ -413,7 +414,7 @@ export function HomePageView({ locale }: { locale: SiteLocale }) {
             steps={[
               {
                 title: tx('Connect Google', 'Συνδέστε τη Google'),
-                text: tx('Sign in with Google and approve read-only access. Pick the site to start with.', 'Συνδεθείτε με Google και δώστε πρόσβαση μόνο για ανάγνωση. Διαλέξτε ιστοσελίδα.'),
+                text: tx('Sign up with Google and approve read-only access. Pick the site to start with.', 'Κάντε εγγραφή με Google και δώστε πρόσβαση μόνο για ανάγνωση. Διαλέξτε ιστοσελίδα.'),
                 preview: <PropertiesMini locale={l} />,
               },
               {

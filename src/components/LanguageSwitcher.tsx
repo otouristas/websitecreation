@@ -22,6 +22,8 @@ export function LanguageSwitcher({ alternateHref }: { alternateHref?: string }) 
   const ariaLabel =
     target === "en" ? "Switch to English" : "Μετάβαση στα Ελληνικά";
 
+  // The links get a 24px minimum hit area (WCAG 2.5.8) through padding offset
+  // by a negative margin, so the visual spacing of "EN · ΕΛ" does not change.
   return (
     <div
       className="inline-flex items-center gap-1.5 text-xs font-medium tracking-wide"
@@ -35,7 +37,7 @@ export function LanguageSwitcher({ alternateHref }: { alternateHref?: string }) 
       ) : (
         <Link
           href={href}
-          className="text-muted-foreground transition-colors hover:text-foreground"
+          className="-m-1.5 inline-flex min-h-6 min-w-6 items-center justify-center p-1.5 text-muted-foreground transition-colors hover:text-foreground"
           hrefLang="en"
           aria-label={ariaLabel}
         >
@@ -52,7 +54,7 @@ export function LanguageSwitcher({ alternateHref }: { alternateHref?: string }) 
       ) : (
         <Link
           href={href}
-          className="text-muted-foreground transition-colors hover:text-foreground"
+          className="-m-1.5 inline-flex min-h-6 min-w-6 items-center justify-center p-1.5 text-muted-foreground transition-colors hover:text-foreground"
           hrefLang="el"
           aria-label={ariaLabel}
         >

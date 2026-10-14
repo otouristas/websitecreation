@@ -63,6 +63,7 @@ export const clusters: Record<string, Cluster> = {
             '/platform/for/agencies',
             '/platform/for/in-house',
             '/platform/for/ecommerce',
+            '/platform/iphone',
             '/platform/security',
     ...COMPARE_PAGES.map((c) => `/compare/${c.slug}`),
         ],

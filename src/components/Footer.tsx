@@ -336,6 +336,11 @@ export default function Footer({ locale: localeProp }: { locale?: SiteLocale }):
                   </Link>
                 </li>
                 <li>
+                  <Link href={lp("/platform/iphone")} className={columnLinkClass}>
+                    iPhone app
+                  </Link>
+                </li>
+                <li>
                   <Link href={lp("/compare")} className={columnLinkClass}>
                     Compare alternatives
                   </Link>

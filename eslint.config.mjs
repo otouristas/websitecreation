@@ -15,6 +15,11 @@ const eslintConfig = defineConfig([
     // Dead code kept for reference only - never imported, never shipped.
     "src/_archive/**",
   ]),
+  // Node check scripts are CommonJS by design; require() is correct there.
+  {
+    files: ["**/*.cjs"],
+    rules: { "@typescript-eslint/no-require-imports": "off" },
+  },
 ]);
 
 export default eslintConfig;

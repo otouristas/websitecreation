@@ -45,7 +45,8 @@ export type NavIconKey =
   | 'library'
   | 'scan'
   | 'tag'
-  | 'grid';
+  | 'grid'
+  | 'phone';
 
 export interface NavItem {
   readonly href: string;
@@ -107,7 +108,7 @@ export function getNavModel(locale: SiteLocale): NavModel {
   const AI = { kind: 'ai' as const, label: 'AI' };
 
   const freeAudit = { href: `${lp('/get-started')}#free-audit`, label: t('Free SEO audit', 'Δωρεάν έλεγχος SEO') };
-  const startFree = { href: signup, label: t('Start free with Google', 'Δωρεάν έναρξη με Google') };
+  const startFree = { href: signup, label: t('Sign up free with Google', 'Δωρεάν εγγραφή με Google') };
 
   const services: NavMenu = {
     id: 'services',
@@ -222,6 +223,7 @@ export function getNavModel(locale: SiteLocale): NavModel {
           { href: lp('/platform/features#assistant'), label: t('AI assistant', 'Βοηθός AI'), desc: t('Answers from your own data', 'Απαντήσεις από τα δεδομένα σας'), icon: 'message', badge: AI },
           { href: lp('/platform/features#competitors'), label: t('Competitors', 'Ανταγωνιστές'), desc: t('Their wins, your gaps', 'Τα δικά τους κέρδη, τα δικά σας κενά'), icon: 'swords' },
           { href: lp('/platform/for/agencies'), label: t('For agencies', 'Για agencies'), desc: t('Clients, pipeline and reports', 'Πελάτες, pipeline και αναφορές'), icon: 'users' },
+          { href: lp('/platform/iphone'), label: t('iPhone app', 'Εφαρμογή iPhone'), desc: t('Your fixes and traffic, on the go', 'Διορθώσεις και κίνηση, στο κινητό'), icon: 'phone', badge: { kind: 'new' as const, label: t('Beta', 'Beta') } },
           { href: lp('/platform/pricing'), label: t('Plans & pricing', 'Πακέτα & τιμές'), desc: t('Start free, upgrade when it pays', 'Ξεκινήστε δωρεάν'), icon: 'tag', badge: FREE },
         ],
       },

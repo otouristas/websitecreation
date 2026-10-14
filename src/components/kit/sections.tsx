@@ -42,7 +42,7 @@ const c = (en: string, el: string): Copy => ({ en, el });
 export const KIT_COPY = {
   freeAudit: c("Get a free SEO audit", "Δωρεάν έλεγχος SEO"),
   whatsapp: c("Talk on WhatsApp", "Μιλήστε στο WhatsApp"),
-  startFree: c("Start free with Google", "Δωρεάν έναρξη με Google"),
+  startFree: c("Sign up free with Google", "Δωρεάν εγγραφή με Google"),
   liveDemo: c("Explore the live demo", "Δείτε τη ζωντανή επίδειξη"),
   readOnly: c("Read-only Google access", "Πρόσβαση στη Google μόνο για ανάγνωση"),
   noCard: c("No credit card for the demo", "Χωρίς κάρτα για την επίδειξη"),

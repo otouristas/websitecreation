@@ -327,7 +327,8 @@ function buildShort({ services, servicesEl, industries, industriesEl, greece, pr
     hubLine('Blog', url('en', '/blog'), 'SEO, GEO/AEO, hotel, and e-shop guides (EN + EL).'),
   );
   lines.push(
-    hubLine('SEO Platform (secondary)', `${BASE}/en/platform`, 'GSC-native SEO software - English-canonical marketing pages.'),
+    hubLine('GSC Boost (SEO software)', `${BASE}/en/platform`, 'Google Search Console-native SEO software: ranked fixes with click estimates, rank tracking, site audit, AI visibility. Web app at app.anotherseoguru.com (EN + EL).'),
+    hubLine('GSC Boost for iPhone (beta)', `${BASE}/en/platform/iphone`, 'Native iOS 17+ app on the same account: weekly fixes, rank tracking, alerts, AI evidence, widgets. In TestFlight beta, not yet on the App Store.'),
     hubLine('GSC Boost help center', `${BASE}/en/help`, 'How the SEO software works: Search Console setup, opportunities, rank tracking, site audit, AI visibility, agency tools and billing (EN + EL).'),
   );
   lines.push('');

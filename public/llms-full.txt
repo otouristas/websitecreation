@@ -1,11 +1,11 @@
-Last-Updated: 2026-10-10
+Last-Updated: 2026-10-14
 Canonical: https://anotherseoguru.com/llms-full.txt
 Short-form: https://anotherseoguru.com/llms.txt
 Sitemap: https://anotherseoguru.com/sitemap.xml
 
 # AnotherSEOGuru - Complete Knowledge Base
 Source: https://anotherseoguru.com
-Last Updated: 2026-10-10
+Last Updated: 2026-10-14
 
 This document is the comprehensive, machine-readable reference for LLM crawlers, AI search engines, and assistants synthesizing answers about AnotherSEOGuru services, pricing, portfolio, Greek local SEO positioning, and the secondary SEO software platform.
 
@@ -924,7 +924,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Description:** Τι είναι το on-page SEO και πώς διαφέρει από το off-page: checklist για τίτλους, επικεφαλίδες, περιεχόμενο και εσωτερικούς συνδέσμους, με παραδείγματα.
 - **Embedded FAQ:**
   - Q: Τι είναι το on-page SEO;
-    A: On-page (ή on-site) SEO είναι ό,τι βελτιώνετε μέσα στην ίδια τη σελίδα για να καταλάβει η Google τι απαντά και να την προτείνει στη σωστή αναζήτηση - τίτλος, επικεφαλίδες, κείμενο, εικόνες, εσωτερικοί σύνδεσμοι και δομημένα δεδομένα.
+    A: On-page (ή on-site) SEO είναι ό,τι βελτιώνετε μέσα στην ίδια τη σελίδα για να καταλάβει η Google τι απαντά και να την προτείνει στη σωστή αναζήτηση - τίτλος, επικεφαλίδες, κείμενο, εικόνες, εσωτερικοί σύνδεσμοι και structured data.
   - Q: Τι είναι το off-page SEO;
     A: Off-page SEO είναι ό,τι γίνεται έξω από το site σας και επηρεάζει την κατάταξη - κυρίως backlinks από άλλα sites, αναφορές της επωνυμίας σας και κριτικές.
   - Q: Ποια είναι η διαφορά on-page και τεχνικού SEO;
@@ -967,14 +967,14 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Locale:** el · **Date:** 2026-10-10
 - **Description:** Τι χρειάζεται για να ανοίξετε eshop στην Ελλάδα: έναρξη στην εφορία, ΚΑΔ, πληρωμές, όροι χρήσης και ποιες επιδοτήσεις καλύπτουν το κόστος κατασκευής.
 - **Embedded FAQ:**
-  - Q: Τι χρειάζεται για να ανοίξω eshop;
-    A: Έναρξη ή επέκταση δραστηριότητας στην εφορία με τον κατάλληλο ΚΑΔ για λιανικό εμπόριο μέσω διαδικτύου, τρόπο έκδοσης παραστατικών που διαβιβάζονται στο myDATA, τρόπους πληρωμής και αποστολής, όρους χρήσης, πολιτική επιστροφών και απορρήτου, και φυσικά το ίδιο το eshop.
-  - Q: Χρειάζεται έναρξη στην εφορία για eshop;
-    A: Ναι, για να πουλάτε συστηματικά μέσω eshop χρειάζεστε δραστηριότητα στην εφορία με ΚΑΔ που καλύπτει το ηλεκτρονικό εμπόριο. Αν έχετε ήδη επιχείρηση, συνήθως αρκεί επέκταση δραστηριότητας. Ο λογιστής σας θα επιβεβαιώσει τον σωστό ΚΑΔ και αν απαιτείται εγγραφή στο ΓΕΜΗ.
-  - Q: Υπάρχει επιδότηση για δημιουργία eshop;
+  - Q: Τι χρειάζεται για να ανοίξω e-shop;
+    A: Έναρξη ή επέκταση δραστηριότητας στην εφορία με τον κατάλληλο ΚΑΔ για λιανικό εμπόριο μέσω διαδικτύου, τρόπο έκδοσης παραστατικών που διαβιβάζονται στο myDATA, τρόπους πληρωμής και αποστολής, όρους χρήσης, πολιτική επιστροφών και απορρήτου, και φυσικά το ίδιο το e-shop.
+  - Q: Χρειάζεται έναρξη στην εφορία για e-shop;
+    A: Ναι, για να πουλάτε συστηματικά μέσω e-shop χρειάζεστε δραστηριότητα στην εφορία με ΚΑΔ που καλύπτει το ηλεκτρονικό εμπόριο. Αν έχετε ήδη επιχείρηση, συνήθως αρκεί επέκταση δραστηριότητας. Ο λογιστής σας θα επιβεβαιώσει τον σωστό ΚΑΔ και αν απαιτείται εγγραφή στο ΓΕΜΗ.
+  - Q: Υπάρχει επιδότηση για δημιουργία e-shop;
     A: Στο παρελθόν υπήρξαν προγράμματα όπως το «e-λιανικό» (2021) και το «Ψηφιακό Άλμα» (2023). Τα προγράμματα ανοίγουν και κλείνουν, οπότε ελέγξτε τι ισχύει σήμερα στο espa.gr πριν βασίσετε τον προϋπολογισμό σας σε επιδότηση.
-  - Q: Πόσο κοστίζει συνολικά ένα eshop;
-    A: Εξαρτάται από το αν το φτιάχνετε μόνοι σας ή με ομάδα, τον αριθμό προϊόντων και τις συνδέσεις (ERP, courier, τιμολόγηση). Αναλυτικά νούμερα θα βρείτε στον οδηγό «Πόσο κοστίζει ένα eshop».
+  - Q: Πόσο κοστίζει συνολικά ένα e-shop;
+    A: Εξαρτάται από το αν το φτιάχνετε μόνοι σας ή με ομάδα, τον αριθμό προϊόντων και τις συνδέσεις (ERP, courier, τιμολόγηση). Αναλυτικά νούμερα θα βρείτε στον οδηγό «Πόσο κοστίζει ένα e-shop».
 
 ### Τα tags του Google AI Mode και τι τα τροφοδοτεί
 - **URL:** https://anotherseoguru.com/el/blog/google-ai-mode-tags-el
@@ -986,7 +986,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
   - Q: Τα τεκμηριώνει η Google;
     A: Όχι. Προέκυψαν από διαρροές prompt. Η Google δεν έχει επιβεβαιώσει το λεξιλόγιο, και το δημοσιευμένο κείμενο περιέχει υπολείμματα επεξεργασίας και ένα παράδειγμα με άκυρο JSON.
   - Q: Το schema κάνει το AI Mode να δείξει την επιχείρησή μου;
-    A: Δεν μπορεί να το επιβάλει. Τα δομημένα δεδομένα κάνουν μια σελίδα αναγνώσιμη χωρίς εικασίες. Το αν θα τη χρησιμοποιήσει η μηχανή είναι δική της απόφαση.
+    A: Δεν μπορεί να το επιβάλει. Τα structured data κάνουν μια σελίδα αναγνώσιμη χωρίς εικασίες. Το αν θα τη χρησιμοποιήσει η μηχανή είναι δική της απόφαση.
   - Q: Πόσα στοιχεία χρειάζεται μια λίστα;
     A: Η πηγή λέει τρία, με κοινό τύπο οντότητας. Κάτω από τα όρια αυτά η λίστα λέγεται ότι εκφυλίζεται σε απλές κουκκίδες. Είναι ούτως ή άλλως ένα λογικό κατώφλι.
   - Q: Τι να κάνω πρώτα αν κάνω ένα μόνο πράγμα;
@@ -1252,7 +1252,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
   - Q: How much does on-page optimization cost?
     A: Page rewrites often run €150–€450 per URL depending on research depth. Ongoing on-page work is usually included in retainers from €500/mo.
 
-### Πόσο Κοστίζει το SEO στην Ελλάδα; (2026)
+### Κόστος SEO 2026: Τιμές στην Ελλάδα
 - **URL:** https://anotherseoguru.com/el/blog/poso-kostizei-to-seo
 - **Locale:** el · **Date:** 2026-07-23
 - **Description:** Πόσο κοστίζει το SEO στην Ελλάδα το 2026: μηνιαίες τιμές ανά μέγεθος επιχείρησης, τι περιλαμβάνει ένα πακέτο και πότε το φθηνό SEO βγαίνει ακριβό.
@@ -1526,7 +1526,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
   - Q: How long until SEO pays off?
     A: Low-competition local searches: 2–3 months. Competitive national keywords: 4–6+ months. SEO compounds - each month builds on the last.
 
-### Πόσο Κοστίζει ένα Eshop και Πώς Φτιάχνεται
+### Κατασκευή Eshop 2026: Κόστος & Τιμές
 - **URL:** https://anotherseoguru.com/el/blog/kataskevi-eshop-odigos
 - **Locale:** el · **Date:** 2026-07-06
 - **Description:** Πόσο κοστίζει ένα eshop το 2026: κόστος κατασκευής, πλατφόρμες, ετήσια έξοδα και αν αξίζει να φτιάξετε eshop μόνοι σας. Οδηγός με πραγματικά νούμερα.
@@ -1564,7 +1564,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
   - Q: Is SEO compliant for legal advertising?
     A: SEO is typically the most compatible channel because you answer people already searching for help. Still follow bar advertising rules, avoid guarantees, and keep claims evidence-based.
 
-### Πόσο Κοστίζει μια Ιστοσελίδα το 2026;
+### Τιμές Κατασκευής Ιστοσελίδας 2026
 - **URL:** https://anotherseoguru.com/el/blog/poso-kostizei-mia-istoselida
 - **Locale:** el · **Date:** 2026-07-06
 - **Description:** Πόσο κοστίζει μια ιστοσελίδα στην Ελλάδα: κόστος κατασκευής ανά τύπο site, τι ανεβάζει την τιμή και τι πληρώνετε κάθε χρόνο μετά την παράδοση.
