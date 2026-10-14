@@ -1,9 +1,11 @@
 import { Fragment, type ReactNode } from "react";
 import Link from "next/link";
-import { AlertTriangle, Info, Lightbulb } from "lucide-react";
+import { AlertTriangle, ArrowRight, ChevronRight, Info, Lightbulb } from "lucide-react";
 import { cn } from "@/lib/cn";
 import type { SiteLocale } from "@/lib/i18n/locale";
-import { resolveHelpHref, type Block } from "@/data/help";
+import { resolveHelpHref, type Block, type Shot, type StepItem } from "@/data/help";
+import { CopyButton, DocTabs, Zoomable } from "@/components/docs/DocClient";
+import { docIcon } from "@/components/docs/icons";
 
 const TOKEN = /(\*\*[^*]+\*\*|`[^`]+`|\[[^\]]+\]\([^)\s]+\)|[\w.+-]+@[\w-]+\.[a-z]{2,})/g;
 const LINK = "font-medium text-link underline decoration-hairline underline-offset-4 hover:decoration-current";
@@ -69,9 +71,84 @@ function Heading({ level, id, children }: { readonly level: 2 | 3; readonly id: 
   );
 }
 
-export function ArticleBody({ blocks, locale }: { readonly blocks: ReadonlyArray<Block>; readonly locale: SiteLocale }) {
+
+/** A screenshot in a browser or iPhone frame. With a dark capture, each theme shows its own. */
+export function ShotFrame({ shot, locale, className }: { readonly shot: Shot; readonly locale: SiteLocale; readonly className?: string }) {
+  const el = locale === "el";
+  const iphone = shot.device === "iphone";
+  const img = (src: string, cls: string) => (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img src={src} alt={shot.alt} width={shot.width} height={shot.height} loading="lazy" decoding="async" className={cn("block h-auto w-full", cls)} />
+  );
+  const pictures = shot.srcDark ? (
+    <>
+      {img(shot.src, "docs-shot-light")}
+      {img(shot.srcDark, "docs-shot-dark")}
+    </>
+  ) : (
+    img(shot.src, "")
+  );
+  const frame = iphone ? (
+    <div className="mx-auto w-full max-w-[17rem] rounded-[2.6rem] border border-hairline bg-[#0b1220] p-2 shadow-[0_30px_60px_-30px_rgb(0_0_0/0.6)]">
+      <div className="overflow-hidden rounded-[2.1rem]">{pictures}</div>
+    </div>
+  ) : (
+    <div className="overflow-hidden rounded-2xl border border-hairline bg-surface p-1.5 shadow-[0_24px_60px_-34px_color-mix(in_oklab,var(--primary)_55%,transparent)]">
+      <div className="flex items-center gap-1.5 px-2.5 pb-2 pt-1" aria-hidden>
+        <span className="size-2.5 rounded-full bg-foreground/15" />
+        <span className="size-2.5 rounded-full bg-foreground/15" />
+        <span className="size-2.5 rounded-full bg-foreground/15" />
+        <span className="ml-3 h-5 flex-1 rounded-md bg-foreground/[0.05] px-2 font-code text-[10.5px] leading-5 text-muted-foreground">app.anotherseoguru.com</span>
+      </div>
+      <div className="overflow-hidden rounded-xl border border-hairline">{pictures}</div>
+    </div>
+  );
   return (
-    <div className="text-[16px] leading-[1.75] text-foreground/85">
+    <figure className={cn("mt-7", className)}>
+      <Zoomable label={el ? `Μεγέθυνση: ${shot.alt}` : `Enlarge: ${shot.alt}`} closeLabel={el ? "Κλείσιμο" : "Close"}>
+        {frame}
+      </Zoomable>
+      {shot.caption ? (
+        <figcaption className={cn("mt-3 text-[13.5px] leading-relaxed text-muted-foreground", iphone && "text-center")}>
+          <Inline text={shot.caption} locale={locale} />
+        </figcaption>
+      ) : null}
+    </figure>
+  );
+}
+
+/** Numbered steps joined by a line, as in Mintlify. */
+function Steps({ items, locale }: { readonly items: ReadonlyArray<string | StepItem>; readonly locale: SiteLocale }) {
+  return (
+    <ol className="mt-7 grid">
+      {items.map((raw, j) => {
+        const item: StepItem = typeof raw === "string" ? { title: "", text: raw } : raw;
+        const last = j === items.length - 1;
+        return (
+          <li key={j} className="relative flex gap-4 pb-7 last:pb-0">
+            {!last ? <span aria-hidden className="absolute bottom-0 left-[0.9rem] top-9 w-px bg-hairline" /> : null}
+            <span className="relative z-10 mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-full border border-primary/40 bg-primary/12 font-mono text-[12.5px] font-semibold text-primary-glow">
+              {j + 1}
+            </span>
+            <div className="min-w-0 flex-1 pt-0.5">
+              {item.title ? <p className="font-display text-[16px] font-semibold tracking-[-0.01em] text-foreground">{item.title}</p> : null}
+              {item.text ? (
+                <p className={cn(item.title && "mt-1.5")}>
+                  <Inline text={item.text} locale={locale} />
+                </p>
+              ) : null}
+              {item.image ? <ShotFrame shot={item.image} locale={locale} className="mt-4" /> : null}
+            </div>
+          </li>
+        );
+      })}
+    </ol>
+  );
+}
+
+export function ArticleBody({ blocks, locale, nested = false }: { readonly blocks: ReadonlyArray<Block>; readonly locale: SiteLocale; readonly nested?: boolean }) {
+  return (
+    <div className={cn(!nested && "text-[16px] leading-[1.75] text-foreground/85")}>
       {blocks.map((b, i) => {
         switch (b.type) {
           case "p":
@@ -103,20 +180,7 @@ export function ArticleBody({ blocks, locale }: { readonly blocks: ReadonlyArray
               </ul>
             );
           case "steps":
-            return (
-              <ol key={i} className="mt-6 grid gap-4">
-                {b.items.map((item, j) => (
-                  <li key={j} className="flex gap-4">
-                    <span className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-full bg-primary font-mono text-[12px] font-semibold text-primary-foreground">
-                      {j + 1}
-                    </span>
-                    <span className="min-w-0 pt-0.5">
-                      <Inline text={item} locale={locale} />
-                    </span>
-                  </li>
-                ))}
-              </ol>
-            );
+            return <Steps key={i} items={b.items} locale={locale} />;
           case "note": {
             const note = NOTE[b.tone];
             const Icon = note.icon;
@@ -161,6 +225,83 @@ export function ArticleBody({ blocks, locale }: { readonly blocks: ReadonlyArray
                     ))}
                   </tbody>
                 </table>
+              </div>
+            );
+          case "image":
+            return <ShotFrame key={i} shot={b} locale={locale} />;
+          case "gallery":
+            return (
+              <div key={i} className={cn("mt-7 grid gap-6", b.items.length >= 3 ? "sm:grid-cols-3" : "sm:grid-cols-2")}>
+                {b.items.map((shot) => (
+                  <ShotFrame key={shot.src} shot={{ ...shot, device: shot.device ?? "iphone" }} locale={locale} className="mt-0" />
+                ))}
+              </div>
+            );
+          case "cards":
+            return (
+              <div key={i} className={cn("mt-7 grid gap-4", b.cols === 3 ? "sm:grid-cols-2 lg:grid-cols-3" : "sm:grid-cols-2")}>
+                {b.items.map((c) => {
+                  const Icon = docIcon(c.icon);
+                  const href = resolveHelpHref(c.href, locale);
+                  const inner = (
+                    <>
+                      {Icon ? <Icon className="size-5 text-primary-glow" aria-hidden /> : null}
+                      <span className={cn("block font-display text-[15.5px] font-semibold text-foreground", Icon && "mt-4")}>{c.title}</span>
+                      <span className="mt-1.5 block text-[14px] leading-relaxed text-muted-foreground">
+                        <Inline text={c.text} locale={locale} />
+                      </span>
+                      <ArrowRight className="absolute right-5 top-5 size-4 text-muted-foreground opacity-0 transition-all group-hover:translate-x-0.5 group-hover:opacity-100" aria-hidden />
+                    </>
+                  );
+                  const cls = "group relative block rounded-2xl border border-hairline bg-surface p-5 transition-colors hover:border-primary/50";
+                  return href.startsWith("/") ? (
+                    <Link key={c.href} href={href} className={cls}>
+                      {inner}
+                    </Link>
+                  ) : (
+                    <a key={c.href} href={href} className={cls}>
+                      {inner}
+                    </a>
+                  );
+                })}
+              </div>
+            );
+          case "tabs":
+            return (
+              <DocTabs key={i} labels={b.items.map((t) => t.label)}>
+                {b.items.map((t) => (
+                  <ArticleBody key={t.label} blocks={t.blocks} locale={locale} nested />
+                ))}
+              </DocTabs>
+            );
+          case "faq":
+            return (
+              <div key={i} className="mt-7 divide-y divide-hairline overflow-hidden rounded-2xl border border-hairline bg-surface">
+                {b.items.map((f) => (
+                  <details key={f.q} className="group">
+                    <summary className="flex cursor-pointer list-none items-center gap-3 px-5 py-4 font-medium text-foreground hover:bg-foreground/[0.03] [&::-webkit-details-marker]:hidden">
+                      <ChevronRight className="size-4 shrink-0 text-muted-foreground transition-transform group-open:rotate-90" aria-hidden />
+                      <span className="text-[15px]">{f.q}</span>
+                    </summary>
+                    <div className="px-5 pb-5 pl-12 text-[15px]">
+                      <Inline text={f.a} locale={locale} />
+                    </div>
+                  </details>
+                ))}
+              </div>
+            );
+          case "code":
+            return (
+              <div key={i} className="mt-7 overflow-hidden rounded-2xl border border-hairline bg-[color-mix(in_oklab,var(--surface)_70%,var(--background))]">
+                <div className="flex items-center gap-2 border-b border-hairline px-4 py-1.5">
+                  <span className="font-code text-[12px] text-muted-foreground">{b.title ?? b.lang ?? "text"}</span>
+                  <span className="ml-auto">
+                    <CopyButton text={b.text} label={locale === "el" ? "Αντιγραφή" : "Copy"} />
+                  </span>
+                </div>
+                <pre className="overflow-x-auto px-4 py-3.5 font-code text-[13px] leading-6 text-foreground">
+                  <code>{b.text}</code>
+                </pre>
               </div>
             );
           default: {

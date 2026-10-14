@@ -23,6 +23,9 @@ import {
   resolvePriceTokens,
 } from '../src/data/pricing.ts';
 import { PROJECT_COUNT, SEO_MIN_TERM_MONTHS } from '../src/data/company-facts.ts';
+// The docs (help center, iPhone guides, glossary) render from the same data as the site.
+import { markdownFor } from '../src/lib/docs/markdown.ts';
+import { helpContent } from '../src/data/help/index.ts';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
@@ -329,8 +332,14 @@ function buildShort({ services, servicesEl, industries, industriesEl, greece, pr
   lines.push(
     hubLine('GSC Boost (SEO software)', `${BASE}/en/platform`, 'Google Search Console-native SEO software: ranked fixes with click estimates, rank tracking, site audit, AI visibility. Web app at app.anotherseoguru.com (EN + EL).'),
     hubLine('GSC Boost for iPhone (beta)', `${BASE}/en/platform/iphone`, 'Native iOS 17+ app on the same account: weekly fixes, rank tracking, alerts, AI evidence, widgets. In TestFlight beta, not yet on the App Store.'),
-    hubLine('GSC Boost help center', `${BASE}/en/help`, 'How the SEO software works: Search Console setup, opportunities, rank tracking, site audit, AI visibility, agency tools and billing (EN + EL).'),
+    hubLine('GSC Boost docs', `${BASE}/en/help`, 'How the SEO software works on the web and iPhone: Search Console setup, opportunities, rank tracking, site audit, AI visibility, agency tools and billing (EN + EL). Every docs page has a Markdown twin at its URL + ".md".'),
+    hubLine('SEO glossary', `${BASE}/en/glossary`, 'Over 100 SEO, AEO and GEO terms, one page each with definition, example and how to apply it (EN + EL).'),
   );
+  lines.push('');
+  lines.push('## GSC Boost Docs (Markdown)');
+  for (const c of helpContent('en')) {
+    for (const a of c.articles) lines.push(mdLink(`${c.title}: ${a.title}`, `${BASE}/en/help/${c.slug}/${a.slug}.md`, a.description));
+  }
   lines.push('');
   lines.push('## Machine-Readable Feeds for AI Agents');
   lines.push(
@@ -710,6 +719,16 @@ function buildFull({ services, servicesEl, industries, industriesEl, greece, pro
   return lines.join('\n');
 }
 
+/** The English docs in full, so "llms-full.txt" really holds everything the docs say. */
+function buildDocs() {
+  const parts = ['## 11. GSC Boost documentation', '', `The same guides are in Greek under ${BASE}/el/help. Each page has a Markdown twin at its URL + ".md".`, ''];
+  for (const c of helpContent('en')) {
+    for (const a of c.articles) parts.push(markdownFor(['en', 'help', c.slug, a.slug]).replace(/^# /, '### '), '');
+  }
+  parts.push(markdownFor(['en', 'glossary']).replace(/^# /, '### '));
+  return parts.join('\n');
+}
+
 function main() {
   const services = parseServices();
   const servicesEl = parseServiceNamesEl();
@@ -732,7 +751,7 @@ function main() {
 
   const ctx = { services, servicesEl, industries, industriesEl, greece, projects, posts };
   write('public/llms.txt', buildShort(ctx));
-  write('public/llms-full.txt', buildFull(ctx));
+  write('public/llms-full.txt', `${buildFull(ctx)}\n---\n\n${buildDocs()}`);
 }
 
 main();

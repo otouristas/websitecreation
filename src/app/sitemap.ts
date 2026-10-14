@@ -6,6 +6,7 @@ import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 import { GENERATED_CONTENT_UPDATED } from '@/lib/seo/content-dates';
 import { consultantPath } from '@/data/founder';
 import { helpContent } from '@/data/help';
+import { allTerms } from '@/lib/docs/glossary';
 
 const BASE_URL = 'https://anotherseoguru.com';
 const LOCALES: SiteLocale[] = ['en', 'el'];
@@ -50,6 +51,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/seo-services', priority: 0.95 },
     { path: '/', priority: 1, changeFrequency: 'weekly' as const },
     { path: '/glossary', priority: 0.86 },
+    // One page per glossary term, in both languages.
+    ...allTerms().map(({ term }) => ({ path: `/glossary/${term.id}`, priority: 0.6, changeFrequency: 'monthly' as const })),
     { path: '/services', priority: 0.9 },
     { path: '/solutions', priority: 0.9 },
     { path: '/about', priority: 0.7, changeFrequency: 'monthly' as const },

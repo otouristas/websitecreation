@@ -69,6 +69,26 @@ export function middleware(request: NextRequest) {
     return NextResponse.redirect(new URL(cityRoute.to, request.url), 308);
   }
 
+  // Markdown twin of a docs page: /en/help/x/y.md -> the static Markdown route.
+  const md = /^\/(en|el)\/(help|glossary)((?:\/[a-z0-9-]+)*)\.md$/.exec(pathname);
+  if (md) {
+    const url = request.nextUrl.clone();
+    url.pathname = `/api/docs-md/${md[1]}/${md[2]}${md[3]}`;
+    return NextResponse.rewrite(url);
+  }
+
+  // The glossary used to be one page with ?term=<id>; each term has its own URL now.
+  const glossary = /^\/(en|el)\/glossary\/?$/.exec(pathname);
+  const termParam = request.nextUrl.searchParams.get('term');
+  if (glossary && termParam) {
+    // Term ids are the slugs; anything that isn't slug-shaped goes to the A-Z page.
+    const id = /^[a-z0-9-]{1,80}$/.test(termParam.trim().toLowerCase()) ? termParam.trim().toLowerCase() : null;
+    const url = request.nextUrl.clone();
+    url.search = '';
+    url.pathname = id ? `/${glossary[1]}/glossary/${id}` : `/${glossary[1]}/glossary`;
+    return NextResponse.redirect(url, 308);
+  }
+
   if (
     pathname.startsWith('/_next') ||
     pathname.startsWith('/api') ||
