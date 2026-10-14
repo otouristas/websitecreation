@@ -3,10 +3,11 @@ import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
-import { Accent, Container, CtaBand, HeroCentered, KitEyebrow, SoftwareCtas, TrustLine, softwareTrust } from "@/components/kit";
+import { Accent, Container, CtaBand, HeroCentered, KitEyebrow, KitHeading, KitSection, SoftwareCtas, TrustLine, softwareTrust } from "@/components/kit";
 import {
   GscFaq,
   HOME_FAQ,
+  IntegrationCards,
   MODULES,
   ModuleDetail,
   ModuleIndex,
@@ -85,6 +86,22 @@ export default async function PlatformFeaturesPage({ params }: PageProps) {
             <ModuleDetail key={m.id} m={m} locale={locale} flip={i % 2 === 1} />
           ))}
         </div>
+
+        <KitSection tinted id="integrations">
+          <KitHeading
+            eyebrow={tx("Integrations", "Ενσωματώσεις")}
+            title={
+              <>
+                {tx("Every module, on the same account in", "Κάθε λειτουργία, με τον ίδιο λογαριασμό, σε")} <Accent>{tx("Chrome, WordPress and AI assistants", "Chrome, WordPress και βοηθούς AI")}</Accent>
+              </>
+            }
+            description={tx(
+              "Check pages with the SEO Chrome extension, see Search Console in the WordPress editor, or ask Claude and ChatGPT through the MCP server. Tasks sync back here.",
+              "Ελέγξτε σελίδες με την επέκταση SEO για Chrome, δείτε το Search Console μέσα στον editor του WordPress ή ρωτήστε Claude και ChatGPT μέσω του MCP server. Οι εργασίες συγχρονίζονται εδώ.",
+            )}
+          />
+          <IntegrationCards locale={locale} exclude="web" className="mt-12" />
+        </KitSection>
 
         <GscFaq locale={locale} items={FEATURE_FAQ} />
         <CtaBand

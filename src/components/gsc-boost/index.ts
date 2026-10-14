@@ -8,3 +8,4 @@ export * from "./pricing-sections";
 export { PlanPicker, BillingToggle } from "./PlanPicker";
 export * from "./seo";
 export { SiteSwitcherMini, AgencyPlanCard } from "./agency";
+export * from "./integrations";

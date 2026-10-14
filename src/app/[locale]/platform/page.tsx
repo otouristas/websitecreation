@@ -30,6 +30,8 @@ import {
   GscFaq,
   HOME_FAQ,
   HowItWorks,
+  INTEGRATIONS_PATH,
+  IntegrationCards,
   LOWEST_MONTHLY,
   ModuleTour,
   PersonaLinks,
@@ -285,6 +287,27 @@ export default async function PlatformHubPage({ params }: PageProps) {
               ))}
             </div>
           </div>
+        </KitSection>
+
+        {/* --------------------------------------------------- integrations */}
+        <KitSection tinted id="integrations">
+          <KitHeading
+            eyebrow={tx("New · One login everywhere", "Νέο · Ένας λογαριασμός παντού")}
+            title={
+              <>
+                {tx("Also in Chrome, WordPress and", "Και στο Chrome, στο WordPress και στους")} <Accent>{tx("your AI assistant", "βοηθούς AI")}</Accent>
+              </>
+            }
+            description={tx(
+              "An SEO extension for Chrome, a Search Console plugin for WordPress and an MCP server for Claude, ChatGPT and Cursor, all on the same account and in sync.",
+              "Επέκταση SEO για Chrome, plugin Search Console για WordPress και MCP server για Claude, ChatGPT και Cursor, όλα στον ίδιο λογαριασμό και συγχρονισμένα.",
+            )}
+          />
+          <IntegrationCards locale={locale} exclude="web" className="mt-12" />
+          <Link href={lp(INTEGRATIONS_PATH)} className="mt-8 inline-flex items-center gap-1.5 font-medium text-link hover:underline">
+            {tx("See all integrations", "Δείτε όλες τις ενσωματώσεις")}
+            <ArrowRight className="size-4" aria-hidden />
+          </Link>
         </KitSection>
 
         {/* ---------------------------------------------------------- plans */}
