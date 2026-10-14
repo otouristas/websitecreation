@@ -2137,3 +2137,1237 @@ A: Use https://anotherseoguru.com/en/get-started (or https://anotherseoguru.com/
 - **Languages:** Greek, English
 - **Response time:** within 24 hours
 - **Get started:** https://anotherseoguru.com/en/get-started · https://anotherseoguru.com/el/get-started
+
+---
+
+## 11. GSC Boost documentation
+
+The same guides are in Greek under https://anotherseoguru.com/el/help. Each page has a Markdown twin at its URL + ".md".
+
+### What GSC Boost does
+
+> A tour of the product: your Search Console data, turned into a ranked list of fixes.
+
+Source: https://anotherseoguru.com/en/help/getting-started/welcome
+
+GSC Boost reads your **Google Search Console** data and turns it into a weekly plan: which pages and queries to work on, what to change, and how many clicks each fix is likely to bring. Everything else in the product (keyword research, the site audit, content, competitors, AI visibility and client work) feeds that same plan.
+
+![The This week screen in GSC Boost with search performance, sales from Analytics and the sidebar navigation](https://anotherseoguru.com/images/docs/web/overview-light.webp)
+*This week is the home screen: how search is doing and what to fix first.*
+
+## How it works
+
+1. You sign in with Google and pick the Search Console properties you want to work on. Access is read-only.
+2. We load up to 16 months of clicks, impressions, CTR and positions for each property.
+3. The opportunity engine looks for queries close to page one, results with low CTR, pages losing traffic, pages competing with each other and topics you're missing.
+4. Each finding becomes a fix with an estimated click impact. Send the ones you want to **Tasks**, ship them, and we measure the result.
+
+## Where things are
+
+| Area | What you do there |
+| --- | --- |
+| This week | The fixes worth the most clicks, search health and how traffic is trending. |
+| Performance | Every query, page, country and device from Search Console, with comparisons. |
+| Opportunities | Ranked fixes with estimated click impact. |
+| Keywords and Content | Research, rank tracking, clusters, briefs, the writer and WordPress publishing. |
+| Site audit | Crawl issues, indexability, Core Web Vitals and internal links. |
+| Competitors and AI visibility | Keyword gap, backlinks, SERP explorer and how AI assistants mention you. |
+| Agency | Clients, leads, pipeline, proposals, the client portal and reports. |
+
+> **Tip:** Not ready to connect a site? Open the [live demo](https://app.anotherseoguru.com/demo). It runs on sample data for three fictional sites and every screen works.
+
+## Moving around quickly
+
+- Press `⌘K` (or `Ctrl K`) anywhere in the app to jump to any page, section or site.
+- Use **Ask AI** in the top bar to ask questions about your own data in plain language.
+- The site switcher at the top of the sidebar changes the property every screen works on.
+
+![The command palette open over the app, with search results for keyword pages and sections](https://anotherseoguru.com/images/docs/web/command-palette-light.webp)
+*Press ⌘K to jump to any page, section or site.*
+
+![The Ask AI panel open on the right, with suggested questions about the current site](https://anotherseoguru.com/images/docs/web/ask-ai-light.webp)
+*Ask AI answers questions from the data on the screen you're looking at.*
+
+### Connect Google Search Console
+
+> Sign in with Google, choose your properties and understand what we can and can't see.
+
+Source: https://anotherseoguru.com/en/help/getting-started/connect-search-console
+
+GSC Boost works from your own Search Console data, so the first step is connecting the Google account that has access to your properties.
+
+![The GSC Boost sign-up page with the Continue with Google button](https://anotherseoguru.com/images/docs/web/signup-light.webp)
+*Create your account with Google to connect Search Console in one step.*
+
+## Connect your account
+
+1. Choose **Start with Google** on the sign-up page, or open **Settings → Integrations** if you're already signed in.
+2. Pick the Google account that owns or has access to your Search Console properties.
+3. Approve the read-only Search Console permission. We never ask for permission to change anything in your Google account.
+4. Choose the properties you want to work on. Each one becomes a project.
+
+![Settings, Integrations tab, showing Google, Search Console, Google Analytics 4 and WordPress as connected](https://anotherseoguru.com/images/docs/web/settings-integrations-light.webp)
+*Settings → Integrations shows which Google and WordPress connections are active.*
+
+## Domain and URL-prefix properties
+
+Both kinds work. A **domain property** (`sc-domain:example.com`) covers every subdomain and protocol, so it usually shows the most complete numbers. A **URL-prefix property** (`https://www.example.com/`) only covers URLs that start with that prefix. If you have both, use the domain property.
+
+## How fresh the data is
+
+Search Console reports with a delay of about 2–3 days, and the most recent days keep filling in for a while. Every dashboard shows **data through** the last complete day, and the note next to it tells you when we last refreshed. Search Console keeps 16 months of history, which is the longest range you can pick.
+
+> **Note:** Only people with access to a property in Search Console can connect it. If a property is missing from the list, check in Search Console that this Google account has at least restricted access to it.
+
+## Disconnecting
+
+You can remove a project under **Projects**, or revoke our access at any time from your Google account's security settings. Revoking access stops all data loading straight away.
+
+### Projects, brand terms and switching sites
+
+> How projects work, why brand terms matter and how to manage many sites.
+
+Source: https://anotherseoguru.com/en/help/getting-started/projects-and-sites
+
+Each Search Console property you work on is a **project**. A project keeps the settings the rest of the product relies on: brand terms, competitors, the market you target and any linked client.
+
+## What to set up first
+
+- **Brand terms**: the names people use when they search for you. They split brand from non-brand demand, which is the traffic SEO work actually wins.
+- **Competitors**: up to six sites you compete with. They power the keyword gap, backlinks, share of voice and AI visibility comparisons.
+- **Market**: the country and language you target, used for keyword data and live results-page checks.
+
+## Switching between sites
+
+Use the site switcher at the top of the sidebar, or press `⌘K` and type the domain. **All sites** shows every project on one screen with its trend, drops, top movers and open fixes, which is the fastest way to see where to look first when you manage many sites.
+
+![The All sites screen with click totals and a card for each site showing its trend, top mover and open fixes](https://anotherseoguru.com/images/docs/web/portfolio-light.webp)
+*All sites shows every project on one screen, sorted by the biggest drop.*
+
+> **Tip:** Your plan sets how many projects you can have: 3 on Launch, 10 on Growth and 30 on Agency.
+
+### A 10-minute weekly routine
+
+> The quickest way to get value every week, step by step.
+
+Source: https://anotherseoguru.com/en/help/getting-started/weekly-routine
+
+Most of the value comes from doing a few things every week. Here's the routine we recommend.
+
+1. Open **This week** and read the search health score and the metric tabs. Anything red is worth a look.
+2. Go through **This week's fixes**. They're ordered by estimated clicks, so start at the top.
+3. Send the fixes you agree with to **Tasks** with **Plan the push** or **Rewrite the title**.
+4. Ship one or two of them. When a task is done, mark it shipped so we can measure it.
+5. Check **Tasks → Results** for fixes shipped a few weeks ago and see what they earned.
+
+## Once a month
+
+- Run a **Site audit** and compare it with the previous crawl.
+- Review **Rank tracking** and the rankings distribution for your most important keywords.
+- If you report to someone, send a **Client report** for the month.
+
+### The This week dashboard
+
+> What each part of your home screen means and how to read it.
+
+Source: https://anotherseoguru.com/en/help/search-performance/this-week
+
+**This week** is your home screen. It answers three questions: how is search doing, what changed, and what should you do next.
+
+![The This week dashboard with the site header, search performance summary and sales from Analytics](https://anotherseoguru.com/images/docs/web/overview-light.webp)
+*The This week dashboard for a sample site.*
+
+## Search performance
+
+The four tabs show clicks, impressions, CTR and average position for the selected range, with the change against the comparison period. Click a tab (or use the arrow keys) to chart that metric. Dotted markers on the chart are annotations: Google updates and changes you shipped.
+
+## Search health and the ranking ladder
+
+**Search health** is a 0–100 score built from click momentum, CTR against what your positions should earn, how much of your demand ranks in the top 10, and visibility growth. The **ranking ladder** counts your queries in the top 3, top 10, top 20 and top 100, and how many moved up or down.
+
+## This week's fixes
+
+The fixes worth the most clicks right now, ranked by estimated impact. Each one says what to do and why, and can go straight to your task list.
+
+## Wins, risks and what people find you for
+
+- **Biggest win** and **At risk** highlight the page that gained the most and the one losing the most.
+- **What changed** lists the biggest click swings by query or page, and **Explain these changes** asks the AI assistant for likely causes.
+- **What people find you for** shows your top queries and pages side by side, with average position and change.
+
+### Queries, pages, countries and devices
+
+> Explore every row Search Console returns, filter it and export it.
+
+Source: https://anotherseoguru.com/en/help/search-performance/queries-and-pages
+
+**Performance** is the full explorer for your Search Console data. Use the tabs for queries, pages, countries, devices and annotations, and the filters at the top to narrow everything to one device or country.
+
+![Performance, Queries tab, with a table of queries showing clicks, impressions, CTR, position and detected opportunities](https://anotherseoguru.com/images/docs/web/performance-queries-light.webp)
+*Performance → Queries with quick filters and the opportunity column.*
+
+## Filtering and quick filters
+
+- Type in the filter box to match text. Wrap a pattern in slashes, like `/^how to/`, to use a regular expression.
+- Quick filters pick common slices: brand or non-brand, new, lost, rising, falling and striking distance.
+- Click any row to open its drawer with the trend, the matching pages or queries and suggested actions.
+
+## How many rows you get
+
+The query and page tables load up to **100,000 rows** per period, fetched from Search Console 25,000 at a time, so large sites over 16 months see their full long tail. Big ranges take a few seconds longer to load the first time.
+
+> **Note:** Totals at the top come from Search Console's daily totals. They're usually higher than the sum of the rows because Google hides anonymized queries from row-level data.
+
+## Exporting
+
+Use **CSV** on any table to download exactly what you see, with the current filters, the comparison columns and any detected opportunity.
+
+### Date ranges, comparisons and why numbers differ
+
+> Pick ranges, compare periods and understand differences from other tools.
+
+Source: https://anotherseoguru.com/en/help/search-performance/date-ranges
+
+The date control in the top bar sets the range for every screen. You can pick a preset or a custom range, and choose what to compare it with: the previous period, the same period last year, or nothing.
+
+## Days, weeks and months
+
+Long ranges chart by week or month. When a week or month at the edge of the range is incomplete, we leave it out of the chart so a partial bucket doesn't look like a drop.
+
+## Why numbers can differ
+
+| You see | Why |
+| --- | --- |
+| Totals higher than the sum of rows | Anonymized queries are counted in totals but hidden from rows. |
+| Slightly different numbers than Search Console | The newest days are still filling in. Refresh after a day or two. |
+| Different positions than a live Google search | Search Console averages your top position across every search, weighted by impressions. |
+| Lower numbers with a device or country filter | The filter also applies to the comparison period and the totals. |
+
+### Annotations and measuring changes
+
+> Mark what you shipped and Google's updates, then see their effect on the chart.
+
+Source: https://anotherseoguru.com/en/help/search-performance/annotations
+
+Annotations put context on your charts. Google algorithm updates are added for you, and you can add your own: a migration, a new section, a title rewrite.
+
+1. Open **Performance → Annotations**, or choose **Annotate a change** under any chart.
+2. Pick the date, write a short label and save.
+3. The annotation shows as a marker on every chart that covers that date.
+
+> **Tip:** Shipping a task from **Tasks** also records its ship date, so its before-and-after result is measured automatically.
+
+### How opportunities are found and estimated
+
+> The five detectors, how click impact is estimated and how to use the list.
+
+Source: https://anotherseoguru.com/en/help/opportunities-tasks/opportunities
+
+**Opportunities** looks at every query and page in your data and lists the changes most likely to bring more clicks. Each query or page appears once, under its biggest opportunity.
+
+![The Opportunities screen with the potential clicks summary, detector tabs and the ranked list of fixes](https://anotherseoguru.com/images/docs/web/opportunities-light.webp)
+*Opportunities ranks every fix by estimated clicks per month.*
+
+## The detectors
+
+| Detector | What it finds | Typical fix |
+| --- | --- | --- |
+| Striking distance | Non-brand queries ranking 4–20 with real demand. | Strengthen the page and its internal links to reach the top 3. |
+| Low CTR | Results on page one that earn far fewer clicks than their position usually gets. | Rewrite the title and meta description. |
+| Content decay | Pages losing clicks compared with an earlier period. | Refresh the content and check what replaced you. |
+| Cannibalization | Several of your pages competing for the same query. | Pick one page, merge or redirect the rest. |
+| Missing content | Demand you get impressions for but have no good page for. | Write a dedicated page. |
+
+![The Striking distance tab listing non-brand queries ranking 4 to 20 with their potential clicks and ranking page](https://anotherseoguru.com/images/docs/web/striking-distance-light.webp)
+*Striking distance: queries close to the top 3, with the clicks they could add.*
+
+## How click impact is estimated
+
+We compare where you rank today with the click-through rate a better position usually earns for that kind of query, and multiply by your impressions. It's an estimate of the size of the prize, not a promise, so use it to decide what to do first.
+
+> **Note:** Content decay needs a comparison period. Turn one on in the date control to run that detector.
+
+### Tasks, the board and measured results
+
+> Keep every fix in one list, ship it and see what it earned.
+
+Source: https://anotherseoguru.com/en/help/opportunities-tasks/tasks-and-results
+
+**Tasks** holds every fix and follow-up, whether it came from an opportunity, the audit, a client request or you.
+
+![The Tasks list with counters for in progress, due, overdue and done, and the open tasks below](https://anotherseoguru.com/images/docs/web/tasks-light.webp)
+*Tasks → List, filtered to all sites.*
+
+## List, board and results
+
+- **List** for sorting and filtering by status, priority, site or source.
+- **Board** to move work from to-do to in progress to done.
+- **Results** for shipped fixes, with the clicks and impressions before and after.
+
+![The Tasks board with To do, In progress and Done & shipped columns](https://anotherseoguru.com/images/docs/web/tasks-board-light.webp)
+*Tasks → Board: drag a card to change its status.*
+
+## How results are measured
+
+When you mark a task shipped, we compare the page's Search Console data over the same number of days before and after the ship day, leaving the ship day itself out. We also measure the rest of your site over the same days as a control, so a sitewide rise or seasonal swing isn't credited to your fix.
+
+![Tasks, Results tab, showing clicks gained from shipped fixes, a fix being measured and before-and-after results](https://anotherseoguru.com/images/docs/web/tasks-results-light.webp)
+*Tasks → Results: what each shipped fix earned, measured against the rest of the site.*
+
+> **Tip:** Give a fix at least two to four weeks before judging it. Google needs time to recrawl and re-rank the page.
+
+### Keyword research, collections and clusters
+
+> Find keywords, save them and group them into topics.
+
+Source: https://anotherseoguru.com/en/help/keywords-content/keyword-research
+
+**Keywords → Research** shows search volume, difficulty, intent and the results page for any keyword in your market, alongside what you already rank for in Search Console.
+
+![Keywords, Research tab, with the keyword search box, an assistant suggestion and keywords to start from](https://anotherseoguru.com/images/docs/web/keywords-research-light.webp)
+*Keywords → Research starts from the queries you already rank for.*
+
+## Collections
+
+Save keywords into collections to build a list for a campaign, a page or a client. You can expand a collection from seed keywords and brainstorm related ideas.
+
+## Clusters and groups
+
+- **Clusters** group keywords that the same page can rank for, so you plan one page per topic instead of one per keyword.
+- **Groups** let you define your own segments (a product line, a location, a campaign) and follow their clicks and impressions together.
+
+![Keywords, Clusters tab, with topic counts and a list of clusters showing clicks, impressions and average position](https://anotherseoguru.com/images/docs/web/keywords-clusters-light.webp)
+*Keywords → Clusters groups your Search Console queries into topics.*
+
+> **Note:** Keyword research uses live data and costs credits per lookup. The cost is shown on the button before you run it.
+
+### Rank tracking from Search Console
+
+> Track daily positions for the keywords you care about, free.
+
+Source: https://anotherseoguru.com/en/help/keywords-content/rank-tracking
+
+Rank tracking follows the keywords you choose using Search Console's own data, so it's free and covers every device and country you rank in.
+
+## How positions are measured
+
+Each keyword's position is the average over the last 7 days, weighted by impressions, which is exactly how Search Console reports it. The 7d and 28d columns compare with the 7 days before and with 28 days earlier. Search Console updates daily with about a 3-day delay, and can differ from a single live check of Google.
+
+## Rankings distribution
+
+The card at the top splits your tracked keywords into Top 3, Page 1, Page 2, Page 3+ and Not ranking, and shows how many moved into or out of each tier in the last 28 days. Click a tier to filter the table to it.
+
+![Keywords, Rank tracking tab, with the rankings distribution card and the tracked keywords table](https://anotherseoguru.com/images/docs/web/keywords-tracking-light.webp)
+*Rank tracking with the rankings distribution and 90-day trends.*
+
+## Targets
+
+Set a target position for a keyword to see how far it is from the goal. Keywords that are close to a target show up as suggestions for your next push.
+
+### Briefs, the writer and WordPress publishing
+
+> Go from a keyword to a published page.
+
+Source: https://anotherseoguru.com/en/help/keywords-content/content-studio
+
+**Content** covers the whole path from idea to published page.
+
+![Content, Create tab, with page types, the target keyword field and the site style read from the client's site](https://anotherseoguru.com/images/docs/web/content-create-light.webp)
+*Content → Create: pick a page type and a keyword, and the draft follows the site's own style.*
+
+| Tool | Use it to |
+| --- | --- |
+| Create | Write a complete page (blog post, pillar page, hub or landing page) with schema and a preview. |
+| Briefs | Plan a page: the questions to answer, the headings, the competitors that rank and the People Also Ask questions. |
+| Optimizer | Score an existing page against the queries it ranks for and improve titles and copy. |
+| Library | Import posts from WordPress or crawl any public site, keep version history and publish edits back. |
+| FAQs and Products | Write FAQ answers and product descriptions with their structured data. |
+| Templates | Set your house style and brand voice so every draft sounds like you. |
+
+![Content, Briefs tab, with saved briefs and a brief showing length, sections, related terms and the outline](https://anotherseoguru.com/images/docs/web/content-briefs-light.webp)
+*Content → Briefs: the outline, terms and questions a page needs to cover.*
+
+## Connect WordPress
+
+1. In WordPress, create an application password under **Users → Profile**.
+2. In GSC Boost, open **Settings → Integrations** and add your site URL, username and application password.
+3. Import posts and pages in **Content → Library**. Edits you make there can be published back with one click.
+
+> **Warning:** Pages imported by crawl aren't linked to WordPress. To publish back, connect the site and import it from WordPress.
+
+### Running a site audit
+
+> Crawl your site, read the issues and compare crawls over time.
+
+Source: https://anotherseoguru.com/en/help/site-audit/running-an-audit
+
+**Site audit → Issues** crawls your site from the homepage and sitemap, checks every page for the problems that block rankings, and saves each crawl so you can compare them.
+
+![Site audit, Issues tab, with the crawl history and what changed since the previous crawl](https://anotherseoguru.com/images/docs/web/audit-issues-light.webp)
+*Site audit → Issues with crawl history and a comparison with the previous crawl.*
+
+## Crawl settings
+
+- **Page limit**: how many pages one crawl covers. It depends on your plan; raise it in Settings when a crawl stops at the limit.
+- **Render JavaScript**: for sites built with React, Vue, Wix and similar. **When needed** opens only the pages that look empty without JavaScript in a real browser.
+- **Include sitemap**: also crawls pages from your XML sitemap and finds sitemap pages nothing links to.
+- **Only crawl**: limits the crawl to one folder, like `/blog/`.
+
+## Reading the results
+
+Each crawled URL scores by its worst issue. Issues are grouped by area (indexing, content, links, social and structured data, performance) and each explains why it matters and how to fix it. Compare with an earlier crawl to see what's new and what you fixed.
+
+> **Note:** Without JavaScript rendering, the crawler reads the HTML your server sends. Content added later by JavaScript isn't seen, and neither is it by AI assistants that only read plain HTML.
+
+### Indexability, Core Web Vitals and internal links
+
+> Find pages Google may not index, slow pages and weakly linked pages.
+
+Source: https://anotherseoguru.com/en/help/site-audit/indexability-and-speed
+
+## Indexability
+
+The indexability report compares the pages Google shows in search with the URLs your site exposes. It finds pages that may not be indexed, pages missing from your sitemap and results that don't earn clicks. For Google's own answer on a URL, use **URL Inspection** in Search Console.
+
+![Site audit, Indexability tab, with counts of discovered URLs and pages without impressions, and what to do about them](https://anotherseoguru.com/images/docs/web/audit-indexability-light.webp)
+*Site audit → Indexability compares what Google shows with what your site exposes.*
+
+## Page speed
+
+**Page speed** checks Core Web Vitals (LCP, INP and CLS) for your most important pages. Each metric uses field data from real Chrome users when Google has it for the URL, and the history shows the effect of a fix.
+
+## Internal links
+
+**Internal links** suggests links between your own pages based on their text: which page should link to which, the sentence where the link fits and the anchor text to use. Run a site crawl first so pairs that are already linked are hidden.
+
+### The page inspector
+
+> Check everything Google reads on a single page.
+
+Source: https://anotherseoguru.com/en/help/site-audit/page-inspector
+
+**Site audit → Page inspector** fetches any page and checks the on-page factors Google reads: status code, indexing directives, canonical, title tag, meta description, headings, links, images, structured data and Open Graph tags. It also shows the Search Console queries that page ranks for.
+
+- Use it before and after publishing a change to confirm it's live.
+- The preview shows roughly how the result looks on desktop. Google may rewrite titles and snippets.
+
+> **Note:** Checks run on the HTML the server returns. HTTP headers such as `X-Robots-Tag` aren't visible here.
+
+### Competitors, keyword gap and backlinks
+
+> See how you compare, what they rank for that you don't and who links to them.
+
+Source: https://anotherseoguru.com/en/help/competitors-ai/competitors
+
+Add up to six competitors to a project. **Competitors** then shows how big each site is, your share of voice and where they're winning clicks you could get.
+
+![The Competitors overview comparing keywords, estimated traffic and top 10 rankings, with share of voice](https://anotherseoguru.com/images/docs/web/competitors-light.webp)
+*Competitors → Overview with share of voice across tracked sites.*
+
+## The tools
+
+| Tool | What it shows |
+| --- | --- |
+| Overview | Keywords, estimated traffic and top-10 rankings for you and each competitor, your share of voice and where you rank. |
+| Keyword gap | Keywords competitors rank for and you don't, with volume and their positions. |
+| Backlinks | Referring domains for you and each competitor, the anchor text they use, and sites that link to them but not to you. |
+| Link building | Prospects and placements to track your outreach. |
+| SERP explorer | Any Google results page the way searchers see it: who ranks and which features take the space. |
+| Articles | Your competitors' strongest pages and an outline to beat them. |
+
+> **Note:** Competitor numbers are estimates from our data partners, not Search Console data, so they're best for comparing sites with each other.
+
+![Competitors, Keyword gap tab, with gap keywords, monthly searches, easy wins and the keywords to win table](https://anotherseoguru.com/images/docs/web/competitors-gap-light.webp)
+*Competitors → Keyword gap: what competitors rank for that you don't.*
+
+### AI visibility: ChatGPT, Gemini, Perplexity and AI Overviews
+
+> Track whether AI assistants name you, and what to do about it.
+
+Source: https://anotherseoguru.com/en/help/competitors-ai/ai-visibility
+
+**AI visibility** shows how often AI assistants mention your brand when people ask the questions your customers ask, and how that compares with your competitors.
+
+## What your own data shows
+
+From Search Console and Google Analytics we show which of your pages appear in AI Overviews, queries where an AI Overview shows but you aren't cited, and visits that arrive from AI assistants.
+
+![The AI visibility overview with AI Overview impressions, clicks from those queries and visits from AI assistants](https://anotherseoguru.com/images/docs/web/ai-visibility-light.webp)
+*AI visibility starts from what your own Search Console and Analytics data show.*
+
+## The prompt tracker
+
+1. Add the prompts you want to track, or describe a type of customer and we'll write the questions they'd ask.
+2. Run a check. We ask each tracked engine and save every answer with its sources.
+3. Read the results: mention rate per engine, share of voice and where you rank among the sites you track, and the prompts where a competitor is named and you aren't.
+
+> **Tip:** Pages that get cited usually have current facts, a clear first paragraph that answers the question and named sources. The **Plan a fix** action on a missed prompt suggests exactly what to add.
+
+### Local rankings
+
+> See your Google Maps rank on a grid around your business.
+
+Source: https://anotherseoguru.com/en/help/competitors-ai/local-rankings
+
+**Local rankings** searches a keyword on Google Maps from every point of a grid around your business and records where you appear, so you can see how your local visibility changes street by street.
+
+![Local rankings with tracked keywords, a grid of positions on the map and the share of points in the top 3](https://anotherseoguru.com/images/docs/web/local-light.webp)
+*Local rankings: your Google Maps position at every point of the grid.*
+
+1. Add your business as it appears on Google Business Profile.
+2. Add the keywords you want to rank for, like `dentist near me`.
+3. Run a scan. Each point on the map shows your position there; save scans to compare over time.
+
+> **Warning:** Deleting a business also deletes its keywords and saved map scans. Credits already used aren't refunded.
+
+### Clients and the client portal
+
+> Keep accounts in one place and give clients their own live portal.
+
+Source: https://anotherseoguru.com/en/help/agencies/clients-and-portal
+
+**Clients** keeps each account's contacts, notes and linked sites. Every client can get a branded **client portal** with their search performance, the work you're doing and their invoices.
+
+![The Clients screen with active clients, MRR, at-risk clients and open deal value, and the list of clients](https://anotherseoguru.com/images/docs/web/clients-light.webp)
+*Clients with retainer, linked sites and SEO trend for each account.*
+
+## What clients see
+
+- **Overview**: what needs their attention (open invoices, late work, their requests), the main search metrics with a trend chart, top searches and recent activity.
+- **Performance**: their top searches and pages, movers and, on Pro, the site health audit.
+- **Work**: tasks you share with them, and a form to send you requests that land on your task board.
+- **Billing**: invoices and payments you share.
+
+![The client portal sign-in page where a client enters their email to receive a one-time link](https://anotherseoguru.com/images/docs/web/portal-light.webp)
+*Clients sign in to the portal with a one-time link, no password.*
+
+## Portal plans
+
+| Plan | Includes |
+| --- | --- |
+| Reports | Overview and tasks. |
+| Growth | Adds top searches, pages and period comparison. |
+| Pro | Adds the full site audit and emailed reports. |
+
+> **Tip:** Use **Preview the portal** on a client's Portal tab to see exactly what they see before you invite them. Clients sign in with a one-time link, no password.
+
+### Leads, free audits and proposals
+
+> Turn website requests into audited leads and proposals ready to send.
+
+Source: https://anotherseoguru.com/en/help/agencies/leads-and-proposals
+
+Add the free audit form to your website. Every request becomes a **lead** with an automatic audit of their site, so you know what to say before you reply.
+
+1. Set up your lead form, price list and packages in **Settings → Agency**.
+2. When a lead arrives, review the audit and the suggested package.
+3. Send a proposal. The client can read it, accept it with their name and you're notified straight away.
+4. Accepted proposals set up the project and invite the client to their portal.
+
+![Settings, Agency tab, with automation status and sender details for proposals and portal emails](https://anotherseoguru.com/images/docs/web/settings-agency-light.webp)
+*Settings → Agency: lead form, proposals and the emails sent in your name.*
+
+**Pipeline** tracks every deal from lead to signed, so nothing waits too long for a reply.
+
+![The Pipeline board with deal totals and columns from Lead to Won and Lost](https://anotherseoguru.com/images/docs/web/pipeline-light.webp)
+*Pipeline: drag deals between stages; totals use each deal's probability.*
+
+### Client reports and strategy workbooks
+
+> Send branded reports and full strategy workbooks.
+
+Source: https://anotherseoguru.com/en/help/agencies/reports
+
+**Reports → Client report** builds a branded, printable report for any site and range: headline metrics, trends, wins, top queries and pages, and the work you shipped.
+
+![Reports, Client report tab, with report settings on the left and an A4 preview of a branded SEO report](https://anotherseoguru.com/images/docs/web/reports-light.webp)
+*Reports → Client report with a live A4 preview.*
+
+- Add your logo and colours in **Settings → Branding** for white-label reports.
+- Print or save as PDF straight from the report, or schedule it by email for portal clients on Pro.
+- **Reports → Strategy** exports a complete workbook: audit findings, keyword mapping, a content plan and a prioritized backlog.
+
+### Plans and credits
+
+> What each plan includes and which actions use credits.
+
+Source: https://anotherseoguru.com/en/help/account-billing/plans-and-credits
+
+Every plan includes all your Search Console analytics, opportunities and client reports at no credit cost. Credits pay for actions that cost us money to run, like live keyword data, results-page lookups, crawls and AI.
+
+| Plan | Price | Credits / month | Projects | Seats |
+| --- | --- | --- | --- | --- |
+| Launch | $29 / month | 1,200 | 3 | 1 |
+| Growth | $79 / month | 6,000 | 10 | 3 |
+| Agency | $149 / month | 20,000 | 30 | 10 |
+
+Yearly billing gives you two months free. If you run out, top up with a credit pack at any time in **Settings → Billing & credits**.
+
+> **Note:** When an action costs credits, the button shows the cost before you run it, and we ask you to confirm. Actions without a cost on the button are free.
+
+### Alerts, integrations and branding
+
+> Get notified about drops and connect the tools you use.
+
+Source: https://anotherseoguru.com/en/help/account-billing/alerts-and-integrations
+
+## Alerts
+
+In **Settings → Alerts**, choose what you want to hear about, like traffic drops on a site, and get it as a notification or in an email digest.
+
+## Integrations
+
+- **Google**: Search Console (required) and Google Analytics for visits, including traffic from AI assistants.
+- **WordPress**: import, edit and publish posts and pages.
+- **Email**: proposal and portal emails, set up in **Settings → Agency**.
+
+![Settings, Integrations tab, with Google, Search Console, Google Analytics 4 and WordPress connected](https://anotherseoguru.com/images/docs/web/settings-integrations-light.webp)
+*Settings → Integrations: every connection and its status.*
+
+## Branding
+
+Your logo, colours and agency name appear on client reports, proposals and the client portal.
+
+### Your data, privacy and Google access
+
+> What we read, what we store and how to remove it.
+
+Source: https://anotherseoguru.com/en/help/account-billing/privacy-and-data
+
+- Google access is **read-only**. We can't change your Search Console settings or your site.
+- Search Console data is used only for your own workspace and the clients you choose to share it with.
+- Product analytics are optional. We ask once, and you can change your choice anytime from **Analytics preferences** (in the **More** menu on phones). We never send client domains, emails, prompts or report content.
+- Remove a project under **Projects**. To delete your whole account and its data, write to support.
+
+Read the [privacy policy](https://anotherseoguru.com/en/privacy) and our [security page](https://anotherseoguru.com/en/platform/security) for the details, or write to support@anotherseoguru.com with any question.
+
+### Troubleshooting
+
+> Fixes for the most common problems.
+
+Source: https://anotherseoguru.com/en/help/account-billing/troubleshooting
+
+### A dashboard shows no data
+
+New properties take a day or two to show data in Search Console. Check the range isn't only the last 2–3 days, and that no device or country filter is active.
+
+### A property is missing
+
+Only properties the connected Google account can access appear. Add the account to the property in Search Console, then reload the list under **Projects**.
+
+### "Create or select a project for this property first"
+
+Every property needs a project before data loads. Add it under **Projects** or pick it in the site switcher.
+
+### The audit says "Partial crawl"
+
+The crawl stopped at your page limit, was stopped by you, or some pages couldn't be fetched. Raise the limit in crawl settings, or check that your site doesn't block crawlers.
+
+### Numbers differ from Search Console
+
+See [Date ranges, comparisons and why numbers differ](https://anotherseoguru.com/en/help/search-performance/date-ranges).
+
+> **Tip:** Still stuck? Write to support@anotherseoguru.com with the page you were on and what you expected to see.
+
+### Get the iPhone beta
+
+> The iPhone app is in beta through Apple's TestFlight. Here's how to request an invite and install it.
+
+Source: https://anotherseoguru.com/en/help/iphone-app/get-the-beta
+
+GSC Boost for iPhone is a native app (not a web view) on the same account and data as the web app. It's in **beta through Apple's TestFlight**. It isn't on the App Store yet, so the only way to install it is with a TestFlight invite from us.
+
+## What you need
+
+- An iPhone on **iOS 17 or later**. On iOS 26 and later the app uses the system's Liquid Glass tab bar.
+- The free **TestFlight** app from Apple.
+- A GSC Boost account, or none at all: the app has a sample workspace you can explore before you connect anything.
+
+## Request an invite and install
+
+1. **Email us for access** Write to [support@anotherseoguru.com](mailto:support@anotherseoguru.com?subject=iPhone%20beta%20access) with the subject **iPhone beta access**. Use the email address you want the invite sent to (it doesn't have to be your GSC Boost login).
+2. **Install TestFlight** On your iPhone, install **TestFlight** from the App Store. It's Apple's own app for beta testing.
+3. **Accept the invite** Open the invite email (or the invite link we send) on your iPhone and tap through to TestFlight. Tap **Accept**, then **Install**.
+4. **Open the app and sign in** AnotherSEOGuru appears on your Home Screen. Sign in with the same account you use on the web, or tap **Explore the sample workspace**. See [Sign in and sync](https://anotherseoguru.com/en/help/iphone-app/sign-in-and-sync).
+
+> **Note:** The app on your Home Screen is called **AnotherSEOGuru**. It's the iPhone version of GSC Boost, on the same account, plan and credits.
+
+## Getting new builds
+
+We ship beta builds often. TestFlight tells you when one is ready: open **TestFlight → AnotherSEOGuru → Update**. Your data lives on your account, not in the build, so updating never loses projects or tasks. Each beta build expires after a while; when TestFlight says a build has expired, install the latest one from the same screen.
+
+> **Tip:** Found a bug or something confusing? Reply to us at support@anotherseoguru.com with a screenshot and what you expected to happen. Beta feedback goes straight into the next build.
+
+## What's in the app
+
+- [Sign in and sync](https://anotherseoguru.com/en/help/iphone-app/sign-in-and-sync): Same account as the web app: projects, tasks and settings follow you.
+- [Today and this week's fixes](https://anotherseoguru.com/en/help/iphone-app/today): Search health, the ranking ladder and the fixes worth the most clicks.
+- [Search performance](https://anotherseoguru.com/en/help/iphone-app/search-performance): Any search or page in detail, plus GA4 traffic acquisition.
+- [Keywords and rankings](https://anotherseoguru.com/en/help/iphone-app/keywords-and-rankings): Keyword research, rank tracking and the live SERP explorer.
+- [Site audit on iPhone](https://anotherseoguru.com/en/help/iphone-app/site-audit-on-iphone): Run a crawl and follow it on the Lock Screen and in the Dynamic Island.
+- [AI visibility](https://anotherseoguru.com/en/help/iphone-app/ai-visibility): AI Overview citations, AI referrals and mentions in AI answers.
+- [The assistant](https://anotherseoguru.com/en/help/iphone-app/assistant): Ask about your own data and watch it work step by step.
+- [Notifications and background refresh](https://anotherseoguru.com/en/help/iphone-app/notifications-and-background-refresh): Leads, traffic swings, reports, tasks and billing, on your phone.
+- [Widgets and Siri](https://anotherseoguru.com/en/help/iphone-app/widgets): Clicks, all your sites and this week's fixes on the Home and Lock Screen.
+- [iPhone app FAQ](https://anotherseoguru.com/en/help/iphone-app/iphone-faq): Beta, plans, languages, privacy and more.
+
+### Sign in and sync with the web app
+
+> Use the same GSC Boost account on your iPhone. What syncs, what stays on the device and how to switch language.
+
+Source: https://anotherseoguru.com/en/help/iphone-app/sign-in-and-sync
+
+The iPhone app signs in to the **same account** as app.anotherseoguru.com. There's no separate subscription or setup: your projects, plan, credits and tasks are already there.
+
+![The AnotherSEOGuru sign-in screen on iPhone with Continue with Apple, Continue with Google, Continue with email, the sample workspace link and the Clients Area](https://anotherseoguru.com/images/iphone/sign-in.webp)
+*The first screen: sign in with Apple, Google or email, try the sample workspace, or open the Clients Area.*
+
+## Ways to sign in
+
+| Option | Use it when |
+| --- | --- |
+| **Continue with Apple** | You want to sign in with your Apple Account. |
+| **Continue with Google** | You signed up on the web with Google. Pick the same Google account. |
+| **Continue with email** | You use an email and password. **Create account** and **Forgot password?** are here too. |
+| **Explore the sample workspace** | You want to look around first. It uses fictional sites and works offline. |
+| **Clients Area** | Your agency invited you as a client. You get a one-time code by email and see only your own reports, shared work and payments. |
+
+> **Tip:** Sign in with the method you used on the web. Signing in with a different method can create a second, empty account.
+
+## Connecting Search Console
+
+1. **Tap Connect with Google** If your account has no Google connection yet, the app asks for one after you sign in. Access is read-only: the app reads Search Console and Analytics and never changes anything in your Google account.
+2. **Approve on Google's page** Pick the Google account that has access to your properties and approve. You're sent back to the app.
+3. **If the app doesn't notice** If you finished on Google but the app still waits, tap **I've connected it on the website**.
+
+If Google stops accepting an old connection, **Settings → Google** shows **Needs reconnecting**. Tap **Reconnect Google** to fix it.
+
+## What syncs and what stays on the phone
+
+| Synced with your account | Saved on this iPhone only |
+| --- | --- |
+| Projects and Search Console properties | Dismissed fixes and fix checklist progress |
+| Tasks, ship dates and results | Appearance (light, dark or same as iPhone) |
+| Tracked keywords and alert settings | Favourite and recently opened tools |
+| Profile name and language | Which notification topics are on |
+| Plan, credits and recent credit activity |  |
+
+## Greek and English
+
+The whole app is available in English and Greek. Go to **Settings → Language** and choose **English**, **Ελληνικά** or **Same as iPhone**. The choice is saved to your account, so emails and notifications from us use the same language.
+
+## Signing out and deleting your account
+
+**Settings → Sign out** removes the account from this iPhone and stops its notifications and Lock Screen activities. **Settings → Delete my account** deletes the account and its data for good, as Apple requires. If your plan still renews, cancel it in Billing first so you're not charged afterwards.
+
+### Today and this week's fixes
+
+> Read the Today tab, act on this week's fixes and measure them in Work.
+
+Source: https://anotherseoguru.com/en/help/iphone-app/today
+
+**Today** is the first tab and the iPhone version of the web app's This week screen. It answers three questions in one scroll: how search is doing, what changed and what to do next. The site pill above the tab bar shows which site you're looking at; tap it to switch.
+
+![The Today tab on iPhone with a Search health score of 86 of 100, clicks, pages up and fixes, and the search performance cards](https://anotherseoguru.com/images/iphone/today.webp)
+![The Ranking ladder on iPhone with Top 3, Top 10, Top 20 and Top 100 tiles and a Needs attention list](https://anotherseoguru.com/images/iphone/ranking-ladder.webp)
+
+## What's on the screen
+
+| Section | What it tells you |
+| --- | --- |
+| **Search health** | One 0–100 score from your Search Console query rows: click momentum, CTR vs expected, top-10 reach and visibility growth. Tap it for **How the score is built**. |
+| Clicks, Pages up, Fixes | The period's clicks, how many pages gained and how many fixes are waiting. |
+| **Search performance** | Clicks, impressions, CTR and average position against the previous 28 days. |
+| **Do these first** | The fixes worth the most clicks right now, with **Add to Tasks** and **Ask**. |
+| **Biggest win** and **At risk** | The page that gained the most and the one losing the most. |
+| **Ranking ladder** | How many searches rank in the top 3, 10, 20 and 100, and how many moved up or down. Tap a tile to see the searches that entered or left that band. |
+| **Needs attention** | Drops, decaying pages and Google updates. **See all** opens Alerts. |
+| **Top movers** | The searches that gained or lost the most clicks. |
+
+> **Note:** The line under the score says which dates you're seeing, for example **Data through Oct 10**. Search Console reports with a delay of about two days. Tap the **i** for the reporting period, the comparison period and when the data was last refreshed.
+
+## Turn a fix into a result
+
+1. **Add the fix to your tasks** Tap **Add to Tasks** on a fix in **Do these first**, or open **Work → Fixes** for the full list. Sort by **Biggest impact**, **Least effort** or **Newest**, and filter by kind: striking distance, low CTR, decay, cannibalization or missing content.
+2. **Do the work** Open the task in **Work → Tasks**. **Ask the assistant how to do it** writes the finished text, such as a new title, for that page.
+3. **Mark it shipped** Tap **Mark shipped**, pick the day the change went live, what to measure (the page, one search query or the whole site) and how long: 14, 28 or 56 days.
+4. **Read the verdict** When the window closes, the task moves to **Work → Results** as **Won**, **Flat** or **Lost**. A win means clicks rose at least 10% and by more than normal day-to-day swings.
+
+> **Tip:** Pull down on Today to refresh. The app uses the same opportunity engine and measuring rules as the web app, so both list the same fixes for the same site. Tasks you add on the phone show up on the web straight away.
+
+### Search performance on iPhone
+
+> Open any search or page in detail, change dates and compare periods, and read GA4 traffic acquisition.
+
+Source: https://anotherseoguru.com/en/help/iphone-app/search-performance
+
+The **Insights** tab holds your reports. Its three segments are **Search Console**, **Analytics** and **AI evidence**. This article covers the first two; AI evidence has [its own guide](https://anotherseoguru.com/en/help/iphone-app/ai-visibility).
+
+## Searches, pages, countries and devices
+
+The Search Console segment is the full report: searches, pages, countries and devices, sortable and filterable, with share-of-clicks bars. Use the calendar button to pick **Last 7 days** up to **Last 16 months**, or a **Custom range**, and compare with the **Previous period**, the **Same period last year** or nothing.
+
+- Filter with **Contains**, or switch to **Regex** for a Search Console regular expression. The app warns you about patterns Google doesn't support, such as lookahead.
+- The **Search** tab (the magnifying glass in the tab bar) finds fixes, searches, pages and tasks for the selected site in one place.
+
+## One search in detail
+
+Tap any search or page to open its detail screen.
+
+![The detail screen for one search on iPhone with clicks, impressions, CTR and position tabs, a chart against the previous period and buttons for Track rank, SERP explorer, Start content and Ask the assistant](https://anotherseoguru.com/images/iphone/search-detail.webp)
+*One search over the last 28 days: metric tabs, the chart against the previous period with Google updates marked, and the next steps.*
+
+| Part | What you can do |
+| --- | --- |
+| Metric tabs | Switch the chart between **Clicks**, **Impressions**, **CTR** and **Position**. A dashed line is the previous period; dots mark Google updates. |
+| **Track rank** | Add the search to rank tracking. The same tracked keywords appear on the web. |
+| **SERP explorer** | See the live Google top 10 for this search. See [Keywords and rankings](https://anotherseoguru.com/en/help/iphone-app/keywords-and-rankings). |
+| **Start content** | Open the Content writer with the search copied, ready to paste. |
+| **Ask the assistant** | Open the assistant with a question about this search already filled in. |
+| Fixes and pages | Any fix in this week's plan for the search, and the pages that rank for it with their own clicks, CTR and position. |
+
+## Traffic acquisition from GA4
+
+The **Analytics** segment reads your Google Analytics 4 property. Connect Analytics with the same read-only Google access, then tap **Link a GA4 property** to pair it with this site.
+
+![The Traffic acquisition report on iPhone splitting sessions into organic search, paid ads, AI assistants, direct, other websites, social, email and other referrals](https://anotherseoguru.com/images/iphone/traffic-acquisition.webp)
+*Traffic acquisition: every GA4 session grouped by channel, with AI assistants as a channel of their own.*
+
+Traffic acquisition groups sessions into **Organic search**, **Paid ads**, **AI assistants**, **Direct**, **Other websites**, **Social**, **Email** and **Other referrals**, each with a plain-language explanation. **Daily traffic** charts sessions over time, and **Export CSV** saves the rows.
+
+> **Warning:** A fresh Analytics report costs **2 credits**; a cached one is free for an hour. GA4 sessions and Search Console clicks are different measures, so the app never adds them together.
+
+### Keywords, rankings and the SERP explorer
+
+> Research a keyword, track its position and check who gets the clicks on the live results page.
+
+Source: https://anotherseoguru.com/en/help/iphone-app/keywords-and-rankings
+
+The keyword tools live under **Workspace → Growth** and **Workspace → Market**. Tap **Find a tool** to search for one, and star the ones you use most to keep them under **Favorite tools**.
+
+## Keyword research
+
+![Keyword research for mykonos villas on iPhone with 720 monthly searches, keyword difficulty 13, CPC, competition, intent and a 12-month search volume trend](https://anotherseoguru.com/images/iphone/keyword-research.webp)
+*Keyword research: volume, difficulty, intent and a 12-month trend for any search in any market.*
+
+1. **Pick a search** Start from one of your top Search Console searches, or type any keyword. Choose the market (country and language).
+2. **Read the overview** You get **Search volume** per month and its recent change, keyword difficulty (KD), **CPC**, **Competition**, the number of results and the **Intent**: informational, navigational, commercial or transactional.
+3. **Check the trend and ideas** **Search volume trend** shows monthly searches for the last 12 months. Below it are **Related searches**, questions people ask and keyword ideas. Tap one for its own overview, or hold it for actions.
+4. **Act on it** **Track rank** adds the keyword to rank tracking, **Add task** puts it on your list, and the sparkle button asks the assistant about it.
+
+> **Warning:** Keyword data and the SERP explorer use credits. Before any paid check the app shows **Review the credit cost** with the price and your balance. Only a completed result is charged; saved results are free.
+
+## Rank tracking and the ranking ladder
+
+**Rank tracking** shows your tracked keywords with their daily Google position, best position and 7-day movement. Positions come from Search Console and update daily, about two days behind. Tracked keywords are shared with the web app, so adding or removing one on the phone changes it everywhere.
+
+For the bigger picture, the **Ranking ladder** on [Today](https://anotherseoguru.com/en/help/iphone-app/today) counts every search in the top 3, 10, 20 and 100 and how many moved.
+
+## SERP explorer
+
+![The SERP explorer on iPhone for seajets cancellations today in Greece, English, showing your position, results, ads, AI Overview cited, SERP features and a donut chart of who gets the clicks](https://anotherseoguru.com/images/iphone/serp-explorer.webp)
+*SERP explorer: your position, the SERP features on the page and the expected share of clicks for each site in the top 10.*
+
+1. Open **SERP explorer** from a search's detail screen, or from Workspace, and type the search.
+2. Pick the market, for example **Greece · English**, and tap **Check**.
+3. Read **Your position**, the number of results and ads, and whether the **AI Overview** cites you.
+4. **SERP features** lists what's on the page, such as AI Overview and **People Also Ask**. **Who gets the clicks** estimates each site's share of organic clicks in the top 10.
+
+Scroll down for the full AI Overview text with its sources, the **People Also Ask** questions to answer on your page, and the organic results. More on AI Overviews in [AI visibility](https://anotherseoguru.com/en/help/iphone-app/ai-visibility).
+
+### Site audit on iPhone
+
+> Start a crawl, leave the app and follow it on the Lock Screen and in the Dynamic Island.
+
+Source: https://anotherseoguru.com/en/help/iphone-app/site-audit-on-iphone
+
+The **Site audit** crawls your site for technical problems that hold rankings back, then lists them in order of severity. Open it from **Workspace → Technical health**.
+
+## Run an audit
+
+1. **Open Site audit** Make sure the right site is selected in the site pill, then open **Workspace → Site audit**.
+2. **Choose how many pages** Set **Pages to crawl** and tap **Run audit** (or **Run a new audit** if you've run one before). The audit uses credits, so the app shows the cost first.
+3. **Leave the screen if you like** The audit moves from **Queued** to **Crawling** to **Analyzing**. You can go to another tab or lock your phone: the crawl keeps running and its results appear in Site audit when it's done.
+
+![Site audit on iPhone crawling discovercyclades.gr, 0 of up to 10 pages, with Queued, Crawling and Analyzing steps](https://anotherseoguru.com/images/iphone/site-audit.webp)
+*A crawl in progress. You can leave this screen; the audit keeps running and shows up when it's done.*
+
+## Progress on the Lock Screen and in the Dynamic Island
+
+While an audit runs, a **Live Activity** shows its progress outside the app, even when the app is in the background:
+
+| Where | What you see |
+| --- | --- |
+| Lock Screen | The site, a progress bar and a status line such as pages crawled out of the limit. When it finishes: the **Health** score with the number of critical issues and warnings. |
+| Dynamic Island (compact) | An icon for the current phase and the crawled pages, for example `12/50`, then the score when done. |
+| Dynamic Island (expanded) | Touch and hold to see the site, the progress bar and the status line. |
+
+Tap the Live Activity to open the Site audit for that site. When the crawl finishes you get **Audit ready – tap to see results**. Only one audit is shown at a time; starting a new crawl replaces the old one.
+
+> **Note:** If the Live Activity hasn't been updated for about 10 minutes it says **Open the app to check the status**. Opening the app catches it up. Live Activities follow the app's language, so they're in Greek when the app is.
+
+> **Tip:** Don't see it? Check **iPhone Settings → AnotherSEOGuru → Live Activities** is on. Other paid tools also show a short **Checking** activity while they run, which turns into **Result ready**.
+
+## Reading the results
+
+- **Site health** is the average page score: 100 for a clean page, 90 for notices only, 60 for a warning and 0 for a critical issue, minus points for site-wide problems.
+- **Issues by category** groups problems such as status codes, redirects and broken links, titles and descriptions, speed, canonicals and internal links. Each issue explains **Why it matters** and **How to fix**, with the affected URLs.
+- **Add to tasks** turns an issue into a task. **Health over time** compares crawls, and **Re-run audit** checks your fixes.
+- **Tap a page to inspect it**, or use the related tools: **Page inspector**, **Indexability**, **Page speed** and **Internal links**.
+
+### AI visibility on iPhone
+
+> See where Google's AI Overview cites you, how many visits AI assistants send and how often AI answers mention you.
+
+Source: https://anotherseoguru.com/en/help/iphone-app/ai-visibility
+
+Open **Insights → AI evidence**. It shows four separate kinds of evidence. Each has its own source, dates and limits, so they're never added up into one number.
+
+| Evidence | Source | What it tells you |
+| --- | --- | --- |
+| Searches that showed an AI Overview | Search Console clicks · AI Overview checks | Your clicks and impressions for searches where a check saw an AI Overview, and whether it cited you. |
+| Visits from AI assistants | Google Analytics 4 · sessions | Sessions GA4 attributes to ChatGPT, Perplexity, Copilot, Gemini and similar. |
+| Mentions in AI answers | AI answers dataset · per platform | How often AI platforms mention your domain, per platform and check. |
+| Live answers to your prompts | Prompt benchmark · answers and citations | Which assistants named or cited you for each tracked prompt, or **Not named**. |
+
+![AI evidence on iPhone showing 582 AI-referred sessions from ChatGPT, Microsoft Copilot, Perplexity and Gemini, with a Load AI referrals button](https://anotherseoguru.com/images/iphone/ai-evidence.webp)
+![The AI Overview for a search in the SERP explorer on iPhone, marked You're cited, with its source links and People Also Ask below](https://anotherseoguru.com/images/iphone/ai-overview-cited.webp)
+
+## Check whether an AI Overview cites you
+
+1. Open a search in the **SERP explorer** (from its detail screen or from Workspace) and tap **Check**.
+2. The summary shows **AI Overview** as **Cited** when your site is among its sources.
+3. Scroll to the AI Overview card to read the full text and the sites it links to. **You're cited** appears at the top when one of them is yours.
+4. Back in **AI evidence**, searches you've checked are listed with **Cites you** or **Shown, doesn't cite you**.
+
+> **Note:** Search Console doesn't report AI Overview traffic separately. The clicks shown are your normal clicks for searches where a check saw an AI Overview, not clicks from the AI Overview itself.
+
+## Visits from AI assistants
+
+Link a GA4 property to the site (see [Search performance](https://anotherseoguru.com/en/help/iphone-app/search-performance)), then tap **Load AI referrals**. You get the **AI-referred sessions** for the period and the split by assistant. A fresh report costs 2 credits; cached reports are free for an hour.
+
+> **Warning:** Many AI visits arrive without a referrer and count as direct, so this number is a floor, not the full picture.
+
+## Mentions and prompt checks
+
+**Mentions in AI answers** charts how often each platform mentions your domain. Answers vary between runs, so read the trend rather than a single check. To run new checks, add prompts or compare with competitors, tap **Open AI visibility**. New checks use credits; viewing saved ones is free.
+
+### The AI assistant on iPhone
+
+> Ask questions about your own Search Console data and follow the assistant as it thinks, reads your data and writes.
+
+Source: https://anotherseoguru.com/en/help/iphone-app/assistant
+
+The assistant answers questions about the selected site using your own Search Console data. It writes the finished text (a new title, a rewritten intro, a plan), not just a brief.
+
+## Where to find it
+
+- The **sparkles** button at the top of Today and Insights.
+- **Ask the assistant** on a search or page, on a fix, in a task and in the site audit. The question arrives filled in with that context.
+- **Ask assistant** on a traffic alert notification, which asks why the site's clicks changed this week.
+- Siri: say **Ask AnotherSEOGuru**.
+
+Not sure what to ask? The empty screen has suggestions such as **What should I fix first this week?**, **Why did my clicks change this month?** and **Write better titles for my top pages**.
+
+## What the assistant is doing
+
+While it works, a status card shows each step, so you never stare at a blank screen:
+
+| You see | What's happening |
+| --- | --- |
+| **Thinking…** | It's reading your question and deciding which data it needs. |
+| **Consulting your data…** | It's reading your data. Each source is a line with a spinner that turns into a check, for example **Reading 1,240 searches from the last 28 days**. A source it can't use is marked not available. |
+| **Writing…** | The answer appears as it's written. The list of data it read stays visible. |
+| Answer ready | The finished answer with a **Sources** chip naming what it used, such as Google Search Console or **Saved AI answer checks**. |
+
+> **Note:** If the connection drops, the answer says it was interrupted. Tap **Try again** to ask the same question again.
+
+## Using an answer
+
+1. **Copy or share it** Use **Copy**, or **Share** to send it to Notes, Mail or a colleague.
+2. **Save it as a task** **Save as task** puts the answer on your task list for the site, ready to ship and measure in Work.
+3. **Pick up later** The clock button opens **Conversation history**. Search, rename or delete conversations, or start a **New conversation**.
+
+> **Tip:** Be specific: name the page, the search or the period. "Why did /blog/santorini-cost-guide lose clicks in the last 28 days?" gets a better answer than "why is traffic down?".
+
+### Notifications and background refresh
+
+> Choose which push notifications you get, use their buttons and keep the app's numbers fresh in the background.
+
+Source: https://anotherseoguru.com/en/help/iphone-app/notifications-and-background-refresh
+
+The iPhone app receives the same notifications as the web app: new leads and prospect activity, traffic swings, finished reports, task updates and billing notices. You choose which ones.
+
+## Turn notifications on
+
+1. **Open Settings** On Today, tap the grid button at the top left and choose **Settings**, then go to **Notifications**.
+2. **Tap Turn on** iOS asks for permission once. If you said no before, the button reads **Open Settings** and takes you to the iPhone's settings for the app.
+3. **Pick your topics** Every topic starts on. Switch off the ones you don't want. Your choice applies to this iPhone.
+
+| Topic | When it arrives |
+| --- | --- |
+| **New leads** | The moment someone asks for an audit, plus prospect activity: a prospect opens or replies to an audit, or views, accepts or declines a proposal. |
+| **Traffic ups and downs** | When a site's clicks rise or fall 20% or more in a week, and other alerts. |
+| **Reports** | When a scheduled report is ready. |
+| **Tasks** | When a task finishes or needs you. |
+| **Billing** | Credits running low and payment problems: a failed payment, a trial ending, an upcoming renewal, or a client payment due. |
+
+**Alert settings** sets which alerts you get and how sensitive they are. These settings are shared with the web app.
+
+## Buttons on notifications
+
+Touch and hold a notification to act without opening the app first:
+
+- A new lead has **Call** and **Email**, which dial or write to the person straight away, and **Open**.
+- A traffic alert has **Open site**, which opens that site on Today, and **Ask assistant**, which asks why its clicks changed this week.
+- Report and task notifications open the right screen when tapped.
+
+## Background refresh
+
+The app refreshes the open site, your site list and the widgets in the background, so the numbers are current when you open it or glance at a widget. iOS decides when that happens based on how you use the app, usually about once an hour at most. Our server can also wake the app with a silent notification for the same refresh.
+
+> **Tip:** If widgets look out of date, check **iPhone Settings → General → Background App Refresh** is on for AnotherSEOGuru, and that Low Power Mode is off. Opening the app always refreshes everything.
+
+> **Note:** Signing out stops this iPhone's notifications and removes the account's Lock Screen activities.
+
+### Widgets and Siri
+
+> Put your clicks, all your sites and this week's fixes on the Home and Lock Screen, and ask Siri how your site is doing.
+
+Source: https://anotherseoguru.com/en/help/iphone-app/widgets
+
+The app comes with three widgets. They show the numbers the app last loaded, so they cost no credits and stay current through [background refresh](https://anotherseoguru.com/en/help/iphone-app/notifications-and-background-refresh).
+
+| Widget | What it shows | Sizes |
+| --- | --- | --- |
+| **Website clicks** | One site's clicks for the last 28 days, with the trend. | Small and medium on the Home Screen; circular, rectangular and inline on the Lock Screen |
+| **All sites** | Every site at a glance, with alerts. | Medium and large |
+| **Fixes this week** | The fixes worth the most clicks right now. | Small and medium |
+
+## Add a widget
+
+1. **Open the widget gallery** Touch and hold an empty area of the Home Screen until the apps jiggle, then tap **Edit → Add Widget**.
+2. **Find AnotherSEOGuru** Search for AnotherSEOGuru, swipe to the widget and size you want, and tap **Add Widget**.
+3. **Choose the site** For **Website clicks**, touch and hold the widget, tap **Edit Widget** and pick the site. Add one per site if you like.
+
+For the **Lock Screen**, touch and hold the Lock Screen, tap **Customize → Lock Screen**, then tap the widget area and choose AnotherSEOGuru.
+
+> **Note:** Widget names and descriptions follow your iPhone's language. The widgets themselves show the language you picked in the app.
+
+## Siri and Shortcuts
+
+Three shortcuts work with Siri and in the Shortcuts app without any setup:
+
+| Say | What happens |
+| --- | --- |
+| "How is my site doing in AnotherSEOGuru?" | Siri reads out the site's clicks for the last 28 days against the 28 before, and the fix worth the most. |
+| "Show this week's fixes in AnotherSEOGuru" | Opens the app on this week's fixes. |
+| "Ask AnotherSEOGuru" | Opens the [assistant](https://anotherseoguru.com/en/help/iphone-app/assistant). |
+
+> **Tip:** The Siri phrases are in English for now, even when the app is in Greek.
+
+### iPhone app FAQ
+
+> Quick answers about the iPhone beta, plans and credits, languages, data access and support.
+
+Source: https://anotherseoguru.com/en/help/iphone-app/iphone-faq
+
+**Is the iPhone app on the App Store?**
+
+Not yet. The app is in beta through Apple's TestFlight. Email [support@anotherseoguru.com](mailto:support@anotherseoguru.com?subject=iPhone%20beta%20access) with the subject **iPhone beta access** and we'll send you an invite. See [Get the iPhone beta](https://anotherseoguru.com/en/help/iphone-app/get-the-beta).
+
+**Do I need a separate subscription for the app?**
+
+No. The app signs in to the same account as the web app and shows your existing plan and credits under **Settings → Plan and credits**. Plans are chosen on the website.
+
+**Does the app use credits?**
+
+Only for the same paid actions as the web app, such as keyword data, the SERP explorer, site audits and fresh Analytics reports. The app shows **Review the credit cost** before anything is charged, and only a completed result is charged. Reading your Search Console data, Today, fixes, tasks and widgets is free.
+
+**Will I see the same fixes as on the web?**
+
+Yes. The app's opportunity engine and its fix, ship and measure loop are ports of the web app's own code, so both rank the same fixes for the same site. Tasks sync both ways.
+
+**Which iPhones are supported?**
+
+iPhone on iOS 17 or later. On iOS 26 and later the app uses Apple's Liquid Glass navigation. It also runs on iPad.
+
+**Is the app available in Greek?**
+
+Yes, the whole app is in English and Greek. Change it in **Settings → Language**. The choice is saved to your account, so our emails and notifications follow it.
+
+**What access does it need to my Google data?**
+
+The same read-only Search Console and Analytics access as the web app. It can read your data; it can't change anything in your Google account.
+
+**Can I try it without connecting a site?**
+
+Yes. Tap **Explore the sample workspace** on the first screen. It uses fictional sites and works offline, so you can try every screen before you connect Google.
+
+**I'm a client of an agency. Can I use the app?**
+
+Yes. Tap **Clients Area** on the first screen and enter the email your agency invited. You'll get a one-time code and see only your reports, shared work and payments.
+
+**Why don't I see the site audit on my Lock Screen?**
+
+Check that Live Activities are on in **iPhone Settings → AnotherSEOGuru**. See [Site audit on iPhone](https://anotherseoguru.com/en/help/iphone-app/site-audit-on-iphone).
+
+**How do I delete my account?**
+
+**Settings → Delete my account**. Type your email to confirm. It deletes the account and its data for good. Cancel a renewing plan in Billing first.
+
+**How do I report a bug in the beta?**
+
+Email support@anotherseoguru.com with a screenshot, what you did and what you expected. Include the version number at the bottom of **Settings**.
+
+### SEO glossary
+
+> SEO, AEO, GEO and Search Console terms in plain words.
+
+Source: https://anotherseoguru.com/en/glossary
+
+## On-Page SEO
+
+- [On-Page SEO](https://anotherseoguru.com/en/glossary/on-page-seo-term): Optimizing elements on a web page to rank for relevant searches.
+- [Title Tag](https://anotherseoguru.com/en/glossary/title-tag): HTML element specifying a page's title for search results and browser tabs.
+- [Meta Description](https://anotherseoguru.com/en/glossary/meta-description): HTML attribute providing a brief summary of page content for search results.
+- [H1 Tag](https://anotherseoguru.com/en/glossary/h1-tag): The main heading tag in HTML, typically used for the primary page title.
+- [Heading Structure](https://anotherseoguru.com/en/glossary/heading-structure): The hierarchical organization of H1-H6 tags to structure page content.
+- [Keyword Density](https://anotherseoguru.com/en/glossary/keyword-density): The percentage of times a keyword appears compared to total word count.
+- [Image Alt Text](https://anotherseoguru.com/en/glossary/image-alt-text): Descriptive text attribute for images that helps search engines and screen readers.
+- [Internal Linking](https://anotherseoguru.com/en/glossary/internal-linking): Hyperlinks connecting pages within the same website.
+- [Content Optimization](https://anotherseoguru.com/en/glossary/content-optimization): The process of improving content to rank better and satisfy user intent.
+
+## Technical SEO
+
+- [Technical SEO](https://anotherseoguru.com/en/glossary/technical-seo-term): Improving site infrastructure for crawling, indexing, speed, and structured data.
+- [Crawling](https://anotherseoguru.com/en/glossary/crawling): The process by which search engine bots discover and read web pages.
+- [Indexing](https://anotherseoguru.com/en/glossary/indexing): The process of storing and organizing crawled pages in search engine databases.
+- [Robots.txt](https://anotherseoguru.com/en/glossary/robots-txt): A file that instructs search engine crawlers which pages to crawl or avoid.
+- [XML Sitemap](https://anotherseoguru.com/en/glossary/xml-sitemap): A file listing important URLs to help search engines discover and crawl content.
+- [Canonical Tag](https://anotherseoguru.com/en/glossary/canonical-tag): HTML element that specifies the preferred version of a page to avoid duplicate content.
+- [Structured Data (Schema)](https://anotherseoguru.com/en/glossary/structured-data): Code markup that helps search engines understand page content and enables rich results.
+- [HTTPS](https://anotherseoguru.com/en/glossary/https): Secure version of HTTP that encrypts data between browser and server.
+- [Hreflang](https://anotherseoguru.com/en/glossary/hreflang): HTML attribute that specifies language and regional targeting for international pages.
+- [Page Speed](https://anotherseoguru.com/en/glossary/page-speed): How fast a web page loads, affecting user experience and search rankings.
+- [Mobile-First Indexing](https://anotherseoguru.com/en/glossary/mobile-first-indexing): Google's practice of using the mobile version of a site for indexing and ranking.
+
+## Link Building
+
+- [Off-Page SEO](https://anotherseoguru.com/en/glossary/off-page-seo): Ranking signals earned outside your website, mainly backlinks and brand mentions.
+- [Backlink](https://anotherseoguru.com/en/glossary/backlink): A link from one website to another, signaling trust and authority.
+- [Anchor Text](https://anotherseoguru.com/en/glossary/anchor-text): The visible, clickable text in a hyperlink.
+- [Domain Authority (DA)](https://anotherseoguru.com/en/glossary/domain-authority): A metric predicting a website's ability to rank, based on its backlink profile.
+- [Link Equity (Link Juice)](https://anotherseoguru.com/en/glossary/link-equity): The ranking value passed from one page to another through hyperlinks.
+- [Dofollow Link](https://anotherseoguru.com/en/glossary/dofollow): A link that passes SEO value and authority to the destination page.
+- [Nofollow Link](https://anotherseoguru.com/en/glossary/nofollow): A link with an attribute telling search engines not to pass ranking value.
+- [Link Building Outreach](https://anotherseoguru.com/en/glossary/link-building-outreach): The process of contacting website owners to request backlinks.
+- [Toxic Backlinks](https://anotherseoguru.com/en/glossary/toxic-backlinks): Low-quality or spammy links that can harm your search rankings.
+
+## Keyword Research
+
+- [SEO (Search Engine Optimization)](https://anotherseoguru.com/en/glossary/seo): The practice of improving a website so it ranks higher in organic search results.
+- [Keywords](https://anotherseoguru.com/en/glossary/keywords): Words or phrases users type into search engines to find information.
+- [Long-tail Keywords](https://anotherseoguru.com/en/glossary/long-tail-keywords): Longer, more specific keyword phrases with lower volume but higher intent.
+- [Search Volume](https://anotherseoguru.com/en/glossary/search-volume): The number of times a keyword is searched in a given timeframe.
+- [Keyword Difficulty](https://anotherseoguru.com/en/glossary/keyword-difficulty): A metric estimating how hard it is to rank for a specific keyword.
+- [Search Intent](https://anotherseoguru.com/en/glossary/search-intent): The underlying goal a user has when typing a search query.
+- [Keyword Cannibalization](https://anotherseoguru.com/en/glossary/keyword-cannibalization): When multiple pages on your site compete for the same keyword.
+- [Keyword Clustering](https://anotherseoguru.com/en/glossary/keyword-clustering): Grouping related keywords to target with a single piece of content.
+- [Seed Keywords](https://anotherseoguru.com/en/glossary/seed-keywords): Starting keywords used to generate broader keyword lists.
+
+## Analytics & Metrics
+
+- [Clicks](https://anotherseoguru.com/en/glossary/clicks): The number of times users click on your search result to visit your page.
+- [Impressions](https://anotherseoguru.com/en/glossary/impressions): The number of times your page appeared in search results.
+- [CTR (Click-Through Rate)](https://anotherseoguru.com/en/glossary/ctr): The percentage of impressions that resulted in clicks.
+- [Average Position](https://anotherseoguru.com/en/glossary/average-position): The average ranking position of your page for a query in search results.
+- [Bounce Rate](https://anotherseoguru.com/en/glossary/bounce-rate): The percentage of visitors who leave after viewing only one page.
+- [Organic Traffic](https://anotherseoguru.com/en/glossary/organic-traffic): Visitors who arrive at your site from unpaid search engine results.
+- [Dwell Time](https://anotherseoguru.com/en/glossary/dwell-time): How long a user spends on your page before returning to search results.
+- [Conversion Rate](https://anotherseoguru.com/en/glossary/conversion-rate): The percentage of visitors who complete a desired action.
+
+## SERP Features
+
+- [Featured Snippet](https://anotherseoguru.com/en/glossary/featured-snippet): A highlighted answer box that appears at the top of search results.
+- [People Also Ask (PAA)](https://anotherseoguru.com/en/glossary/people-also-ask): An expandable box showing related questions users commonly search.
+- [Rich Snippets](https://anotherseoguru.com/en/glossary/rich-snippets): Enhanced search results displaying additional information like stars, prices, or images.
+- [Knowledge Panel](https://anotherseoguru.com/en/glossary/knowledge-panel): An information box appearing on the right side of search results for entities.
+- [Local Pack](https://anotherseoguru.com/en/glossary/local-pack): A map with 3 local business listings appearing for location-based searches.
+- [Image Pack](https://anotherseoguru.com/en/glossary/image-pack): A row of images appearing in organic search results.
+- [Video Carousel](https://anotherseoguru.com/en/glossary/video-carousel): A scrollable row of video results, typically from YouTube.
+- [AI Overview (SGE)](https://anotherseoguru.com/en/glossary/ai-overview): AI-generated summary appearing at the top of search results.
+
+## Local SEO
+
+- [Local SEO](https://anotherseoguru.com/en/glossary/local-seo-term): Optimization for map pack and location-based search results.
+- [Google Business Profile (GBP)](https://anotherseoguru.com/en/glossary/google-business-profile): Free Google tool for managing your business's appearance in search and maps.
+- [NAP (Name, Address, Phone)](https://anotherseoguru.com/en/glossary/nap): Business contact information that must be consistent across the web.
+- [Local Citations](https://anotherseoguru.com/en/glossary/local-citations): Online mentions of your business name, address, and phone number.
+- [Local Keywords](https://anotherseoguru.com/en/glossary/local-keywords): Search terms that include geographic modifiers or imply local intent.
+- [Review Management](https://anotherseoguru.com/en/glossary/review-management): The practice of monitoring, responding to, and encouraging customer reviews.
+- [Geo-Targeting](https://anotherseoguru.com/en/glossary/geo-targeting): Delivering content or results based on a user's geographic location.
+
+## Content Strategy
+
+- [E-E-A-T](https://anotherseoguru.com/en/glossary/e-e-a-t): Experience, Expertise, Authoritativeness, Trustworthiness - Google's content quality guidelines.
+- [Content Decay](https://anotherseoguru.com/en/glossary/content-decay): The gradual decline in organic traffic and rankings of older content.
+- [Topic Clusters](https://anotherseoguru.com/en/glossary/topic-clusters): A content organization strategy linking related articles around a pillar page.
+- [Content Gap Analysis](https://anotherseoguru.com/en/glossary/content-gap-analysis): Identifying topics competitors cover that you don't.
+- [Evergreen Content](https://anotherseoguru.com/en/glossary/evergreen-content): Content that remains relevant and valuable long after publication.
+- [Thin Content](https://anotherseoguru.com/en/glossary/thin-content): Pages with little or no added value for users.
+- [Content Freshness](https://anotherseoguru.com/en/glossary/content-freshness): How recently content was published or updated.
+
+## Core Web Vitals
+
+- [LCP (Largest Contentful Paint)](https://anotherseoguru.com/en/glossary/lcp): Measures how quickly the largest content element becomes visible.
+- [FID (First Input Delay)](https://anotherseoguru.com/en/glossary/fid): Measures the time from first user interaction to browser response.
+- [CLS (Cumulative Layout Shift)](https://anotherseoguru.com/en/glossary/cls): Measures visual stability by tracking unexpected layout movements.
+- [INP (Interaction to Next Paint)](https://anotherseoguru.com/en/glossary/inp): Measures overall page responsiveness to user interactions.
+- [Page Experience](https://anotherseoguru.com/en/glossary/page-experience): Google's combined measure of user experience signals including Core Web Vitals.
+
+## Algorithm & Updates
+
+- [Google Algorithm](https://anotherseoguru.com/en/glossary/google-algorithm): The complex system Google uses to rank search results.
+- [Algorithm Update](https://anotherseoguru.com/en/glossary/algorithm-update): Changes Google makes to its ranking systems.
+- [Core Update](https://anotherseoguru.com/en/glossary/core-update): Major algorithm updates affecting broad ranking systems.
+- [Helpful Content Update](https://anotherseoguru.com/en/glossary/helpful-content-update): Update targeting content created primarily for search engines rather than users.
+- [Spam Update](https://anotherseoguru.com/en/glossary/spam-update): Updates targeting manipulative and spammy SEO tactics.
+- [Ranking Volatility](https://anotherseoguru.com/en/glossary/ranking-volatility): The degree of fluctuation in search rankings over time.
+
+## AI & SEO
+
+- [AI Mode](https://anotherseoguru.com/en/glossary/ai-mode): Google's conversational search surface, which renders answers as interactive cards rather than a list of links.
+- [Grounding](https://anotherseoguru.com/en/glossary/grounding): Tying a generated answer to a retrievable source, so the claim can be attributed rather than invented.
+- [LLM SEO](https://anotherseoguru.com/en/glossary/llm-seo): Optimizing content to appear in Large Language Model responses.
+- [AI-Generated Content](https://anotherseoguru.com/en/glossary/ai-content): Content created by artificial intelligence tools.
+- [Zero-Click Search](https://anotherseoguru.com/en/glossary/zero-click-search): Searches where users get answers without clicking any results.
+- [Semantic Search](https://anotherseoguru.com/en/glossary/semantic-search): Search that understands meaning and context, not just keywords.
+- [Entity SEO](https://anotherseoguru.com/en/glossary/entity-seo): Optimization focused on entities (people, places, things) rather than keywords.
+- [AI Autopilot (SEO)](https://anotherseoguru.com/en/glossary/ai-autopilot): Automated AI-driven SEO optimization and task execution.
+
+## Tools & Platforms
+
+- [Google Search Console (GSC)](https://anotherseoguru.com/en/glossary/google-search-console): Free Google tool providing search performance data and site health insights.
+- [Google Analytics 4 (GA4)](https://anotherseoguru.com/en/glossary/google-analytics): Google's free web analytics platform for tracking user behavior.
+- [SERP (Search Engine Results Page)](https://anotherseoguru.com/en/glossary/serp): The page displayed by search engines in response to a query.
+- [Search Operators](https://anotherseoguru.com/en/glossary/search-operators): Special commands to refine and filter search queries.
+- [Rank Tracking](https://anotherseoguru.com/en/glossary/rank-tracking): Monitoring keyword positions in search results over time.
+- [Site Audit](https://anotherseoguru.com/en/glossary/site-audit): Comprehensive analysis of a website's technical SEO health.
+- [Competitor Analysis](https://anotherseoguru.com/en/glossary/competitor-analysis): Researching competitor SEO strategies and performance.
+- [SEO Reporting](https://anotherseoguru.com/en/glossary/seo-reporting): Regular reports communicating SEO performance and progress.
+
+## Advanced Concepts
+
+- [Crawl Budget](https://anotherseoguru.com/en/glossary/crawl-budget): The number of pages Googlebot will crawl on your site in a given time.
+- [Index Bloat](https://anotherseoguru.com/en/glossary/index-bloat): Having too many low-value pages indexed in search engines.
+- [Topical Authority](https://anotherseoguru.com/en/glossary/topical-authority): Being recognized as an authoritative source on a specific topic.
+- [Pogo-sticking](https://anotherseoguru.com/en/glossary/pogo-sticking): When users quickly bounce back to search results and click another result.
+- [Redirect (301/302)](https://anotherseoguru.com/en/glossary/redirect): Sending users and search engines from one URL to another.
+- [Log File Analysis](https://anotherseoguru.com/en/glossary/log-file-analysis): Analyzing server logs to understand how search engines crawl your site.
+- [Site Migration](https://anotherseoguru.com/en/glossary/site-migration): Moving a website to a new domain, platform, or structure.
+- [YMYL (Your Money Your Life)](https://anotherseoguru.com/en/glossary/ymyl): Topics that can significantly impact users' health, finances, or safety.
+- [Duplicate Content](https://anotherseoguru.com/en/glossary/duplicate-content): Substantially similar content appearing at multiple URLs.
+- [Noindex Tag](https://anotherseoguru.com/en/glossary/noindex): A directive telling search engines not to include a page in their index.
+- [Pagination SEO](https://anotherseoguru.com/en/glossary/pagination-seo): Handling multi-page content for optimal search engine indexing.
+- [Rendering (JavaScript SEO)](https://anotherseoguru.com/en/glossary/rendering): How search engines process and execute JavaScript to see page content.

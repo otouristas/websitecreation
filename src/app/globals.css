@@ -995,3 +995,12 @@ code, pre, kbd, samp { font-family: var(--font-code); }
 ::placeholder { color: var(--asg-text-muted); opacity: 1; }
 
 :is(input, select, textarea):is([aria-invalid="true"], :user-invalid) { border-color: var(--asg-danger); }
+
+/* ==========================================================================
+   Docs (/help, /glossary, /resources). The docs replace the floating site
+   header with their own 3.5rem tab bar, so anchors scroll under that instead.
+   Screenshots with a dark capture show the one matching the theme.
+   ========================================================================== */
+.docs-root { --site-header-height: 3.5rem; }
+.light .docs-shot-dark { display: none; }
+:root:not(.light) .docs-shot-light { display: none; }

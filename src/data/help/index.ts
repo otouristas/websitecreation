@@ -1,11 +1,18 @@
-import { BarChart3, Bot, Building2, CreditCard, KeyRound, Rocket, ShieldCheck, Sparkles, type LucideIcon } from "lucide-react";
 import { getAppPath } from "@/lib/app-links";
 import { localizedPath, type SiteLocale } from "@/lib/i18n/locale";
 import { el } from "./el";
 import { en } from "./en";
-import type { Block, HelpArticle, HelpCategory } from "./types";
+import { iphoneEl } from "./iphone-el";
+import { iphoneEn } from "./iphone-en";
+import type { Block, CardItem, HelpArticle, HelpCategory, Shot, StepItem } from "./types";
 
-export type { Block, HelpArticle, HelpCategory };
+export type { Block, CardItem, HelpArticle, HelpCategory, Shot, StepItem };
+
+/** The iPhone guides are a help category with their own tab in the docs. */
+export const IPHONE_CATEGORY = "iphone-app";
+
+const EN_ALL: ReadonlyArray<HelpCategory> = [...en, iphoneEn];
+const EL_ALL: ReadonlyArray<HelpCategory> = [...el, iphoneEl];
 
 /**
  * The GSC Boost help center. The articles are shared with the app repo
@@ -13,32 +20,11 @@ export type { Block, HelpArticle, HelpCategory };
  * locales, so every page has a 1:1 hreflang twin.
  */
 /** Bump when the articles change: it feeds dateModified and the sitemap. */
-export const HELP_UPDATED = "2026-10-13";
+export const HELP_UPDATED = "2026-10-14";
 
 export function helpContent(locale: SiteLocale): ReadonlyArray<HelpCategory> {
-  return locale === "el" ? el : en;
+  return locale === "el" ? EL_ALL : EN_ALL;
 }
-
-export const CATEGORY_ICON: Readonly<Record<string, LucideIcon>> = {
-  "getting-started": Rocket,
-  "search-performance": BarChart3,
-  "opportunities-tasks": Sparkles,
-  "keywords-content": KeyRound,
-  "site-audit": ShieldCheck,
-  "competitors-ai": Bot,
-  agencies: Building2,
-  "account-billing": CreditCard,
-};
-
-/** Shown first on the help home. */
-export const POPULAR: ReadonlyArray<readonly [string, string]> = [
-  ["getting-started", "connect-search-console"],
-  ["search-performance", "this-week"],
-  ["opportunities-tasks", "opportunities"],
-  ["keywords-content", "rank-tracking"],
-  ["site-audit", "running-an-audit"],
-  ["account-billing", "plans-and-credits"],
-];
 
 export const helpPath = (locale: SiteLocale, category?: string, article?: string) =>
   localizedPath(locale, ["/help", category, article].filter(Boolean).join("/"));
@@ -85,7 +71,7 @@ const stripInline = (s: string) => s.replace(/\*\*|`/g, "").replace(/\[([^\]]+)\
 /** The article's text without inline markup (search, descriptions). */
 export function plainText(blocks: ReadonlyArray<Block>): string {
   return blocks
-    .map((b) => {
+    .map((b): string => {
       switch (b.type) {
         case "p":
         case "h2":
@@ -93,34 +79,36 @@ export function plainText(blocks: ReadonlyArray<Block>): string {
         case "note":
           return stripInline(b.text);
         case "list":
-        case "steps":
           return b.items.map(stripInline).join(" ");
+        case "steps":
+          return b.items.map((i) => (typeof i === "string" ? stripInline(i) : `${i.title}. ${stripInline(i.text ?? "")}`)).join(" ");
         case "table":
           return [...b.head, ...b.rows.flat()].map(stripInline).join(" ");
+        case "image":
+          return b.caption ? stripInline(b.caption) : "";
+        case "gallery":
+          return b.items.map((i) => (i.caption ? stripInline(i.caption) : "")).join(" ");
+        case "cards":
+          return b.items.map((c) => `${c.title}. ${stripInline(c.text)}`).join(" ");
+        case "tabs":
+          return b.items.map((t) => `${t.label}. ${plainText(t.blocks)}`).join(" ");
+        case "faq":
+          return b.items.map((f) => `${f.q} ${stripInline(f.a)}`).join(" ");
+        case "code":
+          return "";
         default: {
           const never: never = b;
           return never;
         }
       }
     })
+    .filter(Boolean)
     .join(" ");
 }
 
-/** What the client search needs, without shipping the block tree. */
-export interface SearchEntry {
-  readonly href: string;
-  readonly category: string;
-  readonly title: string;
-  readonly description: string;
-  readonly text: string;
-}
-
-export function searchIndex(locale: SiteLocale): SearchEntry[] {
-  return allArticles(helpContent(locale)).map(({ category, article }) => ({
-    href: helpPath(locale, category.slug, article.slug),
-    category: category.title,
-    title: article.title,
-    description: article.description,
-    text: plainText(article.body),
-  }));
+/** Every question in an article, including those inside tabs (FAQPage schema). */
+export function articleFaqs(blocks: ReadonlyArray<Block>): Array<{ question: string; answer: string }> {
+  return blocks.flatMap((b) =>
+    b.type === "faq" ? b.items.map((f) => ({ question: f.q, answer: stripInline(f.a) })) : b.type === "tabs" ? b.items.flatMap((t) => articleFaqs(t.blocks)) : [],
+  );
 }
