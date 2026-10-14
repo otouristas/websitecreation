@@ -51,7 +51,7 @@ const WHICH: ReadonlyArray<{ need: Copy; use: Copy; path: string }> = [
   { need: c("Plan the week and see every report", "Να οργανώσετε την εβδομάδα και να δείτε κάθε αναφορά"), use: c("Web app", "Εφαρμογή web"), path: "/platform" },
   { need: c("Check traffic and alerts on the go", "Να ελέγχετε κίνηση και ειδοποιήσεις όπου κι αν είστε"), use: c("iPhone app", "Εφαρμογή iPhone"), path: "/platform/iphone" },
   { need: c("Audit any page while you browse, and see its own numbers", "Να ελέγχετε κάθε σελίδα όσο περιηγείστε και να βλέπετε τα νούμερά της"), use: c("Chrome extension", "Επέκταση Chrome"), path: "/platform/chrome-extension" },
-  { need: c("See Search Console while you write, and apply title fixes", "Να βλέπετε το Search Console όσο γράφετε και να εφαρμόζετε διορθώσεις τίτλων"), use: c("WordPress plugin", "Plugin WordPress"), path: "/platform/wordpress" },
+  { need: c("Run your site's SEO in WordPress, with Search Console while you write", "Να κάνετε το SEO του ιστότοπου μέσα στο WordPress, με Search Console όσο γράφετε"), use: c("WordPress SEO plugin", "Plugin SEO για WordPress"), path: "/platform/wordpress" },
   { need: c("Ask questions in plain words, or let an AI agent work a task", "Να ρωτάτε με απλά λόγια ή να αφήνετε έναν AI agent να κάνει μια εργασία"), use: c("AI assistants (MCP)", "Βοηθοί AI (MCP)"), path: "/platform/mcp" },
 ];
 
