@@ -39,8 +39,8 @@ import { isValidLocale, localizedPath, type SiteLocale } from "@/lib/i18n/locale
 
 /**
  * The AnotherSEOGuru WordPress plugin (v2). Facts from gsc-gemini-boost/
- * wordpress-plugin/anotherseoguru/readme.txt. The WordPress.org listing is in
- * review, so the download is the zip from the app. When the listing is live,
+ * wordpress-plugin/anotherseoguru/readme.txt. The WordPress.org listing is not submitted
+ * yet, so the download is the zip from the app. When the listing is live,
  * point the download CTA and `downloadUrl` at wordpress.org/plugins/….
  */
 
@@ -158,8 +158,8 @@ const FAQ: ReadonlyArray<GscFaqItem> = [
   {
     q: c("Is the plugin on WordPress.org?", "Υπάρχει το plugin στο WordPress.org;"),
     a: c(
-      "The WordPress.org directory listing is in review. Until then, download the zip and upload it under Plugins → Add New → Upload Plugin. Updates will come through the directory once it is listed.",
-      "Η καταχώριση στον κατάλογο του WordPress.org είναι υπό έλεγχο. Μέχρι τότε, κατεβάστε το zip και ανεβάστε το από Πρόσθετα → Προσθήκη νέου → Μεταφόρτωση πρόσθετου. Οι ενημερώσεις θα έρχονται από τον κατάλογο μόλις καταχωριστεί.",
+      "The plugin is not on WordPress.org yet. Until it is, download the zip and upload it under Plugins → Add New → Upload Plugin. Updates will come through the directory once it is listed.",
+      "Το plugin δεν είναι ακόμη στο WordPress.org. Μέχρι να μπει, κατεβάστε το zip και ανεβάστε το από Πρόσθετα → Προσθήκη νέου → Μεταφόρτωση πρόσθετου. Οι ενημερώσεις θα έρχονται από τον κατάλογο μόλις καταχωριστεί.",
     ),
   },
   {
@@ -391,8 +391,8 @@ export default async function PlatformWordPressPage({ params }: PageProps) {
               {
                 title: tx("Upload and activate", "Ανεβάστε και ενεργοποιήστε"),
                 text: tx(
-                  "Download the zip, then Plugins → Add New → Upload Plugin, and activate. The WordPress.org listing is in review.",
-                  "Κατεβάστε το zip, μετά Πρόσθετα → Προσθήκη νέου → Μεταφόρτωση πρόσθετου, και ενεργοποιήστε το. Η καταχώριση στο WordPress.org είναι υπό έλεγχο.",
+                  "Download the zip, then Plugins → Add New → Upload Plugin, and activate. A WordPress.org listing is coming.",
+                  "Κατεβάστε το zip, μετά Πρόσθετα → Προσθήκη νέου → Μεταφόρτωση πρόσθετου, και ενεργοποιήστε το. Η καταχώριση στο WordPress.org έρχεται σύντομα.",
                 ),
               },
               {

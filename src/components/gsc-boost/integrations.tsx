@@ -27,7 +27,7 @@ export const CHROME_PATH = "/platform/chrome-extension";
 export const WORDPRESS_PATH = "/platform/wordpress";
 export const MCP_PATH = "/platform/mcp";
 
-/** The plugin zip. The WordPress.org directory listing is still in review. */
+/** The plugin zip. The WordPress.org directory listing is not submitted yet. */
 export const WORDPRESS_ZIP = getAppPath("/downloads/anotherseoguru.zip");
 export const MCP_URL = "https://app.anotherseoguru.com/mcp";
 export const MCP_PACKAGE = "@anotherseoguru/mcp";
