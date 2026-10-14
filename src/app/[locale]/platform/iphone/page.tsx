@@ -45,7 +45,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return platformMetadata({
     locale,
     path: PATH,
-    title: { en: "GSC Boost for iPhone: Search Console App (Beta)", el: "GSC Boost για iPhone: εφαρμογή Search Console" },
+    title: { en: "SEO App for iPhone: GSC Boost (Beta)", el: "Εφαρμογή SEO για iPhone: GSC Boost" },
     description: {
       en: "The GSC Boost iPhone app turns your Google Search Console data into this week's fixes, with rank tracking, alerts, AI evidence and widgets. Now in beta.",
       el: "Η εφαρμογή GSC Boost για iPhone κάνει τα δεδομένα του Google Search Console διορθώσεις της εβδομάδας, με θέσεις, ειδοποιήσεις, δεδομένα AI και widgets. Σε beta.",

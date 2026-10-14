@@ -85,7 +85,7 @@ export const services: Service[] = [
         shortName: 'AI SEO',
         description:
             'GEO and AEO for businesses: entity clarity, answer-shaped pages and measurement so answer engines can use your content. No citation promises.',
-        metaTitle: 'AI Visibility (GEO / AEO)',
+        metaTitle: 'AI SEO Agency: GEO & AEO Services',
         metaDescription:
             'GEO and AEO for businesses: entity clarity, answer-shaped pages and measurement. What the work includes, how it is priced, and what it does not promise.',
         features: [
