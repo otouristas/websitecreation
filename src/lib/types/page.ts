@@ -46,6 +46,7 @@ export type SchemaType =
     | 'Service'
     | 'Product'
     | 'SoftwareApplication'
+    | 'MobileApplication'
     | 'CollectionPage'
     | 'AboutPage'
     | 'ItemList'

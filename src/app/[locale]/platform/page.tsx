@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -245,6 +246,46 @@ export default async function PlatformHubPage({ params }: PageProps) {
         </section>
 
         <HowItWorks locale={locale} source="platform-steps" tinted />
+
+        <KitSection id="iphone">
+          <div className="grid items-center gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-16">
+            <div>
+              <KitHeading
+                align="left"
+                eyebrow={tx("New · iPhone app beta", "Νέο · εφαρμογή iPhone σε beta")}
+                title={
+                  <>
+                    {tx("Your fixes and traffic,", "Οι διορθώσεις και η κίνησή σας,")} <Accent>{tx("on your iPhone", "στο iPhone")}</Accent>
+                  </>
+                }
+                description={tx(
+                  "A native iPhone app on the same account: this week's fixes, rank tracking, alerts, AI evidence, widgets and a live clicks tracker in the Dynamic Island.",
+                  "Εγγενής εφαρμογή iPhone στον ίδιο λογαριασμό: οι διορθώσεις της εβδομάδας, θέσεις, ειδοποιήσεις, δεδομένα AI, widgets και ζωντανή εικόνα των κλικ στο Dynamic Island.",
+                )}
+              />
+              <Link href={lp("/platform/iphone")} className="mt-8 inline-flex items-center gap-1.5 font-medium text-link hover:underline">
+                {tx("See the iPhone app", "Δείτε την εφαρμογή iPhone")}
+                <ArrowRight className="size-4" aria-hidden />
+              </Link>
+            </div>
+            <div className="grid grid-cols-3 items-end gap-3 sm:gap-5">
+              {(["today", "serp-explorer", "ai-evidence"] as const).map((file, i) => (
+                <div key={file} className={i === 1 ? "" : "translate-y-5"}>
+                  <div className="overflow-hidden rounded-[1.6rem] border border-hairline bg-surface p-1">
+                    <Image
+                      src={`/platform/iphone/${file}.webp`}
+                      alt={tx("GSC Boost iPhone app screen", "Οθόνη της εφαρμογής GSC Boost για iPhone")}
+                      width={601}
+                      height={1306}
+                      sizes="(min-width: 1024px) 190px, 30vw"
+                      className="h-auto w-full rounded-[1.35rem]"
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </KitSection>
 
         {/* ---------------------------------------------------------- plans */}
         <KitSection id="pricing">

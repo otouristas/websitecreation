@@ -435,6 +435,7 @@ export function PlatformLinks({ locale, current }: { readonly locale: L; readonl
     { path: "/platform/for/agencies", label: isEl ? "Για agencies" : "For agencies" },
     { path: "/platform/for/in-house", label: isEl ? "Για in-house ομάδες" : "For in-house teams" },
     { path: "/platform/for/ecommerce", label: isEl ? "Για e-shop" : "For e-commerce" },
+    { path: "/platform/iphone", label: isEl ? "Εφαρμογή iPhone" : "iPhone app" },
     { path: "/platform/security", label: isEl ? "Ασφάλεια" : "Security" },
     { path: "/get-started", label: isEl ? "Δωρεάν έλεγχος SEO" : "Free SEO audit" },
   ].filter((l) => l.path !== current);
