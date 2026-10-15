@@ -41,7 +41,7 @@ import {
 import { isValidLocale, localizedPath, type SiteLocale } from "@/lib/i18n/locale";
 
 /**
- * The AnotherSEOGuru WordPress plugin 3.0: a full SEO plugin. Facts from gsc-gemini-boost/
+ * The AnotherSEOGuru WordPress plugin 4.2: a full SEO plugin. Facts from gsc-gemini-boost/
  * wordpress-plugin/anotherseoguru (readme.txt, includes/editor, includes/modules). The
  * WordPress.org listing is not submitted yet, so the download is the zip from the app. When
  * the listing is live, point the download CTA and `downloadUrl` at wordpress.org/plugins/….
@@ -69,6 +69,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 const FEATURES: ReadonlyArray<{ icon: LucideIcon; title: Copy; text: Copy }> = [
+  {
+    icon: ListChecks,
+    title: c("From an editor finding to a verified task", "Από εύρημα του editor σε επαληθευμένη εργασία"),
+    text: c(
+      "Send a published page's editor finding to your project tasks. Review an exact SEO title or description preview on web or iPhone, approve that saved version, then apply and recheck the public page. Shared receipts show progress in WordPress and the client workspace. Full page-builder layout editing is outside this flow.",
+      "Στείλτε ένα εύρημα από τον editor δημοσιευμένης σελίδας στις εργασίες του έργου. Ελέγξτε την ακριβή προεπισκόπηση τίτλου ή περιγραφής SEO σε web ή iPhone, εγκρίνετε αυτή την αποθηκευμένη έκδοση, και εφαρμόστε με επανέλεγχο της δημόσιας σελίδας. Τα κοινά αποδεικτικά δείχνουν την πρόοδο σε WordPress και στον χώρο πελάτη. Η επεξεργασία της πλήρους διάταξης page builder δεν περιλαμβάνεται σε αυτή τη ροή.",
+    ),
+  },
   {
     icon: Eye,
     title: c("Live Google preview", "Ζωντανή προεπισκόπηση Google"),
@@ -320,7 +328,7 @@ export default async function PlatformWordPressPage({ params }: PageProps) {
     applicationSubCategory: "SEO plugin",
     free: true,
     downloadUrl: WORDPRESS_ZIP,
-    softwareRequirements: "WordPress 6.0 or later, PHP 7.4 or later",
+    softwareRequirements: "WordPress 6.2 or later, PHP 7.4 or later",
     featureList: FEATURES.map((f) => f.title.en),
   });
 
@@ -354,7 +362,7 @@ export default async function PlatformWordPressPage({ params }: PageProps) {
               items={[
                 { icon: Import, label: tx("Imports from Yoast and Rank Math", "Μεταφορά από Yoast και Rank Math") },
                 { icon: Languages, label: tx("Fully in Greek", "Πλήρως στα ελληνικά") },
-                { icon: Gauge, label: tx("WordPress 6.0+, PHP 7.4+", "WordPress 6.0+, PHP 7.4+") },
+                { icon: Gauge, label: tx("WordPress 6.2+, PHP 7.4+", "WordPress 6.2+, PHP 7.4+") },
               ]}
             />
           }

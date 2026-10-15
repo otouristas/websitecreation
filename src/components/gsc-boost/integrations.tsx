@@ -76,7 +76,7 @@ export const SURFACES: ReadonlyArray<Surface> = [
     path: "/platform/iphone",
     icon: Smartphone,
     name: c("iPhone app", "Εφαρμογή iPhone"),
-    where: c("iPhone and iPad", "iPhone και iPad"),
+    where: c("iPhone · TestFlight beta", "iPhone · TestFlight beta"),
     text: c(
       "This week's fixes, rank tracking, alerts and widgets on your phone, on the same account.",
       "Οι διορθώσεις της εβδομάδας, θέσεις, ειδοποιήσεις και widgets στο κινητό, με τον ίδιο λογαριασμό.",
