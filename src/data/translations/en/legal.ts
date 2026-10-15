@@ -27,7 +27,7 @@ export const legalEn = {
     title: 'Privacy Policy',
     metaDescription:
       'AnotherSEOGuru privacy policy: how we collect, use, store, and protect personal data for our SEO platform, agency services, analytics, and marketing communications.',
-    lastUpdated: 'Last Updated: October 12, 2026',
+    lastUpdated: 'Last Updated: October 15, 2026',
     sections: [
       {
         heading: '1. Information We Collect',
@@ -42,7 +42,11 @@ export const legalEn = {
         body: 'Google Analytics cookies load only after you accept analytics. Google Ads enquiry measurement requires a separate opt-in through Accept both; an earlier analytics choice does not enable it. Use Cookie preferences to decline or withdraw consent. Analytics URLs exclude query strings and fragments. Ads measurement may retain Google click identifiers for the browser session after your opt-in, but excludes other URL parameters, enquiry details and contact information. Advertising personalization and enhanced conversions are disabled. A conversion represents an accepted enquiry, not a sale. The product web app and iPhone app use separate optional analytics: fixed screen names and basic application, device and session metadata. Client domains, emails, prompts and report content are excluded from product events. Native collection starts disabled and can be enabled or revoked in Settings. Withdrawing consent stops future collection but does not automatically erase historical events.',
       },
       {
-        heading: '4. Contact Us',
+        heading: "4. Optional product notifications",
+        body: "The web and iPhone apps store your device push token, language and account notification preferences, including selected topics, summary schedule, time zone and quiet hours. You can switch notifications off in the app and in device settings. Notification events and delivery receipts are scheduled for deletion after 30 days; device tokens remain until removal, account deletion or invalidation by the delivery service. Details are hidden on the Lock Screen by default. Apple and your browser push service deliver notifications. Receiving a notification never authorizes a website change. Client workspace access is rechecked before delivery.",
+      },
+      {
+        heading: '5. Contact Us',
         body: 'AnotherSEOGuru is operated under the trading name TOURISTAS TECHNOLOGIES, Kamares, Sifnos 84003, Greece. For privacy requests, including consent withdrawal and deletion requests, contact hello@anotherseoguru.com.',
       },
     ],

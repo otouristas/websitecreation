@@ -230,6 +230,8 @@ const nextConfig: NextConfig = {
 
   // Experimental features for scale
   experimental: {
+    // Opt-in bound for serial verification on the shared development Mac.
+    cpus: process.env.ASG_BUILD_CPUS === '2' ? 2 : undefined,
     // Optimize package imports for faster builds
     optimizePackageImports: ['@/lib/seo', '@/components/seo', '@/lib/linking'],
   },

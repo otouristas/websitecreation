@@ -108,8 +108,8 @@ const FEATURES: ReadonlyArray<{ icon: LucideIcon; title: Copy; text: Copy }> = [
     icon: ListChecks,
     title: c("This week's fixes", "Οι διορθώσεις της εβδομάδας"),
     text: c(
-      "Striking-distance searches, low CTR, decaying pages, cannibalization and missing content, ranked by the clicks each fix is worth.",
-      "Αναζητήσεις κοντά στην πρώτη σελίδα, χαμηλό CTR, σελίδες σε πτώση, αλληλοεπικάλυψη και περιεχόμενο που λείπει, με σειρά βάσει των κλικ που αξίζει κάθε διόρθωση.",
+      "Striking-distance searches, low CTR, decaying pages, cannibalization and missing content, prioritized using estimated click opportunities. Estimates do not promise traffic.",
+      "Αναζητήσεις κοντά στην πρώτη σελίδα, χαμηλό CTR, σελίδες σε πτώση, αλληλοεπικάλυψη και περιεχόμενο που λείπει, με προτεραιότητα βάσει εκτιμώμενων ευκαιριών για κλικ. Οι εκτιμήσεις δεν υπόσχονται κίνηση.",
     ),
   },
   {
@@ -140,8 +140,8 @@ const FEATURES: ReadonlyArray<{ icon: LucideIcon; title: Copy; text: Copy }> = [
     icon: Bell,
     title: c("Alerts and push", "Ειδοποιήσεις και push"),
     text: c(
-      "Traffic drops, decaying pages, cannibalization and Google updates, with the same alert settings as the web app.",
-      "Πτώσεις κίνησης, σελίδες σε πτώση, αλληλοεπικάλυψη και ενημερώσεις της Google, με τις ίδιες ρυθμίσεις με την εφαρμογή web.",
+      "Choose task, approval, report, conversation, payment and connection updates. Account preferences sync with web, with daily or weekly summaries, a chosen time zone, quiet hours and a daily cap. Device permission is separate.",
+      "Επιλέξτε ενημερώσεις εργασιών, εγκρίσεων, αναφορών, συζητήσεων, πληρωμών και συνδέσεων. Οι προτιμήσεις συγχρονίζονται με το web: ημερήσια ή εβδομαδιαία σύνοψη, ζώνη ώρας, ώρες ησυχίας και ημερήσιο όριο. Η άδεια κάθε συσκευής είναι ξεχωριστή.",
     ),
   },
   {
@@ -154,10 +154,10 @@ const FEATURES: ReadonlyArray<{ icon: LucideIcon; title: Copy; text: Copy }> = [
   },
   {
     icon: LayoutGrid,
-    title: c("Widgets and Live Activity", "Widgets και Live Activity"),
+    title: c("Widgets", "Widgets"),
     text: c(
-      "Home and Lock Screen widgets for clicks and fixes, plus today's clicks hour by hour in the Dynamic Island.",
-      "Widgets στην αρχική οθόνη και στην οθόνη κλειδώματος για κλικ και διορθώσεις, και τα σημερινά κλικ ανά ώρα στο Dynamic Island.",
+      "Home and Lock Screen widgets show clicks and fixes from your last saved report. Open the app to refresh the source; the snapshot is not a live Google traffic feed.",
+      "Widgets στην αρχική οθόνη και στην οθόνη κλειδώματος δείχνουν κλικ και διορθώσεις από την τελευταία αποθηκευμένη αναφορά. Ανοίξτε την εφαρμογή για ανανέωση· το στιγμιότυπο δεν είναι ζωντανή ροή κίνησης από τη Google.",
     ),
   },
   {
@@ -172,15 +172,15 @@ const FEATURES: ReadonlyArray<{ icon: LucideIcon; title: Copy; text: Copy }> = [
     icon: Languages,
     title: c("Greek and English", "Ελληνικά και Αγγλικά"),
     text: c(
-      "Full Greek, synced with your web account, plus dark mode and an iPad layout.",
-      "Πλήρη ελληνικά, συγχρονισμένα με τον λογαριασμό σας στο web, με σκούρο θέμα και διάταξη για iPad.",
+      "Greek and English, synced with your web account, plus light/dark appearance and scalable text on iPhone.",
+      "Ελληνικά και αγγλικά, συγχρονισμένα με τον λογαριασμό σας στο web, φωτεινή/σκούρα εμφάνιση και κείμενο που προσαρμόζεται στο iPhone.",
     ),
   },
 ];
 
 const FAQ: ReadonlyArray<GscFaqItem> = [
   {
-    q: c("Is the GSC Boost iPhone app on the App Store?", "Είναι η εφαρμογή GSC Boost για iPhone στο App Store;"),
+    q: c("Is the AnotherSEOGuru iPhone app on the App Store?", "Είναι η εφαρμογή AnotherSEOGuru για iPhone στο App Store;"),
     a: c(
       "Not yet. The app is in beta through Apple's TestFlight. Email us for beta access and we'll send you an invite; the App Store release follows the beta.",
       "Όχι ακόμη. Η εφαρμογή είναι σε beta μέσω του TestFlight της Apple. Στείλτε μας email για πρόσβαση και θα σας στείλουμε πρόσκληση· η κυκλοφορία στο App Store ακολουθεί μετά τη beta.",
@@ -189,8 +189,8 @@ const FAQ: ReadonlyArray<GscFaqItem> = [
   {
     q: c("Do I need a separate subscription for the app?", "Χρειάζομαι ξεχωριστή συνδρομή για την εφαρμογή;"),
     a: c(
-      "No. The iPhone app signs in to the same account as app.anotherseoguru.com and shows your existing plan and credits. Plans are chosen on the website.",
-      "Όχι. Η εφαρμογή iPhone συνδέεται στον ίδιο λογαριασμό με το app.anotherseoguru.com και δείχνει το πακέτο και τις μονάδες σας. Τα πακέτα επιλέγονται στον ιστότοπο.",
+      "No. Use the same account on iPhone and app.anotherseoguru.com to keep your plan, projects and credits together. App Store plans, where offered, show Apple's local price and renewal terms before purchase. An existing web subscription stays managed by its original billing provider.",
+      "Όχι. Χρησιμοποιήστε τον ίδιο λογαριασμό σε iPhone και app.anotherseoguru.com για κοινό πρόγραμμα, έργα και μονάδες. Όπου διατίθενται προγράμματα App Store, η τοπική τιμή και οι όροι ανανέωσης της Apple εμφανίζονται πριν την αγορά. Μια υπάρχουσα συνδρομή web παραμένει στον αρχικό πάροχο χρέωσης.",
     ),
     link: { kind: "site", path: "/platform/pricing", label: c("See the plans", "Δείτε τα πακέτα") },
   },
