@@ -650,6 +650,7 @@ export const glossaryCategories: GlossaryCategory[] = [
         relatedTerms: ["on-page-seo-term", "technical-seo-term", "keywords", "local-pack"],
         relatedLinks: [
           { title: "What is SEO?", url: "/en/blog/what-is-seo", type: "blog" },
+          { title: "SEO for beginners", url: "/en/blog/seo-for-beginners", type: "blog" },
           { title: "Τι είναι το SEO", url: "/el/blog/seo-gia-arxarious", type: "blog" },
           { title: "SEO audit services", url: "/en/services/seo-audits", type: "feature" }
         ]
