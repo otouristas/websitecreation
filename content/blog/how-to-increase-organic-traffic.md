@@ -98,7 +98,7 @@ Page structure beyond the snippet is in the [on-page SEO guide](/en/blog/on-page
 
 ## Coverage, links, and local proof
 
-Tactics 11 to 16 grow impressions once current URLs are healthy. Give a URL to queries you already impress for. [Keyword research](/en/blog/keyword-research-guide), the [SEO content guide](/en/blog/seo-content-guide), and [content creation](/en/services/content-creation) cover the brief and the writing. Point internal links at commercial URLs ([internal linking checklist](/en/blog/internal-linking-audit-checklist)). On competitive queries, earn niche editorial mentions: [off-page SEO](/en/blog/off-page-seo), [link building](/en/blog/link-building-guide), [link building services](/en/services/link-building). Where Maps matters, add reviews and a complete Google Business Profile ([local SEO](/en/blog/local-seo-guide)).
+Tactics 11 to 16 grow impressions once current URLs are healthy. Give a URL to queries you already impress for. [Keyword research](/en/blog/keyword-research-guide), the [SEO content guide](/en/blog/seo-content-guide), and [content creation](/en/services/content-creation) cover the brief and the writing. Point internal links at commercial URLs ([internal linking checklist](/en/blog/internal-linking-audit-checklist)). On competitive queries, earn niche editorial mentions: [off-page SEO](/en/blog/off-page-seo), [link building](/en/blog/link-building-guide), [link building services](/en/services/link-building). Check the gap first with a [backlink checker](/en/blog/backlink-checker). Where Maps matters, add reviews and a complete Google Business Profile ([local SEO](/en/blog/local-seo-guide)).
 
 ## Timelines and investment
 

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 520" role="img" aria-labelledby="title desc">
+  <title id="title">How Google handles a page</title>
+  <desc id="desc">Three stages in order: crawling discovers the URL, indexing stores the page, and ranking orders it for a search.</desc>
+  <rect width="640" height="520" rx="20" fill="#f4f7f4"/>
+  <g font-family="Inter, ui-sans-serif, system-ui, sans-serif">
+    <g>
+      <rect x="32" y="28" width="576" height="132" rx="16" fill="#ffffff" stroke="#d5e0da"/>
+      <circle cx="72" cy="72" r="18" fill="#0f766e"/>
+      <text x="72" y="78" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="700">1</text>
+      <text x="104" y="78" fill="#10241c" font-size="22" font-weight="700">Crawl</text>
+      <text x="56" y="118" fill="#3d5248" font-size="16">Bots discover the URL by following links and the sitemap.</text>
+    </g>
+    <path d="M320 168 v28" stroke="#0f766e" stroke-width="2" fill="none"/>
+    <path d="M312 190 l8 10 8-10" fill="none" stroke="#0f766e" stroke-width="2" stroke-linejoin="round"/>
+    <g>
+      <rect x="32" y="204" width="576" height="132" rx="16" fill="#ffffff" stroke="#d5e0da"/>
+      <circle cx="72" cy="248" r="18" fill="#0f766e"/>
+      <text x="72" y="254" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="700">2</text>
+      <text x="104" y="254" fill="#10241c" font-size="22" font-weight="700">Index</text>
+      <text x="56" y="294" fill="#3d5248" font-size="16">Eligible pages are stored so they can be retrieved later.</text>
+    </g>
+    <path d="M320 344 v28" stroke="#0f766e" stroke-width="2" fill="none"/>
+    <path d="M312 366 l8 10 8-10" fill="none" stroke="#0f766e" stroke-width="2" stroke-linejoin="round"/>
+    <g>
+      <rect x="32" y="380" width="576" height="112" rx="16" fill="#ffffff" stroke="#d5e0da"/>
+      <circle cx="72" cy="424" r="18" fill="#0f766e"/>
+      <text x="72" y="430" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="700">3</text>
+      <text x="104" y="430" fill="#10241c" font-size="22" font-weight="700">Rank</text>
+      <text x="56" y="470" fill="#3d5248" font-size="16">Google orders results by relevance, quality, and usability.</text>
+    </g>
+  </g>
+</svg>
