@@ -640,7 +640,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
 
 ---
 
-## 7. Blog & Guides (78)
+## 7. Blog & Guides (79)
 
 ### How to Rank Higher on Google (2026)
 - **URL:** https://anotherseoguru.com/en/blog/how-to-rank-higher-on-google
@@ -663,6 +663,22 @@ The Greek cities below have service×city pages for website creation, local SEO,
     A: Give that keyword one URL. Check that the current results want the kind of page you published. Make that page the clearest answer, link to it internally, and support it with relevant mentions if the results are competitive. If several of your URLs target the same keyword, consolidate them so one page can be selected.
   - Q: How do I rank first in search results?
     A: Treat each query on its own. Branded queries should show you first when your homepage is indexed. Local queries are decided largely by relevance, distance, and prominence, including your Google Business Profile. Broader queries move after the page, the internal links, and outside mentions are strong enough for that competition. Average position in Search Console is the number to watch.
+
+### Website SEO Checklist (2026)
+- **URL:** https://anotherseoguru.com/en/blog/seo-checklist
+- **Locale:** en · **Date:** 2026-10-16
+- **Description:** A practical 2026 website SEO checklist for crawl, on-page, speed, internal links and local signals, with a sheet you can tick, download or print.
+- **Embedded FAQ:**
+  - Q: What is a website SEO checklist?
+    A: A website SEO checklist is an ordered list of crawl, on-page, speed, internal-link and local checks you can verify on a live site. It is a working order, not a score.
+  - Q: How often should I run a website SEO checklist?
+    A: Run the full list after launch, a redesign or a migration. Between those events, recheck titles, index coverage and Core Web Vitals each month, and again after any template change.
+  - Q: What should I fix first on a website?
+    A: Fix indexation and canonicals before rewriting copy. A page Google cannot keep in the index will not benefit from a better title or a longer article.
+  - Q: Does this checklist cover AI search?
+    A: Clear answers, headings and visible facts help both Google and AI systems that quote pages. The list does not add a separate score for ChatGPT or AI Overviews.
+  - Q: Can I download the website SEO checklist?
+    A: Yes. The sheet on this page saves ticks in your browser and downloads as Markdown or CSV, or you can print it. Nothing is uploaded.
 
 ### Google Ranking Factors: Confirmed vs Myth
 - **URL:** https://anotherseoguru.com/en/blog/google-ranking-factors

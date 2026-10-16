@@ -52,7 +52,7 @@ Apply these in order. A later item does not help while an earlier one is broken.
 7. **Put the answer in the first HTML.** Critical copy should not depend on client-only JavaScript.
 8. **One host, one hop.** HTTPS, a single preferred hostname, 301s rather than 302s, and no redirect chains. Keep filter and tracking parameters out of the index.
 
-Run a [free SEO audit](/en/tools/free-seo-audit) for a quick health snapshot, then dig into Search Console coverage reports.
+Run a [free SEO audit](/en/tools/free-seo-audit) for a quick health snapshot, then dig into Search Console coverage reports. Once those pass, the [website SEO checklist](/en/blog/seo-checklist) continues into on-page, internal links and local checks.
 
 ## Costs, Effort and Timing
 
