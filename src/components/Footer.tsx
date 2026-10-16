@@ -367,6 +367,11 @@ export default function Footer({ locale: localeProp }: { locale?: SiteLocale }):
                 </Link>
               </li>
               <li>
+                <Link href={lp("/seo-guru")} className={columnLinkClass}>
+                  SEO guru
+                </Link>
+              </li>
+              <li>
                 <Link href={lp("/contact")} className={columnLinkClass}>
                   {isEl ? t!.contact : "Contact"}
                 </Link>
