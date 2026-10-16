@@ -49,6 +49,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // The SEO-services commercial pillar. Not part of /services/[service],
     // which is the axis of the location and industry matrices.
     { path: '/seo-services', priority: 0.95 },
+    // Spokes of the hub. Not service × city URLs.
+    { path: '/seo-services/technical', priority: 0.85 },
+    { path: '/seo-services/on-page', priority: 0.85 },
+    { path: '/seo-services/strategy', priority: 0.85 },
     { path: '/', priority: 1, changeFrequency: 'weekly' as const },
     { path: '/glossary', priority: 0.86 },
     // One page per glossary term, in both languages.
