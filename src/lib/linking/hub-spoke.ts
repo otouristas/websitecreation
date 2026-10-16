@@ -461,6 +461,18 @@ export const BLOG_MONEY_LINKS: Record<
         { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
         { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
     ],
+    'google-ranking-factors': [
+        { path: '/services/seo-audits', titleEn: 'SEO audits', titleEl: 'Υπηρεσίες SEO' },
+        { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
+        { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
+        { path: '/blog/on-page-seo', titleEn: 'On-page SEO', titleEl: 'On-page SEO' },
+    ],
+    'paragontes-katataxis-google': [
+        { path: '/services/seo-audits', titleEn: 'SEO audits', titleEl: 'Υπηρεσίες SEO' },
+        { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
+        { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
+        { path: '/blog/on-page-seo-el', titleEn: 'On-page SEO', titleEl: 'On-page SEO' },
+    ],
 };
 
 export function getBlogMoneyLinks(

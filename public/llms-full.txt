@@ -1,11 +1,11 @@
-Last-Updated: 2026-10-14
+Last-Updated: 2026-10-16
 Canonical: https://anotherseoguru.com/llms-full.txt
 Short-form: https://anotherseoguru.com/llms.txt
 Sitemap: https://anotherseoguru.com/sitemap.xml
 
 # AnotherSEOGuru - Complete Knowledge Base
 Source: https://anotherseoguru.com
-Last Updated: 2026-10-14
+Last Updated: 2026-10-16
 
 This document is the comprehensive, machine-readable reference for LLM crawlers, AI search engines, and assistants synthesizing answers about AnotherSEOGuru services, pricing, portfolio, Greek local SEO positioning, and the secondary SEO software platform.
 
@@ -901,7 +901,39 @@ The Greek cities below have service×city pages for website creation, local SEO,
 
 ---
 
-## 7. Blog & Guides (74)
+## 7. Blog & Guides (76)
+
+### Google Ranking Factors: Confirmed vs Myth
+- **URL:** https://anotherseoguru.com/en/blog/google-ranking-factors
+- **Locale:** en · **Date:** 2026-10-16
+- **Description:** Which Google ranking factors Search Central documents, which popular claims it contradicts, and what to fix instead of a fake checklist.
+- **Embedded FAQ:**
+  - Q: Does Google publish a list of ranking factors?
+    A: Google does not publish a complete numbered list. Its how-Search-works guide says relevancy uses hundreds of factors, which can include location, language and device. The ranking systems guide names notable systems such as PageRank, BERT, RankBrain, neural matching and spam detection.
+  - Q: Is E-E-A-T a Google ranking factor?
+    A: No. Google says E-E-A-T itself is not a specific ranking factor. Its systems use many factors that can identify experience, expertise, authoritativeness and trust. Trust is the most important of those aspects.
+  - Q: Are Core Web Vitals a ranking factor?
+    A: Yes. Google says Core Web Vitals are used by its ranking systems. A good score does not guarantee a top position, and there is no single page-experience signal.
+  - Q: Does the keywords meta tag affect Google rankings?
+    A: No. Google said in 2009 that web search does not use the keywords meta tag, and that Search Central post still says this has not changed.
+  - Q: Can you pay Google to rank higher in organic results?
+    A: No. Google says it does not accept payment to crawl a site more often or to rank it higher. Ads are a separate product from organic ranking.
+
+### Παράγοντες Κατάταξης Google: Τι Ισχύει
+- **URL:** https://anotherseoguru.com/el/blog/paragontes-katataxis-google
+- **Locale:** el · **Date:** 2026-10-16
+- **Description:** Ποιοι παράγοντες κατάταξης Google τεκμηριώνονται, ποιοι δημοφιλείς ισχυρισμοί διαψεύδονται και τι να διορθώσετε αντί για ψεύτικη λίστα.
+- **Embedded FAQ:**
+  - Q: Δημοσιεύει η Google λίστα παραγόντων κατάταξης;
+    A: Όχι πλήρη αριθμημένη λίστα. Ο οδηγός για το πώς λειτουργεί η Αναζήτηση λέει ότι η σχετικότητα κρίνεται από εκατοντάδες παράγοντες, που μπορεί να περιλαμβάνουν τοποθεσία, γλώσσα και συσκευή. Ο οδηγός συστημάτων κατάταξης ονομάζει συστήματα όπως το PageRank, το BERT, το RankBrain, το neural matching και τον εντοπισμό spam.
+  - Q: Είναι το E-E-A-T παράγοντας κατάταξης;
+    A: Όχι ως ένας παράγοντας. Η Google γράφει ότι το ίδιο το E-E-A-T δεν είναι συγκεκριμένος παράγοντας κατάταξης. Τα συστήματά της χρησιμοποιούν πολλούς παράγοντες που εντοπίζουν εμπειρία, εξειδίκευση, αυθεντία και αξιοπιστία. Από αυτά, η αξιοπιστία μετράει περισσότερο.
+  - Q: Είναι τα Core Web Vitals παράγοντας κατάταξης;
+    A: Ναι. Η Google γράφει ότι τα Core Web Vitals χρησιμοποιούνται από τα συστήματα κατάταξης. Ένα καλό σκορ δεν εγγυάται την πρώτη θέση και δεν υπάρχει ένα ενιαίο σήμα εμπειρίας σελίδας.
+  - Q: Επηρεάζει το meta keywords την κατάταξη στη Google;
+    A: Όχι. Από το 2009 η Google έχει γράψει ότι η αναζήτηση ιστού δεν χρησιμοποιεί το meta tag keywords, και η ίδια σελίδα εξακολουθεί να λέει ότι αυτό δεν άλλαξε.
+  - Q: Μπορώ να πληρώσω τη Google για υψηλότερη οργανική θέση;
+    A: Όχι. Η Google γράφει ότι δεν δέχεται πληρωμή για συχνότερη ανίχνευση ή για υψηλότερη κατάταξη. Οι διαφημίσεις είναι ξεχωριστό προϊόν από την οργανική κατάταξη.
 
 ### Πώς Βάζω την Επιχείρησή μου στο Google Maps
 - **URL:** https://anotherseoguru.com/el/blog/epixeirisi-sto-google-maps

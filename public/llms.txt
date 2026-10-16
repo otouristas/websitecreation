@@ -1,11 +1,11 @@
-Last-Updated: 2026-10-14
+Last-Updated: 2026-10-16
 Canonical: https://anotherseoguru.com/llms.txt
 Long-form: https://anotherseoguru.com/llms-full.txt
 Sitemap: https://anotherseoguru.com/sitemap.xml
 
 # AnotherSEOGuru - Platform Index & Directory
 Source: https://anotherseoguru.com
-Last Updated: 2026-10-14
+Last Updated: 2026-10-16
 
 > AnotherSEOGuru is a web design & SEO agency based in Greece (serving Greek and international clients), specializing in tourism & hospitality websites, with GEO/AEO (AI visibility) services and a secondary GSC-native SEO software platform.
 
@@ -210,7 +210,9 @@ Greece-wide service; dedicated service×city pages for the cities below. Money-p
 - [Taverna Yiannis](https://anotherseoguru.com/en/work/taverna-yiannis) - Taverna Yiannis: family traditional Cretan taverna for Platanes, Rethymno, SEO for “Taverna Yiannis Platanes”, with technical SEO from day one. · Live: https://tavernayiannis.gr
 - [vwanaki](https://anotherseoguru.com/en/work/vwanaki) - vwanaki: mobile cocktail bar for events for Greece, SEO for “mobile cocktail bar Greece”, with trust signals and a clear inquiry path. · Live: https://vwanaki.gr
 
-## Blog & Guides (74 posts)
+## Blog & Guides (76 posts)
+- [Google Ranking Factors: Confirmed vs Myth](https://anotherseoguru.com/en/blog/google-ranking-factors) - Which Google ranking factors Search Central documents, which popular claims it contradicts, and what to fix instead of a fake checklist.
+- [Παράγοντες Κατάταξης Google: Τι Ισχύει](https://anotherseoguru.com/el/blog/paragontes-katataxis-google) - Ποιοι παράγοντες κατάταξης Google τεκμηριώνονται, ποιοι δημοφιλείς ισχυρισμοί διαψεύδονται και τι να διορθώσετε αντί για ψεύτικη λίστα.
 - [Πώς Βάζω την Επιχείρησή μου στο Google Maps](https://anotherseoguru.com/el/blog/epixeirisi-sto-google-maps) - Πώς να βάλετε την επιχείρησή σας στο Google Maps βήμα βήμα, γιατί μπορεί να μην εμφανίζεται και πώς να ανεβείτε στον χάρτη με το Google Business Profile.
 - [On-Page SEO: Τι Είναι και Checklist 2026](https://anotherseoguru.com/el/blog/on-page-seo-el) - Τι είναι το on-page SEO και πώς διαφέρει από το off-page: checklist για τίτλους, επικεφαλίδες, περιεχόμενο και εσωτερικούς συνδέσμους, με παραδείγματα.
 - [Πώς να Επιλέξετε Εταιρεία SEO: 10 Ερωτήσεις](https://anotherseoguru.com/el/blog/pos-na-epilexete-etaireia-seo) - Πώς να επιλέξετε εταιρεία SEO στην Ελλάδα: 10 ερωτήσεις πριν υπογράψετε, σημάδια κινδύνου και σύγκριση εταιρείας, freelancer και εσωτερικού συνεργάτη.
