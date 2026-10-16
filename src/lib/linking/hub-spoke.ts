@@ -407,6 +407,13 @@ export const BLOG_MONEY_LINKS: Record<
     ],
     'link-building-guide': [
         { path: '/services/link-building', titleEn: 'Link building', titleEl: 'Link building' },
+        { path: '/blog/backlink-checker', titleEn: 'Backlink checker', titleEl: 'Έλεγχος backlinks' },
+        { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
+        { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
+    ],
+    'backlink-checker': [
+        { path: '/services/link-building', titleEn: 'Link building', titleEl: 'Link building' },
+        { path: '/blog/link-building-guide', titleEn: 'Link building guide', titleEl: 'Οδηγός link building' },
         { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
         { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
     ],
