@@ -431,6 +431,14 @@ export const BLOG_MONEY_LINKS: Record<
         { path: '/services/local-seo', titleEn: 'Local SEO', titleEl: 'Τοπικό SEO' },
         { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
     ],
+    'how-to-rank-higher-on-google': [
+        { path: '/seo-services', titleEn: 'SEO services', titleEl: 'Υπηρεσίες SEO' },
+        { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
+        { path: '/services/local-seo', titleEn: 'Local SEO', titleEl: 'Τοπικό SEO' },
+        { path: '/services/seo-audits', titleEn: 'SEO audits', titleEl: 'Έλεγχος SEO' },
+        { path: '/services/ai-visibility', titleEn: 'AI visibility', titleEl: 'Ορατότητα σε AI' },
+        { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
+    ],
     'seo-vs-google-ads': [
         { path: '/services/seo-audits', titleEn: 'SEO services', titleEl: 'Υπηρεσίες SEO' },
         { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },

@@ -41,6 +41,7 @@ export type SchemaType =
     | 'Article'
     | 'BlogPosting'
     | 'FAQPage'
+    | 'HowTo'
     | 'BreadcrumbList'
     | 'LocalBusiness'
     | 'Service'

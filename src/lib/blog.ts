@@ -10,6 +10,17 @@ export interface BlogFaqItem {
   readonly answer: string;
 }
 
+export interface BlogHowToStep {
+  readonly name: string;
+  readonly text: string;
+}
+
+export interface BlogHowTo {
+  readonly name: string;
+  readonly description: string;
+  readonly steps: readonly BlogHowToStep[];
+}
+
 export interface BlogPostListItem {
   readonly slug: string;
   readonly title: string;
@@ -27,6 +38,11 @@ export interface BlogPostListItem {
   readonly translationOf?: string;
   /** Optional Q&A pairs (frontmatter `faq:`) surfaced into FAQPage JSON-LD. */
   readonly faq?: readonly BlogFaqItem[];
+  /**
+   * Optional procedure (frontmatter `howto:`) surfaced into HowTo JSON-LD.
+   * Step name and text must also appear in the body.
+   */
+  readonly howto?: BlogHowTo;
   /** Body word count, used for reading time and Article schema. */
   readonly wordCount: number;
   /** Estimated minutes to read, at 200 wpm, floored to 1. */
@@ -60,6 +76,7 @@ interface MatterData {
   readonly locale?: 'en' | 'el';
   readonly translationOf?: string;
   readonly faq?: unknown;
+  readonly howto?: unknown;
 }
 
 /** Normalize the frontmatter `faq:` list into clean {question, answer} pairs. */
@@ -76,6 +93,25 @@ function parseFaq(raw: unknown): BlogFaqItem[] | undefined {
     }
   }
   return items.length > 0 ? items : undefined;
+}
+
+/** Normalize frontmatter `howto:` into a name, description, and ordered steps. */
+function parseHowTo(raw: unknown): BlogHowTo | undefined {
+  if (!raw || typeof raw !== "object") return undefined;
+  const entry = raw as Record<string, unknown>;
+  const name = typeof entry.name === "string" ? entry.name.trim() : "";
+  const description = typeof entry.description === "string" ? entry.description.trim() : "";
+  if (!name || !Array.isArray(entry.steps)) return undefined;
+  const steps: BlogHowToStep[] = [];
+  for (const step of entry.steps) {
+    if (!step || typeof step !== "object") continue;
+    const row = step as Record<string, unknown>;
+    const stepName = typeof row.name === "string" ? row.name.trim() : "";
+    const text = typeof row.text === "string" ? row.text.trim() : "";
+    if (stepName && text) steps.push({ name: stepName, text });
+  }
+  if (steps.length < 2) return undefined;
+  return { name, description: description || name, steps };
 }
 
 function getContentDir(): string {
@@ -140,6 +176,15 @@ function parsePostFile(filePath: string, fileBase: string): BlogPostParsed | nul
     locale,
     translationOf: typeof d.translationOf === "string" ? d.translationOf : undefined,
     faq: parseFaq(d.faq)?.map((f) => ({ question: rp(f.question), answer: rp(f.answer) })),
+    howto: (() => {
+      const howto = parseHowTo(d.howto);
+      if (!howto) return undefined;
+      return {
+        name: rp(howto.name),
+        description: rp(howto.description),
+        steps: howto.steps.map((step) => ({ name: rp(step.name), text: rp(step.text) })),
+      };
+    })(),
     wordCount,
     readingTime: Math.max(1, Math.round(wordCount / 200)),
     content: rp(content),

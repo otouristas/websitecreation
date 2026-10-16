@@ -90,6 +90,39 @@ export function generateFAQSchema(data: FAQSchemaData): SchemaOutput {
     };
 }
 
+export interface HowToStepData {
+    readonly name: string;
+    readonly text: string;
+}
+
+export interface HowToSchemaData {
+    readonly name: string;
+    readonly description: string;
+    readonly steps: readonly HowToStepData[];
+}
+
+/**
+ * HowTo JSON-LD for a page that is genuinely a procedure.
+ *
+ * Google retired HowTo rich results in 2023. The type is still valid
+ * schema.org. Callers must pass steps that are visible on the page.
+ * The markup does not request a rich result and it is not a ranking signal.
+ */
+export function generateHowToSchema(data: HowToSchemaData): SchemaOutput {
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'HowTo',
+        name: data.name,
+        description: data.description,
+        step: data.steps.map((step, index) => ({
+            '@type': 'HowToStep',
+            position: index + 1,
+            name: step.name,
+            text: step.text,
+        })),
+    };
+}
+
 /**
  * Generate BreadcrumbList schema markup
  */

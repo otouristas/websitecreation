@@ -31,6 +31,7 @@ import {
   generateArticleSchema,
   generateBreadcrumbSchema,
   generateFAQSchema,
+  generateHowToSchema,
   combineSchemas,
 } from "@/lib/seo/schema";
 
@@ -113,8 +114,26 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     faqItems.length > 0
       ? generateFAQSchema({ faqs: faqItems.map((f) => ({ question: f.question, answer: f.answer })) })
       : null;
-  const schemas = combineSchemas(articleSchema, breadcrumbSchema,
-    ...(faqSchema ? [faqSchema] : []));
+  // Same contract as the blog validator: HowTo markup is emitted only when
+  // every step name and sentence is already visible in the article.
+  const howToVisible =
+    post.howto != null &&
+    post.howto.steps.every(
+      (step) => post.content.includes(step.name) && post.content.includes(step.text),
+    );
+  const howToSchema = howToVisible && post.howto
+    ? generateHowToSchema({
+        name: post.howto.name,
+        description: post.howto.description,
+        steps: post.howto.steps,
+      })
+    : null;
+  const schemas = combineSchemas(
+    articleSchema,
+    breadcrumbSchema,
+    ...(faqSchema ? [faqSchema] : []),
+    ...(howToSchema ? [howToSchema] : []),
+  );
 
   /**
    * Related posts fall back from pillar to category. The pillar-only version
