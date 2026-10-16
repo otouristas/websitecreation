@@ -39,6 +39,9 @@ const ALLOW_LONG = new Set([
   'medical-marketing',
   'internal-linking-audit-checklist',
   'glossary-strategy-internal-linking',
+  // Chapters, a 30-day plan table, and an in-page glossary list. Cutting any
+  // of those drops a section the page is built around.
+  'seo-for-beginners',
   'poso-kostizei-to-seo',
   'backlink-checker',
   // Strategies, the prospect sheet and the outreach email examples are the
