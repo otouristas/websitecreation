@@ -47,7 +47,7 @@ Technical work does not replace relevance. It removes friction so [on-page SEO](
 7. **JS rendering** - critical copy in the initial HTML when possible
 8. **HTTPS & redirects** - one preferred host, clean 301 chains, no redirect loops
 
-Run a [free SEO audit](/en/tools/free-seo-audit) for a quick health snapshot, then dig into Search Console coverage reports.
+Run a [free SEO audit](/en/tools/free-seo-audit) for a quick health snapshot, then dig into Search Console coverage reports. Once those pass, the [website SEO checklist](/en/blog/seo-checklist) continues into on-page, internal links and local checks.
 
 ## Costs, Effort and Timing
 

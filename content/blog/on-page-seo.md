@@ -59,6 +59,8 @@ Compress images, use descriptive alt text, lazy-load galleries. Add schema only 
 9. Clear CTA appropriate to intent (form, call, booking)
 10. No cannibalizing sibling URLs for the same query
 
+On-page is one layer. The [website SEO checklist](/en/blog/seo-checklist) puts it after crawl and index, and before you spend time on links.
+
 ## Costs, Effort and Expected Timing
 
 | Work type | Typical cost (GR, 2026) | Effort | First signals |

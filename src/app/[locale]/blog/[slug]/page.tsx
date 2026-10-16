@@ -18,6 +18,7 @@ import {
 import { getPillarCopy } from "@/data/blog-pillars";
 import { TableOfContents } from "@/components/blog/TableOfContents";
 import { BlogProductCta } from "@/components/blog/BlogProductCta";
+import { SeoChecklist } from "@/components/blog/SeoChecklist";
 import FAQSection from "@/components/seo/FAQSection";
 import { CtaBand, kitSoftwareBtn } from "@/components/kit";
 import { cn } from "@/lib/cn";
@@ -139,6 +140,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     ? localizedPath(counterpart.locale as SiteLocale, `/blog/${counterpart.slug}`)
     : localizedPath(isEl ? 'en' : 'el', '/blog');
 
+  const checklistParts = post.content.split("<!-- seo-checklist -->");
+  const showChecklist = checklistParts.length === 2;
+
   const moneyPages = getBlogMoneyLinks(post.slug).map((p) => ({
     // Blog targets resolve to the post's own locale; everything else follows the reader's.
     slug: p.path.startsWith('/blog/')
@@ -193,9 +197,21 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         {/* Body + sticky TOC rail */}
         <div className="mx-auto grid max-w-6xl gap-12 px-6 py-14 lg:grid-cols-[minmax(0,1fr)_16rem] lg:gap-16">
           <article className="min-w-0">
-            <KitProse>
-              <MarkdownBody markdown={post.content} locale={locale as SiteLocale} />
-            </KitProse>
+            {showChecklist ? (
+              <>
+                <KitProse>
+                  <MarkdownBody markdown={checklistParts[0]} locale={locale as SiteLocale} />
+                </KitProse>
+                <SeoChecklist />
+                <KitProse>
+                  <MarkdownBody markdown={checklistParts[1]} locale={locale as SiteLocale} />
+                </KitProse>
+              </>
+            ) : (
+              <KitProse>
+                <MarkdownBody markdown={post.content} locale={locale as SiteLocale} />
+              </KitProse>
+            )}
 
             {/* FAQ: same source as the FAQPage schema, so the two cannot drift */}
             {faqItems.length > 0 ? (

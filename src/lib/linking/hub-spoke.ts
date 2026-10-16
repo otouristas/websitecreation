@@ -272,6 +272,12 @@ export const BLOG_MONEY_LINKS: Record<
         { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
         { path: '/glossary', titleEn: 'SEO glossary', titleEl: 'Γλωσσάρι SEO' },
     ],
+    'seo-checklist': [
+        { path: '/services/seo-audits', titleEn: 'SEO audits', titleEl: 'Υπηρεσίες SEO' },
+        { path: '/tools/free-seo-audit', titleEn: 'Free SEO audit', titleEl: 'Δωρεάν SEO audit' },
+        { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
+        { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
+    ],
     'web-hosting-domain-odigos': [
         { path: '/services/website-creation', titleEn: 'Website creation', titleEl: 'Κατασκευή ιστοσελίδων' },
         { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },

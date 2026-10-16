@@ -46,7 +46,7 @@ Your customer doesn't search "holistic wellness solutions" - they search "gym ne
 - **Structure**: one H1, logical H2s, short paragraphs, internal links.
 - **Content that answers** the question better than competitors - not just more words.
 
-Full checklist: [on-page SEO](/en/blog/on-page-seo).
+Full checklist: [on-page SEO](/en/blog/on-page-seo). For the whole site, in order, use the [website SEO checklist](/en/blog/seo-checklist).
 
 ### 3. Technical SEO: the foundations
 
