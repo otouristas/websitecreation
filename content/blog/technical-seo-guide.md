@@ -1,14 +1,17 @@
 ---
 slug: technical-seo-guide
-title: Technical SEO Guide - Crawl, Index, Speed & Schema
-description: What technical SEO is, a practical 2026 checklist, Core Web Vitals, schema, common mistakes, costs and when to hire technical SEO services or run an audit.
+title: Technical SEO Best Practices Guide
+description: Technical SEO best practices for crawl, indexation, Core Web Vitals, canonicals and schema, with costs and when an audit is worth it.
 date: 2026-07-23
+updated: 2026-10-16
 author: AnotherSEOGuru Editorial Team
 category: SEO
 categoryColor: bg-emerald-100 text-emerald-800
 pillar: technical-seo-in-house
 translationOf: techniko-seo
 faq:
+  - question: What are technical SEO best practices?
+    answer: Index revenue URLs, fix Core Web Vitals on templates that convert, match mobile to desktop, submit a sitemap with real internal links, mark up only visible facts, pair EN/EL with hreflang, render critical copy in the initial HTML, and keep one HTTPS host with clean 301s.
   - question: What is technical SEO?
     answer: Technical SEO makes your site easy to crawl, index, and render - speed, mobile usability, HTTPS, sitemaps, canonicals, structured data, and clean architecture.
   - question: Technical SEO vs on-page SEO?
@@ -21,9 +24,9 @@ faq:
     answer: In Greece, focused technical audits typically run {{ENTRY_SEO}}–€1,200 depending on site size and JS complexity. Fixes are scoped separately or included in retainers.
 ---
 
-**Technical SEO** is the foundation under content and links: making your site easy for Google to crawl, index and render - fast on mobile, with clean canonicals and structured data. If technical health is broken, publishing more blogs rarely helps.
+**Technical SEO best practices** make a site easy for Google to crawl, index and render - fast on mobile, with clean canonicals and structured data. If those are broken, publishing more blogs rarely helps.
 
-For in-house ticket workflows, also see our [technical SEO for in-house teams](/en/blog/pillar-technical-seo-in-house) hub. Pair with [What is SEO?](/en/blog/what-is-seo) for the full picture.
+This page is the practices guide. The [technical SEO hub for in-house teams](/en/blog/pillar-technical-seo-in-house) is a separate playbook for ticket templates, release QA and engineering buy-in, so the two URLs stay distinct and link to each other. Pair with [What is SEO?](/en/blog/what-is-seo) for the wider picture.
 
 ## What Technical SEO Actually Covers
 
@@ -36,16 +39,18 @@ For in-house ticket workflows, also see our [technical SEO for in-house teams](/
 
 Technical work does not replace relevance. It removes friction so [on-page SEO](/en/blog/on-page-seo) and [link building](/en/blog/link-building-guide) can work.
 
-## Technical SEO Checklist (Priority Order)
+## Technical SEO Best Practices
 
-1. **Indexation & canonicals** - robots.txt, no accidental noindex, self-referencing canonicals
-2. **Core Web Vitals** - LCP, INP, CLS on key templates ([speed optimization](/en/services/speed-optimization))
-3. **Mobile crawlability** - usable tap targets, readable type, same content as desktop
-4. **Sitemaps & crawl paths** - XML sitemap submitted in Search Console; internal links to important URLs
-5. **Structured data** - only markup that matches visible content
-6. **Hreflang / i18n** - correct EN/EL pairs for bilingual Greek sites
-7. **JS rendering** - critical copy in the initial HTML when possible
-8. **HTTPS & redirects** - one preferred host, clean 301 chains, no redirect loops
+Apply these in order. A later item does not help while an earlier one is broken.
+
+1. **Index the URLs that earn revenue.** Check robots.txt, accidental noindex and soft 404s before you publish more posts. Each important URL needs a self-referencing [canonical](/en/glossary/canonical-tag).
+2. **Fix Core Web Vitals on templates that convert.** Measure [LCP](/en/glossary/lcp), [INP](/en/glossary/inp) and CLS on booking or lead templates, not on a sample article. Image weight and main-thread JavaScript come first. See [speed optimization](/en/services/speed-optimization).
+3. **Match mobile HTML to desktop.** Mobile-first indexing reads the phone version. Same primary copy, readable type, usable tap targets.
+4. **Give crawlers a path.** Submit an [XML sitemap](/en/glossary/xml-sitemap) in Search Console and link money URLs from pages that are already crawled. Orphans stay “Discovered – not indexed”.
+5. **Mark up only what visitors can see.** FAQ, LocalBusiness, Product or BreadcrumbList [schema](/en/glossary/structured-data) only when the same facts are on the page.
+6. **Pair EN and EL with hreflang.** Reciprocal [hreflang](/en/glossary/hreflang) annotations, consistent locale URLs, and no self-only tags on bilingual Greek sites.
+7. **Put the answer in the first HTML.** Critical copy should not depend on client-only JavaScript.
+8. **One host, one hop.** HTTPS, a single preferred hostname, 301s rather than 302s, and no redirect chains. Keep filter and tracking parameters out of the index.
 
 Run a [free SEO audit](/en/tools/free-seo-audit) for a quick health snapshot, then dig into Search Console coverage reports.
 
@@ -80,7 +85,7 @@ For local businesses, technical health plus [local SEO](/en/services/local-seo) 
 
 ## Technical SEO Services
 
-When you need done-for-you fixes, our [SEO audit services](/en/services/seo-audits) and technical SEO retainers prioritize blockers by business impact - not vanity issue counts. In-house teams can follow the [pillar technical SEO](/en/blog/pillar-technical-seo-in-house) playbooks and escalate migrations or JS-heavy sites to specialists.
+When you need done-for-you fixes, our [SEO audit services](/en/services/seo-audits) and technical SEO retainers prioritize blockers by business impact - not vanity issue counts. In-house teams can follow the [in-house technical SEO hub](/en/blog/pillar-technical-seo-in-house) for tickets and release QA, and escalate migrations or JS-heavy sites to specialists.
 
 ## Migrations, Redesigns and Bilingual Sites
 
@@ -106,6 +111,10 @@ This order keeps developers focused on revenue impact instead of chasing every L
 ### Is technical SEO hard?
 
 Basics (HTTPS, sitemap, mobile, vitals) are learnable. Complex JS sites and migrations need experienced help.
+
+### What are technical SEO best practices?
+
+Indexation and canonicals first, then speed on money templates, mobile parity, sitemaps, accurate schema, hreflang, server-rendered content and one clean host. In-house teams turn that list into tickets on the [technical SEO hub](/en/blog/pillar-technical-seo-in-house).
 
 ### Does site speed affect rankings?
 

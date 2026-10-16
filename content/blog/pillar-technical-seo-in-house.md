@@ -3,6 +3,7 @@ slug: pillar-technical-seo-in-house
 title: Technical SEO for In-House Teams - Audits, Priorities, and Buy-In
 description: Hub for crawl budget, rendering, structured data, and performance - written for teams shipping through engineering queues.
 date: 2026-02-01
+updated: 2026-10-16
 author: AnotherSEOGuru Editorial Team
 pillarHub: true
 pillar: technical-seo-in-house
@@ -19,9 +20,13 @@ faq:
     answer: "Migrations, multi-language launches, indexation crises - get scoped."
 ---
 
-Technical SEO is the art of making sites easy to crawl, fast to render, and unambiguous for search engines - **without** blocking product roadmaps. In-house teams win when they speak in tickets, risk, and revenue - not only "best practices" lists. This hub collects audits, checklists, and vertical examples for teams shipping through engineering queues - including [hotel](/en/solutions/hotels), [rent-a-car](/en/solutions/rent-a-car), and healthcare sites.
+Technical SEO is the art of making sites easy to crawl, fast to render, and unambiguous for search engines - **without** blocking product roadmaps. In-house teams win when they speak in tickets, risk, and revenue. The public checklist is the [technical SEO best practices guide](/en/blog/technical-seo-guide); this hub is how you turn those practices into engineering work for [hotel](/en/solutions/hotels), [rent-a-car](/en/solutions/rent-a-car), and healthcare sites.
 
 ## Key reads
+
+### The practices guide
+
+- [Technical SEO best practices](/en/blog/technical-seo-guide) - crawl, indexation, vitals, schema and hreflang, in priority order. Stay on this hub for tickets, severity and release QA.
 
 ### Site architecture and links
 
