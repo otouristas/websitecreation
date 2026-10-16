@@ -16,6 +16,8 @@ Last Updated: 2026-10-14
 - **Τιμές & Πακέτα** (<https://anotherseoguru.com/el/pricing>) - Διαφανείς τιμές σε ευρώ για κατασκευή ιστοσελίδας και SEO.
 - **Get a Quote** (<https://anotherseoguru.com/en/get-started>) - Scoped quote request - reply within 24 hours.
 - **Ξεκινήστε / Προσφορά** (<https://anotherseoguru.com/el/get-started>) - Φόρμα προσφοράς στα ελληνικά.
+- **SEO guru** (<https://anotherseoguru.com/en/seo-guru>) - Who the SEO guru is, the Search Console method, services and pricing. Greek twin at /el/seo-guru.
+- **SEO guru (Ελληνικά)** (<https://anotherseoguru.com/el/seo-guru>) - Ποιος είναι ο SEO guru, η μέθοδος από το Search Console, υπηρεσίες και τιμές.
 - **Services Hub** (<https://anotherseoguru.com/en/services>) - All productized agency services.
 - **Υπηρεσίες** (<https://anotherseoguru.com/el/services>) - Όλες οι υπηρεσίες κατασκευής ιστοσελίδων και SEO.
 - **AI Visibility (GEO / AEO)** (<https://anotherseoguru.com/en/services/ai-visibility>) - AI SEO agency for ChatGPT, Perplexity, and AI Overviews citations.
