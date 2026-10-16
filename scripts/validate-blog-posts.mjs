@@ -45,6 +45,9 @@ const ALLOW_LONG = new Set([
   // the source, which do not compress without losing the point of the post.
   'google-ai-mode-tags',
   'google-ai-mode-tags-el',
+  // 21-strategy listicle. The brief asks for about 2,500 words so each item
+  // can say what to do, not just name a tactic.
+  'seo-strategies',
 ]);
 
 const CTA_RE =

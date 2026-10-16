@@ -298,6 +298,50 @@ export interface CollectionPageSchemaData {
  *
  * Item URLs must already be absolute and locale-prefixed.
  */
+export interface StrategyListItem {
+  readonly position: number;
+  readonly name: string;
+  /** Absolute URL, including the heading fragment. */
+  readonly url: string;
+}
+
+export interface ItemListSchemaData {
+  readonly name: string;
+  readonly url: string;
+  readonly items: readonly StrategyListItem[];
+}
+
+/**
+ * Standalone ItemList for a listicle article.
+ *
+ * Archive pages use `generateCollectionPageSchema` (a CollectionPage whose
+ * mainEntity is an ItemList of other URLs). A guide that is itself the list
+ * needs the list on the article URL, with each entry pointing at the heading
+ * the reader can see. Children are `Thing`s: a strategy section is not its
+ * own article, and every entry shares one type.
+ */
+export function generateItemListSchema(data: ItemListSchemaData): SchemaOutput {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: data.name,
+    url: data.url,
+    numberOfItems: data.items.length,
+    itemListOrder: 'https://schema.org/ItemListOrderAscending',
+    itemListElement: data.items.map((item) => ({
+      '@type': 'ListItem',
+      position: item.position,
+      name: item.name,
+      url: item.url,
+      item: {
+        '@type': 'Thing',
+        name: item.name,
+        '@id': item.url,
+      },
+    })),
+  };
+}
+
 export function generateCollectionPageSchema(
   data: CollectionPageSchemaData,
 ): SchemaOutput {
