@@ -300,6 +300,12 @@ function buildShort({ services, servicesEl, industries, industriesEl, greece, pr
     hubLine('Ξεκινήστε / Προσφορά', url('el', '/get-started'), 'Φόρμα προσφοράς στα ελληνικά.'),
   );
   lines.push(
+    hubLine('SEO guru', url('en', '/seo-guru'), 'Who the SEO guru is, the Search Console method, services and pricing. Greek twin at /el/seo-guru.'),
+  );
+  lines.push(
+    hubLine('SEO guru (Ελληνικά)', url('el', '/seo-guru'), 'Ποιος είναι ο SEO guru, η μέθοδος από το Search Console, υπηρεσίες και τιμές.'),
+  );
+  lines.push(
     hubLine('Services Hub', url('en', '/services'), 'All productized agency services.'),
   );
   lines.push(

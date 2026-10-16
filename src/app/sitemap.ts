@@ -53,6 +53,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/seo-services/technical', priority: 0.85 },
     { path: '/seo-services/on-page', priority: 0.85 },
     { path: '/seo-services/strategy', priority: 0.85 },
+    { path: '/seo-guru', priority: 0.9, changeFrequency: 'monthly' as const },
     { path: '/', priority: 1, changeFrequency: 'weekly' as const },
     { path: '/glossary', priority: 0.86 },
     // One page per glossary term, in both languages.

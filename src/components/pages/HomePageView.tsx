@@ -143,11 +143,15 @@ export function HomePageView({ locale }: { locale: SiteLocale }) {
                 <Link href={lp('/seo-services')} className="font-medium text-foreground underline decoration-hairline underline-offset-4 hover:decoration-foreground">
                   {tx('SEO services', 'υπηρεσίες SEO')}
                 </Link>
-                {tx(' or meet ', ' ή γνωρίστε τον ')}
+                {tx(', meet ', ', γνωρίστε τον ')}
                 <Link href={consultantPath(locale)} className="font-medium text-foreground underline decoration-hairline underline-offset-4 hover:decoration-foreground">
                   {isEl ? `${FOUNDER.nameElAcc}, τον σύμβουλο SEO μας` : `${FOUNDER.name}, our SEO consultant`}
                 </Link>
-                .
+                {tx(', or read how an ', '. Δείτε πώς δουλεύει ένας ')}
+                <Link href={lp('/seo-guru')} className="font-medium text-foreground underline decoration-hairline underline-offset-4 hover:decoration-foreground">
+                  SEO guru
+                </Link>
+                {tx(' works with you.', '.')}
               </p>
             </>
           }
