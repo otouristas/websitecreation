@@ -58,7 +58,6 @@ deepen the pages that already have demand.** Not more URLs.
 | Blog quoting €299/€599/€999 under tier names that do not exist | 173 figures, 30 of 71 posts | tokens + tier renames |
 | "500+ websites", "98% satisfaction", "50+ industries", "55+", "73", "5 markets", "15+ tools", Canada/Australia/Ireland | homepage, /about, /work, Organization schema | derived from `company-facts.ts` / removed |
 | Invented case metrics on /get-started ("Page 1 Position 1", "4.8%-8.2%", "0% χαμένοι πελάτες") | both locales | rewritten as process, no promised numbers |
-| A parked for-sale domain featured on the homepage with a "View live site" button | `greececyclades.com` | `liveStatus: 'offline'`, excluded from featured, link disabled |
 
 ### Technical
 
@@ -264,7 +263,7 @@ belongs inside an existing page, not on a new URL — most fan-outs do.
   five-star row above three testimonials with no source, date or consent
   record. Marking that up is a self-serving-review violation. Get written
   consent and a real source, or pull the block — do not schema it.
-- **No claimed client outcomes.** All 71 case studies are template-assembled and
+- **No claimed client outcomes.** The case studies are template-assembled and
   no traffic, ranking, booking or revenue figure is recorded for any of them.
   The honest claim shape is "we built this, in this market, for this keyword".
 - **No promise of AI citation.** Optimisation makes content citable. It does not

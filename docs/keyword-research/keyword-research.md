@@ -25,7 +25,7 @@ That is the opportunity. Demand and indexing already exist - the gap is **on-pag
 | **Hosting / domains / e-shop** | `web hosting`, `ελληνικο domain`, `κατασκευη eshop woocommerce` | Mostly content gaps / off-core |
 | **AEO / AI search** | `aeo`, `aeo chatgpt`, `voice seo για eshop` | Blogs exist, expand |
 
-### Top 10 quick wins (already ranking - push to page 1)
+### Quick wins (already ranking - push to page 1)
 
 These have impressions **and** a position worth defending or pushing. Ordered by ease.
 
@@ -34,13 +34,11 @@ These have impressions **and** a position worth defending or pushing. Ordered by
 | 1 | `seo υπηρεσιεσ` | 6.0 | 45 | On-page polish + FAQ schema on the `/el` SEO services section → top 3 |
 | 2 | `προωθηση ιστοσελιδων τιμη` | 1.0 | 5 | Already #1 - add price table + FAQ to hold & expand to `προωθηση ιστοσελιδων` |
 | 3 | `ρεθυμνο προωθηση ιστοσελιδων` | 1.29 | 35 | Strong - build a Rethymno page (city is a `locations.ts` gap) |
-| 4 | `dailyhost` (brand) | 1.69 | 62 | Brand/nav term already converting (8% CTR) - keep |
-| 5 | `daily host` | 5.0 | 4 | Same brand cluster - consolidate |
-| 6 | `ρεθυμνο seo` | 12.4 | 51 | Rethymno local SEO page → top 5 |
-| 7 | `κατασκευη ιατρικων ιστοσελιδων` | 13.85 | 52 | Medical vertical near page 1 - deepen (see C9 note) |
-| 8 | `κατασκευη ιστοσελιδων αθηνα` | 16.1 | 41 | Athens web-design page exists - strengthen |
-| 9 | `seo audit ελλαδα` | 71.6 | 12 | Lower pos but commercial; tie to `/en/services/seo-audits` (+ `/el`) |
-| 10 | `web hosting` | 14.5 | 340 | Huge impressions - decide: content play or out of scope (off-core) |
+| 4 | `ρεθυμνο seo` | 12.4 | 51 | Rethymno local SEO page → top 5 |
+| 5 | `κατασκευη ιατρικων ιστοσελιδων` | 13.85 | 52 | Medical vertical near page 1 - deepen (see C9 note) |
+| 6 | `κατασκευη ιστοσελιδων αθηνα` | 16.1 | 41 | Athens web-design page exists - strengthen |
+| 7 | `seo audit ελλαδα` | 71.6 | 12 | Lower pos but commercial; tie to `/en/services/seo-audits` (+ `/el`) |
+| 8 | `web hosting` | 14.5 | 340 | Huge impressions - decide: content play or out of scope (off-core) |
 
 ---
 
@@ -158,7 +156,7 @@ High impressions (`web hosting` = 340 impr) but **AnotherSEOGuru does not sell h
 | domain name | 1,200 | 75 | info | - |
 | presta shop host greece / magento hosting ελλαδα | - | - | comm | 8.9 / 73 · 3–8 |
 
-- **Recommendation:** publish **guide/glossary content** ("πώς να διαλέξεις web hosting", "τι είναι το domain") that internal-links to actual services (web design, SEO). Do **not** create a hosting *service* page. Brand terms (`dailyhost`, `daily host`, `mediahost`) are navigational - likely legacy/partner references; keep but don't invest.
+- **Recommendation:** publish **guide/glossary content** ("πώς να διαλέξεις web hosting", "τι είναι το domain") that internal-links to actual services (web design, SEO). Do **not** create a hosting *service* page. The brand term `mediahost` is navigational; keep it but don't invest.
 
 ### C5 - Local SEO by city  · Priority P1 · exists + **city gaps**
 
