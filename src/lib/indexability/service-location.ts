@@ -18,9 +18,7 @@
  *   search with a city name. The fourth slot went to eshop-woocommerce over
  *   ai-visibility: "κατασκευη eshop" has about 700 searches a month in Greece
  *   (Ahrefs, 2026-10), and e-shops are bought locally, while nobody searches
- *   "AI visibility + city". The portfolio has 3 ai-visibility projects
- *   against 1 tagged e-shop build, but it also has several live stores
- *   (opticore-store, phytomore, thenutrinest), so it does not decide it.
+ *   "AI visibility + city". Tagged portfolio builds do not decide the cut.
  * - Greek cities: the approved core list, plus Rethymno (most clicks of any
  *   city page in the GSC export: 4), Kos (the only Greek ranking keyword on
  *   the site lands on a Kos city page) and Kalamata (third most city-page

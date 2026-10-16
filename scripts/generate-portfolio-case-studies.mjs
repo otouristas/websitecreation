@@ -98,7 +98,7 @@ function enWebsiteNoun(businessEn) {
   return `${businessEn} website`;
 }
 
-/** Vary EL summary endings so they are not identical across 71 projects */
+/** Vary EL summary endings so they are not identical across the portfolio */
 const EL_ENDINGS = [
   (m) => `με καθαρή διαδρομή προς ${m.ctaEl}`,
   (m) => `με έμφαση σε ${m.angleEl}`,

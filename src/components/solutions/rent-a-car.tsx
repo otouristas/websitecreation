@@ -35,8 +35,9 @@ import {
  * actually decide a car rental site's search performance - a season that opens
  * and closes, a booking funnel competing with OTAs, and a fleet that has to be
  * crawlable as a catalogue - none of which the generic industry template
- * expressed. This is our deepest vertical: 14 of the 71 projects are rentals,
- * so the proof wall is real screenshots, not claims.
+ * expressed. This is the deepest vertical in the portfolio, so the proof wall
+ * is real screenshots, not claims. The rental count is the rent-a-car
+ * category length.
  *
  * Integrity: the season curve and the commission band are labelled market
  * context. No client traffic, revenue or ranking figures appear anywhere.
@@ -65,7 +66,7 @@ const copy = {
     },
     atAGlance: 'At a glance',
     stats: [
-      { k: 'Rental projects delivered', v: '14' },
+      { k: 'Rental projects delivered', v: '' },
       { k: 'Built bilingual EN / EL', v: 'Standard' },
       { k: 'Airport, port and island pages', v: 'Per location' },
     ],
@@ -177,7 +178,7 @@ const copy = {
     },
     atAGlance: 'Με μια ματιά',
     stats: [
-      { k: 'Έργα ενοικίασης που παραδώσαμε', v: '14' },
+      { k: 'Έργα ενοικίασης που παραδώσαμε', v: '' },
       { k: 'Δίγλωσσα EN / EL', v: 'Πάντα' },
       { k: 'Σελίδες αεροδρομίου, λιμανιού και νησιού', v: 'Ανά σημείο' },
     ],
@@ -318,6 +319,8 @@ export function RentACarPage({ locale }: { locale: SiteLocale }) {
   const lp = (p: string) => localizedPath(locale, p);
   const industry = getLocalizedIndustry('rent-a-car', locale);
   const projects = getPortfolioByCategory('rent-a-car');
+  const rentalCount = String(projects.length);
+  const stats = t.stats.map((s, i) => (i === 0 ? { ...s, v: rentalCount } : s));
 
   const breadcrumbs = [
     { name: isEl ? 'Αρχική' : 'Home', url: lp('/') },
@@ -377,7 +380,7 @@ export function RentACarPage({ locale }: { locale: SiteLocale }) {
         pill={{
           href: '#proof',
           kind: 'popular',
-          tag: t.stats[0].v,
+          tag: rentalCount,
           text: tx('rental sites delivered, all live projects', 'sites ενοικίασης που έχουμε παραδώσει'),
         }}
         title={
@@ -415,7 +418,7 @@ export function RentACarPage({ locale }: { locale: SiteLocale }) {
           <div className="mt-8">
             <KitEyebrow className="mb-3">{t.atAGlance}</KitEyebrow>
             <dl className="grid overflow-hidden rounded-2xl border border-hairline bg-surface/60 text-left sm:grid-cols-3">
-              {t.stats.map((s, i) => (
+              {stats.map((s, i) => (
                 <div key={s.k} className={`px-6 py-5 ${i > 0 ? 'border-t border-hairline sm:border-l sm:border-t-0' : ''}`}>
                   <dt className="sr-only">{s.k}</dt>
                   <dd className="font-display text-[24px] font-semibold tracking-[-0.03em] text-foreground">{s.v}</dd>

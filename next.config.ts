@@ -1,6 +1,39 @@
 import type { NextConfig } from "next";
 import { LEGACY_FEATURE_MODULES } from "./src/data/marketing-features";
 
+/** Portfolio case studies removed from the site. Redirect sources only. */
+const RETIRED_WORK_SLUGS = [
+  "agrocult",
+  "arion-farm",
+  "cocktails-in-the-city",
+  "cretanways-rentals",
+  "dailyhost",
+  "dailyhost-eu",
+  "eolides-villas",
+  "ergo-and-art",
+  "fabrica-cafe",
+  "fitness-hood",
+  "greece-cyclades",
+  "huqqa-king",
+  "ilektronika-tsigara",
+  "kaffatos-vip-transfers",
+  "kipos-hotel",
+  "koini-lisi",
+  "logopedia",
+  "opticore-store",
+  "phytomore",
+  "plati-taverna",
+  "politidis-fitness",
+  "quad-safari-rethymno",
+  "smart-dog-training",
+  "spili-apartments",
+  "taverna-yiannis",
+  "the-ace-vip",
+  "travel-sifnos",
+  "vape-and-more",
+  "villas-katerina",
+] as const;
+
 const nextConfig: NextConfig = {
   // React Compiler for performance
   reactCompiler: true,
@@ -99,6 +132,18 @@ const nextConfig: NextConfig = {
         destination: '/el/:path*',
         permanent: true,
       },
+      ...RETIRED_WORK_SLUGS.flatMap((slug) => [
+        {
+          source: `/:locale(en|el)/work/${slug}`,
+          destination: '/:locale/work',
+          permanent: true,
+        },
+        {
+          source: `/work/${slug}`,
+          destination: '/en/work',
+          permanent: true,
+        },
+      ]),
       {
         source: '/work',
         destination: '/en/work',

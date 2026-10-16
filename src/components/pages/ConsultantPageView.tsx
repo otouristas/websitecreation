@@ -33,7 +33,7 @@ import { withExactTitle } from '@/app/[locale]/services/_lib/exact-title';
  */
 
 /** Live work across the verticals the copy names (hotel, rent-a-car, tours, e-shop). */
-const PROOF_SLUGS = ['onoma-hotel', 'aggelos-rentals', 'way-to-crete', 'kipos-hotel', 'cyclades-rentacar', 'opticore-store'];
+const PROOF_SLUGS = ['onoma-hotel', 'aggelos-rentals', 'way-to-crete', 'cyclades-rentacar'];
 
 export function consultantMetadata(locale: SiteLocale): Metadata {
   const t = getConsultantCopy(locale);

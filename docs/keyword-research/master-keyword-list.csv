@@ -87,9 +87,6 @@ magento hosting ελλάδα,el,C4,,,commercial,,73.33,3,/el/blog,content/blog,o
 ελληνικα domain,el,C4,40,,commercial,,55.31,13,/el/glossary,src/app/[locale]/glossary/page.tsx,off-core,P3
 domain name,el,C4,1200,75,informational,paid;question,,,/el/glossary,src/app/[locale]/glossary/page.tsx,off-core,P3
 .gr domain names dnhost,el,C4,,,navigational,,35,2,/el/glossary,src/app/[locale]/glossary/page.tsx,off-core,P3
-dailyhost,el,C4,,,navigational/brand,,1.69,62,/,src/app/[locale]/page.tsx,brand,P3
-daily host,el,C4,,,navigational/brand,,5,4,/,src/app/[locale]/page.tsx,brand,P3
-daily hosting,el,C4,,,navigational/brand,,23.5,2,/,src/app/[locale]/page.tsx,brand,P3
 mediahost,el,C4,,,navigational/brand,,58.67,3,/,src/app/[locale]/page.tsx,brand,P3
 seo θεσσαλονικη,el,C5,100,,commercial/local,,95.21,14,/el/services/local-seo/thessaloniki-gr,src/app/[locale]/services/[service]/[location]/page.tsx,exists,P1
 ηράκλειο seo,el,C5,,,commercial/local,,82.7,10,/el/services/local-seo/heraklion-gr,src/app/[locale]/services/[service]/[location]/page.tsx,exists,P1
