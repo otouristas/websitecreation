@@ -73,7 +73,7 @@ People search the words they use. Collect phrases from sales calls, autocomplete
 - **One H1 and logical H2s,** short paragraphs, and links to the next useful page.
 - **An answer** that is clearer than the pages already ranking, not merely longer.
 
-Checklist: [on-page SEO](/en/blog/on-page-seo).
+Checklist: [on-page SEO](/en/blog/on-page-seo). For the whole site, in order, use the [website SEO checklist](/en/blog/seo-checklist).
 
 ### Technical SEO
 
