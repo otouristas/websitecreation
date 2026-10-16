@@ -28,7 +28,7 @@ For a shorter plain-English path, see [SEO for beginners](/en/blog/seo-for-begin
 
 1. **Crawling** - bots discover URLs by following links and sitemaps.
 2. **Indexing** - eligible pages enter Google’s searchable index.
-3. **Ranking** - for each query, Google orders results by relevance, quality and trust.
+3. **Ranking** - for each query, Google orders results by relevance, quality and trust. Named systems versus contradicted claims are in [Google ranking factors](/en/blog/google-ranking-factors).
 
 SEO helps at all three stages. Related terms people use interchangeably include **website SEO**, **SEO marketing** and **SEO strategy** - they all sit under this same process. If pages never get crawled or indexed, content and links cannot help. That is why [technical SEO](/en/blog/technical-seo-guide) comes before publishing more blogs.
 
