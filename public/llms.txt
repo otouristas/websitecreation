@@ -184,7 +184,9 @@ Greece-wide service; dedicated service×city pages for the cities below. Money-p
 - [Naxos Auto Rent](https://anotherseoguru.com/en/work/naxos-auto-rent) - Naxos Auto Rent: online Naxos auto rent website for Naxos, SEO for “Naxos auto rent”, with technical SEO from day one. · Live: https://naxosautorent.com
 - [vwanaki](https://anotherseoguru.com/en/work/vwanaki) - vwanaki: mobile cocktail bar for events for Greece, SEO for “mobile cocktail bar Greece”, with trust signals and a clear inquiry path. · Live: https://vwanaki.gr
 
-## Blog & Guides (75 posts)
+## Blog & Guides (77 posts)
+- [Google Ranking Factors: Confirmed vs Myth](https://anotherseoguru.com/en/blog/google-ranking-factors) - Which Google ranking factors Search Central documents, which popular claims it contradicts, and what to fix instead of a fake checklist.
+- [Παράγοντες Κατάταξης Google: Τι Ισχύει](https://anotherseoguru.com/el/blog/paragontes-katataxis-google) - Ποιοι παράγοντες κατάταξης Google τεκμηριώνονται, ποιοι δημοφιλείς ισχυρισμοί διαψεύδονται και τι να διορθώσετε αντί για ψεύτικη λίστα.
 - [21 SEO Strategies That Work in 2026](https://anotherseoguru.com/en/blog/seo-strategies) - Search engine optimization strategies for 2026: 21 practical tactics covering intent, technical health, content, links, local search and AI answers.
 - [Πώς Βάζω την Επιχείρησή μου στο Google Maps](https://anotherseoguru.com/el/blog/epixeirisi-sto-google-maps) - Πώς να βάλετε την επιχείρησή σας στο Google Maps βήμα βήμα, γιατί μπορεί να μην εμφανίζεται και πώς να ανεβείτε στον χάρτη με το Google Business Profile.
 - [On-Page SEO: Τι Είναι και Checklist 2026](https://anotherseoguru.com/el/blog/on-page-seo-el) - Τι είναι το on-page SEO και πώς διαφέρει από το off-page: checklist για τίτλους, επικεφαλίδες, περιεχόμενο και εσωτερικούς συνδέσμους, με παραδείγματα.
