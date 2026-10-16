@@ -45,6 +45,9 @@ const ALLOW_LONG = new Set([
   // the source, which do not compress without losing the point of the post.
   'google-ai-mode-tags',
   'google-ai-mode-tags-el',
+  // Seventeen numbered tactics plus the Search Console pattern table.
+  // Cutting either drops the brief: the tactics, the walkthrough, or CTR.
+  'how-to-increase-organic-traffic',
 ]);
 
 const CTA_RE =
