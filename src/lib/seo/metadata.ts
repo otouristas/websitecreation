@@ -61,7 +61,9 @@ function primaryTitleMax(text: string): number {
  */
 const BANNED_METADATA: readonly { rx: RegExp; label: string; negatable?: boolean }[] = [
   { rx: /—/, label: 'em dash' },
-  { rx: /\bbest\b/i, label: '"best"' },
+  // "best practices" names a checklist (technical SEO best practices). Bare
+  // "best" is still a superlative claim and stays banned.
+  { rx: /\bbest\b(?!\s+practices\b)/i, label: '"best"' },
   { rx: /#1\b/, label: '"#1"' },
   { rx: /\bguarantee/i, label: 'guarantee', negatable: true },
   { rx: /\bdominate\b/i, label: 'dominate' },
