@@ -1,6 +1,8 @@
 import { MetadataRoute } from 'next';
 import { COMPARE_PAGES } from '@/data/compare-pages';
 import { getAllBlogPosts, getPillarSummary } from '@/lib/blog';
+import { blogSitemapEntry } from '@/lib/blog-seo';
+import { getPillarMeta } from '@/data/blog-pillars';
 import { portfolioProjects } from '@/data/portfolio';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 import { GENERATED_CONTENT_UPDATED } from '@/lib/seo/content-dates';
@@ -141,21 +143,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Posts are single-locale files, only list them under the locale they exist in.
   // Pillar hubs are aggregation pages; emit them per locale where posts exist.
+  // A pillar slug with no hub copy 404s, so a new post cannot add that URL.
   const pillarPages: MetadataRoute.Sitemap = (['en', 'el'] as const).flatMap((loc) =>
-    getPillarSummary(loc).map((p) => ({
-      url: localeUrl(loc, `/blog/topics/${p.pillar}`),
-      lastModified: new Date(p.latest ? (p.latest.updated ?? p.latest.date) : GENERATED_CONTENT_UPDATED),
-      changeFrequency: 'weekly' as const,
-      priority: 0.75,
-    })),
+    getPillarSummary(loc)
+      .filter((p) => getPillarMeta(p.pillar))
+      .map((p) => ({
+        url: localeUrl(loc, `/blog/topics/${p.pillar}`),
+        lastModified: new Date(p.latest ? (p.latest.updated ?? p.latest.date) : GENERATED_CONTENT_UPDATED),
+        changeFrequency: 'weekly' as const,
+        priority: 0.75,
+      })),
   );
 
-  const blogPages: MetadataRoute.Sitemap = blogPosts.map((p) => ({
-    url: localeUrl(p.locale, `/blog/${p.slug}`),
-    lastModified: new Date(p.updated ?? p.date),
-    changeFrequency: 'monthly',
-    priority: p.isPillarHub ? 0.85 : 0.7,
-  }));
+  const blogPages: MetadataRoute.Sitemap = blogPosts.map((p) => blogSitemapEntry(p));
 
   // Tool detail pages are deliberately absent: they are noindex because they
   // contain no tool, only a description and a deep link into the app. Listing
