@@ -1057,16 +1057,6 @@ export const GSC_PAGES: Record<string, GscPageStat> = {
   i: 26,
   p: 4.1
  },
- "/en/work/cretanways-rentals": {
-  c: 0,
-  i: 26,
-  p: 5
- },
- "/en/work/fitness-hood": {
-  c: 0,
-  i: 26,
-  p: 8.5
- },
  "/en/compare/semrush": {
   c: 0,
   i: 26,
@@ -1191,11 +1181,6 @@ export const GSC_PAGES: Record<string, GscPageStat> = {
   c: 0,
   i: 22,
   p: 8.9
- },
- "/el/work/fitness-hood": {
-  c: 0,
-  i: 22,
-  p: 9.3
  },
  "/en/services/local-seo/orlando-fl": {
   c: 0,
@@ -1927,11 +1912,6 @@ export const GSC_PAGES: Record<string, GscPageStat> = {
   i: 11,
   p: 88.2
  },
- "/en/work/agrocult": {
-  c: 0,
-  i: 10,
-  p: 6.2
- },
  "/en/work/george-xipolitas": {
   c: 0,
   i: 10,
@@ -2037,11 +2017,6 @@ export const GSC_PAGES: Record<string, GscPageStat> = {
   i: 9,
   p: 5.9
  },
- "/el/work/politidis-fitness": {
-  c: 0,
-  i: 9,
-  p: 9.1
- },
  "/en/work/erebos": {
   c: 0,
   i: 9,
@@ -2141,11 +2116,6 @@ export const GSC_PAGES: Record<string, GscPageStat> = {
   c: 0,
   i: 8,
   p: 7.3
- },
- "/el/work/smart-dog-training": {
-  c: 0,
-  i: 8,
-  p: 10.6
  },
  "/en/services/website-redesign/buffalo-ny": {
   c: 0,
@@ -2537,11 +2507,6 @@ export const GSC_PAGES: Record<string, GscPageStat> = {
   i: 6,
   p: 5.8
  },
- "/el/work/villas-katerina": {
-  c: 0,
-  i: 6,
-  p: 7
- },
  "/el/solutions/electricians/logo-design": {
   c: 0,
   i: 6,
@@ -2551,16 +2516,6 @@ export const GSC_PAGES: Record<string, GscPageStat> = {
   c: 0,
   i: 6,
   p: 7.8
- },
- "/en/work/taverna-yiannis": {
-  c: 0,
-  i: 6,
-  p: 9.7
- },
- "/el/work/fabrica-cafe": {
-  c: 0,
-  i: 6,
-  p: 9.8
  },
  "/el/services/website-creation/naxos-gr": {
   c: 0,
@@ -2626,11 +2581,6 @@ export const GSC_PAGES: Record<string, GscPageStat> = {
   c: 0,
   i: 6,
   p: 32
- },
- "/en/work/logopedia": {
-  c: 0,
-  i: 6,
-  p: 32.7
  },
  "/en/services/ai-visibility/austin-tx": {
   c: 0,
@@ -3092,16 +3042,6 @@ export const GSC_PAGES: Record<string, GscPageStat> = {
   i: 4,
   p: 5
  },
- "/en/work/koini-lisi": {
-  c: 0,
-  i: 4,
-  p: 5
- },
- "/el/work/quad-safari-rethymno": {
-  c: 0,
-  i: 4,
-  p: 5.3
- },
  "/en/services/speed-optimization/dallas-tx": {
   c: 0,
   i: 4,
@@ -3522,11 +3462,6 @@ export const GSC_PAGES: Record<string, GscPageStat> = {
   i: 4,
   p: 93
  },
- "/el/work/taverna-yiannis": {
-  c: 0,
-  i: 3,
-  p: 2
- },
  "/en/privacy": {
   c: 0,
   i: 3,
@@ -3572,11 +3507,6 @@ export const GSC_PAGES: Record<string, GscPageStat> = {
   i: 3,
   p: 6.3
  },
- "/el/work/koini-lisi": {
-  c: 0,
-  i: 3,
-  p: 7.3
- },
  "/en/services/ai-visibility/jacksonville-fl": {
   c: 0,
   i: 3,
@@ -3606,11 +3536,6 @@ export const GSC_PAGES: Record<string, GscPageStat> = {
   c: 0,
   i: 3,
   p: 8.7
- },
- "/el/work/plati-taverna": {
-  c: 0,
-  i: 3,
-  p: 9
  },
  "/en/work/onoma-hotel": {
   c: 0,
@@ -4072,11 +3997,6 @@ export const GSC_PAGES: Record<string, GscPageStat> = {
   i: 2,
   p: 5
  },
- "/el/work/ergo-and-art": {
-  c: 0,
-  i: 2,
-  p: 5.5
- },
  "/en/services/eshop-seo/el-paso-tx": {
   c: 0,
   i: 2,
@@ -4151,11 +4071,6 @@ export const GSC_PAGES: Record<string, GscPageStat> = {
   c: 0,
   i: 2,
   p: 8.5
- },
- "/el/work/arion-farm": {
-  c: 0,
-  i: 2,
-  p: 9
  },
  "/el/solutions/plumbers/content-creation": {
   c: 0,
@@ -4777,11 +4692,6 @@ export const GSC_PAGES: Record<string, GscPageStat> = {
   i: 1,
   p: 1
  },
- "/en/work/kaffatos-vip-transfers": {
-  c: 0,
-  i: 1,
-  p: 1
- },
  "/en/work/weddings-folegandros": {
   c: 0,
   i: 1,
@@ -4912,11 +4822,6 @@ export const GSC_PAGES: Record<string, GscPageStat> = {
   i: 1,
   p: 3
  },
- "/en/work/opticore-store": {
-  c: 0,
-  i: 1,
-  p: 3
- },
  "/services/ai-visibility/laredo-tx": {
   c: 0,
   i: 1,
@@ -4988,11 +4893,6 @@ export const GSC_PAGES: Record<string, GscPageStat> = {
   p: 4
  },
  "/en/work/mastorush": {
-  c: 0,
-  i: 1,
-  p: 4
- },
- "/en/work/villas-katerina": {
   c: 0,
   i: 1,
   p: 4

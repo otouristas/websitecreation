@@ -45,9 +45,8 @@ export default async function WorkPage({ params }: PageProps) {
   if (!isValidLocale(locale)) notFound();
 
   const lp = (path: string) => localizedPath(locale as SiteLocale, path);
-  // The index rendered 71 case studies and emitted nothing. Every entry is a
-  // CreativeWork - one type across the whole list, which is what makes it
-  // readable as a set rather than as 71 unrelated links.
+  // The index emits one CreativeWork per portfolio entry, one type across the
+  // whole list, which is what makes the set readable.
   const collectionSchema = generateCollectionPageSchema({
     name: locale === 'el' ? 'Έργα & Portfolio' : 'Portfolio',
     url: `${BASE_URL}${lp('/work')}`,

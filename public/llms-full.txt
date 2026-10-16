@@ -16,7 +16,7 @@ This document is the comprehensive, machine-readable reference for LLM crawlers,
 AnotherSEOGuru combines a **web design & SEO agency** (primary) with a **GSC-native SEO software platform** (secondary):
 1. **Agency delivery** - Custom websites, WooCommerce e-shops, SEO retainers, local SEO / GBP, GEO/AEO (AI visibility), redesign, speed, content, and link building. Primary niche: **tourism & hospitality** (hotels, rent-a-car, tour operators, villas, travel agencies).
 2. **Bilingual surface** - Greek under `/el`, English under `/en`, with hreflang on shared pages.
-3. **Proof inventory** - 71 live client projects documented under `/work` with homepage screenshots and case-study summaries.
+3. **Proof inventory** - 42 live client projects documented under `/work` with homepage screenshots and case-study summaries.
 4. **Platform modules** - Semantic keyword clustering, rank tracking from GSC, technical audits / Core Web Vitals, GEO/AEO citation tracking, AI-assisted workflows, sprint/task board. Marketing: `/en/platform`.
 5. **Integrations (one login)** - The same account works in a Chrome extension (`/en/platform/chrome-extension`), a WordPress plugin (`/en/platform/wordpress`), an MCP server for AI assistants (`/en/platform/mcp`, remote URL https://app.anotherseoguru.com/mcp or `npx @anotherseoguru/mcp`) and the iPhone app; hub: `/en/platform/integrations`. Greek versions under `/el/platform/...`.
 
@@ -258,7 +258,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
 
 ---
 
-## 6. Portfolio & Case Studies (71)
+## 6. Portfolio & Case Studies (42)
 
 ### Aggelos Rentals (`aggelos-rentals`)
 - **Case study:** https://anotherseoguru.com/en/work/aggelos-rentals · https://anotherseoguru.com/el/work/aggelos-rentals
@@ -286,15 +286,6 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Summary (EL):** Cyclades Rent a Car: πλατφόρμα σύγκρισης ενοικίασης αυτοκινήτων στα νησιά στις Κυκλάδες, SEO για «ενοικίαση αυτοκινήτου Κυκλάδες», βελτιστοποιημένη για κινητά και τοπική αναζήτηση.
 - **Services delivered:** website-creation, local-seo, content-creation
 - **Results:** Cyclades islands: pages aimed at “rent a car Cyclades” and “Greek islands car hire”; Differentiation: compare agencies across 24 islands with clear booking paths; Stack: website creation, local SEO, content creation
-
-### Cretan Ways Rentals (`cretanways-rentals`)
-- **Case study:** https://anotherseoguru.com/en/work/cretanways-rentals · https://anotherseoguru.com/el/work/cretanways-rentals
-- **Live site:** https://cretanwaysrentals.com
-- **Category:** rent-a-car · featured
-- **Summary (EN):** Cretan Ways Rentals: Crete car and scooter rentals for Crete, SEO for “rent a car Crete”, focused on airport-to-resort routes for independent Crete travelers.
-- **Summary (EL):** Cretan Ways Rentals: ενοικίαση αυτοκινήτων και scooters στην Κρήτη, SEO για «ενοικίαση αυτοκινήτου Κρήτη», με έμφαση σε διαδρομές από αεροδρόμιο προς θέρετρα για ανεξάρτητους ταξιδιώτες.
-- **Services delivered:** website-creation, local-seo
-- **Results:** Crete: pages aimed at “rent a car Crete” and “Heraklion car rental”; Differentiation: airport-to-resort routes for independent Crete travelers; Stack: website creation, local SEO
 
 ### Naxos Car Rentals (`naxos-carrentals`)
 - **Case study:** https://anotherseoguru.com/en/work/naxos-carrentals · https://anotherseoguru.com/el/work/naxos-carrentals
@@ -377,24 +368,6 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Services delivered:** website-creation, seo-web-design
 - **Results:** Greece: pages aimed at “Onoma Hotel” and “boutique hotel Greece”; Differentiation: brand storytelling with room-type pages for direct bookings; Stack: website creation, SEO web design
 
-### Kipos Hotel (`kipos-hotel`)
-- **Case study:** https://anotherseoguru.com/en/work/kipos-hotel · https://anotherseoguru.com/el/work/kipos-hotel
-- **Live site:** https://kipos-hotel.com
-- **Category:** hotel
-- **Summary (EN):** Kipos Hotel: city-centre hotel near the Old Town for Rethymno, SEO for “Kipos Hotel Rethymno”, with a clear path to booking.
-- **Summary (EL):** Kipos Hotel: ξενοδοχείο στο κέντρο κοντά στην Παλιά Πόλη στο Ρέθυμνο, SEO για «Kipos Hotel Ρέθυμνο», με καθαρή διαδρομή προς κράτηση.
-- **Services delivered:** website-creation, local-seo
-- **Results:** Rethymno: pages aimed at “Kipos Hotel Rethymno” and “hotel Old Town Rethymno”; Differentiation: city-centre location with easy access to shops, cafes and the Old Town; Stack: website creation, local SEO
-
-### Eolides Villas (`eolides-villas`)
-- **Case study:** https://anotherseoguru.com/en/work/eolides-villas · https://anotherseoguru.com/el/work/eolides-villas
-- **Live site:** https://eolidesvillas.gr
-- **Category:** villa · featured
-- **Summary (EN):** Eolides Villas: family villas portfolio for Lampini, Rethymno Crete, SEO for “Eolides Villas”, with technical SEO from day one.
-- **Summary (EL):** Eolides Villas: ιστοσελίδα για οικογενειακές βίλες στη Λαμπινή Ρεθύμνου στην Κρήτη, SEO για «Eolides Villas», με τεχνικό SEO από την πρώτη μέρα.
-- **Services delivered:** website-creation, seo-web-design
-- **Results:** Lampini, Rethymno Crete: pages aimed at “Eolides Villas” and “family villas Rethymno”; Differentiation: multi-villa portfolio with inquiry forms for family groups; Stack: website creation, SEO web design
-
 ### Villa Olivia Clara (`villa-olivia-clara`)
 - **Case study:** https://anotherseoguru.com/en/work/villa-olivia-clara · https://anotherseoguru.com/el/work/villa-olivia-clara
 - **Live site:** https://villaoliviaclara.com
@@ -403,24 +376,6 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Summary (EL):** Villa Olivia Clara: ιστοσελίδα για πολυτελή ιδιωτική βίλα στην Κρήτη, SEO για «Villa Olivia Clara», με έμφαση σε μετατροπή μέσω φωτογραφίας για αναζητήσεις πολυτελούς βίλας.
 - **Services delivered:** website-creation, local-seo, ai-visibility
 - **Results:** Crete: pages aimed at “Villa Olivia Clara” and “luxury villa Crete”; Differentiation: photo-led conversion for high-intent luxury villa searches; Stack: website creation, local SEO, ai-visibility
-
-### Villas Katerina (`villas-katerina`)
-- **Case study:** https://anotherseoguru.com/en/work/villas-katerina · https://anotherseoguru.com/el/work/villas-katerina
-- **Live site:** https://villaskaterina.com
-- **Category:** villa
-- **Summary (EN):** Villas Katerina: villa complex for holiday stays for Crete, SEO for “Villas Katerina”, with trust signals and a clear booking path.
-- **Summary (EL):** Villas Katerina: ιστοσελίδα για συγκρότημα βιλών για διακοπές στην Κρήτη, SEO για «Villas Katerina», με ξεκάθαρα σήματα εμπιστοσύνης και κράτηση.
-- **Services delivered:** website-creation, local-seo
-- **Results:** Crete: pages aimed at “Villas Katerina” and “villas for rent Crete”; Differentiation: unit comparison pages so guests pick the right villa quickly; Stack: website creation, local SEO
-
-### Spili Apartments (`spili-apartments`)
-- **Case study:** https://anotherseoguru.com/en/work/spili-apartments · https://anotherseoguru.com/el/work/spili-apartments
-- **Live site:** https://spiliapartments.com
-- **Category:** villa
-- **Summary (EN):** Spili Apartments: family holiday apartments website for Spili, Rethymno Crete, SEO for “Spili apartments”, with trust signals and a clear booking path.
-- **Summary (EL):** Spili Apartments: ιστοσελίδα για οικογενειακά διαμερίσματα διακοπών στο Σπήλι Ρεθύμνου στην Κρήτη, SEO για «διαμερίσματα Σπήλι», με ξεκάθαρα σήματα εμπιστοσύνης και κράτηση.
-- **Services delivered:** website-creation, local-seo
-- **Results:** Spili, Rethymno Crete: pages aimed at “Spili apartments” and “Spili Crete accommodation”; Differentiation: Crete hinterland stay SEO versus coastal competitors; Stack: website creation, local SEO
 
 ### Mykonos Luxury (`mykonos-luxury`)
 - **Case study:** https://anotherseoguru.com/en/work/mykonos-luxury · https://anotherseoguru.com/el/work/mykonos-luxury
@@ -476,15 +431,6 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Services delivered:** website-creation, seo-web-design
 - **Results:** Santorini: pages aimed at “Santo Tours Marinakis” and “Santorini tours”; Differentiation: family operator trust and licensed excursion SEO since 2000; Stack: website creation, SEO web design
 
-### Quad Safari Rethymno (`quad-safari-rethymno`)
-- **Case study:** https://anotherseoguru.com/en/work/quad-safari-rethymno · https://anotherseoguru.com/el/work/quad-safari-rethymno
-- **Live site:** https://quadsafarirethymno.com
-- **Category:** tours
-- **Summary (EN):** Quad Safari Rethymno: quad safari adventure tours website for Rethymno, Crete, SEO for “quad safari Rethymno”, focused on adventure activity keywords around Rethymno with book-now paths.
-- **Summary (EL):** Quad Safari Rethymno: ιστοσελίδα για εκδρομές quad safari στο Ρέθυμνο στην Κρήτη, SEO για «quad safari Ρέθυμνο», με έμφαση σε λέξεις-κλειδιά περιπέτειας γύρω από το Ρέθυμνο με διαδρομές κράτησης.
-- **Services delivered:** website-creation, local-seo
-- **Results:** Rethymno, Crete: pages aimed at “quad safari Rethymno” and “Crete ATV tour”; Differentiation: adventure activity keywords around Rethymno with book-now paths; Stack: website creation, local SEO
-
 ### Skydream Travel (`skydream-travel`)
 - **Case study:** https://anotherseoguru.com/en/work/skydream-travel · https://anotherseoguru.com/el/work/skydream-travel
 - **Live site:** https://www.skydream.travel
@@ -502,24 +448,6 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Summary (EL):** Cuba Travel Academy: ακαδημία εκπαίδευσης για ταξίδι στην Κούβα στην Ελλάδα με στόχο ταξίδι στην Κούβα, SEO για «ταξίδι Κούβα», έτοιμη για οργανική ανάπτυξη στη Ελλάδα με στόχο ταξίδι στην Κούβα.
 - **Services delivered:** website-creation, content-creation
 - **Results:** Cuba travel (Greek audience): pages aimed at “Cuba Travel Academy” and “Cuba travel guide Greek”; Differentiation: education-led content that answers document and itinerary questions before booking; Stack: website creation, content creation
-
-### Kaffatos VIP Transfers (`kaffatos-vip-transfers`)
-- **Case study:** https://anotherseoguru.com/en/work/kaffatos-vip-transfers · https://anotherseoguru.com/el/work/kaffatos-vip-transfers
-- **Live site:** https://kaffatosviptransfers.com
-- **Category:** transfers · featured
-- **Summary (EN):** Kaffatos VIP Transfers: VIP chauffeur transfers website for Greece / Athens region, SEO for “VIP transfers Greece”, ready for organic growth in Greece / Athens region.
-- **Summary (EL):** Kaffatos VIP Transfers: ιστοσελίδα για VIP μεταφορές με οδηγό στην Ελλάδα και ευρύτερη Αθήνα, SEO για «VIP μεταφορές», έτοιμη για οργανική ανάπτυξη στη Ελλάδα και ευρύτερη Αθήνα.
-- **Services delivered:** website-creation, local-seo
-- **Results:** Greece / Athens region: pages aimed at “VIP transfers Greece” and “private driver Athens”; Differentiation: airport and port VIP route landing pages; Stack: website creation, local SEO
-
-### The Ace VIP (`the-ace-vip`)
-- **Case study:** https://anotherseoguru.com/en/work/the-ace-vip · https://anotherseoguru.com/el/work/the-ace-vip
-- **Live site:** https://theacevip.com
-- **Category:** transfers
-- **Summary (EN):** The Ace VIP: Mykonos luxury villas and premium concierge for Mykonos, SEO for “Mykonos VIP villas”, with technical SEO from day one.
-- **Summary (EL):** The Ace VIP: ιστοσελίδα για πολυτελείς βίλες και premium concierge στη Μύκονο στη Μύκονο, SEO για «βίλες Μύκονος VIP», με τεχνικό SEO από την πρώτη μέρα.
-- **Services delivered:** website-creation, seo-web-design
-- **Results:** Mykonos: pages aimed at “Mykonos VIP villas” and “Mykonos concierge”; Differentiation: exclusive villa and concierge packaging for high-spend guests; Stack: website creation, SEO web design
 
 ### Antiparos Transfer (`antiparos-transfer`)
 - **Case study:** https://anotherseoguru.com/en/work/antiparos-transfer · https://anotherseoguru.com/el/work/antiparos-transfer
@@ -584,60 +512,6 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Services delivered:** website-creation, content-creation
 - **Results:** Greece: pages aimed at “My Honeymoon” and “Greece honeymoon packages”; Differentiation: romantic itinerary and package keyword clusters for couples; Stack: website creation, content creation
 
-### Arion Farm (`arion-farm`)
-- **Case study:** https://anotherseoguru.com/en/work/arion-farm · https://anotherseoguru.com/el/work/arion-farm
-- **Live site:** https://arionfarm.gr
-- **Category:** other
-- **Summary (EN):** Arion Farm: Cretan farm experiences and agritourism website for Crete, SEO for “Arion Farm”, optimized for mobile and local search.
-- **Summary (EL):** Arion Farm: ιστοσελίδα για αγροτικές εμπειρίες και αγροτουρισμό στην Κρήτη, SEO για «Arion Farm», βελτιστοποιημένη για κινητά και τοπική αναζήτηση.
-- **Services delivered:** website-creation
-- **Results:** Crete: pages aimed at “Arion Farm” and “Crete farm experiences”; Differentiation: tours, traditional food and participatory farm experiences; Stack: website creation
-
-### Plati Taverna (`plati-taverna`)
-- **Case study:** https://anotherseoguru.com/en/work/plati-taverna · https://anotherseoguru.com/el/work/plati-taverna
-- **Live site:** https://platiataverna.com
-- **Category:** restaurant
-- **Summary (EN):** Plati Taverna: traditional Greek taverna for Spili, Rethymno, SEO for “Plati Taverna Spili”, with a clear path to reservation.
-- **Summary (EL):** Plati Taverna: παραδοσιακή ελληνική ταβέρνα στο Σπήλι Ρεθύμνου, SEO για «Ταβέρνα Πλατεία Σπήλι», με καθαρή διαδρομή προς κράτηση τραπεζιού.
-- **Services delivered:** website-creation, local-seo
-- **Results:** Spili, Rethymno: pages aimed at “Plati Taverna Spili” and “taverna Spili Rethymno”; Differentiation: menu and wine pages with local village storytelling; Stack: website creation, local SEO
-
-### Fabrica Cafe (`fabrica-cafe`)
-- **Case study:** https://anotherseoguru.com/en/work/fabrica-cafe · https://anotherseoguru.com/el/work/fabrica-cafe
-- **Live site:** https://fabricacafe.info
-- **Category:** restaurant
-- **Summary (EN):** Fabrica Cafe: cafe and gathering spot for Spili, Rethymno, SEO for “Fabrica Cafe Spili”, focused on local cafe discovery with menu and visit highlights.
-- **Summary (EL):** Fabrica Cafe: καφέ και χώρος συνάντησης στο Σπήλι Ρεθύμνου, SEO για «Fabrica Cafe Σπήλι», με έμφαση σε τοπική ανακάλυψη καφέ με highlights μενού και επίσκεψης.
-- **Services delivered:** website-creation
-- **Results:** Spili, Rethymno: pages aimed at “Fabrica Cafe Spili” and “cafe Spili Rethymno”; Differentiation: local cafe discovery with menu and visit highlights; Stack: website creation
-
-### Cocktails in the City (`cocktails-in-the-city`)
-- **Case study:** https://anotherseoguru.com/en/work/cocktails-in-the-city · https://anotherseoguru.com/el/work/cocktails-in-the-city
-- **Live site:** https://cocktailsinthecity.gr
-- **Category:** restaurant
-- **Summary (EN):** Cocktails in the City: cocktail bar and nightlife brand for Greece, SEO for “Cocktails in the City”, with trust signals and a clear reservation path.
-- **Summary (EL):** Cocktails in the City: cocktail bar και nightlife brand στην Ελλάδα, SEO για «Cocktails in the City», με ξεκάθαρα σήματα εμπιστοσύνης και κράτηση.
-- **Services delivered:** website-creation, content-creation
-- **Results:** Greece: pages aimed at “Cocktails in the City” and “cocktail bar Greece”; Differentiation: events and signature drinks as content SEO hooks; Stack: website creation, content creation
-
-### DailyHost (`dailyhost`)
-- **Case study:** https://anotherseoguru.com/en/work/dailyhost · https://anotherseoguru.com/el/work/dailyhost
-- **Live site:** https://dailyhost.gr
-- **Category:** hotel
-- **Summary (EN):** DailyHost: short-term rental hosting management for Greece, SEO for “DailyHost”, optimized for mobile and local search.
-- **Summary (EL):** DailyHost: διαχείριση βραχυχρόνιας μίσθωσης στην Ελλάδα, SEO για «DailyHost», βελτιστοποιημένη για κινητά και τοπική αναζήτηση.
-- **Services delivered:** website-creation, seo-web-design
-- **Results:** Greece: pages aimed at “DailyHost” and “holiday hosting Greece”; Differentiation: host onboarding and property listing conversion paths; Stack: website creation, SEO web design
-
-### DailyHost EU (`dailyhost-eu`)
-- **Case study:** https://anotherseoguru.com/en/work/dailyhost-eu · https://anotherseoguru.com/el/work/dailyhost-eu
-- **Live site:** https://dailyhost.eu
-- **Category:** hotel
-- **Summary (EN):** DailyHost EU: EU-facing vacation hosting brand website for European market, SEO for “DailyHost EU”, structured around “DailyHost EU”.
-- **Summary (EL):** DailyHost EU: ευρωπαϊκό brand διαχείρισης καταλυμάτων στην ευρωπαϊκή αγορά, SEO για «DailyHost EU», με δομή περιεχομένου για «DailyHost EU».
-- **Services delivered:** website-creation
-- **Results:** European market: pages aimed at “DailyHost EU” and “Europe vacation hosting”; Differentiation: multi-market English positioning for EU guests and owners; Stack: website creation
-
 ### George Xipolitas (`george-xipolitas`)
 - **Case study:** https://anotherseoguru.com/en/work/george-xipolitas · https://anotherseoguru.com/el/work/george-xipolitas
 - **Live site:** https://georgexipolitas.com
@@ -664,24 +538,6 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Summary (EL):** Mastorush: αγορά αιτημάτων προσφορών από μάστορες στην Ελλάδα, SEO για «Mastorush», με καθαρή διαδρομή προς εγγραφή.
 - **Services delivered:** website-creation, local-seo
 - **Results:** Greece: pages aimed at “Mastorush” and “find craftsman Greece”; Differentiation: post a job, get verified craftsman quotes with photos; Stack: website creation, local SEO
-
-### Opticore Store (`opticore-store`)
-- **Case study:** https://anotherseoguru.com/en/work/opticore-store · https://anotherseoguru.com/el/work/opticore-store
-- **Live site:** https://opticorestore.gr
-- **Category:** other
-- **Summary (EN):** Opticore Store: optics and eyewear e-shop for Greece, SEO for “Opticore Store”, structured around “Opticore Store”.
-- **Summary (EL):** Opticore Store: ηλεκτρονικό κατάστημα οπτικών στην Ελλάδα, SEO για «αγορά γυαλιών online», με δομή περιεχομένου για «αγορά γυαλιών online».
-- **Services delivered:** website-creation, seo-web-design
-- **Results:** Greece: pages aimed at “Opticore Store” and “buy glasses online Greece”; Differentiation: category SEO for frames and lenses with clear add-to-cart paths; Stack: website creation, SEO web design
-
-### Phytomore (`phytomore`)
-- **Case study:** https://anotherseoguru.com/en/work/phytomore · https://anotherseoguru.com/el/work/phytomore
-- **Live site:** https://phytomore.com
-- **Category:** other
-- **Summary (EN):** Phytomore: plant-based wellness product brand website for Greece / EU, SEO for “Phytomore”, ready for organic growth in Greece / EU.
-- **Summary (EL):** Phytomore: brand φυτικών προϊόντων wellness στην Ελλάδα και ΕΕ, SEO για «Phytomore», έτοιμη για οργανική ανάπτυξη στη Ελλάδα και ΕΕ.
-- **Services delivered:** website-creation, content-creation
-- **Results:** Greece / EU: pages aimed at “Phytomore” and “plant based products”; Differentiation: product education content that supports organic discovery; Stack: website creation, content creation
 
 ### The Nutri Nest (`thenutrinest`)
 - **Case study:** https://anotherseoguru.com/en/work/thenutrinest · https://anotherseoguru.com/el/work/thenutrinest
@@ -710,24 +566,6 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Services delivered:** website-creation, local-seo
 - **Results:** Folegandros: pages aimed at “Folegandros scooter rental” and “rent a moto Folegandros”; Differentiation: two-wheel fleet for island mobility since 1998; Stack: website creation, local SEO
 
-### Vape and More (`vape-and-more`)
-- **Case study:** https://anotherseoguru.com/en/work/vape-and-more · https://anotherseoguru.com/el/work/vape-and-more
-- **Live site:** https://vapeandmore.gr
-- **Category:** other
-- **Summary (EN):** Vape and More: vape retail e-shop for Greece, SEO for “Vape and More”, with technical SEO from day one.
-- **Summary (EL):** Vape and More: ηλεκτρονικό κατάστημα vape στην Ελλάδα, SEO για «κατάστημα vape», με τεχνικό SEO από την πρώτη μέρα.
-- **Services delivered:** website-creation
-- **Results:** Greece: pages aimed at “Vape and More” and “vape shop Greece”; Differentiation: product category architecture for retail search and fast checkout; Stack: website creation
-
-### Ilektronika Tsigara (`ilektronika-tsigara`)
-- **Case study:** https://anotherseoguru.com/en/work/ilektronika-tsigara · https://anotherseoguru.com/el/work/ilektronika-tsigara
-- **Live site:** https://ilektronikatsigara.gr
-- **Category:** other
-- **Summary (EN):** Ilektronika Tsigara: electronic cigarettes e-shop for Greece, SEO for “electronic cigarettes Greece”, ready for organic growth in Greece.
-- **Summary (EL):** Ilektronika Tsigara: ηλεκτρονικό κατάστημα ηλεκτρονικών τσιγάρων στην Ελλάδα, SEO για «ηλεκτρονικά τσιγάρα», έτοιμη για οργανική ανάπτυξη στη Ελλάδα.
-- **Services delivered:** website-creation, speed-optimization
-- **Results:** Greece: pages aimed at “electronic cigarettes Greece” and “e-cig shop Greece”; Differentiation: Greek commercial category SEO with free-shipping conversion hooks; Stack: website creation, speed optimization
-
 ### Best Pumpkin Near Me (`best-pumpkin-near-me`)
 - **Case study:** https://anotherseoguru.com/en/work/best-pumpkin-near-me · https://anotherseoguru.com/el/work/best-pumpkin-near-me
 - **Live site:** https://bestpumpkinnearme.com
@@ -755,33 +593,6 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Services delivered:** website-creation, local-seo
 - **Results:** Antiparos: pages aimed at “Antiparos rooms” and “Antiparos apartments”; Differentiation: direct booking for Cycladic seaside apartments versus OTA dependence; Stack: website creation, local SEO
 
-### Travel Sifnos (`travel-sifnos`)
-- **Case study:** https://anotherseoguru.com/en/work/travel-sifnos · https://anotherseoguru.com/el/work/travel-sifnos
-- **Live site:** https://travelsifnos.com
-- **Category:** tours
-- **Summary (EN):** Travel Sifnos: Sifnos travel guide for Sifnos, SEO for “Travel Sifnos”, ready for organic growth in Sifnos.
-- **Summary (EL):** Travel Sifnos: ταξιδιωτικός οδηγός Σίφνου στη Σίφνο, SEO για «οδηγός Σίφνος», έτοιμη για οργανική ανάπτυξη στη Σίφνο.
-- **Services delivered:** website-creation, content-creation
-- **Results:** Sifnos: pages aimed at “Travel Sifnos” and “Sifnos travel guide”; Differentiation: local experiences and stay discovery for Sifnos visitors; Stack: website creation, content creation
-
-### Greece Cyclades (`greece-cyclades`)
-- **Case study:** https://anotherseoguru.com/en/work/greece-cyclades · https://anotherseoguru.com/el/work/greece-cyclades
-- **Live site:** https://greececyclades.com
-- **Category:** tours
-- **Summary (EN):** Greece Cyclades: Cyclades travel brand website for Cyclades, Greece, SEO for “Greece Cyclades”, focused on broad Cyclades discovery positioning versus island-specific siblings.
-- **Summary (EL):** Greece Cyclades: ταξιδιωτικό brand Κυκλάδων στις Κυκλάδες, SEO για «Κυκλάδες Ελλάδα», με έμφαση σε ευρεία τοποθέτηση ανακάλυψης Κυκλάδων έναντι εξειδικευμένων siblings.
-- **Services delivered:** website-creation, content-creation, seo-web-design
-- **Results:** Cyclades, Greece: pages aimed at “Greece Cyclades” and “Cyclades holidays”; Differentiation: broad Cyclades discovery positioning versus island-specific siblings; Stack: website creation, content creation, SEO web design
-
-### Agrocult (`agrocult`)
-- **Case study:** https://anotherseoguru.com/en/work/agrocult · https://anotherseoguru.com/el/work/agrocult
-- **Live site:** https://agrocult.gr
-- **Category:** other
-- **Summary (EN):** Agrocult: pest control, landscaping and agri services for Rethymno, SEO for “Agrocult Rethymno”, with trust signals and a clear inquiry path.
-- **Summary (EL):** Agrocult: απεντόμωση, έργα πρασίνου και αγροτικές υπηρεσίες στο Ρέθυμνο, SEO για «Agrocult Ρέθυμνο», με ξεκάθαρα σήματα εμπιστοσύνης και αίτημα προσφοράς.
-- **Services delivered:** website-creation, local-seo
-- **Results:** Rethymno: pages aimed at “Agrocult Rethymno” and “pest control Rethymno”; Differentiation: public health, green projects and agri service landing pages; Stack: website creation, local SEO
-
 ### Erebos (`erebos`)
 - **Case study:** https://anotherseoguru.com/en/work/erebos · https://anotherseoguru.com/el/work/erebos
 - **Live site:** https://erebos.gr
@@ -790,51 +601,6 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Summary (EL):** Erebos: πλατφόρμα παρακολούθησης οχημάτων σε πραγματικό χρόνο στην Ελλάδα και την ΕΕ, SEO για «παρακολούθηση οχημάτων», με ξεκάθαρα σήματα εμπιστοσύνης και εγγραφή.
 - **Services delivered:** website-creation, seo-web-design
 - **Results:** Greece and the EU: pages aimed at “Erebos GPS tracking” and “vehicle tracking platform”; Differentiation: phone or hardware tracker setup with free start tracking CTA; Stack: website creation, SEO web design
-
-### Ergo & Art (`ergo-and-art`)
-- **Case study:** https://anotherseoguru.com/en/work/ergo-and-art · https://anotherseoguru.com/el/work/ergo-and-art
-- **Live site:** https://ergoandart.gr
-- **Category:** other
-- **Summary (EN):** Ergo & Art: architecture and spatial design studio for Greece, SEO for “Ergo and Art”, with trust signals and a clear inquiry path.
-- **Summary (EL):** Ergo & Art: στούντιο αρχιτεκτονικής και σχεδιασμού χώρων στην Ελλάδα, SEO για «Ergo and Art», με ξεκάθαρα σήματα εμπιστοσύνης και αίτημα προσφοράς.
-- **Services delivered:** website-creation, local-seo, seo-web-design
-- **Results:** Greece: pages aimed at “Ergo and Art” and “architecture studio Greece”; Differentiation: human-centred space design portfolio for project inquiries; Stack: website creation, local SEO, SEO web design
-
-### Fitness Hood Training Center (`fitness-hood`)
-- **Case study:** https://anotherseoguru.com/en/work/fitness-hood · https://anotherseoguru.com/el/work/fitness-hood
-- **Live site:** https://fitnesshoodtrainingcenter.gr
-- **Category:** other
-- **Summary (EN):** Fitness Hood Training Center: strength and discipline training center for Greece, SEO for “Fitness Hood”, ready for organic growth in Greece.
-- **Summary (EL):** Fitness Hood Training Center: κέντρο προπόνησης δύναμης και πειθαρχίας στην Ελλάδα, SEO για «Fitness Hood», έτοιμη για οργανική ανάπτυξη στη Ελλάδα.
-- **Services delivered:** website-creation, local-seo
-- **Results:** Greece: pages aimed at “Fitness Hood” and “training center Greece”; Differentiation: local gym SEO with class and program pages; Stack: website creation, local SEO
-
-### Huqqa King (`huqqa-king`)
-- **Case study:** https://anotherseoguru.com/en/work/huqqa-king · https://anotherseoguru.com/el/work/huqqa-king
-- **Live site:** https://huqqaking.gr
-- **Category:** other
-- **Summary (EN):** Huqqa King: hookah lounge brand website for Greece, SEO for “Huqqa King”, with trust signals and a clear visit path.
-- **Summary (EL):** Huqqa King: brand ναργιλέ / lounge στην Ελλάδα, SEO για «Huqqa King», με ξεκάθαρα σήματα εμπιστοσύνης και επικοινωνία.
-- **Services delivered:** website-creation, eshop-woocommerce, speed-optimization
-- **Results:** Greece: pages aimed at “Huqqa King” and “hookah lounge Greece”; Differentiation: local nightlife discovery with age-gated brand presence; Stack: website creation, eshop-woocommerce, speed optimization
-
-### Κοινή Λύση (`koini-lisi`)
-- **Case study:** https://anotherseoguru.com/en/work/koini-lisi · https://anotherseoguru.com/el/work/koini-lisi
-- **Live site:** https://koinilisi.gr
-- **Category:** other
-- **Summary (EN):** Κοινή Λύση: mediation and out-of-court dispute resolution website for Greece, SEO for “mediation Greece”, with a clear path to inquiry.
-- **Summary (EL):** Κοινή Λύση: διαμεσολάβηση και εξωδικαστική επίλυση διαφορών στην Ελλάδα, SEO για «διαμεσολάβηση», με καθαρή διαδρομή προς επικοινωνία.
-- **Services delivered:** website-creation, local-seo, content-creation
-- **Results:** Greece: pages aimed at “mediation Greece” and “Koini Lisi”; Differentiation: confidential mediation service pages for Greek commercial queries; Stack: website creation, local SEO, content creation
-
-### Logopedia (`logopedia`)
-- **Case study:** https://anotherseoguru.com/en/work/logopedia · https://anotherseoguru.com/el/work/logopedia
-- **Live site:** https://logopedia.edu.gr
-- **Category:** other · featured
-- **Summary (EN):** Logopedia: speech therapy education and practice website for Greece, SEO for “Logopedia”, with technical SEO from day one.
-- **Summary (EL):** Logopedia: λογοθεραπεία και εκπαίδευση στην Ελλάδα, SEO για «λογοθεραπεία», με τεχνικό SEO από την πρώτη μέρα.
-- **Services delivered:** website-creation, local-seo, content-creation
-- **Results:** Greece: pages aimed at “Logopedia” and “speech therapy Greece”; Differentiation: educational authority plus local therapy booking SEO; Stack: website creation, local SEO, content creation
 
 ### Naxos Car Rental (`naxos-car-rental`)
 - **Case study:** https://anotherseoguru.com/en/work/naxos-car-rental · https://anotherseoguru.com/el/work/naxos-car-rental
@@ -854,15 +620,6 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Services delivered:** website-creation, local-seo, speed-optimization
 - **Results:** Naxos: pages aimed at “Naxos auto rent” and “Naxos car hire online”; Differentiation: English-first booking UX for international guests; Stack: website creation, local SEO, speed optimization
 
-### Politidis Fitness (`politidis-fitness`)
-- **Case study:** https://anotherseoguru.com/en/work/politidis-fitness · https://anotherseoguru.com/el/work/politidis-fitness
-- **Live site:** https://politidisfitness.gr
-- **Category:** other
-- **Summary (EN):** Politidis Fitness: personal training and online fitness programs website for Greece, SEO for “Politidis Fitness”, with a clear path to inquiry.
-- **Summary (EL):** Politidis Fitness: προσωπική προπόνηση και online προγράμματα fitness στην Ελλάδα, SEO για «Politidis Fitness», με καθαρή διαδρομή προς επικοινωνία.
-- **Services delivered:** website-creation, local-seo
-- **Results:** Greece: pages aimed at “Politidis Fitness” and “personal trainer Greece”; Differentiation: trainer authority pages and program SEO for coaching leads; Stack: website creation, local SEO
-
 ### Artemis Rental Sifnos (`rentacar-sifnos`)
 - **Case study:** https://anotherseoguru.com/en/work/rentacar-sifnos · https://anotherseoguru.com/el/work/rentacar-sifnos
 - **Live site:** https://rentacarsifnos.com
@@ -871,24 +628,6 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Summary (EL):** Artemis Rental Sifnos: ενοικίαση αυτοκινήτων και scooters στη Σίφνο, SEO για «ενοικίαση αυτοκινήτου Σίφνος», με ξεκάθαρα σήματα εμπιστοσύνης και κράτηση.
 - **Services delivered:** website-creation, local-seo
 - **Results:** Sifnos: pages aimed at “rent a car Sifnos” and “Sifnos scooter rental”; Differentiation: reliable fleet from Apollonia since 1988 with free Kamares port pickup; Stack: website creation, local SEO
-
-### Smart Dog Training (`smart-dog-training`)
-- **Case study:** https://anotherseoguru.com/en/work/smart-dog-training · https://anotherseoguru.com/el/work/smart-dog-training
-- **Live site:** https://smartdogtraining.gr
-- **Category:** other
-- **Summary (EN):** Smart Dog Training: positive-reinforcement dog training website for Greece, SEO for “Smart Dog Training”, structured around “Smart Dog Training”.
-- **Summary (EL):** Smart Dog Training: εκπαίδευση σκύλων με θετική ενίσχυση στην Ελλάδα, SEO για «εκπαίδευση σκύλων», με δομή περιεχομένου για «εκπαίδευση σκύλων».
-- **Services delivered:** website-creation, content-creation
-- **Results:** Greece: pages aimed at “Smart Dog Training” and “dog training Greece”; Differentiation: relationship-first training funnels with program pages; Stack: website creation, content creation
-
-### Taverna Yiannis (`taverna-yiannis`)
-- **Case study:** https://anotherseoguru.com/en/work/taverna-yiannis · https://anotherseoguru.com/el/work/taverna-yiannis
-- **Live site:** https://tavernayiannis.gr
-- **Category:** restaurant
-- **Summary (EN):** Taverna Yiannis: family traditional Cretan taverna for Platanes, Rethymno, SEO for “Taverna Yiannis Platanes”, with technical SEO from day one.
-- **Summary (EL):** Taverna Yiannis: οικογενειακή παραδοσιακή κρητική ταβέρνα στους Πλατανές Ρεθύμνου, SEO για «Ταβέρνα Γιάννης Πλατανές», με τεχνικό SEO από την πρώτη μέρα.
-- **Services delivered:** website-creation, local-seo
-- **Results:** Platanes, Rethymno: pages aimed at “Taverna Yiannis Platanes” and “traditional Cretan taverna”; Differentiation: local food keywords and Maps-driven visit conversion; Stack: website creation, local SEO
 
 ### vwanaki (`vwanaki`)
 - **Case study:** https://anotherseoguru.com/en/work/vwanaki · https://anotherseoguru.com/el/work/vwanaki
@@ -901,7 +640,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
 
 ---
 
-## 7. Blog & Guides (75)
+## 7. Blog & Guides (76)
 
 ### How to Rank Higher on Google (2026)
 - **URL:** https://anotherseoguru.com/en/blog/how-to-rank-higher-on-google
@@ -924,6 +663,24 @@ The Greek cities below have service×city pages for website creation, local SEO,
     A: Give that keyword one URL. Check that the current results want the kind of page you published. Make that page the clearest answer, link to it internally, and support it with relevant mentions if the results are competitive. If several of your URLs target the same keyword, consolidate them so one page can be selected.
   - Q: How do I rank first in search results?
     A: Treat each query on its own. Branded queries should show you first when your homepage is indexed. Local queries are decided largely by relevance, distance, and prominence, including your Google Business Profile. Broader queries move after the page, the internal links, and outside mentions are strong enough for that competition. Average position in Search Console is the number to watch.
+
+### 21 SEO Strategies That Work in 2026
+- **URL:** https://anotherseoguru.com/en/blog/seo-strategies
+- **Locale:** en · **Date:** 2026-10-16
+- **Description:** Search engine optimization strategies for 2026: 21 practical tactics covering intent, technical health, content, links, local search and AI answers.
+- **Embedded FAQ:**
+  - Q: What are search engine optimization strategies?
+    A: Search engine optimization strategies are the decisions about which queries to pursue, which URL should answer each one, and which work you will ship and review. Tactics such as a title rewrite or a new internal link carry out those decisions.
+  - Q: Which SEO strategy should a new website start with?
+    A: Start with indexation and intent. Confirm the pages that should rank are in Google, then match each of those URLs to one primary query and a title that states the offer. Publishing more posts before that is usually wasted.
+  - Q: How long do SEO strategies take to show movement?
+    A: Early signs, such as indexed money pages and a change in impressions, often appear in two to three months. A stable organic channel more often takes four to twelve months. The range depends on competition, site history and how consistently you ship.
+  - Q: Do these strategies still apply when people use AI answers?
+    A: Yes. Clear definitions, one intent per URL, visible FAQs and pages that match what you markup are what both classic results and AI answers can use. Schema does not force a citation. It only describes a page that already says the thing.
+  - Q: What is the difference between an SEO strategy and a tactic?
+    A: A strategy is a priority you can defend later, such as winning commercial queries for one service in one market before you build a blog archive. A tactic is the task that follows, such as rewriting a title or adding an internal link.
+  - Q: How much does it cost to run an SEO strategy?
+    A: Serious monthly work starts at €500 for Foundations and scales to €1,500 for Authority, net of VAT. The figure follows competition, site size and whether you need content and links. It is not a price for a ranking.
 
 ### Πώς Βάζω την Επιχείρησή μου στο Google Maps
 - **URL:** https://anotherseoguru.com/el/blog/epixeirisi-sto-google-maps
@@ -1619,21 +1376,23 @@ The Greek cities below have service×city pages for website creation, local SEO,
   - Q: Should agencies target buyers or sellers first?
     A: Both, but sellers are usually higher value. “How much is my home worth” and “estate agent + area” pages win listings - the root of agency income.
 
-### SEO for Beginners - What It Is and How It Works (Simply)
+### SEO for Beginners - A 30-Day Plan
 - **URL:** https://anotherseoguru.com/en/blog/seo-for-beginners
 - **Locale:** en · **Date:** 2026-07-06
-- **Description:** What SEO is in plain English: how Google ranks pages, what keywords, on-page, technical SEO and backlinks mean, realistic costs, and where to start.
+- **Description:** SEO for beginners: how Google ranks pages, the four pillars, a 30-day starter plan, glossary links, and the fixes to make before you publish more.
 - **Embedded FAQ:**
+  - Q: What is SEO for beginners?
+    A: SEO for beginners is the work of helping a website show up in unpaid Google results. You start with crawling, indexing, one clear page per customer question, and measurement in Search Console. It is the same discipline as professional SEO, with a smaller first scope.
+  - Q: How do I start SEO as a beginner?
+    A: Verify the site in Google Search Console, fix anything that blocks indexing, and give each important page one primary query plus a clear title. Follow a 30-day plan before you publish a large blog archive.
   - Q: Can I do SEO myself?
-    A: The basics yes - good titles, Google Business Profile, content that answers customer questions. Technical work, strategy and links are where a partner makes the difference.
-  - Q: Is SEO a must for a new website?
-    A: Yes - and it starts at the build. An SEO-ready website saves months of fixes later. Fix crawl, titles and service pages before running expensive ads alone.
-  - Q: SEO or Google Ads?
-    A: Different tools for different horizons. Ads buy instant traffic while you pay; SEO builds lasting organic visibility. Most SMEs use both in a 70/30 mix over time.
+    A: Yes for the basics - titles, a complete Google Business Profile, and pages that answer real customer questions. Technical repairs, strategy, and earning links are where a specialist usually saves time.
   - Q: How long does SEO take for beginners?
-    A: Expect early signals in 2–3 months and meaningful results in 4–6 months if you fix technical basics and improve high-intent pages consistently.
-  - Q: What should I do first?
-    A: Set up Search Console, fix indexation and mobile speed, optimize your top 5 service pages, and complete Google Business Profile if you serve a local area.
+    A: Plan for early signs in 2–3 months and a clearer picture in 4–6 months if the technical base is fixed and the important pages are improved on a steady cadence. A new site should not expect a full pipeline in the first weeks.
+  - Q: Should a beginner use SEO or Google Ads?
+    A: They do different jobs. Ads can bring visits while you pay for each click. SEO builds organic visibility that remains when ad spend pauses. Many businesses use both, and the landing pages should be ready before you scale ads.
+  - Q: What should a beginner measure first?
+    A: Impressions and clicks in Search Console, whether the money pages are indexed, and whether organic visits turn into calls or form fills. A rank position by itself does not show that the channel is working.
 
 ### SEO για Μεσιτικά Γραφεία & Ακίνητα - Οδηγός 2026
 - **URL:** https://anotherseoguru.com/el/blog/seo-gia-akinita

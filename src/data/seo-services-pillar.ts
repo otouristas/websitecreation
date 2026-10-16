@@ -99,17 +99,19 @@ const el: SeoServicesPillarCopy = {
     items: [
       {
         title: 'Τεχνικό SEO',
-        href: '/services/seo-audits',
+        href: '/seo-services/technical',
         body:
           'Ό,τι εμποδίζει τη Google να διαβάσει και να ευρετηριάσει τις σελίδες που πουλάνε: σφάλματα ευρετηρίασης, canonical, ταχύτητα και Core Web Vitals, structured data που αντιστοιχούν στο ορατό περιεχόμενο, αρχιτεκτονική εσωτερικών συνδέσμων. Είναι το πρώτο που κοιτάμε, γιατί κάθε άλλη εργασία χτίζεται πάνω του.',
       },
       {
         title: 'Αντιστοίχιση λέξεων-κλειδιών σε σελίδες',
+        href: '/seo-services/strategy',
         body:
           'Μία εμπορική ομάδα αναζητήσεων, μία σελίδα. Χωρίς αυτό, δύο σελίδες σας ανταγωνίζονται μεταξύ τους για την ίδια αναζήτηση και καμία δεν κερδίζει. Ξεκινάμε από τα δεδομένα του δικού σας Search Console, όχι από γενικές λίστες όγκου.',
       },
       {
         title: 'Περιεχόμενο με εμπορική πρόθεση',
+        href: '/seo-services/on-page',
         body:
           'Σελίδες υπηρεσιών, σελίδες περιοχής και άρθρα που απαντούν σε ερωτήσεις που κάνει κάποιος λίγο πριν ζητήσει προσφορά. Γράφουμε στα ελληνικά, για την αγορά σας, με παραδείγματα από τον κλάδο σας.',
       },
@@ -288,8 +290,8 @@ const el: SeoServicesPillarCopy = {
     {
       title: 'Βελτιστοποίηση ιστοσελίδας: τεχνικό SEO και on-page',
       paragraphs: [
-        'Η βελτιστοποίηση ιστοσελίδας έχει δύο σκέλη. Το τεχνικό SEO φροντίζει να μπορεί η Google να βρει, να διαβάσει και να ευρετηριάσει κάθε σελίδα που πουλάει: ταχύτητα, ευρετηρίαση, canonical, structured data. Ξεκινάμε πάντα με ένα [SEO audit](/services/seo-audits), γιατί χωρίς αυτό η υπόλοιπη δουλειά χτίζεται στα τυφλά.',
-        'Το on-page SEO είναι η ίδια η σελίδα: τίτλος, επικεφαλίδες, κείμενο και εσωτερικοί σύνδεσμοι που ταιριάζουν με αυτό που ψάχνει ο πελάτης. Τα βήματα τα εξηγούμε στον οδηγό μας για το [on-page SEO](/blog/on-page-seo-el).',
+        'Η βελτιστοποίηση ιστοσελίδας έχει δύο σκέλη. Το τεχνικό SEO φροντίζει να μπορεί η Google να βρει, να διαβάσει και να ευρετηριάσει κάθε σελίδα που πουλάει: ταχύτητα, ευρετηρίαση, canonical, structured data. Ξεκινάμε πάντα με ένα [SEO audit](/services/seo-audits), και η συνεχής τεχνική δουλειά περιγράφεται στο [τεχνικό SEO](/seo-services/technical).',
+        'Το on-page SEO είναι η ίδια η σελίδα: τίτλος, επικεφαλίδες, κείμενο και εσωτερικοί σύνδεσμοι που ταιριάζουν με αυτό που ψάχνει ο πελάτης. Η υπηρεσία περιγράφεται στο [on-page SEO](/seo-services/on-page). Τα βήματα τα εξηγεί ο [οδηγός on-page SEO](/blog/on-page-seo-el).',
       ],
     },
     {
@@ -332,17 +334,19 @@ const en: SeoServicesPillarCopy = {
     items: [
       {
         title: 'Technical SEO',
-        href: '/services/seo-audits',
+        href: '/seo-services/technical',
         body:
           'Whatever stops Google reading and indexing the pages that sell: indexation errors, canonicals, speed and Core Web Vitals, structured data that matches what is visible, internal link architecture. It comes first because everything else is built on it.',
       },
       {
         title: 'Keyword-to-page mapping',
+        href: '/seo-services/strategy',
         body:
           'One commercial cluster, one page. Without it, two of your pages compete for the same search and neither wins. We start from your own Search Console data rather than a generic volume export.',
       },
       {
         title: 'Content with commercial intent',
+        href: '/seo-services/on-page',
         body:
           'Service pages, area pages and articles that answer the questions someone asks just before requesting a quote - written for your market, with examples from your sector.',
       },

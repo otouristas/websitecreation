@@ -10,6 +10,7 @@ import {
   getAllBlogPosts,
   getBlogPostBySlug,
   getTranslationCounterpart,
+  numberedStrategyItems,
   blogHref,
   getRelatedPosts,
   getPillarNeighbours,
@@ -32,6 +33,7 @@ import {
   generateBreadcrumbSchema,
   generateFAQSchema,
   generateHowToSchema,
+  generateItemListSchema,
   combineSchemas,
 } from "@/lib/seo/schema";
 
@@ -89,6 +91,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const lp = (path: string) => localizedPath(locale as SiteLocale, path);
   const isEl = locale === "el";
   const counterpart = getTranslationCounterpart(post);
+  const pageUrl = `https://anotherseoguru.com${lp(`/blog/${post.slug}`)}`;
   const articleSchema = generateArticleSchema({
     headline: post.title,
     description: post.description,
@@ -97,7 +100,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     author: { name: post.author },
     schemaType: "BlogPosting",
     inLanguage: post.locale,
-    mainEntityOfPage: `https://anotherseoguru.com${lp(`/blog/${post.slug}`)}`,
+    mainEntityOfPage: pageUrl,
   });
   const breadcrumbItems = [
     { name: isEl ? "Αρχική" : "Home", url: lp("/") },
@@ -128,11 +131,26 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         steps: post.howto.steps,
       })
     : null;
+  // Opt-in. Numbered guides elsewhere stay Article + FAQ only.
+  const strategyItems = post.itemList ? numberedStrategyItems(post.headings) : [];
+  const itemListSchema =
+    strategyItems.length >= 3
+      ? generateItemListSchema({
+          name: post.title,
+          url: pageUrl,
+          items: strategyItems.map((item) => ({
+            position: item.position,
+            name: item.name,
+            url: `${pageUrl}#${item.id}`,
+          })),
+        })
+      : null;
   const schemas = combineSchemas(
     articleSchema,
     breadcrumbSchema,
     ...(faqSchema ? [faqSchema] : []),
     ...(howToSchema ? [howToSchema] : []),
+    ...(itemListSchema ? [itemListSchema] : []),
   );
 
   /**

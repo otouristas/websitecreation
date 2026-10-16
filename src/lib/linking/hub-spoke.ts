@@ -164,7 +164,17 @@ export function getServiceHubRelatedPaths(
     const cities = HUB_CITY_LINKS.filter((c) => isServiceLocationKept(locale, serviceSlug, c.slug))
         .slice(0, 2)
         .map((c) => ({ path: `/services/${serviceSlug}/${c.slug}`, titleEn: c.titleEn, titleEl: c.titleEl }));
+    const hubLinks =
+        serviceSlug === 'seo-audits'
+            ? [
+                { path: '/seo-services', titleEn: 'SEO services', titleEl: 'Υπηρεσίες SEO' },
+                { path: '/seo-services/technical', titleEn: 'Technical SEO', titleEl: 'Τεχνικό SEO' },
+            ]
+            : serviceSlug === 'link-building'
+              ? [{ path: '/seo-services', titleEn: 'SEO services', titleEl: 'Υπηρεσίες SEO' }]
+              : [];
     return [
+        ...hubLinks,
         { path: '/pricing', titleEn: 'Pricing & packages', titleEl: 'Τιμές & πακέτα' },
         { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
         { path: '/solutions/hotels', titleEn: 'Hotels & hospitality', titleEl: 'Ξενοδοχεία & φιλοξενία' },
@@ -271,6 +281,12 @@ export const BLOG_MONEY_LINKS: Record<
         { path: '/services/seo-audits', titleEn: 'SEO services', titleEl: 'Υπηρεσίες SEO' },
         { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
         { path: '/glossary', titleEn: 'SEO glossary', titleEl: 'Γλωσσάρι SEO' },
+    ],
+    'seo-strategies': [
+        { path: '/services/seo-audits', titleEn: 'SEO audits', titleEl: 'Υπηρεσίες SEO' },
+        { path: '/services/local-seo', titleEn: 'Local SEO', titleEl: 'Τοπικό SEO' },
+        { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
+        { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
     ],
     'web-hosting-domain-odigos': [
         { path: '/services/website-creation', titleEn: 'Website creation', titleEl: 'Κατασκευή ιστοσελίδων' },
@@ -385,6 +401,7 @@ export const BLOG_MONEY_LINKS: Record<
         { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
     ],
     'on-page-seo': [
+        { path: '/seo-services/on-page', titleEn: 'On-page SEO', titleEl: 'On-page SEO' },
         { path: '/services/seo-audits', titleEn: 'SEO services', titleEl: 'Υπηρεσίες SEO' },
         { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
         { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
@@ -396,6 +413,13 @@ export const BLOG_MONEY_LINKS: Record<
     ],
     'link-building-guide': [
         { path: '/services/link-building', titleEn: 'Link building', titleEl: 'Link building' },
+        { path: '/blog/backlink-checker', titleEn: 'Backlink checker', titleEl: 'Έλεγχος backlinks' },
+        { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
+        { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
+    ],
+    'backlink-checker': [
+        { path: '/services/link-building', titleEn: 'Link building', titleEl: 'Link building' },
+        { path: '/blog/link-building-guide', titleEn: 'Link building guide', titleEl: 'Οδηγός link building' },
         { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
         { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
     ],
@@ -404,13 +428,20 @@ export const BLOG_MONEY_LINKS: Record<
         { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
         { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
     ],
+    'on-page-seo-el': [
+        { path: '/seo-services/on-page', titleEn: 'On-page SEO', titleEl: 'On-page SEO' },
+        { path: '/seo-services', titleEn: 'SEO services', titleEl: 'Υπηρεσίες SEO' },
+        { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
+    ],
     'technical-seo-guide': [
+        { path: '/seo-services/technical', titleEn: 'Technical SEO', titleEl: 'Τεχνικό SEO' },
         { path: '/services/seo-audits', titleEn: 'SEO audits', titleEl: 'Υπηρεσίες SEO' },
         { path: '/tools/free-seo-audit', titleEn: 'Free SEO audit', titleEl: 'Δωρεάν SEO audit' },
         { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
         { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
     ],
     'techniko-seo': [
+        { path: '/seo-services/technical', titleEn: 'Technical SEO', titleEl: 'Τεχνικό SEO' },
         { path: '/services/seo-audits', titleEn: 'SEO audits', titleEl: 'Υπηρεσίες SEO' },
         { path: '/tools/free-seo-audit', titleEn: 'Free SEO audit', titleEl: 'Δωρεάν SEO audit' },
         { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },

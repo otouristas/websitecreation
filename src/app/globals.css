@@ -683,6 +683,18 @@ html.consent-set [data-chrome="cookie-consent"] {
   margin: 3rem 0;
 }
 
+/* Blog markdown has no raw-HTML video embeds. Images are first-class: keep
+   diagrams inside the column on small screens. */
+.markdown-body img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
 /* ==========================================================================
    Accessibility & chrome
    ========================================================================== */

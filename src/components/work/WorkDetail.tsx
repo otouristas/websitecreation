@@ -209,17 +209,6 @@ export function WorkDetail({ project, locale = 'en' }: WorkDetailProps) {
                 key: sv,
               }))}
             />
-            <p className="mt-8 text-[14px] text-muted-foreground">
-              {isEl ? 'Φιλοξενία: ' : 'Hosting: '}
-              <a
-                href="https://dailyhost.gr"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-medium text-foreground underline underline-offset-4 hover:text-brand"
-              >
-                Dailyhost.gr
-              </a>
-            </p>
           </div>
           {(project.seoTitle || project.seoDescription) && (
             <div className="min-w-0">

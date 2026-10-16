@@ -5,8 +5,8 @@ import { PROJECTS_DELIVERED } from '@/data/founder';
  * Verifiable company facts, in one place.
  *
  * The site previously claimed "55+ live websites" on /work, "70+" in the
- * pricing FAQ and "55+" in trust-stats, against 71 actual portfolio entries.
- * Everything derives from data now, so the numbers cannot contradict.
+ * pricing FAQ and "55+" in trust-stats. Everything derives from data now, so
+ * the numbers cannot contradict.
  *
  * Nothing in this file may be aspirational. If a claim cannot be supported by
  * something in the repo, it does not belong here.
@@ -14,7 +14,7 @@ import { PROJECTS_DELIVERED } from '@/data/founder';
 
 /**
  * Live sites listed in the portfolio (/work), counted from the dataset. Use it
- * only where the copy counts that list itself ("71 sites you can open today").
+ * only where the copy counts that list itself.
  * It is a subset of everything delivered: for "projects delivered/completed"
  * claims and bare trust stats use `PROJECTS_DELIVERED_LABEL`.
  */

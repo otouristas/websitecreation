@@ -188,9 +188,6 @@ for (const slug of slugs) {
   if (slug === 'erebos' && !/παρακολούθηση|GPS|οχημ/i.test(elTexts.join(' '))) {
     errors.push('erebos missing vehicle tracking language');
   }
-  if (slug === 'koini-lisi' && !/διαμεσολάβηση|εξωδικαστική/i.test(elTexts.join(' '))) {
-    errors.push('koini-lisi missing mediation language');
-  }
 }
 
 const { summaries, summaryEls } = loadPortfolioFieldUniques();

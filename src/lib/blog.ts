@@ -43,6 +43,11 @@ export interface BlogPostListItem {
    * Step name and text must also appear in the body.
    */
   readonly howto?: BlogHowTo;
+  /**
+   * When true, numbered H2s (`## 1. …`) are also emitted as an ItemList.
+   * Off unless the post sets `itemList: true`, so other guides keep their schema.
+   */
+  readonly itemList: boolean;
   /** Body word count, used for reading time and Article schema. */
   readonly wordCount: number;
   /** Estimated minutes to read, at 200 wpm, floored to 1. */
@@ -77,6 +82,7 @@ interface MatterData {
   readonly translationOf?: string;
   readonly faq?: unknown;
   readonly howto?: unknown;
+  readonly itemList?: unknown;
 }
 
 /** Normalize the frontmatter `faq:` list into clean {question, answer} pairs. */
@@ -185,6 +191,7 @@ function parsePostFile(filePath: string, fileBase: string): BlogPostParsed | nul
         steps: howto.steps.map((step) => ({ name: rp(step.name), text: rp(step.text) })),
       };
     })(),
+    itemList: d.itemList === true,
     wordCount,
     readingTime: Math.max(1, Math.round(wordCount / 200)),
     content: rp(content),
@@ -227,6 +234,30 @@ export function extractHeadings(content: string): BlogHeading[] {
     out.push({ depth: m[1].length === 2 ? 2 : 3, text, id: n === 0 ? base : `${base}-${n}` });
   }
   return out;
+}
+
+const NUMBERED_H2 = /^(\d+)\.\s+(\S.*)$/;
+
+/**
+ * Numbered H2s (`## 1. Title`) for listicle ItemList markup.
+ *
+ * The name is the visible heading, and the id is the same anchor the table of
+ * contents and `rehypeHeadingIds` use, so the schema URL cannot drift from the
+ * heading on the page.
+ */
+export function numberedStrategyItems(
+  headings: readonly BlogHeading[],
+): { readonly position: number; readonly name: string; readonly id: string }[] {
+  const items: { position: number; name: string; id: string }[] = [];
+  for (const heading of headings) {
+    if (heading.depth !== 2) continue;
+    const match = NUMBERED_H2.exec(heading.text);
+    if (!match) continue;
+    const position = Number(match[1]);
+    if (!Number.isInteger(position) || position < 1) continue;
+    items.push({ position, name: heading.text, id: heading.id });
+  }
+  return items;
 }
 
 function countBodyWords(content: string): number {
