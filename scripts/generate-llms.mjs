@@ -328,6 +328,7 @@ function buildShort({ services, servicesEl, industries, industriesEl, greece, pr
   );
   lines.push(
     hubLine('Blog', url('en', '/blog'), 'SEO, GEO/AEO, hotel, and e-shop guides (EN + EL).'),
+    hubLine('SEO guides', url('en', '/seo-guides'), 'Index of the ranking guides and the cluster on keywords, on-page, technical SEO, links and local search (EN + EL).'),
   );
   lines.push(
     hubLine('GSC Boost (SEO software)', `${BASE}/en/platform`, 'Google Search Console-native SEO software: ranked fixes with click estimates, rank tracking, site audit, AI visibility. Web app at app.anotherseoguru.com (EN + EL).'),

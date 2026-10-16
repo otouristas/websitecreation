@@ -26,6 +26,7 @@ Last Updated: 2026-10-14
 - **Rent-a-Car** (<https://anotherseoguru.com/en/solutions/rent-a-car>) - Fleet catalogs, booking funnels, island/airport local SEO.
 - **Portfolio / Case Studies** (<https://anotherseoguru.com/en/work>) - 71 live client projects with homepage screenshots.
 - **Blog** (<https://anotherseoguru.com/en/blog>) - SEO, GEO/AEO, hotel, and e-shop guides (EN + EL).
+- **SEO guides** (<https://anotherseoguru.com/en/seo-guides>) - Index of the ranking guides and the cluster on keywords, on-page, technical SEO, links and local search (EN + EL).
 - **GSC Boost (SEO software)** (<https://anotherseoguru.com/en/platform>) - Google Search Console-native SEO software: ranked fixes with click estimates, rank tracking, site audit, AI visibility. Web app at app.anotherseoguru.com (EN + EL).
 - **GSC Boost for iPhone (beta)** (<https://anotherseoguru.com/en/platform/iphone>) - Native iOS 17+ app on the same account: weekly fixes, rank tracking, alerts, AI evidence, widgets. In TestFlight beta, not yet on the App Store.
 - **GSC Boost integrations (one login)** (<https://anotherseoguru.com/en/platform/integrations>) - One AnotherSEOGuru account for the web app, iPhone, Chrome extension, WordPress plugin and AI assistants (MCP); manage them in Settings → Connected apps (EN + EL).

@@ -26,6 +26,7 @@ import { isValidLocale, localizedPath, type SiteLocale } from "@/lib/i18n/locale
 import { buildHreflangMapFromPaths } from "@/lib/locale-paths";
 import { buildMetadata } from "@/lib/seo";
 import { getBlogMoneyLinks } from "@/lib/linking";
+import { seoGuideSlugSet } from "@/lib/seo-guides";
 import { getAppPath } from "@/lib/app-links";
 import {
   generateArticleSchema,
@@ -291,6 +292,20 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   {isEl ? "Δοκιμάστε δωρεάν" : "Try it free"}
                 </a>
               </div>
+
+              {seoGuideSlugSet().has(post.slug) ? (
+                <div className="rounded-2xl border border-hairline bg-surface p-5">
+                  <p className="font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-muted-foreground">
+                    {isEl ? "Οδηγοί SEO" : "SEO guides"}
+                  </p>
+                  <Link
+                    href={lp("/seo-guides")}
+                    className="mt-2 block font-display text-sm font-medium text-foreground hover:text-primary"
+                  >
+                    {isEl ? "Όλοι οι οδηγοί κατάταξης" : "All ranking guides"}
+                  </Link>
+                </div>
+              ) : null}
 
               {pillarCopy ? (
                 <div className="rounded-2xl border border-hairline bg-surface p-5">

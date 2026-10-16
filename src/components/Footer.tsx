@@ -257,6 +257,11 @@ export default function Footer({ locale: localeProp }: { locale?: SiteLocale }):
                 </Link>
               </li>
               <li>
+                <Link href={lp("/seo-guides")} className={columnLinkClass}>
+                  {isEl ? "Οδηγοί SEO" : "SEO guides"}
+                </Link>
+              </li>
+              <li>
                 <Link href={lp("/work")} className={columnLinkClass}>
                   {isEl ? t!.work : "Case studies"}
                 </Link>
@@ -280,7 +285,7 @@ export default function Footer({ locale: localeProp }: { locale?: SiteLocale }):
                   </li>
                   <li>
                     <Link href={lp("/resources")} className={columnLinkClass}>
-                      SEO guides
+                      Resources
                     </Link>
                   </li>
                   <li>

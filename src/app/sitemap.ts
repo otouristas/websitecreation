@@ -66,6 +66,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/terms', priority: 0.3, changeFrequency: 'yearly' as const },
     { path: '/work', priority: 0.88 },
     { path: '/blog', priority: 0.8 },
+    { path: '/seo-guides', priority: 0.84 },
     // GSC Boost, the software (/platform). Bilingual since 2026-10: the
     // module pages and pricing have real Greek copy from the app's own
     // dictionary. The old /platform/features/<slug> pages are gone (308s
