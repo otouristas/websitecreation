@@ -3,6 +3,7 @@ slug: local-seo-guide
 title: The Ultimate Guide to Local SEO for Home Services
 description: How plumbers, HVAC techs, contractors, hotels, and rent-a-car operators can dominate Google Maps. Stop buying leads and start owning them.
 date: 2026-01-15
+updated: 2026-10-16
 author: AnotherSEOGuru Editorial Team
 category: Local SEO
 categoryColor: bg-blue-100 text-blue-700
@@ -29,6 +30,7 @@ faq:
 - [On-page signals for local SEO](#on-page-signals-for-local-seo)
 - [Building local citations](#building-local-citations)
 - [Local SEO for tourism businesses](#local-seo-for-tourism-businesses)
+- [Local SEO ranking tips](#local-seo-ranking-tips)
 - [Tracking your ROI](#tracking-your-roi)
 - [FAQ](#faq)
 
@@ -123,6 +125,30 @@ A [hotel website](/solutions/hotels) must sync GBP categories, amenities, and ph
 ### Travel AI and chatbots
 
 Many tourism brands now pair local SEO with [AI chatbots for travel](/solutions/travel-ai-chatbots) that answer pre-booking questions 24/7. The chatbot doesn't replace GBP - it captures demand your profile started.
+
+## Local SEO ranking tips
+
+Google describes local ranking with three factors: **relevance** (does this business match the query), **distance** (how close it is to the searcher), and **prominence** (how well known it is next to nearby options). You cannot move the person searching. You can make the business easier to match and harder to overlook.
+
+Profile work - categories, photos, posts, Q&A, and review replies - is the ranking surface most owners leave half-finished. The step-by-step version is the [Google Business Profile masterclass](/blog/google-business-profile-masterclass). The checks below sit next to that playbook. They are operating steps, not a promise of a map-pack position. A quiet suburb and a saturated island port do not move on the same calendar.
+
+1. **Set a specific primary category.** "Plumber", "Hotel", or "Car rental agency" beats a generic parent such as "Contractor" or "Travel agency". Add secondary categories only for services you actually offer.
+2. **Drop the pin where the customer arrives.** Distance is measured from the searcher to your verified location. A hotel pin on the wrong side of the port, or a rent-a-car desk mapped to town instead of the airport, misses "near me" queries you already qualify for. Service-area businesses should hide the address only when they are eligible, and list the cities they truly cover.
+3. **Collect recent reviews that name the job and the place.** Prominence comes from reviews, citations, and links. A review that says "fixed our leaking water heater in Austin" or "easy airport pickup in Mykonos" is more useful than "Great job". Reply to every review. Do not buy them - a suspension removes the listing you are trying to rank.
+4. **Make the website agree with the profile.** One [NAP](/glossary?term=nap) format, unique location pages, and [title tags](/glossary?term=title-tag) that name the city and the service. Copy-paste city pages are [thin content](/glossary?term=thin-content), and they do not back up the profile.
+5. **Keep the profile active.** Businesses that upload seasonal photos and publish posts look alive next to dormant listings. Google does not list Posts as a confirmed ranking factor; they are an activity signal and a place to show a current offer. Run that cadence from the [Google Business Profile masterclass](/blog/google-business-profile-masterclass), then return here for citations and location pages.
+6. **Fix disagreeing citations before you add new ones.** Directories that list a different phone number or street name dilute trust. Start with the big aggregators, then niche and tourism portals, in the order in [Building local citations](#building-local-citations).
+
+| Tip | What it supports | Where to do it |
+| :--- | :--- | :--- |
+| Specific primary category | Relevance | [GBP masterclass](/blog/google-business-profile-masterclass) |
+| Pin and service area match reality | Distance | Google Business Profile |
+| Recent reviews that name the service | Prominence | Profile review replies |
+| Unique location pages and one NAP | Relevance and trust | Your website |
+| Seasonal photos and posts | Activity on the profile | Google Business Profile |
+| Citations that agree with each other | Prominence | Aggregators, then niche directories |
+
+After a change ships, watch calls, direction requests, and the landing pages in Search Console. Rankings without those numbers are the vanity metric covered in [Tracking your ROI](#tracking-your-roi).
 
 ## Tracking your ROI
 

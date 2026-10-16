@@ -58,6 +58,7 @@ export default async function ResourcesPage({ params }: PageProps) {
       type: "cards",
       cols: 3,
       items: [
+        { title: "SEO guides", text: "The ranking guides in one index: the main guide, plus keywords, on-page, technical SEO, links and local search.", href: lp("/seo-guides"), icon: "book" },
         { title: "SEO glossary", text: "Over 100 terms, each on its own page with an example and how to apply it.", href: glossaryPath("en"), icon: "library" },
         { title: "GSC Boost guides", text: "How to use every screen of the web app, with screenshots.", href: lp("/help"), icon: "book" },
         { title: "iPhone app", text: "Get the beta, Live Activities, widgets and alerts.", href: lp("/help/iphone-app"), icon: "smartphone" },

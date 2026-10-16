@@ -1,8 +1,9 @@
 ---
 slug: keyword-research-guide
-title: How to Do Keyword Research for SEO (Step-by-Step)
+title: How to Do Keyword Research for SEO
 description: A practical keyword research process for SEO - seeds, intent, clustering, and prioritization - plus free tools to find SEO keywords that convert.
 date: 2026-07-23
+updated: 2026-10-16
 author: AnotherSEOGuru Editorial Team
 translationOf: lexeis-kleidia-seo
 category: SEO
@@ -21,7 +22,7 @@ faq:
     answer: Quarterly for competitive niches, and after every major product, location, or seasonality change. Always reconcile with fresh Search Console data.
 ---
 
-**Keyword research** finds the phrases your buyers type into Google so you can build pages that match intent - not guesswork. Head terms like “keyword research” itself are dominated by free tools and mega-brands; this guide shows the process agencies use in 2026, then points you to our [free keyword research tool](/en/tools/keyword-research) and the broader [agency playbooks pillar](/en/blog/pillar-agency-playbooks).
+**Keyword research for SEO** finds the phrases your buyers type into Google so you can build pages that match intent - not guesswork. Head terms like “keyword research” itself are dominated by free tools and mega-brands; this guide shows the process agencies use in 2026, then points you to our [free keyword research tool](/en/tools/keyword-research) and the broader [agency playbooks pillar](/en/blog/pillar-agency-playbooks).
 
 If you only remember one rule: **map demand to URLs**, do not collect vanity volume spreadsheets. A phrase with 50 monthly searches that converts beats a 10,000-search head term you cannot win or monetize.
 
@@ -65,7 +66,7 @@ Local modifiers often cut across commercial and transactional intent. A query li
 
 ## Step 4 - Cluster and map to URLs
 
-Group synonyms and near-duplicates onto one page. Give each URL **one primary phrase** and a short list of natural variants for headings and FAQs. Avoid thin duplicates for every minor spelling or word-order change.
+Group synonyms and near-duplicates onto one page. Shared words are a weak signal: paraphrases that mean the same thing should share a URL, and lookalikes with different intent should not. That grouping is [semantic keyword clustering](/en/blog/semantic-keyword-clustering). Give each URL **one primary phrase** and a short list of natural variants for headings and FAQs. Avoid thin duplicates for every minor spelling or word-order change.
 
 ### Clustering rules of thumb
 
