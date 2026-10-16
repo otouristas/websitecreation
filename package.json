@@ -17,6 +17,7 @@
     "screenshots:portfolio:force": "node scripts/portfolio-audit.mjs --screenshot-only --force",
     "generate:llms": "npx tsx scripts/generate-llms.mjs",
     "validate:blog": "node scripts/validate-blog-posts.mjs",
+    "check:blog-seo": "npx tsx scripts/check-blog-seo.mts",
     "test:audit": "npx tsx scripts/audit-selftest.mts",
     "report:ai-mode": "npx tsx scripts/ai-mode-report.mts",
     "check:greek": "node scripts/check-greek-glossary.mjs",

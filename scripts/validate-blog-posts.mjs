@@ -20,6 +20,13 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const blogDir = path.join(root, 'content/blog');
 const strict = process.argv.includes('--strict');
 
+const pillarSrc = fs.readFileSync(path.join(root, 'src/data/blog-pillars.ts'), 'utf8');
+const knownPillars = new Set([...pillarSrc.matchAll(/slug:\s*'([^']+)'/g)].map((m) => m[1]));
+if (knownPillars.size < 2) {
+  console.error('Could not read pillar slugs from src/data/blog-pillars.ts');
+  process.exit(1);
+}
+
 /** Posts allowed to exceed 1200 words (pillar / comprehensive guides). */
 const ALLOW_LONG = new Set([
   'local-seo-guide',
@@ -39,12 +46,24 @@ const ALLOW_LONG = new Set([
   'medical-marketing',
   'internal-linking-audit-checklist',
   'glossary-strategy-internal-linking',
+  // Chapters, a 30-day plan table, and an in-page glossary list. Cutting any
+  // of those drops a section the page is built around.
+  'seo-for-beginners',
   'poso-kostizei-to-seo',
   'backlink-checker',
+  // Strategies, the prospect sheet and the outreach email examples are the
+  // page. Cutting them under 1200 words would delete the templates.
+  'link-building-guide',
   // The AI Mode pair carries a seven-row entity table plus the caveats about
   // the source, which do not compress without losing the point of the post.
   'google-ai-mode-tags',
   'google-ai-mode-tags-el',
+  // Seventeen numbered tactics plus the Search Console pattern table.
+  // Cutting either drops the brief: the tactics, the walkthrough, or CTR.
+  'how-to-increase-organic-traffic',
+  // 21-strategy listicle. The brief asks for about 2,500 words so each item
+  // can say what to do, not just name a tactic.
+  'seo-strategies',
 ]);
 
 const CTA_RE =
@@ -79,6 +98,28 @@ function validatePost(filePath) {
 
   if (!data.pillar && !data.pillarHub) {
     errors.push('missing pillar');
+  }
+
+  const pillarRaw = typeof data.pillar === 'string' ? data.pillar : '';
+  // `ai-visibility` is folded into the ai-llm-visibility hub at read time.
+  if (pillarRaw && pillarRaw !== 'ai-visibility' && !knownPillars.has(pillarRaw)) {
+    errors.push(`pillar "${pillarRaw}" has no hub page, so /blog/topics/${pillarRaw} would 404`);
+  }
+
+  if (data.locale !== undefined && data.locale !== 'en' && data.locale !== 'el') {
+    errors.push(`locale "${data.locale}" must be en or el (canonical and sitemap follow it)`);
+  }
+
+  const dateOk =
+    (data.date instanceof Date && !Number.isNaN(data.date.getTime())) ||
+    (typeof data.date === 'string' && /^\d{4}-\d{2}-\d{2}/.test(data.date.trim()));
+  if (!dateOk) {
+    errors.push('missing or unparseable date (datePublished and sitemap lastmod)');
+  }
+
+  const translationOf = typeof data.translationOf === 'string' ? data.translationOf.trim() : '';
+  if (typeof data.translationOf === 'string' && !translationOf) {
+    errors.push('translationOf is empty');
   }
 
   const faq = Array.isArray(data.faq) ? data.faq : [];
@@ -134,11 +175,65 @@ function validatePost(filePath) {
     warnings.push(`categoryColor may be invalid: ${data.categoryColor ?? '(none)'}`);
   }
 
-  return { slug, words, errors, warnings, locale: data.locale || 'en' };
+  return {
+    slug,
+    words,
+    errors,
+    warnings,
+    locale: data.locale || 'en',
+    localeNorm: data.locale === 'el' ? 'el' : 'en',
+    translationOf,
+    file: path.basename(filePath),
+  };
 }
 
 const files = fs.readdirSync(blogDir).filter((f) => f.endsWith('.md')).sort();
 const results = files.map((f) => validatePost(path.join(blogDir, f)));
+
+const bySlug = new Map();
+const slugFiles = new Map();
+for (const r of results) {
+  const names = slugFiles.get(r.slug) ?? [];
+  names.push(r.file);
+  slugFiles.set(r.slug, names);
+  bySlug.set(r.slug, r);
+}
+for (const [slug, names] of slugFiles) {
+  if (names.length < 2) continue;
+  for (const r of results) {
+    if (r.slug === slug) r.errors.push(`duplicate slug in ${names.join(', ')}`);
+  }
+}
+
+const inbound = new Map();
+for (const r of results) {
+  if (!r.translationOf) continue;
+  const sources = inbound.get(r.translationOf) ?? [];
+  sources.push(r.slug);
+  inbound.set(r.translationOf, sources);
+}
+for (const [target, sources] of inbound) {
+  if (sources.length < 2) continue;
+  for (const slug of sources) {
+    bySlug.get(slug)?.errors.push(
+      `translationOf "${target}" is shared with ${sources.filter((s) => s !== slug).join(', ')}`,
+    );
+  }
+}
+for (const r of results) {
+  if (!r.translationOf) continue;
+  const target = bySlug.get(r.translationOf);
+  if (!target) {
+    r.errors.push(`translationOf "${r.translationOf}" does not match a post slug`);
+    continue;
+  }
+  if (target.localeNorm === r.localeNorm) {
+    r.errors.push(`translationOf "${r.translationOf}" is the same locale (${r.localeNorm})`);
+  }
+  if (target.translationOf && target.translationOf !== r.slug) {
+    r.errors.push(`translationOf "${r.translationOf}" points back at "${target.translationOf}"`);
+  }
+}
 
 let failed = 0;
 let warnCount = 0;

@@ -65,7 +65,8 @@ export const glossaryCategories: GlossaryCategory[] = [
         techniqueEl: "Μία πρόθεση αναζήτησης ανά URL, η λέξη-κλειδί φυσικά στον τίτλο και στο H1, μια σύντομη απάντηση ψηλά στη σελίδα, H2 που καλύπτουν τις ερωτήσεις του People Also Ask και εσωτερικοί σύνδεσμοι προς τις σελίδες που φέρνουν έσοδα.",
         relatedTerms: ["title-tag", "meta-description", "keywords", "seo"],
         relatedLinks: [
-          { title: "On-Page SEO οδηγός", url: "/el/blog/on-page-seo", type: "blog" }
+          { title: "On-page SEO tips", url: "/en/blog/on-page-seo", type: "blog" },
+          { title: "Συμβουλές on-page SEO", url: "/el/blog/on-page-seo-el", type: "blog" }
         ]
       },
       {
@@ -650,6 +651,7 @@ export const glossaryCategories: GlossaryCategory[] = [
         relatedTerms: ["on-page-seo-term", "technical-seo-term", "keywords", "local-pack"],
         relatedLinks: [
           { title: "What is SEO?", url: "/en/blog/what-is-seo", type: "blog" },
+          { title: "SEO for beginners", url: "/en/blog/seo-for-beginners", type: "blog" },
           { title: "Τι είναι το SEO", url: "/el/blog/seo-gia-arxarious", type: "blog" },
           { title: "SEO audit services", url: "/en/services/seo-audits", type: "feature" }
         ]

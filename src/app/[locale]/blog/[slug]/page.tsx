@@ -10,6 +10,7 @@ import {
   getAllBlogPosts,
   getBlogPostBySlug,
   getTranslationCounterpart,
+  numberedStrategyItems,
   blogHref,
   getRelatedPosts,
   getPillarNeighbours,
@@ -23,14 +24,14 @@ import { CtaBand, kitSoftwareBtn } from "@/components/kit";
 import { cn } from "@/lib/cn";
 import { KitProse, PageHero, accentTail } from "@/components/page-kit";
 import { isValidLocale, localizedPath, type SiteLocale } from "@/lib/i18n/locale";
-import { buildHreflangMapFromPaths } from "@/lib/locale-paths";
-import { buildMetadata } from "@/lib/seo";
+import { blogPostCanonicalUrl, blogPostingSchema, buildBlogPostMetadata } from "@/lib/blog-seo";
 import { getBlogMoneyLinks } from "@/lib/linking";
+import { seoGuideSlugSet } from "@/lib/seo-guides";
 import { getAppPath } from "@/lib/app-links";
 import {
-  generateArticleSchema,
   generateBreadcrumbSchema,
   generateFAQSchema,
+  generateItemListSchema,
   combineSchemas,
 } from "@/lib/seo/schema";
 
@@ -60,19 +61,7 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
     // Wrong-locale URL redirects to the post's real locale, never index the bad URL.
     return { robots: { index: false, follow: true } };
   }
-  const counterpart = getTranslationCounterpart(post);
-  const languages = counterpart
-    ? buildHreflangMapFromPaths({
-        [post.locale]: localizedPath(post.locale, `/blog/${post.slug}`),
-        [counterpart.locale]: localizedPath(counterpart.locale, `/blog/${counterpart.slug}`),
-      })
-    : undefined;
-  return buildMetadata({
-    title: post.title,
-    description: post.description,
-    path: localizedPath(locale as SiteLocale, `/blog/${post.slug}`),
-    ...(languages ? { languages } : { hreflangLocales: [post.locale] }),
-  });
+  return buildBlogPostMetadata(post);
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
@@ -88,16 +77,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const lp = (path: string) => localizedPath(locale as SiteLocale, path);
   const isEl = locale === "el";
   const counterpart = getTranslationCounterpart(post);
-  const articleSchema = generateArticleSchema({
-    headline: post.title,
-    description: post.description,
-    datePublished: post.date,
-    dateModified: post.updated ?? post.date,
-    author: { name: post.author },
-    schemaType: "BlogPosting",
-    inLanguage: post.locale,
-    mainEntityOfPage: `https://anotherseoguru.com${lp(`/blog/${post.slug}`)}`,
-  });
+  const pageUrl = blogPostCanonicalUrl(post);
+  const articleSchema = blogPostingSchema(post);
   const breadcrumbItems = [
     { name: isEl ? "Αρχική" : "Home", url: lp("/") },
     { name: "Blog", url: lp("/blog") },
@@ -113,8 +94,23 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     faqItems.length > 0
       ? generateFAQSchema({ faqs: faqItems.map((f) => ({ question: f.question, answer: f.answer })) })
       : null;
+  // Opt-in. Numbered guides elsewhere stay Article + FAQ only.
+  const strategyItems = post.itemList ? numberedStrategyItems(post.headings) : [];
+  const itemListSchema =
+    strategyItems.length >= 3
+      ? generateItemListSchema({
+          name: post.title,
+          url: pageUrl,
+          items: strategyItems.map((item) => ({
+            position: item.position,
+            name: item.name,
+            url: `${pageUrl}#${item.id}`,
+          })),
+        })
+      : null;
   const schemas = combineSchemas(articleSchema, breadcrumbSchema,
-    ...(faqSchema ? [faqSchema] : []));
+    ...(faqSchema ? [faqSchema] : []),
+    ...(itemListSchema ? [itemListSchema] : []));
 
   /**
    * Related posts fall back from pillar to category. The pillar-only version
@@ -291,6 +287,20 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   {isEl ? "Δοκιμάστε δωρεάν" : "Try it free"}
                 </a>
               </div>
+
+              {seoGuideSlugSet().has(post.slug) ? (
+                <div className="rounded-2xl border border-hairline bg-surface p-5">
+                  <p className="font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-muted-foreground">
+                    {isEl ? "Οδηγοί SEO" : "SEO guides"}
+                  </p>
+                  <Link
+                    href={lp("/seo-guides")}
+                    className="mt-2 block font-display text-sm font-medium text-foreground hover:text-primary"
+                  >
+                    {isEl ? "Όλοι οι οδηγοί κατάταξης" : "All ranking guides"}
+                  </Link>
+                </div>
+              ) : null}
 
               {pillarCopy ? (
                 <div className="rounded-2xl border border-hairline bg-surface p-5">

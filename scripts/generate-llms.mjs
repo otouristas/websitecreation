@@ -300,6 +300,12 @@ function buildShort({ services, servicesEl, industries, industriesEl, greece, pr
     hubLine('Ξεκινήστε / Προσφορά', url('el', '/get-started'), 'Φόρμα προσφοράς στα ελληνικά.'),
   );
   lines.push(
+    hubLine('SEO guru', url('en', '/seo-guru'), 'Who the SEO guru is, the Search Console method, services and pricing. Greek twin at /el/seo-guru.'),
+  );
+  lines.push(
+    hubLine('SEO guru (Ελληνικά)', url('el', '/seo-guru'), 'Ποιος είναι ο SEO guru, η μέθοδος από το Search Console, υπηρεσίες και τιμές.'),
+  );
+  lines.push(
     hubLine('Services Hub', url('en', '/services'), 'All productized agency services.'),
   );
   lines.push(
@@ -328,6 +334,7 @@ function buildShort({ services, servicesEl, industries, industriesEl, greece, pr
   );
   lines.push(
     hubLine('Blog', url('en', '/blog'), 'SEO, GEO/AEO, hotel, and e-shop guides (EN + EL).'),
+    hubLine('SEO guides', url('en', '/seo-guides'), 'Index of the ranking guides and the cluster on keywords, on-page, technical SEO, links and local search (EN + EL).'),
   );
   lines.push(
     hubLine('GSC Boost (SEO software)', `${BASE}/en/platform`, 'Google Search Console-native SEO software: ranked fixes with click estimates, rank tracking, site audit, AI visibility. Web app at app.anotherseoguru.com (EN + EL).'),

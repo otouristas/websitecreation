@@ -118,6 +118,7 @@ export function getNavModel(locale: SiteLocale): NavModel {
       {
         title: t('Get found', 'Εμφανιστείτε'),
         items: [
+          { href: lp('/seo-guru'), label: 'SEO guru', desc: t('Who we are and how the work is done', 'Ποιοι είμαστε και πώς γίνεται η δουλειά'), icon: 'users' },
           { href: lp('/seo-services'), label: t('SEO services', 'Υπηρεσίες SEO'), desc: t('Monthly SEO that brings customers', 'Μηνιαίο SEO που φέρνει πελάτες'), icon: 'trend', badge: POPULAR, meta: t(`from €${seoFrom}/mo`, `από €${seoFrom}/μήνα`) },
           { href: lp('/services/ai-visibility'), label: t('AI visibility (GEO / AEO)', 'Ορατότητα σε AI (GEO / AEO)'), desc: t('Get recommended by ChatGPT and Gemini', 'Να σας προτείνουν ChatGPT και Gemini'), icon: 'sparkles', badge: AI },
           { href: lp('/services/local-seo'), label: t('Local SEO', 'Τοπικό SEO'), desc: t('Win the Google Maps results', 'Πρώτοι στον χάρτη της Google'), icon: 'map' },
@@ -260,7 +261,8 @@ export function getNavModel(locale: SiteLocale): NavModel {
       {
         title: t('Guides', 'Οδηγοί'),
         items: [
-          { href: lp('/blog'), label: 'Blog', desc: t('SEO, AI search and web design', 'SEO, αναζήτηση AI, ιστοσελίδες'), icon: 'book' },
+          { href: lp('/seo-guides'), label: t('SEO guides', 'Οδηγοί SEO'), desc: t('The ranking guides in one index', 'Οι οδηγοί κατάταξης σε ένα ευρετήριο'), icon: 'book' },
+          { href: lp('/blog'), label: 'Blog', desc: t('SEO, AI search and web design', 'SEO, αναζήτηση AI, ιστοσελίδες'), icon: 'library' },
           { href: lp('/resources'), label: t('Resources', 'Οδηγοί & υλικό'), icon: 'library' },
           { href: lp('/glossary'), label: t('SEO glossary', 'Λεξικό SEO'), icon: 'list' },
           { href: lp('/help'), label: t('GSC Boost help center', 'Κέντρο βοήθειας GSC Boost'), icon: 'book' },
@@ -281,6 +283,7 @@ export function getNavModel(locale: SiteLocale): NavModel {
   return {
     menus: [services, industries, software, learn],
     links: [
+      { href: lp('/seo-guru'), label: 'SEO guru' },
       { href: lp('/pricing'), label: t('Pricing', 'Τιμές') },
       { href: lp('/work'), label: t('Work', 'Έργα') },
     ],
