@@ -26,6 +26,7 @@ export {
     generateOrganizationSchema,
     generateSoftwareApplicationSchema,
     generateCollectionPageSchema,
+    generateItemListSchema,
     generateOfferCatalogSchema,
     generateDefinedTermSetSchema,
     generatePersonSchema,
