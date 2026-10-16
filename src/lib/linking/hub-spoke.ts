@@ -401,6 +401,7 @@ export const BLOG_MONEY_LINKS: Record<
         { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
     ],
     'off-page-seo': [
+        { path: '/blog/link-building-guide', titleEn: 'Link building guide', titleEl: 'Οδηγός link building' },
         { path: '/services/link-building', titleEn: 'Link building', titleEl: 'Link building' },
         { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
         { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
