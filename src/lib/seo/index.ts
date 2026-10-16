@@ -20,6 +20,7 @@ export {
 export {
     generateArticleSchema,
     generateFAQSchema,
+    generateHowToSchema,
     generateBreadcrumbSchema,
     generateLocalBusinessSchema,
     generateServiceSchema,

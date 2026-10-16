@@ -58,6 +58,7 @@ const ALLOW_LONG = new Set([
   // the source, which do not compress without losing the point of the post.
   'google-ai-mode-tags',
   'google-ai-mode-tags-el',
+  'how-to-rank-higher-on-google',
   // Seventeen numbered tactics plus the Search Console pattern table.
   // Cutting either drops the brief: the tactics, the walkthrough, or CTR.
   'how-to-increase-organic-traffic',
@@ -150,6 +151,25 @@ function validatePost(filePath) {
   const links = countInternalLinks(content);
   if (links < 5) {
     errors.push(`internal links ${links} < 5`);
+  }
+
+  // HowTo JSON-LD is only valid when the same steps are visible. A step that
+  // exists only in frontmatter would ship markup the reader cannot see.
+  if (data.howto && typeof data.howto === 'object') {
+    const steps = Array.isArray(data.howto.steps) ? data.howto.steps : [];
+    if (steps.length < 2) {
+      errors.push(`howto has ${steps.length} steps (need ≥2)`);
+    }
+    for (const step of steps) {
+      const name = step && typeof step.name === 'string' ? step.name.trim() : '';
+      const text = step && typeof step.text === 'string' ? step.text.trim() : '';
+      if (!name || !text) {
+        errors.push('howto step is missing a name or text');
+        continue;
+      }
+      if (!content.includes(name)) errors.push(`howto step name not in body: ${name}`);
+      if (!content.includes(text)) errors.push(`howto step text not in body: ${text.slice(0, 80)}`);
+    }
   }
 
   // buildMetadata() hard-caps descriptions at 160 and cuts at a word boundary,

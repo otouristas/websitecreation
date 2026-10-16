@@ -32,6 +32,7 @@ import { getAppPath } from "@/lib/app-links";
 import {
   generateBreadcrumbSchema,
   generateFAQSchema,
+  generateHowToSchema,
   generateItemListSchema,
   combineSchemas,
 } from "@/lib/seo/schema";
@@ -95,6 +96,20 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     faqItems.length > 0
       ? generateFAQSchema({ faqs: faqItems.map((f) => ({ question: f.question, answer: f.answer })) })
       : null;
+  // Same contract as the blog validator: HowTo markup is emitted only when
+  // every step name and sentence is already visible in the article.
+  const howToVisible =
+    post.howto != null &&
+    post.howto.steps.every(
+      (step) => post.content.includes(step.name) && post.content.includes(step.text),
+    );
+  const howToSchema = howToVisible && post.howto
+    ? generateHowToSchema({
+        name: post.howto.name,
+        description: post.howto.description,
+        steps: post.howto.steps,
+      })
+    : null;
   // Opt-in. Numbered guides elsewhere stay Article + FAQ only.
   const strategyItems = post.itemList ? numberedStrategyItems(post.headings) : [];
   const itemListSchema =
@@ -109,9 +124,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           })),
         })
       : null;
-  const schemas = combineSchemas(articleSchema, breadcrumbSchema,
+  const schemas = combineSchemas(
+    articleSchema,
+    breadcrumbSchema,
     ...(faqSchema ? [faqSchema] : []),
-    ...(itemListSchema ? [itemListSchema] : []));
+    ...(howToSchema ? [howToSchema] : []),
+    ...(itemListSchema ? [itemListSchema] : []),
+  );
 
   /**
    * Related posts fall back from pillar to category. The pillar-only version
