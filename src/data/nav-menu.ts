@@ -261,7 +261,8 @@ export function getNavModel(locale: SiteLocale): NavModel {
       {
         title: t('Guides', 'Οδηγοί'),
         items: [
-          { href: lp('/blog'), label: 'Blog', desc: t('SEO, AI search and web design', 'SEO, αναζήτηση AI, ιστοσελίδες'), icon: 'book' },
+          { href: lp('/seo-guides'), label: t('SEO guides', 'Οδηγοί SEO'), desc: t('The ranking guides in one index', 'Οι οδηγοί κατάταξης σε ένα ευρετήριο'), icon: 'book' },
+          { href: lp('/blog'), label: 'Blog', desc: t('SEO, AI search and web design', 'SEO, αναζήτηση AI, ιστοσελίδες'), icon: 'library' },
           { href: lp('/resources'), label: t('Resources', 'Οδηγοί & υλικό'), icon: 'library' },
           { href: lp('/glossary'), label: t('SEO glossary', 'Λεξικό SEO'), icon: 'list' },
           { href: lp('/help'), label: t('GSC Boost help center', 'Κέντρο βοήθειας GSC Boost'), icon: 'book' },

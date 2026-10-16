@@ -1,8 +1,9 @@
 ---
 slug: on-page-seo
-title: On-Page SEO - How to Optimize a Page That Ranks
-description: What on-page SEO is and how to do it - titles, headings, content, internal links, schema and a practical 2026 checklist with costs and timelines.
+title: "On-Page SEO Tips: How to Optimize a Page That Ranks"
+description: "Work through these numbered on-page SEO tips for titles, headings, content, internal links and schema, plus a 2026 checklist with costs and timelines."
 date: 2026-07-23
+updated: 2026-10-16
 author: AnotherSEOGuru Editorial Team
 category: SEO
 categoryColor: bg-emerald-100 text-emerald-800
@@ -12,6 +13,8 @@ faq:
     answer: On-page SEO is optimizing titles, headings, content, internal links, and media on a URL so it clearly matches search intent and earns clicks.
   - question: How to do on-page SEO?
     answer: Pick one primary intent, put the keyword in the title and H1 naturally, answer the query early, use clear H2s for related questions, add internal links, and improve CTR with a compelling meta description.
+  - question: What are the main on-page SEO tips?
+    answer: One intent per URL, a unique title and H1, an early answer, question-style headings, internal links, image alt text, and schema that matches the visible page.
   - question: On-page vs technical SEO?
     answer: Technical SEO covers crawl, indexation, speed and architecture. On-page SEO covers relevance and clarity of the content on the URL. You need both.
   - question: How long does on-page SEO take to work?
@@ -20,31 +23,26 @@ faq:
     answer: Page rewrites often run €150–€450 per URL depending on research depth. Ongoing on-page work is usually included in retainers from {{ENTRY_SEO}}/mo.
 ---
 
-**On-page SEO** is everything you control on a URL to match search intent: title tags, headings, body copy, media, internal links and structured data. It is the highest-control lever after [technical SEO](/en/blog/technical-seo-guide) - and the place most Greek businesses still leave easy wins on the table. This guide gives a practical 2026 process, a checklist, realistic costs and the mistakes that keep good sites stuck on page two.
+**On-page SEO** is everything you control on a URL to match search intent: title tags, headings, body copy, media, internal links and structured data. It is the highest-control lever after [technical SEO](/en/blog/technical-seo-guide) - and the place most Greek businesses still leave easy wins on the table. This guide gives numbered on-page SEO tips, a checklist, realistic costs and the mistakes that keep good sites stuck on page two.
 
 Pair this with [keyword research](/en/blog/keyword-research-guide), [SEO content](/en/blog/seo-content-guide) and, when needed, [content creation services](/en/services/content-creation).
 
-## The On-Page Process (From Intent to Publish)
+## On-Page SEO Tips
 
-### 1. Lock one primary intent
+Work through these on-page SEO tips in order. Each one is something you control on the URL, before you spend time on links or a redesign.
 
-Every URL should win one job: book a room type, hire a service in a city, or answer a how-to. If two intents fight on one page, split them. Check Search Console and SERPs to confirm what Google already rewards for that query.
-
-### 2. Align title, H1 and first screen
-
-Put the primary phrase near the front of the title naturally. Mirror it in a human H1. Answer the query in the first screenful - definition, outcome or offer - before biography or fluff. Meta descriptions do not rank directly but drive CTR; write them like ads for the SERP.
-
-### 3. Structure with useful H2/H3s
-
-Use headings for related questions people ask next: pricing, process, timelines, comparisons, FAQs. This helps scanners, featured snippets and AI Overviews. Avoid heading soup with no real sections underneath.
-
-### 4. Prove it and link it
-
-Add unique proof: local detail, photos, data, examples, schema-ready FAQs. Internally link to related [services](/en/services) and supporting guides. Externally, earn trust later via [off-page SEO](/en/blog/off-page-seo) - but do not skip internal links first ([checklist](/en/blog/internal-linking-audit-checklist)).
-
-### 5. Media and schema
-
-Compress images, use descriptive alt text, lazy-load galleries. Add schema only when it matches visible content (FAQ, LocalBusiness, Product, Hotel). Fake schema is a liability.
+1. **Lock one [search intent](/en/glossary/search-intent).** If the URL tries to book a room, sell a service and answer a how-to at once, split it. Check Search Console and the live results before you write.
+2. **Write a unique [title tag](/en/glossary/title-tag).** Put the primary phrase near the front, keep it near 50–60 characters, and make the promise specific enough to earn the click.
+3. **Treat the [meta description](/en/glossary/meta-description) as the snippet.** It is not a ranking factor. Readers use it to decide the click ([CTR](/en/glossary/ctr)).
+4. **Use one [H1](/en/glossary/h1-tag) and a real [heading structure](/en/glossary/heading-structure).** The H1 agrees with the title. H2s are the next questions (price, process, timing), each with a real section under it.
+5. **Answer in the first screen.** [Content optimization](/en/glossary/content-optimization) puts the definition, outcome, or offer before the company story. Scanners and AI Overviews both look for that early answer.
+6. **Turn [People Also Ask](/en/glossary/people-also-ask) into H2s.** A short answer under a question heading is also how a page becomes a candidate for a [featured snippet](/en/glossary/featured-snippet).
+7. **Use the [keyword](/en/glossary/keywords) where it reads naturally.** Title, H1, and the opening are enough, then synonyms. Chasing a [keyword density](/en/glossary/keyword-density) percentage produces copy nobody finishes.
+8. **Add proof, then link it.** Local detail, photos, prices, and examples belong on the page. Use [internal linking](/en/glossary/internal-linking) with descriptive [anchor text](/en/glossary/anchor-text) toward related [services](/en/services) and the [internal linking checklist](/en/blog/internal-linking-audit-checklist). Earn external trust later with [off-page SEO](/en/blog/off-page-seo).
+9. **Describe images.** Write [image alt text](/en/glossary/image-alt-text) that says what the picture shows, compress the file, and lazy-load galleries. Decorative images can use an empty alt.
+10. **Mark up only visible [structured data](/en/glossary/structured-data).** FAQ, LocalBusiness, Product, or Hotel schema has to match what the reader can see. Markup for questions that are not on the page is a liability.
+11. **Match the call to action to the intent.** A how-to can point to the next guide. A service page needs a form, phone number, or booking step on the first screen.
+12. **Stop [keyword cannibalization](/en/glossary/keyword-cannibalization).** If a blog post and a service page target the same query, keep the URL that should rank and point the other one at it.
 
 ## On-Page Checklist for 2026
 
@@ -86,7 +84,7 @@ If the site is slow or poorly indexed, fix technical issues first - otherwise on
 
 ## How On-Page Ties to Traffic and AI Visibility
 
-Better on-page clarity raises relevance and CTR, which feeds [organic traffic growth](/en/blog/how-to-increase-organic-traffic). Structured answers and FAQs also improve citation odds in AI assistants - see [AI Visibility](/en/services/ai-visibility) and [GEO vs SEO vs AEO](/en/blog/geo-vs-seo-vs-aeo). On-page is not “old SEO”; it is the layer models quote when they recommend you.
+Better on-page clarity raises relevance and CTR, which feeds [organic traffic growth](/en/blog/how-to-increase-organic-traffic). Structured answers and FAQs also improve citation odds in AI assistants - see [AI Visibility](/en/services/ai-visibility) and [GEO vs SEO vs AEO](/en/blog/geo-vs-seo-vs-aeo).
 
 ## Example: Turning a Weak Service Page into a Ranking URL
 
@@ -99,9 +97,7 @@ Imagine a page titled “SEO Services | Company” with a 90-word blurb and a co
 5. Internally link from [What is SEO?](/en/blog/what-is-seo), [how to increase organic traffic](/en/blog/how-to-increase-organic-traffic) and related city pages.
 6. Add FAQ schema only for questions visible on the page.
 
-Within weeks you often see CTR and engagement lift; within 1–3 months relevance signals catch up if technical health is fine. The same pattern applies to hotel room pages, law-firm practice areas and gym membership pages - change the proof, keep the structure.
-
-If you manage dozens of URLs, batch by opportunity: high impressions + weak CTR first, then thin pages with commercial intent, then net-new coverage. That sequencing beats random blog publishing every time.
+The same structure fits a hotel room page, a practice area or a membership page: change the proof, keep the headings. When many URLs need work, start with high impressions and a weak title.
 
 ## FAQ
 
@@ -112,6 +108,10 @@ Optimizing the elements on a URL - titles, headings, copy, media, links, schema 
 ### How do I do it well?
 
 One intent, clear title/H1, answer early, structured sections, proof, internal links, honest schema. Write for humans; keywords guide structure, not stuffing.
+
+### What are the main on-page SEO tips?
+
+One intent per URL, a unique title and H1, an early answer, question-style headings, internal links, image alt text, and schema that matches the visible page.
 
 ### On-page vs technical SEO?
 

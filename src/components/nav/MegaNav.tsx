@@ -11,7 +11,7 @@ import { trackCtaClick } from '@/lib/analytics';
 import { NAV_ICONS } from './nav-icons';
 
 const triggerClass =
-  'inline-flex items-center gap-1 whitespace-nowrap rounded-full px-3.5 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-foreground/6 hover:text-foreground aria-expanded:bg-foreground/6 aria-expanded:text-foreground';
+  'inline-flex items-center gap-1 whitespace-nowrap rounded-full px-2.5 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-foreground/6 hover:text-foreground aria-expanded:bg-foreground/6 aria-expanded:text-foreground';
 
 function ItemLink({ item, onNavigate }: { readonly item: NavItem; readonly onNavigate: () => void }) {
   const Icon = item.icon ? NAV_ICONS[item.icon] : null;
@@ -231,7 +231,7 @@ export function MegaNav({ model, chips }: { readonly model: NavModel; readonly c
   const active = model.menus.find((m) => m.id === open) ?? null;
 
   return (
-    <div ref={rootRef} className="flex items-center gap-0.5" onMouseLeave={scheduleClose} onMouseEnter={cancelClose}>
+    <div ref={rootRef} className="flex min-w-0 items-center" onMouseLeave={scheduleClose} onMouseEnter={cancelClose}>
       {model.menus.map((menu) => (
         <button
           key={menu.id}
@@ -268,7 +268,7 @@ export function MegaNav({ model, chips }: { readonly model: NavModel; readonly c
               <div
                 ref={panelRef}
                 id={`mega-${active.id}`}
-                className="pointer-events-auto mx-auto max-w-6xl pt-1"
+                className="pointer-events-auto mx-auto max-w-6xl pt-1 xl:max-w-7xl 2xl:max-w-[82rem]"
                 onMouseEnter={cancelClose}
                 onMouseLeave={scheduleClose}
               >

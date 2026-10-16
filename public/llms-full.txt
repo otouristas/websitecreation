@@ -930,21 +930,21 @@ The Greek cities below have service×city pages for website creation, local SEO,
   - Q: How do you measure GEO success?
     A: Track a fixed prompt set monthly across models, log brand mentions and links, and correlate with Search Console clicks and leads - not vanity “AI rank” scores.
 
-### How to Increase Organic Traffic (Practical Playbook)
+### How to Increase Organic Traffic: 17 Tactics
 - **URL:** https://anotherseoguru.com/en/blog/how-to-increase-organic-traffic
 - **Locale:** en · **Date:** 2026-07-23
-- **Description:** How to grow organic traffic - more impressions, better CTR, technical fixes, content, and links - with a realistic timeline and 2026 checklist.
+- **Description:** How to increase organic traffic with 17 tactics: Search Console walkthroughs, CTR title tests, indexation fixes, content, links, and a 90-day sequence.
 - **Embedded FAQ:**
   - Q: How to increase organic traffic?
-    A: Win more impressions by covering the right topics, improve CTR with better titles, fix indexation issues, and build internal links from strong pages. Compound with consistent publishing and relevant links.
+    A: Work in order. Baseline Search Console, fix indexation, rewrite titles and descriptions on URLs that already get impressions, cover real queries, add internal links, then earn relevant links. Judge each change in Search Console. The list is not a click forecast.
   - Q: What is organic traffic?
-    A: Organic traffic is visits from unpaid search results (and increasingly AI referrals that cite your pages). It excludes paid ads, email, and most social clicks.
+    A: Visits from unpaid search results. It excludes paid ads, email, and most social clicks. AI answers that cite your pages are a related referral. Track them separately from Search Console web clicks.
   - Q: How long does it take to grow organic traffic?
-    A: Local and long-tail pages often move in 2–3 months. Competitive head terms usually need 4–6+ months of content, technical fixes and authority. Gains compound month over month.
+    A: CTR and indexation fixes on pages that already get impressions often move within a few weeks. New local and long-tail pages commonly need a couple of months. Competitive terms usually need several months of content, technical work, and relevant links. These are working windows, not promised click totals.
   - Q: Why did my organic traffic drop?
-    A: Common causes include algorithm updates, lost backlinks, indexation bugs, cannibalization, site migrations without redirects, or seasonality. Audit Search Console before rewriting everything.
-  - Q: What budget grows organic traffic meaningfully?
-    A: Serious work in Greece typically runs €500–€1,500 per month depending on competition. One-off audits often cost €300–€800 before a retainer starts.
+    A: Common causes are seasonality, a lost indexation state, a migration without redirects, cannibalization, lost links, or an algorithm update. Compare the same dates year over year in Search Console before rewriting the site.
+  - Q: What should I budget to grow organic traffic?
+    A: In Greece, Foundations starts at €500 per month, Growth at €900, and Authority at €1,500, net of VAT. Technical audits start at €450. Spend does not predict a traffic number.
 
 ### How to Do Keyword Research for SEO (Step-by-Step)
 - **URL:** https://anotherseoguru.com/en/blog/keyword-research-guide
@@ -1044,11 +1044,13 @@ The Greek cities below have service×city pages for website creation, local SEO,
   - Q: Αξίζει το SEO ή να βάλω τα χρήματα σε Google Ads;
     A: Είναι διαφορετικά εργαλεία. Τα Google Ads φέρνουν άμεση κίνηση όσο πληρώνετε, ενώ το SEO χτίζει σταθερή οργανική ροή που μένει και μακροπρόθεσμα κοστίζει λιγότερο ανά επισκέπτη.
 
-### SEO Content - How to Write Pages That Rank and Convert
+### Content Optimization for SEO Guide
 - **URL:** https://anotherseoguru.com/en/blog/seo-content-guide
 - **Locale:** en · **Date:** 2026-07-23
-- **Description:** What SEO content is and how to write it: intent, structure, FAQs, proof and internal links, plus formats, costs, timelines and when to outsource it.
+- **Description:** Content optimization for SEO: a six-step workflow, a before-and-after example, and how to rewrite titles, proof and links so a page matches intent.
 - **Embedded FAQ:**
+  - Q: What is content optimization for SEO?
+    A: Content optimization for SEO is rewriting a page so the title, opening, headings, proof and internal links match one search intent. It makes the page clearer. It does not, by itself, produce rankings or extra visits.
   - Q: How to write SEO content?
     A: Pick one primary intent, answer it in the first screen, use clear headings for related questions, add proof, and link to related services. Write for humans first; keywords guide structure, not stuffing.
   - Q: What is SEO content?
