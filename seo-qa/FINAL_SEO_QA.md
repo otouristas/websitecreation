@@ -274,10 +274,8 @@ into `/platform/features`.
    Likely `Κατασκευαστές Στεγών`. Naming is yours to decide, so it was left alone.
 3. **`/en/services/eshop-seo/volos-gr` H1** reads `E-shop SEO in Βόλος (Volos)` — Greek script in
    an English H1. Defensible for local relevance, but inconsistent with the title.
-4. **Two case-study titles repeat the client brand** (`Fitness Hood Training Center | Fitness Hood`).
-   Authored `seoTitle` values, not a template bug.
-5. **`sitemap-locations-en-us.xml`** returns 200 with zero URLs and is not in the index.
-6. **Footer link volume** — see Internal linking above.
+4. **`sitemap-locations-en-us.xml`** returns 200 with zero URLs and is not in the index.
+5. **Footer link volume** — see Internal linking above.
 
 ---
 

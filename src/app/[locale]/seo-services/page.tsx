@@ -29,6 +29,7 @@ import {
 } from '@/lib/seo/schema';
 import { generateBreadcrumbs } from '@/lib/linking';
 import { getSeoServicesPillarCopy } from '@/data/seo-services-pillar';
+import { getSeoHubServicesBlock, getSeoServiceCards } from '@/data/seo-service-spokes';
 import { resolvePriceTokens } from '@/data/pricing';
 import { PROJECTS_DELIVERED_LABEL, SEO_MIN_TERM_MONTHS } from '@/data/company-facts';
 import { portfolioProjects } from '@/data/portfolio';
@@ -112,9 +113,11 @@ export default async function SeoServicesPillarPage({ params }: PageProps) {
     .filter((p) => ['rent-a-car', 'hotel', 'tours'].includes(p.category))
     .slice(0, 6);
 
+  const serviceCards = getSeoServiceCards(siteLocale);
+  const servicesBlock = getSeoHubServicesBlock(siteLocale);
+
   const related = [
-    { path: '/services/local-seo', title: isEl ? 'Τοπικό SEO' : 'Local SEO' },
-    { path: '/services/seo-audits', title: isEl ? 'SEO audit' : 'SEO audit' },
+    ...serviceCards.map((card) => ({ path: card.href, title: card.title })),
     { path: '/services/ai-visibility', title: isEl ? 'AI Visibility (GEO/AEO)' : 'AI visibility (GEO/AEO)' },
     { path: '/services/website-creation', title: isEl ? 'Κατασκευή ιστοσελίδων' : 'Website creation' },
     { path: '/pricing', title: isEl ? 'Τιμές και πακέτα' : 'Pricing and packages' },
@@ -158,7 +161,16 @@ export default async function SeoServicesPillarPage({ params }: PageProps) {
           caption={tx('A sample monthly report, the kind every client gets.', 'Δείγμα μηνιαίας αναφοράς, όπως αυτή που παίρνει κάθε πελάτης.')}
         />
 
-        <KitSection className="mt-6 sm:mt-10">
+        <KitSection className="mt-6 sm:mt-10" id="services">
+          <KitHeading
+            eyebrow={servicesBlock.eyebrow}
+            title={<AccentTitle text={servicesBlock.title} />}
+            description={servicesBlock.description}
+          />
+          <CardGrid className="mt-12" items={serviceCards} locale={siteLocale} />
+        </KitSection>
+
+        <KitSection>
           <FeatureRow
             eyebrow={isEl ? 'Παραδοτέα' : 'Deliverables'}
             eyebrowIcon={<ListChecks />}

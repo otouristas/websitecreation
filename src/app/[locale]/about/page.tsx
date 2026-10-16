@@ -100,10 +100,10 @@ export default async function AboutPage({ params }: PageProps) {
             icon: "📈",
           },
         ],
-        // Every figure derives from repo data. These read "500+", "98%" and
-        // "50+" against real values of 71 and 31, and the satisfaction number
-        // had no survey, NPS or source behind it at all - so it is gone rather
-        // than corrected.
+        // Every figure derives from repo data. These previously read "500+",
+        // "98%" and "50+" with no source in the repo, and the satisfaction
+        // number had no survey, NPS or source behind it at all - so it is
+        // gone rather than corrected.
         stats: [
           { value: `${PROJECTS_DELIVERED}+`, label: "Ολοκληρωμένα έργα" },
           { value: `${industries.length}`, label: "Κλάδοι που εξυπηρετούμε" },

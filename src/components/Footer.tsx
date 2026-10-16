@@ -40,6 +40,9 @@ const EL_SEO_HUB_LINKS: { label: string; href: string }[] = [
   { label: "SEO Κως", href: elServiceLocationPath("local-seo", "kos-gr") },
   { label: "SEO Χανιά", href: elServiceLocationPath("local-seo", "chania-gr") },
   { label: "Υπηρεσίες SEO", href: "/el/seo-services" },
+  { label: "Τεχνικό SEO", href: "/el/seo-services/technical" },
+  { label: "On-page SEO", href: "/el/seo-services/on-page" },
+  { label: "Στρατηγική SEO", href: "/el/seo-services/strategy" },
   { label: "Κατασκευή E-shop", href: "/el/services/eshop-woocommerce" },
   { label: "SEO για E-shop", href: "/el/services/eshop-seo" },
   { label: "Κατασκευή E-shop Αθήνα", href: elServiceLocationPath("eshop-woocommerce", "athens-gr") },
@@ -61,6 +64,9 @@ const EL_SEO_HUB_LINKS: { label: string; href: string }[] = [
 const EN_SEO_HUB_LINKS: { label: string; href: string }[] = [
   // Head-term service pages (C10: "seo services", "web development agency", "modern web design")
   { label: "SEO Services", href: "/en/seo-services" },
+  { label: "Technical SEO", href: "/en/seo-services/technical" },
+  { label: "On-page SEO", href: "/en/seo-services/on-page" },
+  { label: "SEO Strategy", href: "/en/seo-services/strategy" },
   { label: "Web Development Agency", href: "/en/services/website-creation" },
   { label: "SEO Web Design", href: "/en/services/seo-web-design" },
   { label: "E-commerce / E-shop", href: "/en/services/eshop-woocommerce" },
@@ -364,6 +370,11 @@ export default function Footer({ locale: localeProp }: { locale?: SiteLocale }):
               <li>
                 <Link href={consultantPath(isEl ? "el" : "en")} className={columnLinkClass}>
                   {isEl ? "Σύμβουλος SEO" : "SEO consultant"}
+                </Link>
+              </li>
+              <li>
+                <Link href={lp("/seo-guru")} className={columnLinkClass}>
+                  SEO guru
                 </Link>
               </li>
               <li>

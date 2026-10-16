@@ -28,7 +28,7 @@ If you need execution help, see our [link building services](/en/services/link-b
 
 ### Editorial backlinks
 
-The core of off-page work. A link from a trusted, topically related site to a page that deserves it remains the strongest off-site signal. Focus on relevance and editorial context, not raw Domain Rating. Deep dive: [link building guide](/en/blog/link-building-guide).
+The core of off-page work. A link from a trusted, topically related site to a page that deserves it remains the strongest off-site signal. Focus on relevance and editorial context, not raw Domain Rating. Deep dive: [link building guide](/en/blog/link-building-guide). To see who already links to a competitor, use the [backlink checker guide](/en/blog/backlink-checker).
 
 ### Digital PR and linkable assets
 

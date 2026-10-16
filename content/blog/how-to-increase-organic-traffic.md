@@ -44,7 +44,7 @@ Answer the query in the first screen, use clear H2s for related questions, add p
 
 ### 5. Authority - relevant links and brand mentions
 
-Competitive queries need external trust. Focus on niche-relevant editorial links, not directory spam. Pair with [off-page SEO](/en/blog/off-page-seo) and [link building](/en/blog/link-building-guide). For local businesses, reviews and Google Business Profile health matter as much as classic backlinks - see [local SEO](/en/blog/local-seo-guide).
+Competitive queries need external trust. Focus on niche-relevant editorial links, not directory spam. Pair with [off-page SEO](/en/blog/off-page-seo) and [link building](/en/blog/link-building-guide). Check the gap first with a [backlink checker](/en/blog/backlink-checker). For local businesses, reviews and Google Business Profile health matter as much as classic backlinks - see [local SEO](/en/blog/local-seo-guide).
 
 ## Realistic Timelines and Investment
 
