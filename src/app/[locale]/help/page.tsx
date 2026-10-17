@@ -2,12 +2,15 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
 import { ArticleBody, ShotFrame } from "@/components/help/ArticleBody";
-import { ContactCard } from "@/components/help/HelpShell";
+import { HelpHomeCards } from "@/components/help/HelpHomeCards";
+import { HelpHomeSearch } from "@/components/help/HelpHomeSearch";
+import { ContactCard, helpCopy } from "@/components/help/HelpShell";
 import { DocsPage, headingsOf } from "@/components/docs/DocsPage";
 import { DocsShell } from "@/components/docs/DocsShell";
 import { SignupCard } from "@/components/docs/SignupCard";
 import { appLink } from "@/components/gsc-boost/copy";
 import { IPHONE_CATEGORY, articleFaqs, helpContent, helpPath, type Block, type Shot } from "@/data/help";
+import { helpHomeCards, helpSearchEntries } from "@/lib/help/home";
 import { categoryIcon } from "@/lib/docs/nav";
 import { glossaryPath } from "@/lib/docs/glossary";
 import { isValidLocale, localizedPath, type SiteLocale } from "@/lib/i18n/locale";
@@ -174,8 +177,11 @@ export default async function HelpHomePage({ params }: PageProps) {
   if (!isValidLocale(raw)) notFound();
   const locale: SiteLocale = raw;
   const el = locale === "el";
+  const t = helpCopy(locale);
   const blocks = homeBlocks(locale);
   const content = helpContent(locale);
+  const cards = helpHomeCards(locale);
+  const entries = helpSearchEntries(locale, t.short);
   const crumbs = [
     { name: el ? "Αρχική" : "Home", url: localizedPath(locale, "/") },
     { name: el ? "Κέντρο βοήθειας" : "Help center", url: helpPath(locale) },
@@ -209,6 +215,12 @@ export default async function HelpHomePage({ params }: PageProps) {
         feedbackId="home"
         rail={<SignupCard locale={locale} source="help-home" />}
       >
+        <HelpHomeSearch
+          entries={entries}
+          contactHref={localizedPath(locale, "/contact")}
+          copy={t.search}
+        />
+        <HelpHomeCards cards={cards} label={t.browse} />
         <ShotFrame
           shot={{
             src: "/images/docs/web/overview-light.webp",

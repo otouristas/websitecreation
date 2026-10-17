@@ -14,9 +14,12 @@ export function helpCopy(locale: SiteLocale) {
       ? "Οδηγοί για κάθε μέρος του AnotherSEOGuru App, από τη σύνδεση του Search Console μέχρι τη λειτουργία ενός γραφείου πάνω του."
       : "Guides for every part of AnotherSEOGuru App, from connecting Search Console to running an agency on it.",
     search: {
-      placeholder: el ? "Αναζήτηση στο κέντρο βοήθειας" : "Search the help center",
+      placeholder: el ? "Πώς μπορούμε να βοηθήσουμε;" : "How can we help?",
       empty: el ? "Κανένα άρθρο δεν ταιριάζει με «{query}»." : "No articles match “{query}”.",
       emptyHint: el ? "Δοκιμάστε λιγότερες ή διαφορετικές λέξεις." : "Try fewer or different words.",
+      whatsapp: el ? "Μιλήστε μας στο WhatsApp" : "Chat on WhatsApp",
+      contact: el ? "Σελίδα επικοινωνίας" : "Contact page",
+      clear: el ? "Καθαρισμός αναζήτησης" : "Clear search",
     },
     topics: el ? "Θέματα" : "Topics",
     browse: el ? "Ανά θέμα" : "Browse by topic",
