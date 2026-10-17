@@ -8,8 +8,8 @@ import { WhatsAppIcon } from '@/components/icons/WhatsAppIcon';
 import { siteLocaleFromPath, type SiteLocale } from '@/lib/i18n/locale';
 
 const COPY: Record<SiteLocale, { full: string; short: string; aria: string }> = {
-  en: { full: 'Chat on WhatsApp', short: 'WhatsApp', aria: `Chat on WhatsApp ${PHONE_DISPLAY}` },
-  el: { full: 'Μίλα μας στο WhatsApp', short: 'WhatsApp', aria: `WhatsApp ${PHONE_DISPLAY}` },
+  en: { full: 'Sales enquiry', short: 'Sales', aria: `Sales enquiry on WhatsApp ${PHONE_DISPLAY}` },
+  el: { full: 'Ερώτηση πώλησης', short: 'Πώληση', aria: `Ερώτηση πώλησης στο WhatsApp ${PHONE_DISPLAY}` },
 };
 
 /**

@@ -1,4 +1,7 @@
 import type { SiteLocale } from '@/lib/i18n/locale';
+import { launchOfferView, packageEligible, type LaunchOfferView } from '@/data/commercial/campaign';
+import { centsToEuros, discountedBaseCents, eurosToCents, grossCents, type VatTreatment } from '@/data/commercial/money';
+import { seoLaunchFor } from '@/data/commercial/seo-launch';
 
 /**
  * Single source of truth for every price on the site.
@@ -15,11 +18,12 @@ import type { SiteLocale } from '@/lib/i18n/locale';
 export const VAT_RATE = 0.24;
 
 /**
- * Summer promotion deadline, Europe/Athens.
+ * Retired summer-offer deadline, Europe/Athens.
  *
- * `isOfferActive()` gates every promotional price and all offer copy, so the
- * discount and its messaging disappear on their own after this instant. No
- * countdown timers and no scarcity claims - the date does the work.
+ * `isOfferActive()` describes that expired window only. It must not price
+ * website builds and it must not discount SEO retainers. The Website Launch
+ * Offer is a separate campaign (`src/data/commercial/campaign.ts`) and applies
+ * to the build base alone.
  */
 export const OFFER_ENDS = new Date('2026-08-31T23:59:59+03:00');
 
@@ -27,9 +31,9 @@ export function isOfferActive(now: Date = new Date()): boolean {
   return now.getTime() <= OFFER_ENDS.getTime();
 }
 
-/** Net -> gross. Rounded to cents so €892.80 renders exactly. */
-export function withVat(net: number): number {
-  return Math.round(net * (1 + VAT_RATE) * 100) / 100;
+/** Net euros -> gross euros for a VAT treatment. Public prices use Greek VAT. */
+export function withVat(net: number, treatment: VatTreatment = 'gr_standard'): number {
+  return centsToEuros(grossCents(eurosToCents(net), treatment));
 }
 
 /**
@@ -62,32 +66,61 @@ export interface Tier {
   readonly deliveryEl?: string;
 }
 
-/** The price actually charged today, net of VAT. */
-export function currentPrice(tier: Tier, now?: Date): number {
-  return isOfferActive(now) ? tier.offer : tier.regular;
+const WEBSITE_IDS = new Set(['starter', 'professional', 'business']);
+
+export function isWebsiteTier(tier: { readonly id: string }): boolean {
+  return WEBSITE_IDS.has(tier.id);
 }
+
+/**
+ * Net euros shown for a tier.
+ *
+ * Website builds use the launch-offer base when that view says the discount
+ * applies, and the list price otherwise. SEO retainers always use `regular`.
+ * Passing a date inside the old summer window does not discount them.
+ */
+export function currentPrice(tier: Tier, now?: Date): number {
+  if (!isWebsiteTier(tier)) return tier.regular;
+  return centsToEuros(displayedWebsiteBaseCents(tier, launchOfferView(undefined, now)));
+}
+
+/** List base in cents. The integer source for the 30% formula. */
+export function websiteListCents(tier: Tier): number {
+  return eurosToCents(tier.regular);
+}
+
+/** Build base in cents after the launch-offer rule. Extras are not passed through here. */
+export function displayedWebsiteBaseCents(tier: Tier, view: LaunchOfferView = launchOfferView()): number {
+  const list = websiteListCents(tier);
+  if (!view.discountApplies || !packageEligible(view.campaign, tier.id)) return list;
+  return discountedBaseCents(list, view.campaign.discount_bps);
+}
+
+export { seoLaunchFor };
 
 export const websitePackages: readonly Tier[] = [
   {
     id: 'starter',
     name: 'Website Starter',
     regular: 1500,
-    offer: 1200,
+    offer: 1050,
     forEn: 'Small but serious businesses that need a professional, SEO-ready website.',
     forEl: 'Μικρές αλλά σοβαρές επιχειρήσεις που χρειάζονται επαγγελματική ιστοσελίδα, έτοιμη για SEO.',
     includesEn: [
-      'Custom design on your brand, not a template',
-      'Mobile-first build and Core Web Vitals work',
-      'Technical SEO foundations and clean architecture',
-      'Analytics and Search Console configured',
-      'Training so you can run it yourself',
+      'Up to 5 pages and 1 language',
+      'Contact form',
+      'Technical SEO on the build',
+      'One training session, up to 60 minutes',
+      'Two consolidated revision rounds',
+      'No mandatory care plan and no app purchase',
     ],
     includesEl: [
-      'Σχεδιασμός στα μέτρα του brand σας, όχι έτοιμο template',
-      'Κατασκευή mobile-first και εργασία στα Core Web Vitals',
-      'Τεχνικά θεμέλια SEO και καθαρή αρχιτεκτονική',
-      'Ρύθμιση Analytics και Search Console',
-      'Εκπαίδευση για να το διαχειρίζεστε μόνοι σας',
+      'Έως 5 σελίδες και 1 γλώσσα',
+      'Φόρμα επικοινωνίας',
+      'Τεχνικό SEO στην κατασκευή',
+      'Μία εκπαίδευση έως 60 λεπτά',
+      'Δύο συγκεντρωτικοί γύροι αναθεωρήσεων',
+      'Χωρίς υποχρεωτικό πακέτο φροντίδας και χωρίς αγορά εφαρμογής',
     ],
     deliveryEn: '3 to 5 weeks',
     deliveryEl: '3 έως 5 εβδομάδες',
@@ -96,23 +129,23 @@ export const websitePackages: readonly Tier[] = [
     id: 'professional',
     name: 'Website Professional',
     regular: 2500,
-    offer: 2000,
+    offer: 1750,
     popular: true,
     forEn: 'Hotels, tourism and service businesses that need deeper SEO architecture and conversion work.',
     forEl: 'Ξενοδοχεία, τουριστικές επιχειρήσεις και εταιρείες υπηρεσιών που χρειάζονται βαθύτερη αρχιτεκτονική SEO και εργασία στις μετατροπές.',
     includesEn: [
-      'Everything in Starter',
-      'Deeper information architecture and keyword mapping',
-      'Conversion paths designed around enquiries or bookings',
-      'Multilingual structure where the market needs it',
-      'Structured data matched to what is on the page',
+      'Everything in Starter, up to 12 pages',
+      'Keyword mapping',
+      'Structured data matched to the page',
+      'SEO Launch for 3 months while the offer applies: up to 2 hours of human SEO work per active month',
+      'No automatic renewal into a paid retainer',
     ],
     includesEl: [
-      'Όλα όσα περιλαμβάνει το Starter',
-      'Βαθύτερη αρχιτεκτονική πληροφορίας και αντιστοίχιση λέξεων-κλειδιών',
-      'Διαδρομές μετατροπής σχεδιασμένες για αιτήματα ή κρατήσεις',
-      'Πολυγλωσσική δομή όπου την απαιτεί η αγορά',
-      'Structured data που αντιστοιχούν στο ορατό περιεχόμενο',
+      'Όλα όσα περιλαμβάνει το Starter, έως 12 σελίδες',
+      'Αντιστοίχιση λέξεων-κλειδιών',
+      'Structured data που αντιστοιχούν στη σελίδα',
+      'SEO Launch 3 μηνών όσο ισχύει η προσφορά: έως 2 ώρες ανθρώπινης SEO εργασίας ανά ενεργό μήνα',
+      'Χωρίς αυτόματη ανανέωση σε μηνιαίο SEO επί πληρωμή',
     ],
     deliveryEn: '5 to 8 weeks',
     deliveryEl: '5 έως 8 εβδομάδες',
@@ -121,22 +154,20 @@ export const websitePackages: readonly Tier[] = [
     id: 'business',
     name: 'Website Business',
     regular: 4000,
-    offer: 3200,
-    forEn: 'Complex, multilingual, multi-location, e-commerce and custom projects.',
-    forEl: 'Σύνθετα έργα: πολυγλωσσικά, πολλαπλών τοποθεσιών, e-commerce και custom κατασκευές.',
+    offer: 2800,
+    forEn: 'Larger builds. E-commerce, migration and booking are included only when the quote names them.',
+    forEl: 'Μεγαλύτερες κατασκευές. E-commerce, μετάπτωση και κρατήσεις περιλαμβάνονται μόνο όταν τα ονομάζει η προσφορά.',
     includesEn: [
-      'Everything in Professional',
-      'E-commerce or booking integrations',
-      'Multi-location or multi-property structure',
-      'Custom functionality scoped to the project',
-      'Migration planning that protects existing rankings',
+      'Everything in Professional, up to 25 pages',
+      'SEO Launch for 6 months while the offer applies: up to 2 hours of human SEO work per active month',
+      'E-commerce, migration or booking only when the quote names them',
+      'No automatic renewal into a paid retainer',
     ],
     includesEl: [
-      'Όλα όσα περιλαμβάνει το Professional',
-      'Ενσωματώσεις e-commerce ή συστήματος κρατήσεων',
-      'Δομή πολλαπλών τοποθεσιών ή καταλυμάτων',
-      'Custom λειτουργικότητα προσαρμοσμένη στο έργο',
-      'Σχέδιο μετάπτωσης που προστατεύει τις υπάρχουσες κατατάξεις',
+      'Όλα όσα περιλαμβάνει το Professional, έως 25 σελίδες',
+      'SEO Launch 6 μηνών όσο ισχύει η προσφορά: έως 2 ώρες ανθρώπινης SEO εργασίας ανά ενεργό μήνα',
+      'E-commerce, μετάπτωση ή κρατήσεις μόνο όταν τα ονομάζει η προσφορά',
+      'Χωρίς αυτόματη ανανέωση σε μηνιαίο SEO επί πληρωμή',
     ],
     deliveryEn: '8 to 12+ weeks',
     deliveryEl: '8 έως 12+ εβδομάδες',
@@ -148,7 +179,7 @@ export const seoPackages: readonly Tier[] = [
     id: 'foundations',
     name: 'SEO Foundations',
     regular: 500,
-    offer: 400,
+    offer: 500,
     forEn: 'The minimum engagement at which serious SEO work is possible.',
     forEl: 'Το ελάχιστο επίπεδο συνεργασίας στο οποίο μπορεί να γίνει σοβαρή δουλειά SEO.',
     includesEn: [
@@ -170,7 +201,7 @@ export const seoPackages: readonly Tier[] = [
     id: 'growth',
     name: 'SEO Growth',
     regular: 900,
-    offer: 720,
+    offer: 900,
     popular: true,
     forEn: 'Businesses investing systematically in organic growth.',
     forEl: 'Επιχειρήσεις που επενδύουν συστηματικά στην οργανική ανάπτυξη.',
@@ -195,7 +226,7 @@ export const seoPackages: readonly Tier[] = [
     id: 'authority',
     name: 'SEO Authority',
     regular: 1500,
-    offer: 1200,
+    offer: 1500,
     forEn: 'Competitive markets, e-commerce, national and international programmes.',
     forEl: 'Ανταγωνιστικές αγορές, e-commerce, πανελλαδικά και διεθνή προγράμματα.',
     includesEn: [
@@ -266,6 +297,10 @@ export function entrySeoNet(now?: Date): number {
 export function getTierById(id: string): Tier | undefined {
   return [...websitePackages, ...seoPackages].find((t) => t.id === id);
 }
+
+export { CARE_PLANS, EXTRA_WORK_CENTS_PER_HOUR, extraWorkCents, SUPPORT_WINDOW } from '@/data/commercial/care';
+export { WEBSITE_LAUNCH_CAMPAIGN, launchOfferView } from '@/data/commercial/campaign';
+export { PRICING_VERSION, BUILD_DISCOUNT_BPS, installmentSplitCents } from '@/data/commercial/money';
 
 /**
  * Price tokens for authored copy.

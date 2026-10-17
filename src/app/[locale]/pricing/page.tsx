@@ -22,9 +22,12 @@ import {
   addOns,
   formatPrice,
   currentPrice,
-  isOfferActive,
   resolvePriceTokens,
+  launchOfferView,
 } from "@/data/pricing";
+import { launchCopy } from "@/data/commercial/launch-copy";
+import { LaunchOfferBanner } from "@/components/commercial/LaunchOfferBanner";
+import { WebsiteEstimator } from "@/components/commercial/WebsiteEstimator";
 import { SEO_MIN_TERM_MONTHS } from "@/data/company-facts";
 import { getPricingPageCopy } from "@/data/pricing-page-copy";
 import { Accent, Container, CtaBand, KitHeading, KitSection } from "@/components/kit";
@@ -73,7 +76,9 @@ export default async function PricingPage({
   const siteLocale = locale as SiteLocale;
   const isEl = siteLocale === "el";
   const lp = (path: string) => localizedPath(siteLocale, path);
-  const offerLive = isOfferActive();
+  const offerView = launchOfferView();
+  const offerCopy = launchCopy(siteLocale);
+  const offerLive = offerView.discountApplies;
   const raw = getPricingPageCopy(siteLocale);
   const rp = (text: string) => resolvePriceTokens(text, siteLocale);
 
@@ -115,6 +120,7 @@ export default async function PricingPage({
   const tx = (en: string, el: string) => (isEl ? el : en);
   const jump = [
     { href: "#websites", label: tx("Websites", "Ιστοσελίδες") },
+    { href: "#estimator", label: tx("Estimator", "Εκτίμηση") },
     { href: "#seo", label: "SEO" },
     { href: "#add-ons", label: tx("Add-ons", "Πρόσθετα") },
     { href: "#software", label: tx("GSC Boost software", "Λογισμικό GSC Boost") },
@@ -125,18 +131,19 @@ export default async function PricingPage({
     <>
       <SchemaMarkup schemas={schemas} />
       <Header locale={siteLocale} />
+      <LaunchOfferBanner locale={siteLocale} view={offerView} />
       <main className="blueprint-grid relative z-0">
         <PageHero
           locale={siteLocale}
           breadcrumbs={breadcrumbItems}
           pill={
             offerLive
-              ? { href: "#websites", kind: "save", tag: "-20%", text: tx("Summer Offer on new projects", "Summer Offer σε νέα έργα") }
+              ? { href: "#websites", kind: "save", tag: "−30%", text: offerCopy.stripCta }
               : {
-                  href: lp("/get-started#free-audit"),
+                  href: lp("/get-started"),
                   kind: "free",
-                  tag: tx("Free", "Δωρεάν"),
-                  text: tx("Every engagement starts with an SEO audit", "Κάθε συνεργασία ξεκινά με έλεγχο SEO"),
+                  tag: tx("Quote", "Προσφορά"),
+                  text: offerCopy.chooseQuote,
                 }
           }
           title={accentTail(copy.h1, isEl ? 2 : 1)}
@@ -144,13 +151,7 @@ export default async function PricingPage({
           meta={
             <div className="flex flex-col items-center gap-3">
               <p className="max-w-2xl text-[14px] font-medium text-foreground">{copy.heroNote}</p>
-              {offerLive ? (
-                <p className="inline-flex max-w-2xl flex-wrap items-center gap-2 rounded-xl border border-warning/30 bg-warning/10 px-4 py-2.5 text-[13px] leading-relaxed text-warning">
-                  {isEl
-                    ? "Summer Offer: 20% χαμηλότερη τιμή για νέα projects που θα επιβεβαιωθούν έως 31 Αυγούστου 2026."
-                    : "Summer Offer: 20% lower pricing for new projects confirmed by 31 August 2026."}
-                </p>
-              ) : null}
+              <p className="max-w-2xl text-[13px] leading-relaxed text-muted-foreground">{offerCopy.termsNearPrice}</p>
             </div>
           }
         >
@@ -189,6 +190,20 @@ export default async function PricingPage({
               <PriceCard key={tier.id} tier={tier} locale={siteLocale} />
             ))}
           </div>
+          <p className="mt-8 max-w-3xl text-[14px] leading-relaxed text-muted-foreground">{offerCopy.afterDelivery}</p>
+          {offerView.scarcity.kind === "verified" ? (
+            <p className="mt-4 max-w-3xl text-[14px] leading-relaxed text-foreground">
+              {offerCopy.scarcityCount(offerView.scarcity.remaining, offerView.scarcity.total)} {offerCopy.scarcityConfirm}
+            </p>
+          ) : offerLive ? (
+            <p className="mt-4 max-w-3xl text-[14px] leading-relaxed text-foreground">{offerCopy.scarcityAsk}</p>
+          ) : (
+            <p className="mt-4 max-w-3xl text-[14px] leading-relaxed text-foreground">{offerCopy.ended}</p>
+          )}
+        </KitSection>
+
+        <KitSection id="estimator" tinted>
+          <WebsiteEstimator locale={siteLocale} />
         </KitSection>
 
         <KitSection id="seo" tinted>

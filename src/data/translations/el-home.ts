@@ -84,9 +84,9 @@ export const elHome = {
     title: 'Πακέτα κατασκευής ιστοσελίδας',
     sub: 'Διαφανείς τιμές για τουρισμό και φιλοξενία. Περιλαμβάνονται SEO και GEO/AEO.',
     tiers: [
-      { name: 'Starter', price: 'από {{ENTRY_WEBSITE}}', blurb: 'Μικρές επιχειρήσεις & ενοικίαση αυτοκινήτου', bullets: ['Έως 5 σελίδες', 'Σχεδιασμός για όλες τις οθόνες', 'Βασικό SEO'] },
-      { name: 'Professional', price: 'από {{WEBSITE_PRO}}', blurb: 'Ξενοδοχεία & εκδρομές', bullets: ['Έως 10 σελίδες', 'Γκαλερί & κρατήσεις', 'Πλήρες SEO'] },
-      { name: 'Business', price: 'από {{WEBSITE_BUSINESS}}', blurb: 'Πολλά καταλύματα & πολύγλωσσο', bullets: ['Έως 20 σελίδες', 'AI chatbot', 'GEO/AEO'] },
+      { name: 'Starter', price: 'από {{ENTRY_WEBSITE}}', blurb: 'Μικρές επιχειρήσεις', bullets: ['Έως 5 σελίδες', '1 γλώσσα και φόρμα', 'Τεχνικό SEO'] },
+      { name: 'Professional', price: 'από {{WEBSITE_PRO}}', blurb: 'Ξενοδοχεία και υπηρεσίες', bullets: ['Έως 12 σελίδες', 'Keyword mapping', 'SEO Launch 3 μηνών'] },
+      { name: 'Business', price: 'από {{WEBSITE_BUSINESS}}', blurb: 'Μεγαλύτερα έργα', bullets: ['Έως 25 σελίδες', 'Ό,τι ονομάζει η προσφορά', 'SEO Launch 6 μηνών'] },
     ],
     cta: 'Ζητήστε προσφορά',
     linkPricing: 'Όλες οι τιμές',
@@ -150,7 +150,7 @@ export const EL_HOME_FAQ = [
   {
     question: 'Συμπεριλαμβάνεται SEO στην τιμή;',
     answer:
-      'Ναι. Κάθε ιστοσελίδα παραδίδεται έτοιμη για SEO: τεχνική ρύθμιση, schema, ταχύτητα, meta ετικέτες και οδηγίες για το περιεχόμενο. Προσφέρουμε και μηνιαία πακέτα SEO.',
+      'Η κατασκευή περιλαμβάνει τεχνικό SEO. Στα Professional και Business περιλαμβάνεται SEO Launch 3 ή 6 μηνών όσο ισχύει η προσφορά, χωρίς επιπλέον χρέωση και χωρίς αυτόματη ανανέωση. Το μηνιαίο SEO επί πληρωμή ξεκινά ξεχωριστά από {{ENTRY_SEO}}. Δεν υπάρχει εγγύηση κατάταξης.',
   },
   {
     question: 'Τι είναι το GEO και σε τι διαφέρει από το SEO και το AEO;',

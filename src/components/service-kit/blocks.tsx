@@ -9,6 +9,7 @@ import { KitSection, SoftwareCtas } from '@/components/kit/sections';
 import { PreviewFrame } from '@/components/kit/AppWindow';
 import { FollowThroughMini, OpportunitiesPreview, PlanMini } from '@/components/kit/previews';
 import { addOns, formatPrice, seoPackages, websitePackages } from '@/data/pricing';
+import { LaunchOfferBanner } from '@/components/commercial/LaunchOfferBanner';
 import type { PortfolioProject } from '@/data/portfolio';
 import { cn } from '@/lib/cn';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
@@ -207,17 +208,22 @@ export function PriceTiers({
   kind,
   locale,
   className,
+  showStrip = true,
 }: {
   readonly kind: 'seo' | 'website';
   readonly locale: SiteLocale;
   readonly className?: string;
+  readonly showStrip?: boolean;
 }) {
   const tiers = kind === 'seo' ? seoPackages : websitePackages;
   return (
-    <div className={cn('grid gap-6 md:grid-cols-3', className)}>
-      {tiers.map((tier) => (
-        <PriceCard key={tier.id} tier={tier} locale={locale} recurring={kind === 'seo'} />
-      ))}
+    <div className={className}>
+      {kind === 'website' && showStrip ? <LaunchOfferBanner locale={locale} /> : null}
+      <div className={cn('grid gap-6 md:grid-cols-3', kind === 'website' && 'mt-8')}>
+        {tiers.map((tier) => (
+          <PriceCard key={tier.id} tier={tier} locale={locale} recurring={kind === 'seo'} />
+        ))}
+      </div>
     </div>
   );
 }

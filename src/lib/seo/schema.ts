@@ -427,7 +427,7 @@ export interface OfferCatalogSchemaData {
  * explicitly rather than leaving it ambiguous.
  */
 export function generateOfferCatalogSchema(data: OfferCatalogSchemaData): SchemaOutput {
-  const price = data.priceOf ?? ((t: OfferTier) => t.offer);
+  const price = data.priceOf ?? ((t: OfferTier) => t.regular);
   return {
     '@context': 'https://schema.org',
     '@type': 'Service',

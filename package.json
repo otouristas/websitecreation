@@ -19,6 +19,7 @@
     "validate:blog": "node scripts/validate-blog-posts.mjs",
     "check:blog-seo": "npx tsx scripts/check-blog-seo.mts",
     "test:audit": "npx tsx scripts/audit-selftest.mts",
+    "test:commercial": "npx tsx scripts/commercial-selftest.mts",
     "report:ai-mode": "npx tsx scripts/ai-mode-report.mts",
     "check:greek": "node scripts/check-greek-glossary.mjs",
     "check:brand": "python3 src/brand/scripts/sync_tokens.py --check && node scripts/check-brand-assets.mjs && npx tsx scripts/generate-brand-og.ts --check",

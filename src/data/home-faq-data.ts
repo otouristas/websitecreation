@@ -45,7 +45,7 @@ export const HOME_FAQ_ITEMS: readonly HomeFaqItem[] = [
   {
     question: 'Is SEO included in the website price?',
     answer:
-      'Yes. Every website includes technical SEO, schema, Core Web Vitals work, and metadata. Ongoing ranking work is a separate monthly package from {{ENTRY_SEO}}.',
+      'The build includes technical SEO. Professional and Business include SEO Launch for 3 or 6 months while the website offer applies, at no extra charge and with no automatic renewal. Paid monthly SEO is a separate service from {{ENTRY_SEO}}. There is no ranking guarantee.',
   },
   {
     question: 'SEO or Google Ads, which should I buy first?',

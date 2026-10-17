@@ -22,12 +22,17 @@ export const INCLUDED_PAGES: Readonly<Record<string, number>> = {
 };
 
 /**
- * A second language is not a second website: the design, build and technical
- * work are already paid for, so the additional cost is translation-ready
- * templating, hreflang wiring and the content pass. A third of the base is the
- * figure we have quoted in practice, and it is indicative - the brief moves it.
+ * Retired blended rate. It mixed a second-language structure with translation
+ * and was applied to whatever base `currentPrice` returned, so a build
+ * discount would have reduced the language line too. Do not use it.
+ *
+ * Structure is `LANGUAGE_STRUCTURE_BPS` of the *list* base, per extra language.
+ * Translation is quoted separately and is not a percentage of the build.
  */
 export const EXTRA_LANGUAGE_SHARE = 0.35;
+
+/** 20 percentage points of list base, per extra language. Not discounted. */
+export const LANGUAGE_STRUCTURE_BPS = 2000;
 
 /**
  * The band the estimate is shown with.
@@ -71,7 +76,9 @@ export const FEATURE_RATES: readonly FeatureRate[] = [
   { id: 'ecommerce', labelEn: 'Online shop / checkout', labelEl: 'Ηλεκτρονικό κατάστημα', net: addOnPrice('ecommerce') },
   { id: 'chatbot', labelEn: 'AI chatbot', labelEl: 'AI chatbot', net: addOnPrice('chatbot') },
   { id: 'logo', labelEn: 'Logo and brand basics', labelEl: 'Λογότυπο και βασικά brand', net: addOnPrice('logo') },
-  { id: 'booking', labelEn: 'Booking / scheduling', labelEl: 'Κρατήσεις / ραντεβού', net: 450 },
+  { id: 'booking-link', labelEn: 'Booking link or widget', labelEl: 'Σύνδεσμος ή widget κράτησης', net: null },
+  { id: 'booking', labelEn: 'Booking provider integration', labelEl: 'Ενσωμάτωση παρόχου κρατήσεων', net: 450 },
+  { id: 'custom-app', labelEn: 'Custom application', labelEl: 'Εξατομικευμένη εφαρμογή', net: null },
   { id: 'members', labelEn: 'Member login area', labelEl: 'Περιοχή μελών', net: 400 },
   { id: 'blog', labelEn: 'Blog', labelEl: 'Ιστολόγιο', net: null },
   { id: 'contact-form', labelEn: 'Contact form', labelEl: 'Φόρμα επικοινωνίας', net: null },

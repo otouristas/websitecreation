@@ -80,6 +80,12 @@ export default async function PlatformPricingPage({ params }: PageProps) {
           actions={<SoftwareCtas locale={locale} source="pricing-hero" />}
           trust={<TrustLine items={softwareTrust(locale)} />}
         >
+          <p className="mx-auto mt-6 max-w-2xl px-4 text-center text-[14px] leading-relaxed text-muted-foreground">
+            {tx(
+              'A software subscription does not include human SEO implementation or website changes, unless a separate services agreement says so explicitly.',
+              'Η συνδρομή λογισμικού δεν περιλαμβάνει ανθρώπινη υλοποίηση SEO ή αλλαγές ιστοσελίδας, εκτός αν αναφέρεται ρητά σε ξεχωριστή συμφωνία υπηρεσιών.',
+            )}
+          </p>
           <Container className="mt-14">
             <p className="mb-7 flex items-center justify-center gap-2 text-[14px] font-medium text-foreground">
               <span className="flex size-5 items-center justify-center rounded-full bg-brand/15 text-brand">

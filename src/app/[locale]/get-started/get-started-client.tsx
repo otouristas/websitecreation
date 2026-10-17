@@ -20,7 +20,7 @@ import {
 } from '@/components/landing/SiteDetailsFetch';
 import { TrustLine, kitSecondaryBtn } from '@/components/kit';
 import { PageHero, accentTail } from '@/components/page-kit';
-import { PROJECTS_DELIVERED_LABEL, RESPONSE_HOURS } from '@/data/company-facts';
+import { PROJECTS_DELIVERED_LABEL } from '@/data/company-facts';
 import { FOUNDER_YEARS } from '@/data/founder';
 
 /**
@@ -59,23 +59,23 @@ function serviceFromParam(value: string | null): Service {
 const COPY = {
   en: {
     title: 'Get started with SEO or a new website',
-    lead: `Pick what you need. It takes two minutes, there is no commitment, and you hear back within ${RESPONSE_HOURS} working hours.`,
+    lead: 'Pick what you need. It takes two minutes. A sales enquiry without a care plan gets a first reply within 2 business days, Monday to Friday, 10:00–18:00 Europe/Athens. No care plan or app purchase is required.',
     tabsLabel: 'What do you need?',
     tabs: {
       seo: { label: 'Free SEO audit', sub: 'I have a site and want more customers from Google' },
       website: { label: 'New website', sub: 'A new site, a redesign or an e-shop' },
     },
-    trust: [`${PROJECTS_DELIVERED_LABEL} projects delivered`, `${FOUNDER_YEARS}+ years in SEO`, 'Based in Sifnos, Greece', `Reply within ${RESPONSE_HOURS} hours`],
+    trust: [`${PROJECTS_DELIVERED_LABEL} projects delivered`, `${FOUNDER_YEARS}+ years in SEO`, 'Based in Sifnos, Greece', 'First reply in 2 business days'],
   },
   el: {
     title: 'Ξεκινήστε με SEO ή νέα ιστοσελίδα',
-    lead: `Διαλέξτε τι χρειάζεστε. Θέλει δύο λεπτά, χωρίς δέσμευση, και σας απαντάμε μέσα σε ${RESPONSE_HOURS} εργάσιμες ώρες.`,
+    lead: 'Διαλέξτε τι χρειάζεστε. Θέλει δύο λεπτά. Ερώτημα πώλησης χωρίς πακέτο φροντίδας παίρνει πρώτη απάντηση σε 2 εργάσιμες, Δευτέρα έως Παρασκευή, 10:00–18:00 ώρα Ελλάδας. Δεν απαιτείται φροντίδα ή εφαρμογή.',
     tabsLabel: 'Τι χρειάζεστε;',
     tabs: {
       seo: { label: 'Δωρεάν έλεγχος SEO', sub: 'Έχω ιστοσελίδα και θέλω περισσότερους πελάτες από το Google' },
       website: { label: 'Νέα ιστοσελίδα', sub: 'Νέα ιστοσελίδα, ανανέωση ή e-shop' },
     },
-    trust: [`${PROJECTS_DELIVERED_LABEL} έργα`, `${FOUNDER_YEARS}+ χρόνια στο SEO`, 'Με έδρα τη Σίφνο', `Απάντηση σε ${RESPONSE_HOURS} ώρες`],
+    trust: [`${PROJECTS_DELIVERED_LABEL} έργα`, `${FOUNDER_YEARS}+ χρόνια στο SEO`, 'Με έδρα τη Σίφνο', 'Πρώτη απάντηση σε 2 εργάσιμες'],
   },
 } as const;
 
@@ -103,7 +103,7 @@ const WEBSITE_COPY = {
     submit: 'Send my brief',
     sending: 'Sending...',
     doneTitle: (first: string) => (first ? `Thanks, ${first}. We have your brief.` : 'Thanks. We have your brief.'),
-    doneBody: `We will reply within ${RESPONSE_HOURS} working hours with first ideas and a quote. Keep an eye on your inbox, and your spam folder just in case.`,
+    doneBody: 'We will reply within 2 business days with first ideas and a quote. Keep an eye on your inbox, and your spam folder just in case.',
     seeWork: 'See websites we have built',
     errors: {
       website: 'Enter your website address, like your-business.com.',
@@ -130,7 +130,7 @@ const WEBSITE_COPY = {
     submit: 'Στείλτε το αίτημα',
     sending: 'Αποστολή...',
     doneTitle: (first: string) => (first ? `Ευχαριστούμε, ${first}. Λάβαμε το αίτημά σας.` : 'Ευχαριστούμε. Λάβαμε το αίτημά σας.'),
-    doneBody: `Θα σας απαντήσουμε μέσα σε ${RESPONSE_HOURS} εργάσιμες ώρες με πρώτες ιδέες και προσφορά. Ρίξτε μια ματιά στο email σας, και στα ανεπιθύμητα για σιγουριά.`,
+    doneBody: 'Θα απαντήσουμε μέσα σε 2 εργάσιμες με πρώτες ιδέες και προσφορά. Ρίξτε μια ματιά στο email σας, και στα ανεπιθύμητα για σιγουριά.',
     seeWork: 'Δείτε ιστοσελίδες που έχουμε φτιάξει',
     errors: {
       website: 'Γράψτε τη διεύθυνση της ιστοσελίδας σας, π.χ. h-epixeirisi-sas.gr.',

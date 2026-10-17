@@ -1016,3 +1016,6 @@ code, pre, kbd, samp { font-family: var(--font-code); }
 .docs-root { --site-header-height: 3.5rem; }
 .light .docs-shot-dark { display: none; }
 :root:not(.light) .docs-shot-light { display: none; }
+
+/* Dismissed offer strip. The class is set before paint when the session already closed it. */
+html.launch-offer-dismissed [data-launch-offer] { display: none; }

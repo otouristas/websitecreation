@@ -41,14 +41,14 @@ const c = (en: string, el: string): Copy => ({ en, el });
 
 export const KIT_COPY = {
   freeAudit: c("Get a free SEO audit", "Δωρεάν έλεγχος SEO"),
-  whatsapp: c("Talk on WhatsApp", "Μιλήστε στο WhatsApp"),
+  whatsapp: c("Sales enquiry on WhatsApp", "Ερώτηση πώλησης στο WhatsApp"),
   startFree: c("Sign up free with Google", "Δωρεάν εγγραφή με Google"),
   liveDemo: c("Explore the live demo", "Δείτε τη ζωντανή επίδειξη"),
   readOnly: c("Read-only Google access", "Πρόσβαση στη Google μόνο για ανάγνωση"),
   noCard: c("No credit card for the demo", "Χωρίς κάρτα για την επίδειξη"),
   cancel: c("Cancel anytime", "Ακύρωση οποτεδήποτε"),
-  reply24: c("Reply within 24 hours", "Απάντηση σε 24 ώρες"),
-  noContract: c("No lock-in contract", "Χωρίς δέσμευση"),
+  reply24: c("Sales replies within 2 business days", "Απάντηση πωλήσεων σε 2 εργάσιμες"),
+  noContract: c("No mandatory care plan", "Χωρίς υποχρεωτική φροντίδα"),
   realData: c("Built on your Search Console data", "Με βάση τα δικά σας δεδομένα Search Console"),
 } as const;
 

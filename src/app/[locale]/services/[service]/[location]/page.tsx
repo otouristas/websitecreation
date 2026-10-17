@@ -247,7 +247,7 @@ export default async function ServiceLocationPage({ params }: PageProps) {
             question: cityCopy && cityCtx ? cityCopy.pricingQuestion(cityCtx) : `Ποιο είναι το κόστος για ${serviceFor} ${cityLocative};`,
             answer: ['local-seo', 'seo-audits', 'ai-visibility', 'link-building', 'eshop-seo', 'content-creation'].includes(serviceSlug)
                 ? `Τα πακέτα SEO ξεκινούν από €${formatPrice(entrySeoNet(), 'el')}/μήνα (Foundations), €${formatPrice(currentPrice(seoPackages[1]), 'el')}/μήνα (Growth) και €${formatPrice(currentPrice(seoPackages[2]), 'el')}/μήνα (Authority). Η τιμή εξαρτάται από τον ανταγωνισμό ${cityLocative} και τους στόχους σας. Δείτε αναλυτικές τιμές στη σελίδα τιμών μας ή ζητήστε δωρεάν προσφορά.`
-                : `Οι ιστοσελίδες ξεκινούν από €${formatPrice(entryWebsiteNet(), 'el')} (Starter, έως 5 σελίδες), €${formatPrice(currentPrice(websitePackages[1]), 'el')} (Professional, έως 10 σελίδες) και €${formatPrice(currentPrice(websitePackages[2]), 'el')} (Business, έως 20 σελίδες). Χωρίς κρυφές χρεώσεις - όλες οι τιμές σε Ευρώ. Ζητήστε δωρεάν προσφορά για ${cityName}.`,
+                : `Οι ιστοσελίδες ξεκινούν από €${formatPrice(entryWebsiteNet(), 'el')} + ΦΠΑ (Starter, έως 5 σελίδες), €${formatPrice(currentPrice(websitePackages[1]), 'el')} + ΦΠΑ (Professional, έως 12 σελίδες) και €${formatPrice(currentPrice(websitePackages[2]), 'el')} + ΦΠΑ (Business, έως 25 σελίδες). Ζήτησε προσφορά για ${cityName}.`,
         },
         {
             question: `Θα εμφανίζεται η επιχείρησή μου σε ChatGPT και AI αναζητήσεις;`,
@@ -271,7 +271,7 @@ export default async function ServiceLocationPage({ params }: PageProps) {
             question: `How much does ${service.name.toLowerCase()} cost in ${location.city}?`,
             answer: ['local-seo', 'seo-audits', 'ai-visibility', 'link-building', 'eshop-seo', 'content-creation'].includes(serviceSlug)
                 ? `SEO packages start at €${formatPrice(entrySeoNet(), 'en')}/mo (Foundations), €${formatPrice(currentPrice(seoPackages[1]), 'en')}/mo (Growth), and €${formatPrice(currentPrice(seoPackages[2]), 'en')}/mo (Authority). The price depends on competition in ${location.city} and your goals. All pricing is transparent - see our pricing page or request a free quote.`
-                : `Websites start at €${formatPrice(entryWebsiteNet(), 'en')} (Starter, up to 5 pages), €${formatPrice(currentPrice(websitePackages[1]), 'en')} (Professional, up to 10 pages), and €${formatPrice(currentPrice(websitePackages[2]), 'en')} (Business, up to 20 pages). No hidden fees. Request a free quote for ${location.city}.`,
+                : `Websites start at €${formatPrice(entryWebsiteNet(), 'en')} + VAT (Starter, up to 5 pages), €${formatPrice(currentPrice(websitePackages[1]), 'en')} + VAT (Professional, up to 12 pages), and €${formatPrice(currentPrice(websitePackages[2]), 'en')} + VAT (Business, up to 25 pages). Request a quote for ${location.city}.`,
         },
         {
             question: `Will my business show up in ChatGPT and AI search?`,

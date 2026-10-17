@@ -145,6 +145,12 @@ function buildStructuredDataGraph(isEl: boolean) {
           telephone: PHONE_E164,
           areaServed: ['GR', 'GB', 'US', 'EU'],
           availableLanguage: ['Greek', 'English'],
+          hoursAvailable: {
+            '@type': 'OpeningHoursSpecification',
+            dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+            opens: '10:00',
+            closes: '18:00',
+          },
         },
         // Company contact details are separate from the founder's personal base.
         address: {
@@ -248,6 +254,7 @@ const themeInitScript = THEME_INIT_SCRIPT;
  * before first paint, which hides it in CSS, so they never see a flash.
  */
 const consentInitScript = `(function(){try{if(localStorage.getItem('cookie-consent')&&localStorage.getItem('ads-measurement-consent')){document.documentElement.classList.add('consent-set');}}catch(e){}})();`;
+const launchOfferScript = `(function(){try{if(sessionStorage.getItem('asg-launch-offer')==='dismissed'){document.documentElement.classList.add('launch-offer-dismissed');}}catch(e){}})();`;
 
 export default async function LocaleLayout({
   children,
@@ -272,6 +279,7 @@ export default async function LocaleLayout({
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         <script dangerouslySetInnerHTML={{ __html: consentInitScript }} />
+        <script dangerouslySetInnerHTML={{ __html: launchOfferScript }} />
         <link rel="alternate" type="text/plain" href="/llms.txt" title="LLMs documentation for AnotherSEOGuru" />
         <script
           type="application/ld+json"

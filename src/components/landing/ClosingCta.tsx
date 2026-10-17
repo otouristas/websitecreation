@@ -30,8 +30,8 @@ export function ClosingCta({ locale = "en" }: { locale?: SiteLocale }) {
         </h2>
         <p className="mx-auto mt-7 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
           {isEl
-            ? "Πείτε μας τι θέλετε να πετύχετε. Θα σας στείλουμε δωρεάν αξιολόγηση και συγκεκριμένο πλάνο μέσα σε 24 ώρες."
-            : "Tell us what you want to achieve. We send back a free assessment and a concrete plan within 24 hours."}
+            ? "Πείτε μας τι θέλετε να πετύχετε. Η ερώτηση πώλησης παίρνει πρώτη απάντηση σε 2 εργάσιμες. Δεν είναι κανάλι υποστήριξης πελατών."
+            : "Tell us what you want to achieve. A sales enquiry gets a first reply within 2 business days. This is not the client support queue."}
         </p>
         <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
           <PrimaryButtonLink href={`${lp("/get-started")}#free-audit`}>
@@ -40,7 +40,7 @@ export function ClosingCta({ locale = "en" }: { locale?: SiteLocale }) {
           </PrimaryButtonLink>
           <a href={WHATSAPP_HREF} target="_blank" rel="noopener noreferrer" className={ghostBtnClass}>
             <WhatsAppIcon className="size-4 text-[#25D366]" />
-            {isEl ? "Μίλα μας στο WhatsApp" : "Talk on WhatsApp"}
+            {isEl ? "Ερώτηση πώλησης" : "Sales enquiry"}
           </a>
         </div>
       </div>

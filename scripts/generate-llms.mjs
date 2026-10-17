@@ -19,7 +19,7 @@ import {
   addOns,
   VAT_RATE,
   currentPrice,
-  isOfferActive,
+  launchOfferView,
   resolvePriceTokens,
 } from '../src/data/pricing.ts';
 import { PROJECT_COUNT, SEO_MIN_TERM_MONTHS } from '../src/data/company-facts.ts';
@@ -464,9 +464,10 @@ function buildShort({ services, servicesEl, industries, industriesEl, greece, pr
   lines.push(
     `- **VAT:** all figures above are NET. Greek VAT of ${Math.round(VAT_RATE * 100)}% is added on top.`,
   );
-  if (isOfferActive()) {
-    lines.push('- **Current offer:** promotional pricing is live; see /pricing for the end date.');
-  }
+  const offer = launchOfferView();
+  lines.push(
+    `- **Website Launch Offer:** status ${offer.state}. Discount applies to the build base only: ${offer.discountApplies ? 'yes' : 'no'}. SEO retainers are not discounted. Included SEO Launch is described as included in the offer, at no extra charge. No ranking guarantee.`,
+  );
   lines.push(
     `- Full details: <${url('en', '/pricing')}> · <${url('el', '/pricing')}>`,
   );

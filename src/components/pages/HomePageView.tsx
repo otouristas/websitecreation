@@ -28,6 +28,8 @@ import {
   ReportPreview,
   SoftwareCtas,
   Stage,
+  kitPrimaryBtn,
+  kitSecondaryBtn,
   StepsGrid,
   TrustLine,
   ValueTrio,
@@ -35,7 +37,10 @@ import {
 } from '@/components/kit';
 import { elHome } from '@/data/translations/el-home';
 import { COMPANY_CONTACT_ADDRESS } from '@/data/company-contact';
-import { resolvePriceTokens } from '@/data/pricing';
+import { resolvePriceTokens, launchOfferView } from '@/data/pricing';
+import { launchCopy } from '@/data/commercial/launch-copy';
+import { LaunchOfferBanner } from '@/components/commercial/LaunchOfferBanner';
+import { PriceTiers } from '@/components/service-kit';
 import { generateOrganizationSchema } from '@/lib/seo/schema';
 import { BASE_URL } from '@/lib/seo/description';
 import { getAppPath } from '@/lib/app-links';
@@ -74,9 +79,13 @@ export function HomePageView({ locale }: { locale: SiteLocale }) {
     founder: { id: FOUNDER_SCHEMA_ID, name: FOUNDER.name, url: consultantUrl(locale) },
   });
 
-  const line1 = isEl ? elHome.hero.h1Line1 : 'SEO services & web design';
-  const line2 = isEl ? elHome.hero.h1Line2 : 'that bring in customers';
-  const lead = isEl
+  const offerView = launchOfferView();
+  const offer = launchCopy(locale);
+  const line1 = offerView.discountApplies ? offer.heroTitle : isEl ? elHome.hero.h1Line1 : 'SEO services & web design';
+  const line2 = offerView.discountApplies ? '' : isEl ? elHome.hero.h1Line2 : 'that bring in customers';
+  const lead = offerView.discountApplies
+    ? offer.heroLead
+    : isEl
     ? resolvePriceTokens(elHome.hero.sub, locale)
     : resolvePriceTokens(
         `AnotherSEOGuru is a Greek SEO and web design agency based in Sifnos, Greece, with ${FOUNDER_YEARS}+ years of experience and more than ${PROJECTS_DELIVERED} projects delivered. We handle technical SEO, local SEO, GEO/AEO and website or e-shop builds, with transparent packages from {{ENTRY_SEO}} a month. Every engagement starts with a free SEO audit, so you see what works before you commit.`,
@@ -110,6 +119,7 @@ export function HomePageView({ locale }: { locale: SiteLocale }) {
     <>
       <SchemaMarkup schemas={[orgSchema]} />
       <Header locale={locale} />
+      <LaunchOfferBanner locale={locale} view={offerView} />
       <main className="blueprint-grid relative z-0">
         {/* ------------------------------------------------------------ hero */}
         <HeroCentered
@@ -122,13 +132,27 @@ export function HomePageView({ locale }: { locale: SiteLocale }) {
             />
           }
           title={
-            <>
-              {line1} <Accent>{line2}</Accent>
-            </>
+            offerView.discountApplies ? (
+              line1
+            ) : (
+              <>
+                {line1} <Accent>{line2}</Accent>
+              </>
+            )
           }
           lead={lead}
           actions={
             <div className="mx-auto max-w-xl text-left">
+              {offerView.discountApplies ? (
+                <div className="mb-6 flex flex-col items-stretch justify-center gap-3 sm:flex-row">
+                  <Link href={`${lp('/pricing')}#websites`} className={kitPrimaryBtn}>
+                    {offer.heroPrimaryCta}
+                  </Link>
+                  <Link href={lp('/work')} className={kitSecondaryBtn}>
+                    {offer.heroSecondaryCta}
+                  </Link>
+                </div>
+              ) : null}
               <ScanWidget locale={locale} />
             </div>
           }
@@ -367,12 +391,12 @@ export function HomePageView({ locale }: { locale: SiteLocale }) {
                   </>
                 }
                 body={tx(
-                  'Fast, bilingual sites and WooCommerce stores, with SEO, schema and Core Web Vitals handled before launch, not patched after.',
-                  'Γρήγορες, δίγλωσσες ιστοσελίδες και καταστήματα WooCommerce, με SEO, schema και Core Web Vitals έτοιμα πριν την παράδοση.',
+                  'Fast sites and WooCommerce stores, in the language the quote names. Technical SEO, schema and Core Web Vitals are handled before launch. A second language, a booking engine or a shop is included only when the quote says so.',
+                  'Γρήγορες ιστοσελίδες και καταστήματα WooCommerce, στη γλώσσα που λέει η προσφορά. Το τεχνικό SEO, το schema και τα Core Web Vitals γίνονται πριν την παράδοση. Δεύτερη γλώσσα, μηχανή κρατήσεων ή e-shop μπαίνουν μόνο αν τα αναφέρει η προσφορά.',
                 )}
                 bullets={[
-                  tx('Greek and English, with correct hreflang', 'Ελληνικά και αγγλικά, με σωστό hreflang'),
-                  tx('Booking engines and payments that load fast', 'Κρατήσεις και πληρωμές που φορτώνουν γρήγορα'),
+                  tx('The agreed language, with hreflang when a second language is in the quote', 'Η συμφωνημένη γλώσσα, με hreflang όταν η προσφορά περιλαμβάνει δεύτερη'),
+                  tx('A booking link, a provider integration or a custom app, only when the quote names it', 'Σύνδεσμος κράτησης, ενσωμάτωση παρόχου ή εφαρμογή, μόνο αν το λέει η προσφορά'),
                   tx('A full audit before go-live', 'Πλήρης έλεγχος πριν βγει στον αέρα'),
                 ]}
                 links={[
@@ -391,6 +415,18 @@ export function HomePageView({ locale }: { locale: SiteLocale }) {
 
         <VerticalsStrip locale={locale} />
         <WorkRail locale={locale} />
+        <section id="build-packages" className="border-t border-hairline py-20 sm:py-28">
+          <Container>
+            <KitHeading
+              align="center"
+              eyebrow={tx('Website build', 'Κατασκευή')}
+              title={tx('Three build packages', 'Τρία πακέτα κατασκευής')}
+              description={offer.termsNearPrice}
+            />
+            <PriceTiers kind="website" locale={locale} showStrip={false} className="mt-12" />
+            <p className="mx-auto mt-8 max-w-3xl text-center text-[14px] leading-relaxed text-muted-foreground">{offer.afterDelivery}</p>
+          </Container>
+        </section>
         <SeoPricingBlock locale={locale} />
 
         {/* ------------------------------------------------------- GSC Boost */}

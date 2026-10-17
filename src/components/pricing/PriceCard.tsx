@@ -1,9 +1,12 @@
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import { launchCopy } from '@/data/commercial/launch-copy';
+import { launchOfferView } from '@/data/commercial/campaign';
+import { seoLaunchFor } from '@/data/commercial/seo-launch';
 import {
   currentPrice,
   formatPrice,
-  isOfferActive,
+  isWebsiteTier,
   withVat,
   type Tier,
 } from '@/data/pricing';
@@ -13,15 +16,9 @@ import { CheckList, MarketingBadge, kitPrimaryBtn, kitSecondaryBtn } from '@/com
 /**
  * A single pricing tier.
  *
- * Every card shows the net figure with an explicit "+ ΦΠΑ 24%" and the gross
- * figure directly beneath, on every surface - VAT is never buried in an FAQ.
- *
- * The struck-through regular price only renders while the offer is live. After
- * OFFER_ENDS the component falls back to the regular price with no promotional
- * framing at all, so nothing has to be edited by hand on 1 September.
- *
- * The popular tier sits in a gradient ring: a 1px padded wrapper carrying the
- * brand gradient, with the kit card inside it.
+ * Website cards follow the launch-offer view: from-price, struck list price,
+ * net, VAT and the terms link beside the price. SEO retainers never take the
+ * build discount. There is no countdown.
  */
 export function PriceCard({
   tier,
@@ -33,10 +30,16 @@ export function PriceCard({
   recurring?: boolean;
 }) {
   const isEl = locale === 'el';
-  const active = isOfferActive();
+  const copy = launchCopy(locale);
+  const website = isWebsiteTier(tier) && !recurring;
+  const view = launchOfferView();
+  const discount = website && view.discountApplies;
   const net = currentPrice(tier);
   const gross = withVat(net);
   const per = recurring ? (isEl ? '/μήνα' : '/mo') : '';
+  const cardCopy = website ? copy.cards[tier.id as 'starter' | 'professional' | 'business'] : undefined;
+  const launch = discount ? seoLaunchFor(tier.id) : null;
+  const quoteHref = localizedPath(locale, `/get-started?package=${tier.id}`);
 
   const card = (
     <div
@@ -49,47 +52,67 @@ export function PriceCard({
         {tier.popular ? <MarketingBadge kind="popular">{isEl ? 'Πιο δημοφιλές' : 'Most popular'}</MarketingBadge> : null}
       </div>
       <p className="mt-2 min-h-[3.5rem] text-[14px] leading-relaxed text-muted-foreground">
-        {isEl ? tier.forEl : tier.forEn}
+        {discount && cardCopy ? cardCopy.detail : isEl ? tier.forEl : tier.forEn}
       </p>
 
       <div className="mt-6">
-        {active ? (
-          <p className="mb-1 flex items-center gap-2 text-sm text-muted-foreground">
-            <span className="line-through">€{formatPrice(tier.regular, locale)}</span>
-            <MarketingBadge kind="save">Summer Offer</MarketingBadge>
-          </p>
+        {discount && cardCopy ? (
+          <p className="mb-2 text-[15px] font-medium leading-snug text-foreground">{cardCopy.priceLine}</p>
         ) : null}
+        {discount && cardCopy ? (
+          <p className="mb-3 text-[13px] font-medium text-primary">{cardCopy.offerLine}</p>
+        ) : (
+          <p className="mb-1 text-[13px] text-muted-foreground">{isEl ? 'Από' : 'From'}</p>
+        )}
 
         <p className="flex flex-wrap items-baseline gap-x-1.5">
           <span className="font-display text-[44px] font-semibold tabular-nums leading-none tracking-[-0.045em] text-foreground">
             €{formatPrice(net, locale)}
           </span>
           {per ? <span className="text-sm text-muted-foreground">{per}</span> : null}
-          <span className="text-sm text-muted-foreground">{isEl ? '+ ΦΠΑ 24%' : '+ 24% VAT'}</span>
+          <span className="text-sm text-muted-foreground">{isEl ? '+ ΦΠΑ' : '+ VAT'}</span>
         </p>
 
         <p className="mt-2 font-mono text-[11px] tracking-[0.04em] text-muted-foreground">
+          €{formatPrice(net, locale)} {isEl ? 'καθαρή' : 'net'}
+          {' · '}
+          €{formatPrice(gross - net, locale)} {isEl ? 'ΦΠΑ' : 'VAT'}
+          {' · '}
           €{formatPrice(gross, locale)}
-          {per} {isEl ? 'τελική τιμή με ΦΠΑ' : 'incl. VAT'}
+          {per} {isEl ? 'σύνολο' : 'total'}
+        </p>
+        <p className="mt-2 text-[12px] leading-relaxed text-muted-foreground">
+          {isEl
+            ? 'Για πελάτες εκτός Ελλάδας ο ΦΠΑ επιβεβαιώνεται στην προσφορά (αντίστροφη χρέωση ή εκτός ΕΕ).'
+            : 'For clients outside Greece, VAT is confirmed on the quote (reverse charge or outside the EU).'}
+        </p>
+
+        {launch && launch.months > 0 ? (
+          <p className="mt-3 text-[13px] leading-relaxed text-foreground">
+            {isEl
+              ? `SEO Launch ${launch.months} μηνών, έως 2 ώρες τον ενεργό μήνα. Χωρίς αυτόματη ανανέωση.`
+              : `SEO Launch for ${launch.months} months, up to 2 hours each active month. No automatic renewal.`}
+          </p>
+        ) : null}
+
+        <p className="mt-3 text-[13px] leading-relaxed">
+          <Link href={localizedPath(locale, '/offer-terms')} className="font-medium text-link underline-offset-4 hover:underline">
+            {copy.stripTerms}
+          </Link>
         </p>
       </div>
 
       {tier.deliveryEn ? (
         <p className="mt-5 rounded-xl border border-hairline bg-background/60 px-3.5 py-2.5 text-[13px] text-muted-foreground">
           {isEl ? 'Ενδεικτικός χρόνος παράδοσης: ' : 'Indicative delivery: '}
-          <span className="font-medium text-foreground">
-            {isEl ? tier.deliveryEl : tier.deliveryEn}
-          </span>
+          <span className="font-medium text-foreground">{isEl ? tier.deliveryEl : tier.deliveryEn}</span>
         </p>
       ) : null}
 
       <CheckList size="sm" className="mt-6 flex-1 content-start" items={isEl ? tier.includesEl : tier.includesEn} />
 
-      <Link
-        href={localizedPath(locale, '/get-started')}
-        className={`mt-8 w-full ${tier.popular ? kitPrimaryBtn : kitSecondaryBtn}`}
-      >
-        {isEl ? 'Ζητήστε Προσφορά' : 'Request a Quote'}
+      <Link href={quoteHref} className={`mt-8 w-full ${tier.popular ? kitPrimaryBtn : kitSecondaryBtn}`}>
+        {cardCopy && discount ? cardCopy.cta : copy.chooseQuote}
         <ArrowRight className="size-4" aria-hidden />
       </Link>
     </div>

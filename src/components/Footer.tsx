@@ -414,6 +414,21 @@ export default function Footer({ locale: localeProp }: { locale?: SiteLocale }):
                   {isEl ? t!.terms : "Terms of service"}
                 </Link>
               </li>
+              <li>
+                <Link href={lp("/offer-terms")} className={columnLinkClass}>
+                  {isEl ? "Όροι προσφοράς" : "Offer terms"}
+                </Link>
+              </li>
+              <li>
+                <Link href={lp("/seo-launch")} className={columnLinkClass}>
+                  SEO Launch
+                </Link>
+              </li>
+              <li>
+                <Link href={lp("/care")} className={columnLinkClass}>
+                  {isEl ? "Φροντίδα" : "Care"}
+                </Link>
+              </li>
               {/* Privacy was linked three times per page (policy, cookies,
                   GDPR) and terms once, which between them held 4.4% of the
                   whole internal link graph on pages with no commercial value.

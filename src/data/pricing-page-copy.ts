@@ -196,6 +196,41 @@ const el: PricingPageCopy = {
       answer:
         'Το Foundations είναι το ελάχιστο σοβαρό scope: τεχνικά, on-page στις σελίδες που πουλάνε, Google Business Profile και μηνιαία αναφορά. Το Growth προσθέτει πρόγραμμα περιεχομένου, ανάλυση authority και εργασία GEO/AEO. Το Authority καλύπτει ανταγωνιστικές, e-commerce ή διεθνείς αγορές, με digital PR και ανασκόπηση κάθε δεκαπενθήμερο. Δεν πουλάμε αριθμό λέξεων-κλειδιών.',
     },
+    {
+      question: 'Υπάρχουν απεριόριστες αλλαγές;',
+      answer:
+        'Όχι. Κάθε κατασκευή περιλαμβάνει δύο συγκεντρωτικούς γύρους αναθεωρήσεων. Αλλαγή έξω από το συμφωνημένο εύρος γίνεται εντολή αλλαγής και ξεκινά μόνο μετά από έγκριση.',
+    },
+    {
+      question: 'Το SEO Launch είναι απλώς ένα εργαλείο;',
+      answer:
+        'Όχι. Είναι ανθρώπινη υπηρεσία: έλεγχος πραγματικών δεδομένων, μία στοχευμένη δέσμη σε έως δύο υπάρχουσες σελίδες και σύντομη αναφορά που ελέγχει άνθρωπος. Έως 2 ώρες τον ενεργό μήνα. Δεν είναι η συνδρομή λογισμικού.',
+    },
+    {
+      question: 'Χρειάζομαι πακέτο φροντίδας για να τρέξει το SEO Launch;',
+      answer:
+        'Όχι. Το SEO Launch περιλαμβάνεται στην προσφορά Professional ή Business, χωρίς επιπλέον χρέωση, στο συμφωνημένο εύρος. Το πακέτο φροντίδας είναι ξεχωριστή, προαιρετική επιλογή για τεχνική υποστήριξη μετά την παράδοση.',
+    },
+    {
+      question: 'Τι γίνεται μετά τους 3 ή 6 μήνες;',
+      answer:
+        'Το SEO Launch τελειώνει. Δεν ανανεώνεται αυτόματα και δεν μετατρέπεται σε μηνιαίο SEO. Αν θέλετε συνέχεια, συμφωνούμε ξεχωριστά πακέτο SEO ή φροντίδα, με εκτίμηση και έγκριση πριν ξεκινήσει.',
+    },
+    {
+      question: 'Η εφαρμογή περιλαμβάνεται στην κατασκευή;',
+      answer:
+        'Όχι. Η αγορά του λογισμικού δεν είναι υποχρεωτική για την ιστοσελίδα ή για την πύλη πελάτη. Η συνδρομή λογισμικού δεν περιλαμβάνει ανθρώπινη υλοποίηση SEO ή αλλαγές ιστοσελίδας, εκτός αν το λέει ξεχωριστή συμφωνία.',
+    },
+    {
+      question: 'Πότε κατοχυρώνεται μια θέση της προσφοράς;',
+      answer:
+        'Μόνο με αποδοχή της προσφοράς και επιβεβαιωμένη προκαταβολή. Μέχρι τότε ισχύει «Ζήτησε προσφορά και διαθεσιμότητα». Η έναρξη του έργου προγραμματίζεται ξεχωριστά.',
+    },
+    {
+      question: 'Υπάρχει εγγύηση για την πρώτη θέση ή για έσοδα;',
+      answer:
+        'Όχι. Δεν εγγυόμαστε κατάταξη, έσοδα ή αναφορές σε συστήματα AI. Η αναφορά δείχνει την εργασία που έγινε και τα μετρήσιμα δεδομένα που έχουμε, χωρίς συμπλήρωση κενών.',
+    },
   ],
   proof: {
     title: 'Τουρισμός, όχι γενικές υποσχέσεις',
@@ -341,6 +376,41 @@ const en: PricingPageCopy = {
       question: 'What is the difference between Foundations, Growth and Authority?',
       answer:
         'Foundations is the minimum serious scope: technical work, on-page on the pages that sell, Google Business Profile and a monthly report. Growth adds a content programme, authority analysis and GEO/AEO. Authority covers competitive, e-commerce or international markets, with digital PR and a fortnightly review. We do not sell a keyword count.',
+    },
+    {
+      question: 'Are changes unlimited?',
+      answer:
+        'No. Every build includes two consolidated revision rounds. Work outside the agreed scope becomes a change order and starts only after you approve it.',
+    },
+    {
+      question: 'Is SEO Launch just a tool?',
+      answer:
+        'No. It is a human service: a review of real data, one targeted batch on up to two existing pages, and a short report a person has checked. Up to 2 hours in each active month. It is not the software subscription.',
+    },
+    {
+      question: 'Do I need a care plan for SEO Launch to run?',
+      answer:
+        'No. SEO Launch is included in the Professional or Business offer, at no extra charge, within the agreed scope. A care plan is a separate, optional choice for technical support after delivery.',
+    },
+    {
+      question: 'What happens after the 3 or 6 months?',
+      answer:
+        'SEO Launch ends. It does not renew automatically and it does not convert into monthly SEO. If you want to continue, we agree a separate SEO or care plan, with an estimate and your approval before any work starts.',
+    },
+    {
+      question: 'Is the app included in the website build?',
+      answer:
+        'No. Buying the software is not required for the website or for the client portal. A software subscription does not include human SEO implementation or website changes unless a separate services agreement says so.',
+    },
+    {
+      question: 'When is an offer place secured?',
+      answer:
+        'Only when the quote is accepted and the deposit is confirmed. Until then the honest line is to ask for a quote and availability. The project start is scheduled separately.',
+    },
+    {
+      question: 'Is there a guarantee of position 1 or of revenue?',
+      answer:
+        'No. We do not guarantee rankings, revenue or mentions in AI systems. Reports show the work done and the measured data we actually have, with no filled-in gaps.',
     },
   ],
   proof: {

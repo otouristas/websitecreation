@@ -2,17 +2,21 @@ import {
   VAT_RATE,
   addOns,
   currentPrice,
-  isOfferActive,
+  displayedWebsiteBaseCents,
   seoPackages,
+  websiteListCents,
   websitePackages,
   withVat,
   type Tier,
 } from '@/data/pricing';
+import { launchOfferView, type LaunchOfferView } from '@/data/commercial/campaign';
+import { bpsOfCents, centsToEuros, grossCents, installmentSplitCents, vatCents, type VatTreatment } from '@/data/commercial/money';
+import { SEO_LAUNCH_INCLUDED_EL, SEO_LAUNCH_INCLUDED_EN, seoLaunchFor } from '@/data/commercial/seo-launch';
 import { SEO_MIN_TERM_MONTHS } from '@/data/company-facts';
 import {
   ESTIMATE_BAND,
-  EXTRA_LANGUAGE_SHARE,
   INCLUDED_PAGES,
+  LANGUAGE_STRUCTURE_BPS,
   addOnPrice,
   featureRate,
   tierForScope,
@@ -89,20 +93,30 @@ export interface Estimate {
   /** True when there is a retainer, so the term note applies. */
   readonly hasRetainer: boolean;
   readonly offerActive: boolean;
-  /** What the active promotion takes off the packaged prices. */
+  /** What the active promotion takes off the packaged build base. Never a retainer. */
   readonly savingNet: number;
   readonly websiteTier: Tier | null;
   readonly seoTier: Tier | null;
+  readonly vatTreatment: VatTreatment;
+  readonly baseListNet: number;
+  readonly discountNet: number;
+  readonly extrasNet: number;
+  readonly includedSeoMonths: number;
+  /** 50/30/20 of the one-off net. Remainder sits on the last invoice. */
+  readonly installmentsNet: readonly [number, number, number];
+  readonly depositNet: number;
+  /** The band is never drawn below the package base (the from-price of the tier). */
+  readonly bandFloorNet: number;
 }
 
 export const DEFAULT_ESTIMATE_INPUT: EstimateInput = {
-  track: 'both',
-  pages: 8,
+  track: 'website',
+  pages: 5,
   languages: 1,
   features: ['contact-form'],
   seoTier: 'growth',
-  contentPagesPerMonth: 2,
-  auditDepth: 'technical',
+  contentPagesPerMonth: 0,
+  auditDepth: 'none',
   maintenance: false,
 };
 
@@ -138,31 +152,69 @@ function seoTierById(id: SeoTierId): Tier {
   return found;
 }
 
-export function buildEstimate(raw: Partial<EstimateInput>, now?: Date): Estimate {
+export function buildEstimate(
+  raw: Partial<EstimateInput>,
+  now?: Date,
+  treatment: VatTreatment = 'gr_standard',
+): Estimate {
   const input = normalizeInput(raw);
   const lines: EstimateLine[] = [];
   const wantsWebsite = input.track !== 'seo';
   const wantsSeo = input.track !== 'website';
+  const view: LaunchOfferView = launchOfferView(undefined, now);
 
   let websiteTier: Tier | null = null;
   let listPriceOfPackages = 0;
   let paidPriceOfPackages = 0;
+  let baseListNet = 0;
+  let discountNet = 0;
+  let includedSeoMonths = 0;
 
   // ------------------------------------------------------------------ build
   if (wantsWebsite) {
     websiteTier = tierForScope(input.pages, input.languages);
-    const base = currentPrice(websiteTier, now);
-    listPriceOfPackages += websiteTier.regular;
+    const listCents = websiteListCents(websiteTier);
+    const paidCents = displayedWebsiteBaseCents(websiteTier, view);
+    const listNet = centsToEuros(listCents);
+    const base = centsToEuros(paidCents);
+    baseListNet = listNet;
+    discountNet = centsToEuros(listCents - paidCents);
+    listPriceOfPackages += listNet;
     paidPriceOfPackages += base;
     lines.push({
       id: 'website-base',
-      labelEn: websiteTier.name,
-      labelEl: websiteTier.name,
+      labelEn: `${websiteTier.name} base`,
+      labelEl: `Βάση ${websiteTier.name}`,
       kind: 'oneoff',
-      net: base,
-      noteEn: `Covers up to ${INCLUDED_PAGES[websiteTier.id]} pages`,
-      noteEl: `Καλύπτει έως ${INCLUDED_PAGES[websiteTier.id]} σελίδες`,
+      net: listNet,
+      noteEn: `Covers up to ${INCLUDED_PAGES[websiteTier.id]} pages. From-price, before the build discount.`,
+      noteEl: `Καλύπτει έως ${INCLUDED_PAGES[websiteTier.id]} σελίδες. Τιμή από, πριν την έκπτωση κατασκευής.`,
     });
+    if (discountNet > 0) {
+      lines.push({
+        id: 'build-discount',
+        labelEn: 'Build discount',
+        labelEl: 'Έκπτωση κατασκευής',
+        kind: 'oneoff',
+        net: -discountNet,
+        noteEn: 'Applies to the base build only',
+        noteEl: 'Αφορά μόνο τη βάση κατασκευής',
+      });
+    }
+
+    const launch = view.discountApplies ? seoLaunchFor(websiteTier.id) : seoLaunchFor('starter');
+    includedSeoMonths = launch.months;
+    if (launch.months > 0) {
+      lines.push({
+        id: 'seo-launch',
+        labelEn: `SEO Launch, ${launch.months} months`,
+        labelEl: `SEO Launch, ${launch.months} μήνες`,
+        kind: 'oneoff',
+        net: 0,
+        noteEn: `${SEO_LAUNCH_INCLUDED_EN}. Up to 2 hours per active month. No automatic renewal.`,
+        noteEl: `${SEO_LAUNCH_INCLUDED_EL}. Έως 2 ώρες ανά ενεργό μήνα. Χωρίς αυτόματη ανανέωση.`,
+      });
+    }
 
     const included = INCLUDED_PAGES[websiteTier.id] ?? 0;
     const extraPages = Math.max(0, input.pages - included);
@@ -174,22 +226,31 @@ export function buildEstimate(raw: Partial<EstimateInput>, now?: Date): Estimate
         labelEl: `${extraPages} επιπλέον σελίδ${extraPages === 1 ? 'α' : 'ες'}`,
         kind: 'oneoff',
         net: extraPages * rate,
-        noteEn: 'Designed, written and built like the rest',
-        noteEl: 'Σχεδιασμένες, γραμμένες και φτιαγμένες όπως οι υπόλοιπες',
+        noteEn: 'Not discounted. Designed, written and built like the rest',
+        noteEl: 'Χωρίς έκπτωση. Σχεδιασμένες, γραμμένες και φτιαγμένες όπως οι υπόλοιπες',
       });
     }
 
     const extraLanguages = input.languages - 1;
     if (extraLanguages > 0) {
-      const net = Math.round(base * EXTRA_LANGUAGE_SHARE * extraLanguages);
+      const structureCents = bpsOfCents(listCents, LANGUAGE_STRUCTURE_BPS) * extraLanguages;
       lines.push({
-        id: 'languages',
-        labelEn: `${extraLanguages} extra language${extraLanguages === 1 ? '' : 's'}`,
-        labelEl: `${extraLanguages} επιπλέον γλώσσ${extraLanguages === 1 ? 'α' : 'ες'}`,
+        id: 'language-structure',
+        labelEn: `${extraLanguages} extra language structure${extraLanguages === 1 ? '' : 's'}`,
+        labelEl: `Δομή για ${extraLanguages} επιπλέον γλώσσ${extraLanguages === 1 ? 'α' : 'ες'}`,
         kind: 'oneoff',
-        net,
-        noteEn: 'Templating, hreflang and the content pass',
-        noteEl: 'Templating, hreflang και πέρασμα περιεχομένου',
+        net: centsToEuros(structureCents),
+        noteEn: 'hreflang and templates, priced on the list base, not discounted',
+        noteEl: 'hreflang και templates, πάνω στην τιμή καταλόγου, χωρίς έκπτωση',
+      });
+      lines.push({
+        id: 'translation',
+        labelEn: 'Translation',
+        labelEl: 'Μετάφραση',
+        kind: 'oneoff',
+        net: 0,
+        noteEn: 'Quoted separately. Not included in this total.',
+        noteEl: 'Τιμολογείται χωριστά. Δεν περιλαμβάνεται σε αυτό το σύνολο.',
       });
     }
 
@@ -272,23 +333,39 @@ export function buildEstimate(raw: Partial<EstimateInput>, now?: Date): Estimate
   const oneOffNet = lines.filter((l) => l.kind === 'oneoff').reduce((n, l) => n + l.net, 0);
   const monthlyNet = lines.filter((l) => l.kind === 'monthly').reduce((n, l) => n + l.net, 0);
   const hasRetainer = monthlyNet > 0;
+  const paidBase = Math.max(0, baseListNet - discountNet);
+  const extrasNet = Math.max(0, oneOffNet - paidBase);
+  const bandFloorNet = websiteTier ? paidBase : 0;
+  const installments = installmentSplitCents(Math.round(oneOffNet * 100)).map((cents) => centsToEuros(cents)) as [
+    number,
+    number,
+    number,
+  ];
 
   return {
     lines,
     oneOffNet,
     monthlyNet,
-    oneOffGross: withVat(oneOffNet),
-    monthlyGross: withVat(monthlyNet),
-    vatRate: VAT_RATE,
-    oneOffLowNet: Math.round(oneOffNet * (1 - ESTIMATE_BAND)),
+    oneOffGross: centsToEuros(grossCents(Math.round(oneOffNet * 100), treatment)),
+    monthlyGross: withVat(monthlyNet, treatment),
+    vatRate: treatment === 'gr_standard' ? VAT_RATE : vatCents(10000, treatment) / 10000,
+    oneOffLowNet: Math.max(bandFloorNet, Math.round(oneOffNet * (1 - ESTIMATE_BAND))),
     oneOffHighNet: Math.round(oneOffNet * (1 + ESTIMATE_BAND)),
     minTermNet: oneOffNet + monthlyNet * SEO_MIN_TERM_MONTHS,
     minTermMonths: SEO_MIN_TERM_MONTHS,
     hasRetainer,
-    offerActive: isOfferActive(now),
+    offerActive: view.discountApplies && Boolean(websiteTier),
     savingNet: Math.max(0, listPriceOfPackages - paidPriceOfPackages),
     websiteTier,
     seoTier,
+    vatTreatment: treatment,
+    baseListNet,
+    discountNet,
+    extrasNet,
+    includedSeoMonths,
+    installmentsNet: installments,
+    depositNet: installments[0],
+    bandFloorNet,
   };
 }
 
