@@ -46,14 +46,10 @@ const gone = [
   '/el/services/local-seo/larissa-gr', // Greek city not kept
   '/el/services/website-creation/corinth-gr',
   '/el/services/content-creation/tripoli-gr',
-  '/el/services/ai-visibility/athens-gr', // kept city, service not kept
   '/en/services/logo-design/london-uk',
-  '/en/services/website-creation/thessaloniki-gr', // kept in el only
-  '/en/services/local-seo/patras-gr',
-  '/en/services/local-seo/kalamata-gr',
   '/el/services/website-creation/london-uk', // Greek page for a non-Greek city
-  '/en/services/website-creation/crete-gr', // region page folded into Heraklion/Chania/Rethymno
   '/en/services/link-building/kos-gr', // only the el twin carries the ranking
+  '/el/services/ai-visibility/rethymno-gr', // Rethymno stays; only the kept services are live
   '/en/services/website-creation/athens-gr/', // trailing slash on a kept page is still matched as kept
 ];
 for (const path of gone) {
@@ -73,6 +69,23 @@ for (const path of gone) {
 
 // The one removed URL with a ranking keyword: 308 to the service hub.
 expectStatus('/el/services/link-building/kos-gr', 308, '/el/services/link-building');
+
+// Phase 1 places: removed service × city URLs 301 to the Greek place page.
+// English removed URLs go to Greek too, because there is no /en/seo page.
+const phase1Redirects: [string, string][] = [
+  ['/el/services/ai-visibility/athens-gr', '/el/seo/athens'],
+  ['/en/services/link-building/athens-gr', '/el/seo/athens'],
+  ['/en/services/website-creation/thessaloniki-gr', '/el/seo/thessaloniki'],
+  ['/en/services/local-seo/patras-gr', '/el/seo/patras'],
+  ['/en/services/local-seo/kalamata-gr', '/el/seo/kalamata'],
+  ['/el/services/website-creation/crete-gr', '/el/seo/crete'],
+  ['/en/services/website-creation/crete-gr', '/el/seo/crete'],
+  ['/el/services/local-seo/piraeus-gr', '/el/seo/piraeus'],
+  ['/en/services/seo-audits/piraeus-gr', '/el/seo/piraeus'],
+];
+for (const [path, destination] of phase1Redirects) {
+  expectStatus(path, 301, destination);
+}
 
 // Unrelated routes are untouched.
 expectStatus('/el/services/local-seo', 200);

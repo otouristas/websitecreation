@@ -9,6 +9,7 @@ import { GENERATED_CONTENT_UPDATED } from '@/lib/seo/content-dates';
 import { consultantPath } from '@/data/founder';
 import { helpContent } from '@/data/help';
 import { allTerms } from '@/lib/docs/glossary';
+import { PLACE_PAGES } from '@/data/place-seo';
 
 const BASE_URL = 'https://anotherseoguru.com';
 const LOCALES: SiteLocale[] = ['en', 'el'];
@@ -27,6 +28,20 @@ function forBothLocales(
     changeFrequency: opts.changeFrequency ?? 'weekly',
     priority: opts.priority ?? 0.8,
   }));
+}
+
+function forElOnly(
+  path: string,
+  opts: Partial<Omit<MetadataRoute.Sitemap[number], 'url'>> = {},
+): MetadataRoute.Sitemap {
+  return [
+    {
+      url: localeUrl('el', path),
+      lastModified: opts.lastModified ?? new Date(GENERATED_CONTENT_UPDATED),
+      changeFrequency: opts.changeFrequency ?? 'weekly',
+      priority: opts.priority ?? 0.8,
+    },
+  ];
 }
 
 function forEnOnly(
@@ -129,6 +144,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.85,
   }));
 
+  // Greek place hub. No English twin in this phase.
+  const placePages: MetadataRoute.Sitemap = [
+    ...forElOnly('/seo', { priority: 0.9, changeFrequency: 'weekly' }),
+    ...PLACE_PAGES.flatMap((place) =>
+      forElOnly(`/seo/${place.slug}`, { priority: 0.82, changeFrequency: 'monthly' }),
+    ),
+  ];
+
   const comparePages = COMPARE_PAGES.flatMap((c) =>
     forEnOnly(`/compare/${c.slug}`, { priority: 0.82, changeFrequency: 'monthly' }),
   );
@@ -162,6 +185,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // them would put noindex URLs in the sitemap.
 
   return [...staticPages,
+    ...placePages,
     ...consultantPages,
     ...comparePages,
     ...portfolioPages,

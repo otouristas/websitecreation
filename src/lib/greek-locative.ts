@@ -4,6 +4,7 @@ export function getGreekLocative(slug: string, cityFallback?: string): string {
     'athens-gr': 'στην Αθήνα',
     'thessaloniki-gr': 'στη Θεσσαλονίκη',
     'patras-gr': 'στην Πάτρα',
+    'piraeus-gr': 'στον Πειραιά',
     'heraklion-gr': 'στο Ηράκλειο',
     'larissa-gr': 'στη Λάρισα',
     'volos-gr': 'στο Βόλο',

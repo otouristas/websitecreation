@@ -118,6 +118,15 @@ export function LocationContentGreek({ location, service, locale: localeProp }: 
               τα αιτήματα πελατών {inCity}.
             </p>
             {pack?.intro ? <p>{pack.intro}</p> : null}
+            {location.slug === 'rethymno-gr' ? (
+              <p>
+                Η σελίδα του Ρεθύμνου μένει σε αυτή τη διεύθυνση. Οι υπόλοιπες πόλεις και τα νησιά είναι στον οδηγό{' '}
+                <Link href={lp('/seo')} className={inlineLink}>
+                  SEO σε όλη την Ελλάδα
+                </Link>
+                .
+              </p>
+            ) : null}
             {pack?.intro && pack.tourism ? (
               <p>
                 Εξειδικευόμαστε σε{' '}
