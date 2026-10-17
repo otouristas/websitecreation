@@ -7,8 +7,11 @@ export type Block =
   | { readonly type: "h2"; readonly id: string; readonly text: string }
   | { readonly type: "h3"; readonly id: string; readonly text: string }
   | { readonly type: "list"; readonly items: ReadonlyArray<string> }
-  /** Numbered steps. An item is either one line, or a titled step with its own body. */
-  | { readonly type: "steps"; readonly items: ReadonlyArray<string | StepItem> }
+  /**
+   * Numbered steps. An item is either one line, or a titled step with its own body.
+   * `howTo` emits HowTo schema for the titled steps that are visible on the page.
+   */
+  | { readonly type: "steps"; readonly howTo?: { readonly name: string; readonly description: string }; readonly items: ReadonlyArray<string | StepItem> }
   | { readonly type: "note"; readonly tone: "info" | "tip" | "warning"; readonly text: string }
   | { readonly type: "table"; readonly head: ReadonlyArray<string>; readonly rows: ReadonlyArray<ReadonlyArray<string>> }
   /** One screenshot in a browser or iPhone frame. `src` is the light capture, `srcDark` the dark one. */
@@ -38,6 +41,8 @@ export interface Shot {
   readonly width: number;
   readonly height: number;
   readonly device?: "browser" | "iphone";
+  /** Address shown in the browser frame. Defaults to the app origin. */
+  readonly address?: string;
 }
 
 export interface CardItem {

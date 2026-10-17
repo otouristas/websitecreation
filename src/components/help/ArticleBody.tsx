@@ -98,7 +98,7 @@ export function ShotFrame({ shot, locale, className }: { readonly shot: Shot; re
         <span className="size-2.5 rounded-full bg-foreground/15" />
         <span className="size-2.5 rounded-full bg-foreground/15" />
         <span className="size-2.5 rounded-full bg-foreground/15" />
-        <span className="ml-3 h-5 flex-1 rounded-md bg-foreground/[0.05] px-2 font-code text-[10.5px] leading-5 text-muted-foreground">app.anotherseoguru.com</span>
+        <span className="ml-3 h-5 flex-1 truncate rounded-md bg-foreground/[0.05] px-2 font-code text-[10.5px] leading-5 text-muted-foreground">{shot.address ?? "app.anotherseoguru.com"}</span>
       </div>
       <div className="overflow-hidden rounded-xl border border-hairline">{pictures}</div>
     </div>

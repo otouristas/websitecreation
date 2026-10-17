@@ -5,11 +5,11 @@ import { ArticleBody } from "@/components/help/ArticleBody";
 import { DocsPage, headingsOf } from "@/components/docs/DocsPage";
 import { DocsShell } from "@/components/docs/DocsShell";
 import { SignupCard } from "@/components/docs/SignupCard";
-import { HELP_UPDATED, allArticles, articleFaqs, findArticle, helpContent, helpMetaDescription, helpPath } from "@/data/help";
+import { HELP_UPDATED, allArticles, articleFaqs, articleHowTos, findArticle, helpContent, helpMetaDescription, helpPath } from "@/data/help";
 import { isValidLocale, localizedPath, type SiteLocale } from "@/lib/i18n/locale";
 import { tabForCategory } from "@/lib/docs/nav";
 import { buildMetadata } from "@/lib/seo";
-import { BASE_URL, combineSchemas, generateArticleSchema, generateBreadcrumbSchema, generateFAQSchema } from "@/lib/seo/schema";
+import { BASE_URL, combineSchemas, generateArticleSchema, generateBreadcrumbSchema, generateFAQSchema, generateHowToSchema } from "@/lib/seo/schema";
 
 type PageProps = { params: Promise<{ locale: string; category: string; article: string }> };
 
@@ -60,6 +60,7 @@ export default async function HelpArticlePage({ params }: PageProps) {
     { name: article.title, url: path },
   ];
   const faqs = articleFaqs(article.body);
+  const howTos = articleHowTos(article.body);
   const schemas = combineSchemas(
     generateArticleSchema({
       headline: article.title,
@@ -73,6 +74,7 @@ export default async function HelpArticlePage({ params }: PageProps) {
     }),
     generateBreadcrumbSchema({ items: crumbs }),
     ...(faqs.length ? [generateFAQSchema({ faqs })] : []),
+    ...howTos.map((howTo) => generateHowToSchema(howTo)),
   );
 
   return (
