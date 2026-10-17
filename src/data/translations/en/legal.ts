@@ -11,7 +11,7 @@ export const legalEn = {
       },
       {
         heading: '2. Services',
-        body: 'AnotherSEOGuru provides digital marketing, SEO, and web design services. All deliverables are subject to the specific service agreements signed by clients.',
+        body: 'Touristas Technologies provides digital marketing, SEO, and web design services under the AnotherSEOGuru name. All deliverables are subject to the specific service agreements signed by clients.',
       },
       {
         heading: '3. Intellectual Property',
@@ -47,7 +47,7 @@ export const legalEn = {
       },
       {
         heading: '5. Contact Us',
-        body: 'AnotherSEOGuru is operated under the trading name TOURISTAS TECHNOLOGIES, Kamares, Sifnos 84003, Greece. For privacy requests, including consent withdrawal and deletion requests, contact hello@anotherseoguru.com.',
+        body: 'AnotherSEOGuru is operated by Touristas Technologies. For privacy requests, including consent withdrawal and deletion requests, contact hello@anotherseoguru.com.',
       },
     ],
   },

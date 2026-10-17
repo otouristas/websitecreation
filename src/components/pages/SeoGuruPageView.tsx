@@ -8,13 +8,14 @@ import { Accent, Container, CtaBand, KitHeading, KitSection } from '@/components
 import { CardGrid, InfoCard, PageHero, RelatedLinks, SplitRow, StatRow, accentTail } from '@/components/page-kit';
 import { FaqBlock, ProofGrid } from '@/components/service-kit';
 import { getSeoGuruCopy } from '@/data/seo-guru-page';
-import { FOUNDER, FOUNDER_SCHEMA_ID, consultantPath, consultantUrl } from '@/data/founder';
+import { LEGAL_ENTITY_NAME } from '@/data/company-facts';
+import { consultantPath } from '@/data/founder';
 import { portfolioProjects } from '@/data/portfolio';
 import { resolvePriceTokens } from '@/data/pricing';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 import { getHreflangAlternates } from '@/lib/locale-paths';
 import { buildMetadata } from '@/lib/seo';
-import { BASE_URL, combineSchemas, generateBreadcrumbSchema, generateFAQSchema, generatePersonSchema } from '@/lib/seo/schema';
+import { BASE_URL, combineSchemas, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/seo/schema';
 import { generateBreadcrumbs } from '@/lib/linking';
 import { withExactTitle } from '@/app/[locale]/services/_lib/exact-title';
 
@@ -57,17 +58,23 @@ export function SeoGuruPageView({ locale }: { locale: SiteLocale }) {
 
   const schemas = combineSchemas(
     generateBreadcrumbSchema({ items: breadcrumbs }),
-    generatePersonSchema({
-      id: FOUNDER_SCHEMA_ID,
-      name: FOUNDER.name,
-      alternateName: FOUNDER.nameEl,
-      url: consultantUrl(locale),
-      jobTitle: isEl ? FOUNDER.jobTitleEl : FOUNDER.jobTitle,
-      description: t.personDescription,
-      address: { addressLocality: FOUNDER.city, addressCountry: FOUNDER.country },
-      worksFor: { name: 'AnotherSEOGuru', url: BASE_URL },
-      knowsAbout: ['Search engine optimization', 'Technical SEO', 'Local SEO', 'Hotel SEO', 'E-commerce SEO'],
-    }),
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      '@id': `${BASE_URL}${self}#webpage`,
+      url: `${BASE_URL}${self}`,
+      name: t.metaTitle,
+      description: rp(t.metaDescription),
+      inLanguage: locale,
+      isPartOf: { '@id': `${BASE_URL}/#website` },
+      about: { '@id': `${BASE_URL}/#organization` },
+      publisher: {
+        '@type': 'Organization',
+        '@id': `${BASE_URL}/#organization`,
+        name: LEGAL_ENTITY_NAME,
+        url: BASE_URL,
+      },
+    },
     generateFAQSchema({ faqs }),
   );
 

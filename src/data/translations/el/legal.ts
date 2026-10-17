@@ -11,7 +11,7 @@ export const legalEl = {
       },
       {
         heading: '2. Υπηρεσίες',
-        body: 'Η AnotherSEOGuru παρέχει ψηφιακό marketing, SEO και κατασκευή ιστοσελίδων. Όλα τα deliverables υπόκεινται σε συγκεκριμένες συμβάσεις με πελάτες.',
+        body: 'Η Touristas Technologies παρέχει ψηφιακό marketing, SEO και κατασκευή ιστοσελίδων με το όνομα AnotherSEOGuru. Όλα τα deliverables υπόκεινται σε συγκεκριμένες συμβάσεις με πελάτες.',
       },
       {
         heading: '3. Πνευματική ιδιοκτησία',
@@ -47,7 +47,7 @@ export const legalEl = {
       },
       {
         heading: '5. Επικοινωνία',
-        body: 'Η AnotherSEOGuru λειτουργεί με τον εμπορικό τίτλο TOURISTAS TECHNOLOGIES, Καμάρες, Σίφνος 84003, Ελλάδα. Για αιτήματα απορρήτου, ανάκλησης συναίνεσης ή διαγραφής επικοινωνήστε στο hello@anotherseoguru.com.',
+        body: 'Η AnotherSEOGuru λειτουργεί από την Touristas Technologies. Για αιτήματα απορρήτου, ανάκλησης συναίνεσης ή διαγραφής επικοινωνήστε στο hello@anotherseoguru.com.',
       },
     ],
   },

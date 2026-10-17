@@ -1,0 +1,42 @@
+{
+  "note": "Client facts that may name a place or a client. These are not the agency address and not the agency owner. Hard patterns (the owner’s name, a street address, 84003, “based in Sifnos”) still fail inside these files.",
+  "files": [
+    "docs/portfolio-audits/hotels-sifnos.md",
+    "docs/portfolio-audits/rentacar-sifnos.md",
+    "docs/portfolio-audits/villa-olivia-clara.md",
+    "docs/portfolio-audits/george-xipolitas.md",
+    "docs/portfolio-audits/_meta-corrections.json",
+    "docs/keyword-research/2026-10-14-ahrefs-research.md",
+    "docs/keyword-research/2026-10-14-master-keywords.csv"
+  ],
+  "items": [
+    {
+      "id": "hotels-sifnos",
+      "why": "Client case study: Hotels Sifnos (hotelssifnos.com), a lodging site for that island."
+    },
+    {
+      "id": "rentacar-sifnos",
+      "why": "Client case study: Artemis Rental Sifnos (rentacarsifnos.com), including Kamares port pickup as a client service."
+    },
+    {
+      "id": "travel-sifnos",
+      "why": "Retired client case-study slug kept only as a redirect in next.config.ts."
+    },
+    {
+      "id": "villa-olivia-clara",
+      "why": "Audit scrape of villaoliviaclara.com says Platis Gialos, Sifnos. The published case study calls the villa a Crete project and does not name the island."
+    },
+    {
+      "id": "george-xipolitas",
+      "why": "Client case study: George Xipolitas, a hospitality consultant. A different person from the agency."
+    },
+    {
+      "id": "keyword-research",
+      "why": "Ahrefs rows for island travel and web-design queries used as demand notes for the client case studies, not as the agency address."
+    },
+    {
+      "id": "saint-george-ut",
+      "why": "INTRO/us_cities_over_50000.csv lists the city Saint George, Utah. It is a place name in the location dataset, not a person."
+    }
+  ]
+}

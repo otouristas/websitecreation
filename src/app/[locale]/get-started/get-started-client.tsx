@@ -65,7 +65,7 @@ const COPY = {
       seo: { label: 'Free SEO audit', sub: 'I have a site and want more customers from Google' },
       website: { label: 'New website', sub: 'A new site, a redesign or an e-shop' },
     },
-    trust: [`${PROJECTS_DELIVERED_LABEL} projects delivered`, `${FOUNDER_YEARS}+ years in SEO`, 'Based in Sifnos, Greece', `Reply within ${RESPONSE_HOURS} hours`],
+    trust: [`${PROJECTS_DELIVERED_LABEL} projects delivered`, `${FOUNDER_YEARS}+ years in SEO`, 'Serving businesses in Greece', `Reply within ${RESPONSE_HOURS} hours`],
   },
   el: {
     title: 'Ξεκινήστε με SEO ή νέα ιστοσελίδα',
@@ -75,7 +75,7 @@ const COPY = {
       seo: { label: 'Δωρεάν έλεγχος SEO', sub: 'Έχω ιστοσελίδα και θέλω περισσότερους πελάτες από το Google' },
       website: { label: 'Νέα ιστοσελίδα', sub: 'Νέα ιστοσελίδα, ανανέωση ή e-shop' },
     },
-    trust: [`${PROJECTS_DELIVERED_LABEL} έργα`, `${FOUNDER_YEARS}+ χρόνια στο SEO`, 'Με έδρα τη Σίφνο', `Απάντηση σε ${RESPONSE_HOURS} ώρες`],
+    trust: [`${PROJECTS_DELIVERED_LABEL} έργα`, `${FOUNDER_YEARS}+ χρόνια στο SEO`, 'Για επιχειρήσεις στην Ελλάδα', `Απάντηση σε ${RESPONSE_HOURS} ώρες`],
   },
 } as const;
 

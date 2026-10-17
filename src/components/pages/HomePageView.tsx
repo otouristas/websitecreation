@@ -34,12 +34,12 @@ import {
   agencyTrust,
 } from '@/components/kit';
 import { elHome } from '@/data/translations/el-home';
-import { COMPANY_CONTACT_ADDRESS } from '@/data/company-contact';
 import { resolvePriceTokens } from '@/data/pricing';
 import { generateOrganizationSchema } from '@/lib/seo/schema';
 import { BASE_URL } from '@/lib/seo/description';
 import { getAppPath } from '@/lib/app-links';
-import { FOUNDER, FOUNDER_SCHEMA_ID, FOUNDER_YEARS, PROJECTS_DELIVERED, consultantPath, consultantUrl } from '@/data/founder';
+import { LEGAL_ENTITY_NAME } from '@/data/company-facts';
+import { FOUNDER_YEARS, PROJECTS_DELIVERED, consultantPath } from '@/data/founder';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 
 /**
@@ -65,13 +65,12 @@ export function HomePageView({ locale }: { locale: SiteLocale }) {
   const orgSchema = generateOrganizationSchema({
     id: `${BASE_URL}/#organization`,
     name: 'AnotherSEOGuru',
+    legalName: LEGAL_ENTITY_NAME,
     url: BASE_URL,
     logo: `${BASE_URL}/brand/asg-lockup-on-light@2x.png`,
     description: isEl
       ? 'AnotherSEOGuru - ελληνική εταιρεία SEO και κατασκευής ιστοσελίδων. Τεχνικό SEO, τοπικό SEO, GEO/AEO, e-shop και δική της πλατφόρμα συνδεδεμένη με το Google Search Console.'
       : 'AnotherSEOGuru - Greek SEO and web design agency. Technical SEO, local SEO, GEO/AEO, e-shops, plus a Search Console-native SEO platform.',
-    address: COMPANY_CONTACT_ADDRESS,
-    founder: { id: FOUNDER_SCHEMA_ID, name: FOUNDER.name, url: consultantUrl(locale) },
   });
 
   const line1 = isEl ? elHome.hero.h1Line1 : 'SEO services & web design';
@@ -79,7 +78,7 @@ export function HomePageView({ locale }: { locale: SiteLocale }) {
   const lead = isEl
     ? resolvePriceTokens(elHome.hero.sub, locale)
     : resolvePriceTokens(
-        `AnotherSEOGuru is a Greek SEO and web design agency based in Sifnos, Greece, with ${FOUNDER_YEARS}+ years of experience and more than ${PROJECTS_DELIVERED} projects delivered. We handle technical SEO, local SEO, GEO/AEO and website or e-shop builds, with transparent packages from {{ENTRY_SEO}} a month. Every engagement starts with a free SEO audit, so you see what works before you commit.`,
+        `AnotherSEOGuru is the SEO and web design team at ${LEGAL_ENTITY_NAME}, with ${FOUNDER_YEARS}+ years of experience and more than ${PROJECTS_DELIVERED} projects delivered for businesses in Greece. We handle technical SEO, local SEO, GEO/AEO and website or e-shop builds, with transparent packages from {{ENTRY_SEO}} a month. Every engagement starts with a free SEO audit, so you see what works before you commit.`,
         locale,
       );
 
@@ -136,16 +135,16 @@ export function HomePageView({ locale }: { locale: SiteLocale }) {
             <>
               <TrustLine items={agencyTrust(locale)} />
               {/* Exact-anchor links out of the hero: «υπηρεσίες SEO» is the
-                  /el/seo-services keyword, and the founder page carries the
-                  named-person queries («σύμβουλος SEO»). */}
+                  /el/seo-services keyword, and the consultant page carries
+                  «σύμβουλος SEO». */}
               <p className="mx-auto mt-4 max-w-xl text-pretty text-[14px] leading-relaxed text-muted-foreground">
                 {tx('See our ', 'Δείτε τις ')}
                 <Link href={lp('/seo-services')} className="font-medium text-foreground underline decoration-hairline underline-offset-4 hover:decoration-foreground">
                   {tx('SEO services', 'υπηρεσίες SEO')}
                 </Link>
-                {tx(', meet ', ', γνωρίστε τον ')}
+                {tx(', meet ', ', γνωρίστε ')}
                 <Link href={consultantPath(locale)} className="font-medium text-foreground underline decoration-hairline underline-offset-4 hover:decoration-foreground">
-                  {isEl ? `${FOUNDER.nameElAcc}, τον σύμβουλο SEO μας` : `${FOUNDER.name}, our SEO consultant`}
+                  {isEl ? 'την ομάδα μας' : 'our team'}
                 </Link>
                 {tx(', or read how an ', '. Δείτε πώς δουλεύει ένας ')}
                 <Link href={lp('/seo-guru')} className="font-medium text-foreground underline decoration-hairline underline-offset-4 hover:decoration-foreground">

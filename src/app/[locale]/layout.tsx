@@ -10,8 +10,7 @@ import WhatsAppPill from '@/components/WhatsAppPill';
 import { Analytics } from '@vercel/analytics/next';
 import { isValidLocale } from '@/lib/i18n/locale';
 import { CONTACT_EMAIL, PHONE_E164 } from '@/lib/contact-info';
-import { FOUNDER, FOUNDER_SCHEMA_ID, consultantUrl } from '@/data/founder';
-import { COMPANY_CONTACT_ADDRESS } from '@/data/company-contact';
+import { LEGAL_ENTITY_NAME } from '@/data/company-facts';
 
 const SITE_URL = 'https://anotherseoguru.com';
 
@@ -130,6 +129,7 @@ function buildStructuredDataGraph(isEl: boolean) {
         '@type': 'Organization',
         '@id': `${SITE_URL}/#organization`,
         name: 'AnotherSEOGuru',
+        legalName: LEGAL_ENTITY_NAME,
         url: SITE_URL,
         logo: {
           '@type': 'ImageObject',
@@ -145,17 +145,6 @@ function buildStructuredDataGraph(isEl: boolean) {
           telephone: PHONE_E164,
           areaServed: ['GR', 'GB', 'US', 'EU'],
           availableLanguage: ['Greek', 'English'],
-        },
-        // Company contact details are separate from the founder's personal base.
-        address: {
-          '@type': 'PostalAddress',
-          ...COMPANY_CONTACT_ADDRESS,
-        },
-        founder: {
-          '@type': 'Person',
-          '@id': FOUNDER_SCHEMA_ID,
-          name: FOUNDER.name,
-          url: consultantUrl(isEl ? 'el' : 'en'),
         },
         sameAs: [
           'https://www.linkedin.com/company/anotherseoguru',

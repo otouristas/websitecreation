@@ -9,27 +9,21 @@ import { CardGrid, InfoCard, PageHero, RelatedLinks, SplitRow, StatRow, accentTa
 import { FaqBlock, ProofGrid } from '@/components/service-kit';
 import { renderInlineLinks } from '@/components/services/topic-sections';
 import { getConsultantCopy } from '@/data/consultant-page';
-import { FOUNDER, FOUNDER_SCHEMA_ID, consultantPath, consultantUrl } from '@/data/founder';
+import { LEGAL_ENTITY_NAME } from '@/data/company-facts';
+import { consultantPath } from '@/data/founder';
 import { portfolioProjects } from '@/data/portfolio';
 import { resolvePriceTokens } from '@/data/pricing';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 import { buildHreflangMapFromPaths } from '@/lib/locale-paths';
 import { buildMetadata } from '@/lib/seo';
-import {
-  BASE_URL,
-  combineSchemas,
-  generateBreadcrumbSchema,
-  generateFAQSchema,
-  generatePersonSchema,
-} from '@/lib/seo/schema';
+import { BASE_URL, combineSchemas, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/seo/schema';
 import { generateBreadcrumbs } from '@/lib/linking';
 import { withExactTitle } from '@/app/[locale]/services/_lib/exact-title';
 
 /**
- * Founder / SEO-consultant page, served at /el/symvoulos-seo and
+ * Team / SEO-consultant page, served at /el/symvoulos-seo and
  * /en/seo-consultant (different slug per locale, paired by hreflang).
- * Doubles as the author entity: the Person node here carries the same @id
- * as Organization.founder in the site-wide graph.
+ * The page is about the company, Touristas Technologies.
  */
 
 /** Live work across the verticals the copy names (hotel, rent-a-car, tours, e-shop). */
@@ -44,8 +38,8 @@ export function consultantMetadata(locale: SiteLocale): Metadata {
     primaryKeyword: t.primaryKeyword,
     languages: buildHreflangMapFromPaths({ en: consultantPath('en'), el: consultantPath('el') }),
   });
-  // The map's title already carries the name and stays under 60 characters,
-  // so it ships verbatim instead of being capped and branded.
+  // The map's title already stays under 60 characters, so it ships verbatim
+  // instead of being capped and branded.
   return withExactTitle(metadata, t.metaTitle);
 }
 
@@ -61,17 +55,23 @@ export function ConsultantPageView({ locale }: { locale: SiteLocale }) {
 
   const schemas = combineSchemas(
     generateBreadcrumbSchema({ items: breadcrumbs }),
-    generatePersonSchema({
-      id: FOUNDER_SCHEMA_ID,
-      name: FOUNDER.name,
-      alternateName: FOUNDER.nameEl,
-      url: consultantUrl(locale),
-      jobTitle: FOUNDER.jobTitle,
-      description: t.personDescription,
-      address: { addressLocality: FOUNDER.city, addressCountry: FOUNDER.country },
-      worksFor: { name: 'AnotherSEOGuru', url: BASE_URL },
-      knowsAbout: ['Search engine optimization', 'Technical SEO', 'Local SEO', 'Hotel SEO', 'E-commerce SEO', 'Generative AI search visibility'],
-    }),
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      '@id': `${BASE_URL}${self}#webpage`,
+      url: `${BASE_URL}${self}`,
+      name: t.metaTitle,
+      description: rp(t.metaDescription),
+      inLanguage: locale,
+      isPartOf: { '@id': `${BASE_URL}/#website` },
+      about: { '@id': `${BASE_URL}/#organization` },
+      publisher: {
+        '@type': 'Organization',
+        '@id': `${BASE_URL}/#organization`,
+        name: LEGAL_ENTITY_NAME,
+        url: BASE_URL,
+      },
+    },
     generateFAQSchema({ faqs }),
   );
 

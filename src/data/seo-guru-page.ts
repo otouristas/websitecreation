@@ -9,8 +9,9 @@ import { RESPONSE_HOURS, SEO_MIN_TERM_MONTHS } from '@/data/company-facts';
  * were recorded. These follow the site's SERP limits (title ≤60 characters,
  * description 140–158) and the query "seo guru".
  *
- * Facts come from founder.ts, company-facts.ts and pricing tokens. Measured
+ * Facts come from company experience figures and pricing tokens. Measured
  * client results are not on record, so that block is a placeholder.
+ * The page describes the Touristas Technologies team. It does not name a person.
  *
  * Strings may contain `{{TOKEN}}` price placeholders, resolved at render.
  */
@@ -58,22 +59,21 @@ export type SeoGuruCopy = {
   readonly faqs: ReadonlyArray<{ question: string; answer: string }>;
   readonly relatedTitle: string;
   readonly cta: { readonly title: string; readonly body: string };
-  readonly personDescription: string;
 };
 
 const years = `${FOUNDER_YEARS}+`;
 const projects = `${PROJECTS_DELIVERED}+`;
 
 const el: SeoGuruCopy = {
-  metaTitle: 'SEO Guru | Γιώργος Κ., AnotherSEOGuru',
+  metaTitle: 'SEO Guru | Touristas Technologies',
   metaDescription:
-    'Ο Γιώργος Κ. είναι ο SEO guru της AnotherSEOGuru στην Αθήνα. Η μέθοδος ξεκινά από το Search Console σας, με υπηρεσίες και μηνιαίες τιμές. Δωρεάν έλεγχος.',
+    'Η ομάδα της Touristas Technologies είναι ο SEO guru της AnotherSEOGuru. Η μέθοδος ξεκινά από το Search Console σας, με υπηρεσίες και μηνιαίες τιμές. Δωρεάν έλεγχος.',
   primaryKeyword: 'seo guru',
   crumb: 'SEO guru',
   pillTag: 'Δωρεάν',
   pill: 'Ξεκινήστε με δωρεάν έλεγχο της ιστοσελίδας σας',
   h1: { before: 'Ο', accent: 'SEO guru', after: 'για ελληνικές επιχειρήσεις' },
-  lead: `Ο Γιώργος Κ. είναι ο ιδρυτής της AnotherSEOGuru και ο SEO guru με τον οποίο μιλάτε. Η εταιρεία έχει έδρα στις Καμάρες της Σίφνου και ο Γιώργος εδρεύει στην Αθήνα, με ${years} χρόνια στο SEO και πάνω από ${PROJECTS_DELIVERED} έργα, κυρίως για ξενοδοχεία, ενοικιάσεις αυτοκινήτων και τοπικές επιχειρήσεις.`,
+  lead: `Η ομάδα της Touristas Technologies είναι ο SEO guru της AnotherSEOGuru. Με ${years} χρόνια στο SEO και πάνω από ${PROJECTS_DELIVERED} έργα, δουλεύουμε κυρίως για ξενοδοχεία, ενοικιάσεις αυτοκινήτων και τοπικές επιχειρήσεις στην Ελλάδα.`,
   leadExtra: `Η δουλειά ξεκινά από τα δικά σας δεδομένα στο Search Console. Απαντάμε μέσα σε ${RESPONSE_HOURS} ώρες, στα ελληνικά ή στα αγγλικά, και δεν υποσχόμαστε θέσεις που κανείς δεν μπορεί να εγγυηθεί.`,
   stats: [
     { value: years, label: 'Χρόνια στο SEO' },
@@ -83,11 +83,11 @@ const el: SeoGuruCopy = {
   ],
   who: {
     eyebrow: 'Ποιοι είμαστε',
-    title: 'Ποιος είναι ο SEO guru',
-    body: 'AnotherSEOGuru είναι εταιρεία κατασκευής ιστοσελίδων και SEO. Ο SEO guru της ομάδας είναι ο Γιώργος Κ.: βλέπει ο ίδιος την ιστοσελίδα, αποφασίζει τι γίνεται πρώτο και η ομάδα το υλοποιεί. Δεν είναι ένα ψευδώνυμο πάνω σε μια αναφορά που ετοιμάζει κάποιος άλλος.',
+    title: 'Ποια είναι η ομάδα',
+    body: 'AnotherSEOGuru είναι η εταιρεία κατασκευής ιστοσελίδων και SEO της Touristas Technologies. Η ομάδα βλέπει την ιστοσελίδα, αποφασίζει τι γίνεται πρώτο και το υλοποιεί. Δεν είναι ένα ψευδώνυμο πάνω σε μια αναφορά που ετοιμάζει κάποιος άλλος.',
     bullets: [
-      'Ιδρυτής: Γιώργος Κ., σύμβουλος SEO με έδρα την Αθήνα',
-      'Εταιρεία: AnotherSEOGuru, Καμάρες, Σίφνος',
+      'Εταιρεία: Touristas Technologies',
+      'Brand: AnotherSEOGuru, για επιχειρήσεις στην Ελλάδα',
       'Γλώσσες: ελληνικά και αγγλικά, με hreflang όπου χρειάζεται',
       'Πρώτο βήμα: δωρεάν έλεγχος, πριν από οποιαδήποτε σύμβαση',
     ],
@@ -204,7 +204,7 @@ const el: SeoGuruCopy = {
     {
       question: 'Ποια η διαφορά ανάμεσα σε SEO guru, σύμβουλο και εταιρεία;',
       answer:
-        'Οι λέξεις επικαλύπτονται. Ο σύμβουλος καθοδηγεί. Η εταιρεία κάνει και την υλοποίηση. Εδώ έχετε και τα δύο: ο Γιώργος Κ. ορίζει το πλάνο και η ομάδα το παραδίδει. Η σελίδα του συμβούλου SEO εξηγεί την επιλογή της συμβουλευτικής μόνης της.',
+        'Οι λέξεις επικαλύπτονται. Ο σύμβουλος καθοδηγεί. Η εταιρεία κάνει και την υλοποίηση. Εδώ έχετε και τα δύο: η ομάδα ορίζει το πλάνο και το παραδίδει. Η σελίδα του συμβούλου SEO εξηγεί την επιλογή της συμβουλευτικής μόνης της.',
     },
     {
       question: 'Πώς ξεκινάμε;',
@@ -216,19 +216,18 @@ const el: SeoGuruCopy = {
     title: 'Στείλτε την ιστοσελίδα σας',
     body: `Δωρεάν έλεγχος SEO μέσα σε ${RESPONSE_HOURS} ώρες: τα πρώτα θέματα και μια σταθερή τιμή, στα ελληνικά ή στα αγγλικά.`,
   },
-  personDescription: `Ο Γιώργος Κ. είναι ο ιδρυτής της AnotherSEOGuru και σύμβουλος SEO με έδρα την Αθήνα, ${years} χρόνια εμπειρίας και ${projects} έργα.`,
 };
 
 const en: SeoGuruCopy = {
-  metaTitle: 'SEO Guru | George K, AnotherSEOGuru',
+  metaTitle: 'SEO Guru | Touristas Technologies',
   metaDescription:
-    'George K is the SEO guru behind AnotherSEOGuru in Athens. The method uses your Search Console, with services and monthly prices. Ask for a free audit.',
+    'The Touristas Technologies team is the SEO guru behind AnotherSEOGuru. The method uses your Search Console, with services and monthly prices. Ask for a free audit.',
   primaryKeyword: 'seo guru',
   crumb: 'SEO guru',
   pillTag: 'Free',
   pill: 'Start with a free audit of your website',
   h1: { before: 'The', accent: 'SEO guru', after: 'for Greek businesses' },
-  lead: `George K is the founder of AnotherSEOGuru and the SEO guru you talk to. The company is based in Kamares, Sifnos, and George is based in Athens, with ${years} years in SEO and more than ${PROJECTS_DELIVERED} projects delivered, mostly for hotels, car rentals and local businesses.`,
+  lead: `The Touristas Technologies team is the SEO guru behind AnotherSEOGuru. With ${years} years in SEO and more than ${PROJECTS_DELIVERED} projects delivered, we work mostly with hotels, car rentals and local businesses in Greece.`,
   leadExtra: `The work starts from your own Search Console data. We reply within ${RESPONSE_HOURS} hours, in Greek or English, and we do not promise rankings nobody can guarantee.`,
   stats: [
     { value: years, label: 'Years in SEO' },
@@ -238,11 +237,11 @@ const en: SeoGuruCopy = {
   ],
   who: {
     eyebrow: 'Who we are',
-    title: 'Who the SEO guru is',
-    body: 'AnotherSEOGuru is a web design and SEO company. The SEO guru on the team is George K: he looks at the site himself, decides what happens first, and the team ships it. It is not a pen name on a report someone else prepared.',
+    title: 'Who the team is',
+    body: 'AnotherSEOGuru is the web design and SEO company of Touristas Technologies. The team looks at the site, decides what happens first, and ships it. It is not a pen name on a report someone else prepared.',
     bullets: [
-      'Founder: George K, SEO consultant based in Athens',
-      'Company: AnotherSEOGuru, Kamares, Sifnos',
+      'Company: Touristas Technologies',
+      'Brand: AnotherSEOGuru, for businesses in Greece',
       'Languages: Greek and English, with hreflang where the site needs it',
       'First step: a free audit, before any contract',
     ],
@@ -359,7 +358,7 @@ const en: SeoGuruCopy = {
     {
       question: 'What is the difference between an SEO guru, a consultant and an agency?',
       answer:
-        'The words overlap. A consultant advises. An agency also does the work. Here you get both: George K sets the plan and the team ships it. The SEO consultant page explains the advisory option on its own.',
+        'The words overlap. A consultant advises. An agency also does the work. Here you get both: the team sets the plan and ships it. The SEO consultant page explains the advisory option on its own.',
     },
     {
       question: 'How do we start?',
@@ -371,7 +370,6 @@ const en: SeoGuruCopy = {
     title: 'Send your website',
     body: `A free SEO audit within ${RESPONSE_HOURS} hours: the first issues and a fixed price, in Greek or English.`,
   },
-  personDescription: `George K is the founder of AnotherSEOGuru and an SEO consultant based in Athens, with ${years} years of experience and ${projects} projects delivered.`,
 };
 
 const COPY: Record<SiteLocale, SeoGuruCopy> = { el, en };

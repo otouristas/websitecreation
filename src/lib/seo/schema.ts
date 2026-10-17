@@ -6,7 +6,6 @@
 import type {
     ArticleSchemaData,
     DefinedTermSetSchemaData,
-    PersonSchemaData,
     FAQSchemaData,
     BreadcrumbSchemaData,
     LocalBusinessSchemaData,
@@ -221,6 +220,7 @@ export function generateOrganizationSchema(data: OrganizationSchemaData): Schema
         '@type': 'Organization',
         ...(data.id ? { '@id': data.id } : {}),
         name: data.name,
+        ...(data.legalName ? { legalName: data.legalName } : {}),
         url: data.url,
         logo: data.logo,
         description: data.description,
@@ -234,14 +234,6 @@ export function generateOrganizationSchema(data: OrganizationSchemaData): Schema
         }),
         ...(data.sameAs && { sameAs: data.sameAs }),
         ...(data.address && { address: postalAddress(data.address) }),
-        ...(data.founder && {
-            founder: {
-                '@type': 'Person',
-                '@id': data.founder.id,
-                name: data.founder.name,
-                ...(data.founder.url ? { url: data.founder.url } : {}),
-            },
-        }),
     };
 }
 
@@ -491,36 +483,3 @@ export function generateDefinedTermSetSchema(
   };
 }
 
-/**
- * Person schema.
- *
- * Used for the founder (src/data/founder.ts), whose details the owner
- * confirmed. Pass `id` so the node can be referenced from
- * Organization.founder; otherwise the @id derives from `url`.
- */
-export function generatePersonSchema(data: PersonSchemaData): SchemaOutput {
-  const id = data.id ?? (data.url ? `${data.url}#person` : undefined);
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'Person',
-    ...(id ? { '@id': id } : {}),
-    name: data.name,
-    ...(data.alternateName ? { alternateName: data.alternateName } : {}),
-    ...(data.url ? { url: data.url } : {}),
-    ...(data.jobTitle ? { jobTitle: data.jobTitle } : {}),
-    ...(data.description ? { description: data.description } : {}),
-    ...(data.address ? { address: postalAddress(data.address) } : {}),
-    ...(data.knowsAbout?.length ? { knowsAbout: data.knowsAbout } : {}),
-    ...(data.sameAs?.length ? { sameAs: data.sameAs } : {}),
-    ...(data.worksFor
-      ? {
-          worksFor: {
-            '@type': 'Organization',
-            '@id': `${BASE_URL}/#organization`,
-            name: data.worksFor.name,
-            url: data.worksFor.url,
-          },
-        }
-      : {}),
-  };
-}

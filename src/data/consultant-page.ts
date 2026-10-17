@@ -3,12 +3,12 @@ import { FOUNDER_YEARS, PROJECTS_DELIVERED } from '@/data/founder';
 import { RESPONSE_HOURS, SEO_MIN_TERM_MONTHS } from '@/data/company-facts';
 
 /**
- * Copy for the founder / SEO-consultant page: /el/symvoulos-seo and
+ * Copy for the team / SEO-consultant page: /el/symvoulos-seo and
  * /en/seo-consultant (Greek keyword map, section 3, "pages to create").
  *
- * Facts are limited to what the owner confirmed (src/data/founder.ts) and
- * what the repo can show (the /work portfolio). Prices only as tokens,
- * resolved at render time from src/data/pricing.ts.
+ * Facts are limited to confirmed experience figures and what the repo can
+ * show (the /work portfolio). Prices only as tokens, resolved at render
+ * time from src/data/pricing.ts. The page describes the team, not a person.
  *
  * Strings with `[label](/path)` render that span as an internal link.
  */
@@ -43,7 +43,6 @@ export type ConsultantCopy = {
   readonly faqs: ReadonlyArray<{ question: string; answer: string }>;
   readonly relatedTitle: string;
   readonly cta: { readonly title: string; readonly body: string };
-  readonly personDescription: string;
   readonly visualCaption: string;
 };
 
@@ -51,19 +50,19 @@ const years = `${FOUNDER_YEARS}+`;
 const projects = `${PROJECTS_DELIVERED}+`;
 
 const el: ConsultantCopy = {
-  metaTitle: 'Σύμβουλος SEO | Γιώργος Κ., SEO Specialist',
-  metaDescription: `Γιώργος Κ., σύμβουλος SEO και SEO specialist με ${years} χρόνια σε ελληνικά sites τουρισμού και e-shop. Συμβουλευτική, audit και καθοδήγηση ομάδων.`,
+  metaTitle: 'Σύμβουλος SEO | Touristas Technologies',
+  metaDescription: `Η ομάδα της Touristas Technologies, σύμβουλος SEO με ${years} χρόνια σε ελληνικά sites τουρισμού και e-shop. Συμβουλευτική, audit και καθοδήγηση ομάδων.`,
   primaryKeyword: 'σύμβουλος SEO',
   crumb: 'Σύμβουλος SEO',
   pillTag: 'Δωρεάν',
   pill: 'Ξεκινήστε με δωρεάν έλεγχο της ιστοσελίδας σας',
-  h1: { before: 'Γιώργος Κ.:', accent: 'σύμβουλος SEO', after: 'για ελληνικές επιχειρήσεις' },
-  lead: `Είμαι ο Γιώργος Κ., ιδρυτής της AnotherSEOGuru και σύμβουλος SEO με έδρα την Αθήνα. Με ${years} χρόνια εμπειρίας και πάνω από ${PROJECTS_DELIVERED} έργα, δουλεύω κυρίως με ξενοδοχεία, rent-a-car, τουριστικές επιχειρήσεις και e-shop, από το audit μέχρι τη στρατηγική.`,
-  leadExtra: `Αν ψάχνετε ειδικό στο SEO που θα δει ο ίδιος την ιστοσελίδα σας και θα σας πει τι να διορθώσετε πρώτα, ξεκινήστε από τον δωρεάν έλεγχο. Απαντάμε μέσα σε ${RESPONSE_HOURS} ώρες.`,
+  h1: { before: 'Η ομάδα μας:', accent: 'σύμβουλος SEO', after: 'για ελληνικές επιχειρήσεις' },
+  lead: `Η ομάδα της Touristas Technologies, πίσω από την AnotherSEOGuru, αναλαμβάνει συμβουλευτική SEO για επιχειρήσεις στην Ελλάδα. Με ${years} χρόνια εμπειρίας και πάνω από ${PROJECTS_DELIVERED} έργα, δουλεύουμε κυρίως με ξενοδοχεία, rent-a-car, τουριστικές επιχειρήσεις και e-shop, από το audit μέχρι τη στρατηγική.`,
+  leadExtra: `Αν ψάχνετε ειδικό στο SEO που θα δει την ιστοσελίδα σας και θα σας πει τι να διορθώσετε πρώτα, ξεκινήστε από τον δωρεάν έλεγχο. Απαντάμε μέσα σε ${RESPONSE_HOURS} ώρες.`,
   stats: [
     { value: years, label: 'Χρόνια στο SEO' },
     { value: projects, label: 'Έργα που παραδόθηκαν' },
-    { value: 'Αθήνα', label: 'Έδρα' },
+    { value: 'Ελλάδα', label: 'Αγορά' },
     { value: 'EL / EN', label: 'Γλώσσες συνεργασίας' },
   ],
   role: {
@@ -167,9 +166,9 @@ const el: ConsultantCopy = {
         'Ο σύμβουλος SEO δίνει στρατηγική και καθοδήγηση, ενώ η εταιρεία SEO αναλαμβάνει και την υλοποίηση. Αν έχετε δική σας ομάδα, συνήθως αρκεί ο σύμβουλος. Αν όχι, χρειάζεστε κάποιον να κάνει και τις διορθώσεις. Στην AnotherSEOGuru μπορείτε να ξεκινήσετε με συμβουλευτική ή audit και να περάσετε σε πλήρη ανάθεση όποτε θέλετε.',
     },
     {
-      question: 'Συνεργάζεστε με επιχειρήσεις εκτός Αθήνας;',
+      question: 'Συνεργάζεστε με επιχειρήσεις σε όλη την Ελλάδα;',
       answer:
-        'Ναι. Η έδρα μας είναι στην Αθήνα, αλλά πολλά από τα έργα μας βρίσκονται στις Κυκλάδες, στην Κρήτη και σε άλλες περιοχές της Ελλάδας. Η συνεργασία γίνεται online, στα ελληνικά ή στα αγγλικά.',
+        'Ναι. Δουλεύουμε με επιχειρήσεις σε όλη την Ελλάδα και στο εξωτερικό, ανάμεσά τους στις Κυκλάδες, στην Κρήτη και στην Αθήνα. Η συνεργασία γίνεται online, στα ελληνικά ή στα αγγλικά.',
     },
     {
       question: 'Πώς ξεκινάμε;',
@@ -181,24 +180,23 @@ const el: ConsultantCopy = {
     title: 'Ας δούμε μαζί την ιστοσελίδα σας',
     body: `Ξεκινήστε με δωρεάν έλεγχο SEO: μέσα σε ${RESPONSE_HOURS} ώρες ξέρετε τι να διορθώσετε πρώτα.`,
   },
-  personDescription: `Σύμβουλος SEO και ιδρυτής της AnotherSEOGuru, με έδρα την Αθήνα, ${years} χρόνια εμπειρίας και ${projects} έργα.`,
   visualCaption: 'Δείγμα ελέγχου SEO, όπως αυτός που παίρνει κάθε πελάτης πριν από τη συνεργασία.',
 };
 
 const en: ConsultantCopy = {
-  metaTitle: 'SEO Consultant | George K, SEO Specialist',
-  metaDescription: `George K, SEO consultant and SEO specialist in Athens with ${years} years on Greek tourism sites and e-shops. Consulting, SEO audits and team coaching.`,
+  metaTitle: 'SEO Consultant | Touristas Technologies',
+  metaDescription: `The Touristas Technologies team, SEO consultants with ${years} years on Greek tourism sites and e-shops. Consulting, SEO audits and team coaching.`,
   primaryKeyword: 'SEO consultant',
   crumb: 'SEO consultant',
   pillTag: 'Free',
   pill: 'Start with a free audit of your website',
-  h1: { before: 'George K:', accent: 'SEO consultant', after: 'for Greek businesses' },
-  lead: `I’m George K, founder of AnotherSEOGuru and an SEO consultant based in Athens. With ${years} years of experience and more than ${PROJECTS_DELIVERED} projects delivered, I work mostly with hotels, car rentals, tourism businesses and e-shops, from the audit to the strategy.`,
-  leadExtra: `If you want an SEO specialist who looks at your site personally and tells you what to fix first, start with the free audit. We reply within ${RESPONSE_HOURS} hours.`,
+  h1: { before: 'Our team:', accent: 'SEO consultant', after: 'for Greek businesses' },
+  lead: `The Touristas Technologies team, behind AnotherSEOGuru, handles SEO consulting for businesses in Greece. With ${years} years of experience and more than ${PROJECTS_DELIVERED} projects delivered, we work mostly with hotels, car rentals, tourism businesses and e-shops, from the audit to the strategy.`,
+  leadExtra: `If you want an SEO specialist team that looks at your site and tells you what to fix first, start with the free audit. We reply within ${RESPONSE_HOURS} hours.`,
   stats: [
     { value: years, label: 'Years in SEO' },
     { value: projects, label: 'Projects delivered' },
-    { value: 'Athens', label: 'Based in' },
+    { value: 'Greece', label: 'Market' },
     { value: 'EN / EL', label: 'Working languages' },
   ],
   role: {
@@ -302,9 +300,9 @@ const en: ConsultantCopy = {
         'An SEO consultant gives strategy and guidance, while an SEO company also does the implementation. If you have your own team, a consultant is usually enough. If not, you need someone to make the fixes too. At AnotherSEOGuru you can start with consulting or an audit and move to a full engagement whenever you want.',
     },
     {
-      question: 'Do you work with businesses outside Athens?',
+      question: 'Do you work with businesses across Greece?',
       answer:
-        'Yes. We are based in Athens, but many of our projects are in the Cyclades, Crete and elsewhere in Greece and abroad. We work online, in Greek or English.',
+        'Yes. We work with businesses across Greece and abroad, including the Cyclades, Crete and Athens. The work is online, in Greek or English.',
     },
     {
       question: 'How do we start?',
@@ -316,7 +314,6 @@ const en: ConsultantCopy = {
     title: 'Let’s look at your website together',
     body: `Start with a free SEO audit: within ${RESPONSE_HOURS} hours you know what to fix first.`,
   },
-  personDescription: `SEO consultant and founder of AnotherSEOGuru, based in Athens, with ${years} years of experience and ${projects} projects delivered.`,
   visualCaption: 'A sample SEO audit, the kind every client gets before we start.',
 };
 
