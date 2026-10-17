@@ -49,7 +49,7 @@ export async function POST(req: Request) {
 
   const context = sources.map((s, i) => `<doc id="${i + 1}" title="${s.title}" url="https://anotherseoguru.com${s.href}">\n${s.description}\n${s.text}\n</doc>`).join("\n\n");
   const system = [
-    "You answer questions about GSC Boost (by AnotherSEOGuru), an SEO platform built on Google Search Console with a web app and an iPhone app in TestFlight beta, and about SEO terms from its glossary.",
+    "You answer questions about AnotherSEOGuru App, an SEO platform built on Google Search Console with a web app and an iPhone app in TestFlight beta, and about SEO terms from its glossary.",
     "Answer only from the documents provided. If they don't cover the question, say so briefly and suggest contacting support@anotherseoguru.com.",
     `Reply in ${locale === "el" ? "Greek (keep industry terms such as Search Console, CTR or crawl budget in English)" : "English"}.`,
     "Be concise and practical: a direct answer first, then short steps if useful. Use Markdown lists and **bold** for UI labels. Do not invent features, prices or settings. Do not include URLs; the interface lists the sources.",

@@ -43,10 +43,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return platformMetadata({
     locale,
     path: "/platform/for/ecommerce",
-    title: { en: "SEO Platform for Ecommerce: GSC Boost", el: "GSC Boost: λογισμικό SEO για e-shop" },
+    title: { en: "SEO for Ecommerce: AnotherSEOGuru App", el: "AnotherSEOGuru App: λογισμικό SEO για e-shop" },
     description: {
-      en: "GSC Boost for online shops: find category and product pages one fix from page one, rewrite weak snippets and catch decaying pages before they lose sales.",
-      el: "Το GSC Boost για e-shop: βρείτε σελίδες κατηγοριών και προϊόντων κοντά στην πρώτη σελίδα, διορθώστε αδύναμα snippets και εντοπίστε σελίδες σε πτώση.",
+      en: "AnotherSEOGuru App for online shops: find category and product pages one fix from page one, rewrite weak snippets and catch decaying pages before they lose sales.",
+      el: "Το AnotherSEOGuru App για e-shop: βρείτε σελίδες κατηγοριών και προϊόντων κοντά στην πρώτη σελίδα, διορθώστε αδύναμα snippets και εντοπίστε σελίδες σε πτώση.",
     },
     keyword: { en: "ecommerce SEO software", el: "λογισμικό SEO για e-shop" },
   });
@@ -103,24 +103,24 @@ const SHOP_OPPORTUNITIES: ReadonlyArray<{ icon: LucideIcon; tag: Copy; title: Co
 
 const ECOMMERCE_FAQ: ReadonlyArray<GscFaqItem> = [
   {
-    q: { en: "Does GSC Boost connect to Shopify or WooCommerce?", el: "Συνδέεται το GSC Boost με Shopify ή WooCommerce;" },
+    q: { en: "Does AnotherSEOGuru App connect to Shopify or WooCommerce?", el: "Συνδέεται το AnotherSEOGuru App με Shopify ή WooCommerce;" },
     a: {
-      en: "Not directly. GSC Boost works from Google Search Console and Google Analytics 4, which any shop can connect whatever platform it runs on. If your site runs on WordPress, you can also import pages and publish drafts back to it.",
-      el: "Όχι απευθείας. Το GSC Boost δουλεύει με το Google Search Console και το Google Analytics 4, που μπορεί να συνδέσει κάθε e-shop, σε όποια πλατφόρμα κι αν τρέχει. Αν ο ιστότοπός σας τρέχει σε WordPress, μπορείτε επίσης να εισάγετε σελίδες και να δημοσιεύετε κείμενα πίσω σε αυτόν.",
+      en: "Not directly. AnotherSEOGuru App works from Google Search Console and Google Analytics 4, which any shop can connect whatever platform it runs on. If your site runs on WordPress, you can also import pages and publish drafts back to it.",
+      el: "Όχι απευθείας. Το AnotherSEOGuru App δουλεύει με το Google Search Console και το Google Analytics 4, που μπορεί να συνδέσει κάθε e-shop, σε όποια πλατφόρμα κι αν τρέχει. Αν ο ιστότοπός σας τρέχει σε WordPress, μπορείτε επίσης να εισάγετε σελίδες και να δημοσιεύετε κείμενα πίσω σε αυτόν.",
     },
   },
   {
     q: { en: "Does it show revenue per page?", el: "Δείχνει έσοδα ανά σελίδα;" },
     a: {
-      en: "No. GSC Boost estimates extra clicks, measured from your own Search Console data, and does not estimate revenue. Clicks are the part SEO controls; what they are worth depends on your conversion rate and margins.",
-      el: "Όχι. Το GSC Boost εκτιμά επιπλέον κλικ, με βάση τα δικά σας δεδομένα Search Console, και δεν εκτιμά έσοδα. Τα κλικ είναι το κομμάτι που ελέγχει το SEO· η αξία τους εξαρτάται από το ποσοστό μετατροπής και τα περιθώριά σας.",
+      en: "No. AnotherSEOGuru App estimates extra clicks, measured from your own Search Console data, and does not estimate revenue. Clicks are the part SEO controls; what they are worth depends on your conversion rate and margins.",
+      el: "Όχι. Το AnotherSEOGuru App εκτιμά επιπλέον κλικ, με βάση τα δικά σας δεδομένα Search Console, και δεν εκτιμά έσοδα. Τα κλικ είναι το κομμάτι που ελέγχει το SEO· η αξία τους εξαρτάται από το ποσοστό μετατροπής και τα περιθώριά σας.",
     },
   },
   ...HOME_FAQ.filter((f) => ["How are the click estimates calculated?", "What are credits used for?", "Do I need a credit card to try it?"].includes(f.q.en)),
 ];
 
 /**
- * GSC Boost for e-commerce. Honest by construction: it maps the app's real
+ * AnotherSEOGuru App for e-commerce. Honest by construction: it maps the app's real
  * opportunity types and modules onto shop pages and claims no shop-platform
  * integration or revenue figure the app does not have.
  */
@@ -138,15 +138,15 @@ export default async function PlatformForEcommercePage({ params }: PageProps) {
       <Header locale={locale} />
       <main className="blueprint-grid relative z-0">
         <HeroCentered
-          pill={<KitEyebrow icon={<ShoppingBag />}>{tx("GSC Boost for e-commerce", "GSC Boost για e-shop")}</KitEyebrow>}
+          pill={<KitEyebrow icon={<ShoppingBag />}>{tx("AnotherSEOGuru App for e-commerce", "AnotherSEOGuru App για e-shop")}</KitEyebrow>}
           title={
             <>
               {tx("Find the shop pages", "Βρείτε τις σελίδες του e-shop")} <Accent>{tx("one fix from page one", "μία διόρθωση πριν την πρώτη σελίδα")}</Accent>
             </>
           }
           lead={tx(
-            "GSC Boost is SEO software that reads your shop’s Search Console data and ranks the fixes worth making: category pages on positions 4–20, product snippets that earn fewer clicks than they should, guides losing traffic and searches you have no page for, each with an estimate of the extra clicks.",
-            "Το GSC Boost είναι λογισμικό SEO που διαβάζει τα δεδομένα Search Console του e-shop σας και βάζει σε σειρά τις διορθώσεις που αξίζουν: σελίδες κατηγοριών στις θέσεις 4–20, snippets προϊόντων με λιγότερα κλικ απ’ όσα θα έπρεπε, οδηγούς που χάνουν κίνηση και αναζητήσεις χωρίς σελίδα, με εκτίμηση των επιπλέον κλικ.",
+            "AnotherSEOGuru App is SEO software that reads your shop’s Search Console data and ranks the fixes worth making: category pages on positions 4–20, product snippets that earn fewer clicks than they should, guides losing traffic and searches you have no page for, each with an estimate of the extra clicks.",
+            "Το AnotherSEOGuru App είναι λογισμικό SEO που διαβάζει τα δεδομένα Search Console του e-shop σας και βάζει σε σειρά τις διορθώσεις που αξίζουν: σελίδες κατηγοριών στις θέσεις 4–20, snippets προϊόντων με λιγότερα κλικ απ’ όσα θα έπρεπε, οδηγούς που χάνουν κίνηση και αναζητήσεις χωρίς σελίδα, με εκτίμηση των επιπλέον κλικ.",
           )}
           actions={<SoftwareCtas locale={locale} source="ecommerce-hero" />}
           trust={<TrustLine items={softwareTrust(locale)} />}

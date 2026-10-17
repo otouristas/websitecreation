@@ -55,10 +55,10 @@ function askCopy(locale: SiteLocale): AskCopy {
   return {
     title: el ? "Ρωτήστε το AI" : "Ask AI",
     button: el ? "Ρωτήστε το AI" : "Ask AI",
-    placeholder: el ? "Ρωτήστε για το GSC Boost ή έναν όρο SEO" : "Ask about GSC Boost or any SEO term",
+    placeholder: el ? "Ρωτήστε για το AnotherSEOGuru App ή έναν όρο SEO" : "Ask about AnotherSEOGuru App or any SEO term",
     intro: el
-      ? "Απαντήσεις από τους οδηγούς του GSC Boost και το SEO γλωσσάρι, με τις σελίδες που χρησιμοποιήθηκαν."
-      : "Answers from the GSC Boost guides and the SEO glossary, with the pages they came from.",
+      ? "Απαντήσεις από τους οδηγούς του AnotherSEOGuru App και το SEO γλωσσάρι, με τις σελίδες που χρησιμοποιήθηκαν."
+      : "Answers from the AnotherSEOGuru App guides and the SEO glossary, with the pages they came from.",
     suggestions: el
       ? ["Πώς συνδέω το Search Console;", "Πώς βάζω την εφαρμογή στο iPhone μου;", "Τι είναι το striking distance;", "Πώς δουλεύει το client portal;"]
       : ["How do I connect Search Console?", "How do I install the iPhone app?", "What is striking distance?", "How does the client portal work?"],
@@ -143,7 +143,7 @@ function DocsFooter({ locale }: { readonly locale: SiteLocale }) {
   const lp = (p: string) => localizedPath(locale, p);
   const links = [
     { label: el ? "Αρχική" : "Home", href: lp("/") },
-    { label: "GSC Boost", href: lp("/platform") },
+    { label: "AnotherSEOGuru App", href: lp("/platform") },
     { label: el ? "Εφαρμογή iPhone" : "iPhone app", href: lp("/platform/iphone") },
     { label: el ? "Τιμές" : "Pricing", href: lp("/platform/pricing") },
     { label: "Blog", href: lp("/blog") },

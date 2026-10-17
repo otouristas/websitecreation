@@ -1972,19 +1972,19 @@ A: Use https://anotherseoguru.com/en/get-started (or https://anotherseoguru.com/
 
 ---
 
-## 11. GSC Boost documentation
+## 11. AnotherSEOGuru App documentation
 
 The same guides are in Greek under https://anotherseoguru.com/el/help. Each page has a Markdown twin at its URL + ".md".
 
-### What GSC Boost does
+### What AnotherSEOGuru App does
 
 > A tour of the product: your Search Console data, turned into a ranked list of fixes.
 
 Source: https://anotherseoguru.com/en/help/getting-started/welcome
 
-GSC Boost reads your **Google Search Console** data and turns it into a weekly plan: which pages and queries to work on, what to change, and how many clicks each fix is likely to bring. Everything else in the product (keyword research, the site audit, content, competitors, AI visibility and client work) feeds that same plan.
+AnotherSEOGuru App reads your **Google Search Console** data and turns it into a weekly plan: which pages and queries to work on, what to change, and how many clicks each fix is likely to bring. Everything else in the product (keyword research, the site audit, content, competitors, AI visibility and client work) feeds that same plan.
 
-![The This week screen in GSC Boost with search performance, sales from Analytics and the sidebar navigation](https://anotherseoguru.com/images/docs/web/overview-light.webp)
+![The This week screen in AnotherSEOGuru App with search performance, sales from Analytics and the sidebar navigation](https://anotherseoguru.com/images/docs/web/overview-light.webp)
 *This week is the home screen: how search is doing and what to fix first.*
 
 ## How it works
@@ -2026,9 +2026,9 @@ GSC Boost reads your **Google Search Console** data and turns it into a weekly p
 
 Source: https://anotherseoguru.com/en/help/getting-started/connect-search-console
 
-GSC Boost works from your own Search Console data, so the first step is connecting the Google account that has access to your properties.
+AnotherSEOGuru App works from your own Search Console data, so the first step is connecting the Google account that has access to your properties.
 
-![The GSC Boost sign-up page with the Continue with Google button](https://anotherseoguru.com/images/docs/web/signup-light.webp)
+![The AnotherSEOGuru App sign-up page with the Continue with Google button](https://anotherseoguru.com/images/docs/web/signup-light.webp)
 *Create your account with Google to connect Search Console in one step.*
 
 ## Connect your account
@@ -2322,7 +2322,7 @@ Source: https://anotherseoguru.com/en/help/keywords-content/content-studio
 ## Connect WordPress
 
 1. In WordPress, create an application password under **Users → Profile**.
-2. In GSC Boost, open **Settings → Integrations** and add your site URL, username and application password.
+2. In AnotherSEOGuru App, open **Settings → Integrations** and add your site URL, username and application password.
 3. Import posts and pages in **Content → Library**. Edits you make there can be published back with one click.
 
 > **Warning:** Pages imported by crawl aren't linked to WordPress. To publish back, connect the site and import it from WordPress.
@@ -2607,22 +2607,22 @@ See [Date ranges, comparisons and why numbers differ](https://anotherseoguru.com
 
 Source: https://anotherseoguru.com/en/help/iphone-app/get-the-beta
 
-GSC Boost for iPhone is a native app (not a web view) on the same account and data as the web app. It's in **beta through Apple's TestFlight**. It isn't on the App Store yet, so the only way to install it is with a TestFlight invite from us.
+AnotherSEOGuru App for iPhone is a native app (not a web view) on the same account and data as the web app. It's in **beta through Apple's TestFlight**. It isn't on the App Store yet, so the only way to install it is with a TestFlight invite from us.
 
 ## What you need
 
 - An iPhone on **iOS 17 or later**. On iOS 26 and later the app uses the system's Liquid Glass tab bar.
 - The free **TestFlight** app from Apple.
-- A GSC Boost account, or none at all: the app has a sample workspace you can explore before you connect anything.
+- An AnotherSEOGuru App account, or none at all: the app has a sample workspace you can explore before you connect anything.
 
 ## Request an invite and install
 
-1. **Email us for access** Write to [support@anotherseoguru.com](mailto:support@anotherseoguru.com?subject=iPhone%20beta%20access) with the subject **iPhone beta access**. Use the email address you want the invite sent to (it doesn't have to be your GSC Boost login).
+1. **Email us for access** Write to [support@anotherseoguru.com](mailto:support@anotherseoguru.com?subject=iPhone%20beta%20access) with the subject **iPhone beta access**. Use the email address you want the invite sent to (it doesn't have to be your AnotherSEOGuru App login).
 2. **Install TestFlight** On your iPhone, install **TestFlight** from the App Store. It's Apple's own app for beta testing.
 3. **Accept the invite** Open the invite email (or the invite link we send) on your iPhone and tap through to TestFlight. Tap **Accept**, then **Install**.
 4. **Open the app and sign in** AnotherSEOGuru appears on your Home Screen. Sign in with the same account you use on the web, or tap **Explore the sample workspace**. See [Sign in and sync](https://anotherseoguru.com/en/help/iphone-app/sign-in-and-sync).
 
-> **Note:** The app on your Home Screen is called **AnotherSEOGuru**. It's the iPhone version of GSC Boost, on the same account, plan and credits.
+> **Note:** The app on your Home Screen is called **AnotherSEOGuru**. It's the iPhone version of AnotherSEOGuru App, on the same account, plan and credits.
 
 ## Getting new builds
 
@@ -2645,7 +2645,7 @@ We ship beta builds often. TestFlight tells you when one is ready: open **TestFl
 
 ### Sign in and sync with the web app
 
-> Use the same GSC Boost account on your iPhone. What syncs, what stays on the device and how to switch language.
+> Use the same AnotherSEOGuru App account on your iPhone. What syncs, what stays on the device and how to switch language.
 
 Source: https://anotherseoguru.com/en/help/iphone-app/sign-in-and-sync
 
