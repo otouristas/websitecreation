@@ -6,8 +6,9 @@ import { Counter } from "@/components/motion/Counter";
 
 /**
  * Proof rail: the four derived trust numbers (project count comes from the
- * portfolio dataset, so it cannot drift from /work) counting up, then the
- * client logo marquee. One hairline band, straight under the hero.
+ * portfolio dataset, so it cannot drift from /work), then the client logo
+ * marquee. One hairline band, straight under the hero. The figures render at
+ * their final values; they are not counted up from zero.
  */
 export function ProofRail({ locale = "en" }: { locale?: SiteLocale }) {
   const isEl = locale === "el";
