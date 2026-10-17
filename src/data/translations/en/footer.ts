@@ -4,6 +4,7 @@ export const footerEn = {
   agency: 'Services',
   resources: 'Resources',
   company: 'Company',
+  areas: 'Areas',
   legal: 'Legal',
   services: 'All services',
   websiteCreation: 'Website creation',

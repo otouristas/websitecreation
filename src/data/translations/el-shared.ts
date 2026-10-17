@@ -7,6 +7,7 @@ export const elShared = {
     agency: 'Υπηρεσίες',
     resources: 'Πόροι',
     company: 'Εταιρεία',
+    areas: 'Περιοχές',
     legal: 'Νομικά',
     services: 'Όλες οι υπηρεσίες',
     websiteCreation: 'Κατασκευή ιστοσελίδας',
