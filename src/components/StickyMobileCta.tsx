@@ -13,17 +13,18 @@ import { appLink } from '@/components/gsc-boost/copy';
 
 /**
  * Space the floating pill takes at the bottom of the viewport: 3.5rem pill +
- * 0.75rem gap above the safe-area inset (or 0.75rem when there is none). The
- * cookie banner stacks on this variable.
+ * 0.75rem gap above the safe-area inset (or 0.75rem when there is none).
  */
 const BAR_HEIGHT = 'calc(4.25rem + max(0.75rem, env(safe-area-inset-bottom, 0px)))';
 
 /**
- * Server-rendered so the value is right on the first paint; measuring in an
- * effect would make the cookie banner jump once on every page load. Scoped to
- * the breakpoint where the pill shows and not emitted where it doesn't render.
+ * Server-rendered so the value is right on the first paint. The height and the
+ * bar itself apply only once a cookie choice exists (html.consent-set). Until
+ * then the consent dialog owns the bottom edge and the bar stays hidden, which
+ * keeps it from covering the dialog or the other way around. Scoped to the
+ * breakpoint where the pill shows.
  */
-const BAR_HEIGHT_STYLE = `@media (max-width:1023.98px){:root{--chrome-bottom-bar:${BAR_HEIGHT}}}`;
+const BAR_HEIGHT_STYLE = `@media (max-width:1023.98px){[data-chrome="sticky-cta"]{display:none}html.consent-set{--chrome-bottom-bar:${BAR_HEIGHT}}html.consent-set [data-chrome="sticky-cta"]{display:flex}}`;
 
 const WHATSAPP_ARIA = {
   en: `Chat on WhatsApp ${PHONE_DISPLAY}`,

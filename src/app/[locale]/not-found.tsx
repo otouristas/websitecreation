@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { BrandLogo } from '@/components/BrandLogo';
+import { CookiePreferencesLink } from '@/components/CookiePreferencesLink';
 import { ErrorAppearance } from '@/components/ErrorAppearance';
 import { inter } from '@/brand/typography';
 
@@ -29,6 +30,7 @@ export default function NotFound() {
         >
           English homepage
         </Link>
+        <CookiePreferencesLink className="text-sm text-muted-foreground underline underline-offset-2 lg:hidden" />
       </div>
     </main>
   );

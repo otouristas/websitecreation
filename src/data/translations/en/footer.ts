@@ -18,6 +18,7 @@ export const footerEn = {
   privacy: 'Privacy policy',
   terms: 'Terms of service',
   cookies: 'Cookies',
+  cookiePreferences: 'Cookie preferences',
   gdpr: 'GDPR',
   rights: 'All rights reserved.',
   payments: 'We accept',

@@ -6,6 +6,7 @@ import { localizedPath, type SiteLocale } from "@/lib/i18n/locale";
 import { docsTabs, sidebarFor, type DocsTab } from "@/lib/docs/nav";
 import { glossaryPath } from "@/lib/docs/glossary";
 import { SUPPORT_EMAIL } from "@/components/help/HelpShell";
+import { CookiePreferencesLink } from "@/components/CookiePreferencesLink";
 import { AskAi, type AskCopy } from "./AskAi";
 import { DocsMobileMenu } from "./DocsMobileMenu";
 import { DocsSearch, type SearchCopy } from "./DocsSearch";
@@ -157,6 +158,10 @@ function DocsFooter({ locale }: { readonly locale: SiteLocale }) {
             {l.label}
           </Link>
         ))}
+        <CookiePreferencesLink
+          label={el ? "Προτιμήσεις cookies" : "Cookie preferences"}
+          className="cursor-pointer border-0 bg-transparent p-0 hover:text-foreground lg:hidden"
+        />
         <a href={`mailto:${SUPPORT_EMAIL}`} className="hover:text-foreground sm:ml-auto">
           {SUPPORT_EMAIL}
         </a>

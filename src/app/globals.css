@@ -139,13 +139,12 @@
   --marketing-container-narrow: 48rem;
 
   /* Bottom-chrome stack.
-     Three fixed elements share the bottom of the viewport on mobile: the
-     sticky quote bar, the cookie banner and the floating WhatsApp pill. Each
-     one publishes the height it occupies here and the one above it offsets by
-     the sum, so nothing overlaps at any viewport size and page content can
-     reserve the right amount of padding. Both default to 0 - the sticky bar
-     ships its own server-rendered override so there is no first-paint jump,
-     and the cookie banner measures itself because its text wraps. */
+     The sticky quote bar publishes its height here only after a cookie choice
+     (html.consent-set). Until then it stays 0 and the bar is hidden, so the
+     consent dialog sits on the safe area instead of covering the bar. The
+     dialog measures itself into --chrome-cookie-bar because the copy wraps.
+     The desktop WhatsApp pill offsets by both heights. Both default to 0 so
+     there is no reserved gap before the bar's own rule applies. */
   --chrome-bottom-bar: 0px;
   --chrome-cookie-bar: 0px;
   --chrome-gutter: 1rem;
