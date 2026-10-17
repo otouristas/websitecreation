@@ -22,31 +22,45 @@ import { CheckList, MarketingBadge, kitPrimaryBtn, kitSecondaryBtn } from '@/com
  *
  * The popular tier sits in a gradient ring: a 1px padded wrapper carrying the
  * brand gradient, with the kit card inside it.
+ *
+ * `frame="quiet"` keeps the same badge and swaps the glow for the subtle
+ * accent border used on software plan cards (border + 1px ring, no shadow).
  */
 export function PriceCard({
   tier,
   locale,
   recurring = false,
+  frame = 'glow',
 }: {
   tier: Tier;
   locale: SiteLocale;
   recurring?: boolean;
+  frame?: 'glow' | 'quiet';
 }) {
   const isEl = locale === 'el';
   const active = isOfferActive();
   const net = currentPrice(tier);
   const gross = withVat(net);
   const per = recurring ? (isEl ? '/μήνα' : '/mo') : '';
+  const quiet = frame === 'quiet' && Boolean(tier.popular);
 
   const card = (
     <div
-      className={`relative flex h-full flex-col rounded-[calc(1rem-1px)] p-6 sm:p-7 ${
-        tier.popular ? 'bg-[linear-gradient(180deg,color-mix(in_oklab,var(--primary)_10%,var(--background)),var(--background))]' : 'bg-surface/60'
+      className={`relative flex h-full flex-col p-6 sm:p-7 ${
+        quiet
+          ? 'rounded-2xl border border-primary bg-accent ring-1 ring-primary/20'
+          : `rounded-[calc(1rem-1px)] ${
+              tier.popular
+                ? 'bg-[linear-gradient(180deg,color-mix(in_oklab,var(--primary)_10%,var(--background)),var(--background))]'
+                : 'bg-surface/60'
+            }`
       }`}
     >
       <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
         <h3 className="font-display text-[20px] font-semibold tracking-[-0.025em] text-foreground">{tier.name}</h3>
-        {tier.popular ? <MarketingBadge kind="popular">{isEl ? 'Πιο δημοφιλές' : 'Most popular'}</MarketingBadge> : null}
+        {tier.popular ? (
+          <MarketingBadge kind="popular">{isEl ? (quiet ? 'Δημοφιλές' : 'Πιο δημοφιλές') : 'Most popular'}</MarketingBadge>
+        ) : null}
       </div>
       <p className="mt-2 min-h-[3.5rem] text-[14px] leading-relaxed text-muted-foreground">
         {isEl ? tier.forEl : tier.forEn}
@@ -94,6 +108,8 @@ export function PriceCard({
       </Link>
     </div>
   );
+
+  if (quiet) return card;
 
   if (tier.popular) {
     return (
