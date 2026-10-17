@@ -5,10 +5,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { BrandLogo } from "@/components/BrandLogo";
 import { CookiePreferencesLink } from "@/components/CookiePreferencesLink";
-import { getAppPath } from "@/lib/app-links";
-import { localizedPath, siteLocaleFromPath, type SiteLocale } from "@/lib/i18n/locale";
+import { FooterCta } from "@/components/FooterCta";
 import { getFooterDictionary } from "@/lib/i18n/get-dictionary";
-import { elServiceLocationPath } from "@/lib/locale-paths";
+import { localizedPath, siteLocaleFromPath, stripLocalePrefix, type SiteLocale } from "@/lib/i18n/locale";
 import { CONTACT_EMAIL, PHONE_DISPLAY, WHATSAPP_HREF } from "@/lib/contact-info";
 import { trackCtaClick } from "@/lib/analytics";
 import { consultantPath } from "@/data/founder";
@@ -26,75 +25,169 @@ const PAYMENT_LOGOS = [
   { src: "/payments/jcb.svg", alt: "JCB", width: 42 },
 ] as const;
 
-/** Exact-anchor Greek service×city links matching striking-distance GSC queries. */
-const EL_SEO_HUB_LINKS: { label: string; href: string }[] = [
-  { label: "SEO σε όλη την Ελλάδα", href: "/el/seo" },
-  { label: "Κατασκευή Ιστοσελίδων Αθήνα", href: elServiceLocationPath("website-creation", "athens-gr") },
-  { label: "Κατασκευή Ιστοσελίδων Θεσσαλονίκη", href: elServiceLocationPath("website-creation", "thessaloniki-gr") },
-  { label: "Κατασκευή Ιστοσελίδων Πάτρα", href: elServiceLocationPath("website-creation", "patras-gr") },
-  { label: "Κατασκευή Ιστοσελίδων Ηράκλειο", href: elServiceLocationPath("website-creation", "heraklion-gr") },
-  { label: "Κατασκευή Ιστοσελίδων Χανιά", href: elServiceLocationPath("website-creation", "chania-gr") },
-  { label: "Κατασκευή Ιστοσελίδων Ρόδος", href: elServiceLocationPath("website-creation", "rhodes-gr") },
-  { label: "SEO Αθήνα", href: elServiceLocationPath("local-seo", "athens-gr") },
-  { label: "SEO Θεσσαλονίκη", href: elServiceLocationPath("local-seo", "thessaloniki-gr") },
-  { label: "SEO Σαντορίνη", href: elServiceLocationPath("local-seo", "santorini-gr") },
-  { label: "SEO Μύκονος", href: elServiceLocationPath("local-seo", "mykonos-gr") },
-  { label: "SEO Κως", href: elServiceLocationPath("local-seo", "kos-gr") },
-  { label: "SEO Χανιά", href: elServiceLocationPath("local-seo", "chania-gr") },
-  { label: "Υπηρεσίες SEO", href: "/el/seo-services" },
-  { label: "Τεχνικό SEO", href: "/el/seo-services/technical" },
-  { label: "On-page SEO", href: "/el/seo-services/on-page" },
-  { label: "Στρατηγική SEO", href: "/el/seo-services/strategy" },
-  { label: "Κατασκευή E-shop", href: "/el/services/eshop-woocommerce" },
-  { label: "SEO για E-shop", href: "/el/services/eshop-seo" },
-  { label: "Κατασκευή E-shop Αθήνα", href: elServiceLocationPath("eshop-woocommerce", "athens-gr") },
-  { label: "Κατασκευή E-shop Θεσσαλονίκη", href: elServiceLocationPath("eshop-woocommerce", "thessaloniki-gr") },
-  { label: "Κατασκευή E-shop Πάτρα", href: elServiceLocationPath("eshop-woocommerce", "patras-gr") },
-  { label: "Ανασχεδιασμός Ιστοσελίδας", href: "/el/services/website-redesign" },
-  { label: "SEO για Ξενοδοχεία", href: "/el/solutions/hotels" },
-  { label: "Κατασκευή Ιστοσελίδας Ξενοδοχείου", href: "/el/solutions/hotels" },
-  { label: "SEO για Δικηγόρους", href: "/el/solutions/lawyers" },
-  { label: "SEO για Ακίνητα", href: "/el/solutions/real-estate" },
-  { label: "Οδηγός: Κατασκευή E-shop", href: "/el/blog/kataskevi-eshop-odigos" },
-  { label: "Πόσο Κοστίζει μια Ιστοσελίδα", href: "/el/blog/poso-kostizei-mia-istoselida" },
-  { label: "Πόσο Κοστίζει το SEO", href: "/el/blog/poso-kostizei-to-seo" },
-  { label: "Τιμές & Πακέτα", href: "/el/pricing" },
-  { label: "Όλες οι Υπηρεσίες", href: "/el/services" },
-  { label: "Όλες οι Περιοχές", href: "/el/locations" },
-];
-
-const EN_SEO_HUB_LINKS: { label: string; href: string }[] = [
-  // Head-term service pages (C10: "seo services", "web development agency", "modern web design")
-  { label: "SEO Services", href: "/en/seo-services" },
-  { label: "Technical SEO", href: "/en/seo-services/technical" },
-  { label: "On-page SEO", href: "/en/seo-services/on-page" },
-  { label: "SEO Strategy", href: "/en/seo-services/strategy" },
-  { label: "Web Development Agency", href: "/en/services/website-creation" },
-  { label: "SEO Web Design", href: "/en/services/seo-web-design" },
-  { label: "E-commerce / E-shop", href: "/en/services/eshop-woocommerce" },
-  { label: "AI Visibility (GEO/AEO)", href: "/en/services/ai-visibility" },
-  { label: "Website Redesign", href: "/en/services/website-redesign" },
-  // Only live service × city pages (src/lib/indexability/service-location.ts).
-  // `npm run audit:locations` fails if one of these points at a removed URL.
-  { label: "Web Design London", href: "/en/services/website-creation/london-uk" },
-  { label: "SEO London", href: "/en/services/local-seo/london-uk" },
-  { label: "Web Design Athens", href: "/en/services/website-creation/athens-gr" },
-  { label: "SEO Mykonos", href: "/en/services/local-seo/mykonos-gr" },
-  { label: "Web Design Heraklion", href: "/en/services/website-creation/heraklion-gr" },
-  { label: "SEO Santorini", href: "/en/services/local-seo/santorini-gr" },
-  { label: "Hotel SEO", href: "/en/solutions/hotels" },
-  { label: "Pricing & Packages", href: "/en/pricing" },
-  { label: "All Locations", href: "/en/locations" },
-];
+/**
+ * Pages that already are the free-audit / contact flow, or the pricing page
+ * the secondary button opens. The strip would repeat the page.
+ */
+const HIDE_FOOTER_CTA = new Set(["/contact", "/get-started", "/pricing"]);
 
 const columnLinkClass =
-  "inline-block py-0.5 text-[14px] leading-snug text-muted-foreground transition-colors hover:text-foreground";
+  "inline-block max-w-full py-0.5 text-[14px] leading-snug text-muted-foreground transition-colors hover:text-foreground";
 
 const columnHeadingClass =
   "mb-5 block font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-foreground/70";
 
 const socialButtonClass =
   "grid size-10 place-items-center rounded-xl border border-hairline bg-surface/60 text-muted-foreground transition-colors hover:border-brand/50 hover:text-foreground";
+
+const closingRuleClass =
+  "relative border-t border-hairline before:absolute before:inset-x-0 before:top-[-1px] before:h-px before:bg-[linear-gradient(90deg,transparent,var(--primary-glow)_30%,var(--brand)_70%,transparent)] before:opacity-70 before:content-['']";
+
+type FooterLink = { readonly label: string; readonly href: string };
+
+type FooterColumn = {
+  readonly id: "product" | "services" | "areas" | "resources" | "company";
+  readonly title: string;
+  readonly links: readonly FooterLink[];
+};
+
+function footerColumns(locale: SiteLocale): readonly FooterColumn[] {
+  const isEl = locale === "el";
+  const lp = (path: string) => localizedPath(locale, path);
+  const t = getFooterDictionary(locale);
+
+  const areas: readonly FooterLink[] = isEl
+    ? [
+        { label: "Αθήνα", href: "/el/seo/athens" },
+        { label: "Θεσσαλονίκη", href: "/el/seo/thessaloniki" },
+        { label: "Ηράκλειο", href: "/el/seo/heraklion" },
+        { label: "Χανιά", href: "/el/seo/chania" },
+        { label: "Σαντορίνη", href: "/el/seo/santorini" },
+        { label: "Μύκονος", href: "/el/seo/mykonos" },
+        { label: "Ρόδος", href: "/el/seo/rhodes" },
+        { label: "Κέρκυρα", href: "/el/seo/corfu" },
+        { label: "Όλες οι περιοχές", href: lp("/locations") },
+      ]
+    : [
+        { label: "London", href: "/en/services/local-seo/london-uk" },
+        { label: "Athens", href: "/en/services/local-seo/athens-gr" },
+        { label: "Heraklion", href: "/en/services/local-seo/heraklion-gr" },
+        { label: "Chania", href: "/en/services/local-seo/chania-gr" },
+        { label: "Santorini", href: "/en/services/local-seo/santorini-gr" },
+        { label: "Mykonos", href: "/en/services/local-seo/mykonos-gr" },
+        { label: "Rhodes", href: "/en/services/local-seo/rhodes-gr" },
+        { label: "Corfu", href: "/en/services/local-seo/corfu-gr" },
+        { label: "All areas", href: lp("/locations") },
+      ];
+
+  const resources: FooterLink[] = [
+    { label: isEl ? t.aiVisibilityCheck : "AI visibility check", href: lp("/ai-visibility-check") },
+    { label: isEl ? t.blog : "Blog", href: lp("/blog") },
+    { label: isEl ? "Οδηγοί SEO" : "SEO guides", href: lp("/seo-guides") },
+    { label: isEl ? t.work : "Case studies", href: lp("/work") },
+    { label: isEl ? "Κέντρο βοήθειας" : "Help center", href: lp("/help") },
+    { label: isEl ? "Λεξικό SEO" : "SEO glossary", href: lp("/glossary") },
+  ];
+  if (!isEl) {
+    resources.push(
+      { label: "Resources", href: lp("/resources") },
+      { label: "SEO, AEO, GEO explained", href: lp("/resources/search-optimization-layers") },
+    );
+  }
+
+  return [
+    {
+      id: "product",
+      title: t.product,
+      links: [
+        { label: "AnotherSEOGuru App", href: lp("/platform") },
+        { label: isEl ? "Δυνατότητες" : "Features", href: lp("/platform/features") },
+        { label: isEl ? "Πακέτα εφαρμογής" : "App plans", href: lp("/platform/pricing") },
+        { label: isEl ? "Εφαρμογή iPhone" : "iPhone app", href: lp("/platform/iphone") },
+        { label: isEl ? "Ενσωματώσεις" : "Integrations", href: lp("/platform/integrations") },
+        { label: isEl ? "Ασφάλεια" : "Security", href: lp("/platform/security") },
+      ],
+    },
+    {
+      id: "services",
+      title: isEl ? t.agency : "Services",
+      links: [
+        { label: isEl ? "Υπηρεσίες SEO" : "SEO services", href: lp("/seo-services") },
+        { label: isEl ? t.websiteCreation : "Website creation", href: lp("/services/website-creation") },
+        { label: isEl ? "Κατασκευή e-shop" : "E-shop development", href: lp("/services/eshop-woocommerce") },
+        { label: isEl ? "Τοπικό SEO" : "Local SEO", href: lp("/services/local-seo") },
+        { label: isEl ? "Ορατότητα σε AI" : "AI visibility", href: lp("/services/ai-visibility") },
+        { label: isEl ? "Ανασχεδιασμός ιστοσελίδας" : "Website redesign", href: lp("/services/website-redesign") },
+        { label: isEl ? t.pricing : "Agency pricing", href: lp("/pricing") },
+        { label: isEl ? t.services : "All services", href: lp("/services") },
+      ],
+    },
+    {
+      id: "areas",
+      title: t.areas,
+      links: areas,
+    },
+    {
+      id: "resources",
+      title: isEl ? t.resources : "Resources",
+      links: resources,
+    },
+    {
+      id: "company",
+      title: isEl ? t.company : "Company",
+      links: [
+        { label: isEl ? t.about : "About us", href: lp("/about") },
+        { label: isEl ? "Σύμβουλος SEO" : "SEO consultant", href: consultantPath(locale) },
+        { label: "SEO guru", href: lp("/seo-guru") },
+        { label: isEl ? t.contact : "Contact", href: lp("/contact") },
+        { label: isEl ? t.privacy : "Privacy policy", href: lp("/privacy") },
+        { label: isEl ? t.terms : "Terms of service", href: lp("/terms") },
+        { label: isEl ? t.cookies : "Cookie policy", href: lp("/privacy#cookies") },
+      ],
+    },
+  ];
+}
+
+function LinkList({ links }: { readonly links: readonly FooterLink[] }): ReactElement {
+  return (
+    <>
+      {links.map((link) => (
+        <li key={`${link.href}:${link.label}`}>
+          <Link href={link.href} className={columnLinkClass}>
+            {link.label}
+          </Link>
+        </li>
+      ))}
+    </>
+  );
+}
+
+function FooterColumnView({ column }: { readonly column: FooterColumn }): ReactElement {
+  return (
+    <div className="min-w-0">
+      <details className="group lg:hidden">
+        <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-4 py-3 font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-foreground/70 [&::-webkit-details-marker]:hidden">
+          <span>{column.title}</span>
+          <span
+            aria-hidden
+            className="grid size-6 shrink-0 place-items-center rounded-full border border-hairline text-[15px] leading-none text-muted-foreground transition-transform duration-200 group-open:rotate-45 group-open:border-brand/50 group-open:text-brand"
+          >
+            +
+          </span>
+        </summary>
+        <ul className="space-y-2.5 pb-4">
+          <LinkList links={column.links} />
+        </ul>
+      </details>
+      <div className="hidden lg:block">
+        <h3 className={columnHeadingClass}>{column.title}</h3>
+        <ul className="space-y-2.5">
+          <LinkList links={column.links} />
+        </ul>
+      </div>
+    </div>
+  );
+}
 
 export default function Footer({ locale: localeProp }: { locale?: SiteLocale }): ReactElement {
   const pathname = usePathname() ?? "/en";
@@ -103,15 +196,19 @@ export default function Footer({ locale: localeProp }: { locale?: SiteLocale }):
   const isEl = locale === "el";
   const lp = (path: string) => localizedPath(locale, path);
   const t = getFooterDictionary(locale);
+  const columns = footerColumns(locale);
+  const showCta = !HIDE_FOOTER_CTA.has(stripLocalePrefix(pathname));
+
   return (
-    <footer className="relative border-t border-hairline bg-surface/40 before:absolute before:inset-x-0 before:top-[-1px] before:h-px before:bg-[linear-gradient(90deg,transparent,var(--primary-glow)_30%,var(--brand)_70%,transparent)] before:opacity-70 before:content-['']">
-      <div className="mx-auto w-full max-w-[1200px] px-5 pb-14 pt-16 sm:px-8 md:pb-16 md:pt-20">
-        <div className="mb-14 grid gap-12 lg:grid-cols-[minmax(0,19rem)_1fr] lg:gap-16">
-          <div>
-            <BrandLogo size="lg" className="mb-4" homeHref={lp("/")} />
-            <p className="mb-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
-              {t.tagline}
-            </p>
+    <>
+      {showCta ? <FooterCta locale={locale} /> : null}
+      <footer className={showCta ? "border-t border-hairline bg-surface/40" : `${closingRuleClass} bg-surface/40`}>
+        <div className="mx-auto w-full max-w-[1200px] px-5 pb-14 pt-12 sm:px-8 md:pb-16 md:pt-16">
+          <div className="mb-10 flex flex-col gap-6 border-b border-hairline pb-10 sm:flex-row sm:items-end sm:justify-between">
+            <div className="min-w-0 max-w-md">
+              <BrandLogo size="lg" className="mb-4" homeHref={lp("/")} />
+              <p className="text-sm leading-relaxed text-muted-foreground">{t.tagline}</p>
+            </div>
             <div className="flex flex-wrap items-center gap-2">
               <a
                 href="https://twitter.com/anotherseoguru"
@@ -187,330 +284,71 @@ export default function Footer({ locale: localeProp }: { locale?: SiteLocale }):
               </a>
             </div>
           </div>
-          <div className={isEl ? "grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-4" : "grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-3 xl:grid-cols-5"}>
-          <div>
-            <h3 className={columnHeadingClass}>{isEl ? t!.agency : "Product"}</h3>
-            <ul className="space-y-2.5">
-              {isEl ? (
-                <>
-                  <li>
-                    <Link href={lp("/services")} className={columnLinkClass}>
-                      {t.services}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href={lp("/services/website-creation")} className={columnLinkClass}>
-                      {t.websiteCreation}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href={lp("/pricing")} className={columnLinkClass}>
-                      {t.pricing}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href={lp("/get-started")} className={columnLinkClass}>
-                      {t.getStarted}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href={lp("/locations")} className={columnLinkClass}>
-                      {t.locations}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/el/seo" className={columnLinkClass}>
-                      SEO σε όλη την Ελλάδα
-                    </Link>
-                  </li>
-                </>
-              ) : (
-                <>
-                  <li>
-                    <Link href={lp("/platform/features")} className={columnLinkClass}>
-                      Features
-                    </Link>
-                  </li>
-                  <li>
-                    <a href={getAppPath("/free-tools")} className={columnLinkClass} rel="noopener noreferrer">
-                      Free tools
-                    </a>
-                  </li>
-                  <li>
-                    <Link href={lp("/pricing")} className={columnLinkClass}>
-                      Pricing
-                    </Link>
-                  </li>
-                  <li>
-                    <a href={getAppPath("/signup")} className={columnLinkClass} rel="noopener noreferrer">
-                      Sign up
-                    </a>
-                  </li>
-                  <li>
-                    <a href={getAppPath("/login")} className={columnLinkClass} rel="noopener noreferrer">
-                      Login
-                    </a>
-                  </li>
-                </>
-              )}
-            </ul>
-          </div>
-          <div>
-            <h3 className={columnHeadingClass}>{isEl ? t!.resources : "Resources"}</h3>
-            <ul className="space-y-2.5">
-              {/* The one interactive tool on this site rather than in the app. */}
-              <li>
-                <Link href={lp("/ai-visibility-check")} className={columnLinkClass}>
-                  {isEl ? t!.aiVisibilityCheck : "AI visibility check"}
-                </Link>
-              </li>
-              <li>
-                <Link href={lp("/blog")} className={columnLinkClass}>
-                  {isEl ? t!.blog : "Blog"}
-                </Link>
-              </li>
-              <li>
-                <Link href={lp("/seo-guides")} className={columnLinkClass}>
-                  {isEl ? "Οδηγοί SEO" : "SEO guides"}
-                </Link>
-              </li>
-              <li>
-                <Link href={lp("/work")} className={columnLinkClass}>
-                  {isEl ? t!.work : "Case studies"}
-                </Link>
-              </li>
-              <li>
-                <Link href={lp("/help")} className={columnLinkClass}>
-                  {isEl ? "Κέντρο βοήθειας" : "Help center"}
-                </Link>
-              </li>
-              {!isEl && (
-                <>
-                  <li>
-                    <Link href={lp("/glossary")} className={columnLinkClass}>
-                      SEO glossary
-                    </Link>
-                  </li>
-                  <li>
-                    <a href={getAppPath("/changelog")} className={columnLinkClass} rel="noopener noreferrer">
-                      Changelog
-                    </a>
-                  </li>
-                  <li>
-                    <Link href={lp("/resources")} className={columnLinkClass}>
-                      Resources
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href={lp("/resources/search-optimization-layers")} className={columnLinkClass}>
-                      SEO, AEO, GEO explained
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href={lp("/resources/ai-search-page-anatomy")} className={columnLinkClass}>
-                      AI search page anatomy
-                    </Link>
-                  </li>
 
-                </>
-              )}
-            </ul>
-          </div>
-          {/* Platform column.
-              /platform/pricing had 2 inbound links sitewide, the three
-              /platform/for/* pages had 1 each, and the three /compare/* pages
-              1-2 each - seven bottom-of-funnel pages one link from being
-              orphans, while /contact held 14,660. `hub-spoke.ts:49-69` already
-              declares exactly this cluster; it was never wired to anything.
-              English only, because these routes are English-only by design
-              (`locale.ts:21`). */}
-          {!isEl && (
-            <div>
-              <h3 className={columnHeadingClass}>Platform</h3>
-              <ul className="space-y-2.5">
-                <li>
-                  <Link href={lp("/platform")} className={columnLinkClass}>
-                    Platform overview
-                  </Link>
-                </li>
-                <li>
-                  <Link href={lp("/platform/pricing")} className={columnLinkClass}>
-                    Software plans
-                  </Link>
-                </li>
-                <li>
-                  <Link href={lp("/platform/for/agencies")} className={columnLinkClass}>
-                    For agencies
-                  </Link>
-                </li>
-                <li>
-                  <Link href={lp("/platform/for/in-house")} className={columnLinkClass}>
-                    For in-house teams
-                  </Link>
-                </li>
-                <li>
-                  <Link href={lp("/platform/for/ecommerce")} className={columnLinkClass}>
-                    For ecommerce
-                  </Link>
-                </li>
-                <li>
-                  <Link href={lp("/platform/iphone")} className={columnLinkClass}>
-                    iPhone app
-                  </Link>
-                </li>
-                <li>
-                  <Link href={lp("/platform/integrations")} className={columnLinkClass}>
-                    Integrations
-                  </Link>
-                </li>
-                <li>
-                  <Link href={lp("/compare")} className={columnLinkClass}>
-                    Compare alternatives
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          )}
-          <div>
-            <h3 className={columnHeadingClass}>{isEl ? t!.company : "Company"}</h3>
-            <ul className="space-y-2.5">
-              <li>
-                <Link href={lp("/about")} className={columnLinkClass}>
-                  {isEl ? t!.about : "About us"}
-                </Link>
-              </li>
-              <li>
-                <Link href={consultantPath(isEl ? "el" : "en")} className={columnLinkClass}>
-                  {isEl ? "Σύμβουλος SEO" : "SEO consultant"}
-                </Link>
-              </li>
-              <li>
-                <Link href={lp("/seo-guru")} className={columnLinkClass}>
-                  SEO guru
-                </Link>
-              </li>
-              <li>
-                <Link href={lp("/contact")} className={columnLinkClass}>
-                  {isEl ? t!.contact : "Contact"}
-                </Link>
-              </li>
-              {/* Careers, Partners and Affiliates all pointed at /contact, as
-                  did Security in the legal column. Four labels promising four
-                  destinations and delivering one made /contact the single
-                  most-linked page on the site, ahead of /pricing, and told a
-                  visitor something untrue about each. */}
-              {!isEl && (
-                <li>
-                  <Link href={lp("/work")} className={columnLinkClass}>
-                    Case studies
-                  </Link>
-                </li>
-              )}
-            </ul>
-          </div>
-          <div>
-            <h3 className={columnHeadingClass}>{isEl ? t!.legal : "Legal"}</h3>
-            <ul className="space-y-2.5">
-              <li>
-                <Link href={lp("/privacy")} className={columnLinkClass}>
-                  {isEl ? t!.privacy : "Privacy policy"}
-                </Link>
-              </li>
-              <li>
-                <Link href={lp("/terms")} className={columnLinkClass}>
-                  {isEl ? t!.terms : "Terms of service"}
-                </Link>
-              </li>
-              {/* Privacy was linked three times per page (policy, cookies,
-                  GDPR) and terms once, which between them held 4.4% of the
-                  whole internal link graph on pages with no commercial value.
-                  One link each. The cookie and GDPR sections are still reachable
-                  from inside the policy. */}
-              <li>
-                <Link href={lp("/privacy#cookies")} className={columnLinkClass}>
-                  {isEl ? t!.cookies : "Cookie policy"}
-                </Link>
-              </li>
-              {/* Below `lg` the sticky bar occupies the corner a floating
-                  reopen pill used to cover. The control stays in the footer
-                  there; desktop keeps a small icon instead. */}
-              <li className="lg:hidden">
-                <CookiePreferencesLink
-                  label={t.cookiePreferences}
-                  className={`${columnLinkClass} cursor-pointer border-0 bg-transparent text-left`}
-                />
-              </li>
-            </ul>
-          </div>
-          </div>
-        </div>
-        <div className="mb-12 rounded-2xl border border-hairline bg-surface/50 p-6 sm:p-8">
-          <p className="mb-5 block font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-foreground/70">
-            {isEl ? "Υπηρεσίες ανά Πόλη" : "Services by City"}
-          </p>
-          <ul className="grid grid-cols-2 gap-x-6 gap-y-2 sm:grid-cols-3 lg:grid-cols-4">
-            {(isEl ? EL_SEO_HUB_LINKS : EN_SEO_HUB_LINKS).map((link) => (
-              // Two Greek hotel labels share /el/solutions/hotels: the
-              // website-creation child is consolidated into that hub
-              // (HUB_OWNS_INTENT). Key on the label so both links stay.
-              <li key={link.label}>
-                <Link href={link.href} className={columnLinkClass}>
-                  {link.label}
-                </Link>
-              </li>
+          <div className="divide-y divide-hairline lg:grid lg:grid-cols-5 lg:gap-x-8 lg:divide-y-0">
+            {columns.map((column) => (
+              <FooterColumnView key={column.id} column={column} />
             ))}
-          </ul>
-        </div>
-        <div className="border-t border-hairline pt-10">
-          <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
-            <div className="flex flex-col items-center gap-3 md:items-start">
-              <p className="text-sm text-muted-foreground">
-                © {currentYear} AnotherSEOGuru — {isEl ? "Ένα προϊόν της Touristas Technologies" : "Touristas Technologies"}
-              </p>
-              <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-muted-foreground md:justify-start">
-                <a
-                  href={WHATSAPP_HREF}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => trackCtaClick("footer_whatsapp")}
-                  className="transition-colors hover:text-primary"
+          </div>
+
+          <div className="mt-10 border-t border-hairline pt-10">
+            <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
+              <div className="flex min-w-0 flex-col items-center gap-3 md:items-start">
+                <p className="text-center text-sm text-muted-foreground md:text-left">
+                  © {currentYear} AnotherSEOGuru — {isEl ? "Ένα προϊόν της Touristas Technologies" : "Touristas Technologies"}
+                </p>
+                <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-muted-foreground md:justify-start">
+                  <a
+                    href={WHATSAPP_HREF}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => trackCtaClick("footer_whatsapp")}
+                    className="transition-colors hover:text-primary"
+                  >
+                    WhatsApp {PHONE_DISPLAY}
+                  </a>
+                  <span aria-hidden>•</span>
+                  <a href={`mailto:${CONTACT_EMAIL}`} className="break-all transition-colors hover:text-primary">
+                    {CONTACT_EMAIL}
+                  </a>
+                  <span aria-hidden>•</span>
+                  <Link href={lp("/contact")} className="transition-colors hover:text-primary">
+                    {isEl ? t.contact : "Contact"}
+                  </Link>
+                  <span aria-hidden className="lg:hidden">
+                    •
+                  </span>
+                  <CookiePreferencesLink
+                    label={t.cookiePreferences}
+                    className="cursor-pointer border-0 bg-transparent p-0 text-sm text-muted-foreground transition-colors hover:text-primary lg:hidden"
+                  />
+                </div>
+              </div>
+              <div className="flex flex-col items-center gap-2 md:items-end">
+                <p className="text-xs text-muted-foreground">{isEl ? t.payments : "We accept"}</p>
+                <ul
+                  className="flex max-w-full flex-wrap items-center justify-center gap-1.5 md:justify-end"
+                  aria-label={isEl ? "Δεχόμαστε κάρτες και ψηφιακές πληρωμές" : "Accepted payment methods"}
                 >
-                  WhatsApp {PHONE_DISPLAY}
-                </a>
-                <span aria-hidden>•</span>
-                <a href={`mailto:${CONTACT_EMAIL}`} className="transition-colors hover:text-primary">
-                  {CONTACT_EMAIL}
-                </a>
-                <span aria-hidden>•</span>
-                <Link href={lp("/contact")} className="transition-colors hover:text-primary">
-                  {isEl ? t!.contact : "Contact"}
-                </Link>
+                  {PAYMENT_LOGOS.map((logo) => (
+                    <li key={logo.src} className="list-none">
+                      <img
+                        src={logo.src}
+                        alt={logo.alt}
+                        width={logo.width}
+                        height={28}
+                        className="h-6 w-auto rounded-sm opacity-70 transition-opacity hover:opacity-100 dark:brightness-110"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
-            <div className="flex flex-col items-center gap-2 md:items-end">
-              <p className="text-xs text-muted-foreground">{isEl ? t!.payments : "We accept"}</p>
-              <ul
-                className="flex flex-wrap items-center justify-center gap-1.5 md:justify-end"
-                aria-label={isEl ? "Δεχόμαστε κάρτες και ψηφιακές πληρωμές" : "Accepted payment methods"}
-              >
-                {PAYMENT_LOGOS.map((logo) => (
-                  <li key={logo.src} className="list-none">
-                    <img
-                      src={logo.src}
-                      alt={logo.alt}
-                      width={logo.width}
-                      height={28}
-                      className="h-6 w-auto rounded-sm opacity-70 transition-opacity hover:opacity-100 dark:brightness-110"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  </li>
-                ))}
-              </ul>
-            </div>
           </div>
         </div>
-      </div>
-    </footer>
+      </footer>
+    </>
   );
 }
