@@ -11,7 +11,9 @@
 
 ## Repo
 
-`otouristas/websitecreation`. Branch `cursor/website-launch-offer-phase-1-a6fd`. The PR link is added when the pull request is opened.
+`otouristas/websitecreation`. Branch `cursor/website-launch-offer-phase-1-a6fd`, commit `6f64b51` (plus this report update). Pushed to origin.
+
+Pull request: not opened. The GitHub API refused with `must be a collaborator` (`https://docs.github.com/rest/pulls/pulls#create-a-pull-request`). A collaborator can open it from https://github.com/otouristas/websitecreation/pull/new/cursor/website-launch-offer-phase-1-a6fd against `main`. No Vercel preview URL exists until that pull request is created.
 
 `otouristas/gsc-gemini-boost` was not readable (`gh` 404). No portal migration, no SaaS price edit, no second pull request. The app notice is on the marketing page `/platform/pricing` only.
 
@@ -37,7 +39,7 @@ Not run: a production Vercel preview, cache purge, signed payment webhooks again
 
 ## Preview
 
-Local only until the pull request opens a Vercel preview. Not production. Not merged. Not deployed. Not live-verified on anotherseoguru.com.
+Local `next dev` on port 8080 only. No Vercel preview URL, because the pull request was not created. Not production. Not merged. Not deployed. Not live-verified on anotherseoguru.com.
 
 ## Migrations and config
 
