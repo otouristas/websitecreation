@@ -4,6 +4,7 @@ import type { ReactElement } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { BrandLogo } from "@/components/BrandLogo";
+import { CookiePreferencesLink } from "@/components/CookiePreferencesLink";
 import { getAppPath } from "@/lib/app-links";
 import { localizedPath, siteLocaleFromPath, type SiteLocale } from "@/lib/i18n/locale";
 import { getFooterDictionary } from "@/lib/i18n/get-dictionary";
@@ -423,6 +424,15 @@ export default function Footer({ locale: localeProp }: { locale?: SiteLocale }):
                 <Link href={lp("/privacy#cookies")} className={columnLinkClass}>
                   {isEl ? t!.cookies : "Cookie policy"}
                 </Link>
+              </li>
+              {/* Below `lg` the sticky bar occupies the corner a floating
+                  reopen pill used to cover. The control stays in the footer
+                  there; desktop keeps a small icon instead. */}
+              <li className="lg:hidden">
+                <CookiePreferencesLink
+                  label={t.cookiePreferences}
+                  className={`${columnLinkClass} cursor-pointer border-0 bg-transparent text-left`}
+                />
               </li>
             </ul>
           </div>

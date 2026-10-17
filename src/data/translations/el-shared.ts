@@ -21,6 +21,7 @@ export const elShared = {
     privacy: 'Πολιτική απορρήτου',
     terms: 'Όροι χρήσης',
     cookies: 'Πολιτική cookies',
+    cookiePreferences: 'Προτιμήσεις cookies',
     gdpr: 'GDPR',
     rights: 'Με επιφύλαξη παντός δικαιώματος.',
     payments: 'Δεχόμαστε',

@@ -3,7 +3,9 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { Cookie } from 'lucide-react';
 import { ADS_CONSENT_KEY, applyMeasurementConsent } from '@/lib/analytics';
+import { OPEN_COOKIE_PREFERENCES_EVENT } from '@/lib/cookie-preferences';
 import { localizedPath, siteLocaleFromPath } from '@/lib/i18n/locale';
 
 export default function CookieConsent() {
@@ -58,6 +60,9 @@ export default function CookieConsent() {
 
   const choose = (analytics: boolean, ads: boolean) => {
     applyMeasurementConsent(analytics, ads);
+    // Same class the first-paint script adds for returning visitors, so the
+    // sticky bar can come back without a reload. Storage is unchanged.
+    document.documentElement.classList.add('consent-set');
     setShow(false);
   };
 
@@ -66,7 +71,35 @@ export default function CookieConsent() {
     setShow(true);
   };
 
-  if (!show) return <button type="button" onClick={reopen} className="fixed bottom-1 right-2 z-[60] rounded-lg border bg-background px-3 py-2 text-xs text-muted-foreground">{isEl ? 'Προτιμήσεις cookies' : 'Cookie preferences'}</button>;
+  useEffect(() => {
+    const onOpen = () => {
+      document.documentElement.classList.remove('consent-set');
+      setShow(true);
+    };
+    window.addEventListener(OPEN_COOKIE_PREFERENCES_EVENT, onOpen);
+    return () => window.removeEventListener(OPEN_COOKIE_PREFERENCES_EVENT, onOpen);
+  }, []);
+
+  const preferencesLabel = isEl ? 'Προτιμήσεις cookies' : 'Cookie preferences';
+
+  // Phones already have a full-width bar in this corner. The reopen control
+  // lives in the footer below the `lg` breakpoint and only floats, as a small
+  // icon on the left, where the sticky bar is gone and WhatsApp sits on the right.
+  if (!show) {
+    return (
+      <button
+        type="button"
+        onClick={reopen}
+        aria-label={preferencesLabel}
+        title={preferencesLabel}
+        data-chrome="cookie-preferences"
+        style={{ bottom: 'calc(1rem + var(--chrome-safe-bottom))' }}
+        className="fixed left-4 z-40 hidden size-9 items-center justify-center rounded-full border border-hairline bg-background/80 text-muted-foreground shadow-sm backdrop-blur-md transition-colors hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary lg:inline-flex"
+      >
+        <Cookie className="size-4" aria-hidden />
+      </button>
+    );
+  }
 
   return (
     <div
