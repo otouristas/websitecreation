@@ -26,10 +26,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return platformMetadata({
     locale,
     path: "/platform/features",
-    title: { en: "SEO Platform Features: GSC Boost", el: "GSC Boost: δυνατότητες λογισμικού SEO" },
+    title: { en: "SEO Platform Features: AnotherSEOGuru App", el: "Δυνατότητες AnotherSEOGuru App" },
     description: {
-      en: "Every GSC Boost module: ranked opportunities with click estimates, performance, keywords, content, site audit, competitors, AI visibility and agency tools.",
-      el: "Όλες οι λειτουργίες του GSC Boost: ευκαιρίες με εκτίμηση κλικ, απόδοση, λέξεις-κλειδιά, περιεχόμενο, έλεγχος, ανταγωνιστές, ορατότητα σε AI και agency.",
+      en: "Every AnotherSEOGuru App module: opportunities with click estimates, performance, keywords, content, site audit, competitors, AI visibility and agency tools.",
+      el: "Όλες οι λειτουργίες του AnotherSEOGuru App: ευκαιρίες με εκτίμηση κλικ, απόδοση, λέξεις-κλειδιά, περιεχόμενο, έλεγχος, ανταγωνιστές, ορατότητα σε AI και agency.",
     },
     keyword: { en: "SEO platform features", el: "δυνατότητες λογισμικού SEO" },
   });
@@ -41,7 +41,7 @@ const FEATURE_FAQ = HOME_FAQ.filter((f) =>
 );
 
 /**
- * Every GSC Boost module on one page, adapted from the app's FeaturesPage.
+ * Every AnotherSEOGuru App module on one page, adapted from the app's FeaturesPage.
  * Section ids are the anchors the site menu links to; the 27 retired
  * /platform/features/<slug> URLs 308 here (next.config.ts).
  */
@@ -63,15 +63,15 @@ export default async function PlatformFeaturesPage({ params }: PageProps) {
       <Header locale={locale} />
       <main className="blueprint-grid relative z-0">
         <HeroCentered
-          pill={<KitEyebrow>{tx("GSC Boost · Features", "GSC Boost · Δυνατότητες")}</KitEyebrow>}
+          pill={<KitEyebrow>{tx("AnotherSEOGuru App · Features", "AnotherSEOGuru App · Δυνατότητες")}</KitEyebrow>}
           title={
             <>
               {tx("Every SEO tool you need, grounded in", "Όλα τα εργαλεία SEO που χρειάζεστε, βασισμένα στα")} <Accent>{tx("your data", "δικά σας δεδομένα")}</Accent>
             </>
           }
           lead={tx(
-            "GSC Boost has nine modules in one workspace. Search Console features cost nothing on every plan; paid data and AI use credits, and every action shows its cost before you run it.",
-            "Το GSC Boost έχει εννέα λειτουργίες σε έναν χώρο εργασίας. Οι λειτουργίες του Search Console δεν κοστίζουν τίποτα σε κανένα πακέτο· τα δεδομένα τρίτων και η AI χρησιμοποιούν μονάδες, και κάθε ενέργεια δείχνει το κόστος της πριν την εκτελέσετε.",
+            "AnotherSEOGuru App has nine modules in one workspace. Search Console features cost nothing on every plan; paid data and AI use credits, and every action shows its cost before you run it.",
+            "Το AnotherSEOGuru App έχει εννέα λειτουργίες σε έναν χώρο εργασίας. Οι λειτουργίες του Search Console δεν κοστίζουν τίποτα σε κανένα πακέτο· τα δεδομένα τρίτων και η AI χρησιμοποιούν μονάδες, και κάθε ενέργεια δείχνει το κόστος της πριν την εκτελέσετε.",
           )}
           actions={<SoftwareCtas locale={locale} source="features-hero" />}
           trust={<TrustLine items={softwareTrust(locale)} />}

@@ -9,11 +9,11 @@ export const el: ReadonlyArray<HelpCategory> = [
     articles: [
       {
         slug: "welcome",
-        title: "Τι κάνει το GSC Boost",
+        title: "Τι κάνει το AnotherSEOGuru App",
         description: "Μια γρήγορη ξενάγηση: τα δεδομένα του Search Console σας, ως λίστα διορθώσεων με προτεραιότητα.",
         body: [
-          { type: "p", text: "Το GSC Boost διαβάζει τα δεδομένα του **Google Search Console** σας και τα μετατρέπει σε εβδομαδιαίο πλάνο: σε ποιες σελίδες και αναζητήσεις να δουλέψετε, τι να αλλάξετε και πόσα κλικ θα φέρει πιθανότατα κάθε διόρθωση. Όλα τα υπόλοιπα (έρευνα λέξεων-κλειδιών, έλεγχος ιστότοπου, περιεχόμενο, ανταγωνιστές, ορατότητα στην AI και δουλειά για πελάτες) τροφοδοτούν το ίδιο πλάνο." },
-          { type: "image", device: "browser", src: "/images/docs/web/overview-light.webp", srcDark: "/images/docs/web/overview-dark.webp", width: 1600, height: 1000, alt: "Η οθόνη «Αυτή την εβδομάδα» του GSC Boost με την απόδοση αναζήτησης, τις πωλήσεις από το Analytics και την πλαϊνή μπάρα", caption: "Το «Αυτή την εβδομάδα» είναι η αρχική οθόνη: πώς πάει η αναζήτηση και τι να διορθώσετε πρώτα." },
+          { type: "p", text: "Το AnotherSEOGuru App διαβάζει τα δεδομένα του **Google Search Console** σας και τα μετατρέπει σε εβδομαδιαίο πλάνο: σε ποιες σελίδες και αναζητήσεις να δουλέψετε, τι να αλλάξετε και πόσα κλικ θα φέρει πιθανότατα κάθε διόρθωση. Όλα τα υπόλοιπα (έρευνα λέξεων-κλειδιών, έλεγχος ιστότοπου, περιεχόμενο, ανταγωνιστές, ορατότητα στην AI και δουλειά για πελάτες) τροφοδοτούν το ίδιο πλάνο." },
+          { type: "image", device: "browser", src: "/images/docs/web/overview-light.webp", srcDark: "/images/docs/web/overview-dark.webp", width: 1600, height: 1000, alt: "Η οθόνη «Αυτή την εβδομάδα» του AnotherSEOGuru App με την απόδοση αναζήτησης, τις πωλήσεις από το Analytics και την πλαϊνή μπάρα", caption: "Το «Αυτή την εβδομάδα» είναι η αρχική οθόνη: πώς πάει η αναζήτηση και τι να διορθώσετε πρώτα." },
           { type: "h2", id: "how-it-works", text: "Πώς λειτουργεί" },
           { type: "steps", items: [
             "Συνδέεστε με Google και επιλέγετε τα properties του Search Console που θέλετε. Η πρόσβαση είναι μόνο για ανάγνωση.",
@@ -47,8 +47,8 @@ export const el: ReadonlyArray<HelpCategory> = [
         title: "Σύνδεση του Google Search Console",
         description: "Συνδεθείτε με Google, επιλέξτε properties και δείτε τι βλέπουμε και τι όχι.",
         body: [
-          { type: "p", text: "Το GSC Boost δουλεύει με τα δικά σας δεδομένα Search Console, οπότε το πρώτο βήμα είναι να συνδέσετε τον λογαριασμό Google που έχει πρόσβαση στα properties σας." },
-          { type: "image", device: "browser", src: "/images/docs/web/signup-light.webp", srcDark: "/images/docs/web/signup-dark.webp", width: 1600, height: 1000, alt: "Η σελίδα εγγραφής του GSC Boost με το κουμπί σύνδεσης με Google", caption: "Δημιουργήστε λογαριασμό με Google για να συνδέσετε το Search Console με ένα βήμα." },
+          { type: "p", text: "Το AnotherSEOGuru App δουλεύει με τα δικά σας δεδομένα Search Console, οπότε το πρώτο βήμα είναι να συνδέσετε τον λογαριασμό Google που έχει πρόσβαση στα properties σας." },
+          { type: "image", device: "browser", src: "/images/docs/web/signup-light.webp", srcDark: "/images/docs/web/signup-dark.webp", width: 1600, height: 1000, alt: "Η σελίδα εγγραφής του AnotherSEOGuru App με το κουμπί σύνδεσης με Google", caption: "Δημιουργήστε λογαριασμό με Google για να συνδέσετε το Search Console με ένα βήμα." },
           { type: "h2", id: "connect", text: "Συνδέστε τον λογαριασμό σας" },
           { type: "steps", items: [
             "Επιλέξτε **Ξεκινήστε με Google** στη σελίδα εγγραφής ή ανοίξτε **Ρυθμίσεις → Ενσωματώσεις** αν έχετε ήδη συνδεθεί.",
@@ -291,7 +291,7 @@ export const el: ReadonlyArray<HelpCategory> = [
           { type: "h2", id: "wordpress", text: "Σύνδεση του WordPress" },
           { type: "steps", items: [
             "Στο WordPress, δημιουργήστε κωδικό εφαρμογής από **Users → Profile**.",
-            "Στο GSC Boost, ανοίξτε **Ρυθμίσεις → Ενσωματώσεις** και προσθέστε το URL του ιστότοπου, το όνομα χρήστη και τον κωδικό εφαρμογής.",
+            "Στο AnotherSEOGuru App, ανοίξτε **Ρυθμίσεις → Ενσωματώσεις** και προσθέστε το URL του ιστότοπου, το όνομα χρήστη και τον κωδικό εφαρμογής.",
             "Εισαγάγετε άρθρα και σελίδες από **Περιεχόμενο → Βιβλιοθήκη**. Οι αλλαγές που κάνετε εκεί δημοσιεύονται με ένα κλικ.",
           ] },
           { type: "note", tone: "warning", text: "Οι σελίδες που εισάγονται με crawl δεν συνδέονται με το WordPress. Για να δημοσιεύσετε, συνδέστε τον ιστότοπο και εισαγάγετέ τον από το WordPress." },

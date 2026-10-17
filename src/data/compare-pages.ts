@@ -13,10 +13,10 @@ export const COMPARE_PAGES: readonly ComparePageDefinition[] = [
   {
     slug: "ahrefs",
     competitorName: "Ahrefs",
-    headline: "GSC Boost vs Ahrefs",
-    seoTitle: "Ahrefs Alternative: GSC Boost vs Ahrefs",
+    headline: "AnotherSEOGuru App vs Ahrefs",
+    seoTitle: "Ahrefs alternative: AnotherSEOGuru App",
     summary:
-      "Ahrefs is a world-class link and keyword research suite. GSC Boost is an Ahrefs alternative built around your Google Search Console reality plus AI execution workflows - ideal when your bottleneck is acting on GSC data, not exporting another CSV.",
+      "Ahrefs is a link and keyword research suite. AnotherSEOGuru App is built around your Google Search Console data and the work of acting on it.",
     whenChooseUs: [
       "You want query/page workflows wired to your verified property",
       "You need AI-assisted briefs, clustering, and sprint-style execution",
@@ -30,10 +30,10 @@ export const COMPARE_PAGES: readonly ComparePageDefinition[] = [
   {
     slug: "semrush",
     competitorName: "Semrush",
-    headline: "GSC Boost vs Semrush",
-    seoTitle: "Semrush Alternative: GSC Boost vs Semrush",
+    headline: "AnotherSEOGuru App vs Semrush",
+    seoTitle: "Semrush alternative: AnotherSEOGuru App",
     summary:
-      "Semrush is a broad marketing suite with deep paid and content modules. GSC Boost, a Semrush alternative for organic SEO, focuses on operations: GSC-native views, technical checks, rank tracking, and LLM visibility - with less surface noise.",
+      "Semrush is a broad marketing suite. AnotherSEOGuru App focuses on organic SEO from your Search Console: technical checks, rank tracking and AI visibility.",
     whenChooseUs: [
       "You want a calmer organic stack without re-learning twenty tabs",
       "You connect GSC and want recommendations tied to your actual clicks and impressions",
@@ -47,10 +47,10 @@ export const COMPARE_PAGES: readonly ComparePageDefinition[] = [
   {
     slug: "search-console-alone",
     competitorName: "Search Console alone",
-    headline: "GSC Boost vs Search Console alone",
-    seoTitle: "Search Console Alternative: GSC Boost",
+    headline: "AnotherSEOGuru App vs Search Console alone",
+    seoTitle: "AnotherSEOGuru App vs Search Console",
     summary:
-      "Search Console is free and essential - but it stops at observation. GSC Boost adds clustering, health scoring, rank tracking, AI playbooks, and optional autopilot so observation turns into a prioritized backlog.",
+      "Search Console stops at observation. AnotherSEOGuru App adds clustering, rank tracking and AI playbooks, and makes that data a prioritized backlog.",
     whenChooseUs: [
       "You are tired of spreadsheet gymnastics for query grouping",
       "You want decay alerts, cannibalization checks, and experiment framing",

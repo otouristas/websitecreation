@@ -337,17 +337,17 @@ function buildShort({ services, servicesEl, industries, industriesEl, greece, pr
     hubLine('SEO guides', url('en', '/seo-guides'), 'Index of the ranking guides and the cluster on keywords, on-page, technical SEO, links and local search (EN + EL).'),
   );
   lines.push(
-    hubLine('GSC Boost (SEO software)', `${BASE}/en/platform`, 'Google Search Console-native SEO software: ranked fixes with click estimates, rank tracking, site audit, AI visibility. Web app at app.anotherseoguru.com (EN + EL).'),
-    hubLine('GSC Boost for iPhone (beta)', `${BASE}/en/platform/iphone`, 'Native iOS 17+ app on the same account: weekly fixes, rank tracking, alerts, AI evidence, widgets. In TestFlight beta, not yet on the App Store.'),
-    hubLine('GSC Boost integrations (one login)', `${BASE}/en/platform/integrations`, 'One AnotherSEOGuru account for the web app, iPhone, Chrome extension, WordPress plugin and AI assistants (MCP); manage them in Settings → Connected apps (EN + EL).'),
+    hubLine('AnotherSEOGuru App (SEO software)', `${BASE}/en/platform`, 'Google Search Console-native SEO software: ranked fixes with click estimates, rank tracking, site audit, AI visibility. Web app at app.anotherseoguru.com (EN + EL).'),
+    hubLine('AnotherSEOGuru App for iPhone (beta)', `${BASE}/en/platform/iphone`, 'Native iOS 17+ app on the same account: weekly fixes, rank tracking, alerts, AI evidence, widgets. In TestFlight beta, not yet on the App Store.'),
+    hubLine('AnotherSEOGuru App integrations (one login)', `${BASE}/en/platform/integrations`, 'One AnotherSEOGuru account for the web app, iPhone, Chrome extension, WordPress plugin and AI assistants (MCP); manage them in Settings → Connected apps (EN + EL).'),
     hubLine('SEO Chrome extension', `${BASE}/en/platform/chrome-extension`, 'Free on-page SEO checks (meta, headings, links, images, schema, Open Graph, hreflang, Core Web Vitals) and Google results tools without an account; signed in, the page\'s own Search Console data. Coming to the Chrome Web Store.'),
     hubLine('WordPress SEO plugin', `${BASE}/en/platform/wordpress`, 'Free full WordPress SEO plugin: live Google preview, SEO and readability analysis (Greek-aware), schema graph, XML sitemaps, redirects and 404 monitor, robots.txt/llms.txt and AI crawler controls, breadcrumbs; Search Console data, keyword research and AI titles in the editor; imports from Yoast, Rank Math, AIOSEO, SEOPress. Zip download; WordPress.org listing coming.'),
     hubLine('Google Search Console MCP server', `${BASE}/en/platform/mcp`, 'Search Console data, fix list, tasks and AI visibility in Claude, ChatGPT, Cursor, VS Code and Windsurf. Remote server https://app.anotherseoguru.com/mcp (OAuth) or npx @anotherseoguru/mcp login.'),
-    hubLine('GSC Boost docs', `${BASE}/en/help`, 'How the SEO software works on the web and iPhone: Search Console setup, opportunities, rank tracking, site audit, AI visibility, agency tools and billing (EN + EL). Every docs page has a Markdown twin at its URL + ".md".'),
+    hubLine('AnotherSEOGuru App docs', `${BASE}/en/help`, 'How the SEO software works on the web and iPhone: Search Console setup, opportunities, rank tracking, site audit, AI visibility, agency tools and billing (EN + EL). Every docs page has a Markdown twin at its URL + ".md".'),
     hubLine('SEO glossary', `${BASE}/en/glossary`, 'Over 100 SEO, AEO and GEO terms, one page each with definition, example and how to apply it (EN + EL).'),
   );
   lines.push('');
-  lines.push('## GSC Boost Docs (Markdown)');
+  lines.push('## AnotherSEOGuru App Docs (Markdown)');
   for (const c of helpContent('en')) {
     for (const a of c.articles) lines.push(mdLink(`${c.title}: ${a.title}`, `${BASE}/en/help/${c.slug}/${a.slug}.md`, a.description));
   }
@@ -735,7 +735,7 @@ function buildFull({ services, servicesEl, industries, industriesEl, greece, pro
 
 /** The English docs in full, so "llms-full.txt" really holds everything the docs say. */
 function buildDocs() {
-  const parts = ['## 11. GSC Boost documentation', '', `The same guides are in Greek under ${BASE}/el/help. Each page has a Markdown twin at its URL + ".md".`, ''];
+  const parts = ['## 11. AnotherSEOGuru App documentation', '', `The same guides are in Greek under ${BASE}/el/help. Each page has a Markdown twin at its URL + ".md".`, ''];
   for (const c of helpContent('en')) {
     for (const a of c.articles) parts.push(markdownFor(['en', 'help', c.slug, a.slug]).replace(/^# /, '### '), '');
   }

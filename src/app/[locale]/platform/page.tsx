@@ -53,10 +53,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return platformMetadata({
     locale,
     path: "/platform",
-    title: { en: "GSC Boost: SEO Software for Search Console", el: "GSC Boost: λογισμικό SEO για Search Console" },
+    title: { en: "AnotherSEOGuru App for Search Console", el: "AnotherSEOGuru App για Search Console" },
     description: {
-      en: `GSC Boost is SEO software that turns Google Search Console into a ranked list of fixes with click estimates. Keywords, audits, AI visibility. From $${LOWEST_MONTHLY}/mo.`,
-      el: `Το GSC Boost είναι λογισμικό SEO που κάνει το Google Search Console λίστα διορθώσεων με εκτίμηση κλικ. Λέξεις-κλειδιά, έλεγχοι, ορατότητα σε AI. Από $${LOWEST_MONTHLY}/μήνα.`,
+      en: `AnotherSEOGuru App turns Google Search Console into ranked fixes with click estimates. Keywords, audits and AI visibility. From $${LOWEST_MONTHLY}/mo.`,
+      el: `Το AnotherSEOGuru App κάνει το Search Console λίστα διορθώσεων με εκτίμηση κλικ. Λέξεις-κλειδιά, έλεγχοι και ορατότητα σε AI. Από $${LOWEST_MONTHLY}/μήνα.`,
     },
     keyword: { en: "SEO software platform", el: "λογισμικό SEO" },
   });
@@ -75,7 +75,7 @@ const TOUR: ReadonlyArray<ModuleId> = [
 ];
 
 /**
- * GSC Boost landing, modelled on the app's own home page
+ * AnotherSEOGuru App landing, modelled on the app's own home page
  * (gsc-gemini-boost src/marketing/pages/HomePage.tsx) in the website's kit.
  */
 export default async function PlatformHubPage({ params }: PageProps) {
@@ -106,8 +106,8 @@ export default async function PlatformHubPage({ params }: PageProps) {
             </>
           }
           lead={tx(
-            "GSC Boost by AnotherSEOGuru is SEO software for Google Search Console. Connect Google once, read-only, and it finds the fixes that win the most clicks: striking-distance keywords, weak snippets, decaying pages, cannibalization and missing content, each with an estimate of what it is worth.",
-            "Το GSC Boost του AnotherSEOGuru είναι λογισμικό SEO για το Google Search Console. Συνδέστε τη Google μία φορά, μόνο για ανάγνωση, και βρίσκει τις διορθώσεις που φέρνουν τα περισσότερα κλικ: λέξεις-κλειδιά κοντά στην κορυφή, αδύναμα snippets, σελίδες σε φθορά, κανιβαλισμό και περιεχόμενο που λείπει, με εκτίμηση για το πόσο αξίζει η καθεμία.",
+            "AnotherSEOGuru App is SEO software for Google Search Console. Connect Google once, read-only, and it finds the fixes that win the most clicks: striking-distance keywords, weak snippets, decaying pages, cannibalization and missing content, each with an estimate of what it is worth.",
+            "Το AnotherSEOGuru App είναι λογισμικό SEO για το Google Search Console. Συνδέστε τη Google μία φορά, μόνο για ανάγνωση, και βρίσκει τις διορθώσεις που φέρνουν τα περισσότερα κλικ: λέξεις-κλειδιά κοντά στην κορυφή, αδύναμα snippets, σελίδες σε φθορά, κανιβαλισμό και περιεχόμενο που λείπει, με εκτίμηση για το πόσο αξίζει η καθεμία.",
           )}
           actions={<SoftwareCtas locale={locale} source="platform-hero" />}
           trust={<TrustLine items={softwareTrust(locale)} />}
@@ -122,8 +122,8 @@ export default async function PlatformHubPage({ params }: PageProps) {
                 href={appLink("/demo", locale, "platform-window")}
                 ctaLabel={tx("Explore the live demo", "Δείτε τη ζωντανή επίδειξη")}
                 label={tx(
-                  "The GSC Boost overview on a sample hotel: clicks, impressions, CTR and position, a clicks chart and the top fixes to ship next.",
-                  "Η επισκόπηση του GSC Boost σε δείγμα ξενοδοχείου: κλικ, εμφανίσεις, CTR και θέση, γράφημα κλικ και οι επόμενες διορθώσεις.",
+                  "The AnotherSEOGuru App overview on a sample hotel: clicks, impressions, CTR and position, a clicks chart and the top fixes to ship next.",
+                  "Η επισκόπηση του AnotherSEOGuru App σε δείγμα ξενοδοχείου: κλικ, εμφανίσεις, CTR και θέση, γράφημα κλικ και οι επόμενες διορθώσεις.",
                 )}
                 badge={
                   <span className="rounded-full border border-hairline bg-background px-2 py-0.5 text-[11px] font-medium text-muted-foreground">
@@ -152,10 +152,10 @@ export default async function PlatformHubPage({ params }: PageProps) {
         <KitSection>
           <KitHeading
             align="center"
-            eyebrow={tx("Why GSC Boost", "Γιατί GSC Boost")}
+            eyebrow={tx("Why AnotherSEOGuru App", "Γιατί AnotherSEOGuru App")}
             title={
               <>
-                {tx("Search Console shows you data.", "Το Search Console σάς δείχνει δεδομένα.")} {tx("GSC Boost hands you", "Το GSC Boost σάς δίνει")}{" "}
+                {tx("Search Console shows you data.", "Το Search Console σάς δείχνει δεδομένα.")} {tx("AnotherSEOGuru App hands you", "Το AnotherSEOGuru App σάς δίνει")}{" "}
                 <Accent>{tx("decisions", "αποφάσεις")}</Accent>.
               </>
             }
@@ -178,7 +178,7 @@ export default async function PlatformHubPage({ params }: PageProps) {
               }}
               after={{
                 tag: tx("After", "Μετά"),
-                title: "GSC Boost",
+                title: "AnotherSEOGuru App",
                 text: tx("The same data, as ranked actions", "Τα ίδια δεδομένα, ως ενέργειες με προτεραιότητα"),
                 node: (
                   <Stage className="p-2.5 sm:p-4">
@@ -276,7 +276,7 @@ export default async function PlatformHubPage({ params }: PageProps) {
                   <div className="overflow-hidden rounded-[1.6rem] border border-hairline bg-surface p-1">
                     <Image
                       src={`/images/iphone/${file}.webp`}
-                      alt={tx("GSC Boost iPhone app screen", "Οθόνη της εφαρμογής GSC Boost για iPhone")}
+                      alt={tx("AnotherSEOGuru App iPhone app screen", "Οθόνη της εφαρμογής AnotherSEOGuru App για iPhone")}
                       width={601}
                       height={1306}
                       sizes="(min-width: 1024px) 190px, 30vw"

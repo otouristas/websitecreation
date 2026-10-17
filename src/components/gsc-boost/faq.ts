@@ -2,7 +2,7 @@ import { c, type Copy } from "./copy";
 import { CREDIT_COSTS } from "./plans";
 
 /**
- * GSC Boost FAQs, adapted from the app's src/marketing/content/faq.tsx.
+ * AnotherSEOGuru App FAQs, adapted from the app's src/marketing/content/faq.tsx.
  * Answers are plain text so the visible copy and the FAQPage schema are the
  * same string. A trailing link, when there is one, is rendered after it.
  */
@@ -26,16 +26,16 @@ export const HOME_FAQ: ReadonlyArray<GscFaqItem> = [
   {
     q: c("What access do you need to my Google account?", "Τι πρόσβαση χρειάζεστε στον λογαριασμό μου Google;"),
     a: c(
-      "Read-only access to Google Search Console and Google Analytics, which you approve on Google’s own consent screen. GSC Boost can read your performance data; it can’t change settings, submit sitemaps, remove URLs or manage users. You can revoke access at any time from your Google Account.",
-      "Πρόσβαση μόνο για ανάγνωση στο Google Search Console και στο Google Analytics, την οποία εγκρίνετε στην οθόνη συναίνεσης της ίδιας της Google. Το GSC Boost μπορεί να διαβάσει τα δεδομένα απόδοσής σας· δεν μπορεί να αλλάξει ρυθμίσεις, να υποβάλει sitemaps, να αφαιρέσει URL ή να διαχειριστεί χρήστες. Μπορείτε να ανακαλέσετε την πρόσβαση οποιαδήποτε στιγμή από τον Λογαριασμό σας Google.",
+      "Read-only access to Google Search Console and Google Analytics, which you approve on Google’s own consent screen. AnotherSEOGuru App can read your performance data; it can’t change settings, submit sitemaps, remove URLs or manage users. You can revoke access at any time from your Google Account.",
+      "Πρόσβαση μόνο για ανάγνωση στο Google Search Console και στο Google Analytics, την οποία εγκρίνετε στην οθόνη συναίνεσης της ίδιας της Google. Το AnotherSEOGuru App μπορεί να διαβάσει τα δεδομένα απόδοσής σας· δεν μπορεί να αλλάξει ρυθμίσεις, να υποβάλει sitemaps, να αφαιρέσει URL ή να διαχειριστεί χρήστες. Μπορείτε να ανακαλέσετε την πρόσβαση οποιαδήποτε στιγμή από τον Λογαριασμό σας Google.",
     ),
     link: { kind: "site", path: "/platform/security", label: c("How we handle your data", "Πώς διαχειριζόμαστε τα δεδομένα σας") },
   },
   {
     q: c("How are the click estimates calculated?", "Πώς υπολογίζονται οι εκτιμήσεις κλικ;"),
     a: c(
-      "From your own data. For each query or page, GSC Boost compares its CTR and position with a CTR curve fitted to your site’s non-brand queries, then estimates the extra clicks a fix would bring over a month. The estimates are deliberately conservative, and every one shows the position, impressions and CTR it is based on.",
-      "Από τα δικά σας δεδομένα. Για κάθε ερώτημα ή σελίδα, το GSC Boost συγκρίνει το CTR και τη θέση του με μια καμπύλη CTR προσαρμοσμένη στα non-brand ερωτήματα του ιστότοπού σας και εκτιμά τα επιπλέον κλικ που θα έφερνε μια διόρθωση μέσα σε έναν μήνα. Οι εκτιμήσεις είναι σκόπιμα συντηρητικές και η καθεμία δείχνει τη θέση, τις εμφανίσεις και το CTR στα οποία βασίζεται.",
+      "From your own data. For each query or page, AnotherSEOGuru App compares its CTR and position with a CTR curve fitted to your site’s non-brand queries, then estimates the extra clicks a fix would bring over a month. The estimates are deliberately conservative, and every one shows the position, impressions and CTR it is based on.",
+      "Από τα δικά σας δεδομένα. Για κάθε ερώτημα ή σελίδα, το AnotherSEOGuru App συγκρίνει το CTR και τη θέση του με μια καμπύλη CTR προσαρμοσμένη στα non-brand ερωτήματα του ιστότοπού σας και εκτιμά τα επιπλέον κλικ που θα έφερνε μια διόρθωση μέσα σε έναν μήνα. Οι εκτιμήσεις είναι σκόπιμα συντηρητικές και η καθεμία δείχνει τη θέση, τις εμφανίσεις και το CTR στα οποία βασίζεται.",
     ),
   },
   {
@@ -78,10 +78,10 @@ export const HOME_FAQ: ReadonlyArray<GscFaqItem> = [
     ),
   },
   {
-    q: c("Is GSC Boost the same company as the AnotherSEOGuru agency?", "Το GSC Boost είναι της ίδιας εταιρείας με το AnotherSEOGuru;"),
+    q: c("Is the AnotherSEOGuru App from the AnotherSEOGuru agency?", "Το AnotherSEOGuru App είναι της εταιρείας AnotherSEOGuru;"),
     a: c(
-      "Yes. GSC Boost is the software our SEO team built and uses on client work every day. Inside the app it carries the AnotherSEOGuru name. If you would rather have us do the work, start with a free audit instead.",
-      "Ναι. Το GSC Boost είναι το λογισμικό που έφτιαξε η ομάδα SEO μας και χρησιμοποιεί καθημερινά στη δουλειά για πελάτες. Μέσα στην εφαρμογή εμφανίζεται με το όνομα AnotherSEOGuru. Αν προτιμάτε να κάνουμε εμείς τη δουλειά, ξεκινήστε με έναν δωρεάν έλεγχο.",
+      "Yes. The AnotherSEOGuru App is the software our SEO team built and uses on client work every day. If you would rather have us do the work, start with a free audit instead.",
+      "Ναι. Το AnotherSEOGuru App είναι το λογισμικό που έφτιαξε η ομάδα SEO μας και χρησιμοποιεί καθημερινά στη δουλειά για πελάτες. Αν προτιμάτε να κάνουμε εμείς τη δουλειά, ξεκινήστε με έναν δωρεάν έλεγχο.",
     ),
     link: { kind: "site", path: "/get-started#free-audit", label: c("Get a free SEO audit", "Δωρεάν έλεγχος SEO") },
   },
@@ -127,8 +127,8 @@ export const PRICING_FAQ: ReadonlyArray<GscFaqItem> = [
   {
     q: c("What counts as a site?", "Τι θεωρείται ιστότοπος;"),
     a: c(
-      "A site is a website you set up as a project in GSC Boost, usually one Search Console property, with its own settings, brand terms, competitors and reports.",
-      "Ιστότοπος είναι ένας ιστότοπος που ρυθμίζετε ως έργο στο GSC Boost, συνήθως μία ιδιότητα του Search Console, με δικές του ρυθμίσεις, όρους επωνυμίας, ανταγωνιστές και αναφορές.",
+      "A site is a website you set up as a project in AnotherSEOGuru App, usually one Search Console property, with its own settings, brand terms, competitors and reports.",
+      "Ιστότοπος είναι ένας ιστότοπος που ρυθμίζετε ως έργο στο AnotherSEOGuru App, συνήθως μία ιδιότητα του Search Console, με δικές του ρυθμίσεις, όρους επωνυμίας, ανταγωνιστές και αναφορές.",
     ),
   },
   {
@@ -148,8 +148,8 @@ export const PRICING_FAQ: ReadonlyArray<GscFaqItem> = [
   {
     q: c("Is this the same as your agency SEO packages?", "Είναι το ίδιο με τα πακέτα SEO της εταιρείας σας;"),
     a: c(
-      "No. These are software plans: you use GSC Boost and do the work yourself. Our agency packages are a separate service where our team does the SEO for you, priced on the main pricing page.",
-      "Όχι. Αυτά είναι πακέτα λογισμικού: χρησιμοποιείτε το GSC Boost και κάνετε τη δουλειά μόνοι σας. Τα πακέτα της εταιρείας μας είναι ξεχωριστή υπηρεσία όπου η ομάδα μας αναλαμβάνει το SEO για εσάς, με τιμές στη βασική σελίδα τιμών.",
+      "No. These are software plans: you use AnotherSEOGuru App and do the work yourself. Our agency packages are a separate service where our team does the SEO for you, priced on the main pricing page.",
+      "Όχι. Αυτά είναι πακέτα λογισμικού: χρησιμοποιείτε το AnotherSEOGuru App και κάνετε τη δουλειά μόνοι σας. Τα πακέτα της εταιρείας μας είναι ξεχωριστή υπηρεσία όπου η ομάδα μας αναλαμβάνει το SEO για εσάς, με τιμές στη βασική σελίδα τιμών.",
     ),
     link: { kind: "site", path: "/pricing", label: c("Agency SEO packages", "Πακέτα SEO της εταιρείας") },
   },

@@ -230,8 +230,8 @@ export function HowItWorks({ locale, source, tinted = false }: { readonly locale
           {
             title: isEl ? "Πάρτε το πλάνο σας" : "Get your plan",
             text: isEl
-              ? "Το GSC Boost αναλύει τις αναζητήσεις και τις σελίδες σας, εντοπίζει κάθε ευκαιρία και ταξινομεί τις διορθώσεις με βάση τα κλικ που μπορούν να φέρουν."
-              : "GSC Boost analyzes your queries and pages, finds every opportunity and ranks the fixes by the clicks they could bring.",
+              ? "Το AnotherSEOGuru App αναλύει τις αναζητήσεις και τις σελίδες σας, εντοπίζει κάθε ευκαιρία και ταξινομεί τις διορθώσεις με βάση τα κλικ που μπορούν να φέρουν."
+              : "AnotherSEOGuru App analyzes your queries and pages, finds every opportunity and ranks the fixes by the clicks they could bring.",
             preview: <PlanMini locale={locale} />,
           },
           {
@@ -264,8 +264,8 @@ export function AgencyCrossSell({ locale, className }: { readonly locale: L; rea
             </h2>
             <p className="mt-4 text-pretty text-[16px] leading-relaxed text-muted-foreground">
               {isEl
-                ? "Το GSC Boost είναι το λογισμικό που χρησιμοποιεί καθημερινά η ομάδα SEO του AnotherSEOGuru. Αν προτιμάτε να αναλάβουμε εμείς τις διορθώσεις, ξεκινήστε με έναν δωρεάν έλεγχο: βλέπετε τα προβλήματα, τι διορθώνεται πρώτο και σταθερή τιμή, πριν δεσμευτείτε."
-                : "GSC Boost is the software the AnotherSEOGuru SEO team uses every day. If you would rather we ship the fixes, start with a free audit: you get the problems, what to fix first and a fixed price before you commit."}
+                ? "Το AnotherSEOGuru App είναι το λογισμικό που χρησιμοποιεί καθημερινά η ομάδα SEO του AnotherSEOGuru. Αν προτιμάτε να αναλάβουμε εμείς τις διορθώσεις, ξεκινήστε με έναν δωρεάν έλεγχο: βλέπετε τα προβλήματα, τι διορθώνεται πρώτο και σταθερή τιμή, πριν δεσμευτείτε."
+                : "AnotherSEOGuru App is the software the AnotherSEOGuru SEO team uses every day. If you would rather we ship the fixes, start with a free audit: you get the problems, what to fix first and a fixed price before you commit."}
             </p>
             <AgencyCtas locale={locale} align="left" className="mt-7" />
           </div>
@@ -429,7 +429,7 @@ export function PlatformLinks({ locale, current }: { readonly locale: L; readonl
   const isEl = locale === "el";
   const lp = (p: string) => localizedPath(locale, p);
   const links = [
-    { path: "/platform", label: "GSC Boost" },
+    { path: "/platform", label: "AnotherSEOGuru App" },
     { path: "/platform/features", label: isEl ? "Δυνατότητες" : "Features" },
     { path: "/platform/pricing", label: isEl ? "Τιμές" : "Pricing" },
     { path: "/platform/for/agencies", label: isEl ? "Για agencies" : "For agencies" },
@@ -446,7 +446,7 @@ export function PlatformLinks({ locale, current }: { readonly locale: L; readonl
   return (
     <section className="border-t border-hairline py-8">
       <Container>
-        <nav aria-label={isEl ? "Σελίδες GSC Boost" : "GSC Boost pages"} className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
+        <nav aria-label={isEl ? "Σελίδες AnotherSEOGuru App" : "AnotherSEOGuru App pages"} className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
           {links.map((l) => (
             <Link key={l.path} href={lp(l.path)} className="transition-colors hover:text-link">
               {l.label}

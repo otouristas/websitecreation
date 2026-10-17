@@ -8,11 +8,10 @@ export const SUPPORT_EMAIL = "support@anotherseoguru.com";
 export function helpCopy(locale: SiteLocale) {
   const el = locale === "el";
   return {
-    home: el ? "Κέντρο βοήθειας GSC Boost" : "GSC Boost help center",
     short: el ? "Κέντρο βοήθειας" : "Help center",
     heroLead: el
-      ? "Οδηγοί για κάθε μέρος του GSC Boost, από τη σύνδεση του Search Console μέχρι τη λειτουργία ενός γραφείου πάνω του."
-      : "Guides for every part of GSC Boost, from connecting Search Console to running an agency on it.",
+      ? "Οδηγοί για κάθε μέρος του AnotherSEOGuru App, από τη σύνδεση του Search Console μέχρι τη λειτουργία ενός γραφείου πάνω του."
+      : "Guides for every part of AnotherSEOGuru App, from connecting Search Console to running an agency on it.",
     search: {
       placeholder: el ? "Αναζήτηση στο κέντρο βοήθειας" : "Search the help center",
       empty: el ? "Κανένα άρθρο δεν ταιριάζει με «{query}»." : "No articles match “{query}”.",
@@ -26,7 +25,7 @@ export function helpCopy(locale: SiteLocale) {
     inThisArticle: el ? "Σε αυτό το άρθρο" : "In this article",
     previous: el ? "Προηγούμενο" : "Previous",
     next: el ? "Επόμενο" : "Next",
-    openApp: el ? "Άνοιγμα του GSC Boost" : "Open GSC Boost",
+    openApp: el ? "Άνοιγμα του AnotherSEOGuru App" : "Open AnotherSEOGuru App",
     demoTitle: el ? "Δοκιμάστε τη ζωντανή επίδειξη" : "Try the live demo",
     demoText: el ? "Κάθε οθόνη με δείγμα δεδομένων για τρεις ιστότοπους. Χωρίς εγγραφή." : "Every screen with sample data for three sites. No sign-up.",
     stillNeedHelp: el ? "Χρειάζεστε ακόμη βοήθεια;" : "Still need help?",

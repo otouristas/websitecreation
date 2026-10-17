@@ -47,7 +47,7 @@ import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
  *
  * Order: centered hero with the instant scan, the product window, client
  * logos, "reports vs decisions" before/after, the four services as
- * alternating feature rows, verticals, live work, pricing, the GSC Boost
+ * alternating feature rows, verticals, live work, pricing, the AnotherSEOGuru App
  * do-it-yourself band, testimonials, FAQ and the two-door closing band.
  *
  * `/el` is the C1 pillar in docs/keyword-research (21 of 51 P0 keywords
@@ -166,12 +166,12 @@ export function HomePageView({ locale }: { locale: SiteLocale }) {
                 bodyClassName="max-h-[520px] overflow-hidden [mask-image:linear-gradient(to_bottom,black_80%,transparent)] sm:max-h-none sm:[mask-image:none]"
                 ctaLabel={tx('Explore the live demo', 'Δείτε τη ζωντανή επίδειξη')}
                 label={tx(
-                  'GSC Boost, our Search Console software, on a sample hotel: clicks, impressions, CTR and position, a clicks chart and the top fixes to ship next.',
-                  'Το GSC Boost, το λογισμικό μας για το Search Console, σε ένα δείγμα ξενοδοχείου: κλικ, εμφανίσεις, CTR, θέση και οι επόμενες διορθώσεις.',
+                  'AnotherSEOGuru App, our Search Console software, on a sample hotel: clicks, impressions, CTR and position, a clicks chart and the top fixes to ship next.',
+                  'Το AnotherSEOGuru App, το λογισμικό μας για το Search Console, σε ένα δείγμα ξενοδοχείου: κλικ, εμφανίσεις, CTR, θέση και οι επόμενες διορθώσεις.',
                 )}
                 badge={
                   <span className="rounded-full border border-hairline bg-background px-2 py-0.5 text-[11px] font-medium text-muted-foreground">
-                    {tx('GSC Boost · sample data', 'GSC Boost · δείγμα')}
+                    {tx('AnotherSEOGuru App · sample data', 'AnotherSEOGuru App · δείγμα')}
                   </span>
                 }
               >
@@ -180,8 +180,8 @@ export function HomePageView({ locale }: { locale: SiteLocale }) {
             </div>
             <p className="mt-5 text-center text-[13px] text-muted-foreground">
               {tx(
-                'That’s GSC Boost, the software we run every client on, showing a sample hotel.',
-                'Αυτό είναι το GSC Boost, το λογισμικό με το οποίο δουλεύουμε κάθε πελάτη, σε ένα δείγμα ξενοδοχείου.',
+                'That’s AnotherSEOGuru App, the software we run every client on, showing a sample hotel.',
+                'Αυτό είναι το AnotherSEOGuru App, το λογισμικό με το οποίο δουλεύουμε κάθε πελάτη, σε ένα δείγμα ξενοδοχείου.',
               )}{' '}
               <Link href={lp('/platform')} className="font-medium text-foreground underline decoration-hairline underline-offset-4 hover:decoration-foreground">
                 {tx('Use it yourself, free', 'Χρησιμοποιήστε το δωρεάν')}
@@ -392,14 +392,14 @@ export function HomePageView({ locale }: { locale: SiteLocale }) {
         <WorkRail locale={locale} />
         <SeoPricingBlock locale={locale} />
 
-        {/* ------------------------------------------------------- GSC Boost */}
+        {/* ------------------------------------------------------- AnotherSEOGuru App */}
         <KitSection tinted id="gsc-boost">
           <KitHeading
             align="center"
             eyebrow={
               <span className="inline-flex items-center gap-2">
                 <span className="rounded-full bg-accent px-1.5 py-0.5 text-[10px] font-semibold text-accent-foreground">{tx('NEW', 'ΝΕΟ')}</span>
-                GSC Boost
+                AnotherSEOGuru App
               </span>
             }
             title={
@@ -408,8 +408,8 @@ export function HomePageView({ locale }: { locale: SiteLocale }) {
               </>
             }
             description={tx(
-              'GSC Boost reads your Search Console and hands you the fixes that win the most clicks, ranked and estimated. It is the same tool our team uses every day.',
-              'Το GSC Boost διαβάζει το Search Console σας και σας δίνει τις διορθώσεις που φέρνουν τα περισσότερα κλικ, με σειρά και εκτίμηση. Είναι το ίδιο εργαλείο που χρησιμοποιεί καθημερινά η ομάδα μας.',
+              'AnotherSEOGuru App reads your Search Console and hands you the fixes that win the most clicks, ranked and estimated. It is the same tool our team uses every day.',
+              'Το AnotherSEOGuru App διαβάζει το Search Console σας και σας δίνει τις διορθώσεις που φέρνουν τα περισσότερα κλικ, με σειρά και εκτίμηση. Είναι το ίδιο εργαλείο που χρησιμοποιεί καθημερινά η ομάδα μας.',
             )}
           />
           <StepsGrid
@@ -435,7 +435,7 @@ export function HomePageView({ locale }: { locale: SiteLocale }) {
           <SoftwareCtas locale={locale} source="home-gsc-band" className="mt-12" />
           <p className="mt-4 text-center text-[13px] text-muted-foreground">
             <Link href={lp('/platform')} className="underline decoration-hairline underline-offset-4 hover:text-foreground">
-              {tx('See everything GSC Boost does', 'Δείτε όλες τις δυνατότητες του GSC Boost')}
+              {tx('See everything AnotherSEOGuru App does', 'Δείτε όλες τις δυνατότητες του AnotherSEOGuru App')}
             </Link>
             {' · '}
             <Link href={lp('/platform/pricing')} className="underline decoration-hairline underline-offset-4 hover:text-foreground">
