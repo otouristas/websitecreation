@@ -2,6 +2,8 @@ import { getAppPath } from "@/lib/app-links";
 import { localizedPath, type SiteLocale } from "@/lib/i18n/locale";
 import { el } from "./el";
 import { en } from "./en";
+import { integrationsEl } from "./integrations-el";
+import { integrationsEn } from "./integrations-en";
 import { iphoneEl } from "./iphone-el";
 import { iphoneEn } from "./iphone-en";
 import type { Block, CardItem, HelpArticle, HelpCategory, Shot, StepItem } from "./types";
@@ -11,8 +13,8 @@ export type { Block, CardItem, HelpArticle, HelpCategory, Shot, StepItem };
 /** The iPhone guides are a help category with their own tab in the docs. */
 export const IPHONE_CATEGORY = "iphone-app";
 
-const EN_ALL: ReadonlyArray<HelpCategory> = [...en, iphoneEn];
-const EL_ALL: ReadonlyArray<HelpCategory> = [...el, iphoneEl];
+const EN_ALL: ReadonlyArray<HelpCategory> = [...en, integrationsEn, iphoneEn];
+const EL_ALL: ReadonlyArray<HelpCategory> = [...el, integrationsEl, iphoneEl];
 
 /**
  * The GSC Boost help center. The articles are shared with the app repo
@@ -20,7 +22,7 @@ const EL_ALL: ReadonlyArray<HelpCategory> = [...el, iphoneEl];
  * locales, so every page has a 1:1 hreflang twin.
  */
 /** Bump when the articles change: it feeds dateModified and the sitemap. */
-export const HELP_UPDATED = "2026-10-14";
+export const HELP_UPDATED = "2026-10-17";
 
 export function helpContent(locale: SiteLocale): ReadonlyArray<HelpCategory> {
   return locale === "el" ? EL_ALL : EN_ALL;
@@ -115,4 +117,23 @@ export function articleFaqs(blocks: ReadonlyArray<Block>): Array<{ question: str
   return blocks.flatMap((b) =>
     b.type === "faq" ? b.items.map((f) => ({ question: f.q, answer: stripInline(f.a) })) : b.type === "tabs" ? b.items.flatMap((t) => articleFaqs(t.blocks)) : [],
   );
+}
+
+export interface ArticleHowTo {
+  readonly name: string;
+  readonly description: string;
+  readonly steps: ReadonlyArray<{ readonly name: string; readonly text: string }>;
+}
+
+/** Titled steps marked with `howTo`. Untitled lines are omitted so the schema matches the page. */
+export function articleHowTos(blocks: ReadonlyArray<Block>): ArticleHowTo[] {
+  return blocks.flatMap((b) => {
+    if (b.type === "tabs") return b.items.flatMap((t) => articleHowTos(t.blocks));
+    if (b.type !== "steps" || !b.howTo) return [];
+    const steps = b.items.flatMap((item) => {
+      if (typeof item === "string" || !item.title || !item.text) return [];
+      return [{ name: item.title, text: stripInline(item.text) }];
+    });
+    return steps.length ? [{ name: b.howTo.name, description: b.howTo.description, steps }] : [];
+  });
 }
