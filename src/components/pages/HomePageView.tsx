@@ -9,26 +9,22 @@ import {
   Accent,
   AiVisibilityPreview,
   AnnouncePill,
-  AppWindow,
   AuditPreview,
   BeforeAfter,
   Container,
   CtaBand,
   DecisionsPanel,
   FeatureRow,
-  FollowThroughMini,
   HeroCentered,
   KitHeading,
   KitSection,
   LocalPackPreview,
-  OverviewPreview,
-  PlanMini,
-  PropertiesMini,
+  ProductBento,
+  ProductHero,
   RawQueriesPanel,
   ReportPreview,
   SoftwareCtas,
   Stage,
-  StepsGrid,
   TrustLine,
   ValueTrio,
   agencyTrust,
@@ -161,22 +157,19 @@ export function HomePageView({ locale }: { locale: SiteLocale }) {
                 aria-hidden
                 className="pointer-events-none absolute -inset-x-[4%] -top-[10%] -z-10 h-[55%] rounded-[50%] bg-[radial-gradient(closest-side,color-mix(in_oklab,var(--primary)_35%,transparent),transparent)] blur-3xl"
               />
-              <AppWindow
+              <ProductHero
                 href={demoHref}
-                bodyClassName="max-h-[520px] overflow-hidden [mask-image:linear-gradient(to_bottom,black_80%,transparent)] sm:max-h-none sm:[mask-image:none]"
                 ctaLabel={tx('Explore the live demo', 'Δείτε τη ζωντανή επίδειξη')}
                 label={tx(
-                  'AnotherSEOGuru App, our Search Console software, on a sample hotel: clicks, impressions, CTR and position, a clicks chart and the top fixes to ship next.',
-                  'Το AnotherSEOGuru App, το λογισμικό μας για το Search Console, σε ένα δείγμα ξενοδοχείου: κλικ, εμφανίσεις, CTR, θέση και οι επόμενες διορθώσεις.',
+                  'AnotherSEOGuru App overview on sample data: clicks, impressions, CTR, average position and a clicks chart.',
+                  'Επισκόπηση του AnotherSEOGuru App με δείγμα δεδομένων: κλικ, εμφανίσεις, CTR, μέση θέση και γράφημα κλικ.',
                 )}
                 badge={
                   <span className="rounded-full border border-hairline bg-background px-2 py-0.5 text-[11px] font-medium text-muted-foreground">
                     {tx('AnotherSEOGuru App · sample data', 'AnotherSEOGuru App · δείγμα')}
                   </span>
                 }
-              >
-                <OverviewPreview locale={l} />
-              </AppWindow>
+              />
             </div>
             <p className="mt-5 text-center text-[13px] text-muted-foreground">
               {tx(
@@ -412,26 +405,7 @@ export function HomePageView({ locale }: { locale: SiteLocale }) {
               'Το AnotherSEOGuru App διαβάζει το Search Console σας και σας δίνει τις διορθώσεις που φέρνουν τα περισσότερα κλικ, με σειρά και εκτίμηση. Είναι το ίδιο εργαλείο που χρησιμοποιεί καθημερινά η ομάδα μας.',
             )}
           />
-          <StepsGrid
-            className="mt-14"
-            steps={[
-              {
-                title: tx('Connect Google', 'Συνδέστε τη Google'),
-                text: tx('Sign up with Google and approve read-only access. Pick the site to start with.', 'Κάντε εγγραφή με Google και δώστε πρόσβαση μόνο για ανάγνωση. Διαλέξτε ιστοσελίδα.'),
-                preview: <PropertiesMini locale={l} />,
-              },
-              {
-                title: tx('Get your plan', 'Πάρτε το πλάνο σας'),
-                text: tx('Every query and page is analysed and the fixes are ranked by the clicks they could bring.', 'Κάθε ερώτημα και σελίδα αναλύεται και οι διορθώσεις μπαίνουν σε σειρά βάσει κλικ.'),
-                preview: <PlanMini locale={l} />,
-              },
-              {
-                title: tx('Ship and measure', 'Υλοποιήστε και μετρήστε'),
-                text: tx('Turn fixes into tasks, mark what you shipped and watch the result on the chart.', 'Κάντε τις διορθώσεις εργασίες, σημειώστε τι αλλάξατε και δείτε το αποτέλεσμα.'),
-                preview: <FollowThroughMini locale={l} />,
-              },
-            ]}
-          />
+          <ProductBento locale={locale} className="mt-14" />
           <SoftwareCtas locale={locale} source="home-gsc-band" className="mt-12" />
           <p className="mt-4 text-center text-[13px] text-muted-foreground">
             <Link href={lp('/platform')} className="underline decoration-hairline underline-offset-4 hover:text-foreground">
