@@ -10,8 +10,7 @@ import WhatsAppPill from '@/components/WhatsAppPill';
 import { Analytics } from '@vercel/analytics/next';
 import { isValidLocale } from '@/lib/i18n/locale';
 import { CONTACT_EMAIL, PHONE_E164 } from '@/lib/contact-info';
-import { FOUNDER, FOUNDER_SCHEMA_ID, consultantUrl } from '@/data/founder';
-import { COMPANY_CONTACT_ADDRESS } from '@/data/company-contact';
+import { APP_ORIGIN, LEGAL_ENTITY_ID, LEGAL_ENTITY_NAME } from '@/data/legal-entity';
 
 const SITE_URL = 'https://anotherseoguru.com';
 
@@ -131,6 +130,11 @@ function buildStructuredDataGraph(isEl: boolean) {
         '@id': `${SITE_URL}/#organization`,
         name: 'AnotherSEOGuru',
         url: SITE_URL,
+        parentOrganization: {
+          '@type': 'Organization',
+          '@id': LEGAL_ENTITY_ID,
+          name: LEGAL_ENTITY_NAME,
+        },
         logo: {
           '@type': 'ImageObject',
           url: `${SITE_URL}/brand/asg-lockup-on-light@2x.png`,
@@ -145,17 +149,6 @@ function buildStructuredDataGraph(isEl: boolean) {
           telephone: PHONE_E164,
           areaServed: ['GR', 'GB', 'US', 'EU'],
           availableLanguage: ['Greek', 'English'],
-        },
-        // Company contact details are separate from the founder's personal base.
-        address: {
-          '@type': 'PostalAddress',
-          ...COMPANY_CONTACT_ADDRESS,
-        },
-        founder: {
-          '@type': 'Person',
-          '@id': FOUNDER_SCHEMA_ID,
-          name: FOUNDER.name,
-          url: consultantUrl(isEl ? 'el' : 'en'),
         },
         sameAs: [
           'https://www.linkedin.com/company/anotherseoguru',
@@ -218,6 +211,18 @@ function buildStructuredDataGraph(isEl: boolean) {
             },
           ],
         },
+      },
+      {
+        '@type': 'Organization',
+        '@id': LEGAL_ENTITY_ID,
+        name: LEGAL_ENTITY_NAME,
+        legalName: LEGAL_ENTITY_NAME,
+        url: SITE_URL,
+        brand: { '@type': 'Brand', name: 'AnotherSEOGuru', url: SITE_URL },
+        owns: [
+          { '@type': 'WebSite', name: 'AnotherSEOGuru', url: SITE_URL },
+          { '@type': 'SoftwareApplication', name: 'AnotherSEOGuru', url: APP_ORIGIN },
+        ],
       },
       {
         '@type': 'WebSite',

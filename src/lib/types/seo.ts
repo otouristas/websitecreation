@@ -61,20 +61,6 @@ export interface DefinedTermSetSchemaData {
     readonly terms: readonly DefinedTermData[];
 }
 
-export interface PersonSchemaData {
-    readonly name: string;
-    readonly url?: string;
-    readonly jobTitle?: string;
-    readonly description?: string;
-    readonly knowsAbout?: readonly string[];
-    readonly sameAs?: readonly string[];
-    readonly worksFor?: { readonly name: string; readonly url: string };
-    /** Stable @id when the person is referenced from other nodes (e.g. Organization.founder). */
-    readonly id?: string;
-    readonly alternateName?: string;
-    readonly address?: PostalAddressData;
-}
-
 export interface PostalAddressData {
     readonly addressLocality: string;
     readonly addressCountry: string;
@@ -129,6 +115,10 @@ export interface OrganizationSchemaData {
     /** Stable @id so this node merges with the layout's Organization instead of declaring a second entity. */
     id?: string;
     name: string;
+    /** Legal entity, when it differs from the public brand name. */
+    legalName?: string;
+    /** Owner of this organization, when the brand sits under another company. */
+    parentOrganization?: { id: string; name: string; url?: string };
     url: string;
     logo: string;
     description: string;
@@ -139,7 +129,6 @@ export interface OrganizationSchemaData {
     };
     sameAs?: string[];
     address?: PostalAddressData;
-    founder?: { id: string; name: string; url?: string };
 }
 
 // Schema output type

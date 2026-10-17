@@ -13,7 +13,7 @@ This document is the comprehensive, machine-readable reference for LLM crawlers,
 
 ## 1. Core Platform Architecture & Value Proposition
 
-AnotherSEOGuru combines a **web design & SEO agency** (primary) with a **GSC-native SEO software platform** (secondary):
+Touristas Technologies owns and operates the AnotherSEOGuru website (anotherseoguru.com) and the AnotherSEOGuru app (app.anotherseoguru.com). AnotherSEOGuru combines a **web design & SEO agency** (primary) with a **GSC-native SEO software platform** (secondary):
 1. **Agency delivery** - Custom websites, WooCommerce e-shops, SEO retainers, local SEO / GBP, GEO/AEO (AI visibility), redesign, speed, content, and link building. Primary niche: **tourism & hospitality** (hotels, rent-a-car, tour operators, villas, travel agencies).
 2. **Bilingual surface** - Greek under `/el`, English under `/en`, with hreflang on shared pages.
 3. **Proof inventory** - 42 live client projects documented under `/work` with homepage screenshots and case-study summaries.
@@ -1610,7 +1610,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Description:** Πώς να ξεχωρίσετε στο Google Maps και στην οργανική αναζήτηση στις Κυκλάδες. Οδηγός για Πάρο, Μύκονο, Σαντορίνη, Νάξο με GBP, NAP και location pages.
 - **Embedded FAQ:**
   - Q: Ποιο νησί είναι πιο εύκολο για τοπικό SEO στις Κυκλάδες;
-    A: Νησιά με χαμηλότερο ανταγωνισμό (Μήλος, Σίφνος, Τήνος, Φολέγανδρος) δίνουν πιο γρήγορα αποτελέσματα από Μύκονο και Σαντορίνη. Η στρατηγική προσαρμόζεται στη δυσκολία της αγοράς.
+    A: Νησιά με χαμηλότερο ανταγωνισμό (Μήλος, Τήνος, Φολέγανδρος, Κύθνος) δίνουν πιο γρήγορα αποτελέσματα από Μύκονο και Σαντορίνη. Η στρατηγική προσαρμόζεται στη δυσκολία της αγοράς.
   - Q: Χρειάζομαι ξεχωριστό Google Business Profile για κάθε νησί;
     A: Ναι, εφόσον διατηρείτε φυσικό γραφείο ή σημείο εξυπηρέτησης στο συγκεκριμένο νησί. Αυτό αυξάνει κατακόρυφα την εμφάνιση στους τοπικούς χάρτες.
   - Q: Πόσος χρόνος χρειάζεται για το Map Pack στις Κυκλάδες;

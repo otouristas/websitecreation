@@ -30,7 +30,6 @@ export {
     generateItemListSchema,
     generateOfferCatalogSchema,
     generateDefinedTermSetSchema,
-    generatePersonSchema,
     combineSchemas,
     serializeSchemas,
 } from './schema';

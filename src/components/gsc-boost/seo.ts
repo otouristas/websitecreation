@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { localizedPath, type SiteLocale } from "@/lib/i18n/locale";
 import { buildMetadata } from "@/lib/seo";
-import { BASE_URL, BRAND_NAME, generateBreadcrumbSchema } from "@/lib/seo/schema";
+import { BASE_URL, LEGAL_ENTITY_ID, LEGAL_ENTITY_NAME, brandOrganization, generateBreadcrumbSchema } from "@/lib/seo/schema";
 import { getAppPath } from "@/lib/app-links";
 import type { Copy } from "./copy";
 import { PLANS } from "./plans";
@@ -66,7 +66,8 @@ export function gscBoostSoftwareSchema(locale: SiteLocale, path = "/platform"): 
         url: `${BASE_URL}${localizedPath(locale, "/platform/pricing")}`,
       })),
     },
-    provider: { "@type": "Organization", name: BRAND_NAME, url: BASE_URL },
+    provider: brandOrganization(),
+    publisher: { "@type": "Organization", "@id": LEGAL_ENTITY_ID, name: LEGAL_ENTITY_NAME },
   };
 }
 

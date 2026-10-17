@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { ArrowRight, BookOpen, Gem, MapPin, Quote, Search, TrendingUp, UserRound, Zap } from "lucide-react";
+import { ArrowRight, BookOpen, Gem, Quote, Search, TrendingUp, UserRound, Zap } from "lucide-react";
 import { Container, CtaBand, KitHeading, KitSection, Stage, StepsGrid } from "@/components/kit";
 import { InfoCard, PageHero, SplitRow, StatRow, accentTail } from "@/components/page-kit";
 import { isValidLocale, localizedPath, type SiteLocale } from "@/lib/i18n/locale";
@@ -12,8 +12,9 @@ import SchemaMarkup from "@/components/seo/SchemaMarkup";
 import type { SchemaOutput } from "@/lib/types/seo";
 import { BASE_URL, generateBreadcrumbSchema } from "@/lib/seo/schema";
 import { MARKET_COUNT } from '@/data/company-facts';
+import { LEGAL_ENTITY_ID, LEGAL_ENTITY_NAME } from '@/data/legal-entity';
 import { industries } from '@/data/industries';
-import { FOUNDER, FOUNDER_YEARS, PROJECTS_DELIVERED, consultantPath } from '@/data/founder';
+import { FOUNDER_YEARS, PROJECTS_DELIVERED, consultantPath } from '@/data/founder';
 
 type PageProps = { params: Promise<{ locale: string }> };
 
@@ -52,7 +53,7 @@ export default async function AboutPage({ params }: PageProps) {
         home: "Αρχική",
         about: "Σχετικά",
         h1: "Κατασκευάζουμε Ιστοσελίδες που Φέρνουν Αποτελέσματα",
-        sub: "Η AnotherSEOGuru είναι ένα agency σχεδιασμού ιστοσελίδων και SEO με έδρα τη Σίφνο, στην Ελλάδα, που εστιάζει σε ένα πράγμα: να βοηθήσει τις επιχειρήσεις να πετύχουν online με γρήγορες, όμορφες και βελτιστοποιημένες ιστοσελίδες.",
+        sub: "Η Touristas Technologies είναι ιδιοκτήτης και φορέας λειτουργίας του ιστότοπου anotherseoguru.com και της εφαρμογής στο app.anotherseoguru.com. Η AnotherSEOGuru είναι η ομάδα σχεδιασμού ιστοσελίδων και SEO της εταιρείας, με στόχο να βοηθήσει τις επιχειρήσεις να πετύχουν online με γρήγορες, όμορφες και βελτιστοποιημένες ιστοσελίδες.",
         storyLabel: "Η Ιστορία Μας",
         storyTitle: "Από την Απογοήτευση στη Λύση",
         storyP1: "Ξεκινήσαμε την AnotherSEOGuru επειδή κουραστήκαμε να βλέπουμε επιχειρήσεις να πληρώνουν ακριβά σε agencies που παραδίδουν αργές, ξεπερασμένες ιστοσελίδες που δεν κατατάσσονται ούτε φέρνουν κρατήσεις.",
@@ -60,16 +61,16 @@ export default async function AboutPage({ params }: PageProps) {
         storyP3: "Ακολουθήσαμε μια διαφορετική προσέγγιση. Κάθε ιστοσελίδα που κατασκευάζουμε ξεκινά με βάση την ταχύτητα και το SEO. Στη συνέχεια προσθέτουμε εξαιρετικό σχεδιασμό. Το αποτέλεσμα είναι ιστοσελίδες που δείχνουν εκπληκτικές ΚΑΙ φέρνουν πραγματικά αποτελέσματα.",
         quote: "«Μια ιστοσελίδα που κανείς δεν μπορεί να βρει είναι μια ιστοσελίδα που δεν υπάρχει. Κατασκευάζουμε ιστοσελίδες που ανακαλύπτονται από τους πελάτες.»",
         author: "Η Ομάδα της AnotherSEOGuru",
-        founderLabel: "Ο ιδρυτής",
-        founderTitle: `${FOUNDER.nameEl}, ιδρυτής και σύμβουλος SEO`,
-        founderBody: `Η AnotherSEOGuru ιδρύθηκε από τον ${FOUNDER.nameElAcc}, σύμβουλο SEO με έδρα την Αθήνα και ${FOUNDER_YEARS}+ χρόνια εμπειρίας. Έχει παραδώσει πάνω από ${PROJECTS_DELIVERED} έργα, κυρίως για ξενοδοχεία, ενοικιάσεις αυτοκινήτων, τουριστικές και τοπικές επιχειρήσεις.`,
+        founderLabel: "Η ομάδα",
+        founderTitle: "Η ομάδα της Touristas Technologies",
+        founderBody: `Η Touristas Technologies είναι ιδιοκτήτης του ιστότοπου anotherseoguru.com και της εφαρμογής AnotherSEOGuru στο app.anotherseoguru.com. Η ομάδα, με ${FOUNDER_YEARS}+ χρόνια στο SEO, έχει παραδώσει πάνω από ${PROJECTS_DELIVERED} έργα, κυρίως για ξενοδοχεία, ενοικιάσεις αυτοκινήτων, τουριστικές και τοπικές επιχειρήσεις στην Ελλάδα.`,
         founderFacts: [
           { value: `${FOUNDER_YEARS}+`, label: "χρόνια στο SEO" },
           { value: `${PROJECTS_DELIVERED}+`, label: "έργα" },
-          { value: "Αθήνα", label: "έδρα" },
+          { value: "Ελλάδα", label: "αγορά" },
         ],
-        founderRole: "Ιδρυτής · Σύμβουλος SEO",
-        founderLink: "Γνωρίστε τον σύμβουλο SEO",
+        founderRole: "Ομάδα SEO και web design",
+        founderLink: "Δείτε πώς δουλεύει η ομάδα",
         beliefsTitle: "Τι Πιστεύουμε",
         beliefsSub: "Οι βασικές μας αρχές καθοδηγούν κάθε μας βήμα",
         howWeWorkTitle: "Πώς Εργαζόμαστε",
@@ -121,7 +122,7 @@ export default async function AboutPage({ params }: PageProps) {
         home: "Home",
         about: "About",
         h1: "We Build Websites That Actually Work",
-        sub: "AnotherSEOGuru is a Sifnos-based web design and SEO agency focused on one thing: helping businesses succeed online with fast, beautiful, search-optimized websites.",
+        sub: "Touristas Technologies owns and operates anotherseoguru.com and the AnotherSEOGuru app at app.anotherseoguru.com. AnotherSEOGuru is the company's web design and SEO team, focused on helping businesses succeed online with fast, beautiful, search-optimized websites.",
         storyLabel: "Our Story",
         storyTitle: "From Frustration to Solution",
         storyP1: "We started AnotherSEOGuru because we were tired of seeing businesses get ripped off by agencies that deliver slow, outdated websites that don't rank or convert.",
@@ -129,16 +130,16 @@ export default async function AboutPage({ params }: PageProps) {
         storyP3: "We took a different approach. Every site we build starts with speed and SEO as the foundation. Then we add great design on top. The result is websites that look amazing AND actually drive business results.",
         quote: "\"A website that nobody can find is a website that doesn't exist. We build sites that get discovered.\"",
         author: "The AnotherSEOGuru Team",
-        founderLabel: "The founder",
-        founderTitle: `${FOUNDER.name}, founder and SEO consultant`,
-        founderBody: `AnotherSEOGuru was founded by ${FOUNDER.name}, an SEO consultant based in Athens with ${FOUNDER_YEARS}+ years of experience. He has delivered more than ${PROJECTS_DELIVERED} projects, mostly for hotels, car rentals, tourism and local businesses.`,
+        founderLabel: "The team",
+        founderTitle: "The Touristas Technologies team",
+        founderBody: `Touristas Technologies owns anotherseoguru.com and the AnotherSEOGuru app at app.anotherseoguru.com. The team, with ${FOUNDER_YEARS}+ years in SEO, has delivered more than ${PROJECTS_DELIVERED} projects, mostly for hotels, car rentals, tourism and local businesses in Greece.`,
         founderFacts: [
           { value: `${FOUNDER_YEARS}+`, label: "years in SEO" },
           { value: `${PROJECTS_DELIVERED}+`, label: "projects" },
-          { value: "Athens", label: "based in" },
+          { value: "Greece", label: "market" },
         ],
-        founderRole: "Founder · SEO consultant",
-        founderLink: "Meet our SEO consultant",
+        founderRole: "SEO and web design team",
+        founderLink: "See how the team works",
         beliefsTitle: "What We Believe",
         beliefsSub: "Our core principles guide everything we do",
         howWeWorkTitle: "How We Work",
@@ -190,8 +191,8 @@ export default async function AboutPage({ params }: PageProps) {
   ];
   const icons = [Zap, Search, Gem, TrendingUp];
 
-  // AboutPage ties this URL to the Organization and founder nodes the layout
-  // already emits (same @ids), so AI engines read it as the entity's own page.
+  // AboutPage ties this URL to the Organization the layout already emits,
+  // so AI engines read it as the company's own page.
   const aboutSchema: SchemaOutput = {
     "@context": "https://schema.org",
     "@type": "AboutPage",
@@ -201,8 +202,16 @@ export default async function AboutPage({ params }: PageProps) {
     inLanguage: locale,
     isPartOf: { "@id": `${BASE_URL}/#website` },
     about: { "@id": `${BASE_URL}/#organization` },
-    mainEntity: { "@id": `${BASE_URL}/#organization` },
-    mentions: { "@id": `${BASE_URL}/#founder` },
+    mainEntity: {
+      "@type": "Organization",
+      "@id": `${BASE_URL}/#organization`,
+      name: "AnotherSEOGuru",
+      parentOrganization: {
+        "@type": "Organization",
+        "@id": LEGAL_ENTITY_ID,
+        name: LEGAL_ENTITY_NAME,
+      },
+    },
   };
 
   return (
@@ -253,7 +262,7 @@ export default async function AboutPage({ params }: PageProps) {
           />
         </KitSection>
 
-        <KitSection tinted id="founder">
+        <KitSection tinted id="team">
           <SplitRow
             flip
             eyebrow={t.founderLabel}
@@ -266,10 +275,9 @@ export default async function AboutPage({ params }: PageProps) {
                 <figure className="rounded-xl border border-hairline bg-background p-7 sm:p-9">
                   <figcaption>
                     <span className="block font-display text-[30px] font-semibold tracking-[-0.03em] text-foreground sm:text-[36px]">
-                      {isEl ? FOUNDER.nameEl : FOUNDER.name}
+                      {LEGAL_ENTITY_NAME}
                     </span>
-                    <span className="mt-2 flex items-center gap-1.5 font-mono text-[12px] uppercase tracking-[0.1em] text-muted-foreground">
-                      <MapPin className="size-3.5 text-brand" aria-hidden />
+                    <span className="mt-2 block font-mono text-[12px] uppercase tracking-[0.1em] text-muted-foreground">
                       {t.founderRole}
                     </span>
                   </figcaption>

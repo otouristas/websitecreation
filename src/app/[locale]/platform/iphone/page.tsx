@@ -22,7 +22,7 @@ import SchemaMarkup from "@/components/seo/SchemaMarkup";
 import { Accent, Container, CtaBand, HeroCentered, KitEyebrow, KitHeading, KitSection, TrustLine, kitPrimaryBtn, kitSecondaryBtn } from "@/components/kit";
 import { GscFaq, PlatformLinks, appLink, c, platformBreadcrumbs, platformMetadata, type Copy, type GscFaqItem } from "@/components/gsc-boost";
 import { isValidLocale, localizedPath, type SiteLocale } from "@/lib/i18n/locale";
-import { BASE_URL, BRAND_NAME } from "@/lib/seo/schema";
+import { BASE_URL, LEGAL_ENTITY_ID, LEGAL_ENTITY_NAME, brandOrganization } from "@/lib/seo/schema";
 import type { SchemaOutput } from "@/lib/types/seo";
 
 /**
@@ -243,7 +243,8 @@ function appSchema(locale: SiteLocale): SchemaOutput {
     releaseNotes: "Beta (TestFlight)",
     screenshot: SCREENS.map((s) => `${BASE_URL}/images/iphone/${s.file}.webp`),
     isPartOf: { "@type": "SoftwareApplication", name: "GSC Boost", url: `${BASE_URL}${localizedPath(locale, "/platform")}` },
-    provider: { "@type": "Organization", "@id": `${BASE_URL}/#organization`, name: BRAND_NAME, url: BASE_URL },
+    provider: brandOrganization(),
+    publisher: { "@type": "Organization", "@id": LEGAL_ENTITY_ID, name: LEGAL_ENTITY_NAME },
   };
 }
 

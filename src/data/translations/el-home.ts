@@ -13,9 +13,9 @@ export const elHome = {
     // («υπηρεσίες SEO» belongs to /el/seo-services). Line 2 takes the accent.
     h1Line1: 'Εταιρεία SEO και κατασκευής ιστοσελίδων',
     h1Line2: 'για επιχειρήσεις στην Ελλάδα',
-    // Owner-confirmed company base; experience and project claims come from founder.ts.
+    // Experience and project claims come from founder.ts. No street address is published.
     sub:
-      `Η AnotherSEOGuru είναι εταιρεία SEO και κατασκευής ιστοσελίδων με έδρα τη Σίφνο, στην Ελλάδα. Με ${FOUNDER_YEARS}+ χρόνια εμπειρίας έχουμε παραδώσει πάνω από ${PROJECTS_DELIVERED} έργα, κυρίως για ξενοδοχεία, ενοικιάσεις αυτοκινήτων και τοπικές επιχειρήσεις. Κάθε συνεργασία ξεκινά με δωρεάν έλεγχο της ιστοσελίδας σας μέσα σε 24 ώρες.`,
+      `Η AnotherSEOGuru είναι η ομάδα SEO και κατασκευής ιστοσελίδων της Touristas Technologies, για επιχειρήσεις στην Ελλάδα. Με ${FOUNDER_YEARS}+ χρόνια εμπειρίας έχουμε παραδώσει πάνω από ${PROJECTS_DELIVERED} έργα, κυρίως για ξενοδοχεία, ενοικιάσεις αυτοκινήτων και τοπικές επιχειρήσεις. Κάθε συνεργασία ξεκινά με δωρεάν έλεγχο της ιστοσελίδας σας μέσα σε 24 ώρες.`,
     proof:
       `Πάνω από ${PROJECTS_DELIVERED} έργα σε Κυκλάδες, Κρήτη, Αθήνα και Ευρώπη. Διαφανείς τιμές σε ευρώ και δωρεάν αξιολόγηση μέσα σε 24 ώρες.`,
     ctaQuote: 'Δωρεάν SEO audit',

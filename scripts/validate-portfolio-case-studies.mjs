@@ -144,7 +144,7 @@ for (const slug of slugs) {
     if (/(\S+)\s+\1/i.test(t) && !/και και|ή ή/.test(t)) {
       // allow rare intentional repeats; flag ιστοσελίδα ιστοσελίδα already covered
       const dup = t.match(/(\S+)\s+\1/i);
-      if (dup && /ιστοσελίδα|εστιατόριο|Σίφνος|Νάξος|Πάρος/.test(dup[1])) {
+      if (dup && /ιστοσελίδα|εστιατόριο|Νάξος|Πάρος/.test(dup[1])) {
         errors.push(`${slug}: duplicate word “${dup[1]}”`);
       }
     }

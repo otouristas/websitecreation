@@ -1,6 +1,8 @@
 import { portfolioProjects } from '@/data/portfolio';
 import { PROJECTS_DELIVERED } from '@/data/founder';
 
+export { APP_ORIGIN, LEGAL_ENTITY_ID, LEGAL_ENTITY_NAME } from '@/data/legal-entity';
+
 /**
  * Verifiable company facts, in one place.
  *
