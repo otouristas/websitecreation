@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { BrandLogo } from "@/components/BrandLogo";
 import { CookiePreferencesLink } from "@/components/CookiePreferencesLink";
 import { FooterCta } from "@/components/FooterCta";
+import { getAppPath } from "@/lib/app-links";
 import { getFooterDictionary } from "@/lib/i18n/get-dictionary";
 import { localizedPath, siteLocaleFromPath, stripLocalePrefix, type SiteLocale } from "@/lib/i18n/locale";
 import { CONTACT_EMAIL, PHONE_DISPLAY, WHATSAPP_HREF } from "@/lib/contact-info";
@@ -32,7 +33,7 @@ const PAYMENT_LOGOS = [
 const HIDE_FOOTER_CTA = new Set(["/contact", "/get-started", "/pricing"]);
 
 const columnLinkClass =
-  "inline-block max-w-full py-0.5 text-[14px] leading-snug text-muted-foreground transition-colors hover:text-foreground";
+  "inline-block max-w-full break-words py-0.5 text-[14px] leading-snug text-muted-foreground transition-colors hover:text-foreground";
 
 const columnHeadingClass =
   "mb-5 block font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-foreground/70";
@@ -43,7 +44,7 @@ const socialButtonClass =
 const closingRuleClass =
   "relative border-t border-hairline before:absolute before:inset-x-0 before:top-[-1px] before:h-px before:bg-[linear-gradient(90deg,transparent,var(--primary-glow)_30%,var(--brand)_70%,transparent)] before:opacity-70 before:content-['']";
 
-type FooterLink = { readonly label: string; readonly href: string };
+type FooterLink = { readonly label: string; readonly href: string; readonly external?: boolean };
 
 type FooterColumn = {
   readonly id: "product" | "services" | "areas" | "resources" | "company";
@@ -51,33 +52,105 @@ type FooterColumn = {
   readonly links: readonly FooterLink[];
 };
 
+/**
+ * Every href the previous footer linked, plus the place pages. City anchors
+ * stay in Areas because those service×city URLs are the ranking targets.
+ * App signup, login, free tools and the changelog stay on the English footer,
+ * which is where they lived before.
+ */
 function footerColumns(locale: SiteLocale): readonly FooterColumn[] {
   const isEl = locale === "el";
   const lp = (path: string) => localizedPath(locale, path);
   const t = getFooterDictionary(locale);
+  const app = (label: string, path: string): FooterLink => ({ label, href: getAppPath(path), external: true });
 
-  const areas: readonly FooterLink[] = isEl
+  const product: FooterLink[] = [
+    { label: isEl ? "AnotherSEOGuru App" : "Platform overview", href: lp("/platform") },
+    { label: isEl ? "Δυνατότητες" : "Features", href: lp("/platform/features") },
+    { label: isEl ? "Πακέτα εφαρμογής" : "Software plans", href: lp("/platform/pricing") },
+    { label: isEl ? "Εφαρμογή iPhone" : "iPhone app", href: lp("/platform/iphone") },
+    { label: isEl ? "Ενσωματώσεις" : "Integrations", href: lp("/platform/integrations") },
+    { label: isEl ? "Ασφάλεια" : "Security", href: lp("/platform/security") },
+    { label: isEl ? "Για agencies" : "For agencies", href: lp("/platform/for/agencies") },
+    { label: isEl ? "Για in-house ομάδες" : "For in-house teams", href: lp("/platform/for/in-house") },
+    { label: isEl ? "Για e-shop" : "For ecommerce", href: lp("/platform/for/ecommerce") },
+  ];
+  if (!isEl) {
+    product.push(
+      { label: "Compare alternatives", href: lp("/compare") },
+      app("Free tools", "/free-tools"),
+      app("Changelog", "/changelog"),
+      app("Sign up", "/signup"),
+      app("Login", "/login"),
+    );
+  }
+
+  const services: FooterLink[] = [
+    { label: isEl ? "Υπηρεσίες SEO" : "SEO Services", href: lp("/seo-services") },
+    { label: isEl ? "Τεχνικό SEO" : "Technical SEO", href: lp("/seo-services/technical") },
+    { label: "On-page SEO", href: lp("/seo-services/on-page") },
+    { label: isEl ? "Στρατηγική SEO" : "SEO Strategy", href: lp("/seo-services/strategy") },
+    { label: isEl ? t.websiteCreation : "Web Development Agency", href: lp("/services/website-creation") },
+    { label: isEl ? "Σχεδιασμός με SEO" : "SEO Web Design", href: lp("/services/seo-web-design") },
+    { label: isEl ? "Κατασκευή E-shop" : "E-commerce / E-shop", href: lp("/services/eshop-woocommerce") },
+    ...(isEl ? [{ label: "SEO για E-shop", href: lp("/services/eshop-seo") }] : []),
+    { label: isEl ? "Τοπικό SEO" : "Local SEO", href: lp("/services/local-seo") },
+    { label: isEl ? "Ορατότητα σε AI" : "AI Visibility (GEO/AEO)", href: lp("/services/ai-visibility") },
+    { label: isEl ? "Ανασχεδιασμός Ιστοσελίδας" : "Website Redesign", href: lp("/services/website-redesign") },
+    { label: isEl ? "SEO για Ξενοδοχεία" : "Hotel SEO", href: lp("/solutions/hotels") },
+    ...(isEl
+      ? [
+          { label: "Κατασκευή Ιστοσελίδας Ξενοδοχείου", href: lp("/solutions/hotels") },
+          { label: "SEO για Δικηγόρους", href: lp("/solutions/lawyers") },
+          { label: "SEO για Ακίνητα", href: lp("/solutions/real-estate") },
+        ]
+      : []),
+    { label: isEl ? "Τιμές & Πακέτα" : "Pricing & Packages", href: lp("/pricing") },
+    { label: isEl ? "Όλες οι Υπηρεσίες" : "All services", href: lp("/services") },
+    ...(isEl ? [{ label: t.getStarted, href: lp("/get-started") }] : []),
+  ];
+
+  const areas: FooterLink[] = isEl
     ? [
+        { label: "SEO σε όλη την Ελλάδα", href: "/el/seo" },
+        { label: "Όλες οι Περιοχές", href: lp("/locations") },
         { label: "Αθήνα", href: "/el/seo/athens" },
+        { label: "SEO Αθήνα", href: lp("/services/local-seo/athens-gr") },
+        { label: "Κατασκευή Ιστοσελίδων Αθήνα", href: lp("/services/website-creation/athens-gr") },
+        { label: "Κατασκευή E-shop Αθήνα", href: lp("/services/eshop-woocommerce/athens-gr") },
         { label: "Θεσσαλονίκη", href: "/el/seo/thessaloniki" },
+        { label: "SEO Θεσσαλονίκη", href: lp("/services/local-seo/thessaloniki-gr") },
+        { label: "Κατασκευή Ιστοσελίδων Θεσσαλονίκη", href: lp("/services/website-creation/thessaloniki-gr") },
+        { label: "Κατασκευή E-shop Θεσσαλονίκη", href: lp("/services/eshop-woocommerce/thessaloniki-gr") },
+        { label: "Κατασκευή Ιστοσελίδων Πάτρα", href: lp("/services/website-creation/patras-gr") },
+        { label: "Κατασκευή E-shop Πάτρα", href: lp("/services/eshop-woocommerce/patras-gr") },
         { label: "Ηράκλειο", href: "/el/seo/heraklion" },
+        { label: "Κατασκευή Ιστοσελίδων Ηράκλειο", href: lp("/services/website-creation/heraklion-gr") },
         { label: "Χανιά", href: "/el/seo/chania" },
-        { label: "Σαντορίνη", href: "/el/seo/santorini" },
-        { label: "Μύκονος", href: "/el/seo/mykonos" },
+        { label: "SEO Χανιά", href: lp("/services/local-seo/chania-gr") },
+        { label: "Κατασκευή Ιστοσελίδων Χανιά", href: lp("/services/website-creation/chania-gr") },
         { label: "Ρόδος", href: "/el/seo/rhodes" },
+        { label: "Κατασκευή Ιστοσελίδων Ρόδος", href: lp("/services/website-creation/rhodes-gr") },
+        { label: "Σαντορίνη", href: "/el/seo/santorini" },
+        { label: "SEO Σαντορίνη", href: lp("/services/local-seo/santorini-gr") },
+        { label: "Μύκονος", href: "/el/seo/mykonos" },
+        { label: "SEO Μύκονος", href: lp("/services/local-seo/mykonos-gr") },
+        { label: "SEO Κως", href: lp("/services/local-seo/kos-gr") },
         { label: "Κέρκυρα", href: "/el/seo/corfu" },
-        { label: "Όλες οι περιοχές", href: lp("/locations") },
       ]
     : [
-        { label: "London", href: "/en/services/local-seo/london-uk" },
-        { label: "Athens", href: "/en/services/local-seo/athens-gr" },
-        { label: "Heraklion", href: "/en/services/local-seo/heraklion-gr" },
-        { label: "Chania", href: "/en/services/local-seo/chania-gr" },
-        { label: "Santorini", href: "/en/services/local-seo/santorini-gr" },
-        { label: "Mykonos", href: "/en/services/local-seo/mykonos-gr" },
-        { label: "Rhodes", href: "/en/services/local-seo/rhodes-gr" },
-        { label: "Corfu", href: "/en/services/local-seo/corfu-gr" },
-        { label: "All areas", href: lp("/locations") },
+        { label: "All Locations", href: lp("/locations") },
+        { label: "Web Design London", href: "/en/services/website-creation/london-uk" },
+        { label: "SEO London", href: "/en/services/local-seo/london-uk" },
+        { label: "Web Design Athens", href: "/en/services/website-creation/athens-gr" },
+        { label: "SEO Athens", href: "/en/services/local-seo/athens-gr" },
+        { label: "Web Design Heraklion", href: "/en/services/website-creation/heraklion-gr" },
+        { label: "SEO Heraklion", href: "/en/services/local-seo/heraklion-gr" },
+        { label: "SEO Chania", href: "/en/services/local-seo/chania-gr" },
+        { label: "SEO Santorini", href: "/en/services/local-seo/santorini-gr" },
+        { label: "SEO Mykonos", href: "/en/services/local-seo/mykonos-gr" },
+        { label: "SEO Rhodes", href: "/en/services/local-seo/rhodes-gr" },
+        { label: "SEO Corfu", href: "/en/services/local-seo/corfu-gr" },
       ];
 
   const resources: FooterLink[] = [
@@ -88,50 +161,25 @@ function footerColumns(locale: SiteLocale): readonly FooterColumn[] {
     { label: isEl ? "Κέντρο βοήθειας" : "Help center", href: lp("/help") },
     { label: isEl ? "Λεξικό SEO" : "SEO glossary", href: lp("/glossary") },
   ];
-  if (!isEl) {
+  if (isEl) {
+    resources.push(
+      { label: "Οδηγός: Κατασκευή E-shop", href: "/el/blog/kataskevi-eshop-odigos" },
+      { label: "Πόσο Κοστίζει μια Ιστοσελίδα", href: "/el/blog/poso-kostizei-mia-istoselida" },
+      { label: "Πόσο Κοστίζει το SEO", href: "/el/blog/poso-kostizei-to-seo" },
+    );
+  } else {
     resources.push(
       { label: "Resources", href: lp("/resources") },
       { label: "SEO, AEO, GEO explained", href: lp("/resources/search-optimization-layers") },
+      { label: "AI search page anatomy", href: lp("/resources/ai-search-page-anatomy") },
     );
   }
 
   return [
-    {
-      id: "product",
-      title: t.product,
-      links: [
-        { label: "AnotherSEOGuru App", href: lp("/platform") },
-        { label: isEl ? "Δυνατότητες" : "Features", href: lp("/platform/features") },
-        { label: isEl ? "Πακέτα εφαρμογής" : "App plans", href: lp("/platform/pricing") },
-        { label: isEl ? "Εφαρμογή iPhone" : "iPhone app", href: lp("/platform/iphone") },
-        { label: isEl ? "Ενσωματώσεις" : "Integrations", href: lp("/platform/integrations") },
-        { label: isEl ? "Ασφάλεια" : "Security", href: lp("/platform/security") },
-      ],
-    },
-    {
-      id: "services",
-      title: isEl ? t.agency : "Services",
-      links: [
-        { label: isEl ? "Υπηρεσίες SEO" : "SEO services", href: lp("/seo-services") },
-        { label: isEl ? t.websiteCreation : "Website creation", href: lp("/services/website-creation") },
-        { label: isEl ? "Κατασκευή e-shop" : "E-shop development", href: lp("/services/eshop-woocommerce") },
-        { label: isEl ? "Τοπικό SEO" : "Local SEO", href: lp("/services/local-seo") },
-        { label: isEl ? "Ορατότητα σε AI" : "AI visibility", href: lp("/services/ai-visibility") },
-        { label: isEl ? "Ανασχεδιασμός ιστοσελίδας" : "Website redesign", href: lp("/services/website-redesign") },
-        { label: isEl ? t.pricing : "Agency pricing", href: lp("/pricing") },
-        { label: isEl ? t.services : "All services", href: lp("/services") },
-      ],
-    },
-    {
-      id: "areas",
-      title: t.areas,
-      links: areas,
-    },
-    {
-      id: "resources",
-      title: isEl ? t.resources : "Resources",
-      links: resources,
-    },
+    { id: "product", title: t.product, links: product },
+    { id: "services", title: isEl ? t.agency : "Services", links: services },
+    { id: "areas", title: t.areas, links: areas },
+    { id: "resources", title: isEl ? t.resources : "Resources", links: resources },
     {
       id: "company",
       title: isEl ? t.company : "Company",
@@ -153,9 +201,15 @@ function LinkList({ links }: { readonly links: readonly FooterLink[] }): ReactEl
     <>
       {links.map((link) => (
         <li key={`${link.href}:${link.label}`}>
-          <Link href={link.href} className={columnLinkClass}>
-            {link.label}
-          </Link>
+          {link.external ? (
+            <a href={link.href} className={columnLinkClass} rel="noopener noreferrer">
+              {link.label}
+            </a>
+          ) : (
+            <Link href={link.href} className={columnLinkClass}>
+              {link.label}
+            </Link>
+          )}
         </li>
       ))}
     </>
