@@ -44,10 +44,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return platformMetadata({
     locale,
     path: "/platform/for/in-house",
-    title: { en: "SEO Platform for In-House Teams: GSC Boost", el: "GSC Boost για in-house ομάδες SEO" },
+    title: { en: "SEO for In-House Teams: AnotherSEOGuru App", el: "AnotherSEOGuru App για in-house ομάδες SEO" },
     description: {
-      en: "GSC Boost for in-house teams: one ranked list of fixes from your own Search Console, tools to act on it, and charts that show what each change did.",
-      el: "Το GSC Boost για in-house ομάδες: μία λίστα διορθώσεων από το δικό σας Search Console, εργαλεία για να τις κάνετε και γραφήματα για το τι έφερε κάθε αλλαγή.",
+      en: "AnotherSEOGuru App for in-house teams: one ranked list of fixes from your own Search Console, tools to act on it, and charts that show what each change did.",
+      el: "Το AnotherSEOGuru App για in-house ομάδες: μία λίστα διορθώσεων από το δικό σας Search Console, εργαλεία για να τις κάνετε και γραφήματα για το τι έφερε κάθε αλλαγή.",
     },
     keyword: { en: "in-house SEO software", el: "λογισμικό SEO για in-house ομάδες" },
   });
@@ -71,7 +71,7 @@ const IN_HOUSE_FAQ: ReadonlyArray<GscFaqItem> = [
 ];
 
 /**
- * GSC Boost for in-house teams. Written from the app's module content only:
+ * AnotherSEOGuru App for in-house teams. Written from the app's module content only:
  * every capability named here is one of the nine modules on /platform/features.
  */
 export default async function PlatformForInHousePage({ params }: PageProps) {
@@ -87,15 +87,15 @@ export default async function PlatformForInHousePage({ params }: PageProps) {
       <Header locale={locale} />
       <main className="blueprint-grid relative z-0">
         <HeroCentered
-          pill={<KitEyebrow icon={<Users />}>{tx("GSC Boost for in-house teams", "GSC Boost για in-house ομάδες")}</KitEyebrow>}
+          pill={<KitEyebrow icon={<Users />}>{tx("AnotherSEOGuru App for in-house teams", "AnotherSEOGuru App για in-house ομάδες")}</KitEyebrow>}
           title={
             <>
               {tx("Know what to fix on your site", "Μάθετε τι να διορθώσετε στον ιστότοπό σας")} <Accent>{tx("this week", "αυτή την εβδομάδα")}</Accent>
             </>
           }
           lead={tx(
-            "GSC Boost is SEO software for in-house marketers and small teams. It reads your own Search Console, ranks the fixes worth making by the clicks they could bring, gives you the keyword, content and audit tools to act on them, and shows on the chart what each change did.",
-            "Το GSC Boost είναι λογισμικό SEO για in-house marketers και μικρές ομάδες. Διαβάζει το δικό σας Search Console, βάζει σε σειρά τις διορθώσεις που αξίζουν με βάση τα κλικ που μπορούν να φέρουν, σας δίνει τα εργαλεία λέξεων-κλειδιών, περιεχομένου και ελέγχου για να τις κάνετε και δείχνει στο γράφημα τι έφερε κάθε αλλαγή.",
+            "AnotherSEOGuru App is SEO software for in-house marketers and small teams. It reads your own Search Console, ranks the fixes worth making by the clicks they could bring, gives you the keyword, content and audit tools to act on them, and shows on the chart what each change did.",
+            "Το AnotherSEOGuru App είναι λογισμικό SEO για in-house marketers και μικρές ομάδες. Διαβάζει το δικό σας Search Console, βάζει σε σειρά τις διορθώσεις που αξίζουν με βάση τα κλικ που μπορούν να φέρουν, σας δίνει τα εργαλεία λέξεων-κλειδιών, περιεχομένου και ελέγχου για να τις κάνετε και δείχνει στο γράφημα τι έφερε κάθε αλλαγή.",
           )}
           actions={<SoftwareCtas locale={locale} source="in-house-hero" />}
           trust={<TrustLine items={softwareTrust(locale)} />}

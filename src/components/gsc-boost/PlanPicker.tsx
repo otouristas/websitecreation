@@ -143,7 +143,7 @@ function PlanCard({ plan, cycle, locale, source }: { readonly plan: Plan; readon
 }
 
 /**
- * The three GSC Boost plans with a monthly/yearly switch. Every plan button
+ * The three AnotherSEOGuru App plans with a monthly/yearly switch. Every plan button
  * goes to the app's sign-up with `plan` and `cycle`, which the app reads to
  * preselect the plan after Google sign-in.
  */

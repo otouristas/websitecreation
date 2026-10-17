@@ -8,7 +8,7 @@ export function SignupCard({ locale, source }: { readonly locale: SiteLocale; re
   return (
     <div className="rounded-2xl border border-primary/30 bg-[radial-gradient(120%_120%_at_0%_0%,color-mix(in_oklab,var(--primary)_14%,transparent),transparent_60%)] p-4">
       <Sparkles className="size-4.5 text-primary-glow" aria-hidden />
-      <p className="mt-3 font-display text-[15px] font-semibold text-foreground">{el ? "Δοκιμάστε το GSC Boost δωρεάν" : "Try GSC Boost free"}</p>
+      <p className="mt-3 font-display text-[15px] font-semibold text-foreground">{el ? "Δοκιμάστε το AnotherSEOGuru App δωρεάν" : "Try AnotherSEOGuru App free"}</p>
       <p className="mt-1 text-[13px] leading-relaxed text-muted-foreground">
         {el ? "Συνδέστε το Search Console και δείτε τις διορθώσεις της εβδομάδας σε λίγα λεπτά." : "Connect Search Console and see this week's fixes in minutes."}
       </p>

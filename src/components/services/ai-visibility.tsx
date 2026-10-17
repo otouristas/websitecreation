@@ -229,8 +229,8 @@ export function AiVisibilityPage({ locale }: { locale: SiteLocale }) {
         locale={locale}
         source="service-ai-visibility"
         body={tx(
-          'GSC Boost tracks whether ChatGPT, Gemini, Perplexity and Google’s AI mention you, next to your Search Console clicks. It is the same software our team uses for this service.',
-          'Το GSC Boost μετρά αν σας αναφέρουν το ChatGPT, το Gemini, το Perplexity και η AI της Google, δίπλα στα κλικ του Search Console. Είναι το ίδιο λογισμικό που χρησιμοποιεί η ομάδα μας σε αυτή την υπηρεσία.',
+          'AnotherSEOGuru App tracks whether ChatGPT, Gemini, Perplexity and Google’s AI mention you, next to your Search Console clicks. It is the same software our team uses for this service.',
+          'Το AnotherSEOGuru App μετρά αν σας αναφέρουν το ChatGPT, το Gemini, το Perplexity και η AI της Google, δίπλα στα κλικ του Search Console. Είναι το ίδιο λογισμικό που χρησιμοποιεί η ομάδα μας σε αυτή την υπηρεσία.',
         )}
         preview={<AiVisibilityPreview locale={locale} />}
       />

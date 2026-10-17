@@ -44,10 +44,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return platformMetadata({
     locale,
     path: "/platform/for/agencies",
-    title: { en: "SEO Platform for Agencies: GSC Boost", el: "GSC Boost: λογισμικό SEO για agencies" },
+    title: { en: "SEO for Agencies: AnotherSEOGuru App", el: "AnotherSEOGuru App: λογισμικό SEO για agencies" },
     description: {
-      en: "GSC Boost for agencies: each client’s Search Console, a client CRM, pipeline, tasks and white-label reports in one workspace. Agency plan: 30 sites, 10 seats.",
-      el: "GSC Boost για agencies: το Search Console κάθε πελάτη, CRM, pipeline, εργασίες και white-label αναφορές σε έναν χώρο. Πακέτο Agency: 30 ιστότοποι, 10 χρήστες.",
+      en: "AnotherSEOGuru App for agencies: each client’s Search Console, a client CRM, pipeline, tasks and white-label reports in one workspace. Agency plan: 30 sites, 10 seats.",
+      el: "AnotherSEOGuru App για agencies: το Search Console κάθε πελάτη, CRM, pipeline, εργασίες και white-label αναφορές σε έναν χώρο. Πακέτο Agency: 30 ιστότοποι, 10 χρήστες.",
     },
     keyword: { en: "SEO software for agencies", el: "λογισμικό SEO για agencies" },
   });
@@ -129,7 +129,7 @@ const WORKFLOW: ReadonlyArray<{ title: Copy; text: Copy }> = [
   },
 ];
 
-/** GSC Boost for agencies, adapted from the app's AgenciesPage. */
+/** AnotherSEOGuru App for agencies, adapted from the app's AgenciesPage. */
 export default async function PlatformForAgenciesPage({ params }: PageProps) {
   const { locale: raw } = await params;
   if (!isValidLocale(raw)) notFound();
@@ -143,15 +143,15 @@ export default async function PlatformForAgenciesPage({ params }: PageProps) {
       <Header locale={locale} />
       <main className="blueprint-grid relative z-0">
         <HeroCentered
-          pill={<KitEyebrow icon={<Building2 />}>{tx("GSC Boost for agencies", "GSC Boost για agencies")}</KitEyebrow>}
+          pill={<KitEyebrow icon={<Building2 />}>{tx("AnotherSEOGuru App for agencies", "AnotherSEOGuru App για agencies")}</KitEyebrow>}
           title={
             <>
               {tx("Run every client’s SEO from", "Διαχειριστείτε το SEO κάθε πελάτη από")} <Accent>{tx("one workspace", "έναν χώρο εργασίας")}</Accent>
             </>
           }
           lead={tx(
-            "GSC Boost is SEO software built for agencies: a client CRM, deal pipeline, tasks and white-label reports, sitting next to each client’s Search Console data. Less time moving numbers between tools, more time doing the SEO.",
-            "Το GSC Boost είναι λογισμικό SEO φτιαγμένο για agencies: CRM πελατών, pipeline πωλήσεων, εργασίες και white-label αναφορές, ακριβώς δίπλα στα δεδομένα Search Console κάθε πελάτη. Λιγότερος χρόνος στη μεταφορά νούμερων από εργαλείο σε εργαλείο, περισσότερος χρόνος για το ίδιο το SEO.",
+            "AnotherSEOGuru App is SEO software built for agencies: a client CRM, deal pipeline, tasks and white-label reports, sitting next to each client’s Search Console data. Less time moving numbers between tools, more time doing the SEO.",
+            "Το AnotherSEOGuru App είναι λογισμικό SEO φτιαγμένο για agencies: CRM πελατών, pipeline πωλήσεων, εργασίες και white-label αναφορές, ακριβώς δίπλα στα δεδομένα Search Console κάθε πελάτη. Λιγότερος χρόνος στη μεταφορά νούμερων από εργαλείο σε εργαλείο, περισσότερος χρόνος για το ίδιο το SEO.",
           )}
           actions={<SoftwareCtas locale={locale} source="agencies-hero" />}
           trust={<TrustLine items={softwareTrust(locale)} />}

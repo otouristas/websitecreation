@@ -15,7 +15,7 @@ const EN_ALL: ReadonlyArray<HelpCategory> = [...en, iphoneEn];
 const EL_ALL: ReadonlyArray<HelpCategory> = [...el, iphoneEl];
 
 /**
- * The GSC Boost help center. The articles are shared with the app repo
+ * The AnotherSEOGuru App help center. The articles are shared with the app repo
  * (gsc-gemini-boost src/help/content) and keep the same slugs in both
  * locales, so every page has a 1:1 hreflang twin.
  */
@@ -30,8 +30,8 @@ export const helpPath = (locale: SiteLocale, category?: string, article?: string
   localizedPath(locale, ["/help", category, article].filter(Boolean).join("/"));
 
 const META_SUFFIX: Record<SiteLocale, string> = {
-  en: "Step-by-step guide in the GSC Boost help center.",
-  el: "Οδηγός βήμα βήμα στο κέντρο βοήθειας του GSC Boost.",
+  en: "Step-by-step guide in the AnotherSEOGuru App help center.",
+  el: "Οδηγός βήμα βήμα στο κέντρο βοήθειας του AnotherSEOGuru App.",
 };
 
 /** One-line summaries read well in the UI but are too thin for a search snippet. */

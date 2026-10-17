@@ -142,7 +142,7 @@ function FeatureBlock({ menu, onClose }: { readonly menu: NavMenu; readonly onCl
  *
  * Portalled to <body> so no page stacking context can paint over it. Every
  * row runs to both screen edges and only its content is inset. The sheet
- * opens on a promo line for GSC Boost and four proof indicators, then four
+ * opens on a promo line for AnotherSEOGuru App and four proof indicators, then four
  * tabs that mirror the desktop mega menus (same items, same badges and
  * prices, from `getNavModel`). Each tab ends on its offer, and the free audit
  * and WhatsApp stay pinned at the bottom.

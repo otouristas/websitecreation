@@ -226,7 +226,7 @@ export default async function AboutPage({ params }: PageProps) {
             href: lp("/platform"),
             kind: "new",
             tag: tx("New", "Νέο"),
-            text: tx("We also build GSC Boost, our own SEO software", "Φτιάχνουμε και το GSC Boost, το δικό μας λογισμικό SEO"),
+            text: tx("We also build AnotherSEOGuru App, our own SEO software", "Φτιάχνουμε και το AnotherSEOGuru App, το δικό μας λογισμικό SEO"),
           }}
           title={accentTail(t.h1, 3)}
           lead={t.sub}
