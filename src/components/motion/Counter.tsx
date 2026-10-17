@@ -1,11 +1,11 @@
 /**
  * A trust figure.
  *
- * The server HTML is the final value, and nothing on the client replaces it.
- * A count-up that started at 0 painted "0+" / "0" / "0h" for screenshots,
- * crawlers, no-JS visitors, reduced-motion users, and any case where the
- * intersection observer never finished the animation. The resting text is
- * the real number, with the same prefix and suffix as before.
+ * The HTML is the final value, and the client does not replace it. The old
+ * count-up started at 0 once the strip was on screen, so a screenshot or
+ * crawler that caught it there read "0+" / "0" / "0h" until the animation
+ * finished, and a stopped animation could rest on that 0. The resting text
+ * is the real number, with the same prefix and suffix.
  */
 export function Counter({
   value,
