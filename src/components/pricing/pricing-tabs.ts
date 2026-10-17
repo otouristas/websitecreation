@@ -72,4 +72,11 @@ html #pricing-offers:has(#software:target) [data-pricing-tab-btn="software"] {
   color: var(--background);
   font-weight: 600;
 }
+
+/* Unlayered, so it wins over the button's outline-none utility. The selected
+   tab is an inverted pill; the offset ring stays visible on that fill in both themes. */
+#pricing-offers [data-pricing-tab-btn]:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
 `;

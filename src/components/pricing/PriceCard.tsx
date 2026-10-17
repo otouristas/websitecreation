@@ -23,8 +23,8 @@ import { CheckList, MarketingBadge, kitPrimaryBtn, kitSecondaryBtn } from '@/com
  * The popular tier sits in a gradient ring: a 1px padded wrapper carrying the
  * brand gradient, with the kit card inside it.
  *
- * `frame="quiet"` keeps the same badge and swaps the glow for the subtle
- * accent border used on software plan cards (border + 1px ring, no shadow).
+ * `frame="quiet"` matches the software plan cards: the same accent border, and
+ * the same floating label ("Most popular" / "Δημοφιλές") sitting on that border.
  */
 export function PriceCard({
   tier,
@@ -56,10 +56,15 @@ export function PriceCard({
             }`
       }`}
     >
+      {quiet ? (
+        <span className="absolute -top-3 left-6 inline-flex items-center rounded-full bg-accent px-2.5 py-0.5 text-[12px] font-semibold text-accent-foreground">
+          {isEl ? 'Δημοφιλές' : 'Most popular'}
+        </span>
+      ) : null}
       <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
         <h3 className="font-display text-[20px] font-semibold tracking-[-0.025em] text-foreground">{tier.name}</h3>
-        {tier.popular ? (
-          <MarketingBadge kind="popular">{isEl ? (quiet ? 'Δημοφιλές' : 'Πιο δημοφιλές') : 'Most popular'}</MarketingBadge>
+        {tier.popular && !quiet ? (
+          <MarketingBadge kind="popular">{isEl ? 'Πιο δημοφιλές' : 'Most popular'}</MarketingBadge>
         ) : null}
       </div>
       <p className="mt-2 min-h-[3.5rem] text-[14px] leading-relaxed text-muted-foreground">

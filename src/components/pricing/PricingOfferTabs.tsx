@@ -135,7 +135,7 @@ export function PricingOfferTabs({
               aria-controls={id}
               tabIndex={selected ? 0 : -1}
               onClick={(event) => onClick(event, id)}
-              className="inline-flex min-h-11 items-center justify-center rounded-xl px-1.5 py-2 text-center text-[13px] leading-snug transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand sm:px-3 sm:text-[14.5px]"
+              className="inline-flex min-h-11 min-w-0 items-center justify-center text-balance rounded-xl px-1 py-2 text-center text-[12px] leading-snug transition-[color,background-color,border-color] focus-visible:ring-2 focus-visible:ring-brand sm:px-3 sm:text-[14.5px]"
             >
               {COPY.tabs[id][locale]}
             </a>

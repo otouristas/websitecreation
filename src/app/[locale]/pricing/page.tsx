@@ -196,7 +196,7 @@ export default async function PricingPage({
                     : "Delivery windows begin after scope approval, access handover, receipt of required material and completion of the commercial agreement. Complexity, integrations and feedback cycles affect delivery."
                 }
               />
-              <div className="mt-12 grid gap-4 lg:grid-cols-3">
+              <div className="mt-12 grid gap-5 lg:grid-cols-3">
                 {websitePackages.map((tier) => (
                   <PriceCard key={tier.id} tier={tier} locale={siteLocale} frame="quiet" />
                 ))}
@@ -220,7 +220,7 @@ export default async function PricingPage({
                     : `A ${SEO_MIN_TERM_MONTHS} month minimum term, then rolling monthly. We do not sell SEO by keyword count, but by coverage of real search demand and the quality of the leads it produces.`
                 }
               />
-              <div className="mt-12 grid gap-4 lg:grid-cols-3">
+              <div className="mt-12 grid gap-5 lg:grid-cols-3">
                 {seoPackages.map((tier) => (
                   <PriceCard key={tier.id} tier={tier} locale={siteLocale} recurring frame="quiet" />
                 ))}
