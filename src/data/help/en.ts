@@ -8,11 +8,11 @@ export const en: ReadonlyArray<HelpCategory> = [
     articles: [
       {
         slug: "welcome",
-        title: "What GSC Boost does",
+        title: "What AnotherSEOGuru App does",
         description: "A tour of the product: your Search Console data, turned into a ranked list of fixes.",
         body: [
-          { type: "p", text: "GSC Boost reads your **Google Search Console** data and turns it into a weekly plan: which pages and queries to work on, what to change, and how many clicks each fix is likely to bring. Everything else in the product (keyword research, the site audit, content, competitors, AI visibility and client work) feeds that same plan." },
-          { type: "image", device: "browser", src: "/images/docs/web/overview-light.webp", srcDark: "/images/docs/web/overview-dark.webp", width: 1600, height: 1000, alt: "The This week screen in GSC Boost with search performance, sales from Analytics and the sidebar navigation", caption: "This week is the home screen: how search is doing and what to fix first." },
+          { type: "p", text: "AnotherSEOGuru App reads your **Google Search Console** data and turns it into a weekly plan: which pages and queries to work on, what to change, and how many clicks each fix is likely to bring. Everything else in the product (keyword research, the site audit, content, competitors, AI visibility and client work) feeds that same plan." },
+          { type: "image", device: "browser", src: "/images/docs/web/overview-light.webp", srcDark: "/images/docs/web/overview-dark.webp", width: 1600, height: 1000, alt: "The This week screen in AnotherSEOGuru App with search performance, sales from Analytics and the sidebar navigation", caption: "This week is the home screen: how search is doing and what to fix first." },
           { type: "h2", id: "how-it-works", text: "How it works" },
           { type: "steps", items: [
             "You sign in with Google and pick the Search Console properties you want to work on. Access is read-only.",
@@ -46,8 +46,8 @@ export const en: ReadonlyArray<HelpCategory> = [
         title: "Connect Google Search Console",
         description: "Sign in with Google, choose your properties and understand what we can and can't see.",
         body: [
-          { type: "p", text: "GSC Boost works from your own Search Console data, so the first step is connecting the Google account that has access to your properties." },
-          { type: "image", device: "browser", src: "/images/docs/web/signup-light.webp", srcDark: "/images/docs/web/signup-dark.webp", width: 1600, height: 1000, alt: "The GSC Boost sign-up page with the Continue with Google button", caption: "Create your account with Google to connect Search Console in one step." },
+          { type: "p", text: "AnotherSEOGuru App works from your own Search Console data, so the first step is connecting the Google account that has access to your properties." },
+          { type: "image", device: "browser", src: "/images/docs/web/signup-light.webp", srcDark: "/images/docs/web/signup-dark.webp", width: 1600, height: 1000, alt: "The AnotherSEOGuru App sign-up page with the Continue with Google button", caption: "Create your account with Google to connect Search Console in one step." },
           { type: "h2", id: "connect", text: "Connect your account" },
           { type: "steps", items: [
             "Choose **Start with Google** on the sign-up page, or open **Settings → Integrations** if you're already signed in.",
@@ -290,7 +290,7 @@ export const en: ReadonlyArray<HelpCategory> = [
           { type: "h2", id: "wordpress", text: "Connect WordPress" },
           { type: "steps", items: [
             "In WordPress, create an application password under **Users → Profile**.",
-            "In GSC Boost, open **Settings → Integrations** and add your site URL, username and application password.",
+            "In AnotherSEOGuru App, open **Settings → Integrations** and add your site URL, username and application password.",
             "Import posts and pages in **Content → Library**. Edits you make there can be published back with one click.",
           ] },
           { type: "note", tone: "warning", text: "Pages imported by crawl aren't linked to WordPress. To publish back, connect the site and import it from WordPress." },

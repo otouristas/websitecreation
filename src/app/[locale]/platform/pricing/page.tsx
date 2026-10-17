@@ -34,17 +34,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return platformMetadata({
     locale,
     path: "/platform/pricing",
-    title: { en: "SEO Software Pricing: GSC Boost Plans", el: "GSC Boost: τιμές λογισμικού SEO" },
+    title: { en: "SEO Software Pricing: AnotherSEOGuru App Plans", el: "AnotherSEOGuru App: τιμές λογισμικού SEO" },
     description: {
-      en: `GSC Boost pricing: Launch $${LAUNCH.monthly}, Growth $${GROWTH.monthly} and Agency $${AGENCY.monthly} a month, two months free on yearly billing. Search Console features never use credits on any plan.`,
-      el: `Τιμές GSC Boost: Launch $${LAUNCH.monthly}, Growth $${GROWTH.monthly} και Agency $${AGENCY.monthly} τον μήνα, δύο μήνες δώρο με ετήσια χρέωση. Οι λειτουργίες του Search Console δεν χρεώνουν μονάδες.`,
+      en: `AnotherSEOGuru App pricing: Launch $${LAUNCH.monthly}, Growth $${GROWTH.monthly} and Agency $${AGENCY.monthly} a month, two months free on yearly billing. Search Console features never use credits on any plan.`,
+      el: `Τιμές AnotherSEOGuru App: Launch $${LAUNCH.monthly}, Growth $${GROWTH.monthly} και Agency $${AGENCY.monthly} τον μήνα, δύο μήνες δώρο με ετήσια χρέωση. Οι λειτουργίες του Search Console δεν χρεώνουν μονάδες.`,
     },
     keyword: { en: "SEO software pricing", el: "τιμές λογισμικού SEO" },
   });
 }
 
 /**
- * GSC Boost plans and credits, adapted from the app's PricingPage. Every
+ * AnotherSEOGuru App plans and credits, adapted from the app's PricingPage. Every
  * figure comes from components/gsc-boost/plans.ts, a copy of the app's plan
  * catalog; nothing on this page is typed in by hand.
  */
@@ -67,15 +67,15 @@ export default async function PlatformPricingPage({ params }: PageProps) {
       <Header locale={locale} />
       <main className="blueprint-grid relative z-0">
         <HeroCentered
-          pill={<KitEyebrow>{tx("GSC Boost · Pricing", "GSC Boost · Τιμές")}</KitEyebrow>}
+          pill={<KitEyebrow>{tx("AnotherSEOGuru App · Pricing", "AnotherSEOGuru App · Τιμές")}</KitEyebrow>}
           title={
             <>
               {tx("Simple plans. Credits only for the", "Απλά πακέτα. Μονάδες μόνο για τη")} <Accent>{tx("heavy lifting", "βαριά δουλειά")}</Accent>.
             </>
           }
           lead={tx(
-            `GSC Boost costs ${usd(LAUNCH.monthly)}, ${usd(GROWTH.monthly)} or ${usd(AGENCY.monthly)} a month, with two months free on yearly billing. Search Console analysis, opportunities and client reports never use credits. Credits pay for third-party data and AI, and every action shows its cost before you run it.`,
-            `Το GSC Boost κοστίζει ${usd(LAUNCH.monthly)}, ${usd(GROWTH.monthly)} ή ${usd(AGENCY.monthly)} τον μήνα, με δύο μήνες δώρο στην ετήσια χρέωση. Η ανάλυση Search Console, οι ευκαιρίες και οι αναφορές πελατών δεν χρησιμοποιούν ποτέ μονάδες. Οι μονάδες καλύπτουν δεδομένα τρίτων και AI, και κάθε ενέργεια δείχνει το κόστος της πριν την εκτελέσετε.`,
+            `AnotherSEOGuru App costs ${usd(LAUNCH.monthly)}, ${usd(GROWTH.monthly)} or ${usd(AGENCY.monthly)} a month, with two months free on yearly billing. Search Console analysis, opportunities and client reports never use credits. Credits pay for third-party data and AI, and every action shows its cost before you run it.`,
+            `Το AnotherSEOGuru App κοστίζει ${usd(LAUNCH.monthly)}, ${usd(GROWTH.monthly)} ή ${usd(AGENCY.monthly)} τον μήνα, με δύο μήνες δώρο στην ετήσια χρέωση. Η ανάλυση Search Console, οι ευκαιρίες και οι αναφορές πελατών δεν χρησιμοποιούν ποτέ μονάδες. Οι μονάδες καλύπτουν δεδομένα τρίτων και AI, και κάθε ενέργεια δείχνει το κόστος της πριν την εκτελέσετε.`,
           )}
           actions={<SoftwareCtas locale={locale} source="pricing-hero" />}
           trust={<TrustLine items={softwareTrust(locale)} />}
@@ -143,8 +143,8 @@ export default async function PlatformPricingPage({ params }: PageProps) {
                 </>
               }
               description={tx(
-                "Credits are only spent when GSC Boost pays a provider for you: keyword and SERP data, crawls, backlinks and AI. If you run out, Search Console features keep working.",
-                "Οι μονάδες χρεώνονται μόνο όταν το GSC Boost πληρώνει έναν πάροχο για λογαριασμό σας: δεδομένα λέξεων-κλειδιών και SERP, crawls, backlinks και AI. Αν σας τελειώσουν, οι λειτουργίες του Search Console συνεχίζουν να δουλεύουν.",
+                "Credits are only spent when AnotherSEOGuru App pays a provider for you: keyword and SERP data, crawls, backlinks and AI. If you run out, Search Console features keep working.",
+                "Οι μονάδες χρεώνονται μόνο όταν το AnotherSEOGuru App πληρώνει έναν πάροχο για λογαριασμό σας: δεδομένα λέξεων-κλειδιών και SERP, crawls, backlinks και AI. Αν σας τελειώσουν, οι λειτουργίες του Search Console συνεχίζουν να δουλεύουν.",
               )}
             />
             <div className="reveal min-w-0">

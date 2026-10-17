@@ -26,7 +26,7 @@ import { BASE_URL, LEGAL_ENTITY_ID, LEGAL_ENTITY_NAME, brandOrganization } from 
 import type { SchemaOutput } from "@/lib/types/seo";
 
 /**
- * GSC Boost for iPhone. The app is a native SwiftUI client on the same
+ * AnotherSEOGuru App for iPhone. The app is a native SwiftUI client on the same
  * backend as the web app (gsc-gemini-boost/ios/README.md). It is in TestFlight
  * beta, not on the App Store yet, so this page offers beta access and makes no
  * App Store claim. When it ships, swap BETA_HREF for the App Store URL and add
@@ -45,10 +45,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return platformMetadata({
     locale,
     path: PATH,
-    title: { en: "SEO App for iPhone: GSC Boost (Beta)", el: "Εφαρμογή SEO για iPhone: GSC Boost" },
+    title: { en: "SEO App for iPhone: AnotherSEOGuru App (Beta)", el: "Εφαρμογή SEO για iPhone: AnotherSEOGuru App" },
     description: {
-      en: "The GSC Boost iPhone app turns your Google Search Console data into this week's fixes, with rank tracking, alerts, AI evidence and widgets. Now in beta.",
-      el: "Η εφαρμογή GSC Boost για iPhone κάνει τα δεδομένα του Google Search Console διορθώσεις της εβδομάδας, με θέσεις, ειδοποιήσεις, δεδομένα AI και widgets. Σε beta.",
+      en: "The AnotherSEOGuru App iPhone app turns your Google Search Console data into this week's fixes, with rank tracking, alerts, AI evidence and widgets. Now in beta.",
+      el: "Η εφαρμογή AnotherSEOGuru App για iPhone κάνει τα δεδομένα του Google Search Console διορθώσεις της εβδομάδας, με θέσεις, ειδοποιήσεις, δεδομένα AI και widgets. Σε beta.",
     },
     keyword: { en: "Search Console app for iPhone", el: "εφαρμογή Search Console για iPhone" },
   });
@@ -230,19 +230,19 @@ function appSchema(locale: SiteLocale): SchemaOutput {
     "@context": "https://schema.org",
     "@type": "MobileApplication",
     "@id": `${BASE_URL}${PATH}#app`,
-    name: "GSC Boost for iPhone",
+    name: "AnotherSEOGuru App for iPhone",
     alternateName: "AnotherSEOGuru for iPhone",
     description:
       locale === "el"
-        ? "Εγγενής εφαρμογή iPhone για το GSC Boost: διορθώσεις από το Google Search Console, παρακολούθηση θέσεων, ειδοποιήσεις και ορατότητα σε AI."
-        : "Native iPhone app for GSC Boost: fixes from Google Search Console, rank tracking, alerts and AI visibility.",
+        ? "Εγγενής εφαρμογή iPhone για το AnotherSEOGuru App: διορθώσεις από το Google Search Console, παρακολούθηση θέσεων, ειδοποιήσεις και ορατότητα σε AI."
+        : "Native iPhone app for AnotherSEOGuru App: fixes from Google Search Console, rank tracking, alerts and AI visibility.",
     url: `${BASE_URL}${localizedPath(locale, PATH)}`,
     applicationCategory: "BusinessApplication",
     operatingSystem: "iOS 17 or later",
     inLanguage: ["en", "el"],
     releaseNotes: "Beta (TestFlight)",
     screenshot: SCREENS.map((s) => `${BASE_URL}/images/iphone/${s.file}.webp`),
-    isPartOf: { "@type": "SoftwareApplication", name: "GSC Boost", url: `${BASE_URL}${localizedPath(locale, "/platform")}` },
+    isPartOf: { "@type": "SoftwareApplication", name: "AnotherSEOGuru App", url: `${BASE_URL}${localizedPath(locale, "/platform")}` },
     provider: brandOrganization(),
     publisher: { "@type": "Organization", "@id": LEGAL_ENTITY_ID, name: LEGAL_ENTITY_NAME },
   };
@@ -278,15 +278,15 @@ export default async function PlatformIphonePage({ params }: PageProps) {
       <Header locale={locale} />
       <main className="blueprint-grid relative z-0">
         <HeroCentered
-          pill={<KitEyebrow icon={<Smartphone />}>{tx("GSC Boost for iPhone · Beta", "GSC Boost για iPhone · Beta")}</KitEyebrow>}
+          pill={<KitEyebrow icon={<Smartphone />}>{tx("AnotherSEOGuru App for iPhone · Beta", "AnotherSEOGuru App για iPhone · Beta")}</KitEyebrow>}
           title={
             <>
               {tx("Search Console,", "Το Search Console,")} <Accent>{tx("in your pocket", "στην τσέπη σας")}</Accent>
             </>
           }
           lead={tx(
-            "A native iPhone app for GSC Boost. It turns your Google Search Console data into this week's fixes, ranked by the clicks each one is worth, then measures them after you ship.",
-            "Εγγενής εφαρμογή iPhone για το GSC Boost. Κάνει τα δεδομένα του Google Search Console διορθώσεις της εβδομάδας, με σειρά βάσει των κλικ που αξίζει η καθεμία, και τις μετρά αφού τις δημοσιεύσετε.",
+            "A native iPhone app for AnotherSEOGuru App. It turns your Google Search Console data into this week's fixes, ranked by the clicks each one is worth, then measures them after you ship.",
+            "Εγγενής εφαρμογή iPhone για το AnotherSEOGuru App. Κάνει τα δεδομένα του Google Search Console διορθώσεις της εβδομάδας, με σειρά βάσει των κλικ που αξίζει η καθεμία, και τις μετρά αφού τις δημοσιεύσετε.",
           )}
           actions={
             <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">

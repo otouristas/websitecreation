@@ -21,12 +21,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return platformMetadata({
     locale,
     path: "/platform/security",
-    title: { en: "GSC Boost Security: Read-Only by Design", el: "GSC Boost: ασφάλεια και δεδομένα" },
+    title: { en: "AnotherSEOGuru App Security: Read-Only by Design", el: "AnotherSEOGuru App: ασφάλεια και δεδομένα" },
     description: {
-      en: "How GSC Boost handles your Google data: read-only Search Console scopes, tokens kept on the server, row-level security, Stripe payments, deletion on request.",
-      el: "Πώς χειρίζεται το GSC Boost τα δεδομένα σας: πρόσβαση μόνο για ανάγνωση, tokens στον server, ασφάλεια ανά γραμμή, πληρωμές Stripe και διαγραφή όποτε ζητήσετε.",
+      en: "How AnotherSEOGuru App handles your Google data: read-only Search Console scopes, tokens kept on the server, row-level security, Stripe payments, deletion on request.",
+      el: "Πώς χειρίζεται το AnotherSEOGuru App τα δεδομένα σας: πρόσβαση μόνο για ανάγνωση, tokens στον server, ασφάλεια ανά γραμμή, πληρωμές Stripe και διαγραφή όποτε ζητήσετε.",
     },
-    keyword: { en: "GSC Boost security", el: "ασφάλεια GSC Boost" },
+    keyword: { en: "AnotherSEOGuru App security", el: "ασφάλεια AnotherSEOGuru App" },
   });
 }
 
@@ -35,8 +35,8 @@ const HIGHLIGHTS: ReadonlyArray<{ icon: LucideIcon; title: Copy; text: Copy }> =
     icon: Eye,
     title: { en: "Read-only Google access", el: "Πρόσβαση στη Google μόνο για ανάγνωση" },
     text: {
-      en: "GSC Boost asks Google for read-only scopes. It can read your Search Console and Analytics data; it can’t change anything.",
-      el: "Το GSC Boost ζητά από τη Google δικαιώματα μόνο για ανάγνωση. Μπορεί να διαβάσει τα δεδομένα σας από Search Console και Analytics· δεν μπορεί να αλλάξει τίποτα.",
+      en: "AnotherSEOGuru App asks Google for read-only scopes. It can read your Search Console and Analytics data; it can’t change anything.",
+      el: "Το AnotherSEOGuru App ζητά από τη Google δικαιώματα μόνο για ανάγνωση. Μπορεί να διαβάσει τα δεδομένα σας από Search Console και Analytics· δεν μπορεί να αλλάξει τίποτα.",
     },
   },
   {
@@ -101,8 +101,8 @@ const SCOPES: ReadonlyArray<{ scope: string; allows: Copy; when: Copy }> = [
   {
     scope: "analytics.readonly",
     allows: {
-      en: "Read Google Analytics 4 reports. GSC Boost only requests reports for properties you select in the app.",
-      el: "Ανάγνωση αναφορών του Google Analytics 4. Το GSC Boost ζητά αναφορές μόνο για τις ιδιότητες που επιλέγετε στην εφαρμογή.",
+      en: "Read Google Analytics 4 reports. AnotherSEOGuru App only requests reports for properties you select in the app.",
+      el: "Ανάγνωση αναφορών του Google Analytics 4. Το AnotherSEOGuru App ζητά αναφορές μόνο για τις ιδιότητες που επιλέγετε στην εφαρμογή.",
     },
     when: { en: "On the same consent screen", el: "Στην ίδια οθόνη συναίνεσης" },
   },
@@ -119,7 +119,7 @@ function Block({ id, title, children }: { readonly id: string; readonly title: s
   );
 }
 
-/** How GSC Boost handles data, adapted from the app's SecurityPage. */
+/** How AnotherSEOGuru App handles data, adapted from the app's SecurityPage. */
 export default async function PlatformSecurityPage({ params }: PageProps) {
   const { locale: raw } = await params;
   if (!isValidLocale(raw)) notFound();
@@ -133,15 +133,15 @@ export default async function PlatformSecurityPage({ params }: PageProps) {
       <Header locale={locale} />
       <main className="blueprint-grid relative z-0">
         <HeroCentered
-          pill={<KitEyebrow icon={<ShieldCheck />}>{tx("GSC Boost · Security", "GSC Boost · Ασφάλεια")}</KitEyebrow>}
+          pill={<KitEyebrow icon={<ShieldCheck />}>{tx("AnotherSEOGuru App · Security", "AnotherSEOGuru App · Ασφάλεια")}</KitEyebrow>}
           title={
             <>
               {tx("Read-only", "Μόνο ανάγνωση,")} <Accent>{tx("by design", "εκ σχεδιασμού")}</Accent>
             </>
           }
           lead={tx(
-            "You’re trusting GSC Boost with your search data. Here is exactly what it can access, where the data lives and how it’s protected, in plain language.",
-            "Εμπιστεύεστε στο GSC Boost τα δεδομένα αναζήτησής σας. Εδώ εξηγούμε με απλά λόγια σε τι ακριβώς έχει πρόσβαση, πού αποθηκεύονται τα δεδομένα και πώς προστατεύονται.",
+            "You’re trusting AnotherSEOGuru App with your search data. Here is exactly what it can access, where the data lives and how it’s protected, in plain language.",
+            "Εμπιστεύεστε στο AnotherSEOGuru App τα δεδομένα αναζήτησής σας. Εδώ εξηγούμε με απλά λόγια σε τι ακριβώς έχει πρόσβαση, πού αποθηκεύονται τα δεδομένα και πώς προστατεύονται.",
           )}
           actions={<SoftwareCtas locale={locale} source="security-hero" />}
           trust={<TrustLine items={softwareTrust(locale)} />}
@@ -163,11 +163,11 @@ export default async function PlatformSecurityPage({ params }: PageProps) {
 
         <Container className="pb-16 sm:pb-20">
           <div className="mx-auto max-w-5xl">
-            <Block id="google-access" title={tx("What GSC Boost can access", "Σε τι έχει πρόσβαση το GSC Boost")}>
+            <Block id="google-access" title={tx("What AnotherSEOGuru App can access", "Σε τι έχει πρόσβαση το AnotherSEOGuru App")}>
               <p>
                 {tx(
-                  "Google shows you exactly what GSC Boost is asking for on its own consent screen, and you can approve or decline. Signing in with Google only shares your basic profile. Search Console and Analytics access is a separate, read-only grant.",
-                  "Η Google σάς δείχνει ακριβώς τι ζητά το GSC Boost στη δική της οθόνη συναίνεσης και εσείς αποφασίζετε αν θα το εγκρίνετε. Η σύνδεση με Google μοιράζεται μόνο το βασικό σας προφίλ. Η πρόσβαση σε Search Console και Analytics είναι ξεχωριστή άδεια, μόνο για ανάγνωση.",
+                  "Google shows you exactly what AnotherSEOGuru App is asking for on its own consent screen, and you can approve or decline. Signing in with Google only shares your basic profile. Search Console and Analytics access is a separate, read-only grant.",
+                  "Η Google σάς δείχνει ακριβώς τι ζητά το AnotherSEOGuru App στη δική της οθόνη συναίνεσης και εσείς αποφασίζετε αν θα το εγκρίνετε. Η σύνδεση με Google μοιράζεται μόνο το βασικό σας προφίλ. Η πρόσβαση σε Search Console και Analytics είναι ξεχωριστή άδεια, μόνο για ανάγνωση.",
                 )}
               </p>
               <div className="relative overflow-x-auto rounded-xl border border-hairline bg-surface">
@@ -197,7 +197,7 @@ export default async function PlatformSecurityPage({ params }: PageProps) {
                 </table>
               </div>
               <p>
-                <strong>{tx("What GSC Boost can’t do:", "Τι δεν μπορεί να κάνει το GSC Boost:")}</strong>{" "}
+                <strong>{tx("What AnotherSEOGuru App can’t do:", "Τι δεν μπορεί να κάνει το AnotherSEOGuru App:")}</strong>{" "}
                 {tx(
                   "change Search Console or Analytics settings, submit or remove URLs and sitemaps, add or remove users, or act on your behalf anywhere else in your Google account.",
                   "να αλλάξει ρυθμίσεις στο Search Console ή στο Analytics, να υποβάλει ή να αφαιρέσει URL και sitemaps, να προσθέσει ή να αφαιρέσει χρήστες ή να ενεργήσει για λογαριασμό σας οπουδήποτε αλλού στον λογαριασμό σας Google.",
@@ -263,8 +263,8 @@ export default async function PlatformSecurityPage({ params }: PageProps) {
             <Block id="ai" title={tx("AI features and third parties", "Λειτουργίες AI και τρίτοι")}>
               <p>
                 {tx(
-                  "When you use the AI assistant, generate a brief or run an AI visibility check, GSC Boost sends the AI provider only what that request needs, through an AI gateway. Keyword, SERP, backlink and crawl features send keywords, domains and URLs (not your Google data) to the data providers that power them.",
-                  "Όταν χρησιμοποιείτε τον βοηθό AI, δημιουργείτε ένα brief ή εκτελείτε έλεγχο ορατότητας στην AI, το GSC Boost στέλνει στον πάροχο AI μόνο ό,τι χρειάζεται το συγκεκριμένο αίτημα, μέσω ενός AI gateway. Οι λειτουργίες λέξεων-κλειδιών, SERP, backlinks και crawl στέλνουν λέξεις-κλειδιά, domains και URL (όχι τα δεδομένα σας από τη Google) στους παρόχους δεδομένων που τις τροφοδοτούν.",
+                  "When you use the AI assistant, generate a brief or run an AI visibility check, AnotherSEOGuru App sends the AI provider only what that request needs, through an AI gateway. Keyword, SERP, backlink and crawl features send keywords, domains and URLs (not your Google data) to the data providers that power them.",
+                  "Όταν χρησιμοποιείτε τον βοηθό AI, δημιουργείτε ένα brief ή εκτελείτε έλεγχο ορατότητας στην AI, το AnotherSEOGuru App στέλνει στον πάροχο AI μόνο ό,τι χρειάζεται το συγκεκριμένο αίτημα, μέσω ενός AI gateway. Οι λειτουργίες λέξεων-κλειδιών, SERP, backlinks και crawl στέλνουν λέξεις-κλειδιά, domains και URL (όχι τα δεδομένα σας από τη Google) στους παρόχους δεδομένων που τις τροφοδοτούν.",
                 )}
               </p>
               <p>

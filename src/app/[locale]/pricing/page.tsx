@@ -117,7 +117,7 @@ export default async function PricingPage({
     { href: "#websites", label: tx("Websites", "Ιστοσελίδες") },
     { href: "#seo", label: "SEO" },
     { href: "#add-ons", label: tx("Add-ons", "Πρόσθετα") },
-    { href: "#software", label: tx("GSC Boost software", "Λογισμικό GSC Boost") },
+    { href: "#software", label: tx("AnotherSEOGuru App software", "Λογισμικό AnotherSEOGuru App") },
     { href: "#faq", label: "FAQ" },
   ];
 
@@ -258,8 +258,8 @@ export default async function PricingPage({
               </>
             }
             description={tx(
-              "If you have someone in-house to do the work, GSC Boost gives them the same ranked fix list our team works from, on a monthly software plan.",
-              "Αν έχετε άνθρωπο στην ομάδα σας να κάνει τη δουλειά, το GSC Boost του δίνει την ίδια λίστα διορθώσεων με την οποία δουλεύει η ομάδα μας, με μηνιαίο πακέτο λογισμικού.",
+              "If you have someone in-house to do the work, AnotherSEOGuru App gives them the same ranked fix list our team works from, on a monthly software plan.",
+              "Αν έχετε άνθρωπο στην ομάδα σας να κάνει τη δουλειά, το AnotherSEOGuru App του δίνει την ίδια λίστα διορθώσεων με την οποία δουλεύει η ομάδα μας, με μηνιαίο πακέτο λογισμικού.",
             )}
           />
           <DiyStrip locale={siteLocale} source="pricing-diy" className="mt-12" />

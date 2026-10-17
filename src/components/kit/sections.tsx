@@ -268,7 +268,7 @@ const BAND = {
     "Στείλτε μας την ιστοσελίδα σας. Παίρνετε τα προβλήματα που σας κοστίζουν πελάτες, τι διορθώνεται πρώτο και σταθερή τιμή.",
   ),
   softwareTag: c("Do it yourself", "Μόνοι σας"),
-  softwareTitle: c("GSC Boost: Search Console as a to-do list", "GSC Boost: το Search Console ως λίστα ενεργειών"),
+  softwareTitle: c("AnotherSEOGuru App: Search Console as a to-do list", "AnotherSEOGuru App: το Search Console ως λίστα ενεργειών"),
   softwareBody: c(
     "Connect Google read-only and get the fixes that win the most clicks, ranked and estimated, for every site you manage.",
     "Συνδέστε τη Google μόνο για ανάγνωση και πάρτε τις διορθώσεις που φέρνουν τα περισσότερα κλικ, με σειρά και εκτίμηση.",
