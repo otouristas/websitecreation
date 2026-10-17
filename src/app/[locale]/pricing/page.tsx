@@ -31,14 +31,16 @@ import { Accent, Container, CtaBand, KitHeading, KitSection } from "@/components
 import {
   AuditFirstStrip,
   ChipLinks,
-  DiyStrip,
   KitFaq,
   PageHero,
   RelatedLinks,
   accentTail,
 } from "@/components/page-kit";
+import { PlanPicker } from "@/components/gsc-boost/PlanPicker";
 import { PriceCard } from "@/components/pricing/PriceCard";
 import { PricingCostGuide } from "@/components/pricing/PricingCostGuide";
+import { PricingOfferTabs } from "@/components/pricing/PricingOfferTabs";
+import { PRICING_TAB_CSS, PRICING_TAB_SCRIPT } from "@/components/pricing/pricing-tabs";
 import { SeoPackageCompare } from "@/components/pricing/SeoPackageCompare";
 import { NotForYou } from "@/components/positioning/NotForYou";
 import { SeoTimeline } from "@/components/positioning/SeoTimeline";
@@ -115,9 +117,9 @@ export default async function PricingPage({
   const tx = (en: string, el: string) => (isEl ? el : en);
   const jump = [
     { href: "#websites", label: tx("Websites", "Ιστοσελίδες") },
-    { href: "#seo", label: "SEO" },
+    { href: "#seo", label: tx("SEO services", "Υπηρεσίες SEO") },
+    { href: "#software", label: "AnotherSEOGuru App" },
     { href: "#add-ons", label: tx("Add-ons", "Πρόσθετα") },
-    { href: "#software", label: tx("AnotherSEOGuru App software", "Λογισμικό AnotherSEOGuru App") },
     { href: "#faq", label: "FAQ" },
   ];
 
@@ -165,58 +167,108 @@ export default async function PricingPage({
           <AuditFirstStrip locale={siteLocale} />
         </Container>
 
-        <KitSection id="websites">
-          <KitHeading
-            eyebrow={isEl ? "Κατασκευή" : "Websites"}
-            eyebrowIcon={<Globe />}
-            title={accentTail(isEl ? "Πακέτα κατασκευής ιστοσελίδας" : "Website packages")}
-            description={
-              isEl
-                ? (
-                    <>
-                      Τι περιλαμβάνει κάθε έργο θα το βρείτε στη σελίδα για την{" "}
-                      <Link href={lp("/services/website-creation")} className="font-medium text-link underline-offset-4 hover:underline">
-                        κατασκευή ιστοσελίδων
-                      </Link>
-                      . Οι χρόνοι παράδοσης ξεκινούν μετά την έγκριση του scope, την παράδοση προσβάσεων και υλικού και την ολοκλήρωση της εμπορικής συμφωνίας. Η πολυπλοκότητα, οι ενσωματώσεις και ο χρόνος ανατροφοδότησης επηρεάζουν την παράδοση.
-                    </>
-                  )
-                : "Delivery windows begin after scope approval, access handover, receipt of required material and completion of the commercial agreement. Complexity, integrations and feedback cycles affect delivery."
-            }
-          />
-          <div className="mt-12 grid gap-4 lg:grid-cols-3">
-            {websitePackages.map((tier) => (
-              <PriceCard key={tier.id} tier={tier} locale={siteLocale} />
-            ))}
-          </div>
-        </KitSection>
+        <KitSection id="pricing-offers">
+          <style dangerouslySetInnerHTML={{ __html: PRICING_TAB_CSS }} />
+          <script dangerouslySetInnerHTML={{ __html: PRICING_TAB_SCRIPT }} />
+          <PricingOfferTabs locale={siteLocale}>
+            <div
+              id="websites"
+              role="tabpanel"
+              aria-labelledby="pricing-tab-websites"
+              data-pricing-panel="websites"
+              className="scroll-mt-28"
+            >
+              <KitHeading
+                eyebrow={isEl ? "Κατασκευή" : "Websites"}
+                eyebrowIcon={<Globe />}
+                title={accentTail(isEl ? "Πακέτα κατασκευής ιστοσελίδας" : "Website packages")}
+                description={
+                  isEl
+                    ? (
+                        <>
+                          Τι περιλαμβάνει κάθε έργο θα το βρείτε στη σελίδα για την{" "}
+                          <Link href={lp("/services/website-creation")} className="font-medium text-link underline-offset-4 hover:underline">
+                            κατασκευή ιστοσελίδων
+                          </Link>
+                          . Οι χρόνοι παράδοσης ξεκινούν μετά την έγκριση του scope, την παράδοση προσβάσεων και υλικού και την ολοκλήρωση της εμπορικής συμφωνίας. Η πολυπλοκότητα, οι ενσωματώσεις και ο χρόνος ανατροφοδότησης επηρεάζουν την παράδοση.
+                        </>
+                      )
+                    : "Delivery windows begin after scope approval, access handover, receipt of required material and completion of the commercial agreement. Complexity, integrations and feedback cycles affect delivery."
+                }
+              />
+              <div className="mt-12 grid gap-5 lg:grid-cols-3">
+                {websitePackages.map((tier) => (
+                  <PriceCard key={tier.id} tier={tier} locale={siteLocale} frame="quiet" />
+                ))}
+              </div>
+            </div>
 
-        <KitSection id="seo" tinted>
-          <KitHeading
-            eyebrow="SEO"
-            eyebrowIcon={<TrendingUp />}
-            title={accentTail(isEl ? "Μηνιαία πακέτα SEO" : "Monthly SEO engagements")}
-            description={
-              isEl
-                ? `Ελάχιστη διάρκεια ${SEO_MIN_TERM_MONTHS} μηνών, στη συνέχεια μηνιαία ανανέωση. Δεν πουλάμε SEO με βάση τον αριθμό λέξεων-κλειδιών, αλλά με βάση την κάλυψη της πραγματικής ζήτησης αναζήτησης και την ποιότητα των leads.`
-                : `A ${SEO_MIN_TERM_MONTHS} month minimum term, then rolling monthly. We do not sell SEO by keyword count, but by coverage of real search demand and the quality of the leads it produces.`
-            }
-          />
-          <div className="mt-12 grid gap-4 lg:grid-cols-3">
-            {seoPackages.map((tier) => (
-              <PriceCard key={tier.id} tier={tier} locale={siteLocale} recurring />
-            ))}
-          </div>
-        </KitSection>
+            <div
+              id="seo"
+              role="tabpanel"
+              aria-labelledby="pricing-tab-seo"
+              data-pricing-panel="seo"
+              className="scroll-mt-28"
+            >
+              <KitHeading
+                eyebrow="SEO"
+                eyebrowIcon={<TrendingUp />}
+                title={accentTail(isEl ? "Μηνιαία πακέτα SEO" : "Monthly SEO engagements")}
+                description={
+                  isEl
+                    ? `Ελάχιστη διάρκεια ${SEO_MIN_TERM_MONTHS} μηνών, στη συνέχεια μηνιαία ανανέωση. Δεν πουλάμε SEO με βάση τον αριθμό λέξεων-κλειδιών, αλλά με βάση την κάλυψη της πραγματικής ζήτησης αναζήτησης και την ποιότητα των leads.`
+                    : `A ${SEO_MIN_TERM_MONTHS} month minimum term, then rolling monthly. We do not sell SEO by keyword count, but by coverage of real search demand and the quality of the leads it produces.`
+                }
+              />
+              <div className="mt-12 grid gap-5 lg:grid-cols-3">
+                {seoPackages.map((tier) => (
+                  <PriceCard key={tier.id} tier={tier} locale={siteLocale} recurring frame="quiet" />
+                ))}
+              </div>
+              <SeoPackageCompare
+                locale={siteLocale}
+                title={copy.compare.title}
+                eyebrow={copy.compare.eyebrow}
+                intro={copy.compare.intro}
+                rows={copy.compare.rows}
+                footnote={copy.compare.footnote}
+                className="max-w-none px-0 pb-0 pt-16 sm:px-0 sm:pb-0 sm:pt-20"
+              />
+            </div>
 
-        <SeoPackageCompare
-          locale={siteLocale}
-          title={copy.compare.title}
-          eyebrow={copy.compare.eyebrow}
-          intro={copy.compare.intro}
-          rows={copy.compare.rows}
-          footnote={copy.compare.footnote}
-        />
+            <div
+              id="software"
+              role="tabpanel"
+              aria-labelledby="pricing-tab-software"
+              data-pricing-panel="software"
+              className="scroll-mt-28"
+            >
+              <KitHeading
+                eyebrow={tx("Software plans", "Πακέτα λογισμικού")}
+                title={
+                  <>
+                    {tx("The do-it-yourself", "Η επιλογή")} <Accent>{tx("option", "«μόνοι σας»")}</Accent>
+                  </>
+                }
+                description={tx(
+                  "If you have someone in-house to do the work, AnotherSEOGuru App gives them the same ranked fix list our team works from, on a monthly software plan.",
+                  "Αν έχετε άνθρωπο στην ομάδα σας να κάνει τη δουλειά, το AnotherSEOGuru App του δίνει την ίδια λίστα διορθώσεων με την οποία δουλεύει η ομάδα μας, με μηνιαίο πακέτο λογισμικού.",
+                )}
+              />
+              <PlanPicker
+                locale={siteLocale}
+                source="pricing-software"
+                badge={{ en: "Most popular", el: "Δημοφιλές" }}
+                className="mt-12"
+              />
+              <p className="mt-8 text-[14.5px]">
+                <Link href={lp("/platform/pricing")} className="font-medium text-link underline-offset-4 hover:underline">
+                  {tx("Plan comparison and credit costs", "Σύγκριση πακέτων και κόστος μονάδων")}
+                </Link>
+              </p>
+            </div>
+          </PricingOfferTabs>
+        </KitSection>
 
         <KitSection id="add-ons">
           <KitHeading
@@ -246,23 +298,6 @@ export default async function PricingPage({
               ? "Τυχόν κόστη τρίτων για δημοσιεύσεις ή τοποθετήσεις σε εξωτερικά μέσα τιμολογούνται ξεχωριστά και συμφωνούνται εκ των προτέρων."
               : "Any third-party publisher or placement costs are quoted separately and agreed in advance."}
           </p>
-        </KitSection>
-
-        <KitSection id="software" tinted>
-          <KitHeading
-            align="center"
-            eyebrow={tx("Software plans", "Πακέτα λογισμικού")}
-            title={
-              <>
-                {tx("The do-it-yourself", "Η επιλογή")} <Accent>{tx("option", "«μόνοι σας»")}</Accent>
-              </>
-            }
-            description={tx(
-              "If you have someone in-house to do the work, AnotherSEOGuru App gives them the same ranked fix list our team works from, on a monthly software plan.",
-              "Αν έχετε άνθρωπο στην ομάδα σας να κάνει τη δουλειά, το AnotherSEOGuru App του δίνει την ίδια λίστα διορθώσεων με την οποία δουλεύει η ομάδα μας, με μηνιαίο πακέτο λογισμικού.",
-            )}
-          />
-          <DiyStrip locale={siteLocale} source="pricing-diy" className="mt-12" />
         </KitSection>
 
         <NotForYou locale={siteLocale} />

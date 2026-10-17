@@ -22,6 +22,7 @@ export function SeoPackageCompare({
   intro,
   rows,
   footnote,
+  className,
 }: {
   locale: SiteLocale;
   title: string;
@@ -29,6 +30,7 @@ export function SeoPackageCompare({
   intro: string;
   rows: readonly PricingCompareRow[];
   footnote: string;
+  className?: string;
 }) {
   const isEl = locale === 'el';
   const lp = (path: string) => localizedPath(locale, path);
@@ -42,7 +44,7 @@ export function SeoPackageCompare({
   ] as const;
 
   return (
-    <Section id="compare">
+    <Section id="compare" className={className}>
       <SectionHeading align="left" eyebrow={eyebrow} title={title} body={intro} className="mb-10" />
 
       <div className="overflow-x-auto overscroll-x-contain pb-2 -mx-1 px-1">

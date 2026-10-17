@@ -6,7 +6,7 @@ import { cn } from "@/lib/cn";
 import type { SiteLocale } from "@/lib/i18n/locale";
 import { CheckList } from "@/components/kit/primitives";
 import { kitSecondaryBtn, kitSoftwareBtn } from "@/components/kit/sections";
-import { appLink, formatNumber, formatUsd } from "./copy";
+import { appLink, formatNumber, formatUsd, type Copy } from "./copy";
 import { PLANS, yearlySavings, type BillingCycle, type Plan } from "./plans";
 
 const T = {
@@ -94,7 +94,19 @@ export function BillingToggle({
   );
 }
 
-function PlanCard({ plan, cycle, locale, source }: { readonly plan: Plan; readonly cycle: BillingCycle; readonly locale: SiteLocale; readonly source: string }) {
+function PlanCard({
+  plan,
+  cycle,
+  locale,
+  source,
+  badgeLabel,
+}: {
+  readonly plan: Plan;
+  readonly cycle: BillingCycle;
+  readonly locale: SiteLocale;
+  readonly source: string;
+  readonly badgeLabel: string;
+}) {
   const price = priceParts(plan, cycle, locale);
   const featured = Boolean(plan.highlight);
   const href = appLink("/signup", locale, `${source}-${plan.id.toLowerCase()}`, { plan: plan.id, cycle });
@@ -109,7 +121,7 @@ function PlanCard({ plan, cycle, locale, source }: { readonly plan: Plan; readon
     >
       {featured ? (
         <span className="absolute -top-3 left-6 inline-flex items-center rounded-full bg-accent px-2.5 py-0.5 text-[12px] font-semibold text-accent-foreground">
-          {T.recommended[locale]}
+          {badgeLabel}
         </span>
       ) : null}
       <h3 className="font-display text-[20px] font-semibold tracking-[-0.02em] text-foreground">{plan.id}</h3>
@@ -147,8 +159,20 @@ function PlanCard({ plan, cycle, locale, source }: { readonly plan: Plan; readon
  * goes to the app's sign-up with `plan` and `cycle`, which the app reads to
  * preselect the plan after Google sign-in.
  */
-export function PlanPicker({ locale, source, className }: { readonly locale: SiteLocale; readonly source: string; readonly className?: string }) {
+export function PlanPicker({
+  locale,
+  source,
+  className,
+  badge,
+}: {
+  readonly locale: SiteLocale;
+  readonly source: string;
+  readonly className?: string;
+  /** Replaces the default "Recommended" label. The highlighted plan is still Growth. */
+  readonly badge?: Copy;
+}) {
   const [cycle, setCycle] = useState<BillingCycle>("monthly");
+  const badgeLabel = badge?.[locale] ?? T.recommended[locale];
   return (
     <div className={className}>
       <div className="flex justify-center">
@@ -156,7 +180,7 @@ export function PlanPicker({ locale, source, className }: { readonly locale: Sit
       </div>
       <div className="mt-10 grid gap-5 lg:grid-cols-3 lg:items-start">
         {PLANS.map((plan) => (
-          <PlanCard key={plan.id} plan={plan} cycle={cycle} locale={locale} source={source} />
+          <PlanCard key={plan.id} plan={plan} cycle={cycle} locale={locale} source={source} badgeLabel={badgeLabel} />
         ))}
       </div>
     </div>
