@@ -434,7 +434,10 @@ export default function Footer({ locale: localeProp }: { locale?: SiteLocale }):
           </p>
           <ul className="grid grid-cols-2 gap-x-6 gap-y-2 sm:grid-cols-3 lg:grid-cols-4">
             {(isEl ? EL_SEO_HUB_LINKS : EN_SEO_HUB_LINKS).map((link) => (
-              <li key={link.href}>
+              // Two Greek hotel labels share /el/solutions/hotels: the
+              // website-creation child is consolidated into that hub
+              // (HUB_OWNS_INTENT). Key on the label so both links stay.
+              <li key={link.label}>
                 <Link href={link.href} className={columnLinkClass}>
                   {link.label}
                 </Link>
