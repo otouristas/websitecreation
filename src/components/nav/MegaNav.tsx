@@ -1,7 +1,8 @@
 'use client';
 
-import { useCallback, useEffect, useRef, useState, type ReactElement } from 'react';
+import { useCallback, useEffect, useRef, useState, type ReactElement, type ReactNode } from 'react';
 import { createPortal } from 'react-dom';
+import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, Check, ChevronDown, Sparkles } from 'lucide-react';
 import { cn } from '@/lib/cn';
@@ -133,25 +134,36 @@ function FeatureCard({ feature, menuId, onNavigate }: { readonly feature: NavFea
   );
 }
 
-function Panel({ menu, onNavigate, chips }: { readonly menu: NavMenu; readonly onNavigate: () => void; readonly chips: readonly string[] }) {
+function LinkColumns({ menu, onNavigate }: { readonly menu: NavMenu; readonly onNavigate: () => void }) {
+  return menu.columns.map((col) => (
+    <div key={col.title} className="min-w-0 p-2">
+      <p className="px-2.5 pb-2 font-mono text-[11px] font-medium uppercase tracking-[0.12em] text-muted-foreground">{col.title}</p>
+      {/* grid-cols-1, not an implicit `auto` track: the truncated
+          descriptions are nowrap, so an auto track sized itself to the
+          full sentence and pushed the links past the column at 1024px. */}
+      <div className="grid grid-cols-1 gap-0.5">
+        {col.items.map((item) => (
+          <ItemLink key={item.href + item.label} item={item} onNavigate={onNavigate} />
+        ))}
+      </div>
+    </div>
+  ));
+}
+
+function MenuFrame({
+  menu,
+  chips,
+  onNavigate,
+  children,
+}: {
+  readonly menu: NavMenu;
+  readonly chips: readonly string[];
+  readonly onNavigate: () => void;
+  readonly children: ReactNode;
+}) {
   return (
     <div className="overflow-hidden rounded-3xl border border-hairline bg-popover shadow-[inset_0_1px_0_0_oklch(1_0_0/6%),0_30px_70px_-20px_color-mix(in_oklab,var(--primary)_35%,transparent),0_30px_70px_-30px_oklch(0_0_0/60%)]">
-      <div className="grid grid-cols-[minmax(0,1fr)_minmax(0,1fr)_17.5rem] gap-2 p-3">
-        {menu.columns.map((col) => (
-          <div key={col.title} className="min-w-0 p-2">
-            <p className="px-2.5 pb-2 font-mono text-[11px] font-medium uppercase tracking-[0.12em] text-muted-foreground">{col.title}</p>
-            {/* grid-cols-1, not an implicit `auto` track: the truncated
-                descriptions are nowrap, so an auto track sized itself to the
-                full sentence and pushed the links past the column at 1024px. */}
-            <div className="grid grid-cols-1 gap-0.5">
-              {col.items.map((item) => (
-                <ItemLink key={item.href + item.label} item={item} onNavigate={onNavigate} />
-              ))}
-            </div>
-          </div>
-        ))}
-        <FeatureCard feature={menu.feature} menuId={menu.id} onNavigate={onNavigate} />
-      </div>
+      {children}
       <div className="flex items-center justify-between gap-4 border-t border-hairline bg-surface/60 px-6 py-3 text-[12.5px]">
         <div className="flex min-w-0 flex-wrap gap-x-4 gap-y-1 text-muted-foreground">
           {chips.map((c) => (
@@ -173,6 +185,71 @@ function Panel({ menu, onNavigate, chips }: { readonly menu: NavMenu; readonly o
 }
 
 /**
+ * AnotherSEOGuru App only. Two groups on the left (product, integrations)
+ * and a featured card on the right. Other menus keep the shared three-track panel.
+ */
+function SoftwareCard({ feature, menuId, onNavigate }: { readonly feature: NavFeature; readonly menuId: string; readonly onNavigate: () => void }) {
+  const demo = feature.secondary;
+  return (
+    <div className="relative flex h-full min-w-0 flex-col overflow-hidden rounded-2xl border border-signal/35 bg-[linear-gradient(170deg,color-mix(in_oklab,var(--signal)_12%,var(--surface)),var(--surface)_70%)] p-4 xl:p-5">
+      <span className="font-mono text-[11px] font-medium uppercase tracking-[0.12em] text-brand">{feature.eyebrow}</span>
+      <p className="mt-2 font-display text-[17px] font-semibold leading-snug tracking-[-0.02em] text-foreground xl:text-[19px]">{feature.title}</p>
+      <p className="mt-1.5 text-[13px] leading-relaxed text-muted-foreground">{feature.body}</p>
+      {feature.shot ? (
+        <div className="relative mt-3 aspect-[2/1] overflow-hidden rounded-xl border border-hairline bg-background">
+          <Image
+            src={feature.shot.src}
+            alt={feature.shot.alt}
+            fill
+            sizes="(min-width: 1280px) 352px, 300px"
+            className="object-cover object-left-top"
+          />
+        </div>
+      ) : null}
+      {demo ? (
+        <div className="mt-auto pt-4">
+          <a
+            href={demo.href}
+            className="inline-flex h-10 w-full items-center justify-center gap-1.5 rounded-xl px-4 text-sm font-semibold asg-primary-action text-primary-foreground transition-[transform,filter] hover:-translate-y-px focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+            onClick={() => {
+              trackCtaClick(`mega_${menuId}_demo`);
+              onNavigate();
+            }}
+          >
+            {demo.label}
+            <ArrowRight className="size-4" />
+          </a>
+        </div>
+      ) : null}
+    </div>
+  );
+}
+
+function Panel({ menu, onNavigate, chips }: { readonly menu: NavMenu; readonly onNavigate: () => void; readonly chips: readonly string[] }) {
+  if (menu.id === 'software') {
+    return (
+      <MenuFrame menu={menu} chips={chips} onNavigate={onNavigate}>
+        <div className="grid items-stretch gap-2 p-3 lg:grid-cols-[minmax(0,1fr)_minmax(16.5rem,20rem)] xl:grid-cols-[minmax(0,1fr)_minmax(18.5rem,22rem)]">
+          <div className="grid min-w-0 grid-cols-2 items-start">
+            <LinkColumns menu={menu} onNavigate={onNavigate} />
+          </div>
+          <SoftwareCard feature={menu.feature} menuId={menu.id} onNavigate={onNavigate} />
+        </div>
+      </MenuFrame>
+    );
+  }
+
+  return (
+    <MenuFrame menu={menu} chips={chips} onNavigate={onNavigate}>
+      <div className="grid grid-cols-[minmax(0,1fr)_minmax(0,1fr)_17.5rem] gap-2 p-3">
+        <LinkColumns menu={menu} onNavigate={onNavigate} />
+        <FeatureCard feature={menu.feature} menuId={menu.id} onNavigate={onNavigate} />
+      </div>
+    </MenuFrame>
+  );
+}
+
+/**
  * Desktop navigation inside the floating header pill: four mega menus
  * (Services, Industries, AnotherSEOGuru App, Learn) plus plain links. One panel is
  * open at a time and it opens on hover, on click and from the keyboard;
@@ -183,6 +260,7 @@ export function MegaNav({ model, chips }: { readonly model: NavModel; readonly c
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const rootRef = useRef<HTMLDivElement | null>(null);
   const panelRef = useRef<HTMLDivElement | null>(null);
+  const focusPanel = useRef(false);
   const [host, setHost] = useState<HTMLElement | null>(null);
 
   useEffect(() => {
@@ -228,6 +306,15 @@ export function MegaNav({ model, chips }: { readonly model: NavModel; readonly c
 
   useEffect(() => cancelClose, [cancelClose]);
 
+  useEffect(() => {
+    if (open === null || !focusPanel.current) return;
+    focusPanel.current = false;
+    const frame = requestAnimationFrame(() => {
+      panelRef.current?.querySelector<HTMLElement>('a[href], button:not([disabled])')?.focus();
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [open]);
+
   const active = model.menus.find((m) => m.id === open) ?? null;
 
   return (
@@ -239,12 +326,33 @@ export function MegaNav({ model, chips }: { readonly model: NavModel; readonly c
           data-menu={menu.id}
           className={triggerClass}
           aria-expanded={open === menu.id}
+          aria-haspopup="true"
           aria-controls={`mega-${menu.id}`}
           onMouseEnter={() => {
             cancelClose();
+            focusPanel.current = false;
             setOpen(menu.id);
           }}
-          onClick={() => setOpen((cur) => (cur === menu.id ? null : menu.id))}
+          onKeyDown={(event) => {
+            if (event.key !== 'ArrowDown') return;
+            event.preventDefault();
+            cancelClose();
+            if (open === menu.id) {
+              panelRef.current?.querySelector<HTMLElement>('a[href], button:not([disabled])')?.focus();
+              return;
+            }
+            focusPanel.current = true;
+            setOpen(menu.id);
+          }}
+          onClick={(event) => {
+            if (open === menu.id) {
+              focusPanel.current = false;
+              setOpen(null);
+              return;
+            }
+            focusPanel.current = event.detail === 0;
+            setOpen(menu.id);
+          }}
         >
           {menu.label}
           {menu.badge ? (
@@ -268,7 +376,9 @@ export function MegaNav({ model, chips }: { readonly model: NavModel; readonly c
               <div
                 ref={panelRef}
                 id={`mega-${active.id}`}
-                className="pointer-events-auto mx-auto max-w-6xl pt-1 xl:max-w-7xl 2xl:max-w-[82rem]"
+                role="region"
+                aria-label={active.label}
+                className="pointer-events-auto mx-auto w-full max-w-6xl pt-1 xl:max-w-7xl 2xl:max-w-[82rem]"
                 onMouseEnter={cancelClose}
                 onMouseLeave={scheduleClose}
               >

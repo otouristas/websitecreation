@@ -1,3 +1,4 @@
+import type { ComponentType } from 'react';
 import {
   BookOpen,
   Bot,
@@ -22,6 +23,7 @@ import {
   Palette,
   PenTool,
   Plug,
+  Puzzle,
   RefreshCw,
   Scale,
   ScanSearch,
@@ -35,11 +37,22 @@ import {
   TrendingUp,
   Users,
   UtensilsCrossed,
-  type LucideIcon,
 } from 'lucide-react';
 import type { NavIconKey } from '@/data/nav-menu';
 
-export const NAV_ICONS: Record<NavIconKey, LucideIcon> = {
+type NavIcon = ComponentType<{ className?: string; 'aria-hidden'?: boolean | 'true' }>;
+
+/** Same mark as the WordPress pages. Lucide has no WordPress glyph. */
+function WordPressIcon({ className }: { readonly className?: string; readonly 'aria-hidden'?: boolean | 'true' }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden>
+      <circle cx="12" cy="12" r="10" />
+      <path d="m6.5 8.5 3 8 2.5-6 2.5 6 3-8" />
+    </svg>
+  );
+}
+
+export const NAV_ICONS: Record<NavIconKey, NavIcon> = {
   search: Search,
   map: MapPin,
   sparkles: Sparkles,
@@ -71,6 +84,8 @@ export const NAV_ICONS: Record<NavIconKey, LucideIcon> = {
   users: Users,
   phone: Smartphone,
   plug: Plug,
+  puzzle: Puzzle,
+  wordpress: WordPressIcon,
   book: BookOpen,
   library: Library,
   scan: ScanSearch,

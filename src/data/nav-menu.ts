@@ -47,7 +47,9 @@ export type NavIconKey =
   | 'tag'
   | 'grid'
   | 'phone'
-  | 'plug';
+  | 'plug'
+  | 'puzzle'
+  | 'wordpress';
 
 export interface NavItem {
   readonly href: string;
@@ -74,6 +76,8 @@ export interface NavFeature {
   readonly points?: readonly string[];
   readonly primary: { readonly href: string; readonly label: string; readonly external?: boolean };
   readonly secondary?: { readonly href: string; readonly label: string; readonly external?: boolean };
+  /** Real product screenshot for the desktop AnotherSEOGuru App card. */
+  readonly shot?: { readonly src: string; readonly alt: string };
 }
 
 export interface NavMenu {
@@ -212,26 +216,21 @@ export function getNavModel(locale: SiteLocale): NavModel {
     badge: NEW,
     columns: [
       {
-        title: t('The product', 'Το προϊόν'),
+        title: t('Product', 'Προϊόν'),
         items: [
-          { href: lp('/platform/features#opportunities'), label: t('Opportunities', 'Ευκαιρίες'), desc: t('Ranked fixes with click estimates', 'Διορθώσεις με εκτίμηση κλικ'), icon: 'sparkles', badge: POPULAR },
+          { href: lp('/platform/features#opportunities'), label: t('Opportunities', 'Ευκαιρίες'), desc: t('Ranked fixes with click estimates', 'Διορθώσεις με εκτίμηση κλικ'), icon: 'sparkles' },
           { href: lp('/platform/features#performance'), label: t('Performance', 'Απόδοση'), desc: t('Every traffic change, explained', 'Κάθε αλλαγή, εξηγημένη'), icon: 'chart' },
-          { href: lp('/platform/features#keywords'), label: t('Keywords & rank tracking', 'Λέξεις-κλειδιά & θέσεις'), desc: t('Find demand, track wins', 'Βρείτε ζήτηση, μετρήστε θέσεις'), icon: 'key' },
-          { href: lp('/platform/features#content'), label: t('Content studio', 'Περιεχόμενο'), desc: t('Brief, write, publish to WordPress', 'Brief, γράψιμο, δημοσίευση'), icon: 'file' },
-          { href: lp('/platform/features#audit'), label: t('Site audit', 'Έλεγχος ιστότοπου'), desc: t('Technical issues, prioritised', 'Τεχνικά θέματα με προτεραιότητα'), icon: 'shield' },
+          { href: lp('/platform/features#content'), label: t('Content', 'Περιεχόμενο'), desc: t('Briefs, writing and publishing', 'Briefs, γραφή και δημοσίευση'), icon: 'file' },
+          { href: lp('/platform/features#ai-visibility'), label: t('AI visibility', 'Ορατότητα στην AI'), desc: t('When ChatGPT and Gemini cite you', 'Αναφορές σε ChatGPT και Gemini'), icon: 'bot' },
+          { href: lp('/platform/features#audit'), label: t('Audit', 'Έλεγχος ιστότοπου'), desc: t('Technical issues, prioritised', 'Τεχνικά θέματα με προτεραιότητα'), icon: 'shield' },
         ],
       },
       {
-        title: t('Go further', 'Περισσότερα'),
+        title: t('Integrations', 'Ενσωματώσεις'),
         items: [
-          { href: lp('/platform/features#ai-visibility'), label: t('AI visibility', 'Ορατότητα σε AI'), desc: t('When ChatGPT and Gemini cite you', 'Πότε σας αναφέρουν ChatGPT και Gemini'), icon: 'bot', badge: AI },
-          { href: lp('/platform/features#assistant'), label: t('AI assistant', 'Βοηθός AI'), desc: t('Answers from your own data', 'Απαντήσεις από τα δεδομένα σας'), icon: 'message', badge: AI },
-          { href: lp('/platform/features#competitors'), label: t('Competitors', 'Ανταγωνιστές'), desc: t('Their wins, your gaps', 'Τα δικά τους κέρδη, τα δικά σας κενά'), icon: 'swords' },
-          { href: lp('/platform/for/agencies'), label: t('For agencies', 'Για agencies'), desc: t('Clients, pipeline and reports', 'Πελάτες, pipeline και αναφορές'), icon: 'users' },
-          // One entry for every way in (iPhone, Chrome, WordPress, AI assistants), so the
-          // mobile sheet stays light; the hub links on to each product page.
-          { href: lp('/platform/integrations'), label: t('Apps & integrations', 'Εφαρμογές & ενσωματώσεις'), desc: t('iPhone, Chrome, WordPress, AI assistants', 'iPhone, Chrome, WordPress, βοηθοί AI'), icon: 'plug', badge: { kind: 'new' as const, label: t('New', 'Νέο') } },
-          { href: lp('/platform/pricing'), label: t('Plans & pricing', 'Πακέτα & τιμές'), desc: t('Start free, upgrade when it pays', 'Ξεκινήστε δωρεάν'), icon: 'tag', badge: FREE },
+          { href: lp('/platform/iphone'), label: t('iPhone app', 'Εφαρμογή iPhone'), desc: t('Fixes and alerts on your phone', 'Διορθώσεις και ειδοποιήσεις στο κινητό'), icon: 'phone' },
+          { href: lp('/platform/chrome-extension'), label: t('Chrome extension', 'Επέκταση Chrome'), desc: t('On-page checks on any page', 'Έλεγχοι SEO σε κάθε σελίδα'), icon: 'puzzle' },
+          { href: lp('/platform/wordpress'), label: t('WordPress plugin', 'Plugin WordPress'), desc: t('SEO and Search Console in the editor', 'SEO και Search Console στον editor'), icon: 'wordpress' },
         ],
       },
     ],
@@ -243,8 +242,15 @@ export function getNavModel(locale: SiteLocale): NavModel {
         'Connect Google once, read-only, and get the fixes that win the most clicks, ranked and estimated.',
         'Συνδέστε τη Google μία φορά, μόνο για ανάγνωση, και πάρτε τις διορθώσεις που φέρνουν τα περισσότερα κλικ.',
       ),
+      shot: {
+        src: '/images/product/bento-performance.webp',
+        alt: t(
+          'AnotherSEOGuru App performance chart with clicks, impressions, CTR and average position',
+          'Γράφημα απόδοσης του AnotherSEOGuru App με κλικ, εμφανίσεις, CTR και μέση θέση',
+        ),
+      },
       primary: { href: signup, label: startFree.label, external: true },
-      secondary: { href: demo, label: t('Explore the live demo', 'Ζωντανή επίδειξη'), external: true },
+      secondary: { href: demo, label: t('Try the live demo', 'Δοκιμάστε το demo'), external: true },
     },
     footer: { href: lp('/platform'), label: t('AnotherSEOGuru App overview', 'Επισκόπηση AnotherSEOGuru App') },
   };
