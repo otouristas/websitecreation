@@ -63,13 +63,13 @@ export default async function GlossaryTermPage({ params }: PageProps) {
     {
       type: "h2",
       id: "gsc-boost",
-      text: el ? "Παρακολουθήστε το στο AnotherSEOGuru App" : "Track it in AnotherSEOGuru App",
+      text: el ? "Παρακολουθήστε το στο GSC Boost" : "Track it in GSC Boost",
     },
     {
       type: "p",
       text: el
-        ? "Το AnotherSEOGuru App διαβάζει τα δεδομένα σας από το Search Console και σας λέει τι να διορθώσετε πρώτα, με την εκτίμηση των clicks που φέρνει κάθε διόρθωση. [Ξεκινήστε από τον οδηγό](/help/getting-started/welcome) ή [κάντε δωρεάν εγγραφή](/signup)."
-        : "AnotherSEOGuru App reads your Search Console data and tells you what to fix first, with the clicks each fix is likely to bring. [Start with the guide](/help/getting-started/welcome) or [sign up free](/signup).",
+        ? "Το GSC Boost διαβάζει τα δεδομένα σας από το Search Console και σας λέει τι να διορθώσετε πρώτα, με την εκτίμηση των clicks που φέρνει κάθε διόρθωση. [Ξεκινήστε από τον οδηγό](/help/getting-started/welcome) ή [κάντε δωρεάν εγγραφή](/signup)."
+        : "GSC Boost reads your Search Console data and tells you what to fix first, with the clicks each fix is likely to bring. [Start with the guide](/help/getting-started/welcome) or [sign up free](/signup).",
     },
     ...(related.length
       ? ([

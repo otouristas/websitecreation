@@ -85,7 +85,7 @@ function categoryMarkdown(locale: SiteLocale, cat: HelpCategory): string {
 function homeMarkdown(locale: SiteLocale): string {
   const el = locale === "el";
   return [
-    header(el ? "Τεκμηρίωση AnotherSEOGuru App" : "AnotherSEOGuru App documentation", abs(helpPath(locale)), el ? "Οδηγοί για το AnotherSEOGuru App στο web και στο iPhone." : "Guides for AnotherSEOGuru App on the web and on iPhone."),
+    header(el ? "Τεκμηρίωση GSC Boost" : "GSC Boost documentation", abs(helpPath(locale)), el ? "Οδηγοί για το GSC Boost στο web και στο iPhone." : "Guides for GSC Boost on the web and on iPhone."),
     ...helpContent(locale).map((c) => `## ${c.title}\n\n${c.description}\n\n${c.articles.map((a) => `- [${a.title}](${abs(helpPath(locale, c.slug, a.slug))}): ${a.description}`).join("\n")}`),
   ].join("\n\n");
 }

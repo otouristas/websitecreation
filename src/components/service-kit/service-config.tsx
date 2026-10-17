@@ -50,7 +50,7 @@ export type ServiceKitConfig = {
   readonly detail: (l: SiteLocale) => ReactNode;
   readonly pricing: 'seo' | 'website' | null;
   readonly addOns: ReadonlyArray<string>;
-  /** Show the "Prefer to do it yourself? AnotherSEOGuru App" row. */
+  /** Show the "Prefer to do it yourself? GSC Boost" row. */
   readonly diy: boolean;
   /** "audit" keeps the free-audit CTA, "quote" asks for a project quote. */
   readonly cta: 'audit' | 'quote';

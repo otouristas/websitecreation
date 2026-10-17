@@ -3,7 +3,7 @@ import { c, type Copy } from "./copy";
 import { cost, CREDIT_COSTS, type CostLine, type PlanId } from "./plans";
 
 /**
- * The nine AnotherSEOGuru App modules, adapted from the app's
+ * The nine GSC Boost modules, adapted from the app's
  * src/marketing/content/modules.tsx. The ids are the anchors on
  * /platform/features (the site menu links to /platform/features#<id>), so
  * keep them stable.
@@ -51,8 +51,8 @@ export const MODULES: ReadonlyArray<ProductModule> = [
     },
     tagline: c("Ranked fixes with an estimated click impact for each.", "Διορθώσεις κατά προτεραιότητα, με εκτίμηση των επιπλέον κλικ για την καθεμία."),
     summary: c(
-      "AnotherSEOGuru App reads every query and page in your Search Console data and turns them into one ranked list of fixes, each with an estimate of the extra clicks it could bring per month.",
-      "Το AnotherSEOGuru App διαβάζει κάθε αναζήτηση και κάθε σελίδα στα δεδομένα του Search Console σας και τα μετατρέπει σε μία λίστα διορθώσεων με σειρά προτεραιότητας, η καθεμία με εκτίμηση για τα επιπλέον κλικ που μπορεί να φέρει κάθε μήνα.",
+      "GSC Boost reads every query and page in your Search Console data and turns them into one ranked list of fixes, each with an estimate of the extra clicks it could bring per month.",
+      "Το GSC Boost διαβάζει κάθε αναζήτηση και κάθε σελίδα στα δεδομένα του Search Console σας και τα μετατρέπει σε μία λίστα διορθώσεων με σειρά προτεραιότητας, η καθεμία με εκτίμηση για τα επιπλέον κλικ που μπορεί να φέρει κάθε μήνα.",
     ),
     bullets: [
       c("Striking-distance keywords on positions 4–20 with real demand", "Λέξεις-κλειδιά κοντά στην κορυφή, στις θέσεις 4–20, με πραγματική ζήτηση"),

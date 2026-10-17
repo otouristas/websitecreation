@@ -26,21 +26,21 @@ export const iphoneEn: HelpCategory = {
       title: "Get the iPhone beta",
       description: "The iPhone app is in beta through Apple's TestFlight. Here's how to request an invite and install it.",
       body: [
-        { type: "p", text: "AnotherSEOGuru App for iPhone is a native app (not a web view) on the same account and data as the web app. It's in **beta through Apple's TestFlight**. It isn't on the App Store yet, so the only way to install it is with a TestFlight invite from us." },
+        { type: "p", text: "GSC Boost for iPhone is a native app (not a web view) on the same account and data as the web app. It's in **beta through Apple's TestFlight**. It isn't on the App Store yet, so the only way to install it is with a TestFlight invite from us." },
         { type: "h2", id: "requirements", text: "What you need" },
         { type: "list", items: [
           "An iPhone on **iOS 17 or later**. On iOS 26 and later the app uses the system's Liquid Glass tab bar.",
           "The free **TestFlight** app from Apple.",
-          "An AnotherSEOGuru App account, or none at all: the app has a sample workspace you can explore before you connect anything.",
+          "A GSC Boost account, or none at all: the app has a sample workspace you can explore before you connect anything.",
         ] },
         { type: "h2", id: "install", text: "Request an invite and install" },
         { type: "steps", items: [
-          { title: "Email us for access", text: `Write to ${BETA_MAIL} with the subject **iPhone beta access**. Use the email address you want the invite sent to (it doesn't have to be your AnotherSEOGuru App login).` },
+          { title: "Email us for access", text: `Write to ${BETA_MAIL} with the subject **iPhone beta access**. Use the email address you want the invite sent to (it doesn't have to be your GSC Boost login).` },
           { title: "Install TestFlight", text: "On your iPhone, install **TestFlight** from the App Store. It's Apple's own app for beta testing." },
           { title: "Accept the invite", text: "Open the invite email (or the invite link we send) on your iPhone and tap through to TestFlight. Tap **Accept**, then **Install**." },
           { title: "Open the app and sign in", text: "AnotherSEOGuru appears on your Home Screen. Sign in with the same account you use on the web, or tap **Explore the sample workspace**. See [Sign in and sync](/help/iphone-app/sign-in-and-sync)." },
         ] },
-        { type: "note", tone: "info", text: "The app on your Home Screen is called **AnotherSEOGuru**. It is the AnotherSEOGuru App on iPhone, on the same account, plan and credits." },
+        { type: "note", tone: "info", text: "The app on your Home Screen is called **AnotherSEOGuru**. It's the iPhone version of GSC Boost, on the same account, plan and credits." },
         { type: "h2", id: "updates", text: "Getting new builds" },
         { type: "p", text: "We ship beta builds often. TestFlight tells you when one is ready: open **TestFlight → AnotherSEOGuru → Update**. Your data lives on your account, not in the build, so updating never loses projects or tasks. Each beta build expires after a while; when TestFlight says a build has expired, install the latest one from the same screen." },
         { type: "note", tone: "tip", text: "Found a bug or something confusing? Reply to us at support@anotherseoguru.com with a screenshot and what you expected to happen. Beta feedback goes straight into the next build." },
@@ -62,7 +62,7 @@ export const iphoneEn: HelpCategory = {
     {
       slug: "sign-in-and-sync",
       title: "Sign in and sync with the web app",
-      description: "Use the same AnotherSEOGuru App account on your iPhone. What syncs, what stays on the device and how to switch language.",
+      description: "Use the same GSC Boost account on your iPhone. What syncs, what stays on the device and how to switch language.",
       body: [
         { type: "p", text: "The iPhone app signs in to the **same account** as app.anotherseoguru.com. There's no separate subscription or setup: your projects, plan, credits and tasks are already there." },
         { type: "image", ...shot("sign-in", "The AnotherSEOGuru sign-in screen on iPhone with Continue with Apple, Continue with Google, Continue with email, the sample workspace link and the Clients Area", "The first screen: sign in with Apple, Google or email, try the sample workspace, or open the Clients Area.") },

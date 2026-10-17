@@ -2,7 +2,7 @@
  * Retired /platform/features/<slug> pages.
  *
  * Until 2026-10 the website had 27 feature pages built from a JSON file that
- * described features AnotherSEOGuru App (the app at app.anotherseoguru.com) does not
+ * described features GSC Boost (the app at app.anotherseoguru.com) does not
  * have, such as gamification, SERPProof testing and outreach autopilot. The
  * platform section now mirrors the app's nine real modules on one page,
  * /platform/features, with an anchor per module.

@@ -25,10 +25,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!isValidLocale(locale)) return {};
   const el = locale === "el";
   const meta = buildMetadata({
-    title: el ? "Οδηγοί του AnotherSEOGuru App" : "AnotherSEOGuru App help guides",
+    title: el ? "Τεκμηρίωση GSC Boost: οδηγοί web και iPhone" : "GSC Boost Docs: Web and iPhone Guides",
     description: el
-      ? "Οδηγοί AnotherSEOGuru App για web και iPhone: Search Console, ευκαιρίες, θέσεις, έλεγχος ιστότοπου, ορατότητα σε AI, γραφεία και χρεώσεις."
-      : "Guides for AnotherSEOGuru App on the web and iPhone: Search Console, opportunities, rank tracking, site audits, AI visibility, agencies and billing.",
+      ? "Οδηγοί για το GSC Boost στο web και στο iPhone: σύνδεση Search Console, ευκαιρίες, θέσεις, έλεγχος ιστότοπου, ορατότητα σε AI, γραφεία και χρεώσεις, με screenshots."
+      : "Guides for GSC Boost on the web and iPhone: connect Search Console, opportunities, rank tracking, site audits, AI visibility, agencies and billing, with screenshots.",
     path: helpPath(locale),
     hreflangPath: "/help",
     hreflangLocales: ["en", "el"],
@@ -55,8 +55,8 @@ function homeBlocks(locale: SiteLocale): Block[] {
     {
       type: "p",
       text: el
-        ? "Το **AnotherSEOGuru App** διαβάζει τα δεδομένα σας από το **Google Search Console** και τα κάνει πλάνο για την εβδομάδα: ποιες σελίδες και ποια queries να δουλέψετε, τι να αλλάξετε και πόσα clicks φέρνει κάθε διόρθωση. Εδώ θα βρείτε οδηγούς για κάθε οθόνη του web app και της εφαρμογής iPhone, και ένα SEO γλωσσάρι με κάθε όρο σε απλά λόγια."
-        : "**AnotherSEOGuru App** reads your **Google Search Console** data and turns it into a plan for the week: which pages and queries to work on, what to change, and how many clicks each fix is likely to bring. Here you'll find guides for every screen of the web app and the iPhone app, plus an SEO glossary with every term in plain words.",
+        ? "Το **GSC Boost** διαβάζει τα δεδομένα σας από το **Google Search Console** και τα κάνει πλάνο για την εβδομάδα: ποιες σελίδες και ποια queries να δουλέψετε, τι να αλλάξετε και πόσα clicks φέρνει κάθε διόρθωση. Εδώ θα βρείτε οδηγούς για κάθε οθόνη του web app και της εφαρμογής iPhone, και ένα SEO γλωσσάρι με κάθε όρο σε απλά λόγια."
+        : "**GSC Boost** reads your **Google Search Console** data and turns it into a plan for the week: which pages and queries to work on, what to change, and how many clicks each fix is likely to bring. Here you'll find guides for every screen of the web app and the iPhone app, plus an SEO glossary with every term in plain words.",
     },
     {
       type: "cards",
@@ -76,7 +76,7 @@ function homeBlocks(locale: SiteLocale): Block[] {
           text: el
             ? "Ανοίξτε τη [σελίδα εγγραφής](/signup) και επιλέξτε τον λογαριασμό Google που έχει πρόσβαση στο Search Console σας. Η πρόσβαση είναι μόνο για ανάγνωση."
             : "Open the [sign-up page](/signup) and pick the Google account that has access to your Search Console. Access is read-only.",
-          image: shot("signup", el ? "Η σελίδα εγγραφής του AnotherSEOGuru App" : "The AnotherSEOGuru App sign-up page"),
+          image: shot("signup", el ? "Η σελίδα εγγραφής του GSC Boost" : "The GSC Boost sign-up page"),
         },
         {
           title: el ? "Διαλέξτε τους ιστότοπούς σας" : "Pick your sites",
@@ -100,8 +100,8 @@ function homeBlocks(locale: SiteLocale): Block[] {
         {
           title: el ? "Μετρήστε το αποτέλεσμα" : "Measure the result",
           text: el
-            ? "Το AnotherSEOGuru App συγκρίνει clicks και θέσεις πριν και μετά από κάθε αλλαγή, ώστε να βλέπετε τι δούλεψε."
-            : "AnotherSEOGuru App compares clicks and positions before and after each change, so you can see what worked.",
+            ? "Το GSC Boost συγκρίνει clicks και θέσεις πριν και μετά από κάθε αλλαγή, ώστε να βλέπετε τι δούλεψε."
+            : "GSC Boost compares clicks and positions before and after each change, so you can see what worked.",
           image: shot("tasks-results", el ? "Αποτελέσματα εργασιών πριν και μετά" : "Task results before and after"),
         },
       ],
@@ -143,7 +143,7 @@ function homeBlocks(locale: SiteLocale): Block[] {
         },
       ],
     },
-    { type: "h2", id: "explore", text: el ? "Εξερευνήστε το AnotherSEOGuru App" : "Explore AnotherSEOGuru App" },
+    { type: "h2", id: "explore", text: el ? "Εξερευνήστε το GSC Boost" : "Explore GSC Boost" },
     {
       type: "cards",
       cols: 2,
@@ -183,8 +183,8 @@ export default async function HelpHomePage({ params }: PageProps) {
   const schemas = combineSchemas(
     generateBreadcrumbSchema({ items: crumbs }),
     generateCollectionPageSchema({
-      name: el ? "Τεκμηρίωση AnotherSEOGuru App" : "AnotherSEOGuru App docs",
-      description: el ? "Οδηγοί για το AnotherSEOGuru App στο web και στο iPhone." : "Guides for AnotherSEOGuru App on the web and on iPhone.",
+      name: el ? "Τεκμηρίωση GSC Boost" : "GSC Boost docs",
+      description: el ? "Οδηγοί για το GSC Boost στο web και στο iPhone." : "Guides for GSC Boost on the web and on iPhone.",
       url: `${BASE_URL}${helpPath(locale)}`,
       inLanguage: locale,
       items: content.map((c) => ({ name: c.title, url: `${BASE_URL}${helpPath(locale, c.slug)}` })),
@@ -198,7 +198,7 @@ export default async function HelpHomePage({ params }: PageProps) {
       <DocsPage
         locale={locale}
         eyebrow={el ? "Ξεκινήστε" : "Get started"}
-        title={el ? "Καλώς ήρθατε στο AnotherSEOGuru App" : "Welcome to AnotherSEOGuru App"}
+        title={el ? "Καλώς ήρθατε στο GSC Boost" : "Welcome to GSC Boost"}
         description={
           el
             ? "Η πλατφόρμα SEO πάνω στο Google Search Console, για web και iPhone. Μάθετε να τη χρησιμοποιείτε από την πρώτη σύνδεση μέχρι τη λειτουργία ενός γραφείου."
@@ -213,7 +213,7 @@ export default async function HelpHomePage({ params }: PageProps) {
           shot={{
             src: "/images/docs/web/overview-light.webp",
             srcDark: "/images/docs/web/overview-dark.webp",
-            alt: el ? "Το AnotherSEOGuru App με τις διορθώσεις της εβδομάδας" : "AnotherSEOGuru App showing this week's fixes",
+            alt: el ? "Το GSC Boost με τις διορθώσεις της εβδομάδας" : "GSC Boost showing this week's fixes",
             width: 1600,
             height: 1000,
             device: "browser",

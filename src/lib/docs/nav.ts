@@ -82,7 +82,7 @@ export function sidebarFor(tab: DocsTab, locale: SiteLocale): SideGroup[] {
           ],
         },
         {
-          title: el ? "Χρήση του AnotherSEOGuru App" : "Using AnotherSEOGuru App",
+          title: el ? "Χρήση του GSC Boost" : "Using GSC Boost",
           items: present(["search-performance", "opportunities-tasks", "keywords-content", "site-audit", "competitors-ai"].map(categoryItem)),
         },
         {
@@ -129,7 +129,7 @@ export function sidebarFor(tab: DocsTab, locale: SiteLocale): SideGroup[] {
           items: [
             { title: "SEO glossary", href: glossaryPath("en"), icon: "library" },
             { title: "Blog", href: lp("/blog"), icon: "book" },
-            { title: "AnotherSEOGuru App guides", href: helpPath("en"), icon: "rocket" },
+            { title: "GSC Boost guides", href: helpPath("en"), icon: "rocket" },
           ],
         },
         {

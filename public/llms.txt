@@ -1,11 +1,11 @@
-Last-Updated: 2026-10-17
+Last-Updated: 2026-10-16
 Canonical: https://anotherseoguru.com/llms.txt
 Long-form: https://anotherseoguru.com/llms-full.txt
 Sitemap: https://anotherseoguru.com/sitemap.xml
 
 # AnotherSEOGuru - Platform Index & Directory
 Source: https://anotherseoguru.com
-Last Updated: 2026-10-17
+Last Updated: 2026-10-16
 
 > AnotherSEOGuru is the web design and SEO brand of Touristas Technologies, which owns anotherseoguru.com and the app at app.anotherseoguru.com. The agency serves businesses in Greece and international clients, specializing in tourism and hospitality websites, with GEO/AEO (AI visibility) services and a GSC-native SEO software platform.
 
@@ -29,17 +29,17 @@ Last Updated: 2026-10-17
 - **Portfolio / Case Studies** (<https://anotherseoguru.com/en/work>) - 42 live client projects with homepage screenshots.
 - **Blog** (<https://anotherseoguru.com/en/blog>) - SEO, GEO/AEO, hotel, and e-shop guides (EN + EL).
 - **SEO guides** (<https://anotherseoguru.com/en/seo-guides>) - Index of the ranking guides and the cluster on keywords, on-page, technical SEO, links and local search (EN + EL).
-- **AnotherSEOGuru App (SEO software)** (<https://anotherseoguru.com/en/platform>) - Google Search Console-native SEO software: ranked fixes with click estimates, rank tracking, site audit, AI visibility. Web app at app.anotherseoguru.com (EN + EL).
-- **AnotherSEOGuru App for iPhone (beta)** (<https://anotherseoguru.com/en/platform/iphone>) - Native iOS 17+ app on the same account: weekly fixes, rank tracking, alerts, AI evidence, widgets. In TestFlight beta, not yet on the App Store.
-- **AnotherSEOGuru App integrations (one login)** (<https://anotherseoguru.com/en/platform/integrations>) - One AnotherSEOGuru account for the web app, iPhone, Chrome extension, WordPress plugin and AI assistants (MCP); manage them in Settings → Connected apps (EN + EL).
+- **GSC Boost (SEO software)** (<https://anotherseoguru.com/en/platform>) - Google Search Console-native SEO software: ranked fixes with click estimates, rank tracking, site audit, AI visibility. Web app at app.anotherseoguru.com (EN + EL).
+- **GSC Boost for iPhone (beta)** (<https://anotherseoguru.com/en/platform/iphone>) - Native iOS 17+ app on the same account: weekly fixes, rank tracking, alerts, AI evidence, widgets. In TestFlight beta, not yet on the App Store.
+- **GSC Boost integrations (one login)** (<https://anotherseoguru.com/en/platform/integrations>) - One AnotherSEOGuru account for the web app, iPhone, Chrome extension, WordPress plugin and AI assistants (MCP); manage them in Settings → Connected apps (EN + EL).
 - **SEO Chrome extension** (<https://anotherseoguru.com/en/platform/chrome-extension>) - Free on-page SEO checks (meta, headings, links, images, schema, Open Graph, hreflang, Core Web Vitals) and Google results tools without an account; signed in, the page's own Search Console data. Coming to the Chrome Web Store.
 - **WordPress SEO plugin** (<https://anotherseoguru.com/en/platform/wordpress>) - Free full WordPress SEO plugin: live Google preview, SEO and readability analysis (Greek-aware), schema graph, XML sitemaps, redirects and 404 monitor, robots.txt/llms.txt and AI crawler controls, breadcrumbs; Search Console data, keyword research and AI titles in the editor; imports from Yoast, Rank Math, AIOSEO, SEOPress. Zip download; WordPress.org listing coming.
 - **Google Search Console MCP server** (<https://anotherseoguru.com/en/platform/mcp>) - Search Console data, fix list, tasks and AI visibility in Claude, ChatGPT, Cursor, VS Code and Windsurf. Remote server https://app.anotherseoguru.com/mcp (OAuth) or npx @anotherseoguru/mcp login.
-- **AnotherSEOGuru App docs** (<https://anotherseoguru.com/en/help>) - How the SEO software works on the web and iPhone: Search Console setup, opportunities, rank tracking, site audit, AI visibility, agency tools and billing (EN + EL). Every docs page has a Markdown twin at its URL + ".md".
+- **GSC Boost docs** (<https://anotherseoguru.com/en/help>) - How the SEO software works on the web and iPhone: Search Console setup, opportunities, rank tracking, site audit, AI visibility, agency tools and billing (EN + EL). Every docs page has a Markdown twin at its URL + ".md".
 - **SEO glossary** (<https://anotherseoguru.com/en/glossary>) - Over 100 SEO, AEO and GEO terms, one page each with definition, example and how to apply it (EN + EL).
 
-## AnotherSEOGuru App Docs (Markdown)
-- [Getting started: What AnotherSEOGuru App does](https://anotherseoguru.com/en/help/getting-started/welcome.md) - A tour of the product: your Search Console data, turned into a ranked list of fixes.
+## GSC Boost Docs (Markdown)
+- [Getting started: What GSC Boost does](https://anotherseoguru.com/en/help/getting-started/welcome.md) - A tour of the product: your Search Console data, turned into a ranked list of fixes.
 - [Getting started: Connect Google Search Console](https://anotherseoguru.com/en/help/getting-started/connect-search-console.md) - Sign in with Google, choose your properties and understand what we can and can't see.
 - [Getting started: Projects, brand terms and switching sites](https://anotherseoguru.com/en/help/getting-started/projects-and-sites.md) - How projects work, why brand terms matter and how to manage many sites.
 - [Getting started: A 10-minute weekly routine](https://anotherseoguru.com/en/help/getting-started/weekly-routine.md) - The quickest way to get value every week, step by step.
@@ -65,10 +65,8 @@ Last Updated: 2026-10-17
 - [Account and billing: Alerts, integrations and branding](https://anotherseoguru.com/en/help/account-billing/alerts-and-integrations.md) - Get notified about drops and connect the tools you use.
 - [Account and billing: Your data, privacy and Google access](https://anotherseoguru.com/en/help/account-billing/privacy-and-data.md) - What we read, what we store and how to remove it.
 - [Account and billing: Troubleshooting](https://anotherseoguru.com/en/help/account-billing/troubleshooting.md) - Fixes for the most common problems.
-- [WordPress and Chrome: Install the WordPress plugin](https://anotherseoguru.com/en/help/integrations/wordpress-plugin.md) - Install AnotherSEOGuru 4.4.1 on WordPress, connect the site with OAuth, and publish title and description changes back with approval and undo.
-- [WordPress and Chrome: Install the Chrome extension](https://anotherseoguru.com/en/help/integrations/chrome-extension.md) - Install AnotherSEOGuru 3.2.2 for Chrome, audit any page in the browser, and sign in to see Search Console data for that page.
 - [iPhone app: Get the iPhone beta](https://anotherseoguru.com/en/help/iphone-app/get-the-beta.md) - The iPhone app is in beta through Apple's TestFlight. Here's how to request an invite and install it.
-- [iPhone app: Sign in and sync with the web app](https://anotherseoguru.com/en/help/iphone-app/sign-in-and-sync.md) - Use the same AnotherSEOGuru App account on your iPhone. What syncs, what stays on the device and how to switch language.
+- [iPhone app: Sign in and sync with the web app](https://anotherseoguru.com/en/help/iphone-app/sign-in-and-sync.md) - Use the same GSC Boost account on your iPhone. What syncs, what stays on the device and how to switch language.
 - [iPhone app: Today and this week's fixes](https://anotherseoguru.com/en/help/iphone-app/today.md) - Read the Today tab, act on this week's fixes and measure them in Work.
 - [iPhone app: Search performance on iPhone](https://anotherseoguru.com/en/help/iphone-app/search-performance.md) - Open any search or page in detail, change dates and compare periods, and read GA4 traffic acquisition.
 - [iPhone app: Keywords, rankings and the SERP explorer](https://anotherseoguru.com/en/help/iphone-app/keywords-and-rankings.md) - Research a keyword, track its position and check who gets the clicks on the live results page.
@@ -187,19 +185,19 @@ Greece-wide service; dedicated service×city pages for the cities below. Money-p
 - [vwanaki](https://anotherseoguru.com/en/work/vwanaki) - vwanaki: mobile cocktail bar for events for Greece, SEO for “mobile cocktail bar Greece”, with trust signals and a clear inquiry path. · Live: https://vwanaki.gr
 
 ## Blog & Guides (79 posts)
-- [Google Ranking Factors: Confirmed vs Myth](https://anotherseoguru.com/en/blog/google-ranking-factors) - Which Google ranking factors Search Central documents, which popular claims it contradicts, and what to fix instead of a fake checklist.
 - [How to Rank Higher on Google (2026)](https://anotherseoguru.com/en/blog/how-to-rank-higher-on-google) - How to rank higher on Google: match one query to one page, fix indexation, improve the answer, earn relevant links, and measure in Search Console.
-- [Παράγοντες Κατάταξης Google: Τι Ισχύει](https://anotherseoguru.com/el/blog/paragontes-katataxis-google) - Ποιοι παράγοντες κατάταξης Google τεκμηριώνονται, ποιοι δημοφιλείς ισχυρισμοί διαψεύδονται και τι να διορθώσετε αντί για ψεύτικη λίστα.
 - [Website SEO Checklist (2026)](https://anotherseoguru.com/en/blog/seo-checklist) - A practical 2026 website SEO checklist for crawl, on-page, speed, internal links and local signals, with a sheet you can tick, download or print.
+- [Google Ranking Factors: Confirmed vs Myth](https://anotherseoguru.com/en/blog/google-ranking-factors) - Which Google ranking factors Search Central documents, which popular claims it contradicts, and what to fix instead of a fake checklist.
+- [Παράγοντες Κατάταξης Google: Τι Ισχύει](https://anotherseoguru.com/el/blog/paragontes-katataxis-google) - Ποιοι παράγοντες κατάταξης Google τεκμηριώνονται, ποιοι δημοφιλείς ισχυρισμοί διαψεύδονται και τι να διορθώσετε αντί για ψεύτικη λίστα.
 - [21 SEO Strategies That Work in 2026](https://anotherseoguru.com/en/blog/seo-strategies) - Search engine optimization strategies for 2026: 21 practical tactics covering intent, technical health, content, links, local search and AI answers.
 - [Πώς Βάζω την Επιχείρησή μου στο Google Maps](https://anotherseoguru.com/el/blog/epixeirisi-sto-google-maps) - Πώς να βάλετε την επιχείρησή σας στο Google Maps βήμα βήμα, γιατί μπορεί να μην εμφανίζεται και πώς να ανεβείτε στον χάρτη με το Google Business Profile.
-- [Συμβουλές On-Page SEO και Checklist 2026](https://anotherseoguru.com/el/blog/on-page-seo-el) - Δώδεκα συμβουλές on-page SEO για τίτλους, επικεφαλίδες, κείμενο, εικόνες και εσωτερικούς συνδέσμους, με σύντομο checklist και παράδειγμα πριν και μετά.
+- [On-Page SEO: Τι Είναι και Checklist 2026](https://anotherseoguru.com/el/blog/on-page-seo-el) - Τι είναι το on-page SEO και πώς διαφέρει από το off-page: checklist για τίτλους, επικεφαλίδες, περιεχόμενο και εσωτερικούς συνδέσμους, με παραδείγματα.
 - [Πώς να Επιλέξετε Εταιρεία SEO: 10 Ερωτήσεις](https://anotherseoguru.com/el/blog/pos-na-epilexete-etaireia-seo) - Πώς να επιλέξετε εταιρεία SEO στην Ελλάδα: 10 ερωτήσεις πριν υπογράψετε, σημάδια κινδύνου και σύγκριση εταιρείας, freelancer και εσωτερικού συνεργάτη.
 - [Τι Είναι τα Backlinks και Πώς τα Αποκτάτε](https://anotherseoguru.com/el/blog/ti-einai-ta-backlinks) - Τι είναι τα backlinks, γιατί επηρεάζουν την κατάταξη στη Google και πώς αποκτάτε ποιοτικούς συνδέσμους από ελληνικά sites χωρίς ρίσκο ποινής.
 - [Τι Χρειάζεται για Eshop: Εφορία & Επιδότηση](https://anotherseoguru.com/el/blog/ti-xreiazetai-gia-eshop) - Τι χρειάζεται για να ανοίξετε eshop στην Ελλάδα: έναρξη στην εφορία, ΚΑΔ, πληρωμές, όροι χρήσης και ποιες επιδοτήσεις καλύπτουν το κόστος κατασκευής.
 - [Τα tags του Google AI Mode και τι τα τροφοδοτεί](https://anotherseoguru.com/el/blog/google-ai-mode-tags-el) - Τι φαίνεται να είναι τα tags εξόδου του AI Mode, γιατί ένα site δεν μπορεί να τα παράγει και τι πρέπει να δημοσιεύει μια σελίδα για να τα τροφοδοτήσει.
 - [Google AI Mode tags and what grounds them](https://anotherseoguru.com/en/blog/google-ai-mode-tags) - What AI Mode's leaked output tags appear to be, why a website cannot emit them, and what a page has to publish to fill one of those slots.
-- [How to Find and Check Website Backlinks](https://anotherseoguru.com/en/blog/backlink-checker) - How to find and check backlinks of any website, with Search Console for your site, free checkers for other domains, and a practical quality review.
+- [Backlink Checker - How to Check Backlinks of Any Website (Free + Paid)](https://anotherseoguru.com/en/blog/backlink-checker) - What a backlink checker does, how to check backlinks free in Google Search Console, how to check competitor backlinks, spot toxic links, and which to use.
 - [Semantic Keyword Clustering - A Practical Guide](https://anotherseoguru.com/en/blog/semantic-keyword-clustering) - What semantic keyword clustering is, how embeddings and intent grouping work, how to do it with or without Python, and how to turn clusters into a plan.
 - [Google Search Operators Guide (2026)](https://anotherseoguru.com/en/blog/google-search-operators-2026) - Working Google search operators in 2026 - site:, intitle:, inurl:, filetype:, and combos for SEO audits, competitor research, and content gaps.
 - [Τι Είναι το AI SEO και Πώς Λειτουργεί](https://anotherseoguru.com/el/blog/ai-seo-agency-geo-aeo-el) - Τι είναι το AI SEO και πώς λειτουργεί: πώς επιλέγουν πηγές το ChatGPT, το Gemini και τα AI Overviews και τι αλλάζετε στην ιστοσελίδα σας.
@@ -209,17 +207,17 @@ Greece-wide service; dedicated service×city pages for the cities below. Money-p
 - [GEO vs SEO vs AEO: Ποια η Διαφορά; (2026)](https://anotherseoguru.com/el/blog/geo-vs-seo-vs-aeo-el) - GEO, SEO και AEO εξηγημένα: τι αλλάζει όταν οι απαντήσεις έρχονται από AI, τι μένει ίδιο και τι χρειάζεται μια ελληνική ιστοσελίδα για να αναφέρεται.
 - [GEO vs SEO vs AEO - Which Do You Need in 2026?](https://anotherseoguru.com/en/blog/geo-vs-seo-vs-aeo) - Clear comparison of SEO, GEO (generative engine optimization) and AEO. When to invest in each, and how agencies combine them for leads.
 - [How to Increase Organic Traffic: 17 Tactics](https://anotherseoguru.com/en/blog/how-to-increase-organic-traffic) - How to increase organic traffic with 17 tactics: Search Console walkthroughs, CTR title tests, indexation fixes, content, links, and a 90-day sequence.
-- [How to Do Keyword Research for SEO](https://anotherseoguru.com/en/blog/keyword-research-guide) - A practical keyword research process for SEO - seeds, intent, clustering, and prioritization - plus free tools to find SEO keywords that convert.
+- [How to Do Keyword Research for SEO (Step-by-Step)](https://anotherseoguru.com/en/blog/keyword-research-guide) - A practical keyword research process for SEO - seeds, intent, clustering, and prioritization - plus free tools to find SEO keywords that convert.
 - [Λέξεις-Κλειδιά SEO - Πώς να Βρείτε Τι Ψάχνει το Κοινό σας](https://anotherseoguru.com/el/blog/lexeis-kleidia-seo) - Οδηγός έρευνας λέξεων-κλειδιών SEO στην Ελλάδα. Πρόθεση αναζήτησης, long-tail, εργαλεία και πώς να χαρτογραφήσετε όρους σε σελίδες.
-- [Backlink Building Strategies & Emails](https://anotherseoguru.com/en/blog/link-building-guide) - Backlink building strategies you can run this month: a prospect sheet, three outreach email examples, realistic costs, and which tactics to refuse.
-- [Off-Page SEO Strategies](https://anotherseoguru.com/en/blog/off-page-seo) - Off-page SEO strategies for 2026: editorial links, digital PR, brand mentions and local reputation, with realistic costs, timelines and what to skip.
-- [On-Page SEO Tips: How to Optimize a Page That Ranks](https://anotherseoguru.com/en/blog/on-page-seo) - Work through these numbered on-page SEO tips for titles, headings, content, internal links and schema, plus a 2026 checklist with costs and timelines.
+- [Link Building Guide - Earn Authority Without Spam](https://anotherseoguru.com/en/blog/link-building-guide) - What link building is, how it works in modern SEO, white-hat tactics, realistic costs and timelines, and how professional link building services should run.
+- [Off-Page SEO - Links, Mentions & Reputation](https://anotherseoguru.com/en/blog/off-page-seo) - What off-page SEO is, how it differs from on-page, and practical ways to improve authority without spammy links - with costs, timelines and a 2026 checklist.
+- [On-Page SEO - How to Optimize a Page That Ranks](https://anotherseoguru.com/en/blog/on-page-seo) - What on-page SEO is and how to do it - titles, headings, content, internal links, schema and a practical 2026 checklist with costs and timelines.
 - [Κόστος SEO 2026: Τιμές στην Ελλάδα](https://anotherseoguru.com/el/blog/poso-kostizei-to-seo) - Πόσο κοστίζει το SEO στην Ελλάδα το 2026: μηνιαίες τιμές ανά μέγεθος επιχείρησης, τι περιλαμβάνει ένα πακέτο και πότε το φθηνό SEO βγαίνει ακριβό.
 - [Content Optimization for SEO Guide](https://anotherseoguru.com/en/blog/seo-content-guide) - Content optimization for SEO: a six-step workflow, a before-and-after example, and how to rewrite titles, proof and links so a page matches intent.
 - [Τι Είναι το SEO; Οδηγός για Αρχάριους 2026](https://anotherseoguru.com/el/blog/seo-gia-arxarious) - Τι είναι το SEO με απλά λόγια. Πώς κατατάσσει η Google, on-page, τεχνικό, off-page και τοπικό SEO, λέξεις-κλειδιά, κόστος και από πού ξεκινάτε.
 - [SEO Στρατηγική για Μικρές Επιχειρήσεις - Πλάνο 90 Ημερών](https://anotherseoguru.com/el/blog/seo-stratigiki-mikres-epicheiriseis) - SEO συμβουλές και στρατηγική για μικρές επιχειρήσεις στην Ελλάδα. Τι να κάνετε τις πρώτες 90 μέρες, κόστος, λάθη να αποφύγετε και πότε να προσλάβετε agency.
-- [Technical SEO Best Practices Guide](https://anotherseoguru.com/en/blog/technical-seo-guide) - Technical SEO best practices for crawl, indexation, Core Web Vitals, canonicals and schema, with costs and when an audit is worth it.
-- [Τεχνικό SEO: Βέλτιστες Πρακτικές](https://anotherseoguru.com/el/blog/techniko-seo) - Τι είναι το τεχνικό SEO και οι βέλτιστες πρακτικές για crawl, index, Core Web Vitals, schema, λάθη, κόστος και κατάταξη στη Google.
+- [Technical SEO Guide - Crawl, Index, Speed & Schema](https://anotherseoguru.com/en/blog/technical-seo-guide) - What technical SEO is, a practical 2026 checklist, Core Web Vitals, schema, common mistakes, costs and when to hire technical SEO services or run an audit.
+- [Τεχνικό SEO: Checklist για Κατάταξη (2026)](https://anotherseoguru.com/el/blog/techniko-seo) - Τι είναι το τεχνικό SEO και πώς βελτιώνει την κατάταξη στη Google. Crawl, index, Core Web Vitals, schema, λάθη, κόστος και πρακτικό checklist.
 - [What Is SEO? Search Engine Optimization Explained (2026)](https://anotherseoguru.com/en/blog/what-is-seo) - SEO is how you improve organic visibility in Google and AI answers. Learn how it works, the four types, best practices, costs and where to start.
 - [SEO για Εστιατόρια & Καφέ - Γεμίστε Τραπέζια από τη Google](https://anotherseoguru.com/el/blog/seo-gia-estiatoria) - Τοπικό SEO για εστιατόρια, καφέ και μπαρ στην Ελλάδα. Google Business Profile, μενού σε HTML, κριτικές, κόστος και checklist για γεμάτα τραπέζια.
 - [SEO για Οδοντιάτρους - Γεμίστε την Ατζέντα από τη Google](https://anotherseoguru.com/el/blog/seo-gia-odontiatrous) - Στρατηγική SEO για οδοντιατρεία στην Ελλάδα. Τοπική προβολή, Google Business Profile, κριτικές, σελίδες υπηρεσιών, E-E-A-T και κόστος για νέα ραντεβού.

@@ -23,7 +23,7 @@ import { isValidLocale, localizedPath, type SiteLocale } from "@/lib/i18n/locale
 import { BASE_URL, generateCollectionPageSchema } from "@/lib/seo/schema";
 
 /**
- * Hub for every way to use AnotherSEOGuru App with one AnotherSEOGuru login: the web
+ * Hub for every way to use GSC Boost with one AnotherSEOGuru login: the web
  * app, iPhone, the Chrome extension, the WordPress plugin and AI assistants
  * over MCP. The cards come from SURFACES in components/gsc-boost/integrations.
  */
@@ -87,8 +87,8 @@ const FAQ: ReadonlyArray<GscFaqItem> = [
   {
     q: c("What access do they have to my Google account?", "Τι πρόσβαση έχουν στον λογαριασμό μου στη Google;"),
     a: c(
-      "None directly. They read your data through AnotherSEOGuru App, which has read-only access to Search Console and Analytics. Nothing in your Google account can be changed from any of them.",
-      "Καμία απευθείας. Διαβάζουν τα δεδομένα σας μέσω του AnotherSEOGuru App, που έχει πρόσβαση μόνο για ανάγνωση στο Search Console και στο Analytics. Από καμία δεν μπορεί να αλλάξει κάτι στον λογαριασμό σας στη Google.",
+      "None directly. They read your data through AnotherSEOGuru, which has read-only access to Search Console and Analytics. Nothing in your Google account can be changed from any of them.",
+      "Καμία απευθείας. Διαβάζουν τα δεδομένα σας μέσω του AnotherSEOGuru, που έχει πρόσβαση μόνο για ανάγνωση στο Search Console και στο Analytics. Από καμία δεν μπορεί να αλλάξει κάτι στον λογαριασμό σας στη Google.",
     ),
     link: { kind: "site", path: "/platform/security", label: c("How we handle your data", "Πώς διαχειριζόμαστε τα δεδομένα σας") },
   },
@@ -103,10 +103,10 @@ export default async function PlatformIntegrationsPage({ params }: PageProps) {
   const lp = (p: string) => localizedPath(locale, p);
 
   const collection = generateCollectionPageSchema({
-    name: tx("AnotherSEOGuru App integrations", "Ενσωματώσεις AnotherSEOGuru App"),
+    name: tx("GSC Boost integrations", "Ενσωματώσεις GSC Boost"),
     description: tx(
-      "Every way to use AnotherSEOGuru App with one AnotherSEOGuru login: web app, iPhone, Chrome extension, WordPress plugin and AI assistants over MCP.",
-      "Όλοι οι τρόποι να χρησιμοποιήσετε το AnotherSEOGuru App με έναν λογαριασμό AnotherSEOGuru: web, iPhone, επέκταση Chrome, plugin WordPress και βοηθοί AI μέσω MCP.",
+      "Every way to use GSC Boost with one AnotherSEOGuru login: web app, iPhone, Chrome extension, WordPress plugin and AI assistants over MCP.",
+      "Όλοι οι τρόποι να χρησιμοποιήσετε το GSC Boost με έναν λογαριασμό AnotherSEOGuru: web, iPhone, επέκταση Chrome, plugin WordPress και βοηθοί AI μέσω MCP.",
     ),
     url: `${BASE_URL}${lp(PATH)}`,
     inLanguage: locale,
@@ -119,7 +119,7 @@ export default async function PlatformIntegrationsPage({ params }: PageProps) {
       <Header locale={locale} />
       <main className="blueprint-grid relative z-0">
         <HeroCentered
-          pill={<KitEyebrow icon={<Layers />}>{tx("AnotherSEOGuru App · Integrations", "AnotherSEOGuru App · Ενσωματώσεις")}</KitEyebrow>}
+          pill={<KitEyebrow icon={<Layers />}>{tx("GSC Boost · Integrations", "GSC Boost · Ενσωματώσεις")}</KitEyebrow>}
           title={
             <>
               {tx("One login, everywhere you", "Ένας λογαριασμός, παντού όπου")} <Accent>{tx("work on SEO", "δουλεύετε SEO")}</Accent>

@@ -290,8 +290,8 @@ export default async function AiVisibilityCheckPage({ params }: PageProps) {
             </Stage>
             <p className="mt-3 text-center text-[12.5px] text-muted-foreground">
               {isEl
-                ? 'Η μηνιαία παρακολούθηση στο AnotherSEOGuru App, σε δείγμα ξενοδοχείου.'
-                : 'Month-over-month tracking in AnotherSEOGuru App, on a sample hotel.'}
+                ? 'Η μηνιαία παρακολούθηση στο GSC Boost, σε δείγμα ξενοδοχείου.'
+                : 'Month-over-month tracking in GSC Boost, on a sample hotel.'}
             </p>
             <div className="mt-8 rounded-2xl border border-hairline bg-background/70 p-6">
               <h3 className="font-display text-[20px] font-semibold tracking-[-0.025em] text-foreground">{c.ctaTitle}</h3>

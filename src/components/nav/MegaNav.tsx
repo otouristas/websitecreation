@@ -174,7 +174,7 @@ function Panel({ menu, onNavigate, chips }: { readonly menu: NavMenu; readonly o
 
 /**
  * Desktop navigation inside the floating header pill: four mega menus
- * (Services, Industries, AnotherSEOGuru App, Learn) plus plain links. One panel is
+ * (Services, Industries, GSC Boost, Learn) plus plain links. One panel is
  * open at a time and it opens on hover, on click and from the keyboard;
  * Escape and a click outside close it.
  */

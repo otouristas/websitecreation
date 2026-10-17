@@ -75,7 +75,7 @@ export default async function PlatformToolPage({ params }: ToolPageProps) {
             { name: "SEO tools", url: lp("/tools") },
             { name: tool.title, url: lp(`/tools/${tool.slug}`) },
           ]}
-          pill={{ href: appUrl, kind: "free", tag: "Free", text: "Runs in the AnotherSEOGuru App app" }}
+          pill={{ href: appUrl, kind: "free", tag: "Free", text: "Runs in the GSC Boost app" }}
           title={accentTail(tool.title, 1)}
           lead={tool.description}
           actions={

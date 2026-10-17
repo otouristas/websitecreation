@@ -35,7 +35,7 @@ export function gscBoostSoftwareSchema(locale: SiteLocale, path = "/platform"): 
   return {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    name: "AnotherSEOGuru App",
+    name: "GSC Boost",
     alternateName: "AnotherSEOGuru",
     description:
       locale === "el"
@@ -74,6 +74,6 @@ export function gscBoostSoftwareSchema(locale: SiteLocale, path = "/platform"): 
 export function platformBreadcrumbs(locale: SiteLocale, trail: ReadonlyArray<{ name: string; path: string }>) {
   const home = locale === "el" ? "Αρχική" : "Home";
   return generateBreadcrumbSchema({
-    items: [{ name: home, url: localizedPath(locale, "/") }, { name: "AnotherSEOGuru App", url: localizedPath(locale, "/platform") }, ...trail.map((t) => ({ name: t.name, url: localizedPath(locale, t.path) }))],
+    items: [{ name: home, url: localizedPath(locale, "/") }, { name: "GSC Boost", url: localizedPath(locale, "/platform") }, ...trail.map((t) => ({ name: t.name, url: localizedPath(locale, t.path) }))],
   });
 }

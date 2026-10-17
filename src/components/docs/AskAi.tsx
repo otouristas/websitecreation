@@ -71,7 +71,7 @@ const indexPromise: Partial<Record<string, Promise<DocEntry[]>>> = {};
 const loadIndex = (locale: string) => (indexPromise[locale] ??= fetch(`/api/docs-index/${locale}`).then((r) => (r.ok ? r.json() : [])));
 
 function handoffLinks(question: string, pageUrl: string) {
-  const prompt = `Using the AnotherSEOGuru App docs at https://anotherseoguru.com/llms-full.txt (current page: ${pageUrl}), answer: ${question}`;
+  const prompt = `Using the GSC Boost docs at https://anotherseoguru.com/llms-full.txt (current page: ${pageUrl}), answer: ${question}`;
   const q = encodeURIComponent(prompt);
   return [
     { label: "ChatGPT", href: `https://chatgpt.com/?hints=search&q=${q}` },

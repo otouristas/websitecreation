@@ -284,21 +284,21 @@ export function FaqBlock({
   );
 }
 
-/* ------------------------------------------------------------------ AnotherSEOGuru App */
+/* ------------------------------------------------------------------ GSC Boost */
 
 const DIY = {
   eyebrow: { en: 'Do it yourself', el: 'Μόνοι σας' },
   title: { en: 'Prefer to do it yourself?', el: 'Προτιμάτε να το κάνετε μόνοι σας;' },
-  accent: { en: 'Use AnotherSEOGuru App', el: 'Δοκιμάστε το AnotherSEOGuru App' },
+  accent: { en: 'Use GSC Boost', el: 'Δοκιμάστε το GSC Boost' },
   body: {
-    en: 'AnotherSEOGuru App is the software our team runs every client on. Connect Search Console read-only and it hands you the fixes that win the most clicks, ranked and estimated.',
-    el: 'Το AnotherSEOGuru App είναι το λογισμικό με το οποίο δουλεύει η ομάδα μας κάθε πελάτη. Συνδέετε το Search Console μόνο για ανάγνωση και σας δίνει τις διορθώσεις που φέρνουν τα περισσότερα κλικ, με σειρά και εκτίμηση.',
+    en: 'GSC Boost is the software our team runs every client on. Connect Search Console read-only and it hands you the fixes that win the most clicks, ranked and estimated.',
+    el: 'Το GSC Boost είναι το λογισμικό με το οποίο δουλεύει η ομάδα μας κάθε πελάτη. Συνδέετε το Search Console μόνο για ανάγνωση και σας δίνει τις διορθώσεις που φέρνουν τα περισσότερα κλικ, με σειρά και εκτίμηση.',
   },
   bullets: {
     en: ['Fixes ranked by the clicks they could bring', 'Built on your own Search Console data', 'Free to start, no card for the demo'],
     el: ['Διορθώσεις με σειρά βάσει των κλικ που φέρνουν', 'Με βάση τα δικά σας δεδομένα Search Console', 'Δωρεάν έναρξη, χωρίς κάρτα για την επίδειξη'],
   },
-  more: { en: 'See what AnotherSEOGuru App does', el: 'Δείτε τι κάνει το AnotherSEOGuru App' },
+  more: { en: 'See what GSC Boost does', el: 'Δείτε τι κάνει το GSC Boost' },
 } as const;
 
 /**
@@ -326,7 +326,7 @@ export function DiyRow({
       <div className="grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
         <div className={cn('reveal min-w-0', flip && 'lg:order-2')}>
           <KitEyebrow icon={<span className="size-1.5 rounded-full bg-signal" />} className="mb-4 text-signal">
-            {DIY.eyebrow[l]} · AnotherSEOGuru App
+            {DIY.eyebrow[l]} · GSC Boost
           </KitEyebrow>
           <h2 className="text-balance font-display text-[28px] font-semibold leading-[1.1] tracking-[-0.035em] text-foreground sm:text-[36px]">
             {DIY.title[l]}{' '}

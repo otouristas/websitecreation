@@ -285,16 +285,16 @@ const c = (en: string, el: string): Copy => ({ en, el });
 
 const DIY = {
   tag: c("Do it yourself", "Μόνοι σας"),
-  title: c("Prefer to run it yourself? Use AnotherSEOGuru App", "Προτιμάτε να το κάνετε μόνοι σας; Δοκιμάστε το AnotherSEOGuru App"),
+  title: c("Prefer to run it yourself? Use GSC Boost", "Προτιμάτε να το κάνετε μόνοι σας; Δοκιμάστε το GSC Boost"),
   body: c(
     "Our Search Console software, with its own monthly plans: it reads your data and hands you the fixes that win the most clicks, ranked and estimated. The same tool our team uses.",
     "Το λογισμικό μας για το Search Console, με δικά του μηνιαία πακέτα: διαβάζει τα δεδομένα σας και σας δίνει τις διορθώσεις που φέρνουν τα περισσότερα κλικ, με σειρά και εκτίμηση. Το ίδιο εργαλείο που χρησιμοποιεί η ομάδα μας.",
   ),
-  plans: c("See AnotherSEOGuru App plans and prices", "Δείτε τα πακέτα και τις τιμές του AnotherSEOGuru App"),
+  plans: c("See GSC Boost plans and prices", "Δείτε τα πακέτα και τις τιμές του GSC Boost"),
 };
 
 /**
- * The software door as a strip: AnotherSEOGuru App as the do-it-yourself option, with
+ * The software door as a strip: GSC Boost as the do-it-yourself option, with
  * a link to its own pricing page. No plan figures here, so they live in one
  * place (/platform/pricing).
  */

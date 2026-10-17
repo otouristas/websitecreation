@@ -208,7 +208,7 @@ export function getNavModel(locale: SiteLocale): NavModel {
 
   const software: NavMenu = {
     id: 'software',
-    label: 'AnotherSEOGuru App',
+    label: 'GSC Boost',
     badge: NEW,
     columns: [
       {
@@ -246,7 +246,7 @@ export function getNavModel(locale: SiteLocale): NavModel {
       primary: { href: signup, label: startFree.label, external: true },
       secondary: { href: demo, label: t('Explore the live demo', 'Ζωντανή επίδειξη'), external: true },
     },
-    footer: { href: lp('/platform'), label: t('AnotherSEOGuru App overview', 'Επισκόπηση AnotherSEOGuru App') },
+    footer: { href: lp('/platform'), label: t('GSC Boost overview', 'Επισκόπηση GSC Boost') },
   };
 
   const learn: NavMenu = {
@@ -268,7 +268,7 @@ export function getNavModel(locale: SiteLocale): NavModel {
           { href: lp('/blog'), label: 'Blog', desc: t('SEO, AI search and web design', 'SEO, αναζήτηση AI, ιστοσελίδες'), icon: 'library' },
           { href: lp('/resources'), label: t('Resources', 'Οδηγοί & υλικό'), icon: 'library' },
           { href: lp('/glossary'), label: t('SEO glossary', 'Λεξικό SEO'), icon: 'list' },
-          { href: lp('/help'), label: t('AnotherSEOGuru App help center', 'Κέντρο βοήθειας AnotherSEOGuru App'), icon: 'book' },
+          { href: lp('/help'), label: t('GSC Boost help center', 'Κέντρο βοήθειας GSC Boost'), icon: 'book' },
           { href: lp('/compare'), label: t('Comparisons', 'Συγκρίσεις'), icon: 'swords' },
         ],
       },
@@ -293,7 +293,7 @@ export function getNavModel(locale: SiteLocale): NavModel {
     promo: {
       href: lp('/platform'),
       tag: t('New', 'Νέο'),
-      text: t('AnotherSEOGuru App: your Search Console as a to-do list', 'AnotherSEOGuru App: το Search Console ως λίστα ενεργειών'),
+      text: t('GSC Boost: your Search Console as a to-do list', 'GSC Boost: το Search Console ως λίστα ενεργειών'),
     },
     freeAudit,
     startFree,

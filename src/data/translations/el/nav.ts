@@ -21,7 +21,7 @@ export const navEl = {
   signUp: 'Δωρεάν εγγραφή',
   signUpShort: 'Εγγραφή',
   logIn: 'Σύνδεση',
-  signUpNote: 'AnotherSEOGuru App · πρόσβαση μόνο για ανάγνωση',
+  signUpNote: 'GSC Boost · πρόσβαση μόνο για ανάγνωση',
   contact: 'Επικοινωνία',
   blog: 'Άρθρα',
   freeTools: 'Δωρεάν εργαλεία',

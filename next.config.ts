@@ -46,7 +46,7 @@ const nextConfig: NextConfig = {
   async redirects() {
     const appOrigin = process.env.NEXT_PUBLIC_APP_ORIGIN?.replace(/\/$/, '') || 'https://app.anotherseoguru.com';
     return [
-      // ---- BEGIN AnotherSEOGuru App: retired /platform/features/<slug> pages ----------
+      // ---- BEGIN GSC Boost: retired /platform/features/<slug> pages ----------
       // The 27 per-feature pages described features the app does not have.
       // Each slug now lives at the closest module anchor on /platform/features
       // (map in src/data/marketing-features.ts). Placed first so the bare
@@ -63,7 +63,7 @@ const nextConfig: NextConfig = {
           permanent: true,
         },
       ]),
-      // ---- END AnotherSEOGuru App: retired /platform/features/<slug> pages ------------
+      // ---- END GSC Boost: retired /platform/features/<slug> pages ------------
       // WordPress-style underscore alias. robots.txt and the live index use
       // the hyphen file; keep that route intact and send the typo here.
       // Next.js already 308s the trailing-slash form to this source first.
@@ -111,7 +111,7 @@ const nextConfig: NextConfig = {
       // English page with lang="el" that canonicalised to the /en twin, so
       // consolidate at the URL level instead of leaving the duplicate live.
       // /el/glossary is intentionally untouched: that one has Greek content,
-      // and so does /el/platform (AnotherSEOGuru App) since 2026-10.
+      // and so does /el/platform (GSC Boost) since 2026-10.
       {
         source: '/el/:section(tools|resources|compare)',
         destination: '/en/:section',

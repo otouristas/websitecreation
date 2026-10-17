@@ -21,7 +21,7 @@ export const navEn = {
   signUp: 'Sign up free',
   signUpShort: 'Sign up',
   logIn: 'Log in',
-  signUpNote: 'AnotherSEOGuru App · read-only Google access',
+  signUpNote: 'GSC Boost · read-only Google access',
   contact: 'Contact',
   blog: 'Blog',
   freeTools: 'Free tools',

@@ -1,7 +1,7 @@
 import { c, type Copy } from "./copy";
 
 /**
- * AnotherSEOGuru App plans, copied from the app's plan catalog (gsc-gemini-boost
+ * GSC Boost plans, copied from the app's plan catalog (gsc-gemini-boost
  * src/lib/plans.ts, origin/main). Plan names must stay identical: the app's
  * checkout resolves Stripe prices by plan name, and `/signup?plan=&cycle=`
  * preselects the plan a visitor picked here. Prices are US dollars.

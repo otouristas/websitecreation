@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const cat = helpContent(locale).find((c) => c.slug === category);
   if (!cat) return {};
   const meta = buildMetadata({
-    title: cat.title,
+    title: `${cat.title} · ${helpCopy(locale).home}`,
     description: helpMetaDescription(cat.description, locale),
     path: helpPath(locale, cat.slug),
     hreflangPath: `/help/${cat.slug}`,

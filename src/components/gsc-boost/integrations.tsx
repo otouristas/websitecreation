@@ -10,7 +10,7 @@ import { KitHeading, KitSection, MarketingBadge, Accent, kitPrimaryBtn, type Mar
 import { appLink, c, type Copy } from "./copy";
 
 /**
- * The ways to use AnotherSEOGuru App besides the web app: the iPhone app, the Chrome
+ * The ways to use GSC Boost besides the web app: the iPhone app, the Chrome
  * extension, the WordPress plugin and the MCP server for AI assistants. All of
  * them sign in with the same AnotherSEOGuru account, and each sign-in is
  * listed (and can be disconnected) in the app under Settings → Connected apps.
@@ -312,7 +312,7 @@ export function FeatureGrid({
 /* ------------------------------------------------------------------ schema */
 
 /**
- * SoftwareApplication for one integration, tied to the AnotherSEOGuru App app and the
+ * SoftwareApplication for one integration, tied to the GSC Boost app and the
  * organization. No ratings or user counts: we have none to report.
  */
 export function integrationAppSchema(input: {
@@ -346,7 +346,7 @@ export function integrationAppSchema(input: {
     ...(input.softwareRequirements ? { softwareRequirements: input.softwareRequirements } : {}),
     ...(input.featureList ? { featureList: [...input.featureList] } : {}),
     ...(input.free ? { offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } } : {}),
-    isPartOf: { "@type": "SoftwareApplication", name: "AnotherSEOGuru App", url: `${BASE_URL}${localizedPath(locale, "/platform")}` },
+    isPartOf: { "@type": "SoftwareApplication", name: "GSC Boost", url: `${BASE_URL}${localizedPath(locale, "/platform")}` },
     provider: brandOrganization(),
   };
 }

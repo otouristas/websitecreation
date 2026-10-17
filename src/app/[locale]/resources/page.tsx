@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return buildMetadata({
     title: "SEO Resources - Frameworks, Tools & Guides",
     description:
-      "Free SEO resources: frameworks for SEO, AEO and GEO, the SEO glossary, Search Console playbooks, free tools and AnotherSEOGuru App guides for web and iPhone.",
+      "Free SEO resources: frameworks for SEO, AEO and GEO, the SEO glossary, Search Console playbooks, free tools and GSC Boost guides for the web and iPhone.",
     path: localizedPath(locale as SiteLocale, "/resources"),
     canonicalPath: localizedPath("en", "/resources"),
     primaryKeyword: "SEO resources",
@@ -60,7 +60,7 @@ export default async function ResourcesPage({ params }: PageProps) {
       items: [
         { title: "SEO guides", text: "The ranking guides in one index: the main guide, plus keywords, on-page, technical SEO, links and local search.", href: lp("/seo-guides"), icon: "book" },
         { title: "SEO glossary", text: "Over 100 terms, each on its own page with an example and how to apply it.", href: glossaryPath("en"), icon: "library" },
-        { title: "AnotherSEOGuru App guides", text: "How to use every screen of the web app, with screenshots.", href: lp("/help"), icon: "book" },
+        { title: "GSC Boost guides", text: "How to use every screen of the web app, with screenshots.", href: lp("/help"), icon: "book" },
         { title: "iPhone app", text: "Get the beta, Live Activities, widgets and alerts.", href: lp("/help/iphone-app"), icon: "smartphone" },
       ],
     },
@@ -77,8 +77,8 @@ export default async function ResourcesPage({ params }: PageProps) {
       type: "cards",
       cols: 3,
       items: [
-        { title: "AnotherSEOGuru App vs Ahrefs", text: "Where each one fits, feature by feature.", href: lp("/compare/ahrefs") },
-        { title: "AnotherSEOGuru App vs Semrush", text: "Price, data sources and workflow compared.", href: lp("/compare/semrush") },
+        { title: "GSC Boost vs Ahrefs", text: "Where each one fits, feature by feature.", href: lp("/compare/ahrefs") },
+        { title: "GSC Boost vs Semrush", text: "Price, data sources and workflow compared.", href: lp("/compare/semrush") },
         { title: "vs Search Console alone", text: "What you get on top of the free Google tool.", href: lp("/compare/search-console-alone") },
       ],
     },

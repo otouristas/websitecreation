@@ -17,7 +17,7 @@ export function localePrefix(locale: SiteLocale): string {
  * created a duplicate that canonicalised away. Link straight to /en instead.
  *
  * /glossary is deliberately NOT here: it has real Greek content at /el/glossary.
- * /platform (AnotherSEOGuru App) left this list in 2026-10 when its pages got Greek copy.
+ * /platform (GSC Boost) left this list in 2026-10 when its pages got Greek copy.
  */
 const EN_ONLY_SECTIONS = ['/tools', '/resources', '/compare'] as const;
 

@@ -89,7 +89,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/work', priority: 0.88 },
     { path: '/blog', priority: 0.8 },
     { path: '/seo-guides', priority: 0.84 },
-    // AnotherSEOGuru App, the software (/platform). Bilingual since 2026-10: the
+    // GSC Boost, the software (/platform). Bilingual since 2026-10: the
     // module pages and pricing have real Greek copy from the app's own
     // dictionary. The old /platform/features/<slug> pages are gone (308s
     // in next.config.ts to the module anchors on /platform/features).
@@ -106,7 +106,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/platform/wordpress', priority: 0.8, changeFrequency: 'monthly' as const },
     { path: '/platform/mcp', priority: 0.8, changeFrequency: 'monthly' as const },
     { path: '/platform/security', priority: 0.6, changeFrequency: 'monthly' as const },
-    // AnotherSEOGuru App help center: same slugs in both locales.
+    // GSC Boost help center: same slugs in both locales.
     { path: '/help', priority: 0.8 },
     ...helpContent('en').flatMap((c) => [
       { path: `/help/${c.slug}`, priority: 0.7, changeFrequency: 'monthly' as const },
