@@ -9,7 +9,6 @@ import SchemaMarkup from "@/components/seo/SchemaMarkup";
 import {
   Accent,
   AnnouncePill,
-  AppWindow,
   BeforeAfter,
   Container,
   CtaBand,
@@ -17,7 +16,7 @@ import {
   HeroCentered,
   KitHeading,
   KitSection,
-  OverviewPreview,
+  ProductHero,
   RawQueriesPanel,
   SoftwareCtas,
   Stage,
@@ -118,21 +117,19 @@ export default async function PlatformHubPage({ params }: PageProps) {
                 aria-hidden
                 className="pointer-events-none absolute -inset-x-[4%] -top-[10%] -z-10 h-[55%] rounded-[50%] bg-[radial-gradient(closest-side,color-mix(in_oklab,var(--primary)_35%,transparent),transparent)] blur-3xl"
               />
-              <AppWindow
+              <ProductHero
                 href={appLink("/demo", locale, "platform-window")}
                 ctaLabel={tx("Explore the live demo", "Δείτε τη ζωντανή επίδειξη")}
                 label={tx(
-                  "The AnotherSEOGuru App overview on a sample hotel: clicks, impressions, CTR and position, a clicks chart and the top fixes to ship next.",
-                  "Η επισκόπηση του AnotherSEOGuru App σε δείγμα ξενοδοχείου: κλικ, εμφανίσεις, CTR και θέση, γράφημα κλικ και οι επόμενες διορθώσεις.",
+                  "AnotherSEOGuru App overview on sample data: clicks, impressions, CTR, average position and a clicks chart.",
+                  "Επισκόπηση του AnotherSEOGuru App με δείγμα δεδομένων: κλικ, εμφανίσεις, CTR, μέση θέση και γράφημα κλικ.",
                 )}
                 badge={
                   <span className="rounded-full border border-hairline bg-background px-2 py-0.5 text-[11px] font-medium text-muted-foreground">
                     {tx("Live demo · sample data", "Ζωντανή επίδειξη · δείγμα δεδομένων")}
                   </span>
                 }
-              >
-                <OverviewPreview locale={locale} />
-              </AppWindow>
+              />
             </div>
             <p className="mt-5 text-center text-[13px] text-muted-foreground">
               {tx("Sample data for a fictional hotel. The demo runs the real app with no account.", "Δείγμα δεδομένων για ένα φανταστικό ξενοδοχείο. Η επίδειξη τρέχει την πραγματική εφαρμογή χωρίς λογαριασμό.")}{" "}
