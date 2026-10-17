@@ -15,8 +15,26 @@ import type {
     SchemaOutput,
 } from '@/lib/types/seo';
 
+import { LEGAL_ENTITY_ID, LEGAL_ENTITY_NAME } from '@/data/legal-entity';
+
 const BASE_URL = 'https://anotherseoguru.com';
 const BRAND_NAME = 'AnotherSEOGuru';
+
+/** AnotherSEOGuru, with Touristas Technologies as the owning company. */
+export function brandOrganization(extra?: Record<string, unknown>) {
+    return {
+        '@type': 'Organization' as const,
+        '@id': `${BASE_URL}/#organization`,
+        name: BRAND_NAME,
+        url: BASE_URL,
+        parentOrganization: {
+            '@type': 'Organization' as const,
+            '@id': LEGAL_ENTITY_ID,
+            name: LEGAL_ENTITY_NAME,
+        },
+        ...extra,
+    };
+}
 
 /**
  * Generate Article schema markup
@@ -39,9 +57,7 @@ export function generateArticleSchema(data: ArticleSchemaData): SchemaOutput {
             url: data.author.url || BASE_URL,
         },
         publisher: {
-            '@type': 'Organization',
-            '@id': `${BASE_URL}/#organization`,
-            name: BRAND_NAME,
+            ...brandOrganization(),
             logo: {
                 '@type': 'ImageObject',
                 url: `${BASE_URL}/brand/asg-lockup-on-light@2x.png`,
@@ -221,6 +237,16 @@ export function generateOrganizationSchema(data: OrganizationSchemaData): Schema
         ...(data.id ? { '@id': data.id } : {}),
         name: data.name,
         ...(data.legalName ? { legalName: data.legalName } : {}),
+        ...(data.parentOrganization
+            ? {
+                parentOrganization: {
+                    '@type': 'Organization',
+                    '@id': data.parentOrganization.id,
+                    name: data.parentOrganization.name,
+                    ...(data.parentOrganization.url ? { url: data.parentOrganization.url } : {}),
+                },
+            }
+            : {}),
         url: data.url,
         logo: data.logo,
         description: data.description,
@@ -283,15 +309,16 @@ export function generateSoftwareApplicationSchema(input: {
             priceCurrency: 'USD',
             description: 'Free tier available; paid plans in app.',
         },
-        provider: {
+        provider: brandOrganization(),
+        publisher: {
             '@type': 'Organization',
-            name: BRAND_NAME,
-            url: BASE_URL,
+            '@id': LEGAL_ENTITY_ID,
+            name: LEGAL_ENTITY_NAME,
         },
     };
 }
 
-export { BASE_URL, BRAND_NAME };
+export { BASE_URL, BRAND_NAME, LEGAL_ENTITY_ID, LEGAL_ENTITY_NAME };
 
 
 export interface CollectionItem {
@@ -425,11 +452,7 @@ export function generateOfferCatalogSchema(data: OfferCatalogSchemaData): Schema
     '@type': 'Service',
     name: data.name,
     url: data.url,
-    provider: {
-      '@type': 'Organization',
-      '@id': `${BASE_URL}/#organization`,
-      name: BRAND_NAME,
-    },
+    provider: brandOrganization(),
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
       name: data.name,

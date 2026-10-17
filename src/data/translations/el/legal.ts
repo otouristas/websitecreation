@@ -11,11 +11,11 @@ export const legalEl = {
       },
       {
         heading: '2. Υπηρεσίες',
-        body: 'Η Touristas Technologies παρέχει ψηφιακό marketing, SEO και κατασκευή ιστοσελίδων με το όνομα AnotherSEOGuru. Όλα τα deliverables υπόκεινται σε συγκεκριμένες συμβάσεις με πελάτες.',
+        body: 'Η Touristas Technologies είναι ιδιοκτήτης και φορέας λειτουργίας του ιστότοπου AnotherSEOGuru και της εφαρμογής στο app.anotherseoguru.com. Παρέχει ψηφιακό marketing, SEO και κατασκευή ιστοσελίδων με το όνομα AnotherSEOGuru. Όλα τα deliverables υπόκεινται σε συγκεκριμένες συμβάσεις με πελάτες.',
       },
       {
         heading: '3. Πνευματική ιδιοκτησία',
-        body: 'Όλο το περιεχόμενο του ιστότοπου ανήκει στην AnotherSEOGuru. Τα παραδοτέα πελατών μεταβιβάζονται στον πελάτη μετά την πλήρη εξόφληση.',
+        body: 'Όλο το περιεχόμενο του ιστότοπου και της εφαρμογής ανήκει στην Touristas Technologies. Τα παραδοτέα πελατών μεταβιβάζονται στον πελάτη μετά την πλήρη εξόφληση.',
       },
       {
         heading: '4. Περιορισμός ευθύνης',
@@ -47,7 +47,7 @@ export const legalEl = {
       },
       {
         heading: '5. Επικοινωνία',
-        body: 'Η AnotherSEOGuru λειτουργεί από την Touristas Technologies. Για αιτήματα απορρήτου, ανάκλησης συναίνεσης ή διαγραφής επικοινωνήστε στο hello@anotherseoguru.com.',
+        body: 'Η Touristas Technologies είναι ιδιοκτήτης και φορέας λειτουργίας του ιστότοπου AnotherSEOGuru και της εφαρμογής στο app.anotherseoguru.com. Για αιτήματα απορρήτου, ανάκλησης συναίνεσης ή διαγραφής επικοινωνήστε στο hello@anotherseoguru.com.',
       },
     ],
   },

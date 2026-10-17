@@ -11,11 +11,11 @@ export const legalEn = {
       },
       {
         heading: '2. Services',
-        body: 'Touristas Technologies provides digital marketing, SEO, and web design services under the AnotherSEOGuru name. All deliverables are subject to the specific service agreements signed by clients.',
+        body: 'Touristas Technologies owns and operates the AnotherSEOGuru website and the AnotherSEOGuru app at app.anotherseoguru.com. It provides digital marketing, SEO, and web design services under the AnotherSEOGuru name. All deliverables are subject to the specific service agreements signed by clients.',
       },
       {
         heading: '3. Intellectual Property',
-        body: 'All content on this site is the property of AnotherSEOGuru. Client deliverables become client property upon full payment.',
+        body: 'All content on this site and in the AnotherSEOGuru app is the property of Touristas Technologies. Client deliverables become client property upon full payment.',
       },
       {
         heading: '4. Limitation of Liability',
@@ -47,7 +47,7 @@ export const legalEn = {
       },
       {
         heading: '5. Contact Us',
-        body: 'AnotherSEOGuru is operated by Touristas Technologies. For privacy requests, including consent withdrawal and deletion requests, contact hello@anotherseoguru.com.',
+        body: 'Touristas Technologies owns and operates the AnotherSEOGuru website and the AnotherSEOGuru app at app.anotherseoguru.com. For privacy requests, including consent withdrawal and deletion requests, contact hello@anotherseoguru.com.',
       },
     ],
   },

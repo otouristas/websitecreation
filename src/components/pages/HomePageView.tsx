@@ -38,7 +38,7 @@ import { resolvePriceTokens } from '@/data/pricing';
 import { generateOrganizationSchema } from '@/lib/seo/schema';
 import { BASE_URL } from '@/lib/seo/description';
 import { getAppPath } from '@/lib/app-links';
-import { LEGAL_ENTITY_NAME } from '@/data/company-facts';
+import { LEGAL_ENTITY_ID, LEGAL_ENTITY_NAME } from '@/data/legal-entity';
 import { FOUNDER_YEARS, PROJECTS_DELIVERED, consultantPath } from '@/data/founder';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 
@@ -65,7 +65,7 @@ export function HomePageView({ locale }: { locale: SiteLocale }) {
   const orgSchema = generateOrganizationSchema({
     id: `${BASE_URL}/#organization`,
     name: 'AnotherSEOGuru',
-    legalName: LEGAL_ENTITY_NAME,
+    parentOrganization: { id: LEGAL_ENTITY_ID, name: LEGAL_ENTITY_NAME },
     url: BASE_URL,
     logo: `${BASE_URL}/brand/asg-lockup-on-light@2x.png`,
     description: isEl

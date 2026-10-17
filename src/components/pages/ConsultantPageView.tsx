@@ -9,14 +9,13 @@ import { CardGrid, InfoCard, PageHero, RelatedLinks, SplitRow, StatRow, accentTa
 import { FaqBlock, ProofGrid } from '@/components/service-kit';
 import { renderInlineLinks } from '@/components/services/topic-sections';
 import { getConsultantCopy } from '@/data/consultant-page';
-import { LEGAL_ENTITY_NAME } from '@/data/company-facts';
 import { consultantPath } from '@/data/founder';
 import { portfolioProjects } from '@/data/portfolio';
 import { resolvePriceTokens } from '@/data/pricing';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 import { buildHreflangMapFromPaths } from '@/lib/locale-paths';
 import { buildMetadata } from '@/lib/seo';
-import { BASE_URL, combineSchemas, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/seo/schema';
+import { BASE_URL, brandOrganization, combineSchemas, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/seo/schema';
 import { generateBreadcrumbs } from '@/lib/linking';
 import { withExactTitle } from '@/app/[locale]/services/_lib/exact-title';
 
@@ -65,12 +64,7 @@ export function ConsultantPageView({ locale }: { locale: SiteLocale }) {
       inLanguage: locale,
       isPartOf: { '@id': `${BASE_URL}/#website` },
       about: { '@id': `${BASE_URL}/#organization` },
-      publisher: {
-        '@type': 'Organization',
-        '@id': `${BASE_URL}/#organization`,
-        name: LEGAL_ENTITY_NAME,
-        url: BASE_URL,
-      },
+      publisher: brandOrganization(),
     },
     generateFAQSchema({ faqs }),
   );

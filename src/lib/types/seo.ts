@@ -117,6 +117,8 @@ export interface OrganizationSchemaData {
     name: string;
     /** Legal entity, when it differs from the public brand name. */
     legalName?: string;
+    /** Owner of this organization, when the brand sits under another company. */
+    parentOrganization?: { id: string; name: string; url?: string };
     url: string;
     logo: string;
     description: string;

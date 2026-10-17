@@ -7,7 +7,7 @@ Sitemap: https://anotherseoguru.com/sitemap.xml
 Source: https://anotherseoguru.com
 Last Updated: 2026-10-16
 
-> AnotherSEOGuru is a web design & SEO agency based in Greece (serving Greek and international clients), specializing in tourism & hospitality websites, with GEO/AEO (AI visibility) services and a secondary GSC-native SEO software platform.
+> AnotherSEOGuru is the web design and SEO brand of Touristas Technologies, which owns anotherseoguru.com and the app at app.anotherseoguru.com. The agency serves businesses in Greece and international clients, specializing in tourism and hospitality websites, with GEO/AEO (AI visibility) services and a GSC-native SEO software platform.
 
 ## Core Hubs & Features
 - **Greek Homepage** (<https://anotherseoguru.com/el>) - Primary Greek entry for agency services, tourism SEO, and quotes.

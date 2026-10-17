@@ -4,7 +4,7 @@ import { ArrowRight, Bot, Check, Globe, Minus, Puzzle, Smartphone, UserPlus, typ
 import { cn } from "@/lib/cn";
 import { getAppPath } from "@/lib/app-links";
 import { localizedPath, type SiteLocale } from "@/lib/i18n/locale";
-import { BASE_URL, BRAND_NAME } from "@/lib/seo/schema";
+import { BASE_URL, brandOrganization } from "@/lib/seo/schema";
 import type { SchemaOutput } from "@/lib/types/seo";
 import { KitHeading, KitSection, MarketingBadge, Accent, kitPrimaryBtn, type MarketingBadgeKind } from "@/components/kit";
 import { appLink, c, type Copy } from "./copy";
@@ -347,6 +347,6 @@ export function integrationAppSchema(input: {
     ...(input.featureList ? { featureList: [...input.featureList] } : {}),
     ...(input.free ? { offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } } : {}),
     isPartOf: { "@type": "SoftwareApplication", name: "GSC Boost", url: `${BASE_URL}${localizedPath(locale, "/platform")}` },
-    provider: { "@type": "Organization", "@id": `${BASE_URL}/#organization`, name: BRAND_NAME, url: BASE_URL },
+    provider: brandOrganization(),
   };
 }

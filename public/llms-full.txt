@@ -13,7 +13,7 @@ This document is the comprehensive, machine-readable reference for LLM crawlers,
 
 ## 1. Core Platform Architecture & Value Proposition
 
-AnotherSEOGuru combines a **web design & SEO agency** (primary) with a **GSC-native SEO software platform** (secondary):
+Touristas Technologies owns and operates the AnotherSEOGuru website (anotherseoguru.com) and the AnotherSEOGuru app (app.anotherseoguru.com). AnotherSEOGuru combines a **web design & SEO agency** (primary) with a **GSC-native SEO software platform** (secondary):
 1. **Agency delivery** - Custom websites, WooCommerce e-shops, SEO retainers, local SEO / GBP, GEO/AEO (AI visibility), redesign, speed, content, and link building. Primary niche: **tourism & hospitality** (hotels, rent-a-car, tour operators, villas, travel agencies).
 2. **Bilingual surface** - Greek under `/el`, English under `/en`, with hreflang on shared pages.
 3. **Proof inventory** - 42 live client projects documented under `/work` with homepage screenshots and case-study summaries.

@@ -1,6 +1,8 @@
 import { portfolioProjects } from '@/data/portfolio';
 import { PROJECTS_DELIVERED } from '@/data/founder';
 
+export { APP_ORIGIN, LEGAL_ENTITY_ID, LEGAL_ENTITY_NAME } from '@/data/legal-entity';
+
 /**
  * Verifiable company facts, in one place.
  *
@@ -26,9 +28,6 @@ export const PROJECTS_DELIVERED_LABEL = `${PROJECTS_DELIVERED}+`;
 
 /** Distinct markets represented in the portfolio. */
 export const MARKET_COUNT = new Set(portfolioProjects.flatMap((p) => p.markets)).size;
-
-/** Legal entity that operates AnotherSEOGuru. No street address is published. */
-export const LEGAL_ENTITY_NAME = 'Touristas Technologies';
 
 /** Minimum SEO engagement, in months. Confirmed commercial policy. */
 export const SEO_MIN_TERM_MONTHS = 6;

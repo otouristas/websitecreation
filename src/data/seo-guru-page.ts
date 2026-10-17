@@ -84,10 +84,10 @@ const el: SeoGuruCopy = {
   who: {
     eyebrow: 'Ποιοι είμαστε',
     title: 'Ποια είναι η ομάδα',
-    body: 'AnotherSEOGuru είναι η εταιρεία κατασκευής ιστοσελίδων και SEO της Touristas Technologies. Η ομάδα βλέπει την ιστοσελίδα, αποφασίζει τι γίνεται πρώτο και το υλοποιεί. Δεν είναι ένα ψευδώνυμο πάνω σε μια αναφορά που ετοιμάζει κάποιος άλλος.',
+    body: 'Η Touristas Technologies είναι ιδιοκτήτης και φορέας λειτουργίας του ιστότοπου anotherseoguru.com και της εφαρμογής AnotherSEOGuru στο app.anotherseoguru.com. Η ομάδα βλέπει την ιστοσελίδα, αποφασίζει τι γίνεται πρώτο και το υλοποιεί. Δεν είναι ένα ψευδώνυμο πάνω σε μια αναφορά που ετοιμάζει κάποιος άλλος.',
     bullets: [
-      'Εταιρεία: Touristas Technologies',
-      'Brand: AnotherSEOGuru, για επιχειρήσεις στην Ελλάδα',
+      'Ιδιοκτήτης: Touristas Technologies',
+      'Ιστότοπος: anotherseoguru.com · Εφαρμογή: app.anotherseoguru.com',
       'Γλώσσες: ελληνικά και αγγλικά, με hreflang όπου χρειάζεται',
       'Πρώτο βήμα: δωρεάν έλεγχος, πριν από οποιαδήποτε σύμβαση',
     ],
@@ -238,10 +238,10 @@ const en: SeoGuruCopy = {
   who: {
     eyebrow: 'Who we are',
     title: 'Who the team is',
-    body: 'AnotherSEOGuru is the web design and SEO company of Touristas Technologies. The team looks at the site, decides what happens first, and ships it. It is not a pen name on a report someone else prepared.',
+    body: 'Touristas Technologies owns and operates anotherseoguru.com and the AnotherSEOGuru app at app.anotherseoguru.com. The team looks at the site, decides what happens first, and ships it. It is not a pen name on a report someone else prepared.',
     bullets: [
-      'Company: Touristas Technologies',
-      'Brand: AnotherSEOGuru, for businesses in Greece',
+      'Owner: Touristas Technologies',
+      'Website: anotherseoguru.com · App: app.anotherseoguru.com',
       'Languages: Greek and English, with hreflang where the site needs it',
       'First step: a free audit, before any contract',
     ],

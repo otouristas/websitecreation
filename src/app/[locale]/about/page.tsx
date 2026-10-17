@@ -11,7 +11,8 @@ import { buildMetadata } from "@/lib/seo";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
 import type { SchemaOutput } from "@/lib/types/seo";
 import { BASE_URL, generateBreadcrumbSchema } from "@/lib/seo/schema";
-import { LEGAL_ENTITY_NAME, MARKET_COUNT } from '@/data/company-facts';
+import { MARKET_COUNT } from '@/data/company-facts';
+import { LEGAL_ENTITY_ID, LEGAL_ENTITY_NAME } from '@/data/legal-entity';
 import { industries } from '@/data/industries';
 import { FOUNDER_YEARS, PROJECTS_DELIVERED, consultantPath } from '@/data/founder';
 
@@ -52,7 +53,7 @@ export default async function AboutPage({ params }: PageProps) {
         home: "Αρχική",
         about: "Σχετικά",
         h1: "Κατασκευάζουμε Ιστοσελίδες που Φέρνουν Αποτελέσματα",
-        sub: "Η AnotherSEOGuru είναι η ομάδα σχεδιασμού ιστοσελίδων και SEO της Touristas Technologies. Εστιάζει σε ένα πράγμα: να βοηθήσει τις επιχειρήσεις να πετύχουν online με γρήγορες, όμορφες και βελτιστοποιημένες ιστοσελίδες.",
+        sub: "Η Touristas Technologies είναι ιδιοκτήτης και φορέας λειτουργίας του ιστότοπου anotherseoguru.com και της εφαρμογής στο app.anotherseoguru.com. Η AnotherSEOGuru είναι η ομάδα σχεδιασμού ιστοσελίδων και SEO της εταιρείας, με στόχο να βοηθήσει τις επιχειρήσεις να πετύχουν online με γρήγορες, όμορφες και βελτιστοποιημένες ιστοσελίδες.",
         storyLabel: "Η Ιστορία Μας",
         storyTitle: "Από την Απογοήτευση στη Λύση",
         storyP1: "Ξεκινήσαμε την AnotherSEOGuru επειδή κουραστήκαμε να βλέπουμε επιχειρήσεις να πληρώνουν ακριβά σε agencies που παραδίδουν αργές, ξεπερασμένες ιστοσελίδες που δεν κατατάσσονται ούτε φέρνουν κρατήσεις.",
@@ -62,7 +63,7 @@ export default async function AboutPage({ params }: PageProps) {
         author: "Η Ομάδα της AnotherSEOGuru",
         founderLabel: "Η ομάδα",
         founderTitle: "Η ομάδα της Touristas Technologies",
-        founderBody: `Η AnotherSEOGuru είναι η ομάδα της Touristas Technologies. Με ${FOUNDER_YEARS}+ χρόνια στο SEO έχουμε παραδώσει πάνω από ${PROJECTS_DELIVERED} έργα, κυρίως για ξενοδοχεία, ενοικιάσεις αυτοκινήτων, τουριστικές και τοπικές επιχειρήσεις στην Ελλάδα.`,
+        founderBody: `Η Touristas Technologies είναι ιδιοκτήτης του ιστότοπου anotherseoguru.com και της εφαρμογής AnotherSEOGuru στο app.anotherseoguru.com. Η ομάδα, με ${FOUNDER_YEARS}+ χρόνια στο SEO, έχει παραδώσει πάνω από ${PROJECTS_DELIVERED} έργα, κυρίως για ξενοδοχεία, ενοικιάσεις αυτοκινήτων, τουριστικές και τοπικές επιχειρήσεις στην Ελλάδα.`,
         founderFacts: [
           { value: `${FOUNDER_YEARS}+`, label: "χρόνια στο SEO" },
           { value: `${PROJECTS_DELIVERED}+`, label: "έργα" },
@@ -121,7 +122,7 @@ export default async function AboutPage({ params }: PageProps) {
         home: "Home",
         about: "About",
         h1: "We Build Websites That Actually Work",
-        sub: "AnotherSEOGuru is the web design and SEO team at Touristas Technologies, focused on one thing: helping businesses succeed online with fast, beautiful, search-optimized websites.",
+        sub: "Touristas Technologies owns and operates anotherseoguru.com and the AnotherSEOGuru app at app.anotherseoguru.com. AnotherSEOGuru is the company's web design and SEO team, focused on helping businesses succeed online with fast, beautiful, search-optimized websites.",
         storyLabel: "Our Story",
         storyTitle: "From Frustration to Solution",
         storyP1: "We started AnotherSEOGuru because we were tired of seeing businesses get ripped off by agencies that deliver slow, outdated websites that don't rank or convert.",
@@ -131,7 +132,7 @@ export default async function AboutPage({ params }: PageProps) {
         author: "The AnotherSEOGuru Team",
         founderLabel: "The team",
         founderTitle: "The Touristas Technologies team",
-        founderBody: `AnotherSEOGuru is the team at Touristas Technologies. With ${FOUNDER_YEARS}+ years in SEO we have delivered more than ${PROJECTS_DELIVERED} projects, mostly for hotels, car rentals, tourism and local businesses in Greece.`,
+        founderBody: `Touristas Technologies owns anotherseoguru.com and the AnotherSEOGuru app at app.anotherseoguru.com. The team, with ${FOUNDER_YEARS}+ years in SEO, has delivered more than ${PROJECTS_DELIVERED} projects, mostly for hotels, car rentals, tourism and local businesses in Greece.`,
         founderFacts: [
           { value: `${FOUNDER_YEARS}+`, label: "years in SEO" },
           { value: `${PROJECTS_DELIVERED}+`, label: "projects" },
@@ -204,7 +205,12 @@ export default async function AboutPage({ params }: PageProps) {
     mainEntity: {
       "@type": "Organization",
       "@id": `${BASE_URL}/#organization`,
-      name: LEGAL_ENTITY_NAME,
+      name: "AnotherSEOGuru",
+      parentOrganization: {
+        "@type": "Organization",
+        "@id": LEGAL_ENTITY_ID,
+        name: LEGAL_ENTITY_NAME,
+      },
     },
   };
 

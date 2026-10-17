@@ -277,7 +277,7 @@ function buildShort({ services, servicesEl, industries, industriesEl, greece, pr
   lines.push(`Last Updated: ${TODAY}`);
   lines.push('');
   lines.push(
-    '> AnotherSEOGuru is a web design & SEO agency based in Greece (serving Greek and international clients), specializing in tourism & hospitality websites, with GEO/AEO (AI visibility) services and a secondary GSC-native SEO software platform.',
+    '> AnotherSEOGuru is the web design and SEO brand of Touristas Technologies, which owns anotherseoguru.com and the app at app.anotherseoguru.com. The agency serves businesses in Greece and international clients, specializing in tourism and hospitality websites, with GEO/AEO (AI visibility) services and a GSC-native SEO software platform.',
   );
   lines.push('');
   lines.push('## Core Hubs & Features');
@@ -511,7 +511,7 @@ function buildFull({ services, servicesEl, industries, industriesEl, greece, pro
   lines.push('## 1. Core Platform Architecture & Value Proposition');
   lines.push('');
   lines.push(
-    'AnotherSEOGuru combines a **web design & SEO agency** (primary) with a **GSC-native SEO software platform** (secondary):',
+    'Touristas Technologies owns and operates the AnotherSEOGuru website (anotherseoguru.com) and the AnotherSEOGuru app (app.anotherseoguru.com). AnotherSEOGuru combines a **web design & SEO agency** (primary) with a **GSC-native SEO software platform** (secondary):',
   );
   lines.push(
     '1. **Agency delivery** - Custom websites, WooCommerce e-shops, SEO retainers, local SEO / GBP, GEO/AEO (AI visibility), redesign, speed, content, and link building. Primary niche: **tourism & hospitality** (hotels, rent-a-car, tour operators, villas, travel agencies).',
