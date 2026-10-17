@@ -44,7 +44,8 @@ function TileMediaView({ media }: { readonly media: TileMedia }) {
             alt=""
             fill
             sizes={media.sizes}
-            quality={66}
+            // The large tile is the one that stayed blank when lazy loading lost the race with a fast scroll.
+            loading={media.id === "opportunities" ? "eager" : "lazy"}
             className="object-cover object-left-top"
           />
         </div>
@@ -52,15 +53,17 @@ function TileMediaView({ media }: { readonly media: TileMedia }) {
     }
     case "phone":
       return (
-        <div className="relative mt-2 flex flex-1 items-end justify-center overflow-hidden px-6 pt-2">
-          <DevicePhone className="w-[196px] translate-y-8 sm:w-[210px]">
+        // Fixed well below the lg grid, then a flex well that the row-span tile
+        // stretches. The phone is wider than that well is tall, so the bottom
+        // crops and the tile stays full — no empty band above or below it.
+        <div className="relative mx-5 mt-4 h-[230px] overflow-hidden sm:mx-6 sm:h-[250px] lg:h-auto lg:min-h-[280px] lg:flex-1">
+          <DevicePhone className="absolute inset-x-0 top-0 w-full">
             <Image
               src={SHOTS.phone.src}
               alt=""
               width={SHOTS.phone.width}
               height={SHOTS.phone.height}
-              quality={64}
-              sizes="210px"
+              sizes="(max-width: 1023px) 92vw, 420px"
               className="h-auto w-full"
             />
           </DevicePhone>
@@ -113,8 +116,8 @@ export function ProductBento({ locale, className }: { readonly locale: SiteLocal
       media: {
         kind: "shot",
         id: "opportunities",
-        sizes: "(min-width: 1024px) 58vw, 100vw",
-        frame: "mx-5 h-[230px] sm:mx-6 sm:h-[280px] lg:h-[320px]",
+        sizes: "(max-width: 767px) 100vw, (max-width: 1279px) 55vw, 640px",
+        frame: "mx-5 h-[220px] sm:mx-6 sm:h-[260px] lg:h-[300px]",
       },
     },
     {
@@ -126,7 +129,7 @@ export function ProductBento({ locale, className }: { readonly locale: SiteLocal
       ),
       href: lp("/platform/iphone"),
       external: false,
-      className: "max-h-[460px] lg:col-span-5 lg:row-span-2 lg:max-h-none",
+      className: "lg:col-span-5 lg:row-span-2",
       media: { kind: "phone" },
     },
     {
@@ -139,8 +142,8 @@ export function ProductBento({ locale, className }: { readonly locale: SiteLocal
       media: {
         kind: "shot",
         id: "performance",
-        sizes: "(min-width: 1024px) 34vw, 100vw",
-        frame: "mx-5 h-[190px] sm:mx-6 lg:h-[210px]",
+        sizes: "(max-width: 767px) 100vw, (max-width: 1279px) 40vw, 420px",
+        frame: "mx-5 h-[200px] sm:mx-6 lg:h-[210px]",
       },
     },
     {
@@ -153,8 +156,8 @@ export function ProductBento({ locale, className }: { readonly locale: SiteLocal
       media: {
         kind: "shot",
         id: "ai",
-        sizes: "(min-width: 1024px) 26vw, 100vw",
-        frame: "mx-5 h-[190px] sm:mx-6 lg:h-[210px]",
+        sizes: "(max-width: 767px) 100vw, (max-width: 1279px) 34vw, 320px",
+        frame: "mx-5 h-[200px] sm:mx-6 lg:h-[210px]",
       },
     },
     {
@@ -170,8 +173,8 @@ export function ProductBento({ locale, className }: { readonly locale: SiteLocal
       media: {
         kind: "shot",
         id: "tasks",
-        sizes: "(min-width: 1024px) 46vw, 100vw",
-        frame: "mx-5 h-[210px] sm:mx-6 lg:h-[240px]",
+        sizes: "(max-width: 767px) 100vw, (max-width: 1279px) 48vw, 560px",
+        frame: "mx-5 h-[210px] sm:mx-6 lg:h-[230px]",
       },
     },
     {
@@ -187,8 +190,8 @@ export function ProductBento({ locale, className }: { readonly locale: SiteLocal
       media: {
         kind: "shot",
         id: "integrations",
-        sizes: "(min-width: 1024px) 46vw, 100vw",
-        frame: "mx-5 h-[210px] sm:mx-6 lg:h-[240px]",
+        sizes: "(max-width: 767px) 100vw, (max-width: 1279px) 48vw, 560px",
+        frame: "mx-5 h-[210px] sm:mx-6 lg:h-[230px]",
       },
     },
   ];
