@@ -28,6 +28,7 @@ const PAYMENT_LOGOS = [
 
 /** Exact-anchor Greek service×city links matching striking-distance GSC queries. */
 const EL_SEO_HUB_LINKS: { label: string; href: string }[] = [
+  { label: "SEO σε όλη την Ελλάδα", href: "/el/seo" },
   { label: "Κατασκευή Ιστοσελίδων Αθήνα", href: elServiceLocationPath("website-creation", "athens-gr") },
   { label: "Κατασκευή Ιστοσελίδων Θεσσαλονίκη", href: elServiceLocationPath("website-creation", "thessaloniki-gr") },
   { label: "Κατασκευή Ιστοσελίδων Πάτρα", href: elServiceLocationPath("website-creation", "patras-gr") },
@@ -215,6 +216,11 @@ export default function Footer({ locale: localeProp }: { locale?: SiteLocale }):
                   <li>
                     <Link href={lp("/locations")} className={columnLinkClass}>
                       {t.locations}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/el/seo" className={columnLinkClass}>
+                      SEO σε όλη την Ελλάδα
                     </Link>
                   </li>
                 </>

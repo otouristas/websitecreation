@@ -123,9 +123,37 @@ export const SERVICE_LOCATION_REDIRECTS: Readonly<Record<string, string>> = {
 
 const SERVICE_LOCATION_PATH = /^\/(en|el)\/services\/([^/]+)\/([^/]+)\/?$/;
 
+/**
+ * Phase 1 place pages (one URL per place, Greek only).
+ *
+ * A removed `/{locale}/services/{service}/{location}` URL whose location is one
+ * of these slugs 301s to `/el/seo/<place>`. Rethymno is absent on purpose:
+ * `/el/services/seo-audits/rethymno-gr` still ranks and must stay. There is no
+ * English place page in this phase, so an English 410 for one of these places
+ * also 301s to the Greek URL. Kept English service × city pages never reach
+ * this map.
+ *
+ * Plain strings only: this module is imported by the edge middleware.
+ */
+export const PHASE1_PLACE_PAGE: Readonly<Record<string, string>> = {
+  'athens-gr': '/el/seo/athens',
+  'thessaloniki-gr': '/el/seo/thessaloniki',
+  'piraeus-gr': '/el/seo/piraeus',
+  'crete-gr': '/el/seo/crete',
+  'heraklion-gr': '/el/seo/heraklion',
+  'chania-gr': '/el/seo/chania',
+  'kalamata-gr': '/el/seo/kalamata',
+  'patras-gr': '/el/seo/patras',
+  'santorini-gr': '/el/seo/santorini',
+  'mykonos-gr': '/el/seo/mykonos',
+  'paros-gr': '/el/seo/paros',
+  'rhodes-gr': '/el/seo/rhodes',
+  'corfu-gr': '/el/seo/corfu',
+};
+
 export type ServiceLocationRouteDecision =
   | { kind: 'keep' }
-  | { kind: 'redirect'; to: string }
+  | { kind: 'redirect'; to: string; status: 301 | 308 }
   | { kind: 'gone'; locale: SiteLocale; service: string; location: string };
 
 /**
@@ -139,6 +167,8 @@ export function decideServiceLocationRoute(pathname: string): ServiceLocationRou
   if (isServiceLocationKept(locale, service, location)) return { kind: 'keep' };
   const normalized = `/${locale}/services/${service}/${location}`;
   const redirect = SERVICE_LOCATION_REDIRECTS[normalized];
-  if (redirect) return { kind: 'redirect', to: redirect };
+  if (redirect) return { kind: 'redirect', to: redirect, status: 308 };
+  const placePage = PHASE1_PLACE_PAGE[location];
+  if (placePage) return { kind: 'redirect', to: placePage, status: 301 };
   return { kind: 'gone', locale, service, location };
 }

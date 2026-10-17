@@ -118,6 +118,9 @@ export function getNavModel(locale: SiteLocale): NavModel {
       {
         title: t('Get found', 'Εμφανιστείτε'),
         items: [
+          ...(el
+            ? [{ href: lp('/seo'), label: 'SEO σε όλη την Ελλάδα', desc: 'Μία σελίδα για κάθε πόλη και νησί', icon: 'map' as const }]
+            : []),
           { href: lp('/seo-guru'), label: 'SEO guru', desc: t('Who we are and how the work is done', 'Ποιοι είμαστε και πώς γίνεται η δουλειά'), icon: 'users' },
           { href: lp('/seo-services'), label: t('SEO services', 'Υπηρεσίες SEO'), desc: t('Monthly SEO that brings customers', 'Μηνιαίο SEO που φέρνει πελάτες'), icon: 'trend', badge: POPULAR, meta: t(`from €${seoFrom}/mo`, `από €${seoFrom}/μήνα`) },
           { href: lp('/services/ai-visibility'), label: t('AI visibility (GEO / AEO)', 'Ορατότητα σε AI (GEO / AEO)'), desc: t('Get recommended by ChatGPT and Gemini', 'Να σας προτείνουν ChatGPT και Gemini'), icon: 'sparkles', badge: AI },

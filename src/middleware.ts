@@ -66,7 +66,7 @@ export function middleware(request: NextRequest) {
     return goneResponse(cityRoute.locale, cityRoute.service);
   }
   if (cityRoute?.kind === 'redirect') {
-    return NextResponse.redirect(new URL(cityRoute.to, request.url), 308);
+    return NextResponse.redirect(new URL(cityRoute.to, request.url), cityRoute.status);
   }
 
   // Markdown twin of a docs page: /en/help/x/y.md -> the static Markdown route.
