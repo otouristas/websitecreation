@@ -73,7 +73,7 @@ const FREE_CHECKS: ReadonlyArray<{ icon: LucideIcon; title: Copy; text: Copy }> 
     title: c("Title and meta description", "Τίτλος και meta description"),
     text: c(
       "Lengths with hints, canonical, robots meta, language, word count, H1 count and an indexability verdict.",
-      "Μήκη με υποδείξεις, canonical, robots meta, γλώσσα, πλήθος λέξεων, πλήθος H1 και αν η σελίδα μπορεί να μπει στο index.",
+      "Μήκη με υποδείξεις, canonical, robots meta, γλώσσα, πλήθος λέξεων, πλήθος H1 και αν η σελίδα μπορεί να μπει στο ευρετήριο.",
     ),
   },
   {
@@ -81,7 +81,7 @@ const FREE_CHECKS: ReadonlyArray<{ icon: LucideIcon; title: Copy; text: Copy }> 
     title: c("Headings tree", "Δομή επικεφαλίδων"),
     text: c(
       "The full H1-H6 outline, with warnings for a missing or second H1 and skipped levels.",
-      "Ολόκληρη η δομή H1-H6, με προειδοποίηση όταν λείπει ή υπάρχει δεύτερη H1 και όταν πηδιέται επίπεδο.",
+      "Ολόκληρη η δομή H1-H6, με προειδοποίηση όταν λείπει ή υπάρχει δεύτερο H1 και όταν πηδιέται επίπεδο.",
     ),
   },
   {

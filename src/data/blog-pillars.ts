@@ -31,7 +31,7 @@ export const BLOG_PILLARS: readonly PillarMeta[] = [
         'How SEO retainers actually get delivered: scoping, reporting that clients read, pricing, and knowing when to walk away from a project.',
     },
     el: {
-      title: 'Οδηγοί για Agencies',
+      title: 'Οδηγοί για agencies',
       heading: 'Οδηγοί για agencies',
       intro:
         'Πώς παραδίδεται στην πράξη μια συνεργασία SEO: εύρος έργου, αναφορές που διαβάζονται, τιμολόγηση και πότε να πείτε όχι σε ένα project.',
@@ -63,7 +63,7 @@ export const BLOG_PILLARS: readonly PillarMeta[] = [
         'Vertical-specific SEO: hotels, rent-a-car, restaurants, clinics and law firms. What ranks in each, and what the generic advice gets wrong.',
     },
     el: {
-      title: 'Οδηγοί ανά Κλάδο',
+      title: 'Οδηγοί ανά κλάδο',
       heading: 'Οδηγοί ανά κλάδο',
       intro:
         'SEO ανά κατηγορία: ξενοδοχεία, ενοικίαση αυτοκινήτου, εστιατόρια, ιατρεία και δικηγορικά γραφεία. Τι αποδίδει σε κάθε κλάδο στην πράξη.',

@@ -13,7 +13,7 @@ faq:
   - question: Ποια εργαλεία SEO χρειάζομαι στην αρχή;
     answer: Google Search Console, Google Analytics 4, PageSpeed Insights και το ίδιο το SERP. Αυτά καλύπτουν το 80% των αποφάσεων για μικρή επιχείρηση πριν πληρώσετε Ahrefs/Semrush.
   - question: Πώς βοηθά το Google Analytics στο SEO;
-    answer: Το GA4 δείχνει ποια οργανική κίνηση μετατρέπει - σελίδες εισόδου, engagement, conversions. Συνδεδεμένο με Search Console συνδέει κατατάξεις με πραγματική συμπεριφορά χρηστών.
+    answer: Το GA4 δείχνει ποια οργανική κίνηση μετατρέπει - σελίδες εισόδου, engagement, conversions. Συνδεδεμένο με το Search Console, συνδέει κατατάξεις με πραγματική συμπεριφορά χρηστών.
   - question: Χρειάζομαι πληρωμένο SEO tool;
     answer: Όχι την πρώτη μέρα. Χρειάζεται όταν κλιμακώνετε έρευνα ανταγωνισμού, backlinks και keyword gaps. Ξεκινήστε με GSC δεδομένα και καθαρό on-page.
   - question: Ποια εργαλεία βοηθούν στο τοπικό SEO;
@@ -22,7 +22,7 @@ faq:
     answer: Επιταχύνουν briefs και περιλήψεις. Δεν αντικαθιστούν crawl data, backlink graphs ή analytics μετατροπών. Αντιμετωπίστε τα ως assistants μέσα στη στοίβα.
 ---
 
-**Εργαλεία SEO** δεν αντικαθιστούν στρατηγική - αλλά χωρίς δεδομένα μαντεύετε. Παρακάτω το πρακτικό stack για ελληνικές επιχειρήσεις το 2026: τι ανοίγετε πρώτα δωρεάν, πότε αξίζει πληρωμένο suite, και πώς το **Google Analytics SEO** συνδέεται με πραγματικές αποφάσεις. Για διαδικασία (όχι λογότυπα tools) δείτε τον [οδηγό SEO για αρχάριους](/el/blog/seo-gia-arxarious) και τη στρατηγική [μικρών επιχειρήσεων](/el/blog/seo-stratigiki-mikres-epicheiriseis).
+Τα **εργαλεία SEO** δεν αντικαθιστούν τη στρατηγική - αλλά χωρίς δεδομένα μαντεύετε. Παρακάτω το πρακτικό stack για ελληνικές επιχειρήσεις το 2026: τι ανοίγετε πρώτα δωρεάν, πότε αξίζει πληρωμένο suite, και πώς το **Google Analytics SEO** συνδέεται με πραγματικές αποφάσεις. Για διαδικασία (όχι λογότυπα tools) δείτε τον [οδηγό SEO για αρχάριους](/el/blog/seo-gia-arxarious) και τη στρατηγική [μικρών επιχειρήσεων](/el/blog/seo-stratigiki-mikres-epicheiriseis).
 
 ## Δωρεάν Core Stack
 
@@ -47,7 +47,7 @@ faq:
 4. Σύνδεση GA4 ↔ Search Console για να δείτε ποια ερωτήματα φέρνουν αξία - όχι μόνο impressions.
 5. Σύγκριση συσκευών: πολλά ελληνικά local queries είναι mobile-first· αν το CWV καταρρέει στο κινητό, το tool stack πρέπει να το δείχνει.
 
-### Πρακτικό εβδομαδιαίο ρυθμό
+### Πρακτικός εβδομαδιαίος ρυθμός
 
 **Δευτέρα:** GSC - queries με άνοδο impressions / πτώση CTR.  
 **Τετάρτη:** GA4 - organic landings και conversions.  
@@ -58,7 +58,7 @@ faq:
 
 ## Πληρωμένα suites - Πότε κλιμακώνετε
 
-Ahrefs / Semrush κερδίζουν σε βάθος keyword index, backlink graphs και competitor gaps. Δεν χρειάζονται για να ξεκινήσετε on-page ή τεχνικές διορθώσεις. Αγοράστε τα όταν:
+Τα Ahrefs / Semrush κερδίζουν σε βάθος keyword index, backlink graphs και competitor gaps. Δεν χρειάζονται για να ξεκινήσετε on-page ή τεχνικές διορθώσεις. Αγοράστε τα όταν:
 
 - Δημοσιεύετε εβδομαδιαία ή διαχειρίζεστε πολλά projects
 - Χρειάζεστε στόχους link building πέρα από εικασίες

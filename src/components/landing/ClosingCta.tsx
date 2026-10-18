@@ -40,7 +40,7 @@ export function ClosingCta({ locale = "en" }: { locale?: SiteLocale }) {
           </PrimaryButtonLink>
           <a href={WHATSAPP_HREF} target="_blank" rel="noopener noreferrer" className={ghostBtnClass}>
             <WhatsAppIcon className="size-4 text-[#25D366]" />
-            {isEl ? "Μίλα μας στο WhatsApp" : "Talk on WhatsApp"}
+            {isEl ? "Μιλήστε μας στο WhatsApp" : "Talk on WhatsApp"}
           </a>
         </div>
       </div>

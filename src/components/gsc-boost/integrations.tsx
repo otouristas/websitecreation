@@ -115,7 +115,7 @@ export const SURFACES: ReadonlyArray<Surface> = [
     where: c("Claude, ChatGPT, Cursor, VS Code, Windsurf", "Claude, ChatGPT, Cursor, VS Code, Windsurf"),
     text: c(
       "Ask about your Search Console data, fix list, tasks and AI visibility, and let the assistant work through a task.",
-      "Ρωτήστε για τα δεδομένα Search Console, τις διορθώσεις, τις εργασίες και την ορατότητα σε AI, και αφήστε τον βοηθό να δουλέψει μια εργασία.",
+      "Ρωτήστε για τα δεδομένα Search Console, τις διορθώσεις, τις εργασίες και την ορατότητα σε AI, και αφήστε τον βοηθό να αναλάβει μια εργασία.",
     ),
     status: { kind: "live", label: c("Live", "Διαθέσιμο") },
   },
@@ -184,7 +184,7 @@ export function OtherWaysSection({ locale, current, tinted = false }: { readonly
         }
         description={
           isEl
-            ? "Οι εργασίες, οι ιστότοποι και τα δεδομένα σας συγχρονίζονται σε web, iPhone, Chrome, WordPress και βοηθούς AI. Στο Ρυθμίσεις → Συνδεδεμένες εφαρμογές βλέπετε κάθε σύνδεση και την αποσυνδέετε με ένα κλικ."
+            ? "Οι εργασίες, οι ιστότοποι και τα δεδομένα σας συγχρονίζονται σε web, iPhone, Chrome, WordPress και βοηθούς AI. Στις Ρυθμίσεις → Συνδεδεμένες εφαρμογές βλέπετε κάθε σύνδεση και την αποσυνδέετε με ένα κλικ."
             : "Your tasks, sites and data sync across the web app, iPhone, Chrome, WordPress and AI assistants. Settings → Connected apps lists every connection and disconnects any of them in one click."
         }
       />

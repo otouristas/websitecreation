@@ -108,7 +108,7 @@ export function PriceCard({
         href={localizedPath(locale, '/get-started')}
         className={`mt-8 w-full ${tier.popular ? kitPrimaryBtn : kitSecondaryBtn}`}
       >
-        {isEl ? 'Ζητήστε Προσφορά' : 'Request a Quote'}
+        {isEl ? 'Ζητήστε προσφορά' : 'Request a Quote'}
         <ArrowRight className="size-4" aria-hidden />
       </Link>
     </div>

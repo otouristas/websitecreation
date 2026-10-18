@@ -401,7 +401,7 @@ export const serviceNamesEl: Record<
     description:
       'SEO audit ιστοσελίδας: τεχνικός έλεγχος ευρετηρίασης, ταχύτητας, δομής και περιεχομένου, με λίστα διορθώσεων κατά προτεραιότητα. Πλήρες audit από {{ADDON_TECHNICAL_AUDIT}}.',
     features: [
-      'Πλήρης τεχνικός SEO audit',
+      'Πλήρες τεχνικό SEO audit',
       'Core Web Vitals & ταχύτητα',
       'On-page βελτιστοποίηση & περιεχόμενο',
       'Έρευνα λέξεων-κλειδιών',

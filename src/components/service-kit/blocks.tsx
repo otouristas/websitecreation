@@ -292,7 +292,7 @@ const DIY = {
   accent: { en: 'Use AnotherSEOGuru App', el: 'Δοκιμάστε το AnotherSEOGuru App' },
   body: {
     en: 'AnotherSEOGuru App is the software our team runs every client on. Connect Search Console read-only and it hands you the fixes that win the most clicks, ranked and estimated.',
-    el: 'Το AnotherSEOGuru App είναι το λογισμικό με το οποίο δουλεύει η ομάδα μας κάθε πελάτη. Συνδέετε το Search Console μόνο για ανάγνωση και σας δίνει τις διορθώσεις που φέρνουν τα περισσότερα κλικ, με σειρά και εκτίμηση.',
+    el: 'Το AnotherSEOGuru App είναι το λογισμικό με το οποίο δουλεύει η ομάδα μας για κάθε πελάτη. Συνδέετε το Search Console μόνο για ανάγνωση και σας δίνει τις διορθώσεις που φέρνουν τα περισσότερα κλικ, με σειρά και εκτίμηση.',
   },
   bullets: {
     en: ['Fixes ranked by the clicks they could bring', 'Built on your own Search Console data', 'Free to start, no card for the demo'],

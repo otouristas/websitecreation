@@ -74,7 +74,7 @@ const FAQ: ReadonlyArray<GscFaqItem> = [
     q: c("Where do I see and remove the apps I connected?", "Πού βλέπω και αφαιρώ τις εφαρμογές που έχω συνδέσει;"),
     a: c(
       "In the web app under Settings → Connected apps. It lists the Chrome extension, WordPress sites, command line and AI assistants signed in to your account, and Disconnect signs each one out at once.",
-      "Στην εφαρμογή web, στο Ρυθμίσεις → Συνδεδεμένες εφαρμογές. Εκεί βλέπετε την επέκταση Chrome, τους ιστότοπους WordPress, τη γραμμή εντολών και τους βοηθούς AI που έχουν συνδεθεί, και η Αποσύνδεση τα αποσυνδέει αμέσως.",
+      "Στην εφαρμογή web, στις Ρυθμίσεις → Συνδεδεμένες εφαρμογές. Εκεί βλέπετε την επέκταση Chrome, τους ιστότοπους WordPress, τη γραμμή εντολών και τους βοηθούς AI που έχουν συνδεθεί, και η Αποσύνδεση τα αποσυνδέει αμέσως.",
     ),
   },
   {
@@ -88,7 +88,7 @@ const FAQ: ReadonlyArray<GscFaqItem> = [
     q: c("What access do they have to my Google account?", "Τι πρόσβαση έχουν στον λογαριασμό μου στη Google;"),
     a: c(
       "None directly. They read your data through AnotherSEOGuru, which has read-only access to Search Console and Analytics. Nothing in your Google account can be changed from any of them.",
-      "Καμία απευθείας. Διαβάζουν τα δεδομένα σας μέσω του AnotherSEOGuru, που έχει πρόσβαση μόνο για ανάγνωση στο Search Console και στο Analytics. Από καμία δεν μπορεί να αλλάξει κάτι στον λογαριασμό σας στη Google.",
+      "Καμία απευθείας. Διαβάζουν τα δεδομένα σας μέσω του AnotherSEOGuru, που έχει πρόσβαση μόνο για ανάγνωση στο Search Console και στο Analytics. Καμία τους δεν μπορεί να αλλάξει τίποτα στον λογαριασμό σας στη Google.",
     ),
     link: { kind: "site", path: "/platform/security", label: c("How we handle your data", "Πώς διαχειριζόμαστε τα δεδομένα σας") },
   },
@@ -177,14 +177,14 @@ export default async function PlatformIntegrationsPage({ params }: PageProps) {
                 title: tx("Connect each app with your account", "Σύνδεση κάθε εφαρμογής με τον λογαριασμό σας"),
                 text: tx(
                   "In the extension, the plugin or your AI assistant, choose to connect, sign in and press Allow. No API keys to copy.",
-                  "Στην επέκταση, στο plugin ή στον βοηθό AI, επιλέξτε σύνδεση, μπείτε στον λογαριασμό σας και πατήστε Να επιτρέπεται. Δεν αντιγράφετε κανένα API key.",
+                  "Στην επέκταση, στο plugin ή στον βοηθό AI, επιλέξτε σύνδεση, μπείτε στον λογαριασμό σας και πατήστε «Να επιτρέπεται». Δεν αντιγράφετε κανένα API key.",
                 ),
               },
               {
                 title: tx("Manage it in Connected apps", "Διαχείριση στις Συνδεδεμένες εφαρμογές"),
                 text: tx(
                   "Settings → Connected apps lists everything signed in to your account, when it was last used, and a Disconnect button for each.",
-                  "Το Ρυθμίσεις → Συνδεδεμένες εφαρμογές δείχνει όλα όσα έχουν συνδεθεί στον λογαριασμό σας, πότε χρησιμοποιήθηκαν τελευταία φορά και ένα κουμπί Αποσύνδεσης για το καθένα.",
+                  "Η σελίδα Ρυθμίσεις → Συνδεδεμένες εφαρμογές δείχνει όλα όσα έχουν συνδεθεί στον λογαριασμό σας, πότε χρησιμοποιήθηκαν τελευταία φορά και ένα κουμπί Αποσύνδεσης για το καθένα.",
                 ),
               },
             ]}

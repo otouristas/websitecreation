@@ -10,13 +10,13 @@ categoryColor: bg-violet-100 text-violet-800
 pillar: ai-llm-visibility
 faq:
   - question: "Μπορεί το AI Chatbot να κάνει λάθη στις απαντήσεις του;"
-    answer: "Με guardrails και RAG πάνω στη δική σας knowledge base, το bot απαντά μόνο από τιμές, πολιτικές και παροχές σας. Χωρίς αυτά, οι γενικοί LLMs επινοούν - γι’ αυτό δεν αρκεί «ένα ChatGPT widget»."
+    answer: "Με guardrails και RAG πάνω στη δική σας knowledge base, το bot απαντά μόνο από τιμές, πολιτικές και παροχές σας. Χωρίς αυτά, τα γενικά LLM επινοούν - γι’ αυτό δεν αρκεί «ένα ChatGPT widget»."
   - question: "Πώς συνδέεται το Chatbot με τις κρατήσεις;"
     answer: "Καθοδηγεί τον χρήστη σε διαθέσιμα δωμάτια/οχήματα και δίνει deep link στη σελίδα ολοκλήρωσης κράτησης - δεν αντικαθιστά απαραίτητα το booking engine."
   - question: "Βοηθάει το chatbot το SEO και το AEO;"
-    answer: "Ναι όταν οι συχνές ερωτήσεις του chat γίνονται FAQ στη σελίδα με schema. Έτσι κερδίζετε snippets/Overviews και τροφοδοτείτε GEO citations από τις ίδιες κανονικές απαντήσεις."
+    answer: "Ναι, όταν οι συχνές ερωτήσεις του chat γίνονται FAQ στη σελίδα με schema. Έτσι κερδίζετε snippets/Overviews και τροφοδοτείτε GEO citations από τις ίδιες κανονικές απαντήσεις."
   - question: "Επιβαρύνει την ταχύτητα της ιστοσελίδας;"
-    answer: "Μόνο αν φορτώνει blocking. Το widget πρέπει να φορτώνει ασύγχρονα μετά το LCP. Κακό chatbot που σκοτώνει Core Web Vitals βλάπτει SEO και μετατροπές."
+    answer: "Μόνο αν φορτώνει blocking. Το widget πρέπει να φορτώνει ασύγχρονα μετά το LCP. Ένα κακό chatbot που σκοτώνει Core Web Vitals βλάπτει SEO και μετατροπές."
   - question: "Χρειάζομαι chatbot ή πρώτα Ορατότητα σε AI;"
     answer: "Συχνά και τα δύο - το chatbot εξυπηρετεί επισκέπτες· η υπηρεσία GEO/AEO κάνει τις σελίδες σας citable σε ChatGPT/Perplexity. Ξεκινήστε από καθαρή knowledge base κοινής χρήσης."
 ---
@@ -83,7 +83,7 @@ GEO χωρίς on-page αποδείξεις αποτυγχάνει. Chatbot χω
 ### Μήνας 2 - Μέτρηση και GEO loop
 * Αναλύστε top unanswered / wrong answers.
 * Προσθέστε σελίδες ή παραγράφους για gaps.
-* Τρέξτε baseline AI prompts για κατηγορία σας (μέρος [AI visibility](/el/services/ai-visibility) προγράμματος).
+* Τρέξτε baseline AI prompts για την κατηγορία σας (μέρος [AI visibility](/el/services/ai-visibility) προγράμματος).
 * Συνδέστε assisted bookings στο Analytics/CRM ώστε να ξέρετε αν το bot πληρώνει τον εαυτό του.
 
 Για ξενοδοχεία δείτε επίσης [λύσεις hotels](/el/solutions/hotels) και [SEO για ξενοδοχεία](/el/blog/seo-gia-xenodoxeia)· για στόλους, [rent-a-car solutions](/el/solutions/rent-a-car). Η ίδια λογική answer-first ισχύει και στους δύο κλάδους: σαφή facts στη σελίδα, μετά αυτοματισμός στο chat.
@@ -105,19 +105,19 @@ GEO χωρίς on-page αποδείξεις αποτυγχάνει. Chatbot χω
 
 ### Μπορεί το AI Chatbot να κάνει λάθη;
 
-Ναι, αν βασίζεται σε γενικό μοντέλο χωρίς περιορισμούς. Με RAG και guardrails πάνω στα δεδομένα σας, περιορίζετε τις απαντήσεις σε εγκεκριμένα facts. Ελέγχετε μηνιαία accuracy όπως θα κάνατε για citations.
+Ναι, αν βασίζεται σε γενικό μοντέλο χωρίς περιορισμούς. Με RAG και guardrails πάνω στα δεδομένα σας, περιορίζετε τις απαντήσεις σε εγκεκριμένα facts. Ελέγχετε μηνιαία την ακρίβεια όπως θα κάνατε για citations.
 
 ### Πώς συνδέεται με τις κρατήσεις;
 
-Το bot παρουσιάζει επιλογές και δίνει deep link στο booking engine ή φόρμα. Δεν χρειάζεται να αντικαταστήσει το PMS/CRS - χρειάζεται να μειώσει τριβή μέχρι το checkout.
+Το bot παρουσιάζει επιλογές και δίνει deep link στο booking engine ή σε φόρμα. Δεν χρειάζεται να αντικαταστήσει το PMS/CRS - χρειάζεται να μειώσει τριβή μέχρι το checkout.
 
 ### Βοηθάει στο SEO και το AEO;
 
-Ναι όταν οι ερωτήσεις γίνονται ορατό FAQ με schema και εσωτερικούς συνδέσμους. Έτσι κερδίζετε snippets και τροφοδοτείτε GEO. Δείτε επίσης [GEO agency Ελλάδα](/el/services/ai-visibility).
+Ναι, όταν οι ερωτήσεις γίνονται ορατό FAQ με schema και εσωτερικούς συνδέσμους. Έτσι κερδίζετε snippets και τροφοδοτείτε GEO. Δείτε επίσης [GEO agency Ελλάδα](/el/services/ai-visibility).
 
 ### Επιβαρύνει την ταχύτητα;
 
-Μόνο με κακή υλοποίηση. Ασύγχρονη φόρτωση μετά το LCP είναι μη διαπραγματεύσιμη για τουριστικά sites σε κινητά.
+Μόνο με κακή υλοποίηση. Η ασύγχρονη φόρτωση μετά το LCP είναι μη διαπραγματεύσιμη για τουριστικά sites σε κινητά.
 
 ### Chatbot ή πρώτα AI visibility;
 

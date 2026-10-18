@@ -35,7 +35,7 @@ export function WhyUsTimeline({ locale = "en" }: { locale?: SiteLocale }) {
           </h2>
           <p className="mt-5 max-w-md text-base leading-relaxed text-muted-foreground md:text-lg">
             {isEl
-              ? "Δεν είμαστε ούτε μόνο agency ούτε μόνο λογισμικό. Είμαστε και τα δύο, και αυτό αλλάζει τον τρόπο που δουλεύουμε."
+              ? "Δεν είμαστε ούτε μόνο εταιρεία SEO ούτε μόνο λογισμικό. Είμαστε και τα δύο, και αυτό αλλάζει τον τρόπο που δουλεύουμε."
               : "We are not only an agency, and not only software. We are both, and that changes how the work gets done."}
           </p>
           <div className="mt-8">

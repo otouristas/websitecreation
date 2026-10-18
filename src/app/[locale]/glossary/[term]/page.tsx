@@ -68,7 +68,7 @@ export default async function GlossaryTermPage({ params }: PageProps) {
     {
       type: "p",
       text: el
-        ? "Το AnotherSEOGuru App διαβάζει τα δεδομένα σας από το Search Console και σας λέει τι να διορθώσετε πρώτα, με την εκτίμηση των clicks που φέρνει κάθε διόρθωση. [Ξεκινήστε από τον οδηγό](/help/getting-started/welcome) ή [κάντε δωρεάν εγγραφή](/signup)."
+        ? "Το AnotherSEOGuru App διαβάζει τα δεδομένα σας από το Search Console και σας λέει τι να διορθώσετε πρώτα, με την εκτίμηση των κλικ που φέρνει κάθε διόρθωση. [Ξεκινήστε από τον οδηγό](/help/getting-started/welcome) ή [κάντε δωρεάν εγγραφή](/signup)."
         : "AnotherSEOGuru App reads your Search Console data and tells you what to fix first, with the clicks each fix is likely to bring. [Start with the guide](/help/getting-started/welcome) or [sign up free](/signup).",
     },
     ...(related.length

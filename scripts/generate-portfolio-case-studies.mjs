@@ -14,8 +14,8 @@ const META = JSON.parse(
 
 const SERVICE_EL = {
   'website-creation': 'κατασκευή ιστοσελίδας',
-  'website-redesign': 'ανασχεδιασμός ιστοσελίδας',
-  'seo-web-design': 'σχεδιασμός ιστοσελίδας με SEO',
+  'website-redesign': 'ανασχεδιασμό ιστοσελίδας',
+  'seo-web-design': 'σχεδιασμό ιστοσελίδας με SEO',
   'local-seo': 'τοπικό SEO',
   'speed-optimization': 'βελτιστοποίηση ταχύτητας',
   'content-creation': 'δημιουργία περιεχομένου',
@@ -104,9 +104,9 @@ const EL_ENDINGS = [
   (m) => `με έμφαση σε ${m.angleEl}`,
   (m) => `βελτιστοποιημένη για κινητά και τοπική αναζήτηση`,
   (m) => `με δομή περιεχομένου για «${m.kwEl[0]}»`,
-  (m) => `έτοιμη για οργανική ανάπτυξη στη ${m.locationEl}`,
+  (m) => `έτοιμη για οργανική ανάπτυξη ${m.locationPrepEl || 'στη'} ${m.locationEl}`,
   (m) => `με τεχνικό SEO από την πρώτη μέρα`,
-  (m) => `με ξεκάθαρα σήματα εμπιστοσύνης και ${m.ctaEl}`,
+  (m) => `με ξεκάθαρα σήματα εμπιστοσύνης και διαδρομή ${ctaPathEl(m.ctaEl)}`,
 ];
 
 const EN_ENDINGS = [
@@ -132,7 +132,7 @@ function buildCase(p) {
   const servicesEn = servicesPhrase(p.services, 'en');
   const { status } = scrapeStatus(p.slug);
   const liveHintEl =
-    status === 'ok' ? ' Τα σήματα του ζωντανού site καθόρισαν τις προτεραιότητες περιεχομένου.' : '';
+    status === 'ok' ? ' Τα δεδομένα του ενεργού site καθόρισαν τις προτεραιότητες του περιεχομένου.' : '';
   const liveHintEn =
     status === 'ok' ? ' Live site signals informed content priorities.' : '';
 
@@ -146,17 +146,17 @@ function buildCase(p) {
 
   const overview = {
     en: `${p.name} is a live ${bizEn} project for ${m.locationEn}. We delivered ${servicesEn}, targeting “${m.kwEn[0]}” and related commercial intents.`,
-    el: `Το ${p.name} είναι ζωντανό έργο ${bizEl} ${prep} ${m.locationEl}. Παραδώσαμε ${servicesEl}, με στόχο «${m.kwEl[0]}» και σχετικές εμπορικές προθέσεις.`,
+    el: `Το ${p.name} είναι ενεργό έργο μας: ${bizEl} ${prep} ${m.locationEl}. Παραδώσαμε ${servicesEl}, με στόχο «${m.kwEl[0]}» και σχετικές εμπορικές προθέσεις.`,
   };
 
   const challenge = {
     en: `In ${m.locationEn}, competitors compete for “${m.kwEn[0]}” and related queries. ${p.name} needed a site that stands out through ${m.angleEn}, ranks locally, and turns visitors into a ${m.ctaEn}—without looking generic.`,
-    el: `${prep.charAt(0).toUpperCase() + prep.slice(1)} ${m.locationEl}, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «${m.kwEl[0]}». Το ${p.name} χρειαζόταν ιστοσελίδα που ξεχωρίζει χάρη σε ${m.angleEl}, εμφανίζεται στην τοπική αναζήτηση και οδηγεί επισκέπτες σε ${m.ctaEl} — χωρίς εμφάνιση έτοιμου προτύπου.`,
+    el: `${prep.charAt(0).toUpperCase() + prep.slice(1)} ${m.locationEl}, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «${m.kwEl[0]}». Το ${p.name} χρειαζόταν ιστοσελίδα που να ξεχωρίζει, να εμφανίζεται στην τοπική αναζήτηση και να οδηγεί τους επισκέπτες σε ${m.ctaEl}, χωρίς να μοιάζει με έτοιμο πρότυπο. Το πλεονέκτημά του: ${m.angleEl}.`,
   };
 
   const approach = {
     en: `We mapped search intent around ${m.locationEn}, structured pages for ${m.kwEn.slice(0, 2).join(' and ')}, and shipped mobile-first UX with technical SEO, schema and clear calls to action. ${m.angleEn.charAt(0).toUpperCase() + m.angleEn.slice(1)}.${liveHintEn}`,
-    el: `Χαρτογραφήσαμε τις προθέσεις αναζήτησης ${prep} ${m.locationEl}, δομήσαμε σελίδες για «${m.kwEl[0]}» και «${kw2El}» και παραδώσαμε διεπαφή πρώτα για κινητά με τεχνικό SEO, σήμανση schema και ξεκάθαρες κλήσεις σε ενέργεια. ${m.angleEl.charAt(0).toUpperCase() + m.angleEl.slice(1)}.${liveHintEl}`,
+    el: `Χαρτογραφήσαμε τις προθέσεις αναζήτησης ${prep} ${m.locationEl}, δομήσαμε σελίδες για «${m.kwEl[0]}» και «${kw2El}» και παραδώσαμε διεπαφή σχεδιασμένη πρώτα για κινητά, με τεχνικό SEO, σήμανση schema και ξεκάθαρες προτροπές για ενέργεια. ${m.angleEl.charAt(0).toUpperCase() + m.angleEl.slice(1)}.${liveHintEl}`,
   };
 
   const seo = {
@@ -170,8 +170,8 @@ function buildCase(p) {
     el: uniq([
       `Κύρια λέξη-κλειδί: ${m.kwEl[0]}`,
       ...m.kwEl.slice(1, 3).map((k) => `Υποστηρικτικό θέμα: ${k}`),
-      `Μοναδικοί τίτλοι και επικεφαλίδες για ${p.name} ${prep} ${m.locationEl}`,
-      `Εσωτερικοί σύνδεσμοι από ενημερωτικές σελίδες προς σελίδες ${m.ctaEl}`,
+      `Μοναδικοί τίτλοι και επικεφαλίδες για το ${p.name} ${prep} ${m.locationEl}`,
+      `Εσωτερικοί σύνδεσμοι από ενημερωτικές σελίδες προς σελίδες ${ctaPathEl(m.ctaEl)}`,
       `Σχετική σήμανση schema για ${m.businessEl}`,
     ]),
   };
@@ -184,10 +184,10 @@ function buildCase(p) {
       `About and how-it-works copy written for extraction`,
     ],
     el: [
-      `Ξεκάθαρη παρουσίαση οντότητας: ${p.name}, ${m.locationEl}, προσφορά ${m.businessEl}`,
-      `Συχνές ερωτήσεις τύπου «${m.kwEl[0]}» για απαντήσεις τεχνητής νοημοσύνης`,
+      `Ξεκάθαρη παρουσίαση της οντότητας ${p.name} ${prep} ${m.locationEl} και της βασικής προσφοράς: ${m.businessEl}`,
+      `Συχνές ερωτήσεις τύπου «${m.kwEl[0]}» για AI Overviews`,
       `Δομημένα στοιχεία (τοποθεσία, υπηρεσίες, γλώσσες) για μηχανές απαντήσεων`,
-      `Κείμενα «σχετικά» και «πώς λειτουργεί» έτοιμα για εξαγωγή`,
+      `Κείμενα για τις ενότητες «Σχετικά» και «Πώς λειτουργεί», γραμμένα ώστε να εξάγονται εύκολα`,
     ],
   };
 
@@ -199,10 +199,10 @@ function buildCase(p) {
       `Event tracking for ${m.ctaEn} actions specific to ${m.businessEn}`,
     ],
     el: [
-      `Υλοποίηση πρώτα για κινητά για όσους ερευνούν ${prep} ${m.locationEl} από το τηλέφωνο`,
-      `Πολυμέσα βελτιστοποιημένα για ταχύτητα στις συλλογές και τα στοιχεία του ${p.name}`,
-      `Καθαρά URL, sitemap, robots και έτοιμο άνοιγμα για Search Console`,
-      `Παρακολούθηση ενεργειών ${m.ctaEl} προσαρμοσμένη στο ${m.businessEl}`,
+      `Υλοποίηση πρώτα για κινητά, για όσους ψάχνουν ${prep} ${m.locationEl} από το τηλέφωνο`,
+      `Πολυμέσα βελτιστοποιημένα για Core Web Vitals στις συλλογές και στο υλικό του ${p.name}`,
+      `Καθαρά URL, sitemap, robots και έναρξη λειτουργίας έτοιμη για Search Console`,
+      `Παρακολούθηση ενεργειών ${ctaPathEl(m.ctaEl)}, ειδικά για ${m.businessEl}`,
     ],
   };
 
@@ -217,11 +217,11 @@ function buildCase(p) {
     ],
     el: [
       `Κείμενα μετατροπής με έμφαση σε ${m.angleEl}`,
-      `Ενότητες εμπιστοσύνης προσαρμοσμένες στο ${m.businessEl} ${prep} ${m.locationEl}`,
+      `Ενότητες εμπιστοσύνης για ${m.businessEl} ${prep} ${m.locationEl}`,
       p.languages?.includes('el') && p.languages?.includes('en')
-        ? 'Διαδρομές ελληνικών και αγγλικών με συνεπή στοιχεία επικοινωνίας και προσφορές'
-        : `Τοπικό περιεχόμενο για ${(p.languages || ['el']).join(' / ').toUpperCase()}`,
-      `Ιεραρχία κλήσεων σε ενέργεια για τη διαδρομή ${m.ctaEl} του ${p.name}`,
+        ? 'Ελληνικές και αγγλικές διαδρομές περιεχομένου με συνεπή στοιχεία επικοινωνίας και προσφορές'
+        : `Περιεχόμενο στα ${(p.languages || ['el']).map((l) => (l === 'el' ? 'ελληνικά' : 'αγγλικά')).join(' και ')}`,
+      `Ιεραρχία προτροπών για τη διαδρομή ${ctaPathEl(m.ctaEl)} του ${p.name}`,
     ],
   };
 
@@ -234,8 +234,8 @@ function buildCase(p) {
     ],
     el: [
       `Τοπική αφήγηση για ${m.locationEl} με έμφαση σε «${m.kwEl[0]}»`,
-      `Αρχιτεκτονική υπηρεσιών και προϊόντων για εμπορικές προθέσεις ${m.businessEl}`,
-      `Βάση σήμανσης schema και τεχνικού SEO για ${p.name}`,
+      `Αρχιτεκτονική υπηρεσιών και προϊόντων για εμπορικές προθέσεις: ${m.businessEl}`,
+      `Βάση σήμανσης schema και τεχνικού SEO για το ${p.name}`,
       `Διαδρομές ${ctaPathEl(m.ctaEl)} από κινητό έτοιμες για περιόδους αιχμής`,
     ],
   };

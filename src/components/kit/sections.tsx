@@ -265,7 +265,7 @@ const BAND = {
   agencyTitle: c("A free SEO audit in 24 hours", "Δωρεάν έλεγχος SEO σε 24 ώρες"),
   agencyBody: c(
     "Send us your website. You get the issues that cost you customers, what to fix first and a fixed price, in your language.",
-    "Στείλτε μας την ιστοσελίδα σας. Παίρνετε τα προβλήματα που σας κοστίζουν πελάτες, τι διορθώνεται πρώτο και σταθερή τιμή.",
+    "Στείλτε μας την ιστοσελίδα σας. Παίρνετε τα προβλήματα που σας κοστίζουν πελάτες, τι διορθώνεται πρώτα και σταθερή τιμή.",
   ),
   softwareTag: c("Do it yourself", "Μόνοι σας"),
   softwareTitle: c("AnotherSEOGuru App: Search Console as a to-do list", "AnotherSEOGuru App: το Search Console ως λίστα ενεργειών"),

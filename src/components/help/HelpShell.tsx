@@ -11,7 +11,7 @@ export function helpCopy(locale: SiteLocale) {
     home: el ? "Κέντρο βοήθειας AnotherSEOGuru App" : "AnotherSEOGuru App help center",
     short: el ? "Κέντρο βοήθειας" : "Help center",
     heroLead: el
-      ? "Οδηγοί για κάθε μέρος του AnotherSEOGuru App, από τη σύνδεση του Search Console μέχρι τη λειτουργία ενός γραφείου πάνω του."
+      ? "Οδηγοί για κάθε μέρος του AnotherSEOGuru App, από τη σύνδεση του Search Console μέχρι τη διαχείριση μιας εταιρείας SEO μέσα από αυτό."
       : "Guides for every part of AnotherSEOGuru App, from connecting Search Console to running an agency on it.",
     search: {
       placeholder: el ? "Πώς μπορούμε να βοηθήσουμε;" : "How can we help?",

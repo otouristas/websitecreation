@@ -74,7 +74,7 @@ export function recommendFromAudit(result: AuditResult): Recommendation {
     track = 'both';
     reasons.push({
       en: `Technical ${technical}/100 and performance ${performance}/100: the platform is holding the site back, not just the content. Priced as a rebuild plus SEO - switch it back if you only want the SEO.`,
-      el: `Τεχνικά ${technical}/100 και ταχύτητα ${performance}/100: το ίδιο το platform κρατά πίσω το site, όχι μόνο το περιεχόμενο. Κοστολογείται ως ανακατασκευή μαζί με SEO. Αλλάξτε το αν θέλετε μόνο το SEO.`,
+      el: `Τεχνικά ${technical}/100 και ταχύτητα ${performance}/100: η ίδια η πλατφόρμα κρατά πίσω το site, όχι μόνο το περιεχόμενο. Κοστολογείται ως ανακατασκευή μαζί με SEO. Αλλάξτε το αν θέλετε μόνο το SEO.`,
     });
   }
 
@@ -121,7 +121,7 @@ export function recommendFromAudit(result: AuditResult): Recommendation {
   } else if (ai < 55) {
     reasons.push({
       en: `AI visibility scores ${ai}/100: the crawlers get in but find nothing structured to quote.`,
-      el: `Η ορατότητα σε AI βαθμολογείται ${ai}/100: τα crawlers μπαίνουν αλλά δεν βρίσκουν δομημένο περιεχόμενο να αναφέρουν.`,
+      el: `Η ορατότητα σε AI βαθμολογείται ${ai}/100: οι crawlers μπαίνουν αλλά δεν βρίσκουν δομημένο περιεχόμενο να αναφέρουν.`,
     });
   }
 

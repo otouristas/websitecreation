@@ -170,7 +170,7 @@ const FEATURES: ReadonlyArray<{ icon: LucideIcon; title: Copy; text: Copy }> = [
   },
   {
     icon: Languages,
-    title: c("Greek and English", "Ελληνικά και Αγγλικά"),
+    title: c("Greek and English", "Ελληνικά και αγγλικά"),
     text: c(
       "Greek and English, synced with your web account, plus light/dark appearance and scalable text on iPhone.",
       "Ελληνικά και αγγλικά, συγχρονισμένα με τον λογαριασμό σας στο web, φωτεινή/σκούρα εμφάνιση και κείμενο που προσαρμόζεται στο iPhone.",
@@ -190,7 +190,7 @@ const FAQ: ReadonlyArray<GscFaqItem> = [
     q: c("Do I need a separate subscription for the app?", "Χρειάζομαι ξεχωριστή συνδρομή για την εφαρμογή;"),
     a: c(
       "No. Use the same account on iPhone and app.anotherseoguru.com to keep your plan, projects and credits together. App Store plans, where offered, show Apple's local price and renewal terms before purchase. An existing web subscription stays managed by its original billing provider.",
-      "Όχι. Χρησιμοποιήστε τον ίδιο λογαριασμό σε iPhone και app.anotherseoguru.com για κοινό πρόγραμμα, έργα και μονάδες. Όπου διατίθενται προγράμματα App Store, η τοπική τιμή και οι όροι ανανέωσης της Apple εμφανίζονται πριν την αγορά. Μια υπάρχουσα συνδρομή web παραμένει στον αρχικό πάροχο χρέωσης.",
+      "Όχι. Χρησιμοποιήστε τον ίδιο λογαριασμό σε iPhone και app.anotherseoguru.com για κοινό πρόγραμμα, έργα και μονάδες. Όπου διατίθενται προγράμματα App Store, η τοπική τιμή και οι όροι ανανέωσης της Apple εμφανίζονται πριν από την αγορά. Μια υπάρχουσα συνδρομή web παραμένει στον αρχικό πάροχο χρέωσης.",
     ),
     link: { kind: "site", path: "/platform/pricing", label: c("See the plans", "Δείτε τα πακέτα") },
   },
@@ -305,7 +305,7 @@ export default async function PlatformIphonePage({ params }: PageProps) {
               items={[
                 { icon: Smartphone, label: tx("iOS 17+, iPhone and iPad", "iOS 17+, iPhone και iPad") },
                 { icon: CheckCircle2, label: tx("Same account as the web app", "Ίδιος λογαριασμός με το web") },
-                { icon: Languages, label: tx("English and Greek", "Ελληνικά και Αγγλικά") },
+                { icon: Languages, label: tx("English and Greek", "Ελληνικά και αγγλικά") },
               ]}
             />
           }

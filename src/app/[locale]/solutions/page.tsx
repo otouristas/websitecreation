@@ -134,7 +134,7 @@ export default async function SolutionsPage({ params }: PageProps) {
             <p className="mt-5 text-center text-[13px] text-muted-foreground">
               {tx("Sample data for a Paros hotel, the kind of view every client gets.", "Δείγμα δεδομένων για ξενοδοχείο στην Πάρο, η εικόνα που παίρνει κάθε πελάτης.")}{" "}
               <Link href={lp("/work")} className="font-medium text-foreground underline decoration-hairline underline-offset-4 hover:decoration-foreground">
-                {isEl ? "Δείτε τα Έργα μας" : "View Our Work"}
+                {isEl ? "Δείτε τα έργα μας" : "View Our Work"}
               </Link>
             </p>
           </Container>
@@ -151,7 +151,7 @@ export default async function SolutionsPage({ params }: PageProps) {
             }
             description={
               isEl
-                ? "Εδώ βρίσκεται το μεγαλύτερο μέρος του portfolio μας: εποχικότητα, πολυγλωσσικά sites, απευθείας κρατήσεις και ανταγωνισμός με τα OTAs."
+                ? "Εδώ βρίσκεται το μεγαλύτερο μέρος του portfolio μας: εποχικότητα, πολύγλωσσα sites, απευθείας κρατήσεις και ανταγωνισμός με τα OTAs."
                 : "This is where most of our portfolio sits: seasonality, multilingual sites, direct bookings and competing with the OTAs."
             }
           />
@@ -246,7 +246,7 @@ export default async function SolutionsPage({ params }: PageProps) {
               "Every engagement starts from the same short list: the fixes that bring the most customers, ranked by what they are worth to you.",
               "Κάθε συνεργασία ξεκινά από την ίδια σύντομη λίστα: τις διορθώσεις που φέρνουν τους περισσότερους πελάτες, με σειρά βάσει αξίας.",
             )}
-            links={[{ href: lp("/pricing"), label: isEl ? "Δείτε τις Τιμές" : "View Pricing", primary: true }]}
+            links={[{ href: lp("/pricing"), label: isEl ? "Δείτε τις τιμές" : "View Pricing", primary: true }]}
             preview={
               <Stage>
                 <DecisionsPanel locale={siteLocale} />

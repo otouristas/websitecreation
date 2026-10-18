@@ -140,7 +140,7 @@ function buildStructuredDataGraph(isEl: boolean) {
           url: `${SITE_URL}/brand/asg-lockup-on-light@2x.png`,
         },
         description: isEl
-          ? 'Ψηφιακό γραφείο κατασκευής ιστοσελίδων και SEO με έδρα την Ελλάδα: κατασκευή ιστοσελίδων και e-shop, τοπικό SEO, GEO/AEO και περιεχόμενο για επιχειρήσεις στην Ελλάδα και το εξωτερικό. Διαθέτει και SEO πλατφόρμα συνδεδεμένη με το Google Search Console.'
+          ? 'Ψηφιακό γραφείο κατασκευής ιστοσελίδων και SEO με έδρα την Ελλάδα: κατασκευή ιστοσελίδων και e-shop, τοπικό SEO, GEO/AEO και περιεχόμενο για επιχειρήσεις στην Ελλάδα και το εξωτερικό. Διαθέτει και πλατφόρμα SEO συνδεδεμένη με το Google Search Console.'
           : 'Web design and SEO agency serving Greece (Athens, Thessaloniki, the islands) and international clients: website and e-shop development, local SEO, GEO/AEO, and content. Also builds a GSC-native SEO platform.',
         contactPoint: {
           '@type': 'ContactPoint',
@@ -183,9 +183,9 @@ function buildStructuredDataGraph(isEl: boolean) {
               '@type': 'Offer',
               itemOffered: {
                 '@type': 'Service',
-                name: isEl ? 'Κατασκευή Ιστοσελίδων' : 'Website Creation',
+                name: isEl ? 'Κατασκευή ιστοσελίδων' : 'Website Creation',
                 description: isEl
-                  ? 'SEO-ready ιστοσελίδες με διαφανείς τιμές και γρήγορη παράδοση'
+                  ? 'Ιστοσελίδες έτοιμες για SEO, με διαφανείς τιμές και γρήγορη παράδοση'
                   : 'SEO-ready websites with transparent pricing and fast delivery',
               },
             },
@@ -195,7 +195,7 @@ function buildStructuredDataGraph(isEl: boolean) {
                 '@type': 'Service',
                 name: isEl ? 'SEO & Τοπικό SEO' : 'SEO & Local SEO',
                 description: isEl
-                  ? 'Τεχνικό SEO, τοπική προβολή και GEO/AEO για Google και AI μηχανές'
+                  ? 'Τεχνικό SEO, τοπική προβολή και GEO/AEO για τη Google και τις μηχανές AI'
                   : 'Technical SEO, local visibility, and GEO/AEO for Google and AI engines',
               },
             },
@@ -203,7 +203,7 @@ function buildStructuredDataGraph(isEl: boolean) {
               '@type': 'Offer',
               itemOffered: {
                 '@type': 'Service',
-                name: isEl ? 'Κατασκευή E-shop' : 'E-shop Development',
+                name: isEl ? 'Κατασκευή e-shop' : 'E-shop Development',
                 description: isEl
                   ? 'WooCommerce e-shop με SEO αρχιτεκτονική και βελτιστοποίηση ταχύτητας'
                   : 'WooCommerce e-shops with SEO architecture and speed optimization',
@@ -230,7 +230,7 @@ function buildStructuredDataGraph(isEl: boolean) {
         url: SITE_URL,
         name: 'AnotherSEOGuru',
         description: isEl
-          ? 'Κατασκευή ιστοσελίδων, e-shop και SEO για επιχειρήσεις στην Ελλάδα - μαζί με SEO πλατφόρμα για ομάδες.'
+          ? 'Κατασκευή ιστοσελίδων, e-shop και SEO για επιχειρήσεις στην Ελλάδα - μαζί με πλατφόρμα SEO για ομάδες.'
           : 'Web design, e-shops, and SEO for businesses in Greece and beyond - plus an SEO platform for Search Console teams.',
         publisher: { '@id': `${SITE_URL}/#organization` },
         inLanguage: ['en', 'el'],

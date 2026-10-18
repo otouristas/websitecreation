@@ -41,14 +41,14 @@ export function ServiceAreaMap({ location, className = '', locale = 'en' }: Serv
                     marginHeight={0}
                     marginWidth={0}
                     src={`https://www.openstreetmap.org/export/embed.html?bbox=${bbox}&layer=mapnik&marker=${location.latitude},${location.longitude}`}
-                    title={isEl ? `Χάρτης ${cityName}` : `Map of ${cityName}`}
+                    title={isEl ? `Χάρτης: ${cityName}` : `Map of ${cityName}`}
                     className="absolute inset-0"
                 />
             </div>
             <div className="p-3 text-xs text-muted-foreground bg-surface-raised flex justify-between">
                 <span>
                     {isEl
-                        ? `Εξυπηρετούμε ${cityName} και τις γύρω περιοχές`
+                        ? `Εξυπηρετούμε: ${cityName} και τις γύρω περιοχές`
                         : `Serving ${cityName} & surrounding neighborhoods`}
                 </span>
                 <a
