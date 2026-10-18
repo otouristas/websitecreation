@@ -223,7 +223,7 @@ export function HowItWorks({ locale, source, tinted = false }: { readonly locale
           {
             title: isEl ? "Συνδέστε τη Google" : "Connect Google",
             text: isEl
-              ? "Κάντε εγγραφή με Google και εγκρίνετε πρόσβαση μόνο για ανάγνωση. Εμφανίζονται όλα τα properties στα οποία έχει πρόσβαση ο λογαριασμός σας· επιλέξτε από πού θα ξεκινήσετε."
+              ? "Κάντε εγγραφή με Google και εγκρίνετε πρόσβαση μόνο για ανάγνωση. Εμφανίζονται όλοι οι ιστότοποι στους οποίους έχει πρόσβαση ο λογαριασμός σας· επιλέξτε από πού θα ξεκινήσετε."
               : "Sign up with Google and approve read-only access. Every property your account can see is listed; pick where to start.",
             preview: <PropertiesMini locale={locale} />,
           },
@@ -298,7 +298,7 @@ const PERSONAS: ReadonlyArray<{ path: string; icon: typeof Users; title: Copy; t
   {
     path: "/platform/for/agencies",
     icon: Building2,
-    title: { en: "For agencies", el: "Για agencies" },
+    title: { en: "For agencies", el: "Για εταιρείες SEO" },
     text: { en: "Every client’s Search Console, CRM, tasks and white-label reports in one workspace.", el: "Το Search Console κάθε πελάτη, CRM, εργασίες και white-label αναφορές σε έναν χώρο εργασίας." },
   },
   {
@@ -432,7 +432,7 @@ export function PlatformLinks({ locale, current }: { readonly locale: L; readonl
     { path: "/platform", label: "AnotherSEOGuru App" },
     { path: "/platform/features", label: isEl ? "Δυνατότητες" : "Features" },
     { path: "/platform/pricing", label: isEl ? "Τιμές" : "Pricing" },
-    { path: "/platform/for/agencies", label: isEl ? "Για agencies" : "For agencies" },
+    { path: "/platform/for/agencies", label: isEl ? "Για εταιρείες SEO" : "For agencies" },
     { path: "/platform/for/in-house", label: isEl ? "Για in-house ομάδες" : "For in-house teams" },
     { path: "/platform/for/ecommerce", label: isEl ? "Για e-shop" : "For e-commerce" },
     { path: "/platform/iphone", label: isEl ? "Εφαρμογή iPhone" : "iPhone app" },

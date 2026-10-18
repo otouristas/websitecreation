@@ -141,7 +141,7 @@ export default async function PlatformForEcommercePage({ params }: PageProps) {
           pill={<KitEyebrow icon={<ShoppingBag />}>{tx("AnotherSEOGuru App for e-commerce", "AnotherSEOGuru App για e-shop")}</KitEyebrow>}
           title={
             <>
-              {tx("Find the shop pages", "Βρείτε τις σελίδες του e-shop")} <Accent>{tx("one fix from page one", "μία διόρθωση πριν την πρώτη σελίδα")}</Accent>
+              {tx("Find the shop pages", "Βρείτε τις σελίδες του e-shop")} <Accent>{tx("one fix from page one", "μία διόρθωση πριν από την πρώτη σελίδα")}</Accent>
             </>
           }
           lead={tx(

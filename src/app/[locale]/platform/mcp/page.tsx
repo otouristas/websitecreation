@@ -49,7 +49,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 const TOOLS: ReadonlyArray<{ name: string; text: Copy; write?: boolean }> = [
-  { name: "list_sites", text: c("The Search Console properties your account can read, with their project.", "Τα properties του Search Console που διαβάζει ο λογαριασμός σας, με το έργο του καθενός.") },
+  { name: "list_sites", text: c("The Search Console properties your account can read, with their project.", "Οι ιδιότητές του Search Console που διαβάζει ο λογαριασμός σας, με το έργο της καθεμίας.") },
   {
     name: "get_performance",
     text: c(
@@ -374,7 +374,7 @@ export default async function PlatformMcpPage({ params }: PageProps) {
               }
               description={tx(
                 "Sign-in is OAuth 2.1 with PKCE in your own browser, so neither the assistant nor the CLI sees your password. Every connection appears in Settings → Connected apps.",
-                "Η σύνδεση γίνεται με OAuth 2.1 και PKCE στον δικό σας browser, οπότε ούτε ο βοηθός ούτε η γραμμή εντολών βλέπουν τον κωδικό σας. Κάθε σύνδεση εμφανίζεται στο Ρυθμίσεις → Συνδεδεμένες εφαρμογές.",
+                "Η σύνδεση γίνεται με OAuth 2.1 και PKCE στον δικό σας browser, οπότε ούτε ο βοηθός ούτε η γραμμή εντολών βλέπουν τον κωδικό σας. Κάθε σύνδεση εμφανίζεται στις Ρυθμίσεις → Συνδεδεμένες εφαρμογές.",
               )}
             />
             <CheckList

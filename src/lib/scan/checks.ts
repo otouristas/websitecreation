@@ -193,7 +193,7 @@ export function runChecks(meta: ScanMeta, ctx: ScanContext): ScanCheck[] {
       id: 'https',
       weight: 8,
       pass: ctx.https,
-      label: { en: 'Served over HTTPS', el: 'Σερβίρεται μέσω HTTPS' },
+      label: { en: 'Served over HTTPS', el: 'Λειτουργεί μέσω HTTPS' },
       hint: {
         en: 'Install a certificate and redirect every http:// URL to https://.',
         el: 'Εγκαταστήστε πιστοποιητικό και ανακατευθύνετε κάθε http:// διεύθυνση σε https://.',
@@ -226,7 +226,7 @@ export function runChecks(meta: ScanMeta, ctx: ScanContext): ScanCheck[] {
       weight: 10,
       pass: descLen >= 70 && descLen <= 165,
       detail: meta.description ? `${descLen} chars` : 'missing',
-      label: { en: 'Meta description, 70-165 characters', el: 'Meta περιγραφή, 70-165 χαρακτήρες' },
+      label: { en: 'Meta description, 70-165 characters', el: 'Meta description, 70-165 χαρακτήρες' },
       hint: {
         en: 'Add a description that answers the query in one sentence and ends with a reason to click.',
         el: 'Προσθέστε περιγραφή που απαντά στο ερώτημα σε μία πρόταση και κλείνει με λόγο για κλικ.',

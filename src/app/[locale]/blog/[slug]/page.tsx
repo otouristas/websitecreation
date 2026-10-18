@@ -270,7 +270,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             <footer className="mt-14 border-t border-hairline pt-10">
               {counterpart ? (
                 <p className="mb-6 text-sm text-muted-foreground">
-                  {isEl ? "Read this article in English: " : "Διαβάστε το άρθρο στα Ελληνικά: "}
+                  {isEl ? "Read this article in English: " : "Διαβάστε το άρθρο στα ελληνικά: "}
                   <Link
                     href={localizedPath(counterpart.locale, `/blog/${counterpart.slug}`)}
                     className="text-primary underline"
@@ -282,7 +282,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
               {moneyPages.length > 0 ? (
                 <RelatedPages
-                  title={isEl ? "Υπηρεσίες & Τιμές" : "Services & Pricing"}
+                  title={isEl ? "Υπηρεσίες & τιμές" : "Services & Pricing"}
                   pages={moneyPages}
                 />
               ) : null}
@@ -290,7 +290,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               {relatedPosts.length > 0 ? (
                 <RelatedPages
                   className="mt-10"
-                  title={isEl ? "Σχετικά Άρθρα" : "Related Articles"}
+                  title={isEl ? "Σχετικά άρθρα" : "Related Articles"}
                   pages={relatedPosts}
                 />
               ) : null}
@@ -311,7 +311,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 </p>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                   {isEl
-                    ? "Συνδέστε το Search Console και δείτε ποια queries απέχουν μία θέση από κλικ."
+                    ? "Συνδέστε το Search Console και δείτε ποια ερωτήματα απέχουν μία θέση από τα κλικ."
                     : "Connect Search Console and see which queries are one position from real clicks."}
                 </p>
                 <a

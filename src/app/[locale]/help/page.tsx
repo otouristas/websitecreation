@@ -58,7 +58,7 @@ function homeBlocks(locale: SiteLocale): Block[] {
     {
       type: "p",
       text: el
-        ? "Το **AnotherSEOGuru App** διαβάζει τα δεδομένα σας από το **Google Search Console** και τα κάνει πλάνο για την εβδομάδα: ποιες σελίδες και ποια queries να δουλέψετε, τι να αλλάξετε και πόσα clicks φέρνει κάθε διόρθωση. Εδώ θα βρείτε οδηγούς για κάθε οθόνη του web app και της εφαρμογής iPhone, και ένα SEO γλωσσάρι με κάθε όρο σε απλά λόγια."
+        ? "Το **AnotherSEOGuru App** διαβάζει τα δεδομένα σας από το **Google Search Console** και τα κάνει πλάνο για την εβδομάδα: ποιες σελίδες και ποια ερωτήματα να δουλέψετε, τι να αλλάξετε και πόσα κλικ φέρνει κάθε διόρθωση. Εδώ θα βρείτε οδηγούς για κάθε οθόνη του web app και της εφαρμογής iPhone, και ένα SEO γλωσσάρι με κάθε όρο σε απλά λόγια."
         : "**AnotherSEOGuru App** reads your **Google Search Console** data and turns it into a plan for the week: which pages and queries to work on, what to change, and how many clicks each fix is likely to bring. Here you'll find guides for every screen of the web app and the iPhone app, plus an SEO glossary with every term in plain words.",
     },
     {
@@ -84,13 +84,13 @@ function homeBlocks(locale: SiteLocale): Block[] {
         {
           title: el ? "Διαλέξτε τους ιστότοπούς σας" : "Pick your sites",
           text: el
-            ? "Κάθε property του Search Console γίνεται project. Ορίστε brand terms, ανταγωνιστές και αγορά. [Δείτε πώς](/help/getting-started/projects-and-sites)."
+            ? "Κάθε ιδιότητά του Search Console γίνεται έργο. Ορίστε όρους επωνυμίας, ανταγωνιστές και αγορά. [Δείτε πώς](/help/getting-started/projects-and-sites)."
             : "Each Search Console property becomes a project. Set brand terms, competitors and your market. [See how](/help/getting-started/projects-and-sites).",
         },
         {
           title: el ? "Ανοίξτε την «Αυτή την εβδομάδα»" : "Open This week",
           text: el
-            ? "Οι διορθώσεις με τα περισσότερα clicks βρίσκονται στην κορυφή, με την υγεία της αναζήτησης και την τάση της κίνησης από κάτω."
+            ? "Οι διορθώσεις με τα περισσότερα κλικ βρίσκονται στην κορυφή, με την υγεία της αναζήτησης και την τάση της κίνησης από κάτω."
             : "The fixes worth the most clicks sit at the top, with search health and the traffic trend underneath.",
           image: shot("overview", el ? "Η οθόνη «Αυτή την εβδομάδα» με τις κορυφαίες διορθώσεις" : "The This week screen with the top fixes"),
         },
@@ -103,7 +103,7 @@ function homeBlocks(locale: SiteLocale): Block[] {
         {
           title: el ? "Μετρήστε το αποτέλεσμα" : "Measure the result",
           text: el
-            ? "Το AnotherSEOGuru App συγκρίνει clicks και θέσεις πριν και μετά από κάθε αλλαγή, ώστε να βλέπετε τι δούλεψε."
+            ? "Το AnotherSEOGuru App συγκρίνει κλικ και θέσεις πριν και μετά από κάθε αλλαγή, ώστε να βλέπετε τι δούλεψε."
             : "AnotherSEOGuru App compares clicks and positions before and after each change, so you can see what worked.",
           image: shot("tasks-results", el ? "Αποτελέσματα εργασιών πριν και μετά" : "Task results before and after"),
         },
@@ -138,7 +138,7 @@ function homeBlocks(locale: SiteLocale): Block[] {
               type: "gallery",
               items: [
                 phone("today", el ? "Η οθόνη Σήμερα στο iPhone" : "The Today screen on iPhone"),
-                phone("ranking-ladder", el ? "Η σκάλα θέσεων στο iPhone" : "The ranking ladder on iPhone"),
+                phone("ranking-ladder", el ? "Η κλίμακα θέσεων στο iPhone" : "The ranking ladder on iPhone"),
                 phone("site-audit", el ? "Ο έλεγχος ιστότοπου στο iPhone" : "The site audit on iPhone"),
               ],
             },
@@ -157,10 +157,10 @@ function homeBlocks(locale: SiteLocale): Block[] {
       type: "faq",
       items: el
         ? [
-            { q: "Τι χρειάζομαι για να ξεκινήσω;", a: "Έναν λογαριασμό Google με πρόσβαση σε τουλάχιστον ένα property του Search Console. Η εγγραφή είναι δωρεάν και η πρόσβαση μόνο για ανάγνωση." },
+            { q: "Τι χρειάζομαι για να ξεκινήσω;", a: "Έναν λογαριασμό Google με πρόσβαση σε τουλάχιστον μία ιδιότητά του Search Console. Η εγγραφή είναι δωρεάν και η πρόσβαση μόνο για ανάγνωση." },
             { q: "Μπορώ να το δοκιμάσω χωρίς να συνδέσω ιστότοπο;", a: "Ναι. Η [ζωντανή επίδειξη](/demo) τρέχει με δείγμα δεδομένων για τρεις ιστότοπους και κάθε οθόνη λειτουργεί." },
             { q: "Υπάρχει εφαρμογή για iPhone;", a: "Ναι, σε beta μέσω TestFlight. Ζητήστε πρόσκληση στο support@anotherseoguru.com. Δεν είναι ακόμη στο App Store." },
-            { q: "Μπορούν τα AI εργαλεία να διαβάσουν αυτούς τους οδηγούς;", a: "Ναι. Κάθε σελίδα υπάρχει και ως Markdown (προσθέστε `.md` στο URL) και όλα μαζί στο `/llms-full.txt`. Το «Αντιγραφή σελίδας» τα ανοίγει απευθείας σε ChatGPT ή Claude." },
+            { q: "Μπορούν τα εργαλεία AI να διαβάσουν αυτούς τους οδηγούς;", a: "Ναι. Κάθε σελίδα υπάρχει και ως Markdown (προσθέστε `.md` στο URL) και όλα μαζί στο `/llms-full.txt`. Το «Αντιγραφή σελίδας» τα ανοίγει απευθείας σε ChatGPT ή Claude." },
           ]
         : [
             { q: "What do I need to start?", a: "A Google account with access to at least one Search Console property. Signing up is free and access is read-only." },
@@ -207,7 +207,7 @@ export default async function HelpHomePage({ params }: PageProps) {
         title={el ? "Καλώς ήρθατε στο AnotherSEOGuru App" : "Welcome to AnotherSEOGuru App"}
         description={
           el
-            ? "Η πλατφόρμα SEO πάνω στο Google Search Console, για web και iPhone. Μάθετε να τη χρησιμοποιείτε από την πρώτη σύνδεση μέχρι τη λειτουργία ενός γραφείου."
+            ? "Η πλατφόρμα SEO πάνω στο Google Search Console, για web και iPhone. Μάθετε να τη χρησιμοποιείτε από την πρώτη σύνδεση μέχρι τη διαχείριση μιας εταιρείας SEO."
             : "The SEO platform built on Google Search Console, on the web and on iPhone. Learn it from your first connection to running an agency on it."
         }
         path={helpPath(locale)}

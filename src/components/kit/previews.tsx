@@ -326,7 +326,7 @@ export function OverviewPreview({ locale: l }: { readonly locale: L }) {
               </div>
               <span className="hidden items-center gap-1 text-[10.5px] text-muted-foreground sm:inline-flex">
                 <span className="size-1.5 rounded-full bg-success" />
-                {tx(l, "Updated 4m ago", "Ενημερώθηκε πριν 4 λεπτά")}
+                {tx(l, "Updated 4m ago", "Ενημερώθηκε πριν από 4 λεπτά")}
               </span>
             </div>
             <div className="mt-3 grid grid-cols-2 gap-1 rounded-xl border border-hairline bg-background/60 p-1 sm:grid-cols-4">
@@ -759,7 +759,7 @@ export function PipelinePreview({ locale: l }: { readonly locale: L }) {
   const cols: { stage: string; items: [string, string][] }[] = [
     { stage: tx(l, "New leads", "Νέα leads"), items: [["Villa Thalassa", tx(l, "Website audit", "Έλεγχος ιστοσελίδας")], ["Milos Rent", tx(l, "Free audit form", "Φόρμα ελέγχου")]] },
     { stage: tx(l, "Proposal sent", "Προσφορά"), items: [["Kyma Hotel", "€900/" + tx(l, "mo", "μήνα")]] },
-    { stage: tx(l, "Won", "Κλειστά"), items: [["Naxos Tours", "€1,500/" + tx(l, "mo", "μήνα")], ["Oia Cave", "€2,500"]] },
+    { stage: tx(l, "Won", "Κερδισμένα"), items: [["Naxos Tours", "€1,500/" + tx(l, "mo", "μήνα")], ["Oia Cave", "€2,500"]] },
   ];
   return (
     <PCard icon={<Users />} title={tx(l, "Pipeline", "Pipeline")} subtitle={tx(l, "Requests from your website land here", "Τα αιτήματα από την ιστοσελίδα σας έρχονται εδώ")}>

@@ -18,7 +18,7 @@ const INCLUDED: ReadonlyArray<{ icon: LucideIcon; label: Copy }> = [
     },
   },
   { icon: Download, label: { en: "CSV export from every table", el: "Εξαγωγή σε CSV από κάθε πίνακα" } },
-  { icon: RotateCcw, label: { en: "Cancel anytime from Billing", el: "Ακύρωση οποτεδήποτε από τη Χρέωση" } },
+  { icon: RotateCcw, label: { en: "Cancel anytime from Billing", el: "Ακύρωση οποτεδήποτε από τις Χρεώσεις" } },
 ];
 
 export function IncludedGrid({ locale }: { readonly locale: L }) {
@@ -216,7 +216,7 @@ export function CreditPacks({ locale, source }: { readonly locale: L; readonly s
             <div className="mt-4 font-display text-[28px] font-semibold leading-none tracking-[-0.03em] text-foreground tabular-nums">{formatNumber(locale, total)}</div>
             <div className="mt-1 text-[13px] text-muted-foreground">
               {isEl ? "μονάδες" : "credits"}
-              {pack.bonus > 0 ? <span> · {isEl ? `περιλαμβάνει ${formatNumber(locale, pack.bonus)} δώρο` : `includes ${formatNumber(locale, pack.bonus)} bonus`}</span> : null}
+              {pack.bonus > 0 ? <span> · {isEl ? `περιλαμβάνει ${formatNumber(locale, pack.bonus)} μονάδες δώρο` : `includes ${formatNumber(locale, pack.bonus)} bonus`}</span> : null}
             </div>
             <div className="mt-5 flex items-baseline justify-between border-t border-hairline pt-4">
               <span className="text-[18px] font-semibold tabular-nums text-foreground">{formatUsd(locale, pack.price)}</span>
@@ -229,7 +229,7 @@ export function CreditPacks({ locale, source }: { readonly locale: L; readonly s
       })}
       <p className="text-[13px] text-muted-foreground sm:col-span-2 lg:col-span-4">
         {isEl
-          ? "Εφάπαξ ενισχύσεις για τους πιο φορτωμένους μήνες, που αγοράζονται από τη Χρέωση μέσα στην εφαρμογή."
+          ? "Εφάπαξ ενισχύσεις για τους πιο φορτωμένους μήνες, που αγοράζονται από τις Χρεώσεις μέσα στην εφαρμογή."
           : "One-time top-ups for busy months, bought from Billing inside the app."}{" "}
         <a href={appLink("/signup", locale, source)} className="font-medium text-link hover:underline hover:underline-offset-4">
           {isEl ? "Δημιουργήστε λογαριασμό" : "Create an account"}

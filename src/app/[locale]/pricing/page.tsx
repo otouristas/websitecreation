@@ -149,7 +149,7 @@ export default async function PricingPage({
               {offerLive ? (
                 <p className="inline-flex max-w-2xl flex-wrap items-center gap-2 rounded-xl border border-warning/30 bg-warning/10 px-4 py-2.5 text-[13px] leading-relaxed text-warning">
                   {isEl
-                    ? "Summer Offer: 20% χαμηλότερη τιμή για νέα projects που θα επιβεβαιωθούν έως 31 Αυγούστου 2026."
+                    ? "Summer Offer: 20% χαμηλότερη τιμή για νέα έργα που θα επιβεβαιωθούν έως 31 Αυγούστου 2026."
                     : "Summer Offer: 20% lower pricing for new projects confirmed by 31 August 2026."}
                 </p>
               ) : null}

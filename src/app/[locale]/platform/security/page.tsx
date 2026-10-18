@@ -229,7 +229,7 @@ export default async function PlatformSecurityPage({ params }: PageProps) {
               <CheckList
                 items={[
                   <>
-                    <strong>{tx("Database and authentication", "Η βάση δεδομένων και η αυθεντικοποίηση")}</strong>{" "}
+                    <strong>{tx("Database and authentication", "Η βάση δεδομένων και ο έλεγχος ταυτότητας")}</strong>{" "}
                     {tx("run on Supabase (managed PostgreSQL) with row-level security on user data.", "τρέχουν στη Supabase (managed PostgreSQL), με ασφάλεια σε επίπεδο γραμμής για τα δεδομένα χρηστών.")}
                   </>,
                   <>

@@ -123,7 +123,7 @@ export function RedirectMapPreview({ locale: l }: { readonly locale: L }) {
     <PCard
       icon={<CornerDownRight />}
       title={tx(l, 'Redirect map', 'Χάρτης ανακατευθύνσεων')}
-      subtitle={tx(l, '214 old URLs mapped before launch · sample data', '214 παλιά URL αντιστοιχισμένα πριν το λανσάρισμα · δείγμα')}
+      subtitle={tx(l, '214 old URLs mapped before launch · sample data', '214 παλιά URL αντιστοιχισμένα πριν από το λανσάρισμα · δείγμα')}
       meta={tx(l, '0 lost', '0 χαμένα')}
     >
       <ul className="divide-y divide-hairline font-mono text-[11.5px]">

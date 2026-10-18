@@ -171,7 +171,7 @@ export function getNavModel(locale: SiteLocale): NavModel {
         title: t('Tourism', 'Τουρισμός'),
         items: [
           { href: lp('/solutions/hotels'), label: t('Hotels & hospitality', 'Ξενοδοχεία'), desc: t('Direct bookings from search', 'Απευθείας κρατήσεις από την αναζήτηση'), icon: 'hotel', badge: POPULAR },
-          { href: lp('/solutions/villas-apartments'), label: t('Villas & apartments', 'Βίλες & καταλύματα'), desc: t('Fewer OTA commissions', 'Λιγότερες προμήθειες σε OTA'), icon: 'home' },
+          { href: lp('/solutions/villas-apartments'), label: t('Villas & apartments', 'Βίλες & διαμερίσματα'), desc: t('Fewer OTA commissions', 'Λιγότερες προμήθειες σε OTA'), icon: 'home' },
           { href: lp('/solutions/rent-a-car'), label: t('Rent-a-car', 'Ενοικίαση αυτοκινήτων'), desc: t('Bookings before the ferry lands', 'Κρατήσεις πριν δέσει το πλοίο'), icon: 'car' },
           { href: lp('/solutions/tour-operators'), label: t('Tours & activities', 'Εκδρομές & δραστηριότητες'), desc: t('Sell out the season', 'Γεμάτη σεζόν'), icon: 'compass' },
           { href: lp('/solutions/restaurants'), label: t('Restaurants', 'Εστιατόρια'), desc: t('Top of “near me” searches', 'Πρώτοι στο «κοντά μου»'), icon: 'utensils' },
@@ -217,7 +217,7 @@ export function getNavModel(locale: SiteLocale): NavModel {
           { href: lp('/platform/features#opportunities'), label: t('Opportunities', 'Ευκαιρίες'), desc: t('Ranked fixes with click estimates', 'Διορθώσεις με εκτίμηση κλικ'), icon: 'sparkles', badge: POPULAR },
           { href: lp('/platform/features#performance'), label: t('Performance', 'Απόδοση'), desc: t('Every traffic change, explained', 'Κάθε αλλαγή, εξηγημένη'), icon: 'chart' },
           { href: lp('/platform/features#keywords'), label: t('Keywords & rank tracking', 'Λέξεις-κλειδιά & θέσεις'), desc: t('Find demand, track wins', 'Βρείτε ζήτηση, μετρήστε θέσεις'), icon: 'key' },
-          { href: lp('/platform/features#content'), label: t('Content studio', 'Περιεχόμενο'), desc: t('Brief, write, publish to WordPress', 'Brief, γράψιμο, δημοσίευση'), icon: 'file' },
+          { href: lp('/platform/features#content'), label: t('Content studio', 'Περιεχόμενο'), desc: t('Brief, write, publish to WordPress', 'Πλάνο, συγγραφή, δημοσίευση'), icon: 'file' },
           { href: lp('/platform/features#audit'), label: t('Site audit', 'Έλεγχος ιστότοπου'), desc: t('Technical issues, prioritised', 'Τεχνικά θέματα με προτεραιότητα'), icon: 'shield' },
         ],
       },
@@ -227,7 +227,7 @@ export function getNavModel(locale: SiteLocale): NavModel {
           { href: lp('/platform/features#ai-visibility'), label: t('AI visibility', 'Ορατότητα σε AI'), desc: t('When ChatGPT and Gemini cite you', 'Πότε σας αναφέρουν ChatGPT και Gemini'), icon: 'bot', badge: AI },
           { href: lp('/platform/features#assistant'), label: t('AI assistant', 'Βοηθός AI'), desc: t('Answers from your own data', 'Απαντήσεις από τα δεδομένα σας'), icon: 'message', badge: AI },
           { href: lp('/platform/features#competitors'), label: t('Competitors', 'Ανταγωνιστές'), desc: t('Their wins, your gaps', 'Τα δικά τους κέρδη, τα δικά σας κενά'), icon: 'swords' },
-          { href: lp('/platform/for/agencies'), label: t('For agencies', 'Για agencies'), desc: t('Clients, pipeline and reports', 'Πελάτες, pipeline και αναφορές'), icon: 'users' },
+          { href: lp('/platform/for/agencies'), label: t('For agencies', 'Για εταιρείες SEO'), desc: t('Clients, pipeline and reports', 'Πελάτες, pipeline και αναφορές'), icon: 'users' },
           // One entry for every way in (iPhone, Chrome, WordPress, AI assistants), so the
           // mobile sheet stays light; the hub links on to each product page.
           { href: lp('/platform/integrations'), label: t('Apps & integrations', 'Εφαρμογές & ενσωματώσεις'), desc: t('iPhone, Chrome, WordPress, AI assistants', 'iPhone, Chrome, WordPress, βοηθοί AI'), icon: 'plug', badge: { kind: 'new' as const, label: t('New', 'Νέο') } },

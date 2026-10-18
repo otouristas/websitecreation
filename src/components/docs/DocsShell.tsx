@@ -65,7 +65,7 @@ function askCopy(locale: SiteLocale): AskCopy {
     sources: el ? "Πηγές" : "Sources",
     thinking: el ? "Ψάχνω στους οδηγούς…" : "Reading the docs…",
     fallbackIntro: el ? "Αυτές οι σελίδες ταιριάζουν περισσότερο με την ερώτησή σας:" : "These pages match your question best:",
-    handoff: el ? "Ή ρωτήστε με τα docs μας ως πλαίσιο:" : "Or ask with our docs as context:",
+    handoff: el ? "Ή ρωτήστε με τους οδηγούς μας ως πλαίσιο:" : "Or ask with our docs as context:",
     limited: el ? "Πολλές ερωτήσεις σε λίγο χρόνο. Δοκιμάστε ξανά σε λίγο ή γράψτε μας." : "Too many questions in a short time. Try again shortly, or write to us.",
     close: el ? "Κλείσιμο" : "Close",
     disclaimer: el ? `Το AI μπορεί να κάνει λάθη. Για τον λογαριασμό σας γράψτε στο ${SUPPORT_EMAIL}.` : `AI can make mistakes. For your account, write to ${SUPPORT_EMAIL}.`,

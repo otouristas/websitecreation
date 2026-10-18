@@ -277,7 +277,7 @@ export default async function PlatformForAgenciesPage({ params }: PageProps) {
               }
               body={tx(
                 "Every Search Console property your Google account can see is one keystroke away. Press ⌘K, type a few letters and you’re in that client’s data with your date range kept.",
-                "Κάθε ιδιότητα του Search Console στην οποία έχει πρόσβαση ο λογαριασμός σας Google απέχει ένα πλήκτρο. Πατήστε ⌘K, πληκτρολογήστε λίγα γράμματα και βρίσκεστε στα δεδομένα του πελάτη, με το ίδιο εύρος ημερομηνιών.",
+                "Κάθε ιδιότητά του Search Console στην οποία έχει πρόσβαση ο λογαριασμός σας Google απέχει ένα πλήκτρο. Πατήστε ⌘K, πληκτρολογήστε λίγα γράμματα και βρίσκεστε στα δεδομένα του πελάτη, με το ίδιο εύρος ημερομηνιών.",
               )}
               preview={
                 <Stage>

@@ -262,7 +262,7 @@ export function HomePageView({ locale }: { locale: SiteLocale }) {
               }
               description={tx(
                 'From the first Google search to the AI answer to the booking page: we make sure you show up, get chosen and get the enquiry.',
-                'Από την αναζήτηση στη Google και την απάντηση της AI μέχρι τη σελίδα κράτησης: φροντίζουμε να εμφανίζεστε, να σας επιλέγουν και να σας γράφουν.',
+                'Από την αναζήτηση στη Google και την απάντηση της AI μέχρι τη σελίδα κράτησης: φροντίζουμε να εμφανίζεστε, να σας επιλέγουν και να σας στέλνουν αιτήματα.',
               )}
             />
             <div className="mt-20 grid gap-24 sm:gap-28">

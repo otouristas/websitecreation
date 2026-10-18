@@ -281,7 +281,7 @@ export const glossaryCategories: GlossaryCategory[] = [
         shortDefinition: "The process of storing and organizing crawled pages in search engine databases.",
         fullDefinition: "After crawling, search engines process and store page content in their index (a massive database). Only indexed pages can appear in search results. Indexing involves analyzing content, understanding topics, and determining relevance.",
         example: "After Googlebot crawls your page, it gets processed and added to Google's index within hours to weeks, depending on site authority.",
-        exampleEl: "Αφού το Googlebot κάνει crawl τη σελίδα σας, αυτή επεξεργάζεται και προστίθεται στο ευρετήριο της Google μέσα σε λίγες ώρες έως μερικές εβδομάδες, ανάλογα με το κύρος του site.",
+        exampleEl: "Αφού το Googlebot κάνει crawl τη σελίδα σας, η Google την επεξεργάζεται και την προσθέτει στο ευρετήριό της μέσα σε λίγες ώρες έως μερικές εβδομάδες, ανάλογα με το κύρος του site.",
         technique: "Use the URL Inspection tool in GSC to check indexing status, request indexing for important pages, avoid duplicate content, and ensure pages are crawlable.",
         techniqueEl: "Χρησιμοποιήστε το εργαλείο URL Inspection στο Search Console για να ελέγξετε την κατάσταση ευρετηρίασης, ζητήστε ευρετηρίαση για τις σημαντικές σελίδες, αποφύγετε το διπλότυπο περιεχόμενο και βεβαιωθείτε ότι οι σελίδες επιτρέπουν crawl.",
         proTip: "A page being crawled doesn't guarantee indexing. Low-quality or duplicate content may be crawled but not indexed.",
@@ -749,7 +749,7 @@ export const glossaryCategories: GlossaryCategory[] = [
         technique: "Analyze the current SERP to understand what Google thinks the intent is. Match your content format (guide, product page, comparison, etc.) to the intent.",
         techniqueEl: "Αναλύστε την τρέχουσα SERP για να καταλάβετε ποια πρόθεση θεωρεί η Google ότι έχει η αναζήτηση. Προσαρμόστε τη μορφή του περιεχομένου (οδηγός, σελίδα προϊόντος, σύγκριση κ.λπ.) στην πρόθεση.",
         proTip: "If your content doesn't match search intent, you won't rank - no matter how good it is. Always check the SERP before creating content.",
-        proTipEl: "Αν το περιεχόμενό σας δεν ταιριάζει με την πρόθεση αναζήτησης, δεν θα κατατάξει, όσο καλό κι αν είναι. Ελέγχετε πάντα τη SERP πριν γράψετε.",
+        proTipEl: "Αν το περιεχόμενό σας δεν ταιριάζει με την πρόθεση αναζήτησης, δεν θα κατατάσσεται, όσο καλό κι αν είναι. Ελέγχετε πάντα τη SERP πριν γράψετε.",
         relatedTerms: ["keywords", "serp-analysis", "content-optimization"],
         relatedLinks: [
           { title: "SERP Intent Mapper", url: "/features/serp-intent-mapper", type: "feature" }
@@ -1034,7 +1034,7 @@ export const glossaryCategories: GlossaryCategory[] = [
         shortDefinition: "Enhanced search results displaying additional information like stars, prices, or images.",
         fullDefinition: "Rich snippets are search results enhanced with additional visual information derived from structured data. They can include star ratings, prices, availability, cooking times, calorie counts, and more - making listings more eye-catching.",
         example: "A recipe result showing: ★★★★☆ (4.5) · 45 min · 350 calories vs a plain blue link with just title and description.",
-        exampleEl: "Ένα αποτέλεσμα συνταγής που δείχνει: ★★★★☆ (4.5) · 45 λεπτά · 350 θερμίδες, απέναντι σε έναν απλό μπλε σύνδεσμο με μόνο τίτλο και περιγραφή.",
+        exampleEl: "Ένα αποτέλεσμα συνταγής που δείχνει: ★★★★☆ (4,5) · 45 λεπτά · 350 θερμίδες, απέναντι σε έναν απλό μπλε σύνδεσμο με μόνο τίτλο και περιγραφή.",
         technique: "Implement relevant schema markup (Product, Recipe, Review, FAQ, HowTo), test with Rich Results Test, ensure data accuracy, avoid spammy markup.",
         techniqueEl: "Εφαρμόστε το σχετικό schema markup (Product, Recipe, Review, FAQ, HowTo), ελέγξτε το με το Rich Results Test, βεβαιωθείτε ότι τα στοιχεία είναι ακριβή και αποφύγετε το παραπλανητικό markup.",
         proTip: "Rich snippets improve CTR by 20-30%. Prioritize schema for your most important page types and track CTR changes after implementation.",
@@ -1851,7 +1851,7 @@ export const glossaryCategories: GlossaryCategory[] = [
         id: "google-analytics",
         termEl: "Google Analytics 4 (GA4)",
         shortDefinitionEl: "Δωρεάν πλατφόρμα analytics της Google για συμπεριφορά χρηστών και conversions, κρίσιμη για μέτρηση SEO.",
-        fullDefinitionEl: "Το Google Analytics 4 μετρά sessions, engagement και conversions. Για SEO, συνδέστε το με Search Console ώστε να βλέπετε ποια οργανικά ερωτήματα φέρνουν πραγματική αξία, όχι μόνο εντυπώσεις.",
+        fullDefinitionEl: "Το Google Analytics 4 μετρά sessions, engagement και conversions. Για SEO, συνδέστε το με Search Console ώστε να βλέπετε ποια οργανικά ερωτήματα φέρνουν πραγματική αξία, όχι μόνο εμφανίσεις.",
         term: "Google Analytics 4 (GA4)",
         shortDefinition: "Google's free web analytics platform for tracking user behavior.",
         fullDefinition: "Google Analytics 4 is Google's analytics platform that tracks website traffic, user behavior, conversions, and more. It uses event-based tracking and machine learning to provide insights about your audience and their journey.",
@@ -2159,7 +2159,7 @@ export const glossaryCategories: GlossaryCategory[] = [
         technique: "Use canonical tags to specify preferred versions, implement proper redirects, set parameter handling in GSC, create unique content, consolidate similar pages.",
         techniqueEl: "Χρησιμοποιήστε canonical tags για να δηλώσετε την προτιμώμενη έκδοση, εφαρμόστε σωστά redirects, ορίστε τον χειρισμό παραμέτρων στο Search Console, γράψτε μοναδικό περιεχόμενο και ενοποιήστε τις παρόμοιες σελίδες.",
         proTip: "Duplicate content typically isn't penalized - it's filtered. But it wastes crawl budget and can cause the wrong version to rank. Fix with canonicals.",
-        proTipEl: "Το διπλότυπο περιεχόμενο συνήθως δεν τιμωρείται: φιλτράρεται. Όμως σπαταλά crawl budget και μπορεί να κατατάξει τη λάθος έκδοση. Διορθώστε το με canonicals.",
+        proTipEl: "Το διπλότυπο περιεχόμενο συνήθως δεν τιμωρείται: φιλτράρεται. Όμως σπαταλά crawl budget και μπορεί να οδηγήσει στην κατάταξη της λάθος έκδοσης. Διορθώστε το με canonicals.",
         relatedTerms: ["canonical-tag", "index-bloat", "content-quality"],
         relatedLinks: [
           { title: "Technical SEO Audits", url: "/features/technical-seo-audits", type: "feature" }

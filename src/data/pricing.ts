@@ -228,7 +228,7 @@ export interface AddOn {
 /** All add-ons are "from" prices: scope materially changes the final figure. */
 export const addOns: readonly AddOn[] = [
   { id: 'content-page', from: 180, nameEn: 'Additional SEO / content page', nameEl: 'Επιπλέον σελίδα SEO ή περιεχομένου' },
-  { id: 'website-page', from: 180, nameEn: 'Additional website page', nameEl: 'Επιπλέον σελίδα ιστοσελίδας' },
+  { id: 'website-page', from: 180, nameEn: 'Additional website page', nameEl: 'Επιπλέον σελίδα στην ιστοσελίδα' },
   { id: 'technical-audit', from: 450, nameEn: 'Technical SEO audit', nameEl: 'Τεχνικός έλεγχος SEO' },
   { id: 'advanced-audit', from: 750, nameEn: 'Advanced SEO audit', nameEl: 'Εκτενής έλεγχος SEO' },
   { id: 'maintenance', from: 250, nameEn: 'Website maintenance', nameEl: 'Συντήρηση ιστοσελίδας', recurring: true },

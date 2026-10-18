@@ -63,7 +63,7 @@ export default async function LocationsPage({ params }: PageProps) {
   };
 
   const collectionSchema = generateCollectionPageSchema({
-    name: isEl ? "Κατασκευή Ιστοσελίδων & SEO ανά Πόλη" : "Website creation & SEO by city",
+    name: isEl ? "Κατασκευή ιστοσελίδων & SEO ανά πόλη" : "Website creation & SEO by city",
     url: `${BASE_URL}${lp("/locations")}`,
     inLanguage: siteLocale,
     items: cities.map((location) => ({
@@ -77,14 +77,14 @@ export default async function LocationsPage({ params }: PageProps) {
     ? {
         home: "Αρχική",
         locations: "Τοποθεσίες",
-        h1: "Κατασκευή Ιστοσελίδων & SEO ανά Πόλη",
+        h1: "Κατασκευή ιστοσελίδων & SEO ανά πόλη",
         sub: "Σελίδες για τις πόλεις και τα νησιά όπου δουλεύουμε περισσότερο. Για κάθε άλλη περιοχή, οι σελίδες υπηρεσιών και η προσφορά ισχύουν το ίδιο.",
         getStarted: "Ξεκινήστε",
-        viewPricing: "Δείτε τις Τιμές",
+        viewPricing: "Δείτε τις τιμές",
         citiesTitle: "Πόλεις και νησιά",
         allServicesTitle: "Όλες οι υπηρεσίες",
         allServicesSub: "Δουλεύουμε με επιχειρήσεις σε όλη την Ελλάδα, όχι μόνο στις πόλεις παραπάνω.",
-        readyTitle: "Έτοιμοι να Ξεκινήσετε το Project Σας;",
+        readyTitle: "Έτοιμοι να ξεκινήσετε το έργο σας;",
         readySub: "Λάβετε μια προσαρμοσμένη προσφορά για την επιχείρησή σας.",
         otherLocaleLink: "Cities in English →",
       }
@@ -100,7 +100,7 @@ export default async function LocationsPage({ params }: PageProps) {
         allServicesSub: "We work with businesses well beyond the cities above.",
         readyTitle: "Ready to Start Your Project?",
         readySub: "Get a custom quote for your business.",
-        otherLocaleLink: "Πόλεις στα Ελληνικά →",
+        otherLocaleLink: "Πόλεις στα ελληνικά →",
       };
 
   return (

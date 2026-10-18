@@ -13,8 +13,8 @@ export function BlogProductCta({ locale = 'en' }: { locale?: SiteLocale }) {
 
   const points = isEl
     ? [
-        'Δείτε ποια queries απέχουν μία θέση από κλικ',
-        'Ομαδοποίηση λέξεων-κλειδιών ανά cluster',
+        'Δείτε ποια ερωτήματα απέχουν μία θέση από τα κλικ',
+        'Ομαδοποίηση λέξεων-κλειδιών σε θεματικές ομάδες',
         'Παρακολούθηση αναφορών σε ChatGPT και AI Overviews',
       ]
     : [
@@ -44,7 +44,7 @@ export function BlogProductCta({ locale = 'en' }: { locale?: SiteLocale }) {
             </h2>
             <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-muted-foreground">
               {isEl
-                ? 'Η AnotherSEOGuru δεν είναι μόνο agency. Φτιάχνουμε τη δική μας πλατφόρμα SEO που δείχνει ακριβώς πού χάνετε κλικ και τι αποδίδει πρώτο.'
+                ? 'Η AnotherSEOGuru δεν είναι μόνο εταιρεία SEO. Φτιάχνουμε τη δική μας πλατφόρμα SEO που δείχνει ακριβώς πού χάνετε κλικ και τι αποδίδει πρώτο.'
                 : 'AnotherSEOGuru is not only an agency. We build our own SEO platform that shows exactly where you are losing clicks and what to fix first.'}
             </p>
             <CheckList className="mt-6" size="sm" items={points} />

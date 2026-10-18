@@ -30,7 +30,7 @@ export function AdsLandingBand({ industrySlug, locale = 'en' }: AdsLandingBandPr
       <div className="container">
         <div className="mb-8 text-center">
           <h2 className="text-2xl font-bold">
-            {isEl ? 'Έργα που μας εμπιστεύονται' : 'Trusted by tourism brands'}
+            {isEl ? 'Μας εμπιστεύονται τουριστικές επιχειρήσεις' : 'Trusted by tourism brands'}
           </h2>
           <p className="mt-2 text-muted-foreground">
             {isEl

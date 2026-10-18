@@ -30,7 +30,7 @@ const LABEL: Record<ModuleId, { en: string; el: string }> = {
   },
   content: {
     en: "A content brief and the draft optimizer with a WordPress publish action.",
-    el: "Ένα content brief και ο βελτιστοποιητής κειμένου με δυνατότητα δημοσίευσης στο WordPress.",
+    el: "Ένα πλάνο περιεχομένου και ο βελτιστοποιητής κειμένου, με δημοσίευση στο WordPress.",
   },
   audit: {
     en: "Site audit results: health score, issues by severity and Core Web Vitals.",
@@ -50,7 +50,7 @@ const LABEL: Record<ModuleId, { en: string; el: string }> = {
   },
   agency: {
     en: "An agency pipeline with client deals, and a white-label monthly report.",
-    el: "Ένα pipeline agency με deals πελατών και μια white-label μηνιαία αναφορά.",
+    el: "Pipeline με τις συμφωνίες των πελατών σας και μια μηνιαία αναφορά white-label.",
   },
 };
 

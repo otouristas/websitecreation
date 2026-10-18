@@ -254,7 +254,7 @@ export const greeceLocations: Location[] = [
     population: 140730,
     latitude: 35.33874,
     longitude: 25.14421,
-    neighborhoods: ['Κέντρο', 'Πορτ', 'Νέα Αλικαρνασσός', 'Αμμουδάρα'],
+    neighborhoods: ['Κέντρο', 'Πόρος', 'Νέα Αλικαρνασσός', 'Αμμουδάρα'],
     tier: 1,
   }),
   intl({
@@ -418,7 +418,7 @@ export const greeceLocations: Location[] = [
     population: 19000,
     latitude: 36.8931,
     longitude: 27.2878,
-    neighborhoods: ['Κως Πόλη', 'Τιγκάκι', 'Μαστούρι', 'Καρδάμαινα'],
+    neighborhoods: ['Πόλη της Κω', 'Τιγκάκι', 'Μαστούρι', 'Καρδάμαινα'],
     tier: 2,
   }),
   intl({
@@ -579,7 +579,7 @@ export const greeceLocations: Location[] = [
     population: 2000,
     latitude: 36.7230,
     longitude: 25.2820,
-    neighborhoods: ['Χώρα', 'Γιαλό', 'Μυλοπότα', 'Μαγγανάρι'],
+    neighborhoods: ['Χώρα', 'Γιαλός', 'Μυλοπότας', 'Μαγγανάρι'],
     tier: 2,
   }),
   intl({
@@ -883,7 +883,7 @@ export const greeceLocations: Location[] = [
     population: 51000,
     latitude: 41.1190,
     longitude: 25.4050,
-    neighborhoods: ['Κέντρο', 'Νέα Μοσύνοπολη', 'Ίφιον', 'Παραμυθιά'],
+    neighborhoods: ['Κέντρο', 'Νέα Μοσυνούπολη', 'Ίφιον', 'Παραμυθιά'],
     tier: 2,
   }),
   intl({

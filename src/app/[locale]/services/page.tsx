@@ -98,10 +98,10 @@ export default async function ServicesPage({ params }: PageProps) {
               : 'Every engagement starts with analysis of your business, market and competition. Packages define the initial scope; the strategy adapts to your project.'
           }
           primaryHref={lp('/get-started')}
-          primaryLabel={isEl ? 'Ζητήστε Προσφορά' : 'Request a Quote'}
+          primaryLabel={isEl ? 'Ζητήστε προσφορά' : 'Request a Quote'}
           links={[
-            { href: lp('/pricing'), label: isEl ? 'Δείτε τις Τιμές' : 'View Pricing' },
-            { href: lp('/work'), label: isEl ? 'Δείτε τα Έργα μας' : 'View Our Work' },
+            { href: lp('/pricing'), label: isEl ? 'Δείτε τις τιμές' : 'View Pricing' },
+            { href: lp('/work'), label: isEl ? 'Δείτε τα έργα μας' : 'View Our Work' },
           ]}
           wideVisual
           visual={
@@ -177,7 +177,7 @@ export default async function ServicesPage({ params }: PageProps) {
           title={<AccentTitle text={isEl ? 'Δεν είστε σίγουροι τι χρειάζεστε;' : 'Not sure what you need?'} />}
           description={
             isEl
-              ? 'Πείτε μας τι θέλετε να πετύχετε. Θα κοιτάξουμε το site και την αγορά σας και θα σας πούμε τι έχει νόημα να γίνει πρώτο.'
+              ? 'Πείτε μας τι θέλετε να πετύχετε. Θα κοιτάξουμε το site και την αγορά σας και θα σας πούμε τι έχει νόημα να γίνει πρώτα.'
               : 'Tell us what you want to achieve. We will look at your site and your market and tell you what is worth doing first.'
           }
         />

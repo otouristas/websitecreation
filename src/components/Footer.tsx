@@ -96,41 +96,41 @@ function footerColumns(locale: SiteLocale): readonly FooterColumn[] {
     ...(isEl ? [{ label: "SEO για E-shop", href: lp("/services/eshop-seo") }] : []),
     { label: isEl ? "Τοπικό SEO" : "Local SEO", href: lp("/services/local-seo") },
     { label: isEl ? "Ορατότητα σε AI" : "AI Visibility (GEO/AEO)", href: lp("/services/ai-visibility") },
-    { label: isEl ? "Ανασχεδιασμός Ιστοσελίδας" : "Website Redesign", href: lp("/services/website-redesign") },
-    { label: isEl ? "SEO για Ξενοδοχεία" : "Hotel SEO", href: lp("/solutions/hotels") },
+    { label: isEl ? "Ανασχεδιασμός ιστοσελίδας" : "Website Redesign", href: lp("/services/website-redesign") },
+    { label: isEl ? "SEO για ξενοδοχεία" : "Hotel SEO", href: lp("/solutions/hotels") },
     ...(isEl
       ? [
-          { label: "Κατασκευή Ιστοσελίδας Ξενοδοχείου", href: lp("/solutions/hotels") },
-          { label: "SEO για Δικηγόρους", href: lp("/solutions/lawyers") },
-          { label: "SEO για Ακίνητα", href: lp("/solutions/real-estate") },
+          { label: "Κατασκευή ιστοσελίδας ξενοδοχείου", href: lp("/solutions/hotels") },
+          { label: "SEO για δικηγόρους", href: lp("/solutions/lawyers") },
+          { label: "SEO για ακίνητα", href: lp("/solutions/real-estate") },
         ]
       : []),
-    { label: isEl ? "Τιμές & Πακέτα" : "Pricing & Packages", href: lp("/pricing") },
-    { label: isEl ? "Όλες οι Υπηρεσίες" : "All services", href: lp("/services") },
+    { label: isEl ? "Τιμές & πακέτα" : "Pricing & Packages", href: lp("/pricing") },
+    { label: isEl ? "Όλες οι υπηρεσίες" : "All services", href: lp("/services") },
     ...(isEl ? [{ label: t.getStarted, href: lp("/get-started") }] : []),
   ];
 
   const areas: FooterLink[] = isEl
     ? [
         { label: "SEO σε όλη την Ελλάδα", href: "/el/seo" },
-        { label: "Όλες οι Περιοχές", href: lp("/locations") },
+        { label: "Όλες οι περιοχές", href: lp("/locations") },
         { label: "Αθήνα", href: "/el/seo/athens" },
         { label: "SEO Αθήνα", href: lp("/services/local-seo/athens-gr") },
-        { label: "Κατασκευή Ιστοσελίδων Αθήνα", href: lp("/services/website-creation/athens-gr") },
+        { label: "Κατασκευή ιστοσελίδων Αθήνα", href: lp("/services/website-creation/athens-gr") },
         { label: "Κατασκευή E-shop Αθήνα", href: lp("/services/eshop-woocommerce/athens-gr") },
         { label: "Θεσσαλονίκη", href: "/el/seo/thessaloniki" },
         { label: "SEO Θεσσαλονίκη", href: lp("/services/local-seo/thessaloniki-gr") },
-        { label: "Κατασκευή Ιστοσελίδων Θεσσαλονίκη", href: lp("/services/website-creation/thessaloniki-gr") },
+        { label: "Κατασκευή ιστοσελίδων Θεσσαλονίκη", href: lp("/services/website-creation/thessaloniki-gr") },
         { label: "Κατασκευή E-shop Θεσσαλονίκη", href: lp("/services/eshop-woocommerce/thessaloniki-gr") },
-        { label: "Κατασκευή Ιστοσελίδων Πάτρα", href: lp("/services/website-creation/patras-gr") },
+        { label: "Κατασκευή ιστοσελίδων Πάτρα", href: lp("/services/website-creation/patras-gr") },
         { label: "Κατασκευή E-shop Πάτρα", href: lp("/services/eshop-woocommerce/patras-gr") },
         { label: "Ηράκλειο", href: "/el/seo/heraklion" },
-        { label: "Κατασκευή Ιστοσελίδων Ηράκλειο", href: lp("/services/website-creation/heraklion-gr") },
+        { label: "Κατασκευή ιστοσελίδων Ηράκλειο", href: lp("/services/website-creation/heraklion-gr") },
         { label: "Χανιά", href: "/el/seo/chania" },
         { label: "SEO Χανιά", href: lp("/services/local-seo/chania-gr") },
-        { label: "Κατασκευή Ιστοσελίδων Χανιά", href: lp("/services/website-creation/chania-gr") },
+        { label: "Κατασκευή ιστοσελίδων Χανιά", href: lp("/services/website-creation/chania-gr") },
         { label: "Ρόδος", href: "/el/seo/rhodes" },
-        { label: "Κατασκευή Ιστοσελίδων Ρόδος", href: lp("/services/website-creation/rhodes-gr") },
+        { label: "Κατασκευή ιστοσελίδων Ρόδος", href: lp("/services/website-creation/rhodes-gr") },
         { label: "Σαντορίνη", href: "/el/seo/santorini" },
         { label: "SEO Σαντορίνη", href: lp("/services/local-seo/santorini-gr") },
         { label: "Μύκονος", href: "/el/seo/mykonos" },
@@ -163,9 +163,9 @@ function footerColumns(locale: SiteLocale): readonly FooterColumn[] {
   ];
   if (isEl) {
     resources.push(
-      { label: "Οδηγός: Κατασκευή E-shop", href: "/el/blog/kataskevi-eshop-odigos" },
-      { label: "Πόσο Κοστίζει μια Ιστοσελίδα", href: "/el/blog/poso-kostizei-mia-istoselida" },
-      { label: "Πόσο Κοστίζει το SEO", href: "/el/blog/poso-kostizei-to-seo" },
+      { label: "Οδηγός: κατασκευή e-shop", href: "/el/blog/kataskevi-eshop-odigos" },
+      { label: "Πόσο κοστίζει μια ιστοσελίδα", href: "/el/blog/poso-kostizei-mia-istoselida" },
+      { label: "Πόσο κοστίζει το SEO", href: "/el/blog/poso-kostizei-to-seo" },
     );
   } else {
     resources.push(

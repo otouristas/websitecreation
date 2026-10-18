@@ -183,20 +183,20 @@ export default async function ServiceLocationPage({ params }: PageProps) {
 
     const t = isEl ? {
         heroTitle: `${serviceName} ${cityLocative}`,
-        heroDesc: `Ψάχνετε για ${serviceFor} ${cityLocative}; Δουλεύουμε με δεδομένα από το Google Search Console και παραδίδουμε αποτελέσματα που κατατάσσονται ψηλά στη Google και σε μηχανές αναζήτησης AI - με διαφανείς τιμές σε ${location.currency === 'EUR' ? 'Ευρώ (€)' : location.currency}.`,
+        heroDesc: `Ψάχνετε για ${serviceFor} ${cityLocative}; Δουλεύουμε με δεδομένα από το Google Search Console και παραδίδουμε αποτελέσματα που κατατάσσονται ψηλά στη Google και σε μηχανές αναζήτησης AI - με διαφανείς τιμές σε ${location.currency === 'EUR' ? 'ευρώ (€)' : location.currency}.`,
         getQuote: `Προσφορά για ${cityName}`,
-        allLocations: 'Όλες οι Τοποθεσίες',
-        browseCities: 'Πλοήγηση σε Πόλεις',
-        whatsIncludedTitle: `Τι Περιλαμβάνεται ${cityLocative}`,
+        allLocations: 'Όλες οι τοποθεσίες',
+        browseCities: 'Πλοήγηση ανά πόλη',
+        whatsIncludedTitle: `Τι περιλαμβάνεται ${cityLocative}`,
         whatsIncludedDesc: `Το πακέτο μας για ${serviceFor} καλύπτει όσα χρειάζονται οι επιχειρήσεις ${cityLocative} για μετρήσιμα αποτελέσματα ${location.countryCode === 'GR' ? 'στην Ελλάδα' : 'στη χώρα εξυπηρέτησης'}.`,
         proofTitle: 'Σχετικά έργα μας',
         proofDesc: 'Ιστοσελίδες που έχουμε φτιάξει για επιχειρήσεις με παρόμοιο κοινό.',
         nearbyTitle: 'Κοντινές περιοχές που εξυπηρετούμε',
-        otherServicesTitle: `Άλλες Υπηρεσίες ${cityLocative}`,
-        faqTitle: `Συχνές Ερωτήσεις - ${cityName}`,
+        otherServicesTitle: `Άλλες υπηρεσίες ${cityLocative}`,
+        faqTitle: `Συχνές ερωτήσεις - ${cityName}`,
         ctaTitle: `Έτοιμοι για ${serviceFor} ${cityLocative};`,
-        ctaDesc: `Ζητήστε μια δωρεάν προσφορά προσαρμοσμένη για τη δική σας επιχείρηση ${cityLocative} - τιμές σε ${location.currency === 'EUR' ? 'Ευρώ' : location.currency}.`,
-        ctaBtn: `Δωρεάν Προσφορά για ${cityName}`,
+        ctaDesc: `Ζητήστε μια δωρεάν προσφορά προσαρμοσμένη για τη δική σας επιχείρηση ${cityLocative} - τιμές σε ${location.currency === 'EUR' ? 'ευρώ' : location.currency}.`,
+        ctaBtn: `Δωρεάν προσφορά για ${cityName}`,
     } : {
         heroTitle: `${service.name} in ${cityState}`,
         heroDesc: `Looking for professional ${service.name.toLowerCase()} in ${location.city}, ${regionLabel}? We work from Google Search Console data and deliver work that ranks in Google and AI search - with transparent pricing in ${location.currency}.`,
@@ -232,14 +232,14 @@ export default async function ServiceLocationPage({ params }: PageProps) {
     const cityFaqItems: { key?: string; question: string; answer: string }[] = isEl ? [
         {
             question: `Πόσο γρήγορα ξεκινάει το project μου ${cityLocative};`,
-            answer: `Ανάλογα με το εύρος, τα περισσότερα projects για ${serviceFor} ${cityLocative} ξεκινούν μέσα σε λίγες ημέρες και αποδίδουν τα πρώτα παραδοτέα σε 2-8 εβδομάδες. Οι τιμές μας είναι σε ${location.currency === 'EUR' ? 'Ευρώ (€)' : location.currency}.`,
+            answer: `Ανάλογα με το εύρος, τα περισσότερα projects για ${serviceFor} ${cityLocative} ξεκινούν μέσα σε λίγες ημέρες και αποδίδουν τα πρώτα παραδοτέα σε 2-8 εβδομάδες. Οι τιμές μας είναι σε ${location.currency === 'EUR' ? 'ευρώ (€)' : location.currency}.`,
         },
         {
             question: `Συνδυάζετε ${serviceFor} με τοπικό SEO ${cityLocative};`,
             answer: `Ναι. Σχεδιάζουμε τοπικές σελίδες, δομή εσωτερικών συνδέσμων, schema markup και στρατηγική Google Business Profile ώστε οι επιχειρήσεις ${cityLocative} να κατατάσσονται ψηλά για τοπικές αναζητήσεις.`,
         },
         {
-            question: `Τι κάνει τις ιστοσελίδες μας να ξεχωρίζουν σε Google και AI αναζήτηση;`,
+            question: `Τι κάνει τις ιστοσελίδες μας να ξεχωρίζουν στη Google και στην αναζήτηση με AI;`,
             answer: `Το τεχνικό SEO, το semantic clustering από το Search Console, το GEO/AEO βελτιστοποιημένο περιεχόμενο και οι κορυφαίες επιδόσεις Core Web Vitals - όχι οι απλές, λεπτές σελίδες προτύπων.`,
         },
         {
@@ -247,10 +247,10 @@ export default async function ServiceLocationPage({ params }: PageProps) {
             question: cityCopy && cityCtx ? cityCopy.pricingQuestion(cityCtx) : `Ποιο είναι το κόστος για ${serviceFor} ${cityLocative};`,
             answer: ['local-seo', 'seo-audits', 'ai-visibility', 'link-building', 'eshop-seo', 'content-creation'].includes(serviceSlug)
                 ? `Τα πακέτα SEO ξεκινούν από €${formatPrice(entrySeoNet(), 'el')}/μήνα (Foundations), €${formatPrice(currentPrice(seoPackages[1]), 'el')}/μήνα (Growth) και €${formatPrice(currentPrice(seoPackages[2]), 'el')}/μήνα (Authority). Η τιμή εξαρτάται από τον ανταγωνισμό ${cityLocative} και τους στόχους σας. Δείτε αναλυτικές τιμές στη σελίδα τιμών μας ή ζητήστε δωρεάν προσφορά.`
-                : `Οι ιστοσελίδες ξεκινούν από €${formatPrice(entryWebsiteNet(), 'el')} (Starter, έως 5 σελίδες), €${formatPrice(currentPrice(websitePackages[1]), 'el')} (Professional, έως 10 σελίδες) και €${formatPrice(currentPrice(websitePackages[2]), 'el')} (Business, έως 20 σελίδες). Χωρίς κρυφές χρεώσεις - όλες οι τιμές σε Ευρώ. Ζητήστε δωρεάν προσφορά για ${cityName}.`,
+                : `Οι ιστοσελίδες ξεκινούν από €${formatPrice(entryWebsiteNet(), 'el')} (Starter, έως 5 σελίδες), €${formatPrice(currentPrice(websitePackages[1]), 'el')} (Professional, έως 10 σελίδες) και €${formatPrice(currentPrice(websitePackages[2]), 'el')} (Business, έως 20 σελίδες). Χωρίς κρυφές χρεώσεις - όλες οι τιμές σε ευρώ. Ζητήστε δωρεάν προσφορά για ${cityName}.`,
         },
         {
-            question: `Θα εμφανίζεται η επιχείρησή μου σε ChatGPT και AI αναζητήσεις;`,
+            question: `Θα εμφανίζεται η επιχείρησή μου στο ChatGPT και στις αναζητήσεις με AI;`,
             answer: `Ναι. Με βελτιστοποίηση GEO/AEO - schema, οντότητες και δομημένο περιεχόμενο - στοχεύουμε να αναφέρεται η μάρκα σας στις απαντήσεις των ChatGPT Search, Perplexity και Gemini, όχι μόνο στα παραδοσιακά αποτελέσματα της Google ${cityLocative}.`,
         },
     ] : [
@@ -361,7 +361,7 @@ export default async function ServiceLocationPage({ params }: PageProps) {
                                 hrefLang="el"
                                 className="font-medium text-link hover:underline"
                             >
-                                Διαβάστε αυτή τη σελίδα στα Ελληνικά →
+                                Διαβάστε αυτή τη σελίδα στα ελληνικά →
                             </Link>
                         ) : undefined
                     }

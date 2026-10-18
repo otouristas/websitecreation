@@ -111,7 +111,7 @@ export function buildChecks(input: CheckInput): AuditCheck[] {
       label: { en: 'Homepage returns 200', el: 'Η αρχική επιστρέφει 200' },
       fix: {
         en: 'The homepage must answer 200. Anything else and crawlers stop at the door.',
-        el: 'Η αρχική πρέπει να απαντά 200. Οτιδήποτε άλλο σταματά τα crawlers στην πόρτα.',
+        el: 'Η αρχική πρέπει να απαντά 200. Οτιδήποτε άλλο σταματά τους crawlers στην πόρτα.',
       },
     },
     {
@@ -168,7 +168,7 @@ export function buildChecks(input: CheckInput): AuditCheck[] {
       weight: 10,
       state: grade(googlebot ? googlebot.allowed : true),
       value: googlebot?.allowed === false ? 'Googlebot blocked' : 'Googlebot allowed',
-      label: { en: 'robots.txt lets Google in', el: 'Το robots.txt επιτρέπει στο Google' },
+      label: { en: 'robots.txt lets Google in', el: 'Το robots.txt επιτρέπει την πρόσβαση στη Google' },
       fix: {
         en: 'Remove the Disallow rule that covers / for Googlebot. Nothing ranks while it stands.',
         el: 'Αφαιρέστε τον κανόνα Disallow που καλύπτει το / για το Googlebot. Τίποτα δεν κατατάσσεται όσο ισχύει.',
@@ -404,7 +404,7 @@ export function buildChecks(input: CheckInput): AuditCheck[] {
       label: { en: 'Favicon declared', el: 'Δηλωμένο favicon' },
       fix: {
         en: 'Add a favicon; Google shows it next to your result on mobile.',
-        el: 'Προσθέστε favicon. Το Google το δείχνει δίπλα στο αποτέλεσμά σας στο κινητό.',
+        el: 'Προσθέστε favicon. Η Google το δείχνει δίπλα στο αποτέλεσμά σας στο κινητό.',
       },
     },
 
@@ -478,7 +478,7 @@ export function buildChecks(input: CheckInput): AuditCheck[] {
       label: { en: 'Third-party scripts in check', el: 'Ελεγχόμενα scripts τρίτων' },
       fix: {
         en: 'Every extra third-party host is a DNS lookup, a handshake and a dependency. Drop the ones nobody reads.',
-        el: 'Κάθε επιπλέον host τρίτου είναι ένα DNS lookup, μια χειραψία και μια εξάρτηση. Αφαιρέστε όσα δεν διαβάζει κανείς.',
+        el: 'Κάθε επιπλέον host τρίτου είναι ένα DNS lookup, μια χειραψία και μια εξάρτηση. Αφαιρέστε όσα δεν χρειάζεστε.',
       },
     },
     {
@@ -622,7 +622,7 @@ export function buildChecks(input: CheckInput): AuditCheck[] {
       label: { en: 'Text present without JavaScript', el: 'Κείμενο χωρίς JavaScript' },
       fix: {
         en: 'Render your copy server-side. Most AI crawlers do not run JavaScript, so a client-rendered shell reads as an empty page.',
-        el: 'Αποδώστε το κείμενο από τον διακομιστή. Τα περισσότερα AI crawlers δεν εκτελούν JavaScript, οπότε ένα κέλυφος που γεμίζει στον browser διαβάζεται ως κενή σελίδα.',
+        el: 'Αποδώστε το κείμενο από τον διακομιστή. Οι περισσότεροι AI crawlers δεν εκτελούν JavaScript, οπότε ένα κέλυφος που γεμίζει στον browser διαβάζεται ως κενή σελίδα.',
       },
     },
     {
@@ -688,7 +688,7 @@ export function buildChecks(input: CheckInput): AuditCheck[] {
       },
       fix: {
         en: 'Give each meaningful image a real URL, alt text and declared width and height. Anything assembling a visual answer can only use an image it can both address and describe.',
-        el: 'Δώστε σε κάθε ουσιαστική εικόνα πραγματικό URL, alt και δηλωμένο πλάτος και ύψος. Ό,τι συνθέτει οπτική απάντηση μπορεί να χρησιμοποιήσει μόνο εικόνα που μπορεί και να διευθυνσιοδοτήσει και να περιγράψει.',
+        el: 'Δώστε σε κάθε ουσιαστική εικόνα πραγματικό URL, alt και δηλωμένο πλάτος και ύψος. Ένα σύστημα που συνθέτει οπτική απάντηση χρησιμοποιεί μόνο εικόνες που μπορεί να εντοπίσει και να περιγράψει.',
       },
     },
     {
@@ -700,7 +700,7 @@ export function buildChecks(input: CheckInput): AuditCheck[] {
       label: { en: 'llms.txt published', el: 'Δημοσιευμένο llms.txt' },
       fix: {
         en: 'Publish /llms.txt summarising what you do and linking your key pages. Cheap to add, and the convention is spreading.',
-        el: 'Δημοσιεύστε /llms.txt με σύνοψη του τι κάνετε και συνδέσμους στις βασικές σελίδες. Φθηνό και η σύμβαση εξαπλώνεται.',
+        el: 'Δημοσιεύστε /llms.txt με σύνοψη του τι κάνετε και συνδέσμους στις βασικές σελίδες. Προστίθεται εύκολα και η πρακτική εξαπλώνεται.',
       },
     },
   ];

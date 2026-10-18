@@ -37,8 +37,8 @@ const CATEGORY_SEO: Record<
       'Keyword clusters για νησιά, αεροδρόμια και λιμάνια (π.χ. «ενοικίαση αυτοκινήτου Πάρος»)',
       'Σελίδες στόλου με μοναδικά title, meta description και H1 ανά κατηγορία οχήματος',
       'LocalBusiness + AutoRental schema με συντεταγμένες και ωράριο',
-      'Εσωτερική σύνδεση fleet, FAQ, όροι και τοπικές landing pages',
-      'Hreflang EN/EL για αναζητήσεις τουριστών',
+      'Εσωτερική σύνδεση στόλου, FAQ, όρων και τοπικών landing pages',
+      'hreflang EN/EL για αναζητήσεις τουριστών',
     ],
   },
   hotel: {
@@ -52,7 +52,7 @@ const CATEGORY_SEO: Record<
     el: [
       'Landing pages ανά τύπο δωματίου και παροχές για branded + «ξενοδοχείο [προορισμός]»',
       'LodgingBusiness / Hotel schema με προσφορές, check-in και geo',
-      'Alt κειμένα εικόνων και gallery για Google Images',
+      'Κείμενα alt και gallery για Google Images',
       'CTA άμεσης κράτησης για μείωση εξάρτησης από OTAs',
       'Seasonal content hubs από αρχική και menu',
     ],
@@ -66,9 +66,9 @@ const CATEGORY_SEO: Record<
       'Cross-linking between properties when portfolio spans multiple units',
     ],
     el: [
-      'Στόχευση luxury villa keywords για διεθνές EN/EL κοινό',
+      'Στόχευση λέξεων-κλειδιών για πολυτελείς βίλες σε διεθνές κοινό EN/EL',
       'VacationRental schema με χωρητικότητα και παροχές',
-      'Φόρμες αιτήματος above the fold σε mobile',
+      'Φόρμες αιτήματος ορατές χωρίς κύλιση στο κινητό',
       'WebP galleries με lazy loading',
       'Cross-linking μεταξύ properties στο ίδιο portfolio',
     ],
@@ -82,7 +82,7 @@ const CATEGORY_SEO: Record<
       'Blog and guide articles supporting transactional landing pages',
     ],
     el: [
-      'Hub αρχιτεκτονική ανά νησί/περιοχή με child pages εκδρομών',
+      'Αρχιτεκτονική hub ανά νησί/περιοχή με υποσελίδες εκδρομών',
       'TouristTrip / Event schema όπου εφαρμόζεται',
       'FAQ blocks για «τι να κάνω», «καλύτερες εκδρομές»',
       'Content clusters για ροή PageRank σε money pages',
@@ -98,7 +98,7 @@ const CATEGORY_SEO: Record<
       'City-pair landing pages (e.g. airport → hotel zones)',
     ],
     el: [
-      'Σελίδες keywords για μεταφορές αεροδρομίου/λιμανιού ανά διαδρομή',
+      'Σελίδες λέξεων-κλειδιών για μεταφορές από αεροδρόμιο/λιμάνι ανά διαδρομή',
       'LocalBusiness + Service schema για VIP/transfers',
       'Click-to-call και WhatsApp CTAs για mobile SERP',
       'Trust signals: στόλος, άδειες, κριτικές, service area',
@@ -130,7 +130,7 @@ const CATEGORY_SEO: Record<
       'Review and social proof modules near conversion points',
     ],
     el: [
-      'Keywords μενού/κράτησης με Restaurant schema',
+      'Λέξεις-κλειδιά μενού/κράτησης με Restaurant schema',
       'Local pack: NAP consistency και GBP categories',
       'Βελτιστοποίηση φωτογραφιών φαγητού με alt και filenames',
       'Seasonal/event pages (γάμοι, private dining)',
@@ -146,7 +146,7 @@ const CATEGORY_SEO: Record<
       'Conversion path clarity from organic landing to lead capture',
     ],
     el: [
-      'Αρχιτεκτονική service pages ανά commercial keywords',
+      'Αρχιτεκτονική σελίδων υπηρεσιών ανά εμπορική λέξη-κλειδί',
       'Organization + WebSite schema με SearchAction όπου χρειάζεται',
       'On-page SEO: titles, metas, headings, canonicals',
       'Core Web Vitals pass σε mobile',
@@ -167,8 +167,8 @@ const GEO_AEO: { en: string[]; el: string[] } = {
     'Δομημένα FAQ/Q&A blocks για εξαγωγή από LLMs',
     'Σαφείς entity δηλώσεις (brand, τοποθεσία, υπηρεσίες) στην αρχή κειμένου',
     'Schema.org για Organization, WebSite και business types',
-    'Σελίδες «σχετικά» και «πώς λειτουργεί» για AI citations',
-    'Διαφάνεια τιμών/σύγκρισης όπου βοηθά τα AI answers',
+    'Σελίδες «Σχετικά» και «Πώς λειτουργεί» για παραπομπές στο AI',
+    'Διαφάνεια τιμών/σύγκρισης όπου βοηθά τις απαντήσεις AI',
   ],
 };
 
@@ -200,9 +200,9 @@ const CONTENT: { en: string[]; el: string[] } = {
   el: [
     'Copy με επίκεντρο κρατήσεις, προσφορές και επικοινωνία',
     'Trust modules: testimonials, πιστοποιήσεις, logos',
-    'Πολύγλωσση content strategy ανά αγορές',
+    'Πολύγλωσση στρατηγική περιεχομένου ανά αγορά',
     'Internal linking από blog/οδηγούς σε commercial pages',
-    'Οδηγίες ongoing content για την ομάδα του πελάτη',
+    'Οδηγίες συνεχούς περιεχομένου για την ομάδα του πελάτη',
   ],
 };
 
@@ -273,15 +273,15 @@ export function buildProjectCaseStudy(
   const summary = isEl && project.summaryEl ? project.summaryEl : project.summary;
 
   const overview = isEl
-    ? `${name} είναι ζωντανό έργο κατηγορίας «${catLabel}» για αγορές ${markets}, σε ${langs}. Παραδώσαμε ${serviceList} με επίκεντρο οργανική κίνηση, κρατήσεις και ορατότητα σε Google και AI απαντήσεις.`
+    ? `Το ${name} είναι ενεργό έργο της κατηγορίας «${catLabel}» για αγορές ${markets}, σε ${langs}. Παραδώσαμε ${serviceList} με επίκεντρο την οργανική επισκεψιμότητα, τις κρατήσεις και την ορατότητα στο Google και στις απαντήσεις AI.`
     : `${name} is a live ${catLabel.toLowerCase()} project serving ${markets} markets in ${langs}. We delivered ${serviceList} focused on organic traffic, bookings and visibility across Google and AI answer engines.`;
 
   const challenge = isEl
-    ? `Ο πελάτης χρειαζόταν ιστοσελίδα που να εμπιστεύονται οι ταξιδιώτες, να κατατάσσεται σε ανταγωνιστικές τουριστικές αναζητήσεις και να μετατρέπει επισκέψεις σε κρατήσεις ή αιτήματα - χωρίς να εξαρτάται μόνο από OTAs ή aggregators.`
+    ? `Ο πελάτης χρειαζόταν ιστοσελίδα που να εμπιστεύονται οι ταξιδιώτες, να κατατάσσεται σε ανταγωνιστικές τουριστικές αναζητήσεις και να μετατρέπει επισκέψεις σε κρατήσεις ή αιτήματα, χωρίς να εξαρτάται μόνο από OTAs ή aggregators.`
     : `The client needed a site tourists trust, that ranks for competitive tourism keywords and converts visits into bookings or inquiries - without relying solely on OTAs or aggregators.`;
 
   const approach = isEl
-    ? `Σχεδιάσαμε mobile-first UX για την κατηγορία «${catLabel}», υλοποιήσαμε τεχνικό SEO από την αρχή και δομήσαμε περιεχόμενο για local, GEO και AEO. ${summary}`
+    ? `Σχεδιάσαμε εμπειρία πρώτα για κινητά για την κατηγορία «${catLabel}», υλοποιήσαμε τεχνικό SEO από την αρχή και δομήσαμε περιεχόμενο για local, GEO και AEO. ${summary}`
     : `We designed mobile-first UX for ${catLabel.toLowerCase()}, implemented technical SEO from day one and structured content for local, GEO and AEO discovery. ${summary}`;
 
   const seoItems = [...CATEGORY_SEO[project.category][isEl ? 'el' : 'en']];
@@ -305,9 +305,9 @@ export function buildProjectCaseStudy(
       ? project.results
       : isEl
         ? [
-            'SEO-ready αρχιτεκτονική από την 1η μέρα του launch',
+            'Αρχιτεκτονική έτοιμη για SEO από την πρώτη μέρα λειτουργίας',
             'Schema markup για rich results και local discovery',
-            'Mobile-first UX για τουρίστες που κλείνουν από κινητό',
+            'Εμπειρία πρώτα για κινητά, για τουρίστες που κλείνουν από το κινητό',
             'Δομή περιεχομένου για GEO/AEO και μελλοντική ανάπτυξη',
           ]
         : [

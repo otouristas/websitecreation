@@ -128,7 +128,7 @@ export const PRICING_FAQ: ReadonlyArray<GscFaqItem> = [
     q: c("What counts as a site?", "Τι θεωρείται ιστότοπος;"),
     a: c(
       "A site is a website you set up as a project in AnotherSEOGuru App, usually one Search Console property, with its own settings, brand terms, competitors and reports.",
-      "Ιστότοπος είναι ένας ιστότοπος που ρυθμίζετε ως έργο στο AnotherSEOGuru App, συνήθως μία ιδιότητα του Search Console, με δικές του ρυθμίσεις, όρους επωνυμίας, ανταγωνιστές και αναφορές.",
+      "Ως ιστότοπος μετράει κάθε ιστότοπος που ρυθμίζετε ως έργο στο AnotherSEOGuru App, συνήθως μία ιδιότητά του Search Console, με δικές του ρυθμίσεις, όρους επωνυμίας, ανταγωνιστές και αναφορές.",
     ),
   },
   {
@@ -160,7 +160,7 @@ export const AGENCY_FAQ: ReadonlyArray<GscFaqItem> = [
     q: c("How many client sites can I manage?", "Πόσους ιστοτόπους πελατών μπορώ να διαχειρίζομαι;"),
     a: c(
       "The Agency plan includes 30 sites and 10 team seats. The site switcher lists every Search Console property your Google account can access, and it is built to stay fast with 90+ of them.",
-      "Το πακέτο Agency περιλαμβάνει 30 ιστοτόπους και 10 θέσεις χρηστών. Η εναλλαγή ιστοτόπων εμφανίζει κάθε ιδιότητα του Search Console στην οποία έχει πρόσβαση ο λογαριασμός σας Google και παραμένει γρήγορη ακόμη και με 90+ ιδιότητες.",
+      "Το πακέτο Agency περιλαμβάνει 30 ιστοτόπους και 10 θέσεις χρηστών. Η εναλλαγή ιστοτόπων εμφανίζει κάθε ιδιότητά του Search Console στην οποία έχει πρόσβαση ο λογαριασμός σας Google και παραμένει γρήγορη ακόμη και με 90+ ιδιότητες.",
     ),
   },
   {

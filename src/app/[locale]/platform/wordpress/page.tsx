@@ -82,7 +82,7 @@ const FEATURES: ReadonlyArray<{ icon: LucideIcon; title: Copy; text: Copy }> = [
     title: c("Live Google preview", "Ζωντανή προεπισκόπηση Google"),
     text: c(
       "See the result as Google shows it, on desktop and mobile, while you type. Titles are measured in pixels, not just characters, so you know before publishing whether they get cut off.",
-      "Βλέπετε το αποτέλεσμα όπως το δείχνει η Google, σε υπολογιστή και κινητό, όσο γράφετε. Οι τίτλοι μετριούνται σε pixel και όχι μόνο σε χαρακτήρες, οπότε ξέρετε πριν τη δημοσίευση αν θα κοπούν.",
+      "Βλέπετε το αποτέλεσμα όπως το δείχνει η Google, σε υπολογιστή και κινητό, όσο γράφετε. Οι τίτλοι μετριούνται σε pixel και όχι μόνο σε χαρακτήρες, οπότε ξέρετε πριν από τη δημοσίευση αν θα κοπούν.",
     ),
   },
   {
@@ -222,7 +222,7 @@ const FAQ: ReadonlyArray<GscFaqItem> = [
     q: c("How do I disconnect the site?", "Πώς αποσυνδέω τον ιστότοπο;"),
     a: c(
       "Press Disconnect under AnotherSEOGuru → Connect, or disconnect it in the web app under Settings → Connected apps. The SEO features keep working without a connection.",
-      "Πατήστε Αποσύνδεση στο AnotherSEOGuru → Σύνδεση, ή αποσυνδέστε τον από την εφαρμογή web στο Ρυθμίσεις → Συνδεδεμένες εφαρμογές. Οι λειτουργίες SEO συνεχίζουν να δουλεύουν και χωρίς σύνδεση.",
+      "Πατήστε Αποσύνδεση στο AnotherSEOGuru → Σύνδεση, ή αποσυνδέστε τον από την εφαρμογή web, στις Ρυθμίσεις → Συνδεδεμένες εφαρμογές. Οι λειτουργίες SEO συνεχίζουν να δουλεύουν και χωρίς σύνδεση.",
     ),
     link: { kind: "site", path: "/platform/integrations", label: c("All integrations", "Όλες οι ενσωματώσεις") },
   },
@@ -294,7 +294,7 @@ function EditorMock({ locale }: { readonly locale: SiteLocale }) {
               {check(isEl ? "Προσθέστε τη λέξη-κλειδί σε έναν υπότιτλο H2" : "Add the keyword to an H2 subheading", false)}
             </ul>
             <div className="flex items-center justify-between rounded-lg border border-signal/30 bg-background/70 px-3 py-2">
-              <span className="text-[12px] text-foreground">{isEl ? "Γράψε με AI" : "Write with AI"}</span>
+              <span className="text-[12px] text-foreground">{isEl ? "Γράψτε με AI" : "Write with AI"}</span>
               <MarketingBadge kind="live">{isEl ? "1 μονάδα" : "1 credit"}</MarketingBadge>
             </div>
           </div>
@@ -454,7 +454,7 @@ export default async function PlatformWordPressPage({ params }: PageProps) {
                 title: tx("Connect for Search Console data", "Σύνδεση για Search Console"),
                 text: tx(
                   "AnotherSEOGuru → Connect. Sign up free or sign in and press Allow. Every published post then shows its Search Console numbers in the editor.",
-                  "AnotherSEOGuru → Σύνδεση. Κάντε δωρεάν εγγραφή ή συνδεθείτε και πατήστε Να επιτρέπεται. Μετά κάθε δημοσιευμένο άρθρο δείχνει τα νούμερά του από το Search Console στον editor.",
+                  "AnotherSEOGuru → Σύνδεση. Κάντε δωρεάν εγγραφή ή συνδεθείτε και πατήστε «Να επιτρέπεται». Μετά κάθε δημοσιευμένο άρθρο δείχνει τα νούμερά του από το Search Console στον editor.",
                 ),
               },
             ]}
