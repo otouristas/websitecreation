@@ -117,6 +117,31 @@ export const PLATFORM_TOOLS: readonly PlatformToolDefinition[] = [
     appPath: "/internal-linking",
   },
   {
+    slug: "ad-preview-tool",
+    title: "Free ad preview tool: ChatGPT, Google, Meta, TikTok and more",
+    description:
+      "Write one ad and see it as a ChatGPT answer with citations, a ChatGPT sponsored answer, and Google Search, Google Display, Facebook, Instagram feed and Stories, TikTok, LinkedIn, X and Pinterest ads. Every character limit and Google editorial rule is checked as you type.",
+    primaryKeyword: "ad preview tool",
+    appPath: "/tools/ad-preview",
+    faqs: [
+      {
+        question: "How do I preview an ad before it goes live?",
+        answer:
+          "Paste your headlines, primary text, link and image into the ad preview tool. It draws the ad the way each platform shows it, cuts text where the platform cuts it and flags anything over a limit, so you fix it before the ad is rejected or truncated.",
+      },
+      {
+        question: "What are the character limits for Google, Meta and TikTok ads?",
+        answer:
+          "Google Search headlines are 30 characters and descriptions 90. Facebook and Instagram show about 125 characters of primary text before \"See more\". TikTok ad text is capped at 100 characters, LinkedIn shows 150 before \"more\" and X allows 280.",
+      },
+      {
+        question: "Can I see how my page appears in ChatGPT?",
+        answer:
+          "Yes. Inside AnotherSEOGuru the previews tool asks the question your buyers ask, answers it with live web sources and shows which sites ChatGPT style answers cite, with your site highlighted. You can also load real ChatGPT answers you track in AI visibility.",
+      },
+    ],
+  },
+  {
     slug: "free-seo-tools",
     title: "Free SEO tools (meta, schema, CWV, and more)",
     description:
