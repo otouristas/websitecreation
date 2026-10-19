@@ -1,6 +1,8 @@
 import { localizedPath } from "@/lib/i18n/locale";
+import { EXPANSION_ARTICLES } from "./expansion";
 import { FORECASTING_ARTICLES } from "./forecasting";
 import { REPORTING_ARTICLES } from "./reporting";
+import { REPORTING_EXPANSION_ARTICLES } from "./reporting-expansion";
 import { SEARCH_CONSOLE_ARTICLES } from "./search-console";
 import { TRAFFIC_DROP_ARTICLES } from "./traffic-drops";
 import type { ClusterId, ResourceArticle, ResourceCluster } from "./types";
@@ -93,6 +95,8 @@ export const RESOURCE_ARTICLES: ReadonlyArray<ResourceArticle> = [
   ...TRAFFIC_DROP_ARTICLES,
   ...FORECASTING_ARTICLES,
   ...REPORTING_ARTICLES,
+  ...REPORTING_EXPANSION_ARTICLES,
+  ...EXPANSION_ARTICLES,
 ];
 
 export function findResource(slug: string): ResourceArticle | undefined {

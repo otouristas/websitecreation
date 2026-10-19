@@ -14,6 +14,7 @@ import {
   RESOURCE_ARTICLES,
   clusterArticles,
   clusterById,
+  pillarTitle,
   findResource,
   resourcePath,
   type ResourceArticle,
@@ -79,6 +80,13 @@ export default async function ResourceArticlePage({ params }: PageProps) {
   const cluster = clusterById(article.cluster);
   const siblings = clusterArticles(cluster.id);
   const pillar = siblings.find((a) => a.kind === "pillar");
+  // The AI cluster's pillar is a bespoke page, not a data article.
+  const pillarLink =
+    pillar && pillar.slug !== article.slug
+      ? { title: pillar.title.split(":")[0], href: resourcePath(pillar.slug) }
+      : !pillar
+        ? { title: pillarTitle(cluster), href: resourcePath(cluster.pillar) }
+        : null;
   const index = siblings.findIndex((a) => a.slug === article.slug);
   const link = (a: ResourceArticle | undefined) => (a ? { title: a.title, href: resourcePath(a.slug) } : null);
   const path = resourcePath(article.slug);
@@ -86,7 +94,7 @@ export default async function ResourceArticlePage({ params }: PageProps) {
   const crumbs = [
     { name: "Home", url: localizedPath("en", "/") },
     { name: "Resources", url: resourcePath() },
-    ...(pillar && pillar.slug !== article.slug ? [{ name: cluster.title, url: resourcePath(pillar.slug) }] : []),
+    ...(pillarLink ? [{ name: cluster.title, url: pillarLink.href }] : []),
     { name: article.title.split(":")[0], url: path },
   ];
   const faqs = articleFaqs(article.body);
@@ -122,11 +130,11 @@ export default async function ResourceArticlePage({ params }: PageProps) {
         next={link(siblings[index + 1])}
         rail={<SignupCard locale="en" source={`resources-${article.slug}`} />}
       >
-        {pillar && pillar.slug !== article.slug ? (
+        {pillarLink ? (
           <p className="mt-6 text-[14px] text-muted-foreground">
             Part of{" "}
-            <Link href={resourcePath(pillar.slug)} className="font-medium text-link underline decoration-hairline underline-offset-4 hover:decoration-current">
-              {pillar.title.split(":")[0]}
+            <Link href={pillarLink.href} className="font-medium text-link underline decoration-hairline underline-offset-4 hover:decoration-current">
+              {pillarLink.title}
             </Link>
           </p>
         ) : null}
