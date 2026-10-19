@@ -1,7 +1,7 @@
 ---
 slug: pillar-technical-seo-in-house
 title: Technical SEO for In-House Teams - Audits, Priorities, and Buy-In
-description: Hub for crawl budget, rendering, structured data, and performance - written for teams shipping through engineering queues.
+description: Hub for crawl budget, rendering, structured data and performance, written for in-house teams shipping technical SEO through engineering queues.
 date: 2026-02-01
 updated: 2026-10-16
 author: AnotherSEOGuru Editorial Team

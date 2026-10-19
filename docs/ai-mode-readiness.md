@@ -19,14 +19,14 @@ others, with 30 entity types and two structural rules.
 **A website never emits any of these tags.** They are the model's output
 vocabulary, rendered by Google's front-end. Nobody can add a `<Carousel>` to
 their HTML and get a carousel. The only lever a site has is being the source a
-card is assembled from — which is what turns the published "required grounding
+card is assembled from, which is what turns the published "required grounding
 attributes" into a checklist worth acting on.
 
 **Read the source critically before repeating it to a client:**
 
 - It is reverse-engineered from prompt leaks. No Google documentation confirms
   any of it, and Google has not acknowledged the vocabulary.
-- The published article still carries drafting artifacts — several sections
+- The published article still carries drafting artifacts: several sections
   open with "Your draft mentions…" or "While your draft covers…", which is an
   editing session pasted into the final text.
 - Its `<InlineQuiz>` example is not valid JSON: the `explanation` value on the
@@ -55,7 +55,7 @@ page, which is why they carry most of the weight here.
 
 | Rule | What it says | How we measure it |
 | :--- | :--- | :--- |
-| **Homogeneity** | Entries in one container must share a single entity type, or it degrades to plain bullets | `collection_shape` — distinct `@type` across `ItemList` children must be exactly 1 |
+| **Homogeneity** | Entries in one container must share a single entity type, or it degrades to plain bullets | `collection_shape`: distinct `@type` across `ItemList` children must be exactly 1 |
 | **Minimum assets** | A carousel or grid needs at least three validated children, or the layout flattens | `collection_shape` (≥3 entries) and `media_assets` (≥3 usable images) |
 
 Both live in `RENDER_RULES` in `src/data/ai-mode-tags.ts`, and the audit
@@ -78,7 +78,7 @@ partly a judgement call.
 | 4 | **Answer surface** | no question headings, no Q&A | questions present, answers behind JS | question headings with answers in server HTML | `question_headings`, `faq_schema`, `server_text` |
 | 5 | **Access and feed** | AI crawlers blocked | allowed, no `llms.txt` | allowed, `llms.txt`, text server-rendered | `ai_access`, `llms_txt`, `server_text` |
 
-Score `n/a` rather than 0 where a dimension genuinely does not apply — a
+Score `n/a` rather than 0 where a dimension genuinely does not apply: a
 single-location business with no catalogue has nothing to put in dimension 2,
 and scoring it 0 would misreport a non-problem as a defect.
 
@@ -89,19 +89,19 @@ and scoring it 0 would misreport a non-problem as a defect.
 Two different questions, which is why they give different answers. **What the
 business is** drives the schema type it should publish about itself.
 **What it could also ground** is conditional on the client publishing the
-right content — and mostly they do not, which is why that column is advice and
+right content, and mostly they do not, which is why that column is advice and
 not markup we emit.
 
 | Vertical | n | The business is | schema.org | Could also ground, if they publish it |
 | :--- | --: | :--- | :--- | :--- |
-| rent-a-car | 14 | `LocalServiceOrTradeBusiness` | `AutoRental` | `VehicleModel` — **only** with per-model pages carrying trim, transmission, seats and a rate |
-| tours | 13 | `LocalServiceOrTradeBusiness` | `TravelAgency` | `Event` — **only** with dated departures; `PublicVenueOrLandmark` via `about` on a tour page |
+| rent-a-car | 14 | `LocalServiceOrTradeBusiness` | `AutoRental` | `VehicleModel`: **only** with per-model pages carrying trim, transmission, seats and a rate |
+| tours | 13 | `LocalServiceOrTradeBusiness` | `TravelAgency` | `Event`: **only** with dated departures; `PublicVenueOrLandmark` via `about` on a tour page |
 | hotel | 7 | `LodgingPlace` | `LodgingBusiness` | ≥3 room types as a typed list |
 | villa | 6 | `LodgingPlace` | `LodgingBusiness` | ≥3 properties as a typed list |
 | restaurant | 4 | `PhysicalStoreOrLocalBusiness` | `Restaurant` | `hasMenu` with ≥3 `MenuSection` |
 | transfers | 3 | `LocalServiceOrTradeBusiness` | `LocalBusiness` | ≥3 routes as typed `Service` entries |
-| travel-ai | 2 | `Corporation` | `Organization` | — |
-| other | 22 | needs a human decision | — | — |
+| travel-ai | 2 | `Corporation` | `Organization` | - |
+| other | 22 | needs a human decision | - | - |
 
 49 of 71 clients fall into a vertical with a known mapping. The remaining 22
 are deliberately unclassified: guessing an entity type for them would be the
@@ -148,7 +148,7 @@ npx tsx scripts/ai-mode-report.mts --all              # every live client, opt-i
 
 The script drives the live audit engine rather than re-implementing scoring,
 so what the rubric advises and what the widget measures cannot drift apart. It
-skips the projects recorded as `liveStatus: 'offline'` — four domains are
+skips the projects recorded as `liveStatus: 'offline'`, four domains are
 dead and one is a parked for-sale page, and auditing those reports a failure
 that belongs to the registrar.
 
@@ -158,7 +158,7 @@ the default is five. `--all` is opt-in.
 **What the script cannot tell you.** It produces the work list, not the
 verdict. Whether a rent-a-car client has per-model pages worth marking up,
 whether a tour operator's departures are really dated, whether a dimension
-should be `n/a` — those are judgements about content, and a person makes them.
+should be `n/a`: those are judgements about content, and a person makes them.
 
 ---
 
@@ -175,7 +175,7 @@ decision stays visible instead of being re-litigated.
 | `SpecificPurchasableSoftwareSystem` | `/platform`, `/compare/[slug]` | `SoftwareApplication`; comparison surface still prose-shaped |
 | `LocalServiceOrTradeBusiness` | `/services/*` | `Service`; no `address` to publish, see below |
 | `RealWorldGeographicArea` | `/locations` | `CollectionPage`; not marked up as places |
-| `SpecificPerson` | none yet | Generator exists, unwired — see below |
+| `SpecificPerson` | none yet | Generator exists, unwired: see below |
 
 Two honest gaps:
 
@@ -189,5 +189,5 @@ Two honest gaps:
   agrees to be named, not a code change.
 
 Client case studies at `/work/[slug]` carry an `about` node naming the
-business, its type and its markets — identity only, and skipped entirely when
+business, its type and its markets: identity only, and skipped entirely when
 the site is recorded as offline.

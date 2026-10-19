@@ -1,7 +1,7 @@
 ---
 slug: pillar-agency-playbooks
 title: Agency Playbooks - Delivery, Reporting, and Scaling Client SEO
-description: Hub for operators running retainers - scoping, narrative reporting, and when software augments headcount.
+description: "Playbooks for agencies running SEO retainers: scoping work, narrative client reporting, and knowing when software should augment headcount."
 date: 2026-02-01
 author: AnotherSEOGuru Editorial Team
 pillarHub: true

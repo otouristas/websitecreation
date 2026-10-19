@@ -50,7 +50,7 @@ import { isValidLocale, localizedPath, type SiteLocale } from "@/lib/i18n/locale
 type PageProps = { params: Promise<{ locale: string }> };
 
 const PATH = CHROME_PATH;
-const EXTENSION_NAME = "AnotherSEOGuru – SEO Extension";
+const EXTENSION_NAME = "AnotherSEOGuru: SEO Extension";
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { locale } = await params;

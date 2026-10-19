@@ -12,5 +12,5 @@
 
 ## Snippet
 
-Trusted by 10,000+ travelers across 24 islands # Rent a Car in theCyclades Islands Compare **100+ agencies** across **24 Greek islands**. Find the best deals on cars, scooters & ATVs — powered by Touristas AI. Quick — where are you going? [Mykonos](https://cycladesrentacar.com/is
+Trusted by 10,000+ travelers across 24 islands # Rent a Car in theCyclades Islands Compare **100+ agencies** across **24 Greek islands**. Find the best deals on cars, scooters & ATVs, powered by Touristas AI. Quick, where are you going? [Mykonos](https://cycladesrentacar.com/is
 

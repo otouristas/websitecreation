@@ -37,7 +37,7 @@ function ok(label: string, condition: boolean, detail?: unknown): void {
     console.log(`  ✓ ${label}`);
   } else {
     failures += 1;
-    console.log(`  ✗ ${label}${detail === undefined ? '' : ` — got ${JSON.stringify(detail)}`}`);
+    console.log(`  ✗ ${label}${detail === undefined ? '' : `, got ${JSON.stringify(detail)}`}`);
   }
 }
 

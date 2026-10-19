@@ -230,7 +230,7 @@ export const integrationsEn: HelpCategory = {
           { title: "Download and unzip", text: `Get [anotherseoguru-extension.zip](${EXT_ZIP}) and unzip it. Keep the folder that contains \`manifest.json\`.` },
           { title: "Open Chrome’s extensions page", text: "Go to `chrome://extensions`." },
           { title: "Turn on Developer mode", text: "Use the **Developer mode** switch on that page." },
-          { title: "Load the folder", text: "Click **Load unpacked** and choose the unzipped folder. The name in Chrome is **AnotherSEOGuru – SEO checker & Search Console**." },
+          { title: "Load the folder", text: "Click **Load unpacked** and choose the unzipped folder. The name in Chrome is **AnotherSEOGuru App: SEO checker & Search Console**." },
           { title: "Pin it", text: "Pin AnotherSEOGuru from the puzzle-piece menu so the toolbar icon stays visible. Click it, or press **Alt+Shift+S**." },
         ] },
         { type: "h2", id: "sign-in", text: "Sign in to AnotherSEOGuru App" },

@@ -1,5 +1,6 @@
 import { getAppPath } from "@/lib/app-links";
 import { localizedPath, type SiteLocale } from "@/lib/i18n/locale";
+import { fitDescription } from "@/lib/seo/description";
 import { el } from "./el";
 import { en } from "./en";
 import { integrationsEl } from "./integrations-el";
@@ -31,14 +32,26 @@ export function helpContent(locale: SiteLocale): ReadonlyArray<HelpCategory> {
 export const helpPath = (locale: SiteLocale, category?: string, article?: string) =>
   localizedPath(locale, ["/help", category, article].filter(Boolean).join("/"));
 
-const META_SUFFIX: Record<SiteLocale, string> = {
-  en: "Step-by-step guide in the AnotherSEOGuru App help center.",
-  el: "Οδηγός βήμα βήμα στο κέντρο βοήθειας του AnotherSEOGuru App.",
+const META_SUFFIX: Record<SiteLocale, readonly string[]> = {
+  en: [
+    "Step-by-step guide in the AnotherSEOGuru App help center, written for everyday SEO work.",
+    "Step-by-step guide in the AnotherSEOGuru App help center.",
+    "Step-by-step AnotherSEOGuru App guide.",
+    "Step-by-step guide.",
+  ],
+  el: [
+    "Οδηγός βήμα βήμα στο κέντρο βοήθειας του AnotherSEOGuru App, για την καθημερινή δουλειά SEO.",
+    "Οδηγός βήμα βήμα στο κέντρο βοήθειας του AnotherSEOGuru App.",
+    "Οδηγός βήμα βήμα για το AnotherSEOGuru App.",
+    "Οδηγός βήμα βήμα.",
+  ],
 };
 
 /** One-line summaries read well in the UI but are too thin for a search snippet. */
 export function helpMetaDescription(summary: string, locale: SiteLocale): string {
-  return summary.length >= 90 ? summary : `${summary} ${META_SUFFIX[locale]}`;
+  // Pick the closing clause that lands the summary in the SERP window rather
+  // than leaving short summaries at 90-110 characters.
+  return fitDescription(summary, META_SUFFIX[locale]);
 }
 
 /**

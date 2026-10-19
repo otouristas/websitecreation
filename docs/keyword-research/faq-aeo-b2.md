@@ -1,4 +1,4 @@
-# FAQ & AEO Question Bank — AnotherSEOGuru
+# FAQ & AEO Question Bank: AnotherSEOGuru
 
 > All entries are grouped by cluster, with short answers and suggested target pages/schema types.
 > Mark clusters C4, C7, C8 as off‑core in internal notes (content only, not productized services).
@@ -7,7 +7,7 @@
 
 ---
 
-## C1 — SEO services & pricing
+## C1: SEO services & pricing
 
 ### Q1. Τι είναι το SEO;
 
@@ -65,7 +65,7 @@
 
 ---
 
-## C2 — Web design by city
+## C2: Web design by city
 
 ### Q5. Τι περιλαμβάνει η κατασκευή ιστοσελίδας;
 
@@ -109,7 +109,7 @@
 
 ---
 
-## C3 — E‑shop / WooCommerce
+## C3: E‑shop / WooCommerce
 
 ### Q8. Δημιουργία e‑shop: τι χρειάζεται;
 
@@ -151,7 +151,7 @@
 
 ---
 
-## C4 — Hosting & domains (off‑core content)
+## C4: Hosting & domains (off‑core content)
 
 ### Q11. Τι είναι το web hosting;
 
@@ -193,7 +193,7 @@
 
 ---
 
-## C5 — Local SEO by city
+## C5: Local SEO by city
 
 ### Q14. Τι είναι το Local SEO;
 
@@ -221,7 +221,7 @@
 
 ---
 
-## C6 — AEO / AI visibility / GEO
+## C6: AEO / AI visibility / GEO
 
 ### Q16. Τι είναι το Answer Engine Optimization (AEO);
 
@@ -250,7 +250,7 @@
 
 ---
 
-## C7 — Google Ads & SEO vs Ads (off‑core)
+## C7: Google Ads & SEO vs Ads (off‑core)
 
 ### Q18. Τι είναι το Google Ads;
 
@@ -278,7 +278,7 @@
 
 ---
 
-## C8 — Chatbots / AI for business (off‑core)
+## C8: Chatbots / AI for business (off‑core)
 
 ### Q20. Τι είναι ένα chatbot;
 
@@ -307,7 +307,7 @@
 
 ---
 
-## C9 — Vertical / industry SEO
+## C9: Vertical / industry SEO
 
 ### Q22. Τι είναι το SEO για τουριστικές επιχειρήσεις;
 
@@ -322,7 +322,7 @@
 
 ---
 
-## C10 — English head terms
+## C10: English head terms
 
 ### Q23. What are SEO services?
 

@@ -254,14 +254,14 @@ export interface AngleFaq {
  * These answer the questions that actually precede this purchase. They are
  * authored per service rather than per industry pairing, because the honest
  * differentiator on the industry axis is the pain points and demand shape
- * already rendered above them — inventing 31 variants of each answer would be
+ * already rendered above them. Inventing 31 variants of each answer would be
  * padding, which is the thing this whole exercise is meant to remove.
  *
  * No prices: `/pricing` owns those and follows the live offer window.
  */
 const EN_FAQS: Record<string, readonly AngleFaq[]> = {
   'website-creation': [
-    { question: 'How long does a build take?', answer: 'Most projects run two to eight weeks once content and approvals are ready. The variable is almost never development — it is how quickly copy, photography and sign-off arrive.' },
+    { question: 'How long does a build take?', answer: 'Most projects run two to eight weeks once content and approvals are ready. The variable is almost never development. It is how quickly copy, photography and sign-off arrive.' },
     { question: 'Do I need a separate SEO project afterwards?', answer: 'No. Technical foundations, URL structure and analytics are part of the build. A separate optimisation project after launch usually means they were skipped.' },
     { question: 'Can the site grow into more pages later?', answer: 'Yes, that is the point of settling the architecture first. New service or location pages slot into the existing structure without a rebuild.' },
   ],
@@ -273,16 +273,16 @@ const EN_FAQS: Record<string, readonly AngleFaq[]> = {
   'seo-web-design': [
     { question: 'How is this different from a normal website project?', answer: 'The architecture and technical review happen during design rather than after handover, so the structure that decides what can rank is settled before any copy is written.' },
     { question: 'Do you work with an existing design?', answer: 'Yes, provided the structure can carry it. If the page hierarchy is the problem, changing the visuals alone will not fix the rankings.' },
-    { question: 'Is schema markup included?', answer: 'Yes, for the entities that matter on the site — the organisation, its services, and page-level markup such as breadcrumbs and FAQs where they reflect visible content.' },
+    { question: 'Is schema markup included?', answer: 'Yes, for the entities that matter on the site: the organisation, its services, and page-level markup such as breadcrumbs and FAQs where they reflect visible content.' },
   ],
   'content-creation': [
     { question: 'Who writes the content?', answer: 'We do, starting from the questions your team already answers day to day, then checking which of them have real search demand before anything is commissioned.' },
-    { question: 'How much content do we actually need?', answer: 'Fewer pages than most plans assume. One page per genuine intent — more than that and your own pages start competing with each other.' },
+    { question: 'How much content do we actually need?', answer: 'Fewer pages than most plans assume. One page per genuine intent. Any more than that and your own pages start competing with each other.' },
     { question: 'Will it sound like our business?', answer: 'That depends on access. The pages that read as authentic are the ones informed by how your team actually explains the work, which is why the process starts there.' },
   ],
   'local-seo': [
     { question: 'How long before local rankings move?', answer: 'Profile and citation work can show up within weeks because the signals are direct. Competitive organic terms take longer, and anyone promising a date is guessing.' },
-    { question: 'Do I need a physical address?', answer: 'For the map pack, yes — Google requires a real presence in the area served. Service-area businesses can rank without a storefront but still need a verifiable base.' },
+    { question: 'Do I need a physical address?', answer: 'For the map pack, yes. Google requires a real presence in the area served. Service-area businesses can rank without a storefront but still need a verifiable base.' },
     { question: 'Do reviews really matter?', answer: 'Yes, for both ranking and click-through. A steady flow with replies outperforms a burst of reviews followed by silence.' },
   ],
   'seo-audits': [
@@ -292,7 +292,7 @@ const EN_FAQS: Record<string, readonly AngleFaq[]> = {
   ],
   'ai-visibility': [
     { question: 'Is this different from normal SEO?', answer: 'It overlaps but the target differs. Ranking earns a click; being cited in an AI answer requires the model to identify you unambiguously and find a passage worth quoting.' },
-    { question: 'Can you guarantee mentions in AI answers?', answer: 'No, and neither can anyone else — these systems are not deterministic. What can be done is remove the reasons you are not citable, and track mentions so the effect is visible.' },
+    { question: 'Can you guarantee mentions in AI answers?', answer: 'No, and neither can anyone else, because these systems are not deterministic. What can be done is remove the reasons you are not citable, and track mentions so the effect is visible.' },
     { question: 'Does this replace traditional rankings?', answer: 'No. Both matter, and the technical groundwork largely serves both.' },
   ],
   'eshop-woocommerce': [
@@ -302,11 +302,11 @@ const EN_FAQS: Record<string, readonly AngleFaq[]> = {
   ],
   'eshop-seo': [
     { question: 'Why are my category pages not ranking?', answer: 'Usually duplication from filters and parameters, categories competing with each other, or thin category copy. The technical layer comes first because optimisation on top of duplication does not hold.' },
-    { question: 'What happens to out-of-stock products?', answer: 'They need a deliberate policy — keep, redirect or remove — because letting them silently 404 wastes the links and rankings they accumulated.' },
+    { question: 'What happens to out-of-stock products?', answer: 'They need a deliberate policy (keep, redirect or remove), because letting them silently 404 wastes the links and rankings they accumulated.' },
     { question: 'Is conversion work included?', answer: 'It is treated as part of the same job. Traffic to a page that does not convert is a cost, not a result.' },
   ],
   'speed-optimization': [
-    { question: 'Which pages do you optimise?', answer: 'The templates that carry revenue, not the homepage — the homepage is usually the fastest page on any site and the least representative.' },
+    { question: 'Which pages do you optimise?', answer: 'The templates that carry revenue, not the homepage. The homepage is usually the fastest page on any site and the least representative.' },
     { question: 'Will this improve my rankings?', answer: 'Speed is one signal among many, and the honest answer is that its effect on conversion is usually larger and more immediate than its effect on position.' },
     { question: 'How do you prove the improvement?', answer: 'The same templates are measured before and after, so the change is documented rather than asserted.' },
   ],
@@ -316,7 +316,7 @@ const EN_FAQS: Record<string, readonly AngleFaq[]> = {
     { question: 'What if I already have spam links?', answer: 'The profile is reviewed as part of the work. Most unsolicited spam is ignored by search engines and needs no action; disavowal is a last resort, not a routine step.' },
   ],
   'logo-design': [
-    { question: 'What do I receive?', answer: 'The mark in the formats digital and print both need, plus the essentials that make it usable — colour palette, typography and a usage guide.' },
+    { question: 'What do I receive?', answer: 'The mark in the formats digital and print both need, plus the essentials that make it usable: colour palette, typography and a usage guide.' },
     { question: 'Do you redraw an existing logo?', answer: 'Yes, where the mark is sound but the files are not. Recovering a usable vector from a low-resolution image is a common starting point.' },
     { question: 'Can this be done alongside a website build?', answer: 'Yes, and it is usually cheaper that way since the identity decisions feed straight into the design.' },
   ],

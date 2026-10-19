@@ -349,7 +349,7 @@ export default function Footer({ locale: localeProp }: { locale?: SiteLocale }):
             <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
               <div className="flex min-w-0 flex-col items-center gap-3 md:items-start">
                 <p className="text-center text-sm text-muted-foreground md:text-left">
-                  © {currentYear} AnotherSEOGuru — {isEl ? "Ένα προϊόν της Touristas Technologies" : "Touristas Technologies"}
+                  © {currentYear} AnotherSEOGuru | {isEl ? "Ένα προϊόν της Touristas Technologies" : "Touristas Technologies"}
                 </p>
                 <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-muted-foreground md:justify-start">
                   <a

@@ -1,7 +1,7 @@
 ---
 slug: gsc-query-prioritization-framework
 title: A Practical Framework for Prioritizing Search Console Queries
-description: Score impressions, clicks, position, and intent so your backlog reflects revenue - not spreadsheet anxiety.
+description: Score Search Console queries by impressions, clicks, position and intent so your backlog reflects revenue instead of spreadsheet anxiety. Free framework.
 date: 2026-02-12
 author: AnotherSEOGuru Editorial Team
 category: Search Console

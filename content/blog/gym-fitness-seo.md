@@ -1,7 +1,7 @@
 ---
 slug: gym-fitness-seo
 title: Gym & Fitness SEO - Fill Your Gym from Google
-description: Local SEO for gyms, studios and personal trainers - win the Google map pack, rank per program, and turn “gym near me” searches into new memberships.
+description: "Local SEO for gyms, studios and personal trainers: win the Google map pack, rank per program and turn “gym near me” searches into new memberships."
 date: 2026-07-06
 author: AnotherSEOGuru Editorial Team
 translationOf: seo-gia-gymnastiria

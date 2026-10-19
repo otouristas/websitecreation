@@ -68,10 +68,10 @@ A practical strategy maps keywords to pages, fixes technical blockers, publishes
 
 | Work stream | Typical start (GR, 2026) | First signals | What it unlocks |
 | :--- | :--- | :--- | :--- |
-| Technical audit + fixes | {{ENTRY_SEO}} – €1,200 one-off | 2–8 weeks | Indexation, speed, crawl health |
-| On-page rewrites (5–10 URLs) | €150 – €450 / page | 1–3 months | Relevance + CTR |
+| Technical audit + fixes | {{ENTRY_SEO}} to €1,200 one-off | 2–8 weeks | Indexation, speed, crawl health |
+| On-page rewrites (5–10 URLs) | €150 to €450 / page | 1–3 months | Relevance + CTR |
 | Local SEO (GBP + pages) | from {{ENTRY_SEO}}/mo | 1–3 months | Map pack visibility |
-| Content + authority retainer | {{ENTRY_SEO}} – {{SEO_AUTHORITY}}/mo | 3–12 months | Compounding organic traffic |
+| Content + authority retainer | {{ENTRY_SEO}} to {{SEO_AUTHORITY}}/mo | 3–12 months | Compounding organic traffic |
 
 Pricing context: [How much does SEO cost?](/en/blog/how-much-does-seo-cost) and [pricing](/en/pricing).
 

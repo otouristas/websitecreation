@@ -1,7 +1,7 @@
 ---
 slug: gsc-weekly-ops-playbook
 title: A one-hour Google Search Console ops loop for in-house teams
-description: A repeatable weekly checklist - segment performance, cluster queries, pick three ship items, and validate in rank tracking (aligned with platform workflows).
+description: "A repeatable weekly Search Console checklist: segment performance, cluster queries, pick three items to ship and validate the results in rank tracking."
 date: 2026-03-08
 author: AnotherSEOGuru Editorial Team
 category: Search Console

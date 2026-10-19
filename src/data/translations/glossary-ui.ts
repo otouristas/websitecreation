@@ -14,10 +14,10 @@ export const glossaryUiEn = {
 export const glossaryUiEl = {
   title: 'SEO Γλωσσάρι - 100+ όροι',
   metaDescription:
-    'Γλωσσάρι SEO με 100+ ορισμούς: τεχνικό SEO, GEO, AEO, AI αναζήτηση, links και Search Console - με συνδέσμους σε οδηγούς και πλατφόρμα.',
+    'Γλωσσάρι SEO με 100+ ορισμούς: τεχνικό SEO, GEO, AEO, AI αναζήτηση, links και Search Console, με συνδέσμους σε οδηγούς και στην πλατφόρμα.',
   loading: 'Φόρτωση γλωσσαρίου…',
   heroTitle: 'SEO Γλωσσάρι',
-  heroSub: '100+ ορισμοί για τεχνικό SEO, GEO, AEO, AI αναζήτηση και Search Console - με συνδέσμους σε οδηγούς και πλατφόρμα.',
+  heroSub: '100+ ορισμοί για τεχνικό SEO, GEO, AEO, AI αναζήτηση και Search Console, με συνδέσμους σε οδηγούς και στην πλατφόρμα.',
   searchPlaceholder: 'Αναζήτηση όρων…',
   allCategories: 'Όλες οι κατηγορίες',
   noResults: 'Δεν βρέθηκαν όροι.',

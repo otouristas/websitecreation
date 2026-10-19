@@ -12,5 +12,5 @@
 
 ## Snippet
 
-[Skip to main content](https://mykonos.luxury/#main-content) ![villa](https://mykonos.bluepeak.gr/wp-content/uploads/2023/12/villa.png) OFFERING - DATES - GUESTS - Search # We craft your complete Mykonos journey—leaving you free to simply arrive and indulge Mykonos is an island o
+[Skip to main content](https://mykonos.luxury/#main-content) ![villa](https://mykonos.bluepeak.gr/wp-content/uploads/2023/12/villa.png) OFFERING - DATES - GUESTS - Search # We craft your complete Mykonos journey, leaving you free to simply arrive and indulge Mykonos is an island o
 

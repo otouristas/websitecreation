@@ -12,5 +12,5 @@
 
 ## Snippet
 
-![Κτήμα Ωρίων στην Κερατέα – χώρος για γάμο και εκδηλώσεις](https://ktimaorion.gr/_next/image?url=%2Fimages%2Fhero-image.jpg&w=3840&q=75&dpl=dpl_BhtukWyTTtTPEvoEmTJQoK4f3HuQ) # Κτήμα Ωρίων στην Κερατέα Κτήμα γάμου, βάπτισης και εκδηλώσεων στην Αττική [ΕΞΕΡΕΥΝΗΣΗ ΥΠΗΡΕΣΙΩΝ](https:
+![Κτήμα Ωρίων στην Κερατέα: χώρος για γάμο και εκδηλώσεις](https://ktimaorion.gr/_next/image?url=%2Fimages%2Fhero-image.jpg&w=3840&q=75&dpl=dpl_BhtukWyTTtTPEvoEmTJQoK4f3HuQ) # Κτήμα Ωρίων στην Κερατέα Κτήμα γάμου, βάπτισης και εκδηλώσεων στην Αττική [ΕΞΕΡΕΥΝΗΣΗ ΥΠΗΡΕΣΙΩΝ](https:
 

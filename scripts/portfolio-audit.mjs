@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Portfolio audit — fetches metadata and screenshots for all projects in portfolio.ts.
+ * Portfolio audit: fetches metadata and screenshots for all projects in portfolio.ts.
  * Usage:
  *   node scripts/portfolio-audit.mjs              # audit only
  *   node scripts/portfolio-audit.mjs --screenshot # audit + screenshots

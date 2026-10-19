@@ -409,7 +409,7 @@ export function KeywordsPreview({ locale: l }: { readonly locale: L }) {
     [tx(l, "paros hotels with pool", "ξενοδοχεια παρος με πισινα"), tx(l, "Commercial", "Εμπορική"), "1.9K", 38, "3.8", "primary"],
     [tx(l, "paros suites sea view", "σουιτες παρος θεα θαλασσα"), tx(l, "Transactional", "Συναλλακτική"), "880", 29, tx(l, "Not ranking", "Χωρίς θέση"), "success"],
     [tx(l, "where to stay in paros", "που να μεινω στην παρο"), tx(l, "Informational", "Ενημερωτική"), "3.6K", 33, "7.2", "muted"],
-    [tx(l, "paros port hotels", "ξενοδοχεια παροικια λιμανι"), tx(l, "Commercial", "Εμπορική"), "1.3K", 22, "—", "primary"],
+    [tx(l, "paros port hotels", "ξενοδοχεια παροικια λιμανι"), tx(l, "Commercial", "Εμπορική"), "1.3K", 22, "-", "primary"],
   ];
   return (
     <div className="grid gap-3">
@@ -564,7 +564,7 @@ export function AiVisibilityPreview({ locale: l }: { readonly locale: L }) {
     ) : s === "mentioned" ? (
       <span className="inline-flex items-center gap-1 text-foreground/85"><span className="size-2 rounded-full bg-foreground/60" />{tx(l, "Mentioned", "Αναφορά")}</span>
     ) : (
-      <span className="text-muted-foreground/70">— {tx(l, "Absent", "Απουσία")}</span>
+      <span className="text-muted-foreground/70">{tx(l, "Absent", "Απουσία")}</span>
     );
   return (
     <PCard

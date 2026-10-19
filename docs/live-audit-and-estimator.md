@@ -1,7 +1,7 @@
 # Live site test and live cost estimator
 
 Both live on `/[locale]/get-started`, above the brief form. A visitor measures
-their own site, sees what fixing it costs, and only then fills in a form — and
+their own site, sees what fixing it costs, and only then fills in a form, and
 the brief that reaches us carries their figures instead of a name and an email.
 
 ## What is actually measured
@@ -9,7 +9,7 @@ the brief that reaches us carries their figures instead of a name and an email.
 `POST /api/audit` streams newline-delimited JSON while it works. Every number
 it reports was measured on that request; nothing is modelled, cached or carried
 over from another site. When a probe does not complete the field is `null` and
-the UI prints `—` rather than filling in a plausible figure.
+the UI prints a `-` placeholder rather than filling in a plausible figure.
 
 Five real network probes, run against the visitor's origin:
 
@@ -24,7 +24,7 @@ Five real network probes, run against the visitor's origin:
 The homepage HTML is then parsed into counts and values (`src/lib/audit/signals.ts`)
 and graded by ~40 weighted checks (`src/lib/audit/checks.ts`) across four
 pillars: **technical**, **content**, **performance** and **AI visibility**.
-Checks are three-state — `pass`, `warn` (half weight) and `fail` — because a
+Checks are three-state (`pass`, `warn` at half weight, and `fail`) because a
 binary verdict on a 63-character title lies in both directions.
 
 ### Why the stream
@@ -33,29 +33,29 @@ The progress log on screen is the generator's own event stream, read off the
 response as it arrives. There is no minimum duration and no scripted sequence:
 a fast host finishes in under a second and the log says so. The older
 `/api/scan` (still behind the homepage hero) holds its results for 2.2 s so a
-timed animation can play — which teaches a visitor that the number at the end
+timed animation can play, which teaches a visitor that the number at the end
 is theatre too.
 
 ### Safety
 
-Every hop — first request and every redirect — passes `assertPublicHost` from
+Every hop, first request and every redirect, passes `assertPublicHost` from
 `src/lib/scan/ssrf.ts`, so a public page cannot bounce the scanner onto a
 private address. `ProbeOptions.guard` exists only so the self-test can measure
 against a fixture server on loopback; the route never passes it, and the
 self-test asserts that loopback is refused without it.
 
-Per-IP rate limit is 8 audits a minute, in module memory — per instance on a
+Per-IP rate limit is 8 audits a minute, in module memory: per instance on a
 serverless platform, so it is a brake on a browser rather than a quota.
 
 ## The plan panel
 
 `src/lib/estimate/model.ts` is pure: inputs in, line items out. Every line is
-traceable to `src/data/pricing.ts` — the same source the pricing page reads —
+traceable to `src/data/pricing.ts`: the same source the pricing page reads,
 so a price cannot drift between the two. What the price list does not state
 (pages covered per tier, what a second language costs) lives in
 `src/data/estimator-rates.ts` as named constants with the reasoning attached.
 
-**The visitor never sees an amount.** The panel names the work — what it
+**The visitor never sees an amount.** The panel names the work: what it
 covers, whether each line is `once` or `monthly`, the minimum term in words,
 and a link to `/pricing` for anyone who wants figures. The quote follows a
 call, which is how the business actually sells.
@@ -63,13 +63,13 @@ call, which is how the business actually sells.
 This started as a cost estimator and it drove leads away. A real audit of a
 Greek hotel site put **"Σύνολο σε 6 μήνες: €11.890"** in front of somebody who
 had typed a domain thirty seconds earlier. A cold visitor cannot evaluate that
-number, so they close the tab — and the lead, which was the point of the whole
+number, so they close the tab, and the lead, which was the point of the whole
 surface, is gone. An earlier pass had already removed a *24-month* slider whose
 total was four times the real `SEO_MIN_TERM_MONTHS` of 6.
 
 The money did not disappear, it moved: `buildEstimate` still runs on every
-input, and its figures — one-off, monthly, and the value over the minimum term
-— travel with the brief, so whoever picks up the call knows the shape of the
+input, and its figures: one-off, monthly, and the value over the minimum term
+travel with the brief, so whoever picks up the call knows the shape of the
 deal before they dial.
 
 Two assertions in the self-test hold the line, because "just show the total" is
@@ -83,9 +83,9 @@ must still carry real money.
 recommendation prints the figure that produced it ("Scoped to 22 pages from
 your sitemap", "GPTBot, Google-Extended cannot crawl you"). It may escalate to
 a rebuild when the technical *and* performance pillars both fail, with the
-scores that say so — it never quietly moves a visitor off the track they chose.
+scores that say so: it never quietly moves a visitor off the track they chose.
 
-`?service=<slug>` presets — service pages link here and until now nothing read
+`?service=<slug>` presets: service pages link here and until now nothing read
 the parameter, so `/el/get-started?service=ai-visibility` landed on a blank
 wizard. The slug now seeds both the wizard's goal and the estimator's scope
 (`SERVICE_PRESETS`, `SERVICE_GOALS` in `src/lib/estimate/recommend.ts`), and
@@ -101,7 +101,7 @@ recommendation and the cost arithmetic.
 
 ## Weight change: the AI pillar, 2026-09-21
 
-Three checks were added to the `ai` pillar — `entity_completeness` (6),
+Three checks were added to the `ai` pillar: `entity_completeness` (6),
 `collection_shape` (4) and `media_assets` (3). The pillar went from 58 to 71
 points, and from 21.7% to 25.4% of the 280-point total. Pillar scores are
 normalised within a pillar, so the other three are unaffected in isolation,
@@ -121,7 +121,7 @@ Why these three, and why in the existing pillar:
   client-facing readiness rubric score the same way.
 - `collection_shape` reads whether a page publishes a list a machine can treat
   as a set: at least three entries, all declaring one type. Breadcrumbs are
-  excluded — a `BreadcrumbList` is an item list, and counting it would make
+  excluded: a `BreadcrumbList` is an item list, and counting it would make
   every site with a breadcrumb look like it publishes a collection.
 - `media_assets` counts images with a real URL, alt text and declared
   dimensions. An inline `data:` URI cannot be linked to and an unlabelled

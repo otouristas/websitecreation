@@ -45,7 +45,7 @@ Not every match is the SEO term: «σελίδες προορισμού» on tour
 - ❌ `rankάρουν`, `κλικάρουν`, `ποστάρουν`, `σεταπ` → ✅ `κατατάσσονται ψηλά / ανεβαίνουν στη Google`, `κάνουν κλικ`, `δημοσιεύουν`, `ρύθμιση`.
 
 ## Punctuation
-- No em-dashes (—). Use hyphen with spaces ` - `.
+- No em dashes (U+2014) and no spaced en dashes. Rewrite with a comma, colon, full stop or parentheses; `npm run check:no-em-dash` enforces this.
 - Greek question mark is `;` (already correct in FAQ questions).
 
 ## Consistency

@@ -80,11 +80,11 @@ Length barely changes. What changes is one query, an answer up front, headings a
 
 | Format | Primary job | Typical length | Typical cost (GR) |
 | :--- | :--- | :--- | :--- |
-| Service / commercial page | Convert searchers | 600 – 1,200 words | €150 – €450 |
-| Location page | Win local intent | 500 – 1,000 words (unique) | €120 – €300 |
-| How-to / guide | Capture info → assist | 1,000 – 2,000+ words | €250 – €700 |
-| Pillar hub | Own a topic cluster | 1,500 – 3,000 words | €400 – €900 |
-| FAQ / glossary entry | Snippets & AI cites | 300 – 800 words | €80 – €200 |
+| Service / commercial page | Convert searchers | 600 to 1,200 words | €150 to €450 |
+| Location page | Win local intent | 500 to 1,000 words (unique) | €120 to €300 |
+| How-to / guide | Capture info → assist | 1,000 to 2,000+ words | €250 to €700 |
+| Pillar hub | Own a topic cluster | 1,500 to 3,000 words | €400 to €900 |
+| FAQ / glossary entry | Snippets & AI cites | 300 to 800 words | €80 to €200 |
 
 Pillars like [What is SEO?](/en/blog/what-is-seo) support clusters. How-tos such as [technical SEO](/en/blog/technical-seo-guide) and [on-page SEO](/en/blog/on-page-seo) feed commercial pages. Local pages need unique city detail - see [local SEO](/en/blog/local-seo-guide).
 

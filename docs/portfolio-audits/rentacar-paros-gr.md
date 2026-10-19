@@ -8,7 +8,7 @@
 - Keywords EL: ενοικίαση αυτοκινήτου Πάρος; rentacar Πάρος
 - Angle: local .gr domain for Greek-language Paros searchers
 - CTA: κράτηση
-- Scrape: site offline at scrape time — used portfolio metadata
+- Scrape: site offline at scrape time, used portfolio metadata
 - Notes: Site offline at scrape time
 
 

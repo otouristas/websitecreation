@@ -167,7 +167,7 @@ function DocsFooter({ locale }: { readonly locale: SiteLocale }) {
         </a>
       </div>
       <p className="mx-auto mt-4 max-w-[72rem] text-[12.5px] text-muted-foreground/80">
-        © {new Date().getFullYear()} AnotherSEOGuru — {el ? "Ένα προϊόν της Touristas Technologies" : "Touristas Technologies"}
+        © {new Date().getFullYear()} AnotherSEOGuru | {el ? "Ένα προϊόν της Touristas Technologies" : "Touristas Technologies"}
       </p>
     </footer>
   );

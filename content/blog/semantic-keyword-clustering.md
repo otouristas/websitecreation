@@ -21,7 +21,7 @@ faq:
     answer: Ordinary grouping matches shared text, so paraphrases split apart and different intents merge together. Semantic clustering compares meaning, then separates by intent, which maps far more closely to how pages actually rank.
 ---
 
-Most keyword exports arrive as a few thousand rows with no structure. The question that matters is not which row has the highest volume — it is **how many pages this list actually represents**, and what each of those pages should cover. That is what clustering answers.
+Most keyword exports arrive as a few thousand rows with no structure. The question that matters is not which row has the highest volume. It is **how many pages this list actually represents**, and what each of those pages should cover. That is what clustering answers.
 
 ## What semantic keyword clustering is
 
@@ -29,14 +29,14 @@ Semantic keyword clustering groups keywords by the meaning and intent behind the
 
 The distinction is not academic. Two phrases can look almost identical and belong on different pages. Two phrases with no words in common can belong on the same one.
 
-- "running shoes" and "trainers for running" — no shared words, same page
-- "cheap running shoes" and "running shoes for flat feet" — two shared words out of three, different pages
+- "running shoes" and "trainers for running": no shared words, same page
+- "cheap running shoes" and "running shoes for flat feet": two shared words out of three, different pages
 
 String matching gets both of these wrong. Meaning-based grouping gets both right.
 
 ## Meaning is only the first axis
 
-Grouping on meaning alone still merges things that should stay apart. "What is technical SEO" and "technical SEO agency" are semantically adjacent — same subject, nearly the same vocabulary — but one reader wants an explanation and the other wants a supplier. One becomes an article, the other a service page.
+Grouping on meaning alone still merges things that should stay apart. "What is technical SEO" and "technical SEO agency" are semantically adjacent (same subject, nearly the same vocabulary), but one reader wants an explanation and the other wants a supplier. One becomes an article, the other a service page.
 
 So useful clustering works on two axes at once:
 
@@ -45,7 +45,7 @@ So useful clustering works on two axes at once:
 | Semantic similarity | Do these mean the same thing? | Merges paraphrases and synonyms |
 | Search intent | What is the reader trying to do? | Splits explanation from purchase |
 
-Intent is usually sorted into four buckets: informational, commercial, transactional, navigational. You do not need a classifier to apply this — reading the top ten results for a query tells you what the engine currently believes the intent is.
+Intent is usually sorted into four buckets: informational, commercial, transactional, navigational. You do not need a classifier to apply this: reading the top ten results for a query tells you what the engine currently believes the intent is.
 
 ## The no-code method: SERP overlap
 
@@ -61,13 +61,13 @@ If you want control over the method, the code is short. The shape of it:
 
 1. **Embed each keyword.** A sentence-transformer model turns each phrase into a vector. `all-MiniLM-L6-v2` is a common starting point because it is small and fast; larger models group more subtly and cost more to run.
 2. **Compute pairwise similarity.** Cosine similarity between every pair of vectors. For a few thousand keywords this is a single matrix operation.
-3. **Cluster.** Agglomerative clustering with a distance threshold is the usual choice, because you do not have to declare the number of clusters up front — which you almost never know. HDBSCAN is a reasonable alternative when you also want outliers flagged rather than forced into a group.
+3. **Cluster.** Agglomerative clustering with a distance threshold is the usual choice, because you do not have to declare the number of clusters up front, which you almost never know. HDBSCAN is a reasonable alternative when you also want outliers flagged rather than forced into a group.
 4. **Name each cluster.** The keyword closest to the cluster centroid is a serviceable label, and usually a good candidate for the page's primary target.
 5. **Read the output.** Not optional. See below.
 
-Two practical notes. Normalise before embedding — lowercase, strip punctuation, collapse whitespace — or you will get clusters that differ only by capitalisation. And handle brand terms separately: they distort groupings because they are semantically close to everything in your catalogue.
+Two practical notes. Normalise before embedding (lowercase, strip punctuation, collapse whitespace), or you will get clusters that differ only by capitalisation. And handle brand terms separately: they distort groupings because they are semantically close to everything in your catalogue.
 
-The threshold is the parameter that decides whether the output is useful. There is no correct value to copy. Start near 0.75 cosine similarity, read fifty clusters by hand, and adjust. Too loose and unrelated intents collapse into one oversized cluster. Too tight and you get hundreds of near-duplicate groups implying hundreds of near-duplicate pages — the exact problem clustering was supposed to prevent.
+The threshold is the parameter that decides whether the output is useful. There is no correct value to copy. Start near 0.75 cosine similarity, read fifty clusters by hand, and adjust. Too loose and unrelated intents collapse into one oversized cluster. Too tight and you get hundreds of near-duplicate groups implying hundreds of near-duplicate pages, which is the exact problem clustering was supposed to prevent.
 
 ## What you actually do with clusters
 
@@ -75,7 +75,7 @@ The cluster list is a means, not the deliverable. Four things get built from it.
 
 **Content planning.** Each cluster becomes at most one page. This is the step that converts an unordered export into a finite backlog you can prioritise and finish.
 
-**Topical maps.** Arrange clusters into a hub and its supporting pages: a broad pillar covering the topic, narrower pages covering its sub-questions. The clustering tells you which is which — the largest, most general cluster is usually the hub.
+**Topical maps.** Arrange clusters into a hub and its supporting pages: a broad pillar covering the topic, narrower pages covering its sub-questions. The clustering tells you which is which: the largest, most general cluster is usually the hub.
 
 **Cannibalisation prevention.** Map your *existing* URLs to clusters. Two URLs in one cluster are competing for the same intent, which is the definition of cannibalisation. Merge them, redirect the weaker one, or narrow one to a genuinely different intent.
 

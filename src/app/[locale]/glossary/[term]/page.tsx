@@ -11,6 +11,7 @@ import { resolveMarketingPath } from "@/lib/marketing-links";
 import { allTerms, findTerm, glossaryPath, termCopy } from "@/lib/docs/glossary";
 import { isValidLocale, localizedPath, type SiteLocale } from "@/lib/i18n/locale";
 import { buildMetadata } from "@/lib/seo";
+import { fitDescription } from "@/lib/seo/description";
 import { BASE_URL, combineSchemas, generateBreadcrumbSchema } from "@/lib/seo/schema";
 
 type PageProps = { params: Promise<{ locale: string; term: string }> };
@@ -30,7 +31,24 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const el = locale === "el";
   // "What is X" is how people search for a definition, in both languages.
   const title = el ? `Τι είναι το ${ref.term.term}; Ορισμός και παράδειγμα` : `What Is ${ref.term.term}? Definition and Example`;
-  const description = `${t.short} ${el ? "Ορισμός, παράδειγμα και πώς να το εφαρμόσετε, στο SEO γλωσσάρι." : "Definition, example and how to apply it, in the SEO glossary."}`;
+  // The closing clause is chosen to land the definition in the SERP window
+  // instead of overflowing and being cut back to the bare definition.
+  const description = fitDescription(
+    t.short,
+    el
+      ? [
+          "Ορισμός, πρακτικό παράδειγμα και πώς να το εφαρμόσετε, στο SEO γλωσσάρι του AnotherSEOGuru.",
+          "Ορισμός, παράδειγμα και πώς να το εφαρμόσετε, στο SEO γλωσσάρι.",
+          "Ορισμός, παράδειγμα και πώς να το εφαρμόσετε.",
+          "Ορισμός και παράδειγμα.",
+        ]
+      : [
+          "Definition, practical example and how to apply it, in the AnotherSEOGuru SEO glossary.",
+          "Definition, example and how to apply it, in the SEO glossary.",
+          "Definition, example and how to apply it.",
+          "Definition and example.",
+        ],
+  );
   const path = glossaryPath(locale, term);
   const meta = buildMetadata({ title, description, path, hreflangPath: `/glossary/${term}`, hreflangLocales: ["en", "el"], primaryKeyword: ref.term.term });
   return { ...meta, alternates: { ...meta.alternates, types: { "text/markdown": `${BASE_URL}${path}.md` } } };

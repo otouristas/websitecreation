@@ -166,8 +166,8 @@ function SampleDocument() {
           <dl className="mt-3 space-y-1.5">
             {s.sections[0].chunks.map((chunk) => (
               <div key={chunk.term} className="flex gap-2 text-[13px] leading-snug">
-                <dt className="shrink-0 font-medium text-foreground">{chunk.term}</dt>
-                <dd className="text-muted-foreground">&mdash; {chunk.body}</dd>
+                <dt className="shrink-0 font-medium text-foreground">{chunk.term}:</dt>
+                <dd className="text-muted-foreground">{chunk.body}</dd>
               </div>
             ))}
           </dl>

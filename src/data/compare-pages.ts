@@ -50,7 +50,7 @@ export const COMPARE_PAGES: readonly ComparePageDefinition[] = [
     headline: "AnotherSEOGuru App vs Search Console alone",
     seoTitle: "AnotherSEOGuru App vs Search Console",
     summary:
-      "Search Console is free and essential - but it stops at observation. AnotherSEOGuru App adds clustering, health scoring, rank tracking, AI playbooks, and optional autopilot so observation turns into a prioritized backlog.",
+      "Search Console is free and essential, but it stops at observation. AnotherSEOGuru App adds clustering, health scoring, rank tracking, AI playbooks, and optional autopilot so observation turns into a prioritized backlog.",
     whenChooseUs: [
       "You are tired of spreadsheet gymnastics for query grouping",
       "You want decay alerts, cannibalization checks, and experiment framing",

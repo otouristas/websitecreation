@@ -229,7 +229,7 @@ export const integrationsEl: HelpCategory = {
           { title: "Κατεβάστε και αποσυμπιέστε", text: `Πάρτε το [anotherseoguru-extension.zip](${EXT_ZIP}) και αποσυμπιέστε το. Κρατήστε τον φάκελο που περιέχει το \`manifest.json\`.` },
           { title: "Ανοίξτε τη σελίδα επεκτάσεων του Chrome", text: "Πηγαίνετε στο `chrome://extensions`." },
           { title: "Ανοίξτε το Developer mode", text: "Χρησιμοποιήστε τον διακόπτη **Developer mode** σε εκείνη τη σελίδα." },
-          { title: "Φορτώστε τον φάκελο", text: "Πατήστε **Load unpacked** και διαλέξτε τον αποσυμπιεσμένο φάκελο. Το όνομα στο Chrome είναι **AnotherSEOGuru – SEO checker & Search Console**." },
+          { title: "Φορτώστε τον φάκελο", text: "Πατήστε **Load unpacked** και διαλέξτε τον αποσυμπιεσμένο φάκελο. Το όνομα στο Chrome είναι **AnotherSEOGuru App: Έλεγχος SEO & Search Console**." },
           { title: "Καρφιτσώστε το", text: "Καρφιτσώστε το AnotherSEOGuru από το μενού του κομματιού παζλ, ώστε το εικονίδιο να μείνει ορατό. Πατήστε το ή πατήστε **Alt+Shift+S**." },
         ] },
         { type: "h2", id: "sign-in", text: "Σύνδεση στο AnotherSEOGuru App" },

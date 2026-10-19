@@ -73,11 +73,11 @@ One editorial link from a trusted industry publisher usually beats fifty junk li
 
 | Activity | Typical cost (GR, 2026) | Time to meaningful signal | Best for |
 | :--- | :--- | :--- | :--- |
-| Digital PR / editorial outreach | {{SEO_GROWTH}} – {{SEO_AUTHORITY}}+/mo retainer | 3–6 months | Competitive commercial terms |
-| Scoped link campaign | €400 – €1,500+/mo | 2–4 months | Launching a money page |
+| Digital PR / editorial outreach | {{SEO_GROWTH}} to {{SEO_AUTHORITY}}+/mo retainer | 3–6 months | Competitive commercial terms |
+| Scoped link campaign | €400 to €1,500+/mo | 2–4 months | Launching a money page |
 | Local citations + GBP hygiene | Often in Foundations {{ENTRY_SEO}}/mo | 4–8 weeks | Local pack / Maps |
-| Toxic link cleanup | €300 – €800 one-off | 4–12 weeks | Recovering from spam |
-| Linkable asset production | €800 – €3,000+ per asset | 1–3 months to earn | Brands that need PR hooks |
+| Toxic link cleanup | €300 to €800 one-off | 4–12 weeks | Recovering from spam |
+| Linkable asset production | €800 to €3,000+ per asset | 1–3 months to earn | Brands that need PR hooks |
 
 Off-page never replaces weak pages. Fix intent match and [SEO content](/en/blog/seo-content-guide) first, then amplify. Transparent [pricing](/en/pricing) shows how link work usually sits in Growth and Authority packages.
 

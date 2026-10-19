@@ -87,8 +87,9 @@ export function finalizeDescription(text: string, maxLen = META_DESC_HARD_MAX): 
     .replace(/\s+/g, ' ')
     .trim();
 
-  // Em dashes never reach metadata.
-  d = d.replace(/\s*—\s*/g, ' - ');
+  // Em dashes (and spaced en dashes) never reach metadata: a comma reads
+  // naturally in both languages where a dash was used as a separator.
+  d = d.replace(/\s*[\u2014\u2015]\s*|\s+\u2013\s+/g, ', ');
 
   if (d.length > maxLen) d = smartTruncate(d, maxLen);
   return d;
@@ -188,7 +189,7 @@ export function fitDescription(
   if (best !== null) return finalizeDescription(best);
 
   // Second pass: all clauses overflow max. Pick the shortest overflow that
-  // stays under hard_max — still better than a bare 86-char base.
+  // stays under hard_max, which is still better than a bare 86-char base.
   let overflow: string | null = null;
   let overflowLen = Number.POSITIVE_INFINITY;
 

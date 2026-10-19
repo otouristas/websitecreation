@@ -31,14 +31,14 @@ Part 11 defines the categories. All nine fall in the same one.
 | free-seo-tools | 7 | no | PLACEHOLDER | NOINDEX |
 
 "PLACEHOLDER" here means placeholder **as a tool page**, not that the underlying
-tool is fake — the tools presumably work fine inside the app. The page is an
+tool is fake: the tools presumably work fine inside the app. The page is an
 advertisement for a tool, and Part 11 is explicit: *do not index a "tool" that
 is just marketing copy with no tool.*
 
 ## What changed
 
 - All nine are `noindex, follow`. Routes stay live, navigation still works, and
-  the app deep links are untouched — this is an indexing decision, not a
+  the app deep links are untouched: this is an indexing decision, not a
   deletion.
 - Removed from `sitemap.ts`, so the sitemap no longer submits noindex URLs.
 - `/tools` (the hub, 345 words listing all nine) **stays indexable**. It is a
@@ -50,7 +50,7 @@ Cost: **9 impressions and 0 clicks** across two URLs, over the whole export.
 ## Not attempted
 
 Part 11 offers "PARTIAL: finish the functionality if safely possible from the
-repository." None of these are partial — there is no tool code here to finish.
+repository." None of these are partial: there is no tool code here to finish.
 Building working SEO tools into the marketing site would be writing a product,
 not completing one, and the results would need to be real to be publishable.
 

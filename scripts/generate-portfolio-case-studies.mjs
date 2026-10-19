@@ -150,7 +150,7 @@ function buildCase(p) {
   };
 
   const challenge = {
-    en: `In ${m.locationEn}, competitors compete for “${m.kwEn[0]}” and related queries. ${p.name} needed a site that stands out through ${m.angleEn}, ranks locally, and turns visitors into a ${m.ctaEn}—without looking generic.`,
+    en: `In ${m.locationEn}, competitors compete for “${m.kwEn[0]}” and related queries. ${p.name} needed a site that stands out through ${m.angleEn}, ranks locally, and turns visitors into a ${m.ctaEn} without looking generic.`,
     el: `${prep.charAt(0).toUpperCase() + prep.slice(1)} ${m.locationEl}, ο ανταγωνισμός διεκδικεί αναζητήσεις όπως «${m.kwEl[0]}». Το ${p.name} χρειαζόταν ιστοσελίδα που να ξεχωρίζει, να εμφανίζεται στην τοπική αναζήτηση και να οδηγεί τους επισκέπτες σε ${m.ctaEl}, χωρίς να μοιάζει με έτοιμο πρότυπο. Το πλεονέκτημά του: ${m.angleEl}.`,
   };
 
@@ -274,12 +274,12 @@ function buildCase(p) {
     resultsEl: outcomes.el,
     seoTitle: smartSlice(`${p.name} | ${titleKwEn}`, 60),
     seoDescription: smartSlice(
-      `${p.name} — ${m.businessEn} in ${m.locationEn}. SEO for “${m.kwEn[0]}”.`,
+      `${p.name}: ${m.businessEn} in ${m.locationEn}. SEO for “${m.kwEn[0]}”.`,
       160,
     ),
     seoTitleEl: smartSlice(`${p.name} | ${titleKwEl}`, 60),
     seoDescriptionEl: smartSlice(
-      `${p.name} — ${m.businessEl} ${prep} ${m.locationEl}. SEO για «${m.kwEl[0]}».`,
+      `${p.name}: ${m.businessEl} ${prep} ${m.locationEl}. SEO για «${m.kwEl[0]}».`,
       160,
     ),
   };
@@ -350,9 +350,9 @@ fs.writeFileSync(path.join(root, '.firecrawl/work/_generated-copy.json'), JSON.s
 
 const scrapeLabel = {
   ok: 'yes',
-  offline: 'site offline at scrape time — used portfolio metadata',
-  parked: 'domain parked / for-sale page at scrape time — used portfolio metadata',
-  thin: 'thin or broken page content at scrape time — used portfolio metadata',
+  offline: 'site offline at scrape time, used portfolio metadata',
+  parked: 'domain parked / for-sale page at scrape time, used portfolio metadata',
+  thin: 'thin or broken page content at scrape time, used portfolio metadata',
 };
 
 fs.mkdirSync(path.join(root, 'docs/portfolio-audits'), { recursive: true });

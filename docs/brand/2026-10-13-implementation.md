@@ -1,4 +1,4 @@
-# Folded-A marketing implementation — 13 October 2026
+# Folded-A marketing implementation: 13 October 2026
 
 This implements the approved identity in `otouristas/websitecreation` (anotherseoguru.com). The app, client portal and native iOS implementations are owned separately in `otouristas/gsc-gemini-boost`.
 

@@ -14,3 +14,5 @@ jobs:
           node-version: 22
       - name: Fail if the owner or the old agency address is mentioned
         run: node scripts/check-banned-terms.mjs
+      - name: Fail on em dashes and spaced en dashes
+        run: node scripts/check-no-em-dash.mjs

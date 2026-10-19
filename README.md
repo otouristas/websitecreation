@@ -4,7 +4,7 @@
 **Production:** [anotherseoguru.com](https://anotherseoguru.com)
 
 This folder is a clone of `websitecreation`, nested inside the `gsc-gemini-boost` monorepo for convenience.  
-The **Vite app** in the parent repo (`npm run dev:app`) is the product dashboard — **not** the public marketing site.
+The **Vite app** in the parent repo (`npm run dev:app`) is the product dashboard, **not** the public marketing site.
 
 ## Local development
 
@@ -21,7 +21,7 @@ Open **http://localhost:8080** (marketing).
 From the parent `gsc-gemini-boost` repo:
 
 ```bash
-npm run dev          # same — starts this Next.js site on :8080
+npm run dev          # same: starts this Next.js site on :8080
 npm run dev:app      # Vite dashboard on http://localhost:8081
 npm run dev:all      # marketing + dashboard together
 ```

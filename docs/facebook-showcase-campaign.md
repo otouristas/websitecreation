@@ -1,4 +1,4 @@
-# Another SEO Guru — Facebook Showcase & Lead Campaign
+# Another SEO Guru: Facebook Showcase & Lead Campaign
 
 ## Campaign direction
 
@@ -18,7 +18,7 @@
 
 Travel planning across 24 islands shouldn’t feel like 24 open tabs.
 
-For Discover Cyclades, we brought mobile UX, search architecture and AI trip planning into one focused experience—helping travellers move from inspiration to ferries, stays and rentals faster.
+For Discover Cyclades, we brought mobile UX, search architecture and AI trip planning into one focused experience, helping travellers move from inspiration to ferries, stays and rentals faster.
 
 See the project: https://anotherseoguru.com/en/work/discover-cyclades
 
@@ -54,7 +54,7 @@ See the project: https://anotherseoguru.com/en/work/rentacar-piraeus
 
 400+ stays. One smarter way to discover Santorini.
 
-Hotels Santorini turns a complex hotel market into a clear mobile experience—with curated discovery, AI guidance and technical SEO working together from the first screen.
+Hotels Santorini turns a complex hotel market into a clear mobile experience, with curated discovery, AI guidance and technical SEO working together from the first screen.
 
 See the project: https://anotherseoguru.com/en/work/hotels-santorini
 
@@ -88,7 +88,7 @@ See the project: https://anotherseoguru.com/en/work/villa-olivia-clara
 
 **Creative:** `public/social-showcase/posts/mykonos-luxury-showcase.png`
 
-Luxury concierge online—without the noise.
+Luxury concierge online: without the noise.
 
 Mykonos Luxury brings villas, yachts and premium experiences into a confident editorial interface designed for high-value travellers and concierge enquiries.
 
@@ -98,7 +98,7 @@ See the project: https://anotherseoguru.com/en/work/mykonos-luxury
 
 ## Paid lead ads
 
-### Ad A — Proof-led portfolio
+### Ad A: Proof-led portfolio
 
 **Creative:** `public/social-showcase/posts/ad-tourism-websites.png`
 
@@ -106,7 +106,7 @@ See the project: https://anotherseoguru.com/en/work/mykonos-luxury
 
 Your tourism website should do more than look good.
 
-We build mobile-first websites for hotels, villas, tours and car-rental brands—combining conversion-focused design, technical SEO and visibility in AI search.
+We build mobile-first websites for hotels, villas, tours and car-rental brands, combining conversion-focused design, technical SEO and visibility in AI search.
 
 Want to know what your current site is costing you? Request a free quote and practical first recommendations.
 
@@ -116,7 +116,7 @@ Want to know what your current site is costing you? Request a free quote and pra
 
 **CTA:** Get Quote
 
-### Ad B — Offer-led
+### Ad B: Offer-led
 
 **Creative:** `public/social-showcase/posts/ad-built-to-book.png`
 
@@ -143,7 +143,7 @@ Tell us about your hotel, villa, tour company or car-rental business and receive
 - Optimisation event: completed quote request.
 - Attribution: 7-day click / 1-day view as an initial Meta default.
 
-### Ad set 1 — Prospecting
+### Ad set 1: Prospecting
 
 - Audience: tourism and hospitality business owners/operators.
 - Initial regions: Greece, Cyprus, Italy, Spain, Portugal and Croatia; narrow or expand after approval.
@@ -151,7 +151,7 @@ Tell us about your hotel, villa, tour company or car-rental business and receive
 - Placements: Advantage+ placements, with mobile-first creative.
 - Creative test: Ad A vs. Ad B.
 
-### Ad set 2 — Retargeting
+### Ad set 2: Retargeting
 
 - Website visitors: 30 and 90 days.
 - Facebook and Instagram engagers: 365 days.

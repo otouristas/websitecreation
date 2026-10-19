@@ -12,5 +12,5 @@
 
 ## Snippet
 
-[Hotels Sifnos](https://hotelssifnos.com/) 🇬🇧EnglishSign In Curated Cycladic Stays # Your PerfectSifnos StayAwaits Discover handpicked hotels and villas in Sifnos – boutique luxury, beachfront escapes, and family-friendly stays for 2026 LocationAnywhere in SifnosKamaresPlatis G
+[Hotels Sifnos](https://hotelssifnos.com/) 🇬🇧EnglishSign In Curated Cycladic Stays # Your PerfectSifnos StayAwaits Discover handpicked hotels and villas in Sifnos, boutique luxury, beachfront escapes, and family-friendly stays for 2026 LocationAnywhere in SifnosKamaresPlatis G
 

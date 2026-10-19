@@ -1,7 +1,7 @@
 ---
 slug: pricing-page-seo-software-vs-agency
 title: Why we split software pricing and agency pricing (and how to choose)
-description: Clear positioning between self-serve SEO software and done-for-you retainers - reduces confusion and improves conversion quality.
+description: Clear positioning between self-serve SEO software and done-for-you retainers on your pricing page, which reduces confusion and improves lead quality.
 date: 2026-03-10
 author: AnotherSEOGuru Editorial Team
 category: Strategy

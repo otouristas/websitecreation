@@ -41,7 +41,7 @@ description: English-only target markets for programmatic SEO.
 City seed files (Tier 1)
 Create these now; they’re “seed” lists you can expand later via generator.
 
-data/locations/us-tier1.md (USA — seed list)
+data/locations/us-tier1.md (USA: seed list)
 text
 ---
 title: USA Cities (Tier 1)

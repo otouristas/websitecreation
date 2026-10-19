@@ -241,7 +241,7 @@ await renderAd({
 await renderAd({
   slug: 'ad-built-to-book',
   headline: 'Built to rank. Designed to book.',
-  subhead: 'Mobile-first websites for hotels, villas, tours and car-rental brands—from €899.',
+  subhead: 'Mobile-first websites for hotels, villas, tours and car-rental brands, from €899.',
   cta: 'See our work',
   screenshots: ['discover-cyclades-mobile.png', 'rent-a-car-piraeus-mobile.png', 'mykonos-luxury-mobile.png'],
   accent: '#2ee9d1',

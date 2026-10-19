@@ -1,4 +1,4 @@
-# Connected product release candidate — 15 October 2026
+# Connected product release candidate: 15 October 2026
 
 Companion to product PR [#129](https://github.com/otouristas/gsc-gemini-boost/pull/129). Hold publication until the combined product is ready; this document does not establish provider delivery.
 

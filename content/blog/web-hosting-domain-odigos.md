@@ -46,9 +46,9 @@ faq:
 
 | Τύπος | Κόστος/μήνα | Για ποιον |
 | :--- | :--- | :--- |
-| Shared hosting | €3 – €10 | Μικρά sites, blogs, χαμηλή κίνηση |
-| Managed WordPress | €10 – €35 | Εταιρικά sites, e-shop με μέτρια κίνηση |
-| VPS | €20 – €80 | E-shop με κίνηση, πολλαπλά sites |
+| Shared hosting | €3 έως €10 | Μικρά sites, blogs, χαμηλή κίνηση |
+| Managed WordPress | €10 έως €35 | Εταιρικά sites, e-shop με μέτρια κίνηση |
+| VPS | €20 έως €80 | E-shop με κίνηση, πολλαπλά sites |
 | Dedicated / Cloud | €80+ | Υψηλή επισκεψιμότητα, custom ανάγκες |
 
 Μην συγκρίνετε μόνο το «GB χώρου». Μετράνε οι PHP workers, το όριο inode, η πολιτική CPU throttle και αν τα backups είναι στο ίδιο μηχάνημα με το live site (κακή ιδέα). Για WooCommerce δείτε και τον [οδηγό κατασκευής e-shop](/el/blog/kataskevi-eshop-odigos).

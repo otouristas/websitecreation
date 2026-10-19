@@ -50,7 +50,7 @@ import { isValidLocale, localizedPath, type SiteLocale } from "@/lib/i18n/locale
 type PageProps = { params: Promise<{ locale: string }> };
 
 const PATH = WORDPRESS_PATH;
-const PLUGIN_NAME = "AnotherSEOGuru SEO – the WordPress SEO plugin with Search Console built in";
+const PLUGIN_NAME = "AnotherSEOGuru SEO: the WordPress SEO plugin with Search Console built in";
 const IMPORTS_FROM = ["Yoast SEO", "Rank Math", "All in One SEO", "SEOPress", "Redirection"] as const;
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {

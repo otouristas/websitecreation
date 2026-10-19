@@ -1,4 +1,4 @@
-# GSC Baseline — anotherseoguru.com (2026-08-04)
+# GSC Baseline: anotherseoguru.com (2026-08-04)
 
 > Export: `https___anotherseoguru.com_-Performance-on-Search-2026-08-04.xlsx`  
 > Window: **Last 16 months** (2025-04-03 → 2026-08-02), Search type = Web  
@@ -32,10 +32,10 @@
 
 | Page / query | Signal |
 |---|---|
-| `/` homepage | 28 clicks / 7,555 imps / pos 33.5 — rewrite titles (done) |
+| `/` homepage | 28 clicks / 7,555 imps / pos 33.5: rewrite titles (done) |
 | `geo agency ελλάδα` → `/el/blog/geo-agency-ellada` | 4 clicks / 145 imps / pos 13.9 |
 | `seo για ξενοδοχεία` | 2 clicks / 118 imps / pos 24.8 |
-| `/blog/google-search-operators-2026` | 3 clicks / 251 imps / pos 16.4 — slug updated 2026 + redirect from -2025 |
+| `/blog/google-search-operators-2026` | 3 clicks / 251 imps / pos 16.4: slug updated 2026 + redirect from -2025 |
 | `/el/services/local-seo/rethymno-gr` | 2 clicks / pos 9.2 |
 | `/el/services/local-seo/mykonos-gr` | 1 click / pos 4.8 |
 | `/about` | 4 clicks / pos 2.9 |
@@ -69,10 +69,10 @@
 
 ## Moonshot changes shipped (2026-08-04)
 
-1. Homepage EN/EL titles — kill `seo guru` vanity; align H1 + meta with brand + commercial offer.
+1. Homepage EN/EL titles: kill `seo guru` vanity; align H1 + meta with brand + commercial offer.
 2. CTR rewrites on EL money blogs + pricing meta.
 3. EN location allowlist pruned to `london-uk` only (+ GR cities via content packs); US/AU/CA noindex + out of sitemaps.
-4. `robots.txt` — single `sitemap-index.xml` entry.
+4. `robots.txt`: single `sitemap-index.xml` entry.
 5. Athens/Thessaloniki EL packs deepened (FAQs + serviceDepth).
 6. Glossary dead blog links remapped; operators guide slug → `google-search-operators-2026`.
 7. Hub-spoke money links: pricing ↔ cost blogs ↔ services ↔ work.

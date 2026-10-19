@@ -46,7 +46,7 @@ Apply these in order. A later item does not help while an earlier one is broken.
 1. **Index the URLs that earn revenue.** Check robots.txt, accidental noindex and soft 404s before you publish more posts. Each important URL needs a self-referencing [canonical](/en/glossary/canonical-tag).
 2. **Fix Core Web Vitals on templates that convert.** Measure [LCP](/en/glossary/lcp), [INP](/en/glossary/inp) and CLS on booking or lead templates, not on a sample article. Image weight and main-thread JavaScript come first. See [speed optimization](/en/services/speed-optimization).
 3. **Match mobile HTML to desktop.** Mobile-first indexing reads the phone version. Same primary copy, readable type, usable tap targets.
-4. **Give crawlers a path.** Submit an [XML sitemap](/en/glossary/xml-sitemap) in Search Console and link money URLs from pages that are already crawled. Orphans stay “Discovered – not indexed”.
+4. **Give crawlers a path.** Submit an [XML sitemap](/en/glossary/xml-sitemap) in Search Console and link money URLs from pages that are already crawled. Orphans stay “Discovered, currently not indexed”.
 5. **Mark up only what visitors can see.** FAQ, LocalBusiness, Product or BreadcrumbList [schema](/en/glossary/structured-data) only when the same facts are on the page.
 6. **Pair EN and EL with hreflang.** Reciprocal [hreflang](/en/glossary/hreflang) annotations, consistent locale URLs, and no self-only tags on bilingual Greek sites.
 7. **Put the answer in the first HTML.** Critical copy should not depend on client-only JavaScript.
@@ -58,10 +58,10 @@ Run a [free SEO audit](/en/tools/free-seo-audit) for a quick health snapshot, th
 
 | Work type | Typical cost (GR, 2026) | Effort | First signals |
 | :--- | :--- | :--- | :--- |
-| Technical audit (SMB site) | {{ENTRY_SEO}} – €1,200 | 3–10 days | Roadmap in week 1 |
+| Technical audit (SMB site) | {{ENTRY_SEO}} to €1,200 | 3–10 days | Roadmap in week 1 |
 | Indexation / robots / canonicals | Often in audit fix pack | 1–5 days | 1–4 weeks |
-| Core Web Vitals template pass | €400 – €2,000+ | Dev-dependent | 2–8 weeks |
-| Schema rollout (key templates) | €200 – €800 | 1–3 days | Rich-result eligibility |
+| Core Web Vitals template pass | €400 to €2,000+ | Dev-dependent | 2–8 weeks |
+| Schema rollout (key templates) | €200 to €800 | 1–3 days | Rich-result eligibility |
 | Migration / redesign SEO | Scoped project | Weeks | Protect rankings |
 
 See [how much SEO costs](/en/blog/how-much-does-seo-cost) and [pricing](/en/pricing) for retainer context.
@@ -80,7 +80,7 @@ For local businesses, technical health plus [local SEO](/en/services/local-seo) 
 4. **Huge uncompressed images** - LCP fails on mobile before content can win.
 5. **Fake FAQ schema** - markup for questions not visible on the page.
 6. **Ignoring hreflang on EN/EL sites** - wrong language in the wrong market.
-7. **Publishing 50 blogs while coverage says “Discovered – not indexed”** - fix discovery first.
+7. **Publishing 50 blogs while coverage says “Discovered, currently not indexed”** - fix discovery first.
 8. **Infinite parameter URLs** - crawl budget wasted on filters and tracking variants.
 
 ## Technical SEO Services
