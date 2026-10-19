@@ -97,9 +97,12 @@ function footerColumns(locale: SiteLocale): readonly FooterColumn[] {
     { label: isEl ? "Τοπικό SEO" : "Local SEO", href: lp("/services/local-seo") },
     { label: isEl ? "Ορατότητα σε AI" : "AI Visibility (GEO/AEO)", href: lp("/services/ai-visibility") },
     { label: isEl ? "Ανασχεδιασμός ιστοσελίδας" : "Website Redesign", href: lp("/services/website-redesign") },
-    { label: isEl ? "SEO για ξενοδοχεία" : "Hotel SEO", href: lp("/solutions/hotels") },
+    { label: isEl ? "SEO για ξενοδοχεία" : "Hotel SEO", href: isEl ? "/el/seo-tourismou/xenodoxeia" : lp("/solutions/hotels") },
     ...(isEl
       ? [
+          { label: "SEO για τουριστικές επιχειρήσεις", href: "/el/seo-tourismou" },
+          { label: "SEO για rent a car", href: "/el/seo-tourismou/rent-a-car" },
+          { label: "SEO για βίλες", href: "/el/seo-tourismou/villes" },
           { label: "Κατασκευή ιστοσελίδας ξενοδοχείου", href: lp("/solutions/hotels") },
           { label: "SEO για δικηγόρους", href: lp("/solutions/lawyers") },
           { label: "SEO για ακίνητα", href: lp("/solutions/real-estate") },

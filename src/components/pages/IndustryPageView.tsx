@@ -15,6 +15,7 @@ import { SchemaMarkup } from '@/components/seo';
 import { getLocalizedIndustry } from '@/lib/industry-locale';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 import { solutionsUi } from '@/data/translations/solutions-ui';
+import { tourismPath } from '@/data/tourism-seo';
 import { GENERATED_CONTENT_PUBLISHED, GENERATED_CONTENT_UPDATED } from '@/lib/seo/content-dates';
 import {
   Accent,
@@ -51,6 +52,14 @@ const PORTFOLIO_FOR: Record<string, PortfolioCategory> = {
   'travel-ai-chatbots': 'travel-ai',
 };
 
+/** Industry hub slug to its /el/seo-tourismou page. */
+const TOURISM_SEO_FOR_INDUSTRY: Partial<Record<string, string>> = {
+  'villas-apartments': 'villes',
+  'tour-operators': 'ekdromes',
+  'travel-agencies': 'taxidiotika-grafeia',
+  restaurants: 'estiatoria',
+};
+
 export function IndustryPageView({
   industrySlug,
   locale,
@@ -62,6 +71,8 @@ export function IndustryPageView({
   if (!industry) return null;
 
   const isEl = locale === 'el';
+  // Greek tourism verticals have a dedicated SEO service page; the hub links to it.
+  const tourismSeo = isEl ? TOURISM_SEO_FOR_INDUSTRY[industrySlug] : undefined;
   const tx = (en: string, el: string) => (isEl ? el : en);
   const ui = isEl ? solutionsUi.el : solutionsUi.en;
   const lp = (path: string) => localizedPath(locale, path);
@@ -255,6 +266,13 @@ export function IndustryPageView({
               );
             })}
           </CardGrid>
+          {tourismSeo ? (
+            <p className="mt-8 text-[15px]">
+              <Link href={tourismPath(tourismSeo)} className="font-medium text-link underline-offset-4 hover:underline">
+                {`Υπηρεσίες SEO για ${industry.nameFor ?? industry.name}`}
+              </Link>
+            </p>
+          ) : null}
         </KitSection>
 
         {locations.length > 0 ? (

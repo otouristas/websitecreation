@@ -232,7 +232,7 @@ export default async function AiVisibilityCheckPage({ params }: PageProps) {
     ? [
         { href: lp('/services/ai-visibility'), label: 'Ορατότητα σε AI (GEO / AEO)' },
         { href: lp('/services/seo-audits'), label: 'Τεχνικός έλεγχος SEO' },
-        { href: lp('/solutions/hotels'), label: 'SEO για ξενοδοχεία' },
+        { href: '/el/seo-tourismou/xenodoxeia', label: 'SEO για ξενοδοχεία' },
         { href: lp('/pricing'), label: 'Τιμές & πακέτα' },
       ]
     : [

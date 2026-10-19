@@ -11,6 +11,7 @@ import { helpContent } from '@/data/help';
 import { OPPORTUNITY_FINDER, RESOURCE_ARTICLES } from '@/data/resources';
 import { allTerms } from '@/lib/docs/glossary';
 import { PLACE_PAGES } from '@/data/place-seo';
+import { TOURISM_VERTICALS } from '@/data/tourism-seo';
 
 const BASE_URL = 'https://anotherseoguru.com';
 const LOCALES: SiteLocale[] = ['en', 'el'];
@@ -157,6 +158,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...forElOnly('/seo', { priority: 0.9, changeFrequency: 'weekly' }),
     ...PLACE_PAGES.flatMap((place) =>
       forElOnly(`/seo/${place.slug}`, { priority: 0.82, changeFrequency: 'monthly' }),
+    ),
+    // Greek tourism SEO hub and one commercial page per vertical.
+    ...forElOnly('/seo-tourismou', { priority: 0.9, changeFrequency: 'weekly' }),
+    ...TOURISM_VERTICALS.flatMap((vertical) =>
+      forElOnly(`/seo-tourismou/${vertical.slug}`, { priority: 0.88, changeFrequency: 'monthly' }),
     ),
   ];
 

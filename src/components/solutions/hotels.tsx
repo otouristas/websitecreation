@@ -142,6 +142,7 @@ const copy = {
       guide: 'Read the hotel SEO guide',
       guideHref: '/blog/hotel-seo-guide',
       service: 'SEO services',
+      serviceHref: '/seo-services',
     },
     servicesBlock: {
       eyebrow: 'Services',
@@ -258,7 +259,7 @@ const copy = {
     },
     seoBlock: {
       eyebrow: 'SEO',
-      title: 'Υπηρεσίες SEO για ξενοδοχεία',
+      title: 'SEO που κρατά τις κρατήσεις στο δικό σας site',
       body:
         'Η νέα ιστοσελίδα είναι η αρχή, όχι το τέλος. Το SEO για ξενοδοχεία κρατά το όνομά σας, τους τύπους δωματίων και τις αναζητήσεις του προορισμού στραμμένα στο δικό σας site αντί για μια πλατφόρμα: τεχνική υγεία, σελίδες δωματίων και προσφορών, Google Business Profile, κριτικές και πολύγλωσσο περιεχόμενο, με μηνιαίο έλεγχο στο Search Console.',
       points: [
@@ -269,7 +270,8 @@ const copy = {
       ],
       guide: 'Διαβάστε τον οδηγό SEO για ξενοδοχεία',
       guideHref: '/blog/seo-gia-xenodoxeia',
-      service: 'Υπηρεσίες SEO',
+      service: 'Υπηρεσίες SEO για ξενοδοχεία',
+      serviceHref: '/seo-tourismou/xenodoxeia',
     },
     servicesBlock: {
       eyebrow: 'Υπηρεσίες',
@@ -579,7 +581,7 @@ export function HotelsPage({ locale }: { locale: SiteLocale }) {
           bullets={t.seoBlock.points}
           links={[
             { href: lp(t.seoBlock.guideHref), label: t.seoBlock.guide, primary: true },
-            { href: lp('/seo-services'), label: t.seoBlock.service },
+            { href: lp(t.seoBlock.serviceHref), label: t.seoBlock.service },
           ]}
           preview={
             <Stage>

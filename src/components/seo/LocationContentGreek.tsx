@@ -134,7 +134,7 @@ export function LocationContentGreek({ location, service, locale: localeProp }: 
                   κατασκευή ιστοσελίδας ξενοδοχείου
                 </Link>{' '}
                 και{' '}
-                <Link href={lp('/blog/seo-gia-xenodoxeia')} className={inlineLink}>
+                <Link href="/el/seo-tourismou/xenodoxeia" className={inlineLink}>
                   SEO για ξενοδοχεία
                 </Link>{' '}
                 - δείτε και{' '}
