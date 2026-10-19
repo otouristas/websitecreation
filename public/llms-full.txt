@@ -1,11 +1,11 @@
-Last-Updated: 2026-10-16
+Last-Updated: 2026-10-19
 Canonical: https://anotherseoguru.com/llms-full.txt
 Short-form: https://anotherseoguru.com/llms.txt
 Sitemap: https://anotherseoguru.com/sitemap.xml
 
 # AnotherSEOGuru - Complete Knowledge Base
 Source: https://anotherseoguru.com
-Last Updated: 2026-10-16
+Last Updated: 2026-10-19
 
 This document is the comprehensive, machine-readable reference for LLM crawlers, AI search engines, and assistants synthesizing answers about AnotherSEOGuru services, pricing, portfolio, Greek local SEO positioning, and the secondary SEO software platform.
 
@@ -62,7 +62,7 @@ Touristas Technologies owns and operates the AnotherSEOGuru website (anotherseog
 - **EL URL:** https://anotherseoguru.com/el/services/ai-visibility
 - **Description (EN):** GEO and AEO for businesses: entity clarity, answer-shaped pages and measurement so answer engines can use your content. No citation promises.
 - **Greek name:** AI SEO: Ορατότητα σε AI (GEO / AEO)
-- **Description (EL):** Υπηρεσίες AI SEO (GEO/AEO): δουλεύουμε ώστε η επιχείρησή σας να μπορεί να αναφέρεται στις απαντήσεις του ChatGPT, του Gemini και των AI Overviews.
+- **Description (EL):** Υπηρεσίες AI SEO και GEO (generative engine optimization) για ορατότητα στο ChatGPT, στο Gemini και στα AI Overviews, με μηνιαία μέτρηση αναφορών.
 - **Features (EN):** Entity and brand-fact consistency; Answer-shaped FAQs for AEO; Schema that matches visible text; Commercial pages with quotable facts; Monthly mention sampling, not AI-rank theatre; Tourism and local-business programmes
 
 ### Logo Design (`logo-design`)
@@ -265,7 +265,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Live site:** https://aggelosrentals.com
 - **Category:** rent-a-car · featured
 - **Summary (EN):** Aggelos Rentals: car rental with port and airport delivery for Piraeus and Paros, SEO for “rent a car Piraeus”, focused on port and airport handoff for ferry and flight arrivals.
-- **Summary (EL):** Aggelos Rentals: ενοικίαση αυτοκινήτων με παράδοση σε λιμάνι και αεροδρόμιο στον Πειραιά και Πάρο, SEO για «ενοικίαση αυτοκινήτου Πειραιά», με έμφαση σε παράδοση σε λιμάνι και αεροδρόμιο για αφίξεις με πλοίο ή πτήση.
+- **Summary (EL):** Aggelos Rentals: ενοικίαση αυτοκινήτων με παράδοση σε λιμάνι και αεροδρόμιο στον Πειραιά και στην Πάρο, SEO για «ενοικίαση αυτοκινήτου Πειραιά», με έμφαση σε παράδοση σε λιμάνι και αεροδρόμιο για αφίξεις με πλοίο ή πτήση.
 - **Services delivered:** website-creation, local-seo, speed-optimization
 - **Results:** Piraeus and Paros: pages aimed at “rent a car Piraeus” and “airport car delivery Greece”; Differentiation: port and airport handoff for ferry and flight arrivals; Stack: website creation, local SEO, speed optimization
 
@@ -274,7 +274,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Live site:** https://antiparosrentacar.com
 - **Category:** rent-a-car · featured
 - **Summary (EN):** Antiparos Rent a Car: island car and scooter rental for Antiparos, SEO for “rent a car Antiparos”, structured around “rent a car Antiparos”.
-- **Summary (EL):** Antiparos Rent a Car: ενοικίαση αυτοκινήτων και μηχανών στο νησί στην Αντίπαρο, SEO για «ενοικίαση αυτοκινήτου Αντίπαρος», με δομή περιεχομένου για «ενοικίαση αυτοκινήτου Αντίπαρος».
+- **Summary (EL):** Antiparos Rent a Car: ενοικίαση αυτοκινήτων και μηχανών στην Αντίπαρο, SEO για «ενοικίαση αυτοκινήτου Αντίπαρος», με δομή περιεχομένου για «ενοικίαση αυτοκινήτου Αντίπαρος».
 - **Services delivered:** website-creation, seo-web-design, local-seo
 - **Results:** Antiparos: pages aimed at “rent a car Antiparos” and “Antiparos scooter hire”; Differentiation: ferry-arrival pickup and compact fleet for narrow island roads; Stack: website creation, SEO web design, local SEO
 
@@ -283,7 +283,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Live site:** https://cycladesrentacar.com
 - **Category:** rent-a-car · featured
 - **Summary (EN):** Cyclades Rent a Car: multi-island car rental comparison platform for Cyclades islands, SEO for “rent a car Cyclades”, optimized for mobile and local search.
-- **Summary (EL):** Cyclades Rent a Car: πλατφόρμα σύγκρισης ενοικίασης αυτοκινήτων στα νησιά στις Κυκλάδες, SEO για «ενοικίαση αυτοκινήτου Κυκλάδες», βελτιστοποιημένη για κινητά και τοπική αναζήτηση.
+- **Summary (EL):** Cyclades Rent a Car: πλατφόρμα σύγκρισης ενοικίασης αυτοκινήτων στα νησιά των Κυκλάδων, SEO για «ενοικίαση αυτοκινήτου Κυκλάδες», βελτιστοποιημένη για κινητά και τοπική αναζήτηση.
 - **Services delivered:** website-creation, local-seo, content-creation
 - **Results:** Cyclades islands: pages aimed at “rent a car Cyclades” and “Greek islands car hire”; Differentiation: compare agencies across 24 islands with clear booking paths; Stack: website creation, local SEO, content creation
 
@@ -301,7 +301,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Live site:** https://rentacarantiparos.gr
 - **Category:** rent-a-car
 - **Summary (EN):** Rent a Car Antiparos: local Antiparos rent-a-car (.gr) website for Antiparos, SEO for “Antiparos rent a car”, structured around “Antiparos rent a car”.
-- **Summary (EL):** Rent a Car Antiparos: τοπική ενοικίαση αυτοκινήτων Αντιπάρου στην Αντίπαρο, SEO για «ενοικίαση αυτοκινήτου Αντίπαρος», με δομή περιεχομένου για «ενοικίαση αυτοκινήτου Αντίπαρος».
+- **Summary (EL):** Rent a Car Antiparos: τοπική ενοικίαση αυτοκινήτων στην Αντίπαρο, SEO για «ενοικίαση αυτοκινήτου Αντίπαρος», με δομή περιεχομένου για «ενοικίαση αυτοκινήτου Αντίπαρος».
 - **Services delivered:** website-creation, local-seo
 - **Results:** Antiparos: pages aimed at “Antiparos rent a car” and “car hire Antiparos Greece”; Differentiation: Greek-first local SEO for Antiparos visitors booking on mobile; Stack: website creation, local SEO
 
@@ -310,7 +310,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Live site:** https://rentacarinparos.gr
 - **Category:** rent-a-car
 - **Summary (EN):** Rent a Car in Paros: Paros car hire brand website for Paros, SEO for “rent a car in Paros”, with technical SEO from day one.
-- **Summary (EL):** Rent a Car in Paros: ενοικίαση αυτοκινήτων στην Πάρο στην Πάρο, SEO για «ενοικίαση αυτοκινήτου στην Πάρο», με τεχνικό SEO από την πρώτη μέρα.
+- **Summary (EL):** Rent a Car in Paros: ενοικίαση αυτοκινήτων στην Πάρο, SEO για «ενοικίαση αυτοκινήτου στην Πάρο», με τεχνικό SEO από την πρώτη μέρα.
 - **Services delivered:** website-creation, local-seo
 - **Results:** Paros: pages aimed at “rent a car in Paros” and “Paros car hire”; Differentiation: conversion-led vehicle cards for summer peak demand; Stack: website creation, local SEO
 
@@ -319,7 +319,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Live site:** https://rentacarpiraeus.gr
 - **Category:** rent-a-car
 - **Summary (EN):** Rent a Car Piraeus: Piraeus port city car rental for Piraeus, SEO for “rent a car Piraeus”, with technical SEO from day one.
-- **Summary (EL):** Rent a Car Piraeus: ενοικίαση αυτοκινήτων στον Πειραιά στον Πειραιά, SEO για «ενοικίαση αυτοκινήτου Πειραιάς», με τεχνικό SEO από την πρώτη μέρα.
+- **Summary (EL):** Rent a Car Piraeus: ενοικίαση αυτοκινήτων στον Πειραιά, SEO για «ενοικίαση αυτοκινήτου Πειραιάς», με τεχνικό SEO από την πρώτη μέρα.
 - **Services delivered:** website-creation, local-seo
 - **Results:** Piraeus: pages aimed at “rent a car Piraeus” and “Piraeus port car rental”; Differentiation: ferry-day and neighborhood pickup around the port; Stack: website creation, local SEO
 
@@ -328,7 +328,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Live site:** https://athensrentacar.com
 - **Category:** rent-a-car
 - **Summary (EN):** Athens Rent a Car: Athens city and airport car rental for Athens, SEO for “rent a car Athens”, with trust signals and a clear booking path.
-- **Summary (EL):** Athens Rent a Car: ενοικίαση αυτοκινήτων στην Αθήνα στην Αθήνα, SEO για «ενοικίαση αυτοκινήτου Αθήνα», με ξεκάθαρα σήματα εμπιστοσύνης και κράτηση.
+- **Summary (EL):** Athens Rent a Car: ενοικίαση αυτοκινήτων στην Αθήνα, SEO για «ενοικίαση αυτοκινήτου Αθήνα», με ξεκάθαρα σήματα εμπιστοσύνης και διαδρομή κράτησης.
 - **Services delivered:** website-creation, speed-optimization
 - **Results:** Athens: pages aimed at “rent a car Athens” and “Athens airport car rental”; Differentiation: airport and city delivery for business and tourism; Stack: website creation, speed optimization
 
@@ -337,7 +337,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Live site:** https://rentacar-paros.gr
 - **Category:** rent-a-car
 - **Summary (EN):** Rent a Car Paros: Paros car rental (.gr domain) for Paros, SEO for “rentacar Paros”, with technical SEO from day one.
-- **Summary (EL):** Rent a Car Paros: ενοικίαση αυτοκινήτων στην Πάρο στην Πάρο, SEO για «ενοικίαση αυτοκινήτου Πάρος», με τεχνικό SEO από την πρώτη μέρα.
+- **Summary (EL):** Rent a Car Paros: ενοικίαση αυτοκινήτων στην Πάρο, SEO για «ενοικίαση αυτοκινήτου Πάρος», με τεχνικό SEO από την πρώτη μέρα.
 - **Services delivered:** website-creation, local-seo
 - **Results:** Paros: pages aimed at “rentacar Paros” and “Paros car rental Greece”; Differentiation: local .gr domain for Greek-language Paros searchers; Stack: website creation, local SEO
 
@@ -346,7 +346,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Live site:** https://hotelssantorini.gr
 - **Category:** hotel · featured
 - **Summary (EN):** Hotels Santorini: Santorini hotels directory and bookings for Santorini, SEO for “hotels Santorini”, with technical SEO from day one.
-- **Summary (EL):** Hotels Santorini: κατάλογος και κρατήσεις ξενοδοχείων Σαντορίνης στη Σαντορίνη, SEO για «ξενοδοχεία Σαντορίνη», με τεχνικό SEO από την πρώτη μέρα.
+- **Summary (EL):** Hotels Santorini: κατάλογος και κρατήσεις ξενοδοχείων στη Σαντορίνη, SEO για «ξενοδοχεία Σαντορίνη», με τεχνικό SEO από την πρώτη μέρα.
 - **Services delivered:** website-creation, seo-web-design, content-creation
 - **Results:** Santorini: pages aimed at “hotels Santorini” and “Santorini hotel booking”; Differentiation: caldera and beach hotel discovery with direct booking calls to action; Stack: website creation, SEO web design, content creation
 
@@ -355,7 +355,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Live site:** https://hotelssifnos.com
 - **Category:** hotel · featured
 - **Summary (EN):** Hotels Sifnos: Sifnos hotels and stays for Sifnos, SEO for “hotels Sifnos”, with technical SEO from day one.
-- **Summary (EL):** Hotels Sifnos: ιστοσελίδα για ξενοδοχεία και διαμονή στη Σίφνο στη Σίφνο, SEO για «ξενοδοχεία Σίφνος», με τεχνικό SEO από την πρώτη μέρα.
+- **Summary (EL):** Hotels Sifnos: ιστοσελίδα για ξενοδοχεία και διαμονή στη Σίφνο, SEO για «ξενοδοχεία Σίφνος», με τεχνικό SEO από την πρώτη μέρα.
 - **Services delivered:** website-creation, content-creation
 - **Results:** Sifnos: pages aimed at “hotels Sifnos” and “Sifnos accommodation”; Differentiation: boutique island stay hubs for travelers researching lodging; Stack: website creation, content creation
 
@@ -382,7 +382,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Live site:** https://mykonos.luxury
 - **Category:** villa · featured
 - **Summary (EN):** Mykonos Luxury: luxury Mykonos journey and villa concierge for Mykonos, SEO for “Mykonos luxury villa”, with technical SEO from day one.
-- **Summary (EL):** Mykonos Luxury: ιστοσελίδα για πολυτελής διαμονή και concierge στη Μύκονο στη Μύκονο, SEO για «πολυτελής βίλα Μύκονος», με τεχνικό SEO από την πρώτη μέρα.
+- **Summary (EL):** Mykonos Luxury: ιστοσελίδα για πολυτελή διαμονή και concierge στη Μύκονο, SEO για «πολυτελής βίλα Μύκονος», με τεχνικό SEO από την πρώτη μέρα.
 - **Services delivered:** website-creation, seo-web-design
 - **Results:** Mykonos: pages aimed at “Mykonos luxury villa” and “Mykonos concierge”; Differentiation: complete luxury journey packaging for international guests; Stack: website creation, SEO web design
 
@@ -391,7 +391,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Live site:** https://discovercyclades.gr
 - **Category:** tours · featured
 - **Summary (EN):** Discover Cyclades: Cyclades travel guide and discovery platform for Cyclades, SEO for “Discover Cyclades”, ready for organic growth in Cyclades.
-- **Summary (EL):** Discover Cyclades: ταξιδιωτικός οδηγός και πλατφόρμα ανακάλυψης Κυκλάδων στις Κυκλάδες, SEO για «οδηγός Κυκλάδες», έτοιμη για οργανική ανάπτυξη στη Κυκλάδες.
+- **Summary (EL):** Discover Cyclades: ταξιδιωτικός οδηγός και πλατφόρμα ανακάλυψης για τις Κυκλάδες, SEO για «οδηγός Κυκλάδες», έτοιμη για οργανική ανάπτυξη στις Κυκλάδες.
 - **Services delivered:** website-creation, content-creation, local-seo
 - **Results:** Cyclades: pages aimed at “Discover Cyclades” and “Cyclades travel guide”; Differentiation: island hub architecture that funnels discovery traffic to commercial pages; Stack: website creation, content creation, local SEO
 
@@ -400,7 +400,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Live site:** https://discover-crete.com
 - **Category:** tours · featured
 - **Summary (EN):** Discover Crete: Crete discovery and tours platform for Crete / Paleochora, SEO for “Discover Crete”, with technical SEO from day one.
-- **Summary (EL):** Discover Crete: πλατφόρμα ανακάλυψης και εκδρομών Κρήτης στην Κρήτη και Παλαιόχωρα, SEO για «εκδρομές Κρήτη», με τεχνικό SEO από την πρώτη μέρα.
+- **Summary (EL):** Discover Crete: πλατφόρμα ανακάλυψης και εκδρομών στην Κρήτη και στην Παλαιόχωρα, SEO για «εκδρομές Κρήτη», με τεχνικό SEO από την πρώτη μέρα.
 - **Services delivered:** website-creation, content-creation, seo-web-design
 - **Results:** Crete / Paleochora: pages aimed at “Discover Crete” and “Crete tours”; Differentiation: region silos for west and east Crete travel intents; Stack: website creation, content creation, SEO web design
 
@@ -418,7 +418,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Live site:** https://santorinidailytours.com
 - **Category:** tours · featured
 - **Summary (EN):** Santorini Daily Tours: daily tour products in Santorini website for Santorini, SEO for “Santorini daily tours”, with technical SEO from day one.
-- **Summary (EL):** Santorini Daily Tours: ιστοσελίδα για ημερήσιες εκδρομές στη Σαντορίνη στη Σαντορίνη, SEO για «ημερήσιες εκδρομές Σαντορίνη», με τεχνικό SEO από την πρώτη μέρα.
+- **Summary (EL):** Santorini Daily Tours: ιστοσελίδα για ημερήσιες εκδρομές στη Σαντορίνη, SEO για «ημερήσιες εκδρομές Σαντορίνη», με τεχνικό SEO από την πρώτη μέρα.
 - **Services delivered:** website-creation, local-seo
 - **Results:** Santorini: pages aimed at “Santorini daily tours” and “Santorini boat tour”; Differentiation: product pages for volcano, boat and day-trip intents; Stack: website creation, local SEO
 
@@ -427,7 +427,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Live site:** https://santotoursmarinakis.com
 - **Category:** tours
 - **Summary (EN):** Santo Tours Marinakis: local Santorini tour operator website for Santorini, SEO for “Santo Tours Marinakis”, optimized for mobile and local search.
-- **Summary (EL):** Santo Tours Marinakis: ιστοσελίδα για τοπικός tour operator στη Σαντορίνη στη Σαντορίνη, SEO για «εκδρομές Σαντορίνη», βελτιστοποιημένη για κινητά και τοπική αναζήτηση.
+- **Summary (EL):** Santo Tours Marinakis: ιστοσελίδα για τοπικό tour operator στη Σαντορίνη, SEO για «εκδρομές Σαντορίνη», βελτιστοποιημένη για κινητά και τοπική αναζήτηση.
 - **Services delivered:** website-creation, seo-web-design
 - **Results:** Santorini: pages aimed at “Santo Tours Marinakis” and “Santorini tours”; Differentiation: family operator trust and licensed excursion SEO since 2000; Stack: website creation, SEO web design
 
@@ -436,7 +436,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Live site:** https://www.skydream.travel
 - **Category:** tours · featured
 - **Summary (EN):** Skydream Travel: travel agency and holiday packages for Greece, SEO for “SkyDream Travel”, with trust signals and a clear inquiry path.
-- **Summary (EL):** Skydream Travel: ταξιδιωτικό γραφείο και πακέτα διακοπών στην Ελλάδα, SEO για «ταξιδιωτικό γραφείο», με ξεκάθαρα σήματα εμπιστοσύνης και επικοινωνία.
+- **Summary (EL):** Skydream Travel: ταξιδιωτικό γραφείο και πακέτα διακοπών στην Ελλάδα, SEO για «ταξιδιωτικό γραφείο», με ξεκάθαρα σήματα εμπιστοσύνης και διαδρομή επικοινωνίας.
 - **Services delivered:** website-creation, seo-web-design, content-creation
 - **Results:** Greece: pages aimed at “SkyDream Travel” and “travel agency Greece”; Differentiation: package and destination landing pages for commercial travel intent; Stack: website creation, SEO web design, content creation
 
@@ -445,7 +445,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Live site:** https://www.cubatravel.academy
 - **Category:** tours
 - **Summary (EN):** Cuba Travel Academy: Cuba travel education academy for Cuba travel (Greek audience), SEO for “Cuba Travel Academy”, ready for organic growth in Cuba travel (Greek audience).
-- **Summary (EL):** Cuba Travel Academy: ακαδημία εκπαίδευσης για ταξίδι στην Κούβα στην Ελλάδα με στόχο ταξίδι στην Κούβα, SEO για «ταξίδι Κούβα», έτοιμη για οργανική ανάπτυξη στη Ελλάδα με στόχο ταξίδι στην Κούβα.
+- **Summary (EL):** Cuba Travel Academy: ακαδημία εκπαίδευσης για ταξίδι στην Κούβα, με κοινό στην Ελλάδα, SEO για «ταξίδι Κούβα», έτοιμη για οργανική ανάπτυξη στην Ελλάδα.
 - **Services delivered:** website-creation, content-creation
 - **Results:** Cuba travel (Greek audience): pages aimed at “Cuba Travel Academy” and “Cuba travel guide Greek”; Differentiation: education-led content that answers document and itinerary questions before booking; Stack: website creation, content creation
 
@@ -454,7 +454,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Live site:** https://antiparostransfer.gr
 - **Category:** transfers
 - **Summary (EN):** Antiparos Transfer: luxury island transfer service for Antiparos and Paros, SEO for “Antiparos transfer”, with trust signals and a clear booking path.
-- **Summary (EL):** Antiparos Transfer: υπηρεσία πολυτελών μεταφορών στο νησί στην Αντίπαρο και Πάρο, SEO για «μεταφορά Αντίπαρος», με ξεκάθαρα σήματα εμπιστοσύνης και κράτηση.
+- **Summary (EL):** Antiparos Transfer: υπηρεσία πολυτελών μεταφορών στην Αντίπαρο και στην Πάρο, SEO για «μεταφορά Αντίπαρος», με ξεκάθαρα σήματα εμπιστοσύνης και διαδρομή κράτησης.
 - **Services delivered:** website-creation, local-seo
 - **Results:** Antiparos and Paros: pages aimed at “Antiparos transfer” and “Antiparos taxi”; Differentiation: family-run door-to-door transfers since 1994 including weddings; Stack: website creation, local SEO
 
@@ -472,7 +472,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Live site:** https://projectshadow.ai
 - **Category:** travel-ai
 - **Summary (EN):** Project Shadow AI: AI tooling for online stores for global e-commerce, SEO for “Project Shadow AI”, with technical SEO from day one.
-- **Summary (EL):** Project Shadow AI: ιστοσελίδα για εργαλεία τεχνητής νοημοσύνης για ηλεκτρονικά καταστήματα στη διεθνές αγορά e-commerce, SEO για «Project Shadow AI», με τεχνικό SEO από την πρώτη μέρα.
+- **Summary (EL):** Project Shadow AI: ιστοσελίδα για εργαλεία τεχνητής νοημοσύνης για ηλεκτρονικά καταστήματα στη διεθνή αγορά e-commerce, SEO για «Project Shadow AI», με τεχνικό SEO από την πρώτη μέρα.
 - **Services delivered:** website-creation, ai-visibility
 - **Results:** global e-commerce: pages aimed at “Project Shadow AI” and “AI for WordPress stores”; Differentiation: technical brand pages for AI store assistance (scrape was thin); Stack: website creation, ai-visibility
 
@@ -481,7 +481,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Live site:** https://rethemnos.gr
 - **Category:** tours
 - **Summary (EN):** Rethemnos: Rethymno tourism portal and local guide for Rethymno, SEO for “Rethymno tourism”, with trust signals and a clear inquiry path.
-- **Summary (EL):** Rethemnos: τουριστική πύλη και τοπικός οδηγός Ρεθύμνου στο Ρέθυμνο, SEO για «τουρισμός Ρέθυμνο», με ξεκάθαρα σήματα εμπιστοσύνης και επικοινωνία.
+- **Summary (EL):** Rethemnos: τουριστική πύλη και τοπικός οδηγός για το Ρέθυμνο, SEO για «τουρισμός Ρέθυμνο», με ξεκάθαρα σήματα εμπιστοσύνης και διαδρομή επικοινωνίας.
 - **Services delivered:** website-creation, content-creation
 - **Results:** Rethymno: pages aimed at “Rethymno tourism” and “visit Rethymno”; Differentiation: city guide hubs that feed commercial tourism and local business pages; Stack: website creation, content creation
 
@@ -526,7 +526,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Live site:** https://helicro.be
 - **Category:** other
 - **Summary (EN):** Helicro: airport and private transfer service for Belgium and Greece corridors, SEO for “Helicro transport”, focused on bilingual Belgium–Greece transfer booking with loyalty offers.
-- **Summary (EL):** Helicro: υπηρεσία ιδιωτικών και αεροδρομικών μεταφορών στο Βέλγιο και διαδρομές προς Ελλάδα, SEO για «Helicro μεταφορές», με έμφαση σε δίγλωσσες κρατήσεις μεταφορών Βέλγιο–Ελλάδα με προγράμματα επιβράβευσης.
+- **Summary (EL):** Helicro: υπηρεσία ιδιωτικών μεταφορών και μεταφορών αεροδρομίου στο Βέλγιο και στις διαδρομές προς την Ελλάδα, SEO για «Helicro μεταφορές», με έμφαση σε δίγλωσσες κρατήσεις μεταφορών Βέλγιο–Ελλάδα με προγράμματα επιβράβευσης.
 - **Services delivered:** website-creation, seo-audits
 - **Results:** Belgium and Greece corridors: pages aimed at “Helicro transport” and “Belgium airport transfer”; Differentiation: bilingual Belgium–Greece transfer booking with loyalty offers; Stack: website creation, seo-audits
 
@@ -544,7 +544,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Live site:** https://www.thenutrinest.gr
 - **Category:** other
 - **Summary (EN):** The Nutri Nest: clinical dietitian and nutrition practice website for Greece, SEO for “clinical dietitian Greece”, with trust signals and a clear inquiry path.
-- **Summary (EL):** The Nutri Nest: κλινική διαιτολογία και διατροφολογία στην Ελλάδα, SEO για «κλινική διαιτολόγος», με ξεκάθαρα σήματα εμπιστοσύνης και επικοινωνία.
+- **Summary (EL):** The Nutri Nest: κλινική διαιτολογία και διατροφολογία στην Ελλάδα, SEO για «κλινική διαιτολόγος», με ξεκάθαρα σήματα εμπιστοσύνης και διαδρομή επικοινωνίας.
 - **Services delivered:** website-creation, local-seo
 - **Results:** Greece: pages aimed at “clinical dietitian Greece” and “The Nutri Nest”; Differentiation: practitioner authority pages and appointment inquiry paths; Stack: website creation, local SEO
 
@@ -571,7 +571,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Live site:** https://bestpumpkinnearme.com
 - **Category:** other
 - **Summary (EN):** Best Pumpkin Near Me: US local pumpkin patch directory for United States, SEO for “best pumpkin near me”, with technical SEO from day one.
-- **Summary (EL):** Best Pumpkin Near Me: κατάλογος τοπικών pumpkin patches στις ΗΠΑ στις Ηνωμένες Πολιτείες, SEO για «best pumpkin near me», με τεχνικό SEO από την πρώτη μέρα.
+- **Summary (EL):** Best Pumpkin Near Me: κατάλογος τοπικών pumpkin patches στις ΗΠΑ, SEO για «best pumpkin near me», με τεχνικό SEO από την πρώτη μέρα.
 - **Services delivered:** website-creation, local-seo, content-creation
 - **Results:** United States: pages aimed at “best pumpkin near me” and “pumpkin patch near me”; Differentiation: hyperlocal near-me SEO for seasonal autumn demand; Stack: website creation, local SEO, content creation
 
@@ -580,7 +580,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Live site:** https://stretcherstopper.com
 - **Category:** other
 - **Summary (EN):** Stretcher Stopper: medical stretcher wall-protection product website for United States / healthcare facilities, SEO for “Stretcher Stopper”, ready for organic growth in United States / healthcare facilities.
-- **Summary (EL):** Stretcher Stopper: ιστοσελίδα για προϊόν προστασίας τοίχων από φορεία στις ΗΠΑ και χώροι υγείας, SEO για «Stretcher Stopper», έτοιμη για οργανική ανάπτυξη στη ΗΠΑ και χώροι υγείας.
+- **Summary (EL):** Stretcher Stopper: ιστοσελίδα για προϊόν προστασίας τοίχων από φορεία για χώρους υγείας στις ΗΠΑ, SEO για «Stretcher Stopper», έτοιμη για οργανική ανάπτυξη στις ΗΠΑ.
 - **Services delivered:** website-creation
 - **Results:** United States / healthcare facilities: pages aimed at “Stretcher Stopper” and “medical stretcher safety”; Differentiation: product education pages with direct quote requests; Stack: website creation
 
@@ -589,7 +589,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Live site:** https://antiparosrooms.com
 - **Category:** hotel
 - **Summary (EN):** Antiparos Rooms: seaside rooms and apartments website for Antiparos, SEO for “Antiparos rooms”, with trust signals and a clear booking path.
-- **Summary (EL):** Antiparos Rooms: ιστοσελίδα για παραθαλάσσια δωμάτια και διαμερίσματα στην Αντίπαρο, SEO για «δωμάτια Αντίπαρος», με ξεκάθαρα σήματα εμπιστοσύνης και κράτηση.
+- **Summary (EL):** Antiparos Rooms: ιστοσελίδα για παραθαλάσσια δωμάτια και διαμερίσματα στην Αντίπαρο, SEO για «δωμάτια Αντίπαρος», με ξεκάθαρα σήματα εμπιστοσύνης και διαδρομή κράτησης.
 - **Services delivered:** website-creation, local-seo
 - **Results:** Antiparos: pages aimed at “Antiparos rooms” and “Antiparos apartments”; Differentiation: direct booking for Cycladic seaside apartments versus OTA dependence; Stack: website creation, local SEO
 
@@ -598,7 +598,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Live site:** https://erebos.gr
 - **Category:** other · featured
 - **Summary (EN):** Erebos: real-time GPS vehicle tracking platform for Greece and the EU, SEO for “Erebos GPS tracking”, with trust signals and a clear signup path.
-- **Summary (EL):** Erebos: πλατφόρμα παρακολούθησης οχημάτων σε πραγματικό χρόνο στην Ελλάδα και την ΕΕ, SEO για «παρακολούθηση οχημάτων», με ξεκάθαρα σήματα εμπιστοσύνης και εγγραφή.
+- **Summary (EL):** Erebos: πλατφόρμα παρακολούθησης οχημάτων σε πραγματικό χρόνο στην Ελλάδα και στην ΕΕ, SEO για «παρακολούθηση οχημάτων», με ξεκάθαρα σήματα εμπιστοσύνης και διαδρομή εγγραφής.
 - **Services delivered:** website-creation, seo-web-design
 - **Results:** Greece and the EU: pages aimed at “Erebos GPS tracking” and “vehicle tracking platform”; Differentiation: phone or hardware tracker setup with free start tracking CTA; Stack: website creation, SEO web design
 
@@ -625,7 +625,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Live site:** https://rentacarsifnos.com
 - **Category:** rent-a-car · featured
 - **Summary (EN):** Artemis Rental Sifnos: car and scooter rental for Sifnos, SEO for “rent a car Sifnos”, with trust signals and a clear booking path.
-- **Summary (EL):** Artemis Rental Sifnos: ενοικίαση αυτοκινήτων και scooters στη Σίφνο, SEO για «ενοικίαση αυτοκινήτου Σίφνος», με ξεκάθαρα σήματα εμπιστοσύνης και κράτηση.
+- **Summary (EL):** Artemis Rental Sifnos: ενοικίαση αυτοκινήτων και scooters στη Σίφνο, SEO για «ενοικίαση αυτοκινήτου Σίφνος», με ξεκάθαρα σήματα εμπιστοσύνης και διαδρομή κράτησης.
 - **Services delivered:** website-creation, local-seo
 - **Results:** Sifnos: pages aimed at “rent a car Sifnos” and “Sifnos scooter rental”; Differentiation: reliable fleet from Apollonia since 1988 with free Kamares port pickup; Stack: website creation, local SEO
 
@@ -634,13 +634,141 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Live site:** https://vwanaki.gr
 - **Category:** other
 - **Summary (EN):** vwanaki: mobile cocktail bar for events for Greece, SEO for “mobile cocktail bar Greece”, with trust signals and a clear inquiry path.
-- **Summary (EL):** vwanaki: κινητό cocktail bar για εκδηλώσεις στην Ελλάδα, SEO για «κινητό cocktail bar», με ξεκάθαρα σήματα εμπιστοσύνης και αίτημα προσφοράς.
+- **Summary (EL):** vwanaki: κινητό cocktail bar για εκδηλώσεις στην Ελλάδα, SEO για «κινητό cocktail bar», με ξεκάθαρα σήματα εμπιστοσύνης και διαδρομή αιτήματος προσφοράς.
 - **Services delivered:** website-creation, local-seo, content-creation
 - **Results:** Greece: pages aimed at “mobile cocktail bar Greece” and “Vwanaki cocktail bar”; Differentiation: a mobile bar that comes to the client for cocktails and events; Stack: website creation, local SEO, content creation
 
 ---
 
-## 7. Blog & Guides (79)
+## 7. Blog & Guides (86)
+
+### Core Web Vitals: Οδηγός για LCP, INP και CLS (2026)
+- **URL:** https://anotherseoguru.com/el/blog/core-web-vitals
+- **Locale:** el · **Date:** 2026-10-19
+- **Description:** Core Web Vitals με απλά λόγια: τι μετρούν LCP, INP και CLS, ποια είναι τα όρια, πώς τα ελέγχετε και πώς τα διορθώνετε σε WordPress, βήμα προς βήμα.
+- **Embedded FAQ:**
+  - Q: Τι είναι τα Core Web Vitals;
+    A: Είναι τρεις μετρήσεις της Google για την εμπειρία χρήστη σε μια σελίδα. Το LCP μετρά πόσο γρήγορα φορτώνει το κύριο περιεχόμενο, το INP πόσο γρήγορα αντιδρά η σελίδα σε κλικ και πατήματα, και το CLS πόσο μετακινείται η διάταξη ενώ φορτώνει.
+  - Q: Ποια είναι τα καλά όρια για LCP, INP και CLS;
+    A: Καλό θεωρείται LCP έως 2,5 δευτερόλεπτα, INP έως 200 χιλιοστά του δευτερολέπτου και CLS έως 0,1. Τα όρια ισχύουν στο 75ο εκατοστημόριο των πραγματικών επισκέψεων, χωριστά για κινητό και υπολογιστή.
+  - Q: Επηρεάζουν τα Core Web Vitals την κατάταξη στη Google;
+    A: Ναι, ως μέρος της εμπειρίας σελίδας, αλλά με μικρό βάρος. Η σχετικότητα και η ποιότητα του περιεχομένου μετρούν πολύ περισσότερο. Τα Core Web Vitals λειτουργούν κυρίως ως κριτήριο ισοπαλίας ανάμεσα σε παρόμοιες σελίδες, ενώ επηρεάζουν έντονα τις μετατροπές.
+  - Q: Γιατί το PageSpeed Insights δείχνει άλλο σκορ από το Search Console;
+    A: Το σκορ απόδοσης του PageSpeed Insights προέρχεται από δοκιμή εργαστηρίου Lighthouse. Το Search Console χρησιμοποιεί δεδομένα πεδίου από πραγματικούς χρήστες Chrome. Για την κατάταξη μετρούν τα δεδομένα πεδίου.
+  - Q: Τι αντικατέστησε το FID;
+    A: Από τον Μάρτιο του 2024 το INP αντικατέστησε το FID ως Core Web Vital. Το INP μετρά όλες τις αλληλεπιδράσεις της επίσκεψης, όχι μόνο την πρώτη.
+
+### Δημιουργία Ιστοσελίδας: Οδηγός σε 10 Βήματα (2026)
+- **URL:** https://anotherseoguru.com/el/blog/dimiourgia-istoselidas
+- **Locale:** el · **Date:** 2026-10-19
+- **Description:** Δημιουργία ιστοσελίδας σε 10 βήματα: στόχος, domain, πλατφόρμα, περιεχόμενο, SEO, δημοσίευση και Search Console, με σύγκριση builder, WordPress και εταιρείας.
+- **Embedded FAQ:**
+  - Q: Πώς φτιάχνω μια ιστοσελίδα από το μηδέν;
+    A: Ορίστε πρώτα τι θέλετε να κάνει ο επισκέπτης, κατοχυρώστε domain στο όνομά σας, επιλέξτε πλατφόρμα, γράψτε τη λίστα σελίδων και το περιεχόμενο, στήστε το βασικό SEO, ελέγξτε ταχύτητα και κινητό, δημοσιεύστε και συνδέστε το Search Console.
+  - Q: Πόσο χρόνο θέλει η δημιουργία ιστοσελίδας;
+    A: Μια εταιρική ιστοσελίδα λίγων σελίδων θέλει συνήθως από 3 έως 8 εβδομάδες. Η μεγαλύτερη καθυστέρηση σχεδόν πάντα είναι το περιεχόμενο, όχι ο κώδικας.
+  - Q: Μπορώ να φτιάξω ιστοσελίδα μόνος μου;
+    A: Ναι, με builder ή WordPress. Ταιριάζει σε απλές ιστοσελίδες με λίγες σελίδες. Αν η ιστοσελίδα πρέπει να φέρνει πελάτες από τη Google, το SEO, η ταχύτητα και η μέτρηση θέλουν εμπειρία.
+  - Q: Πόσο κοστίζει η δημιουργία ιστοσελίδας;
+    A: Εξαρτάται από τον αριθμό σελίδων, τις λειτουργίες και το αν το περιεχόμενο είναι έτοιμο. Τα εύρη τιμών ανά τύπο ιστοσελίδας τα αναλύουμε στον οδηγό για το πόσο κοστίζει μια ιστοσελίδα.
+  - Q: Τι πρέπει να κάνω αμέσως μετά τη δημοσίευση;
+    A: Επαληθεύστε το domain στο Search Console, υποβάλετε το sitemap, ελέγξτε ότι οι σελίδες μπαίνουν στο ευρετήριο, ενεργοποιήστε μετρήσεις στο GA4 και, αν εξυπηρετείτε πελάτες τοπικά, ολοκληρώστε το Google Business Profile.
+
+### Προώθηση Ιστοσελίδας: 12 Τρόποι που Αποδίδουν (2026)
+- **URL:** https://anotherseoguru.com/el/blog/proothisi-istoselidas
+- **Locale:** el · **Date:** 2026-10-19
+- **Description:** Προώθηση ιστοσελίδας με 12 τρόπους: SEO, Google Business Profile, διαφήμιση στο Google, περιεχόμενο, email και AI απαντήσεις, με κόστος και χρόνο ανά τρόπο.
+- **Embedded FAQ:**
+  - Q: Ποιος είναι ο καλύτερος τρόπος προώθησης ιστοσελίδας;
+    A: Δεν υπάρχει ένας για όλους. Για τοπικές επιχειρήσεις ξεκινήστε από το Google Business Profile και το τοπικό SEO. Για άμεσα αιτήματα πελατών, διαφήμιση στο Google. Για σταθερή επισκεψιμότητα χωρίς κόστος ανά κλικ, οργανικό SEO και περιεχόμενο.
+  - Q: Πόσο κοστίζει η διαφήμιση στο Google;
+    A: Ορίζετε εσείς το ημερήσιο budget και πληρώνετε ανά κλικ. Το κόστος ανά κλικ εξαρτάται από τον ανταγωνισμό της αναζήτησης και την ποιότητα της αγγελίας. Ξεκινήστε με μικρό budget σε λίγες εμπορικές αναζητήσεις και μετρήστε τα αιτήματα πριν το αυξήσετε.
+  - Q: Μπορώ να προωθήσω την ιστοσελίδα μου δωρεάν;
+    A: Ναι, με χρόνο αντί για χρήματα. Το Google Business Profile, το Search Console, το περιεχόμενο, το email στους υπάρχοντες πελάτες και οι συνεργασίες δεν κοστίζουν σε διαφήμιση. Θέλουν όμως συνέπεια για μήνες.
+  - Q: Σε πόσο καιρό φαίνονται αποτελέσματα από την προώθηση;
+    A: Οι διαφημίσεις φέρνουν επισκέψεις από την πρώτη μέρα. Το Google Business Profile δείχνει αλλαγές σε εβδομάδες. Το οργανικό SEO και το περιεχόμενο θέλουν συνήθως 3 έως 6 μήνες για ουσιαστική διαφορά.
+  - Q: Αξίζουν τα social media για προώθηση ιστοσελίδας;
+    A: Αξίζουν όταν οι πελάτες σας είναι εκεί και το προϊόν σας φαίνεται οπτικά. Η επισκεψιμότητα από social media σπάνια είναι σταθερή, οπότε δεν αντικαθιστά την αναζήτηση για επιχειρήσεις που ο πελάτης ψάχνει όταν τις χρειάζεται.
+
+### Πρώτη Σελίδα Google: Πώς να Βγείτε Πρώτοι (2026)
+- **URL:** https://anotherseoguru.com/el/blog/proti-selida-google
+- **Locale:** el · **Date:** 2026-10-19
+- **Description:** Πρώτη σελίδα Google: πώς βγαίνετε στο Map Pack, στα οργανικά αποτελέσματα και στο AI Overview, βήμα βήμα ανά αναζήτηση, και τι δεν μπορεί να εγγυηθεί κανείς.
+- **Embedded FAQ:**
+  - Q: Πώς να βγω πρώτος στο Google;
+    A: Διαλέξτε μία αναζήτηση και μία σελίδα, δείτε τι τύπο αποτελέσματος δείχνει ήδη η Google, βεβαιωθείτε ότι η σελίδα είναι στο ευρετήριο, δώστε την καλύτερη απάντηση, ενισχύστε τη με συνδέσμους και μετρήστε στο Search Console. Για τοπικές αναζητήσεις χρειάζεστε και ολοκληρωμένο Google Business Profile.
+  - Q: Πόσο χρόνο θέλει για να βγω στην πρώτη σελίδα της Google;
+    A: Για το όνομα της επιχείρησης, λίγες μέρες μετά την ευρετηρίαση. Για τοπικές αναζητήσεις με μικρό ανταγωνισμό, συνήθως 2 έως 4 μήνες. Για ανταγωνιστικές αναζητήσεις πανελλαδικά, 6 μήνες και πάνω.
+  - Q: Μπορεί κάποιος να μου εγγυηθεί πρώτη θέση στη Google;
+    A: Όχι ειλικρινά. Κανείς εκτός Google δεν ελέγχει την κατάταξη. Μόνο οι διαφημίσεις Google Ads εμφανίζονται με πληρωμή, και ακόμα κι εκεί η θέση εξαρτάται από τη δημοπρασία.
+  - Q: Γιατί βλέπω τον εαυτό μου πρώτο αλλά οι πελάτες όχι;
+    A: Η Google προσαρμόζει τα αποτελέσματα στην τοποθεσία, τη γλώσσα και το ιστορικό αναζητήσεων. Η μέση θέση στο Search Console είναι πιο αξιόπιστη από το να ψάχνετε την επιχείρησή σας από τον υπολογιστή σας.
+  - Q: Μετράει η εμφάνιση στο AI Overview ως πρώτη σελίδα;
+    A: Ναι, όταν εμφανίζεται, το AI Overview βρίσκεται πάνω από τα οργανικά αποτελέσματα και παραθέτει πηγές. Δεν υπάρχει ρύθμιση που εγγυάται αναφορά. Βοηθούν σαφείς, συγκεκριμένες απαντήσεις σε σελίδες που η Google μπορεί να κάνει crawl.
+
+### Schema Markup: Οδηγός JSON-LD για Ελληνικές Επιχειρήσεις
+- **URL:** https://anotherseoguru.com/el/blog/schema-markup
+- **Locale:** el · **Date:** 2026-10-19
+- **Description:** Schema markup στην πράξη: τι είναι τα structured data και το JSON-LD, ποιοι τύποι αξίζουν για ελληνικές επιχειρήσεις, παράδειγμα κώδικα και πώς το ελέγχετε.
+- **Embedded FAQ:**
+  - Q: Τι είναι το schema markup;
+    A: Είναι κώδικας με το λεξιλόγιο του schema.org που περιγράφει στις μηχανές αναζήτησης τι υπάρχει σε μια σελίδα, για παράδειγμα ότι πρόκειται για επιχείρηση με διεύθυνση και ωράριο ή για προϊόν με τιμή. Η Google τον χρησιμοποιεί για να κατανοεί τη σελίδα και για rich results.
+  - Q: Ποια η διαφορά schema, structured data και JSON-LD;
+    A: Structured data είναι η γενική ιδέα, δηλαδή δεδομένα σε τυποποιημένη μορφή. Schema.org είναι το λεξιλόγιο, οι τύποι και οι ιδιότητες. JSON-LD είναι η μορφή γραφής που προτείνει η Google, ένα script μέσα στη σελίδα.
+  - Q: Ανεβάζει το schema markup την κατάταξη;
+    A: Όχι άμεσα. Η Google δεν το χρησιμοποιεί ως παράγοντα κατάταξης. Βοηθά στην κατανόηση της σελίδας και μπορεί να κάνει τη σελίδα επιλέξιμη για rich results, που συχνά αυξάνουν το CTR.
+  - Q: Αξίζει ακόμα το FAQPage schema;
+    A: Για rich results, σχεδόν όχι. Από το 2023 η Google εμφανίζει FAQ rich results μόνο για καθιερωμένες κυβερνητικές ιστοσελίδες και ιστοσελίδες υγείας. Το markup δεν βλάπτει αν αντιστοιχεί σε ορατές ερωτήσεις, αλλά μην περιμένετε επιπλέον χώρο στα αποτελέσματα.
+  - Q: Βοηθά το schema markup στις απαντήσεις AI;
+    A: Η Google αναφέρει ότι δεν χρειάζεται ειδικό markup για να εμφανιστεί μια σελίδα στο AI Overview ή στο AI Mode. Το schema βοηθά να είναι σαφή τα στοιχεία της επιχείρησης, αλλά δεν εγγυάται αναφορά σε καμία απάντηση AI.
+
+### SEO Marketing: Πώς Ταιριάζει στο Ψηφιακό Μάρκετινγκ (2026)
+- **URL:** https://anotherseoguru.com/el/blog/seo-marketing
+- **Locale:** el · **Date:** 2026-10-19
+- **Description:** SEO marketing για μικρομεσαίες επιχειρήσεις: πώς δένει με Google Ads, social και email, πλάνο 90 ημερών και μέτρηση σε GA4 και Search Console.
+- **Embedded FAQ:**
+  - Q: Τι είναι το SEO marketing;
+    A: Είναι η χρήση του SEO ως κανάλι μάρκετινγκ, δηλαδή η απόκτηση πελατών από τα οργανικά αποτελέσματα της Google με σελίδες που απαντούν σε ό,τι ήδη ψάχνει το κοινό σας. Διαφέρει από την πληρωμένη διαφήμιση επειδή δεν πληρώνετε ανά κλικ, αλλά θέλει μήνες για να αποδώσει.
+  - Q: Πού ανήκει το SEO μέσα στο ψηφιακό μάρκετινγκ;
+    A: Το SEO πιάνει τη ζήτηση που υπάρχει ήδη στην αναζήτηση. Τα social δημιουργούν ζήτηση, το email τη διατηρεί και τα Google Ads την καλύπτουν άμεσα όσο το SEO χτίζεται. Σε μια μικρομεσαία επιχείρηση το SEO είναι συνήθως το κανάλι με το χαμηλότερο κόστος ανά πελάτη μακροπρόθεσμα.
+  - Q: Σε πόσο καιρό φαίνονται αποτελέσματα από το SEO marketing;
+    A: Οι πρώτες κινήσεις στις εμφανίσεις φαίνονται συνήθως σε 4-8 εβδομάδες στο Search Console. Σταθερά αιτήματα πελατών από οργανική επισκεψιμότητα θέλουν συνήθως 3 έως 6 μήνες, ανάλογα με τον ανταγωνισμό και την κατάσταση της ιστοσελίδας.
+  - Q: Χρειάζομαι Google Ads αν κάνω SEO;
+    A: Όχι πάντα. Τα Ads βοηθούν όταν θέλετε κρατήσεις ή πωλήσεις αμέσως, όταν δοκιμάζετε ποιες λέξεις-κλειδιά φέρνουν πελάτες ή σε εποχικές αιχμές. Όταν οι οργανικές θέσεις σταθεροποιηθούν, πολλές επιχειρήσεις μειώνουν τον προϋπολογισμό στις λέξεις όπου ήδη κατατάσσονται ψηλά.
+  - Q: Πώς μετράω αν το SEO φέρνει πελάτες;
+    A: Στο GA4 ορίστε key events (φόρμα, κλήση, αγορά) και δείτε τα στο κανάλι Organic Search. Στο Search Console παρακολουθήστε κλικ και εμφανίσεις ανά ερώτημα, χωρισμένα σε brand και non-brand. Συνδέστε τα δύο εργαλεία ώστε να βλέπετε ερωτήματα και μετατροπές μαζί.
+
+### SEO Specialist: Τι Κάνει και Πώς τον Επιλέγετε
+- **URL:** https://anotherseoguru.com/el/blog/seo-specialist
+- **Locale:** el · **Date:** 2026-10-19
+- **Description:** SEO specialist: τι κάνει στην πράξη, ποιες δεξιότητες χρειάζεται, freelancer, εταιρεία ή εσωτερικός, πώς τον αξιολογείτε και ποια σημάδια κινδύνου προσέχετε.
+- **Embedded FAQ:**
+  - Q: Τι κάνει ένας SEO specialist;
+    A: Βρίσκει τι ψάχνουν οι πελάτες σας, διορθώνει τα τεχνικά προβλήματα που εμποδίζουν τη Google να κάνει crawl και να ευρετηριάσει τις σελίδες σας, βελτιώνει ή γράφει περιεχόμενο, φροντίζει για συνδέσμους και μετρά την πρόοδο στο Search Console και στο GA4.
+  - Q: Ποια είναι η διαφορά SEO specialist και SEO consultant;
+    A: Ο SEO specialist συνήθως εκτελεί τη δουλειά. Ο SEO consultant (σύμβουλος SEO) κυρίως διαγνώνει, ορίζει προτεραιότητες και καθοδηγεί την ομάδα σας ή άλλους συνεργάτες. Στην πράξη πολλοί κάνουν και τα δύο.
+  - Q: Πόσο κοστίζει ένας SEO specialist;
+    A: Εξαρτάται από το αν τον προσλαμβάνετε, αν δουλεύει ως freelancer ή μέσω εταιρείας, και από το εύρος της δουλειάς. Τα εύρη τιμών για μηνιαίο SEO και audit στην Ελλάδα τα αναλύουμε στον οδηγό για το πόσο κοστίζει το SEO.
+  - Q: Πώς καταλαβαίνω αν ένας SEO specialist είναι καλός;
+    A: Ζητήστε του να σας εξηγήσει τι θα έκανε στο δικό σας site τους πρώτους τρεις μήνες, με βάση δεδομένα από το Search Console σας. Ένας καλός specialist δίνει συγκεκριμένες σελίδες και αναζητήσεις, όχι γενικές υποσχέσεις, και δεν εγγυάται θέσεις.
+  - Q: Χρειάζομαι SEO specialist ή αρκεί να το κάνω μόνος μου;
+    A: Για μια μικρή τοπική επιχείρηση, τα βασικά (Google Business Profile, σωστοί τίτλοι, Search Console) γίνονται και χωρίς βοήθεια. Specialist χρειάζεστε όταν υπάρχουν τεχνικά θέματα, ανταγωνισμός ή όταν η ιστοσελίδα πρέπει να φέρνει σταθερά αιτήματα πελατών.
+
+### Google Ranking Factors: Confirmed vs Myth
+- **URL:** https://anotherseoguru.com/en/blog/google-ranking-factors
+- **Locale:** en · **Date:** 2026-10-16
+- **Description:** Which Google ranking factors Search Central documents, which popular claims it contradicts, and what to fix instead of a fake checklist.
+- **Embedded FAQ:**
+  - Q: Does Google publish a list of ranking factors?
+    A: Google does not publish a complete numbered list. Its how-Search-works guide says relevancy uses hundreds of factors, which can include location, language and device. The ranking systems guide names notable systems such as PageRank, BERT, RankBrain, neural matching and spam detection.
+  - Q: Is E-E-A-T a Google ranking factor?
+    A: No. Google says E-E-A-T itself is not a specific ranking factor. Its systems use many factors that can identify experience, expertise, authoritativeness and trust. Trust is the most important of those aspects.
+  - Q: Are Core Web Vitals a ranking factor?
+    A: Yes. Google says Core Web Vitals are used by its ranking systems. A good score does not guarantee a top position, and there is no single page-experience signal.
+  - Q: Does the keywords meta tag affect Google rankings?
+    A: No. Google said in 2009 that web search does not use the keywords meta tag, and that Search Central post still says this has not changed.
+  - Q: Can you pay Google to rank higher in organic results?
+    A: No. Google says it does not accept payment to crawl a site more often or to rank it higher. Ads are a separate product from organic ranking.
 
 ### How to Rank Higher on Google (2026)
 - **URL:** https://anotherseoguru.com/en/blog/how-to-rank-higher-on-google
@@ -664,38 +792,6 @@ The Greek cities below have service×city pages for website creation, local SEO,
   - Q: How do I rank first in search results?
     A: Treat each query on its own. Branded queries should show you first when your homepage is indexed. Local queries are decided largely by relevance, distance, and prominence, including your Google Business Profile. Broader queries move after the page, the internal links, and outside mentions are strong enough for that competition. Average position in Search Console is the number to watch.
 
-### Website SEO Checklist (2026)
-- **URL:** https://anotherseoguru.com/en/blog/seo-checklist
-- **Locale:** en · **Date:** 2026-10-16
-- **Description:** A practical 2026 website SEO checklist for crawl, on-page, speed, internal links and local signals, with a sheet you can tick, download or print.
-- **Embedded FAQ:**
-  - Q: What is a website SEO checklist?
-    A: A website SEO checklist is an ordered list of crawl, on-page, speed, internal-link and local checks you can verify on a live site. It is a working order, not a score.
-  - Q: How often should I run a website SEO checklist?
-    A: Run the full list after launch, a redesign or a migration. Between those events, recheck titles, index coverage and Core Web Vitals each month, and again after any template change.
-  - Q: What should I fix first on a website?
-    A: Fix indexation and canonicals before rewriting copy. A page Google cannot keep in the index will not benefit from a better title or a longer article.
-  - Q: Does this checklist cover AI search?
-    A: Clear answers, headings and visible facts help both Google and AI systems that quote pages. The list does not add a separate score for ChatGPT or AI Overviews.
-  - Q: Can I download the website SEO checklist?
-    A: Yes. The sheet on this page saves ticks in your browser and downloads as Markdown or CSV, or you can print it. Nothing is uploaded.
-
-### Google Ranking Factors: Confirmed vs Myth
-- **URL:** https://anotherseoguru.com/en/blog/google-ranking-factors
-- **Locale:** en · **Date:** 2026-10-16
-- **Description:** Which Google ranking factors Search Central documents, which popular claims it contradicts, and what to fix instead of a fake checklist.
-- **Embedded FAQ:**
-  - Q: Does Google publish a list of ranking factors?
-    A: Google does not publish a complete numbered list. Its how-Search-works guide says relevancy uses hundreds of factors, which can include location, language and device. The ranking systems guide names notable systems such as PageRank, BERT, RankBrain, neural matching and spam detection.
-  - Q: Is E-E-A-T a Google ranking factor?
-    A: No. Google says E-E-A-T itself is not a specific ranking factor. Its systems use many factors that can identify experience, expertise, authoritativeness and trust. Trust is the most important of those aspects.
-  - Q: Are Core Web Vitals a ranking factor?
-    A: Yes. Google says Core Web Vitals are used by its ranking systems. A good score does not guarantee a top position, and there is no single page-experience signal.
-  - Q: Does the keywords meta tag affect Google rankings?
-    A: No. Google said in 2009 that web search does not use the keywords meta tag, and that Search Central post still says this has not changed.
-  - Q: Can you pay Google to rank higher in organic results?
-    A: No. Google says it does not accept payment to crawl a site more often or to rank it higher. Ads are a separate product from organic ranking.
-
 ### Παράγοντες Κατάταξης Google: Τι Ισχύει
 - **URL:** https://anotherseoguru.com/el/blog/paragontes-katataxis-google
 - **Locale:** el · **Date:** 2026-10-16
@@ -711,6 +807,22 @@ The Greek cities below have service×city pages for website creation, local SEO,
     A: Όχι. Από το 2009 η Google έχει γράψει ότι η αναζήτηση ιστού δεν χρησιμοποιεί το meta tag keywords, και η ίδια σελίδα εξακολουθεί να λέει ότι αυτό δεν άλλαξε.
   - Q: Μπορώ να πληρώσω τη Google για υψηλότερη οργανική θέση;
     A: Όχι. Η Google γράφει ότι δεν δέχεται πληρωμή για συχνότερη ανίχνευση ή για υψηλότερη κατάταξη. Οι διαφημίσεις είναι ξεχωριστό προϊόν από την οργανική κατάταξη.
+
+### Website SEO Checklist (2026)
+- **URL:** https://anotherseoguru.com/en/blog/seo-checklist
+- **Locale:** en · **Date:** 2026-10-16
+- **Description:** A practical 2026 website SEO checklist for crawl, on-page, speed, internal links and local signals, with a sheet you can tick, download or print.
+- **Embedded FAQ:**
+  - Q: What is a website SEO checklist?
+    A: A website SEO checklist is an ordered list of crawl, on-page, speed, internal-link and local checks you can verify on a live site. It is a working order, not a score.
+  - Q: How often should I run a website SEO checklist?
+    A: Run the full list after launch, a redesign or a migration. Between those events, recheck titles, index coverage and Core Web Vitals each month, and again after any template change.
+  - Q: What should I fix first on a website?
+    A: Fix indexation and canonicals before rewriting copy. A page Google cannot keep in the index will not benefit from a better title or a longer article.
+  - Q: Does this checklist cover AI search?
+    A: Clear answers, headings and visible facts help both Google and AI systems that quote pages. The list does not add a separate score for ChatGPT or AI Overviews.
+  - Q: Can I download the website SEO checklist?
+    A: Yes. The sheet on this page saves ticks in your browser and downloads as Markdown or CSV, or you can print it. Nothing is uploaded.
 
 ### 21 SEO Strategies That Work in 2026
 - **URL:** https://anotherseoguru.com/en/blog/seo-strategies
@@ -746,10 +858,10 @@ The Greek cities below have service×city pages for website creation, local SEO,
   - Q: Μπορώ να εμφανίζομαι στον χάρτη χωρίς φυσικό κατάστημα;
     A: Ναι. Αν εξυπηρετείτε πελάτες στον χώρο τους (π.χ. υδραυλικός, καθαρισμός), δηλώνετε περιοχή εξυπηρέτησης και κρύβετε τη διεύθυνση. Το προφίλ εμφανίζεται για αναζητήσεις στις περιοχές που δηλώσατε.
 
-### On-Page SEO: Τι Είναι και Checklist 2026
+### Συμβουλές On-Page SEO και Checklist 2026
 - **URL:** https://anotherseoguru.com/el/blog/on-page-seo-el
 - **Locale:** el · **Date:** 2026-10-10
-- **Description:** Τι είναι το on-page SEO και πώς διαφέρει από το off-page: checklist για τίτλους, επικεφαλίδες, περιεχόμενο και εσωτερικούς συνδέσμους, με παραδείγματα.
+- **Description:** Δώδεκα συμβουλές on-page SEO για τίτλους, επικεφαλίδες, κείμενο, εικόνες και εσωτερικούς συνδέσμους, με σύντομο checklist και παράδειγμα πριν και μετά.
 - **Embedded FAQ:**
   - Q: Τι είναι το on-page SEO;
     A: On-page (ή on-site) SEO είναι ό,τι βελτιώνετε μέσα στην ίδια τη σελίδα για να καταλάβει η Google τι απαντά και να την προτείνει στη σωστή αναζήτηση - τίτλος, επικεφαλίδες, κείμενο, εικόνες, εσωτερικοί σύνδεσμοι και structured data.
@@ -759,8 +871,10 @@ The Greek cities below have service×city pages for website creation, local SEO,
     A: Το τεχνικό SEO φροντίζει να μπορεί η Google να βρει και να διαβάσει τη σελίδα (ταχύτητα, ευρετηρίαση, δομή). Το on-page SEO φροντίζει η σελίδα να απαντά σωστά σε αυτό που ψάχνει ο χρήστης.
   - Q: Πόσο συχνά πρέπει να ελέγχω το on-page SEO;
     A: Σε κάθε νέα σελίδα πριν δημοσιευτεί, και στις σημαντικές σελίδες κάθε λίγους μήνες με βάση τα δεδομένα του Search Console - ειδικά όταν μια σελίδα έχει πολλές εμφανίσεις αλλά λίγα κλικ.
+  - Q: Ποιες είναι οι βασικές συμβουλές on-page SEO;
+    A: Μία πρόθεση αναζήτησης ανά σελίδα, μοναδικός τίτλος και ένα H1, απάντηση στην πρώτη οθόνη, H2 στις επόμενες ερωτήσεις, εσωτερικοί σύνδεσμοι με περιγραφικό anchor, alt text στις εικόνες και schema μόνο για ό,τι φαίνεται στη σελίδα.
 
-### Πώς να Επιλέξετε Εταιρεία SEO: 10 Ερωτήσεις
+### Πώς να Επιλέξετε SEO Agency: 10 Ερωτήσεις
 - **URL:** https://anotherseoguru.com/el/blog/pos-na-epilexete-etaireia-seo
 - **Locale:** el · **Date:** 2026-10-10
 - **Description:** Πώς να επιλέξετε εταιρεία SEO στην Ελλάδα: 10 ερωτήσεις πριν υπογράψετε, σημάδια κινδύνου και σύγκριση εταιρείας, freelancer και εσωτερικού συνεργάτη.
@@ -768,7 +882,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
   - Q: Ποια είναι η καλύτερη εταιρεία SEO στην Ελλάδα;
     A: Δεν υπάρχει μία καλύτερη για όλους. Η σωστή εταιρεία SEO για εσάς είναι αυτή που έχει δουλέψει στον κλάδο σας, σας δείχνει συγκεκριμένα παραδοτέα ανά μήνα, μετρά αιτήματα και όχι μόνο θέσεις, και σας αφήνει να κρατήσετε λογαριασμούς και περιεχόμενο αν φύγετε.
   - Q: Εταιρεία SEO ή freelancer;
-    A: Ένας freelancer ταιριάζει σε μικρότερα έργα με σαφές αντικείμενο. Μια εταιρεία ταιριάζει όταν χρειάζεστε ταυτόχρονα τεχνικό SEO, περιεχόμενο και σύνδεσμους κάθε μήνα και θέλετε συνέχεια αν κάποιος λείψει.
+    A: Ένας freelancer ταιριάζει σε μικρότερα έργα με σαφές αντικείμενο. Μια εταιρεία ταιριάζει όταν χρειάζεστε ταυτόχρονα τεχνικό SEO, περιεχόμενο και συνδέσμους κάθε μήνα και θέλετε συνέχεια αν κάποιος λείψει.
   - Q: Πότε φαίνονται τα πρώτα αποτελέσματα;
     A: Οι πρώτες κινήσεις σε θέσεις φαίνονται συνήθως σε 2 έως 4 μήνες. Ουσιαστική διαφορά σε αιτήματα θέλει 6 μήνες και πάνω, και περισσότερο σε ανταγωνιστικούς κλάδους.
   - Q: Είναι σήμα κινδύνου η εγγύηση πρώτης θέσης;
@@ -786,7 +900,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
   - Q: Αξίζει να αγοράσω backlinks;
     A: Όχι. Οι πολιτικές της Google θεωρούν spam την αγορά συνδέσμων που μεταφέρουν αξία κατάταξης. Το ρίσκο είναι να αγνοηθούν οι σύνδεσμοι ή, σε σοβαρές περιπτώσεις, να πέσει η ιστοσελίδα. Οι πληρωμένες αναφορές πρέπει να σημειώνονται ως sponsored.
   - Q: Πόσα backlinks χρειάζομαι;
-    A: Δεν υπάρχει αριθμός-στόχος. Μετράει η ποιότητα και η σχετικότητα. Λίγοι σύνδεσμοι από σοβαρά ελληνικά sites του κλάδου ή της περιοχής σας αξίζουν περισσότερο από εκατοντάδες από άσχετους καταλόγους.
+    A: Δεν υπάρχει αριθμός-στόχος. Μετράνε η ποιότητα και η σχετικότητα. Λίγοι σύνδεσμοι από σοβαρά ελληνικά sites του κλάδου ή της περιοχής σας αξίζουν περισσότερο από εκατοντάδες από άσχετους καταλόγους.
   - Q: Πώς βλέπω ποια sites με συνδέουν;
     A: Στο Google Search Console, στην αναφορά «Σύνδεσμοι», βλέπετε ποια sites σας συνδέουν και προς ποιες σελίδες. Είναι δωρεάν και βασίζεται στα δεδομένα της ίδιας της Google.
 
@@ -818,7 +932,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
   - Q: Πόσα στοιχεία χρειάζεται μια λίστα;
     A: Η πηγή λέει τρία, με κοινό τύπο οντότητας. Κάτω από τα όρια αυτά η λίστα λέγεται ότι εκφυλίζεται σε απλές κουκκίδες. Είναι ούτως ή άλλως ένα λογικό κατώφλι.
   - Q: Τι να κάνω πρώτα αν κάνω ένα μόνο πράγμα;
-    A: Συμπληρώστε το μπλοκ οντότητας που ήδη έχετε. Τα περισσότερα site δηλώνουν τύπο και σταματούν, που λέει σε μια μηχανή ότι υπάρχει μια επιχείρηση χωρίς να λέει ποια.
+    A: Συμπληρώστε το μπλοκ οντότητας που ήδη έχετε. Τα περισσότερα site δηλώνουν τύπο και σταματούν, κάτι που λέει σε μια μηχανή ότι υπάρχει μια επιχείρηση χωρίς να λέει ποια.
 
 ### Google AI Mode tags and what grounds them
 - **URL:** https://anotherseoguru.com/en/blog/google-ai-mode-tags
@@ -836,15 +950,21 @@ The Greek cities below have service×city pages for website creation, local SEO,
   - Q: What should I do first if I only do one thing?
     A: Fill in the entity block you already have. Most sites declare a type and stop, which tells a machine that a business exists without telling it which one.
 
-### Backlink Checker - How to Check Backlinks of Any Website (Free + Paid)
+### How to Find and Check Website Backlinks
 - **URL:** https://anotherseoguru.com/en/blog/backlink-checker
 - **Locale:** en · **Date:** 2026-09-05
-- **Description:** What a backlink checker does, how to check backlinks free in Google Search Console, how to check competitor backlinks, spot toxic links, and which to use.
+- **Description:** How to find and check backlinks of any website, with Search Console for your site, free checkers for other domains, and a practical quality review.
 - **Embedded FAQ:**
   - Q: What is a backlink checker?
     A: A backlink checker is a tool that lists the pages linking to a website or URL, along with metrics like referring domains, anchor text, follow vs nofollow status, and the authority of each linking site. Ahrefs, Semrush, Moz and Google Search Console are the most used.
+  - Q: How do I find backlinks of a website?
+    A: For a site you own, open Google Search Console, go to Links, and export external links. For any other site, paste the URL into a backlink checker and export referring domains. Google Search itself does not list another site's backlinks.
   - Q: How do I check backlinks for free?
     A: Open Google Search Console, go to Links, and export "Top linking sites" and "Top linked pages" for your own site. For any other domain, use the free tiers of Ahrefs Backlink Checker, Semrush Backlink Analytics, Moz Link Explorer or SE Ranking, which show the top 100 links and referring domains.
+  - Q: How do I check backlinks in Google Search?
+    A: You cannot. Searching link:example.com does not return a reliable backlink list. Use Search Console's Links report for a property you verify. For any other domain, use a third-party backlink checker.
+  - Q: How do I check backlink quality?
+    A: Ignore the raw link count. Check referring domains, whether the links are followed, whether the linking sites are topically relevant, and whether the anchor text is mostly brand and natural phrases. A long tail of relevant sites beats a spike of identical directories.
   - Q: How do I check competitor backlinks?
     A: Paste the competitor domain into a backlink checker, sort referring domains by traffic or Domain Rating, filter to followed links, and export the list. Then run a link gap report to find sites linking to two or more competitors but not to you - those are your best outreach targets.
   - Q: How many backlinks do I have?
@@ -944,7 +1064,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
   - Q: Ποια εργαλεία SEO χρειάζομαι στην αρχή;
     A: Google Search Console, Google Analytics 4, PageSpeed Insights και το ίδιο το SERP. Αυτά καλύπτουν το 80% των αποφάσεων για μικρή επιχείρηση πριν πληρώσετε Ahrefs/Semrush.
   - Q: Πώς βοηθά το Google Analytics στο SEO;
-    A: Το GA4 δείχνει ποια οργανική κίνηση μετατρέπει - σελίδες εισόδου, engagement, conversions. Συνδεδεμένο με Search Console συνδέει κατατάξεις με πραγματική συμπεριφορά χρηστών.
+    A: Το GA4 δείχνει ποια οργανική κίνηση μετατρέπει - σελίδες εισόδου, engagement, conversions. Συνδεδεμένο με το Search Console, συνδέει κατατάξεις με πραγματική συμπεριφορά χρηστών.
   - Q: Χρειάζομαι πληρωμένο SEO tool;
     A: Όχι την πρώτη μέρα. Χρειάζεται όταν κλιμακώνετε έρευνα ανταγωνισμού, backlinks και keyword gaps. Ξεκινήστε με GSC δεδομένα και καθαρό on-page.
   - Q: Ποια εργαλεία βοηθούν στο τοπικό SEO;
@@ -1000,7 +1120,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
   - Q: What should I budget to grow organic traffic?
     A: In Greece, Foundations starts at €500 per month, Growth at €900, and Authority at €1,500, net of VAT. Technical audits start at €450. Spend does not predict a traffic number.
 
-### How to Do Keyword Research for SEO (Step-by-Step)
+### How to Do Keyword Research for SEO
 - **URL:** https://anotherseoguru.com/en/blog/keyword-research-guide
 - **Locale:** en · **Date:** 2026-07-23
 - **Description:** A practical keyword research process for SEO - seeds, intent, clustering, and prioritization - plus free tools to find SEO keywords that convert.
@@ -1032,10 +1152,10 @@ The Greek cities below have service×city pages for website creation, local SEO,
   - Q: Πόσο συχνά ανανεώνω την έρευνα;
     A: Κάθε τρίμηνο σε ανταγωνιστικά niches, και μετά από μεγάλες αλλαγές προϊόντος, τοποθεσίας ή σεζόν. Πάντα με νέα δεδομένα GSC.
 
-### Link Building Guide - Earn Authority Without Spam
+### Backlink Building Strategies & Emails
 - **URL:** https://anotherseoguru.com/en/blog/link-building-guide
 - **Locale:** en · **Date:** 2026-07-23
-- **Description:** What link building is, how it works in modern SEO, white-hat tactics, realistic costs and timelines, and how professional link building services should run.
+- **Description:** Backlink building strategies you can run this month: a prospect sheet, three outreach email examples, realistic costs, and which tactics to refuse.
 - **Embedded FAQ:**
   - Q: What is link building?
     A: Link building is earning hyperlinks from other sites to yours. Quality and relevance matter more than volume - one editorial link from a trusted site beats dozens of spam directories.
@@ -1047,14 +1167,20 @@ The Greek cities below have service×city pages for website creation, local SEO,
     A: White-hat campaigns typically run €400–€1,500+ per month depending on niche difficulty, or sit inside Growth/Authority SEO retainers (€900–€1,500+/mo). Cheap “50 links for €99” packages are almost always spam.
   - Q: Do you guarantee rankings from links?
     A: No ethical provider does. Guarantees process quality, relevance and reporting - not a specific Google position.
+  - Q: What are backlink building strategies?
+    A: Repeatable ways to earn editorial links. The ones that still hold up are linkable assets, digital PR, relevant guest contributions, broken-link replacements, genuine partnerships, and reclaiming unlinked mentions. Each one starts from a page worth citing.
+  - Q: What should an outreach email include?
+    A: One specific page of theirs, one reason a link helps their readers, and one URL of yours. This guide includes templates for a broken-link replacement, an unlinked mention, and a resource pitch. Send one relevant email, follow up once, then stop.
 
-### Off-Page SEO - Links, Mentions & Reputation
+### Off-Page SEO Strategies
 - **URL:** https://anotherseoguru.com/en/blog/off-page-seo
 - **Locale:** en · **Date:** 2026-07-23
-- **Description:** What off-page SEO is, how it differs from on-page, and practical ways to improve authority without spammy links - with costs, timelines and a 2026 checklist.
+- **Description:** Off-page SEO strategies for 2026: editorial links, digital PR, brand mentions and local reputation, with realistic costs, timelines and what to skip.
 - **Embedded FAQ:**
   - Q: What is off-page SEO?
     A: Off-page SEO is signals earned outside your site - mainly backlinks, brand mentions, and reputation. It supports pages that already deserve to rank on-page.
+  - Q: What are off-page SEO strategies?
+    A: Editorial links, digital PR, brand mentions, local reputation and genuine industry relationships. Link building is the core strategy. Spam directories, PBNs and irrelevant paid links are not.
   - Q: How to improve off-page SEO?
     A: Earn relevant editorial links, clean up toxic spam, strengthen brand mentions, and keep Google Business Profile and reviews healthy for local queries.
   - Q: Is off-page SEO the same as link building?
@@ -1064,15 +1190,17 @@ The Greek cities below have service×city pages for website creation, local SEO,
   - Q: Can bad off-page SEO hurt rankings?
     A: Yes. Spam networks, irrelevant paid links and sudden unnatural spikes can trigger manual or algorithmic distrust. Quality and relevance beat volume every time.
 
-### On-Page SEO - How to Optimize a Page That Ranks
+### On-Page SEO Tips: How to Optimize a Page That Ranks
 - **URL:** https://anotherseoguru.com/en/blog/on-page-seo
 - **Locale:** en · **Date:** 2026-07-23
-- **Description:** What on-page SEO is and how to do it - titles, headings, content, internal links, schema and a practical 2026 checklist with costs and timelines.
+- **Description:** Work through these numbered on-page SEO tips for titles, headings, content, internal links and schema, plus a 2026 checklist with costs and timelines.
 - **Embedded FAQ:**
   - Q: What is on-page SEO?
     A: On-page SEO is optimizing titles, headings, content, internal links, and media on a URL so it clearly matches search intent and earns clicks.
   - Q: How to do on-page SEO?
     A: Pick one primary intent, put the keyword in the title and H1 naturally, answer the query early, use clear H2s for related questions, add internal links, and improve CTR with a compelling meta description.
+  - Q: What are the main on-page SEO tips?
+    A: One intent per URL, a unique title and H1, an early answer, question-style headings, internal links, image alt text, and schema that matches the visible page.
   - Q: On-page vs technical SEO?
     A: Technical SEO covers crawl, indexation, speed and architecture. On-page SEO covers relevance and clarity of the content on the URL. You need both.
   - Q: How long does on-page SEO take to work?
@@ -1086,7 +1214,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Description:** Πόσο κοστίζει το SEO στην Ελλάδα το 2026: μηνιαίες τιμές ανά μέγεθος επιχείρησης, τι περιλαμβάνει ένα πακέτο και πότε το φθηνό SEO βγαίνει ακριβό.
 - **Embedded FAQ:**
   - Q: Πόσο κοστίζει το SEO στην Ελλάδα;
-    A: Για σοβαρή δουλειά, από €250 έως €1.500+ τον μήνα ανάλογα με τον ανταγωνισμό και τους στόχους. Τα πακέτα μας είναι Foundations €500/μήνα, Growth €900/μήνα και Authority €1.500/μήνα, πάντα σε Ευρώ και χωρίς κρυφές χρεώσεις.
+    A: Για σοβαρή δουλειά, από €250 έως €1.500+ τον μήνα ανάλογα με τον ανταγωνισμό και τους στόχους. Τα πακέτα μας είναι Foundations €500/μήνα, Growth €900/μήνα και Authority €1.500/μήνα, πάντα σε ευρώ και χωρίς κρυφές χρεώσεις.
   - Q: Ποιες είναι οι τυπικές τιμές SEO στην Ελλάδα;
     A: Τοπικές επιχειρήσεις συνήθως επενδύουν €250–€400/μήνα. Ανταγωνιστικοί κλάδοι €500–€800. E-shop και πανελλαδικά brands €900–€1.500+. Εφάπαξ audit συχνά €300–€800.
   - Q: Αξίζει το SEO;
@@ -1116,7 +1244,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
   - Q: Does SEO content still matter with AI Overviews?
     A: Yes. Clear, cited, experience-rich pages are what AI systems quote. Thin keyword dumps get ignored. Pair content with GEO/AEO practices for answer engines.
 
-### Τι Είναι το SEO; Οδηγός για Αρχάριους 2026
+### Τι Είναι το SEO και Πώς Λειτουργεί; Οδηγός 2026
 - **URL:** https://anotherseoguru.com/el/blog/seo-gia-arxarious
 - **Locale:** el · **Date:** 2026-07-23
 - **Description:** Τι είναι το SEO με απλά λόγια. Πώς κατατάσσει η Google, on-page, τεχνικό, off-page και τοπικό SEO, λέξεις-κλειδιά, κόστος και από πού ξεκινάτε.
@@ -1138,9 +1266,9 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Description:** SEO συμβουλές και στρατηγική για μικρές επιχειρήσεις στην Ελλάδα. Τι να κάνετε τις πρώτες 90 μέρες, κόστος, λάθη να αποφύγετε και πότε να προσλάβετε agency.
 - **Embedded FAQ:**
   - Q: Από πού ξεκινά το SEO για μικρή επιχείρηση;
-    A: Από Google Business Profile (αν είστε τοπικοί), τεχνική υγεία του site, βελτιστοποίηση 5–10 σελίδων υπηρεσιών και σταθερό περιεχόμενο που απαντά ερωτήσεις πελατών - όχι από αγορά εκατοντάδων links.
+    A: Από Google Business Profile (αν είστε τοπικοί), τεχνική υγεία του site, βελτιστοποίηση 5–10 σελίδων υπηρεσιών και σταθερό περιεχόμενο που απαντά σε ερωτήσεις πελατών - όχι από αγορά εκατοντάδων links.
   - Q: Ποιες SEO συμβουλές αξίζουν πραγματικά;
-    A: Μία πρόθεση ανά σελίδα, μετρήστε με Search Console, απαντήστε κριτικές, βελτιώστε ταχύτητα κινητού και γράψτε για ανθρώπους. Αποφύγετε εγγυήσεις «πρώτης θέσης» και φθηνά πακέτα €80/μήνα.
+    A: Μία πρόθεση ανά σελίδα, μετρήστε με Search Console, απαντήστε σε κριτικές, βελτιώστε ταχύτητα κινητού και γράψτε για ανθρώπους. Αποφύγετε εγγυήσεις «πρώτης θέσης» και φθηνά πακέτα €80/μήνα.
   - Q: Πότε να προσλάβω εταιρεία SEO;
     A: Όταν δεν έχετε χρόνο για συστηματική δουλειά, όταν το site χρειάζεται τεχνικό audit, ή όταν ο ανταγωνισμός στην πόλη/κλάδο σας είναι ήδη ενεργός. Ζητήστε διαφανείς τιμές και μηνιαία deliverables.
   - Q: Πόσο κοστίζει το SEO για μικρή επιχείρηση;
@@ -1148,11 +1276,13 @@ The Greek cities below have service×city pages for website creation, local SEO,
   - Q: DIY ή agency στις πρώτες 90 μέρες;
     A: DIY για Search Console, GBP και βασικά titles. Agency όταν χρειάζεστε τεχνικό audit, συστηματικό περιεχόμενο, τοπική κάλυψη πόλεων ή links με μετρήσιμα deliverables.
 
-### Technical SEO Guide - Crawl, Index, Speed & Schema
+### Technical SEO Best Practices Guide
 - **URL:** https://anotherseoguru.com/en/blog/technical-seo-guide
 - **Locale:** en · **Date:** 2026-07-23
-- **Description:** What technical SEO is, a practical 2026 checklist, Core Web Vitals, schema, common mistakes, costs and when to hire technical SEO services or run an audit.
+- **Description:** Technical SEO best practices for crawl, indexation, Core Web Vitals, canonicals and schema, with costs and when an audit is worth it.
 - **Embedded FAQ:**
+  - Q: What are technical SEO best practices?
+    A: Index revenue URLs, fix Core Web Vitals on templates that convert, match mobile to desktop, submit a sitemap with real internal links, mark up only visible facts, pair EN/EL with hreflang, render critical copy in the initial HTML, and keep one HTTPS host with clean 301s.
   - Q: What is technical SEO?
     A: Technical SEO makes your site easy to crawl, index, and render - speed, mobile usability, HTTPS, sitemaps, canonicals, structured data, and clean architecture.
   - Q: Technical SEO vs on-page SEO?
@@ -1164,19 +1294,21 @@ The Greek cities below have service×city pages for website creation, local SEO,
   - Q: How much does a technical SEO audit cost?
     A: In Greece, focused technical audits typically run €500–€1,200 depending on site size and JS complexity. Fixes are scoped separately or included in retainers.
 
-### Τεχνικό SEO: Checklist για Κατάταξη (2026)
+### Τεχνικό SEO: Βέλτιστες Πρακτικές
 - **URL:** https://anotherseoguru.com/el/blog/techniko-seo
 - **Locale:** el · **Date:** 2026-07-23
-- **Description:** Τι είναι το τεχνικό SEO και πώς βελτιώνει την κατάταξη στη Google. Crawl, index, Core Web Vitals, schema, λάθη, κόστος και πρακτικό checklist.
+- **Description:** Τι είναι το τεχνικό SEO και οι βέλτιστες πρακτικές για crawl, index, Core Web Vitals, schema, λάθη, κόστος και κατάταξη στη Google.
 - **Embedded FAQ:**
+  - Q: Ποιες είναι οι βέλτιστες πρακτικές τεχνικού SEO;
+    A: Πρώτα ευρετηρίαση και canonicals στις σελίδες εσόδων, μετά Core Web Vitals στα templates που μετατρέπουν, ίδιο περιεχόμενο σε κινητό, sitemap και εσωτερικά links, schema μόνο για ορατό κείμενο, hreflang σε EN/EL, κρίσιμο κείμενο στο αρχικό HTML και ένα HTTPS host με καθαρά 301.
   - Q: Τι είναι το τεχνικό SEO;
     A: Το τεχνικό SEO βελτιστοποιεί την υποδομή του site ώστε η Google να ανιχνεύει, να ευρετηριάζει και να κατανοεί τις σελίδες σας - ταχύτητα, mobile, HTTPS, sitemap, schema και καθαρή αρχιτεκτονική.
   - Q: Πώς βοηθά το τεχνικό SEO στη βελτίωση κατάταξης Google;
     A: Χωρίς crawl και index, το καλύτερο περιεχόμενο δεν εμφανίζεται. Τα Core Web Vitals και το mobile επηρεάζουν κατάταξη και μετατροπές. Το τεχνικό SEO αφαιρεί εμπόδια ώστε on-page και links να αποδώσουν.
   - Q: Χρειάζομαι τεχνικό SEO audit;
-    A: Ναι αν το site είναι αργό, έχει προβλήματα ευρετηρίασης στο Search Console, ή πριν από μεγάλη επένδυση σε περιεχόμενο και backlinks. Ένα audit δίνει προτεραιοποιημένο πλάνο διορθώσεων.
+    A: Ναι, αν το site είναι αργό, έχει προβλήματα ευρετηρίασης στο Search Console, ή πριν από μεγάλη επένδυση σε περιεχόμενο και backlinks. Ένα audit δίνει προτεραιοποιημένο πλάνο διορθώσεων.
   - Q: Επηρεάζει η ταχύτητα την κατάταξη;
-    A: Ναι ως μέρος της εμπειρίας σελίδας - και επηρεάζει έντονα τις μετατροπές ακόμα κι όταν η επίδραση στην κατάταξη είναι μέτρια. Διορθώστε πρώτα LCP/INP στα templates που φέρνουν πελάτες.
+    A: Ναι, ως μέρος της εμπειρίας σελίδας - και επηρεάζει έντονα τις μετατροπές ακόμα κι όταν η επίδραση στην κατάταξη είναι μέτρια. Διορθώστε πρώτα LCP/INP στα templates που φέρνουν πελάτες.
   - Q: Πόσο κοστίζει ένα τεχνικό audit;
     A: Στην Ελλάδα, εστιασμένα τεχνικά audits συνήθως κυμαίνονται από €500 έως €1.200 ανάλογα με μέγεθος site και πολυπλοκότητα JS. Οι διορθώσεις κοστολογούνται ξεχωριστά ή εντάσσονται σε retainer.
 
@@ -1210,7 +1342,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
   - Q: Το μενού σε PDF πειράζει;
     A: Ναι. Η Google δεν διαβάζει εύκολα PDF και ανοίγει δύσκολα στο κινητό. Μεταφέρετέ το σε HTML με τιμές και κατηγορίες.
   - Q: Πόσες κριτικές χρειάζομαι;
-    A: Μετράει η σταθερότητα και η βαθμολογία, όχι ένας μαγικός αριθμός. Στόχος: 2–4 νέες κριτικές τον μήνα με απαντήσεις.
+    A: Μετράνε η σταθερότητα και η βαθμολογία, όχι ένας μαγικός αριθμός. Στόχος: 2–4 νέες κριτικές τον μήνα με απαντήσεις.
 
 ### SEO για Οδοντιάτρους - Γεμίστε την Ατζέντα από τη Google
 - **URL:** https://anotherseoguru.com/el/blog/seo-gia-odontiatrous
@@ -1366,7 +1498,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
   - Q: WooCommerce ή Shopify - τι να διαλέξω;
     A: Για τις περισσότερες ελληνικές επιχειρήσεις προτείνουμε WooCommerce, γιατί έχετε πλήρη ιδιοκτησία, φυσική υποστήριξη αντικαταβολής και ελληνικών courier (ACS, Γενική, ELTA, Box Now), σύνδεση με myDATA και πλήρη ελευθερία στο SEO. Το Shopify βολεύει για γρήγορο ξεκίνημα, αλλά έχει μηνιαία συνδρομή, προμήθειες και περιορισμούς στη δομή URL.
   - Q: Μπορώ να φτιάξω eshop μόνος μου;
-    A: Ναι, με WooCommerce ή έτοιμες πλατφόρμες μπορείτε να στήσετε ένα βασικό e-shop μόνοι σας. Το πρόβλημα δεν είναι το στήσιμο, αλλά το να πουλάει - σωστές πληρωμές και αντικαταβολή, ρυθμισμένα courier, SEO δομή κατηγοριών, ταχύτητα σε κινητό και myDATA. Ένα e-shop που δεν βρίσκεται στη Google ή δεν εμπνέει εμπιστοσύνη απλά δεν φέρνει παραγγελίες.
+    A: Ναι, με WooCommerce ή έτοιμες πλατφόρμες μπορείτε να στήσετε ένα βασικό e-shop μόνοι σας. Το πρόβλημα δεν είναι το στήσιμο, αλλά το να πουλάει - σωστές πληρωμές και αντικαταβολή, ρυθμισμένα courier, SEO δομή κατηγοριών, ταχύτητα σε κινητό και myDATA. Ένα e-shop που δεν βρίσκεται στη Google ή δεν εμπνέει εμπιστοσύνη απλώς δεν φέρνει παραγγελίες.
   - Q: Κατασκευή e-shop με WordPress και WooCommerce συμφέρει;
     A: Ναι. Το WooCommerce τρέχει πάνω σε WordPress και είναι η πιο διαδεδομένη λύση e-commerce στην Ελλάδα, με χιλιάδες πρόσθετα για πληρωμές, courier και τιμολόγηση. Σας δίνει πλήρη ιδιοκτησία του καταστήματος και τη μεγαλύτερη ευελιξία σε τεχνικό SEO, κάτι που κρίνει την οργανική επισκεψιμότητα.
   - Q: Χρειάζομαι B2B ή πολυγλωσσικό e-shop;
@@ -1376,7 +1508,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
   - Q: Έχω ήδη e-shop που δεν πουλάει - νέο ή διόρθωση;
     A: Αν η βάση είναι υγιής (WooCommerce, λογική δομή), συχνά αρκεί SEO για e-shop και βελτιστοποίηση μετατροπών. Αν είναι σε κλειστή πλατφόρμα ή τεχνικά προβληματικό, ο ανασχεδιασμός με ασφαλές migration είναι μονόδρομος.
   - Q: Πώς θα φέρει πελάτες το e-shop;
-    A: Με συνδυασμό - SEO κατηγοριών και προϊόντων για σταθερή οργανική ροή, Google Shopping/Ads για άμεσες πωλήσεις και email marketing για επαναγορές. Το SEO είναι ο φθηνότερος μακροπρόθεσμα, οι διαφημίσεις ο ταχύτερος βραχυπρόθεσμα.
+    A: Με συνδυασμό - SEO κατηγοριών και προϊόντων για σταθερή οργανική ροή, Google Shopping/Ads για άμεσες πωλήσεις και email marketing για επαναγορές. Το SEO είναι η φθηνότερη λύση μακροπρόθεσμα, οι διαφημίσεις η ταχύτερη βραχυπρόθεσμα.
 
 ### Law Firm SEO - How Attorneys Win Cases from Google
 - **URL:** https://anotherseoguru.com/en/blog/law-firm-seo
@@ -1458,7 +1590,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
   - Q: Χρειάζομαι νέο site;
     A: Αν δεν υποστηρίζει σελίδες περιοχών και γρήγορη αναζήτηση αγγελιών σε κινητό, ναι - αλλιώς το SEO χτίζει πάνω σε αδύναμη βάση.
   - Q: Αξίζει αγγλικό SEO για Golden Visa;
-    A: Ναι σε τουριστικές περιοχές και αγοραστές από εξωτερικό. Χρειάζονται ξεχωριστές σελίδες με σωστά hreflang, όχι αυτόματη μετάφραση.
+    A: Ναι, σε τουριστικές περιοχές και αγοραστές από εξωτερικό. Χρειάζονται ξεχωριστές σελίδες με σωστά hreflang, όχι αυτόματη μετάφραση.
 
 ### SEO για Δικηγόρους & Δικηγορικά Γραφεία - Οδηγός 2026
 - **URL:** https://anotherseoguru.com/el/blog/seo-gia-dikigorous
@@ -1466,7 +1598,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Description:** Πώς ένα δικηγορικό γραφείο κερδίζει υποθέσεις από τη Google. SEO για δικηγόρους στην Ελλάδα: τοπική στόχευση, περιεχόμενο, δεοντολογία και κόστος.
 - **Embedded FAQ:**
   - Q: Πόσο κοστίζει το SEO για δικηγορικό γραφείο;
-    A: Στην Αθήνα και Θεσσαλονίκη συνήθως Growth (€900/μήνα). Σε μικρότερες πόλεις το Foundations (€500/μήνα) συχνά αρκεί για τοπική κυριαρχία.
+    A: Στην Αθήνα και τη Θεσσαλονίκη συνήθως Growth (€900/μήνα). Σε μικρότερες πόλεις το Foundations (€500/μήνα) συχνά αρκεί για τοπική κυριαρχία.
   - Q: Σε πόσο καιρό θα δω υποθέσεις από τη Google;
     A: Σε μικρότερες πόλεις συχνά 2–3 μήνες. Στην Αθήνα, για ανταγωνιστικούς τομείς όπως διαζύγια, υπολογίστε 4–6 μήνες συστηματικής δουλειάς.
   - Q: Είναι συμβατό το SEO με τον Κώδικα Δεοντολογίας;
@@ -1616,7 +1748,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
   - Q: Πόσος χρόνος χρειάζεται για το Map Pack στις Κυκλάδες;
     A: Με σωστό GBP, citations και location pages, τα πρώτα αποτελέσματα εμφανίζονται σε 8–12 εβδομάδες. Σε πολύ ανταγωνιστικά νησιά η διαδικασία μπορεί να διαρκέσει 4–6 μήνες.
   - Q: Πρέπει το SEO να είναι πολύγλωσσο στις Κυκλάδες;
-    A: Ναι για τα περισσότερα τουριστικά brands. Ελληνικά και Αγγλικά είναι βάση· Γερμανικά/Γαλλικά όπου η ζήτηση το δικαιολογεί, πάντα με σωστό hreflang.
+    A: Ναι, για τα περισσότερα τουριστικά brands. Ελληνικά και Αγγλικά είναι βάση· Γερμανικά/Γαλλικά όπου η ζήτηση το δικαιολογεί, πάντα με σωστό hreflang.
   - Q: Πόσο κοστίζει το τοπικό SEO για ξενοδοχείο ή rent-a-car στις Κυκλάδες;
     A: Τυπικά €500–€900/μήνα για ένα νησί· €900–€1.500+/μήνα για ανταγωνιστικούς προορισμούς ή πολλά σημεία. Δείτε τα πακέτα τιμολόγησης.
 
@@ -1630,9 +1762,9 @@ The Greek cities below have service×city pages for website creation, local SEO,
   - Q: Γιατί να επενδύσω σε direct bookings;
     A: Κάθε κράτηση μέσω Booking/Expedia κοστίζει 15–25% προμήθεια. Άμεσες κρατήσεις από το δικό σας site μειώνουν το κόστος και σας δίνουν τον πελάτη.
   - Q: Χρειάζομαι booking engine;
-    A: Ναι αν θέλετε πραγματικές απευθείας κρατήσεις. Εναλλακτικά, φόρμα διαθεσιμότητας + WhatsApp μπορεί να αρκεί για μικρές μονάδες - το σχεδιάζουμε μαζί σας.
+    A: Ναι, αν θέλετε πραγματικές απευθείας κρατήσεις. Εναλλακτικά, φόρμα διαθεσιμότητας + WhatsApp μπορεί να αρκεί για μικρές μονάδες - το σχεδιάζουμε μαζί σας.
   - Q: Μπορεί η ιστοσελίδα μου να ανταγωνιστεί το Booking.com στο SEO;
-    A: Σε γενικούς όρους είναι δύσκολο, αλλά σε brand και long-tail (π.χ. luxury suites με ιδιωτική πισίνα) η δική σας ιστοσελίδα μπορεί να κατακτήσει την πρώτη θέση.
+    A: Στις γενικές αναζητήσεις είναι δύσκολο, αλλά σε brand και long-tail (π.χ. luxury suites με ιδιωτική πισίνα) η δική σας ιστοσελίδα μπορεί να κατακτήσει την πρώτη θέση.
   - Q: Πόσο διαρκεί η κατασκευή ιστοσελίδας ξενοδοχείου;
     A: Συνήθως 3–5 εβδομάδες μόλις είναι έτοιμες φωτογραφίες, περιγραφές δωματίων και πολιτικές. Το περιεχόμενο είναι ο συνηθέστερος λόγος καθυστέρησης.
 
@@ -1658,13 +1790,13 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Description:** Πώς τα έξυπνα AI Chatbots μεταμορφώνουν την εξυπηρέτηση πελατών στον τουρισμό. Αυτοματοποίηση κρατήσεων, απαντήσεις σε FAQ και GEO/AEO ορατότητα.
 - **Embedded FAQ:**
   - Q: Μπορεί το AI Chatbot να κάνει λάθη στις απαντήσεις του;
-    A: Με guardrails και RAG πάνω στη δική σας knowledge base, το bot απαντά μόνο από τιμές, πολιτικές και παροχές σας. Χωρίς αυτά, οι γενικοί LLMs επινοούν - γι’ αυτό δεν αρκεί «ένα ChatGPT widget».
+    A: Με guardrails και RAG πάνω στη δική σας knowledge base, το bot απαντά μόνο από τιμές, πολιτικές και παροχές σας. Χωρίς αυτά, τα γενικά LLM επινοούν - γι’ αυτό δεν αρκεί «ένα ChatGPT widget».
   - Q: Πώς συνδέεται το Chatbot με τις κρατήσεις;
     A: Καθοδηγεί τον χρήστη σε διαθέσιμα δωμάτια/οχήματα και δίνει deep link στη σελίδα ολοκλήρωσης κράτησης - δεν αντικαθιστά απαραίτητα το booking engine.
   - Q: Βοηθάει το chatbot το SEO και το AEO;
-    A: Ναι όταν οι συχνές ερωτήσεις του chat γίνονται FAQ στη σελίδα με schema. Έτσι κερδίζετε snippets/Overviews και τροφοδοτείτε GEO citations από τις ίδιες κανονικές απαντήσεις.
+    A: Ναι, όταν οι συχνές ερωτήσεις του chat γίνονται FAQ στη σελίδα με schema. Έτσι κερδίζετε snippets/Overviews και τροφοδοτείτε GEO citations από τις ίδιες κανονικές απαντήσεις.
   - Q: Επιβαρύνει την ταχύτητα της ιστοσελίδας;
-    A: Μόνο αν φορτώνει blocking. Το widget πρέπει να φορτώνει ασύγχρονα μετά το LCP. Κακό chatbot που σκοτώνει Core Web Vitals βλάπτει SEO και μετατροπές.
+    A: Μόνο αν φορτώνει blocking. Το widget πρέπει να φορτώνει ασύγχρονα μετά το LCP. Ένα κακό chatbot που σκοτώνει Core Web Vitals βλάπτει SEO και μετατροπές.
   - Q: Χρειάζομαι chatbot ή πρώτα Ορατότητα σε AI;
     A: Συχνά και τα δύο - το chatbot εξυπηρετεί επισκέπτες· η υπηρεσία GEO/AEO κάνει τις σελίδες σας citable σε ChatGPT/Perplexity. Ξεκινήστε από καθαρή knowledge base κοινής χρήσης.
 
@@ -2600,6 +2732,404 @@ The crawl stopped at your page limit, was stopped by you, or some pages couldn't
 See [Date ranges, comparisons and why numbers differ](https://anotherseoguru.com/en/help/search-performance/date-ranges).
 
 > **Tip:** Still stuck? Write to support@anotherseoguru.com with the page you were on and what you expected to see.
+
+### Install the WordPress plugin
+
+> Install AnotherSEOGuru 4.4.1 on WordPress, connect the site with OAuth, and publish title and description changes back with approval and undo.
+
+Source: https://anotherseoguru.com/en/help/integrations/wordpress-plugin
+
+AnotherSEOGuru for WordPress is a full SEO plugin from Touristas Technologies. Version **4.4.1** handles titles, meta descriptions, schema, XML sitemaps, redirects, breadcrumbs, `llms.txt`, IndexNow and on-page checks in English and Greek. Connecting a free AnotherSEOGuru App account at [app.anotherseoguru.com](https://app.anotherseoguru.com) adds Search Console in the editor, keyword research and AI titles. There is no API key to paste.
+
+![AnotherSEOGuru dashboard in WordPress admin, score 35 of 100, two alerts, task list and site features](https://anotherseoguru.com/images/help/wp-dashboard.webp)
+*Dashboard on a local WordPress site with plugin 4.4.1. The account is not connected, so Search Console stays empty. No tokens are shown.*
+
+## What the plugin does
+
+On its own, with no account, the plugin owns SEO for the site. The admin menu is **AnotherSEOGuru**, with Dashboard, Settings, Integrations, Tools, Redirects, Local SEO, Workouts, Help and Approvals.
+
+- **Editor.** Snippet preview, up to five focus keywords (100 characters each), readability in English and Greek, SEO and readability columns on the posts list, and quick edit for the title and description.
+- **Titles and meta.** Templates per post type, taxonomy, homepage, archives, search and the 404 page. Variables include `%%title%%`, `%%sitename%%`, `%%sep%%`, `%%sitedesc%%`, `%%excerpt%%`, `%%category%%` and `%%page%%`. The `%title%` style works too.
+- **Front end, when no other SEO plugin is active.** Schema graph, Open Graph and X cards, XML sitemaps, breadcrumbs, `llms.txt`, IndexNow and extra `robots.txt` lines.
+- **With an account.** Search Console numbers in the editor, keyword research (5 credits) and three AI title or description options (1 credit). Google Analytics 4 is viewed in AnotherSEOGuru App, not inside the WordPress editor.
+
+> **Note:** If Yoast SEO, Rank Math, All in One SEO, SEOPress or The SEO Framework is active, AnotherSEOGuru switches to companion mode. It prints nothing on the public site and writes titles into that plugin’s fields. Redirects and the 404 monitor start off.
+
+## Requirements
+
+| Requirement | Detail |
+| --- | --- |
+| WordPress | 6.2 or later. The plugin readme lists tested up to 6.9. |
+| PHP | 7.4 or later. |
+| Account link | The site must be served over **https**. WordPress only creates Application Passwords on https. |
+| Who can connect | An administrator. Editors with `edit_others_posts` can open Approvals; only administrators change the approval switch. |
+| Package | [anotherseoguru.zip](https://app.anotherseoguru.com/downloads/anotherseoguru.zip), version 4.4.1. |
+
+## Install
+
+1. **Download the zip** Get [anotherseoguru.zip](https://app.anotherseoguru.com/downloads/anotherseoguru.zip) from AnotherSEOGuru App. Do not rename the folder inside the zip.
+2. **Upload it** In WordPress go to **Plugins → Add New Plugin → Upload Plugin**, choose the zip and click **Install Now**.
+3. **Activate** Click **Activate**. The first activation opens the setup wizard (the Dashboard route `/setup`).
+4. **Open the menu** Use **AnotherSEOGuru** in the left admin menu. A search box labelled **Search settings** jumps to any screen.
+
+## Connect the site to AnotherSEOGuru App
+
+Connection is OAuth 2.1 with PKCE, scope `read tasks:write wordpress`. The consent screen names the client **AnotherSEOGuru for WordPress** plus your host. Older builds that asked you to paste an API key are not how 4.4.1 works.
+
+![AnotherSEOGuru account screen in WordPress, status Not connected, with a Sign up free button](https://anotherseoguru.com/images/help/wp-account.webp)
+*Integrations → AnotherSEOGuru account before a connection. The button is Sign up free. This capture uses a local site and no real account.*
+
+1. **Open the account screen** Go to **AnotherSEOGuru → Integrations → AnotherSEOGuru account**. A disconnected site shows **Not connected**.
+2. **Start the connection** Click **Sign up free**. WordPress sends you to app.anotherseoguru.com. AnotherSEOGuru App’s consent screen offers **Allow** or **Cancel**. Use the account you already have, or create one there.
+3. **Let the plugin finish the link** After you allow access, the plugin creates a WordPress Application Password named **AnotherSEOGuru** and sends the site URL, username, that password and the plugin version to `POST /api/v1/wordpress/link`. You never copy the password yourself.
+4. **Confirm the status** The screen then shows **Connected**, **Open your dashboard** and **Disconnect**. Disconnect deletes that Application Password and tells AnotherSEOGuru App to stop applying changes here.
+
+> **Warning:** If the site is not on https, or a security plugin has turned Application Passwords off, the OAuth login can succeed and the link still fails. WordPress shows why: no Application Passwords in this WordPress version, https required, or Application Passwords turned off.
+
+## Every settings screen
+
+Settings live in the React admin, not in an old tabbed PHP page. Names below are the labels in version 4.4.1. Defaults are what a new install stores.
+
+### Site features
+
+![Site features in the WordPress plugin with XML sitemaps, schema, redirects, llms.txt, IndexNow and breadcrumbs switched on](https://anotherseoguru.com/images/help/wp-features.webp)
+*Settings → Site features on a fresh install. Each switch is on.*
+
+| Switch | Default | What it does |
+| --- | --- | --- |
+| **XML sitemaps** | On | Publishes `/sitemap_index.xml` when the plugin is in standalone mode. |
+| **Schema** | On | Prints the JSON-LD graph. |
+| **Redirects** | On (off in companion mode) | Serves redirects from the plugin. |
+| **llms.txt** | On | Publishes `/llms.txt`. |
+| **Instant indexing** | On | IndexNow. A published or updated public URL can be submitted from the editor. |
+| **Breadcrumbs** | On as a module; the trail itself starts off | Allows the breadcrumb functions. The trail is still off until you enable it under Breadcrumbs. |
+
+### Site basics, representation and connections
+
+![Site basics in the WordPress plugin with website name, title separator and homepage title template](https://anotherseoguru.com/images/help/wp-basics.webp)
+*Settings → Site basics. The homepage template uses the variables sitename, page, sep and sitedesc.*
+
+- **Website name** and **Alternate website name**.
+- **Title separator**, used wherever a template contains `%%sep%%`.
+- **This site represents** Organization or Person, plus the organization name or your name, and a square logo of at least 112 pixels.
+- **Site connections.** Profiles for Facebook, X, Mastodon and other profiles. Webmaster verification codes for Google, Bing, Yandex, Pinterest, Baidu and Ahrefs.
+- **Homepage** title template. A new site uses `%%sitename%% %%page%% %%sep%% %%sitedesc%%`.
+- **Let search engines index this site** follows WordPress’s own “Search engine visibility” setting.
+- **Restrict advanced settings for authors** hides advanced fields from authors.
+
+### Content types, taxonomies and archives
+
+Each public post type and taxonomy has its own screen. A new post type uses title `%%title%% %%page%% %%sep%% %%sitename%%` and description `%%excerpt%%`. Posts default to schema type BlogPosting and article type Article. Format archives start as noindex and out of the sitemap. Author, date and format archives, special pages, media pages and RSS each have a screen.
+
+| Screen | What you set |
+| --- | --- |
+| **Media pages** | Enable media pages, show them in search results, show SEO controls, page type and article type. Media pages start disabled and noindex. |
+| **RSS** | Text before and after each item. Variables include `%%AUTHORLINK%%`, `%%POSTLINK%%`, `%%BLOGLINK%%` and `%%BLOGDESCLINK%%`. |
+| **Special pages** | Title templates for search results and the 404 page. |
+
+### XML sitemaps
+
+![XML sitemap settings with sitemaps and images on, news sitemap off, and 1000 entries per sitemap](https://anotherseoguru.com/images/help/wp-sitemaps.webp)
+*Settings → XML sitemaps. Entries per sitemap defaults to 1000.*
+
+| Setting | Default |
+| --- | --- |
+| **Generate XML sitemaps** | On |
+| **Include images** | On |
+| **News sitemap** | Off |
+| **Entries per sitemap** | 1000 |
+| **Exclude posts by ID** | Empty |
+
+### Schema framework
+
+**Output schema** turns the graph on (default on). The graph can include WebSite, Organization or Person, WebPage, BreadcrumbList and Article. Per-post types include Article, Product, Event, Recipe, Service, LocalBusiness and TouristTrip. A schema template can add one type to every item of a post type. FAQ and How-to blocks in the editor become FAQPage and HowTo structured data.
+
+![Schema framework settings in the WordPress plugin](https://anotherseoguru.com/images/help/wp-schema.webp)
+*Settings → Schema framework.*
+
+### Crawl optimization and llms.txt
+
+**Crawl optimization** can strip feeds, shortlinks, the generator tag, emoji scripts and other WordPress head noise. Search cleanup includes **Maximum characters in a search** (default 50) and **Allowed parameters**. **Extra lines** are appended to `robots.txt`.
+
+AI crawlers you can block, one switch each: GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-SearchBot, PerplexityBot, Google-Extended, Applebot-Extended, CCBot, Bytespider, meta-externalagent, Amazonbot and AdsBot-Google.
+
+![llms.txt settings in the WordPress plugin](https://anotherseoguru.com/images/help/wp-llms.webp)
+*Settings → llms.txt. Publish llms.txt is on. Items per type defaults to 50.*
+
+| llms.txt setting | Default |
+| --- | --- |
+| **Publish llms.txt** | On. The file is `/llms.txt`, and only while the plugin is in standalone mode. |
+| **Items per type** | 50 |
+| **File contents** | Auto (site name, description and main pages) or your own Markdown. |
+
+### Breadcrumbs
+
+The trail starts **off** even when the Site features module is on. Turn on **Enable breadcrumbs**. Other fields: separator (default `»`), anchor text for the homepage, prefix for the trail, prefix for archives, prefix for search pages, 404 page label, bold the last page, show on the homepage, show the blog page, and theme support. You can also use the shortcode `[asg_breadcrumbs]` or `do_action('asg_breadcrumbs')`.
+
+### Redirects
+
+![Empty redirects table in the WordPress plugin with type, code and target fields](https://anotherseoguru.com/images/help/wp-redirects.webp)
+*AnotherSEOGuru → Redirects on a new site. Loop detection is on.*
+
+- Codes: **301, 302, 307, 410, 451**. Match type: plain or regex (regex pattern up to 255 characters).
+- Defaults: redirects enabled, 404 monitor on, log kept **30 days**, automatic slug redirect on, method PHP. In companion mode, redirects and the 404 monitor start off.
+- The **404 log** lists hits. **Redirect settings** holds the switches above.
+
+### Local SEO, integrations and tools
+
+**Local SEO** (off until you enable the module) has Business details, Opening hours, Locations, Maps and Display. Business fields include address, phone, VAT, tax ID, currencies, payment methods and opening hours.
+
+![WordPress integrations screen with several services marked Not available yet](https://anotherseoguru.com/images/help/wp-integrations.webp)
+*Integrations. Several third-party switches are labelled Not available yet in 4.4.1. Do not treat those as working connections.*
+
+- **Tools → Import and export.** Bring in Yoast, Rank Math, All in One SEO, SEOPress, and redirects from the Redirection plugin. Run a dry run first. Old data in the other plugin is not deleted.
+- **Tools → File editor** and **Bulk editor**.
+- **Tools → SEO data optimization** stores the scores used by the posts list.
+- **Workouts** include a cornerstone workout and an orphaned-content workout.
+- Ahrefs on this screen is a verification code you can save. Semrush, SEOTesting, rank tracking inside WordPress, Elementor, WooCommerce, TranslatePress, custom fields, Jetpack and Site Kit are marked **Not available yet**.
+
+![Import and export screen with Yoast, Rank Math, AIOSEO, SEOPress and Redirection listed as not detected](https://anotherseoguru.com/images/help/wp-import.webp)
+*Tools → Import and export on a site that has none of those plugins. The settings backup download and restore are on the same screen.*
+
+## Two-way sync with AnotherSEOGuru App
+
+Once the site is linked, AnotherSEOGuru App reads published content from WordPress and writes titles and descriptions back through the same plugin. The plugin is the place that applies, holds or undoes a change. This guide does not name buttons inside AnotherSEOGuru App, because those labels are not in the plugin package.
+
+1. **AnotherSEOGuru App reads published items** WordPress exposes `GET /wp-json/asg/v1/seo-index`. The default post type is page. Only **published** items are included, newest modified first, up to **100** per page. Each item returns the post id, URL, post type, and the raw SEO title and description. Callers who cannot edit that post are skipped.
+2. **A write goes through the change log** `POST /wp-json/asg/v1/seo` and `POST /wp-json/asg/v1/seo-bulk` set the title, the description, or both. Every write stores the previous value. If **Require approval** is on, the write stays pending instead of going live.
+3. **A conditional write checks the page has not moved** `POST /wp-json/asg/v1/seo-change` is stricter. The post must be published, the field must be title or description, and the expected snapshot version must still match. If someone edited the page after the preview, WordPress refuses the write so an old suggestion cannot overwrite a newer one.
+4. **Applied changes are sent back** Applied rows are posted to AnotherSEOGuru App at `POST /api/v1/wordpress/changes`, up to 20 per request, with the site URL. The log itself stays in WordPress (option `asg_change_log`, newest 200 rows).
+
+> **Tip:** Task sync runs at most every 300 seconds. Opening a plugin screen or the post editor also syncs when the account is connected. Search Console numbers shown in the editor are cached for one minute.
+
+## Approvals, history and undo
+
+![WordPress Approvals screen with require-approval unchecked, SEO tools on, and empty waiting and change-log tables](https://anotherseoguru.com/images/help/wp-approvals.webp)
+*AnotherSEOGuru → Approvals on a local site. The domain line shows the authorized host and this site. Nothing is waiting, so both tables say Nothing here yet.*
+
+Open **AnotherSEOGuru → Approvals**. Editors can review. Administrators also see the switches.
+
+| Control | What it does |
+| --- | --- |
+| **Authorized domain** | Writes are refused when the current host is not the authorized one (a copied or staging site). An administrator uses **Re-authorize this domain** to allow this host. |
+| **Require approval before the app, MCP or chat can change SEO** | Off by default. On, those writes wait in **Waiting for approval**. |
+| **SEO tools** | Each tool can be On or off: List content, Read SEO, Update SEO, Read schema, Update schema, List redirects, Create redirect, Update redirect, Delete redirect, Suggest internal links, Insert internal link. |
+
+Both tables use the columns **When, Who, Change, Before, After, Status**. Who is the actor (`app`, `mcp`, `user` or `chat`) plus the login when there is one. Buttons:
+
+- **Approve** or **Reject** on a pending row.
+- **Undo** on an applied row that has not already been undone. Undo writes the previous value back.
+- **Publish draft** when a row is a draft preview.
+
+**SEO chat** on the same screen asks AnotherSEOGuru App for a title or description. The prompt says: “Ask the AnotherSEOGuru app for a title or description. Suggestions wait in the list above until you approve them.” Page ID is optional. The message can be up to 2000 characters. Suggestions are stored as approvals. They are not published by the chat form itself.
+
+> **Note:** The plugin does not edit a page-builder layout. Title, description, schema and the other SEO tools above are the writes it will apply.
+
+## On a page or post
+
+The block editor and the classic editor both get an AnotherSEOGuru panel.
+
+- **Focus keywords.** Up to five, each up to 100 characters, stored as `_asg_focus_keywords`. Checks cover the title, description, URL, introduction, subheadings, image alt text, density, length and links.
+- **Snippet length.** The preview measures pixels. Desktop titles are flagged around 580 pixels (a short title under about 300). Mobile titles use about 540. Descriptions use about 920 desktop and 680 mobile.
+- **Keyword research** calls AnotherSEOGuru App and costs **5 credits**. **AI meta** returns three options and costs **1 credit**. If the account is out of credits the editor says to add credits in AnotherSEOGuru.
+- **Connected changes** in the editor is the same task and approval history. Refresh to see the latest status.
+- The posts list can show SEO and readability scores, and quick edit can set the title, description and noindex.
+
+## Troubleshooting
+
+| What you see | What to do |
+| --- | --- |
+| Account stays **Not connected** | Finish **Sign up free** and choose Allow on AnotherSEOGuru App. If you closed the window, start again from Integrations → AnotherSEOGuru account. |
+| Connected, but the link failed | The site must be https, and Application Passwords must be available for your user. A security plugin can turn them off. |
+| Writes do nothing on a staging copy | Approvals shows a domain mismatch. Use **Re-authorize this domain** only on the copy you mean to edit. |
+| A title from AnotherSEOGuru App never appears | Open **Waiting for approval**. If approval is required, click **Approve**. If the page changed after the preview, the conditional write is refused and AnotherSEOGuru App has to send a fresh one. |
+| **Undo** is missing | Undo is only on a row whose status is applied and that has not already been undone. |
+| No sitemap or schema on the public site | Another SEO plugin is active, so this one is in companion mode and prints nothing on the front end. Or the matching switch under Site features is off. |
+| Import found nothing | Yoast, Rank Math, All in One SEO, SEOPress or Redirection has to be installed. The import screen says **Not detected** when it is not. |
+
+## FAQ
+
+**Do I paste an API key into the plugin?**
+
+No. Version 4.4.1 connects with OAuth. The plugin creates an Application Password named AnotherSEOGuru and sends it to AnotherSEOGuru App. You do not copy a key.
+
+**Does the plugin work without an account?**
+
+Yes. Titles, schema, sitemaps, redirects, breadcrumbs, llms.txt and the on-page checks work with no account. Search Console, keyword research and AI titles need the connection.
+
+**Will it replace Yoast or Rank Math?**
+
+Only if you want it to. While another SEO plugin is active, AnotherSEOGuru stays in companion mode, writes into that plugin’s fields, and does not print its own tags. Import copies data across and leaves the old data in place.
+
+**Where do I approve a change before it goes live?**
+
+AnotherSEOGuru → Approvals. Turn on Require approval before the app, MCP or chat can change SEO. Pending rows have Approve and Reject. Applied rows have Undo.
+
+**How far back does the change log go?**
+
+The plugin keeps the newest 200 rows in WordPress. Undo is available on an applied row until you undo it or the row ages out of that list.
+
+**Which content is imported into AnotherSEOGuru App?**
+
+The index endpoint returns published posts and pages (and any other public post type you request), with the current SEO title and description. Drafts are not in that index.
+
+### Install the Chrome extension
+
+> Install AnotherSEOGuru 3.2.2 for Chrome, audit any page in the browser, and sign in to see Search Console data for that page.
+
+Source: https://anotherseoguru.com/en/help/integrations/chrome-extension
+
+AnotherSEOGuru for Chrome is a Manifest V3 extension, version **3.2.2**. It audits the page you are on, entirely in the browser, and shows a score, a Google snippet preview and the fixes. Sign in and the same popup adds that page’s Search Console numbers from your account. The package has no Chrome Web Store URL. You install it from the zip.
+
+![AnotherSEOGuru Chrome extension popup on the Overview tab, score 96, signed out](https://anotherseoguru.com/images/help/ext-overview.webp)
+*Overview on https://anotherseoguru.com/en, signed out. The audit ran in the browser. Score 96 is this capture of that page, not a target.*
+
+## What the extension does
+
+- **Popup and side panel.** The toolbar icon opens the popup. **Open in side panel** keeps the same audit beside the page. Shortcut **Alt+Shift+S** (also on Mac).
+- **Five tabs:** Overview, Audit, Content, Technical and My data.
+- **On-page checks with no account.** Title length, meta description, headings, content, canonical, indexability, structured data, Open Graph and Core Web Vitals measured in the page.
+- **Signed in.** Clicks, impressions, CTR and average position for this URL, quick wins, open tasks, and keyword research. Those calls go to AnotherSEOGuru App at app.anotherseoguru.com. Everything else stays on your computer.
+- **Google results.** On Google search only, position badges and your sites. Optional SEO bar on other sites, off until you turn it on.
+
+> **Note:** The on-page audit is free without an account and runs locally in your browser. That line is in the extension itself, under the sign-in button.
+
+## Requirements
+
+| Requirement | Detail |
+| --- | --- |
+| Browser | Chrome **116** or later (Manifest V3, `minimum_chrome_version`). |
+| Permissions always on | `activeTab`, `scripting`, `storage`, `identity`, `contextMenus`, `sidePanel`. |
+| Sites it may read without asking again | Google search on google.com, google.gr and google.co.uk, for the results overlay. |
+| Optional permission | `<all_urls>`, asked only when you turn the SEO bar on. |
+| Package | [anotherseoguru-extension.zip](https://app.anotherseoguru.com/downloads/anotherseoguru-extension.zip), version 3.2.2. |
+
+## Install from the zip
+
+1. **Download and unzip** Get [anotherseoguru-extension.zip](https://app.anotherseoguru.com/downloads/anotherseoguru-extension.zip) and unzip it. Keep the folder that contains `manifest.json`.
+2. **Open Chrome’s extensions page** Go to `chrome://extensions`.
+3. **Turn on Developer mode** Use the **Developer mode** switch on that page.
+4. **Load the folder** Click **Load unpacked** and choose the unzipped folder. The name in Chrome is **AnotherSEOGuru – SEO checker & Search Console**.
+5. **Pin it** Pin AnotherSEOGuru from the puzzle-piece menu so the toolbar icon stays visible. Click it, or press **Alt+Shift+S**.
+
+## Sign in to AnotherSEOGuru App
+
+Sign-in is OAuth. The client name is **AnotherSEOGuru for Chrome**. The scope is `read tasks:write`. The extension registers itself, sends you to `https://app.anotherseoguru.com/connect`, and stores the tokens in the browser. There is no API key field.
+
+![My data tab of the Chrome extension signed out, with an example clicks chart marked Example](https://anotherseoguru.com/images/help/ext-my-data.webp)
+*My data while signed out. The sparkline is labelled Example · clicks, 28 days. It is a sample, not live Search Console data.*
+
+1. **Open My data** Click the toolbar icon, then the **My data** tab.
+2. **Sign in** Click **Sign in with AnotherSEOGuru**. A second button, **Sign up free**, opens `https://app.anotherseoguru.com/auth?mode=signup` if you do not have an account yet.
+3. **Allow the connection** Approve **AnotherSEOGuru for Chrome** on AnotherSEOGuru App. When it returns, the tab shows **Signed in as** your name or email, your plan, credits and site count, plus **Open app** and **Sign out**.
+4. **Use it on your own site** Search Console numbers load only when the page’s host is a site on your account. On any other host the tab says the page is not one of your sites and links to **Add a site** (`/app/sites`).
+
+## How it works on a page
+
+Open a normal website, then the popup. Chrome’s own pages, the Web Store and local files cannot be analyzed. The popup says **Open a web page** in that case. If the side panel has no access yet it says **Allow this tab**.
+
+### Overview
+
+Overview shows one score and the main issues. Bands are **good** at 80 or above, **ok** from 50 to 79, and **poor** below 50. The capture above is a 96 on the public English homepage, signed out.
+
+### Audit
+
+![Audit tab of the Chrome extension listing on-page checks for anotherseoguru.com](https://anotherseoguru.com/images/help/ext-audit.webp)
+*Audit tab for the same page. Checks run locally. Length rules are 30 to 60 characters for the title and 70 to 160 for the meta description.*
+
+Groups are On-page, Content, Technical, and Schema & social. A title under 30 or over 60 characters is flagged, and a meta description under 70 or over 160. Fewer than 300 words is marked thin. The same rules drive the score.
+
+### Content
+
+![Content tab of the Chrome extension with the Google snippet preview](https://anotherseoguru.com/images/help/ext-content.webp)
+*Content tab: the snippet preview and the content checks for the open page.*
+
+### Technical
+
+![Technical tab of the Chrome extension showing Core Web Vitals measured in the browser](https://anotherseoguru.com/images/help/ext-tech.webp)
+*Technical tab. LCP, CLS, FCP, TTFB and INP are read from the page when the browser has them.*
+
+Pass lines, in milliseconds except CLS: LCP good under 2500 and poor over 4000, CLS good under 0.1 and poor over 0.25, FCP good under 1800 and poor over 3000, TTFB good under 800 and poor over 1800, INP good under 200 and poor over 500. A missing metric is skipped.
+
+### My data, once you are signed in
+
+On a site that belongs to the account, My data loads page insights from AnotherSEOGuru App:
+
+- **Search performance.** Clicks, impressions, CTR and average position, labelled **Last 28 days vs previous**, plus a daily-clicks chart when AnotherSEOGuru App returns daily rows.
+- **Top queries.** Up to eight queries, with clicks, impressions and position.
+- **Quick wins.** Queries in positions **8 to 20** with at least **10** impressions, at most five. The extra-clicks figure is an estimate of a move to position 3. The note under the list says so.
+- **Open tasks** for the page, and **Send issues** to the task board. **Open in app** goes to AnotherSEOGuru App.
+- **Keyword research.** The pill says **5 credits**. Results show volume, difficulty, CPC, ideas and questions. If the response reports no credits used, the extension says **Repeat search: no credits used.**
+
+If Search Console is not connected for that site, the tab says so and links you to connect it. Insights are cached in the browser for 10 minutes. Score history is local only: up to 40 points per page and 300 pages (`asg_history`).
+
+### Report, bulk check and the SEO bar
+
+- **Full report** opens a printable report of the same audit. The footer reads “Made with AnotherSEOGuru”.
+- **Bulk check URLs** checks up to **50** pages at once.
+- The **SEO bar** is a strip at the top of a page (score, title, description, H1, word count). It is **off** until you enable it, and enabling it asks Chrome for access to all sites.
+
+## Every setting
+
+Open the gear icon. The sheet title is **Settings**. Defaults are listed as they are stored.
+
+![Settings sheet of the Chrome extension with theme, language, Google overlay, toolbar badge and SEO bar](https://anotherseoguru.com/images/help/ext-settings.webp)
+*The real settings sheet, expanded so every control is in the frame. Values are the defaults: System, Auto, overlay on, Full, Clicks, SEO bar off.*
+
+| Setting | Choices | Default |
+| --- | --- | --- |
+| **Theme** | System, Light, Dark | System |
+| **Language** | Auto, English, Greek | Auto (follows the browser) |
+| **Show on Google results** | On or off. Subtitle: position numbers, your sites and your Search Console numbers. | On |
+| **Overlay style** | Full, Compact, Minimal. Compact starts the toolbar folded. Minimal shows the numbers only. | Full |
+| **Toolbar badge** | Clicks, Open tasks, or Off. Shown on pages of your own sites. | Clicks |
+| **SEO bar on every page** | On or off. Asks for access to all sites. | Off |
+| **Clear local data** | Removes score history, remembered Google results and sent-task marks. You stay signed in and settings stay. | Button |
+
+The sheet also shows the shortcut and a **Privacy** link. That link opens `https://anotherseoguru.com/en/privacy`. **Clear local data** deletes `asg_history`, `asg_sent_tasks`, `asg_serps`, `asg_section` and `asg_serp_badges`. It does not delete the sign-in or `asg_settings`.
+
+## On a Google results page
+
+The results helper is a content script on `google.com/search`, `google.gr/search` and `google.co.uk/search` only. With **Show on Google results** on, it adds position badges, a small export toolbar and, when you are signed in, a highlight on your own sites. Turning the overlay off removes it immediately. Compact and Minimal change how much of that toolbar you see. A CSV export is part of the same toolbar.
+
+## Troubleshooting
+
+| What you see | What to do |
+| --- | --- |
+| **Open a web page** | You are on a Chrome page, the Web Store, or a local file. Switch to an https site and click the icon again. |
+| **Allow this tab** | The side panel does not have access yet. Click **Allow this tab**, or click the toolbar icon on that tab (that uses the activeTab permission). |
+| **Couldn't read this page** | Reload the page and open the popup again. |
+| My data still shows the example chart | You are signed out. The chart is labelled **Example · clicks, 28 days**. Use **Sign in with AnotherSEOGuru**. |
+| Signed in, but no Search Console numbers | The host is not a site on the account, or Search Console is not connected for it. Use **Add a site** or the connect link in the tab. Numbers are for your sites only. |
+| SEO bar never appears | It ships off. Turn on **SEO bar on every page** and accept the all-sites permission Chrome asks for. |
+| Google results have no badges | **Show on Google results** is off, or you are not on google.com, google.gr or google.co.uk search. |
+| Sign-in expired | The extension clears the session on an unauthorized response and asks you to sign in again. |
+
+## FAQ
+
+**Is the extension in the Chrome Web Store?**
+
+The 3.2.2 package does not include a store URL. Install it with Load unpacked from anotherseoguru-extension.zip.
+
+**Does the audit send my page to AnotherSEOGuru App?**
+
+No. Title, content, schema and vitals checks run in the browser. Only a signed-in session calls AnotherSEOGuru App, and only for account data: page insights, tasks, keyword research, AI meta and results insights.
+
+**What does signing in allow?**
+
+The OAuth scope is read and tasks:write, under the client name AnotherSEOGuru for Chrome. You can read your sites and send tasks. The extension does not receive an API key to paste.
+
+**Why is the chart on My data not my traffic?**
+
+Signed out, that chart is a sample. The label is Example · clicks, 28 days, and it is hidden from assistive tech. Sign in and open one of your own URLs to see live numbers.
+
+**Where is score history kept?**
+
+In this browser only, up to 40 scores per page and 300 pages. Clear local data removes it. Sign-in and settings stay.
+
+**Can I use it in Greek?**
+
+Yes. Settings → Language → Greek, or Auto when the browser is Greek. The extension ships English and Greek strings.
 
 ### Get the iPhone beta
 

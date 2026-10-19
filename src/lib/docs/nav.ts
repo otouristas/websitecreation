@@ -149,6 +149,7 @@ export function sidebarFor(tab: DocsTab, locale: SiteLocale): SideGroup[] {
           items: [
             { title: "Search optimization layers", href: lp("/resources/search-optimization-layers"), icon: "layers" },
             { title: "AI search page anatomy", href: lp("/resources/ai-search-page-anatomy"), icon: "file" },
+            ...clusterArticles("ai-visibility").map((a) => ({ title: a.title.split(":")[0], href: resourcePath(a.slug), icon: "bot" })),
           ],
         },
         {

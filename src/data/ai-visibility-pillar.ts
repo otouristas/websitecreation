@@ -55,9 +55,9 @@ const el: AiVisibilityPillarCopy = {
   answer:
     'Το AI SEO (ή GEO, generative engine optimization) κάνει την ιστοσελίδα σας πηγή που μπορούν να παραθέσουν το ChatGPT, το Gemini και τα AI Overviews της Google. Συνδυάζει κλασικό SEO με σαφή στοιχεία οντότητας, structured data και περιεχόμενο που απαντά άμεσα. Στην AnotherSEOGuru εντάσσεται στα πακέτα SEO Growth και Authority, από {{SEO_GROWTH}} τον μήνα, και μετριέται σε τάσεις αναφορών δίπλα στα οργανικά κλικ. Καμία μηχανή δεν εγγυάται ότι θα σας αναφέρει.',
   // The /el route ships the keyword-map title verbatim from services-i18n `seo`.
-  metaTitle: 'AI SEO & GEO: Ορατότητα στο ChatGPT και AI Overviews',
+  metaTitle: 'Υπηρεσίες AI SEO & GEO: Ορατότητα σε ChatGPT & AI Overviews',
   metaDescription:
-    'Υπηρεσίες AI SEO (GEO/AEO): δουλεύουμε ώστε η επιχείρησή σας να μπορεί να αναφέρεται στις απαντήσεις του ChatGPT, του Gemini και των AI Overviews.',
+    'Υπηρεσίες AI SEO και GEO (generative engine optimization) για ορατότητα στο ChatGPT, στο Gemini και στα AI Overviews, με μηνιαία μέτρηση αναφορών.',
   primaryKeyword: 'ai seo',
   problem: {
     title: 'Πώς επιλέγουν πηγές τα AI εργαλεία',

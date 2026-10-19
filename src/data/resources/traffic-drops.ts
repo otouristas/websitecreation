@@ -131,7 +131,7 @@ export const TRAFFIC_DROP_ARTICLES: ReadonlyArray<ResourceArticle> = [
     description:
       "Spot content decay in Search Console, tell a ranking slide from falling demand, and decide per page whether to refresh, merge, redirect or leave it, with a refresh checklist.",
     primaryKeyword: "content decay",
-    secondaryKeywords: ["content refresh", "content decay seo", "content pruning", "content audit"],
+    secondaryKeywords: ["content refresh", "content decay seo", "content pruning"],
     cta: "soft",
     published: PUBLISHED,
     updated: PUBLISHED,

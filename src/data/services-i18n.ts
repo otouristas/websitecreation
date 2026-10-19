@@ -207,9 +207,9 @@ export const serviceNamesEl: Record<
     shortName: 'AI SEO',
     nameAccusative: 'AI SEO (GEO / AEO)',
     seo: {
-      title: 'AI SEO & GEO: Ορατότητα στο ChatGPT και AI Overviews',
+      title: 'Υπηρεσίες AI SEO & GEO: Ορατότητα σε ChatGPT & AI Overviews',
       description:
-        'Υπηρεσίες AI SEO (GEO/AEO): δουλεύουμε ώστε η επιχείρησή σας να μπορεί να αναφέρεται στις απαντήσεις του ChatGPT, του Gemini και των AI Overviews.',
+        'Υπηρεσίες AI SEO και GEO (generative engine optimization) για ορατότητα στο ChatGPT, στο Gemini και στα AI Overviews, με μηνιαία μέτρηση αναφορών.',
     },
     description:
       'GEO και AEO για επιχειρήσεις: σαφή στοιχεία, σελίδες σε μορφή απάντησης και μέτρηση, ώστε οι μηχανές απάντησης να μπορούν να χρησιμοποιήσουν το περιεχόμενό σας. Χωρίς υποσχέσεις αναφοράς.',
