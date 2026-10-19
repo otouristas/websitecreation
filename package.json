@@ -14,6 +14,7 @@
     "audit:locations": "npx tsx scripts/audit-locations.ts",
     "check:city-routes": "npx tsx scripts/check-city-routes.mts",
     "check:place-seo": "npx tsx scripts/check-place-seo.mts",
+    "check:tourism-seo": "npx tsx scripts/check-tourism-seo.mts",
     "screenshots:portfolio": "node scripts/portfolio-audit.mjs --screenshot-only",
     "screenshots:portfolio:force": "node scripts/portfolio-audit.mjs --screenshot-only --force",
     "generate:llms": "npx tsx scripts/generate-llms.mjs",

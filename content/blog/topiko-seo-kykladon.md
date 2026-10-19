@@ -23,7 +23,7 @@ faq:
 
 Το **τοπικό SEO στις Κυκλάδες** είναι ιδιαίτερη πρόκληση για κάθε τουριστική επιχείρηση. Μικρός μόνιμος πληθυσμός, τεράστιος όγκος αναζητήσεων στη σεζόν: «ξενοδοχείο Πάρος», «rent a car Mykonos airport», «luxury villa Santorini caldera». Αν δεν εμφανίζεστε στο map pack και στις πρώτες οργανικές θέσεις, οι κρατήσεις καταλήγουν σε OTAs και aggregators με υψηλές προμήθειες.
 
-Δείτε [λύσεις για ξενοδοχεία](/el/solutions/hotels), [SEO για rent-a-car](/el/solutions/rent-a-car), [έργα στις Κυκλάδες](/el/work) και [AI Visibility](/el/services/ai-visibility).
+Δείτε τις [υπηρεσίες SEO για ξενοδοχεία](/el/seo-tourismou/xenodoxeia), το [SEO για rent a car](/el/seo-tourismou/rent-a-car), τις [λύσεις για ξενοδοχεία](/el/solutions/hotels), [έργα στις Κυκλάδες](/el/work) και [AI Visibility](/el/services/ai-visibility).
 
 ## Γιατί οι Κυκλάδες Απαιτούν Ξεχωριστή Στρατηγική
 

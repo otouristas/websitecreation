@@ -547,7 +547,13 @@ export function RentACarPage({ locale }: { locale: SiteLocale }) {
             );
           })}
         </CardGrid>
-        <p className="mt-8 text-[14px]">
+        <p className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-[14px]">
+          {isEl ? (
+            <Link href="/el/seo-tourismou/rent-a-car" className="inline-flex items-center gap-1.5 font-medium text-link underline-offset-4 hover:underline">
+              Υπηρεσίες SEO για rent a car
+              <ArrowRight className="size-4" aria-hidden />
+            </Link>
+          ) : null}
           <Link href={lp('/pricing')} className="inline-flex items-center gap-1.5 font-medium text-link underline-offset-4 hover:underline">
             {t.cta.secondary}
             <ArrowRight className="size-4" aria-hidden />

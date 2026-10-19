@@ -329,6 +329,7 @@ export const BLOG_MONEY_LINKS: Record<
         { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
     ],
     'seo-gia-estiatoria': [
+        { path: '/seo-tourismou/estiatoria', titleEn: 'Restaurant SEO services', titleEl: 'Υπηρεσίες SEO για εστιατόρια' },
         { path: '/services/local-seo', titleEn: 'Local SEO', titleEl: 'Τοπικό SEO' },
         { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
         { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
@@ -374,6 +375,7 @@ export const BLOG_MONEY_LINKS: Record<
         { path: '/get-started', titleEn: 'Get a quote', titleEl: 'Ζητήστε προσφορά' },
     ],
     'istoselida-enikiasis-autokinitou-seo': [
+        { path: '/seo-tourismou/rent-a-car', titleEn: 'Rent a car SEO services', titleEl: 'Υπηρεσίες SEO για rent a car' },
         { path: '/solutions/rent-a-car', titleEn: 'Rent-a-car websites', titleEl: 'Ενοικιάσεις αυτοκινήτων' },
         { path: '/services/local-seo', titleEn: 'Local SEO', titleEl: 'Τοπικό SEO' },
         { path: '/pricing', titleEn: 'Pricing', titleEl: 'Τιμές' },
