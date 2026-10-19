@@ -96,12 +96,12 @@ export default async function PlatformHubPage({ params }: PageProps) {
           pill={<AsterIdentity locale={locale} />}
           title={
             <>
-              {tx("Search Console, turned into a", "Το Search Console γίνεται")} <Accent>{tx("growth plan", "πλάνο ανάπτυξης")}</Accent>
+              {tx("Ask Aster.", "Ρωτήστε τον Aster.")} <Accent>{tx("Find your next move.", "Δείτε το επόμενο βήμα.")}</Accent>
             </>
           }
           lead={tx(
-            "AnotherSEOGuru App is SEO software for Google Search Console. Connect Google once, read-only, and it finds the fixes that win the most clicks: striking-distance keywords, weak snippets, decaying pages, cannibalization and missing content, each with an estimate of what it is worth.",
-            "Το AnotherSEOGuru App είναι λογισμικό SEO για το Google Search Console. Συνδέστε τη Google μία φορά, μόνο για ανάγνωση, και βρίσκει τις διορθώσεις που φέρνουν τα περισσότερα κλικ: λέξεις-κλειδιά κοντά στην κορυφή, αδύναμα snippets, σελίδες σε φθορά, κανιβαλισμό και περιεχόμενο που λείπει, με εκτίμηση για το πόσο αξίζει η καθεμία.",
+            "How can I rank for this keyword? Why are my clicks falling? Ask in your own words. Aster connects your questions to Search Console evidence, page checks and a clear next step inside AnotherSEOGuru App. Inspect the sources, save a task or draft, and review each change before it goes live.",
+            "Πώς θα ανέβω για αυτή τη λέξη-κλειδί; Γιατί μειώνονται τα κλικ μου; Ρωτήστε με δικά σας λόγια. Ο Aster συνδέει τις ερωτήσεις σας με στοιχεία Search Console, ελέγχους σελίδων και ένα σαφές επόμενο βήμα στο AnotherSEOGuru App. Δείτε τις πηγές, αποθηκεύστε εργασία ή προσχέδιο και ελέγξτε κάθε αλλαγή πριν δημοσιευτεί.",
           )}
           actions={<ChatDomainEntry locale={locale} />}
           trust={<TrustLine items={softwareTrust(locale)} />}
