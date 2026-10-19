@@ -1,0 +1,41 @@
+"use client";
+
+import { useState } from "react";
+import { AsterMark } from "./AsterIdentity";
+import { ArrowUpRight, Check, ChevronDown, FileText, Search } from "lucide-react";
+import { getAppPath } from "@/lib/app-links";
+import type { SiteLocale } from "@/lib/i18n/locale";
+
+const examples = {
+  en: [
+    { label: "Priorities", question: "What should I fix first on my site?", answer: "Start with pages already visible in search. Inspect their queries, check the current page, then choose a change you can measure.", steps: ["Read the selected Search Console period", "Inspect the page and its metadata", "Prepare a reviewable action"], action: "Improve the rain jackets page", before: "Outdoor clothing | Northwind", after: "Hiking Rain Jackets | Northwind Outdoors" },
+    { label: "Traffic changes", question: "Why are clicks falling on this page?", answer: "Separate changes in demand, visibility and click-through rate. Compare the same-length periods, then inspect which queries, countries and devices account for the change.", steps: ["Compare matching date windows", "Inspect query and page changes", "Check the evidence before inferring a cause"], action: "Investigate the declining guide", before: "A traffic drop", after: "A dated investigation with its evidence" },
+    { label: "Content", question: "Help me improve this article before publishing.", answer: "Check what the page already answers and where the evidence is missing. Keep useful material, draft specific edits and save an editable working document.", steps: ["Read the existing page", "Check coverage and factual gaps", "Draft changes for review"], action: "Prepare the article refresh", before: "A broad rewrite request", after: "An editable draft with a verification checklist" },
+    { label: "Technical SEO", question: "Which technical issues need my attention?", answer: "Check the actual response, canonical, headings and sitemap. Discovered URLs, fetched pages and indexed pages are different measurements.", steps: ["Inspect the HTTP response and canonical", "Read sitemap discovery evidence", "Prioritize issues that affect useful pages"], action: "Review the page's canonical", before: "An unexplained checklist score", after: "The fetched URL, response and actual canonical" },
+  ],
+  el: [
+    { label: "Προτεραιότητες", question: "Τι να διορθώσω πρώτο στον ιστότοπό μου;", answer: "Ξεκινήστε με σελίδες που εμφανίζονται ήδη στην αναζήτηση. Εξετάστε τα ερωτήματά τους, ελέγξτε την πραγματική σελίδα και επιλέξτε μια αλλαγή που μπορείτε να μετρήσετε.", steps: ["Ανάγνωση της επιλεγμένης περιόδου Search Console", "Έλεγχος σελίδας και metadata", "Προετοιμασία ενέργειας για έλεγχο"], action: "Βελτίωση της σελίδας αδιάβροχων", before: "Outdoor clothing | Northwind", after: "Hiking Rain Jackets | Northwind Outdoors" },
+    { label: "Αλλαγές κίνησης", question: "Γιατί μειώνονται τα κλικ σε αυτή τη σελίδα;", answer: "Ξεχωρίστε τις αλλαγές στη ζήτηση, στην ορατότητα και στο CTR. Συγκρίνετε περιόδους ίδιας διάρκειας και εξετάστε ποια ερωτήματα, χώρες και συσκευές συμβάλλουν στην αλλαγή.", steps: ["Σύγκριση αντίστοιχων περιόδων", "Έλεγχος αλλαγών σε ερωτήματα και σελίδες", "Εξέταση στοιχείων πριν από τα συμπεράσματα"], action: "Διερεύνηση του οδηγού που χάνει κλικ", before: "Μια πτώση στην κίνηση", after: "Τεκμηριωμένη έρευνα με ημερομηνίες" },
+    { label: "Περιεχόμενο", question: "Βοηθήστε με να βελτιώσω το άρθρο πριν το δημοσιεύσω.", answer: "Ελέγξτε τι απαντά ήδη η σελίδα και πού λείπουν στοιχεία. Κρατήστε το χρήσιμο υλικό, προτείνετε συγκεκριμένες αλλαγές και αποθηκεύστε ένα επεξεργάσιμο προσχέδιο.", steps: ["Ανάγνωση της υπάρχουσας σελίδας", "Έλεγχος κάλυψης και ελλείψεων", "Σύνταξη αλλαγών για έλεγχο"], action: "Προετοιμασία ανανέωσης άρθρου", before: "Ένα γενικό αίτημα επανεγγραφής", after: "Προσχέδιο με λίστα επαλήθευσης" },
+    { label: "Τεχνικό SEO", question: "Ποια τεχνικά ζητήματα χρειάζονται προσοχή;", answer: "Ελέγξτε την πραγματική απόκριση, το canonical, τις επικεφαλίδες και το sitemap. Οι διευθύνσεις που ανακαλύφθηκαν, οι σελίδες που ανακτήθηκαν και οι ευρετηριασμένες σελίδες είναι διαφορετικά μεγέθη.", steps: ["Έλεγχος απόκρισης HTTP και canonical", "Ανάγνωση στοιχείων sitemap", "Προτεραιότητα σε χρήσιμες σελίδες"], action: "Έλεγχος canonical της σελίδας", before: "Μια ανεξήγητη βαθμολογία ελέγχου", after: "Πραγματικό URL, απόκριση και canonical" },
+  ],
+};
+
+export function SeoChatDemo({ locale }: { locale: SiteLocale }) {
+  const [selected, setSelected] = useState(0);
+  const item = examples[locale][selected];
+  const tx = (en: string, el: string) => locale === "el" ? el : en;
+  return <section id="aster" aria-label={tx("Interactive Aster demonstration", "Διαδραστική επίδειξη συνομιλίας SEO")} className="mx-auto max-w-5xl overflow-hidden rounded-2xl border border-hairline bg-surface text-left shadow-2xl">
+    <div className="flex flex-wrap items-center justify-between gap-3 border-b border-hairline px-5 py-4"><span className="inline-flex items-center gap-2 font-semibold"><AsterMark className="size-8 text-primary" />AnotherSEOGuru <span className="font-normal text-muted-foreground">/ Aster</span></span><span className="rounded-full border border-hairline px-3 py-1 text-[11px] text-muted-foreground">{tx("Demonstration · fictional site", "Επίδειξη · φανταστικός ιστότοπος")}</span></div>
+    <div className="grid md:grid-cols-[190px_minmax(0,1fr)]">
+      <nav aria-label={tx("Example workflows", "Παραδείγματα ροών εργασίας")} className="flex gap-1 overflow-auto border-b border-hairline bg-background/30 p-3 md:flex-col md:border-b-0 md:border-r">{examples[locale].map((example, index) => <button key={example.label} type="button" aria-pressed={selected === index} onClick={() => setSelected(index)} className={`shrink-0 rounded-lg px-3 py-2.5 text-left text-sm transition focus-visible:outline-2 focus-visible:outline-primary ${selected === index ? "bg-primary/10 font-medium text-foreground" : "text-muted-foreground hover:bg-surface"}`}>{example.label}</button>)}<span className="mt-auto hidden px-3 pb-2 pt-16 text-xs text-muted-foreground md:block">northwind-outdoors.example</span></nav>
+      <div className="min-w-0 p-5 sm:p-8" aria-live="polite">
+        <p className="ml-auto max-w-xl rounded-2xl rounded-br-md bg-primary/10 px-4 py-3 text-sm font-medium">{item.question}</p>
+        <details className="mt-7 text-xs text-muted-foreground"><summary className="flex cursor-pointer list-none items-center gap-2"><Search className="size-3.5" aria-hidden />{tx("Evidence behind this example", "Στοιχεία του παραδείγματος")}<ChevronDown className="size-3" aria-hidden /></summary><ul className="mt-3 grid gap-2">{item.steps.map(step => <li key={step} className="flex items-center gap-2"><Check className="size-3.5 text-primary" aria-hidden />{step}</li>)}</ul><p className="mt-3">{tx("Illustrative copy and sample context. This panel has not analyzed your website.", "Ενδεικτικό κείμενο και πλαίσιο δείγματος. Αυτό το πλαίσιο δεν έχει αναλύσει τον ιστότοπό σας.")}</p></details>
+        <p className="mt-5 max-w-2xl text-[15px] leading-7 text-foreground">{item.answer}</p>
+        <div className="mt-6 rounded-xl border border-hairline bg-background/40 p-5"><div className="flex items-center gap-2 text-sm font-medium"><FileText className="size-4 text-primary" aria-hidden />{item.action}</div><dl className="mt-4 grid gap-3 text-sm sm:grid-cols-2"><div><dt className="text-xs text-muted-foreground">{tx("Starting point", "Αφετηρία")}</dt><dd className="mt-1">{item.before}</dd></div><div><dt className="text-xs text-muted-foreground">{tx("Proposed result", "Προτεινόμενο αποτέλεσμα")}</dt><dd className="mt-1">{item.after}</dd></div></dl><p className="mt-4 border-t border-hairline pt-3 text-xs text-muted-foreground">{tx("Review → save a task or document → implement through the relevant tool → verify.", "Έλεγχος → αποθήκευση εργασίας ή εγγράφου → εφαρμογή με το κατάλληλο εργαλείο → επαλήθευση.")}</p></div>
+        <a href={`${getAppPath("/demo/chat")}?lang=${locale}`} className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-link">{tx("Try the actual chat with sample data", "Δοκιμάστε τον πραγματικό Aster με δείγμα δεδομένων")}<ArrowUpRight className="size-4" aria-hidden /></a>
+      </div>
+    </div>
+  </section>;
+}

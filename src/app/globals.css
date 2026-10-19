@@ -1015,3 +1015,13 @@ code, pre, kbd, samp { font-family: var(--font-code); }
 .docs-root { --site-header-height: 3.5rem; }
 .light .docs-shot-dark { display: none; }
 :root:not(.light) .docs-shot-light { display: none; }
+
+/* The product integrations strip has an explicit pause control and no essential motion. */
+@keyframes workflow-logo-scroll { to { transform: translateX(-50%); } }
+.workflow-logo-track { animation: workflow-logo-scroll 42s linear infinite; }
+.workflow-logo-track[data-paused="true"], .workflow-logos:hover .workflow-logo-track,
+.workflow-logos:focus-within .workflow-logo-track { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) {
+  .workflow-logo-track { animation: none; transform: none; }
+  .workflow-logo-copy { display: none; }
+}
