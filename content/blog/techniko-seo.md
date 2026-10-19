@@ -33,10 +33,10 @@ faq:
 
 1. **Crawlability** - μπορεί το Googlebot να φτάσει στις σημαντικές σελίδες;
 2. **Indexation** - μπαίνουν στο ευρετήριο ή αποκλείονται με noindex, robots ή soft 404;
-3. **Ταχύτητα & Core Web Vitals** - LCP, INP, CLS σε κινητό.
+3. **Ταχύτητα & Core Web Vitals** - LCP, INP, CLS σε κινητό ([οδηγός Core Web Vitals](/el/blog/core-web-vitals)).
 4. **Mobile-first** - το ίδιο περιεχόμενο σε κινητό και desktop.
 5. **Ασφάλεια & URLs** - HTTPS, καθαρά permalinks, σωστά redirects.
-6. **Structured data (schema)** - FAQ, LocalBusiness, Article όπου ταιριάζει.
+6. **Structured data (schema)** - FAQ, LocalBusiness, Article όπου ταιριάζει ([οδηγός schema markup](/el/blog/schema-markup)).
 7. **Εσωτερική σύνδεση** - οι money pages δεν είναι ορφανές.
 8. **Hreflang** - σωστά ζεύγη EN/EL σε δίγλωσσα ελληνικά sites.
 

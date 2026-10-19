@@ -70,7 +70,7 @@ export function middleware(request: NextRequest) {
   }
 
   // Markdown twin of a docs page: /en/help/x/y.md -> the static Markdown route.
-  const md = /^\/(en|el)\/(help|glossary)((?:\/[a-z0-9-]+)*)\.md$/.exec(pathname);
+  const md = /^\/(en|el)\/(help|glossary|resources)((?:\/[a-z0-9-]+)*)\.md$/.exec(pathname);
   if (md) {
     const url = request.nextUrl.clone();
     url.pathname = `/api/docs-md/${md[1]}/${md[2]}${md[3]}`;

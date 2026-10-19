@@ -2,6 +2,7 @@ import { glossaryCategories } from "@/data/glossary-data";
 import { categoryTitle } from "@/components/glossary/category-labels";
 import { helpContent, helpPath, IPHONE_CATEGORY } from "@/data/help";
 import { PLATFORM_TOOLS } from "@/data/platform-tools";
+import { OPPORTUNITY_FINDER, RESOURCE_CLUSTERS, clusterArticles, resourcePath } from "@/data/resources";
 import { localizedPath, type SiteLocale } from "@/lib/i18n/locale";
 import { glossaryPath, glossaryTermName } from "@/lib/docs/glossary";
 
@@ -55,6 +56,13 @@ const CATEGORY_ICONS: Readonly<Record<string, string>> = {
   "account-billing": "credit-card",
   "iphone-app": "smartphone",
   integrations: "link",
+};
+
+const CLUSTER_ICONS: Readonly<Record<string, string>> = {
+  "search-console": "search",
+  "traffic-drops": "bar-chart",
+  forecasting: "sparkles",
+  reporting: "file",
 };
 
 export const categoryIcon = (slug: string) => CATEGORY_ICONS[slug];
@@ -116,12 +124,32 @@ export function sidebarFor(tab: DocsTab, locale: SiteLocale): SideGroup[] {
     case "resources": {
       const lp = (p: string) => localizedPath("en", p);
       return [
-        { title: "Resources", items: [{ title: "Overview", href: lp("/resources"), icon: "layers" }] },
+        {
+          title: "Resources",
+          items: [
+            { title: "Overview", href: lp("/resources"), icon: "layers" },
+            { title: OPPORTUNITY_FINDER.title, href: resourcePath(OPPORTUNITY_FINDER.slug), icon: "wrench", badge: "Free" },
+          ],
+        },
+        {
+          title: "Guides",
+          // One entry per cluster: the pillar, with its supporting articles under it.
+          items: RESOURCE_CLUSTERS.filter((c) => c.id !== "ai-visibility").map((c) => {
+            const [pillar, ...rest] = [...clusterArticles(c.id)].sort((a, b) => (a.kind === "pillar" ? -1 : b.kind === "pillar" ? 1 : 0));
+            return {
+              title: c.title,
+              href: resourcePath(pillar.slug),
+              icon: CLUSTER_ICONS[c.id],
+              children: rest.map((a) => ({ title: a.title.split(":")[0], href: resourcePath(a.slug) })),
+            };
+          }),
+        },
         {
           title: "Frameworks",
           items: [
             { title: "Search optimization layers", href: lp("/resources/search-optimization-layers"), icon: "layers" },
             { title: "AI search page anatomy", href: lp("/resources/ai-search-page-anatomy"), icon: "file" },
+            ...clusterArticles("ai-visibility").map((a) => ({ title: a.title.split(":")[0], href: resourcePath(a.slug), icon: "bot" })),
           ],
         },
         {

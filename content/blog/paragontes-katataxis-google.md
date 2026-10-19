@@ -82,7 +82,7 @@ faq:
 5. Κερδίστε σχετικούς συνδέσμους και κόψτε όσους υπάρχουν για χειραγώγηση. Διαβάστε [τι είναι τα backlinks](/el/blog/ti-einai-ta-backlinks).
 6. Στο Search Console δείτε για ποια ερωτήματα εμφανίζεται ήδη το URL. Η λίστα παραγόντων δεν λέει ποια διεύθυνση επιλέγει η Google.
 
-Για τον χάρτη, δείτε [πώς μπαίνει μια επιχείρηση στο Google Maps](/el/blog/epixeirisi-sto-google-maps). Αυτή η λίστα κατάταξης ιστού δεν περιγράφει το Google Business Profile.
+Για τον χάρτη, δείτε [πώς μπαίνει μια επιχείρηση στο Google Maps](/el/blog/epixeirisi-sto-google-maps). Αυτή η λίστα κατάταξης ιστού δεν περιγράφει το Google Business Profile. Το πλάνο ανά αναζήτηση είναι στον οδηγό για την [πρώτη σελίδα της Google](/el/blog/proti-selida-google), και τα υπόλοιπα κανάλια στην [προώθηση ιστοσελίδας](/el/blog/proothisi-istoselidas).
 
 ## Θέλετε έλεγχο στα τεκμηριωμένα σήματα;
 

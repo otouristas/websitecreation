@@ -65,6 +65,10 @@ const ALLOW_LONG = new Set([
   // 21-strategy listicle. The brief asks for about 2,500 words so each item
   // can say what to do, not just name a tactic.
   'seo-strategies',
+  // Head-term guide ("seo", "τι είναι seo") and the technical pillar link out to
+  // the new Core Web Vitals, schema and SEO marketing guides.
+  'seo-gia-arxarious',
+  'techniko-seo',
 ]);
 
 const CTA_RE =

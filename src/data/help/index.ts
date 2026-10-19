@@ -66,7 +66,9 @@ export function resolveHelpHref(href: string, locale: SiteLocale): string {
   // Blog posts live on this site. Glossary "related resources" reuse this
   // resolver, and sending /blog to the app origin 404s.
   if (/^\/blog(?:\/|$)/.test(href)) return localizedPath(locale, href);
-  if (/^\/(?:en|el)\/blog(?:\/|$)/.test(href)) return href;
+  // Locale-prefixed paths (/en/resources/..., /en/glossary/...) are pages on
+  // this site; only bare paths belong to the app.
+  if (/^\/(?:en|el)(?:\/|$)/.test(href)) return href;
   return getAppPath(href);
 }
 
