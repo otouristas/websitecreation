@@ -39,9 +39,9 @@ Explore our [hotel solutions](/en/solutions/hotels) and [portfolio](/en/work).
 
 | Project type | Typical cost | Includes |
 | :--- | :--- | :--- |
-| Boutique / small property | €1,500 – €2,000 | Rooms, enquiry flow, SEO base |
-| Hotel with booking engine | {{WEBSITE_PRO}} – {{WEBSITE_BUSINESS}} | Live availability, multilingual |
-| Large property / many languages | €3,000 – €5,000+ | Channel manager, complex experiences |
+| Boutique / small property | €1,500 to €2,000 | Rooms, enquiry flow, SEO base |
+| Hotel with booking engine | {{WEBSITE_PRO}} to {{WEBSITE_BUSINESS}} | Live availability, multilingual |
+| Large property / many languages | €3,000 to €5,000+ | Channel manager, complex experiences |
 
 **Professional {{WEBSITE_PRO}}** and **Business {{WEBSITE_BUSINESS}}** cover most units. Compare with the general [website cost guide](/en/blog/how-much-does-a-website-cost).
 

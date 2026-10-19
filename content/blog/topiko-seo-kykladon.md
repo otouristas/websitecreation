@@ -67,8 +67,8 @@ faq:
 
 | Στοιχείο | Τυπικό εύρος 2026 |
 | :--- | :--- |
-| SEO ένα νησί (Foundations-Growth) | {{ENTRY_SEO}} – {{SEO_GROWTH}}/μήνα |
-| Ανταγωνιστικός προορισμός / πολλά σημεία | {{SEO_GROWTH}} – {{SEO_AUTHORITY}}+/μήνα |
+| SEO ένα νησί (Foundations-Growth) | {{ENTRY_SEO}} έως {{SEO_GROWTH}}/μήνα |
+| Ανταγωνιστικός προορισμός / πολλά σημεία | {{SEO_GROWTH}} έως {{SEO_AUTHORITY}}+/μήνα |
 | Πρώτα local wins | 8–12 εβδομάδες |
 | Head terms σε Μύκονο/Σαντορίνη | 4–6+ μήνες |
 

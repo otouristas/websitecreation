@@ -1,7 +1,7 @@
 ---
 slug: llm-citations-brand-visibility
 title: LLM Citations and Brand Visibility - A Sober Measurement Guide
-description: What "being cited by AI" means, how to sample responsibly, and how to connect efforts to real business outcomes.
+description: What “being cited by AI” means for your brand, how to sample AI answers responsibly, and how to connect citation work to real business outcomes.
 date: 2026-02-14
 author: AnotherSEOGuru Editorial Team
 category: AI Visibility

@@ -30,10 +30,10 @@ A website in 2026 costs anywhere from **€500 for a simple site** to **€5,000
 
 | Type | Typical cost | Timeline |
 | :--- | :--- | :--- |
-| Landing page / one-pager | €400 – €800 | 1–2 weeks |
-| Business website (5–10 pages) | €800 – €2,000 | 2–3 weeks |
-| Hotel website with bookings | €1,500 – €3,500 | 3–5 weeks |
-| E-shop (WooCommerce) | €1,800 – €5,000+ | 4–8 weeks |
+| Landing page / one-pager | €400 to €800 | 1–2 weeks |
+| Business website (5–10 pages) | €800 to €2,000 | 2–3 weeks |
+| Hotel website with bookings | €1,500 to €3,500 | 3–5 weeks |
+| E-shop (WooCommerce) | €1,800 to €5,000+ | 4–8 weeks |
 | Custom app / portal | €5,000+ | 2–4 months |
 
 Our packages are public: **Starter {{ENTRY_WEBSITE}}** (up to 5 pages), **Professional {{WEBSITE_PRO}}** (up to 10 pages), **Business {{WEBSITE_BUSINESS}}** (up to 20 pages). See the details on our [pricing page](/en/pricing). For hospitality, also see [hotel solutions](/en/solutions/hotels).
@@ -82,12 +82,12 @@ For stores, see the [e-commerce website cost guide](/en/blog/ecommerce-website-c
 
 Assume an 8-page business site in one language, contact form, and a light blog:
 
-- Build in the Professional range: about **€1,500 – €1,800**
-- Content if you do not have it (copy + light optimization): **€400 – €800**
-- Domain + first-year hosting: **€80 – €200**
+- Build in the Professional range: about **€1,500 to €1,800**
+- Content if you do not have it (copy + light optimization): **€400 to €800**
+- Domain + first-year hosting: **€80 to €200**
 - Optional maintenance: **€199+/month** or hourly for updates
 
-First-year totals often land near **€2,000 – €3,500**, depending on whether content and maintenance are included. Add a second language, bookings, or e-commerce and the range rises quickly - that is why the table at the top separates site types instead of quoting one price for everyone.
+First-year totals often land near **€2,000 to €3,500**, depending on whether content and maintenance are included. Add a second language, bookings, or e-commerce and the range rises quickly - that is why the table at the top separates site types instead of quoting one price for everyone.
 
 Always ask for: page count, languages, who writes the copy, whether CMS training is included, who owns domain/hosting, and what post-launch fixes cover. Without those lines, quote comparisons are misleading.
 

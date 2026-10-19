@@ -68,8 +68,8 @@ CrossFit, pilates, personal training, EMS, παιδικά τμήματα, yoga -
 | :--- | :--- | :--- |
 | Foundations SEO | {{ENTRY_SEO}}/μήνα | Ένα σημείο, μία περιοχή |
 | Growth SEO | {{SEO_GROWTH}}/μήνα | Αλυσίδα 2–4 καταστημάτων / ανταγωνιστική ζώνη |
-| Εφάπαξ audit GBP + site | €300 – €500 | Διάγνωση πριν από retainer |
-| Νέο site γυμναστηρίου | {{ENTRY_WEBSITE}} – {{WEBSITE_PRO}} | Προγράμματα, δοκιμαστικό, mobile CTA |
+| Εφάπαξ audit GBP + site | €300 έως €500 | Διάγνωση πριν από retainer |
+| Νέο site γυμναστηρίου | {{ENTRY_WEBSITE}} έως {{WEBSITE_PRO}} | Προγράμματα, δοκιμαστικό, mobile CTA |
 | Πρώτα wins στο Maps | 6–10 εβδομάδες | Με ενεργές κριτικές |
 | Κυριαρχία τοπικών queries | 3–4 μήνες | Συστηματική δουλειά |
 

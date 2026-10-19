@@ -30,11 +30,11 @@ faq:
 
 | Engagement | Typical cost | Best for |
 | :--- | :--- | :--- |
-| Monthly retainer - Foundations | €250 – €400/mo | Local businesses, single city |
-| Monthly retainer – Growth | €500 – €800/mo | Competitive niches, multiple services |
-| Monthly retainer - Authority | €900 – €1,500+/mo | E-commerce, national brands |
-| One-off SEO audit | €300 – €800 | Diagnosis before investing |
-| Hourly consulting | €50 – €120/hr | Targeted fixes |
+| Monthly retainer: Foundations | €250 to €400/mo | Local businesses, single city |
+| Monthly retainer: Growth | €500 to €800/mo | Competitive niches, multiple services |
+| Monthly retainer: Authority | €900 to €1,500+/mo | E-commerce, national brands |
+| One-off SEO audit | €300 to €800 | Diagnosis before investing |
+| Hourly consulting | €50 to €120/hr | Targeted fixes |
 
 Our own [SEO packages](/en/pricing) are public and transparent: **Foundations {{ENTRY_SEO}}/mo**, **Growth {{SEO_GROWTH}}/mo**, **Authority {{SEO_AUTHORITY}}/mo** - always in EUR, no hidden fees.
 

@@ -12,5 +12,5 @@
 
 ## Snippet
 
-[Skip to content](https://naxosautorent.com/#main) # Naxos Car Rental Best Rates – Free delivery #### Reserve Online Your Vehicle ​ 1Pick-up location\-\-\- Select location ---Naxos AirportNaxos PortYour accommodation more than 10km from Naxos PortYour Accommodation up to 10km fro
+[Skip to content](https://naxosautorent.com/#main) # Naxos Car Rental Best Rates, Free delivery #### Reserve Online Your Vehicle ​ 1Pick-up location\-\-\- Select location ---Naxos AirportNaxos PortYour accommodation more than 10km from Naxos PortYour Accommodation up to 10km fro
 

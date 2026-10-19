@@ -12,5 +12,5 @@
 
 ## Snippet
 
-Since 1994 — Antiparos & Paros # Luxury Transfer Services in Antiparos & Paros Professional door-to-door **Antiparos transfers**, airport pickups, wedding transport, and island tours with a family-run business trusted by visitors for over three decades. [Book Your Transfer](https
+Since 1994: Antiparos & Paros # Luxury Transfer Services in Antiparos & Paros Professional door-to-door **Antiparos transfers**, airport pickups, wedding transport, and island tours with a family-run business trusted by visitors for over three decades. [Book Your Transfer](https
 

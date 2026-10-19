@@ -207,7 +207,7 @@ export const iphoneEn: HelpCategory = {
           ["Dynamic Island (compact)", "An icon for the current phase and the crawled pages, for example `12/50`, then the score when done."],
           ["Dynamic Island (expanded)", "Touch and hold to see the site, the progress bar and the status line."],
         ] },
-        { type: "p", text: "Tap the Live Activity to open the Site audit for that site. When the crawl finishes you get **Audit ready – tap to see results**. Only one audit is shown at a time; starting a new crawl replaces the old one." },
+        { type: "p", text: "Tap the Live Activity to open the Site audit for that site. When the crawl finishes you get **Audit ready, tap to see results**. Only one audit is shown at a time; starting a new crawl replaces the old one." },
         { type: "note", tone: "info", text: "If the Live Activity hasn't been updated for about 10 minutes it says **Open the app to check the status**. Opening the app catches it up. Live Activities follow the app's language, so they're in Greek when the app is." },
         { type: "note", tone: "tip", text: "Don't see it? Check **iPhone Settings → AnotherSEOGuru → Live Activities** is on. Other paid tools also show a short **Checking** activity while they run, which turns into **Result ready**." },
         { type: "h2", id: "results", text: "Reading the results" },

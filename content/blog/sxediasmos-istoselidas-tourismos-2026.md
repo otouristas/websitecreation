@@ -37,9 +37,9 @@ faq:
 
 | Τύπος | Τυπικό κόστος | Σημειώσεις |
 | :--- | :--- | :--- |
-| Tour / rent-a-car / μικρή επιχείρηση | {{ENTRY_WEBSITE}} – {{WEBSITE_PRO}} | Starter–Professional |
-| Ξενοδοχείο / villa με κρατήσεις | €1.500 – €3.500 | Booking + SEO βάση |
-| Πολυγλωσσικό / σύνθετο | {{WEBSITE_BUSINESS}} – €5.000+ | Business+ |
+| Tour / rent-a-car / μικρή επιχείρηση | {{ENTRY_WEBSITE}} έως {{WEBSITE_PRO}} | Starter–Professional |
+| Ξενοδοχείο / villa με κρατήσεις | €1.500 έως €3.500 | Booking + SEO βάση |
+| Πολυγλωσσικό / σύνθετο | {{WEBSITE_BUSINESS}} έως €5.000+ | Business+ |
 
 Δείτε λεπτομέρειες στη [σελίδα τιμών](/el/pricing) και στον οδηγό [πόσο κοστίζει μια ιστοσελίδα](/el/blog/poso-kostizei-mia-istoselida).
 

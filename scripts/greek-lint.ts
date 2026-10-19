@@ -118,8 +118,8 @@ for (const file of filesToCheck()) {
     }
 
     // 4. em dash
-    if (line.includes('—')) {
-      findings.push({ file, line: n, rule: 'em dash (use " - ")', text: line.trim().slice(0, 60) });
+    if (line.includes('\u2014')) {
+      findings.push({ file, line: n, rule: 'em dash (rewrite without a dash)', text: line.trim().slice(0, 60) });
     }
 
     // 5. Latin question mark ending a Greek sentence

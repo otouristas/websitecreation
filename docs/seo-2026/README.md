@@ -1,4 +1,4 @@
-# Organic + AEO/GEO programme — baseline, decisions, roadmap
+# Organic + AEO/GEO programme: baseline, decisions, roadmap
 
 Written 2026-09-10 against `claude/anotherseoguru-seo-overhaul-ww6pfa`.
 
@@ -9,10 +9,10 @@ made.
 
 Companion documents already in the repo, all still authoritative:
 
-- `docs/greek-style-guide.md` — every Greek string must follow it.
-- `docs/keyword-research/greek-seo-cluster-2026-07-23.md` — Ahrefs GR volumes.
-- `docs/keyword-research/gsc-baseline-2026-08-04.md` — real Search Console data.
-- `seo-qa/` — the previous round's indexability and programmatic-quality work.
+- `docs/greek-style-guide.md`: every Greek string must follow it.
+- `docs/keyword-research/greek-seo-cluster-2026-07-23.md`: Ahrefs GR volumes.
+- `docs/keyword-research/gsc-baseline-2026-08-04.md`: real Search Console data.
+- `seo-qa/`: the previous round's indexability and programmatic-quality work.
 
 ---
 
@@ -50,7 +50,7 @@ deepen the pages that already have demand.** Not more URLs.
 
 ## 2. What changed on this branch
 
-### Truthfulness (highest priority — these were live)
+### Truthfulness (highest priority: these were live)
 
 | Defect | Scale | Fixed by |
 |---|---|---|
@@ -91,29 +91,29 @@ Volumes are Ahrefs GR from the existing research doc. Blank = no reliable GR
 volume; included because GSC shows impressions or the intent is commercially
 obvious.
 
-### A. Core transactional — websites
+### A. Core transactional: websites
 
 | Query | Vol GR | Owner |
 |---|---:|---|
-| κατασκευή ιστοσελίδων / ιστοσελίδας | — | `/el/services/website-creation` |
+| κατασκευή ιστοσελίδων / ιστοσελίδας | - | `/el/services/website-creation` |
 | κατασκευή ιστοσελίδων Αθήνα | 73 imp (GSC) | `/el/services/website-creation/athens-gr` |
 | κατασκευή e-shop | 139 imp (GSC) | `/el/services/eshop-woocommerce` |
-| δημιουργία / σχεδιασμός ιστοσελίδας | — | website-creation hub (secondary) |
-| ανασχεδιασμός ιστοσελίδας | — | `/el/services/website-redesign` |
+| δημιουργία / σχεδιασμός ιστοσελίδας | - | website-creation hub (secondary) |
+| ανασχεδιασμός ιστοσελίδας | - | `/el/services/website-redesign` |
 
-### B. Core transactional — SEO
+### B. Core transactional: SEO
 
 | Query | Vol GR | KD | Owner |
 |---|---:|---:|---|
 | υπηρεσίες SEO | 400 | 1 | **`/el/seo-services`** (new) |
 | εταιρεία SEO | 300 | 1 | **`/el/seo-services`** |
 | προώθηση ιστοσελίδων seo | 200 | 2 | **`/el/seo-services`** |
-| seo υπηρεσιες (variants) | 150-300 | — | **`/el/seo-services`** |
+| seo υπηρεσιες (variants) | 150-300 | - | **`/el/seo-services`** |
 | τοπικό SEO / local seo | 80 | 70 | `/el/services/local-seo` |
-| τεχνικό seo | 100 | — | `/el/blog/techniko-seo` → **needs a commercial owner** |
+| τεχνικό seo | 100 | - | `/el/blog/techniko-seo` → **needs a commercial owner** |
 | seo audit | 150 | 82 | `/el/services/seo-audits` |
-| SEO Θεσσαλονίκη | 140 imp | — | `/el/services/local-seo/thessaloniki-gr` |
-| SEO Αθήνα | 51 imp | — | `/el/services/local-seo/athens-gr` |
+| SEO Θεσσαλονίκη | 140 imp | - | `/el/services/local-seo/thessaloniki-gr` |
+| SEO Αθήνα | 51 imp | - | `/el/services/local-seo/athens-gr` |
 
 ### C. Commercial investigation
 
@@ -122,15 +122,15 @@ obvious.
 | τιμές seo | 700 | `/el/pricing` + `/el/blog/poso-kostizei-to-seo` |
 | κόστος seo | 600 | same |
 | πόσο κοστίζει μια ιστοσελίδα | 116 imp | `/el/blog/poso-kostizei-mia-istoselida` |
-| SEO ή Google Ads | — | `/el/blog/seo-i-google-ads` |
-| WordPress ή custom / Next.js | — | **missing** |
-| SEO agency ή freelancer | — | **missing** |
+| SEO ή Google Ads | - | `/el/blog/seo-i-google-ads` |
+| WordPress ή custom / Next.js | - | **missing** |
+| SEO agency ή freelancer | - | **missing** |
 
 ### D. Problem-aware
 
 | Query | Owner |
 |---|---|
-| γιατί δεν εμφανίζεται η ιστοσελίδα μου στη Google | **missing** — strongest AEO candidate in the set |
+| γιατί δεν εμφανίζεται η ιστοσελίδα μου στη Google | **missing**: strongest AEO candidate in the set |
 | πώς να βγω πρώτη σελίδα Google | partial (`seo-gia-arxarious`) |
 | πόσο χρόνο χρειάζεται το SEO | answered on `/el/seo-services`; no post owns it |
 | τι περιλαμβάνει μια σωστή υπηρεσία SEO | now `/el/seo-services` |
@@ -145,7 +145,7 @@ the SEO guide does not) and an umbrella **SEO για τουριστικές επ
 
 | Query | Owner |
 |---|---|
-| geo agency ελλάδα | `/el/blog/geo-agency-ellada` — 145 imp, pos 13.9, the site's best non-brand position |
+| geo agency ελλάδα | `/el/blog/geo-agency-ellada`: 145 imp, pos 13.9, the site's best non-brand position |
 | GEO vs SEO vs AEO | `/el/blog/geo-vs-seo-vs-aeo-el` |
 | τι είναι το GEO / AEO | **defined in 7 posts, owned by none** |
 | Google AI Overview | **mentioned in 25 of 71 posts, defined by none** |
@@ -157,7 +157,7 @@ the SEO guide does not) and an umbrella **SEO για τουριστικές επ
 ## 4. Fan-out map (Phase 4)
 
 For the two seeds that matter, mapped to a destination. `SECTION` means it
-belongs inside an existing page, not on a new URL — most fan-outs do.
+belongs inside an existing page, not on a new URL: most fan-outs do.
 
 ### Seed: κατασκευή ιστοσελίδας
 
@@ -200,7 +200,7 @@ belongs inside an existing page, not on a new URL — most fan-outs do.
 
 ## 5. What to do next, in order
 
-### P0 — finish what this branch started
+### P0: finish what this branch started
 
 1. **`/el/services/ai-visibility` is 276 words** and competes with four Greek
    blog posts on the same terms. It is the commercial destination for the one
@@ -215,12 +215,12 @@ belongs inside an existing page, not on a new URL — most fan-outs do.
    **Partly done (this follow-on):** the English definitional owners now exist
    under `/resources`, which is EN-only, so there is no Greek duplicate to
    canonicalise away:
-   - `/en/resources/search-optimization-layers` — the layer model (SEO, AEO,
+   - `/en/resources/search-optimization-layers`: the layer model (SEO, AEO,
      GEO, AIO, DEO, SXO): goal, focus areas, requirements and measurable
      signals per layer, each linking to the service that does the work.
      Data in `src/data/search-layers.ts`, rendered by
      `src/components/ai-search/SearchLayersStack.tsx`.
-   - `/en/resources/ai-search-page-anatomy` — the on-page checklist rebuilt for
+   - `/en/resources/ai-search-page-anatomy`: the on-page checklist rebuilt for
      a model deciding what to cite: twelve annotated parts of a page, on a
      worked example that is labelled fiction throughout. Data in
      `src/data/ai-page-anatomy.ts`, rendered by
@@ -230,7 +230,7 @@ belongs inside an existing page, not on a new URL — most fan-outs do.
    that currently redefine GEO/AEO at whichever page owns the term.
 3. **Own «Google AI Overview».** Named in 25 of 71 posts, defined by none.
 
-### P1 — the demand that is already arriving
+### P1: the demand that is already arriving
 
 4. **Deepen `/el/blog/poso-kostizei-mia-istoselida`** (762 impressions, position 65)
    and **`kataskevi-eshop-odigos`** (1,245 impressions, position 31). Both are
@@ -242,7 +242,7 @@ belongs inside an existing page, not on a new URL — most fan-outs do.
 6. **SEO για e-shop.** The build guide exists; the SEO guide does not, and
    `/el/services/eshop-seo` is 201 words.
 
-### P2 — structural
+### P2: structural
 
 7. **The industry axis is 8-10 words per page.** `getServiceAngle()` and
    `getServiceFaqs()` take no industry argument, so 744 industry×service pages
@@ -262,7 +262,7 @@ belongs inside an existing page, not on a new URL — most fan-outs do.
 - **No `aggregateRating` / `Review` schema.** The homepage renders a hardcoded
   five-star row above three testimonials with no source, date or consent
   record. Marking that up is a self-serving-review violation. Get written
-  consent and a real source, or pull the block — do not schema it.
+  consent and a real source, or pull the block: do not schema it.
 - **No claimed client outcomes.** The case studies are template-assembled and
   no traffic, ranking, booking or revenue figure is recorded for any of them.
   The honest claim shape is "we built this, in this market, for this keyword".

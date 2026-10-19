@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: isEl ? "Όλες οι Υπηρεσίες SEO & Κατασκευής Ιστοσελίδων" : "All SEO & Web Design Services",
     description: isEl
       ? "Όλες οι υπηρεσίες μας σε μία σελίδα: κατασκευή ιστοσελίδων και e-shop, τεχνικό SEO, τοπικό SEO, GEO και AEO, περιεχόμενο και ανασχεδιασμός."
-      : "Every service in one place: website and e-shop builds, technical SEO, local SEO, GEO and AEO, content, and redesigns.",
+      : "Every service in one place: website and e-shop builds, technical SEO, local SEO, GEO and AEO, content, and redesigns. Compare scope and request a quote.",
     path: localizedPath(locale, "/services"),
     hreflangPath: "/services",
     primaryKeyword: isEl ? "υπηρεσίες κατασκευής ιστοσελίδων" : "web design and SEO services",

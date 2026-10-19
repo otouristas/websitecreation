@@ -33,7 +33,7 @@ const NAMED: Record<string, string> = {
   apos: "'",
   nbsp: ' ',
   ndash: '–',
-  mdash: '—',
+  mdash: '\u2014',
   middot: '·',
   bull: '•',
   laquo: '«',
@@ -204,7 +204,7 @@ const GENERIC_TITLE = /^(home|homepage|home page|welcome|index|start|αρχικ�
 function nameFromTitle(title: string | null): string | null {
   if (!title) return null;
   const parts = title
-    .split(/\s+[|–—·:•-]\s+/)
+    .split(/\s+[|\u2013\u2014·:•-]\s+/)
     .map((p) => p.trim())
     .filter((p) => p && !GENERIC_TITLE.test(p));
   if (parts.length === 0) return null;

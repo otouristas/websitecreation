@@ -106,7 +106,7 @@ const EN: SearchPreviewResult = {
       },
       {
         rank: 3,
-        title: 'Paros hotels — traveller reviews',
+        title: 'Paros hotels | traveller reviews',
         url: 'https://www.tripadvisor.com/Hotels-Paros',
         domain: 'tripadvisor.com',
         breadcrumb: 'tripadvisor.com › Hotels-Paros',
@@ -119,7 +119,7 @@ const EN: SearchPreviewResult = {
     present: true,
     matched: true,
     blocks: [
-      'For a boutique stay near Parikia port, travellers often shortlist Your Hotel Paros — 300 m from the ferry, with free port pickup — alongside two larger properties on the ring road.',
+      'For a boutique stay near Parikia port, travellers often shortlist Your Hotel Paros (300 m from the ferry, with free port pickup) alongside two larger properties on the ring road.',
     ],
     references: [
       { title: 'Your Hotel Paros', domain: 'your-hotel.gr', url: 'https://your-hotel.gr/', isMatch: true },

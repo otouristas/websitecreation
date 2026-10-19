@@ -1,7 +1,7 @@
 ---
 slug: law-firm-seo
 title: Law Firm SEO - How Attorneys Win Cases from Google
-description: A practical SEO guide for law firms and attorneys - local targeting, practice-area pages, trust-building content, and the technical basics that bring cases.
+description: "A practical SEO guide for law firms and attorneys: local targeting, practice-area pages, trust-building content and the technical basics that bring cases."
 date: 2026-07-06
 author: AnotherSEOGuru Editorial Team
 translationOf: seo-gia-dikigorous

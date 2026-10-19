@@ -1,7 +1,7 @@
-# EN SEO Hub — Ahrefs Keyword Research (US)
+# EN SEO Hub: Ahrefs Keyword Research (US)
 
 > **Type:** Research + implementation map (EN head terms).  
-> **Market:** United States (primary volumes). Greece remains primary for GR commercial — see [`keyword-research.md`](./keyword-research.md).  
+> **Market:** United States (primary volumes). Greece remains primary for GR commercial: see [`keyword-research.md`](./keyword-research.md).  
 > **Source:** Ahrefs Keywords Explorer + SERP Overview (2026-07-23).  
 > **Companions:** [`master-keyword-list.csv`](./master-keyword-list.csv) · [`faq-aeo-bank.md`](./faq-aeo-bank.md) · [`faq-aeo-en-seo-hub.md`](./faq-aeo-en-seo-hub.md)
 
@@ -17,7 +17,7 @@
 
 Almost every seed SERP includes **AI Overview** + **PAA (question)**. Ranking for money means attacking **commercial long-tails (KD 2–32)** first, then building pillar/tool authority for head terms over 6–18+ months.
 
-**GSC signal:** US already has ~6.5k impressions with 0 clicks — EN relevance and CTR are the gap.
+**GSC signal:** US already has ~6.5k impressions with 0 clicks, EN relevance and CTR are the gap.
 
 ---
 
@@ -44,7 +44,7 @@ Almost every seed SERP includes **AI Overview** + **PAA (question)**. Ranking fo
 | seo best practices | 3500 | 5900 | 70 | 435000 | 80 | informational | seo | Checklist on pillar |
 | seo for beginners | 2300 | 4000 | 80 | 438000 | 100 | informational | seo | Beginner path on pillar |
 | google search ranking | 2000 | 3900 | 83 | 156000 | 350 | info+branded | google trends | Glossary + factors post |
-| organic traffic | 1600 | 4700 | 65 | 143000 | 400 | informational | — | Glossary + how-to |
+| organic traffic | 1600 | 4700 | 65 | 143000 | 400 | informational | - | Glossary + how-to |
 
 ---
 
@@ -67,7 +67,7 @@ Parent-topic merging is intentional. One strong page can rank for many satellite
 
 ## 4. Per-hub detail
 
-### Hub 1 — SEO pillar
+### Hub 1: SEO pillar
 
 **Primary:** `seo` / `search engine optimization`  
 **Route:** `/en/blog/what-is-seo` (links to existing `/en/blog/seo-for-beginners`)  
@@ -97,13 +97,13 @@ Parent-topic merging is intentional. One strong page can rank for many satellite
 7. Why is SEO important?
 8. What are the 4 types of SEO?
 9. How long does SEO take to work?
-10. SEO vs SEM — what's the difference?
+10. SEO vs SEM: what's the difference?
 
 ---
 
-### Hub 2 — Keyword research (tool-first)
+### Hub 2: Keyword research (tool-first)
 
-**Primary:** `keyword research` (tool SERP — Semrush Magic Tool, Google Keyword Planner, Ahrefs Generator win)  
+**Primary:** `keyword research` (tool SERP, Semrush Magic Tool, Google Keyword Planner, Ahrefs Generator win)  
 **Routes:** `/en/tools/keyword-research` → app clustering; `/en/blog/keyword-research-guide`
 
 **Top 10 related**
@@ -134,7 +134,7 @@ Parent-topic merging is intentional. One strong page can rank for many satellite
 
 ---
 
-### Hub 3 — SEO tools hub
+### Hub 3: SEO tools hub
 
 **Primary:** `seo tools` (251k)  
 **Routes:** `/en/tools` + `/en/tools/free-seo-tools` + `/en/blog/best-seo-tools-2026`
@@ -147,7 +147,7 @@ Parent-topic merging is intentional. One strong page can rank for many satellite
 4. local seo tools
 5. keyword research tools
 6. on page seo tools
-7. ahrefs / semrush alternatives (navigational — avoid competing as brand)
+7. ahrefs / semrush alternatives (navigational: avoid competing as brand)
 8. seo checker
 9. rank tracker tools
 10. technical seo tools
@@ -167,7 +167,7 @@ Parent-topic merging is intentional. One strong page can rank for many satellite
 
 ---
 
-### Hub 4 — SEO services (money — ship first)
+### Hub 4: SEO services (money, ship first)
 
 **Primary:** `seo services` (63k, KD **32**, CPC ~$8)  
 **Routes:** deepen `/en/services/seo-audits`, `local-seo`, `link-building`, `ai-visibility`, `eshop-seo`, `content-creation`
@@ -177,13 +177,13 @@ Parent-topic merging is intentional. One strong page can rank for many satellite
 | # | Keyword | Vol | KD | CPC | Target |
 |---|---|---|---|---|---|
 | 1 | seo services | 63000 | 32 | $8 | services hub + audits |
-| 2 | local seo services | 26000 | 8 | — | `/en/services/local-seo` |
+| 2 | local seo services | 26000 | 8 | - | `/en/services/local-seo` |
 | 3 | seo services near me | 16000 | 11 | $8 | local-seo + geo |
 | 4 | local seo company | 14000 | 8 | $5 | local-seo |
 | 5 | local seo agency | 12000 | 22 | $5 | local-seo |
 | 6 | technical seo services | 10000 | 18 | $4.50 | seo-audits |
 | 7 | link building services | 9800 | 21 | $5 | link-building |
-| 8 | seo audit services | 5600 | 6 | — | seo-audits |
+| 8 | seo audit services | 5600 | 6 | - | seo-audits |
 | 9 | ai seo services | 4200 | 11 | $1.10 | ai-visibility |
 | 10 | b2b seo services | 3100 | 2 | $12 | services + content |
 
@@ -200,14 +200,14 @@ Also map: professional seo services, small business seo services, affordable seo
 7. What's included in professional SEO services?
 8. Do small businesses need SEO services?
 9. What are AI SEO services?
-10. SEO services near me — how to choose?
+10. SEO services near me: how to choose?
 
 ---
 
-### Hub 5 — Local SEO
+### Hub 5: Local SEO
 
 **Primary:** `local seo` (45k) + `local seo services` (26k, KD 8)  
-**Routes:** `/en/blog/local-seo-guide` (exists — expand FAQs) + `/en/services/local-seo`
+**Routes:** `/en/blog/local-seo-guide` (exists, expand FAQs) + `/en/services/local-seo`
 
 **Top 10 related**
 
@@ -237,7 +237,7 @@ Also map: professional seo services, small business seo services, affordable seo
 
 ---
 
-### Hub 6 — SEO audit
+### Hub 6: SEO audit
 
 **Primary:** `seo audit` / `free seo audit` (tool SERP: SEOptimer, Semrush, Ahrefs)  
 **Routes:** `/en/tools/free-seo-audit` + `/en/services/seo-audits`
@@ -264,13 +264,13 @@ Also map: professional seo services, small business seo services, affordable seo
 5. How long does an SEO audit take?
 6. Can I DIY an SEO audit?
 7. What is an SEO health score?
-8. SEO audit checklist — what's essential?
+8. SEO audit checklist: what's essential?
 9. Will an audit improve rankings by itself?
 10. How much do SEO audit services cost?
 
 ---
 
-### Hub 7 — Technical SEO
+### Hub 7: Technical SEO
 
 **Primary:** `technical seo` (14k) + `technical seo services` (10k, KD 18)  
 **Route:** `/en/blog/technical-seo-guide` → audits + speed-optimization  
@@ -304,7 +304,7 @@ Also map: professional seo services, small business seo services, affordable seo
 
 ---
 
-### Hub 8 — On-page / Off-page / Link building / Content / Traffic
+### Hub 8: On-page / Off-page / Link building / Content / Traffic
 
 | Keyword | Vol | KD | Page type | Target |
 |---|---|---|---|---|

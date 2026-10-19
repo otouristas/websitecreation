@@ -1,4 +1,4 @@
-# Greek SEO Keyword Cluster — Ahrefs GR (2026-07-23)
+# Greek SEO Keyword Cluster: Ahrefs GR (2026-07-23)
 
 > **Market:** Greece only (`country=gr`).  
 > **Sources:** Ahrefs Keywords Explorer (overview, matching terms, questions, SERP overview).  
@@ -17,20 +17,20 @@
 | seo audit | 150 | 82 | Tool SERP (EN SaaS) | `/el/services/seo-audits` (+ tool later) |
 | on page seo | 100 | 73 | EN guides | `/el/blog/on-page-seo` |
 | local seo | 80 | 70 | Mixed; GR = τοπικό | `/el/services/local-seo` |
-| βελτιστοποιηση seo | 60 | — | Thin commercial | Services hub |
+| βελτιστοποιηση seo | 60 | - | Thin commercial | Services hub |
 | off page seo | 50 | 43 | Guide | `/el/blog/off-page-seo` |
-| εργαλεια seo | 20 | — | Listicle | `/el/blog/ergaleia-seo` |
-| λεξεις κλειδια seo | 0 | — | Use `λέξεις κλειδιά` (70) | `/el/blog/lexeis-kleidia-seo` |
-| βελτιωση καταταξης google | 0 | — | Fold into technical | `/el/blog/techniko-seo` |
-| ψηφιακο μαρκετινγκ seo | 0 | — | Related: ψηφιακό μάρκετινγκ (150) | Pillar + services |
-| seo συμβουλες | 0 | — | SMB playbook | `/el/blog/seo-stratigiki-mikres-epicheiriseis` |
-| seo στρατηγικη | 0 | — | SMB playbook | Same |
-| seo για μικρες επιχειρησεις | 0 | — | SMB playbook | Same |
-| google analytics seo | 0 | — | Tools guide | `/el/blog/ergaleia-seo` |
-| seo content | 10 | — | On-page guide | `/el/blog/on-page-seo` |
-| βελτιστοποιηση ιστοσελιδας | 0 | — | On-page + services | On-page + services |
-| seo για ιστοσελιδες | — | — | Commercial | Services hub |
-| τεχνικο seo | — | — | Use `τεχνικό seo` (100) | `/el/blog/techniko-seo` |
+| εργαλεια seo | 20 | - | Listicle | `/el/blog/ergaleia-seo` |
+| λεξεις κλειδια seo | 0 | - | Use `λέξεις κλειδιά` (70) | `/el/blog/lexeis-kleidia-seo` |
+| βελτιωση καταταξης google | 0 | - | Fold into technical | `/el/blog/techniko-seo` |
+| ψηφιακο μαρκετινγκ seo | 0 | - | Related: ψηφιακό μάρκετινγκ (150) | Pillar + services |
+| seo συμβουλες | 0 | - | SMB playbook | `/el/blog/seo-stratigiki-mikres-epicheiriseis` |
+| seo στρατηγικη | 0 | - | SMB playbook | Same |
+| seo για μικρες επιχειρησεις | 0 | - | SMB playbook | Same |
+| google analytics seo | 0 | - | Tools guide | `/el/blog/ergaleia-seo` |
+| seo content | 10 | - | On-page guide | `/el/blog/on-page-seo` |
+| βελτιστοποιηση ιστοσελιδας | 0 | - | On-page + services | On-page + services |
+| seo για ιστοσελιδες | - | - | Commercial | Services hub |
+| τεχνικο seo | - | - | Use `τεχνικό seo` (100) | `/el/blog/techniko-seo` |
 
 ---
 
@@ -38,18 +38,18 @@
 
 | # | Keyword | Vol GR | KD | Cluster | Target |
 |---:|---|---:|---:|---|---|
-| 1 | τιμές seo | 700 | — | Pricing | `/el/pricing` + `/el/blog/poso-kostizei-to-seo` |
-| 2 | κόστος seo | 600 | — | Pricing | Same |
+| 1 | τιμές seo | 700 | - | Pricing | `/el/pricing` + `/el/blog/poso-kostizei-to-seo` |
+| 2 | κόστος seo | 600 | - | Pricing | Same |
 | 3 | υπηρεσίες seo | 400 | 1 | Services | `/el/services/seo-audits` |
 | 4 | seo τι είναι | 400 | 0 | Definition | `/el/blog/seo-gia-arxarious` |
 | 5 | εταιρεια seo | 300 | 1 | Services | Services hub |
-| 6 | seo υπηρεσιες / variants | 150–300 | — | Services | Services hub |
-| 7 | ιατρικό seo | 250 | — | Vertical | Existing medical blogs |
+| 6 | seo υπηρεσιες / variants | 150–300 | - | Services | Services hub |
+| 7 | ιατρικό seo | 250 | - | Vertical | Existing medical blogs |
 | 8 | προώθηση ιστοσελίδων seo | 200 | 2 | Services | Services hub |
-| 9 | seo για ξενοδοχεία | 200 | — | Vertical | Existing hotel blogs |
-| 10 | seo για αρχαριους / τοπικο seo / seo αθηνα\|θεσσαλονικη | 150 | 0 / — | Beginner / Local | Pillar + local-seo |
+| 9 | seo για ξενοδοχεία | 200 | - | Vertical | Existing hotel blogs |
+| 10 | seo για αρχαριους / τοπικο seo / seo αθηνα\|θεσσαλονικη | 150 | 0 /: | Beginner / Local | Pillar + local-seo |
 
-Also notable: seo checker (450, KD 89, **tool SERP**) — wave 2+ free tool only.
+Also notable: seo checker (450, KD 89, **tool SERP**), wave 2+ free tool only.
 
 ---
 
@@ -81,7 +81,7 @@ Also notable: seo checker (450, KD 89, **tool SERP**) — wave 2+ free tool only
 | Τι είναι το τοπικό SEO; | Local service |
 | Χρειάζομαι SEO αν έχω Google Ads; | `/el/blog/seo-i-google-ads` |
 | Τι είναι SEO audit; | `/el/services/seo-audits` |
-| SEO για μικρή επιχείρηση — από πού ξεκινώ; | SMB playbook |
+| SEO για μικρή επιχείρηση: από πού ξεκινώ; | SMB playbook |
 
 ---
 
@@ -101,11 +101,11 @@ Also notable: seo checker (450, KD 89, **tool SERP**) — wave 2+ free tool only
 
 ## 6. Hub–spoke map
 
-### Hub A — Definition
+### Hub A: Definition
 - `/el/blog/seo-gia-arxarious`
 - Glossary: seo, on-page, off-page, τεχνικό, λέξεις-κλειδιά
 
-### Hub B — Commercial
+### Hub B: Commercial
 - `/el/services/seo-audits`, `/el/services/local-seo`, `/el/pricing`
 
 ### Spokes

@@ -1,7 +1,7 @@
 ---
 slug: hotel-seo-guide
 title: Hotel SEO - How to Win Direct Bookings in 2026
-description: A practical hotel SEO guide - cut OTA commissions, rank in Google, and win direct bookings with technical SEO, destination content, and AI search visibility.
+description: "A practical hotel SEO guide: cut OTA commissions, rank in Google and win direct bookings with technical SEO, destination content and AI search visibility."
 date: 2026-07-06
 updated: 2026-09-10
 author: AnotherSEOGuru Editorial Team
@@ -68,9 +68,9 @@ No engine guarantees it will mention you. What you control is whether your conte
 
 | Item | Typical 2026 range | What it covers |
 | :--- | :--- | :--- |
-| Monthly SEO (Foundations-Growth) | {{ENTRY_SEO}} – {{SEO_GROWTH}}/mo | Room pages, GBP, local content |
-| Competitive destination / Authority | {{SEO_GROWTH}} – {{SEO_AUTHORITY}}+/mo | Santorini, Mykonos, multilingual |
-| Technical + content audit | €400 – €800 | Pre-season or pre-redesign |
+| Monthly SEO (Foundations-Growth) | {{ENTRY_SEO}} to {{SEO_GROWTH}}/mo | Room pages, GBP, local content |
+| Competitive destination / Authority | {{SEO_GROWTH}} to {{SEO_AUTHORITY}}+/mo | Santorini, Mykonos, multilingual |
+| Technical + content audit | €400 to €800 | Pre-season or pre-redesign |
 | Hospitality website package | from {{ENTRY_WEBSITE}} | Booking UX, schema, speed |
 | Time to local / branded wins | 2–3 months | Maps + “hotel + town” |
 | Time to destination head terms | 4–6+ months | Needs content + authority |

@@ -1,4 +1,4 @@
-# Keyword Research Deliverable — AnotherSEOGuru (GR + EN)
+# Keyword Research Deliverable: AnotherSEOGuru (GR + EN)
 
 ## 1. Executive summary & the opportunity
 
@@ -21,30 +21,30 @@ The analysis combines two primary data sources:
 
 Greek‑market Ahrefs data is used as the canonical reference for volume and difficulty, e.g.:
 
-- `seo` — 4,300/mo, KD 93, informational, AI Overview.
-- `google ads` — 14,000/mo, KD 80, commercial/branded, question + video.
-- `κατασκευη ιστοσελιδων` — 700/mo, KD 51, commercial, AI Overview.
-- `κατασκευη ιστοσελιδων θεσσαλονικη` — 200/mo, KD 39, commercial/local, local pack.
-- `κατασκευη ιστοσελιδων αθηνα` — 80/mo, KD 39, commercial/local, local pack.
-- `κατασκευη eshop` — 700/mo, KD 2, commercial, AI Overview + paid.
-- `κατασκευη eshop woocommerce` — 150/mo, commercial.
-- `web hosting` — 450/mo, KD 61, commercial, question + local pack.
-- `web hosting greece` — 150/mo, KD 54, commercial/local, local pack.
-- `hosting` — 700/mo, KD 50, commercial/local, AI Overview.
-- `domain name` — 1,200/mo, KD 75, informational, paid + question.
-- `seo υπηρεσιες` — 300/mo, commercial.
-- `προωθηση ιστοσελιδων` — 300/mo, commercial, image.
-- `προωθηση ιστοσελιδων τιμη` — 150/mo, commercial.
-- `seo για eshop` — 200/mo, commercial.
-- `seo θεσσαλονικη` — 100/mo, commercial/local.
-- `aeo` — 150/mo, KD 0, info/branded, AI Overview.
-- `woocommerce τι ειναι` — 150/mo, KD 0, info, AI Overview.
+- `seo`: 4,300/mo, KD 93, informational, AI Overview.
+- `google ads`: 14,000/mo, KD 80, commercial/branded, question + video.
+- `κατασκευη ιστοσελιδων`: 700/mo, KD 51, commercial, AI Overview.
+- `κατασκευη ιστοσελιδων θεσσαλονικη`: 200/mo, KD 39, commercial/local, local pack.
+- `κατασκευη ιστοσελιδων αθηνα`: 80/mo, KD 39, commercial/local, local pack.
+- `κατασκευη eshop`: 700/mo, KD 2, commercial, AI Overview + paid.
+- `κατασκευη eshop woocommerce`: 150/mo, commercial.
+- `web hosting`: 450/mo, KD 61, commercial, question + local pack.
+- `web hosting greece`: 150/mo, KD 54, commercial/local, local pack.
+- `hosting`: 700/mo, KD 50, commercial/local, AI Overview.
+- `domain name`: 1,200/mo, KD 75, informational, paid + question.
+- `seo υπηρεσιες`: 300/mo, commercial.
+- `προωθηση ιστοσελιδων`: 300/mo, commercial, image.
+- `προωθηση ιστοσελιδων τιμη`: 150/mo, commercial.
+- `seo για eshop`: 200/mo, commercial.
+- `seo θεσσαλονικη`: 100/mo, commercial/local.
+- `aeo`: 150/mo, KD 0, info/branded, AI Overview.
+- `woocommerce τι ειναι`: 150/mo, KD 0, info, AI Overview.
 
 Question‑type keywords with strong AI‑Overview presence (`seo τι είναι`, `chatbot τι ειναι`, `google ads τι ειναι`, `τι ειναι seo`, `δημιουργια eshop τι χρειαζεται`, `ποσο κοστιζει ενα eshop`, `seo πως λειτουργει`, `domain name τι ειναι`, `hosting τι ειναι`, `ποιο web hosting να διαλεξω`, `πως συνεργαζονται seo και adwords`, `seo vs google ads`) are treated as AEO fuel for FAQ sections, blog posts, and glossary entries.
 
 All volumes are Greek‑market metrics unless explicitly marked as English (cluster C10), where international demand is more relevant. SERP‑feature annotations (AI Overview, local pack, questions, video, images, paid) are used to prioritize which queries should drive structured FAQs, comparison tables, and location‑based schema.
 
-## 3. Keyword universe — cluster overview
+## 3. Keyword universe: cluster overview
 
 The keyword universe for AnotherSEOGuru is organized into ten practical clusters, each with a pillar keyword, approximate cluster volume, dominant intent, a primary target page, current page status, and priority. These clusters are grounded in GSC queries and supported by Ahrefs GR data.
 
@@ -52,16 +52,16 @@ The keyword universe for AnotherSEOGuru is organized into ten practical clusters
 
 | Cluster | Pillar keyword | Approx. cluster volume (GR) | Dominant intent | Primary target page | Page status | Priority |
 |---|---|---|---|---|---|---|
-| C1 — SEO services & pricing | `seo υπηρεσιες` / `seo τιμες` | ~1,000+ (incl. pricing variants) | Commercial | `/gr/services/seo-audits` + `/services` hub | Exists (needs copy realignment) | P0 |
-| C2 — Web design by city | `κατασκευη ιστοσελιδων` + city modifiers | ~1,000+ (core + cities) | Commercial/local | `/gr/services/website-creation/[location]` | Exists, some cities missing | P1 |
-| C3 — E‑shop / WooCommerce | `κατασκευη eshop` / `seo για eshop` | ~1,000+ | Commercial | new `/gr/services/eshop` or `/services/eshop-woocommerce` | Gap/new | P2 |
-| C4 — Hosting & domains (off‑core) | `web hosting` / `hosting` / `domain name` | ~2,500+ | Commercial/info | `/blog/hosting-guide`, `/glossary/hosting`, `/glossary/domain-name` | New content | P3 (off‑core) |
-| C5 — Local SEO by city | `seo` + city modifiers | ~800+ | Commercial/local | `/gr/services/local-seo/[location]` | Exists for some cities, others missing | P1 |
-| C6 — AEO / AI visibility / GEO | `aeo` / AI SEO / GEO | ~400+ | Informational/branded | `/services/ai-visibility` + AI/AEO blogs | Exists (needs keyword alignment) | P2 |
-| C7 — Google Ads & SEO vs Ads (off‑core) | `google ads` / `seo vs google ads` | 14,000+ (Ads) + global comparison | Commercial/comparison | `/blog/seo-vs-google-ads-ellada` (+ optional Ads consulting page) | New content | P3 (off‑core) |
-| C8 — Chatbots / AI for business (off‑core) | `chatbot τι ειναι` / chatbot use‑cases | ~400+ | Informational/commercial | `/blog/chatbot-gia-epicheiriseis` + `/solutions/chatbot` | New content | P3 (off‑core) |
-| C9 — Vertical / industry SEO | tourism, medical, hospitality, services SEO | ~500+ | Commercial | `/solutions/[industry]` | Partially existing, needs expansion | P2 |
-| C10 — English head terms | `seo services`, `web development`, etc. | ~5,000+ (EN) | Commercial | `/services/*` (EN) + `/locations` | Exists (needs alignment to GR clusters) | P1 |
+| C1: SEO services & pricing | `seo υπηρεσιες` / `seo τιμες` | ~1,000+ (incl. pricing variants) | Commercial | `/gr/services/seo-audits` + `/services` hub | Exists (needs copy realignment) | P0 |
+| C2: Web design by city | `κατασκευη ιστοσελιδων` + city modifiers | ~1,000+ (core + cities) | Commercial/local | `/gr/services/website-creation/[location]` | Exists, some cities missing | P1 |
+| C3: E‑shop / WooCommerce | `κατασκευη eshop` / `seo για eshop` | ~1,000+ | Commercial | new `/gr/services/eshop` or `/services/eshop-woocommerce` | Gap/new | P2 |
+| C4: Hosting & domains (off‑core) | `web hosting` / `hosting` / `domain name` | ~2,500+ | Commercial/info | `/blog/hosting-guide`, `/glossary/hosting`, `/glossary/domain-name` | New content | P3 (off‑core) |
+| C5: Local SEO by city | `seo` + city modifiers | ~800+ | Commercial/local | `/gr/services/local-seo/[location]` | Exists for some cities, others missing | P1 |
+| C6: AEO / AI visibility / GEO | `aeo` / AI SEO / GEO | ~400+ | Informational/branded | `/services/ai-visibility` + AI/AEO blogs | Exists (needs keyword alignment) | P2 |
+| C7: Google Ads & SEO vs Ads (off‑core) | `google ads` / `seo vs google ads` | 14,000+ (Ads) + global comparison | Commercial/comparison | `/blog/seo-vs-google-ads-ellada` (+ optional Ads consulting page) | New content | P3 (off‑core) |
+| C8: Chatbots / AI for business (off‑core) | `chatbot τι ειναι` / chatbot use‑cases | ~400+ | Informational/commercial | `/blog/chatbot-gia-epicheiriseis` + `/solutions/chatbot` | New content | P3 (off‑core) |
+| C9: Vertical / industry SEO | tourism, medical, hospitality, services SEO | ~500+ | Commercial | `/solutions/[industry]` | Partially existing, needs expansion | P2 |
+| C10: English head terms | `seo services`, `web development`, etc. | ~5,000+ (EN) | Commercial | `/services/*` (EN) + `/locations` | Exists (needs alignment to GR clusters) | P1 |
 
 Off‑core clusters (C4, C7, C8) must be visibly flagged as “not currently a productized service” in internal docs and briefs so they are not accidentally pitched as core offerings. They are content and lead‑gen opportunities (blog, glossary, comparison guides) designed to support the main service clusters.
 
@@ -69,7 +69,7 @@ Off‑core clusters (C4, C7, C8) must be visibly flagged as “not currently a p
 
 Each cluster below includes example keywords (from GSC + Ahrefs), indicative metrics, intent/SERP notes, suggested target pages and H1/title angles, and key content gaps.
 
-### C1 — SEO services & pricing
+### C1: SEO services & pricing
 
 **Example keywords**
 
@@ -100,7 +100,7 @@ Each cluster below includes example keywords (from GSC + Ahrefs), indicative met
 
 ---
 
-### C2 — Web design by city
+### C2: Web design by city
 
 **Example keywords**
 
@@ -130,7 +130,7 @@ Each cluster below includes example keywords (from GSC + Ahrefs), indicative met
 
 ---
 
-### C3 — E‑shop / WooCommerce
+### C3: E‑shop / WooCommerce
 
 **Example keywords**
 
@@ -160,7 +160,7 @@ Each cluster below includes example keywords (from GSC + Ahrefs), indicative met
 
 ---
 
-### C4 — Hosting & domains (off‑core)
+### C4: Hosting & domains (off‑core)
 
 **Example keywords**
 
@@ -190,7 +190,7 @@ Each cluster below includes example keywords (from GSC + Ahrefs), indicative met
 
 ---
 
-### C5 — Local SEO by city
+### C5: Local SEO by city
 
 **Example keywords**
 
@@ -218,7 +218,7 @@ Each cluster below includes example keywords (from GSC + Ahrefs), indicative met
 
 ---
 
-### C6 — AEO / AI visibility / GEO
+### C6: AEO / AI visibility / GEO
 
 **Example keywords**
 
@@ -246,7 +246,7 @@ Each cluster below includes example keywords (from GSC + Ahrefs), indicative met
 
 ---
 
-### C7 — Google Ads & SEO vs Ads (off‑core)
+### C7: Google Ads & SEO vs Ads (off‑core)
 
 **Example keywords**
 
@@ -275,7 +275,7 @@ Each cluster below includes example keywords (from GSC + Ahrefs), indicative met
 
 ---
 
-### C8 — Chatbots / AI for business (off‑core)
+### C8: Chatbots / AI for business (off‑core)
 
 **Example keywords**
 
@@ -302,7 +302,7 @@ Each cluster below includes example keywords (from GSC + Ahrefs), indicative met
 
 ---
 
-### C9 — Vertical / industry SEO
+### C9: Vertical / industry SEO
 
 **Example keywords**
 
@@ -329,7 +329,7 @@ Each cluster below includes example keywords (from GSC + Ahrefs), indicative met
 
 ---
 
-### C10 — English head terms
+### C10: English head terms
 
 **Example keywords**
 
@@ -384,12 +384,12 @@ Generative engines and AI Overviews expand head queries into trees of subquestio
 
 Likely subtopics:
 
-- **Cost** — “πόσο κοστιζει ενα e‑shop;” with breakdown by features, product count, integrations.
-- **Platform choice** — WooCommerce vs Shopify vs custom; pros/cons and recommendations for Greek SMEs.
-- **Timeline** — “πόσο χρόνο χρειάζεται” for design, development, and launch.
-- **Requirements** — “τι χρειάζεται” (domain, hosting, SSL, content, product photos, payment gateway, logistics).
-- **SEO** — “SEO για e‑shop” basics (category structure, filters, page speed, structured data).
-- **Legal/tax** — invoices, GDPR, cookie consent, with high‑level guidance and external links.
+- **Cost**: “πόσο κοστιζει ενα e‑shop;” with breakdown by features, product count, integrations.
+- **Platform choice**: WooCommerce vs Shopify vs custom; pros/cons and recommendations for Greek SMEs.
+- **Timeline**: “πόσο χρόνο χρειάζεται” for design, development, and launch.
+- **Requirements**: “τι χρειάζεται” (domain, hosting, SSL, content, product photos, payment gateway, logistics).
+- **SEO**: “SEO για e‑shop” basics (category structure, filters, page speed, structured data).
+- **Legal/tax**: invoices, GDPR, cookie consent, with high‑level guidance and external links.
 
 Structured sections on the new e‑shop service page should mirror this tree so a conversational query like “θέλω e‑shop, πόσο κοστίζει και τι χρειάζεται;” finds a single page that covers all angles.
 
@@ -481,12 +481,12 @@ Schema as citation:
 
 Use your hub‑spoke system (as defined in `src/lib/linking/hub-spoke.ts`) to connect clusters to thematic hubs:
 
-- **SEO Fundamentals hub** — glossary and basic SEO blogs; anchors like “τι είναι SEO”, “βασικές αρχές SEO”.
-- **Website SEO hub** — web design by city pages and e‑shop content; anchors like “SEO για ιστοσελίδες”.
-- **AI SEO hub** — AEO and AI visibility pages; anchors like “Answer Engine Optimization”, “AI SEO”.
-- **Technical SEO hub** — hosting and technical SEO sections; anchors like “τεχνικό SEO”, “ταχύτητα ιστοσελίδας”.
-- **SEO Tools hub** — keyword research and analytics content; anchors like “εργαλεία SEO”, “keyword research tools”.
-- **Traffic Growth hub** — Ads and chatbot content; anchors like “αύξηση επισκεψιμότητας”, “περισσότεροι πελάτες από την Google”.
+- **SEO Fundamentals hub**: glossary and basic SEO blogs; anchors like “τι είναι SEO”, “βασικές αρχές SEO”.
+- **Website SEO hub**: web design by city pages and e‑shop content; anchors like “SEO για ιστοσελίδες”.
+- **AI SEO hub**: AEO and AI visibility pages; anchors like “Answer Engine Optimization”, “AI SEO”.
+- **Technical SEO hub**: hosting and technical SEO sections; anchors like “τεχνικό SEO”, “ταχύτητα ιστοσελίδας”.
+- **SEO Tools hub**: keyword research and analytics content; anchors like “εργαλεία SEO”, “keyword research tools”.
+- **Traffic Growth hub**: Ads and chatbot content; anchors like “αύξηση επισκεψιμότητας”, “περισσότεροι πελάτες από την Google”.
 
 The Greek `/gr/locations` hub should act as the entry point for all city‑based service pages, with internal links from the home page and `/gr/services`. Each location page should link back to relevant service pillars (SEO services, website creation, local SEO) and cross‑link between EN and GR via hreflang.
 
@@ -499,11 +499,11 @@ Anchor text strategy:
 
 Execution will rely on `master-keyword-list.csv`, mapping each keyword to a target URL, file path, page status, and priority. At a high level:
 
-- **Existing pages (P0/P1)** — optimize copy, headings, FAQs, and internal links for queries already ranking between positions 6–20 in GSC (e.g. `seo υπηρεσιες`, `προωθηση ιστοσελιδων τιμη`, `κατασκευη ιστοσελιδων αθηνα`, local SEO queries for Ρέθυμνο).
-- **City expansion (P1)** — add missing Greek cities to `src/data/locations.ts` and generate corresponding `/gr/services/*/[location]` pages.[cite:8]
-- **New e‑shop service (P2)** — create `/gr/services/eshop-creation` (and EN counterpart) structured around the fan‑out tree for `κατασκευη eshop`.
-- **AEO/AI content (P2)** — align `/services/ai-visibility` and AI blogs with AEO queries in GR.
-- **Off‑core content (P3)** — add hosting/domains, Ads comparison, and chatbot guides as blog and glossary entries.
+- **Existing pages (P0/P1)**: optimize copy, headings, FAQs, and internal links for queries already ranking between positions 6–20 in GSC (e.g. `seo υπηρεσιες`, `προωθηση ιστοσελιδων τιμη`, `κατασκευη ιστοσελιδων αθηνα`, local SEO queries for Ρέθυμνο).
+- **City expansion (P1)**: add missing Greek cities to `src/data/locations.ts` and generate corresponding `/gr/services/*/[location]` pages.[cite:8]
+- **New e‑shop service (P2)**: create `/gr/services/eshop-creation` (and EN counterpart) structured around the fan‑out tree for `κατασκευη eshop`.
+- **AEO/AI content (P2)**: align `/services/ai-visibility` and AI blogs with AEO queries in GR.
+- **Off‑core content (P3)**: add hosting/domains, Ads comparison, and chatbot guides as blog and glossary entries.
 
 Each CSV row tracks: `keyword, language, cluster, monthly_volume_gr, difficulty, intent, serp_features, current_gsc_position, current_impressions, target_url, target_file, page_status (exists/gap/new), priority (P0–P3)`.
 
@@ -511,10 +511,10 @@ Each CSV row tracks: `keyword, language, cluster, monthly_volume_gr, difficulty,
 
 Based on demand, competition, and ease of implementation:
 
-- **P0 quick wins** — improve existing pages already near page 1 (positions 6–20) and add FAQ schema for high‑value questions (SEO services, web design Athens/Thessaloniki, local SEO in existing cities).
-- **P1 city expansion** — add missing Greek cities to `locations.ts`, generate local SEO and web design pages, and connect them via `/gr/locations`.
-- **P2 e‑shop + AEO content** — launch e‑shop/WooCommerce service pages and strengthen AEO/AI visibility content and FAQs.
-- **P3 off‑core topics** — publish hosting/domain guides, Google Ads vs SEO comparison, and chatbot articles; clearly mark them as content, not primary services.
+- **P0 quick wins**: improve existing pages already near page 1 (positions 6–20) and add FAQ schema for high‑value questions (SEO services, web design Athens/Thessaloniki, local SEO in existing cities).
+- **P1 city expansion**: add missing Greek cities to `locations.ts`, generate local SEO and web design pages, and connect them via `/gr/locations`.
+- **P2 e‑shop + AEO content**: launch e‑shop/WooCommerce service pages and strengthen AEO/AI visibility content and FAQs.
+- **P3 off‑core topics**: publish hosting/domain guides, Google Ads vs SEO comparison, and chatbot articles; clearly mark them as content, not primary services.
 
 Roadmap items will be tied to specific keyword clusters and pages via the CSV map, making it straightforward to execute changes page‑by‑page.
 

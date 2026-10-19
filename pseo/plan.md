@@ -258,9 +258,9 @@ MONTHLY KEYWORD TRACKING TEMPLATE
 Track rankings, traffic, and changes for each keyword:
 
 Keyword	Current Position	Last Month	Traffic (organic)	Clicks	Impressions	CTR	Status	Action
-website seo	Pending	—	—	—	—	—	New	Monitor after publish
-on page seo	Pending	—	—	—	—	—	New	Monitor after publish
-seo for beginners	Pending	—	—	—	—	—	New	Monitor after publish
+website seo	Pending	-	-	-	-	-	New	Monitor after publish
+on page seo	Pending	-	-	-	-	-	New	Monitor after publish
+seo for beginners	Pending	-	-	-	-	-	New	Monitor after publish
 Update from: Google Search Console API (monthly export)
 
 CONCLUSION & NEXT STEPS

@@ -60,7 +60,7 @@ function primaryTitleMax(text: string): number {
  * flat /\bguarantee/i flags our own disclaimer on /pricing.
  */
 const BANNED_METADATA: readonly { rx: RegExp; label: string; negatable?: boolean }[] = [
-  { rx: /—/, label: 'em dash' },
+  { rx: /[\u2014\u2015]|\s\u2013\s/, label: 'em dash' },
   // "best practices" names a checklist (technical SEO best practices). Bare
   // "best" is still a superlative claim and stays banned.
   { rx: /\bbest\b(?!\s+practices\b)/i, label: '"best"' },
@@ -579,7 +579,7 @@ export function buildIndustryMetadata(
   const pains = (locale === 'el' ? industriesEl[industry.slug]?.painPoints : undefined)
     ?? (industry as { painPoints?: string[] }).painPoints
     ?? [];
-  const painTail = pains.slice(0, 2).map((t) => (/[.!?]$/.test(t.trim()) ? t.trim() : `${t.trim()}.`)).join(' ');
+  const painTail = painPriorities(pains, locale);
   // Authored descriptions win when they already fill the SERP window; otherwise
   // top up from the industry's own pain points rather than generic filler.
   const composed = indDesc && indDesc.length >= 140
@@ -621,6 +621,25 @@ const EN_SHORT_INDUSTRY_SERVICE_TITLE: Record<string, string> = {
   'eshop-seo': 'E-shop SEO',
 };
 
+/** Lower-case a phrase for mid-sentence use, keeping acronyms such as AI or HVAC. */
+function lowerKeepAcronyms(text: string): string {
+  return text
+    .split(' ')
+    .map((w) => (/^[\p{Lu}\d&/+-]{2,}$/u.test(w) ? w : w.toLowerCase()))
+    .join(' ');
+}
+
+/** First two pain points as one sentence: "Key priorities: x and y." */
+function painPriorities(pains: readonly string[], locale: SiteLocale): string {
+  const items = pains
+    .slice(0, 2)
+    .map((t) => lowerKeepAcronyms(t.trim().replace(/[.!?;]+$/u, '')))
+    .filter(Boolean);
+  if (items.length === 0) return '';
+  const list = items.join(locale === 'el' ? ' και ' : ' and ');
+  return locale === 'el' ? `Κύριες προτεραιότητες: ${list}.` : `Key priorities: ${list}.`;
+}
+
 export function buildIndustryServiceMetadata(
   industry: { name: string; slug: string; painPoints?: readonly string[] },
   service: { name: string; slug: string },
@@ -641,10 +660,10 @@ export function buildIndustryServiceMetadata(
     if (svcEl) svcName = svcEl.name;
   }
 
-  // Pain points are fragments; punctuate before appending so descriptions do
-  // not run two sentences together.
-  const punct = (t?: string) => (t ? (/[.!?]$/.test(t.trim()) ? t.trim() + ' ' : t.trim() + '. ') : '');
-  const tail = punct(pains[0]) + punct(pains[1]);
+  // Pain points are noun-phrase fragments ("Class scheduling"). Listing them
+  // as bare sentences read as "Gyms. Class scheduling. Membership signups.",
+  // so they go into one grammatical sentence instead.
+  const tail = painPriorities(pains, locale);
 
   const descEl = fitDescription(`${svcName} για ${indFor}. ${tail}`.replace(/\s+/g, ' '), [
     'Στρατηγική SEO και σχεδιασμός βάσει της πραγματικής ζήτησης του κλάδου σας, όχι έτοιμο πακέτο. Ζητήστε δωρεάν προσφορά.',
@@ -661,7 +680,7 @@ export function buildIndustryServiceMetadata(
     'Ζητήστε δωρεάν προσφορά.',
     'Ζητήστε προσφορά.',
   ]);
-  const descEn = fitDescription(`${svcName} for ${indName.toLowerCase()}. ${tail}`.replace(/\s+/g, ' '), [
+  const descEn = fitDescription(`${svcName} for ${lowerKeepAcronyms(indName)}. ${tail}`.replace(/\s+/g, ' '), [
     "Custom web design and SEO strategy built on your sector's real search demand, not a template. Request a free quote.",
     "Web design and SEO strategy built on your sector's real search demand, not a template. Request a quote.",
     "Strategy built on your sector's real search demand, not a template. Request a quote.",
@@ -672,6 +691,7 @@ export function buildIndustryServiceMetadata(
     "Strategy shaped by your sector's demand. Request a free quote today.",
     "Strategy tailored to your sector. Request a free quote today.",
     "Request a free quote from our team today.",
+    'Request a quote.',
   ]);
 
   // Only advertise a locale twin that is itself indexable. A pairing can pass

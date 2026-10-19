@@ -36,8 +36,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     path: "/platform/pricing",
     title: { en: "SEO Software Pricing: AnotherSEOGuru App Plans", el: "AnotherSEOGuru App: τιμές λογισμικού SEO" },
     description: {
-      en: `AnotherSEOGuru App pricing: Launch $${LAUNCH.monthly}, Growth $${GROWTH.monthly} and Agency $${AGENCY.monthly} a month, two months free on yearly billing. Search Console features never use credits on any plan.`,
-      el: `Τιμές AnotherSEOGuru App: Launch $${LAUNCH.monthly}, Growth $${GROWTH.monthly} και Agency $${AGENCY.monthly} τον μήνα, δύο μήνες δώρο με ετήσια χρέωση. Οι λειτουργίες του Search Console δεν χρεώνουν μονάδες.`,
+      en: `AnotherSEOGuru App pricing: Launch $${LAUNCH.monthly}, Growth $${GROWTH.monthly} and Agency $${AGENCY.monthly} a month, two months free yearly. Search Console features never use credits.`,
+      el: `Τιμές AnotherSEOGuru App: Launch $${LAUNCH.monthly}, Growth $${GROWTH.monthly} και Agency $${AGENCY.monthly} τον μήνα, δύο μήνες δώρο ετησίως. Το Search Console δεν χρεώνει μονάδες.`,
     },
     keyword: { en: "SEO software pricing", el: "τιμές λογισμικού SEO" },
   });

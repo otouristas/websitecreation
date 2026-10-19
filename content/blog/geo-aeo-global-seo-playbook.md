@@ -1,7 +1,7 @@
 ---
 slug: geo-aeo-global-seo-playbook
 title: GEO, AEO & AI SEO - Global Playbook for 2026
-description: Generative Engine Optimization (GEO), Answer Engine Optimization (AEO), and traditional SEO - how teams rank on Google, ChatGPT, Perplexity, and Gemini.
+description: "Generative Engine Optimization (GEO), Answer Engine Optimization (AEO) and traditional SEO: how teams rank on Google, ChatGPT, Perplexity and Gemini."
 date: 2026-05-31
 author: AnotherSEOGuru Editorial Team
 category: AI & Search

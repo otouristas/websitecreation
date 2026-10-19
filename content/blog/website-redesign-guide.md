@@ -62,9 +62,9 @@ The same discipline applies when you change CMS or move to a [new build](/en/ser
 
 | Project type | Typical cost | Includes |
 | :--- | :--- | :--- |
-| Small business (≈10 pages) | {{ENTRY_WEBSITE}} – {{WEBSITE_PRO}} | Design + redirects + basic SEO migration |
-| Mid-size / multilingual | {{WEBSITE_PRO}} – {{WEBSITE_BUSINESS}} | Full inventory, schema, CWV |
-| E-shop or hotel with bookings | €2,500 – €4,000+ | Category/room maps, booking, complex redirects |
+| Small business (≈10 pages) | {{ENTRY_WEBSITE}} to {{WEBSITE_PRO}} | Design + redirects + basic SEO migration |
+| Mid-size / multilingual | {{WEBSITE_PRO}} to {{WEBSITE_BUSINESS}} | Full inventory, schema, CWV |
+| E-shop or hotel with bookings | €2,500 to €4,000+ | Category/room maps, booking, complex redirects |
 
 A redesign with proper migration typically costs the same as a new build because it includes carrying over SEO history. “Cheap” redesigns that ignore migration cost far more in lost traffic. See [pricing](/en/pricing) and the [website cost guide](/en/blog/how-much-does-a-website-cost).
 

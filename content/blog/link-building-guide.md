@@ -150,10 +150,10 @@ The brackets are the strategy. They force you to name their page, their gap, and
 | Approach | Typical cost (GR, 2026) | Placements / month (quality) | Time to rank impact |
 | :--- | :--- | :--- | :--- |
 | DIY founder outreach | Time only | 0–3 | 3–6+ months |
-| Scoped white-hat campaign | €400 – €1,500+/mo | 2–8 relevant | 2–4 months to signals |
+| Scoped white-hat campaign | €400 to €1,500+/mo | 2–8 relevant | 2–4 months to signals |
 | Inside Growth retainer | {{SEO_GROWTH}}/mo package band | Steady drip | Compounds with content |
 | Inside Authority retainer | {{SEO_AUTHORITY}}+/mo package band | Higher capacity | Competitive niches |
-| Spam packages | €50 – €200 “lots of links” | Dozens of junk | Risk > reward |
+| Spam packages | €50 to €200 “lots of links” | Dozens of junk | Risk > reward |
 
 There is **no magic number** of backlinks. Compete against who already ranks for your money query: match topical relevance, then exceed with better pages and steadier acquisition. See [pricing](/en/pricing) and [how much SEO costs](/en/blog/how-much-does-seo-cost).
 

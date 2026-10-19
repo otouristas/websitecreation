@@ -83,9 +83,9 @@ export const portfolioProjects: PortfolioProject[] = [
 
     services: ['website-creation', 'local-seo', 'speed-optimization'],
                                                     seoTitle: 'Aggelos Rentals | rent a car Piraeus',
-    seoDescription: 'Aggelos Rentals, car rental with port and airport delivery in Piraeus and Paros. SEO for “rent a car Piraeus”.',
+    seoDescription: 'Aggelos Rentals: car rental with port and airport delivery in Piraeus and Paros. Case study: the website and SEO we built to rank for “rent a car Piraeus”.',
     seoTitleEl: 'Aggelos Rentals | ενοικίαση αυτοκινήτου Πειραιά',
-    seoDescriptionEl: 'Aggelos Rentals, ενοικίαση αυτοκινήτων με παράδοση σε λιμάνι και αεροδρόμιο στον Πειραιά και στην Πάρο. SEO για «ενοικίαση αυτοκινήτου Πειραιά».',
+    seoDescriptionEl: 'Aggelos Rentals: ενοικίαση αυτοκινήτων με παράδοση σε λιμάνι και αεροδρόμιο, σε Πειραιά και Πάρο. Ιστοσελίδα και SEO με στόχο «ενοικίαση αυτοκινήτου Πειραιά».',
     featured: true,
   },
   {
@@ -114,9 +114,9 @@ export const portfolioProjects: PortfolioProject[] = [
 
     services: ['website-creation', 'seo-web-design', 'local-seo'],
                                                     seoTitle: 'Antiparos Rent a Car | rent a car Antiparos',
-    seoDescription: 'Antiparos Rent a Car, island car and scooter rental in Antiparos. SEO for “rent a car Antiparos”.',
+    seoDescription: 'Antiparos Rent a Car: car and scooter rental on Antiparos. Case study: the mobile-first website and technical SEO we built to rank for “rent a car Antiparos”.',
     seoTitleEl: 'Antiparos Rent a Car | ενοικίαση αυτοκινήτου Αντίπαρος',
-    seoDescriptionEl: 'Antiparos Rent a Car, ενοικίαση αυτοκινήτων και μηχανών στην Αντίπαρο. SEO για «ενοικίαση αυτοκινήτου Αντίπαρος».',
+    seoDescriptionEl: 'Antiparos Rent a Car: ενοικίαση αυτοκινήτων και μηχανών στην Αντίπαρο. Ιστοσελίδα και SEO με στόχο «ενοικίαση αυτοκινήτου Αντίπαρος».',
     featured: true,
   },
   {
@@ -145,9 +145,9 @@ export const portfolioProjects: PortfolioProject[] = [
 
     services: ['website-creation', 'local-seo', 'content-creation'],
                                                     seoTitle: 'Cyclades Rent a Car | rent a car Cyclades',
-    seoDescription: 'Cyclades Rent a Car, multi-island car rental comparison platform in Cyclades islands. SEO for “rent a car Cyclades”.',
+    seoDescription: 'Cyclades Rent a Car: a car rental comparison platform for the Cyclades islands. Case study: the website and SEO we built to rank for “rent a car Cyclades”.',
     seoTitleEl: 'Cyclades Rent a Car | ενοικίαση αυτοκινήτου Κυκλάδες',
-    seoDescriptionEl: 'Cyclades Rent a Car, πλατφόρμα σύγκρισης ενοικίασης αυτοκινήτων στα νησιά των Κυκλάδων. SEO για «ενοικίαση αυτοκινήτου Κυκλάδες».',
+    seoDescriptionEl: 'Cyclades Rent a Car: πλατφόρμα σύγκρισης ενοικίασης αυτοκινήτων στα νησιά των Κυκλάδων. Ιστοσελίδα και SEO με στόχο «ενοικίαση αυτοκινήτου Κυκλάδες».',
     featured: true,
   },
   {
@@ -176,9 +176,9 @@ export const portfolioProjects: PortfolioProject[] = [
 
     services: ['website-creation', 'seo-web-design'],
                                                     seoTitle: 'Naxos Car Rentals | rent a car Naxos',
-    seoDescription: 'Naxos Car Rentals, Naxos car rental in Naxos. SEO for “rent a car Naxos”.',
+    seoDescription: 'Naxos Car Rentals: car rental on Naxos. Case study: the website and SEO we built to rank for “rent a car Naxos” and win direct bookings from mobile searches.',
     seoTitleEl: 'Naxos Car Rentals | ενοικίαση αυτοκινήτου Νάξος',
-    seoDescriptionEl: 'Naxos Car Rentals, ενοικίαση αυτοκινήτων στη Νάξο. SEO για «ενοικίαση αυτοκινήτου Νάξος».',
+    seoDescriptionEl: 'Naxos Car Rentals: ενοικίαση αυτοκινήτων στη Νάξο. Μελέτη περίπτωσης: η ιστοσελίδα και το SEO που φτιάξαμε για την αναζήτηση «ενοικίαση αυτοκινήτου Νάξος».',
     featured: true,
   },
   {
@@ -207,9 +207,9 @@ export const portfolioProjects: PortfolioProject[] = [
 
     services: ['website-creation', 'local-seo'],
                                                     seoTitle: 'Rent a Car Antiparos | Antiparos rent a car',
-    seoDescription: 'Rent a Car Antiparos, local Antiparos rent-a-car (.gr) in Antiparos. SEO for “Antiparos rent a car”.',
+    seoDescription: 'Rent a Car Antiparos: local car rental on Antiparos. Case study: the mobile-first website and technical SEO we built to rank for “Antiparos rent a car”.',
     seoTitleEl: 'Rent a Car Antiparos | ενοικίαση αυτοκινήτου Αντίπαρος',
-    seoDescriptionEl: 'Rent a Car Antiparos, τοπική ενοικίαση αυτοκινήτων στην Αντίπαρο. SEO για «ενοικίαση αυτοκινήτου Αντίπαρος».',
+    seoDescriptionEl: 'Rent a Car Antiparos: τοπική ενοικίαση αυτοκινήτων στην Αντίπαρο. Μελέτη περίπτωσης για την ιστοσελίδα και το SEO με στόχο «ενοικίαση αυτοκινήτου Αντίπαρος».',
     featured: false,
   },
   {
@@ -238,9 +238,9 @@ export const portfolioProjects: PortfolioProject[] = [
 
     services: ['website-creation', 'local-seo'],
                                                     seoTitle: 'Rent a Car in Paros | Paros car hire',
-    seoDescription: 'Rent a Car in Paros, Paros car hire brand in Paros. SEO for “rent a car in Paros”.',
+    seoDescription: 'Rent a Car in Paros: car hire on Paros. Case study: the website and SEO we built to rank for “rent a car in Paros” and win direct bookings.',
     seoTitleEl: 'Rent a Car in Paros | ενοικίαση αυτοκινήτου στην Πάρο',
-    seoDescriptionEl: 'Rent a Car in Paros, ενοικίαση αυτοκινήτων στην Πάρο. SEO για «ενοικίαση αυτοκινήτου στην Πάρο».',
+    seoDescriptionEl: 'Rent a Car in Paros: ενοικίαση αυτοκινήτων στην Πάρο. Μελέτη περίπτωσης: η ιστοσελίδα και το SEO που φτιάξαμε για «ενοικίαση αυτοκινήτου στην Πάρο».',
     featured: false,
   },
   {
@@ -269,9 +269,9 @@ export const portfolioProjects: PortfolioProject[] = [
 
     services: ['website-creation', 'local-seo'],
                                                     seoTitle: 'Rent a Car Piraeus | Piraeus port car rental',
-    seoDescription: 'Rent a Car Piraeus, Piraeus port city car rental in Piraeus. SEO for “rent a car Piraeus”.',
+    seoDescription: 'Rent a Car Piraeus: car rental in the port city of Piraeus. Case study: the mobile-first website and technical SEO we built to rank for “rent a car Piraeus”.',
     seoTitleEl: 'Rent a Car Piraeus | ενοικίαση αυτοκινήτου Πειραιάς',
-    seoDescriptionEl: 'Rent a Car Piraeus, ενοικίαση αυτοκινήτων στον Πειραιά. SEO για «ενοικίαση αυτοκινήτου Πειραιάς».',
+    seoDescriptionEl: 'Rent a Car Piraeus: ενοικίαση αυτοκινήτων στον Πειραιά. Μελέτη περίπτωσης: η ιστοσελίδα και το SEO που φτιάξαμε για «ενοικίαση αυτοκινήτου Πειραιάς».',
     featured: false,
   },
   {
@@ -300,9 +300,9 @@ export const portfolioProjects: PortfolioProject[] = [
 
     services: ['website-creation', 'speed-optimization'],
                                                     seoTitle: 'Athens Rent a Car | rent a car Athens',
-    seoDescription: 'Athens Rent a Car, Athens city and airport car rental in Athens. SEO for “rent a car Athens”.',
+    seoDescription: 'Athens Rent a Car: city and airport car rental in Athens. Case study: the mobile-first website and technical SEO we built to rank for “rent a car Athens”.',
     seoTitleEl: 'Athens Rent a Car | ενοικίαση αυτοκινήτου Αθήνα',
-    seoDescriptionEl: 'Athens Rent a Car, ενοικίαση αυτοκινήτων στην Αθήνα. SEO για «ενοικίαση αυτοκινήτου Αθήνα».',
+    seoDescriptionEl: 'Athens Rent a Car: ενοικίαση αυτοκινήτων στην Αθήνα. Μελέτη περίπτωσης: η ιστοσελίδα και το SEO που φτιάξαμε για την αναζήτηση «ενοικίαση αυτοκινήτου Αθήνα».',
     featured: false,
   },
   {
@@ -331,9 +331,9 @@ export const portfolioProjects: PortfolioProject[] = [
 
     services: ['website-creation', 'local-seo'],
                                                     seoTitle: 'Rent a Car Paros | rentacar Paros',
-    seoDescription: 'Rent a Car Paros, Paros car rental (.gr domain) in Paros. SEO for “rentacar Paros”.',
+    seoDescription: 'Rent a Car Paros: car rental on Paros. Case study: the website and SEO we built to rank for “rentacar Paros” and win direct bookings from mobile searches.',
     seoTitleEl: 'Rent a Car Paros | ενοικίαση αυτοκινήτου Πάρος',
-    seoDescriptionEl: 'Rent a Car Paros, ενοικίαση αυτοκινήτων στην Πάρο. SEO για «ενοικίαση αυτοκινήτου Πάρος».',
+    seoDescriptionEl: 'Rent a Car Paros: ενοικίαση αυτοκινήτων στην Πάρο. Μελέτη περίπτωσης: η ιστοσελίδα και το SEO που φτιάξαμε για την αναζήτηση «ενοικίαση αυτοκινήτου Πάρος».',
     liveStatus: 'offline', // site offline at scrape time
     featured: false,
   },
@@ -363,9 +363,9 @@ export const portfolioProjects: PortfolioProject[] = [
 
     services: ['website-creation', 'seo-web-design', 'content-creation'],
                                                     seoTitle: 'Hotels Santorini | Santorini hotel booking',
-    seoDescription: 'Hotels Santorini, Santorini hotels directory and bookings in Santorini. SEO for “hotels Santorini”.',
+    seoDescription: 'Hotels Santorini: a hotel directory and booking site for Santorini. Case study: the website and SEO we built to rank for “hotels Santorini”.',
     seoTitleEl: 'Hotels Santorini | ξενοδοχεία Σαντορίνη',
-    seoDescriptionEl: 'Hotels Santorini, κατάλογος και κρατήσεις ξενοδοχείων στη Σαντορίνη. SEO για «ξενοδοχεία Σαντορίνη».',
+    seoDescriptionEl: 'Hotels Santorini: κατάλογος και κρατήσεις ξενοδοχείων στη Σαντορίνη. Μελέτη περίπτωσης για την ιστοσελίδα και το SEO με στόχο «ξενοδοχεία Σαντορίνη».',
     featured: true,
   },
   {
@@ -394,9 +394,9 @@ export const portfolioProjects: PortfolioProject[] = [
 
     services: ['website-creation', 'content-creation'],
                                                     seoTitle: 'Hotels Sifnos | Sifnos accommodation',
-    seoDescription: 'Hotels Sifnos, Sifnos hotels and stays in Sifnos. SEO for “hotels Sifnos”.',
+    seoDescription: 'Hotels Sifnos: hotels and stays on Sifnos. Case study: the website and SEO we built to rank for “hotels Sifnos” and win direct bookings from mobile searches.',
     seoTitleEl: 'Hotels Sifnos | ξενοδοχεία Σίφνος',
-    seoDescriptionEl: 'Hotels Sifnos, ξενοδοχεία και διαμονή στη Σίφνο. SEO για «ξενοδοχεία Σίφνος».',
+    seoDescriptionEl: 'Hotels Sifnos: ξενοδοχεία και διαμονή στη Σίφνο. Μελέτη περίπτωσης: η γρήγορη ιστοσελίδα και το τεχνικό SEO που φτιάξαμε για «ξενοδοχεία Σίφνος».',
     featured: true,
   },
   {
@@ -425,9 +425,9 @@ export const portfolioProjects: PortfolioProject[] = [
 
     services: ['website-creation', 'seo-web-design'],
                                                     seoTitle: 'Onoma Hotel | boutique hotel Greece',
-    seoDescription: 'Onoma Hotel, boutique hotel brand site in Greece. SEO for “Onoma Hotel”.',
+    seoDescription: 'Onoma Hotel: a boutique hotel in Greece. Case study: the website and SEO we built to rank for “Onoma Hotel” and win direct bookings from mobile searches.',
     seoTitleEl: 'Onoma Hotel | boutique ξενοδοχείο Ελλάδα',
-    seoDescriptionEl: 'Onoma Hotel, ιστοσελίδα boutique ξενοδοχείου στην Ελλάδα. SEO για «Onoma Hotel».',
+    seoDescriptionEl: 'Onoma Hotel: ιστοσελίδα boutique ξενοδοχείου στην Ελλάδα. Μελέτη περίπτωσης: η γρήγορη ιστοσελίδα και το τεχνικό SEO που φτιάξαμε για «Onoma Hotel».',
     featured: true,
   },
   {
@@ -456,9 +456,9 @@ export const portfolioProjects: PortfolioProject[] = [
 
     services: ['website-creation', 'local-seo', 'ai-visibility'],
                                                     seoTitle: 'Villa Olivia Clara | luxury villa Crete',
-    seoDescription: 'Villa Olivia Clara, luxury private villa in Crete. SEO for “Villa Olivia Clara”.',
+    seoDescription: 'Villa Olivia Clara: a luxury private villa in Crete. Case study: the mobile-first website and technical SEO we built to rank for “Villa Olivia Clara”.',
     seoTitleEl: 'Villa Olivia Clara | πολυτελής βίλα Κρήτη',
-    seoDescriptionEl: 'Villa Olivia Clara, πολυτελής ιδιωτική βίλα στην Κρήτη. SEO για «Villa Olivia Clara».',
+    seoDescriptionEl: 'Villa Olivia Clara: πολυτελής ιδιωτική βίλα στην Κρήτη. Μελέτη περίπτωσης: η ιστοσελίδα και το SEO που φτιάξαμε για την αναζήτηση «Villa Olivia Clara».',
     featured: true,
   },
   {
@@ -487,9 +487,9 @@ export const portfolioProjects: PortfolioProject[] = [
 
     services: ['website-creation', 'seo-web-design'],
                                                     seoTitle: 'Mykonos Luxury | Mykonos luxury villa',
-    seoDescription: 'Mykonos Luxury, luxury Mykonos journey and villa concierge in Mykonos. SEO for “Mykonos luxury villa”.',
+    seoDescription: 'Mykonos Luxury: luxury villas and concierge on Mykonos. Case study: the mobile-first website and technical SEO we built to rank for “Mykonos luxury villa”.',
     seoTitleEl: 'Mykonos Luxury | πολυτελής βίλα Μύκονος',
-    seoDescriptionEl: 'Mykonos Luxury, πολυτελής διαμονή και concierge στη Μύκονο. SEO για «πολυτελής βίλα Μύκονος».',
+    seoDescriptionEl: 'Mykonos Luxury: πολυτελής διαμονή και concierge στη Μύκονο. Μελέτη περίπτωσης: η ιστοσελίδα και το SEO που φτιάξαμε για «πολυτελής βίλα Μύκονος».',
     featured: true,
   },
   {
@@ -518,9 +518,9 @@ export const portfolioProjects: PortfolioProject[] = [
 
     services: ['website-creation', 'content-creation', 'local-seo'],
                                                     seoTitle: 'Discover Cyclades | Cyclades travel guide',
-    seoDescription: 'Discover Cyclades, Cyclades travel guide and discovery platform in Cyclades. SEO for “Discover Cyclades”.',
+    seoDescription: 'Discover Cyclades: a travel guide and discovery platform for the Cyclades. Case study: the website and SEO we built to rank for “Discover Cyclades”.',
     seoTitleEl: 'Discover Cyclades | οδηγός Κυκλάδες',
-    seoDescriptionEl: 'Discover Cyclades, ταξιδιωτικός οδηγός και πλατφόρμα ανακάλυψης για τις Κυκλάδες. SEO για «οδηγός Κυκλάδες».',
+    seoDescriptionEl: 'Discover Cyclades: ταξιδιωτικός οδηγός και πλατφόρμα ανακάλυψης για τις Κυκλάδες. Μελέτη περίπτωσης για την ιστοσελίδα και το SEO με στόχο «οδηγός Κυκλάδες».',
     featured: true,
   },
   {
@@ -549,9 +549,9 @@ export const portfolioProjects: PortfolioProject[] = [
 
     services: ['website-creation', 'content-creation', 'seo-web-design'],
                                                     seoTitle: 'Discover Crete | Crete tours',
-    seoDescription: 'Discover Crete, Crete discovery and tours platform in Crete / Paleochora. SEO for “Discover Crete”.',
+    seoDescription: 'Discover Crete: a tours and discovery platform for Crete and Paleochora. Case study: the website and SEO we built to rank for “Discover Crete”.',
     seoTitleEl: 'Discover Crete | εκδρομές Κρήτη',
-    seoDescriptionEl: 'Discover Crete, πλατφόρμα ανακάλυψης και εκδρομών στην Κρήτη και στην Παλαιόχωρα. SEO για «εκδρομές Κρήτη».',
+    seoDescriptionEl: 'Discover Crete: πλατφόρμα ανακάλυψης και εκδρομών στην Κρήτη και στην Παλαιόχωρα. Μελέτη περίπτωσης για την ιστοσελίδα και το SEO με στόχο «εκδρομές Κρήτη».',
     featured: true,
   },
   {
@@ -580,9 +580,9 @@ export const portfolioProjects: PortfolioProject[] = [
 
     services: ['website-creation', 'content-creation'],
                                                     seoTitle: 'Way to Crete | Crete experiences',
-    seoDescription: 'Way to Crete, storytelling tours and Crete experiences in Crete. SEO for “Way to Crete”.',
+    seoDescription: 'Way to Crete: storytelling tours and experiences in Crete. Case study: the mobile-first website and technical SEO we built to rank for “Way to Crete”.',
     seoTitleEl: 'Way to Crete | εμπειρίες Κρήτη',
-    seoDescriptionEl: 'Way to Crete, εκδρομές storytelling και εμπειρίες στην Κρήτη. SEO για «εμπειρίες Κρήτη».',
+    seoDescriptionEl: 'Way to Crete: εκδρομές storytelling και εμπειρίες στην Κρήτη. Μελέτη περίπτωσης: η ιστοσελίδα και το SEO που φτιάξαμε για την αναζήτηση «εμπειρίες Κρήτη».',
     featured: false,
   },
   {
@@ -611,9 +611,9 @@ export const portfolioProjects: PortfolioProject[] = [
 
     services: ['website-creation', 'local-seo'],
                                                     seoTitle: 'Santorini Daily Tours | Santorini boat tour',
-    seoDescription: 'Santorini Daily Tours, daily tour products in Santorini in Santorini. SEO for “Santorini daily tours”.',
+    seoDescription: 'Santorini Daily Tours: daily tours on Santorini. Case study: the website and SEO we built to rank for “Santorini daily tours” and win direct bookings.',
     seoTitleEl: 'Santorini Daily Tours | ημερήσιες εκδρομές Σαντορίνη',
-    seoDescriptionEl: 'Santorini Daily Tours, ημερήσιες εκδρομές στη Σαντορίνη. SEO για «ημερήσιες εκδρομές Σαντορίνη».',
+    seoDescriptionEl: 'Santorini Daily Tours: ημερήσιες εκδρομές στη Σαντορίνη. Μελέτη περίπτωσης: η ιστοσελίδα και το SEO που φτιάξαμε για «ημερήσιες εκδρομές Σαντορίνη».',
     featured: true,
   },
   {
@@ -642,9 +642,9 @@ export const portfolioProjects: PortfolioProject[] = [
 
     services: ['website-creation', 'seo-web-design'],
                                                     seoTitle: 'Santo Tours Marinakis | Santorini tours',
-    seoDescription: 'Santo Tours Marinakis, local Santorini tour operator in Santorini. SEO for “Santo Tours Marinakis”.',
+    seoDescription: 'Santo Tours Marinakis: a local tour operator on Santorini. Case study: the website and SEO we built to rank for “Santo Tours Marinakis”.',
     seoTitleEl: 'Santo Tours Marinakis | εκδρομές Σαντορίνη',
-    seoDescriptionEl: 'Santo Tours Marinakis, τοπικός tour operator στη Σαντορίνη. SEO για «εκδρομές Σαντορίνη».',
+    seoDescriptionEl: 'Santo Tours Marinakis: τοπικός tour operator στη Σαντορίνη. Μελέτη περίπτωσης: η ιστοσελίδα και το SEO που φτιάξαμε για την αναζήτηση «εκδρομές Σαντορίνη».',
     featured: false,
   },
   {
@@ -673,9 +673,9 @@ export const portfolioProjects: PortfolioProject[] = [
     ],
     services: ['website-creation', 'seo-web-design', 'content-creation'],
                                                     seoTitle: 'Skydream Travel | travel agency Greece',
-    seoDescription: 'Skydream Travel, travel agency and holiday packages in Greece. SEO for “SkyDream Travel”.',
+    seoDescription: 'Skydream Travel: a travel agency selling holiday packages in Greece. Case study: the website and SEO we built to rank for “SkyDream Travel”.',
     seoTitleEl: 'Skydream Travel | ταξιδιωτικό γραφείο',
-    seoDescriptionEl: 'Skydream Travel, ταξιδιωτικό γραφείο και πακέτα διακοπών στην Ελλάδα. SEO για «ταξιδιωτικό γραφείο».',
+    seoDescriptionEl: 'Skydream Travel: ταξιδιωτικό γραφείο και πακέτα διακοπών στην Ελλάδα. Μελέτη περίπτωσης για την ιστοσελίδα και το SEO με στόχο «ταξιδιωτικό γραφείο».',
     featured: true,
   },
   {
@@ -704,9 +704,9 @@ export const portfolioProjects: PortfolioProject[] = [
 
     services: ['website-creation', 'content-creation'],
                                                     seoTitle: 'Cuba Travel Academy | Cuba travel guide Greek',
-    seoDescription: 'Cuba Travel Academy, Cuba travel education academy in Cuba travel (Greek audience). SEO for “Cuba Travel Academy”.',
+    seoDescription: 'Cuba Travel Academy: a travel academy preparing Greek travellers for Cuba. Case study: the website and SEO we built to rank for “Cuba Travel Academy”.',
     seoTitleEl: 'Cuba Travel Academy | ταξίδι Κούβα',
-    seoDescriptionEl: 'Cuba Travel Academy, ακαδημία εκπαίδευσης για ταξίδι στην Κούβα, με κοινό στην Ελλάδα. SEO για «ταξίδι Κούβα».',
+    seoDescriptionEl: 'Cuba Travel Academy: ακαδημία εκπαίδευσης για ταξίδι στην Κούβα, με κοινό στην Ελλάδα. Ιστοσελίδα και SEO με στόχο «ταξίδι Κούβα».',
     featured: false,
   },
   {
@@ -735,9 +735,9 @@ export const portfolioProjects: PortfolioProject[] = [
 
     services: ['website-creation', 'local-seo'],
                                                     seoTitle: 'Antiparos Transfer | Antiparos taxi',
-    seoDescription: 'Antiparos Transfer, luxury island transfer service in Antiparos and Paros. SEO for “Antiparos transfer”.',
+    seoDescription: 'Antiparos Transfer: luxury transfers on Antiparos and Paros. Case study: the mobile-first website and technical SEO we built to rank for “Antiparos transfer”.',
     seoTitleEl: 'Antiparos Transfer | μεταφορά Αντίπαρος',
-    seoDescriptionEl: 'Antiparos Transfer, υπηρεσία πολυτελών μεταφορών στην Αντίπαρο και στην Πάρο. SEO για «μεταφορά Αντίπαρος».',
+    seoDescriptionEl: 'Antiparos Transfer: υπηρεσία πολυτελών μεταφορών στην Αντίπαρο και στην Πάρο. Μελέτη περίπτωσης για την ιστοσελίδα και το SEO με στόχο «μεταφορά Αντίπαρος».',
     featured: false,
   },
   {
@@ -766,9 +766,9 @@ export const portfolioProjects: PortfolioProject[] = [
 
     services: ['website-creation', 'ai-visibility', 'seo-web-design'],
                                                     seoTitle: 'Navos AI | AI strategy advisor',
-    seoDescription: 'Navos AI, AI strategy advisor SaaS in global SaaS market. SEO for “Navos AI”.',
+    seoDescription: 'Navos AI: an AI strategy advisor for business decisions. Case study: the website and SEO we built to rank for “Navos AI” and turn searches into enquiries.',
     seoTitleEl: 'Navos AI | σύμβουλος στρατηγικής AI',
-    seoDescriptionEl: 'Navos AI, πλατφόρμα τεχνητής νοημοσύνης για επιχειρηματικές αποφάσεις στη διεθνή αγορά SaaS. SEO για «Navos AI».',
+    seoDescriptionEl: 'Navos AI: πλατφόρμα τεχνητής νοημοσύνης για επιχειρηματικές αποφάσεις στη διεθνή αγορά SaaS. Ιστοσελίδα και SEO με στόχο «Navos AI».',
     featured: true,
   },
   {
@@ -797,9 +797,9 @@ export const portfolioProjects: PortfolioProject[] = [
 
     services: ['website-creation', 'ai-visibility'],
                                                     seoTitle: 'Project Shadow AI | AI for WordPress stores',
-    seoDescription: 'Project Shadow AI, AI tooling for online stores in global e-commerce. SEO for “Project Shadow AI”.',
+    seoDescription: 'Project Shadow AI: AI tooling for online stores. Case study: the mobile-first website and technical SEO we built to rank for “Project Shadow AI”.',
     seoTitleEl: 'Project Shadow AI | AI για ηλεκτρονικό κατάστημα',
-    seoDescriptionEl: 'Project Shadow AI, εργαλεία τεχνητής νοημοσύνης για ηλεκτρονικά καταστήματα στη διεθνή αγορά e-commerce. SEO για «Project Shadow AI».',
+    seoDescriptionEl: 'Project Shadow AI: εργαλεία τεχνητής νοημοσύνης για ηλεκτρονικά καταστήματα στη διεθνή αγορά e-commerce. Ιστοσελίδα και SEO με στόχο «Project Shadow AI».',
     liveStatus: 'offline', // thin or broken page at scrape time
     featured: false,
   },
@@ -829,9 +829,9 @@ export const portfolioProjects: PortfolioProject[] = [
 
     services: ['website-creation', 'content-creation'],
                                                     seoTitle: 'Rethemnos | Rethymno tourism',
-    seoDescription: 'Rethemnos, Rethymno tourism portal and local guide in Rethymno. SEO for “Rethymno tourism”.',
+    seoDescription: 'Rethemnos: a tourism portal and local guide for Rethymno. Case study: the mobile-first website and technical SEO we built to rank for “Rethymno tourism”.',
     seoTitleEl: 'Rethemnos | τουρισμός Ρέθυμνο',
-    seoDescriptionEl: 'Rethemnos, τουριστική πύλη και τοπικός οδηγός για το Ρέθυμνο. SEO για «τουρισμός Ρέθυμνο».',
+    seoDescriptionEl: 'Rethemnos: τουριστική πύλη και τοπικός οδηγός για το Ρέθυμνο. Μελέτη περίπτωσης: η ιστοσελίδα και το SEO που φτιάξαμε για την αναζήτηση «τουρισμός Ρέθυμνο».',
     featured: false,
   },
   {
@@ -860,9 +860,9 @@ export const portfolioProjects: PortfolioProject[] = [
     ],
     services: ['website-creation', 'seo-web-design'],
                                                     seoTitle: 'Ktima Orion | wedding estate Attica',
-    seoDescription: 'Ktima Orion, wedding and events estate in Keratea, Attica. SEO for “Ktima Orion”.',
+    seoDescription: 'Ktima Orion: a wedding and events estate in Keratea, Attica. Case study: the mobile-first website and technical SEO we built to rank for “Ktima Orion”.',
     seoTitleEl: 'Ktima Orion | Κτήμα Ωρίων',
-    seoDescriptionEl: 'Ktima Orion, κτήμα γάμων και εκδηλώσεων στην Κερατέα Αττικής. SEO για «Κτήμα Ωρίων».',
+    seoDescriptionEl: 'Ktima Orion: κτήμα γάμων και εκδηλώσεων στην Κερατέα Αττικής. Μελέτη περίπτωσης: η ιστοσελίδα και το SEO που φτιάξαμε για την αναζήτηση «Κτήμα Ωρίων».',
     featured: false,
   },
   {
@@ -891,9 +891,9 @@ export const portfolioProjects: PortfolioProject[] = [
 
     services: ['website-creation', 'local-seo'],
                                                     seoTitle: 'Weddings Folegandros | Folegandros weddings',
-    seoDescription: 'Weddings Folegandros, destination wedding planning in Folegandros. SEO for “Folegandros weddings”.',
+    seoDescription: 'Weddings Folegandros: destination wedding planning on Folegandros. Case study: the website and SEO we built to rank for “Folegandros weddings”.',
     seoTitleEl: 'Weddings Folegandros | γάμοι Φολέγανδρος',
-    seoDescriptionEl: 'Weddings Folegandros, οργάνωση γάμων προορισμού στη Φολέγανδρο. SEO για «γάμοι Φολέγανδρος».',
+    seoDescriptionEl: 'Weddings Folegandros: οργάνωση γάμων προορισμού στη Φολέγανδρο. Μελέτη περίπτωσης: η ιστοσελίδα και το SEO που φτιάξαμε για «γάμοι Φολέγανδρος».',
     featured: false,
   },
   {
@@ -922,9 +922,9 @@ export const portfolioProjects: PortfolioProject[] = [
     ],
     services: ['website-creation', 'content-creation'],
                                                     seoTitle: 'My Honeymoon | Greece honeymoon packages',
-    seoDescription: 'My Honeymoon, honeymoon planning brand in Greece. SEO for “My Honeymoon”.',
+    seoDescription: 'My Honeymoon: honeymoon planning in Greece. Case study: the website and SEO we built to rank for “My Honeymoon” and win direct bookings from mobile searches.',
     seoTitleEl: 'My Honeymoon | ταξίδι του μέλιτος Ελλάδα',
-    seoDescriptionEl: 'My Honeymoon, οργάνωση ταξιδιού του μέλιτος στην Ελλάδα. SEO για «ταξίδι του μέλιτος Ελλάδα».',
+    seoDescriptionEl: 'My Honeymoon: οργάνωση ταξιδιού του μέλιτος στην Ελλάδα. Μελέτη περίπτωσης: η ιστοσελίδα και το SEO που φτιάξαμε για «ταξίδι του μέλιτος Ελλάδα».',
     featured: false,
   },
   {
@@ -953,9 +953,9 @@ export const portfolioProjects: PortfolioProject[] = [
 
     services: ['website-creation', 'seo-web-design'],
                                                     seoTitle: 'George Xipolitas | hospitality consulting Greece',
-    seoDescription: 'George Xipolitas, dining consulting and hospitality professional brand in Greece. SEO for “George Xipolitas”.',
+    seoDescription: 'George Xipolitas: a hospitality and restaurant consulting brand in Greece. Case study: the website and SEO we built to rank for “George Xipolitas”.',
     seoTitleEl: 'George Xipolitas | συμβουλευτική εστίασης',
-    seoDescriptionEl: 'George Xipolitas, επαγγελματικό brand συμβουλευτικής εστίασης στην Ελλάδα. SEO για «George Xipolitas».',
+    seoDescriptionEl: 'George Xipolitas: επαγγελματικό brand συμβουλευτικής εστίασης στην Ελλάδα. Μελέτη περίπτωσης για την ιστοσελίδα και το SEO με στόχο «George Xipolitas».',
     featured: false,
   },
   {
@@ -984,9 +984,9 @@ export const portfolioProjects: PortfolioProject[] = [
 
     services: ['website-creation', 'seo-audits'],
                                                     seoTitle: 'Helicro | Helicro transport',
-    seoDescription: 'Helicro, airport and private transfer service in Belgium and Greece corridors. SEO for “Helicro transport”.',
+    seoDescription: 'Helicro: airport and private transfers in Belgium and on routes to Greece. Case study: the website and SEO we built to rank for “Helicro transport”.',
     seoTitleEl: 'Helicro | Helicro μεταφορές',
-    seoDescriptionEl: 'Helicro, υπηρεσία ιδιωτικών μεταφορών και μεταφορών αεροδρομίου στο Βέλγιο και στις διαδρομές προς την Ελλάδα. SEO για «Helicro μεταφορές».',
+    seoDescriptionEl: 'Helicro: υπηρεσία ιδιωτικών μεταφορών και μεταφορών αεροδρομίου στο Βέλγιο και στις διαδρομές προς την Ελλάδα. Ιστοσελίδα και SEO με στόχο «Helicro μεταφορές».',
     featured: false,
   },
   {
@@ -1015,9 +1015,9 @@ export const portfolioProjects: PortfolioProject[] = [
 
     services: ['website-creation', 'local-seo'],
                                                     seoTitle: 'Mastorush | find craftsman Greece',
-    seoDescription: 'Mastorush, craftsman quote marketplace in Greece. SEO for “Mastorush”.',
+    seoDescription: 'Mastorush: a marketplace for quotes from craftsmen in Greece. Case study: the mobile-first website and technical SEO we built to rank for “Mastorush”.',
     seoTitleEl: 'Mastorush | προσφορές από μάστορες',
-    seoDescriptionEl: 'Mastorush, αγορά αιτημάτων προσφορών από μάστορες στην Ελλάδα. SEO για «Mastorush».',
+    seoDescriptionEl: 'Mastorush: αγορά αιτημάτων προσφορών από μάστορες στην Ελλάδα. Μελέτη περίπτωσης: η ιστοσελίδα και το SEO που φτιάξαμε για την αναζήτηση «Mastorush».',
     featured: false,
   },
   {
@@ -1046,9 +1046,9 @@ export const portfolioProjects: PortfolioProject[] = [
 
     services: ['website-creation', 'local-seo'],
                                                     seoTitle: 'The Nutri Nest | clinical dietitian Greece',
-    seoDescription: 'The Nutri Nest, clinical dietitian and nutrition practice in Greece. SEO for “clinical dietitian Greece”.',
+    seoDescription: 'The Nutri Nest: a clinical dietitian and nutrition practice in Greece. Case study: the website and SEO we built to rank for “clinical dietitian Greece”.',
     seoTitleEl: 'The Nutri Nest | κλινική διαιτολόγος',
-    seoDescriptionEl: 'The Nutri Nest, κλινική διαιτολογία και διατροφολογία στην Ελλάδα. SEO για «κλινική διαιτολόγος».',
+    seoDescriptionEl: 'The Nutri Nest: κλινική διαιτολογία και διατροφολογία στην Ελλάδα. Μελέτη περίπτωσης: η ιστοσελίδα και το SEO που φτιάξαμε για «κλινική διαιτολόγος».',
     featured: false,
   },
   {
@@ -1077,9 +1077,9 @@ export const portfolioProjects: PortfolioProject[] = [
 
     services: ['website-creation', 'local-seo'],
                                                     seoTitle: 'Folegandros Hair Salon | Sousi Hair Salon',
-    seoDescription: 'Folegandros Hair Salon, hair, nails and makeup salon in Folegandros. SEO for “Folegandros hair salon”.',
+    seoDescription: 'Folegandros Hair Salon: a hair, nails and makeup salon on Folegandros. Case study: the website and SEO we built to rank for “Folegandros hair salon”.',
     seoTitleEl: 'Folegandros Hair Salon | κομμωτήριο Φολέγανδρος',
-    seoDescriptionEl: 'Folegandros Hair Salon, κομμωτήριο, νύχια και μακιγιάζ στη Φολέγανδρο. SEO για «κομμωτήριο Φολέγανδρος».',
+    seoDescriptionEl: 'Folegandros Hair Salon: κομμωτήριο, νύχια και μακιγιάζ στη Φολέγανδρο. Μελέτη περίπτωσης για την ιστοσελίδα και το SEO με στόχο «κομμωτήριο Φολέγανδρος».',
     featured: false,
   },
   {
@@ -1108,9 +1108,9 @@ export const portfolioProjects: PortfolioProject[] = [
 
     services: ['website-creation', 'local-seo'],
                                                     seoTitle: 'Folegandros Moto | Folegandros scooter rental',
-    seoDescription: 'Folegandros Moto, moto and scooter rental in Folegandros. SEO for “Folegandros scooter rental”.',
+    seoDescription: 'Folegandros Moto: motorbike and scooter rental on Folegandros. Case study: the website and SEO we built to rank for “Folegandros scooter rental”.',
     seoTitleEl: 'Folegandros Moto | ενοικίαση μηχανής Φολέγανδρος',
-    seoDescriptionEl: 'Folegandros Moto, ενοικίαση μηχανών και scooters στη Φολέγανδρο. SEO για «ενοικίαση μηχανής Φολέγανδρος».',
+    seoDescriptionEl: 'Folegandros Moto: ενοικίαση μηχανών και scooters στη Φολέγανδρο. Μελέτη περίπτωσης για την ιστοσελίδα και το SEO με στόχο «ενοικίαση μηχανής Φολέγανδρος».',
     featured: false,
   },
   {
@@ -1139,9 +1139,9 @@ export const portfolioProjects: PortfolioProject[] = [
 
     services: ['website-creation', 'local-seo', 'content-creation'],
                                                     seoTitle: 'Best Pumpkin Near Me | pumpkin patch near me',
-    seoDescription: 'Best Pumpkin Near Me, US local pumpkin patch directory in United States. SEO for “best pumpkin near me”.',
+    seoDescription: 'Best Pumpkin Near Me: a directory of local pumpkin patches in the US. Case study: the website and SEO we built to rank for “best pumpkin near me”.',
     seoTitleEl: 'Best Pumpkin Near Me | pumpkin patch κοντά μου',
-    seoDescriptionEl: 'Best Pumpkin Near Me, κατάλογος τοπικών pumpkin patches στις ΗΠΑ. SEO για «best pumpkin near me».',
+    seoDescriptionEl: 'Best Pumpkin Near Me: κατάλογος τοπικών pumpkin patches στις ΗΠΑ. Μελέτη περίπτωσης: η ιστοσελίδα και το SEO που φτιάξαμε για «best pumpkin near me».',
     featured: false,
   },
   {
@@ -1170,9 +1170,9 @@ export const portfolioProjects: PortfolioProject[] = [
 
     services: ['website-creation'],
                                                     seoTitle: 'Stretcher Stopper | medical stretcher safety',
-    seoDescription: 'Stretcher Stopper, medical stretcher wall-protection product in United States / healthcare facilities. SEO for “Stretcher Stopper”.',
+    seoDescription: 'Stretcher Stopper: stretcher wall protection for US healthcare facilities. Case study: the website and SEO we built to rank for “Stretcher Stopper”.',
     seoTitleEl: 'Stretcher Stopper | προστασία τοίχων νοσοκομείο',
-    seoDescriptionEl: 'Stretcher Stopper, προϊόν προστασίας τοίχων από φορεία για χώρους υγείας στις ΗΠΑ. SEO για «Stretcher Stopper».',
+    seoDescriptionEl: 'Stretcher Stopper: προϊόν προστασίας τοίχων από φορεία για χώρους υγείας στις ΗΠΑ. Ιστοσελίδα και SEO με στόχο «Stretcher Stopper».',
     featured: false,
   },
   {
@@ -1201,9 +1201,9 @@ export const portfolioProjects: PortfolioProject[] = [
 
     services: ['website-creation', 'local-seo'],
                                                     seoTitle: 'Antiparos Rooms | Antiparos apartments',
-    seoDescription: 'Antiparos Rooms, seaside rooms and apartments in Antiparos. SEO for “Antiparos rooms”.',
+    seoDescription: 'Antiparos Rooms: seaside rooms and apartments on Antiparos. Case study: the mobile-first website and technical SEO we built to rank for “Antiparos rooms”.',
     seoTitleEl: 'Antiparos Rooms | δωμάτια Αντίπαρος',
-    seoDescriptionEl: 'Antiparos Rooms, παραθαλάσσια δωμάτια και διαμερίσματα στην Αντίπαρο. SEO για «δωμάτια Αντίπαρος».',
+    seoDescriptionEl: 'Antiparos Rooms: παραθαλάσσια δωμάτια και διαμερίσματα στην Αντίπαρο. Μελέτη περίπτωσης: η ιστοσελίδα και το SEO που φτιάξαμε για «δωμάτια Αντίπαρος».',
     featured: false,
   },
   {
@@ -1231,9 +1231,9 @@ export const portfolioProjects: PortfolioProject[] = [
     ],
     services: ['website-creation', 'seo-web-design'],
                                                     seoTitle: 'Erebos | Erebos GPS tracking',
-    seoDescription: 'Erebos, real-time GPS vehicle tracking platform in Greece and the EU. SEO for “Erebos GPS tracking”.',
+    seoDescription: 'Erebos: real-time GPS vehicle tracking in Greece and the EU. Case study: the website and SEO we built to rank for “Erebos GPS tracking”.',
     seoTitleEl: 'Erebos | παρακολούθηση οχημάτων',
-    seoDescriptionEl: 'Erebos, πλατφόρμα παρακολούθησης οχημάτων σε πραγματικό χρόνο στην Ελλάδα και στην ΕΕ. SEO για «παρακολούθηση οχημάτων».',
+    seoDescriptionEl: 'Erebos: πλατφόρμα παρακολούθησης οχημάτων σε πραγματικό χρόνο στην Ελλάδα και στην ΕΕ. Ιστοσελίδα και SEO με στόχο «παρακολούθηση οχημάτων».',
     featured: true,
   },
   {
@@ -1261,9 +1261,9 @@ export const portfolioProjects: PortfolioProject[] = [
     ],
     services: ['website-creation', 'local-seo', 'seo-web-design'],
                                                     seoTitle: 'Naxos Car Rental | rent a car Naxos airport',
-    seoDescription: 'Naxos Car Rental, Naxos car rental brand in Naxos. SEO for “Naxos car rental”.',
+    seoDescription: 'Naxos Car Rental: a car rental brand on Naxos. Case study: the website and SEO we built to rank for “Naxos car rental” and win direct bookings.',
     seoTitleEl: 'Naxos Car Rental | ενοικίαση αυτοκινήτου Νάξος',
-    seoDescriptionEl: 'Naxos Car Rental, ενοικίαση αυτοκινήτων στη Νάξο. SEO για «ενοικίαση αυτοκινήτου Νάξος».',
+    seoDescriptionEl: 'Naxos Car Rental: ενοικίαση αυτοκινήτων στη Νάξο. Μελέτη περίπτωσης: η ιστοσελίδα και το SEO που φτιάξαμε για την αναζήτηση «ενοικίαση αυτοκινήτου Νάξος».',
     featured: true,
   },
   {
@@ -1291,9 +1291,9 @@ export const portfolioProjects: PortfolioProject[] = [
     ],
     services: ['website-creation', 'local-seo', 'speed-optimization'],
                                                     seoTitle: 'Naxos Auto Rent | Naxos car hire online',
-    seoDescription: 'Naxos Auto Rent, online Naxos auto rent in Naxos. SEO for “Naxos auto rent”.',
+    seoDescription: 'Naxos Auto Rent: online car rental on Naxos. Case study: the website and SEO we built to rank for “Naxos auto rent” and win direct bookings.',
     seoTitleEl: 'Naxos Auto Rent | ενοικίαση αυτοκινήτου Νάξος online',
-    seoDescriptionEl: 'Naxos Auto Rent, online ενοικίαση αυτοκινήτων στη Νάξο. SEO για «ενοικίαση αυτοκινήτου Νάξος online».',
+    seoDescriptionEl: 'Naxos Auto Rent: online ενοικίαση αυτοκινήτων στη Νάξο. Μελέτη περίπτωσης για την ιστοσελίδα και το SEO με στόχο «ενοικίαση αυτοκινήτου Νάξος online».',
     featured: false,
   },
   {
@@ -1321,9 +1321,9 @@ export const portfolioProjects: PortfolioProject[] = [
     ],
     services: ['website-creation', 'local-seo'],
                                                     seoTitle: 'Artemis Rental Sifnos | rent a car Sifnos',
-    seoDescription: 'Artemis Rental Sifnos, car and scooter rental in Sifnos. SEO for “rent a car Sifnos”.',
+    seoDescription: 'Artemis Rental Sifnos: car and scooter rental on Sifnos. Case study: the mobile-first website and technical SEO we built to rank for “rent a car Sifnos”.',
     seoTitleEl: 'Artemis Rental Sifnos | ενοικίαση αυτοκινήτου Σίφνος',
-    seoDescriptionEl: 'Artemis Rental Sifnos, ενοικίαση αυτοκινήτων και scooters στη Σίφνο. SEO για «ενοικίαση αυτοκινήτου Σίφνος».',
+    seoDescriptionEl: 'Artemis Rental Sifnos: ενοικίαση αυτοκινήτων και scooters στη Σίφνο. Μελέτη περίπτωσης για την ιστοσελίδα και το SEO με στόχο «ενοικίαση αυτοκινήτου Σίφνος».',
     featured: true,
   },
   {
@@ -1351,9 +1351,9 @@ export const portfolioProjects: PortfolioProject[] = [
     ],
     services: ['website-creation', 'local-seo', 'content-creation'],
                                                     seoTitle: 'vwanaki | mobile cocktail bar Greece',
-    seoDescription: 'vwanaki, mobile cocktail bar for events in Greece. SEO for “mobile cocktail bar Greece”.',
+    seoDescription: 'vwanaki: a mobile cocktail bar for events in Greece. Case study: the mobile-first website and technical SEO we built to rank for “mobile cocktail bar Greece”.',
     seoTitleEl: 'vwanaki | κινητό cocktail bar',
-    seoDescriptionEl: 'vwanaki, κινητό cocktail bar για εκδηλώσεις στην Ελλάδα. SEO για «κινητό cocktail bar».',
+    seoDescriptionEl: 'vwanaki: κινητό cocktail bar για εκδηλώσεις στην Ελλάδα. Μελέτη περίπτωσης: η ιστοσελίδα και το SEO που φτιάξαμε για την αναζήτηση «κινητό cocktail bar».',
     featured: false,
   },
 ];

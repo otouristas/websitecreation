@@ -1,4 +1,4 @@
-# GSC Baseline — anotherseoguru.com (2026-07-23)
+# GSC Baseline: anotherseoguru.com (2026-07-23)
 
 > Export: `https___anotherseoguru.com_-Performance-on-Search-2026-07-23.xlsx`  
 > Window: **Last 6 months** vs previous 6 months  

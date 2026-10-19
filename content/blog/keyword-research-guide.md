@@ -1,7 +1,7 @@
 ---
 slug: keyword-research-guide
 title: How to Do Keyword Research for SEO
-description: A practical keyword research process for SEO - seeds, intent, clustering, and prioritization - plus free tools to find SEO keywords that convert.
+description: A practical keyword research process for SEO (seeds, intent, clustering and prioritization), plus free tools to find SEO keywords that convert.
 date: 2026-07-23
 updated: 2026-10-16
 author: AnotherSEOGuru Editorial Team

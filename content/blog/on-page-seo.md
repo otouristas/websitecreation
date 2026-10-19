@@ -63,10 +63,10 @@ On-page is one layer. The [website SEO checklist](/en/blog/seo-checklist) puts i
 
 | Work type | Typical cost (GR, 2026) | Effort | First signals |
 | :--- | :--- | :--- | :--- |
-| Title/meta CTR batch (10–20 URLs) | €300 – €600 | 1–2 days | 2–6 weeks |
-| Full service page rewrite | €150 – €450 / page | 0.5–2 days | 1–3 months |
-| Location page uniqueization | €120 – €300 / page | Research-heavy | 1–3 months |
-| Pillar guide (1,000–2,000 words) | €250 – €700 | 1–3 days | 1–4 months |
+| Title/meta CTR batch (10–20 URLs) | €300 to €600 | 1–2 days | 2–6 weeks |
+| Full service page rewrite | €150 to €450 / page | 0.5–2 days | 1–3 months |
+| Location page uniqueization | €120 to €300 / page | Research-heavy | 1–3 months |
+| Pillar guide (1,000–2,000 words) | €250 to €700 | 1–3 days | 1–4 months |
 | Ongoing on-page in retainer | from {{ENTRY_SEO}}/mo | Continuous | Compounds |
 
 If the site is slow or poorly indexed, fix technical issues first - otherwise on-page gains leak. See [pricing](/en/pricing) and [how much SEO costs](/en/blog/how-much-does-seo-cost).

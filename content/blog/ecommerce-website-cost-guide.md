@@ -30,7 +30,7 @@ Building an **e-commerce website** is one of the most searched goals for busines
 
 | Criterion | WooCommerce | Shopify |
 | :--- | :--- | :--- |
-| Build cost | €1,800 – €5,000 one-off | €1,000 – €3,000 + subscription |
+| Build cost | €1,800 to €5,000 one-off | €1,000 to €3,000 + subscription |
 | Monthly cost | Hosting €20–50 | €36–384/mo + fees |
 | Ownership | Full - it’s yours | Rented platform |
 | SEO flexibility | Full control | URL-structure limits |
@@ -64,8 +64,8 @@ Terms, returns policy, GDPR, cookies - all configured from the build, not “lat
 
 | Store type | Typical build cost | Notes |
 | :--- | :--- | :--- |
-| Basic (≈100 products, standard features) | €1,800 – €2,500 | Payments + shipping + SEO base |
-| Mid-tier (many categories, filters, ERP/carriers) | €2,500 – €4,000 | Integrations drive the quote |
+| Basic (≈100 products, standard features) | €1,800 to €2,500 | Payments + shipping + SEO base |
+| Mid-tier (many categories, filters, ERP/carriers) | €2,500 to €4,000 | Integrations drive the quote |
 | Complex (B2B pricing, multilingual, custom) | €4,000+ | Often multi-month |
 
 See our [pricing](/en/pricing) and the general [website cost guide](/en/blog/how-much-does-a-website-cost). Watch “€300 e-shop” offers: they usually mean a theme with no SEO structure, weak payments, and no support - costs you pay later in lost sales.

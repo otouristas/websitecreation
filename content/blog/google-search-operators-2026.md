@@ -1,7 +1,7 @@
 ---
 slug: google-search-operators-2026
 title: Google Search Operators Guide (2026)
-description: Working Google search operators in 2026 - site:, intitle:, inurl:, filetype:, and combos for SEO audits, competitor research, and content gaps.
+description: Google search operators that still work in 2026 (site:, intitle:, inurl:, filetype:) and combos for SEO audits, competitor research and content gaps.
 date: 2026-08-04
 author: AnotherSEOGuru Editorial Team
 category: SEO

@@ -1,7 +1,7 @@
 ---
 slug: medical-marketing
 title: Medical SEO - The Ultimate Guide for Growing Your Practice
-description: SEO for doctors, surgeons, and med spas - YMYL, E-E-A-T, local patient intent, and compliance-friendly content patterns that earn trust and rankings.
+description: "SEO for doctors, surgeons and med spas: YMYL, E-E-A-T, local patient intent and compliance-friendly content patterns that earn trust and rankings."
 date: 2026-01-05
 author: AnotherSEOGuru Editorial Team
 category: Healthcare Marketing

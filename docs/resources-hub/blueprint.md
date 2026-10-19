@@ -53,7 +53,7 @@ Search-Console-native and opportunity-ranked (clicks at stake per fix), measured
 | Glossary | ~120 terms incl. content-decay, keyword-cannibalization, ctr | Owns definitions; new pages target how-to intents and link to it |
 | **Bug found** | `resolveHelpHref` sent every `/en/...` link inside docs blocks to the app origin, so the existing `/resources` cards (frameworks, SEO guides, glossary, compare) pointed at app.anotherseoguru.com | Fixed: locale-prefixed paths now stay on the site |
 
-Existing URLs are all kept. Cannibalization watch-list: `/en/blog/gsc-query-prioritization-framework` (query prioritization) vs `/resources/seo-forecasting` and `/resources/seo-quick-wins` — different primary queries, cross-linked; review in the monthly loop.
+Existing URLs are all kept. Cannibalization watch-list: `/en/blog/gsc-query-prioritization-framework` (query prioritization) vs `/resources/seo-forecasting` and `/resources/seo-quick-wins`. They target different primary queries and are cross-linked; review in the monthly loop.
 
 ## B. Hub architecture
 
@@ -221,7 +221,7 @@ Inbound to the hub from the rest of the site: `/tools` (new card for the free to
 |---|---|---|---|
 | Informational | Pillars + most articles | Soft: free tool, then live demo | `resources_<slug>_tool`, `resources_<slug>_demo` |
 | Commercial | Cannibalization, reporting, report template, tool page | Direct: sign-up, then demo | `resources_<slug>_signup`, `resources_<slug>_demo` |
-| Tool use | Opportunity finder | — | `opportunity_finder_run` (source, rows, opportunities, range_days), `opportunity_finder_export`, `opportunity_finder_error` |
+| Tool use | Opportunity finder | - | `opportunity_finder_run` (source, rows, opportunities, range_days), `opportunity_finder_export`, `opportunity_finder_error` |
 | Sign-up attribution | All app links | `utm_source=website&utm_content=resources-<slug>` | Read in the app's sign-up attribution |
 
 No popups, no gates. Events respect the existing cookie-consent check in `src/lib/analytics.ts`.

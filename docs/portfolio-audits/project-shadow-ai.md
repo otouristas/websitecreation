@@ -8,7 +8,7 @@
 - Keywords EL: Project Shadow AI; AI για ηλεκτρονικό κατάστημα; WordPress AI
 - Angle: technical brand pages for AI store assistance (scrape was thin)
 - CTA: επικοινωνία
-- Scrape: thin or broken page content at scrape time — used portfolio metadata
+- Scrape: thin or broken page content at scrape time, used portfolio metadata
 - Notes: Thin scrape mentioned WordPress store AI; avoided inventing tourism claims
 
 ## Snippet

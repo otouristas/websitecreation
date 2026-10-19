@@ -55,7 +55,7 @@ function TileMediaView({ media }: { readonly media: TileMedia }) {
       return (
         // Fixed well below the lg grid, then a flex well that the row-span tile
         // stretches. The phone is wider than that well is tall, so the bottom
-        // crops and the tile stays full — no empty band above or below it.
+        // crops and the tile stays full, with no empty band above or below it.
         <div className="relative mx-5 mt-4 h-[230px] overflow-hidden sm:mx-6 sm:h-[250px] lg:h-auto lg:min-h-[280px] lg:flex-1">
           <DevicePhone className="absolute inset-x-0 top-0 w-full">
             <Image

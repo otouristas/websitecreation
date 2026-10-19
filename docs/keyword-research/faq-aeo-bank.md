@@ -185,7 +185,7 @@ Yes - we build and optimise websites for businesses across Greece (Athens, Thess
 
 ---
 
-## EN SEO Hub (US) — full PAA bank
+## EN SEO Hub (US): full PAA bank
 
 Copy-ready EN answers for hubs H1–H8 (pillar, keyword research, tools, services, local SEO, audit, technical, on/off-page) live in:
 

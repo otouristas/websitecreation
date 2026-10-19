@@ -1,5 +1,5 @@
 /**
- * audit:locations — fail if any location eligible for indexing lacks uniqueness
+ * audit:locations: fail if any location eligible for indexing lacks uniqueness
  * requirements, if a kept service × city page would not pass the content gate,
  * or if any hardcoded internal link points at a removed (410) city URL.
  *
@@ -45,7 +45,7 @@ for (const loc of allLocations.filter((l) => l.countryCode === 'GR')) {
   }
   const result = evaluateLocationContent(loc, 'el');
   if (!result.ok) {
-    fail(`GR ${loc.slug}: EL gate — ${result.reasons.join(', ')}`);
+    fail(`GR ${loc.slug}: EL gate: ${result.reasons.join(', ')}`);
   }
   if (!LOCATION_PACKS_EL[loc.slug]) {
     fail(`GR ${loc.slug}: not registered in LOCATION_PACKS_EL`);
@@ -58,7 +58,7 @@ for (const loc of allLocations) {
   if (!pack) continue;
   const result = evaluateLocationContent(loc, 'en');
   if (!result.ok) {
-    fail(`EN ${loc.slug}: pack exists but gate fails — ${result.reasons.join(', ')}`);
+    fail(`EN ${loc.slug}: pack exists but gate fails: ${result.reasons.join(', ')}`);
   }
 }
 

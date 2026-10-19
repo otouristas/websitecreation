@@ -1,7 +1,7 @@
 ---
 slug: diy-vs-agency
 title: DIY SEO vs. Hiring an Agency - The Honest Truth for Business Owners
-description: Should you do your own SEO or hire an agency? Costs, time commitment, and results - with a clear decision framework for home services and tourism brands.
+description: Should you do your own SEO or hire an agency? Costs, time commitment and results, with a clear decision framework for home services and tourism brands.
 date: 2026-01-08
 author: AnotherSEOGuru Editorial Team
 category: Business Strategy
