@@ -34,11 +34,20 @@ function splitLine(line: string, sep: string): string[] {
   return out.map((c) => c.trim());
 }
 
-function number(raw: string): number {
-  let s = raw.replace(/[%\s ]/g, "");
-  // 1.234,5 or 12,5 -> decimal comma; 1,234.5 -> thousands comma.
-  if (/,\d{1,2}$/.test(s) && !/\.\d+,/.test(s)) s = s.replace(/\./g, "").replace(",", ".");
-  else s = s.replace(/,/g, "");
+/** Counts (clicks, impressions) are whole numbers, so "10.000" or "10,000" there is a thousands separator. */
+function number(raw: string, count = false): number {
+  let s = raw.replace(/[%\s ]/g, "");
+  const dot = s.lastIndexOf(".");
+  const comma = s.lastIndexOf(",");
+  if (dot >= 0 && comma >= 0) {
+    // Both separators: the last one is the decimal (1.234,5 or 1,234.5).
+    s = comma > dot ? s.replace(/\./g, "").replace(",", ".") : s.replace(/,/g, "");
+  } else if (count && /^\d{1,3}([.,]\d{3})+$/.test(s)) {
+    s = s.replace(/[.,]/g, "");
+  } else if (comma >= 0) {
+    // 12,5 -> decimal comma; 12,345 -> thousands comma.
+    s = /,\d{1,2}$/.test(s) ? s.replace(",", ".") : s.replace(/,/g, "");
+  }
   const v = Number(s);
   return Number.isFinite(v) ? v : NaN;
 }
@@ -68,8 +77,8 @@ export function parseSearchConsoleExport(text: string): ParseResult {
   for (const line of lines.slice(1)) {
     const cells = splitLine(line, sep);
     const key = cells[cols.key];
-    const clicks = number(cells[cols.clicks] ?? "");
-    const impressions = number(cells[cols.impressions] ?? "");
+    const clicks = number(cells[cols.clicks] ?? "", true);
+    const impressions = number(cells[cols.impressions] ?? "", true);
     const position = number(cells[cols.position] ?? "");
     let ctr = number(cells[cols.ctr] ?? "");
     if (!key || !Number.isFinite(clicks) || !Number.isFinite(impressions) || !Number.isFinite(position) || impressions <= 0) {
