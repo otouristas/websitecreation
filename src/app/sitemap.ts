@@ -8,6 +8,7 @@ import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 import { GENERATED_CONTENT_UPDATED } from '@/lib/seo/content-dates';
 import { consultantPath } from '@/data/founder';
 import { helpContent } from '@/data/help';
+import { OPPORTUNITY_FINDER, RESOURCE_ARTICLES } from '@/data/resources';
 import { allTerms } from '@/lib/docs/glossary';
 import { PLACE_PAGES } from '@/data/place-seo';
 
@@ -121,6 +122,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // GEO/AEO queries that seven blog posts currently answer in parallel.
     { path: '/resources/search-optimization-layers', priority: 0.86, changeFrequency: 'monthly' as const },
     { path: '/resources/ai-search-page-anatomy', priority: 0.86, changeFrequency: 'monthly' as const },
+    // The Search Console hub: pillars, supporting articles and the free tool.
+    ...RESOURCE_ARTICLES.map((a) => ({
+      path: `/resources/${a.slug}`,
+      priority: a.kind === 'pillar' ? 0.86 : 0.8,
+      changeFrequency: 'monthly' as const,
+    })),
+    { path: `/resources/${OPPORTUNITY_FINDER.slug}`, priority: 0.86, changeFrequency: 'monthly' as const },
     { path: '/tools', priority: 0.84 },
     // The hub the three /compare/[slug] pages hang off. It did not exist until
     // now, which is why /el/compare's redirect landed on a 404.
