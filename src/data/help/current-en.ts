@@ -193,6 +193,10 @@ export const currentEn: HelpCategory = {
             [
               "SEO data",
               "Fresh lookups use the existing credit ledger and limits. Compatible operations fall back between Ahrefs and DataForSEO if one is unavailable. Their datasets and capabilities are not identical."
+            ],
+            [
+              "Brand Radar",
+              "Customer questions, saved AI answers and sources, with an owner-managed shared Ahrefs check allowance."
             ]
           ]
         },
@@ -204,6 +208,107 @@ export const currentEn: HelpCategory = {
         {
           "type": "p",
           "text": "[Explore the complete SEO audit](/help/seo-in-practice/complete-seo-audit) or [read when to evaluate changes](/help/seo-in-practice/when-changes-appear)."
+        },
+        {
+          "type": "p",
+          "text": "[Set up Brand Radar](/help/seo-in-practice/brand-radar)."
+        }
+      ]
+    },
+    {
+      "slug": "brand-radar",
+      "title": "Track buyer questions with Brand Radar",
+      "description": "Read real saved AI answers and sources, choose a schedule and understand the shared check allowance.",
+      "body": [
+        {
+          "type": "p",
+          "text": "Open **AI visibility → Brand Radar** in the [web app](https://app.anotherseoguru.com/app/ai-visibility/brand-radar). The selected project determines the linked report; you do not need to enter a report URL. Updated native app versions use the same project data."
+        },
+        {
+          "type": "h2",
+          "id": "setup",
+          "text": "Start with the questions your customers ask"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "The account owner connects the project. The new report starts with every platform paused.",
+            "Add a customer question and its country. Each question must have fewer than 400 characters. You can add up to ten at a time.",
+            "Choose platforms and a daily, weekly or monthly schedule. Review the projected account usage before confirming.",
+            "Ahrefs collects answers on that schedule. Sync saved answers reads the results without starting another AI check.",
+            "Read the answer, its platform, country and update date. Open the cited source pages before deciding what to change."
+          ]
+        },
+        {
+          "type": "h2",
+          "id": "allowance",
+          "text": "One account allowance, shared across projects"
+        },
+        {
+          "type": "p",
+          "text": "One question × one country × one platform × one run is one check. For a Standard connection with 300 included monthly checks, the following daily schedules have the same cost. Additional countries use additional checks."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Questions",
+            "Platforms",
+            "30 days",
+            "31 days"
+          ],
+          "rows": [
+            [
+              "10",
+              "1",
+              "300 checks",
+              "310 checks"
+            ],
+            [
+              "2",
+              "5",
+              "300 checks",
+              "310 checks"
+            ],
+            [
+              "5",
+              "1",
+              "150 checks",
+              "155 checks"
+            ]
+          ]
+        },
+        {
+          "type": "note",
+          "tone": "info",
+          "text": "The allowance belongs to the connected Ahrefs account, not each project or each customer. The API does not return the remaining custom-prompt check balance. The app labels its schedule calculation as a projection and checks other account reports before an active change. Ahrefs remains authoritative for actual usage."
+        },
+        {
+          "type": "h2",
+          "id": "read",
+          "text": "What the results mean"
+        },
+        {
+          "type": "list",
+          "items": [
+            "A mention means your brand appears in the saved answer. A citation means a source links to your site. They are different observations.",
+            "Weak name matches are flagged for review. A competitor named in text is not automatically a recommendation.",
+            "Counts describe up to 100 returned saved answers, not every AI search or a global market share.",
+            "No saved answer means unavailable. It does not prove that an assistant never mentions you.",
+            "Answer update dates do not establish complete historical coverage. The results can vary between people and runs."
+          ]
+        },
+        {
+          "type": "h2",
+          "id": "costs",
+          "text": "Syncing and scheduling are different"
+        },
+        {
+          "type": "p",
+          "text": "The current [Ahrefs OpenAPI](https://docs.ahrefs.com/openapi.json), reviewed 20 October 2026, documents free management requests and zero API units for custom-only result reads. Scheduled collection still uses the monthly prompt checks. The app does not buy an additional prompt package or silently switch to Ahrefs’ paid discovery corpus."
+        },
+        {
+          "type": "p",
+          "text": "Use the saved answers and source pages to discuss a specific improvement with **Aster AI**. These observations do not guarantee a citation, first position or a recovery date."
         }
       ]
     }
