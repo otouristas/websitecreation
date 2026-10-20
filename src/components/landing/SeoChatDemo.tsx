@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { AsterMark } from "./AsterIdentity";
-import { ArrowUpRight, Check, ChevronDown, FileText, Search } from "lucide-react";
+import { ArrowUp, ArrowUpRight, Check, ChevronDown, FileText, Plus, Search, Sparkles } from "lucide-react";
 import { getAppPath } from "@/lib/app-links";
 import type { SiteLocale } from "@/lib/i18n/locale";
 
@@ -32,8 +32,14 @@ export function SeoChatDemo({ locale }: { locale: SiteLocale }) {
       <div className="min-w-0 p-5 sm:p-8" aria-live="polite">
         <p className="ml-auto max-w-xl rounded-2xl rounded-br-md bg-primary/10 px-4 py-3 text-sm font-medium">{item.question}</p>
         <details className="mt-7 text-xs text-muted-foreground"><summary className="flex cursor-pointer list-none items-center gap-2"><Search className="size-3.5" aria-hidden />{tx("Evidence behind this example", "Τι εξετάζει ο Aster AI")}<ChevronDown className="size-3" aria-hidden /></summary><ul className="mt-3 grid gap-2">{item.steps.map(step => <li key={step} className="flex items-center gap-2"><Check className="size-3.5 text-primary" aria-hidden />{step}</li>)}</ul><p className="mt-3">{tx("Illustrative copy and sample context. This panel has not analyzed your website.", "Το παράδειγμα είναι ενδεικτικό και αφορά φανταστικό ιστότοπο.")}</p></details>
-        <p className="mt-5 max-w-2xl text-[15px] leading-7 text-foreground">{item.answer}</p>
-        <div className="mt-6 rounded-xl border border-hairline bg-background/40 p-5"><div className="flex items-center gap-2 text-sm font-medium"><FileText className="size-4 text-primary" aria-hidden />{item.action}</div><dl className="mt-4 grid gap-3 text-sm sm:grid-cols-2"><div><dt className="text-xs text-muted-foreground">{tx("Starting point", "Αφετηρία")}</dt><dd className="mt-1">{item.before}</dd></div><div><dt className="text-xs text-muted-foreground">{tx("Proposed result", "Πρόταση")}</dt><dd className="mt-1">{item.after}</dd></div></dl><p className="mt-4 border-t border-hairline pt-3 text-xs text-muted-foreground">{tx("Review → save a task or document → implement through the relevant tool → verify.", "Έλεγχος → αποθήκευση εργασίας ή εγγράφου → εφαρμογή με το κατάλληλο εργαλείο → επαλήθευση.")}</p></div>
+        <div className="mt-6 flex items-center gap-2 text-xs font-semibold"><AsterMark className="size-7 text-primary" />Aster AI</div>
+        <p className="mt-4 max-w-2xl text-[15px] leading-7 text-foreground">{item.answer}</p>
+        <div className="mt-6 overflow-hidden rounded-[23px] border border-hairline bg-surface"><div className="flex items-center gap-3 border-b border-hairline bg-gradient-to-r from-primary/10 to-transparent p-5 text-sm font-semibold"><span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-surface text-primary"><FileText className="size-5" aria-hidden /></span>{item.action}</div><dl className="grid gap-4 p-5 text-sm sm:grid-cols-2"><div className="rounded-xl bg-background/50 p-3"><dt className="text-xs text-muted-foreground">{tx("Starting point", "Αφετηρία")}</dt><dd className="mt-2 leading-6">{item.before}</dd></div><div className="rounded-xl bg-primary/5 p-3"><dt className="text-xs text-primary">{tx("Proposed result", "Πρόταση")}</dt><dd className="mt-2 font-medium leading-6">{item.after}</dd></div></dl></div>
+        <div className="mt-7 rounded-[28px] border border-primary/20 bg-surface p-4 shadow-[0_0_0_4px_rgb(7_92_229/0.025),0_12px_35px_-20px_rgb(7_92_229/0.25)]">
+          <span className="inline-flex rounded-lg bg-background/80 px-2 py-1 text-[10px] text-muted-foreground">northwind-outdoors.example</span>
+          <p className="min-h-16 px-1 py-4 text-sm text-muted-foreground">{tx("What would you like to improve?", "Τι θέλετε να βελτιώσετε;")}</p>
+          <div className="flex items-center gap-2"><Plus className="size-8 rounded-full bg-background p-2 text-muted-foreground" aria-hidden /><span className="inline-flex items-center gap-1.5 rounded-full bg-primary/5 px-2.5 py-1.5 text-[11px] font-medium text-primary"><Sparkles className="size-3.5" aria-hidden />Aster AI</span><span className="flex-1" /><a href={`${getAppPath("/demo/chat")}?lang=${locale}`} aria-label={tx("Open the interactive Aster AI demo", "Άνοιγμα της διαδραστικής επίδειξης Aster AI")} className="flex size-9 items-center justify-center rounded-full bg-primary text-primary-foreground"><ArrowUp className="size-4" /></a></div>
+        </div>
         <a href={`${getAppPath("/demo/chat")}?lang=${locale}`} className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-link">{tx("Try the actual chat with sample data", "Δοκιμάστε τον Aster AI με ενδεικτικά δεδομένα")}<ArrowUpRight className="size-4" aria-hidden /></a>
       </div>
     </div>
