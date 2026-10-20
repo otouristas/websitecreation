@@ -8,7 +8,7 @@ import type { HelpSearchEntry } from "@/lib/help/search";
  */
 const FEATURED: ReadonlyArray<{ readonly category: string; readonly article?: string; readonly icon: string }> = [
   { category: "seo-in-practice", article: "latest-features", icon: "sparkles" },
-  { category: "seo-in-practice", article: "when-changes-appear", icon: "clock" },
+  { category: "seo-in-practice", article: "when-changes-appear", icon: "book" },
   { category: "getting-started", icon: "rocket" },
   { category: "integrations", article: "wordpress-plugin", icon: "wrench" },
   { category: "integrations", article: "chrome-extension", icon: "layers" },
