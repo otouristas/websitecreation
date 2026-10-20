@@ -1,5 +1,5 @@
-import {portfolioProjects} from './portfolio-data.mjs';
 #!/usr/bin/env node
+import {portfolioProjects} from './portfolio-data.mjs';
 /**
  * Portfolio audit: fetches metadata and screenshots for all projects in portfolio.ts.
  * Usage:

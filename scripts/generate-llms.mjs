@@ -64,11 +64,6 @@ function field(block, key) {
   return m ? m[1].replace(/\\'/g, "'") : undefined;
 }
 
-function fieldBool(block, key) {
-  const m = block.match(new RegExp(`${key}:\\s*(true|false)`));
-  return m ? m[1] === 'true' : false;
-}
-
 function fieldArray(block, key) {
   const m = block.match(new RegExp(`${key}:\\s*\\[([^\\]]*)\\]`, 's'));
   if (!m) return [];
