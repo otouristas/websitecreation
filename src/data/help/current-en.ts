@@ -212,6 +212,10 @@ export const currentEn: HelpCategory = {
         {
           "type": "p",
           "text": "[Set up Brand Radar](/help/seo-in-practice/brand-radar)."
+        },
+        {
+          "type": "p",
+          "text": "[Explore the new visual workspace and document editor](/help/seo-in-practice/visual-seo-workspace)."
         }
       ]
     },
@@ -309,6 +313,65 @@ export const currentEn: HelpCategory = {
         {
           "type": "p",
           "text": "Use the saved answers and source pages to discuss a specific improvement with **Aster AI**. These observations do not guarantee a citation, first position or a recovery date."
+        }
+      ]
+    },
+    {
+      "slug": "visual-seo-workspace",
+      "title": "Explore rankings, links and opportunities",
+      "description": "Use interactive views backed by saved Search Console and crawl data, then edit the page in the writing workspace.",
+      "body": [
+        {
+          "type": "p",
+          "text": "The updated workspace keeps the same project, dates and source records across its charts and tables. Available in the web app and updated iOS and Android builds. Light and dark themes use the same controls."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Open This week → Search landscape. Select a position group to see its queries. Select a transition cell to see searches observed in both comparison periods. Web CSV exports the complete filtered set, not just the five preview rows.",
+            "Open Opportunities. Filter the opportunity map, select a point and open its existing recommendation. The vertical axis uses a logarithmic scale for impressions. Point size represents estimated extra clicks, not a promised outcome.",
+            "Open Site audit → Crawl explorer. Inspect saved response codes, click depth, page connections and folder flows. Select a page to inspect incoming and outgoing links, or search the page table. Opening the explorer does not start a paid crawl."
+          ]
+        },
+        {
+          "type": "note",
+          "tone": "info",
+          "text": "The ranking view covers returned Search Console rows, not every keyword on the internet. Transitions require observations in both periods. A successful HTTP response does not prove Google indexed a page; link counts do not measure authority."
+        },
+        {
+          "type": "h2",
+          "id": "coverage",
+          "text": "Read the coverage before drawing conclusions"
+        },
+        {
+          "type": "p",
+          "text": "The network draws up to 70 pages at a time. Selecting a page brings its neighbours into view. The figures use the loaded crawl, while the drawing stays manageable. Incomplete crawls are identified. Native reports load up to 5,000 pages and 20,000 link rows and disclose when the limit is reached. Page tables initially show up to 100 matches; search narrows them."
+        },
+        {
+          "type": "h2",
+          "id": "writing",
+          "text": "Write in a document, with Aster AI beside it"
+        },
+        {
+          "type": "p",
+          "text": "In Content → Page library or Content optimizer, Document mode displays headings, emphasis, lists, images and tables inside the editable page. Markdown remains available for source editing. The web writing panel answers questions using the current draft and offers opening-paragraph rewrites. Every rewrite has a before-and-after preview and requires your acceptance. Saving and publishing remain separate actions."
+        },
+        {
+          "type": "p",
+          "text": "iOS and Android include the bundled visual document editor and the existing Aster AI rewrite menu. On the phone, controls sit above the document and rewrite previews open separately. Source selection remains available for passages that cannot be mapped reliably. The web draft conversation reads at most the first 14,000 characters and tells you when the draft is longer."
+        },
+        {
+          "type": "h2",
+          "id": "integrations",
+          "text": "WordPress and Chrome"
+        },
+        {
+          "type": "p",
+          "text": "Aster AI answers can show observed ranking groups and a filterable query table when Search Console ranking evidence is present. Open the project links for the full opportunity map and crawl network in the web app. The WordPress content editor remains the WordPress editor."
+        },
+        {
+          "type": "p",
+          "text": "[Open the workspace](https://app.anotherseoguru.com/app) or [try the sample workspace](https://app.anotherseoguru.com/demo). Sample reports are labelled; they are not your site’s results."
         }
       ]
     }
