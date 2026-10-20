@@ -39,8 +39,6 @@ export type SeoGuruCopy = {
     readonly title: string;
     readonly body: string;
     readonly bullets: readonly string[];
-    readonly visualCaption: string;
-    readonly previewBody: string;
   };
   readonly method: { readonly eyebrow: string; readonly title: string; readonly intro: string; readonly cards: readonly Card[] };
   readonly results: {
@@ -87,9 +85,6 @@ const el: SeoGuruCopy = {
       'Γλώσσες: ελληνικά και αγγλικά, με hreflang όπου χρειάζεται',
       'Πρώτο βήμα: δωρεάν έλεγχος, πριν από οποιαδήποτε σύμβαση',
     ],
-    visualCaption: 'Όχι αποτέλεσμα πελάτη',
-    previewBody:
-      'Το πρώτο πράγμα που παίρνετε είναι ο δωρεάν έλεγχος: τα θέματα, η σειρά διόρθωσης και μια τιμή. Δεν δείχνουμε δείγμα γραφήματος, για να μη διαβαστεί ως αποτέλεσμα πελάτη.',
   },
   method: {
     eyebrow: 'Μέθοδος',
@@ -236,9 +231,6 @@ const en: SeoGuruCopy = {
       'Languages: Greek and English, with hreflang where the site needs it',
       'First step: a free audit, before any contract',
     ],
-    visualCaption: 'Not a client result',
-    previewBody:
-      'The first thing you get is the free audit: the issues, the order to fix them and a price. No sample chart is shown here, so it cannot be read as a client result.',
   },
   method: {
     eyebrow: 'Method',
@@ -266,7 +258,7 @@ const en: SeoGuruCopy = {
     eyebrow: 'Work',
     title: 'Sites you can open',
     intro:
-      'These are live projects from the work page. Each image is that site’s homepage, already published on /work. They are not performance charts and they are not testimonials.',
+      'Explore the websites we designed and actual search performance from four client projects, with dated Google Search Console data.',
     all: 'See all the work',
   },
   services: {

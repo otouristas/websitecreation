@@ -4,6 +4,7 @@
  *
  * Usage: node scripts/generate-llms.mjs
  */
+import {portfolioProjects} from './portfolio-data.mjs';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -173,35 +174,7 @@ function parseKeptCityPages() {
   };
 }
 
-function parsePortfolio() {
-  const src = read('src/data/portfolio.ts');
-  const start = src.indexOf('export const portfolioProjects');
-  const body = src.slice(start);
-  // Split on project object starts that have slug at the top
-  const parts = body.split(/\n\s*\{\s*\n\s*slug:/);
-  const projects = [];
-  for (let i = 1; i < parts.length; i++) {
-    const block = 'slug:' + parts[i].split(/\n\s*\},\s*\n\s*\{/)[0];
-    const slug = field(block, 'slug') ?? block.match(/^slug:\s*'([^']+)'/)?.[1];
-    if (!slug) continue;
-    // First slug field may be inline after split
-    const slugMatch = parts[i].match(/^\s*'([^']+)'/);
-    const realSlug = slugMatch ? slugMatch[1] : slug;
-    const full = `slug: '${realSlug}',\n` + parts[i];
-    projects.push({
-      slug: realSlug,
-      name: field(full, 'name') ?? realSlug,
-      url: field(full, 'url') ?? '',
-      category: field(full, 'category') ?? 'other',
-      summary: field(full, 'summary') ?? '',
-      summaryEl: field(full, 'summaryEl'),
-      results: fieldArray(full, 'results'),
-      services: fieldArray(full, 'services'),
-      featured: fieldBool(full, 'featured'),
-    });
-  }
-  return projects;
-}
+function parsePortfolio() { return portfolioProjects; }
 
 function parseBlogPosts() {
   const dir = path.join(ROOT, 'content/blog');
@@ -330,7 +303,7 @@ function buildShort({ services, servicesEl, industries, industriesEl, greece, pr
     hubLine('Rent-a-Car', url('en', '/solutions/rent-a-car'), 'Fleet catalogs, booking funnels, island/airport local SEO.'),
   );
   lines.push(
-    hubLine('Portfolio / Case Studies', url('en', '/work'), `${projects.length} live client projects with homepage screenshots.`),
+    hubLine('Portfolio / Case Studies', url('en', '/work'), `${projects.length} documented client projects with homepage screenshots.`),
   );
   lines.push(
     hubLine('Blog', url('en', '/blog'), 'SEO, GEO/AEO, hotel, and e-shop guides (EN + EL).'),
@@ -430,15 +403,15 @@ function buildShort({ services, servicesEl, industries, industriesEl, greece, pr
   }
   lines.push('');
   lines.push(`## Portfolio & Case Studies (${projects.length} projects)`);
-  const featured = projects.filter((p) => p.featured);
-  const rest = projects.filter((p) => !p.featured);
+  const featured = projects.filter((p) => p.featured && !p.liveStatus);
+  const rest = projects.filter((p) => !p.featured || p.liveStatus);
   for (const p of [...featured, ...rest]) {
     const blurb = (p.summary || p.summaryEl || p.category).replace(/\n/g, ' ');
     lines.push(
       mdLink(
         p.name,
         url('en', `/work/${p.slug}`),
-        `${blurb}${p.url ? ` · Live: ${p.url}` : ''}`,
+        `${blurb}${p.url ? ` · Website: ${p.url}` : ''}`,
       ),
     );
   }
@@ -520,7 +493,7 @@ function buildFull({ services, servicesEl, industries, industriesEl, greece, pro
     '2. **Bilingual surface** - Greek under `/el`, English under `/en`, with hreflang on shared pages.',
   );
   lines.push(
-    `3. **Proof inventory** - ${PROJECT_COUNT} live client projects documented under \`/work\` with homepage screenshots and case-study summaries.`,
+    `3. **Proof inventory** - ${PROJECT_COUNT} documented client projects documented under \`/work\` with homepage screenshots and case-study summaries.`,
   );
   lines.push(
     '4. **Platform modules** - Semantic keyword clustering, rank tracking from GSC, technical audits / Core Web Vitals, GEO/AEO citation tracking, AI-assisted workflows, sprint/task board. Marketing: `/en/platform`.',
@@ -626,12 +599,13 @@ function buildFull({ services, servicesEl, industries, industriesEl, greece, pro
   for (const p of projects) {
     lines.push(`### ${p.name} (\`${p.slug}\`)`);
     lines.push(`- **Case study:** ${url('en', `/work/${p.slug}`)} · ${url('el', `/work/${p.slug}`)}`);
-    if (p.url) lines.push(`- **Live site:** ${p.url}`);
+    if (p.url) lines.push(`- **Project website:** ${p.url}`);
     lines.push(`- **Category:** ${p.category}${p.featured ? ' · featured' : ''}`);
+    if (p.liveStatus) lines.push(`- **Public-page availability at review:** ${p.liveStatus === 'offline' ? 'archived project' : 'not verified; access unavailable'}`);
     if (p.summary) lines.push(`- **Summary (EN):** ${p.summary}`);
     if (p.summaryEl) lines.push(`- **Summary (EL):** ${p.summaryEl}`);
     if (p.services.length) lines.push(`- **Services delivered:** ${p.services.join(', ')}`);
-    if (p.results.length) lines.push(`- **Results:** ${p.results.join('; ')}`);
+    if (p.results.length) lines.push(`- **Website features:** ${p.results.join('; ')}`);
     lines.push('');
   }
   lines.push('---');

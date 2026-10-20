@@ -12,3 +12,7 @@
   consistent with the web, iOS, Android, WordPress and browser-extension experience.
 - Do not invent testimonials, results, customer endorsements, or availability.
   Preserve sources and date ranges for actual metrics; label estimates as estimates.
+- The reviewed `src/data/portfolio-research.ts` records and the dated portfolio audit
+  are the current source for client descriptions. Old scrape correction files are
+  historical context. Do not regenerate SEO or implementation claims from them.
+  Run `node scripts/validate-portfolio-case-studies.mjs` after portfolio edits.
