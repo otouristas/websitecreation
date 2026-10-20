@@ -1,6 +1,8 @@
 import { getAppPath } from "@/lib/app-links";
 import { localizedPath, type SiteLocale } from "@/lib/i18n/locale";
 import { fitDescription } from "@/lib/seo/description";
+import { currentEn } from "./current-en";
+import { currentEl } from "./current-el";
 import { el } from "./el";
 import { en } from "./en";
 import { integrationsEl } from "./integrations-el";
@@ -14,8 +16,8 @@ export type { Block, CardItem, HelpArticle, HelpCategory, Shot, StepItem };
 /** The iPhone guides are a help category with their own tab in the docs. */
 export const IPHONE_CATEGORY = "iphone-app";
 
-const EN_ALL: ReadonlyArray<HelpCategory> = [...en, integrationsEn, iphoneEn];
-const EL_ALL: ReadonlyArray<HelpCategory> = [...el, integrationsEl, iphoneEl];
+const EN_ALL: ReadonlyArray<HelpCategory> = [...en, currentEn, integrationsEn, iphoneEn];
+const EL_ALL: ReadonlyArray<HelpCategory> = [...el, currentEl, integrationsEl, iphoneEl];
 
 /**
  * The AnotherSEOGuru App help center. The articles are shared with the app repo
@@ -23,7 +25,7 @@ const EL_ALL: ReadonlyArray<HelpCategory> = [...el, integrationsEl, iphoneEl];
  * locales, so every page has a 1:1 hreflang twin.
  */
 /** Bump when the articles change: it feeds dateModified and the sitemap. */
-export const HELP_UPDATED = "2026-10-17";
+export const HELP_UPDATED = "2026-10-20";
 
 export function helpContent(locale: SiteLocale): ReadonlyArray<HelpCategory> {
   return locale === "el" ? EL_ALL : EN_ALL;
