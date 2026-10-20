@@ -10,7 +10,7 @@ import { RESPONSE_HOURS, SEO_MIN_TERM_MONTHS } from '@/data/company-facts';
  * description 140–158) and the query "seo guru".
  *
  * Facts come from company experience figures and pricing tokens. Measured
- * client results are not on record, so that block is a placeholder.
+ * client measurements are shown with their date ranges and source data.
  * The page describes the Touristas Technologies team. It does not name a person.
  *
  * Strings may contain `{{TOKEN}}` price placeholders, resolved at render.
@@ -48,10 +48,6 @@ export type SeoGuruCopy = {
     readonly title: string;
     readonly intro: string;
     readonly all: string;
-    readonly placeholderKicker: string;
-    readonly placeholderTitle: string;
-    readonly placeholderBody: string;
-    readonly placeholderFrame: string;
   };
   readonly services: { readonly eyebrow: string; readonly title: string; readonly intro: string; readonly cards: readonly Card[] };
   readonly pricing: { readonly eyebrow: string; readonly title: string; readonly intro: string; readonly cards: readonly Card[]; readonly all: string };
@@ -121,13 +117,8 @@ const el: SeoGuruCopy = {
     eyebrow: 'Έργα',
     title: 'Ιστοσελίδες που μπορείτε να ανοίξετε',
     intro:
-      'Παρακάτω είναι ζωντανά έργα από τη σελίδα έργων. Κάθε εικόνα είναι το homepage της ιστοσελίδας, ήδη δημοσιευμένο στο /work. Δεν είναι γραφήματα απόδοσης και δεν είναι μαρτυρίες.',
+      'Δείτε τις ιστοσελίδες που σχεδιάσαμε και την πραγματική πορεία τεσσάρων έργων στο Google Search Console.',
     all: 'Δείτε όλα τα έργα',
-    placeholderKicker: 'Σύμβολο θέσης',
-    placeholderTitle: 'Μετρήσιμα αποτελέσματα πελατών δεν έχουν καταγραφεί',
-    placeholderBody:
-      'Εδώ μπαίνουν νούμερα Search Console πριν και μετά, και τα στιγμιότυπα που θα δώσει ο ιδιοκτήτης. Δεν υπάρχουν τέτοια στοιχεία στο αρχείο, οπότε δεν εμφανίζεται κανένα νούμερο, μαρτυρία ή εικόνα αποτελέσματος. Αυτό το πλαίσιο δεν είναι αποτέλεσμα πελάτη.',
-    placeholderFrame: 'Σύμβολο θέσης στιγμιότυπου: δεν υπάρχει εικόνα αποτελέσματος',
   },
   services: {
     eyebrow: 'Υπηρεσίες',
@@ -277,11 +268,6 @@ const en: SeoGuruCopy = {
     intro:
       'These are live projects from the work page. Each image is that site’s homepage, already published on /work. They are not performance charts and they are not testimonials.',
     all: 'See all the work',
-    placeholderKicker: 'Placeholder',
-    placeholderTitle: 'Measured client results are not on record',
-    placeholderBody:
-      'This is where Search Console before-and-after numbers go, and the screenshots the owner supplies. None are on record, so no figure, testimonial or result image is shown. This box is not a client result.',
-    placeholderFrame: 'Screenshot placeholder: no result image is on file',
   },
   services: {
     eyebrow: 'Services',

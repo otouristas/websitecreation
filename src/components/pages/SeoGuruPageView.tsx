@@ -1,3 +1,4 @@
+import { ClientSearchResults } from "@/components/work/ClientSearchResults";
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { ArrowRight, Compass, Search, UserRound, Wallet, Wrench } from 'lucide-react';
@@ -117,10 +118,7 @@ export function SeoGuruPageView({ locale }: { locale: SiteLocale }) {
             body={<p>{t.who.body}</p>}
             bullets={t.who.bullets}
             preview={
-              <div className="rounded-2xl border border-dashed border-hairline bg-surface/70 p-6">
-                <p className="text-[12px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">{t.who.visualCaption}</p>
-                <p className="mt-3 text-[15px] leading-relaxed text-muted-foreground">{t.who.previewBody}</p>
-              </div>
+              <ClientSearchResults locale={locale} slug="onoma-hotel" />
             }
           />
         </KitSection>
@@ -144,17 +142,7 @@ export function SeoGuruPageView({ locale }: { locale: SiteLocale }) {
               <ArrowRight className="size-4" aria-hidden />
             </Link>
           </p>
-          <aside
-            aria-label={t.results.placeholderKicker}
-            className="mt-10 rounded-2xl border border-dashed border-hairline bg-surface/50 p-6 sm:p-8"
-          >
-            <p className="text-[12px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">{t.results.placeholderKicker}</p>
-            <h3 className="mt-2 font-display text-xl font-semibold text-foreground">{t.results.placeholderTitle}</h3>
-            <p className="mt-3 max-w-3xl text-[15px] leading-relaxed text-muted-foreground">{t.results.placeholderBody}</p>
-            <div className="mt-6 grid aspect-[16/7] place-items-center rounded-xl border border-dashed border-hairline bg-background/60 px-6 text-center text-[14px] text-muted-foreground">
-              {t.results.placeholderFrame}
-            </div>
-          </aside>
+          <ClientSearchResults locale={locale} className="mt-12" />
         </KitSection>
 
         <KitSection tinted id="services">

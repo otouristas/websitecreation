@@ -2,6 +2,20 @@
 
 The Greek site must read as written by a native professional, not machine-translated. Apply this to every `el` string.
 
+## Aster AI and natural Greek
+
+The assistant's name is **Aster AI**, always in full. Write «Γνωρίστε τον Aster AI»
+and «Ρωτήστε τον Aster AI». Keep the same name on the website and in every app.
+Do not substitute a generic «AI», «βοηθός» or the shortened «Aster» as its product name.
+
+Write the meaning in natural Greek rather than following English word order. Prefer
+«Εβδομαδιαίος έλεγχος SEO» to «Έλεγχος Δευτέρας», «Έλεγχοι πριν εφαρμόσετε τις αλλαγές»
+to «φύλακας αλλαγών», and «αρχικές λέξεις-κλειδιά» to «λέξεις-σπόροι».
+For a general audience, explain «σελίδες που ανταγωνίζονται για τις ίδιες αναζητήσεις»
+instead of relying on «κανιβαλισμός». Use polite plural consistently. Read the whole
+section aloud, including headings, buttons, errors and accessibility labels.
+Automated checks supplement this editorial review; they cannot establish naturalness.
+
 ## Keep in English (universally accepted in Greek tech/marketing)
 `SEO, GEO, AEO, Google, Google Search Console, Google Business Profile, Google Analytics, WordPress, WooCommerce, e-shop, schema, backlink(s), link building, Core Web Vitals, hosting, domain, blog, chatbot, landing page, AI, LLM, ChatGPT, Perplexity, Gemini, rent-a-car, travel AI, Booking, OTA, on-page, mobile-first, portfolio, ROI, leads` (leads acceptable but prefer «αιτήματα πελατών» in body copy), `rich snippets, JSON-LD, CRO, digital PR`.
 

@@ -29,11 +29,11 @@ export function WorkRail({ locale = "en" }: { locale?: SiteLocale }) {
           title={
             isEl ? (
               <>
-                Δουλειά που <span className="gradient-text">κατατάσσεται</span>
+                Κάθε επιχείρηση, <span className="gradient-text">ο δικός της σχεδιασμός</span>
               </>
             ) : (
               <>
-                Work that <span className="gradient-text">actually ranks</span>
+                Different businesses. <span className="gradient-text">Distinctive websites.</span>
               </>
             )
           }
@@ -76,6 +76,7 @@ export function WorkRail({ locale = "en" }: { locale?: SiteLocale }) {
                   <h3 className="mt-1.5 truncate font-display text-xl font-semibold tracking-[-0.03em] text-foreground">
                     {project.name}
                   </h3>
+                  <p className="mt-2 max-w-md text-sm leading-6 text-muted-foreground">{isEl ? project.summaryEl : project.summary}</p>
                 </div>
                 <Link
                   href={lp(`/work/${project.slug}`)}

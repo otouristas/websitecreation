@@ -26,6 +26,6 @@ export function ChatDomainEntry({ locale }: { locale: SiteLocale }) {
     </form>
     {error && <p role="alert" id="chat-domain-error" className="mt-2 text-sm text-destructive">{error}</p>}
     <p id="chat-domain-help" className="mt-3 text-center text-xs text-muted-foreground">{tx("Create your workspace. Connect data when you are ready. Review changes before publishing.", "Δημιουργήστε τον χώρο σας. Συνδέστε δεδομένα όταν είστε έτοιμοι. Ελέγξτε τις αλλαγές πριν από τη δημοσίευση.")}</p>
-    <a href={`${getAppPath("/demo/chat")}?lang=${locale}`} className="mt-4 inline-block text-sm font-medium text-link underline underline-offset-4">{tx("Try Aster with sample data", "Δοκιμάστε τον Aster με δείγμα δεδομένων")}</a>
+    <a href={`${getAppPath("/demo/chat")}?lang=${locale}`} className="mt-4 inline-block text-sm font-medium text-link underline underline-offset-4">{tx("Try Aster AI with sample data", "Δοκιμάστε τον Aster AI με δείγμα δεδομένων")}</a>
   </div>;
 }
