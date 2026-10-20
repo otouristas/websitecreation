@@ -7,6 +7,8 @@ import type { HelpSearchEntry } from "@/lib/help/search";
  * the help content, so the grid only links to pages that already exist.
  */
 const FEATURED: ReadonlyArray<{ readonly category: string; readonly article?: string; readonly icon: string }> = [
+  { category: "seo-in-practice", article: "latest-features", icon: "sparkles" },
+  { category: "seo-in-practice", article: "when-changes-appear", icon: "clock" },
   { category: "getting-started", icon: "rocket" },
   { category: "integrations", article: "wordpress-plugin", icon: "wrench" },
   { category: "integrations", article: "chrome-extension", icon: "layers" },

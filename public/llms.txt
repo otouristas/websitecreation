@@ -65,6 +65,9 @@ Last Updated: 2026-10-20
 - [Account and billing: Alerts, integrations and branding](https://anotherseoguru.com/en/help/account-billing/alerts-and-integrations.md) - Get notified about drops and connect the tools you use.
 - [Account and billing: Your data, privacy and Google access](https://anotherseoguru.com/en/help/account-billing/privacy-and-data.md) - What we read, what we store and how to remove it.
 - [Account and billing: Troubleshooting](https://anotherseoguru.com/en/help/account-billing/troubleshooting.md) - Fixes for the most common problems.
+- [SEO in practice: When do SEO changes appear in Google?](https://anotherseoguru.com/en/help/seo-in-practice/when-changes-appear.md) - Understand the stages after a change, check what Google has processed and measure results carefully.
+- [SEO in practice: Complete SEO audit with Aster AI](https://anotherseoguru.com/en/help/seo-in-practice/complete-seo-audit.md) - One report from your connected evidence, with concrete monthly priorities.
+- [SEO in practice: Current features and where to find them](https://anotherseoguru.com/en/help/seo-in-practice/latest-features.md) - A current guide to sources, tasks, new tools and client requests.
 - [WordPress and Chrome: Install the WordPress plugin](https://anotherseoguru.com/en/help/integrations/wordpress-plugin.md) - Install AnotherSEOGuru 4.4.1 on WordPress, connect the site with OAuth, and publish title and description changes back with approval and undo.
 - [WordPress and Chrome: Install the Chrome extension](https://anotherseoguru.com/en/help/integrations/chrome-extension.md) - Install AnotherSEOGuru 3.2.2 for Chrome, audit any page in the browser, and sign in to see Search Console data for that page.
 - [iPhone app: Get the iPhone beta](https://anotherseoguru.com/en/help/iphone-app/get-the-beta.md) - The iPhone app is in beta through Apple's TestFlight. Here's how to request an invite and install it.

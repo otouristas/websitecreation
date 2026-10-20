@@ -34,11 +34,11 @@ export const en: ReadonlyArray<HelpCategory> = [
           { type: "h2", id: "shortcuts", text: "Moving around quickly" },
           { type: "list", items: [
             "Press `⌘K` (or `Ctrl K`) anywhere in the app to jump to any page, section or site.",
-            "Use **Ask AI** in the top bar to ask questions about your own data in plain language.",
+            "Use **Ask Aster AI** in the top bar to ask questions about your own data in plain language.",
             "The site switcher at the top of the sidebar changes the property every screen works on.",
           ] },
           { type: "image", device: "browser", src: "/images/docs/web/command-palette-light.webp", srcDark: "/images/docs/web/command-palette-dark.webp", width: 1600, height: 1000, alt: "The command palette open over the app, with search results for keyword pages and sections", caption: "Press ⌘K to jump to any page, section or site." },
-          { type: "image", device: "browser", src: "/images/docs/web/ask-ai-light.webp", srcDark: "/images/docs/web/ask-ai-dark.webp", width: 1600, height: 1000, alt: "The Ask AI panel open on the right, with suggested questions about the current site", caption: "Ask AI answers questions from the data on the screen you're looking at." },
+          { type: "image", device: "browser", src: "/images/docs/web/ask-ai-light.webp", srcDark: "/images/docs/web/ask-ai-dark.webp", width: 1600, height: 1000, alt: "The Ask Aster AI panel open on the right, with suggested questions about the current site", caption: "Ask Aster AI answers questions from the data on the screen you're looking at." },
         ],
       },
       {
@@ -216,6 +216,7 @@ export const en: ReadonlyArray<HelpCategory> = [
         title: "Tasks, the board and measured results",
         description: "Keep every fix in one list, ship it and see what it earned.",
         body: [
+          { type: "note", tone: "tip", text: "The 28-day window is for monitoring, not a results deadline. Check Google’s last crawl and whether periods are comparable. [When changes appear](/help/seo-in-practice/when-changes-appear)." },
           { type: "p", text: "**Tasks** holds every fix and follow-up, whether it came from an opportunity, the audit, a client request or you." },
           { type: "image", device: "browser", src: "/images/docs/web/tasks-light.webp", srcDark: "/images/docs/web/tasks-dark.webp", width: 1600, height: 1000, alt: "The Tasks list with counters for in progress, due, overdue and done, and the open tasks below", caption: "Tasks → List, filtered to all sites." },
           { type: "h2", id: "views", text: "List, board and results" },
@@ -361,6 +362,7 @@ export const en: ReadonlyArray<HelpCategory> = [
         title: "Competitors, keyword gap and backlinks",
         description: "See how you compare, what they rank for that you don't and who links to them.",
         body: [
+          { type: "note", tone: "tip", text: "Compatible operations use Ahrefs or DataForSEO with fallback when one provider fails. Existing credit and account limits apply. [Complete SEO audit](/help/seo-in-practice/complete-seo-audit)." },
           { type: "p", text: "Add up to six competitors to a project. **Competitors** then shows how big each site is, your share of voice and where they're winning clicks you could get." },
           { type: "image", device: "browser", src: "/images/docs/web/competitors-light.webp", srcDark: "/images/docs/web/competitors-dark.webp", width: 1600, height: 1000, alt: "The Competitors overview comparing keywords, estimated traffic and top 10 rankings, with share of voice", caption: "Competitors → Overview with share of voice across tracked sites." },
           { type: "h2", id: "tools", text: "The tools" },
@@ -421,6 +423,7 @@ export const en: ReadonlyArray<HelpCategory> = [
         title: "Clients and the client portal",
         description: "Keep accounts in one place and give clients their own live portal.",
         body: [
+          { type: "note", tone: "tip", text: "For a new request, write naturally, review the organized Aster AI draft and confirm it. The original message stays with the task. Owner preview lets you test the analysis without submitting. [Current feature guide](/help/seo-in-practice/latest-features)." },
           { type: "p", text: "**Clients** keeps each account's contacts, notes and linked sites. Every client can get a branded **client portal** with their search performance, the work you're doing and their invoices." },
           { type: "image", device: "browser", src: "/images/docs/web/clients-light.webp", srcDark: "/images/docs/web/clients-dark.webp", width: 1600, height: 1000, alt: "The Clients screen with active clients, MRR, at-risk clients and open deal value, and the list of clients", caption: "Clients with retainer, linked sites and SEO trend for each account." },
           { type: "h2", id: "portal", text: "What clients see" },
