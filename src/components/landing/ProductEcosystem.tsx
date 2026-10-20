@@ -1,0 +1,17 @@
+import Link from "next/link";
+import { Globe, Smartphone, Puzzle, Code2, ArrowUpRight } from "lucide-react";
+import { localizedPath, type SiteLocale } from "@/lib/i18n/locale";
+import { getAppPath } from "@/lib/app-links";
+
+export function ProductEcosystem({ locale }: { locale: SiteLocale }) {
+  const tx = (en: string, el: string) => locale === "el" ? el : en;
+  const cards = [
+    { name: tx("Web workspace", "Χώρος εργασίας web"), detail: tx("Chat, evidence, documents and your existing SEO tools.", "Συνομιλία, στοιχεία, έγγραφα και τα υπάρχοντα εργαλεία SEO."), href: `${getAppPath("/demo/chat")}?lang=${locale}`, state: tx("Try the sample workspace", "Δοκιμάστε το δείγμα"), icon: Globe },
+    { name: "iPhone", detail: tx("A native app on the same account, with sharing and site context.", "Εγγενής εφαρμογή στον ίδιο λογαριασμό, με κοινή χρήση και πλαίσιο ιστοτόπου."), href: localizedPath(locale, "/platform/iphone"), state: "TestFlight beta", icon: Smartphone },
+    { name: "Android", detail: tx("A native Android client using the same data and assistant.", "Εγγενής εφαρμογή Android με τα ίδια δεδομένα και βοηθό."), href: localizedPath(locale, "/platform/android"), state: tx("Release preparation", "Προετοιμασία κυκλοφορίας"), icon: Smartphone },
+    { name: "WordPress", detail: tx("Work in the editor. Preview SEO changes and approve them before applying.", "Εργαστείτε στον editor. Δείτε και εγκρίνετε τις αλλαγές SEO πριν εφαρμοστούν."), href: localizedPath(locale, "/platform/wordpress"), state: tx("Plugin and editor tools", "Plugin και εργαλεία editor"), icon: Puzzle },
+    { name: tx("Browser extension", "Επέκταση προγράμματος περιήγησης"), detail: tx("Ask about the page you choose, with your account and site context.", "Ρωτήστε για τη σελίδα που επιλέγετε, με τον λογαριασμό και τον ιστότοπό σας."), href: localizedPath(locale, "/platform/chrome-extension"), state: tx("Chrome and compatible browsers", "Chrome και συμβατά προγράμματα"), icon: Puzzle },
+    { name: "MCP / API", detail: tx("Use the supported tools from external assistants with scoped permissions.", "Χρησιμοποιήστε τα υποστηριζόμενα εργαλεία από εξωτερικούς βοηθούς με συγκεκριμένα δικαιώματα."), href: localizedPath(locale, "/platform/mcp"), state: tx("See supported capabilities", "Δείτε τις υποστηριζόμενες δυνατότητες"), icon: Code2 },
+  ];
+  return <section className="mx-auto max-w-6xl px-6 py-20" aria-labelledby="ecosystem-title"><p className="text-xs font-medium uppercase tracking-widest text-primary">{tx("One account, the places you work", "Ένας λογαριασμός, εκεί που εργάζεστε")}</p><h2 id="ecosystem-title" className="mt-4 max-w-3xl font-display text-3xl font-semibold tracking-tight sm:text-4xl">{tx("Keep the question, the evidence and the next step together.", "Κρατήστε μαζί την ερώτηση, τα στοιχεία και το επόμενο βήμα.")}</h2><div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{cards.map(card => <Link key={card.name} href={card.href} className="group rounded-2xl border border-hairline bg-surface/50 p-6 transition hover:border-primary/40 focus-visible:outline-2 focus-visible:outline-primary"><card.icon className="size-5 text-primary" aria-hidden /><h3 className="mt-5 flex items-center justify-between text-lg font-semibold">{card.name}<ArrowUpRight className="size-4 text-muted-foreground group-hover:text-primary" aria-hidden /></h3><p className="mt-2 text-sm leading-6 text-muted-foreground">{card.detail}</p><p className="mt-5 text-xs font-medium text-foreground">{card.state}</p></Link>)}</div></section>;
+}

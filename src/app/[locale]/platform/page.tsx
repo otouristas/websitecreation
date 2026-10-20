@@ -1,3 +1,8 @@
+import { AsterIdentity } from "@/components/landing/AsterIdentity";
+import { ChatDomainEntry } from "@/components/landing/ChatDomainEntry";
+import { SeoChatDemo } from "@/components/landing/SeoChatDemo";
+import { WorkflowLogos } from "@/components/landing/WorkflowLogos";
+import { ProductEcosystem } from "@/components/landing/ProductEcosystem";
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
@@ -8,7 +13,6 @@ import Footer from "@/components/Footer";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
 import {
   Accent,
-  AnnouncePill,
   BeforeAfter,
   Container,
   CtaBand,
@@ -16,7 +20,6 @@ import {
   HeroCentered,
   KitHeading,
   KitSection,
-  ProductHero,
   RawQueriesPanel,
   SoftwareCtas,
   Stage,
@@ -36,7 +39,6 @@ import {
   PersonaLinks,
   PlanPicker,
   PlatformLinks,
-  WorksWith,
   appLink,
   gscBoostSoftwareSchema,
   platformMetadata,
@@ -91,24 +93,17 @@ export default async function PlatformHubPage({ params }: PageProps) {
       <Header locale={locale} />
       <main className="blueprint-grid relative z-0">
         <HeroCentered
-          pill={
-            <AnnouncePill
-              href={`${lp("/platform/features")}#ai-visibility`}
-              kind="ai"
-              tag="AI"
-              text={tx("See when ChatGPT, Gemini and Perplexity mention you", "Δείτε πότε σας αναφέρουν το ChatGPT, το Gemini και το Perplexity")}
-            />
-          }
+          pill={<AsterIdentity locale={locale} />}
           title={
             <>
-              {tx("Search Console, turned into a", "Το Search Console γίνεται")} <Accent>{tx("growth plan", "πλάνο ανάπτυξης")}</Accent>
+              {tx("Ask Aster.", "Ρωτήστε τον Aster.")} <Accent>{tx("Find your next move.", "Δείτε το επόμενο βήμα.")}</Accent>
             </>
           }
           lead={tx(
-            "AnotherSEOGuru App is SEO software for Google Search Console. Connect Google once, read-only, and it finds the fixes that win the most clicks: striking-distance keywords, weak snippets, decaying pages, cannibalization and missing content, each with an estimate of what it is worth.",
-            "Το AnotherSEOGuru App είναι λογισμικό SEO για το Google Search Console. Συνδέστε τη Google μία φορά, μόνο για ανάγνωση, και βρίσκει τις διορθώσεις που φέρνουν τα περισσότερα κλικ: λέξεις-κλειδιά κοντά στην κορυφή, αδύναμα snippets, σελίδες σε φθορά, κανιβαλισμό και περιεχόμενο που λείπει, με εκτίμηση για το πόσο αξίζει η καθεμία.",
+            "How can I rank for this keyword? Why are my clicks falling? Ask in your own words. Aster connects your questions to Search Console evidence, page checks and a clear next step inside AnotherSEOGuru App. Inspect the sources, save a task or draft, and review each change before it goes live.",
+            "Πώς θα ανέβω για αυτή τη λέξη-κλειδί; Γιατί μειώνονται τα κλικ μου; Ρωτήστε με δικά σας λόγια. Ο Aster συνδέει τις ερωτήσεις σας με στοιχεία Search Console, ελέγχους σελίδων και ένα σαφές επόμενο βήμα στο AnotherSEOGuru App. Δείτε τις πηγές, αποθηκεύστε εργασία ή προσχέδιο και ελέγξτε κάθε αλλαγή πριν δημοσιευτεί.",
           )}
-          actions={<SoftwareCtas locale={locale} source="platform-hero" />}
+          actions={<ChatDomainEntry locale={locale} />}
           trust={<TrustLine items={softwareTrust(locale)} />}
         >
           <div className="mx-auto mt-14 w-full max-w-[1240px] px-3 sm:px-6">
@@ -117,19 +112,7 @@ export default async function PlatformHubPage({ params }: PageProps) {
                 aria-hidden
                 className="pointer-events-none absolute -inset-x-[4%] -top-[10%] -z-10 h-[55%] rounded-[50%] bg-[radial-gradient(closest-side,color-mix(in_oklab,var(--primary)_35%,transparent),transparent)] blur-3xl"
               />
-              <ProductHero
-                href={appLink("/demo", locale, "platform-window")}
-                ctaLabel={tx("Explore the live demo", "Δείτε τη ζωντανή επίδειξη")}
-                label={tx(
-                  "AnotherSEOGuru App overview on sample data: clicks, impressions, CTR, average position and a clicks chart.",
-                  "Επισκόπηση του AnotherSEOGuru App με δείγμα δεδομένων: κλικ, εμφανίσεις, CTR, μέση θέση και γράφημα κλικ.",
-                )}
-                badge={
-                  <span className="rounded-full border border-hairline bg-background px-2 py-0.5 text-[11px] font-medium text-muted-foreground">
-                    {tx("Live demo · sample data", "Ζωντανή επίδειξη · δείγμα δεδομένων")}
-                  </span>
-                }
-              />
+              <SeoChatDemo locale={locale} />
             </div>
             <p className="mt-5 text-center text-[13px] text-muted-foreground">
               {tx("Sample data for a fictional hotel. The demo runs the real app with no account.", "Δείγμα δεδομένων για ένα φανταστικό ξενοδοχείο. Η επίδειξη τρέχει την πραγματική εφαρμογή χωρίς λογαριασμό.")}{" "}
@@ -143,7 +126,8 @@ export default async function PlatformHubPage({ params }: PageProps) {
           </div>
         </HeroCentered>
 
-        <WorksWith locale={locale} />
+        <WorkflowLogos locale={locale} />
+        <ProductEcosystem locale={locale} />
 
         {/* ------------------------------------------------- before / after */}
         <KitSection>

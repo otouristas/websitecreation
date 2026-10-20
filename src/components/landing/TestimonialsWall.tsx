@@ -4,6 +4,9 @@ import { Section, SectionHeading } from "./primitives";
 import { Reveal } from "@/components/motion/Reveal";
 
 export function TestimonialsWall({ locale = "en" }: { locale?: SiteLocale }) {
+  // Customer quotes remain hidden until the user supplies approved review content.
+  const approvedReviews = false;
+  if (!approvedReviews) return null;
   const isEl = locale === "el";
   const items = HOME_TESTIMONIALS[locale];
 

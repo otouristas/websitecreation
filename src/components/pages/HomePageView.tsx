@@ -1,3 +1,6 @@
+import { AsterIdentity } from "@/components/landing/AsterIdentity";
+import { SeoChatDemo } from "@/components/landing/SeoChatDemo";
+import { ProductEcosystem } from "@/components/landing/ProductEcosystem";
 import Link from 'next/link';
 import { Bot, Calculator, Globe, LineChart, MapPin, Target, TrendingUp } from 'lucide-react';
 import Header from '@/components/Header';
@@ -8,7 +11,6 @@ import { ProofRail, ScanWidget, SeoPricingBlock, TestimonialsWall, VerticalsStri
 import {
   Accent,
   AiVisibilityPreview,
-  AnnouncePill,
   AuditPreview,
   BeforeAfter,
   Container,
@@ -20,7 +22,6 @@ import {
   KitSection,
   LocalPackPreview,
   ProductBento,
-  ProductHero,
   RawQueriesPanel,
   ReportPreview,
   SoftwareCtas,
@@ -109,14 +110,7 @@ export function HomePageView({ locale }: { locale: SiteLocale }) {
       <main className="blueprint-grid relative z-0">
         {/* ------------------------------------------------------------ hero */}
         <HeroCentered
-          pill={
-            <AnnouncePill
-              href={lp('/services/ai-visibility')}
-              kind="ai"
-              tag="AI"
-              text={tx('Get recommended by ChatGPT, Gemini and Google AI', 'Να σας προτείνουν ChatGPT, Gemini και Google AI')}
-            />
-          }
+          pill={<AsterIdentity locale={locale} />}
           title={
             <>
               {line1} <Accent>{line2}</Accent>
@@ -158,24 +152,12 @@ export function HomePageView({ locale }: { locale: SiteLocale }) {
                 aria-hidden
                 className="pointer-events-none absolute -inset-x-[4%] -top-[10%] -z-10 h-[55%] rounded-[50%] bg-[radial-gradient(closest-side,color-mix(in_oklab,var(--primary)_35%,transparent),transparent)] blur-3xl"
               />
-              <ProductHero
-                href={demoHref}
-                ctaLabel={tx('Explore the live demo', 'Δείτε τη ζωντανή επίδειξη')}
-                label={tx(
-                  'AnotherSEOGuru App overview on sample data: clicks, impressions, CTR, average position and a clicks chart.',
-                  'Επισκόπηση του AnotherSEOGuru App με δείγμα δεδομένων: κλικ, εμφανίσεις, CTR, μέση θέση και γράφημα κλικ.',
-                )}
-                badge={
-                  <span className="rounded-full border border-hairline bg-background px-2 py-0.5 text-[11px] font-medium text-muted-foreground">
-                    {tx('AnotherSEOGuru App · sample data', 'AnotherSEOGuru App · δείγμα')}
-                  </span>
-                }
-              />
+              <SeoChatDemo locale={locale} />
             </div>
             <p className="mt-5 text-center text-[13px] text-muted-foreground">
               {tx(
-                'That’s AnotherSEOGuru App, the software we run every client on, showing a sample hotel.',
-                'Αυτό είναι το AnotherSEOGuru App, το λογισμικό με το οποίο δουλεύουμε κάθε πελάτη, σε ένα δείγμα ξενοδοχείου.',
+                'Meet Aster in AnotherSEOGuru App. Ask a question, inspect the evidence, and turn it into a task. This example uses a fictional site.',
+                'Ο Aster στο AnotherSEOGuru App: ρωτήστε, δείτε τα στοιχεία και προχωρήστε σε μια εργασία. Το παράδειγμα χρησιμοποιεί φανταστικό ιστότοπο.',
               )}{' '}
               <Link href={lp('/platform')} className="font-medium text-foreground underline decoration-hairline underline-offset-4 hover:decoration-foreground">
                 {tx('Use it yourself, free', 'Χρησιμοποιήστε το δωρεάν')}
@@ -186,6 +168,7 @@ export function HomePageView({ locale }: { locale: SiteLocale }) {
 
         <div className="mt-16 sm:mt-20">
           <ProofRail locale={locale} />
+        <ProductEcosystem locale={locale} />
         </div>
 
         {/* ------------------------------------------------- before / after */}
