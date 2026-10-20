@@ -374,6 +374,52 @@ export const currentEn: HelpCategory = {
           "text": "[Open the workspace](https://app.anotherseoguru.com/app) or [try the sample workspace](https://app.anotherseoguru.com/demo). Sample reports are labelled; they are not your site’s results."
         }
       ]
+    },
+    {
+      "slug": "client-agreements",
+      "title": "Private client agreements",
+      "description": "Blank drafts, private storage, versions and exports.",
+      "body": [
+        {
+          "type": "p",
+          "text": "Open **Agreements** in Client management or a client’s page. Every new draft starts with blank legal and commercial details. No clients or example agreements are created automatically."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Link a client and optionally a project. Complete legal names, representatives, scope, deliverables and terms.",
+            "Set fees, installments, monthly periods and explicit VAT treatment. Check the full payment schedule.",
+            "Save, inspect the preview and completeness checklist, then export PDF or editable DOCX.",
+            "Approval locks the version. Changes require a new version. Copying as a new agreement creates a new ID without signatures or a client link."
+          ]
+        },
+        {
+          "type": "h2",
+          "id": "registry",
+          "text": "Find company details by VAT / GEMI"
+        },
+        {
+          "type": "p",
+          "text": "Beside either party, choose Find company by VAT / GEMI. Review the source and select fields to fill. GEMI requires an approved personal API key from its [official service](https://opendata.businessportal.gr/register/), which is not activated yet. Greek tax-ID lookup can already use the European Commission VIES service. VIES covers intra-EU VAT registration and may return a name/address, not a GEMI ID or signing authority. A missing record does not mean the business does not exist. A lookup does not create a client or save an agreement."
+        },
+        {
+          "type": "note",
+          "tone": "info",
+          "text": "The Greek B2B template needs legal review. Field completeness and author approval are not legal approval or a signature. Do not put passwords or secrets in an agreement."
+        },
+        {
+          "type": "p",
+          "text": "Downloading PDF/DOCX does not record delivery or signing. Direct agreement delivery from the app is not enabled. On web, record an actual signed PDF up to 3 MB with signatories and date. The app does not verify electronic signatures."
+        },
+        {
+          "type": "p",
+          "text": "Updated iOS and Android builds offer per-client lists, draft editing, version review, preview, export and file sharing. Signed-file and termination records are managed on web. Versions and history are private. Signed files require an authorised, short-lived download link."
+        },
+        {
+          "type": "p",
+          "text": "Your lawyer reviews the template and jurisdiction. Your accountant checks VAT and any requirement or exemption for [filing an agreement statement with AADE](https://www.aade.gr/ypoboli-katastasis-symfonitikon). The generic privacy clause does not replace a separate DPA where required."
+        }
+      ]
     }
   ]
 };
