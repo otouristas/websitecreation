@@ -1,8 +1,6 @@
 'use client';
 
 import { useMemo, useState } from 'react';
-import Link from 'next/link';
-import { ArrowUpRight } from 'lucide-react';
 import {
   portfolioProjects,
   PORTFOLIO_CATEGORIES,
@@ -10,15 +8,14 @@ import {
   type PortfolioCategory,
   type PortfolioMarket,
 } from '@/data/portfolio';
-import { PortfolioThumbnail } from '@/components/landing/PortfolioThumbnail';
-import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
+import { ProjectCard } from './ProjectCard';
+import type { SiteLocale } from '@/lib/i18n/locale';
 interface WorkIndexClientProps {
   locale?: SiteLocale;
 }
 
 export function WorkIndexClient({ locale = 'en' }: WorkIndexClientProps) {
   const isEl = locale === 'el';
-  const lp = (path: string) => localizedPath(locale, path);
   const [category, setCategory] = useState<PortfolioCategory | 'all'>('all');
   const [market, setMarket] = useState<PortfolioMarket | 'all'>('all');
 
@@ -63,34 +60,10 @@ export function WorkIndexClient({ locale = 'en' }: WorkIndexClientProps) {
         ))}
         <span className="ml-auto font-mono text-[12px] text-muted-foreground">{filtered.length}</span>
       </div>
-      <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {filtered.map((project) => {
-          const cat = PORTFOLIO_CATEGORIES[project.category];
-          return (
-            <Link
-              key={project.slug}
-              href={lp(`/work/${project.slug}`)}
-              className="group flex flex-col overflow-hidden rounded-2xl border border-hairline bg-surface/60 transition-colors hover:border-brand/40"
-            >
-              <div className="relative aspect-[16/10] overflow-hidden border-b border-hairline bg-surface">
-                <PortfolioThumbnail src={project.screenshot} alt={project.name} />
-                <span className="absolute bottom-3 left-3 rounded-full border border-hairline bg-background/90 px-2.5 py-1 font-mono text-[10.5px] font-medium uppercase tracking-[0.08em] text-foreground/85 backdrop-blur">
-                  {isEl ? cat.labelEl : cat.label}
-                </span>
-              </div>
-              <div className="flex flex-1 flex-col p-5">
-                <div className="flex items-start justify-between gap-3">
-                  <h2 className="text-[16px] font-semibold text-foreground">{project.name}</h2>
-                  <ArrowUpRight className="size-4 shrink-0 text-muted-foreground transition-colors group-hover:text-brand" aria-hidden />
-                </div>
-                <p className="mt-1.5 line-clamp-2 text-[13.5px] leading-relaxed text-muted-foreground">
-                  {isEl && project.summaryEl ? project.summaryEl : project.summary}
-                </p>
-              </div>
-            </Link>
-          );
-        })}
+      <div className="mt-10 grid gap-x-8 gap-y-12 md:grid-cols-2">
+        {filtered.map(project => <ProjectCard key={project.slug} project={project} locale={locale}/>)}
       </div>
+      {!filtered.length && <p className="py-16 text-center text-muted-foreground">{isEl ? 'Δεν υπάρχουν έργα με αυτούς τους συνδυασμούς φίλτρων.' : 'No projects match these filters.'}</p>}
     </>
   );
 }

@@ -1,105 +1,28 @@
-import Image from "next/image";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-import { getPortfolioBySlug, PORTFOLIO_CATEGORIES } from "@/data/portfolio";
-import { HOME_WORK_SLUGS } from "@/data/home-content";
-import { localizedPath, type SiteLocale } from "@/lib/i18n/locale";
-import { Eyebrow, GhostButtonLink, Section, SectionHeading } from "./primitives";
-import { ProductFrame } from "./graphics";
+'use client';
+import { useRef, useState } from 'react';
+import Link from 'next/link';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { getPortfolioBySlug } from '@/data/portfolio';
+import { HOME_WORK_SLUGS } from '@/data/home-content';
+import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
+import { ProjectCard } from '@/components/work/ProjectCard';
 
-/**
- * Horizontal rail of live client work. Native scroll-snap, no JS: it scrolls
- * with the wheel, a trackpad, a thumb, or the keyboard. Only projects that
- * are `featured` and still online are eligible; a dead domain is never shown
- * as proof.
- */
-export function WorkRail({ locale = "en" }: { locale?: SiteLocale }) {
-  const isEl = locale === "el";
-  const lp = (path: string) => localizedPath(locale, path);
-  const projects = HOME_WORK_SLUGS.map(getPortfolioBySlug).filter(
-    (p): p is NonNullable<typeof p> => !!p && p.featured && !p.liveStatus,
-  );
-
-  return (
-    <Section id="in-action" className="max-w-none px-0">
-      <div className="mx-auto max-w-6xl px-6">
-        <SectionHeading
-          align="left"
-          eyebrow={isEl ? "Έργα" : "Work"}
-          title={
-            isEl ? (
-              <>
-                Κάθε επιχείρηση, <span className="gradient-text">ο δικός της σχεδιασμός</span>
-              </>
-            ) : (
-              <>
-                Different businesses. <span className="gradient-text">Distinctive websites.</span>
-              </>
-            )
-          }
-          body={
-            isEl
-              ? "Ζωντανά έργα με τη διεύθυνσή τους. Ανοίξτε το οποιοδήποτε και δείτε τι παραδίδουμε στην πράξη."
-              : "Live projects with their real address. Open any of them and see what we deliver in practice."
-          }
-        />
-      </div>
-
-      <div className="mt-12 flex snap-x snap-mandatory gap-5 overflow-x-auto px-6 pb-6 scrollbar-none [scroll-padding-inline:1.5rem] md:px-[max(1.5rem,calc((100vw-72rem)/2+1.5rem))]">
-        {projects.map((project) => {
-          const cat = PORTFOLIO_CATEGORIES[project.category];
-          return (
-            <article
-              key={project.slug}
-              className="group w-[85vw] shrink-0 snap-start sm:w-[34rem]"
-            >
-              <Link href={lp(`/work/${project.slug}`)} className="block">
-                <ProductFrame
-                  url={project.url.replace(/^https?:\/\//, "")}
-                  padded={false}
-                  className="transition-transform duration-500 ease-out group-hover:-translate-y-1 motion-reduce:transition-none"
-                >
-                  <div className="relative aspect-[3/2] overflow-hidden">
-                    <Image
-                      src={project.screenshot}
-                      alt={isEl ? `${project.name} - αρχική σελίδα` : `${project.name} homepage`}
-                      fill
-                      sizes="(max-width: 640px) 85vw, 544px"
-                      className="object-cover object-top"
-                    />
-                  </div>
-                </ProductFrame>
-              </Link>
-              <div className="mt-5 flex items-start justify-between gap-4 px-1">
-                <div className="min-w-0">
-                  <Eyebrow dot={false}>{isEl ? cat.labelEl : cat.label}</Eyebrow>
-                  <h3 className="mt-1.5 truncate font-display text-xl font-semibold tracking-[-0.03em] text-foreground">
-                    {project.name}
-                  </h3>
-                  <p className="mt-2 max-w-md text-sm leading-6 text-muted-foreground">{isEl ? project.summaryEl : project.summary}</p>
-                </div>
-                <Link
-                  href={lp(`/work/${project.slug}`)}
-                  className="inline-flex shrink-0 items-center gap-1.5 pt-1 text-sm font-medium text-link hover:text-brand"
-                >
-                  {isEl ? "Το έργο" : "View"}
-                  <ArrowRight className="size-4" aria-hidden />
-                </Link>
-              </div>
-            </article>
-          );
-        })}
-        <div aria-hidden className="w-px shrink-0" />
-      </div>
-
-      <div className="mx-auto mt-6 flex max-w-6xl items-center justify-between gap-4 px-6">
-        <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
-          {isEl ? "Σύρετε για περισσότερα" : "Scroll for more"} →
-        </p>
-        <GhostButtonLink href={lp("/work")} className="shrink-0">
-          {isEl ? "Όλα τα έργα" : "View all projects"}
-        </GhostButtonLink>
-      </div>
-    </Section>
-  );
+export function WorkRail({ locale = 'en' }: { locale?: SiteLocale }) {
+  const el = locale === 'el', rail = useRef<HTMLDivElement>(null), [active, setActive] = useState(0);
+  const projects = HOME_WORK_SLUGS.map(getPortfolioBySlug).filter((p): p is NonNullable<typeof p> => !!p && !p.liveStatus);
+  function move(direction: number) {
+    const node = rail.current, card = node?.firstElementChild;
+    if (!node || !card) return;
+    node.scrollBy({ left: direction * (card.getBoundingClientRect().width + 24), behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
+  }
+  return <section id="in-action" className="overflow-hidden border-y border-hairline bg-surface/25 py-20 sm:py-28" aria-label={el ? 'Επιλεγμένα έργα' : 'Selected projects'}>
+    <div className="mx-auto flex max-w-[1200px] flex-wrap items-end justify-between gap-8 px-5 sm:px-8">
+      <div className="max-w-2xl"><p className="text-[11px] font-medium uppercase tracking-[0.22em] text-link">{el ? 'ΙΣΤΟΣΕΛΙΔΕΣ ΜΕ ΧΑΡΑΚΤΗΡΑ' : 'DIGITAL EXPERIENCES WITH CHARACTER'}</p><h2 className="mt-5 font-display text-4xl font-semibold leading-[1.08] tracking-[-0.045em] sm:text-6xl">{el ? <>Κάθε έργο,<br/><span className="text-brand">μια δική του ιστορία.</span></> : <>Every project.<br/><span className="text-brand">A story of its own.</span></>}</h2><p className="mt-5 max-w-xl text-base leading-7 text-muted-foreground">{el ? 'Από μια βίλα στη Σίφνο μέχρι ένα ψηφιακό προϊόν. Δείτε την επιχείρηση, την εμπειρία και τη σκέψη πίσω από κάθε ιστοσελίδα.' : 'From a villa on Sifnos to a digital product. Meet the business, explore the experience and see the thinking behind each website.'}</p></div>
+      <div className="flex items-center gap-3"><button type="button" aria-label={el ? 'Προηγούμενα έργα' : 'Previous projects'} onClick={() => move(-1)} className="grid size-12 place-items-center rounded-full border border-hairline bg-surface text-foreground transition-colors hover:border-brand hover:text-brand"><ArrowLeft className="size-5"/></button><button type="button" aria-label={el ? 'Επόμενα έργα' : 'Next projects'} onClick={() => move(1)} className="grid size-12 place-items-center rounded-full border border-hairline bg-surface text-foreground transition-colors hover:border-brand hover:text-brand"><ArrowRight className="size-5"/></button></div>
+    </div>
+    <div ref={rail} tabIndex={0} onScroll={e => { const n=e.currentTarget, w=n.firstElementChild?.getBoundingClientRect().width ?? 1; setActive(Math.min(projects.length-1,Math.round(n.scrollLeft/(w+24)))); }} className="mt-12 flex snap-x snap-mandatory gap-6 overflow-x-auto px-5 pb-2 outline-offset-[-2px] scrollbar-none [scroll-padding-inline:1.25rem] sm:px-[max(2rem,calc((100vw-1200px)/2+2rem))]">
+      {projects.map(project => <article key={project.slug} className="w-[84vw] max-w-[600px] shrink-0 snap-start sm:w-[560px]"><ProjectCard project={project} locale={locale}/></article>)}
+    </div>
+    <div className="mx-auto mt-7 flex max-w-[1200px] items-center gap-5 px-5 sm:px-8"><span className="font-mono text-xs tabular-nums text-muted-foreground">{String(active+1).padStart(2,'0')} / {String(projects.length).padStart(2,'0')}</span><div className="h-px flex-1 bg-hairline"><div className="h-px bg-brand transition-[width] motion-reduce:transition-none" style={{width:`${(active+1)/projects.length*100}%`}}/></div><Link href={localizedPath(locale,'/work')} className="inline-flex items-center gap-2 text-sm text-link">{el ? 'Όλα τα έργα' : 'Explore all projects'}<ArrowRight className="size-4"/></Link></div>
+  </section>;
 }

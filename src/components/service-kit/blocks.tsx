@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 import Link from 'next/link';
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import FAQSection from '@/components/seo/FAQSection';
-import { PortfolioThumbnail } from '@/components/landing/PortfolioThumbnail';
+import { ProjectCard } from '@/components/work/ProjectCard';
 import { PriceCard } from '@/components/pricing/PriceCard';
 import { CheckList, KitEyebrow, KitHeading, Stage } from '@/components/kit/primitives';
 import { KitSection, SoftwareCtas } from '@/components/kit/sections';
@@ -166,38 +166,9 @@ export function ProofGrid({
   readonly thumbnails?: boolean;
   readonly className?: string;
 }) {
-  const isEl = locale === 'el';
-  return (
-    <ul className={cn('grid gap-4 sm:grid-cols-2 lg:grid-cols-3', className)}>
-      {projects.map((p) => (
-        <li key={p.slug} className="reveal">
-          <Link
-            href={localizedPath(locale, `/work/${p.slug}`)}
-            className="group block h-full overflow-hidden rounded-2xl border border-hairline bg-surface/70 transition-colors hover:border-brand/40"
-          >
-            {thumbnails ? (
-              <div className="relative aspect-[16/10] overflow-hidden border-b border-hairline bg-surface">
-                <PortfolioThumbnail
-                  src={p.screenshot}
-                  alt={p.name}
-                  className="transition-transform duration-500 group-hover:scale-[1.03]"
-                />
-              </div>
-            ) : null}
-            <span className="block p-5">
-              <span className="flex items-center justify-between gap-3 text-[15px] font-semibold text-foreground">
-                {p.name}
-                <ArrowUpRight className="size-4 shrink-0 text-muted-foreground transition-colors group-hover:text-brand" aria-hidden />
-              </span>
-              <span className="mt-1.5 line-clamp-2 block text-[13.5px] leading-relaxed text-muted-foreground">
-                {isEl && p.summaryEl ? p.summaryEl : p.summary}
-              </span>
-            </span>
-          </Link>
-        </li>
-      ))}
-    </ul>
-  );
+  return <ul className={cn('grid gap-x-7 gap-y-10 md:grid-cols-2', className)} data-thumbnails={thumbnails}>
+    {projects.map(project => <li key={project.slug}><ProjectCard project={project} locale={locale}/></li>)}
+  </ul>;
 }
 
 /* ------------------------------------------------------------------ pricing */

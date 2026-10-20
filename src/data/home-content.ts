@@ -259,8 +259,8 @@ export const HOME_TESTIMONIALS: Record<'en' | 'el', readonly HomeTestimonial[]> 
 
 /** Live, featured projects shown in the homepage work rail, in order. */
 export const HOME_WORK_SLUGS = [
-  'discover-cyclades', 'onoma-hotel', 'project-shadow-ai',
-  'villa-olivia-clara', 'vwanaki', 'navos-ai',
+  'cyclades-rentacar', 'onoma-hotel', 'villa-olivia-clara',
+  'project-shadow-ai', 'thenutrinest', 'vwanaki', 'helicro',
 ] as const;
 
 /** Answer engines the platform tracks. Marks are used nominatively. */
