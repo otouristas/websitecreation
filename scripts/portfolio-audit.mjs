@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import {portfolioProjects} from './portfolio-data.mjs';
 /**
  * Portfolio audit: fetches metadata and screenshots for all projects in portfolio.ts.
  * Usage:
@@ -13,20 +14,11 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
-const PORTFOLIO_SRC = path.join(ROOT, 'src/data/portfolio.ts');
 const OUTPUT_DIR = path.join(ROOT, 'content/portfolio');
 const SCREENSHOT_DIR = path.join(ROOT, 'public/portfolio');
 
 function loadProjectsFromPortfolio() {
-  const src = fs.readFileSync(PORTFOLIO_SRC, 'utf8');
-  const projects = [];
-  const re =
-    /\{\s*\n\s*slug:\s*'([^']+)',\s*\n[\s\S]*?\n\s*url:\s*'(https?:\/\/[^']+)',\s*\n[\s\S]*?\n\s*screenshot:\s*'(\/portfolio\/[^']+)',/g;
-  let m;
-  while ((m = re.exec(src)) !== null) {
-    projects.push({ slug: m[1], url: m[2], screenshot: m[3] });
-  }
-  return projects;
+  return portfolioProjects.map(({slug,url,screenshot})=>({slug,url,screenshot}));
 }
 
 function extractMeta(html) {

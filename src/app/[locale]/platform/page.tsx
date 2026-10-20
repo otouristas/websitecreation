@@ -96,12 +96,12 @@ export default async function PlatformHubPage({ params }: PageProps) {
           pill={<AsterIdentity locale={locale} />}
           title={
             <>
-              {tx("Ask Aster.", "Ρωτήστε τον Aster.")} <Accent>{tx("Find your next move.", "Δείτε το επόμενο βήμα.")}</Accent>
+              {tx("Ask Aster AI.", "Ρωτήστε τον Aster AI.")} <Accent>{tx("Find your next move.", "Δείτε το επόμενο βήμα.")}</Accent>
             </>
           }
           lead={tx(
-            "How can I rank for this keyword? Why are my clicks falling? Ask in your own words. Aster connects your questions to Search Console evidence, page checks and a clear next step inside AnotherSEOGuru App. Inspect the sources, save a task or draft, and review each change before it goes live.",
-            "Πώς θα ανέβω για αυτή τη λέξη-κλειδί; Γιατί μειώνονται τα κλικ μου; Ρωτήστε με δικά σας λόγια. Ο Aster συνδέει τις ερωτήσεις σας με στοιχεία Search Console, ελέγχους σελίδων και ένα σαφές επόμενο βήμα στο AnotherSEOGuru App. Δείτε τις πηγές, αποθηκεύστε εργασία ή προσχέδιο και ελέγξτε κάθε αλλαγή πριν δημοσιευτεί.",
+            "How can I rank for this keyword? Why are my clicks falling? Ask in your own words. Aster AI connects your questions to Search Console evidence, page checks and a clear next step inside AnotherSEOGuru App. Inspect the sources, save a task or draft, and review each change before it goes live.",
+            "Πώς θα ανέβω για αυτή τη λέξη-κλειδί; Γιατί μειώνονται τα κλικ μου; Ρωτήστε με δικά σας λόγια. Ο Aster AI εξετάζει τα δεδομένα σας στο Search Console, ελέγχει τις σελίδες και σας προτείνει τι να κάνετε στη συνέχεια. Αποθηκεύστε μια εργασία ή ένα προσχέδιο και ελέγξτε τις αλλαγές πριν τις δημοσιεύσετε.",
           )}
           actions={<ChatDomainEntry locale={locale} />}
           trust={<TrustLine items={softwareTrust(locale)} />}

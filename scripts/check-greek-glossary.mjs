@@ -49,6 +49,8 @@ for (const dir of DIRS) {
   for (const file of files(join(ROOT, dir))) {
     const lines = readFileSync(file, "utf8").split("\n");
     lines.forEach((line, i) => {
+      if (/\bAster\b(?! AI)/u.test(line)) problems.push(`${relative(ROOT, file)}:${i + 1}  use the full product name Aster AI`);
+      if (/φύλακας αλλαγών|λέξεις-σπόροι|μερίδιο φωνής/iu.test(line)) problems.push(`${relative(ROOT, file)}:${i + 1}  rewrite the literal Greek phrasing`);
       for (const [pattern, use] of BANNED) {
         for (const m of line.matchAll(pattern)) {
           if (!isGloss(line, m.index)) problems.push(`${relative(ROOT, file)}:${i + 1}  «${m[0]}» → use "${use}"`);

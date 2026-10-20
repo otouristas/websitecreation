@@ -7,8 +7,6 @@ const RETIRED_WORK_SLUGS = [
   "arion-farm",
   "cocktails-in-the-city",
   "cretanways-rentals",
-  "dailyhost",
-  "dailyhost-eu",
   "eolides-villas",
   "ergo-and-art",
   "fabrica-cafe",

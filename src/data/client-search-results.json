@@ -1,0 +1,637 @@
+{
+  "verifiedOn": "2026-10-20",
+  "measurement": "observed",
+  "sites": [
+    {
+      "slug": "onoma-hotel",
+      "name": "ONOMA Hotel",
+      "domain": "onomahotel.com",
+      "property": "https://onomahotel.com/",
+      "from": "2026-09-20",
+      "to": "2026-10-17",
+      "source": "Google Search Console",
+      "coverageDays": 28,
+      "expectedDays": 28,
+      "clicks": 1563,
+      "impressions": 19776,
+      "points": [
+        {
+          "date": "2026-09-20",
+          "clicks": 50,
+          "impressions": 724
+        },
+        {
+          "date": "2026-09-21",
+          "clicks": 43,
+          "impressions": 825
+        },
+        {
+          "date": "2026-09-22",
+          "clicks": 73,
+          "impressions": 855
+        },
+        {
+          "date": "2026-09-23",
+          "clicks": 67,
+          "impressions": 804
+        },
+        {
+          "date": "2026-09-24",
+          "clicks": 63,
+          "impressions": 801
+        },
+        {
+          "date": "2026-09-25",
+          "clicks": 44,
+          "impressions": 791
+        },
+        {
+          "date": "2026-09-26",
+          "clicks": 48,
+          "impressions": 733
+        },
+        {
+          "date": "2026-09-27",
+          "clicks": 40,
+          "impressions": 879
+        },
+        {
+          "date": "2026-09-28",
+          "clicks": 76,
+          "impressions": 717
+        },
+        {
+          "date": "2026-09-29",
+          "clicks": 61,
+          "impressions": 715
+        },
+        {
+          "date": "2026-09-30",
+          "clicks": 54,
+          "impressions": 793
+        },
+        {
+          "date": "2026-10-01",
+          "clicks": 49,
+          "impressions": 624
+        },
+        {
+          "date": "2026-10-02",
+          "clicks": 61,
+          "impressions": 642
+        },
+        {
+          "date": "2026-10-03",
+          "clicks": 45,
+          "impressions": 658
+        },
+        {
+          "date": "2026-10-04",
+          "clicks": 54,
+          "impressions": 658
+        },
+        {
+          "date": "2026-10-05",
+          "clicks": 58,
+          "impressions": 677
+        },
+        {
+          "date": "2026-10-06",
+          "clicks": 61,
+          "impressions": 719
+        },
+        {
+          "date": "2026-10-07",
+          "clicks": 63,
+          "impressions": 714
+        },
+        {
+          "date": "2026-10-08",
+          "clicks": 66,
+          "impressions": 818
+        },
+        {
+          "date": "2026-10-09",
+          "clicks": 78,
+          "impressions": 692
+        },
+        {
+          "date": "2026-10-10",
+          "clicks": 54,
+          "impressions": 696
+        },
+        {
+          "date": "2026-10-11",
+          "clicks": 39,
+          "impressions": 696
+        },
+        {
+          "date": "2026-10-12",
+          "clicks": 56,
+          "impressions": 653
+        },
+        {
+          "date": "2026-10-13",
+          "clicks": 70,
+          "impressions": 640
+        },
+        {
+          "date": "2026-10-14",
+          "clicks": 71,
+          "impressions": 631
+        },
+        {
+          "date": "2026-10-15",
+          "clicks": 50,
+          "impressions": 563
+        },
+        {
+          "date": "2026-10-16",
+          "clicks": 49,
+          "impressions": 578
+        },
+        {
+          "date": "2026-10-17",
+          "clicks": 20,
+          "impressions": 480
+        }
+      ],
+      "csv": "/portfolio/results/onoma-hotel-search-console.csv",
+      "comparison": {
+        "from": "2026-08-23",
+        "to": "2026-09-19",
+        "coverageDays": 28,
+        "clicks": 1545,
+        "impressions": 21725
+      }
+    },
+    {
+      "slug": "mykonos-luxury",
+      "name": "Mykonos Luxury",
+      "domain": "mykonos.luxury",
+      "property": "sc-domain:mykonos.luxury",
+      "from": "2026-09-20",
+      "to": "2026-10-17",
+      "source": "Google Search Console",
+      "coverageDays": 28,
+      "expectedDays": 28,
+      "clicks": 638,
+      "impressions": 49904,
+      "points": [
+        {
+          "date": "2026-09-20",
+          "clicks": 39,
+          "impressions": 1854
+        },
+        {
+          "date": "2026-09-21",
+          "clicks": 33,
+          "impressions": 1804
+        },
+        {
+          "date": "2026-09-22",
+          "clicks": 47,
+          "impressions": 1975
+        },
+        {
+          "date": "2026-09-23",
+          "clicks": 29,
+          "impressions": 1790
+        },
+        {
+          "date": "2026-09-24",
+          "clicks": 32,
+          "impressions": 2248
+        },
+        {
+          "date": "2026-09-25",
+          "clicks": 28,
+          "impressions": 1590
+        },
+        {
+          "date": "2026-09-26",
+          "clicks": 19,
+          "impressions": 1473
+        },
+        {
+          "date": "2026-09-27",
+          "clicks": 22,
+          "impressions": 1366
+        },
+        {
+          "date": "2026-09-28",
+          "clicks": 25,
+          "impressions": 1611
+        },
+        {
+          "date": "2026-09-29",
+          "clicks": 27,
+          "impressions": 1412
+        },
+        {
+          "date": "2026-09-30",
+          "clicks": 28,
+          "impressions": 1300
+        },
+        {
+          "date": "2026-10-01",
+          "clicks": 27,
+          "impressions": 1970
+        },
+        {
+          "date": "2026-10-02",
+          "clicks": 21,
+          "impressions": 1733
+        },
+        {
+          "date": "2026-10-03",
+          "clicks": 15,
+          "impressions": 1658
+        },
+        {
+          "date": "2026-10-04",
+          "clicks": 20,
+          "impressions": 1704
+        },
+        {
+          "date": "2026-10-05",
+          "clicks": 20,
+          "impressions": 2323
+        },
+        {
+          "date": "2026-10-06",
+          "clicks": 18,
+          "impressions": 2150
+        },
+        {
+          "date": "2026-10-07",
+          "clicks": 18,
+          "impressions": 1938
+        },
+        {
+          "date": "2026-10-08",
+          "clicks": 22,
+          "impressions": 2017
+        },
+        {
+          "date": "2026-10-09",
+          "clicks": 13,
+          "impressions": 1501
+        },
+        {
+          "date": "2026-10-10",
+          "clicks": 13,
+          "impressions": 1369
+        },
+        {
+          "date": "2026-10-11",
+          "clicks": 21,
+          "impressions": 1399
+        },
+        {
+          "date": "2026-10-12",
+          "clicks": 17,
+          "impressions": 1405
+        },
+        {
+          "date": "2026-10-13",
+          "clicks": 16,
+          "impressions": 1863
+        },
+        {
+          "date": "2026-10-14",
+          "clicks": 12,
+          "impressions": 2226
+        },
+        {
+          "date": "2026-10-15",
+          "clicks": 22,
+          "impressions": 2322
+        },
+        {
+          "date": "2026-10-16",
+          "clicks": 17,
+          "impressions": 2012
+        },
+        {
+          "date": "2026-10-17",
+          "clicks": 17,
+          "impressions": 1891
+        }
+      ],
+      "csv": "/portfolio/results/mykonos-luxury-search-console.csv"
+    },
+    {
+      "slug": "mastorush",
+      "name": "MastoRush",
+      "domain": "mastorush.gr",
+      "property": "https://mastorush.gr/",
+      "from": "2026-09-20",
+      "to": "2026-10-17",
+      "source": "Google Search Console",
+      "coverageDays": 28,
+      "expectedDays": 28,
+      "clicks": 319,
+      "impressions": 4720,
+      "points": [
+        {
+          "date": "2026-09-20",
+          "clicks": 3,
+          "impressions": 101
+        },
+        {
+          "date": "2026-09-21",
+          "clicks": 12,
+          "impressions": 134
+        },
+        {
+          "date": "2026-09-22",
+          "clicks": 6,
+          "impressions": 155
+        },
+        {
+          "date": "2026-09-23",
+          "clicks": 11,
+          "impressions": 143
+        },
+        {
+          "date": "2026-09-24",
+          "clicks": 15,
+          "impressions": 136
+        },
+        {
+          "date": "2026-09-25",
+          "clicks": 15,
+          "impressions": 131
+        },
+        {
+          "date": "2026-09-26",
+          "clicks": 9,
+          "impressions": 117
+        },
+        {
+          "date": "2026-09-27",
+          "clicks": 11,
+          "impressions": 141
+        },
+        {
+          "date": "2026-09-28",
+          "clicks": 8,
+          "impressions": 176
+        },
+        {
+          "date": "2026-09-29",
+          "clicks": 16,
+          "impressions": 181
+        },
+        {
+          "date": "2026-09-30",
+          "clicks": 12,
+          "impressions": 150
+        },
+        {
+          "date": "2026-10-01",
+          "clicks": 18,
+          "impressions": 170
+        },
+        {
+          "date": "2026-10-02",
+          "clicks": 11,
+          "impressions": 161
+        },
+        {
+          "date": "2026-10-03",
+          "clicks": 8,
+          "impressions": 140
+        },
+        {
+          "date": "2026-10-04",
+          "clicks": 15,
+          "impressions": 159
+        },
+        {
+          "date": "2026-10-05",
+          "clicks": 17,
+          "impressions": 225
+        },
+        {
+          "date": "2026-10-06",
+          "clicks": 15,
+          "impressions": 210
+        },
+        {
+          "date": "2026-10-07",
+          "clicks": 10,
+          "impressions": 183
+        },
+        {
+          "date": "2026-10-08",
+          "clicks": 15,
+          "impressions": 217
+        },
+        {
+          "date": "2026-10-09",
+          "clicks": 8,
+          "impressions": 154
+        },
+        {
+          "date": "2026-10-10",
+          "clicks": 11,
+          "impressions": 145
+        },
+        {
+          "date": "2026-10-11",
+          "clicks": 9,
+          "impressions": 150
+        },
+        {
+          "date": "2026-10-12",
+          "clicks": 9,
+          "impressions": 225
+        },
+        {
+          "date": "2026-10-13",
+          "clicks": 18,
+          "impressions": 204
+        },
+        {
+          "date": "2026-10-14",
+          "clicks": 5,
+          "impressions": 228
+        },
+        {
+          "date": "2026-10-15",
+          "clicks": 8,
+          "impressions": 214
+        },
+        {
+          "date": "2026-10-16",
+          "clicks": 16,
+          "impressions": 197
+        },
+        {
+          "date": "2026-10-17",
+          "clicks": 8,
+          "impressions": 173
+        }
+      ],
+      "csv": "/portfolio/results/mastorush-search-console.csv"
+    },
+    {
+      "slug": "helicro",
+      "name": "Helicro",
+      "domain": "helicro.be",
+      "property": "sc-domain:helicro.be",
+      "from": "2026-09-20",
+      "to": "2026-10-17",
+      "source": "Google Search Console",
+      "coverageDays": 28,
+      "expectedDays": 28,
+      "clicks": 182,
+      "impressions": 1273,
+      "points": [
+        {
+          "date": "2026-09-20",
+          "clicks": 3,
+          "impressions": 25
+        },
+        {
+          "date": "2026-09-21",
+          "clicks": 3,
+          "impressions": 27
+        },
+        {
+          "date": "2026-09-22",
+          "clicks": 1,
+          "impressions": 19
+        },
+        {
+          "date": "2026-09-23",
+          "clicks": 7,
+          "impressions": 18
+        },
+        {
+          "date": "2026-09-24",
+          "clicks": 5,
+          "impressions": 21
+        },
+        {
+          "date": "2026-09-25",
+          "clicks": 3,
+          "impressions": 13
+        },
+        {
+          "date": "2026-09-26",
+          "clicks": 5,
+          "impressions": 14
+        },
+        {
+          "date": "2026-09-27",
+          "clicks": 7,
+          "impressions": 16
+        },
+        {
+          "date": "2026-09-28",
+          "clicks": 4,
+          "impressions": 18
+        },
+        {
+          "date": "2026-09-29",
+          "clicks": 2,
+          "impressions": 12
+        },
+        {
+          "date": "2026-09-30",
+          "clicks": 2,
+          "impressions": 19
+        },
+        {
+          "date": "2026-10-01",
+          "clicks": 6,
+          "impressions": 26
+        },
+        {
+          "date": "2026-10-02",
+          "clicks": 8,
+          "impressions": 17
+        },
+        {
+          "date": "2026-10-03",
+          "clicks": 7,
+          "impressions": 31
+        },
+        {
+          "date": "2026-10-04",
+          "clicks": 9,
+          "impressions": 23
+        },
+        {
+          "date": "2026-10-05",
+          "clicks": 7,
+          "impressions": 37
+        },
+        {
+          "date": "2026-10-06",
+          "clicks": 10,
+          "impressions": 33
+        },
+        {
+          "date": "2026-10-07",
+          "clicks": 8,
+          "impressions": 24
+        },
+        {
+          "date": "2026-10-08",
+          "clicks": 3,
+          "impressions": 34
+        },
+        {
+          "date": "2026-10-09",
+          "clicks": 8,
+          "impressions": 21
+        },
+        {
+          "date": "2026-10-10",
+          "clicks": 7,
+          "impressions": 55
+        },
+        {
+          "date": "2026-10-11",
+          "clicks": 12,
+          "impressions": 54
+        },
+        {
+          "date": "2026-10-12",
+          "clicks": 9,
+          "impressions": 81
+        },
+        {
+          "date": "2026-10-13",
+          "clicks": 14,
+          "impressions": 104
+        },
+        {
+          "date": "2026-10-14",
+          "clicks": 9,
+          "impressions": 141
+        },
+        {
+          "date": "2026-10-15",
+          "clicks": 6,
+          "impressions": 208
+        },
+        {
+          "date": "2026-10-16",
+          "clicks": 6,
+          "impressions": 104
+        },
+        {
+          "date": "2026-10-17",
+          "clicks": 11,
+          "impressions": 78
+        }
+      ],
+      "csv": "/portfolio/results/helicro-search-console.csv"
+    }
+  ]
+}

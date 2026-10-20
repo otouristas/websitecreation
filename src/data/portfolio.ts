@@ -39,7 +39,7 @@ export interface PortfolioProject {
    * A dead domain stays in the portfolio record, but it must not be featured
    * as proof and must not be linked to as a live site.
    */
-  liveStatus?: 'offline';
+  liveStatus?: 'offline' | 'unverified';
 }
 
 export const PORTFOLIO_CATEGORIES: Record<
@@ -51,1311 +51,1537 @@ export const PORTFOLIO_CATEGORIES: Record<
   villa: { label: 'Villas & apartments', labelEl: 'Βίλες & διαμερίσματα' },
   tours: { label: 'Tours & travel', labelEl: 'Τουρισμός & εκδρομές' },
   transfers: { label: 'Transfers & VIP', labelEl: 'Μεταφορές & VIP' },
-  'travel-ai': { label: 'Travel AI', labelEl: 'AI chatbot ταξιδιών' },
+  'travel-ai': { label: 'AI & software', labelEl: 'Λογισμικό & AI' },
   restaurant: { label: 'Restaurants & cafes', labelEl: 'Εστιατόρια' },
   other: { label: 'Other', labelEl: 'Άλλα' },
 };
 
 export const portfolioProjects: PortfolioProject[] = [
   {
-    slug: 'aggelos-rentals',
-    name: 'Aggelos Rentals',
-    url: 'https://aggelosrentals.com',
-    category: 'rent-a-car',
-    markets: ['GR', 'EU'],
-    languages: ['en', 'el'],
-    screenshot: '/portfolio/aggelos-rentals.webp',
-    summary:
-      'Aggelos Rentals: car rental with port and airport delivery for Piraeus and Paros, SEO for “rent a car Piraeus”, focused on port and airport handoff for ferry and flight arrivals.',
-    summaryEl:
-      'Aggelos Rentals: ενοικίαση αυτοκινήτων με παράδοση σε λιμάνι και αεροδρόμιο στον Πειραιά και στην Πάρο, SEO για «ενοικίαση αυτοκινήτου Πειραιά», με έμφαση σε παράδοση σε λιμάνι και αεροδρόμιο για αφίξεις με πλοίο ή πτήση.',
-    results: [
-      'Piraeus and Paros: pages aimed at “rent a car Piraeus” and “airport car delivery Greece”',
-      'Differentiation: port and airport handoff for ferry and flight arrivals',
-      'Stack: website creation, local SEO, speed optimization',
+    "slug": "aggelos-rentals",
+    "name": "Aggelos Rentals",
+    "url": "https://aggelosrentals.com",
+    "category": "rent-a-car",
+    "markets": [
+      "GR",
+      "EU"
     ],
-    resultsEl: [
-      'Τοπική αφήγηση για τον Πειραιά και την Πάρο με έμφαση σε «ενοικίαση αυτοκινήτου Πειραιά»',
-      'Αρχιτεκτονική υπηρεσιών και προϊόντων για εμπορικές προθέσεις: ενοικίαση αυτοκινήτων με παράδοση σε λιμάνι και αεροδρόμιο',
-      'Βάση σήμανσης schema και τεχνικού SEO για Aggelos Rentals',
-      'Διαδρομές κράτησης από κινητό έτοιμες για περιόδους αιχμής',
+    "languages": [
+      "en",
+      "el"
     ],
-
-    services: ['website-creation', 'local-seo', 'speed-optimization'],
-                                                    seoTitle: 'Aggelos Rentals | rent a car Piraeus',
-    seoDescription: 'Aggelos Rentals: car rental with port and airport delivery in Piraeus and Paros. Case study: the website and SEO we built to rank for “rent a car Piraeus”.',
-    seoTitleEl: 'Aggelos Rentals | ενοικίαση αυτοκινήτου Πειραιά',
-    seoDescriptionEl: 'Aggelos Rentals: ενοικίαση αυτοκινήτων με παράδοση σε λιμάνι και αεροδρόμιο, σε Πειραιά και Πάρο. Ιστοσελίδα και SEO με στόχο «ενοικίαση αυτοκινήτου Πειραιά».',
-    featured: true,
+    "screenshot": "/portfolio/aggelos-rentals.webp",
+    "summary": "Daily and monthly car rental in Piraeus, with delivery to the port and Athens airport.",
+    "summaryEl": "Ημερήσια και μηνιαία ενοικίαση αυτοκινήτου στον Πειραιά, με παράδοση στο λιμάνι και στο αεροδρόμιο Αθηνών.",
+    "results": [
+      "Daily and monthly rentals",
+      "Port and airport delivery",
+      "24-hour customer support"
+    ],
+    "resultsEl": [
+      "Ημερήσιες και μηνιαίες μισθώσεις",
+      "Παράδοση σε λιμάνι και αεροδρόμιο",
+      "Υποστήριξη όλο το εικοσιτετράωρο"
+    ],
+    "services": [
+      "website-creation",
+      "local-seo",
+      "speed-optimization"
+    ],
+    "seoTitle": "Aggelos Rentals | Website project",
+    "seoDescription": "Daily and monthly car rental in Piraeus, with delivery to the port and Athens airport.",
+    "seoTitleEl": "Aggelos Rentals | Παρουσίαση έργου",
+    "seoDescriptionEl": "Ημερήσια και μηνιαία ενοικίαση αυτοκινήτου στον Πειραιά, με παράδοση στο λιμάνι και στο αεροδρόμιο Αθηνών.",
+    "featured": true
   },
   {
-    slug: 'antiparos-rentacar',
-    name: 'Antiparos Rent a Car',
-    url: 'https://antiparosrentacar.com',
-    category: 'rent-a-car',
-    markets: ['GR', 'EU'],
-    languages: ['en', 'el'],
-    screenshot: '/portfolio/antiparos-rentacar.webp',
-    summary:
-      'Antiparos Rent a Car: island car and scooter rental for Antiparos, SEO for “rent a car Antiparos”, structured around “rent a car Antiparos”.',
-    summaryEl:
-      'Antiparos Rent a Car: ενοικίαση αυτοκινήτων και μηχανών στην Αντίπαρο, SEO για «ενοικίαση αυτοκινήτου Αντίπαρος», με δομή περιεχομένου για «ενοικίαση αυτοκινήτου Αντίπαρος».',
-    results: [
-      'Antiparos: pages aimed at “rent a car Antiparos” and “Antiparos scooter hire”',
-      'Differentiation: ferry-arrival pickup and compact fleet for narrow island roads',
-      'Stack: website creation, SEO web design, local SEO',
+    "slug": "antiparos-rentacar",
+    "name": "Antiparos Rent a Car",
+    "url": "https://antiparosrentacar.com",
+    "category": "rent-a-car",
+    "markets": [
+      "GR",
+      "EU"
     ],
-    resultsEl: [
-      'Τοπική αφήγηση για την Αντίπαρο με έμφαση σε «ενοικίαση αυτοκινήτου Αντίπαρος»',
-      'Αρχιτεκτονική υπηρεσιών και προϊόντων για εμπορικές προθέσεις: ενοικίαση αυτοκινήτων και μηχανών στο νησί',
-      'Βάση σήμανσης schema και τεχνικού SEO για Antiparos Rent a Car',
-      'Διαδρομές κράτησης από κινητό έτοιμες για περιόδους αιχμής',
+    "languages": [
+      "en",
+      "el"
     ],
-
-    services: ['website-creation', 'seo-web-design', 'local-seo'],
-                                                    seoTitle: 'Antiparos Rent a Car | rent a car Antiparos',
-    seoDescription: 'Antiparos Rent a Car: car and scooter rental on Antiparos. Case study: the mobile-first website and technical SEO we built to rank for “rent a car Antiparos”.',
-    seoTitleEl: 'Antiparos Rent a Car | ενοικίαση αυτοκινήτου Αντίπαρος',
-    seoDescriptionEl: 'Antiparos Rent a Car: ενοικίαση αυτοκινήτων και μηχανών στην Αντίπαρο. Ιστοσελίδα και SEO με στόχο «ενοικίαση αυτοκινήτου Αντίπαρος».',
-    featured: true,
+    "screenshot": "/portfolio/antiparos-rentacar.webp",
+    "summary": "An Antiparos rental project presenting cars and scooters for exploring the island.",
+    "summaryEl": "Έργο ενοικίασης αυτοκινήτων και σκούτερ στην Αντίπαρο, για τις καθημερινές μετακινήσεις στο νησί.",
+    "results": [
+      "Island car rentals",
+      "Scooter options",
+      "Rental enquiries"
+    ],
+    "resultsEl": [
+      "Ενοικιάσεις αυτοκινήτων στο νησί",
+      "Επιλογές σκούτερ",
+      "Αιτήματα ενοικίασης"
+    ],
+    "services": [
+      "website-creation",
+      "seo-web-design",
+      "local-seo"
+    ],
+    "seoTitle": "Antiparos Rent a Car | Website project",
+    "seoDescription": "An Antiparos rental project presenting cars and scooters for exploring the island.",
+    "seoTitleEl": "Antiparos Rent a Car | Παρουσίαση έργου",
+    "seoDescriptionEl": "Έργο ενοικίασης αυτοκινήτων και σκούτερ στην Αντίπαρο, για τις καθημερινές μετακινήσεις στο νησί.",
+    "featured": true,
+    "liveStatus": "unverified"
   },
   {
-    slug: 'cyclades-rentacar',
-    name: 'Cyclades Rent a Car',
-    url: 'https://cycladesrentacar.com',
-    category: 'rent-a-car',
-    markets: ['GR', 'EU'],
-    languages: ['en', 'el'],
-    screenshot: '/portfolio/cyclades-rentacar.webp',
-    summary:
-      'Cyclades Rent a Car: multi-island car rental comparison platform for Cyclades islands, SEO for “rent a car Cyclades”, optimized for mobile and local search.',
-    summaryEl:
-      'Cyclades Rent a Car: πλατφόρμα σύγκρισης ενοικίασης αυτοκινήτων στα νησιά των Κυκλάδων, SEO για «ενοικίαση αυτοκινήτου Κυκλάδες», βελτιστοποιημένη για κινητά και τοπική αναζήτηση.',
-    results: [
-      'Cyclades islands: pages aimed at “rent a car Cyclades” and “Greek islands car hire”',
-      'Differentiation: compare agencies across 24 islands with clear booking paths',
-      'Stack: website creation, local SEO, content creation',
+    "slug": "cyclades-rentacar",
+    "name": "Cyclades Rent a Car",
+    "url": "https://cycladesrentacar.com",
+    "category": "rent-a-car",
+    "markets": [
+      "GR",
+      "EU"
     ],
-    resultsEl: [
-      'Τοπική αφήγηση για τις Κυκλάδες με έμφαση σε «ενοικίαση αυτοκινήτου Κυκλάδες»',
-      'Αρχιτεκτονική υπηρεσιών και προϊόντων για εμπορικές προθέσεις: πλατφόρμα σύγκρισης ενοικίασης αυτοκινήτων στα νησιά',
-      'Βάση σήμανσης schema και τεχνικού SEO για Cyclades Rent a Car',
-      'Διαδρομές κράτησης από κινητό έτοιμες για περιόδους αιχμής',
+    "languages": [
+      "en",
+      "el"
     ],
-
-    services: ['website-creation', 'local-seo', 'content-creation'],
-                                                    seoTitle: 'Cyclades Rent a Car | rent a car Cyclades',
-    seoDescription: 'Cyclades Rent a Car: a car rental comparison platform for the Cyclades islands. Case study: the website and SEO we built to rank for “rent a car Cyclades”.',
-    seoTitleEl: 'Cyclades Rent a Car | ενοικίαση αυτοκινήτου Κυκλάδες',
-    seoDescriptionEl: 'Cyclades Rent a Car: πλατφόρμα σύγκρισης ενοικίασης αυτοκινήτων στα νησιά των Κυκλάδων. Ιστοσελίδα και SEO με στόχο «ενοικίαση αυτοκινήτου Κυκλάδες».',
-    featured: true,
+    "screenshot": "/portfolio/cyclades-rentacar.webp",
+    "summary": "A directory of local vehicle-rental partners across the Cyclades, from Discover Cyclades.",
+    "summaryEl": "Κατάλογος τοπικών επιχειρήσεων ενοικίασης οχημάτων στις Κυκλάδες, από το Discover Cyclades.",
+    "results": [
+      "Browse by island and vehicle",
+      "Local rental partners",
+      "Direct rental arrangements"
+    ],
+    "resultsEl": [
+      "Αναζήτηση ανά νησί και τύπο οχήματος",
+      "Τοπικές επιχειρήσεις ενοικίασης",
+      "Απευθείας συνεννόηση για την ενοικίαση"
+    ],
+    "services": [
+      "website-creation",
+      "local-seo",
+      "content-creation"
+    ],
+    "seoTitle": "Cyclades Rent a Car | Website project",
+    "seoDescription": "A directory of local vehicle-rental partners across the Cyclades, from Discover Cyclades.",
+    "seoTitleEl": "Cyclades Rent a Car | Παρουσίαση έργου",
+    "seoDescriptionEl": "Κατάλογος τοπικών επιχειρήσεων ενοικίασης οχημάτων στις Κυκλάδες, από το Discover Cyclades.",
+    "featured": true
   },
   {
-    slug: 'naxos-carrentals',
-    name: 'Naxos Car Rentals',
-    url: 'https://naxos-carrentals.com',
-    category: 'rent-a-car',
-    markets: ['GR', 'EU'],
-    languages: ['en', 'el'],
-    screenshot: '/portfolio/naxos-carrentals.webp',
-    summary:
-      'Naxos Car Rentals: Naxos car rental for Naxos, SEO for “rent a car Naxos”, with a clear path to booking.',
-    summaryEl:
-      'Naxos Car Rentals: ενοικίαση αυτοκινήτων στη Νάξο, SEO για «ενοικίαση αυτοκινήτου Νάξος», με καθαρή διαδρομή προς κράτηση.',
-    results: [
-      'Naxos: pages aimed at “rent a car Naxos” and “Naxos car rental”',
-      'Differentiation: port pickup and beach-day fleet pages for island itineraries',
-      'Stack: website creation, SEO web design',
+    "slug": "naxos-carrentals",
+    "name": "Naxos Car Rentals",
+    "url": "https://naxos-carrentals.com",
+    "category": "rent-a-car",
+    "markets": [
+      "GR",
+      "EU"
     ],
-    resultsEl: [
-      'Τοπική αφήγηση για τη Νάξο με έμφαση σε «ενοικίαση αυτοκινήτου Νάξος»',
-      'Αρχιτεκτονική υπηρεσιών και προϊόντων για εμπορικές προθέσεις: ενοικίαση αυτοκινήτων στη Νάξο',
-      'Βάση σήμανσης schema και τεχνικού SEO για Naxos Car Rentals',
-      'Διαδρομές κράτησης από κινητό έτοιμες για περιόδους αιχμής',
+    "languages": [
+      "en",
+      "el"
     ],
-
-    services: ['website-creation', 'seo-web-design'],
-                                                    seoTitle: 'Naxos Car Rentals | rent a car Naxos',
-    seoDescription: 'Naxos Car Rentals: car rental on Naxos. Case study: the website and SEO we built to rank for “rent a car Naxos” and win direct bookings from mobile searches.',
-    seoTitleEl: 'Naxos Car Rentals | ενοικίαση αυτοκινήτου Νάξος',
-    seoDescriptionEl: 'Naxos Car Rentals: ενοικίαση αυτοκινήτων στη Νάξο. Μελέτη περίπτωσης: η ιστοσελίδα και το SEO που φτιάξαμε για την αναζήτηση «ενοικίαση αυτοκινήτου Νάξος».',
-    featured: true,
+    "screenshot": "/portfolio/naxos-carrentals.webp",
+    "summary": "A local Naxos car-rental website with compact, automatic, family and four-wheel-drive vehicles.",
+    "summaryEl": "Ιστοσελίδα τοπικής ενοικίασης αυτοκινήτων στη Νάξο, με μικρά, αυτόματα, οικογενειακά οχήματα και τετρακίνητα.",
+    "results": [
+      "Vehicle categories",
+      "Online booking",
+      "Local Naxos team"
+    ],
+    "resultsEl": [
+      "Κατηγορίες οχημάτων",
+      "Ηλεκτρονική κράτηση",
+      "Τοπική ομάδα στη Νάξο"
+    ],
+    "services": [
+      "website-creation",
+      "seo-web-design"
+    ],
+    "seoTitle": "Naxos Car Rentals | Website project",
+    "seoDescription": "A local Naxos car-rental website with compact, automatic, family and four-wheel-drive vehicles.",
+    "seoTitleEl": "Naxos Car Rentals | Παρουσίαση έργου",
+    "seoDescriptionEl": "Ιστοσελίδα τοπικής ενοικίασης αυτοκινήτων στη Νάξο, με μικρά, αυτόματα, οικογενειακά οχήματα και τετρακίνητα.",
+    "featured": true
   },
   {
-    slug: 'rentacar-antiparos-gr',
-    name: 'Rent a Car Antiparos',
-    url: 'https://rentacarantiparos.gr',
-    category: 'rent-a-car',
-    markets: ['GR'],
-    languages: ['el', 'en'],
-    screenshot: '/portfolio/rentacar-antiparos-gr.webp',
-    summary:
-      'Rent a Car Antiparos: local Antiparos rent-a-car (.gr) website for Antiparos, SEO for “Antiparos rent a car”, structured around “Antiparos rent a car”.',
-    summaryEl:
-      'Rent a Car Antiparos: τοπική ενοικίαση αυτοκινήτων στην Αντίπαρο, SEO για «ενοικίαση αυτοκινήτου Αντίπαρος», με δομή περιεχομένου για «ενοικίαση αυτοκινήτου Αντίπαρος».',
-    results: [
-      'Antiparos: pages aimed at “Antiparos rent a car” and “car hire Antiparos Greece”',
-      'Differentiation: Greek-first local SEO for Antiparos visitors booking on mobile',
-      'Stack: website creation, local SEO',
+    "slug": "rentacar-antiparos-gr",
+    "name": "AGGELOS Rentals · Paros & Antiparos",
+    "url": "https://rentacarantiparos.gr",
+    "category": "rent-a-car",
+    "markets": [
+      "GR"
     ],
-    resultsEl: [
-      'Τοπική αφήγηση για την Αντίπαρο με έμφαση σε «ενοικίαση αυτοκινήτου Αντίπαρος»',
-      'Αρχιτεκτονική υπηρεσιών και προϊόντων για εμπορικές προθέσεις: τοπική ενοικίαση αυτοκινήτων Αντιπάρου',
-      'Βάση σήμανσης schema και τεχνικού SEO για Rent a Car Antiparos',
-      'Διαδρομές κράτησης από κινητό έτοιμες για περιόδους αιχμής',
+    "languages": [
+      "el",
+      "en"
     ],
-
-    services: ['website-creation', 'local-seo'],
-                                                    seoTitle: 'Rent a Car Antiparos | Antiparos rent a car',
-    seoDescription: 'Rent a Car Antiparos: local car rental on Antiparos. Case study: the mobile-first website and technical SEO we built to rank for “Antiparos rent a car”.',
-    seoTitleEl: 'Rent a Car Antiparos | ενοικίαση αυτοκινήτου Αντίπαρος',
-    seoDescriptionEl: 'Rent a Car Antiparos: τοπική ενοικίαση αυτοκινήτων στην Αντίπαρο. Μελέτη περίπτωσης για την ιστοσελίδα και το SEO με στόχο «ενοικίαση αυτοκινήτου Αντίπαρος».',
-    featured: false,
+    "screenshot": "/portfolio/rentacar-antiparos-gr.webp",
+    "summary": "AGGELOS Rentals serves Paros and Antiparos with a local car-rental offer.",
+    "summaryEl": "Η AGGELOS Rentals εξυπηρετεί την Πάρο και την Αντίπαρο με ενοικιάσεις αυτοκινήτων.",
+    "results": [
+      "Paros and Antiparos coverage",
+      "Vehicle selection",
+      "Rental contact"
+    ],
+    "resultsEl": [
+      "Εξυπηρέτηση Πάρου και Αντιπάρου",
+      "Επιλογή οχήματος",
+      "Επικοινωνία για ενοικίαση"
+    ],
+    "services": [
+      "website-creation",
+      "local-seo"
+    ],
+    "seoTitle": "AGGELOS Rentals · Paros & Antiparos | Website project",
+    "seoDescription": "AGGELOS Rentals serves Paros and Antiparos with a local car-rental offer.",
+    "seoTitleEl": "AGGELOS Rentals · Paros & Antiparos | Παρουσίαση έργου",
+    "seoDescriptionEl": "Η AGGELOS Rentals εξυπηρετεί την Πάρο και την Αντίπαρο με ενοικιάσεις αυτοκινήτων.",
+    "featured": false
   },
   {
-    slug: 'rentacar-in-paros',
-    name: 'Rent a Car in Paros',
-    url: 'https://rentacarinparos.gr',
-    category: 'rent-a-car',
-    markets: ['GR', 'EU'],
-    languages: ['en', 'el'],
-    screenshot: '/portfolio/rentacar-in-paros.webp',
-    summary:
-      'Rent a Car in Paros: Paros car hire brand website for Paros, SEO for “rent a car in Paros”, with technical SEO from day one.',
-    summaryEl:
-      'Rent a Car in Paros: ενοικίαση αυτοκινήτων στην Πάρο, SEO για «ενοικίαση αυτοκινήτου στην Πάρο», με τεχνικό SEO από την πρώτη μέρα.',
-    results: [
-      'Paros: pages aimed at “rent a car in Paros” and “Paros car hire”',
-      'Differentiation: conversion-led vehicle cards for summer peak demand',
-      'Stack: website creation, local SEO',
+    "slug": "rentacar-in-paros",
+    "name": "Rent a Car in Paros",
+    "url": "https://rentacarinparos.gr",
+    "category": "rent-a-car",
+    "markets": [
+      "GR",
+      "EU"
     ],
-    resultsEl: [
-      'Τοπική αφήγηση για την Πάρο με έμφαση σε «ενοικίαση αυτοκινήτου στην Πάρο»',
-      'Αρχιτεκτονική υπηρεσιών και προϊόντων για εμπορικές προθέσεις: ενοικίαση αυτοκινήτων στην Πάρο',
-      'Βάση σήμανσης schema και τεχνικού SEO για Rent a Car in Paros',
-      'Διαδρομές κράτησης από κινητό έτοιμες για περιόδους αιχμής',
+    "languages": [
+      "en",
+      "el"
     ],
-
-    services: ['website-creation', 'local-seo'],
-                                                    seoTitle: 'Rent a Car in Paros | Paros car hire',
-    seoDescription: 'Rent a Car in Paros: car hire on Paros. Case study: the website and SEO we built to rank for “rent a car in Paros” and win direct bookings.',
-    seoTitleEl: 'Rent a Car in Paros | ενοικίαση αυτοκινήτου στην Πάρο',
-    seoDescriptionEl: 'Rent a Car in Paros: ενοικίαση αυτοκινήτων στην Πάρο. Μελέτη περίπτωσης: η ιστοσελίδα και το SEO που φτιάξαμε για «ενοικίαση αυτοκινήτου στην Πάρο».',
-    featured: false,
+    "screenshot": "/portfolio/rentacar-in-paros.webp",
+    "summary": "A Greek-language guide to car rental in Paros, with port and airport information and a booking route through Discover Cyclades.",
+    "summaryEl": "Ελληνικός οδηγός ενοικίασης αυτοκινήτου στην Πάρο, με πληροφορίες για λιμάνι και αεροδρόμιο και δυνατότητα κράτησης μέσω Discover Cyclades.",
+    "results": [
+      "Paros pickup information",
+      "Rental advice",
+      "Booking access"
+    ],
+    "resultsEl": [
+      "Πληροφορίες παραλαβής στην Πάρο",
+      "Συμβουλές ενοικίασης",
+      "Πρόσβαση στην κράτηση"
+    ],
+    "services": [
+      "website-creation",
+      "local-seo"
+    ],
+    "seoTitle": "Rent a Car in Paros | Website project",
+    "seoDescription": "A Greek-language guide to car rental in Paros, with port and airport information and a booking route through Discover Cyclades.",
+    "seoTitleEl": "Rent a Car in Paros | Παρουσίαση έργου",
+    "seoDescriptionEl": "Ελληνικός οδηγός ενοικίασης αυτοκινήτου στην Πάρο, με πληροφορίες για λιμάνι και αεροδρόμιο και δυνατότητα κράτησης μέσω Discover Cyclades.",
+    "featured": false
   },
   {
-    slug: 'rentacar-piraeus',
-    name: 'Rent a Car Piraeus',
-    url: 'https://rentacarpiraeus.gr',
-    category: 'rent-a-car',
-    markets: ['GR'],
-    languages: ['el', 'en'],
-    screenshot: '/portfolio/rentacar-piraeus.webp',
-    summary:
-      'Rent a Car Piraeus: Piraeus port city car rental for Piraeus, SEO for “rent a car Piraeus”, with technical SEO from day one.',
-    summaryEl:
-      'Rent a Car Piraeus: ενοικίαση αυτοκινήτων στον Πειραιά, SEO για «ενοικίαση αυτοκινήτου Πειραιάς», με τεχνικό SEO από την πρώτη μέρα.',
-    results: [
-      'Piraeus: pages aimed at “rent a car Piraeus” and “Piraeus port car rental”',
-      'Differentiation: ferry-day and neighborhood pickup around the port',
-      'Stack: website creation, local SEO',
+    "slug": "rentacar-piraeus",
+    "name": "GetCarPiraeus",
+    "url": "https://rentacarpiraeus.gr",
+    "category": "rent-a-car",
+    "markets": [
+      "GR"
     ],
-    resultsEl: [
-      'Τοπική αφήγηση για τον Πειραιά με έμφαση σε «ενοικίαση αυτοκινήτου Πειραιάς»',
-      'Αρχιτεκτονική υπηρεσιών και προϊόντων για εμπορικές προθέσεις: ενοικίαση αυτοκινήτων στον Πειραιά',
-      'Βάση σήμανσης schema και τεχνικού SEO για Rent a Car Piraeus',
-      'Διαδρομές κράτησης από κινητό έτοιμες για περιόδους αιχμής',
+    "languages": [
+      "el",
+      "en"
     ],
-
-    services: ['website-creation', 'local-seo'],
-                                                    seoTitle: 'Rent a Car Piraeus | Piraeus port car rental',
-    seoDescription: 'Rent a Car Piraeus: car rental in the port city of Piraeus. Case study: the mobile-first website and technical SEO we built to rank for “rent a car Piraeus”.',
-    seoTitleEl: 'Rent a Car Piraeus | ενοικίαση αυτοκινήτου Πειραιάς',
-    seoDescriptionEl: 'Rent a Car Piraeus: ενοικίαση αυτοκινήτων στον Πειραιά. Μελέτη περίπτωσης: η ιστοσελίδα και το SEO που φτιάξαμε για «ενοικίαση αυτοκινήτου Πειραιάς».',
-    featured: false,
+    "screenshot": "/portfolio/rentacar-piraeus.webp",
+    "summary": "GetCarPiraeus offers cars, vans, motorcycles and scooters around Piraeus and its ferry port.",
+    "summaryEl": "Το GetCarPiraeus προσφέρει αυτοκίνητα, βαν, μοτοσικλέτες και σκούτερ στον Πειραιά και στο λιμάνι.",
+    "results": [
+      "Port gates E1–E12",
+      "Cars, vans and two-wheelers",
+      "Piraeus and neighbouring areas"
+    ],
+    "resultsEl": [
+      "Πύλες λιμανιού Ε1–Ε12",
+      "Αυτοκίνητα, βαν και δίκυκλα",
+      "Πειραιάς και γειτονικές περιοχές"
+    ],
+    "services": [
+      "website-creation",
+      "local-seo"
+    ],
+    "seoTitle": "GetCarPiraeus | Website project",
+    "seoDescription": "GetCarPiraeus offers cars, vans, motorcycles and scooters around Piraeus and its ferry port.",
+    "seoTitleEl": "GetCarPiraeus | Παρουσίαση έργου",
+    "seoDescriptionEl": "Το GetCarPiraeus προσφέρει αυτοκίνητα, βαν, μοτοσικλέτες και σκούτερ στον Πειραιά και στο λιμάνι.",
+    "featured": false
   },
   {
-    slug: 'athens-rentacar',
-    name: 'Athens Rent a Car',
-    url: 'https://athensrentacar.com',
-    category: 'rent-a-car',
-    markets: ['GR', 'EU'],
-    languages: ['en', 'el'],
-    screenshot: '/portfolio/athens-rentacar.webp',
-    summary:
-      'Athens Rent a Car: Athens city and airport car rental for Athens, SEO for “rent a car Athens”, with trust signals and a clear booking path.',
-    summaryEl:
-      'Athens Rent a Car: ενοικίαση αυτοκινήτων στην Αθήνα, SEO για «ενοικίαση αυτοκινήτου Αθήνα», με ξεκάθαρα σήματα εμπιστοσύνης και διαδρομή κράτησης.',
-    results: [
-      'Athens: pages aimed at “rent a car Athens” and “Athens airport car rental”',
-      'Differentiation: airport and city delivery for business and tourism',
-      'Stack: website creation, speed optimization',
+    "slug": "athens-rentacar",
+    "name": "Athens Rent a Car",
+    "url": "https://athensrentacar.com",
+    "category": "rent-a-car",
+    "markets": [
+      "GR",
+      "EU"
     ],
-    resultsEl: [
-      'Τοπική αφήγηση για την Αθήνα με έμφαση σε «ενοικίαση αυτοκινήτου Αθήνα»',
-      'Αρχιτεκτονική υπηρεσιών και προϊόντων για εμπορικές προθέσεις: ενοικίαση αυτοκινήτων στην Αθήνα',
-      'Βάση σήμανσης schema και τεχνικού SEO για Athens Rent a Car',
-      'Διαδρομές κράτησης από κινητό έτοιμες για περιόδους αιχμής',
+    "languages": [
+      "en",
+      "el"
     ],
-
-    services: ['website-creation', 'speed-optimization'],
-                                                    seoTitle: 'Athens Rent a Car | rent a car Athens',
-    seoDescription: 'Athens Rent a Car: city and airport car rental in Athens. Case study: the mobile-first website and technical SEO we built to rank for “rent a car Athens”.',
-    seoTitleEl: 'Athens Rent a Car | ενοικίαση αυτοκινήτου Αθήνα',
-    seoDescriptionEl: 'Athens Rent a Car: ενοικίαση αυτοκινήτων στην Αθήνα. Μελέτη περίπτωσης: η ιστοσελίδα και το SEO που φτιάξαμε για την αναζήτηση «ενοικίαση αυτοκινήτου Αθήνα».',
-    featured: false,
+    "screenshot": "/portfolio/athens-rentacar.webp",
+    "summary": "An Athens car-rental project focused on city and airport arrivals.",
+    "summaryEl": "Έργο ενοικίασης αυτοκινήτων στην Αθήνα, με έμφαση στις μετακινήσεις στην πόλη και στις αφίξεις από το αεροδρόμιο.",
+    "results": [
+      "Athens car rental",
+      "Airport arrival planning",
+      "Rental enquiries"
+    ],
+    "resultsEl": [
+      "Ενοικίαση αυτοκινήτου στην Αθήνα",
+      "Οργάνωση άφιξης από το αεροδρόμιο",
+      "Αιτήματα ενοικίασης"
+    ],
+    "services": [
+      "website-creation",
+      "speed-optimization"
+    ],
+    "seoTitle": "Athens Rent a Car | Website project",
+    "seoDescription": "An Athens car-rental project focused on city and airport arrivals.",
+    "seoTitleEl": "Athens Rent a Car | Παρουσίαση έργου",
+    "seoDescriptionEl": "Έργο ενοικίασης αυτοκινήτων στην Αθήνα, με έμφαση στις μετακινήσεις στην πόλη και στις αφίξεις από το αεροδρόμιο.",
+    "featured": false,
+    "liveStatus": "unverified"
   },
   {
-    slug: 'rentacar-paros-gr',
-    name: 'Rent a Car Paros',
-    url: 'https://rentacar-paros.gr',
-    category: 'rent-a-car',
-    markets: ['GR'],
-    languages: ['el', 'en'],
-    screenshot: '/portfolio/rentacar-paros-gr.webp',
-    summary:
-      'Rent a Car Paros: Paros car rental (.gr domain) for Paros, SEO for “rentacar Paros”, with technical SEO from day one.',
-    summaryEl:
-      'Rent a Car Paros: ενοικίαση αυτοκινήτων στην Πάρο, SEO για «ενοικίαση αυτοκινήτου Πάρος», με τεχνικό SEO από την πρώτη μέρα.',
-    results: [
-      'Paros: pages aimed at “rentacar Paros” and “Paros car rental Greece”',
-      'Differentiation: local .gr domain for Greek-language Paros searchers',
-      'Stack: website creation, local SEO',
+    "slug": "rentacar-paros-gr",
+    "name": "Rent a Car Paros",
+    "url": "https://rentacar-paros.gr",
+    "category": "rent-a-car",
+    "markets": [
+      "GR"
     ],
-    resultsEl: [
-      'Τοπική αφήγηση για την Πάρο με έμφαση σε «ενοικίαση αυτοκινήτου Πάρος»',
-      'Αρχιτεκτονική υπηρεσιών και προϊόντων για εμπορικές προθέσεις: ενοικίαση αυτοκινήτων στην Πάρο',
-      'Βάση σήμανσης schema και τεχνικού SEO για Rent a Car Paros',
-      'Διαδρομές κράτησης από κινητό έτοιμες για περιόδους αιχμής',
+    "languages": [
+      "el",
+      "en"
     ],
-
-    services: ['website-creation', 'local-seo'],
-                                                    seoTitle: 'Rent a Car Paros | rentacar Paros',
-    seoDescription: 'Rent a Car Paros: car rental on Paros. Case study: the website and SEO we built to rank for “rentacar Paros” and win direct bookings from mobile searches.',
-    seoTitleEl: 'Rent a Car Paros | ενοικίαση αυτοκινήτου Πάρος',
-    seoDescriptionEl: 'Rent a Car Paros: ενοικίαση αυτοκινήτων στην Πάρο. Μελέτη περίπτωσης: η ιστοσελίδα και το SEO που φτιάξαμε για την αναζήτηση «ενοικίαση αυτοκινήτου Πάρος».',
-    liveStatus: 'offline', // site offline at scrape time
-    featured: false,
+    "screenshot": "/portfolio/rentacar-paros-gr.webp",
+    "summary": "A Paros car-rental project for travellers planning their island transport.",
+    "summaryEl": "Έργο ενοικίασης αυτοκινήτων στην Πάρο, για ταξιδιώτες που οργανώνουν τις μετακινήσεις τους στο νησί.",
+    "results": [
+      "Paros rental information",
+      "Island transport",
+      "Contact for availability"
+    ],
+    "resultsEl": [
+      "Πληροφορίες ενοικίασης στην Πάρο",
+      "Μετακινήσεις στο νησί",
+      "Επικοινωνία για διαθεσιμότητα"
+    ],
+    "services": [
+      "website-creation",
+      "local-seo"
+    ],
+    "seoTitle": "Rent a Car Paros | Website project",
+    "seoDescription": "A Paros car-rental project for travellers planning their island transport.",
+    "seoTitleEl": "Rent a Car Paros | Παρουσίαση έργου",
+    "seoDescriptionEl": "Έργο ενοικίασης αυτοκινήτων στην Πάρο, για ταξιδιώτες που οργανώνουν τις μετακινήσεις τους στο νησί.",
+    "featured": false,
+    "liveStatus": "unverified"
   },
   {
-    slug: 'hotels-santorini',
-    name: 'Hotels Santorini',
-    url: 'https://hotelssantorini.gr',
-    category: 'hotel',
-    markets: ['GR', 'EU', 'US'],
-    languages: ['en', 'el'],
-    screenshot: '/portfolio/hotels-santorini.webp',
-    summary:
-      'Hotels Santorini: Santorini hotels directory and bookings for Santorini, SEO for “hotels Santorini”, with technical SEO from day one.',
-    summaryEl:
-      'Hotels Santorini: κατάλογος και κρατήσεις ξενοδοχείων στη Σαντορίνη, SEO για «ξενοδοχεία Σαντορίνη», με τεχνικό SEO από την πρώτη μέρα.',
-    results: [
-      'Santorini: pages aimed at “hotels Santorini” and “Santorini hotel booking”',
-      'Differentiation: caldera and beach hotel discovery with direct booking calls to action',
-      'Stack: website creation, SEO web design, content creation',
+    "slug": "hotels-santorini",
+    "name": "Hotels Santorini",
+    "url": "https://hotelssantorini.gr",
+    "category": "hotel",
+    "markets": [
+      "GR",
+      "EU",
+      "US"
     ],
-    resultsEl: [
-      'Τοπική αφήγηση για τη Σαντορίνη με έμφαση σε «ξενοδοχεία Σαντορίνη»',
-      'Αρχιτεκτονική υπηρεσιών και προϊόντων για εμπορικές προθέσεις: κατάλογος και κρατήσεις ξενοδοχείων Σαντορίνης',
-      'Βάση σήμανσης schema και τεχνικού SEO για Hotels Santorini',
-      'Διαδρομές κράτησης από κινητό έτοιμες για περιόδους αιχμής',
+    "languages": [
+      "en",
+      "el"
     ],
-
-    services: ['website-creation', 'seo-web-design', 'content-creation'],
-                                                    seoTitle: 'Hotels Santorini | Santorini hotel booking',
-    seoDescription: 'Hotels Santorini: a hotel directory and booking site for Santorini. Case study: the website and SEO we built to rank for “hotels Santorini”.',
-    seoTitleEl: 'Hotels Santorini | ξενοδοχεία Σαντορίνη',
-    seoDescriptionEl: 'Hotels Santorini: κατάλογος και κρατήσεις ξενοδοχείων στη Σαντορίνη. Μελέτη περίπτωσης για την ιστοσελίδα και το SEO με στόχο «ξενοδοχεία Σαντορίνη».',
-    featured: true,
+    "screenshot": "/portfolio/hotels-santorini.webp",
+    "summary": "A Santorini hotel and area guide combining accommodation discovery with practical travel information.",
+    "summaryEl": "Οδηγός ξενοδοχείων και περιοχών της Σαντορίνης, που συνδυάζει την αναζήτηση διαμονής με πρακτικές ταξιδιωτικές πληροφορίες.",
+    "results": [
+      "Hotel discovery",
+      "Area guides",
+      "Practical travel and safety information"
+    ],
+    "resultsEl": [
+      "Αναζήτηση ξενοδοχείων",
+      "Οδηγοί περιοχών",
+      "Πρακτικές πληροφορίες ταξιδιού και ασφάλειας"
+    ],
+    "services": [
+      "website-creation",
+      "seo-web-design",
+      "content-creation"
+    ],
+    "seoTitle": "Hotels Santorini | Website project",
+    "seoDescription": "A Santorini hotel and area guide combining accommodation discovery with practical travel information.",
+    "seoTitleEl": "Hotels Santorini | Παρουσίαση έργου",
+    "seoDescriptionEl": "Οδηγός ξενοδοχείων και περιοχών της Σαντορίνης, που συνδυάζει την αναζήτηση διαμονής με πρακτικές ταξιδιωτικές πληροφορίες.",
+    "featured": true
   },
   {
-    slug: 'hotels-sifnos',
-    name: 'Hotels Sifnos',
-    url: 'https://hotelssifnos.com',
-    category: 'hotel',
-    markets: ['GR', 'EU'],
-    languages: ['en', 'el'],
-    screenshot: '/portfolio/hotels-sifnos.webp',
-    summary:
-      'Hotels Sifnos: Sifnos hotels and stays for Sifnos, SEO for “hotels Sifnos”, with technical SEO from day one.',
-    summaryEl:
-      'Hotels Sifnos: ιστοσελίδα για ξενοδοχεία και διαμονή στη Σίφνο, SEO για «ξενοδοχεία Σίφνος», με τεχνικό SEO από την πρώτη μέρα.',
-    results: [
-      'Sifnos: pages aimed at “hotels Sifnos” and “Sifnos accommodation”',
-      'Differentiation: boutique island stay hubs for travelers researching lodging',
-      'Stack: website creation, content creation',
+    "slug": "hotels-sifnos",
+    "name": "Hotels Sifnos",
+    "url": "https://hotelssifnos.com",
+    "category": "hotel",
+    "markets": [
+      "GR",
+      "EU"
     ],
-    resultsEl: [
-      'Τοπική αφήγηση για τη Σίφνο με έμφαση σε «ξενοδοχεία Σίφνος»',
-      'Αρχιτεκτονική υπηρεσιών και προϊόντων για εμπορικές προθέσεις: ξενοδοχεία και διαμονή στη Σίφνο',
-      'Βάση σήμανσης schema και τεχνικού SEO για Hotels Sifnos',
-      'Διαδρομές κράτησης από κινητό έτοιμες για περιόδους αιχμής',
+    "languages": [
+      "en",
+      "el"
     ],
-
-    services: ['website-creation', 'content-creation'],
-                                                    seoTitle: 'Hotels Sifnos | Sifnos accommodation',
-    seoDescription: 'Hotels Sifnos: hotels and stays on Sifnos. Case study: the website and SEO we built to rank for “hotels Sifnos” and win direct bookings from mobile searches.',
-    seoTitleEl: 'Hotels Sifnos | ξενοδοχεία Σίφνος',
-    seoDescriptionEl: 'Hotels Sifnos: ξενοδοχεία και διαμονή στη Σίφνο. Μελέτη περίπτωσης: η γρήγορη ιστοσελίδα και το τεχνικό SEO που φτιάξαμε για «ξενοδοχεία Σίφνος».',
-    featured: true,
+    "screenshot": "/portfolio/hotels-sifnos.webp",
+    "summary": "A curated directory of Sifnos hotels and villas, organised by area and style with direct contact to local partners.",
+    "summaryEl": "Επιλεγμένος κατάλογος ξενοδοχείων και βιλών στη Σίφνο, ανά περιοχή και ύφος διαμονής, με απευθείας επικοινωνία με τους συνεργάτες.",
+    "results": [
+      "Accommodation by area",
+      "Hotels and villas",
+      "Direct partner contact"
+    ],
+    "resultsEl": [
+      "Καταλύματα ανά περιοχή",
+      "Ξενοδοχεία και βίλες",
+      "Απευθείας επικοινωνία με τους συνεργάτες"
+    ],
+    "services": [
+      "website-creation",
+      "content-creation"
+    ],
+    "seoTitle": "Hotels Sifnos | Website project",
+    "seoDescription": "A curated directory of Sifnos hotels and villas, organised by area and style with direct contact to local partners.",
+    "seoTitleEl": "Hotels Sifnos | Παρουσίαση έργου",
+    "seoDescriptionEl": "Επιλεγμένος κατάλογος ξενοδοχείων και βιλών στη Σίφνο, ανά περιοχή και ύφος διαμονής, με απευθείας επικοινωνία με τους συνεργάτες.",
+    "featured": true
   },
   {
-    slug: 'onoma-hotel',
-    name: 'Onoma Hotel',
-    url: 'https://onomahotel.com',
-    category: 'hotel',
-    markets: ['GR', 'EU'],
-    languages: ['en', 'el'],
-    screenshot: '/portfolio/onoma-hotel.webp',
-    summary:
-      'Onoma Hotel: boutique hotel brand site for Greece, SEO for “Onoma Hotel”, with a clear path to booking.',
-    summaryEl:
-      'Onoma Hotel: ιστοσελίδα boutique ξενοδοχείου στην Ελλάδα, SEO για «Onoma Hotel», με καθαρή διαδρομή προς κράτηση.',
-    results: [
-      'Greece: pages aimed at “Onoma Hotel” and “boutique hotel Greece”',
-      'Differentiation: brand storytelling with room-type pages for direct bookings',
-      'Stack: website creation, SEO web design',
+    "slug": "onoma-hotel",
+    "name": "ONOMA Hotel",
+    "url": "https://onomahotel.com",
+    "category": "hotel",
+    "markets": [
+      "GR",
+      "EU"
     ],
-    resultsEl: [
-      'Τοπική αφήγηση για την Ελλάδα με έμφαση σε «Onoma Hotel»',
-      'Αρχιτεκτονική υπηρεσιών και προϊόντων για εμπορικές προθέσεις: ιστοσελίδα boutique ξενοδοχείου',
-      'Βάση σήμανσης schema και τεχνικού SEO για Onoma Hotel',
-      'Διαδρομές κράτησης από κινητό έτοιμες για περιόδους αιχμής',
+    "languages": [
+      "en",
+      "el"
     ],
-
-    services: ['website-creation', 'seo-web-design'],
-                                                    seoTitle: 'Onoma Hotel | boutique hotel Greece',
-    seoDescription: 'Onoma Hotel: a boutique hotel in Greece. Case study: the website and SEO we built to rank for “Onoma Hotel” and win direct bookings from mobile searches.',
-    seoTitleEl: 'Onoma Hotel | boutique ξενοδοχείο Ελλάδα',
-    seoDescriptionEl: 'Onoma Hotel: ιστοσελίδα boutique ξενοδοχείου στην Ελλάδα. Μελέτη περίπτωσης: η γρήγορη ιστοσελίδα και το τεχνικό SEO που φτιάξαμε για «Onoma Hotel».',
-    featured: true,
+    "screenshot": "/portfolio/onoma-hotel.webp",
+    "summary": "A five-star hotel in Thessaloniki built around personalised stays, with a rooftop pool and bar, dining and playful shared spaces.",
+    "summaryEl": "Πεντάστερο ξενοδοχείο στη Θεσσαλονίκη με εξατομικευμένη εμπειρία διαμονής, πισίνα και μπαρ στην ταράτσα, εστιατόριο και χώρους ψυχαγωγίας.",
+    "results": [
+      "Personalised rooms",
+      "Rooftop pool and bar",
+      "Direct hotel booking"
+    ],
+    "resultsEl": [
+      "Δωμάτια με προσωπικό χαρακτήρα",
+      "Πισίνα και μπαρ στην ταράτσα",
+      "Απευθείας κράτηση στο ξενοδοχείο"
+    ],
+    "services": [
+      "website-creation",
+      "seo-web-design"
+    ],
+    "seoTitle": "ONOMA Hotel | Website project",
+    "seoDescription": "A five-star hotel in Thessaloniki built around personalised stays, with a rooftop pool and bar, dining and playful shared spaces.",
+    "seoTitleEl": "ONOMA Hotel | Παρουσίαση έργου",
+    "seoDescriptionEl": "Πεντάστερο ξενοδοχείο στη Θεσσαλονίκη με εξατομικευμένη εμπειρία διαμονής, πισίνα και μπαρ στην ταράτσα, εστιατόριο και χώρους ψυχαγωγίας.",
+    "featured": true
   },
   {
-    slug: 'villa-olivia-clara',
-    name: 'Villa Olivia Clara',
-    url: 'https://villaoliviaclara.com',
-    category: 'villa',
-    markets: ['GR', 'EU', 'UK'],
-    languages: ['en', 'el'],
-    screenshot: '/portfolio/villa-olivia-clara.webp',
-    summary:
-      'Villa Olivia Clara: luxury private villa for Crete, SEO for “Villa Olivia Clara”, focused on photo-led conversion for high-intent luxury villa searches.',
-    summaryEl:
-      'Villa Olivia Clara: ιστοσελίδα για πολυτελή ιδιωτική βίλα στην Κρήτη, SEO για «Villa Olivia Clara», με έμφαση σε μετατροπή μέσω φωτογραφίας για αναζητήσεις πολυτελούς βίλας.',
-    results: [
-      'Crete: pages aimed at “Villa Olivia Clara” and “luxury villa Crete”',
-      'Differentiation: photo-led conversion for high-intent luxury villa searches',
-      'Stack: website creation, local SEO, ai-visibility',
+    "slug": "villa-olivia-clara",
+    "name": "Villa Olivia Clara",
+    "url": "https://villaoliviaclara.com",
+    "category": "villa",
+    "markets": [
+      "GR",
+      "EU",
+      "UK"
     ],
-    resultsEl: [
-      'Τοπική αφήγηση για την Κρήτη με έμφαση σε «Villa Olivia Clara»',
-      'Αρχιτεκτονική υπηρεσιών και προϊόντων για εμπορικές προθέσεις: πολυτελής ιδιωτική βίλα',
-      'Βάση σήμανσης schema και τεχνικού SEO για Villa Olivia Clara',
-      'Διαδρομές αιτήματος προσφοράς από κινητό έτοιμες για περιόδους αιχμής',
+    "languages": [
+      "en",
+      "el"
     ],
-
-    services: ['website-creation', 'local-seo', 'ai-visibility'],
-                                                    seoTitle: 'Villa Olivia Clara | luxury villa Crete',
-    seoDescription: 'Villa Olivia Clara: a luxury private villa in Crete. Case study: the mobile-first website and technical SEO we built to rank for “Villa Olivia Clara”.',
-    seoTitleEl: 'Villa Olivia Clara | πολυτελής βίλα Κρήτη',
-    seoDescriptionEl: 'Villa Olivia Clara: πολυτελής ιδιωτική βίλα στην Κρήτη. Μελέτη περίπτωσης: η ιστοσελίδα και το SEO που φτιάξαμε για την αναζήτηση «Villa Olivia Clara».',
-    featured: true,
+    "screenshot": "/portfolio/villa-olivia-clara.webp",
+    "summary": "A family villa above Platis Gialos on Sifnos, with four bedrooms, a private pool and direct contact with its owner.",
+    "summaryEl": "Οικογενειακή βίλα πάνω από τον Πλατύ Γιαλό της Σίφνου, με τέσσερα υπνοδωμάτια, ιδιωτική πισίνα και απευθείας επικοινωνία με την ιδιοκτήτρια.",
+    "results": [
+      "Four bedrooms, up to eight guests",
+      "Private pool",
+      "Platis Gialos, Sifnos"
+    ],
+    "resultsEl": [
+      "Τέσσερα υπνοδωμάτια, έως οκτώ επισκέπτες",
+      "Ιδιωτική πισίνα",
+      "Πλατύς Γιαλός Σίφνου"
+    ],
+    "services": [
+      "website-creation",
+      "local-seo",
+      "ai-visibility"
+    ],
+    "seoTitle": "Villa Olivia Clara | Website project",
+    "seoDescription": "A family villa above Platis Gialos on Sifnos, with four bedrooms, a private pool and direct contact with its owner.",
+    "seoTitleEl": "Villa Olivia Clara | Παρουσίαση έργου",
+    "seoDescriptionEl": "Οικογενειακή βίλα πάνω από τον Πλατύ Γιαλό της Σίφνου, με τέσσερα υπνοδωμάτια, ιδιωτική πισίνα και απευθείας επικοινωνία με την ιδιοκτήτρια.",
+    "featured": true
   },
   {
-    slug: 'mykonos-luxury',
-    name: 'Mykonos Luxury',
-    url: 'https://mykonos.luxury',
-    category: 'villa',
-    markets: ['GR', 'EU', 'US'],
-    languages: ['en'],
-    screenshot: '/portfolio/mykonos-luxury.webp',
-    summary:
-      'Mykonos Luxury: luxury Mykonos journey and villa concierge for Mykonos, SEO for “Mykonos luxury villa”, with technical SEO from day one.',
-    summaryEl:
-      'Mykonos Luxury: ιστοσελίδα για πολυτελή διαμονή και concierge στη Μύκονο, SEO για «πολυτελής βίλα Μύκονος», με τεχνικό SEO από την πρώτη μέρα.',
-    results: [
-      'Mykonos: pages aimed at “Mykonos luxury villa” and “Mykonos concierge”',
-      'Differentiation: complete luxury journey packaging for international guests',
-      'Stack: website creation, SEO web design',
+    "slug": "mykonos-luxury",
+    "name": "Mykonos Luxury",
+    "url": "https://mykonos.luxury",
+    "category": "villa",
+    "markets": [
+      "GR",
+      "EU",
+      "US"
     ],
-    resultsEl: [
-      'Τοπική αφήγηση για τη Μύκονο με έμφαση σε «πολυτελής βίλα Μύκονος»',
-      'Αρχιτεκτονική υπηρεσιών και προϊόντων για εμπορικές προθέσεις: πολυτελής διαμονή και concierge στη Μύκονο',
-      'Βάση σήμανσης schema και τεχνικού SEO για Mykonos Luxury',
-      'Διαδρομές αιτήματος προσφοράς από κινητό έτοιμες για περιόδους αιχμής',
+    "languages": [
+      "en"
     ],
-
-    services: ['website-creation', 'seo-web-design'],
-                                                    seoTitle: 'Mykonos Luxury | Mykonos luxury villa',
-    seoDescription: 'Mykonos Luxury: luxury villas and concierge on Mykonos. Case study: the mobile-first website and technical SEO we built to rank for “Mykonos luxury villa”.',
-    seoTitleEl: 'Mykonos Luxury | πολυτελής βίλα Μύκονος',
-    seoDescriptionEl: 'Mykonos Luxury: πολυτελής διαμονή και concierge στη Μύκονο. Μελέτη περίπτωσης: η ιστοσελίδα και το SEO που φτιάξαμε για «πολυτελής βίλα Μύκονος».',
-    featured: true,
+    "screenshot": "/portfolio/mykonos-luxury.webp",
+    "summary": "A Mykonos concierge platform for private villas, yachts and tailored VIP experiences.",
+    "summaryEl": "Υπηρεσίες προσωπικής εξυπηρέτησης στη Μύκονο, με ιδιωτικές βίλες, γιοτ και εξατομικευμένες εμπειρίες.",
+    "results": [
+      "Private villa collection",
+      "Yacht experiences",
+      "24-hour concierge service"
+    ],
+    "resultsEl": [
+      "Συλλογή ιδιωτικών βιλών",
+      "Εμπειρίες με γιοτ",
+      "Προσωπική εξυπηρέτηση όλο το εικοσιτετράωρο"
+    ],
+    "services": [
+      "website-creation",
+      "seo-web-design"
+    ],
+    "seoTitle": "Mykonos Luxury | Website project",
+    "seoDescription": "A Mykonos concierge platform for private villas, yachts and tailored VIP experiences.",
+    "seoTitleEl": "Mykonos Luxury | Παρουσίαση έργου",
+    "seoDescriptionEl": "Υπηρεσίες προσωπικής εξυπηρέτησης στη Μύκονο, με ιδιωτικές βίλες, γιοτ και εξατομικευμένες εμπειρίες.",
+    "featured": true
   },
   {
-    slug: 'discover-cyclades',
-    name: 'Discover Cyclades',
-    url: 'https://discovercyclades.gr',
-    category: 'tours',
-    markets: ['GR', 'EU'],
-    languages: ['en', 'el'],
-    screenshot: '/portfolio/discover-cyclades.webp',
-    summary:
-      'Discover Cyclades: Cyclades travel guide and discovery platform for Cyclades, SEO for “Discover Cyclades”, ready for organic growth in Cyclades.',
-    summaryEl:
-      'Discover Cyclades: ταξιδιωτικός οδηγός και πλατφόρμα ανακάλυψης για τις Κυκλάδες, SEO για «οδηγός Κυκλάδες», έτοιμη για οργανική ανάπτυξη στις Κυκλάδες.',
-    results: [
-      'Cyclades: pages aimed at “Discover Cyclades” and “Cyclades travel guide”',
-      'Differentiation: island hub architecture that funnels discovery traffic to commercial pages',
-      'Stack: website creation, content creation, local SEO',
+    "slug": "discover-cyclades",
+    "name": "Discover Cyclades",
+    "url": "https://discovercyclades.gr",
+    "category": "tours",
+    "markets": [
+      "GR",
+      "EU"
     ],
-    resultsEl: [
-      'Τοπική αφήγηση για τις Κυκλάδες με έμφαση σε «οδηγός Κυκλάδες»',
-      'Αρχιτεκτονική υπηρεσιών και προϊόντων για εμπορικές προθέσεις: ταξιδιωτικός οδηγός και πλατφόρμα ανακάλυψης Κυκλάδων',
-      'Βάση σήμανσης schema και τεχνικού SEO για Discover Cyclades',
-      'Διαδρομές επικοινωνίας από κινητό έτοιμες για περιόδους αιχμής',
+    "languages": [
+      "en",
+      "el"
     ],
-
-    services: ['website-creation', 'content-creation', 'local-seo'],
-                                                    seoTitle: 'Discover Cyclades | Cyclades travel guide',
-    seoDescription: 'Discover Cyclades: a travel guide and discovery platform for the Cyclades. Case study: the website and SEO we built to rank for “Discover Cyclades”.',
-    seoTitleEl: 'Discover Cyclades | οδηγός Κυκλάδες',
-    seoDescriptionEl: 'Discover Cyclades: ταξιδιωτικός οδηγός και πλατφόρμα ανακάλυψης για τις Κυκλάδες. Μελέτη περίπτωσης για την ιστοσελίδα και το SEO με στόχο «οδηγός Κυκλάδες».',
-    featured: true,
+    "screenshot": "/portfolio/discover-cyclades.webp",
+    "summary": "A Cyclades travel platform bringing island guides, ferry tracking, accommodation and activities into one planning experience.",
+    "summaryEl": "Ταξιδιωτική πλατφόρμα για τις Κυκλάδες, με οδηγούς νησιών, παρακολούθηση πλοίων, διαμονή και δραστηριότητες.",
+    "results": [
+      "Guides for 24 islands",
+      "Ferry routes and live tracking",
+      "Touristas AI travel assistant"
+    ],
+    "resultsEl": [
+      "Οδηγοί για 24 νησιά",
+      "Δρομολόγια και ζωντανή παρακολούθηση πλοίων",
+      "Ταξιδιωτικός βοηθός Touristas AI"
+    ],
+    "services": [
+      "website-creation",
+      "content-creation",
+      "local-seo"
+    ],
+    "seoTitle": "Discover Cyclades | Website project",
+    "seoDescription": "A Cyclades travel platform bringing island guides, ferry tracking, accommodation and activities into one planning experience.",
+    "seoTitleEl": "Discover Cyclades | Παρουσίαση έργου",
+    "seoDescriptionEl": "Ταξιδιωτική πλατφόρμα για τις Κυκλάδες, με οδηγούς νησιών, παρακολούθηση πλοίων, διαμονή και δραστηριότητες.",
+    "featured": true
   },
   {
-    slug: 'discover-crete',
-    name: 'Discover Crete',
-    url: 'https://discover-crete.com',
-    category: 'tours',
-    markets: ['GR', 'EU', 'US'],
-    languages: ['en'],
-    screenshot: '/portfolio/discover-crete.webp',
-    summary:
-      'Discover Crete: Crete discovery and tours platform for Crete / Paleochora, SEO for “Discover Crete”, with technical SEO from day one.',
-    summaryEl:
-      'Discover Crete: πλατφόρμα ανακάλυψης και εκδρομών στην Κρήτη και στην Παλαιόχωρα, SEO για «εκδρομές Κρήτη», με τεχνικό SEO από την πρώτη μέρα.',
-    results: [
-      'Crete / Paleochora: pages aimed at “Discover Crete” and “Crete tours”',
-      'Differentiation: region silos for west and east Crete travel intents',
-      'Stack: website creation, content creation, SEO web design',
+    "slug": "discover-crete",
+    "name": "Discover Crete",
+    "url": "https://discover-crete.com",
+    "category": "tours",
+    "markets": [
+      "GR",
+      "EU",
+      "US"
     ],
-    resultsEl: [
-      'Τοπική αφήγηση για την Κρήτη και την Παλαιόχωρα με έμφαση σε «εκδρομές Κρήτη»',
-      'Αρχιτεκτονική υπηρεσιών και προϊόντων για εμπορικές προθέσεις: πλατφόρμα ανακάλυψης και εκδρομών Κρήτης',
-      'Βάση σήμανσης schema και τεχνικού SEO για Discover Crete',
-      'Διαδρομές επικοινωνίας από κινητό έτοιμες για περιόδους αιχμής',
+    "languages": [
+      "en"
     ],
-
-    services: ['website-creation', 'content-creation', 'seo-web-design'],
-                                                    seoTitle: 'Discover Crete | Crete tours',
-    seoDescription: 'Discover Crete: a tours and discovery platform for Crete and Paleochora. Case study: the website and SEO we built to rank for “Discover Crete”.',
-    seoTitleEl: 'Discover Crete | εκδρομές Κρήτη',
-    seoDescriptionEl: 'Discover Crete: πλατφόρμα ανακάλυψης και εκδρομών στην Κρήτη και στην Παλαιόχωρα. Μελέτη περίπτωσης για την ιστοσελίδα και το SEO με στόχο «εκδρομές Κρήτη».',
-    featured: true,
+    "screenshot": "/portfolio/discover-crete.webp",
+    "summary": "An independent Crete travel guide covering beaches, cities, stays, transport and suggested itineraries.",
+    "summaryEl": "Ανεξάρτητος ταξιδιωτικός οδηγός Κρήτης για παραλίες, πόλεις, διαμονή, μετακινήσεις και προτεινόμενες διαδρομές.",
+    "results": [
+      "Beach and city guides",
+      "Ferry, flight and car information",
+      "Multi-day itineraries"
+    ],
+    "resultsEl": [
+      "Οδηγοί για παραλίες και πόλεις",
+      "Πληροφορίες για πλοία, πτήσεις και αυτοκίνητα",
+      "Πολυήμερες διαδρομές"
+    ],
+    "services": [
+      "website-creation",
+      "content-creation",
+      "seo-web-design"
+    ],
+    "seoTitle": "Discover Crete | Website project",
+    "seoDescription": "An independent Crete travel guide covering beaches, cities, stays, transport and suggested itineraries.",
+    "seoTitleEl": "Discover Crete | Παρουσίαση έργου",
+    "seoDescriptionEl": "Ανεξάρτητος ταξιδιωτικός οδηγός Κρήτης για παραλίες, πόλεις, διαμονή, μετακινήσεις και προτεινόμενες διαδρομές.",
+    "featured": true
   },
   {
-    slug: 'way-to-crete',
-    name: 'Way to Crete',
-    url: 'https://waytocrete.com',
-    category: 'tours',
-    markets: ['GR', 'EU'],
-    languages: ['en', 'el'],
-    screenshot: '/portfolio/way-to-crete.webp',
-    summary:
-      'Way to Crete: storytelling tours and Crete experiences website for Crete, SEO for “Way to Crete”, with technical SEO from day one.',
-    summaryEl:
-      'Way to Crete: ιστοσελίδα για εκδρομές storytelling και εμπειρίες στην Κρήτη, SEO για «εμπειρίες Κρήτη», με τεχνικό SEO από την πρώτη μέρα.',
-    results: [
-      'Crete: pages aimed at “Way to Crete” and “Crete experiences”',
-      'Differentiation: experience-led booking pages that sell belonging, not just sightseeing',
-      'Stack: website creation, content creation',
+    "slug": "way-to-crete",
+    "name": "Way to Crete",
+    "url": "https://waytocrete.com",
+    "category": "tours",
+    "markets": [
+      "GR",
+      "EU"
     ],
-    resultsEl: [
-      'Τοπική αφήγηση για την Κρήτη με έμφαση σε «εμπειρίες Κρήτη»',
-      'Αρχιτεκτονική υπηρεσιών και προϊόντων για εμπορικές προθέσεις: εκδρομές storytelling και εμπειρίες στην Κρήτη',
-      'Βάση σήμανσης schema και τεχνικού SEO για Way to Crete',
-      'Διαδρομές κράτησης από κινητό έτοιμες για περιόδους αιχμής',
+    "languages": [
+      "en",
+      "el"
     ],
-
-    services: ['website-creation', 'content-creation'],
-                                                    seoTitle: 'Way to Crete | Crete experiences',
-    seoDescription: 'Way to Crete: storytelling tours and experiences in Crete. Case study: the mobile-first website and technical SEO we built to rank for “Way to Crete”.',
-    seoTitleEl: 'Way to Crete | εμπειρίες Κρήτη',
-    seoDescriptionEl: 'Way to Crete: εκδρομές storytelling και εμπειρίες στην Κρήτη. Μελέτη περίπτωσης: η ιστοσελίδα και το SEO που φτιάξαμε για την αναζήτηση «εμπειρίες Κρήτη».',
-    featured: false,
+    "screenshot": "/portfolio/way-to-crete.webp",
+    "summary": "An archived Crete travel project centred on storytelling, local tours and experiences.",
+    "summaryEl": "Παλαιότερο ταξιδιωτικό έργο για την Κρήτη, με ιστορίες του τόπου, εκδρομές και τοπικές εμπειρίες.",
+    "results": [
+      "Crete destination stories",
+      "Local experiences",
+      "Historical project showcase"
+    ],
+    "resultsEl": [
+      "Ιστορίες από την Κρήτη",
+      "Τοπικές εμπειρίες",
+      "Παρουσίαση παλαιότερου έργου"
+    ],
+    "services": [
+      "website-creation",
+      "content-creation"
+    ],
+    "seoTitle": "Way to Crete | Website project",
+    "seoDescription": "An archived Crete travel project centred on storytelling, local tours and experiences.",
+    "seoTitleEl": "Way to Crete | Παρουσίαση έργου",
+    "seoDescriptionEl": "Παλαιότερο ταξιδιωτικό έργο για την Κρήτη, με ιστορίες του τόπου, εκδρομές και τοπικές εμπειρίες.",
+    "featured": false,
+    "liveStatus": "offline"
   },
   {
-    slug: 'santorini-daily-tours',
-    name: 'Santorini Daily Tours',
-    url: 'https://santorinidailytours.com',
-    category: 'tours',
-    markets: ['GR', 'EU', 'US'],
-    languages: ['en'],
-    screenshot: '/portfolio/santorini-daily-tours.webp',
-    summary:
-      'Santorini Daily Tours: daily tour products in Santorini website for Santorini, SEO for “Santorini daily tours”, with technical SEO from day one.',
-    summaryEl:
-      'Santorini Daily Tours: ιστοσελίδα για ημερήσιες εκδρομές στη Σαντορίνη, SEO για «ημερήσιες εκδρομές Σαντορίνη», με τεχνικό SEO από την πρώτη μέρα.',
-    results: [
-      'Santorini: pages aimed at “Santorini daily tours” and “Santorini boat tour”',
-      'Differentiation: product pages for volcano, boat and day-trip intents',
-      'Stack: website creation, local SEO',
+    "slug": "santorini-daily-tours",
+    "name": "Santorini Daily Tours",
+    "url": "https://santorinidailytours.com",
+    "category": "tours",
+    "markets": [
+      "GR",
+      "EU",
+      "US"
     ],
-    resultsEl: [
-      'Τοπική αφήγηση για τη Σαντορίνη με έμφαση σε «ημερήσιες εκδρομές Σαντορίνη»',
-      'Αρχιτεκτονική υπηρεσιών και προϊόντων για εμπορικές προθέσεις: ημερήσιες εκδρομές στη Σαντορίνη',
-      'Βάση σήμανσης schema και τεχνικού SEO για Santorini Daily Tours',
-      'Διαδρομές κράτησης από κινητό έτοιμες για περιόδους αιχμής',
+    "languages": [
+      "en"
     ],
-
-    services: ['website-creation', 'local-seo'],
-                                                    seoTitle: 'Santorini Daily Tours | Santorini boat tour',
-    seoDescription: 'Santorini Daily Tours: daily tours on Santorini. Case study: the website and SEO we built to rank for “Santorini daily tours” and win direct bookings.',
-    seoTitleEl: 'Santorini Daily Tours | ημερήσιες εκδρομές Σαντορίνη',
-    seoDescriptionEl: 'Santorini Daily Tours: ημερήσιες εκδρομές στη Σαντορίνη. Μελέτη περίπτωσης: η ιστοσελίδα και το SEO που φτιάξαμε για «ημερήσιες εκδρομές Σαντορίνη».',
-    featured: true,
+    "screenshot": "/portfolio/santorini-daily-tours.webp",
+    "summary": "A family-run Santorini agency based in Fira, offering day tours, cruises and transfers since 2000.",
+    "summaryEl": "Οικογενειακό πρακτορείο στα Φηρά της Σαντορίνης, με εκδρομές, κρουαζιέρες και μεταφορές από το 2000.",
+    "results": [
+      "Volcano and catamaran trips",
+      "Private island tours",
+      "Local transfers"
+    ],
+    "resultsEl": [
+      "Εκδρομές στο ηφαίστειο και με καταμαράν",
+      "Ιδιωτικές περιηγήσεις στο νησί",
+      "Τοπικές μεταφορές"
+    ],
+    "services": [
+      "website-creation",
+      "local-seo"
+    ],
+    "seoTitle": "Santorini Daily Tours | Website project",
+    "seoDescription": "A family-run Santorini agency based in Fira, offering day tours, cruises and transfers since 2000.",
+    "seoTitleEl": "Santorini Daily Tours | Παρουσίαση έργου",
+    "seoDescriptionEl": "Οικογενειακό πρακτορείο στα Φηρά της Σαντορίνης, με εκδρομές, κρουαζιέρες και μεταφορές από το 2000.",
+    "featured": true
   },
   {
-    slug: 'santo-tours-marinakis',
-    name: 'Santo Tours Marinakis',
-    url: 'https://santotoursmarinakis.com',
-    category: 'tours',
-    markets: ['GR', 'EU'],
-    languages: ['en', 'el'],
-    screenshot: '/portfolio/santo-tours-marinakis.webp',
-    summary:
-      'Santo Tours Marinakis: local Santorini tour operator website for Santorini, SEO for “Santo Tours Marinakis”, optimized for mobile and local search.',
-    summaryEl:
-      'Santo Tours Marinakis: ιστοσελίδα για τοπικό tour operator στη Σαντορίνη, SEO για «εκδρομές Σαντορίνη», βελτιστοποιημένη για κινητά και τοπική αναζήτηση.',
-    results: [
-      'Santorini: pages aimed at “Santo Tours Marinakis” and “Santorini tours”',
-      'Differentiation: family operator trust and licensed excursion SEO since 2000',
-      'Stack: website creation, SEO web design',
+    "slug": "santo-tours-marinakis",
+    "name": "Marinakis Tours",
+    "url": "https://santotoursmarinakis.com",
+    "category": "tours",
+    "markets": [
+      "GR",
+      "EU"
     ],
-    resultsEl: [
-      'Τοπική αφήγηση για τη Σαντορίνη με έμφαση σε «εκδρομές Σαντορίνη»',
-      'Αρχιτεκτονική υπηρεσιών και προϊόντων για εμπορικές προθέσεις: τοπικός tour operator στη Σαντορίνη',
-      'Βάση σήμανσης schema και τεχνικού SEO για Santo Tours Marinakis',
-      'Διαδρομές κράτησης από κινητό έτοιμες για περιόδους αιχμής',
+    "languages": [
+      "en",
+      "el"
     ],
-
-    services: ['website-creation', 'seo-web-design'],
-                                                    seoTitle: 'Santo Tours Marinakis | Santorini tours',
-    seoDescription: 'Santo Tours Marinakis: a local tour operator on Santorini. Case study: the website and SEO we built to rank for “Santo Tours Marinakis”.',
-    seoTitleEl: 'Santo Tours Marinakis | εκδρομές Σαντορίνη',
-    seoDescriptionEl: 'Santo Tours Marinakis: τοπικός tour operator στη Σαντορίνη. Μελέτη περίπτωσης: η ιστοσελίδα και το SEO που φτιάξαμε για την αναζήτηση «εκδρομές Σαντορίνη».',
-    featured: false,
+    "screenshot": "/portfolio/santo-tours-marinakis.webp",
+    "summary": "Marinakis Tours offers private tours, wine experiences, catamaran trips and transfers on Santorini.",
+    "summaryEl": "Η Marinakis Tours προσφέρει ιδιωτικές περιηγήσεις, επισκέψεις σε οινοποιεία, εκδρομές με καταμαράν και μεταφορές στη Σαντορίνη.",
+    "results": [
+      "Family agency since 2000",
+      "Island and wine tours",
+      "Private transfers"
+    ],
+    "resultsEl": [
+      "Οικογενειακό πρακτορείο από το 2000",
+      "Περιηγήσεις και επισκέψεις σε οινοποιεία",
+      "Ιδιωτικές μεταφορές"
+    ],
+    "services": [
+      "website-creation",
+      "seo-web-design"
+    ],
+    "seoTitle": "Marinakis Tours | Website project",
+    "seoDescription": "Marinakis Tours offers private tours, wine experiences, catamaran trips and transfers on Santorini.",
+    "seoTitleEl": "Marinakis Tours | Παρουσίαση έργου",
+    "seoDescriptionEl": "Η Marinakis Tours προσφέρει ιδιωτικές περιηγήσεις, επισκέψεις σε οινοποιεία, εκδρομές με καταμαράν και μεταφορές στη Σαντορίνη.",
+    "featured": false
   },
   {
-    slug: 'skydream-travel',
-    name: 'Skydream Travel',
-    url: 'https://www.skydream.travel',
-    relatedUrls: ['https://www.skydream.gr'],
-    category: 'tours',
-    markets: ['GR', 'EU', 'US'],
-    languages: ['en', 'el'],
-    screenshot: '/portfolio/skydream-travel.webp',
-    summary:
-      'Skydream Travel: travel agency and holiday packages for Greece, SEO for “SkyDream Travel”, with trust signals and a clear inquiry path.',
-    summaryEl:
-      'Skydream Travel: ταξιδιωτικό γραφείο και πακέτα διακοπών στην Ελλάδα, SEO για «ταξιδιωτικό γραφείο», με ξεκάθαρα σήματα εμπιστοσύνης και διαδρομή επικοινωνίας.',
-            results: [
-      'Greece: pages aimed at “SkyDream Travel” and “travel agency Greece”',
-      'Differentiation: package and destination landing pages for commercial travel intent',
-      'Stack: website creation, SEO web design, content creation',
+    "slug": "skydream-travel",
+    "name": "Skydream Travel",
+    "url": "https://www.skydream.travel",
+    "relatedUrls": [
+      "https://www.skydream.gr"
     ],
-    resultsEl: [
-      'Τοπική αφήγηση για την Ελλάδα με έμφαση σε «ταξιδιωτικό γραφείο»',
-      'Αρχιτεκτονική υπηρεσιών και προϊόντων για εμπορικές προθέσεις: ταξιδιωτικό γραφείο και πακέτα διακοπών',
-      'Βάση σήμανσης schema και τεχνικού SEO για Skydream Travel',
-      'Διαδρομές επικοινωνίας από κινητό έτοιμες για περιόδους αιχμής',
+    "category": "tours",
+    "markets": [
+      "GR",
+      "EU",
+      "US"
     ],
-    services: ['website-creation', 'seo-web-design', 'content-creation'],
-                                                    seoTitle: 'Skydream Travel | travel agency Greece',
-    seoDescription: 'Skydream Travel: a travel agency selling holiday packages in Greece. Case study: the website and SEO we built to rank for “SkyDream Travel”.',
-    seoTitleEl: 'Skydream Travel | ταξιδιωτικό γραφείο',
-    seoDescriptionEl: 'Skydream Travel: ταξιδιωτικό γραφείο και πακέτα διακοπών στην Ελλάδα. Μελέτη περίπτωσης για την ιστοσελίδα και το SEO με στόχο «ταξιδιωτικό γραφείο».',
-    featured: true,
+    "languages": [
+      "en",
+      "el"
+    ],
+    "screenshot": "/portfolio/skydream-travel.webp",
+    "summary": "An Athens travel design studio creating bespoke trips around the traveller’s interests.",
+    "summaryEl": "Ταξιδιωτικό γραφείο στην Αθήνα που σχεδιάζει εξατομικευμένα ταξίδια με βάση τα ενδιαφέροντα του ταξιδιώτη.",
+    "results": [
+      "Tailored travel planning",
+      "Destination inspiration",
+      "Personal travel consultation"
+    ],
+    "resultsEl": [
+      "Εξατομικευμένος σχεδιασμός ταξιδιού",
+      "Έμπνευση για προορισμούς",
+      "Προσωπική ταξιδιωτική συμβουλή"
+    ],
+    "services": [
+      "website-creation",
+      "seo-web-design",
+      "content-creation"
+    ],
+    "seoTitle": "Skydream Travel | Website project",
+    "seoDescription": "An Athens travel design studio creating bespoke trips around the traveller’s interests.",
+    "seoTitleEl": "Skydream Travel | Παρουσίαση έργου",
+    "seoDescriptionEl": "Ταξιδιωτικό γραφείο στην Αθήνα που σχεδιάζει εξατομικευμένα ταξίδια με βάση τα ενδιαφέροντα του ταξιδιώτη.",
+    "featured": true
   },
   {
-    slug: 'cuba-travel-academy',
-    name: 'Cuba Travel Academy',
-    url: 'https://www.cubatravel.academy',
-    category: 'tours',
-    markets: ['US', 'EU'],
-    languages: ['en'],
-    screenshot: '/portfolio/cuba-travel-academy.webp',
-    summary:
-      'Cuba Travel Academy: Cuba travel education academy for Cuba travel (Greek audience), SEO for “Cuba Travel Academy”, ready for organic growth in Cuba travel (Greek audience).',
-    summaryEl:
-      'Cuba Travel Academy: ακαδημία εκπαίδευσης για ταξίδι στην Κούβα, με κοινό στην Ελλάδα, SEO για «ταξίδι Κούβα», έτοιμη για οργανική ανάπτυξη στην Ελλάδα.',
-    results: [
-      'Cuba travel (Greek audience): pages aimed at “Cuba Travel Academy” and “Cuba travel guide Greek”',
-      'Differentiation: education-led content that answers document and itinerary questions before booking',
-      'Stack: website creation, content creation',
+    "slug": "cuba-travel-academy",
+    "name": "Cuba Travel Academy",
+    "url": "https://www.cubatravel.academy",
+    "category": "tours",
+    "markets": [
+      "US",
+      "EU"
     ],
-    resultsEl: [
-      'Τοπική αφήγηση για την Ελλάδα, με στόχο το ταξίδι στην Κούβα, με έμφαση σε «ταξίδι Κούβα»',
-      'Αρχιτεκτονική υπηρεσιών και προϊόντων για εμπορικές προθέσεις: ακαδημία εκπαίδευσης για ταξίδι στην Κούβα',
-      'Βάση σήμανσης schema και τεχνικού SEO για Cuba Travel Academy',
-      'Διαδρομές εγγραφής από κινητό έτοιμες για περιόδους αιχμής',
+    "languages": [
+      "en"
     ],
-
-    services: ['website-creation', 'content-creation'],
-                                                    seoTitle: 'Cuba Travel Academy | Cuba travel guide Greek',
-    seoDescription: 'Cuba Travel Academy: a travel academy preparing Greek travellers for Cuba. Case study: the website and SEO we built to rank for “Cuba Travel Academy”.',
-    seoTitleEl: 'Cuba Travel Academy | ταξίδι Κούβα',
-    seoDescriptionEl: 'Cuba Travel Academy: ακαδημία εκπαίδευσης για ταξίδι στην Κούβα, με κοινό στην Ελλάδα. Ιστοσελίδα και SEO με στόχο «ταξίδι Κούβα».',
-    featured: false,
+    "screenshot": "/portfolio/cuba-travel-academy.webp",
+    "summary": "A practical Cuba travel guide covering visas, currency, weather, safety and trip preparation.",
+    "summaryEl": "Πρακτικός ταξιδιωτικός οδηγός για την Κούβα, με πληροφορίες για βίζα, συνάλλαγμα, καιρό, ασφάλεια και προετοιμασία.",
+    "results": [
+      "Entry and visa guidance",
+      "Currency and practical advice",
+      "Destination information"
+    ],
+    "resultsEl": [
+      "Πληροφορίες εισόδου και βίζας",
+      "Συνάλλαγμα και πρακτικές συμβουλές",
+      "Πληροφορίες προορισμού"
+    ],
+    "services": [
+      "website-creation",
+      "content-creation"
+    ],
+    "seoTitle": "Cuba Travel Academy | Website project",
+    "seoDescription": "A practical Cuba travel guide covering visas, currency, weather, safety and trip preparation.",
+    "seoTitleEl": "Cuba Travel Academy | Παρουσίαση έργου",
+    "seoDescriptionEl": "Πρακτικός ταξιδιωτικός οδηγός για την Κούβα, με πληροφορίες για βίζα, συνάλλαγμα, καιρό, ασφάλεια και προετοιμασία.",
+    "featured": false
   },
   {
-    slug: 'antiparos-transfer',
-    name: 'Antiparos Transfer',
-    url: 'https://antiparostransfer.gr',
-    category: 'transfers',
-    markets: ['GR'],
-    languages: ['el', 'en'],
-    screenshot: '/portfolio/antiparos-transfer.webp',
-    summary:
-      'Antiparos Transfer: luxury island transfer service for Antiparos and Paros, SEO for “Antiparos transfer”, with trust signals and a clear booking path.',
-    summaryEl:
-      'Antiparos Transfer: υπηρεσία πολυτελών μεταφορών στην Αντίπαρο και στην Πάρο, SEO για «μεταφορά Αντίπαρος», με ξεκάθαρα σήματα εμπιστοσύνης και διαδρομή κράτησης.',
-    results: [
-      'Antiparos and Paros: pages aimed at “Antiparos transfer” and “Antiparos taxi”',
-      'Differentiation: family-run door-to-door transfers since 1994 including weddings',
-      'Stack: website creation, local SEO',
+    "slug": "antiparos-transfer",
+    "name": "AGGELOS Transfer",
+    "url": "https://antiparostransfer.gr",
+    "category": "transfers",
+    "markets": [
+      "GR"
     ],
-    resultsEl: [
-      'Τοπική αφήγηση για την Αντίπαρο και την Πάρο με έμφαση σε «μεταφορά Αντίπαρος»',
-      'Αρχιτεκτονική υπηρεσιών και προϊόντων για εμπορικές προθέσεις: υπηρεσία πολυτελών μεταφορών στο νησί',
-      'Βάση σήμανσης schema και τεχνικού SEO για Antiparos Transfer',
-      'Διαδρομές κράτησης από κινητό έτοιμες για περιόδους αιχμής',
+    "languages": [
+      "el",
+      "en"
     ],
-
-    services: ['website-creation', 'local-seo'],
-                                                    seoTitle: 'Antiparos Transfer | Antiparos taxi',
-    seoDescription: 'Antiparos Transfer: luxury transfers on Antiparos and Paros. Case study: the mobile-first website and technical SEO we built to rank for “Antiparos transfer”.',
-    seoTitleEl: 'Antiparos Transfer | μεταφορά Αντίπαρος',
-    seoDescriptionEl: 'Antiparos Transfer: υπηρεσία πολυτελών μεταφορών στην Αντίπαρο και στην Πάρο. Μελέτη περίπτωσης για την ιστοσελίδα και το SEO με στόχο «μεταφορά Αντίπαρος».',
-    featured: false,
+    "screenshot": "/portfolio/antiparos-transfer.webp",
+    "summary": "AGGELOS Transfer provides private transport on Paros and Antiparos, including airport arrivals, weddings and island tours.",
+    "summaryEl": "Η AGGELOS Transfer αναλαμβάνει ιδιωτικές μεταφορές στην Πάρο και στην Αντίπαρο, για αφίξεις στο αεροδρόμιο, γάμους και περιηγήσεις.",
+    "results": [
+      "Paros and Antiparos transfers",
+      "Wedding transport",
+      "Private island tours"
+    ],
+    "resultsEl": [
+      "Μεταφορές σε Πάρο και Αντίπαρο",
+      "Μεταφορές για γάμους",
+      "Ιδιωτικές περιηγήσεις"
+    ],
+    "services": [
+      "website-creation",
+      "local-seo"
+    ],
+    "seoTitle": "AGGELOS Transfer | Website project",
+    "seoDescription": "AGGELOS Transfer provides private transport on Paros and Antiparos, including airport arrivals, weddings and island tours.",
+    "seoTitleEl": "AGGELOS Transfer | Παρουσίαση έργου",
+    "seoDescriptionEl": "Η AGGELOS Transfer αναλαμβάνει ιδιωτικές μεταφορές στην Πάρο και στην Αντίπαρο, για αφίξεις στο αεροδρόμιο, γάμους και περιηγήσεις.",
+    "featured": false
   },
   {
-    slug: 'navos-ai',
-    name: 'Navos AI',
-    url: 'https://navos.ai',
-    category: 'travel-ai',
-    markets: ['US', 'EU', 'UK'],
-    languages: ['en'],
-    screenshot: '/portfolio/navos-ai.webp',
-    summary:
-      'Navos AI: AI strategy advisor SaaS website for global SaaS market, SEO for “Navos AI”, structured around “Navos AI”.',
-    summaryEl:
-      'Navos AI: πλατφόρμα τεχνητής νοημοσύνης για επιχειρηματικές αποφάσεις στη διεθνή αγορά SaaS, SEO για «Navos AI», με δομή περιεχομένου για «Navos AI».',
-    results: [
-      'global SaaS market: pages aimed at “Navos AI” and “AI strategy advisor”',
-      'Differentiation: product and use-case pages that explain decisions needing attention now',
-      'Stack: website creation, ai-visibility, SEO web design',
+    "slug": "navos-ai",
+    "name": "Navos AI",
+    "url": "https://navos.ai",
+    "category": "travel-ai",
+    "markets": [
+      "US",
+      "EU",
+      "UK"
     ],
-    resultsEl: [
-      'Τοπική αφήγηση για τη διεθνή αγορά SaaS με έμφαση σε «Navos AI»',
-      'Αρχιτεκτονική υπηρεσιών και προϊόντων για εμπορικές προθέσεις: πλατφόρμα τεχνητής νοημοσύνης για επιχειρηματικές αποφάσεις',
-      'Βάση σήμανσης schema και τεχνικού SEO για Navos AI',
-      'Διαδρομές επίδειξης από κινητό έτοιμες για περιόδους αιχμής',
+    "languages": [
+      "en"
     ],
-
-    services: ['website-creation', 'ai-visibility', 'seo-web-design'],
-                                                    seoTitle: 'Navos AI | AI strategy advisor',
-    seoDescription: 'Navos AI: an AI strategy advisor for business decisions. Case study: the website and SEO we built to rank for “Navos AI” and turn searches into enquiries.',
-    seoTitleEl: 'Navos AI | σύμβουλος στρατηγικής AI',
-    seoDescriptionEl: 'Navos AI: πλατφόρμα τεχνητής νοημοσύνης για επιχειρηματικές αποφάσεις στη διεθνή αγορά SaaS. Ιστοσελίδα και SEO με στόχο «Navos AI».',
-    featured: true,
+    "screenshot": "/portfolio/navos-ai.webp",
+    "summary": "An always-on business strategy advisor that connects business context and external changes with evidence and decisions.",
+    "summaryEl": "Σύμβουλος επιχειρηματικής στρατηγικής που συνδέει το πλαίσιο της επιχείρησης και τις εξωτερικές αλλαγές με τεκμηριωμένες αποφάσεις.",
+    "results": [
+      "Business context",
+      "External change monitoring",
+      "Decision support"
+    ],
+    "resultsEl": [
+      "Πλαίσιο επιχείρησης",
+      "Παρακολούθηση εξωτερικών αλλαγών",
+      "Υποστήριξη αποφάσεων"
+    ],
+    "services": [
+      "website-creation",
+      "ai-visibility",
+      "seo-web-design"
+    ],
+    "seoTitle": "Navos AI | Website project",
+    "seoDescription": "An always-on business strategy advisor that connects business context and external changes with evidence and decisions.",
+    "seoTitleEl": "Navos AI | Παρουσίαση έργου",
+    "seoDescriptionEl": "Σύμβουλος επιχειρηματικής στρατηγικής που συνδέει το πλαίσιο της επιχείρησης και τις εξωτερικές αλλαγές με τεκμηριωμένες αποφάσεις.",
+    "featured": true
   },
   {
-    slug: 'project-shadow-ai',
-    name: 'Project Shadow AI',
-    url: 'https://projectshadow.ai',
-    category: 'travel-ai',
-    markets: ['US', 'EU'],
-    languages: ['en'],
-    screenshot: '/portfolio/project-shadow-ai.webp',
-    summary:
-      'Project Shadow AI: AI tooling for online stores for global e-commerce, SEO for “Project Shadow AI”, with technical SEO from day one.',
-    summaryEl:
-      'Project Shadow AI: ιστοσελίδα για εργαλεία τεχνητής νοημοσύνης για ηλεκτρονικά καταστήματα στη διεθνή αγορά e-commerce, SEO για «Project Shadow AI», με τεχνικό SEO από την πρώτη μέρα.',
-    results: [
-      'global e-commerce: pages aimed at “Project Shadow AI” and “AI for WordPress stores”',
-      'Differentiation: technical brand pages for AI store assistance (scrape was thin)',
-      'Stack: website creation, ai-visibility',
+    "slug": "project-shadow-ai",
+    "name": "Project Shadow AI",
+    "url": "https://projectshadow.ai",
+    "category": "travel-ai",
+    "markets": [
+      "US",
+      "EU"
     ],
-    resultsEl: [
-      'Τοπική αφήγηση για τη διεθνή αγορά e-commerce με έμφαση σε «Project Shadow AI»',
-      'Αρχιτεκτονική υπηρεσιών και προϊόντων για εμπορικές προθέσεις: εργαλεία τεχνητής νοημοσύνης για ηλεκτρονικά καταστήματα',
-      'Βάση σήμανσης schema και τεχνικού SEO για Project Shadow AI',
-      'Διαδρομές επικοινωνίας από κινητό έτοιμες για περιόδους αιχμής',
+    "languages": [
+      "en"
     ],
-
-    services: ['website-creation', 'ai-visibility'],
-                                                    seoTitle: 'Project Shadow AI | AI for WordPress stores',
-    seoDescription: 'Project Shadow AI: AI tooling for online stores. Case study: the mobile-first website and technical SEO we built to rank for “Project Shadow AI”.',
-    seoTitleEl: 'Project Shadow AI | AI για ηλεκτρονικό κατάστημα',
-    seoDescriptionEl: 'Project Shadow AI: εργαλεία τεχνητής νοημοσύνης για ηλεκτρονικά καταστήματα στη διεθνή αγορά e-commerce. Ιστοσελίδα και SEO με στόχο «Project Shadow AI».',
-    liveStatus: 'offline', // thin or broken page at scrape time
-    featured: false,
+    "screenshot": "/portfolio/project-shadow-ai.webp",
+    "summary": "A WooCommerce AI plugin and analytics product for store questions, content writing and customer assistance.",
+    "summaryEl": "Πρόσθετο AI και εργαλείο ανάλυσης για WooCommerce, με απαντήσεις για το κατάστημα, συγγραφή περιεχομένου και υποστήριξη πελατών.",
+    "results": [
+      "Store analytics and questions",
+      "Shadow Writer",
+      "Store chatbot and plugin insights"
+    ],
+    "resultsEl": [
+      "Ανάλυση και ερωτήσεις για το κατάστημα",
+      "Shadow Writer",
+      "Chatbot καταστήματος και πληροφορίες προσθέτων"
+    ],
+    "services": [
+      "website-creation",
+      "ai-visibility"
+    ],
+    "seoTitle": "Project Shadow AI | Website project",
+    "seoDescription": "A WooCommerce AI plugin and analytics product for store questions, content writing and customer assistance.",
+    "seoTitleEl": "Project Shadow AI | Παρουσίαση έργου",
+    "seoDescriptionEl": "Πρόσθετο AI και εργαλείο ανάλυσης για WooCommerce, με απαντήσεις για το κατάστημα, συγγραφή περιεχομένου και υποστήριξη πελατών.",
+    "featured": true
   },
   {
-    slug: 'rethemnos',
-    name: 'Rethemnos',
-    url: 'https://rethemnos.gr',
-    category: 'tours',
-    markets: ['GR', 'EU'],
-    languages: ['el', 'en'],
-    screenshot: '/portfolio/rethemnos.webp',
-    summary:
-      'Rethemnos: Rethymno tourism portal and local guide for Rethymno, SEO for “Rethymno tourism”, with trust signals and a clear inquiry path.',
-    summaryEl:
-      'Rethemnos: τουριστική πύλη και τοπικός οδηγός για το Ρέθυμνο, SEO για «τουρισμός Ρέθυμνο», με ξεκάθαρα σήματα εμπιστοσύνης και διαδρομή επικοινωνίας.',
-    results: [
-      'Rethymno: pages aimed at “Rethymno tourism” and “visit Rethymno”',
-      'Differentiation: city guide hubs that feed commercial tourism and local business pages',
-      'Stack: website creation, content creation',
+    "slug": "rethemnos",
+    "name": "Rethemnos",
+    "url": "https://rethemnos.gr",
+    "category": "other",
+    "markets": [
+      "GR",
+      "EU"
     ],
-    resultsEl: [
-      'Τοπική αφήγηση για το Ρέθυμνο με έμφαση σε «τουρισμός Ρέθυμνο»',
-      'Αρχιτεκτονική υπηρεσιών και προϊόντων για εμπορικές προθέσεις: τουριστική πύλη και τοπικός οδηγός Ρεθύμνου',
-      'Βάση σήμανσης schema και τεχνικού SEO για Rethemnos',
-      'Διαδρομές επικοινωνίας από κινητό έτοιμες για περιόδους αιχμής',
+    "languages": [
+      "el",
+      "en"
     ],
-
-    services: ['website-creation', 'content-creation'],
-                                                    seoTitle: 'Rethemnos | Rethymno tourism',
-    seoDescription: 'Rethemnos: a tourism portal and local guide for Rethymno. Case study: the mobile-first website and technical SEO we built to rank for “Rethymno tourism”.',
-    seoTitleEl: 'Rethemnos | τουρισμός Ρέθυμνο',
-    seoDescriptionEl: 'Rethemnos: τουριστική πύλη και τοπικός οδηγός για το Ρέθυμνο. Μελέτη περίπτωσης: η ιστοσελίδα και το SEO που φτιάξαμε για την αναζήτηση «τουρισμός Ρέθυμνο».',
-    featured: false,
+    "screenshot": "/portfolio/rethemnos.webp",
+    "summary": "A local Rethymno publication covering news, culture, events and life in the region.",
+    "summaryEl": "Τοπική ενημερωτική ιστοσελίδα για το Ρέθυμνο, με ειδήσεις, πολιτισμό, εκδηλώσεις και τη ζωή της περιοχής.",
+    "results": [
+      "Local news",
+      "Culture and events",
+      "Rethymno community information"
+    ],
+    "resultsEl": [
+      "Τοπικές ειδήσεις",
+      "Πολιτισμός και εκδηλώσεις",
+      "Ενημέρωση για την κοινωνία του Ρεθύμνου"
+    ],
+    "services": [
+      "website-creation",
+      "content-creation"
+    ],
+    "seoTitle": "Rethemnos | Website project",
+    "seoDescription": "A local Rethymno publication covering news, culture, events and life in the region.",
+    "seoTitleEl": "Rethemnos | Παρουσίαση έργου",
+    "seoDescriptionEl": "Τοπική ενημερωτική ιστοσελίδα για το Ρέθυμνο, με ειδήσεις, πολιτισμό, εκδηλώσεις και τη ζωή της περιοχής.",
+    "featured": false
   },
   {
-    slug: 'ktima-orion',
-    name: 'Ktima Orion',
-    url: 'https://ktimaorion.gr',
-    relatedUrls: ['https://ktimaorion.com'],
-    category: 'villa',
-    markets: ['GR', 'EU'],
-    languages: ['el', 'en'],
-    screenshot: '/portfolio/ktima-orion.webp',
-    summary:
-      'Ktima Orion: wedding and events estate for Keratea, Attica, SEO for “Ktima Orion”, focused on wedding, baptism and event venue SEO for Attica couples.',
-    summaryEl:
-      'Ktima Orion: κτήμα γάμων και εκδηλώσεων στην Κερατέα Αττικής, SEO για «Κτήμα Ωρίων», με έμφαση σε SEO για γάμους, βαπτίσεις και εκδηλώσεις στην Αττική.',
-    results: [
-      'Keratea, Attica: pages aimed at “Ktima Orion” and “wedding estate Attica”',
-      'Differentiation: wedding, baptism and event venue SEO for Attica couples',
-      'Stack: website creation, SEO web design',
+    "slug": "ktima-orion",
+    "name": "Κτήμα Ωρίων",
+    "url": "https://ktimaorion.gr",
+    "relatedUrls": [
+      "https://ktimaorion.com"
     ],
-    resultsEl: [
-      'Τοπική αφήγηση για την Κερατέα Αττικής με έμφαση σε «Κτήμα Ωρίων»',
-      'Αρχιτεκτονική υπηρεσιών και προϊόντων για εμπορικές προθέσεις: κτήμα γάμων και εκδηλώσεων',
-      'Βάση σήμανσης schema και τεχνικού SEO για Ktima Orion',
-      'Διαδρομές αιτήματος προσφοράς από κινητό έτοιμες για περιόδους αιχμής',
+    "category": "other",
+    "markets": [
+      "GR",
+      "EU"
     ],
-    services: ['website-creation', 'seo-web-design'],
-                                                    seoTitle: 'Ktima Orion | wedding estate Attica',
-    seoDescription: 'Ktima Orion: a wedding and events estate in Keratea, Attica. Case study: the mobile-first website and technical SEO we built to rank for “Ktima Orion”.',
-    seoTitleEl: 'Ktima Orion | Κτήμα Ωρίων',
-    seoDescriptionEl: 'Ktima Orion: κτήμα γάμων και εκδηλώσεων στην Κερατέα Αττικής. Μελέτη περίπτωσης: η ιστοσελίδα και το SEO που φτιάξαμε για την αναζήτηση «Κτήμα Ωρίων».',
-    featured: false,
+    "languages": [
+      "el",
+      "en"
+    ],
+    "screenshot": "/portfolio/ktima-orion.webp",
+    "summary": "A wedding and baptism venue in Keratea, Attica, with sea views and spaces for 50 to 350 guests.",
+    "summaryEl": "Χώρος γάμων και βαπτίσεων στην Κερατέα Αττικής, με θέα στη θάλασσα και δυνατότητα φιλοξενίας 50 έως 350 καλεσμένων.",
+    "results": [
+      "Weddings and baptisms",
+      "Sea-view venue",
+      "Guest parking"
+    ],
+    "resultsEl": [
+      "Γάμοι και βαπτίσεις",
+      "Χώρος με θέα στη θάλασσα",
+      "Χώρος στάθμευσης επισκεπτών"
+    ],
+    "services": [
+      "website-creation",
+      "seo-web-design"
+    ],
+    "seoTitle": "Κτήμα Ωρίων | Website project",
+    "seoDescription": "A wedding and baptism venue in Keratea, Attica, with sea views and spaces for 50 to 350 guests.",
+    "seoTitleEl": "Κτήμα Ωρίων | Παρουσίαση έργου",
+    "seoDescriptionEl": "Χώρος γάμων και βαπτίσεων στην Κερατέα Αττικής, με θέα στη θάλασσα και δυνατότητα φιλοξενίας 50 έως 350 καλεσμένων.",
+    "featured": false
   },
   {
-    slug: 'weddings-folegandros',
-    name: 'Weddings Folegandros',
-    url: 'https://weddings-folegandros.gr',
-    category: 'tours',
-    markets: ['GR', 'EU'],
-    languages: ['en', 'el'],
-    screenshot: '/portfolio/weddings-folegandros.webp',
-    summary:
-      'Weddings Folegandros: destination wedding planning website for Folegandros, SEO for “Folegandros weddings”, with technical SEO from day one.',
-    summaryEl:
-      'Weddings Folegandros: ιστοσελίδα για οργάνωση γάμων προορισμού στη Φολέγανδρο, SEO για «γάμοι Φολέγανδρος», με τεχνικό SEO από την πρώτη μέρα.',
-    results: [
-      'Folegandros: pages aimed at “Folegandros weddings” and “destination wedding Greece”',
-      'Differentiation: Aegean wedding storytelling with planning inquiry paths',
-      'Stack: website creation, local SEO',
+    "slug": "weddings-folegandros",
+    "name": "Weddings Folegandros",
+    "url": "https://weddings-folegandros.gr",
+    "category": "tours",
+    "markets": [
+      "GR",
+      "EU"
     ],
-    resultsEl: [
-      'Τοπική αφήγηση για τη Φολέγανδρο με έμφαση σε «γάμοι Φολέγανδρος»',
-      'Αρχιτεκτονική υπηρεσιών και προϊόντων για εμπορικές προθέσεις: οργάνωση γάμων προορισμού',
-      'Βάση σήμανσης schema και τεχνικού SEO για Weddings Folegandros',
-      'Διαδρομές αιτήματος προσφοράς από κινητό έτοιμες για περιόδους αιχμής',
+    "languages": [
+      "en",
+      "el"
     ],
-
-    services: ['website-creation', 'local-seo'],
-                                                    seoTitle: 'Weddings Folegandros | Folegandros weddings',
-    seoDescription: 'Weddings Folegandros: destination wedding planning on Folegandros. Case study: the website and SEO we built to rank for “Folegandros weddings”.',
-    seoTitleEl: 'Weddings Folegandros | γάμοι Φολέγανδρος',
-    seoDescriptionEl: 'Weddings Folegandros: οργάνωση γάμων προορισμού στη Φολέγανδρο. Μελέτη περίπτωσης: η ιστοσελίδα και το SEO που φτιάξαμε για «γάμοι Φολέγανδρος».',
-    featured: false,
+    "screenshot": "/portfolio/weddings-folegandros.webp",
+    "summary": "A Folegandros wedding-planning website for destination weddings, elopements and ceremonies around Chora and Panagia.",
+    "summaryEl": "Ιστοσελίδα οργάνωσης γάμων στη Φολέγανδρο, για τελετές, μικρούς γάμους και ζευγάρια που επιλέγουν τη Χώρα και την Παναγία.",
+    "results": [
+      "Destination wedding planning",
+      "Intimate ceremonies",
+      "Folegandros locations"
+    ],
+    "resultsEl": [
+      "Οργάνωση γάμου στο νησί",
+      "Μικρές, προσωπικές τελετές",
+      "Τοποθεσίες στη Φολέγανδρο"
+    ],
+    "services": [
+      "website-creation",
+      "local-seo"
+    ],
+    "seoTitle": "Weddings Folegandros | Website project",
+    "seoDescription": "A Folegandros wedding-planning website for destination weddings, elopements and ceremonies around Chora and Panagia.",
+    "seoTitleEl": "Weddings Folegandros | Παρουσίαση έργου",
+    "seoDescriptionEl": "Ιστοσελίδα οργάνωσης γάμων στη Φολέγανδρο, για τελετές, μικρούς γάμους και ζευγάρια που επιλέγουν τη Χώρα και την Παναγία.",
+    "featured": false
   },
   {
-    slug: 'my-honeymoon',
-    name: 'My Honeymoon',
-    url: 'https://www.myhoneymoon.gr',
-    relatedUrls: ['https://www.myhoneymoon.travel'],
-    category: 'tours',
-    markets: ['GR', 'EU', 'US'],
-    languages: ['el', 'en'],
-    screenshot: '/portfolio/my-honeymoon.webp',
-    summary:
-      'My Honeymoon: honeymoon planning brand website for Greece, SEO for “My Honeymoon”, optimized for mobile and local search.',
-    summaryEl:
-      'My Honeymoon: ιστοσελίδα για οργάνωση ταξιδιού του μέλιτος στην Ελλάδα, SEO για «ταξίδι του μέλιτος Ελλάδα», βελτιστοποιημένη για κινητά και τοπική αναζήτηση.',
-            results: [
-      'Greece: pages aimed at “My Honeymoon” and “Greece honeymoon packages”',
-      'Differentiation: romantic itinerary and package keyword clusters for couples',
-      'Stack: website creation, content creation',
+    "slug": "my-honeymoon",
+    "name": "My Honeymoon",
+    "url": "https://www.myhoneymoon.gr",
+    "relatedUrls": [
+      "https://www.myhoneymoon.travel"
     ],
-    resultsEl: [
-      'Τοπική αφήγηση για την Ελλάδα με έμφαση σε «ταξίδι του μέλιτος Ελλάδα»',
-      'Αρχιτεκτονική υπηρεσιών και προϊόντων για εμπορικές προθέσεις: οργάνωση ταξιδιού του μέλιτος',
-      'Βάση σήμανσης schema και τεχνικού SEO για My Honeymoon',
-      'Διαδρομές αιτήματος προσφοράς από κινητό έτοιμες για περιόδους αιχμής',
+    "category": "tours",
+    "markets": [
+      "GR",
+      "EU",
+      "US"
     ],
-    services: ['website-creation', 'content-creation'],
-                                                    seoTitle: 'My Honeymoon | Greece honeymoon packages',
-    seoDescription: 'My Honeymoon: honeymoon planning in Greece. Case study: the website and SEO we built to rank for “My Honeymoon” and win direct bookings from mobile searches.',
-    seoTitleEl: 'My Honeymoon | ταξίδι του μέλιτος Ελλάδα',
-    seoDescriptionEl: 'My Honeymoon: οργάνωση ταξιδιού του μέλιτος στην Ελλάδα. Μελέτη περίπτωσης: η ιστοσελίδα και το SEO που φτιάξαμε για «ταξίδι του μέλιτος Ελλάδα».',
-    featured: false,
+    "languages": [
+      "el",
+      "en"
+    ],
+    "screenshot": "/portfolio/my-honeymoon.webp",
+    "summary": "A travel-planning service for personalised honeymoons and trips designed around each couple.",
+    "summaryEl": "Υπηρεσία σχεδιασμού γαμήλιων ταξιδιών, με προτάσεις προσαρμοσμένες στο κάθε ζευγάρι.",
+    "results": [
+      "Honeymoon destinations",
+      "Personal travel planning",
+      "Couple consultation"
+    ],
+    "resultsEl": [
+      "Προορισμοί γαμήλιου ταξιδιού",
+      "Εξατομικευμένος σχεδιασμός",
+      "Συζήτηση με το ζευγάρι"
+    ],
+    "services": [
+      "website-creation",
+      "content-creation"
+    ],
+    "seoTitle": "My Honeymoon | Website project",
+    "seoDescription": "A travel-planning service for personalised honeymoons and trips designed around each couple.",
+    "seoTitleEl": "My Honeymoon | Παρουσίαση έργου",
+    "seoDescriptionEl": "Υπηρεσία σχεδιασμού γαμήλιων ταξιδιών, με προτάσεις προσαρμοσμένες στο κάθε ζευγάρι.",
+    "featured": false
   },
   {
-    slug: 'george-xipolitas',
-    name: 'George Xipolitas',
-    url: 'https://georgexipolitas.com',
-    category: 'other',
-    markets: ['GR', 'EU'],
-    languages: ['el', 'en'],
-    screenshot: '/portfolio/george-xipolitas.webp',
-    summary:
-      'George Xipolitas: dining consulting and hospitality professional brand website for Greece, SEO for “George Xipolitas”, with technical SEO from day one.',
-    summaryEl:
-      'George Xipolitas: επαγγελματικό brand συμβουλευτικής εστίασης στην Ελλάδα, SEO για «George Xipolitas», με τεχνικό SEO από την πρώτη μέρα.',
-    results: [
-      'Greece: pages aimed at “George Xipolitas” and “hospitality consulting Greece”',
-      'Differentiation: authority pages for local professional and hospitality search',
-      'Stack: website creation, SEO web design',
+    "slug": "george-xipolitas",
+    "name": "George Xipolitas",
+    "url": "https://georgexipolitas.com",
+    "category": "other",
+    "markets": [
+      "GR",
+      "EU"
     ],
-    resultsEl: [
-      'Τοπική αφήγηση για την Ελλάδα με έμφαση σε «George Xipolitas»',
-      'Αρχιτεκτονική υπηρεσιών και προϊόντων για εμπορικές προθέσεις: επαγγελματικό brand συμβουλευτικής εστίασης',
-      'Βάση σήμανσης schema και τεχνικού SEO για George Xipolitas',
-      'Διαδρομές επικοινωνίας από κινητό έτοιμες για περιόδους αιχμής',
+    "languages": [
+      "el",
+      "en"
     ],
-
-    services: ['website-creation', 'seo-web-design'],
-                                                    seoTitle: 'George Xipolitas | hospitality consulting Greece',
-    seoDescription: 'George Xipolitas: a hospitality and restaurant consulting brand in Greece. Case study: the website and SEO we built to rank for “George Xipolitas”.',
-    seoTitleEl: 'George Xipolitas | συμβουλευτική εστίασης',
-    seoDescriptionEl: 'George Xipolitas: επαγγελματικό brand συμβουλευτικής εστίασης στην Ελλάδα. Μελέτη περίπτωσης για την ιστοσελίδα και το SEO με στόχο «George Xipolitas».',
-    featured: false,
+    "screenshot": "/portfolio/george-xipolitas.webp",
+    "summary": "A personal hospitality and dining-consulting project for George Xipolitas.",
+    "summaryEl": "Προσωπική επαγγελματική παρουσία του George Xipolitas στον χώρο της φιλοξενίας και της συμβουλευτικής εστίασης.",
+    "results": [
+      "Professional identity",
+      "Hospitality expertise",
+      "Consulting enquiries"
+    ],
+    "resultsEl": [
+      "Επαγγελματική ταυτότητα",
+      "Εμπειρία στη φιλοξενία",
+      "Αιτήματα συμβουλευτικής"
+    ],
+    "services": [
+      "website-creation",
+      "seo-web-design"
+    ],
+    "seoTitle": "George Xipolitas | Website project",
+    "seoDescription": "A personal hospitality and dining-consulting project for George Xipolitas.",
+    "seoTitleEl": "George Xipolitas | Παρουσίαση έργου",
+    "seoDescriptionEl": "Προσωπική επαγγελματική παρουσία του George Xipolitas στον χώρο της φιλοξενίας και της συμβουλευτικής εστίασης.",
+    "featured": false,
+    "liveStatus": "unverified"
   },
   {
-    slug: 'helicro',
-    name: 'Helicro',
-    url: 'https://helicro.be',
-    category: 'other',
-    markets: ['EU'],
-    languages: ['en'],
-    screenshot: '/portfolio/helicro.webp',
-    summary:
-      'Helicro: airport and private transfer service for Belgium and Greece corridors, SEO for “Helicro transport”, focused on bilingual Belgium–Greece transfer booking with loyalty offers.',
-    summaryEl:
-      'Helicro: υπηρεσία ιδιωτικών μεταφορών και μεταφορών αεροδρομίου στο Βέλγιο και στις διαδρομές προς την Ελλάδα, SEO για «Helicro μεταφορές», με έμφαση σε δίγλωσσες κρατήσεις μεταφορών Βέλγιο–Ελλάδα με προγράμματα επιβράβευσης.',
-    results: [
-      'Belgium and Greece corridors: pages aimed at “Helicro transport” and “Belgium airport transfer”',
-      'Differentiation: bilingual Belgium–Greece transfer booking with loyalty offers',
-      'Stack: website creation, seo-audits',
+    "slug": "helicro",
+    "name": "Helicro",
+    "url": "https://helicro.be",
+    "category": "other",
+    "markets": [
+      "EU"
     ],
-    resultsEl: [
-      'Τοπική αφήγηση για το Βέλγιο και τις διαδρομές προς την Ελλάδα με έμφαση σε «Helicro μεταφορές»',
-      'Αρχιτεκτονική υπηρεσιών και προϊόντων για εμπορικές προθέσεις: υπηρεσία ιδιωτικών μεταφορών και μεταφορών αεροδρομίου',
-      'Βάση σήμανσης schema και τεχνικού SEO για Helicro',
-      'Διαδρομές κράτησης από κινητό έτοιμες για περιόδους αιχμής',
+    "languages": [
+      "en"
     ],
-
-    services: ['website-creation', 'seo-audits'],
-                                                    seoTitle: 'Helicro | Helicro transport',
-    seoDescription: 'Helicro: airport and private transfers in Belgium and on routes to Greece. Case study: the website and SEO we built to rank for “Helicro transport”.',
-    seoTitleEl: 'Helicro | Helicro μεταφορές',
-    seoDescriptionEl: 'Helicro: υπηρεσία ιδιωτικών μεταφορών και μεταφορών αεροδρομίου στο Βέλγιο και στις διαδρομές προς την Ελλάδα. Ιστοσελίδα και SEO με στόχο «Helicro μεταφορές».',
-    featured: false,
+    "screenshot": "/portfolio/helicro.webp",
+    "summary": "A Belgian airport-transfer and private-chauffeur service linking Brussels, Antwerp, Ghent and Wallonia with regional airports.",
+    "summaryEl": "Βελγική υπηρεσία μεταφορών αεροδρομίου και ιδιωτικού οδηγού, για Βρυξέλλες, Αμβέρσα, Γάνδη και Βαλλονία.",
+    "results": [
+      "Airport minivan transfers",
+      "Zaventem, Charleroi and Lille",
+      "Private chauffeur requests"
+    ],
+    "resultsEl": [
+      "Μεταφορές με μίνι βαν",
+      "Αεροδρόμια Zaventem, Charleroi και Lille",
+      "Αιτήματα ιδιωτικού οδηγού"
+    ],
+    "services": [
+      "website-creation",
+      "seo-audits"
+    ],
+    "seoTitle": "Helicro | Website project",
+    "seoDescription": "A Belgian airport-transfer and private-chauffeur service linking Brussels, Antwerp, Ghent and Wallonia with regional airports.",
+    "seoTitleEl": "Helicro | Παρουσίαση έργου",
+    "seoDescriptionEl": "Βελγική υπηρεσία μεταφορών αεροδρομίου και ιδιωτικού οδηγού, για Βρυξέλλες, Αμβέρσα, Γάνδη και Βαλλονία.",
+    "featured": false
   },
   {
-    slug: 'mastorush',
-    name: 'Mastorush',
-    url: 'https://mastorush.gr',
-    category: 'other',
-    markets: ['GR'],
-    languages: ['el'],
-    screenshot: '/portfolio/mastorush.webp',
-    summary:
-      'Mastorush: craftsman quote marketplace for Greece, SEO for “Mastorush”, with a clear path to signup.',
-    summaryEl:
-      'Mastorush: αγορά αιτημάτων προσφορών από μάστορες στην Ελλάδα, SEO για «Mastorush», με καθαρή διαδρομή προς εγγραφή.',
-    results: [
-      'Greece: pages aimed at “Mastorush” and “find craftsman Greece”',
-      'Differentiation: post a job, get verified craftsman quotes with photos',
-      'Stack: website creation, local SEO',
+    "slug": "mastorush",
+    "name": "MastoRush",
+    "url": "https://mastorush.gr",
+    "category": "other",
+    "markets": [
+      "GR"
     ],
-    resultsEl: [
-      'Τοπική αφήγηση για την Ελλάδα με έμφαση σε «Mastorush»',
-      'Αρχιτεκτονική υπηρεσιών και προϊόντων για εμπορικές προθέσεις: αγορά αιτημάτων προσφορών από μάστορες',
-      'Βάση σήμανσης schema και τεχνικού SEO για Mastorush',
-      'Διαδρομές εγγραφής από κινητό έτοιμες για περιόδους αιχμής',
+    "languages": [
+      "el"
     ],
-
-    services: ['website-creation', 'local-seo'],
-                                                    seoTitle: 'Mastorush | find craftsman Greece',
-    seoDescription: 'Mastorush: a marketplace for quotes from craftsmen in Greece. Case study: the mobile-first website and technical SEO we built to rank for “Mastorush”.',
-    seoTitleEl: 'Mastorush | προσφορές από μάστορες',
-    seoDescriptionEl: 'Mastorush: αγορά αιτημάτων προσφορών από μάστορες στην Ελλάδα. Μελέτη περίπτωσης: η ιστοσελίδα και το SEO που φτιάξαμε για την αναζήτηση «Mastorush».',
-    featured: false,
+    "screenshot": "/portfolio/mastorush.webp",
+    "summary": "A Greek platform for finding tradespeople and requesting quotes for home and property work.",
+    "summaryEl": "Ελληνική πλατφόρμα αναζήτησης επαγγελματιών και προσφορών για εργασίες σε σπίτι και επαγγελματικό χώρο.",
+    "results": [
+      "Search by trade",
+      "Describe the required job",
+      "Request local professional quotes"
+    ],
+    "resultsEl": [
+      "Αναζήτηση ανά ειδικότητα",
+      "Περιγραφή της εργασίας",
+      "Αίτημα προσφορών από επαγγελματίες"
+    ],
+    "services": [
+      "website-creation",
+      "local-seo"
+    ],
+    "seoTitle": "MastoRush | Website project",
+    "seoDescription": "A Greek platform for finding tradespeople and requesting quotes for home and property work.",
+    "seoTitleEl": "MastoRush | Παρουσίαση έργου",
+    "seoDescriptionEl": "Ελληνική πλατφόρμα αναζήτησης επαγγελματιών και προσφορών για εργασίες σε σπίτι και επαγγελματικό χώρο.",
+    "featured": false
   },
   {
-    slug: 'thenutrinest',
-    name: 'The Nutri Nest',
-    url: 'https://www.thenutrinest.gr',
-    category: 'other',
-    markets: ['GR'],
-    languages: ['el'],
-    screenshot: '/portfolio/thenutrinest.webp',
-    summary:
-      'The Nutri Nest: clinical dietitian and nutrition practice website for Greece, SEO for “clinical dietitian Greece”, with trust signals and a clear inquiry path.',
-    summaryEl:
-      'The Nutri Nest: κλινική διαιτολογία και διατροφολογία στην Ελλάδα, SEO για «κλινική διαιτολόγος», με ξεκάθαρα σήματα εμπιστοσύνης και διαδρομή επικοινωνίας.',
-    results: [
-      'Greece: pages aimed at “clinical dietitian Greece” and “The Nutri Nest”',
-      'Differentiation: practitioner authority pages and appointment inquiry paths',
-      'Stack: website creation, local SEO',
+    "slug": "thenutrinest",
+    "name": "Nutrinest Clinic",
+    "url": "https://www.thenutrinest.gr",
+    "category": "other",
+    "markets": [
+      "GR"
     ],
-    resultsEl: [
-      'Τοπική αφήγηση για την Ελλάδα με έμφαση σε «κλινική διαιτολόγος»',
-      'Αρχιτεκτονική υπηρεσιών και προϊόντων για εμπορικές προθέσεις: κλινική διαιτολογία και διατροφολογία',
-      'Βάση σήμανσης schema και τεχνικού SEO για The Nutri Nest',
-      'Διαδρομές επικοινωνίας από κινητό έτοιμες για περιόδους αιχμής',
+    "languages": [
+      "el"
     ],
-
-    services: ['website-creation', 'local-seo'],
-                                                    seoTitle: 'The Nutri Nest | clinical dietitian Greece',
-    seoDescription: 'The Nutri Nest: a clinical dietitian and nutrition practice in Greece. Case study: the website and SEO we built to rank for “clinical dietitian Greece”.',
-    seoTitleEl: 'The Nutri Nest | κλινική διαιτολόγος',
-    seoDescriptionEl: 'The Nutri Nest: κλινική διαιτολογία και διατροφολογία στην Ελλάδα. Μελέτη περίπτωσης: η ιστοσελίδα και το SEO που φτιάξαμε για «κλινική διαιτολόγος».',
-    featured: false,
+    "screenshot": "/portfolio/thenutrinest.webp",
+    "summary": "Nutrinest Clinic is the nutrition practice of clinical dietitian Konstantina Papageorgiou, MSc.",
+    "summaryEl": "Το Nutrinest Clinic είναι το διαιτολογικό γραφείο της κλινικής διαιτολόγου Κωνσταντίνας Παπαγεωργίου, MSc.",
+    "results": [
+      "Dietitian profile",
+      "Nutrition services",
+      "Appointment enquiries"
+    ],
+    "resultsEl": [
+      "Παρουσίαση της διαιτολόγου",
+      "Υπηρεσίες διατροφής",
+      "Αιτήματα ραντεβού"
+    ],
+    "services": [
+      "website-creation",
+      "local-seo"
+    ],
+    "seoTitle": "Nutrinest Clinic | Website project",
+    "seoDescription": "Nutrinest Clinic is the nutrition practice of clinical dietitian Konstantina Papageorgiou, MSc.",
+    "seoTitleEl": "Nutrinest Clinic | Παρουσίαση έργου",
+    "seoDescriptionEl": "Το Nutrinest Clinic είναι το διαιτολογικό γραφείο της κλινικής διαιτολόγου Κωνσταντίνας Παπαγεωργίου, MSc.",
+    "featured": false
   },
   {
-    slug: 'folegandros-hairsalon',
-    name: 'Folegandros Hair Salon',
-    url: 'https://folegandros-hairsalon.gr',
-    category: 'other',
-    markets: ['GR'],
-    languages: ['el', 'en'],
-    screenshot: '/portfolio/folegandros-hairsalon.webp',
-    summary:
-      'Folegandros Hair Salon: hair, nails and makeup salon for Folegandros, SEO for “Folegandros hair salon”, with a clear path to booking.',
-    summaryEl:
-      'Folegandros Hair Salon: κομμωτήριο, νύχια και μακιγιάζ στη Φολέγανδρο, SEO για «κομμωτήριο Φολέγανδρος», με καθαρή διαδρομή προς κράτηση.',
-    results: [
-      'Folegandros: pages aimed at “Folegandros hair salon” and “Sousi Hair Salon”',
-      'Differentiation: beauty services for island visitors and residents with book-now',
-      'Stack: website creation, local SEO',
+    "slug": "folegandros-hairsalon",
+    "name": "Sousi Hair Salon",
+    "url": "https://folegandros-hairsalon.gr",
+    "category": "other",
+    "markets": [
+      "GR"
     ],
-    resultsEl: [
-      'Τοπική αφήγηση για τη Φολέγανδρο με έμφαση σε «κομμωτήριο Φολέγανδρος»',
-      'Αρχιτεκτονική υπηρεσιών και προϊόντων για εμπορικές προθέσεις: κομμωτήριο, νύχια και μακιγιάζ',
-      'Βάση σήμανσης schema και τεχνικού SEO για Folegandros Hair Salon',
-      'Διαδρομές κράτησης από κινητό έτοιμες για περιόδους αιχμής',
+    "languages": [
+      "el",
+      "en"
     ],
-
-    services: ['website-creation', 'local-seo'],
-                                                    seoTitle: 'Folegandros Hair Salon | Sousi Hair Salon',
-    seoDescription: 'Folegandros Hair Salon: a hair, nails and makeup salon on Folegandros. Case study: the website and SEO we built to rank for “Folegandros hair salon”.',
-    seoTitleEl: 'Folegandros Hair Salon | κομμωτήριο Φολέγανδρος',
-    seoDescriptionEl: 'Folegandros Hair Salon: κομμωτήριο, νύχια και μακιγιάζ στη Φολέγανδρο. Μελέτη περίπτωσης για την ιστοσελίδα και το SEO με στόχο «κομμωτήριο Φολέγανδρος».',
-    featured: false,
+    "screenshot": "/portfolio/folegandros-hairsalon.webp",
+    "summary": "Sousi Hair Salon by Katerina offers hair, nail, makeup and bridal services on Folegandros.",
+    "summaryEl": "Το Sousi Hair Salon της Κατερίνας προσφέρει κομμωτική, περιποίηση άκρων, μακιγιάζ και νυφικές υπηρεσίες στη Φολέγανδρο.",
+    "results": [
+      "Hair and styling",
+      "Nails and makeup",
+      "Bridal appointments"
+    ],
+    "resultsEl": [
+      "Κομμωτική και χτενίσματα",
+      "Περιποίηση άκρων και μακιγιάζ",
+      "Νυφικά ραντεβού"
+    ],
+    "services": [
+      "website-creation",
+      "local-seo"
+    ],
+    "seoTitle": "Sousi Hair Salon | Website project",
+    "seoDescription": "Sousi Hair Salon by Katerina offers hair, nail, makeup and bridal services on Folegandros.",
+    "seoTitleEl": "Sousi Hair Salon | Παρουσίαση έργου",
+    "seoDescriptionEl": "Το Sousi Hair Salon της Κατερίνας προσφέρει κομμωτική, περιποίηση άκρων, μακιγιάζ και νυφικές υπηρεσίες στη Φολέγανδρο.",
+    "featured": false
   },
   {
-    slug: 'folegandros-moto',
-    name: 'Folegandros Moto',
-    url: 'https://folegandros-moto.gr',
-    category: 'rent-a-car',
-    markets: ['GR'],
-    languages: ['el', 'en'],
-    screenshot: '/portfolio/folegandros-moto.webp',
-    summary:
-      'Folegandros Moto: moto and scooter rental for Folegandros, SEO for “Folegandros scooter rental”, structured around “Folegandros scooter rental”.',
-    summaryEl:
-      'Folegandros Moto: ενοικίαση μηχανών και scooters στη Φολέγανδρο, SEO για «ενοικίαση μηχανής Φολέγανδρος», με δομή περιεχομένου για «ενοικίαση μηχανής Φολέγανδρος».',
-    results: [
-      'Folegandros: pages aimed at “Folegandros scooter rental” and “rent a moto Folegandros”',
-      'Differentiation: two-wheel fleet for island mobility since 1998',
-      'Stack: website creation, local SEO',
+    "slug": "folegandros-moto",
+    "name": "Road Runner Folegandros",
+    "url": "https://folegandros-moto.gr",
+    "category": "rent-a-car",
+    "markets": [
+      "GR"
     ],
-    resultsEl: [
-      'Τοπική αφήγηση για τη Φολέγανδρο με έμφαση σε «ενοικίαση μηχανής Φολέγανδρος»',
-      'Αρχιτεκτονική υπηρεσιών και προϊόντων για εμπορικές προθέσεις: ενοικίαση μηχανών και scooters',
-      'Βάση σήμανσης schema και τεχνικού SEO για Folegandros Moto',
-      'Διαδρομές κράτησης από κινητό έτοιμες για περιόδους αιχμής',
+    "languages": [
+      "el",
+      "en"
     ],
-
-    services: ['website-creation', 'local-seo'],
-                                                    seoTitle: 'Folegandros Moto | Folegandros scooter rental',
-    seoDescription: 'Folegandros Moto: motorbike and scooter rental on Folegandros. Case study: the website and SEO we built to rank for “Folegandros scooter rental”.',
-    seoTitleEl: 'Folegandros Moto | ενοικίαση μηχανής Φολέγανδρος',
-    seoDescriptionEl: 'Folegandros Moto: ενοικίαση μηχανών και scooters στη Φολέγανδρο. Μελέτη περίπτωσης για την ιστοσελίδα και το SEO με στόχο «ενοικίαση μηχανής Φολέγανδρος».',
-    featured: false,
+    "screenshot": "/portfolio/folegandros-moto.webp",
+    "summary": "Road Runner rents motorcycles, scooters and ATVs on Folegandros, with local service dating to 1998.",
+    "summaryEl": "Η Road Runner ενοικιάζει μοτοσικλέτες, σκούτερ και ATV στη Φολέγανδρο, με παρουσία στο νησί από το 1998.",
+    "results": [
+      "Motorcycles, scooters and ATVs",
+      "Port and hotel delivery",
+      "Folegandros rental team"
+    ],
+    "resultsEl": [
+      "Μοτοσικλέτες, σκούτερ και ATV",
+      "Παράδοση σε λιμάνι και ξενοδοχείο",
+      "Τοπική ομάδα στη Φολέγανδρο"
+    ],
+    "services": [
+      "website-creation",
+      "local-seo"
+    ],
+    "seoTitle": "Road Runner Folegandros | Website project",
+    "seoDescription": "Road Runner rents motorcycles, scooters and ATVs on Folegandros, with local service dating to 1998.",
+    "seoTitleEl": "Road Runner Folegandros | Παρουσίαση έργου",
+    "seoDescriptionEl": "Η Road Runner ενοικιάζει μοτοσικλέτες, σκούτερ και ATV στη Φολέγανδρο, με παρουσία στο νησί από το 1998.",
+    "featured": false
   },
   {
-    slug: 'best-pumpkin-near-me',
-    name: 'Best Pumpkin Near Me',
-    url: 'https://bestpumpkinnearme.com',
-    category: 'other',
-    markets: ['US'],
-    languages: ['en'],
-    screenshot: '/portfolio/best-pumpkin-near-me.webp',
-    summary:
-      'Best Pumpkin Near Me: US local pumpkin patch directory for United States, SEO for “best pumpkin near me”, with technical SEO from day one.',
-    summaryEl:
-      'Best Pumpkin Near Me: κατάλογος τοπικών pumpkin patches στις ΗΠΑ, SEO για «best pumpkin near me», με τεχνικό SEO από την πρώτη μέρα.',
-    results: [
-      'United States: pages aimed at “best pumpkin near me” and “pumpkin patch near me”',
-      'Differentiation: hyperlocal near-me SEO for seasonal autumn demand',
-      'Stack: website creation, local SEO, content creation',
+    "slug": "best-pumpkin-near-me",
+    "name": "Best Pumpkin Near Me",
+    "url": "https://bestpumpkinnearme.com",
+    "category": "other",
+    "markets": [
+      "US"
     ],
-    resultsEl: [
-      'Τοπική αφήγηση για τις Ηνωμένες Πολιτείες με έμφαση σε «best pumpkin near me»',
-      'Αρχιτεκτονική υπηρεσιών και προϊόντων για εμπορικές προθέσεις: κατάλογος τοπικών pumpkin patches στις ΗΠΑ',
-      'Βάση σήμανσης schema και τεχνικού SEO για Best Pumpkin Near Me',
-      'Διαδρομές επικοινωνίας από κινητό έτοιμες για περιόδους αιχμής',
+    "languages": [
+      "en"
     ],
-
-    services: ['website-creation', 'local-seo', 'content-creation'],
-                                                    seoTitle: 'Best Pumpkin Near Me | pumpkin patch near me',
-    seoDescription: 'Best Pumpkin Near Me: a directory of local pumpkin patches in the US. Case study: the website and SEO we built to rank for “best pumpkin near me”.',
-    seoTitleEl: 'Best Pumpkin Near Me | pumpkin patch κοντά μου',
-    seoDescriptionEl: 'Best Pumpkin Near Me: κατάλογος τοπικών pumpkin patches στις ΗΠΑ. Μελέτη περίπτωσης: η ιστοσελίδα και το SEO που φτιάξαμε για «best pumpkin near me».',
-    featured: false,
+    "screenshot": "/portfolio/best-pumpkin-near-me.webp",
+    "summary": "A US pumpkin-patch discovery website with location guides and a Halloween affiliate shop.",
+    "summaryEl": "Ιστοσελίδα αναζήτησης pumpkin patches στις ΗΠΑ, με οδηγούς ανά περιοχή και κατάστημα προτάσεων για το Halloween.",
+    "results": [
+      "Pumpkin patches by location",
+      "Seasonal activity guides",
+      "Halloween affiliate shopping"
+    ],
+    "resultsEl": [
+      "Αναζήτηση pumpkin patch ανά περιοχή",
+      "Οδηγοί εποχικών δραστηριοτήτων",
+      "Προτάσεις αγορών Halloween με συνεργαζόμενους συνδέσμους"
+    ],
+    "services": [
+      "website-creation",
+      "local-seo",
+      "content-creation"
+    ],
+    "seoTitle": "Best Pumpkin Near Me | Website project",
+    "seoDescription": "A US pumpkin-patch discovery website with location guides and a Halloween affiliate shop.",
+    "seoTitleEl": "Best Pumpkin Near Me | Παρουσίαση έργου",
+    "seoDescriptionEl": "Ιστοσελίδα αναζήτησης pumpkin patches στις ΗΠΑ, με οδηγούς ανά περιοχή και κατάστημα προτάσεων για το Halloween.",
+    "featured": false
   },
   {
-    slug: 'stretcher-stopper',
-    name: 'Stretcher Stopper',
-    url: 'https://stretcherstopper.com',
-    category: 'other',
-    markets: ['US'],
-    languages: ['en'],
-    screenshot: '/portfolio/stretcher-stopper.webp',
-    summary:
-      'Stretcher Stopper: medical stretcher wall-protection product website for United States / healthcare facilities, SEO for “Stretcher Stopper”, ready for organic growth in United States / healthcare facilities.',
-    summaryEl:
-      'Stretcher Stopper: ιστοσελίδα για προϊόν προστασίας τοίχων από φορεία για χώρους υγείας στις ΗΠΑ, SEO για «Stretcher Stopper», έτοιμη για οργανική ανάπτυξη στις ΗΠΑ.',
-    results: [
-      'United States / healthcare facilities: pages aimed at “Stretcher Stopper” and “medical stretcher safety”',
-      'Differentiation: product education pages with direct quote requests',
-      'Stack: website creation',
+    "slug": "stretcher-stopper",
+    "name": "Stretcher Stopper",
+    "url": "https://stretcherstopper.com",
+    "category": "other",
+    "markets": [
+      "US"
     ],
-    resultsEl: [
-      'Τοπική αφήγηση για τις ΗΠΑ και τους χώρους υγείας με έμφαση σε «Stretcher Stopper»',
-      'Αρχιτεκτονική υπηρεσιών και προϊόντων για εμπορικές προθέσεις: προϊόν προστασίας τοίχων από φορεία',
-      'Βάση σήμανσης schema και τεχνικού SEO για Stretcher Stopper',
-      'Διαδρομές αιτήματος προσφοράς από κινητό έτοιμες για περιόδους αιχμής',
+    "languages": [
+      "en"
     ],
-
-    services: ['website-creation'],
-                                                    seoTitle: 'Stretcher Stopper | medical stretcher safety',
-    seoDescription: 'Stretcher Stopper: stretcher wall protection for US healthcare facilities. Case study: the website and SEO we built to rank for “Stretcher Stopper”.',
-    seoTitleEl: 'Stretcher Stopper | προστασία τοίχων νοσοκομείο',
-    seoDescriptionEl: 'Stretcher Stopper: προϊόν προστασίας τοίχων από φορεία για χώρους υγείας στις ΗΠΑ. Ιστοσελίδα και SEO με στόχο «Stretcher Stopper».',
-    featured: false,
+    "screenshot": "/portfolio/stretcher-stopper.webp",
+    "summary": "StretcherStopper® is a floor-mounted hospital protection device designed for stretcher and equipment environments.",
+    "summaryEl": "Το StretcherStopper® είναι σύστημα προστασίας νοσοκομειακών χώρων που στερεώνεται στο δάπεδο και αφορά τη χρήση φορείων και εξοπλισμού.",
+    "results": [
+      "Hospital wall protection",
+      "Floor-mounted device",
+      "Product information and enquiries"
+    ],
+    "resultsEl": [
+      "Προστασία νοσοκομειακών χώρων",
+      "Στερέωση στο δάπεδο",
+      "Πληροφορίες προϊόντος και επικοινωνία"
+    ],
+    "services": [
+      "website-creation"
+    ],
+    "seoTitle": "Stretcher Stopper | Website project",
+    "seoDescription": "StretcherStopper® is a floor-mounted hospital protection device designed for stretcher and equipment environments.",
+    "seoTitleEl": "Stretcher Stopper | Παρουσίαση έργου",
+    "seoDescriptionEl": "Το StretcherStopper® είναι σύστημα προστασίας νοσοκομειακών χώρων που στερεώνεται στο δάπεδο και αφορά τη χρήση φορείων και εξοπλισμού.",
+    "featured": false
   },
   {
-    slug: 'antiparos-rooms',
-    name: 'Antiparos Rooms',
-    url: 'https://antiparosrooms.com',
-    category: 'hotel',
-    markets: ['GR', 'EU'],
-    languages: ['en', 'el'],
-    screenshot: '/portfolio/antiparos-rooms.webp',
-    summary:
-      'Antiparos Rooms: seaside rooms and apartments website for Antiparos, SEO for “Antiparos rooms”, with trust signals and a clear booking path.',
-    summaryEl:
-      'Antiparos Rooms: ιστοσελίδα για παραθαλάσσια δωμάτια και διαμερίσματα στην Αντίπαρο, SEO για «δωμάτια Αντίπαρος», με ξεκάθαρα σήματα εμπιστοσύνης και διαδρομή κράτησης.',
-    results: [
-      'Antiparos: pages aimed at “Antiparos rooms” and “Antiparos apartments”',
-      'Differentiation: direct booking for Cycladic seaside apartments versus OTA dependence',
-      'Stack: website creation, local SEO',
+    "slug": "antiparos-rooms",
+    "name": "AGGELOS Antiparos Apartments",
+    "url": "https://antiparosrooms.com",
+    "category": "hotel",
+    "markets": [
+      "GR",
+      "EU"
     ],
-    resultsEl: [
-      'Τοπική αφήγηση για την Αντίπαρο με έμφαση σε «δωμάτια Αντίπαρος»',
-      'Αρχιτεκτονική υπηρεσιών και προϊόντων για εμπορικές προθέσεις: παραθαλάσσια δωμάτια και διαμερίσματα',
-      'Βάση σήμανσης schema και τεχνικού SEO για Antiparos Rooms',
-      'Διαδρομές κράτησης από κινητό έτοιμες για περιόδους αιχμής',
+    "languages": [
+      "en",
+      "el"
     ],
-
-    services: ['website-creation', 'local-seo'],
-                                                    seoTitle: 'Antiparos Rooms | Antiparos apartments',
-    seoDescription: 'Antiparos Rooms: seaside rooms and apartments on Antiparos. Case study: the mobile-first website and technical SEO we built to rank for “Antiparos rooms”.',
-    seoTitleEl: 'Antiparos Rooms | δωμάτια Αντίπαρος',
-    seoDescriptionEl: 'Antiparos Rooms: παραθαλάσσια δωμάτια και διαμερίσματα στην Αντίπαρο. Μελέτη περίπτωσης: η ιστοσελίδα και το SEO που φτιάξαμε για «δωμάτια Αντίπαρος».',
-    featured: false,
+    "screenshot": "/portfolio/antiparos-rooms.webp",
+    "summary": "AGGELOS Antiparos Apartments presents island accommodation with sea views, balconies and practical in-room facilities.",
+    "summaryEl": "Η AGGELOS Antiparos Apartments παρουσιάζει διαμονή στην Αντίπαρο με θέα στη θάλασσα, μπαλκόνια και πρακτικές παροχές δωματίου.",
+    "results": [
+      "Sea-view apartments",
+      "Kitchen and Wi-Fi facilities",
+      "Direct stay enquiries"
+    ],
+    "resultsEl": [
+      "Διαμερίσματα με θέα στη θάλασσα",
+      "Κουζίνα και Wi-Fi",
+      "Απευθείας αιτήματα διαμονής"
+    ],
+    "services": [
+      "website-creation",
+      "local-seo"
+    ],
+    "seoTitle": "AGGELOS Antiparos Apartments | Website project",
+    "seoDescription": "AGGELOS Antiparos Apartments presents island accommodation with sea views, balconies and practical in-room facilities.",
+    "seoTitleEl": "AGGELOS Antiparos Apartments | Παρουσίαση έργου",
+    "seoDescriptionEl": "Η AGGELOS Antiparos Apartments παρουσιάζει διαμονή στην Αντίπαρο με θέα στη θάλασσα, μπαλκόνια και πρακτικές παροχές δωματίου.",
+    "featured": false
   },
   {
-    slug: 'erebos',
-    name: 'Erebos',
-    url: 'https://erebos.gr',
-    category: 'other',
-    markets: ['GR', 'EU'],
-    languages: ['en', 'el'],
-    screenshot: '/portfolio/erebos.webp',
-    summary:
-      'Erebos: real-time GPS vehicle tracking platform for Greece and the EU, SEO for “Erebos GPS tracking”, with trust signals and a clear signup path.',
-    summaryEl:
-      'Erebos: πλατφόρμα παρακολούθησης οχημάτων σε πραγματικό χρόνο στην Ελλάδα και στην ΕΕ, SEO για «παρακολούθηση οχημάτων», με ξεκάθαρα σήματα εμπιστοσύνης και διαδρομή εγγραφής.',
-            results: [
-      'Greece and the EU: pages aimed at “Erebos GPS tracking” and “vehicle tracking platform”',
-      'Differentiation: phone or hardware tracker setup with free start tracking CTA',
-      'Stack: website creation, SEO web design',
+    "slug": "erebos",
+    "name": "Erebos",
+    "url": "https://erebos.gr",
+    "category": "travel-ai",
+    "markets": [
+      "GR",
+      "EU"
     ],
-    resultsEl: [
-      'Τοπική αφήγηση για την Ελλάδα και την ΕΕ με έμφαση σε «παρακολούθηση οχημάτων»',
-      'Αρχιτεκτονική υπηρεσιών και προϊόντων για εμπορικές προθέσεις: πλατφόρμα παρακολούθησης οχημάτων σε πραγματικό χρόνο',
-      'Βάση σήμανσης schema και τεχνικού SEO για Erebos',
-      'Διαδρομές εγγραφής από κινητό έτοιμες για περιόδους αιχμής',
+    "languages": [
+      "en",
+      "el"
     ],
-    services: ['website-creation', 'seo-web-design'],
-                                                    seoTitle: 'Erebos | Erebos GPS tracking',
-    seoDescription: 'Erebos: real-time GPS vehicle tracking in Greece and the EU. Case study: the website and SEO we built to rank for “Erebos GPS tracking”.',
-    seoTitleEl: 'Erebos | παρακολούθηση οχημάτων',
-    seoDescriptionEl: 'Erebos: πλατφόρμα παρακολούθησης οχημάτων σε πραγματικό χρόνο στην Ελλάδα και στην ΕΕ. Ιστοσελίδα και SEO με στόχο «παρακολούθηση οχημάτων».',
-    featured: true,
+    "screenshot": "/portfolio/erebos.webp",
+    "summary": "A real-time vehicle-tracking platform for individual vehicles and fleets, using a phone or GPS hardware.",
+    "summaryEl": "Πλατφόρμα ζωντανής παρακολούθησης οχημάτων και στόλων, με χρήση κινητού ή συσκευής GPS.",
+    "results": [
+      "Real-time vehicle location",
+      "Phone or GPS device",
+      "Individual vehicles and fleets"
+    ],
+    "resultsEl": [
+      "Ζωντανή θέση οχήματος",
+      "Χρήση κινητού ή συσκευής GPS",
+      "Μεμονωμένα οχήματα και στόλοι"
+    ],
+    "services": [
+      "website-creation",
+      "seo-web-design"
+    ],
+    "seoTitle": "Erebos | Website project",
+    "seoDescription": "A real-time vehicle-tracking platform for individual vehicles and fleets, using a phone or GPS hardware.",
+    "seoTitleEl": "Erebos | Παρουσίαση έργου",
+    "seoDescriptionEl": "Πλατφόρμα ζωντανής παρακολούθησης οχημάτων και στόλων, με χρήση κινητού ή συσκευής GPS.",
+    "featured": true
   },
   {
-    slug: 'naxos-car-rental',
-    name: 'Naxos Car Rental',
-    url: 'https://naxos-car-rental.com',
-    category: 'rent-a-car',
-    markets: ['GR', 'EU', 'US'],
-    languages: ['en', 'el'],
-    screenshot: '/portfolio/naxos-car-rental.webp',
-    summary:
-      'Naxos Car Rental: Naxos car rental brand for Naxos, SEO for “Naxos car rental”, structured around “Naxos car rental”.',
-    summaryEl:
-      'Naxos Car Rental: ενοικίαση αυτοκινήτων στη Νάξο, SEO για «ενοικίαση αυτοκινήτου Νάξος», με δομή περιεχομένου για «ενοικίαση αυτοκινήτου Νάξος».',
-            results: [
-      'Naxos: pages aimed at “Naxos car rental” and “rent a car Naxos airport”',
-      'Differentiation: distinct fleet taxonomy versus sibling Naxos rental brands',
-      'Stack: website creation, local SEO, SEO web design',
+    "slug": "naxos-car-rental",
+    "name": "Naxos Auto Rent",
+    "url": "https://naxos-car-rental.com",
+    "category": "rent-a-car",
+    "markets": [
+      "GR",
+      "EU",
+      "US"
     ],
-    resultsEl: [
-      'Τοπική αφήγηση για τη Νάξο με έμφαση σε «ενοικίαση αυτοκινήτου Νάξος»',
-      'Αρχιτεκτονική υπηρεσιών και προϊόντων για εμπορικές προθέσεις: ενοικίαση αυτοκινήτων στη Νάξο',
-      'Βάση σήμανσης schema και τεχνικού SEO για Naxos Car Rental',
-      'Διαδρομές κράτησης από κινητό έτοιμες για περιόδους αιχμής',
+    "languages": [
+      "en",
+      "el"
     ],
-    services: ['website-creation', 'local-seo', 'seo-web-design'],
-                                                    seoTitle: 'Naxos Car Rental | rent a car Naxos airport',
-    seoDescription: 'Naxos Car Rental: a car rental brand on Naxos. Case study: the website and SEO we built to rank for “Naxos car rental” and win direct bookings.',
-    seoTitleEl: 'Naxos Car Rental | ενοικίαση αυτοκινήτου Νάξος',
-    seoDescriptionEl: 'Naxos Car Rental: ενοικίαση αυτοκινήτων στη Νάξο. Μελέτη περίπτωσης: η ιστοσελίδα και το SEO που φτιάξαμε για την αναζήτηση «ενοικίαση αυτοκινήτου Νάξος».',
-    featured: true,
+    "screenshot": "/portfolio/naxos-car-rental.webp",
+    "summary": "A Naxos Auto Rent website for local car rental and delivery at the port or airport.",
+    "summaryEl": "Ιστοσελίδα της Naxos Auto Rent για τοπική ενοικίαση αυτοκινήτου και παράδοση στο λιμάνι ή στο αεροδρόμιο.",
+    "results": [
+      "Local Naxos rental team",
+      "Port and airport delivery",
+      "Vehicle and booking information"
+    ],
+    "resultsEl": [
+      "Τοπική ομάδα στη Νάξο",
+      "Παράδοση σε λιμάνι και αεροδρόμιο",
+      "Πληροφορίες οχημάτων και κράτησης"
+    ],
+    "services": [
+      "website-creation",
+      "local-seo",
+      "seo-web-design"
+    ],
+    "seoTitle": "Naxos Auto Rent | Website project",
+    "seoDescription": "A Naxos Auto Rent website for local car rental and delivery at the port or airport.",
+    "seoTitleEl": "Naxos Auto Rent | Παρουσίαση έργου",
+    "seoDescriptionEl": "Ιστοσελίδα της Naxos Auto Rent για τοπική ενοικίαση αυτοκινήτου και παράδοση στο λιμάνι ή στο αεροδρόμιο.",
+    "featured": true
   },
   {
-    slug: 'naxos-auto-rent',
-    name: 'Naxos Auto Rent',
-    url: 'https://naxosautorent.com',
-    category: 'rent-a-car',
-    markets: ['GR', 'EU', 'US'],
-    languages: ['en', 'el'],
-    screenshot: '/portfolio/naxos-auto-rent.webp',
-    summary:
-      'Naxos Auto Rent: online Naxos auto rent website for Naxos, SEO for “Naxos auto rent”, with technical SEO from day one.',
-    summaryEl:
-      'Naxos Auto Rent: online ενοικίαση αυτοκινήτων στη Νάξο, SEO για «ενοικίαση αυτοκινήτου Νάξος online», με τεχνικό SEO από την πρώτη μέρα.',
-            results: [
-      'Naxos: pages aimed at “Naxos auto rent” and “Naxos car hire online”',
-      'Differentiation: English-first booking UX for international guests',
-      'Stack: website creation, local SEO, speed optimization',
+    "slug": "naxos-auto-rent",
+    "name": "Naxos Auto Rent",
+    "url": "https://naxosautorent.com",
+    "category": "rent-a-car",
+    "markets": [
+      "GR",
+      "EU",
+      "US"
     ],
-    resultsEl: [
-      'Τοπική αφήγηση για τη Νάξο με έμφαση σε «ενοικίαση αυτοκινήτου Νάξος online»',
-      'Αρχιτεκτονική υπηρεσιών και προϊόντων για εμπορικές προθέσεις: online ενοικίαση αυτοκινήτων στη Νάξο',
-      'Βάση σήμανσης schema και τεχνικού SEO για Naxos Auto Rent',
-      'Διαδρομές κράτησης από κινητό έτοιμες για περιόδους αιχμής',
+    "languages": [
+      "en",
+      "el"
     ],
-    services: ['website-creation', 'local-seo', 'speed-optimization'],
-                                                    seoTitle: 'Naxos Auto Rent | Naxos car hire online',
-    seoDescription: 'Naxos Auto Rent: online car rental on Naxos. Case study: the website and SEO we built to rank for “Naxos auto rent” and win direct bookings.',
-    seoTitleEl: 'Naxos Auto Rent | ενοικίαση αυτοκινήτου Νάξος online',
-    seoDescriptionEl: 'Naxos Auto Rent: online ενοικίαση αυτοκινήτων στη Νάξο. Μελέτη περίπτωσης για την ιστοσελίδα και το SEO με στόχο «ενοικίαση αυτοκινήτου Νάξος online».',
-    featured: false,
+    "screenshot": "/portfolio/naxos-auto-rent.webp",
+    "summary": "A family-run Naxos Auto Rent business offering car rentals and delivery at the port, airport or hotel.",
+    "summaryEl": "Οικογενειακή επιχείρηση Naxos Auto Rent, με ενοικιάσεις αυτοκινήτων και παράδοση σε λιμάνι, αεροδρόμιο ή ξενοδοχείο.",
+    "results": [
+      "Family-run local business",
+      "Port, airport and hotel delivery",
+      "Online rental booking"
+    ],
+    "resultsEl": [
+      "Οικογενειακή τοπική επιχείρηση",
+      "Παράδοση σε λιμάνι, αεροδρόμιο και ξενοδοχείο",
+      "Ηλεκτρονική κράτηση ενοικίασης"
+    ],
+    "services": [
+      "website-creation",
+      "local-seo",
+      "speed-optimization"
+    ],
+    "seoTitle": "Naxos Auto Rent | Website project",
+    "seoDescription": "A family-run Naxos Auto Rent business offering car rentals and delivery at the port, airport or hotel.",
+    "seoTitleEl": "Naxos Auto Rent | Παρουσίαση έργου",
+    "seoDescriptionEl": "Οικογενειακή επιχείρηση Naxos Auto Rent, με ενοικιάσεις αυτοκινήτων και παράδοση σε λιμάνι, αεροδρόμιο ή ξενοδοχείο.",
+    "featured": false
   },
   {
-    slug: 'rentacar-sifnos',
-    name: 'Artemis Rental Sifnos',
-    url: 'https://rentacarsifnos.com',
-    category: 'rent-a-car',
-    markets: ['GR', 'EU'],
-    languages: ['en', 'el'],
-    screenshot: '/portfolio/rentacar-sifnos.webp',
-    summary:
-      'Artemis Rental Sifnos: car and scooter rental for Sifnos, SEO for “rent a car Sifnos”, with trust signals and a clear booking path.',
-    summaryEl:
-      'Artemis Rental Sifnos: ενοικίαση αυτοκινήτων και scooters στη Σίφνο, SEO για «ενοικίαση αυτοκινήτου Σίφνος», με ξεκάθαρα σήματα εμπιστοσύνης και διαδρομή κράτησης.',
-            results: [
-      'Sifnos: pages aimed at “rent a car Sifnos” and “Sifnos scooter rental”',
-      'Differentiation: reliable fleet from Apollonia since 1988 with free Kamares port pickup',
-      'Stack: website creation, local SEO',
+    "slug": "rentacar-sifnos",
+    "name": "Artemis Rental Sifnos",
+    "url": "https://rentacarsifnos.com",
+    "category": "rent-a-car",
+    "markets": [
+      "GR",
+      "EU"
     ],
-    resultsEl: [
-      'Τοπική αφήγηση για τη Σίφνο με έμφαση σε «ενοικίαση αυτοκινήτου Σίφνος»',
-      'Αρχιτεκτονική υπηρεσιών και προϊόντων για εμπορικές προθέσεις: ενοικίαση αυτοκινήτων και scooters',
-      'Βάση σήμανσης schema και τεχνικού SEO για Artemis Rental Sifnos',
-      'Διαδρομές κράτησης από κινητό έτοιμες για περιόδους αιχμής',
+    "languages": [
+      "en",
+      "el"
     ],
-    services: ['website-creation', 'local-seo'],
-                                                    seoTitle: 'Artemis Rental Sifnos | rent a car Sifnos',
-    seoDescription: 'Artemis Rental Sifnos: car and scooter rental on Sifnos. Case study: the mobile-first website and technical SEO we built to rank for “rent a car Sifnos”.',
-    seoTitleEl: 'Artemis Rental Sifnos | ενοικίαση αυτοκινήτου Σίφνος',
-    seoDescriptionEl: 'Artemis Rental Sifnos: ενοικίαση αυτοκινήτων και scooters στη Σίφνο. Μελέτη περίπτωσης για την ιστοσελίδα και το SEO με στόχο «ενοικίαση αυτοκινήτου Σίφνος».',
-    featured: true,
+    "screenshot": "/portfolio/rentacar-sifnos.webp",
+    "summary": "Artemis Rental is a family car-rental business in Apollonia, Sifnos, serving visitors since 1988.",
+    "summaryEl": "Η Artemis Rental είναι οικογενειακή επιχείρηση ενοικίασης αυτοκινήτων στην Απολλωνία της Σίφνου, με παρουσία από το 1988.",
+    "results": [
+      "Local family business",
+      "Kamares arrival options",
+      "Online reservation information"
+    ],
+    "resultsEl": [
+      "Τοπική οικογενειακή επιχείρηση",
+      "Παραλαβή για αφίξεις στις Καμάρες",
+      "Πληροφορίες ηλεκτρονικής κράτησης"
+    ],
+    "services": [
+      "website-creation",
+      "local-seo"
+    ],
+    "seoTitle": "Artemis Rental Sifnos | Website project",
+    "seoDescription": "Artemis Rental is a family car-rental business in Apollonia, Sifnos, serving visitors since 1988.",
+    "seoTitleEl": "Artemis Rental Sifnos | Παρουσίαση έργου",
+    "seoDescriptionEl": "Η Artemis Rental είναι οικογενειακή επιχείρηση ενοικίασης αυτοκινήτων στην Απολλωνία της Σίφνου, με παρουσία από το 1988.",
+    "featured": true
   },
   {
-    slug: 'vwanaki',
-    name: 'vwanaki',
-    url: 'https://vwanaki.gr',
-    category: 'other',
-    markets: ['GR'],
-    languages: ['el', 'en'],
-    screenshot: '/portfolio/vwanaki.webp',
-    summary:
-      'vwanaki: mobile cocktail bar for events for Greece, SEO for “mobile cocktail bar Greece”, with trust signals and a clear inquiry path.',
-    summaryEl:
-      'vwanaki: κινητό cocktail bar για εκδηλώσεις στην Ελλάδα, SEO για «κινητό cocktail bar», με ξεκάθαρα σήματα εμπιστοσύνης και διαδρομή αιτήματος προσφοράς.',
-            results: [
-      'Greece: pages aimed at “mobile cocktail bar Greece” and “Vwanaki cocktail bar”',
-      'Differentiation: a mobile bar that comes to the client for cocktails and events',
-      'Stack: website creation, local SEO, content creation',
+    "slug": "vwanaki",
+    "name": "vwanaki",
+    "url": "https://vwanaki.gr",
+    "category": "other",
+    "markets": [
+      "GR"
     ],
-    resultsEl: [
-      'Τοπική αφήγηση για την Ελλάδα με έμφαση σε «κινητό cocktail bar»',
-      'Αρχιτεκτονική υπηρεσιών και προϊόντων για εμπορικές προθέσεις: κινητό cocktail bar για εκδηλώσεις',
-      'Βάση σήμανσης schema και τεχνικού SEO για vwanaki',
-      'Διαδρομές αιτήματος προσφοράς από κινητό έτοιμες για περιόδους αιχμής',
+    "languages": [
+      "el",
+      "en"
     ],
-    services: ['website-creation', 'local-seo', 'content-creation'],
-                                                    seoTitle: 'vwanaki | mobile cocktail bar Greece',
-    seoDescription: 'vwanaki: a mobile cocktail bar for events in Greece. Case study: the mobile-first website and technical SEO we built to rank for “mobile cocktail bar Greece”.',
-    seoTitleEl: 'vwanaki | κινητό cocktail bar',
-    seoDescriptionEl: 'vwanaki: κινητό cocktail bar για εκδηλώσεις στην Ελλάδα. Μελέτη περίπτωσης: η ιστοσελίδα και το SEO που φτιάξαμε για την αναζήτηση «κινητό cocktail bar».',
-    featured: false,
-  },
+    "screenshot": "/portfolio/vwanaki.webp",
+    "summary": "A mobile cocktail-bar van for weddings, baptisms and events in Athens and beyond.",
+    "summaryEl": "Κινητό cocktail bar σε βανάκι για γάμους, βαπτίσεις και εκδηλώσεις στην Αθήνα και σε άλλους προορισμούς.",
+    "results": [
+      "Mobile cocktail bar",
+      "Weddings and private events",
+      "Event quote requests"
+    ],
+    "resultsEl": [
+      "Κινητό cocktail bar",
+      "Γάμοι και ιδιωτικές εκδηλώσεις",
+      "Αιτήματα προσφοράς εκδήλωσης"
+    ],
+    "services": [
+      "website-creation",
+      "local-seo",
+      "content-creation"
+    ],
+    "seoTitle": "vwanaki | Website project",
+    "seoDescription": "A mobile cocktail-bar van for weddings, baptisms and events in Athens and beyond.",
+    "seoTitleEl": "vwanaki | Παρουσίαση έργου",
+    "seoDescriptionEl": "Κινητό cocktail bar σε βανάκι για γάμους, βαπτίσεις και εκδηλώσεις στην Αθήνα και σε άλλους προορισμούς.",
+    "featured": true
+  }
 ];
 
 export function getPortfolioBySlug(slug: string): PortfolioProject | undefined {

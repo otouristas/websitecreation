@@ -156,8 +156,8 @@ export function HomePageView({ locale }: { locale: SiteLocale }) {
             </div>
             <p className="mt-5 text-center text-[13px] text-muted-foreground">
               {tx(
-                'Meet Aster in AnotherSEOGuru App. Ask a question, inspect the evidence, and turn it into a task. This example uses a fictional site.',
-                'Ο Aster στο AnotherSEOGuru App: ρωτήστε, δείτε τα στοιχεία και προχωρήστε σε μια εργασία. Το παράδειγμα χρησιμοποιεί φανταστικό ιστότοπο.',
+                'Meet Aster AI in AnotherSEOGuru App. Ask a question, inspect the evidence, and turn it into a task. This example uses a fictional site.',
+                'Ο Aster AI στο AnotherSEOGuru App: ρωτήστε, δείτε τα στοιχεία και προχωρήστε σε μια εργασία. Το παράδειγμα χρησιμοποιεί φανταστικό ιστότοπο.',
               )}{' '}
               <Link href={lp('/platform')} className="font-medium text-foreground underline decoration-hairline underline-offset-4 hover:decoration-foreground">
                 {tx('Use it yourself, free', 'Χρησιμοποιήστε το δωρεάν')}
@@ -295,7 +295,7 @@ export function HomePageView({ locale }: { locale: SiteLocale }) {
                 bullets={[
                   tx('Mentions and citations across the major AI assistants', 'Αναφορές και παραπομπές στους μεγάλους βοηθούς AI'),
                   tx('Pages structured for answers, with schema and clear facts', 'Σελίδες δομημένες για απαντήσεις, με schema και σαφή στοιχεία'),
-                  tx('Share of voice against your competitors', 'Μερίδιο φωνής έναντι των ανταγωνιστών σας'),
+                  tx('Share of voice against your competitors', 'Μερίδιο αναφορών έναντι των ανταγωνιστών σας'),
                 ]}
                 links={[
                   { href: lp('/services/ai-visibility'), label: tx('AI visibility service', 'Υπηρεσία ορατότητας σε AI'), primary: true },

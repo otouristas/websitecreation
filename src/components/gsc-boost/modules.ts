@@ -315,7 +315,7 @@ export const MODULES: ReadonlyArray<ProductModule> = [
     bullets: [
       c("Mentions and citations in ChatGPT, Gemini and Perplexity", "Αναφορές και παραπομπές σε ChatGPT, Gemini και Perplexity"),
       c("Google AI Overviews presence for your keywords", "Παρουσία στα Google AI Overviews για τις λέξεις-κλειδιά σας"),
-      c("Share of voice against your competitors", "Μερίδιο φωνής σε σχέση με τους ανταγωνιστές σας"),
+      c("Share of voice against your competitors", "Μερίδιο αναφορών σε σχέση με τους ανταγωνιστές σας"),
     ],
     what: [
       c(
@@ -328,7 +328,7 @@ export const MODULES: ReadonlyArray<ProductModule> = [
       ),
       c(
         "Shows your share of voice against competitors for the prompts you track.",
-        "Δείχνει το μερίδιο φωνής σας απέναντι στους ανταγωνιστές για τα prompts που παρακολουθείτε.",
+        "Δείχνει το μερίδιο αναφορών σας απέναντι στους ανταγωνιστές για τα prompts που παρακολουθείτε.",
       ),
       c(
         "Suggests changes that make your pages easier for AI systems to cite.",
