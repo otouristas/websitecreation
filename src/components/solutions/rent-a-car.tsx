@@ -1,18 +1,21 @@
 import Link from 'next/link';
-import { ArrowRight, ArrowUpRight, Briefcase, CalendarRange, Layers, MapPin, Network, Wallet } from 'lucide-react';
+import { CalendarRange, MapPin } from 'lucide-react';
 import { PageShell } from '@/components/bespoke/PageShell';
-import { PortfolioThumbnail } from '@/components/landing/PortfolioThumbnail';
+import { KitBreadcrumbs } from '@/components/page-kit';
 import {
-  Accent,
-  AgencyCtas,
-  Container,
-  CtaBand,
-  KitEyebrow,
-  KitHeading,
-  KitSection,
-  Stage,
-} from '@/components/kit';
-import { CardGrid, KitFaq, LinkCard, PageHero, SplitRow } from '@/components/page-kit';
+  AnnouncePill,
+  AppPanel,
+  TrustMarks,
+  WaveChoice,
+  WaveClose,
+  WaveHeading,
+  WaveHero,
+  WaveSection,
+  WaveStats,
+} from '@/components/pages/platform-wave/ui';
+import { accentEnd, ManagedFaq, ServiceHeroActions } from '@/components/pages/services-wave/ui';
+import { WorkCards } from '@/components/pages/industry-wave/ui';
+import { agencyTrust } from '@/components/kit/sections';
 import { RentalFixesPreview } from './RentalFixesPreview';
 import { getPortfolioByCategory } from '@/data/portfolio';
 import { services } from '@/data/services';
@@ -341,7 +344,6 @@ export function RentACarPage({ locale }: { locale: SiteLocale }) {
   );
 
   const tx = (en: string, el: string) => (isEl ? el : en);
-  const splitAt = Math.max(t.h1.lastIndexOf(' that '), t.h1.lastIndexOf(' που '));
 
   const widget = (
     <div className="overflow-hidden rounded-xl border border-hairline bg-background text-left">
@@ -373,206 +375,175 @@ export function RentACarPage({ locale }: { locale: SiteLocale }) {
   );
 
   return (
-    <PageShell locale={locale} signatureHue={SIGNATURE_HUE} schemas={schemas}>
-      <PageHero
-        locale={locale}
-        breadcrumbs={breadcrumbs}
-        pill={{
-          href: '#proof',
-          kind: 'popular',
-          tag: rentalCount,
-          text: tx('rental sites delivered, all live projects', 'sites ενοικίασης που έχουμε παραδώσει'),
-        }}
-        title={
-          splitAt > 0 ? (
-            <>
-              {t.h1.slice(0, splitAt + 1)}
-              <Accent>{t.h1.slice(splitAt + 1)}</Accent>
-            </>
-          ) : (
-            <>
-              {t.h1.split(' ').slice(0, 2).join(' ')} <Accent>{t.h1.split(' ').slice(2).join(' ')}</Accent>
-            </>
-          )
+    <PageShell locale={locale} signatureHue={SIGNATURE_HUE} className="overflow-x-clip" schemas={schemas}>
+      <WaveHero
+        pill={
+          <div className="flex flex-col items-start gap-4">
+            <KitBreadcrumbs items={breadcrumbs} align="left" />
+            <AnnouncePill
+              wrap
+              href="#proof"
+              tag={rentalCount}
+              text={tx('rental sites delivered, all live projects', 'sites ενοικίασης που έχουμε παραδώσει')}
+            />
+          </div>
         }
+        title={accentEnd(t.h1, isEl ? 3 : 3)}
+        titleClassName="text-[1.85rem] min-[400px]:text-[2.05rem] sm:text-[2.55rem] lg:text-[3rem]"
         lead={t.lede}
         actions={
-          <div className="flex flex-col items-center gap-3">
-            <AgencyCtas locale={locale} primaryHref={lp('/get-started?project=rent-a-car')} primaryLabel={t.ctaPrimary} />
-            <Link href="#proof" className="text-[14px] font-medium text-muted-foreground underline decoration-hairline underline-offset-4 hover:text-foreground">
-              {t.ctaSecondary}
-            </Link>
+          <ServiceHeroActions
+            locale={locale}
+            primaryHref={lp('/get-started?project=rent-a-car')}
+            primaryLabel={t.ctaPrimary}
+            links={[{ href: '#proof', label: t.ctaSecondary }]}
+          />
+        }
+        trust={<TrustMarks items={agencyTrust(locale).map((item) => item.label)} yesLabel={tx('Yes', 'Ναι')} />}
+        panel={
+          <div className="grid min-w-0 gap-4">
+            <AppPanel
+              url="app.anotherseoguru.com/sample/rent-a-car"
+              badge={tx('Sample data', 'Δείγμα δεδομένων')}
+              caption={t.widget.note}
+            >
+              {widget}
+            </AppPanel>
+            <RentalFixesPreview locale={locale} count={3} />
           </div>
         }
-      >
-        <Container className="mt-14">
-          <div className="grid gap-4 lg:grid-cols-[0.9fr_1.1fr]">
-            <Stage className="flex flex-col justify-center">
-              {widget}
-              <p className="mt-3 text-center text-[11.5px] text-muted-foreground">{t.widget.note}</p>
-            </Stage>
-            <Stage>
-              <RentalFixesPreview locale={locale} count={3} />
-            </Stage>
-          </div>
-          <div className="mt-8">
-            <KitEyebrow className="mb-3">{t.atAGlance}</KitEyebrow>
-            <dl className="grid overflow-hidden rounded-2xl border border-hairline bg-surface/60 text-left sm:grid-cols-3">
-              {stats.map((s, i) => (
-                <div key={s.k} className={`px-6 py-5 ${i > 0 ? 'border-t border-hairline sm:border-l sm:border-t-0' : ''}`}>
-                  <dt className="sr-only">{s.k}</dt>
-                  <dd className="font-display text-[24px] font-semibold tracking-[-0.03em] text-foreground">{s.v}</dd>
-                  <dd className="mt-1 text-[13.5px] text-muted-foreground">{s.k}</dd>
-                </div>
+        panelNote={t.widget.note}
+      />
+
+      <WaveSection shot="glance">
+        <WaveHeading eyebrow={t.atAGlance} title={tx('What a rental site has to cover', 'Τι πρέπει να καλύπτει ένα site ενοικίασης')} />
+        <dl className="mt-10 grid overflow-hidden rounded-[22px] border border-hairline sm:grid-cols-3">
+          {stats.map((stat, index) => (
+            <div key={stat.k} className={`min-w-0 bg-background px-5 py-6 sm:px-6 ${index > 0 ? 'border-t border-hairline sm:border-l sm:border-t-0' : ''}`}>
+              <dt className="text-pretty text-[13.5px] text-muted-foreground">{stat.k}</dt>
+              <dd className="mt-2 font-display text-[1.7rem] font-bold tracking-tight text-foreground">{stat.v}</dd>
+            </div>
+          ))}
+        </dl>
+      </WaveSection>
+
+      <WaveSection shot="pains" tinted>
+        <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-14">
+          <div className="min-w-0">
+            <WaveHeading eyebrow={t.season.eyebrow} title={accentEnd(t.season.title, isEl ? 3 : 3)} lead={t.season.body} />
+            <ul className="mt-6 space-y-2">
+              {t.season.points.map((point) => (
+                <li key={point} className="flex gap-2 text-pretty text-[15px] leading-6 text-foreground/90">
+                  <span className="text-primary" aria-hidden>✓</span>
+                  <span className="min-w-0">{point}</span>
+                </li>
               ))}
-            </dl>
+            </ul>
           </div>
-        </Container>
-      </PageHero>
-
-      <KitSection>
-        <div className="grid gap-24 sm:gap-28">
-          <SplitRow
-            eyebrow={t.season.eyebrow}
-            eyebrowIcon={<CalendarRange />}
-            title={t.season.title}
-            body={t.season.body}
-            bullets={t.season.points}
-            preview={
-              <Stage>
-                <div className="rounded-xl border border-hairline bg-background p-5 sm:p-6">
-                  <SeasonCurve months={t.season.months} />
-                  <p className="mt-5 border-t border-hairline pt-4 text-[11.5px] leading-relaxed text-muted-foreground">{t.season.caption}</p>
-                </div>
-              </Stage>
-            }
-          />
-          <SplitRow
-            flip
-            eyebrow={t.fleet.eyebrow}
-            eyebrowIcon={<Network />}
-            title={t.fleet.title}
-            body={t.fleet.body}
-            bullets={t.fleet.points}
-            preview={
-              <Stage>
-                <div className="rounded-xl border border-hairline bg-background p-5 font-mono text-[13px] sm:p-6">
-                  {t.fleet.tree.map((n) => (
-                    <div
-                      key={n.path}
-                      // Wraps so the label drops under the path on a 320px phone
-                      // instead of pushing past the edge of the sheet.
-                      className="flex flex-wrap items-baseline gap-x-3 gap-y-1 py-[7px]"
-                      style={{ paddingLeft: `${n.depth * 1.15}rem` }}
-                    >
-                      {n.depth > 0 && (
-                        <span aria-hidden className="text-muted-foreground/40">
-                          └
-                        </span>
-                      )}
-                      <span className="text-brand">{n.path}</span>
-                      <span className="ml-auto shrink-0 font-sans text-[11px] text-muted-foreground">{n.label}</span>
-                    </div>
-                  ))}
-                </div>
-              </Stage>
-            }
-          />
+          <div className="min-w-0 rounded-[22px] border border-hairline bg-background p-5 sm:p-6">
+            <SeasonCurve months={t.season.months} />
+            <p className="mt-5 border-t border-hairline pt-4 text-pretty text-[12.5px] leading-relaxed text-muted-foreground">{t.season.caption}</p>
+          </div>
         </div>
-      </KitSection>
+      </WaveSection>
 
-      {/* Channel math */}
-      <KitSection tinted>
-        <KitHeading eyebrow={t.channel.eyebrow} eyebrowIcon={<Wallet />} title={t.channel.title} description={t.channel.body} />
+      <WaveSection shot="fleet">
+        <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-14">
+          <div className="min-w-0">
+            <WaveHeading eyebrow={t.fleet.eyebrow} title={accentEnd(t.fleet.title, isEl ? 3 : 4)} lead={t.fleet.body} />
+            <ul className="mt-6 space-y-2">
+              {t.fleet.points.map((point) => (
+                <li key={point} className="flex gap-2 text-pretty text-[15px] leading-6 text-foreground/90">
+                  <span className="text-primary" aria-hidden>✓</span>
+                  <span className="min-w-0">{point}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="min-w-0 rounded-[22px] border border-hairline bg-background p-5 font-mono text-[13px] sm:p-6">
+            {t.fleet.tree.map((node) => (
+              <div key={node.path} className="flex flex-wrap items-baseline gap-x-3 gap-y-1 py-[7px]" style={{ paddingLeft: `${node.depth * 1.15}rem` }}>
+                {node.depth > 0 ? <span aria-hidden className="text-muted-foreground/40">└</span> : null}
+                <span className="min-w-0 break-all text-primary">{node.path}</span>
+                <span className="font-sans text-[11px] text-muted-foreground sm:ml-auto">{node.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </WaveSection>
+
+      <WaveSection shot="channel" tinted>
+        <WaveHeading eyebrow={t.channel.eyebrow} title={accentEnd(t.channel.title, isEl ? 3 : 3)} lead={t.channel.body} />
         <div className="mt-12 grid gap-4 md:grid-cols-2">
-          <div className="reveal rounded-2xl border border-hairline bg-background/70 p-6 sm:p-7">
-            <KitEyebrow>{t.channel.otaLabel}</KitEyebrow>
-            <div className="mt-3 font-display text-[22px] font-semibold tracking-[-0.025em] text-foreground">{t.channel.otaValue}</div>
+          <div className="min-w-0 rounded-[22px] border border-hairline bg-background/70 p-6 sm:p-7">
+            <div className="font-code text-[12px] font-semibold uppercase tracking-[0.14em] text-primary">{t.channel.otaLabel}</div>
+            <div className="mt-3 text-balance font-display text-[22px] font-semibold tracking-[-0.025em] text-foreground">{t.channel.otaValue}</div>
             <div className="mt-6 flex h-2 overflow-hidden rounded-full bg-hairline" aria-hidden>
               <span className="h-full w-[78%] bg-foreground/25" />
               <span className="h-full w-[22%] bg-destructive/70" />
             </div>
-            <p className="mt-4 text-[14.5px] leading-relaxed text-muted-foreground">{t.channel.otaNote}</p>
+            <p className="mt-4 text-pretty text-[14.5px] leading-relaxed text-muted-foreground">{t.channel.otaNote}</p>
           </div>
-          <div className="reveal rounded-2xl border border-brand/30 bg-background/70 p-6 sm:p-7">
-            <KitEyebrow className="text-brand">{t.channel.directLabel}</KitEyebrow>
-            <div className="mt-3 font-display text-[22px] font-semibold tracking-[-0.025em] text-foreground">{t.channel.directValue}</div>
+          <div className="min-w-0 rounded-[22px] border border-primary/30 bg-background/70 p-6 sm:p-7">
+            <div className="font-code text-[12px] font-semibold uppercase tracking-[0.14em] text-primary">{t.channel.directLabel}</div>
+            <div className="mt-3 text-balance font-display text-[22px] font-semibold tracking-[-0.025em] text-foreground">{t.channel.directValue}</div>
             <div className="mt-6 flex h-2 overflow-hidden rounded-full bg-hairline" aria-hidden>
-              <span className="h-full w-full bg-brand" />
+              <span className="h-full w-full bg-primary" />
             </div>
-            <p className="mt-4 text-[14.5px] leading-relaxed text-muted-foreground">{t.channel.directNote}</p>
+            <p className="mt-4 text-pretty text-[14.5px] leading-relaxed text-muted-foreground">{t.channel.directNote}</p>
           </div>
         </div>
-        <p className="mt-6 text-[12px] text-muted-foreground">{t.channel.footnote}</p>
-      </KitSection>
+        <p className="mt-6 text-pretty text-[12px] text-muted-foreground">{t.channel.footnote}</p>
+      </WaveSection>
 
-      {/* Proof wall: the real rental projects */}
-      <KitSection id="proof">
-        <KitHeading eyebrow={t.proof.eyebrow} eyebrowIcon={<Briefcase />} title={t.proof.title} description={t.proof.body} />
-        <CardGrid className="mt-12">
-          {projects.map((p) => (
-            <Link
-              key={p.slug}
-              href={lp(`/work/${p.slug}`)}
-              className="reveal group flex flex-col overflow-hidden rounded-2xl border border-hairline bg-surface/60 transition-colors hover:border-brand/40"
-            >
-              <div className="relative aspect-[16/10] overflow-hidden border-b border-hairline">
-                <PortfolioThumbnail src={p.screenshot} alt={p.name} className="transition-transform duration-500 group-hover:scale-[1.03]" />
-              </div>
-              <div className="flex flex-1 flex-col p-5">
-                <div className="flex items-start justify-between gap-3">
-                  <h3 className="text-[16px] font-semibold text-foreground">{p.name}</h3>
-                  <ArrowUpRight className="size-4 shrink-0 text-muted-foreground transition-colors group-hover:text-brand" aria-hidden />
-                </div>
-                <p className="mt-2 line-clamp-3 flex-1 text-[13.5px] leading-relaxed text-muted-foreground">{isEl ? p.summaryEl : p.summary}</p>
-              </div>
-            </Link>
-          ))}
-        </CardGrid>
-      </KitSection>
-
-      {/* Services applied */}
-      <KitSection tinted>
-        <KitHeading eyebrow={t.servicesBlock.eyebrow} eyebrowIcon={<Layers />} title={t.servicesBlock.title} description={t.servicesBlock.body} />
-        <CardGrid className="mt-10">
-          {services.map((s) => {
-            const el = isEl ? getServiceEl(s.slug) : null;
+      <WaveSection id="services" shot="services">
+        <WaveHeading eyebrow={t.servicesBlock.eyebrow} title={t.servicesBlock.title} lead={t.servicesBlock.body} />
+        <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {services.map((service) => {
+            const el = isEl ? getServiceEl(service.slug) : null;
             return (
-              <LinkCard
-                key={s.slug}
-                href={lp(industryServicePath('rent-a-car', s.slug, locale))}
-                title={el?.name ?? s.name}
-                text={el?.description ?? s.description}
-              />
+              <li key={service.slug} className="min-w-0">
+                <Link
+                  href={lp(industryServicePath('rent-a-car', service.slug, locale))}
+                  className="flex h-full min-w-0 flex-col rounded-[22px] border border-hairline bg-surface/60 p-6 transition-colors hover:border-primary/40"
+                >
+                  <h3 className="text-balance text-[18px] font-bold leading-snug text-foreground">{el?.name ?? service.name}</h3>
+                  <p className="mt-2 flex-1 text-pretty text-[14.5px] leading-relaxed text-muted-foreground">{el?.description ?? service.description}</p>
+                </Link>
+              </li>
             );
           })}
-        </CardGrid>
-        <p className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-[14px]">
+        </ul>
+        <p className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-[14.5px]">
           {isEl ? (
-            <Link href="/el/seo-tourismou/rent-a-car" className="inline-flex items-center gap-1.5 font-medium text-link underline-offset-4 hover:underline">
+            <Link href="/el/seo-tourismou/rent-a-car" className="inline-flex items-center gap-1.5 font-medium text-primary underline-offset-4 hover:underline">
               Υπηρεσίες SEO για rent a car
-              <ArrowRight className="size-4" aria-hidden />
+              <span aria-hidden>→</span>
             </Link>
           ) : null}
-          <Link href={lp('/pricing')} className="inline-flex items-center gap-1.5 font-medium text-link underline-offset-4 hover:underline">
+          <Link href={lp('/pricing')} className="inline-flex items-center gap-1.5 font-medium text-primary underline-offset-4 hover:underline">
             {t.cta.secondary}
-            <ArrowRight className="size-4" aria-hidden />
+            <span aria-hidden>→</span>
           </Link>
         </p>
-      </KitSection>
+      </WaveSection>
 
-      <KitFaq eyebrow={t.faq.eyebrow} title={t.faq.title} items={t.faq.items.map((f) => ({ question: f.q, answer: f.a }))} />
+      <WaveChoice locale={locale} source="solutions-rent-a-car-choice" />
+      <WaveStats locale={locale} />
 
-      <CtaBand
+      <WaveSection id="proof" shot="proof">
+        <WaveHeading eyebrow={t.proof.eyebrow} title={accentEnd(t.proof.title, 2)} lead={t.proof.body} />
+        <WorkCards projects={projects} locale={locale} />
+      </WaveSection>
+
+      <ManagedFaq
         locale={locale}
-        source="solutions-rent-a-car"
-        title={
-          <>
-            {t.cta.title.split(' ').slice(0, -2).join(' ')} <Accent>{t.cta.title.split(' ').slice(-2).join(' ')}</Accent>
-          </>
-        }
-        description={t.cta.body}
+        title={t.faq.title}
+        faqs={t.faq.items.map((item) => ({ question: item.q, answer: item.a }))}
+        askLabel={tx('Talk on WhatsApp', 'Μιλήστε στο WhatsApp')}
       />
+
+      <WaveClose locale={locale} source="solutions-rent-a-car" title={accentEnd(t.cta.title, 2)} lead={t.cta.body} />
     </PageShell>
   );
 }
