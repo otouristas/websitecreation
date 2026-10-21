@@ -105,6 +105,8 @@ export function WaveHero({
   trust,
   panel,
   panelNote,
+  extra,
+  titleClassName,
 }: {
   readonly shot?: string;
   readonly pill?: ReactNode;
@@ -114,6 +116,9 @@ export function WaveHero({
   readonly trust?: ReactNode;
   readonly panel: ReactNode;
   readonly panelNote?: ReactNode;
+  /** Second paragraph under the lead. Service pages already had one. */
+  readonly extra?: ReactNode;
+  readonly titleClassName?: string;
 }) {
   return (
     <section data-shot={shot} className="hero-below-header relative overflow-x-clip">
@@ -125,10 +130,11 @@ export function WaveHero({
       <div className="relative mx-auto grid max-w-[1320px] grid-cols-[minmax(0,1fr)] items-center gap-10 px-5 pb-16 pt-6 sm:pt-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.08fr)] lg:gap-12 lg:px-8 lg:pb-24 lg:pt-10">
         <div className="min-w-0">
           {pill}
-          <h1 className="mt-6 text-balance font-display text-[2rem] font-bold leading-[1.05] tracking-[-0.04em] text-foreground min-[400px]:text-[2.35rem] sm:text-[3.25rem] lg:text-[3.75rem]">
+          <h1 className={cn("mt-6 text-balance font-display text-[2rem] font-bold leading-[1.05] tracking-[-0.04em] text-foreground min-[400px]:text-[2.35rem] sm:text-[3.25rem] lg:text-[3.75rem]", titleClassName)}>
             {title}
           </h1>
           <p className="mt-6 max-w-[540px] text-pretty text-[17px] leading-[1.65] text-muted-foreground">{lead}</p>
+          {extra ? <p className="mt-4 max-w-[540px] text-pretty text-[15px] leading-relaxed text-muted-foreground">{extra}</p> : null}
           {actions ? <div className="mt-8">{actions}</div> : null}
           {trust ? <div className="mt-8">{trust}</div> : null}
         </div>
@@ -170,16 +176,16 @@ export function AppPanel({
   );
 }
 
-export function AnnouncePill({ href, tag, text }: { readonly href: string; readonly tag: string; readonly text: string }) {
+export function AnnouncePill({ href, tag, text, wrap = false }: { readonly href: string; readonly tag: string; readonly text: string; readonly wrap?: boolean }) {
   return (
     <Link
       href={href}
-      className="inline-flex max-w-full items-center gap-2 rounded-full border border-hairline bg-surface/80 py-1.5 pl-1.5 pr-4 text-[13px] text-muted-foreground backdrop-blur transition-colors hover:border-brand/40 hover:text-foreground"
+      className={`inline-flex max-w-full items-center gap-2 rounded-full border border-hairline bg-surface/80 py-1.5 pl-1.5 pr-4 text-[13px] text-muted-foreground backdrop-blur transition-colors hover:border-brand/40 hover:text-foreground ${wrap ? "whitespace-normal" : ""}`}
     >
       <span className="shrink-0 rounded-full bg-[linear-gradient(90deg,var(--primary),var(--signal))] px-2.5 py-0.5 text-[11px] font-bold text-primary-foreground">
         {tag}
       </span>
-      <span className="min-w-0 truncate">{text}</span>
+      <span className={`min-w-0 ${wrap ? "text-pretty" : "truncate"}`}>{text}</span>
       <span className="text-primary" aria-hidden>
         →
       </span>
@@ -231,6 +237,7 @@ export function WaveSteps({
   title,
   steps,
   actions,
+  lead,
 }: {
   readonly id?: string;
   readonly shot?: string;
@@ -238,12 +245,13 @@ export function WaveSteps({
   readonly title: ReactNode;
   readonly steps: readonly { readonly n: string; readonly title: string; readonly body: string }[];
   readonly actions?: ReactNode;
+  readonly lead?: ReactNode;
 }) {
   return (
     <section id={id} data-shot={shot} className="relative scroll-mt-28 overflow-x-clip border-y border-hairline bg-surface/35">
       <div aria-hidden className="pointer-events-none absolute left-1/2 top-0 h-[280px] w-[min(700px,100%)] -translate-x-1/2 rounded-full bg-primary/10 blur-3xl" />
       <div className="relative mx-auto max-w-[1240px] px-5 py-20 lg:px-8 lg:py-28">
-        <WaveHeading align="center" eyebrow={eyebrow} title={title} />
+        <WaveHeading align="center" eyebrow={eyebrow} title={title} lead={lead} />
         <ol className={cn("relative mt-14 grid gap-8", steps.length === 4 ? "md:grid-cols-2 lg:grid-cols-4" : "lg:grid-cols-3")}>
           <div aria-hidden className="absolute left-[12%] right-[12%] top-[34px] hidden h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent lg:block" />
           {steps.map((step) => (
@@ -502,10 +510,12 @@ export function WaveClose({
   locale,
   source,
   title,
+  lead,
 }: {
   readonly locale: SiteLocale;
   readonly source: string;
   readonly title: ReactNode;
+  readonly lead?: ReactNode;
 }) {
   const copy = homeCopy(locale);
   const signup = appLink("/signup", locale, `${source}-signup`);
@@ -521,6 +531,7 @@ export function WaveClose({
         <h2 className="mx-auto max-w-[900px] text-balance font-display text-[2.1rem] font-bold leading-[1.05] tracking-[-0.035em] text-foreground sm:text-[3.4rem]">
           {title}
         </h2>
+        {lead ? <p className="mx-auto mt-5 max-w-[720px] text-pretty text-[17px] leading-relaxed text-muted-foreground">{lead}</p> : null}
         <div className="mx-auto mt-12 grid max-w-[1080px] gap-5 text-left md:grid-cols-2">
           <div className="min-w-0 rounded-[22px] border border-hairline bg-surface/75 p-6 backdrop-blur sm:p-8">
             <div className="text-[12px] font-semibold uppercase tracking-wider text-success">{copy.doneEyebrow}</div>

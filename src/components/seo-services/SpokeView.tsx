@@ -1,15 +1,31 @@
 import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Breadcrumbs from '@/components/seo/Breadcrumbs';
 import SchemaMarkup from '@/components/seo/SchemaMarkup';
 import RelatedPages from '@/components/seo/RelatedPages';
-import { CtaBand, KitHeading, KitSection, kitSecondaryBtn } from '@/components/kit';
-import { AccentTitle, CardGrid, DiyRow, FaqBlock, ProcessGrid, ServiceHero } from '@/components/service-kit';
+import { AuditPreview, ContentPreview, KeywordsPreview, agencyTrust, kitSecondaryBtn } from '@/components/kit';
+import { DiyRow } from '@/components/service-kit';
 import { PriceCard } from '@/components/pricing/PriceCard';
+import { homeCopy } from '@/components/pages/home/copy';
+import {
+  AnnouncePill,
+  AppPanel,
+  TrustMarks,
+  WaveChoice,
+  WaveClose,
+  WaveHeading,
+  WaveHero,
+  WaveSection,
+  WaveStats,
+  WaveSteps,
+} from '@/components/pages/platform-wave/ui';
+import { ManagedFaq, RiskBuckets, ServiceHeroActions, accentEnd, type RiskItem, type RiskTier } from '@/components/pages/services-wave/ui';
 import {
   fillSpokePrices,
   getSeoServiceCards,
   type SpokePageCopy,
+  type SpokeSlug,
 } from '@/data/seo-service-spokes';
 import { SEO_MIN_TERM_MONTHS } from '@/data/company-facts';
 import { VAT_RATE, addOns, formatPrice, seoPackages, withVat } from '@/data/pricing';
@@ -27,11 +43,48 @@ import {
  * Shared layout for /seo-services/technical, /on-page and /strategy.
  * Prices are the Foundations tier and the technical-audit add-on only.
  */
+const ACCENT_WORDS: Record<SpokeSlug, Record<SiteLocale, number>> = {
+  technical: { en: 4, el: 5 },
+  'on-page': { en: 5, el: 4 },
+  strategy: { en: 3, el: 3 },
+};
+
+function item(copy: SpokePageCopy, index: number): RiskItem {
+  const source = copy.includes.items[index];
+  return { key: source.title, title: source.title, body: source.body };
+}
+
+function riskTiers(copy: SpokePageCopy, locale: SiteLocale): readonly RiskTier[] {
+  const isEl = locale === 'el';
+  switch (copy.slug) {
+    case 'technical':
+      return [
+        { id: 'fetch', label: isEl ? 'Αν δεν διαβάζεται' : 'If it is not fetched', items: [item(copy, 0), item(copy, 3)] },
+        { id: 'signals', label: isEl ? 'Αν τα σήματα δεν ταιριάζουν' : 'If the signals are wrong', items: [item(copy, 1), item(copy, 2)] },
+      ];
+    case 'on-page':
+      return [
+        { id: 'which', label: isEl ? 'Ποια σελίδα' : 'Which page', items: [item(copy, 0)] },
+        { id: 'itself', label: isEl ? 'Η ίδια η σελίδα' : 'The page itself', items: [item(copy, 1), item(copy, 2), item(copy, 3)] },
+      ];
+    case 'strategy':
+      return [
+        { id: 'url', label: isEl ? 'Ποιο URL' : 'Which URL', items: [item(copy, 0), item(copy, 1)] },
+        { id: 'month', label: isEl ? 'Κάθε μήνας' : 'Each month', items: [item(copy, 2), item(copy, 3)] },
+      ];
+    default: {
+      const unknown: never = copy.slug;
+      return unknown;
+    }
+  }
+}
+
 export function SpokeView({ locale, copy }: { readonly locale: SiteLocale; readonly copy: SpokePageCopy }) {
   const isEl = locale === 'el';
   const lp = (path: string) => localizedPath(locale, path);
   const fill = (text: string) =>
     fillSpokePrices(text, locale).replace(/\{\{MONTHS\}\}/g, String(SEO_MIN_TERM_MONTHS));
+  const tx = (en: string, el: string) => (isEl ? el : en);
 
   const breadcrumbItems = generateBreadcrumbs(
     [
@@ -43,7 +96,7 @@ export function SpokeView({ locale, copy }: { readonly locale: SiteLocale; reado
 
   const faqs = copy.faqs.map((faq) => ({ question: faq.question, answer: fill(faq.answer) }));
   const foundations = seoPackages.find((tier) => tier.id === 'foundations');
-  const audit = addOns.find((item) => item.id === 'technical-audit');
+  const audit = addOns.find((entry) => entry.id === 'technical-audit');
   if (!foundations || !audit) {
     throw new Error('Published SEO price list is missing Foundations or the technical audit add-on.');
   }
@@ -70,54 +123,89 @@ export function SpokeView({ locale, copy }: { readonly locale: SiteLocale; reado
 
   const vatPct = Math.round(VAT_RATE * 100);
   const auditGross = withVat(audit.from);
+  const preview =
+    copy.slug === 'technical' ? (
+      <AuditPreview locale={locale} />
+    ) : copy.slug === 'on-page' ? (
+      <ContentPreview locale={locale} />
+    ) : (
+      <KeywordsPreview locale={locale} />
+    );
+  const previewUrl =
+    copy.slug === 'technical'
+      ? 'app.anotherseoguru.com/audit'
+      : copy.slug === 'on-page'
+        ? 'app.anotherseoguru.com/content'
+        : 'app.anotherseoguru.com/keywords';
 
   return (
     <>
       <SchemaMarkup schemas={schemas} />
       <Header locale={locale} />
-      <main className="blueprint-grid relative z-0">
-        <ServiceHero
-          locale={locale}
-          breadcrumbs={breadcrumbItems}
-          h1={copy.h1}
+      <main className="blueprint-grid relative z-0 overflow-x-clip">
+        <WaveHero
+          titleClassName="text-[1.85rem] min-[400px]:text-[2.05rem] sm:text-[2.55rem] lg:text-[3rem]"
+          pill={
+            <div className="flex min-w-0 flex-col items-start gap-4">
+              <Breadcrumbs items={breadcrumbItems} className="min-w-0 max-w-full" />
+              <AnnouncePill href={lp('/seo-services')} tag={copy.eyebrow} text={isEl ? 'Μέρος των υπηρεσιών SEO' : 'Part of SEO services'} wrap />
+            </div>
+          }
+          title={accentEnd(copy.h1, ACCENT_WORDS[copy.slug][locale])}
           lead={copy.lead}
           extra={copy.extra}
-          primaryHref={lp('/get-started')}
-          primaryLabel={copy.cta.primary}
-          links={[
-            { href: lp('/pricing'), label: copy.cta.secondary },
-            { href: lp(copy.guide.href), label: copy.guide.label },
-          ]}
+          actions={
+            <ServiceHeroActions
+              locale={locale}
+              primaryHref={lp('/get-started')}
+              primaryLabel={copy.cta.primary}
+              links={[
+                { href: lp('/pricing'), label: copy.cta.secondary },
+                { href: lp(copy.guide.href), label: copy.guide.label },
+              ]}
+            />
+          }
+          trust={<TrustMarks items={agencyTrust(locale).map((entry) => entry.label)} yesLabel={homeCopy(locale).markYes} />}
+          panel={
+            <AppPanel
+              url={previewUrl}
+              badge={tx('Sample data', 'Δείγμα δεδομένων')}
+              caption={tx('Sample data for a fictional site.', 'Δείγμα δεδομένων για φανταστικό ιστότοπο.')}
+            >
+              {preview}
+            </AppPanel>
+          }
         />
 
-        <KitSection className="mt-6 sm:mt-10">
-          <KitHeading eyebrow={copy.eyebrow} title={<AccentTitle text={copy.includes.title} />} description={copy.includes.intro} />
-          <CardGrid className="mt-12" cols={2} items={copy.includes.items} />
-        </KitSection>
+        <WaveSection id="scope" shot="risks">
+          <WaveHeading eyebrow={copy.eyebrow} title={accentEnd(copy.includes.title, 2)} lead={copy.includes.intro} />
+          <RiskBuckets tiers={riskTiers(copy, locale)} />
+        </WaveSection>
 
-        <KitSection tinted id="process">
-          <KitHeading
-            eyebrow={isEl ? 'Διαδικασία' : 'Process'}
-            title={<AccentTitle text={copy.process.title} />}
-            description={copy.process.intro}
-          />
-          <ProcessGrid className="mt-12" steps={copy.process.steps} />
-        </KitSection>
+        <WaveSteps
+          id="process"
+          eyebrow={tx('Process', 'Διαδικασία')}
+          title={accentEnd(copy.process.title, 2)}
+          lead={copy.process.intro}
+          steps={copy.process.steps.map((step, index) => ({
+            n: String(index + 1).padStart(2, '0'),
+            title: step.title,
+            body: step.body,
+          }))}
+        />
 
-        <KitSection id="pricing">
-          <KitHeading
-            eyebrow={isEl ? 'Τιμές' : 'Pricing'}
-            title={<AccentTitle text={copy.pricing.title} />}
-            description={copy.pricing.intro}
-          />
+        <WaveChoice locale={locale} source={`seo-services-${copy.slug}-choice`} />
+
+        <WaveSection id="pricing" shot="pricing" tinted>
+          <WaveHeading eyebrow={tx('Pricing', 'Τιμές')} title={accentEnd(copy.pricing.title, 2)} lead={copy.pricing.intro} />
           <div className="mt-12 grid items-stretch gap-6 lg:grid-cols-2">
             <PriceCard tier={foundations} locale={locale} recurring />
-            <div className="h-full rounded-2xl border border-hairline">
+            <div className="h-full min-w-0 rounded-2xl border border-hairline">
               <div className="flex h-full flex-col rounded-[calc(1rem-1px)] bg-surface/60 p-6 sm:p-7">
-                <h3 className="font-display text-[20px] font-semibold tracking-[-0.025em] text-foreground">
+                <h3 className="text-balance font-display text-[20px] font-semibold tracking-[-0.025em] text-foreground">
                   {isEl ? audit.nameEl : audit.nameEn}
                 </h3>
-                <p className="mt-2 text-[14px] leading-relaxed text-muted-foreground">
+                <p className="mt-2 text-pretty text-[14px] leading-relaxed text-muted-foreground">
                   {isEl
                     ? 'Εφάπαξ πρόσθετο. Η τιμή του τιμοκαταλόγου είναι «από», γιατί το εύρος αλλάζει το τελικό ποσό.'
                     : 'One-off add-on. The list price is a from-price, because scope changes the final figure.'}
@@ -140,28 +228,45 @@ export function SpokeView({ locale, copy }: { readonly locale: SiteLocale; reado
               </div>
             </div>
           </div>
-          <p className="mx-auto mt-8 max-w-2xl text-center text-[14px] leading-relaxed text-muted-foreground">{fill(copy.pricing.note)}</p>
+          <p className="mx-auto mt-8 max-w-2xl text-pretty text-center text-[14px] leading-relaxed text-muted-foreground">{fill(copy.pricing.note)}</p>
           <p className="mt-4 text-center text-[14px]">
             <Link href={lp('/pricing')} className="font-medium text-link underline-offset-4 hover:underline">
               {isEl ? 'Όλος ο τιμοκατάλογος, με ΦΠΑ' : 'The full price list, with VAT'}
             </Link>
           </p>
-        </KitSection>
+        </WaveSection>
 
-        <KitSection tinted>
-          <KitHeading title={<AccentTitle text={copy.otherTitle} />} description={copy.otherIntro} />
-          <CardGrid className="mt-12" items={others} locale={locale} />
-        </KitSection>
+        <WaveSection shot="others">
+          <WaveHeading title={accentEnd(copy.otherTitle, 2)} lead={copy.otherIntro} />
+          <RiskBuckets
+            tiers={[
+              {
+                id: 'siblings',
+                label: '',
+                items: others.map((card) => ({
+                  key: card.href,
+                  title: card.title,
+                  body: card.body,
+                  href: lp(card.href),
+                })),
+              },
+            ]}
+          />
+        </WaveSection>
 
-        <DiyRow locale={locale} source={`seo-services-${copy.slug}`} />
+        <div data-shot="diy">
+          <DiyRow locale={locale} source={`seo-services-${copy.slug}`} />
+        </div>
 
-        <FaqBlock locale={locale} title={<AccentTitle text={copy.faqTitle} />} faqs={faqs} />
+        <WaveStats locale={locale} />
 
-        <KitSection className="py-14 sm:py-16">
-          <RelatedPages title={copy.relatedTitle} pages={related.map((item) => ({ slug: lp(item.path), title: item.title }))} />
-        </KitSection>
+        <ManagedFaq locale={locale} title={accentEnd(copy.faqTitle, 1)} faqs={faqs} askLabel={tx('Talk on WhatsApp', 'Μιλήστε στο WhatsApp')} />
 
-        <CtaBand locale={locale} source={`seo-services-${copy.slug}`} title={<AccentTitle text={copy.cta.title} />} description={copy.cta.body} />
+        <WaveSection shot="related">
+          <RelatedPages title={copy.relatedTitle} pages={related.map((entry) => ({ slug: lp(entry.path), title: entry.title }))} />
+        </WaveSection>
+
+        <WaveClose locale={locale} source={`seo-services-${copy.slug}`} title={accentEnd(copy.cta.title, 4)} lead={copy.cta.body} />
       </main>
       <Footer locale={locale} />
     </>
