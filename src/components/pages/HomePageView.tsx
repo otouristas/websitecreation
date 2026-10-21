@@ -16,6 +16,7 @@ import { homeCopy, type HomeCopy } from '@/components/pages/home/copy';
 import { SampleWindow } from '@/components/pages/home/SampleWindow';
 import { appLink } from '@/components/gsc-boost/copy';
 import { portfolioProjects } from '@/data/portfolio';
+import { HOME_LOGOS } from '@/data/home-content';
 import { FOUNDER_YEARS, PROJECTS_DELIVERED } from '@/data/founder';
 import { LEGAL_ENTITY_ID, LEGAL_ENTITY_NAME } from '@/data/legal-entity';
 import { MARKET_COUNT, RESPONSE_HOURS } from '@/data/company-facts';
@@ -213,16 +214,31 @@ export function HomePageView({ locale }: { readonly locale: SiteLocale }) {
 
         <section className="border-y border-hairline bg-surface/40">
           <div className="mx-auto max-w-[1240px] px-5 py-9 lg:px-8">
-            <div className="flex flex-col items-center gap-7 lg:flex-row lg:justify-between">
-              <p className="shrink-0 text-center text-[13px] text-muted-foreground lg:max-w-[200px] lg:text-left">{copy.trustIntro}</p>
-              <ul className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-[15px] font-semibold tracking-tight text-muted-foreground">
-                {TRUST_DOMAINS.map((domain) => (
-                  <li key={domain.slug}>
-                    <Link href={lp(`/work/${domain.slug}`)} className="hover:text-foreground">{domain.host}</Link>
-                  </li>
-                ))}
-              </ul>
+            <p className="mb-6 text-center text-[13px] text-muted-foreground">{copy.trustIntro}</p>
+            <div className="flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
+              {[false, true].map((hidden) => (
+                <div key={String(hidden)} className="marquee flex shrink-0 items-center gap-14 pr-14" aria-hidden={hidden || undefined}>
+                  {HOME_LOGOS.map((logo) => (
+                    <Image
+                      key={`${logo.alt}-${hidden}`}
+                      src={logo.src}
+                      alt={hidden ? '' : logo.alt}
+                      width={140}
+                      height={44}
+                      unoptimized={logo.src.endsWith('.svg')}
+                      className="h-10 w-auto max-w-[140px] object-contain opacity-70 grayscale transition duration-300 hover:opacity-100 dark:invert light:hover:grayscale-0"
+                    />
+                  ))}
+                </div>
+              ))}
             </div>
+            <ul className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[13px] font-medium text-muted-foreground">
+              {TRUST_DOMAINS.map((domain) => (
+                <li key={domain.slug}>
+                  <Link href={lp(`/work/${domain.slug}`)} className="hover:text-foreground">{domain.host}</Link>
+                </li>
+              ))}
+            </ul>
             <div className="my-7 h-px bg-[linear-gradient(90deg,transparent,var(--hairline),transparent)]" />
             <ul className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-[13.5px] text-muted-foreground">
               <li className="text-muted-foreground/80">{copy.worksWith}</li>
