@@ -29,6 +29,7 @@ const RETIRED_WORK_SLUGS = [
   "the-ace-vip",
   "travel-sifnos",
   "vape-and-more",
+  "villa-olivia-clara",
   "villas-katerina",
 ] as const;
 
@@ -151,6 +152,29 @@ const nextConfig: NextConfig = {
         source: '/work/:path*',
         destination: '/en/work/:path*',
         permanent: true,
+      },
+      // Retired service slug. 301, not Next's default 308 for `permanent`.
+      // City variants stay in middleware so Rethymno can land on the live
+      // SEO-audits page instead of a 410.
+      {
+        source: '/services/seo-web-design',
+        destination: '/en/services/web-design',
+        statusCode: 301,
+      },
+      {
+        source: '/:locale(en|el)/services/seo-web-design',
+        destination: '/:locale/services/web-design',
+        statusCode: 301,
+      },
+      {
+        source: '/solutions/:industry/seo-web-design',
+        destination: '/en/solutions/:industry/web-design',
+        statusCode: 301,
+      },
+      {
+        source: '/:locale(en|el)/solutions/:industry/seo-web-design',
+        destination: '/:locale/solutions/:industry/web-design',
+        statusCode: 301,
       },
       {
         source: '/services/:path*',

@@ -310,7 +310,7 @@ export const STAY_VERTICALS: readonly TourismVertical[] = [
       { href: '/el/blog/sxediasmos-istoselidas-tourismos-2026', title: 'Σχεδιασμός ιστοσελίδας τουρισμού', body: 'Τάσεις, SEO και UX για καταλύματα το 2026.' },
       { href: '/el/services/local-seo', title: 'Τοπικό SEO', body: 'Google Business Profile, χάρτης και κριτικές.' },
     ],
-    workSlugs: ['villa-olivia-clara', 'mykonos-luxury', 'ktima-orion'],
+    workSlugs: ['mykonos-luxury', 'ktima-orion'],
     enAlternate: '/en/solutions/villas-apartments',
     serviceType: 'Υπηρεσίες SEO για βίλες και ενοικιαζόμενα καταλύματα',
   },

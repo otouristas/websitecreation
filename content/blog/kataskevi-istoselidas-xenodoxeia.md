@@ -79,7 +79,7 @@ faq:
 - Πράσινα Core Web Vitals σε κινητό (LCP, INP, CLS).
 - Hreflang για EL/EN (και επιπλέον αγορές υψηλής αξίας).
 - Καθαρό XML sitemap και schema Hotel/FAQ.
-- [SEO-ready κατασκευή](/el/services/seo-web-design) από την πρώτη μέρα - όχι «θα το δούμε μετά».
+- [SEO-ready κατασκευή](/el/services/web-design) από την πρώτη μέρα - όχι «θα το δούμε μετά».
 
 ## Τα Συχνότερα Λάθη σε Hotel Sites
 
@@ -115,7 +115,7 @@ faq:
 
 ## Schema και Εμφάνιση στις Αναζητήσεις
 
-Hotel/LodgingBusiness schema, τιμές/προσφορές όπου επιτρέπεται, FAQ και κριτικές βοηθούν την κατανόηση από Google και AI assistants. Συνδυάστε τα με γρήγορες σελίδες δωματίων και καθαρό NAP στο Google Business Profile. Η τεχνική βάση ανήκει στην [SEO-ready κατασκευή](/el/services/seo-web-design) - όχι σε «plugin μετά».
+Hotel/LodgingBusiness schema, τιμές/προσφορές όπου επιτρέπεται, FAQ και κριτικές βοηθούν την κατανόηση από Google και AI assistants. Συνδυάστε τα με γρήγορες σελίδες δωματίων και καθαρό NAP στο Google Business Profile. Η τεχνική βάση ανήκει στην [SEO-ready κατασκευή](/el/services/web-design) - όχι σε «plugin μετά».
 
 ## Εποχικότητα και Περιεχόμενο
 

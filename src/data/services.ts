@@ -46,7 +46,7 @@ export const services: Service[] = [
         icon: 'refresh',
     },
     {
-        slug: 'seo-web-design',
+        slug: 'web-design',
         name: 'Web Design',
         shortName: 'Web Design',
         description: 'Websites designed with SEO at the core. Technical SEO, schema markup, and internal linking built-in.',

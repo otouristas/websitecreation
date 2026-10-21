@@ -89,7 +89,7 @@ const BUILDERS: Record<string, Builder> = {
     ],
   }),
 
-  'seo-web-design': (c) => ({
+  'web-design': (c) => ({
     heading: `Σχεδιασμός με SEO ${c.inCity}`,
     paragraphs: [
       `Ο σχεδιασμός και το SEO αποφασίζονται μαζί. Η αρχιτεκτονική της ιστοσελίδας - ποιες σελίδες υπάρχουν, πώς ομαδοποιούνται και πώς συνδέονται μεταξύ τους - καθορίζει τι μπορεί να καταταγεί, πολύ πριν γραφτεί το πρώτο κείμενο.`,
@@ -246,7 +246,7 @@ const BUILDERS: Record<string, Builder> = {
 const TOURISM_SERVICES = new Set([
   'website-creation',
   'website-redesign',
-  'seo-web-design',
+  'web-design',
   'local-seo',
   'ai-visibility',
   'content-creation',

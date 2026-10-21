@@ -1329,7 +1329,7 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
       'Corfu combines Ionian tourism appeal with a year-round local economy that many island strategies ignore. Hotels, villas, and experience brands need bilingual SEO to win visitor bookings, while local services can still capture near-me demand with strong Google Business Profile fundamentals. We build fast websites and local programs that separate resident and visitor intent, improve conversion paths, and keep your brand visible through peak season and quieter months. Technical quality and clear offers outperform thin template sites that never rank. Pricing is quoted in EUR.',
     tourism: true,
     nearbySlugs: ['patras-gr', 'athens-gr', 'santorini-gr'],
-    portfolioSlugs: ['villa-olivia-clara'],
+    portfolioSlugs: [],
     faqs: [
       {
         question: 'Do Corfu hospitality businesses need English SEO?',

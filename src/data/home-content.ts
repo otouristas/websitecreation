@@ -205,7 +205,6 @@ export const HOME_REASONS: readonly HomeReason[] = [
 export const HOME_LOGOS = [
   { src: '/logos/assets/naxos-auto-rent.png', alt: 'Naxos Auto Rent' },
   { src: '/logos/assets/artemis-auto-rental.svg', alt: 'Artemis Rental Sifnos' },
-  { src: '/logos/assets/villa-olivia-clara-logo-768x204.png', alt: 'Villa Olivia Clara' },
   { src: '/logos/assets/fastmotorrental-naxos.png', alt: 'Fast Motor Rental Naxos' },
   { src: '/logos/assets/roadrunner-folegandros.png', alt: 'Road Runner Folegandros' },
   { src: '/logos/assets/aggelosrentals.png', alt: 'Aggelos Rentals' },
@@ -228,11 +227,6 @@ export const HOME_TESTIMONIALS: Record<'en' | 'el', readonly HomeTestimonial[]> 
       text: 'Our new site handles fleet browsing and island SEO properly - bookings come directly instead of only through aggregators.',
     },
     {
-      name: 'Villa Olivia Clara',
-      role: 'Luxury villa, Greece',
-      text: 'The design matches our brand and ranks for international villa searches. Inquiry quality improved within the first season.',
-    },
-    {
       name: 'Discover Cyclades',
       role: 'Travel guide',
       text: 'Content hubs and internal linking brought steady organic growth across island pages - exactly the architecture we needed.',
@@ -245,11 +239,6 @@ export const HOME_TESTIMONIALS: Record<'en' | 'el', readonly HomeTestimonial[]> 
       text: 'Η νέα ιστοσελίδα δείχνει τον στόλο σωστά και κατατάσσεται για αναζητήσεις στο νησί - περισσότερες άμεσες κρατήσεις.',
     },
     {
-      name: 'Villa Olivia Clara',
-      role: 'Πολυτελής βίλα',
-      text: 'Σχεδιασμός που ταιριάζει στο brand μας και κατάταξη για διεθνείς αναζητήσεις. Καλύτερα αιτήματα από την πρώτη σεζόν.',
-    },
-    {
       name: 'Discover Cyclades',
       role: 'Ταξιδιωτικός οδηγός',
       text: 'Οι θεματικοί κόμβοι και η εσωτερική διασύνδεση έφεραν σταθερή οργανική ανάπτυξη στις σελίδες των νησιών.',
@@ -259,7 +248,7 @@ export const HOME_TESTIMONIALS: Record<'en' | 'el', readonly HomeTestimonial[]> 
 
 /** Live, featured projects shown in the homepage work rail, in order. */
 export const HOME_WORK_SLUGS = [
-  'cyclades-rentacar', 'onoma-hotel', 'villa-olivia-clara',
+  'cyclades-rentacar', 'onoma-hotel',
   'project-shadow-ai', 'thenutrinest', 'vwanaki', 'helicro',
 ] as const;
 

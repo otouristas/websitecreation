@@ -155,7 +155,7 @@ export const SERVICE_PRESETS: Readonly<Record<string, Partial<EstimateInput>>> =
   'eshop-seo': { track: 'seo', seoTier: 'authority', contentPagesPerMonth: 3, auditDepth: 'advanced' },
   'website-creation': { track: 'website', auditDepth: 'none', features: ['contact-form'] },
   'website-redesign': { track: 'both', auditDepth: 'technical', seoTier: 'growth' },
-  'seo-web-design': { track: 'both', auditDepth: 'technical', seoTier: 'growth' },
+  'web-design': { track: 'both', auditDepth: 'technical', seoTier: 'growth' },
   'speed-optimization': { track: 'website', auditDepth: 'technical', features: [] },
   'logo-design': { track: 'website', auditDepth: 'none', features: ['logo'] },
   'eshop-woocommerce': { track: 'website', auditDepth: 'none', features: ['ecommerce', 'contact-form'], pages: 15 },

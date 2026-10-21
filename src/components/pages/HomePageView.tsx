@@ -1,63 +1,138 @@
-import { AsterIdentity } from "@/components/landing/AsterIdentity";
-import { SeoChatDemo } from "@/components/landing/SeoChatDemo";
-import { ProductEcosystem } from "@/components/landing/ProductEcosystem";
+import Image from 'next/image';
 import Link from 'next/link';
-import { Bot, Calculator, Globe, LineChart, MapPin, Target, TrendingUp } from 'lucide-react';
+import {
+  BarChart3,
+  ListChecks,
+  MonitorSmartphone,
+  Sparkles,
+  TrendingUp,
+} from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import SchemaMarkup from '@/components/seo/SchemaMarkup';
-import { HomeFaq } from '@/components/marketing';
-import { ProofRail, ScanWidget, SeoPricingBlock, TestimonialsWall, VerticalsStrip, WorkRail } from '@/components/landing';
-import {
-  Accent,
-  AiVisibilityPreview,
-  AuditPreview,
-  BeforeAfter,
-  Container,
-  CtaBand,
-  DecisionsPanel,
-  FeatureRow,
-  HeroCentered,
-  KitHeading,
-  KitSection,
-  LocalPackPreview,
-  ProductBento,
-  RawQueriesPanel,
-  ReportPreview,
-  SoftwareCtas,
-  Stage,
-  TrustLine,
-  ValueTrio,
-  agencyTrust,
-} from '@/components/kit';
-import { elHome } from '@/data/translations/el-home';
-import { resolvePriceTokens } from '@/data/pricing';
-import { generateOrganizationSchema } from '@/lib/seo/schema';
-import { BASE_URL } from '@/lib/seo/description';
-import { getAppPath } from '@/lib/app-links';
+import { GoogleTile } from '@/components/kit';
+import { WhatsAppIcon } from '@/components/icons/WhatsAppIcon';
+import { homeCopy, type HomeCopy } from '@/components/pages/home/copy';
+import { SampleWindow } from '@/components/pages/home/SampleWindow';
+import { appLink } from '@/components/gsc-boost/copy';
+import { portfolioProjects } from '@/data/portfolio';
+import { FOUNDER_YEARS, PROJECTS_DELIVERED } from '@/data/founder';
 import { LEGAL_ENTITY_ID, LEGAL_ENTITY_NAME } from '@/data/legal-entity';
-import { FOUNDER_YEARS, PROJECTS_DELIVERED, consultantPath } from '@/data/founder';
+import { MARKET_COUNT, RESPONSE_HOURS } from '@/data/company-facts';
+import { WHATSAPP_HREF } from '@/lib/contact-info';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
+import { BASE_URL } from '@/lib/seo/description';
+import { generateFAQSchema, generateOrganizationSchema } from '@/lib/seo/schema';
+
+const SHOWCASE = [
+  { slug: 'cyclades-rentacar', categoryEn: 'Rent-a-car', categoryEl: 'Rent-a-car' },
+  { slug: 'onoma-hotel', categoryEn: 'Hotels', categoryEl: 'Ξενοδοχεία' },
+  { slug: 'helicro', categoryEn: 'Travel', categoryEl: 'Ταξίδια' },
+] as const;
+
+const TRUST_DOMAINS = [
+  { host: 'cycladesrentacar.com', slug: 'cyclades-rentacar' },
+  { host: 'onomahotel.com', slug: 'onoma-hotel' },
+  { host: 'projectshadow.ai', slug: 'project-shadow-ai' },
+  { host: 'thenutrinest.gr', slug: 'thenutrinest' },
+  { host: 'vwanaki.gr', slug: 'vwanaki' },
+  { host: 'helicro.be', slug: 'helicro' },
+] as const;
+
+const CARD_ICONS = [TrendingUp, BarChart3, Sparkles, ListChecks, Sparkles, MonitorSmartphone] as const;
+
+const primaryBtn =
+  'inline-flex min-h-12 items-center justify-center gap-2.5 rounded-full px-5 py-3 text-center font-display text-[15px] font-semibold asg-primary-action shadow-[inset_0_1px_0_0_oklch(1_0_0/18%),0_10px_28px_-12px_color-mix(in_oklab,var(--primary)_75%,transparent)] transition-[transform,background-color] duration-200 hover:-translate-y-px motion-reduce:transition-none motion-reduce:hover:translate-y-0';
+
+const ghostBtn =
+  'inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-hairline bg-surface/50 px-5 py-3 text-center text-[15px] font-semibold text-foreground backdrop-blur transition-colors hover:border-brand/50';
+
+function Accent({ children }: { readonly children: string }) {
+  return (
+    <span className="bg-[linear-gradient(90deg,var(--primary),var(--signal))] bg-clip-text italic text-transparent">
+      {children}
+    </span>
+  );
+}
+
+function Eyebrow({ children }: { readonly children: string }) {
+  return (
+    <div className="font-code text-[12px] font-semibold uppercase tracking-[0.16em] text-primary">{children}</div>
+  );
+}
+
+function Mark({ kind, label }: { readonly kind: 'yes' | 'some' | 'no'; readonly label: string }) {
+  const glyph = kind === 'yes' ? '✓' : kind === 'some' ? '~' : '-';
+  const tone =
+    kind === 'yes'
+      ? 'bg-success/15 text-success'
+      : kind === 'some'
+        ? 'bg-warning/15 text-warning'
+        : 'bg-foreground/10 text-muted-foreground';
+  return (
+    <span role="img" aria-label={label} className={`inline-grid size-[22px] place-items-center rounded-full text-[13px] font-bold ${tone}`}>
+      {glyph}
+    </span>
+  );
+}
+
+function IntegrationIcon({ icon }: { readonly icon: HomeCopy['integrations'][number]['icon'] }) {
+  if (icon === 'gsc' || icon === 'ga' || icon === 'wp') {
+    const src =
+      icon === 'gsc'
+        ? '/integrations/service-google_search_console.svg'
+        : icon === 'ga'
+          ? '/integrations/service-google_analytics.svg'
+          : '/integrations/service-wordpress.svg';
+    return <img src={src} alt="" width={20} height={20} className={`size-5 ${icon === 'wp' ? 'rounded-full bg-white p-px' : ''}`} />;
+  }
+  if (icon === 'chrome') {
+    return (
+      <svg className="size-5 text-foreground/80" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
+        <circle cx="12" cy="12" r="9" />
+        <circle cx="12" cy="12" r="3.5" />
+        <path d="M12 8.5h8M8.9 13.8 4.6 6.6M15 13.8l-4 7" />
+      </svg>
+    );
+  }
+  if (icon === 'iphone') {
+    return (
+      <svg className="size-5 text-foreground/80" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
+        <rect x="7" y="2.5" width="10" height="19" rx="2.5" />
+        <path d="M11 18.5h2" />
+      </svg>
+    );
+  }
+  return (
+    <span className="grid size-5 place-items-center rounded bg-foreground/10 font-code text-[9px] text-foreground/80" aria-hidden>
+      {'{ }'}
+    </span>
+  );
+}
 
 /**
- * Homepage, in the app landing's design language on the site's own colours.
- *
- * Order: centered hero with the instant scan, the product window, client
- * logos, "reports vs decisions" before/after, the four services as
- * alternating feature rows, verticals, live work, pricing, the AnotherSEOGuru App
- * do-it-yourself band, testimonials, FAQ and the two-door closing band.
- *
- * `/el` is the C1 pillar in docs/keyword-research (21 of 51 P0 keywords
- * resolve here, most of them pricing terms), so the H1 wording, the
- * answer-first paragraph and the pricing block are unchanged; only the
- * presentation moved.
+ * Homepage in the approved 2026 layout. Header, footer, consent and the
+ * WhatsApp pill stay the site-wide components. Figures in the product window
+ * are labelled sample data. Proof numbers come from company-facts.
  */
-export function HomePageView({ locale }: { locale: SiteLocale }) {
+export function HomePageView({ locale }: { readonly locale: SiteLocale }) {
+  const copy = homeCopy(locale);
   const isEl = locale === 'el';
-  const l = locale;
-  const tx = (en: string, el: string) => (isEl ? el : en);
   const lp = (path: string) => localizedPath(locale, path);
-  const demoHref = `${getAppPath('/demo')}?lang=${locale}&utm_source=website&utm_content=home-window`;
+  const signup = appLink('/signup', locale, 'home-signup');
+  const demo = appLink('/demo', locale, 'home-demo');
+  const audit = `${lp('/get-started')}#free-audit`;
+  const projects = SHOWCASE.map((item) => {
+    const project = portfolioProjects.find((entry) => entry.slug === item.slug);
+    if (!project) return null;
+    return {
+      ...item,
+      name: project.name,
+      summary: isEl ? project.summaryEl : project.summary,
+      screenshot: project.screenshot,
+      category: isEl ? item.categoryEl : item.categoryEn,
+    };
+  }).filter((item): item is NonNullable<typeof item> => item !== null);
 
   const orgSchema = generateOrganizationSchema({
     id: `${BASE_URL}/#organization`,
@@ -69,357 +144,359 @@ export function HomePageView({ locale }: { locale: SiteLocale }) {
       ? 'AnotherSEOGuru - ελληνική εταιρεία SEO και κατασκευής ιστοσελίδων. Τεχνικό SEO, τοπικό SEO, GEO/AEO, e-shop και δική της πλατφόρμα συνδεδεμένη με το Google Search Console.'
       : 'AnotherSEOGuru - Greek SEO and web design agency. Technical SEO, local SEO, GEO/AEO, e-shops, plus a Search Console-native SEO platform.',
   });
+  const faqSchema = generateFAQSchema({
+    faqs: copy.faqs.map((item) => ({ question: item.q, answer: item.a })),
+  });
 
-  const line1 = isEl ? elHome.hero.h1Line1 : 'SEO services & web design';
-  const line2 = isEl ? elHome.hero.h1Line2 : 'that bring in customers';
-  const lead = isEl
-    ? resolvePriceTokens(elHome.hero.sub, locale)
-    : resolvePriceTokens(
-        `AnotherSEOGuru is the SEO and web design team at ${LEGAL_ENTITY_NAME}, with ${FOUNDER_YEARS}+ years of experience and more than ${PROJECTS_DELIVERED} projects delivered for businesses in Greece. We handle technical SEO, local SEO, GEO/AEO and website or e-shop builds, with transparent packages from {{ENTRY_SEO}} a month. Every engagement starts with a free SEO audit, so you see what works before you commit.`,
-        locale,
-      );
-
-  const relatedLinks = isEl
-    ? [
-        { href: lp('/pricing'), label: 'Τιμές & πακέτα' },
-        { href: lp('/blog/poso-kostizei-to-seo'), label: 'Πόσο κοστίζει το SEO' },
-        { href: lp('/blog/poso-kostizei-mia-istoselida'), label: 'Κόστος ιστοσελίδας' },
-        { href: lp('/blog/kataskevi-eshop-odigos'), label: 'Κατασκευή e-shop' },
-        { href: lp('/services/ai-visibility'), label: 'GEO / AEO' },
-        { href: '/el/seo-tourismou/xenodoxeia', label: 'SEO για ξενοδοχεία' },
-        { href: '/el/seo-tourismou/rent-a-car', label: 'SEO για rent a car' },
-        { href: lp('/services/website-creation/athens-gr'), label: 'Κατασκευή ιστοσελίδων Αθήνα' },
-        { href: lp('/services/local-seo/thessaloniki-gr'), label: 'SEO Θεσσαλονίκη' },
-        { href: lp('/locations'), label: 'Όλες οι περιοχές' },
-      ]
-    : [
-        { href: lp('/pricing'), label: 'Pricing' },
-        { href: lp('/services/ai-visibility'), label: 'GEO / AEO' },
-        { href: lp('/services/local-seo'), label: 'Local SEO' },
-        { href: lp('/solutions/hotels'), label: 'Hotel SEO' },
-        { href: lp('/solutions/rent-a-car'), label: 'Rent-a-car' },
-        { href: lp('/work'), label: 'Case studies' },
-        { href: lp('/blog'), label: 'Blog' },
-        { href: lp('/locations'), label: 'Locations' },
-      ];
+  const stats = [
+    { value: String(FOUNDER_YEARS), suffix: '+', label: copy.statYears },
+    { value: String(PROJECTS_DELIVERED), suffix: '+', label: copy.statProjects },
+    { value: String(MARKET_COUNT), suffix: '', label: copy.statMarkets },
+    { value: String(RESPONSE_HOURS), suffix: copy.hoursSuffix, label: copy.statReply },
+  ];
 
   return (
     <>
-      <SchemaMarkup schemas={[orgSchema]} />
+      <SchemaMarkup schemas={[orgSchema, faqSchema]} />
       <Header locale={locale} />
-      <main className="blueprint-grid relative z-0">
-        {/* ------------------------------------------------------------ hero */}
-        <HeroCentered
-          pill={<AsterIdentity locale={locale} />}
-          title={
-            <>
-              {line1} <Accent>{line2}</Accent>
-            </>
-          }
-          lead={lead}
-          actions={
-            <div className="mx-auto max-w-xl text-left">
-              <ScanWidget locale={locale} />
-            </div>
-          }
-          trust={
-            <>
-              <TrustLine items={agencyTrust(locale)} />
-              {/* Exact-anchor links out of the hero: «υπηρεσίες SEO» is the
-                  /el/seo-services keyword, and the consultant page carries
-                  «σύμβουλος SEO». */}
-              <p className="mx-auto mt-4 max-w-xl text-pretty text-[14px] leading-relaxed text-muted-foreground">
-                {tx('See our ', 'Δείτε τις ')}
-                <Link href={lp('/seo-services')} className="font-medium text-foreground underline decoration-hairline underline-offset-4 hover:decoration-foreground">
-                  {tx('SEO services', 'υπηρεσίες SEO')}
-                </Link>
-                {tx(', meet ', ', γνωρίστε ')}
-                <Link href={consultantPath(locale)} className="font-medium text-foreground underline decoration-hairline underline-offset-4 hover:decoration-foreground">
-                  {isEl ? 'την ομάδα μας' : 'our team'}
-                </Link>
-                {tx(', or read how an ', '. Δείτε πώς δουλεύει ένας ')}
-                <Link href={lp('/seo-guru')} className="font-medium text-foreground underline decoration-hairline underline-offset-4 hover:decoration-foreground">
-                  SEO guru
-                </Link>
-                {tx(' works with you.', '.')}
-              </p>
-            </>
-          }
-        >
-          <div className="mx-auto mt-14 w-full max-w-[1240px] px-3 sm:px-6">
-            <div className="relative">
-              <div
-                aria-hidden
-                className="pointer-events-none absolute -inset-x-[4%] -top-[10%] -z-10 h-[55%] rounded-[50%] bg-[radial-gradient(closest-side,color-mix(in_oklab,var(--primary)_35%,transparent),transparent)] blur-3xl"
-              />
-              <SeoChatDemo locale={locale} />
-            </div>
-            <p className="mt-5 text-center text-[13px] text-muted-foreground">
-              {tx(
-                'Meet Aster AI in AnotherSEOGuru App. Ask a question, inspect the evidence, and turn it into a task. This example uses a fictional site.',
-                'Ο Aster AI στο AnotherSEOGuru App: ρωτήστε, δείτε τα στοιχεία και προχωρήστε σε μια εργασία. Το παράδειγμα χρησιμοποιεί φανταστικό ιστότοπο.',
-              )}{' '}
-              <Link href={lp('/platform')} className="font-medium text-foreground underline decoration-hairline underline-offset-4 hover:decoration-foreground">
-                {tx('Use it yourself, free', 'Χρησιμοποιήστε το δωρεάν')}
+      <main className="blueprint-grid relative z-0 overflow-x-clip">
+        <section className="hero-below-header relative overflow-x-clip">
+          <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
+            <div className="kit-grid absolute inset-0 [mask-image:radial-gradient(ellipse_80%_65%_at_50%_0%,black_40%,transparent_100%)]" />
+            <div className="absolute left-[-10%] top-[-120px] size-[min(520px,80vw)] rounded-full bg-primary/20 blur-3xl" />
+            <div className="absolute right-[-8%] top-[140px] size-[min(460px,70vw)] rounded-full bg-signal/15 blur-3xl" />
+          </div>
+          <div className="relative mx-auto grid max-w-[1320px] grid-cols-[minmax(0,1fr)] items-center gap-10 px-5 pb-16 pt-6 sm:pt-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.08fr)] lg:gap-12 lg:px-8 lg:pb-28 lg:pt-10">
+            <div className="min-w-0">
+              <Link
+                href={lp('/platform')}
+                className="inline-flex max-w-full items-center gap-2 rounded-full border border-hairline bg-surface/80 py-1.5 pl-1.5 pr-4 text-[13px] text-muted-foreground backdrop-blur transition-colors hover:border-brand/40 hover:text-foreground"
+              >
+                <span className="shrink-0 rounded-full bg-[linear-gradient(90deg,var(--primary),var(--signal))] px-2.5 py-0.5 text-[11px] font-bold text-primary-foreground">
+                  {copy.announceTag}
+                </span>
+                <span className="min-w-0 truncate">{copy.announce}</span>
+                <span className="text-primary" aria-hidden>→</span>
               </Link>
-            </p>
-          </div>
-        </HeroCentered>
-
-        <div className="mt-16 sm:mt-20">
-          <ProofRail locale={locale} />
-        <ProductEcosystem locale={locale} />
-        </div>
-
-        {/* ------------------------------------------------- before / after */}
-        <KitSection>
-          <KitHeading
-            align="center"
-            eyebrow={tx('Why AnotherSEOGuru', 'Γιατί AnotherSEOGuru')}
-            title={
-              <>
-                {tx('Most agencies send reports.', 'Οι περισσότερες εταιρείες στέλνουν αναφορές.')} {tx('We send', 'Εμείς στέλνουμε')}{' '}
-                <Accent>{tx('decisions', 'αποφάσεις')}</Accent>.
-              </>
-            }
-            description={tx(
-              'Search Console holds thousands of rows, usually with your own brand name on top. We turn them into a short list of fixes, each with the extra customers it should bring, and then we ship them.',
-              'Το Search Console έχει χιλιάδες γραμμές, συνήθως με το όνομά σας στην κορυφή. Τις κάνουμε μια σύντομη λίστα διορθώσεων, με τους πελάτες που θα φέρει η καθεμία, και μετά τις υλοποιούμε.',
-            )}
-          />
-          <div className="mt-14">
-            <BeforeAfter
-              before={{
-                tag: tx('Before', 'Πριν'),
-                title: 'Google Search Console',
-                text: tx('Raw rows, sorted by clicks', 'Γραμμές, ταξινομημένες κατά κλικ'),
-                node: (
-                  <Stage className="p-2.5 sm:p-4">
-                    <RawQueriesPanel locale={l} />
-                  </Stage>
-                ),
-              }}
-              after={{
-                tag: tx('After', 'Μετά'),
-                title: 'AnotherSEOGuru',
-                text: tx('The same data, as ranked actions', 'Τα ίδια δεδομένα, ως ενέργειες με σειρά'),
-                node: (
-                  <Stage className="p-2.5 sm:p-4">
-                    <DecisionsPanel locale={l} />
-                  </Stage>
-                ),
-              }}
-            />
-          </div>
-          <ValueTrio
-            className="mt-16"
-            items={[
-              {
-                icon: Target,
-                title: tx('A free audit before any contract', 'Δωρεάν έλεγχος πριν από κάθε συμφωνία'),
-                text: tx('You see the problems, the fixes and the price before you pay anything.', 'Βλέπετε τα προβλήματα, τις λύσεις και την τιμή πριν πληρώσετε οτιδήποτε.'),
-              },
-              {
-                icon: Calculator,
-                title: tx('Every estimate explained', 'Κάθε εκτίμηση εξηγείται'),
-                text: tx('Each fix shows the position, impressions and click-through behind it, from your own data.', 'Κάθε διόρθωση δείχνει τη θέση, τις εμφανίσεις και το CTR, από τα δικά σας δεδομένα.'),
-              },
-              {
-                icon: LineChart,
-                title: tx('Results you can check', 'Αποτελέσματα που ελέγχετε'),
-                text: tx('Monthly reports straight from Search Console, with every change we shipped marked on the chart.', 'Μηνιαίες αναφορές από το Search Console, με κάθε αλλαγή μας σημειωμένη στο γράφημα.'),
-              },
-            ]}
-          />
-        </KitSection>
-
-        {/* ------------------------------------------------------- services */}
-        <section className="border-t border-hairline py-20 sm:py-28">
-          <Container>
-            <KitHeading
-              align="center"
-              eyebrow={tx('Services', 'Υπηρεσίες')}
-              title={
-                <>
-                  {tx('One team for the whole', 'Μία ομάδα για όλη τη')} <Accent>{tx('search journey', 'διαδρομή αναζήτησης')}</Accent>
-                </>
-              }
-              description={tx(
-                'From the first Google search to the AI answer to the booking page: we make sure you show up, get chosen and get the enquiry.',
-                'Από την αναζήτηση στη Google και την απάντηση της AI μέχρι τη σελίδα κράτησης: φροντίζουμε να εμφανίζεστε, να σας επιλέγουν και να σας στέλνουν αιτήματα.',
-              )}
-            />
-            <div className="mt-20 grid gap-24 sm:gap-28">
-              <FeatureRow
-                id="seo"
-                eyebrow={tx('SEO services', 'Υπηρεσίες SEO')}
-                eyebrowIcon={<TrendingUp />}
-                title={
-                  <>
-                    {tx('Monthly SEO, ranked by', 'Μηνιαίο SEO, με σειρά βάσει')} <Accent>{tx('revenue', 'εσόδων')}</Accent>
-                  </>
-                }
-                body={tx(
-                  'Technical fixes, content and links, in the order that brings customers fastest. You get the plan, the work and a monthly report you can check against Search Console.',
-                  'Τεχνικές διορθώσεις, περιεχόμενο και backlinks, με τη σειρά που φέρνει πελάτες πιο γρήγορα. Παίρνετε το πλάνο, τη δουλειά και μηνιαία αναφορά που ελέγχεται στο Search Console.',
-                )}
-                bullets={[
-                  tx('Technical, on-page and local SEO in Greek and English', 'Τεχνικό, on-page και τοπικό SEO σε ελληνικά και αγγλικά'),
-                  tx('Pages written to rank and to sell', 'Σελίδες γραμμένες για να κατατάσσονται και να πουλάνε'),
-                  tx('A monthly report with real Search Console numbers', 'Μηνιαία αναφορά με πραγματικά νούμερα από το Search Console'),
-                ]}
-                links={[
-                  { href: lp('/seo-services'), label: tx('SEO services', 'Υπηρεσίες SEO'), primary: true },
-                  { href: `${lp('/')}#pricing`, label: tx('Prices', 'Τιμές') },
-                ]}
-                preview={
-                  <Stage>
-                    <ReportPreview locale={l} />
-                  </Stage>
-                }
-              />
-              <FeatureRow
-                id="ai"
-                flip
-                eyebrow={tx('GEO / AEO', 'GEO / AEO')}
-                eyebrowIcon={<Bot />}
-                title={
-                  <>
-                    {tx('Be the answer AI', 'Γίνετε η απάντηση που')} <Accent>{tx('recommends', 'προτείνει η AI')}</Accent>
-                  </>
-                }
-                body={tx(
-                  'More travellers and buyers now ask ChatGPT, Gemini or Google’s AI Overviews first. We track whether they mention you, and rebuild your pages so they can cite you.',
-                  'Όλο και περισσότεροι ρωτούν πρώτα το ChatGPT, το Gemini ή τα AI Overviews της Google. Μετράμε αν σας αναφέρουν και ξαναχτίζουμε τις σελίδες σας ώστε να σας χρησιμοποιούν ως πηγή.',
-                )}
-                bullets={[
-                  tx('Mentions and citations across the major AI assistants', 'Αναφορές και παραπομπές στους μεγάλους βοηθούς AI'),
-                  tx('Pages structured for answers, with schema and clear facts', 'Σελίδες δομημένες για απαντήσεις, με schema και σαφή στοιχεία'),
-                  tx('Share of voice against your competitors', 'Μερίδιο αναφορών έναντι των ανταγωνιστών σας'),
-                ]}
-                links={[
-                  { href: lp('/services/ai-visibility'), label: tx('AI visibility service', 'Υπηρεσία ορατότητας σε AI'), primary: true },
-                  { href: lp('/ai-visibility-check'), label: tx('Free AI check', 'Δωρεάν έλεγχος AI') },
-                ]}
-                preview={
-                  <Stage>
-                    <AiVisibilityPreview locale={l} />
-                  </Stage>
-                }
-              />
-              <FeatureRow
-                id="local"
-                eyebrow={tx('Local SEO', 'Τοπικό SEO')}
-                eyebrowIcon={<MapPin />}
-                title={
-                  <>
-                    {tx('First on the map,', 'Πρώτοι στον χάρτη,')} <Accent>{tx('first to be called', 'πρώτοι στο τηλέφωνο')}</Accent>
-                  </>
-                }
-                body={tx(
-                  'Your Google Business Profile, reviews and local pages, tuned so people nearby find you before they find the next business on the street.',
-                  'Το προφίλ Google Business, οι κριτικές και οι τοπικές σελίδες σας, ρυθμισμένα ώστε όσοι είναι κοντά να σας βρίσκουν πριν από τον διπλανό.',
-                )}
-                bullets={[
-                  tx('Google Business Profile set-up and weekly posts', 'Στήσιμο προφίλ Google Business και εβδομαδιαίες αναρτήσεις'),
-                  tx('Review requests that actually get answered', 'Αιτήματα κριτικών που απαντώνται'),
-                  tx('City pages only where you really work', 'Σελίδες πόλεων μόνο εκεί που πραγματικά δουλεύετε'),
-                ]}
-                links={[{ href: lp('/services/local-seo'), label: tx('Local SEO', 'Τοπικό SEO'), primary: true }]}
-                preview={
-                  <Stage>
-                    <LocalPackPreview locale={l} />
-                  </Stage>
-                }
-              />
-              <FeatureRow
-                id="websites"
-                flip
-                eyebrow={tx('Websites & e-shops', 'Ιστοσελίδες & e-shop')}
-                eyebrowIcon={<Globe />}
-                title={
-                  <>
-                    {tx('Websites built to', 'Ιστοσελίδες φτιαγμένες για να')} <Accent>{tx('rank and convert', 'κατατάσσονται και να πουλάνε')}</Accent>
-                  </>
-                }
-                body={tx(
-                  'Fast, bilingual sites and WooCommerce stores, with SEO, schema and Core Web Vitals handled before launch, not patched after.',
-                  'Γρήγορες, δίγλωσσες ιστοσελίδες και καταστήματα WooCommerce, με SEO, schema και Core Web Vitals έτοιμα πριν την παράδοση.',
-                )}
-                bullets={[
-                  tx('Greek and English, with correct hreflang', 'Ελληνικά και αγγλικά, με σωστό hreflang'),
-                  tx('Booking engines and payments that load fast', 'Κρατήσεις και πληρωμές που φορτώνουν γρήγορα'),
-                  tx('A full audit before go-live', 'Πλήρης έλεγχος πριν βγει στον αέρα'),
-                ]}
-                links={[
-                  { href: lp('/services/website-creation'), label: tx('Website creation', 'Κατασκευή ιστοσελίδων'), primary: true },
-                  { href: lp('/services/eshop-woocommerce'), label: tx('E-shops', 'E-shop') },
-                ]}
-                preview={
-                  <Stage>
-                    <AuditPreview locale={l} />
-                  </Stage>
-                }
-              />
+              <h1 className="mt-6 text-balance font-display text-[2rem] font-bold leading-[1.05] tracking-[-0.04em] text-foreground min-[400px]:text-[2.35rem] sm:text-[3.25rem] lg:text-[3.75rem]">
+                <span className="block">{copy.h1Line1}</span>
+                <span className="block">
+                  {copy.h1Line2Before}
+                  <Accent>{copy.h1Accent}</Accent>
+                  {copy.h1Line2After}
+                </span>
+              </h1>
+              <p className="mt-6 max-w-[540px] text-pretty text-[17px] leading-[1.65] text-muted-foreground">{copy.lead}</p>
+              <div className="mt-8 flex flex-wrap items-center gap-3">
+                <a href={signup} className={primaryBtn}>
+                  <GoogleTile className="size-6 rounded-full" />
+                  {copy.signup}
+                </a>
+                <Link href={audit} className={ghostBtn}>{copy.audit}</Link>
+                <a href={WHATSAPP_HREF} className="inline-flex min-h-12 items-center gap-2 rounded-full px-3 text-[15px] font-medium text-success hover:text-foreground" rel="noopener noreferrer">
+                  <WhatsAppIcon className="size-5" />
+                  {copy.whatsapp}
+                </a>
+              </div>
+              <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-[13.5px] text-muted-foreground">
+                {copy.trust.map((item) => (
+                  <li key={item} className="flex items-center gap-2">
+                    <Mark kind="yes" label={copy.markYes} />
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
-          </Container>
+            <SampleWindow copy={copy} />
+          </div>
         </section>
 
-        <VerticalsStrip locale={locale} />
-        <WorkRail locale={locale} />
-        <SeoPricingBlock locale={locale} />
-
-        {/* ------------------------------------------------------- AnotherSEOGuru App */}
-        <KitSection tinted id="gsc-boost">
-          <KitHeading
-            align="center"
-            eyebrow={
-              <span className="inline-flex items-center gap-2">
-                <span className="rounded-full bg-accent px-1.5 py-0.5 text-[10px] font-semibold text-accent-foreground">{tx('NEW', 'ΝΕΟ')}</span>
-                AnotherSEOGuru App
-              </span>
-            }
-            title={
-              <>
-                {tx('Prefer to do it yourself? Use', 'Προτιμάτε να το κάνετε μόνοι σας; Δοκιμάστε')} <Accent>{tx('our software', 'το λογισμικό μας')}</Accent>
-              </>
-            }
-            description={tx(
-              'AnotherSEOGuru App reads your Search Console and hands you the fixes that win the most clicks, ranked and estimated. It is the same tool our team uses every day.',
-              'Το AnotherSEOGuru App διαβάζει το Search Console σας και σας δίνει τις διορθώσεις που φέρνουν τα περισσότερα κλικ, με σειρά και εκτίμηση. Είναι το ίδιο εργαλείο που χρησιμοποιεί καθημερινά η ομάδα μας.',
-            )}
-          />
-          <ProductBento locale={locale} className="mt-14" />
-          <SoftwareCtas locale={locale} source="home-gsc-band" className="mt-12" />
-          <p className="mt-4 text-center text-[13px] text-muted-foreground">
-            <Link href={lp('/platform')} className="underline decoration-hairline underline-offset-4 hover:text-foreground">
-              {tx('See everything AnotherSEOGuru App does', 'Δείτε όλες τις δυνατότητες του AnotherSEOGuru App')}
-            </Link>
-            {' · '}
-            <Link href={lp('/platform/pricing')} className="underline decoration-hairline underline-offset-4 hover:text-foreground">
-              {tx('Plans and prices', 'Πακέτα και τιμές')}
-            </Link>
-          </p>
-        </KitSection>
-
-        <TestimonialsWall locale={locale} />
-        <HomeFaq locale={locale} />
-        <CtaBand locale={locale} source="home-band" />
-
-        {/* Internal-link strip: hub-and-spoke paths the keyword research calls for */}
-        <section className="border-t border-hairline py-8">
-          <Container>
-            <nav
-              aria-label={isEl ? 'Σχετικές σελίδες' : 'Related pages'}
-              className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-muted-foreground"
-            >
-              {relatedLinks.map((item) => (
-                <Link key={item.href} href={item.href} className="transition-colors hover:text-link">
-                  {item.label}
-                </Link>
+        <section className="border-y border-hairline bg-surface/40">
+          <div className="mx-auto max-w-[1240px] px-5 py-9 lg:px-8">
+            <div className="flex flex-col items-center gap-7 lg:flex-row lg:justify-between">
+              <p className="shrink-0 text-center text-[13px] text-muted-foreground lg:max-w-[200px] lg:text-left">{copy.trustIntro}</p>
+              <ul className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-[15px] font-semibold tracking-tight text-muted-foreground">
+                {TRUST_DOMAINS.map((domain) => (
+                  <li key={domain.slug}>
+                    <Link href={lp(`/work/${domain.slug}`)} className="hover:text-foreground">{domain.host}</Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="my-7 h-px bg-[linear-gradient(90deg,transparent,var(--hairline),transparent)]" />
+            <ul className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-[13.5px] text-muted-foreground">
+              <li className="text-muted-foreground/80">{copy.worksWith}</li>
+              {copy.integrations.map((item) => (
+                <li key={item.label}>
+                  <Link href={lp(item.href)} className="inline-flex items-center gap-2 hover:text-foreground">
+                    <IntegrationIcon icon={item.icon} />
+                    {item.label}
+                  </Link>
+                </li>
               ))}
-            </nav>
-          </Container>
+            </ul>
+          </div>
+        </section>
+
+        <section className="mx-auto max-w-[1240px] px-5 py-20 lg:px-8 lg:py-28">
+          <div className="grid gap-8 lg:grid-cols-[1fr_1.15fr] lg:items-end">
+            <div className="min-w-0">
+              <Eyebrow>{copy.platformEyebrow}</Eyebrow>
+              <h2 className="mt-4 text-balance font-display text-[2rem] font-bold leading-[1.08] tracking-[-0.03em] text-foreground sm:text-[2.75rem]">
+                {copy.platformTitleBefore}
+                <Accent>{copy.platformAccent}</Accent>
+                {copy.platformTitleAfter}
+              </h2>
+            </div>
+            <p className="text-pretty text-[17px] leading-[1.7] text-muted-foreground">{copy.platformLead}</p>
+          </div>
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {copy.cards.map((card, index) => {
+              const Icon = CARD_ICONS[index] ?? Sparkles;
+              return (
+                <article key={card.title} className="rounded-[22px] border border-hairline bg-surface/60 p-6 transition-[border-color,transform] duration-200 hover:-translate-y-0.5 hover:border-primary/40 motion-reduce:transition-none motion-reduce:hover:translate-y-0 sm:p-7">
+                  <div className="grid size-11 place-items-center rounded-xl bg-primary/12 text-primary">
+                    <Icon className="size-5" aria-hidden />
+                  </div>
+                  <h3 className="mt-5 text-[19px] font-bold text-foreground">{card.title}</h3>
+                  <p className="mt-2 text-[15px] leading-relaxed text-muted-foreground">{card.body}</p>
+                </article>
+              );
+            })}
+          </div>
+        </section>
+
+        <section className="relative overflow-x-clip border-y border-hairline bg-surface/35">
+          <div aria-hidden className="pointer-events-none absolute left-1/2 top-0 h-[280px] w-[min(700px,100%)] -translate-x-1/2 rounded-full bg-primary/10 blur-3xl" />
+          <div className="relative mx-auto max-w-[1240px] px-5 py-20 lg:px-8 lg:py-28">
+            <div className="mx-auto max-w-[760px] text-center">
+              <Eyebrow>{copy.stepsEyebrow}</Eyebrow>
+              <h2 className="mt-4 text-balance font-display text-[2rem] font-bold leading-[1.08] tracking-[-0.03em] text-foreground sm:text-[2.75rem]">
+                {copy.stepsTitleBefore}
+                <Accent>{copy.stepsAccent}</Accent>
+                {copy.stepsTitleAfter}
+              </h2>
+            </div>
+            <ol className="relative mt-14 grid gap-8 lg:grid-cols-3">
+              <div aria-hidden className="absolute left-[16%] right-[16%] top-[34px] hidden h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent lg:block" />
+              {copy.steps.map((step) => (
+                <li key={step.n} className="relative min-w-0 text-center lg:text-left">
+                  <div className={`relative z-10 mx-auto grid size-[68px] place-items-center rounded-2xl border bg-background font-code text-[18px] lg:mx-0 ${step.n === '03' ? 'border-success/40 text-success' : 'border-primary/40 text-primary'}`}>
+                    {step.n}
+                  </div>
+                  <h3 className="mt-6 text-[22px] font-bold text-foreground">{step.title}</h3>
+                  <p className="mt-3 text-[15.5px] leading-relaxed text-muted-foreground">{step.body}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+
+        <section className="mx-auto max-w-[1240px] px-5 py-20 lg:px-8 lg:py-28">
+          <div className="mx-auto max-w-[760px] text-center">
+            <Eyebrow>{copy.waysEyebrow}</Eyebrow>
+            <h2 className="mt-4 text-balance font-display text-[2rem] font-bold leading-[1.08] tracking-[-0.03em] text-foreground sm:text-[2.75rem]">
+              {copy.waysTitleBefore}
+              <Accent>{copy.waysAccent}</Accent>
+            </h2>
+            <p className="mt-5 text-pretty text-[17px] leading-relaxed text-muted-foreground">{copy.waysLead}</p>
+          </div>
+          <div className="mt-12 grid gap-6 lg:grid-cols-2">
+            <article className="rounded-[22px] border border-hairline bg-surface/60 p-7 lg:p-10">
+              <span className="inline-flex rounded-full bg-primary/10 px-3 py-1 text-[12px] font-semibold text-primary">{copy.appBadge}</span>
+              <h3 className="mt-6 text-balance text-[1.7rem] font-bold leading-tight tracking-tight text-foreground sm:text-[1.85rem]">{copy.appTitle}</h3>
+              <p className="mt-3 text-[15.5px] leading-relaxed text-muted-foreground">{copy.appLead}</p>
+              <ul className="mt-7 space-y-3.5 text-[15px] text-foreground">
+                {copy.appPoints.map((point) => (
+                  <li key={point} className="flex gap-3"><Mark kind="yes" label={copy.markYes} /><span>{point}</span></li>
+                ))}
+              </ul>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <a href={signup} className={primaryBtn}>{copy.signup}</a>
+                <a href={demo} className={ghostBtn}>{copy.demo}</a>
+              </div>
+            </article>
+            <article className="rounded-[22px] border border-primary/30 bg-[linear-gradient(160deg,color-mix(in_oklab,var(--primary)_18%,transparent),var(--surface)_55%)] p-7 lg:p-10">
+              <span className="inline-flex rounded-full bg-success/12 px-3 py-1 text-[12px] font-semibold text-success">{copy.agencyBadge}</span>
+              <h3 className="mt-6 text-balance text-[1.7rem] font-bold leading-tight tracking-tight text-foreground sm:text-[1.85rem]">{copy.agencyTitle}</h3>
+              <p className="mt-3 text-[15.5px] leading-relaxed text-muted-foreground">{copy.agencyLead}</p>
+              <ul className="mt-7 space-y-3.5 text-[15px] text-foreground">
+                {copy.agencyPoints.map((point) => (
+                  <li key={point} className="flex gap-3"><Mark kind="yes" label={copy.markYes} /><span>{point}</span></li>
+                ))}
+              </ul>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Link href={audit} className={primaryBtn}>{copy.audit}</Link>
+                <Link href={lp('/pricing')} className={ghostBtn}>{copy.pricing}</Link>
+              </div>
+            </article>
+          </div>
+          <div className="mt-6 flex flex-col items-center justify-between gap-4 rounded-[22px] border border-hairline bg-surface/70 px-6 py-6 text-center backdrop-blur sm:px-8 md:flex-row md:text-left">
+            <p className="text-pretty text-muted-foreground">
+              <span className="font-bold text-foreground">{copy.bothTitle}</span> {copy.bothBody}
+            </p>
+            <Link href={lp('/get-started')} className={`${ghostBtn} shrink-0`}>{copy.quote} →</Link>
+          </div>
+        </section>
+
+        <section className="border-y border-hairline bg-surface/35">
+          <div className="mx-auto max-w-[1240px] px-5 py-20 lg:px-8 lg:py-28">
+            <div className="grid gap-8 lg:grid-cols-[1fr_1.15fr] lg:items-end">
+              <div className="min-w-0">
+                <Eyebrow>{copy.whyEyebrow}</Eyebrow>
+                <h2 className="mt-4 text-balance font-display text-[2rem] font-bold leading-[1.08] tracking-[-0.03em] text-foreground sm:text-[2.75rem]">
+                  {copy.whyTitleBefore}
+                  <Accent>{copy.whyAccent}</Accent>
+                </h2>
+              </div>
+              <p className="text-pretty text-[17px] leading-[1.7] text-muted-foreground">{copy.whyLead}</p>
+            </div>
+            <div className="mt-12 max-w-full overflow-x-auto rounded-[22px] border border-hairline">
+              <table className="w-full min-w-[20rem] text-left text-[13.5px] sm:text-[15px]">
+                <caption className="sr-only">{copy.whyEyebrow}</caption>
+                <thead>
+                  <tr className="border-b border-hairline text-[13px] text-muted-foreground">
+                    <th className="px-3 py-4 font-medium sm:px-6" scope="col"><span className="sr-only">{copy.whyEyebrow}</span></th>
+                    <th className="px-2 py-4 text-center font-medium" scope="col">
+                      <span className="sm:hidden">{copy.colAgencyShort}</span>
+                      <span className="hidden sm:inline">{copy.colAgency}</span>
+                    </th>
+                    <th className="px-2 py-4 text-center font-medium" scope="col">
+                      <span className="sm:hidden">{copy.colToolShort}</span>
+                      <span className="hidden sm:inline">{copy.colTool}</span>
+                    </th>
+                    <th className="bg-primary/[0.06] px-2 py-4 text-center" scope="col">
+                      <img src="/brand/asg-lockup-on-dark.svg" alt="AnotherSEOGuru" width={140} height={28} className="mx-auto hidden h-7 w-auto [.light_&]:hidden sm:block" />
+                      <img src="/brand/asg-lockup-on-light.svg" alt="AnotherSEOGuru" width={140} height={28} className="mx-auto hidden h-7 w-auto sm:[.light_&]:block" />
+                      <img src="/brand/asg-mark.svg" alt="AnotherSEOGuru" width={24} height={24} className="mx-auto size-6 sm:hidden" />
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {copy.compare.map((row) => (
+                    <tr key={row.label} className="border-b border-hairline last:border-0">
+                      <th className="py-3.5 pl-3 pr-2 text-left text-[13.5px] font-medium text-foreground sm:px-6 sm:text-[15px]" scope="row">{row.label}</th>
+                      <td className="px-1 text-center"><Mark kind={row.agency} label={row.agency === 'yes' ? copy.markYes : row.agency === 'some' ? copy.markSome : copy.markNo} /></td>
+                      <td className="px-1 text-center"><Mark kind={row.tool} label={row.tool === 'yes' ? copy.markYes : row.tool === 'some' ? copy.markSome : copy.markNo} /></td>
+                      <td className="bg-primary/[0.06] px-1 text-center"><Mark kind="yes" label={copy.markYes} /></td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="mt-4 text-[12.5px] text-muted-foreground">{copy.footnote}</p>
+          </div>
+        </section>
+
+        <section className="mx-auto max-w-[1240px] px-5 py-20 lg:px-8 lg:py-28">
+          <div className="mx-auto max-w-[860px] text-center">
+            <Eyebrow>{copy.numbersEyebrow}</Eyebrow>
+            <h2 className="mt-4 text-balance font-display text-[2rem] font-bold leading-[1.08] tracking-[-0.03em] text-foreground sm:text-[2.75rem]">
+              {copy.numbersTitleBefore}
+              <Accent>{copy.numbersAccent}</Accent>
+              {copy.numbersTitleAfter}
+            </h2>
+            <p className="mt-5 text-pretty text-[17px] leading-relaxed text-muted-foreground">{copy.numbersLead}</p>
+          </div>
+          <dl className="mt-12 grid grid-cols-2 gap-px overflow-hidden rounded-[22px] border border-hairline bg-hairline lg:grid-cols-4">
+            {stats.map((stat) => (
+              <div key={stat.label} className="bg-background px-3 py-7 text-center sm:p-8 lg:p-10">
+                <dt className="sr-only">{stat.label}</dt>
+                <dd className="font-display text-[2.4rem] font-bold tracking-tight text-foreground sm:text-5xl lg:text-[3.5rem]">
+                  {stat.value}
+                  {stat.suffix ? <span className="bg-[linear-gradient(90deg,var(--primary),var(--signal))] bg-clip-text italic text-transparent">{stat.suffix}</span> : null}
+                </dd>
+                <dd className="mt-1 text-[14px] text-muted-foreground">{stat.label}</dd>
+              </div>
+            ))}
+          </dl>
+          <div className="mt-14 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
+            <div>
+              <Eyebrow>{copy.idealEyebrow}</Eyebrow>
+              <h3 className="mt-3 text-balance text-[1.45rem] font-bold tracking-tight text-foreground sm:text-[1.6rem]">{copy.idealTitle}</h3>
+            </div>
+            <Link href={lp('/work')} className="shrink-0 text-[14.5px] font-semibold text-primary hover:text-foreground">
+              {copy.allProjects} →
+            </Link>
+          </div>
+          <div className="mt-8 grid gap-5 md:grid-cols-3">
+            {projects.map((project) => (
+              <Link key={project.slug} href={lp(`/work/${project.slug}`)} className="group block min-w-0 overflow-hidden rounded-[22px] border border-hairline bg-surface/60 transition-[border-color,transform] duration-200 hover:-translate-y-0.5 hover:border-primary/40 motion-reduce:transition-none motion-reduce:hover:translate-y-0">
+                <div className="relative aspect-[16/10] overflow-hidden bg-surface-raised">
+                  <Image
+                    src={project.screenshot}
+                    alt=""
+                    fill
+                    sizes="(min-width: 768px) 33vw, 100vw"
+                    className="object-cover object-top transition duration-500 group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+                  />
+                </div>
+                <div className="p-6">
+                  <div className="text-[12px] font-semibold uppercase tracking-wider text-primary">{project.category}</div>
+                  <div className="mt-1.5 text-[18px] font-bold text-foreground">{project.name}</div>
+                  <p className="mt-1 text-[14px] leading-relaxed text-muted-foreground">{project.summary}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        <section className="border-t border-hairline bg-surface/35">
+          <div className="mx-auto grid max-w-[1240px] gap-10 px-5 py-20 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:px-8 lg:py-28">
+            <div className="min-w-0">
+              <Eyebrow>{copy.faqEyebrow}</Eyebrow>
+              <h2 className="mt-4 text-balance font-display text-[2rem] font-bold leading-[1.08] tracking-[-0.03em] text-foreground sm:text-[2.6rem]">
+                {copy.faqTitleBefore}
+                <Accent>{copy.faqAccent}</Accent>
+              </h2>
+              <p className="mt-5 text-pretty text-[16px] leading-relaxed text-muted-foreground">{copy.faqLead}</p>
+              <a href={WHATSAPP_HREF} className={`${ghostBtn} mt-8`} rel="noopener noreferrer">{copy.whatsapp}</a>
+            </div>
+            <div className="min-w-0 divide-y divide-hairline rounded-[22px] border border-hairline bg-background/70">
+              {copy.faqs.map((item, index) => (
+                <details key={item.q} className="group p-5 sm:p-6" open={index === 0 ? true : undefined}>
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-[16px] font-semibold text-foreground sm:text-[17px] [&::-webkit-details-marker]:hidden">
+                    <span className="min-w-0">{item.q}</span>
+                    <span className="grid size-8 shrink-0 place-items-center rounded-full border border-hairline text-primary transition-transform duration-200 group-open:rotate-45" aria-hidden>+</span>
+                  </summary>
+                  <p className="mt-4 text-[15.5px] leading-relaxed text-muted-foreground">{item.a}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="relative overflow-x-clip">
+          <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
+            <div className="kit-grid absolute inset-0 rotate-180 [mask-image:radial-gradient(ellipse_80%_65%_at_50%_100%,black_30%,transparent_100%)]" />
+            <div className="absolute bottom-[-180px] left-1/2 h-[420px] w-[min(900px,140%)] -translate-x-1/2 rounded-full bg-primary/20 blur-3xl" />
+          </div>
+          <div className="relative mx-auto max-w-[1240px] px-5 py-20 text-center lg:px-8 lg:py-28">
+            <h2 className="mx-auto max-w-[900px] text-balance font-display text-[2.1rem] font-bold leading-[1.05] tracking-[-0.035em] text-foreground sm:text-[3.4rem]">
+              {copy.finalTitleBefore}
+              <Accent>{copy.finalAccent}</Accent>
+            </h2>
+            <div className="mx-auto mt-12 grid max-w-[1080px] gap-5 text-left md:grid-cols-2">
+              <div className="rounded-[22px] border border-hairline bg-surface/75 p-6 backdrop-blur sm:p-8">
+                <div className="text-[12px] font-semibold uppercase tracking-wider text-success">{copy.doneEyebrow}</div>
+                <div className="mt-3 text-[21px] font-bold text-foreground">{copy.doneTitle}</div>
+                <p className="mt-2 text-[15px] leading-relaxed text-muted-foreground">{copy.doneBody}</p>
+                <div className="mt-6 flex flex-wrap gap-3">
+                  <Link href={audit} className={primaryBtn}>{copy.audit}</Link>
+                  <a href={WHATSAPP_HREF} className={ghostBtn} rel="noopener noreferrer">{copy.whatsapp}</a>
+                </div>
+              </div>
+              <div className="rounded-[22px] border border-hairline bg-surface/75 p-6 backdrop-blur sm:p-8">
+                <div className="text-[12px] font-semibold uppercase tracking-wider text-primary">{copy.selfEyebrow}</div>
+                <div className="mt-3 text-[21px] font-bold text-foreground">{copy.selfTitle}</div>
+                <p className="mt-2 text-[15px] leading-relaxed text-muted-foreground">{copy.selfBody}</p>
+                <div className="mt-6 flex flex-wrap gap-3">
+                  <a href={signup} className={primaryBtn}>{copy.signup}</a>
+                  <a href={demo} className={ghostBtn}>{copy.demo}</a>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
       </main>
       <Footer locale={locale} />

@@ -392,7 +392,7 @@ const BY_SERVICE: Record<string, { en: ServiceFaqItem[]; el: ServiceFaqItem[] }>
     ...DEFAULT_EL.slice(2),
     ],
   },
-  'seo-web-design': {
+  'web-design': {
     en: DEFAULT_EN,
     el: [
       {

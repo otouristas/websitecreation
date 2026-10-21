@@ -34,7 +34,7 @@ export function classifyFaq(faq: LocationFaq): FaqTopic {
 const ALLOWED: Record<string, readonly FaqTopic[]> = {
   'website-creation': ['website-build', 'seo'],
   'website-redesign': ['website-build', 'seo'],
-  'seo-web-design': ['website-build', 'seo'],
+  'web-design': ['website-build', 'seo'],
   'speed-optimization': ['seo', 'website-build'],
   'logo-design': [],
   'content-creation': ['seo'],

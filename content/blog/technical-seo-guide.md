@@ -93,7 +93,7 @@ Technical SEO risk spikes when you change CMS, domain, URL structure or template
 
 Greek businesses often run English and Greek in parallel. Treat hreflang as a product requirement, not an afterthought: reciprocal EN/EL pairs, consistent locale URLs and no accidental self-only annotations. Wrong language targeting wastes crawl budget and confuses both users and rankings.
 
-If you are rebuilding, commission technical SEO before design freeze - not after the agency ships a slow, JS-heavy front end. Pair redesign planning with [SEO-ready web design](/en/services/seo-web-design) so templates ship crawlable and fast.
+If you are rebuilding, commission technical SEO before design freeze - not after the agency ships a slow, JS-heavy front end. Pair redesign planning with [SEO-ready web design](/en/services/web-design) so templates ship crawlable and fast.
 
 ## How to Prioritize Tickets In-House
 

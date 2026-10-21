@@ -487,7 +487,7 @@ function fitTitleWithSuffix(base: string, suffixes: readonly string[]): string {
 const EL_SHORT_TITLE_KEYWORD: Record<string, string> = {
   'website-creation': 'Ιστοσελίδες',
   'website-redesign': 'Ανασχεδιασμός',
-  'seo-web-design': 'Σχεδιασμός Ιστοσελίδων',
+  'web-design': 'Σχεδιασμός Ιστοσελίδων',
   'local-seo': 'Τοπικό SEO',
   'seo-audits': 'SEO Audit',
   'eshop-woocommerce': 'E-shop',
@@ -613,7 +613,7 @@ export function buildIndustryMetadata(
 const EN_SHORT_INDUSTRY_SERVICE_TITLE: Record<string, string> = {
   'website-creation': 'Web Design',
   'website-redesign': 'Redesign',
-  'seo-web-design': 'Web Design',
+  'web-design': 'Web Design',
   'speed-optimization': 'Speed Optimization',
   'ai-visibility': 'GEO & AEO',
   'logo-design': 'Logo Design',

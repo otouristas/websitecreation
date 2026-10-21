@@ -256,7 +256,7 @@ export default async function ServicePage({ params }: PageProps) {
                     }}
                     h1={
                         pageEl?.h1 ??
-                        (serviceSlug === 'seo-web-design'
+                        (serviceSlug === 'web-design'
                             ? 'Web design built for SEO from the start'
                             : displayName)
                     }
