@@ -13,9 +13,11 @@ import SchemaMarkup from '@/components/seo/SchemaMarkup';
 import { GoogleTile } from '@/components/kit';
 import { WhatsAppIcon } from '@/components/icons/WhatsAppIcon';
 import { homeCopy, type HomeCopy } from '@/components/pages/home/copy';
+import { CompareBoard } from '@/components/pages/home/CompareBoard';
 import { SampleWindow } from '@/components/pages/home/SampleWindow';
 import { appLink } from '@/components/gsc-boost/copy';
 import { portfolioProjects } from '@/data/portfolio';
+import { HOME_LOGOS } from '@/data/home-content';
 import { FOUNDER_YEARS, PROJECTS_DELIVERED } from '@/data/founder';
 import { LEGAL_ENTITY_ID, LEGAL_ENTITY_NAME } from '@/data/legal-entity';
 import { MARKET_COUNT, RESPONSE_HOURS } from '@/data/company-facts';
@@ -187,7 +189,7 @@ export function HomePageView({ locale }: { readonly locale: SiteLocale }) {
                 </span>
               </h1>
               <p className="mt-6 max-w-[540px] text-pretty text-[17px] leading-[1.65] text-muted-foreground">{copy.lead}</p>
-              <div className="mt-8 flex flex-wrap items-center gap-3">
+              <div className="mt-8 flex flex-wrap items-center gap-3" data-hero-cta="">
                 <a href={signup} className={primaryBtn}>
                   <GoogleTile className="size-6 rounded-full" />
                   {copy.signup}
@@ -213,16 +215,39 @@ export function HomePageView({ locale }: { readonly locale: SiteLocale }) {
 
         <section className="border-y border-hairline bg-surface/40">
           <div className="mx-auto max-w-[1240px] px-5 py-9 lg:px-8">
-            <div className="flex flex-col items-center gap-7 lg:flex-row lg:justify-between">
-              <p className="shrink-0 text-center text-[13px] text-muted-foreground lg:max-w-[200px] lg:text-left">{copy.trustIntro}</p>
-              <ul className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-[15px] font-semibold tracking-tight text-muted-foreground">
-                {TRUST_DOMAINS.map((domain) => (
-                  <li key={domain.slug}>
-                    <Link href={lp(`/work/${domain.slug}`)} className="hover:text-foreground">{domain.host}</Link>
-                  </li>
+            <p className="mb-7 text-center text-[13px] font-medium tracking-[0.01em] text-muted-foreground">{copy.trustIntro}</p>
+            <div className="home-logo-rail" data-logo-rail="">
+              <div className="home-logo-track">
+                {[false, true].map((hidden) => (
+                  <ul
+                    key={String(hidden)}
+                    className={`home-logo-run flex shrink-0 items-center gap-x-10 pr-10 sm:gap-x-16 sm:pr-16 ${hidden ? 'home-logo-copy' : ''}`}
+                    aria-hidden={hidden || undefined}
+                  >
+                    {HOME_LOGOS.map((logo) => (
+                      <li key={`${logo.alt}-${hidden}`} className="flex h-12 shrink-0 items-center justify-center sm:h-16">
+                        <Image
+                          src={logo.src}
+                          alt={hidden ? '' : logo.alt}
+                          width={220}
+                          height={64}
+                          unoptimized
+                          loading={hidden ? 'lazy' : 'eager'}
+                          className="home-logo"
+                        />
+                      </li>
+                    ))}
+                  </ul>
                 ))}
-              </ul>
+              </div>
             </div>
+            <ul className="mt-7 flex flex-wrap items-center justify-center gap-x-1 gap-y-1 text-[13px] font-medium text-muted-foreground">
+              {TRUST_DOMAINS.map((domain) => (
+                <li key={domain.slug}>
+                  <Link href={lp(`/work/${domain.slug}`)} className="rounded-full px-2.5 py-1 transition-colors hover:bg-foreground/[0.05] hover:text-foreground">{domain.host}</Link>
+                </li>
+              ))}
+            </ul>
             <div className="my-7 h-px bg-[linear-gradient(90deg,transparent,var(--hairline),transparent)]" />
             <ul className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-[13.5px] text-muted-foreground">
               <li className="text-muted-foreground/80">{copy.worksWith}</li>
@@ -351,40 +376,7 @@ export function HomePageView({ locale }: { readonly locale: SiteLocale }) {
               </div>
               <p className="text-pretty text-[17px] leading-[1.7] text-muted-foreground">{copy.whyLead}</p>
             </div>
-            <div className="mt-12 max-w-full overflow-x-auto rounded-[22px] border border-hairline">
-              <table className="w-full min-w-[20rem] text-left text-[13.5px] sm:text-[15px]">
-                <caption className="sr-only">{copy.whyEyebrow}</caption>
-                <thead>
-                  <tr className="border-b border-hairline text-[13px] text-muted-foreground">
-                    <th className="px-3 py-4 font-medium sm:px-6" scope="col"><span className="sr-only">{copy.whyEyebrow}</span></th>
-                    <th className="px-2 py-4 text-center font-medium" scope="col">
-                      <span className="sm:hidden">{copy.colAgencyShort}</span>
-                      <span className="hidden sm:inline">{copy.colAgency}</span>
-                    </th>
-                    <th className="px-2 py-4 text-center font-medium" scope="col">
-                      <span className="sm:hidden">{copy.colToolShort}</span>
-                      <span className="hidden sm:inline">{copy.colTool}</span>
-                    </th>
-                    <th className="bg-primary/[0.06] px-2 py-4 text-center" scope="col">
-                      <img src="/brand/asg-lockup-on-dark.svg" alt="AnotherSEOGuru" width={140} height={28} className="mx-auto hidden h-7 w-auto [.light_&]:hidden sm:block" />
-                      <img src="/brand/asg-lockup-on-light.svg" alt="AnotherSEOGuru" width={140} height={28} className="mx-auto hidden h-7 w-auto sm:[.light_&]:block" />
-                      <img src="/brand/asg-mark.svg" alt="AnotherSEOGuru" width={24} height={24} className="mx-auto size-6 sm:hidden" />
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {copy.compare.map((row) => (
-                    <tr key={row.label} className="border-b border-hairline last:border-0">
-                      <th className="py-3.5 pl-3 pr-2 text-left text-[13.5px] font-medium text-foreground sm:px-6 sm:text-[15px]" scope="row">{row.label}</th>
-                      <td className="px-1 text-center"><Mark kind={row.agency} label={row.agency === 'yes' ? copy.markYes : row.agency === 'some' ? copy.markSome : copy.markNo} /></td>
-                      <td className="px-1 text-center"><Mark kind={row.tool} label={row.tool === 'yes' ? copy.markYes : row.tool === 'some' ? copy.markSome : copy.markNo} /></td>
-                      <td className="bg-primary/[0.06] px-1 text-center"><Mark kind="yes" label={copy.markYes} /></td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-            <p className="mt-4 text-[12.5px] text-muted-foreground">{copy.footnote}</p>
+            <CompareBoard copy={copy} />
           </div>
         </section>
 
