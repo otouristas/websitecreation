@@ -28,8 +28,8 @@ export function WorkIndexClient({ locale = 'en' }: WorkIndexClientProps) {
   }, [category, market]);
 
   const chip = (on: boolean) =>
-    `inline-flex min-h-9 items-center rounded-full border px-3.5 py-1.5 text-[13.5px] font-medium transition-colors ${
-      on ? 'border-brand/50 bg-brand/15 text-foreground' : 'border-hairline bg-surface/70 text-muted-foreground hover:border-brand/40 hover:text-foreground'
+    `inline-flex min-h-9 max-w-full items-center rounded-full border px-3.5 py-1.5 text-left text-[13.5px] font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/45 ${
+      on ? 'border-primary/50 bg-primary/10 text-foreground' : 'border-hairline bg-surface/70 text-muted-foreground hover:border-primary/35 hover:text-foreground'
     }`;
 
   return (
@@ -51,7 +51,7 @@ export function WorkIndexClient({ locale = 'en' }: WorkIndexClientProps) {
             type="button"
             aria-pressed={market === m}
             onClick={() => setMarket(m)}
-            className={`rounded-full px-3 py-1 font-mono text-[11.5px] font-medium uppercase tracking-[0.06em] transition-colors ${
+            className={`rounded-full px-3 py-1 font-code text-[11.5px] font-medium uppercase tracking-[0.06em] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/45 ${
               market === m ? 'bg-foreground text-background' : 'text-muted-foreground hover:text-foreground'
             }`}
           >
@@ -60,7 +60,7 @@ export function WorkIndexClient({ locale = 'en' }: WorkIndexClientProps) {
         ))}
         <span className="ml-auto font-mono text-[12px] text-muted-foreground">{filtered.length}</span>
       </div>
-      <div className="mt-10 grid gap-x-8 gap-y-12 md:grid-cols-2">
+      <div className="mt-10 grid min-w-0 gap-x-8 gap-y-12 md:grid-cols-2">
         {filtered.map(project => <ProjectCard key={project.slug} project={project} locale={locale}/>)}
       </div>
       {!filtered.length && <p className="py-16 text-center text-muted-foreground">{isEl ? 'Δεν υπάρχουν έργα με αυτούς τους συνδυασμούς φίλτρων.' : 'No projects match these filters.'}</p>}
