@@ -258,7 +258,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
 
 ---
 
-## 6. Portfolio & Case Studies (42)
+## 6. Portfolio & Case Studies (41)
 
 ### Aggelos Rentals (`aggelos-rentals`)
 - **Case study:** https://anotherseoguru.com/en/work/aggelos-rentals · https://anotherseoguru.com/el/work/aggelos-rentals
@@ -370,15 +370,6 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Summary (EL):** Πεντάστερο ξενοδοχείο στη Θεσσαλονίκη με εξατομικευμένη εμπειρία διαμονής, πισίνα και μπαρ στην ταράτσα, εστιατόριο και χώρους ψυχαγωγίας.
 - **Services delivered:** website-creation, seo-web-design
 - **Website features:** Personalised rooms; Rooftop pool and bar; Direct hotel booking
-
-### Villa Olivia Clara (`villa-olivia-clara`)
-- **Case study:** https://anotherseoguru.com/en/work/villa-olivia-clara · https://anotherseoguru.com/el/work/villa-olivia-clara
-- **Project website:** https://villaoliviaclara.com
-- **Category:** villa · featured
-- **Summary (EN):** A family villa above Platis Gialos on Sifnos, with four bedrooms, a private pool and direct contact with its owner.
-- **Summary (EL):** Οικογενειακή βίλα πάνω από τον Πλατύ Γιαλό της Σίφνου, με τέσσερα υπνοδωμάτια, ιδιωτική πισίνα και απευθείας επικοινωνία με την ιδιοκτήτρια.
-- **Services delivered:** website-creation, local-seo, ai-visibility
-- **Website features:** Four bedrooms, up to eight guests; Private pool; Platis Gialos, Sifnos
 
 ### Mykonos Luxury (`mykonos-luxury`)
 - **Case study:** https://anotherseoguru.com/en/work/mykonos-luxury · https://anotherseoguru.com/el/work/mykonos-luxury
