@@ -515,12 +515,18 @@
 }
 
 /* Homepage client-logo rail. One track holds two identical runs, so a -50%
-   shift loops without a jump. Fades at the edges. Reduced motion shows a
-   single static run that can be scrolled by hand. */
+   shift loops without a jump. Fades at the edges. The rail never shows a
+   scrollbar. Reduced motion drops the duplicate run and wraps every mark
+   into a centered grid. */
 .home-logo-rail {
   overflow: hidden;
+  scrollbar-width: none;
   -webkit-mask-image: linear-gradient(to right, transparent, #000 11%, #000 89%, transparent);
   mask-image: linear-gradient(to right, transparent, #000 11%, #000 89%, transparent);
+}
+
+.home-logo-rail::-webkit-scrollbar {
+  display: none;
 }
 
 .home-logo-track {
@@ -561,6 +567,8 @@
   .home-logo-track {
     animation: none !important;
     transform: none !important;
+    width: 100%;
+    justify-content: center;
   }
 
   .home-logo-copy {
@@ -568,9 +576,18 @@
   }
 
   .home-logo-rail {
-    overflow-x: auto;
+    overflow: hidden;
     -webkit-mask-image: none;
     mask-image: none;
+  }
+
+  .home-logo-rail .home-logo-run {
+    width: 100%;
+    min-width: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 1.35rem;
+    padding-right: 0;
   }
 }
 

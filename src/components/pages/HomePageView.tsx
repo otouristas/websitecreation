@@ -221,7 +221,7 @@ export function HomePageView({ locale }: { readonly locale: SiteLocale }) {
                 {[false, true].map((hidden) => (
                   <ul
                     key={String(hidden)}
-                    className={`flex shrink-0 items-center gap-x-10 pr-10 sm:gap-x-16 sm:pr-16 ${hidden ? 'home-logo-copy' : ''}`}
+                    className={`home-logo-run flex shrink-0 items-center gap-x-10 pr-10 sm:gap-x-16 sm:pr-16 ${hidden ? 'home-logo-copy' : ''}`}
                     aria-hidden={hidden || undefined}
                   >
                     {HOME_LOGOS.map((logo) => (
@@ -231,7 +231,7 @@ export function HomePageView({ locale }: { readonly locale: SiteLocale }) {
                           alt={hidden ? '' : logo.alt}
                           width={220}
                           height={64}
-                          unoptimized={logo.src.endsWith('.svg')}
+                          unoptimized
                           loading={hidden ? 'lazy' : 'eager'}
                           className="home-logo"
                         />
