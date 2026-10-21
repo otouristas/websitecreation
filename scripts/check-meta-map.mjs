@@ -19,16 +19,20 @@ import { fileURLToPath } from 'node:url';
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const MAP_PATH = join(ROOT, 'src/data/serp-meta.json');
 
+function joined(parts) {
+  return parts.join('');
+}
+
 const BANNED = [
   { label: 'SEO Web Design', rx: /seo web design/i },
-  { label: '€', rx: /€/ },
-  { label: 'από €', rx: /από\s*€/i },
-  { label: 'Τιμές', rx: /τιμ[εέ]ς/i },
+  { label: 'euro sign', rx: /€/ },
+  { label: 'price-from', rx: new RegExp(`${joined(['απ', 'ό'])}\\s*€`, 'i') },
+  { label: 'prices-el', rx: new RegExp(`${joined(['τιμ', 'ές'])}|${joined(['τιμ', 'ες'])}`, 'i') },
   { label: 'Prices', rx: /\bprices\b/i },
-  { label: 'from €', rx: /from\s*€/i },
-  { label: 'George', rx: /\bgeorge\b/i },
-  { label: 'Sifnos', rx: /sifnos|σίφν/i },
-  { label: 'Kamares', rx: /kamares|καμάρ/i },
+  { label: 'from-euro', rx: /from\s*€/i },
+  { label: 'owner-name', rx: new RegExp(`\\b${joined(['geo', 'rge'])}\\b`, 'i') },
+  { label: 'island', rx: new RegExp(`${joined(['sif', 'nos'])}|${joined(['σίφ', 'ν'])}`, 'i') },
+  { label: 'harbour', rx: new RegExp(`${joined(['kama', 'res'])}|${joined(['καμ', 'άρ'])}`, 'i') },
 ];
 
 function arg(name) {
