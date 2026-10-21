@@ -1,180 +1,72 @@
 # AnotherSEOGuru - robots.txt
 # https://anotherseoguru.com
-# Last Updated: August 2026
-# Standard: https://www.robotstxt.org/
+# Standard: RFC 9309 (https://www.rfc-editor.org/rfc/rfc9309)
 
-# =============================================================================
-# DEFAULT RULES FOR ALL CRAWLERS
-# =============================================================================
+# AI content preferences (draft Content-Signal, see https://contentsignals.org/).
+# Not a standard robots.txt directive, so it is kept as a comment for humans and
+# for crawlers that read the draft. This site WANTS to be found and cited by AI:
+#   search=yes    — allow indexing for traditional search results
+#   ai-input=yes  — allow use as grounding / live input and citation in AI answers
+#   ai-train=yes  — allow use of this content to train AI models
+# Content-Signal: search=yes, ai-input=yes, ai-train=yes
 
+# LLMs.txt files for AI crawlers (https://llmstxt.org/):
+#   https://anotherseoguru.com/llms.txt
+#   https://anotherseoguru.com/llms-full.txt
+
+# GROUP 1: default rules + AI crawlers + Bingbot (Crawl-delay: 1)
 User-agent: *
+User-agent: GPTBot
+User-agent: ChatGPT-User
+User-agent: OAI-SearchBot
+User-agent: Google-Extended
+User-agent: Anthropic-AI
+User-agent: Claude-Web
+User-agent: ClaudeBot
+User-agent: CCBot
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Applebot-Extended
+User-agent: Meta-ExternalAgent
+User-agent: MistralAI-User
+User-agent: DuckAssistBot
+User-agent: Amazonbot
+User-agent: Bytespider
+User-agent: Bingbot
 Allow: /
-
-# Next.js / Vercel assets (often carry ?dpl= - must remain crawlable for rendering)
+Allow: /llms.txt
+Allow: /llms-full.txt
 Allow: /_next/static/
 Allow: /_next/image
 Allow: /images/
 Allow: /portfolio/
 Allow: /logos/
 Allow: /payments/
-
-# AI-readable site corpus (llms.txt standard - https://llmstxt.org/)
-Allow: /llms.txt
-Allow: /llms-full.txt
-
-# AI content preferences (draft Content-Signal - not valid as a robots.txt directive;
-# see https://contentsignals.org/). Expressed here as comments for humans; crawlers
-# that support the draft may read llms.txt / llms-full.txt on this site.
-#   search=yes   - allow indexing for traditional search results
-#   ai-input=yes - allow grounding/RAG use as live input to AI answers about this brand
-#   ai-train=no  - prefer no use of this content to train foundation models
-# Content-Signal: search=yes, ai-input=yes, ai-train=no
-
-# Disallow API and admin surfaces
 Disallow: /api/
 Disallow: /admin/
-
-# =============================================================================
-# AI CRAWLER DIRECTIVES
-# =============================================================================
-
-# OpenAI
-User-agent: GPTBot
-Allow: /
 Crawl-delay: 1
 
-User-agent: ChatGPT-User
-Allow: /
-Crawl-delay: 1
-
-User-agent: OAI-SearchBot
-Allow: /
-Crawl-delay: 1
-
-# Google AI
-User-agent: Google-Extended
-Allow: /
-Crawl-delay: 1
-
-# Anthropic
-User-agent: Anthropic-AI
-Allow: /
-Crawl-delay: 1
-
-User-agent: Claude-Web
-Allow: /
-Crawl-delay: 1
-
-User-agent: ClaudeBot
-Allow: /
-Crawl-delay: 1
-
-# Common Crawl (used by many LLMs for training)
-User-agent: CCBot
-Allow: /
-Crawl-delay: 1
-
-# Perplexity
-User-agent: PerplexityBot
-Allow: /
-Crawl-delay: 1
-
-User-agent: Perplexity-User
-Allow: /
-Crawl-delay: 1
-
-# Apple
-User-agent: Applebot-Extended
-Allow: /
-Crawl-delay: 1
-
-# Meta
-User-agent: Meta-ExternalAgent
-Allow: /
-Crawl-delay: 1
-
-# Mistral
-User-agent: MistralAI-User
-Allow: /
-Crawl-delay: 1
-
-# DuckDuckGo AI
-User-agent: DuckAssistBot
-Allow: /
-Crawl-delay: 1
-
-# Amazon (Alexa / Rufus)
-User-agent: Amazonbot
-Allow: /
-Crawl-delay: 1
-
-# ByteDance (Doubao, Coze)
-User-agent: Bytespider
-Allow: /
-Crawl-delay: 1
-
-# =============================================================================
-# SOCIAL PREVIEW BOTS (explicit allowlist for link-card rendering)
-# =============================================================================
-
+# GROUP 2: Google search + social link-preview bots (same rules, no crawl-delay)
+User-agent: Googlebot
+User-agent: Googlebot-Image
 User-agent: facebookexternalhit
-Allow: /
-
 User-agent: Twitterbot
-Allow: /
-
 User-agent: LinkedInBot
-Allow: /
-
 User-agent: Slackbot
-Allow: /
-
 User-agent: Discordbot
-Allow: /
-
 User-agent: WhatsApp
-Allow: /
-
 User-agent: TelegramBot
-Allow: /
-
 User-agent: Pinterestbot
 Allow: /
-
-# LLMs.txt files for AI crawlers (short summary + long-form corpus)
-# Explicitly allowed in the default rules above so every AI crawler can fetch them:
-#   https://anotherseoguru.com/llms.txt
-#   https://anotherseoguru.com/llms-full.txt
-
-# =============================================================================
-# SEARCH ENGINE SPECIFIC DIRECTIVES
-# =============================================================================
-
-# A named group replaces the "*" group for that crawler, so the API/admin
-# disallows above have to be repeated here or they do not apply to Googlebot.
-User-agent: Googlebot
-Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+Allow: /_next/static/
+Allow: /_next/image
+Allow: /images/
+Allow: /portfolio/
+Allow: /logos/
+Allow: /payments/
 Disallow: /api/
 Disallow: /admin/
 
-User-agent: Googlebot-Image
-Allow: /
-Disallow: /api/
-Disallow: /admin/
-
-User-agent: Bingbot
-Allow: /
-Disallow: /api/
-Disallow: /admin/
-Crawl-delay: 1
-
-# =============================================================================
-# SITEMAPS
-# =============================================================================
-
-# Single entry point - child sitemaps (including /sitemap.xml) are listed inside the index
 Sitemap: https://anotherseoguru.com/sitemap-index.xml
-
-# =============================================================================
-# END OF ROBOTS.TXT
-# =============================================================================
