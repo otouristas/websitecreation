@@ -13,6 +13,7 @@ import { allTerms } from '@/lib/docs/glossary';
 import { PLACE_PAGES } from '@/data/place-seo';
 import { PLATFORM_TOOLS } from '@/data/platform-tools';
 import { TOURISM_VERTICALS } from '@/data/tourism-seo';
+import { buildLocationServiceUrls } from '@/lib/sitemap-locations';
 
 const BASE_URL = 'https://anotherseoguru.com';
 const LOCALES: SiteLocale[] = ['en', 'el'];
@@ -201,6 +202,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const blogPages: MetadataRoute.Sitemap = blogPosts.map((p) => blogSitemapEntry(p));
 
+  // Indexable service × city pages. The location shards still list the same
+  // URLs; they were absent from this file, which is the inventory at
+  // /sitemap.xml. Only combinations that pass the indexability gate are
+  // included, so noindex and redirected city URLs stay out.
+  const serviceCityPages: MetadataRoute.Sitemap = (
+    [
+      ['el', 'el'],
+      ['en', 'en-intl'],
+      ['en', 'en-us'],
+    ] as const
+  ).flatMap(([locale, shard]) =>
+    buildLocationServiceUrls(locale, shard).map((entry) => ({
+      url: entry.loc,
+      lastModified: new Date(GENERATED_CONTENT_UPDATED),
+      changeFrequency: 'monthly' as const,
+      priority: Number(entry.priority ?? '0.6'),
+    })),
+  );
+
   return [...staticPages,
     ...placePages,
     ...consultantPages,
@@ -208,5 +228,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...portfolioPages,
     ...pillarPages,
     ...blogPages,
+    ...serviceCityPages,
   ];
 }

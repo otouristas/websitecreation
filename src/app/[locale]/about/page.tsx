@@ -1,11 +1,30 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { ArrowRight, BookOpen, Gem, Quote, Search, TrendingUp, UserRound, Zap } from "lucide-react";
-import { Container, CtaBand, KitHeading, KitSection, Stage, StepsGrid } from "@/components/kit";
-import { InfoCard, PageHero, SplitRow, StatRow, accentTail } from "@/components/page-kit";
+import { Gem, Quote, Search, TrendingUp, Zap } from "lucide-react";
+import { KitBreadcrumbs } from "@/components/page-kit";
+import { HOME_LOGOS } from "@/data/home-content";
+import { homeCopy } from "@/components/pages/home/copy";
+import {
+  AnnouncePill,
+  TrustMarks,
+  WaveAccent,
+  WaveChoice,
+  WaveClose,
+  WaveEyebrow,
+  WaveHeading,
+  WaveHero,
+  WaveSection,
+  WaveSteps,
+  waveGhostBtn,
+  wavePrimaryBtn,
+} from "@/components/pages/platform-wave/ui";
+import { accentEnd, ServiceHeroActions } from "@/components/pages/services-wave/ui";
+import { IndustryAppPanel } from "@/components/pages/industry-wave/ui";
+import { KIT_COPY } from "@/components/kit/sections";
 import { isValidLocale, localizedPath, type SiteLocale } from "@/lib/i18n/locale";
 import { buildMetadata } from "@/lib/seo";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
@@ -184,12 +203,14 @@ export default async function AboutPage({ params }: PageProps) {
         ],
       };
 
+  const siteLocale = locale as SiteLocale;
   const tx = (en: string, el: string) => (isEl ? el : en);
   const breadcrumbs = [
     { name: t.home, url: lp("/") },
     { name: t.about, url: lp("/about") },
   ];
   const icons = [Zap, Search, Gem, TrendingUp];
+  const copy = homeCopy(siteLocale);
 
   // AboutPage ties this URL to the Organization the layout already emits,
   // so AI engines read it as the company's own page.
@@ -217,124 +238,196 @@ export default async function AboutPage({ params }: PageProps) {
   return (
     <>
       <SchemaMarkup schemas={[aboutSchema, generateBreadcrumbSchema({ items: breadcrumbs })]} />
-      <Header locale={locale as SiteLocale} />
-      <main className="blueprint-grid relative z-0">
-        <PageHero
-          locale={locale as SiteLocale}
-          breadcrumbs={breadcrumbs}
-          pill={{
-            href: lp("/platform"),
-            kind: "new",
-            tag: tx("New", "Νέο"),
-            text: tx("We also build AnotherSEOGuru App, our own SEO software", "Φτιάχνουμε και το AnotherSEOGuru App, το δικό μας λογισμικό SEO"),
-          }}
-          title={accentTail(t.h1, 3)}
+      <Header locale={siteLocale} />
+      <main className="blueprint-grid relative z-0 overflow-x-clip">
+        <WaveHero
+          pill={
+            <div className="flex flex-col items-start gap-4">
+              <KitBreadcrumbs items={breadcrumbs} align="left" />
+              <AnnouncePill
+                wrap
+                href={lp("/platform")}
+                tag={tx("New", "Νέο")}
+                text={tx("We also build AnotherSEOGuru App, our own SEO software", "Φτιάχνουμε και το AnotherSEOGuru App, το δικό μας λογισμικό SEO")}
+              />
+            </div>
+          }
+          title={accentEnd(t.h1, 3)}
+          titleClassName="text-[1.7rem] min-[400px]:text-[1.95rem] sm:text-[2.45rem] lg:text-[3rem]"
           lead={t.sub}
-        >
-          <Container className="mt-14">
-            <StatRow items={t.stats.map((s) => ({ value: s.value, label: s.label }))} />
-          </Container>
-        </PageHero>
+          actions={
+            <ServiceHeroActions
+              locale={siteLocale}
+              primaryHref={`${lp("/get-started")}#free-audit`}
+              primaryLabel={KIT_COPY.freeAudit[siteLocale]}
+              whatsappLabel={KIT_COPY.whatsapp[siteLocale]}
+            />
+          }
+          trust={
+            <TrustMarks
+              yesLabel={tx("Yes", "Ναι")}
+              items={[KIT_COPY.reply24[siteLocale], KIT_COPY.realData[siteLocale], KIT_COPY.noContract[siteLocale]]}
+            />
+          }
+          panel={<IndustryAppPanel locale={siteLocale} kind="local" />}
+          panelNote={tx(
+            "Sample data inside AnotherSEOGuru App. This is not a client account.",
+            "Δείγμα δεδομένων μέσα στο AnotherSEOGuru App. Δεν είναι στοιχεία πελάτη.",
+          )}
+        />
 
-        <KitSection>
-          <SplitRow
-            eyebrow={t.storyLabel}
-            eyebrowIcon={<BookOpen />}
-            title={t.storyTitle}
-            body={
-              <div className="space-y-4">
+        <WaveSection shot="stats">
+          <dl className="grid grid-cols-2 overflow-hidden rounded-[22px] border border-hairline lg:grid-cols-4">
+            {t.stats.map((stat) => (
+              <div
+                key={stat.label}
+                className="min-w-0 border-hairline bg-background px-3 py-7 text-center max-lg:border-b max-lg:odd:border-r max-lg:[&:nth-child(n+3)]:border-b-0 sm:p-8 lg:border-r lg:p-10 lg:last:border-r-0"
+              >
+                <dt className="sr-only">{stat.label}</dt>
+                <dd className="font-display text-[2.2rem] font-bold leading-none tracking-tight text-foreground sm:text-5xl">
+                  <StatFigure value={stat.value} />
+                </dd>
+                <dd className="mt-2 text-pretty text-[14px] text-muted-foreground">{stat.label}</dd>
+              </div>
+            ))}
+          </dl>
+        </WaveSection>
+
+        <section data-shot="logos" className="border-y border-hairline bg-surface/40">
+          <div className="mx-auto max-w-[1240px] px-5 py-9 lg:px-8">
+            <p className="mb-7 text-center text-[13px] font-medium tracking-[0.01em] text-muted-foreground">{copy.trustIntro}</p>
+            <div className="home-logo-rail">
+              <div className="home-logo-track">
+                {[false, true].map((hidden) => (
+                  <ul
+                    key={String(hidden)}
+                    className={`home-logo-run flex shrink-0 items-center gap-x-10 pr-10 sm:gap-x-16 sm:pr-16 ${hidden ? "home-logo-copy" : ""}`}
+                    aria-hidden={hidden || undefined}
+                  >
+                    {HOME_LOGOS.map((logo) => (
+                      <li key={`${logo.alt}-${hidden}`} className="flex h-12 shrink-0 items-center justify-center sm:h-16">
+                        <Image
+                          src={logo.src}
+                          alt={hidden ? "" : logo.alt}
+                          width={220}
+                          height={64}
+                          unoptimized
+                          loading={hidden ? "lazy" : "eager"}
+                          className="home-logo"
+                        />
+                      </li>
+                    ))}
+                  </ul>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <WaveSection shot="story">
+          <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-14">
+            <div className="min-w-0">
+              <WaveEyebrow>{t.storyLabel}</WaveEyebrow>
+              <h2 className="mt-4 text-balance font-display text-[2rem] font-bold leading-[1.08] tracking-[-0.03em] text-foreground sm:text-[2.6rem]">
+                {accentEnd(t.storyTitle, 1)}
+              </h2>
+              <div className="mt-6 space-y-4 text-pretty text-[16.5px] leading-[1.7] text-muted-foreground">
                 <p>{t.storyP1}</p>
                 <p>{t.storyP2}</p>
                 <p>{t.storyP3}</p>
               </div>
-            }
-            preview={
-              <Stage>
-                <figure className="rounded-xl border border-hairline bg-background p-7 sm:p-9">
-                  <Quote className="size-6 text-brand" aria-hidden />
-                  <blockquote className="mt-4 font-serif text-[22px] italic leading-snug text-foreground sm:text-[26px]">
-                    {t.quote}
-                  </blockquote>
-                  <figcaption className="mt-5 font-mono text-[12px] uppercase tracking-[0.1em] text-muted-foreground">{t.author}</figcaption>
-                </figure>
-              </Stage>
-            }
-          />
-        </KitSection>
-
-        <KitSection tinted id="team">
-          <SplitRow
-            flip
-            eyebrow={t.founderLabel}
-            eyebrowIcon={<UserRound />}
-            title={t.founderTitle}
-            body={<p>{t.founderBody}</p>}
-            links={[{ href: consultantPath(locale as SiteLocale), label: t.founderLink, primary: true }]}
-            preview={
-              <Stage>
-                <figure className="rounded-xl border border-hairline bg-background p-7 sm:p-9">
-                  <figcaption>
-                    <span className="block font-display text-[30px] font-semibold tracking-[-0.03em] text-foreground sm:text-[36px]">
-                      {LEGAL_ENTITY_NAME}
-                    </span>
-                    <span className="mt-2 block font-mono text-[12px] uppercase tracking-[0.1em] text-muted-foreground">
-                      {t.founderRole}
-                    </span>
-                  </figcaption>
-                  <dl className="mt-7 grid grid-cols-3 gap-3 border-t border-hairline pt-6">
-                    {t.founderFacts.map((f) => (
-                      <div key={f.label}>
-                        <dt className="sr-only">{f.label}</dt>
-                        <dd className="font-display text-[26px] font-semibold tabular-nums leading-none tracking-[-0.03em] text-foreground sm:text-[30px]">
-                          {f.value}
-                        </dd>
-                        <dd className="mt-1.5 text-[13px] text-muted-foreground">{f.label}</dd>
-                      </div>
-                    ))}
-                  </dl>
-                </figure>
-              </Stage>
-            }
-          />
-        </KitSection>
-
-        <KitSection>
-          <KitHeading
-            align="center"
-            eyebrow={tx("Principles", "Αρχές")}
-            title={accentTail(t.beliefsTitle, 1)}
-            description={t.beliefsSub}
-          />
-          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {t.values.map((value, i) => {
-              const Icon = icons[i] ?? Zap;
-              return <InfoCard key={value.title} icon={<Icon />} title={value.title} text={value.description} />;
-            })}
+            </div>
+            <figure className="min-w-0 rounded-[22px] border border-hairline bg-surface/70 p-7 sm:p-9">
+              <Quote className="size-6 text-primary" aria-hidden />
+              <blockquote className="mt-4 text-pretty font-display text-[1.35rem] font-semibold italic leading-snug text-foreground sm:text-[1.6rem]">
+                {t.quote}
+              </blockquote>
+              <figcaption className="mt-5 font-code text-[12px] uppercase tracking-[0.1em] text-muted-foreground">{t.author}</figcaption>
+            </figure>
           </div>
-        </KitSection>
+        </WaveSection>
 
-        <KitSection tinted>
-          <KitHeading
-            align="center"
-            eyebrow={tx("Process", "Διαδικασία")}
-            title={accentTail(t.howWeWorkTitle, 1)}
-            description={t.howWeWorkSub}
-          />
-          <StepsGrid
-            className="mt-12 md:grid-cols-2 lg:grid-cols-4"
-            steps={t.steps.map((st) => ({ title: st.title, text: st.description }))}
-          />
-          <p className="mt-10 text-center text-[14px]">
-            <Link href={lp("/pricing")} className="inline-flex items-center gap-1.5 font-medium text-link underline-offset-4 hover:underline">
+        <WaveSection id="team" shot="team" tinted>
+          <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-14">
+            <div className="min-w-0">
+              <WaveHeading eyebrow={t.founderLabel} title={accentEnd(t.founderTitle, 1)} lead={t.founderBody} />
+              <Link href={consultantPath(siteLocale)} className={`${wavePrimaryBtn} mt-8`}>
+                {t.founderLink}
+              </Link>
+            </div>
+            <figure className="min-w-0 rounded-[22px] border border-hairline bg-background p-7 sm:p-9">
+              <figcaption>
+                <span className="block text-balance font-display text-[1.7rem] font-bold tracking-[-0.03em] text-foreground sm:text-[2rem]">
+                  {LEGAL_ENTITY_NAME}
+                </span>
+                <span className="mt-2 block text-[13px] text-muted-foreground">{t.founderRole}</span>
+              </figcaption>
+              <dl className="mt-7 grid grid-cols-3 gap-3 border-t border-hairline pt-6">
+                {t.founderFacts.map((fact) => (
+                  <div key={fact.label} className="min-w-0">
+                    <dt className="sr-only">{fact.label}</dt>
+                    <dd className="font-display text-[1.6rem] font-bold tabular-nums leading-none tracking-tight text-foreground sm:text-[1.85rem]">
+                      <StatFigure value={fact.value} />
+                    </dd>
+                    <dd className="mt-1.5 text-pretty text-[13px] text-muted-foreground">{fact.label}</dd>
+                  </div>
+                ))}
+              </dl>
+            </figure>
+          </div>
+        </WaveSection>
+
+        <WaveSection shot="principles">
+          <WaveHeading align="center" eyebrow={tx("Principles", "Αρχές")} title={accentEnd(t.beliefsTitle, 1)} lead={t.beliefsSub} />
+          <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {t.values.map((value, index) => {
+              const Icon = icons[index] ?? Zap;
+              return (
+                <li key={value.title} className="min-w-0 rounded-[22px] border border-hairline bg-surface/60 p-6">
+                  <span className="grid size-11 place-items-center rounded-2xl border border-primary/30 bg-primary/10 text-primary">
+                    <Icon className="size-5" aria-hidden />
+                  </span>
+                  <h3 className="mt-5 text-balance text-[1.15rem] font-bold text-foreground">{value.title}</h3>
+                  <p className="mt-3 text-pretty text-[15px] leading-relaxed text-muted-foreground">{value.description}</p>
+                </li>
+              );
+            })}
+          </ul>
+        </WaveSection>
+
+        <WaveSteps
+          shot="process"
+          eyebrow={tx("Process", "Διαδικασία")}
+          title={accentEnd(t.howWeWorkTitle, 1)}
+          lead={t.howWeWorkSub}
+          steps={t.steps.map((step) => ({ n: step.step, title: step.title, body: step.description }))}
+          actions={
+            <Link href={lp("/pricing")} className={waveGhostBtn}>
               {t.viewPricing}
-              <ArrowRight className="size-4" aria-hidden />
             </Link>
-          </p>
-        </KitSection>
+          }
+        />
 
-        <CtaBand locale={locale as SiteLocale} source="about-band" title={accentTail(t.ctaTitle, 1)} description={t.ctaSub} />
+        <WaveChoice locale={siteLocale} source="about-choice" />
+
+        <WaveClose
+          locale={siteLocale}
+          source="about-band"
+          title={accentEnd(t.ctaTitle, 1)}
+          lead={t.ctaSub}
+        />
       </main>
-      <Footer locale={locale as SiteLocale} />
+      <Footer locale={siteLocale} />
+    </>
+  );
+}
+
+function StatFigure({ value }: { readonly value: string }) {
+  if (!value.endsWith("+")) return value;
+  return (
+    <>
+      {value.slice(0, -1)}
+      <WaveAccent>+</WaveAccent>
     </>
   );
 }
