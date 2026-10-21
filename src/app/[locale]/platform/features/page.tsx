@@ -3,20 +3,30 @@ import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
-import { Accent, Container, CtaBand, HeroCentered, KitEyebrow, KitHeading, KitSection, SoftwareCtas, TrustLine, softwareTrust } from "@/components/kit";
+import { SampleWindow } from "@/components/pages/home/SampleWindow";
+import { homeCopy } from "@/components/pages/home/copy";
+import { TieredModuleGrid } from "@/components/pages/platform-wave/modules";
 import {
-  GscFaq,
+  AnnouncePill,
+  TrustMarks,
+  WaveSoftwareActions,
+  WaveAccent,
+  WaveClose,
+  WaveFaq,
+  WaveHeading,
+  WaveHero,
+  WaveSection,
+  WaveStats,
+} from "@/components/pages/platform-wave/ui";
+import {
   HOME_FAQ,
   IntegrationCards,
-  MODULES,
-  ModuleDetail,
-  ModuleIndex,
   PlatformLinks,
   gscBoostSoftwareSchema,
   platformBreadcrumbs,
   platformMetadata,
 } from "@/components/gsc-boost";
-import { isValidLocale, type SiteLocale } from "@/lib/i18n/locale";
+import { isValidLocale, localizedPath, type SiteLocale } from "@/lib/i18n/locale";
 
 type PageProps = { params: Promise<{ locale: string }> };
 
@@ -36,14 +46,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 /** The three questions people ask on a features page, from the app's FAQ. */
-const FEATURE_FAQ = HOME_FAQ.filter((f) =>
-  ["How are the click estimates calculated?", "What are credits used for?", "What access do you need to my Google account?"].includes(f.q.en),
+const FEATURE_FAQ = HOME_FAQ.filter((item) =>
+  ["How are the click estimates calculated?", "What are credits used for?", "What access do you need to my Google account?"].includes(item.q.en),
 );
 
 /**
- * Every AnotherSEOGuru App module on one page, adapted from the app's FeaturesPage.
- * Section ids are the anchors the site menu links to; the 27 retired
- * /platform/features/<slug> URLs 308 here (next.config.ts).
+ * Every AnotherSEOGuru App module on one page. Section ids are the anchors
+ * the site menu links to. The 27 retired /platform/features/<slug> URLs 308 here.
  */
 export default async function PlatformFeaturesPage({ params }: PageProps) {
   const { locale: raw } = await params;
@@ -51,6 +60,7 @@ export default async function PlatformFeaturesPage({ params }: PageProps) {
   const locale: SiteLocale = raw;
   const isEl = locale === "el";
   const tx = (en: string, el: string) => (isEl ? el : en);
+  const copy = homeCopy(locale);
 
   return (
     <>
@@ -61,55 +71,88 @@ export default async function PlatformFeaturesPage({ params }: PageProps) {
         ]}
       />
       <Header locale={locale} />
-      <main className="blueprint-grid relative z-0">
-        <HeroCentered
-          pill={<KitEyebrow>{tx("AnotherSEOGuru App · Features", "AnotherSEOGuru App · Δυνατότητες")}</KitEyebrow>}
+      <main className="blueprint-grid relative z-0 overflow-x-clip">
+        <WaveHero
+          pill={
+            <AnnouncePill
+              href={localizedPath(locale, "/platform")}
+              tag={tx("Features", "Δυνατότητες")}
+              text={tx("AnotherSEOGuru App", "AnotherSEOGuru App")}
+            />
+          }
           title={
             <>
-              {tx("Every SEO tool you need, grounded in", "Όλα τα εργαλεία SEO που χρειάζεστε, βασισμένα στα")} <Accent>{tx("your data", "δικά σας δεδομένα")}</Accent>
+              <span className="block">{tx("Every SEO tool you need,", "Όλα τα εργαλεία SEO που χρειάζεστε,")}</span>
+              <span className="block">
+                {tx("grounded in ", "βασισμένα στα ")}
+                <WaveAccent>{tx("your data.", "δικά σας δεδομένα.")}</WaveAccent>
+              </span>
             </>
           }
           lead={tx(
             "AnotherSEOGuru App has nine modules in one workspace. Search Console features cost nothing on every plan; paid data and AI use credits, and every action shows its cost before you run it.",
             "Το AnotherSEOGuru App έχει εννέα λειτουργίες σε έναν χώρο εργασίας. Οι λειτουργίες του Search Console δεν κοστίζουν τίποτα σε κανένα πακέτο· τα δεδομένα τρίτων και η AI χρησιμοποιούν μονάδες, και κάθε ενέργεια δείχνει το κόστος της πριν την εκτελέσετε.",
           )}
-          actions={<SoftwareCtas locale={locale} source="features-hero" />}
-          trust={<TrustLine items={softwareTrust(locale)} />}
-        >
-          <Container className="mt-14 pb-6">
-            <ModuleIndex locale={locale} />
-          </Container>
-        </HeroCentered>
+          actions={<WaveSoftwareActions locale={locale} source="features-hero" />}
+          trust={<TrustMarks items={[copy.trust[0], tx("No credit card for the demo", "Χωρίς κάρτα για την επίδειξη"), tx("Cancel anytime", "Ακύρωση οποτεδήποτε")]} yesLabel={copy.markYes} />}
+          panel={<SampleWindow copy={copy} />}
+          panelNote={copy.sampleCaption}
+        />
 
-        <div className="mt-10">
-          {MODULES.map((m, i) => (
-            <ModuleDetail key={m.id} m={m} locale={locale} flip={i % 2 === 1} />
-          ))}
-        </div>
+        <WaveSection shot="capabilities">
+          <WaveHeading
+            align="center"
+            eyebrow={tx("Capabilities", "Δυνατότητες")}
+            title={
+              <>
+                {tx("Nine modules, ", "Εννέα λειτουργίες, ")}
+                <WaveAccent>{tx("three tiers.", "τρία επίπεδα.")}</WaveAccent>
+              </>
+            }
+            lead={tx(
+              "Search Console work is on every plan. Research, content and AI visibility open on Growth. The client workspace is the Agency plan.",
+              "Η δουλειά στο Search Console υπάρχει σε κάθε πακέτο. Η έρευνα, το περιεχόμενο και η ορατότητα σε AI ανοίγουν στο Growth. Ο χώρος εργασίας πελατών είναι το πακέτο Agency.",
+            )}
+          />
+          <TieredModuleGrid locale={locale} source="features" detailed />
+        </WaveSection>
 
-        <KitSection tinted id="integrations">
-          <KitHeading
+        <WaveSection id="integrations" shot="integrations" tinted>
+          <WaveHeading
             eyebrow={tx("Integrations", "Ενσωματώσεις")}
             title={
               <>
-                {tx("Every module, on the same account in", "Κάθε λειτουργία, με τον ίδιο λογαριασμό, σε")} <Accent>{tx("Chrome, WordPress and AI assistants", "Chrome, WordPress και βοηθούς AI")}</Accent>
+                {tx("Every module, on the same account in ", "Κάθε λειτουργία, με τον ίδιο λογαριασμό, σε ")}
+                <WaveAccent>{tx("Chrome, WordPress and AI.", "Chrome, WordPress και AI.")}</WaveAccent>
               </>
             }
-            description={tx(
+            lead={tx(
               "Check pages with the SEO Chrome extension, see Search Console in the WordPress editor, or ask Claude and ChatGPT through the MCP server. Tasks sync back here.",
               "Ελέγξτε σελίδες με την επέκταση SEO για Chrome, δείτε το Search Console μέσα στον editor του WordPress ή ρωτήστε Claude και ChatGPT μέσω του MCP server. Οι εργασίες συγχρονίζονται εδώ.",
             )}
           />
           <IntegrationCards locale={locale} exclude="web" className="mt-12" />
-        </KitSection>
+        </WaveSection>
 
-        <GscFaq locale={locale} items={FEATURE_FAQ} />
-        <CtaBand
+        <WaveStats locale={locale} />
+        <WaveFaq
+          locale={locale}
+          items={FEATURE_FAQ}
+          title={
+            <>
+              {copy.faqTitleBefore}
+              <WaveAccent>{copy.faqAccent}</WaveAccent>
+            </>
+          }
+          lead={copy.faqLead}
+        />
+        <WaveClose
           locale={locale}
           source="features-band"
           title={
             <>
-              {tx("Try every module on", "Δοκιμάστε κάθε λειτουργία στα")} <Accent>{tx("your own data", "δικά σας δεδομένα")}</Accent>.
+              {tx("Try every module on ", "Δοκιμάστε κάθε λειτουργία στα ")}
+              <WaveAccent>{tx("your own data.", "δικά σας δεδομένα.")}</WaveAccent>
             </>
           }
         />
