@@ -29,7 +29,6 @@ const RETIRED_WORK_SLUGS = [
   "the-ace-vip",
   "travel-sifnos",
   "vape-and-more",
-  "villa-olivia-clara",
   "villas-katerina",
 ] as const;
 

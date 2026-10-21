@@ -439,6 +439,42 @@ export const PROJECT_RESEARCH: Record<string, ProjectResearch> = {
       ]
     }
   },
+  "villa-olivia-clara": {
+    "overview": {
+      "en": "A family villa above Platis Gialos on Sifnos, with four bedrooms, a private pool and direct contact with its owner.",
+      "el": "Οικογενειακή βίλα πάνω από τον Πλατύ Γιαλό της Σίφνου, με τέσσερα υπνοδωμάτια, ιδιωτική πισίνα και απευθείας επικοινωνία με την ιδιοκτήτρια."
+    },
+    "features": {
+      "en": [
+        "Four bedrooms, up to eight guests",
+        "Private pool",
+        "Platis Gialos, Sifnos"
+      ],
+      "el": [
+        "Τέσσερα υπνοδωμάτια, έως οκτώ επισκέπτες",
+        "Ιδιωτική πισίνα",
+        "Πλατύς Γιαλός Σίφνου"
+      ]
+    },
+    "audience": {
+      "en": "Families and groups need to assess the space, location and facilities before enquiring.",
+      "el": "Οικογένειες και παρέες χρειάζονται εικόνα των χώρων, της τοποθεσίας και των παροχών πριν ζητήσουν διαθεσιμότητα."
+    },
+    "journey": {
+      "en": "Explore the villa and its location, then contact the owner about the stay.",
+      "el": "Παρουσίαση της βίλας και της τοποθεσίας, με συνέχεια στην επικοινωνία με την ιδιοκτήτρια για τη διαμονή."
+    },
+    "keywords": {
+      "en": [
+        "Sifnos private pool villa",
+        "Villa Olivia Clara"
+      ],
+      "el": [
+        "βίλα Σίφνος ιδιωτική πισίνα",
+        "Villa Olivia Clara"
+      ]
+    }
+  },
   "mykonos-luxury": {
     "overview": {
       "en": "A Mykonos concierge platform for private villas, yachts and tailored VIP experiences.",

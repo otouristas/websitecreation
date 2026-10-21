@@ -495,6 +495,44 @@ export const portfolioProjects: PortfolioProject[] = [
     "featured": true
   },
   {
+    "slug": "villa-olivia-clara",
+    "name": "Villa Olivia Clara",
+    "url": "https://villaoliviaclara.com",
+    "category": "villa",
+    "markets": [
+      "GR",
+      "EU",
+      "UK"
+    ],
+    "languages": [
+      "en",
+      "el"
+    ],
+    "screenshot": "/portfolio/villa-olivia-clara.webp",
+    "summary": "A family villa above Platis Gialos on Sifnos, with four bedrooms, a private pool and direct contact with its owner.",
+    "summaryEl": "Οικογενειακή βίλα πάνω από τον Πλατύ Γιαλό της Σίφνου, με τέσσερα υπνοδωμάτια, ιδιωτική πισίνα και απευθείας επικοινωνία με την ιδιοκτήτρια.",
+    "results": [
+      "Four bedrooms, up to eight guests",
+      "Private pool",
+      "Platis Gialos, Sifnos"
+    ],
+    "resultsEl": [
+      "Τέσσερα υπνοδωμάτια, έως οκτώ επισκέπτες",
+      "Ιδιωτική πισίνα",
+      "Πλατύς Γιαλός Σίφνου"
+    ],
+    "services": [
+      "website-creation",
+      "local-seo",
+      "ai-visibility"
+    ],
+    "seoTitle": "Villa Olivia Clara | Website project",
+    "seoDescription": "A family villa above Platis Gialos on Sifnos, with four bedrooms, a private pool and direct contact with its owner.",
+    "seoTitleEl": "Villa Olivia Clara | Παρουσίαση έργου",
+    "seoDescriptionEl": "Οικογενειακή βίλα πάνω από τον Πλατύ Γιαλό της Σίφνου, με τέσσερα υπνοδωμάτια, ιδιωτική πισίνα και απευθείας επικοινωνία με την ιδιοκτήτρια.",
+    "featured": true
+  },
+  {
     "slug": "mykonos-luxury",
     "name": "Mykonos Luxury",
     "url": "https://mykonos.luxury",

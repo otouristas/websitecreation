@@ -169,10 +169,10 @@ const el: SeoServicesPillarCopy = {
         slug: 'discover-cyclades',
       },
       {
-        label: 'Mykonos Luxury',
+        label: 'Villa Olivia Clara',
         line:
-          'Υπηρεσίες προσωπικής εξυπηρέτησης στη Μύκονο, με ιδιωτικές βίλες, γιοτ και εξατομικευμένες εμπειρίες.',
-        slug: 'mykonos-luxury',
+          'Πολυτελής βίλα στην Κρήτη - brand + luxury villa SEO με έμφαση σε μετατροπή μέσω φωτογραφίας· καλύτερα leads από την πρώτη σεζόν.',
+        slug: 'villa-olivia-clara',
       },
       {
         label: 'Aggelos Rentals',
@@ -404,10 +404,10 @@ const en: SeoServicesPillarCopy = {
         slug: 'discover-cyclades',
       },
       {
-        label: 'Mykonos Luxury',
+        label: 'Villa Olivia Clara',
         line:
-          'A Mykonos concierge platform for private villas, yachts and tailored VIP experiences.',
-        slug: 'mykonos-luxury',
+          'Luxury villa in Crete - brand and luxury villa SEO with photo-led conversion; stronger enquiries from the first season.',
+        slug: 'villa-olivia-clara',
       },
       {
         label: 'Aggelos Rentals',

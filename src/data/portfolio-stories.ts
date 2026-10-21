@@ -15,6 +15,7 @@ const HEADLINES: Record<string, readonly [string, string]> = {
   'hotels-santorini': ['Find your side of Santorini.', 'Βρείτε τη δική σας πλευρά της Σαντορίνης.'],
   'hotels-sifnos': ['A stay that feels like Sifnos.', 'Μια διαμονή με τον χαρακτήρα της Σίφνου.'],
   'onoma-hotel': ['A city stay with personality.', 'Διαμονή με προσωπικότητα.'],
+  'villa-olivia-clara': ['Space to make Sifnos your own.', 'Ο δικός σας χώρος στη Σίφνο.'],
   'mykonos-luxury': ['Mykonos, arranged around you.', 'Η Μύκονος, στα δικά σας μέτρα.'],
   'discover-cyclades': ['Many islands. One place to begin.', 'Πολλά νησιά. Μία αφετηρία.'],
   'discover-crete': ['A whole island to discover.', 'Ένα ολόκληρο νησί για να ανακαλύψετε.'],

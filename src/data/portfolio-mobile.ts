@@ -26,5 +26,6 @@ export const MOBILE_CAPTURES: readonly string[] = [
   "skydream-travel",
   "stretcher-stopper",
   "thenutrinest",
+  "villa-olivia-clara",
   "vwanaki"
 ];

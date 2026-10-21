@@ -73,6 +73,16 @@ const projects = [
     accent: '#f2f2f2',
   },
   {
+    slug: 'villa-olivia-clara',
+    name: 'Villa Olivia Clara',
+    url: 'villaoliviaclara.com',
+    screenshot: 'villa-olivia-clara-mobile.png',
+    label: 'LUXURY VILLA WEBSITE',
+    headline: 'Photo-led hospitality design built to convert.',
+    chips: ['Hospitality', 'Direct booking', 'SEO'],
+    accent: '#a9c38d',
+  },
+  {
     slug: 'mykonos-luxury',
     name: 'Mykonos Luxury',
     url: 'mykonos.luxury',
@@ -225,7 +235,7 @@ await renderAd({
   headline: 'Your tourism website should do more than look good.',
   subhead: 'Turn mobile visitors into direct bookings with conversion-first design, SEO and AI-search visibility.',
   cta: 'Get a free quote',
-  screenshots: ['onoma-hotel-mobile.png', 'naxos-car-rentals-mobile.png', 'hotels-santorini-mobile.png'],
+  screenshots: ['villa-olivia-clara-mobile.png', 'naxos-car-rentals-mobile.png', 'hotels-santorini-mobile.png'],
 })
 
 await renderAd({
