@@ -97,5 +97,5 @@ In code, use the semantic names, not raw HEX values:
 - Dark: cyan button with Ink label. Light: blue button with white label.
 - Selection, success, warning, danger and charts stay separate roles; don't reuse one for another.
 - Never write a raw HEX in a component; use a token or Tailwind name.
-- Client logos: in dark they are inverted (`dark:invert`); in light they stay in colour.
+- Client logos (`.home-logo`): in dark they get `filter: invert(1)` so the dark marks turn light; in light they stay as they are.
 - The header pill, footer and cookie banner use these tokens; don't change them.
