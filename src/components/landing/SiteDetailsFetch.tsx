@@ -105,7 +105,7 @@ export function FetchDetailsButton({
       disabled={loading}
       aria-busy={loading}
       className={cn(
-        "inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-2xl border border-brand/40 bg-brand/10 px-4 font-display text-sm font-semibold text-foreground transition-colors hover:border-brand/70 hover:bg-brand/15 disabled:opacity-80",
+        "inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-2xl border border-primary/40 bg-primary/10 px-4 font-display text-sm font-semibold text-foreground transition-colors hover:border-primary/70 hover:bg-primary/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/45 disabled:cursor-not-allowed disabled:opacity-60",
         className,
       )}
     >

@@ -22,10 +22,14 @@ import { generateFAQSchema } from "@/lib/seo/schema";
  */
 
 export const wavePrimaryBtn =
-  "inline-flex min-h-12 items-center justify-center gap-2.5 rounded-full px-5 py-3 text-center font-display text-[15px] font-semibold asg-primary-action shadow-[inset_0_1px_0_0_oklch(1_0_0/18%),0_10px_28px_-12px_color-mix(in_oklab,var(--primary)_75%,transparent)] transition-[transform,background-color] duration-200 hover:-translate-y-px motion-reduce:transition-none motion-reduce:hover:translate-y-0";
+  "inline-flex min-h-12 items-center justify-center gap-2.5 rounded-full px-5 py-3 text-center font-display text-[15px] font-semibold asg-primary-action shadow-[inset_0_1px_0_0_oklch(1_0_0/18%),0_10px_28px_-12px_color-mix(in_oklab,var(--primary)_75%,transparent)] transition-[transform,background-color] duration-200 hover:-translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background motion-reduce:transition-none motion-reduce:hover:translate-y-0 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0";
 
 export const waveGhostBtn =
-  "inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-hairline bg-surface/50 px-5 py-3 text-center text-[15px] font-semibold text-foreground backdrop-blur transition-colors hover:border-brand/50";
+  "inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-hairline bg-surface/50 px-5 py-3 text-center text-[15px] font-semibold text-foreground backdrop-blur transition-colors hover:border-brand/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 disabled:cursor-not-allowed disabled:opacity-60";
+
+/** Shared field chrome for contact and get-started. States use brand tokens. */
+export const waveField =
+  "block min-h-12 w-full min-w-0 rounded-2xl border border-hairline bg-background px-4 py-3 text-[16px] text-foreground shadow-[inset_0_1px_0_0_color-mix(in_oklab,var(--foreground)_6%,transparent)] transition-[border-color,box-shadow,background-color] duration-200 placeholder:text-muted-foreground/70 hover:border-primary/35 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30 aria-[invalid=true]:border-destructive aria-[invalid=true]:bg-destructive/5 aria-[invalid=true]:ring-2 aria-[invalid=true]:ring-destructive/25 disabled:cursor-not-allowed disabled:bg-surface/70 disabled:opacity-60";
 
 export function WaveAccent({ children }: { readonly children: ReactNode }) {
   return (

@@ -8,7 +8,6 @@ import { describeAnswers, submitLead } from '@/lib/leads';
 import { captureUtmParams, trackFormStart } from '@/lib/analytics';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 import { FreeAuditForm } from '@/components/landing/FreeAuditForm';
-import { primaryBtnClass } from '@/components/landing/primitives';
 import {
   FetchDetailsButton,
   FetchDetailsNote,
@@ -18,8 +17,9 @@ import {
   siteDetailsMessage,
   useSiteDetails,
 } from '@/components/landing/SiteDetailsFetch';
-import { TrustLine, kitSecondaryBtn } from '@/components/kit';
-import { PageHero, accentTail } from '@/components/page-kit';
+import { TrustLine } from '@/components/kit';
+import { WaveHero, waveField, waveGhostBtn, wavePrimaryBtn } from '@/components/pages/platform-wave/ui';
+import { accentEnd } from '@/components/pages/services-wave/ui';
 import { PROJECTS_DELIVERED_LABEL, RESPONSE_HOURS } from '@/data/company-facts';
 import { FOUNDER_YEARS } from '@/data/founder';
 
@@ -145,8 +145,11 @@ const WEBSITE_COPY = {
 /** English labels for the lead record, whatever language the visitor used. */
 const TYPE_EN: Record<ProjectType, string> = WEBSITE_COPY.en.types;
 
-const inputClass =
-  'h-12 w-full min-w-0 rounded-2xl border border-hairline bg-background/60 px-4 text-base text-foreground placeholder:text-muted-foreground/70 focus:border-brand/60 focus:outline-none';
+const formCard =
+  'rounded-[22px] border border-hairline bg-surface/80 p-5 text-left shadow-[0_0_0_1px_color-mix(in_oklab,var(--primary)_18%,transparent),0_24px_60px_-28px_color-mix(in_oklab,var(--primary)_50%,transparent)] sm:p-6';
+
+const fieldError =
+  'w-full rounded-2xl border border-destructive/40 bg-destructive/10 px-4 py-3 text-sm leading-relaxed text-destructive';
 
 function WebsiteBriefForm({
   locale,
@@ -257,13 +260,19 @@ function WebsiteBriefForm({
 
   if (done) {
     return (
-      <div className={cn('glass rounded-3xl p-6 text-center sm:p-8', className)} role="status">
-        <span className="mx-auto flex size-14 items-center justify-center rounded-full bg-brand/15 text-brand">
+      <div
+        className={cn(
+          'rounded-[22px] border border-hairline bg-surface/80 p-6 text-center shadow-[0_0_0_1px_color-mix(in_oklab,var(--success)_22%,transparent),0_24px_60px_-28px_color-mix(in_oklab,var(--primary)_40%,transparent)] sm:p-8',
+          className,
+        )}
+        role="status"
+      >
+        <span className="mx-auto flex size-14 items-center justify-center rounded-full bg-success/15 text-success">
           <Check className="size-7" strokeWidth={2.5} aria-hidden />
         </span>
         <h2 className="mt-5 font-display text-2xl font-semibold tracking-[-0.03em] text-foreground">{t.doneTitle(name.trim().split(/\s+/)[0] ?? '')}</h2>
         <p className="mx-auto mt-2 max-w-xl text-[15px] leading-relaxed text-muted-foreground">{t.doneBody}</p>
-        <Link href={localizedPath(locale, '/work')} className={cn(kitSecondaryBtn, 'mt-6')}>
+        <Link href={localizedPath(locale, '/work')} className={cn(waveGhostBtn, 'mt-6')}>
           {t.seeWork}
           <ArrowRight className="size-4 shrink-0" aria-hidden />
         </Link>
@@ -272,8 +281,8 @@ function WebsiteBriefForm({
   }
 
   return (
-    <form onSubmit={handleSubmit} noValidate className={cn('glass rounded-3xl p-5 text-left sm:p-6', className)}>
-      <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-brand">{t.eyebrow}</p>
+    <form onSubmit={handleSubmit} noValidate className={cn(formCard, className)}>
+      <p className="font-code text-[12px] font-semibold uppercase tracking-[0.16em] text-primary">{t.eyebrow}</p>
       <h2 className="mt-1 font-display text-xl font-semibold tracking-[-0.02em] text-foreground">{t.title}</h2>
       <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{t.body}</p>
 
@@ -294,11 +303,11 @@ function WebsiteBriefForm({
                 setProjectType(id);
               }}
               className={cn(
-                'inline-flex min-h-10 items-center gap-1.5 rounded-full border px-4 py-2 text-sm font-medium transition-colors',
-                active ? 'border-brand/70 bg-brand/15 text-foreground' : 'border-hairline bg-background/40 text-muted-foreground hover:border-brand/40 hover:text-foreground',
+                'inline-flex min-h-10 max-w-full items-center gap-1.5 rounded-full border px-4 py-2 text-left text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/45',
+                active ? 'border-primary/50 bg-primary/10 text-foreground' : 'border-hairline bg-background/50 text-muted-foreground hover:border-primary/35 hover:text-foreground',
               )}
             >
-              {active && <Check className="size-3.5 shrink-0 text-brand" aria-hidden />}
+              {active && <Check className="size-3.5 shrink-0 text-primary" aria-hidden />}
               {t.types[id]}
             </button>
           );
@@ -311,7 +320,7 @@ function WebsiteBriefForm({
             <div className="flex min-w-0 flex-col gap-2 sm:flex-row">
               <label className="grid min-w-0 flex-1 gap-1">
                 <span className="sr-only">{t.website}</span>
-                <input name="website" type="text" inputMode="url" autoComplete="url" placeholder={`${t.website}: ${t.websitePh}`} value={website} onFocus={markStarted} onChange={(e) => setWebsite(e.target.value)} className={inputClass} />
+                <input name="website" type="text" inputMode="url" autoComplete="url" placeholder={`${t.website}: ${t.websitePh}`} value={website} onFocus={markStarted} onChange={(e) => setWebsite(e.target.value)} className={waveField} />
               </label>
               <FetchDetailsButton locale={locale} state={details.state} onClick={handleFetchDetails} />
             </div>
@@ -321,23 +330,23 @@ function WebsiteBriefForm({
         )}
         <label className="grid min-w-0 gap-1">
           <span className="sr-only">{t.business}</span>
-          <input name="company" type="text" autoComplete="organization" placeholder={t.business} value={business} onFocus={markStarted} onChange={(e) => setBusiness(e.target.value)} className={inputClass} />
+          <input name="company" type="text" autoComplete="organization" placeholder={t.business} value={business} onFocus={markStarted} onChange={(e) => setBusiness(e.target.value)} className={waveField} />
         </label>
         <label className="grid min-w-0 gap-1">
           <span className="sr-only">{t.name}</span>
-          <input name="name" type="text" autoComplete="name" placeholder={t.name} value={name} onFocus={markStarted} onChange={(e) => setName(e.target.value)} className={inputClass} />
+          <input name="name" type="text" autoComplete="name" placeholder={t.name} value={name} onFocus={markStarted} onChange={(e) => setName(e.target.value)} className={waveField} />
         </label>
         <label className="grid min-w-0 gap-1">
           <span className="sr-only">{t.email}</span>
-          <input name="email" type="email" inputMode="email" autoComplete="email" placeholder={t.email} value={email} onFocus={markStarted} onChange={(e) => setEmail(e.target.value)} className={inputClass} />
+          <input name="email" type="email" inputMode="email" autoComplete="email" placeholder={t.email} value={email} onFocus={markStarted} onChange={(e) => setEmail(e.target.value)} className={waveField} />
         </label>
         <label className="grid min-w-0 gap-1">
           <span className="sr-only">{t.phone}</span>
-          <input name="phone" type="tel" inputMode="tel" autoComplete="tel" placeholder={t.phone} value={phone} onFocus={markStarted} onChange={(e) => setPhone(e.target.value)} className={inputClass} />
+          <input name="phone" type="tel" inputMode="tel" autoComplete="tel" placeholder={t.phone} value={phone} onFocus={markStarted} onChange={(e) => setPhone(e.target.value)} className={waveField} />
         </label>
         <label className="grid min-w-0 gap-1 sm:col-span-2">
           <span className="text-[13px] text-muted-foreground">{t.need}</span>
-          <textarea name="need" rows={3} maxLength={2000} placeholder={t.needPh} value={need} onFocus={markStarted} onChange={(e) => setNeed(e.target.value)} className={cn(inputClass, 'h-auto min-h-24 resize-y py-3')} />
+          <textarea name="need" rows={3} maxLength={2000} placeholder={t.needPh} value={need} onFocus={markStarted} onChange={(e) => setNeed(e.target.value)} className={cn(waveField, 'h-auto min-h-24 resize-y')} />
         </label>
         {/* Honeypot: humans never see or fill this. */}
         <input
@@ -352,12 +361,12 @@ function WebsiteBriefForm({
         />
       </div>
       <div className="mt-3 flex flex-wrap items-center gap-3">
-        <button type="submit" disabled={sending} className={cn(primaryBtnClass, 'w-full shrink-0 disabled:opacity-80 sm:w-auto')}>
+        <button type="submit" disabled={sending} className={cn(wavePrimaryBtn, 'w-full shrink-0 sm:w-auto')}>
           {sending ? t.sending : t.submit}
           {!sending && <ArrowRight className="size-4 shrink-0" aria-hidden />}
         </button>
         {error && (
-          <p className="text-sm text-destructive" role="alert">
+          <p className={fieldError} role="alert">
             {error}
           </p>
         )}
@@ -388,15 +397,15 @@ function ServiceSwitch({ locale, value, onChange }: { locale: SiteLocale; value:
             aria-controls={`gs-panel-${id}`}
             onClick={() => onChange(id)}
             className={cn(
-              'flex min-w-0 flex-col items-center gap-1 rounded-[20px] px-3 py-3 text-center transition-colors sm:flex-row sm:gap-3 sm:px-5 sm:py-4 sm:text-left',
+              'flex min-w-0 flex-col items-center gap-1 rounded-[20px] px-2 py-3 text-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 sm:flex-row sm:gap-3 sm:px-5 sm:py-4 sm:text-left',
               active
                 ? 'asg-primary-action text-primary-foreground shadow-[0_10px_30px_-12px_color-mix(in_oklab,var(--primary)_80%,transparent)]'
                 : 'text-foreground hover:bg-background/60',
             )}
           >
-            <Icon className={cn('size-5 shrink-0', active ? 'text-primary-foreground' : 'text-brand')} aria-hidden />
+            <Icon className={cn('size-5 shrink-0', active ? 'text-primary-foreground' : 'text-primary')} aria-hidden />
             <span className="min-w-0">
-              <span className="block font-display text-[15px] font-semibold leading-tight tracking-[-0.01em] sm:text-[17px]">{t.tabs[id].label}</span>
+              <span className="block text-balance font-display text-[14px] font-semibold leading-tight tracking-[-0.01em] sm:text-[17px]">{t.tabs[id].label}</span>
               <span className={cn('mt-0.5 hidden text-[13px] leading-snug sm:block', active ? 'text-primary-foreground/80' : 'text-muted-foreground')}>{t.tabs[id].sub}</span>
             </span>
           </button>
@@ -430,14 +439,14 @@ export function GetStartedClient({ locale }: { locale: SiteLocale }) {
   }
 
   return (
-    <main className="blueprint-grid relative z-0">
-      <PageHero
-        locale={locale}
-        size="md"
-        title={accentTail(t.title, 2)}
+    <main className="blueprint-grid relative z-0 overflow-x-clip">
+      <WaveHero
+        title={accentEnd(t.title, 2)}
+        titleClassName="text-[1.7rem] min-[400px]:text-[1.9rem] sm:text-[2.35rem] lg:text-[2.75rem]"
         lead={t.lead}
-        actions={
-          <div className="mx-auto w-full max-w-4xl">
+        trust={<TrustLine align="left" items={t.trust.map((label, i) => ({ icon: TRUST_ICONS[i], label }))} />}
+        panel={
+          <div data-shot="form" className="min-w-0">
             <ServiceSwitch locale={locale} value={service} onChange={switchService} />
             <div id="gs-panel-seo" role="tabpanel" aria-labelledby="gs-tab-seo" hidden={service !== 'seo'} className="mt-4">
               <FreeAuditForm key={`seo-${initial.website}`} locale={locale} initialWebsite={initial.website} context={initial.context} />
@@ -447,8 +456,6 @@ export function GetStartedClient({ locale }: { locale: SiteLocale }) {
             </div>
           </div>
         }
-        trust={<TrustLine items={t.trust.map((label, i) => ({ icon: TRUST_ICONS[i], label }))} />}
-        className="pb-20"
       />
     </main>
   );

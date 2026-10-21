@@ -1,16 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { CONTACT_EMAIL } from '@/lib/contact-info';
 import type { ReactElement } from "react";
 import Link from "next/link";
 import { describeAnswers, submitLead, type LeadService } from "@/lib/leads";
 import { captureUtmParams, trackFormStart } from "@/lib/analytics";
 import { localizedPath, type SiteLocale } from "@/lib/i18n/locale";
 import { elContact } from "@/data/translations/el-contact";
-import ContactChannels from "@/components/ContactChannels";
-import { ArrowRight, Check, Clock3, Globe, Loader2, Mail } from "lucide-react";
-import { kitPrimaryBtn, kitSecondaryBtn } from "@/components/kit/sections";
+import { ArrowRight, Check, Loader2 } from "lucide-react";
+import { cn } from "@/lib/cn";
+import { waveField, waveGhostBtn, wavePrimaryBtn } from "@/components/pages/platform-wave/ui";
 
 /** Contact-form interests mapped onto the app pipeline's service field. */
 const CONTACT_SERVICE: Record<string, LeadService> = {
@@ -28,7 +27,6 @@ export function ContactFormClient({ locale = "en" }: { locale?: SiteLocale }): R
   const t = isEl ? elContact : null;
   const home = localizedPath(locale, "/");
   const pricing = localizedPath(locale, "/pricing");
-  const getStarted = localizedPath(locale, "/get-started");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -111,8 +109,7 @@ export function ContactFormClient({ locale = "en" }: { locale?: SiteLocale }): R
     }
   };
 
-  const field =
-    "block min-h-12 w-full rounded-xl border border-hairline bg-background/80 px-4 py-3 text-[16px] text-foreground placeholder:text-muted-foreground/70 transition-colors focus:border-brand/60 focus:outline-none focus:ring-2 focus:ring-brand/30 aria-[invalid=true]:border-destructive/70";
+  const field = waveField;
   const label = "mb-1.5 block text-[14px] font-medium text-foreground";
   // Labels come with a typed " *"; required fields get a quiet marker instead.
   const plain = (text: string) => text.replace(/\s*\*$/, "");
@@ -125,8 +122,11 @@ export function ContactFormClient({ locale = "en" }: { locale?: SiteLocale }): R
 
   if (isSubmitted) {
     return (
-      <div className="mx-auto max-w-xl rounded-3xl border border-hairline bg-surface/70 p-8 text-center sm:p-10" role="status">
-        <span className="mx-auto flex size-14 items-center justify-center rounded-full bg-brand/15 text-brand">
+      <div
+        className="mx-auto max-w-xl rounded-[22px] border border-hairline bg-surface/80 p-8 text-center shadow-[0_0_0_1px_color-mix(in_oklab,var(--success)_22%,transparent),0_30px_80px_-28px_color-mix(in_oklab,var(--primary)_40%,transparent)] sm:p-10"
+        role="status"
+      >
+        <span className="mx-auto flex size-14 items-center justify-center rounded-full bg-success/15 text-success">
           <Check className="size-7" strokeWidth={2.5} aria-hidden />
         </span>
         <h2 className="mt-6 font-display text-[28px] font-semibold tracking-[-0.03em] text-foreground">
@@ -136,10 +136,10 @@ export function ContactFormClient({ locale = "en" }: { locale?: SiteLocale }): R
           {isEl ? t!.successBody : "Thank you for reaching out. We'll get back to you within 24 hours."}
         </p>
         <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-          <Link href={home} className={kitSecondaryBtn}>
+          <Link href={home} className={waveGhostBtn}>
             {isEl ? t!.backHome : "Back to Home"}
           </Link>
-          <Link href={pricing} className={kitPrimaryBtn}>
+          <Link href={pricing} className={wavePrimaryBtn}>
             {isEl ? t!.viewPricing : "View Pricing"}
           </Link>
         </div>
@@ -148,8 +148,7 @@ export function ContactFormClient({ locale = "en" }: { locale?: SiteLocale }): R
   }
 
   return (
-    <div className="grid gap-6 lg:grid-cols-[1.35fr_1fr] lg:items-start">
-      <div id="message" className="scroll-mt-28 rounded-3xl border border-hairline bg-surface/70 p-5 text-left shadow-[0_30px_80px_-40px_color-mix(in_oklab,var(--primary)_45%,transparent)] sm:p-8">
+    <div id="message" className="scroll-mt-28 rounded-[22px] border border-hairline bg-surface/80 p-5 text-left shadow-[0_0_0_1px_color-mix(in_oklab,var(--primary)_18%,transparent),0_30px_80px_-28px_color-mix(in_oklab,var(--primary)_45%,transparent)] sm:p-8">
         <h2 className="font-display text-[22px] font-semibold tracking-[-0.025em] text-foreground">{isEl ? t!.formTitle : "Send a Message"}</h2>
         <p className="mt-1.5 text-[14px] text-muted-foreground">
           {isEl ? "Μόνο όνομα και email είναι υποχρεωτικά." : "Only your name and email are required."}
@@ -168,7 +167,7 @@ export function ContactFormClient({ locale = "en" }: { locale?: SiteLocale }): R
           />
 
           {submitError && (
-            <div role="alert" className="rounded-xl border border-destructive/50 bg-destructive/10 px-4 py-3 text-sm text-destructive">
+            <div role="alert" className="rounded-2xl border border-destructive/40 bg-destructive/10 px-4 py-3 text-sm leading-relaxed text-destructive">
               {submitError}
             </div>
           )}
@@ -194,7 +193,7 @@ export function ContactFormClient({ locale = "en" }: { locale?: SiteLocale }): R
                 className={field}
               />
               {errors.name ? (
-                <p id="name-error" className="mt-1.5 text-[13px] text-destructive">
+                <p id="name-error" className="mt-1.5 text-[13px] font-medium text-destructive">
                   {errors.name}
                 </p>
               ) : null}
@@ -222,7 +221,7 @@ export function ContactFormClient({ locale = "en" }: { locale?: SiteLocale }): R
                 className={field}
               />
               {errors.email ? (
-                <p id="email-error" className="mt-1.5 text-[13px] text-destructive">
+                <p id="email-error" className="mt-1.5 text-[13px] font-medium text-destructive">
                   {errors.email}
                 </p>
               ) : null}
@@ -303,11 +302,11 @@ export function ContactFormClient({ locale = "en" }: { locale?: SiteLocale }): R
               value={formData.message}
               onChange={handleChange}
               placeholder={isEl ? t!.messagePlaceholder : "Tell us about your project..."}
-              className={`${field} resize-y`}
+              className={cn(field, "h-auto min-h-32 resize-y")}
             />
           </div>
 
-          <details className="group rounded-xl border border-hairline bg-background/40 px-4 py-3">
+          <details className="group rounded-2xl border border-hairline bg-background/50 px-4 py-3">
             <summary className="cursor-pointer list-none text-[14px] font-medium text-muted-foreground transition-colors hover:text-foreground [&::-webkit-details-marker]:hidden">
               + {isEl ? t!.company : "Company"} {optional}
             </summary>
@@ -320,11 +319,11 @@ export function ContactFormClient({ locale = "en" }: { locale?: SiteLocale }): R
               value={formData.company}
               onChange={handleChange}
               placeholder={isEl ? t!.companyPlaceholder : "Your company"}
-              className={`${field} mt-3`}
+              className={cn(field, "mt-3")}
             />
           </details>
 
-          <button type="submit" disabled={isSubmitting} className={`${kitPrimaryBtn} w-full !min-h-14 text-[16px] disabled:opacity-80`}>
+          <button type="submit" disabled={isSubmitting} className={cn(wavePrimaryBtn, "w-full min-h-14 text-[16px]")}>
             {isSubmitting ? (
               <>
                 <Loader2 className="size-5 animate-spin" aria-hidden />
@@ -338,54 +337,6 @@ export function ContactFormClient({ locale = "en" }: { locale?: SiteLocale }): R
             )}
           </button>
         </form>
-      </div>
-
-      <aside className="space-y-4">
-        <div className="rounded-3xl border border-hairline bg-surface/60 p-6">
-          <h2 className="font-display text-[20px] font-semibold tracking-[-0.025em] text-foreground">{isEl ? t!.getInTouch : "Get in Touch"}</h2>
-          <ContactChannels variant="buttons" locale={locale} className="mt-5" />
-          <dl className="mt-6 divide-y divide-hairline border-t border-hairline">
-            <div className="relative min-w-0 py-4 pl-7">
-              <dt className="text-[13px] text-muted-foreground">
-                <Mail className="absolute left-0 top-4 mt-0.5 size-4 text-brand" aria-hidden />
-                {isEl ? t!.email : "Email"}
-              </dt>
-              <dd>
-                <a href={`mailto:${CONTACT_EMAIL}`} className="break-all text-[15px] font-medium text-foreground hover:text-brand">
-                  {CONTACT_EMAIL}
-                </a>
-              </dd>
-            </div>
-            <div className="relative py-4 pl-7">
-              <dt className="text-[13px] text-muted-foreground">
-                <Clock3 className="absolute left-0 top-4 mt-0.5 size-4 text-brand" aria-hidden />
-                {isEl ? t!.responseTime : "Response Time"}
-              </dt>
-              <dd className="text-[15px] font-medium text-foreground">{isEl ? t!.responseValue : "Within 24 hours"}</dd>
-            </div>
-            <div className="relative pt-4 pl-7">
-              <dt className="text-[13px] text-muted-foreground">
-                <Globe className="absolute left-0 top-4 mt-0.5 size-4 text-brand" aria-hidden />
-                {isEl ? t!.serving : "Serving"}
-              </dt>
-              <dd className="text-[15px] font-medium text-foreground">{isEl ? t!.servingValue : "Clients worldwide"}</dd>
-            </div>
-          </dl>
-        </div>
-
-        <div className="rounded-3xl border border-hairline bg-surface/60 p-6">
-          <h3 className="text-[16px] font-semibold text-foreground">{isEl ? t!.readyTitle : "Ready to start?"}</h3>
-          <p className="mt-2 text-[14px] leading-relaxed text-muted-foreground">
-            {isEl
-              ? t!.readyBody
-              : "Skip the form and go straight to our onboarding wizard to choose your package and get started today."}
-          </p>
-          <Link href={getStarted} className={`${kitSecondaryBtn} mt-5 w-full`}>
-            {isEl ? t!.readyCta : "Start Your Project"}
-            <ArrowRight className="size-4" aria-hidden />
-          </Link>
-        </div>
-      </aside>
     </div>
   );
 }
