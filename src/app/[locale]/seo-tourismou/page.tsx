@@ -5,9 +5,9 @@ import { TOURISM_HUB_PATH } from '@/data/tourism-seo';
 import { BASE_URL, buildMetadata } from '@/lib/seo';
 import { withExactTitle } from '../services/_lib/exact-title';
 
-const TOURISM_HUB_TITLE = 'Υπηρεσίες SEO για Τουριστικές Επιχειρήσεις';
+const TOURISM_HUB_TITLE = 'SEO Τουρισμού: Υπηρεσίες SEO για Τουριστικές Επιχειρήσεις';
 const TOURISM_HUB_DESCRIPTION =
-  'Υπηρεσίες SEO για τουριστικές επιχειρήσεις σε όλη την Ελλάδα: ξενοδοχεία, rent a car, βίλες, εκδρομές και εστιατόρια. Άμεσες κρατήσεις από Google και AI.';
+  'SEO τουρισμού σε όλη την Ελλάδα για ξενοδοχεία, rent a car, βίλες, εκδρομές και εστιατόρια: πολύγλωσσο SEO, Google Maps και άμεσες κρατήσεις.';
 
 export const revalidate = 3600;
 

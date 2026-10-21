@@ -11,6 +11,7 @@ import { NextRequest } from 'next/server';
 import { getAllServiceSlugs } from '../src/data/services';
 import {
   PLACE_PAGES,
+  placeTitle,
   countWords,
   jaccardSimilarity,
   visiblePlaceText,
@@ -79,8 +80,11 @@ for (const place of PLACE_PAGES) {
   if (place.h1Accent !== 'προώθηση ιστοσελίδων' || !place.h1.endsWith(place.h1Accent)) {
     fail(`${place.slug} H1 accent does not match the Rethymno pattern`);
   }
-  if (place.title !== `SEO ${place.name}: Υπηρεσίες SEO & Προώθηση Ιστοσελίδων`) {
-    fail(`${place.slug} title does not match the required pattern`);
+  if (place.title !== placeTitle(place.name)) {
+    fail(`${place.slug} title does not match placeTitle()`);
+  }
+  if (place.title.length < 50 || place.title.length > 60) {
+    fail(`${place.slug} title is ${place.title.length} chars`);
   }
   if (PHASE1_PLACE_PAGE[place.legacySlug] !== `/el/seo/${place.slug}`) {
     fail(`${place.slug} legacy slug is not mapped to its page`);

@@ -33,10 +33,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   // commercial pillar) and /services/seo-audits for one term that all three
   // wanted. The listing keeps the listing intent; the pillar keeps the term.
   return buildMetadata({
-    title: isEl ? "Όλες οι Υπηρεσίες SEO & Κατασκευής Ιστοσελίδων" : "All SEO & Web Design Services",
+    title: isEl
+      ? "Υπηρεσίες SEO & Κατασκευής Ιστοσελίδων | AnotherSEOGuru"
+      : "SEO, Web Design & E-shop Services in Greece | AnotherSEOGuru",
     description: isEl
-      ? "Όλες οι υπηρεσίες μας σε μία σελίδα: κατασκευή ιστοσελίδων και e-shop, τεχνικό SEO, τοπικό SEO, GEO και AEO, περιεχόμενο και ανασχεδιασμός."
-      : "Every service in one place: website and e-shop builds, technical SEO, local SEO, GEO and AEO, content, and redesigns. Compare scope and request a quote.",
+      ? "Όλες οι υπηρεσίες σε μία σελίδα: κατασκευή ιστοσελίδων και eshop, τεχνικό SEO, τοπικό SEO, GEO και AEO, περιεχόμενο και ανασχεδιασμός. Ζητήστε προσφορά."
+      : "Every service in one place: website and e-shop builds, technical SEO, local SEO, GEO and AEO, content and redesigns for businesses in Greece. Get a quote.",
     path: localizedPath(locale, "/services"),
     hreflangPath: "/services",
     primaryKeyword: isEl ? "υπηρεσίες κατασκευής ιστοσελίδων" : "web design and SEO services",

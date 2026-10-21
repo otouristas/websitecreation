@@ -15,6 +15,7 @@ import { PLACE_PAGES, countWords, jaccardSimilarity } from '../src/data/place-se
 import { getAllIndustrySlugs } from '../src/data/industries';
 import { getPortfolioBySlug } from '../src/data/portfolio';
 import { META_DESC_MAX, META_DESC_MIN } from '../src/lib/seo';
+import { serpMetaFor } from '../src/data/serp-meta';
 
 const MIN_WORDS = 600;
 const MAX_SIMILARITY = 0.35;
@@ -70,7 +71,9 @@ for (const vertical of TOURISM_VERTICALS) {
   if (BANNED.test(all)) fail(`${vertical.slug} contains a banned brand term`);
   if (DASHES.test(all)) fail(`${vertical.slug} contains an em dash or a spaced en dash`);
   if (vertical.title.length > TITLE_MAX) fail(`${vertical.slug} title is ${vertical.title.length} chars`);
-  if (!vertical.title.startsWith('Υπηρεσίες SEO για ')) fail(`${vertical.slug} title does not lead with «Υπηρεσίες SEO για»`);
+  const mapped = serpMetaFor(`/el/seo-tourismou/${vertical.slug}`);
+  if (!mapped) fail(`${vertical.slug} is missing from the SERP metadata map`);
+  else if (vertical.title !== mapped.title) fail(`${vertical.slug} title does not match the SERP map`);
   const d = vertical.description.length;
   if (d < META_DESC_MIN || d > META_DESC_MAX) fail(`${vertical.slug} description is ${d} chars`);
   if (!vertical.h1.endsWith(vertical.h1Accent)) fail(`${vertical.slug} h1Accent is not a suffix of h1`);

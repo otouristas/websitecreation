@@ -50,8 +50,9 @@ const years = `${FOUNDER_YEARS}+`;
 const projects = `${PROJECTS_DELIVERED}+`;
 
 const el: ConsultantCopy = {
-  metaTitle: 'Σύμβουλος SEO | Touristas Technologies',
-  metaDescription: `Η ομάδα της Touristas Technologies, σύμβουλος SEO με ${years} χρόνια σε ελληνικά sites τουρισμού και e-shop. Συμβουλευτική, audit και καθοδήγηση ομάδων.`,
+  metaTitle: 'Σύμβουλος SEO: Συμβουλευτική & SEO Audit | AnotherSEOGuru',
+  metaDescription:
+    'Σύμβουλος SEO για ελληνικά sites τουρισμού και eshop: συμβουλευτική, SEO audit και καθοδήγηση ομάδων από την Touristas Technologies, με 10+ χρόνια.',
   primaryKeyword: 'σύμβουλος SEO',
   crumb: 'Σύμβουλος SEO',
   pillTag: 'Δωρεάν',
@@ -184,8 +185,9 @@ const el: ConsultantCopy = {
 };
 
 const en: ConsultantCopy = {
-  metaTitle: 'SEO Consultant | Touristas Technologies',
-  metaDescription: `The Touristas Technologies team, SEO consultants with ${years} years on Greek tourism sites and e-shops. Consulting, SEO audits and team coaching.`,
+  metaTitle: 'SEO Consultant for Greek Businesses | Touristas Technologies',
+  metaDescription:
+    'SEO consulting for Greek tourism sites and e-shops: strategy, SEO audits and team coaching from the Touristas Technologies team, 10+ years in.',
   primaryKeyword: 'SEO consultant',
   crumb: 'SEO consultant',
   pillTag: 'Free',

@@ -4,7 +4,7 @@ import { HubView } from '@/components/place-seo/HubView';
 import { BASE_URL, buildMetadata } from '@/lib/seo';
 
 const DESCRIPTION =
-  'SEO σε όλη την Ελλάδα: μία σελίδα ανά πόλη και νησί, με υπηρεσίες SEO και προώθηση ιστοσελίδων. Δείτε την περιοχή σας. Ζητήστε δωρεάν έλεγχο.';
+  'SEO σε όλη την Ελλάδα: μία σελίδα για κάθε πόλη και νησί, με υπηρεσίες SEO, τοπικό SEO και προώθηση ιστοσελίδων. Βρείτε την περιοχή σας και ζητήστε έλεγχο.';
 
 export const revalidate = 3600;
 
@@ -16,7 +16,7 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale !== 'el') return {};
   return buildMetadata({
-    title: 'SEO σε όλη την Ελλάδα',
+    title: 'SEO Ελλάδα: Υπηρεσίες SEO ανά Πόλη & Νησί | AnotherSEOGuru',
     description: DESCRIPTION,
     path: '/el/seo',
     languages: {

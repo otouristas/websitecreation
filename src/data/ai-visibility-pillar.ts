@@ -55,9 +55,9 @@ const el: AiVisibilityPillarCopy = {
   answer:
     'Το AI SEO (ή GEO, generative engine optimization) κάνει την ιστοσελίδα σας πηγή που μπορούν να παραθέσουν το ChatGPT, το Gemini και τα AI Overviews της Google. Συνδυάζει κλασικό SEO με σαφή στοιχεία οντότητας, structured data και περιεχόμενο που απαντά άμεσα. Στην AnotherSEOGuru εντάσσεται στα πακέτα SEO Growth και Authority, από {{SEO_GROWTH}} τον μήνα, και μετριέται σε τάσεις αναφορών δίπλα στα οργανικά κλικ. Καμία μηχανή δεν εγγυάται ότι θα σας αναφέρει.',
   // The /el route ships the keyword-map title verbatim from services-i18n `seo`.
-  metaTitle: 'Υπηρεσίες AI SEO & GEO: Ορατότητα σε ChatGPT & AI Overviews',
+  metaTitle: 'AI SEO & GEO: Ορατότητα σε ChatGPT, Gemini & AI Overviews',
   metaDescription:
-    'Υπηρεσίες AI SEO και GEO (generative engine optimization) για ορατότητα στο ChatGPT, στο Gemini και στα AI Overviews, με μηνιαία μέτρηση αναφορών.',
+    'Υπηρεσίες AI SEO και GEO για ορατότητα στο ChatGPT, στο Gemini και στα AI Overviews της Google, με μηνιαία μέτρηση αναφορών. Ζητήστε έλεγχο ορατότητας.',
   primaryKeyword: 'ai seo',
   problem: {
     title: 'Πώς επιλέγουν πηγές τα AI εργαλεία',
@@ -271,9 +271,9 @@ const en: AiVisibilityPillarCopy = {
   h1: 'GEO and AEO for businesses: visibility in AI answers, not citation promises',
   answer:
     'AI visibility is continuous work on three fronts: clear company facts, pages written in a shape an answer engine can quote, and measurement against a fixed set of questions. Ours sits inside the SEO Growth and Authority retainers, from {{SEO_GROWTH}} a month, and is measured as mention trends alongside organic clicks. No engine guarantees it will cite you.',
-  metaTitle: 'AI Visibility (GEO / AEO)',
+  metaTitle: 'Generative Engine Optimization (GEO & AEO) Services',
   metaDescription:
-    'GEO and AEO for businesses: entity clarity, answer-shaped pages and measurement. What the work includes, how it is priced, and what it does not promise.',
+    'GEO and AEO services: entity clarity, answer-shaped pages and measurement for visibility in ChatGPT, Gemini and AI Overviews, with no citation promises.',
   primaryKeyword: 'AI visibility',
   problem: {
     title: 'Buyers ask answer engines, not only Google',

@@ -15,7 +15,7 @@ export const ISLAND_PLACES: readonly PlacePageData[] = [
     locative: 'στην Κρήτη',
     title: placeTitle('Κρήτη'),
     description:
-      'Υπηρεσίες SEO στην Κρήτη, με ξεχωριστή δουλειά για Ηράκλειο, Χανιά και Ρέθυμνο. Έλεγχος και προώθηση ιστοσελίδων για τη σεζόν. Δωρεάν έλεγχος.',
+      'Υπηρεσίες SEO στην Κρήτη για Ηράκλειο, Χανιά και Ρέθυμνο: τεχνικό SEO, Google Maps και προώθηση ιστοσελίδων. Ζητήστε δωρεάν έλεγχο της σελίδας σας.',
     h1: placeH1('στην Κρήτη'),
     h1Accent: H1_ACCENT,
     region: 'crete',
@@ -90,7 +90,7 @@ export const ISLAND_PLACES: readonly PlacePageData[] = [
     locative: 'στο Ηράκλειο',
     title: placeTitle('Ηράκλειο'),
     description:
-      'Υπηρεσίες SEO στο Ηράκλειο: πόλη, Κνωσός, αεροδρόμιο και λιμάνι. Έλεγχος, χάρτης και προώθηση ιστοσελίδων όλο τον χρόνο. Ζητήστε δωρεάν έλεγχο.',
+      'Υπηρεσίες SEO στο Ηράκλειο για πόλη, Κνωσό, αεροδρόμιο και λιμάνι: τεχνικό SEO, περιεχόμενο και Google Maps. Ζητήστε δωρεάν έλεγχο της σελίδας σας.',
     h1: placeH1('στο Ηράκλειο'),
     h1Accent: H1_ACCENT,
     region: 'crete',
@@ -165,7 +165,7 @@ export const ISLAND_PLACES: readonly PlacePageData[] = [
     locative: 'στα Χανιά',
     title: placeTitle('Χανιά'),
     description:
-      'Υπηρεσίες SEO στα Χανιά: παλιό λιμάνι, Πλατανιάς και δυτική Κρήτη. Έλεγχος και προώθηση ιστοσελίδων για κρατήσεις. Ζητήστε έναν δωρεάν έλεγχο.',
+      'Υπηρεσίες SEO στα Χανιά για παλιό λιμάνι, Πλατανιά και δυτική Κρήτη: τεχνικό SEO, περιεχόμενο και Google Maps. Ζητήστε δωρεάν έλεγχο της σελίδας σας.',
     h1: placeH1('στα Χανιά'),
     h1Accent: H1_ACCENT,
     region: 'crete',
@@ -240,7 +240,7 @@ export const ISLAND_PLACES: readonly PlacePageData[] = [
     locative: 'στη Σαντορίνη',
     title: placeTitle('Σαντορίνη'),
     description:
-      'Υπηρεσίες SEO στη Σαντορίνη: καλντέρα, Οία και κρουαζιέρα, με σεζόν που κλείνει τον χειμώνα. Προώθηση ιστοσελίδων και έλεγχος. Δωρεάν έλεγχος.',
+      'Υπηρεσίες SEO στη Σαντορίνη για καλντέρα, Οία και κρουαζιέρα: τεχνικό SEO, περιεχόμενο και Google Maps από την AnotherSEOGuru. Ζητήστε δωρεάν έλεγχο.',
     h1: placeH1('στη Σαντορίνη'),
     h1Accent: H1_ACCENT,
     region: 'cyclades',
@@ -315,7 +315,7 @@ export const ISLAND_PLACES: readonly PlacePageData[] = [
     locative: 'στη Μύκονο',
     title: placeTitle('Μύκονος'),
     description:
-      'Υπηρεσίες SEO στη Μύκονο: Χώρα, παραλίες και βίλες, με αιχμή τον Ιούλιο και τον Αύγουστο. Έλεγχος και προώθηση ιστοσελίδων. Ζητήστε έναν δωρεάν έλεγχο.',
+      'Υπηρεσίες SEO στη Μύκονο για Χώρα, παραλίες και βίλες: τεχνικό SEO, Google Maps και προώθηση ιστοσελίδων από την AnotherSEOGuru. Ζητήστε δωρεάν έλεγχο.',
     h1: placeH1('στη Μύκονο'),
     h1Accent: H1_ACCENT,
     region: 'cyclades',
@@ -390,7 +390,7 @@ export const ISLAND_PLACES: readonly PlacePageData[] = [
     locative: 'στην Πάρο',
     title: placeTitle('Πάρος'),
     description:
-      'Υπηρεσίες SEO στην Πάρο: Νάουσα, Παροικιά και αφίξεις από τον Πειραιά. Έλεγχος, χάρτης και προώθηση ιστοσελίδων. Ζητήστε έναν δωρεάν έλεγχο.',
+      'Υπηρεσίες SEO στην Πάρο για Νάουσα και Παροικιά: τεχνικό SEO, περιεχόμενο, Google Maps και προώθηση ιστοσελίδων. Ζητήστε δωρεάν έλεγχο της σελίδας σας.',
     h1: placeH1('στην Πάρο'),
     h1Accent: H1_ACCENT,
     region: 'cyclades',
@@ -465,7 +465,7 @@ export const ISLAND_PLACES: readonly PlacePageData[] = [
     locative: 'στη Ρόδο',
     title: placeTitle('Ρόδος'),
     description:
-      'Υπηρεσίες SEO στη Ρόδο: μεσαιωνική πόλη, Λίνδος και πόλη που δουλεύει και εκτός αιχμής. Έλεγχος και προώθηση ιστοσελίδων. Ζητήστε δωρεάν έλεγχο.',
+      'Υπηρεσίες SEO στη Ρόδο για μεσαιωνική πόλη και Λίνδο: τεχνικό SEO, Google Maps και προώθηση ιστοσελίδων από την AnotherSEOGuru. Ζητήστε δωρεάν έλεγχο.',
     h1: placeH1('στη Ρόδο'),
     h1Accent: H1_ACCENT,
     region: 'dodecanese',
@@ -540,7 +540,7 @@ export const ISLAND_PLACES: readonly PlacePageData[] = [
     locative: 'στην Κέρκυρα',
     title: placeTitle('Κέρκυρα'),
     description:
-      'Υπηρεσίες SEO στην Κέρκυρα: παλιά πόλη, Παλαιοκαστρίτσα και αφίξεις από Ιταλία. Έλεγχος και προώθηση ιστοσελίδων. Ζητήστε έναν δωρεάν έλεγχο.',
+      'Υπηρεσίες SEO στην Κέρκυρα για παλιά πόλη και Παλαιοκαστρίτσα: τεχνικό SEO, περιεχόμενο, Google Maps και προώθηση ιστοσελίδων. Ζητήστε δωρεάν έλεγχο.',
     h1: placeH1('στην Κέρκυρα'),
     h1Accent: H1_ACCENT,
     region: 'ionian',

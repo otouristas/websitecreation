@@ -237,7 +237,7 @@ export const SEARCH_LAYERS: readonly SearchLayer[] = [
     metrics: ['Engagement', 'Leads', 'Sales', 'Revenue'],
     hue: 288,
     href: '/services/seo-web-design',
-    hrefLabel: 'SEO web design',
+    hrefLabel: 'Web design',
   },
 ] as const;
 

@@ -1,6 +1,7 @@
 // SEO Metadata Builder - titles ≤60 chars total, descriptions 145–155 chars
 
 import { Metadata } from 'next';
+import { applySerpMeta } from './exact-meta';
 import { buildMetaDescription, finalizeDescription, fitDescription, BRAND_NAME, BASE_URL } from './description';
 import { getHreflangAlternates } from '@/lib/locale-paths';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
@@ -283,7 +284,10 @@ export function buildMetadata(input: MetadataInput): Metadata {
     metadata.robots = { index: false, follow: true };
   }
 
-  return metadata;
+  // Mapped city and service URLs ship a counted title and description. The
+  // builder above may have truncated the title or appended the brand; this
+  // puts the map's strings on <title>, meta description, Open Graph and Twitter.
+  return applySerpMeta(metadata, path);
 }
 
 export function buildServiceMetadata(
@@ -433,10 +437,10 @@ function isSeoRetainerService(slug: string): boolean {
 }
 
 /**
- * Greek SERP title suffix ladder (richest first). Leads with a value/outcome hook
- * per the premium positioning ("value, not cheapest") while keeping a compact
- * price-transparency token, since a large share of Greek queries carry
- * τιμή/κόστος/τιμές intent. `fitTitleWithSuffix` picks the longest that fits ≤43 chars.
+ * Greek SERP title suffix ladder (richest first). Leads with a value hook.
+ * Nothing here emits a price: no «Τιμές», no euro sign, no «από». Mapped URLs
+ * do not use this ladder; `applySerpMeta` replaces their title after it runs.
+ * `fitTitleWithSuffix` picks the longest suffix that fits the primary budget.
  */
 function elTitleSuffixes(slug: string): readonly string[] {
   return isSeoRetainerService(slug)
@@ -609,7 +613,7 @@ export function buildIndustryMetadata(
 const EN_SHORT_INDUSTRY_SERVICE_TITLE: Record<string, string> = {
   'website-creation': 'Web Design',
   'website-redesign': 'Redesign',
-  'seo-web-design': 'SEO Web Design',
+  'seo-web-design': 'Web Design',
   'speed-optimization': 'Speed Optimization',
   'ai-visibility': 'GEO & AEO',
   'logo-design': 'Logo Design',

@@ -38,7 +38,7 @@ const SERVICE_GUIDE_EN: Record<string, { href: string; label: string }> = {
     'eshop-seo': { href: '/blog/ecommerce-website-cost-guide', label: 'How much does an e-commerce website cost?' },
     'website-creation': { href: '/blog/how-much-does-a-website-cost', label: 'How much does a website cost?' },
     'website-redesign': { href: '/blog/website-redesign-guide', label: 'Website redesign guide (without losing SEO)' },
-    'seo-web-design': { href: '/blog/seo-web-design-development-platform', label: 'SEO web design & development guide' },
+    'seo-web-design': { href: '/blog/seo-web-design-development-platform', label: 'Web design and development guide' },
     'ai-visibility': { href: '/blog/ai-seo-agency-geo-aeo', label: 'AI SEO agency: GEO & AEO guide' },
     'local-seo': { href: '/blog/local-seo-guide', label: 'Ultimate guide to local SEO' },
     'seo-audits': { href: '/blog/technical-seo-guide', label: 'Technical SEO guide' },
