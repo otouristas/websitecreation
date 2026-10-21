@@ -323,9 +323,9 @@ export function PersonaLinks({ locale, exclude, className }: { readonly locale: 
         const Icon = p.icon;
         return (
           <li key={p.path} className="reveal">
-            <Link href={lp(p.path)} className="group flex h-full flex-col rounded-2xl border border-hairline bg-surface/60 p-6 transition-colors hover:border-brand/40">
-              <span className="flex size-9 items-center justify-center rounded-lg border border-hairline bg-surface text-brand">
-                <Icon className="size-4" aria-hidden />
+            <Link href={lp(p.path)} className="group flex h-full flex-col rounded-[22px] border border-hairline bg-surface/60 p-6 transition-[border-color,transform] duration-200 hover:-translate-y-0.5 hover:border-primary/40 motion-reduce:transition-none motion-reduce:hover:translate-y-0 sm:p-7">
+              <span className="grid size-11 place-items-center rounded-xl bg-primary/12 text-primary">
+                <Icon className="size-5" aria-hidden />
               </span>
               <span className="mt-4 text-[17px] font-semibold text-foreground">{p.title[locale]}</span>
               <span className="mt-1.5 flex-1 text-[14.5px] leading-relaxed text-muted-foreground">{p.text[locale]}</span>
