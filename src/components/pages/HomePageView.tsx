@@ -49,7 +49,7 @@ const ghostBtn =
 
 function Accent({ children }: { readonly children: string }) {
   return (
-    <span className="bg-[linear-gradient(90deg,var(--primary),var(--signal))] bg-clip-text italic text-transparent">
+    <span className="inline-block max-w-full bg-[linear-gradient(90deg,var(--primary),var(--signal))] bg-clip-text pr-[0.22em] italic text-transparent box-decoration-clone [-webkit-box-decoration-break:clone]">
       {children}
     </span>
   );
@@ -398,15 +398,22 @@ export function HomePageView({ locale }: { readonly locale: SiteLocale }) {
             </h2>
             <p className="mt-5 text-pretty text-[17px] leading-relaxed text-muted-foreground">{copy.numbersLead}</p>
           </div>
-          <dl className="mt-12 grid grid-cols-2 gap-px overflow-hidden rounded-[22px] border border-hairline bg-hairline lg:grid-cols-4">
+          <dl className="mt-12 grid grid-cols-2 overflow-hidden rounded-[22px] border border-hairline lg:grid-cols-4">
             {stats.map((stat) => (
-              <div key={stat.label} className="bg-background px-3 py-7 text-center sm:p-8 lg:p-10">
+              <div
+                key={stat.label}
+                className="min-w-0 border-hairline bg-background px-3 py-7 text-center max-lg:border-b max-lg:odd:border-r max-lg:[&:nth-child(n+3)]:border-b-0 sm:p-8 lg:border-r lg:p-10 lg:last:border-r-0"
+              >
                 <dt className="sr-only">{stat.label}</dt>
-                <dd className="font-display text-[2.4rem] font-bold tracking-tight text-foreground sm:text-5xl lg:text-[3.5rem]">
+                <dd className="font-display text-[2.4rem] font-bold leading-none tracking-tight text-foreground sm:text-5xl lg:text-[3.5rem]">
                   {stat.value}
-                  {stat.suffix ? <span className="bg-[linear-gradient(90deg,var(--primary),var(--signal))] bg-clip-text italic text-transparent">{stat.suffix}</span> : null}
+                  {stat.suffix ? (
+                    <span className="inline-block bg-[linear-gradient(90deg,var(--primary),var(--signal))] bg-clip-text pr-[0.22em] italic text-transparent box-decoration-clone [-webkit-box-decoration-break:clone]">
+                      {stat.suffix}
+                    </span>
+                  ) : null}
                 </dd>
-                <dd className="mt-1 text-[14px] text-muted-foreground">{stat.label}</dd>
+                <dd className="mt-2 text-[14px] text-muted-foreground">{stat.label}</dd>
               </div>
             ))}
           </dl>
