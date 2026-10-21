@@ -229,9 +229,9 @@ const spokes: Record<SpokeSlug, Record<SiteLocale, Omit<SpokePageCopy, 'slug'>>>
         'Technical SEO removes what stops Google crawling, reading and indexing the pages that sell: indexation errors, canonicals, speed and Core Web Vitals, structured data that matches the visible page, and the internal links between those pages.',
       extra:
         'The ongoing fixes are part of the monthly SEO engagement. A one-off technical audit is a separate add-on on the published price list.',
-      metaTitle: 'Technical SEO for indexation',
+      metaTitle: 'Technical SEO Services: Crawl, Indexation & Core Web Vitals',
       metaDescription:
-        'Technical SEO for crawl, indexation, Core Web Vitals and structured data that matches the page. The monthly work sits in the published SEO package.',
+        'Technical SEO services for crawl, indexation, Core Web Vitals and structured data that matches the page. Part of our monthly SEO package. Get a review.',
       primaryKeyword: 'technical SEO',
       serviceType: 'Technical SEO',
       includes: {
@@ -336,9 +336,9 @@ const spokes: Record<SpokeSlug, Record<SiteLocale, Omit<SpokePageCopy, 'slug'>>>
         'Το τεχνικό SEO αφαιρεί ό,τι εμποδίζει τη Google να κάνει crawl, να διαβάσει και να ευρετηριάσει τις σελίδες που πουλάνε: σφάλματα ευρετηρίασης, canonical, ταχύτητα και Core Web Vitals, structured data που συμφωνούν με τη σελίδα, και οι εσωτερικοί σύνδεσμοι ανάμεσά τους.',
       extra:
         'Οι συνεχείς διορθώσεις ανήκουν στη μηνιαία συνεργασία SEO. Ένας εφάπαξ τεχνικός έλεγχος είναι ξεχωριστό πρόσθετο στον δημοσιευμένο τιμοκατάλογο.',
-      metaTitle: 'Τεχνικό SEO: crawl και ευρετηρίαση',
+      metaTitle: 'Τεχνικό SEO: Ευρετηρίαση & Core Web Vitals | AnotherSEOGuru',
       metaDescription:
-        'Τεχνικό SEO για crawl, ευρετηρίαση, Core Web Vitals και structured data που συμφωνούν με τη σελίδα. Η μηνιαία δουλειά ανήκει στο δημοσιευμένο πακέτο SEO.',
+        'Τεχνικό SEO για crawl, ευρετηρίαση, Core Web Vitals και structured data που συμφωνεί με τη σελίδα. Μέρος του μηνιαίου πακέτου SEO. Ζητήστε τεχνικό έλεγχο.',
       primaryKeyword: 'τεχνικό SEO',
       serviceType: 'Technical SEO',
       includes: {
@@ -445,9 +445,9 @@ const spokes: Record<SpokeSlug, Record<SiteLocale, Omit<SpokePageCopy, 'slug'>>>
         'On-page SEO is the page itself. The title tag, the headings, the copy and the internal links are written for the one search that page should own. One commercial cluster, one URL.',
       extra:
         'It is part of the monthly Foundations engagement, and it starts after the technical issues that stop those pages being indexed.',
-      metaTitle: 'On-page SEO for commercial pages',
+      metaTitle: 'On-Page SEO Services: Titles, Headings & Copy | Monthly SEO',
       metaDescription:
-        'On-page SEO for the title tag, headings and copy on the pages that can bring a customer. One search, one URL. Included in the monthly SEO package.',
+        'On-page SEO services for title tags, headings and copy on the pages that can bring a customer: one search, one URL. Part of the monthly package.',
       primaryKeyword: 'on-page SEO',
       serviceType: 'On-page SEO',
       includes: {
@@ -551,9 +551,9 @@ const spokes: Record<SpokeSlug, Record<SiteLocale, Omit<SpokePageCopy, 'slug'>>>
         'Το on-page SEO είναι η ίδια η σελίδα. Το title tag, οι επικεφαλίδες, το κείμενο και οι εσωτερικοί σύνδεσμοι γράφονται για τη μία αναζήτηση που πρέπει να κερδίσει η σελίδα. Μία εμπορική ομάδα αναζητήσεων, ένα URL.',
       extra:
         'Ανήκει στη μηνιαία συνεργασία Foundations και ξεκινά αφού διορθωθούν τα τεχνικά ζητήματα που εμποδίζουν την ευρετηρίαση αυτών των σελίδων.',
-      metaTitle: 'On-page SEO για εμπορικές σελίδες',
+      metaTitle: 'On-page SEO: Title, Επικεφαλίδες & Κείμενο | AnotherSEOGuru',
       metaDescription:
-        'On-page SEO για title tag, επικεφαλίδες και κείμενο στις σελίδες που φέρνουν πελάτες. Μία αναζήτηση, ένα URL. Περιλαμβάνεται στο μηνιαίο πακέτο SEO.',
+        'On-page SEO για title tag, επικεφαλίδες και κείμενο στις σελίδες που φέρνουν πελάτες: μία αναζήτηση, ένα URL. Μέρος του μηνιαίου πακέτου SEO. Δείτε πώς.',
       primaryKeyword: 'on-page SEO',
       serviceType: 'On-page SEO',
       includes: {
@@ -659,9 +659,9 @@ const spokes: Record<SpokeSlug, Record<SiteLocale, Omit<SpokePageCopy, 'slug'>>>
         'An SEO strategy names the pages, the fixes and the order of the work. It starts from the queries, clicks and URLs already in your Search Console, then says what happens each month.',
       extra:
         'The monthly plan is SEO Foundations. The higher packages on the price list add coverage and a monthly strategy call. We do not promise a position.',
-      metaTitle: 'SEO strategy from Search Console',
+      metaTitle: 'SEO Strategy Services Built on Search Console | Monthly Plan',
       metaDescription:
-        'An SEO strategy that names the pages, the fixes and the monthly order of work, based on your Search Console. It is part of the monthly SEO package.',
+        'An SEO strategy that names the pages, the fixes and the monthly order of work, based on your Search Console data. Part of the monthly SEO package.',
       primaryKeyword: 'SEO strategy',
       serviceType: 'SEO strategy',
       includes: {
@@ -765,9 +765,9 @@ const spokes: Record<SpokeSlug, Record<SiteLocale, Omit<SpokePageCopy, 'slug'>>>
         'Μια στρατηγική SEO ονομάζει τις σελίδες, τις διορθώσεις και τη σειρά της δουλειάς. Ξεκινά από τα queries, τα κλικ και τα URL που υπάρχουν ήδη στο Search Console σας, και μετά λέει τι γίνεται κάθε μήνα.',
       extra:
         'Το μηνιαίο πλάνο είναι το SEO Foundations. Τα ανώτερα πακέτα στον τιμοκατάλογο προσθέτουν κάλυψη και μηνιαία κλήση στρατηγικής. Δεν υποσχόμαστε θέση.',
-      metaTitle: 'Στρατηγική SEO από το Search Console',
+      metaTitle: 'Στρατηγική SEO με Βάση το Search Console | AnotherSEOGuru',
       metaDescription:
-        'Στρατηγική SEO που ονομάζει τις σελίδες, τις διορθώσεις και τη μηνιαία σειρά δουλειάς, με βάση το Search Console σας. Μέρος του μηνιαίου πακέτου SEO.',
+        'Στρατηγική SEO που ορίζει σελίδες, διορθώσεις και μηνιαία σειρά δουλειάς με βάση το Search Console σας. Μέρος του μηνιαίου πακέτου SEO. Ζητήστε πρόταση.',
       primaryKeyword: 'στρατηγική SEO',
       serviceType: 'SEO strategy',
       includes: {

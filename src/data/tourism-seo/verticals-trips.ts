@@ -6,7 +6,7 @@ export const TRIP_VERTICALS: readonly TourismVertical[] = [
     slug: 'taxidiotika-grafeia',
     name: 'Ταξιδιωτικά Γραφεία',
     primaryKeyword: 'seo για ταξιδιωτικά γραφεία',
-    title: 'Υπηρεσίες SEO για Ταξιδιωτικά Γραφεία',
+    title: 'SEO για Ταξιδιωτικά Γραφεία & Πρακτορεία | AnotherSEOGuru',
     description:
       'SEO για ταξιδιωτικά γραφεία και πρακτορεία: σελίδες πακέτων και προορισμών, εκδρομές για σχολεία και γκρουπ, Google Maps και αιτήματα από όλη την Ελλάδα.',
     h1: 'Υπηρεσίες SEO για ταξιδιωτικά γραφεία σε όλη την Ελλάδα',
@@ -104,7 +104,7 @@ export const TRIP_VERTICALS: readonly TourismVertical[] = [
     slug: 'estiatoria',
     name: 'Εστιατόρια & Beach Bars',
     primaryKeyword: 'υπηρεσίες seo για εστιατόρια',
-    title: 'Υπηρεσίες SEO για Εστιατόρια & Beach Bars',
+    title: 'SEO για Εστιατόρια, Ταβέρνες & Beach Bars | Google Maps',
     description:
       'SEO για εστιατόρια, ταβέρνες και beach bars σε τουριστικούς προορισμούς: Google Maps, μενού που διαβάζει η Google, κριτικές και κρατήσεις τραπεζιού.',
     h1: 'Υπηρεσίες SEO για εστιατόρια σε τουριστικούς προορισμούς',
@@ -202,9 +202,9 @@ export const TRIP_VERTICALS: readonly TourismVertical[] = [
     slug: 'enoikiasi-skafon',
     name: 'Ενοικίαση Σκαφών',
     primaryKeyword: 'seo για ενοικίαση σκαφών',
-    title: 'Υπηρεσίες SEO για Ενοικίαση Σκαφών & Yachting',
+    title: 'SEO για Ενοικίαση Σκαφών & Yacht Charter | AnotherSEOGuru',
     description:
-      'SEO για ενοικίαση σκαφών, yacht charter και boat rental χωρίς δίπλωμα: σελίδα ανά σκάφος και διαδρομή, Google Maps και κρατήσεις στα ελληνικά νησιά.',
+      'SEO για ενοικίαση σκαφών, yacht charter και boat rental: σελίδα ανά σκάφος και διαδρομή, Google Maps και κρατήσεις στα ελληνικά νησιά. Ζητήστε έλεγχο.',
     h1: 'Υπηρεσίες SEO για ενοικίαση σκαφών και yachting στην Ελλάδα',
     h1Accent: 'στην Ελλάδα',
     blurb: 'Boat rental, yacht charter και ιδιωτικές κρουαζιέρες με σελίδα ανά σκάφος.',
@@ -301,9 +301,9 @@ export const TRIP_VERTICALS: readonly TourismVertical[] = [
     slug: 'transfer',
     name: 'Transfer & Ταξί',
     primaryKeyword: 'seo για transfer',
-    title: 'Υπηρεσίες SEO για Transfer & Ταξί',
+    title: 'SEO για Transfer & Ταξί: Αεροδρόμια, Λιμάνια & Κρατήσεις',
     description:
-      'SEO για εταιρείες transfer και ταξί σε αεροδρόμια και λιμάνια: σελίδα ανά διαδρομή με σαφή τιμή, Google Maps, κριτικές και κρατήσεις σε όλη την Ελλάδα.',
+      'SEO για εταιρείες transfer και ταξί: σελίδα ανά διαδρομή από αεροδρόμια και λιμάνια, Google Maps, κριτικές και online κρατήσεις σε όλη την Ελλάδα.',
     h1: 'Υπηρεσίες SEO για transfer και ταξί σε όλη την Ελλάδα',
     h1Accent: 'σε όλη την Ελλάδα',
     blurb: 'Διαδρομές από αεροδρόμια και λιμάνια, κλεισμένες πριν από την άφιξη.',

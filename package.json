@@ -24,6 +24,7 @@
     "report:ai-mode": "npx tsx scripts/ai-mode-report.mts",
     "check:greek": "node scripts/check-greek-glossary.mjs",
     "check:banned-terms": "node scripts/check-banned-terms.mjs",
+    "check:meta-map": "node scripts/check-meta-map.mjs",
     "check:no-em-dash": "node scripts/check-no-em-dash.mjs",
     "check:brand": "python3 src/brand/scripts/sync_tokens.py --check && node scripts/check-brand-assets.mjs && npx tsx scripts/generate-brand-og.ts --check",
     "generate:brand-og": "npx tsx scripts/generate-brand-og.ts"

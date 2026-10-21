@@ -1,0 +1,654 @@
+{
+  "/el/seo": {
+    "title": "SEO Ελλάδα: Υπηρεσίες SEO ανά Πόλη & Νησί | AnotherSEOGuru",
+    "description": "SEO σε όλη την Ελλάδα: μία σελίδα για κάθε πόλη και νησί, με υπηρεσίες SEO, τοπικό SEO και προώθηση ιστοσελίδων. Βρείτε την περιοχή σας και ζητήστε έλεγχο."
+  },
+  "/el/seo-services": {
+    "title": "Υπηρεσίες SEO & Προώθηση Ιστοσελίδων | AnotherSEOGuru",
+    "description": "Υπηρεσίες SEO για επιχειρήσεις σε όλη την Ελλάδα: τεχνικό SEO, περιεχόμενο, τοπικό SEO και προώθηση στη Google, με μέτρηση σε αιτήματα. Ζητήστε έλεγχο."
+  },
+  "/el/seo-services/on-page": {
+    "title": "On-page SEO: Title, Επικεφαλίδες & Κείμενο | AnotherSEOGuru",
+    "description": "On-page SEO για title tag, επικεφαλίδες και κείμενο στις σελίδες που φέρνουν πελάτες: μία αναζήτηση, ένα URL. Μέρος του μηνιαίου πακέτου SEO. Δείτε πώς."
+  },
+  "/el/seo-services/strategy": {
+    "title": "Στρατηγική SEO με Βάση το Search Console | AnotherSEOGuru",
+    "description": "Στρατηγική SEO που ορίζει σελίδες, διορθώσεις και μηνιαία σειρά δουλειάς με βάση το Search Console σας. Μέρος του μηνιαίου πακέτου SEO. Ζητήστε πρόταση."
+  },
+  "/el/seo-services/technical": {
+    "title": "Τεχνικό SEO: Ευρετηρίαση & Core Web Vitals | AnotherSEOGuru",
+    "description": "Τεχνικό SEO για crawl, ευρετηρίαση, Core Web Vitals και structured data που συμφωνεί με τη σελίδα. Μέρος του μηνιαίου πακέτου SEO. Ζητήστε τεχνικό έλεγχο."
+  },
+  "/el/seo-tourismou": {
+    "title": "SEO Τουρισμού: Υπηρεσίες SEO για Τουριστικές Επιχειρήσεις",
+    "description": "SEO τουρισμού σε όλη την Ελλάδα για ξενοδοχεία, rent a car, βίλες, εκδρομές και εστιατόρια: πολύγλωσσο SEO, Google Maps και άμεσες κρατήσεις."
+  },
+  "/el/seo-tourismou/ekdromes": {
+    "title": "SEO για Εκδρομές & Tour Operators | AnotherSEOGuru",
+    "description": "SEO για tour operators, ημερήσιες εκδρομές και κρουαζιέρες: σελίδα ανά εμπειρία, πολύγλωσσο SEO, Google Maps και κρατήσεις σε όλη την Ελλάδα."
+  },
+  "/el/seo-tourismou/enoikiasi-skafon": {
+    "title": "SEO για Ενοικίαση Σκαφών & Yacht Charter | AnotherSEOGuru",
+    "description": "SEO για ενοικίαση σκαφών, yacht charter και boat rental: σελίδα ανά σκάφος και διαδρομή, Google Maps και κρατήσεις στα ελληνικά νησιά. Ζητήστε έλεγχο."
+  },
+  "/el/seo-tourismou/estiatoria": {
+    "title": "SEO για Εστιατόρια, Ταβέρνες & Beach Bars | Google Maps",
+    "description": "SEO για εστιατόρια, ταβέρνες και beach bars σε τουριστικούς προορισμούς: Google Maps, μενού που διαβάζει η Google, κριτικές και κρατήσεις τραπεζιού."
+  },
+  "/el/seo-tourismou/rent-a-car": {
+    "title": "SEO για Rent a Car & Ενοικίαση Αυτοκινήτων | Κρατήσεις",
+    "description": "SEO για rent a car: σελίδες για αεροδρόμια, λιμάνια και στόλο, Google Maps και online κρατήσεις για εταιρείες ενοικίασης αυτοκινήτων σε όλη την Ελλάδα."
+  },
+  "/el/seo-tourismou/taxidiotika-grafeia": {
+    "title": "SEO για Ταξιδιωτικά Γραφεία & Πρακτορεία | AnotherSEOGuru",
+    "description": "SEO για ταξιδιωτικά γραφεία και πρακτορεία: σελίδες πακέτων και προορισμών, εκδρομές για σχολεία και γκρουπ, Google Maps και αιτήματα από όλη την Ελλάδα."
+  },
+  "/el/seo-tourismou/transfer": {
+    "title": "SEO για Transfer & Ταξί: Αεροδρόμια, Λιμάνια & Κρατήσεις",
+    "description": "SEO για εταιρείες transfer και ταξί: σελίδα ανά διαδρομή από αεροδρόμια και λιμάνια, Google Maps, κριτικές και online κρατήσεις σε όλη την Ελλάδα."
+  },
+  "/el/seo-tourismou/villes": {
+    "title": "SEO για Βίλες & Ενοικιαζόμενα Καταλύματα | Κρατήσεις",
+    "description": "SEO για βίλες και ενοικιαζόμενα καταλύματα: σελίδα ανά ακίνητο, Google Maps, πολύγλωσσο SEO και άμεσες κρατήσεις σε όλη την Ελλάδα. Ζητήστε έλεγχο."
+  },
+  "/el/seo-tourismou/xenodoxeia": {
+    "title": "SEO για Ξενοδοχεία: Περισσότερες Άμεσες Κρατήσεις Online",
+    "description": "SEO για ξενοδοχεία σε όλη την Ελλάδα: σελίδες δωματίων, Google Business Profile, πολύγλωσσο SEO και AI search για περισσότερες άμεσες κρατήσεις."
+  },
+  "/el/seo/athens": {
+    "title": "SEO Αθήνα: Υπηρεσίες SEO & Google Maps | AnotherSEOGuru",
+    "description": "Υπηρεσίες SEO στην Αθήνα για κέντρο, Γλυφάδα και Κηφισιά: τεχνικό SEO, Google Maps και προώθηση ιστοσελίδων. Ζητήστε δωρεάν έλεγχο της σελίδας σας."
+  },
+  "/el/seo/chania": {
+    "title": "SEO Χανιά: Υπηρεσίες SEO & Google Maps | AnotherSEOGuru",
+    "description": "Υπηρεσίες SEO στα Χανιά για παλιό λιμάνι, Πλατανιά και δυτική Κρήτη: τεχνικό SEO, περιεχόμενο και Google Maps. Ζητήστε δωρεάν έλεγχο της σελίδας σας."
+  },
+  "/el/seo/corfu": {
+    "title": "SEO Κέρκυρα: Υπηρεσίες SEO & Google Maps | AnotherSEOGuru",
+    "description": "Υπηρεσίες SEO στην Κέρκυρα για παλιά πόλη και Παλαιοκαστρίτσα: τεχνικό SEO, περιεχόμενο, Google Maps και προώθηση ιστοσελίδων. Ζητήστε δωρεάν έλεγχο."
+  },
+  "/el/seo/crete": {
+    "title": "SEO Κρήτη: Υπηρεσίες SEO & Google Maps | AnotherSEOGuru",
+    "description": "Υπηρεσίες SEO στην Κρήτη για Ηράκλειο, Χανιά και Ρέθυμνο: τεχνικό SEO, Google Maps και προώθηση ιστοσελίδων. Ζητήστε δωρεάν έλεγχο της σελίδας σας."
+  },
+  "/el/seo/heraklion": {
+    "title": "SEO Ηράκλειο: Υπηρεσίες SEO & Google Maps | AnotherSEOGuru",
+    "description": "Υπηρεσίες SEO στο Ηράκλειο για πόλη, Κνωσό, αεροδρόμιο και λιμάνι: τεχνικό SEO, περιεχόμενο και Google Maps. Ζητήστε δωρεάν έλεγχο της σελίδας σας."
+  },
+  "/el/seo/kalamata": {
+    "title": "SEO Καλαμάτα: Υπηρεσίες SEO & Google Maps | AnotherSEOGuru",
+    "description": "Υπηρεσίες SEO στην Καλαμάτα για Μεσσηνία, μαρίνα και τουρισμό: τεχνικό SEO, περιεχόμενο, Google Maps και προώθηση ιστοσελίδων. Ζητήστε δωρεάν έλεγχο."
+  },
+  "/el/seo/mykonos": {
+    "title": "SEO Μύκονος: Υπηρεσίες SEO & Google Maps | AnotherSEOGuru",
+    "description": "Υπηρεσίες SEO στη Μύκονο για Χώρα, παραλίες και βίλες: τεχνικό SEO, Google Maps και προώθηση ιστοσελίδων από την AnotherSEOGuru. Ζητήστε δωρεάν έλεγχο."
+  },
+  "/el/seo/paros": {
+    "title": "SEO Πάρος: Υπηρεσίες SEO & Google Maps | AnotherSEOGuru",
+    "description": "Υπηρεσίες SEO στην Πάρο για Νάουσα και Παροικιά: τεχνικό SEO, περιεχόμενο, Google Maps και προώθηση ιστοσελίδων. Ζητήστε δωρεάν έλεγχο της σελίδας σας."
+  },
+  "/el/seo/patras": {
+    "title": "SEO Πάτρα: Υπηρεσίες SEO & Google Maps | AnotherSEOGuru",
+    "description": "Υπηρεσίες SEO στην Πάτρα για λιμάνι, πανεπιστήμιο και λιανική: τεχνικό SEO, περιεχόμενο, Google Maps και προώθηση ιστοσελίδων. Ζητήστε δωρεάν έλεγχο."
+  },
+  "/el/seo/piraeus": {
+    "title": "SEO Πειραιάς: Υπηρεσίες SEO & Google Maps | AnotherSEOGuru",
+    "description": "Υπηρεσίες SEO στον Πειραιά για λιμάνι, ακτοπλοΐα και ναυτιλιακά: τεχνικό SEO, περιεχόμενο, Google Maps και προώθηση ιστοσελίδων. Ζητήστε δωρεάν έλεγχο."
+  },
+  "/el/seo/rhodes": {
+    "title": "SEO Ρόδος: Υπηρεσίες SEO & Google Maps | AnotherSEOGuru",
+    "description": "Υπηρεσίες SEO στη Ρόδο για μεσαιωνική πόλη και Λίνδο: τεχνικό SEO, Google Maps και προώθηση ιστοσελίδων από την AnotherSEOGuru. Ζητήστε δωρεάν έλεγχο."
+  },
+  "/el/seo/santorini": {
+    "title": "SEO Σαντορίνη: Υπηρεσίες SEO & Google Maps | AnotherSEOGuru",
+    "description": "Υπηρεσίες SEO στη Σαντορίνη για καλντέρα, Οία και κρουαζιέρα: τεχνικό SEO, περιεχόμενο και Google Maps από την AnotherSEOGuru. Ζητήστε δωρεάν έλεγχο."
+  },
+  "/el/seo/thessaloniki": {
+    "title": "SEO Θεσσαλονίκη: Υπηρεσίες & Google Maps | AnotherSEOGuru",
+    "description": "Υπηρεσίες SEO στη Θεσσαλονίκη για Λαδάδικα, λιμάνι και Καλαμαριά: τεχνικό SEO, περιεχόμενο, Google Maps και προώθηση ιστοσελίδων. Ζητήστε δωρεάν έλεγχο."
+  },
+  "/el/services": {
+    "title": "Υπηρεσίες SEO & Κατασκευής Ιστοσελίδων | AnotherSEOGuru",
+    "description": "Όλες οι υπηρεσίες σε μία σελίδα: κατασκευή ιστοσελίδων και eshop, τεχνικό SEO, τοπικό SEO, GEO και AEO, περιεχόμενο και ανασχεδιασμός. Ζητήστε προσφορά."
+  },
+  "/el/services/ai-visibility": {
+    "title": "AI SEO & GEO: Ορατότητα σε ChatGPT, Gemini & AI Overviews",
+    "description": "Υπηρεσίες AI SEO και GEO για ορατότητα στο ChatGPT, στο Gemini και στα AI Overviews της Google, με μηνιαία μέτρηση αναφορών. Ζητήστε έλεγχο ορατότητας."
+  },
+  "/el/services/content-creation": {
+    "title": "SEO Copywriting & Δημιουργία Περιεχομένου | AnotherSEOGuru",
+    "description": "SEO copywriting: κείμενα σελίδων, άρθρα blog και περιγραφές προϊόντων γραμμένα για αναγνώστες και για τη Google, στα ελληνικά και αγγλικά. Ζητήστε πρόταση."
+  },
+  "/el/services/eshop-seo": {
+    "title": "SEO για Eshop: Προώθηση Ηλεκτρονικού Καταστήματος στη Google",
+    "description": "SEO για eshop: κατηγορίες, σελίδες προϊόντων, φίλτρα και ταχύτητα, ώστε το ηλεκτρονικό σας κατάστημα να πουλάει από την οργανική αναζήτηση. Ζητήστε έλεγχο."
+  },
+  "/el/services/eshop-woocommerce": {
+    "title": "Κατασκευή Eshop με WooCommerce & SEO | AnotherSEOGuru",
+    "description": "Κατασκευή eshop με WooCommerce: πληρωμές, μεταφορικά, σύνδεση με ERP και SEO προϊόντων από την πρώτη μέρα. Δείτε τι περιλαμβάνει κάθε πακέτο."
+  },
+  "/el/services/eshop-woocommerce/athens-gr": {
+    "title": "Κατασκευή Eshop Αθήνα | WooCommerce με SEO | AnotherSEOGuru",
+    "description": "Κατασκευή eshop στην Αθήνα με WooCommerce: πληρωμές, μεταφορικά, ERP και SEO κατηγοριών και προϊόντων από την αρχή. Δείτε έργα και ζητήστε προσφορά."
+  },
+  "/el/services/eshop-woocommerce/chania-gr": {
+    "title": "Κατασκευή Eshop Χανιά | WooCommerce με SEO | AnotherSEOGuru",
+    "description": "Κατασκευή eshop στα Χανιά με WooCommerce: πληρωμές, μεταφορικά, ERP και SEO κατηγοριών και προϊόντων από την αρχή. Δείτε έργα και ζητήστε προσφορά."
+  },
+  "/el/services/eshop-woocommerce/corfu-gr": {
+    "title": "Κατασκευή Eshop Κέρκυρα: WooCommerce με SEO Προϊόντων",
+    "description": "Κατασκευή eshop στην Κέρκυρα με WooCommerce: πληρωμές, μεταφορικά, σύνδεση ERP και SEO προϊόντων από την αρχή. Ζητήστε προσφορά για το κατάστημά σας."
+  },
+  "/el/services/eshop-woocommerce/heraklion-gr": {
+    "title": "Κατασκευή Eshop Ηράκλειο: WooCommerce με SEO Προϊόντων",
+    "description": "Κατασκευή eshop στο Ηράκλειο με WooCommerce: πληρωμές, μεταφορικά, σύνδεση ERP και SEO προϊόντων από την αρχή. Ζητήστε προσφορά για το κατάστημά σας."
+  },
+  "/el/services/eshop-woocommerce/kalamata-gr": {
+    "title": "Κατασκευή Eshop Καλαμάτα: WooCommerce με SEO Προϊόντων",
+    "description": "Κατασκευή eshop στην Καλαμάτα με WooCommerce: πληρωμές, μεταφορικά, σύνδεση ERP και SEO προϊόντων από την αρχή. Ζητήστε προσφορά για το κατάστημά σας."
+  },
+  "/el/services/eshop-woocommerce/kos-gr": {
+    "title": "Κατασκευή Eshop Κως | WooCommerce με SEO | AnotherSEOGuru",
+    "description": "Κατασκευή eshop στην Κω με WooCommerce: πληρωμές, μεταφορικά, ERP και SEO κατηγοριών και προϊόντων από την αρχή. Ζητήστε προσφορά για το κατάστημά σας."
+  },
+  "/el/services/eshop-woocommerce/mykonos-gr": {
+    "title": "Κατασκευή Eshop Μύκονος: WooCommerce με SEO Προϊόντων",
+    "description": "Κατασκευή eshop στη Μύκονο με WooCommerce: πληρωμές, μεταφορικά, ERP και SEO κατηγοριών και προϊόντων από την αρχή. Δείτε έργα και ζητήστε προσφορά."
+  },
+  "/el/services/eshop-woocommerce/naxos-gr": {
+    "title": "Κατασκευή Eshop Νάξος | WooCommerce με SEO | AnotherSEOGuru",
+    "description": "Κατασκευή eshop στη Νάξο με WooCommerce: πληρωμές, μεταφορικά, ERP και SEO κατηγοριών και προϊόντων από την αρχή. Ζητήστε προσφορά για το κατάστημά σας."
+  },
+  "/el/services/eshop-woocommerce/paros-gr": {
+    "title": "Κατασκευή Eshop Πάρος | WooCommerce με SEO | AnotherSEOGuru",
+    "description": "Κατασκευή eshop στην Πάρο με WooCommerce: πληρωμές, μεταφορικά, ERP και SEO κατηγοριών και προϊόντων από την αρχή. Δείτε έργα και ζητήστε προσφορά."
+  },
+  "/el/services/eshop-woocommerce/patras-gr": {
+    "title": "Κατασκευή Eshop Πάτρα | WooCommerce με SEO | AnotherSEOGuru",
+    "description": "Κατασκευή eshop στην Πάτρα με WooCommerce: πληρωμές, μεταφορικά, ERP και SEO κατηγοριών και προϊόντων από την αρχή. Δείτε έργα και ζητήστε προσφορά."
+  },
+  "/el/services/eshop-woocommerce/rethymno-gr": {
+    "title": "Κατασκευή Eshop Ρέθυμνο: WooCommerce με SEO Προϊόντων",
+    "description": "Κατασκευή eshop στο Ρέθυμνο με WooCommerce: πληρωμές, μεταφορικά, ERP και SEO κατηγοριών και προϊόντων από την αρχή. Δείτε έργα και ζητήστε προσφορά."
+  },
+  "/el/services/eshop-woocommerce/rhodes-gr": {
+    "title": "Κατασκευή Eshop Ρόδος | WooCommerce με SEO | AnotherSEOGuru",
+    "description": "Κατασκευή eshop στη Ρόδο με WooCommerce: πληρωμές, μεταφορικά, ERP και SEO κατηγοριών και προϊόντων από την αρχή. Ζητήστε προσφορά για το κατάστημά σας."
+  },
+  "/el/services/eshop-woocommerce/santorini-gr": {
+    "title": "Κατασκευή Eshop Σαντορίνη: WooCommerce με SEO Προϊόντων",
+    "description": "Κατασκευή eshop στη Σαντορίνη με WooCommerce: πληρωμές, μεταφορικά, σύνδεση ERP και SEO προϊόντων από την αρχή. Ζητήστε προσφορά για το κατάστημά σας."
+  },
+  "/el/services/eshop-woocommerce/thessaloniki-gr": {
+    "title": "Κατασκευή Eshop Θεσσαλονίκη: WooCommerce με SEO Προϊόντων",
+    "description": "Κατασκευή eshop στη Θεσσαλονίκη με WooCommerce: πληρωμές, μεταφορικά, σύνδεση ERP και SEO προϊόντων από την αρχή. Ζητήστε προσφορά για το κατάστημά σας."
+  },
+  "/el/services/link-building": {
+    "title": "Link Building: Ποιοτικά Backlinks από Ελληνικά Sites",
+    "description": "Υπηρεσίες link building: backlinks από σχετικά ελληνικά sites, digital PR και καθαρισμός spam συνδέσμων, χωρίς αγορά συνδέσμων από δίκτυα. Ζητήστε πρόταση."
+  },
+  "/el/services/local-seo": {
+    "title": "Τοπικό SEO: Google Maps & Google Business Profile | Κριτικές",
+    "description": "Τοπικό SEO για επιχειρήσεις: Google Business Profile, κριτικές και σελίδες περιοχής, για να σας βρίσκουν πελάτες κοντά σας στο Google Maps. Ζητήστε έλεγχο."
+  },
+  "/el/services/local-seo/athens-gr": {
+    "title": "Τοπικό SEO Αθήνα | Google Maps & Κριτικές | AnotherSEOGuru",
+    "description": "Τοπικό SEO στην Αθήνα: Google Business Profile, κριτικές και σελίδες περιοχής, για να σας βρίσκουν πελάτες κοντά σας στο Google Maps. Ζητήστε έλεγχο."
+  },
+  "/el/services/local-seo/chania-gr": {
+    "title": "Τοπικό SEO Χανιά | Google Maps & Κριτικές | AnotherSEOGuru",
+    "description": "Τοπικό SEO στα Χανιά: Google Business Profile, κριτικές και σελίδες περιοχής, για να σας βρίσκουν πελάτες κοντά σας στο Google Maps. Ζητήστε έλεγχο."
+  },
+  "/el/services/local-seo/corfu-gr": {
+    "title": "Τοπικό SEO Κέρκυρα | Google Maps & Business Profile",
+    "description": "Τοπικό SEO στην Κέρκυρα: βελτιστοποίηση Google Business Profile, κριτικές και τοπικές σελίδες, για να σας βρίσκουν πελάτες κοντά σας στο Google Maps."
+  },
+  "/el/services/local-seo/heraklion-gr": {
+    "title": "Τοπικό SEO Ηράκλειο | Google Maps & Business Profile",
+    "description": "Τοπικό SEO στο Ηράκλειο: βελτιστοποίηση Google Business Profile, κριτικές και τοπικές σελίδες, για να σας βρίσκουν πελάτες κοντά σας στο Google Maps."
+  },
+  "/el/services/local-seo/kalamata-gr": {
+    "title": "Τοπικό SEO Καλαμάτα | Google Maps & Business Profile",
+    "description": "Τοπικό SEO στην Καλαμάτα: βελτιστοποίηση Google Business Profile, κριτικές και τοπικές σελίδες, για να σας βρίσκουν πελάτες κοντά σας στο Google Maps."
+  },
+  "/el/services/local-seo/kos-gr": {
+    "title": "Τοπικό SEO Κως | Google Maps & Κριτικές | AnotherSEOGuru",
+    "description": "Τοπικό SEO στην Κω: Google Business Profile, κριτικές και σελίδες περιοχής, για να σας βρίσκουν πελάτες κοντά σας στο Google Maps. Ζητήστε προσφορά."
+  },
+  "/el/services/local-seo/mykonos-gr": {
+    "title": "Τοπικό SEO Μύκονος | Google Maps & Business Profile",
+    "description": "Τοπικό SEO στη Μύκονο: Google Business Profile, κριτικές και σελίδες περιοχής, για να σας βρίσκουν πελάτες κοντά σας στο Google Maps. Ζητήστε έλεγχο."
+  },
+  "/el/services/local-seo/naxos-gr": {
+    "title": "Τοπικό SEO Νάξος | Google Maps & Κριτικές | AnotherSEOGuru",
+    "description": "Τοπικό SEO στη Νάξο: Google Business Profile, κριτικές και σελίδες περιοχής, για να σας βρίσκουν πελάτες κοντά σας στο Google Maps. Ζητήστε προσφορά."
+  },
+  "/el/services/local-seo/paros-gr": {
+    "title": "Τοπικό SEO Πάρος | Google Maps & Κριτικές | AnotherSEOGuru",
+    "description": "Τοπικό SEO στην Πάρο: Google Business Profile, κριτικές και σελίδες περιοχής, για να σας βρίσκουν πελάτες κοντά σας στο Google Maps. Ζητήστε έλεγχο."
+  },
+  "/el/services/local-seo/patras-gr": {
+    "title": "Τοπικό SEO Πάτρα | Google Maps & Κριτικές | AnotherSEOGuru",
+    "description": "Τοπικό SEO στην Πάτρα: Google Business Profile, κριτικές και σελίδες περιοχής, για να σας βρίσκουν πελάτες κοντά σας στο Google Maps. Ζητήστε έλεγχο."
+  },
+  "/el/services/local-seo/rethymno-gr": {
+    "title": "Τοπικό SEO Ρέθυμνο | Google Maps & Business Profile",
+    "description": "Τοπικό SEO στο Ρέθυμνο: βελτιστοποίηση Google Business Profile, κριτικές και τοπικές σελίδες, για να σας βρίσκουν πελάτες κοντά σας στο Google Maps."
+  },
+  "/el/services/local-seo/rhodes-gr": {
+    "title": "Τοπικό SEO Ρόδος | Google Maps & Κριτικές | AnotherSEOGuru",
+    "description": "Τοπικό SEO στη Ρόδο: Google Business Profile, κριτικές και σελίδες περιοχής, για να σας βρίσκουν πελάτες κοντά σας στο Google Maps. Ζητήστε προσφορά."
+  },
+  "/el/services/local-seo/santorini-gr": {
+    "title": "Τοπικό SEO Σαντορίνη | Google Maps & Business Profile",
+    "description": "Τοπικό SEO στη Σαντορίνη: βελτιστοποίηση Google Business Profile, κριτικές και τοπικές σελίδες, για να σας βρίσκουν πελάτες κοντά σας στο Google Maps."
+  },
+  "/el/services/local-seo/thessaloniki-gr": {
+    "title": "Τοπικό SEO Θεσσαλονίκη | Google Maps & Business Profile",
+    "description": "Τοπικό SEO στη Θεσσαλονίκη: βελτιστοποίηση Google Business Profile, κριτικές και τοπικές σελίδες, για να σας βρίσκουν πελάτες στον χάρτη της Google."
+  },
+  "/el/services/logo-design": {
+    "title": "Σχεδιασμός Λογοτύπου για Επιχειρήσεις | AnotherSEOGuru",
+    "description": "Σχεδιασμός λογοτύπου για επιχειρήσεις: λογότυπο που δουλεύει στην ιστοσελίδα, στο Google Business Profile και στα social. Δείτε έργα και ζητήστε προσφορά."
+  },
+  "/el/services/seo-audits": {
+    "title": "SEO Audit: Τεχνικός Έλεγχος Ιστοσελίδας | AnotherSEOGuru",
+    "description": "SEO audit ιστοσελίδας: ευρετηρίαση, ταχύτητα, δομή και περιεχόμενο, με λίστα διορθώσεων κατά προτεραιότητα. Ζητήστε δωρεάν αρχικό έλεγχο σε 24 ώρες."
+  },
+  "/el/services/seo-audits/athens-gr": {
+    "title": "Προώθηση Ιστοσελίδων Αθήνα | SEO Audit | AnotherSEOGuru",
+    "description": "Προώθηση ιστοσελίδων στην Αθήνα: SEO audit, τοπικό SEO και διορθώσεις κατά προτεραιότητα, με μηνιαία αναφορά σε κλικ και αιτήματα. Ζητήστε προσφορά."
+  },
+  "/el/services/seo-audits/chania-gr": {
+    "title": "Προώθηση Ιστοσελίδων Χανιά | SEO Audit | AnotherSEOGuru",
+    "description": "Προώθηση ιστοσελίδων στα Χανιά: SEO audit, τοπικό SEO και διορθώσεις κατά προτεραιότητα, με μηνιαία αναφορά σε κλικ και αιτήματα. Ζητήστε προσφορά."
+  },
+  "/el/services/seo-audits/corfu-gr": {
+    "title": "Προώθηση Ιστοσελίδων Κέρκυρα | SEO Audit | AnotherSEOGuru",
+    "description": "Προώθηση ιστοσελίδων στην Κέρκυρα: SEO audit, τοπικό SEO και διορθώσεις κατά προτεραιότητα με μηνιαία αναφορά σε κλικ και αιτήματα. Ζητήστε προσφορά."
+  },
+  "/el/services/seo-audits/heraklion-gr": {
+    "title": "Προώθηση Ιστοσελίδων Ηράκλειο: SEO Audit & Τεχνικό SEO",
+    "description": "Προώθηση ιστοσελίδων στο Ηράκλειο: SEO audit, τοπικό SEO και διορθώσεις κατά προτεραιότητα με μηνιαία αναφορά σε κλικ και αιτήματα. Ζητήστε προσφορά."
+  },
+  "/el/services/seo-audits/kalamata-gr": {
+    "title": "Προώθηση Ιστοσελίδων Καλαμάτα: SEO Audit & Τεχνικό SEO",
+    "description": "Προώθηση ιστοσελίδων στην Καλαμάτα: SEO audit, τοπικό SEO και διορθώσεις κατά προτεραιότητα, με μηνιαία αναφορά σε κλικ και αιτήματα. Ζητήστε έλεγχο."
+  },
+  "/el/services/seo-audits/kos-gr": {
+    "title": "SEO Κως: Υπηρεσίες SEO & Google Maps | AnotherSEOGuru",
+    "description": "Υπηρεσίες SEO στην Κω: τεχνικός έλεγχος, τοπικό SEO, Google Business Profile και προώθηση ιστοσελίδων με μηνιαία αναφορά σε αιτήματα. Ζητήστε έλεγχο."
+  },
+  "/el/services/seo-audits/mykonos-gr": {
+    "title": "Προώθηση Ιστοσελίδων Μύκονος | SEO Audit | AnotherSEOGuru",
+    "description": "Προώθηση ιστοσελίδων στη Μύκονο: SEO audit, τοπικό SEO και διορθώσεις κατά προτεραιότητα, με μηνιαία αναφορά σε κλικ και αιτήματα. Ζητήστε προσφορά."
+  },
+  "/el/services/seo-audits/naxos-gr": {
+    "title": "SEO Νάξος: Υπηρεσίες SEO & Google Maps | AnotherSEOGuru",
+    "description": "Υπηρεσίες SEO στη Νάξο: τεχνικός έλεγχος, τοπικό SEO, Google Business Profile και προώθηση ιστοσελίδων με μηνιαία αναφορά σε αιτήματα. Ζητήστε έλεγχο."
+  },
+  "/el/services/seo-audits/paros-gr": {
+    "title": "Προώθηση Ιστοσελίδων Πάρος | SEO Audit | AnotherSEOGuru",
+    "description": "Προώθηση ιστοσελίδων στην Πάρο: SEO audit, τοπικό SEO και διορθώσεις κατά προτεραιότητα, με μηνιαία αναφορά σε κλικ και αιτήματα. Ζητήστε προσφορά."
+  },
+  "/el/services/seo-audits/patras-gr": {
+    "title": "Προώθηση Ιστοσελίδων Πάτρα | SEO Audit | AnotherSEOGuru",
+    "description": "Προώθηση ιστοσελίδων στην Πάτρα: SEO audit, τοπικό SEO και διορθώσεις κατά προτεραιότητα, με μηνιαία αναφορά σε κλικ και αιτήματα. Ζητήστε προσφορά."
+  },
+  "/el/services/seo-audits/rethymno-gr": {
+    "title": "SEO Ρέθυμνο: Υπηρεσίες SEO & Google Maps | AnotherSEOGuru",
+    "description": "Υπηρεσίες SEO στο Ρέθυμνο: τεχνικός έλεγχος, τοπικό SEO, Google Business Profile και προώθηση ιστοσελίδων, με μηνιαία αναφορά σε κλικ και αιτήματα."
+  },
+  "/el/services/seo-audits/rhodes-gr": {
+    "title": "Προώθηση Ιστοσελίδων Ρόδος | SEO Audit | AnotherSEOGuru",
+    "description": "Προώθηση ιστοσελίδων στη Ρόδο: SEO audit, τοπικό SEO και διορθώσεις κατά προτεραιότητα, με μηνιαία αναφορά σε κλικ και αιτήματα. Ζητήστε προσφορά."
+  },
+  "/el/services/seo-audits/santorini-gr": {
+    "title": "Προώθηση Ιστοσελίδων Σαντορίνη: SEO Audit & Τεχνικό SEO",
+    "description": "Προώθηση ιστοσελίδων στη Σαντορίνη: SEO audit, τοπικό SEO και διορθώσεις κατά προτεραιότητα, με μηνιαία αναφορά σε κλικ και αιτήματα. Ζητήστε έλεγχο."
+  },
+  "/el/services/seo-audits/thessaloniki-gr": {
+    "title": "Προώθηση Ιστοσελίδων Θεσσαλονίκη: SEO Audit & Τεχνικό SEO",
+    "description": "Προώθηση ιστοσελίδων στη Θεσσαλονίκη: τεχνικός έλεγχος, τοπικό SEO και προώθηση στη Google με μηνιαία αναφορά σε κλικ και αιτήματα. Ζητήστε προσφορά."
+  },
+  "/el/services/seo-web-design": {
+    "title": "Σχεδιασμός Ιστοσελίδων (Web Design) με SEO | AnotherSEOGuru",
+    "description": "Σχεδιασμός ιστοσελίδων με UX και SEO από την αρχή: δομή, κείμενα και ταχύτητα που μετατρέπουν επισκέπτες σε πελάτες, για ελληνικές επιχειρήσεις."
+  },
+  "/el/services/speed-optimization": {
+    "title": "Βελτιστοποίηση Ταχύτητας Ιστοσελίδας & Core Web Vitals",
+    "description": "Βελτιστοποίηση ταχύτητας ιστοσελίδας: Core Web Vitals, εικόνες, caching και καθαρός κώδικας, ώστε η σελίδα να φορτώνει γρήγορα στο κινητό. Ζητήστε έλεγχο."
+  },
+  "/el/services/website-creation": {
+    "title": "Κατασκευή Ιστοσελίδων με SEO για Επιχειρήσεις | Ελλάδα",
+    "description": "Κατασκευή ιστοσελίδων για επιχειρήσεις σε όλη την Ελλάδα: γρήγορες, mobile-first και έτοιμες για SEO, με παράδοση σε εβδομάδες. Ζητήστε προσφορά."
+  },
+  "/el/services/website-creation/athens-gr": {
+    "title": "Κατασκευή Ιστοσελίδων Αθήνα: Sites με SEO & Google Maps",
+    "description": "Κατασκευή ιστοσελίδων στην Αθήνα: γρήγορα, mobile-first sites έτοιμα για SEO και Google, με υποστήριξη στα ελληνικά. Δείτε έργα και ζητήστε προσφορά."
+  },
+  "/el/services/website-creation/chania-gr": {
+    "title": "Κατασκευή Ιστοσελίδων Χανιά: Sites με SEO & Google Maps",
+    "description": "Κατασκευή ιστοσελίδων στα Χανιά: γρήγορα, mobile-first sites έτοιμα για SEO και Google, με υποστήριξη στα ελληνικά. Δείτε έργα και ζητήστε προσφορά."
+  },
+  "/el/services/website-creation/corfu-gr": {
+    "title": "Κατασκευή Ιστοσελίδων Κέρκυρα: Sites με SEO & Google Maps",
+    "description": "Κατασκευή ιστοσελίδων στην Κέρκυρα: γρήγορα, mobile-first sites έτοιμα για SEO και Google, με υποστήριξη στα ελληνικά. Δείτε έργα και ζητήστε προσφορά."
+  },
+  "/el/services/website-creation/heraklion-gr": {
+    "title": "Κατασκευή Ιστοσελίδων Ηράκλειο με SEO | AnotherSEOGuru",
+    "description": "Κατασκευή ιστοσελίδων στο Ηράκλειο: γρήγορα, mobile-first sites έτοιμα για SEO και Google, με υποστήριξη στα ελληνικά. Δείτε έργα και ζητήστε προσφορά."
+  },
+  "/el/services/website-creation/kalamata-gr": {
+    "title": "Κατασκευή Ιστοσελίδων Καλαμάτα με SEO | AnotherSEOGuru",
+    "description": "Κατασκευή ιστοσελίδων στην Καλαμάτα: mobile-first sites με SEO από την αρχή, με δομή για Google Maps και υποστήριξη στα ελληνικά. Ζητήστε προσφορά."
+  },
+  "/el/services/website-creation/kos-gr": {
+    "title": "Κατασκευή Ιστοσελίδων Κως: Sites με SEO & Google Maps",
+    "description": "Κατασκευή ιστοσελίδων στην Κω: γρήγορα, mobile-first sites έτοιμα για SEO και Google, με υποστήριξη στα ελληνικά. Δείτε έργα μας και ζητήστε προσφορά."
+  },
+  "/el/services/website-creation/mykonos-gr": {
+    "title": "Κατασκευή Ιστοσελίδων Μύκονος: Sites με SEO & Google Maps",
+    "description": "Κατασκευή ιστοσελίδων στη Μύκονο: γρήγορα, mobile-first sites έτοιμα για SEO και Google, με υποστήριξη στα ελληνικά. Δείτε έργα και ζητήστε προσφορά."
+  },
+  "/el/services/website-creation/naxos-gr": {
+    "title": "Κατασκευή Ιστοσελίδων Νάξος: Sites με SEO & Google Maps",
+    "description": "Κατασκευή ιστοσελίδων στη Νάξο: γρήγορα, mobile-first sites έτοιμα για SEO και Google, με υποστήριξη στα ελληνικά. Δείτε έργα και ζητήστε προσφορά."
+  },
+  "/el/services/website-creation/paros-gr": {
+    "title": "Κατασκευή Ιστοσελίδων Πάρος: Sites με SEO & Google Maps",
+    "description": "Κατασκευή ιστοσελίδων στην Πάρο: γρήγορα, mobile-first sites έτοιμα για SEO και Google, με υποστήριξη στα ελληνικά. Δείτε έργα και ζητήστε προσφορά."
+  },
+  "/el/services/website-creation/patras-gr": {
+    "title": "Κατασκευή Ιστοσελίδων Πάτρα: Sites με SEO & Google Maps",
+    "description": "Κατασκευή ιστοσελίδων στην Πάτρα: γρήγορα, mobile-first sites έτοιμα για SEO και Google, με υποστήριξη στα ελληνικά. Δείτε έργα και ζητήστε προσφορά."
+  },
+  "/el/services/website-creation/rethymno-gr": {
+    "title": "Κατασκευή Ιστοσελίδων Ρέθυμνο: Sites με SEO & Google Maps",
+    "description": "Κατασκευή ιστοσελίδων στο Ρέθυμνο: γρήγορα, mobile-first sites έτοιμα για SEO και Google, με υποστήριξη στα ελληνικά. Δείτε έργα και ζητήστε προσφορά."
+  },
+  "/el/services/website-creation/rhodes-gr": {
+    "title": "Κατασκευή Ιστοσελίδων Ρόδος: Sites με SEO & Google Maps",
+    "description": "Κατασκευή ιστοσελίδων στη Ρόδο: γρήγορα, mobile-first sites έτοιμα για SEO και Google, με υποστήριξη στα ελληνικά. Δείτε έργα και ζητήστε προσφορά."
+  },
+  "/el/services/website-creation/santorini-gr": {
+    "title": "Κατασκευή Ιστοσελίδων Σαντορίνη με SEO | AnotherSEOGuru",
+    "description": "Κατασκευή ιστοσελίδων στη Σαντορίνη: mobile-first sites με SEO από την αρχή, με δομή για Google Maps και υποστήριξη στα ελληνικά. Ζητήστε προσφορά."
+  },
+  "/el/services/website-creation/thessaloniki-gr": {
+    "title": "Κατασκευή Ιστοσελίδων Θεσσαλονίκη | Γρήγορα Sites με SEO",
+    "description": "Κατασκευή ιστοσελίδων στη Θεσσαλονίκη: mobile-first sites με SEO από την αρχή, με δομή για Google Maps και υποστήριξη στα ελληνικά. Ζητήστε προσφορά."
+  },
+  "/el/services/website-redesign": {
+    "title": "Ανασχεδιασμός Ιστοσελίδας χωρίς Απώλεια SEO | AnotherSEOGuru",
+    "description": "Ανασχεδιασμός ιστοσελίδας ή eshop με σχέδιο redirects, ώστε να κρατήσετε κατατάξεις και επισκεψιμότητα. Νέος σχεδιασμός, ίδια ή καλύτερη θέση στη Google."
+  },
+  "/el/symvoulos-seo": {
+    "title": "Σύμβουλος SEO: Συμβουλευτική & SEO Audit | AnotherSEOGuru",
+    "description": "Σύμβουλος SEO για ελληνικά sites τουρισμού και eshop: συμβουλευτική, SEO audit και καθοδήγηση ομάδων από την Touristas Technologies, με 10+ χρόνια."
+  },
+  "/en/seo-consultant": {
+    "title": "SEO Consultant for Greek Businesses | Touristas Technologies",
+    "description": "SEO consulting for Greek tourism sites and e-shops: strategy, SEO audits and team coaching from the Touristas Technologies team, 10+ years in."
+  },
+  "/en/seo-services": {
+    "title": "SEO Greece: SEO Services for Tourism & SMEs | AnotherSEOGuru",
+    "description": "SEO services in Greece for tourism businesses, hotels and SMEs: technical SEO, local SEO and content, measured in enquiries, not reports. Request a review."
+  },
+  "/en/seo-services/on-page": {
+    "title": "On-Page SEO Services: Titles, Headings & Copy | Monthly SEO",
+    "description": "On-page SEO services for title tags, headings and copy on the pages that can bring a customer: one search, one URL. Part of the monthly package."
+  },
+  "/en/seo-services/strategy": {
+    "title": "SEO Strategy Services Built on Search Console | Monthly Plan",
+    "description": "An SEO strategy that names the pages, the fixes and the monthly order of work, based on your Search Console data. Part of the monthly SEO package."
+  },
+  "/en/seo-services/technical": {
+    "title": "Technical SEO Services: Crawl, Indexation & Core Web Vitals",
+    "description": "Technical SEO services for crawl, indexation, Core Web Vitals and structured data that matches the page. Part of our monthly SEO package. Get a review."
+  },
+  "/en/services": {
+    "title": "SEO, Web Design & E-shop Services in Greece | AnotherSEOGuru",
+    "description": "Every service in one place: website and e-shop builds, technical SEO, local SEO, GEO and AEO, content and redesigns for businesses in Greece. Get a quote."
+  },
+  "/en/services/ai-visibility": {
+    "title": "Generative Engine Optimization (GEO & AEO) Services",
+    "description": "GEO and AEO services: entity clarity, answer-shaped pages and measurement for visibility in ChatGPT, Gemini and AI Overviews, with no citation promises."
+  },
+  "/en/services/content-creation": {
+    "title": "SEO Content Writing Services: Pages, Blogs & Products",
+    "description": "SEO content writing for service pages, blog articles and product descriptions, written for readers and for Google, in Greek and English. Request a quote."
+  },
+  "/en/services/eshop-seo": {
+    "title": "E-commerce SEO Services for Online Stores | AnotherSEOGuru",
+    "description": "E-commerce SEO services: categories, product pages, filters and speed, so your online store sells from organic Google search. Request a review."
+  },
+  "/en/services/eshop-woocommerce": {
+    "title": "WooCommerce Development: E-shops Built for SEO | Greece",
+    "description": "WooCommerce development for e-shops: payments, shipping, ERP integration and product SEO from day one, on fast mobile-first stores. Request a quote."
+  },
+  "/en/services/eshop-woocommerce/athens-gr": {
+    "title": "E-commerce Websites Athens | WooCommerce | AnotherSEOGuru",
+    "description": "E-commerce website design in Athens, Greece: WooCommerce stores with payments, shipping and product SEO from day one. Request a quote for your store."
+  },
+  "/en/services/eshop-woocommerce/chania-gr": {
+    "title": "E-commerce Websites Chania | WooCommerce | AnotherSEOGuru",
+    "description": "E-commerce website design in Chania, Crete: WooCommerce stores with payments, shipping and product SEO from day one. Request a quote for your store."
+  },
+  "/en/services/eshop-woocommerce/corfu-gr": {
+    "title": "E-commerce Websites Corfu | WooCommerce | AnotherSEOGuru",
+    "description": "E-commerce website design in Corfu, Greece: WooCommerce stores with payments, shipping and product SEO from day one. Request a quote for your store."
+  },
+  "/en/services/eshop-woocommerce/heraklion-gr": {
+    "title": "Ecommerce Website Design Heraklion | WooCommerce Stores",
+    "description": "E-commerce website design in Heraklion, Crete: WooCommerce stores with payments, shipping and product SEO from day one. Request a quote for your store."
+  },
+  "/en/services/eshop-woocommerce/kos-gr": {
+    "title": "E-commerce Websites Kos | WooCommerce | AnotherSEOGuru",
+    "description": "E-commerce website design in Kos, Greece: WooCommerce stores with payments, shipping and product SEO from day one. Request a quote for your store."
+  },
+  "/en/services/eshop-woocommerce/london-uk": {
+    "title": "E-commerce Websites London | WooCommerce | AnotherSEOGuru",
+    "description": "E-commerce website design in London, UK: WooCommerce shops with payments, shipping, ERP links and product SEO built in. Request a quote for your store."
+  },
+  "/en/services/eshop-woocommerce/mykonos-gr": {
+    "title": "Ecommerce Website Design Mykonos | WooCommerce Stores",
+    "description": "E-commerce website design in Mykonos, Greece: WooCommerce stores with payments, shipping and product SEO from day one. Request a quote for your store."
+  },
+  "/en/services/eshop-woocommerce/naxos-gr": {
+    "title": "E-commerce Websites Naxos | WooCommerce | AnotherSEOGuru",
+    "description": "E-commerce website design in Naxos, Greece: WooCommerce stores with payments, shipping and product SEO from day one. Request a quote for your store."
+  },
+  "/en/services/eshop-woocommerce/paros-gr": {
+    "title": "E-commerce Websites Paros | WooCommerce | AnotherSEOGuru",
+    "description": "E-commerce website design in Paros, Greece: WooCommerce stores with payments, shipping and product SEO from day one. Request a quote for your store."
+  },
+  "/en/services/eshop-woocommerce/rethymno-gr": {
+    "title": "Ecommerce Website Design Rethymno | WooCommerce Stores",
+    "description": "E-commerce website design in Rethymno, Crete: WooCommerce stores with payments, shipping and product SEO from day one. Request a quote for your store."
+  },
+  "/en/services/eshop-woocommerce/rhodes-gr": {
+    "title": "E-commerce Websites Rhodes | WooCommerce | AnotherSEOGuru",
+    "description": "E-commerce website design in Rhodes, Greece: WooCommerce stores with payments, shipping and product SEO from day one. Request a quote for your store."
+  },
+  "/en/services/eshop-woocommerce/santorini-gr": {
+    "title": "Ecommerce Website Design Santorini | WooCommerce Stores",
+    "description": "E-commerce website design in Santorini, Greece: WooCommerce stores with payments, shipping and product SEO built in. Request a quote for your store."
+  },
+  "/en/services/link-building": {
+    "title": "Link Building Services: Relevant Backlinks & Digital PR",
+    "description": "Link building services: backlinks from relevant sites, digital PR and clean-up of spammy links, with no links bought from networks. Request a proposal."
+  },
+  "/en/services/local-seo": {
+    "title": "Local SEO Services: Google Maps & Business Profile",
+    "description": "Local SEO services: Google Business Profile optimisation, reviews and area pages that put you in the map pack, where local searches end. Request a review."
+  },
+  "/en/services/local-seo/athens-gr": {
+    "title": "Local SEO Athens: Google Maps & Reviews | AnotherSEOGuru",
+    "description": "Local SEO in Athens, Greece: Google Business Profile optimisation, reviews and local pages so nearby customers find you in Google Maps. Request a quote."
+  },
+  "/en/services/local-seo/chania-gr": {
+    "title": "Local SEO Chania: Google Maps & Reviews | AnotherSEOGuru",
+    "description": "Local SEO in Chania, Crete: Google Business Profile optimisation, reviews and local pages so nearby customers find you in Google Maps. Request a quote."
+  },
+  "/en/services/local-seo/corfu-gr": {
+    "title": "Local SEO Corfu: Google Maps & Reviews | AnotherSEOGuru",
+    "description": "Local SEO in Corfu, Greece: Google Business Profile optimisation, reviews and local pages so nearby customers find you in Google Maps. Request a quote."
+  },
+  "/en/services/local-seo/heraklion-gr": {
+    "title": "Local SEO Heraklion | Google Maps & Business Profile",
+    "description": "Local SEO in Heraklion, Crete: Google Business Profile optimisation, reviews and local pages so nearby customers find you in Google Maps. Request a quote."
+  },
+  "/en/services/local-seo/kos-gr": {
+    "title": "Local SEO Kos, Greece | Google Maps & Business Profile",
+    "description": "Local SEO in Kos, Greece: Google Business Profile optimisation, reviews and local pages so nearby customers find you in Google Maps. Request a quote."
+  },
+  "/en/services/local-seo/london-uk": {
+    "title": "Local SEO London: Google Maps & Reviews | AnotherSEOGuru",
+    "description": "Local SEO in London, UK: Google Business Profile optimisation, reviews and local pages so nearby customers find you in Google Maps. Ask for a review."
+  },
+  "/en/services/local-seo/mykonos-gr": {
+    "title": "Local SEO Mykonos: Google Maps & Reviews | AnotherSEOGuru",
+    "description": "Local SEO in Mykonos, Greece: Google Business Profile optimisation, reviews and local pages so nearby customers find you in Google Maps. Request a quote."
+  },
+  "/en/services/local-seo/naxos-gr": {
+    "title": "Local SEO Naxos: Google Maps & Reviews | AnotherSEOGuru",
+    "description": "Local SEO in Naxos, Greece: Google Business Profile optimisation, reviews and local pages so nearby customers find you in Google Maps. Request a quote."
+  },
+  "/en/services/local-seo/paros-gr": {
+    "title": "Local SEO Paros: Google Maps & Reviews | AnotherSEOGuru",
+    "description": "Local SEO in Paros, Greece: Google Business Profile optimisation, reviews and local pages so nearby customers find you in Google Maps. Request a quote."
+  },
+  "/en/services/local-seo/rethymno-gr": {
+    "title": "Local SEO Rethymno: Google Maps & Reviews | AnotherSEOGuru",
+    "description": "Local SEO in Rethymno, Crete: Google Business Profile optimisation, reviews and local pages so nearby customers find you in Google Maps. Request a quote."
+  },
+  "/en/services/local-seo/rhodes-gr": {
+    "title": "Local SEO Rhodes: Google Maps & Reviews | AnotherSEOGuru",
+    "description": "Local SEO in Rhodes, Greece: Google Business Profile optimisation, reviews and local pages so nearby customers find you in Google Maps. Request a quote."
+  },
+  "/en/services/local-seo/santorini-gr": {
+    "title": "Local SEO Santorini | Google Maps & Business Profile",
+    "description": "Local SEO in Santorini, Greece: Google Business Profile, reviews and area pages that help customers nearby find you on the map. Ask for a review."
+  },
+  "/en/services/logo-design": {
+    "title": "Logo Design Services for Businesses | AnotherSEOGuru",
+    "description": "Logo design for businesses: a logo that works on your website, on your Google Business Profile and across social profiles. See our work and get a quote."
+  },
+  "/en/services/seo-audits": {
+    "title": "SEO Audit Services: Technical Website Audits | Greece",
+    "description": "SEO audit services: indexation, speed, structure and content checks with a fix list in priority order, so you know what to change first. Request an audit."
+  },
+  "/en/services/seo-audits/athens-gr": {
+    "title": "SEO Athens: SEO Services & Technical Audits | AnotherSEOGuru",
+    "description": "SEO services in Athens, Greece: a technical SEO audit, local SEO and a prioritised fix list built around how people there search. Request an audit."
+  },
+  "/en/services/seo-audits/chania-gr": {
+    "title": "SEO Chania: SEO Services & Technical Audits | AnotherSEOGuru",
+    "description": "SEO services in Chania, Crete: a technical SEO audit, local SEO and a prioritised fix list built around how people there search. Request an audit."
+  },
+  "/en/services/seo-audits/corfu-gr": {
+    "title": "SEO Corfu: SEO Services & Technical Audits | AnotherSEOGuru",
+    "description": "SEO services in Corfu, Greece: a technical SEO audit, local SEO and a prioritised fix list built around how people there search. Request an audit."
+  },
+  "/en/services/seo-audits/heraklion-gr": {
+    "title": "SEO Heraklion | SEO Audits & Local SEO | AnotherSEOGuru",
+    "description": "SEO services in Heraklion, Crete: a technical SEO audit, local SEO and a prioritised fix list built around how people there search. Request an audit."
+  },
+  "/en/services/seo-audits/kos-gr": {
+    "title": "SEO Kos: SEO Services & Technical Audits | AnotherSEOGuru",
+    "description": "SEO services in Kos, Greece: a technical SEO audit, local SEO and a prioritised fix list for businesses that want enquiries from Google. Request a quote."
+  },
+  "/en/services/seo-audits/london-uk": {
+    "title": "SEO London: SEO Services & Technical Audits | AnotherSEOGuru",
+    "description": "SEO services in London, UK: a technical SEO audit, local SEO and a prioritised fix list for businesses that want enquiries from Google. Request a quote."
+  },
+  "/en/services/seo-audits/mykonos-gr": {
+    "title": "SEO Mykonos | SEO Audits & Local SEO | AnotherSEOGuru",
+    "description": "SEO services in Mykonos, Greece: a technical SEO audit, local SEO and a prioritised fix list built around how people there search. Request an audit."
+  },
+  "/en/services/seo-audits/naxos-gr": {
+    "title": "SEO Naxos: SEO Services & Technical Audits | AnotherSEOGuru",
+    "description": "SEO services in Naxos, Greece: a technical SEO audit, local SEO and a prioritised fix list built around how people there search. Request an audit."
+  },
+  "/en/services/seo-audits/paros-gr": {
+    "title": "SEO Paros: SEO Services & Technical Audits | AnotherSEOGuru",
+    "description": "SEO services in Paros, Greece: a technical SEO audit, local SEO and a prioritised fix list built around how people there search. Request an audit."
+  },
+  "/en/services/seo-audits/rethymno-gr": {
+    "title": "SEO Rethymno | SEO Audits & Local SEO | AnotherSEOGuru",
+    "description": "SEO services in Rethymno, Crete: a technical SEO audit, local SEO and a prioritised fix list built around how people there search. Request an audit."
+  },
+  "/en/services/seo-audits/rhodes-gr": {
+    "title": "SEO Rhodes: SEO Services & Technical Audits | AnotherSEOGuru",
+    "description": "SEO services in Rhodes, Greece: a technical SEO audit, local SEO and a prioritised fix list built around how people there search. Request an audit."
+  },
+  "/en/services/seo-audits/santorini-gr": {
+    "title": "SEO Santorini | SEO Audits & Local SEO | AnotherSEOGuru",
+    "description": "SEO services in Santorini, Greece: a technical SEO audit, local SEO and a prioritised fix list built around how people there search. Request a quote."
+  },
+  "/en/services/seo-web-design": {
+    "title": "Web Design Services Built for SEO | AnotherSEOGuru",
+    "description": "Web design with UX and SEO from the start: structure, copy and speed that turn visitors into customers. Websites for businesses in Greece and abroad."
+  },
+  "/en/services/speed-optimization": {
+    "title": "Website Speed Optimization Services & Core Web Vitals",
+    "description": "Website speed optimization: Core Web Vitals, images, caching and clean code, so your pages load fast on mobile and keep visitors on the page."
+  },
+  "/en/services/website-creation": {
+    "title": "Website Creation Services: Fast Websites Built for SEO",
+    "description": "Website creation for businesses: fast, mobile-first websites with technical SEO built in from day one, and conversion-ready pages. Get a quote."
+  },
+  "/en/services/website-creation/athens-gr": {
+    "title": "Web Design Athens | SEO-Ready Websites | AnotherSEOGuru",
+    "description": "Web design in Athens, Greece: fast, mobile-first websites with technical SEO built in and content for local search. See our work and request a quote."
+  },
+  "/en/services/website-creation/chania-gr": {
+    "title": "Web Design Chania | SEO-Ready Websites | AnotherSEOGuru",
+    "description": "Web design in Chania, Crete: fast websites with technical SEO from day one and content shaped by how locals search. See our work and request a quote."
+  },
+  "/en/services/website-creation/corfu-gr": {
+    "title": "Web Design Corfu | SEO-Ready Websites | AnotherSEOGuru",
+    "description": "Web design in Corfu, Greece: fast websites with technical SEO from day one and content shaped by how locals search. See our work and request a quote."
+  },
+  "/en/services/website-creation/heraklion-gr": {
+    "title": "Web Design Heraklion | SEO-Ready Websites | AnotherSEOGuru",
+    "description": "Web design in Heraklion, Crete: fast, mobile-first websites with technical SEO built in and content shaped by how locals search. Request a free quote."
+  },
+  "/en/services/website-creation/kos-gr": {
+    "title": "Web Design Kos | Websites Built for SEO | AnotherSEOGuru",
+    "description": "Web design in Kos, Greece: fast websites with technical SEO from day one and content shaped by how locals search. See our work and request a quote."
+  },
+  "/en/services/website-creation/london-uk": {
+    "title": "Web Design London | SEO-Ready Websites | AnotherSEOGuru",
+    "description": "Web design in London, UK: fast websites with technical SEO from day one and content shaped by how locals search. See our work and request a quote."
+  },
+  "/en/services/website-creation/mykonos-gr": {
+    "title": "Web Design Mykonos | SEO-Ready Websites | AnotherSEOGuru",
+    "description": "Web design in Mykonos, Greece: fast, mobile-first websites with technical SEO built in and content shaped by how locals search. Request a free quote."
+  },
+  "/en/services/website-creation/naxos-gr": {
+    "title": "Web Design Naxos | SEO-Ready Websites | AnotherSEOGuru",
+    "description": "Web design in Naxos, Greece: fast websites with technical SEO from day one and content shaped by how locals search. See our work and request a quote."
+  },
+  "/en/services/website-creation/paros-gr": {
+    "title": "Web Design Paros | SEO-Ready Websites | AnotherSEOGuru",
+    "description": "Web design in Paros, Greece: fast websites with technical SEO from day one and content shaped by how locals search. See our work and request a quote."
+  },
+  "/en/services/website-creation/rethymno-gr": {
+    "title": "Web Design Rethymno | SEO-Ready Websites | AnotherSEOGuru",
+    "description": "Web design in Rethymno, Crete: fast, mobile-first websites with technical SEO built in and content shaped by how locals search. Request a free quote."
+  },
+  "/en/services/website-creation/rhodes-gr": {
+    "title": "Web Design Rhodes | SEO-Ready Websites | AnotherSEOGuru",
+    "description": "Web design in Rhodes, Greece: fast, mobile-first websites with technical SEO built in and content for local search. See our work and request a quote."
+  },
+  "/en/services/website-creation/santorini-gr": {
+    "title": "Web Design Santorini | SEO-Ready Websites | AnotherSEOGuru",
+    "description": "Web design in Santorini, Greece: fast, mobile-first websites with technical SEO built in and local search content. See our work and request a quote."
+  },
+  "/en/services/website-redesign": {
+    "title": "Website Redesign Services Without Losing SEO | Keep Rankings",
+    "description": "Website and e-shop redesign with a full redirect plan, so you keep rankings and traffic: a new design with the same or better position in Google."
+  }
+}

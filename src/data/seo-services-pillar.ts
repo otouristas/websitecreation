@@ -90,7 +90,7 @@ const el: SeoServicesPillarCopy = {
     'Δουλεύουμε κυρίως με ξενοδοχεία, ενοικίαση αυτοκινήτου και εκδρομές στην Ελλάδα, πάνω στη δική μας πλατφόρμα που συνδέεται στο Google Search Console.',
   metaTitle: 'Υπηρεσίες SEO & Προώθηση Ιστοσελίδων | AnotherSEOGuru',
   metaDescription:
-    'Υπηρεσίες SEO για επιχειρήσεις στην Ελλάδα: τεχνικό SEO, περιεχόμενο και προώθηση ιστοσελίδων στη Google, με μηνιαία πακέτα και μέτρηση σε αιτήματα.',
+    'Υπηρεσίες SEO για επιχειρήσεις σε όλη την Ελλάδα: τεχνικό SEO, περιεχόμενο, τοπικό SEO και προώθηση στη Google, με μέτρηση σε αιτήματα. Ζητήστε έλεγχο.',
   primaryKeyword: 'υπηρεσίες SEO',
   includes: {
     title: 'Τι περιλαμβάνουν οι υπηρεσίες SEO κάθε μήνα',
@@ -323,9 +323,9 @@ const en: SeoServicesPillarCopy = {
     'SEO for a business is continuous work on three fronts: the technical health of the site, content that matches what people actually search, and trust signals off the site. Ours starts with an audit and a keyword-to-page map, runs monthly from {{ENTRY_SEO}}, and is measured in clicks and enquiries rather than rankings that bring nobody.',
   answerExtra:
     'We work mainly with hotels, rent-a-car and tours in Greece, on our own platform connected to Google Search Console.',
-  metaTitle: 'SEO Greece | SEO Services for Businesses',
+  metaTitle: 'SEO Greece: SEO Services for Tourism & SMEs | AnotherSEOGuru',
   metaDescription:
-    'SEO services for tourism, hotels and SMEs in Greece. Technical SEO, local SEO and content from {{ENTRY_SEO}} a month, measured in enquiries, not reports.',
+    'SEO services in Greece for tourism businesses, hotels and SMEs: technical SEO, local SEO and content, measured in enquiries, not reports. Request a review.',
   primaryKeyword: 'SEO Greece',
   includes: {
     title: 'What a serious SEO service includes',

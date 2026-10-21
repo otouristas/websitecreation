@@ -254,7 +254,12 @@ export default async function ServicePage({ params }: PageProps) {
                         text: kit.pill.text[siteLocale],
                         href: lp(kit.pill.href),
                     }}
-                    h1={pageEl?.h1 ?? displayName}
+                    h1={
+                        pageEl?.h1 ??
+                        (serviceSlug === 'seo-web-design'
+                            ? 'Web design built for SEO from the start'
+                            : displayName)
+                    }
                     lead={pageEl ? resolvePriceTokens(pageEl.lead, siteLocale) : displayDesc}
                     primaryLabel={kit.cta === 'quote' ? t.getQuote : undefined}
                     primaryHref={kit.cta === 'quote' ? quoteHref : `${quoteHref}#free-audit`}

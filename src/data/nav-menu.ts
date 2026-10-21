@@ -140,7 +140,7 @@ export function getNavModel(locale: SiteLocale): NavModel {
           { href: lp('/services/website-creation'), label: t('Website creation', 'Κατασκευή ιστοσελίδων'), desc: t('Fast sites, ready for SEO', 'Γρήγορες ιστοσελίδες, έτοιμες για SEO'), icon: 'globe', badge: POPULAR, meta: t(`from €${webFrom}`, `από €${webFrom}`) },
           { href: lp('/services/eshop-woocommerce'), label: t('E-shop development', 'Κατασκευή e-shop'), desc: t('WooCommerce stores that sell', 'Καταστήματα WooCommerce που πουλάνε'), icon: 'cart' },
           { href: lp('/services/website-redesign'), label: t('Website redesign', 'Ανασχεδιασμός ιστοσελίδας'), desc: t('Modernise without losing rankings', 'Ανανέωση χωρίς απώλεια θέσεων'), icon: 'refresh' },
-          { href: lp('/services/seo-web-design'), label: t('SEO web design', 'Σχεδιασμός με SEO'), desc: t('Built to rank from day one', 'Σχεδιασμένη να κατατάσσεται'), icon: 'search' },
+          { href: lp('/services/seo-web-design'), label: t('Web design', 'Σχεδιασμός με SEO'), desc: t('Built to rank from day one', 'Σχεδιασμένη να κατατάσσεται'), icon: 'search' },
           { href: lp('/services/speed-optimization'), label: t('Speed optimisation', 'Βελτίωση ταχύτητας'), desc: t('Pass Core Web Vitals', 'Επιτυχία στα Core Web Vitals'), icon: 'gauge' },
           { href: lp('/services/logo-design'), label: t('Logo design', 'Σχεδιασμός λογοτύπου'), desc: t('A brand people remember', 'Μια ταυτότητα που θυμούνται'), icon: 'palette' },
         ],

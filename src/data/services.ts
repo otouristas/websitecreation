@@ -47,10 +47,10 @@ export const services: Service[] = [
     },
     {
         slug: 'seo-web-design',
-        name: 'SEO Web Design',
-        shortName: 'SEO Design',
+        name: 'Web Design',
+        shortName: 'Web Design',
         description: 'Websites designed with SEO at the core. Technical SEO, schema markup, and internal linking built-in.',
-        metaTitle: 'SEO Web Design Services',
+        metaTitle: 'Web Design Services Built for SEO',
         metaDescription: 'SEO-first website design with technical optimization, schema markup, and ranking-focused architecture.',
         features: [
             'Technical SEO audit',
@@ -87,7 +87,7 @@ export const services: Service[] = [
             'GEO and AEO for businesses: entity clarity, answer-shaped pages and measurement so answer engines can use your content. No citation promises.',
         metaTitle: 'AI SEO Agency: GEO & AEO Services',
         metaDescription:
-            'GEO and AEO for businesses: entity clarity, answer-shaped pages and measurement. What the work includes, how it is priced, and what it does not promise.',
+            'GEO and AEO services: entity clarity, answer-shaped pages and measurement for visibility in ChatGPT, Gemini and AI Overviews, with no citation promises.',
         features: [
             'Entity and brand-fact consistency',
             'Answer-shaped FAQs for AEO',

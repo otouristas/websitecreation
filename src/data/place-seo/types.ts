@@ -76,8 +76,17 @@ export const PLACE_REGION_ORDER: readonly PlaceRegionId[] = [
 
 export const H1_ACCENT = 'προώθηση ιστοσελίδων';
 
+const PLACE_TITLE_BRAND = ' | AnotherSEOGuru';
+
+/**
+ * «SEO {πόλη}» title, query first, brand last, 50–60 characters.
+ * Θεσσαλονίκη is the one name that does not fit «Υπηρεσίες SEO», so it drops
+ * the repeated SEO token and keeps Google Maps.
+ */
 export function placeTitle(name: string): string {
-  return `SEO ${name}: Υπηρεσίες SEO & Προώθηση Ιστοσελίδων`;
+  const full = `SEO ${name}: Υπηρεσίες SEO & Google Maps${PLACE_TITLE_BRAND}`;
+  if (full.length <= 60) return full;
+  return `SEO ${name}: Υπηρεσίες & Google Maps${PLACE_TITLE_BRAND}`;
 }
 
 export function placeH1(locative: string): string {

@@ -1,4 +1,5 @@
 import { resolvePriceTokens } from '@/data/pricing';
+import { serpMetaFor } from '@/data/serp-meta';
 
 /**
  * One H2 topic block on a Greek service page. `paragraphs` may contain inline
@@ -57,9 +58,9 @@ export const serviceNamesEl: Record<
     shortName: 'Ιστοσελίδες',
     nameAccusative: 'κατασκευή ιστοσελίδων',
     seo: {
-      title: 'Κατασκευή Ιστοσελίδων με SEO | Τιμές & Πακέτα',
+      title: 'Κατασκευή Ιστοσελίδων με SEO για Επιχειρήσεις | Ελλάδα',
       description:
-        'Κατασκευή ιστοσελίδων για επιχειρήσεις σε όλη την Ελλάδα: γρήγορες, mobile-first και έτοιμες για SEO. Πακέτα με σταθερή τιμή και παράδοση σε εβδομάδες.',
+        'Κατασκευή ιστοσελίδων για επιχειρήσεις σε όλη την Ελλάδα: γρήγορες, mobile-first και έτοιμες για SEO, με παράδοση σε εβδομάδες. Ζητήστε προσφορά.',
     },
     description:
       'Κατασκευή ιστοσελίδων με SEO από την πρώτη μέρα: σχεδιασμός, ανάπτυξη και βελτιστοποίηση για μετατροπές, με σταθερή τιμή από {{ENTRY_WEBSITE}}.',
@@ -78,9 +79,9 @@ export const serviceNamesEl: Record<
     shortName: 'Ανασχεδιασμός',
     nameAccusative: 'ανασχεδιασμό ιστοσελίδας',
     seo: {
-      title: 'Ανασχεδιασμός Ιστοσελίδας χωρίς Απώλεια SEO',
+      title: 'Ανασχεδιασμός Ιστοσελίδας χωρίς Απώλεια SEO | AnotherSEOGuru',
       description:
-        'Ανασχεδιασμός ιστοσελίδας ή e-shop με σχέδιο redirects, ώστε να κρατήσετε κατατάξεις και επισκεψιμότητα. Νέος σχεδιασμός, ίδια ή καλύτερη θέση στη Google.',
+        'Ανασχεδιασμός ιστοσελίδας ή eshop με σχέδιο redirects, ώστε να κρατήσετε κατατάξεις και επισκεψιμότητα. Νέος σχεδιασμός, ίδια ή καλύτερη θέση στη Google.',
     },
     page: {
       h1: 'Ανασχεδιασμός ιστοσελίδας χωρίς να χάσετε την κατάταξή σας',
@@ -130,16 +131,16 @@ export const serviceNamesEl: Record<
     ],
   },
   'seo-web-design': {
-    // Was 'SEO Web Design'. This page owns «σχεδιασμός ιστοσελίδων / web design»;
+    // This page owns «σχεδιασμός ιστοσελίδων / web design».
     // /services/website-creation owns «κατασκευή / δημιουργία ιστοσελίδας».
     titleKeyword: 'Σχεδιασμός Ιστοσελίδων',
     name: 'Σχεδιασμός Ιστοσελίδων (Web Design)',
     shortName: 'Web Design',
     nameAccusative: 'σχεδιασμό ιστοσελίδων',
     seo: {
-      title: 'Σχεδιασμός Ιστοσελίδων (Web Design) με SEO',
+      title: 'Σχεδιασμός Ιστοσελίδων (Web Design) με SEO | AnotherSEOGuru',
       description:
-        'Σχεδιασμός ιστοσελίδων με UX και SEO από την αρχή: δομή, κείμενα και ταχύτητα που μετατρέπουν επισκέπτες σε πελάτες. Web design για ελληνικές επιχειρήσεις.',
+        'Σχεδιασμός ιστοσελίδων με UX και SEO από την αρχή: δομή, κείμενα και ταχύτητα που μετατρέπουν επισκέπτες σε πελάτες, για ελληνικές επιχειρήσεις.',
     },
     page: {
       h1: 'Σχεδιασμός ιστοσελίδων (web design) με SEO από την αρχή',
@@ -190,6 +191,11 @@ export const serviceNamesEl: Record<
     name: 'Βελτιστοποίηση Ταχύτητας',
     shortName: 'Ταχύτητα',
     nameAccusative: 'βελτιστοποίηση ταχύτητας',
+    seo: {
+      title: 'Βελτιστοποίηση Ταχύτητας Ιστοσελίδας & Core Web Vitals',
+      description:
+        'Βελτιστοποίηση ταχύτητας ιστοσελίδας: Core Web Vitals, εικόνες, caching και καθαρός κώδικας, ώστε η σελίδα να φορτώνει γρήγορα στο κινητό. Ζητήστε έλεγχο.',
+    },
     description:
       'Core Web Vitals, caching και βελτιστοποίηση κώδικα για ταχύτερη ιστοσελίδα και καλύτερες κατατάξεις.',
     features: [
@@ -207,9 +213,9 @@ export const serviceNamesEl: Record<
     shortName: 'AI SEO',
     nameAccusative: 'AI SEO (GEO / AEO)',
     seo: {
-      title: 'Υπηρεσίες AI SEO & GEO: Ορατότητα σε ChatGPT & AI Overviews',
+      title: 'AI SEO & GEO: Ορατότητα σε ChatGPT, Gemini & AI Overviews',
       description:
-        'Υπηρεσίες AI SEO και GEO (generative engine optimization) για ορατότητα στο ChatGPT, στο Gemini και στα AI Overviews, με μηνιαία μέτρηση αναφορών.',
+        'Υπηρεσίες AI SEO και GEO για ορατότητα στο ChatGPT, στο Gemini και στα AI Overviews της Google, με μηνιαία μέτρηση αναφορών. Ζητήστε έλεγχο ορατότητας.',
     },
     description:
       'GEO και AEO για επιχειρήσεις: σαφή στοιχεία, σελίδες σε μορφή απάντησης και μέτρηση, ώστε οι μηχανές απάντησης να μπορούν να χρησιμοποιήσουν το περιεχόμενό σας. Χωρίς υποσχέσεις αναφοράς.',
@@ -227,6 +233,11 @@ export const serviceNamesEl: Record<
     name: 'Σχεδιασμός Λογοτύπου',
     shortName: 'Εταιρική ταυτότητα',
     nameAccusative: 'σχεδιασμό λογοτύπου',
+    seo: {
+      title: 'Σχεδιασμός Λογοτύπου για Επιχειρήσεις | AnotherSEOGuru',
+      description:
+        'Σχεδιασμός λογοτύπου για επιχειρήσεις: λογότυπο που δουλεύει στην ιστοσελίδα, στο Google Business Profile και στα social. Δείτε έργα και ζητήστε προσφορά.',
+    },
     description: 'Επαγγελματικό λογότυπο και πλήρες κιτ εταιρικής ταυτότητας για αναγνωρισιμότητα στην αγορά σας.',
     features: [
       'Σχεδιασμός λογοτύπου στα μέτρα σας',
@@ -243,9 +254,9 @@ export const serviceNamesEl: Record<
     shortName: 'SEO Copywriting',
     nameAccusative: 'SEO copywriting και δημιουργία περιεχομένου',
     seo: {
-      title: 'SEO Copywriting & Δημιουργία Περιεχομένου',
+      title: 'SEO Copywriting & Δημιουργία Περιεχομένου | AnotherSEOGuru',
       description:
-        'Υπηρεσίες SEO copywriting: κείμενα σελίδων, άρθρα blog και περιγραφές προϊόντων γραμμένα για αναγνώστες και για τη Google, στα ελληνικά και αγγλικά.',
+        'SEO copywriting: κείμενα σελίδων, άρθρα blog και περιγραφές προϊόντων γραμμένα για αναγνώστες και για τη Google, στα ελληνικά και αγγλικά. Ζητήστε πρόταση.',
     },
     page: {
       h1: 'SEO copywriting και δημιουργία περιεχομένου που κατατάσσεται',
@@ -286,9 +297,9 @@ export const serviceNamesEl: Record<
     shortName: 'Τοπικό SEO',
     nameAccusative: 'τοπικό SEO & Google Business',
     seo: {
-      title: 'Τοπικό SEO & Google Business Profile | AnotherSEOGuru',
+      title: 'Τοπικό SEO: Google Maps & Google Business Profile | Κριτικές',
       description:
-        'Τοπικό SEO για επιχειρήσεις: βελτιστοποίηση Google Business Profile, κριτικές και καταχώρηση στο Google Maps, για να σας βρίσκουν πελάτες κοντά σας.',
+        'Τοπικό SEO για επιχειρήσεις: Google Business Profile, κριτικές και σελίδες περιοχής, για να σας βρίσκουν πελάτες κοντά σας στο Google Maps. Ζητήστε έλεγχο.',
     },
     description:
       'Τοπικό SEO για Ελλάδα: βελτιστοποίηση Google Business Profile, καταχωρήσεις, κριτικές και τοπικές σελίδες ώστε να εμφανίζεστε στο map pack για Αθήνα, Θεσσαλονίκη και άλλες πόλεις.',
@@ -307,9 +318,9 @@ export const serviceNamesEl: Record<
     shortName: 'Link building',
     nameAccusative: 'link building και backlinks',
     seo: {
-      title: 'Link Building & Backlinks για Ελληνικά Sites',
+      title: 'Link Building: Ποιοτικά Backlinks από Ελληνικά Sites',
       description:
-        'Υπηρεσίες link building: ποιοτικά backlinks από σχετικά ελληνικά sites, digital PR και καθαρισμός spam συνδέσμων. Χωρίς αγορά συνδέσμων από δίκτυα.',
+        'Υπηρεσίες link building: backlinks από σχετικά ελληνικά sites, digital PR και καθαρισμός spam συνδέσμων, χωρίς αγορά συνδέσμων από δίκτυα. Ζητήστε πρόταση.',
     },
     page: {
       h1: 'Link building: ποιοτικά backlinks από ελληνικά sites',
@@ -371,7 +382,7 @@ export const serviceNamesEl: Record<
     seo: {
       title: 'SEO Audit: Τεχνικός Έλεγχος Ιστοσελίδας | AnotherSEOGuru',
       description:
-        'Τεχνικό SEO audit ιστοσελίδας: ευρετηρίαση, ταχύτητα, δομή και περιεχόμενο, με λίστα διορθώσεων κατά προτεραιότητα. Δωρεάν αρχικός έλεγχος σε 24 ώρες.',
+        'SEO audit ιστοσελίδας: ευρετηρίαση, ταχύτητα, δομή και περιεχόμενο, με λίστα διορθώσεων κατά προτεραιότητα. Ζητήστε δωρεάν αρχικό έλεγχο σε 24 ώρες.',
     },
     page: {
       h1: 'SEO audit: τεχνικός έλεγχος ιστοσελίδας με λίστα διορθώσεων',
@@ -415,9 +426,9 @@ export const serviceNamesEl: Record<
     shortName: 'Κατασκευή Eshop',
     nameAccusative: 'κατασκευή eshop με WooCommerce',
     seo: {
-      title: 'Κατασκευή Eshop με WooCommerce | Τιμές 2026',
+      title: 'Κατασκευή Eshop με WooCommerce & SEO | AnotherSEOGuru',
       description:
-        'Κατασκευή e-shop με WooCommerce: πληρωμές, μεταφορικά, σύνδεση με ERP και SEO προϊόντων. Δείτε τιμές κατασκευής eshop και τι περιλαμβάνει κάθε πακέτο.',
+        'Κατασκευή eshop με WooCommerce: πληρωμές, μεταφορικά, σύνδεση με ERP και SEO προϊόντων από την πρώτη μέρα. Δείτε τι περιλαμβάνει κάθε πακέτο.',
     },
     page: {
       h1: 'Κατασκευή eshop με WooCommerce, έτοιμο να πουλάει',
@@ -478,9 +489,9 @@ export const serviceNamesEl: Record<
     shortName: 'Eshop SEO',
     nameAccusative: 'SEO ηλεκτρονικού καταστήματος',
     seo: {
-      title: 'SEO για Eshop | Προώθηση Ηλεκτρονικού Καταστήματος',
+      title: 'SEO για Eshop: Προώθηση Ηλεκτρονικού Καταστήματος στη Google',
       description:
-        'SEO για eshop: κατηγορίες, σελίδες προϊόντων, φίλτρα και ταχύτητα, ώστε το ηλεκτρονικό σας κατάστημα να πουλάει από την οργανική αναζήτηση στη Google.',
+        'SEO για eshop: κατηγορίες, σελίδες προϊόντων, φίλτρα και ταχύτητα, ώστε το ηλεκτρονικό σας κατάστημα να πουλάει από την οργανική αναζήτηση. Ζητήστε έλεγχο.',
     },
     page: {
       h1: 'SEO για eshop και προώθηση ηλεκτρονικού καταστήματος',
@@ -586,11 +597,17 @@ export interface ServiceCityCopyEl {
 
 const withHoods = (c: CityCopyContext) => (c.hoods ? ` και στις γύρω περιοχές (${c.hoods})` : ' και στις γύρω περιοχές');
 
+/** Exact Greek city SERP strings. The metadata map is the source. */
+function elCitySerp(service: string, slug: string) {
+  const row = serpMetaFor(`/el/services/${service}/${slug}`);
+  if (!row) throw new Error(`Missing SERP metadata for /el/services/${service}/${slug}`);
+  return row;
+}
+
 export const serviceCityCopyEl: Record<string, ServiceCityCopyEl> = {
   'website-creation': {
-    title: (c) => `Κατασκευή Ιστοσελίδων ${c.city} | AnotherSEOGuru`,
-    description: (c) =>
-      `Κατασκευή ιστοσελίδων ${c.inCity}: γρήγορα sites με SEO, σαφείς τιμές και υποστήριξη στα ελληνικά. Δείτε πακέτα και έργα και ζητήστε προσφορά.`,
+    title: (c) => elCitySerp('website-creation', c.slug).title,
+    description: (c) => elCitySerp('website-creation', c.slug).description,
     h1: (c) => `Κατασκευή ιστοσελίδων ${c.inCity}`,
     h1Accent: (c) => c.inCity,
     lead: (c) =>
@@ -609,9 +626,8 @@ export const serviceCityCopyEl: Record<string, ServiceCityCopyEl> = {
     ],
   },
   'eshop-woocommerce': {
-    title: (c) => `Κατασκευή Eshop ${c.city} | WooCommerce & SEO`,
-    description: (c) =>
-      `Κατασκευή eshop ${c.inCity} με WooCommerce: πληρωμές, μεταφορικά, σύνδεση ERP και SEO προϊόντων. Δείτε τιμές κατασκευής eshop και ζητήστε προσφορά.`,
+    title: (c) => elCitySerp('eshop-woocommerce', c.slug).title,
+    description: (c) => elCitySerp('eshop-woocommerce', c.slug).description,
     h1: (c) => `Κατασκευή eshop ${c.inCity}`,
     h1Accent: (c) => c.inCity,
     lead: (c) =>
@@ -630,9 +646,8 @@ export const serviceCityCopyEl: Record<string, ServiceCityCopyEl> = {
     ],
   },
   'seo-audits': {
-    title: (c) => `SEO ${c.city}: Υπηρεσίες SEO & Προώθηση Ιστοσελίδων`,
-    description: (c) =>
-      `Υπηρεσίες SEO ${c.inCity}: τεχνικός έλεγχος, τοπικό SEO και προώθηση ιστοσελίδων για τοπικές επιχειρήσεις, με μηνιαία αναφορά σε κλικ και αιτήματα.`,
+    title: (c) => elCitySerp('seo-audits', c.slug).title,
+    description: (c) => elCitySerp('seo-audits', c.slug).description,
     h1: (c) => `SEO ${c.inCity}: υπηρεσίες SEO και προώθηση ιστοσελίδων`,
     h1Accent: () => 'προώθηση ιστοσελίδων',
     lead: (c) =>
@@ -657,9 +672,8 @@ export const serviceCityCopyEl: Record<string, ServiceCityCopyEl> = {
     ],
   },
   'local-seo': {
-    title: (c) => `Τοπικό SEO ${c.city} | Google Maps & Business Profile`,
-    description: (c) =>
-      `Τοπικό SEO ${c.inCity}: βελτιστοποίηση Google Business Profile, κριτικές και τοπικές σελίδες, για να σας βρίσκουν πελάτες στον χάρτη της Google.`,
+    title: (c) => elCitySerp('local-seo', c.slug).title,
+    description: (c) => elCitySerp('local-seo', c.slug).description,
     h1: (c) => `Τοπικό SEO ${c.inCity}`,
     h1Accent: (c) => c.inCity,
     lead: (c) =>
