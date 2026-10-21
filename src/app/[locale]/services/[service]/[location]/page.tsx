@@ -23,10 +23,23 @@ import {
     combineSchemas,
     BASE_URL,
 } from '@/lib/seo';
+import type { ReactNode } from 'react';
 import { SchemaMarkup, LocationContent } from '@/components/seo';
-import { MapPin } from 'lucide-react';
-import { CtaBand, FeatureRow, KitHeading, KitSection, Stage } from '@/components/kit';
-import { AccentTitle, AddOnCards, ChipLinks, FaqBlock, LinkCards, PriceTiers, ProofGrid, ServiceHero, getServiceKit } from '@/components/service-kit';
+import { KitBreadcrumbs } from '@/components/page-kit';
+import { AddOnCards, ChipLinks, LinkCards, PriceTiers, getServiceKit } from '@/components/service-kit';
+import {
+    AnnouncePill,
+    AppPanel,
+    WaveChoice,
+    WaveClose,
+    WaveHeading,
+    WaveHero,
+    WaveMark,
+    WaveSection,
+    WaveStats,
+} from '@/components/pages/platform-wave/ui';
+import { accentEnd, ManagedFaq, ServiceHeroActions } from '@/components/pages/services-wave/ui';
+import { accentSuffix, IndustryAppPanel, WorkCards } from '@/components/pages/industry-wave/ui';
 import { getServiceLocationBreadcrumbs } from '@/lib/linking';
 import { grServiceLocationPath } from '@/lib/locale-paths';
 import {
@@ -42,6 +55,14 @@ import { currentPrice, entrySeoNet, entryWebsiteNet, formatPrice, resolvePriceTo
 import { TopicSections } from '@/components/services/topic-sections';
 import { withExactTitle } from '../../_lib/exact-title';
 import type { Location } from '@/data/locations';
+
+/** Accent a real suffix when the page already names one. Otherwise the last two words. */
+function accented(text: string, phrase?: string): ReactNode {
+    if (phrase && text.endsWith(phrase) && text.length > phrase.length) {
+        return accentSuffix(text, phrase);
+    }
+    return accentEnd(text, 2);
+}
 
 /** Greek city context for `serviceCityCopyEl`. */
 function cityContextEl(location: Location): CityCopyContext {
@@ -342,98 +363,148 @@ export default async function ServiceLocationPage({ params }: PageProps) {
             more: 'More',
           };
 
+    const sampleNote = isEl
+        ? `Δείγμα δεδομένων μέσα στο AnotherSEOGuru App, για μια επιχείρηση ${cityLocative}. Δεν είναι στοιχεία πελάτη.`
+        : `Sample data inside AnotherSEOGuru App, for a business in ${location.city}. This is not a client account.`;
+    const yesLabel = isEl ? 'Περιλαμβάνεται' : 'Included';
+    const greekTwin = isGreekLocation(location) && !isEl && hasOtherLocaleTwin;
+
     return (
         <>
             <SchemaMarkup schemas={schemas} />
             <Header locale={siteLocale} alternateHref={alternateHref} />
-            <main className="blueprint-grid relative z-0">
-                <ServiceHero
-                    locale={siteLocale}
-                    breadcrumbs={breadcrumbs}
-                    pill={{ kind: 'live', tag: local.pillTag, text: local.pillText, href: lp('/locations') }}
-                    h1={t.heroTitle}
-                    h1Accent={heroAccent}
+            <main className="blueprint-grid relative z-0 overflow-x-clip">
+                <WaveHero
+                    pill={
+                        <div className="flex flex-col items-start gap-4">
+                            <KitBreadcrumbs items={breadcrumbs} align="left" />
+                            <AnnouncePill wrap href={lp('/locations')} tag={local.pillTag} text={local.pillText} />
+                        </div>
+                    }
+                    title={accented(t.heroTitle, heroAccent)}
+                    titleClassName={
+                        t.heroTitle.length > 42
+                            ? 'text-[1.65rem] min-[400px]:text-[1.85rem] sm:text-[2.3rem] lg:text-[2.75rem]'
+                            : undefined
+                    }
                     lead={t.heroDesc}
                     extra={
-                        isGreekLocation(location) && !isEl && hasOtherLocaleTwin ? (
+                        greekTwin ? (
                             <Link
                                 href={grServiceLocationPath(serviceSlug, locationSlug)}
                                 hrefLang="el"
-                                className="font-medium text-link hover:underline"
+                                className="font-medium text-primary underline-offset-4 hover:underline"
                             >
                                 Διαβάστε αυτή τη σελίδα στα ελληνικά →
                             </Link>
                         ) : undefined
                     }
-                    primaryLabel={t.getQuote}
-                    primaryHref={lp('/get-started')}
-                    links={[
-                        { href: lp(`/services/${serviceSlug}`), label: t.allLocations },
-                        { href: lp('/locations'), label: t.browseCities },
-                    ]}
-                    visual={kit.hero(siteLocale, cityName)}
-                    visualLabel={kit.heroLabel[siteLocale]}
+                    actions={
+                        <ServiceHeroActions
+                            locale={siteLocale}
+                            primaryHref={lp('/get-started')}
+                            primaryLabel={t.getQuote}
+                            links={[
+                                { href: lp(`/services/${serviceSlug}`), label: t.allLocations },
+                                { href: lp('/locations'), label: t.browseCities },
+                            ]}
+                        />
+                    }
+                    panel={<IndustryAppPanel locale={siteLocale} kind="local" />}
+                    panelNote={sampleNote}
                 />
 
-                <KitSection className="mt-6 sm:mt-10">
-                    <FeatureRow
-                        eyebrow={local.included}
-                        eyebrowIcon={<kit.icon />}
-                        title={<AccentTitle text={t.whatsIncludedTitle} />}
-                        body={t.whatsIncludedDesc}
-                        bullets={serviceFeatures}
-                        preview={<Stage>{kit.detail(siteLocale)}</Stage>}
-                    />
-                </KitSection>
+                <WaveSection shot="included">
+                    <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-14">
+                        <div className="min-w-0">
+                            <WaveHeading
+                                eyebrow={local.included}
+                                title={accented(t.whatsIncludedTitle, isEl ? cityLocative : location.city)}
+                                lead={t.whatsIncludedDesc}
+                            />
+                            <ul className="mt-8 space-y-3.5">
+                                {serviceFeatures.map((feature) => (
+                                    <li key={feature} className="flex gap-3 text-[15.5px] leading-relaxed text-foreground">
+                                        <WaveMark kind="yes" label={yesLabel} />
+                                        <span className="min-w-0 text-pretty">{feature}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                        <div className="min-w-0">
+                            <AppPanel
+                                url={`app.anotherseoguru.com/sample/${serviceSlug}`}
+                                badge={isEl ? 'Δείγμα δεδομένων' : 'Sample data'}
+                                caption={sampleNote}
+                            >
+                                {kit.detail(siteLocale)}
+                            </AppPanel>
+                        </div>
+                    </div>
+                </WaveSection>
 
                 {cityCopy && cityCtx ? (
-                    <>
+                    <div data-shot="topics">
                         <TopicSections topics={cityCopy.topics(cityCtx)} locale={siteLocale} id="topics" />
-                        <KitSection tinted id="pricing">
-                            <KitHeading align="center" eyebrow="Τιμές" title={<AccentTitle text={cityCopy.pricingTitle(cityCtx)} />} />
-                            {kit.addOns.length > 0 ? (
-                                <AddOnCards ids={kit.addOns} locale={siteLocale} className="mx-auto mt-12 max-w-3xl" />
-                            ) : null}
-                            {kit.pricing ? <PriceTiers kind={kit.pricing} locale={siteLocale} className="mt-12" /> : null}
-                            <p className="mt-10 text-center text-[14px]">
-                                <Link href={lp('/pricing')} className="font-medium text-link underline-offset-4 hover:underline">
-                                    Δείτε όλες τις τιμές και τα πακέτα →
-                                </Link>
-                            </p>
-                        </KitSection>
-                    </>
+                    </div>
                 ) : null}
 
-                <KitSection tinted={!cityCopy} id="local">
+                {cityCopy && cityCtx ? (
+                    <WaveSection id="pricing" shot="pricing" tinted>
+                        <WaveHeading
+                            align="center"
+                            eyebrow="Τιμές"
+                            title={accented(cityCopy.pricingTitle(cityCtx), cityLocative)}
+                        />
+                        {kit.addOns.length > 0 ? (
+                            <AddOnCards ids={kit.addOns} locale={siteLocale} className="mx-auto mt-12 max-w-3xl" />
+                        ) : null}
+                        {kit.pricing ? <PriceTiers kind={kit.pricing} locale={siteLocale} className="mt-12" /> : null}
+                        <p className="mt-10 text-center text-[14.5px]">
+                            <Link href={lp('/pricing')} className="font-medium text-primary underline-offset-4 hover:underline">
+                                Δείτε όλες τις τιμές και τα πακέτα →
+                            </Link>
+                        </p>
+                    </WaveSection>
+                ) : null}
+
+                <WaveSection id="local" shot="local" tinted={!cityCopy}>
                     <LocationContent location={location} service={service} locale={siteLocale} />
-                </KitSection>
+                </WaveSection>
 
-                {proofProjects.length > 0 && (
-                    <KitSection>
-                        <KitHeading eyebrow={local.work} title={<AccentTitle text={t.proofTitle} />} description={t.proofDesc} />
-                        <ProofGrid className="mt-12" projects={proofProjects} locale={siteLocale} />
-                    </KitSection>
-                )}
+                {proofProjects.length > 0 ? (
+                    <WaveSection shot="proof">
+                        <WaveHeading
+                            eyebrow={local.work}
+                            title={accented(t.proofTitle)}
+                            lead={t.proofDesc}
+                        />
+                        <WorkCards projects={proofProjects} locale={siteLocale} />
+                    </WaveSection>
+                ) : null}
 
-                {(nearbyCities.length > 0 || relatedServices.length > 0) && (
-                    <KitSection tinted={proofProjects.length > 0} id="nearby">
-                        {nearbyCities.length > 0 && (
-                            <div className={relatedServices.length > 0 ? 'mb-20' : undefined}>
-                                <KitHeading eyebrow={local.nearby} eyebrowIcon={<MapPin />} title={<AccentTitle text={t.nearbyTitle} />} />
+                {nearbyCities.length > 0 || relatedServices.length > 0 ? (
+                    <WaveSection id="nearby" shot="nearby" tinted={proofProjects.length > 0}>
+                        {nearbyCities.length > 0 ? (
+                            <div className={relatedServices.length > 0 ? 'mb-16' : undefined}>
+                                <WaveHeading eyebrow={local.nearby} title={accented(t.nearbyTitle)} />
                                 <ChipLinks
-                                    className="mt-10"
+                                    className="mt-8"
                                     items={nearbyCities.map((city) => ({
                                         href: lp(`/services/${serviceSlug}/${city.slug}`),
                                         label: isEl && city.cityLocal ? city.cityLocal : city.city,
                                     }))}
                                 />
                             </div>
-                        )}
-                        {relatedServices.length > 0 && (
+                        ) : null}
+                        {relatedServices.length > 0 ? (
                             <>
-                                <KitHeading eyebrow={local.more} title={<AccentTitle text={t.otherServicesTitle} />} />
+                                <WaveHeading
+                                    eyebrow={local.more}
+                                    title={accented(t.otherServicesTitle, isEl ? cityLocative : location.city)}
+                                />
                                 <LinkCards
-                                    className="mt-10"
+                                    className="mt-8"
                                     items={relatedServices.map((related) => {
                                         const relEl = isEl ? getServiceEl(related.slug) : null;
                                         return {
@@ -444,21 +515,25 @@ export default async function ServiceLocationPage({ params }: PageProps) {
                                     })}
                                 />
                             </>
-                        )}
-                    </KitSection>
-                )}
+                        ) : null}
+                    </WaveSection>
+                ) : null}
 
-                <FaqBlock
+                <ManagedFaq
                     locale={siteLocale}
-                    title={<AccentTitle text={t.faqTitle} />}
+                    title={accented(t.faqTitle, cityName)}
                     faqs={faqItems.map((item) => ({ question: item.question, answer: item.answer }))}
+                    askLabel={isEl ? 'Μιλήστε στο WhatsApp' : 'Talk on WhatsApp'}
                 />
 
-                <CtaBand
+                <WaveChoice locale={siteLocale} source={`city-${serviceSlug}-choice`} />
+                <WaveStats locale={siteLocale} />
+
+                <WaveClose
                     locale={siteLocale}
                     source={`city-${serviceSlug}`}
-                    title={<AccentTitle text={t.ctaTitle} />}
-                    description={t.ctaDesc}
+                    title={accented(t.ctaTitle, isEl ? cityLocative : location.city)}
+                    lead={t.ctaDesc}
                 />
             </main>
             <Footer locale={siteLocale} />
