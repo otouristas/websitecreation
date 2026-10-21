@@ -1,11 +1,11 @@
-Last-Updated: 2026-10-20
+Last-Updated: 2026-10-21
 Canonical: https://anotherseoguru.com/llms-full.txt
 Short-form: https://anotherseoguru.com/llms.txt
 Sitemap: https://anotherseoguru.com/sitemap.xml
 
 # AnotherSEOGuru - Complete Knowledge Base
 Source: https://anotherseoguru.com
-Last Updated: 2026-10-20
+Last Updated: 2026-10-21
 
 This document is the comprehensive, machine-readable reference for LLM crawlers, AI search engines, and assistants synthesizing answers about AnotherSEOGuru services, pricing, portfolio, Greek local SEO positioning, and the secondary SEO software platform.
 
@@ -16,7 +16,7 @@ This document is the comprehensive, machine-readable reference for LLM crawlers,
 Touristas Technologies owns and operates the AnotherSEOGuru website (anotherseoguru.com) and the AnotherSEOGuru app (app.anotherseoguru.com). AnotherSEOGuru combines a **web design & SEO agency** (primary) with a **GSC-native SEO software platform** (secondary):
 1. **Agency delivery** - Custom websites, WooCommerce e-shops, SEO retainers, local SEO / GBP, GEO/AEO (AI visibility), redesign, speed, content, and link building. Primary niche: **tourism & hospitality** (hotels, rent-a-car, tour operators, villas, travel agencies).
 2. **Bilingual surface** - Greek under `/el`, English under `/en`, with hreflang on shared pages.
-3. **Proof inventory** - 42 documented client projects documented under `/work` with homepage screenshots and case-study summaries.
+3. **Proof inventory** - 41 documented client projects documented under `/work` with homepage screenshots and case-study summaries.
 4. **Platform modules** - Semantic keyword clustering, rank tracking from GSC, technical audits / Core Web Vitals, GEO/AEO citation tracking, AI-assisted workflows, sprint/task board. Marketing: `/en/platform`.
 5. **Integrations (one login)** - The same account works in a Chrome extension (`/en/platform/chrome-extension`), a WordPress plugin (`/en/platform/wordpress`), an MCP server for AI assistants (`/en/platform/mcp`, remote URL https://app.anotherseoguru.com/mcp or `npx @anotherseoguru/mcp`) and the iPhone app; hub: `/en/platform/integrations`. Greek versions under `/el/platform/...`.
 
@@ -37,15 +37,15 @@ Touristas Technologies owns and operates the AnotherSEOGuru website (anotherseog
 - **EL URL:** https://anotherseoguru.com/el/services/website-redesign
 - **Description (EN):** Transform your outdated website into a fast, modern, conversion-focused machine with our redesign services.
 - **Greek name:** Ανασχεδιασμός Ιστοσελίδας
-- **Description (EL):** Ανασχεδιασμός ιστοσελίδας ή e-shop με σχέδιο redirects, ώστε να κρατήσετε κατατάξεις και επισκεψιμότητα. Νέος σχεδιασμός, ίδια ή καλύτερη θέση στη Google.
+- **Description (EL):** Ανασχεδιασμός ιστοσελίδας ή eshop με σχέδιο redirects, ώστε να κρατήσετε κατατάξεις και επισκεψιμότητα. Νέος σχεδιασμός, ίδια ή καλύτερη θέση στη Google.
 - **Features (EN):** Speed optimization; Modern UI refresh; SEO migration; Content restructuring; Mobile optimization; Performance audit
 
-### SEO Web Design (`seo-web-design`)
-- **EN URL:** https://anotherseoguru.com/en/services/seo-web-design
-- **EL URL:** https://anotherseoguru.com/el/services/seo-web-design
+### Web Design (`web-design`)
+- **EN URL:** https://anotherseoguru.com/en/services/web-design
+- **EL URL:** https://anotherseoguru.com/el/services/web-design
 - **Description (EN):** Websites designed with SEO at the core. Technical SEO, schema markup, and internal linking built-in.
 - **Greek name:** Σχεδιασμός Ιστοσελίδων (Web Design)
-- **Description (EL):** Σχεδιασμός ιστοσελίδων με UX και SEO από την αρχή: δομή, κείμενα και ταχύτητα που μετατρέπουν επισκέπτες σε πελάτες. Web design για ελληνικές επιχειρήσεις.
+- **Description (EL):** Σχεδιασμός ιστοσελίδων με UX και SEO από την αρχή: δομή, κείμενα και ταχύτητα που μετατρέπουν επισκέπτες σε πελάτες, για ελληνικές επιχειρήσεις.
 - **Features (EN):** Technical SEO audit; Schema markup; Internal linking strategy; Site architecture; Meta optimization; Speed optimization
 
 ### Speed Optimization (`speed-optimization`)
@@ -53,16 +53,15 @@ Touristas Technologies owns and operates the AnotherSEOGuru website (anotherseog
 - **EL URL:** https://anotherseoguru.com/el/services/speed-optimization
 - **Description (EN):** Website performance optimization for faster load times. Improve user experience and boost your search rankings.
 - **Greek name:** Βελτιστοποίηση Ταχύτητας
-- **Description (EL):** Core Web Vitals, caching και βελτιστοποίηση κώδικα για ταχύτερη ιστοσελίδα και καλύτερες κατατάξεις.
+- **Description (EL):** Βελτιστοποίηση ταχύτητας ιστοσελίδας: Core Web Vitals, εικόνες, caching και καθαρός κώδικας, ώστε η σελίδα να φορτώνει γρήγορα στο κινητό. Ζητήστε έλεγχο.
 - **Features (EN):** Performance audit; Load time optimization; Image optimization; Mobile speed; Caching setup; Code optimization
-- **Features (EL):** Έλεγχος επιδόσεων; Βελτιστοποίηση χρόνου φόρτωσης; Βελτιστοποίηση εικόνων; Ταχύτητα σε κινητά; Ρύθμιση caching; Βελτιστοποίηση κώδικα
 
 ### AI Visibility (GEO / AEO) (`ai-visibility`)
 - **EN URL:** https://anotherseoguru.com/en/services/ai-visibility
 - **EL URL:** https://anotherseoguru.com/el/services/ai-visibility
 - **Description (EN):** GEO and AEO for businesses: entity clarity, answer-shaped pages and measurement so answer engines can use your content. No citation promises.
 - **Greek name:** AI SEO: Ορατότητα σε AI (GEO / AEO)
-- **Description (EL):** Υπηρεσίες AI SEO και GEO (generative engine optimization) για ορατότητα στο ChatGPT, στο Gemini και στα AI Overviews, με μηνιαία μέτρηση αναφορών.
+- **Description (EL):** Υπηρεσίες AI SEO και GEO για ορατότητα στο ChatGPT, στο Gemini και στα AI Overviews της Google, με μηνιαία μέτρηση αναφορών. Ζητήστε έλεγχο ορατότητας.
 - **Features (EN):** Entity and brand-fact consistency; Answer-shaped FAQs for AEO; Schema that matches visible text; Commercial pages with quotable facts; Monthly mention sampling, not AI-rank theatre; Tourism and local-business programmes
 
 ### Logo Design (`logo-design`)
@@ -70,16 +69,15 @@ Touristas Technologies owns and operates the AnotherSEOGuru website (anotherseog
 - **EL URL:** https://anotherseoguru.com/el/services/logo-design
 - **Description (EN):** Professional logo design and brand kit creation. Build a memorable brand identity that stands out.
 - **Greek name:** Σχεδιασμός Λογοτύπου
-- **Description (EL):** Επαγγελματικό λογότυπο και πλήρες κιτ εταιρικής ταυτότητας για αναγνωρισιμότητα στην αγορά σας.
+- **Description (EL):** Σχεδιασμός λογοτύπου για επιχειρήσεις: λογότυπο που δουλεύει στην ιστοσελίδα, στο Google Business Profile και στα social. Δείτε έργα και ζητήστε προσφορά.
 - **Features (EN):** Custom logo design; Brand kit creation; Color palette; Typography selection; Brand guidelines; Multiple formats
-- **Features (EL):** Σχεδιασμός λογοτύπου στα μέτρα σας; Κιτ εταιρικής ταυτότητας; Παλέτα χρωμάτων; Τυπογραφία; Οδηγός χρήσης ταυτότητας; Πολλαπλές μορφές αρχείων
 
 ### Content Creation (`content-creation`)
 - **EN URL:** https://anotherseoguru.com/en/services/content-creation
 - **EL URL:** https://anotherseoguru.com/el/services/content-creation
 - **Description (EN):** SEO content services: service pages, location pages, and blogs mapped to real search demand, built to rank and convert.
 - **Greek name:** SEO Copywriting & Δημιουργία Περιεχομένου
-- **Description (EL):** Υπηρεσίες SEO copywriting: κείμενα σελίδων, άρθρα blog και περιγραφές προϊόντων γραμμένα για αναγνώστες και για τη Google, στα ελληνικά και αγγλικά.
+- **Description (EL):** SEO copywriting: κείμενα σελίδων, άρθρα blog και περιγραφές προϊόντων γραμμένα για αναγνώστες και για τη Google, στα ελληνικά και αγγλικά. Ζητήστε πρόταση.
 - **Features (EN):** SEO copywriting; Service page content; Location page content; Blog articles; Conversion copy; Content strategy
 
 ### Local SEO & GBP (`local-seo`)
@@ -95,7 +93,7 @@ Touristas Technologies owns and operates the AnotherSEOGuru website (anotherseog
 - **EL URL:** https://anotherseoguru.com/el/services/link-building
 - **Description (EN):** White-hat link building services that earn relevant, editorial backlinks, not spam directories, to grow authority and rankings.
 - **Greek name:** Link Building & Backlinks
-- **Description (EL):** Υπηρεσίες link building: ποιοτικά backlinks από σχετικά ελληνικά sites, digital PR και καθαρισμός spam συνδέσμων. Χωρίς αγορά συνδέσμων από δίκτυα.
+- **Description (EL):** Υπηρεσίες link building: backlinks από σχετικά ελληνικά sites, digital PR και καθαρισμός spam συνδέσμων, χωρίς αγορά συνδέσμων από δίκτυα. Ζητήστε πρόταση.
 - **Features (EN):** High DA guest posts; Niche relevant links; Digital PR outreach; Broken link building; Anchor text strategy; Spam monitoring
 
 ### SEO Audits (`seo-audits`)
@@ -119,7 +117,7 @@ Touristas Technologies owns and operates the AnotherSEOGuru website (anotherseog
 - **EL URL:** https://anotherseoguru.com/el/services/eshop-seo
 - **Description (EN):** Ecommerce SEO services for online stores: category and product optimization, schema, speed, and content that drives organic sales.
 - **Greek name:** SEO για Eshop
-- **Description (EL):** SEO για eshop: κατηγορίες, σελίδες προϊόντων, φίλτρα και ταχύτητα, ώστε το ηλεκτρονικό σας κατάστημα να πουλάει από την οργανική αναζήτηση στη Google.
+- **Description (EL):** SEO για eshop: κατηγορίες, σελίδες προϊόντων, φίλτρα και ταχύτητα, ώστε το ηλεκτρονικό σας κατάστημα να πουλάει από την οργανική αναζήτηση. Ζητήστε έλεγχο.
 - **Features (EN):** E-shop technical audit; Category & product optimization; Product schema markup; E-commerce keyword research; Speed & mobile optimization; Conversion rate optimization
 
 ---
@@ -276,7 +274,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Public-page availability at review:** not verified; access unavailable
 - **Summary (EN):** An Antiparos rental project presenting cars and scooters for exploring the island.
 - **Summary (EL):** Έργο ενοικίασης αυτοκινήτων και σκούτερ στην Αντίπαρο, για τις καθημερινές μετακινήσεις στο νησί.
-- **Services delivered:** website-creation, seo-web-design, local-seo
+- **Services delivered:** website-creation, web-design, local-seo
 - **Website features:** Island car rentals; Scooter options; Rental enquiries
 
 ### Cyclades Rent a Car (`cyclades-rentacar`)
@@ -294,7 +292,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Category:** rent-a-car · featured
 - **Summary (EN):** A local Naxos car-rental website with compact, automatic, family and four-wheel-drive vehicles.
 - **Summary (EL):** Ιστοσελίδα τοπικής ενοικίασης αυτοκινήτων στη Νάξο, με μικρά, αυτόματα, οικογενειακά οχήματα και τετρακίνητα.
-- **Services delivered:** website-creation, seo-web-design
+- **Services delivered:** website-creation, web-design
 - **Website features:** Vehicle categories; Online booking; Local Naxos team
 
 ### AGGELOS Rentals · Paros & Antiparos (`rentacar-antiparos-gr`)
@@ -350,7 +348,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Category:** hotel · featured
 - **Summary (EN):** A Santorini hotel and area guide combining accommodation discovery with practical travel information.
 - **Summary (EL):** Οδηγός ξενοδοχείων και περιοχών της Σαντορίνης, που συνδυάζει την αναζήτηση διαμονής με πρακτικές ταξιδιωτικές πληροφορίες.
-- **Services delivered:** website-creation, seo-web-design, content-creation
+- **Services delivered:** website-creation, web-design, content-creation
 - **Website features:** Hotel discovery; Area guides; Practical travel and safety information
 
 ### Hotels Sifnos (`hotels-sifnos`)
@@ -368,7 +366,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Category:** hotel · featured
 - **Summary (EN):** A five-star hotel in Thessaloniki built around personalised stays, with a rooftop pool and bar, dining and playful shared spaces.
 - **Summary (EL):** Πεντάστερο ξενοδοχείο στη Θεσσαλονίκη με εξατομικευμένη εμπειρία διαμονής, πισίνα και μπαρ στην ταράτσα, εστιατόριο και χώρους ψυχαγωγίας.
-- **Services delivered:** website-creation, seo-web-design
+- **Services delivered:** website-creation, web-design
 - **Website features:** Personalised rooms; Rooftop pool and bar; Direct hotel booking
 
 ### Mykonos Luxury (`mykonos-luxury`)
@@ -377,7 +375,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Category:** villa · featured
 - **Summary (EN):** A Mykonos concierge platform for private villas, yachts and tailored VIP experiences.
 - **Summary (EL):** Υπηρεσίες προσωπικής εξυπηρέτησης στη Μύκονο, με ιδιωτικές βίλες, γιοτ και εξατομικευμένες εμπειρίες.
-- **Services delivered:** website-creation, seo-web-design
+- **Services delivered:** website-creation, web-design
 - **Website features:** Private villa collection; Yacht experiences; 24-hour concierge service
 
 ### Discover Cyclades (`discover-cyclades`)
@@ -395,7 +393,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Category:** tours · featured
 - **Summary (EN):** An independent Crete travel guide covering beaches, cities, stays, transport and suggested itineraries.
 - **Summary (EL):** Ανεξάρτητος ταξιδιωτικός οδηγός Κρήτης για παραλίες, πόλεις, διαμονή, μετακινήσεις και προτεινόμενες διαδρομές.
-- **Services delivered:** website-creation, content-creation, seo-web-design
+- **Services delivered:** website-creation, content-creation, web-design
 - **Website features:** Beach and city guides; Ferry, flight and car information; Multi-day itineraries
 
 ### Way to Crete (`way-to-crete`)
@@ -423,7 +421,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Category:** tours
 - **Summary (EN):** Marinakis Tours offers private tours, wine experiences, catamaran trips and transfers on Santorini.
 - **Summary (EL):** Η Marinakis Tours προσφέρει ιδιωτικές περιηγήσεις, επισκέψεις σε οινοποιεία, εκδρομές με καταμαράν και μεταφορές στη Σαντορίνη.
-- **Services delivered:** website-creation, seo-web-design
+- **Services delivered:** website-creation, web-design
 - **Website features:** Family agency since 2000; Island and wine tours; Private transfers
 
 ### Skydream Travel (`skydream-travel`)
@@ -432,7 +430,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Category:** tours · featured
 - **Summary (EN):** An Athens travel design studio creating bespoke trips around the traveller’s interests.
 - **Summary (EL):** Ταξιδιωτικό γραφείο στην Αθήνα που σχεδιάζει εξατομικευμένα ταξίδια με βάση τα ενδιαφέροντα του ταξιδιώτη.
-- **Services delivered:** website-creation, seo-web-design, content-creation
+- **Services delivered:** website-creation, web-design, content-creation
 - **Website features:** Tailored travel planning; Destination inspiration; Personal travel consultation
 
 ### Cuba Travel Academy (`cuba-travel-academy`)
@@ -459,7 +457,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Category:** travel-ai · featured
 - **Summary (EN):** An always-on business strategy advisor that connects business context and external changes with evidence and decisions.
 - **Summary (EL):** Σύμβουλος επιχειρηματικής στρατηγικής που συνδέει το πλαίσιο της επιχείρησης και τις εξωτερικές αλλαγές με τεκμηριωμένες αποφάσεις.
-- **Services delivered:** website-creation, ai-visibility, seo-web-design
+- **Services delivered:** website-creation, ai-visibility, web-design
 - **Website features:** Business context; External change monitoring; Decision support
 
 ### Project Shadow AI (`project-shadow-ai`)
@@ -486,7 +484,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Category:** other
 - **Summary (EN):** A wedding and baptism venue in Keratea, Attica, with sea views and spaces for 50 to 350 guests.
 - **Summary (EL):** Χώρος γάμων και βαπτίσεων στην Κερατέα Αττικής, με θέα στη θάλασσα και δυνατότητα φιλοξενίας 50 έως 350 καλεσμένων.
-- **Services delivered:** website-creation, seo-web-design
+- **Services delivered:** website-creation, web-design
 - **Website features:** Weddings and baptisms; Sea-view venue; Guest parking
 
 ### Weddings Folegandros (`weddings-folegandros`)
@@ -514,7 +512,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Public-page availability at review:** not verified; access unavailable
 - **Summary (EN):** A personal hospitality and dining-consulting project for George Xipolitas.
 - **Summary (EL):** Προσωπική επαγγελματική παρουσία του George Xipolitas στον χώρο της φιλοξενίας και της συμβουλευτικής εστίασης.
-- **Services delivered:** website-creation, seo-web-design
+- **Services delivered:** website-creation, web-design
 - **Website features:** Professional identity; Hospitality expertise; Consulting enquiries
 
 ### Helicro (`helicro`)
@@ -595,7 +593,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Category:** travel-ai · featured
 - **Summary (EN):** A real-time vehicle-tracking platform for individual vehicles and fleets, using a phone or GPS hardware.
 - **Summary (EL):** Πλατφόρμα ζωντανής παρακολούθησης οχημάτων και στόλων, με χρήση κινητού ή συσκευής GPS.
-- **Services delivered:** website-creation, seo-web-design
+- **Services delivered:** website-creation, web-design
 - **Website features:** Real-time vehicle location; Phone or GPS device; Individual vehicles and fleets
 
 ### Naxos Auto Rent (`naxos-car-rental`)
@@ -604,7 +602,7 @@ The Greek cities below have service×city pages for website creation, local SEO,
 - **Category:** rent-a-car · featured
 - **Summary (EN):** A Naxos Auto Rent website for local car rental and delivery at the port or airport.
 - **Summary (EL):** Ιστοσελίδα της Naxos Auto Rent για τοπική ενοικίαση αυτοκινήτου και παράδοση στο λιμάνι ή στο αεροδρόμιο.
-- **Services delivered:** website-creation, local-seo, seo-web-design
+- **Services delivered:** website-creation, local-seo, web-design
 - **Website features:** Local Naxos rental team; Port and airport delivery; Vehicle and booking information
 
 ### Naxos Auto Rent (`naxos-auto-rent`)
@@ -2818,10 +2816,112 @@ Updated 20 October 2026. These instructions describe the web app. Other apps dep
 | Client requests | In the client portal: Work → New request. Clients write naturally, review an organized draft and confirm it. The original message is retained. Owner preview allows testing without submission. |
 | Tasks and measurement | Create specific tasks with a page, query and evidence. Marking work shipped records its date and starts a 28-day comparison. Notes are shown separately from actions. |
 | SEO data | Fresh lookups use the existing credit ledger and limits. Compatible operations fall back between Ahrefs and DataForSEO if one is unavailable. Their datasets and capabilities are not identical. |
+| Brand Radar | Customer questions, saved AI answers and sources, with an owner-managed shared Ahrefs check allowance. |
 
 > **Tip:** The custom **Proposals** workspace is currently private to the designated owner account. It is not available to every customer or plan.
 
 [Explore the complete SEO audit](https://anotherseoguru.com/en/help/seo-in-practice/complete-seo-audit) or [read when to evaluate changes](https://anotherseoguru.com/en/help/seo-in-practice/when-changes-appear).
+
+[Set up Brand Radar](https://anotherseoguru.com/en/help/seo-in-practice/brand-radar).
+
+[Explore the new visual workspace and document editor](https://anotherseoguru.com/en/help/seo-in-practice/visual-seo-workspace).
+
+### Track buyer questions with Brand Radar
+
+> Read real saved AI answers and sources, choose a schedule and understand the shared check allowance.
+
+Source: https://anotherseoguru.com/en/help/seo-in-practice/brand-radar
+
+Open **AI visibility → Brand Radar** in the [web app](https://app.anotherseoguru.com/app/ai-visibility/brand-radar). The selected project determines the linked report; you do not need to enter a report URL. Updated native app versions use the same project data.
+
+## Start with the questions your customers ask
+
+1. The account owner connects the project. The new report starts with every platform paused.
+2. Add a customer question and its country. Each question must have fewer than 400 characters. You can add up to ten at a time.
+3. Choose platforms and a daily, weekly or monthly schedule. Review the projected account usage before confirming.
+4. Ahrefs collects answers on that schedule. Sync saved answers reads the results without starting another AI check.
+5. Read the answer, its platform, country and update date. Open the cited source pages before deciding what to change.
+
+## One account allowance, shared across projects
+
+One question × one country × one platform × one run is one check. For a Standard connection with 300 included monthly checks, the following daily schedules have the same cost. Additional countries use additional checks.
+
+| Questions | Platforms | 30 days | 31 days |
+| --- | --- | --- | --- |
+| 10 | 1 | 300 checks | 310 checks |
+| 2 | 5 | 300 checks | 310 checks |
+| 5 | 1 | 150 checks | 155 checks |
+
+> **Note:** The allowance belongs to the connected Ahrefs account, not each project or each customer. The API does not return the remaining custom-prompt check balance. The app labels its schedule calculation as a projection and checks other account reports before an active change. Ahrefs remains authoritative for actual usage.
+
+## What the results mean
+
+- A mention means your brand appears in the saved answer. A citation means a source links to your site. They are different observations.
+- Weak name matches are flagged for review. A competitor named in text is not automatically a recommendation.
+- Counts describe up to 100 returned saved answers, not every AI search or a global market share.
+- No saved answer means unavailable. It does not prove that an assistant never mentions you.
+- Answer update dates do not establish complete historical coverage. The results can vary between people and runs.
+
+## Syncing and scheduling are different
+
+The current [Ahrefs OpenAPI](https://docs.ahrefs.com/openapi.json), reviewed 20 October 2026, documents free management requests and zero API units for custom-only result reads. Scheduled collection still uses the monthly prompt checks. The app does not buy an additional prompt package or silently switch to Ahrefs’ paid discovery corpus.
+
+Use the saved answers and source pages to discuss a specific improvement with **Aster AI**. These observations do not guarantee a citation, first position or a recovery date.
+
+### Explore rankings, links and opportunities
+
+> Use interactive views backed by saved Search Console and crawl data, then edit the page in the writing workspace.
+
+Source: https://anotherseoguru.com/en/help/seo-in-practice/visual-seo-workspace
+
+The updated workspace keeps the same project, dates and source records across its charts and tables. Available in the web app and updated iOS and Android builds. Light and dark themes use the same controls.
+
+1. Open This week → Search landscape. Select a position group to see its queries. Select a transition cell to see searches observed in both comparison periods. Web CSV exports the complete filtered set, not just the five preview rows.
+2. Open Opportunities. Filter the opportunity map, select a point and open its existing recommendation. The vertical axis uses a logarithmic scale for impressions. Point size represents estimated extra clicks, not a promised outcome.
+3. Open Site audit → Crawl explorer. Inspect saved response codes, click depth, page connections and folder flows. Select a page to inspect incoming and outgoing links, or search the page table. Opening the explorer does not start a paid crawl.
+
+> **Note:** The ranking view covers returned Search Console rows, not every keyword on the internet. Transitions require observations in both periods. A successful HTTP response does not prove Google indexed a page; link counts do not measure authority.
+
+## Read the coverage before drawing conclusions
+
+The network draws up to 70 pages at a time. Selecting a page brings its neighbours into view. The figures use the loaded crawl, while the drawing stays manageable. Incomplete crawls are identified. Native reports load up to 5,000 pages and 20,000 link rows and disclose when the limit is reached. Page tables initially show up to 100 matches; search narrows them.
+
+## Write in a document, with Aster AI beside it
+
+In Content → Page library or Content optimizer, Document mode displays headings, emphasis, lists, images and tables inside the editable page. Markdown remains available for source editing. The web writing panel answers questions using the current draft and offers opening-paragraph rewrites. Every rewrite has a before-and-after preview and requires your acceptance. Saving and publishing remain separate actions.
+
+iOS and Android include the bundled visual document editor and the existing Aster AI rewrite menu. On the phone, controls sit above the document and rewrite previews open separately. Source selection remains available for passages that cannot be mapped reliably. The web draft conversation reads at most the first 14,000 characters and tells you when the draft is longer.
+
+## WordPress and Chrome
+
+Aster AI answers can show observed ranking groups and a filterable query table when Search Console ranking evidence is present. Open the project links for the full opportunity map and crawl network in the web app. The WordPress content editor remains the WordPress editor.
+
+[Open the workspace](https://app.anotherseoguru.com/app) or [try the sample workspace](https://app.anotherseoguru.com/demo). Sample reports are labelled; they are not your site’s results.
+
+### Private client agreements
+
+> Blank drafts, private storage, versions and exports.
+
+Source: https://anotherseoguru.com/en/help/seo-in-practice/client-agreements
+
+Open **Agreements** in Client management or a client’s page. Every new draft starts with blank legal and commercial details. No clients or example agreements are created automatically.
+
+1. Link a client and optionally a project. Complete legal names, representatives, scope, deliverables and terms.
+2. Set fees, installments, monthly periods and explicit VAT treatment. Check the full payment schedule.
+3. Save, inspect the preview and completeness checklist, then export PDF or editable DOCX.
+4. Approval locks the version. Changes require a new version. Copying as a new agreement creates a new ID without signatures or a client link.
+
+## Find company details by VAT / GEMI
+
+Beside either party, choose Find company by VAT / GEMI. Review the source and select fields to fill. GEMI requires an approved personal API key from its [official service](https://opendata.businessportal.gr/register/), which is not activated yet. Greek tax-ID lookup can already use the European Commission VIES service. VIES covers intra-EU VAT registration and may return a name/address, not a GEMI ID or signing authority. A missing record does not mean the business does not exist. A lookup does not create a client or save an agreement.
+
+> **Note:** The Greek B2B template needs legal review. Field completeness and author approval are not legal approval or a signature. Do not put passwords or secrets in an agreement.
+
+Downloading PDF/DOCX does not record delivery or signing. Direct agreement delivery from the app is not enabled. On web, record an actual signed PDF up to 3 MB with signatories and date. The app does not verify electronic signatures.
+
+Updated iOS and Android builds offer per-client lists, draft editing, version review, preview, export and file sharing. Signed-file and termination records are managed on web. Versions and history are private. Signed files require an authorised, short-lived download link.
+
+Your lawyer reviews the template and jurisdiction. Your accountant checks VAT and any requirement or exemption for [filing an agreement statement with AADE](https://www.aade.gr/ypoboli-katastasis-symfonitikon). The generic privacy clause does not replace a separate DPA where required.
 
 ### Install the WordPress plugin
 

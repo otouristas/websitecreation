@@ -37,7 +37,7 @@ const HOSPITALITY: readonly string[] = [
   'website-creation',
   'local-seo',
   'ai-visibility',
-  'seo-web-design',
+  'web-design',
   'content-creation',
   'seo-audits',
 ];
@@ -72,7 +72,7 @@ export const INDUSTRY_RELEVANCE: Record<string, IndustryRelevance> = {
 
   // --- property and hospitality -------------------------------------------
   'real-estate': {
-    core: ['website-creation', 'local-seo', 'content-creation', 'seo-audits', 'seo-web-design'],
+    core: ['website-creation', 'local-seo', 'content-creation', 'seo-audits', 'web-design'],
     rationale: 'Listing-driven; area pages and property search are the ranking surface.',
   },
   hotels: { core: HOSPITALITY, rationale: 'Direct bookings compete with OTAs; seasonal multilingual demand.' },

@@ -50,7 +50,7 @@ Forms, bookings, multilingual support, CRM integration, member areas - each feat
 
 ### SEO built in, or bolted on?
 
-The biggest hidden cost: a beautiful site without SEO foundations (speed, structure, schema, clean URLs) will need expensive fixes later. Always ask for [SEO-ready development](/en/services/seo-web-design) from the start - otherwise you pay twice.
+The biggest hidden cost: a beautiful site without SEO foundations (speed, structure, schema, clean URLs) will need expensive fixes later. Always ask for [SEO-ready development](/en/services/web-design) from the start - otherwise you pay twice.
 
 ### Content
 
@@ -97,7 +97,7 @@ A serious quote separates design, development, content, SEO foundations, and rec
 
 ## Template vs Custom: A Practical Comparison
 
-Templates win on delivery speed and lower upfront price. They lose on brand differentiation, URL flexibility, and often performance when they ship with unused demos. Custom (or custom on a clean base) costs more upfront but reduces change costs later and supports [SEO-ready web design](/en/services/seo-web-design) better.
+Templates win on delivery speed and lower upfront price. They lose on brand differentiation, URL flexibility, and often performance when they ship with unused demos. Custom (or custom on a clean base) costs more upfront but reduces change costs later and supports [SEO-ready web design](/en/services/web-design) better.
 
 For local businesses with 5–10 pages, the middle path - a lean theme without page-builder bloat plus focused custom work - is usually the best cost/performance trade. If you sell online or take bookings, do not sacrifice speed and structure to “save” €300 at kickoff.
 

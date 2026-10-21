@@ -51,7 +51,7 @@ const EN: Record<string, ServiceAngle> = {
     outcome:
       'A modern site that keeps the rankings the old one had, with redirects mapped one-to-one wherever an equivalent page exists.',
   },
-  'seo-web-design': {
+  'web-design': {
     approach:
       'Architecture decides what can rank long before copy is written. For a sector site that means settling early how services, locations and audiences divide into pages, because that split is expensive to change later.',
     process:
@@ -151,7 +151,7 @@ const EL: Record<string, ServiceAngle> = {
     outcome:
       'Σύγχρονο site που κρατά τις θέσεις του παλιού, με ανακατευθύνσεις 1:1 όπου υπάρχει αντίστοιχη σελίδα.',
   },
-  'seo-web-design': {
+  'web-design': {
     approach:
       'Η αρχιτεκτονική καθορίζει τι μπορεί να καταταγεί, πολύ πριν γραφτεί το πρώτο κείμενο. Για μια ιστοσελίδα κλάδου αυτό σημαίνει να αποφασιστεί νωρίς πώς χωρίζονται υπηρεσίες, περιοχές και κοινά σε σελίδες.',
     process:
@@ -270,7 +270,7 @@ const EN_FAQS: Record<string, readonly AngleFaq[]> = {
     { question: 'Can you redesign in stages?', answer: 'Yes. Rebuilding the highest-value templates first limits the blast radius and lets you verify each stage before the next.' },
     { question: 'What happens to my old URLs?', answer: 'Where an equivalent page exists, the old URL redirects to it permanently. Where none does, we decide deliberately whether to recreate the page or let it go.' },
   ],
-  'seo-web-design': [
+  'web-design': [
     { question: 'How is this different from a normal website project?', answer: 'The architecture and technical review happen during design rather than after handover, so the structure that decides what can rank is settled before any copy is written.' },
     { question: 'Do you work with an existing design?', answer: 'Yes, provided the structure can carry it. If the page hierarchy is the problem, changing the visuals alone will not fix the rankings.' },
     { question: 'Is schema markup included?', answer: 'Yes, for the entities that matter on the site: the organisation, its services, and page-level markup such as breadcrumbs and FAQs where they reflect visible content.' },
@@ -333,7 +333,7 @@ const EL_FAQS: Record<string, readonly AngleFaq[]> = {
     { question: 'Μπορεί να γίνει σταδιακά;', answer: 'Ναι. Ξεκινώντας από τα πρότυπα με τη μεγαλύτερη αξία, κάθε στάδιο επαληθεύεται πριν προχωρήσει το επόμενο.' },
     { question: 'Τι γίνεται με τις παλιές διευθύνσεις;', answer: 'Όπου υπάρχει αντίστοιχη σελίδα, η παλιά URL ανακατευθύνεται μόνιμα σε αυτήν. Όπου δεν υπάρχει, αποφασίζουμε συνειδητά αν θα αναδημιουργηθεί.' },
   ],
-  'seo-web-design': [
+  'web-design': [
     { question: 'Σε τι διαφέρει από ένα κανονικό έργο ιστοσελίδας;', answer: 'Η αρχιτεκτονική και ο τεχνικός έλεγχος γίνονται κατά τον σχεδιασμό και όχι μετά την παράδοση, ώστε η δομή που καθορίζει τι μπορεί να καταταγεί να έχει κλειδώσει πριν γραφτεί το πρώτο κείμενο.' },
     { question: 'Δουλεύετε πάνω σε υπάρχον σχέδιο;', answer: 'Ναι, εφόσον η δομή το αντέχει. Αν το πρόβλημα είναι η ιεραρχία των σελίδων, η αλλαγή μόνο της εμφάνισης δεν θα το λύσει.' },
     { question: 'Περιλαμβάνεται schema markup;', answer: 'Ναι, για τις οντότητες που έχουν σημασία: την επιχείρηση, τις υπηρεσίες της και σήμανση σε επίπεδο σελίδας όπου αντιστοιχεί σε ορατό περιεχόμενο.' },

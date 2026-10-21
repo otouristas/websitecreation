@@ -115,7 +115,7 @@ Do the days in order. Publishing ahead of crawl fixes creates pages Google has n
 | 25–27 | Add [internal links](/en/glossary/internal-linking) from stronger pages to the pages you want found. | No important page is reachable only from the menu. |
 | 28–30 | Read Search Console. Note queries with impressions and a weak click-through rate. Queue title rewrites. | You have a written list for month two. |
 
-Need help with the writing? See the [SEO content guide](/en/blog/seo-content-guide) and [content creation](/en/services/content-creation). A new site should be crawlable from day one: [SEO web design](/en/services/seo-web-design).
+Need help with the writing? See the [SEO content guide](/en/blog/seo-content-guide) and [content creation](/en/services/content-creation). A new site should be crawlable from day one: [web design](/en/services/web-design).
 
 ## Beginner mistakes to skip
 

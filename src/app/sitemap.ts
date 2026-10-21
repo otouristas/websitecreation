@@ -11,6 +11,7 @@ import { helpContent } from '@/data/help';
 import { OPPORTUNITY_FINDER, RESOURCE_ARTICLES } from '@/data/resources';
 import { allTerms } from '@/lib/docs/glossary';
 import { PLACE_PAGES } from '@/data/place-seo';
+import { PLATFORM_TOOLS } from '@/data/platform-tools';
 import { TOURISM_VERTICALS } from '@/data/tourism-seo';
 
 const BASE_URL = 'https://anotherseoguru.com';
@@ -131,6 +132,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
     { path: `/resources/${OPPORTUNITY_FINDER.slug}`, priority: 0.86, changeFrequency: 'monthly' as const },
     { path: '/tools', priority: 0.84 },
+    // Live tool landings. /el/tools 301s to /en/tools, so only the English URLs are listed.
+    ...PLATFORM_TOOLS.map((tool) => ({
+      path: `/tools/${tool.slug}`,
+      priority: 0.72,
+      changeFrequency: 'monthly' as const,
+    })),
     // The hub the three /compare/[slug] pages hang off. It did not exist until
     // now, which is why /el/compare's redirect landed on a 404.
     { path: '/compare', priority: 0.86, changeFrequency: 'monthly' as const },
@@ -193,10 +200,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   );
 
   const blogPages: MetadataRoute.Sitemap = blogPosts.map((p) => blogSitemapEntry(p));
-
-  // Tool detail pages are deliberately absent: they are noindex because they
-  // contain no tool, only a description and a deep link into the app. Listing
-  // them would put noindex URLs in the sitemap.
 
   return [...staticPages,
     ...placePages,

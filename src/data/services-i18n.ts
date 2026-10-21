@@ -130,7 +130,7 @@ export const serviceNamesEl: Record<
       'Έλεγχος επιδόσεων',
     ],
   },
-  'seo-web-design': {
+  'web-design': {
     // This page owns «σχεδιασμός ιστοσελίδων / web design».
     // /services/website-creation owns «κατασκευή / δημιουργία ιστοσελίδας».
     titleKeyword: 'Σχεδιασμός Ιστοσελίδων',

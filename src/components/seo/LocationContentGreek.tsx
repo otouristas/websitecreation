@@ -37,7 +37,7 @@ const SERVICE_GUIDE: Record<string, { href: string; label: string }> = {
   'website-redesign': { href: '/blog/anasxediasmos-istoselidas', label: 'Μετάβαση ιστοσελίδας χωρίς απώλεια SEO' },
   'local-seo': { href: '/blog/epixeirisi-sto-google-maps', label: 'Πώς βάζω την επιχείρησή μου στο Google Maps' },
   'seo-audits': { href: '/blog/poso-kostizei-to-seo', label: 'Πόσο κοστίζει το SEO στην Ελλάδα' },
-  'seo-web-design': { href: '/blog/poso-kostizei-to-seo', label: 'Πόσο κοστίζει το SEO στην Ελλάδα' },
+  'web-design': { href: '/blog/poso-kostizei-to-seo', label: 'Πόσο κοστίζει το SEO στην Ελλάδα' },
   'ai-visibility': { href: '/blog/geo-vs-seo-vs-aeo-el', label: 'GEO vs SEO vs AEO: ποια η διαφορά' },
   'link-building': { href: '/blog/ti-einai-ta-backlinks', label: 'Τι είναι τα backlinks' },
   'content-creation': { href: '/blog/poso-kostizei-to-seo', label: 'Πόσο κοστίζει το SEO στην Ελλάδα' },

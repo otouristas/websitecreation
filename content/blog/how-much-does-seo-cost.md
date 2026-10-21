@@ -46,7 +46,7 @@ SEO for a law firm in a capital city costs more than SEO for a local trade in a 
 
 ### 2. Your website's current state
 
-A slow site with technical issues needs fixing first. If your site is dated, a [redesign with a safe SEO migration](/en/services/website-redesign) often pays off more than patching endlessly. If you do not have a site yet, start with [SEO-ready web design](/en/services/seo-web-design) - otherwise you pay twice.
+A slow site with technical issues needs fixing first. If your site is dated, a [redesign with a safe SEO migration](/en/services/website-redesign) often pays off more than patching endlessly. If you do not have a site yet, start with [SEO-ready web design](/en/services/web-design) - otherwise you pay twice.
 
 ### 3. Your goals
 
@@ -91,7 +91,7 @@ Demand a baseline before you start: rankings, Search Console clicks, form submit
 - Photography or creative for location pages
 - A 3–6 month window before you judge results finally
 
-If the site cannot support the work technically, SEO budget disappears into patches. In those cases, fund a [redesign](/en/services/website-redesign) or [SEO-ready build](/en/services/seo-web-design) first.
+If the site cannot support the work technically, SEO budget disappears into patches. In those cases, fund a [redesign](/en/services/website-redesign) or [SEO-ready build](/en/services/web-design) first.
 
 ## How Agencies Usually Phase Work
 

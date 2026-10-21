@@ -8,6 +8,7 @@ import {
   type SiteLocale,
 } from '@/lib/i18n/locale';
 import { decideServiceLocationRoute } from '@/lib/indexability/service-location';
+import { legacyWebDesignRedirect } from '@/lib/indexability/web-design-redirect';
 import { getAllServiceSlugs } from '@/data/services';
 import { THEME_INIT_SCRIPT } from '@/brand/theme';
 
@@ -60,6 +61,11 @@ function goneResponse(locale: SiteLocale, service: string): NextResponse {
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
+
+  const webDesign = legacyWebDesignRedirect(pathname);
+  if (webDesign) {
+    return NextResponse.redirect(new URL(webDesign, request.url), 301);
+  }
 
   const cityRoute = decideServiceLocationRoute(pathname);
   if (cityRoute?.kind === 'gone') {

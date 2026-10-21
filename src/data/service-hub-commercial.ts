@@ -261,7 +261,7 @@ const ADDITIONAL: Record<string, { en: ServiceHubCommercial; el: ServiceHubComme
         'Σε επιχειρήσεις με παλιό site που όμως εξακολουθεί να φέρνει επισκεψιμότητα, όπου η απώλεια ορατότητας κατά την ανακατασκευή δεν είναι αποδεκτή.',
     },
   },
-  'seo-web-design': {
+  'web-design': {
     en: {
       definition:
         'Design decisions made with search in mind from the first wireframe: heading structure, internal linking, page speed and crawlable markup, rather than a visual layer that SEO has to fight afterwards.',

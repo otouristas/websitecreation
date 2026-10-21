@@ -38,7 +38,7 @@ faq:
 
 ### Ταχύτητα (και για το SEO)
 
-Η Google μετρά τα Core Web Vitals - και ο server είναι το πρώτο δευτερόλεπτο της εξίσωσης. Ζητήστε: NVMe δίσκους, PHP 8.3+, HTTP/2 ή HTTP/3, LiteSpeed ή ισοδύναμο cache layer, και server ή CDN κόμβο στην Ευρώπη (Φρανκφούρτη, Άμστερνταμ ή τοπικό ελληνικό datacenter). Ένα φθηνό shared hosting των €2/μήνα με TTFB 800ms υπονομεύει κάθε ευρώ που επενδύετε σε [SEO](/el/services/local-seo) ή σε [SEO-ready web design](/el/services/seo-web-design).
+Η Google μετρά τα Core Web Vitals - και ο server είναι το πρώτο δευτερόλεπτο της εξίσωσης. Ζητήστε: NVMe δίσκους, PHP 8.3+, HTTP/2 ή HTTP/3, LiteSpeed ή ισοδύναμο cache layer, και server ή CDN κόμβο στην Ευρώπη (Φρανκφούρτη, Άμστερνταμ ή τοπικό ελληνικό datacenter). Ένα φθηνό shared hosting των €2/μήνα με TTFB 800ms υπονομεύει κάθε ευρώ που επενδύετε σε [SEO](/el/services/local-seo) ή σε [SEO-ready web design](/el/services/web-design).
 
 Για τουριστικά και e-commerce sites, μετρήστε το TTFB από κινητό 4G - όχι μόνο από Wi-Fi στο γραφείο. Αν το πρώτο byte καθυστερεί πάνω από 400–500ms, καμία «βελτιστοποίηση» του theme δεν σώζει την εμπειρία.
 

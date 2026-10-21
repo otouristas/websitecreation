@@ -73,7 +73,7 @@ Genuine photography, reviews, clear policies, and fast responses - the elements 
 
 ## Built for SEO from Day One
 
-We build hotel websites with technical SEO, schema (Hotel/Offer/FAQ), Core Web Vitals in range, and a clean structure so you rank in Google and appear correctly in AI assistants travellers now use to plan. That means [SEO-ready development](/en/services/seo-web-design), not “we’ll add SEO later.”
+We build hotel websites with technical SEO, schema (Hotel/Offer/FAQ), Core Web Vitals in range, and a clean structure so you rank in Google and appear correctly in AI assistants travellers now use to plan. That means [SEO-ready development](/en/services/web-design), not “we’ll add SEO later.”
 
 ## Common Mistakes on Hotel Sites
 
@@ -113,7 +113,7 @@ Whatever flow you choose, the primary CTA should be yours. If the main button se
 
 ## Schema and Search Appearance
 
-Hotel/LodgingBusiness schema, offers where appropriate, FAQ, and reviews help Google and AI assistants understand the property. Pair them with fast room pages and clean NAP on Google Business Profile. That technical base belongs in [SEO-ready development](/en/services/seo-web-design) - not a “plugin later.”
+Hotel/LodgingBusiness schema, offers where appropriate, FAQ, and reviews help Google and AI assistants understand the property. Pair them with fast room pages and clean NAP on Google Business Profile. That technical base belongs in [SEO-ready development](/en/services/web-design) - not a “plugin later.”
 
 ## Seasonality and Content Cadence
 

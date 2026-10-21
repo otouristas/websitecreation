@@ -1,11 +1,11 @@
-Last-Updated: 2026-10-20
+Last-Updated: 2026-10-21
 Canonical: https://anotherseoguru.com/llms.txt
 Long-form: https://anotherseoguru.com/llms-full.txt
 Sitemap: https://anotherseoguru.com/sitemap.xml
 
 # AnotherSEOGuru - Platform Index & Directory
 Source: https://anotherseoguru.com
-Last Updated: 2026-10-20
+Last Updated: 2026-10-21
 
 > AnotherSEOGuru is the web design and SEO brand of Touristas Technologies, which owns anotherseoguru.com and the app at app.anotherseoguru.com. The agency serves businesses in Greece and international clients, specializing in tourism and hospitality websites, with GEO/AEO (AI visibility) services and a GSC-native SEO software platform.
 
@@ -68,6 +68,9 @@ Last Updated: 2026-10-20
 - [SEO in practice: When do SEO changes appear in Google?](https://anotherseoguru.com/en/help/seo-in-practice/when-changes-appear.md) - Understand the stages after a change, check what Google has processed and measure results carefully.
 - [SEO in practice: Complete SEO audit with Aster AI](https://anotherseoguru.com/en/help/seo-in-practice/complete-seo-audit.md) - One report from your connected evidence, with concrete monthly priorities.
 - [SEO in practice: Current features and where to find them](https://anotherseoguru.com/en/help/seo-in-practice/latest-features.md) - A current guide to sources, tasks, new tools and client requests.
+- [SEO in practice: Track buyer questions with Brand Radar](https://anotherseoguru.com/en/help/seo-in-practice/brand-radar.md) - Read real saved AI answers and sources, choose a schedule and understand the shared check allowance.
+- [SEO in practice: Explore rankings, links and opportunities](https://anotherseoguru.com/en/help/seo-in-practice/visual-seo-workspace.md) - Use interactive views backed by saved Search Console and crawl data, then edit the page in the writing workspace.
+- [SEO in practice: Private client agreements](https://anotherseoguru.com/en/help/seo-in-practice/client-agreements.md) - Blank drafts, private storage, versions and exports.
 - [WordPress and Chrome: Install the WordPress plugin](https://anotherseoguru.com/en/help/integrations/wordpress-plugin.md) - Install AnotherSEOGuru 4.4.1 on WordPress, connect the site with OAuth, and publish title and description changes back with approval and undo.
 - [WordPress and Chrome: Install the Chrome extension](https://anotherseoguru.com/en/help/integrations/chrome-extension.md) - Install AnotherSEOGuru 3.2.2 for Chrome, audit any page in the browser, and sign in to see Search Console data for that page.
 - [iPhone app: Get the iPhone beta](https://anotherseoguru.com/en/help/iphone-app/get-the-beta.md) - The iPhone app is in beta through Apple's TestFlight. Here's how to request an invite and install it.
@@ -93,27 +96,27 @@ Structured context so AI assistants and AI search engines can cite accurate Anot
 - [Website Creation](https://anotherseoguru.com/en/services/website-creation) - Beautiful, fast websites built for real business results. Custom design, full SEO setup, and optimized for conversions from day one.
 - [website-creation](https://anotherseoguru.com/el/services/website-creation) - 
 - [Website Redesign](https://anotherseoguru.com/en/services/website-redesign) - Transform your outdated website into a fast, modern, conversion-focused machine with our redesign services.
-- [Ανασχεδιασμός Ιστοσελίδας](https://anotherseoguru.com/el/services/website-redesign) - Ανασχεδιασμός ιστοσελίδας ή e-shop με σχέδιο redirects, ώστε να κρατήσετε κατατάξεις και επισκεψιμότητα. Νέος σχεδιασμός, ίδια ή καλύτερη θέση στη Google.
-- [SEO Web Design](https://anotherseoguru.com/en/services/seo-web-design) - Websites designed with SEO at the core. Technical SEO, schema markup, and internal linking built-in.
-- [Σχεδιασμός Ιστοσελίδων (Web Design)](https://anotherseoguru.com/el/services/seo-web-design) - Σχεδιασμός ιστοσελίδων με UX και SEO από την αρχή: δομή, κείμενα και ταχύτητα που μετατρέπουν επισκέπτες σε πελάτες. Web design για ελληνικές επιχειρήσεις.
+- [Ανασχεδιασμός Ιστοσελίδας](https://anotherseoguru.com/el/services/website-redesign) - Ανασχεδιασμός ιστοσελίδας ή eshop με σχέδιο redirects, ώστε να κρατήσετε κατατάξεις και επισκεψιμότητα. Νέος σχεδιασμός, ίδια ή καλύτερη θέση στη Google.
+- [Web Design](https://anotherseoguru.com/en/services/web-design) - Websites designed with SEO at the core. Technical SEO, schema markup, and internal linking built-in.
+- [Σχεδιασμός Ιστοσελίδων (Web Design)](https://anotherseoguru.com/el/services/web-design) - Σχεδιασμός ιστοσελίδων με UX και SEO από την αρχή: δομή, κείμενα και ταχύτητα που μετατρέπουν επισκέπτες σε πελάτες, για ελληνικές επιχειρήσεις.
 - [Speed Optimization](https://anotherseoguru.com/en/services/speed-optimization) - Website performance optimization for faster load times. Improve user experience and boost your search rankings.
-- [Βελτιστοποίηση Ταχύτητας](https://anotherseoguru.com/el/services/speed-optimization) - Core Web Vitals, caching και βελτιστοποίηση κώδικα για ταχύτερη ιστοσελίδα και καλύτερες κατατάξεις.
+- [Βελτιστοποίηση Ταχύτητας](https://anotherseoguru.com/el/services/speed-optimization) - Βελτιστοποίηση ταχύτητας ιστοσελίδας: Core Web Vitals, εικόνες, caching και καθαρός κώδικας, ώστε η σελίδα να φορτώνει γρήγορα στο κινητό. Ζητήστε έλεγχο.
 - [AI Visibility (GEO / AEO)](https://anotherseoguru.com/en/services/ai-visibility) - GEO and AEO for businesses: entity clarity, answer-shaped pages and measurement so answer engines can use your content. No citation promises.
-- [AI SEO: Ορατότητα σε AI (GEO / AEO)](https://anotherseoguru.com/el/services/ai-visibility) - Υπηρεσίες AI SEO και GEO (generative engine optimization) για ορατότητα στο ChatGPT, στο Gemini και στα AI Overviews, με μηνιαία μέτρηση αναφορών.
+- [AI SEO: Ορατότητα σε AI (GEO / AEO)](https://anotherseoguru.com/el/services/ai-visibility) - Υπηρεσίες AI SEO και GEO για ορατότητα στο ChatGPT, στο Gemini και στα AI Overviews της Google, με μηνιαία μέτρηση αναφορών. Ζητήστε έλεγχο ορατότητας.
 - [Logo Design](https://anotherseoguru.com/en/services/logo-design) - Professional logo design and brand kit creation. Build a memorable brand identity that stands out.
-- [Σχεδιασμός Λογοτύπου](https://anotherseoguru.com/el/services/logo-design) - Επαγγελματικό λογότυπο και πλήρες κιτ εταιρικής ταυτότητας για αναγνωρισιμότητα στην αγορά σας.
+- [Σχεδιασμός Λογοτύπου](https://anotherseoguru.com/el/services/logo-design) - Σχεδιασμός λογοτύπου για επιχειρήσεις: λογότυπο που δουλεύει στην ιστοσελίδα, στο Google Business Profile και στα social. Δείτε έργα και ζητήστε προσφορά.
 - [Content Creation](https://anotherseoguru.com/en/services/content-creation) - SEO content services: service pages, location pages, and blogs mapped to real search demand, built to rank and convert.
-- [SEO Copywriting & Δημιουργία Περιεχομένου](https://anotherseoguru.com/el/services/content-creation) - Υπηρεσίες SEO copywriting: κείμενα σελίδων, άρθρα blog και περιγραφές προϊόντων γραμμένα για αναγνώστες και για τη Google, στα ελληνικά και αγγλικά.
+- [SEO Copywriting & Δημιουργία Περιεχομένου](https://anotherseoguru.com/el/services/content-creation) - SEO copywriting: κείμενα σελίδων, άρθρα blog και περιγραφές προϊόντων γραμμένα για αναγνώστες και για τη Google, στα ελληνικά και αγγλικά. Ζητήστε πρόταση.
 - [Local SEO & GBP](https://anotherseoguru.com/en/services/local-seo) - Local SEO services for map pack and “near me” growth. We optimize Google Business Profile, citations, reviews, and location pages.
 - [local-seo](https://anotherseoguru.com/el/services/local-seo) - 
 - [Link Building](https://anotherseoguru.com/en/services/link-building) - White-hat link building services that earn relevant, editorial backlinks, not spam directories, to grow authority and rankings.
-- [Link Building & Backlinks](https://anotherseoguru.com/el/services/link-building) - Υπηρεσίες link building: ποιοτικά backlinks από σχετικά ελληνικά sites, digital PR και καθαρισμός spam συνδέσμων. Χωρίς αγορά συνδέσμων από δίκτυα.
+- [Link Building & Backlinks](https://anotherseoguru.com/el/services/link-building) - Υπηρεσίες link building: backlinks από σχετικά ελληνικά sites, digital PR και καθαρισμός spam συνδέσμων, χωρίς αγορά συνδέσμων από δίκτυα. Ζητήστε πρόταση.
 - [SEO Audits](https://anotherseoguru.com/en/services/seo-audits) - SEO audit services and technical SEO services: prioritized crawl, indexation, Core Web Vitals, and on-page fixes that unlock rankings.
 - [seo-audits](https://anotherseoguru.com/el/services/seo-audits) - 
 - [E-shop WooCommerce](https://anotherseoguru.com/en/services/eshop-woocommerce) - High-converting, fully customized WooCommerce e-shops. Integrated secure payments, shipping calculators, and automated inventory systems.
 - [eshop-woocommerce](https://anotherseoguru.com/el/services/eshop-woocommerce) - 
 - [E-shop SEO](https://anotherseoguru.com/en/services/eshop-seo) - Ecommerce SEO services for online stores: category and product optimization, schema, speed, and content that drives organic sales.
-- [SEO για Eshop](https://anotherseoguru.com/el/services/eshop-seo) - SEO για eshop: κατηγορίες, σελίδες προϊόντων, φίλτρα και ταχύτητα, ώστε το ηλεκτρονικό σας κατάστημα να πουλάει από την οργανική αναζήτηση στη Google.
+- [SEO για Eshop](https://anotherseoguru.com/el/services/eshop-seo) - SEO για eshop: κατηγορίες, σελίδες προϊόντων, φίλτρα και ταχύτητα, ώστε το ηλεκτρονικό σας κατάστημα να πουλάει από την οργανική αναζήτηση. Ζητήστε έλεγχο.
 
 ## Tourism Industry Solutions
 - [Hotels](https://anotherseoguru.com/en/solutions/hotels) - Hotel and hospitality websites with booking integrations, gallery showcases, and tourism-focused SEO.

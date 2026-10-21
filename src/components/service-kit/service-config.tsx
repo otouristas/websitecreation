@@ -82,7 +82,7 @@ export const SERVICE_KIT: Record<string, ServiceKitConfig> = {
     diy: false,
     cta: 'quote',
   },
-  'seo-web-design': {
+  'web-design': {
     icon: Search,
     pill: { kind: 'popular', tag: 'SEO', text: c('Architecture, schema and speed built in', 'Αρχιτεκτονική, schema και ταχύτητα από την αρχή'), href: '/seo-services' },
     hero: (l) => <AuditPreview locale={l} />,

@@ -122,7 +122,7 @@ export const portfolioProjects: PortfolioProject[] = [
     ],
     "services": [
       "website-creation",
-      "seo-web-design",
+      "web-design",
       "local-seo"
     ],
     "seoTitle": "Antiparos Rent a Car | Website project",
@@ -197,7 +197,7 @@ export const portfolioProjects: PortfolioProject[] = [
     ],
     "services": [
       "website-creation",
-      "seo-web-design"
+      "web-design"
     ],
     "seoTitle": "Naxos Car Rentals | Website project",
     "seoDescription": "A local Naxos car-rental website with compact, automatic, family and four-wheel-drive vehicles.",
@@ -413,7 +413,7 @@ export const portfolioProjects: PortfolioProject[] = [
     ],
     "services": [
       "website-creation",
-      "seo-web-design",
+      "web-design",
       "content-creation"
     ],
     "seoTitle": "Hotels Santorini | Website project",
@@ -486,7 +486,7 @@ export const portfolioProjects: PortfolioProject[] = [
     ],
     "services": [
       "website-creation",
-      "seo-web-design"
+      "web-design"
     ],
     "seoTitle": "ONOMA Hotel | Website project",
     "seoDescription": "A five-star hotel in Thessaloniki built around personalised stays, with a rooftop pool and bar, dining and playful shared spaces.",
@@ -560,7 +560,7 @@ export const portfolioProjects: PortfolioProject[] = [
     ],
     "services": [
       "website-creation",
-      "seo-web-design"
+      "web-design"
     ],
     "seoTitle": "Mykonos Luxury | Website project",
     "seoDescription": "A Mykonos concierge platform for private villas, yachts and tailored VIP experiences.",
@@ -634,7 +634,7 @@ export const portfolioProjects: PortfolioProject[] = [
     "services": [
       "website-creation",
       "content-creation",
-      "seo-web-design"
+      "web-design"
     ],
     "seoTitle": "Discover Crete | Website project",
     "seoDescription": "An independent Crete travel guide covering beaches, cities, stays, transport and suggested itineraries.",
@@ -743,7 +743,7 @@ export const portfolioProjects: PortfolioProject[] = [
     ],
     "services": [
       "website-creation",
-      "seo-web-design"
+      "web-design"
     ],
     "seoTitle": "Marinakis Tours | Website project",
     "seoDescription": "Marinakis Tours offers private tours, wine experiences, catamaran trips and transfers on Santorini.",
@@ -783,7 +783,7 @@ export const portfolioProjects: PortfolioProject[] = [
     ],
     "services": [
       "website-creation",
-      "seo-web-design",
+      "web-design",
       "content-creation"
     ],
     "seoTitle": "Skydream Travel | Website project",
@@ -891,7 +891,7 @@ export const portfolioProjects: PortfolioProject[] = [
     "services": [
       "website-creation",
       "ai-visibility",
-      "seo-web-design"
+      "web-design"
     ],
     "seoTitle": "Navos AI | Website project",
     "seoDescription": "An always-on business strategy advisor that connects business context and external changes with evidence and decisions.",
@@ -1001,7 +1001,7 @@ export const portfolioProjects: PortfolioProject[] = [
     ],
     "services": [
       "website-creation",
-      "seo-web-design"
+      "web-design"
     ],
     "seoTitle": "Κτήμα Ωρίων | Website project",
     "seoDescription": "A wedding and baptism venue in Keratea, Attica, with sea views and spaces for 50 to 350 guests.",
@@ -1113,7 +1113,7 @@ export const portfolioProjects: PortfolioProject[] = [
     ],
     "services": [
       "website-creation",
-      "seo-web-design"
+      "web-design"
     ],
     "seoTitle": "George Xipolitas | Website project",
     "seoDescription": "A personal hospitality and dining-consulting project for George Xipolitas.",
@@ -1426,7 +1426,7 @@ export const portfolioProjects: PortfolioProject[] = [
     ],
     "services": [
       "website-creation",
-      "seo-web-design"
+      "web-design"
     ],
     "seoTitle": "Erebos | Website project",
     "seoDescription": "A real-time vehicle-tracking platform for individual vehicles and fleets, using a phone or GPS hardware.",
@@ -1464,7 +1464,7 @@ export const portfolioProjects: PortfolioProject[] = [
     "services": [
       "website-creation",
       "local-seo",
-      "seo-web-design"
+      "web-design"
     ],
     "seoTitle": "Naxos Auto Rent | Website project",
     "seoDescription": "A Naxos Auto Rent website for local car rental and delivery at the port or airport.",

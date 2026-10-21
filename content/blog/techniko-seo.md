@@ -98,7 +98,7 @@ faq:
 
 Πολλές ελληνικές επιχειρήσεις τρέχουν αγγλικά και ελληνικά παράλληλα. Το hreflang είναι απαίτηση προϊόντος, όχι afterthought: αμοιβαία ζεύγη EN/EL, συνεπή locale URLs και χωρίς λάθος αυτο-αναφορές. Λάθος γλώσσα σπαταλά crawl budget και μπερδεύει χρήστες και κατατάξεις.
 
-Αν ξαναχτίζετε, ζητήστε τεχνικό SEO πριν το design freeze - όχι αφού παραδοθεί αργό, JS-heavy frontend. Συνδυάστε με [SEO-ready web design](/el/services/seo-web-design) ώστε τα templates να βγαίνουν ανιχνεύσιμα και γρήγορα.
+Αν ξαναχτίζετε, ζητήστε τεχνικό SEO πριν το design freeze - όχι αφού παραδοθεί αργό, JS-heavy frontend. Συνδυάστε με [SEO-ready web design](/el/services/web-design) ώστε τα templates να βγαίνουν ανιχνεύσιμα και γρήγορα.
 
 ## Πώς Να Προτεραιοποιήσετε Tickets In-House
 

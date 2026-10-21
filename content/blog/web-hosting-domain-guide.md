@@ -38,7 +38,7 @@ faq:
 
 ### Speed (and SEO)
 
-Google measures Core Web Vitals - and the server is the first second of that equation. Ask for: NVMe storage, PHP 8.3+, HTTP/2 or HTTP/3, a serious cache layer (LiteSpeed or equivalent), and a server or CDN node near your market. Cheap €2/month hosting with an 800ms TTFB undermines every euro you spend on [SEO](/en/services/local-seo) or [SEO-ready web design](/en/services/seo-web-design).
+Google measures Core Web Vitals - and the server is the first second of that equation. Ask for: NVMe storage, PHP 8.3+, HTTP/2 or HTTP/3, a serious cache layer (LiteSpeed or equivalent), and a server or CDN node near your market. Cheap €2/month hosting with an 800ms TTFB undermines every euro you spend on [SEO](/en/services/local-seo) or [SEO-ready web design](/en/services/web-design).
 
 For tourism and e-commerce sites, measure TTFB on mobile 4G - not only office Wi-Fi. If first byte consistently sits above 400–500ms, no theme “optimization” will save the experience.
 
