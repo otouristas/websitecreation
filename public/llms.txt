@@ -26,7 +26,7 @@ Last Updated: 2026-10-20
 - **Industry Solutions** (<https://anotherseoguru.com/en/solutions>) - Vertical websites and SEO by industry.
 - **Hotels & Hospitality** (<https://anotherseoguru.com/en/solutions/hotels>) - Hotel websites, booking UX, and tourism SEO.
 - **Rent-a-Car** (<https://anotherseoguru.com/en/solutions/rent-a-car>) - Fleet catalogs, booking funnels, island/airport local SEO.
-- **Portfolio / Case Studies** (<https://anotherseoguru.com/en/work>) - 42 documented client projects with homepage screenshots.
+- **Portfolio / Case Studies** (<https://anotherseoguru.com/en/work>) - 41 documented client projects with homepage screenshots.
 - **Blog** (<https://anotherseoguru.com/en/blog>) - SEO, GEO/AEO, hotel, and e-shop guides (EN + EL).
 - **SEO guides** (<https://anotherseoguru.com/en/seo-guides>) - Index of the ranking guides and the cluster on keywords, on-page, technical SEO, links and local search (EN + EL).
 - **AnotherSEOGuru App (SEO software)** (<https://anotherseoguru.com/en/platform>) - Google Search Console-native SEO software: ranked fixes with click estimates, rank tracking, site audit, AI visibility. Web app at app.anotherseoguru.com (EN + EL).
@@ -145,14 +145,13 @@ Greece-wide service; dedicated service×city pages for the cities below. Money-p
 - **Patras (Πάτρα)** - slug `patras-gr` · pages: https://anotherseoguru.com/el/services/website-creation/patras-gr, https://anotherseoguru.com/el/services/local-seo/patras-gr
 - **Kalamata (Καλαμάτα)** - slug `kalamata-gr` · pages: https://anotherseoguru.com/el/services/website-creation/kalamata-gr, https://anotherseoguru.com/el/services/local-seo/kalamata-gr
 
-## Portfolio & Case Studies (42 projects)
+## Portfolio & Case Studies (41 projects)
 - [Aggelos Rentals](https://anotherseoguru.com/en/work/aggelos-rentals) - Daily and monthly car rental in Piraeus, with delivery to the port and Athens airport. · Website: https://aggelosrentals.com
 - [Cyclades Rent a Car](https://anotherseoguru.com/en/work/cyclades-rentacar) - A directory of local vehicle-rental partners across the Cyclades, from Discover Cyclades. · Website: https://cycladesrentacar.com
 - [Naxos Car Rentals](https://anotherseoguru.com/en/work/naxos-carrentals) - A local Naxos car-rental website with compact, automatic, family and four-wheel-drive vehicles. · Website: https://naxos-carrentals.com
 - [Hotels Santorini](https://anotherseoguru.com/en/work/hotels-santorini) - A Santorini hotel and area guide combining accommodation discovery with practical travel information. · Website: https://hotelssantorini.gr
 - [Hotels Sifnos](https://anotherseoguru.com/en/work/hotels-sifnos) - A curated directory of Sifnos hotels and villas, organised by area and style with direct contact to local partners. · Website: https://hotelssifnos.com
 - [ONOMA Hotel](https://anotherseoguru.com/en/work/onoma-hotel) - A five-star hotel in Thessaloniki built around personalised stays, with a rooftop pool and bar, dining and playful shared spaces. · Website: https://onomahotel.com
-- [Villa Olivia Clara](https://anotherseoguru.com/en/work/villa-olivia-clara) - A family villa above Platis Gialos on Sifnos, with four bedrooms, a private pool and direct contact with its owner. · Website: https://villaoliviaclara.com
 - [Mykonos Luxury](https://anotherseoguru.com/en/work/mykonos-luxury) - A Mykonos concierge platform for private villas, yachts and tailored VIP experiences. · Website: https://mykonos.luxury
 - [Discover Cyclades](https://anotherseoguru.com/en/work/discover-cyclades) - A Cyclades travel platform bringing island guides, ferry tracking, accommodation and activities into one planning experience. · Website: https://discovercyclades.gr
 - [Discover Crete](https://anotherseoguru.com/en/work/discover-crete) - An independent Crete travel guide covering beaches, cities, stays, transport and suggested itineraries. · Website: https://discover-crete.com

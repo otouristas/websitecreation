@@ -169,7 +169,9 @@ function parseKeptCityPages() {
   };
 }
 
-function parsePortfolio() { return portfolioProjects; }
+// Former clients kept out of the AI corpus (no longer our client).
+const LLMS_EXCLUDED_PROJECTS = new Set(['villa-olivia-clara']);
+function parsePortfolio() { return portfolioProjects.filter((p) => !LLMS_EXCLUDED_PROJECTS.has(p.slug)); }
 
 function parseBlogPosts() {
   const dir = path.join(ROOT, 'content/blog');
