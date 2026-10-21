@@ -1,23 +1,28 @@
 import Link from 'next/link';
-import { ArrowRight, ArrowUpRight, BedDouble, Bot, Briefcase, Check, Languages, Layers, Search, Stethoscope, Wallet } from 'lucide-react';
+import { Check } from 'lucide-react';
 import { PageShell } from '@/components/bespoke/PageShell';
-import { PortfolioThumbnail } from '@/components/landing/PortfolioThumbnail';
 import {
-  Accent,
-  AgencyCtas,
   AiVisibilityPreview,
-  AppWindow,
-  CheckList,
-  CtaBand,
   DecisionsPanel,
-  KitHeading,
-  KitSection,
   LocalPackPreview,
-  OverviewPreview,
   PerformancePreview,
-  Stage,
 } from '@/components/kit';
-import { ChipLinks, KitFaq, PageHero, SplitRow } from '@/components/page-kit';
+import { ChipLinks, KitBreadcrumbs } from '@/components/page-kit';
+import {
+  AnnouncePill,
+  AppPanel,
+  TrustMarks,
+  WaveAccent,
+  WaveChoice,
+  WaveClose,
+  WaveHeading,
+  WaveHero,
+  WaveSection,
+  WaveStats,
+} from '@/components/pages/platform-wave/ui';
+import { accentEnd, ManagedFaq, ServiceHeroActions } from '@/components/pages/services-wave/ui';
+import { IndustryAppPanel, WorkCards } from '@/components/pages/industry-wave/ui';
+import { agencyTrust } from '@/components/kit/sections';
 import { getPortfolioByCategory } from '@/data/portfolio';
 import { services } from '@/data/services';
 import { isIndustryServiceIndexable } from '@/lib/indexability/industry-service';
@@ -334,295 +339,271 @@ export function HotelsPage({ locale }: { locale: SiteLocale }) {
   );
 
   const tx = (en: string, el: string) => (isEl ? el : en);
-  const cut = t.h1.lastIndexOf(', ');
   const thCls = 'px-4 py-3 text-left font-mono text-[11px] font-medium uppercase tracking-[0.1em] text-muted-foreground';
 
   return (
-    <PageShell locale={locale} signatureHue={SIGNATURE_HUE} schemas={schemas}>
-      <PageHero
-        locale={locale}
-        size="md"
-        breadcrumbs={breadcrumbs}
-        pill={{
-          href: lp('/services/ai-visibility'),
-          kind: 'ai',
-          tag: 'AI',
-          text: tx('Be the hotel ChatGPT and Gemini recommend', 'Γίνετε το ξενοδοχείο που προτείνουν ChatGPT και Gemini'),
-        }}
-        title={
-          cut > 0 ? (
-            <>
-              {t.h1.slice(0, cut + 2)}
-              <Accent>{t.h1.slice(cut + 2)}</Accent>
-            </>
-          ) : (
-            <>
-              {t.h1.split(' ').slice(0, -2).join(' ')} <Accent>{t.h1.split(' ').slice(-2).join(' ')}</Accent>
-            </>
-          )
+    <PageShell locale={locale} signatureHue={SIGNATURE_HUE} className="overflow-x-clip" schemas={schemas}>
+      <WaveHero
+        pill={
+          <div className="flex flex-col items-start gap-4">
+            <KitBreadcrumbs items={breadcrumbs} align="left" />
+            <AnnouncePill
+              wrap
+              href={lp('/services/ai-visibility')}
+              tag="AI"
+              text={tx('Be the hotel ChatGPT and Gemini recommend', 'Γίνετε το ξενοδοχείο που προτείνουν ChatGPT και Gemini')}
+            />
+          </div>
         }
+        title={accentEnd(t.h1, isEl ? 2 : 4)}
+        titleClassName="text-[1.85rem] min-[400px]:text-[2.05rem] sm:text-[2.6rem] lg:text-[3.05rem]"
         lead={t.lede}
         actions={
-          <div className="flex flex-col items-center gap-3">
-            <AgencyCtas locale={locale} primaryHref={lp('/get-started?project=hotels')} primaryLabel={t.ctaPrimary} />
-            <Link href="#proof" className="text-[14px] font-medium text-muted-foreground underline decoration-hairline underline-offset-4 hover:text-foreground">
-              {t.ctaSecondary}
-            </Link>
-          </div>
-        }
-      >
-        <div className="mx-auto mt-14 w-full max-w-[1240px] px-3 sm:px-6">
-          <AppWindow
-            label={tx(
-              'Search Console overview for a sample Paros hotel: clicks, impressions, CTR, position and the next fixes.',
-              'Επισκόπηση Search Console για δείγμα ξενοδοχείου στην Πάρο: κλικ, εμφανίσεις, CTR, θέση και οι επόμενες διορθώσεις.',
-            )}
-            badge={
-              <span className="rounded-full border border-hairline bg-background px-2 py-0.5 text-[11px] font-medium text-muted-foreground">
-                {tx('Sample hotel', 'Δείγμα ξενοδοχείου')}
-              </span>
-            }
-          >
-            <OverviewPreview locale={locale} />
-          </AppWindow>
-        </div>
-      </PageHero>
-
-      {/* The four leaks, as a numbered diagnostic beside the ranked fixes */}
-      <KitSection>
-        <div className="grid items-start gap-12 lg:grid-cols-[1fr_1fr] lg:gap-16">
-          <div className="min-w-0">
-            <KitHeading
-              eyebrow={t.leaks.eyebrow}
-              eyebrowIcon={<Stethoscope />}
-              title={t.leaks.title}
-              description={t.leaks.body}
-            />
-            <ol className="mt-10 divide-y divide-hairline overflow-hidden rounded-2xl border border-hairline bg-surface/60">
-              {t.leaks.items.map((it) => (
-                <li key={it.n} className="reveal flex gap-4 p-5 sm:p-6">
-                  <span className="font-mono text-[12px] font-medium text-brand">{it.n}</span>
-                  <div className="min-w-0">
-                    <h3 className="text-[16px] font-semibold text-foreground">{it.t}</h3>
-                    <p className="mt-1.5 text-[14.5px] leading-relaxed text-muted-foreground">{it.d}</p>
-                  </div>
-                </li>
-              ))}
-            </ol>
-          </div>
-          <div className="reveal min-w-0 lg:sticky lg:top-28">
-            <Stage>
-              <DecisionsPanel locale={locale} details />
-            </Stage>
-            <p className="mt-3 text-center text-[12.5px] text-muted-foreground">
-              {tx('Each leak becomes a ranked fix with the clicks it should bring.', 'Κάθε διαρροή γίνεται διόρθωση με σειρά και τα κλικ που αναμένεται να φέρει.')}
-            </p>
-          </div>
-        </div>
-      </KitSection>
-
-      {/* Direct vs marketplace */}
-      <KitSection tinted>
-        <SplitRow
-          eyebrow={t.parity.eyebrow}
-          eyebrowIcon={<Wallet />}
-          title={t.parity.title}
-          body={t.parity.body}
-          note={t.parity.note}
-          preview={
-            <Stage>
-              <div className="overflow-x-auto rounded-xl border border-hairline bg-background">
-                <table className="w-full min-w-[22rem] border-collapse text-[14px]">
-                  <thead>
-                    <tr className="border-b border-hairline bg-surface/60">
-                      <th className={thCls} />
-                      <th className={thCls}>{t.parity.otaHead}</th>
-                      <th className={`${thCls} !text-brand`}>{t.parity.directHead}</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {t.parity.rows.map((r) => (
-                      <tr key={r.k} className="border-b border-hairline last:border-0">
-                        <td className="px-4 py-3.5 font-medium text-foreground">{r.k}</td>
-                        <td className="px-4 py-3.5 text-muted-foreground">{r.ota}</td>
-                        <td className="px-4 py-3.5 font-medium text-brand">{r.direct}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </Stage>
-          }
-        />
-      </KitSection>
-
-      {/* Language / market matrix */}
-      <KitSection>
-        <SplitRow
-          flip
-          eyebrow={t.matrix.eyebrow}
-          eyebrowIcon={<Languages />}
-          title={t.matrix.title}
-          body={t.matrix.body}
-          note={t.matrix.note}
-          preview={
-            <Stage>
-              <div className="overflow-x-auto rounded-xl border border-hairline bg-background">
-                <table className="w-full min-w-[24rem] border-collapse text-[14px]">
-                  <thead>
-                    <tr className="border-b border-hairline bg-surface/60">
-                      <th className={thCls}>{isEl ? 'Σελίδες' : 'Pages'}</th>
-                      {t.matrix.langs.map((l) => (
-                        <th key={l} className={`${thCls} !text-center`}>
-                          {l}
-                        </th>
-                      ))}
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {t.matrix.rows.map((r) => (
-                      <tr key={r.m} className="border-b border-hairline last:border-0">
-                        <td className="px-4 py-3.5 font-medium text-foreground">{r.m}</td>
-                        {r.v.map((on, i) => (
-                          <td key={i} className="px-4 py-3.5 text-center">
-                            {on ? (
-                              <span className="inline-flex size-5 items-center justify-center rounded-full bg-brand/15 text-brand" aria-label={isEl ? 'Ναι' : 'Yes'}>
-                                <Check className="size-3" strokeWidth={3} aria-hidden />
-                              </span>
-                            ) : (
-                              <span className="inline-block h-px w-3 bg-muted-foreground/40 align-middle" aria-label={isEl ? 'Όχι' : 'No'} />
-                            )}
-                          </td>
-                        ))}
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </Stage>
-          }
-        />
-      </KitSection>
-
-      {/* Room structure, then AI answers */}
-      <KitSection tinted>
-        <div className="grid gap-24 sm:gap-28">
-          <SplitRow
-            eyebrow={t.rooms.eyebrow}
-            eyebrowIcon={<BedDouble />}
-            title={t.rooms.title}
-            body={t.rooms.body}
-            bullets={t.rooms.points}
-            preview={
-              <Stage>
-                <LocalPackPreview locale={locale} />
-              </Stage>
-            }
+          <ServiceHeroActions
+            locale={locale}
+            primaryHref={lp('/get-started?project=hotels')}
+            primaryLabel={t.ctaPrimary}
+            links={[{ href: '#proof', label: t.ctaSecondary }]}
           />
-          <SplitRow
-            flip
-            eyebrow="GEO / AEO"
-            eyebrowIcon={<Bot />}
+        }
+        trust={<TrustMarks items={agencyTrust(locale).map((item) => item.label)} yesLabel={tx('Yes', 'Ναι')} />}
+        panel={<IndustryAppPanel locale={locale} kind="hotel" />}
+        panelNote={tx(
+          'Sample data for a hotel inside AnotherSEOGuru App. Not a client account.',
+          'Δείγμα δεδομένων ξενοδοχείου μέσα στο AnotherSEOGuru App. Όχι λογαριασμός πελάτη.',
+        )}
+      />
+
+      <WaveSection id="leaks" shot="pains" tinted>
+        <WaveHeading eyebrow={t.leaks.eyebrow} title={accentEnd(t.leaks.title, 2)} lead={t.leaks.body} />
+        <ol className="mt-12 grid gap-5 md:grid-cols-2">
+          {t.leaks.items.map((item) => (
+            <li key={item.n} className="min-w-0 rounded-[22px] border border-hairline bg-background/70 p-6 sm:p-7">
+              <div className="font-code text-[13px] font-semibold text-primary">{item.n}</div>
+              <h3 className="mt-3 text-balance text-[20px] font-bold leading-snug text-foreground">{item.t}</h3>
+              <p className="mt-3 text-pretty text-[15.5px] leading-relaxed text-muted-foreground">{item.d}</p>
+            </li>
+          ))}
+        </ol>
+      </WaveSection>
+
+      <WaveSection shot="fixes">
+        <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-14">
+          <WaveHeading
+            eyebrow={tx('Ranked fixes', 'Διορθώσεις με σειρά')}
             title={
               <>
-                {tx('Recommended when guests', 'Να σας προτείνει η AI όταν οι επισκέπτες')} <Accent>{tx('ask AI', 'ρωτούν')}</Accent>
+                {tx('Each leak becomes a ranked fix', 'Κάθε διαρροή γίνεται διόρθωση')}{' '}
+                <WaveAccent>{tx('with the clicks it should bring', 'με τα κλικ που αναμένεται να φέρει')}</WaveAccent>
               </>
             }
-            body={tx(
-              'More guests now ask ChatGPT or Gemini where to stay. We track whether your hotel is mentioned and give your pages the clear facts those answers quote.',
-              'Όλο και περισσότεροι επισκέπτες ρωτούν το ChatGPT ή το Gemini πού να μείνουν. Μετράμε αν αναφέρεται το ξενοδοχείο σας και δίνουμε στις σελίδες σας τα σαφή στοιχεία που χρησιμοποιούν αυτές οι απαντήσεις.',
+            lead={tx(
+              'The order comes from Search Console. The property in the panel is a sample.',
+              'Η σειρά βγαίνει από το Search Console. Το κατάλυμα στον πίνακα είναι δείγμα.',
             )}
-            links={[
-              { href: lp('/services/ai-visibility'), label: tx('AI visibility service', 'Υπηρεσία ορατότητας σε AI'), primary: true },
-              { href: lp('/ai-visibility-check'), label: tx('Free AI check', 'Δωρεάν έλεγχος AI') },
-            ]}
-            preview={
-              <Stage>
-                <AiVisibilityPreview locale={locale} />
-              </Stage>
-            }
           />
+          <AppPanel
+            url="app.anotherseoguru.com/sample/hotel"
+            badge={tx('Sample data', 'Δείγμα δεδομένων')}
+            caption={tx('Sample ranked fixes for a hotel, not a client account.', 'Δείγμα διορθώσεων για ξενοδοχείο, όχι λογαριασμός πελάτη.')}
+          >
+            <DecisionsPanel locale={locale} details />
+          </AppPanel>
         </div>
-      </KitSection>
+      </WaveSection>
 
-      {/* Proof as alternating wide rows */}
-      <KitSection id="proof">
-        <KitHeading eyebrow={t.proof.eyebrow} eyebrowIcon={<Briefcase />} title={t.proof.title} description={t.proof.body} />
-        <div className="mt-14 grid gap-16">
-          {projects.map((p, i) => (
-            <Link key={p.slug} href={lp(`/work/${p.slug}`)} className="reveal group grid items-center gap-8 md:grid-cols-2 md:gap-12">
-              <div className={`relative aspect-[16/10] overflow-hidden rounded-2xl border border-hairline ${i % 2 === 1 ? 'md:order-2' : ''}`}>
-                <PortfolioThumbnail
-                  src={p.screenshot}
-                  alt={p.name}
-                  className="transition-transform duration-500 group-hover:scale-[1.03]"
-                />
-              </div>
-              <div className="min-w-0">
-                <div className="flex items-start gap-3">
-                  <h3 className="font-display text-[24px] font-semibold tracking-[-0.025em] text-foreground">{p.name}</h3>
-                  <ArrowUpRight className="mt-1.5 size-4 shrink-0 text-muted-foreground transition-colors group-hover:text-brand" aria-hidden />
-                </div>
-                <p className="mt-3 text-[15px] leading-relaxed text-muted-foreground">{isEl ? p.summaryEl : p.summary}</p>
-                <CheckList size="sm" className="mt-5 border-t border-hairline pt-4" items={((isEl ? p.resultsEl : p.results) ?? []).slice(0, 3)} />
-              </div>
-            </Link>
-          ))}
+      <WaveSection shot="parity" tinted>
+        <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-14">
+          <WaveHeading eyebrow={t.parity.eyebrow} title={accentEnd(t.parity.title, 2)} lead={t.parity.body} />
+          <div className="min-w-0">
+            <div className="overflow-x-auto rounded-[22px] border border-hairline bg-background">
+              <table className="w-full min-w-[22rem] border-collapse text-[14px]">
+                <thead>
+                  <tr className="border-b border-hairline bg-surface/60">
+                    <th className={thCls} />
+                    <th className={thCls}>{t.parity.otaHead}</th>
+                    <th className={`${thCls} !text-primary`}>{t.parity.directHead}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {t.parity.rows.map((row) => (
+                    <tr key={row.k} className="border-b border-hairline last:border-0">
+                      <td className="px-4 py-3.5 font-medium text-foreground">{row.k}</td>
+                      <td className="px-4 py-3.5 text-muted-foreground">{row.ota}</td>
+                      <td className="px-4 py-3.5 font-medium text-primary">{row.direct}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="mt-4 text-pretty text-[13px] leading-relaxed text-muted-foreground">{t.parity.note}</p>
+          </div>
         </div>
-      </KitSection>
+      </WaveSection>
 
-      {/* Hotel SEO as an ongoing service */}
-      <KitSection>
-        <SplitRow
-          eyebrow={t.seoBlock.eyebrow}
-          eyebrowIcon={<Search />}
-          title={t.seoBlock.title}
-          body={t.seoBlock.body}
-          bullets={t.seoBlock.points}
-          links={[
-            { href: lp(t.seoBlock.guideHref), label: t.seoBlock.guide, primary: true },
-            { href: lp(t.seoBlock.serviceHref), label: t.seoBlock.service },
-          ]}
-          preview={
-            <Stage>
-              <PerformancePreview locale={locale} />
-            </Stage>
-          }
-        />
-      </KitSection>
+      <WaveSection shot="markets">
+        <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-14">
+          <WaveHeading eyebrow={t.matrix.eyebrow} title={accentEnd(t.matrix.title, isEl ? 2 : 3)} lead={t.matrix.body} />
+          <div className="min-w-0">
+            <div className="overflow-x-auto rounded-[22px] border border-hairline bg-background">
+              <table className="w-full min-w-[24rem] border-collapse text-[14px]">
+                <thead>
+                  <tr className="border-b border-hairline bg-surface/60">
+                    <th className={thCls}>{isEl ? 'Σελίδες' : 'Pages'}</th>
+                    {t.matrix.langs.map((lang) => (
+                      <th key={lang} className={`${thCls} !text-center`}>
+                        {lang}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {t.matrix.rows.map((row) => (
+                    <tr key={row.m} className="border-b border-hairline last:border-0">
+                      <td className="px-4 py-3.5 font-medium text-foreground">{row.m}</td>
+                      {row.v.map((on, index) => (
+                        <td key={`${row.m}-${index}`} className="px-4 py-3.5 text-center">
+                          {on ? (
+                            <span className="inline-flex size-5 items-center justify-center rounded-full bg-primary/15 text-primary" aria-label={isEl ? 'Ναι' : 'Yes'}>
+                              <Check className="size-3" strokeWidth={3} aria-hidden />
+                            </span>
+                          ) : (
+                            <span className="inline-block h-px w-3 bg-muted-foreground/40 align-middle" aria-label={isEl ? 'Όχι' : 'No'} />
+                          )}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="mt-4 text-pretty text-[13px] leading-relaxed text-muted-foreground">{t.matrix.note}</p>
+          </div>
+        </div>
+      </WaveSection>
 
-      {/* Services */}
-      <KitSection tinted>
-        <KitHeading eyebrow={t.servicesBlock.eyebrow} eyebrowIcon={<Layers />} title={t.servicesBlock.title} />
+      <WaveSection shot="rooms" tinted>
+        <div className="grid gap-16 lg:gap-24">
+          <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-14">
+            <div className="min-w-0">
+              <WaveHeading eyebrow={t.rooms.eyebrow} title={accentEnd(t.rooms.title, isEl ? 2 : 2)} lead={t.rooms.body} />
+              <ul className="mt-6 space-y-2">
+                {t.rooms.points.map((point) => (
+                  <li key={point} className="flex gap-2 text-pretty text-[15px] leading-6 text-foreground/90">
+                    <span className="text-primary" aria-hidden>✓</span>
+                    <span className="min-w-0">{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <AppPanel
+              url="app.anotherseoguru.com/sample/maps"
+              badge={tx('Sample data', 'Δείγμα δεδομένων')}
+              caption={tx('Sample map results, not a client listing.', 'Δείγμα αποτελεσμάτων χάρτη, όχι καταχώριση πελάτη.')}
+            >
+              <LocalPackPreview locale={locale} />
+            </AppPanel>
+          </div>
+          <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-14">
+            <div className="min-w-0 lg:order-2">
+              <WaveHeading
+                eyebrow="GEO / AEO"
+                title={
+                  <>
+                    {tx('Recommended when guests', 'Να σας προτείνει η AI όταν οι επισκέπτες')} <WaveAccent>{tx('ask AI', 'ρωτούν')}</WaveAccent>
+                  </>
+                }
+                lead={tx(
+                  'More guests now ask ChatGPT or Gemini where to stay. We track whether your hotel is mentioned and give your pages the clear facts those answers quote.',
+                  'Όλο και περισσότεροι επισκέπτες ρωτούν το ChatGPT ή το Gemini πού να μείνουν. Μετράμε αν αναφέρεται το ξενοδοχείο σας και δίνουμε στις σελίδες σας τα σαφή στοιχεία που χρησιμοποιούν αυτές οι απαντήσεις.',
+                )}
+              />
+              <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-[14.5px] font-medium">
+                <Link href={lp('/services/ai-visibility')} className="text-primary underline-offset-4 hover:underline">
+                  {tx('AI visibility service', 'Υπηρεσία ορατότητας σε AI')}
+                </Link>
+                <Link href={lp('/ai-visibility-check')} className="text-foreground/80 underline decoration-hairline underline-offset-4 hover:text-foreground">
+                  {tx('Free AI check', 'Δωρεάν έλεγχος AI')}
+                </Link>
+              </div>
+            </div>
+            <AppPanel
+              url="app.anotherseoguru.com/sample/ai"
+              badge={tx('Sample data', 'Δείγμα δεδομένων')}
+              caption={tx('Sample AI visibility for a hotel, not a client account.', 'Δείγμα ορατότητας σε AI για ξενοδοχείο, όχι λογαριασμός πελάτη.')}
+            >
+              <AiVisibilityPreview locale={locale} />
+            </AppPanel>
+          </div>
+        </div>
+      </WaveSection>
+
+      <WaveSection shot="seo">
+        <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-14">
+          <div className="min-w-0">
+            <WaveHeading eyebrow={t.seoBlock.eyebrow} title={accentEnd(t.seoBlock.title, isEl ? 2 : 2)} lead={t.seoBlock.body} />
+            <ul className="mt-6 space-y-2">
+              {t.seoBlock.points.map((point) => (
+                <li key={point} className="flex gap-2 text-pretty text-[15px] leading-6 text-foreground/90">
+                  <span className="text-primary" aria-hidden>✓</span>
+                  <span className="min-w-0">{point}</span>
+                </li>
+              ))}
+            </ul>
+            <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-[14.5px] font-medium">
+              <Link href={lp(t.seoBlock.guideHref)} className="text-primary underline-offset-4 hover:underline">
+                {t.seoBlock.guide}
+              </Link>
+              <Link href={lp(t.seoBlock.serviceHref)} className="text-foreground/80 underline decoration-hairline underline-offset-4 hover:text-foreground">
+                {t.seoBlock.service}
+              </Link>
+            </div>
+          </div>
+          <AppPanel
+            url="app.anotherseoguru.com/sample/performance"
+            badge={tx('Sample data', 'Δείγμα δεδομένων')}
+            caption={tx('Sample search performance, not a client account.', 'Δείγμα απόδοσης αναζήτησης, όχι λογαριασμός πελάτη.')}
+          >
+            <PerformancePreview locale={locale} />
+          </AppPanel>
+        </div>
+      </WaveSection>
+
+      <WaveSection id="services" shot="services" tinted>
+        <WaveHeading eyebrow={t.servicesBlock.eyebrow} title={t.servicesBlock.title} />
         <ChipLinks
           className="mt-10"
           items={services
-            .filter((s) => isIndustryServiceIndexable('hotels', s.slug, locale))
-            .map((s) => {
-              const el = isEl ? getServiceEl(s.slug) : null;
-              return { href: lp(`/solutions/hotels/${s.slug}`), label: el?.shortName ?? el?.name ?? s.shortName };
+            .filter((service) => isIndustryServiceIndexable('hotels', service.slug, locale))
+            .map((service) => {
+              const el = isEl ? getServiceEl(service.slug) : null;
+              return { href: lp(`/solutions/hotels/${service.slug}`), label: el?.shortName ?? el?.name ?? service.shortName };
             })}
         />
-        <p className="mt-8 text-[14px]">
-          <Link href={lp('/pricing')} className="inline-flex items-center gap-1.5 font-medium text-link underline-offset-4 hover:underline">
+        <p className="mt-8 text-[14.5px]">
+          <Link href={lp('/pricing')} className="inline-flex items-center gap-1.5 font-medium text-primary underline-offset-4 hover:underline">
             {t.cta.secondary}
-            <ArrowRight className="size-4" aria-hidden />
+            <span aria-hidden>→</span>
           </Link>
         </p>
-      </KitSection>
+      </WaveSection>
 
-      <KitFaq eyebrow={t.faq.eyebrow} title={t.faq.title} items={t.faq.items.map((f) => ({ question: f.q, answer: f.a }))} />
+      <WaveChoice locale={locale} source="solutions-hotels-choice" />
+      <WaveStats locale={locale} />
 
-      <CtaBand
+      <WaveSection id="proof" shot="proof">
+        <WaveHeading eyebrow={t.proof.eyebrow} title={accentEnd(t.proof.title, isEl ? 2 : 2)} lead={t.proof.body} />
+        <WorkCards projects={projects} locale={locale} showResults />
+      </WaveSection>
+
+      <ManagedFaq
         locale={locale}
-        source="solutions-hotels"
-        title={
-          <>
-            {t.cta.title.split(' ').slice(0, -2).join(' ')} <Accent>{t.cta.title.split(' ').slice(-2).join(' ')}</Accent>
-          </>
-        }
-        description={t.cta.body}
+        title={t.faq.title}
+        faqs={t.faq.items.map((item) => ({ question: item.q, answer: item.a }))}
+        askLabel={tx('Talk on WhatsApp', 'Μιλήστε στο WhatsApp')}
       />
+
+      <WaveClose locale={locale} source="solutions-hotels" title={accentEnd(t.cta.title, 2)} lead={t.cta.body} />
     </PageShell>
   );
 }
