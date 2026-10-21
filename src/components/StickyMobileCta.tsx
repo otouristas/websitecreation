@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import type { ReactElement } from 'react';
+import { useEffect, useState, type ReactElement } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { localizedPath, siteLocaleFromPath } from '@/lib/i18n/locale';
 import { getNavDictionary } from '@/lib/i18n/get-dictionary';
@@ -10,12 +10,14 @@ import { trackCtaClick } from '@/lib/analytics';
 import { PHONE_DISPLAY, WHATSAPP_HREF } from '@/lib/contact-info';
 import { WhatsAppIcon } from '@/components/icons/WhatsAppIcon';
 import { appLink } from '@/components/gsc-boost/copy';
+import { cn } from '@/lib/cn';
 
 /**
- * Space the floating pill takes at the bottom of the viewport: 3.5rem pill +
- * 0.75rem gap above the safe-area inset (or 0.75rem when there is none).
+ * Space the floating pill takes at the bottom of the viewport: a 3rem pill
+ * (4px padding + 40px controls) plus at least 0.5rem, or the safe-area inset
+ * when that is taller.
  */
-const BAR_HEIGHT = 'calc(4.25rem + max(0.75rem, env(safe-area-inset-bottom, 0px)))';
+const BAR_HEIGHT = 'calc(3rem + max(0.5rem, env(safe-area-inset-bottom, 0px)))';
 
 /**
  * Server-rendered so the value is right on the first paint. The height and the
@@ -33,19 +35,46 @@ const WHATSAPP_ARIA = {
 
 /**
  * Mobile conversion bar: one floating glass pill holding sign-up (primary),
- * the quote and WhatsApp, in the iOS "liquid glass" style. It replaces the old
- * full-width bottom bar plus the separate green WhatsApp pill, which stacked
- * on top of each other and covered the page. On desktop only the WhatsApp
- * pill (WhatsAppPill) remains.
+ * the quote and WhatsApp. On desktop only the WhatsApp pill (WhatsAppPill)
+ * remains. The bar slides away while the hero actions or the footer are on
+ * screen, so it does not stack on top of those controls.
  */
 export function StickyMobileCta(): ReactElement | null {
   const pathname = usePathname() ?? '/en';
   const locale = siteLocaleFromPath(pathname);
   const nav = getNavDictionary(locale);
   const lp = (path: string) => localizedPath(locale, path);
+  const [suppressed, setSuppressed] = useState(false);
 
   // The quote and contact pages are the destination; a CTA there covers the form.
-  if (pathname.includes('/get-started') || pathname.includes('/contact')) {
+  const hiddenRoute = pathname.includes('/get-started') || pathname.includes('/contact');
+
+  useEffect(() => {
+    if (hiddenRoute) return;
+    const nodes = [document.querySelector('[data-hero-cta]'), document.querySelector('footer')].filter(
+      (node): node is Element => node instanceof Element,
+    );
+    if (nodes.length === 0) return;
+    const visible = new Set<Element>();
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) visible.add(entry.target);
+          else visible.delete(entry.target);
+        }
+        setSuppressed(visible.size > 0);
+      },
+      // Any overlap counts. A tall footer never reaches a 25% ratio inside
+      // one viewport, so a higher threshold left the bar covering it.
+      // The shrunken bottom edge waits until the footer or the hero actions
+      // actually meet the pill.
+      { threshold: 0, rootMargin: '0px 0px -48px 0px' },
+    );
+    for (const node of nodes) observer.observe(node);
+    return () => observer.disconnect();
+  }, [hiddenRoute, pathname]);
+
+  if (hiddenRoute) {
     return null;
   }
 
@@ -54,36 +83,42 @@ export function StickyMobileCta(): ReactElement | null {
       <style>{BAR_HEIGHT_STYLE}</style>
       <div
         data-chrome="sticky-cta"
-        className="pointer-events-none fixed inset-x-0 bottom-0 z-50 flex justify-center px-4 pb-[max(0.75rem,env(safe-area-inset-bottom))] lg:hidden"
+        aria-hidden={suppressed || undefined}
+        inert={suppressed ? true : undefined}
+        className={cn(
+          'pointer-events-none fixed inset-x-0 bottom-0 z-50 justify-center px-3 pb-[max(0.5rem,env(safe-area-inset-bottom))] transition-transform duration-300 ease-out lg:hidden motion-reduce:transition-none',
+          suppressed ? 'translate-y-[calc(100%+0.75rem)]' : 'translate-y-0',
+        )}
       >
         <div
-          className="
-            pointer-events-auto relative flex w-full max-w-[24rem] items-center gap-1.5 rounded-full p-1.5
-            border border-white/25 bg-[color-mix(in_oklab,var(--background)_42%,transparent)]
-            shadow-[inset_0_1px_0_0_oklch(1_0_0/35%),inset_0_-1px_0_0_oklch(1_0_0/8%),0_18px_40px_-14px_oklch(0_0_0/55%),0_4px_12px_-4px_oklch(0_0_0/30%)]
-            backdrop-blur-2xl backdrop-saturate-[1.8]
-            light:border-white/70 light:bg-white/55
-          "
+          className={cn(
+            'pointer-events-auto relative flex w-full max-w-[23.5rem] items-center gap-1 rounded-full p-1',
+            'border border-[color-mix(in_oklab,var(--foreground)_16%,transparent)]',
+            'bg-[color-mix(in_oklab,var(--background)_68%,transparent)]',
+            'shadow-[inset_0_1px_0_0_oklch(1_0_0/32%),0_14px_36px_-16px_oklch(0_0_0/48%),0_2px_8px_-4px_oklch(0_0_0/28%)]',
+            'backdrop-blur-2xl backdrop-saturate-150',
+            'supports-[backdrop-filter]:bg-[color-mix(in_oklab,var(--background)_58%,transparent)]',
+            suppressed && 'pointer-events-none',
+          )}
         >
-          {/* Specular sheen across the top half, the "glass" highlight. */}
           <span
             aria-hidden
-            className="pointer-events-none absolute inset-x-3 top-0 h-1/2 rounded-t-full bg-[linear-gradient(to_bottom,oklch(1_0_0/18%),transparent)]"
+            className="pointer-events-none absolute inset-x-4 top-0 h-px bg-[linear-gradient(90deg,transparent,oklch(1_0_0/55%),transparent)]"
           />
           <a
             href={appLink('/signup', locale, 'sticky-mobile')}
             onClick={() => trackCtaClick('sticky_mobile_signup')}
-            className="relative flex h-12 min-w-0 flex-[1.15] items-center justify-center gap-1.5 rounded-full asg-primary-action px-3 font-display text-[0.875rem] font-semibold text-primary-foreground shadow-[inset_0_1px_0_0_oklch(1_0_0/25%),0_6px_18px_-8px_color-mix(in_oklab,var(--primary)_90%,transparent)] active:scale-[0.98] min-[400px]:text-[0.9375rem] motion-reduce:active:scale-100"
+            className="relative flex h-10 min-w-0 flex-1 items-center justify-center rounded-full px-3 font-display text-[13.5px] font-semibold tracking-[-0.01em] asg-primary-action shadow-[inset_0_1px_0_0_oklch(1_0_0/22%)] active:scale-[0.98] motion-reduce:active:scale-100"
           >
-            <span className="truncate">{locale === "el" ? nav.signUpShort : nav.signUp}</span>
+            <span className="truncate">{locale === 'el' ? nav.signUpShort : nav.signUp}</span>
           </a>
           <Link
             href={lp('/get-started')}
             onClick={() => trackCtaClick('sticky_mobile_quote')}
-            className="relative flex h-12 min-w-0 flex-1 items-center justify-center gap-1 rounded-full border border-white/20 px-3 text-[0.875rem] font-semibold text-foreground active:scale-[0.98] light:border-black/10 min-[400px]:text-[0.9375rem] motion-reduce:active:scale-100"
+            className="relative flex h-10 min-w-0 flex-1 items-center justify-center gap-1 rounded-full border border-[color-mix(in_oklab,var(--foreground)_14%,transparent)] bg-[color-mix(in_oklab,var(--foreground)_8%,var(--surface))] px-3 text-[13.5px] font-semibold tracking-[-0.01em] text-foreground shadow-[inset_0_1px_0_0_oklch(1_0_0/18%)] active:scale-[0.98] motion-reduce:active:scale-100"
           >
             <span className="truncate">{nav.getQuoteShort}</span>
-            <ArrowRight className="size-4 shrink-0 max-[359px]:hidden" aria-hidden />
+            <ArrowRight className="size-3.5 shrink-0 max-[379px]:hidden" aria-hidden />
           </Link>
           <a
             href={WHATSAPP_HREF}
@@ -91,9 +126,9 @@ export function StickyMobileCta(): ReactElement | null {
             rel="noopener noreferrer"
             onClick={() => trackCtaClick('sticky_mobile_whatsapp')}
             aria-label={WHATSAPP_ARIA[locale] ?? WHATSAPP_ARIA.en}
-            className="relative grid size-12 shrink-0 place-items-center rounded-full bg-[#25D366] text-[#062a14] shadow-[inset_0_1px_0_0_oklch(1_0_0/35%)] active:scale-[0.98] motion-reduce:active:scale-100"
+            className="relative grid size-8 shrink-0 place-items-center rounded-full bg-[#25D366] text-[#062a14] shadow-[inset_0_1px_0_0_oklch(1_0_0/40%),0_4px_10px_-4px_oklch(0.45_0.14_150/55%)] active:scale-[0.98] motion-reduce:active:scale-100"
           >
-            <WhatsAppIcon className="size-5 shrink-0" />
+            <WhatsAppIcon className="size-[1.05rem] shrink-0" />
           </a>
         </div>
       </div>

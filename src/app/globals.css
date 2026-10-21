@@ -514,6 +514,102 @@
   }
 }
 
+/* Homepage client-logo rail. One track holds two identical runs, so a -50%
+   shift loops without a jump. Fades at the edges. Reduced motion shows a
+   single static run that can be scrolled by hand. */
+.home-logo-rail {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 11%, #000 89%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 11%, #000 89%, transparent);
+}
+
+.home-logo-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 52s linear infinite;
+}
+
+.home-logo-rail:hover .home-logo-track,
+.home-logo-rail:focus-within .home-logo-track {
+  animation-play-state: paused;
+}
+
+.home-logo {
+  height: auto;
+  width: auto;
+  max-height: 2.5rem;
+  max-width: 15.5rem;
+  object-fit: contain;
+  /* Light theme: the artwork as shipped, at full strength. Grayscale plus a
+     low opacity washed the darker marks out against the paper background. */
+  filter: none;
+}
+
+@media (min-width: 640px) {
+  .home-logo {
+    max-height: 3rem;
+    max-width: 18rem;
+  }
+}
+
+:root:not(.light) .home-logo {
+  /* Dark theme: dark-on-transparent ink inverts to a light mark. */
+  filter: invert(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-logo-track {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .home-logo-copy {
+    display: none !important;
+  }
+
+  .home-logo-rail {
+    overflow-x: auto;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+}
+
+/* Homepage comparison: the App column is one elevated card. The cap is the
+   sticky header cell; the body sits behind the mark column and shares the
+   same width so the two read as a single panel. */
+.compare-app-cap,
+.compare-app-body {
+  border: 1.5px solid transparent;
+}
+
+.compare-app-cap {
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(in oklab, var(--primary) 18%, var(--surface)) 0%,
+      color-mix(in oklab, var(--primary) 8%, var(--surface)) 100%
+    ) padding-box,
+    var(--asg-brand-gradient) border-box;
+  border-bottom-width: 0;
+  border-radius: 1.35rem 1.35rem 0 0;
+  box-shadow: 0 12px 28px -20px color-mix(in oklab, var(--primary) 55%, transparent);
+}
+
+.compare-app-body {
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(in oklab, var(--primary) 8%, var(--surface)) 0%,
+      var(--surface) 24%
+    ) padding-box,
+    var(--asg-brand-gradient) border-box;
+  border-top-width: 0;
+  border-radius: 0 0 1.35rem 1.35rem;
+  box-shadow:
+    0 22px 48px -26px color-mix(in oklab, var(--primary) 72%, transparent),
+    0 0 40px -14px color-mix(in oklab, var(--primary) 34%, transparent);
+}
+
 /* ==========================================================================
    Layout helpers
    ========================================================================== */
