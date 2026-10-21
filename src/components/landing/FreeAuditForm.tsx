@@ -7,7 +7,7 @@ import { captureUtmParams, trackFormStart } from "@/lib/analytics";
 import { describeAnswers, fetchTeamProgress, submitLead, type TeamAgent, type TeamProgress } from "@/lib/leads";
 import type { SiteLocale } from "@/lib/i18n/locale";
 import type { ScanResult } from "@/lib/scan/score";
-import { primaryBtnClass } from "./primitives";
+import { waveField, wavePrimaryBtn } from "@/components/pages/platform-wave/ui";
 import { ScoreDial } from "./ScanWidget";
 import { FetchDetailsButton, FetchDetailsNote, SiteDetailsCard, siteDetailsFields, siteDetailsMessage, useSiteDetails } from "./SiteDetailsFetch";
 
@@ -104,8 +104,11 @@ const AGENT_ORDER: TeamAgent[] = ["auditor", "keywords", "competitors", "content
 const POLL_MS = 4000;
 const POLL_LIMIT_MS = 12 * 60_000;
 
-const inputClass =
-  "h-12 w-full min-w-0 rounded-2xl border border-hairline bg-background/60 px-4 text-base text-foreground placeholder:text-muted-foreground/70 focus:border-brand/60 focus:outline-none";
+const formCard =
+  "scroll-mt-28 rounded-[22px] border border-hairline bg-surface/80 p-5 text-left shadow-[0_0_0_1px_color-mix(in_oklab,var(--primary)_18%,transparent),0_24px_60px_-28px_color-mix(in_oklab,var(--primary)_50%,transparent)] sm:p-6";
+
+const fieldError =
+  "w-full rounded-2xl border border-destructive/40 bg-destructive/10 px-4 py-3 text-sm leading-relaxed text-destructive";
 
 function TeamBoard({ locale, token }: { locale: SiteLocale; token: string | null }) {
   const t = COPY[locale];
@@ -268,9 +271,9 @@ export function FreeAuditForm({
 
   if (done) {
     return (
-      <div id="free-audit" className={cn("glass grid scroll-mt-28 gap-6 rounded-3xl p-5 text-left sm:p-6 lg:grid-cols-2", className)} role="status">
+      <div id="free-audit" className={cn(formCard, "grid gap-6 lg:grid-cols-2", className)} role="status">
         <div className="min-w-0">
-          <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-brand">{t.firstLook}</p>
+          <p className="font-code text-[12px] font-semibold uppercase tracking-[0.16em] text-primary">{t.firstLook}</p>
           {scan ? (
             <>
               <div className="mt-3 flex items-center gap-5">
@@ -313,8 +316,8 @@ export function FreeAuditForm({
   }
 
   return (
-    <form id="free-audit" onSubmit={handleSubmit} noValidate className={cn("glass scroll-mt-28 rounded-3xl p-5 text-left sm:p-6", className)}>
-      <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-brand">{t.eyebrow}</p>
+    <form id="free-audit" onSubmit={handleSubmit} noValidate className={cn(formCard, className)}>
+      <p className="font-code text-[12px] font-semibold uppercase tracking-[0.16em] text-primary">{t.eyebrow}</p>
       <h2 className="mt-1 font-display text-xl font-semibold tracking-[-0.02em] text-foreground">{t.title}</h2>
       <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{t.body}</p>
       <div className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2">
@@ -322,7 +325,7 @@ export function FreeAuditForm({
           <div className="flex min-w-0 flex-col gap-2 sm:flex-row">
             <label className="grid min-w-0 flex-1 gap-1">
               <span className="sr-only">{t.website}</span>
-              <input name="website" type="text" inputMode="url" autoComplete="url" placeholder={`${t.website}: ${t.websitePh}`} value={website} onFocus={markStarted} onChange={(e) => setWebsite(e.target.value)} className={inputClass} />
+              <input name="website" type="text" inputMode="url" autoComplete="url" placeholder={`${t.website}: ${t.websitePh}`} value={website} onFocus={markStarted} onChange={(e) => setWebsite(e.target.value)} className={waveField} />
             </label>
             <FetchDetailsButton locale={locale} state={details.state} onClick={handleFetchDetails} />
           </div>
@@ -331,19 +334,19 @@ export function FreeAuditForm({
         </div>
         <label className="grid min-w-0 gap-1">
           <span className="sr-only">{t.name}</span>
-          <input name="name" type="text" autoComplete="name" placeholder={t.name} value={name} onFocus={markStarted} onChange={(e) => setName(e.target.value)} className={inputClass} />
+          <input name="name" type="text" autoComplete="name" placeholder={t.name} value={name} onFocus={markStarted} onChange={(e) => setName(e.target.value)} className={waveField} />
         </label>
         <label className="grid min-w-0 gap-1">
           <span className="sr-only">{t.email}</span>
-          <input name="email" type="email" inputMode="email" autoComplete="email" placeholder={t.email} value={email} onFocus={markStarted} onChange={(e) => setEmail(e.target.value)} className={inputClass} />
+          <input name="email" type="email" inputMode="email" autoComplete="email" placeholder={t.email} value={email} onFocus={markStarted} onChange={(e) => setEmail(e.target.value)} className={waveField} />
         </label>
         <label className="grid min-w-0 gap-1 sm:col-span-2">
           <span className="sr-only">{t.phone}</span>
-          <input name="phone" type="tel" inputMode="tel" autoComplete="tel" placeholder={t.phone} value={phone} onFocus={markStarted} onChange={(e) => setPhone(e.target.value)} className={inputClass} />
+          <input name="phone" type="tel" inputMode="tel" autoComplete="tel" placeholder={t.phone} value={phone} onFocus={markStarted} onChange={(e) => setPhone(e.target.value)} className={waveField} />
         </label>
         <label className="grid min-w-0 gap-1 sm:col-span-2">
           <span className="text-[13px] text-muted-foreground">{t.brief}</span>
-          <textarea name="brief" rows={3} maxLength={2000} placeholder={t.briefPh} value={brief} onFocus={markStarted} onChange={(e) => setBrief(e.target.value)} className={cn(inputClass, "h-auto min-h-24 resize-y py-3")} />
+          <textarea name="brief" rows={3} maxLength={2000} placeholder={t.briefPh} value={brief} onFocus={markStarted} onChange={(e) => setBrief(e.target.value)} className={cn(waveField, "h-auto min-h-24 resize-y")} />
         </label>
         {/* Honeypot: humans never see or fill this. */}
         <input
@@ -358,12 +361,12 @@ export function FreeAuditForm({
         />
       </div>
       <div className="mt-3 flex flex-wrap items-center gap-3">
-        <button type="submit" disabled={sending} className={cn(primaryBtnClass, "w-full shrink-0 disabled:opacity-80 sm:w-auto")}>
+        <button type="submit" disabled={sending} className={cn(wavePrimaryBtn, "w-full shrink-0 sm:w-auto")}>
           {sending ? t.sending : t.submit}
           {!sending && <ArrowRight className="size-4 shrink-0" aria-hidden />}
         </button>
         {error && (
-          <p className="text-sm text-destructive" role="alert">
+          <p className={fieldError} role="alert">
             {error}
           </p>
         )}
