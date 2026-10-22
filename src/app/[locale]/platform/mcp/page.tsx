@@ -8,7 +8,7 @@ import { Accent, CheckList, Container, CtaBand, HeroCentered, KitEyebrow, KitHea
 import {
   CodeBlock,
   GscFaq,
-  MCP_PACKAGE,
+  MCP_BRIDGE,
   MCP_PATH,
   MCP_URL,
   OtherWaysSection,
@@ -24,9 +24,12 @@ import {
 import { isValidLocale, type SiteLocale } from "@/lib/i18n/locale";
 
 /**
- * The AnotherSEOGuru MCP server: the hosted server at app.anotherseoguru.com/mcp
- * and the @anotherseoguru/mcp npm package (a stdio bridge plus CLI). Facts from
- * gsc-gemini-boost/packages/mcp/README.md; tool names must match it exactly.
+ * The AnotherSEOGuru MCP server: the hosted server at app.anotherseoguru.com/mcp.
+ * Clients that only start local commands reach it through the public mcp-remote
+ * bridge (OAuth with dynamic client registration and a loopback redirect, both
+ * supported by app.anotherseoguru.com). Our own npm package is not published yet,
+ * so the page never tells people to install it. Tool names must match
+ * gsc-gemini-boost/supabase/functions/mcp exactly.
  */
 
 type PageProps = { params: Promise<{ locale: string }> };
@@ -41,8 +44,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     path: PATH,
     title: { en: "Google Search Console MCP Server for SEO", el: "MCP server για Google Search Console" },
     description: {
-      en: "An MCP server for SEO: your Google Search Console data, fixes, tasks and AI visibility in Claude, ChatGPT, Cursor, VS Code and Windsurf, with OAuth sign-in.",
-      el: "MCP server για SEO: δεδομένα Search Console, διορθώσεις, εργασίες και ορατότητα σε AI μέσα σε Claude, ChatGPT, Cursor, VS Code και Windsurf, με σύνδεση OAuth.",
+      en: "An MCP server for SEO: your Google Search Console data, fixes, tasks and AI visibility in Claude, ChatGPT, Codex, Cursor and other AI assistants, with OAuth sign-in.",
+      el: "MCP server για SEO: δεδομένα Search Console, διορθώσεις, εργασίες και ορατότητα σε AI μέσα σε Claude, ChatGPT, Codex, Cursor και άλλους βοηθούς AI, με σύνδεση OAuth.",
     },
     keyword: { en: "Google Search Console MCP", el: "MCP server για SEO" },
   });
@@ -69,6 +72,13 @@ const TOOLS: ReadonlyArray<{ name: string; text: Copy; write?: boolean }> = [
     name: "get_ai_visibility_summary",
     text: c("How often AI assistants cite your site for tracked prompts, per model, and which competitors they cite instead.", "Πόσο συχνά σας αναφέρουν οι βοηθοί AI στα prompts που παρακολουθείτε, ανά μοντέλο, και ποιους ανταγωνιστές αναφέρουν αντί για εσάς."),
   },
+  { name: "get_seo_health", text: c("The latest SEO Health Score with the score per category and its 7 and 30 day trend.", "Η τελευταία βαθμολογία SEO Health, με τη βαθμολογία ανά κατηγορία και την πορεία 7 και 30 ημερών.") },
+  { name: "get_site_audit_findings", text: c("Issues from the latest site crawl, grouped by issue with affected pages and example URLs, worst first.", "Τα προβλήματα από τον τελευταίο έλεγχο του ιστότοπου, ομαδοποιημένα, με τις σελίδες που επηρεάζονται και παραδείγματα URL, τα σοβαρότερα πρώτα.") },
+  { name: "list_page_changes", text: c("Recent SEO changes on monitored pages (title, meta, H1, canonical, noindex, redirects and more), with the value before and after.", "Πρόσφατες αλλαγές SEO στις σελίδες που παρακολουθείτε (τίτλος, meta, H1, canonical, noindex, ανακατευθύνσεις κ.ά.), με την τιμή πριν και μετά.") },
+  { name: "get_live_ranks", text: c("Tracked keywords with the Search Console position next to the latest live Google positions on desktop and mobile.", "Οι λέξεις που παρακολουθείτε, με τη θέση από το Search Console δίπλα στις τελευταίες θέσεις στη Google σε υπολογιστή και κινητό.") },
+  { name: "get_backlink_risk", text: c("A risk review of referring domains from the backlink lookups you already saved. It never runs a new lookup.", "Έλεγχος κινδύνου για τους ιστότοπους που σας παραπέμπουν, από τους ελέγχους backlinks που έχετε ήδη αποθηκεύσει. Δεν κάνει ποτέ νέο έλεγχο.") },
+  { name: "validate_schema", text: c("Checks the structured data (JSON-LD) of a public URL or a snippet and lists errors and eligible rich results.", "Ελέγχει τα δομημένα δεδομένα (JSON-LD) μιας δημόσιας σελίδας ή ενός αποσπάσματος και δείχνει σφάλματα και rich results.") },
+  { name: "get_agent_task_inbox", text: c("Tasks sent from the app to this connection, so an agent can pick them up.", "Οι εργασίες που στείλατε από την εφαρμογή σε αυτή τη σύνδεση, ώστε να τις αναλάβει ένας agent.") },
   { name: "get_task_brief", text: c("The full brief for one task: evidence, target URL and query, steps and acceptance checks.", "Το πλήρες brief μιας εργασίας: στοιχεία, URL και αναζήτηση-στόχος, βήματα και κριτήρια ολοκλήρωσης.") },
   { name: "start_task", text: c("Marks a task as in progress.", "Σημειώνει μια εργασία ως σε εξέλιξη."), write: true },
   { name: "add_task_note", text: c("Adds a note to a task: findings, a blocker, a pull request link.", "Προσθέτει σημείωση σε μια εργασία: ευρήματα, ένα εμπόδιο, έναν σύνδεσμο pull request."), write: true },
@@ -112,17 +122,76 @@ const FAQ: ReadonlyArray<GscFaqItem> = [
   {
     q: c("Do I need Node.js?", "Χρειάζομαι Node.js;"),
     a: c(
-      "Only for the local bridge. Clients that accept a remote server URL (Claude.ai, ChatGPT, Cursor, VS Code, Windsurf) connect to https://app.anotherseoguru.com/mcp directly. For clients that start local commands, the npm package needs Node.js 18 or newer and has no other dependencies.",
-      "Μόνο για την τοπική γέφυρα. Όσες εφαρμογές δέχονται διεύθυνση απομακρυσμένου server (Claude.ai, ChatGPT, Cursor, VS Code, Windsurf) συνδέονται απευθείας στο https://app.anotherseoguru.com/mcp. Για εφαρμογές που εκκινούν τοπικές εντολές, το πακέτο npm θέλει Node.js 18 ή νεότερο και τίποτε άλλο.",
+      "Usually not. Clients that accept a remote server URL (Claude, ChatGPT, Claude Code, Codex, Cursor, VS Code, Windsurf, OpenClaw, Hermes) connect to https://app.anotherseoguru.com/mcp directly. Only clients that can start nothing but local commands need Node.js 18 or newer, for the mcp-remote bridge.",
+      "Συνήθως όχι. Όσες εφαρμογές δέχονται διεύθυνση απομακρυσμένου server (Claude, ChatGPT, Claude Code, Codex, Cursor, VS Code, Windsurf, OpenClaw, Hermes) συνδέονται απευθείας στο https://app.anotherseoguru.com/mcp. Node.js 18 ή νεότερο χρειάζεται μόνο όταν η εφαρμογή ξεκινά αποκλειστικά τοπικές εντολές, για τη γέφυρα mcp-remote.",
     ),
   },
   {
     q: c("How do I disconnect an assistant?", "Πώς αποσυνδέω έναν βοηθό;"),
     a: c(
-      "Open Settings → Connected apps in the web app and press Disconnect next to it; access is revoked at once on every device. From a terminal, npx @anotherseoguru/mcp logout does the same.",
-      "Ανοίξτε Ρυθμίσεις → Συνδεδεμένες εφαρμογές στην εφαρμογή web και πατήστε Αποσύνδεση δίπλα του· η πρόσβαση ανακαλείται αμέσως σε κάθε συσκευή. Από τερματικό, το npx @anotherseoguru/mcp logout κάνει το ίδιο.",
+      "Open Settings → Connected apps in the web app and press Disconnect next to it; access is revoked at once on every device.",
+      "Ανοίξτε Ρυθμίσεις → Συνδεδεμένες εφαρμογές στην εφαρμογή web και πατήστε Αποσύνδεση δίπλα του· η πρόσβαση ανακαλείται αμέσως σε κάθε συσκευή.",
     ),
     link: { kind: "site", path: "/platform/integrations", label: c("All integrations", "Όλες οι ενσωματώσεις") },
+  },
+];
+
+const CLIENTS: ReadonlyArray<{ id: string; name: string; how: Copy; label: Copy; code: string }> = [
+  {
+    id: "claude",
+    name: "Claude",
+    how: c("Settings → Connectors → Add custom connector. Paste the URL, then press Connect and approve access.", "Settings → Connectors → Add custom connector. Επικολλήστε τη διεύθυνση, πατήστε Connect και εγκρίνετε την πρόσβαση."),
+    label: c("Connector URL", "Διεύθυνση connector"),
+    code: MCP_URL,
+  },
+  {
+    id: "chatgpt",
+    name: "ChatGPT",
+    how: c("Settings → Apps & Connectors → Advanced → turn on Developer mode, then Create. Choose OAuth and paste the URL.", "Settings → Apps & Connectors → Advanced → ενεργοποιήστε το Developer mode και πατήστε Create. Διαλέξτε OAuth και επικολλήστε τη διεύθυνση."),
+    label: c("Connector URL", "Διεύθυνση connector"),
+    code: MCP_URL,
+  },
+  {
+    id: "claude-code",
+    name: "Claude Code",
+    how: c("Run this once, then type /mcp in Claude Code and pick anotherseoguru to sign in.", "Τρέξτε την εντολή μία φορά, μετά γράψτε /mcp στο Claude Code και διαλέξτε anotherseoguru για να συνδεθείτε."),
+    label: c("Terminal", "Τερματικό"),
+    code: `claude mcp add --transport http --scope user anotherseoguru ${MCP_URL}`,
+  },
+  {
+    id: "codex",
+    name: "Codex",
+    how: c("Add the server, then sign in. Codex opens your browser for the approval.", "Προσθέστε τον server και συνδεθείτε. Το Codex ανοίγει τον browser για την έγκριση."),
+    label: c("Terminal", "Τερματικό"),
+    code: `codex mcp add anotherseoguru --url ${MCP_URL}\ncodex mcp login anotherseoguru`,
+  },
+  {
+    id: "cursor",
+    name: "Cursor",
+    how: c("Cursor Settings → Tools & MCP → New MCP Server opens mcp.json. Add this, save and approve access in the browser.", "Cursor Settings → Tools & MCP → New MCP Server ανοίγει το mcp.json. Προσθέστε τα παρακάτω, αποθηκεύστε και εγκρίνετε την πρόσβαση στον browser."),
+    label: c("~/.cursor/mcp.json", "~/.cursor/mcp.json"),
+    code: `{\n  "mcpServers": {\n    "anotherseoguru": { "url": "${MCP_URL}" }\n  }\n}`,
+  },
+  {
+    id: "grok",
+    name: "Grok Bot",
+    how: c("No settings screen. Send this message in a Grok Bot chat and press Authorize when the sign-in page opens.", "Δεν χρειάζονται ρυθμίσεις. Στείλτε αυτό το μήνυμα σε μια συνομιλία με το Grok Bot και πατήστε Authorize όταν ανοίξει η σελίδα σύνδεσης."),
+    label: c("Message", "Μήνυμα"),
+    code: `Connect this MCP server: ${MCP_URL}`,
+  },
+  {
+    id: "openclaw",
+    name: "OpenClaw",
+    how: c("Add the server, then sign in. OpenClaw catches the browser callback on its own.", "Προσθέστε τον server και συνδεθείτε. Το OpenClaw ολοκληρώνει μόνο του τη σύνδεση από τον browser."),
+    label: c("Terminal", "Τερματικό"),
+    code: `openclaw mcp add anotherseoguru \\\n  --url ${MCP_URL} \\\n  --transport streamable-http \\\n  --auth oauth\nopenclaw mcp login anotherseoguru`,
+  },
+  {
+    id: "hermes",
+    name: "Hermes Agent",
+    how: c("Run it in an interactive terminal so Hermes can open the browser, then type /reload-mcp in your Hermes session.", "Τρέξτε την εντολή σε τερματικό, ώστε το Hermes να ανοίξει τον browser, και μετά γράψτε /reload-mcp στη συνεδρία σας."),
+    label: c("Terminal", "Τερματικό"),
+    code: `hermes mcp add anotherseoguru --url ${MCP_URL} --auth oauth`,
   },
 ];
 
@@ -172,15 +241,15 @@ export default async function PlatformMcpPage({ params }: PageProps) {
     locale,
     path: PATH,
     name: "AnotherSEOGuru MCP server",
-    alternateName: MCP_PACKAGE,
+    alternateName: "AnotherSEOGuru App MCP",
     description: c(
-      "Model Context Protocol server for SEO: Google Search Console performance, the ranked fix list, tasks and AI visibility from AnotherSEOGuru inside Claude, ChatGPT, Cursor, VS Code and Windsurf. Remote server with OAuth sign-in, or a local npm bridge.",
-      "MCP server για SEO: απόδοση από το Google Search Console, η λίστα διορθώσεων, οι εργασίες και η ορατότητα σε AI από το AnotherSEOGuru μέσα σε Claude, ChatGPT, Cursor, VS Code και Windsurf. Απομακρυσμένος server με σύνδεση OAuth ή τοπική γέφυρα μέσω npm.",
+      "Model Context Protocol server for SEO: Google Search Console performance, the ranked fix list, tasks and AI visibility from AnotherSEOGuru inside Claude, ChatGPT, Cursor, VS Code and Windsurf. Remote server with OAuth sign-in for Claude, ChatGPT, Codex, Cursor, Grok Bot, OpenClaw and Hermes.",
+      "MCP server για SEO: απόδοση από το Google Search Console, η λίστα διορθώσεων, οι εργασίες και η ορατότητα σε AI από το AnotherSEOGuru μέσα σε Claude, ChatGPT, Cursor, VS Code και Windsurf. Απομακρυσμένος server με σύνδεση OAuth για Claude, ChatGPT, Codex, Cursor, Grok Bot, OpenClaw και Hermes.",
     ),
     operatingSystem: "Any",
     applicationCategory: "DeveloperApplication",
     applicationSubCategory: "MCP server",
-    softwareRequirements: "An MCP client; Node.js 18 or later for the local npm bridge",
+    softwareRequirements: "An MCP client with remote server support, or Node.js 18 or later for the mcp-remote bridge",
     featureList: TOOLS.map((t) => t.name),
   });
 
@@ -190,15 +259,15 @@ export default async function PlatformMcpPage({ params }: PageProps) {
       <Header locale={locale} />
       <main className="blueprint-grid relative z-0">
         <HeroCentered
-          pill={<KitEyebrow icon={<Bot />}>{tx("MCP server · Remote and npm", "MCP server · Απομακρυσμένα και npm")}</KitEyebrow>}
+          pill={<KitEyebrow icon={<Bot />}>{tx("MCP server · One URL, any assistant", "MCP server · Μία διεύθυνση, κάθε βοηθός")}</KitEyebrow>}
           title={
             <>
               {tx("A Google Search Console MCP server,", "Ένας MCP server για το Google Search Console,")} <Accent>{tx("built for SEO", "φτιαγμένος για SEO")}</Accent>
             </>
           }
           lead={tx(
-            "Use your Search Console data, fix list, tasks and AI visibility inside Claude, ChatGPT, Cursor, VS Code and Windsurf. Add one URL, sign in with OAuth, and the assistant answers from your own account and can work through your SEO tasks.",
-            "Χρησιμοποιήστε τα δεδομένα Search Console, τη λίστα διορθώσεων, τις εργασίες και την ορατότητα σε AI μέσα σε Claude, ChatGPT, Cursor, VS Code και Windsurf. Προσθέτετε μία διεύθυνση, συνδέεστε με OAuth, και ο βοηθός απαντά από τον δικό σας λογαριασμό και δουλεύει τις εργασίες SEO σας.",
+            "Use your Search Console data, fix list, tasks and AI visibility inside Claude, ChatGPT, Codex, Cursor, Grok Bot and other AI assistants. Add one URL, sign in with OAuth, and the assistant answers from your own account and can work through your SEO tasks.",
+            "Χρησιμοποιήστε τα δεδομένα Search Console, τη λίστα διορθώσεων, τις εργασίες και την ορατότητα σε AI μέσα σε Claude, ChatGPT, Codex, Cursor, Grok Bot και άλλους βοηθούς AI. Προσθέτετε μία διεύθυνση, συνδέεστε με OAuth, και ο βοηθός απαντά από τον δικό σας λογαριασμό και δουλεύει τις εργασίες SEO σας.",
           )}
           actions={
             <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -235,6 +304,10 @@ export default async function PlatformMcpPage({ params }: PageProps) {
             { name: "VS Code", role: tx("Copilot agent mode", "Copilot agent mode") },
             { name: "Windsurf", role: tx("Remote or local", "Remote ή τοπικά") },
             { name: "Claude Code", role: tx("One command", "Μία εντολή") },
+            { name: "Codex", role: tx("One command", "Μία εντολή") },
+            { name: "Grok Bot", role: tx("Ask in the chat", "Το ζητάτε στη συνομιλία") },
+            { name: "OpenClaw", role: tx("CLI or config", "CLI ή ρυθμίσεις") },
+            { name: "Hermes", role: tx("CLI or config", "CLI ή ρυθμίσεις") },
           ]}
         />
 
@@ -252,7 +325,7 @@ export default async function PlatformMcpPage({ params }: PageProps) {
             )}
           />
           <div className="mt-12 grid gap-6 lg:grid-cols-2">
-            <div className="reveal flex flex-col rounded-2xl border border-hairline bg-surface/60 p-6">
+            <div className="reveal flex min-w-0 flex-col rounded-2xl border border-hairline bg-surface/60 p-5 sm:p-6">
               <KitEyebrow icon={<Bot />}>{tx("Remote server", "Απομακρυσμένος server")}</KitEyebrow>
               <h3 className="mt-3 text-[18px] font-semibold text-foreground">{tx("Claude.ai, ChatGPT, Cursor, VS Code, Windsurf", "Claude.ai, ChatGPT, Cursor, VS Code, Windsurf")}</h3>
               <p className="mt-2 text-[14.5px] leading-relaxed text-muted-foreground">
@@ -274,36 +347,62 @@ export default async function PlatformMcpPage({ params }: PageProps) {
                 ]}
               />
             </div>
-            <div className="reveal flex flex-col rounded-2xl border border-hairline bg-surface/60 p-6">
-              <KitEyebrow icon={<Terminal />}>{tx("Local, via npm", "Τοπικά, μέσω npm")}</KitEyebrow>
-              <h3 className="mt-3 text-[18px] font-semibold text-foreground">{tx("Claude Desktop, Cursor, VS Code, Windsurf", "Claude Desktop, Cursor, VS Code, Windsurf")}</h3>
+            <div className="reveal flex min-w-0 flex-col rounded-2xl border border-hairline bg-surface/60 p-5 sm:p-6">
+              <KitEyebrow icon={<Terminal />}>{tx("Local command", "Τοπική εντολή")}</KitEyebrow>
+              <h3 className="mt-3 text-[18px] font-semibold text-foreground">{tx("Claude Desktop and other local-only clients", "Claude Desktop και εφαρμογές μόνο με τοπικές εντολές")}</h3>
               <p className="mt-2 text-[14.5px] leading-relaxed text-muted-foreground">
                 {tx(
-                  `For clients that start local commands. ${MCP_PACKAGE} signs you in once in the browser, then bridges your client to the hosted server. Node.js 18 or newer.`,
-                  `Για εφαρμογές που εκκινούν τοπικές εντολές. Το ${MCP_PACKAGE} σας συνδέει μία φορά από τον browser και μετά γεφυρώνει την εφαρμογή σας με τον server μας. Node.js 18 ή νεότερο.`,
+                  `For clients that can only start a local command. The open-source ${MCP_BRIDGE} bridge opens your browser once to sign in, then connects your client to the same server. Node.js 18 or newer.`,
+                  `Για εφαρμογές που ξεκινούν μόνο τοπικές εντολές. Η ανοιχτή γέφυρα ${MCP_BRIDGE} ανοίγει μία φορά τον browser για να συνδεθείτε και μετά συνδέει την εφαρμογή σας στον ίδιο server. Node.js 18 ή νεότερο.`,
                 )}
               </p>
-              <CodeBlock label={tx("1. Sign in", "1. Σύνδεση")} className="mt-5">
-                {`npx ${MCP_PACKAGE} login`}
-              </CodeBlock>
-              <CodeBlock label={tx("2. Add to your client's MCP config", "2. Προσθήκη στις ρυθμίσεις MCP")} className="mt-3">
+              <CodeBlock label={tx("Add to your client's MCP config", "Προσθήκη στις ρυθμίσεις MCP")} className="mt-5">
                 {`{
   "mcpServers": {
     "anotherseoguru": {
       "command": "npx",
-      "args": ["-y", "${MCP_PACKAGE}"]
+      "args": ["-y", "${MCP_BRIDGE}", "${MCP_URL}"]
     }
   }
 }`}
               </CodeBlock>
               <p className="mt-3 text-[13px] text-muted-foreground">
-                {tx(`npx ${MCP_PACKAGE} config <client> prints the exact snippet for your client.`, `Η εντολή npx ${MCP_PACKAGE} config <εφαρμογή> τυπώνει τις ακριβείς ρυθμίσεις για την εφαρμογή σας.`)}
+                {tx(
+                  "On Windows, if the client can't start npx, use \"command\": \"cmd\" with \"/c\", \"npx\" in front of the arguments.",
+                  "Στα Windows, αν η εφαρμογή δεν ξεκινά το npx, βάλτε \"command\": \"cmd\" και στην αρχή των παραμέτρων \"/c\", \"npx\".",
+                )}
               </p>
             </div>
           </div>
         </KitSection>
 
-        <KitSection tinted id="tools">
+        <KitSection tinted id="clients">
+          <KitHeading
+            eyebrow={tx("Step by step", "Βήμα βήμα")}
+            title={
+              <>
+                {tx("Setup for", "Ρύθμιση για")} <Accent>{tx("your assistant", "τον βοηθό σας")}</Accent>
+              </>
+            }
+            description={tx(
+              "Copy the lines for the assistant you use. Each one opens your browser once so you can approve access; nothing else to paste.",
+              "Αντιγράψτε τις γραμμές για τον βοηθό που χρησιμοποιείτε. Κάθε σύνδεση ανοίγει μία φορά τον browser για να εγκρίνετε την πρόσβαση· δεν χρειάζεται να επικολλήσετε τίποτε άλλο.",
+            )}
+          />
+          <ul className="mt-12 grid gap-5 md:grid-cols-2">
+            {CLIENTS.map((client) => (
+              <li key={client.id} id={`client-${client.id}`} className="reveal flex min-w-0 flex-col rounded-2xl border border-hairline bg-background p-5 sm:p-6">
+                <h3 className="text-[17px] font-semibold text-foreground">{client.name}</h3>
+                <p className="mt-2 text-[14px] leading-relaxed text-muted-foreground">{client.how[locale]}</p>
+                <CodeBlock label={client.label[locale]} className="mt-4">
+                  {client.code}
+                </CodeBlock>
+              </li>
+            ))}
+          </ul>
+        </KitSection>
+
+        <KitSection id="tools">
           <KitHeading
             eyebrow={tx("Tools", "Εργαλεία")}
             title={
@@ -312,8 +411,8 @@ export default async function PlatformMcpPage({ params }: PageProps) {
               </>
             }
             description={tx(
-              "Six read tools, three task tools and one prompt. The task tools need the tasks permission, which the sign-in asks for by default; sign in read-only to leave them out.",
-              "Έξι εργαλεία ανάγνωσης, τρία για εργασίες και ένα prompt. Τα εργαλεία εργασιών θέλουν την αντίστοιχη άδεια, που η σύνδεση ζητά από προεπιλογή· συνδεθείτε μόνο για ανάγνωση αν δεν τα θέλετε.",
+              "Read tools for your data, three task tools and one prompt. The task tools need the tasks permission, which the sign-in asks for by default; sign in read-only to leave them out.",
+              "Εργαλεία ανάγνωσης για τα δεδομένα σας, τρία για εργασίες και ένα prompt. Τα εργαλεία εργασιών θέλουν την αντίστοιχη άδεια, που η σύνδεση ζητά από προεπιλογή· συνδεθείτε μόνο για ανάγνωση αν δεν τα θέλετε.",
             )}
           />
           <div className="reveal mt-12 -mx-5 overflow-x-auto px-5 sm:mx-0 sm:px-0">
@@ -345,7 +444,7 @@ export default async function PlatformMcpPage({ params }: PageProps) {
           </div>
         </KitSection>
 
-        <KitSection id="examples">
+        <KitSection tinted id="examples">
           <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
             <KitHeading
               eyebrow={tx("Ask it", "Ρωτήστε τον")}
@@ -363,7 +462,7 @@ export default async function PlatformMcpPage({ params }: PageProps) {
           </div>
         </KitSection>
 
-        <KitSection tinted id="security">
+        <KitSection id="security">
           <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
             <KitHeading
               eyebrow={tx("Security", "Ασφάλεια")}
@@ -388,7 +487,7 @@ export default async function PlatformMcpPage({ params }: PageProps) {
           </div>
         </KitSection>
 
-        <OtherWaysSection locale={locale} current="mcp" />
+        <OtherWaysSection locale={locale} current="mcp" tinted />
         <GscFaq locale={locale} items={FAQ} />
         <CtaBand locale={locale} source="mcp-band" />
         <PlatformLinks locale={locale} current={PATH} />

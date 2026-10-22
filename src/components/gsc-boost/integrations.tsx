@@ -30,7 +30,11 @@ export const MCP_PATH = "/platform/mcp";
 /** The plugin zip. The WordPress.org directory listing is not submitted yet. */
 export const WORDPRESS_ZIP = getAppPath("/downloads/anotherseoguru.zip");
 export const MCP_URL = "https://app.anotherseoguru.com/mcp";
-export const MCP_PACKAGE = "@anotherseoguru/mcp";
+/**
+ * The public stdio-to-HTTP bridge for clients that only start local commands.
+ * Our own package (@anotherseoguru/mcp) is not on npm yet; do not point people at it.
+ */
+export const MCP_BRIDGE = "mcp-remote";
 
 export const SIGN_UP_FREE: Copy = c("Sign up free", "Δωρεάν εγγραφή");
 
@@ -112,7 +116,7 @@ export const SURFACES: ReadonlyArray<Surface> = [
     path: MCP_PATH,
     icon: Bot,
     name: c("AI assistants (MCP)", "Βοηθοί AI (MCP)"),
-    where: c("Claude, ChatGPT, Cursor, VS Code, Windsurf", "Claude, ChatGPT, Cursor, VS Code, Windsurf"),
+    where: c("Claude, ChatGPT, Codex, Cursor, Grok Bot and more", "Claude, ChatGPT, Codex, Cursor, Grok Bot κ.ά."),
     text: c(
       "Ask about your Search Console data, fix list, tasks and AI visibility, and let the assistant work through a task.",
       "Ρωτήστε για τα δεδομένα Search Console, τις διορθώσεις, τις εργασίες και την ορατότητα σε AI, και αφήστε τον βοηθό να αναλάβει μια εργασία.",

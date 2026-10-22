@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (locale === 'el') {
     return buildMetadata({
-      title: "Ποιοι Είμαστε - SEO & Web Design",
+      title: "Ποιοι Είμαστε - Εταιρεία SEO & Λογισμικό",
       description:
         "Η AnotherSEOGuru συνδυάζει ένα SEO platform με ένα agency κατασκευής ιστοσελίδων και SEO. Γρήγορες ιστοσελίδες, SEO, GEO, AEO και μετρήσιμη ανάπτυξη στην Ελλάδα.",
       path: localizedPath('el', '/about'),
