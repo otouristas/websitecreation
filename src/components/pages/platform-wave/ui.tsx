@@ -466,14 +466,19 @@ export function WaveFaq({
   );
 }
 
-/** Same three doors as AgencyCrossSell, in the homepage card style. */
+/** Agency doors, in the homepage card style. Managed SEO is an extra door. */
 export function WaveAgencyDoor({ locale }: { readonly locale: SiteLocale }) {
   const isEl = locale === "el";
   const lp = (path: string) => localizedPath(locale, path);
   const links = [
-    { href: "/seo-services", label: isEl ? "Υπηρεσίες SEO" : "SEO services", text: isEl ? "Μηνιαίο SEO με σειρά βάσει εσόδων" : "Monthly SEO, ranked by revenue" },
-    { href: "/services/ai-visibility", label: "GEO / AEO", text: isEl ? "Να σας προτείνουν ChatGPT και Gemini" : "Get recommended by ChatGPT and Gemini" },
-    { href: "/pricing", label: isEl ? "Τιμές της εταιρείας" : "Agency pricing", text: isEl ? "Πακέτα με σταθερή τιμή" : "Fixed-price packages" },
+    { href: lp("/seo-services"), label: isEl ? "Υπηρεσίες SEO" : "SEO services", text: isEl ? "Μηνιαίο SEO με σειρά βάσει εσόδων" : "Monthly SEO, ranked by revenue" },
+    { href: lp("/services/ai-visibility"), label: "GEO / AEO", text: isEl ? "Να σας προτείνουν ChatGPT και Gemini" : "Get recommended by ChatGPT and Gemini" },
+    { href: lp("/pricing"), label: isEl ? "Τιμές της εταιρείας" : "Agency pricing", text: isEl ? "Πακέτα με σταθερή τιμή" : "Fixed-price packages" },
+    {
+      href: isEl ? "/el/diacheirisi-seo" : "/en/managed-seo",
+      label: isEl ? "Διαχείριση SEO" : "Managed SEO",
+      text: isEl ? "Η ομάδα κάνει τη μηνιαία δουλειά μέσα στο App" : "The team does the monthly work inside the App",
+    },
   ];
   return (
     <WaveSection shot="agency">
@@ -493,7 +498,7 @@ export function WaveAgencyDoor({ locale }: { readonly locale: SiteLocale }) {
         <ul className="grid min-w-0 gap-3">
           {links.map((item) => (
             <li key={item.href}>
-              <Link href={lp(item.href)} className="flex items-center justify-between gap-4 rounded-[22px] border border-hairline bg-surface/70 px-5 py-4 transition-colors hover:border-primary/40">
+              <Link href={item.href} className="flex items-center justify-between gap-4 rounded-[22px] border border-hairline bg-surface/70 px-5 py-4 transition-colors hover:border-primary/40">
                 <span className="min-w-0">
                   <span className="block font-semibold text-foreground">{item.label}</span>
                   <span className="block text-[13px] text-muted-foreground">{item.text}</span>

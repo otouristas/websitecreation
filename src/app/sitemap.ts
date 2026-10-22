@@ -154,6 +154,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ),
   ];
 
+  // Managed SEO uses a different slug per locale, like the consultant page.
+  const managedPages: MetadataRoute.Sitemap = [
+    ...forEnOnly('/managed-seo', { priority: 0.9, changeFrequency: 'monthly' }),
+    ...forElOnly('/diacheirisi-seo', { priority: 0.9, changeFrequency: 'monthly' }),
+  ];
+
   // The founder / SEO-consultant page has a different slug per locale.
   const consultantPages: MetadataRoute.Sitemap = LOCALES.map((locale) => ({
     url: `${BASE_URL}${consultantPath(locale)}`,
@@ -230,6 +236,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [...staticPages,
     ...placePages,
     ...consultantPages,
+    ...managedPages,
     ...comparePages,
     ...portfolioPages,
     ...pillarPages,

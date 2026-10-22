@@ -130,6 +130,7 @@ export default async function SeoServicesPillarPage({ params }: PageProps) {
   const servicesBlock = getSeoHubServicesBlock(siteLocale);
 
   const related = [
+    { path: isEl ? '/diacheirisi-seo' : '/managed-seo', title: isEl ? 'Διαχείριση SEO' : 'Managed SEO' },
     ...serviceCards.map((card) => ({ path: card.href, title: card.title })),
     { path: '/services/ai-visibility', title: isEl ? 'AI Visibility (GEO/AEO)' : 'AI visibility (GEO/AEO)' },
     { path: '/services/website-creation', title: isEl ? 'Κατασκευή ιστοσελίδων' : 'Website creation' },
