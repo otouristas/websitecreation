@@ -169,6 +169,13 @@ export default async function SolutionsPage({ params }: PageProps) {
               </LinkCard>
             ))}
           </CardGrid>
+          {isEl ? null : (
+            <p className="mt-8 text-[15px]">
+              <Link href="/en/tourism-seo" className="font-medium text-primary underline-offset-4 hover:underline">
+                Tourism SEO for hotels, villas, tours and rent a car
+              </Link>
+            </p>
+          )}
         </KitSection>
 
         <KitSection tinted>

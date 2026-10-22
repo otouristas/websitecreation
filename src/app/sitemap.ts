@@ -13,6 +13,7 @@ import { allTerms } from '@/lib/docs/glossary';
 import { PLACE_PAGES } from '@/data/place-seo';
 import { PLATFORM_TOOLS } from '@/data/platform-tools';
 import { TOURISM_VERTICALS } from '@/data/tourism-seo';
+import { ENGLISH_VERTICALS } from '@/data/tourism-seo/en';
 import { buildLocationServiceUrls } from '@/lib/sitemap-locations';
 
 const BASE_URL = 'https://anotherseoguru.com';
@@ -171,6 +172,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...forElOnly('/seo-tourismou', { priority: 0.9, changeFrequency: 'weekly' }),
     ...TOURISM_VERTICALS.flatMap((vertical) =>
       forElOnly(`/seo-tourismou/${vertical.slug}`, { priority: 0.88, changeFrequency: 'monthly' }),
+    ),
+    // English tourism SEO hub. Paired with the Greek URLs above, different slugs.
+    ...forEnOnly('/tourism-seo', { priority: 0.9, changeFrequency: 'weekly' }),
+    ...ENGLISH_VERTICALS.flatMap((vertical) =>
+      forEnOnly(`/tourism-seo/${vertical.slug}`, { priority: 0.88, changeFrequency: 'monthly' }),
     ),
   ];
 

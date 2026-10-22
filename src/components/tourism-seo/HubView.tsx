@@ -19,7 +19,7 @@ import {
   tourismPath,
 } from "@/data/tourism-seo";
 
-const EN_ALTERNATE = "/en/solutions";
+const EN_ALTERNATE = "/en/tourism-seo";
 
 const DESTINATIONS: readonly { href: string; title: string; body: string }[] = [
   { href: "/el/seo/crete", title: "Κρήτη", body: "Ηράκλειο, Χανιά και Ρέθυμνο, με resorts, βίλες και εκδρομές." },

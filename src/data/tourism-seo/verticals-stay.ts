@@ -103,7 +103,7 @@ export const STAY_VERTICALS: readonly TourismVertical[] = [
       { href: '/el/blog/kataskevi-istoselidas-xenodoxeia', title: 'Τι πρέπει να έχει η ιστοσελίδα ξενοδοχείου', body: 'Η λίστα πριν από κάθε νέα κατασκευή.' },
     ],
     workSlugs: ['hotels-santorini', 'onoma-hotel'],
-    enAlternate: '/en/solutions/hotels',
+    enAlternate: '/en/tourism-seo/hotels',
     serviceType: 'Υπηρεσίες SEO για ξενοδοχεία',
   },
   {
@@ -207,7 +207,7 @@ export const STAY_VERTICALS: readonly TourismVertical[] = [
       { href: '/el/blog/topiko-seo-kykladon', title: 'Τοπικό SEO στις Κυκλάδες', body: 'Χάρτης και λιμάνια για ξενοδοχεία και rent a car.' },
     ],
     workSlugs: ['cyclades-rentacar', 'rentacar-in-paros', 'naxos-carrentals', 'athens-rentacar', 'rentacar-piraeus', 'aggelos-rentals'],
-    enAlternate: '/en/solutions/rent-a-car',
+    enAlternate: '/en/tourism-seo/rent-a-car',
     serviceType: 'Υπηρεσίες SEO για ενοικίαση αυτοκινήτων',
   },
   {
@@ -311,7 +311,7 @@ export const STAY_VERTICALS: readonly TourismVertical[] = [
       { href: '/el/services/local-seo', title: 'Τοπικό SEO', body: 'Google Business Profile, χάρτης και κριτικές.' },
     ],
     workSlugs: ['villa-olivia-clara', 'mykonos-luxury', 'ktima-orion'],
-    enAlternate: '/en/solutions/villas-apartments',
+    enAlternate: '/en/tourism-seo/villas',
     serviceType: 'Υπηρεσίες SEO για βίλες και ενοικιαζόμενα καταλύματα',
   },
   {
@@ -415,7 +415,7 @@ export const STAY_VERTICALS: readonly TourismVertical[] = [
       { href: '/el/services/ai-visibility', title: 'Ορατότητα σε AI', body: 'Πώς σας βρίσκουν ChatGPT, Gemini και AI Overviews.' },
     ],
     workSlugs: ['santorini-daily-tours', 'discover-crete', 'way-to-crete', 'discover-cyclades', 'santo-tours-marinakis'],
-    enAlternate: '/en/solutions/tour-operators',
+    enAlternate: '/en/tourism-seo/tours',
     serviceType: 'Υπηρεσίες SEO για tour operators και εκδρομές',
   },
 ];

@@ -237,6 +237,7 @@ export default async function AiVisibilityCheckPage({ params }: PageProps) {
       ]
     : [
         { href: lp('/services/ai-visibility'), label: 'AI visibility (GEO / AEO)' },
+        { href: '/en/tourism-seo/hotels', label: 'Hotel SEO' },
         { href: lp('/resources/search-optimization-layers'), label: 'The six layers of search' },
         { href: lp('/resources/ai-search-page-anatomy'), label: 'Anatomy of a page for AI search' },
         { href: lp('/pricing'), label: 'Pricing' },

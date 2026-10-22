@@ -98,6 +98,7 @@ function footerColumns(locale: SiteLocale): readonly FooterColumn[] {
     { label: isEl ? "Ορατότητα σε AI" : "AI Visibility (GEO/AEO)", href: lp("/services/ai-visibility") },
     { label: isEl ? "Ανασχεδιασμός ιστοσελίδας" : "Website Redesign", href: lp("/services/website-redesign") },
     { label: isEl ? "SEO για ξενοδοχεία" : "Hotel SEO", href: isEl ? "/el/seo-tourismou/xenodoxeia" : lp("/solutions/hotels") },
+    ...(isEl ? [] : [{ label: "Tourism SEO", href: "/en/tourism-seo" }]),
     ...(isEl
       ? [
           { label: "SEO για τουριστικές επιχειρήσεις", href: "/el/seo-tourismou" },

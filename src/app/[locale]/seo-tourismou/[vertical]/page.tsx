@@ -2,7 +2,8 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { VerticalPageView } from '@/components/tourism-seo/VerticalPageView';
 import { getTourismVertical, TOURISM_VERTICALS, tourismPath } from '@/data/tourism-seo';
-import { BASE_URL, buildMetadata } from '@/lib/seo';
+import { englishSlugForGreek, enTourismPath, tourismLanguageAlternates } from '@/data/tourism-seo/en';
+import { buildMetadata } from '@/lib/seo';
 import { withExactTitle } from '../../services/_lib/exact-title';
 
 export const revalidate = 3600;
@@ -26,14 +27,12 @@ export async function generateMetadata({
   const vertical = getTourismVertical(slug);
   if (!vertical) return {};
   const path = tourismPath(vertical.slug);
+  const enSlug = englishSlugForGreek(vertical.slug);
   const metadata = buildMetadata({
     title: vertical.title,
     description: vertical.description,
     path,
-    languages: {
-      el: `${BASE_URL}${path}`,
-      'x-default': `${BASE_URL}${path}`,
-    },
+    languages: enSlug ? tourismLanguageAlternates(enTourismPath(enSlug), path) : undefined,
   });
   return withExactTitle(metadata, vertical.title);
 }

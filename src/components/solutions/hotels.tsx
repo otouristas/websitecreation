@@ -557,6 +557,11 @@ export function HotelsPage({ locale }: { locale: SiteLocale }) {
               <Link href={lp(t.seoBlock.serviceHref)} className="text-foreground/80 underline decoration-hairline underline-offset-4 hover:text-foreground">
                 {t.seoBlock.service}
               </Link>
+              {isEl ? null : (
+                <Link href="/en/tourism-seo/hotels" className="text-foreground/80 underline decoration-hairline underline-offset-4 hover:text-foreground">
+                  Hotel SEO services
+                </Link>
+              )}
             </div>
           </div>
           <AppPanel
