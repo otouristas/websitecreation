@@ -66,6 +66,7 @@ function footerColumns(locale: SiteLocale): readonly FooterColumn[] {
 
   const product: FooterLink[] = [
     { label: isEl ? "AnotherSEOGuru App" : "Platform overview", href: lp("/platform") },
+    { label: isEl ? "Πώς λειτουργεί" : "How it works", href: isEl ? "/el/pos-leitourgei" : "/en/how-it-works" },
     { label: isEl ? "Δυνατότητες" : "Features", href: lp("/platform/features") },
     { label: isEl ? "Πακέτα εφαρμογής" : "Software plans", href: lp("/platform/pricing") },
     { label: isEl ? "Εφαρμογή iPhone" : "iPhone app", href: lp("/platform/iphone") },

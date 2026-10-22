@@ -160,6 +160,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...forElOnly('/diacheirisi-seo', { priority: 0.9, changeFrequency: 'monthly' }),
   ];
 
+  // How it works uses a different slug per locale. Pass the path without the
+  // locale prefix: localizedPath adds /en or /el.
+  const howItWorksPages: MetadataRoute.Sitemap = [
+    ...forEnOnly('/how-it-works', { priority: 0.9, changeFrequency: 'monthly' }),
+    ...forElOnly('/pos-leitourgei', { priority: 0.9, changeFrequency: 'monthly' }),
+  ];
+
   // The founder / SEO-consultant page has a different slug per locale.
   const consultantPages: MetadataRoute.Sitemap = LOCALES.map((locale) => ({
     url: `${BASE_URL}${consultantPath(locale)}`,
@@ -237,6 +244,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...placePages,
     ...consultantPages,
     ...managedPages,
+    ...howItWorksPages,
     ...comparePages,
     ...portfolioPages,
     ...pillarPages,
