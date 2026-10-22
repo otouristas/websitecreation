@@ -15,7 +15,7 @@ import {
 import { KitBreadcrumbs } from "@/components/page-kit";
 import { WaveEyebrow, WaveHero, WaveSection } from "@/components/pages/platform-wave/ui";
 import { accentEnd } from "@/components/pages/services-wave/ui";
-import { PLATFORM_TOOLS, getPlatformToolBySlug } from "@/data/platform-tools";
+import { PLATFORM_TOOLS, getPlatformTool } from "@/data/platform-tools";
 import { getAppPath } from "@/lib/app-links";
 import { blogHref } from "@/lib/blog";
 import { isValidLocale, localizedPath, type SiteLocale } from "@/lib/i18n/locale";
@@ -32,15 +32,16 @@ export function generateStaticParams(): { slug: string }[] {
 export async function generateMetadata({ params }: ToolPageProps) {
   const { locale, slug } = await params;
   if (!isValidLocale(locale)) return {};
-  const tool = getPlatformToolBySlug(slug);
+  const tool = getPlatformTool(slug, locale);
   if (!tool) {
     return {};
   }
   return buildMetadata({
     title: tool.title,
     description: tool.description,
-    path: localizedPath(locale as SiteLocale, `/tools/${tool.slug}`),
-    canonicalPath: localizedPath("en", `/tools/${tool.slug}`),
+    path: localizedPath(locale, `/tools/${tool.slug}`),
+    canonicalPath: localizedPath(locale, `/tools/${tool.slug}`),
+    hreflangPath: `/tools/${tool.slug}`,
     primaryKeyword: tool.primaryKeyword,
     // The interactive tool runs on the app subdomain; this page is a heading,
     // a description and a deep link. Indexing it would be indexing an ad for a
@@ -52,11 +53,12 @@ export async function generateMetadata({ params }: ToolPageProps) {
 export default async function PlatformToolPage({ params }: ToolPageProps) {
   const { locale, slug } = await params;
   if (!isValidLocale(locale)) notFound();
-  const tool = getPlatformToolBySlug(slug);
+  const siteLocale = locale as SiteLocale;
+  const tool = getPlatformTool(slug, siteLocale);
   if (!tool) {
     notFound();
   }
-  const siteLocale = locale as SiteLocale;
+  const el = siteLocale === "el";
   const lp = (path: string) => localizedPath(siteLocale, path);
   const appUrl = getAppPath(tool.appPath);
   const faqItems = (tool.faqs ?? []).map((f) => ({
@@ -76,12 +78,12 @@ export default async function PlatformToolPage({ params }: ToolPageProps) {
               <KitBreadcrumbs
                 align="left"
                 items={[
-                  { name: "Home", url: lp("/") },
-                  { name: "SEO tools", url: lp("/tools") },
+                  { name: el ? "Αρχική" : "Home", url: lp("/") },
+                  { name: el ? "Εργαλεία SEO" : "SEO tools", url: lp("/tools") },
                   { name: tool.title, url: lp(`/tools/${tool.slug}`) },
                 ]}
               />
-              <KitAnnouncePill href={appUrl} kind="free" tag="Free" text="Runs in the AnotherSEOGuru App app" className="whitespace-normal" />
+              <KitAnnouncePill href={appUrl} kind="free" tag={el ? "Δωρεάν" : "Free"} text={el ? "Τρέχει μέσα στο AnotherSEOGuru App" : "Runs in the AnotherSEOGuru App app"} className="whitespace-normal" />
             </div>
           }
           title={accentEnd(tool.title, 1)}
@@ -90,10 +92,10 @@ export default async function PlatformToolPage({ params }: ToolPageProps) {
           actions={
             <div className="flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
               <a href={appUrl} className={`${kitSoftwareBtn} !pl-5`} rel="noopener noreferrer">
-                Open in platform
+                {el ? "Άνοιγμα στην πλατφόρμα" : "Open in platform"}
               </a>
               <Link href={lp("/services/seo-audits")} className={kitSecondaryBtn}>
-                SEO audit services
+                {el ? "Υπηρεσία SEO ελέγχου" : "SEO audit services"}
               </Link>
             </div>
           }
@@ -101,31 +103,51 @@ export default async function PlatformToolPage({ params }: ToolPageProps) {
           panel={
             <div className="min-w-0">
               <Stage>
-                <AuditPreview locale="en" />
+                <AuditPreview locale={siteLocale} />
               </Stage>
               <p className="mt-6 text-pretty text-[14px] leading-relaxed text-muted-foreground">
-                The interactive tool runs on our secure app subdomain. Need done-for-you help? See{" "}
-                <Link href={lp("/services")} className="text-primary hover:underline">
-                  SEO services
-                </Link>
-                ,{" "}
-                <Link href={lp("/services/local-seo")} className="text-primary hover:underline">
-                  local SEO
-                </Link>
-                , or our{" "}
-                <Link href={blogHref("what-is-seo", siteLocale)} className="text-primary hover:underline">
-                  SEO pillar guide
-                </Link>
-                .
+                {el ? (
+                  <>
+                    Το διαδραστικό εργαλείο τρέχει στο ασφαλές subdomain της εφαρμογής. Θέλετε ολοκληρωμένη υπηρεσία; Δείτε τις{" "}
+                    <Link href={lp("/services")} className="text-primary hover:underline">
+                      υπηρεσίες SEO
+                    </Link>
+                    , το{" "}
+                    <Link href={lp("/services/local-seo")} className="text-primary hover:underline">
+                      τοπικό SEO
+                    </Link>{" "}
+                    ή τον{" "}
+                    <Link href={blogHref("what-is-seo", siteLocale)} className="text-primary hover:underline">
+                      βασικό οδηγό SEO
+                    </Link>
+                    .
+                  </>
+                ) : (
+                  <>
+                    The interactive tool runs on our secure app subdomain. Need done-for-you help? See{" "}
+                    <Link href={lp("/services")} className="text-primary hover:underline">
+                      SEO services
+                    </Link>
+                    ,{" "}
+                    <Link href={lp("/services/local-seo")} className="text-primary hover:underline">
+                      local SEO
+                    </Link>
+                    , or our{" "}
+                    <Link href={blogHref("what-is-seo", siteLocale)} className="text-primary hover:underline">
+                      SEO pillar guide
+                    </Link>
+                    .
+                  </>
+                )}
               </p>
             </div>
           }
         />
         {faqItems.length > 0 ? (
           <WaveSection id="faq" shot="faq" tinted>
-            <WaveEyebrow>FAQ</WaveEyebrow>
+            <WaveEyebrow>{el ? "Συχνές ερωτήσεις" : "FAQ"}</WaveEyebrow>
             <h2 className="mt-4 max-w-3xl text-balance font-display text-[2rem] font-bold leading-[1.08] tracking-[-0.03em] text-foreground sm:text-[2.5rem]">
-              {`Frequently asked questions about ${tool.primaryKeyword}`}
+              {el ? `Συχνές ερωτήσεις για ${tool.primaryKeyword}` : `Frequently asked questions about ${tool.primaryKeyword}`}
             </h2>
             <div className="mt-10 divide-y divide-hairline overflow-hidden rounded-[22px] border border-hairline bg-background/70">
               {faqItems.map((item, index) => (

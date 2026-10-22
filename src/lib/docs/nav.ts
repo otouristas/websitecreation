@@ -2,6 +2,7 @@ import { glossaryCategories } from "@/data/glossary-data";
 import { categoryTitle } from "@/components/glossary/category-labels";
 import { helpContent, helpPath, IPHONE_CATEGORY } from "@/data/help";
 import { PLATFORM_TOOLS } from "@/data/platform-tools";
+import { PLATFORM_TOOLS_EL } from "@/data/platform-tools-el";
 import { OPPORTUNITY_FINDER, RESOURCE_CLUSTERS, clusterArticles, resourcePath } from "@/data/resources";
 import { localizedPath, type SiteLocale } from "@/lib/i18n/locale";
 import { glossaryPath, glossaryTermName } from "@/lib/docs/glossary";
@@ -40,8 +41,7 @@ export function docsTabs(locale: SiteLocale): TabLink[] {
     { id: "guides", label: el ? "Οδηγοί" : "Guides", href: helpPath(locale), icon: "book" },
     { id: "iphone", label: el ? "Εφαρμογή iPhone" : "iPhone app", href: helpPath(locale, IPHONE_CATEGORY), icon: "smartphone" },
     { id: "glossary", label: el ? "SEO γλωσσάρι" : "SEO glossary", href: glossaryPath(locale), icon: "library" },
-    // Resources are English-only; localizedPath sends /el visitors to /en.
-    { id: "resources", label: el ? "Πόροι" : "Resources", href: localizedPath(locale, "/resources"), icon: "layers" },
+    { id: "resources", label: el ? "Υλικό" : "Resources", href: localizedPath(locale, "/resources"), icon: "layers" },
   ];
 }
 
@@ -122,57 +122,65 @@ export function sidebarFor(tab: DocsTab, locale: SiteLocale): SideGroup[] {
         })),
       ];
     case "resources": {
-      const lp = (p: string) => localizedPath("en", p);
+      const lp = (p: string) => localizedPath(locale, p);
+      const rp = (slug?: string) => resourcePath(slug, locale);
       return [
         {
-          title: "Resources",
+          title: el ? "Υλικό" : "Resources",
           items: [
-            { title: "Overview", href: lp("/resources"), icon: "layers" },
-            { title: OPPORTUNITY_FINDER.title, href: resourcePath(OPPORTUNITY_FINDER.slug), icon: "wrench", badge: "Free" },
+            { title: el ? "Επισκόπηση" : "Overview", href: lp("/resources"), icon: "layers" },
+            { title: el ? "Ευκαιρίες από το Search Console" : OPPORTUNITY_FINDER.title, href: rp(OPPORTUNITY_FINDER.slug), icon: "wrench", badge: el ? "Δωρεάν" : "Free" },
           ],
         },
         {
-          title: "Guides",
-          // One entry per cluster: the pillar, with its supporting articles under it.
+          title: el ? "Οδηγοί" : "Guides",
           items: RESOURCE_CLUSTERS.filter((c) => c.id !== "ai-visibility").map((c) => {
-            const [pillar, ...rest] = [...clusterArticles(c.id)].sort((a, b) => (a.kind === "pillar" ? -1 : b.kind === "pillar" ? 1 : 0));
+            const [pillar, ...rest] = [...clusterArticles(c.id, locale)].sort((a, b) => (a.kind === "pillar" ? -1 : b.kind === "pillar" ? 1 : 0));
             return {
-              title: c.title,
-              href: resourcePath(pillar.slug),
+              title: el
+                ? ({
+                    "search-console": "Ανάλυση Search Console",
+                    "traffic-drops": "Πτώση και φθορά περιεχομένου",
+                    forecasting: "Πρόβλεψη και προτεραιότητα",
+                    reporting: "Αναφορές SEO",
+                    "ai-visibility": "Ορατότητα σε αναζήτηση AI",
+                  } satisfies Record<string, string>)[c.id]
+                : c.title,
+              href: rp(pillar.slug),
               icon: CLUSTER_ICONS[c.id],
-              children: rest.map((a) => ({ title: a.title.split(":")[0], href: resourcePath(a.slug) })),
+              children: rest.map((a) => ({ title: a.title.split(":")[0], href: rp(a.slug) })),
             };
           }),
         },
         {
-          title: "Frameworks",
+          title: el ? "Πλαίσια" : "Frameworks",
           items: [
-            { title: "Search optimization layers", href: lp("/resources/search-optimization-layers"), icon: "layers" },
-            { title: "AI search page anatomy", href: lp("/resources/ai-search-page-anatomy"), icon: "file" },
-            ...clusterArticles("ai-visibility").map((a) => ({ title: a.title.split(":")[0], href: resourcePath(a.slug), icon: "bot" })),
+            { title: el ? "Επίπεδα αναζήτησης" : "Search optimization layers", href: lp("/resources/search-optimization-layers"), icon: "layers" },
+            { title: el ? "Ανατομία σελίδας για AI" : "AI search page anatomy", href: lp("/resources/ai-search-page-anatomy"), icon: "file" },
+            ...clusterArticles("ai-visibility", locale).map((a) => ({ title: a.title.split(":")[0], href: rp(a.slug), icon: "bot" })),
           ],
         },
         {
-          title: "Learn",
+          title: el ? "Μάθετε" : "Learn",
           items: [
-            { title: "SEO glossary", href: glossaryPath("en"), icon: "library" },
+            { title: el ? "Λεξικό SEO" : "SEO glossary", href: glossaryPath(locale), icon: "library" },
             { title: "Blog", href: lp("/blog"), icon: "book" },
-            { title: "AnotherSEOGuru App guides", href: helpPath("en"), icon: "rocket" },
+            { title: el ? "Οδηγοί AnotherSEOGuru App" : "AnotherSEOGuru App guides", href: helpPath(locale), icon: "rocket" },
           ],
         },
         {
-          title: "Free tools",
+          title: el ? "Δωρεάν εργαλεία" : "Free tools",
           items: [
-            { title: "Tools hub", href: lp("/tools"), icon: "wrench" },
-            ...PLATFORM_TOOLS.map((t) => ({ title: t.title.split(/[,&]/)[0].trim(), href: lp(`/tools/${t.slug}`) })),
+            { title: el ? "Όλα τα εργαλεία" : "Tools hub", href: lp("/tools"), icon: "wrench" },
+            ...PLATFORM_TOOLS.map((t) => ({ title: (el ? (PLATFORM_TOOLS_EL[t.slug]?.title ?? t.title) : t.title).split(/[,&]/)[0].trim(), href: lp(`/tools/${t.slug}`) })),
           ],
         },
         {
-          title: "Compare",
+          title: el ? "Συγκρίσεις" : "Compare",
           items: [
-            { title: "vs Ahrefs", href: lp("/compare/ahrefs") },
-            { title: "vs Semrush", href: lp("/compare/semrush") },
-            { title: "vs Search Console alone", href: lp("/compare/search-console-alone") },
+            { title: el ? "Ahrefs" : "vs Ahrefs", href: lp("/compare/ahrefs") },
+            { title: el ? "Semrush" : "vs Semrush", href: lp("/compare/semrush") },
+            { title: el ? "Μόνο το Search Console" : "vs Search Console alone", href: lp("/compare/search-console-alone") },
           ],
         },
       ];

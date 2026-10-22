@@ -76,7 +76,12 @@ function footerColumns(locale: SiteLocale): readonly FooterColumn[] {
     { label: isEl ? "Για in-house ομάδες" : "For in-house teams", href: lp("/platform/for/in-house") },
     { label: isEl ? "Για e-shop" : "For ecommerce", href: lp("/platform/for/ecommerce") },
   ];
-  if (!isEl) {
+  if (isEl) {
+    product.push(
+      { label: "Συγκρίσεις εργαλείων", href: lp("/compare") },
+      { label: "Εργαλεία SEO", href: lp("/tools") },
+    );
+  } else {
     product.push(
       { label: "Compare alternatives", href: lp("/compare") },
       app("Free tools", "/free-tools"),
@@ -169,6 +174,9 @@ function footerColumns(locale: SiteLocale): readonly FooterColumn[] {
   ];
   if (isEl) {
     resources.push(
+      { label: "Υλικό SEO", href: lp("/resources") },
+      { label: "Επίπεδα αναζήτησης", href: lp("/resources/search-optimization-layers") },
+      { label: "Σελίδα για αναζήτηση AI", href: lp("/resources/ai-search-page-anatomy") },
       { label: "Οδηγός: κατασκευή e-shop", href: "/el/blog/kataskevi-eshop-odigos" },
       { label: "Πόσο κοστίζει μια ιστοσελίδα", href: "/el/blog/poso-kostizei-mia-istoselida" },
       { label: "Πόσο κοστίζει το SEO", href: "/el/blog/poso-kostizei-to-seo" },

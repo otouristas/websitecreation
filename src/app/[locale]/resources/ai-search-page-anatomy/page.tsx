@@ -16,6 +16,7 @@ import {
 } from '@/components/kit';
 import { ChipLinks, KitFaq, PageHero, accentTail } from '@/components/page-kit';
 import { ANATOMY_FAQS, ANATOMY_PUBLISHED, ANATOMY_UPDATED } from '@/data/ai-page-anatomy';
+import { ANATOMY_FAQS_EL, ANATOMY_PAGE_EL } from '@/data/ai-page-anatomy-el';
 import { isValidLocale, localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 import { buildMetadata } from '@/lib/seo';
 import {
@@ -37,7 +38,7 @@ import { generateBreadcrumbs } from '@/lib/linking';
  * from - a picture of good structure is the one format that fails every point
  * it makes.
  *
- * English only, like the rest of `/resources`.
+ * English and Greek share the slug. The sample document stays the labelled fiction.
  */
 
 type PageProps = { params: Promise<{ locale: string }> };
@@ -48,13 +49,16 @@ const LAYERS_PATH = '/resources/search-optimization-layers';
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { locale } = await params;
   if (!isValidLocale(locale)) return {};
+  const el = locale === 'el';
   return buildMetadata({
-    title: 'Anatomy of a Page Built for AI Search',
-    description:
-      'The on-page checklist for AI search: answer-first openings, extractable passages, tables, original data, schema and crawler access, annotated block by block.',
-    path: localizedPath(locale as SiteLocale, PATH),
-    canonicalPath: localizedPath('en', PATH),
-    primaryKeyword: 'AI search page optimization',
+    title: el ? ANATOMY_PAGE_EL.title : 'Anatomy of a Page Built for AI Search',
+    description: el
+      ? ANATOMY_PAGE_EL.description
+      : 'The on-page checklist for AI search: answer-first openings, extractable passages, tables, original data, schema and crawler access, annotated block by block.',
+    path: localizedPath(locale, PATH),
+    canonicalPath: localizedPath(locale, PATH),
+    hreflangPath: PATH,
+    primaryKeyword: el ? ANATOMY_PAGE_EL.primaryKeyword : 'AI search page optimization',
   });
 }
 
@@ -98,29 +102,33 @@ export default async function AiSearchPageAnatomyPage({ params }: PageProps) {
   const { locale } = await params;
   if (!isValidLocale(locale)) notFound();
   const siteLocale = locale as SiteLocale;
+  const el = siteLocale === 'el';
+  const g = ANATOMY_PAGE_EL;
   const lp = (path: string) => localizedPath(siteLocale, path);
+  const faqs = el ? ANATOMY_FAQS_EL : ANATOMY_FAQS;
 
   const breadcrumbItems = generateBreadcrumbs(
     [
-      { name: 'Resources', url: '/resources' },
-      { name: 'AI search page anatomy', url: PATH },
+      { name: el ? g.resources : 'Resources', url: '/resources' },
+      { name: el ? g.crumb : 'AI search page anatomy', url: PATH },
     ],
-    'en',
+    siteLocale,
   );
 
   const schemas = combineSchemas(
     generateBreadcrumbSchema({ items: breadcrumbItems }),
     generateArticleSchema({
-      headline: 'Anatomy of a page built for AI search',
-      description:
-        'Twelve parts of a page that decide whether an answer engine can read it, quote it and cite it, annotated on a worked example.',
+      headline: el ? g.schemaHeadline : 'Anatomy of a page built for AI search',
+      description: el
+        ? g.schemaDescription
+        : 'Twelve parts of a page that decide whether an answer engine can read it, quote it and cite it, annotated on a worked example.',
       datePublished: ANATOMY_PUBLISHED,
       dateModified: ANATOMY_UPDATED,
-      inLanguage: 'en',
-      mainEntityOfPage: `${BASE_URL}${localizedPath('en', PATH)}`,
+      inLanguage: siteLocale,
+      mainEntityOfPage: `${BASE_URL}${lp(PATH)}`,
       author: { name: 'AnotherSEOGuru', url: BASE_URL },
     }),
-    generateFAQSchema({ faqs: [...ANATOMY_FAQS] }),
+    generateFAQSchema({ faqs: [...faqs] }),
   );
 
   return (
@@ -128,23 +136,23 @@ export default async function AiSearchPageAnatomyPage({ params }: PageProps) {
       <PageHero
         locale={siteLocale}
         breadcrumbs={breadcrumbItems}
-        pill={{ href: lp(LAYERS_PATH), kind: 'ai', tag: 'AEO', text: 'Answer engine optimization' }}
-        title={accentTail('Anatomy of a page built for AI search', 2)}
+        pill={{ href: lp(LAYERS_PATH), kind: 'ai', tag: el ? g.tag : 'AEO', text: el ? g.pill : 'Answer engine optimization' }}
+        title={accentTail(el ? g.headline : 'Anatomy of a page built for AI search', 2)}
         size="md"
         /* Answer-first, and practising what the page preaches. */
-        lead="The classic on-page checklist assumed a person scanning results and deciding what to click. This one assumes a language model deciding what to quote. The two want different things from the same HTML: liftable answers rather than clever introductions, tables rather than prose, attributed numbers rather than adjectives, and text the server sent rather than text a browser drew."
+        lead={el ? g.lead : "The classic on-page checklist assumed a person scanning results and deciding what to click. This one assumes a language model deciding what to quote. The two want different things from the same HTML: liftable answers rather than clever introductions, tables rather than prose, attributed numbers rather than adjectives, and text the server sent rather than text a browser drew."}
         meta={
           <p className="text-[15px] text-muted-foreground">
-            Twelve parts of a page, each one annotated on a worked example below.
+            {el ? g.meta : 'Twelve parts of a page, each one annotated on a worked example below.'}
           </p>
         }
         actions={
           <div className="flex flex-col justify-center gap-3 sm:flex-row">
             <Link href={lp('/get-started')} className={kitPrimaryBtn}>
-              Get your pages audited
+              {el ? g.audit : 'Get your pages audited'}
             </Link>
             <Link href={lp(LAYERS_PATH)} className={kitSecondaryBtn}>
-              The six layers &rarr;
+              {el ? g.layersCta : 'The six layers'} &rarr;
             </Link>
           </div>
         }
@@ -152,66 +160,78 @@ export default async function AiSearchPageAnatomyPage({ params }: PageProps) {
 
       <KitSection className="!pt-14">
         <KitHeading
-          eyebrow="The page, annotated"
+          eyebrow={el ? g.annotated : 'The page, annotated'}
           eyebrowIcon={<ScanSearch />}
-          title={accentTail('Twelve parts of one page', 2)}
-          description="A worked example in the middle, the notes in the margins. Everything in the sample is invented, including the figures; the points around it are not."
+          title={accentTail(el ? g.twelve : 'Twelve parts of one page', el ? 3 : 2)}
+          description={el ? g.twelveDesc : 'A worked example in the middle, the notes in the margins. Everything in the sample is invented, including the figures; the points around it are not.'}
         />
-        <AiPageAnatomy className="mt-12" />
+        <AiPageAnatomy className="mt-12" locale={siteLocale} />
       </KitSection>
 
       <KitSection tinted>
         <KitHeading
-          eyebrow="How to check a page"
+          eyebrow={el ? g.check : 'How to check a page'}
           eyebrowIcon={<ListChecks />}
-          title={accentTail('Auditing one of your own, in five minutes', 2)}
-          description="Read the page the way a retrieval system does rather than the way its author does. Most of what is wrong shows up in the first two steps."
+          title={accentTail(el ? g.checkTitle : 'Auditing one of your own, in five minutes', 2)}
+          description={el ? g.checkDesc : 'Read the page the way a retrieval system does rather than the way its author does. Most of what is wrong shows up in the first two steps.'}
         />
-        <StepsGrid className="mt-10" steps={AUDIT_STEPS.map((step) => ({ title: step.title, text: step.body }))} />
+        <StepsGrid className="mt-10" steps={(el ? g.steps : AUDIT_STEPS).map((step) => ({ title: step.title, text: step.body }))} />
       </KitSection>
 
       <KitSection>
         <div className="mx-auto max-w-3xl">
           <KitHeading
-            eyebrow="Honest limits"
+            eyebrow={el ? g.limits : 'Honest limits'}
             eyebrowIcon={<ShieldAlert />}
-            title={<>What this is <Accent>not</Accent></>}
-            description="Checklists turn into scorecards, and scorecards turn into pages written for a machine that nobody wants to read."
+            title={el ? g.notTitle : <>What this is <Accent>not</Accent></>}
+            description={el ? g.notDesc : 'Checklists turn into scorecards, and scorecards turn into pages written for a machine that nobody wants to read.'}
           />
           <div className="mt-8 rounded-2xl border border-hairline bg-surface/70 p-6 sm:p-8">
-            <CheckList items={NOT_A_SCORE} />
+            <CheckList items={el ? [...g.notItems] : NOT_A_SCORE} />
             <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
-              The order the effort pays in is set out on{' '}
-              <Link href={lp(LAYERS_PATH)} className="text-primary underline-offset-4 hover:underline">
-                the layer model
-              </Link>
-              : access first, then the shape of the answer, then the material worth quoting.
+              {el ? (
+                <>
+                  {g.order}{' '}
+                  <Link href={lp(LAYERS_PATH)} className="text-primary underline-offset-4 hover:underline">
+                    {g.model}
+                  </Link>
+                  {g.orderTail}
+                </>
+              ) : (
+                <>
+                  The order the effort pays in is set out on{' '}
+                  <Link href={lp(LAYERS_PATH)} className="text-primary underline-offset-4 hover:underline">
+                    the layer model
+                  </Link>
+                  : access first, then the shape of the answer, then the material worth quoting.
+                </>
+              )}
             </p>
           </div>
         </div>
       </KitSection>
 
       <KitFaq
-        items={[...ANATOMY_FAQS]}
-        title={accentTail('Questions about writing for answer engines', 2)}
-        description="Asked often enough to belong on the page rather than in a reply."
+        items={[...faqs]}
+        title={accentTail(el ? g.faqTitle : 'Questions about writing for answer engines', 2)}
+        description={el ? g.faqDesc : 'Asked often enough to belong on the page rather than in a reply.'}
       />
 
       <KitSection className="!pb-0">
         <KitHeading
           align="center"
-          eyebrow="Keep going"
+          eyebrow={el ? g.keep : 'Keep going'}
           eyebrowIcon={<Compass />}
-          title={accentTail('Run this over your own pages', 2)}
-          description="We audit the pages that already have demand, fix what blocks retrieval, and track which assistants start citing them."
+          title={accentTail(el ? g.run : 'Run this over your own pages', 2)}
+          description={el ? g.runDesc : 'We audit the pages that already have demand, fix what blocks retrieval, and track which assistants start citing them.'}
         />
         <ChipLinks
           align="center"
           className="mt-8"
           items={[
-            { href: lp('/get-started'), label: 'Request an audit' },
-            { href: lp('/tools/llm-citation-tracking'), label: 'LLM citation tracking' },
-            { href: lp(LAYERS_PATH), label: 'The layers of search optimization' },
+            { href: lp('/get-started'), label: el ? g.request : 'Request an audit' },
+            { href: lp('/tools/llm-citation-tracking'), label: el ? g.citations : 'LLM citation tracking' },
+            { href: lp(LAYERS_PATH), label: el ? g.layers : 'The layers of search optimization' },
           ]}
         />
       </KitSection>

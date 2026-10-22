@@ -86,7 +86,7 @@ function isEnOnlyBarePath(bare: string): boolean {
 
 /**
  * Locale twin for the current marketing path. Falls back to the other locale's
- * homepage when there is no reliable 1:1 page (platform/tools, non-GR locations).
+ * homepage when there is no reliable 1:1 page (English-only sections, non-GR locations).
  */
 export function getAlternateLocalePath(pathname: string): string {
   const current = siteLocaleFromPath(pathname);

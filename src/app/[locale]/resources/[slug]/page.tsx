@@ -19,14 +19,14 @@ import {
   resourcePath,
   type ResourceArticle,
 } from "@/data/resources";
-import { isValidLocale, localizedPath } from "@/lib/i18n/locale";
+import { isValidLocale, localizedPath, type SiteLocale } from "@/lib/i18n/locale";
 import { buildMetadata } from "@/lib/seo";
 import { BASE_URL, combineSchemas, generateArticleSchema, generateBreadcrumbSchema, generateFAQSchema, generateHowToSchema } from "@/lib/seo/schema";
 
 /**
- * Pillars and supporting articles of the /resources hub. English only, like
- * the rest of /resources: next.config redirects /el/resources/* to /en and
- * every page canonicalizes to its /en URL.
+ * Pillars and supporting articles of the /resources hub. English and Greek
+ * share the slug (/el/resources/seo-reporting). A missing Greek article 404s
+ * instead of falling back to English.
  */
 
 type PageProps = { params: Promise<{ locale: string; slug: string }> };
@@ -40,60 +40,68 @@ export const dynamicParams = false;
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { locale, slug } = await params;
   if (!isValidLocale(locale)) return {};
-  const article = findResource(slug);
+  const article = findResource(slug, locale);
   if (!article) return {};
-  const path = resourcePath(slug);
+  const path = resourcePath(slug, locale);
   const meta = buildMetadata({
     title: article.seoTitle,
     description: article.description,
-    path: localizedPath(locale, `/resources/${slug}`),
+    path,
     canonicalPath: path,
+    hreflangPath: `/resources/${slug}`,
     primaryKeyword: article.primaryKeyword,
   });
   return { ...meta, alternates: { ...meta.alternates, types: { "text/markdown": `${BASE_URL}${path}.md` } } };
 }
 
-function cta(article: ResourceArticle) {
+function cta(article: ResourceArticle, locale: SiteLocale) {
   const source = `resources-${article.slug}`;
+  const el = locale === "el";
   if (article.cta === "direct") {
     return {
-      title: "Do this on your own data",
-      text: "Connect Search Console once (read-only) and AnotherSEOGuru App runs this analysis for every site you manage, every week. Search Console features cost no credits on any plan.",
-      primary: { label: "Sign up free", href: appLink("/signup", "en", source), event: `${source}_signup` },
-      secondary: { label: "Open the live demo", href: appLink("/demo", "en", `${source}-demo`), event: `${source}_demo` },
+      title: el ? "Κάντε το στα δικά σας δεδομένα" : "Do this on your own data",
+      text: el
+        ? "Συνδέστε το Search Console μία φορά, με πρόσβαση μόνο για ανάγνωση, και το AnotherSEOGuru App τρέχει αυτή την ανάλυση για κάθε ιστότοπο που διαχειρίζεστε, κάθε εβδομάδα. Οι δυνατότητες Search Console δεν κοστίζουν credits σε κανένα πακέτο."
+        : "Connect Search Console once (read-only) and AnotherSEOGuru App runs this analysis for every site you manage, every week. Search Console features cost no credits on any plan.",
+      primary: { label: el ? "Εγγραφή δωρεάν" : "Sign up free", href: appLink("/signup", locale, source), event: `${source}_signup` },
+      secondary: { label: el ? "Ανοίξτε τη ζωντανή επίδειξη" : "Open the live demo", href: appLink("/demo", locale, `${source}-demo`), event: `${source}_demo` },
     };
   }
   return {
-    title: "Find these opportunities in your own data",
-    text: "Upload your Search Console export to the free opportunity finder. It runs in your browser, nothing is uploaded and there is no sign-up.",
-    primary: { label: "Open the free tool", href: resourcePath(OPPORTUNITY_FINDER.slug), event: `${source}_tool` },
-    secondary: { label: "See the app on sample data", href: appLink("/demo", "en", `${source}-demo`), event: `${source}_demo` },
+    title: el ? "Βρείτε αυτές τις ευκαιρίες στα δικά σας δεδομένα" : "Find these opportunities in your own data",
+    text: el
+      ? "Ανεβάστε την εξαγωγή του Search Console στο δωρεάν εργαλείο ευκαιριών. Τρέχει στον browser σας, τίποτα δεν ανεβαίνει και δεν χρειάζεται εγγραφή."
+      : "Upload your Search Console export to the free opportunity finder. It runs in your browser, nothing is uploaded and there is no sign-up.",
+    primary: { label: el ? "Ανοίξτε το δωρεάν εργαλείο" : "Open the free tool", href: resourcePath(OPPORTUNITY_FINDER.slug, locale), event: `${source}_tool` },
+    secondary: { label: el ? "Ανοίξτε τη ζωντανή επίδειξη" : "See the app on sample data", href: appLink("/demo", locale, `${source}-demo`), event: `${source}_demo` },
   };
 }
 
 export default async function ResourceArticlePage({ params }: PageProps) {
   const { locale, slug } = await params;
   if (!isValidLocale(locale)) notFound();
-  const article = findResource(slug);
+  const siteLocale: SiteLocale = locale;
+  const el = siteLocale === "el";
+  const article = findResource(slug, siteLocale);
   if (!article) notFound();
 
-  const cluster = clusterById(article.cluster);
-  const siblings = clusterArticles(cluster.id);
+  const cluster = clusterById(article.cluster, siteLocale);
+  const siblings = clusterArticles(cluster.id, siteLocale);
   const pillar = siblings.find((a) => a.kind === "pillar");
   // The AI cluster's pillar is a bespoke page, not a data article.
   const pillarLink =
     pillar && pillar.slug !== article.slug
-      ? { title: pillar.title.split(":")[0], href: resourcePath(pillar.slug) }
+      ? { title: pillar.title.split(":")[0], href: resourcePath(pillar.slug, siteLocale) }
       : !pillar
-        ? { title: pillarTitle(cluster), href: resourcePath(cluster.pillar) }
+        ? { title: pillarTitle(cluster, siteLocale), href: resourcePath(cluster.pillar, siteLocale) }
         : null;
   const index = siblings.findIndex((a) => a.slug === article.slug);
-  const link = (a: ResourceArticle | undefined) => (a ? { title: a.title, href: resourcePath(a.slug) } : null);
-  const path = resourcePath(article.slug);
+  const link = (a: ResourceArticle | undefined) => (a ? { title: a.title, href: resourcePath(a.slug, siteLocale) } : null);
+  const path = resourcePath(article.slug, siteLocale);
 
   const crumbs = [
-    { name: "Home", url: localizedPath("en", "/") },
-    { name: "Resources", url: resourcePath() },
+    { name: el ? "Αρχική" : "Home", url: localizedPath(siteLocale, "/") },
+    { name: el ? "Υλικό" : "Resources", url: resourcePath(undefined, siteLocale) },
     ...(pillarLink ? [{ name: cluster.title, url: pillarLink.href }] : []),
     { name: article.title.split(":")[0], url: path },
   ];
@@ -105,21 +113,21 @@ export default async function ResourceArticlePage({ params }: PageProps) {
       datePublished: article.published,
       dateModified: article.updated,
       author: { name: "AnotherSEOGuru", url: BASE_URL },
-      inLanguage: "en",
+      inLanguage: siteLocale,
       mainEntityOfPage: `${BASE_URL}${path}`,
     }),
     generateBreadcrumbSchema({ items: crumbs }),
     ...(faqs.length ? [generateFAQSchema({ faqs })] : []),
     ...articleHowTos(article.body).map((howTo) => generateHowToSchema(howTo)),
   );
-  const c = cta(article);
+  const c = cta(article, siteLocale);
   const related = siblings.filter((a) => a.slug !== article.slug);
 
   return (
-    <DocsShell locale="en" tab="resources">
+    <DocsShell locale={siteLocale} tab="resources">
       <SchemaMarkup schemas={schemas} />
       <DocsPage
-        locale="en"
+        locale={siteLocale}
         eyebrow={cluster.title}
         title={article.title}
         description={article.description}
@@ -128,24 +136,24 @@ export default async function ResourceArticlePage({ params }: PageProps) {
         feedbackId={`resources/${article.slug}`}
         prev={link(siblings[index - 1])}
         next={link(siblings[index + 1])}
-        rail={<SignupCard locale="en" source={`resources-${article.slug}`} />}
+        rail={<SignupCard locale={siteLocale} source={`resources-${article.slug}`} />}
       >
         {pillarLink ? (
           <p className="mt-6 text-[14px] text-muted-foreground">
-            Part of{" "}
+            {el ? "Μέρος του οδηγού " : "Part of "}
             <Link href={pillarLink.href} className="font-medium text-link underline decoration-hairline underline-offset-4 hover:decoration-current">
               {pillarLink.title}
             </Link>
           </p>
         ) : null}
-        <ArticleBody blocks={article.body} locale="en" />
+        <ArticleBody blocks={article.body} locale={siteLocale} />
         <ResourceCta intent={article.cta} {...c} />
-        <nav aria-label={`More in ${cluster.title}`} className="mt-12">
-          <h2 className="font-display text-[18px] font-semibold text-foreground">More in {cluster.title}</h2>
+        <nav aria-label={el ? `Περισσότερα: ${cluster.title}` : `More in ${cluster.title}`} className="mt-12">
+          <h2 className="font-display text-[18px] font-semibold text-foreground">{el ? `Περισσότερα: ${cluster.title}` : `More in ${cluster.title}`}</h2>
           <ul className="mt-4 grid gap-2 text-[15px]">
             {related.map((a) => (
               <li key={a.slug}>
-                <Link href={resourcePath(a.slug)} className="font-medium text-link hover:underline">
+                <Link href={resourcePath(a.slug, siteLocale)} className="font-medium text-link hover:underline">
                   {a.title}
                 </Link>
               </li>
@@ -163,8 +171,8 @@ export default async function ResourceArticlePage({ params }: PageProps) {
               </Link>
             </li>
             <li>
-              <Link href={resourcePath()} className="text-muted-foreground hover:text-foreground">
-                All resources
+              <Link href={resourcePath(undefined, siteLocale)} className="text-muted-foreground hover:text-foreground">
+                {el ? "Όλο το υλικό" : "All resources"}
               </Link>
             </li>
           </ul>

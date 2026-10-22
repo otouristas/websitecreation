@@ -1,3 +1,5 @@
+import { PLATFORM_TOOLS_EL } from "./platform-tools-el";
+
 /**
  * Programmatic SEO: intent pages on the marketing site that deep-link into the Vite app.
  */
@@ -170,4 +172,12 @@ export const PLATFORM_TOOLS: readonly PlatformToolDefinition[] = [
 
 export function getPlatformToolBySlug(slug: string): PlatformToolDefinition | undefined {
   return PLATFORM_TOOLS.find((t) => t.slug === slug);
+}
+
+export function getPlatformTool(slug: string, locale: "en" | "el" = "en"): PlatformToolDefinition | undefined {
+  const tool = getPlatformToolBySlug(slug);
+  if (!tool || locale !== "el") return tool;
+  const el = PLATFORM_TOOLS_EL[slug];
+  if (!el) return undefined;
+  return { ...tool, title: el.title, description: el.description, primaryKeyword: el.primaryKeyword, faqs: el.faqs };
 }
