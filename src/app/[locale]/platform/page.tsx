@@ -233,9 +233,12 @@ export default async function PlatformHubPage({ params }: PageProps) {
             </p>
           </div>
           <TieredModuleGrid locale={locale} source="platform-tour" ids={TOUR} />
-          <p className="mt-8 text-center text-[14px]">
+          <p className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-center text-[14px]">
             <Link href={lp("/platform/features")} className="font-semibold text-primary hover:text-foreground">
               {tx("Every module, with what it costs", "Όλες οι λειτουργίες, με το κόστος τους")} →
+            </Link>
+            <Link href={isEl ? "/el/pos-leitourgei" : "/en/how-it-works"} className="font-semibold text-primary hover:text-foreground">
+              {tx("How it works", "Πώς λειτουργεί")} →
             </Link>
           </p>
         </WaveSection>

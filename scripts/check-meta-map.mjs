@@ -110,7 +110,7 @@ function fail(message) {
   console.error(`FAIL ${message}`);
 }
 
-if (paths.length !== 174) fail(`map has ${paths.length} pages, expected 174`);
+if (paths.length !== 176) fail(`map has ${paths.length} pages, expected 176`);
 
 const seenTitles = new Map();
 for (const pathname of paths) {

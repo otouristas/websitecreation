@@ -453,6 +453,9 @@ export function PlatformLinks({ locale, current }: { readonly locale: L; readonl
               {l.label}
             </Link>
           ))}
+          <Link href={isEl ? "/el/pos-leitourgei" : "/en/how-it-works"} className="transition-colors hover:text-link">
+            {isEl ? "Πώς λειτουργεί" : "How it works"}
+          </Link>
           <a href={`${getAppPath("/")}?lang=${locale}`} className="inline-flex items-center gap-1 transition-colors hover:text-link">
             <FileText className="size-3.5" aria-hidden />
             app.anotherseoguru.com
