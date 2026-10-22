@@ -520,7 +520,12 @@ export function RentACarPage({ locale }: { locale: SiteLocale }) {
               Υπηρεσίες SEO για rent a car
               <span aria-hidden>→</span>
             </Link>
-          ) : null}
+          ) : (
+            <Link href="/en/tourism-seo/rent-a-car" className="inline-flex items-center gap-1.5 font-medium text-primary underline-offset-4 hover:underline">
+              Rent a car SEO
+              <span aria-hidden>→</span>
+            </Link>
+          )}
           <Link href={lp('/pricing')} className="inline-flex items-center gap-1.5 font-medium text-primary underline-offset-4 hover:underline">
             {t.cta.secondary}
             <span aria-hidden>→</span>

@@ -62,6 +62,14 @@ const TOURISM_SEO_FOR_INDUSTRY: Partial<Record<string, string>> = {
   restaurants: "estiatoria",
 };
 
+/** Same industries, English tourism SEO verticals. Hotels and rent a car are bespoke pages. */
+const EN_TOURISM_FOR_INDUSTRY: Partial<Record<string, string>> = {
+  "villas-apartments": "villas",
+  "tour-operators": "tours",
+  "travel-agencies": "travel-agencies",
+  restaurants: "restaurants",
+};
+
 function workForIndustry(slug: string): PortfolioProject[] {
   const category = PORTFOLIO_FOR[slug];
   if (!category || !TOURISM_SLUGS.has(slug)) return [];
@@ -85,6 +93,7 @@ export function IndustryPageView({
 
   const isEl = locale === "el";
   const tourismSeo = isEl ? TOURISM_SEO_FOR_INDUSTRY[industrySlug] : undefined;
+  const enTourism = isEl ? undefined : EN_TOURISM_FOR_INDUSTRY[industrySlug];
   const tx = (en: string, el: string) => (isEl ? el : en);
   const ui = isEl ? solutionsUi.el : solutionsUi.en;
   const lp = (path: string) => localizedPath(locale, path);
@@ -259,6 +268,13 @@ export function IndustryPageView({
             <p className="mt-8 text-[15px]">
               <Link href={tourismPath(tourismSeo)} className="font-medium text-primary underline-offset-4 hover:underline">
                 {`Υπηρεσίες SEO για ${industry.nameFor ?? industry.name}`}
+              </Link>
+            </p>
+          ) : null}
+          {enTourism ? (
+            <p className="mt-8 text-[15px]">
+              <Link href={`/en/tourism-seo/${enTourism}`} className="font-medium text-primary underline-offset-4 hover:underline">
+                {`Tourism SEO for ${industry.nameFor ?? industry.name}`}
               </Link>
             </p>
           ) : null}

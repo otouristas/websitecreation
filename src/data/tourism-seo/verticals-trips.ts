@@ -97,7 +97,7 @@ export const TRIP_VERTICALS: readonly TourismVertical[] = [
       { href: '/el/services/content-creation', title: 'Περιεχόμενο', body: 'Κείμενα προορισμού και πακέτων με πρόθεση κράτησης.' },
     ],
     workSlugs: ['skydream-travel', 'my-honeymoon'],
-    enAlternate: '/en/solutions/travel-agencies',
+    enAlternate: '/en/tourism-seo/travel-agencies',
     serviceType: 'Υπηρεσίες SEO για ταξιδιωτικά γραφεία',
   },
   {
@@ -195,7 +195,7 @@ export const TRIP_VERTICALS: readonly TourismVertical[] = [
       { href: '/el/blog/epixeirisi-sto-google-maps', title: 'Πώς βάζω την επιχείρηση στο Google Maps', body: 'Το πρώτο βήμα για κάθε εστιατόριο.' },
     ],
     workSlugs: [],
-    enAlternate: '/en/solutions/restaurants',
+    enAlternate: '/en/tourism-seo/restaurants',
     serviceType: 'Υπηρεσίες SEO για εστιατόρια',
   },
   {
@@ -294,7 +294,7 @@ export const TRIP_VERTICALS: readonly TourismVertical[] = [
       { href: '/el/services/website-creation', title: 'Κατασκευή ιστοσελίδων', body: 'Σελίδα ανά σκάφος και κράτηση στο κινητό.' },
     ],
     workSlugs: [],
-    enAlternate: '/en/solutions/tour-operators',
+    enAlternate: '/en/tourism-seo/boat-rental',
     serviceType: 'Υπηρεσίες SEO για ενοικίαση σκαφών',
   },
   {
@@ -393,7 +393,7 @@ export const TRIP_VERTICALS: readonly TourismVertical[] = [
       { href: '/el/services/link-building', title: 'Link building', body: 'Σύνδεσμοι από συνεργάτες, με τους κανόνες της Google.' },
     ],
     workSlugs: [],
-    enAlternate: '/en/solutions/travel-agencies',
+    enAlternate: '/en/tourism-seo/transfers',
     serviceType: 'Υπηρεσίες SEO για transfer και ταξί',
   },
 ];

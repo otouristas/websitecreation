@@ -2,7 +2,8 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { TourismHubView } from '@/components/tourism-seo/HubView';
 import { TOURISM_HUB_PATH } from '@/data/tourism-seo';
-import { BASE_URL, buildMetadata } from '@/lib/seo';
+import { EN_TOURISM_HUB_PATH, tourismLanguageAlternates } from '@/data/tourism-seo/en';
+import { buildMetadata } from '@/lib/seo';
 import { withExactTitle } from '../services/_lib/exact-title';
 
 const TOURISM_HUB_TITLE = 'SEO Τουρισμού: Υπηρεσίες SEO για Τουριστικές Επιχειρήσεις';
@@ -23,10 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: TOURISM_HUB_TITLE,
     description: TOURISM_HUB_DESCRIPTION,
     path: TOURISM_HUB_PATH,
-    languages: {
-      el: `${BASE_URL}${TOURISM_HUB_PATH}`,
-      'x-default': `${BASE_URL}${TOURISM_HUB_PATH}`,
-    },
+    languages: tourismLanguageAlternates(EN_TOURISM_HUB_PATH, TOURISM_HUB_PATH),
   });
   return withExactTitle(metadata, TOURISM_HUB_TITLE);
 }
