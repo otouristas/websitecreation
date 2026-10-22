@@ -312,9 +312,17 @@ function buildShort({ services, servicesEl, industries, industriesEl, greece, pr
     hubLine('AnotherSEOGuru App integrations (one login)', `${BASE}/en/platform/integrations`, 'One AnotherSEOGuru account for the web app, iPhone, Chrome extension, WordPress plugin and AI assistants (MCP); manage them in Settings → Connected apps (EN + EL).'),
     hubLine('SEO Chrome extension', `${BASE}/en/platform/chrome-extension`, 'Free on-page SEO checks (meta, headings, links, images, schema, Open Graph, hreflang, Core Web Vitals) and Google results tools without an account; signed in, the page\'s own Search Console data. Coming to the Chrome Web Store.'),
     hubLine('WordPress SEO plugin', `${BASE}/en/platform/wordpress`, 'Free full WordPress SEO plugin: live Google preview, SEO and readability analysis (Greek-aware), schema graph, XML sitemaps, redirects and 404 monitor, robots.txt/llms.txt and AI crawler controls, breadcrumbs; Search Console data, keyword research and AI titles in the editor; imports from Yoast, Rank Math, AIOSEO, SEOPress. Zip download; WordPress.org listing coming.'),
-    hubLine('Google Search Console MCP server', `${BASE}/en/platform/mcp`, 'Search Console data, fix list, tasks and AI visibility in Claude, ChatGPT, Cursor, VS Code and Windsurf. Remote server https://app.anotherseoguru.com/mcp (OAuth) or npx @anotherseoguru/mcp login.'),
+    hubLine('Google Search Console MCP server', `${BASE}/en/platform/mcp`, 'Search Console data, fix list, site audit, live ranks, tasks and AI visibility in Claude, ChatGPT, Claude Code, Codex, Cursor, VS Code, Windsurf, Grok Bot, OpenClaw and Hermes. Remote server https://app.anotherseoguru.com/mcp (OAuth, no token to paste); local-only clients use `npx -y mcp-remote https://app.anotherseoguru.com/mcp`.'),
     hubLine('AnotherSEOGuru App docs', `${BASE}/en/help`, 'How the SEO software works on the web and iPhone: Search Console setup, opportunities, rank tracking, site audit, AI visibility, agency tools and billing (EN + EL). Every docs page has a Markdown twin at its URL + ".md".'),
     hubLine('SEO glossary', `${BASE}/en/glossary`, 'Over 100 SEO, AEO and GEO terms, one page each with definition, example and how to apply it (EN + EL).'),
+  );
+  lines.push('');
+  lines.push('## For AI Agents');
+  lines.push(
+    '- **MCP server**: https://app.anotherseoguru.com/mcp (Streamable HTTP, OAuth 2.1 with PKCE and dynamic client registration). Setup for Claude, ChatGPT, Claude Code, Codex, Cursor, Grok Bot, OpenClaw and Hermes: <https://anotherseoguru.com/en/platform/mcp#clients>.',
+    '- **Agent skills**: `npx skills add otouristas/anotherseoguru-skills` installs ready-made SEO workflows (top fixes, weekly report, task fixing, AI visibility) for Claude Code, Codex and other agents that read SKILL.md. Source: <https://github.com/otouristas/anotherseoguru-skills>.',
+    '- **Markdown pages**: every page on anotherseoguru.com is also available as Markdown. Append `.md` to the URL (for example <https://anotherseoguru.com/en/platform/mcp.md>, <https://anotherseoguru.com/el.md>) or send the header `Accept: text/markdown`.',
+    '- **Safety**: read tools never change anything; task tools only update AnotherSEOGuru App tasks and need the tasks permission.',
   );
   lines.push('');
   lines.push('## AnotherSEOGuru App Docs (Markdown)');
@@ -496,7 +504,7 @@ function buildFull({ services, servicesEl, industries, industriesEl, greece, pro
     '4. **Platform modules** - Semantic keyword clustering, rank tracking from GSC, technical audits / Core Web Vitals, GEO/AEO citation tracking, AI-assisted workflows, sprint/task board. Marketing: `/en/platform`.',
   );
   lines.push(
-    '5. **Integrations (one login)** - The same account works in a Chrome extension (`/en/platform/chrome-extension`), a WordPress plugin (`/en/platform/wordpress`), an MCP server for AI assistants (`/en/platform/mcp`, remote URL https://app.anotherseoguru.com/mcp or `npx @anotherseoguru/mcp`) and the iPhone app; hub: `/en/platform/integrations`. Greek versions under `/el/platform/...`.',
+    '5. **Integrations (one login)** - The same account works in a Chrome extension (`/en/platform/chrome-extension`), a WordPress plugin (`/en/platform/wordpress`), an MCP server for AI assistants (`/en/platform/mcp`, remote URL https://app.anotherseoguru.com/mcp, or `npx -y mcp-remote https://app.anotherseoguru.com/mcp` for local-only clients) and the iPhone app; hub: `/en/platform/integrations`. Greek versions under `/el/platform/...`.',
   );
   lines.push('');
   lines.push('---');

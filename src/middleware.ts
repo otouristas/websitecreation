@@ -83,6 +83,26 @@ export function middleware(request: NextRequest) {
     return NextResponse.rewrite(url);
   }
 
+  // Markdown twin of any other page: /en.md, /el/platform/mcp.md -> rendered page as Markdown.
+  const pageMd = /^\/(en|el)((?:\/[a-z0-9-]+)*)\.md$/.exec(pathname);
+  if (pageMd) {
+    const url = request.nextUrl.clone();
+    url.pathname = `/api/page-md/${pageMd[1]}${pageMd[2]}`;
+    return NextResponse.rewrite(url);
+  }
+
+  // Same twin by content negotiation, for agents that send Accept: text/markdown.
+  const accept = request.headers.get('accept') ?? '';
+  if (
+    accept.includes('text/markdown') &&
+    !request.headers.get('x-asg-markdown') &&
+    /^\/(en|el)((?:\/[a-z0-9-]+)*)\/?$/.test(pathname)
+  ) {
+    const url = request.nextUrl.clone();
+    url.pathname = `/api/page-md${pathname.replace(/\/$/, '')}`;
+    return NextResponse.rewrite(url);
+  }
+
   // The glossary used to be one page with ?term=<id>; each term has its own URL now.
   const glossary = /^\/(en|el)\/glossary\/?$/.exec(pathname);
   const termParam = request.nextUrl.searchParams.get('term');
