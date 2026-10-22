@@ -1,7 +1,8 @@
 import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { COMPARE_PAGES, getComparePageBySlug } from "@/data/compare-pages";
+import { COMPARE_HUB_EL, COMPARE_PAGES_EL } from "@/data/compare-pages-el";
+import { COMPARE_PAGES, getComparePage } from "@/data/compare-pages";
 import { isValidLocale, localizedPath, type SiteLocale } from "@/lib/i18n/locale";
 import { buildMetadata } from "@/lib/seo";
 import { Check, Minus } from "lucide-react";
@@ -23,38 +24,43 @@ export function generateStaticParams(): { slug: string }[] {
 export async function generateMetadata({ params }: PageProps) {
   const { locale, slug } = await params;
   if (!isValidLocale(locale)) return {};
-  const c = getComparePageBySlug(slug);
+  const c = getComparePage(slug, locale);
   if (!c) {
     return {};
   }
+  const el = locale === "el";
   return buildMetadata({
     title: c.seoTitle,
     description: c.summary,
-    path: localizedPath(locale as SiteLocale, `/compare/${c.slug}`),
-    canonicalPath: localizedPath("en", `/compare/${c.slug}`),
-    primaryKeyword: `SEO software vs ${c.competitorName}`,
+    path: localizedPath(locale, `/compare/${c.slug}`),
+    canonicalPath: localizedPath(locale, `/compare/${c.slug}`),
+    hreflangPath: `/compare/${c.slug}`,
+    primaryKeyword: el ? `σύγκριση με ${c.competitorName}` : `SEO software vs ${c.competitorName}`,
   });
 }
 
 export default async function ComparePage({ params }: PageProps) {
   const { locale, slug } = await params;
   if (!isValidLocale(locale)) notFound();
-  const c = getComparePageBySlug(slug);
+  const siteLocale = locale as SiteLocale;
+  const el = siteLocale === "el";
+  const c = getComparePage(slug, siteLocale);
   if (!c) {
     notFound();
   }
-  const lp = (path: string) => localizedPath(locale as SiteLocale, path);
+  const greek = el ? COMPARE_PAGES_EL[c.slug] : undefined;
+  const lp = (path: string) => localizedPath(siteLocale, path);
   // The comparison pages sat one level under a hub that did not exist, with a
   // hand-rolled two-item trail and no BreadcrumbList at all.
   const breadcrumbItems = [
-    { name: "Home", url: lp("/") },
-    { name: "Compare", url: lp("/compare") },
+    { name: el ? "Αρχική" : "Home", url: lp("/") },
+    { name: el ? COMPARE_HUB_EL.crumb : "Compare", url: lp("/compare") },
     { name: c.competitorName, url: lp(`/compare/${c.slug}`) },
   ];
 
   return (
     <>
-      <Header locale={locale as SiteLocale} />
+      <Header locale={siteLocale} />
       <main className="blueprint-grid relative z-0 overflow-x-clip">
         {/*
           Our own product, declared. The page compares two tools and said
@@ -73,7 +79,7 @@ export default async function ComparePage({ params }: PageProps) {
             generateSoftwareApplicationSchema({
               name: "AnotherSEOGuru",
               description: c.summary,
-              url: `${BASE_URL}${localizedPath("en", "/platform")}`,
+              url: `${BASE_URL}${localizedPath(siteLocale, "/platform")}`,
             }),
           )}
         />
@@ -81,18 +87,18 @@ export default async function ComparePage({ params }: PageProps) {
           pill={
             <div className="flex flex-col items-start gap-4">
               <KitBreadcrumbs align="left" items={breadcrumbItems} />
-              <AnnouncePill wrap href={lp("/compare")} tag="Compare" text="All comparisons" />
+              <AnnouncePill wrap href={lp("/compare")} tag={el ? "Σύγκριση" : "Compare"} text={el ? COMPARE_HUB_EL.all : "All comparisons"} />
             </div>
           }
-          title={accentEnd(c.headline, c.competitorName.split(" ").length)}
+          title={accentEnd(c.headline, greek?.accentWords ?? c.competitorName.split(" ").length)}
           titleClassName="text-[1.65rem] min-[400px]:text-[1.9rem] sm:text-[2.35rem] lg:text-[2.75rem]"
           lead={c.summary}
-          actions={<SoftwareCtas locale="en" align="left" source={`compare-${c.slug}`} />}
-          trust={<TrustLine align="left" items={softwareTrust("en")} />}
+          actions={<SoftwareCtas locale={siteLocale} align="left" source={`compare-${c.slug}`} />}
+          trust={<TrustLine align="left" items={softwareTrust(siteLocale)} />}
           panel={
             <div className="grid min-w-0 gap-4">
               <div className="rounded-[22px] border border-primary/35 bg-primary/5 p-6">
-                <h2 className="font-display text-xl font-semibold tracking-[-0.02em] text-foreground">When AnotherSEOGuru fits</h2>
+                <h2 className="font-display text-xl font-semibold tracking-[-0.02em] text-foreground">{el ? COMPARE_HUB_EL.fitsUs : "When AnotherSEOGuru fits"}</h2>
                 <ul className="mt-5 space-y-3 text-[15px] leading-relaxed text-muted-foreground">
                   {c.whenChooseUs.map((x) => (
                     <li key={x} className="flex gap-2.5">
@@ -103,7 +109,7 @@ export default async function ComparePage({ params }: PageProps) {
                 </ul>
               </div>
               <div className="rounded-[22px] border border-hairline bg-surface/80 p-6">
-                <h2 className="font-display text-xl font-semibold tracking-[-0.02em] text-foreground">When {c.competitorName} may fit</h2>
+                <h2 className="font-display text-xl font-semibold tracking-[-0.02em] text-foreground">{el ? COMPARE_HUB_EL.fitsThem(c.competitorName) : `When ${c.competitorName} may fit`}</h2>
                 <ul className="mt-5 space-y-3 text-[15px] leading-relaxed text-muted-foreground">
                   {c.whenChooseThem.map((x) => (
                     <li key={x} className="flex gap-2.5">
@@ -122,19 +128,19 @@ export default async function ComparePage({ params }: PageProps) {
             <ChipLinks
               align="left"
               items={[
-                { href: lp("/platform/features"), label: "Browse features" },
-                { href: lp("/contact"), label: "Talk to agency" },
-                { href: lp("/compare"), label: "All comparisons" },
+                { href: lp("/platform/features"), label: el ? COMPARE_HUB_EL.features : "Browse features" },
+                { href: lp("/contact"), label: el ? COMPARE_HUB_EL.agency : "Talk to agency" },
+                { href: lp("/compare"), label: el ? COMPARE_HUB_EL.all : "All comparisons" },
               ]}
             />
           </div>
         </section>
 
         <div data-shot="cta">
-          <CtaBand locale="en" source={`compare-${c.slug}-band`} />
+          <CtaBand locale={siteLocale} source={`compare-${c.slug}-band`} />
         </div>
       </main>
-      <Footer locale={locale as SiteLocale} />
+      <Footer locale={siteLocale} />
     </>
   );
 }

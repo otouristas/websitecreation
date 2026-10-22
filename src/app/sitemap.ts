@@ -86,7 +86,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/contact', priority: 0.8, changeFrequency: 'monthly' as const },
     { path: '/pricing', priority: 0.8, changeFrequency: 'monthly' as const },
     { path: '/get-started', priority: 0.9, changeFrequency: 'monthly' as const },
-    // The live GEO/AEO check. Bilingual, unlike /tools, which redirects to /en.
+    // The live GEO/AEO check. Bilingual, same as /tools, /compare and /resources.
     { path: '/ai-visibility-check', priority: 0.86 },
     { path: '/locations', priority: 0.8 },
     { path: '/privacy', priority: 0.3, changeFrequency: 'yearly' as const },
@@ -119,14 +119,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ]),
   ];
 
-  // Tools / resources canonicalize to EN, do not list /el duplicates.
-  const enOnlyPaths = [
+  // Tools, resources and compare keep the English slug in both locales.
+  // Tool intent pages stay noindex,follow; they are listed the same way the
+  // English URLs already were.
+  const bilingualProductPaths = [
     { path: '/resources', priority: 0.88 },
-    // The two framework pages under /resources. They own the definitional
-    // GEO/AEO queries that seven blog posts currently answer in parallel.
     { path: '/resources/search-optimization-layers', priority: 0.86, changeFrequency: 'monthly' as const },
     { path: '/resources/ai-search-page-anatomy', priority: 0.86, changeFrequency: 'monthly' as const },
-    // The Search Console hub: pillars, supporting articles and the free tool.
     ...RESOURCE_ARTICLES.map((a) => ({
       path: `/resources/${a.slug}`,
       priority: a.kind === 'pillar' ? 0.86 : 0.8,
@@ -134,14 +133,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
     { path: `/resources/${OPPORTUNITY_FINDER.slug}`, priority: 0.86, changeFrequency: 'monthly' as const },
     { path: '/tools', priority: 0.84 },
-    // Live tool landings. /el/tools 301s to /en/tools, so only the English URLs are listed.
     ...PLATFORM_TOOLS.map((tool) => ({
       path: `/tools/${tool.slug}`,
       priority: 0.72,
       changeFrequency: 'monthly' as const,
     })),
-    // The hub the three /compare/[slug] pages hang off. It did not exist until
-    // now, which is why /el/compare's redirect landed on a 404.
     { path: '/compare', priority: 0.86, changeFrequency: 'monthly' as const },
   ];
 
@@ -149,8 +145,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...bilingualPaths.flatMap(({ path, priority, changeFrequency }) =>
       forBothLocales(path, { priority, changeFrequency }),
     ),
-    ...enOnlyPaths.flatMap(({ path, priority, changeFrequency }) =>
-      forEnOnly(path, { priority, changeFrequency }),
+    ...bilingualProductPaths.flatMap(({ path, priority, changeFrequency }) =>
+      forBothLocales(path, { priority, changeFrequency }),
     ),
   ];
 
@@ -194,7 +190,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   const comparePages = COMPARE_PAGES.flatMap((c) =>
-    forEnOnly(`/compare/${c.slug}`, { priority: 0.82, changeFrequency: 'monthly' }),
+    forBothLocales(`/compare/${c.slug}`, { priority: 0.82, changeFrequency: 'monthly' }),
   );
 
 

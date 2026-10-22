@@ -3,7 +3,8 @@ import { categoryTitle } from "@/components/glossary/category-labels";
 import { BASE_URL } from "@/lib/seo/schema";
 import type { SiteLocale } from "@/lib/i18n/locale";
 import { allTerms, findTerm, glossaryPath, termCopy } from "@/lib/docs/glossary";
-import { OPPORTUNITY_FINDER, OPPORTUNITY_FINDER_BLOCKS, RESOURCE_ARTICLES, findResource, resourcePath } from "@/data/resources";
+import { EL_FINDER, EL_FINDER_BLOCKS } from "@/data/resources/el/opportunity";
+import { OPPORTUNITY_FINDER, OPPORTUNITY_FINDER_BLOCKS, articlesFor, findResource, resourcePath } from "@/data/resources";
 
 /**
  * Plain Markdown for every docs page, served at the page URL plus ".md"
@@ -134,13 +135,15 @@ export function markdownFor(segments: ReadonlyArray<string>): string | null {
     return `${header(found.article.title, abs(helpPath(locale, a, b)), found.article.description)}\n\n${blocksToMarkdown(found.article.body, locale)}`;
   }
   if (section === "glossary") return a ? termMarkdown(locale, a) : glossaryMarkdown(locale);
-  // Resources are English-only; /el/resources redirects before reaching here.
-  if (section === "resources" && locale === "en" && a && !b) {
+  if (section === "resources" && a && !b) {
     if (a === OPPORTUNITY_FINDER.slug) {
-      return `${header(OPPORTUNITY_FINDER.title, abs(resourcePath(a)), OPPORTUNITY_FINDER.description)}\n\n${blocksToMarkdown(OPPORTUNITY_FINDER_BLOCKS, "en")}`;
+      const title = locale === "el" ? EL_FINDER.title : OPPORTUNITY_FINDER.title;
+      const description = locale === "el" ? EL_FINDER.description : OPPORTUNITY_FINDER.description;
+      const blocks = locale === "el" ? EL_FINDER_BLOCKS : OPPORTUNITY_FINDER_BLOCKS;
+      return `${header(title, abs(resourcePath(a, locale)), description)}\n\n${blocksToMarkdown(blocks, locale)}`;
     }
-    const article = findResource(a);
-    if (article) return `${header(article.title, abs(resourcePath(a)), article.description)}\n\n${blocksToMarkdown(article.body, "en")}`;
+    const article = findResource(a, locale);
+    if (article) return `${header(article.title, abs(resourcePath(a, locale)), article.description)}\n\n${blocksToMarkdown(article.body, locale)}`;
   }
   return null;
 }
@@ -156,7 +159,9 @@ export function markdownPaths(): string[][] {
     }
     for (const { term } of allTerms()) out.push([locale, "glossary", term.id]);
   }
-  for (const a of RESOURCE_ARTICLES) out.push(["en", "resources", a.slug]);
-  out.push(["en", "resources", OPPORTUNITY_FINDER.slug]);
+  for (const locale of ["en", "el"] as const) {
+    for (const a of articlesFor(locale)) out.push([locale, "resources", a.slug]);
+    out.push([locale, "resources", OPPORTUNITY_FINDER.slug]);
+  }
   return out;
 }

@@ -19,7 +19,7 @@ export function Inline({ text, locale }: { readonly text: string; readonly local
         if (part.startsWith("**")) return <strong key={i} className="font-semibold text-foreground">{part.slice(2, -2)}</strong>;
         if (part.startsWith("`")) {
           return (
-            <code key={i} className="rounded-md border border-hairline bg-surface px-1.5 py-0.5 font-mono text-[0.84em] text-foreground">
+            <code key={i} className="break-words rounded-md border border-hairline bg-surface px-1.5 py-0.5 font-mono text-[0.84em] text-foreground">
               {part.slice(1, -1)}
             </code>
           );
@@ -173,7 +173,7 @@ export function ArticleBody({ blocks, locale, nested = false }: { readonly block
             return (
               <ul key={i} className="mt-5 grid list-disc gap-2.5 pl-6 marker:text-muted-foreground">
                 {b.items.map((item, j) => (
-                  <li key={j}>
+                  <li key={j} className="min-w-0">
                     <Inline text={item} locale={locale} />
                   </li>
                 ))}

@@ -30,8 +30,9 @@ function localizeHref(href: string, locale: SiteLocale): string {
   const hasLocale = firstSeg === "en" || firstSeg === "el";
   const bare = hasLocale ? href.slice(3) || "/" : href;
   const barePath = bare.split(/[?#]/)[0];
-  // Platform/tools/resources/compare exist only in English - including when the
-  // author already typed an /el prefix, which then 308'd.
+  // Sections still listed as English-only stay on /en, even if the author
+  // already typed an /el prefix. Tools, resources and compare are bilingual
+  // and keep the English slug, so an /el/tools link stays Greek.
   if (isEnOnlySection(barePath)) return `/en${bare}`;
   if (hasLocale) return href;
   // A post exists in exactly one locale. Prefixing a bare /blog/<slug> with the

@@ -4,8 +4,32 @@ import { useMemo, useRef, useState } from "react";
 import { Download, FileUp, Lock, Play } from "lucide-react";
 import { cn } from "@/lib/cn";
 import { trackEvent } from "@/lib/analytics";
+import type { SiteLocale } from "@/lib/i18n/locale";
 import { analyze, type Analysis, type Opportunity, type QueryRow } from "@/lib/opportunity-finder/engine";
 import { parseSearchConsoleExport } from "@/lib/opportunity-finder/parse";
+
+const RANGE_EL: Readonly<Record<number, string>> = {
+  7: "Τελευταίες 7 ημέρες",
+  28: "Τελευταίες 28 ημέρες",
+  90: "Τελευταίοι 3 μήνες",
+  180: "Τελευταίοι 6 μήνες",
+  365: "Τελευταίοι 12 μήνες",
+  487: "Τελευταίοι 16 μήνες",
+};
+
+const ERROR_EL: Readonly<Record<string, string>> = {
+  "The file needs a header row and at least one row of data.": "Το αρχείο χρειάζεται γραμμή κεφαλίδων και τουλάχιστον μία γραμμή δεδομένων.",
+  "Expected five columns: query (or page), clicks, impressions, CTR and position. Export from Search Console → Performance → Export → CSV and upload Queries.csv.":
+    "Χρειάζονται πέντε στήλες: αναζήτηση (ή σελίδα), κλικ, impressions, CTR και θέση. Εξαγωγή από Search Console, Performance, Export, CSV, και ανεβάστε το Queries.csv.",
+  "No rows could be read. Check that the file is the Queries.csv from a Search Console export.":
+    "Δεν διαβάστηκε καμία γραμμή. Ελέγξτε ότι το αρχείο είναι το Queries.csv από εξαγωγή του Search Console.",
+};
+
+const ACTION_EL: Readonly<Record<string, string>> = {
+  "Move it onto page 1": "Ανεβάστε το στην πρώτη σελίδα",
+  "Push it into the top 3": "Σπρώξτε το στις 3 πρώτες θέσεις",
+  "Rewrite the title and description": "Ξαναγράψτε τον τίτλο και την περιγραφή",
+};
 
 /** Search Console's own range presets, in days. */
 const RANGES = [
@@ -72,7 +96,11 @@ function toCsv(a: Analysis, days: number): string {
 
 type Filter = "all" | "striking_distance" | "ctr_gap";
 
-export function OpportunityFinder() {
+export function OpportunityFinder({ locale = "en" }: { readonly locale?: SiteLocale }) {
+  const el = locale === "el";
+  const rangeLabel = (days: number, fallback: string) => (el ? RANGE_EL[days] ?? fallback : fallback);
+  const showError = (message: string) => (el ? ERROR_EL[message] ?? message : message);
+  const actionLabel = (action: string) => (el ? ACTION_EL[action] ?? action : action);
   const [text, setText] = useState("");
   const [fileName, setFileName] = useState<string | null>(null);
   const [days, setDays] = useState<number>(90);
@@ -141,10 +169,18 @@ export function OpportunityFinder() {
         <div className="grid gap-5 lg:grid-cols-[1.2fr_1fr]">
           <div>
             <label className="block text-[13.5px] font-semibold text-foreground" htmlFor="of-file">
-              1. Your Search Console export
+              {el ? "1. Η εξαγωγή από το Search Console" : "1. Your Search Console export"}
             </label>
             <p className="mt-1 text-[13px] leading-relaxed text-muted-foreground">
-              Performance → Search results → Export → Download CSV, then pick <code className="font-mono">Queries.csv</code> from the zip. Or paste the Queries table from Google Sheets.
+              {el ? (
+                <>
+                  Performance, Search results, Export, Download CSV, και διαλέξτε το <code className="font-mono">Queries.csv</code> από το zip. Ή επικολλήστε τον πίνακα Queries από τα Google Sheets.
+                </>
+              ) : (
+                <>
+                  Performance → Search results → Export → Download CSV, then pick <code className="font-mono">Queries.csv</code> from the zip. Or paste the Queries table from Google Sheets.
+                </>
+              )}
             </p>
             <div className="mt-3 flex flex-wrap items-center gap-3">
               <input
@@ -161,12 +197,12 @@ export function OpportunityFinder() {
                 className="inline-flex h-10 items-center gap-2 rounded-xl border border-hairline px-4 font-display text-[14px] font-medium text-foreground hover:border-primary/50"
               >
                 <FileUp className="size-4" aria-hidden />
-                {fileName ? "Choose another file" : "Choose Queries.csv"}
+                {fileName ? (el ? "Άλλο αρχείο" : "Choose another file") : el ? "Επιλέξτε Queries.csv" : "Choose Queries.csv"}
               </button>
               {fileName ? <span className="truncate text-[13px] text-muted-foreground">{fileName}</span> : null}
             </div>
             <textarea
-              aria-label="Or paste the Queries table"
+              aria-label={el ? "Ή επικολλήστε τον πίνακα Queries" : "Or paste the Queries table"}
               value={text}
               onChange={(e) => setText(e.target.value)}
               placeholder={"Top queries,Clicks,Impressions,CTR,Position\nexample query,120,4800,2.5%,6.2"}
@@ -177,19 +213,19 @@ export function OpportunityFinder() {
           <div className="grid content-start gap-4">
             <div>
               <label className="block text-[13.5px] font-semibold text-foreground" htmlFor="of-range">
-                2. Date range of the export
+                {el ? "2. Διάστημα της εξαγωγής" : "2. Date range of the export"}
               </label>
               <select id="of-range" value={days} onChange={(e) => setDays(Number(e.target.value))} className={cn(field, "mt-2")}>
                 {RANGES.map((r) => (
                   <option key={r.days} value={r.days}>
-                    {r.label}
+                    {rangeLabel(r.days, r.label)}
                   </option>
                 ))}
               </select>
             </div>
             <div>
               <label className="block text-[13.5px] font-semibold text-foreground" htmlFor="of-brand">
-                3. Brand names to exclude
+                {el ? "3. Ονόματα επωνυμίας προς εξαίρεση" : "3. Brand names to exclude"}
               </label>
               <input
                 id="of-brand"
@@ -198,7 +234,7 @@ export function OpportunityFinder() {
                 placeholder="acme, acme books, akme"
                 className={cn(field, "mt-2")}
               />
-              <p className="mt-1 text-[12.5px] text-muted-foreground">Comma-separated. Brand queries click at rates no curve predicts.</p>
+              <p className="mt-1 text-[12.5px] text-muted-foreground">{el ? "Χωρισμένα με κόμμα. Οι αναζητήσεις επωνυμίας έχουν CTR που καμία καμπύλη δεν προβλέπει." : "Comma-separated. Brand queries click at rates no curve predicts."}</p>
             </div>
             <div className="flex flex-col gap-2 sm:flex-row">
               <button
@@ -208,27 +244,27 @@ export function OpportunityFinder() {
                 className="asg-primary-action inline-flex h-10 items-center justify-center gap-1.5 rounded-xl px-4 font-display text-[14px] font-semibold text-primary-foreground disabled:cursor-not-allowed disabled:opacity-50"
               >
                 <Play className="size-3.5" aria-hidden />
-                Find opportunities
+                {el ? "Βρείτε ευκαιρίες" : "Find opportunities"}
               </button>
               <button
                 type="button"
                 onClick={() => run("sample")}
                 className="inline-flex h-10 items-center justify-center rounded-xl border border-hairline px-4 font-display text-[14px] font-medium text-foreground hover:border-primary/50"
               >
-                Try with sample data
+                {el ? "Δοκιμή με δείγμα" : "Try with sample data"}
               </button>
             </div>
           </div>
         </div>
         <p className="mt-5 flex items-center gap-2 text-[12.5px] text-muted-foreground">
           <Lock className="size-3.5 shrink-0" aria-hidden />
-          Runs entirely in your browser. Your export is never uploaded or stored.
+          {el ? "Τρέχει εξ ολοκλήρου στον browser σας. Η εξαγωγή δεν ανεβαίνει ούτε αποθηκεύεται." : "Runs entirely in your browser. Your export is never uploaded or stored."}
         </p>
       </div>
 
       {error ? (
         <p role="alert" className="mt-5 rounded-xl border border-warning bg-[var(--asg-warning-surface)] p-4 text-[14px] text-foreground">
-          {error}
+          {showError(error)}
         </p>
       ) : null}
 
@@ -236,15 +272,25 @@ export function OpportunityFinder() {
         <div className="mt-8" aria-live="polite">
           {result?.sample ? (
             <p className="mb-4 text-[13.5px] text-muted-foreground">
-              Sample data: a fictional bike shop, last 3 months, brand “velora” excluded.
+              {el ? "Δείγμα δεδομένων: φανταστικό κατάστημα ποδηλάτων, τελευταίοι 3 μήνες, επωνυμία «velora» εκτός." : "Sample data: a fictional bike shop, last 3 months, brand “velora” excluded."}
             </p>
           ) : null}
           <dl className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { k: "Queries read", v: fmt(a.rows), sub: `${fmt(a.brandRows)} brand queries excluded${result && result.skipped ? `, ${fmt(result.skipped)} rows skipped` : ""}` },
-              { k: "Clicks today", v: `${fmt(a.clicksPerMonth)}/mo`, sub: "From the rows in your export" },
-              { k: "Opportunities", v: fmt(a.opportunities.length), sub: `${strikingCount} striking distance, ${ctrCount} low CTR` },
-              { k: "Own CTR curve", v: `${a.learnedBuckets}/20`, sub: "Positions learned from your data; the rest use the baseline" },
+              {
+                k: el ? "Αναζητήσεις" : "Queries read",
+                v: fmt(a.rows),
+                sub: el
+                  ? `${fmt(a.brandRows)} αναζητήσεις επωνυμίας εκτός${result && result.skipped ? `, ${fmt(result.skipped)} γραμμές παραλείφθηκαν` : ""}`
+                  : `${fmt(a.brandRows)} brand queries excluded${result && result.skipped ? `, ${fmt(result.skipped)} rows skipped` : ""}`,
+              },
+              { k: el ? "Κλικ σήμερα" : "Clicks today", v: el ? `${fmt(a.clicksPerMonth)}/μήνα` : `${fmt(a.clicksPerMonth)}/mo`, sub: el ? "Από τις γραμμές της εξαγωγής" : "From the rows in your export" },
+              {
+                k: el ? "Ευκαιρίες" : "Opportunities",
+                v: fmt(a.opportunities.length),
+                sub: el ? `${strikingCount} κοντά στην κορυφή, ${ctrCount} χαμηλό CTR` : `${strikingCount} striking distance, ${ctrCount} low CTR`,
+              },
+              { k: el ? "Δική σας καμπύλη CTR" : "Own CTR curve", v: `${a.learnedBuckets}/20`, sub: el ? "Θέσεις που μαθαίνονται από τα δεδομένα σας. Οι υπόλοιπες μένουν στη βασική καμπύλη." : "Positions learned from your data; the rest use the baseline" },
             ].map((s) => (
               <div key={s.k} className="rounded-2xl border border-hairline bg-surface p-4">
                 <dt className="text-[12.5px] text-muted-foreground">{s.k}</dt>
@@ -255,12 +301,12 @@ export function OpportunityFinder() {
           </dl>
 
           <div className="mt-4 rounded-2xl border border-primary/30 bg-primary/[0.05] p-5">
-            <p className="font-display text-[15.5px] font-semibold text-foreground">Click forecast, extra clicks a month</p>
+            <p className="font-display text-[15.5px] font-semibold text-foreground">{el ? "Πρόβλεψη κλικ, επιπλέον κλικ τον μήνα" : "Click forecast, extra clicks a month"}</p>
             <div className="mt-3 grid gap-3 sm:grid-cols-3">
               {[
-                { k: "Conservative", v: a.forecast.conservative, sub: "Top 10 fixes, weighted by confidence" },
-                { k: "Expected", v: a.forecast.expected, sub: "All fixes, weighted by confidence" },
-                { k: "Ceiling", v: a.forecast.ceiling, sub: "All fixes fully achieved" },
+                { k: el ? "Συντηρητική" : "Conservative", v: a.forecast.conservative, sub: el ? "Οι 10 πρώτες διορθώσεις, με βάρος την εμπιστοσύνη" : "Top 10 fixes, weighted by confidence" },
+                { k: el ? "Αναμενόμενη" : "Expected", v: a.forecast.expected, sub: el ? "Όλες οι διορθώσεις, με βάρος την εμπιστοσύνη" : "All fixes, weighted by confidence" },
+                { k: el ? "Ταβάνι" : "Ceiling", v: a.forecast.ceiling, sub: el ? "Όλες οι διορθώσεις πλήρως" : "All fixes fully achieved" },
               ].map((s) => (
                 <div key={s.k}>
                   <p className="text-[12.5px] text-muted-foreground">{s.k}</p>
@@ -270,22 +316,22 @@ export function OpportunityFinder() {
               ))}
             </div>
             <p className="mt-3 text-[12.5px] leading-relaxed text-muted-foreground">
-              Estimates of the size of the prize, not promises. Changes usually take two to six weeks to show after Google recrawls.
+              {el ? "Εκτιμήσεις για το μέγεθος της ευκαιρίας, όχι υποσχέσεις. Οι αλλαγές φαίνονται συνήθως σε δύο έως έξι εβδομάδες, αφού η Google ξανακάνει crawl." : "Estimates of the size of the prize, not promises. Changes usually take two to six weeks to show after Google recrawls."}
             </p>
           </div>
 
           {a.opportunities.length === 0 ? (
             <p className="mt-6 text-[14px] text-muted-foreground">
-              No query met the thresholds. Try a longer date range, or check that brand names are not excluding everything.
+              {el ? "Καμία αναζήτηση δεν πέρασε τα όρια. Δοκιμάστε μεγαλύτερο διάστημα ή ελέγξτε μήπως τα ονόματα επωνυμίας αποκλείουν τα πάντα." : "No query met the thresholds. Try a longer date range, or check that brand names are not excluding everything."}
             </p>
           ) : (
             <>
               <div className="mt-6 flex flex-wrap items-center gap-2">
                 {(
                   [
-                    ["all", `All (${a.opportunities.length})`],
-                    ["striking_distance", `Striking distance (${strikingCount})`],
-                    ["ctr_gap", `Low CTR (${ctrCount})`],
+                    ["all", el ? `Όλες (${a.opportunities.length})` : `All (${a.opportunities.length})`],
+                    ["striking_distance", el ? `Κοντά στην κορυφή (${strikingCount})` : `Striking distance (${strikingCount})`],
+                    ["ctr_gap", el ? `Χαμηλό CTR (${ctrCount})` : `Low CTR (${ctrCount})`],
                   ] as const
                 ).map(([id, label]) => (
                   <button
@@ -307,19 +353,19 @@ export function OpportunityFinder() {
                   className="ml-auto inline-flex h-9 items-center gap-1.5 rounded-full border border-hairline px-3.5 text-[13px] font-medium text-foreground hover:border-primary/50"
                 >
                   <Download className="size-3.5" aria-hidden />
-                  Download CSV
+                  {el ? "Λήψη CSV" : "Download CSV"}
                 </button>
               </div>
               <div className="mt-3 overflow-x-auto rounded-2xl border border-hairline">
                 <table className="w-full min-w-[44rem] text-left text-[13.5px]">
                   <thead className="bg-surface text-[12px] uppercase tracking-wider text-muted-foreground">
                     <tr>
-                      <th className="px-4 py-3 font-medium">Query and action</th>
-                      <th className="px-3 py-3 text-right font-medium">Position</th>
-                      <th className="px-3 py-3 text-right font-medium">Impr./mo</th>
+                      <th className="px-4 py-3 font-medium">{el ? "Αναζήτηση και ενέργεια" : "Query and action"}</th>
+                      <th className="px-3 py-3 text-right font-medium">{el ? "Θέση" : "Position"}</th>
+                      <th className="px-3 py-3 text-right font-medium">{el ? "Impr./μήνα" : "Impr./mo"}</th>
                       <th className="px-3 py-3 text-right font-medium">CTR</th>
-                      <th className="px-3 py-3 text-right font-medium">Expected</th>
-                      <th className="px-4 py-3 text-right font-medium">Extra clicks/mo</th>
+                      <th className="px-3 py-3 text-right font-medium">{el ? "Αναμενόμενο" : "Expected"}</th>
+                      <th className="px-4 py-3 text-right font-medium">{el ? "Επιπλέον κλικ/μήνα" : "Extra clicks/mo"}</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -329,10 +375,10 @@ export function OpportunityFinder() {
                           <span className="font-medium text-foreground">{o.query}</span>
                           <span className="mt-0.5 block text-[12.5px] text-muted-foreground">
                             <span className={o.kind === "striking_distance" ? "text-primary-glow" : "text-signal"}>
-                              {o.kind === "striking_distance" ? "Striking distance" : "Low CTR"}
+                              {o.kind === "striking_distance" ? (el ? "Κοντά στην κορυφή" : "Striking distance") : el ? "Χαμηλό CTR" : "Low CTR"}
                             </span>
                             {" · "}
-                            {o.action}
+                            {actionLabel(o.action)}
                           </span>
                         </td>
                         <td className="px-3 py-3 text-right tabular-nums">{o.row.position.toFixed(1)}</td>
@@ -340,7 +386,7 @@ export function OpportunityFinder() {
                         <td className="px-3 py-3 text-right tabular-nums">{pct(o.row.ctr)}</td>
                         <td className="px-3 py-3 text-right tabular-nums text-muted-foreground">
                           {pct(o.expectedCtr)}
-                          {o.targetPosition ? <span className="block text-[11.5px]">at #{o.targetPosition}</span> : null}
+                          {o.targetPosition ? <span className="block text-[11.5px]">{el ? `στη θέση ${o.targetPosition}` : `at #${o.targetPosition}`}</span> : null}
                         </td>
                         <td className="px-4 py-3 text-right font-semibold tabular-nums text-foreground">+{fmt(o.impact)}</td>
                       </tr>
@@ -349,7 +395,7 @@ export function OpportunityFinder() {
                 </table>
               </div>
               {a.opportunities.length > 50 ? (
-                <p className="mt-2 text-[12.5px] text-muted-foreground">Showing the top 50. The CSV has all {fmt(a.opportunities.length)}.</p>
+                <p className="mt-2 text-[12.5px] text-muted-foreground">{el ? `Φαίνονται οι 50 πρώτες. Το CSV έχει και τις ${fmt(a.opportunities.length)}.` : `Showing the top 50. The CSV has all ${fmt(a.opportunities.length)}.`}</p>
               ) : null}
             </>
           )}

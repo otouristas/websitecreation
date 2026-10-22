@@ -1,3 +1,5 @@
+import { COMPARE_PAGES_EL } from "./compare-pages-el";
+
 export interface ComparePageDefinition {
   readonly slug: string;
   readonly competitorName: string;
@@ -65,4 +67,21 @@ export const COMPARE_PAGES: readonly ComparePageDefinition[] = [
 
 export function getComparePageBySlug(slug: string): ComparePageDefinition | undefined {
   return COMPARE_PAGES.find((c) => c.slug === slug);
+}
+
+/** English page, or the Greek overlay when locale is el. Missing Greek is undefined. */
+export function getComparePage(slug: string, locale: "en" | "el" = "en"): ComparePageDefinition | undefined {
+  const page = getComparePageBySlug(slug);
+  if (!page || locale !== "el") return page;
+  const el = COMPARE_PAGES_EL[slug];
+  if (!el) return undefined;
+  return {
+    ...page,
+    competitorName: el.competitorName,
+    headline: el.headline,
+    seoTitle: el.seoTitle,
+    summary: el.summary,
+    whenChooseUs: el.whenChooseUs,
+    whenChooseThem: el.whenChooseThem,
+  };
 }

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { SEARCH_LAYERS, LAYER_FOUNDATION, type SearchLayer } from '@/data/search-layers';
+import { LAYER_FOUNDATION_EL, SEARCH_LAYERS_EL } from '@/data/search-layers-el';
 import { Tick } from '@/components/landing/primitives';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 import { cn } from '@/lib/cn';
@@ -17,6 +18,7 @@ import { cn } from '@/lib/cn';
  */
 
 function LayerRow({ layer, index, locale }: { layer: SearchLayer; index: number; locale: SiteLocale }) {
+  const el = locale === 'el';
   const n = String(index + 1).padStart(2, '0');
 
   return (
@@ -50,7 +52,7 @@ function LayerRow({ layer, index, locale }: { layer: SearchLayer; index: number;
             </h2>
             <p className="mt-1.5 text-sm font-medium text-signature">{layer.name}</p>
             <p className="mt-4 font-mono text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
-              Goal
+              {el ? 'Στόχος' : 'Goal'}
             </p>
             <p className="mt-1 text-sm leading-relaxed text-foreground">{layer.goal}</p>
             <Link
@@ -87,7 +89,7 @@ function LayerRow({ layer, index, locale }: { layer: SearchLayer; index: number;
           <div className="lg:col-span-3">
             <div className="h-full rounded-xl border border-signature/30 bg-[color-mix(in_oklab,var(--signature)_10%,transparent)] p-4">
               <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-signature">
-                What you measure
+                {el ? 'Τι μετράτε' : 'What you measure'}
               </p>
               <ul className="mt-3 space-y-2">
                 {layer.metrics.map((metric) => (
@@ -102,7 +104,7 @@ function LayerRow({ layer, index, locale }: { layer: SearchLayer; index: number;
         </div>
 
         <p className="mt-6 border-t border-hairline pt-4 text-sm leading-relaxed text-muted-foreground">
-          <span className="font-medium text-foreground">Why it exists. </span>
+          <span className="font-medium text-foreground">{el ? 'Γιατί υπάρχει. ' : 'Why it exists. '}</span>
           {layer.why}
         </p>
       </article>
@@ -117,10 +119,13 @@ export function SearchLayersStack({
   locale: SiteLocale;
   className?: string;
 }) {
+  const el = locale === 'el';
+  const layers = el ? SEARCH_LAYERS_EL : SEARCH_LAYERS;
+  const foundation = el ? LAYER_FOUNDATION_EL : LAYER_FOUNDATION;
   return (
     <div className={cn('relative', className)}>
       <ol className="space-y-4">
-        {SEARCH_LAYERS.map((layer, i) => (
+        {layers.map((layer, i) => (
           <LayerRow key={layer.abbr} layer={layer} index={i} locale={locale} />
         ))}
       </ol>
@@ -129,10 +134,10 @@ export function SearchLayersStack({
       <div className="mt-4 flex flex-col gap-4 rounded-2xl border border-hairline bg-surface/70 p-6 md:ml-10 md:flex-row md:items-center md:justify-between md:p-7">
         <div>
           <h2 className="font-display text-lg font-semibold tracking-[-0.02em] text-foreground">
-            {LAYER_FOUNDATION.title}
+            {foundation.title}
           </h2>
           <ul className="mt-3 flex flex-wrap gap-x-3 gap-y-2">
-            {LAYER_FOUNDATION.items.map((item, i) => (
+            {foundation.items.map((item, i) => (
               <li
                 key={item}
                 className="inline-flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.16em] text-muted-foreground"
@@ -144,7 +149,7 @@ export function SearchLayersStack({
           </ul>
         </div>
         <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">
-          {LAYER_FOUNDATION.note}
+          {foundation.note}
         </p>
       </div>
     </div>

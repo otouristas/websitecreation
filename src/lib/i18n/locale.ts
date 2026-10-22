@@ -12,14 +12,14 @@ export function localePrefix(locale: SiteLocale): string {
 }
 
 /**
- * Product sections that exist only in English. There is no Greek copy behind
- * these routes, so an /el/... link served English text under `lang="el"` and
- * created a duplicate that canonicalised away. Link straight to /en instead.
+ * Product sections that exist only in English. An /el link to one of these
+ * would serve English text under `lang="el"`, so localizedPath keeps it on /en.
  *
- * /glossary is deliberately NOT here: it has real Greek content at /el/glossary.
- * /platform (AnotherSEOGuru App) left this list in 2026-10 when its pages got Greek copy.
+ * /tools, /resources and /compare left this list when they got Greek copy.
+ * They keep the English slugs in both locales (/el/tools/free-seo-audit, not a
+ * translated path). /glossary and /platform were already bilingual.
  */
-const EN_ONLY_SECTIONS = ['/tools', '/resources', '/compare'] as const;
+const EN_ONLY_SECTIONS = [] as const;
 
 export function isEnOnlySection(barePath: string): boolean {
   return EN_ONLY_SECTIONS.some((p) => barePath === p || barePath.startsWith(`${p}/`));

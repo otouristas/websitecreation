@@ -5,6 +5,8 @@ import {
   SAMPLE_PAGE,
   type AnatomyNote,
 } from '@/data/ai-page-anatomy';
+import { ANATOMY_DISCLAIMER_EL, ANATOMY_NOTES_EL, ANATOMY_PAGE_EL } from '@/data/ai-page-anatomy-el';
+import type { SiteLocale } from '@/lib/i18n/locale';
 import { cn } from '@/lib/cn';
 
 /**
@@ -100,8 +102,10 @@ function HeadRow({
   );
 }
 
-function SampleDocument() {
+function SampleDocument({ locale = 'en' }: { locale?: SiteLocale }) {
+  const el = locale === 'el';
   const s = SAMPLE_PAGE;
+  const ui = ANATOMY_PAGE_EL;
 
   return (
     <div className="overflow-hidden rounded-2xl border border-hairline bg-surface/70 xl:col-span-6 xl:col-start-4 xl:row-span-6 xl:row-start-1">
@@ -117,7 +121,7 @@ function SampleDocument() {
           {s.url}
         </span>
         <span className="hidden shrink-0 rounded-full bg-muted px-2 py-1 font-mono text-[9px] uppercase tracking-[0.14em] text-muted-foreground sm:block">
-          Sample
+          {el ? ui.sample : 'Sample'}
         </span>
       </div>
 
@@ -141,7 +145,7 @@ function SampleDocument() {
         <section className="rounded-xl border border-brand/30 bg-brand/8 p-4">
           <p className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.16em] text-brand">
             <Marker n={3} />
-            Key takeaways
+            {el ? ui.takeaways : 'Key takeaways'}
           </p>
           <ul className="mt-3 space-y-2">
             {s.takeaways.map((t) => (
@@ -251,7 +255,7 @@ function SampleDocument() {
         <section className="rounded-xl border border-hairline bg-surface/60 p-4">
           <p className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
             <Marker n={9} />
-            Frequently asked questions
+            {el ? ui.faqs : 'Frequently asked questions'}
           </p>
           <dl className="mt-3 space-y-3">
             {s.faqs.map((faq) => (
@@ -285,8 +289,10 @@ function SampleDocument() {
           <p className="flex gap-2 text-[12px] leading-snug text-muted-foreground">
             <Marker n={12} className="mt-0.5" />
             <span>
-              {s.byline.updated}, matching the <code className="font-mono text-[11px]">dateModified</code> in
-              the markup above.
+              {s.byline.updated}
+              {el ? `, ${ui.fresh}` : ', matching the '}
+              {el ? null : <code className="font-mono text-[11px]">dateModified</code>}
+              {el ? null : ' in the markup above.'}
             </span>
           </p>
         </footer>
@@ -295,8 +301,12 @@ function SampleDocument() {
   );
 }
 
-export function AiPageAnatomy({ className }: { className?: string }) {
+export function AiPageAnatomy({ className, locale = 'en' }: { className?: string; locale?: SiteLocale }) {
+  const el = locale === 'el';
   const s = SAMPLE_PAGE;
+  const notes = el ? ANATOMY_NOTES_EL : ANATOMY_NOTES;
+  const disclaimer = el ? ANATOMY_DISCLAIMER_EL : ANATOMY_DISCLAIMER;
+  const ui = ANATOMY_PAGE_EL;
 
   return (
     <figure className={cn('not-prose m-0', className)}>
@@ -304,12 +314,12 @@ export function AiPageAnatomy({ className }: { className?: string }) {
           is and whether a model may read it at all. */}
       <div className="overflow-hidden rounded-2xl border border-hairline bg-surface/70">
         <p className="border-b border-hairline bg-surface/60 px-5 py-3 font-mono text-[10px] uppercase tracking-[0.16em] text-brand">
-          Title, meta and crawl elements
+          {el ? ui.head : 'Title, meta and crawl elements'}
         </p>
-        <HeadRow label="Title" marker={1}>
+        <HeadRow label={el ? ui.titleLabel : 'Title'} marker={1}>
           {s.title}
         </HeadRow>
-        <HeadRow label="Meta description">{s.metaDescription}</HeadRow>
+        <HeadRow label={el ? ui.metaLabel : 'Meta description'}>{s.metaDescription}</HeadRow>
         <HeadRow label="URL">
           <code className="font-mono text-[13px] text-muted-foreground">{s.url}</code>
         </HeadRow>
@@ -337,17 +347,17 @@ export function AiPageAnatomy({ className }: { className?: string }) {
           order), three columns from xl, where explicit row/column placement
           moves the notes into the gutters without reordering the DOM. */}
       <div className="mt-4 grid grid-cols-1 gap-4 xl:grid-cols-12 xl:items-start">
-        <SampleDocument />
-        {ANATOMY_NOTES.map((note, i) => (
+        <SampleDocument locale={locale} />
+        {notes.map((note, i) => (
           <Note key={note.n} note={note} index={i} />
         ))}
       </div>
 
       <figcaption className="mt-6 rounded-2xl border border-hairline bg-surface/60 p-5 text-sm leading-relaxed text-muted-foreground">
         <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
-          Note
+          {el ? ui.note : 'Note'}
         </span>
-        <span className="mt-2 block">{ANATOMY_DISCLAIMER}</span>
+        <span className="mt-2 block">{disclaimer}</span>
       </figcaption>
     </figure>
   );
