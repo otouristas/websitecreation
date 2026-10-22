@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -205,6 +206,25 @@ export default async function ServicesPage({ params }: PageProps) {
             }
           />
           <RiskBuckets tiers={tiers} />
+          <p className="mt-10 max-w-3xl text-pretty text-[15px] leading-relaxed text-muted-foreground">
+            {isEl ? (
+              <>
+                Αν θέλετε η ομάδα να αναλάβει τη δουλειά μέσα στο AnotherSEOGuru App, δείτε τη{" "}
+                <Link href="/el/diacheirisi-seo" className="font-medium text-foreground underline decoration-hairline underline-offset-4 hover:text-primary">
+                  διαχείριση SEO
+                </Link>
+                .
+              </>
+            ) : (
+              <>
+                If you want the team to do the work inside AnotherSEOGuru App, see{" "}
+                <Link href="/en/managed-seo" className="font-medium text-foreground underline decoration-hairline underline-offset-4 hover:text-primary">
+                  managed SEO
+                </Link>
+                .
+              </>
+            )}
+          </p>
         </WaveSection>
 
         <WaveSteps

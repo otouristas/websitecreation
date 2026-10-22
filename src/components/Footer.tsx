@@ -90,6 +90,7 @@ function footerColumns(locale: SiteLocale): readonly FooterColumn[] {
     { label: isEl ? "Τεχνικό SEO" : "Technical SEO", href: lp("/seo-services/technical") },
     { label: "On-page SEO", href: lp("/seo-services/on-page") },
     { label: isEl ? "Στρατηγική SEO" : "SEO Strategy", href: lp("/seo-services/strategy") },
+    { label: isEl ? "Διαχείριση SEO" : "Managed SEO", href: isEl ? "/el/diacheirisi-seo" : "/en/managed-seo" },
     { label: isEl ? t.websiteCreation : "Web Development Agency", href: lp("/services/website-creation") },
     { label: isEl ? "Σχεδιασμός με SEO" : "Web Design", href: lp("/services/web-design") },
     { label: isEl ? "Κατασκευή E-shop" : "E-commerce / E-shop", href: lp("/services/eshop-woocommerce") },
