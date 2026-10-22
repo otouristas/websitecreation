@@ -5,10 +5,12 @@ import { COMPARE_PAGES, getComparePageBySlug } from "@/data/compare-pages";
 import { isValidLocale, localizedPath, type SiteLocale } from "@/lib/i18n/locale";
 import { buildMetadata } from "@/lib/seo";
 import { Check, Minus } from "lucide-react";
-import { CtaBand, KitSection, SoftwareCtas, TrustLine, softwareTrust } from "@/components/kit";
-import { ChipLinks, PageHero, accentTail } from "@/components/page-kit";
+import { CtaBand, SoftwareCtas, TrustLine, softwareTrust } from "@/components/kit";
+import { ChipLinks, KitBreadcrumbs } from "@/components/page-kit";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
 import { generateBreadcrumbSchema, generateSoftwareApplicationSchema, combineSchemas, BASE_URL } from "@/lib/seo/schema";
+import { AnnouncePill, WaveHero } from "@/components/pages/platform-wave/ui";
+import { accentEnd } from "@/components/pages/services-wave/ui";
 
 interface PageProps {
   params: Promise<{ locale: string; slug: string }>;
@@ -53,7 +55,7 @@ export default async function ComparePage({ params }: PageProps) {
   return (
     <>
       <Header locale={locale as SiteLocale} />
-      <main className="blueprint-grid relative z-0">
+      <main className="blueprint-grid relative z-0 overflow-x-clip">
         {/*
           Our own product, declared. The page compares two tools and said
           nothing structured about either.
@@ -75,54 +77,62 @@ export default async function ComparePage({ params }: PageProps) {
             }),
           )}
         />
-        <PageHero
-          locale="en"
-          breadcrumbs={breadcrumbItems}
-          pill={{ href: lp("/compare"), kind: "save", tag: "Compare", text: "All comparisons" }}
-          title={accentTail(c.headline, c.competitorName.split(" ").length)}
+        <WaveHero
+          pill={
+            <div className="flex flex-col items-start gap-4">
+              <KitBreadcrumbs align="left" items={breadcrumbItems} />
+              <AnnouncePill wrap href={lp("/compare")} tag="Compare" text="All comparisons" />
+            </div>
+          }
+          title={accentEnd(c.headline, c.competitorName.split(" ").length)}
+          titleClassName="text-[1.65rem] min-[400px]:text-[1.9rem] sm:text-[2.35rem] lg:text-[2.75rem]"
           lead={c.summary}
-          size="md"
-          actions={<SoftwareCtas locale="en" source={`compare-${c.slug}`} />}
-          trust={<TrustLine items={softwareTrust("en")} />}
+          actions={<SoftwareCtas locale="en" align="left" source={`compare-${c.slug}`} />}
+          trust={<TrustLine align="left" items={softwareTrust("en")} />}
+          panel={
+            <div className="grid min-w-0 gap-4">
+              <div className="rounded-[22px] border border-primary/35 bg-primary/5 p-6">
+                <h2 className="font-display text-xl font-semibold tracking-[-0.02em] text-foreground">When AnotherSEOGuru fits</h2>
+                <ul className="mt-5 space-y-3 text-[15px] leading-relaxed text-muted-foreground">
+                  {c.whenChooseUs.map((x) => (
+                    <li key={x} className="flex gap-2.5">
+                      <Check className="mt-1 size-4 shrink-0 text-primary" aria-hidden />
+                      <span className="min-w-0 text-pretty">{x}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="rounded-[22px] border border-hairline bg-surface/80 p-6">
+                <h2 className="font-display text-xl font-semibold tracking-[-0.02em] text-foreground">When {c.competitorName} may fit</h2>
+                <ul className="mt-5 space-y-3 text-[15px] leading-relaxed text-muted-foreground">
+                  {c.whenChooseThem.map((x) => (
+                    <li key={x} className="flex gap-2.5">
+                      <Minus className="mt-1 size-4 shrink-0 text-muted-foreground" aria-hidden />
+                      <span className="min-w-0 text-pretty">{x}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          }
         />
 
-        <KitSection className="!pt-14">
-          <div className="mx-auto grid max-w-5xl gap-4 md:grid-cols-2">
-            <div className="rounded-2xl border border-primary/35 bg-primary/5 p-6 sm:p-8">
-              <h2 className="font-display text-xl font-semibold tracking-[-0.02em] text-foreground">When AnotherSEOGuru fits</h2>
-              <ul className="mt-5 space-y-3 text-[15px] leading-relaxed text-muted-foreground">
-                {c.whenChooseUs.map((x) => (
-                  <li key={x} className="flex gap-2.5">
-                    <Check className="mt-1 size-4 shrink-0 text-brand" aria-hidden />
-                    {x}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="rounded-2xl border border-hairline bg-surface/70 p-6 sm:p-8">
-              <h2 className="font-display text-xl font-semibold tracking-[-0.02em] text-foreground">When {c.competitorName} may fit</h2>
-              <ul className="mt-5 space-y-3 text-[15px] leading-relaxed text-muted-foreground">
-                {c.whenChooseThem.map((x) => (
-                  <li key={x} className="flex gap-2.5">
-                    <Minus className="mt-1 size-4 shrink-0 text-muted-foreground" aria-hidden />
-                    {x}
-                  </li>
-                ))}
-              </ul>
-            </div>
+        <section data-shot="links" className="scroll-mt-28">
+          <div className="mx-auto max-w-[1240px] px-5 pb-16 lg:px-8 lg:pb-24">
+            <ChipLinks
+              align="left"
+              items={[
+                { href: lp("/platform/features"), label: "Browse features" },
+                { href: lp("/contact"), label: "Talk to agency" },
+                { href: lp("/compare"), label: "All comparisons" },
+              ]}
+            />
           </div>
-          <ChipLinks
-            align="center"
-            className="mt-10"
-            items={[
-              { href: lp("/platform/features"), label: "Browse features" },
-              { href: lp("/contact"), label: "Talk to agency" },
-              { href: lp("/compare"), label: "All comparisons" },
-            ]}
-          />
-        </KitSection>
+        </section>
 
-        <CtaBand locale="en" source={`compare-${c.slug}-band`} />
+        <div data-shot="cta">
+          <CtaBand locale="en" source={`compare-${c.slug}-band`} />
+        </div>
       </main>
       <Footer locale={locale as SiteLocale} />
     </>
