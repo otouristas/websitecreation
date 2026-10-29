@@ -416,7 +416,11 @@ export default function Footer({ locale: localeProp }: { locale?: SiteLocale }):
             </div>
           </div>
         </div>
-      </footer>
+      
+      <p data-asg-copyright="notice" style={{ maxWidth: "80rem", margin: "1rem auto 0", padding: "0 1rem 1rem", fontSize: "0.75rem", lineHeight: 1.6 }}>
+        <a href="/intellectual-property.html" style={{ color: "inherit", textDecoration: "underline", textUnderlineOffset: "0.2em" }}>{isEl ? "Κώδικας και ανάπτυξη: AnotherSEOGuru, εταιρεία της Touristas Technologies. Πνευματική ιδιοκτησία και χρήση." : "Code & development: AnotherSEOGuru, a company of Touristas Technologies. Copyright & permitted use."}</a>
+      </p>
+    </footer>
     </>
   );
 }
