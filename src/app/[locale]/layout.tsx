@@ -7,6 +7,7 @@ import CookieConsent from '@/components/CookieConsent';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
 import StickyMobileCta from '@/components/StickyMobileCta';
 import WhatsAppPill from '@/components/WhatsAppPill';
+import SecurityNotice from '@/components/SecurityNotice';
 import { Analytics } from '@vercel/analytics/next';
 import { isValidLocale } from '@/lib/i18n/locale';
 import { CONTACT_EMAIL, PHONE_E164 } from '@/lib/contact-info';
@@ -298,6 +299,7 @@ export default async function LocaleLayout({
         </div>
         <StickyMobileCta />
         <WhatsAppPill locale={isEl ? 'el' : 'en'} />
+        <SecurityNotice />
         <Analytics />
       </body>
     </html>

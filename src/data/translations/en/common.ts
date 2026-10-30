@@ -15,4 +15,10 @@ export const commonEn = {
   platform: 'Platform',
   blog: 'Blog',
   resources: 'Resources',
+  securityNotice: {
+    title: 'Security notice.',
+    body: 'Since late October we have been detecting automated attempts to copy our content. Our websites are protected by a system that logs and blocks this traffic. Our design and content are protected by copyright law (Greek Law 2121/1993), and any infringement is dealt with through legal channels.',
+    signature: 'CEO',
+    close: 'Dismiss security notice',
+  },
 } as const;
