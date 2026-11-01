@@ -70,6 +70,14 @@ const nextConfig: NextConfig = {
         destination: '/sitemap-index.xml',
         permanent: true,
       },
+      // Regional website pages live under /el/kataskevi-istoselidon/<region>.
+      // The bare folder has no page of its own: the service hub owns the
+      // national phrase «κατασκευή ιστοσελίδων».
+      {
+        source: '/:locale(en|el)/kataskevi-istoselidon',
+        destination: '/el/services/website-creation',
+        permanent: true,
+      },
       {
         source: '/landing',
         destination: '/en',

@@ -13,29 +13,29 @@ faq:
   - question: What are technical SEO best practices?
     answer: Index revenue URLs, fix Core Web Vitals on templates that convert, match mobile to desktop, submit a sitemap with real internal links, mark up only visible facts, pair EN/EL with hreflang, render critical copy in the initial HTML, and keep one HTTPS host with clean 301s.
   - question: What is technical SEO?
-    answer: Technical SEO makes your site easy to crawl, index, and render - speed, mobile usability, HTTPS, sitemaps, canonicals, structured data, and clean architecture.
+    answer: "Technical SEO makes your site easy to crawl, index, and render: speed, mobile usability, HTTPS, sitemaps, canonicals, structured data, and clean architecture."
   - question: Technical SEO vs on-page SEO?
     answer: Technical SEO is how the site works for crawlers and performance. On-page SEO is how each URL’s content matches search intent. You need both.
   - question: Do I need a technical SEO audit?
     answer: Yes if rankings stall, pages aren’t indexed, Core Web Vitals fail, or you shipped a redesign. A technical audit finds blockers content alone cannot fix.
   - question: Does site speed affect rankings?
-    answer: Yes as part of page experience - and it heavily affects conversion even when ranking impact is modest. Fix LCP and INP on money templates first.
+    answer: Yes as part of page experience, and it heavily affects conversion even when ranking impact is modest. Fix LCP and INP on money templates first.
   - question: How much does a technical SEO audit cost?
     answer: In Greece, focused technical audits typically run {{ENTRY_SEO}}–€1,200 depending on site size and JS complexity. Fixes are scoped separately or included in retainers.
 ---
 
-**Technical SEO best practices** make a site easy for Google to crawl, index and render - fast on mobile, with clean canonicals and structured data. If those are broken, publishing more blogs rarely helps.
+**Technical SEO best practices** make a site easy for Google to crawl, index and render: fast on mobile, with clean canonicals and structured data. If those are broken, publishing more blogs rarely helps.
 
 This page is the practices guide. The [technical SEO hub for in-house teams](/en/blog/pillar-technical-seo-in-house) is a separate playbook for ticket templates, release QA and engineering buy-in, so the two URLs stay distinct and link to each other. Pair with [What is SEO?](/en/blog/what-is-seo) for the wider picture.
 
 ## What Technical SEO Actually Covers
 
-1. **Crawlability** - can Googlebot reach important URLs via links and sitemaps?
-2. **Indexation** - do money pages enter the index, or get blocked by noindex, robots or soft 404s?
-3. **Rendering** - is critical content available without fragile client-only JavaScript paths?
-4. **Performance** - Core Web Vitals (LCP, INP, CLS) on key templates.
-5. **Architecture** - clean URLs, redirects, canonicals, hreflang for bilingual sites.
-6. **Structured data** - FAQ, LocalBusiness, Product, BreadcrumbList where accurate.
+1. **Crawlability**: can Googlebot reach important URLs via links and sitemaps?
+2. **Indexation**: do money pages enter the index, or get blocked by noindex, robots or soft 404s?
+3. **Rendering**: is critical content available without fragile client-only JavaScript paths?
+4. **Performance**: Core Web Vitals (LCP, INP, CLS) on key templates.
+5. **Architecture**: clean URLs, redirects, canonicals, hreflang for bilingual sites.
+6. **Structured data**: FAQ, LocalBusiness, Product, BreadcrumbList where accurate.
 
 Technical work does not replace relevance. It removes friction so [on-page SEO](/en/blog/on-page-seo) and [link building](/en/blog/link-building-guide) can work.
 
@@ -70,22 +70,22 @@ See [how much SEO costs](/en/blog/how-much-does-seo-cost) and [pricing](/en/pric
 
 Google cannot rank what it cannot crawl or trust. Soft 404s, orphan money pages, slow LCP on mobile and conflicting canonicals silently cap growth. Fixing those issues unlocks the work you already paid for in content and links.
 
-For local businesses, technical health plus [local SEO](/en/services/local-seo) (GBP, NAP consistency, location schema) decides map-pack eligibility. For content teams, clean architecture makes [SEO content](/en/blog/seo-content-guide) discoverable instead of orphaned. Treat technical SEO as insurance on every euro you spend on publishing and outreach - not as a one-time checklist you forget after launch.
+For local businesses, technical health plus [local SEO](/en/services/local-seo) (GBP, NAP consistency, location schema) decides map-pack eligibility. For content teams, clean architecture makes [SEO content](/en/blog/seo-content-guide) discoverable instead of orphaned. Treat technical SEO as insurance on every euro you spend on publishing and outreach, not as a one-time checklist you forget after launch.
 
 ## Common Technical SEO Mistakes
 
-1. **Blocking CSS/JS in robots.txt** - Google cannot render the page correctly.
-2. **Accidental noindex on staging leftover** - money pages never enter the index.
-3. **Canonical chaos** - every URL pointing to the homepage or competing variants.
-4. **Huge uncompressed images** - LCP fails on mobile before content can win.
-5. **Fake FAQ schema** - markup for questions not visible on the page.
-6. **Ignoring hreflang on EN/EL sites** - wrong language in the wrong market.
-7. **Publishing 50 blogs while coverage says “Discovered, currently not indexed”** - fix discovery first.
-8. **Infinite parameter URLs** - crawl budget wasted on filters and tracking variants.
+1. **Blocking CSS/JS in robots.txt**: Google cannot render the page correctly.
+2. **Accidental noindex on staging leftover**: money pages never enter the index.
+3. **Canonical chaos**: every URL pointing to the homepage or competing variants.
+4. **Huge uncompressed images**: LCP fails on mobile before content can win.
+5. **Fake FAQ schema**: markup for questions not visible on the page.
+6. **Ignoring hreflang on EN/EL sites**: wrong language in the wrong market.
+7. **Publishing 50 blogs while coverage says “Discovered, currently not indexed”**: fix discovery first.
+8. **Infinite parameter URLs**: crawl budget wasted on filters and tracking variants.
 
 ## Technical SEO Services
 
-When you need done-for-you fixes, our [SEO audit services](/en/services/seo-audits) and technical SEO retainers prioritize blockers by business impact - not vanity issue counts. In-house teams can follow the [in-house technical SEO hub](/en/blog/pillar-technical-seo-in-house) for tickets and release QA, and escalate migrations or JS-heavy sites to specialists.
+When you need done-for-you fixes, our [SEO audit services](/en/services/seo-audits) and technical SEO retainers prioritize blockers by business impact, not vanity issue counts. In-house teams can follow the [in-house technical SEO hub](/en/blog/pillar-technical-seo-in-house) for tickets and release QA, and escalate migrations or JS-heavy sites to specialists.
 
 ## Migrations, Redesigns and Bilingual Sites
 
@@ -93,7 +93,7 @@ Technical SEO risk spikes when you change CMS, domain, URL structure or template
 
 Greek businesses often run English and Greek in parallel. Treat hreflang as a product requirement, not an afterthought: reciprocal EN/EL pairs, consistent locale URLs and no accidental self-only annotations. Wrong language targeting wastes crawl budget and confuses both users and rankings.
 
-If you are rebuilding, commission technical SEO before design freeze - not after the agency ships a slow, JS-heavy front end. Pair redesign planning with [SEO-ready web design](/en/services/web-design) so templates ship crawlable and fast.
+If you are rebuilding, commission technical SEO before design freeze, not after the agency ships a slow, JS-heavy front end. Pair redesign planning with [SEO-ready web design](/en/services/web-design) so templates ship crawlable and fast.
 
 ## How to Prioritize Tickets In-House
 
@@ -118,11 +118,11 @@ Indexation and canonicals first, then speed on money templates, mobile parity, s
 
 ### Does site speed affect rankings?
 
-Yes as part of page experience - and it heavily affects conversion even when ranking impact is modest.
+Yes as part of page experience, and it heavily affects conversion even when ranking impact is modest.
 
 ### Technical SEO vs on-page SEO?
 
-Technical = crawl, index, speed, architecture. On-page = relevance and clarity of the page itself. Rankings need both - start with [on-page SEO](/en/blog/on-page-seo) after blockers are cleared.
+Technical = crawl, index, speed, architecture. On-page = relevance and clarity of the page itself. Rankings need both: start with [on-page SEO](/en/blog/on-page-seo) after blockers are cleared.
 
 ### When should I hire help?
 
@@ -130,4 +130,4 @@ After a redesign, when Search Console coverage is messy, when vitals fail on mon
 
 ## Ready to Get Started with Technical SEO?
 
-[Get Started](/en/get-started) with your Search Console access and top URLs, book [SEO audits](/en/services/seo-audits), or try the [free SEO audit](/en/tools/free-seo-audit) first. We prioritize what actually blocks revenue - not a 200-item spreadsheet of low-impact warnings.
+[Get Started](/en/get-started) with your Search Console access and top URLs, book [SEO audits](/en/services/seo-audits), or try the [free SEO audit](/en/tools/free-seo-audit) first. We prioritize what actually blocks revenue, not a 200-item spreadsheet of low-impact warnings.

@@ -20,11 +20,11 @@ faq:
   - question: How do I check backlink quality?
     answer: Ignore the raw link count. Check referring domains, whether the links are followed, whether the linking sites are topically relevant, and whether the anchor text is mostly brand and natural phrases. A long tail of relevant sites beats a spike of identical directories.
   - question: How do I check competitor backlinks?
-    answer: Paste the competitor domain into a backlink checker, sort referring domains by traffic or Domain Rating, filter to followed links, and export the list. Then run a link gap report to find sites linking to two or more competitors but not to you - those are your best outreach targets.
+    answer: "Paste the competitor domain into a backlink checker, sort referring domains by traffic or Domain Rating, filter to followed links, and export the list. Then run a link gap report to find sites linking to two or more competitors but not to you: those are your best outreach targets."
   - question: How many backlinks do I have?
-    answer: Google Search Console shows the total external links Google knows about for your site under Links. Third-party backlink checkers will show a different number because each crawls its own index - compare referring domains, not raw link counts, and track the trend rather than the absolute figure.
+    answer: "Google Search Console shows the total external links Google knows about for your site under Links. Third-party backlink checkers will show a different number because each crawls its own index: compare referring domains, not raw link counts, and track the trend rather than the absolute figure."
   - question: How many backlinks do I need to rank?
-    answer: There is no fixed number. Run a backlink checker on the top 5 pages ranking for your target keyword and compare their referring domains to yours. The gap in relevant, followed referring domains is the number to close - usually far fewer than the raw backlink totals suggest.
+    answer: "There is no fixed number. Run a backlink checker on the top 5 pages ranking for your target keyword and compare their referring domains to yours. The gap in relevant, followed referring domains is the number to close: usually far fewer than the raw backlink totals suggest."
   - question: What is a toxic backlink and should I disavow it?
     answer: A toxic backlink comes from spam, hacked, or link-scheme sites. Google says it ignores most of these automatically, so disavow only when you have a manual action or clear evidence of a paid link scheme pointing at you. Do not disavow links just because a tool labels them "toxic".
   - question: Which backlink checker is the most accurate?
@@ -55,10 +55,10 @@ Search Console is free and it is Google's own data. It has no authority scores, 
 
 Free tiers are enough for a first look. They usually return about the top 100 links:
 
-- **Ahrefs Backlink Checker** - top 100 backlinks, referring domains, DR, and anchor text for any URL.
-- **Semrush Backlink Analytics** - free account, ten requests a day, Authority Score and toxicity flags.
-- **Moz Link Explorer** - ten free queries a month with DA, spam score, and linking domains.
-- **SE Ranking, Seobility, Majestic** - similar samples from smaller or older indexes.
+- **Ahrefs Backlink Checker**: top 100 backlinks, referring domains, DR, and anchor text for any URL.
+- **Semrush Backlink Analytics**: free account, ten requests a day, Authority Score and toxicity flags.
+- **Moz Link Explorer**: ten free queries a month with DA, spam score, and linking domains.
+- **SE Ranking, Seobility, Majestic**: similar samples from smaller or older indexes.
 
 A full competitor gap needs a paid index. Our [best SEO tools roundup](/en/blog/best-seo-tools-2026) shows where each suite fits.
 
@@ -74,7 +74,7 @@ If a guide tells you to type `link:` into Google and export the results, it is d
 
 ## What is a backlink checker?
 
-A backlink checker crawls the web, records hyperlinks, and lets you query that index by domain or URL. Enter a site and you get its **referring domains** (unique linking websites), total **backlinks** (individual links, often many from one site), the **anchor text** used, whether each link is **followed or nofollow**, and an authority score for each linking domain - Domain Rating (DR) in Ahrefs, Authority Score in Semrush, Domain Authority (DA) in Moz, Trust Flow in Majestic.
+A backlink checker crawls the web, records hyperlinks, and lets you query that index by domain or URL. Enter a site and you get its **referring domains** (unique linking websites), total **backlinks** (individual links, often many from one site), the **anchor text** used, whether each link is **followed or nofollow**, and an authority score for each linking domain: Domain Rating (DR) in Ahrefs, Authority Score in Semrush, Domain Authority (DA) in Moz, Trust Flow in Majestic.
 
 None of these tools sees the web exactly as Google does. Each runs its own crawler and index, so counts differ between them. The [glossary entry on backlinks](/en/glossary?term=backlink) covers the terminology if you are new to [off-page SEO](/en/blog/off-page-seo).
 
@@ -112,7 +112,7 @@ This is where a backlink checker pays for itself. The workflow takes about 30 mi
 2. Paste each URL into the backlink checker and export referring domains, filtered to followed links from sites with organic traffic above 500.
 3. Run the **link intersect** or **backlink gap** report with your domain as the target. Sites linking to two or more competitors but not to you are warm prospects.
 4. Sort by referring-domain traffic and relevance, discard directories, scrapers and PBN-looking networks, and you have an outreach list.
-5. Read the linking pages and note *why* they linked - a statistic, a tool, a guide, an expert quote - then build the asset that earns the same link. Skipping this step is why most outreach fails.
+5. Read the linking pages and note *why* they linked (a statistic, a tool, a guide, an expert quote) then build the asset that earns the same link. Skipping this step is why most outreach fails.
 
 Pair the list with [keyword research](/en/tools/keyword-research) so you chase links for pages that can actually rank once the authority gap closes. The emails and prospect sheet for that outreach are in the [link building guide](/en/blog/link-building-guide).
 
@@ -124,7 +124,7 @@ Every backlink checker now sells a "toxic score", and most of it is noise. Googl
 - **Negative SEO or hacked-site spam.** Thousands of adult, gambling or pharma links appearing in a week are worth documenting and disavowing as a precaution.
 - **Your own past mistakes.** Old paid link packages, PBNs, or widget links with exact-match anchors are the one category worth removing proactively.
 
-How to run it: export all referring domains, sort by lowest DR and highest link count, and manually review anything with spam patterns (foreign-language link farms, no organic traffic, hundreds of outbound links per page). Only then create a domain-level disavow file. Never upload a tool's auto-generated toxic list - you will disavow legitimate links and lose rankings. A professional [SEO audit](/en/services/seo-audits) includes this review with the disavow decision made for you.
+How to run it: export all referring domains, sort by lowest DR and highest link count, and manually review anything with spam patterns (foreign-language link farms, no organic traffic, hundreds of outbound links per page). Only then create a domain-level disavow file. Never upload a tool's auto-generated toxic list: you will disavow legitimate links and lose rankings. A professional [SEO audit](/en/services/seo-audits) includes this review with the disavow decision made for you.
 
 ## Backlink monitoring and common mistakes
 

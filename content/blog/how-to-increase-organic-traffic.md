@@ -79,7 +79,7 @@ A handful of impressions is not a stable rank. Wait for a real impression base b
 
 ### Indexing, once the URLs are known
 
-Open **Indexing**, then **Pages**. "Excluded by noindex" is correct on a thank-you page and a bug on a service page. "Crawled - currently not indexed" on a money page means Google fetched it and declined: improve the page and its links, and do not request indexation in a loop.
+Open **Indexing**, then **Pages**. "Excluded by noindex" is correct on a thank-you page and a bug on a service page. "Crawled, currently not indexed" on a money page means Google fetched it and declined: improve the page and its links, and do not request indexation in a loop.
 
 See the [technical SEO guide](/en/blog/technical-seo-guide), the [weekly Search Console loop](/en/blog/gsc-weekly-ops-playbook), and [query prioritization](/en/blog/gsc-query-prioritization-framework).
 

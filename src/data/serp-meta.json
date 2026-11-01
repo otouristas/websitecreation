@@ -388,7 +388,7 @@
     "description": "Κατασκευή ιστοσελίδων στην Κέρκυρα: γρήγορα, mobile-first sites έτοιμα για SEO και Google, με υποστήριξη στα ελληνικά. Δείτε έργα και ζητήστε προσφορά."
   },
   "/el/services/website-creation/heraklion-gr": {
-    "title": "Κατασκευή Ιστοσελίδων Ηράκλειο με SEO | AnotherSEOGuru",
+    "title": "Κατασκευή Ιστοσελίδων Ηράκλειο Κρήτης | AnotherSEOGuru",
     "description": "Κατασκευή ιστοσελίδων στο Ηράκλειο: γρήγορα, mobile-first sites έτοιμα για SEO και Google, με υποστήριξη στα ελληνικά. Δείτε έργα και ζητήστε προσφορά."
   },
   "/el/services/website-creation/kalamata-gr": {
@@ -702,5 +702,17 @@
   "/en/services/website-redesign": {
     "title": "Website Redesign Services Without Losing SEO | Keep Rankings",
     "description": "Website and e-shop redesign with a full redirect plan, so you keep rankings and traffic: a new design with the same or better position in Google."
+  },
+  "/el/kataskevi-istoselidon/kriti": {
+    "title": "Κατασκευή Ιστοσελίδων Κρήτη | Ηράκλειο, Χανιά, Ρέθυμνο",
+    "description": "Κατασκευή ιστοσελίδων στην Κρήτη για Ηράκλειο, Χανιά, Ρέθυμνο και Λασίθι: γρήγορα sites με SEO, Google Maps και κρατήσεις. Ζητήστε σταθερή προσφορά."
+  },
+  "/el/kataskevi-istoselidon/kyklades": {
+    "title": "Κατασκευή Ιστοσελίδων Κυκλάδες | Σαντορίνη, Μύκονος, Πάρος",
+    "description": "Κατασκευή ιστοσελίδων στις Κυκλάδες για ξενοδοχεία, βίλες, rent a car και εστιατόρια: γρήγορα, πολύγλωσσα sites με SEO και κρατήσεις. Ζητήστε προσφορά."
+  },
+  "/el/seo/kyklades": {
+    "title": "SEO Κυκλάδες: Υπηρεσίες SEO & Google Maps | AnotherSEOGuru",
+    "description": "Υπηρεσίες SEO στις Κυκλάδες για Σαντορίνη, Μύκονο, Πάρο, Νάξο και Μήλο: Google Maps, πολύγλωσσες σελίδες και απευθείας κρατήσεις. Ζητήστε δωρεάν έλεγχο."
   }
 }

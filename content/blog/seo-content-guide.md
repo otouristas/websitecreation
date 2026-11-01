@@ -14,16 +14,16 @@ faq:
   - question: How to write SEO content?
     answer: Pick one primary intent, answer it in the first screen, use clear headings for related questions, add proof, and link to related services. Write for humans first; keywords guide structure, not stuffing.
   - question: What is SEO content?
-    answer: SEO content answers a clear search intent with useful structure, proof, and internal links so it can rank and convert - service pages, guides, FAQs and location pages.
+    answer: "SEO content answers a clear search intent with useful structure, proof, and internal links so it can rank and convert: service pages, guides, FAQs and location pages."
   - question: How long should SEO content be?
-    answer: As long as needed to be the best answer - not an arbitrary word count. Many commercial pages win at 600–1,200 words; competitive guides often need 1,000–2,000+ with unique proof.
+    answer: As long as needed to be the best answer, not an arbitrary word count. Many commercial pages win at 600–1,200 words; competitive guides often need 1,000–2,000+ with unique proof.
   - question: How much does SEO content cost?
     answer: In Greece, professional pages often run €150–€450 each; pillar guides €250–€700. Monthly content retainers typically start around {{ENTRY_SEO}}–{{SEO_GROWTH}} depending on volume and research depth.
   - question: Does SEO content still matter with AI Overviews?
     answer: Yes. Clear, cited, experience-rich pages are what AI systems quote. Thin keyword dumps get ignored. Pair content with GEO/AEO practices for answer engines.
 ---
 
-**Content optimization for SEO** is how you improve a URL so it answers one search intent more clearly: title, opening, headings, proof and internal links. **SEO content** is that page - a service page, location page, guide or FAQ - written so it can rank, convert and be specific enough to cite. Below: the workflow, a before-and-after example, costs, and when to use [content creation services](/en/services/content-creation).
+**Content optimization for SEO** is how you improve a URL so it answers one search intent more clearly: title, opening, headings, proof and internal links. **SEO content** is that page (a service page, location page, guide or FAQ) written so it can rank, convert and be specific enough to cite. Below: the workflow, a before-and-after example, costs, and when to use [content creation services](/en/services/content-creation).
 
 Start with [keyword research](/en/blog/keyword-research-guide), then [on-page SEO](/en/blog/on-page-seo), so the structure matches the results.
 
@@ -86,7 +86,7 @@ Length barely changes. What changes is one query, an answer up front, headings a
 | Pillar hub | Own a topic cluster | 1,500 to 3,000 words | €400 to €900 |
 | FAQ / glossary entry | Snippets & AI cites | 300 to 800 words | €80 to €200 |
 
-Pillars like [What is SEO?](/en/blog/what-is-seo) support clusters. How-tos such as [technical SEO](/en/blog/technical-seo-guide) and [on-page SEO](/en/blog/on-page-seo) feed commercial pages. Local pages need unique city detail - see [local SEO](/en/blog/local-seo-guide).
+Pillars like [What is SEO?](/en/blog/what-is-seo) support clusters. How-tos such as [technical SEO](/en/blog/technical-seo-guide) and [on-page SEO](/en/blog/on-page-seo) feed commercial pages. Local pages need unique city detail: see [local SEO](/en/blog/local-seo-guide).
 
 ## Content Production Checklist
 
@@ -103,19 +103,19 @@ Pillars like [What is SEO?](/en/blog/what-is-seo) support clusters. How-tos such
 
 ## Seven SEO Content Mistakes
 
-1. **Writing to a word count instead of intent** - padding dilutes quality.
-2. **Keyword stuffing** - hurts readability and trust.
-3. **Thin location clones** - same copy, city name swapped.
-4. **No path to conversion** - rankings without leads.
-5. **Orphan articles** - published but never linked from anywhere strong.
-6. **Ignoring AI citation quality** - vague claims without sources or experience.
-7. **Publishing without measurement** - no Search Console review after 4–8 weeks.
+1. **Writing to a word count instead of intent**: padding dilutes quality.
+2. **Keyword stuffing**: hurts readability and trust.
+3. **Thin location clones**: same copy, city name swapped.
+4. **No path to conversion**: rankings without leads.
+5. **Orphan articles**: published but never linked from anywhere strong.
+6. **Ignoring AI citation quality**: vague claims without sources or experience.
+7. **Publishing without measurement**, no Search Console review after 4–8 weeks.
 
 ## Timelines and When to Hire Help
 
 New informational guides often need **1–3 months** to gain traction; competitive commercial terms need **3–6+ months** alongside [off-page SEO](/en/blog/off-page-seo) and [link building](/en/blog/link-building-guide). A monthly cadence of 2–4 quality URLs usually beats sporadic bursts.
 
-Use an agency when you lack research capacity, writers who understand intent, or editors who enforce proof. Retainers commonly start {{ENTRY_SEO}}–{{SEO_GROWTH}}/mo for ongoing production - see [pricing](/en/pricing) and [how to increase organic traffic](/en/blog/how-to-increase-organic-traffic).
+Use an agency when you lack research capacity, writers who understand intent, or editors who enforce proof. Retainers commonly start {{ENTRY_SEO}}–{{SEO_GROWTH}}/mo for ongoing production: see [pricing](/en/pricing) and [how to increase organic traffic](/en/blog/how-to-increase-organic-traffic).
 
 ## SEO Content vs Brand Content vs AI Drafts
 
@@ -135,7 +135,7 @@ One intent, answer first, structured sections, proof, internal links, CTR-focuse
 
 ### What is SEO content?
 
-Pages built to satisfy search intent and earn visibility - not keyword-stuffed filler.
+Pages built to satisfy search intent and earn visibility, not keyword-stuffed filler.
 
 ### How long should it be?
 
@@ -151,4 +151,4 @@ AI raises the bar for originality and clarity. Thin content loses; experience-ri
 
 ## Get a Content Roadmap
 
-If you need a prioritized map of pages to create or rewrite, start with [content creation](/en/services/content-creation), review [pricing](/en/pricing), or [Get Started](/en/get-started). Bring Search Console access and your top conversion goals - we turn demand into a publishing plan that ranks and converts.
+If you need a prioritized map of pages to create or rewrite, start with [content creation](/en/services/content-creation), review [pricing](/en/pricing), or [Get Started](/en/get-started). Bring Search Console access and your top conversion goals: we turn demand into a publishing plan that ranks and converts.

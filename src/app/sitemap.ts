@@ -11,6 +11,7 @@ import { helpContent } from '@/data/help';
 import { OPPORTUNITY_FINDER, RESOURCE_ARTICLES } from '@/data/resources';
 import { allTerms } from '@/lib/docs/glossary';
 import { PLACE_PAGES } from '@/data/place-seo';
+import { WEBSITE_REGION_PAGES } from '@/data/website-regions';
 import { PLATFORM_TOOLS } from '@/data/platform-tools';
 import { TOURISM_VERTICALS } from '@/data/tourism-seo';
 import { ENGLISH_VERTICALS } from '@/data/tourism-seo/en';
@@ -176,6 +177,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...forElOnly('/seo', { priority: 0.9, changeFrequency: 'weekly' }),
     ...PLACE_PAGES.flatMap((place) =>
       forElOnly(`/seo/${place.slug}`, { priority: 0.82, changeFrequency: 'monthly' }),
+    ),
+    // Greek regional website-creation pages (Κρήτη, Κυκλάδες).
+    ...WEBSITE_REGION_PAGES.flatMap((page) =>
+      forElOnly(`/kataskevi-istoselidon/${page.slug}`, { priority: 0.86, changeFrequency: 'monthly' }),
     ),
     // Greek tourism SEO hub and one commercial page per vertical.
     ...forElOnly('/seo-tourismou', { priority: 0.9, changeFrequency: 'weekly' }),

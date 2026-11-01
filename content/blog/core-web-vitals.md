@@ -1,6 +1,7 @@
 ---
 slug: core-web-vitals
 title: "Core Web Vitals: Οδηγός για LCP, INP και CLS (2026)"
+seoTitle: "Core Web Vitals: LCP, INP, CLS"
 description: "Core Web Vitals με απλά λόγια: τι μετρούν LCP, INP και CLS, ποια είναι τα όρια, πώς τα ελέγχετε και πώς τα διορθώνετε σε WordPress, βήμα προς βήμα."
 date: 2026-10-19
 author: AnotherSEOGuru Editorial Team

@@ -147,9 +147,9 @@ function smartTruncateTitle(text: string, max: number): string {
   const cut = text.slice(0, max);
   const lastSpace = cut.lastIndexOf(' ');
   return (lastSpace > 20 ? cut.slice(0, lastSpace) : cut)
-    .replace(/\s*[;:\-–&|]+$/, '')
+    .replace(/\s*[;:,·\-–&|]+$/, '')
     .replace(TITLE_TRAILING_STOPWORDS, '')
-    .replace(/\s*[;:\-–&|]+$/, '')
+    .replace(/\s*[;:,·\-–&|]+$/, '')
     .trim();
 }
 
@@ -168,7 +168,7 @@ export function cleanPageTitle(raw: string): string {
     .replace(/^\s*\|\s*/, '')
     .replace(/^\s*-\s*/, '')
     .replace(/^[–-]\s*/, '')
-    .replace(/\s*[–]\s*/g, ' - ')
+    .replace(/\s+–\s+/g, ': ')
     .trim();
 
   if (cleanTitle.toLowerCase() === BRAND_NAME.toLowerCase()) {

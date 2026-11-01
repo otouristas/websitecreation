@@ -5,9 +5,9 @@
 # AI content preferences (draft Content-Signal, see https://contentsignals.org/).
 # Not a standard robots.txt directive, so it is kept as a comment for humans and
 # for crawlers that read the draft. This site WANTS to be found and cited by AI:
-#   search=yes    — allow indexing for traditional search results
-#   ai-input=yes  — allow use as grounding / live input and citation in AI answers
-#   ai-train=yes  — allow use of this content to train AI models
+#   search=yes    : allow indexing for traditional search results
+#   ai-input=yes  : allow use as grounding / live input and citation in AI answers
+#   ai-train=yes  : allow use of this content to train AI models
 # Content-Signal: search=yes, ai-input=yes, ai-train=yes
 
 # LLMs.txt files for AI crawlers (https://llmstxt.org/):

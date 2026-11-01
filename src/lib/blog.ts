@@ -24,6 +24,12 @@ export interface BlogHowTo {
 export interface BlogPostListItem {
   readonly slug: string;
   readonly title: string;
+  /**
+   * Optional SERP title (frontmatter `seoTitle`). The H1 keeps `title`; the
+   * <title> uses this when the full headline would be cut mid-phrase by the
+   * SERP length budget. `npm run check:blog-seo` fails on a cut title.
+   */
+  readonly seoTitle?: string;
   readonly description: string;
   readonly date: string;
   /** Last substantive revision, when there has been one. Drives `dateModified`. */
@@ -70,6 +76,7 @@ export interface BlogPostParsed extends BlogPostListItem {
 interface MatterData {
   readonly slug?: string;
   readonly title?: string;
+  readonly seoTitle?: string;
   readonly description?: string;
   readonly date?: string;
   readonly updated?: unknown;
@@ -171,6 +178,7 @@ function parsePostFile(filePath: string, fileBase: string): BlogPostParsed | nul
   return {
     slug,
     title: rp(d.title),
+    seoTitle: typeof d.seoTitle === "string" && d.seoTitle.trim() ? rp(d.seoTitle.trim()) : undefined,
     description: rp(d.description),
     date,
     updated,

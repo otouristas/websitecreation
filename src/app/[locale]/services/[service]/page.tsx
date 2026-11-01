@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { WEBSITE_REGION_PAGES, websiteRegionPath } from '@/data/website-regions';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Header from '@/components/Header';
@@ -339,10 +340,15 @@ export default async function ServicePage({ params }: PageProps) {
                             <KitHeading eyebrow={t.locations} eyebrowIcon={<MapPin />} title={<AccentTitle text={pageEl?.citiesTitle ?? t.byCity} />} description={t.byCityDesc} />
                             <ChipLinks
                                 className="mt-10"
-                                items={locationsToShow.map((location) => ({
-                                    href: lp(`/services/${serviceSlug}/${location.slug}`),
-                                    label: isEl && location.cityLocal ? location.cityLocal : location.city,
-                                }))}
+                                items={[
+                                    ...(isEl && serviceSlug === 'website-creation'
+                                        ? WEBSITE_REGION_PAGES.map((page) => ({ href: websiteRegionPath(page.slug), label: page.name }))
+                                        : []),
+                                    ...locationsToShow.map((location) => ({
+                                        href: lp(`/services/${serviceSlug}/${location.slug}`),
+                                        label: isEl && location.cityLocal ? location.cityLocal : location.city,
+                                    })),
+                                ]}
                             />
                             <p className="mt-8 text-[14px]">
                                 <Link href={lp('/locations')} className="font-medium text-link underline-offset-4 hover:underline">

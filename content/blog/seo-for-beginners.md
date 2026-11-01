@@ -1,6 +1,6 @@
 ---
 slug: seo-for-beginners
-title: SEO for Beginners - A 30-Day Plan
+title: "SEO for Beginners: A 30-Day Plan"
 description: "SEO for beginners: how Google ranks pages, the four pillars, a 30-day starter plan, glossary links, and the fixes to make before you publish more."
 date: 2026-07-06
 updated: 2026-10-16
@@ -15,7 +15,7 @@ faq:
   - question: How do I start SEO as a beginner?
     answer: Verify the site in Google Search Console, fix anything that blocks indexing, and give each important page one primary query plus a clear title. Follow a 30-day plan before you publish a large blog archive.
   - question: Can I do SEO myself?
-    answer: Yes for the basics - titles, a complete Google Business Profile, and pages that answer real customer questions. Technical repairs, strategy, and earning links are where a specialist usually saves time.
+    answer: "Yes for the basics: titles, a complete Google Business Profile, and pages that answer real customer questions. Technical repairs, strategy, and earning links are where a specialist usually saves time."
   - question: How long does SEO take for beginners?
     answer: Plan for early signs in 2–3 months and a clearer picture in 4–6 months if the technical base is fixed and the important pages are improved on a steady cadence. A new site should not expect a full pipeline in the first weeks.
   - question: Should a beginner use SEO or Google Ads?
@@ -146,4 +146,4 @@ Short definitions live in the [SEO glossary](/en/glossary). This guide relies on
 
 ## Ready to start
 
-Ask for a plain-language review: what blocks indexing, which pages should change first, and whether this 30-day plan fits your market. [Get Started](/en/get-started) - reply within 24 hours. Or go to [SEO audits](/en/services/seo-audits) and [pricing](/en/pricing).
+Ask for a plain-language review: what blocks indexing, which pages should change first, and whether this 30-day plan fits your market. [Get Started](/en/get-started): reply within 24 hours. Or go to [SEO audits](/en/services/seo-audits) and [pricing](/en/pricing).
