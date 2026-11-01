@@ -1,6 +1,7 @@
 ---
 slug: on-page-seo
 title: "On-Page SEO Tips: How to Optimize a Page That Ranks"
+seoTitle: "On-Page SEO Tips That Help Pages Rank"
 description: "Work through these numbered on-page SEO tips for titles, headings, content, internal links and schema, plus a 2026 checklist with costs and timelines."
 date: 2026-07-23
 updated: 2026-10-16

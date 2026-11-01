@@ -1,6 +1,7 @@
 ---
 slug: pillar-search-console-mastery
 title: "Search Console Mastery: From Raw Data to a Weekly SEO System"
+seoTitle: "Search Console Mastery: Weekly System"
 description: "Hub for editorial content on Google Search Console: queries, pages, debugging, and turning exports into a prioritized list of work that ships."
 date: 2026-02-01
 author: AnotherSEOGuru Editorial Team

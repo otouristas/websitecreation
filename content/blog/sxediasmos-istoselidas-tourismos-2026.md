@@ -1,6 +1,7 @@
 ---
 slug: sxediasmos-istoselidas-tourismos-2026
 title: "Σχεδιασμός Ιστοσελίδας Τουρισμού 2026: Τάσεις, SEO και UX"
+seoTitle: "Ιστοσελίδα Τουρισμού: Τάσεις 2026"
 description: Τι αλλάζει στον σχεδιασμό ιστοσελίδας τουρισμού το 2026. Τάσεις για direct bookings, ταχύτητα, mobile εμπειρία και AI βελτιστοποίηση.
 date: 2026-06-19
 author: AnotherSEOGuru Editorial Team

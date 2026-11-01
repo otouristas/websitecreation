@@ -1,6 +1,7 @@
 ---
 slug: ai-chatbots-tourismos
 title: "AI Chatbots στον Τουρισμό: 24/7 Κρατήσεις και AEO"
+seoTitle: "AI Chatbots στον Τουρισμό και AEO"
 description: Πώς τα έξυπνα AI Chatbots μεταμορφώνουν την εξυπηρέτηση πελατών στον τουρισμό. Αυτοματοποίηση κρατήσεων, απαντήσεις σε FAQ και GEO/AEO ορατότητα.
 date: 2026-06-15
 author: AnotherSEOGuru Editorial Team

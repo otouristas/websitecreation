@@ -1,6 +1,7 @@
 ---
 slug: seo-gia-gymnastiria
 title: "SEO για Γυμναστήρια: Γεμίστε το Γυμναστήριο από τη Google"
+seoTitle: "SEO για Γυμναστήρια: Οδηγός"
 description: "Στρατηγική SEO για γυμναστήρια και στούντιο στην Ελλάδα. Τοπική προβολή, Google Maps, προγράμματα, κριτικές, εποχικό πλάνο και κόστος εγγραφών."
 date: 2026-07-06
 author: AnotherSEOGuru Editorial Team

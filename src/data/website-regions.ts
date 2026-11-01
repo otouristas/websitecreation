@@ -75,7 +75,7 @@ export const WEBSITE_REGION_PAGES: readonly WebsiteRegionPage[] = [
       {
         heading: 'Τι παίρνετε με την ιστοσελίδα',
         paragraphs: [
-          'Κάθε ιστοσελίδα που παραδίδουμε στην Κρήτη έχει γρήγορη φόρτωση στο κινητό, καθαρή δομή επικεφαλίδων, σωστούς τίτλους και περιγραφές, δομημένα δεδομένα (schema) για την επιχείρηση, χάρτη ιστότοπου και σύνδεση με το Google Search Console. Αν έχετε ήδη Google Business Profile, το συνδέουμε σωστά. Αν όχι, σας βοηθάμε να το ανοίξετε.',
+          'Κάθε ιστοσελίδα που παραδίδουμε στην Κρήτη έχει γρήγορη φόρτωση στο κινητό, καθαρή δομή επικεφαλίδων, σωστούς τίτλους και περιγραφές, structured data (schema) για την επιχείρηση, χάρτη ιστότοπου και σύνδεση με το Google Search Console. Αν έχετε ήδη Google Business Profile, το συνδέουμε σωστά. Αν όχι, σας βοηθάμε να το ανοίξετε.',
           'Για τουριστικές επιχειρήσεις προσθέτουμε σελίδες ανά τύπο δωματίου ή οχήματος, σύνδεση με μηχανή κρατήσεων και δεύτερη γλώσσα με σωστή σήμανση hreflang. Για καταστήματα προτείνουμε [κατασκευή eshop](/el/services/eshop-woocommerce) με WooCommerce, ώστε τα προϊόντα να εμφανίζονται στην αναζήτηση και όχι μόνο στο Instagram.',
         ],
       },
@@ -134,7 +134,7 @@ export const WEBSITE_REGION_PAGES: readonly WebsiteRegionPage[] = [
       },
     ],
     seoPlace: { label: 'SEO Κρήτη', href: '/el/seo/crete' },
-    workSlugs: ['discover-crete', 'way-to-crete', 'villa-olivia-clara'],
+    workSlugs: ['discover-crete', 'way-to-crete'],
   },
   {
     slug: 'kyklades',

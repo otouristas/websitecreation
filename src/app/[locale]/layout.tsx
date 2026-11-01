@@ -164,6 +164,10 @@ function buildStructuredDataGraph(isEl: boolean) {
           { '@type': 'Country', name: 'United Kingdom' },
           { '@type': 'Country', name: 'United States' },
           { '@type': 'AdministrativeArea', name: 'Europe' },
+          // Greek regions with dedicated pages and client work in the portfolio.
+          { '@type': 'AdministrativeArea', name: isEl ? 'Αττική' : 'Attica', containedInPlace: { '@type': 'Country', name: 'Greece' } },
+          { '@type': 'AdministrativeArea', name: isEl ? 'Κρήτη' : 'Crete', containedInPlace: { '@type': 'Country', name: 'Greece' } },
+          { '@type': 'AdministrativeArea', name: isEl ? 'Κυκλάδες' : 'Cyclades', containedInPlace: { '@type': 'Country', name: 'Greece' } },
         ],
         knowsAbout: [
           'Web design',
@@ -172,7 +176,11 @@ function buildStructuredDataGraph(isEl: boolean) {
           'Technical SEO',
           'Local SEO',
           'Google Search Console',
+          'Search engine optimization',
+          'Answer Engine Optimization (AEO)',
+          'Generative Engine Optimization (GEO)',
           'Generative AI search visibility',
+          'Tourism SEO',
           'Core Web Vitals',
           'Conversion rate optimization',
         ],

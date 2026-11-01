@@ -1,6 +1,7 @@
 ---
 slug: glossary-strategy-internal-linking
 title: Using an SEO glossary to strengthen internal links (without spam)
+seoTitle: "SEO Glossary Strategy for Internal Links"
 description: How glossary hubs support entity clarity, hub-and-spoke linking and safer anchor patterns, with a workflow that points readers to product modules.
 date: 2026-03-05
 author: AnotherSEOGuru Editorial Team

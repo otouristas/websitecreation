@@ -1,6 +1,7 @@
 ---
 slug: how-much-does-seo-cost
 title: How Much Does SEO Cost in 2026? Prices & Packages Explained
+seoTitle: "How Much Does SEO Cost in 2026?"
 description: "A clear breakdown of SEO pricing in 2026: monthly retainers, one-off audits, what packages include, and how to avoid the cheap-SEO trap. EUR pricing."
 date: 2026-07-06
 author: AnotherSEOGuru Editorial Team

@@ -112,6 +112,8 @@ faq:
 
 Αν συγκρίνετε κόστος SEO γενικότερα, δείτε [πόσο κοστίζει το SEO](/el/blog/poso-kostizei-to-seo).
 
+Αναλυτικοί ορισμοί: [τι είναι το AEO](/el/blog/ti-einai-to-aeo) και [τι είναι το GEO](/el/blog/ti-einai-to-geo).
+
 ## Συχνές Ερωτήσεις
 
 ### Τι είναι το AI SEO;

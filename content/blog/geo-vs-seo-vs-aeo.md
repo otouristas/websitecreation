@@ -1,6 +1,7 @@
 ---
 slug: geo-vs-seo-vs-aeo
 title: "GEO vs SEO vs AEO: Which Do You Need in 2026?"
+seoTitle: "GEO vs SEO vs AEO: Which Do You Need?"
 description: Clear comparison of SEO, GEO (generative engine optimization) and AEO. When to invest in each, and how agencies combine them for leads.
 date: 2026-07-23
 author: AnotherSEOGuru Editorial Team

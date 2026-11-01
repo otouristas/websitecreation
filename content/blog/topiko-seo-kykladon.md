@@ -1,6 +1,7 @@
 ---
 slug: topiko-seo-kykladon
 title: "Τοπικό SEO στις Κυκλάδες: Οδηγός για Ξενοδοχεία και Rent-a-Car"
+seoTitle: "Τοπικό SEO στις Κυκλάδες: Οδηγός"
 description: Πώς να ξεχωρίσετε στο Google Maps και στην οργανική αναζήτηση στις Κυκλάδες. Οδηγός για Πάρο, Μύκονο, Σαντορίνη, Νάξο με GBP, NAP και location pages.
 date: 2026-06-18
 author: AnotherSEOGuru Editorial Team

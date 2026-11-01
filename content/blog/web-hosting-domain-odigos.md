@@ -1,6 +1,7 @@
 ---
 slug: web-hosting-domain-odigos
 title: "Web Hosting & Domain στην Ελλάδα: Οδηγός Επιλογής 2026"
+seoTitle: "Web Hosting και Domain: Οδηγός"
 description: Πώς να επιλέξετε hosting και domain για την ιστοσελίδα σας. Τιμές, .gr ή .com, ταχύτητα, ασφάλεια και τα λάθη που κοστίζουν σε SEO και αξιοπιστία.
 date: 2026-07-06
 author: AnotherSEOGuru Editorial Team

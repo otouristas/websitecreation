@@ -1,6 +1,7 @@
 ---
 slug: google-business-profile-masterclass
 title: "Google Business Profile Masterclass: Dominate Local Search"
+seoTitle: "Google Business Profile Masterclass"
 description: Step-by-step guide to optimizing your Google Business Profile. Categories, photos, reviews, and the Posts strategy that keeps your profile active.
 date: 2026-01-10
 author: AnotherSEOGuru Team

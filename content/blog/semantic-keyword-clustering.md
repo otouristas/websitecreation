@@ -1,6 +1,7 @@
 ---
 slug: semantic-keyword-clustering
 title: "Semantic Keyword Clustering: A Practical Guide"
+seoTitle: "Semantic Keyword Clustering Guide"
 description: "What semantic keyword clustering is, how embeddings and intent grouping work, how to do it with or without Python, and how to turn clusters into a plan."
 date: 2026-08-19
 author: AnotherSEOGuru Editorial Team

@@ -52,10 +52,10 @@ export function buildBlogPostMetadata(
   post: Pick<
     BlogPostListItem,
     'slug' | 'locale' | 'translationOf' | 'title' | 'description' | 'date' | 'updated' | 'author' | 'category'
-  >,
+  > & { readonly seoTitle?: string },
 ): Metadata {
   return buildMetadata({
-    title: post.title,
+    title: post.seoTitle ?? post.title,
     description: post.description,
     path: blogPostPath(post.locale, post.slug),
     languages: blogPostHreflangLanguages(post),

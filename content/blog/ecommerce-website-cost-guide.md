@@ -1,6 +1,7 @@
 ---
 slug: ecommerce-website-cost-guide
 title: E-commerce Website Cost & Build Guide (2026)
+seoTitle: "E-commerce Website Cost Guide 2026"
 description: What an e-shop costs to build in 2026, WooCommerce vs Shopify, and what to get right on payments, shipping, and SEO so your store sells from day one.
 date: 2026-07-06
 author: AnotherSEOGuru Editorial Team

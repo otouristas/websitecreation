@@ -143,8 +143,8 @@ export function HomePageView({ locale }: { readonly locale: SiteLocale }) {
     url: BASE_URL,
     logo: `${BASE_URL}/brand/asg-lockup-on-light@2x.png`,
     description: isEl
-      ? 'AnotherSEOGuru - ελληνική εταιρεία SEO και κατασκευής ιστοσελίδων. Τεχνικό SEO, τοπικό SEO, GEO/AEO, e-shop και δική της πλατφόρμα συνδεδεμένη με το Google Search Console.'
-      : 'AnotherSEOGuru - Greek SEO and web design agency. Technical SEO, local SEO, GEO/AEO, e-shops, plus a Search Console-native SEO platform.',
+      ? 'AnotherSEOGuru: ελληνική εταιρεία SEO και κατασκευής ιστοσελίδων. Τεχνικό SEO, τοπικό SEO, GEO/AEO, e-shop και δική της πλατφόρμα συνδεδεμένη με το Google Search Console.'
+      : 'AnotherSEOGuru: Greek SEO and web design agency. Technical SEO, local SEO, GEO/AEO, e-shops, plus a Search Console-native SEO platform.',
   });
   const faqSchema = generateFAQSchema({
     faqs: copy.faqs.map((item) => ({ question: item.q, answer: item.a })),

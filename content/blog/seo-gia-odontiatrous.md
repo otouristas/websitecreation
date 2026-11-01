@@ -1,6 +1,7 @@
 ---
 slug: seo-gia-odontiatrous
 title: "SEO για Οδοντιάτρους: Γεμίστε την Ατζέντα από τη Google"
+seoTitle: "SEO για Οδοντιάτρους: Οδηγός"
 description: "Στρατηγική SEO για οδοντιατρεία στην Ελλάδα. Τοπική προβολή, Google Business Profile, κριτικές, σελίδες υπηρεσιών, E-E-A-T και κόστος για νέα ραντεβού."
 date: 2026-07-07
 author: AnotherSEOGuru Editorial Team

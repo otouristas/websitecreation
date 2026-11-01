@@ -1,6 +1,7 @@
 ---
 slug: real-estate-seo
 title: "Real Estate SEO: Win Listings and Buyers from Google"
+seoTitle: "Real Estate SEO: Win Buyers from Google"
 description: "SEO for real estate agencies: rank for area searches, attract sellers who want an agent, and turn Google traffic into listings and buyer enquiries."
 date: 2026-07-06
 author: AnotherSEOGuru Editorial Team

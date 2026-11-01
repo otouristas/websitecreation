@@ -1,6 +1,7 @@
 ---
 slug: ai-seo-agency-geo-aeo
 title: "AI SEO Agency Guide: GEO, AEO & Getting Cited in AI Answers"
+seoTitle: "AI SEO Agency Guide: GEO and AEO"
 description: What an AI SEO agency actually does in 2026. GEO vs SEO, AEO for AI Overviews, and how tourism and local brands win citations in ChatGPT and Perplexity.
 date: 2026-07-23
 author: AnotherSEOGuru Editorial Team

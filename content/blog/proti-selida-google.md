@@ -1,6 +1,7 @@
 ---
 slug: proti-selida-google
 title: "Πρώτη Σελίδα Google: Πώς να Βγείτε Πρώτοι (2026)"
+seoTitle: "Πρώτη Σελίδα Google: Οδηγός 2026"
 description: "Πρώτη σελίδα Google: πώς βγαίνετε στο Map Pack, στα οργανικά αποτελέσματα και στο AI Overview, βήμα βήμα ανά αναζήτηση, και τι δεν μπορεί να εγγυηθεί κανείς."
 date: 2026-10-19
 author: AnotherSEOGuru Editorial Team

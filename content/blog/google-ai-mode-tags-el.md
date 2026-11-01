@@ -1,6 +1,7 @@
 ---
 slug: google-ai-mode-tags-el
 title: Τα tags του Google AI Mode και τι τα τροφοδοτεί
+seoTitle: "Τα Tags του Google AI Mode"
 description: Τι φαίνεται να είναι τα tags εξόδου του AI Mode, γιατί ένα site δεν μπορεί να τα παράγει και τι πρέπει να δημοσιεύει μια σελίδα για να τα τροφοδοτήσει.
 date: 2026-09-21
 author: AnotherSEOGuru Editorial Team

@@ -1,6 +1,7 @@
 ---
 slug: seo-vs-google-ads
 title: "SEO vs Google Ads: Which Is Right for Your Business in 2026?"
+seoTitle: "SEO vs Google Ads: Which Is Right?"
 description: "SEO or Google Ads? A clear comparison of cost, speed, ROI, common mistakes and when the 70/30 mix wins, so your budget goes where it actually pays."
 date: 2026-07-06
 author: AnotherSEOGuru Editorial Team

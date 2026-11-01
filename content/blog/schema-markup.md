@@ -1,6 +1,7 @@
 ---
 slug: schema-markup
 title: "Schema Markup: Οδηγός JSON-LD για Ελληνικές Επιχειρήσεις"
+seoTitle: "Schema Markup: Οδηγός JSON-LD"
 description: "Schema markup στην πράξη: τι είναι τα structured data και το JSON-LD, ποιοι τύποι αξίζουν για ελληνικές επιχειρήσεις, παράδειγμα κώδικα και πώς το ελέγχετε."
 date: 2026-10-19
 author: AnotherSEOGuru Editorial Team

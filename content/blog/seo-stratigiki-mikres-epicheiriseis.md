@@ -1,6 +1,7 @@
 ---
 slug: seo-stratigiki-mikres-epicheiriseis
 title: "SEO Στρατηγική για Μικρές Επιχειρήσεις: Πλάνο 90 Ημερών"
+seoTitle: "SEO για Μικρές Επιχειρήσεις"
 description: SEO συμβουλές και στρατηγική για μικρές επιχειρήσεις στην Ελλάδα. Τι να κάνετε τις πρώτες 90 μέρες, κόστος, λάθη να αποφύγετε και πότε να προσλάβετε agency.
 date: 2026-07-23
 author: AnotherSEOGuru Editorial Team

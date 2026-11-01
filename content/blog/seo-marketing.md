@@ -1,6 +1,7 @@
 ---
 slug: seo-marketing
 title: "SEO Marketing: Πώς Ταιριάζει στο Ψηφιακό Μάρκετινγκ (2026)"
+seoTitle: "SEO Marketing: Οδηγός 2026"
 description: "SEO marketing για μικρομεσαίες επιχειρήσεις: πώς δένει με Google Ads, social και email, πλάνο 90 ημερών και μέτρηση σε GA4 και Search Console."
 date: 2026-10-19
 author: AnotherSEOGuru Editorial Team

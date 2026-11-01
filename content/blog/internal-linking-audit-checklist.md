@@ -1,6 +1,7 @@
 ---
 slug: internal-linking-audit-checklist
 title: Internal Linking Audit Checklist for In-House SEO Teams
+seoTitle: "Internal Linking Audit Checklist"
 description: Find orphan pages, over-linked footers and anchor text patterns that waste crawl budget, with a pragmatic fix order for tourism and local business sites.
 date: 2026-02-18
 author: AnotherSEOGuru Editorial Team

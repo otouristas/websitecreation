@@ -1,6 +1,7 @@
 ---
 slug: local-seo-guide
 title: The Ultimate Guide to Local SEO for Home Services
+seoTitle: "Local SEO Guide for Home Services"
 description: How plumbers, HVAC techs, contractors, hotels, and rent-a-car operators can dominate Google Maps. Stop buying leads and start owning them.
 date: 2026-01-15
 updated: 2026-10-16

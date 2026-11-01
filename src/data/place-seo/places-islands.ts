@@ -81,7 +81,7 @@ export const ISLAND_PLACES: readonly PlacePageData[] = [
       { label: 'Χανιά', href: '/el/seo/chania' },
       RETHYMNO,
     ],
-    workSlugs: ['discover-crete', 'way-to-crete', 'villa-olivia-clara'],
+    workSlugs: ['discover-crete', 'way-to-crete'],
   },
   {
     slug: 'heraklion',

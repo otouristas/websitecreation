@@ -1,6 +1,7 @@
 ---
 slug: ergaleia-seo
 title: "Εργαλεία SEO 2026: Δωρεάν Stack + Google Analytics για SEO"
+seoTitle: "Εργαλεία SEO 2026: Δωρεάν Stack"
 description: "Τα καλύτερα εργαλεία SEO για ελληνικές επιχειρήσεις: Search Console, Analytics (GA4), PageSpeed, και πώς τα χρησιμοποιείτε χωρίς ακριβά suites στην αρχή."
 date: 2026-07-23
 author: AnotherSEOGuru Editorial Team

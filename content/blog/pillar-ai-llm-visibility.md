@@ -1,6 +1,7 @@
 ---
 slug: pillar-ai-llm-visibility
 title: "AI & LLM Visibility: Measure What Models Say About Your Brand"
+seoTitle: "AI & LLM Visibility for Your Brand"
 description: Pillar hub for generative search, citation tracking and building content that earns responsible mentions in AI answers from ChatGPT, Gemini and Perplexity.
 date: 2026-02-01
 author: AnotherSEOGuru Editorial Team

@@ -16,6 +16,7 @@ import {
   blogSitemapEntry,
   buildBlogPostMetadata,
 } from '../src/lib/blog-seo';
+import { cleanPageTitle } from '../src/lib/seo/metadata';
 
 // The metadata builder logs banned copy tokens outside production. This check
 // asserts structure, and those tokens are existing copy, not a pipeline failure.
@@ -187,6 +188,15 @@ for (const post of posts) {
   for (const [code, href] of Object.entries(expected)) {
     if (hrefOf(langs, code) !== href) fail(`${post.slug}: sitemap() hreflang ${code} drifted`);
   }
+}
+
+// The <title> must fit the SERP budget as written. A headline cut mid-phrase
+// («Οδηγός σε 10», «How to Win Cases from») reads broken in Google, so a long
+// headline needs a short `seoTitle` in its frontmatter.
+for (const post of posts) {
+  const serp = (post as { seoTitle?: string }).seoTitle ?? post.title;
+  const shown = cleanPageTitle(serp);
+  if (shown !== serp) fail(`${post.locale}/${post.slug}: SERP title is cut to «${shown}». Add a shorter seoTitle.`);
 }
 
 if (failures.length > 0) {

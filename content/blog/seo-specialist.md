@@ -1,6 +1,7 @@
 ---
 slug: seo-specialist
 title: "SEO Specialist: Τι Κάνει και Πώς τον Επιλέγετε"
+seoTitle: "SEO Specialist: Τι Κάνει"
 description: "SEO specialist: τι κάνει στην πράξη, ποιες δεξιότητες χρειάζεται, freelancer, εταιρεία ή εσωτερικός, πώς τον αξιολογείτε και ποια σημάδια κινδύνου προσέχετε."
 date: 2026-10-19
 author: AnotherSEOGuru Editorial Team

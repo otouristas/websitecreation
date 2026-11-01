@@ -1,6 +1,7 @@
 ---
 slug: pricing-page-seo-software-vs-agency
 title: Why we split software pricing and agency pricing (and how to choose)
+seoTitle: "SEO Software vs Agency Pricing"
 description: Clear positioning between self-serve SEO software and done-for-you retainers on your pricing page, which reduces confusion and improves lead quality.
 date: 2026-03-10
 author: AnotherSEOGuru Editorial Team

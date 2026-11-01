@@ -1,6 +1,7 @@
 ---
 slug: proothisi-istoselidas
 title: "Προώθηση Ιστοσελίδας: 12 Τρόποι που Αποδίδουν (2026)"
+seoTitle: "Προώθηση Ιστοσελίδας: 12 Τρόποι"
 description: "Προώθηση ιστοσελίδας με 12 τρόπους: SEO, Google Business Profile, διαφήμιση στο Google, περιεχόμενο, email και AI απαντήσεις, με κόστος και χρόνο ανά τρόπο."
 date: 2026-10-19
 author: AnotherSEOGuru Editorial Team

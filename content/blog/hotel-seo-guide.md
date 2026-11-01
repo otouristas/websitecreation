@@ -1,6 +1,7 @@
 ---
 slug: hotel-seo-guide
 title: "Hotel SEO: How to Win Direct Bookings in 2026"
+seoTitle: "Hotel SEO: Win More Direct Bookings"
 description: "A practical hotel SEO guide: cut OTA commissions, rank in Google and win direct bookings with technical SEO, destination content and AI search visibility."
 date: 2026-07-06
 updated: 2026-09-10

@@ -1,6 +1,7 @@
 ---
 slug: seo-gia-estiatoria
 title: "SEO για Εστιατόρια & Καφέ: Γεμίστε Τραπέζια από τη Google"
+seoTitle: "SEO για Εστιατόρια και Καφέ"
 description: "Τοπικό SEO για εστιατόρια, καφέ και μπαρ στην Ελλάδα. Google Business Profile, μενού σε HTML, κριτικές, κόστος και checklist για γεμάτα τραπέζια."
 date: 2026-07-07
 author: AnotherSEOGuru Editorial Team
