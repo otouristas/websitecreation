@@ -67,7 +67,7 @@ A query with no URL is a gap. Three URLs claiming the same query is overlap. Fix
 
 ## 3. Fix indexation before you add more pages
 
-Google cannot rank a URL it has not indexed. Check Search Console for accidental noindex tags, canonicals that point at the wrong host, soft 404s, and important pages that only a sitemap can reach. Publishing more posts while coverage says "Discovered - currently not indexed" adds URLs, not visibility.
+Google cannot rank a URL it has not indexed. Check Search Console for accidental noindex tags, canonicals that point at the wrong host, soft 404s, and important pages that only a sitemap can reach. Publishing more posts while coverage says "Discovered: currently not indexed" adds URLs, not visibility.
 
 Start with the homepage, the core service pages, and the quote path. The [technical SEO guide](/en/blog/technical-seo-guide) is the checklist. A [free audit](/en/tools/free-seo-audit) surfaces the obvious blockers the same day.
 

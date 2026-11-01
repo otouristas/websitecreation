@@ -1,6 +1,6 @@
 ---
 slug: semantic-keyword-clustering
-title: Semantic Keyword Clustering - A Practical Guide
+title: "Semantic Keyword Clustering: A Practical Guide"
 description: "What semantic keyword clustering is, how embeddings and intent grouping work, how to do it with or without Python, and how to turn clusters into a plan."
 date: 2026-08-19
 author: AnotherSEOGuru Editorial Team
@@ -16,7 +16,7 @@ faq:
   - question: What similarity threshold should I use?
     answer: There is no universal value. Start around 0.75 cosine similarity, read fifty clusters by hand, and move it. Too loose merges different intents; too tight produces near-duplicate groups that imply near-duplicate pages.
   - question: Can you cluster keywords without code?
-    answer: Yes. Group by SERP overlap instead - if two queries return largely the same results, one page can serve both. It is slower to gather but reflects how the search engine already treats the queries.
+    answer: "Yes. Group by SERP overlap instead: if two queries return largely the same results, one page can serve both. It is slower to gather but reflects how the search engine already treats the queries."
   - question: How is semantic clustering different from keyword grouping?
     answer: Ordinary grouping matches shared text, so paraphrases split apart and different intents merge together. Semantic clustering compares meaning, then separates by intent, which maps far more closely to how pages actually rank.
 ---
@@ -93,7 +93,7 @@ The cluster list is a means, not the deliverable. Four things get built from it.
 
 If you have never done this, start with the no-code method on your thirty most commercially important queries. It takes an afternoon and usually surfaces at least one pair of pages competing for the same intent.
 
-If you are working at the scale of a few thousand keywords, the Python route pays for itself quickly - but budget the time to read the output, not just to run it.
+If you are working at the scale of a few thousand keywords, the Python route pays for itself quickly, but budget the time to read the output, not just to run it.
 
 Related reading: [Semantic Keyword Clustering in the platform](/en/platform/features#keywords), the [technical SEO guide](/en/blog/technical-seo-guide), and [how to prioritise Search Console queries](/en/blog/gsc-query-prioritization-framework).
 

@@ -43,6 +43,8 @@ const ALLOW_LONG = new Set([
   'gsc-query-prioritization-framework',
   'llm-citations-brand-visibility',
   'pricing-page-seo-software-vs-agency',
+  'poso-kostizei-mia-istoselida',
+  'seo-gia-xenodoxeia',
   'medical-marketing',
   'internal-linking-audit-checklist',
   'glossary-strategy-internal-linking',
@@ -125,6 +127,20 @@ function validatePost(filePath) {
   const translationOf = typeof data.translationOf === 'string' ? data.translationOf.trim() : '';
   if (typeof data.translationOf === 'string' && !translationOf) {
     errors.push('translationOf is empty');
+  }
+
+  // House rule: no dashes as clause separators. A spaced hyphen ("word - word")
+  // is the same dash typed on a keyboard, so prose, titles and FAQ answers use a
+  // colon, comma or parentheses instead. Tables and code blocks are skipped.
+  const proseLines = [
+    String(data.title ?? ''),
+    String(data.description ?? ''),
+    ...(Array.isArray(data.faq) ? data.faq.flatMap((f) => [String(f?.question ?? ''), String(f?.answer ?? '')]) : []),
+    ...content.replace(/```[\s\S]*?```/g, '').split('\n').filter((l) => !l.trimStart().startsWith('|')),
+  ];
+  const dashLine = proseLines.find((l) => /\S - \S/.test(l));
+  if (dashLine) {
+    errors.push(`spaced hyphen used as a dash: ${dashLine.trim().slice(0, 80)}`);
   }
 
   const faq = Array.isArray(data.faq) ? data.faq : [];
