@@ -27,7 +27,8 @@
     "check:meta-map": "node scripts/check-meta-map.mjs",
     "check:no-em-dash": "node scripts/check-no-em-dash.mjs",
     "check:brand": "python3 src/brand/scripts/sync_tokens.py --check && node scripts/check-brand-assets.mjs && npx tsx scripts/generate-brand-og.ts --check",
-    "generate:brand-og": "npx tsx scripts/generate-brand-og.ts"
+    "generate:brand-og": "npx tsx scripts/generate-brand-og.ts",
+    "check:guards": "node scripts/check-banned-terms.mjs && node scripts/check-no-em-dash.mjs"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.4",
