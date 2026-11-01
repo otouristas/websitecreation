@@ -53,6 +53,7 @@ import { getServiceFaqs } from '@/data/service-faq-data';
 import { currentPrice, entrySeoNet, entryWebsiteNet, formatPrice, resolvePriceTokens, seoPackages, websitePackages } from '@/data/pricing';
 
 import { TopicSections } from '@/components/services/topic-sections';
+import { websiteRegionForCity } from '@/data/website-regions';
 import { withExactTitle } from '../../_lib/exact-title';
 import type { Location } from '@/data/locations';
 
@@ -165,6 +166,8 @@ export default async function ServiceLocationPage({ params }: PageProps) {
     const otherLocale: SiteLocale = isEl ? 'en' : 'el';
     // Real neighbours only (same region, short distance) that have a live page.
     const nearbyCities = getNearbyLocations(location, serviceSlug, siteLocale, 4);
+    // Greek website-creation city pages link up to their region page (Κρήτη, Κυκλάδες).
+    const regionLink = isEl && serviceSlug === 'website-creation' ? websiteRegionForCity(locationSlug) : undefined;
     // Other kept services for this city. The old list was the first three
     // services in the catalogue, most of which no longer have city pages.
     const relatedServices = CITY_PAGE_SERVICES
@@ -490,10 +493,13 @@ export default async function ServiceLocationPage({ params }: PageProps) {
                                 <WaveHeading eyebrow={local.nearby} title={accented(t.nearbyTitle)} />
                                 <ChipLinks
                                     className="mt-8"
-                                    items={nearbyCities.map((city) => ({
-                                        href: lp(`/services/${serviceSlug}/${city.slug}`),
-                                        label: isEl && city.cityLocal ? city.cityLocal : city.city,
-                                    }))}
+                                    items={[
+                                        ...(regionLink ? [regionLink] : []),
+                                        ...nearbyCities.map((city) => ({
+                                            href: lp(`/services/${serviceSlug}/${city.slug}`),
+                                            label: isEl && city.cityLocal ? city.cityLocal : city.city,
+                                        })),
+                                    ]}
                                 />
                             </div>
                         ) : null}

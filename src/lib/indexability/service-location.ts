@@ -149,6 +149,7 @@ export const PHASE1_PLACE_PAGE: Readonly<Record<string, string>> = {
   'paros-gr': '/el/seo/paros',
   'rhodes-gr': '/el/seo/rhodes',
   'corfu-gr': '/el/seo/corfu',
+  'cyclades-gr': '/el/seo/kyklades',
 };
 
 export type ServiceLocationRouteDecision =
