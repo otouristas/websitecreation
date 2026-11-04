@@ -22,7 +22,7 @@ Built 2026-10-19 on branch `claude/resources-hub-goo2zi` of `otouristas/websitec
 | Product: AnotherSEOGuru App, “Search Console, turned into a growth plan”: ranked fixes with an estimated click impact | `gsc-gemini-boost/README.md` |
 | Nine modules: Opportunities, Performance, Keywords, Content, Site audit, Competitors, AI visibility, AI assistant, Agency workspace | `src/components/gsc-boost/modules.ts` |
 | Opportunity detectors: striking distance, low CTR, content decay, cannibalization, missing content | `src/data/help/en.ts` (opportunities article), app `src/lib/seo/opportunities.ts` |
-| Plans (USD): Launch $29/mo (3 sites, 1 seat, 1,200 credits), Growth $79 (10 sites, 3 seats, 6,000 credits), Agency $149 (30 sites, 10 seats, 20,000 credits); yearly = 10× monthly | `src/components/gsc-boost/plans.ts` |
+| Plans (USD): Free (1 site, 25 credits), Starter $19/mo (2 sites, 1 seat, 500 credits), Pro $49 (5 sites, 3 seats, 2,500 credits), Agency $299 (50 sites, 15 seats, 25,000 credits); yearly = 10× monthly; add-ons and credit packs on top | `src/components/gsc-boost/plans.ts` |
 | Search Console features cost 0 credits on every plan; paid data and AI use credits | `plans.ts` CREDIT_COSTS, `/platform/features` |
 | White-label client reports, CRM, pipeline are Agency-plan features; content briefs/WordPress, competitor gaps, AI visibility tracking are Growth+ | `plans.ts` |
 | Live demo on sample data, no account or card | `faq.ts` |

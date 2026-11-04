@@ -37,8 +37,8 @@ export interface ProductModule {
   readonly demoPath: string;
 }
 
-const ALL: ReadonlyArray<PlanId> = ["Launch", "Growth", "Agency"];
-const GROWTH_UP: ReadonlyArray<PlanId> = ["Growth", "Agency"];
+const ALL: ReadonlyArray<PlanId> = ["Starter", "Pro", "Agency"];
+const GROWTH_UP: ReadonlyArray<PlanId> = ["Pro", "Agency"];
 
 export const MODULES: ReadonlyArray<ProductModule> = [
   {

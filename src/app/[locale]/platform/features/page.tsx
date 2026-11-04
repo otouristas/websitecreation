@@ -110,8 +110,8 @@ export default async function PlatformFeaturesPage({ params }: PageProps) {
               </>
             }
             lead={tx(
-              "Search Console work is on every plan. Research, content and AI visibility open on Growth. The client workspace is the Agency plan.",
-              "Η δουλειά στο Search Console υπάρχει σε κάθε πακέτο. Η έρευνα, το περιεχόμενο και η ορατότητα σε AI ανοίγουν στο Growth. Ο χώρος εργασίας πελατών είναι το πακέτο Agency.",
+              "Search Console work is on every plan. Research, content and AI visibility open on Pro. The client workspace is the Agency plan.",
+              "Η δουλειά στο Search Console υπάρχει σε κάθε πακέτο. Η έρευνα, το περιεχόμενο και η ορατότητα σε AI ανοίγουν στο Pro. Ο χώρος εργασίας πελατών είναι το πακέτο Agency.",
             )}
           />
           <TieredModuleGrid locale={locale} source="features" detailed />

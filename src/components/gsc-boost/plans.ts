@@ -10,7 +10,7 @@ import { c, type Copy } from "./copy";
  * Never round or invent a figure on the website.
  */
 
-export type PlanId = "Launch" | "Growth" | "Agency";
+export type PlanId = "Starter" | "Pro" | "Agency";
 export type BillingCycle = "monthly" | "yearly";
 
 export interface Plan {
@@ -22,63 +22,92 @@ export interface Plan {
   readonly credits: number;
   readonly sites: number;
   readonly seats: number;
+  readonly keywords: number;
+  readonly prompts: number;
   readonly highlight?: boolean;
   readonly features: ReadonlyArray<Copy>;
 }
 
 export const PLANS: ReadonlyArray<Plan> = [
   {
-    id: "Launch",
-    tagline: c(
-      "For founders and in-house marketers running one or two sites.",
-      "Για ιδρυτές και in-house marketers με έναν ή δύο ιστοτόπους.",
-    ),
-    monthly: 29,
-    yearly: 290,
-    credits: 1200,
-    sites: 3,
+    id: "Starter",
+    tagline: c("For one business with one or two sites.", "Για μία επιχείρηση με έναν ή δύο ιστοτόπους."),
+    monthly: 19,
+    yearly: 190,
+    credits: 500,
+    sites: 2,
     seats: 1,
+    keywords: 100,
+    prompts: 10,
     features: [
-      c("Search Console performance & annotations", "Απόδοση Search Console & σημειώσεις"),
-      c("Opportunity engine with click-impact estimates", "Μηχανή ευκαιριών με εκτίμηση αντίκτυπου σε κλικ"),
-      c("Keyword research & rank tracking", "Έρευνα λέξεων-κλειδιών & παρακολούθηση θέσεων"),
-      c("Site audit and page inspector", "Έλεγχος ιστότοπου και επιθεώρηση σελίδων"),
-      c("AI assistant for your data", "Βοηθός AI για τα δεδομένα σας"),
+      c("Every fix the engine finds, with click impact", "Κάθε διόρθωση που βρίσκει η μηχανή, με αντίκτυπο σε κλικ"),
+      c("Unlimited tasks with measured results", "Απεριόριστες εργασίες με μετρημένα αποτελέσματα"),
+      c("100 tracked keywords and alerts", "100 λέξεις-κλειδιά σε παρακολούθηση και ειδοποιήσεις"),
+      c("10 AI visibility prompts", "10 prompts ορατότητας στην AI"),
+      c("GA4, widgets and the iPhone app", "GA4, widgets και η εφαρμογή για iPhone"),
     ],
   },
   {
-    id: "Growth",
-    tagline: c("For growing teams that ship content every week.", "Για ομάδες σε ανάπτυξη που δημοσιεύουν περιεχόμενο κάθε εβδομάδα."),
-    monthly: 79,
-    yearly: 790,
-    credits: 6000,
-    sites: 10,
+    id: "Pro",
+    tagline: c("For marketers and freelancers who ship every week.", "Για marketers και freelancers που δημοσιεύουν κάθε εβδομάδα."),
+    monthly: 49,
+    yearly: 490,
+    credits: 2500,
+    sites: 5,
     seats: 3,
+    keywords: 500,
+    prompts: 50,
     highlight: true,
     features: [
-      c("Everything in Launch", "Όλα όσα περιλαμβάνει το Launch"),
-      c("Content briefs, AI writer & WordPress publishing", "Πλάνα περιεχομένου, συγγραφή με AI & δημοσίευση στο WordPress"),
-      c("Competitor gaps, backlinks & SERP explorer", "Κενά έναντι ανταγωνιστών, backlinks & εξερεύνηση SERP"),
-      c("AI visibility tracking (ChatGPT, Gemini, Perplexity)", "Παρακολούθηση ορατότητας στην AI (ChatGPT, Gemini, Perplexity)"),
-      c("Priority support", "Υποστήριξη προτεραιότητας"),
+      c("Everything in Starter", "Όλα όσα περιλαμβάνει το Starter"),
+      c("AI visibility in ChatGPT, Gemini, Perplexity and AI Overviews", "Ορατότητα στην AI σε ChatGPT, Gemini, Perplexity και AI Overviews"),
+      c("Content briefs, writer, optimizer and revamp", "Briefs περιεχομένου, συγγραφή, βελτιστοποίηση και ανανέωση"),
+      c("Autopilot fixes on WordPress and GitHub", "Αυτόματες διορθώσεις σε WordPress και GitHub"),
+      c("Competitors, keyword gap, backlinks and local grid", "Ανταγωνιστές, keyword gap, backlinks και τοπικό grid"),
+      c("Weekly site audits up to 5,000 pages", "Εβδομαδιαίοι έλεγχοι ιστότοπου έως 5.000 σελίδες"),
     ],
   },
   {
     id: "Agency",
     tagline: c("For agencies managing many clients and sites.", "Για γραφεία που διαχειρίζονται πολλούς πελάτες και ιστοτόπους."),
-    monthly: 149,
-    yearly: 1490,
-    credits: 20000,
-    sites: 30,
-    seats: 10,
+    monthly: 299,
+    yearly: 2990,
+    credits: 25000,
+    sites: 50,
+    seats: 15,
+    keywords: 5000,
+    prompts: 300,
     features: [
-      c("Everything in Growth", "Όλα όσα περιλαμβάνει το Growth"),
-      c("Client CRM, pipeline & tasks", "CRM πελατών, pipeline & εργασίες"),
-      c("White-label client reports", "Αναφορές πελατών white-label"),
-      c("Bulk site switching for 30 sites", "Γρήγορη εναλλαγή μεταξύ 30 ιστοτόπων"),
-      c("Dedicated onboarding", "Αποκλειστική υποστήριξη στο ξεκίνημα"),
+      c("Everything in Pro", "Όλα όσα περιλαμβάνει το Pro"),
+      c("White-label reports and the client portal", "Αναφορές white-label και πύλη πελατών"),
+      c("Leads, pipeline, proposals and prospect audits", "Leads, pipeline, προτάσεις και έλεγχοι υποψήφιων πελατών"),
+      c("Site audits up to 20,000 pages per site", "Έλεγχοι ιστότοπου έως 20.000 σελίδες ανά ιστότοπο"),
+      c("Onboarding call and priority support", "Κλήση γνωριμίας και υποστήριξη προτεραιότητας"),
     ],
   },
+];
+
+/** The free plan: no card, forever. */
+export const FREE_PLAN = { credits: 25, sites: 1, seats: 1, keywords: 10, prompts: 3 } as const;
+
+/** Card-free reverse trial: Pro features for 7 days. */
+export const TRIAL = { days: 7, credits: 250, sites: 1 } as const;
+
+export interface Addon {
+  readonly id: string;
+  readonly name: Copy;
+  readonly monthly: number;
+  readonly yearly: number;
+}
+
+/** Recurring add-ons on any paid plan (the app's billing_addons). */
+export const ADDONS: ReadonlyArray<Addon> = [
+  { id: "extra_site", name: c("Extra site", "Επιπλέον ιστότοπος"), monthly: 5, yearly: 50 },
+  { id: "extra_seat", name: c("Extra seat", "Επιπλέον χρήστης"), monthly: 9, yearly: 90 },
+  { id: "extra_keywords", name: c("500 more tracked keywords", "500 επιπλέον λέξεις-κλειδιά"), monthly: 9, yearly: 90 },
+  { id: "extra_prompts", name: c("50 more AI visibility prompts", "50 επιπλέον prompts ορατότητας AI"), monthly: 19, yearly: 190 },
+  { id: "monthly_credits", name: c("2,500 credits every month", "2.500 μονάδες κάθε μήνα"), monthly: 25, yearly: 250 },
+  { id: "white_label", name: c("White-label reports", "Αναφορές white-label"), monthly: 29, yearly: 290 },
 ];
 
 export function planById(id: PlanId): Plan {
@@ -116,10 +145,9 @@ export interface CreditPack {
 
 /** Names match the app's `credit_packages.name`. */
 export const CREDIT_PACKS: ReadonlyArray<CreditPack> = [
-  { name: "Starter Pack", credits: 100, bonus: 0, price: 10 },
-  { name: "Growth Pack", credits: 500, bonus: 50, price: 40 },
-  { name: "Pro Pack", credits: 1000, bonus: 150, price: 70 },
-  { name: "Enterprise Pack", credits: 5000, bonus: 1000, price: 300 },
+  { name: "1,000 credits", credits: 1000, bonus: 0, price: 12 },
+  { name: "5,000 credits", credits: 5000, bonus: 0, price: 49 },
+  { name: "20,000 credits", credits: 20000, bonus: 0, price: 159 },
 ];
 
 /** The app's published rate card (src/lib/plans.ts CREDIT_COSTS). */

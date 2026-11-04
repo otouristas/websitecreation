@@ -2,7 +2,7 @@ import { Check, Download, LineChart, LockKeyhole, MessageSquare, Minus, RotateCc
 import { cn } from "@/lib/cn";
 import type { SiteLocale } from "@/lib/i18n/locale";
 import { appLink, formatCredits, formatNumber, formatUsd, type Copy } from "./copy";
-import { comparisonRows, CREDIT_COSTS, CREDIT_EXAMPLES, CREDIT_PACKS, PLANS } from "./plans";
+import { ADDONS, comparisonRows, CREDIT_COSTS, CREDIT_EXAMPLES, CREDIT_PACKS, PLANS } from "./plans";
 
 type L = SiteLocale;
 
@@ -199,7 +199,7 @@ export function CreditPacks({ locale, source }: { readonly locale: L; readonly s
   const isEl = locale === "el";
   const best = Math.min(...CREDIT_PACKS.map((p) => p.price / (p.credits + p.bonus)));
   return (
-    <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+    <div className="grid gap-3 sm:grid-cols-3">
       {CREDIT_PACKS.map((pack) => {
         const total = pack.credits + pack.bonus;
         const perCredit = pack.price / total;
@@ -227,7 +227,7 @@ export function CreditPacks({ locale, source }: { readonly locale: L; readonly s
           </div>
         );
       })}
-      <p className="text-[13px] text-muted-foreground sm:col-span-2 lg:col-span-4">
+      <p className="text-[13px] text-muted-foreground sm:col-span-3">
         {isEl
           ? "Εφάπαξ ενισχύσεις για τους πιο φορτωμένους μήνες, που αγοράζονται από τις Χρεώσεις μέσα στην εφαρμογή."
           : "One-time top-ups for busy months, bought from Billing inside the app."}{" "}
@@ -236,5 +236,23 @@ export function CreditPacks({ locale, source }: { readonly locale: L; readonly s
         </a>
       </p>
     </div>
+  );
+}
+
+/** Recurring add-ons on any paid plan, with the app's prices. */
+export function AddonList({ locale }: { readonly locale: L }) {
+  const isEl = locale === "el";
+  return (
+    <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      {ADDONS.map((addon) => (
+        <li key={addon.id} className="flex items-center justify-between gap-3 rounded-xl border border-hairline bg-surface/60 px-5 py-4">
+          <span className="text-[14px] font-medium text-foreground">{addon.name[locale]}</span>
+          <span className="shrink-0 text-[14px] font-semibold tabular-nums text-foreground">
+            {formatUsd(locale, addon.monthly)}
+            <span className="font-normal text-muted-foreground">{isEl ? " / μήνα" : " / mo"}</span>
+          </span>
+        </li>
+      ))}
+    </ul>
   );
 }
