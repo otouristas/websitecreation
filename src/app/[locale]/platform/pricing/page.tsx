@@ -6,7 +6,9 @@ import Footer from "@/components/Footer";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
 import { Accent, Container, CtaBand, HeroCentered, KitEyebrow, KitHeading, KitSection, SoftwareCtas, TrustLine, softwareTrust } from "@/components/kit";
 import {
+  AddonList,
   AgencyCrossSell,
+  FREE_PLAN,
   ComparisonTable,
   CreditCapacity,
   CreditPacks,
@@ -16,6 +18,7 @@ import {
   PRICING_FAQ,
   PlanPicker,
   PlatformLinks,
+  TRIAL,
   appLink,
   formatUsd,
   gscBoostSoftwareSchema,
@@ -26,7 +29,7 @@ import { isValidLocale, type SiteLocale } from "@/lib/i18n/locale";
 
 type PageProps = { params: Promise<{ locale: string }> };
 
-const [LAUNCH, GROWTH, AGENCY] = PLANS;
+const [STARTER, PRO, AGENCY] = PLANS;
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { locale } = await params;
@@ -36,8 +39,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     path: "/platform/pricing",
     title: { en: "SEO Software Pricing: AnotherSEOGuru App Plans", el: "AnotherSEOGuru App: τιμές λογισμικού SEO" },
     description: {
-      en: `AnotherSEOGuru App pricing: Launch $${LAUNCH.monthly}, Growth $${GROWTH.monthly} and Agency $${AGENCY.monthly} a month, two months free yearly. Search Console features never use credits.`,
-      el: `Τιμές AnotherSEOGuru App: Launch $${LAUNCH.monthly}, Growth $${GROWTH.monthly} και Agency $${AGENCY.monthly} τον μήνα, δύο μήνες δώρο ετησίως. Το Search Console δεν χρεώνει μονάδες.`,
+      en: `AnotherSEOGuru App pricing: Free, Starter $${STARTER.monthly}, Pro $${PRO.monthly} and Agency $${AGENCY.monthly} a month, two months free yearly. Search Console features never use credits.`,
+      el: `Τιμές AnotherSEOGuru App: Free, Starter $${STARTER.monthly}, Pro $${PRO.monthly} και Agency $${AGENCY.monthly} τον μήνα, δύο μήνες δώρο ετησίως. Το Search Console δεν χρεώνει μονάδες.`,
     },
     keyword: { en: "SEO software pricing", el: "τιμές λογισμικού SEO" },
   });
@@ -74,8 +77,8 @@ export default async function PlatformPricingPage({ params }: PageProps) {
             </>
           }
           lead={tx(
-            `AnotherSEOGuru App costs ${usd(LAUNCH.monthly)}, ${usd(GROWTH.monthly)} or ${usd(AGENCY.monthly)} a month, with two months free on yearly billing. Search Console analysis, opportunities and client reports never use credits. Credits pay for third-party data and AI, and every action shows its cost before you run it.`,
-            `Το AnotherSEOGuru App κοστίζει ${usd(LAUNCH.monthly)}, ${usd(GROWTH.monthly)} ή ${usd(AGENCY.monthly)} τον μήνα, με δύο μήνες δώρο στην ετήσια χρέωση. Η ανάλυση Search Console, οι ευκαιρίες και οι αναφορές πελατών δεν χρησιμοποιούν ποτέ μονάδες. Οι μονάδες καλύπτουν δεδομένα τρίτων και AI, και κάθε ενέργεια δείχνει το κόστος της πριν την εκτελέσετε.`,
+            `AnotherSEOGuru App costs ${usd(STARTER.monthly)}, ${usd(PRO.monthly)} or ${usd(AGENCY.monthly)} a month, with two months free on yearly billing. Search Console analysis, opportunities and client reports never use credits. Credits pay for third-party data and AI, and every action shows its cost before you run it.`,
+            `Το AnotherSEOGuru App κοστίζει ${usd(STARTER.monthly)}, ${usd(PRO.monthly)} ή ${usd(AGENCY.monthly)} τον μήνα, με δύο μήνες δώρο στην ετήσια χρέωση. Η ανάλυση Search Console, οι ευκαιρίες και οι αναφορές πελατών δεν χρησιμοποιούν ποτέ μονάδες. Οι μονάδες καλύπτουν δεδομένα τρίτων και AI, και κάθε ενέργεια δείχνει το κόστος της πριν την εκτελέσετε.`,
           )}
           actions={<SoftwareCtas locale={locale} source="pricing-hero" />}
           trust={<TrustLine items={softwareTrust(locale)} />}
@@ -85,7 +88,10 @@ export default async function PlatformPricingPage({ params }: PageProps) {
               <span className="flex size-5 items-center justify-center rounded-full bg-brand/15 text-brand">
                 <Check className="size-3" strokeWidth={3} aria-hidden />
               </span>
-              {tx("Everything included, no add-ons", "Όλα περιλαμβάνονται, χωρίς add-ons")}
+              {tx(
+                `Free forever with ${FREE_PLAN.credits} credits a month, or try Pro free for ${TRIAL.days} days. No card.`,
+                `Δωρεάν για πάντα με ${FREE_PLAN.credits} μονάδες τον μήνα, ή δοκιμάστε το Pro δωρεάν για ${TRIAL.days} ημέρες. Χωρίς κάρτα.`,
+              )}
             </p>
             <PlanPicker locale={locale} source="pricing-plans" className="mx-auto max-w-[1100px]" />
             <p className="mt-8 text-center text-[13px] text-muted-foreground">
@@ -104,12 +110,12 @@ export default async function PlatformPricingPage({ params }: PageProps) {
         <section aria-labelledby="included" className="mt-20 border-y border-hairline bg-surface/35 sm:mt-24">
           <Container className="py-12">
             <h2 id="included" className="text-center font-display text-[22px] font-semibold tracking-[-0.02em] text-foreground">
-              {tx("Everything included, no add-ons", "Όλα περιλαμβάνονται, χωρίς add-ons")}
+              {tx("Included on every plan", "Περιλαμβάνεται σε κάθε πακέτο")}
             </h2>
             <p className="mx-auto mt-2 max-w-xl text-pretty text-center text-[14.5px] leading-relaxed text-muted-foreground">
               {tx(
-                "A plan’s price covers every feature listed for it. No paid toolkits or per-feature upgrades on top. Every plan includes:",
-                "Η τιμή κάθε πακέτου καλύπτει όλες τις λειτουργίες που αναφέρει. Χωρίς επιπλέον χρεώσεις για εργαλεία ή αναβαθμίσεις ανά λειτουργία. Κάθε πακέτο περιλαμβάνει:",
+                "A plan’s price covers every feature listed for it. Add-ons only add capacity, never features. Every plan includes:",
+                "Η τιμή κάθε πακέτου καλύπτει όλες τις λειτουργίες που αναφέρει. Τα add-ons προσθέτουν μόνο χωρητικότητα, ποτέ λειτουργίες. Κάθε πακέτο περιλαμβάνει:",
               )}
             </p>
             <IncludedGrid locale={locale} />
@@ -158,6 +164,18 @@ export default async function PlatformPricingPage({ params }: PageProps) {
             </p>
             <div className="reveal mt-6">
               <CreditPacks locale={locale} source="pricing-packs" />
+            </div>
+          </div>
+          <div className="mt-14">
+            <h3 className="font-display text-[20px] font-semibold tracking-[-0.02em] text-foreground">Add-ons</h3>
+            <p className="mt-1 text-[14.5px] text-muted-foreground">
+              {tx(
+                "Need more room on a paid plan? Add sites, seats, keywords, prompts or monthly credits. Yearly add-ons get two months free.",
+                "Χρειάζεστε περισσότερο χώρο σε ένα πληρωμένο πακέτο; Προσθέστε ιστοτόπους, χρήστες, λέξεις-κλειδιά, prompts ή μηνιαίες μονάδες. Τα ετήσια add-ons έχουν δύο μήνες δώρο.",
+              )}
+            </p>
+            <div className="reveal mt-6">
+              <AddonList locale={locale} />
             </div>
           </div>
         </KitSection>

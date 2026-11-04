@@ -80,7 +80,7 @@ export const en: ReadonlyArray<HelpCategory> = [
           { type: "h2", id: "switching", text: "Switching between sites" },
           { type: "p", text: "Use the site switcher at the top of the sidebar, or press `⌘K` and type the domain. **All sites** shows every project on one screen with its trend, drops, top movers and open fixes, which is the fastest way to see where to look first when you manage many sites." },
           { type: "image", device: "browser", src: "/images/docs/web/portfolio-light.webp", srcDark: "/images/docs/web/portfolio-dark.webp", width: 1600, height: 1000, alt: "The All sites screen with click totals and a card for each site showing its trend, top mover and open fixes", caption: "All sites shows every project on one screen, sorted by the biggest drop." },
-          { type: "note", tone: "tip", text: "Your plan sets how many projects you can have: 3 on Launch, 10 on Growth and 30 on Agency." },
+          { type: "note", tone: "tip", text: "Your plan sets how many projects you can have: 1 on Free, 2 on Starter, 5 on Pro and 50 on Agency. Paid plans can add more sites as add-ons." },
         ],
       },
       {
@@ -488,11 +488,12 @@ export const en: ReadonlyArray<HelpCategory> = [
         body: [
           { type: "p", text: "Every plan includes all your Search Console analytics, opportunities and client reports at no credit cost. Credits pay for actions that cost us money to run, like live keyword data, results-page lookups, crawls and AI." },
           { type: "table", head: ["Plan", "Price", "Credits / month", "Projects", "Seats"], rows: [
-            ["Launch", "$29 / month", "1,200", "3", "1"],
-            ["Growth", "$79 / month", "6,000", "10", "3"],
-            ["Agency", "$149 / month", "20,000", "30", "10"],
+            ["Free", "$0", "25", "1", "1"],
+            ["Starter", "$19 / month", "500", "2", "1"],
+            ["Pro", "$49 / month", "2,500", "5", "3"],
+            ["Agency", "$299 / month", "25,000", "50", "15"],
           ] },
-          { type: "p", text: "Yearly billing gives you two months free. If you run out, top up with a credit pack at any time in **Settings → Billing & credits**." },
+          { type: "p", text: "Yearly billing gives you two months free. New accounts can try Pro free for 7 days with no card. If you run out, top up with a credit pack (1,000 credits for $12, 5,000 for $49, 20,000 for $159) at any time in **Settings → Billing & credits**. Paid plans can also add extra sites, seats, keywords, AI prompts and monthly credits as add-ons." },
           { type: "note", tone: "info", text: "When an action costs credits, the button shows the cost before you run it, and we ask you to confirm. Actions without a cost on the button are free." },
         ],
       },
