@@ -1011,7 +1011,7 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
       'Heraklion is Crete’s largest commercial hub with intense tourism and local business activity. Hotels, car rentals, restaurants, and city services need websites that sell direct - without handing margins to OTAs and marketplaces. At the same time, local businesses win from near-me searches that grow every year across the city and surrounding areas. We build bilingual-ready, SEO-focused sites and local programs that capture visitor booking intent and resident demand, with technical speed and Google Business Profile excellence as the foundation. Pricing is quoted in EUR.',
     tourism: true,
     nearbySlugs: ['crete-gr', 'rethymno-gr', 'chania-gr'],
-    portfolioSlugs: ['discover-crete', 'way-to-crete'],
+    portfolioSlugs: ['discover-crete'],
     faqs: [
       {
         question: 'Should Heraklion hospitality sites be bilingual?',
@@ -1163,7 +1163,7 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
       'Crete is Greece’s largest tourism market, with thousands of accommodations and services competing online. The difference between a full season and an empty one is often decided on Google’s first page - and in AI answers travellers trust when planning Heraklion, Chania, Rethymno, and Agios Nikolaos trips. We build websites and SEO programs that drive direct bookings across the island, with bilingual architecture, technical speed, and local authority signals tailored to hospitality and related services. Island-wide strategy plus city-level depth is how Crete brands scale beyond OTAs. Pricing is quoted in EUR.',
     tourism: true,
     nearbySlugs: ['heraklion-gr', 'chania-gr', 'rethymno-gr', 'santorini-gr'],
-    portfolioSlugs: ['discover-crete', 'way-to-crete'],
+    portfolioSlugs: ['discover-crete'],
     faqs: [
       {
         question: 'Should Crete businesses target the whole island or specific cities?',
@@ -1201,7 +1201,7 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
       'Rethymno combines strong tourism traffic with a living local market. Accommodations and restaurants win with bilingual websites and SEO, while local businesses can still dominate city searches thanks to relatively lower competition than larger Cretan hubs. We build fast sites and local programs that capture visitor booking intent and resident near-me demand - supported by Google Business Profile excellence and clear conversion paths. Technical foundations keep you visible through seasonal peaks and quieter months. Pricing is quoted in EUR.',
     tourism: true,
     nearbySlugs: ['crete-gr', 'heraklion-gr', 'chania-gr'],
-    portfolioSlugs: ['rethemnos'],
+    portfolioSlugs: ['discover-crete'],
     faqs: [
       {
         question: 'Is Rethymno less competitive than Chania or Heraklion for SEO?',
@@ -1233,7 +1233,7 @@ export const LOCATION_PACKS_EN: Record<string, LocationContentPack> = {
       'Chania is one of Crete’s most loved destinations, and online competition in hospitality grows every year. Hotels, villas, and tourism services with their own SEO-ready website take bookings directly - with better margins than platform-only strategies. We build bilingual sites and local SEO systems that capture high-intent travel searches, strengthen technical performance, and convert mobile visitors into reservations. Whether you serve the Old Town, surrounding resorts, or island-wide travellers using Chania as a base, search should be a growth channel you own. Pricing is quoted in EUR.',
     tourism: true,
     nearbySlugs: ['crete-gr', 'rethymno-gr', 'heraklion-gr'],
-    portfolioSlugs: ['discover-crete', 'way-to-crete'],
+    portfolioSlugs: ['discover-crete'],
     faqs: [
       {
         question: 'How competitive is hospitality SEO in Chania?',

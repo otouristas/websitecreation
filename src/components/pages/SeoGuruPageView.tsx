@@ -26,7 +26,7 @@ import { withExactTitle } from '@/app/[locale]/services/_lib/exact-title';
  */
 
 /** Live work already published on /work. Homepage screenshots, not result charts. */
-const PROOF_SLUGS = ['onoma-hotel', 'aggelos-rentals', 'way-to-crete', 'kipos-hotel', 'cyclades-rentacar', 'opticore-store'];
+const PROOF_SLUGS = ['onoma-hotel', 'aggelos-rentals', 'kipos-hotel', 'cyclades-rentacar', 'opticore-store'];
 
 const PAGE_PATH = '/seo-guru';
 

@@ -134,7 +134,7 @@ export const WEBSITE_REGION_PAGES: readonly WebsiteRegionPage[] = [
       },
     ],
     seoPlace: { label: 'SEO Κρήτη', href: '/el/seo/crete' },
-    workSlugs: ['discover-crete', 'way-to-crete'],
+    workSlugs: ['discover-crete'],
   },
   {
     slug: 'kyklades',

@@ -23,6 +23,7 @@ const RETIRED_WORK_SLUGS = [
   "plati-taverna",
   "politidis-fitness",
   "quad-safari-rethymno",
+  "rethemnos",
   "smart-dog-training",
   "spili-apartments",
   "taverna-yiannis",
@@ -30,6 +31,7 @@ const RETIRED_WORK_SLUGS = [
   "travel-sifnos",
   "vape-and-more",
   "villas-katerina",
+  "way-to-crete",
 ] as const;
 
 const nextConfig: NextConfig = {
