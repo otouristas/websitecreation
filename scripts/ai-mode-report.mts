@@ -16,7 +16,7 @@
  * Usage:
  *   npx tsx scripts/ai-mode-report.mts                    # first 5, live only
  *   npx tsx scripts/ai-mode-report.mts --category hotel
- *   npx tsx scripts/ai-mode-report.mts --slug way-to-crete
+ *   npx tsx scripts/ai-mode-report.mts --slug discover-crete
  *   npx tsx scripts/ai-mode-report.mts --all              # every live client
  *   npx tsx scripts/ai-mode-report.mts --plan-only        # no network at all
  *

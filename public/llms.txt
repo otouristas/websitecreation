@@ -26,7 +26,7 @@ Last Updated: 2026-11-01
 - **Industry Solutions** (<https://anotherseoguru.com/en/solutions>) - Vertical websites and SEO by industry.
 - **Hotels & Hospitality** (<https://anotherseoguru.com/en/solutions/hotels>) - Hotel websites, booking UX, and tourism SEO.
 - **Rent-a-Car** (<https://anotherseoguru.com/en/solutions/rent-a-car>) - Fleet catalogs, booking funnels, island/airport local SEO.
-- **Portfolio / Case Studies** (<https://anotherseoguru.com/en/work>) - 41 documented client projects with homepage screenshots.
+- **Portfolio / Case Studies** (<https://anotherseoguru.com/en/work>) - 39 documented client projects with homepage screenshots.
 - **Blog** (<https://anotherseoguru.com/en/blog>) - SEO, GEO/AEO, hotel, and e-shop guides (EN + EL).
 - **SEO guides** (<https://anotherseoguru.com/en/seo-guides>) - Index of the ranking guides and the cluster on keywords, on-page, technical SEO, links and local search (EN + EL).
 - **AnotherSEOGuru App (SEO software)** (<https://anotherseoguru.com/en/platform>) - Google Search Console-native SEO software: ranked fixes with click estimates, rank tracking, site audit, AI visibility. Web app at app.anotherseoguru.com (EN + EL).
@@ -184,7 +184,7 @@ AnotherSEOGuru serves all of Greece. Each place below has its own Greek page, wr
 - **SEO για Ενοικίαση Σκαφών & Yacht Charter | AnotherSEOGuru** (<https://anotherseoguru.com/el/seo-tourismou/enoikiasi-skafon>) - SEO για ενοικίαση σκαφών, yacht charter και boat rental: σελίδα ανά σκάφος και διαδρομή, Google Maps και κρατήσεις στα ελληνικά νησιά. Ζητήστε έλεγχο.
 - **SEO για Transfer & Ταξί: Αεροδρόμια, Λιμάνια & Κρατήσεις** (<https://anotherseoguru.com/el/seo-tourismou/transfer>) - SEO για εταιρείες transfer και ταξί: σελίδα ανά διαδρομή από αεροδρόμια και λιμάνια, Google Maps, κριτικές και online κρατήσεις σε όλη την Ελλάδα.
 
-## Portfolio & Case Studies (41 projects)
+## Portfolio & Case Studies (39 projects)
 - [Aggelos Rentals](https://anotherseoguru.com/en/work/aggelos-rentals) - Daily and monthly car rental in Piraeus, with delivery to the port and Athens airport. · Website: https://aggelosrentals.com
 - [Cyclades Rent a Car](https://anotherseoguru.com/en/work/cyclades-rentacar) - A directory of local vehicle-rental partners across the Cyclades, from Discover Cyclades. · Website: https://cycladesrentacar.com
 - [Naxos Car Rentals](https://anotherseoguru.com/en/work/naxos-carrentals) - A local Naxos car-rental website with compact, automatic, family and four-wheel-drive vehicles. · Website: https://naxos-carrentals.com
@@ -208,11 +208,9 @@ AnotherSEOGuru serves all of Greece. Each place below has its own Greek page, wr
 - [GetCarPiraeus](https://anotherseoguru.com/en/work/rentacar-piraeus) - GetCarPiraeus offers cars, vans, motorcycles and scooters around Piraeus and its ferry port. · Website: https://rentacarpiraeus.gr
 - [Athens Rent a Car](https://anotherseoguru.com/en/work/athens-rentacar) - An Athens car-rental project focused on city and airport arrivals. · Website: https://athensrentacar.com
 - [Rent a Car Paros](https://anotherseoguru.com/en/work/rentacar-paros-gr) - A Paros car-rental project for travellers planning their island transport. · Website: https://rentacar-paros.gr
-- [Way to Crete](https://anotherseoguru.com/en/work/way-to-crete) - An archived Crete travel project centred on storytelling, local tours and experiences. · Website: https://waytocrete.com
 - [Marinakis Tours](https://anotherseoguru.com/en/work/santo-tours-marinakis) - Marinakis Tours offers private tours, wine experiences, catamaran trips and transfers on Santorini. · Website: https://santotoursmarinakis.com
 - [Cuba Travel Academy](https://anotherseoguru.com/en/work/cuba-travel-academy) - A practical Cuba travel guide covering visas, currency, weather, safety and trip preparation. · Website: https://www.cubatravel.academy
 - [AGGELOS Transfer](https://anotherseoguru.com/en/work/antiparos-transfer) - AGGELOS Transfer provides private transport on Paros and Antiparos, including airport arrivals, weddings and island tours. · Website: https://antiparostransfer.gr
-- [Rethemnos](https://anotherseoguru.com/en/work/rethemnos) - A local Rethymno publication covering news, culture, events and life in the region. · Website: https://rethemnos.gr
 - [Κτήμα Ωρίων](https://anotherseoguru.com/en/work/ktima-orion) - A wedding and baptism venue in Keratea, Attica, with sea views and spaces for 50 to 350 guests. · Website: https://ktimaorion.gr
 - [Weddings Folegandros](https://anotherseoguru.com/en/work/weddings-folegandros) - A Folegandros wedding-planning website for destination weddings, elopements and ceremonies around Chora and Panagia. · Website: https://weddings-folegandros.gr
 - [My Honeymoon](https://anotherseoguru.com/en/work/my-honeymoon) - A travel-planning service for personalised honeymoons and trips designed around each couple. · Website: https://www.myhoneymoon.gr

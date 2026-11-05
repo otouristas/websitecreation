@@ -19,7 +19,6 @@ for(const p of portfolioProjects){
 assert.match(projectResearch['navos-ai'].overview.en,/business strategy/);
 assert.match(projectResearch['project-shadow-ai'].overview.en,/WooCommerce/);
 assert.match(projectResearch['ktima-orion'].overview.en,/wedding.*baptism/i);
-assert.match(projectResearch['rethemnos'].overview.en,/news/);
 assert.match(projectResearch['vwanaki'].overview.en,/cocktail/);
 assert.equal(portfolioProjects.find(p=>p.slug==='project-shadow-ai').liveStatus,undefined);
 console.log(`${slugs.length} complete, unique EN/EL project briefs match their card copy and metadata. Known business-identity regressions checked.`);

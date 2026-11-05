@@ -286,7 +286,7 @@ AnotherSEOGuru serves all of Greece. Each place below has its own Greek page, wr
 
 ---
 
-## 6. Portfolio & Case Studies (41)
+## 6. Portfolio & Case Studies (39)
 
 ### Aggelos Rentals (`aggelos-rentals`)
 - **Case study:** https://anotherseoguru.com/en/work/aggelos-rentals · https://anotherseoguru.com/el/work/aggelos-rentals
@@ -426,16 +426,6 @@ AnotherSEOGuru serves all of Greece. Each place below has its own Greek page, wr
 - **Services delivered:** website-creation, content-creation, web-design
 - **Website features:** Beach and city guides; Ferry, flight and car information; Multi-day itineraries
 
-### Way to Crete (`way-to-crete`)
-- **Case study:** https://anotherseoguru.com/en/work/way-to-crete · https://anotherseoguru.com/el/work/way-to-crete
-- **Project website:** https://waytocrete.com
-- **Category:** tours
-- **Public-page availability at review:** archived project
-- **Summary (EN):** An archived Crete travel project centred on storytelling, local tours and experiences.
-- **Summary (EL):** Παλαιότερο ταξιδιωτικό έργο για την Κρήτη, με ιστορίες του τόπου, εκδρομές και τοπικές εμπειρίες.
-- **Services delivered:** website-creation, content-creation
-- **Website features:** Crete destination stories; Local experiences; Historical project showcase
-
 ### Santorini Daily Tours (`santorini-daily-tours`)
 - **Case study:** https://anotherseoguru.com/en/work/santorini-daily-tours · https://anotherseoguru.com/el/work/santorini-daily-tours
 - **Project website:** https://santorinidailytours.com
@@ -498,15 +488,6 @@ AnotherSEOGuru serves all of Greece. Each place below has its own Greek page, wr
 - **Summary (EL):** Πρόσθετο AI και εργαλείο ανάλυσης για WooCommerce, με απαντήσεις για το κατάστημα, συγγραφή περιεχομένου και υποστήριξη πελατών.
 - **Services delivered:** website-creation, ai-visibility
 - **Website features:** Store analytics and questions; Shadow Writer; Store chatbot and plugin insights
-
-### Rethemnos (`rethemnos`)
-- **Case study:** https://anotherseoguru.com/en/work/rethemnos · https://anotherseoguru.com/el/work/rethemnos
-- **Project website:** https://rethemnos.gr
-- **Category:** other
-- **Summary (EN):** A local Rethymno publication covering news, culture, events and life in the region.
-- **Summary (EL):** Τοπική ενημερωτική ιστοσελίδα για το Ρέθυμνο, με ειδήσεις, πολιτισμό, εκδηλώσεις και τη ζωή της περιοχής.
-- **Services delivered:** website-creation, content-creation
-- **Website features:** Local news; Culture and events; Rethymno community information
 
 ### Κτήμα Ωρίων (`ktima-orion`)
 - **Case study:** https://anotherseoguru.com/en/work/ktima-orion · https://anotherseoguru.com/el/work/ktima-orion
