@@ -45,7 +45,7 @@ const COPY = {
     allGood: "Your homepage passes every quick check. The full audit looks deeper.",
     scanFailed: "We couldn't load your homepage for the quick check. The team will look at it in the full audit.",
     teamTitle: "Our SEO team is working on your site",
-    teamDone: "The team has finished. The full results and your plan are on their way to your inbox.",
+    teamDone: "The team has finished. Your report, with what to fix first, is on its way to your inbox. If you can't see it in a few minutes, check your spam folder.",
     teamStatic: "Our team has your request. The full audit and your plan arrive by email within 24 working hours.",
     statuses: { queued: "Waiting", running: "Working", done: "Done" },
     agents: {
@@ -81,7 +81,7 @@ const COPY = {
     allGood: "Η αρχική σας περνά όλους τους γρήγορους ελέγχους. Ο πλήρης έλεγχος πάει πιο βαθιά.",
     scanFailed: "Δεν μπορέσαμε να φορτώσουμε την αρχική σας για τον γρήγορο έλεγχο. Η ομάδα θα την εξετάσει στον πλήρη έλεγχο.",
     teamTitle: "Η ομάδα SEO δουλεύει στην ιστοσελίδα σας",
-    teamDone: "Η ομάδα τελείωσε. Τα πλήρη αποτελέσματα και το πλάνο σας έρχονται στο email σας.",
+    teamDone: "Η ομάδα τελείωσε. Η αναφορά σας, με το τι να διορθώσετε πρώτα, έρχεται στο email σας. Αν δεν τη δείτε σε λίγα λεπτά, κοιτάξτε και στα ανεπιθύμητα.",
     teamStatic: "Η ομάδα μας έλαβε το αίτημά σας. Ο πλήρης έλεγχος και το πλάνο σας έρχονται με email μέσα σε 24 εργάσιμες ώρες.",
     statuses: { queued: "Σε αναμονή", running: "Σε εξέλιξη", done: "Έτοιμο" },
     agents: {
