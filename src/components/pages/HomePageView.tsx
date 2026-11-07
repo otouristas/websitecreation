@@ -14,7 +14,7 @@ import { GoogleTile } from '@/components/kit';
 import { WhatsAppIcon } from '@/components/icons/WhatsAppIcon';
 import { homeCopy, type HomeCopy } from '@/components/pages/home/copy';
 import { CompareBoard } from '@/components/pages/home/CompareBoard';
-import { SampleWindow } from '@/components/pages/home/SampleWindow';
+import { PhoneHero } from '@/components/pages/home/PhoneHero';
 import { appLink } from '@/components/gsc-boost/copy';
 import { portfolioProjects } from '@/data/portfolio';
 import { HOME_LOGOS } from '@/data/home-content';
@@ -169,8 +169,32 @@ export function HomePageView({ locale }: { readonly locale: SiteLocale }) {
             <div className="absolute left-[-10%] top-[-120px] size-[min(520px,80vw)] rounded-full bg-primary/20 blur-3xl" />
             <div className="absolute right-[-8%] top-[140px] size-[min(460px,70vw)] rounded-full bg-signal/15 blur-3xl" />
           </div>
-          <div className="relative mx-auto grid max-w-[1320px] grid-cols-[minmax(0,1fr)] items-center gap-10 px-5 pb-16 pt-6 sm:pt-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.08fr)] lg:gap-12 lg:px-8 lg:pb-28 lg:pt-10">
-            <div className="min-w-0">
+          <div className="relative mx-auto grid max-w-[1320px] grid-cols-[minmax(0,1fr)] items-center gap-6 px-5 pb-16 pt-6 sm:pt-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-6 lg:px-8 lg:pb-24 lg:pt-10">
+            <PhoneHero
+              locale={locale}
+              after={
+                <>
+                  <div className="mt-8 flex flex-wrap items-center gap-3">
+                    <a href={signup} className={primaryBtn}>
+                      <GoogleTile className="size-6 rounded-full" />
+                      {copy.signup}
+                    </a>
+                    <a href={WHATSAPP_HREF} className="inline-flex min-h-12 items-center gap-2 rounded-full px-3 text-[15px] font-medium text-success hover:text-foreground" rel="noopener noreferrer">
+                      <WhatsAppIcon className="size-5" />
+                      {copy.whatsapp}
+                    </a>
+                  </div>
+                  <ul className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-[13.5px] text-muted-foreground">
+                    {copy.trust.map((item) => (
+                      <li key={item} className="flex items-center gap-2">
+                        <Mark kind="yes" label={copy.markYes} />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              }
+            >
               <Link
                 href={lp('/platform')}
                 className="inline-flex max-w-full items-center gap-2 rounded-full border border-hairline bg-surface/80 py-1.5 pl-1.5 pr-4 text-[13px] text-muted-foreground backdrop-blur transition-colors hover:border-brand/40 hover:text-foreground"
@@ -181,36 +205,22 @@ export function HomePageView({ locale }: { readonly locale: SiteLocale }) {
                 <span className="min-w-0 truncate">{copy.announce}</span>
                 <span className="text-primary" aria-hidden>→</span>
               </Link>
-              <h1 className="mt-6 text-balance font-display text-[2rem] font-bold leading-[1.05] tracking-[-0.04em] text-foreground min-[400px]:text-[2.35rem] sm:text-[3.25rem] lg:text-[3.75rem]">
-                <span className="block">{copy.h1Line1}</span>
-                <span className="block">
+              <h1
+                className={`mt-6 text-balance font-display font-bold leading-[1.02] tracking-[-0.045em] ${
+                  isEl
+                    ? 'text-[2.15rem] min-[400px]:text-[2.4rem] sm:text-[3.4rem] lg:text-[3.2rem] xl:text-[3.6rem]'
+                    : 'text-[2.4rem] min-[400px]:text-[2.75rem] sm:text-[3.75rem] lg:text-[4.25rem] xl:text-[4.75rem]'
+                }`}
+              >
+                <span className="block text-foreground/45">{copy.h1Line1}</span>
+                <span className="block text-foreground">
                   {copy.h1Line2Before}
                   <Accent>{copy.h1Accent}</Accent>
                   {copy.h1Line2After}
                 </span>
               </h1>
               <p className="mt-6 max-w-[540px] text-pretty text-[17px] leading-[1.65] text-muted-foreground">{copy.lead}</p>
-              <div className="mt-8 flex flex-wrap items-center gap-3" data-hero-cta="">
-                <a href={signup} className={primaryBtn}>
-                  <GoogleTile className="size-6 rounded-full" />
-                  {copy.signup}
-                </a>
-                <Link href={audit} className={ghostBtn}>{copy.audit}</Link>
-                <a href={WHATSAPP_HREF} className="inline-flex min-h-12 items-center gap-2 rounded-full px-3 text-[15px] font-medium text-success hover:text-foreground" rel="noopener noreferrer">
-                  <WhatsAppIcon className="size-5" />
-                  {copy.whatsapp}
-                </a>
-              </div>
-              <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-[13.5px] text-muted-foreground">
-                {copy.trust.map((item) => (
-                  <li key={item} className="flex items-center gap-2">
-                    <Mark kind="yes" label={copy.markYes} />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <SampleWindow copy={copy} />
+            </PhoneHero>
           </div>
         </section>
 
