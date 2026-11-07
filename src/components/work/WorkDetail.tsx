@@ -7,6 +7,8 @@ import { projectStory } from "@/data/portfolio-stories";
 import { MOBILE_CAPTURES } from "@/data/portfolio-mobile";
 import { ProjectCard } from "./ProjectCard";
 import { ClientSearchResults } from "./ClientSearchResults";
+import { CaseResults } from "./CaseResults";
+import { getCaseResult } from "@/data/case-results";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
 import { generateArticleSchema, generateBreadcrumbSchema, combineSchemas } from "@/lib/seo/schema";
 import { getServiceEl } from "@/data/services-i18n";
@@ -144,6 +146,8 @@ export function WorkDetail({ project, locale = "en" }: { project: PortfolioProje
           </div>
         </div>
       </section>
+
+      <CaseResults result={getCaseResult(project.slug)} locale={locale} />
 
       <WaveSection id="project-story" shot="context">
         <div className="grid min-w-0 gap-8 lg:grid-cols-[0.65fr_1.35fr]">
