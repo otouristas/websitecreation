@@ -18,6 +18,7 @@ import { SampleWindow } from '@/components/pages/home/SampleWindow';
 import { appLink } from '@/components/gsc-boost/copy';
 import { portfolioProjects } from '@/data/portfolio';
 import { HOME_LOGOS } from '@/data/home-content';
+import { CASE_RESULTS, metricValue } from '@/data/case-results';
 import { FOUNDER_YEARS, PROJECTS_DELIVERED } from '@/data/founder';
 import { LEGAL_ENTITY_ID, LEGAL_ENTITY_NAME } from '@/data/legal-entity';
 import { MARKET_COUNT, RESPONSE_HOURS } from '@/data/company-facts';
@@ -409,6 +410,18 @@ export function HomePageView({ locale }: { readonly locale: SiteLocale }) {
               </div>
             ))}
           </dl>
+          <div className="mt-14">
+            <Eyebrow>{isEl ? 'Αποτελέσματα από Google Search Console' : 'Results from Google Search Console'}</Eyebrow>
+            <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {CASE_RESULTS.map((r) => (
+                <Link key={r.slug} href={lp(`/work/${r.slug}`)} className="group block min-w-0 rounded-[18px] border border-hairline bg-surface/60 p-5 transition-colors hover:border-primary/40">
+                  <div className="font-display text-[2.2rem] font-bold leading-none tracking-tight tabular-nums text-foreground">{metricValue(r.headline, isEl)}</div>
+                  <div className="mt-2 text-[13.5px] leading-snug text-muted-foreground">{isEl ? r.headline.labelEl : r.headline.labelEn}</div>
+                  <div className="mt-4 text-[14px] font-semibold text-primary group-hover:text-foreground">{r.name} →</div>
+                </Link>
+              ))}
+            </div>
+          </div>
           <div className="mt-14 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
             <div>
               <Eyebrow>{copy.idealEyebrow}</Eyebrow>
