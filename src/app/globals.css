@@ -1138,3 +1138,28 @@ code, pre, kbd, samp { font-family: var(--font-code); }
   .workflow-logo-track { animation: none; transform: none; }
   .workflow-logo-copy { display: none; }
 }
+
+/* Homepage phone hero: notification cards drift in, then float gently. */
+@keyframes phone-float-in {
+  from { opacity: 0; transform: translateY(14px) scale(0.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes phone-float-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.phone-float {
+  opacity: 0;
+  animation:
+    phone-float-in 600ms cubic-bezier(0.2, 0.8, 0.2, 1) calc(500ms + var(--float-delay, 0ms) / 3) forwards,
+    phone-float-bob 6s ease-in-out calc(1200ms + var(--float-delay, 0ms)) infinite;
+}
+@keyframes hero-swap {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: none; }
+}
+.hero-swap { animation: hero-swap 350ms ease-out; }
+@media (prefers-reduced-motion: reduce) {
+  .phone-float { opacity: 1; animation: none; }
+  .hero-swap { animation: none; }
+}
