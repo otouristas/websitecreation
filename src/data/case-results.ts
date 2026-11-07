@@ -3,7 +3,7 @@
  *
  * Every figure here was read from the property's own Search Console data on
  * 2026-11-07 (through the AnotherSEOGuru App warehouse or the Ahrefs GSC
- * connection). Publishing approved by George, 2026-11-07. Keep claims to what
+ * connection). Publishing approved by the owner, 2026-11-07. Keep claims to what
  * the numbers show: no invented tactics, no projections.
  */
 export interface CaseMetric {

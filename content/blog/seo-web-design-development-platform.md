@@ -77,7 +77,7 @@ Auto-generate [XML sitemaps](/glossary?term=xml-sitemap), maintain [robots.txt](
 
 ### Performance engineering
 
-Target green [Core Web Vitals](/glossary?term=core-web-vitals): fast LCP, low [CLS](/glossary?term=cls), responsive [INP](/glossary?term=inp). For booking widgets and chat widgets, load third parties after first paint where possible.
+Target green [Core Web Vitals](/glossary?term=page-experience): fast LCP, low [CLS](/glossary?term=cls), responsive [INP](/glossary?term=inp). For booking widgets and chat widgets, load third parties after first paint where possible.
 
 ### Structured data
 

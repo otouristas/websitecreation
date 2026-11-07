@@ -12,7 +12,6 @@ import { OPPORTUNITY_FINDER, RESOURCE_ARTICLES } from '@/data/resources';
 import { allTerms } from '@/lib/docs/glossary';
 import { PLACE_PAGES } from '@/data/place-seo';
 import { WEBSITE_REGION_PAGES } from '@/data/website-regions';
-import { PLATFORM_TOOLS } from '@/data/platform-tools';
 import { TOURISM_VERTICALS } from '@/data/tourism-seo';
 import { ENGLISH_VERTICALS } from '@/data/tourism-seo/en';
 import { buildLocationServiceUrls } from '@/lib/sitemap-locations';
@@ -134,11 +133,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
     { path: `/resources/${OPPORTUNITY_FINDER.slug}`, priority: 0.86, changeFrequency: 'monthly' as const },
     { path: '/tools', priority: 0.84 },
-    ...PLATFORM_TOOLS.map((tool) => ({
-      path: `/tools/${tool.slug}`,
-      priority: 0.72,
-      changeFrequency: 'monthly' as const,
-    })),
+    // /tools/[slug] pages are noindex (the tool runs in the app), so they stay out of the sitemap.
     { path: '/compare', priority: 0.86, changeFrequency: 'monthly' as const },
   ];
 

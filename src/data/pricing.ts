@@ -21,7 +21,7 @@ export const VAT_RATE = 0.24;
  * discount and its messaging disappear on their own after this instant. No
  * countdown timers and no scarcity claims - the date does the work.
  *
- * Only the two entry packages are discounted (George, 2026-11-06): website
+ * Only the two entry packages are discounted (owner decision, 2026-11-06): website
  * €999 -> €599 and SEO €199 -> €149 a month. These are the same figures the
  * prospect emails and report pages quote, so the site and the outreach say one
  * thing. Every other tier carries `offer === regular` and shows no promotion.
