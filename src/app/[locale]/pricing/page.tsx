@@ -133,7 +133,7 @@ export default async function PricingPage({
           breadcrumbs={breadcrumbItems}
           pill={
             offerLive
-              ? { href: "#websites", kind: "save", tag: "-20%", text: tx("Summer Offer on new projects", "Summer Offer σε νέα έργα") }
+              ? { href: "#websites", kind: "save", tag: "-40%", text: tx("November offer: website €599, SEO €149 a month", "Προσφορά Νοεμβρίου: ιστοσελίδα €599, SEO €149 τον μήνα") }
               : {
                   href: lp("/get-started#free-audit"),
                   kind: "free",
@@ -149,8 +149,8 @@ export default async function PricingPage({
               {offerLive ? (
                 <p className="inline-flex max-w-2xl flex-wrap items-center gap-2 rounded-xl border border-warning/30 bg-warning/10 px-4 py-2.5 text-[13px] leading-relaxed text-warning">
                   {isEl
-                    ? "Summer Offer: 20% χαμηλότερη τιμή για νέα έργα που θα επιβεβαιωθούν έως 31 Αυγούστου 2026."
-                    : "Summer Offer: 20% lower pricing for new projects confirmed by 31 August 2026."}
+                    ? "Προσφορά Νοεμβρίου: ιστοσελίδα €599 αντί €999 και SEO €149 τον μήνα αντί €199 (+ ΦΠΑ), για νέα έργα που θα επιβεβαιωθούν έως 30 Νοεμβρίου 2026."
+                    : "November offer: website €599 instead of €999 and SEO €149 a month instead of €199 (+ VAT), for new projects confirmed by 30 November 2026."}
                 </p>
               ) : null}
             </div>

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import {
   currentPrice,
   formatPrice,
-  isOfferActive,
+  tierOnOffer,
   withVat,
   type Tier,
 } from '@/data/pricing';
@@ -38,7 +38,7 @@ export function PriceCard({
   frame?: 'glow' | 'quiet';
 }) {
   const isEl = locale === 'el';
-  const active = isOfferActive();
+  const active = tierOnOffer(tier);
   const net = currentPrice(tier);
   const gross = withVat(net);
   const per = recurring ? (isEl ? '/μήνα' : '/mo') : '';
@@ -75,7 +75,7 @@ export function PriceCard({
         {active ? (
           <p className="mb-1 flex items-center gap-2 text-sm text-muted-foreground">
             <span className="line-through">€{formatPrice(tier.regular, locale)}</span>
-            <MarketingBadge kind="save">Summer Offer</MarketingBadge>
+            <MarketingBadge kind="save">{isEl ? 'Προσφορά Νοεμβρίου' : 'November offer'}</MarketingBadge>
           </p>
         ) : null}
 
