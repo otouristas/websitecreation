@@ -10,6 +10,8 @@ import { ChatDomainEntry } from "@/components/landing/ChatDomainEntry";
 import { SeoChatDemo } from "@/components/landing/SeoChatDemo";
 import { SampleWindow } from "@/components/pages/home/SampleWindow";
 import { homeCopy } from "@/components/pages/home/copy";
+import { HOW_STEPS } from "@/data/value-explainer";
+import { ProofStrip } from "@/components/pages/home/ProofStrip";
 import { TieredModuleGrid } from "@/components/pages/platform-wave/modules";
 import {
   AnnouncePill,
@@ -312,38 +314,15 @@ export default async function PlatformHubPage({ params }: PageProps) {
           eyebrow={tx("How it works", "Πώς λειτουργεί")}
           title={
             <>
-              {tx("From sign-in to a plan in ", "Από τη σύνδεση σε πλάνο δράσης σε ")}
+              {tx("More visits from Google and AI, in ", "Περισσότερες επισκέψεις από Google και AI, σε ")}
               <WaveAccent>{tx("three steps.", "τρία βήματα.")}</WaveAccent>
             </>
           }
-          steps={[
-            {
-              n: "01",
-              title: tx("Connect Google", "Συνδέστε τη Google"),
-              body: tx(
-                "Sign up with Google and approve read-only access. Every property your account can see is listed; pick where to start.",
-                "Κάντε εγγραφή με Google και εγκρίνετε πρόσβαση μόνο για ανάγνωση. Εμφανίζονται όλοι οι ιστότοποι στους οποίους έχει πρόσβαση ο λογαριασμός σας· επιλέξτε από πού θα ξεκινήσετε.",
-              ),
-            },
-            {
-              n: "02",
-              title: tx("Get your plan", "Πάρτε το πλάνο σας"),
-              body: tx(
-                "AnotherSEOGuru App analyzes your queries and pages, finds every opportunity and ranks the fixes by the clicks they could bring.",
-                "Το AnotherSEOGuru App αναλύει τις αναζητήσεις και τις σελίδες σας, εντοπίζει κάθε ευκαιρία και ταξινομεί τις διορθώσεις με βάση τα κλικ που μπορούν να φέρουν.",
-              ),
-            },
-            {
-              n: "03",
-              title: tx("Ship and measure", "Υλοποιήστε και μετρήστε"),
-              body: tx(
-                "Turn fixes into tasks, mark what you shipped on the chart and watch the result, or put it in a client report.",
-                "Μετατρέψτε τις διορθώσεις σε εργασίες, σημειώστε στο γράφημα τι υλοποιήσατε και παρακολουθήστε το αποτέλεσμα ή βάλτε το σε μια αναφορά πελάτη.",
-              ),
-            },
-          ]}
+          steps={HOW_STEPS.map((step) => ({ n: step.n, title: tx(step.titleEn, step.titleEl), body: tx(step.bodyEn, step.bodyEl) }))}
           actions={<WaveSoftwareActions locale={locale} source="platform-steps" />}
         />
+
+        <ProofStrip locale={locale} />
 
         <WaveChoice locale={locale} source="platform-choice" />
 

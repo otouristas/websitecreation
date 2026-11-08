@@ -17,6 +17,7 @@ import {
 import { ManagedFaq, ServiceHeroActions } from "@/components/pages/services-wave/ui";
 import { buildHowItWorksSchemas, getHowItWorksCopy, type HowItWorksCopy } from "@/data/how-it-works";
 import type { SiteLocale } from "@/lib/i18n/locale";
+import { SEO_VS_AI, VALUE_HONESTY } from "@/data/value-explainer";
 
 function ShipMarker({
   before,
@@ -72,6 +73,50 @@ function FlowSample({ copy }: { readonly copy: HowItWorksCopy }) {
         </div>
       </div>
     </div>
+  );
+}
+
+/** Google (SEO) next to ChatGPT, Gemini and AI Overviews (AEO / GEO): what we want, what we fix, how we measure. */
+function AiAndSeo({ locale }: { readonly locale: SiteLocale }) {
+  const el = locale === "el";
+  return (
+    <WaveSection id="ai-visibility" shot="ai-visibility" tinted>
+      <WaveHeading
+        eyebrow={el ? "Google και AI" : "Google and AI"}
+        title={
+          <>
+            {el ? "SEO για το Google, AEO / GEO για " : "SEO for Google, AEO / GEO for "}
+            <WaveAccent>{el ? "ChatGPT και Gemini." : "ChatGPT and Gemini."}</WaveAccent>
+          </>
+        }
+        lead={
+          el
+            ? "Κάθε εβδομάδα ρωτάμε το ChatGPT, το Gemini και το Perplexity τις ερωτήσεις των πελατών σας και σας δείχνουμε ποιον προτείνουν. Οι ίδιες διορθώσεις βοηθούν και στα δύο."
+            : "Every week we ask ChatGPT, Gemini and Perplexity the questions your customers ask and show you who they recommend. The same fixes help on both."
+        }
+      />
+      <div className="mt-10 overflow-x-auto rounded-[22px] border border-hairline bg-background/70">
+        <table className="w-full min-w-[560px] text-left text-[14px]">
+          <thead>
+            <tr className="border-b border-hairline text-[12px] uppercase tracking-wider text-muted-foreground">
+              <th scope="col" className="px-5 py-3 font-semibold"><span className="sr-only">{el ? "Θέμα" : "Topic"}</span></th>
+              <th scope="col" className="px-5 py-3 font-semibold">SEO (Google)</th>
+              <th scope="col" className="px-5 py-3 font-semibold">AEO / GEO (ChatGPT, Gemini, AI Overviews)</th>
+            </tr>
+          </thead>
+          <tbody>
+            {SEO_VS_AI.map((row) => (
+              <tr key={row.labelEn} className="border-b border-hairline last:border-0">
+                <th scope="row" className="px-5 py-4 align-top font-semibold text-foreground">{el ? row.labelEl : row.labelEn}</th>
+                <td className="px-5 py-4 align-top text-muted-foreground">{el ? row.seoEl : row.seoEn}</td>
+                <td className="px-5 py-4 align-top text-muted-foreground">{el ? row.aiEl : row.aiEn}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p className="mt-5 text-pretty text-[13px] leading-relaxed text-muted-foreground">{el ? VALUE_HONESTY.el : VALUE_HONESTY.en}</p>
+    </WaveSection>
   );
 }
 
@@ -150,6 +195,8 @@ export function HowItWorksView({ locale }: { readonly locale: SiteLocale }) {
             </div>
           </div>
         </WaveSection>
+
+        <AiAndSeo locale={locale} />
 
         <WaveChoice locale={locale} source={copy.choiceSource} />
         <WaveStats locale={locale} />
