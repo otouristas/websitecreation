@@ -38,7 +38,7 @@ export const SAMPLE_REPORT: SampleReportMeta = {
   print: "Save as PDF",
   ctaTitle: "Make this report for your own client in two minutes",
   ctaText:
-    "Connect Google Search Console (read-only), pick a site and a month, and AnotherSEOGuru App fills every section of this report from live data. Add your logo, then download the PDF or schedule a monthly email. Search Console reports cost no credits on any plan.",
+    "Connect Google Search Console (read-only), pick a site and a month, and AnotherSEOGuru App fills every section of this report from live data. Add your logo, then download the PDF or schedule a monthly email. Search Console reports cost no credits on any plan, and new accounts get a 7-day free trial with no card.",
   signup: "Sign up free",
   demo: "Open the report in the demo",
   related: "Related guides",
@@ -56,7 +56,7 @@ export const SAMPLE_REPORT_EL: SampleReportMeta = {
   print: "Αποθήκευση ως PDF",
   ctaTitle: "Φτιάξτε αυτή την αναφορά για τον δικό σας πελάτη σε δύο λεπτά",
   ctaText:
-    "Συνδέστε το Google Search Console (μόνο ανάγνωση), διαλέξτε ιστότοπο και μήνα, και το AnotherSEOGuru App συμπληρώνει κάθε ενότητα από ζωντανά δεδομένα. Προσθέστε το λογότυπό σας και κατεβάστε το PDF ή προγραμματίστε μηνιαίο email. Οι αναφορές Search Console δεν κοστίζουν μονάδες σε κανένα πακέτο.",
+    "Συνδέστε το Google Search Console (μόνο ανάγνωση), διαλέξτε ιστότοπο και μήνα, και το AnotherSEOGuru App συμπληρώνει κάθε ενότητα από ζωντανά δεδομένα. Προσθέστε το λογότυπό σας και κατεβάστε το PDF ή προγραμματίστε μηνιαίο email. Οι αναφορές Search Console δεν κοστίζουν μονάδες, και οι νέοι λογαριασμοί έχουν 7 ημέρες δωρεάν δοκιμή χωρίς κάρτα.",
   signup: "Εγγραφή δωρεάν",
   demo: "Δείτε την αναφορά στο demo",
   related: "Σχετικοί οδηγοί",

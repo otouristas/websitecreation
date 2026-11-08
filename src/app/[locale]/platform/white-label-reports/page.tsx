@@ -93,8 +93,8 @@ const FAQ: ReadonlyArray<GscFaqItem> = [
   {
     q: c("Can I try it before paying?", "Μπορώ να το δοκιμάσω πριν πληρώσω;"),
     a: c(
-      "Yes. The live demo opens the Reports screen on sample data with no sign-up, and you can set your own branding there for the session. Sign-up is free with Google.",
-      "Ναι. Η ζωντανή επίδειξη ανοίγει τις Αναφορές σε δείγμα δεδομένων χωρίς εγγραφή, και μπορείτε να βάλετε το δικό σας branding. Η εγγραφή γίνεται δωρεάν με Google.",
+      "Yes. Every new account gets a 7-day free trial with no card, and the live demo opens the Reports screen on sample data with no sign-up at all.",
+      "Ναι. Κάθε νέος λογαριασμός έχει 7 ημέρες δωρεάν δοκιμή χωρίς κάρτα, και η ζωντανή επίδειξη ανοίγει τις Αναφορές σε δείγμα δεδομένων χωρίς καμία εγγραφή.",
     ),
     link: { kind: "app", path: "/demo/reports", label: c("Open the demo", "Ανοίξτε το demo") },
   },
@@ -145,7 +145,7 @@ export default async function WhiteLabelReportsPage({ params }: PageProps) {
             "Το AnotherSEOGuru App μετατρέπει τα δεδομένα Google Search Console κάθε πελάτη σε μηνιαία αναφορά με το δικό σας λογότυπο: καθαρή σύνοψη, τι άλλαξε και γιατί, τι υλοποιήσατε και τι ακολουθεί. Κατεβάστε το PDF ή προγραμματίστε το email. Χωρίς υπολογιστικά φύλλα και χωρίς connectors, και οι αναφορές Search Console δεν χρεώνουν ποτέ μονάδες.",
           )}
           actions={<WaveSoftwareActions locale={locale} source="white-label-hero" />}
-          trust={<TrustMarks items={copy.trust} yesLabel={yes} />}
+          trust={<TrustMarks items={[tx("7-day free trial, no card", "7 ημέρες δωρεάν δοκιμή, χωρίς κάρτα"), tx("Read-only Google access", "Πρόσβαση στη Google μόνο για ανάγνωση"), tx("Cancel anytime", "Ακύρωση οποτεδήποτε")]} yesLabel={yes} />}
           panel={
             <a href={appLink("/demo/reports", locale, "white-label-window")} className="block min-w-0">
               <AppPanel

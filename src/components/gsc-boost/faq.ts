@@ -41,8 +41,8 @@ export const HOME_FAQ: ReadonlyArray<GscFaqItem> = [
   {
     q: c("Do I need a credit card to try it?", "Χρειάζομαι πιστωτική κάρτα για να το δοκιμάσω;"),
     a: c(
-      "No. The live demo runs the whole product on sample data, with no account or card. To work on your own sites, you connect Google and choose a plan.",
-      "Όχι. Η ζωντανή επίδειξη τρέχει ολόκληρο το προϊόν με δείγμα δεδομένων, χωρίς λογαριασμό ή κάρτα. Για να δουλέψετε στους δικούς σας ιστοτόπους, συνδέετε τη Google και επιλέγετε πακέτο.",
+      "No. New accounts get a 7-day free trial on their own site with no card, and the live demo runs the whole product on sample data with no account at all. When the trial ends, you choose a plan.",
+      "Όχι. Οι νέοι λογαριασμοί έχουν 7 ημέρες δωρεάν δοκιμή στον δικό τους ιστότοπο χωρίς κάρτα, και η ζωντανή επίδειξη τρέχει ολόκληρο το προϊόν με δείγμα δεδομένων χωρίς λογαριασμό. Μετά τη δοκιμή επιλέγετε πακέτο.",
     ),
     link: { kind: "app", path: "/demo", label: c("Open the live demo", "Ανοίξτε τη ζωντανή επίδειξη") },
   },
@@ -112,8 +112,8 @@ export const PRICING_FAQ: ReadonlyArray<GscFaqItem> = [
   {
     q: c("Can I try it before I pay?", "Μπορώ να το δοκιμάσω πριν πληρώσω;"),
     a: c(
-      "Yes. The live demo runs the full product on sample data for three fictional sites, with no account or card required. When you’re ready, connect Google and pick a plan.",
-      "Ναι. Η ζωντανή επίδειξη τρέχει ολόκληρο το προϊόν με δείγμα δεδομένων για τρεις φανταστικούς ιστοτόπους, χωρίς λογαριασμό ή κάρτα. Όταν είστε έτοιμοι, συνδέστε τη Google και επιλέξτε πακέτο.",
+      "Yes. Connect Google and you get a 7-day free trial on your own site, with no card. The live demo also runs the full product on sample data for three fictional sites, with no account. When you’re ready, pick a plan.",
+      "Ναι. Συνδέστε τη Google και έχετε 7 ημέρες δωρεάν δοκιμή στον δικό σας ιστότοπο, χωρίς κάρτα. Η ζωντανή επίδειξη τρέχει επίσης ολόκληρο το προϊόν με δείγμα δεδομένων, χωρίς λογαριασμό. Όταν είστε έτοιμοι, επιλέξτε πακέτο.",
     ),
     link: { kind: "app", path: "/demo", label: c("Open the live demo", "Ανοίξτε τη ζωντανή επίδειξη") },
   },
