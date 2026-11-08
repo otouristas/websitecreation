@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { getAlternateLocalePath } from "@/lib/locale-paths";
 import { siteLocaleFromPath, type SiteLocale } from "@/lib/i18n/locale";
+import { isAgencyPathname } from "@/lib/site-split";
 
 function localeLabel(locale: SiteLocale): string {
   return locale === "el" ? "ΕΛ" : "EN";
@@ -18,7 +19,8 @@ export function LanguageSwitcher({ alternateHref }: { alternateHref?: string }) 
   const pathname = usePathname() ?? "/en";
   const locale = siteLocaleFromPath(pathname);
   const target: SiteLocale = locale === "el" ? "en" : "el";
-  const href = alternateHref ?? getAlternateLocalePath(pathname);
+  // Agency pages are Greek only, so their English link is the product homepage.
+  const href = isAgencyPathname(pathname) ? getAlternateLocalePath(pathname) : alternateHref ?? getAlternateLocalePath(pathname);
   const ariaLabel =
     target === "en" ? "Switch to English" : "Μετάβαση στα Ελληνικά";
 

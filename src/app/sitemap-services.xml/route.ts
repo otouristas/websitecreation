@@ -8,7 +8,8 @@ const BASE_URL = 'https://anotherseoguru.com';
 
 export async function GET() {
   const serviceSlugs = getAllServiceSlugs();
-  const locales = ['en', 'el'] as const;
+  // Agency pages are Greek only (src/lib/site-split.ts).
+  const locales = ['el'] as const;
 
   const urls = locales.flatMap((locale) =>
     serviceSlugs.map((slug) => ({

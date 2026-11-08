@@ -309,7 +309,7 @@ export function DiyRow({
           <CheckList items={DIY.bullets[l]} className="mt-6" />
           <SoftwareCtas locale={l} align="left" source={source} className="mt-8" />
           <p className="mt-4 text-[13px] text-muted-foreground">
-            <Link href={localizedPath(l, '/platform')} className="inline-flex items-center gap-1 underline decoration-hairline underline-offset-4 hover:text-foreground">
+            <Link href={localizedPath(l, '/')} className="inline-flex items-center gap-1 underline decoration-hairline underline-offset-4 hover:text-foreground">
               {DIY.more[l]}
               <ArrowRight className="size-3.5" aria-hidden />
             </Link>

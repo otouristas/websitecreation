@@ -257,7 +257,7 @@ export interface AngleFaq {
  * already rendered above them. Inventing 31 variants of each answer would be
  * padding, which is the thing this whole exercise is meant to remove.
  *
- * No prices: `/pricing` owns those and follows the live offer window.
+ * No prices: `/ypiresies/times` owns those and follows the live offer window.
  */
 const EN_FAQS: Record<string, readonly AngleFaq[]> = {
   'website-creation': [

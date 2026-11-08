@@ -1,6 +1,7 @@
 // SEO Metadata Builder - titles ≤60 chars total, descriptions 145–155 chars
 
 import { Metadata } from 'next';
+import { isAgencyPathname } from '@/lib/site-split';
 import { applySerpMeta } from './exact-meta';
 import { buildMetaDescription, finalizeDescription, fitDescription, BRAND_NAME, BASE_URL } from './description';
 import { getHreflangAlternates } from '@/lib/locale-paths';
@@ -242,8 +243,10 @@ export function buildMetadata(input: MetadataInput): Metadata {
   assertMetadataClean('title', fullTitle, path);
   assertMetadataClean('description', description, path);
 
-  const languages =
-    customLanguages ?? (hreflangPath ? getHreflangAlternates(hreflangPath, hreflangLocales) : undefined);
+  // Agency pages exist in Greek only (src/lib/site-split.ts): no alternates.
+  const languages = isAgencyPathname(path)
+    ? undefined
+    : customLanguages ?? (hreflangPath ? getHreflangAlternates(hreflangPath, hreflangLocales) : undefined);
 
   const metadata: Metadata = {
     metadataBase: new URL(BASE_URL),

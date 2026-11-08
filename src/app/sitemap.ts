@@ -15,6 +15,7 @@ import { WEBSITE_REGION_PAGES } from '@/data/website-regions';
 import { TOURISM_VERTICALS } from '@/data/tourism-seo';
 import { ENGLISH_VERTICALS } from '@/data/tourism-seo/en';
 import { buildLocationServiceUrls } from '@/lib/sitemap-locations';
+import { englishAgencyRedirect } from '@/lib/site-split';
 
 const BASE_URL = 'https://anotherseoguru.com';
 const LOCALES: SiteLocale[] = ['en', 'el'];
@@ -98,9 +99,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // module pages and pricing have real Greek copy from the app's own
     // dictionary. The old /platform/features/<slug> pages are gone (308s
     // in next.config.ts to the module anchors on /platform/features).
-    { path: '/platform', priority: 0.95 },
+    // The agency's Greek landing page and prices (src/lib/site-split.ts).
+    // localizedPath sends agency paths to /el, and the dedupe below keeps one.
+    { path: '/ypiresies', priority: 0.95 },
+    { path: '/ypiresies/times', priority: 0.8, changeFrequency: 'monthly' as const },
     { path: '/platform/features', priority: 0.92 },
-    { path: '/platform/pricing', priority: 0.9, changeFrequency: 'monthly' as const },
+    { path: '/pricing', priority: 0.9, changeFrequency: 'monthly' as const },
     { path: '/platform/for/agencies', priority: 0.85, changeFrequency: 'monthly' as const },
     { path: '/platform/for/in-house', priority: 0.85, changeFrequency: 'monthly' as const },
     { path: '/platform/for/ecommerce', priority: 0.85, changeFrequency: 'monthly' as const },
@@ -236,7 +240,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   );
 
-  return [...staticPages,
+  const all = [...staticPages,
     ...placePages,
     ...consultantPages,
     ...managedPages,
@@ -247,4 +251,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...blogPages,
     ...serviceCityPages,
   ];
+
+  // English agency URLs redirect to their Greek page (src/lib/site-split.ts),
+  // and agency paths built for both locales resolve to the same /el URL.
+  const seen = new Set<string>();
+  return all.filter((entry) => {
+    const path = entry.url.slice(BASE_URL.length) || '/';
+    if (englishAgencyRedirect(path) || seen.has(entry.url)) return false;
+    seen.add(entry.url);
+    return true;
+  });
 }

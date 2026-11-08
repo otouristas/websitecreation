@@ -79,7 +79,7 @@ export default async function ComparePage({ params }: PageProps) {
             generateSoftwareApplicationSchema({
               name: "AnotherSEOGuru",
               description: c.summary,
-              url: `${BASE_URL}${localizedPath(siteLocale, "/platform")}`,
+              url: `${BASE_URL}${localizedPath(siteLocale, "/")}`,
             }),
           )}
         />

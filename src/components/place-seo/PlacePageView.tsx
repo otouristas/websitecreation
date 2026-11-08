@@ -58,7 +58,7 @@ export function PlacePageView({ place }: { readonly place: PlacePageData }) {
               links={[
                 { href: "/el/seo", label: "Όλοι οι τόποι" },
                 { href: "/el/services/website-creation", label: "Κατασκευή ιστοσελίδων" },
-                { href: "/el/pricing", label: "Τιμές" },
+                { href: "/el/ypiresies/times", label: "Τιμές" },
               ]}
             />
           }
@@ -161,7 +161,7 @@ export function PlacePageView({ place }: { readonly place: PlacePageData }) {
           />
           <PriceTiers kind="seo" locale="el" className="mt-12" />
           <p className="mt-10 text-center text-[14.5px]">
-            <Link href="/el/pricing" className="font-medium text-primary underline-offset-4 hover:underline">
+            <Link href="/el/ypiresies/times" className="font-medium text-primary underline-offset-4 hover:underline">
               Όλες οι τιμές και τα πακέτα
             </Link>
           </p>

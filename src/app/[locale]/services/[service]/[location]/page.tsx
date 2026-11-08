@@ -464,7 +464,7 @@ export default async function ServiceLocationPage({ params }: PageProps) {
                         ) : null}
                         {kit.pricing ? <PriceTiers kind={kit.pricing} locale={siteLocale} className="mt-12" /> : null}
                         <p className="mt-10 text-center text-[14.5px]">
-                            <Link href={lp('/pricing')} className="font-medium text-primary underline-offset-4 hover:underline">
+                            <Link href={lp('/ypiresies/times')} className="font-medium text-primary underline-offset-4 hover:underline">
                                 Δείτε όλες τις τιμές και τα πακέτα →
                             </Link>
                         </p>

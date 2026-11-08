@@ -246,7 +246,7 @@ export default async function AboutPage({ params }: PageProps) {
               <KitBreadcrumbs items={breadcrumbs} align="left" />
               <AnnouncePill
                 wrap
-                href={lp("/platform")}
+                href={lp("/")}
                 tag={tx("New", "Νέο")}
                 text={tx("We also build AnotherSEOGuru App, our own SEO software", "Φτιάχνουμε και το AnotherSEOGuru App, το δικό μας λογισμικό SEO")}
               />

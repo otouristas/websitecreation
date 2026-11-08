@@ -338,7 +338,7 @@ export function LocalSeoPage({ locale }: { locale: SiteLocale }) {
         primaryHref={lp('/get-started?service=local-seo')}
         links={[
           { href: '#factors', label: t.ctaSecondary },
-          { href: lp('/pricing'), label: t.cta.secondary },
+          { href: lp('/ypiresies/times'), label: t.cta.secondary },
         ]}
         visual={<LocalPackPreview locale={locale} city={isEl ? 'Πάρος' : 'Paros'} />}
         visualLabel={kit.heroLabel[locale]}
@@ -421,7 +421,7 @@ export function LocalSeoPage({ locale }: { locale: SiteLocale }) {
         <KitHeading align="center" eyebrow={pricing.eyebrow} title={<AccentTitle text={pricing.title} />} description={pricing.body} />
         <PriceTiers kind="seo" locale={locale} className="mt-12" />
         <p className="mt-10 text-center text-[14px]">
-          <Link href={lp('/pricing')} className="font-medium text-link underline-offset-4 hover:underline">
+          <Link href={lp('/ypiresies/times')} className="font-medium text-link underline-offset-4 hover:underline">
             {pricing.all}
           </Link>
         </p>

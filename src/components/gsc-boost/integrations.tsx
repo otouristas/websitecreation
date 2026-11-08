@@ -65,7 +65,7 @@ interface Surface {
 export const SURFACES: ReadonlyArray<Surface> = [
   {
     id: "web",
-    path: "/platform",
+    path: "/",
     icon: Globe,
     name: c("Web app", "Εφαρμογή web"),
     where: c("app.anotherseoguru.com", "app.anotherseoguru.com"),
@@ -350,7 +350,7 @@ export function integrationAppSchema(input: {
     ...(input.softwareRequirements ? { softwareRequirements: input.softwareRequirements } : {}),
     ...(input.featureList ? { featureList: [...input.featureList] } : {}),
     ...(input.free ? { offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } } : {}),
-    isPartOf: { "@type": "SoftwareApplication", name: "AnotherSEOGuru App", url: `${BASE_URL}${localizedPath(locale, "/platform")}` },
+    isPartOf: { "@type": "SoftwareApplication", name: "AnotherSEOGuru App", url: `${BASE_URL}${localizedPath(locale, "/")}` },
     provider: brandOrganization(),
   };
 }

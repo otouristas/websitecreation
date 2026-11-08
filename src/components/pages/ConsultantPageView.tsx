@@ -77,7 +77,7 @@ export function ConsultantPageView({ locale }: { locale: SiteLocale }) {
     { href: lp('/about'), title: isEl ? 'Ποιοι είμαστε' : 'About AnotherSEOGuru' },
     { href: lp('/seo-services'), title: isEl ? 'Υπηρεσίες SEO' : 'SEO services' },
     { href: lp('/services/seo-audits'), title: isEl ? 'SEO audit' : 'SEO audit' },
-    { href: lp('/pricing'), title: isEl ? 'Τιμές και πακέτα' : 'Pricing and packages' },
+    { href: lp('/ypiresies/times'), title: isEl ? 'Τιμές και πακέτα' : 'Pricing and packages' },
     { href: lp('/work'), title: isEl ? 'Έργα' : 'Our work' },
     isEl
       ? { href: lp('/blog/pos-na-epilexete-etaireia-seo'), title: 'Πώς να επιλέξετε εταιρεία SEO' }
@@ -183,7 +183,7 @@ export function ConsultantPageView({ locale }: { locale: SiteLocale }) {
             ))}
           </CardGrid>
           <p className="mt-8 text-center text-[14px]">
-            <Link href={lp('/pricing')} className="inline-flex items-center gap-1.5 font-medium text-link underline-offset-4 hover:underline">
+            <Link href={lp('/ypiresies/times')} className="inline-flex items-center gap-1.5 font-medium text-link underline-offset-4 hover:underline">
               {t.pricing.all}
               <ArrowRight className="size-4" aria-hidden />
             </Link>

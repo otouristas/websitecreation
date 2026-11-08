@@ -64,6 +64,14 @@ const nextConfig: NextConfig = {
         },
       ]),
       // ---- END AnotherSEOGuru App: retired /platform/features/<slug> pages ------------
+      // ---- Product / agency split (2026-11) --------------------------------------------
+      // anotherseoguru.com is the product site: the AnotherSEOGuru App landing page
+      // is the homepage and its plans are /pricing. The agency's prices moved to
+      // /el/ypiresies/times (see src/lib/site-split.ts).
+      { source: '/:locale(en|el)/platform', destination: '/:locale', permanent: true },
+      { source: '/:locale(en|el)/platform/pricing', destination: '/:locale/pricing', permanent: true },
+      { source: '/platform', destination: '/en', permanent: true },
+      { source: '/platform/pricing', destination: '/en/pricing', permanent: true },
       // WordPress-style underscore alias. robots.txt and the live index use
       // the hyphen file; keep that route intact and send the typo here.
       // Next.js already 308s the trailing-slash form to this source first.
@@ -92,12 +100,12 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/seo-platform',
-        destination: '/en/platform',
+        destination: '/en',
         permanent: true,
       },
       {
         source: '/:locale(en|el)/seo-platform',
-        destination: '/:locale/platform',
+        destination: '/:locale',
         permanent: true,
       },
       {
@@ -128,23 +136,23 @@ const nextConfig: NextConfig = {
       ...RETIRED_WORK_SLUGS.flatMap((slug) => [
         {
           source: `/:locale(en|el)/work/${slug}`,
-          destination: '/:locale/work',
+          destination: '/el/work',
           permanent: true,
         },
         {
           source: `/work/${slug}`,
-          destination: '/en/work',
+          destination: '/el/work',
           permanent: true,
         },
       ]),
       {
         source: '/work',
-        destination: '/en/work',
+        destination: '/el/work',
         permanent: true,
       },
       {
         source: '/work/:path*',
-        destination: '/en/work/:path*',
+        destination: '/el/work/:path*',
         permanent: true,
       },
       // Retired service slug. 301, not Next's default 308 for `permanent`.
@@ -152,32 +160,32 @@ const nextConfig: NextConfig = {
       // SEO-audits page instead of a 410.
       {
         source: '/services/seo-web-design',
-        destination: '/en/services/web-design',
+        destination: '/el/services/web-design',
         statusCode: 301,
       },
       {
         source: '/:locale(en|el)/services/seo-web-design',
-        destination: '/:locale/services/web-design',
+        destination: '/el/services/web-design',
         statusCode: 301,
       },
       {
         source: '/solutions/:industry/seo-web-design',
-        destination: '/en/solutions/:industry/web-design',
+        destination: '/el/solutions/:industry/web-design',
         statusCode: 301,
       },
       {
         source: '/:locale(en|el)/solutions/:industry/seo-web-design',
-        destination: '/:locale/solutions/:industry/web-design',
+        destination: '/el/solutions/:industry/web-design',
         statusCode: 301,
       },
       {
         source: '/services/:path*',
-        destination: '/en/services/:path*',
+        destination: '/el/services/:path*',
         permanent: true,
       },
       {
         source: '/solutions/:path*',
-        destination: '/en/solutions/:path*',
+        destination: '/el/solutions/:path*',
         permanent: true,
       },
       {
@@ -192,7 +200,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/get-started',
-        destination: '/en/get-started',
+        destination: '/el/get-started',
         permanent: true,
       },
       // Slug-specific blog redirects must precede the `/blog/:path*` prefix

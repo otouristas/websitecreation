@@ -69,7 +69,7 @@ export function AgencyPlanCard({ locale, source }: { readonly locale: L; readonl
             {isEl ? `Ξεκινήστε με το ${plan.id}` : `Start with ${plan.id}`}
             <ArrowRight className="size-4" />
           </a>
-          <Link href={`${localizedPath(locale, "/platform/pricing")}#compare`} className="text-[14px] font-medium text-muted-foreground transition-colors hover:text-foreground">
+          <Link href={`${localizedPath(locale, "/pricing")}#compare`} className="text-[14px] font-medium text-muted-foreground transition-colors hover:text-foreground">
             {isEl ? "Σύγκριση όλων των πακέτων" : "Compare all plans"}
           </Link>
         </div>

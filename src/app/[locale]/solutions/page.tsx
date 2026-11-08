@@ -253,7 +253,7 @@ export default async function SolutionsPage({ params }: PageProps) {
               "Every engagement starts from the same short list: the fixes that bring the most customers, ranked by what they are worth to you.",
               "Κάθε συνεργασία ξεκινά από την ίδια σύντομη λίστα: τις διορθώσεις που φέρνουν τους περισσότερους πελάτες, με σειρά βάσει αξίας.",
             )}
-            links={[{ href: lp("/pricing"), label: isEl ? "Δείτε τις τιμές" : "View Pricing", primary: true }]}
+            links={[{ href: lp("/ypiresies/times"), label: isEl ? "Δείτε τις τιμές" : "View Pricing", primary: true }]}
             preview={
               <Stage>
                 <DecisionsPanel locale={siteLocale} />

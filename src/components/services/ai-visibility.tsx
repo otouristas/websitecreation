@@ -99,7 +99,7 @@ export function AiVisibilityPage({ locale }: { locale: SiteLocale }) {
   const related = [
     { path: '/seo-services', title: isEl ? 'Υπηρεσίες SEO' : 'SEO services' },
     { path: '/services/local-seo', title: isEl ? 'Τοπικό SEO' : 'Local SEO' },
-    { path: '/pricing', title: isEl ? 'Τιμές και πακέτα' : 'Pricing and packages' },
+    { path: '/ypiresies/times', title: isEl ? 'Τιμές και πακέτα' : 'Pricing and packages' },
     {
       path: isEl ? '/blog/ai-seo-agency-geo-aeo-el' : '/blog/ai-seo-agency-geo-aeo',
       title: isEl ? 'Τι είναι το AI SEO' : 'AI SEO agency (GEO / AEO)',
@@ -127,7 +127,7 @@ export function AiVisibilityPage({ locale }: { locale: SiteLocale }) {
         primaryLabel={t.cta.primary}
         primaryHref={lp('/get-started?service=ai-visibility')}
         links={[
-          { href: lp('/pricing'), label: t.cta.secondary },
+          { href: lp('/ypiresies/times'), label: t.cta.secondary },
           { href: lp('/ai-visibility-check'), label: tx('Free AI visibility check', 'Δωρεάν έλεγχος ορατότητας σε AI') },
         ]}
         visual={<AiVisibilityPreview locale={locale} />}
@@ -219,7 +219,7 @@ export function AiVisibilityPage({ locale }: { locale: SiteLocale }) {
           {t.pricing.note.replace('6', String(SEO_MIN_TERM_MONTHS))}
         </p>
         <p className="mt-4 text-center text-[14px]">
-          <Link href={lp('/pricing')} className="font-medium text-link underline-offset-4 hover:underline">
+          <Link href={lp('/ypiresies/times')} className="font-medium text-link underline-offset-4 hover:underline">
             {t.pricing.cta}
           </Link>
         </p>

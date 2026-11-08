@@ -79,7 +79,7 @@ export function WebsiteRegionView({ page }: { readonly page: WebsiteRegionPage }
               links={[
                 { href: '/el/services/website-creation', label: 'Κατασκευή ιστοσελίδων' },
                 { href: page.seoPlace.href, label: page.seoPlace.label },
-                { href: '/el/pricing', label: 'Τιμές' },
+                { href: '/el/ypiresies/times', label: 'Τιμές' },
               ]}
             />
           }
@@ -146,7 +146,7 @@ export function WebsiteRegionView({ page }: { readonly page: WebsiteRegionPage }
           />
           <PriceTiers kind="website" locale="el" className="mt-12" />
           <p className="mt-10 text-center text-[14.5px]">
-            <Link href="/el/pricing" className="font-medium text-primary underline-offset-4 hover:underline">
+            <Link href="/el/ypiresies/times" className="font-medium text-primary underline-offset-4 hover:underline">
               Όλες οι τιμές και τα πακέτα
             </Link>
           </p>

@@ -192,7 +192,7 @@ const FAQ: ReadonlyArray<GscFaqItem> = [
       "No. Use the same account on iPhone and app.anotherseoguru.com to keep your plan, projects and credits together. App Store plans, where offered, show Apple's local price and renewal terms before purchase. An existing web subscription stays managed by its original billing provider.",
       "Όχι. Χρησιμοποιήστε τον ίδιο λογαριασμό σε iPhone και app.anotherseoguru.com για κοινό πρόγραμμα, έργα και μονάδες. Όπου διατίθενται προγράμματα App Store, η τοπική τιμή και οι όροι ανανέωσης της Apple εμφανίζονται πριν από την αγορά. Μια υπάρχουσα συνδρομή web παραμένει στον αρχικό πάροχο χρέωσης.",
     ),
-    link: { kind: "site", path: "/platform/pricing", label: c("See the plans", "Δείτε τα πακέτα") },
+    link: { kind: "site", path: "/pricing", label: c("See the plans", "Δείτε τα πακέτα") },
   },
   {
     q: c("Does the app rank fixes the same way as the web app?", "Βγάζει η εφαρμογή τις ίδιες διορθώσεις με την εφαρμογή web;"),
@@ -242,7 +242,7 @@ function appSchema(locale: SiteLocale): SchemaOutput {
     inLanguage: ["en", "el"],
     releaseNotes: "Beta (TestFlight)",
     screenshot: SCREENS.map((s) => `${BASE_URL}/images/iphone/${s.file}.webp`),
-    isPartOf: { "@type": "SoftwareApplication", name: "AnotherSEOGuru App", url: `${BASE_URL}${localizedPath(locale, "/platform")}` },
+    isPartOf: { "@type": "SoftwareApplication", name: "AnotherSEOGuru App", url: `${BASE_URL}${localizedPath(locale, "/")}` },
     provider: brandOrganization(),
     publisher: { "@type": "Organization", "@id": LEGAL_ENTITY_ID, name: LEGAL_ENTITY_NAME },
   };
