@@ -109,6 +109,8 @@ export function allSitemapEntries(): MetadataRoute.Sitemap {
     { path: '/platform/for/agencies', priority: 0.85, changeFrequency: 'monthly' as const },
     { path: '/platform/for/in-house', priority: 0.85, changeFrequency: 'monthly' as const },
     { path: '/platform/for/ecommerce', priority: 0.85, changeFrequency: 'monthly' as const },
+    { path: '/platform/white-label-reports', priority: 0.88, changeFrequency: 'monthly' as const },
+    { path: '/platform/seo-forecasting-tool', priority: 0.85, changeFrequency: 'monthly' as const },
     { path: '/platform/iphone', priority: 0.8, changeFrequency: 'monthly' as const },
     // One login everywhere: the integrations hub and its three product pages.
     { path: '/platform/integrations', priority: 0.8, changeFrequency: 'monthly' as const },
@@ -137,6 +139,7 @@ export function allSitemapEntries(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly' as const,
     })),
     { path: `/resources/${OPPORTUNITY_FINDER.slug}`, priority: 0.86, changeFrequency: 'monthly' as const },
+    { path: '/resources/sample-seo-report', priority: 0.86, changeFrequency: 'monthly' as const },
     { path: '/tools', priority: 0.84 },
     // /tools/[slug] pages are noindex (the tool runs in the app), so they stay out of the sitemap.
     { path: '/compare', priority: 0.86, changeFrequency: 'monthly' as const },

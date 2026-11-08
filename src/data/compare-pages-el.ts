@@ -12,6 +12,8 @@ export interface ComparePageEl {
   readonly cardText: string;
   readonly whenChooseUs: readonly string[];
   readonly whenChooseThem: readonly string[];
+  readonly sections?: ReadonlyArray<{ readonly heading: string; readonly body?: string; readonly bullets?: readonly string[] }>;
+  readonly faq?: ReadonlyArray<{ readonly q: string; readonly a: string }>;
 }
 
 export const COMPARE_PAGES_EL: Readonly<Record<string, ComparePageEl>> = {
@@ -67,6 +69,60 @@ export const COMPARE_PAGES_EL: Readonly<Record<string, ComparePageEl>> = {
     whenChooseThem: [
       "Κάνετε μόνο περιστασιακούς ελέγχους και δεν έχετε προϋπολογισμό για εργαλείο",
       "Έχετε ήδη φτιάξει εσωτερικές εξαγωγές και πίνακες",
+    ],
+  },
+  agencyanalytics: {
+    competitorName: "AgencyAnalytics",
+    headline: "AnotherSEOGuru App έναντι του AgencyAnalytics",
+    accentWords: 1,
+    seoTitle: "Εναλλακτική του AgencyAnalytics",
+    summary:
+      "Το AgencyAnalytics είναι πλατφόρμα αναφορών για agencies με πολλά κανάλια. Το AnotherSEOGuru App ταιριάζει σε agencies που πουλάνε SEO: white-label αναφορές από το Search Console, μαζί με ευκαιρίες, εργασίες και CRM πελατών.",
+    cardText: "Αναφορές πελατών για agencies που πουλάνε SEO.",
+    whenChooseUs: [
+      "Οι αναφορές σας αφορούν κυρίως την οργανική αναζήτηση και θέλετε να βγαίνουν από το Search Console χωρίς connectors",
+      "Θέλετε αναφορά και δουλειά στο ίδιο σημείο: ευκαιρίες με εκτίμηση κλικ, εργασίες και μηνιαία αναφορά",
+      "Θέλετε αναφορές που δεν χρεώνουν μονάδες, ώστε ένας νέος πελάτης να μην ανεβάζει το κόστος",
+    ],
+    whenChooseThem: [
+      "Κάνετε αναφορές για πολλά κανάλια διαφήμισης, social και κλήσεων για κάθε πελάτη",
+      "Η ομάδα σας τρέχει ήδη όλη τη διαδικασία αναφορών εκεί και δουλεύει",
+    ],
+  },
+  whatagraph: {
+    competitorName: "Whatagraph",
+    headline: "AnotherSEOGuru App έναντι του Whatagraph",
+    accentWords: 1,
+    seoTitle: "Εναλλακτική του Whatagraph",
+    summary:
+      "Το Whatagraph συνδυάζει δεδομένα από πολλές πηγές marketing σε αναφορές. Το AnotherSEOGuru App είναι φτιαγμένο για SEO: διαβάζει το Search Console, λέει τι να διορθώσετε και πόσα κλικ μπορεί να φέρει, και το κάνει white-label αναφορά.",
+    cardText: "Αναφορές SEO με πλάνο, όχι μόνο γραφήματα.",
+    whenChooseUs: [
+      "Οι πελάτες σας πληρώνουν για SEO και θέλουν αναφορά που εξηγεί τα οργανικά αποτελέσματα",
+      "Θέλετε η αναφορά να συνοδεύεται από πλάνο: ευκαιρίες, εκτιμήσεις κλικ και επόμενα βήματα",
+      "Θέλετε εργαλεία SEO (θέσεις, έλεγχοι, ορατότητα σε AI) στο ίδιο σημείο με τις αναφορές",
+    ],
+    whenChooseThem: [
+      "Χρειάζεστε να συνδυάζετε πολλές πηγές διαφήμισης, social και analytics",
+      "Τις αναφορές τις φτιάχνει ομάδα marketing με προσαρμοσμένα dashboards για πολλά κανάλια",
+    ],
+  },
+  dashthis: {
+    competitorName: "DashThis",
+    headline: "AnotherSEOGuru App έναντι του DashThis",
+    accentWords: 1,
+    seoTitle: "Εναλλακτική του DashThis",
+    summary:
+      "Το DashThis είναι εργαλείο dashboards για αναφορές marketing. Το AnotherSEOGuru App διαβάζει το Search Console, λέει τι ακολουθεί και φτιάχνει white-label μηνιαία αναφορά με τις εργασίες που ολοκληρώσατε.",
+    cardText: "Αναφορά που εξηγεί, όχι μόνο dashboard.",
+    whenChooseUs: [
+      "Θέλετε αναφορά SEO με γραπτή σύνοψη, αιτίες και επόμενα βήματα",
+      "Θέλετε να διαχειρίζεστε τη δουλειά SEO στο ίδιο σημείο με τις αναφορές",
+      "Διαχειρίζεστε πολλές ιδιότητες Search Console και αλλάζετε πελάτη όλη μέρα",
+    ],
+    whenChooseThem: [
+      "Θέλετε ένα απλό dashboard πολλών καναλιών για κάθε πελάτη",
+      "Οι πελάτες σας προτιμούν ζωντανό σύνδεσμο dashboard από μηνιαία γραπτή αναφορά",
     ],
   },
 };

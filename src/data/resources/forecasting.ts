@@ -8,14 +8,14 @@ export const FORECASTING_ARTICLES: ReadonlyArray<ResourceArticle> = [
     cluster: "forecasting",
     kind: "pillar",
     title: "SEO forecasting: how to estimate the clicks your work will earn",
-    seoTitle: "SEO Forecasting from Search Console Data",
+    seoTitle: "SEO Forecasting: Method and Free Tool",
     description:
       "A practical SEO forecasting method built on your own Search Console data: a baseline, the uplift from specific fixes, confidence weights and three honest scenarios.",
     primaryKeyword: "seo forecasting",
     secondaryKeywords: ["seo forecast", "seo traffic forecast", "how to forecast seo traffic", "seo forecast template"],
     cta: "soft",
     published: PUBLISHED,
-    updated: PUBLISHED,
+    updated: "2026-11-08",
     body: [
       {
         type: "p",
@@ -110,6 +110,10 @@ export const FORECASTING_ARTICLES: ReadonlyArray<ResourceArticle> = [
       {
         type: "p",
         text: "Our free [Search Console opportunity finder](/en/resources/search-console-opportunity-finder) does steps 2 to 8 in your browser. Upload the Queries.csv from a Search Console export, add your brand names, and it returns the queries worth pushing, the snippets worth rewriting and a conservative, expected and ceiling forecast. The file never leaves your computer and there is no sign-up.",
+      },
+      {
+        type: "p",
+        text: "To run the same forecast on every query every week, straight from the Search Console API, and measure each fix after you ship it, use the [SEO forecasting tool](/en/platform/seo-forecasting-tool) in AnotherSEOGuru App.",
       },
       { type: "h2", id: "new-content", text: "Forecasting new content" },
       {

@@ -244,6 +244,7 @@ export function getNavModel(locale: SiteLocale, mode: NavMode = 'product'): NavM
           { href: lp('/platform/features#assistant'), label: t('AI assistant', 'Βοηθός AI'), desc: t('Answers from your own data', 'Απαντήσεις από τα δεδομένα σας'), icon: 'message', badge: AI },
           { href: lp('/platform/features#competitors'), label: t('Competitors', 'Ανταγωνιστές'), desc: t('Their wins, your gaps', 'Τα δικά τους κέρδη, τα δικά σας κενά'), icon: 'swords' },
           { href: lp('/platform/for/agencies'), label: t('For agencies', 'Για εταιρείες SEO'), desc: t('Clients, pipeline and reports', 'Πελάτες, pipeline και αναφορές'), icon: 'users' },
+          { href: lp('/platform/white-label-reports'), label: t('White-label reports', 'White-label αναφορές'), desc: t('Client SEO reports under your logo', 'Αναφορές SEO με το λογότυπό σας'), icon: 'file' },
           // One entry for every way in (iPhone, Chrome, WordPress, AI assistants), so the
           // mobile sheet stays light; the hub links on to each product page.
           { href: lp('/platform/integrations'), label: t('Apps & integrations', 'Εφαρμογές & ενσωματώσεις'), desc: t('iPhone, Chrome, WordPress, AI assistants', 'iPhone, Chrome, WordPress, βοηθοί AI'), icon: 'plug', badge: { kind: 'new' as const, label: t('New', 'Νέο') } },
@@ -298,6 +299,7 @@ export function getNavModel(locale: SiteLocale, mode: NavMode = 'product'): NavM
           { href: lp('/seo-guides'), label: t('SEO guides', 'Οδηγοί SEO'), desc: t('The ranking guides in one index', 'Οι οδηγοί κατάταξης σε ένα ευρετήριο'), icon: 'book' },
           { href: lp('/blog'), label: 'Blog', desc: t('SEO, AI search and web design', 'SEO, αναζήτηση AI, ιστοσελίδες'), icon: 'library' },
           { href: lp('/resources'), label: t('Resources', 'Οδηγοί & υλικό'), icon: 'library' },
+          { href: lp('/resources/sample-seo-report'), label: t('Sample SEO report', 'Δείγμα αναφοράς SEO'), icon: 'file' },
           { href: lp('/glossary'), label: t('SEO glossary', 'Λεξικό SEO'), icon: 'list' },
           { href: lp('/help'), label: t('AnotherSEOGuru App help center', 'Κέντρο βοήθειας AnotherSEOGuru App'), icon: 'book' },
           { href: lp('/compare'), label: t('Comparisons', 'Συγκρίσεις'), icon: 'swords' },
