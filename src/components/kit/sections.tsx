@@ -45,7 +45,7 @@ export const KIT_COPY = {
   startFree: c("Sign up free with Google", "Δωρεάν εγγραφή με Google"),
   liveDemo: c("Explore the live demo", "Δείτε τη ζωντανή επίδειξη"),
   readOnly: c("Read-only Google access", "Πρόσβαση στη Google μόνο για ανάγνωση"),
-  noCard: c("No credit card for the demo", "Χωρίς κάρτα για την επίδειξη"),
+  noCard: c("7-day free trial, no card", "7 ημέρες δωρεάν δοκιμή, χωρίς κάρτα"),
   cancel: c("Cancel anytime", "Ακύρωση οποτεδήποτε"),
   reply24: c("Reply within 24 hours", "Απάντηση σε 24 ώρες"),
   noContract: c("No lock-in contract", "Χωρίς δέσμευση"),

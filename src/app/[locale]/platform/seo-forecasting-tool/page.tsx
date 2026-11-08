@@ -129,7 +129,7 @@ export default async function SeoForecastingToolPage({ params }: PageProps) {
             "Το AnotherSEOGuru App είναι εργαλείο πρόβλεψης SEO που βασίζεται στα δικά σας δεδομένα Google Search Console, όχι σε εικασίες. Κάθε ευκαιρία έχει εκτίμηση επιπλέον μηνιαίων κλικ, με σειρά βάσει αντίκτυπου και κόπου, και κάθε διόρθωση μετριέται αφού βγει live.",
           )}
           actions={<WaveSoftwareActions locale={locale} source="forecasting-hero" />}
-          trust={<TrustMarks items={copy.trust} yesLabel={yes} />}
+          trust={<TrustMarks items={[tx("7-day free trial, no card", "7 ημέρες δωρεάν δοκιμή, χωρίς κάρτα"), tx("Read-only Google access", "Πρόσβαση στη Google μόνο για ανάγνωση"), tx("Cancel anytime", "Ακύρωση οποτεδήποτε")]} yesLabel={yes} />}
           panel={
             <a href={appLink("/demo/opportunities", locale, "forecasting-window")} className="block min-w-0">
               <AppPanel

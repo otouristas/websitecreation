@@ -61,8 +61,8 @@ function cta(article: ResourceArticle, locale: SiteLocale) {
     return {
       title: el ? "Κάντε το στα δικά σας δεδομένα" : "Do this on your own data",
       text: el
-        ? "Συνδέστε το Search Console μία φορά, με πρόσβαση μόνο για ανάγνωση, και το AnotherSEOGuru App τρέχει αυτή την ανάλυση για κάθε ιστότοπο που διαχειρίζεστε, κάθε εβδομάδα. Οι δυνατότητες Search Console δεν κοστίζουν credits σε κανένα πακέτο."
-        : "Connect Search Console once (read-only) and AnotherSEOGuru App runs this analysis for every site you manage, every week. Search Console features cost no credits on any plan.",
+        ? "Συνδέστε το Search Console μία φορά, με πρόσβαση μόνο για ανάγνωση, και το AnotherSEOGuru App τρέχει αυτή την ανάλυση για κάθε ιστότοπο που διαχειρίζεστε, κάθε εβδομάδα. Οι δυνατότητες Search Console δεν κοστίζουν credits, και ξεκινάτε με 7 ημέρες δωρεάν δοκιμή χωρίς κάρτα."
+        : "Connect Search Console once (read-only) and AnotherSEOGuru App runs this analysis for every site you manage, every week. Search Console features cost no credits on any plan, and you start with a 7-day free trial, no card.",
       primary: { label: el ? "Εγγραφή δωρεάν" : "Sign up free", href: appLink("/signup", locale, source), event: `${source}_signup` },
       secondary: { label: el ? "Ανοίξτε τη ζωντανή επίδειξη" : "Open the live demo", href: appLink("/demo", locale, `${source}-demo`), event: `${source}_demo` },
     };
