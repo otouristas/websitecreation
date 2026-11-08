@@ -79,6 +79,9 @@ function footerColumns(locale: SiteLocale, agency: boolean): readonly FooterColu
     { label: isEl ? "Ενσωματώσεις" : "Integrations", href: lp("/platform/integrations") },
     { label: isEl ? "Ασφάλεια" : "Security", href: lp("/platform/security") },
     { label: isEl ? "Για agencies" : "For agencies", href: lp("/platform/for/agencies") },
+    { label: isEl ? "White-label αναφορές SEO" : "White-label SEO reports", href: lp("/platform/white-label-reports") },
+    { label: isEl ? "Εργαλείο πρόβλεψης SEO" : "SEO forecasting tool", href: lp("/platform/seo-forecasting-tool") },
+    { label: isEl ? "Δείγμα αναφοράς SEO" : "Sample SEO report", href: lp("/resources/sample-seo-report") },
     { label: isEl ? "Για in-house ομάδες" : "For in-house teams", href: lp("/platform/for/in-house") },
     { label: isEl ? "Για e-shop" : "For ecommerce", href: lp("/platform/for/ecommerce") },
   ];

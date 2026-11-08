@@ -28,6 +28,9 @@ AnotherSEOGuru App is SEO software built on Google Search Console. It reads ever
 - **How it works** (<https://anotherseoguru.com/en/how-it-works>) - Connect Search Console, get ranked fixes, track the result.
 - **Security** (<https://anotherseoguru.com/en/platform/security>) - Read-only Google access, data handling and permissions.
 - **For agencies** (<https://anotherseoguru.com/en/platform/for/agencies>) - White-label reports, client portal and many sites in one account.
+- **White-label SEO reports** (<https://anotherseoguru.com/en/platform/white-label-reports>) - Branded monthly client reports from Google Search Console: PDF, email or scheduled.
+- **SEO forecasting tool** (<https://anotherseoguru.com/en/platform/seo-forecasting-tool>) - Extra clicks each fix could earn, from your own Search Console positions and CTR.
+- **Sample SEO report** (<https://anotherseoguru.com/en/resources/sample-seo-report>) - A complete monthly client report on sample data, printable as a PDF.
 - **For in-house teams** (<https://anotherseoguru.com/en/platform/for/in-house>) - One or a few sites, weekly fixes and reporting.
 - **For e-commerce** (<https://anotherseoguru.com/en/platform/for/ecommerce>) - Category and product pages, decaying pages, cannibalization.
 - **Integrations (one login)** (<https://anotherseoguru.com/en/platform/integrations>) - One account for the web app, iPhone, Android, Chrome extension, WordPress plugin and AI assistants (MCP).
