@@ -3,7 +3,7 @@ import { localizedPath } from '@/lib/i18n/locale';
 import { getAppPath } from '@/lib/app-links';
 import { entrySeoNet, entryWebsiteNet, formatPrice } from '@/data/pricing';
 import type { MarketingBadgeKind } from '@/components/kit/primitives';
-import { AGENCY_HOME_EL, AGENCY_PRICING_EL } from '@/lib/site-split';
+import { AGENCY_HOME_HREF, AGENCY_PRICING_HREF } from '@/lib/site-split';
 
 /**
  * One menu definition for the desktop mega menu and the mobile sheet, so the
@@ -175,7 +175,7 @@ export function getNavModel(locale: SiteLocale, mode: NavMode = 'product'): NavM
       ],
       chips: [t(`SEO from €${seoFrom}/mo`, `SEO από €${seoFrom}/μήνα`), t(`Websites from €${webFrom}`, `Ιστοσελίδες από €${webFrom}`)],
       primary: { href: freeAudit.href, label: t('Get my free audit', 'Θέλω δωρεάν έλεγχο') },
-      secondary: { href: AGENCY_PRICING_EL, label: t('See all prices', 'Όλες οι τιμές') },
+      secondary: { href: AGENCY_PRICING_HREF, label: t('See all prices', 'Όλες οι τιμές') },
     },
     footer: { href: lp('/services'), label: t('All services', 'Όλες οι υπηρεσίες') },
   };
@@ -274,7 +274,7 @@ export function getNavModel(locale: SiteLocale, mode: NavMode = 'product'): NavM
       'For businesses in Greece: our team builds the site and runs the SEO, with a fixed price.',
       'Για επιχειρήσεις στην Ελλάδα: η ομάδα μας φτιάχνει την ιστοσελίδα και τρέχει το SEO, με σταθερή τιμή.',
     ),
-    primary: { href: AGENCY_HOME_EL, label: t('See the services', 'Δείτε τις υπηρεσίες') },
+    primary: { href: AGENCY_HOME_HREF, label: t('See the services', 'Δείτε τις υπηρεσίες') },
     secondary: { href: freeAudit.href, label: freeAudit.label },
   };
 
@@ -286,7 +286,7 @@ export function getNavModel(locale: SiteLocale, mode: NavMode = 'product'): NavM
         title: t('Free tools', 'Δωρεάν εργαλεία'),
         items: [
           ...(mode === 'agency'
-            ? [{ href: `${AGENCY_HOME_EL}#scan-url`, label: t('Instant site scan', 'Άμεσος έλεγχος ιστοσελίδας'), desc: t('13 checks, no sign-up', '13 έλεγχοι, χωρίς εγγραφή'), icon: 'scan' as const, badge: FREE }]
+            ? [{ href: `${AGENCY_HOME_HREF}#scan-url`, label: t('Instant site scan', 'Άμεσος έλεγχος ιστοσελίδας'), desc: t('13 checks, no sign-up', '13 έλεγχοι, χωρίς εγγραφή'), icon: 'scan' as const, badge: FREE }]
             : []),
           { href: lp('/ai-visibility-check'), label: t('AI visibility check', 'Έλεγχος ορατότητας σε AI'), desc: t('Do AI assistants mention you?', 'Σας αναφέρουν οι βοηθοί AI;'), icon: 'bot', badge: FREE },
           { href: lp('/tools'), label: t('All SEO tools', 'Όλα τα εργαλεία SEO'), icon: 'grid' },
@@ -320,12 +320,12 @@ export function getNavModel(locale: SiteLocale, mode: NavMode = 'product'): NavM
   if (mode === 'agency') {
     return {
       mode,
-      homeHref: AGENCY_HOME_EL,
+      homeHref: AGENCY_HOME_HREF,
       primaryCta: { href: freeAudit.href, label: freeAudit.label, shortLabel: t('Free audit', 'Δωρεάν έλεγχος') },
       secondaryCta: { href: lp('/'), label: 'AnotherSEOGuru App' },
       menus: [services, industries, learn],
       links: [
-        { href: AGENCY_PRICING_EL, label: t('Pricing', 'Τιμές') },
+        { href: AGENCY_PRICING_HREF, label: t('Pricing', 'Τιμές') },
         { href: lp('/work'), label: t('Work', 'Έργα') },
         { href: lp('/seo-guru'), label: 'SEO guru' },
       ],
@@ -348,10 +348,10 @@ export function getNavModel(locale: SiteLocale, mode: NavMode = 'product'): NavM
     links: [
       { href: lp('/pricing'), label: t('Pricing', 'Τιμές') },
       { href: lp('/platform/integrations'), label: t('Apps', 'Εφαρμογές') },
-      { href: AGENCY_HOME_EL, label: t('Done for you', 'Το κάνουμε εμείς') },
+      { href: AGENCY_HOME_HREF, label: t('Done for you', 'Το κάνουμε εμείς') },
     ],
     promo: {
-      href: AGENCY_HOME_EL,
+      href: AGENCY_HOME_HREF,
       tag: t('Greece', 'Ελλάδα'),
       text: t('Prefer we do it? Websites and SEO, done for you', 'Θέλετε να το κάνουμε εμείς; Ιστοσελίδα και SEO'),
     },

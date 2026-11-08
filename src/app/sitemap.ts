@@ -15,7 +15,7 @@ import { WEBSITE_REGION_PAGES } from '@/data/website-regions';
 import { TOURISM_VERTICALS } from '@/data/tourism-seo';
 import { ENGLISH_VERTICALS } from '@/data/tourism-seo/en';
 import { buildLocationServiceUrls } from '@/lib/sitemap-locations';
-import { englishAgencyRedirect } from '@/lib/site-split';
+import { englishAgencyRedirect, greekAgencyMoveRedirect } from '@/lib/site-split';
 
 const BASE_URL = 'https://anotherseoguru.com';
 const LOCALES: SiteLocale[] = ['en', 'el'];
@@ -64,7 +64,8 @@ function forEnOnly(
   ];
 }
 
-export default function sitemap(): MetadataRoute.Sitemap {
+/** Every entry before the product/agency filter (the agency domain's sitemap reads this). */
+export function allSitemapEntries(): MetadataRoute.Sitemap {
   const blogPosts = getAllBlogPosts();
 
   // Shared agency/marketing pages, bilingual.
@@ -252,13 +253,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...serviceCityPages,
   ];
 
-  // English agency URLs redirect to their Greek page (src/lib/site-split.ts),
-  // and agency paths built for both locales resolve to the same /el URL.
   const seen = new Set<string>();
   return all.filter((entry) => {
-    const path = entry.url.slice(BASE_URL.length) || '/';
-    if (englishAgencyRedirect(path) || seen.has(entry.url)) return false;
+    if (seen.has(entry.url)) return false;
     seen.add(entry.url);
     return true;
+  });
+}
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  // English agency URLs redirect to their Greek page (src/lib/site-split.ts),
+  // and once the agency has its own domain its Greek pages leave this sitemap.
+  return allSitemapEntries().filter((entry) => {
+    const path = entry.url.slice(BASE_URL.length) || '/';
+    return !englishAgencyRedirect(path) && !greekAgencyMoveRedirect(path);
   });
 }

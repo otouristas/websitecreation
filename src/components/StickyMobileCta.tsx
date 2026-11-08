@@ -5,7 +5,7 @@ import { useEffect, useState, type ReactElement } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { siteLocaleFromPath } from '@/lib/i18n/locale';
 import { getAppPath } from '@/lib/app-links';
-import { AGENCY_AUDIT_EL, AGENCY_PRICING_EL, isAgencyPathname } from '@/lib/site-split';
+import { AGENCY_AUDIT_HREF, AGENCY_PRICING_HREF, isAgencyPathname } from '@/lib/site-split';
 import { getNavDictionary } from '@/lib/i18n/get-dictionary';
 import { trackCtaClick } from '@/lib/analytics';
 import { PHONE_DISPLAY, WHATSAPP_HREF } from '@/lib/contact-info';
@@ -47,10 +47,10 @@ export function StickyMobileCta(): ReactElement | null {
   const isAgency = isAgencyPathname(pathname);
   const isEl = locale === 'el';
   const primary = isAgency
-    ? { href: AGENCY_AUDIT_EL, label: isEl ? 'Δωρεάν έλεγχος' : 'Free audit', event: 'sticky_mobile_free_audit' }
+    ? { href: AGENCY_AUDIT_HREF, label: isEl ? 'Δωρεάν έλεγχος' : 'Free audit', event: 'sticky_mobile_free_audit' }
     : { href: appLink('/signup', locale, 'sticky-mobile'), label: isEl ? nav.signUpShort : nav.signUp, event: 'sticky_mobile_signup' };
   const secondary = isAgency
-    ? { href: AGENCY_PRICING_EL, label: isEl ? 'Τιμές' : 'Pricing', event: 'sticky_mobile_pricing' }
+    ? { href: AGENCY_PRICING_HREF, label: isEl ? 'Τιμές' : 'Pricing', event: 'sticky_mobile_pricing' }
     : { href: `${getAppPath('/demo')}?lang=${locale}&utm_source=website&utm_content=sticky`, label: isEl ? 'Επίδειξη' : 'Live demo', event: 'sticky_mobile_demo' };
   const [suppressed, setSuppressed] = useState(false);
 

@@ -1,7 +1,7 @@
 // SEO Metadata Builder - titles ≤60 chars total, descriptions 145–155 chars
 
 import { Metadata } from 'next';
-import { isAgencyPathname } from '@/lib/site-split';
+import { AGENCY_ON_OWN_DOMAIN, AGENCY_ORIGIN, agencyDomainPath, isAgencyPathname } from '@/lib/site-split';
 import { applySerpMeta } from './exact-meta';
 import { buildMetaDescription, finalizeDescription, fitDescription, BRAND_NAME, BASE_URL } from './description';
 import { getHreflangAlternates } from '@/lib/locale-paths';
@@ -17,6 +17,8 @@ import { resolvePriceTokens } from '@/data/pricing';
 export const TITLE_BRAND_SUFFIX = ` | ${BRAND_NAME}`;
 /** Shipped by src/app/opengraph-image.png. Every page needs one: twitter:card is summary_large_image. */
 export const DEFAULT_OG_IMAGE = '/opengraph-image.png';
+/** The agency's card (websites and SEO for Greek businesses), for its pages. */
+export const AGENCY_OG_IMAGE = '/brand/agency-og.png';
 
 export const MAX_TITLE_TOTAL = 60;
 export const MAX_TITLE_PRIMARY = MAX_TITLE_TOTAL - TITLE_BRAND_SUFFIX.length;
@@ -233,10 +235,14 @@ export function buildMetadata(input: MetadataInput): Metadata {
   );
 
   const canonicalSource = canonicalPath ?? path;
+  const canonicalAbs = canonicalSource.startsWith('/') ? canonicalSource : `/${canonicalSource}`;
+  // Once the agency has its own domain, its Greek pages are canonical there.
   const canonical =
-    canonicalSource === '/'
-      ? BASE_URL
-      : `${BASE_URL}${canonicalSource.startsWith('/') ? canonicalSource : `/${canonicalSource}`}`;
+    AGENCY_ON_OWN_DOMAIN && isAgencyPathname(canonicalAbs)
+      ? `${AGENCY_ORIGIN}${agencyDomainPath(canonicalAbs)}`
+      : canonicalSource === '/'
+        ? BASE_URL
+        : `${BASE_URL}${canonicalAbs}`;
 
   const fullTitle = resolvePriceTokens(buildFullTitle(title), metaLocale);
 
@@ -247,6 +253,8 @@ export function buildMetadata(input: MetadataInput): Metadata {
   const languages = isAgencyPathname(path)
     ? undefined
     : customLanguages ?? (hreflangPath ? getHreflangAlternates(hreflangPath, hreflangLocales) : undefined);
+
+  const defaultOg = isAgencyPathname(path) ? AGENCY_OG_IMAGE : DEFAULT_OG_IMAGE;
 
   const metadata: Metadata = {
     metadataBase: new URL(BASE_URL),
@@ -271,13 +279,13 @@ export function buildMetadata(input: MetadataInput): Metadata {
             section: article.section,
           }
         : { type: 'website' as const }),
-      images: [{ url: ogImage ?? DEFAULT_OG_IMAGE, width: 1200, height: 630, alt: BRAND_NAME }],
+      images: [{ url: ogImage ?? defaultOg, width: 1200, height: 630, alt: BRAND_NAME }],
     },
     twitter: {
       card: 'summary_large_image',
       title: fullTitle,
       description,
-      images: [ogImage ?? DEFAULT_OG_IMAGE],
+      images: [ogImage ?? defaultOg],
     },
   };
 

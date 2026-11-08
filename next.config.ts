@@ -1,5 +1,9 @@
 import type { NextConfig } from "next";
+import type { Redirect } from "next/dist/lib/load-custom-routes";
 import { LEGACY_FEATURE_MODULES } from "./src/data/marketing-features";
+
+/** Requests to the agency's own domain (see src/lib/site-split.ts). */
+const AGENCY_HOST = { type: "host" as const, value: "(?:www\\.)?anotherseoguru\\.gr" };
 
 /** Portfolio case studies removed from the site. Redirect sources only. */
 const RETIRED_WORK_SLUGS = [
@@ -45,7 +49,7 @@ const nextConfig: NextConfig = {
 
   async redirects() {
     const appOrigin = process.env.NEXT_PUBLIC_APP_ORIGIN?.replace(/\/$/, '') || 'https://app.anotherseoguru.com';
-    return [
+    const list: Redirect[] = [
       // ---- BEGIN AnotherSEOGuru App: retired /platform/features/<slug> pages ----------
       // The 27 per-feature pages described features the app does not have.
       // Each slug now lives at the closest module anchor on /platform/features
@@ -281,6 +285,9 @@ const nextConfig: NextConfig = {
         permanent: false,
       },
     ];
+    // anotherseoguru.gr (the agency's own domain) is routed by the middleware
+    // alone: none of the .com redirects apply there.
+    return list.map((r) => ({ ...r, missing: [...(r.missing ?? []), AGENCY_HOST] }));
   },
 
   // Image optimization for Core Web Vitals

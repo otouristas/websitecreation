@@ -15,6 +15,7 @@
 import { readFileSync, existsSync, readdirSync, statSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { englishAgencyRedirect } from '../src/lib/site-split.ts';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const MAP_PATH = join(ROOT, 'src/data/serp-meta.json');
@@ -146,6 +147,9 @@ if (!rendered) {
 } else {
   let compared = 0;
   for (const pathname of paths) {
+    // English agency pages 301 to their Greek page since the product/agency
+    // split (src/lib/site-split.ts); their map rows only matter for the Greek twin.
+    if (englishAgencyRedirect(pathname)) continue;
     const expected = map[pathname];
     let html = null;
     if (base) {
