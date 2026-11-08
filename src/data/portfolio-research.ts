@@ -583,42 +583,6 @@ export const PROJECT_RESEARCH: Record<string, ProjectResearch> = {
       ]
     }
   },
-  "way-to-crete": {
-    "overview": {
-      "en": "An archived Crete travel project centred on storytelling, local tours and experiences.",
-      "el": "Παλαιότερο ταξιδιωτικό έργο για την Κρήτη, με ιστορίες του τόπου, εκδρομές και τοπικές εμπειρίες."
-    },
-    "features": {
-      "en": [
-        "Crete destination stories",
-        "Local experiences",
-        "Historical project showcase"
-      ],
-      "el": [
-        "Ιστορίες από την Κρήτη",
-        "Τοπικές εμπειρίες",
-        "Παρουσίαση παλαιότερου έργου"
-      ]
-    },
-    "audience": {
-      "en": "The project introduced travellers to Crete through local perspectives and experiences.",
-      "el": "Το έργο παρουσίαζε την Κρήτη μέσα από την τοπική ματιά και τις εμπειρίες της."
-    },
-    "journey": {
-      "en": "Destination stories connected visitors with ideas for exploring the island.",
-      "el": "Οι ιστορίες του προορισμού οδηγούσαν σε ιδέες για εξερεύνηση του νησιού."
-    },
-    "keywords": {
-      "en": [
-        "Crete experiences",
-        "Crete local tours"
-      ],
-      "el": [
-        "εμπειρίες Κρήτη",
-        "τοπικές εκδρομές Κρήτη"
-      ]
-    }
-  },
   "santorini-daily-tours": {
     "overview": {
       "en": "A family-run Santorini agency based in Fira, offering day tours, cruises and transfers since 2000.",
@@ -868,42 +832,6 @@ export const PROJECT_RESEARCH: Record<string, ProjectResearch> = {
       "el": [
         "πρόσθετο AI WooCommerce",
         "Project Shadow AI"
-      ]
-    }
-  },
-  "rethemnos": {
-    "overview": {
-      "en": "A local Rethymno publication covering news, culture, events and life in the region.",
-      "el": "Τοπική ενημερωτική ιστοσελίδα για το Ρέθυμνο, με ειδήσεις, πολιτισμό, εκδηλώσεις και τη ζωή της περιοχής."
-    },
-    "features": {
-      "en": [
-        "Local news",
-        "Culture and events",
-        "Rethymno community information"
-      ],
-      "el": [
-        "Τοπικές ειδήσεις",
-        "Πολιτισμός και εκδηλώσεις",
-        "Ενημέρωση για την κοινωνία του Ρεθύμνου"
-      ]
-    },
-    "audience": {
-      "en": "Residents and visitors need timely local information and events.",
-      "el": "Κάτοικοι και επισκέπτες χρειάζονται τοπική ενημέρωση και πληροφορίες για εκδηλώσεις."
-    },
-    "journey": {
-      "en": "Browse the news categories and event coverage to find relevant local stories.",
-      "el": "Περιήγηση στις κατηγορίες ειδήσεων και στις εκδηλώσεις για τις ιστορίες που ενδιαφέρουν τον αναγνώστη."
-    },
-    "keywords": {
-      "en": [
-        "Rethymno news",
-        "Rethymno events"
-      ],
-      "el": [
-        "ειδήσεις Ρέθυμνο",
-        "εκδηλώσεις Ρέθυμνο"
       ]
     }
   },

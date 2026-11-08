@@ -29,7 +29,7 @@ const SERVICES: readonly { href: string; title: string; body: string }[] = [
   { href: '/el/services/local-seo', title: 'Τοπικό SEO', body: 'Google Business Profile, χάρτης και στοιχεία ανά σημείο.' },
   { href: '/el/services/seo-audits', title: 'Έλεγχος SEO', body: 'Τι κρατά την ιστοσελίδα πίσω, με σειρά διορθώσεων.' },
   { href: '/el/services/eshop-woocommerce', title: 'Κατασκευή e-shop', body: 'Κατάστημα όταν πουλάτε προϊόντα, όχι ραντεβού.' },
-  { href: '/el/pricing', title: 'Τιμές', body: 'Μηνιαίο SEO από το πακέτο Foundations και πακέτα ιστοσελίδας.' },
+  { href: '/el/ypiresies/times', title: 'Τιμές', body: 'Μηνιαίο SEO από το πακέτο Foundations και πακέτα ιστοσελίδας.' },
 ];
 
 function regionCards(region: PlaceRegionId) {
@@ -63,7 +63,7 @@ export function HubView() {
           links={[
             { href: '/el/seo-services', label: 'Υπηρεσίες SEO' },
             { href: '/el/services/website-creation', label: 'Κατασκευή ιστοσελίδων' },
-            { href: '/el/pricing', label: 'Τιμές' },
+            { href: '/el/ypiresies/times', label: 'Τιμές' },
           ]}
         />
 

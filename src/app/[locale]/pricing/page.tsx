@@ -1,335 +1,203 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { Check } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
-import { Globe, Plus, TrendingUp } from "lucide-react";
-import { buildMetadata } from "@/lib/seo";
-import Link from "next/link";
-import { withExactTitle } from "../services/_lib/exact-title";
+import { Accent, Container, CtaBand, HeroCentered, KitEyebrow, KitHeading, KitSection, SoftwareCtas, TrustLine, softwareTrust } from "@/components/kit";
 import {
-  generateBreadcrumbSchema,
-  generateFAQSchema,
-  generateOfferCatalogSchema,
-  combineSchemas,
-  BASE_URL,
-} from "@/lib/seo/schema";
-import { generateBreadcrumbs, getPricingRelatedPaths } from "@/lib/linking";
-import { isValidLocale, localizedPath, type SiteLocale } from "@/lib/i18n/locale";
-import {
-  websitePackages,
-  seoPackages,
-  addOns,
-  formatPrice,
-  currentPrice,
-  isOfferActive,
-  resolvePriceTokens,
-} from "@/data/pricing";
-import { SEO_MIN_TERM_MONTHS } from "@/data/company-facts";
-import { getPricingPageCopy } from "@/data/pricing-page-copy";
-import { Accent, Container, CtaBand, KitHeading, KitSection } from "@/components/kit";
-import {
-  AuditFirstStrip,
-  ChipLinks,
-  KitFaq,
-  PageHero,
-  RelatedLinks,
-  accentTail,
-} from "@/components/page-kit";
-import { PlanPicker } from "@/components/gsc-boost/PlanPicker";
-import { PriceCard } from "@/components/pricing/PriceCard";
-import { PricingCostGuide } from "@/components/pricing/PricingCostGuide";
-import { PricingOfferTabs } from "@/components/pricing/PricingOfferTabs";
-import { PRICING_TAB_CSS, PRICING_TAB_SCRIPT } from "@/components/pricing/pricing-tabs";
-import { SeoPackageCompare } from "@/components/pricing/SeoPackageCompare";
-import { NotForYou } from "@/components/positioning/NotForYou";
-import { SeoTimeline } from "@/components/positioning/SeoTimeline";
+  AddonList,
+  AgencyCrossSell,
+  FREE_PLAN,
+  ComparisonTable,
+  CreditCapacity,
+  CreditPacks,
+  GscFaq,
+  IncludedGrid,
+  PLANS,
+  PRICING_FAQ,
+  PlanPicker,
+  PlatformLinks,
+  TRIAL,
+  appLink,
+  formatUsd,
+  gscBoostSoftwareSchema,
+  platformBreadcrumbs,
+  platformMetadata,
+} from "@/components/gsc-boost";
+import { isValidLocale, type SiteLocale } from "@/lib/i18n/locale";
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}): Promise<Metadata> {
+type PageProps = { params: Promise<{ locale: string }> };
+
+const [STARTER, PRO, AGENCY] = PLANS;
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { locale } = await params;
   if (!isValidLocale(locale)) return {};
-  const copy = getPricingPageCopy(locale);
-
-  const metadata = buildMetadata({
-    title: copy.metaTitle,
-    description: copy.metaDescription,
-    path: localizedPath(locale, "/pricing"),
-    hreflangPath: "/pricing",
-    primaryKeyword: copy.primaryKeyword,
+  return platformMetadata({
+    locale,
+    path: "/pricing",
+    title: { en: "SEO Software Pricing: AnotherSEOGuru App Plans", el: "AnotherSEOGuru App: τιμές λογισμικού SEO" },
+    description: {
+      en: `AnotherSEOGuru App pricing: Free, Starter $${STARTER.monthly}, Pro $${PRO.monthly} and Agency $${AGENCY.monthly} a month, two months free yearly. Search Console features never use credits.`,
+      el: `Τιμές AnotherSEOGuru App: Free, Starter $${STARTER.monthly}, Pro $${PRO.monthly} και Agency $${AGENCY.monthly} τον μήνα, δύο μήνες δώρο ετησίως. Το Search Console δεν χρεώνει μονάδες.`,
+    },
+    keyword: { en: "SEO software pricing", el: "τιμές λογισμικού SEO" },
   });
-  // The Greek title is the keyword map's, already sized to 48 characters.
-  return locale === "el" ? withExactTitle(metadata, copy.metaTitle) : metadata;
 }
 
-export default async function PricingPage({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
-  const { locale } = await params;
-  if (!isValidLocale(locale)) notFound();
-  const siteLocale = locale as SiteLocale;
-  const isEl = siteLocale === "el";
-  const lp = (path: string) => localizedPath(siteLocale, path);
-  const offerLive = isOfferActive();
-  const raw = getPricingPageCopy(siteLocale);
-  const rp = (text: string) => resolvePriceTokens(text, siteLocale);
-
-  const copy = {
-    ...raw,
-    heroLead: rp(raw.heroLead),
-    cost: {
-      ...raw.cost,
-      answer: rp(raw.cost.answer),
-      websiteBand: rp(raw.cost.websiteBand),
-    },
-    faqs: raw.faqs.map((f) => ({
-      question: f.question,
-      answer: rp(f.answer),
-    })),
-  };
-
-  const breadcrumbItems = generateBreadcrumbs(
-    [{ name: isEl ? "Τιμές" : "Pricing", url: "/pricing" }],
-    siteLocale,
-  );
-
-  const faqs = copy.faqs;
-
-  const schemas = combineSchemas(
-    generateBreadcrumbSchema({ items: breadcrumbItems }),
-    generateOfferCatalogSchema({
-      name: isEl
-        ? "Υπηρεσίες SEO και κατασκευής ιστοσελίδων"
-        : "SEO and website services",
-      url: `${BASE_URL}${lp("/pricing")}`,
-      locale: siteLocale,
-      tiers: [...websitePackages, ...seoPackages],
-      priceOf: (t) => currentPrice(t as never),
-    }),
-    generateFAQSchema({ faqs }),
-  );
-
+/**
+ * AnotherSEOGuru App plans and credits, adapted from the app's PricingPage. Every
+ * figure comes from components/gsc-boost/plans.ts, a copy of the app's plan
+ * catalog; nothing on this page is typed in by hand.
+ */
+export default async function PlatformPricingPage({ params }: PageProps) {
+  const { locale: raw } = await params;
+  if (!isValidLocale(raw)) notFound();
+  const locale: SiteLocale = raw;
+  const isEl = locale === "el";
   const tx = (en: string, el: string) => (isEl ? el : en);
-  const jump = [
-    { href: "#websites", label: tx("Websites", "Ιστοσελίδες") },
-    { href: "#seo", label: tx("SEO services", "Υπηρεσίες SEO") },
-    { href: "#software", label: "AnotherSEOGuru App" },
-    { href: "#add-ons", label: tx("Add-ons", "Πρόσθετα") },
-    { href: "#faq", label: "FAQ" },
-  ];
+  const usd = (n: number) => formatUsd(locale, n);
 
   return (
     <>
-      <SchemaMarkup schemas={schemas} />
-      <Header locale={siteLocale} />
+      <SchemaMarkup
+        schemas={[
+          gscBoostSoftwareSchema(locale, "/pricing"),
+          platformBreadcrumbs(locale, [{ name: tx("Pricing", "Τιμές"), path: "/pricing" }]),
+        ]}
+      />
+      <Header locale={locale} />
       <main className="blueprint-grid relative z-0">
-        <PageHero
-          locale={siteLocale}
-          breadcrumbs={breadcrumbItems}
-          pill={
-            offerLive
-              ? { href: "#websites", kind: "save", tag: "-20%", text: tx("Summer Offer on new projects", "Summer Offer σε νέα έργα") }
-              : {
-                  href: lp("/get-started#free-audit"),
-                  kind: "free",
-                  tag: tx("Free", "Δωρεάν"),
-                  text: tx("Every engagement starts with an SEO audit", "Κάθε συνεργασία ξεκινά με έλεγχο SEO"),
-                }
+        <HeroCentered
+          pill={<KitEyebrow>{tx("AnotherSEOGuru App · Pricing", "AnotherSEOGuru App · Τιμές")}</KitEyebrow>}
+          title={
+            <>
+              {tx("Simple plans. Credits only for the", "Απλά πακέτα. Μονάδες μόνο για τη")} <Accent>{tx("heavy lifting", "βαριά δουλειά")}</Accent>.
+            </>
           }
-          title={accentTail(copy.h1, isEl ? 2 : 1)}
-          lead={copy.heroLead}
-          meta={
-            <div className="flex flex-col items-center gap-3">
-              <p className="max-w-2xl text-[14px] font-medium text-foreground">{copy.heroNote}</p>
-              {offerLive ? (
-                <p className="inline-flex max-w-2xl flex-wrap items-center gap-2 rounded-xl border border-warning/30 bg-warning/10 px-4 py-2.5 text-[13px] leading-relaxed text-warning">
-                  {isEl
-                    ? "Summer Offer: 20% χαμηλότερη τιμή για νέα έργα που θα επιβεβαιωθούν έως 31 Αυγούστου 2026."
-                    : "Summer Offer: 20% lower pricing for new projects confirmed by 31 August 2026."}
-                </p>
-              ) : null}
-            </div>
-          }
+          lead={tx(
+            `AnotherSEOGuru App costs ${usd(STARTER.monthly)}, ${usd(PRO.monthly)} or ${usd(AGENCY.monthly)} a month, with two months free on yearly billing. Search Console analysis, opportunities and client reports never use credits. Credits pay for third-party data and AI, and every action shows its cost before you run it.`,
+            `Το AnotherSEOGuru App κοστίζει ${usd(STARTER.monthly)}, ${usd(PRO.monthly)} ή ${usd(AGENCY.monthly)} τον μήνα, με δύο μήνες δώρο στην ετήσια χρέωση. Η ανάλυση Search Console, οι ευκαιρίες και οι αναφορές πελατών δεν χρησιμοποιούν ποτέ μονάδες. Οι μονάδες καλύπτουν δεδομένα τρίτων και AI, και κάθε ενέργεια δείχνει το κόστος της πριν την εκτελέσετε.`,
+          )}
+          actions={<SoftwareCtas locale={locale} source="pricing-hero" />}
+          trust={<TrustLine items={softwareTrust(locale)} />}
         >
-          <Container className="mt-10">
-            <ChipLinks align="center" items={jump} />
+          <Container className="mt-14">
+            <p className="mb-7 flex items-center justify-center gap-2 text-[14px] font-medium text-foreground">
+              <span className="flex size-5 items-center justify-center rounded-full bg-brand/15 text-brand">
+                <Check className="size-3" strokeWidth={3} aria-hidden />
+              </span>
+              {tx(
+                `Free forever with ${FREE_PLAN.credits} credits a month, or try Pro free for ${TRIAL.days} days. No card.`,
+                `Δωρεάν για πάντα με ${FREE_PLAN.credits} μονάδες τον μήνα, ή δοκιμάστε το Pro δωρεάν για ${TRIAL.days} ημέρες. Χωρίς κάρτα.`,
+              )}
+            </p>
+            <PlanPicker locale={locale} source="pricing-plans" className="mx-auto max-w-[1100px]" />
+            <p className="mt-8 text-center text-[13px] text-muted-foreground">
+              {tx("Prices in US dollars. Taxes may apply. Not ready to pay?", "Τιμές σε δολάρια ΗΠΑ. Ενδέχεται να ισχύουν φόροι. Δεν είστε έτοιμοι να πληρώσετε;")}{" "}
+              <a
+                href={appLink("/demo", locale, "pricing-hero-note")}
+                className="font-medium text-foreground underline decoration-hairline underline-offset-4 hover:decoration-foreground"
+              >
+                {tx("Explore the live demo", "Δείτε τη ζωντανή επίδειξη")}
+              </a>{" "}
+              {tx("with no account.", "χωρίς λογαριασμό.")}
+            </p>
           </Container>
-        </PageHero>
+        </HeroCentered>
 
-        <PricingCostGuide locale={siteLocale} copy={copy} />
-
-        <Container>
-          <AuditFirstStrip locale={siteLocale} />
-        </Container>
-
-        <KitSection id="pricing-offers">
-          <style dangerouslySetInnerHTML={{ __html: PRICING_TAB_CSS }} />
-          <script dangerouslySetInnerHTML={{ __html: PRICING_TAB_SCRIPT }} />
-          <PricingOfferTabs locale={siteLocale}>
-            <div
-              id="websites"
-              role="tabpanel"
-              aria-labelledby="pricing-tab-websites"
-              data-pricing-panel="websites"
-              className="scroll-mt-28"
-            >
-              <KitHeading
-                eyebrow={isEl ? "Κατασκευή" : "Websites"}
-                eyebrowIcon={<Globe />}
-                title={accentTail(isEl ? "Πακέτα κατασκευής ιστοσελίδας" : "Website packages")}
-                description={
-                  isEl
-                    ? (
-                        <>
-                          Τι περιλαμβάνει κάθε έργο θα το βρείτε στη σελίδα για την{" "}
-                          <Link href={lp("/services/website-creation")} className="font-medium text-link underline-offset-4 hover:underline">
-                            κατασκευή ιστοσελίδων
-                          </Link>
-                          . Οι χρόνοι παράδοσης ξεκινούν μετά την έγκριση του scope, την παράδοση προσβάσεων και υλικού και την ολοκλήρωση της εμπορικής συμφωνίας. Η πολυπλοκότητα, οι ενσωματώσεις και ο χρόνος ανατροφοδότησης επηρεάζουν την παράδοση.
-                        </>
-                      )
-                    : "Delivery windows begin after scope approval, access handover, receipt of required material and completion of the commercial agreement. Complexity, integrations and feedback cycles affect delivery."
-                }
-              />
-              <div className="mt-12 grid gap-5 lg:grid-cols-3">
-                {websitePackages.map((tier) => (
-                  <PriceCard key={tier.id} tier={tier} locale={siteLocale} frame="quiet" />
-                ))}
-              </div>
-            </div>
-
-            <div
-              id="seo"
-              role="tabpanel"
-              aria-labelledby="pricing-tab-seo"
-              data-pricing-panel="seo"
-              className="scroll-mt-28"
-            >
-              <KitHeading
-                eyebrow="SEO"
-                eyebrowIcon={<TrendingUp />}
-                title={accentTail(isEl ? "Μηνιαία πακέτα SEO" : "Monthly SEO engagements")}
-                description={
-                  isEl
-                    ? `Ελάχιστη διάρκεια ${SEO_MIN_TERM_MONTHS} μηνών, στη συνέχεια μηνιαία ανανέωση. Δεν πουλάμε SEO με βάση τον αριθμό λέξεων-κλειδιών, αλλά με βάση την κάλυψη της πραγματικής ζήτησης αναζήτησης και την ποιότητα των leads.`
-                    : `A ${SEO_MIN_TERM_MONTHS} month minimum term, then rolling monthly. We do not sell SEO by keyword count, but by coverage of real search demand and the quality of the leads it produces.`
-                }
-              />
-              <div className="mt-12 grid gap-5 lg:grid-cols-3">
-                {seoPackages.map((tier) => (
-                  <PriceCard key={tier.id} tier={tier} locale={siteLocale} recurring frame="quiet" />
-                ))}
-              </div>
-              <SeoPackageCompare
-                locale={siteLocale}
-                title={copy.compare.title}
-                eyebrow={copy.compare.eyebrow}
-                intro={copy.compare.intro}
-                rows={copy.compare.rows}
-                footnote={copy.compare.footnote}
-                className="max-w-none px-0 pb-0 pt-16 sm:px-0 sm:pb-0 sm:pt-20"
-              />
-            </div>
-
-            <div
-              id="software"
-              role="tabpanel"
-              aria-labelledby="pricing-tab-software"
-              data-pricing-panel="software"
-              className="scroll-mt-28"
-            >
-              <KitHeading
-                eyebrow={tx("Software plans", "Πακέτα λογισμικού")}
-                title={
-                  <>
-                    {tx("The do-it-yourself", "Η επιλογή")} <Accent>{tx("option", "«μόνοι σας»")}</Accent>
-                  </>
-                }
-                description={tx(
-                  "If you have someone in-house to do the work, AnotherSEOGuru App gives them the same ranked fix list our team works from, on a monthly software plan.",
-                  "Αν έχετε άνθρωπο στην ομάδα σας να κάνει τη δουλειά, το AnotherSEOGuru App του δίνει την ίδια λίστα διορθώσεων με την οποία δουλεύει η ομάδα μας, με μηνιαίο πακέτο λογισμικού.",
-                )}
-              />
-              <PlanPicker
-                locale={siteLocale}
-                source="pricing-software"
-                badge={{ en: "Most popular", el: "Δημοφιλές" }}
-                className="mt-12"
-              />
-              <p className="mt-8 text-[14.5px]">
-                <Link href={lp("/platform/pricing")} className="font-medium text-link underline-offset-4 hover:underline">
-                  {tx("Plan comparison and credit costs", "Σύγκριση πακέτων και κόστος μονάδων")}
-                </Link>
-              </p>
-            </div>
-          </PricingOfferTabs>
-        </KitSection>
-
-        <KitSection id="add-ons">
-          <KitHeading
-            eyebrow={isEl ? "Πρόσθετα" : "Add-ons"}
-            eyebrowIcon={<Plus />}
-            title={accentTail(isEl ? "Πρόσθετες υπηρεσίες" : "Additional services")}
-            description={
-              isEl
-                ? "Τιμές εκκίνησης. Το τελικό κόστος εξαρτάται από το εύρος της εργασίας."
-                : "Starting prices. Final cost depends on the scope of the work."
-            }
-          />
-          <div className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {addOns.map((a) => (
-              <div key={a.id} className="reveal rounded-2xl border border-hairline bg-surface/60 p-5">
-                <p className="text-[14.5px] font-medium leading-snug text-foreground">{isEl ? a.nameEl : a.nameEn}</p>
-                <p className="mt-3 font-display text-[22px] font-semibold tabular-nums tracking-[-0.03em] text-foreground">
-                  {isEl ? "από " : "from "}€{formatPrice(a.from, siteLocale)}
-                  {a.recurring ? (isEl ? "/μήνα" : "/mo") : ""}
-                </p>
-                <p className="mt-1 font-mono text-[11px] text-muted-foreground">{isEl ? "+ ΦΠΑ 24%" : "+ 24% VAT"}</p>
-              </div>
-            ))}
-          </div>
-          <p className="mt-6 max-w-3xl text-[14px] leading-relaxed text-muted-foreground">
-            {isEl
-              ? "Τυχόν κόστη τρίτων για δημοσιεύσεις ή τοποθετήσεις σε εξωτερικά μέσα τιμολογούνται ξεχωριστά και συμφωνούνται εκ των προτέρων."
-              : "Any third-party publisher or placement costs are quoted separately and agreed in advance."}
-          </p>
-        </KitSection>
-
-        <NotForYou locale={siteLocale} />
-
-        <SeoTimeline locale={siteLocale} />
-
-        <KitFaq title={copy.faqTitle} items={faqs} />
-
-        <section className="border-t border-hairline py-16">
-          <Container>
-            <RelatedLinks
-              title={isEl ? "Σχετικές σελίδες" : "Related pages"}
-              items={getPricingRelatedPaths(siteLocale).map((p) => ({
-                href: lp(p.path),
-                title: isEl ? p.titleEl : p.titleEn,
-              }))}
-            />
+        <section aria-labelledby="included" className="mt-20 border-y border-hairline bg-surface/35 sm:mt-24">
+          <Container className="py-12">
+            <h2 id="included" className="text-center font-display text-[22px] font-semibold tracking-[-0.02em] text-foreground">
+              {tx("Included on every plan", "Περιλαμβάνεται σε κάθε πακέτο")}
+            </h2>
+            <p className="mx-auto mt-2 max-w-xl text-pretty text-center text-[14.5px] leading-relaxed text-muted-foreground">
+              {tx(
+                "A plan’s price covers every feature listed for it. Add-ons only add capacity, never features. Every plan includes:",
+                "Η τιμή κάθε πακέτου καλύπτει όλες τις λειτουργίες που αναφέρει. Τα add-ons προσθέτουν μόνο χωρητικότητα, ποτέ λειτουργίες. Κάθε πακέτο περιλαμβάνει:",
+              )}
+            </p>
+            <IncludedGrid locale={locale} />
           </Container>
         </section>
 
+        <KitSection id="compare">
+          <KitHeading
+            title={
+              <>
+                {tx("Compare", "Σύγκριση")} <Accent>{tx("every", "όλων")}</Accent> {tx("feature", "των λειτουργιών")}
+              </>
+            }
+            description={tx("Higher plans include everything in the plans before them.", "Τα ανώτερα πακέτα περιλαμβάνουν όλα όσα έχουν τα προηγούμενα.")}
+          />
+          <div className="reveal mt-10">
+            <p className="mb-3 text-[12px] text-muted-foreground sm:hidden">
+              {tx("Swipe the table sideways to compare all three plans.", "Σύρετε τον πίνακα οριζόντια για να συγκρίνετε και τα τρία πακέτα.")}
+            </p>
+            <ComparisonTable locale={locale} source="pricing-compare" />
+          </div>
+        </KitSection>
+
+        <KitSection id="credits" className="border-t border-hairline">
+          <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-14">
+            <KitHeading
+              eyebrow={tx("Credits", "Μονάδες")}
+              title={
+                <>
+                  {tx("What a credit", "Τι σας")} <Accent>{tx("buys", "δίνει μια μονάδα")}</Accent>
+                </>
+              }
+              description={tx(
+                "Credits are only spent when AnotherSEOGuru App pays a provider for you: keyword and SERP data, crawls, backlinks and AI. If you run out, Search Console features keep working.",
+                "Οι μονάδες χρεώνονται μόνο όταν το AnotherSEOGuru App πληρώνει έναν πάροχο για λογαριασμό σας: δεδομένα λέξεων-κλειδιών και SERP, crawls, backlinks και AI. Αν σας τελειώσουν, οι λειτουργίες του Search Console συνεχίζουν να δουλεύουν.",
+              )}
+            />
+            <div className="reveal min-w-0">
+              <CreditCapacity locale={locale} />
+            </div>
+          </div>
+          <div className="mt-14">
+            <h3 className="font-display text-[20px] font-semibold tracking-[-0.02em] text-foreground">{tx("Credit packs", "Πακέτα μονάδων")}</h3>
+            <p className="mt-1 text-[14.5px] text-muted-foreground">
+              {tx("Need more in a busy month? Add credits on top of your plan.", "Χρειάζεστε περισσότερες σε έναν φορτωμένο μήνα; Προσθέστε μονάδες πέρα από το πακέτο σας.")}
+            </p>
+            <div className="reveal mt-6">
+              <CreditPacks locale={locale} source="pricing-packs" />
+            </div>
+          </div>
+          <div className="mt-14">
+            <h3 className="font-display text-[20px] font-semibold tracking-[-0.02em] text-foreground">Add-ons</h3>
+            <p className="mt-1 text-[14.5px] text-muted-foreground">
+              {tx(
+                "Need more room on a paid plan? Add sites, seats, keywords, prompts or monthly credits. Yearly add-ons get two months free.",
+                "Χρειάζεστε περισσότερο χώρο σε ένα πληρωμένο πακέτο; Προσθέστε ιστοτόπους, χρήστες, λέξεις-κλειδιά, prompts ή μηνιαίες μονάδες. Τα ετήσια add-ons έχουν δύο μήνες δώρο.",
+              )}
+            </p>
+            <div className="reveal mt-6">
+              <AddonList locale={locale} />
+            </div>
+          </div>
+        </KitSection>
+
+        <AgencyCrossSell locale={locale} />
+        <GscFaq locale={locale} items={PRICING_FAQ} />
         <CtaBand
-          locale={siteLocale}
+          locale={locale}
           source="pricing-band"
-          title={accentTail(isEl ? "Συζητήστε το έργο σας" : "Discuss your project", 2)}
-          description={
-            isEl
-              ? "Πείτε μας τι θέλετε να πετύχετε και σε τι κατάσταση είναι σήμερα το site σας. Θα σας πούμε ειλικρινά τι χρειάζεται και αν ταιριάζουμε."
-              : "Tell us what you want to achieve and where your site stands today. We will tell you honestly what it needs and whether we are the right fit."
+          title={
+            <>
+              {tx("Start with your own data,", "Ξεκινήστε με τα δικά σας δεδομένα,")} <Accent>{tx("today", "σήμερα")}</Accent>.
+            </>
           }
+          description={tx(
+            "Connect Google in one click, read-only, and pick the plan that fits. Change or cancel anytime.",
+            "Συνδέστε τη Google με ένα κλικ, μόνο για ανάγνωση, και επιλέξτε το πακέτο που σας ταιριάζει. Αλλάξτε ή ακυρώστε οποτεδήποτε.",
+          )}
         />
+        <PlatformLinks locale={locale} current="/pricing" />
       </main>
-      <Footer locale={siteLocale} />
+      <Footer locale={locale} />
     </>
   );
 }

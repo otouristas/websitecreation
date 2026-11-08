@@ -15,13 +15,18 @@ import type { SiteLocale } from '@/lib/i18n/locale';
 export const VAT_RATE = 0.24;
 
 /**
- * Summer promotion deadline, Europe/Athens.
+ * November 2026 offer deadline, Europe/Athens.
  *
  * `isOfferActive()` gates every promotional price and all offer copy, so the
  * discount and its messaging disappear on their own after this instant. No
  * countdown timers and no scarcity claims - the date does the work.
+ *
+ * Only the two entry packages are discounted (owner decision, 2026-11-06): website
+ * €999 -> €599 and SEO €199 -> €149 a month. These are the same figures the
+ * prospect emails and report pages quote, so the site and the outreach say one
+ * thing. Every other tier carries `offer === regular` and shows no promotion.
  */
-export const OFFER_ENDS = new Date('2026-08-31T23:59:59+03:00');
+export const OFFER_ENDS = new Date('2026-11-30T23:59:59+02:00');
 
 export function isOfferActive(now: Date = new Date()): boolean {
   return now.getTime() <= OFFER_ENDS.getTime();
@@ -50,7 +55,7 @@ export interface Tier {
   readonly name: string;
   /** Net list price, excluding VAT. */
   readonly regular: number;
-  /** Net promotional price while the summer offer runs. */
+  /** Net promotional price while the offer runs. Equal to `regular` when the tier is not on offer. */
   readonly offer: number;
   readonly popular?: boolean;
   readonly forEn: string;
@@ -67,36 +72,41 @@ export function currentPrice(tier: Tier, now?: Date): number {
   return isOfferActive(now) ? tier.offer : tier.regular;
 }
 
+/** True when this tier is discounted right now (offer live and a lower offer price). */
+export function tierOnOffer(tier: Tier, now?: Date): boolean {
+  return isOfferActive(now) && tier.offer < tier.regular;
+}
+
 export const websitePackages: readonly Tier[] = [
   {
     id: 'starter',
     name: 'Website Starter',
-    regular: 1500,
-    offer: 1200,
-    forEn: 'Small but serious businesses that need a professional, SEO-ready website.',
-    forEl: 'Μικρές αλλά σοβαρές επιχειρήσεις που χρειάζονται επαγγελματική ιστοσελίδα, έτοιμη για SEO.',
+    regular: 999,
+    offer: 599,
+    forEn: 'A website that brings customers: for local businesses that need to be found on Google, Maps and ChatGPT.',
+    forEl: 'Ιστοσελίδα που φέρνει πελάτες: για τοπικές επιχειρήσεις που θέλουν να τις βρίσκουν στη Google, στον χάρτη και στο ChatGPT.',
     includesEn: [
-      'Custom design on your brand, not a template',
-      'Mobile-first build and Core Web Vitals work',
-      'Technical SEO foundations and clean architecture',
-      'Analytics and Search Console configured',
-      'Training so you can run it yourself',
+      'A new fast mobile website with call, WhatsApp and map buttons',
+      'Secure connection and correct details everywhere',
+      'A complete Google Maps profile',
+      'Technical SEO foundations, Analytics and Search Console set up',
+      'After the first year: €130 + VAT a year',
     ],
     includesEl: [
-      'Σχεδιασμός στα μέτρα του brand σας, όχι έτοιμο template',
-      'Κατασκευή mobile-first και εργασία στα Core Web Vitals',
-      'Τεχνικά θεμέλια SEO και καθαρή αρχιτεκτονική',
-      'Ρύθμιση Analytics και Search Console',
-      'Εκπαίδευση για να το διαχειρίζεστε μόνοι σας',
+      'Νέα γρήγορη ιστοσελίδα για κινητό, με κουμπί κλήσης, WhatsApp και χάρτη',
+      'Ασφαλής σύνδεση και σωστά στοιχεία παντού',
+      'Πλήρες προφίλ στον χάρτη της Google',
+      'Τεχνικά θεμέλια SEO, ρύθμιση Analytics και Search Console',
+      'Μετά τον πρώτο χρόνο: €130 + ΦΠΑ τον χρόνο',
     ],
-    deliveryEn: '3 to 5 weeks',
-    deliveryEl: '3 έως 5 εβδομάδες',
+    deliveryEn: '2 to 4 weeks',
+    deliveryEl: '2 έως 4 εβδομάδες',
   },
   {
     id: 'professional',
     name: 'Website Professional',
     regular: 2500,
-    offer: 2000,
+    offer: 2500,
     popular: true,
     forEn: 'Hotels, tourism and service businesses that need deeper SEO architecture and conversion work.',
     forEl: 'Ξενοδοχεία, τουριστικές επιχειρήσεις και εταιρείες υπηρεσιών που χρειάζονται βαθύτερη αρχιτεκτονική SEO και εργασία στις μετατροπές.',
@@ -121,7 +131,7 @@ export const websitePackages: readonly Tier[] = [
     id: 'business',
     name: 'Website Business',
     regular: 4000,
-    offer: 3200,
+    offer: 4000,
     forEn: 'Complex, multilingual, multi-location, e-commerce and custom projects.',
     forEl: 'Σύνθετα έργα: πολυγλωσσικά, πολλαπλών τοποθεσιών, e-commerce και custom κατασκευές.',
     includesEn: [
@@ -147,30 +157,30 @@ export const seoPackages: readonly Tier[] = [
   {
     id: 'foundations',
     name: 'SEO Foundations',
-    regular: 500,
-    offer: 400,
-    forEn: 'The minimum engagement at which serious SEO work is possible.',
-    forEl: 'Το ελάχιστο επίπεδο συνεργασίας στο οποίο μπορεί να γίνει σοβαρή δουλειά SEO.',
+    regular: 199,
+    offer: 149,
+    forEn: 'Local businesses that want to show up on Google, Maps and ChatGPT when customers search. 6-month minimum.',
+    forEl: 'Τοπικές επιχειρήσεις που θέλουν να εμφανίζονται στη Google, στον χάρτη και στο ChatGPT όταν τις ψάχνουν. Ελάχιστη διάρκεια 6 μήνες.',
     includesEn: [
-      'Technical audit and prioritised fix roadmap',
-      'Priority commercial keyword clusters, mapped to pages',
-      'On-page work on the pages that can convert',
-      'Google Business Profile and local signals',
-      'Monthly reporting tied to your commercial goals',
+      'Work so you show up on Google and the map when people search',
+      'Weekly check of how Google, Maps and ChatGPT show you against your competitors',
+      'Fixes on the pages that can bring customers, measured before and after',
+      'More reviews from happy customers',
+      'A monthly report: how many found you and how many called',
     ],
     includesEl: [
-      'Τεχνικός έλεγχος και ιεραρχημένο πλάνο διορθώσεων',
-      'Ομάδες εμπορικών λέξεων-κλειδιών, αντιστοιχισμένες σε σελίδες',
-      'Εργασία on-page στις σελίδες που μπορούν να φέρουν πελάτες',
-      'Google Business Profile και τοπικά σήματα',
-      'Μηνιαία αναφορά συνδεδεμένη με τους εμπορικούς σας στόχους',
+      'Δουλειά για να βγαίνετε στη Google και στον χάρτη όταν σας ψάχνουν',
+      'Εβδομαδιαίος έλεγχος πώς σας δείχνουν Google, χάρτης και ChatGPT σε σχέση με τους ανταγωνιστές',
+      'Διορθώσεις στις σελίδες που φέρνουν πελάτες, με μέτρηση πριν και μετά',
+      'Περισσότερες κριτικές από ικανοποιημένους πελάτες',
+      'Μηνιαία αναφορά: πόσοι σας βρήκαν και πόσοι σας κάλεσαν',
     ],
   },
   {
     id: 'growth',
     name: 'SEO Growth',
     regular: 900,
-    offer: 720,
+    offer: 900,
     popular: true,
     forEn: 'Businesses investing systematically in organic growth.',
     forEl: 'Επιχειρήσεις που επενδύουν συστηματικά στην οργανική ανάπτυξη.',
@@ -195,7 +205,7 @@ export const seoPackages: readonly Tier[] = [
     id: 'authority',
     name: 'SEO Authority',
     regular: 1500,
-    offer: 1200,
+    offer: 1500,
     forEn: 'Competitive markets, e-commerce, national and international programmes.',
     forEl: 'Ανταγωνιστικές αγορές, e-commerce, πανελλαδικά και διεθνή προγράμματα.',
     includesEn: [

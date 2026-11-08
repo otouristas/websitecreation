@@ -143,9 +143,9 @@ function DocsFooter({ locale }: { readonly locale: SiteLocale }) {
   const lp = (p: string) => localizedPath(locale, p);
   const links = [
     { label: el ? "Αρχική" : "Home", href: lp("/") },
-    { label: "AnotherSEOGuru App", href: lp("/platform") },
+    { label: "AnotherSEOGuru App", href: lp("/") },
     { label: el ? "Εφαρμογή iPhone" : "iPhone app", href: lp("/platform/iphone") },
-    { label: el ? "Τιμές" : "Pricing", href: lp("/platform/pricing") },
+    { label: el ? "Τιμές" : "Pricing", href: lp("/pricing") },
     { label: "Blog", href: lp("/blog") },
     { label: el ? "Απόρρητο" : "Privacy", href: lp("/privacy") },
     { label: el ? "Όροι" : "Terms", href: lp("/terms") },

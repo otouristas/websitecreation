@@ -155,7 +155,8 @@ export function MobileNav({ locale, alternateHref, isOpen, onClose, model }: Mob
   const closeButtonRef = useRef<HTMLButtonElement | null>(null);
   const restoreFocusRef = useRef<HTMLElement | null>(null);
   const [portalHost, setPortalHost] = useState<HTMLElement | null>(null);
-  const [tab, setTab] = useState<NavMenu['id']>('services');
+  const [tab, setTab] = useState<NavMenu['id']>(model.menus[0]?.id ?? 'software');
+  const isAgency = model.mode === 'agency';
 
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
@@ -218,7 +219,7 @@ export function MobileNav({ locale, alternateHref, isOpen, onClose, model }: Mob
           <BrandLogo
             size="md"
             className="min-w-0 shrink-0"
-            homeHref={lp('/')}
+            homeHref={model.homeHref}
             onClick={onClose}
             imageClassName="h-7 min-[400px]:h-8"
           />
@@ -229,7 +230,16 @@ export function MobileNav({ locale, alternateHref, isOpen, onClose, model }: Mob
               ref={closeButtonRef}
               type="button"
               className="grid size-9 shrink-0 place-items-center rounded-full border border-hairline text-foreground transition-colors hover:bg-foreground/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
-              onClick={onClose}
+              // Close on touch release as well as on click: some iOS browsers
+              // never deliver the click to a button inside this fixed sheet,
+              // which left the X dead. The header ignores the ghost click.
+              onPointerUp={(event) => {
+                if (event.pointerType !== 'mouse') onClose();
+              }}
+              onClick={(event) => {
+                event.stopPropagation();
+                onClose();
+              }}
               aria-label={nav.closeMenu}
             >
               <X className="h-5 w-5" />
@@ -241,6 +251,7 @@ export function MobileNav({ locale, alternateHref, isOpen, onClose, model }: Mob
       <div className="flex-1 overflow-y-auto overscroll-contain">
         {/* Sign-up first: the software is the one thing a visitor can start
             right now, so it leads the sheet instead of a promo line and stats. */}
+        {isAgency ? null : (
         <div className="border-b border-hairline px-4 py-4 min-[400px]:px-5">
           <a
             href={signupHref}
@@ -260,6 +271,7 @@ export function MobileNav({ locale, alternateHref, isOpen, onClose, model }: Mob
             </a>
           </div>
         </div>
+        )}
 
         {/* Tabs mirror the desktop mega menus. */}
         <div role="tablist" aria-label={nav.openMenu} className="sticky top-0 z-10 flex overflow-x-auto border-b border-hairline bg-background/95 backdrop-blur scrollbar-none">
@@ -315,6 +327,8 @@ export function MobileNav({ locale, alternateHref, isOpen, onClose, model }: Mob
       </div>
 
       <div className="shrink-0 border-t border-hairline bg-background px-4 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-3">
+        {isAgency ? (
+        <>
         <div className="grid grid-cols-[1fr_auto] gap-2">
           <Link
             href={model.freeAudit.href}
@@ -342,6 +356,20 @@ export function MobileNav({ locale, alternateHref, isOpen, onClose, model }: Mob
           </a>
         </div>
         <p className="pt-2 text-center text-[0.6875rem] text-muted-foreground">{copy.reply}</p>
+        </>
+        ) : (
+          <a
+            href={model.secondaryCta.href}
+            onClick={() => {
+              trackCtaClick('mobile_nav_demo');
+              onClose();
+            }}
+            className="flex h-12 items-center justify-center gap-1.5 rounded-xl border border-hairline text-[0.9375rem] font-semibold text-foreground"
+          >
+            {model.secondaryCta.label}
+            <ArrowRight className="size-4" />
+          </a>
+        )}
       </div>
     </div>,
     portalHost,

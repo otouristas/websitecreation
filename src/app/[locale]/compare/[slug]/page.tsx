@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -9,7 +10,7 @@ import { Check, Minus } from "lucide-react";
 import { CtaBand, SoftwareCtas, TrustLine, softwareTrust } from "@/components/kit";
 import { ChipLinks, KitBreadcrumbs } from "@/components/page-kit";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
-import { generateBreadcrumbSchema, generateSoftwareApplicationSchema, combineSchemas, BASE_URL } from "@/lib/seo/schema";
+import { generateBreadcrumbSchema, generateFAQSchema, generateSoftwareApplicationSchema, combineSchemas, BASE_URL } from "@/lib/seo/schema";
 import { AnnouncePill, WaveHero } from "@/components/pages/platform-wave/ui";
 import { accentEnd } from "@/components/pages/services-wave/ui";
 
@@ -35,7 +36,7 @@ export async function generateMetadata({ params }: PageProps) {
     path: localizedPath(locale, `/compare/${c.slug}`),
     canonicalPath: localizedPath(locale, `/compare/${c.slug}`),
     hreflangPath: `/compare/${c.slug}`,
-    primaryKeyword: el ? `σύγκριση με ${c.competitorName}` : `SEO software vs ${c.competitorName}`,
+    primaryKeyword: el ? `σύγκριση με ${c.competitorName}` : (c.primaryKeyword ?? `SEO software vs ${c.competitorName}`),
   });
 }
 
@@ -79,8 +80,9 @@ export default async function ComparePage({ params }: PageProps) {
             generateSoftwareApplicationSchema({
               name: "AnotherSEOGuru",
               description: c.summary,
-              url: `${BASE_URL}${localizedPath(siteLocale, "/platform")}`,
+              url: `${BASE_URL}${localizedPath(siteLocale, "/")}`,
             }),
+            ...(c.faq?.length ? [generateFAQSchema({ faqs: c.faq.map((f) => ({ question: f.q, answer: f.a })) })] : []),
           )}
         />
         <WaveHero
@@ -122,6 +124,58 @@ export default async function ComparePage({ params }: PageProps) {
             </div>
           }
         />
+
+        {c.sections?.length || c.faq?.length ? (
+          <section data-shot="details" className="scroll-mt-28">
+            <div className="mx-auto max-w-[860px] px-5 pb-12 lg:px-8">
+              {c.sections?.map((sec) => (
+                <div key={sec.heading} className="mt-12 first:mt-0">
+                  <h2 className="font-display text-[1.6rem] font-semibold tracking-[-0.02em] text-foreground">{sec.heading}</h2>
+                  {sec.body ? <p className="mt-4 text-pretty text-[16.5px] leading-[1.75] text-muted-foreground">{sec.body}</p> : null}
+                  {sec.bullets?.length ? (
+                    <ul className="mt-4 space-y-2.5 text-[16px] leading-relaxed text-muted-foreground">
+                      {sec.bullets.map((b) => (
+                        <li key={b} className="flex gap-2.5">
+                          <Check className="mt-1 size-4 shrink-0 text-primary" aria-hidden />
+                          <span className="min-w-0 text-pretty">{b}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
+                </div>
+              ))}
+              {c.slug === "agencyanalytics" || c.slug === "whatagraph" || c.slug === "dashthis" ? (
+                <p className="mt-8 text-[16px] text-muted-foreground">
+                  See the reports first:{" "}
+                  <Link href={lp("/resources/sample-seo-report")} className="font-medium text-foreground underline decoration-hairline underline-offset-4">
+                    sample SEO report
+                  </Link>{" "}
+                  ·{" "}
+                  <Link href={lp("/platform/white-label-reports")} className="font-medium text-foreground underline decoration-hairline underline-offset-4">
+                    white-label SEO reports
+                  </Link>{" "}
+                  ·{" "}
+                  <Link href={lp("/pricing")} className="font-medium text-foreground underline decoration-hairline underline-offset-4">
+                    pricing
+                  </Link>
+                </p>
+              ) : null}
+              {c.faq?.length ? (
+                <div className="mt-12">
+                  <h2 className="font-display text-[1.6rem] font-semibold tracking-[-0.02em] text-foreground">Questions</h2>
+                  <div className="mt-5 divide-y divide-hairline rounded-[22px] border border-hairline bg-background/70">
+                    {c.faq.map((f) => (
+                      <details key={f.q} className="group p-5">
+                        <summary className="cursor-pointer list-none text-[16px] font-semibold text-foreground [&::-webkit-details-marker]:hidden">{f.q}</summary>
+                        <p className="mt-3 text-pretty text-[15.5px] leading-relaxed text-muted-foreground">{f.a}</p>
+                      </details>
+                    ))}
+                  </div>
+                </div>
+              ) : null}
+            </div>
+          </section>
+        ) : null}
 
         <section data-shot="links" className="scroll-mt-28">
           <div className="mx-auto max-w-[1240px] px-5 pb-16 lg:px-8 lg:pb-24">

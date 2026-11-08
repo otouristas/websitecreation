@@ -296,7 +296,7 @@ const DIY = {
 /**
  * The software door as a strip: AnotherSEOGuru App as the do-it-yourself option, with
  * a link to its own pricing page. No plan figures here, so they live in one
- * place (/platform/pricing).
+ * place (/pricing).
  */
 export function DiyStrip({
   locale,
@@ -327,7 +327,7 @@ export function DiyStrip({
         </h3>
         <p className="mt-3 text-pretty text-[15.5px] leading-relaxed text-muted-foreground">{body ?? DIY.body[locale]}</p>
         <Link
-          href={localizedPath(locale, "/platform/pricing")}
+          href={localizedPath(locale, "/pricing")}
           className="mt-5 inline-flex items-center gap-1.5 text-[14.5px] font-medium text-link underline-offset-4 hover:underline"
         >
           {DIY.plans[locale]}

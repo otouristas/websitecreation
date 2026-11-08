@@ -105,7 +105,7 @@ export function SpokeView({ locale, copy }: { readonly locale: SiteLocale; reado
   const related = [
     { path: '/seo-services', title: isEl ? 'Υπηρεσίες SEO' : 'SEO services' },
     ...others.map((card) => ({ path: card.href, title: card.title })),
-    { path: '/pricing', title: isEl ? 'Τιμές και πακέτα' : 'Pricing and packages' },
+    { path: '/ypiresies/times', title: isEl ? 'Τιμές και πακέτα' : 'Pricing and packages' },
     ...(copy.guide.href === '/seo-services' ? [] : [{ path: copy.guide.href, title: copy.guide.label }]),
   ];
 
@@ -160,7 +160,7 @@ export function SpokeView({ locale, copy }: { readonly locale: SiteLocale; reado
               primaryHref={lp('/get-started')}
               primaryLabel={copy.cta.primary}
               links={[
-                { href: lp('/pricing'), label: copy.cta.secondary },
+                { href: lp('/ypiresies/times'), label: copy.cta.secondary },
                 { href: lp(copy.guide.href), label: copy.guide.label },
               ]}
             />
@@ -222,7 +222,7 @@ export function SpokeView({ locale, copy }: { readonly locale: SiteLocale; reado
                     €{formatPrice(auditGross, locale)} {isEl ? 'τελική τιμή με ΦΠΑ' : 'incl. VAT'}
                   </p>
                 </div>
-                <Link href={lp('/pricing')} className={`mt-8 w-full ${kitSecondaryBtn}`}>
+                <Link href={lp('/ypiresies/times')} className={`mt-8 w-full ${kitSecondaryBtn}`}>
                   {copy.cta.secondary}
                 </Link>
               </div>
@@ -230,7 +230,7 @@ export function SpokeView({ locale, copy }: { readonly locale: SiteLocale; reado
           </div>
           <p className="mx-auto mt-8 max-w-2xl text-pretty text-center text-[14px] leading-relaxed text-muted-foreground">{fill(copy.pricing.note)}</p>
           <p className="mt-4 text-center text-[14px]">
-            <Link href={lp('/pricing')} className="font-medium text-link underline-offset-4 hover:underline">
+            <Link href={lp('/ypiresies/times')} className="font-medium text-link underline-offset-4 hover:underline">
               {isEl ? 'Όλος ο τιμοκατάλογος, με ΦΠΑ' : 'The full price list, with VAT'}
             </Link>
           </p>

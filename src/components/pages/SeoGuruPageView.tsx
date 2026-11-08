@@ -26,7 +26,7 @@ import { withExactTitle } from '@/app/[locale]/services/_lib/exact-title';
  */
 
 /** Live work already published on /work. Homepage screenshots, not result charts. */
-const PROOF_SLUGS = ['onoma-hotel', 'aggelos-rentals', 'way-to-crete', 'kipos-hotel', 'cyclades-rentacar', 'opticore-store'];
+const PROOF_SLUGS = ['onoma-hotel', 'aggelos-rentals', 'kipos-hotel', 'cyclades-rentacar', 'opticore-store'];
 
 const PAGE_PATH = '/seo-guru';
 
@@ -81,7 +81,7 @@ export function SeoGuruPageView({ locale }: { locale: SiteLocale }) {
     { href: consultantPath(locale), title: isEl ? 'Σύμβουλος SEO' : 'SEO consultant' },
     { href: lp('/about'), title: isEl ? 'Ποιοι είμαστε' : 'About AnotherSEOGuru' },
     { href: lp('/seo-services'), title: isEl ? 'Υπηρεσίες SEO' : 'SEO services' },
-    { href: lp('/pricing'), title: isEl ? 'Τιμές και πακέτα' : 'Pricing and packages' },
+    { href: lp('/ypiresies/times'), title: isEl ? 'Τιμές και πακέτα' : 'Pricing and packages' },
     { href: lp('/work'), title: isEl ? 'Έργα' : 'Our work' },
     { href: lp('/contact'), title: isEl ? 'Επικοινωνία' : 'Contact' },
   ];
@@ -178,7 +178,7 @@ export function SeoGuruPageView({ locale }: { locale: SiteLocale }) {
             ))}
           </CardGrid>
           <p className="mt-8 text-center text-[14px]">
-            <Link href={lp('/pricing')} className="inline-flex items-center gap-1.5 font-medium text-link underline-offset-4 hover:underline">
+            <Link href={lp('/ypiresies/times')} className="inline-flex items-center gap-1.5 font-medium text-link underline-offset-4 hover:underline">
               {t.pricing.all}
               <ArrowRight className="size-4" aria-hidden />
             </Link>

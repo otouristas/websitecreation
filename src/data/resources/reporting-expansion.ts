@@ -8,14 +8,14 @@ export const REPORTING_EXPANSION_ARTICLES: ReadonlyArray<ResourceArticle> = [
     cluster: "reporting",
     kind: "article",
     title: "SEO dashboard: what to show, how to lay it out and where to build it",
-    seoTitle: "SEO Dashboard: What to Show and How to Build One",
+    seoTitle: "SEO Dashboard: Free Template and Layout",
     description:
       "How to build an SEO dashboard people use: what to show for each reader, a widget-by-widget layout, Looker Studio vs a spreadsheet vs an app, and a checklist.",
     primaryKeyword: "seo dashboard",
     secondaryKeywords: ["seo dashboard template", "search console dashboard", "seo reporting dashboard"],
     cta: "direct",
     published: PUBLISHED,
-    updated: PUBLISHED,
+    updated: "2026-11-08",
     body: [
       {
         type: "p",
@@ -182,7 +182,7 @@ export const REPORTING_EXPANSION_ARTICLES: ReadonlyArray<ResourceArticle> = [
       { type: "h2", id: "app", text: "Skipping the build with AnotherSEOGuru App" },
       {
         type: "p",
-        text: "AnotherSEOGuru App connects to Search Console and shows most of this layout without building anything: non-brand filters, the ranking ladder, a search health score built from click momentum, CTR against expected positions and top-10 coverage, top movers, and annotations for your releases and confirmed Google updates. Search Console analytics cost no credits on any plan. When the dashboard needs to become a monthly report, **Reports → Client report** builds a printable one for any site and date range, white-label on the Agency plan; see [white-label SEO reports](/en/resources/white-label-seo-reports). The [live demo](/demo) shows it on sample data, and plans are on the [pricing page](/en/pricing).",
+        text: "AnotherSEOGuru App connects to Search Console and shows most of this layout without building anything: non-brand filters, the ranking ladder, a search health score built from click momentum, CTR against expected positions and top-10 coverage, top movers, and annotations for your releases and confirmed Google updates. Search Console analytics cost no credits on any plan. When the dashboard needs to become a monthly report, **Reports → Client report** builds a printable one for any site and date range, white-label on the Agency plan; see [white-label SEO reports](/en/platform/white-label-reports) and a finished [sample SEO report](/en/resources/sample-seo-report). The [live demo](/demo) shows it on sample data, and plans are on the [pricing page](/en/pricing).",
       },
       {
         type: "cards",
@@ -210,14 +210,14 @@ export const REPORTING_EXPANSION_ARTICLES: ReadonlyArray<ResourceArticle> = [
     cluster: "reporting",
     kind: "article",
     title: "SEO reporting tools: how to choose, with a fair look at the main options",
-    seoTitle: "SEO Reporting Tools Compared: How to Choose One",
+    seoTitle: "SEO Reporting Tools Compared (2026 Guide)",
     description:
       "A balanced guide to SEO reporting tools: the criteria that matter, the main options by category, where each fits and how to run a trial before you commit.",
     primaryKeyword: "seo reporting tool",
     secondaryKeywords: ["seo reporting software", "best seo reporting tools", "seo agency reporting"],
     cta: "direct",
     published: PUBLISHED,
-    updated: PUBLISHED,
+    updated: "2026-11-08",
     body: [
       {
         type: "p",
@@ -293,6 +293,10 @@ export const REPORTING_EXPANSION_ARTICLES: ReadonlyArray<ResourceArticle> = [
         type: "p",
         text: "Where it is **not** the best fit: if your reports must combine SEO with paid ads, social and email in one document, a multi-channel tool will serve you better. If you want a drag-and-drop canvas with dozens of third-party connectors, Looker Studio or a dashboard tool is more flexible. If your team lives in Semrush or Ahrefs data and reports mainly on backlinks and competitor estimates, staying in that suite is simpler. And if you manage more sites than the Agency plan's 30, check the fit with us first.",
       },
+      {
+        type: "p",
+        text: "Moving from a multi-channel reporting platform? We wrote honest comparisons: [AgencyAnalytics alternative](/en/compare/agencyanalytics), [Whatagraph alternative](/en/compare/whatagraph) and [DashThis alternative](/en/compare/dashthis). To see the output first, open the [sample SEO report](/en/resources/sample-seo-report).",
+      },
       { type: "h2", id: "decision", text: "Which tool fits which team" },
       {
         type: "table",
@@ -353,18 +357,23 @@ export const REPORTING_EXPANSION_ARTICLES: ReadonlyArray<ResourceArticle> = [
     cluster: "reporting",
     kind: "article",
     title: "White-label SEO reports: what to brand, what a client portal adds and a monthly workflow",
-    seoTitle: "White Label SEO Reports: A Practical Agency Guide",
+    seoTitle: "White Label SEO Reports: Guide + Sample",
     description:
       "White label SEO reports explained for agencies: what to brand, what a client portal adds, a monthly reporting workflow and the pitfalls that cost trust.",
     primaryKeyword: "white label seo reports",
-    secondaryKeywords: ["white label seo reporting", "seo agency reporting software", "branded seo reports"],
+    secondaryKeywords: ["white label seo reporting", "white label seo report", "branded seo reports"],
     cta: "direct",
     published: PUBLISHED,
-    updated: PUBLISHED,
+    updated: "2026-11-08",
     body: [
       {
         type: "p",
         text: "**A white-label SEO report is a client report produced in a reporting tool but delivered entirely in your agency's brand: your logo, colours, name and contact details, with no mention of the software behind it.** The client sees your agency's work, not a tool they could buy themselves. Done well, it is a brand asset you send every month. Done badly, with a stray vendor logo or numbers that do not match Search Console, it costs more trust than a plain report would.",
+      },
+      {
+        type: "note",
+        tone: "tip",
+        text: "Want to see one before you read on? Here is a complete [sample SEO report](/en/resources/sample-seo-report) on invented data, and the [white-label SEO reporting tool](/en/platform/white-label-reports) that builds it from Search Console under your logo.",
       },
       { type: "h2", id: "what-it-means", text: "What white-label means (and what it does not)" },
       {
@@ -467,7 +476,7 @@ export const REPORTING_EXPANSION_ARTICLES: ReadonlyArray<ResourceArticle> = [
       },
       {
         type: "p",
-        text: "In AnotherSEOGuru App, add your logo and colours in **Settings → Branding**; your logo, colours and agency name then appear on client reports, proposals and the client portal. **Reports → Client report** builds a printable report for any site and date range with headline metrics, trends, wins, top queries and pages and the work you shipped, and you can print it or save it as PDF. Clients sign in to their portal with a one-time link, no password, and see their search performance, the tasks you share and their invoices; on the Pro portal plan, reports can also be scheduled by email. White-label client reports are part of the Agency plan, alongside the client CRM and pipeline. See the [agency workspace](/en/platform/for/agencies), the [live demo](/demo) or [plans and pricing](/en/pricing).",
+        text: "In AnotherSEOGuru App, add your logo and colours in **Settings → Branding**; your logo, colours and agency name then appear on client reports, proposals and the client portal. **Reports → Client report** builds a printable report for any site and date range with headline metrics, trends, wins, top queries and pages and the work you shipped, and you can print it or save it as PDF. Clients sign in to their portal with a one-time link, no password, and see their search performance, the tasks you share and their invoices; on the Pro portal plan, reports can also be scheduled by email. White-label client reports are part of the Agency plan, alongside the client CRM and pipeline. Reports can also be emailed from the app or scheduled every Monday or once a month. See [the white-label reporting tool](/en/platform/white-label-reports), a full [sample SEO report](/en/resources/sample-seo-report), the [live demo](/demo) or [plans and pricing](/en/pricing).",
       },
       {
         type: "cards",

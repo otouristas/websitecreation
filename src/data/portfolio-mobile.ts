@@ -20,7 +20,6 @@ export const MOBILE_CAPTURES: readonly string[] = [
   "project-shadow-ai",
   "rentacar-antiparos-gr",
   "rentacar-piraeus",
-  "rethemnos",
   "santo-tours-marinakis",
   "santorini-daily-tours",
   "skydream-travel",

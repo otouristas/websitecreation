@@ -142,7 +142,7 @@ the client does not control.
 ```bash
 npx tsx scripts/ai-mode-report.mts --plan-only        # classification, no network
 npx tsx scripts/ai-mode-report.mts --category hotel   # measure 5 hotels
-npx tsx scripts/ai-mode-report.mts --slug way-to-crete
+npx tsx scripts/ai-mode-report.mts --slug discover-crete
 npx tsx scripts/ai-mode-report.mts --all              # every live client, opt-in
 ```
 

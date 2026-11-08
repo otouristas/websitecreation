@@ -643,43 +643,6 @@ export const portfolioProjects: PortfolioProject[] = [
     "featured": true
   },
   {
-    "slug": "way-to-crete",
-    "name": "Way to Crete",
-    "url": "https://waytocrete.com",
-    "category": "tours",
-    "markets": [
-      "GR",
-      "EU"
-    ],
-    "languages": [
-      "en",
-      "el"
-    ],
-    "screenshot": "/portfolio/way-to-crete.webp",
-    "summary": "An archived Crete travel project centred on storytelling, local tours and experiences.",
-    "summaryEl": "Παλαιότερο ταξιδιωτικό έργο για την Κρήτη, με ιστορίες του τόπου, εκδρομές και τοπικές εμπειρίες.",
-    "results": [
-      "Crete destination stories",
-      "Local experiences",
-      "Historical project showcase"
-    ],
-    "resultsEl": [
-      "Ιστορίες από την Κρήτη",
-      "Τοπικές εμπειρίες",
-      "Παρουσίαση παλαιότερου έργου"
-    ],
-    "services": [
-      "website-creation",
-      "content-creation"
-    ],
-    "seoTitle": "Way to Crete | Website project",
-    "seoDescription": "An archived Crete travel project centred on storytelling, local tours and experiences.",
-    "seoTitleEl": "Way to Crete | Παρουσίαση έργου",
-    "seoDescriptionEl": "Παλαιότερο ταξιδιωτικό έργο για την Κρήτη, με ιστορίες του τόπου, εκδρομές και τοπικές εμπειρίες.",
-    "featured": false,
-    "liveStatus": "offline"
-  },
-  {
     "slug": "santorini-daily-tours",
     "name": "Santorini Daily Tours",
     "url": "https://santorinidailytours.com",
@@ -933,42 +896,6 @@ export const portfolioProjects: PortfolioProject[] = [
     "seoTitleEl": "Project Shadow AI | Παρουσίαση έργου",
     "seoDescriptionEl": "Πρόσθετο AI και εργαλείο ανάλυσης για WooCommerce, με απαντήσεις για το κατάστημα, συγγραφή περιεχομένου και υποστήριξη πελατών.",
     "featured": true
-  },
-  {
-    "slug": "rethemnos",
-    "name": "Rethemnos",
-    "url": "https://rethemnos.gr",
-    "category": "other",
-    "markets": [
-      "GR",
-      "EU"
-    ],
-    "languages": [
-      "el",
-      "en"
-    ],
-    "screenshot": "/portfolio/rethemnos.webp",
-    "summary": "A local Rethymno publication covering news, culture, events and life in the region.",
-    "summaryEl": "Τοπική ενημερωτική ιστοσελίδα για το Ρέθυμνο, με ειδήσεις, πολιτισμό, εκδηλώσεις και τη ζωή της περιοχής.",
-    "results": [
-      "Local news",
-      "Culture and events",
-      "Rethymno community information"
-    ],
-    "resultsEl": [
-      "Τοπικές ειδήσεις",
-      "Πολιτισμός και εκδηλώσεις",
-      "Ενημέρωση για την κοινωνία του Ρεθύμνου"
-    ],
-    "services": [
-      "website-creation",
-      "content-creation"
-    ],
-    "seoTitle": "Rethemnos | Website project",
-    "seoDescription": "A local Rethymno publication covering news, culture, events and life in the region.",
-    "seoTitleEl": "Rethemnos | Παρουσίαση έργου",
-    "seoDescriptionEl": "Τοπική ενημερωτική ιστοσελίδα για το Ρέθυμνο, με ειδήσεις, πολιτισμό, εκδηλώσεις και τη ζωή της περιοχής.",
-    "featured": false
   },
   {
     "slug": "ktima-orion",

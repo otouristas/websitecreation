@@ -586,7 +586,7 @@ export function HotelsPage({ locale }: { locale: SiteLocale }) {
             })}
         />
         <p className="mt-8 text-[14.5px]">
-          <Link href={lp('/pricing')} className="inline-flex items-center gap-1.5 font-medium text-primary underline-offset-4 hover:underline">
+          <Link href={lp('/ypiresies/times')} className="inline-flex items-center gap-1.5 font-medium text-primary underline-offset-4 hover:underline">
             {t.cta.secondary}
             <span aria-hidden>→</span>
           </Link>

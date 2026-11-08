@@ -414,7 +414,7 @@ export const STAY_VERTICALS: readonly TourismVertical[] = [
       { href: '/el/blog/ai-chatbots-tourismos', title: 'AI chatbots στον τουρισμό', body: 'Κρατήσεις και απαντήσεις 24/7 σε πολλές γλώσσες.' },
       { href: '/el/services/ai-visibility', title: 'Ορατότητα σε AI', body: 'Πώς σας βρίσκουν ChatGPT, Gemini και AI Overviews.' },
     ],
-    workSlugs: ['santorini-daily-tours', 'discover-crete', 'way-to-crete', 'discover-cyclades', 'santo-tours-marinakis'],
+    workSlugs: ['santorini-daily-tours', 'discover-crete', 'discover-cyclades', 'santo-tours-marinakis'],
     enAlternate: '/en/tourism-seo/tours',
     serviceType: 'Υπηρεσίες SEO για tour operators και εκδρομές',
   },

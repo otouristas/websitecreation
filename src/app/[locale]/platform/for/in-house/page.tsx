@@ -64,7 +64,7 @@ const IN_HOUSE_FAQ: readonly GscFaqItem[] = [
       en: `Starter covers ${LAUNCH.sites} sites and ${LAUNCH.seats} seat, with every fix the engine finds, ${LAUNCH.keywords} tracked keywords, ${LAUNCH.prompts} AI visibility prompts and the AI assistant. Pro adds content briefs and WordPress publishing, competitor gaps and AI visibility tracking, with ${GROWTH.sites} sites and ${GROWTH.seats} seats.`,
       el: `Το Starter καλύπτει ${LAUNCH.sites} ιστοτόπους και ${LAUNCH.seats} χρήστη, με κάθε διόρθωση που βρίσκει η μηχανή, ${LAUNCH.keywords} λέξεις-κλειδιά σε παρακολούθηση, ${LAUNCH.prompts} prompts ορατότητας AI και τον βοηθό AI. Το Pro προσθέτει briefs περιεχομένου και δημοσίευση στο WordPress, κενά έναντι ανταγωνιστών και ορατότητα στην AI, με ${GROWTH.sites} ιστοτόπους και ${GROWTH.seats} χρήστες.`,
     },
-    link: { kind: "site", path: "/platform/pricing#compare", label: { en: "Compare the plans", el: "Συγκρίνετε τα πακέτα" } },
+    link: { kind: "site", path: "/pricing#compare", label: { en: "Compare the plans", el: "Συγκρίνετε τα πακέτα" } },
   },
   ...HOME_FAQ.filter((item) =>
     ["What access do you need to my Google account?", "How are the click estimates calculated?", "What are credits used for?", "Can I cancel anytime?"].includes(item.q.en),

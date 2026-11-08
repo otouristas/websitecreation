@@ -83,7 +83,7 @@ export default async function CompareHubPage({ params }: PageProps) {
           pill={
             <div className="flex flex-col items-start gap-4">
               <KitBreadcrumbs align="left" items={breadcrumbItems} />
-              <AnnouncePill wrap href={lp("/platform/pricing")} tag={el ? "Σύγκριση" : "Compare"} text={el ? COMPARE_HUB_EL.pill : "Pick on the work, not the feature grid"} />
+              <AnnouncePill wrap href={lp("/pricing")} tag={el ? "Σύγκριση" : "Compare"} text={el ? COMPARE_HUB_EL.pill : "Pick on the work, not the feature grid"} />
             </div>
           }
           title={accentEnd(el ? COMPARE_HUB_EL.heroTitle : "Which SEO tool fits the job you are doing?", el ? COMPARE_HUB_EL.heroAccentWords : 3)}
@@ -91,10 +91,10 @@ export default async function CompareHubPage({ params }: PageProps) {
           lead={el ? COMPARE_HUB_EL.lead : "Every tool here is good at something. These pages say what each one is good at, and where we are the wrong answer, so you can pick on the work rather than the feature grid."}
           actions={
             <div className="flex flex-col gap-3 sm:flex-row">
-              <Link href={lp("/platform/pricing")} className={wavePrimaryBtn}>
+              <Link href={lp("/pricing")} className={wavePrimaryBtn}>
                 {el ? COMPARE_HUB_EL.plans : "See software plans"}
               </Link>
-              <Link href={lp("/platform")} className={waveGhostBtn}>
+              <Link href={lp("/")} className={waveGhostBtn}>
                 {el ? COMPARE_HUB_EL.platform : "What the platform does"}
               </Link>
             </div>

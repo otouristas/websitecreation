@@ -138,7 +138,7 @@ export function LocationContent({ location, service, industry, locale: localePro
                         {serviceDepth ? <p className="mt-4">{serviceDepth}</p> : null}
                         <p className="mt-4">
                             <strong className="font-semibold text-foreground">Transparent pricing:</strong> websites start at €{formatPrice(entryWebsiteNet(), 'en')} and monthly SEO from €{formatPrice(entrySeoNet(), 'en')}/mo - see our{' '}
-                            <Link href={lp('/pricing')} className={inlineLink}>pricing &amp; packages</Link> or{' '}
+                            <Link href={lp('/ypiresies/times')} className={inlineLink}>pricing &amp; packages</Link> or{' '}
                             <Link href={lp('/get-started')} className={inlineLink}>request a free quote</Link>.
                         </p>
                     </div>
@@ -185,7 +185,7 @@ export function LocationContent({ location, service, industry, locale: localePro
                     ) : null}
                     <Link href={lp('/services')} className={exploreChip}>All services</Link>
                     <Link href={lp('/solutions')} className={exploreChip}>Solutions by industry</Link>
-                    <Link href={lp('/pricing')} className={exploreChip}>Pricing &amp; packages</Link>
+                    <Link href={lp('/ypiresies/times')} className={exploreChip}>Pricing &amp; packages</Link>
                     <Link href={lp(guide.href)} className={exploreChip}>{guide.label}</Link>
                     <Link href={lp('/work')} className={exploreChip}>See our work</Link>
                 </div>

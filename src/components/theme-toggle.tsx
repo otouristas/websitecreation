@@ -20,7 +20,8 @@ const LABELS: Record<SiteLocale, { neutral: string; toDark: string; toLight: str
 /**
  * Toggles the `light` class on `document.documentElement`.
  *
- * Dark is the default and carries no class; `light` is the explicit opt-in.
+ * Light is the default (`light` class on <html>); dark is the explicit
+ * opt-in, stored as `theme=dark`. The system setting is ignored.
  * The pre-paint script in the locale layout applies the stored choice before
  * hydration, so this component only has to mirror it after mount.
  *
@@ -33,13 +34,13 @@ const LABELS: Record<SiteLocale, { neutral: string; toDark: string; toLight: str
  * own layout mode.
  */
 export function ThemeToggle({ locale = "en" }: { locale?: SiteLocale }): ReactElement {
-  const [theme, setTheme] = useState<"light" | "dark">("dark");
+  const [theme, setTheme] = useState<"light" | "dark">("light");
   const [mounted, setMounted] = useState(false);
   const labels = LABELS[locale] ?? LABELS.en;
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
-    const initialTheme: "light" | "dark" = savedTheme === "light" ? "light" : "dark";
+    const initialTheme: "light" | "dark" = savedTheme === "dark" ? "dark" : "light";
     // Post-mount sync is the point here: theme comes from localStorage, which
     // is browser-only, so the first paint has to be the SSR value and this
     // corrects it.

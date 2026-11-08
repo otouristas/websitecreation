@@ -160,7 +160,7 @@ export function LocationContentGreek({ location, service, locale: localeProp }: 
             <div className={localProse}>
               <p>
                 {serviceDepth}{' '}
-                <Link href={lp('/pricing')} className={inlineLink}>
+                <Link href={lp('/ypiresies/times')} className={inlineLink}>
                   Δείτε τιμές
                 </Link>{' '}
                 ή{' '}

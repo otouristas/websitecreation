@@ -136,7 +136,7 @@ export default async function LocationsPage({ params }: PageProps) {
               <Link href={lp("/get-started")} className={kitPrimaryBtn}>
                 {t.getStarted}
               </Link>
-              <Link href={lp("/pricing")} className={kitSecondaryBtn}>
+              <Link href={lp("/ypiresies/times")} className={kitSecondaryBtn}>
                 {t.viewPricing}
               </Link>
             </div>

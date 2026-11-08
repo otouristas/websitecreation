@@ -41,8 +41,8 @@ export const HOME_FAQ: ReadonlyArray<GscFaqItem> = [
   {
     q: c("Do I need a credit card to try it?", "Χρειάζομαι πιστωτική κάρτα για να το δοκιμάσω;"),
     a: c(
-      "No. The live demo runs the whole product on sample data, with no account or card. To work on your own sites, you connect Google and choose a plan.",
-      "Όχι. Η ζωντανή επίδειξη τρέχει ολόκληρο το προϊόν με δείγμα δεδομένων, χωρίς λογαριασμό ή κάρτα. Για να δουλέψετε στους δικούς σας ιστοτόπους, συνδέετε τη Google και επιλέγετε πακέτο.",
+      "No. New accounts get a 7-day free trial on their own site with no card, and the live demo runs the whole product on sample data with no account at all. When the trial ends, you choose a plan.",
+      "Όχι. Οι νέοι λογαριασμοί έχουν 7 ημέρες δωρεάν δοκιμή στον δικό τους ιστότοπο χωρίς κάρτα, και η ζωντανή επίδειξη τρέχει ολόκληρο το προϊόν με δείγμα δεδομένων χωρίς λογαριασμό. Μετά τη δοκιμή επιλέγετε πακέτο.",
     ),
     link: { kind: "app", path: "/demo", label: c("Open the live demo", "Ανοίξτε τη ζωντανή επίδειξη") },
   },
@@ -52,7 +52,7 @@ export const HOME_FAQ: ReadonlyArray<GscFaqItem> = [
       `Search Console analysis, the opportunity engine and client reports cost nothing. Credits pay for third-party data and AI: a keyword research lookup is ${K.keyword_research} credits, a site audit ${K.site_audit}, an AI content brief ${K.ai_content_brief} and an assistant question ${K.seo_ai_chat}. Every plan includes a monthly allowance, and you can top up any time.`,
       `Η ανάλυση Search Console, η μηχανή ευκαιριών και οι αναφορές πελατών δεν κοστίζουν τίποτα. Οι μονάδες καλύπτουν δεδομένα τρίτων και AI: μια αναζήτηση στην έρευνα λέξεων-κλειδιών κοστίζει ${K.keyword_research} μονάδες, ένας έλεγχος ιστότοπου ${K.site_audit}, ένα AI content brief ${K.ai_content_brief} και μια ερώτηση στον βοηθό ${K.seo_ai_chat}. Κάθε πακέτο περιλαμβάνει μηνιαίο απόθεμα μονάδων και μπορείτε να αγοράσετε περισσότερες όποτε θέλετε.`,
     ),
-    link: { kind: "site", path: "/platform/pricing#credits", label: c("See every credit cost", "Δείτε όλα τα κόστη σε μονάδες") },
+    link: { kind: "site", path: "/pricing#credits", label: c("See every credit cost", "Δείτε όλα τα κόστη σε μονάδες") },
   },
   {
     q: c("Is my data used to train AI models?", "Χρησιμοποιούνται τα δεδομένα μου για την εκπαίδευση μοντέλων AI;"),
@@ -112,8 +112,8 @@ export const PRICING_FAQ: ReadonlyArray<GscFaqItem> = [
   {
     q: c("Can I try it before I pay?", "Μπορώ να το δοκιμάσω πριν πληρώσω;"),
     a: c(
-      "Yes. The live demo runs the full product on sample data for three fictional sites, with no account or card required. When you’re ready, connect Google and pick a plan.",
-      "Ναι. Η ζωντανή επίδειξη τρέχει ολόκληρο το προϊόν με δείγμα δεδομένων για τρεις φανταστικούς ιστοτόπους, χωρίς λογαριασμό ή κάρτα. Όταν είστε έτοιμοι, συνδέστε τη Google και επιλέξτε πακέτο.",
+      "Yes. Connect Google and you get a 7-day free trial on your own site, with no card. The live demo also runs the full product on sample data for three fictional sites, with no account. When you’re ready, pick a plan.",
+      "Ναι. Συνδέστε τη Google και έχετε 7 ημέρες δωρεάν δοκιμή στον δικό σας ιστότοπο, χωρίς κάρτα. Η ζωντανή επίδειξη τρέχει επίσης ολόκληρο το προϊόν με δείγμα δεδομένων, χωρίς λογαριασμό. Όταν είστε έτοιμοι, επιλέξτε πακέτο.",
     ),
     link: { kind: "app", path: "/demo", label: c("Open the live demo", "Ανοίξτε τη ζωντανή επίδειξη") },
   },
@@ -151,7 +151,7 @@ export const PRICING_FAQ: ReadonlyArray<GscFaqItem> = [
       "No. These are software plans: you use AnotherSEOGuru App and do the work yourself. Our agency packages are a separate service where our team does the SEO for you, priced on the main pricing page.",
       "Όχι. Αυτά είναι πακέτα λογισμικού: χρησιμοποιείτε το AnotherSEOGuru App και κάνετε τη δουλειά μόνοι σας. Τα πακέτα της εταιρείας μας είναι ξεχωριστή υπηρεσία όπου η ομάδα μας αναλαμβάνει το SEO για εσάς, με τιμές στη βασική σελίδα τιμών.",
     ),
-    link: { kind: "site", path: "/pricing", label: c("Agency SEO packages", "Πακέτα SEO της εταιρείας") },
+    link: { kind: "site", path: "/ypiresies/times", label: c("Agency SEO packages", "Πακέτα SEO της εταιρείας") },
   },
 ];
 
@@ -159,8 +159,8 @@ export const AGENCY_FAQ: ReadonlyArray<GscFaqItem> = [
   {
     q: c("How many client sites can I manage?", "Πόσους ιστοτόπους πελατών μπορώ να διαχειρίζομαι;"),
     a: c(
-      "The Agency plan includes 30 sites and 10 team seats. The site switcher lists every Search Console property your Google account can access, and it is built to stay fast with 90+ of them.",
-      "Το πακέτο Agency περιλαμβάνει 30 ιστοτόπους και 10 θέσεις χρηστών. Η εναλλαγή ιστοτόπων εμφανίζει κάθε ιδιότητά του Search Console στην οποία έχει πρόσβαση ο λογαριασμός σας Google και παραμένει γρήγορη ακόμη και με 90+ ιδιότητες.",
+      "The Agency plan includes 30 sites and 15 team seats. The site switcher lists every Search Console property your Google account can access, and it is built to stay fast with 90+ of them.",
+      "Το πακέτο Agency περιλαμβάνει 30 ιστοτόπους και 15 θέσεις χρηστών. Η εναλλαγή ιστοτόπων εμφανίζει κάθε ιδιότητά του Search Console στην οποία έχει πρόσβαση ο λογαριασμός σας Google και παραμένει γρήγορη ακόμη και με 90+ ιδιότητες.",
     ),
   },
   {

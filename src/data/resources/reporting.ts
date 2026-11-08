@@ -15,7 +15,7 @@ export const REPORTING_ARTICLES: ReadonlyArray<ResourceArticle> = [
     secondaryKeywords: ["seo client reporting", "seo client report", "seo agency reporting", "seo reporting tool"],
     cta: "direct",
     published: PUBLISHED,
-    updated: PUBLISHED,
+    updated: "2026-11-08",
     body: [
       {
         type: "p",
@@ -89,7 +89,7 @@ export const REPORTING_ARTICLES: ReadonlyArray<ResourceArticle> = [
       { type: "h2", id: "tools", text: "Doing it with a reporting tool" },
       {
         type: "p",
-        text: "Spreadsheets and Looker Studio dashboards work, but take hours a month per client to keep accurate. In AnotherSEOGuru App, **Reports → Client report** builds a branded, printable report for any site and date range with headline metrics, trends, wins, top queries and pages, and the work you shipped. On the Agency plan, reports are white-label with your logo and colours, and clients can have their own live portal. The [live demo](/demo) shows the report on sample data, without an account.",
+        text: "Spreadsheets and Looker Studio dashboards work, but take hours a month per client to keep accurate. In AnotherSEOGuru App, **Reports → Client report** builds a branded, printable report for any site and date range with headline metrics, trends, wins, top queries and pages, and the work you shipped. On the Agency plan, reports are white-label with your logo and colours, and clients can have their own live portal. See a finished [sample SEO report](/en/resources/sample-seo-report), the [white-label reporting tool](/en/platform/white-label-reports), or the [live demo](/demo) on sample data, without an account.",
       },
       {
         type: "cards",
@@ -116,14 +116,14 @@ export const REPORTING_ARTICLES: ReadonlyArray<ResourceArticle> = [
     cluster: "reporting",
     kind: "article",
     title: "SEO report template: a monthly structure with a filled-in example",
-    seoTitle: "SEO Report Template (Monthly, with Example)",
+    seoTitle: "SEO Report Template: Free Monthly Format",
     description:
       "A free monthly SEO report template: seven sections in the order clients read them, the question each answers, where the data comes from, and a filled-in example to copy.",
     primaryKeyword: "seo report template",
-    secondaryKeywords: ["monthly seo report template", "seo report example", "example seo report", "seo reporting template"],
+    secondaryKeywords: ["monthly seo report template", "monthly seo report", "seo reporting template", "seo report format"],
     cta: "direct",
     published: PUBLISHED,
-    updated: PUBLISHED,
+    updated: "2026-11-08",
     body: [
       {
         type: "p",
@@ -219,7 +219,7 @@ export const REPORTING_ARTICLES: ReadonlyArray<ResourceArticle> = [
       },
       {
         type: "p",
-        text: "If you report on several sites, the manual version takes hours a month. AnotherSEOGuru App's **Client report** fills headline metrics, trends, wins, top queries and pages and the shipped work for any site and date range, and prints or saves as PDF. The Agency plan adds your own branding. [Read more about SEO reporting](/en/resources/seo-reporting) or open the [live demo](/demo).",
+        text: "If you report on several sites, the manual version takes hours a month. AnotherSEOGuru App's **Client report** fills headline metrics, trends, wins, top queries and pages and the shipped work for any site and date range, and prints or saves as PDF. The Agency plan adds your own branding. See the finished version in this [sample SEO report](/en/resources/sample-seo-report), [read more about SEO reporting](/en/resources/seo-reporting) or open the [live demo](/demo).",
       },
       {
         type: "faq",

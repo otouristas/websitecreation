@@ -48,7 +48,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 const WHICH: ReadonlyArray<{ need: Copy; use: Copy; path: string }> = [
-  { need: c("Plan the week and see every report", "Να οργανώσετε την εβδομάδα και να δείτε κάθε αναφορά"), use: c("Web app", "Εφαρμογή web"), path: "/platform" },
+  { need: c("Plan the week and see every report", "Να οργανώσετε την εβδομάδα και να δείτε κάθε αναφορά"), use: c("Web app", "Εφαρμογή web"), path: "/" },
   { need: c("Check traffic and alerts on the go", "Να ελέγχετε κίνηση και ειδοποιήσεις όπου κι αν είστε"), use: c("iPhone app", "Εφαρμογή iPhone"), path: "/platform/iphone" },
   { need: c("Audit any page while you browse, and see its own numbers", "Να ελέγχετε κάθε σελίδα όσο περιηγείστε και να βλέπετε τα νούμερά της"), use: c("Chrome extension", "Επέκταση Chrome"), path: "/platform/chrome-extension" },
   { need: c("Run your site's SEO in WordPress, with Search Console while you write", "Να κάνετε το SEO του ιστότοπου μέσα στο WordPress, με Search Console όσο γράφετε"), use: c("WordPress SEO plugin", "Plugin SEO για WordPress"), path: "/platform/wordpress" },

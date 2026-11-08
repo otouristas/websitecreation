@@ -273,7 +273,7 @@ export function AgencyCrossSell({ locale, className }: { readonly locale: L; rea
             {[
               { href: "/seo-services", label: isEl ? "Υπηρεσίες SEO" : "SEO services", text: isEl ? "Μηνιαίο SEO με σειρά βάσει εσόδων" : "Monthly SEO, ranked by revenue" },
               { href: "/services/ai-visibility", label: "GEO / AEO", text: isEl ? "Να σας προτείνουν ChatGPT και Gemini" : "Get recommended by ChatGPT and Gemini" },
-              { href: "/pricing", label: isEl ? "Τιμές της εταιρείας" : "Agency pricing", text: isEl ? "Πακέτα με σταθερή τιμή" : "Fixed-price packages" },
+              { href: "/ypiresies/times", label: isEl ? "Τιμές της εταιρείας" : "Agency pricing", text: isEl ? "Πακέτα με σταθερή τιμή" : "Fixed-price packages" },
             ].map((item) => (
               <Link
                 key={item.href}
@@ -429,12 +429,15 @@ export function PlatformLinks({ locale, current }: { readonly locale: L; readonl
   const isEl = locale === "el";
   const lp = (p: string) => localizedPath(locale, p);
   const links = [
-    { path: "/platform", label: "AnotherSEOGuru App" },
+    { path: "/", label: "AnotherSEOGuru App" },
     { path: "/platform/features", label: isEl ? "Δυνατότητες" : "Features" },
-    { path: "/platform/pricing", label: isEl ? "Τιμές" : "Pricing" },
+    { path: "/pricing", label: isEl ? "Τιμές" : "Pricing" },
     { path: "/platform/for/agencies", label: isEl ? "Για εταιρείες SEO" : "For agencies" },
     { path: "/platform/for/in-house", label: isEl ? "Για in-house ομάδες" : "For in-house teams" },
     { path: "/platform/for/ecommerce", label: isEl ? "Για e-shop" : "For e-commerce" },
+    { path: "/platform/white-label-reports", label: isEl ? "White-label αναφορές SEO" : "White-label SEO reports" },
+    { path: "/platform/seo-forecasting-tool", label: isEl ? "Πρόβλεψη SEO" : "SEO forecasting tool" },
+    { path: "/resources/sample-seo-report", label: isEl ? "Δείγμα αναφοράς SEO" : "Sample SEO report" },
     { path: "/platform/android", label: isEl ? "Εφαρμογή Android" : "Android app" },
     { path: "/platform/iphone", label: isEl ? "Εφαρμογή iPhone" : "iPhone app" },
     { path: "/platform/integrations", label: isEl ? "Ενσωματώσεις" : "Integrations" },

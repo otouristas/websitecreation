@@ -12,10 +12,10 @@ import { OPPORTUNITY_FINDER, RESOURCE_ARTICLES } from '@/data/resources';
 import { allTerms } from '@/lib/docs/glossary';
 import { PLACE_PAGES } from '@/data/place-seo';
 import { WEBSITE_REGION_PAGES } from '@/data/website-regions';
-import { PLATFORM_TOOLS } from '@/data/platform-tools';
 import { TOURISM_VERTICALS } from '@/data/tourism-seo';
 import { ENGLISH_VERTICALS } from '@/data/tourism-seo/en';
 import { buildLocationServiceUrls } from '@/lib/sitemap-locations';
+import { englishAgencyRedirect, greekAgencyMoveRedirect } from '@/lib/site-split';
 
 const BASE_URL = 'https://anotherseoguru.com';
 const LOCALES: SiteLocale[] = ['en', 'el'];
@@ -64,7 +64,8 @@ function forEnOnly(
   ];
 }
 
-export default function sitemap(): MetadataRoute.Sitemap {
+/** Every entry before the product/agency filter (the agency domain's sitemap reads this). */
+export function allSitemapEntries(): MetadataRoute.Sitemap {
   const blogPosts = getAllBlogPosts();
 
   // Shared agency/marketing pages, bilingual.
@@ -99,12 +100,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // module pages and pricing have real Greek copy from the app's own
     // dictionary. The old /platform/features/<slug> pages are gone (308s
     // in next.config.ts to the module anchors on /platform/features).
-    { path: '/platform', priority: 0.95 },
+    // The agency's Greek landing page and prices (src/lib/site-split.ts).
+    // localizedPath sends agency paths to /el, and the dedupe below keeps one.
+    { path: '/ypiresies', priority: 0.95 },
+    { path: '/ypiresies/times', priority: 0.8, changeFrequency: 'monthly' as const },
     { path: '/platform/features', priority: 0.92 },
-    { path: '/platform/pricing', priority: 0.9, changeFrequency: 'monthly' as const },
+    { path: '/pricing', priority: 0.9, changeFrequency: 'monthly' as const },
     { path: '/platform/for/agencies', priority: 0.85, changeFrequency: 'monthly' as const },
     { path: '/platform/for/in-house', priority: 0.85, changeFrequency: 'monthly' as const },
     { path: '/platform/for/ecommerce', priority: 0.85, changeFrequency: 'monthly' as const },
+    { path: '/platform/white-label-reports', priority: 0.88, changeFrequency: 'monthly' as const },
+    { path: '/platform/seo-forecasting-tool', priority: 0.85, changeFrequency: 'monthly' as const },
     { path: '/platform/iphone', priority: 0.8, changeFrequency: 'monthly' as const },
     // One login everywhere: the integrations hub and its three product pages.
     { path: '/platform/integrations', priority: 0.8, changeFrequency: 'monthly' as const },
@@ -133,12 +139,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly' as const,
     })),
     { path: `/resources/${OPPORTUNITY_FINDER.slug}`, priority: 0.86, changeFrequency: 'monthly' as const },
+    { path: '/resources/sample-seo-report', priority: 0.86, changeFrequency: 'monthly' as const },
     { path: '/tools', priority: 0.84 },
-    ...PLATFORM_TOOLS.map((tool) => ({
-      path: `/tools/${tool.slug}`,
-      priority: 0.72,
-      changeFrequency: 'monthly' as const,
-    })),
+    // /tools/[slug] pages are noindex (the tool runs in the app), so they stay out of the sitemap.
     { path: '/compare', priority: 0.86, changeFrequency: 'monthly' as const },
   ];
 
@@ -241,7 +244,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   );
 
-  return [...staticPages,
+  const all = [...staticPages,
     ...placePages,
     ...consultantPages,
     ...managedPages,
@@ -252,4 +255,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...blogPages,
     ...serviceCityPages,
   ];
+
+  const seen = new Set<string>();
+  return all.filter((entry) => {
+    if (seen.has(entry.url)) return false;
+    seen.add(entry.url);
+    return true;
+  });
+}
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  // English agency URLs redirect to their Greek page (src/lib/site-split.ts),
+  // and once the agency has its own domain its Greek pages leave this sitemap.
+  return allSitemapEntries().filter((entry) => {
+    const path = entry.url.slice(BASE_URL.length) || '/';
+    return !englishAgencyRedirect(path) && !greekAgencyMoveRedirect(path);
+  });
 }

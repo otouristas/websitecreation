@@ -537,7 +537,7 @@ export const ENGLISH_VERTICALS: readonly EnglishTourismVertical[] = [
       { href: '/en/tourism-seo/boat-rental', title: 'Boat rental SEO', body: 'Separate pages for vessels and sea routes.' },
       { href: '/en/services/ai-visibility', title: 'AI visibility', body: 'How assistants describe a tour when someone asks.' },
     ],
-    workSlugs: ['santorini-daily-tours', 'discover-crete', 'way-to-crete', 'discover-cyclades', 'santo-tours-marinakis'],
+    workSlugs: ['santorini-daily-tours', 'discover-crete', 'discover-cyclades', 'santo-tours-marinakis'],
     serviceType: 'Tour operator SEO',
   },
   {

@@ -2,6 +2,7 @@
  * Map paths between /en and /el marketing routes.
  */
 
+import { isAgencyBarePath } from '@/lib/site-split';
 import {
   isEnOnlySection,
   localizedPath,
@@ -93,6 +94,11 @@ export function getAlternateLocalePath(pathname: string): string {
   const target: SiteLocale = current === 'el' ? 'en' : 'el';
   const bare = stripLocalePrefix(pathname);
 
+  // Agency pages are Greek only: English goes to the product homepage.
+  if (isAgencyBarePath(bare)) {
+    return target === 'en' ? '/en' : pathname;
+  }
+
   if (isEnOnlyBarePath(bare)) {
     return localizedPath(target, '/');
   }
@@ -128,6 +134,8 @@ export function getHreflangAlternates(
 ): Record<string, string> | undefined {
   if (locales.length < 2) return undefined;
   const normalized = barePath.startsWith('/') ? barePath : `/${barePath}`;
+  // Agency pages exist in Greek only (src/lib/site-split.ts).
+  if (isAgencyBarePath(normalized)) return undefined;
   return {
     en: `${HREFLANG_BASE}${localizedPath('en', normalized)}`,
     el: `${HREFLANG_BASE}${localizedPath('el', normalized)}`,

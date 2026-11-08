@@ -10,7 +10,7 @@ import WhatsAppPill from '@/components/WhatsAppPill';
 import SecurityNotice from '@/components/SecurityNotice';
 import { Analytics } from '@vercel/analytics/next';
 import { isValidLocale } from '@/lib/i18n/locale';
-import { CONTACT_EMAIL, PHONE_E164 } from '@/lib/contact-info';
+import { CONTACT_EMAIL } from '@/lib/contact-info';
 import { APP_ORIGIN, LEGAL_ENTITY_ID, LEGAL_ENTITY_NAME } from '@/data/legal-entity';
 
 const SITE_URL = 'https://anotherseoguru.com';
@@ -27,12 +27,14 @@ export async function generateMetadata({
   const { locale } = await params;
   const isEl = locale === 'el';
 
+  // anotherseoguru.com is the product: AnotherSEOGuru App. The agency is a
+  // separate business (src/lib/site-split.ts) and is not described here.
   const title = isEl
-    ? 'Κατασκευή Ιστοσελίδων & SEO στην Ελλάδα | AnotherSEOGuru'
-    : 'Web Design & SEO Agency for Greece and Beyond | AnotherSEOGuru';
+    ? 'Λογισμικό SEO από το Search Console | AnotherSEOGuru'
+    : 'SEO Software for Search Console Fixes | AnotherSEOGuru';
   const description = isEl
-    ? 'Κατασκευή ιστοσελίδων, e-shop και SEO για επιχειρήσεις σε όλη την Ελλάδα. Διαφανείς τιμές σε €, GEO/AEO, γρήγορη παράδοση. Ζητήστε δωρεάν προσφορά.'
-    : 'Web design, e-shops, and SEO for businesses in Greece and international markets. Transparent EUR pricing, GEO/AEO expertise, fast delivery. Get a free quote.';
+    ? 'Το AnotherSEOGuru App κάνει το Search Console λίστα διορθώσεων με εκτίμηση κλικ. Λέξεις-κλειδιά, έλεγχοι και ορατότητα σε AI, από τα δεδομένα σας.'
+    : 'AnotherSEOGuru App turns Google Search Console into ranked fixes with click estimates. Keywords, site audits and AI visibility, from your own data.';
 
   return {
     metadataBase: new URL(SITE_URL),
@@ -43,28 +45,28 @@ export async function generateMetadata({
     description,
     keywords: isEl
       ? [
-          'κατασκευή ιστοσελίδων',
-          'SEO',
-          'κατασκευή eshop',
-          'τοπικό SEO',
-          'κατασκευή ιστοσελίδων Αθήνα',
-          'SEO Θεσσαλονίκη',
-          'AEO',
+          'λογισμικό SEO',
+          'εργαλείο SEO',
+          'Google Search Console',
+          'έλεγχος ιστοσελίδας',
+          'λέξεις-κλειδιά',
+          'ορατότητα σε AI',
           'GEO',
-          'κατασκευή ιστοσελίδας ξενοδοχείου',
-          'ανασχεδιασμός ιστοσελίδας',
+          'AEO',
+          'αναφορές SEO',
+          'Aster AI',
         ]
       : [
-          'web design agency',
-          'SEO agency',
-          'website creation',
-          'local SEO',
-          'technical SEO',
-          'AI SEO',
+          'SEO software',
+          'SEO tool',
+          'Google Search Console',
+          'site audit',
+          'rank tracking',
+          'AI visibility',
           'GEO',
           'AEO',
-          'e-shop development',
-          'Greece web design',
+          'white label SEO reports',
+          'Aster AI',
         ],
     authors: [{ name: 'AnotherSEOGuru', url: SITE_URL }],
     creator: 'AnotherSEOGuru',
@@ -88,7 +90,7 @@ export async function generateMetadata({
           url: '/opengraph-image.png',
           width: 1200,
           height: 630,
-          alt: 'AnotherSEOGuru - Web design & SEO agency',
+          alt: 'AnotherSEOGuru App: SEO software built on Google Search Console',
         },
       ],
     },
@@ -141,14 +143,12 @@ function buildStructuredDataGraph(isEl: boolean) {
           url: `${SITE_URL}/brand/asg-lockup-on-light@2x.png`,
         },
         description: isEl
-          ? 'Ψηφιακό γραφείο κατασκευής ιστοσελίδων και SEO με έδρα την Ελλάδα: κατασκευή ιστοσελίδων και e-shop, τοπικό SEO, GEO/AEO και περιεχόμενο για επιχειρήσεις στην Ελλάδα και το εξωτερικό. Διαθέτει και πλατφόρμα SEO συνδεδεμένη με το Google Search Console.'
-          : 'Web design and SEO agency serving Greece (Athens, Thessaloniki, the islands) and international clients: website and e-shop development, local SEO, GEO/AEO, and content. Also builds a GSC-native SEO platform.',
+          ? 'Το AnotherSEOGuru φτιάχνει το AnotherSEOGuru App: λογισμικό SEO πάνω στο Google Search Console, με διορθώσεις και εκτίμηση κλικ, λέξεις-κλειδιά, ελέγχους ιστοσελίδας, ορατότητα σε AI και τον βοηθό Aster AI. Στο web, iPhone, Android, Chrome και WordPress.'
+          : 'AnotherSEOGuru makes AnotherSEOGuru App: SEO software built on Google Search Console, with ranked fixes and click estimates, keywords, site audits, AI visibility and the Aster AI assistant. On the web, iPhone, Android, Chrome and WordPress.',
         contactPoint: {
           '@type': 'ContactPoint',
-          contactType: 'customer service',
+          contactType: 'customer support',
           email: CONTACT_EMAIL,
-          telephone: PHONE_E164,
-          areaServed: ['GR', 'GB', 'US', 'EU'],
           availableLanguage: ['Greek', 'English'],
         },
         sameAs: [
@@ -156,69 +156,36 @@ function buildStructuredDataGraph(isEl: boolean) {
           'https://twitter.com/anotherseoguru',
           'https://www.youtube.com/@anotherseoguru',
         ],
-        // Only the markets the portfolio actually covers. Canada, Australia and
-        // Ireland were asserted here with zero client work behind them, and
-        // `MARKET_COUNT` derives to 4: GR, EU, UK, US.
-        areaServed: [
-          { '@type': 'Country', name: 'Greece' },
-          { '@type': 'Country', name: 'United Kingdom' },
-          { '@type': 'Country', name: 'United States' },
-          { '@type': 'AdministrativeArea', name: 'Europe' },
-          // Greek regions with dedicated pages and client work in the portfolio.
-          { '@type': 'AdministrativeArea', name: isEl ? 'Αττική' : 'Attica', containedInPlace: { '@type': 'Country', name: 'Greece' } },
-          { '@type': 'AdministrativeArea', name: isEl ? 'Κρήτη' : 'Crete', containedInPlace: { '@type': 'Country', name: 'Greece' } },
-          { '@type': 'AdministrativeArea', name: isEl ? 'Κυκλάδες' : 'Cyclades', containedInPlace: { '@type': 'Country', name: 'Greece' } },
-        ],
         knowsAbout: [
-          'Web design',
-          'Website development',
-          'E-shop development',
-          'Technical SEO',
-          'Local SEO',
-          'Google Search Console',
           'Search engine optimization',
+          'Google Search Console',
+          'Technical SEO',
+          'Keyword research',
+          'Rank tracking',
+          'Site audits',
           'Answer Engine Optimization (AEO)',
           'Generative Engine Optimization (GEO)',
           'Generative AI search visibility',
-          'Tourism SEO',
-          'Core Web Vitals',
-          'Conversion rate optimization',
+          'SEO reporting',
         ],
-        hasOfferCatalog: {
-          '@type': 'OfferCatalog',
-          name: isEl ? 'Υπηρεσίες' : 'Agency Services',
-          itemListElement: [
-            {
-              '@type': 'Offer',
-              itemOffered: {
-                '@type': 'Service',
-                name: isEl ? 'Κατασκευή ιστοσελίδων' : 'Website Creation',
-                description: isEl
-                  ? 'Ιστοσελίδες έτοιμες για SEO, με διαφανείς τιμές και γρήγορη παράδοση'
-                  : 'SEO-ready websites with transparent pricing and fast delivery',
-              },
-            },
-            {
-              '@type': 'Offer',
-              itemOffered: {
-                '@type': 'Service',
-                name: isEl ? 'SEO & Τοπικό SEO' : 'SEO & Local SEO',
-                description: isEl
-                  ? 'Τεχνικό SEO, τοπική προβολή και GEO/AEO για τη Google και τις μηχανές AI'
-                  : 'Technical SEO, local visibility, and GEO/AEO for Google and AI engines',
-              },
-            },
-            {
-              '@type': 'Offer',
-              itemOffered: {
-                '@type': 'Service',
-                name: isEl ? 'Κατασκευή e-shop' : 'E-shop Development',
-                description: isEl
-                  ? 'WooCommerce e-shop με SEO αρχιτεκτονική και βελτιστοποίηση ταχύτητας'
-                  : 'WooCommerce e-shops with SEO architecture and speed optimization',
-              },
-            },
-          ],
+        makesOffer: {
+          '@type': 'Offer',
+          itemOffered: { '@id': `${SITE_URL}/#app` },
+        },
+      },
+      {
+        '@type': 'SoftwareApplication',
+        '@id': `${SITE_URL}/#app`,
+        name: 'AnotherSEOGuru App',
+        url: SITE_URL,
+        applicationCategory: 'BusinessApplication',
+        operatingSystem: 'Web, iOS, Android',
+        publisher: { '@id': `${SITE_URL}/#organization` },
+        offers: {
+          '@type': 'Offer',
+          price: '0',
+          priceCurrency: 'EUR',
+          description: isEl ? 'Δωρεάν πλάνο, με αναβάθμιση όποτε θέλετε' : 'Free plan, upgrade any time',
         },
       },
       {
@@ -239,8 +206,8 @@ function buildStructuredDataGraph(isEl: boolean) {
         url: SITE_URL,
         name: 'AnotherSEOGuru',
         description: isEl
-          ? 'Κατασκευή ιστοσελίδων, e-shop και SEO για επιχειρήσεις στην Ελλάδα - μαζί με πλατφόρμα SEO για ομάδες.'
-          : 'Web design, e-shops, and SEO for businesses in Greece and beyond - plus an SEO platform for Search Console teams.',
+          ? 'AnotherSEOGuru App: λογισμικό SEO που κάνει το Google Search Console λίστα διορθώσεων.'
+          : 'AnotherSEOGuru App: SEO software that turns Google Search Console into a list of fixes.',
         publisher: { '@id': `${SITE_URL}/#organization` },
         inLanguage: ['en', 'el'],
       },
@@ -249,9 +216,9 @@ function buildStructuredDataGraph(isEl: boolean) {
 }
 
 /**
- * Dark is the brand default and needs no class. Only a visitor who explicitly
- * chose the light theme gets `.light` on <html>, before first paint so there
- * is no flash. The stored key is unchanged from the previous toggle.
+ * Light is the default: the server renders `.light` on <html>. Only a visitor
+ * who explicitly chose dark with the toggle (`theme=dark`) loses it, before
+ * first paint so there is no flash. The system setting is ignored.
  */
 const themeInitScript = THEME_INIT_SCRIPT;
 
@@ -277,10 +244,10 @@ export default async function LocaleLayout({
   return (
     <html
       lang={isEl ? 'el' : 'en'}
-      data-asg-theme="dark"
+      data-asg-theme="light"
       // The next/font variables sit on <html> so they resolve everywhere,
       // including Tailwind's preflight font rule on the root element.
-      className={`${inter.variable} ${geistMono.variable} scroll-smooth`}
+      className={`light ${inter.variable} ${geistMono.variable} scroll-smooth`}
       suppressHydrationWarning
     >
       <head>

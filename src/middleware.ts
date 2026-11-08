@@ -11,6 +11,14 @@ import { decideServiceLocationRoute } from '@/lib/indexability/service-location'
 import { legacyWebDesignRedirect } from '@/lib/indexability/web-design-redirect';
 import { getAllServiceSlugs } from '@/data/services';
 import { THEME_INIT_SCRIPT } from '@/brand/theme';
+import {
+  AGENCY_DOMAIN,
+  PRODUCT_ORIGIN,
+  agencyDomainPath,
+  comPathForAgencyDomain,
+  englishAgencyRedirect,
+  greekAgencyMoveRedirect,
+} from '@/lib/site-split';
 
 const LOCALE_COOKIE = 'locale';
 
@@ -48,7 +56,7 @@ function goneResponse(locale: SiteLocale, service: string): NextResponse {
     ? 'Αυτή η σελίδα πόλης δεν υπάρχει πια. Θα βρείτε την υπηρεσία στη βασική της σελίδα.'
     : 'This city page no longer exists. You will find the service on its main page.';
   const cta = isEl ? 'Δείτε την υπηρεσία' : 'See the service';
-  const html = `<!doctype html><html lang="${locale}" data-asg-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><link rel="icon" href="/icon.svg" type="image/svg+xml"><link rel="icon" href="/favicon.ico"><title>${escapeHtml(title)}</title><link rel="stylesheet" href="/brand/brand.tokens.css"><link rel="stylesheet" href="/brand/error-fonts.css"><script>${THEME_INIT_SCRIPT}</script><style>body{font-family:Inter,system-ui,sans-serif;max-width:36rem;margin:4rem auto;padding:0 1rem;line-height:1.6;color:var(--asg-text);background:var(--asg-background)}a{color:var(--asg-link)}a:focus-visible{outline:2px solid var(--asg-focus);outline-offset:3px}.brand{display:block;width:220px;max-width:100%;height:auto;margin-bottom:2rem}.on-light{display:none}[data-asg-theme="light"] .on-dark{display:none}[data-asg-theme="light"] .on-light{display:block}</style></head><body><a href="/${locale}" aria-label="AnotherSEOGuru"><img src="/brand/asg-lockup-on-dark.svg" class="brand on-dark" alt="AnotherSEOGuru"><img src="/brand/asg-lockup-on-light.svg" class="brand on-light" alt="AnotherSEOGuru"></a><h1>${escapeHtml(title)}</h1><p>${escapeHtml(body)}</p><p><a href="${escapeHtml(hub)}">${escapeHtml(cta)}</a></p></body></html>`;
+  const html = `<!doctype html><html lang="${locale}" data-asg-theme="light" class="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><link rel="icon" href="/icon.svg" type="image/svg+xml"><link rel="icon" href="/favicon.ico"><title>${escapeHtml(title)}</title><link rel="stylesheet" href="/brand/brand.tokens.css"><link rel="stylesheet" href="/brand/error-fonts.css"><script>${THEME_INIT_SCRIPT}</script><style>body{font-family:Inter,system-ui,sans-serif;max-width:36rem;margin:4rem auto;padding:0 1rem;line-height:1.6;color:var(--asg-text);background:var(--asg-background)}a{color:var(--asg-link)}a:focus-visible{outline:2px solid var(--asg-focus);outline-offset:3px}.brand{display:block;width:220px;max-width:100%;height:auto;margin-bottom:2rem}.on-light{display:none}[data-asg-theme="light"] .on-dark{display:none}[data-asg-theme="light"] .on-light{display:block}</style></head><body><a href="/${locale}" aria-label="AnotherSEOGuru"><img src="/brand/asg-lockup-on-dark.svg" class="brand on-dark" alt="AnotherSEOGuru"><img src="/brand/asg-lockup-on-light.svg" class="brand on-light" alt="AnotherSEOGuru"></a><h1>${escapeHtml(title)}</h1><p>${escapeHtml(body)}</p><p><a href="${escapeHtml(hub)}">${escapeHtml(cta)}</a></p></body></html>`;
   return new NextResponse(html, {
     status: 410,
     headers: {
@@ -59,12 +67,70 @@ function goneResponse(locale: SiteLocale, service: string): NextResponse {
   });
 }
 
+/**
+ * anotherseoguru.gr serves the Greek agency pages of this project: `/` is
+ * /el/ypiresies, `/times` is /el/ypiresies/times and `/<section>/...` is
+ * /el/<section>/.... Anything else on .gr belongs to the product site.
+ */
+function agencyDomainResponse(request: NextRequest): NextResponse {
+  const { pathname, search } = request.nextUrl;
+  // The .gr domain's own SEO files (src/lib/agency-domain-seo.ts).
+  const seoFile: Record<string, string> = {
+    '/robots.txt': '/agency-domain/robots.txt',
+    '/sitemap.xml': '/agency-domain/sitemap.xml',
+    '/sitemap-index.xml': '/agency-domain/sitemap.xml',
+    '/llms.txt': '/agency-domain-llms.txt',
+    '/llms-full.txt': '/agency-domain-llms.txt',
+  };
+  if (seoFile[pathname]) {
+    const url = request.nextUrl.clone();
+    url.pathname = seoFile[pathname];
+    return NextResponse.rewrite(url);
+  }
+  if (
+    pathname.startsWith('/_next') ||
+    pathname.startsWith('/api') ||
+    pathname.includes('.') ||
+    pathname.startsWith('/opengraph-image')
+  ) {
+    return NextResponse.next();
+  }
+  // /ypiresies is the .gr home itself, and /ypiresies/times is /times.
+  if (pathname === '/ypiresies' || pathname.startsWith('/ypiresies/')) {
+    return NextResponse.redirect(new URL(`${agencyDomainPath(`/el${pathname}`)}${search}`, request.url), 301);
+  }
+  const target = comPathForAgencyDomain(pathname);
+  if (target) {
+    const url = request.nextUrl.clone();
+    url.pathname = target;
+    return NextResponse.rewrite(url);
+  }
+  // A .com-style Greek agency URL on .gr: drop the /el.
+  if (pathname.startsWith('/el/') && comPathForAgencyDomain(agencyDomainPath(pathname))) {
+    return NextResponse.redirect(new URL(`${agencyDomainPath(pathname)}${search}`, request.url), 301);
+  }
+  return NextResponse.redirect(`${PRODUCT_ORIGIN}${pathname}${search}`, 301);
+}
+
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
+  const host = (request.headers.get('host') ?? '').toLowerCase().split(':')[0];
+  if (host === AGENCY_DOMAIN || host === `www.${AGENCY_DOMAIN}`) {
+    return agencyDomainResponse(request);
+  }
+
+  // Once the agency has its own domain, its Greek pages here move there.
+  const moved = greekAgencyMoveRedirect(pathname);
+  if (moved) {
+    return NextResponse.redirect(`${moved}${request.nextUrl.search}`, 301);
+  }
+
+  // Legacy and city redirects that land on an English agency page go straight
+  // on to its Greek page, so no request takes two hops.
   const webDesign = legacyWebDesignRedirect(pathname);
   if (webDesign) {
-    return NextResponse.redirect(new URL(webDesign, request.url), 301);
+    return NextResponse.redirect(new URL(englishAgencyRedirect(webDesign) ?? webDesign, request.url), 301);
   }
 
   const cityRoute = decideServiceLocationRoute(pathname);
@@ -72,7 +138,14 @@ export function middleware(request: NextRequest) {
     return goneResponse(cityRoute.locale, cityRoute.service);
   }
   if (cityRoute?.kind === 'redirect') {
-    return NextResponse.redirect(new URL(cityRoute.to, request.url), cityRoute.status);
+    return NextResponse.redirect(new URL(englishAgencyRedirect(cityRoute.to) ?? cityRoute.to, request.url), cityRoute.status);
+  }
+
+  // anotherseoguru.com is the product site. The agency serves Greek clients, so
+  // every English agency page now lives on its Greek twin (see lib/site-split).
+  const agency = englishAgencyRedirect(pathname);
+  if (agency) {
+    return NextResponse.redirect(new URL(agency, request.url), 301);
   }
 
   // Markdown twin of a docs page: /en/help/x/y.md -> the static Markdown route.

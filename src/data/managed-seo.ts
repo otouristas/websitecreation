@@ -19,7 +19,9 @@ const GREECE = { '@type': 'Country', name: 'Greece' } as const;
 const ORG_ID = `${BASE_URL}/#organization`;
 
 export function managedSeoPath(locale: SiteLocale): string {
-  return locale === 'el' ? MANAGED_SEO_EL_PATH : MANAGED_SEO_EN_PATH;
+  // Agency pages are Greek only (src/lib/site-split.ts).
+  void locale;
+  return MANAGED_SEO_EL_PATH;
 }
 
 export function managedLanguageAlternates(): Record<string, string> {
@@ -158,7 +160,7 @@ export function getManagedSeoCopy(locale: SiteLocale): ManagedSeoCopy {
       links: [
         { href: lp('/seo-services'), label: 'Υπηρεσίες SEO' },
         { href: lp('/services'), label: 'Όλες οι υπηρεσίες' },
-        { href: lp('/pricing'), label: 'Δείτε τα πακέτα' },
+        { href: lp('/ypiresies/times'), label: 'Δείτε τα πακέτα' },
       ],
       risksEyebrow: 'Από πού ξεκινά',
       risksTitle: 'Πέντε λόγοι που η ιστοσελίδα',
@@ -187,7 +189,7 @@ export function getManagedSeoCopy(locale: SiteLocale): ManagedSeoCopy {
           key: 'reporting',
           title: 'Αναφορές χωρίς δουλειά',
           body: 'Ένα μηνιαίο PDF με θέσεις, που σταματά εκεί, δεν αλλάζει την ιστοσελίδα. Κάθε θέμα που αναφέρουμε είναι εργασία που η ομάδα πρέπει να ολοκληρώσει.',
-          href: lp('/platform'),
+          href: lp('/'),
         },
         {
           key: 'multilingual',
@@ -269,7 +271,7 @@ export function getManagedSeoCopy(locale: SiteLocale): ManagedSeoCopy {
       termsLead: 'Ξεκάθαροι όροι από την πρώτη μέρα. Τα πακέτα και η αμοιβή είναι στη σελίδα των πακέτων.',
       terms: [term, reply],
       termsLinkLabel: 'Δείτε τα πακέτα',
-      termsHref: lp('/pricing'),
+      termsHref: lp('/ypiresies/times'),
       faqTitle: 'Ερωτήσεις για τη',
       faqAccent: 'διαχείριση SEO',
       faqs: [
@@ -321,7 +323,7 @@ export function getManagedSeoCopy(locale: SiteLocale): ManagedSeoCopy {
     links: [
       { href: lp('/seo-services'), label: 'SEO services' },
       { href: lp('/services'), label: 'All services' },
-      { href: lp('/pricing'), label: 'See the packages' },
+      { href: lp('/ypiresies/times'), label: 'See the packages' },
     ],
     risksEyebrow: 'Where it starts',
     risksTitle: 'Five reasons a site',
@@ -350,7 +352,7 @@ export function getManagedSeoCopy(locale: SiteLocale): ManagedSeoCopy {
         key: 'reporting',
         title: 'Reporting without action',
         body: 'A monthly PDF that lists positions and then stops does not change the site. Every item we report is a task the team is expected to ship.',
-        href: lp('/platform'),
+        href: lp('/'),
       },
       {
         key: 'multilingual',
@@ -432,7 +434,7 @@ export function getManagedSeoCopy(locale: SiteLocale): ManagedSeoCopy {
     termsLead: 'Clear terms from day one. Packages and fees are on the packages page.',
     terms: [term, reply],
     termsLinkLabel: 'See the packages',
-    termsHref: lp('/pricing'),
+    termsHref: lp('/ypiresies/times'),
     faqTitle: 'Questions about',
     faqAccent: 'managed SEO',
     faqs: [

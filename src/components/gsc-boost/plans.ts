@@ -73,7 +73,7 @@ export const PLANS: ReadonlyArray<Plan> = [
     monthly: 299,
     yearly: 2990,
     credits: 25000,
-    sites: 50,
+    sites: 30,
     seats: 15,
     keywords: 5000,
     prompts: 300,

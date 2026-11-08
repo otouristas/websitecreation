@@ -66,7 +66,7 @@ export function TourismHubView() {
               links={[
                 { href: "/el/seo-services", label: "Υπηρεσίες SEO" },
                 { href: "/el/seo", label: "SEO ανά τόπο" },
-                { href: "/el/pricing", label: "Τιμές" },
+                { href: "/el/ypiresies/times", label: "Τιμές" },
               ]}
             />
           }

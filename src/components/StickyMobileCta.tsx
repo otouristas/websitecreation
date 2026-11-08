@@ -1,10 +1,11 @@
 'use client';
 
-import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState, type ReactElement } from 'react';
 import { ArrowRight } from 'lucide-react';
-import { localizedPath, siteLocaleFromPath } from '@/lib/i18n/locale';
+import { siteLocaleFromPath } from '@/lib/i18n/locale';
+import { getAppPath } from '@/lib/app-links';
+import { AGENCY_AUDIT_HREF, AGENCY_PRICING_HREF, isAgencyPathname } from '@/lib/site-split';
 import { getNavDictionary } from '@/lib/i18n/get-dictionary';
 import { trackCtaClick } from '@/lib/analytics';
 import { PHONE_DISPLAY, WHATSAPP_HREF } from '@/lib/contact-info';
@@ -43,7 +44,14 @@ export function StickyMobileCta(): ReactElement | null {
   const pathname = usePathname() ?? '/en';
   const locale = siteLocaleFromPath(pathname);
   const nav = getNavDictionary(locale);
-  const lp = (path: string) => localizedPath(locale, path);
+  const isAgency = isAgencyPathname(pathname);
+  const isEl = locale === 'el';
+  const primary = isAgency
+    ? { href: AGENCY_AUDIT_HREF, label: isEl ? 'Δωρεάν έλεγχος' : 'Free audit', event: 'sticky_mobile_free_audit' }
+    : { href: appLink('/signup', locale, 'sticky-mobile'), label: isEl ? nav.signUpShort : nav.signUp, event: 'sticky_mobile_signup' };
+  const secondary = isAgency
+    ? { href: AGENCY_PRICING_HREF, label: isEl ? 'Τιμές' : 'Pricing', event: 'sticky_mobile_pricing' }
+    : { href: `${getAppPath('/demo')}?lang=${locale}&utm_source=website&utm_content=sticky`, label: isEl ? 'Επίδειξη' : 'Live demo', event: 'sticky_mobile_demo' };
   const [suppressed, setSuppressed] = useState(false);
 
   // The quote and contact pages are the destination; a CTA there covers the form.
@@ -106,20 +114,21 @@ export function StickyMobileCta(): ReactElement | null {
             className="pointer-events-none absolute inset-x-4 top-0 h-px bg-[linear-gradient(90deg,transparent,oklch(1_0_0/55%),transparent)]"
           />
           <a
-            href={appLink('/signup', locale, 'sticky-mobile')}
-            onClick={() => trackCtaClick('sticky_mobile_signup')}
+            href={primary.href}
+            onClick={() => trackCtaClick(primary.event)}
             className="relative flex h-10 min-w-0 flex-1 items-center justify-center rounded-full px-3 font-display text-[13.5px] font-semibold tracking-[-0.01em] asg-primary-action shadow-[inset_0_1px_0_0_oklch(1_0_0/22%)] active:scale-[0.98] motion-reduce:active:scale-100"
           >
-            <span className="truncate">{locale === 'el' ? nav.signUpShort : nav.signUp}</span>
+            <span className="truncate">{primary.label}</span>
           </a>
-          <Link
-            href={lp('/get-started')}
-            onClick={() => trackCtaClick('sticky_mobile_quote')}
+          <a
+            href={secondary.href}
+            onClick={() => trackCtaClick(secondary.event)}
             className="relative flex h-10 min-w-0 flex-1 items-center justify-center gap-1 rounded-full border border-[color-mix(in_oklab,var(--foreground)_14%,transparent)] bg-[color-mix(in_oklab,var(--foreground)_8%,var(--surface))] px-3 text-[13.5px] font-semibold tracking-[-0.01em] text-foreground shadow-[inset_0_1px_0_0_oklch(1_0_0/18%)] active:scale-[0.98] motion-reduce:active:scale-100"
           >
-            <span className="truncate">{nav.getQuoteShort}</span>
+            <span className="truncate">{secondary.label}</span>
             <ArrowRight className="size-3.5 shrink-0 max-[379px]:hidden" aria-hidden />
-          </Link>
+          </a>
+          {isAgency ? (
           <a
             href={WHATSAPP_HREF}
             target="_blank"
@@ -130,6 +139,7 @@ export function StickyMobileCta(): ReactElement | null {
           >
             <WhatsAppIcon className="size-[1.05rem] shrink-0" />
           </a>
+          ) : null}
         </div>
       </div>
     </>

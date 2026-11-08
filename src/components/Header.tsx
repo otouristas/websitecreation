@@ -1,7 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState, type ReactElement } from "react";
-import Link from "next/link";
+import { useCallback, useEffect, useMemo, useRef, useState, type ReactElement } from "react";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { BrandLogo } from "@/components/BrandLogo";
@@ -9,12 +8,13 @@ import { MegaNav } from "@/components/nav/MegaNav";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { MobileNav } from "@/components/MobileNav";
-import { localizedPath, siteLocaleFromPath, type SiteLocale } from "@/lib/i18n/locale";
+import { siteLocaleFromPath, type SiteLocale } from "@/lib/i18n/locale";
 import { getNavDictionary } from "@/lib/i18n/get-dictionary";
 import { getNavModel } from "@/data/nav-menu";
 import { getTrustChips } from "@/data/trust-stats";
 import { trackCtaClick } from "@/lib/analytics";
 import { appLink } from "@/components/gsc-boost/copy";
+import { isAgencyPathname } from "@/lib/site-split";
 
 export default function Header({
   locale: localeProp,
@@ -25,10 +25,27 @@ export default function Header({
   const nav = getNavDictionary(locale);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const model = useMemo(() => getNavModel(locale), [locale]);
+  // When the sheet's X closes the menu on a touch, iOS still delivers the
+  // tap's click to whatever is now under the finger: this button, which sits
+  // in the same corner. Ignore that ghost click so the menu stays closed.
+  const menuClosedAtRef = useRef(0);
+  const closeMobileMenu = useCallback(() => {
+    menuClosedAtRef.current = Date.now();
+    setIsMobileMenuOpen(false);
+  }, []);
+  const toggleMobileMenu = useCallback(() => {
+    if (isMobileMenuOpen) {
+      closeMobileMenu();
+      return;
+    }
+    if (Date.now() - menuClosedAtRef.current < 500) return;
+    setIsMobileMenuOpen(true);
+  }, [isMobileMenuOpen, closeMobileMenu]);
+  const mode = isAgencyPathname(pathname) ? "agency" : "product";
+  const model = useMemo(() => getNavModel(locale, mode), [locale, mode]);
   const chips = getTrustChips(locale);
-  const lp = (path: string) => localizedPath(locale, path);
-  const signupHref = appLink("/signup", locale, "header");
+  const isAgency = model.mode === "agency";
+  const signupHref = isAgency ? model.primaryCta.href : appLink("/signup", locale, "header");
   const loginHref = appLink("/login", locale, "header");
 
   useEffect(() => {
@@ -90,7 +107,7 @@ export default function Header({
             <BrandLogo
               size="md"
               className="min-w-0 shrink-0"
-              homeHref={lp("/")}
+              homeHref={model.homeHref}
               imageClassName="h-7 min-[400px]:h-8"
             />
             <div className="hidden min-w-0 items-center lg:flex">
@@ -116,27 +133,29 @@ export default function Header({
               {/* The quote is the secondary action. Below xl the four mega menus
                   and Sign up already fill the pill; the sticky bar carries the
                   quote below lg. */}
-              <Link
-                href={lp("/get-started")}
-                onClick={() => trackCtaClick("header_get_quote")}
+              {/* Second action: the live demo on the product site, the app on
+                  agency pages. Below xl the menus and the main button fill the pill. */}
+              <a
+                href={model.secondaryCta.href}
+                onClick={() => trackCtaClick(isAgency ? "header_app" : "header_demo")}
                 className="hidden h-9 items-center whitespace-nowrap rounded-full border border-hairline px-3 text-sm font-medium text-foreground transition-colors hover:bg-foreground/5 xl:inline-flex"
               >
-                {nav.getQuoteShort}
-              </Link>
+                {model.secondaryCta.label}
+              </a>
               <a
                 href={signupHref}
-                onClick={() => trackCtaClick("header_signup")}
+                onClick={() => trackCtaClick(isAgency ? "header_free_audit" : "header_signup")}
                 className="inline-flex h-9 items-center gap-1.5 whitespace-nowrap rounded-full px-3.5 font-display text-sm font-semibold text-primary-foreground asg-primary-action shadow-[inset_0_1px_0_0_oklch(1_0_0/18%),0_0_0_1px_color-mix(in_oklab,var(--primary-glow)_35%,transparent),0_8px_24px_-10px_color-mix(in_oklab,var(--primary)_80%,transparent)] transition-[transform,box-shadow] duration-200 hover:-translate-y-px motion-reduce:transition-none"
               >
-                <span className="sm:hidden">{nav.signUpShort}</span>
-                <span className="hidden sm:inline">{nav.signUp}</span>
+                <span className="sm:hidden">{isAgency ? model.primaryCta.shortLabel : nav.signUpShort}</span>
+                <span className="hidden sm:inline">{isAgency ? model.primaryCta.shortLabel : nav.signUp}</span>
               </a>
               <button
                 type="button"
                 className="grid size-9 shrink-0 place-items-center rounded-full border border-hairline text-foreground transition-colors hover:bg-foreground/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring lg:hidden"
-                onClick={() => setIsMobileMenuOpen(true)}
+                onClick={toggleMobileMenu}
                 aria-expanded={isMobileMenuOpen}
-                aria-label={nav.openMenu}
+                aria-label={isMobileMenuOpen ? nav.closeMenu : nav.openMenu}
               >
                 {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
               </button>
@@ -149,7 +168,7 @@ export default function Header({
         alternateHref={alternateHref}
         locale={locale}
         isOpen={isMobileMenuOpen}
-        onClose={() => setIsMobileMenuOpen(false)}
+        onClose={closeMobileMenu}
         model={model}
       />
     </>

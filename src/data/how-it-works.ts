@@ -136,7 +136,7 @@ export function getHowItWorksCopy(locale: SiteLocale): HowItWorksCopy {
       primaryHref: `${lp('/get-started')}#free-audit`,
       primaryLabel: 'Κλείστε μια κλήση',
       links: [
-        { href: lp('/platform'), label: 'AnotherSEOGuru App' },
+        { href: lp('/'), label: 'AnotherSEOGuru App' },
         { href: managedHref, label: 'Διαχείριση SEO' },
       ],
       stepsEyebrow: 'Η ροή',
@@ -236,7 +236,7 @@ export function getHowItWorksCopy(locale: SiteLocale): HowItWorksCopy {
     primaryHref: `${lp('/get-started')}#free-audit`,
     primaryLabel: 'Book a call',
     links: [
-      { href: lp('/platform'), label: 'AnotherSEOGuru App' },
+      { href: lp('/'), label: 'AnotherSEOGuru App' },
       { href: managedHref, label: 'Managed SEO' },
     ],
     stepsEyebrow: 'The flow',

@@ -337,7 +337,7 @@ export function WaveChoice({ locale, source }: { readonly locale: SiteLocale; re
             <Link href={audit} className={wavePrimaryBtn}>
               {copy.audit}
             </Link>
-            <Link href={localizedPath(locale, "/pricing")} className={waveGhostBtn}>
+            <Link href={localizedPath(locale, "/ypiresies/times")} className={waveGhostBtn}>
               {copy.pricing}
             </Link>
           </div>
@@ -473,9 +473,9 @@ export function WaveAgencyDoor({ locale }: { readonly locale: SiteLocale }) {
   const links = [
     { href: lp("/seo-services"), label: isEl ? "Υπηρεσίες SEO" : "SEO services", text: isEl ? "Μηνιαίο SEO με σειρά βάσει εσόδων" : "Monthly SEO, ranked by revenue" },
     { href: lp("/services/ai-visibility"), label: "GEO / AEO", text: isEl ? "Να σας προτείνουν ChatGPT και Gemini" : "Get recommended by ChatGPT and Gemini" },
-    { href: lp("/pricing"), label: isEl ? "Τιμές της εταιρείας" : "Agency pricing", text: isEl ? "Πακέτα με σταθερή τιμή" : "Fixed-price packages" },
+    { href: lp("/ypiresies/times"), label: isEl ? "Τιμές της εταιρείας" : "Agency pricing", text: isEl ? "Πακέτα με σταθερή τιμή" : "Fixed-price packages" },
     {
-      href: isEl ? "/el/diacheirisi-seo" : "/en/managed-seo",
+      href: "/el/diacheirisi-seo",
       label: isEl ? "Διαχείριση SEO" : "Managed SEO",
       text: isEl ? "Η ομάδα κάνει τη μηνιαία δουλειά μέσα στο App" : "The team does the monthly work inside the App",
     },

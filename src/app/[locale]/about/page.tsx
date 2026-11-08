@@ -43,18 +43,18 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (locale === 'el') {
     return buildMetadata({
-      title: "Ποιοι Είμαστε - Εταιρεία SEO & Λογισμικό",
+      title: "Ποιοι Είμαστε - Η ομάδα πίσω από το λογισμικό SEO",
       description:
-        "Η AnotherSEOGuru συνδυάζει ένα SEO platform με ένα agency κατασκευής ιστοσελίδων και SEO. Γρήγορες ιστοσελίδες, SEO, GEO, AEO και μετρήσιμη ανάπτυξη στην Ελλάδα.",
+        "Η Touristas Technologies φτιάχνει το AnotherSEOGuru App, λογισμικό SEO πάνω στο Google Search Console. Δείτε ποιοι είμαστε και πώς δουλεύουμε.",
       path: localizedPath('el', '/about'),
       hreflangPath: "/about",
     });
   }
 
   return buildMetadata({
-    title: "About - SEO Agency & Software",
+    title: "About - The Team Behind the SEO Software",
     description:
-      `AnotherSEOGuru combines a GSC-native SEO platform with an execution-focused agency. Fast websites, GEO, AEO, and measurable growth across ${PROJECTS_DELIVERED}+ delivered projects.`,
+      "Touristas Technologies makes AnotherSEOGuru App, SEO software built on Google Search Console. Who we are and how we build it.",
     path: localizedPath('en', '/about'),
     hreflangPath: "/about",
   });
@@ -246,7 +246,7 @@ export default async function AboutPage({ params }: PageProps) {
               <KitBreadcrumbs items={breadcrumbs} align="left" />
               <AnnouncePill
                 wrap
-                href={lp("/platform")}
+                href={lp("/")}
                 tag={tx("New", "Νέο")}
                 text={tx("We also build AnotherSEOGuru App, our own SEO software", "Φτιάχνουμε και το AnotherSEOGuru App, το δικό μας λογισμικό SEO")}
               />

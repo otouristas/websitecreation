@@ -7,7 +7,8 @@ import { evaluateIndustryService } from '@/lib/indexability/industry-service';
 import { GENERATED_CONTENT_UPDATED } from '@/lib/seo/content-dates';
 
 const BASE_URL = 'https://anotherseoguru.com';
-const LOCALES = ['en', 'el'] as const;
+// Agency pages are Greek only (src/lib/site-split.ts).
+const LOCALES = ['el'] as const;
 
 export async function GET() {
   const industrySlugs = getAllIndustrySlugs();
