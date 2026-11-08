@@ -79,7 +79,7 @@ export const PLANS: ReadonlyArray<Plan> = [
     prompts: 300,
     features: [
       c("Everything in Pro", "Όλα όσα περιλαμβάνει το Pro"),
-      c("White-label reports and the client portal", "Αναφορές white-label και πύλη πελατών"),
+      c("White-label client reports", "Αναφορές πελατών white-label"),
       c("Site audits up to 20,000 pages per site", "Έλεγχοι ιστότοπου έως 20.000 σελίδες ανά ιστότοπο"),
       c("Onboarding call and priority support", "Κλήση γνωριμίας και υποστήριξη προτεραιότητας"),
     ],
