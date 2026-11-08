@@ -230,7 +230,16 @@ export function MobileNav({ locale, alternateHref, isOpen, onClose, model }: Mob
               ref={closeButtonRef}
               type="button"
               className="grid size-9 shrink-0 place-items-center rounded-full border border-hairline text-foreground transition-colors hover:bg-foreground/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
-              onClick={onClose}
+              // Close on touch release as well as on click: some iOS browsers
+              // never deliver the click to a button inside this fixed sheet,
+              // which left the X dead. The header ignores the ghost click.
+              onPointerUp={(event) => {
+                if (event.pointerType !== 'mouse') onClose();
+              }}
+              onClick={(event) => {
+                event.stopPropagation();
+                onClose();
+              }}
               aria-label={nav.closeMenu}
             >
               <X className="h-5 w-5" />
