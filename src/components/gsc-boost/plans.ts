@@ -54,7 +54,7 @@ export const PLANS: ReadonlyArray<Plan> = [
     yearly: 490,
     credits: 2500,
     sites: 5,
-    seats: 3,
+    seats: 2,
     keywords: 500,
     prompts: 50,
     highlight: true,
@@ -74,13 +74,12 @@ export const PLANS: ReadonlyArray<Plan> = [
     yearly: 2990,
     credits: 25000,
     sites: 30,
-    seats: 15,
+    seats: 5,
     keywords: 5000,
     prompts: 300,
     features: [
       c("Everything in Pro", "Όλα όσα περιλαμβάνει το Pro"),
       c("White-label reports and the client portal", "Αναφορές white-label και πύλη πελατών"),
-      c("Leads, pipeline, proposals and prospect audits", "Leads, pipeline, προτάσεις και έλεγχοι υποψήφιων πελατών"),
       c("Site audits up to 20,000 pages per site", "Έλεγχοι ιστότοπου έως 20.000 σελίδες ανά ιστότοπο"),
       c("Onboarding call and priority support", "Κλήση γνωριμίας και υποστήριξη προτεραιότητας"),
     ],
@@ -103,7 +102,6 @@ export interface Addon {
 /** Recurring add-ons on any paid plan (the app's billing_addons). */
 export const ADDONS: ReadonlyArray<Addon> = [
   { id: "extra_site", name: c("Extra site", "Επιπλέον ιστότοπος"), monthly: 5, yearly: 50 },
-  { id: "extra_seat", name: c("Extra seat", "Επιπλέον χρήστης"), monthly: 9, yearly: 90 },
   { id: "extra_keywords", name: c("500 more tracked keywords", "500 επιπλέον λέξεις-κλειδιά"), monthly: 9, yearly: 90 },
   { id: "extra_prompts", name: c("50 more AI visibility prompts", "50 επιπλέον prompts ορατότητας AI"), monthly: 19, yearly: 190 },
   { id: "monthly_credits", name: c("2,500 credits every month", "2.500 μονάδες κάθε μήνα"), monthly: 25, yearly: 250 },

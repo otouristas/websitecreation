@@ -65,8 +65,8 @@ export const HOME_FAQ: ReadonlyArray<GscFaqItem> = [
   {
     q: c("Does it work for agencies with many sites?", "Είναι κατάλληλο για agencies με πολλούς ιστοτόπους;"),
     a: c(
-      "Yes. The Agency plan adds a client CRM, pipeline, tasks and white-label reports, and the site switcher is built for accounts with 90+ Search Console properties.",
-      "Ναι. Το πακέτο Agency προσθέτει CRM πελατών, pipeline, εργασίες και white-label αναφορές, ενώ η εναλλαγή ιστοτόπων είναι σχεδιασμένη για λογαριασμούς με 90+ ιδιότητες στο Search Console.",
+      "Yes. The Agency plan adds 30 sites, white-label reports and the client portal, and the site switcher is built for accounts with 90+ Search Console properties.",
+      "Ναι. Το πακέτο Agency προσθέτει 30 ιστοτόπους, white-label αναφορές και πύλη πελατών, ενώ η εναλλαγή ιστοτόπων είναι σχεδιασμένη για λογαριασμούς με 90+ ιδιότητες στο Search Console.",
     ),
     link: { kind: "site", path: "/platform/for/agencies", label: c("See the agency workspace", "Δείτε τον χώρο εργασίας για agencies") },
   },
@@ -159,8 +159,8 @@ export const AGENCY_FAQ: ReadonlyArray<GscFaqItem> = [
   {
     q: c("How many client sites can I manage?", "Πόσους ιστοτόπους πελατών μπορώ να διαχειρίζομαι;"),
     a: c(
-      "The Agency plan includes 30 sites and 15 team seats. The site switcher lists every Search Console property your Google account can access, and it is built to stay fast with 90+ of them.",
-      "Το πακέτο Agency περιλαμβάνει 30 ιστοτόπους και 15 θέσεις χρηστών. Η εναλλαγή ιστοτόπων εμφανίζει κάθε ιδιότητά του Search Console στην οποία έχει πρόσβαση ο λογαριασμός σας Google και παραμένει γρήγορη ακόμη και με 90+ ιδιότητες.",
+      "The Agency plan includes 30 sites and 5 team seats. The site switcher lists every Search Console property your Google account can access, and it is built to stay fast with 90+ of them.",
+      "Το πακέτο Agency περιλαμβάνει 30 ιστοτόπους και 5 θέσεις χρηστών. Η εναλλαγή ιστοτόπων εμφανίζει κάθε ιδιότητά του Search Console στην οποία έχει πρόσβαση ο λογαριασμός σας Google και παραμένει γρήγορη ακόμη και με 90+ ιδιότητες.",
     ),
   },
   {

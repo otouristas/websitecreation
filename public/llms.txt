@@ -12,7 +12,7 @@ Source: https://anotherseoguru.com
 - **Home (English)** (<https://anotherseoguru.com/en>) - What AnotherSEOGuru App does, live demo and free sign-up.
 - **Αρχική (Ελληνικά)** (<https://anotherseoguru.com/el>) - Το AnotherSEOGuru App στα ελληνικά: λογισμικό SEO από το Search Console.
 - **Features** (<https://anotherseoguru.com/en/platform/features>) - The nine modules: opportunities, performance, keywords, content, site audit, competitors, AI visibility, Aster AI assistant, agency tools.
-- **Pricing** (<https://anotherseoguru.com/en/pricing>) - Plans Launch $29/mo, Growth $79/mo, Agency $149/mo; two months free on yearly billing. Greek: https://anotherseoguru.com/el/pricing.
+- **Pricing** (<https://anotherseoguru.com/en/pricing>) - Plans Starter $19/mo, Pro $49/mo, Agency $299/mo; two months free on yearly billing. Greek: https://anotherseoguru.com/el/pricing.
 - **How it works** (<https://anotherseoguru.com/en/how-it-works>) - Connect Search Console, get ranked fixes, track the result.
 - **Security** (<https://anotherseoguru.com/en/platform/security>) - Read-only Google access, data handling and permissions.
 - **For agencies** (<https://anotherseoguru.com/en/platform/for/agencies>) - White-label reports, client portal and many sites in one account.
@@ -49,9 +49,9 @@ Source: https://anotherseoguru.com
 - **Agency workspace** (<https://anotherseoguru.com/en/platform/features#agency>) - Clients, pipeline, tasks and white-label reports.
 
 ## Plans (USD)
-- **Launch:** $29/month or $290/year (save $58). 3 sites, 1 seat, 1,200 credits a month. For founders and in-house marketers running one or two sites.
-- **Growth:** $79/month or $790/year (save $158). 10 sites, 3 seats, 6,000 credits a month. For growing teams that ship content every week.
-- **Agency:** $149/month or $1490/year (save $298). 30 sites, 10 seats, 20,000 credits a month. For agencies managing many clients and sites.
+- **Starter:** $19/month or $190/year (save $38). 2 sites, 1 seat, 500 credits a month. For one business with one or two sites.
+- **Pro:** $49/month or $490/year (save $98). 5 sites, 2 seats, 2,500 credits a month. For marketers and freelancers who ship every week.
+- **Agency:** $299/month or $2990/year (save $598). 30 sites, 5 seats, 25,000 credits a month. For agencies managing many clients and sites.
 - Search Console analysis, opportunities and client reports never use credits. Credits pay for third-party data and AI; every action shows its cost first.
 - Full details: <https://anotherseoguru.com/en/pricing> · <https://anotherseoguru.com/el/pricing>
 
