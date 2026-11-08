@@ -193,6 +193,11 @@ export function getHowItWorksCopy(locale: SiteLocale): HowItWorksCopy {
         { question: 'Τι κάνει το App με αυτά τα δεδομένα;', answer: opportunities },
         { question: 'Τι περιέχει μια εργασία;', answer: task },
         {
+          question: 'Βοηθάει και στο ChatGPT και στο Gemini;',
+          answer:
+            'Ναι. Κάθε εβδομάδα ρωτάμε το ChatGPT, το Gemini και το Perplexity τις ερωτήσεις των πελατών σας και σας δείχνουμε σε πόσες σας αναφέρουν. Καθαρές απαντήσεις, FAQ και schema βοηθούν να σας προτείνουν, και η τάση φαίνεται στο AI visibility (πακέτο Pro και πάνω).',
+        },
+        {
           question: 'Ποιος κάνει την αλλαγή;',
           answer:
             'Την κάνετε εσείς ή την αναλαμβάνει η ομάδα. Σημειώνετε την εργασία ως υλοποιημένη όταν η αλλαγή έχει δημοσιευτεί, και καταγράφεται η ημερομηνία. Οι σημειώσεις μένουν χωριστά από την ενέργεια.',
@@ -291,6 +296,11 @@ export function getHowItWorksCopy(locale: SiteLocale): HowItWorksCopy {
       { question: 'How do I connect Google Search Console?', answer: connect },
       { question: 'What does the App do with that data?', answer: opportunities },
       { question: 'What is on a task?', answer: task },
+      {
+        question: 'Does it help with ChatGPT and Gemini too?',
+        answer:
+          'Yes. Every week we ask ChatGPT, Gemini and Perplexity the questions your customers ask and show you how many mention you. Clear answers, FAQ and schema help them recommend you, and the trend shows in AI visibility (Pro plan and up).',
+      },
       {
         question: 'Who makes the change?',
         answer:

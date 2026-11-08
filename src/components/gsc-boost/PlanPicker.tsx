@@ -8,6 +8,7 @@ import { CheckList } from "@/components/kit/primitives";
 import { kitSecondaryBtn, kitSoftwareBtn } from "@/components/kit/sections";
 import { appLink, formatNumber, formatUsd, type Copy } from "./copy";
 import { PLANS, yearlySavings, type BillingCycle, type Plan } from "./plans";
+import { PLAN_OUTCOMES } from "@/data/value-explainer";
 
 const T = {
   monthly: { en: "Monthly", el: "Μηνιαία" },
@@ -126,6 +127,12 @@ function PlanCard({
       ) : null}
       <h3 className="font-display text-[20px] font-semibold tracking-[-0.02em] text-foreground">{plan.id}</h3>
       <p className="mt-1.5 text-[14px] leading-relaxed text-muted-foreground sm:min-h-[44px]">{plan.tagline[locale]}</p>
+      {PLAN_OUTCOMES[plan.id.toLowerCase()] ? (
+        <p className="mt-2 text-[13px] leading-snug text-foreground sm:min-h-[36px]">
+          <span className="font-semibold text-primary">{locale === "el" ? "Τι κερδίζετε: " : "What you get: "}</span>
+          {PLAN_OUTCOMES[plan.id.toLowerCase()][locale]}
+        </p>
+      ) : null}
       <div className="mt-6 flex items-baseline gap-1.5">
         <span className="font-display text-[44px] font-semibold leading-none tracking-[-0.04em] text-foreground tabular-nums">{price.amount}</span>
         <span className="text-[14px] text-muted-foreground">{price.unit}</span>
