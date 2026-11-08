@@ -133,7 +133,7 @@ AnotherSEOGuru App is SEO software built on Google Search Console. It reads ever
 ### Agency: $299/month or $2990/year
 - For agencies managing many clients and sites.
 - 30 sites, 5 seats, 25,000 credits a month.
-- Features: Everything in Pro; White-label reports and the client portal; Site audits up to 20,000 pages per site; Onboarding call and priority support.
+- Features: Everything in Pro; White-label client reports; Site audits up to 20,000 pages per site; Onboarding call and priority support.
 
 - Yearly billing gives two months free.
 - Search Console analysis, opportunities and client reports never use credits. Credits pay for third-party data and AI, and every action shows its cost before it runs.

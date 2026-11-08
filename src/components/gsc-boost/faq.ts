@@ -65,8 +65,8 @@ export const HOME_FAQ: ReadonlyArray<GscFaqItem> = [
   {
     q: c("Does it work for agencies with many sites?", "Είναι κατάλληλο για agencies με πολλούς ιστοτόπους;"),
     a: c(
-      "Yes. The Agency plan adds 30 sites, white-label reports and the client portal, and the site switcher is built for accounts with 90+ Search Console properties.",
-      "Ναι. Το πακέτο Agency προσθέτει 30 ιστοτόπους, white-label αναφορές και πύλη πελατών, ενώ η εναλλαγή ιστοτόπων είναι σχεδιασμένη για λογαριασμούς με 90+ ιδιότητες στο Search Console.",
+      "Yes. The Agency plan adds 30 sites and white-label client reports, and the site switcher is built for accounts with 90+ Search Console properties.",
+      "Ναι. Το πακέτο Agency προσθέτει 30 ιστοτόπους και white-label αναφορές πελατών, ενώ η εναλλαγή ιστοτόπων είναι σχεδιασμένη για λογαριασμούς με 90+ ιδιότητες στο Search Console.",
     ),
     link: { kind: "site", path: "/platform/for/agencies", label: c("See the agency workspace", "Δείτε τον χώρο εργασίας για agencies") },
   },
@@ -166,7 +166,7 @@ export const AGENCY_FAQ: ReadonlyArray<GscFaqItem> = [
   {
     q: c("Can I put my own branding on reports?", "Μπορώ να βάλω το δικό μου branding στις αναφορές;"),
     a: c(
-      "Yes. On the Agency plan, client reports carry your logo and name instead of ours, and they print cleanly or save as PDF for your client portal or monthly email.",
+      "Yes. On the Agency plan, client reports carry your logo and name instead of ours, and they print cleanly or save as PDF for your monthly client email.",
       "Ναι. Στο πακέτο Agency, οι αναφορές πελατών φέρουν το δικό σας λογότυπο και όνομα αντί για τα δικά μας, και τυπώνονται καθαρά ή αποθηκεύονται ως PDF για το portal πελατών ή το μηνιαίο σας email.",
     ),
   },
