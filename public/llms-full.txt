@@ -24,7 +24,7 @@ AnotherSEOGuru App is SEO software built on Google Search Console. It reads ever
 - **Home (English)** (<https://anotherseoguru.com/en>) - What AnotherSEOGuru App does, live demo and free sign-up.
 - **Αρχική (Ελληνικά)** (<https://anotherseoguru.com/el>) - Το AnotherSEOGuru App στα ελληνικά: λογισμικό SEO από το Search Console.
 - **Features** (<https://anotherseoguru.com/en/platform/features>) - The nine modules: opportunities, performance, keywords, content, site audit, competitors, AI visibility, Aster AI assistant, agency tools.
-- **Pricing** (<https://anotherseoguru.com/en/pricing>) - Plans Launch $29/mo, Growth $79/mo, Agency $149/mo; two months free on yearly billing. Greek: https://anotherseoguru.com/el/pricing.
+- **Pricing** (<https://anotherseoguru.com/en/pricing>) - Plans Starter $19/mo, Pro $49/mo, Agency $299/mo; two months free on yearly billing. Greek: https://anotherseoguru.com/el/pricing.
 - **How it works** (<https://anotherseoguru.com/en/how-it-works>) - Connect Search Console, get ranked fixes, track the result.
 - **Security** (<https://anotherseoguru.com/en/platform/security>) - Read-only Google access, data handling and permissions.
 - **For agencies** (<https://anotherseoguru.com/en/platform/for/agencies>) - White-label reports, client portal and many sites in one account.
@@ -58,56 +58,56 @@ AnotherSEOGuru App is SEO software built on Google Search Console. It reads ever
 - **Summary:** AnotherSEOGuru App reads every query and page in your Search Console data and turns them into one ranked list of fixes, each with an estimate of the extra clicks it could bring per month.
 - **Includes:** Striking-distance keywords on positions 4–20 with real demand; Snippets that earn fewer clicks than their position should; Decaying pages, cannibalization and missing content
 - **Why it matters:** Search Console tells you what happened. The opportunity list tells you what to do next and roughly what it’s worth, so the biggest wins stop sitting unnoticed on page two.
-- **Plans:** Launch, Growth, Agency
+- **Plans:** Starter, Pro, Agency
 
 ### Performance (Απόδοση)
 - **URL:** https://anotherseoguru.com/en/platform/features#performance
 - **Summary:** Clicks, impressions, CTR and position for every query, page, country and device, with period comparisons and annotations for your releases and Google’s updates.
 - **Includes:** Compare with the previous period or the same period last year; Your releases and confirmed Google updates, marked on the chart; Up to 16 months of history, segmented by device and country
 - **Why it matters:** When traffic moves, you need the reason in minutes, not after an afternoon in spreadsheets. Annotations and comparisons put cause and effect on the same chart.
-- **Plans:** Launch, Growth, Agency
+- **Plans:** Starter, Pro, Agency
 
 ### Keywords (Λέξεις-κλειδιά)
 - **URL:** https://anotherseoguru.com/en/platform/features#keywords
 - **Summary:** Research keywords with volume, difficulty and intent, see who ranks today, group ideas into topics and track the positions that matter to you.
 - **Includes:** Volume, difficulty and intent for every idea; A SERP overview of who ranks and what they cover; Rank tracking with history for the keywords you choose
 - **Why it matters:** Search Console only shows queries you already appear for. Research shows the demand you are missing, and tracking shows whether your work is paying off.
-- **Plans:** Launch, Growth, Agency
+- **Plans:** Starter, Pro, Agency
 
 ### Content (Περιεχόμενο)
 - **URL:** https://anotherseoguru.com/en/platform/features#content
 - **Summary:** Build briefs from what already ranks, write and score drafts against them, and publish to WordPress without copy and paste.
 - **Includes:** AI briefs with an outline, questions and entities to cover; An optimizer that scores drafts and suggests titles and descriptions; Import from and publish to WordPress
 - **Why it matters:** Most content underperforms because it misses what searchers expect to find. A brief grounded in the live results closes that gap before anyone writes a word.
-- **Plans:** Growth, Agency
+- **Plans:** Pro, Agency
 
 ### Site audit (Έλεγχος ιστότοπου)
 - **URL:** https://anotherseoguru.com/en/platform/features#audit
 - **Summary:** Crawl your site for the problems that cost rankings, such as broken pages, indexability blockers and slow templates, and fix the important ones first.
 - **Includes:** A full-site crawl with clear severity levels; Indexability and internal-link analysis; Core Web Vitals from Google PageSpeed Insights
 - **Why it matters:** Technical problems quietly cap how well good content can rank. Clear severities and plain-language fixes show where to start, without a 200-row export.
-- **Plans:** Launch, Growth, Agency
+- **Plans:** Starter, Pro, Agency
 
 ### Competitors (Ανταγωνιστές)
 - **URL:** https://anotherseoguru.com/en/platform/features#competitors
 - **Summary:** Find out who you really compete with in search, the keywords they rank for that you don’t, and how your backlink profiles compare.
 - **Includes:** Organic competitor discovery; Keyword gap: their rankings, your blind spots; Backlinks and referring domains
 - **Why it matters:** Your competitors have already tested what works for your audience. A gap analysis turns their rankings into a prioritized content plan for you.
-- **Plans:** Growth, Agency
+- **Plans:** Pro, Agency
 
 ### AI visibility (Ορατότητα στην AI)
 - **URL:** https://anotherseoguru.com/en/platform/features#ai-visibility
 - **Summary:** Track whether ChatGPT, Gemini and Perplexity mention or cite your brand for the questions your buyers ask, and whether you appear in Google’s AI Overviews.
 - **Includes:** Mentions and citations in ChatGPT, Gemini and Perplexity; Google AI Overviews presence for your keywords; Share of voice against your competitors
 - **Why it matters:** More buying research now starts in an AI answer. If assistants don’t mention you, that demand never reaches your site, and Search Console can’t show it.
-- **Plans:** Growth, Agency
+- **Plans:** Pro, Agency
 
 ### AI assistant (Βοηθός AI)
 - **URL:** https://anotherseoguru.com/en/platform/features#assistant
 - **Summary:** Ask questions in plain language and get answers grounded in your Search Console numbers: why traffic moved, what to fix first, how to rewrite a title.
 - **Includes:** Explains changes with the numbers behind them; Opens from any opportunity with the context attached; Drafts titles, descriptions and outlines on request
 - **Why it matters:** Analysis is only useful if it turns into a decision. The assistant closes the gap between a number on a chart and the change you should make.
-- **Plans:** Launch, Growth, Agency
+- **Plans:** Starter, Pro, Agency
 
 ### Agency workspace (Χώρος εργασίας agency)
 - **URL:** https://anotherseoguru.com/en/platform/features#agency
@@ -120,24 +120,24 @@ AnotherSEOGuru App is SEO software built on Google Search Console. It reads ever
 
 ## 3. Plans and credits (USD)
 
-### Launch: $29/month or $290/year
-- For founders and in-house marketers running one or two sites.
-- 3 sites, 1 seat, 1,200 credits a month.
-- Features: Search Console performance & annotations; Opportunity engine with click-impact estimates; Keyword research & rank tracking; Site audit and page inspector; AI assistant for your data.
+### Starter: $19/month or $190/year
+- For one business with one or two sites.
+- 2 sites, 1 seat, 500 credits a month.
+- Features: Every fix the engine finds, with click impact; Unlimited tasks with measured results; 100 tracked keywords and alerts; 10 AI visibility prompts; GA4, widgets and the iPhone app.
 
-### Growth: $79/month or $790/year
-- For growing teams that ship content every week.
-- 10 sites, 3 seats, 6,000 credits a month.
-- Features: Everything in Launch; Content briefs, AI writer & WordPress publishing; Competitor gaps, backlinks & SERP explorer; AI visibility tracking (ChatGPT, Gemini, Perplexity); Priority support.
+### Pro: $49/month or $490/year
+- For marketers and freelancers who ship every week.
+- 5 sites, 2 seats, 2,500 credits a month.
+- Features: Everything in Starter; AI visibility in ChatGPT, Gemini, Perplexity and AI Overviews; Content briefs, writer, optimizer and revamp; Autopilot fixes on WordPress and GitHub; Competitors, keyword gap, backlinks and local grid; Weekly site audits up to 5,000 pages.
 
-### Agency: $149/month or $1490/year
+### Agency: $299/month or $2990/year
 - For agencies managing many clients and sites.
-- 30 sites, 10 seats, 20,000 credits a month.
-- Features: Everything in Growth; Client CRM, pipeline & tasks; White-label client reports; Bulk site switching for 30 sites; Dedicated onboarding.
+- 30 sites, 5 seats, 25,000 credits a month.
+- Features: Everything in Pro; White-label reports and the client portal; Site audits up to 20,000 pages per site; Onboarding call and priority support.
 
 - Yearly billing gives two months free.
 - Search Console analysis, opportunities and client reports never use credits. Credits pay for third-party data and AI, and every action shows its cost before it runs.
-- Credit packs: Starter Pack 100 credits for $10; Growth Pack 500 + 50 bonus credits for $40; Pro Pack 1,000 + 150 bonus credits for $70; Enterprise Pack 5,000 + 1000 bonus credits for $300.
+- Credit packs: 1,000 credits 1,000 credits for $12; 5,000 credits 5,000 credits for $49; 20,000 credits 20,000 credits for $159.
 - Pricing pages: https://anotherseoguru.com/en/pricing · https://anotherseoguru.com/el/pricing
 
 ---
@@ -1645,10 +1645,10 @@ AnotherSEOGuru App is SEO software built on Google Search Console. It reads ever
 A: SEO software built on Google Search Console. It turns your Search Console data into a ranked list of fixes with click estimates, and adds keywords, site audits, content tools, competitor data and AI visibility tracking. https://anotherseoguru.com/en
 
 ### Q: How much does AnotherSEOGuru App cost?
-A: Launch $29/month, Growth $79/month, Agency $149/month, with two months free on yearly billing. Sign-up is free. https://anotherseoguru.com/en/pricing
+A: Starter $19/month, Pro $49/month, Agency $299/month, with two months free on yearly billing. Sign-up is free. https://anotherseoguru.com/en/pricing
 
 ### Q: Πόσο κοστίζει το AnotherSEOGuru App;
-A: Launch $29/μήνα, Growth $79/μήνα, Agency $149/μήνα, με δύο μήνες δώρο στην ετήσια χρέωση. Η εγγραφή είναι δωρεάν. https://anotherseoguru.com/el/pricing
+A: Starter $19/μήνα, Pro $49/μήνα, Agency $299/μήνα, με δύο μήνες δώρο στην ετήσια χρέωση. Η εγγραφή είναι δωρεάν. https://anotherseoguru.com/el/pricing
 
 ### Q: Does it change my site or my Search Console?
 A: No. Search Console is connected read-only. Fixes are suggestions you apply yourself, or through the WordPress plugin when you choose to.
@@ -1792,7 +1792,7 @@ Use the site switcher at the top of the sidebar, or press `⌘K` and type the do
 ![The All sites screen with click totals and a card for each site showing its trend, top mover and open fixes](https://anotherseoguru.com/images/docs/web/portfolio-light.webp)
 *All sites shows every project on one screen, sorted by the biggest drop.*
 
-> **Tip:** Your plan sets how many projects you can have: 3 on Launch, 10 on Growth and 30 on Agency.
+> **Tip:** Your plan sets how many projects you can have: 1 on Free, 2 on Starter, 5 on Pro and 50 on Agency. Paid plans can add more sites as add-ons.
 
 ### A 10-minute weekly routine
 
@@ -2251,11 +2251,12 @@ Every plan includes all your Search Console analytics, opportunities and client 
 
 | Plan | Price | Credits / month | Projects | Seats |
 | --- | --- | --- | --- | --- |
-| Launch | $29 / month | 1,200 | 3 | 1 |
-| Growth | $79 / month | 6,000 | 10 | 3 |
-| Agency | $149 / month | 20,000 | 30 | 10 |
+| Free | $0 | 25 | 1 | 1 |
+| Starter | $19 / month | 500 | 2 | 1 |
+| Pro | $49 / month | 2,500 | 5 | 3 |
+| Agency | $299 / month | 25,000 | 50 | 15 |
 
-Yearly billing gives you two months free. If you run out, top up with a credit pack at any time in **Settings → Billing & credits**.
+Yearly billing gives you two months free. New accounts can try Pro free for 7 days with no card. If you run out, top up with a credit pack (1,000 credits for $12, 5,000 for $49, 20,000 for $159) at any time in **Settings → Billing & credits**. Paid plans can also add extra sites, seats, keywords, AI prompts and monthly credits as add-ons.
 
 > **Note:** When an action costs credits, the button shows the cost before you run it, and we ask you to confirm. Actions without a cost on the button are free.
 
