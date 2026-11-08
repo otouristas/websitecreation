@@ -8,11 +8,11 @@ export async function generateMetadata({ params }: LayoutProps): Promise<Metadat
   const { locale } = await params;
   if (!isValidLocale(locale)) return {};
   return buildMetadata({
-    title: locale === 'el' ? 'Επικοινωνία - Δωρεάν προσφορά SEO' : 'Contact - Get a Free SEO Quote',
+    title: locale === 'el' ? 'Επικοινωνία - Υποστήριξη AnotherSEOGuru App' : 'Contact - AnotherSEOGuru App Support',
     description:
       locale === 'el'
-        ? 'Επικοινωνήστε με την ομάδα SEO και web design. Απάντηση εντός 24 ωρών. Δωρεάν προσφορά για ιστοσελίδες, GEO, AEO και τεχνικό SEO.'
-        : 'Contact our SEO and web design team. We respond within 24 hours. Request a free quote for websites, GEO, AEO, technical SEO, or platform trial access.',
+        ? 'Επικοινωνήστε με την ομάδα του AnotherSEOGuru App για ερωτήσεις, βοήθεια με τον λογαριασμό ή επίδειξη. Απάντηση εντός 24 ωρών.'
+        : 'Contact the AnotherSEOGuru App team for questions, account help or a demo. We reply within 24 hours.',
     path: localizedPath(locale as SiteLocale, '/contact'),
     hreflangPath: '/contact',
   });

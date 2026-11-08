@@ -4,7 +4,7 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import tokens from '@/brand/tokens/brand.tokens.json';
 
-export const alt = 'AnotherSEOGuru - Websites, SEO, GEO & AEO for tourism. Built to rank. Designed to convert.';
+export const alt = 'AnotherSEOGuru App: SEO software that turns Google Search Console into ranked fixes.';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -25,22 +25,22 @@ export default function OpenGraphImage() {
         {/* The logo's outlined lettering is preserved; this is artwork, not UI text. */}
         <img src={logo} width={418} height={95} alt="AnotherSEOGuru" />
         <div style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: 18, letterSpacing: 3, color: theme.textSecondary }}>
-          Websites · SEO · GEO
+          SEO software · Search Console
         </div>
       </div>
       <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
         <div style={{ display: 'flex', flexDirection: 'column', fontSize: 86, fontWeight: 700, lineHeight: 1.04, letterSpacing: -4 }}>
-          <div style={{ display: 'flex' }}>Built to rank.</div>
-          <div style={{ display: 'flex', color: theme.link }}>Designed to convert.</div>
+          <div style={{ display: 'flex' }}>Search Console,</div>
+          <div style={{ display: 'flex', color: theme.link }}>turned into fixes.</div>
         </div>
         <div style={{ display: 'flex', fontSize: 28, color: theme.textSecondary, maxWidth: 900, lineHeight: 1.3 }}>
-          Websites, SEO and AI visibility for tourism businesses in Greece and beyond.
+          AnotherSEOGuru App: ranked fixes with click estimates, keywords, site audits and AI visibility.
         </div>
       </div>
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontSize: 20, color: theme.textSecondary }}>
         <div style={{ display: 'flex' }}>anotherseoguru.com</div>
         <div style={{ display: 'flex', padding: '12px 24px', borderRadius: 99, background: theme.action, color: theme.actionForeground, fontSize: 20, fontWeight: 600 }}>
-          Get a free SEO audit
+          Sign up free
         </div>
       </div>
     </div>,

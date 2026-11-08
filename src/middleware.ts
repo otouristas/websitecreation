@@ -11,7 +11,14 @@ import { decideServiceLocationRoute } from '@/lib/indexability/service-location'
 import { legacyWebDesignRedirect } from '@/lib/indexability/web-design-redirect';
 import { getAllServiceSlugs } from '@/data/services';
 import { THEME_INIT_SCRIPT } from '@/brand/theme';
-import { englishAgencyRedirect } from '@/lib/site-split';
+import {
+  AGENCY_DOMAIN,
+  PRODUCT_ORIGIN,
+  agencyDomainPath,
+  comPathForAgencyDomain,
+  englishAgencyRedirect,
+  greekAgencyMoveRedirect,
+} from '@/lib/site-split';
 
 const LOCALE_COOKIE = 'locale';
 
@@ -60,8 +67,64 @@ function goneResponse(locale: SiteLocale, service: string): NextResponse {
   });
 }
 
+/**
+ * anotherseoguru.gr serves the Greek agency pages of this project: `/` is
+ * /el/ypiresies, `/times` is /el/ypiresies/times and `/<section>/...` is
+ * /el/<section>/.... Anything else on .gr belongs to the product site.
+ */
+function agencyDomainResponse(request: NextRequest): NextResponse {
+  const { pathname, search } = request.nextUrl;
+  // The .gr domain's own SEO files (src/lib/agency-domain-seo.ts).
+  const seoFile: Record<string, string> = {
+    '/robots.txt': '/agency-domain/robots.txt',
+    '/sitemap.xml': '/agency-domain/sitemap.xml',
+    '/sitemap-index.xml': '/agency-domain/sitemap.xml',
+    '/llms.txt': '/agency-domain-llms.txt',
+    '/llms-full.txt': '/agency-domain-llms.txt',
+  };
+  if (seoFile[pathname]) {
+    const url = request.nextUrl.clone();
+    url.pathname = seoFile[pathname];
+    return NextResponse.rewrite(url);
+  }
+  if (
+    pathname.startsWith('/_next') ||
+    pathname.startsWith('/api') ||
+    pathname.includes('.') ||
+    pathname.startsWith('/opengraph-image')
+  ) {
+    return NextResponse.next();
+  }
+  // /ypiresies is the .gr home itself, and /ypiresies/times is /times.
+  if (pathname === '/ypiresies' || pathname.startsWith('/ypiresies/')) {
+    return NextResponse.redirect(new URL(`${agencyDomainPath(`/el${pathname}`)}${search}`, request.url), 301);
+  }
+  const target = comPathForAgencyDomain(pathname);
+  if (target) {
+    const url = request.nextUrl.clone();
+    url.pathname = target;
+    return NextResponse.rewrite(url);
+  }
+  // A .com-style Greek agency URL on .gr: drop the /el.
+  if (pathname.startsWith('/el/') && comPathForAgencyDomain(agencyDomainPath(pathname))) {
+    return NextResponse.redirect(new URL(`${agencyDomainPath(pathname)}${search}`, request.url), 301);
+  }
+  return NextResponse.redirect(`${PRODUCT_ORIGIN}${pathname}${search}`, 301);
+}
+
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
+
+  const host = (request.headers.get('host') ?? '').toLowerCase().split(':')[0];
+  if (host === AGENCY_DOMAIN || host === `www.${AGENCY_DOMAIN}`) {
+    return agencyDomainResponse(request);
+  }
+
+  // Once the agency has its own domain, its Greek pages here move there.
+  const moved = greekAgencyMoveRedirect(pathname);
+  if (moved) {
+    return NextResponse.redirect(`${moved}${request.nextUrl.search}`, 301);
+  }
 
   // Legacy and city redirects that land on an English agency page go straight
   // on to its Greek page, so no request takes two hops.

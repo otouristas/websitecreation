@@ -9,7 +9,7 @@ import { trackCtaClick } from "@/lib/analytics";
 import { usePathname } from "next/navigation";
 import { appLink } from "@/components/gsc-boost/copy";
 import { localizedPath, type SiteLocale } from "@/lib/i18n/locale";
-import { AGENCY_PRICING_EL, isAgencyPathname } from "@/lib/site-split";
+import { AGENCY_PRICING_HREF, isAgencyPathname } from "@/lib/site-split";
 
 /**
  * Quiet split closer that sits directly above the footer. Left is one
@@ -61,7 +61,7 @@ export function FooterCta({ locale }: { readonly locale: SiteLocale }): ReactEle
             <ArrowRight className="size-4 shrink-0" aria-hidden />
           </Link>
           <Link
-            href={AGENCY_PRICING_EL}
+            href={AGENCY_PRICING_HREF}
             className={`${kitSecondaryBtn} w-full shrink-0 sm:w-auto`}
             onClick={() => trackCtaClick("footer_cta_pricing")}
           >

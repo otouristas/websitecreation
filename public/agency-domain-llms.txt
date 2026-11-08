@@ -1,0 +1,121 @@
+Last-Updated: 2026-11-08
+Canonical: https://anotherseoguru.gr/llms.txt
+Sitemap: https://anotherseoguru.gr/sitemap.xml
+
+# AnotherSEOGuru: ιστοσελίδες και SEO για ελληνικές επιχειρήσεις
+Source: https://anotherseoguru.gr
+
+> Το anotherseoguru.gr είναι η υπηρεσία «το κάνουμε εμείς» της AnotherSEOGuru (Touristas Technologies): κατασκευή ιστοσελίδων και e-shop, μηνιαίο SEO, τοπικό SEO και Google Business Profile, ορατότητα σε ChatGPT και AI (GEO/AEO), για επιχειρήσεις σε όλη την Ελλάδα, με έμφαση σε ξενοδοχεία, rent a car και τουρισμό. Στα ελληνικά. Επικοινωνία μέσω WhatsApp ή email, δωρεάν έλεγχος ιστοσελίδας. Το λογισμικό SEO (AnotherSEOGuru App) είναι στο https://anotherseoguru.com.
+
+## Βασικές σελίδες
+- **Αρχική** (<https://anotherseoguru.gr>) - Εταιρεία SEO και κατασκευής ιστοσελίδων στην Ελλάδα.
+- **Τιμές** (<https://anotherseoguru.gr/times>) - Τιμές ιστοσελίδας και μηνιαίου SEO, συν ΦΠΑ.
+- **Δωρεάν έλεγχος ιστοσελίδας** (<https://anotherseoguru.gr/get-started#free-audit>) - Φόρμα για δωρεάν έλεγχο SEO.
+- **Υπηρεσίες** (<https://anotherseoguru.gr/services>) - Όλες οι υπηρεσίες.
+- **Υπηρεσίες SEO** (<https://anotherseoguru.gr/seo-services>) - SEO για επιχειρήσεις στην Ελλάδα.
+- **Σύμβουλος SEO** (<https://anotherseoguru.gr/symvoulos-seo>) - Συνεργασία με σύμβουλο SEO.
+- **Διαχείριση SEO** (<https://anotherseoguru.gr/diacheirisi-seo>) - Μηνιαία διαχείριση SEO.
+- **SEO guru** (<https://anotherseoguru.gr/seo-guru>) - Η μέθοδος από το Search Console.
+- **Κλάδοι** (<https://anotherseoguru.gr/solutions>) - Ιστοσελίδες και SEO ανά κλάδο.
+- **Έργα** (<https://anotherseoguru.gr/work>) - Πελάτες και case studies.
+
+## Υπηρεσίες
+- **Κατασκευή Ιστοσελίδων** (<https://anotherseoguru.gr/services/website-creation>) - Κατασκευή ιστοσελίδων με SEO από την πρώτη μέρα: σχεδιασμός, ανάπτυξη και βελτιστοποίηση για μετατροπές, με σταθερή τιμή από €599.
+- **Ανασχεδιασμός Ιστοσελίδας** (<https://anotherseoguru.gr/services/website-redesign>) - Μετατρέψτε παλιές ιστοσελίδες σε σύγχρονες, γρήγορες και φιλικές προς την αναζήτηση - με ασφαλή μεταφορά SEO.
+- **Σχεδιασμός Ιστοσελίδων (Web Design)** (<https://anotherseoguru.gr/services/web-design>) - Σχεδιασμός ιστοσελίδων με UX και SEO από την αρχή: αρχιτεκτονική, schema, εσωτερικοί σύνδεσμοι και ταχύτητα που μετατρέπουν επισκέπτες σε πελάτες.
+- **Βελτιστοποίηση Ταχύτητας** (<https://anotherseoguru.gr/services/speed-optimization>) - Core Web Vitals, caching και βελτιστοποίηση κώδικα για ταχύτερη ιστοσελίδα και καλύτερες κατατάξεις.
+- **AI SEO: Ορατότητα σε AI (GEO / AEO)** (<https://anotherseoguru.gr/services/ai-visibility>) - GEO και AEO για επιχειρήσεις: σαφή στοιχεία, σελίδες σε μορφή απάντησης και μέτρηση, ώστε οι μηχανές απάντησης να μπορούν να χρησιμοποιήσουν το περιεχόμενό σας. Χωρίς υποσχέσεις αναφοράς.
+- **Σχεδιασμός Λογοτύπου** (<https://anotherseoguru.gr/services/logo-design>) - Επαγγελματικό λογότυπο και πλήρες κιτ εταιρικής ταυτότητας για αναγνωρισιμότητα στην αγορά σας.
+- **SEO Copywriting & Δημιουργία Περιεχομένου** (<https://anotherseoguru.gr/services/content-creation>) - Κείμενα με SEO για σελίδες υπηρεσιών, τοπικές σελίδες και blog που φέρνουν οργανική επισκεψιμότητα.
+- **Τοπικό SEO & Google Business** (<https://anotherseoguru.gr/services/local-seo>) - Τοπικό SEO για Ελλάδα: βελτιστοποίηση Google Business Profile, καταχωρήσεις, κριτικές και τοπικές σελίδες ώστε να εμφανίζεστε στο map pack για Αθήνα, Θεσσαλονίκη και άλλες πόλεις.
+- **Link Building & Backlinks** (<https://anotherseoguru.gr/services/link-building>) - Link building με ποιοτικά backlinks από σχετικά ελληνικά sites, digital PR και καθαρισμό spam συνδέσμων, για αύξηση της αξιοπιστίας του domain σας.
+- **SEO Audit & Τεχνικός Έλεγχος** (<https://anotherseoguru.gr/services/seo-audits>) - SEO audit ιστοσελίδας: τεχνικός έλεγχος ευρετηρίασης, ταχύτητας, δομής και περιεχομένου, με λίστα διορθώσεων κατά προτεραιότητα. Πλήρες audit από €450.
+- **Κατασκευή Eshop με WooCommerce** (<https://anotherseoguru.gr/services/eshop-woocommerce>) - Κατασκευή eshop με WooCommerce: πληρωμές, μεταφορικά, σύνδεση με ERP και SEO κατηγοριών και προϊόντων, έτοιμο να πουλάει από την πρώτη μέρα.
+- **SEO για Eshop** (<https://anotherseoguru.gr/services/eshop-seo>) - SEO για eshop: βελτιστοποίηση κατηγοριών, προϊόντων, φίλτρων και ταχύτητας, ώστε το ηλεκτρονικό σας κατάστημα να πουλάει από την οργανική αναζήτηση.
+
+## Τιμές (συν ΦΠΑ)
+- **Ιστοσελίδα:** Website Starter €599, Website Professional €2.500, Website Business €4.000. Εφάπαξ.
+- **Μηνιαίο SEO:** SEO Foundations €149/μήνα, SEO Growth €900/μήνα, SEO Authority €1.500/μήνα. Ελάχιστη διάρκεια 6 μήνες.
+- Όλες οι τιμές είναι χωρίς ΦΠΑ 24%. Λεπτομέρειες: <https://anotherseoguru.gr/times>
+
+## SEO τουρισμού
+- **SEO τουρισμού** (<https://anotherseoguru.gr/seo-tourismou>) - Ξενοδοχεία, βίλες, rent a car, εκδρομές, ταξιδιωτικά γραφεία, εστιατόρια, σκάφη, transfer.
+- **SEO για Ξενοδοχεία: Περισσότερες Άμεσες Κρατήσεις Online** (<https://anotherseoguru.gr/seo-tourismou/xenodoxeia>) - SEO για ξενοδοχεία σε όλη την Ελλάδα: σελίδες δωματίων, Google Business Profile, πολύγλωσσο SEO και AI search για περισσότερες άμεσες κρατήσεις.
+- **SEO για Rent a Car & Ενοικίαση Αυτοκινήτων | Κρατήσεις** (<https://anotherseoguru.gr/seo-tourismou/rent-a-car>) - SEO για rent a car: σελίδες για αεροδρόμια, λιμάνια και στόλο, Google Maps και online κρατήσεις για εταιρείες ενοικίασης αυτοκινήτων σε όλη την Ελλάδα.
+- **SEO για Βίλες & Ενοικιαζόμενα Καταλύματα | Κρατήσεις** (<https://anotherseoguru.gr/seo-tourismou/villes>) - SEO για βίλες και ενοικιαζόμενα καταλύματα: σελίδα ανά ακίνητο, Google Maps, πολύγλωσσο SEO και άμεσες κρατήσεις σε όλη την Ελλάδα. Ζητήστε έλεγχο.
+- **SEO για Εκδρομές & Tour Operators | AnotherSEOGuru** (<https://anotherseoguru.gr/seo-tourismou/ekdromes>) - SEO για tour operators, ημερήσιες εκδρομές και κρουαζιέρες: σελίδα ανά εμπειρία, πολύγλωσσο SEO, Google Maps και κρατήσεις σε όλη την Ελλάδα.
+- **SEO για Ταξιδιωτικά Γραφεία & Πρακτορεία | AnotherSEOGuru** (<https://anotherseoguru.gr/seo-tourismou/taxidiotika-grafeia>) - SEO για ταξιδιωτικά γραφεία και πρακτορεία: σελίδες πακέτων και προορισμών, εκδρομές για σχολεία και γκρουπ, Google Maps και αιτήματα από όλη την Ελλάδα.
+- **SEO για Εστιατόρια, Ταβέρνες & Beach Bars | Google Maps** (<https://anotherseoguru.gr/seo-tourismou/estiatoria>) - SEO για εστιατόρια, ταβέρνες και beach bars σε τουριστικούς προορισμούς: Google Maps, μενού που διαβάζει η Google, κριτικές και κρατήσεις τραπεζιού.
+- **SEO για Ενοικίαση Σκαφών & Yacht Charter | AnotherSEOGuru** (<https://anotherseoguru.gr/seo-tourismou/enoikiasi-skafon>) - SEO για ενοικίαση σκαφών, yacht charter και boat rental: σελίδα ανά σκάφος και διαδρομή, Google Maps και κρατήσεις στα ελληνικά νησιά. Ζητήστε έλεγχο.
+- **SEO για Transfer & Ταξί: Αεροδρόμια, Λιμάνια & Κρατήσεις** (<https://anotherseoguru.gr/seo-tourismou/transfer>) - SEO για εταιρείες transfer και ταξί: σελίδα ανά διαδρομή από αεροδρόμια και λιμάνια, Google Maps, κριτικές και online κρατήσεις σε όλη την Ελλάδα.
+
+## SEO ανά περιοχή
+- **SEO σε όλη την Ελλάδα** (<https://anotherseoguru.gr/seo>) - Όλες οι σελίδες πόλεων και νησιών.
+- **SEO Αθήνα** (<https://anotherseoguru.gr/seo/athens>) - Αττική. Υπηρεσίες SEO στην Αθήνα για κέντρο, Γλυφάδα και Κηφισιά: τεχνικό SEO, Google Maps και προώθηση ιστοσελίδων. Ζητήστε δωρεάν έλεγχο της σελίδας σας.
+- **SEO Θεσσαλονίκη** (<https://anotherseoguru.gr/seo/thessaloniki>) - Μακεδονία. Υπηρεσίες SEO στη Θεσσαλονίκη για Λαδάδικα, λιμάνι και Καλαμαριά: τεχνικό SEO, περιεχόμενο, Google Maps και προώθηση ιστοσελίδων. Ζητήστε δωρεάν έλεγχο.
+- **SEO Πειραιάς** (<https://anotherseoguru.gr/seo/piraeus>) - Αττική. Υπηρεσίες SEO στον Πειραιά για λιμάνι, ακτοπλοΐα και ναυτιλιακά: τεχνικό SEO, περιεχόμενο, Google Maps και προώθηση ιστοσελίδων. Ζητήστε δωρεάν έλεγχο.
+- **SEO Πάτρα** (<https://anotherseoguru.gr/seo/patras>) - Πελοπόννησος. Υπηρεσίες SEO στην Πάτρα για λιμάνι, πανεπιστήμιο και λιανική: τεχνικό SEO, περιεχόμενο, Google Maps και προώθηση ιστοσελίδων. Ζητήστε δωρεάν έλεγχο.
+- **SEO Καλαμάτα** (<https://anotherseoguru.gr/seo/kalamata>) - Πελοπόννησος. Υπηρεσίες SEO στην Καλαμάτα για Μεσσηνία, μαρίνα και τουρισμό: τεχνικό SEO, περιεχόμενο, Google Maps και προώθηση ιστοσελίδων. Ζητήστε δωρεάν έλεγχο.
+- **SEO Κρήτη** (<https://anotherseoguru.gr/seo/crete>) - Κρήτη. Υπηρεσίες SEO στην Κρήτη για Ηράκλειο, Χανιά και Ρέθυμνο: τεχνικό SEO, Google Maps και προώθηση ιστοσελίδων. Ζητήστε δωρεάν έλεγχο της σελίδας σας.
+- **SEO Ηράκλειο** (<https://anotherseoguru.gr/seo/heraklion>) - Κρήτη. Υπηρεσίες SEO στο Ηράκλειο για πόλη, Κνωσό, αεροδρόμιο και λιμάνι: τεχνικό SEO, περιεχόμενο και Google Maps. Ζητήστε δωρεάν έλεγχο της σελίδας σας.
+- **SEO Χανιά** (<https://anotherseoguru.gr/seo/chania>) - Κρήτη. Υπηρεσίες SEO στα Χανιά για παλιό λιμάνι, Πλατανιά και δυτική Κρήτη: τεχνικό SEO, περιεχόμενο και Google Maps. Ζητήστε δωρεάν έλεγχο της σελίδας σας.
+- **SEO Κυκλάδες** (<https://anotherseoguru.gr/seo/kyklades>) - Κυκλάδες. Υπηρεσίες SEO στις Κυκλάδες για Σαντορίνη, Μύκονο, Πάρο, Νάξο και Μήλο: Google Maps, πολύγλωσσες σελίδες και απευθείας κρατήσεις. Ζητήστε δωρεάν έλεγχο.
+- **SEO Σαντορίνη** (<https://anotherseoguru.gr/seo/santorini>) - Κυκλάδες. Υπηρεσίες SEO στη Σαντορίνη για καλντέρα, Οία και κρουαζιέρα: τεχνικό SEO, περιεχόμενο και Google Maps από την AnotherSEOGuru. Ζητήστε δωρεάν έλεγχο.
+- **SEO Μύκονος** (<https://anotherseoguru.gr/seo/mykonos>) - Κυκλάδες. Υπηρεσίες SEO στη Μύκονο για Χώρα, παραλίες και βίλες: τεχνικό SEO, Google Maps και προώθηση ιστοσελίδων από την AnotherSEOGuru. Ζητήστε δωρεάν έλεγχο.
+- **SEO Πάρος** (<https://anotherseoguru.gr/seo/paros>) - Κυκλάδες. Υπηρεσίες SEO στην Πάρο για Νάουσα και Παροικιά: τεχνικό SEO, περιεχόμενο, Google Maps και προώθηση ιστοσελίδων. Ζητήστε δωρεάν έλεγχο της σελίδας σας.
+- **SEO Ρόδος** (<https://anotherseoguru.gr/seo/rhodes>) - Δωδεκάνησα. Υπηρεσίες SEO στη Ρόδο για μεσαιωνική πόλη και Λίνδο: τεχνικό SEO, Google Maps και προώθηση ιστοσελίδων από την AnotherSEOGuru. Ζητήστε δωρεάν έλεγχο.
+- **SEO Κέρκυρα** (<https://anotherseoguru.gr/seo/corfu>) - Ιόνια νησιά. Υπηρεσίες SEO στην Κέρκυρα για παλιά πόλη και Παλαιοκαστρίτσα: τεχνικό SEO, περιεχόμενο, Google Maps και προώθηση ιστοσελίδων. Ζητήστε δωρεάν έλεγχο.
+
+## Κατασκευή ιστοσελίδων ανά περιοχή
+- **Κατασκευή ιστοσελίδων στην Κρήτη** (<https://anotherseoguru.gr/kataskevi-istoselidon/kriti>) - Κατασκευή ιστοσελίδων στην Κρήτη για Ηράκλειο, Χανιά, Ρέθυμνο και Λασίθι: γρήγορα sites με SEO, Google Maps και κρατήσεις. Ζητήστε σταθερή προσφορά.
+- **Κατασκευή ιστοσελίδων στις Κυκλάδες** (<https://anotherseoguru.gr/kataskevi-istoselidon/kyklades>) - Κατασκευή ιστοσελίδων στις Κυκλάδες για ξενοδοχεία, βίλες, rent a car και εστιατόρια: γρήγορα, πολύγλωσσα sites με SEO και κρατήσεις. Ζητήστε προσφορά.
+
+## Έργα (39)
+- [Aggelos Rentals](https://anotherseoguru.gr/work/aggelos-rentals) - Ημερήσια και μηνιαία ενοικίαση αυτοκινήτου στον Πειραιά, με παράδοση στο λιμάνι και στο αεροδρόμιο Αθηνών. · https://aggelosrentals.com
+- [Antiparos Rent a Car](https://anotherseoguru.gr/work/antiparos-rentacar) - Έργο ενοικίασης αυτοκινήτων και σκούτερ στην Αντίπαρο, για τις καθημερινές μετακινήσεις στο νησί. · https://antiparosrentacar.com
+- [Cyclades Rent a Car](https://anotherseoguru.gr/work/cyclades-rentacar) - Κατάλογος τοπικών επιχειρήσεων ενοικίασης οχημάτων στις Κυκλάδες, από το Discover Cyclades. · https://cycladesrentacar.com
+- [Naxos Car Rentals](https://anotherseoguru.gr/work/naxos-carrentals) - Ιστοσελίδα τοπικής ενοικίασης αυτοκινήτων στη Νάξο, με μικρά, αυτόματα, οικογενειακά οχήματα και τετρακίνητα. · https://naxos-carrentals.com
+- [AGGELOS Rentals · Paros & Antiparos](https://anotherseoguru.gr/work/rentacar-antiparos-gr) - Η AGGELOS Rentals εξυπηρετεί την Πάρο και την Αντίπαρο με ενοικιάσεις αυτοκινήτων. · https://rentacarantiparos.gr
+- [Rent a Car in Paros](https://anotherseoguru.gr/work/rentacar-in-paros) - Ελληνικός οδηγός ενοικίασης αυτοκινήτου στην Πάρο, με πληροφορίες για λιμάνι και αεροδρόμιο και δυνατότητα κράτησης μέσω Discover Cyclades. · https://rentacarinparos.gr
+- [GetCarPiraeus](https://anotherseoguru.gr/work/rentacar-piraeus) - Το GetCarPiraeus προσφέρει αυτοκίνητα, βαν, μοτοσικλέτες και σκούτερ στον Πειραιά και στο λιμάνι. · https://rentacarpiraeus.gr
+- [Athens Rent a Car](https://anotherseoguru.gr/work/athens-rentacar) - Έργο ενοικίασης αυτοκινήτων στην Αθήνα, με έμφαση στις μετακινήσεις στην πόλη και στις αφίξεις από το αεροδρόμιο. · https://athensrentacar.com
+- [Rent a Car Paros](https://anotherseoguru.gr/work/rentacar-paros-gr) - Έργο ενοικίασης αυτοκινήτων στην Πάρο, για ταξιδιώτες που οργανώνουν τις μετακινήσεις τους στο νησί. · https://rentacar-paros.gr
+- [Hotels Santorini](https://anotherseoguru.gr/work/hotels-santorini) - Οδηγός ξενοδοχείων και περιοχών της Σαντορίνης, που συνδυάζει την αναζήτηση διαμονής με πρακτικές ταξιδιωτικές πληροφορίες. · https://hotelssantorini.gr
+- [Hotels Sifnos](https://anotherseoguru.gr/work/hotels-sifnos) - Επιλεγμένος κατάλογος ξενοδοχείων και βιλών στη Σίφνο, ανά περιοχή και ύφος διαμονής, με απευθείας επικοινωνία με τους συνεργάτες. · https://hotelssifnos.com
+- [ONOMA Hotel](https://anotherseoguru.gr/work/onoma-hotel) - Πεντάστερο ξενοδοχείο στη Θεσσαλονίκη με εξατομικευμένη εμπειρία διαμονής, πισίνα και μπαρ στην ταράτσα, εστιατόριο και χώρους ψυχαγωγίας. · https://onomahotel.com
+- [Mykonos Luxury](https://anotherseoguru.gr/work/mykonos-luxury) - Υπηρεσίες προσωπικής εξυπηρέτησης στη Μύκονο, με ιδιωτικές βίλες, γιοτ και εξατομικευμένες εμπειρίες. · https://mykonos.luxury
+- [Discover Cyclades](https://anotherseoguru.gr/work/discover-cyclades) - Ταξιδιωτική πλατφόρμα για τις Κυκλάδες, με οδηγούς νησιών, παρακολούθηση πλοίων, διαμονή και δραστηριότητες. · https://discovercyclades.gr
+- [Discover Crete](https://anotherseoguru.gr/work/discover-crete) - Ανεξάρτητος ταξιδιωτικός οδηγός Κρήτης για παραλίες, πόλεις, διαμονή, μετακινήσεις και προτεινόμενες διαδρομές. · https://discover-crete.com
+- [Santorini Daily Tours](https://anotherseoguru.gr/work/santorini-daily-tours) - Οικογενειακό πρακτορείο στα Φηρά της Σαντορίνης, με εκδρομές, κρουαζιέρες και μεταφορές από το 2000. · https://santorinidailytours.com
+- [Marinakis Tours](https://anotherseoguru.gr/work/santo-tours-marinakis) - Η Marinakis Tours προσφέρει ιδιωτικές περιηγήσεις, επισκέψεις σε οινοποιεία, εκδρομές με καταμαράν και μεταφορές στη Σαντορίνη. · https://santotoursmarinakis.com
+- [Skydream Travel](https://anotherseoguru.gr/work/skydream-travel) - Ταξιδιωτικό γραφείο στην Αθήνα που σχεδιάζει εξατομικευμένα ταξίδια με βάση τα ενδιαφέροντα του ταξιδιώτη. · https://www.skydream.travel
+- [Cuba Travel Academy](https://anotherseoguru.gr/work/cuba-travel-academy) - Πρακτικός ταξιδιωτικός οδηγός για την Κούβα, με πληροφορίες για βίζα, συνάλλαγμα, καιρό, ασφάλεια και προετοιμασία. · https://www.cubatravel.academy
+- [AGGELOS Transfer](https://anotherseoguru.gr/work/antiparos-transfer) - Η AGGELOS Transfer αναλαμβάνει ιδιωτικές μεταφορές στην Πάρο και στην Αντίπαρο, για αφίξεις στο αεροδρόμιο, γάμους και περιηγήσεις. · https://antiparostransfer.gr
+- [Navos AI](https://anotherseoguru.gr/work/navos-ai) - Σύμβουλος επιχειρηματικής στρατηγικής που συνδέει το πλαίσιο της επιχείρησης και τις εξωτερικές αλλαγές με τεκμηριωμένες αποφάσεις. · https://navos.ai
+- [Project Shadow AI](https://anotherseoguru.gr/work/project-shadow-ai) - Πρόσθετο AI και εργαλείο ανάλυσης για WooCommerce, με απαντήσεις για το κατάστημα, συγγραφή περιεχομένου και υποστήριξη πελατών. · https://projectshadow.ai
+- [Κτήμα Ωρίων](https://anotherseoguru.gr/work/ktima-orion) - Χώρος γάμων και βαπτίσεων στην Κερατέα Αττικής, με θέα στη θάλασσα και δυνατότητα φιλοξενίας 50 έως 350 καλεσμένων. · https://ktimaorion.gr
+- [Weddings Folegandros](https://anotherseoguru.gr/work/weddings-folegandros) - Ιστοσελίδα οργάνωσης γάμων στη Φολέγανδρο, για τελετές, μικρούς γάμους και ζευγάρια που επιλέγουν τη Χώρα και την Παναγία. · https://weddings-folegandros.gr
+- [My Honeymoon](https://anotherseoguru.gr/work/my-honeymoon) - Υπηρεσία σχεδιασμού γαμήλιων ταξιδιών, με προτάσεις προσαρμοσμένες στο κάθε ζευγάρι. · https://www.myhoneymoon.gr
+- [George Xipolitas](https://anotherseoguru.gr/work/george-xipolitas) - Προσωπική επαγγελματική παρουσία του George Xipolitas στον χώρο της φιλοξενίας και της συμβουλευτικής εστίασης. · https://georgexipolitas.com
+- [Helicro](https://anotherseoguru.gr/work/helicro) - Βελγική υπηρεσία μεταφορών αεροδρομίου και ιδιωτικού οδηγού, για Βρυξέλλες, Αμβέρσα, Γάνδη και Βαλλονία. · https://helicro.be
+- [MastoRush](https://anotherseoguru.gr/work/mastorush) - Ελληνική πλατφόρμα αναζήτησης επαγγελματιών και προσφορών για εργασίες σε σπίτι και επαγγελματικό χώρο. · https://mastorush.gr
+- [Nutrinest Clinic](https://anotherseoguru.gr/work/thenutrinest) - Το Nutrinest Clinic είναι το διαιτολογικό γραφείο της κλινικής διαιτολόγου Κωνσταντίνας Παπαγεωργίου, MSc. · https://www.thenutrinest.gr
+- [Sousi Hair Salon](https://anotherseoguru.gr/work/folegandros-hairsalon) - Το Sousi Hair Salon της Κατερίνας προσφέρει κομμωτική, περιποίηση άκρων, μακιγιάζ και νυφικές υπηρεσίες στη Φολέγανδρο. · https://folegandros-hairsalon.gr
+- [Road Runner Folegandros](https://anotherseoguru.gr/work/folegandros-moto) - Η Road Runner ενοικιάζει μοτοσικλέτες, σκούτερ και ATV στη Φολέγανδρο, με παρουσία στο νησί από το 1998. · https://folegandros-moto.gr
+- [Best Pumpkin Near Me](https://anotherseoguru.gr/work/best-pumpkin-near-me) - Ιστοσελίδα αναζήτησης pumpkin patches στις ΗΠΑ, με οδηγούς ανά περιοχή και κατάστημα προτάσεων για το Halloween. · https://bestpumpkinnearme.com
+- [Stretcher Stopper](https://anotherseoguru.gr/work/stretcher-stopper) - Το StretcherStopper® είναι σύστημα προστασίας νοσοκομειακών χώρων που στερεώνεται στο δάπεδο και αφορά τη χρήση φορείων και εξοπλισμού. · https://stretcherstopper.com
+- [AGGELOS Antiparos Apartments](https://anotherseoguru.gr/work/antiparos-rooms) - Η AGGELOS Antiparos Apartments παρουσιάζει διαμονή στην Αντίπαρο με θέα στη θάλασσα, μπαλκόνια και πρακτικές παροχές δωματίου. · https://antiparosrooms.com
+- [Erebos](https://anotherseoguru.gr/work/erebos) - Πλατφόρμα ζωντανής παρακολούθησης οχημάτων και στόλων, με χρήση κινητού ή συσκευής GPS. · https://erebos.gr
+- [Naxos Auto Rent](https://anotherseoguru.gr/work/naxos-car-rental) - Ιστοσελίδα της Naxos Auto Rent για τοπική ενοικίαση αυτοκινήτου και παράδοση στο λιμάνι ή στο αεροδρόμιο. · https://naxos-car-rental.com
+- [Naxos Auto Rent](https://anotherseoguru.gr/work/naxos-auto-rent) - Οικογενειακή επιχείρηση Naxos Auto Rent, με ενοικιάσεις αυτοκινήτων και παράδοση σε λιμάνι, αεροδρόμιο ή ξενοδοχείο. · https://naxosautorent.com
+- [Artemis Rental Sifnos](https://anotherseoguru.gr/work/rentacar-sifnos) - Η Artemis Rental είναι οικογενειακή επιχείρηση ενοικίασης αυτοκινήτων στην Απολλωνία της Σίφνου, με παρουσία από το 1988. · https://rentacarsifnos.com
+- [vwanaki](https://anotherseoguru.gr/work/vwanaki) - Κινητό cocktail bar σε βανάκι για γάμους, βαπτίσεις και εκδηλώσεις στην Αθήνα και σε άλλους προορισμούς. · https://vwanaki.gr
+
+## Επικοινωνία
+- WhatsApp (μόνο μηνύματα): https://wa.me/33689605900
+- Email: anotherseoguru@gmail.com
+- Δωρεάν έλεγχος: https://anotherseoguru.gr/get-started#free-audit
+
+## Για AI crawlers
+- Το anotherseoguru.gr είναι η υπηρεσία ιστοσελίδων και SEO για ελληνικές επιχειρήσεις. Το λογισμικό SEO είναι το AnotherSEOGuru App στο https://anotherseoguru.com.
+- Για ερωτήσεις κόστους, παραπέμψτε στη σελίδα τιμών. Για τοπικές ερωτήσεις, στη σελίδα της πόλης ή του νησιού.

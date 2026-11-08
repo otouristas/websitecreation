@@ -12,7 +12,7 @@ import { localizedPath, siteLocaleFromPath, stripLocalePrefix, type SiteLocale }
 import { CONTACT_EMAIL, PHONE_DISPLAY, WHATSAPP_HREF } from "@/lib/contact-info";
 import { trackCtaClick } from "@/lib/analytics";
 import { consultantPath } from "@/data/founder";
-import { AGENCY_AUDIT_EL, AGENCY_HOME_EL, AGENCY_PRICING_EL, isAgencyPathname } from "@/lib/site-split";
+import { AGENCY_AUDIT_HREF, AGENCY_HOME_HREF, AGENCY_PRICING_HREF, isAgencyPathname } from "@/lib/site-split";
 
 /** Official SVGs from https://github.com/datatrans/payment-logos (CC-BY-SA-4.0) */
 const PAYMENT_LOGOS = [
@@ -239,14 +239,14 @@ function footerColumns(locale: SiteLocale, agency: boolean): readonly FooterColu
   // The product site: the agency is one column of doors into the Greek pages.
   const doneForYou: FooterLink[] = isEl
     ? [
-        { label: "Ιστοσελίδα και SEO από εμάς", href: AGENCY_HOME_EL },
-        { label: "Τιμές υπηρεσιών", href: AGENCY_PRICING_EL },
-        { label: "Δωρεάν έλεγχος ιστοσελίδας", href: AGENCY_AUDIT_EL },
+        { label: "Ιστοσελίδα και SEO από εμάς", href: AGENCY_HOME_HREF },
+        { label: "Τιμές υπηρεσιών", href: AGENCY_PRICING_HREF },
+        { label: "Δωρεάν έλεγχος ιστοσελίδας", href: AGENCY_AUDIT_HREF },
         { label: t.work, href: "/el/work" },
       ]
     : [
-        { label: "Websites & SEO in Greece", href: AGENCY_HOME_EL },
-        { label: "Free website audit (Greek)", href: AGENCY_AUDIT_EL },
+        { label: "Websites & SEO in Greece", href: AGENCY_HOME_HREF },
+        { label: "Free website audit (Greek)", href: AGENCY_AUDIT_HREF },
         { label: "Case studies", href: "/el/work" },
       ];
 
@@ -323,7 +323,7 @@ export default function Footer({ locale: localeProp }: { locale?: SiteLocale }):
         <div className="mx-auto w-full max-w-[1200px] px-5 pb-14 pt-12 sm:px-8 md:pb-16 md:pt-16">
           <div className="mb-10 flex flex-col gap-6 border-b border-hairline pb-10 sm:flex-row sm:items-end sm:justify-between">
             <div className="min-w-0 max-w-md">
-              <BrandLogo size="lg" className="mb-4" homeHref={agency ? AGENCY_HOME_EL : lp("/")} />
+              <BrandLogo size="lg" className="mb-4" homeHref={agency ? AGENCY_HOME_HREF : lp("/")} />
               <p className="text-sm leading-relaxed text-muted-foreground">{agency ? t.tagline : PRODUCT_TAGLINE[locale]}</p>
             </div>
             <div className="flex flex-wrap items-center gap-2">

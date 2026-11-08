@@ -25,6 +25,57 @@ export const AGENCY_HOME_EL = `/el${AGENCY_HOME_PATH}`;
 export const AGENCY_PRICING_EL = `/el${AGENCY_PRICING_PATH}`;
 export const AGENCY_AUDIT_EL = `/el${AGENCY_AUDIT_PATH}#free-audit`;
 
+/** The agency's own domain. */
+export const AGENCY_DOMAIN = 'anotherseoguru.gr';
+export const AGENCY_ORIGIN = `https://${AGENCY_DOMAIN}`;
+export const PRODUCT_ORIGIN = 'https://anotherseoguru.com';
+
+/**
+ * The one switch for the move to anotherseoguru.gr. While false, every agency
+ * link goes to the Greek agency pages on anotherseoguru.com. Set it to true
+ * once anotherseoguru.gr points to this Vercel project: every agency link,
+ * canonical URL and redirect then goes to anotherseoguru.gr, and the Greek
+ * agency pages on .com send a 301 there (see middleware).
+ */
+export const AGENCY_ON_OWN_DOMAIN = false;
+
+function splitSuffix(path: string): [string, string] {
+  const i = path.search(/[?#]/);
+  return i === -1 ? [path, ''] : [path.slice(0, i), path.slice(i)];
+}
+
+/**
+ * The path on anotherseoguru.gr of a Greek agency page on .com:
+ * `/el/ypiresies` is the .gr home, `/el/ypiresies/times` is `/times`, and
+ * `/el/<section>/...` drops the `/el`.
+ */
+export function agencyDomainPath(elPathname: string): string {
+  const [path, suffix] = splitSuffix(elPathname);
+  const bare = stripLocalePrefix(path).replace(/\/+$/, '') || '/';
+  if (bare === AGENCY_HOME_PATH) return `/${suffix}`;
+  if (bare.startsWith(`${AGENCY_HOME_PATH}/`)) return `${bare.slice(AGENCY_HOME_PATH.length)}${suffix}`;
+  return `${bare}${suffix}`;
+}
+
+/** The inverse: the Greek page on .com that serves a path on anotherseoguru.gr. */
+export function comPathForAgencyDomain(grPathname: string): string | null {
+  const bare = grPathname.replace(/\/+$/, '') || '/';
+  if (bare === '/') return AGENCY_HOME_EL;
+  if (bare === '/times') return AGENCY_PRICING_EL;
+  if (bare === '/el' || bare.startsWith('/el/') || bare === '/en' || bare.startsWith('/en/')) return null;
+  return isAgencyBarePath(bare) ? `/el${bare}` : null;
+}
+
+/** The public href of a Greek agency page (e.g. `/el/ypiresies/times`). */
+export function agencyHref(elPathname: string): string {
+  return AGENCY_ON_OWN_DOMAIN ? `${AGENCY_ORIGIN}${agencyDomainPath(elPathname)}` : elPathname;
+}
+
+/** Hrefs for links to the agency from anywhere on the site. */
+export const AGENCY_HOME_HREF = agencyHref(AGENCY_HOME_EL);
+export const AGENCY_PRICING_HREF = agencyHref(AGENCY_PRICING_EL);
+export const AGENCY_AUDIT_HREF = agencyHref(AGENCY_AUDIT_EL);
+
 /** Bare-path sections (no locale prefix) that belong to the agency. */
 const AGENCY_SECTIONS = [
   AGENCY_HOME_PATH,
@@ -54,6 +105,16 @@ export function isAgencyBarePath(barePath: string): boolean {
 /** True for a locale-prefixed pathname (e.g. `/el/work/onoma-hotel`) of an agency page. */
 export function isAgencyPathname(pathname: string): boolean {
   return isAgencyBarePath(stripLocalePrefix(pathname));
+}
+
+/**
+ * Where a Greek agency page on anotherseoguru.com goes once the agency has its
+ * own domain. Null while AGENCY_ON_OWN_DOMAIN is off, and for every other URL.
+ */
+export function greekAgencyMoveRedirect(pathname: string): string | null {
+  if (!AGENCY_ON_OWN_DOMAIN) return null;
+  if (!(pathname.startsWith('/el/') && isAgencyPathname(pathname))) return null;
+  return `${AGENCY_ORIGIN}${agencyDomainPath(pathname)}`;
 }
 
 /** Greek cities that keep service x city pages (see indexability/service-location). */
@@ -112,12 +173,13 @@ export function greekAgencyPath(barePath: string): string {
 }
 
 /**
- * Where an English agency URL goes now: its Greek page. Null for every other URL.
+ * Where an English agency URL goes now: its Greek page (on anotherseoguru.gr
+ * once AGENCY_ON_OWN_DOMAIN is on). Null for every other URL.
  */
 export function englishAgencyRedirect(pathname: string): string | null {
   if (!(pathname === '/en' || pathname.startsWith('/en/'))) return null;
   const bare = stripLocalePrefix(pathname).replace(/\/+$/, '') || '/';
   if (!isAgencyBarePath(bare)) return null;
-  if (bare === '/get-started') return AGENCY_AUDIT_EL;
-  return greekAgencyPath(bare);
+  if (bare === '/get-started') return agencyHref(AGENCY_AUDIT_EL);
+  return agencyHref(greekAgencyPath(bare));
 }
