@@ -1,3 +1,5 @@
+import { greekAgencyPath, isAgencyBarePath } from '@/lib/site-split';
+
 export type SiteLocale = 'en' | 'el';
 
 export const LOCALES: SiteLocale[] = ['en', 'el'];
@@ -27,6 +29,12 @@ export function isEnOnlySection(barePath: string): boolean {
 
 export function localizedPath(locale: SiteLocale, path: string): string {
   const normalized = path.startsWith('/') ? path : `/${path}`;
+  // Agency pages are Greek only (src/lib/site-split.ts): every link to one,
+  // from either locale, goes straight to its Greek page.
+  if (isAgencyBarePath(normalized)) {
+    const hash = normalized.indexOf('#');
+    return hash === -1 ? greekAgencyPath(normalized) : greekAgencyPath(normalized.slice(0, hash)) + normalized.slice(hash);
+  }
   const prefix = localePrefix(isEnOnlySection(normalized) ? 'en' : locale);
   if (normalized === '/') return prefix;
   return `${prefix}${normalized}`;

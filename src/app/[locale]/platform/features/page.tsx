@@ -75,7 +75,7 @@ export default async function PlatformFeaturesPage({ params }: PageProps) {
         <WaveHero
           pill={
             <AnnouncePill
-              href={localizedPath(locale, "/platform")}
+              href={localizedPath(locale, "/")}
               tag={tx("Features", "Δυνατότητες")}
               text={tx("AnotherSEOGuru App", "AnotherSEOGuru App")}
             />

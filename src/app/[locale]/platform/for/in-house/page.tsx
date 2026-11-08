@@ -64,7 +64,7 @@ const IN_HOUSE_FAQ: readonly GscFaqItem[] = [
       en: `Launch covers ${LAUNCH.sites} sites and ${LAUNCH.seats} seat, with Search Console performance, opportunities, keyword research and rank tracking, site audit and the AI assistant. Growth adds content briefs and WordPress publishing, competitor gaps and AI visibility tracking, with ${GROWTH.sites} sites and ${GROWTH.seats} seats.`,
       el: `Το Launch καλύπτει ${LAUNCH.sites} ιστοτόπους και ${LAUNCH.seats} χρήστη, με απόδοση Search Console, ευκαιρίες, έρευνα λέξεων-κλειδιών και παρακολούθηση θέσεων, έλεγχο ιστότοπου και τον βοηθό AI. Το Growth προσθέτει briefs περιεχομένου και δημοσίευση στο WordPress, κενά έναντι ανταγωνιστών και ορατότητα στην AI, με ${GROWTH.sites} ιστοτόπους και ${GROWTH.seats} χρήστες.`,
     },
-    link: { kind: "site", path: "/platform/pricing#compare", label: { en: "Compare the plans", el: "Συγκρίνετε τα πακέτα" } },
+    link: { kind: "site", path: "/pricing#compare", label: { en: "Compare the plans", el: "Συγκρίνετε τα πακέτα" } },
   },
   ...HOME_FAQ.filter((item) =>
     ["What access do you need to my Google account?", "How are the click estimates calculated?", "What are credits used for?", "Can I cancel anytime?"].includes(item.q.en),

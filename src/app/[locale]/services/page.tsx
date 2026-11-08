@@ -167,7 +167,7 @@ export default async function ServicesPage({ params }: PageProps) {
               primaryHref={lp("/get-started")}
               primaryLabel={isEl ? "Ζητήστε προσφορά" : "Request a Quote"}
               links={[
-                { href: lp("/pricing"), label: isEl ? "Δείτε τις τιμές" : "View Pricing" },
+                { href: lp("/ypiresies/times"), label: isEl ? "Δείτε τις τιμές" : "View Pricing" },
                 { href: lp("/work"), label: isEl ? "Δείτε τα έργα μας" : "View Our Work" },
               ]}
             />
@@ -218,7 +218,7 @@ export default async function ServicesPage({ params }: PageProps) {
             ) : (
               <>
                 If you want the team to do the work inside AnotherSEOGuru App, see{" "}
-                <Link href="/en/managed-seo" className="font-medium text-foreground underline decoration-hairline underline-offset-4 hover:text-primary">
+                <Link href="/el/diacheirisi-seo" className="font-medium text-foreground underline decoration-hairline underline-offset-4 hover:text-primary">
                   managed SEO
                 </Link>
                 .

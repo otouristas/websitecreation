@@ -45,7 +45,7 @@ export function SeoPricingBlock({ locale = 'en' }: { locale?: SiteLocale }) {
 
       <p className="mt-8 text-center text-sm text-muted-foreground">
         {isEl ? 'Χρειάζεστε και ιστοσελίδα; ' : 'Need a website too? '}
-        <a href={lp('/pricing')} className="font-medium text-primary hover:underline">
+        <a href={lp('/ypiresies/times')} className="font-medium text-primary hover:underline">
           {isEl ? 'Δείτε όλα τα πακέτα κατασκευής' : 'See all build packages'}
         </a>
       </p>

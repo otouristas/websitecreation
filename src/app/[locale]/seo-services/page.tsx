@@ -134,7 +134,7 @@ export default async function SeoServicesPillarPage({ params }: PageProps) {
     ...serviceCards.map((card) => ({ path: card.href, title: card.title })),
     { path: '/services/ai-visibility', title: isEl ? 'AI Visibility (GEO/AEO)' : 'AI visibility (GEO/AEO)' },
     { path: '/services/website-creation', title: isEl ? 'Κατασκευή ιστοσελίδων' : 'Website creation' },
-    { path: '/pricing', title: isEl ? 'Τιμές και πακέτα' : 'Pricing and packages' },
+    { path: '/ypiresies/times', title: isEl ? 'Τιμές και πακέτα' : 'Pricing and packages' },
     ...(isEl ? [{ path: '/blog/pos-na-epilexete-etaireia-seo', title: 'Πώς να επιλέξετε εταιρεία SEO' }] : []),
     {
       path: isEl ? '/blog/poso-kostizei-to-seo' : '/blog/how-much-does-seo-cost',
@@ -206,7 +206,7 @@ export default async function SeoServicesPillarPage({ params }: PageProps) {
               primaryHref={lp('/get-started')}
               primaryLabel={t.cta.primary}
               whatsappLabel={t.cta.whatsapp}
-              links={[{ href: lp('/pricing'), label: t.cta.secondary }]}
+              links={[{ href: lp('/ypiresies/times'), label: t.cta.secondary }]}
             />
           }
           trust={<TrustMarks items={agencyTrust(siteLocale).map((item) => item.label)} yesLabel={copy.markYes} />}
@@ -299,7 +299,7 @@ export default async function SeoServicesPillarPage({ params }: PageProps) {
             {t.pricing.note.replace('6', String(SEO_MIN_TERM_MONTHS))}
           </p>
           <p className="mt-4 text-center text-[14px]">
-            <Link href={lp('/pricing')} className="font-medium text-link underline-offset-4 hover:underline">
+            <Link href={lp('/ypiresies/times')} className="font-medium text-link underline-offset-4 hover:underline">
               {t.pricing.cta}
             </Link>
           </p>

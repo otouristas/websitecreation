@@ -237,7 +237,7 @@ export default async function ServicePage({ params }: PageProps) {
 
     const quoteHref = lp(`/get-started?service=${serviceSlug}`);
     const heroLinks = [
-        { href: lp('/pricing'), label: t.pricingLink.replace(' →', '') },
+        { href: lp('/ypiresies/times'), label: t.pricingLink.replace(' →', '') },
         ...(locationsToShow.length > 0 ? [{ href: '#locations', label: t.viewByLocation }] : []),
     ];
 
@@ -279,7 +279,7 @@ export default async function ServicePage({ params }: PageProps) {
                         body={commercial?.definition}
                         bullets={displayFeatures}
                         links={[
-                            { href: lp('/pricing'), label: t.pricingLink.replace(' →', ''), primary: true },
+                            { href: lp('/ypiresies/times'), label: t.pricingLink.replace(' →', ''), primary: true },
                             { href: lp('/work'), label: t.allWork.replace(' →', '') },
                         ]}
                         preview={<Stage>{kit.detail(siteLocale)}</Stage>}
@@ -309,7 +309,7 @@ export default async function ServicePage({ params }: PageProps) {
                     ) : null}
                     {kit.pricing ? <PriceTiers kind={kit.pricing} locale={siteLocale} className="mt-12" /> : null}
                     <p className="mt-10 text-center text-[14px]">
-                        <Link href={lp('/pricing')} className="font-medium text-link underline-offset-4 hover:underline">
+                        <Link href={lp('/ypiresies/times')} className="font-medium text-link underline-offset-4 hover:underline">
                             {t.pricingLink}
                         </Link>
                     </p>

@@ -11,6 +11,7 @@ import { decideServiceLocationRoute } from '@/lib/indexability/service-location'
 import { legacyWebDesignRedirect } from '@/lib/indexability/web-design-redirect';
 import { getAllServiceSlugs } from '@/data/services';
 import { THEME_INIT_SCRIPT } from '@/brand/theme';
+import { englishAgencyRedirect } from '@/lib/site-split';
 
 const LOCALE_COOKIE = 'locale';
 
@@ -62,9 +63,11 @@ function goneResponse(locale: SiteLocale, service: string): NextResponse {
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
+  // Legacy and city redirects that land on an English agency page go straight
+  // on to its Greek page, so no request takes two hops.
   const webDesign = legacyWebDesignRedirect(pathname);
   if (webDesign) {
-    return NextResponse.redirect(new URL(webDesign, request.url), 301);
+    return NextResponse.redirect(new URL(englishAgencyRedirect(webDesign) ?? webDesign, request.url), 301);
   }
 
   const cityRoute = decideServiceLocationRoute(pathname);
@@ -72,7 +75,14 @@ export function middleware(request: NextRequest) {
     return goneResponse(cityRoute.locale, cityRoute.service);
   }
   if (cityRoute?.kind === 'redirect') {
-    return NextResponse.redirect(new URL(cityRoute.to, request.url), cityRoute.status);
+    return NextResponse.redirect(new URL(englishAgencyRedirect(cityRoute.to) ?? cityRoute.to, request.url), cityRoute.status);
+  }
+
+  // anotherseoguru.com is the product site. The agency serves Greek clients, so
+  // every English agency page now lives on its Greek twin (see lib/site-split).
+  const agency = englishAgencyRedirect(pathname);
+  if (agency) {
+    return NextResponse.redirect(new URL(agency, request.url), 301);
   }
 
   // Markdown twin of a docs page: /en/help/x/y.md -> the static Markdown route.

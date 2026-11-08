@@ -31,7 +31,7 @@ export function platformMetadata(input: {
 }
 
 /** SoftwareApplication with the real plan prices (US dollars, per month). */
-export function gscBoostSoftwareSchema(locale: SiteLocale, path = "/platform"): SchemaOutput {
+export function gscBoostSoftwareSchema(locale: SiteLocale, path = "/"): SchemaOutput {
   return {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
@@ -63,7 +63,7 @@ export function gscBoostSoftwareSchema(locale: SiteLocale, path = "/platform"): 
           priceCurrency: "USD",
           unitCode: "MON",
         },
-        url: `${BASE_URL}${localizedPath(locale, "/platform/pricing")}`,
+        url: `${BASE_URL}${localizedPath(locale, "/pricing")}`,
       })),
     },
     provider: brandOrganization(),
@@ -74,6 +74,6 @@ export function gscBoostSoftwareSchema(locale: SiteLocale, path = "/platform"): 
 export function platformBreadcrumbs(locale: SiteLocale, trail: ReadonlyArray<{ name: string; path: string }>) {
   const home = locale === "el" ? "Αρχική" : "Home";
   return generateBreadcrumbSchema({
-    items: [{ name: home, url: localizedPath(locale, "/") }, { name: "AnotherSEOGuru App", url: localizedPath(locale, "/platform") }, ...trail.map((t) => ({ name: t.name, url: localizedPath(locale, t.path) }))],
+    items: [{ name: home, url: localizedPath(locale, "/") }, ...trail.map((t) => ({ name: t.name, url: localizedPath(locale, t.path) }))],
   });
 }

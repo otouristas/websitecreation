@@ -32,6 +32,9 @@ export function buildLocationServiceUrls(
   // Only the kept service × city pages (2026-10 city cut). Everything else
   // under /services/{service}/{location} is 410 Gone and must not be listed.
   const urls: SitemapUrlEntry[] = [];
+  // City pages are agency pages, Greek only since the product/agency split
+  // (src/lib/site-split.ts). English city URLs redirect to their Greek page.
+  if (locale !== 'el') return urls;
   for (const { service, location: slug } of listKeptServiceLocations(locale)) {
     const location = getLocationBySlug(slug);
     if (!location || !matchesShard(location, shard)) continue;

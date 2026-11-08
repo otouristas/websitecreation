@@ -12,6 +12,7 @@ import { localizedPath, siteLocaleFromPath, stripLocalePrefix, type SiteLocale }
 import { CONTACT_EMAIL, PHONE_DISPLAY, WHATSAPP_HREF } from "@/lib/contact-info";
 import { trackCtaClick } from "@/lib/analytics";
 import { consultantPath } from "@/data/founder";
+import { AGENCY_AUDIT_EL, AGENCY_HOME_EL, AGENCY_PRICING_EL, isAgencyPathname } from "@/lib/site-split";
 
 /** Official SVGs from https://github.com/datatrans/payment-logos (CC-BY-SA-4.0) */
 const PAYMENT_LOGOS = [
@@ -30,7 +31,7 @@ const PAYMENT_LOGOS = [
  * Pages that already are the free-audit / contact flow, or the pricing page
  * the secondary button opens. The strip would repeat the page.
  */
-const HIDE_FOOTER_CTA = new Set(["/contact", "/get-started", "/pricing"]);
+const HIDE_FOOTER_CTA = new Set(["/contact", "/get-started", "/ypiresies/times", "/pricing"]);
 
 const columnLinkClass =
   "inline-block max-w-full break-words py-0.5 text-[14px] leading-snug text-muted-foreground transition-colors hover:text-foreground";
@@ -44,10 +45,15 @@ const socialButtonClass =
 const closingRuleClass =
   "relative border-t border-hairline before:absolute before:inset-x-0 before:top-[-1px] before:h-px before:bg-[linear-gradient(90deg,transparent,var(--primary-glow)_30%,var(--brand)_70%,transparent)] before:opacity-70 before:content-['']";
 
+const PRODUCT_TAGLINE: Record<SiteLocale, string> = {
+  en: "SEO software that turns your Search Console into ranked fixes. On the web, iPhone, Android, Chrome and WordPress.",
+  el: "Λογισμικό SEO που κάνει το Search Console σας λίστα διορθώσεων. Στο web, iPhone, Android, Chrome και WordPress.",
+};
+
 type FooterLink = { readonly label: string; readonly href: string; readonly external?: boolean };
 
 type FooterColumn = {
-  readonly id: "product" | "services" | "areas" | "resources" | "company";
+  readonly id: "product" | "services" | "areas" | "resources" | "company" | "done-for-you";
   readonly title: string;
   readonly links: readonly FooterLink[];
 };
@@ -58,17 +64,17 @@ type FooterColumn = {
  * App signup, login, free tools and the changelog stay on the English footer,
  * which is where they lived before.
  */
-function footerColumns(locale: SiteLocale): readonly FooterColumn[] {
+function footerColumns(locale: SiteLocale, agency: boolean): readonly FooterColumn[] {
   const isEl = locale === "el";
   const lp = (path: string) => localizedPath(locale, path);
   const t = getFooterDictionary(locale);
   const app = (label: string, path: string): FooterLink => ({ label, href: getAppPath(path), external: true });
 
   const product: FooterLink[] = [
-    { label: isEl ? "AnotherSEOGuru App" : "Platform overview", href: lp("/platform") },
+    { label: isEl ? "AnotherSEOGuru App" : "Product overview", href: lp("/") },
     { label: isEl ? "Πώς λειτουργεί" : "How it works", href: isEl ? "/el/pos-leitourgei" : "/en/how-it-works" },
     { label: isEl ? "Δυνατότητες" : "Features", href: lp("/platform/features") },
-    { label: isEl ? "Πακέτα εφαρμογής" : "Software plans", href: lp("/platform/pricing") },
+    { label: isEl ? "Πακέτα & τιμές" : "Plans & pricing", href: lp("/pricing") },
     { label: isEl ? "Εφαρμογή iPhone" : "iPhone app", href: lp("/platform/iphone") },
     { label: isEl ? "Ενσωματώσεις" : "Integrations", href: lp("/platform/integrations") },
     { label: isEl ? "Ασφάλεια" : "Security", href: lp("/platform/security") },
@@ -96,7 +102,7 @@ function footerColumns(locale: SiteLocale): readonly FooterColumn[] {
     { label: isEl ? "Τεχνικό SEO" : "Technical SEO", href: lp("/seo-services/technical") },
     { label: "On-page SEO", href: lp("/seo-services/on-page") },
     { label: isEl ? "Στρατηγική SEO" : "SEO Strategy", href: lp("/seo-services/strategy") },
-    { label: isEl ? "Διαχείριση SEO" : "Managed SEO", href: isEl ? "/el/diacheirisi-seo" : "/en/managed-seo" },
+    { label: isEl ? "Διαχείριση SEO" : "Managed SEO", href: "/el/diacheirisi-seo" },
     { label: isEl ? t.websiteCreation : "Web Development Agency", href: lp("/services/website-creation") },
     { label: isEl ? "Σχεδιασμός με SEO" : "Web Design", href: lp("/services/web-design") },
     { label: isEl ? "Κατασκευή E-shop" : "E-commerce / E-shop", href: lp("/services/eshop-woocommerce") },
@@ -116,7 +122,7 @@ function footerColumns(locale: SiteLocale): readonly FooterColumn[] {
           { label: "SEO για ακίνητα", href: lp("/solutions/real-estate") },
         ]
       : []),
-    { label: isEl ? "Τιμές & πακέτα" : "Pricing & Packages", href: lp("/pricing") },
+    { label: isEl ? "Τιμές & πακέτα" : "Pricing & Packages", href: lp("/ypiresies/times") },
     { label: isEl ? "Όλες οι υπηρεσίες" : "All services", href: lp("/services") },
     ...(isEl ? [{ label: t.getStarted, href: lp("/get-started") }] : []),
   ];
@@ -168,7 +174,6 @@ function footerColumns(locale: SiteLocale): readonly FooterColumn[] {
     { label: isEl ? t.aiVisibilityCheck : "AI visibility check", href: lp("/ai-visibility-check") },
     { label: isEl ? t.blog : "Blog", href: lp("/blog") },
     { label: isEl ? "Οδηγοί SEO" : "SEO guides", href: lp("/seo-guides") },
-    { label: isEl ? t.work : "Case studies", href: lp("/work") },
     { label: isEl ? "Κέντρο βοήθειας" : "Help center", href: lp("/help") },
     { label: isEl ? "Λεξικό SEO" : "SEO glossary", href: lp("/glossary") },
   ];
@@ -189,24 +194,67 @@ function footerColumns(locale: SiteLocale): readonly FooterColumn[] {
     );
   }
 
-  return [
-    { id: "product", title: t.product, links: product },
-    { id: "services", title: isEl ? t.agency : "Services", links: services },
-    { id: "areas", title: t.areas, links: areas },
-    { id: "resources", title: isEl ? t.resources : "Resources", links: resources },
-    {
+  const company: FooterColumn = {
       id: "company",
       title: isEl ? t.company : "Company",
       links: [
         { label: isEl ? t.about : "About us", href: lp("/about") },
-        { label: isEl ? "Σύμβουλος SEO" : "SEO consultant", href: consultantPath(locale) },
-        { label: "SEO guru", href: lp("/seo-guru") },
+        // The consultant and SEO guru pages are agency pages: agency footer only.
+        ...(agency
+          ? [
+              { label: isEl ? "Σύμβουλος SEO" : "SEO consultant", href: consultantPath(locale) },
+              { label: "SEO guru", href: lp("/seo-guru") },
+            ]
+          : []),
         { label: isEl ? t.contact : "Contact", href: lp("/contact") },
         { label: isEl ? t.privacy : "Privacy policy", href: lp("/privacy") },
         { label: isEl ? t.terms : "Terms of service", href: lp("/terms") },
         { label: isEl ? t.cookies : "Cookie policy", href: lp("/privacy#cookies") },
       ],
-    },
+  };
+
+  // Agency pages (Greek only, src/lib/site-split.ts): services, areas and
+  // proof, with the app as one link back.
+  if (agency) {
+    return [
+      { id: "services", title: isEl ? t.agency : "Services", links: services },
+      { id: "areas", title: t.areas, links: areas },
+      {
+        id: "resources",
+        title: isEl ? t.resources : "Resources",
+        links: [{ label: isEl ? t.work : "Case studies", href: lp("/work") }, ...resources],
+      },
+      {
+        id: "product",
+        title: t.product,
+        links: [
+          { label: "AnotherSEOGuru App", href: lp("/") },
+          { label: isEl ? "Πακέτα εφαρμογής" : "App plans", href: lp("/pricing") },
+        ],
+      },
+      company,
+    ];
+  }
+
+  // The product site: the agency is one column of doors into the Greek pages.
+  const doneForYou: FooterLink[] = isEl
+    ? [
+        { label: "Ιστοσελίδα και SEO από εμάς", href: AGENCY_HOME_EL },
+        { label: "Τιμές υπηρεσιών", href: AGENCY_PRICING_EL },
+        { label: "Δωρεάν έλεγχος ιστοσελίδας", href: AGENCY_AUDIT_EL },
+        { label: t.work, href: "/el/work" },
+      ]
+    : [
+        { label: "Websites & SEO in Greece", href: AGENCY_HOME_EL },
+        { label: "Free website audit (Greek)", href: AGENCY_AUDIT_EL },
+        { label: "Case studies", href: "/el/work" },
+      ];
+
+  return [
+    { id: "product", title: t.product, links: product },
+    { id: "resources", title: isEl ? t.resources : "Resources", links: resources },
+    { id: "done-for-you", title: isEl ? "Το κάνουμε εμείς" : "Done for you", links: doneForYou },
+    company,
   ];
 }
 
@@ -264,7 +312,8 @@ export default function Footer({ locale: localeProp }: { locale?: SiteLocale }):
   const isEl = locale === "el";
   const lp = (path: string) => localizedPath(locale, path);
   const t = getFooterDictionary(locale);
-  const columns = footerColumns(locale);
+  const agency = isAgencyPathname(pathname);
+  const columns = footerColumns(locale, agency);
   const showCta = !HIDE_FOOTER_CTA.has(stripLocalePrefix(pathname));
 
   return (
@@ -274,8 +323,8 @@ export default function Footer({ locale: localeProp }: { locale?: SiteLocale }):
         <div className="mx-auto w-full max-w-[1200px] px-5 pb-14 pt-12 sm:px-8 md:pb-16 md:pt-16">
           <div className="mb-10 flex flex-col gap-6 border-b border-hairline pb-10 sm:flex-row sm:items-end sm:justify-between">
             <div className="min-w-0 max-w-md">
-              <BrandLogo size="lg" className="mb-4" homeHref={lp("/")} />
-              <p className="text-sm leading-relaxed text-muted-foreground">{t.tagline}</p>
+              <BrandLogo size="lg" className="mb-4" homeHref={agency ? AGENCY_HOME_EL : lp("/")} />
+              <p className="text-sm leading-relaxed text-muted-foreground">{agency ? t.tagline : PRODUCT_TAGLINE[locale]}</p>
             </div>
             <div className="flex flex-wrap items-center gap-2">
               <a
@@ -353,7 +402,7 @@ export default function Footer({ locale: localeProp }: { locale?: SiteLocale }):
             </div>
           </div>
 
-          <div className="divide-y divide-hairline lg:grid lg:grid-cols-5 lg:gap-x-8 lg:divide-y-0">
+          <div className={`divide-y divide-hairline lg:grid ${columns.length === 5 ? "lg:grid-cols-5" : "lg:grid-cols-4"} lg:gap-x-8 lg:divide-y-0`}>
             {columns.map((column) => (
               <FooterColumnView key={column.id} column={column} />
             ))}

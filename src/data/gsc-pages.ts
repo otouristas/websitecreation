@@ -842,7 +842,7 @@ export const GSC_PAGES: Record<string, GscPageStat> = {
   i: 37,
   p: 20.4
  },
- "/en/platform/pricing": {
+ "/en/pricing": {
   c: 0,
   i: 37,
   p: 31

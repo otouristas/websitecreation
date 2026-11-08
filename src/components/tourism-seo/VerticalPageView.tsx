@@ -68,7 +68,7 @@ export function VerticalPageView({ vertical }: { readonly vertical: TourismVerti
               primaryLabel="Δωρεάν έλεγχος"
               links={[
                 { href: TOURISM_HUB_PATH, label: "Όλοι οι κλάδοι" },
-                { href: "/el/pricing", label: "Τιμές" },
+                { href: "/el/ypiresies/times", label: "Τιμές" },
                 { href: "/el/work", label: "Έργα" },
               ]}
             />
@@ -216,7 +216,7 @@ export function VerticalPageView({ vertical }: { readonly vertical: TourismVerti
           />
           <PriceTiers kind="seo" locale="el" className="mt-12" />
           <p className="mt-10 text-center text-[14.5px]">
-            <Link href="/el/pricing" className="font-medium text-primary underline-offset-4 hover:underline">
+            <Link href="/el/ypiresies/times" className="font-medium text-primary underline-offset-4 hover:underline">
               Όλες οι τιμές και τα πακέτα
             </Link>
           </p>

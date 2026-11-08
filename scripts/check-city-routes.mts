@@ -9,12 +9,20 @@
 import { NextRequest } from 'next/server';
 import { middleware } from '../src/middleware';
 import { listKeptServiceLocations } from '../src/lib/indexability/service-location';
+import { englishAgencyRedirect } from '../src/lib/site-split';
 
 const BASE = 'https://anotherseoguru.com';
 let failed = 0;
 let checked = 0;
 
 function expectStatus(path: string, status: number, location?: string) {
+  // Since the product/agency split, an English page that used to pass through
+  // is a 301 to its Greek page (src/lib/site-split.ts).
+  const greek = status === 200 ? englishAgencyRedirect(path.replace(/\/$/, '')) : null;
+  if (greek) {
+    status = 301;
+    location = greek;
+  }
   const res = middleware(new NextRequest(`${BASE}${path}`));
   checked += 1;
   // NextResponse.next() carries the internal x-middleware-next header and a 200 status.

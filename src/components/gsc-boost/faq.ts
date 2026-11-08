@@ -52,7 +52,7 @@ export const HOME_FAQ: ReadonlyArray<GscFaqItem> = [
       `Search Console analysis, the opportunity engine and client reports cost nothing. Credits pay for third-party data and AI: a keyword research lookup is ${K.keyword_research} credits, a site audit ${K.site_audit}, an AI content brief ${K.ai_content_brief} and an assistant question ${K.seo_ai_chat}. Every plan includes a monthly allowance, and you can top up any time.`,
       `Η ανάλυση Search Console, η μηχανή ευκαιριών και οι αναφορές πελατών δεν κοστίζουν τίποτα. Οι μονάδες καλύπτουν δεδομένα τρίτων και AI: μια αναζήτηση στην έρευνα λέξεων-κλειδιών κοστίζει ${K.keyword_research} μονάδες, ένας έλεγχος ιστότοπου ${K.site_audit}, ένα AI content brief ${K.ai_content_brief} και μια ερώτηση στον βοηθό ${K.seo_ai_chat}. Κάθε πακέτο περιλαμβάνει μηνιαίο απόθεμα μονάδων και μπορείτε να αγοράσετε περισσότερες όποτε θέλετε.`,
     ),
-    link: { kind: "site", path: "/platform/pricing#credits", label: c("See every credit cost", "Δείτε όλα τα κόστη σε μονάδες") },
+    link: { kind: "site", path: "/pricing#credits", label: c("See every credit cost", "Δείτε όλα τα κόστη σε μονάδες") },
   },
   {
     q: c("Is my data used to train AI models?", "Χρησιμοποιούνται τα δεδομένα μου για την εκπαίδευση μοντέλων AI;"),
@@ -151,7 +151,7 @@ export const PRICING_FAQ: ReadonlyArray<GscFaqItem> = [
       "No. These are software plans: you use AnotherSEOGuru App and do the work yourself. Our agency packages are a separate service where our team does the SEO for you, priced on the main pricing page.",
       "Όχι. Αυτά είναι πακέτα λογισμικού: χρησιμοποιείτε το AnotherSEOGuru App και κάνετε τη δουλειά μόνοι σας. Τα πακέτα της εταιρείας μας είναι ξεχωριστή υπηρεσία όπου η ομάδα μας αναλαμβάνει το SEO για εσάς, με τιμές στη βασική σελίδα τιμών.",
     ),
-    link: { kind: "site", path: "/pricing", label: c("Agency SEO packages", "Πακέτα SEO της εταιρείας") },
+    link: { kind: "site", path: "/ypiresies/times", label: c("Agency SEO packages", "Πακέτα SEO της εταιρείας") },
   },
 ];
 

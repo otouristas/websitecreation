@@ -327,7 +327,7 @@ export function WebsiteCreationPage({ locale }: { locale: SiteLocale }) {
         primaryHref={quoteHref}
         links={[
           { href: '#work', label: t.ctaSecondary },
-          { href: lp('/pricing'), label: t.cta.secondary },
+          { href: lp('/ypiresies/times'), label: t.cta.secondary },
         ]}
         visual={kit.hero(locale)}
         visualLabel={kit.heroLabel[locale]}
@@ -388,7 +388,7 @@ export function WebsiteCreationPage({ locale }: { locale: SiteLocale }) {
         <KitHeading align="center" eyebrow={t.pricing.eyebrow} title={<AccentTitle text={t.pricing.title} />} description={t.pricing.body} />
         <PriceTiers kind="website" locale={locale} className="mt-12" />
         <p className="mt-10 text-center text-[14px]">
-          <Link href={lp('/pricing')} className="font-medium text-link underline-offset-4 hover:underline">
+          <Link href={lp('/ypiresies/times')} className="font-medium text-link underline-offset-4 hover:underline">
             {t.pricing.all}
           </Link>
         </p>

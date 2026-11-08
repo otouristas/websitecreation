@@ -196,7 +196,7 @@ export function HomePageView({ locale }: { readonly locale: SiteLocale }) {
               }
             >
               <Link
-                href={lp('/platform')}
+                href={lp('/')}
                 className="inline-flex max-w-full items-center gap-2 rounded-full border border-hairline bg-surface/80 py-1.5 pl-1.5 pr-4 text-[13px] text-muted-foreground backdrop-blur transition-colors hover:border-brand/40 hover:text-foreground"
               >
                 <span className="shrink-0 rounded-full bg-[linear-gradient(90deg,var(--primary),var(--signal))] px-2.5 py-0.5 text-[11px] font-bold text-primary-foreground">
@@ -363,7 +363,7 @@ export function HomePageView({ locale }: { readonly locale: SiteLocale }) {
               </ul>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link href={audit} className={primaryBtn}>{copy.audit}</Link>
-                <Link href={lp('/pricing')} className={ghostBtn}>{copy.pricing}</Link>
+                <Link href={lp('/ypiresies/times')} className={ghostBtn}>{copy.pricing}</Link>
               </div>
             </article>
           </div>

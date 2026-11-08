@@ -3,6 +3,7 @@ import { localizedPath } from '@/lib/i18n/locale';
 import { getAppPath } from '@/lib/app-links';
 import { entrySeoNet, entryWebsiteNet, formatPrice } from '@/data/pricing';
 import type { MarketingBadgeKind } from '@/components/kit/primitives';
+import { AGENCY_HOME_EL, AGENCY_PRICING_EL } from '@/lib/site-split';
 
 /**
  * One menu definition for the desktop mega menu and the mobile sheet, so the
@@ -85,7 +86,21 @@ export interface NavMenu {
   readonly footer?: { readonly href: string; readonly label: string };
 }
 
+/**
+ * `product` is anotherseoguru.com itself (AnotherSEOGuru App). `agency` is the
+ * Greek done-for-you section (src/lib/site-split.ts), which gets its own menu
+ * and calls to action until it moves to anotherseoguru.gr.
+ */
+export type NavMode = 'product' | 'agency';
+
 export interface NavModel {
+  readonly mode: NavMode;
+  /** Where the logo goes. */
+  readonly homeHref: string;
+  /** Main button: sign-up on the product site, the free audit on agency pages. */
+  readonly primaryCta: { readonly href: string; readonly label: string; readonly shortLabel: string; readonly external?: boolean };
+  /** Second button: the live demo on the product site, the app on agency pages. */
+  readonly secondaryCta: { readonly href: string; readonly label: string; readonly external?: boolean };
   readonly menus: readonly NavMenu[];
   readonly links: readonly NavItem[];
   /** Short marketing line shown above everything in the mobile sheet. */
@@ -94,7 +109,7 @@ export interface NavModel {
   readonly startFree: { readonly href: string; readonly label: string };
 }
 
-export function getNavModel(locale: SiteLocale): NavModel {
+export function getNavModel(locale: SiteLocale, mode: NavMode = 'product'): NavModel {
   const el = locale === 'el';
   const t = (en: string, gr: string) => (el ? gr : en);
   const lp = (p: string) => localizedPath(locale, p);
@@ -103,7 +118,6 @@ export function getNavModel(locale: SiteLocale): NavModel {
   const signup = `${getAppPath('/signup')}?lang=${locale}&utm_source=website&utm_content=nav`;
   const demo = `${getAppPath('/demo')}?lang=${locale}&utm_source=website&utm_content=nav`;
 
-  const NEW = { kind: 'new' as const, label: t('New', 'Νέο') };
   const FREE = { kind: 'free' as const, label: t('Free', 'Δωρεάν') };
   const POPULAR = { kind: 'popular' as const, label: t('Popular', 'Δημοφιλές') };
   const AI = { kind: 'ai' as const, label: 'AI' };
@@ -161,7 +175,7 @@ export function getNavModel(locale: SiteLocale): NavModel {
       ],
       chips: [t(`SEO from €${seoFrom}/mo`, `SEO από €${seoFrom}/μήνα`), t(`Websites from €${webFrom}`, `Ιστοσελίδες από €${webFrom}`)],
       primary: { href: freeAudit.href, label: t('Get my free audit', 'Θέλω δωρεάν έλεγχο') },
-      secondary: { href: lp('/pricing'), label: t('See all prices', 'Όλες οι τιμές') },
+      secondary: { href: AGENCY_PRICING_EL, label: t('See all prices', 'Όλες οι τιμές') },
     },
     footer: { href: lp('/services'), label: t('All services', 'Όλες οι υπηρεσίες') },
   };
@@ -211,8 +225,7 @@ export function getNavModel(locale: SiteLocale): NavModel {
 
   const software: NavMenu = {
     id: 'software',
-    label: 'AnotherSEOGuru App',
-    badge: NEW,
+    label: t('Product', 'Εφαρμογή'),
     columns: [
       {
         title: t('The product', 'Το προϊόν'),
@@ -234,7 +247,7 @@ export function getNavModel(locale: SiteLocale): NavModel {
           // One entry for every way in (iPhone, Chrome, WordPress, AI assistants), so the
           // mobile sheet stays light; the hub links on to each product page.
           { href: lp('/platform/integrations'), label: t('Apps & integrations', 'Εφαρμογές & ενσωματώσεις'), desc: t('iPhone, Chrome, WordPress, AI assistants', 'iPhone, Chrome, WordPress, βοηθοί AI'), icon: 'plug', badge: { kind: 'new' as const, label: t('New', 'Νέο') } },
-          { href: lp('/platform/pricing'), label: t('Plans & pricing', 'Πακέτα & τιμές'), desc: t('Start free, upgrade when it pays', 'Ξεκινήστε δωρεάν'), icon: 'tag', badge: FREE },
+          { href: lp('/pricing'), label: t('Plans & pricing', 'Πακέτα & τιμές'), desc: t('Start free, upgrade when it pays', 'Ξεκινήστε δωρεάν'), icon: 'tag', badge: FREE },
         ],
       },
     ],
@@ -249,7 +262,20 @@ export function getNavModel(locale: SiteLocale): NavModel {
       primary: { href: signup, label: startFree.label, external: true },
       secondary: { href: demo, label: t('Explore the live demo', 'Ζωντανή επίδειξη'), external: true },
     },
-    footer: { href: lp('/platform'), label: t('AnotherSEOGuru App overview', 'Επισκόπηση AnotherSEOGuru App') },
+    footer: { href: lp('/platform/features'), label: t('All features', 'Όλες οι δυνατότητες') },
+  };
+
+  // On the product site the agency is one door, not a menu.
+  const agencyDoor: NavFeature = {
+    tone: 'agency',
+    eyebrow: t('Prefer we do it?', 'Θέλετε να το κάνουμε εμείς;'),
+    title: t('Websites and SEO, done for you', 'Ιστοσελίδα και SEO, από την ομάδα μας'),
+    body: t(
+      'For businesses in Greece: our team builds the site and runs the SEO, with a fixed price.',
+      'Για επιχειρήσεις στην Ελλάδα: η ομάδα μας φτιάχνει την ιστοσελίδα και τρέχει το SEO, με σταθερή τιμή.',
+    ),
+    primary: { href: AGENCY_HOME_EL, label: t('See the services', 'Δείτε τις υπηρεσίες') },
+    secondary: { href: freeAudit.href, label: freeAudit.label },
   };
 
   const learn: NavMenu = {
@@ -259,7 +285,9 @@ export function getNavModel(locale: SiteLocale): NavModel {
       {
         title: t('Free tools', 'Δωρεάν εργαλεία'),
         items: [
-          { href: `${lp('/')}#scan-url`, label: t('Instant site scan', 'Άμεσος έλεγχος ιστοσελίδας'), desc: t('13 checks, no sign-up', '13 έλεγχοι, χωρίς εγγραφή'), icon: 'scan', badge: FREE },
+          ...(mode === 'agency'
+            ? [{ href: `${AGENCY_HOME_EL}#scan-url`, label: t('Instant site scan', 'Άμεσος έλεγχος ιστοσελίδας'), desc: t('13 checks, no sign-up', '13 έλεγχοι, χωρίς εγγραφή'), icon: 'scan' as const, badge: FREE }]
+            : []),
           { href: lp('/ai-visibility-check'), label: t('AI visibility check', 'Έλεγχος ορατότητας σε AI'), desc: t('Do AI assistants mention you?', 'Σας αναφέρουν οι βοηθοί AI;'), icon: 'bot', badge: FREE },
           { href: lp('/tools'), label: t('All SEO tools', 'Όλα τα εργαλεία SEO'), icon: 'grid' },
         ],
@@ -276,27 +304,56 @@ export function getNavModel(locale: SiteLocale): NavModel {
         ],
       },
     ],
-    feature: {
-      tone: 'agency',
-      eyebrow: t('Talk to a person', 'Μιλήστε με άνθρωπο'),
-      title: t('Not sure where to start?', 'Δεν ξέρετε από πού να ξεκινήσετε;'),
-      body: t('Send us your site and one question. We reply within 24 hours, in Greek or English.', 'Στείλτε την ιστοσελίδα σας και μία ερώτηση. Απαντάμε σε 24 ώρες.'),
-      primary: { href: lp('/contact'), label: t('Contact us', 'Επικοινωνία') },
-      secondary: { href: lp('/about'), label: t('About us', 'Ποιοι είμαστε') },
-    },
+    feature:
+      mode === 'agency'
+        ? {
+            tone: 'agency',
+            eyebrow: t('Talk to a person', 'Μιλήστε με άνθρωπο'),
+            title: t('Not sure where to start?', 'Δεν ξέρετε από πού να ξεκινήσετε;'),
+            body: t('Send us your site and one question. We reply within 24 hours, in Greek or English.', 'Στείλτε την ιστοσελίδα σας και μία ερώτηση. Απαντάμε σε 24 ώρες.'),
+            primary: { href: lp('/contact'), label: t('Contact us', 'Επικοινωνία') },
+            secondary: { href: lp('/about'), label: t('About us', 'Ποιοι είμαστε') },
+          }
+        : agencyDoor,
   };
 
+  if (mode === 'agency') {
+    return {
+      mode,
+      homeHref: AGENCY_HOME_EL,
+      primaryCta: { href: freeAudit.href, label: freeAudit.label, shortLabel: t('Free audit', 'Δωρεάν έλεγχος') },
+      secondaryCta: { href: lp('/'), label: 'AnotherSEOGuru App' },
+      menus: [services, industries, learn],
+      links: [
+        { href: AGENCY_PRICING_EL, label: t('Pricing', 'Τιμές') },
+        { href: lp('/work'), label: t('Work', 'Έργα') },
+        { href: lp('/seo-guru'), label: 'SEO guru' },
+      ],
+      promo: {
+        href: lp('/'),
+        tag: t('New', 'Νέο'),
+        text: t('AnotherSEOGuru App: your Search Console as a to-do list', 'AnotherSEOGuru App: το Search Console ως λίστα ενεργειών'),
+      },
+      freeAudit,
+      startFree,
+    };
+  }
+
   return {
-    menus: [services, industries, software, learn],
+    mode,
+    homeHref: lp('/'),
+    primaryCta: { href: signup, label: t('Sign up free', 'Δωρεάν εγγραφή'), shortLabel: t('Sign up', 'Εγγραφή'), external: true },
+    secondaryCta: { href: demo, label: t('Live demo', 'Ζωντανή επίδειξη'), external: true },
+    menus: [software, learn],
     links: [
-      { href: lp('/seo-guru'), label: 'SEO guru' },
       { href: lp('/pricing'), label: t('Pricing', 'Τιμές') },
-      { href: lp('/work'), label: t('Work', 'Έργα') },
+      { href: lp('/platform/integrations'), label: t('Apps', 'Εφαρμογές') },
+      { href: AGENCY_HOME_EL, label: t('Done for you', 'Το κάνουμε εμείς') },
     ],
     promo: {
-      href: lp('/platform'),
-      tag: t('New', 'Νέο'),
-      text: t('AnotherSEOGuru App: your Search Console as a to-do list', 'AnotherSEOGuru App: το Search Console ως λίστα ενεργειών'),
+      href: AGENCY_HOME_EL,
+      tag: t('Greece', 'Ελλάδα'),
+      text: t('Prefer we do it? Websites and SEO, done for you', 'Θέλετε να το κάνουμε εμείς; Ιστοσελίδα και SEO'),
     },
     freeAudit,
     startFree,
