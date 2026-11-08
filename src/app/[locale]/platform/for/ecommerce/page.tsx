@@ -250,8 +250,8 @@ export default async function PlatformForEcommercePage({ params }: PageProps) {
               </>
             }
             lead={tx(
-              "Content briefs, competitor gaps and AI visibility are on Growth and Agency. Search Console analysis and the opportunity engine never use credits on any plan.",
-              "Τα briefs περιεχομένου, τα κενά έναντι ανταγωνιστών και η ορατότητα στην AI υπάρχουν στα Growth και Agency. Η ανάλυση Search Console και η μηχανή ευκαιριών δεν χρεώνουν μονάδες σε κανένα πακέτο.",
+              "Content briefs, competitor gaps and AI visibility are on Pro and Agency. Search Console analysis and the opportunity engine never use credits on any plan.",
+              "Τα briefs περιεχομένου, τα κενά έναντι ανταγωνιστών και η ορατότητα στην AI υπάρχουν στα Pro και Agency. Η ανάλυση Search Console και η μηχανή ευκαιριών δεν χρεώνουν μονάδες σε κανένα πακέτο.",
             )}
           />
           <PlanPicker locale={locale} source="ecommerce-plans" className="mt-10" />

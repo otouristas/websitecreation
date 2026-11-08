@@ -53,16 +53,16 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   });
 }
 
-const LAUNCH = planById("Launch");
-const GROWTH = planById("Growth");
+const LAUNCH = planById("Starter");
+const GROWTH = planById("Pro");
 const IN_HOUSE_MODULES: readonly ModuleId[] = ["opportunities", "performance", "keywords", "content", "audit", "assistant"];
 
 const IN_HOUSE_FAQ: readonly GscFaqItem[] = [
   {
     q: { en: "Which plan fits an in-house team?", el: "Ποιο πακέτο ταιριάζει σε μια in-house ομάδα;" },
     a: {
-      en: `Launch covers ${LAUNCH.sites} sites and ${LAUNCH.seats} seat, with Search Console performance, opportunities, keyword research and rank tracking, site audit and the AI assistant. Growth adds content briefs and WordPress publishing, competitor gaps and AI visibility tracking, with ${GROWTH.sites} sites and ${GROWTH.seats} seats.`,
-      el: `Το Launch καλύπτει ${LAUNCH.sites} ιστοτόπους και ${LAUNCH.seats} χρήστη, με απόδοση Search Console, ευκαιρίες, έρευνα λέξεων-κλειδιών και παρακολούθηση θέσεων, έλεγχο ιστότοπου και τον βοηθό AI. Το Growth προσθέτει briefs περιεχομένου και δημοσίευση στο WordPress, κενά έναντι ανταγωνιστών και ορατότητα στην AI, με ${GROWTH.sites} ιστοτόπους και ${GROWTH.seats} χρήστες.`,
+      en: `Starter covers ${LAUNCH.sites} sites and ${LAUNCH.seats} seat, with every fix the engine finds, ${LAUNCH.keywords} tracked keywords, ${LAUNCH.prompts} AI visibility prompts and the AI assistant. Pro adds content briefs and WordPress publishing, competitor gaps and AI visibility tracking, with ${GROWTH.sites} sites and ${GROWTH.seats} seats.`,
+      el: `Το Starter καλύπτει ${LAUNCH.sites} ιστοτόπους και ${LAUNCH.seats} χρήστη, με κάθε διόρθωση που βρίσκει η μηχανή, ${LAUNCH.keywords} λέξεις-κλειδιά σε παρακολούθηση, ${LAUNCH.prompts} prompts ορατότητας AI και τον βοηθό AI. Το Pro προσθέτει briefs περιεχομένου και δημοσίευση στο WordPress, κενά έναντι ανταγωνιστών και ορατότητα στην AI, με ${GROWTH.sites} ιστοτόπους και ${GROWTH.seats} χρήστες.`,
     },
     link: { kind: "site", path: "/pricing#compare", label: { en: "Compare the plans", el: "Συγκρίνετε τα πακέτα" } },
   },
@@ -235,12 +235,12 @@ export default async function PlatformForInHousePage({ params }: PageProps) {
             title={
               <>
                 {tx("Most in-house teams start on ", "Οι περισσότερες in-house ομάδες ξεκινούν με ")}
-                <WaveAccent>Launch</WaveAccent>
+                <WaveAccent>Starter</WaveAccent>
               </>
             }
             lead={tx(
-              "Move to Growth when you publish content every week or want competitor and AI visibility tracking. Search Console features never use credits on any plan.",
-              "Περάστε στο Growth όταν δημοσιεύετε περιεχόμενο κάθε εβδομάδα ή θέλετε ανταγωνιστές και ορατότητα στην AI. Οι λειτουργίες του Search Console δεν χρεώνουν μονάδες σε κανένα πακέτο.",
+              "Move to Pro when you publish content every week or want competitor and AI visibility tracking. Search Console features never use credits on any plan.",
+              "Περάστε στο Pro όταν δημοσιεύετε περιεχόμενο κάθε εβδομάδα ή θέλετε ανταγωνιστές και ορατότητα στην AI. Οι λειτουργίες του Search Console δεν χρεώνουν μονάδες σε κανένα πακέτο.",
             )}
           />
           <PlanPicker locale={locale} source="in-house-plans" className="mt-10" />

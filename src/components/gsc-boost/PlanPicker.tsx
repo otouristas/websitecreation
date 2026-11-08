@@ -168,7 +168,7 @@ export function PlanPicker({
   readonly locale: SiteLocale;
   readonly source: string;
   readonly className?: string;
-  /** Replaces the default "Recommended" label. The highlighted plan is still Growth. */
+  /** Replaces the default "Recommended" label. The highlighted plan is still Pro. */
   readonly badge?: Copy;
 }) {
   const [cycle, setCycle] = useState<BillingCycle>("monthly");

@@ -159,8 +159,8 @@ export const AGENCY_FAQ: ReadonlyArray<GscFaqItem> = [
   {
     q: c("How many client sites can I manage?", "Πόσους ιστοτόπους πελατών μπορώ να διαχειρίζομαι;"),
     a: c(
-      "The Agency plan includes 30 sites and 10 team seats. The site switcher lists every Search Console property your Google account can access, and it is built to stay fast with 90+ of them.",
-      "Το πακέτο Agency περιλαμβάνει 30 ιστοτόπους και 10 θέσεις χρηστών. Η εναλλαγή ιστοτόπων εμφανίζει κάθε ιδιότητά του Search Console στην οποία έχει πρόσβαση ο λογαριασμός σας Google και παραμένει γρήγορη ακόμη και με 90+ ιδιότητες.",
+      "The Agency plan includes 30 sites and 15 team seats. The site switcher lists every Search Console property your Google account can access, and it is built to stay fast with 90+ of them.",
+      "Το πακέτο Agency περιλαμβάνει 30 ιστοτόπους και 15 θέσεις χρηστών. Η εναλλαγή ιστοτόπων εμφανίζει κάθε ιδιότητά του Search Console στην οποία έχει πρόσβαση ο λογαριασμός σας Google και παραμένει γρήγορη ακόμη και με 90+ ιδιότητες.",
     ),
   },
   {

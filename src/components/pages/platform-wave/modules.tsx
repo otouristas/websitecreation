@@ -17,7 +17,7 @@ const TIERS: readonly { readonly id: string; readonly label: Copy; readonly matc
   },
   {
     id: "growth",
-    label: { en: "Growth and Agency", el: "Growth και Agency" },
+    label: { en: "Pro and Agency", el: "Pro και Agency" },
     match: (module) => module.plans.length === 2,
   },
   {
