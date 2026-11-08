@@ -216,9 +216,9 @@ function buildStructuredDataGraph(isEl: boolean) {
 }
 
 /**
- * Dark is the brand default and needs no class. Only a visitor who explicitly
- * chose the light theme gets `.light` on <html>, before first paint so there
- * is no flash. The stored key is unchanged from the previous toggle.
+ * Light is the default: the server renders `.light` on <html>. Only a visitor
+ * who explicitly chose dark with the toggle (`theme=dark`) loses it, before
+ * first paint so there is no flash. The system setting is ignored.
  */
 const themeInitScript = THEME_INIT_SCRIPT;
 
@@ -244,10 +244,10 @@ export default async function LocaleLayout({
   return (
     <html
       lang={isEl ? 'el' : 'en'}
-      data-asg-theme="dark"
+      data-asg-theme="light"
       // The next/font variables sit on <html> so they resolve everywhere,
       // including Tailwind's preflight font rule on the root element.
-      className={`${inter.variable} ${geistMono.variable} scroll-smooth`}
+      className={`light ${inter.variable} ${geistMono.variable} scroll-smooth`}
       suppressHydrationWarning
     >
       <head>

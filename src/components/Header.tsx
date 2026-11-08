@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState, type ReactElement } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, type ReactElement } from "react";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { BrandLogo } from "@/components/BrandLogo";
@@ -25,6 +25,22 @@ export default function Header({
   const nav = getNavDictionary(locale);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  // When the sheet's X closes the menu on a touch, iOS still delivers the
+  // tap's click to whatever is now under the finger: this button, which sits
+  // in the same corner. Ignore that ghost click so the menu stays closed.
+  const menuClosedAtRef = useRef(0);
+  const closeMobileMenu = useCallback(() => {
+    menuClosedAtRef.current = Date.now();
+    setIsMobileMenuOpen(false);
+  }, []);
+  const toggleMobileMenu = useCallback(() => {
+    if (isMobileMenuOpen) {
+      closeMobileMenu();
+      return;
+    }
+    if (Date.now() - menuClosedAtRef.current < 500) return;
+    setIsMobileMenuOpen(true);
+  }, [isMobileMenuOpen, closeMobileMenu]);
   const mode = isAgencyPathname(pathname) ? "agency" : "product";
   const model = useMemo(() => getNavModel(locale, mode), [locale, mode]);
   const chips = getTrustChips(locale);
@@ -137,9 +153,9 @@ export default function Header({
               <button
                 type="button"
                 className="grid size-9 shrink-0 place-items-center rounded-full border border-hairline text-foreground transition-colors hover:bg-foreground/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring lg:hidden"
-                onClick={() => setIsMobileMenuOpen(true)}
+                onClick={toggleMobileMenu}
                 aria-expanded={isMobileMenuOpen}
-                aria-label={nav.openMenu}
+                aria-label={isMobileMenuOpen ? nav.closeMenu : nav.openMenu}
               >
                 {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
               </button>
@@ -152,7 +168,7 @@ export default function Header({
         alternateHref={alternateHref}
         locale={locale}
         isOpen={isMobileMenuOpen}
-        onClose={() => setIsMobileMenuOpen(false)}
+        onClose={closeMobileMenu}
         model={model}
       />
     </>
