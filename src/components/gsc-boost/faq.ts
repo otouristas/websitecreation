@@ -98,8 +98,8 @@ export const PRICING_FAQ: ReadonlyArray<GscFaqItem> = [
   {
     q: c("Are there add-ons?", "Υπάρχουν πρόσθετα (add-ons);"),
     a: c(
-      "No. Everything is included, with no add-ons: a plan’s price covers every feature listed for it, with no paid toolkits or per-feature upgrades on top. Credit packs are optional top-ups for busy months, not features.",
-      "Όχι. Όλα περιλαμβάνονται, χωρίς add-ons: η τιμή κάθε πακέτου καλύπτει όλες τις λειτουργίες που αναφέρει, χωρίς επιπλέον χρεώσεις για εργαλεία ή αναβαθμίσεις ανά λειτουργία. Τα πακέτα μονάδων είναι προαιρετική ενίσχυση για τους πιο φορτωμένους μήνες, όχι λειτουργίες.",
+      "Yes, for capacity, and for white-label reports. A plan’s price includes every feature listed for that tier. Add-ons add a site, tracked keywords, AI visibility prompts or monthly credits. They do not replace the plan. White-label reports are included on Agency and can be added to another plan. Credit packs are a separate, one-time top-up for a busy month.",
+      "Ναι, για χωρητικότητα και για αναφορές white-label. Η τιμή του πακέτου περιλαμβάνει όλες τις λειτουργίες του επιπέδου του. Τα πρόσθετα προσθέτουν ιστότοπο, λέξεις-κλειδιά σε παρακολούθηση, prompts ορατότητας στην AI ή μηνιαίες μονάδες. Δεν αντικαθιστούν το πακέτο. Οι αναφορές white-label περιλαμβάνονται στο Agency και μπορείτε να τις προσθέσετε και σε άλλο πακέτο. Τα πακέτα μονάδων είναι ξεχωριστή, εφάπαξ ενίσχυση για έναν φορτωμένο μήνα.",
     ),
   },
   {
@@ -148,8 +148,8 @@ export const PRICING_FAQ: ReadonlyArray<GscFaqItem> = [
   {
     q: c("Is this the same as your agency SEO packages?", "Είναι το ίδιο με τα πακέτα SEO της εταιρείας σας;"),
     a: c(
-      "No. These are software plans: you use AnotherSEOGuru App and do the work yourself. Our agency packages are a separate service where our team does the SEO for you, priced on the main pricing page.",
-      "Όχι. Αυτά είναι πακέτα λογισμικού: χρησιμοποιείτε το AnotherSEOGuru App και κάνετε τη δουλειά μόνοι σας. Τα πακέτα της εταιρείας μας είναι ξεχωριστή υπηρεσία όπου η ομάδα μας αναλαμβάνει το SEO για εσάς, με τιμές στη βασική σελίδα τιμών.",
+      "No. These are software plans: you use AnotherSEOGuru App and do the work yourself. Our agency packages are a separate service, where our team does the SEO for you. Their prices are on the agency services page, not on these software plans.",
+      "Όχι. Αυτά είναι πακέτα λογισμικού: χρησιμοποιείτε το AnotherSEOGuru App και κάνετε τη δουλειά μόνοι σας. Τα πακέτα της εταιρείας είναι ξεχωριστή υπηρεσία, όπου η ομάδα μας αναλαμβάνει το SEO για εσάς. Οι τιμές τους είναι στη σελίδα υπηρεσιών, όχι σε αυτά τα πακέτα λογισμικού.",
     ),
     link: { kind: "site", path: "/ypiresies/times", label: c("Agency SEO packages", "Πακέτα SEO της εταιρείας") },
   },

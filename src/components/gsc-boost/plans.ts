@@ -120,15 +120,57 @@ export const LOWEST_MONTHLY = Math.min(...PLANS.map((p) => p.monthly));
 export const HIGHEST_MONTHLY = Math.max(...PLANS.map((p) => p.monthly));
 
 /**
+ * Comparison groups for the pricing page. Every public feature row is placed
+ * in one of these groups. A feature that is not listed falls through to
+ * "other" and still renders, so a new plan bullet cannot disappear.
+ */
+export const COMPARISON_GROUPS = [
+  { id: "usage", label: c("Usage", "Χρήση") },
+  { id: "search-console", label: c("Search Console", "Search Console") },
+  { id: "ai-content", label: c("AI and content", "AI και περιεχόμενο") },
+  { id: "competitors", label: c("Competitors and AI visibility", "Ανταγωνιστές και ορατότητα στην AI") },
+  { id: "agency", label: c("Agency", "Agency") },
+  { id: "support", label: c("Support", "Υποστήριξη") },
+] as const;
+
+export type ComparisonGroupId = (typeof COMPARISON_GROUPS)[number]["id"] | "other";
+
+const FEATURE_GROUP: Readonly<Record<string, ComparisonGroupId>> = {
+  "100 tracked keywords and alerts": "usage",
+  "Every fix the engine finds, with click impact": "search-console",
+  "Unlimited tasks with measured results": "search-console",
+  "GA4, widgets and the iPhone app": "search-console",
+  "Weekly site audits up to 5,000 pages": "search-console",
+  "Content briefs, writer, optimizer and revamp": "ai-content",
+  "Autopilot fixes on WordPress and GitHub": "ai-content",
+  "10 AI visibility prompts": "competitors",
+  "AI visibility in ChatGPT, Gemini, Perplexity and AI Overviews": "competitors",
+  "Competitors, keyword gap, backlinks and local grid": "competitors",
+  "White-label client reports": "agency",
+  "Site audits up to 20,000 pages per site": "agency",
+  "Onboarding call and priority support": "support",
+};
+
+export interface ComparisonRow {
+  readonly feature: Copy;
+  readonly included: ReadonlyArray<boolean>;
+  readonly group: ComparisonGroupId;
+}
+
+/**
  * Feature rows for the comparison table, derived from PLANS so it can never
  * drift: each plan includes its own features plus everything below it.
  */
-export function comparisonRows(): ReadonlyArray<{ feature: Copy; included: ReadonlyArray<boolean> }> {
-  const rows: Array<{ feature: Copy; included: boolean[] }> = [];
+export function comparisonRows(): ReadonlyArray<ComparisonRow> {
+  const rows: ComparisonRow[] = [];
   PLANS.forEach((plan, planIndex) => {
     for (const feature of plan.features) {
       if (/^everything in/i.test(feature.en)) continue;
-      rows.push({ feature, included: PLANS.map((_, i) => i >= planIndex) });
+      rows.push({
+        feature,
+        included: PLANS.map((_, i) => i >= planIndex),
+        group: FEATURE_GROUP[feature.en] ?? "other",
+      });
     }
   });
   return rows;

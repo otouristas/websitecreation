@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/cn";
 import type { SiteLocale } from "@/lib/i18n/locale";
@@ -23,7 +23,7 @@ const T = {
   seats: { en: "Seats", el: "Χρήστες" },
 } as const;
 
-function priceParts(plan: Plan, cycle: BillingCycle, l: SiteLocale) {
+function priceParts(plan: Plan, cycle: BillingCycle, l: SiteLocale, emphasizeYearlyGift: boolean) {
   if (cycle === "monthly") {
     return {
       amount: formatUsd(l, plan.monthly),
@@ -36,13 +36,14 @@ function priceParts(plan: Plan, cycle: BillingCycle, l: SiteLocale) {
   }
   const perMonth = formatUsd(l, plan.yearly / 12, 2);
   const savings = formatUsd(l, yearlySavings(plan));
+  const gift = emphasizeYearlyGift ? (l === "el" ? " · 2 μήνες δώρο" : " · 2 months free") : "";
   return {
     amount: formatUsd(l, plan.yearly),
     unit: T.perYear[l],
     note:
       l === "el"
-        ? `${perMonth} τον μήνα, με ετήσια χρέωση · εξοικονομείτε ${savings}`
-        : `${perMonth} a month, billed yearly · save ${savings}`,
+        ? `${perMonth} τον μήνα, με ετήσια χρέωση${gift} · εξοικονομείτε ${savings}`
+        : `${perMonth} a month, billed yearly${gift} · save ${savings}`,
   };
 }
 
@@ -51,11 +52,13 @@ export function BillingToggle({
   onChange,
   locale,
   className,
+  yearlyBadge,
 }: {
   readonly cycle: BillingCycle;
   readonly onChange: (c: BillingCycle) => void;
   readonly locale: SiteLocale;
   readonly className?: string;
+  readonly yearlyBadge?: Copy;
 }) {
   return (
     <div
@@ -85,7 +88,7 @@ export function BillingToggle({
                   active ? "bg-background/15 text-background" : "bg-success/15 text-success",
                 )}
               >
-                {T.free2[locale]}
+                {yearlyBadge?.[locale] ?? T.free2[locale]}
               </span>
             ) : null}
           </button>
@@ -101,14 +104,16 @@ function PlanCard({
   locale,
   source,
   badgeLabel,
+  emphasizeYearlyGift,
 }: {
   readonly plan: Plan;
   readonly cycle: BillingCycle;
   readonly locale: SiteLocale;
   readonly source: string;
   readonly badgeLabel: string;
+  readonly emphasizeYearlyGift: boolean;
 }) {
-  const price = priceParts(plan, cycle, locale);
+  const price = priceParts(plan, cycle, locale, emphasizeYearlyGift);
   const featured = Boolean(plan.highlight);
   const href = appLink("/signup", locale, `${source}-${plan.id.toLowerCase()}`, { plan: plan.id, cycle });
   return (
@@ -116,12 +121,19 @@ function PlanCard({
       className={cn(
         "relative flex flex-col rounded-2xl border p-6 sm:p-7",
         featured
-          ? "border-primary bg-accent ring-1 ring-primary/20"
+          ? emphasizeYearlyGift
+            ? "border-primary bg-accent shadow-[0_24px_60px_-32px_color-mix(in_oklab,var(--primary)_75%,transparent)] ring-2 ring-primary/25"
+            : "border-primary bg-accent ring-1 ring-primary/20"
           : "border-hairline bg-surface/60",
       )}
     >
       {featured ? (
-        <span className="absolute -top-3 left-6 inline-flex items-center rounded-full bg-accent px-2.5 py-0.5 text-[12px] font-semibold text-accent-foreground">
+        <span
+          className={cn(
+            "absolute -top-3 left-6 inline-flex items-center rounded-full px-2.5 py-0.5 text-[12px] font-semibold",
+            emphasizeYearlyGift ? "bg-primary text-primary-foreground" : "bg-accent text-accent-foreground",
+          )}
+        >
           {badgeLabel}
         </span>
       ) : null}
@@ -137,7 +149,7 @@ function PlanCard({
         <span className="font-display text-[44px] font-semibold leading-none tracking-[-0.04em] text-foreground tabular-nums">{price.amount}</span>
         <span className="text-[14px] text-muted-foreground">{price.unit}</span>
       </div>
-      <p className="mt-2 min-h-[20px] text-[13px] text-muted-foreground">{price.note}</p>
+      <p className={cn("mt-2 text-[13px] leading-snug text-muted-foreground", emphasizeYearlyGift ? "min-h-10" : "min-h-[20px]")}>{price.note}</p>
       <a href={href} className={cn("mt-6 w-full", featured ? cn(kitSoftwareBtn, "pl-5") : kitSecondaryBtn)}>
         {locale === "el" ? `Ξεκινήστε με το ${plan.id}` : `Start with ${plan.id}`}
         <ArrowRight className="size-4" />
@@ -171,25 +183,47 @@ export function PlanPicker({
   source,
   className,
   badge,
+  beforeCards,
+  afterCards,
+  yearlyBadge,
+  emphasizeYearlyGift = false,
 }: {
   readonly locale: SiteLocale;
   readonly source: string;
   readonly className?: string;
   /** Replaces the default "Recommended" label. The highlighted plan is still Pro. */
   readonly badge?: Copy;
+  /** Rendered between the billing switch and the paid cards. Pricing uses the free offer. */
+  readonly beforeCards?: ReactNode;
+  /** Rendered under the paid cards. Pricing uses the link to agency services. */
+  readonly afterCards?: ReactNode;
+  /** Replaces the "2 months free" badge on the yearly control. */
+  readonly yearlyBadge?: Copy;
+  /** States the two free months on the yearly price, and strengthens the Pro card. */
+  readonly emphasizeYearlyGift?: boolean;
 }) {
   const [cycle, setCycle] = useState<BillingCycle>("monthly");
   const badgeLabel = badge?.[locale] ?? T.recommended[locale];
   return (
     <div className={className}>
       <div className="flex justify-center">
-        <BillingToggle cycle={cycle} onChange={setCycle} locale={locale} />
+        <BillingToggle cycle={cycle} onChange={setCycle} locale={locale} yearlyBadge={yearlyBadge} />
       </div>
-      <div className="mt-10 grid gap-5 lg:grid-cols-3 lg:items-start">
+      {beforeCards ? <div className="mt-8">{beforeCards}</div> : null}
+      <div className={cn("grid gap-5 lg:grid-cols-3 lg:items-start", beforeCards ? "mt-5" : "mt-10")}>
         {PLANS.map((plan) => (
-          <PlanCard key={plan.id} plan={plan} cycle={cycle} locale={locale} source={source} badgeLabel={badgeLabel} />
+          <PlanCard
+            key={plan.id}
+            plan={plan}
+            cycle={cycle}
+            locale={locale}
+            source={source}
+            badgeLabel={badgeLabel}
+            emphasizeYearlyGift={emphasizeYearlyGift}
+          />
         ))}
       </div>
+      {afterCards ? <div className="mt-8">{afterCards}</div> : null}
     </div>
   );
 }

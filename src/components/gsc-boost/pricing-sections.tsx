@@ -1,8 +1,12 @@
-import { Check, Download, LineChart, LockKeyhole, MessageSquare, Minus, RotateCcw, Sparkles, type LucideIcon } from "lucide-react";
+import { Fragment } from "react";
+import { ArrowRight, Check, Download, LineChart, LockKeyhole, MessageSquare, Minus, RotateCcw, Sparkles, type LucideIcon } from "lucide-react";
+import Link from "next/link";
+import { BrandMark } from "@/components/BrandLogo";
+import { kitSecondaryBtn } from "@/components/kit/sections";
 import { cn } from "@/lib/cn";
-import type { SiteLocale } from "@/lib/i18n/locale";
+import { localizedPath, type SiteLocale } from "@/lib/i18n/locale";
 import { appLink, formatCredits, formatNumber, formatUsd, type Copy } from "./copy";
-import { ADDONS, comparisonRows, CREDIT_COSTS, CREDIT_EXAMPLES, CREDIT_PACKS, PLANS } from "./plans";
+import { ADDONS, COMPARISON_GROUPS, comparisonRows, CREDIT_COSTS, CREDIT_EXAMPLES, CREDIT_PACKS, FREE_PLAN, PLANS, TRIAL, type ComparisonRow } from "./plans";
 
 type L = SiteLocale;
 
@@ -60,11 +64,33 @@ export function ComparisonTable({ locale, source }: { readonly locale: L; readon
     [isEl ? "Ιστότοποι" : "Sites", (p) => String(p.sites)],
     [isEl ? "Θέσεις χρηστών" : "Team seats", (p) => String(p.seats)],
   ];
+  const rows = comparisonRows();
   const group = (label: string) => (
     <tr>
-      <th colSpan={4} scope="colgroup" className="bg-foreground/5 px-4 py-2.5 text-left font-mono text-[11px] font-medium uppercase tracking-[0.08em] text-muted-foreground">
+      <th
+        colSpan={4}
+        scope="colgroup"
+        className="border-t border-hairline bg-[color-mix(in_oklab,var(--brand)_8%,var(--surface))] px-4 py-3 text-left text-[13px] font-semibold tracking-[-0.01em] text-foreground"
+      >
         <span className="sticky left-4">{label}</span>
       </th>
+    </tr>
+  );
+  const featureRow = (row: ComparisonRow) => (
+    <tr key={row.feature.en} className="border-t border-hairline">
+      <th scope="row" className={cn(stickyCell, "py-3 font-normal text-foreground")}>
+        {row.feature[locale]}
+        {/^(Search Console|Opportunity engine)/.test(row.feature.en) ? (
+          <span className="ml-2 whitespace-nowrap rounded-full bg-success/15 px-1.5 py-px text-[11px] font-medium text-success">
+            {isEl ? "0 μονάδες" : "0 credits"}
+          </span>
+        ) : null}
+      </th>
+      {row.included.map((inc, i) => (
+        <td key={PLANS[i].id} className={cn("px-4 py-3", PLANS[i].highlight && "bg-accent")}>
+          <Included included={inc} locale={locale} />
+        </td>
+      ))}
     </tr>
   );
   return (
@@ -104,37 +130,32 @@ export function ComparisonTable({ locale, source }: { readonly locale: L; readon
           </tr>
         </thead>
         <tbody>
-          {group(isEl ? "Χρήση" : "Usage")}
-          {usage.map(([label, value]) => (
-            <tr key={label} className="border-t border-hairline">
-              <th scope="row" className={cn(stickyCell, "py-3 font-normal text-foreground")}>
-                {label}
-              </th>
-              {PLANS.map((p) => (
-                <td key={p.id} className={cn("px-4 py-3 font-medium tabular-nums text-foreground", p.highlight && "bg-accent")}>
-                  {value(p)}
-                </td>
-              ))}
-            </tr>
-          ))}
-          {group(isEl ? "Δυνατότητες" : "Features")}
-          {comparisonRows().map((r) => (
-            <tr key={r.feature.en} className="border-t border-hairline">
-              <th scope="row" className={cn(stickyCell, "py-3 font-normal text-foreground")}>
-                {r.feature[locale]}
-                {/^(Search Console|Opportunity engine)/.test(r.feature.en) ? (
-                  <span className="ml-2 whitespace-nowrap rounded-full bg-success/15 px-1.5 py-px text-[11px] font-medium text-success">
-                    {isEl ? "0 μονάδες" : "0 credits"}
-                  </span>
-                ) : null}
-              </th>
-              {r.included.map((inc, i) => (
-                <td key={PLANS[i].id} className={cn("px-4 py-3", PLANS[i].highlight && "bg-accent")}>
-                  <Included included={inc} locale={locale} />
-                </td>
-              ))}
-            </tr>
-          ))}
+          {COMPARISON_GROUPS.map((groupMeta) => {
+            const featureRows = rows.filter((row) => row.group === groupMeta.id);
+            if (groupMeta.id !== "usage" && featureRows.length === 0) return null;
+            return (
+              <Fragment key={groupMeta.id}>
+                {group(groupMeta.label[locale])}
+                {groupMeta.id === "usage"
+                  ? usage.map(([label, value]) => (
+                      <tr key={label} className="border-t border-hairline">
+                        <th scope="row" className={cn(stickyCell, "py-3 font-normal text-foreground")}>
+                          {label}
+                        </th>
+                        {PLANS.map((p) => (
+                          <td key={p.id} className={cn("px-4 py-3 font-medium tabular-nums text-foreground", p.highlight && "bg-accent")}>
+                            {value(p)}
+                          </td>
+                        ))}
+                      </tr>
+                    ))
+                  : null}
+                {featureRows.map(featureRow)}
+              </Fragment>
+            );
+          })}
+          {rows.some((row) => row.group === "other") ? group(isEl ? "Δυνατότητες" : "Features") : null}
+          {rows.filter((row) => row.group === "other").map(featureRow)}
         </tbody>
       </table>
     </div>
@@ -236,6 +257,53 @@ export function CreditPacks({ locale, source }: { readonly locale: L; readonly s
         </a>
       </p>
     </div>
+  );
+}
+
+/**
+ * Free stays a compact offer above the paid cards. Only the credit allowance
+ * is stated here: site and seat limits for Free are in the catalog, but they
+ * are not on the public pricing page and are not confirmed for this update.
+ */
+export function FreePlanCard({ locale }: { readonly locale: L }) {
+  const isEl = locale === "el";
+  return (
+    <div className="flex flex-col gap-4 rounded-2xl border border-hairline bg-surface/70 p-5 sm:flex-row sm:items-center sm:justify-between sm:gap-8 sm:p-6">
+      <div className="flex min-w-0 items-start gap-4 text-left">
+        <BrandMark className="mt-0.5 h-11 w-auto shrink-0" />
+        <div className="min-w-0">
+          <h3 className="font-display text-[18px] font-semibold tracking-[-0.02em] text-foreground">
+            Free · {formatUsd(locale, 0)} {isEl ? "για πάντα" : "forever"}
+          </h3>
+          <p className="mt-1 text-pretty text-[14.5px] leading-relaxed text-muted-foreground">
+            {isEl
+              ? `${formatNumber(locale, FREE_PLAN.credits)} μονάδες τον μήνα, χωρίς κάρτα. Μπορείτε επίσης να δοκιμάσετε το Pro δωρεάν για ${TRIAL.days} ημέρες.`
+              : `${formatNumber(locale, FREE_PLAN.credits)} credits a month, no card. You can also try Pro free for ${TRIAL.days} days.`}
+          </p>
+        </div>
+      </div>
+      <a href={appLink("/signup", locale, "pricing-free")} className={cn(kitSecondaryBtn, "w-full shrink-0 sm:w-auto")}>
+        {isEl ? "Ξεκινήστε δωρεάν" : "Start free"}
+        <ArrowRight className="size-4" />
+      </a>
+    </div>
+  );
+}
+
+/** Keeps the software ladder separate from managed SEO, without quoting agency prices. */
+export function AppVersusAgencyNote({ locale }: { readonly locale: L }) {
+  const isEl = locale === "el";
+  return (
+    <p className="text-pretty text-center text-[14.5px] leading-relaxed text-muted-foreground">
+      {isEl ? "Θέλετε να κάνει τη δουλειά η ομάδα μας; " : "Want our team to do the work? "}
+      <Link
+        href={localizedPath(locale, "/ypiresies/times")}
+        className="font-medium text-foreground underline decoration-hairline underline-offset-4 hover:decoration-foreground"
+      >
+        {isEl ? "Δείτε τα πακέτα υπηρεσιών SEO" : "See the SEO service packages"}
+      </Link>
+      {isEl ? " (ξεχωριστά από το App)." : " (separate from the App)."}
+    </p>
   );
 }
 

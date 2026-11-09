@@ -1,24 +1,24 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Check } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { BrandMark } from "@/components/BrandLogo";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
 import { Accent, Container, CtaBand, HeroCentered, KitEyebrow, KitHeading, KitSection, SoftwareCtas, TrustLine, softwareTrust } from "@/components/kit";
 import {
   AddonList,
   AgencyCrossSell,
-  FREE_PLAN,
+  AppVersusAgencyNote,
   ComparisonTable,
   CreditCapacity,
   CreditPacks,
+  FreePlanCard,
   GscFaq,
   IncludedGrid,
   PLANS,
   PRICING_FAQ,
   PlanPicker,
   PlatformLinks,
-  TRIAL,
   appLink,
   formatUsd,
   gscBoostSoftwareSchema,
@@ -70,10 +70,16 @@ export default async function PlatformPricingPage({ params }: PageProps) {
       <Header locale={locale} />
       <main className="blueprint-grid relative z-0">
         <HeroCentered
-          pill={<KitEyebrow>{tx("AnotherSEOGuru App · Pricing", "AnotherSEOGuru App · Τιμές")}</KitEyebrow>}
+          titleClassName="max-w-full sm:max-w-4xl sm:text-[52px] lg:text-[60px]"
+          pill={
+            <span className="inline-flex items-center gap-3">
+              <BrandMark className="h-11 w-auto" />
+              <KitEyebrow>{tx("AnotherSEOGuru App · Pricing", "AnotherSEOGuru App · Τιμές")}</KitEyebrow>
+            </span>
+          }
           title={
             <>
-              {tx("Simple plans. Credits only for the", "Απλά πακέτα. Μονάδες μόνο για τη")} <Accent>{tx("heavy lifting", "βαριά δουλειά")}</Accent>.
+              {tx("Simple", "Απλά")} <Accent>{tx("plans", "πακέτα")}</Accent> {tx("for AnotherSEOGuru App", "για το AnotherSEOGuru App")}
             </>
           }
           lead={tx(
@@ -84,16 +90,15 @@ export default async function PlatformPricingPage({ params }: PageProps) {
           trust={<TrustLine items={softwareTrust(locale)} />}
         >
           <Container className="mt-14">
-            <p className="mb-7 flex items-center justify-center gap-2 text-[14px] font-medium text-foreground">
-              <span className="flex size-5 items-center justify-center rounded-full bg-brand/15 text-brand">
-                <Check className="size-3" strokeWidth={3} aria-hidden />
-              </span>
-              {tx(
-                `Free forever with ${FREE_PLAN.credits} credits a month, or try Pro free for ${TRIAL.days} days. No card.`,
-                `Δωρεάν για πάντα με ${FREE_PLAN.credits} μονάδες τον μήνα, ή δοκιμάστε το Pro δωρεάν για ${TRIAL.days} ημέρες. Χωρίς κάρτα.`,
-              )}
-            </p>
-            <PlanPicker locale={locale} source="pricing-plans" className="mx-auto max-w-[1100px]" />
+            <PlanPicker
+              locale={locale}
+              source="pricing-plans"
+              className="mx-auto max-w-[1100px]"
+              beforeCards={<FreePlanCard locale={locale} />}
+              afterCards={<AppVersusAgencyNote locale={locale} />}
+              yearlyBadge={{ en: "2 months free", el: "2 μήνες δώρο" }}
+              emphasizeYearlyGift
+            />
             <p className="mt-8 text-center text-[13px] text-muted-foreground">
               {tx("Prices in US dollars. Taxes may apply. Not ready to pay?", "Τιμές σε δολάρια ΗΠΑ. Ενδέχεται να ισχύουν φόροι. Δεν είστε έτοιμοι να πληρώσετε;")}{" "}
               <a
@@ -114,8 +119,8 @@ export default async function PlatformPricingPage({ params }: PageProps) {
             </h2>
             <p className="mx-auto mt-2 max-w-xl text-pretty text-center text-[14.5px] leading-relaxed text-muted-foreground">
               {tx(
-                "A plan’s price covers every feature listed for it. Add-ons only add capacity, never features. Every plan includes:",
-                "Η τιμή κάθε πακέτου καλύπτει όλες τις λειτουργίες που αναφέρει. Τα add-ons προσθέτουν μόνο χωρητικότητα, ποτέ λειτουργίες. Κάθε πακέτο περιλαμβάνει:",
+                "A plan’s price covers the features listed for it. Add-ons raise capacity: sites, keywords, prompts and credits. White-label reports are included on Agency and can be added to another plan. Every plan includes:",
+                "Η τιμή κάθε πακέτου καλύπτει τις λειτουργίες που αναφέρει. Τα πρόσθετα αυξάνουν τη χωρητικότητα: ιστοτόπους, λέξεις-κλειδιά, prompts και μονάδες. Οι αναφορές white-label περιλαμβάνονται στο Agency και μπορείτε να τις προσθέσετε και σε άλλο πακέτο. Κάθε πακέτο περιλαμβάνει:",
               )}
             </p>
             <IncludedGrid locale={locale} />
@@ -129,7 +134,10 @@ export default async function PlatformPricingPage({ params }: PageProps) {
                 {tx("Compare", "Σύγκριση")} <Accent>{tx("every", "όλων")}</Accent> {tx("feature", "των λειτουργιών")}
               </>
             }
-            description={tx("Higher plans include everything in the plans before them.", "Τα ανώτερα πακέτα περιλαμβάνουν όλα όσα έχουν τα προηγούμενα.")}
+            description={tx(
+              "Higher plans include everything in the plans before them. Features are split into groups, so you can see what changes at each tier.",
+              "Τα ανώτερα πακέτα περιλαμβάνουν όλα όσα έχουν τα προηγούμενα. Οι λειτουργίες είναι χωρισμένες σε ομάδες, ώστε να βλέπετε τι αλλάζει σε κάθε επίπεδο.",
+            )}
           />
           <div className="reveal mt-10">
             <p className="mb-3 text-[12px] text-muted-foreground sm:hidden">
@@ -167,11 +175,11 @@ export default async function PlatformPricingPage({ params }: PageProps) {
             </div>
           </div>
           <div className="mt-14">
-            <h3 className="font-display text-[20px] font-semibold tracking-[-0.02em] text-foreground">Add-ons</h3>
+            <h3 className="font-display text-[20px] font-semibold tracking-[-0.02em] text-foreground">{tx("Add-ons", "Πρόσθετα")}</h3>
             <p className="mt-1 text-[14.5px] text-muted-foreground">
               {tx(
-                "Need more room on a paid plan? Add sites, seats, keywords, prompts or monthly credits. Yearly add-ons get two months free.",
-                "Χρειάζεστε περισσότερο χώρο σε ένα πληρωμένο πακέτο; Προσθέστε ιστοτόπους, χρήστες, λέξεις-κλειδιά, prompts ή μηνιαίες μονάδες. Τα ετήσια add-ons έχουν δύο μήνες δώρο.",
+                "Need more room on a paid plan? Add a site, tracked keywords, AI visibility prompts, monthly credits or white-label reports. Yearly add-ons include two months free.",
+                "Χρειάζεστε περισσότερο χώρο σε ένα πληρωμένο πακέτο; Προσθέστε ιστότοπο, λέξεις-κλειδιά σε παρακολούθηση, prompts ορατότητας στην AI, μηνιαίες μονάδες ή αναφορές white-label. Τα ετήσια πρόσθετα έχουν δύο μήνες δώρο.",
               )}
             </p>
             <div className="reveal mt-6">

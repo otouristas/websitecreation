@@ -117,6 +117,7 @@ export function HeroCentered({
   children,
   belowHeader = true,
   className,
+  titleClassName,
 }: {
   readonly pill?: ReactNode;
   readonly title: ReactNode;
@@ -126,13 +127,20 @@ export function HeroCentered({
   readonly children?: ReactNode;
   readonly belowHeader?: boolean;
   readonly className?: string;
+  /** Extra heading classes for a longer title. Defaults stay unchanged. */
+  readonly titleClassName?: string;
 }) {
   return (
     <section className={cn("relative isolate overflow-hidden", belowHeader && "hero-below-header", className)}>
       <HeroBackdrop />
       <Container className="pt-6 text-center sm:pt-10">
         {pill ? <div className="rise-in">{pill}</div> : null}
-        <h1 className="rise-in mx-auto mt-6 max-w-[16ch] text-balance break-words font-display text-[clamp(2.125rem,10vw,2.5rem)] font-semibold leading-[1.03] tracking-[-0.045em] text-foreground [animation-delay:60ms] sm:max-w-4xl sm:text-[60px] lg:text-[72px]">
+        <h1
+          className={cn(
+            "rise-in mx-auto mt-6 max-w-[16ch] text-balance break-words font-display text-[clamp(2.125rem,10vw,2.5rem)] font-semibold leading-[1.03] tracking-[-0.045em] text-foreground [animation-delay:60ms] sm:max-w-4xl sm:text-[60px] lg:text-[72px]",
+            titleClassName,
+          )}
+        >
           {title}
         </h1>
         {lead ? (
