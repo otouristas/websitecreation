@@ -2,7 +2,7 @@
 
 Approved commercial basis in this chat: Website Starter **€599 total including 24% VAT** and SEO Foundations **€149 per month total including 24% VAT throughout the minimum six-month engagement**, for new projects confirmed during November 2026, through 30 November. The six-month SEO total is €894 including VAT. Other packages, add-ons, software plans and annual website renewal retain their existing prices and VAT basis. No publishing or real enquiry submission has been performed.
 
-The numeric catalogue values remain 999/599 and 199/149; only the two current offers gain an explicit VAT-inclusive basis. `src/data/pricing.ts` owns the calculations, expiry and display amounts. Gross campaign amounts remain authoritative so the €599 total does not drift by one cent when net VAT calculations are rounded.
+The owner corrected the regular NET baselines to **€1,000 for Website Starter** and **€350/month for SEO Foundations**, superseding the earlier catalogue values. Their regular gross totals are **€1,240** and **€434/month**. The current offers remain **€599** and **€149/month including VAT**. Every campaign surface explicitly shows the before and after with the VAT basis. `src/data/pricing.ts` owns the calculations, expiry and display amounts. Gross campaign amounts remain authoritative so the €599 total does not drift by one cent when net VAT calculations are rounded.
 
 ## Main campaign copy
 
@@ -10,8 +10,8 @@ The numeric catalogue values remain 999/599 and 199/149; only the two current of
 
 Η ιστοσελίδα που έχετε στο μυαλό σας. Το SEO που θέλετε να ξεκινήσετε. Αυτόν τον Νοέμβριο, δώστε στα σχέδιά σας μια πραγματική αρχή, με την αναγραφόμενη τιμή να είναι και η τελική.
 
-**Website Starter: €599 τελική τιμή με ΦΠΑ 24%.**
-**SEO Foundations: €149 τελική τιμή τον μήνα με ΦΠΑ 24%, σε όλη την εξάμηνη συνεργασία.**
+**Website Starter: πριν €1.000 + ΦΠΑ 24% (€1.240 με ΦΠΑ), τώρα €599 τελική με ΦΠΑ 24%.**
+**SEO Foundations: πριν €350/μήνα + ΦΠΑ 24% (€434/μήνα με ΦΠΑ), τώρα €149 τελική/μήνα με ΦΠΑ 24%, σε όλη την εξάμηνη συνεργασία.**
 
 Για νέα έργα που θα επιβεβαιωθούν έως 30 Νοεμβρίου 2026. Δείτε παροχές και όρους και ζητήστε τη δική σας πρόταση.
 
@@ -26,10 +26,10 @@ Destination: https://anotherseoguru.com/el/ypiresies/times
 
 Αυτόν τον Νοέμβριο, βάλτε τα μπροστά:
 
-**Website Starter: €599 τελική τιμή, με ΦΠΑ 24%.**
+**Website Starter: πριν €1.000 + ΦΠΑ 24% (€1.240 με ΦΠΑ), τώρα €599 τελική με ΦΠΑ 24%.**
 Νέα ιστοσελίδα για κινητό, προφίλ στον χάρτη της Google και τεχνικά θεμέλια SEO, με Analytics και Search Console. Μετά τον πρώτο χρόνο: €130 + ΦΠΑ 24% ετησίως, τελική τιμή €161,20.
 
-**SEO Foundations: €149 τελική τιμή τον μήνα, με ΦΠΑ 24%.**
+**SEO Foundations: πριν €350/μήνα + ΦΠΑ 24% (€434/μήνα με ΦΠΑ), τώρα €149 τελική/μήνα με ΦΠΑ 24%.**
 Ο ΦΠΑ περιλαμβάνεται και στους έξι μήνες της ελάχιστης συνεργασίας. Συνολική τελική τιμή εξαμήνου €894. Έλεγχοι παρουσίας, διορθώσεις και μηνιαία αναφορά, με τις παροχές του πακέτου.
 
 Θέλετε e-shop, περιεχόμενο, ανανέωση ή εταιρική ταυτότητα; Ετοιμάζουμε εξατομικευμένη πρόταση για το έργο σας.
@@ -46,8 +46,8 @@ https://anotherseoguru.com/el/ypiresies/times
 
 Η επόμενη κίνηση της επιχείρησής σας μπορεί να ξεκινήσει αυτόν τον Νοέμβριο.
 
-Website Starter: **€599 τελική τιμή με ΦΠΑ 24%.**
-SEO Foundations: **€149 τελική/μήνα με ΦΠΑ 24%, σε όλη την εξάμηνη συνεργασία.**
+Website Starter: **πριν €1.000 + ΦΠΑ 24% (€1.240 με ΦΠΑ), τώρα €599 τελική με ΦΠΑ 24%.**
+SEO Foundations: **πριν €350/μήνα + ΦΠΑ 24% (€434/μήνα με ΦΠΑ), τώρα €149 τελική/μήνα με ΦΠΑ 24%, σε όλη την εξάμηνη συνεργασία.**
 
 Για μια νέα ιστοσελίδα. Για την αρχή της δουλειάς σας στο SEO. Για όσα θέλετε να εξελίξετε στην ψηφιακή παρουσία σας.
 
@@ -60,15 +60,15 @@ SEO: ελάχιστη διάρκεια 6 μήνες, συνολική τελικ
 
 ## X posts
 
-Black Month: ίδια τιμή, δώρο και ο ΦΠΑ. Website Starter €599 τελική με ΦΠΑ 24%. Για νέα έργα έως 30/11/2026. Παροχές και όροι: https://anotherseoguru.com/el/ypiresies/times
+Black Month: Website Starter πριν €1.000 + ΦΠΑ 24% (€1.240 με ΦΠΑ), τώρα €599 τελική με ΦΠΑ 24%. Για νέα έργα έως 30/11/2026. Παροχές και όροι: https://anotherseoguru.com/el/ypiresies/times
 
-SEO Foundations €149 τελική/μήνα με ΦΠΑ 24%, σε όλη την εξάμηνη συνεργασία (€894 σύνολο). Black Month για νέες συνεργασίες που επιβεβαιώνονται έως 30/11/2026. https://anotherseoguru.com/el/ypiresies/times
+SEO Foundations: πριν €350/μήνα + ΦΠΑ 24% (€434 με ΦΠΑ), τώρα €149 τελική/μήνα με ΦΠΑ σε όλη την εξάμηνη συνεργασία (€894 σύνολο). Νέες συνεργασίες έως 30/11/2026. https://anotherseoguru.com/el/ypiresies/times
 
 ## Short banner variants
 
 - **Ίδια τιμή. Δώρο και ο ΦΠΑ.**
 - **BLACK MONTH. Η αναγραφόμενη τιμή είναι και η τελική.**
-- **Ιστοσελίδα €599. SEO €149/μήνα. Με ΦΠΑ.** Pair with the six-month and deadline qualifier.
+- **Ιστοσελίδα: πριν €1.000 + ΦΠΑ, τώρα €599 με ΦΠΑ. SEO: πριν €350 + ΦΠΑ/μήνα, τώρα €149 με ΦΠΑ/μήνα.** Pair with the six-month and deadline qualifier.
 
 ## Article and visuals
 
@@ -84,6 +84,6 @@ The popup appears only on agency pages, after consent and once per session. Quot
 
 The campaign is prepared on `codex/black-month-pricing`, independently of the rejected earlier full-site concept. No production deployment or app/TestFlight update was performed. Permanent brand tokens, typography and the global theme/layout remain unchanged.
 
-Validation: optimized Next.js build (2,091 generated pages), TypeScript, targeted ESLint, 92 blog posts validated with zero failures/warnings, blog SEO checks and Greek glossary. Shared financial policy checks cover both November date boundaries, exact VAT-inclusive totals, the six-month SEO total, unchanged other fees, navigation, authored price tokens and estimates; the existing audit suite passes 84/84. Chromium and WebKit tests cover popup geometry at 320/390px, short landscape and desktop, sticky close control, focus containment, Escape/scroll/style restoration, one display per session and the quote/product exclusions. Axe found zero popup WCAG A/AA violations. Production-mode local smoke checks verified the two campaign prices and their VAT-inclusive schema flags and the new article. No real enquiries or payments were submitted.
+Validation: optimized Next.js build (2,091 generated pages), TypeScript, targeted ESLint, 92 blog posts validated with zero failures/warnings, blog SEO checks and Greek glossary. Shared financial policy checks cover both November date boundaries, exact VAT-inclusive totals, the six-month SEO total, corrected regular baselines and unchanged other fees, navigation, authored price tokens and estimates; the existing audit suite passes 84/84. Chromium and WebKit tests cover popup geometry at 320/390px, short landscape and desktop, sticky close control, focus containment, Escape/scroll/style restoration, one display per session and the quote/product exclusions. Axe found zero popup WCAG A/AA violations. Production-mode local smoke checks verified the two campaign prices and their VAT-inclusive schema flags and the new article. No real enquiries or payments were submitted.
 
 Social visuals were rendered from source prices, the supplied SVG logo and the existing Inter font over built-in imagegen artwork. Re-export with `npx tsx scripts/export-black-month-assets.mts` while the campaign is active. Generated HTML previews are noindex.

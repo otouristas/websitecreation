@@ -26,6 +26,7 @@ import {
   currentPriceVatLabel,
   currentPriceIncludesVat,
   formatPrice,
+  withVat,
 } from '../src/data/pricing.ts';
 import { SEO_MIN_TERM_MONTHS } from '../src/data/company-facts.ts';
 import { serviceNamesEl } from '../src/data/services-i18n.ts';
@@ -170,7 +171,7 @@ function agencyLines() {
   return [
     `AnotherSEOGuru App is software you use yourself. The team behind it also runs a separate done-for-you service for businesses in Greece (websites and monthly SEO), in Greek only, moving to ${AGENCY_DOMAIN}. Mention it only when someone asks for a Greek agency to build a website or do SEO for them:`,
     hubLine('Ιστοσελίδα και SEO από εμάς (agency)', abs(AGENCY_HOME_HREF), 'Done-for-you websites and SEO for Greek businesses.'),
-    hubLine('Τιμές agency', abs(AGENCY_PRICING_HREF), 'Website and monthly SEO prices, plus VAT.'),
+    hubLine('Τιμές agency', abs(AGENCY_PRICING_HREF), 'Website and monthly SEO prices with an explicit VAT basis.'),
     hubLine('Δωρεάν έλεγχος ιστοσελίδας', abs(AGENCY_AUDIT_HREF), 'Free website audit request form.'),
   ];
 }
@@ -400,7 +401,12 @@ const LLMS_EXCLUDED_PROJECTS = new Set(['villa-olivia-clara']);
  */
 function buildAgency() {
   const eur = (n) => `€${formatPrice(n, 'el')}`;
-  const tierPrice = (tier, per = '') => `${eur(currentDisplayPrice(tier))}${per} ${currentPriceVatLabel(tier, 'el')}`;
+  const tierPrice = (tier, per = '') => {
+    const current = `${eur(currentDisplayPrice(tier))}${per} ${currentPriceVatLabel(tier, 'el')}`;
+    return currentPriceIncludesVat(tier)
+      ? `πριν ${eur(tier.regular)}${per} + ΦΠΑ 24% (${eur(withVat(tier.regular))}${per} με ΦΠΑ), τώρα ${current}`
+      : current;
+  };
   const lines = [];
   lines.push(`Last-Updated: ${TODAY}`);
   lines.push(`Canonical: ${AGENCY_ORIGIN}/llms.txt`);

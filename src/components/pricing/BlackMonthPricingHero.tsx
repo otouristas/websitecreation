@@ -10,6 +10,7 @@ import {
   OFFER_ENDS,
   seoPackages,
   websitePackages,
+  withVat,
 } from "@/data/pricing";
 import { SEO_MIN_TERM_MONTHS } from "@/data/company-facts";
 import styles from "./BlackMonthPricingHero.module.css";
@@ -100,15 +101,18 @@ export function BlackMonthPricingHero({
                   </div>
                   <h2>{tier.name}</h2>
                   <p className={styles.was}>
-                    από{" "}
+                    Πριν{" "}
                     <del>
                       €{formatPrice(tier.regular, "el")}
                       {per}
                     </del>
                     {' '}+ ΦΠΑ 24%
+                    <br />
+                    (€{formatPrice(withVat(tier.regular), "el")}{per} με ΦΠΑ)
                   </p>
                   <p className={styles.price}>
                     <strong>
+                      <small className={styles.now}>Τώρα</small>
                       €{formatPrice(currentDisplayPrice(tier), "el")}
                     </strong>
                     <span>

@@ -76,6 +76,14 @@
   font-weight: 600;
   letter-spacing: -0.035em;
 }
+.now {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0;
+}
 .lead {
   max-width: 500px;
   margin-top: 18px;

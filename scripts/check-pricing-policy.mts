@@ -6,6 +6,7 @@ import {
 } from '../src/data/pricing';
 import { buildEstimate } from '../src/lib/estimate/model';
 import { getNavModel } from '../src/data/nav-menu';
+import { getPricingPageCopy } from '../src/data/pricing-page-copy';
 
 const beforeGift = new Date(VAT_GIFT_STARTS.getTime() - 1);
 const firstGift = new Date(VAT_GIFT_STARTS);
@@ -15,8 +16,11 @@ const expired = new Date(OFFER_ENDS.getTime() + 1);
 const starter = websitePackages[0];
 const foundations = seoPackages[0];
 
-// Catalog amounts and every unrelated fee remain the approved existing figures.
-assert.deepEqual([starter.regular, starter.offer, foundations.regular, foundations.offer], [999, 599, 199, 149]);
+// Latest owner correction: regular NET baselines are 1,000 and 350/month.
+// The current VAT-inclusive offers and every unrelated fee stay unchanged.
+assert.deepEqual([starter.regular, starter.offer, foundations.regular, foundations.offer], [1000, 599, 350, 149]);
+assert.equal(withVat(starter.regular), 1240);
+assert.equal(withVat(foundations.regular), 434);
 assert.deepEqual(websitePackages.slice(1).map(t => [t.regular, t.offer]), [[2500, 2500], [4000, 4000]]);
 assert.deepEqual(seoPackages.slice(1).map(t => [t.regular, t.offer]), [[900, 900], [1500, 1500]]);
 assert.deepEqual(addOns.map(a => a.from), [180, 180, 450, 750, 250, 600, 350, 1200]);
@@ -48,10 +52,10 @@ for (const date of [firstGift, during, lastGift]) {
 }
 assert.equal(currentPriceIncludesVat(starter, expired), false);
 assert.equal(currentPriceIncludesVat(foundations, expired), false);
-assert.equal(currentPrice(starter, expired), 999);
-assert.equal(currentGrossPrice(starter, expired), 1238.76);
-assert.equal(currentPrice(foundations, expired), 199);
-assert.equal(currentGrossPrice(foundations, expired), 246.76);
+assert.equal(currentPrice(starter, expired), 1000);
+assert.equal(currentGrossPrice(starter, expired), 1240);
+assert.equal(currentPrice(foundations, expired), 350);
+assert.equal(currentGrossPrice(foundations, expired), 434);
 assert.equal(currentPriceVatLabel(starter, 'el', during), 'με ΦΠΑ 24%');
 assert.equal(currentPriceVatLabel(starter, 'el', expired), '+ ΦΠΑ 24%');
 assert.equal(entryWebsiteDisplay(during), 599);
@@ -61,7 +65,7 @@ assert.equal(entrySeoDisplay(during), 149);
 assert.equal(resolvePriceTokens('{{ENTRY_WEBSITE}} + ΦΠΑ', 'el', during), '€483,06 + ΦΠΑ');
 assert.equal(resolvePriceTokens('{{ENTRY_SEO}} + ΦΠΑ', 'el', during), '€120,16 + ΦΠΑ');
 assert.equal(resolvePriceTokens('{{ENTRY_WEBSITE_GROSS}} / {{ENTRY_SEO_GROSS}}', 'el', during), '€599 / €149');
-assert.equal(resolvePriceTokens('{{ENTRY_WEBSITE_GROSS}}', 'el', expired), '€1.238,76');
+assert.equal(resolvePriceTokens('{{ENTRY_WEBSITE_GROSS}}', 'el', expired), '€1.240');
 
 const simple = { pages: 5, languages: 1, features: [], seoTier: 'foundations' as const, contentPagesPerMonth: 0, auditDepth: 'none' as const, maintenance: false };
 const website = buildEstimate({ ...simple, track: 'website' }, during);
@@ -74,12 +78,17 @@ const combined = buildEstimate({ ...simple, track: 'both', features: ['logo'], a
 assert.equal(combined.oneOffGross, 1591); // 599 gross + the unchanged 350/450 net add-ons.
 assert.equal(combined.monthlyGross, 149);
 assert.equal(withVat(combined.minTermNet), 2485);
-assert.equal(buildEstimate({ ...simple, track: 'seo' }, expired).monthlyGross, 246.76);
+assert.equal(buildEstimate({ ...simple, track: 'seo' }, expired).monthlyGross, 434);
 
 const activeNav = JSON.stringify(getNavModel('el', 'agency', during));
 assert.ok(activeNav.includes('€599 με ΦΠΑ 24%'));
 assert.ok(activeNav.includes('€149/μήνα με ΦΠΑ 24%'));
 const expiredNav = JSON.stringify(getNavModel('el', 'agency', expired));
-assert.ok(expiredNav.includes('€999 + ΦΠΑ 24%'));
-assert.ok(expiredNav.includes('€199/μήνα + ΦΠΑ 24%'));
-console.log('Pricing policy passed: November boundaries, exact gross totals, six-month SEO, unchanged fees, net tokens, estimator and nav.');
+assert.ok(expiredNav.includes('€1.000 + ΦΠΑ 24%'));
+assert.ok(expiredNav.includes('€350/μήνα + ΦΠΑ 24%'));
+const activeFaqs = getPricingPageCopy('el', during).faqs;
+assert.ok(activeFaqs[0].answer.includes('πριν €1.000 + ΦΠΑ 24% (€1.240 με ΦΠΑ), τώρα €599'));
+assert.ok(activeFaqs[0].answer.includes('πριν €350/μήνα + ΦΠΑ 24% (€434/μήνα με ΦΠΑ), τώρα €149'));
+assert.ok(activeFaqs.find(f => f.question === 'Περιλαμβάνεται ο ΦΠΑ στις τιμές;')!.answer.includes('σε όλη την εξάμηνη συνεργασία'));
+assert.ok(!getPricingPageCopy('el', expired).faqs.some(f => f.question.includes('Black Month')));
+console.log('Pricing policy passed: corrected regular baselines, November boundaries, exact gross totals, six-month SEO, unchanged other fees, net tokens, estimator and nav.');

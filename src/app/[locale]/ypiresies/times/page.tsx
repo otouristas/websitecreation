@@ -143,28 +143,17 @@ export default async function PricingPage({
         {offerLive ? <BlackMonthPricingHero breadcrumbs={breadcrumbItems} /> : <PageHero
           locale={siteLocale}
           breadcrumbs={breadcrumbItems}
-          pill={
-            offerLive
-              ? { href: "#websites", kind: "save", tag: "-40%", text: tx("November offer: website €599, SEO €149 a month", "Προσφορά Νοεμβρίου: ιστοσελίδα €599, SEO €149 τον μήνα") }
-              : {
-                  href: lp("/get-started#free-audit"),
-                  kind: "free",
-                  tag: tx("Free", "Δωρεάν"),
-                  text: tx("Every engagement starts with an SEO audit", "Κάθε συνεργασία ξεκινά με έλεγχο SEO"),
-                }
-          }
+          pill={{
+            href: lp("/get-started#free-audit"),
+            kind: "free",
+            tag: tx("Free", "Δωρεάν"),
+            text: tx("Every engagement starts with an SEO audit", "Κάθε συνεργασία ξεκινά με έλεγχο SEO"),
+          }}
           title={accentTail(copy.h1, isEl ? 2 : 1)}
           lead={copy.heroLead}
           meta={
             <div className="flex flex-col items-center gap-3">
               <p className="max-w-2xl text-[14px] font-medium text-foreground">{copy.heroNote}</p>
-              {offerLive ? (
-                <p className="inline-flex max-w-2xl flex-wrap items-center gap-2 rounded-xl border border-warning/30 bg-warning/10 px-4 py-2.5 text-[13px] leading-relaxed text-warning">
-                  {isEl
-                    ? "Προσφορά Νοεμβρίου: ιστοσελίδα €599 αντί €999 και SEO €149 τον μήνα αντί €199 (+ ΦΠΑ), για νέα έργα που θα επιβεβαιωθούν έως 30 Νοεμβρίου 2026."
-                    : "November offer: website €599 instead of €999 and SEO €149 a month instead of €199 (+ VAT), for new projects confirmed by 30 November 2026."}
-                </p>
-              ) : null}
             </div>
           }
         >

@@ -101,6 +101,20 @@
   font-weight: 600;
   margin-top: 7px;
 }
+.was {
+  margin-top: 10px;
+  color: #bac6d8;
+  font-size: 10px;
+  line-height: 1.7;
+}
+.offers strong .now {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 10px;
+  line-height: 1.5;
+  font-weight: 600;
+  letter-spacing: 0;
+}
 .offers em {
   font-style: normal;
   font-size: 13px;

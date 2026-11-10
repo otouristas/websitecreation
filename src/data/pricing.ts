@@ -23,7 +23,9 @@ export const VAT_RATE = 0.24;
  * discount and its messaging disappear on their own after this instant. No
  * countdown timers and no scarcity claims - the date does the work.
  *
- * Only the two entry packages are discounted (owner decision, 2026-11-06).
+ * Only the two entry packages are discounted. The owner's latest correction
+ * sets the regular NET baselines to €1,000 for Website Starter and €350/month
+ * for SEO Foundations; it supersedes the earlier catalog baselines.
  * The subsequent VAT-gift decision keeps the advertised €599 website and
  * €149/month SEO numbers, now INCLUDING 24% VAT for November sign-ups. SEO's
  * included-VAT monthly rate applies throughout the minimum six-month term.
@@ -113,7 +115,7 @@ export const websitePackages: readonly Tier[] = [
   {
     id: 'starter',
     name: 'Website Starter',
-    regular: 999,
+    regular: 1000,
     offer: 599,
     offerVatIncluded: true,
     forEn: 'A website that brings customers: for local businesses that need to be found on Google, Maps and ChatGPT.',
@@ -190,7 +192,7 @@ export const seoPackages: readonly Tier[] = [
   {
     id: 'foundations',
     name: 'SEO Foundations',
-    regular: 199,
+    regular: 350,
     offer: 149,
     offerVatIncluded: true,
     forEn: 'Local businesses that want to show up on Google, Maps and ChatGPT when customers search. 6-month minimum.',

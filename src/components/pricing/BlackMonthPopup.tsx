@@ -10,6 +10,7 @@ import {
   formatPrice,
   seoPackages,
   websitePackages,
+  withVat,
 } from "@/data/pricing";
 import styles from "./BlackMonthPopup.module.css";
 
@@ -159,12 +160,23 @@ export function BlackMonthPopup({ enabled }: { enabled: boolean }) {
         <div className={styles.offers}>
           <div>
             <span>Website Starter</span>
-            <strong>€{formatPrice(websitePackages[0].offer, "el")}</strong>
+            <p className={styles.was}>
+              Πριν <del>€{formatPrice(websitePackages[0].regular, "el")}</del> + ΦΠΑ 24%
+              <br />
+              (€{formatPrice(withVat(websitePackages[0].regular), "el")} με ΦΠΑ)
+            </p>
+            <strong><span className={styles.now}>Τώρα</span>€{formatPrice(websitePackages[0].offer, "el")}</strong>
             <small>τελική τιμή με ΦΠΑ 24%</small>
           </div>
           <div>
             <span>SEO Foundations</span>
+            <p className={styles.was}>
+              Πριν <del>€{formatPrice(seoPackages[0].regular, "el")}/μήνα</del> + ΦΠΑ 24%
+              <br />
+              (€{formatPrice(withVat(seoPackages[0].regular), "el")}/μήνα με ΦΠΑ)
+            </p>
             <strong>
+              <span className={styles.now}>Τώρα</span>
               €{formatPrice(seoPackages[0].offer, "el")}
               <em>/μήνα</em>
             </strong>

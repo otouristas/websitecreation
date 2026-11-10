@@ -7,6 +7,7 @@ import {
   currentPriceIncludesVat,
   formatPrice,
   tierOnOffer,
+  withVat,
   type Tier,
 } from '@/data/pricing';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
@@ -15,12 +16,13 @@ import { CheckList, MarketingBadge, kitPrimaryBtn, kitSecondaryBtn } from '@/com
 /**
  * A single pricing tier.
  *
- * Every card shows the net figure with an explicit "+ ΦΠΑ 24%" and the gross
- * figure directly beneath, on every surface - VAT is never buried in an FAQ.
+ * Every card labels its VAT basis explicitly. November entry offers lead
+ * with the payable gross amount; the regular reference shows net plus VAT
+ * and its gross equivalent, directly on the card.
  *
  * The struck-through regular price only renders while the offer is live. After
  * OFFER_ENDS the component falls back to the regular price with no promotional
- * framing at all, so nothing has to be edited by hand on 1 September.
+ * framing at all, so nothing has to be edited by hand after the November deadline.
  *
  * The popular tier sits in a gradient ring: a 1px padded wrapper carrying the
  * brand gradient, with the kit card inside it.
@@ -79,13 +81,17 @@ export function PriceCard({
 
       <div className="mt-6">
         {active ? (
-          <p className="mb-1 flex items-center gap-2 text-sm text-muted-foreground">
-            <span className="line-through">€{formatPrice(tier.regular, locale)}{vatIncluded ? (isEl ? ' + ΦΠΑ' : ' + VAT') : ''}</span>
-            <MarketingBadge kind="save">{offerLabel ?? (isEl ? 'Προσφορά Νοεμβρίου' : 'November offer')}</MarketingBadge>
-          </p>
+          <div className="mb-2 text-sm text-muted-foreground">
+            <p className="flex flex-wrap items-center gap-2">
+              <span>{isEl ? 'Πριν' : 'Was'} <del>€{formatPrice(tier.regular, locale)}{per}</del> {isEl ? '+ ΦΠΑ 24%' : '+ 24% VAT'}</span>
+              <MarketingBadge kind="save">{offerLabel ?? (isEl ? 'Προσφορά Νοεμβρίου' : 'November offer')}</MarketingBadge>
+            </p>
+            <p className="mt-1 text-[11px]">€{formatPrice(withVat(tier.regular), locale)}{per} {isEl ? 'με ΦΠΑ 24%' : 'incl. 24% VAT'}</p>
+          </div>
         ) : null}
 
         <p className="flex flex-wrap items-baseline gap-x-1.5">
+          {active ? <span className="w-full text-[11px] font-semibold text-muted-foreground">{isEl ? 'Τώρα' : 'Now'}</span> : null}
           <span className="font-display text-[44px] font-semibold tabular-nums leading-none tracking-[-0.045em] text-foreground">
             €{formatPrice(displayed, locale)}
           </span>

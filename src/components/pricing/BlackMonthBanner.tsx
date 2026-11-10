@@ -6,6 +6,7 @@ import {
   formatPrice,
   seoPackages,
   websitePackages,
+  withVat,
 } from "@/data/pricing";
 
 export function BlackMonthBanner() {
@@ -26,13 +27,20 @@ export function BlackMonthBanner() {
         <h2 className="mt-3 font-display text-[28px] font-semibold leading-tight tracking-[-0.035em] sm:text-[36px]">
           Ίδια τιμή. Δώρο και ο ΦΠΑ.
         </h2>
-        <p className="mt-4 max-w-2xl text-sm leading-relaxed text-[#BAC6D8]">
-          Website Starter €
-          {formatPrice(currentDisplayPrice(websitePackages[0]), "el")} τελική.
-          SEO Foundations €
-          {formatPrice(currentDisplayPrice(seoPackages[0]), "el")} τελική/μήνα,
-          με ΦΠΑ 24% σε όλη την εξάμηνη συνεργασία.
-        </p>
+        <div className="mt-4 grid max-w-3xl gap-4 text-sm leading-relaxed text-[#BAC6D8] sm:grid-cols-2">
+          <p>
+            <strong className="text-[var(--asg-brand-paper)]">Website Starter</strong><br />
+            Πριν <del>€{formatPrice(websitePackages[0].regular, "el")}</del> + ΦΠΑ 24%
+            {' '}(€{formatPrice(withVat(websitePackages[0].regular), "el")} με ΦΠΑ).<br />
+            <strong className="text-[var(--asg-brand-paper)]">Τώρα €{formatPrice(currentDisplayPrice(websitePackages[0]), "el")} τελική, με ΦΠΑ 24%.</strong>
+          </p>
+          <p>
+            <strong className="text-[var(--asg-brand-paper)]">SEO Foundations</strong><br />
+            Πριν <del>€{formatPrice(seoPackages[0].regular, "el")}/μήνα</del> + ΦΠΑ 24%
+            {' '}(€{formatPrice(withVat(seoPackages[0].regular), "el")}/μήνα με ΦΠΑ).<br />
+            <strong className="text-[var(--asg-brand-paper)]">Τώρα €{formatPrice(currentDisplayPrice(seoPackages[0]), "el")} τελική/μήνα, με ΦΠΑ 24% σε όλη την εξάμηνη συνεργασία.</strong>
+          </p>
+        </div>
         <Link
           href="/el/ypiresies/times"
           className="mt-6 inline-flex min-h-12 items-center gap-3 rounded-xl bg-[var(--asg-brand-cyan)] px-5 py-3 text-sm font-semibold text-[var(--asg-brand-ink)]"
