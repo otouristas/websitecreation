@@ -1,4 +1,4 @@
-Last-Updated: 2026-11-08
+Last-Updated: 2026-11-10
 Canonical: https://anotherseoguru.com/llms.txt
 Long-form: https://anotherseoguru.com/llms-full.txt
 Sitemap: https://anotherseoguru.com/sitemap.xml
@@ -108,7 +108,8 @@ Source: https://anotherseoguru.com
 - [iPhone app: Widgets and Siri](https://anotherseoguru.com/en/help/iphone-app/widgets.md) - Put your clicks, all your sites and this week's fixes on the Home and Lock Screen, and ask Siri how your site is doing.
 - [iPhone app: iPhone app FAQ](https://anotherseoguru.com/en/help/iphone-app/iphone-faq.md) - Quick answers about the iPhone beta, plans and credits, languages, data access and support.
 
-## Blog & Guides (91 posts)
+## Blog & Guides (92 posts)
+- [Black Month: ίδια τιμή, δώρο και ο ΦΠΑ](https://anotherseoguru.com/el/blog/black-month-istoselides-seo-2026) - Black Month έως 30/11: ιστοσελίδα €599 και SEO €149/μήνα, τελικές τιμές με ΦΠΑ 24%. Το SEO ισχύει σε όλη την εξάμηνη συνεργασία. Δείτε παροχές και όρους.
 - [Εταιρεία Κατασκευής Ιστοσελίδων: Πώς να Επιλέξετε (12 Ερωτήσεις)](https://anotherseoguru.com/el/blog/etaireia-kataskevis-istoselidon) - Πώς διαλέγετε εταιρεία κατασκευής ιστοσελίδων: 12 ερωτήσεις πριν υπογράψετε, τι πρέπει να γράφει η προσφορά, ποιος κρατά τον κωδικό και πώς ελέγχετε το SEO.
 - [Τι Είναι το AEO (Answer Engine Optimization); Οδηγός 2026](https://anotherseoguru.com/el/blog/ti-einai-to-aeo) - Τι είναι το AEO, πώς διαφέρει από το SEO και πώς γράφετε σελίδες που επιλέγονται ως απάντηση από τη Google, το ChatGPT και τους φωνητικούς βοηθούς.
 - [Τι Είναι το GEO (Generative Engine Optimization); Οδηγός 2026](https://anotherseoguru.com/el/blog/ti-einai-to-geo) - Τι είναι το GEO, πώς διαλέγουν πηγές ο ChatGPT, το Gemini και οι AI απαντήσεις της Google, και τι κάνει μια ελληνική επιχείρηση για να αναφέρεται σε αυτές.

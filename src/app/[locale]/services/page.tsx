@@ -19,7 +19,7 @@ import { generateBreadcrumbs } from "@/lib/linking";
 import { LocalPackPreview, MarketingBadge, ReportPreview, agencyTrust, type MarketingBadgeKind } from "@/components/kit";
 import { DiyRow, SpeedPreview, getServiceKit } from "@/components/service-kit";
 import { NotForYou } from "@/components/positioning/NotForYou";
-import { entrySeoNet, formatPrice, resolvePriceTokens } from "@/data/pricing";
+import { entrySeoDisplay, currentPriceVatLabel, seoPackages, formatPrice, resolvePriceTokens } from "@/data/pricing";
 import { homeCopy } from "@/components/pages/home/copy";
 import {
   AnnouncePill,
@@ -201,8 +201,8 @@ export default async function ServicesPage({ params }: PageProps) {
             title={accentEnd(tx("Every service", "Όλες οι υπηρεσίες"), isEl ? 1 : 1)}
             lead={
               isEl
-                ? `Μηνιαία συνεργασία SEO από €${formatPrice(entrySeoNet(), siteLocale)} + ΦΠΑ 24%. Έργα κατασκευής τιμολογούνται ανά project.`
-                : `Monthly SEO engagements from €${formatPrice(entrySeoNet(), siteLocale)} + 24% VAT. Website projects are quoted per project.`
+                ? `Μηνιαία συνεργασία SEO από €${formatPrice(entrySeoDisplay(), siteLocale)} ${currentPriceVatLabel(seoPackages[0], siteLocale)}. Έργα κατασκευής τιμολογούνται ανά project.`
+                : `Monthly SEO engagements from €${formatPrice(entrySeoDisplay(), siteLocale)} ${currentPriceVatLabel(seoPackages[0], siteLocale)}. Website projects are quoted per project.`
             }
           />
           <RiskBuckets tiers={tiers} />

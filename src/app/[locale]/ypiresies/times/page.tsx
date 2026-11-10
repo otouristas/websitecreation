@@ -21,8 +21,8 @@ import {
   seoPackages,
   addOns,
   formatPrice,
-  currentPrice,
-  isOfferActive,
+  currentDisplayPrice,
+  currentPriceIncludesVat,
   resolvePriceTokens,
 } from "@/data/pricing";
 import { SEO_MIN_TERM_MONTHS } from "@/data/company-facts";
@@ -44,6 +44,10 @@ import { PRICING_TAB_CSS, PRICING_TAB_SCRIPT } from "@/components/pricing/pricin
 import { SeoPackageCompare } from "@/components/pricing/SeoPackageCompare";
 import { NotForYou } from "@/components/positioning/NotForYou";
 import { SeoTimeline } from "@/components/positioning/SeoTimeline";
+import { BlackMonthPricingHero } from '@/components/pricing/BlackMonthPricingHero';
+
+/** Re-evaluate the existing offer deadline without a manual rebuild. */
+export const revalidate = 3600;
 
 /** Agency prices are Greek only; English visitors land here via the middleware. */
 export function generateStaticParams() {
@@ -80,13 +84,15 @@ export default async function PricingPage({
   const siteLocale = locale as SiteLocale;
   const isEl = siteLocale === "el";
   const lp = (path: string) => localizedPath(siteLocale, path);
-  const offerLive = isOfferActive();
+  const offerLive = currentPriceIncludesVat(websitePackages[0]);
   const raw = getPricingPageCopy(siteLocale);
   const rp = (text: string) => resolvePriceTokens(text, siteLocale);
 
   const copy = {
     ...raw,
-    heroLead: rp(raw.heroLead),
+    heroLead: offerLive
+      ? `Black Month: Website Starter €${formatPrice(currentDisplayPrice(websitePackages[0]), siteLocale)} τελική τιμή με ΦΠΑ 24% και SEO Foundations €${formatPrice(currentDisplayPrice(seoPackages[0]), siteLocale)} τελική τιμή τον μήνα με ΦΠΑ 24%, σε όλη την εξάμηνη συνεργασία για νέα έργα που θα επιβεβαιωθούν έως 30 Νοεμβρίου 2026. Παρακάτω θα βρείτε όλα τα πακέτα και τις παροχές τους.`
+      : rp(raw.heroLead),
     cost: {
       ...raw.cost,
       answer: rp(raw.cost.answer),
@@ -114,7 +120,8 @@ export default async function PricingPage({
       url: `${BASE_URL}${lp("/ypiresies/times")}`,
       locale: siteLocale,
       tiers: [...websitePackages, ...seoPackages],
-      priceOf: (t) => currentPrice(t as never),
+      priceOf: (t) => currentDisplayPrice(t as never),
+      vatIncludedOf: (t) => currentPriceIncludesVat(t as never),
     }),
     generateFAQSchema({ faqs }),
   );
@@ -133,7 +140,7 @@ export default async function PricingPage({
       <SchemaMarkup schemas={schemas} />
       <Header locale={siteLocale} />
       <main className="blueprint-grid relative z-0">
-        <PageHero
+        {offerLive ? <BlackMonthPricingHero breadcrumbs={breadcrumbItems} /> : <PageHero
           locale={siteLocale}
           breadcrumbs={breadcrumbItems}
           pill={
@@ -164,7 +171,9 @@ export default async function PricingPage({
           <Container className="mt-10">
             <ChipLinks align="center" items={jump} />
           </Container>
-        </PageHero>
+        </PageHero>}
+
+        {offerLive ? <Container className="pb-4 pt-8"><KitHeading align="center" title={accentTail(copy.h1, 2)} description={copy.heroLead} /><div className="mt-6"><ChipLinks align="center" items={jump} /></div></Container> : null}
 
         <PricingCostGuide locale={siteLocale} copy={copy} />
 
@@ -203,7 +212,7 @@ export default async function PricingPage({
               />
               <div className="mt-12 grid gap-5 lg:grid-cols-3">
                 {websitePackages.map((tier) => (
-                  <PriceCard key={tier.id} tier={tier} locale={siteLocale} frame="quiet" />
+                  <PriceCard key={tier.id} tier={tier} locale={siteLocale} frame="quiet" offerLabel={offerLive ? 'Black Month' : undefined} />
                 ))}
               </div>
             </div>
@@ -227,7 +236,7 @@ export default async function PricingPage({
               />
               <div className="mt-12 grid gap-5 lg:grid-cols-3">
                 {seoPackages.map((tier) => (
-                  <PriceCard key={tier.id} tier={tier} locale={siteLocale} recurring frame="quiet" />
+                  <PriceCard key={tier.id} tier={tier} locale={siteLocale} recurring frame="quiet" offerLabel={offerLive ? 'Black Month' : undefined} />
                 ))}
               </div>
               <SeoPackageCompare

@@ -1,9 +1,10 @@
 import Link from 'next/link';
 import {
-  currentPrice,
+  currentDisplayPrice,
+  currentGrossPrice,
+  currentPriceIncludesVat,
   formatPrice,
   seoPackages,
-  withVat,
 } from '@/data/pricing';
 import type { PricingCompareRow } from '@/data/pricing-page-copy';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
@@ -63,17 +64,15 @@ export function SeoPackageCompare({
                 {isEl ? 'Κάλυψη' : 'Scope'}
               </th>
               {headers.map(({ tier, name }) => {
-                const net = currentPrice(tier);
                 return (
                   <th key={tier.id} scope="col" className="px-4 py-4 text-left">
                     <span className="block font-display text-base font-medium text-foreground">{name}</span>
                     <span className="mt-1 block font-display text-lg tabular-nums tracking-[-0.03em] text-foreground">
-                      €{formatPrice(net, locale)}
+                      €{formatPrice(currentDisplayPrice(tier), locale)}
                       <span className="text-sm font-normal text-muted-foreground">{per}</span>
                     </span>
                     <span className="mt-0.5 block text-[12px] font-normal text-muted-foreground">
-                      €{formatPrice(withVat(net), locale)}
-                      {per} {isEl ? 'με ΦΠΑ' : 'incl. VAT'}
+                      {currentPriceIncludesVat(tier) ? (isEl ? 'Τελική με ΦΠΑ 24%, σε όλο το εξάμηνο' : 'Includes 24% VAT for all six months') : `€${formatPrice(currentGrossPrice(tier), locale)}${per} ${isEl ? 'με ΦΠΑ' : 'incl. VAT'}`}
                     </span>
                   </th>
                 );

@@ -15,6 +15,7 @@ import { getTrustChips } from "@/data/trust-stats";
 import { trackCtaClick } from "@/lib/analytics";
 import { appLink } from "@/components/gsc-boost/copy";
 import { isAgencyPathname } from "@/lib/site-split";
+import { BlackMonthPopup } from '@/components/pricing/BlackMonthPopup';
 
 export default function Header({
   locale: localeProp,
@@ -171,6 +172,7 @@ export default function Header({
         onClose={closeMobileMenu}
         model={model}
       />
+      <BlackMonthPopup enabled={isAgency && !pathname.includes('/get-started')} />
     </>
   );
 }

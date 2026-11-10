@@ -22,7 +22,10 @@ import {
   websitePackages,
   seoPackages,
   VAT_RATE,
-  currentPrice,
+  currentDisplayPrice,
+  currentPriceVatLabel,
+  currentPriceIncludesVat,
+  formatPrice,
 } from '../src/data/pricing.ts';
 import { SEO_MIN_TERM_MONTHS } from '../src/data/company-facts.ts';
 import { serviceNamesEl } from '../src/data/services-i18n.ts';
@@ -396,7 +399,8 @@ const LLMS_EXCLUDED_PROJECTS = new Set(['villa-olivia-clara']);
  * middleware (src/lib/site-split.ts); every URL is its .gr URL.
  */
 function buildAgency() {
-  const eur = (n) => `€${n.toLocaleString('el-GR')}`;
+  const eur = (n) => `€${formatPrice(n, 'el')}`;
+  const tierPrice = (tier, per = '') => `${eur(currentDisplayPrice(tier))}${per} ${currentPriceVatLabel(tier, 'el')}`;
   const lines = [];
   lines.push(`Last-Updated: ${TODAY}`);
   lines.push(`Canonical: ${AGENCY_ORIGIN}/llms.txt`);
@@ -409,7 +413,7 @@ function buildAgency() {
   lines.push('');
   lines.push('## Βασικές σελίδες');
   lines.push(hubLine('Αρχική', gr(AGENCY_HOME_EL), 'Εταιρεία SEO και κατασκευής ιστοσελίδων στην Ελλάδα.'));
-  lines.push(hubLine('Τιμές', gr(AGENCY_PRICING_EL), 'Τιμές ιστοσελίδας και μηνιαίου SEO, συν ΦΠΑ.'));
+  lines.push(hubLine('Τιμές', gr(AGENCY_PRICING_EL), 'Τιμές ιστοσελίδας και μηνιαίου SEO, με ρητή ένδειξη ΦΠΑ.'));
   lines.push(hubLine('Δωρεάν έλεγχος ιστοσελίδας', gr(AGENCY_AUDIT_EL), 'Φόρμα για δωρεάν έλεγχο SEO.'));
   lines.push(hubLine('Υπηρεσίες', gr('/el/services'), 'Όλες οι υπηρεσίες.'));
   lines.push(hubLine('Υπηρεσίες SEO', gr('/el/seo-services'), 'SEO για επιχειρήσεις στην Ελλάδα.'));
@@ -425,10 +429,11 @@ function buildAgency() {
     lines.push(hubLine(svc.name, gr(`/el/services/${slug}`), desc));
   }
   lines.push('');
-  lines.push('## Τιμές (συν ΦΠΑ)');
-  lines.push(`- **Ιστοσελίδα:** ${websitePackages.map((t) => `${t.name} ${eur(currentPrice(t))}`).join(', ')}. Εφάπαξ.`);
-  lines.push(`- **Μηνιαίο SEO:** ${seoPackages.map((t) => `${t.name} ${eur(currentPrice(t))}/μήνα`).join(', ')}. Ελάχιστη διάρκεια ${SEO_MIN_TERM_MONTHS} μήνες.`);
-  lines.push(`- Όλες οι τιμές είναι χωρίς ΦΠΑ ${Math.round(VAT_RATE * 100)}%. Λεπτομέρειες: <${gr(AGENCY_PRICING_EL)}>`);
+  lines.push('## Τιμές');
+  lines.push(`- **Ιστοσελίδα:** ${websitePackages.map((t) => `${t.name} ${tierPrice(t)}`).join(', ')}. Εφάπαξ.`);
+  lines.push(`- **Μηνιαίο SEO:** ${seoPackages.map((t) => `${t.name} ${tierPrice(t, '/μήνα')}`).join(', ')}. Ελάχιστη διάρκεια ${SEO_MIN_TERM_MONTHS} μήνες.`);
+  lines.push(`- Κάθε τιμή δηλώνει αν περιλαμβάνει ΦΠΑ ${Math.round(VAT_RATE * 100)}%. Λεπτομέρειες: <${gr(AGENCY_PRICING_EL)}>`);
+  if (currentPriceIncludesVat(websitePackages[0])) lines.push('- Black Month 2026: οι δύο τιμές με ΦΠΑ αφορούν νέα έργα που επιβεβαιώνονται έως 30 Νοεμβρίου 2026. Το SEO Foundations παραμένει €149 τελική/μήνα με ΦΠΑ σε όλη την ελάχιστη εξάμηνη συνεργασία. Τα υπόλοιπα πακέτα και πρόσθετα διατηρούν τις τιμές τους.');
   lines.push('');
   lines.push('## SEO τουρισμού');
   lines.push(hubLine('SEO τουρισμού', gr('/el/seo-tourismou'), 'Ξενοδοχεία, βίλες, rent a car, εκδρομές, ταξιδιωτικά γραφεία, εστιατόρια, σκάφη, transfer.'));

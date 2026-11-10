@@ -3,6 +3,9 @@ import {
   VAT_RATE,
   addOns,
   currentPrice,
+  currentGrossPrice,
+  currentPriceIncludesVat,
+  currentPriceVatLabel,
   formatPrice,
   seoPackages,
   withVat,
@@ -106,7 +109,9 @@ export function publishedSpokePrices(locale: SiteLocale): PublishedSpokePrices {
   return {
     foundationsNet: net,
     auditNet: audit.from,
-    foundations: `${money(net, locale)}${per} + ${vat} (${money(withVat(net), locale)} ${incl})`,
+    foundations: currentPriceIncludesVat(foundations)
+      ? `${money(currentGrossPrice(foundations), locale)}${per} ${currentPriceVatLabel(foundations, locale)} (${money(net, locale)} ${locale === 'el' ? 'προ ΦΠΑ' : 'excl. VAT'})`
+      : `${money(net, locale)}${per} + ${vat} (${money(withVat(net), locale)} ${incl})`,
     audit: `${from}${money(audit.from, locale)} + ${vat} (${money(withVat(audit.from), locale)} ${incl})`,
   };
 }

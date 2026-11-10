@@ -433,17 +433,18 @@ export interface OfferCatalogSchemaData {
   readonly url: string;
   readonly locale: 'en' | 'el';
   readonly tiers: readonly OfferTier[];
-  /** Net -> gross converter, injected so the VAT rate lives in one place. */
+  /** Current amount, injected so pricing and VAT policy live in one place. */
   readonly priceOf?: (tier: OfferTier) => number;
+  /** VAT basis of priceOf; omitted callers retain their existing net convention. */
+  readonly vatIncludedOf?: (tier: OfferTier) => boolean;
 }
 
 /**
  * OfferCatalog for the pricing page.
  *
  * The pricing page rendered a full price table while emitting no price schema
- * at all. Prices published here are NET of VAT, matching the figure shown as
- * the headline on each card; `priceSpecification.valueAddedTaxIncluded` says so
- * explicitly rather than leaving it ambiguous.
+ * at all. Each amount and its explicit VAT basis must match the displayed
+ * price. Ordinary callers default to net; campaigns can opt into gross.
  */
 export function generateOfferCatalogSchema(data: OfferCatalogSchemaData): SchemaOutput {
   const price = data.priceOf ?? ((t: OfferTier) => t.offer);
@@ -461,9 +462,9 @@ export function generateOfferCatalogSchema(data: OfferCatalogSchemaData): Schema
         name: t.name,
         priceSpecification: {
           '@type': 'PriceSpecification',
-          price: price(t),
+          price: Math.round(price(t) * 100) / 100,
           priceCurrency: 'EUR',
-          valueAddedTaxIncluded: false,
+          valueAddedTaxIncluded: data.vatIncludedOf?.(t) ?? false,
         },
       })),
     },

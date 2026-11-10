@@ -2,9 +2,11 @@ import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import {
   currentPrice,
+  currentDisplayPrice,
+  currentGrossPrice,
+  currentPriceIncludesVat,
   formatPrice,
   tierOnOffer,
-  withVat,
   type Tier,
 } from '@/data/pricing';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
@@ -31,16 +33,20 @@ export function PriceCard({
   locale,
   recurring = false,
   frame = 'glow',
+  offerLabel,
 }: {
   tier: Tier;
   locale: SiteLocale;
   recurring?: boolean;
   frame?: 'glow' | 'quiet';
+  offerLabel?: string;
 }) {
   const isEl = locale === 'el';
   const active = tierOnOffer(tier);
   const net = currentPrice(tier);
-  const gross = withVat(net);
+  const gross = currentGrossPrice(tier);
+  const vatIncluded = currentPriceIncludesVat(tier);
+  const displayed = currentDisplayPrice(tier);
   const per = recurring ? (isEl ? '/μήνα' : '/mo') : '';
   const quiet = frame === 'quiet' && Boolean(tier.popular);
 
@@ -74,24 +80,25 @@ export function PriceCard({
       <div className="mt-6">
         {active ? (
           <p className="mb-1 flex items-center gap-2 text-sm text-muted-foreground">
-            <span className="line-through">€{formatPrice(tier.regular, locale)}</span>
-            <MarketingBadge kind="save">{isEl ? 'Προσφορά Νοεμβρίου' : 'November offer'}</MarketingBadge>
+            <span className="line-through">€{formatPrice(tier.regular, locale)}{vatIncluded ? (isEl ? ' + ΦΠΑ' : ' + VAT') : ''}</span>
+            <MarketingBadge kind="save">{offerLabel ?? (isEl ? 'Προσφορά Νοεμβρίου' : 'November offer')}</MarketingBadge>
           </p>
         ) : null}
 
         <p className="flex flex-wrap items-baseline gap-x-1.5">
           <span className="font-display text-[44px] font-semibold tabular-nums leading-none tracking-[-0.045em] text-foreground">
-            €{formatPrice(net, locale)}
+            €{formatPrice(displayed, locale)}
           </span>
           {per ? <span className="text-sm text-muted-foreground">{per}</span> : null}
-          <span className="text-sm text-muted-foreground">{isEl ? '+ ΦΠΑ 24%' : '+ 24% VAT'}</span>
+          <span className="text-sm text-muted-foreground">{vatIncluded ? (isEl ? 'τελική με ΦΠΑ 24%' : 'incl. 24% VAT') : (isEl ? '+ ΦΠΑ 24%' : '+ 24% VAT')}</span>
         </p>
 
         <p className="mt-2 font-mono text-[11px] tracking-[0.04em] text-muted-foreground">
-          €{formatPrice(gross, locale)}
-          {per} {isEl ? 'τελική τιμή με ΦΠΑ' : 'incl. VAT'}
+          {vatIncluded ? `${isEl ? 'Καθαρή αξία' : 'Net'} €${formatPrice(net, locale)}${per}. ${isEl ? 'Δώρο ο ΦΠΑ στο Black Month.' : 'VAT covered for Black Month.'}` : `€${formatPrice(gross, locale)}${per} ${isEl ? 'τελική τιμή με ΦΠΑ' : 'incl. VAT'}`}
         </p>
       </div>
+
+      {vatIncluded && recurring ? <p className="mt-3 text-[12px] leading-relaxed text-muted-foreground">{isEl ? 'Η τελική τιμή με ΦΠΑ ισχύει σε όλη την εξάμηνη συνεργασία για όσους κλείσουν μέσα στον Νοέμβριο.' : 'This VAT-inclusive monthly price applies throughout the six-month engagement confirmed in November.'}</p> : null}
 
       {tier.deliveryEn ? (
         <p className="mt-5 rounded-xl border border-hairline bg-background/60 px-3.5 py-2.5 text-[13px] text-muted-foreground">

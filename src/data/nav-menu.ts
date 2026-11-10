@@ -1,7 +1,7 @@
 import type { SiteLocale } from '@/lib/i18n/locale';
 import { localizedPath } from '@/lib/i18n/locale';
 import { getAppPath } from '@/lib/app-links';
-import { entrySeoNet, entryWebsiteNet, formatPrice } from '@/data/pricing';
+import { currentPriceIncludesVat, currentPriceVatLabel, entrySeoDisplay, entryWebsiteDisplay, formatPrice, seoPackages, websitePackages } from '@/data/pricing';
 import type { MarketingBadgeKind } from '@/components/kit/primitives';
 import { AGENCY_HOME_HREF, AGENCY_PRICING_HREF } from '@/lib/site-split';
 
@@ -109,12 +109,17 @@ export interface NavModel {
   readonly startFree: { readonly href: string; readonly label: string };
 }
 
-export function getNavModel(locale: SiteLocale, mode: NavMode = 'product'): NavModel {
+export function getNavModel(locale: SiteLocale, mode: NavMode = 'product', now: Date = new Date()): NavModel {
   const el = locale === 'el';
   const t = (en: string, gr: string) => (el ? gr : en);
   const lp = (p: string) => localizedPath(locale, p);
-  const seoFrom = formatPrice(entrySeoNet(), locale);
-  const webFrom = formatPrice(entryWebsiteNet(), locale);
+  const seoFrom = formatPrice(entrySeoDisplay(now), locale);
+  const webFrom = formatPrice(entryWebsiteDisplay(now), locale);
+  const seoVat = currentPriceVatLabel(seoPackages[0], locale, now);
+  const webVat = currentPriceVatLabel(websitePackages[0], locale, now);
+  // Row pills stay short on 320px phones; the menu note and feature chips state 24%.
+  const seoMetaVat = currentPriceIncludesVat(seoPackages[0], now) ? t('incl. VAT', 'με ΦΠΑ') : t('+ VAT', '+ ΦΠΑ');
+  const webMetaVat = currentPriceIncludesVat(websitePackages[0], now) ? t('incl. VAT', 'με ΦΠΑ') : t('+ VAT', '+ ΦΠΑ');
   const signup = `${getAppPath('/signup')}?lang=${locale}&utm_source=website&utm_content=nav`;
   const demo = `${getAppPath('/demo')}?lang=${locale}&utm_source=website&utm_content=nav`;
 
@@ -139,7 +144,7 @@ export function getNavModel(locale: SiteLocale, mode: NavMode = 'product'): NavM
               ]
             : []),
           { href: lp('/seo-guru'), label: 'SEO guru', desc: t('Who we are and how the work is done', 'Ποιοι είμαστε και πώς γίνεται η δουλειά'), icon: 'users' },
-          { href: lp('/seo-services'), label: t('SEO services', 'Υπηρεσίες SEO'), desc: t('Monthly SEO that brings customers', 'Μηνιαίο SEO που φέρνει πελάτες'), icon: 'trend', badge: POPULAR, meta: t(`from €${seoFrom}/mo`, `από €${seoFrom}/μήνα`) },
+          { href: lp('/seo-services'), label: t('SEO services', 'Υπηρεσίες SEO'), desc: t('Monthly SEO that brings customers', 'Μηνιαίο SEO που φέρνει πελάτες'), icon: 'trend', badge: POPULAR, meta: t(`from €${seoFrom}/mo ${seoMetaVat}`, `από €${seoFrom}/μήνα ${seoMetaVat}`) },
           { href: lp('/services/ai-visibility'), label: t('AI visibility (GEO / AEO)', 'Ορατότητα σε AI (GEO / AEO)'), desc: t('Get recommended by ChatGPT and Gemini', 'Να σας προτείνουν ChatGPT και Gemini'), icon: 'sparkles', badge: AI },
           { href: lp('/services/local-seo'), label: t('Local SEO', 'Τοπικό SEO'), desc: t('Win the Google Maps results', 'Πρώτοι στον χάρτη της Google'), icon: 'map' },
           { href: lp('/services/seo-audits'), label: t('SEO audit', 'Έλεγχος SEO'), desc: t('What holds your site back', 'Τι κρατά πίσω την ιστοσελίδα σας'), icon: 'audit', badge: FREE },
@@ -151,7 +156,7 @@ export function getNavModel(locale: SiteLocale, mode: NavMode = 'product'): NavM
       {
         title: t('Build', 'Κατασκευή'),
         items: [
-          { href: lp('/services/website-creation'), label: t('Website creation', 'Κατασκευή ιστοσελίδων'), desc: t('Fast sites, ready for SEO', 'Γρήγορες ιστοσελίδες, έτοιμες για SEO'), icon: 'globe', badge: POPULAR, meta: t(`from €${webFrom}`, `από €${webFrom}`) },
+          { href: lp('/services/website-creation'), label: t('Website creation', 'Κατασκευή ιστοσελίδων'), desc: t('Fast sites, ready for SEO', 'Γρήγορες ιστοσελίδες, έτοιμες για SEO'), icon: 'globe', badge: POPULAR, meta: t(`from €${webFrom} ${webMetaVat}`, `από €${webFrom} ${webMetaVat}`) },
           { href: lp('/services/eshop-woocommerce'), label: t('E-shop development', 'Κατασκευή e-shop'), desc: t('WooCommerce stores that sell', 'Καταστήματα WooCommerce που πουλάνε'), icon: 'cart' },
           { href: lp('/services/website-redesign'), label: t('Website redesign', 'Ανασχεδιασμός ιστοσελίδας'), desc: t('Modernise without losing rankings', 'Ανανέωση χωρίς απώλεια θέσεων'), icon: 'refresh' },
           { href: lp('/services/web-design'), label: t('Web design', 'Σχεδιασμός με SEO'), desc: t('Built to rank from day one', 'Σχεδιασμένη να κατατάσσεται'), icon: 'search' },
@@ -173,7 +178,7 @@ export function getNavModel(locale: SiteLocale, mode: NavMode = 'product'): NavM
         t('Your top 5 fixes, in order', 'Οι 5 πρώτες διορθώσεις, με σειρά'),
         t('A fixed price, no lock-in', 'Σταθερή τιμή, χωρίς δέσμευση'),
       ],
-      chips: [t(`SEO from €${seoFrom}/mo`, `SEO από €${seoFrom}/μήνα`), t(`Websites from €${webFrom}`, `Ιστοσελίδες από €${webFrom}`)],
+      chips: [t(`SEO from €${seoFrom}/mo ${seoVat}`, `SEO από €${seoFrom}/μήνα ${seoVat}`), t(`Websites from €${webFrom} ${webVat}`, `Ιστοσελίδες από €${webFrom} ${webVat}`)],
       primary: { href: freeAudit.href, label: t('Get my free audit', 'Θέλω δωρεάν έλεγχο') },
       secondary: { href: AGENCY_PRICING_HREF, label: t('See all prices', 'Όλες οι τιμές') },
     },
