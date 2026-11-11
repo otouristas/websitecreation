@@ -118,43 +118,43 @@ export function runChecks(meta: ScanMeta, ctx: ScanContext): ScanCheck[] {
   return [
     {
       id: 'https', weight: 8, severity: 'issue', pass: ctx.https,
-      label: { en: 'Final URL uses HTTPS', el: 'Η τελική διεύθυνση χρησιμοποιεί HTTPS' },
+      label: { en: 'Connection protocol', el: 'Πρωτόκολλο σύνδεσης' },
       detail: ctx.https ? 'https:' : 'http:',
       hint: { en: 'If this public page should use HTTPS, configure a valid certificate and an HTTP redirect.', el: 'Αν αυτή η δημόσια σελίδα πρέπει να λειτουργεί μέσω HTTPS, ρυθμίστε έγκυρο πιστοποιητικό και ανακατεύθυνση από HTTP.' },
     },
     {
       id: 'status', weight: 12, severity: 'issue', pass: ctx.status >= 200 && ctx.status < 300,
       detail: `HTTP ${ctx.status}`,
-      label: { en: 'Requested page returns a successful HTTP status', el: 'Η σελίδα που ζητήσατε επιστρέφει επιτυχή κωδικό HTTP' },
+      label: { en: 'HTTP response of the requested page', el: 'Απόκριση HTTP της σελίδας που ζητήσατε' },
       hint: { en: 'Review the actual response status for this URL. A scanner response does not establish what Googlebot receives.', el: 'Ελέγξτε τον πραγματικό κωδικό απόκρισης αυτής της διεύθυνσης. Η απόκριση προς τον έλεγχο δεν αποδεικνύει τι λαμβάνει το Googlebot.' },
     },
     {
       id: 'title', weight: 10, severity: 'issue', pass: !!meta.title,
       detail: meta.title ? `${Array.from(meta.title).length}: ${meta.title.slice(0, 180)}` : '0',
-      label: { en: 'Non-empty title tag in fetched HTML', el: 'Title tag με περιεχόμενο στο HTML που ελέγχθηκε' },
+      label: { en: 'Page title tag', el: 'Title tag της σελίδας' },
       hint: { en: 'Add a concise, descriptive page title. Google has no fixed character limit; this check does not judge relevance or search-result display.', el: 'Προσθέστε έναν σύντομο τίτλο που περιγράφει τη σελίδα. Η Google δεν ορίζει σταθερό όριο χαρακτήρων. Ο έλεγχος δεν αξιολογεί τη συνάφεια ή την εμφάνιση στα αποτελέσματα.' },
     },
     {
       id: 'description', weight: 4, severity: 'advisory', pass: !!meta.description,
       detail: meta.description ? `${Array.from(meta.description).length}: ${meta.description.slice(0, 200)}` : '0',
-      label: { en: 'Meta description present', el: 'Υπάρχει meta description' },
+      label: { en: 'Page meta description', el: 'Meta description της σελίδας' },
       hint: { en: 'Consider a useful, page-specific description. Google can choose page content instead and has no fixed description character limit.', el: 'Εξετάστε μια χρήσιμη περιγραφή ειδικά για αυτή τη σελίδα. Η Google μπορεί να επιλέξει κείμενο από τη σελίδα και δεν ορίζει σταθερό όριο χαρακτήρων.' },
     },
     {
       id: 'h1', weight: 4, severity: 'advisory', pass: meta.h1Count > 0, detail: `H1: ${meta.h1Count}`,
-      label: { en: 'H1 heading found', el: 'Βρέθηκε επικεφαλίδα H1' },
+      label: { en: 'H1 headings', el: 'Επικεφαλίδες H1' },
       hint: { en: 'Review whether the visible main heading clearly describes the page. Multiple H1 elements alone do not establish an SEO error.', el: 'Ελέγξτε αν η κύρια ορατή επικεφαλίδα περιγράφει καθαρά τη σελίδα. Η παρουσία πολλών H1 δεν αποδεικνύει από μόνη της σφάλμα SEO.' },
     },
     {
       id: 'canonical', weight: 2, severity: 'advisory', pass: !!meta.canonical,
       detail: meta.canonical ?? 'rel=canonical: 0',
-      label: { en: 'HTML canonical declaration found', el: 'Βρέθηκε δήλωση canonical στο HTML' },
+      label: { en: 'HTML canonical declaration', el: 'Δήλωση canonical στο HTML' },
       hint: { en: 'If duplicate URLs exist, review the preferred canonical. Absence here is not proof of duplication; HTTP canonical headers and Google-selected canonicals were not checked.', el: 'Αν υπάρχουν διπλότυπες διευθύνσεις, ελέγξτε ποια canonical προτιμάτε. Η απουσία εδώ δεν αποδεικνύει διπλότυπο. Δεν ελέγχθηκαν οι HTTP canonical headers ή η επιλογή της Google.' },
     },
     {
       id: 'viewport', weight: 6, severity: 'issue', pass: !!meta.viewport,
       detail: meta.viewport ?? 'viewport: 0',
-      label: { en: 'Mobile viewport declaration found', el: 'Βρέθηκε δήλωση viewport για κινητά' },
+      label: { en: 'Mobile viewport declaration', el: 'Δήλωση viewport για κινητά' },
       hint: { en: 'Consider width=device-width, initial-scale=1, then test the actual mobile layout. Presence alone does not verify mobile usability.', el: 'Εξετάστε τη ρύθμιση width=device-width, initial-scale=1 και δοκιμάστε την εμφάνιση σε κινητό. Η παρουσία της ετικέτας δεν αρκεί για να επιβεβαιώσει την ευχρηστία.' },
     },
     {
@@ -167,31 +167,31 @@ export function runChecks(meta: ScanMeta, ctx: ScanContext): ScanCheck[] {
     {
       id: 'jsonld', weight: 1, severity: 'advisory', pass: meta.jsonLdTypes.length > 0,
       detail: meta.jsonLdTypes.length ? meta.jsonLdTypes.slice(0, 6).join(', ') : 'JSON-LD @type: 0',
-      label: { en: 'JSON-LD types found (optional)', el: 'Βρέθηκαν τύποι JSON-LD (προαιρετικό)' },
+      label: { en: 'JSON-LD types (optional)', el: 'Τύποι JSON-LD (προαιρετικό)' },
       hint: { en: 'Add structured data only where a supported type fits the visible content. Presence does not verify schema validity or guarantee rich results; other markup formats were not checked.', el: 'Προσθέστε structured data όταν ένας υποστηριζόμενος τύπος ταιριάζει στο ορατό περιεχόμενο. Η παρουσία δεν επιβεβαιώνει εγκυρότητα schema ούτε εγγυάται rich results. Δεν ελέγχθηκαν άλλες μορφές σήμανσης.' },
     },
     {
       id: 'opengraph', weight: 1, severity: 'advisory', pass: !!meta.ogTitle && !!meta.ogImage,
       detail: `og:title=${Number(!!meta.ogTitle)}; og:image=${Number(!!meta.ogImage)}`,
-      label: { en: 'Open Graph title and image found', el: 'Βρέθηκαν τίτλος και εικόνα Open Graph' },
+      label: { en: 'Open Graph title and image', el: 'Τίτλος και εικόνα Open Graph' },
       hint: { en: 'Consider an Open Graph title and image for social sharing. Their absence does not establish a Google ranking problem; the image was not fetched.', el: 'Εξετάστε τίτλο και εικόνα Open Graph για κοινοποιήσεις. Η απουσία τους δεν αποδεικνύει πρόβλημα κατάταξης στη Google. Η εικόνα δεν ελέγχθηκε.' },
     },
     {
       id: 'img_alt', weight: 6, severity: 'issue', pass: meta.imagesWithAlt === meta.imageCount,
       detail: `alt: ${meta.imagesWithAlt}/${meta.imageCount}`,
-      label: { en: 'Fetched image tags declare alt attributes', el: 'Οι εικόνες στο HTML δηλώνουν alt' },
+      label: { en: 'Image alt attributes', el: 'Alt των εικόνων' },
       hint: { en: 'Describe meaningful images in alt; use alt="" for decorative ones. This checks attribute presence, not description quality or images added by JavaScript.', el: 'Περιγράψτε τις ουσιαστικές εικόνες στο alt και χρησιμοποιήστε alt="" για διακοσμητικές. Ελέγχεται η παρουσία του alt, όχι η ποιότητά του ή εικόνες που προσθέτει η JavaScript.' },
     },
     {
       id: 'robots', weight: 20, severity: 'issue', pass: !noindex,
       detail: `robots=${meta.robots ?? '∅'}; googlebot=${meta.googlebotRobots ?? '∅'}; X-Robots-Tag=${ctx.xRobotsTag ?? '∅'}`,
-      label: { en: 'No Google noindex directive found in this response', el: 'Δεν βρέθηκε οδηγία noindex για τη Google στην απόκριση' },
+      label: { en: 'Google indexing directives', el: 'Οδηγίες indexing για τη Google' },
       hint: { en: 'If this page should appear in Google, review noindex/none in robots or googlebot meta tags and X-Robots-Tag. Intentional exclusions can be correct. This is not proof of indexing; robots.txt was not checked.', el: 'Αν αυτή η σελίδα πρέπει να εμφανίζεται στη Google, ελέγξτε τα noindex/none στις meta ετικέτες robots ή googlebot και στο X-Robots-Tag. Ένας σκόπιμος αποκλεισμός μπορεί να είναι σωστός. Δεν επιβεβαιώνεται το indexing και δεν ελέγχθηκε το robots.txt.' },
     },
     {
       id: 'ttfb', weight: 1, severity: 'advisory', pass: ctx.ttfbMs < 800,
       detail: `${Math.round(ctx.ttfbMs)} ms`,
-      label: { en: 'Response headers received within 800 ms (single request)', el: 'Λήψη headers σε λιγότερο από 800 ms (μία μέτρηση)' },
+      label: { en: 'Response header timing (single measurement)', el: 'Χρόνος λήψης headers (μία μέτρηση)' },
       hint: { en: 'Repeat performance measurements from relevant regions before changing hosting or caching. This single server request is not a Core Web Vitals or page-load test.', el: 'Επαναλάβετε μετρήσεις από σχετικές περιοχές πριν αλλάξετε hosting ή cache. Αυτή η μία απόκριση προς τον διακομιστή δεν είναι έλεγχος Core Web Vitals ή χρόνου φόρτωσης.' },
     },
   ];
