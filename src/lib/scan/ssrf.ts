@@ -19,15 +19,21 @@ export type ScanErrorCode =
   | 'unreachable'
   | 'not_html'
   | 'too_many_redirects'
+  | 'access_blocked'
+  | 'upstream_rate_limited'
+  | 'upstream_error'
+  | 'page_too_large'
   | 'rate_limited';
 
 export class ScanError extends Error {
   readonly code: ScanErrorCode;
   readonly status: number;
-  constructor(code: ScanErrorCode, status = 400) {
+  readonly upstreamStatus?: number;
+  constructor(code: ScanErrorCode, status = 400, upstreamStatus?: number) {
     super(code);
     this.code = code;
     this.status = status;
+    this.upstreamStatus = upstreamStatus;
   }
 }
 
