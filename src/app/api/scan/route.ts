@@ -7,7 +7,7 @@ import { ScanError } from '@/lib/scan/ssrf';
 /**
  * POST /api/scan  { url: string }
  *
- * Fetches the visitor's homepage server-side (public hosts only, 6 s budget,
+ * Fetches the requested page server-side (public hosts only, 6 s budget,
  * three redirects, 1 MB of HTML) and returns thirteen weighted checks with a
  * 0-100 score. This is the lead magnet behind the hero input: the visitor
  * gets a real, instant read of their site, and hands us their domain.
@@ -58,6 +58,7 @@ export async function POST(req: Request): Promise<NextResponse> {
       https: page.finalUrl.protocol === 'https:',
       status: page.status,
       ttfbMs: page.ttfbMs,
+      xRobotsTag: page.xRobotsTag,
     });
     const { score, passed, total, topIssues } = scoreChecks(checks);
 
@@ -66,6 +67,9 @@ export async function POST(req: Request): Promise<NextResponse> {
       finalUrl: page.finalUrl.toString(),
       status: page.status,
       ttfbMs: Math.round(page.ttfbMs),
+      observedAt: page.observedAt,
+      scope: 'requested-page-html',
+      truncated: false,
       score,
       passed,
       total,
@@ -86,7 +90,10 @@ export async function POST(req: Request): Promise<NextResponse> {
     });
   } catch (err) {
     if (err instanceof ScanError) {
-      return NextResponse.json({ error: err.code }, { status: err.status });
+      return NextResponse.json({
+        error: err.code,
+        ...(err.upstreamStatus === undefined ? {} : { upstreamStatus: err.upstreamStatus }),
+      }, { status: err.status, headers: { 'cache-control': 'no-store' } });
     }
     return NextResponse.json({ error: 'unreachable' }, { status: 502 });
   } finally {

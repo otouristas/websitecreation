@@ -91,10 +91,12 @@ function FeatureBlock({ menu, onClose }: { readonly menu: NavMenu; readonly onCl
     };
     return l.external ? (
       <a href={l.href} className={cls} onClick={handler}>
+        {software && l === f.primary ? <GoogleTile className="size-7" /> : null}
         {l.label}
       </a>
     ) : (
       <Link href={l.href} className={cls} onClick={handler}>
+        {software && l === f.primary ? <GoogleTile className="size-7" /> : null}
         {l.label}
       </Link>
     );
@@ -124,7 +126,7 @@ function FeatureBlock({ menu, onClose }: { readonly menu: NavMenu; readonly onCl
         {go(
           f.primary,
           cn(
-            'col-span-2 flex h-12 items-center justify-center rounded-xl text-[0.9375rem] font-semibold',
+            'col-span-2 flex min-h-12 items-center justify-center gap-2 rounded-xl px-3 py-2 text-[0.9375rem] font-semibold',
             'asg-primary-action text-primary-foreground',
           ),
           `mobile_nav_${menu.id}_primary`,

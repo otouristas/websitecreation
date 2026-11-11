@@ -1,10 +1,12 @@
 "use client";
 
 import { useEffect, useState, type FormEvent } from "react";
-import { ArrowRight, Check, Loader2 } from "lucide-react";
+import { ArrowRight, Check, Info, Loader2 } from "lucide-react";
 import { cn } from "@/lib/cn";
 import { captureUtmParams, trackFormStart } from "@/lib/analytics";
-import { describeAnswers, fetchTeamProgress, submitLead, type TeamAgent, type TeamProgress } from "@/lib/leads";
+import { describeAnswers, fetchTeamProgress, submitLead, type TeamProgress } from "@/lib/leads";
+import { auditPhase } from "@/lib/lead-progress";
+import { WHATSAPP_HREF } from "@/lib/contact-info";
 import type { SiteLocale } from "@/lib/i18n/locale";
 import type { ScanResult } from "@/lib/scan/score";
 import { waveField, wavePrimaryBtn } from "@/components/pages/platform-wave/ui";
@@ -19,17 +21,17 @@ import { FetchDetailsButton, FetchDetailsNote, SiteDetailsCard, siteDetailsField
  *
  *   form     -> five fields and one button
  *   results  -> the instant homepage check (score + costliest issues) right away,
- *               and a live board of the SEO team working on the full audit in the app
+ *               and the measured-audit/email status returned by the app
  *
- * The lead goes to the app (which starts the agent team) and to Formspree as a backup.
+ * The lead goes to the app for measured checks and to Formspree as a backup.
  * The board shows progress only; the findings reach the prospect by email.
  */
 
 const COPY = {
   en: {
     eyebrow: "Free SEO audit",
-    title: "Tell us about your business. Our SEO team starts on your site right away.",
-    body: "You see a first check of your homepage in seconds. Then our team runs a full audit, keyword research, competitor and content analysis, and sends you the results with a plan.",
+    title: "See what your website needs first.",
+    body: "We check your public pages and email a short summary with up to three measured findings. Reply with your goals so we can discuss the next steps.",
     website: "Your website",
     websitePh: "your-business.com",
     name: "Your name",
@@ -39,22 +41,27 @@ const COPY = {
     briefPh: "e.g. Boutique hotel in Oia with 12 suites. Most guests are couples from the UK and US. We want more direct bookings.",
     submit: "Start my free audit",
     sending: "Starting...",
-    firstLook: "First look at your homepage",
+    firstLook: "First check of your page",
+    scope: "Initial HTML checks for this page.",
     passed: (p: number, t: number) => `${p} of ${t} checks passed`,
-    issues: "Costing you the most",
-    allGood: "Your homepage passes every quick check. The full audit looks deeper.",
-    scanFailed: "We couldn't load your homepage for the quick check. The team will look at it in the full audit.",
-    teamTitle: "Our SEO team is working on your site",
-    teamDone: "The team has finished. Your report, with what to fix first, is on its way to your inbox. If you can't see it in a few minutes, check your spam folder.",
-    teamStatic: "Our team has your request. The full audit and your plan arrive by email within 24 working hours.",
-    statuses: { queued: "Waiting", running: "Working", done: "Done" },
-    agents: {
-      auditor: "Technical audit of up to 30 pages",
-      keywords: "Keyword research for your market",
-      competitors: "Competitor analysis",
-      content: "Content and trust review",
-      strategist: "Your plan for the next 90 days",
-    } as Record<TeamAgent, string>,
+    issues: "Findings to review first",
+    allGood: "This page passed the initial checks. A wider review may find other issues.",
+    scanFailed: "The initial page check could not be completed. Your request has been received; we can review it together.",
+    scanBlocked: "The website blocked our check. No SEO findings were inferred from the blocked response.",
+    scanRateLimited: "The website temporarily limited requests. Your enquiry is saved so we can review the site together.",
+    scanUpstreamError: "The page returned an error. No SEO score was inferred from that error page.",
+    scanTooLarge: "The page exceeded the check's HTML size limit. No partial SEO score was produced.",
+    teamTitle: "Your website check",
+    teamDone: "The short summary has been sent to the email address you provided.",
+    teamStatic: "We have received your request. We will contact you to discuss your website and your goals.",
+    auditLabel: "Page and technical checks",
+    auditFailed: "The automated check could not be completed. Contact us so we can review the website together.",
+    auditUnavailable: "Your request is saved. Progress information is not available right now.",
+    emailPending: "The short findings summary is being prepared.",
+    emailUnknown: "The check is complete. Contact us to discuss the findings.",
+    emailFailed: "The check finished, but the email send could not be confirmed. Contact us for the findings.",
+    contactTeam: "Discuss the findings",
+    statuses: { queued: "Waiting", running: "Checking", completed: "Checked", failed: "Could not complete", unavailable: "Request received" },
     errors: {
       website: "Enter your website address, like your-business.com.",
       name: "Add your name.",
@@ -64,8 +71,8 @@ const COPY = {
   },
   el: {
     eyebrow: "Δωρεάν έλεγχος SEO",
-    title: "Πείτε μας για την επιχείρησή σας. Η ομάδα SEO ξεκινά αμέσως.",
-    body: "Βλέπετε έναν πρώτο έλεγχο της αρχικής σας σε λίγα δευτερόλεπτα. Μετά η ομάδα μας κάνει πλήρη έλεγχο, έρευνα λέξεων-κλειδιών, ανάλυση ανταγωνισμού και περιεχομένου και σας στέλνει τα αποτελέσματα με πλάνο.",
+    title: "Δείτε τι χρειάζεται πρώτα η ιστοσελίδα σας.",
+    body: "Ελέγχουμε τις δημόσιες σελίδες σας και στέλνουμε μια σύντομη σύνοψη με έως τρία ευρήματα. Απαντήστε μας με τους στόχους σας, για να συζητήσουμε τα επόμενα βήματα.",
     website: "Η ιστοσελίδα σας",
     websitePh: "h-epixeirisi-sas.gr",
     name: "Το όνομά σας",
@@ -75,22 +82,27 @@ const COPY = {
     briefPh: "π.χ. Boutique ξενοδοχείο στην Οία με 12 σουίτες. Οι περισσότεροι επισκέπτες είναι ζευγάρια από την Αγγλία και τις ΗΠΑ. Θέλουμε περισσότερες απευθείας κρατήσεις.",
     submit: "Ξεκινήστε τον δωρεάν έλεγχο",
     sending: "Ξεκινάμε...",
-    firstLook: "Πρώτη ματιά στην αρχική σας",
+    firstLook: "Πρώτος έλεγχος της σελίδας σας",
+    scope: "Αρχικός έλεγχος του HTML αυτής της σελίδας.",
     passed: (p: number, t: number) => `Πέρασαν ${p} από τους ${t} ελέγχους`,
-    issues: "Σας κοστίζουν περισσότερο",
-    allGood: "Η αρχική σας περνά όλους τους γρήγορους ελέγχους. Ο πλήρης έλεγχος πάει πιο βαθιά.",
-    scanFailed: "Δεν μπορέσαμε να φορτώσουμε την αρχική σας για τον γρήγορο έλεγχο. Η ομάδα θα την εξετάσει στον πλήρη έλεγχο.",
-    teamTitle: "Η ομάδα SEO δουλεύει στην ιστοσελίδα σας",
-    teamDone: "Η ομάδα τελείωσε. Η αναφορά σας, με το τι να διορθώσετε πρώτα, έρχεται στο email σας. Αν δεν τη δείτε σε λίγα λεπτά, κοιτάξτε και στα ανεπιθύμητα.",
-    teamStatic: "Η ομάδα μας έλαβε το αίτημά σας. Ο πλήρης έλεγχος και το πλάνο σας έρχονται με email μέσα σε 24 εργάσιμες ώρες.",
-    statuses: { queued: "Σε αναμονή", running: "Σε εξέλιξη", done: "Έτοιμο" },
-    agents: {
-      auditor: "Τεχνικός έλεγχος έως 30 σελίδων",
-      keywords: "Έρευνα λέξεων-κλειδιών για την αγορά σας",
-      competitors: "Ανάλυση ανταγωνισμού",
-      content: "Έλεγχος περιεχομένου και αξιοπιστίας",
-      strategist: "Το πλάνο σας για τις επόμενες 90 ημέρες",
-    } as Record<TeamAgent, string>,
+    issues: "Ευρήματα που αξίζει να δείτε πρώτα",
+    allGood: "Η σελίδα πέρασε τους αρχικούς ελέγχους. Ένας ευρύτερος έλεγχος μπορεί να εντοπίσει επιπλέον ζητήματα.",
+    scanFailed: "Ο αρχικός έλεγχος της σελίδας δεν ολοκληρώθηκε. Λάβαμε το αίτημά σας και μπορούμε να το εξετάσουμε μαζί.",
+    scanBlocked: "Η ιστοσελίδα δεν επέτρεψε την πρόσβαση στον έλεγχο. Δεν βγάλαμε συμπεράσματα SEO από αυτή την απάντηση.",
+    scanRateLimited: "Η ιστοσελίδα περιόρισε προσωρινά τα αιτήματα. Το αίτημά σας έχει καταχωριστεί για να τη δούμε μαζί.",
+    scanUpstreamError: "Η σελίδα επέστρεψε σφάλμα. Δεν υπολογίσαμε βαθμό SEO από τη σελίδα σφάλματος.",
+    scanTooLarge: "Το HTML της σελίδας ξεπέρασε το όριο του ελέγχου. Δεν υπολογίστηκε βαθμός από ελλιπή δεδομένα.",
+    teamTitle: "Ο έλεγχος της ιστοσελίδας σας",
+    teamDone: "Η σύντομη σύνοψη στάλθηκε στο email που δηλώσατε.",
+    teamStatic: "Λάβαμε το αίτημά σας. Θα επικοινωνήσουμε μαζί σας για την ιστοσελίδα και τους στόχους σας.",
+    auditLabel: "Έλεγχος σελίδων και τεχνικών στοιχείων",
+    auditFailed: "Ο αυτόματος έλεγχος δεν ολοκληρώθηκε. Επικοινωνήστε μαζί μας για να δούμε την ιστοσελίδα σας μαζί.",
+    auditUnavailable: "Το αίτημά σας έχει καταχωριστεί. Οι πληροφορίες προόδου δεν είναι διαθέσιμες αυτή τη στιγμή.",
+    emailPending: "Ετοιμάζεται η σύντομη σύνοψη των ευρημάτων.",
+    emailUnknown: "Ο έλεγχος ολοκληρώθηκε. Επικοινωνήστε μαζί μας για να συζητήσουμε τα ευρήματα.",
+    emailFailed: "Ο έλεγχος ολοκληρώθηκε, αλλά δεν επιβεβαιώθηκε η αποστολή του email. Επικοινωνήστε μαζί μας για τα ευρήματα.",
+    contactTeam: "Συζητήστε τα ευρήματα",
+    statuses: { queued: "Σε αναμονή", running: "Σε εξέλιξη", completed: "Ολοκληρώθηκε", failed: "Δεν ολοκληρώθηκε", unavailable: "Λάβαμε το αίτημα" },
     errors: {
       website: "Γράψτε τη διεύθυνση της ιστοσελίδας σας, π.χ. h-epixeirisi-sas.gr.",
       name: "Προσθέστε το όνομά σας.",
@@ -100,7 +112,6 @@ const COPY = {
   },
 } as const;
 
-const AGENT_ORDER: TeamAgent[] = ["auditor", "keywords", "competitors", "content", "strategist"];
 const POLL_MS = 4000;
 const POLL_LIMIT_MS = 12 * 60_000;
 
@@ -113,52 +124,43 @@ const fieldError =
 function TeamBoard({ locale, token }: { locale: SiteLocale; token: string | null }) {
   const t = COPY[locale];
   const [progress, setProgress] = useState<TeamProgress | null>(null);
+  const [lookupFailed, setLookupFailed] = useState(false);
 
   useEffect(() => {
     if (!token) return;
     let stop = false;
+    let timer: ReturnType<typeof setTimeout> | undefined;
     const started = Date.now();
     async function tick() {
       const next = await fetchTeamProgress(token as string);
       if (stop) return;
       if (next) setProgress(next);
-      if (!next?.done && Date.now() - started < POLL_LIMIT_MS) setTimeout(tick, POLL_MS);
+      const expired = Date.now() - started >= POLL_LIMIT_MS;
+      setLookupFailed(next === null || (expired && !next.done));
+      if (!next?.done && !expired) timer = setTimeout(tick, POLL_MS);
     }
     void tick();
     return () => {
       stop = true;
+      if (timer) clearTimeout(timer);
     };
   }, [token]);
 
   if (!token) return <p className="text-sm leading-relaxed text-muted-foreground">{t.teamStatic}</p>;
 
+  const phase = lookupFailed ? "unavailable" : auditPhase(progress);
+  const emailStatus = progress?.report_email_status;
   return (
     <div>
-      <p className="flex items-center gap-2 font-display text-base font-semibold tracking-[-0.02em] text-foreground">
-        {!progress?.done && <span className="live-dot" aria-hidden />}
-        {t.teamTitle}
-      </p>
-      <ol className="mt-3 grid gap-2" aria-live="polite">
-        {AGENT_ORDER.map((agent) => {
-          const raw = progress?.agents.find((a) => a.agent === agent)?.status ?? "queued";
-          // A step that couldn't finish is picked up by a person; the prospect just sees it as handled.
-          const status = raw === "failed" ? "done" : raw;
-          return (
-            <li key={agent} className="flex min-w-0 items-center gap-3 rounded-2xl border border-hairline bg-background/40 px-4 py-2.5 text-sm">
-              {status === "done" ? (
-                <Check className="size-4 shrink-0 text-brand" aria-hidden />
-              ) : status === "running" ? (
-                <Loader2 className="size-4 shrink-0 animate-spin text-brand" aria-hidden />
-              ) : (
-                <span className="size-4 shrink-0 rounded-full border border-hairline" aria-hidden />
-              )}
-              <span className={cn("min-w-0 flex-1", status === "queued" ? "text-muted-foreground" : "text-foreground")}>{t.agents[agent]}</span>
-              <span className="shrink-0 font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">{t.statuses[status]}</span>
-            </li>
-          );
-        })}
-      </ol>
-      {progress?.done && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{t.teamDone}</p>}
+      <p className="font-display text-base font-semibold tracking-[-0.02em] text-foreground">{t.teamTitle}</p>
+      <div className="mt-3 flex min-w-0 items-center gap-3 rounded-2xl border border-hairline bg-background/40 px-4 py-3 text-sm" role="status">
+        {phase === "completed" ? <Check className="size-4 shrink-0 text-brand" aria-hidden /> : phase === "running" ? <Loader2 className="size-4 shrink-0 animate-spin text-brand" aria-hidden /> : <Info className="size-4 shrink-0 text-muted-foreground" aria-hidden />}
+        <span className="min-w-0 flex-1">{t.auditLabel}</span>
+        <span className="text-xs text-muted-foreground">{t.statuses[phase]}</span>
+      </div>
+      {phase === "failed" ? <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{t.auditFailed}</p> : phase === "unavailable" ? <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{t.auditUnavailable}</p> : null}
+      {phase === "completed" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{emailStatus === "sent" ? t.teamDone : emailStatus === "failed" ? t.emailFailed : emailStatus === "pending" || emailStatus === "sending" ? t.emailPending : t.emailUnknown}</p>}
+      <a href={WHATSAPP_HREF} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-primary">{t.contactTeam}<ArrowRight className="size-4" aria-hidden /></a>
     </div>
   );
 }
@@ -186,6 +188,7 @@ export function FreeAuditForm({
   const [sending, setSending] = useState(false);
   const [done, setDone] = useState(false);
   const [scan, setScan] = useState<ScanResult | null>(null);
+  const [scanError, setScanError] = useState<string | null>(null);
   const [token, setToken] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [started, setStarted] = useState(false);
@@ -223,9 +226,9 @@ export function FreeAuditForm({
     const quick = fetch("/api/scan", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ url: site, locale }) })
       .then(async (r) => {
         const json = (await r.json()) as ScanResult | { error: string };
-        return r.ok && "score" in json ? json : null;
+        return r.ok && "score" in json ? { result: json, error: null } : { result: null, error: "error" in json ? json.error : "generic" };
       })
-      .catch(() => null);
+      .catch(() => ({ result: null, error: "generic" }));
     const [res, scanned] = await Promise.all([
       submitLead(
         {
@@ -261,7 +264,8 @@ export function FreeAuditForm({
     ]);
     setSending(false);
     if (res.ok) {
-      setScan(scanned);
+      setScan(scanned.result);
+      setScanError(scanned.error);
       setToken(res.token ?? null);
       setDone(true);
     } else {
@@ -283,6 +287,8 @@ export function FreeAuditForm({
                     {scan.finalUrl.replace(/^https?:\/\//, "").replace(/\/$/, "")}
                   </p>
                   <p className="mt-0.5 text-sm text-muted-foreground">{t.passed(scan.passed, scan.total)}</p>
+                  <p className="mt-1 text-xs text-muted-foreground">{t.scope}</p>
+                  {scan.observedAt && Number.isFinite(Date.parse(scan.observedAt)) && <time className="mt-1 block text-xs text-muted-foreground" dateTime={scan.observedAt}>{new Date(scan.observedAt).toLocaleString(locale === "el" ? "el-GR" : "en-GB")}</time>}
                 </div>
               </div>
               {scan.topIssues.length > 0 ? (
@@ -295,6 +301,7 @@ export function FreeAuditForm({
                         <span className="min-w-0">
                           <span className="font-medium text-foreground">{issue.label[locale]}</span>
                           <span className="block text-[13px] leading-relaxed text-muted-foreground">{issue.hint[locale]}</span>
+                          {issue.detail && <span className="block break-words text-xs text-muted-foreground">{issue.detail}</span>}
                         </span>
                       </li>
                     ))}
@@ -305,7 +312,7 @@ export function FreeAuditForm({
               )}
             </>
           ) : (
-            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{t.scanFailed}</p>
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{scanError === "access_blocked" ? t.scanBlocked : scanError === "upstream_rate_limited" ? t.scanRateLimited : scanError === "upstream_error" ? t.scanUpstreamError : scanError === "page_too_large" ? t.scanTooLarge : t.scanFailed}</p>
           )}
         </div>
         <div className="min-w-0">

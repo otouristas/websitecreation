@@ -1,7 +1,9 @@
-import { assertPublicHost, normalizeUrl, ScanError } from './ssrf';
+import { normalizeUrl, ScanError } from './ssrf';
+import { pinnedPageResponse } from './network';
+import { parse } from 'node-html-parser';
 
 /**
- * The guarded homepage fetch shared by /api/scan and /api/site-info.
+ * The guarded requested-page fetch shared by /api/scan and /api/site-info.
  *
  * Every hop (the first request and each redirect) passes the public-host gate
  * in ssrf.ts, redirects are followed by hand so a public page cannot bounce us
@@ -15,6 +17,9 @@ export interface FetchedPage {
   status: number;
   /** Time to first byte of the last hop, in ms. */
   ttfbMs: number;
+  xRobotsTag: string | null;
+  contentType: string;
+  observedAt: string;
 }
 
 export interface FetchPageOptions {
@@ -34,13 +39,14 @@ export async function readCapped(res: Response, cap: number): Promise<string> {
     const { done, value } = await reader.read();
     if (done) break;
     received += value.byteLength;
-    out += decoder.decode(value, { stream: true });
-    if (received >= cap) {
+    if (received > cap) {
       await reader.cancel().catch(() => undefined);
-      break;
+      // A partial document cannot establish absent tags or total image counts.
+      throw new ScanError('page_too_large', 422);
     }
+    out += decoder.decode(value, { stream: true });
   }
-  return out;
+  return out + decoder.decode();
 }
 
 export async function fetchPublicHtml(input: string, opts: FetchPageOptions): Promise<FetchedPage> {
@@ -49,31 +55,28 @@ export async function fetchPublicHtml(input: string, opts: FetchPageOptions): Pr
   let ttfbMs = 0;
 
   for (let hop = 0; hop <= opts.maxRedirects; hop += 1) {
-    await assertPublicHost(current.hostname);
-    const hopStart = performance.now();
     let res: Response;
     try {
-      res = await fetch(current, {
-        method: 'GET',
-        redirect: 'manual',
+      const pinned = await pinnedPageResponse(current, {
         signal: opts.signal,
         headers: {
           'user-agent': opts.userAgent,
           accept: 'text/html,application/xhtml+xml;q=0.9,*/*;q=0.5',
           'accept-language': 'el,en;q=0.8',
         },
-        cache: 'no-store',
       });
+      res = pinned.response;
+      ttfbMs = pinned.ttfbMs;
     } catch (err) {
+      if (err instanceof ScanError) throw err;
       if ((err as Error).name === 'AbortError') throw new ScanError('timeout', 504);
       throw new ScanError('unreachable', 502);
     }
-    ttfbMs = performance.now() - hopStart;
 
-    if (res.status >= 300 && res.status < 400) {
+    if ([301, 302, 303, 307, 308].includes(res.status)) {
       const location = res.headers.get('location');
+      if (!location) { response = res; break; }
       await res.body?.cancel().catch(() => undefined);
-      if (!location) throw new ScanError('unreachable', 502);
       if (hop === opts.maxRedirects) throw new ScanError('too_many_redirects', 502);
       current = normalizeUrl(new URL(location, current).toString());
       continue;
@@ -83,6 +86,20 @@ export async function fetchPublicHtml(input: string, opts: FetchPageOptions): Pr
   }
 
   if (!response) throw new ScanError('too_many_redirects', 502);
+
+  // A blocked/rate-limited/error response is not the requested page's HTML.
+  // In particular, never turn a WAF page into missing-title/schema findings.
+  if (response.status < 200 || response.status >= 300) {
+    await response.body?.cancel().catch(() => undefined);
+    const code = response.status === 401 || response.status === 403
+      ? 'access_blocked'
+      : response.status === 429 ? 'upstream_rate_limited' : 'upstream_error';
+    throw new ScanError(code, 422, response.status);
+  }
+  if (response.headers.get('cf-mitigated')?.toLowerCase() === 'challenge') {
+    await response.body?.cancel().catch(() => undefined);
+    throw new ScanError('access_blocked', 422, response.status);
+  }
 
   const contentType = response.headers.get('content-type') ?? '';
   if (!/text\/html|application\/xhtml\+xml/i.test(contentType)) {
@@ -94,11 +111,27 @@ export async function fetchPublicHtml(input: string, opts: FetchPageOptions): Pr
   try {
     html = await readCapped(response, opts.maxBytes);
   } catch (err) {
+    if (err instanceof ScanError) throw err;
     if ((err as Error).name === 'AbortError') throw new ScanError('timeout', 504);
     throw new ScanError('unreachable', 502);
   }
 
-  return { html, finalUrl: current, status: response.status, ttfbMs };
+  const document = parse(html, { comment: false });
+  const title = document.querySelector('title')?.text.trim() ?? '';
+  const challengeScript = document.querySelectorAll('script').some((script) =>
+    /^\/cdn-cgi\/challenge-platform\//i.test(script.getAttribute('src') ?? ''),
+  );
+  if (/^(?:Just a moment|Attention Required|Security Verification)(?:$|[\s.!])/i.test(title)
+      && (challengeScript || !!document.querySelector('form#challenge-form'))) {
+    throw new ScanError('access_blocked', 422, response.status);
+  }
+
+  return {
+    html, finalUrl: current, status: response.status, ttfbMs,
+    xRobotsTag: response.headers.get('x-robots-tag'),
+    contentType,
+    observedAt: new Date().toISOString(),
+  };
 }
 
 /**
