@@ -9,6 +9,7 @@ import type { NavFeature, NavItem, NavMenu, NavModel } from '@/data/nav-menu';
 import { MarketingBadge } from '@/components/kit/primitives';
 import { trackCtaClick } from '@/lib/analytics';
 import { NAV_ICONS } from './nav-icons';
+import { GoogleTile } from '@/components/kit/sections';
 
 const triggerClass =
   'inline-flex items-center gap-1 whitespace-nowrap rounded-full px-2.5 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-foreground/6 hover:text-foreground aria-expanded:bg-foreground/6 aria-expanded:text-foreground';
@@ -50,12 +51,14 @@ function FeatureCard({ feature, menuId, onNavigate }: { readonly feature: NavFea
   const linkFor = (l: NonNullable<NavFeature['secondary']>, cls: string, cta: string) =>
     l.external ? (
       <a href={l.href} className={cls} onClick={() => { trackCtaClick(cta); onNavigate(); }}>
-        {l.label}
+        {software && l === feature.primary ? <GoogleTile className="size-7" /> : null}
+        <span className="min-w-0 flex-1 text-center">{l.label}</span>
         <ArrowRight className="size-4" />
       </a>
     ) : (
       <Link href={l.href} className={cls} onClick={() => { trackCtaClick(cta); onNavigate(); }}>
-        {l.label}
+        {software && l === feature.primary ? <GoogleTile className="size-7" /> : null}
+        <span className="min-w-0 flex-1 text-center">{l.label}</span>
         <ArrowRight className="size-4" />
       </Link>
     );
@@ -116,7 +119,7 @@ function FeatureCard({ feature, menuId, onNavigate }: { readonly feature: NavFea
         {linkFor(
           feature.primary,
           cn(
-            'inline-flex h-10 items-center justify-center gap-1.5 rounded-xl px-4 text-sm font-semibold transition-[transform,filter] hover:-translate-y-px',
+            'inline-flex min-h-12 items-center justify-center gap-2 rounded-xl px-3 py-2 text-sm font-semibold transition-[transform,filter] hover:-translate-y-px',
             'asg-primary-action text-primary-foreground',
           ),
           `mega_${menuId}_primary`,

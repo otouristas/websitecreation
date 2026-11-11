@@ -7,6 +7,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { ArrowUpRight, X } from "lucide-react";
 import {
   currentPriceIncludesVat,
+  OFFER_ENDS,
   formatPrice,
   seoPackages,
   websitePackages,
@@ -16,7 +17,7 @@ import styles from "./BlackMonthPopup.module.css";
 
 const DISMISSED_KEY = "asg-black-month-2026-vat-gift-seen";
 
-/** Agency campaign only; the application and software subscription pages keep their own pricing. */
+/** Marketing campaign for agency services. Software subscription amounts remain unchanged. */
 export function BlackMonthPopup({ enabled }: { enabled: boolean }) {
   const [open, setOpen] = useState(false);
   const dialogRef = useRef<HTMLDialogElement>(null);
@@ -42,26 +43,31 @@ export function BlackMonthPopup({ enabled }: { enabled: boolean }) {
       /* Still show this session's campaign. */
     }
     if (seen && !preview) return;
-    const timer = window.setTimeout(
-      () => {
-        // Consent and navigation own focus first. The campaign must not replace an open dialog.
-        if (
-          !preview &&
-          (!document.documentElement.classList.contains("consent-set") ||
-            document.querySelector(
-              'dialog[open], [role="dialog"][aria-modal="true"]',
-            ))
-        )
-          return;
-        setOpen(true);
-      },
-      preview ? 100 : 8000,
-    );
-    return () => window.clearTimeout(timer);
+    let timer: number;
+    let observer: MutationObserver | undefined;
+    const attempt = () => {
+      if (!currentPriceIncludesVat(websitePackages[0])) return;
+      // Wait for consent and any active menu, without stealing their focus.
+      if (!preview && (!document.documentElement.classList.contains("consent-set") ||
+          document.querySelector('dialog[open], [role="dialog"][aria-modal="true"]'))) {
+        observer ??= new MutationObserver(() => {
+          window.clearTimeout(timer);
+          timer = window.setTimeout(attempt, 8000);
+        });
+        observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
+        observer.observe(document.body, { attributes: true, attributeFilter: ["open", "aria-modal"], subtree: true, childList: true });
+        return;
+      }
+      observer?.disconnect();
+      setOpen(true);
+    };
+    timer = window.setTimeout(attempt, preview ? 100 : 8000);
+    const expires = window.setTimeout(() => { observer?.disconnect(); window.clearTimeout(timer); setOpen(false); }, Math.max(0, Math.min(2147483647, OFFER_ENDS.getTime() - Date.now() + 1)));
+    return () => { window.clearTimeout(timer); window.clearTimeout(expires); observer?.disconnect(); };
   }, [enabled]);
 
   useEffect(() => {
-    if (!open) return;
+    if (!enabled || !open) return;
     const dialog = dialogRef.current;
     if (!dialog) return;
     const previousFocus =
@@ -83,9 +89,9 @@ export function BlackMonthPopup({ enabled }: { enabled: boolean }) {
       window.scrollTo({ left: scroll.x, top: scroll.y, behavior: "instant" });
       previousFocus?.focus({ preventScroll: true });
     };
-  }, [open]);
+  }, [open, enabled]);
 
-  if (!enabled || !open) return null;
+  if (!enabled || !open || !currentPriceIncludesVat(websitePackages[0])) return null;
 
   return createPortal(
     <dialog

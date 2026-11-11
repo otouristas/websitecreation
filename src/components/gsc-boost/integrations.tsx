@@ -1,6 +1,7 @@
 import type { ComponentType, ReactNode } from "react";
 import Link from "next/link";
-import { ArrowRight, Bot, Check, Globe, Minus, Puzzle, Smartphone, UserPlus, type LucideIcon } from "lucide-react";
+import { ArrowRight, Bot, Check, Globe, Minus, Puzzle, Smartphone, type LucideIcon } from "lucide-react";
+import { GoogleTile } from "@/components/kit/sections";
 import { cn } from "@/lib/cn";
 import { getAppPath } from "@/lib/app-links";
 import { localizedPath, type SiteLocale } from "@/lib/i18n/locale";
@@ -42,7 +43,7 @@ export const SIGN_UP_FREE: Copy = c("Sign up free", "Δωρεάν εγγραφή
 export function SignUpFree({ locale, source, className }: { readonly locale: L; readonly source: string; readonly className?: string }) {
   return (
     <a href={appLink("/signup", locale, source)} className={cn(kitPrimaryBtn, className)}>
-      <UserPlus className="size-4" aria-hidden />
+      <GoogleTile className="size-7" />
       {SIGN_UP_FREE[locale]}
     </a>
   );

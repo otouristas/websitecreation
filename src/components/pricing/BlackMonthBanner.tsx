@@ -22,7 +22,7 @@ export function BlackMonthBanner() {
           className="absolute inset-0 -z-10 bg-[url('/campaigns/black-month-2026/background.webp')] bg-cover bg-right opacity-40"
         />
         <p className="text-[11px] font-semibold tracking-[0.14em] text-[var(--asg-brand-cyan)]">
-          BLACK MONTH / ΝΟΕΜΒΡΙΟΣ 2026
+          BLACK MONTH / ΥΠΗΡΕΣΙΕΣ ΙΣΤΟΣΕΛΙΔΩΝ & SEO / ΝΟΕΜΒΡΙΟΣ 2026
         </p>
         <h2 className="mt-3 font-display text-[28px] font-semibold leading-tight tracking-[-0.035em] sm:text-[36px]">
           Ίδια τιμή. Δώρο και ο ΦΠΑ.

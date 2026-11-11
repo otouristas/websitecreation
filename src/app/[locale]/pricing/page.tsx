@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Check } from "lucide-react";
 import Header from "@/components/Header";
+import { BlackMonthBanner } from "@/components/pricing/BlackMonthBanner";
 import Footer from "@/components/Footer";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
 import { Accent, Container, CtaBand, HeroCentered, KitEyebrow, KitHeading, KitSection, SoftwareCtas, TrustLine, softwareTrust } from "@/components/kit";
@@ -73,7 +74,7 @@ export default async function PlatformPricingPage({ params }: PageProps) {
           pill={<KitEyebrow>{tx("AnotherSEOGuru App · Pricing", "AnotherSEOGuru App · Τιμές")}</KitEyebrow>}
           title={
             <>
-              {tx("Simple plans. Credits only for the", "Απλά πακέτα. Μονάδες μόνο για τη")} <Accent>{tx("heavy lifting", "βαριά δουλειά")}</Accent>.
+              {tx("Your websites. Your projects.", "Οι ιστότοποί σας. Τα έργα σας.")} <Accent>{tx("One clear plan", "Ένα ξεκάθαρο πακέτο")}</Accent>.
             </>
           }
           lead={tx(
@@ -106,6 +107,8 @@ export default async function PlatformPricingPage({ params }: PageProps) {
             </p>
           </Container>
         </HeroCentered>
+
+        {isEl ? <BlackMonthBanner /> : null}
 
         <section aria-labelledby="included" className="mt-20 border-y border-hairline bg-surface/35 sm:mt-24">
           <Container className="py-12">

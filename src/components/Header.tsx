@@ -15,6 +15,9 @@ import { getTrustChips } from "@/data/trust-stats";
 import { trackCtaClick } from "@/lib/analytics";
 import { appLink } from "@/components/gsc-boost/copy";
 import { isAgencyPathname } from "@/lib/site-split";
+import { GoogleTile } from '@/components/kit/sections';
+import { BlackMonthRibbon } from '@/components/pricing/BlackMonthRibbon';
+import { currentPriceIncludesVat, websitePackages } from '@/data/pricing';
 import { BlackMonthPopup } from '@/components/pricing/BlackMonthPopup';
 
 export default function Header({
@@ -46,6 +49,7 @@ export default function Header({
   const model = useMemo(() => getNavModel(locale, mode), [locale, mode]);
   const chips = getTrustChips(locale);
   const isAgency = model.mode === "agency";
+  const campaignVisible = locale === "el" && currentPriceIncludesVat(websitePackages[0]);
   const signupHref = isAgency ? model.primaryCta.href : appLink("/signup", locale, "header");
   const loginHref = appLink("/login", locale, "header");
 
@@ -77,7 +81,9 @@ export default function Header({
 
   return (
     <>
+      {campaignVisible ? <BlackMonthRibbon /> : null}
       <nav
+        style={campaignVisible ? { top: 48 } : undefined}
         className="pointer-events-none fixed left-0 right-0 top-0 z-50 px-2 pt-3 min-[400px]:px-3 sm:px-6"
         aria-label="Main"
       >
@@ -148,6 +154,7 @@ export default function Header({
                 onClick={() => trackCtaClick(isAgency ? "header_free_audit" : "header_signup")}
                 className="inline-flex h-9 items-center gap-1.5 whitespace-nowrap rounded-full px-3.5 font-display text-sm font-semibold text-primary-foreground asg-primary-action shadow-[inset_0_1px_0_0_oklch(1_0_0/18%),0_0_0_1px_color-mix(in_oklab,var(--primary-glow)_35%,transparent),0_8px_24px_-10px_color-mix(in_oklab,var(--primary)_80%,transparent)] transition-[transform,box-shadow] duration-200 hover:-translate-y-px motion-reduce:transition-none"
               >
+                {!isAgency ? <GoogleTile className="size-6" /> : null}
                 <span className="sm:hidden">{isAgency ? model.primaryCta.shortLabel : nav.signUpShort}</span>
                 <span className="hidden sm:inline">{isAgency ? model.primaryCta.shortLabel : nav.signUp}</span>
               </a>
@@ -172,7 +179,7 @@ export default function Header({
         onClose={closeMobileMenu}
         model={model}
       />
-      <BlackMonthPopup enabled={isAgency && !pathname.includes('/get-started')} />
+      <BlackMonthPopup enabled={campaignVisible && !isMobileMenuOpen && !pathname.includes('/get-started')} />
     </>
   );
 }

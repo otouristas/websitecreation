@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+import { McpShowcase } from "@/components/gsc-boost/McpShowcase";
 import { notFound } from "next/navigation";
 import { ArrowRight, Bot, KeyRound, LockKeyhole, Unplug } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
-import { Accent, CheckList, Container, CtaBand, HeroCentered, KitEyebrow, KitHeading, KitSection, NameStrip, Stage, TrustLine, kitSecondaryBtn } from "@/components/kit";
+import { Accent, CheckList, Container, CtaBand, HeroCentered, KitEyebrow, KitHeading, KitSection, TrustLine, kitSecondaryBtn } from "@/components/kit";
 import {
   CodeBlock,
   GscFaq,
@@ -64,6 +66,7 @@ const TOOLS: ReadonlyArray<{ name: string; text: Copy; write?: boolean }> = [
       "Ευκαιρίες με σειρά προτεραιότητας από τα δεδομένα αναζήτησης του έργου, με εκτιμώμενα επιπλέον κλικ όπου υπάρχουν. Οι εκτιμήσεις δεν αποτελούν εγγύηση αποτελέσματος.",
     ),
   },
+  { name: "create_task", text: c("Create a task for a saved project with a title, priority and target page.", "Δημιουργήστε εργασία για αποθηκευμένο έργο, με τίτλο, προτεραιότητα και σελίδα."), write: true },
   { name: "get_tasks", text: c("Your project tasks: status, priority, due date, target page and any saved opportunity estimates.", "Οι εργασίες του έργου σας: κατάσταση, προτεραιότητα, προθεσμία, σελίδα και τυχόν αποθηκευμένες εκτιμήσεις ευκαιριών.") },
   {
     name: "get_ai_visibility_summary",
@@ -134,39 +137,6 @@ const CLIENTS: ReadonlyArray<{ id: string; name: string; how: Copy; label: Copy;
   { id: "chatgpt", name: "ChatGPT", how: c("Use the custom remote MCP connection controls available to your account. Paste the server URL, choose OAuth and approve only the access you want to grant.", "Χρησιμοποιήστε τις ρυθμίσεις προσαρμοσμένης σύνδεσης MCP που διαθέτει ο λογαριασμός σας. Επικολλήστε τη διεύθυνση server, επιλέξτε OAuth και εγκρίνετε μόνο την πρόσβαση που θέλετε να δώσετε."), label: c("Server URL", "Διεύθυνση server"), code: MCP_URL },
 ];
 
-function ChatMock({ locale }: { readonly locale: SiteLocale }) {
-  const isEl = locale === "el";
-  return (
-    <figure>
-      <figcaption className="sr-only">
-        {isEl
-          ? "Απεικόνιση συνομιλίας: ο βοηθός καλεί το get_opportunities και απαντά με τις κορυφαίες διορθώσεις. Τα νούμερα είναι παράδειγμα."
-          : "Illustration of a chat: the assistant calls get_opportunities and answers with the top fixes. The numbers are an example."}
-      </figcaption>
-      <div aria-hidden className="pointer-events-none select-none space-y-3 rounded-2xl border border-hairline bg-background p-4 text-left sm:p-6">
-        <div className="ml-auto max-w-[85%] rounded-2xl rounded-br-md bg-brand/15 px-4 py-2.5 text-[13.5px] text-foreground">
-          {isEl ? "Ποιες είναι οι 3 πιο σημαντικές διορθώσεις για το aegean-suites.example;" : "What are my top 3 fixes for aegean-suites.example?"}
-        </div>
-        <div className="inline-flex items-center gap-2 rounded-lg border border-hairline bg-surface px-3 py-1.5 font-mono text-[11.5px] text-muted-foreground">
-          <Bot className="size-3.5 text-brand" />
-          anotherseoguru · get_opportunities
-        </div>
-        <div className="max-w-[92%] rounded-2xl rounded-bl-md border border-hairline bg-surface px-4 py-3 text-[13.5px] leading-relaxed text-foreground/90">
-          <p>{isEl ? "Από το Search Console σας, με τη μεγαλύτερη αξία πρώτα:" : "From your Search Console, biggest first:"}</p>
-          <ol className="mt-2 list-decimal space-y-1 pl-5">
-            <li>{isEl ? "/rooms: θέση 11 για «santorini caldera suites», περίπου +140 κλικ/μήνα" : "/rooms: position 11 for “santorini caldera suites”, about +140 clicks/month"}</li>
-            <li>{isEl ? "/offers: CTR 1,2% στη θέση 4, ξαναγράψτε τον τίτλο, περίπου +90" : "/offers: 1.2% CTR at position 4, rewrite the title, about +90"}</li>
-            <li>{isEl ? "/blog/oia-sunset: πτώση 28 ημερών, ανανέωση, περίπου +60" : "/blog/oia-sunset: 28-day decline, refresh it, about +60"}</li>
-          </ol>
-          <p className="mt-2 text-muted-foreground">{isEl ? "Να ξεκινήσω την πρώτη εργασία;" : "Want me to start the first task?"}</p>
-        </div>
-      </div>
-      <p className="mt-3 text-center text-[12px] text-muted-foreground">
-        {isEl ? "Απεικόνιση με δείγμα ιστότοπου· τα νούμερα είναι παράδειγμα." : "Illustration on a sample site; the numbers are an example."}
-      </p>
-    </figure>
-  );
-}
 
 export default async function PlatformMcpPage({ params }: PageProps) {
   const { locale: raw } = await params;
@@ -226,15 +196,10 @@ export default async function PlatformMcpPage({ params }: PageProps) {
             />
           }
         >
-          <Container className="mt-14 sm:mt-16">
-            <Stage className="mx-auto max-w-3xl">
-              <p className="mb-4 text-xs text-muted-foreground">{tx("Illustrative conversation with fictional data. Live answers use the connected project and selected dates.", "Ενδεικτική συνομιλία με υποθετικά δεδομένα. Οι πραγματικές απαντήσεις χρησιμοποιούν το συνδεδεμένο έργο και την επιλεγμένη περίοδο.")}</p><ChatMock locale={locale} />
-            </Stage>
+          <Container className="mt-12 sm:mt-16">
+            <McpShowcase locale={locale} />
           </Container>
         </HeroCentered>
-
-        <NameStrip heading={tx("Custom remote connections in compatible clients", "Προσαρμοσμένες απομακρυσμένες συνδέσεις σε συμβατές εφαρμογές")}
-          items={[{ name: "ChatGPT", role: tx("Interactive performance cards", "Διαδραστικές κάρτες απόδοσης") }, { name: "Claude", role: tx("Project data and task tools", "Δεδομένα έργου και εργαλεία εργασιών") }]} />
 
         <KitSection id="connection-status">
           <KitHeading eyebrow={tx("Your project, in your AI workflow", "Το έργο σας στη συνομιλία AI")} title={tx("Ask from your data. Approve the next step.", "Ρωτήστε με τα δεδομένα σας. Εγκρίνετε το επόμενο βήμα.")}
@@ -274,7 +239,12 @@ export default async function PlatformMcpPage({ params }: PageProps) {
           <ul className="mt-12 grid gap-5 md:grid-cols-2">
             {CLIENTS.map((client) => (
               <li key={client.id} id={`client-${client.id}`} className="reveal flex min-w-0 flex-col rounded-2xl border border-hairline bg-background p-5 sm:p-6">
-                <h3 className="text-[17px] font-semibold text-foreground">{client.name}</h3>
+                <div className="flex items-center gap-3">
+                  <span className="grid size-12 shrink-0 place-items-center rounded-xl border border-hairline bg-white p-2">
+                    <Image src={client.id === "claude" ? "/logos/assets/claude-mark.png" : "/logos/assets/openai.webp"} alt="" width={32} height={32} className="size-8 object-contain" />
+                  </span>
+                  <h3 className="font-display text-2xl font-semibold text-foreground">{client.name}</h3>
+                </div>
                 <p className="mt-2 text-[14px] leading-relaxed text-muted-foreground">{client.how[locale]}</p>
                 <CodeBlock label={client.label[locale]} className="mt-4">
                   {client.code}
@@ -293,8 +263,8 @@ export default async function PlatformMcpPage({ params }: PageProps) {
               </>
             }
             description={tx(
-              "Read tools for your data, three task tools and one prompt. The task tools need the tasks permission, which the sign-in asks for by default; sign in read-only to leave them out.",
-              "Εργαλεία ανάγνωσης για τα δεδομένα σας, τρία για εργασίες και ένα prompt. Τα εργαλεία εργασιών θέλουν την αντίστοιχη άδεια, που η σύνδεση ζητά από προεπιλογή· συνδεθείτε μόνο για ανάγνωση αν δεν τα θέλετε.",
+              "Read project data and manage tasks from the same conversation. Task updates require the task permissions you approve when connecting.",
+              "Διαβάστε τα δεδομένα του έργου και διαχειριστείτε εργασίες από την ίδια συνομιλία. Οι ενημερώσεις εργασιών χρειάζονται τις άδειες που εγκρίνετε κατά τη σύνδεση.",
             )}
           />
           <div className="reveal mt-12 -mx-5 overflow-x-auto px-5 sm:mx-0 sm:px-0">
