@@ -131,9 +131,9 @@
   --bloom-strength: 10%;
   --bloom-strength-soft: 5%;
   /* Marketing layout vars referenced by page shells.
-     Measured against the floating pill: it bottoms out at ~70px on mobile and
-     ~74px from md up (pt-3 wrapper + pill padding). */
-  --site-header-height: 4.5rem;
+     Measured against the floating pill: it bottoms out at ~78px on mobile and
+     ~82px from md up (pt-3 wrapper + pill padding). */
+  --site-header-height: 5rem;
   --marketing-section-y: 6rem;
   --marketing-section-y-lg: 8rem;
   --marketing-container-narrow: 48rem;
@@ -152,7 +152,7 @@
 }
 
 @media (min-width: 768px) {
-  :root { --site-header-height: 4.75rem; }
+  :root { --site-header-height: 5.25rem; }
 }
 
 /* ==========================================================================
@@ -1165,7 +1165,7 @@ code, pre, kbd, samp { font-family: var(--font-code); }
 }
 
 /* Reserve the actual campaign ribbon + navigation height on every Greek page. */
-:root:has([data-black-month-ribbon]) { --site-header-height: 7.5rem; }
+:root:has([data-black-month-ribbon]) { --site-header-height: 8rem; }
 @media (min-width: 640px) {
-  :root:has([data-black-month-ribbon]) { --site-header-height: 7.75rem; }
+  :root:has([data-black-month-ribbon]) { --site-header-height: 8.25rem; }
 }

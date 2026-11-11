@@ -115,7 +115,7 @@ export default function Header({
               size="md"
               className="min-w-0 shrink-0"
               homeHref={model.homeHref}
-              imageClassName="h-7 min-[400px]:h-8"
+              imageClassName="h-6 min-[400px]:h-7 sm:h-8"
             />
             <div className="hidden min-w-0 items-center lg:flex">
               <MegaNav model={model} chips={chips} />
@@ -152,15 +152,16 @@ export default function Header({
               <a
                 href={signupHref}
                 onClick={() => trackCtaClick(isAgency ? "header_free_audit" : "header_signup")}
-                className="inline-flex h-9 items-center gap-1.5 whitespace-nowrap rounded-full px-3.5 font-display text-sm font-semibold text-primary-foreground asg-primary-action shadow-[inset_0_1px_0_0_oklch(1_0_0/18%),0_0_0_1px_color-mix(in_oklab,var(--primary-glow)_35%,transparent),0_8px_24px_-10px_color-mix(in_oklab,var(--primary)_80%,transparent)] transition-[transform,box-shadow] duration-200 hover:-translate-y-px motion-reduce:transition-none"
+                aria-label={isAgency ? model.primaryCta.label : nav.signUp}
+                className="inline-flex min-h-11 items-center gap-1.5 whitespace-nowrap rounded-full px-2.5 font-display text-[13px] font-semibold sm:px-3.5 sm:text-sm text-primary-foreground asg-primary-action shadow-[inset_0_1px_0_0_oklch(1_0_0/18%),0_0_0_1px_color-mix(in_oklab,var(--primary-glow)_35%,transparent),0_8px_24px_-10px_color-mix(in_oklab,var(--primary)_80%,transparent)] transition-[transform,box-shadow] duration-200 hover:-translate-y-px motion-reduce:transition-none"
               >
                 {!isAgency ? <GoogleTile className="size-6" /> : null}
-                <span className="sm:hidden">{isAgency ? model.primaryCta.shortLabel : nav.signUpShort}</span>
-                <span className="hidden sm:inline">{isAgency ? model.primaryCta.shortLabel : nav.signUp}</span>
+                <span className="md:hidden">{isAgency ? (locale === "el" ? "Έλεγχος SEO" : "SEO audit") : nav.signUpShort}</span>
+                <span className="hidden md:inline">{isAgency ? model.primaryCta.shortLabel : nav.signUp}</span>
               </a>
               <button
                 type="button"
-                className="grid size-9 shrink-0 place-items-center rounded-full border border-hairline text-foreground transition-colors hover:bg-foreground/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring lg:hidden"
+                className="grid size-11 shrink-0 place-items-center rounded-full border border-hairline text-foreground transition-colors hover:bg-foreground/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring lg:hidden"
                 onClick={toggleMobileMenu}
                 aria-expanded={isMobileMenuOpen}
                 aria-label={isMobileMenuOpen ? nav.closeMenu : nav.openMenu}
