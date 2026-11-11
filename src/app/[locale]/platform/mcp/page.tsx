@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { ArrowRight, Bot, KeyRound, LockKeyhole, Terminal, Unplug } from "lucide-react";
+import { ArrowRight, Bot, KeyRound, LockKeyhole, Unplug } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
@@ -8,7 +8,6 @@ import { Accent, CheckList, Container, CtaBand, HeroCentered, KitEyebrow, KitHea
 import {
   CodeBlock,
   GscFaq,
-  MCP_BRIDGE,
   MCP_PATH,
   MCP_URL,
   OtherWaysSection,
@@ -25,11 +24,9 @@ import { isValidLocale, type SiteLocale } from "@/lib/i18n/locale";
 
 /**
  * The AnotherSEOGuru MCP server: the hosted server at app.anotherseoguru.com/mcp.
- * Clients that only start local commands reach it through the public mcp-remote
- * bridge (OAuth with dynamic client registration and a loopback redirect, both
- * supported by app.anotherseoguru.com). Our own npm package is not published yet,
- * so the page never tells people to install it. Tool names must match
- * gsc-gemini-boost/supabase/functions/mcp exactly.
+ * The public guide uses the working remote URL/OAuth setup. It does not offer
+ * an unpublished local npm package or imply public app-directory approval.
+ * Tool names must match gsc-gemini-boost/supabase/functions/mcp exactly.
  */
 
 type PageProps = { params: Promise<{ locale: string }> };
@@ -119,11 +116,8 @@ const FAQ: ReadonlyArray<GscFaqItem> = [
     ),
   },
   {
-    q: c("Do I need Node.js?", "Χρειάζομαι Node.js;"),
-    a: c(
-      "A compatible remote MCP client can connect directly to the server URL with OAuth, without a local Node.js installation. Local-command-only clients may need a bridge such as mcp-remote and the Node.js version that bridge currently supports.",
-      "Μια συμβατή εφαρμογή απομακρυσμένου MCP συνδέεται απευθείας στη διεύθυνση server με OAuth, χωρίς τοπική εγκατάσταση Node.js. Οι εφαρμογές που εκτελούν μόνο τοπικές εντολές μπορεί να χρειάζονται γέφυρα όπως το mcp-remote και την έκδοση Node.js που υποστηρίζει.",
-    ),
+    q: c("Do I need to download a local package?", "Χρειάζεται να κατεβάσω τοπικό πακέτο;"),
+    a: c("No local package is needed for the remote MCP connection. Add the server URL in a compatible client and sign in with OAuth. Your own AnotherSEOGuru account and connected Google data supply the private SEO reports.", "Για την απομακρυσμένη σύνδεση MCP δεν χρειάζεται τοπικό πακέτο. Προσθέστε τη διεύθυνση server σε συμβατή εφαρμογή και συνδεθείτε με OAuth. Ο δικός σας λογαριασμός AnotherSEOGuru και τα συνδεδεμένα δεδομένα Google παρέχουν τις ιδιωτικές αναφορές SEO."),
   },
   {
     q: c("How do I disconnect an assistant?", "Πώς αποσυνδέω έναν βοηθό;"),
@@ -193,7 +187,7 @@ export default async function PlatformMcpPage({ params }: PageProps) {
     operatingSystem: "Any",
     applicationCategory: "DeveloperApplication",
     applicationSubCategory: "MCP server",
-    softwareRequirements: "An MCP client with remote server support, or a supported Node.js version for the mcp-remote bridge",
+    softwareRequirements: "An MCP client with custom remote server and OAuth support",
     featureList: TOOLS.map((t) => t.name),
   });
 
@@ -249,67 +243,18 @@ export default async function PlatformMcpPage({ params }: PageProps) {
         </KitSection>
 
         <KitSection id="setup">
-          <KitHeading
-            eyebrow={tx("Setup", "Ρύθμιση")}
-            title={
-              <>
-                {tx("Two ways in,", "Δύο τρόποι σύνδεσης,")} <Accent>{tx("one account", "ένας λογαριασμός")}</Accent>
-              </>
-            }
-            description={tx(
-              "Sign in to AnotherSEOGuru and choose a project. Connect Search Console when you want search reports, then add the assistant with the permissions you choose.",
-              "Συνδεθείτε στο AnotherSEOGuru και επιλέξτε έργο. Συνδέστε το Search Console όταν θέλετε αναφορές αναζήτησης και προσθέστε τον βοηθό με τις άδειες που επιλέγετε.",
-            )}
-          />
-          <div className="mt-12 grid gap-6 lg:grid-cols-2">
-            <div className="reveal flex min-w-0 flex-col rounded-2xl border border-hairline bg-surface/60 p-5 sm:p-6">
-              <KitEyebrow icon={<Bot />}>{tx("Remote server", "Απομακρυσμένος server")}</KitEyebrow>
-              <h3 className="mt-3 text-[18px] font-semibold text-foreground">{tx("Claude.ai, ChatGPT, Cursor, VS Code, Windsurf", "Claude.ai, ChatGPT, Cursor, VS Code, Windsurf")}</h3>
-              <p className="mt-2 text-[14.5px] leading-relaxed text-muted-foreground">
-                {tx(
-                  "Nothing to install. Add this URL as a custom connector or remote MCP server and approve access in your browser.",
-                  "Δεν εγκαθιστάτε τίποτα. Προσθέστε αυτή τη διεύθυνση ως custom connector ή απομακρυσμένο MCP server και εγκρίνετε την πρόσβαση στον browser.",
-                )}
-              </p>
-              <CodeBlock label={tx("Server URL", "Διεύθυνση server")} className="mt-5">
-                {MCP_URL}
-              </CodeBlock>
-              <CheckList
-                size="sm"
-                className="mt-5"
-                items={[
-                  tx("Add a custom remote MCP connection in a compatible client.", "Προσθέστε προσαρμοσμένη απομακρυσμένη σύνδεση MCP σε συμβατή εφαρμογή."),
-                  tx("Use OAuth and review the requested AnotherSEOGuru permissions.", "Χρησιμοποιήστε OAuth και ελέγξτε τις άδειες AnotherSEOGuru που ζητούνται."),
-                  tx("Select the intended project and a date range in your question.", "Αναφέρετε το έργο και την περίοδο που σας ενδιαφέρουν στην ερώτησή σας."),
-                ]}
-              />
-            </div>
-            <div className="reveal flex min-w-0 flex-col rounded-2xl border border-hairline bg-surface/60 p-5 sm:p-6">
-              <KitEyebrow icon={<Terminal />}>{tx("Local command", "Τοπική εντολή")}</KitEyebrow>
-              <h3 className="mt-3 text-[18px] font-semibold text-foreground">{tx("Claude Desktop and other local-only clients", "Claude Desktop και εφαρμογές μόνο με τοπικές εντολές")}</h3>
-              <p className="mt-2 text-[14.5px] leading-relaxed text-muted-foreground">
-                {tx(
-                  `For clients that can only start a local command. The open-source ${MCP_BRIDGE} bridge opens your browser to sign in, then connects your client to the same server. Use a Node.js version currently supported by the bridge.`,
-                  `Για εφαρμογές που εκτελούν μόνο τοπικές εντολές. Η γέφυρα ανοιχτού κώδικα ${MCP_BRIDGE} ανοίγει τον browser για να συνδεθείτε και μετά συνδέει την εφαρμογή σας στον ίδιο server. Χρησιμοποιήστε έκδοση Node.js που υποστηρίζει η γέφυρα.`,
-                )}
-              </p>
-              <CodeBlock label={tx("Add to your client's MCP config", "Προσθήκη στις ρυθμίσεις MCP")} className="mt-5">
-                {`{
-  "mcpServers": {
-    "anotherseoguru": {
-      "command": "npx",
-      "args": ["-y", "${MCP_BRIDGE}", "${MCP_URL}"]
-    }
-  }
-}`}
-              </CodeBlock>
-              <p className="mt-3 text-[13px] text-muted-foreground">
-                {tx(
-                  "On Windows, if the client can't start npx, use \"command\": \"cmd\" with \"/c\", \"npx\" in front of the arguments.",
-                  "Στα Windows, αν η εφαρμογή δεν ξεκινά το npx, βάλτε \"command\": \"cmd\" και στην αρχή των παραμέτρων \"/c\", \"npx\".",
-                )}
-              </p>
-            </div>
+          <KitHeading eyebrow={tx("Connect using custom setup", "Συνδεθείτε με προσαρμοσμένη ρύθμιση")}
+            title={<>{tx("One server URL. ", "Μία διεύθυνση server. ")}<Accent>{tx("Your account.", "Ο λογαριασμός σας.")}</Accent></>}
+            description={tx("Sign in to AnotherSEOGuru and choose a project. Connect Search Console when you want search reports, then add the assistant with the permissions you choose.", "Συνδεθείτε στο AnotherSEOGuru και επιλέξτε έργο. Συνδέστε το Search Console όταν θέλετε αναφορές αναζήτησης και προσθέστε τον βοηθό με τις άδειες που επιλέγετε.")} />
+          <div className="mt-10 rounded-2xl border border-hairline bg-surface/60 p-5 sm:p-7">
+            <KitEyebrow icon={<Bot />}>{tx("Remote MCP connection", "Απομακρυσμένη σύνδεση MCP")}</KitEyebrow>
+            <p className="mt-3 max-w-3xl text-[15px] leading-7 text-muted-foreground">{tx("Add this URL through your client's custom remote MCP controls. Choose OAuth, sign in to AnotherSEOGuru and approve the access you want to grant. No local package or API key is needed for this connection.", "Προσθέστε αυτή τη διεύθυνση στις ρυθμίσεις προσαρμοσμένης απομακρυσμένης σύνδεσης MCP της εφαρμογής σας. Επιλέξτε OAuth, συνδεθείτε στο AnotherSEOGuru και εγκρίνετε την πρόσβαση που θέλετε να δώσετε. Για αυτή τη σύνδεση δεν χρειάζεται τοπικό πακέτο ή API key.")}</p>
+            <CodeBlock label={tx("Server URL", "Διεύθυνση server")} className="mt-5">{MCP_URL}</CodeBlock>
+            <CheckList size="sm" className="mt-5" items={[
+              tx("Use a client and account that support custom remote MCP connections.", "Χρησιμοποιήστε εφαρμογή και λογαριασμό που υποστηρίζουν προσαρμοσμένες απομακρυσμένες συνδέσεις MCP."),
+              tx("Review the requested account and task permissions before approving.", "Ελέγξτε τις άδειες λογαριασμού και εργασιών που ζητούνται πριν εγκρίνετε."),
+              tx("Name the project and the date range in your question.", "Αναφέρετε το έργο και την περίοδο στην ερώτησή σας."),
+            ]} />
           </div>
         </KitSection>
 

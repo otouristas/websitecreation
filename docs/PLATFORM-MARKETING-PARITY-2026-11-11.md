@@ -31,3 +31,7 @@ Local review server: `http://localhost:8795`.
 HTTP render evidence: `/tmp/asg-marketing-parity-routes.json`. Typecheck output: `/tmp/asg-marketing-parity-typecheck.log` (exit 0, no errors). No marketing deployment, email or social post was performed.
 
 Setup source references reviewed: [OpenAI MCP documentation](https://developers.openai.com/api/docs/mcp) and [Claude custom remote connectors](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp). Host menus and plan/organization permissions remain host-controlled.
+
+Public installation boundary: the exact npm metadata lookup for `@anotherseoguru/mcp/latest` returned 404. The public page therefore offers only the working remote URL/OAuth setup and no local npm/bridge installation block. The official MCP Registry entry `com.anotherseoguru/mcp` is separately active at v1.0.0; that registry metadata is not npm publication or ChatGPT/Claude directory approval. Banned-term checking excludes generated `.next/dev` eval paths while retaining production-output checks.
+
+Publication hold: a new website SEO-audit/lead-flow review takes priority. No lead/audit/email/pricing/offer files were modified by this marketing work. Keep this candidate unpublished until that owning-flow review is complete.
