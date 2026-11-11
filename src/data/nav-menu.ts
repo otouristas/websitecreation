@@ -170,13 +170,13 @@ export function getNavModel(locale: SiteLocale, mode: NavMode = 'product', now: 
       eyebrow: t('We do it for you', 'Το αναλαμβάνουμε εμείς'),
       title: t('Free SEO audit in 24 hours', 'Δωρεάν έλεγχος SEO σε 24 ώρες'),
       body: t(
-        'Send your website. You get what costs you customers, what to fix first and a fixed price.',
-        'Στείλτε την ιστοσελίδα σας. Παίρνετε τι σας κοστίζει πελάτες, τι διορθώνεται πρώτο και σταθερή τιμή.',
+        'Send your website. Receive up to three measured SEO findings and discuss your next steps with us.',
+        'Στείλτε την ιστοσελίδα σας. Λάβετε έως τρία μετρημένα ευρήματα SEO και συζητήστε μαζί μας τα επόμενα βήματα.',
       ),
       points: [
         t('Technical, local and AI-search checks', 'Τεχνικό, τοπικό SEO και αναζήτηση AI'),
         t('Your top 5 fixes, in order', 'Οι 5 πρώτες διορθώσεις, με σειρά'),
-        t('A fixed price, no lock-in', 'Σταθερή τιμή, χωρίς δέσμευση'),
+        t('Initial review, no commitment', 'Αρχικός έλεγχος, χωρίς δέσμευση'),
       ],
       chips: [t(`SEO from €${seoFrom}/mo ${seoVat}`, `SEO από €${seoFrom}/μήνα ${seoVat}`), t(`Websites from €${webFrom} ${webVat}`, `Ιστοσελίδες από €${webFrom} ${webVat}`)],
       primary: { href: freeAudit.href, label: t('Get my free audit', 'Θέλω δωρεάν έλεγχο') },

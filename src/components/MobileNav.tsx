@@ -231,7 +231,7 @@ export function MobileNav({ locale, alternateHref, isOpen, onClose, model }: Mob
             <button
               ref={closeButtonRef}
               type="button"
-              className="grid size-9 shrink-0 place-items-center rounded-full border border-hairline text-foreground transition-colors hover:bg-foreground/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+              className="grid size-11 shrink-0 place-items-center rounded-full border border-hairline text-foreground transition-colors hover:bg-foreground/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
               // Close on touch release as well as on click: some iOS browsers
               // never deliver the click to a button inside this fixed sheet,
               // which left the X dead. The header ignores the ghost click.
