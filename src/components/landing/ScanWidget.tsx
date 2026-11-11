@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, type FormEvent } from "react";
+import { useRef, useState, type FormEvent } from "react";
 import Link from "next/link";
 import { ArrowRight, RotateCcw } from "lucide-react";
 import { describeAnswers, submitLead } from "@/lib/leads";
@@ -17,10 +17,9 @@ import { primaryBtnClass, ghostBtnClass } from "./primitives";
  * The hero lead magnet.
  *
  *   idle      -> a URL and one button
- *   scanning  -> a mono log while /api/scan works (minimum 2.2 s so the log
- *                is readable even when the scan is instant)
- *   results   -> score dial, the three costliest issues, and the email or
- *                WhatsApp field for the full audit
+ *   scanning  -> a status while the actual /api/scan request runs
+ *   results   -> score dial, the three initial findings, and the email or
+ *                WhatsApp field for a short measured summary
  *   sent      -> thank you + the two ways to continue
  *
  * Every state renders without the previous one's height jumping around, and
@@ -29,29 +28,26 @@ import { primaryBtnClass, ghostBtnClass } from "./primitives";
 
 type Stage = "idle" | "scanning" | "results" | "sent";
 
-const MIN_SCAN_MS = 2200;
-
 const COPY = {
   en: {
     placeholder: "your-website.gr",
     scan: "Scan my site",
     scanning: "Scanning",
-    hint: "Free · 13 checks · no signup",
+    hint: "Free page checks · no signup",
     whatsapp: "Talk on WhatsApp",
-    log: ["Resolving host", "Fetching homepage", "Reading title and description", "Checking structured data", "Timing the server", "Scoring"],
-    scoreLabel: "Visibility score",
+    scoreLabel: "Page check score",
     passed: (p: number, t: number) => `${p} of ${t} checks passed`,
-    issues: "Costing you the most",
-    allGood: "The homepage passes every check. The next gains are in content depth and AI visibility.",
-    next: "Get the full audit and a plan in 24h",
+    issues: "Initial findings",
+    allGood: "The page passed the initial checks. A wider review may find other issues.",
+    next: "Discuss the findings with our SEO team",
     again: "Scan another site",
-    captureTitle: "Where should we send the full audit?",
-    captureBody: "Email or WhatsApp number. A person reads it, replies within 24 working hours, and there is nothing to unsubscribe from.",
+    captureTitle: "Where should we send the short summary?",
+    captureBody: "Leave your email or WhatsApp number so we can reply about this website check.",
     contact: "Email or WhatsApp number",
-    send: "Send me the audit",
+    send: "Send me the findings",
     sending: "Sending",
-    thanks: "Sent. We reply within 24 working hours.",
-    continueBrief: "Add details for a sharper plan",
+    thanks: "Request received. We will contact you about the findings.",
+    continueBrief: "Tell us more about your business",
     errors: {
       invalid_url: "That does not look like a website address.",
       blocked_host: "We can only scan public websites.",
@@ -61,6 +57,10 @@ const COPY = {
       not_html: "That address does not return a web page.",
       too_many_redirects: "The site redirects too many times.",
       rate_limited: "Too many scans from this connection. Try again in a minute.",
+      access_blocked: "The website blocked our check. We have not produced an SEO score for the blocked response.",
+      upstream_rate_limited: "The website asked us to slow down. Try the check again later.",
+      upstream_error: "The page returned an error response. We could not complete its SEO checks.",
+      page_too_large: "The page exceeded the check's HTML size limit. A partial page was not given an SEO score.",
       generic: "Something went wrong. Try again or message us on WhatsApp.",
       contact: "Add an email address or a phone number.",
     },
@@ -69,22 +69,21 @@ const COPY = {
     placeholder: "your-website.gr",
     scan: "Έλεγχος ιστοσελίδας",
     scanning: "Έλεγχος",
-    hint: "Δωρεάν · 13 έλεγχοι · χωρίς εγγραφή",
+    hint: "Δωρεάν έλεγχος σελίδας · χωρίς εγγραφή",
     whatsapp: "Μιλήστε μας στο WhatsApp",
-    log: ["Εύρεση διακομιστή", "Λήψη αρχικής σελίδας", "Ανάγνωση τίτλου και περιγραφής", "Έλεγχος structured data", "Χρονομέτρηση διακομιστή", "Βαθμολόγηση"],
-    scoreLabel: "Βαθμός ορατότητας",
+    scoreLabel: "Βαθμός αρχικών ελέγχων",
     passed: (p: number, t: number) => `Πέρασαν ${p} από ${t} ελέγχους`,
-    issues: "Σας κοστίζουν περισσότερο",
-    allGood: "Η αρχική περνά κάθε έλεγχο. Τα επόμενα κέρδη είναι στο βάθος περιεχομένου και στην ορατότητα σε AI.",
-    next: "Πλήρης έλεγχος και πλάνο σε 24 ώρες",
+    issues: "Αρχικά ευρήματα",
+    allGood: "Η σελίδα πέρασε τους αρχικούς ελέγχους. Ένας ευρύτερος έλεγχος μπορεί να εντοπίσει επιπλέον ζητήματα.",
+    next: "Συζητήστε τα ευρήματα με την ομάδα μας",
     again: "Έλεγχος άλλης ιστοσελίδας",
-    captureTitle: "Πού να σας στείλουμε τον πλήρη έλεγχο;",
-    captureBody: "Email ή αριθμός WhatsApp. Το διαβάζει άνθρωπος, απαντά εντός 24 εργάσιμων ωρών και δεν σας εγγράφουμε σε καμία λίστα.",
+    captureTitle: "Πού να σας στείλουμε τη σύντομη σύνοψη;",
+    captureBody: "Αφήστε το email ή τον αριθμό WhatsApp σας, για να επικοινωνήσουμε σχετικά με τον έλεγχο.",
     contact: "Email ή αριθμός WhatsApp",
-    send: "Στείλτε μου τον έλεγχο",
+    send: "Στείλτε μου τα ευρήματα",
     sending: "Αποστολή",
-    thanks: "Στάλθηκε. Απαντάμε εντός 24 εργάσιμων ωρών.",
-    continueBrief: "Δώστε λεπτομέρειες για πιο ακριβές πλάνο",
+    thanks: "Λάβαμε το αίτημά σας. Θα επικοινωνήσουμε μαζί σας για τα ευρήματα.",
+    continueBrief: "Πείτε μας περισσότερα για την επιχείρησή σας",
     errors: {
       invalid_url: "Αυτό δεν μοιάζει με διεύθυνση ιστοσελίδας.",
       blocked_host: "Μπορούμε να ελέγξουμε μόνο δημόσιες ιστοσελίδες.",
@@ -94,6 +93,10 @@ const COPY = {
       not_html: "Η διεύθυνση δεν επιστρέφει ιστοσελίδα.",
       too_many_redirects: "Η ιστοσελίδα κάνει πάρα πολλές ανακατευθύνσεις.",
       rate_limited: "Πολλοί έλεγχοι από αυτή τη σύνδεση. Δοκιμάστε ξανά σε ένα λεπτό.",
+      access_blocked: "Η ιστοσελίδα δεν επέτρεψε την πρόσβαση στον έλεγχο. Δεν υπολογίστηκε βαθμός SEO από αυτή την απάντηση.",
+      upstream_rate_limited: "Η ιστοσελίδα ζήτησε λιγότερα αιτήματα. Δοκιμάστε τον έλεγχο αργότερα.",
+      upstream_error: "Η σελίδα επέστρεψε σφάλμα. Δεν ολοκληρώθηκε ο έλεγχος των στοιχείων SEO.",
+      page_too_large: "Το HTML της σελίδας ξεπέρασε το όριο του ελέγχου. Δεν υπολογίστηκε βαθμός από ελλιπή δεδομένα.",
       generic: "Κάτι πήγε στραβά. Δοκιμάστε ξανά ή γράψτε μας στο WhatsApp.",
       contact: "Προσθέστε ένα email ή έναν αριθμό τηλεφώνου.",
     },
@@ -136,19 +139,10 @@ export function ScanWidget({ locale = "en", className }: { locale?: SiteLocale; 
   const [url, setUrl] = useState("");
   const [result, setResult] = useState<ScanResult | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [logStep, setLogStep] = useState(0);
   const [contact, setContact] = useState("");
   const [gotcha, setGotcha] = useState("");
   const [sending, setSending] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
-
-  // Advance the mono log while scanning. The step is reset by handleScan, so
-  // the effect only owns the interval.
-  useEffect(() => {
-    if (stage !== "scanning") return;
-    const id = setInterval(() => setLogStep((n) => Math.min(n + 1, t.log.length - 1)), 420);
-    return () => clearInterval(id);
-  }, [stage, t.log.length]);
 
   async function handleScan(e: FormEvent) {
     e.preventDefault();
@@ -158,11 +152,9 @@ export function ScanWidget({ locale = "en", className }: { locale?: SiteLocale; 
       return;
     }
     setError(null);
-    setLogStep(0);
     setStage("scanning");
     trackFormStart("instant_scan");
 
-    const started = Date.now();
     let outcome: { ok: true; data: ScanResult } | { ok: false; code: string };
     try {
       const res = await fetch("/api/scan", {
@@ -175,9 +167,6 @@ export function ScanWidget({ locale = "en", className }: { locale?: SiteLocale; 
     } catch {
       outcome = { ok: false, code: "generic" };
     }
-
-    const wait = Math.max(0, MIN_SCAN_MS - (Date.now() - started));
-    await new Promise((r) => setTimeout(r, wait));
 
     if (outcome.ok) {
       setResult(outcome.data);
@@ -240,6 +229,7 @@ export function ScanWidget({ locale = "en", className }: { locale?: SiteLocale; 
   }
 
   function reset() {
+    if (sending) return;
     setStage("idle");
     setResult(null);
     setError(null);
@@ -298,7 +288,7 @@ export function ScanWidget({ locale = "en", className }: { locale?: SiteLocale; 
               <ol className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground" aria-live="polite">
                 <li className="flex items-center gap-2 text-brand">
                   <span className="live-dot" aria-hidden />
-                  {t.log[logStep]}…
+                  {t.scanning}…
                 </li>
               </ol>
             ) : (
@@ -330,6 +320,7 @@ export function ScanWidget({ locale = "en", className }: { locale?: SiteLocale; 
                 {result.finalUrl.replace(/^https?:\/\//, "").replace(/\/$/, "")}
               </p>
               <p className="mt-0.5 text-sm text-muted-foreground">{t.passed(result.passed, result.total)}</p>
+              {result.observedAt && Number.isFinite(Date.parse(result.observedAt)) && <time className="mt-1 block text-xs text-muted-foreground" dateTime={result.observedAt}>{new Date(result.observedAt).toLocaleString(locale === "el" ? "el-GR" : "en-GB")}</time>}
             </div>
           </div>
 
@@ -341,9 +332,9 @@ export function ScanWidget({ locale = "en", className }: { locale?: SiteLocale; 
                   {result.topIssues.map((issue) => (
                     <li key={issue.id} className="flex gap-3 text-sm">
                       <span aria-hidden className="mt-1.5 size-2 shrink-0 rounded-full bg-warning" />
-                      <span>
+                      <span className="min-w-0 break-words">
                         <span className="font-medium text-foreground">{issue.label[locale]}</span>
-                        {issue.detail ? <span className="ml-1.5 font-mono text-[11px] text-muted-foreground">{issue.detail}</span> : null}
+                        {issue.detail ? <span className="block break-words font-mono text-[11px] text-muted-foreground">{issue.detail}</span> : null}
                         <span className="block text-[13px] leading-relaxed text-muted-foreground">{issue.hint[locale]}</span>
                       </span>
                     </li>
@@ -396,7 +387,7 @@ export function ScanWidget({ locale = "en", className }: { locale?: SiteLocale; 
                 {error}
               </p>
             ) : null}
-            <button type="button" onClick={reset} className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-foreground">
+            <button type="button" onClick={reset} disabled={sending} className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-foreground">
               <RotateCcw className="size-3.5" aria-hidden />
               {t.again}
             </button>

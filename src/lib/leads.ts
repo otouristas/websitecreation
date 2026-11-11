@@ -1,15 +1,12 @@
 import { getAppPath } from '@/lib/app-links';
-import { submitToFormspree } from '@/lib/formspree';
 import { trackLead } from '@/lib/analytics';
+import { parseTeamProgress, type TeamProgress } from '@/lib/lead-progress';
+export type { TeamAgent, TeamProgress } from '@/lib/lead-progress';
 
 /**
- * Every enquiry the site collects goes to two places at once:
- *
- *   1. the agency pipeline in the app (POST app.anotherseoguru.com/api/leads), so it shows up under
- *      Leads in the owner's account with an audit and a draft proposal attached;
- *   2. Formspree, which emails it, as the safety net while the app endpoint is new.
- *
- * The visitor sees success when either one accepted it, so a lead is never lost to one outage.
+ * Every enquiry goes to the app's persisted agency pipeline. That endpoint
+ * owns measured reports, acknowledgements and the existing owner notification.
+ * A single delivery path avoids a second provider's unrelated auto-response.
  * The app endpoint answers CORS for anotherseoguru.com and this project's Vercel previews.
  */
 
@@ -74,17 +71,12 @@ export async function sendLeadToApp(lead: AppLead): Promise<{ ok: boolean; token
       keepalive: true,
     });
     if (!res.ok) return { ok: false };
-    const data = (await res.json().catch(() => ({}))) as { token?: unknown };
+    const data = (await res.json().catch(() => null)) as { ok?: unknown; token?: unknown } | null;
+    if (!data || data.ok !== true) return { ok: false };
     return { ok: true, token: typeof data.token === 'string' ? data.token : undefined };
   } catch {
     return { ok: false };
   }
-}
-
-export type TeamAgent = 'auditor' | 'keywords' | 'competitors' | 'content' | 'strategist';
-export interface TeamProgress {
-  agents: Array<{ agent: TeamAgent; status: 'queued' | 'running' | 'done' | 'failed' }>;
-  done: boolean;
 }
 
 /** The SEO team's progress on a lead (statuses only, never findings); null when it can't be read. */
@@ -92,23 +84,23 @@ export async function fetchTeamProgress(token: string): Promise<TeamProgress | n
   try {
     const res = await fetch(`${getAppPath('/api/leads')}?token=${encodeURIComponent(token)}`, { cache: 'no-store' });
     if (!res.ok) return null;
-    const data = (await res.json()) as Partial<TeamProgress>;
-    return Array.isArray(data.agents) ? { agents: data.agents, done: Boolean(data.done) } : null;
+    return parseTeamProgress(await res.json());
   } catch {
     return null;
   }
 }
 
-/** Send to the app and to Formspree together; succeed when either accepted the lead. */
+/** Only a successful primary intake acknowledges an enquiry. No parallel auto-reply. */
 export async function submitLead(
-  formspreeData: Record<string, string>,
+  legacyFormData: Record<string, string>,
   lead: AppLead,
 ): Promise<{ ok: boolean; error?: string; token?: string }> {
-  const [email, app] = await Promise.allSettled([submitToFormspree(formspreeData), sendLeadToApp(lead)]);
-  const emailResult = email.status === 'fulfilled' ? email.value : { ok: false, error: undefined };
-  const appOk = app.status === 'fulfilled' && app.value.ok;
-  if (emailResult.ok || appOk) {
-    // Two accepting destinations still represent one enquiry; failed submissions never count.
+  // Keep existing forms source-compatible; their former backup-email fields
+  // never leave the browser. The structured lead carries the actual enquiry.
+  void legacyFormData;
+  const app = await sendLeadToApp(lead);
+  if (app.ok) {
+    // An accepted enquiry counts once; failed submissions never count.
     try {
       const formNames: Record<LeadSource, string> = {
         'website-contact': 'contact', 'website-get-started': 'get-started',
@@ -116,9 +108,9 @@ export async function submitLead(
       };
       trackLead(formNames[lead.source], { service: lead.service, locale: lead.locale }, window.crypto.randomUUID());
     } catch { /* Optional measurement must not prevent the success screen. */ }
-    return { ok: true, token: app.status === 'fulfilled' ? app.value.token : undefined };
+    return { ok: true, token: app.token };
   }
-  return { ok: false, error: emailResult.error };
+  return { ok: false };
 }
 
 /** Plain-text summary of labelled answers for the lead's message field, skipping empty ones. */
