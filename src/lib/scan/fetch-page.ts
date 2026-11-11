@@ -1,4 +1,5 @@
-import { assertPublicHost, normalizeUrl, ScanError } from './ssrf';
+import { normalizeUrl, ScanError } from './ssrf';
+import { pinnedPageResponse } from './network';
 import { parse } from 'node-html-parser';
 
 /**
@@ -54,26 +55,23 @@ export async function fetchPublicHtml(input: string, opts: FetchPageOptions): Pr
   let ttfbMs = 0;
 
   for (let hop = 0; hop <= opts.maxRedirects; hop += 1) {
-    await assertPublicHost(current.hostname);
-    const hopStart = performance.now();
     let res: Response;
     try {
-      res = await fetch(current, {
-        method: 'GET',
-        redirect: 'manual',
+      const pinned = await pinnedPageResponse(current, {
         signal: opts.signal,
         headers: {
           'user-agent': opts.userAgent,
           accept: 'text/html,application/xhtml+xml;q=0.9,*/*;q=0.5',
           'accept-language': 'el,en;q=0.8',
         },
-        cache: 'no-store',
       });
+      res = pinned.response;
+      ttfbMs = pinned.ttfbMs;
     } catch (err) {
+      if (err instanceof ScanError) throw err;
       if ((err as Error).name === 'AbortError') throw new ScanError('timeout', 504);
       throw new ScanError('unreachable', 502);
     }
-    ttfbMs = performance.now() - hopStart;
 
     if ([301, 302, 303, 307, 308].includes(res.status)) {
       const location = res.headers.get('location');

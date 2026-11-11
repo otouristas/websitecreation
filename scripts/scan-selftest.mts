@@ -16,6 +16,7 @@ import { scoreChecks } from '../src/lib/scan/score';
 import { fetchPublicHtml, readCapped } from '../src/lib/scan/fetch-page';
 import { ScanError } from '../src/lib/scan/ssrf';
 import { POST } from '../src/app/api/scan/route';
+import { withNativeResponse } from './scan-network-fixture.mjs';
 
 const HTML = `<!doctype html><html lang="el"><head><title>Αρχική</title>
 <meta name="description" content="Μικρή, χρήσιμη περιγραφή.">
@@ -31,9 +32,7 @@ function response(html = HTML, status = 200, headers: Record<string, string> = {
   return new Response(html, { status, headers: { 'content-type': 'text/html; charset=utf-8', ...headers } });
 }
 async function withFetch<T>(handler: typeof fetch, run: () => Promise<T>): Promise<T> {
-  const original = globalThis.fetch;
-  globalThis.fetch = handler;
-  try { return await run(); } finally { globalThis.fetch = original; }
+  return withNativeResponse(handler, run);
 }
 const fetchOptions = { signal: new AbortController().signal, userAgent: 'Offline-Fixture', maxRedirects: 3, maxBytes: 1_000_000 };
 let requestId = 0;
