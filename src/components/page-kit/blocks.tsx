@@ -345,7 +345,7 @@ const AUDIT = {
   steps: [
     c("Send your website", "Στέλνετε την ιστοσελίδα σας"),
     c("Get the issues and what to fix first", "Παίρνετε τα προβλήματα και τι διορθώνεται πρώτο"),
-    c("Receive a fixed price, then decide", "Λαμβάνετε σταθερή τιμή και αποφασίζετε"),
+    c("Discuss the next steps with our team", "Συζητάμε μαζί σας τα επόμενα βήματα"),
   ],
 };
 
