@@ -323,12 +323,18 @@ export default async function PlatformIphonePage({ params }: PageProps) {
           </Container>
         </HeroCentered>
 
+        <KitSection id="next-native-preview" tinted>
+          <KitHeading eyebrow={tx("Coming to iPhone · Preview", "Έρχεται στο iPhone · Προεπισκόπηση")}
+            title={tx("A clearer project workspace and country audience view", "Ξεκάθαρος χώρος έργου και εικόνα κοινού ανά χώρα")}
+            description={tx("Preview the project-focused setup and country audience screen planned for the next iPhone release. Explore connected GA4 activity on a globe or map, select a country and read its sessions, active users and views.", "Δείτε τη ρύθμιση ανά έργο και την οθόνη κοινού ανά χώρα που ετοιμάζονται για την επόμενη έκδοση iPhone. Εξερευνήστε τα συνδεδεμένα δεδομένα GA4 σε υδρόγειο ή χάρτη, επιλέξτε χώρα και δείτε συνεδρίες, ενεργούς χρήστες και προβολές.")} />
+        </KitSection>
+
         <KitSection id="screens">
           <KitHeading
             eyebrow={tx("Screens from the beta", "Οθόνες από τη beta")}
             title={
               <>
-                {tx("Every report you open on desktop,", "Κάθε αναφορά που ανοίγετε στον υπολογιστή,")} <Accent>{tx("on your phone", "στο κινητό")}</Accent>
+                {tx("Your SEO reports,", "Οι αναφορές SEO σας,")} <Accent>{tx("on your phone", "στο κινητό")}</Accent>
               </>
             }
             description={tx(

@@ -5,6 +5,7 @@ import { ArrowRight, Layers, RefreshCcw, Unplug, UserPlus } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
+import { WorkspacePreview } from "@/components/pages/platform-wave/WorkspacePreview";
 import { Accent, Container, CtaBand, HeroCentered, KitEyebrow, KitHeading, KitSection, StepsGrid, TrustLine, ValueTrio, kitSecondaryBtn } from "@/components/kit";
 import {
   INTEGRATIONS_PATH,
@@ -153,6 +154,8 @@ export default async function PlatformIntegrationsPage({ params }: PageProps) {
           </Container>
         </HeroCentered>
 
+        <WorkspacePreview locale={locale} />
+
         <KitSection tinted id="one-login">
           <KitHeading
             align="center"
@@ -204,8 +207,8 @@ export default async function PlatformIntegrationsPage({ params }: PageProps) {
                 icon: Layers,
                 title: tx("The same numbers everywhere", "Τα ίδια νούμερα παντού"),
                 text: tx(
-                  "Every app reads the same Search Console data and the same ranked fixes, so they never disagree.",
-                  "Όλες οι εφαρμογές διαβάζουν τα ίδια δεδομένα Search Console και τις ίδιες διορθώσεις, οπότε δεν διαφωνούν ποτέ.",
+                  "Compare the same project, date range and source. Saved reports and recent Google data can have different retrieval times.",
+                  "Συγκρίνετε το ίδιο έργο, την ίδια περίοδο και την ίδια πηγή. Οι αποθηκευμένες αναφορές και τα πρόσφατα δεδομένα Google μπορεί να έχουν διαφορετική ώρα ανάκτησης.",
                 ),
               },
               {
