@@ -21,8 +21,8 @@ import {
   seoPackages,
   addOns,
   formatPrice,
-  currentPrice,
-  isOfferActive,
+  currentDisplayPrice,
+  currentPriceIncludesVat,
   resolvePriceTokens,
 } from "@/data/pricing";
 import { SEO_MIN_TERM_MONTHS } from "@/data/company-facts";
@@ -44,6 +44,10 @@ import { PRICING_TAB_CSS, PRICING_TAB_SCRIPT } from "@/components/pricing/pricin
 import { SeoPackageCompare } from "@/components/pricing/SeoPackageCompare";
 import { NotForYou } from "@/components/positioning/NotForYou";
 import { SeoTimeline } from "@/components/positioning/SeoTimeline";
+import { BlackMonthPricingHero } from '@/components/pricing/BlackMonthPricingHero';
+
+/** Re-evaluate the existing offer deadline without a manual rebuild. */
+export const revalidate = 3600;
 
 /** Agency prices are Greek only; English visitors land here via the middleware. */
 export function generateStaticParams() {
@@ -80,13 +84,15 @@ export default async function PricingPage({
   const siteLocale = locale as SiteLocale;
   const isEl = siteLocale === "el";
   const lp = (path: string) => localizedPath(siteLocale, path);
-  const offerLive = isOfferActive();
+  const offerLive = currentPriceIncludesVat(websitePackages[0]);
   const raw = getPricingPageCopy(siteLocale);
   const rp = (text: string) => resolvePriceTokens(text, siteLocale);
 
   const copy = {
     ...raw,
-    heroLead: rp(raw.heroLead),
+    heroLead: offerLive
+      ? `Black Month: Website Starter €${formatPrice(currentDisplayPrice(websitePackages[0]), siteLocale)} τελική τιμή με ΦΠΑ 24% και SEO Foundations €${formatPrice(currentDisplayPrice(seoPackages[0]), siteLocale)} τελική τιμή τον μήνα με ΦΠΑ 24%, σε όλη την εξάμηνη συνεργασία για νέα έργα που θα επιβεβαιωθούν έως 30 Νοεμβρίου 2026. Παρακάτω θα βρείτε όλα τα πακέτα και τις παροχές τους.`
+      : rp(raw.heroLead),
     cost: {
       ...raw.cost,
       answer: rp(raw.cost.answer),
@@ -114,7 +120,8 @@ export default async function PricingPage({
       url: `${BASE_URL}${lp("/ypiresies/times")}`,
       locale: siteLocale,
       tiers: [...websitePackages, ...seoPackages],
-      priceOf: (t) => currentPrice(t as never),
+      priceOf: (t) => currentDisplayPrice(t as never),
+      vatIncludedOf: (t) => currentPriceIncludesVat(t as never),
     }),
     generateFAQSchema({ faqs }),
   );
@@ -133,38 +140,29 @@ export default async function PricingPage({
       <SchemaMarkup schemas={schemas} />
       <Header locale={siteLocale} />
       <main className="blueprint-grid relative z-0">
-        <PageHero
+        {offerLive ? <BlackMonthPricingHero breadcrumbs={breadcrumbItems} /> : <PageHero
           locale={siteLocale}
           breadcrumbs={breadcrumbItems}
-          pill={
-            offerLive
-              ? { href: "#websites", kind: "save", tag: "-40%", text: tx("November offer: website €599, SEO €149 a month", "Προσφορά Νοεμβρίου: ιστοσελίδα €599, SEO €149 τον μήνα") }
-              : {
-                  href: lp("/get-started#free-audit"),
-                  kind: "free",
-                  tag: tx("Free", "Δωρεάν"),
-                  text: tx("Every engagement starts with an SEO audit", "Κάθε συνεργασία ξεκινά με έλεγχο SEO"),
-                }
-          }
+          pill={{
+            href: lp("/get-started#free-audit"),
+            kind: "free",
+            tag: tx("Free", "Δωρεάν"),
+            text: tx("Every engagement starts with an SEO audit", "Κάθε συνεργασία ξεκινά με έλεγχο SEO"),
+          }}
           title={accentTail(copy.h1, isEl ? 2 : 1)}
           lead={copy.heroLead}
           meta={
             <div className="flex flex-col items-center gap-3">
               <p className="max-w-2xl text-[14px] font-medium text-foreground">{copy.heroNote}</p>
-              {offerLive ? (
-                <p className="inline-flex max-w-2xl flex-wrap items-center gap-2 rounded-xl border border-warning/30 bg-warning/10 px-4 py-2.5 text-[13px] leading-relaxed text-warning">
-                  {isEl
-                    ? "Προσφορά Νοεμβρίου: ιστοσελίδα €599 αντί €999 και SEO €149 τον μήνα αντί €199 (+ ΦΠΑ), για νέα έργα που θα επιβεβαιωθούν έως 30 Νοεμβρίου 2026."
-                    : "November offer: website €599 instead of €999 and SEO €149 a month instead of €199 (+ VAT), for new projects confirmed by 30 November 2026."}
-                </p>
-              ) : null}
             </div>
           }
         >
           <Container className="mt-10">
             <ChipLinks align="center" items={jump} />
           </Container>
-        </PageHero>
+        </PageHero>}
+
+        {offerLive ? <Container className="pb-4 pt-8"><KitHeading align="center" title={accentTail(copy.h1, 2)} description={copy.heroLead} /><div className="mt-6"><ChipLinks align="center" items={jump} /></div></Container> : null}
 
         <PricingCostGuide locale={siteLocale} copy={copy} />
 
@@ -203,7 +201,7 @@ export default async function PricingPage({
               />
               <div className="mt-12 grid gap-5 lg:grid-cols-3">
                 {websitePackages.map((tier) => (
-                  <PriceCard key={tier.id} tier={tier} locale={siteLocale} frame="quiet" />
+                  <PriceCard key={tier.id} tier={tier} locale={siteLocale} frame="quiet" offerLabel={offerLive ? 'Black Month' : undefined} />
                 ))}
               </div>
             </div>
@@ -227,7 +225,7 @@ export default async function PricingPage({
               />
               <div className="mt-12 grid gap-5 lg:grid-cols-3">
                 {seoPackages.map((tier) => (
-                  <PriceCard key={tier.id} tier={tier} locale={siteLocale} recurring frame="quiet" />
+                  <PriceCard key={tier.id} tier={tier} locale={siteLocale} recurring frame="quiet" offerLabel={offerLive ? 'Black Month' : undefined} />
                 ))}
               </div>
               <SeoPackageCompare

@@ -1,0 +1,58 @@
+[
+  {
+    "url": "http://localhost:8795/en/platform/features",
+    "status": 200,
+    "h1": [
+      "Every SEO tool you need,  grounded in  your data."
+    ]
+  },
+  {
+    "url": "http://localhost:8795/en/platform/mcp",
+    "status": 200,
+    "h1": [
+      "A Google Search Console MCP server,   built for SEO"
+    ]
+  },
+  {
+    "url": "http://localhost:8795/en/platform/iphone",
+    "status": 200,
+    "h1": [
+      "Search Console,   in your pocket"
+    ]
+  },
+  {
+    "url": "http://localhost:8795/en/platform/integrations",
+    "status": 200,
+    "h1": [
+      "One login, everywhere you   work on SEO"
+    ]
+  },
+  {
+    "url": "http://localhost:8795/el/platform/features",
+    "status": 200,
+    "h1": [
+      "Όλα τα εργαλεία SEO που χρειάζεστε,  βασισμένα στα  δικά σας δεδομένα."
+    ]
+  },
+  {
+    "url": "http://localhost:8795/el/platform/mcp",
+    "status": 200,
+    "h1": [
+      "Ένας MCP server για το Google Search Console,   φτιαγμένος για SEO"
+    ]
+  },
+  {
+    "url": "http://localhost:8795/el/platform/iphone",
+    "status": 200,
+    "h1": [
+      "Το Search Console,   στην τσέπη σας"
+    ]
+  },
+  {
+    "url": "http://localhost:8795/el/platform/integrations",
+    "status": 200,
+    "h1": [
+      "Ένας λογαριασμός, παντού όπου   δουλεύετε SEO"
+    ]
+  }
+]

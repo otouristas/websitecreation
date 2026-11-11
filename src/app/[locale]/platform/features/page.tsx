@@ -6,6 +6,7 @@ import SchemaMarkup from "@/components/seo/SchemaMarkup";
 import { SampleWindow } from "@/components/pages/home/SampleWindow";
 import { homeCopy } from "@/components/pages/home/copy";
 import { TieredModuleGrid } from "@/components/pages/platform-wave/modules";
+import { WorkspacePreview } from "@/components/pages/platform-wave/WorkspacePreview";
 import {
   AnnouncePill,
   TrustMarks,
@@ -98,6 +99,8 @@ export default async function PlatformFeaturesPage({ params }: PageProps) {
           panel={<SampleWindow copy={copy} />}
           panelNote={copy.sampleCaption}
         />
+
+        <WorkspacePreview locale={locale} />
 
         <WaveSection shot="capabilities">
           <WaveHeading

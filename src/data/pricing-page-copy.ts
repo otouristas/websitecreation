@@ -1,6 +1,7 @@
 import type { FAQ } from '@/lib/types/page';
 import type { SiteLocale } from '@/lib/i18n/locale';
 import { SEO_MIN_TERM_MONTHS } from '@/data/company-facts';
+import { currentDisplayPrice, currentPriceIncludesVat, formatPrice, seoPackages, websitePackages, withVat } from '@/data/pricing';
 
 /**
  * Copy for the agency pricing page.
@@ -353,6 +354,29 @@ const en: PricingPageCopy = {
   },
 };
 
-export function getPricingPageCopy(locale: SiteLocale): PricingPageCopy {
-  return locale === 'el' ? el : en;
+export function getPricingPageCopy(locale: SiteLocale, now: Date = new Date()): PricingPageCopy {
+  const copy = locale === 'el' ? el : en;
+  if (!currentPriceIncludesVat(websitePackages[0], now)) return copy;
+
+  const isEl = locale === 'el';
+  const web = websitePackages[0];
+  const seo = seoPackages[0];
+  const price = (amount: number) => `€${formatPrice(amount, locale)}`;
+  const comparison = isEl
+    ? `Website Starter: πριν ${price(web.regular)} + ΦΠΑ 24% (${price(withVat(web.regular))} με ΦΠΑ), τώρα ${price(currentDisplayPrice(web, now))} τελική με ΦΠΑ 24%. SEO Foundations: πριν ${price(seo.regular)}/μήνα + ΦΠΑ 24% (${price(withVat(seo.regular))}/μήνα με ΦΠΑ), τώρα ${price(currentDisplayPrice(seo, now))} τελική/μήνα με ΦΠΑ 24%, σε όλη την εξάμηνη συνεργασία. Για νέα έργα που επιβεβαιώνονται έως 30 Νοεμβρίου 2026.`
+    : `Website Starter: was ${price(web.regular)} + 24% VAT (${price(withVat(web.regular))} including VAT), now ${price(currentDisplayPrice(web, now))} total including 24% VAT. SEO Foundations: was ${price(seo.regular)}/month + 24% VAT (${price(withVat(seo.regular))}/month including VAT), now ${price(currentDisplayPrice(seo, now))}/month including 24% VAT throughout the six-month engagement. For new projects confirmed by 30 November 2026.`;
+  return {
+    ...copy,
+    faqs: [
+      { question: isEl ? 'Ποιες είναι οι προσφορές Black Month;' : 'What are the Black Month offers?', answer: comparison },
+      ...copy.faqs.map((faq) => ({
+        ...faq,
+        answer: faq.question === (isEl ? 'Περιλαμβάνεται ο ΦΠΑ στις τιμές;' : 'Is VAT included in the prices?')
+          ? (isEl
+            ? `Οι δύο προσφορές Black Month περιλαμβάνουν ΦΠΑ 24%: ${price(currentDisplayPrice(web, now))} τελική για Website Starter και ${price(currentDisplayPrice(seo, now))} τελική/μήνα για SEO Foundations, σε όλη την εξάμηνη συνεργασία. Οι υπόλοιπες επαγγελματικές τιμές δηλώνονται προ ΦΠΑ 24% και εμφανίζεται και η αντίστοιχη τελική τιμή.`
+            : `The two Black Month offers include 24% VAT: ${price(currentDisplayPrice(web, now))} total for Website Starter and ${price(currentDisplayPrice(seo, now))}/month for SEO Foundations throughout the six-month engagement. Other professional prices are labelled excluding 24% VAT and also show their gross total.`)
+          : faq.answer,
+      })),
+    ],
+  };
 }

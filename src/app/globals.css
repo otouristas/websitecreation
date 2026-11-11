@@ -1163,3 +1163,9 @@ code, pre, kbd, samp { font-family: var(--font-code); }
   .phone-float { opacity: 1; animation: none; }
   .hero-swap { animation: none; }
 }
+
+/* Reserve the actual campaign ribbon + navigation height on every Greek page. */
+:root:has([data-black-month-ribbon]) { --site-header-height: 7.5rem; }
+@media (min-width: 640px) {
+  :root:has([data-black-month-ribbon]) { --site-header-height: 7.75rem; }
+}

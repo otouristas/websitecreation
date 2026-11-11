@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+import { McpShowcase } from "@/components/gsc-boost/McpShowcase";
 import { notFound } from "next/navigation";
-import { ArrowRight, Bot, KeyRound, LockKeyhole, Terminal, Unplug } from "lucide-react";
+import { ArrowRight, Bot, KeyRound, LockKeyhole, Unplug } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
-import { Accent, CheckList, Container, CtaBand, HeroCentered, KitEyebrow, KitHeading, KitSection, NameStrip, Stage, TrustLine, kitSecondaryBtn } from "@/components/kit";
+import { Accent, CheckList, Container, CtaBand, HeroCentered, KitEyebrow, KitHeading, KitSection, TrustLine, kitSecondaryBtn } from "@/components/kit";
 import {
   CodeBlock,
   GscFaq,
-  MCP_BRIDGE,
   MCP_PATH,
   MCP_URL,
   OtherWaysSection,
@@ -25,11 +26,9 @@ import { isValidLocale, type SiteLocale } from "@/lib/i18n/locale";
 
 /**
  * The AnotherSEOGuru MCP server: the hosted server at app.anotherseoguru.com/mcp.
- * Clients that only start local commands reach it through the public mcp-remote
- * bridge (OAuth with dynamic client registration and a loopback redirect, both
- * supported by app.anotherseoguru.com). Our own npm package is not published yet,
- * so the page never tells people to install it. Tool names must match
- * gsc-gemini-boost/supabase/functions/mcp exactly.
+ * The public guide uses the working remote URL/OAuth setup. It does not offer
+ * an unpublished local npm package or imply public app-directory approval.
+ * Tool names must match gsc-gemini-boost/supabase/functions/mcp exactly.
  */
 
 type PageProps = { params: Promise<{ locale: string }> };
@@ -52,7 +51,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 const TOOLS: ReadonlyArray<{ name: string; text: Copy; write?: boolean }> = [
-  { name: "list_sites", text: c("The Search Console properties your account can read, with their project.", "Οι ιδιότητές του Search Console που διαβάζει ο λογαριασμός σας, με το έργο της καθεμίας.") },
+  { name: "list_sites", text: c("The saved projects and linked Search Console properties available to this connection.", "Τα αποθηκευμένα έργα και οι συνδεδεμένες ιδιότητες Search Console που είναι διαθέσιμα σε αυτή τη σύνδεση.") },
   {
     name: "get_performance",
     text: c(
@@ -63,11 +62,12 @@ const TOOLS: ReadonlyArray<{ name: string; text: Copy; write?: boolean }> = [
   {
     name: "get_opportunities",
     text: c(
-      "The ranked fix list: striking-distance keywords, low-CTR snippets, decaying pages, cannibalization and missing content, each with extra clicks per month.",
-      "Η λίστα διορθώσεων με σειρά: λέξεις κοντά στην πρώτη σελίδα, snippets με χαμηλό CTR, σελίδες σε πτώση, αλληλοεπικάλυψη και περιεχόμενο που λείπει, με τα επιπλέον κλικ τον μήνα.",
+      "Prioritized opportunities from the project's search data, with estimated additional clicks where available. Estimates are not guaranteed results.",
+      "Ευκαιρίες με σειρά προτεραιότητας από τα δεδομένα αναζήτησης του έργου, με εκτιμώμενα επιπλέον κλικ όπου υπάρχουν. Οι εκτιμήσεις δεν αποτελούν εγγύηση αποτελέσματος.",
     ),
   },
-  { name: "get_tasks", text: c("Your SEO and client tasks: status, priority, due date, target page and the clicks each is worth.", "Οι εργασίες SEO και πελατών: κατάσταση, προτεραιότητα, προθεσμία, σελίδα και τα κλικ που αξίζει η καθεμία.") },
+  { name: "create_task", text: c("Create a task for a saved project with a title, priority and target page.", "Δημιουργήστε εργασία για αποθηκευμένο έργο, με τίτλο, προτεραιότητα και σελίδα."), write: true },
+  { name: "get_tasks", text: c("Your project tasks: status, priority, due date, target page and any saved opportunity estimates.", "Οι εργασίες του έργου σας: κατάσταση, προτεραιότητα, προθεσμία, σελίδα και τυχόν αποθηκευμένες εκτιμήσεις ευκαιριών.") },
   {
     name: "get_ai_visibility_summary",
     text: c("How often AI assistants cite your site for tracked prompts, per model, and which competitors they cite instead.", "Πόσο συχνά σας αναφέρουν οι βοηθοί AI στα prompts που παρακολουθείτε, ανά μοντέλο, και ποιους ανταγωνιστές αναφέρουν αντί για εσάς."),
@@ -87,7 +87,6 @@ const TOOLS: ReadonlyArray<{ name: string; text: Copy; write?: boolean }> = [
     text: c("Marks a task shipped, records what changed and starts the before/after Search Console measurement.", "Σημειώνει μια εργασία ως ολοκληρωμένη, καταγράφει τι άλλαξε και ξεκινά τη μέτρηση πριν/μετά στο Search Console."),
     write: true,
   },
-  { name: "fix_task", text: c("A prompt: load a task's brief, make the fix in the open project and report back.", "Ένα prompt: φορτώνει το brief μιας εργασίας, κάνει τη διόρθωση στο ανοιχτό έργο και αναφέρει τι έγινε.") },
 ];
 
 const PROMPTS: ReadonlyArray<Copy> = [
@@ -108,23 +107,20 @@ const FAQ: ReadonlyArray<GscFaqItem> = [
   {
     q: c("How do I connect Google Search Console to Claude or ChatGPT?", "Πώς συνδέω το Google Search Console με το Claude ή το ChatGPT;"),
     a: c(
-      "Sign up for AnotherSEOGuru and connect Search Console once. Then add https://app.anotherseoguru.com/mcp as a custom connector: in Claude under Settings → Connectors, in ChatGPT under Settings → Apps & Connectors with developer mode on. Approve access when asked. There is no token to paste.",
-      "Κάντε εγγραφή στο AnotherSEOGuru και συνδέστε το Search Console μία φορά. Μετά προσθέστε το https://app.anotherseoguru.com/mcp ως custom connector: στο Claude από Settings → Connectors, στο ChatGPT από Settings → Apps & Connectors με ενεργό το developer mode. Εγκρίνετε την πρόσβαση όταν σας ζητηθεί. Δεν χρειάζεται να επικολλήσετε κανένα token.",
+      "Use a ChatGPT or Claude account that supports custom remote MCP connections. Add https://app.anotherseoguru.com/mcp, choose OAuth where requested, sign in to AnotherSEOGuru and review the permissions. Connect Search Console in the project before asking for its search performance. Client menus and organization permissions vary.",
+      "Χρησιμοποιήστε λογαριασμό ChatGPT ή Claude που υποστηρίζει προσαρμοσμένες απομακρυσμένες συνδέσεις MCP. Προσθέστε το https://app.anotherseoguru.com/mcp, επιλέξτε OAuth όπου ζητείται, συνδεθείτε στο AnotherSEOGuru και ελέγξτε τις άδειες. Για στοιχεία απόδοσης αναζήτησης, συνδέστε το Search Console στο έργο. Τα μενού και οι άδειες οργανισμού διαφέρουν ανά εφαρμογή.",
     ),
   },
   {
     q: c("Can the assistant change my site or my Google account?", "Μπορεί ο βοηθός να αλλάξει τον ιστότοπο ή τον λογαριασμό μου στη Google;"),
     a: c(
-      "No. The read tools never change anything, and Search Console access is read-only. The only write tools update your AnotherSEOGuru tasks (start, add a note, complete), and only if you granted the tasks permission. Sign in with read-only scope if you want none of that.",
-      "Όχι. Τα εργαλεία ανάγνωσης δεν αλλάζουν τίποτα και η πρόσβαση στο Search Console είναι μόνο για ανάγνωση. Τα μόνα εργαλεία εγγραφής ενημερώνουν τις εργασίες σας στο AnotherSEOGuru (έναρξη, σημείωση, ολοκλήρωση) και μόνο αν έχετε δώσει την αντίστοιχη άδεια. Αν δεν θέλετε ούτε αυτό, συνδεθείτε μόνο για ανάγνωση.",
+      "Google access is read-only. Reading reports does not change your site. Tools that update tasks or other account data require the corresponding permission; destructive actions require explicit confirmation. Choose read-only access if you only want analysis, and review a proposed change before approving it.",
+      "Η πρόσβαση στη Google είναι μόνο για ανάγνωση. Η ανάγνωση αναφορών δεν αλλάζει τον ιστότοπό σας. Τα εργαλεία που ενημερώνουν εργασίες ή άλλα στοιχεία λογαριασμού χρειάζονται την αντίστοιχη άδεια, ενώ οι διαγραφές απαιτούν ρητή επιβεβαίωση. Αν θέλετε μόνο ανάλυση, επιλέξτε πρόσβαση ανάγνωσης και ελέγξτε κάθε προτεινόμενη αλλαγή πριν την εγκρίνετε.",
     ),
   },
   {
-    q: c("Do I need Node.js?", "Χρειάζομαι Node.js;"),
-    a: c(
-      "Usually not. Clients that accept a remote server URL (Claude, ChatGPT, Claude Code, Codex, Cursor, VS Code, Windsurf, OpenClaw, Hermes) connect to https://app.anotherseoguru.com/mcp directly. Only clients that can start nothing but local commands need Node.js 18 or newer, for the mcp-remote bridge.",
-      "Συνήθως όχι. Όσες εφαρμογές δέχονται διεύθυνση απομακρυσμένου server (Claude, ChatGPT, Claude Code, Codex, Cursor, VS Code, Windsurf, OpenClaw, Hermes) συνδέονται απευθείας στο https://app.anotherseoguru.com/mcp. Node.js 18 ή νεότερο χρειάζεται μόνο όταν η εφαρμογή ξεκινά αποκλειστικά τοπικές εντολές, για τη γέφυρα mcp-remote.",
-    ),
+    q: c("Do I need to download a local package?", "Χρειάζεται να κατεβάσω τοπικό πακέτο;"),
+    a: c("No local package is needed for the remote MCP connection. Add the server URL in a compatible client and sign in with OAuth. Your own AnotherSEOGuru account and connected Google data supply the private SEO reports.", "Για την απομακρυσμένη σύνδεση MCP δεν χρειάζεται τοπικό πακέτο. Προσθέστε τη διεύθυνση server σε συμβατή εφαρμογή και συνδεθείτε με OAuth. Ο δικός σας λογαριασμός AnotherSEOGuru και τα συνδεδεμένα δεδομένα Google παρέχουν τις ιδιωτικές αναφορές SEO."),
   },
   {
     q: c("How do I disconnect an assistant?", "Πώς αποσυνδέω έναν βοηθό;"),
@@ -137,98 +133,10 @@ const FAQ: ReadonlyArray<GscFaqItem> = [
 ];
 
 const CLIENTS: ReadonlyArray<{ id: string; name: string; how: Copy; label: Copy; code: string }> = [
-  {
-    id: "claude",
-    name: "Claude",
-    how: c("Settings → Connectors → Add custom connector. Paste the URL, then press Connect and approve access.", "Settings → Connectors → Add custom connector. Επικολλήστε τη διεύθυνση, πατήστε Connect και εγκρίνετε την πρόσβαση."),
-    label: c("Connector URL", "Διεύθυνση connector"),
-    code: MCP_URL,
-  },
-  {
-    id: "chatgpt",
-    name: "ChatGPT",
-    how: c("Settings → Apps & Connectors → Advanced → turn on Developer mode, then Create. Choose OAuth and paste the URL.", "Settings → Apps & Connectors → Advanced → ενεργοποιήστε το Developer mode και πατήστε Create. Διαλέξτε OAuth και επικολλήστε τη διεύθυνση."),
-    label: c("Connector URL", "Διεύθυνση connector"),
-    code: MCP_URL,
-  },
-  {
-    id: "claude-code",
-    name: "Claude Code",
-    how: c("Run this once, then type /mcp in Claude Code and pick anotherseoguru to sign in.", "Τρέξτε την εντολή μία φορά, μετά γράψτε /mcp στο Claude Code και διαλέξτε anotherseoguru για να συνδεθείτε."),
-    label: c("Terminal", "Τερματικό"),
-    code: `claude mcp add --transport http --scope user anotherseoguru ${MCP_URL}`,
-  },
-  {
-    id: "codex",
-    name: "Codex",
-    how: c("Add the server, then sign in. Codex opens your browser for the approval.", "Προσθέστε τον server και συνδεθείτε. Το Codex ανοίγει τον browser για την έγκριση."),
-    label: c("Terminal", "Τερματικό"),
-    code: `codex mcp add anotherseoguru --url ${MCP_URL}\ncodex mcp login anotherseoguru`,
-  },
-  {
-    id: "cursor",
-    name: "Cursor",
-    how: c("Cursor Settings → Tools & MCP → New MCP Server opens mcp.json. Add this, save and approve access in the browser.", "Cursor Settings → Tools & MCP → New MCP Server ανοίγει το mcp.json. Προσθέστε τα παρακάτω, αποθηκεύστε και εγκρίνετε την πρόσβαση στον browser."),
-    label: c("~/.cursor/mcp.json", "~/.cursor/mcp.json"),
-    code: `{\n  "mcpServers": {\n    "anotherseoguru": { "url": "${MCP_URL}" }\n  }\n}`,
-  },
-  {
-    id: "grok",
-    name: "Grok Bot",
-    how: c("No settings screen. Send this message in a Grok Bot chat and press Authorize when the sign-in page opens.", "Δεν χρειάζονται ρυθμίσεις. Στείλτε αυτό το μήνυμα σε μια συνομιλία με το Grok Bot και πατήστε Authorize όταν ανοίξει η σελίδα σύνδεσης."),
-    label: c("Message", "Μήνυμα"),
-    code: `Connect this MCP server: ${MCP_URL}`,
-  },
-  {
-    id: "openclaw",
-    name: "OpenClaw",
-    how: c("Add the server, then sign in. OpenClaw catches the browser callback on its own.", "Προσθέστε τον server και συνδεθείτε. Το OpenClaw ολοκληρώνει μόνο του τη σύνδεση από τον browser."),
-    label: c("Terminal", "Τερματικό"),
-    code: `openclaw mcp add anotherseoguru \\\n  --url ${MCP_URL} \\\n  --transport streamable-http \\\n  --auth oauth\nopenclaw mcp login anotherseoguru`,
-  },
-  {
-    id: "hermes",
-    name: "Hermes Agent",
-    how: c("Run it in an interactive terminal so Hermes can open the browser, then type /reload-mcp in your Hermes session.", "Τρέξτε την εντολή σε τερματικό, ώστε το Hermes να ανοίξει τον browser, και μετά γράψτε /reload-mcp στη συνεδρία σας."),
-    label: c("Terminal", "Τερματικό"),
-    code: `hermes mcp add anotherseoguru --url ${MCP_URL} --auth oauth`,
-  },
+  { id: "claude", name: "Claude", how: c("Add a custom remote MCP connector, paste the server URL and sign in with OAuth. Your organization may need to enable custom connectors first.", "Προσθέστε προσαρμοσμένη απομακρυσμένη σύνδεση MCP, επικολλήστε τη διεύθυνση server και συνδεθείτε με OAuth. Ο οργανισμός σας μπορεί να χρειάζεται να ενεργοποιήσει πρώτα τις προσαρμοσμένες συνδέσεις."), label: c("Server URL", "Διεύθυνση server"), code: MCP_URL },
+  { id: "chatgpt", name: "ChatGPT", how: c("Use the custom remote MCP connection controls available to your account. Paste the server URL, choose OAuth and approve only the access you want to grant.", "Χρησιμοποιήστε τις ρυθμίσεις προσαρμοσμένης σύνδεσης MCP που διαθέτει ο λογαριασμός σας. Επικολλήστε τη διεύθυνση server, επιλέξτε OAuth και εγκρίνετε μόνο την πρόσβαση που θέλετε να δώσετε."), label: c("Server URL", "Διεύθυνση server"), code: MCP_URL },
 ];
 
-/** A static mock of an assistant answering from the MCP tools. */
-function ChatMock({ locale }: { readonly locale: SiteLocale }) {
-  const isEl = locale === "el";
-  return (
-    <figure>
-      <figcaption className="sr-only">
-        {isEl
-          ? "Απεικόνιση συνομιλίας: ο βοηθός καλεί το get_opportunities και απαντά με τις κορυφαίες διορθώσεις. Τα νούμερα είναι παράδειγμα."
-          : "Illustration of a chat: the assistant calls get_opportunities and answers with the top fixes. The numbers are an example."}
-      </figcaption>
-      <div aria-hidden className="pointer-events-none select-none space-y-3 rounded-2xl border border-hairline bg-background p-4 text-left sm:p-6">
-        <div className="ml-auto max-w-[85%] rounded-2xl rounded-br-md bg-brand/15 px-4 py-2.5 text-[13.5px] text-foreground">
-          {isEl ? "Ποιες είναι οι 3 πιο σημαντικές διορθώσεις για το aegean-suites.example;" : "What are my top 3 fixes for aegean-suites.example?"}
-        </div>
-        <div className="inline-flex items-center gap-2 rounded-lg border border-hairline bg-surface px-3 py-1.5 font-mono text-[11.5px] text-muted-foreground">
-          <Bot className="size-3.5 text-brand" />
-          anotherseoguru · get_opportunities
-        </div>
-        <div className="max-w-[92%] rounded-2xl rounded-bl-md border border-hairline bg-surface px-4 py-3 text-[13.5px] leading-relaxed text-foreground/90">
-          <p>{isEl ? "Από το Search Console σας, με τη μεγαλύτερη αξία πρώτα:" : "From your Search Console, biggest first:"}</p>
-          <ol className="mt-2 list-decimal space-y-1 pl-5">
-            <li>{isEl ? "/rooms: θέση 11 για «santorini caldera suites», περίπου +140 κλικ/μήνα" : "/rooms: position 11 for “santorini caldera suites”, about +140 clicks/month"}</li>
-            <li>{isEl ? "/offers: CTR 1,2% στη θέση 4, ξαναγράψτε τον τίτλο, περίπου +90" : "/offers: 1.2% CTR at position 4, rewrite the title, about +90"}</li>
-            <li>{isEl ? "/blog/oia-sunset: πτώση 28 ημερών, ανανέωση, περίπου +60" : "/blog/oia-sunset: 28-day decline, refresh it, about +60"}</li>
-          </ol>
-          <p className="mt-2 text-muted-foreground">{isEl ? "Να ξεκινήσω την πρώτη εργασία;" : "Want me to start the first task?"}</p>
-        </div>
-      </div>
-      <p className="mt-3 text-center text-[12px] text-muted-foreground">
-        {isEl ? "Απεικόνιση με δείγμα ιστότοπου· τα νούμερα είναι παράδειγμα." : "Illustration on a sample site; the numbers are an example."}
-      </p>
-    </figure>
-  );
-}
 
 export default async function PlatformMcpPage({ params }: PageProps) {
   const { locale: raw } = await params;
@@ -249,7 +157,7 @@ export default async function PlatformMcpPage({ params }: PageProps) {
     operatingSystem: "Any",
     applicationCategory: "DeveloperApplication",
     applicationSubCategory: "MCP server",
-    softwareRequirements: "An MCP client with remote server support, or Node.js 18 or later for the mcp-remote bridge",
+    softwareRequirements: "An MCP client with custom remote server and OAuth support",
     featureList: TOOLS.map((t) => t.name),
   });
 
@@ -288,91 +196,30 @@ export default async function PlatformMcpPage({ params }: PageProps) {
             />
           }
         >
-          <Container className="mt-14 sm:mt-16">
-            <Stage className="mx-auto max-w-3xl">
-              <ChatMock locale={locale} />
-            </Stage>
+          <Container className="mt-12 sm:mt-16">
+            <McpShowcase locale={locale} />
           </Container>
         </HeroCentered>
 
-        <NameStrip
-          heading={tx("Works in the AI assistants and editors you already use", "Δουλεύει στους βοηθούς AI και στους editors που ήδη χρησιμοποιείτε")}
-          items={[
-            { name: "Claude", role: tx("Remote or Desktop", "Remote ή Desktop") },
-            { name: "ChatGPT", role: tx("Custom connector", "Custom connector") },
-            { name: "Cursor", role: tx("Remote or local", "Remote ή τοπικά") },
-            { name: "VS Code", role: tx("Copilot agent mode", "Copilot agent mode") },
-            { name: "Windsurf", role: tx("Remote or local", "Remote ή τοπικά") },
-            { name: "Claude Code", role: tx("One command", "Μία εντολή") },
-            { name: "Codex", role: tx("One command", "Μία εντολή") },
-            { name: "Grok Bot", role: tx("Ask in the chat", "Το ζητάτε στη συνομιλία") },
-            { name: "OpenClaw", role: tx("CLI or config", "CLI ή ρυθμίσεις") },
-            { name: "Hermes", role: tx("CLI or config", "CLI ή ρυθμίσεις") },
-          ]}
-        />
+        <KitSection id="connection-status">
+          <KitHeading eyebrow={tx("Your project, in your AI workflow", "Το έργο σας στη συνομιλία AI")} title={tx("Ask from your data. Approve the next step.", "Ρωτήστε με τα δεδομένα σας. Εγκρίνετε το επόμενο βήμα.")}
+            description={tx("Explore Search Console performance in interactive ChatGPT cards, or ask Claude for the same project's MCP results. Read the dates and source, discuss the opportunities and approve task updates when you are ready to act.", "Δείτε την απόδοση Search Console σε διαδραστικές κάρτες ChatGPT ή ζητήστε από το Claude τα δεδομένα MCP του ίδιου έργου. Ελέγξτε περίοδο και πηγή, συζητήστε τις ευκαιρίες και εγκρίνετε ενημερώσεις εργασιών όταν είστε έτοιμοι να προχωρήσετε.")} />
+          <p className="mt-6 max-w-3xl text-sm leading-6 text-muted-foreground">{tx("Connect using the custom setup below. Available tools follow the permissions you grant to your AnotherSEOGuru account connection.", "Συνδεθείτε με την προσαρμοσμένη ρύθμιση που ακολουθεί. Τα διαθέσιμα εργαλεία εξαρτώνται από τις άδειες που δίνετε στη σύνδεση του λογαριασμού AnotherSEOGuru.")}</p>
+        </KitSection>
 
         <KitSection id="setup">
-          <KitHeading
-            eyebrow={tx("Setup", "Ρύθμιση")}
-            title={
-              <>
-                {tx("Two ways in,", "Δύο τρόποι σύνδεσης,")} <Accent>{tx("one account", "ένας λογαριασμός")}</Accent>
-              </>
-            }
-            description={tx(
-              "Sign up and connect Search Console in the web app first. Then pick the way that fits your client.",
-              "Πρώτα κάντε εγγραφή και συνδέστε το Search Console στην εφαρμογή web. Μετά διαλέξτε τον τρόπο που ταιριάζει στην εφαρμογή σας.",
-            )}
-          />
-          <div className="mt-12 grid gap-6 lg:grid-cols-2">
-            <div className="reveal flex min-w-0 flex-col rounded-2xl border border-hairline bg-surface/60 p-5 sm:p-6">
-              <KitEyebrow icon={<Bot />}>{tx("Remote server", "Απομακρυσμένος server")}</KitEyebrow>
-              <h3 className="mt-3 text-[18px] font-semibold text-foreground">{tx("Claude.ai, ChatGPT, Cursor, VS Code, Windsurf", "Claude.ai, ChatGPT, Cursor, VS Code, Windsurf")}</h3>
-              <p className="mt-2 text-[14.5px] leading-relaxed text-muted-foreground">
-                {tx(
-                  "Nothing to install. Add this URL as a custom connector or remote MCP server and approve access in your browser.",
-                  "Δεν εγκαθιστάτε τίποτα. Προσθέστε αυτή τη διεύθυνση ως custom connector ή απομακρυσμένο MCP server και εγκρίνετε την πρόσβαση στον browser.",
-                )}
-              </p>
-              <CodeBlock label={tx("Server URL", "Διεύθυνση server")} className="mt-5">
-                {MCP_URL}
-              </CodeBlock>
-              <CheckList
-                size="sm"
-                className="mt-5"
-                items={[
-                  tx("Claude: Settings → Connectors → Add custom connector", "Claude: Settings → Connectors → Add custom connector"),
-                  tx("ChatGPT: Settings → Apps & Connectors → Advanced → Developer mode → Create, OAuth", "ChatGPT: Settings → Apps & Connectors → Advanced → Developer mode → Create, με OAuth"),
-                  tx("Claude Code: claude mcp add --transport http anotherseoguru <URL>", "Claude Code: claude mcp add --transport http anotherseoguru <URL>"),
-                ]}
-              />
-            </div>
-            <div className="reveal flex min-w-0 flex-col rounded-2xl border border-hairline bg-surface/60 p-5 sm:p-6">
-              <KitEyebrow icon={<Terminal />}>{tx("Local command", "Τοπική εντολή")}</KitEyebrow>
-              <h3 className="mt-3 text-[18px] font-semibold text-foreground">{tx("Claude Desktop and other local-only clients", "Claude Desktop και εφαρμογές μόνο με τοπικές εντολές")}</h3>
-              <p className="mt-2 text-[14.5px] leading-relaxed text-muted-foreground">
-                {tx(
-                  `For clients that can only start a local command. The open-source ${MCP_BRIDGE} bridge opens your browser once to sign in, then connects your client to the same server. Node.js 18 or newer.`,
-                  `Για εφαρμογές που ξεκινούν μόνο τοπικές εντολές. Η ανοιχτή γέφυρα ${MCP_BRIDGE} ανοίγει μία φορά τον browser για να συνδεθείτε και μετά συνδέει την εφαρμογή σας στον ίδιο server. Node.js 18 ή νεότερο.`,
-                )}
-              </p>
-              <CodeBlock label={tx("Add to your client's MCP config", "Προσθήκη στις ρυθμίσεις MCP")} className="mt-5">
-                {`{
-  "mcpServers": {
-    "anotherseoguru": {
-      "command": "npx",
-      "args": ["-y", "${MCP_BRIDGE}", "${MCP_URL}"]
-    }
-  }
-}`}
-              </CodeBlock>
-              <p className="mt-3 text-[13px] text-muted-foreground">
-                {tx(
-                  "On Windows, if the client can't start npx, use \"command\": \"cmd\" with \"/c\", \"npx\" in front of the arguments.",
-                  "Στα Windows, αν η εφαρμογή δεν ξεκινά το npx, βάλτε \"command\": \"cmd\" και στην αρχή των παραμέτρων \"/c\", \"npx\".",
-                )}
-              </p>
-            </div>
+          <KitHeading eyebrow={tx("Connect using custom setup", "Συνδεθείτε με προσαρμοσμένη ρύθμιση")}
+            title={<>{tx("One server URL. ", "Μία διεύθυνση server. ")}<Accent>{tx("Your account.", "Ο λογαριασμός σας.")}</Accent></>}
+            description={tx("Sign in to AnotherSEOGuru and choose a project. Connect Search Console when you want search reports, then add the assistant with the permissions you choose.", "Συνδεθείτε στο AnotherSEOGuru και επιλέξτε έργο. Συνδέστε το Search Console όταν θέλετε αναφορές αναζήτησης και προσθέστε τον βοηθό με τις άδειες που επιλέγετε.")} />
+          <div className="mt-10 rounded-2xl border border-hairline bg-surface/60 p-5 sm:p-7">
+            <KitEyebrow icon={<Bot />}>{tx("Remote MCP connection", "Απομακρυσμένη σύνδεση MCP")}</KitEyebrow>
+            <p className="mt-3 max-w-3xl text-[15px] leading-7 text-muted-foreground">{tx("Add this URL through your client's custom remote MCP controls. Choose OAuth, sign in to AnotherSEOGuru and approve the access you want to grant. No local package or API key is needed for this connection.", "Προσθέστε αυτή τη διεύθυνση στις ρυθμίσεις προσαρμοσμένης απομακρυσμένης σύνδεσης MCP της εφαρμογής σας. Επιλέξτε OAuth, συνδεθείτε στο AnotherSEOGuru και εγκρίνετε την πρόσβαση που θέλετε να δώσετε. Για αυτή τη σύνδεση δεν χρειάζεται τοπικό πακέτο ή API key.")}</p>
+            <CodeBlock label={tx("Server URL", "Διεύθυνση server")} className="mt-5">{MCP_URL}</CodeBlock>
+            <CheckList size="sm" className="mt-5" items={[
+              tx("Use a client and account that support custom remote MCP connections.", "Χρησιμοποιήστε εφαρμογή και λογαριασμό που υποστηρίζουν προσαρμοσμένες απομακρυσμένες συνδέσεις MCP."),
+              tx("Review the requested account and task permissions before approving.", "Ελέγξτε τις άδειες λογαριασμού και εργασιών που ζητούνται πριν εγκρίνετε."),
+              tx("Name the project and the date range in your question.", "Αναφέρετε το έργο και την περίοδο στην ερώτησή σας."),
+            ]} />
           </div>
         </KitSection>
 
@@ -392,7 +239,12 @@ export default async function PlatformMcpPage({ params }: PageProps) {
           <ul className="mt-12 grid gap-5 md:grid-cols-2">
             {CLIENTS.map((client) => (
               <li key={client.id} id={`client-${client.id}`} className="reveal flex min-w-0 flex-col rounded-2xl border border-hairline bg-background p-5 sm:p-6">
-                <h3 className="text-[17px] font-semibold text-foreground">{client.name}</h3>
+                <div className="flex items-center gap-3">
+                  <span className="grid size-12 shrink-0 place-items-center rounded-xl border border-hairline bg-white p-2">
+                    <Image src={client.id === "claude" ? "/logos/assets/claude-mark.png" : "/logos/assets/openai.webp"} alt="" width={32} height={32} className="size-8 object-contain" />
+                  </span>
+                  <h3 className="font-display text-2xl font-semibold text-foreground">{client.name}</h3>
+                </div>
                 <p className="mt-2 text-[14px] leading-relaxed text-muted-foreground">{client.how[locale]}</p>
                 <CodeBlock label={client.label[locale]} className="mt-4">
                   {client.code}
@@ -411,8 +263,8 @@ export default async function PlatformMcpPage({ params }: PageProps) {
               </>
             }
             description={tx(
-              "Read tools for your data, three task tools and one prompt. The task tools need the tasks permission, which the sign-in asks for by default; sign in read-only to leave them out.",
-              "Εργαλεία ανάγνωσης για τα δεδομένα σας, τρία για εργασίες και ένα prompt. Τα εργαλεία εργασιών θέλουν την αντίστοιχη άδεια, που η σύνδεση ζητά από προεπιλογή· συνδεθείτε μόνο για ανάγνωση αν δεν τα θέλετε.",
+              "Read project data and manage tasks from the same conversation. Task updates require the task permissions you approve when connecting.",
+              "Διαβάστε τα δεδομένα του έργου και διαχειριστείτε εργασίες από την ίδια συνομιλία. Οι ενημερώσεις εργασιών χρειάζονται τις άδειες που εγκρίνετε κατά τη σύνδεση.",
             )}
           />
           <div className="reveal mt-12 -mx-5 overflow-x-auto px-5 sm:mx-0 sm:px-0">

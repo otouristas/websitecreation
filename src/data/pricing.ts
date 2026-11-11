@@ -8,8 +8,10 @@ import type { SiteLocale } from '@/lib/i18n/locale';
  * `service-faq-data.ts`, `lib/seo/metadata.ts`, the location packs and the
  * homepage - so figures drifted between surfaces. Everything now reads here.
  *
- * All list prices are NET, excluding Greek VAT. Every surface that renders a
- * price must show both the net figure with "+ ΦΠΑ 24%" and the gross figure.
+ * List prices and ordinary offers are NET, excluding Greek VAT. The two
+ * November entry offers retain their advertised numbers but include VAT.
+ * Keep calculations net via currentPrice(), and choose the advertised figure
+ * and its VAT label via currentDisplayPrice()/currentPriceIncludesVat().
  */
 
 export const VAT_RATE = 0.24;
@@ -21,12 +23,18 @@ export const VAT_RATE = 0.24;
  * discount and its messaging disappear on their own after this instant. No
  * countdown timers and no scarcity claims - the date does the work.
  *
- * Only the two entry packages are discounted (owner decision, 2026-11-06): website
- * €999 -> €599 and SEO €199 -> €149 a month. These are the same figures the
- * prospect emails and report pages quote, so the site and the outreach say one
- * thing. Every other tier carries `offer === regular` and shows no promotion.
+ * Only the two entry packages are discounted. The owner's latest correction
+ * sets the regular NET baselines to €1,000 for Website Starter and €350/month
+ * for SEO Foundations; it supersedes the earlier catalog baselines.
+ * The subsequent VAT-gift decision keeps the advertised €599 website and
+ * €149/month SEO numbers, now INCLUDING 24% VAT for November sign-ups. SEO's
+ * included-VAT monthly rate applies throughout the minimum six-month term.
+ * This is a lower net commercial price, not a zero VAT rate. Other catalog
+ * values, fees and offers keep their existing net basis.
  */
 export const OFFER_ENDS = new Date('2026-11-30T23:59:59+02:00');
+/** The VAT-gift basis starts with November in Greece; older base offers keep their net basis. */
+export const VAT_GIFT_STARTS = new Date('2026-11-01T00:00:00+02:00');
 
 export function isOfferActive(now: Date = new Date()): boolean {
   return now.getTime() <= OFFER_ENDS.getTime();
@@ -55,8 +63,10 @@ export interface Tier {
   readonly name: string;
   /** Net list price, excluding VAT. */
   readonly regular: number;
-  /** Net promotional price while the offer runs. Equal to `regular` when the tier is not on offer. */
+  /** Promotional amount; NET unless offerVatIncluded is true. Original catalog numbers are retained. */
   readonly offer: number;
+  /** November campaign only: this offer's advertised amount already includes VAT. */
+  readonly offerVatIncluded?: true;
   readonly popular?: boolean;
   readonly forEn: string;
   readonly forEl: string;
@@ -67,22 +77,47 @@ export interface Tier {
   readonly deliveryEl?: string;
 }
 
-/** The price actually charged today, net of VAT. */
+/** Whether the current advertised price includes VAT, only during November's VAT-gift window. */
+export function currentPriceIncludesVat(tier: Tier, now?: Date): boolean {
+  const at = now ?? new Date();
+  return isOfferActive(at) && at.getTime() >= VAT_GIFT_STARTS.getTime() && tier.offerVatIncluded === true;
+}
+
+/**
+ * Current NET amount, retaining precision until gross totals are calculated.
+ * Rounding 599 / 1.24 to 483.06 first would incorrectly regenerate 598.99.
+ */
 export function currentPrice(tier: Tier, now?: Date): number {
-  return isOfferActive(now) ? tier.offer : tier.regular;
+  const at = now ?? new Date();
+  if (!isOfferActive(at)) return tier.regular;
+  return currentPriceIncludesVat(tier, at) ? tier.offer / (1 + VAT_RATE) : tier.offer;
+}
+
+/** Authoritative payable gross amount, preserving the exact advertised campaign total. */
+export function currentGrossPrice(tier: Tier, now?: Date): number {
+  const at = now ?? new Date();
+  return currentPriceIncludesVat(tier, at) ? tier.offer : withVat(currentPrice(tier, at));
+}
+
+/** Headline amount: gross for an included-VAT offer, otherwise the normal net price. */
+export function currentDisplayPrice(tier: Tier, now?: Date): number {
+  const at = now ?? new Date();
+  return currentPriceIncludesVat(tier, at) ? currentGrossPrice(tier, at) : currentPrice(tier, at);
 }
 
 /** True when this tier is discounted right now (offer live and a lower offer price). */
 export function tierOnOffer(tier: Tier, now?: Date): boolean {
-  return isOfferActive(now) && tier.offer < tier.regular;
+  const at = now ?? new Date();
+  return isOfferActive(at) && currentPrice(tier, at) < tier.regular;
 }
 
 export const websitePackages: readonly Tier[] = [
   {
     id: 'starter',
     name: 'Website Starter',
-    regular: 999,
+    regular: 1000,
     offer: 599,
+    offerVatIncluded: true,
     forEn: 'A website that brings customers: for local businesses that need to be found on Google, Maps and ChatGPT.',
     forEl: 'Ιστοσελίδα που φέρνει πελάτες: για τοπικές επιχειρήσεις που θέλουν να τις βρίσκουν στη Google, στον χάρτη και στο ChatGPT.',
     includesEn: [
@@ -157,8 +192,9 @@ export const seoPackages: readonly Tier[] = [
   {
     id: 'foundations',
     name: 'SEO Foundations',
-    regular: 199,
+    regular: 350,
     offer: 149,
+    offerVatIncluded: true,
     forEn: 'Local businesses that want to show up on Google, Maps and ChatGPT when customers search. 6-month minimum.',
     forEl: 'Τοπικές επιχειρήσεις που θέλουν να εμφανίζονται στη Google, στον χάρτη και στο ChatGPT όταν τις ψάχνουν. Ελάχιστη διάρκεια 6 μήνες.',
     includesEn: [
@@ -265,6 +301,20 @@ export function entrySeoNet(now?: Date): number {
   return currentPrice(seoPackages[0], now);
 }
 
+/** Advertised entry figures; pair with the respective tier's included-VAT label. */
+export function entryWebsiteDisplay(now?: Date): number {
+  return currentDisplayPrice(websitePackages[0], now);
+}
+
+export function entrySeoDisplay(now?: Date): number {
+  return currentDisplayPrice(seoPackages[0], now);
+}
+
+export function currentPriceVatLabel(tier: Tier, locale: SiteLocale, now?: Date): string {
+  if (currentPriceIncludesVat(tier, now)) return locale === 'el' ? 'με ΦΠΑ 24%' : 'incl. 24% VAT';
+  return locale === 'el' ? '+ ΦΠΑ 24%' : '+ 24% VAT';
+}
+
 /**
  * Look a tier up by id across both ladders.
  *
@@ -287,23 +337,27 @@ export function getTierById(id: string): Tier | undefined {
  * Authored copy now writes `{{ENTRY_WEBSITE}}` and the number is resolved here
  * at render time, against the same data the pricing page uses.
  */
-const PRICE_TOKENS: Record<string, () => number> = {
-  ENTRY_WEBSITE: () => currentPrice(websitePackages[0]),
-  WEBSITE_PRO: () => currentPrice(websitePackages[1]),
-  WEBSITE_BUSINESS: () => currentPrice(websitePackages[2]),
-  ENTRY_SEO: () => currentPrice(seoPackages[0]),
-  SEO_GROWTH: () => currentPrice(seoPackages[1]),
-  SEO_AUTHORITY: () => currentPrice(seoPackages[2]),
+const PRICE_TOKENS: Record<string, (now?: Date) => number> = {
+  ENTRY_WEBSITE: (now) => currentPrice(websitePackages[0], now),
+  WEBSITE_PRO: (now) => currentPrice(websitePackages[1], now),
+  WEBSITE_BUSINESS: (now) => currentPrice(websitePackages[2], now),
+  ENTRY_SEO: (now) => currentPrice(seoPackages[0], now),
+  SEO_GROWTH: (now) => currentPrice(seoPackages[1], now),
+  SEO_AUTHORITY: (now) => currentPrice(seoPackages[2], now),
+  // Explicit gross tokens for new VAT-inclusive copy. Legacy tokens above stay net.
+  ENTRY_WEBSITE_GROSS: (now) => currentGrossPrice(websitePackages[0], now),
+  ENTRY_SEO_GROSS: (now) => currentGrossPrice(seoPackages[0], now),
   ADDON_ECOMMERCE: () => addOns.find((a) => a.id === 'ecommerce')!.from,
   ADDON_TECHNICAL_AUDIT: () => addOns.find((a) => a.id === 'technical-audit')!.from,
   ADDON_ADVANCED_AUDIT: () => addOns.find((a) => a.id === 'advanced-audit')!.from,
   ADDON_LOGO: () => addOns.find((a) => a.id === 'logo')!.from,
 };
 
-/** Replace `{{TOKEN}}` with the live net price, formatted for the locale. */
-export function resolvePriceTokens(text: string, locale: SiteLocale): string {
+/** Replace price tokens; legacy tokens are net, explicit *_GROSS tokens include VAT. */
+export function resolvePriceTokens(text: string, locale: SiteLocale, now?: Date): string {
+  const at = now ?? new Date();
   return text.replace(/\{\{([A-Z_]+)\}\}/g, (whole, token: string) => {
     const get = PRICE_TOKENS[token];
-    return get ? `€${formatPrice(get(), locale)}` : whole;
+    return get ? `€${formatPrice(get(at), locale)}` : whole;
   });
 }

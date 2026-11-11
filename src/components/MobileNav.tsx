@@ -34,7 +34,7 @@ const COPY: Record<SiteLocale, { more: string; talk: string; whatsapp: string; r
     whatsapp: 'WhatsApp',
     reply: 'Απαντάμε σε 24 ώρες, στα ελληνικά ή στα αγγλικά.',
     markets: 'Αγορές',
-    vat: 'Τιμές χωρίς ΦΠΑ 24%',
+    vat: 'Σε κάθε τιμή αναγράφεται αν περιλαμβάνει ΦΠΑ 24%.',
   },
   en: {
     more: 'More',
@@ -42,7 +42,7 @@ const COPY: Record<SiteLocale, { more: string; talk: string; whatsapp: string; r
     whatsapp: 'WhatsApp',
     reply: 'We reply within 24 hours, in English or Greek.',
     markets: 'Markets',
-    vat: 'Prices exclude 24% VAT',
+    vat: 'Each price states whether it includes 24% VAT.',
   },
 };
 

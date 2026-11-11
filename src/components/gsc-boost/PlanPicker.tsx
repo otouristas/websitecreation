@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, FolderOpen } from "lucide-react";
 import { cn } from "@/lib/cn";
 import type { SiteLocale } from "@/lib/i18n/locale";
 import { CheckList } from "@/components/kit/primitives";
@@ -19,7 +19,7 @@ const T = {
   perYear: { en: "/ year", el: "/ έτος" },
   recommended: { en: "Recommended", el: "Προτείνεται" },
   credits: { en: "Credits / mo", el: "Μονάδες / μήνα" },
-  sites: { en: "Sites", el: "Ιστότοποι" },
+  sites: { en: "Projects", el: "Έργα" },
   seats: { en: "Seats", el: "Χρήστες" },
 } as const;
 
@@ -114,9 +114,9 @@ function PlanCard({
   return (
     <div
       className={cn(
-        "relative flex flex-col rounded-2xl border p-6 sm:p-7",
+        "relative flex h-full flex-col rounded-3xl border p-6 text-left shadow-[0_18px_55px_-35px_color-mix(in_oklab,var(--primary)_30%,transparent)] sm:p-7",
         featured
-          ? "border-primary bg-accent ring-1 ring-primary/20"
+          ? "border-primary bg-accent ring-1 ring-primary/20 lg:-translate-y-2"
           : "border-hairline bg-surface/60",
       )}
     >
@@ -125,6 +125,7 @@ function PlanCard({
           {badgeLabel}
         </span>
       ) : null}
+      <div className="mb-5 flex items-center justify-between gap-3 border-b border-hairline pb-5"><span className="flex items-center gap-2 text-xs font-medium text-muted-foreground"><FolderOpen className="size-4 text-primary" aria-hidden />{plan.sites} {locale === "el" ? "έργα" : "projects"}</span><span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">ANOTHERSEOGURU</span></div>
       <h3 className="font-display text-[20px] font-semibold tracking-[-0.02em] text-foreground">{plan.id}</h3>
       <p className="mt-1.5 text-[14px] leading-relaxed text-muted-foreground sm:min-h-[44px]">{plan.tagline[locale]}</p>
       {PLAN_OUTCOMES[plan.id.toLowerCase()] ? (
@@ -185,7 +186,7 @@ export function PlanPicker({
       <div className="flex justify-center">
         <BillingToggle cycle={cycle} onChange={setCycle} locale={locale} />
       </div>
-      <div className="mt-10 grid gap-5 lg:grid-cols-3 lg:items-start">
+      <div className="mt-10 grid gap-5 lg:grid-cols-3 lg:items-stretch">
         {PLANS.map((plan) => (
           <PlanCard key={plan.id} plan={plan} cycle={cycle} locale={locale} source={source} badgeLabel={badgeLabel} />
         ))}

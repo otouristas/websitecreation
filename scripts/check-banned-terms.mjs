@@ -23,6 +23,7 @@ const SKIP_DIRS = new Set([
   'node_modules',
   '.git',
   '.next/cache',
+  '.next/dev', // Local webpack eval/source paths are not published production output.
   'coverage',
 ]);
 

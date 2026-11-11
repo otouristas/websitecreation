@@ -1,4 +1,4 @@
-Last-Updated: 2026-11-08
+Last-Updated: 2026-11-10
 Canonical: https://anotherseoguru.gr/llms.txt
 Sitemap: https://anotherseoguru.gr/sitemap.xml
 
@@ -9,7 +9,7 @@ Source: https://anotherseoguru.gr
 
 ## Βασικές σελίδες
 - **Αρχική** (<https://anotherseoguru.gr>) - Εταιρεία SEO και κατασκευής ιστοσελίδων στην Ελλάδα.
-- **Τιμές** (<https://anotherseoguru.gr/times>) - Τιμές ιστοσελίδας και μηνιαίου SEO, συν ΦΠΑ.
+- **Τιμές** (<https://anotherseoguru.gr/times>) - Τιμές ιστοσελίδας και μηνιαίου SEO, με ρητή ένδειξη ΦΠΑ.
 - **Δωρεάν έλεγχος ιστοσελίδας** (<https://anotherseoguru.gr/get-started#free-audit>) - Φόρμα για δωρεάν έλεγχο SEO.
 - **Υπηρεσίες** (<https://anotherseoguru.gr/services>) - Όλες οι υπηρεσίες.
 - **Υπηρεσίες SEO** (<https://anotherseoguru.gr/seo-services>) - SEO για επιχειρήσεις στην Ελλάδα.
@@ -20,7 +20,7 @@ Source: https://anotherseoguru.gr
 - **Έργα** (<https://anotherseoguru.gr/work>) - Πελάτες και case studies.
 
 ## Υπηρεσίες
-- **Κατασκευή Ιστοσελίδων** (<https://anotherseoguru.gr/services/website-creation>) - Κατασκευή ιστοσελίδων με SEO από την πρώτη μέρα: σχεδιασμός, ανάπτυξη και βελτιστοποίηση για μετατροπές, με σταθερή τιμή από €599.
+- **Κατασκευή Ιστοσελίδων** (<https://anotherseoguru.gr/services/website-creation>) - Κατασκευή ιστοσελίδων με SEO από την πρώτη μέρα: σχεδιασμός, ανάπτυξη και βελτιστοποίηση για μετατροπές, με σταθερή τιμή από €483,06.
 - **Ανασχεδιασμός Ιστοσελίδας** (<https://anotherseoguru.gr/services/website-redesign>) - Μετατρέψτε παλιές ιστοσελίδες σε σύγχρονες, γρήγορες και φιλικές προς την αναζήτηση - με ασφαλή μεταφορά SEO.
 - **Σχεδιασμός Ιστοσελίδων (Web Design)** (<https://anotherseoguru.gr/services/web-design>) - Σχεδιασμός ιστοσελίδων με UX και SEO από την αρχή: αρχιτεκτονική, schema, εσωτερικοί σύνδεσμοι και ταχύτητα που μετατρέπουν επισκέπτες σε πελάτες.
 - **Βελτιστοποίηση Ταχύτητας** (<https://anotherseoguru.gr/services/speed-optimization>) - Core Web Vitals, caching και βελτιστοποίηση κώδικα για ταχύτερη ιστοσελίδα και καλύτερες κατατάξεις.
@@ -33,10 +33,11 @@ Source: https://anotherseoguru.gr
 - **Κατασκευή Eshop με WooCommerce** (<https://anotherseoguru.gr/services/eshop-woocommerce>) - Κατασκευή eshop με WooCommerce: πληρωμές, μεταφορικά, σύνδεση με ERP και SEO κατηγοριών και προϊόντων, έτοιμο να πουλάει από την πρώτη μέρα.
 - **SEO για Eshop** (<https://anotherseoguru.gr/services/eshop-seo>) - SEO για eshop: βελτιστοποίηση κατηγοριών, προϊόντων, φίλτρων και ταχύτητας, ώστε το ηλεκτρονικό σας κατάστημα να πουλάει από την οργανική αναζήτηση.
 
-## Τιμές (συν ΦΠΑ)
-- **Ιστοσελίδα:** Website Starter €599, Website Professional €2.500, Website Business €4.000. Εφάπαξ.
-- **Μηνιαίο SEO:** SEO Foundations €149/μήνα, SEO Growth €900/μήνα, SEO Authority €1.500/μήνα. Ελάχιστη διάρκεια 6 μήνες.
-- Όλες οι τιμές είναι χωρίς ΦΠΑ 24%. Λεπτομέρειες: <https://anotherseoguru.gr/times>
+## Τιμές
+- **Ιστοσελίδα:** Website Starter πριν €1.000 + ΦΠΑ 24% (€1.240 με ΦΠΑ), τώρα €599 με ΦΠΑ 24%, Website Professional €2.500 + ΦΠΑ 24%, Website Business €4.000 + ΦΠΑ 24%. Εφάπαξ.
+- **Μηνιαίο SEO:** SEO Foundations πριν €350/μήνα + ΦΠΑ 24% (€434/μήνα με ΦΠΑ), τώρα €149/μήνα με ΦΠΑ 24%, SEO Growth €900/μήνα + ΦΠΑ 24%, SEO Authority €1.500/μήνα + ΦΠΑ 24%. Ελάχιστη διάρκεια 6 μήνες.
+- Κάθε τιμή δηλώνει αν περιλαμβάνει ΦΠΑ 24%. Λεπτομέρειες: <https://anotherseoguru.gr/times>
+- Black Month 2026: οι δύο τιμές με ΦΠΑ αφορούν νέα έργα που επιβεβαιώνονται έως 30 Νοεμβρίου 2026. Το SEO Foundations παραμένει €149 τελική/μήνα με ΦΠΑ σε όλη την ελάχιστη εξάμηνη συνεργασία. Τα υπόλοιπα πακέτα και πρόσθετα διατηρούν τις τιμές τους.
 
 ## SEO τουρισμού
 - **SEO τουρισμού** (<https://anotherseoguru.gr/seo-tourismou>) - Ξενοδοχεία, βίλες, rent a car, εκδρομές, ταξιδιωτικά γραφεία, εστιατόρια, σκάφη, transfer.

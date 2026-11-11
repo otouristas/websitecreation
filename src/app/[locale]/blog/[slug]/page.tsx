@@ -20,6 +20,7 @@ import { getPillarCopy } from "@/data/blog-pillars";
 import { TableOfContents } from "@/components/blog/TableOfContents";
 import { BlogProductCta } from "@/components/blog/BlogProductCta";
 import { SeoChecklist } from "@/components/blog/SeoChecklist";
+import { BlackMonthArticleStatus } from '@/components/pricing/BlackMonthArticleStatus';
 import FAQSection from "@/components/seo/FAQSection";
 import { CtaBand, kitSoftwareBtn } from "@/components/kit";
 import { cn } from "@/lib/cn";
@@ -212,6 +213,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         {/* Body + sticky TOC rail */}
         <div className="mx-auto grid max-w-6xl gap-12 px-6 py-14 lg:grid-cols-[minmax(0,1fr)_16rem] lg:gap-16">
           <article className="min-w-0">
+            {post.slug === 'black-month-istoselides-seo-2026' ? <BlackMonthArticleStatus /> : null}
             {showChecklist ? (
               <>
                 <KitProse>

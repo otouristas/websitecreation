@@ -9,6 +9,7 @@ import {
 } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { BlackMonthBanner } from '@/components/pricing/BlackMonthBanner';
 import SchemaMarkup from '@/components/seo/SchemaMarkup';
 import { GoogleTile } from '@/components/kit';
 import { WhatsAppIcon } from '@/components/icons/WhatsAppIcon';
@@ -224,6 +225,7 @@ export function HomePageView({ locale }: { readonly locale: SiteLocale }) {
           </div>
         </section>
 
+        <BlackMonthBanner />
         <section className="border-y border-hairline bg-surface/40">
           <div className="mx-auto max-w-[1240px] px-5 py-9 lg:px-8">
             <p className="mb-7 text-center text-[13px] font-medium tracking-[0.01em] text-muted-foreground">{copy.trustIntro}</p>

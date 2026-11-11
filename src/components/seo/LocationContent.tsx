@@ -8,7 +8,7 @@ import { Industry } from '@/data/industries';
 import { getLocationPack, getServiceCopyEn } from '@/data/location-content';
 import { localizedPath, siteLocaleFromPath, type SiteLocale } from '@/lib/i18n/locale';
 import { LocationContentGreek } from './LocationContentGreek';
-import { entrySeoNet, entryWebsiteNet, formatPrice } from '@/data/pricing';
+import { currentPriceVatLabel, entrySeoDisplay, entryWebsiteDisplay, formatPrice, seoPackages, websitePackages } from '@/data/pricing';
 import { CheckList } from '@/components/kit/primitives';
 import {
     accentCls,
@@ -137,7 +137,7 @@ export function LocationContent({ location, service, industry, locale: localePro
                     <div className={localProse}>
                         {serviceDepth ? <p className="mt-4">{serviceDepth}</p> : null}
                         <p className="mt-4">
-                            <strong className="font-semibold text-foreground">Transparent pricing:</strong> websites start at €{formatPrice(entryWebsiteNet(), 'en')} and monthly SEO from €{formatPrice(entrySeoNet(), 'en')}/mo - see our{' '}
+                            <strong className="font-semibold text-foreground">Transparent pricing:</strong> websites start at €{formatPrice(entryWebsiteDisplay(), 'en')} {currentPriceVatLabel(websitePackages[0], 'en')} and monthly SEO from €{formatPrice(entrySeoDisplay(), 'en')}/mo {currentPriceVatLabel(seoPackages[0], 'en')} - see our{' '}
                             <Link href={lp('/ypiresies/times')} className={inlineLink}>pricing &amp; packages</Link> or{' '}
                             <Link href={lp('/get-started')} className={inlineLink}>request a free quote</Link>.
                         </p>
