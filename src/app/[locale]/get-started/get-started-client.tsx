@@ -26,13 +26,13 @@ import { FOUNDER_YEARS } from '@/data/founder';
 /**
  * /get-started: one short page with two doors.
  *
- *   SEO      -> the free audit form (instant homepage check + live SEO team board)
+ *   SEO      -> the free audit form (measured page checks + actual audit and email status)
  *   Website  -> a short brief for a new site, a redesign or an e-shop
  *
  * The door comes from `?service=`: `seo` / `website`, or a service slug from the
  * service pages (website slugs open the Website door, everything else SEO).
  * Switching updates the URL in place. Both forms post to the app's lead
- * pipeline with Formspree as the backup (submitLead).
+ * pipeline through one authoritative intake (submitLead).
  */
 
 type Service = 'seo' | 'website';

@@ -11,6 +11,7 @@ import { trackCtaClick } from '@/lib/analytics';
 import { PHONE_DISPLAY, WHATSAPP_HREF } from '@/lib/contact-info';
 import { WhatsAppIcon } from '@/components/icons/WhatsAppIcon';
 import { appLink } from '@/components/gsc-boost/copy';
+import { GoogleTile } from '@/components/kit/sections';
 import { cn } from '@/lib/cn';
 
 /**
@@ -116,8 +117,9 @@ export function StickyMobileCta(): ReactElement | null {
           <a
             href={primary.href}
             onClick={() => trackCtaClick(primary.event)}
-            className="relative flex h-10 min-w-0 flex-1 items-center justify-center rounded-full px-3 font-display text-[13.5px] font-semibold tracking-[-0.01em] asg-primary-action shadow-[inset_0_1px_0_0_oklch(1_0_0/22%)] active:scale-[0.98] motion-reduce:active:scale-100"
+            className="relative flex h-10 min-w-0 flex-1 items-center justify-center gap-2 rounded-full px-3 font-display text-[13.5px] font-semibold tracking-[-0.01em] asg-primary-action shadow-[inset_0_1px_0_0_oklch(1_0_0/22%)] active:scale-[0.98] motion-reduce:active:scale-100"
           >
+            {!isAgency ? <GoogleTile className="size-6" /> : null}
             <span className="truncate">{primary.label}</span>
           </a>
           <a
