@@ -33,7 +33,7 @@ import {
   type GscFaqItem,
   type ModuleId,
 } from "@/components/gsc-boost";
-import { isValidLocale, localizedPath, type SiteLocale } from "@/lib/i18n/locale";
+import { isValidLocale, type SiteLocale } from "@/lib/i18n/locale";
 
 type PageProps = { params: Promise<{ locale: string }> };
 
@@ -79,7 +79,6 @@ export default async function PlatformForEcommercePage({ params }: PageProps) {
   const isEl = locale === "el";
   const tx = (en: string, el: string) => (isEl ? el : en);
   const copy = homeCopy(locale);
-  const lp = (path: string) => localizedPath(locale, path);
 
   return (
     <>
@@ -257,8 +256,8 @@ export default async function PlatformForEcommercePage({ params }: PageProps) {
           <PlanPicker locale={locale} source="ecommerce-plans" className="mt-10" />
           <p className="mt-10 text-center text-[14px] text-muted-foreground">
             {tx("Building or rebuilding the shop itself?", "Φτιάχνετε ή ανανεώνετε το ίδιο το e-shop;")}{" "}
-            <Link href={lp("/services/eshop-woocommerce")} className="font-semibold text-primary hover:text-foreground">
-              {tx("Our e-shop service", "Η υπηρεσία μας για e-shop")}
+            <Link href="https://anotherseoguru.gr/services/eshop-woocommerce" className="font-semibold text-primary hover:text-foreground">
+              {tx("WooCommerce store development in Greece", "Κατασκευή e-shop με WooCommerce")}
             </Link>
           </p>
         </WaveSection>

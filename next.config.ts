@@ -1,5 +1,6 @@
 import type { NextConfig } from "next";
 import type { Redirect } from "next/dist/lib/load-custom-routes";
+import { migratedAgencyPaths } from "./src/data/migrated-agency-paths";
 import { LEGACY_FEATURE_MODULES } from "./src/data/marketing-features";
 
 /** Requests to the agency's own domain (see src/lib/site-split.ts). */
@@ -49,7 +50,14 @@ const nextConfig: NextConfig = {
 
   async redirects() {
     const appOrigin = process.env.NEXT_PUBLIC_APP_ORIGIN?.replace(/\/$/, '') || 'https://app.anotherseoguru.com';
+    const agency = 'https://anotherseoguru.gr';
+    // Bare agency sections previously had a locale-prefix redirect before middleware.
+    // Keep the one-hop 301 restricted to destinations the new site actually publishes.
+    const bareAgencyRedirects: Redirect[] = Array.from(migratedAgencyPaths)
+      .filter(path => path !== '/' && path !== '/times')
+      .map(path => ({ source: path, destination: agency + path, statusCode: 301 }));
     const list: Redirect[] = [
+      ...bareAgencyRedirects,
       { source: "/previews/mcp/guru-v1.html", destination: "/previews/mcp/guru-v2.html", permanent: true },
       // ---- BEGIN AnotherSEOGuru App: retired /platform/features/<slug> pages ----------
       // The 27 per-feature pages described features the app does not have.
@@ -288,7 +296,13 @@ const nextConfig: NextConfig = {
     ];
     // anotherseoguru.gr (the agency's own domain) is routed by the middleware
     // alone: none of the .com redirects apply there.
-    return list.map((r) => ({ ...r, missing: [...(r.missing ?? []), AGENCY_HOST] }));
+    return list.map(rule => {
+      const path = rule.destination.startsWith('/el/') ? rule.destination.slice(3) : null;
+      const target = path && migratedAgencyPaths.has(path)
+        ? { source: rule.source, destination: agency + path, statusCode: 301 }
+        : rule;
+      return { ...target, missing: [...(rule.missing ?? []), AGENCY_HOST] };
+    });
   },
 
   // Image optimization for Core Web Vitals
