@@ -22,7 +22,23 @@ assert.match(pricing, /anotherseoguru\.gr\/times/);
 const guide = '/blog/poso-kostizei-mia-istoselida';
 assert.match(await (await check(guide, 'text/html')).text(), /Τιμές Κατασκευής Ιστοσελίδας/i);
 assert.match(await (await check(guide + '.md', 'text/markdown')).text(), /Τιμές Κατασκευής Ιστοσελίδας/i);
-assert.match(await (await check('/sitemap.xml', 'xml')).text(), /anotherseoguru\.gr\/blog\/poso-kostizei-mia-istoselida/);
+const sitemap = await (await check('/sitemap.xml', 'xml')).text();
+assert.ok(sitemap.includes(`https://anotherseoguru.gr${guide}`));
+for (const [path, indexable] of [
+  ['/solutions/hotels/website-creation', true],
+  ['/solutions/hotels/eshop-woocommerce', false],
+]) {
+  const html = await (await check(path, 'text/html')).text();
+  const tags = html.match(/<meta\b[^>]*\bname="(?:robots|googlebot)"[^>]*>/gi) || [];
+  assert.ok(tags.length, `${path} must declare robots metadata`);
+  for (const tag of tags) {
+    const directives = (tag.match(/\bcontent="([^"]+)"/i)?.[1] || '').toLowerCase().split(/,\s*/);
+    assert.ok(directives.includes(indexable ? 'index' : 'noindex'), tag);
+    assert.equal(directives.includes('noindex'), !indexable, tag);
+    assert.ok(directives.includes('follow'), tag);
+  }
+  assert.equal(sitemap.includes(`<loc>https://anotherseoguru.gr${path}</loc>`), indexable, path);
+}
 assert.match(await (await check('/llms.txt', 'text/plain')).text(), /anotherseoguru\.gr/);
 assert.match(await (await check('/robots.txt', 'text/plain')).text(), /Disallow: \/(?:\s|$)/);
 await check('/get-started', 'text/html');

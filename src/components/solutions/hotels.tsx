@@ -185,10 +185,10 @@ const copy = {
   },
   el: {
     eyebrow: 'Ξενοδοχεία και καταλύματα',
-    h1: 'Ιστοσελίδα ξενοδοχείου για απευθείας κρατήσεις',
+    h1: 'Απευθείας κρατήσεις για το ξενοδοχείο σας',
     lede:
-      'Ακόμη κι αν ο επισκέπτης γνωρίζει το όνομα του ξενοδοχείου σας, μπορεί να καταλήξει να κλείσει μέσω πλατφόρμας. Συνδέουμε τις πολύγλωσσες σελίδες δωματίων και τις φωτογραφίες με τη μηχανή κρατήσεών σας, για να μπορεί να κλείσει απευθείας.',
-    ctaPrimary: 'Ζητήστε προσφορά για το site σας',
+      'Ο ταξιδιώτης σας βρίσκει στον χάρτη, βλέπει τα δωμάτια και ψάχνει τιμή για τις ημερομηνίες του. Ελέγχουμε αυτή τη διαδρομή μαζί σας για να δούμε πού χάνονται κρατήσεις και τι αξίζει να αλλάξει πρώτο.',
+    ctaPrimary: 'Συζητήστε μαζί μας για το ξενοδοχείο σας',
     ctaSecondary: 'Δείτε έργα ξενοδοχείων',
     leaks: {
       eyebrow: 'Διάγνωση',
@@ -353,7 +353,7 @@ export function HotelsPage({ locale }: { locale: SiteLocale }) {
               wrap
               href={lp('/services/ai-visibility')}
               tag="AI"
-              text={tx('Be the hotel ChatGPT and Gemini recommend', 'Γίνετε το ξενοδοχείο που προτείνουν ChatGPT και Gemini')}
+              text={tx('Be the hotel ChatGPT and Gemini recommend', 'Αναφέρεται το ξενοδοχείο σας στις απαντήσεις AI;')}
             />
           </div>
         }
@@ -365,7 +365,10 @@ export function HotelsPage({ locale }: { locale: SiteLocale }) {
             locale={locale}
             primaryHref={lp('/get-started?project=hotels')}
             primaryLabel={t.ctaPrimary}
-            links={[{ href: '#proof', label: t.ctaSecondary }]}
+            links={isEl ? [
+              { href: lp('/solutions/hotels/website-creation'), label: 'Κατασκευή ξενοδοχειακής ιστοσελίδας' },
+              { href: '#proof', label: t.ctaSecondary },
+            ] : [{ href: '#proof', label: t.ctaSecondary }]}
           />
         }
         trust={<TrustMarks items={agencyTrust(locale).map((item) => item.label)} yesLabel={tx('Yes', 'Ναι')} />}
