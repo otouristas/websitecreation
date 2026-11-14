@@ -21,7 +21,7 @@ const BASE_URL = 'https://anotherseoguru.com';
 const LOCALES: SiteLocale[] = ['en', 'el'];
 
 // The bilingual launch changed these pages on Nov 14. Other pages keep their own dates.
-const NOVEMBER_PRODUCT_UPDATES = new Set(['/', '/pricing', '/platform/white-label-reports', '/resources/sample-seo-report']);
+const NOVEMBER_PRODUCT_UPDATES = new Set(['/', '/pricing', '/platform/white-label-reports', '/resources/sample-seo-report', '/compare/agencyanalytics']);
 
 
 function localeUrl(locale: SiteLocale, path: string) {
