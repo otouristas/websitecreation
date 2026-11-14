@@ -19,7 +19,7 @@ export const REPORTING_EXPANSION_ARTICLES: ReadonlyArray<ResourceArticle> = [
     body: [
       {
         type: "p",
-        text: "**A useful SEO dashboard shows, on one screen, whether non-branded organic search is growing, which pages and queries caused the change, and whether anything is broken.** It is built for one reader at a time, it puts the business result at the top left, and every widget answers a question someone actually asks. Six to ten widgets is enough. A dashboard with forty charts is a data dump that nobody opens after the second week.",
+        text: "Decide who will use the dashboard and what they need to do when they open it. A business owner may want enquiries from organic search first. The person doing SEO also needs to see which pages changed and whether anything broke. Start with six to ten charts or figures that answer those questions.",
       },
       { type: "h2", id: "dashboard-vs-report", text: "Dashboard or report: which one do you need?" },
       {
@@ -221,7 +221,7 @@ export const REPORTING_EXPANSION_ARTICLES: ReadonlyArray<ResourceArticle> = [
     body: [
       {
         type: "p",
-        text: "**The best SEO reporting tool is the one that matches what you report on and who reads it.** If your reports cover SEO alongside paid ads, social and email, a multi-channel dashboard tool fits. If they cover organic search only and you want the analysis done for you, a Search Console-based SEO tool fits. If you already pay for an SEO suite, its report builder may be enough. Decide on those three points first, then compare tools on data accuracy, time saved per report and price per client.",
+        text: "Open the last report you sent a client. If it combined search, ads and email, look for a tool that can bring those channels together. If it was mainly about Google Search, try building the same report from Search Console data. Compare the figures, time spent and cost per client with any reporting tool you already pay for.",
       },
       {
         type: "note",
@@ -368,7 +368,7 @@ export const REPORTING_EXPANSION_ARTICLES: ReadonlyArray<ResourceArticle> = [
     body: [
       {
         type: "p",
-        text: "**A white-label SEO report is a client report produced in a reporting tool but delivered entirely in your agency's brand: your logo, colours, name and contact details, with no mention of the software behind it.** The client sees your agency's work, not a tool they could buy themselves. Done well, it is a brand asset you send every month. Done badly, with a stray vendor logo or numbers that do not match Search Console, it costs more trust than a plain report would.",
+        text: "A white-label SEO report goes to the client under your agency’s name, with your logo, colours and contact details. Before the first delivery, open the file as the client would. Check the branding and compare the figures with the same period in Search Console.",
       },
       {
         type: "note",
@@ -515,7 +515,7 @@ export const REPORTING_EXPANSION_ARTICLES: ReadonlyArray<ResourceArticle> = [
     body: [
       {
         type: "p",
-        text: "**A winning SEO proposal shows the prospect three things on the first page: what you found on their site, what fixing it is likely to be worth, and what it costs.** Everything after that (scope, timeline, reporting, terms) supports the decision. The template below has ten sections in that order. Proposals that open with three pages about the agency and end with a price lose to shorter ones that open with the prospect's own data.",
+        text: "Put one finding from the prospect’s site on the first page of your proposal. Explain what the change could be worth, how you estimated it and what the work costs. Use the rest of the proposal to agree the scope, timing and reporting.",
       },
       { type: "h2", id: "before-writing", text: "Before you write: the discovery call" },
       {

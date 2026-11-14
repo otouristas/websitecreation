@@ -136,12 +136,12 @@ export default async function PlatformSecurityPage({ params }: PageProps) {
           pill={<KitEyebrow icon={<ShieldCheck />}>{tx("AnotherSEOGuru App · Security", "AnotherSEOGuru App · Ασφάλεια")}</KitEyebrow>}
           title={
             <>
-              {tx("Read-only", "Μόνο ανάγνωση,")} <Accent>{tx("by design", "εκ σχεδιασμού")}</Accent>
+              {tx("You decide who can read", "Εσείς επιλέγετε ποιος έχει πρόσβαση")} <Accent>{tx("your search data", "στα δεδομένα αναζήτησής σας")}</Accent>
             </>
           }
           lead={tx(
-            "You’re trusting AnotherSEOGuru App with your search data. Here is exactly what it can access, where the data lives and how it’s protected, in plain language.",
-            "Εμπιστεύεστε στο AnotherSEOGuru App τα δεδομένα αναζήτησής σας. Εδώ εξηγούμε με απλά λόγια σε τι ακριβώς έχει πρόσβαση, πού αποθηκεύονται τα δεδομένα και πώς προστατεύονται.",
+            "AnotherSEOGuru App asks for read-only access to the Google Search Console properties you connect. You can review the permissions before connecting, and revoke access from your Google account whenever you choose.",
+            "Το AnotherSEOGuru App ζητά πρόσβαση μόνο για ανάγνωση στα δεδομένα του Google Search Console που συνδέετε. Πριν δώσετε άδεια, μπορείτε να δείτε τι ακριβώς καλύπτει. Μπορείτε να την ανακαλέσετε ανά πάσα στιγμή από τον λογαριασμό σας Google.",
           )}
           actions={<SoftwareCtas locale={locale} source="security-hero" />}
           trust={<TrustLine items={softwareTrust(locale)} />}
@@ -263,8 +263,8 @@ export default async function PlatformSecurityPage({ params }: PageProps) {
             <Block id="ai" title={tx("AI features and third parties", "Λειτουργίες AI και τρίτοι")}>
               <p>
                 {tx(
-                  "When you use the AI assistant, generate a brief or run an AI visibility check, AnotherSEOGuru App sends the AI provider only what that request needs, through an AI gateway. Keyword, SERP, backlink and crawl features send keywords, domains and URLs (not your Google data) to the data providers that power them.",
-                  "Όταν χρησιμοποιείτε τον βοηθό AI, δημιουργείτε ένα brief ή εκτελείτε έλεγχο ορατότητας στην AI, το AnotherSEOGuru App στέλνει στον πάροχο AI μόνο ό,τι χρειάζεται το συγκεκριμένο αίτημα, μέσω ενός AI gateway. Οι λειτουργίες λέξεων-κλειδιών, SERP, backlinks και crawl στέλνουν λέξεις-κλειδιά, domains και URL (όχι τα δεδομένα σας από τη Google) στους παρόχους δεδομένων που τις τροφοδοτούν.",
+                  "When you ask Aster AI a question, generate a brief or run an AI visibility check, AnotherSEOGuru App sends the AI provider only what that request needs, through an AI gateway. Keyword, SERP, backlink and crawl features send keywords, domains and URLs (not your Google data) to the data providers that power them.",
+                  "Όταν ρωτάτε τον Aster AI, δημιουργείτε ένα brief ή εκτελείτε έλεγχο ορατότητας στην AI, το AnotherSEOGuru App στέλνει στον πάροχο AI μόνο ό,τι χρειάζεται το συγκεκριμένο αίτημα, μέσω ενός AI gateway. Οι λειτουργίες λέξεων-κλειδιών, SERP, backlinks και crawl στέλνουν λέξεις-κλειδιά, domains και URL (όχι τα δεδομένα σας από τη Google) στους παρόχους δεδομένων που τις τροφοδοτούν.",
                 )}
               </p>
               <p>

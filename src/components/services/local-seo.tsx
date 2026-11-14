@@ -65,9 +65,9 @@ const topicsEl: readonly ServiceTopicEl[] = [
 const copy = {
   en: {
     eyebrow: 'Local SEO',
-    h1: 'Local SEO that puts you in the map pack, where local searches actually end',
+    h1: 'Help local customers find you on Google Maps',
     lede:
-      'For "near me" and city searches, most people never scroll past the three map results. Getting into that block is a different job from ranking a web page, and it is the one that brings a local business the phone call.',
+      'When someone nearby needs your service, a map listing can be the first place they see your business. We check what they see there, whether they can reach you and how your local pages appear in search.',
     ctaPrimary: 'Get a local SEO quote',
     ctaSecondary: 'How it works',
     pack: {
@@ -171,9 +171,9 @@ const copy = {
   },
   el: {
     eyebrow: 'Τοπικό SEO',
-    h1: 'Τοπικό SEO: εμφάνιση στο Google Maps και στις τοπικές αναζητήσεις',
+    h1: 'Τοπικό SEO για αναζητήσεις στο Google Maps',
     lede:
-      'Το τοπικό SEO κάνει την επιχείρησή σας να εμφανίζεται στον χάρτη της Google και στα τοπικά αποτελέσματα όταν κάποιος ψάχνει «κοντά μου» ή με όνομα πόλης. Ξεκινάμε από το Google Business Profile (πρώην Google My Business) και τη συνέπεια των στοιχείων σας σε όλο το διαδίκτυο.',
+      'Όταν κάποιος ψάχνει κοντά του, μπορεί να δει πρώτα το Google Business Profile σας. Ελέγχουμε τι γράφει για τις υπηρεσίες σας, αν δείχνει το σωστό ωράριο και αν μπορεί ο πελάτης να σας καλέσει ή να σας βρει στον χάρτη.',
     ctaPrimary: 'Ζητήστε προσφορά για τοπικό SEO',
     ctaSecondary: 'Πώς δουλεύει',
     pack: {

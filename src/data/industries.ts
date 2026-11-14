@@ -12,7 +12,7 @@ export const industries: Industry[] = [
     {
         slug: 'restaurants',
         name: 'Restaurants',
-        description: 'Website solutions tailored for restaurants, cafes, and food businesses. Online menus, reservations, and local SEO.',
+        description: 'Give diners the menu, directions and a way to reserve a table while they are deciding where to eat.',
         metaDescription: 'Professional websites for restaurants. Online menus, reservations, local SEO optimization.',
         painPoints: ['Online menu display', 'Table reservations', 'Local visibility', 'Mobile ordering'],
         icon: 'utensils',
@@ -20,7 +20,7 @@ export const industries: Industry[] = [
     {
         slug: 'plumbers',
         name: 'Plumbers',
-        description: 'High-converting websites for plumbing contractors. Emergency service booking, area validation, and local trust signals.',
+        description: 'A burst pipe leaves little time to compare websites. Show which areas you cover, when you take urgent jobs and which number to call.',
         metaDescription: 'Plumbing websites aimed at generating emergency calls. SEO for local plumbing services.',
         painPoints: ['Emergency calls', 'Service area routing', 'Trust verification', 'Job scheduling'],
         icon: 'wrench',
@@ -28,7 +28,7 @@ export const industries: Industry[] = [
     {
         slug: 'hvac',
         name: 'HVAC',
-        description: 'Professional sites for HVAC companies. Seasonal promotion tools, maintenance plans, and equipment showcases.',
+        description: 'Give customers a choice between requesting an installation and arranging maintenance for the equipment they already own.',
         metaDescription: 'HVAC contractor websites with seasonal booking tools and maintenance plan features.',
         painPoints: ['Seasonal demand', 'System quotes', 'Maintenance contracts', 'Emergency repairs'],
         icon: 'thermometer',
@@ -36,7 +36,7 @@ export const industries: Industry[] = [
     {
         slug: 'electricians',
         name: 'Electricians',
-        description: 'Trust-building websites for licensed electricians. Service galleries, safety certifications, and quote request forms.',
+        description: 'Show the electrical work you take on, your qualifications and examples of recent jobs. Give customers a short way to request a quote.',
         metaDescription: 'Electrician websites that build trust. Showcase projects, certifications, and get more quotes.',
         painPoints: ['Safety assurance', 'Project quoting', 'Emergency service', 'Licensing proof'],
         icon: 'zap',
@@ -44,7 +44,7 @@ export const industries: Industry[] = [
     {
         slug: 'roofers',
         name: 'Roofers',
-        description: 'Roofing websites designed to capture high-value leads. Project galleries, material showcases, and storm damage landing pages.',
+        description: 'Help homeowners decide whether they need a roof repair or a replacement. Show the materials you use and examples of each kind of job.',
         metaDescription: 'Roofing company websites optimized for high-ticket leads. Storm damage and replacement services.',
         painPoints: ['High ticket trust', 'Storm damage leads', 'Material selection', 'Insurance claims'],
         icon: 'home',
@@ -52,7 +52,7 @@ export const industries: Industry[] = [
     {
         slug: 'landscapers',
         name: 'Landscapers',
-        description: 'Visual-first websites for landscaping companies. Portfolio galleries, maintenance scheduling, and seasonal service pages.',
+        description: 'Let someone browse gardens you have designed, then ask about a planting project or regular maintenance.',
         metaDescription: 'Landscaping websites with beautiful portfolios. Maintenance contracts and design consultation booking.',
         painPoints: ['Visual portfolio', 'Recurring contracts', 'Seasonal services', 'Design consultations'],
         icon: 'flower',
@@ -60,7 +60,7 @@ export const industries: Industry[] = [
     {
         slug: 'painters',
         name: 'Painters',
-        description: 'Lead-generation sites for painting contractors. Color visualizers, project galleries, and instant quote estimations.',
+        description: 'Show clients how a colour looks in a finished room and what you need to know to estimate their painting job.',
         metaDescription: 'Painting contractor websites with project galleries and quote request forms.',
         painPoints: ['Color reliability', 'Project quoting', 'Visual proof', 'Scheduling'],
         icon: 'paint-bucket',
@@ -68,7 +68,7 @@ export const industries: Industry[] = [
     {
         slug: 'carpenters',
         name: 'Carpenters',
-        description: 'Custom woodworking and carpentry websites. Portfolio showcases for cabinetry, framing, and finish work.',
+        description: 'Let a client see the joinery, finish and scale of your work before asking you to price a cabinet or a larger build.',
         metaDescription: 'Carpentry and woodworking websites. Showcase custom projects and craftsmanship.',
         painPoints: ['Craftsmanship display', 'Custom capabilities', 'Project timeline', 'Material quality'],
         icon: 'hammer',
@@ -76,7 +76,7 @@ export const industries: Industry[] = [
     {
         slug: 'flooring',
         name: 'Flooring',
-        description: 'Flooring installer websites. Material catalogs, room visualizers, and installation quote calculators.',
+        description: 'Help a homeowner compare flooring materials, picture them in a room and request a price for installation.',
         metaDescription: 'Flooring installation websites. Showrooms for hardwood, tile, and carpet services.',
         painPoints: ['Material visualization', 'In-home estimates', 'Durability questions', 'Installation timing'],
         icon: 'layers',
@@ -84,7 +84,7 @@ export const industries: Industry[] = [
     {
         slug: 'cleaning-services',
         name: 'Cleaning Services',
-        description: 'Booking-focused websites for house and commercial cleaners. Recurring service setup and instant pricing.',
+        description: 'Make it easy to price a one-off clean or arrange a regular visit for a home or workplace.',
         metaDescription: 'Maid and cleaning service websites. Bookings for residential and commercial cleaning.',
         painPoints: ['Trust & security', 'Recurring booking', 'Custom checklists', 'Pricing transparency'],
         icon: 'sparkles',
@@ -92,7 +92,7 @@ export const industries: Industry[] = [
     {
         slug: 'movers',
         name: 'Movers',
-        description: 'Moving company websites with quote calculators, distance estimators, and trust-building reviews.',
+        description: 'Collect the pickup and delivery details needed for a moving estimate, alongside reviews from previous customers.',
         metaDescription: 'Moving company websites with quote engines. Local and long-distance moving lead gen.',
         painPoints: ['Quote accuracy', 'Trust & safety', 'Date availability', 'Insurance coverage'],
         icon: 'truck',
@@ -100,7 +100,7 @@ export const industries: Industry[] = [
     {
         slug: 'locksmiths',
         name: 'Locksmiths',
-        description: 'Urgency-optimized websites for locksmiths. Click-to-call focus, 24/7 availability markers, and service area maps.',
+        description: 'Put your phone number, service area and actual working hours where someone locked outside can find them on a phone.',
         metaDescription: 'Locksmith websites optimized for emergency calls. 24/7 service and mobile dispatch.',
         painPoints: ['Immediate response', 'Mobile dispatch', '24/7 availability', 'Price transparency'],
         icon: 'key',
@@ -108,7 +108,7 @@ export const industries: Industry[] = [
     {
         slug: 'pest-control',
         name: 'Pest Control',
-        description: 'Pest control websites with pest identification guides, treatment plans, and emergency service booking.',
+        description: 'Help customers identify a pest, understand the treatment options and request an urgent visit when needed.',
         metaDescription: 'Pest control websites with treatment plans and pest libraries. Emergency extermination services.',
         painPoints: ['Urgency', 'Safety concerns', 'Recurring plans', 'Pest identification'],
         icon: 'bug',
@@ -116,7 +116,7 @@ export const industries: Industry[] = [
     {
         slug: 'lawyers',
         name: 'Lawyers',
-        description: 'Law firm websites that build trust, showcase expertise, and generate qualified leads through SEO.',
+        description: 'Explain which cases your firm handles and how a prospective client can arrange a first conversation with the right lawyer.',
         metaDescription: 'Law firm websites that build trust and generate leads. Practice area pages and local SEO.',
         painPoints: ['Trust building', 'Practice areas', 'Case results', 'Attorney profiles'],
         icon: 'scale',
@@ -124,7 +124,7 @@ export const industries: Industry[] = [
     {
         slug: 'dentists',
         name: 'Dentists',
-        description: 'Dental practice websites with appointment scheduling, patient testimonials, and service education.',
+        description: 'Help patients read about a dental treatment, locate the practice and request an appointment.',
         metaDescription: 'Dental practice websites. Patient appointment booking, cosmetic dentistry showcases, and local SEO.',
         painPoints: ['Fear reduction', 'Insurance info', 'Emergency slots', 'Cosmetic results'],
         icon: 'smile',
@@ -132,7 +132,7 @@ export const industries: Industry[] = [
     {
         slug: 'doctors',
         name: 'Doctors & Medical Practices',
-        description: 'Medical SEO and websites for doctors and private practices: local search and Google Business Profile, specialty pages written for medical E-E-A-T, online booking and patient privacy handled properly.',
+        description: 'Make it easier to find your practice by specialty and location. Give patients reliable information about the visit and a way to book.',
         metaDescription: 'SEO for doctors and medical practices: local search, Google Business Profile, specialty pages, online booking and GDPR-aware forms. Request a free audit.',
         painPoints: ['Patients searching nearby', 'Trust in medical content', 'Online appointment booking', 'Patient privacy and GDPR'],
         icon: 'stethoscope',
@@ -140,7 +140,7 @@ export const industries: Industry[] = [
     {
         slug: 'chiropractors',
         name: 'Chiropractors',
-        description: 'Chiropractic websites focusing on pain relief education, new patient offers, and online scheduling.',
+        description: 'Explain what a first chiropractic visit involves and let a new patient choose an appointment.',
         metaDescription: 'Chiropractor websites with new patient specials. Pain relief education and appointment booking.',
         painPoints: ['Pain relief', 'New patient intake', 'Insurance/Cost', 'Treatment explanation'],
         icon: 'activity',
@@ -148,7 +148,7 @@ export const industries: Industry[] = [
     {
         slug: 'therapists',
         name: 'Therapists',
-        description: 'Private practice websites for therapists. Secure contact forms, specialty descriptions, and "good fit" guides.',
+        description: 'Explain your areas of practice and how someone can get in touch privately to discuss a first appointment.',
         metaDescription: 'Therapy and counseling websites. private practice marketing and patient connection.',
         painPoints: ['Privacy/Trust', 'Specialty match', 'Insurance coverage', 'Approachability'],
         icon: 'heart',
@@ -156,7 +156,7 @@ export const industries: Industry[] = [
     {
         slug: 'real-estate',
         name: 'Real Estate',
-        description: 'Real estate websites with property listings, search functionality, and local market SEO strategies.',
+        description: 'Let buyers search listings by area and ask about the property they are looking at.',
         metaDescription: 'Real estate websites with property listings, IDX integration, and local SEO.',
         painPoints: ['Property listings', 'Lead generation', 'Market visibility', 'Virtual tours'],
         icon: 'home',
@@ -164,7 +164,7 @@ export const industries: Industry[] = [
     {
         slug: 'hotels',
         name: 'Hotels',
-        description: 'Hotel and hospitality websites with booking integrations, gallery showcases, and tourism-focused SEO.',
+        description: 'Let guests compare rooms, check availability and reach your booking engine directly from your hotel website.',
         metaDescription:
           'Hotel website design with booking CTAs, room galleries and tourism SEO. Built to win direct bookings back from the OTAs. Request a quote.',
         painPoints: ['Direct bookings', 'Room showcases', 'OTA competition', 'Guest reviews'],
@@ -173,7 +173,7 @@ export const industries: Industry[] = [
     {
         slug: 'gyms',
         name: 'Gyms',
-        description: 'Fitness center websites with class schedules, membership info, and local fitness SEO optimization.',
+        description: 'Give someone choosing a gym the weekly timetable, membership options and directions to their nearest location.',
         metaDescription: 'Gym and fitness center websites. Class schedules, memberships, and local SEO.',
         painPoints: ['Class scheduling', 'Membership signups', 'Trainer profiles', 'Facility showcase'],
         icon: 'dumbbell',
@@ -181,7 +181,7 @@ export const industries: Industry[] = [
     {
         slug: 'salons',
         name: 'Salons',
-        description: 'Beauty salon and spa websites with service menus, booking systems, and local beauty SEO.',
+        description: 'Let clients choose a treatment from your service menu and book with the salon.',
         metaDescription: 'Salon and spa websites with online booking, service menus, and local SEO.',
         painPoints: ['Online booking', 'Service showcase', 'Staff profiles', 'Before/after gallery'],
         icon: 'scissors',
@@ -189,7 +189,7 @@ export const industries: Industry[] = [
     {
         slug: 'plastic-surgeons',
         name: 'Plastic Surgeons',
-        description: 'Premium websites for plastic surgery clinics. Gallery showcases, procedure guides, and patient trust building.',
+        description: 'Explain the procedures your clinic offers and give prospective patients a way to arrange a consultation.',
         metaDescription: 'Plastic surgery marketing and SEO. Patient acquisition for rhinoplasty, breast augmentation, and more.',
         painPoints: ['Patient trust', 'Before/after compliance', 'High-end branding', 'Lead qualification'],
         icon: 'user-plus',
@@ -197,7 +197,7 @@ export const industries: Industry[] = [
     {
         slug: 'med-spas',
         name: 'Med Spas',
-        description: 'Chic, high-converting websites for Medical Spas. Booking integration, treatment menus, and visual storytelling.',
+        description: 'Help clients compare the treatments you offer and book a consultation with the clinic.',
         metaDescription: 'Med Spa marketing and web design. SEO for Botox, fillers, and aesthetic treatments.',
         painPoints: ['Booking rates', 'Visual appeal', 'Treatment education', 'Recurring clients'],
         icon: 'sparkles',
@@ -205,7 +205,7 @@ export const industries: Industry[] = [
     {
         slug: 'dui-lawyers',
         name: 'DUI Lawyers',
-        description: 'High-urgency lead generation for DUI attorneys. Click-to-call focus, authority building, and local dominance.',
+        description: 'Put the practice area, jurisdiction and call button where someone seeking urgent legal advice can find them.',
         metaDescription: 'DUI attorney SEO and web design. Generate urgent defense leads in your local market.',
         painPoints: ['Urgency', 'Authority/Trust', 'Local visibility', 'Mobile experience'],
         icon: 'shield',
@@ -213,7 +213,7 @@ export const industries: Industry[] = [
     {
         slug: 'personal-injury',
         name: 'Personal Injury',
-        description: 'Aggressive SEO strategies for PI firms. Case result showcases, practice area landing pages, and lead capture.',
+        description: 'Explain which injury claims you handle and what a prospective client needs for a first conversation.',
         metaDescription: 'Personal injury lawyer marketing. High-value case generation for auto accidents and slips.',
         painPoints: ['High competition', 'Case results', 'Trust signals', 'Lead volume'],
         icon: 'ambulance',
@@ -221,7 +221,7 @@ export const industries: Industry[] = [
     {
         slug: 'financial-advisors',
         name: 'Financial Advisors',
-        description: 'Professional, compliance-friendly websites for wealth managers. Trust building, resource hubs, and appointment setting.',
+        description: 'Give prospective clients enough detail about your advisory services to decide whether to book a meeting.',
         metaDescription: 'SEO for financial advisors and wealth managers. Build trust and attract high-net-worth clients.',
         painPoints: ['Trust & Credibility', 'Compliance', 'Lead quality', 'Expertise showcase'],
         icon: 'briefcase',
@@ -229,7 +229,7 @@ export const industries: Industry[] = [
     {
         slug: 'rent-a-car',
         name: 'Rent-a-Car',
-        description: 'Car rental websites with fleet catalogs, booking funnels, seasonal offers, and island or airport local SEO.',
+        description: 'Show the available car classes, pickup points and rental conditions before a traveller starts a direct booking.',
         metaDescription:
           'Car rental website design with fleet pages, booking funnels and local SEO for airports and islands. Free EUR quote.',
         painPoints: ['Online bookings', 'Fleet showcase', 'Seasonal demand', 'OTA competition'],
@@ -238,7 +238,7 @@ export const industries: Industry[] = [
     {
         slug: 'tour-operators',
         name: 'Tour Operators',
-        description: 'Excursion and daily tour websites with package catalogs, gallery-rich pages, and destination SEO clusters.',
+        description: 'Give each excursion its own itinerary, meeting point and booking details so visitors can choose a trip that fits their day.',
         metaDescription:
           'Tour operator websites with excursion catalogs, booking CTAs and destination SEO. Built for Google and AI search.',
         painPoints: ['Excursion bookings', 'Seasonal packages', 'Gallery content', 'Multi-language SEO'],
@@ -247,7 +247,7 @@ export const industries: Industry[] = [
     {
         slug: 'villas-apartments',
         name: 'Villas & Apartments',
-        description: 'Vacation rental and villa websites with immersive galleries, direct booking forms, and international SEO.',
+        description: 'Show guests which villa or apartment fits their group and give them a direct way to ask about their dates.',
         metaDescription: 'Villa and apartment rental websites. Direct bookings, luxury galleries, and vacation rental SEO.',
         painPoints: ['Direct bookings', 'Photo galleries', 'OTA competition', 'International guests'],
         icon: 'home',
@@ -255,7 +255,7 @@ export const industries: Industry[] = [
     {
         slug: 'travel-agencies',
         name: 'Travel Agencies',
-        description: 'Travel agency sites with package showcases, destination hubs, and lead capture for custom itineraries.',
+        description: 'Help travellers compare packages by destination and ask your team to tailor an itinerary.',
         metaDescription: 'Travel agency web design and SEO. Package pages, destination content, and multilingual lead funnels.',
         painPoints: ['Package sales', 'Lead capture', 'Destination content', 'Trust signals'],
         icon: 'plane',
@@ -263,7 +263,7 @@ export const industries: Industry[] = [
     {
         slug: 'travel-ai-chatbots',
         name: 'Travel AI Chatbots',
-        description: 'AI assistant implementations for tourism - multilingual booking support, FAQ automation, and AEO visibility.',
+        description: 'Answer recurring guest questions in their language and show them where to continue a booking.',
         metaDescription: 'Travel AI chatbot development. Multilingual assistants for hotels, rent-a-car, and tour operators.',
         painPoints: ['24/7 support', 'Multilingual guests', 'Booking automation', 'AI search visibility'],
         icon: 'bot',

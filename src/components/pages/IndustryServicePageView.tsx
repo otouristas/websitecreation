@@ -49,6 +49,7 @@ export function IndustryServicePageView({
   const isEl = locale === 'el';
   const svcEl = isEl ? getServiceEl(serviceSlug) : null;
   const serviceName = svcEl?.name ?? baseService.name;
+  const serviceDescription = svcEl?.description ?? baseService.description;
   const features = svcEl?.features ?? baseService.features;
   const ui = isEl ? solutionsUi.el : solutionsUi.en;
   /**
@@ -86,13 +87,13 @@ export function IndustryServicePageView({
     generateBreadcrumbSchema({ items: breadcrumbs }),
     generateServiceSchema({
       name: ui.serviceForIndustry(serviceName, industry.nameFor),
-      description: ui.serviceHeroDesc(serviceName, industry.name),
+      description: serviceDescription,
       provider: { name: 'AnotherSEOGuru', url: 'https://anotherseoguru.com' },
       serviceType: 'Web Development',
     }),
     generateArticleSchema({
       headline: ui.serviceForIndustry(serviceName, industry.nameFor),
-      description: ui.serviceHeroDesc(serviceName, industry.name),
+      description: serviceDescription,
       datePublished: GENERATED_CONTENT_PUBLISHED,
       dateModified: GENERATED_CONTENT_UPDATED,
       author: { name: 'AnotherSEOGuru' },
@@ -134,15 +135,15 @@ export function IndustryServicePageView({
               h1
             )
           }
-          lead={ui.serviceHeroDesc(serviceName, industry.name)}
+          lead={serviceDescription}
           actions={
             <div className="flex flex-col items-center gap-3">
-              <AgencyCtas locale={locale} primaryHref={lp('/contact')} primaryLabel={ui.getIndustryQuote(industry.name)} />
+              <AgencyCtas locale={locale} primaryHref={lp('/contact')} primaryLabel={ui.getQuote} />
               <Link
                 href={lp(`/solutions/${industrySlug}`)}
                 className="text-[14px] font-medium text-muted-foreground underline decoration-hairline underline-offset-4 hover:text-foreground"
               >
-                {ui.allIndustryServices(industry.name)}
+                {ui.allIndustryServices(industry.nameFor)}
               </Link>
             </div>
           }
@@ -173,7 +174,6 @@ export function IndustryServicePageView({
             eyebrow={tx('Included', 'Περιλαμβάνεται')}
             eyebrowIcon={<ListChecks />}
             title={ui.whatsIncluded(industry.nameFor)}
-            body={ui.whatsIncludedDesc(serviceName, industry.nameFor)}
             bullets={features}
             preview={
               <Stage>
@@ -189,7 +189,7 @@ export function IndustryServicePageView({
             eyebrow={industry.name}
             eyebrowIcon={<Target />}
             title={ui.builtFor(industry.nameFor)}
-            body={ui.builtForDesc(industry.name)}
+            body={industry.description}
             bullets={industry.painPoints}
             preview={
               <Stage>
@@ -268,7 +268,7 @@ export function IndustryServicePageView({
           locale={locale}
           source={`industry-service-${industrySlug}`}
           title={<>{ui.readyForService(serviceName)}</>}
-          description={ui.readyForServiceSub(industry.name)}
+          description={ui.quoteInstructions}
         />
       </main>
       <Footer locale={locale} />

@@ -21,7 +21,7 @@ faq:
     answer: "Outsource execution, not oversight. You know seasonality, pricing, and guest questions: the agency knows search systems. Stay involved on content accuracy."
 ---
 
-You know you need to be on Google. The question is whether you have the time to put yourself there, and whether software plus a light process can get you far enough before you need hands-on help. Every small business owner reaches this crossroads: the website is live, but bookings and calls aren't where they should be.
+Who will actually edit your site next week? If you or a colleague can change a page and check the result, SEO software can help you decide where to start. If every update sits unassigned, ask an agency to quote for doing the work. That distinction matters more than the number of features on a plan.
 
 This guide gives you an honest framework, no scare tactics, no "agencies always win" bias. Whether you run an HVAC company, a Cyclades hotel, or a rent-a-car fleet at the airport, the tradeoffs are similar: time, money, skill, and speed.
 
@@ -158,4 +158,4 @@ Outsource execution, not oversight. You know seasonality, pricing, and guest que
 
 Tell us about your site, locations, and goals: we'll recommend a scoped plan with Search Console ops, content priorities, and clear next steps.
 
-[Get started](/en/get-started) · [See our work](/en/work) · [Pricing](/en/pricing)
+Explore the [software plans](/en/pricing) if your team will handle the edits. For work you would like us to carry out, see our [agency packages in Greek](/el/ypiresies/times).

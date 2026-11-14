@@ -13,14 +13,14 @@ export function BlogProductCta({ locale = 'en' }: { locale?: SiteLocale }) {
 
   const points = isEl
     ? [
-        'Δείτε ποια ερωτήματα απέχουν μία θέση από τα κλικ',
-        'Ομαδοποίηση λέξεων-κλειδιών σε θεματικές ομάδες',
-        'Παρακολούθηση αναφορών σε ChatGPT και AI Overviews',
+        'Δείτε για ποιες αναζητήσεις εμφανίζεται ήδη μια σελίδα',
+        'Εντοπίστε αναζητήσεις που αφορούν το ίδιο θέμα',
+        'Ελέγξτε αν το ChatGPT ή τα AI Overviews αναφέρουν την ιστοσελίδα σας',
       ]
     : [
-        'Find the queries one position away from clicks',
-        'Group keywords into clusters that move together',
-        'Track citations in ChatGPT and AI Overviews',
+        'See the searches a page already appears for',
+        'Group related searches before updating a page',
+        'Check whether ChatGPT or AI Overviews cite your site',
       ];
 
   return (
@@ -29,23 +29,23 @@ export function BlogProductCta({ locale = 'en' }: { locale?: SiteLocale }) {
         <div className="reveal grid gap-10 overflow-hidden rounded-3xl border border-signal/30 bg-[linear-gradient(180deg,color-mix(in_oklab,var(--signal)_7%,var(--background)),var(--background))] p-6 sm:p-10 lg:grid-cols-[1fr_1.05fr] lg:items-center">
           <div className="min-w-0">
             <KitEyebrow icon={<span className="size-1.5 rounded-full bg-signal" />} className="text-signal">
-              {isEl ? 'Η πλατφόρμα μας' : 'Our platform'}
+              AnotherSEOGuru App
             </KitEyebrow>
             <h2 className="mt-3 text-balance font-display text-[26px] font-semibold leading-[1.12] tracking-[-0.03em] text-foreground sm:text-[32px]">
               {isEl ? (
                 <>
-                  Σταματήστε να μαντεύετε. <Accent>Συνδέστε το Search Console.</Accent>
+                  Ποια σελίδα σας έχει περιθώριο <Accent>για περισσότερα κλικ;</Accent>
                 </>
               ) : (
                 <>
-                  Stop guessing. <Accent>Connect your Search Console.</Accent>
+                  Which of your pages could <Accent>earn more clicks?</Accent>
                 </>
               )}
             </h2>
             <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-muted-foreground">
               {isEl
-                ? 'Η AnotherSEOGuru δεν είναι μόνο εταιρεία SEO. Φτιάχνουμε τη δική μας πλατφόρμα SEO που δείχνει ακριβώς πού χάνετε κλικ και τι αποδίδει πρώτο.'
-                : 'AnotherSEOGuru is not only an agency. We build our own SEO platform that shows exactly where you are losing clicks and what to fix first.'}
+                ? 'Συνδέστε το Search Console και επιλέξτε μια σελίδα που θέλετε να βελτιώσετε. Ρωτήστε τον Aster AI τι δείχνουν τα δεδομένα της και κρατήστε μια πρόταση ως εργασία.'
+                : 'Pick a page from your own Search Console account. Ask Aster AI what its numbers tell you, then save a suggested change as a task.'}
             </p>
             <CheckList className="mt-6" size="sm" items={points} />
             <SoftwareCtas locale={locale} align="left" source="blog-product-cta" className="mt-8" />

@@ -19,7 +19,7 @@ export const REPORTING_ARTICLES: ReadonlyArray<ResourceArticle> = [
     body: [
       {
         type: "p",
-        text: "**A good SEO report answers three questions in this order: did organic search grow, why, and what happens next.** Everything else is supporting detail. Lead with non-branded clicks and the business result they drove, explain the biggest changes with the work or events behind them, and end with the next month's plan. Most reports fail because they invert this: forty charts first, and the conclusion nowhere.",
+        text: "If a client reads only the opening paragraph, they should know what changed in organic search and what you plan to do next. Start with searches that do not include their brand name. Connect the change to enquiries or sales where the data allows, then explain the pages and work behind the figures.",
       },
       { type: "h2", id: "layers", text: "The three layers of an SEO report" },
       {
@@ -127,7 +127,7 @@ export const REPORTING_ARTICLES: ReadonlyArray<ResourceArticle> = [
     body: [
       {
         type: "p",
-        text: "**This SEO report template has seven sections: summary, organic performance, top movers, conversions, work shipped, issues and next month's plan.** Each section answers one question, and the summary at the top answers all of them in three sentences. Copy the outline below into a document or slide deck, fill it from Search Console and your analytics, and cut any section that has nothing new to say this month.",
+        text: "Start the monthly report with three sentences your client could repeat to a colleague. Add the figures that support them, the pages that moved most, conversions, work completed, open issues and next month’s plan. Copy the outline into your usual document or slide deck and leave out sections with nothing new to report.",
       },
       { type: "h2", id: "outline", text: "The template" },
       {
@@ -248,7 +248,7 @@ export const REPORTING_ARTICLES: ReadonlyArray<ResourceArticle> = [
     body: [
       {
         type: "p",
-        text: "**The SEO KPIs that matter most are conversions from organic search and non-branded organic clicks; everything else explains why those two moved.** A useful KPI set has four levels: business results, search demand captured, visibility, and the technical and content health that supports them. Pick one or two KPIs per level, measure them the same way every month, and report the top level first.",
+        text: "What should organic search bring the business? Pick a measurable action, such as an enquiry or a sale, and track it alongside organic clicks from searches without the brand name. Use rankings, visibility and technical checks to investigate changes in those figures. Keep the definitions the same each month.",
       },
       { type: "h2", id: "levels", text: "The four levels" },
       {

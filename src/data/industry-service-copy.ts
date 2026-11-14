@@ -37,7 +37,7 @@ export interface ServiceAngle {
 const EN: Record<string, ServiceAngle> = {
   'website-creation': {
     approach:
-      'A sector site is not a brochure with different photographs. The pages that earn enquiries are the ones matching how buyers in that sector actually describe their problem, which is rarely how the business describes its services internally.',
+      'We start with the questions a customer has before contacting you. Those decide which services need their own page and how customers get from that page to a booking or enquiry.',
     process:
       'We map the enquiry path first - which page someone lands on, what they need answered before they will contact you, and what removes the last hesitation - then build the page structure around that path rather than around an org chart.',
     outcome:
@@ -45,15 +45,15 @@ const EN: Record<string, ServiceAngle> = {
   },
   'website-redesign': {
     approach:
-      'The risk in a redesign is never the visual direction, it is the migration. Sector sites usually have a handful of URLs quietly earning most of the enquiries, and a redesign that does not know which ones those are will break them.',
+      'A redesign can affect pages that already bring work. We identify them early and plan where each old address should lead when the new site goes live.',
     process:
       'We inventory what currently earns traffic and conversions before anything is designed, map old URLs to new ones, then rebuild the templates that matter most first.',
     outcome:
-      'A modern site that keeps the rankings the old one had, with redirects mapped one-to-one wherever an equivalent page exists.',
+      'A new site with each old address directed to its replacement wherever an equivalent page exists. You can monitor how those pages perform after launch.',
   },
   'web-design': {
     approach:
-      'Architecture decides what can rank long before copy is written. For a sector site that means settling early how services, locations and audiences divide into pages, because that split is expensive to change later.',
+      'We work out how customers choose between your services and locations. That gives the designer a clear menu to build and helps people find the right page on a phone.',
     process:
       'Technical review runs against the design itself - URL structure, internal linking, schema for the entities that matter in this sector - rather than after handover.',
     outcome:
@@ -61,7 +61,7 @@ const EN: Record<string, ServiceAngle> = {
   },
   'content-creation': {
     approach:
-      'Content for a sector works when it answers the questions asked before the buying decision, not the ones asked after. Those questions are specific enough that generic industry writing is visibly wrong to a reader who works in the field.',
+      'We start with questions people ask before deciding to buy. Your team often knows the wording already from calls and emails, and we check it against real searches.',
     process:
       'We start from the questions your team already answers on the phone, check which ones have real search demand, and write the pages that are missing.',
     outcome:
@@ -69,7 +69,7 @@ const EN: Record<string, ServiceAngle> = {
   },
   'local-seo': {
     approach:
-      'Local visibility is decided in two places at once: the map pack and the organic results beneath it. For most sector businesses the map pack is where the phone call comes from, and it responds to different signals than the blue links.',
+      'Customers can find you in Google Maps or through a local service page. We check whether both give the same contact details and explain which neighbourhoods you cover.',
     process:
       'Google Business Profile is brought up to standard first - categories, services, photos, questions - alongside consistent citations and NAP, because contradictions there cost trust before any content work can pay off.',
     outcome:
@@ -77,7 +77,7 @@ const EN: Record<string, ServiceAngle> = {
   },
   'seo-audits': {
     approach:
-      'An audit is worth the fee only if it ends in a sequence. For a sector site the same defect usually repeats across a template, so the fix list is shorter and higher-leverage than the raw issue count suggests.',
+      'When a fault repeats across many pages, one change to the template can fix the source. We find those patterns and give your developers a practical order for the work.',
     process:
       'We check crawlability and indexation first, then canonical and duplicate handling, then on-page and content overlap, then Core Web Vitals - in that order, because a fast page that is excluded from the index is worth nothing.',
     outcome:
@@ -85,7 +85,7 @@ const EN: Record<string, ServiceAngle> = {
   },
   'ai-visibility': {
     approach:
-      'A growing share of research now ends inside an AI answer rather than on a website. Being usable in that answer is a different problem from ranking, and it depends on whether a machine can identify who you are and quote you cleanly. No engine is promised to cite you.',
+      'We check how AI services describe what you do. When details are missing or inconsistent, we work on the facts and answers customers can verify on your own site.',
     process:
       'We work on entity clarity and schema so the business is unambiguous to a model, and restructure key pages so they answer questions directly enough to be used.',
     outcome:
@@ -93,7 +93,7 @@ const EN: Record<string, ServiceAngle> = {
   },
   'eshop-woocommerce': {
     approach:
-      'An online store is judged at the points customers never comment on: how fast they find the product, how many steps checkout takes, and what happens when something is out of stock.',
+      'An online shop has to fit the way you take payment, deliver orders and track stock. We plan those decisions alongside the catalogue so a shopper can complete a purchase.',
     process:
       'WooCommerce is configured around how you actually sell and ship, with product pages built to answer the questions that otherwise stop the purchase.',
     outcome:
@@ -101,7 +101,7 @@ const EN: Record<string, ServiceAngle> = {
   },
   'eshop-seo': {
     approach:
-      'E-commerce SEO is a different problem from site SEO: hundreds of product URLs, filters generating duplicates, categories competing with each other, and products that go out of stock.',
+      'A shopper might search for a product code or a whole category. We check which page Google shows and whether its filters, product details and stock information help the shopper choose.',
     process:
       'Technical work comes first to stop the duplication, then category and product optimisation with product schema so price and availability can show in results.',
     outcome:
@@ -109,7 +109,7 @@ const EN: Record<string, ServiceAngle> = {
   },
   'speed-optimization': {
     approach:
-      'Performance is measured on the templates that carry the money, not on the homepage, because the homepage is usually the fastest page on any site.',
+      'A fast homepage says little about a slow product page or booking form. We measure the pages people actually use on a phone before deciding what to change.',
     process:
       'We profile the real templates to find what is actually holding the load - images, third-party scripts, render-blocking resources - and fix in that order.',
     outcome:
@@ -117,7 +117,7 @@ const EN: Record<string, ServiceAngle> = {
   },
   'link-building': {
     approach:
-      'Relevance has replaced volume. A mention from a publication your buyers actually read is worth more than a hundred directory entries nobody visits.',
+      'We look for publications and websites with a reason to cover your work. A relevant reference can introduce your business to readers who may need the service.',
     process:
       'We look for genuine reasons to be covered - expertise, data you already hold, relationships you already have - and pursue those rather than buying placements.',
     outcome:
@@ -125,7 +125,7 @@ const EN: Record<string, ServiceAngle> = {
   },
   'logo-design': {
     approach:
-      'A mark has to work at the sizes it will actually be used: a profile photo, a van door, a printed form, a favicon.',
+      'Your logo has to work on a phone screen as well as a printed sign. We prepare the versions and files your team needs for each use.',
     process:
       'Design is delivered with the essentials that make it usable - colour palette, typography, usage guide - so the next supplier does not have to guess.',
     outcome:
@@ -137,7 +137,7 @@ const EN: Record<string, ServiceAngle> = {
 const EL: Record<string, ServiceAngle> = {
   'website-creation': {
     approach:
-      'Μια ιστοσελίδα κλάδου δεν είναι ένα φυλλάδιο με άλλες φωτογραφίες. Οι σελίδες που φέρνουν αιτήματα είναι εκείνες που μιλούν όπως περιγράφει το πρόβλημά του ο πελάτης, όχι όπως περιγράφει τις υπηρεσίες της η επιχείρηση εσωτερικά.',
+      'Πριν σχεδιάσουμε την ιστοσελίδα, εντοπίζουμε τι ρωτά ο πελάτης πριν σας καλέσει. Έτσι ξεχωρίζουμε ποιες υπηρεσίες χρειάζονται δική τους σελίδα και πώς θα προχωρά ο επισκέπτης σε κράτηση ή αίτημα.',
     process:
       'Χαρτογραφούμε πρώτα τη διαδρομή του αιτήματος - σε ποια σελίδα φτάνει κάποιος, τι πρέπει να απαντηθεί πριν επικοινωνήσει και τι αίρει τον τελευταίο δισταγμό - και χτίζουμε τη δομή γύρω από αυτή τη διαδρομή.',
     outcome:
@@ -145,15 +145,15 @@ const EL: Record<string, ServiceAngle> = {
   },
   'website-redesign': {
     approach:
-      'Ο κίνδυνος σε έναν ανασχεδιασμό δεν είναι η αισθητική, είναι η μεταφορά. Συνήθως λίγες URL φέρνουν τα περισσότερα αιτήματα, και ένας ανασχεδιασμός που δεν ξέρει ποιες είναι θα τις σπάσει.',
+      'Πριν αλλάξουμε την εμφάνιση, βρίσκουμε τις σελίδες που ήδη φέρνουν αιτήματα. Για καθεμία ετοιμάζουμε την αντίστοιχη νέα διεύθυνση, ώστε να συνεχίζουν να λειτουργούν οι σύνδεσμοί της.',
     process:
       'Καταγράφουμε τι αποδίδει σήμερα πριν σχεδιαστεί οτιδήποτε, αντιστοιχίζουμε παλιές με νέες διευθύνσεις και ξαναχτίζουμε πρώτα τα πρότυπα που μετράνε.',
     outcome:
-      'Σύγχρονο site που κρατά τις θέσεις του παλιού, με ανακατευθύνσεις 1:1 όπου υπάρχει αντίστοιχη σελίδα.',
+      'Νέα ιστοσελίδα με ανακατευθύνσεις από τις παλιές διευθύνσεις στις αντίστοιχες νέες. Μετά τη δημοσίευση μπορείτε να παρακολουθείτε την πορεία τους στη Google.',
   },
   'web-design': {
     approach:
-      'Η αρχιτεκτονική καθορίζει τι μπορεί να καταταγεί, πολύ πριν γραφτεί το πρώτο κείμενο. Για μια ιστοσελίδα κλάδου αυτό σημαίνει να αποφασιστεί νωρίς πώς χωρίζονται υπηρεσίες, περιοχές και κοινά σε σελίδες.',
+      'Εξετάζουμε πώς επιλέγουν οι πελάτες ανάμεσα στις υπηρεσίες σας και ποια περιοχή τους ενδιαφέρει. Με βάση αυτές τις επιλογές οργανώνουμε το μενού, ώστε να λειτουργεί καλά και στο κινητό.',
     process:
       'Ο τεχνικός έλεγχος γίνεται πάνω στο ίδιο το σχέδιο - δομή URL, εσωτερικοί σύνδεσμοι, schema για τις οντότητες του κλάδου - και όχι μετά την παράδοση.',
     outcome:
@@ -161,7 +161,7 @@ const EL: Record<string, ServiceAngle> = {
   },
   'content-creation': {
     approach:
-      'Το περιεχόμενο για έναν κλάδο πιάνει όταν απαντά στις ερωτήσεις που γίνονται πριν από την απόφαση, όχι μετά. Αυτές οι ερωτήσεις είναι αρκετά συγκεκριμένες ώστε το γενικόλογο κείμενο να φαίνεται αμέσως σε όποιον δουλεύει στον χώρο.',
+      'Ποιες ερωτήσεις επανέρχονται στο τηλέφωνο πριν ζητήσει ο πελάτης προσφορά; Χρησιμοποιούμε τη γλώσσα των πελατών σας και ελέγχουμε στο Search Console αν ψάχνουν τα ίδια πράγματα.',
     process:
       'Ξεκινάμε από τις ερωτήσεις που ήδη απαντά η ομάδα σας στο τηλέφωνο, ελέγχουμε ποιες έχουν πραγματική ζήτηση στην αναζήτηση και γράφουμε τις σελίδες που λείπουν.',
     outcome:
@@ -169,7 +169,7 @@ const EL: Record<string, ServiceAngle> = {
   },
   'local-seo': {
     approach:
-      'Η τοπική ορατότητα κρίνεται σε δύο σημεία ταυτόχρονα: στον χάρτη και στα οργανικά αποτελέσματα από κάτω. Για τις περισσότερες τοπικές επιχειρήσεις η κλήση έρχεται από τον χάρτη, που απαντά σε διαφορετικά σήματα.',
+      'Ο πελάτης μπορεί να σας βρει από τον χάρτη ή από μια τοπική σελίδα. Ελέγχουμε αν βρίσκει τα ίδια στοιχεία επικοινωνίας και αν καταλαβαίνει ποιες περιοχές εξυπηρετείτε.',
     process:
       'Πρώτα μπαίνει σε τάξη το Google Business Profile - κατηγορίες, υπηρεσίες, φωτογραφίες, ερωτήσεις - μαζί με συνεπείς καταχωρήσεις και NAP, γιατί οι αντιφάσεις εκεί κοστίζουν πριν προλάβει να αποδώσει οτιδήποτε άλλο.',
     outcome:
@@ -177,7 +177,7 @@ const EL: Record<string, ServiceAngle> = {
   },
   'seo-audits': {
     approach:
-      'Ένας έλεγχος αξίζει μόνο αν καταλήγει σε σειρά ενεργειών. Σε ιστοσελίδα κλάδου το ίδιο σφάλμα συνήθως επαναλαμβάνεται σε ένα πρότυπο, οπότε η λίστα διορθώσεων είναι μικρότερη και πιο αποδοτική απ᾽ όσο δείχνει ο αριθμός των ευρημάτων.',
+      'Αν το ίδιο πρόβλημα επαναλαμβάνεται σε πολλές σελίδες, μια διόρθωση στο κοινό τους πρότυπο μπορεί να το λύσει συνολικά. Βρίσκουμε αυτά τα μοτίβα και δίνουμε προτεραιότητες για την υλοποίηση.',
     process:
       'Ελέγχουμε πρώτα crawl και ευρετηρίαση, μετά canonical και διπλότυπα, μετά on-page και επικαλύψεις περιεχομένου, και τέλος Core Web Vitals - με αυτή τη σειρά, γιατί μια γρήγορη σελίδα εκτός ευρετηρίου δεν αξίζει τίποτα.',
     outcome:
@@ -185,7 +185,7 @@ const EL: Record<string, ServiceAngle> = {
   },
   'ai-visibility': {
     approach:
-      'Όλο και μεγαλύτερο μέρος της έρευνας τελειώνει μέσα σε μια απάντηση AI και όχι σε μια ιστοσελίδα. Το να είναι το περιεχόμενο χρησιμοποιήσιμο εκεί είναι διαφορετικό πρόβλημα από το να κατατάσσεστε. Καμία μηχανή δεν εγγυάται ότι θα σας αναφέρει.',
+      'Ελέγχουμε πώς περιγράφουν οι υπηρεσίες AI την επιχείρησή σας. Όταν λείπουν στοιχεία ή υπάρχουν ασυμφωνίες, ξεκαθαρίζουμε τις πληροφορίες που μπορεί να επιβεβαιώσει ο πελάτης στην ιστοσελίδα σας.',
     process:
       'Δουλεύουμε στη σαφήνεια της οντότητας και στο schema ώστε η επιχείρηση να είναι αναγνωρίσιμη από ένα μοντέλο, και αναδομούμε τις βασικές σελίδες ώστε να απαντούν ευθέως.',
     outcome:
@@ -193,7 +193,7 @@ const EL: Record<string, ServiceAngle> = {
   },
   'eshop-woocommerce': {
     approach:
-      'Ένα e-shop κρίνεται σε σημεία που κανείς δεν σχολιάζει: πόσο γρήγορα βρίσκεται το προϊόν, πόσα βήματα έχει το ταμείο και τι γίνεται όταν κάτι εξαντληθεί.',
+      'Πώς θα πληρώνει ο πελάτης και με ποιον τρόπο θα παραλαμβάνει; Σχεδιάζουμε αυτές τις επιλογές μαζί με τον κατάλογο και το απόθεμα, ώστε ο αγοραστής να μπορεί να ολοκληρώσει την παραγγελία.',
     process:
       'Το WooCommerce ρυθμίζεται γύρω από τον τρόπο που πραγματικά πουλάτε και στέλνετε, με σελίδες προϊόντων που απαντούν στις ερωτήσεις που αλλιώς σταματούν την αγορά.',
     outcome:
@@ -201,7 +201,7 @@ const EL: Record<string, ServiceAngle> = {
   },
   'eshop-seo': {
     approach:
-      'Το SEO σε e-shop είναι άλλο πρόβλημα από το SEO σε εταιρικό site: εκατοντάδες σελίδες προϊόντων, φίλτρα που παράγουν διπλότυπα, κατηγορίες που ανταγωνίζονται μεταξύ τους και προϊόντα που εξαντλούνται.',
+      'Άλλος ψάχνει έναν συγκεκριμένο κωδικό και άλλος θέλει να συγκρίνει μια κατηγορία. Ελέγχουμε ποια σελίδα εμφανίζεται και αν τα φίλτρα, οι περιγραφές και η διαθεσιμότητα βοηθούν την επιλογή.',
     process:
       'Πρώτα η τεχνική δουλειά για να σταματήσει η διπλοεγγραφή, μετά βελτιστοποίηση κατηγοριών και προϊόντων με schema ώστε τιμή και διαθεσιμότητα να εμφανίζονται στα αποτελέσματα.',
     outcome:
@@ -209,7 +209,7 @@ const EL: Record<string, ServiceAngle> = {
   },
   'speed-optimization': {
     approach:
-      'Οι επιδόσεις μετριούνται στα πρότυπα που φέρνουν έσοδα, όχι στην αρχική, που είναι συνήθως η πιο γρήγορη σελίδα κάθε site.',
+      'Μια γρήγορη αρχική σελίδα δεν αρκεί αν αργεί η φόρμα κράτησης ή η σελίδα προϊόντος. Μετράμε τις σελίδες που χρησιμοποιεί ο πελάτης στο κινητό πριν προτείνουμε αλλαγές.',
     process:
       'Μετράμε τα πραγματικά πρότυπα για να βρούμε τι κρατάει τον χρόνο φόρτωσης - εικόνες, scripts τρίτων, render-blocking πόροι - και διορθώνουμε με αυτή τη σειρά.',
     outcome:
@@ -217,7 +217,7 @@ const EL: Record<string, ServiceAngle> = {
   },
   'link-building': {
     approach:
-      'Η συνάφεια αντικατέστησε τον όγκο. Μια αναφορά από ένα μέσο που διαβάζουν πραγματικά οι πελάτες σας αξίζει περισσότερο από εκατό καταχωρήσεις σε καταλόγους.',
+      'Βρίσκουμε μέσα και ιστοσελίδες που έχουν λόγο να γράψουν για τη δουλειά σας και κοινό που ενδιαφέρεται γι’ αυτή. Τους προτείνουμε συγκεκριμένο περιεχόμενο για δημοσίευση.',
     process:
       'Ψάχνουμε πραγματικές αφορμές κάλυψης - τεχνογνωσία, δεδομένα που ήδη έχετε, σχέσεις που ήδη υπάρχουν - αντί να αγοράζουμε τοποθετήσεις.',
     outcome:
@@ -225,7 +225,7 @@ const EL: Record<string, ServiceAngle> = {
   },
   'logo-design': {
     approach:
-      'Ένα σήμα πρέπει να δουλεύει στα μεγέθη που θα χρησιμοποιηθεί πραγματικά: φωτογραφία προφίλ, πόρτα οχήματος, έντυπο, favicon.',
+      'Το λογότυπο πρέπει να διαβάζεται στην οθόνη ενός κινητού και στην επιγραφή σας. Ετοιμάζουμε τις εκδοχές και τα αρχεία που χρειάζεστε για κάθε χρήση.',
     process:
       'Παραδίδεται με τα βασικά που το κάνουν εφαρμόσιμο - παλέτα, τυπογραφία, οδηγό χρήσης - ώστε ο επόμενος συνεργάτης να μη μαντεύει.',
     outcome:
@@ -240,7 +240,7 @@ export function getServiceAngle(serviceSlug: string, locale: SiteLocale): Servic
 /** Section headings for the composed block. */
 export const ANGLE_HEADINGS = {
   en: { approach: 'How this works for your sector', process: 'What the first weeks look like', outcome: 'What you end up with' },
-  el: { approach: 'Πώς δουλεύει για τον κλάδο σας', process: 'Τι γίνεται τις πρώτες εβδομάδες', outcome: 'Τι μένει στα χέρια σας' },
+  el: { approach: 'Πώς προσεγγίζουμε τη δουλειά', process: 'Τι γίνεται τις πρώτες εβδομάδες', outcome: 'Τι παραλαμβάνετε' },
 } as const;
 
 export interface AngleFaq {
@@ -355,12 +355,12 @@ const EL_FAQS: Record<string, readonly AngleFaq[]> = {
   ],
   'ai-visibility': [
     { question: 'Διαφέρει από το κανονικό SEO;', answer: 'Επικαλύπτεται, αλλά ο στόχος αλλάζει. Η κατάταξη κερδίζει ένα κλικ - η αναφορά σε απάντηση AI απαιτεί το μοντέλο να σας αναγνωρίσει με βεβαιότητα και να βρει απόσπασμα που αξίζει να παραθέσει.' },
-    { question: 'Εγγυάστε αναφορές σε απαντήσεις AI;', answer: 'Όχι, ούτε μπορεί κανείς - τα συστήματα αυτά δεν είναι ντετερμινιστικά. Αυτό που γίνεται είναι να αρθούν οι λόγοι για τους οποίους δεν είστε παραθέσιμοι, και να παρακολουθούνται οι αναφορές.' },
+    { question: 'Εγγυάστε αναφορές σε απαντήσεις AI;', answer: 'Όχι. Οι απαντήσεις αλλάζουν και κάθε υπηρεσία AI επιλέγει τις δικές της πηγές. Μπορούμε να βελτιώσουμε την ακρίβεια των στοιχείων στις σελίδες σας και να παρακολουθούμε τις αναφορές.' },
     { question: 'Αντικαθιστά τις παραδοσιακές θέσεις;', answer: 'Όχι. Και τα δύο μετράνε, και η τεχνική βάση εξυπηρετεί σε μεγάλο βαθμό και τα δύο.' },
   ],
   'eshop-woocommerce': [
     { question: 'Γιατί WooCommerce και όχι έτοιμη πλατφόρμα;', answer: 'Έλεγχος στη δομή των URL, στα πρότυπα και στις ενσωματώσεις - αυτό είναι που κάνει εφικτό το SEO σε επίπεδο κατηγορίας. Οι έτοιμες πλατφόρμες ανταλλάσσουν μέρος αυτού με ευκολία.' },
-    { question: 'Μπορείτε να μεταφέρετε υπάρχον κατάστημα;', answer: 'Ναι. Οι URL προϊόντων και η δομή κατηγοριών αντιστοιχίζονται πριν από τη μεταφορά, ώστε να επιβιώσουν θέσεις και σύνδεσμοι.' },
+    { question: 'Μπορείτε να μεταφέρετε υπάρχον κατάστημα;', answer: 'Ναι. Πριν από τη μεταφορά αντιστοιχίζουμε τις παλιές διευθύνσεις προϊόντων και κατηγοριών στις νέες, ώστε οι σύνδεσμοι να οδηγούν στη σωστή σελίδα.' },
     { question: 'Τι γίνεται με πληρωμές και μεταφορικά;', answer: 'Ρυθμίζονται με βάση το πώς πραγματικά πουλάτε και στέλνετε, μαζί με τη ροή ταμείου και τη διαχείριση αποθέματος, αντί να μείνουν στις προεπιλογές.' },
   ],
   'eshop-seo': [
@@ -380,7 +380,7 @@ const EL_FAQS: Record<string, readonly AngleFaq[]> = {
   ],
   'logo-design': [
     { question: 'Τι παραλαμβάνω;', answer: 'Το σήμα στις μορφές που χρειάζονται ψηφιακή και εκτυπωτική χρήση, μαζί με όσα το κάνουν εφαρμόσιμο: παλέτα, τυπογραφία και οδηγό χρήσης.' },
-    { question: 'Ξανασχεδιάζετε υπάρχον λογότυπο;', answer: 'Ναι, όταν το σήμα στέκει αλλά τα αρχεία όχι. Η ανάκτηση χρησιμοποιήσιμου διανυσματικού αρχείου από χαμηλής ανάλυσης εικόνα είναι συχνή αφετηρία.' },
+    { question: 'Ξανασχεδιάζετε υπάρχον λογότυπο;', answer: 'Ναι. Αν θέλετε να κρατήσετε το σημερινό σήμα αλλά έχετε μόνο μια μικρή εικόνα, μπορούμε να το σχεδιάσουμε ξανά σε αρχείο κατάλληλο για εκτύπωση.' },
     { question: 'Μπορεί να γίνει μαζί με την ιστοσελίδα;', answer: 'Ναι, και συνήθως κοστίζει λιγότερο έτσι, αφού οι αποφάσεις ταυτότητας τροφοδοτούν απευθείας τον σχεδιασμό.' },
   ],
 };

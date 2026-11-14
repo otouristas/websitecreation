@@ -53,213 +53,213 @@ const el: AiVisibilityPillarCopy = {
   eyebrow: 'AI SEO (GEO / AEO)',
   h1: 'AI SEO: ορατότητα στο ChatGPT, στο Gemini και στα AI Overviews',
   answer:
-    'Το AI SEO (ή GEO, generative engine optimization) κάνει την ιστοσελίδα σας πηγή που μπορούν να παραθέσουν το ChatGPT, το Gemini και τα AI Overviews της Google. Συνδυάζει κλασικό SEO με σαφή στοιχεία οντότητας, structured data και περιεχόμενο που απαντά άμεσα. Στην AnotherSEOGuru εντάσσεται στα πακέτα SEO Growth και Authority, από {{SEO_GROWTH}} τον μήνα, και μετριέται σε τάσεις αναφορών δίπλα στα οργανικά κλικ. Καμία μηχανή δεν εγγυάται ότι θα σας αναφέρει.',
+    'Τι απαντά το ChatGPT ή το Gemini όταν κάποιος ρωτά για την επιχείρησή σας; Ελέγχουμε τις απαντήσεις σε συγκεκριμένες ερωτήσεις, διορθώνουμε ασάφειες στις σελίδες σας και παρακολουθούμε τις αναφορές δίπλα στα κλικ της Google. Η υπηρεσία περιλαμβάνεται στα πακέτα SEO Growth και Authority, από {{SEO_GROWTH}} τον μήνα.',
   // The /el route ships the keyword-map title verbatim from services-i18n `seo`.
   metaTitle: 'AI SEO & GEO: Ορατότητα σε ChatGPT, Gemini & AI Overviews',
   metaDescription:
     'Υπηρεσίες AI SEO και GEO για ορατότητα στο ChatGPT, στο Gemini και στα AI Overviews της Google, με μηνιαία μέτρηση αναφορών. Ζητήστε έλεγχο ορατότητας.',
   primaryKeyword: 'ai seo',
   problem: {
-    title: 'Πώς επιλέγουν πηγές τα AI εργαλεία',
+    title: 'Τι μαθαίνει ο πελάτης πριν ανοίξει τη σελίδα σας;',
     intro:
-      'Ένα μέρος της έρευνας τελειώνει μέσα στην απάντηση: στο ChatGPT, στο Gemini, στο Perplexity και στα AI Overviews της Google. Αν το περιεχόμενό σας δεν είναι σε μορφή που μπορεί να χρησιμοποιηθεί, η σύντομη λίστα την παίρνει κάποιος άλλος - συχνά ένα OTA ή ένας κατάλογος.',
+      'Κάποιος που ψάχνει ξενοδοχείο στην Πάρο μπορεί να ρωτήσει το ChatGPT πόσο απέχει από το λιμάνι. Η απάντηση που θα πάρει μπορεί να επηρεάσει ποια καταλύματα θα κοιτάξει.',
     items: [
       {
-        title: 'Η εμφάνιση χωρίς κλικ είναι πλέον μέρος της αναζήτησης',
+        title: 'Πού βρήκε την πληροφορία;',
         body:
-          'Τα AI Overviews και οι απαντήσεις chat συνοψίζουν πριν ο χρήστης ανοίξει ιστοσελίδα. Το κλασικό SEO εξακολουθεί να φέρνει κλικ. Το AEO και το GEO αφορούν το αν το brand σας είναι αρκετά σαφές ώστε να μπει σε αυτή τη σύνοψη.',
+          'Το ChatGPT, το Gemini, το Perplexity και τα AI Overviews της Google μπορούν να δείξουν πηγές. Ελέγχουμε αν παραπέμπουν στη δική σας σελίδα ή σε κάποια πλατφόρμα κρατήσεων.',
       },
       {
-        title: 'Τα γενικά ερωτήματα ευνοούν τους μεγάλους καταλόγους',
+        title: 'Τι λείπει από τη δική σας σελίδα;',
         body:
-          '«Καλύτερο ξενοδοχείο στην Πάρο» σχεδόν πάντα επιστρέφει OTAs. Συγκεκριμένα ερωτήματα - απόσταση από το λιμάνι, πολιτική παιδιών, εγγύηση rent-a-car - ευνοούν επίσημες σελίδες με ρητά γεγονότα. Εκεί κρίνεται μια ελληνική επιχείρηση.',
+          'Η φράση «ιδανικό για οικογένειες» αφήνει τον γονιό με μια ερώτηση. Χρεώνεται επιπλέον το παιδί; Στη σελίδα του δωματίου χρειάζεται να φαίνεται η πολιτική του ξενοδοχείου.',
       },
       {
-        title: 'Η βελτιστοποίηση κάνει το περιεχόμενο χρησιμοποιήσιμο, όχι επιλεγμένο',
+        title: 'Ποια στοιχεία μπορείτε να διορθώσετε;',
         body:
-          'Καμία εταιρεία SEO δεν ελέγχει τι θα παραθέσει το ChatGPT ή το Gemini. Αυτό που ελέγχετε είναι αν τα στοιχεία σας είναι συνεπή, αν οι απαντήσεις είναι ορατές στη σελίδα και αν μετράτε την τάση σε σταθερά ερωτήματα. Η υπόσχεση «θα σας αναφέρει η AI» είναι σήμα κινδύνου.',
+          'Αν η ιστοσελίδα και το επαγγελματικό σας προφίλ δίνουν διαφορετικό ωράριο, ξεκινάμε από εκεί. Κάθε εργαλείο AI επιλέγει τις δικές του πηγές.',
       },
     ],
   },
   definitions: {
-    title: 'Τι είναι το AI SEO, το GEO και το AEO',
+    title: 'Ποια είναι η διαφορά ανάμεσα σε SEO, AEO και GEO;',
     intro:
-      'Τρία ακρωνύμια, μία στοίβα. Χωρίς κοινούς ορισμούς, κάθε πρόταση πουλάει το ίδιο πράγμα με άλλο όνομα. Εδώ είναι η διάκριση που χρησιμοποιούμε στη δουλειά.',
+      'Ας πάρουμε μια εταιρεία ενοικίασης αυτοκινήτων. Ένας ταξιδιώτης τη βρίσκει στη Google και θέλει να μάθει πόση εγγύηση χρειάζεται για την κράτηση.',
     items: [
       {
         title: 'SEO',
         body:
-          'Κατάταξη και κλικ στα κλασικά αποτελέσματα: οργανικά αποτελέσματα και, όπου ισχύει, το πακέτο χάρτη. Χωρίς crawlable, γρήγορες σελίδες με σαφή πρόθεση, δεν υπάρχει βάση για τα άλλα δύο.',
+          'Βοηθά τη Google να βρει τη σελίδα ενοικίασης και να την εμφανίσει σε σχετικές αναζητήσεις. Στο Search Console βλέπουμε ποιες αναζητήσεις έφεραν κλικ.',
       },
       {
         title: 'AEO',
         body:
-          'Answer Engine Optimization: δομή περιεχομένου ώστε μια μηχανή απάντησης να μπορεί να σηκώσει μια σύντομη, ακριβή απάντηση. FAQ ορατά στη σελίδα, απάντηση αμέσως κάτω από την ερώτηση, schema που συμφωνεί με το κείμενο, πίνακες όπου βοηθούν. Εμφανίζεται σε featured snippets, AI Overviews και φωνητικές απαντήσεις.',
+          'Το Answer Engine Optimization βοηθά τον ταξιδιώτη να βρει αμέσως την απάντηση. Γράφουμε το ποσό της εγγύησης και τους όρους δίπλα στην ερώτηση, ώστε να μπορεί να τα διαβάσει και μια μηχανή αναζήτησης.',
       },
       {
         title: 'GEO',
         body:
-          'Generative Engine Optimization: να είστε αναγνωρίσιμη, συνεπής πηγή όταν ένα μοντέλο συνθέτει απάντηση στο ChatGPT, στο Perplexity ή στο Gemini. Οντότητα, αποδείξεις, πολιτικές και γεγονότα που μπορεί να παραθέσει με ασφάλεια. Δεν αντικαθιστά το SEO· κάθεται από πάνω του.',
+          'Το Generative Engine Optimization εξετάζει πώς περιγράφουν την επιχείρηση εργαλεία όπως το ChatGPT. Ελέγχουμε αν αναφέρουν τη σωστή εταιρεία, τι λένε για την εγγύηση και από πού πήραν την πληροφορία.',
       },
     ],
   },
   includes: {
-    title: 'Τι κάνουμε: έλεγχος αναφορών, οντότητα, περιεχόμενο',
+    title: 'Τι αλλάζουμε στην ιστοσελίδα σας',
     intro:
-      'Αν μια προσφορά GEO δεν λέει τι αλλάζει στο site κάθε μήνα, δεν είναι προσφορά. Αυτά είναι τα πέντε κομμάτια της δουλειάς, και κανένα δεν λειτουργεί μόνο του.',
+      'Ξεκινάμε από τις σελίδες που διαβάζει κάποιος πριν σας καλέσει ή κάνει κράτηση. Αν λείπει μια πληροφορία που δίνετε καθημερινά στο τηλέφωνο, έχει θέση εκεί.',
     items: [
       {
-        title: 'Καθαρότητα οντότητας',
+        title: 'Σωστά στοιχεία επιχείρησης',
         body:
-          'Ίδια επωνυμία, υπηρεσίες, διευθύνσεις και γλωσσικές παραλλαγές σε site, Google Business Profile και βασικούς καταλόγους. Αντικρουόμενα στοιχεία είναι ο πιο φθηνός τρόπος να μην σας εμπιστευτεί ένα μοντέλο.',
+          'Ελέγχουμε αν η επωνυμία, η διεύθυνση και οι υπηρεσίες σας συμφωνούν στην ιστοσελίδα, στο Google Business Profile και στους βασικούς καταλόγους.',
       },
       {
-        title: 'Περιεχόμενο σε μορφή απάντησης',
+        title: 'Απαντήσεις στις ερωτήσεις των πελατών',
         body:
-          'Ερωτήσεις όπως εμφανίζονται στο Search Console, απάντηση 40 έως 60 λέξεων αμέσως από κάτω, FAQ ορατά στη σελίδα και schema που καθρεφτίζει ακριβώς αυτό το κείμενο. Markup χωρίς ορατή απάντηση δεν μετράει.',
+          'Κοιτάμε πώς διατυπώνουν οι χρήστες τις αναζητήσεις τους στο Search Console. Προσθέτουμε την απάντηση στη σελίδα όπου τη χρειάζονται.',
       },
       {
-        title: 'Εμπορικές σελίδες με γεγονότα',
+        title: 'Όροι πριν από την κράτηση',
         body:
-          'Πολιτικές, αποστάσεις, τιμές όπου δημοσιεύονται, κανόνες παραλαβής, ωράριο, τι περιλαμβάνεται. Τα generic κείμενα χάνουν από OTAs. Τα συγκεκριμένα γεγονότα είναι αυτό που μπορεί να παρατεθεί.',
+          'Ξεκαθαρίζουμε τι περιλαμβάνει η δημοσιευμένη τιμή, πού γίνεται η παραλαβή ή τι ώρα ανοίγετε. Οι λεπτομέρειες εξαρτώνται από την υπηρεσία που προσφέρετε.',
       },
       {
-        title: 'Τεχνικά θεμέλια',
+        title: 'Τεχνικός έλεγχος',
         body:
-          'Ευρετηρίαση, ταχύτητα, αρχιτεκτονική εσωτερικών συνδέσμων και structured data που αντιστοιχούν στο ορατό περιεχόμενο. Το GEO χωρίς τεχνικό SEO είναι σκεπή χωρίς τοίχους. Αν το site δεν διαβάζεται, καμία «AI βελτιστοποίηση» δεν αποδίδει.',
+          'Ελέγχουμε αν η Google βρίσκει τις σημαντικές σελίδες σας, πόσο γρήγορα φορτώνουν και ποιες άλλες σελίδες οδηγούν σε αυτές. Ελέγχουμε επίσης αν τα structured data συμφωνούν με το κείμενο που βλέπει ο πελάτης.',
       },
       {
-        title: 'Μέτρηση χωρίς ψευδαισθήσεις',
+        title: 'Μηνιαία παρακολούθηση',
         body:
-          'Σταθερό σύνολο ερωτημάτων, δειγματοληψία ανά μήνα, καταγραφή αν το brand αναφέρθηκε, συνδέθηκε ή παραλείφθηκε, δίπλα στα κλικ του Search Console. Τάσεις ανά τρίμηνο. Όχι «AI rank #1» και όχι ένα screenshot από μία συνεδρία ChatGPT.',
+          'Επαναλαμβάνουμε τις ίδιες ερωτήσεις και καταγράφουμε πότε η απάντηση αναφέρει την επιχείρησή σας ή δίνει σύνδεσμο. Έτσι μπορείτε να συγκρίνετε τις αναφορές με τα κλικ από την Google.',
       },
     ],
   },
   audience: {
-    title: 'AI SEO στην Ελλάδα: ελληνικά ερωτήματα',
+    title: 'Πότε έχει νόημα το AI SEO για την επιχείρησή σας;',
     intro:
-      'Οι Έλληνες χρήστες ρωτούν τα AI εργαλεία και στα ελληνικά, και οι απαντήσεις αντλούν από ελληνικές σελίδες όπου υπάρχουν. Το GEO και το AEO έχουν νόημα εκεί όπου οι αγοραστές ήδη ρωτούν μια μηχανή απάντησης πριν κλείσουν ή καλέσουν. Σε άλλους κλάδους προηγείται το κλασικό SEO.',
+      'Είναι χρήσιμο όταν οι υποψήφιοι πελάτες συγκρίνουν επιλογές πριν κλείσουν ή τηλεφωνήσουν. Για όσους απευθύνονται σε ταξιδιώτες, εξετάζουμε τι ρωτούν στα ελληνικά και στα αγγλικά.',
     items: [
       {
-        title: 'Τουρισμός και φιλοξενία',
+        title: 'Ξενοδοχεία, βίλες και εκδρομές',
         body:
-          'Ξενοδοχεία, βίλες και εκδρομές που ανταγωνίζονται OTAs σε ερωτήματα προορισμού. Τα γενικά ερωτήματα τα παίρνουν οι κατάλογοι· τα συγκεκριμένα (λιμάνι, οικογένεια, μεταφορές) τα παίρνει όποιος έχει ρητές απαντήσεις στη σελίδα.',
+          '«Πόσο απέχει το κατάλυμα από το λιμάνι;» και «Περιλαμβάνεται η μεταφορά στην εκδρομή;» είναι ερωτήσεις που μπορείτε να απαντήσετε από πρώτο χέρι.',
       },
       {
-        title: 'Rent-a-car και τοπικές υπηρεσίες',
+        title: 'Ενοικιάσεις αυτοκινήτων και τοπικές υπηρεσίες',
         body:
-          'Εγγύηση, ασφάλεια, ηλικία οδηγού, παραλαβή αεροδρομίου· ή «δικηγόρος εργατικών στην Αθήνα», «οδοντίατρος κοντά μου». Το πακέτο χάρτη φέρνει ακόμα κλήσεις. Τα AI Overviews συνοψίζουν όλο και περισσότερο τις ίδιες ερωτήσεις.',
+          'Ένας οδηγός θέλει να ξέρει αν μπορεί να παραλάβει το αυτοκίνητο στο αεροδρόμιο. Κάποιος που ψάχνει οδοντίατρο χρειάζεται τη διεύθυνση και το ωράριο του ιατρείου.',
       },
       {
-        title: 'Επιχειρήσεις με site που ήδη διαβάζεται',
+        title: 'Ιστοσελίδες που ήδη δέχονται αιτήματα',
         body:
-          'Αν το site δεν ευρετηριάζεται, αν οι εμπορικές σελίδες είναι λεπτές ή αν δεν υπάρχει διαδρομή αιτήματος, πρώτα διορθώνονται τα θεμέλια. Το GEO δεν σώζει ένα site που η Google δεν μπορεί να διαβάσει.',
+          'Αν η Google βρίσκει τις σελίδες σας και οι πελάτες μπορούν ήδη να επικοινωνήσουν μαζί σας, κοιτάμε ποιες ερωτήσεις μένουν αναπάντητες.',
       },
       {
-        title: 'Όσοι συγκρίνουν GEO agency στην Ελλάδα',
+        title: 'Αν συγκρίνετε εταιρείες GEO στην Ελλάδα',
         body:
-          'Η σωστή ερώτηση δεν είναι «ποιος υπόσχεται αναφορές». Είναι τι αλλάζει στο site, πάνω σε ποια δεδομένα, πώς μετράται και τι γίνεται αν φύγετε. Αυτή η σελίδα απαντά σε αυτά, δημόσια.',
+          'Ζητήστε να σας δείξουν ποια σελίδα θα άλλαζαν πρώτη, ποια ερώτηση θα απαντούσε η αλλαγή και πώς θα την παρακολουθούσαν.',
       },
     ],
   },
   process: {
-    title: 'Πώς δουλεύουμε και πώς μετράμε τις αναφορές',
+    title: 'Από τον πρώτο έλεγχο στη μηνιαία αναφορά',
     intro:
-      'Πρακτική σειρά: θεμέλια SEO, μετά AEO στις εμπορικές σελίδες, μετά πρόγραμμα GEO. Να τρέχετε δειγματοληψία ChatGPT σε site που δεν ανιχνεύεται είναι το πιο ακριβό λάθος που βλέπουμε.',
+      'Μας λέτε τι ρωτούν οι πελάτες σας. Συμφωνούμε ποιες ερωτήσεις αξίζει να παρακολουθούμε και καταγράφουμε τι απαντούν σήμερα τα εργαλεία AI.',
     steps: [
       {
-        title: 'Εβδομάδες 1-2: βάση και προτεραιότητες',
+        title: 'Επιλέγουμε τις πρώτες διορθώσεις',
         body:
-          'Τεχνικός έλεγχος, συνέπεια οντότητας (About, στοιχεία επικοινωνίας, schema) και πρώτη δειγματοληψία σε σταθερό σύνολο ερωτημάτων. Παραδίδουμε ιεραρχημένο πλάνο, όχι λίστα εργαλείων.',
+          'Ελέγχουμε τις σελίδες, τα στοιχεία επικοινωνίας και τις αρχικές απαντήσεις. Σας δείχνουμε ποια αλλαγή προτείνουμε πρώτη και γιατί.',
       },
       {
-        title: 'Μήνες 1-3: AEO στις σελίδες που πουλάνε',
+        title: 'Συμπληρώνουμε τις σελίδες υπηρεσιών',
         body:
-          'FAQ και απαντήσεις στις εμπορικές σελίδες, schema που συμφωνεί με το ορατό κείμενο, πολιτικές και γεγονότα που έλειπαν, εσωτερική σύνδεση προς αυτές τις σελίδες. Εδώ φαίνονται οι πρώτες κινήσεις σε σύντομες απαντήσεις.',
+          'Προσθέτουμε τους όρους που λείπουν, γράφουμε απαντήσεις εκεί όπου χρειάζονται και συνδέουμε τις σχετικές σελίδες μεταξύ τους.',
       },
       {
-        title: 'Μήνες 4-6: επέκταση GEO',
+        title: 'Ελέγχουμε τα κενά',
         body:
-          'Κλείσιμο κενών όπου αναφέρονται ανταγωνιστές και εσείς όχι, ευρύτερη θεματική κάλυψη, συνέπεια EL και EN όπου ο τουρισμός το απαιτεί, σταθερή επανάληψη της δειγματοληψίας.',
+          'Όταν μια απάντηση αναφέρει ανταγωνιστή, κοιτάμε ποια πληροφορία βρήκε για εκείνον. Σε δίγλωσσες ιστοσελίδες ελέγχουμε αν ο πελάτης παίρνει την ίδια απάντηση και στις δύο γλώσσες.',
       },
       {
-        title: 'Κάθε μήνα: μέτρηση',
+        title: 'Σας δείχνουμε τι άλλαξε',
         body:
-          'Αναφορά με οργανικά κλικ, παρουσία σε εμπορικά ερωτήματα και τάση αναφορών στο σταθερό σύνολο. Αν κάτι δεν αποδίδει, αλλάζει. Δεν επαναλαμβάνεται επειδή ήταν στο πλάνο.',
+          'Κάθε μήνα βλέπετε ποιες σελίδες δουλέψαμε, σε ποιες ερωτήσεις εμφανίστηκε η επιχείρησή σας και πόσα οργανικά κλικ κατέγραψε το Search Console.',
       },
     ],
   },
   pricing: {
-    title: 'Πόσο κοστίζει το AI SEO',
+    title: 'Πόσο κοστίζει το AI SEO;',
     intro:
-      'Το GEO και το AEO δεν είναι ξεχωριστή μηνιαία συνεργασία των 50 ευρώ. Εντάσσονται στα μηνιαία πακέτα SEO που ήδη καλύπτουν τεχνική εργασία, περιεχόμενο και αναφορά. Αφιερωμένη εργασία AEO και GEO περιλαμβάνεται από το Growth και πάνω.',
+      'Τα πακέτα SEO Growth και SEO Authority περιλαμβάνουν GEO και AEO στην ίδια μηνιαία τιμή με τις τεχνικές διορθώσεις, τη δουλειά στο περιεχόμενο και την αναφορά.',
     note:
-      'Όλες οι τιμές είναι καθαρές, χωρίς ΦΠΑ 24%. Η ελάχιστη διάρκεια συνεργασίας είναι 6 μήνες και στη συνέχεια ανανεώνεται μηνιαία: κάτω από αυτό το διάστημα δεν προλαβαίνει να φανεί αν η δουλειά αποδίδει.',
-    cta: 'Δείτε αναλυτικά τα πακέτα',
+      'Στις τιμές προστίθεται ΦΠΑ 24%. Η αρχική διάρκεια είναι 6 μήνες. Στη συνέχεια η συνεργασία ανανεώνεται κάθε μήνα.',
+    cta: 'Συγκρίνετε τα πακέτα SEO',
   },
   notForYou: {
-    title: 'Πότε δεν είμαστε η σωστή επιλογή',
+    title: 'Πότε να ξεκινήσετε από αλλού',
     items: [
-      'Θέλετε εγγύηση ότι το ChatGPT θα σας αναφέρει. Δεν τη δίνουμε, γιατί δεν μπορεί να δοθεί.',
-      'Το site σας δεν ευρετηριάζεται ή δεν έχει διαδρομή αιτήματος. Πρώτα τα θεμέλια, μετά η ορατότητα σε AI.',
-      'Ψάχνετε όγκο άρθρων γραμμένων από AI χωρίς γεγονότα, οντότητα ή μέτρηση.',
-      'Θέλετε αποτελέσματα σε έναν μήνα. Οι πρώτες κινήσεις σε σύντομες απαντήσεις μπορεί να φανούν σε εβδομάδες· σταθερή τάση αναφορών θέλει τρίμηνα.',
+      'Η Google δυσκολεύεται να βρει τις σελίδες σας. Προηγείται ο τεχνικός έλεγχος.',
+      'Οι επισκέπτες δυσκολεύονται να επικοινωνήσουν ή να κάνουν κράτηση. Διορθώστε πρώτα αυτό το βήμα.',
+      'Χρειάζεστε συγκεκριμένο αριθμό νέων άρθρων κάθε μήνα. Η δουλειά εδώ ξεκινά από τις ερωτήσεις που μένουν αναπάντητες στις υπάρχουσες σελίδες.',
+      'Χρειάζεστε εγγυημένη αναφορά ή αποτέλεσμα μέχρι συγκεκριμένη ημερομηνία. Κάθε εργαλείο επιλέγει ποιες επιχειρήσεις θα αναφέρει.',
     ],
   },
   proof: {
-    title: 'Έργα όπου η ορατότητα σε AI είναι μέρος της στοίβας',
+    title: 'Παραδείγματα από επιχειρήσεις στην Ελλάδα',
     intro:
-      'Δουλεύουμε κυρίως με τουρισμό, φιλοξενία, ενοικίαση αυτοκινήτου και τοπικές επιχειρήσεις στην Ελλάδα. Σε κάποια έργα η εργασία GEO και AEO είναι ρητό μέρος του εύρους.',
+      'Δείτε έργα για καταλύματα, ενοικιάσεις αυτοκινήτων και άλλες τοπικές επιχειρήσεις. Σε ορισμένα από αυτά αναλάβαμε και το GEO ή το AEO.',
     caveat:
-      'Δείχνουμε τι χτίσαμε και για ποιες αναζητήσεις. Δεν δημοσιεύουμε ποσοστά αναφορών ή «AI rank» για λογαριασμό πελατών: τα νούμερα που δεν μπορούμε να τεκμηριώσουμε δεν είναι απόδειξη.',
+      'Σε κάθε έργο θα βρείτε τις σελίδες που φτιάξαμε και τις αναζητήσεις για τις οποίες τις σχεδιάσαμε. Για αυτά τα έργα δεν δημοσιεύουμε ποσοστά αναφορών.',
   },
   faqTitle: 'Συχνές ερωτήσεις',
   faqs: [
     {
-      question: 'Τι είναι το GEO;',
+      question: 'Τι σημαίνει GEO για τη δική μου επιχείρηση;',
       answer:
-        'GEO σημαίνει Generative Engine Optimization: εργασία ώστε η επιχείρησή σας να είναι σαφής, συνεπής πηγή όταν ένα μοντέλο συνθέτει απάντηση στο ChatGPT, στο Perplexity ή στο Gemini. Περιλαμβάνει καθαρότητα οντότητας, σελίδες με γεγονότα και μέτρηση σε σταθερό σύνολο ερωτημάτων. Δεν αντικαθιστά το SEO και δεν εγγυάται ότι κάποια μηχανή θα σας αναφέρει.',
+        'Με το Generative Engine Optimization ελέγχουμε τι λένε για εσάς τα εργαλεία AI. Αν μια απάντηση δίνει λάθος διεύθυνση ή παραπέμπει σε κατάλογο, εξετάζουμε ποια στοιχεία χρειάζονται διόρθωση ή λείπουν από τη σελίδα σας.',
     },
     {
-      question: 'Τι είναι το AEO;',
+      question: 'Τι αλλάζετε όταν κάνετε AEO;',
       answer:
-        'AEO σημαίνει Answer Engine Optimization: δομή περιεχομένου ώστε μια μηχανή απάντησης να μπορεί να σηκώσει μια σύντομη, ακριβή απάντηση. Πρακτικά: ερωτήσεις όπως τις γράφουν οι χρήστες, απάντηση αμέσως από κάτω, FAQ ορατά στη σελίδα και schema που συμφωνεί με το κείμενο. Εμφανίζεται σε featured snippets, AI Overviews και φωνητικές απαντήσεις.',
+        'Με το Answer Engine Optimization γράφουμε την απάντηση εκεί όπου τη χρειάζεται ο πελάτης. Για παράδειγμα, στη σελίδα ενοικίασης βάζουμε τους όρους ασφάλισης δίπλα στην ερώτηση «Τι καλύπτει η ασφάλεια;».',
     },
     {
       question: 'Αντικαθιστά το GEO το SEO;',
       answer:
-        'Όχι. Τα μοντέλα αντλούν από τις ίδιες σελίδες που κατατάσσει η Google. Χωρίς τεχνική υγεία, σαφή πρόθεση ανά URL και περιεχόμενο που απαντά σε πραγματικές αναζητήσεις, δεν υπάρχει σταθερό υλικό για παράθεση. Η πρακτική σειρά είναι SEO, μετά AEO στις εμπορικές σελίδες, μετά πρόγραμμα GEO.',
+        'Όχι. Το SEO βοηθά τους πελάτες να βρουν την ιστοσελίδα σας στην αναζήτηση. Το GEO προσθέτει τον έλεγχο του τρόπου με τον οποίο εμφανίζεται η επιχείρησή σας στις απαντήσεις AI.',
     },
     {
       question: 'Πώς μετράτε την ορατότητα στο ChatGPT;',
       answer:
-        'Με σταθερό σύνολο ερωτημάτων που αφορούν την επιχείρησή σας, στα ελληνικά και στα αγγλικά. Κάθε μήνα καταγράφουμε αν το brand αναφέρθηκε, αν δόθηκε σύνδεσμος ή αν προτάθηκε ανταγωνιστής, και το βάζουμε δίπλα στα κλικ του Search Console και στις επισκέψεις που έρχονται από AI εργαλεία στο Analytics. Μετράμε τάσεις ανά τρίμηνο, όχι ένα στιγμιότυπο.',
+        'Κάθε μήνα κάνουμε τις ίδιες ερωτήσεις και καταγράφουμε αν εμφανίζεστε εσείς ή κάποιος ανταγωνιστής και αν υπάρχει σύνδεσμος. Ξεχωριστά μετράμε τα κλικ της Google στο Search Console και τις επισκέψεις από εργαλεία AI που καταγράφει το Analytics.',
     },
     {
       question: 'Πόσο κοστίζει το AI SEO;',
       answer:
-        'Αφιερωμένη εργασία GEO και AEO περιλαμβάνεται στα πακέτα SEO Growth ({{SEO_GROWTH}} τον μήνα καθαρά) και Authority ({{SEO_AUTHORITY}}). Το Foundations καλύπτει τεχνικό και τοπικό SEO χωρίς ξεχωριστό πρόγραμμα GEO. Δεν πουλάμε τρεις ξεχωριστές μηνιαίες συνεργασίες (SEO + AEO + GEO) στην ίδια επιχείρηση.',
+        'Το SEO Growth κοστίζει {{SEO_GROWTH}} τον μήνα και το SEO Authority {{SEO_AUTHORITY}} τον μήνα, πλέον ΦΠΑ. Και τα δύο περιλαμβάνουν GEO και AEO. Το SEO Foundations καλύπτει τεχνικό και τοπικό SEO.',
     },
     {
-      question: 'Πόσο χρόνο χρειάζεται το GEO για να φέρει αποτέλεσμα;',
+      question: 'Πότε θα δω αν οι αλλαγές αποδίδουν;',
       answer:
-        'Διορθώσεις οντότητας και FAQ μπορούν να επηρεάσουν σύντομες απαντήσεις σε εβδομάδες, σε ορισμένα ερωτήματα. Σταθερή τάση αναφορών σε ανταγωνιστικά ερωτήματα τουρισμού θέλει συνήθως τρίμηνα μέτρησης, όχι μία συνεδρία ChatGPT. Γι’ αυτό η ελάχιστη συνεργασία είναι 6 μήνες: κάτω από αυτό δεν υπάρχει αρκετή ένδειξη.',
+        'Στη μηνιαία αναφορά βλέπετε τις αλλαγές στις σελίδες σας και τις απαντήσεις που καταγράψαμε. Δεν υπάρχει συγκεκριμένη προθεσμία για την πρώτη αναφορά. Συγκρίνουμε διαδοχικές μετρήσεις για να δούμε αν μια αλλαγή διαρκεί.',
     },
     {
-      question: 'Εγγυάστε ότι θα μας αναφέρει το ChatGPT;',
+      question: 'Μπορείτε να εγγυηθείτε ότι το ChatGPT θα μας προτείνει;',
       answer:
-        'Όχι. Καμία εταιρεία SEO δεν ελέγχει τι θα παραθέσει ένα μοντέλο, οπότε τέτοια εγγύηση δεν μπορεί να δοθεί ειλικρινά. Αυτό που εγγυόμαστε είναι η δουλειά: συγκεκριμένα παραδοτέα κάθε μήνα και αναφορά που δείχνει κλικ, τάση αναφορών και τι άλλαξε στο site.',
+        'Όχι. Το ChatGPT επιλέγει ποιες πηγές θα χρησιμοποιήσει σε κάθε απάντηση. Εμείς μπορούμε να διορθώσουμε τα στοιχεία που δημοσιεύετε και να σας δείξουμε πότε και πώς σας ανέφερε.',
     },
     {
-      question: 'Για ποιες επιχειρήσεις έχει νόημα ένα GEO agency στην Ελλάδα;',
+      question: 'Πώς θα καταλάβω αν αξίζει για τη δική μου επιχείρηση;',
       answer:
-        'Για όσες οι αγοραστές ήδη ρωτούν AI πριν κλείσουν ή καλέσουν: ξενοδοχεία, rent-a-car, εκδρομές και τοπικές υπηρεσίες με εμπορικά ερωτήματα. Αν ο κλάδος σας δεν έχει αυτή τη ζήτηση, θα σας το πούμε στον πρώτο έλεγχο. Για κλασικό SEO χωρίς αυτό το στρώμα, δείτε τις υπηρεσίες SEO.',
+        'Στείλτε μας τις ερωτήσεις που ακούτε πριν από μια κράτηση ή ένα ραντεβού. Στον πρώτο έλεγχο θα δούμε πώς απαντούν σήμερα τα εργαλεία AI και αν προέχει κάποια άλλη αλλαγή στην ιστοσελίδα σας.',
     },
   ],
   cta: {
-    title: 'Ξεκινήστε με έναν έλεγχο, όχι με υπόσχεση αναφοράς',
+    title: 'Τι λέει το ChatGPT για την επιχείρησή σας;',
     body:
-      'Πείτε μας τι πουλάτε και ποιες ερωτήσεις κάνουν ήδη οι πελάτες σας. Κοιτάμε το site, το Search Console και τι απαντούν σήμερα οι μηχανές στο δικό σας σύνολο ερωτημάτων, και επιστρέφουμε με το τι χρειάζεται και τι κοστίζει - μέσα σε 24 ώρες σε εργάσιμες ημέρες.',
+      'Στείλτε μας την ιστοσελίδα σας και μια ερώτηση που σας κάνουν συχνά οι πελάτες σας. Θα σας δείξουμε τι απαντούν τα εργαλεία AI, τι θα αλλάζαμε στη σελίδα σας και πόσο κοστίζει η δουλειά.',
     primary: 'Ζητήστε δωρεάν έλεγχο',
     secondary: 'Δείτε τιμές',
   },
@@ -268,209 +268,209 @@ const el: AiVisibilityPillarCopy = {
 
 const en: AiVisibilityPillarCopy = {
   eyebrow: 'AI visibility (GEO / AEO)',
-  h1: 'GEO and AEO for businesses: visibility in AI answers, not citation promises',
+  h1: 'Help AI services describe your business accurately',
   answer:
-    'AI visibility is continuous work on three fronts: clear company facts, pages written in a shape an answer engine can quote, and measurement against a fixed set of questions. Ours sits inside the SEO Growth and Authority retainers, from {{SEO_GROWTH}} a month, and is measured as mention trends alongside organic clicks. No engine guarantees it will cite you.',
+    'What does ChatGPT or Gemini say when someone asks about your business? We check a fixed set of questions, clarify the facts on your pages and track mentions alongside Google clicks. This work is included in SEO Growth and Authority, from {{SEO_GROWTH}} a month.',
   metaTitle: 'Generative Engine Optimization (GEO & AEO) Services',
   metaDescription:
-    'GEO and AEO services: entity clarity, answer-shaped pages and measurement for visibility in ChatGPT, Gemini and AI Overviews, with no citation promises.',
+    'See how ChatGPT, Gemini and Google AI Overviews describe your business. We check mentions each month and help you fix missing or conflicting details on your site.',
   primaryKeyword: 'AI visibility',
   problem: {
-    title: 'Buyers ask answer engines, not only Google',
+    title: 'What will a customer learn before they visit your site?',
     intro:
-      'Part of research now ends inside the answer: ChatGPT, Gemini, Perplexity and Google AI Overviews. If your content is not in a shape those systems can use, the shortlist goes to someone else - often an OTA or a directory.',
+      'Someone choosing a hotel in Paros might ask ChatGPT how far it is from the port. The answer can influence which hotels they look at next.',
     items: [
       {
-        title: 'Visibility without a click is now part of search',
+        title: 'Whose answer are they reading?',
         body:
-          'AI Overviews and chat answers summarise before anyone opens a site. Classic SEO still earns clicks. AEO and GEO are about whether your brand is clear enough to be used in that summary.',
+          'ChatGPT, Gemini, Perplexity and Google AI Overviews can show sources. We check whether they point to your site, a booking platform or a directory.',
       },
       {
-        title: 'Generic questions favour the big directories',
+        title: 'What’s missing from your own page?',
         body:
-          '"Best hotel in Paros" almost always returns OTAs. Specific questions - distance to the port, child policy, rental deposit - favour official pages with explicit facts. That is where a real business can compete.',
+          '“Family-friendly” leaves a parent with a practical question. Does a child stay free or cost extra? Your room page is the place to explain your policy.',
       },
       {
-        title: 'Optimisation makes content usable, not chosen',
+        title: 'Which details can you fix?',
         body:
-          'No agency controls what ChatGPT or Gemini will quote. What you control is whether your facts are consistent, whether the answers are visible on the page, and whether you measure the trend against a fixed question set. A promise that "AI will mention you" is a warning sign.',
+          'If your website lists different opening hours from your business profile, start there. Each AI service decides which sources to use.',
       },
     ],
   },
   definitions: {
-    title: 'What GEO is, and what AEO is',
+    title: 'How do SEO, AEO and GEO fit together?',
     intro:
-      'Three acronyms, one stack. Without shared definitions every proposal sells the same work under a different name. This is the split we use in the work.',
+      'Take a car hire company. A traveller finds it on Google and wants to know how much to set aside for the deposit.',
     items: [
       {
         title: 'SEO',
         body:
-          'Rankings and clicks in classic results: organic listings and, where it applies, the map pack. Without crawlable, fast pages with a clear intent, there is no base for the other two.',
+          'Helps Google find the rental page and show it in relevant searches. Search Console tells us which searches brought people to the site.',
       },
       {
         title: 'AEO',
         body:
-          'Answer Engine Optimization: structuring content so an answer engine can lift a short, accurate answer. Visible FAQs, the answer directly under the question, schema that matches the text, tables where they help. It shows up in featured snippets, AI Overviews and voice answers.',
+          'Answer Engine Optimization helps the traveller find the deposit amount and terms right under their question. Search engines can read the same answer.',
       },
       {
         title: 'GEO',
         body:
-          'Generative Engine Optimization: being a recognisable, consistent source when a model composes an answer in ChatGPT, Perplexity or Gemini. Entity, evidence, policies and facts it can quote safely. It does not replace SEO; it sits on top of it.',
+          'Generative Engine Optimization looks at how services such as ChatGPT describe the company. We check whether they name the right business, what they say about its deposit and which source they cite.',
       },
     ],
   },
   includes: {
-    title: 'What a serious AI visibility service includes',
+    title: 'What we change on your website',
     intro:
-      'If a GEO proposal does not say what changes on the site each month, it is not a proposal. These are the five parts of the work, and none of them functions alone.',
+      'We start with the pages people read before calling or booking. If you regularly have to explain something over the phone, that detail belongs on the page.',
     items: [
       {
-        title: 'Entity clarity',
+        title: 'Accurate business listings',
         body:
-          'The same name, services, addresses and language variants on the site, Google Business Profile and the core directories. Conflicting facts are the cheapest way to lose a model’s trust.',
+          'We check that your name, address and services match across your website, Google Business Profile and the main directories.',
       },
       {
-        title: 'Answer-shaped content',
+        title: 'Answers to customer questions',
         body:
-          'Questions as they appear in Search Console, a 40 to 60 word answer immediately underneath, FAQs visible on the page, and schema that mirrors that text exactly. Markup with no visible answer does not count.',
+          'We use the wording people search for in Search Console and put the answer on the page where a customer needs it.',
       },
       {
-        title: 'Commercial pages with facts',
+        title: 'Booking and service details',
         body:
-          'Policies, distances, published prices, pickup rules, hours, what is included. Generic brochure copy loses to OTAs. Specific facts are what can be quoted.',
+          'We clarify what your published price includes, where customers can pick up a car or when your doors open. The details depend on what you sell.',
       },
       {
-        title: 'Technical foundations',
+        title: 'Pages search engines can read',
         body:
-          'Indexation, speed, internal link architecture and structured data that matches what is on the page. GEO without technical SEO is a roof without walls. If the site cannot be read, no amount of "AI optimisation" pays.',
+          'We check whether Google can find your key pages, how quickly they load and which pages link to them. We also check that structured data matches what customers see.',
       },
       {
-        title: 'Measurement without the theatre',
+        title: 'Monthly mention tracking',
         body:
-          'A fixed question set, sampled monthly, logging whether the brand was named, linked or omitted, next to Search Console clicks. Trends by quarter. Not "AI rank #1" and not one ChatGPT screenshot.',
+          'We repeat the same questions and record when an answer names you or links to your site. You can compare those mentions with clicks from Google.',
       },
     ],
   },
   audience: {
-    title: 'Who this work is for',
+    title: 'Would AI visibility work help your business?',
     intro:
-      'GEO and AEO pay off where buyers already ask an answer engine before they book or call. In other sectors, classic SEO comes first.',
+      'It’s worth looking at if customers compare options before they book or call. If you serve travellers in Greece, that may mean looking at questions in Greek and English.',
     items: [
       {
-        title: 'Tourism and hospitality',
+        title: 'Hotels, villas and tours',
         body:
-          'Hotels, villas and tours competing with OTAs on destination queries. Generic prompts go to directories; specific ones (port, family, transfers) go to whoever has explicit answers on the page.',
+          '“How far is the hotel from the port?” and “Does the tour include a transfer?” are questions you can answer first-hand.',
       },
       {
-        title: 'Rent-a-car and local services',
+        title: 'Car hire and local services',
         body:
-          'Deposit, insurance, driver age, airport pickup; or "employment lawyer in Athens", "dentist near me". The map pack still brings calls. AI Overviews increasingly summarise the same questions.',
+          'A driver wants to know if they can collect a car at the airport. Someone choosing a dentist needs the practice address and opening hours.',
       },
       {
-        title: 'Businesses whose site can already be read',
+        title: 'Sites already taking enquiries',
         body:
-          'If the site is not indexed, if the commercial pages are thin, or if there is no enquiry path, foundations come first. GEO will not rescue a site Google cannot read.',
+          'If Google can find your pages and customers can already reach you, we can look at the questions those pages still leave open.',
       },
       {
-        title: 'Anyone comparing a GEO agency',
+        title: 'Choosing a GEO agency in Greece',
         body:
-          'The useful question is not "who promises citations". It is what changes on the site, on what data, how it is measured, and what happens if you leave. This page answers those, in public.',
+          'Ask which page they would change first, which customer question the edit would answer and how they would track it.',
       },
     ],
   },
   process: {
-    title: 'How the work runs',
+    title: 'From the first review to your monthly report',
     intro:
-      'The practical sequence is SEO foundations, then AEO on the commercial pages, then a GEO programme. Running ChatGPT sampling on a site that does not crawl is the most expensive mistake we see.',
+      'Tell us what customers ask. Together we choose the questions worth tracking and record what AI services say about your business today.',
     steps: [
       {
-        title: 'Weeks 1-2: baseline and priorities',
+        title: 'Choose the first fixes',
         body:
-          'Technical audit, entity consistency (About, contact details, schema) and a first sample against a fixed question set. You get a prioritised plan, not a list of tools.',
+          'We review your pages, contact details and the first set of answers. You see which change we recommend first and why.',
       },
       {
-        title: 'Months 1-3: AEO on the pages that sell',
+        title: 'Update your service pages',
         body:
-          'FAQs and answers on the commercial pages, schema that matches the visible text, the policies and facts that were missing, internal links into those pages. This is where the first movement on short answers shows.',
+          'We add missing terms, answer the questions that come up before booking and link related pages so people can find them.',
       },
       {
-        title: 'Months 4-6: GEO expansion',
+        title: 'Look for gaps',
         body:
-          'Close gaps where competitors are named and you are not, broader topical coverage, EL and EN consistency where tourism needs it, and a steady repeat of the sample.',
+          'When an answer recommends a competitor, we check what information it found about them. On bilingual sites, we also compare what customers see in each language.',
       },
       {
-        title: 'Every month: measurement',
+        title: 'Review the month’s results',
         body:
-          'A report covering organic clicks, presence on commercial queries, and the mention trend on the fixed set. If something is not working it changes. It does not get repeated because it was in the plan.',
+          'You see which pages we edited, which answers mentioned your business and how many organic clicks Search Console recorded.',
       },
     ],
   },
   pricing: {
-    title: 'What it costs',
+    title: 'How much does AI visibility work cost?',
     intro:
-      'GEO and AEO are not a €50 side retainer. They sit inside the monthly SEO engagements that already cover technical work, content and reporting. Dedicated AEO and GEO work is included from Growth up.',
+      'SEO Growth and SEO Authority include GEO and AEO in the monthly price alongside technical fixes, content work and reporting.',
     note:
-      'All prices are net of 24% Greek VAT. The minimum engagement is 6 months, monthly thereafter: below that there is not enough time to tell whether the work is paying.',
-    cta: 'See the full packages',
+      'Prices exclude 24% Greek VAT. The initial term is 6 months, then the agreement renews monthly.',
+    cta: 'Compare SEO packages',
   },
   notForYou: {
-    title: 'When we are the wrong choice',
+    title: 'When to start elsewhere',
     items: [
-      'You want a guarantee that ChatGPT will mention you. We do not give one, because it cannot honestly be given.',
-      'Your site is not indexed or has no enquiry path. Foundations first, then AI visibility.',
-      'You are shopping for a volume of AI-written articles with no facts, no entity work and no measurement.',
-      'You need results in a month. First movement on short answers can show in weeks; a stable mention trend takes quarters.',
+      'Google has trouble finding your pages. Start with a technical review.',
+      'Customers struggle to enquire or book. Fix that step first.',
+      'You need a set number of articles each month. This service starts with unanswered questions on existing pages.',
+      'You need a guaranteed mention by a particular date. Each AI service decides which businesses to recommend.',
     ],
   },
   proof: {
-    title: 'Work where AI visibility is part of the stack',
+    title: 'Examples from businesses in Greece',
     intro:
-      'Most of our work is tourism, hospitality, car rental and local businesses in Greece. On some projects GEO and AEO work is an explicit part of the scope.',
+      'Explore work for accommodation providers, car hire companies and other local businesses. Some of these projects also included GEO and AEO.',
     caveat:
-      'We show what we built and which searches it targets. We do not publish citation rates or "AI rank" on clients’ behalf: numbers we cannot evidence are not proof.',
+      'The project pages show what we built and which searches we designed it for. We don’t publish citation rates for these projects.',
   },
   faqTitle: 'Frequently asked questions',
   faqs: [
     {
-      question: 'What is GEO?',
+      question: 'What does GEO mean for my business?',
       answer:
-        'GEO means Generative Engine Optimization: work so your business is a clear, consistent source when a model composes an answer in ChatGPT, Perplexity or Gemini. It covers entity clarity, pages with facts, and measurement against a fixed question set. It does not replace SEO and it does not guarantee that any engine will mention you.',
+        'With Generative Engine Optimization, we check what AI services say about you. If an answer gives the wrong address or links to a directory, we look for details to correct or add on your own pages.',
     },
     {
-      question: 'What is AEO?',
+      question: 'What would you change as part of AEO?',
       answer:
-        'AEO means Answer Engine Optimization: structuring content so an answer engine can lift a short, accurate answer. In practice: questions as people type them, the answer immediately underneath, FAQs visible on the page, and schema that matches the text. It shows up in featured snippets, AI Overviews and voice answers.',
+        'With Answer Engine Optimization, we put the answer where the customer needs it. On a car hire page, that might mean spelling out the insurance terms under “What does the insurance cover?”',
     },
     {
       question: 'Does GEO replace SEO?',
       answer:
-        'No. Models draw on the same pages Google ranks. Without technical health, one intent per URL and content that answers real searches, there is nothing stable to quote. The practical sequence is SEO, then AEO on the commercial pages, then a GEO programme.',
+        'No. SEO helps customers find your website in search. GEO adds a check on how AI services describe your business in their answers.',
     },
     {
-      question: 'How much does AI visibility cost?',
+      question: 'How much does AI visibility work cost?',
       answer:
-        'Dedicated GEO and AEO work is included in the SEO Growth ({{SEO_GROWTH}} a month net) and Authority ({{SEO_AUTHORITY}}) packages. Foundations covers technical and local SEO without a separate GEO programme. We do not sell three retainers (SEO + AEO + GEO) to the same business.',
+        'SEO Growth costs {{SEO_GROWTH}} per month and SEO Authority costs {{SEO_AUTHORITY}} per month, plus VAT. Both include GEO and AEO. SEO Foundations covers technical and local SEO.',
     },
     {
-      question: 'How long does GEO take to show a result?',
+      question: 'How soon will I know whether the changes are working?',
       answer:
-        'Entity and FAQ fixes can affect short answers within weeks on some queries. A stable mention trend on competitive tourism questions usually takes quarters of measurement, not one ChatGPT session. That is why the minimum engagement is 6 months: below that there is not enough evidence.',
+        'Your monthly report shows the edits and the answers we recorded. A first mention can’t be scheduled. We compare several rounds of answers to see whether a change holds.',
     },
     {
-      question: 'Do you guarantee that ChatGPT will mention us?',
+      question: 'Can you guarantee a recommendation from ChatGPT?',
       answer:
-        'No. No agency controls what a model will quote, so that guarantee cannot honestly be given. What we guarantee is the work: named deliverables each month and a report showing clicks, the mention trend and what changed on the site.',
+        'No. ChatGPT chooses its own sources for each answer. We can correct the information you publish and show you when and how it mentioned you.',
     },
     {
-      question: 'Which businesses is a GEO agency for?',
+      question: 'How do I know if it’s worth it for my business?',
       answer:
-        'Those whose buyers already ask AI before they book or call: hotels, rent-a-car, tours and local services with commercial queries. If your sector does not have that demand, we will say so at the first audit. For classic SEO without this layer, see SEO services.',
+        'Send us the questions customers ask before they book or call. In the first review we’ll look at the answers AI services give today and whether something else on your site needs attention first.',
     },
   ],
   cta: {
-    title: 'Start with an audit, not a citation promise',
+    title: 'What does ChatGPT say about your business?',
     body:
-      'Tell us what you sell and which questions your buyers already ask. We will look at the site, Search Console and what the engines answer today on your question set, and come back with what is needed and what it costs - within 24 working hours.',
+      'Send us your website and a question you hear from customers. We’ll show you what AI services say today, what we’d change on the page and what the work would cost.',
     primary: 'Request a free audit',
     secondary: 'See pricing',
   },

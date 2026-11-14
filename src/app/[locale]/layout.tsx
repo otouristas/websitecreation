@@ -33,8 +33,8 @@ export async function generateMetadata({
     ? 'Λογισμικό SEO από το Search Console | AnotherSEOGuru'
     : 'SEO Software for Search Console Fixes | AnotherSEOGuru';
   const description = isEl
-    ? 'Το AnotherSEOGuru App κάνει το Search Console λίστα διορθώσεων με εκτίμηση κλικ. Λέξεις-κλειδιά, έλεγχοι και ορατότητα σε AI, από τα δεδομένα σας.'
-    : 'AnotherSEOGuru App turns Google Search Console into ranked fixes with click estimates. Keywords, site audits and AI visibility, from your own data.';
+    ? 'Δείτε ποιες σελίδες σας έχασαν κλικ στην Google. Ρωτήστε τον Aster AI τι δείχνουν τα στοιχεία του Search Console και επιλέξτε ποια αλλαγή θα κάνετε πρώτη.'
+    : 'Find pages losing clicks in Google, ask Aster AI what changed and choose a page to improve. Try AnotherSEOGuru App on your site or explore a sample workspace.';
 
   return {
     metadataBase: new URL(SITE_URL),
@@ -206,8 +206,8 @@ function buildStructuredDataGraph(isEl: boolean) {
         url: SITE_URL,
         name: 'AnotherSEOGuru',
         description: isEl
-          ? 'AnotherSEOGuru App: λογισμικό SEO που κάνει το Google Search Console λίστα διορθώσεων.'
-          : 'AnotherSEOGuru App: SEO software that turns Google Search Console into a list of fixes.',
+          ? 'Με το AnotherSEOGuru App βλέπετε ποιες σελίδες αξίζει να βελτιώσετε και ελέγχετε τα κλικ τους πριν και μετά την αλλαγή.'
+          : 'AnotherSEOGuru App helps you choose a page to improve and compare its clicks before and after a change.',
         publisher: { '@id': `${SITE_URL}/#organization` },
         inLanguage: ['en', 'el'],
       },

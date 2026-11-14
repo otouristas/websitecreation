@@ -21,7 +21,7 @@ faq:
     answer: "SEO lead outlines entities; subject expert validates accuracy; developer implements linking templates. For hotel and rent-a-car sites, involve front-desk or fleet managers who field guest questions daily."
 ---
 
-A glossary is not only a definitions page. Used well, it is a **controlled vocabulary** that connects concepts your commercial pages already target, without stuffing exact-match anchors sitewide. For [hotel](/en/solutions/hotels), [rent-a-car](/en/solutions/rent-a-car), and [travel AI](/en/solutions/travel-ai-chatbots) sites, glossary links clarify entities for users, crawlers, and AI retrieval systems.
+When a reader sees “canonical” in an audit, a link to one good explanation is enough. A glossary earns its place when it answers that question and helps the reader return to the task. Start with the terms your customers ask you to explain most often.
 
 ## Why glossaries help SEO
 
@@ -194,4 +194,4 @@ SEO lead outlines entities; subject expert validates accuracy; developer impleme
 
 Tell us about your site, locations, and goals: we'll recommend a scoped plan with Search Console ops, content priorities, and clear next steps.
 
-[Get started](/en/get-started) · [See our work](/en/work) · [Pricing](/en/pricing)
+Explore the [software plans](/en/pricing) if your team will handle the edits. For work you would like us to carry out, see our [agency packages in Greek](/el/ypiresies/times).

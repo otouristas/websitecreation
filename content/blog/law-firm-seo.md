@@ -1,7 +1,7 @@
 ---
 slug: law-firm-seo
-title: "Law Firm SEO: How Attorneys Win Cases from Google"
-seoTitle: "Law Firm SEO: Win Clients from Google"
+title: "Law firm SEO: help clients find the right practice area"
+seoTitle: "Law firm SEO for local enquiries"
 description: "A practical SEO guide for law firms and attorneys: local targeting, practice-area pages, trust-building content and the technical basics that bring cases."
 date: 2026-07-06
 author: AnotherSEOGuru Editorial Team
@@ -22,7 +22,7 @@ faq:
     answer: SEO is typically the most compatible channel because you answer people already searching for help. Still follow bar advertising rules, avoid guarantees, and keep claims evidence-based.
 ---
 
-When someone needs a lawyer, they search Google: “divorce attorney near me,” “employment lawyer,” “car accident lawyer.” **Law firm SEO** is one of the most competitive (and most profitable) areas of digital marketing: a single retained matter can pay for a year of investment. The firms that win are not the ones with the flashiest homepage; they own practice-area pages, local proof, and answers prospects trust before the first call.
+A prospective client usually starts with a problem and a place. They may know they need help with an employment dispute in Athens but have no idea what your practice area is called. Use service pages to explain the matters you handle, where you practise and how someone can arrange a conversation.
 
 See our [solutions for lawyers](/en/solutions/lawyers), [local SEO](/en/services/local-seo), and [how much SEO costs](/en/blog/how-much-does-seo-cost).
 
@@ -64,7 +64,7 @@ Legal advertising has rules. SEO is compatible when you educate rather than prom
 | Website rebuild + SEO kickoff | from {{ENTRY_WEBSITE}} site + retainer | Parallel 60–90 days | Mobile form completion rate |
 | Competitive PI / divorce head terms | Growth-Authority | 6+ months | Qualified consult bookings |
 
-Track **qualified consultations**, not vanity traffic. Log call tracking by practice page, Search Console queries, and GBP insights. Transparent [pricing](/en/pricing) keeps scope honest.
+Track **qualified consultations**, not vanity traffic. Log call tracking by practice page, Search Console queries, and GBP insights. Transparent [pricing](/el/ypiresies/times) keeps scope honest.
 
 ## Mistakes Law Firms Still Make
 
@@ -109,4 +109,4 @@ Process explainers, FAQs, and educational guides without outcome guarantees. Hav
 
 ## Ready to Get Started?
 
-We review your site, practice areas, and local competition, then tell you realistically what is needed and what it costs. [Request the free analysis](/en/get-started): reply within 24 hours. Compare [pricing](/en/pricing) and deepen local tactics with the [local SEO guide](/en/blog/local-seo-guide).
+[Request a free check of your firm’s website](/el/get-started#free-audit) and tell us which practice area and city matter most to you. You can discuss the findings before commissioning changes. The [local SEO guide](/en/blog/local-seo-guide) covers checks you can make yourself, and [agency pricing in Greek](/el/ypiresies/times) covers work you can hand to the team.

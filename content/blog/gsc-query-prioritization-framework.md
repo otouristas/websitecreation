@@ -21,7 +21,7 @@ faq:
     answer: "Yes, segment by language in GSC. Tag EL vs EN buckets separately for hreflang sites."
 ---
 
-Search Console exports are infinite. The mistake is treating every row as equally important. A practical weekly workflow buckets queries into **four actions**: protect winners, fix near-misses, test new intent, and deprioritize noise. Whether you manage SEO for a home services company, a [hotel group in the Cyclades](/el/blog/topiko-seo-kykladon), or a [rent-a-car fleet](/en/solutions/rent-a-car), this framework keeps your backlog tied to revenue, not spreadsheet anxiety.
+A query with thousands of impressions can be a poor use of your time if you cannot serve the person searching. Filter your Search Console export for a page you can improve, then check its queries, current position and clicks. That gives you a shorter list you can actually act on.
 
 ## Why prioritization beats "fix everything"
 
@@ -199,4 +199,4 @@ Yes, segment by language in GSC. Tag EL vs EN buckets separately for [hreflang](
 
 Tell us about your site, locations, and goals: we'll recommend a scoped plan with Search Console ops, content priorities, and clear next steps.
 
-[Get started](/en/get-started) · [See our work](/en/work) · [Pricing](/en/pricing)
+Explore the [software plans](/en/pricing) if your team will handle the edits. For work you would like us to carry out, see our [agency packages in Greek](/el/ypiresies/times).

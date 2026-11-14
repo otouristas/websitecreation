@@ -22,7 +22,7 @@ faq:
     answer: "YMYL without compliance reviewer, markets outside your expertise, clients who won't grant GSC access."
 ---
 
-Agency SEO fails for predictable reasons: unclear scope, dashboards nobody reads, and strategies that ignore client constraints (CMS, legal, seasonality). Strong operators **productize** delivery: templates, QA, and a single source of truth for performance. This hub collects playbooks for agencies and for business owners evaluating agency partnerships, with examples from home services, [hotels](/en/solutions/hotels), [rent-a-car](/en/solutions/rent-a-car), and [travel AI](/en/solutions/travel-ai-chatbots).
+Before you send an SEO proposal, agree on who can edit the website and who will approve the work. That conversation determines what belongs in your monthly fee and what the client must supply. The guides here cover those decisions, including how to report a month when results were mixed.
 
 ## Who this pillar serves
 
@@ -207,4 +207,4 @@ YMYL without compliance reviewer, markets outside your expertise, clients who wo
 
 Tell us about your site, locations, and goals: we'll recommend a scoped plan with Search Console ops, content priorities, and clear next steps.
 
-[Get started](/en/get-started) · [See our work](/en/work) · [Pricing](/en/pricing)
+Explore the [software plans](/en/pricing) if your team will handle the edits. For work you would like us to carry out, see our [agency packages in Greek](/el/ypiresies/times).

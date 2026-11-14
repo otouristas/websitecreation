@@ -21,7 +21,7 @@ faq:
     answer: "Run a 20-prompt baseline. Fix top three on-site gaps: About, FAQ, service clarity. Re-sample in 30 days and connect gaps to content tickets."
 ---
 
-Vendors will sell you certainty about "AI rankings." In practice, treat LLM visibility like **brand sampling**: useful for directional insight, dangerous when presented as a precise score. This guide explains what to measure, what to ignore, and how to connect GEO efforts to revenue, with examples from hospitality, rent-a-car, and home services.
+An AI assistant can name your business without linking to your website. It can also cite one of your pages without recommending you. Record the question, the answer and the source link separately, so the next time someone asks whether you appeared, you know exactly what happened.
 
 We operationalize this inside [AI visibility (GEO/AEO)](/services/ai-visibility). For the full stack, read the [GEO, AEO & AI SEO playbook](/blog/geo-aeo-global-seo-playbook) and the [AI & LLM visibility pillar](/blog/pillar-ai-llm-visibility).
 

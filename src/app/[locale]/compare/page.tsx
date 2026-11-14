@@ -83,12 +83,12 @@ export default async function CompareHubPage({ params }: PageProps) {
           pill={
             <div className="flex flex-col items-start gap-4">
               <KitBreadcrumbs align="left" items={breadcrumbItems} />
-              <AnnouncePill wrap href={lp("/pricing")} tag={el ? "Σύγκριση" : "Compare"} text={el ? COMPARE_HUB_EL.pill : "Pick on the work, not the feature grid"} />
+              <AnnouncePill wrap href={lp("/pricing")} tag={el ? "Σύγκριση" : "Compare"} text={el ? COMPARE_HUB_EL.pill : "See plans and prices"} />
             </div>
           }
           title={accentEnd(el ? COMPARE_HUB_EL.heroTitle : "Which SEO tool fits the job you are doing?", el ? COMPARE_HUB_EL.heroAccentWords : 3)}
           titleClassName="text-[1.7rem] min-[400px]:text-[1.95rem] sm:text-[2.4rem] lg:text-[2.9rem]"
-          lead={el ? COMPARE_HUB_EL.lead : "Every tool here is good at something. These pages say what each one is good at, and where we are the wrong answer, so you can pick on the work rather than the feature grid."}
+          lead={el ? COMPARE_HUB_EL.lead : "Are you researching competing sites, improving your own pages, or reporting to clients? See how AnotherSEOGuru App handles each job and where another tool may suit you better."}
           actions={
             <div className="flex flex-col gap-3 sm:flex-row">
               <Link href={lp("/pricing")} className={wavePrimaryBtn}>
@@ -109,12 +109,12 @@ export default async function CompareHubPage({ params }: PageProps) {
                 </span>
               </WaveEyebrow>
               <h2 className="mt-3 text-balance font-display text-2xl font-bold tracking-[-0.03em] text-foreground">
-                {el ? COMPARE_HUB_EL.shortTitle : "Data you have, or data you need?"}
+                {el ? COMPARE_HUB_EL.shortTitle : "What do you need to find out?"}
               </h2>
               <p className="mt-4 text-pretty leading-relaxed text-muted-foreground">
                 {el
                   ? COMPARE_HUB_EL.shortBody
-                  : "AnotherSEOGuru is built around a verified Google Search Console property: it reads your real clicks, impressions and positions and turns them into work to do. Ahrefs and Semrush are broader research suites with far larger backlink and keyword indexes. If your bottleneck is finding data, buy an index. If your bottleneck is deciding what to do with the data you already have, that is what we built."}
+                  : "Use AnotherSEOGuru App to choose the next change to your own site from its actual clicks and impressions. Ahrefs and Semrush also help you research competing sites. For client reporting, consider whether you need a written SEO report or a dashboard that covers advertising and social channels too."}
               </p>
             </div>
           }

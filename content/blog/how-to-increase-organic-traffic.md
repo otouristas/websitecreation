@@ -21,7 +21,7 @@ faq:
     answer: In Greece, Foundations starts at {{ENTRY_SEO}} per month, Growth at {{SEO_GROWTH}}, and Authority at {{SEO_AUTHORITY}}, net of VAT. Technical audits start at {{ADDON_TECHNICAL_AUDIT}}. Spend does not predict a traffic number.
 ---
 
-**How to increase organic traffic:** earn more of the right impressions, win the click with a clearer snippet, make sure Google can index the URL, and build enough authority that the page holds. **Organic traffic** is unpaid search visits. These 17 tactics include Search Console walkthroughs and CTR work. They do not forecast clicks.
+If a page already gets impressions in Google, you have a place to start. Look at what people searched for, how often they clicked and whether the page answered their question. Sometimes changing an existing service page is a better use of the week than writing another blog post.
 
 Start with a [free SEO audit](/en/tools/free-seo-audit) or a full [SEO audit](/en/services/seo-audits), then map demand with [keyword research](/en/blog/keyword-research-guide). Short definition: [organic traffic](/en/glossary?term=organic-traffic). Wider system: [what SEO is](/en/blog/what-is-seo).
 
@@ -102,7 +102,7 @@ Tactics 11 to 16 grow impressions once current URLs are healthy. Give a URL to q
 
 ## Timelines and investment
 
-Working windows for planning, not a click forecast. Compare seasonal sites year over year. Tiers are on [pricing](/en/pricing) and in [how much SEO costs](/en/blog/how-much-does-seo-cost).
+Working windows for planning, not a click forecast. Compare seasonal sites year over year. Tiers are on [pricing](/el/ypiresies/times) and in [how much SEO costs](/en/blog/how-much-does-seo-cost).
 
 | Lever | Typical window | Investment |
 | :--- | :--- | :--- |
@@ -142,8 +142,8 @@ Unpaid search visits, separate from ads and email. Snippet and indexation fixes 
 
 ### Why did traffic drop, and what should I budget?
 
-Check seasonality, indexation, redirects, cannibalization, and lost links before a rewrite. Foundations starts at {{ENTRY_SEO}}/mo, Growth at {{SEO_GROWTH}}, Authority at {{SEO_AUTHORITY}}, audits from {{ADDON_TECHNICAL_AUDIT}}. See [pricing](/en/pricing). Spend is not a traffic forecast.
+Check seasonality, indexation, redirects, cannibalization, and lost links before a rewrite. Foundations starts at {{ENTRY_SEO}}/mo, Growth at {{SEO_GROWTH}}, Authority at {{SEO_AUTHORITY}}, audits from {{ADDON_TECHNICAL_AUDIT}}. See [pricing](/el/ypiresies/times). Spend is not a traffic forecast.
 
 ## Get a Growth Plan
 
-To apply the sequence to your property, start with an [SEO audit](/en/services/seo-audits), review [pricing](/en/pricing), or [Get Started](/en/get-started). Bring Search Console access and one conversion goal.
+To apply the sequence to your property, start with an [SEO audit](/en/services/seo-audits), review [pricing](/el/ypiresies/times), or [Get Started](/en/get-started). Bring Search Console access and one conversion goal.

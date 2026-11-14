@@ -43,7 +43,7 @@ const COPY: Record<string, Partial<Record<SiteLocale, IndustryPageCopy>>> = {
       h1: 'Ιστοσελίδες και SEO για μεσιτικά γραφεία',
       accentWords: 2,
       lead:
-        'Φτιάχνουμε ιστοσελίδες για μεσιτικά γραφεία με καταχώρηση ακινήτων, φίλτρα και σελίδες περιοχών, και τις στήνουμε για τοπικό SEO ώστε να σας βρίσκουν αγοραστές και ιδιοκτήτες στην περιοχή σας.',
+        'Οι αγοραστές αναζητούν ακίνητα με βάση την περιοχή και τα χαρακτηριστικά τους. Σχεδιάζουμε την ιστοσελίδα του μεσιτικού σας γραφείου ώστε να βλέπουν τις διαθέσιμες καταχωρήσεις και να ζητούν επίσκεψη μέσα από τη σελίδα του ακινήτου.',
       needsTitle: 'Τι χρειάζεται η ιστοσελίδα ενός μεσιτικού γραφείου',
       servicesTitle: 'Υπηρεσίες για μεσιτικά γραφεία',
       ctaTitle: 'Έτοιμοι για νέα ιστοσελίδα μεσιτικού γραφείου;',
@@ -56,7 +56,7 @@ const COPY: Record<string, Partial<Record<SiteLocale, IndustryPageCopy>>> = {
       h1: 'SEO for doctors and medical practices',
       accentWords: 3,
       lead:
-        'Medical SEO helps patients near you find your practice when they search for a specialty or a symptom on Google. We work on local SEO, specialty pages and reviews, within the limits of medical ethics rules and patient confidentiality.',
+        'Help a patient find the right specialty near home and see how to book a first visit. We work on your practice pages, Google Business Profile and reviews with patient confidentiality and medical ethics in mind.',
       needsTitle: 'What a medical practice website needs',
       needsBody:
         'Patients choose a doctor on trust, distance and how easy it is to book. The site has to answer all three before they pick up the phone.',
@@ -168,7 +168,7 @@ const COPY: Record<string, Partial<Record<SiteLocale, IndustryPageCopy>>> = {
       h1: 'Ιατρικό SEO για γιατρούς και ιατρεία',
       accentWords: 3,
       lead:
-        'Το ιατρικό SEO βοηθά ασθενείς της περιοχής σας να βρίσκουν το ιατρείο σας όταν ψάχνουν ειδικότητα ή σύμπτωμα στη Google. Δουλεύουμε με τοπικό SEO, σελίδες ειδικοτήτων και κριτικές, μέσα στα όρια του ιατρικού κώδικα δεοντολογίας.',
+        'Ο ασθενής που ψάχνει γιατρό κοντά του θέλει να δει την ειδικότητα, πού βρίσκεται το ιατρείο και πώς θα κλείσει ραντεβού. Δουλεύουμε τις σελίδες του ιατρείου σας, το Google Business Profile και τις κριτικές, με σεβασμό στο ιατρικό απόρρητο και τη δεοντολογία.',
       needsTitle: 'Τι χρειάζεται η ιστοσελίδα ενός ιατρείου',
       needsBody:
         'Ο ασθενής διαλέγει γιατρό με βάση την εμπιστοσύνη, την απόσταση και το πόσο εύκολα κλείνει ραντεβού. Η ιστοσελίδα πρέπει να απαντά και στα τρία πριν σηκώσει το τηλέφωνο.',

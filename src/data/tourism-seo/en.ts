@@ -210,7 +210,7 @@ export const ENGLISH_VERTICALS: readonly EnglishTourismVertical[] = [
     h1Accent: 'across Greece',
     blurb: 'Direct bookings from Google, instead of a commission on your own name.',
     lead:
-      'Hotel SEO here has one job: the guest who searches your property, a room type or the destination lands on your site and books there. We work with independent hotels, boutique properties and resorts on islands, in cities and on the coast, and report each month from Search Console.',
+      'A guest looking for a specific room should be able to see it and check availability on your own site. We work on the searches for your property, room types and destination, then report what changed in Search Console each month.',
     sampleKind: 'hotel',
     sections: [
       {
@@ -302,7 +302,7 @@ export const ENGLISH_VERTICALS: readonly EnglishTourismVertical[] = [
     h1Accent: 'in Greece',
     blurb: 'One page per property, so the search matches the villa a guest can actually book.',
     lead:
-      'Villa SEO is won property by property. A guest searches a pool, a view, a number of bedrooms or a beach, and the page has to be that villa, not a gallery of the whole collection. We work with owners and small managers across Greece and report enquiries from the site.',
+      'Someone looking for a three-bedroom villa with a pool needs the photos and details of that property. We build each listing around what sets it apart and make it easy to enquire about dates directly.',
     sampleKind: 'villa',
     sections: [
       {
@@ -385,7 +385,7 @@ export const ENGLISH_VERTICALS: readonly EnglishTourismVertical[] = [
     h1Accent: 'airports, ports and fleets',
     blurb: 'Pickup points and vehicle classes, with the booking on your site.',
     lead:
-      'Rent a car SEO comes down to three things: where the car is collected, which vehicle, and when. We build and improve rental sites so they appear for “car rental” plus your airport, port or island, and the booking stays with you instead of an aggregator.',
+      'Travellers often choose their pickup point before their car. We connect searches for your airport, port or island with a page that shows the available vehicle classes and leads to a direct booking.',
     sampleKind: 'rental',
     sections: [
       {
@@ -468,7 +468,7 @@ export const ENGLISH_VERTICALS: readonly EnglishTourismVertical[] = [
     h1Accent: 'in Greece',
     blurb: 'One page per departure, so the search matches a tour someone can book.',
     lead:
-      'Tour operator SEO is a catalogue problem. People search a specific day trip, a cruise or a pickup town, and the result has to be that experience, with the meeting point, what is included and a way to book. We do this for operators across Greece.',
+      'A traveller comparing day trips wants to know where to meet, what is included and how long they will be away. We build a searchable page for each excursion and give them a way to book with you.',
     sampleKind: 'tours',
     sections: [
       {
@@ -551,7 +551,7 @@ export const ENGLISH_VERTICALS: readonly EnglishTourismVertical[] = [
     h1Accent: 'charter and day cruises',
     blurb: 'A page for the boat and a page for the route, not one marina paragraph.',
     lead:
-      'Boat rental SEO splits in two. Bareboat and skippered charter are searched by vessel. Day cruises are searched by route, stops and whether lunch is included. We build those pages for operators on the Greek islands and keep the request on your site.',
+      'Someone booking a charter looks for a boat and a skipper. A day-cruise guest is more likely to compare stops and what the price includes. Give each of them the right details and a way to enquire on your site.',
     sampleKind: 'boat',
     sections: [
       {
@@ -634,7 +634,7 @@ export const ENGLISH_VERTICALS: readonly EnglishTourismVertical[] = [
     h1Accent: 'airports, ports and hotels',
     blurb: 'One page per route, with the meeting point and the vehicle.',
     lead:
-      'Transfer SEO is a route catalogue. People search the airport or the port, then the hotel or the town, and they want the duration, the vehicle and where the driver will be. We build that for transfer and taxi companies across Greece.',
+      'Airport to hotel or port to town? Build a page for the routes you actually drive, with meeting point, journey time and vehicle details before the enquiry.',
     sampleKind: 'transfer',
     sections: [
       {
@@ -717,7 +717,7 @@ export const ENGLISH_VERTICALS: readonly EnglishTourismVertical[] = [
     h1Accent: 'tourist towns and beach bars',
     blurb: 'The map, a menu Google can read, and a way to ask for a table.',
     lead:
-      'Restaurant SEO in a tourist town is mostly the map. Guests search a cuisine, a beach or “near me” on a phone, then look at photos, hours and the menu. We set up that path for tavernas, restaurants and beach bars, and keep the listing in season.',
+      'Someone looking for dinner nearby checks the map, the current hours and the menu on a phone. We keep that information easy to reach so guests can find a table while your restaurant is open.',
     sampleKind: 'restaurant',
     sections: [
       {
@@ -800,7 +800,7 @@ export const ENGLISH_VERTICALS: readonly EnglishTourismVertical[] = [
     h1Accent: 'packages and group trips',
     blurb: 'Packages as pages, not as PDF attachments nobody can find.',
     lead:
-      'Travel agency SEO turns the programmes you already sell into pages people can find. A group departure, a honeymoon package or a school trip needs its own URL, with the day-by-day plan and a request form, instead of a PDF linked from the homepage.',
+      'Give each departure or package a page travellers can find in search. Show the itinerary, dates and what is included, then let the group organiser ask about their particular trip.',
     sampleKind: 'agency',
     sections: [
       {

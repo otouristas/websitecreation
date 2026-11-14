@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, ArrowUpRight, Globe2, Monitor, MousePointer2, Search } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight, Globe2, Monitor, Search } from "lucide-react";
 import { getPortfolioBySlug, PORTFOLIO_CATEGORIES, portfolioProjects, type PortfolioProject } from "@/data/portfolio";
 import { PROJECT_RESEARCH } from "@/data/portfolio-research";
 import { projectStory } from "@/data/portfolio-stories";
@@ -154,7 +154,7 @@ export function WorkDetail({ project, locale = "en" }: { project: PortfolioProje
           <div className="min-w-0">
             <WaveEyebrow>01 / {tx("The context", "Η αφετηρία")}</WaveEyebrow>
             <h2 className="mt-4 whitespace-pre-line text-balance font-display text-[2rem] font-bold leading-[1.08] tracking-[-0.03em] text-foreground sm:text-[2.6rem]">
-              {tx("A real business.\nA specific audience.", "Μια επιχείρηση.\nΈνα συγκεκριμένο κοινό.")}
+              {tx("Who the site serves", "Σε ποιους απευθύνεται η ιστοσελίδα")}
             </h2>
           </div>
           <div className="min-w-0">
@@ -189,12 +189,8 @@ export function WorkDetail({ project, locale = "en" }: { project: PortfolioProje
           </div>
           <div className="min-w-0">
             <WaveEyebrow>02 / {tx("The experience", "Η εμπειρία")}</WaveEyebrow>
-            <h2 className="mt-4 text-balance font-display text-[2rem] font-bold leading-tight tracking-[-0.03em] text-foreground sm:text-[2.6rem]">{story.headline}</h2>
+            <h2 className="mt-4 text-balance font-display text-[2rem] font-bold leading-tight tracking-[-0.03em] text-foreground sm:text-[2.6rem]">{tx("What visitors can do", "Τι μπορεί να κάνει ο επισκέπτης")}</h2>
             <p className="mt-6 text-pretty text-base leading-8 text-muted-foreground">{story.experience}</p>
-            <div className="mt-7 flex items-start gap-3 rounded-2xl border border-hairline bg-background/70 p-5">
-              <MousePointer2 className="mt-1 size-5 shrink-0 text-primary" aria-hidden />
-              <p className="text-pretty text-sm leading-7 text-muted-foreground">{brief.journey[locale]}</p>
-            </div>
           </div>
         </div>
       </WaveSection>
@@ -204,11 +200,10 @@ export function WorkDetail({ project, locale = "en" }: { project: PortfolioProje
           <div className="min-w-0">
             <WaveEyebrow>03 / {tx("Discoverability", "Η αναζήτηση")}</WaveEyebrow>
             <h2 className="mt-4 text-balance font-display text-[2rem] font-bold tracking-[-0.03em] text-foreground sm:text-[2.6rem]">
-              {tx("The language of the customer.", "Η γλώσσα του πελάτη.")}
+              {tx("What a customer might search for", "Πώς μπορεί να σας αναζητήσει ένας πελάτης")}
             </h2>
           </div>
           <div className="min-w-0">
-            <p className="text-pretty text-base leading-8 text-muted-foreground">{brief.audience[locale]}</p>
             <div className="mt-6 flex flex-wrap gap-3">
               {brief.keywords[locale].map((keyword) => (
                 <span key={keyword} className="inline-flex max-w-full items-center gap-2 rounded-xl border border-hairline bg-background px-4 py-3 text-sm text-foreground">
@@ -219,8 +214,8 @@ export function WorkDetail({ project, locale = "en" }: { project: PortfolioProje
             </div>
             <p className="mt-4 text-pretty text-xs leading-6 text-muted-foreground">
               {tx(
-                "Search topics relevant to the business, not ranking or traffic claims.",
-                "Σχετικά θέματα αναζήτησης για την επιχείρηση, χωρίς ισχυρισμούς κατάταξης ή επισκεψιμότητας.",
+                "Examples of searches relevant to this business.",
+                "Ενδεικτικές αναζητήσεις που σχετίζονται με την επιχείρηση.",
               )}
             </p>
           </div>
@@ -262,12 +257,12 @@ export function WorkDetail({ project, locale = "en" }: { project: PortfolioProje
         <div className="rounded-[22px] border border-hairline bg-gradient-to-br from-primary/10 via-surface to-signal/10 p-8 shadow-[0_0_0_1px_color-mix(in_oklab,var(--primary)_16%,transparent)] sm:p-14">
           <WaveEyebrow>{tx("Your next project", "Το επόμενο έργο")}</WaveEyebrow>
           <h2 className="mt-5 max-w-2xl text-balance font-display text-[2rem] font-bold leading-tight tracking-[-0.03em] text-foreground sm:text-[2.75rem]">
-            {tx("Your business deserves a story of its own.", "Η επιχείρησή σας αξίζει τη δική της ιστορία.")}
+            {tx("What should your website help people do?", "Τι θέλετε να μπορεί να κάνει ο επισκέπτης στην ιστοσελίδα σας;")}
           </h2>
           <p className="mt-5 max-w-xl text-pretty text-base leading-7 text-muted-foreground">
             {tx(
-              "Tell us what you do, who you serve and what you want your website to make possible.",
-              "Πείτε μας τι κάνετε, σε ποιον απευθύνεστε και τι θέλετε να πετύχετε με την ιστοσελίδα σας.",
+              "Tell us whether your customers need to book, buy or ask for a quote, and what gets in their way today.",
+              "Θέλετε περισσότερες κρατήσεις, αγορές ή αιτήματα προσφοράς; Πείτε μας πού δυσκολεύονται σήμερα οι πελάτες σας.",
             )}
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">

@@ -154,7 +154,7 @@ export function getManagedSeoCopy(locale: SiteLocale): ManagedSeoCopy {
       inLanguage: 'el',
       pillTag: 'Ομάδα',
       pillText: 'Ολοκληρωμένη υπηρεσία μέσα στο AnotherSEOGuru App',
-      lead: 'Η διαχείριση SEO είναι η ομάδα που κάνει τη δουλειά: έλεγχο, τεχνικές διορθώσεις, περιεχόμενο, Google Business Profile και εργασίες που βλέπετε στο AnotherSEOGuru App. Δεν μένετε με μια αναφορά και μια λίστα για να την κάνετε μόνοι σας.',
+      lead: 'Αν δεν έχετε χρόνο να ασχολείστε με το SEO κάθε εβδομάδα, το αναλαμβάνουμε εμείς. Ελέγχουμε την ιστοσελίδα, διορθώνουμε τεχνικά προβλήματα και δουλεύουμε το περιεχόμενο και το Google Business Profile σας. Στο AnotherSEOGuru App βλέπετε ποιες εργασίες έγιναν και τι ακολουθεί.',
       primaryHref: `${lp('/get-started')}#free-audit`,
       primaryLabel: 'Κλείστε μια κλήση',
       links: [
@@ -317,7 +317,7 @@ export function getManagedSeoCopy(locale: SiteLocale): ManagedSeoCopy {
     inLanguage: 'en',
     pillTag: 'Team',
     pillText: 'Done for you, inside AnotherSEOGuru App',
-    lead: 'Managed SEO is the team doing the work: the audit, the technical fixes, the content, Google Business Profile and the tasks you can see in AnotherSEOGuru App. You are not left with a report and a list of homework.',
+    lead: 'If you have no one to handle SEO week to week, our team can take it on. We audit your site, make the technical and content changes and work on your Google Business Profile. Open AnotherSEOGuru App to see which tasks are complete and what is due next.',
     primaryHref: `${lp('/get-started')}#free-audit`,
     primaryLabel: 'Book a call',
     links: [

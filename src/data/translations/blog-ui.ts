@@ -1,10 +1,10 @@
 export const blogUiEn = {
   title: 'SEO, GEO & AEO Blog - Guides & Playbooks',
   metaDescription:
-    'Expert guides on Search Console, GEO, AEO, AI search visibility, technical and local SEO, and agency playbooks for global and Greek markets.',
-  h1: 'SEO insights & playbooks',
+    'Learn to investigate a traffic drop, improve your local listing and check how your site appears in AI answers. Practical guides for owners and SEO teams.',
+  h1: 'SEO guides for the work in front of you',
   intro:
-    'Actionable articles on local SEO, Search Console operations, AI visibility, and technical delivery - plus links into the product when you are ready to execute faster.',
+    'Find out why a page lost clicks, how to help nearby customers find your business, or what to check before you launch a new site.',
   readMore: 'Read article',
 } as const;
 
@@ -14,6 +14,6 @@ export const blogUiEl = {
     'Οδηγοί για Google Search Console, GEO, AEO, αναζήτηση με AI, τεχνικό SEO, τοπικό SEO και στρατηγικές για ελληνικές και διεθνείς αγορές.',
   h1: 'Άρθρα & οδηγοί SEO',
   intro:
-    'Πρακτικά άρθρα για τοπικό SEO, Google Search Console, ορατότητα σε AI και τεχνική υλοποίηση, με συνδέσμους στην πλατφόρμα όταν είστε έτοιμοι να προχωρήσετε.',
+    'Γιατί έχασε κλικ μια σελίδα; Πώς θα σας βρουν οι πελάτες της περιοχής σας; Τι αξίζει να ελέγξετε πριν δημοσιεύσετε μια νέα ιστοσελίδα; Βρείτε τον οδηγό για τη δουλειά που έχετε μπροστά σας.',
   readMore: 'Διαβάστε',
 } as const;

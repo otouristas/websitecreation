@@ -91,7 +91,7 @@ export default async function PricingPage({
   const copy = {
     ...raw,
     heroLead: offerLive
-      ? `Black Month: Website Starter €${formatPrice(currentDisplayPrice(websitePackages[0]), siteLocale)} τελική τιμή με ΦΠΑ 24% και SEO Foundations €${formatPrice(currentDisplayPrice(seoPackages[0]), siteLocale)} τελική τιμή τον μήνα με ΦΠΑ 24%, σε όλη την εξάμηνη συνεργασία για νέα έργα που θα επιβεβαιωθούν έως 30 Νοεμβρίου 2026. Παρακάτω θα βρείτε όλα τα πακέτα και τις παροχές τους.`
+      ? `Black Month: Website Starter €${formatPrice(currentDisplayPrice(websitePackages[0]), siteLocale)} τελική τιμή με ΦΠΑ 24% και SEO Foundations €${formatPrice(currentDisplayPrice(seoPackages[0]), siteLocale)} τελική τιμή τον μήνα με ΦΠΑ 24%, σε όλη την εξάμηνη συνεργασία για νέα έργα που θα επιβεβαιωθούν έως 30 Νοεμβρίου 2026. Δείτε τι περιλαμβάνει κάθε πακέτο.`
       : rp(raw.heroLead),
     cost: {
       ...raw.cost,
@@ -219,8 +219,8 @@ export default async function PricingPage({
                 title={accentTail(isEl ? "Μηνιαία πακέτα SEO" : "Monthly SEO engagements")}
                 description={
                   isEl
-                    ? `Ελάχιστη διάρκεια ${SEO_MIN_TERM_MONTHS} μηνών, στη συνέχεια μηνιαία ανανέωση. Δεν πουλάμε SEO με βάση τον αριθμό λέξεων-κλειδιών, αλλά με βάση την κάλυψη της πραγματικής ζήτησης αναζήτησης και την ποιότητα των leads.`
-                    : `A ${SEO_MIN_TERM_MONTHS} month minimum term, then rolling monthly. We do not sell SEO by keyword count, but by coverage of real search demand and the quality of the leads it produces.`
+                    ? `Ελάχιστη διάρκεια ${SEO_MIN_TERM_MONTHS} μηνών, στη συνέχεια μηνιαία ανανέωση. Επιλέγουμε τις σελίδες και τις εργασίες με βάση τις αναζητήσεις που μπορούν να οδηγήσουν σε αιτήματα για τις υπηρεσίες σας.`
+                    : `A ${SEO_MIN_TERM_MONTHS} month minimum term, then rolling monthly. We prioritise pages and tasks around the searches that could bring enquiries for your services.`
                 }
               />
               <div className="mt-12 grid gap-5 lg:grid-cols-3">

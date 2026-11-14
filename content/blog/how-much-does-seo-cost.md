@@ -23,9 +23,9 @@ faq:
     answer: "Low-competition local searches: 2–3 months. Competitive national keywords: 4–6+ months. SEO compounds: each month builds on the last."
 ---
 
-“How much does SEO cost?” is the first question every business asks, and the honest 2026 answer is **€250 to €1,500+ per month** for serious work, depending on competition and goals. This guide breaks down what sits behind those numbers so you can compare quotes with confidence, without #1 guarantees and without fluff.
+An SEO fee only makes sense once you know who will do the work. One quote may cover advice and reporting, while another includes fixing pages and writing content. Compare what will change on your site, how often you’ll hear from the team and what requires a separate budget. Ask for an example monthly report and check whether the quote includes acting on its findings.
 
-> **Compare packages:** see transparent [SEO pricing](/en/pricing) (Foundations from {{ENTRY_SEO}}/mo), our [work](/en/work), or [request a quote](/en/get-started).
+> **Compare packages:** see transparent [SEO pricing](/el/ypiresies/times) (Foundations from {{ENTRY_SEO}}/mo), our [work](/en/work), or [request a quote](/en/get-started).
 
 ## SEO Pricing at a Glance
 
@@ -37,7 +37,7 @@ faq:
 | One-off SEO audit | €300 to €800 | Diagnosis before investing |
 | Hourly consulting | €50 to €120/hr | Targeted fixes |
 
-Our own [SEO packages](/en/pricing) are public and transparent: **Foundations {{ENTRY_SEO}}/mo**, **Growth {{SEO_GROWTH}}/mo**, **Authority {{SEO_AUTHORITY}}/mo**, always in EUR, no hidden fees.
+Our own [SEO packages](/el/ypiresies/times) are public and transparent: **Foundations {{ENTRY_SEO}}/mo**, **Growth {{SEO_GROWTH}}/mo**, **Authority {{SEO_AUTHORITY}}/mo**, always in EUR, no hidden fees.
 
 ## What Drives the Cost of SEO
 
@@ -104,7 +104,7 @@ Month one is diagnosis and technical cleanup. Months two and three expand on-pag
 - **Growth ({{SEO_GROWTH}})**: more keywords, competitive niche, systematic content and a stronger local profile.
 - **Authority ({{SEO_AUTHORITY}})**: e-commerce or national targeting, many categories/locations, link building and GEO/AEO.
 
-If you are unsure which package fits, start with an audit or discovery call: cheaper than the wrong locked contract. Review public [packages](/en/pricing) and compare with the [website cost guide](/en/blog/how-much-does-a-website-cost) if the site needs an upgrade first.
+If you are unsure which package fits, start with an audit or discovery call: cheaper than the wrong locked contract. Review public [packages](/el/ypiresies/times) and compare with the [website cost guide](/en/blog/how-much-does-a-website-cost) if the site needs an upgrade first.
 
 ## FAQ
 
@@ -130,4 +130,4 @@ Rankings for agreed keywords, organic clicks/impressions, leads or conversions w
 
 ## Still Need a Clear Next Step?
 
-See our [packages and pricing](/en/pricing) or [request a free quote](/en/get-started) tailored to your business. We reply within 24 hours with a concrete plan and price, no commitment.
+See our [packages and pricing](/el/ypiresies/times) or [request a free quote](/en/get-started) tailored to your business. We reply within 24 hours with a concrete plan and price, no commitment.

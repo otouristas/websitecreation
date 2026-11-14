@@ -23,9 +23,9 @@ faq:
     answer: "Usually 3–5 weeks once photos, room details, and policies are ready. Content readiness is the usual bottleneck."
 ---
 
-A hotel’s website is its most profitable sales channel, or its most expensive missed opportunity. Great **hotel website design** turns a browser into a direct booking; a slow, dated site sends that guest straight to an OTA that charges you commission. Here’s what a booking-driving hotel site needs in 2026, what it costs, and how to build it for SEO.
+Try booking a room on your own website from a phone. Can you tell which room has a sea view, whether the quoted rate includes breakfast and where to enter your dates? Those are useful design questions long before you choose a typeface or a new photo for the homepage.
 
-> **Related:** [hotel solutions](/en/solutions/hotels) · [pricing](/en/pricing) · [SEO for hotels](/en/blog/hotel-seo-guide) · [website cost guide](/en/blog/how-much-does-a-website-cost) · [free quote](/en/get-started).
+> **Related:** [hotel solutions](/en/solutions/hotels) · [pricing](/el/ypiresies/times) · [SEO for hotels](/en/blog/hotel-seo-guide) · [website cost guide](/en/blog/how-much-does-a-website-cost) · [free quote](/en/get-started).
 
 ## Why Direct Bookings Matter
 

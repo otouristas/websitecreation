@@ -46,8 +46,8 @@ const closingRuleClass =
   "relative border-t border-hairline before:absolute before:inset-x-0 before:top-[-1px] before:h-px before:bg-[linear-gradient(90deg,transparent,var(--primary-glow)_30%,var(--brand)_70%,transparent)] before:opacity-70 before:content-['']";
 
 const PRODUCT_TAGLINE: Record<SiteLocale, string> = {
-  en: "SEO software that turns your Search Console into ranked fixes. On the web, iPhone, Android, Chrome and WordPress.",
-  el: "Λογισμικό SEO που κάνει το Search Console σας λίστα διορθώσεων. Στο web, iPhone, Android, Chrome και WordPress.",
+  en: "Find pages worth updating, ask Aster AI about your search traffic and see what changed after an edit.",
+  el: "Βρείτε ποιες σελίδες αξίζει να βελτιώσετε, ρωτήστε τον Aster AI για τα κλικ τους και δείτε τι άλλαξε μετά από κάθε διόρθωση.",
 };
 
 type FooterLink = { readonly label: string; readonly href: string; readonly external?: boolean };
@@ -78,11 +78,11 @@ function footerColumns(locale: SiteLocale, agency: boolean): readonly FooterColu
     { label: isEl ? "Εφαρμογή iPhone" : "iPhone app", href: lp("/platform/iphone") },
     { label: isEl ? "Ενσωματώσεις" : "Integrations", href: lp("/platform/integrations") },
     { label: isEl ? "Ασφάλεια" : "Security", href: lp("/platform/security") },
-    { label: isEl ? "Για agencies" : "For agencies", href: lp("/platform/for/agencies") },
+    { label: isEl ? "Για εταιρείες SEO" : "For agencies", href: lp("/platform/for/agencies") },
     { label: isEl ? "White-label αναφορές SEO" : "White-label SEO reports", href: lp("/platform/white-label-reports") },
     { label: isEl ? "Εργαλείο πρόβλεψης SEO" : "SEO forecasting tool", href: lp("/platform/seo-forecasting-tool") },
     { label: isEl ? "Δείγμα αναφοράς SEO" : "Sample SEO report", href: lp("/resources/sample-seo-report") },
-    { label: isEl ? "Για in-house ομάδες" : "For in-house teams", href: lp("/platform/for/in-house") },
+    { label: isEl ? "Για εσωτερικές ομάδες SEO" : "For in-house teams", href: lp("/platform/for/in-house") },
     { label: isEl ? "Για e-shop" : "For ecommerce", href: lp("/platform/for/ecommerce") },
   ];
   if (isEl) {

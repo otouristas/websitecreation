@@ -117,16 +117,12 @@ export default async function SeoForecastingToolPage({ params }: PageProps) {
           pill={<AnnouncePill href={finder} tag={tx("Free", "Δωρεάν")} text={tx("Try the forecast on your export, no sign-up", "Δοκιμάστε την πρόβλεψη στην εξαγωγή σας, χωρίς εγγραφή")} />}
           title={
             <>
-              <span className="block">{tx("Forecast the clicks", "Προβλέψτε τα κλικ")}</span>
-              <span className="block">
-                {tx("each SEO fix ", "που θα φέρει ")}
-                <WaveAccent>{tx("will earn.", "κάθε διόρθωση.")}</WaveAccent>
-              </span>
+              {tx("Estimate how many extra clicks", "Πόσα επιπλέον κλικ θα μπορούσε")} <WaveAccent>{tx("an SEO change could bring", "να φέρει μια αλλαγή SEO;")}</WaveAccent>
             </>
           }
           lead={tx(
-            "AnotherSEOGuru App is an SEO forecasting tool built on your own Google Search Console data, not keyword-tool guesses. Every opportunity comes with an estimate of extra monthly clicks, ranked by impact and effort, and every fix is measured after you ship it.",
-            "Το AnotherSEOGuru App είναι εργαλείο πρόβλεψης SEO που βασίζεται στα δικά σας δεδομένα Google Search Console, όχι σε εικασίες. Κάθε ευκαιρία έχει εκτίμηση επιπλέον μηνιαίων κλικ, με σειρά βάσει αντίκτυπου και κόπου, και κάθε διόρθωση μετριέται αφού βγει live.",
+            "Should you rewrite a title or update a page that’s close to the top ten? AnotherSEOGuru App uses your Search Console impressions, position and click-through rate to estimate the monthly clicks at stake. Compare that estimate with the work involved before you choose.",
+            "Να αλλάξετε τον τίτλο ή να βελτιώσετε μια σελίδα που πλησιάζει την πρώτη δεκάδα; Το AnotherSEOGuru App χρησιμοποιεί εμφανίσεις, θέσεις και CTR από το Search Console για να εκτιμήσει τα επιπλέον κλικ τον μήνα. Έτσι μπορείτε να σταθμίσετε το πιθανό όφελος και τη δουλειά που χρειάζεται κάθε αλλαγή.",
           )}
           actions={<WaveSoftwareActions locale={locale} source="forecasting-hero" />}
           trust={<TrustMarks items={[tx("7-day free trial, no card", "7 ημέρες δωρεάν δοκιμή, χωρίς κάρτα"), tx("Read-only Google access", "Πρόσβαση στη Google μόνο για ανάγνωση"), tx("Cancel anytime", "Ακύρωση οποτεδήποτε")]} yesLabel={yes} />}
@@ -154,13 +150,13 @@ export default async function SeoForecastingToolPage({ params }: PageProps) {
             eyebrow={tx("Why it is different", "Γιατί διαφέρει")}
             title={
               <>
-                {tx("Forecasts from your data, ", "Προβλέψεις από τα δεδομένα σας, ")}
-                <WaveAccent>{tx("not industry averages.", "όχι από μέσους όρους.")}</WaveAccent>
+                {tx("How we estimate ", "Πώς εκτιμούμε ")}
+                <WaveAccent>{tx("extra clicks", "τα επιπλέον κλικ")}</WaveAccent>
               </>
             }
             lead={tx(
-              "Most SEO forecasts multiply third-party search volume by a generic CTR curve and overshoot. Search Console already holds your real demand, position and click-through rate for every query.",
-              "Οι περισσότερες προβλέψεις πολλαπλασιάζουν όγκους αναζήτησης τρίτων με γενική καμπύλη CTR και υπερεκτιμούν. Το Search Console έχει ήδη την πραγματική ζήτηση, θέση και CTR για κάθε αναζήτηση.",
+              "The starting point is the number of times your page already appears for a search. Its position and click-through rate help estimate how much room there is to improve.",
+              "Η εκτίμηση ξεκινά από τις εμφανίσεις που έχει ήδη η σελίδα σας για μια αναζήτηση. Η θέση της και το ποσοστό των εμφανίσεων που καταλήγουν σε κλικ δείχνουν πόσο περιθώριο βελτίωσης υπάρχει.",
             )}
           />
           <CapabilityGrid

@@ -20,7 +20,7 @@ faq:
     answer: "Treat intext:, public link:, and some related: behaviors as unstable or retired. Prefer Search Console, server logs, and documented operators for decisions."
 ---
 
-**Google search operators** are still one of the fastest ways to audit a site, check indexing, and steal competitor content ideas, without opening another SaaS tab. This guide lists operators that still work in 2026, with copy-paste recipes for agencies and in-house SEOs running [hotels](/en/solutions/hotels), [rent-a-car fleets](/en/solutions/rent-a-car), or local service sites.
+Typing a search operator into Google can answer a narrow question quickly. Use quotation marks to find a phrase, or site: with your domain to look for pages mentioning a discontinued service. For an indexing decision about a specific URL, confirm what you find in Search Console.
 
 > **Related:** [GSC weekly ops playbook](/en/blog/gsc-weekly-ops-playbook) · [technical SEO guide](/en/blog/technical-seo-guide) · [keyword research](/en/blog/keyword-research-guide) · [Search Console pillar](/en/blog/pillar-search-console-mastery)
 
@@ -179,4 +179,4 @@ Treat `intext:`, public `link:`, and some `related:` behaviors as unstable. Pref
 
 ## Ready to Get Started?
 
-If you want a weekly operator + GSC ops cadence on a Greek tourism or local business site, [request a free audit](/en/get-started) or see [transparent pricing](/en/pricing). Browse [our work](/en/work) for hospitality and mobility examples.
+If you want a weekly operator + GSC ops cadence on a Greek tourism or local business site, [request a free audit](/en/get-started) or see [transparent pricing](/el/ypiresies/times). Browse [our work](/en/work) for hospitality and mobility examples.

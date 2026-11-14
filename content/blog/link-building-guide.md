@@ -25,7 +25,7 @@ faq:
     answer: One specific page of theirs, one reason a link helps their readers, and one URL of yours. This guide includes templates for a broken-link replacement, an unlinked mention, and a resource pitch. Send one relevant email, follow up once, then stop.
 ---
 
-**Link building** is the practice of earning hyperlinks from other websites to yours. Search engines treat quality links as votes of trust. Done poorly, it risks penalties; done well, it compounds [off-page SEO](/en/blog/off-page-seo) and helps competitive pages climb. In 2026 the winning pattern is simple: publish pages worth linking to, then earn editorial placements from relevant sites, never mass spam.
+Which organisations would have a good reason to mention your business on their website? A trade body, local guide or supplier may already list firms like yours. Start there when planning [off-page SEO](/en/blog/off-page-seo). The link should help someone who is reading the page where it appears.
 
 The **backlink building strategies** below are the six we still use: linkable assets, digital PR, relevant guest contributions, broken-link replacements, partnerships, and unlinked-mention reclamation. Further down you will find a prospect sheet and outreach email examples you can copy. Before you pitch anyone, export who already links to the pages you want to beat with a [backlink checker](/en/blog/backlink-checker).
 
@@ -155,7 +155,7 @@ The brackets are the strategy. They force you to name their page, their gap, and
 | Inside Authority retainer | {{SEO_AUTHORITY}}+/mo package band | Higher capacity | Competitive niches |
 | Spam packages | €50 to €200 “lots of links” | Dozens of junk | Risk > reward |
 
-There is **no magic number** of backlinks. Compete against who already ranks for your money query: match topical relevance, then exceed with better pages and steadier acquisition. See [pricing](/en/pricing) and [how much SEO costs](/en/blog/how-much-does-seo-cost).
+There is **no magic number** of backlinks. Compete against who already ranks for your money query: match topical relevance, then exceed with better pages and steadier acquisition. See [pricing](/el/ypiresies/times) and [how much SEO costs](/en/blog/how-much-does-seo-cost).
 
 ## Link Building Checklist Before You Spend
 
@@ -220,4 +220,4 @@ One specific page of theirs, one reason a link helps their readers, and one URL 
 
 ## Ready to Get Started?
 
-Ready for niche-relevant outreach? Start with an [SEO audit](/en/services/seo-audits), review [link building services](/en/services/link-building) and [pricing](/en/pricing), then [Get Started](/en/get-started). Bring your money pages and competitor list: we build a white-hat acquisition plan that supports [organic traffic growth](/en/blog/how-to-increase-organic-traffic).
+Ready for niche-relevant outreach? Start with an [SEO audit](/en/services/seo-audits), review [link building services](/en/services/link-building) and [pricing](/el/ypiresies/times), then [Get Started](/en/get-started). Bring your money pages and competitor list: we build a white-hat acquisition plan that supports [organic traffic growth](/en/blog/how-to-increase-organic-traffic).

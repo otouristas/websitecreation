@@ -150,7 +150,7 @@ export default async function ServicesPage({ params }: PageProps) {
               <AnnouncePill
                 href={lp("/services/ai-visibility")}
                 tag="AI"
-                text={tx("Get recommended by ChatGPT, Gemini and Google AI", "Να σας προτείνουν ChatGPT, Gemini και Google AI")}
+                text={tx("See how your business appears in AI answers", "Δείτε πώς εμφανίζεται η επιχείρησή σας στις απαντήσεις AI")}
                 wrap
               />
             </div>
@@ -158,8 +158,8 @@ export default async function ServicesPage({ params }: PageProps) {
           title={accentEnd(h1, isEl ? 2 : 3)}
           lead={
             isEl
-              ? "Κάθε συνεργασία ξεκινά με ανάλυση της επιχείρησης, της αγοράς και του ανταγωνισμού σας. Τα πακέτα ορίζουν το αρχικό scope, η στρατηγική προσαρμόζεται στο δικό σας project."
-              : "Every engagement starts with analysis of your business, market and competition. Packages define the initial scope; the strategy adapts to your project."
+              ? "Χρειάζεστε νέα ιστοσελίδα ή θέλετε περισσότερα αιτήματα από αυτή που έχετε; Δείτε τι αναλαμβάνουμε σε κάθε περίπτωση και πόσο κοστίζει. Αν δεν ξέρετε από πού να αρχίσετε, μπορούμε να ελέγξουμε πρώτα την ιστοσελίδα σας."
+              : "Do you need a new site, or more enquiries from the one you have? See what each service covers and how it is priced. If the problem is unclear, ask us to check your site first."
           }
           actions={
             <ServiceHeroActions
@@ -201,8 +201,8 @@ export default async function ServicesPage({ params }: PageProps) {
             title={accentEnd(tx("Every service", "Όλες οι υπηρεσίες"), isEl ? 1 : 1)}
             lead={
               isEl
-                ? `Μηνιαία συνεργασία SEO από €${formatPrice(entrySeoDisplay(), siteLocale)} ${currentPriceVatLabel(seoPackages[0], siteLocale)}. Έργα κατασκευής τιμολογούνται ανά project.`
-                : `Monthly SEO engagements from €${formatPrice(entrySeoDisplay(), siteLocale)} ${currentPriceVatLabel(seoPackages[0], siteLocale)}. Website projects are quoted per project.`
+                ? `Μηνιαία συνεργασία SEO από €${formatPrice(entrySeoDisplay(), siteLocale)} ${currentPriceVatLabel(seoPackages[0], siteLocale)}. Για την κατασκευή ιστοσελίδας δίνουμε ξεχωριστή προσφορά.`
+                : `Monthly SEO engagements from €${formatPrice(entrySeoDisplay(), siteLocale)} ${currentPriceVatLabel(seoPackages[0], siteLocale)}. Website builds have a separate, one-off quote.`
             }
           />
           <RiskBuckets tiers={tiers} />
@@ -230,41 +230,41 @@ export default async function ServicesPage({ params }: PageProps) {
         <WaveSteps
           id="process"
           eyebrow={tx("Scope", "Πορεία")}
-          title={accentEnd(tx("How the work is scoped", "Πώς ορίζεται η δουλειά"), isEl ? 2 : 1)}
+          title={accentEnd(tx("How we prepare your quote", "Πώς ετοιμάζουμε την προσφορά σας"), isEl ? 2 : 1)}
           steps={
             isEl
               ? [
                   {
                     n: "01",
                     title: "Ανάλυση",
-                    body: "Κάθε συνεργασία ξεκινά με ανάλυση της επιχείρησης, της αγοράς και του ανταγωνισμού σας.",
+                    body: "Ξεκινάμε από την υπηρεσία που θέλετε να προωθήσετε και τις σελίδες που βρίσκουν σήμερα οι πελάτες σας.",
                   },
                   {
                     n: "02",
-                    title: "Αρχικό scope",
-                    body: "Τα πακέτα ορίζουν το αρχικό scope.",
+                    title: "Εργασίες και κόστος",
+                    body: "Συμφωνούμε τι χρειάζεται να γίνει, τι περιλαμβάνει η τιμή και τι μπορείτε να κρατήσετε για αργότερα.",
                   },
                   {
                     n: "03",
                     title: "Στρατηγική",
-                    body: "Η στρατηγική προσαρμόζεται στο δικό σας project.",
+                    body: "Ορίζουμε ποια αλλαγή έχει προτεραιότητα και πώς θα παρακολουθούμε τα αποτελέσματά της.",
                   },
                 ]
               : [
                   {
                     n: "01",
                     title: "Analysis",
-                    body: "Every engagement starts with analysis of your business, market and competition.",
+                    body: "We start with the service you want to sell and the pages your customers find today.",
                   },
                   {
                     n: "02",
-                    title: "Initial scope",
-                    body: "Packages define the initial scope.",
+                    title: "Work and cost",
+                    body: "We agree what needs doing, what is included in the price and what can wait.",
                   },
                   {
                     n: "03",
                     title: "Strategy",
-                    body: "The strategy adapts to your project.",
+                    body: "We choose the first change and agree how we will follow its effect.",
                   },
                 ]
           }

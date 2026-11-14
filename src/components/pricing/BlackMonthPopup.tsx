@@ -160,8 +160,8 @@ export function BlackMonthPopup({ enabled }: { enabled: boolean }) {
           <span>Δώρο και ο ΦΠΑ.</span>
         </h2>
         <p className={styles.lead}>
-          Αυτόν τον Νοέμβριο, η αναγραφόμενη τιμή είναι και η τελική. Καλύπτουμε
-          τον ΦΠΑ για το επόμενο βήμα της επιχείρησής σας.
+          Αν σχεδιάζετε νέα ιστοσελίδα ή θέλετε να αναλάβουμε το SEO σας,
+          η τιμή που βλέπετε για τα δύο πακέτα περιλαμβάνει και τον ΦΠΑ.
         </p>
         <div className={styles.offers}>
           <div>
@@ -194,7 +194,7 @@ export function BlackMonthPopup({ enabled }: { enabled: boolean }) {
           className={styles.primary}
           onClick={close}
         >
-          Δείτε τα πακέτα Black Month
+          Δείτε τις τιμές για ιστοσελίδα και SEO
           <ArrowUpRight size={18} aria-hidden />
         </Link>
         <Link

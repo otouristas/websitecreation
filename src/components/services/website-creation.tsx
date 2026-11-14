@@ -74,9 +74,9 @@ const topicsEl: readonly ServiceTopicEl[] = [
 const copy = {
   en: {
     eyebrow: 'Website creation',
-    h1: 'Website creation built to be found, not just to look finished',
+    h1: 'Website design for the way your customers buy',
     lede:
-      'A site that wins design awards and no search traffic is a brochure. We build the design and the search foundation as one job, so the thing you launch can actually bring you work.',
+      'What should someone do when they find your site? We design around that action, from requesting a quote to making a booking, and include the search setup in the build.',
     ctaPrimary: 'Start your project',
     ctaSecondary: 'See the work',
     stages: [
@@ -167,9 +167,9 @@ const copy = {
   },
   el: {
     eyebrow: 'Κατασκευή ιστοσελίδων',
-    h1: 'Κατασκευή ιστοσελίδων που φέρνουν πελάτες από τη Google',
+    h1: 'Κατασκευή ιστοσελίδων για την επιχείρησή σας',
     lede:
-      'Η κατασκευή ιστοσελίδας στην AnotherSEOGuru περιλαμβάνει σχεδιασμό, ανάπτυξη και βασικό SEO από την πρώτη μέρα. Η δημιουργία ιστοσελίδας ξεκινά από {{ENTRY_WEBSITE}} και ένα site παρουσίασης παραδίδεται συνήθως σε 3–5 εβδομάδες.',
+      'Φτιάχνουμε την ιστοσελίδα με βάση αυτό που θέλετε να κάνει ο πελάτης όταν σας βρει, για παράδειγμα να ζητήσει προσφορά ή να κλείσει ραντεβού. Η τιμή ξεκινά από {{ENTRY_WEBSITE}} με βασικό SEO. Μια ιστοσελίδα παρουσίασης συνήθως χρειάζεται 3–5 εβδομάδες.',
     ctaPrimary: 'Ζητήστε προσφορά',
     ctaSecondary: 'Δείτε έργα',
     stages: [

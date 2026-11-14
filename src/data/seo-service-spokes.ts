@@ -231,7 +231,7 @@ const spokes: Record<SpokeSlug, Record<SiteLocale, Omit<SpokePageCopy, 'slug'>>>
       eyebrow: 'Technical SEO',
       h1: 'Technical SEO so Google can read the pages that sell',
       lead:
-        'Technical SEO removes what stops Google crawling, reading and indexing the pages that sell: indexation errors, canonicals, speed and Core Web Vitals, structured data that matches the visible page, and the internal links between those pages.',
+        'If pages you rely on for bookings are missing from Google, writing more articles may miss the problem. We check whether Google can reach those pages and show your developers which fixes come first.',
       extra:
         'The ongoing fixes are part of the monthly SEO engagement. A one-off technical audit is a separate add-on on the published price list.',
       metaTitle: 'Technical SEO Services: Crawl, Indexation & Core Web Vitals',
@@ -338,7 +338,7 @@ const spokes: Record<SpokeSlug, Record<SiteLocale, Omit<SpokePageCopy, 'slug'>>>
       eyebrow: 'Τεχνικό SEO',
       h1: 'Τεχνικό SEO ώστε η Google να διαβάζει τις σελίδες που πουλάνε',
       lead:
-        'Το τεχνικό SEO αφαιρεί ό,τι εμποδίζει τη Google να κάνει crawl, να διαβάσει και να ευρετηριάσει τις σελίδες που πουλάνε: σφάλματα ευρετηρίασης, canonical, ταχύτητα και Core Web Vitals, structured data που συμφωνούν με τη σελίδα, και οι εσωτερικοί σύνδεσμοι ανάμεσά τους.',
+        'Αν η Google δεν βρίσκει τις σελίδες όπου δέχεστε κρατήσεις ή αιτήματα, χρειάζεται να μάθετε τον λόγο. Ελέγχουμε πώς τις διαβάζει και ποιες διορθώσεις πρέπει να αναλάβει πρώτα η τεχνική σας ομάδα.',
       extra:
         'Οι συνεχείς διορθώσεις ανήκουν στη μηνιαία συνεργασία SEO. Ένας εφάπαξ τεχνικός έλεγχος είναι ξεχωριστό πρόσθετο στον δημοσιευμένο τιμοκατάλογο.',
       metaTitle: 'Τεχνικό SEO: Ευρετηρίαση & Core Web Vitals | AnotherSEOGuru',
@@ -447,7 +447,7 @@ const spokes: Record<SpokeSlug, Record<SiteLocale, Omit<SpokePageCopy, 'slug'>>>
       eyebrow: 'On-page SEO',
       h1: 'On-page SEO for the pages that can bring a customer',
       lead:
-        'On-page SEO is the page itself. The title tag, the headings, the copy and the internal links are written for the one search that page should own. One commercial cluster, one URL.',
+        'When a page appears in search but earns few clicks, we review the title and the answer it gives. We work on pages where a clearer description or a better link could help someone find what they came for.',
       extra:
         'It is part of the monthly Foundations engagement, and it starts after the technical issues that stop those pages being indexed.',
       metaTitle: 'On-Page SEO Services: Titles, Headings & Copy | Monthly SEO',
@@ -553,7 +553,7 @@ const spokes: Record<SpokeSlug, Record<SiteLocale, Omit<SpokePageCopy, 'slug'>>>
       eyebrow: 'On-page SEO',
       h1: 'On-page SEO για τις σελίδες που μπορούν να φέρουν πελάτη',
       lead:
-        'Το on-page SEO είναι η ίδια η σελίδα. Το title tag, οι επικεφαλίδες, το κείμενο και οι εσωτερικοί σύνδεσμοι γράφονται για τη μία αναζήτηση που πρέπει να κερδίσει η σελίδα. Μία εμπορική ομάδα αναζητήσεων, ένα URL.',
+        'Αν μια σελίδα εμφανίζεται συχνά στη Google αλλά παίρνει λίγα κλικ, εξετάζουμε τον τίτλο και τι απάντηση δίνει στον επισκέπτη. Δουλεύουμε πρώτα τις σελίδες που μπορούν να οδηγήσουν σε επικοινωνία ή αγορά.',
       extra:
         'Ανήκει στη μηνιαία συνεργασία Foundations και ξεκινά αφού διορθωθούν τα τεχνικά ζητήματα που εμποδίζουν την ευρετηρίαση αυτών των σελίδων.',
       metaTitle: 'On-page SEO: Title, Επικεφαλίδες & Κείμενο | AnotherSEOGuru',
@@ -661,7 +661,7 @@ const spokes: Record<SpokeSlug, Record<SiteLocale, Omit<SpokePageCopy, 'slug'>>>
       eyebrow: 'SEO strategy',
       h1: 'An SEO strategy from your Search Console, not a template',
       lead:
-        'An SEO strategy names the pages, the fixes and the order of the work. It starts from the queries, clicks and URLs already in your Search Console, then says what happens each month.',
+        'Decide which pages to fix, which ones to write and who should do the work. We use your search data and business priorities to put those decisions into a plan your team can follow.',
       extra:
         'The monthly plan is SEO Foundations. The higher packages on the price list add coverage and a monthly strategy call. We do not promise a position.',
       metaTitle: 'SEO Strategy Services Built on Search Console | Monthly Plan',
@@ -767,7 +767,7 @@ const spokes: Record<SpokeSlug, Record<SiteLocale, Omit<SpokePageCopy, 'slug'>>>
       eyebrow: 'Στρατηγική SEO',
       h1: 'Στρατηγική SEO από το Search Console σας, όχι από πρότυπο',
       lead:
-        'Μια στρατηγική SEO ονομάζει τις σελίδες, τις διορθώσεις και τη σειρά της δουλειάς. Ξεκινά από τα queries, τα κλικ και τα URL που υπάρχουν ήδη στο Search Console σας, και μετά λέει τι γίνεται κάθε μήνα.',
+        'Ποιες σελίδες χρειάζονται διόρθωση και ποιες λείπουν εντελώς; Με βάση τα στοιχεία αναζήτησης και τους στόχους της επιχείρησής σας, βάζουμε τις εργασίες σε σειρά ώστε να ξέρετε από πού να ξεκινήσετε.',
       extra:
         'Το μηνιαίο πλάνο είναι το SEO Foundations. Τα ανώτερα πακέτα στον τιμοκατάλογο προσθέτουν κάλυψη και μηνιαία κλήση στρατηγικής. Δεν υποσχόμαστε θέση.',
       metaTitle: 'Στρατηγική SEO με Βάση το Search Console | AnotherSEOGuru',

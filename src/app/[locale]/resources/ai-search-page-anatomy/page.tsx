@@ -92,10 +92,10 @@ const AUDIT_STEPS = [
 
 /** What this page is not, said early, because the diagram invites the opposite. */
 const NOT_A_SCORE = [
-  'There is no score here and nothing to hit 100 on',
-  'Doing all twelve does not make a citation owed to you',
-  'A page that needs every one of them is usually two pages',
-  'The example content is fiction, including every figure in it',
+  'Start with the question this particular page should answer',
+  'AI assistants choose their sources for each question',
+  'If the page serves two different needs, consider giving each its own answer',
+  'When you publish figures, say where they came from and which dates they cover',
 ] as const;
 
 export default async function AiSearchPageAnatomyPage({ params }: PageProps) {
@@ -140,7 +140,7 @@ export default async function AiSearchPageAnatomyPage({ params }: PageProps) {
         title={accentTail(el ? g.headline : 'Anatomy of a page built for AI search', 2)}
         size="md"
         /* Answer-first, and practising what the page preaches. */
-        lead={el ? g.lead : "The classic on-page checklist assumed a person scanning results and deciding what to click. This one assumes a language model deciding what to quote. The two want different things from the same HTML: liftable answers rather than clever introductions, tables rather than prose, attributed numbers rather than adjectives, and text the server sent rather than text a browser drew."}
+        lead={el ? g.lead : "If a buyer asks an AI assistant about your service, could it quote a clear answer from your page? Work through a sample page to see where a definition, a source for a figure or text that a crawler can read makes a difference."}
         meta={
           <p className="text-[15px] text-muted-foreground">
             {el ? g.meta : 'Twelve parts of a page, each one annotated on a worked example below.'}
@@ -163,7 +163,7 @@ export default async function AiSearchPageAnatomyPage({ params }: PageProps) {
           eyebrow={el ? g.annotated : 'The page, annotated'}
           eyebrowIcon={<ScanSearch />}
           title={accentTail(el ? g.twelve : 'Twelve parts of one page', el ? 3 : 2)}
-          description={el ? g.twelveDesc : 'A worked example in the middle, the notes in the margins. Everything in the sample is invented, including the figures; the points around it are not.'}
+          description={el ? g.twelveDesc : 'The business and figures in this example are fictional. Each annotation shows something you can check on your own page.'}
         />
         <AiPageAnatomy className="mt-12" locale={siteLocale} />
       </KitSection>
@@ -172,8 +172,8 @@ export default async function AiSearchPageAnatomyPage({ params }: PageProps) {
         <KitHeading
           eyebrow={el ? g.check : 'How to check a page'}
           eyebrowIcon={<ListChecks />}
-          title={accentTail(el ? g.checkTitle : 'Auditing one of your own, in five minutes', 2)}
-          description={el ? g.checkDesc : 'Read the page the way a retrieval system does rather than the way its author does. Most of what is wrong shows up in the first two steps.'}
+          title={accentTail(el ? g.checkTitle : 'Check a page from your own site', 2)}
+          description={el ? g.checkDesc : 'Pick one question a customer asks. Check whether the full answer is accessible and whether its claims match the rest of the page.'}
         />
         <StepsGrid className="mt-10" steps={(el ? g.steps : AUDIT_STEPS).map((step) => ({ title: step.title, text: step.body }))} />
       </KitSection>
@@ -183,8 +183,8 @@ export default async function AiSearchPageAnatomyPage({ params }: PageProps) {
           <KitHeading
             eyebrow={el ? g.limits : 'Honest limits'}
             eyebrowIcon={<ShieldAlert />}
-            title={el ? g.notTitle : <>What this is <Accent>not</Accent></>}
-            description={el ? g.notDesc : 'Checklists turn into scorecards, and scorecards turn into pages written for a machine that nobody wants to read.'}
+            title={el ? g.notTitle : <>Which checks <Accent>apply to your page?</Accent></>}
+            description={el ? g.notDesc : 'A service page may need a clear explanation of costs more than a comparison table. Choose the elements that help someone make a decision.'}
           />
           <div className="mt-8 rounded-2xl border border-hairline bg-surface/70 p-6 sm:p-8">
             <CheckList items={el ? [...g.notItems] : NOT_A_SCORE} />
@@ -214,7 +214,6 @@ export default async function AiSearchPageAnatomyPage({ params }: PageProps) {
       <KitFaq
         items={[...faqs]}
         title={accentTail(el ? g.faqTitle : 'Questions about writing for answer engines', 2)}
-        description={el ? g.faqDesc : 'Asked often enough to belong on the page rather than in a reply.'}
       />
 
       <KitSection className="!pb-0">

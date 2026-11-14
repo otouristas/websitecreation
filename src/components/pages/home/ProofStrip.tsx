@@ -12,9 +12,9 @@ export function ProofStrip({ locale }: { readonly locale: SiteLocale }) {
   return (
     <section data-shot="proof" aria-labelledby="proof-title" className="mx-auto max-w-[1240px] px-5 pb-16 lg:px-8">
       <div className="rounded-[22px] border border-hairline bg-surface/60 p-6 sm:p-8">
-        <p className="text-[12px] font-semibold uppercase tracking-wider text-primary">{el ? 'Η απόδειξη' : 'The proof'}</p>
+        <p className="text-[12px] font-semibold uppercase tracking-wider text-primary">{el ? 'Στοιχεία από έργα μας' : 'Client projects'}</p>
         <h2 id="proof-title" className="mt-2 text-balance font-display text-[1.5rem] font-bold tracking-tight text-foreground sm:text-[1.9rem]">
-          {el ? 'Μετρημένα κλικ από το Search Console, πριν και μετά.' : 'Measured clicks from Search Console, before and after.'}
+          {el ? 'Πώς άλλαξαν τα κλικ σε τρεις ιστοσελίδες πελατών' : 'How search clicks changed across three client sites'}
         </h2>
         <ul className="mt-7 grid gap-6 sm:grid-cols-3">
           {cases.map((c) => (
@@ -24,6 +24,7 @@ export function ProofStrip({ locale }: { readonly locale: SiteLocale }) {
                   {metricValue(c.headline, el)}
                 </span>
                 <span className="mt-2 block text-[14px] leading-snug text-muted-foreground">{el ? c.headline.labelEl : c.headline.labelEn}</span>
+                <span className="mt-1 block text-[12px] text-muted-foreground">{el ? c.periodEl : c.periodEn}</span>
                 <span className="mt-2 inline-flex items-center gap-1 text-[13px] font-semibold text-primary group-hover:text-foreground">
                   {c.name}
                   <ArrowRight className="size-3.5" aria-hidden />

@@ -63,8 +63,8 @@ const FAQ: ReadonlyArray<GscFaqItem> = [
   {
     q: c("What does it cost?", "Πόσο κοστίζει;"),
     a: c(
-      `White-label client reports are part of the Agency plan ($${planById("Agency").monthly} a month for ${planById("Agency").sites} sites and ${planById("Agency").seats} seats, two months free on yearly billing). Reports built from Search Console never use credits, so sending more reports does not cost more.`,
-      `Οι white-label αναφορές πελατών ανήκουν στο πακέτο Agency ($${planById("Agency").monthly} τον μήνα για ${planById("Agency").sites} ιστοτόπους και ${planById("Agency").seats} χρήστες, δύο μήνες δώρο στην ετήσια χρέωση). Οι αναφορές από το Search Console δεν χρησιμοποιούν ποτέ μονάδες.`,
+      `White-label branding is available as an add-on or included in the Agency plan ($${planById("Agency").monthly} a month for ${planById("Agency").sites} sites and ${planById("Agency").seats} seats, two months free on yearly billing). Reports built from Search Console never use credits, so sending more reports does not cost more.`,
+      `Οι αναφορές με το λογότυπό σας διατίθενται ως πρόσθετο ή περιλαμβάνονται στο πακέτο Agency ($${planById("Agency").monthly} τον μήνα για ${planById("Agency").sites} ιστοτόπους και ${planById("Agency").seats} χρήστες, δύο μήνες δώρο στην ετήσια χρέωση). Οι αναφορές από το Search Console δεν χρησιμοποιούν ποτέ μονάδες.`,
     ),
     link: { kind: "site", path: "/pricing", label: c("See all plans", "Δείτε όλα τα πακέτα") },
   },
@@ -93,8 +93,8 @@ const FAQ: ReadonlyArray<GscFaqItem> = [
   {
     q: c("Can I try it before paying?", "Μπορώ να το δοκιμάσω πριν πληρώσω;"),
     a: c(
-      "Yes. Every new account gets a 7-day free trial with no card, and the live demo opens the Reports screen on sample data with no sign-up at all.",
-      "Ναι. Κάθε νέος λογαριασμός έχει 7 ημέρες δωρεάν δοκιμή χωρίς κάρτα, και η ζωντανή επίδειξη ανοίγει τις Αναφορές σε δείγμα δεδομένων χωρίς καμία εγγραφή.",
+      "Open the reports demo to see a sample before you sign up. A new account also includes a seven-day Pro trial without a card. White-label branding is included with Agency or available as an add-on.",
+      "Δείτε μια ενδεικτική αναφορά στην επίδειξη χωρίς εγγραφή. Με νέο λογαριασμό μπορείτε επίσης να δοκιμάσετε το Pro για επτά ημέρες χωρίς κάρτα. Για αναφορές με τη δική σας επωνυμία, επιλέξτε το πακέτο Agency ή το αντίστοιχο πρόσθετο.",
     ),
     link: { kind: "app", path: "/demo/reports", label: c("Open the demo", "Ανοίξτε το demo") },
   },
@@ -133,16 +133,12 @@ export default async function WhiteLabelReportsPage({ params }: PageProps) {
           pill={<AnnouncePill href="#sample" tag={tx("Agencies", "Agencies")} text={tx("White-label SEO reporting tool", "Εργαλείο white-label αναφορών SEO")} />}
           title={
             <>
-              <span className="block">{tx("White-label SEO reports", "White-label αναφορές SEO")}</span>
-              <span className="block">
-                {tx("your clients ", "που οι πελάτες σας ")}
-                <WaveAccent>{tx("actually read.", "πραγματικά διαβάζουν.")}</WaveAccent>
-              </span>
+              {tx("Send clients an SEO report", "Στείλτε στους πελάτες σας αναφορά SEO")} <WaveAccent>{tx("under your own name", "με το δικό σας λογότυπο")}</WaveAccent>
             </>
           }
           lead={tx(
-            "AnotherSEOGuru App turns each client's Google Search Console data into a monthly report under your logo: a clear summary, what changed and why, the work you shipped and what comes next. Download the PDF or schedule the email. No spreadsheets, no Looker Studio connectors, and Search Console reports never use credits.",
-            "Το AnotherSEOGuru App μετατρέπει τα δεδομένα Google Search Console κάθε πελάτη σε μηνιαία αναφορά με το δικό σας λογότυπο: καθαρή σύνοψη, τι άλλαξε και γιατί, τι υλοποιήσατε και τι ακολουθεί. Κατεβάστε το PDF ή προγραμματίστε το email. Χωρίς υπολογιστικά φύλλα και χωρίς connectors, και οι αναφορές Search Console δεν χρεώνουν ποτέ μονάδες.",
+            "Show your client which pages gained or lost clicks, what you worked on and what you recommend next. AnotherSEOGuru App pulls the figures from their Search Console account. Add your summary, then download the PDF or schedule the email.",
+            "Δείξτε στον πελάτη ποιες σελίδες κέρδισαν ή έχασαν κλικ, τι βελτιώσατε και τι προτείνετε για τον επόμενο μήνα. Το AnotherSEOGuru App συγκεντρώνει τα στοιχεία από το Search Console του πελάτη. Προσθέστε τη σύνοψή σας και κατεβάστε την αναφορά σε PDF ή προγραμματίστε την αποστολή της με email.",
           )}
           actions={<WaveSoftwareActions locale={locale} source="white-label-hero" />}
           trust={<TrustMarks items={[tx("7-day free trial, no card", "7 ημέρες δωρεάν δοκιμή, χωρίς κάρτα"), tx("Read-only Google access", "Πρόσβαση στη Google μόνο για ανάγνωση"), tx("Cancel anytime", "Ακύρωση οποτεδήποτε")]} yesLabel={yes} />}
@@ -175,8 +171,8 @@ export default async function WhiteLabelReportsPage({ params }: PageProps) {
               </>
             }
             lead={tx(
-              "Everything a client sees carries your agency's name. The data source stays visible, because “Source: Google Search Console” is what makes the numbers credible.",
-              "Ό,τι βλέπει ο πελάτης φέρει το όνομα του agency σας. Η πηγή των δεδομένων μένει ορατή, γιατί το «Πηγή: Google Search Console» κάνει τα νούμερα αξιόπιστα.",
+              "Your name and logo appear on the report, and the client can see which figures came from their own Search Console account.",
+              "Η αναφορά φέρει το όνομα και το λογότυπό σας. Ο πελάτης βλέπει επίσης ότι τα στοιχεία προέρχονται από το δικό του Google Search Console.",
             )}
           />
           <CapabilityGrid
@@ -253,8 +249,8 @@ export default async function WhiteLabelReportsPage({ params }: PageProps) {
               </>
             }
             lead={tx(
-              "Most agencies spend an hour or more per client per month assembling reports. The app does the assembly; you write the three-sentence summary.",
-              "Τα περισσότερα agencies ξοδεύουν μία ώρα ή περισσότερο ανά πελάτη τον μήνα για τις αναφορές. Η εφαρμογή κάνει τη συναρμολόγηση· εσείς γράφετε τη σύνοψη.",
+              "Choose the client and the reporting period. The app fills in the search figures so you can spend your time explaining the changes and the work planned for next month.",
+              "Επιλέξτε πελάτη και χρονικό διάστημα. Η εφαρμογή συμπληρώνει τα στοιχεία αναζήτησης και εσείς εξηγείτε τις αλλαγές και τις προτεραιότητες του επόμενου μήνα.",
             )}
           />
           <div className="mt-10 overflow-x-auto rounded-[22px] border border-hairline bg-background/80">

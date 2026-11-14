@@ -135,22 +135,22 @@ export function getNavModel(locale: SiteLocale, mode: NavMode = 'product', now: 
     label: t('Services', 'Υπηρεσίες'),
     columns: [
       {
-        title: t('Get found', 'Εμφανιστείτε'),
+        title: t('Search visibility', 'Παρουσία στην αναζήτηση'),
         items: [
           ...(el
             ? [
-                { href: lp('/seo'), label: 'SEO σε όλη την Ελλάδα', desc: 'Μία σελίδα για κάθε πόλη και νησί', icon: 'map' as const },
+                { href: lp('/seo'), label: 'SEO σε όλη την Ελλάδα', desc: 'Υπηρεσίες SEO στην περιοχή σας', icon: 'map' as const },
                 { href: lp('/seo-tourismou'), label: 'SEO για τουρισμό', desc: 'Ξενοδοχεία, rent a car, βίλες, εκδρομές', icon: 'hotel' as const },
               ]
             : []),
           { href: lp('/seo-guru'), label: 'SEO guru', desc: t('Who we are and how the work is done', 'Ποιοι είμαστε και πώς γίνεται η δουλειά'), icon: 'users' },
-          { href: lp('/seo-services'), label: t('SEO services', 'Υπηρεσίες SEO'), desc: t('Monthly SEO that brings customers', 'Μηνιαίο SEO που φέρνει πελάτες'), icon: 'trend', badge: POPULAR, meta: t(`from €${seoFrom}/mo ${seoMetaVat}`, `από €${seoFrom}/μήνα ${seoMetaVat}`) },
-          { href: lp('/services/ai-visibility'), label: t('AI visibility (GEO / AEO)', 'Ορατότητα σε AI (GEO / AEO)'), desc: t('Get recommended by ChatGPT and Gemini', 'Να σας προτείνουν ChatGPT και Gemini'), icon: 'sparkles', badge: AI },
-          { href: lp('/services/local-seo'), label: t('Local SEO', 'Τοπικό SEO'), desc: t('Win the Google Maps results', 'Πρώτοι στον χάρτη της Google'), icon: 'map' },
+          { href: lp('/seo-services'), label: t('SEO services', 'Υπηρεσίες SEO'), desc: t('Monthly work on your site', 'Κάθε μήνα βελτιώσεις στην ιστοσελίδα σας'), icon: 'trend', badge: POPULAR, meta: t(`from €${seoFrom}/mo ${seoMetaVat}`, `από €${seoFrom}/μήνα ${seoMetaVat}`) },
+          { href: lp('/services/ai-visibility'), label: t('AI visibility (GEO / AEO)', 'Ορατότητα σε AI (GEO / AEO)'), desc: t('Check how AI answers describe you', 'Δείτε πώς παρουσιάζουν την επιχείρησή σας οι βοηθοί AI'), icon: 'sparkles', badge: AI },
+          { href: lp('/services/local-seo'), label: t('Local SEO', 'Τοπικό SEO'), desc: t('Help nearby customers find you', 'Για πελάτες που σας ψάχνουν στην περιοχή σας'), icon: 'map' },
           { href: lp('/services/seo-audits'), label: t('SEO audit', 'Έλεγχος SEO'), desc: t('What holds your site back', 'Τι κρατά πίσω την ιστοσελίδα σας'), icon: 'audit', badge: FREE },
-          { href: lp('/services/eshop-seo'), label: t('E-shop SEO', 'SEO για e-shop'), desc: t('More organic product sales', 'Περισσότερες οργανικές πωλήσεις'), icon: 'cart' },
+          { href: lp('/services/eshop-seo'), label: t('E-shop SEO', 'SEO για e-shop'), desc: t('Product and category pages', 'Σελίδες προϊόντων και κατηγοριών'), icon: 'cart' },
           { href: lp('/services/link-building'), label: t('Link building', 'Backlinks'), desc: t('Clean links and digital PR', 'Καθαρά backlinks και digital PR'), icon: 'link' },
-          { href: lp('/services/content-creation'), label: t('Content', 'Περιεχόμενο'), desc: t('Pages written to rank and sell', 'Κείμενα που κατατάσσονται και πουλάνε'), icon: 'pen' },
+          { href: lp('/services/content-creation'), label: t('Content', 'Περιεχόμενο'), desc: t('Answer questions before the sale', 'Απαντήσεις σε ερωτήσεις πριν την αγορά'), icon: 'pen' },
         ],
       },
       {
@@ -160,7 +160,7 @@ export function getNavModel(locale: SiteLocale, mode: NavMode = 'product', now: 
           { href: lp('/services/eshop-woocommerce'), label: t('E-shop development', 'Κατασκευή e-shop'), desc: t('WooCommerce stores that sell', 'Καταστήματα WooCommerce που πουλάνε'), icon: 'cart' },
           { href: lp('/services/website-redesign'), label: t('Website redesign', 'Ανασχεδιασμός ιστοσελίδας'), desc: t('Modernise without losing rankings', 'Ανανέωση χωρίς απώλεια θέσεων'), icon: 'refresh' },
           { href: lp('/services/web-design'), label: t('Web design', 'Σχεδιασμός με SEO'), desc: t('Built to rank from day one', 'Σχεδιασμένη να κατατάσσεται'), icon: 'search' },
-          { href: lp('/services/speed-optimization'), label: t('Speed optimisation', 'Βελτίωση ταχύτητας'), desc: t('Pass Core Web Vitals', 'Επιτυχία στα Core Web Vitals'), icon: 'gauge' },
+          { href: lp('/services/speed-optimization'), label: t('Speed optimisation', 'Βελτίωση ταχύτητας'), desc: t('Find what slows a page down', 'Βρείτε τι καθυστερεί τη σελίδα'), icon: 'gauge' },
           { href: lp('/services/logo-design'), label: t('Logo design', 'Σχεδιασμός λογοτύπου'), desc: t('A brand people remember', 'Μια ταυτότητα που θυμούνται'), icon: 'palette' },
         ],
       },
@@ -175,7 +175,7 @@ export function getNavModel(locale: SiteLocale, mode: NavMode = 'product', now: 
       ),
       points: [
         t('Technical, local and AI-search checks', 'Τεχνικό, τοπικό SEO και αναζήτηση AI'),
-        t('Your top 5 fixes, in order', 'Οι 5 πρώτες διορθώσεις, με σειρά'),
+        t('Up to three findings from your site', 'Έως τρία ευρήματα από τον έλεγχο'),
         t('Initial review, no commitment', 'Αρχικός έλεγχος, χωρίς δέσμευση'),
       ],
       chips: [t(`SEO from €${seoFrom}/mo ${seoVat}`, `SEO από €${seoFrom}/μήνα ${seoVat}`), t(`Websites from €${webFrom} ${webVat}`, `Ιστοσελίδες από €${webFrom} ${webVat}`)],
@@ -213,14 +213,14 @@ export function getNavModel(locale: SiteLocale, mode: NavMode = 'product', now: 
     feature: {
       tone: 'proof',
       eyebrow: t('Case studies', 'Αποτελέσματα'),
-      title: t('Real results from Search Console', 'Πραγματικά αποτελέσματα από το Search Console'),
+      title: t('Client sites in Search Console', 'Τα έργα μας στο Search Console'),
       body: t(
         'Hotels, villas and rental companies across the Greek islands. Every number comes from the client’s own data.',
         'Ξενοδοχεία, βίλες και εταιρείες ενοικίασης στα νησιά. Κάθε νούμερο προέρχεται από τα δεδομένα του πελάτη.',
       ),
       points: [
-        t('Greek and English sites, both ranked', 'Ελληνικές και αγγλικές σελίδες, και οι δύο στην κορυφή'),
-        t('Direct bookings, not just traffic', 'Απευθείας κρατήσεις, όχι απλώς επισκέψεις'),
+        t('Greek and English websites', 'Ιστοσελίδες στα ελληνικά και στα αγγλικά'),
+        t('Booking and enquiry pages', 'Σελίδες κρατήσεων και επικοινωνίας'),
         t('Monthly reports you can check', 'Μηνιαίες αναφορές που ελέγχετε'),
       ],
       primary: { href: lp('/work'), label: t('See our work', 'Δείτε τη δουλειά μας') },
@@ -236,34 +236,34 @@ export function getNavModel(locale: SiteLocale, mode: NavMode = 'product', now: 
         title: t('The product', 'Το προϊόν'),
         items: [
           { href: lp('/platform/features#opportunities'), label: t('Opportunities', 'Ευκαιρίες'), desc: t('Ranked fixes with click estimates', 'Διορθώσεις με εκτίμηση κλικ'), icon: 'sparkles', badge: POPULAR },
-          { href: lp('/platform/features#performance'), label: t('Performance', 'Απόδοση'), desc: t('Every traffic change, explained', 'Κάθε αλλαγή, εξηγημένη'), icon: 'chart' },
-          { href: lp('/platform/features#keywords'), label: t('Keywords & rank tracking', 'Λέξεις-κλειδιά & θέσεις'), desc: t('Find demand, track wins', 'Βρείτε ζήτηση, μετρήστε θέσεις'), icon: 'key' },
+          { href: lp('/platform/features#performance'), label: t('Performance', 'Απόδοση'), desc: t('See which pages gained or lost clicks', 'Σε ποιες σελίδες αυξήθηκαν ή μειώθηκαν τα κλικ'), icon: 'chart' },
+          { href: lp('/platform/features#keywords'), label: t('Keywords & rank tracking', 'Λέξεις-κλειδιά & θέσεις'), desc: t('Follow the searches that matter to you', 'Παρακολουθήστε τις αναζητήσεις που σας ενδιαφέρουν'), icon: 'key' },
           { href: lp('/platform/features#content'), label: t('Content studio', 'Περιεχόμενο'), desc: t('Brief, write, publish to WordPress', 'Πλάνο, συγγραφή, δημοσίευση'), icon: 'file' },
           { href: lp('/platform/features#audit'), label: t('Site audit', 'Έλεγχος ιστότοπου'), desc: t('Technical issues, prioritised', 'Τεχνικά θέματα με προτεραιότητα'), icon: 'shield' },
         ],
       },
       {
-        title: t('Go further', 'Περισσότερα'),
+        title: t('Research and reporting', 'Έρευνα και αναφορές'),
         items: [
           { href: lp('/platform/features#ai-visibility'), label: t('AI visibility', 'Ορατότητα σε AI'), desc: t('When ChatGPT and Gemini cite you', 'Πότε σας αναφέρουν ChatGPT και Gemini'), icon: 'bot', badge: AI },
-          { href: lp('/platform/features#assistant'), label: t('AI assistant', 'Βοηθός AI'), desc: t('Answers from your own data', 'Απαντήσεις από τα δεδομένα σας'), icon: 'message', badge: AI },
-          { href: lp('/platform/features#competitors'), label: t('Competitors', 'Ανταγωνιστές'), desc: t('Their wins, your gaps', 'Τα δικά τους κέρδη, τα δικά σας κενά'), icon: 'swords' },
-          { href: lp('/platform/for/agencies'), label: t('For agencies', 'Για εταιρείες SEO'), desc: t('Clients, pipeline and reports', 'Πελάτες, pipeline και αναφορές'), icon: 'users' },
+          { href: lp('/platform/features#assistant'), label: t('Aster AI', 'Aster AI'), desc: t('Answers from your own data', 'Απαντήσεις από τα δεδομένα σας'), icon: 'message', badge: AI },
+          { href: lp('/platform/features#competitors'), label: t('Competitors', 'Ανταγωνιστές'), desc: t('See which searches bring them traffic', 'Για ποιες αναζητήσεις εμφανίζονται οι ανταγωνιστές σας'), icon: 'swords' },
+          { href: lp('/platform/for/agencies'), label: t('For agencies', 'Για εταιρείες SEO'), desc: t('Manage client work and reports', 'Οργανώστε τις εργασίες και τις αναφορές των πελατών σας'), icon: 'users' },
           { href: lp('/platform/white-label-reports'), label: t('White-label reports', 'White-label αναφορές'), desc: t('Client SEO reports under your logo', 'Αναφορές SEO με το λογότυπό σας'), icon: 'file' },
           // One entry for every way in (iPhone, Chrome, WordPress, AI assistants), so the
           // mobile sheet stays light; the hub links on to each product page.
           { href: lp('/platform/integrations'), label: t('Apps & integrations', 'Εφαρμογές & ενσωματώσεις'), desc: t('iPhone, Chrome, WordPress, AI assistants', 'iPhone, Chrome, WordPress, βοηθοί AI'), icon: 'plug', badge: { kind: 'new' as const, label: t('New', 'Νέο') } },
-          { href: lp('/pricing'), label: t('Plans & pricing', 'Πακέτα & τιμές'), desc: t('Start free, upgrade when it pays', 'Ξεκινήστε δωρεάν'), icon: 'tag', badge: FREE },
+          { href: lp('/pricing'), label: t('Plans & pricing', 'Πακέτα & τιμές'), desc: t('Compare limits and monthly costs', 'Συγκρίνετε τα όρια και τη μηνιαία συνδρομή'), icon: 'tag', badge: FREE },
         ],
       },
     ],
     feature: {
       tone: 'software',
-      eyebrow: t('New · do it yourself', 'Νέο · μόνοι σας'),
-      title: t('Search Console, turned into a growth plan', 'Το Search Console, ως πλάνο ανάπτυξης'),
+      eyebrow: t('AnotherSEOGuru App', 'AnotherSEOGuru App'),
+      title: t('Which page should you work on first?', 'Ποια σελίδα αξίζει να βελτιώσετε πρώτα;'),
       body: t(
-        'Connect Google once, read-only, and get the fixes that win the most clicks, ranked and estimated.',
-        'Συνδέστε τη Google μία φορά, μόνο για ανάγνωση, και πάρτε τις διορθώσεις που φέρνουν τα περισσότερα κλικ.',
+        'Connect Search Console to see pages people find on Google but rarely click. Open a suggestion to check the figures behind it.',
+        'Συνδέστε το Search Console και δείτε ποιες σελίδες εμφανίζονται συχνά στην Google αλλά παίρνουν λίγα κλικ. Ανοίξτε μια πρόταση για να δείτε τα στοιχεία της.',
       ),
       primary: { href: signup, label: startFree.label, external: true },
       secondary: { href: demo, label: t('Explore the live demo', 'Ζωντανή επίδειξη'), external: true },
@@ -275,10 +275,10 @@ export function getNavModel(locale: SiteLocale, mode: NavMode = 'product', now: 
   const agencyDoor: NavFeature = {
     tone: 'agency',
     eyebrow: t('Prefer we do it?', 'Θέλετε να το κάνουμε εμείς;'),
-    title: t('Websites and SEO, done for you', 'Ιστοσελίδα και SEO, από την ομάδα μας'),
+    title: t('Hire our web and SEO team', 'Αναθέστε στην ομάδα μας την ιστοσελίδα ή το SEO σας'),
     body: t(
-      'For businesses in Greece: our team builds the site and runs the SEO, with a fixed price.',
-      'Για επιχειρήσεις στην Ελλάδα: η ομάδα μας φτιάχνει την ιστοσελίδα και τρέχει το SEO, με σταθερή τιμή.',
+      'We build websites and manage SEO for businesses in Greece. See the work and what each service costs.',
+      'Κατασκευάζουμε ιστοσελίδες και αναλαμβάνουμε το SEO επιχειρήσεων στην Ελλάδα. Δείτε έργα μας και πόσο κοστίζει κάθε υπηρεσία.',
     ),
     primary: { href: AGENCY_HOME_HREF, label: t('See the services', 'Δείτε τις υπηρεσίες') },
     secondary: { href: freeAudit.href, label: freeAudit.label },
@@ -301,7 +301,7 @@ export function getNavModel(locale: SiteLocale, mode: NavMode = 'product', now: 
       {
         title: t('Guides', 'Οδηγοί'),
         items: [
-          { href: lp('/seo-guides'), label: t('SEO guides', 'Οδηγοί SEO'), desc: t('The ranking guides in one index', 'Οι οδηγοί κατάταξης σε ένα ευρετήριο'), icon: 'book' },
+          { href: lp('/seo-guides'), label: t('SEO guides', 'Οδηγοί SEO'), desc: t('Learn how to improve a page', 'Πώς να βελτιώσετε μια σελίδα'), icon: 'book' },
           { href: lp('/blog'), label: 'Blog', desc: t('SEO, AI search and web design', 'SEO, αναζήτηση AI, ιστοσελίδες'), icon: 'library' },
           { href: lp('/resources'), label: t('Resources', 'Οδηγοί & υλικό'), icon: 'library' },
           { href: lp('/resources/sample-seo-report'), label: t('Sample SEO report', 'Δείγμα αναφοράς SEO'), icon: 'file' },
@@ -339,7 +339,7 @@ export function getNavModel(locale: SiteLocale, mode: NavMode = 'product', now: 
       promo: {
         href: lp('/'),
         tag: t('New', 'Νέο'),
-        text: t('AnotherSEOGuru App: your Search Console as a to-do list', 'AnotherSEOGuru App: το Search Console ως λίστα ενεργειών'),
+        text: t('Pick your next SEO task in AnotherSEOGuru App', 'Βρείτε την επόμενη εργασία SEO στο AnotherSEOGuru App'),
       },
       freeAudit,
       startFree,

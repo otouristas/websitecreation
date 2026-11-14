@@ -85,7 +85,7 @@ const el: SeoServicesPillarCopy = {
   eyebrow: 'Υπηρεσίες SEO',
   h1: 'Υπηρεσίες SEO και προώθηση ιστοσελίδων στη Google',
   answer:
-    'Οι υπηρεσίες SEO μας βελτιστοποιούν την ιστοσελίδα σας ώστε να εμφανίζεται ψηλότερα στη Google για τις αναζητήσεις που φέρνουν πελάτες. Αυτό είναι το SEO στην Ελλάδα όπως το κάνουμε: βελτιστοποίηση μηχανών αναζήτησης σε τρία μέτωπα, τεχνική βελτιστοποίηση, περιεχόμενο και σύνδεσμοι, μετρημένη σε κλικ και αιτήματα. Τα πακέτα ξεκινούν από {{ENTRY_SEO}} τον μήνα.',
+    'Αν θέλετε περισσότερα αιτήματα από τη Google, ξεκινάμε από τις αναζητήσεις που κάνουν ήδη οι πελάτες σας. Βρίσκουμε ποια σελίδα χρειάζεται ο καθένας, διορθώνουμε τεχνικά εμπόδια και παρακολουθούμε κλικ και αιτήματα. Η μηνιαία συνεργασία ξεκινά από {{ENTRY_SEO}}.',
   answerExtra:
     'Δουλεύουμε κυρίως με ξενοδοχεία, ενοικίαση αυτοκινήτου και εκδρομές στην Ελλάδα, πάνω στη δική μας πλατφόρμα που συνδέεται στο Google Search Console.',
   metaTitle: 'Υπηρεσίες SEO & Προώθηση Ιστοσελίδων | AnotherSEOGuru',
@@ -95,7 +95,7 @@ const el: SeoServicesPillarCopy = {
   includes: {
     title: 'Τι περιλαμβάνουν οι υπηρεσίες SEO κάθε μήνα',
     intro:
-      'Αν μια προσφορά SEO δεν αναφέρει συγκεκριμένα τι γίνεται κάθε μήνα, δεν είναι προσφορά. Αυτά είναι τα πέντε κομμάτια της δουλειάς, και κανένα δεν λειτουργεί μόνο του.',
+      'Κάθε μήνα συμφωνούμε ποιες από τις παρακάτω εργασίες προέχουν για τη δική σας ιστοσελίδα.',
     items: [
       {
         title: 'Τεχνικό SEO',
@@ -318,9 +318,9 @@ const el: SeoServicesPillarCopy = {
 
 const en: SeoServicesPillarCopy = {
   eyebrow: 'SEO services',
-  h1: 'SEO Greece: SEO services for businesses that bring enquiries, not reports',
+  h1: 'SEO services for businesses in Greece',
   answer:
-    'SEO for a business is continuous work on three fronts: the technical health of the site, content that matches what people actually search, and trust signals off the site. Ours starts with an audit and a keyword-to-page map, runs monthly from {{ENTRY_SEO}}, and is measured in clicks and enquiries rather than rankings that bring nobody.',
+    'If you want more enquiries from Google, start with the searches your customers already make. We match them to pages, fix technical problems and track clicks and enquiries as the work goes live. Monthly SEO starts at {{ENTRY_SEO}}.',
   answerExtra:
     'We work mainly with hotels, rent-a-car and tours in Greece, on our own platform connected to Google Search Console.',
   metaTitle: 'SEO Greece: SEO Services for Tourism & SMEs | AnotherSEOGuru',
@@ -328,9 +328,9 @@ const en: SeoServicesPillarCopy = {
     'SEO services in Greece for tourism businesses, hotels and SMEs: technical SEO, local SEO and content, measured in enquiries, not reports. Request a review.',
   primaryKeyword: 'SEO Greece',
   includes: {
-    title: 'What a serious SEO service includes',
+    title: 'What monthly SEO includes',
     intro:
-      'If a proposal does not say what happens each month, it is not a proposal. These are the five parts of the work, and none of them functions alone.',
+      'Each month we agree which of these jobs will make the biggest difference to your site.',
     items: [
       {
         title: 'Technical SEO',

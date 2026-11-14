@@ -1,227 +1,82 @@
 ---
 slug: pricing-page-seo-software-vs-agency
-title: Why we split software pricing and agency pricing (and how to choose)
+title: "SEO software or an agency? How to decide who does the work"
 seoTitle: "SEO Software vs Agency Pricing"
-description: Clear positioning between self-serve SEO software and done-for-you retainers on your pricing page, which reduces confusion and improves lead quality.
+description: "Compare an SEO subscription with an agency fee. See who makes the changes, what to budget for and how to choose the right option for your website."
 date: 2026-03-10
+updated: 2026-11-14
 author: AnotherSEOGuru Editorial Team
 category: Strategy
 categoryColor: bg-slate-100 text-slate-800
 pillar: agency-playbooks
 faq:
-  - question: "Is software cheaper than agency?"
-    answer: "Lower cash cost: higher time cost. Total cost of ownership includes your hours or opportunity cost."
-  - question: "Can I switch from software to agency mid-year?"
-    answer: "Yes, export GSC history and backlog. Good agencies start from data."
-  - question: "Do you need agency for [GEO/AEO](/el/blog/geo-vs-seo-vs-aeo-el)?"
-    answer: "FAQ and entity content can be agency or in-house. LLM measurement discipline benefits from experienced guidance initially."
-  - question: "Should startups buy agency day one?"
-    answer: "If website doesn't exist or doesn't rank: agency project often beats software alone. If learning phase: software + DIY path."
-  - question: "How do I compare agency quotes?"
-    answer: "Same scope definition: pages delivered, GBP locations, reporting cadence, redesign inclusion. Apples-to-apples."
+  - question: "What do I get with an SEO software subscription?"
+    answer: "You get access to the features and limits of your chosen plan. Someone on your team still needs to decide which changes to make, approve them and check the results."
+  - question: "When should I ask an agency for a quote?"
+    answer: "Ask when you know what you want improved but need someone to carry out the work. Give the agency a real page, your goal and any deadline so it can quote for a specific deliverable."
+  - question: "Can I keep using software while an agency works on my site?"
+    answer: "Yes. Agree who can edit the site, who approves changes and where completed work is recorded. Use the same reporting period when you review results together."
+  - question: "How can I compare two agency quotes?"
+    answer: "Check which pages and sites are covered, who implements changes, how revisions are approved and what happens after delivery. Compare the full cost over the agreed term."
 ---
 
-Most buyers do not fail because of price: they fail because they **do not know what they are buying**. Splitting **software** and **agency** pricing is a deliberate conversion choice. It helps solopreneurs, in-house marketers, and tourism operators choose the right path without buying a retainer when they need a wrench, or software when they need a crew.
+A software subscription gives your team a way to decide which pages need attention and check the results. An agency fee pays people to carry out agreed work. Before comparing monthly fees, name the person who would actually make a change to your website next Tuesday.
 
-This guide explains when software wins, when agency wins, when both make sense, and how [hotels](/en/solutions/hotels), [rent-a-car brands](/en/solutions/rent-a-car), and home services typically decide.
+Say your hotel appears in Google for “family rooms near the port.” People see the result but rarely click through. Investigating the page and rewriting it are two different jobs. You might want a tool for the first and already have the right person at reception to help with the second. Or you might need someone to take the whole job off your hands before the season starts.
 
-## Software: time and leverage
+## What a software plan covers
 
-Software sells **capacity**: seats, limits, workflows. Success depends on **operating cadence**: weekly [Search Console](/en/blog/gsc-weekly-ops-playbook) review, backlog hygiene, someone who ships three fixes per week.
+With AnotherSEOGuru App you connect your Google Search Console property with read-only access. You can inspect which searches a page appears for, how often it was shown and how often someone clicked. Ask Aster AI a question about the page, check the figures behind its answer and save a suggestion as a task.
 
-### What software buyers get
+For the family room example, the first decision might be whether to change the search title or improve the room description itself. The person who takes bookings can tell you if adjoining rooms are a recurring question. The person with access to the website can then update the page. After publication, compare clicks for the same searches and note anything else that changed, including the season.
 
-- Query clustering and prioritization
-- Technical audit checklists
-- Rank and SERP tracking
-- Content brief workflows
-- Reporting templates
+The [software pricing page](/en/pricing) lists how many sites, users and credits each plan includes. Search Console analysis does not use credits. If you mainly look after one business, start by checking the limits for that site. If you report to several clients, check the site allowance and whether you need your own branding on their reports.
 
-### Best for
+## What to ask an agency to quote for
 
-- In-house SEO with engineering support
-- Agencies white-labeling diagnostics
-- Owner-operators learning [local SEO](/en/blog/local-seo-guide) with discipline
-- Budget-conscious businesses pre-revenue from organic
+Give an agency the same example page and ask what it would deliver. Would someone write the room description, arrange its translation, update it in the booking system or just send you a list of suggestions? A quote that includes implementation will look different from one that covers the review alone.
 
-### Not a substitute for
+Ask who approves the edit and what access the agency needs. A hotel owner might approve room details while a booking provider controls the final step. Get that clear before agreeing to a date. You can review the team's [client projects](/el/work) and [agency packages in Greek](/el/ypiresies/times) to see how the work is described.
 
-- Full website redesign
-- 20 location page production sprint
-- GBP multi-location cleanup during peak season
-- [Travel AI chatbot](/en/solutions/travel-ai-chatbots) integration
+| What you need | Software makes sense when | Consider agency work when |
+| --- | --- | --- |
+| Improve an existing service page | Someone on your team can edit and publish it | You need copy, design or technical changes delivered |
+| Report across several websites | Your team knows the clients and can explain the figures | You want someone to investigate the changes and present the findings |
+| Launch a new website | You already have people building it and need to monitor search | You need a team to build the site and handle the move |
+| Prepare for the tourist season | You have time to check demand and update pages | You have a deadline and the work has no owner |
 
-Software tells you what to fix. Agency fixes it, or your team executes from the backlog.
+## Compare the full cost
 
-## Agency: outcomes and labor
+For software, write down the subscription, any paid data you use and the time it takes your team to act on the suggestions. A modest plan can be sufficient when one person looks after one website. Extra capacity is useful when a real limit gets in your way, such as needing to add another client site.
 
-Agency pricing sells **delivery**: implementation, content, technical fixes, design, development, reporting narratives. Success depends on **scope**, access, and stakeholder responsiveness.
+For an agency, compare what is included over the whole agreed term. Check whether the fee includes publishing as well as writing, who pays for photography or translations and what ongoing maintenance costs. If you sell seasonally, ask what will be completed before customers start searching. A monthly total alone tells you little about that.
 
-### What agency buyers get
+## When it makes sense to use both
 
-- Done-for-you [SEO web design](/en/blog/seo-web-design-development-platform)
-- Location page and fleet content production
-- GBP and citation campaigns
-- Migration and redirect management
-- Executive-ready reporting tied to bookings
+A rental company may handle the daily details of fleet availability and pickup locations itself. If it opens a new airport desk, it might hire someone to build the new location page and update the links across its site. The internal team can keep using the app to check which searches lead to that page after launch.
 
-### Best for
+Agree on a simple handover. Record the URL, what changed and the date it went live. Give the person responsible for the next review access to the same Search Console property. If the page gains clicks, compare the dates with booking enquiries before treating that gain as new business. The [weekly Search Console guide](/en/blog/gsc-weekly-ops-playbook) gives the person doing that review a starting point.
 
-- Multi-location [hotel groups](/en/solutions/hotels) and [rent-a-car fleets](/en/solutions/rent-a-car)
-- Competitive island markets ([Cyclades local SEO](/el/blog/topiko-seo-kykladon))
-- Teams with budget but no SEO headcount
-- Redesign quarters where SEO must not regress
+## Try the decision on one page
 
-Browse [case studies](/en/work) for agency-delivered outcomes.
+Pick a page that already matters to your business. Write down the question you want answered and what you would do with the answer. “Does our airport pickup page appear for late-night arrivals?” is specific enough to test. “We need more traffic” leaves the owner of the task guessing about which visitors matter.
 
-## When to buy both
+Look at a [sample SEO report](/en/resources/sample-seo-report) if reporting is the reason you are buying. Try explaining one change in the sample to a colleague. If the format gives you what you need, check the plan that covers your sites. If nobody has the time to investigate the numbers, include that work explicitly in an agency brief.
 
-Common pattern, and often optimal:
+## Frequently asked questions
 
-| Layer | Owner |
-|-------|-------|
-| Diagnostics & prioritization | Software |
-| Weekly ops loop | In-house marketer |
-| Heavy execution quarters | Agency |
-| Ongoing content & local | Agency or hybrid |
+### Can a small business start with software?
 
-Examples:
+Yes, if somebody can use what it shows. For example, an owner who can update the website and keeps a record of enquiries can start with one service page. Set aside time to check the result as well as make the edit. The [SEO guide for beginners](/en/blog/seo-for-beginners) covers the first checks.
 
-- **Hotel group:** Software for GSC clustering across properties; agency for pre-season location page refresh and [GEO/AEO FAQ](/en/blog/geo-aeo-global-seo-playbook) rollout
-- **Rent-a-car:** Software for near-miss query tracking; agency for new airport desk launch pages
-- **Home services:** Software for ops; agency for programmatic city page build
+### What if the website needs redesigning first?
 
-## Decision framework
+Ask for a separate project quote. Export the pages that bring customers to your site before the work begins and agree where those addresses will lead afterwards. A [redesign plan](/en/blog/website-redesign-guide) should include that handover even if another team manages your SEO after launch.
 
-Answer five questions:
+### What should I take to a first conversation?
 
-1. **Do you have 5+ hours/week for SEO ops?** No → lean agency
-2. **Is the site the bottleneck?** Yes → agency design/dev, not software alone
-3. **Multi-location or multi-language?** Yes → agency or hybrid
-4. **Peak season in <8 weeks?** Yes → agency surge vs missed revenue
-5. **Is organic already working?** Yes → software to optimize; agency for expansion
+Bring the website address, an example of a customer enquiry you would like more of and the name of the person who can approve edits. If there is a deadline, explain what happens on that date. Those details help a team estimate the work and give you something concrete to compare with doing it yourself.
 
-Still unsure? [Get started](/en/get-started) with scope conversation, not generic package grid.
+## Start with your site
 
-## For agencies selling the same stack
-
-If you white-label or co-sell, mirror this split in proposals:
-
-- **License** line items: software seats, tools
-- **Service** line items: retainers, projects, content hours
-
-Prevents procurement confusion and sets correct expectations. Clients who need execution won't churn from software they never had time to use.
-
-## Pricing psychology: why split pages convert better
-
-Combined "SEO pricing" pages attract:
-
-- $29/month tool shoppers
-- $5k/month retainer buyers
-
-Same page forces compromise copy that converts neither. Split pages qualify intent early: higher close rate, fewer bad-fit support tickets.
-
-## Tourism-specific pricing considerations
-
-### Seasonality
-
-Agency retainers often flex:
-
-- Higher touch May–September (peak)
-- Maintenance + planning October–April
-
-Software stays flat: good for year-round ops discipline.
-
-### Project vs retainer
-
-- **Project:** new [hotel website](/en/blog/hotel-website-design), island expansion, chatbot launch
-- **Retainer:** GBP, content, link hygiene, GSC ops
-
-Quote projects separately from ongoing visibility.
-
-### ROI framing
-
-Tourism buyers think in booking value:
-
-- One incremental direct booking/week × ADR × season weeks
-- vs OTA commission saved
-
-Agency proposals should use their numbers, not generic "more traffic".
-
-## Red flags in either purchase
-
-### Software
-
-- Promised "automatic rankings"
-- No Search Console integration story
-- No workflow for weekly shipping
-
-### Agency
-
-- No access to your analytics
-- Vanity rank reports only
-- No [portfolio](/en/work) in your vertical
-- Can't explain [DIY vs agency tradeoffs](/en/blog/diy-vs-agency) honestly
-
-## Building a hybrid stack: example scopes
-
-**Small boutique hotel (1 property):**
-
-- Software or free GSC for weekly ops
-- Agency project for website redesign + location SEO
-- Owner manages GBP day-to-day
-
-**Rent-a-car fleet (5 island desks):**
-
-- Agency retainer peak season (GBP + content)
-- In-house ops off-season with [weekly playbook](/en/blog/gsc-weekly-ops-playbook)
-- Agency project for new airport desk launch pages
-
-**Home services (single city):**
-
-- Software + DIY for 6 months
-- Agency if map pack stuck after consistent execution
-
-Document the handoff points so nothing falls between DIY and agency ownership.
-
-
-## Example scopes compared
-
-| Need | Software-first | Agency-first | Hybrid |
-|------|----------------|--------------|--------|
-| Learn GSC ops | Yes | Overkill alone | Software + light coaching |
-| New hotel website | No | Project package | Agency build + software ops |
-| 5 island desks | Partial | Retainer | Agency peak / DIY off-season |
-| Migration | No | Project + QA | Agency lead, in-house review |
-
-Use this table in discovery calls so buyers self-select before you quote. Misaligned packaging is the fastest path to churn: whether the buyer under-bought software or over-bought a retainer they cannot absorb.
-
-## FAQ
-
-### Is software cheaper than agency?
-
-Lower cash cost: higher time cost. Total cost of ownership includes your hours or opportunity cost.
-
-### Can I switch from software to agency mid-year?
-
-Yes, export GSC history and backlog. Good agencies start from data.
-
-### Do you need agency for [GEO/AEO](/el/blog/geo-vs-seo-vs-aeo-el)?
-
-FAQ and entity content can be agency or in-house. LLM measurement discipline benefits from experienced guidance initially.
-
-### Should startups buy agency day one?
-
-If website doesn't exist or doesn't rank: agency project often beats software alone. If learning phase: software + [DIY path](/en/blog/diy-vs-agency).
-
-### How do I compare agency quotes?
-
-Same scope definition: pages delivered, GBP locations, reporting cadence, redesign inclusion. Apples-to-apples.
-
----
-
-## Ready to Get Started?
-
-Tell us about your site, locations, and goals: we'll recommend a scoped plan with Search Console ops, content priorities, and clear next steps.
-
-[Get started](/en/get-started) · [See our work](/en/work) · [Pricing](/en/pricing)
+If your team is ready to make the edits, [compare the app plans](/en/pricing). If you want us to carry out the work, [send the agency your website](/el/get-started#free-audit) and tell us which page or service matters most.

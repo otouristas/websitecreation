@@ -83,7 +83,7 @@ export default async function PlatformToolPage({ params }: ToolPageProps) {
                   { name: tool.title, url: lp(`/tools/${tool.slug}`) },
                 ]}
               />
-              <KitAnnouncePill href={appUrl} kind="free" tag={el ? "Δωρεάν" : "Free"} text={el ? "Τρέχει μέσα στο AnotherSEOGuru App" : "Runs in the AnotherSEOGuru App app"} className="whitespace-normal" />
+              <KitAnnouncePill href={appUrl} kind="live" tag={el ? "Εργαλείο" : "Tool"} text="AnotherSEOGuru App" className="whitespace-normal" />
             </div>
           }
           title={accentEnd(tool.title, 1)}
@@ -92,7 +92,7 @@ export default async function PlatformToolPage({ params }: ToolPageProps) {
           actions={
             <div className="flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
               <a href={appUrl} className={`${kitSoftwareBtn} !pl-5`} rel="noopener noreferrer">
-                {el ? "Άνοιγμα στην πλατφόρμα" : "Open in platform"}
+                {el ? "Ανοίξτε το εργαλείο" : "Open the tool"}
               </a>
               <Link href={lp("/services/seo-audits")} className={kitSecondaryBtn}>
                 {el ? "Υπηρεσία SEO ελέγχου" : "SEO audit services"}
@@ -108,7 +108,7 @@ export default async function PlatformToolPage({ params }: ToolPageProps) {
               <p className="mt-6 text-pretty text-[14px] leading-relaxed text-muted-foreground">
                 {el ? (
                   <>
-                    Το διαδραστικό εργαλείο τρέχει στο ασφαλές subdomain της εφαρμογής. Θέλετε ολοκληρωμένη υπηρεσία; Δείτε τις{" "}
+                    Αν θέλετε να αναλάβουμε εμείς τις αλλαγές, δείτε τις{" "}
                     <Link href={lp("/services")} className="text-primary hover:underline">
                       υπηρεσίες SEO
                     </Link>
@@ -116,7 +116,7 @@ export default async function PlatformToolPage({ params }: ToolPageProps) {
                     <Link href={lp("/services/local-seo")} className="text-primary hover:underline">
                       τοπικό SEO
                     </Link>{" "}
-                    ή τον{" "}
+                    ή διαβάστε τον{" "}
                     <Link href={blogHref("what-is-seo", siteLocale)} className="text-primary hover:underline">
                       βασικό οδηγό SEO
                     </Link>
@@ -124,7 +124,7 @@ export default async function PlatformToolPage({ params }: ToolPageProps) {
                   </>
                 ) : (
                   <>
-                    The interactive tool runs on our secure app subdomain. Need done-for-you help? See{" "}
+                    If you’d like our team to make the changes, explore our{" "}
                     <Link href={lp("/services")} className="text-primary hover:underline">
                       SEO services
                     </Link>
@@ -134,7 +134,7 @@ export default async function PlatformToolPage({ params }: ToolPageProps) {
                     </Link>
                     , or our{" "}
                     <Link href={blogHref("what-is-seo", siteLocale)} className="text-primary hover:underline">
-                      SEO pillar guide
+                      beginner’s SEO guide
                     </Link>
                     .
                   </>
@@ -147,7 +147,7 @@ export default async function PlatformToolPage({ params }: ToolPageProps) {
           <WaveSection id="faq" shot="faq" tinted>
             <WaveEyebrow>{el ? "Συχνές ερωτήσεις" : "FAQ"}</WaveEyebrow>
             <h2 className="mt-4 max-w-3xl text-balance font-display text-[2rem] font-bold leading-[1.08] tracking-[-0.03em] text-foreground sm:text-[2.5rem]">
-              {el ? `Συχνές ερωτήσεις για ${tool.primaryKeyword}` : `Frequently asked questions about ${tool.primaryKeyword}`}
+              {el ? "Πώς να χρησιμοποιήσετε το εργαλείο" : "Using this tool"}
             </h2>
             <div className="mt-10 divide-y divide-hairline overflow-hidden rounded-[22px] border border-hairline bg-background/70">
               {faqItems.map((item, index) => (

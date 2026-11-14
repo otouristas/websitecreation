@@ -287,8 +287,8 @@ const DIY = {
   tag: c("Do it yourself", "Μόνοι σας"),
   title: c("Prefer to run it yourself? Use AnotherSEOGuru App", "Προτιμάτε να το κάνετε μόνοι σας; Δοκιμάστε το AnotherSEOGuru App"),
   body: c(
-    "Our Search Console software, with its own monthly plans: it reads your data and hands you the fixes that win the most clicks, ranked and estimated. The same tool our team uses.",
-    "Το λογισμικό μας για το Search Console, με δικά του μηνιαία πακέτα: διαβάζει τα δεδομένα σας και σας δίνει τις διορθώσεις που φέρνουν τα περισσότερα κλικ, με σειρά και εκτίμηση. Το ίδιο εργαλείο που χρησιμοποιεί η ομάδα μας.",
+    "If you have someone who can make the changes, connect Search Console to see which pages to work on first. Each suggestion includes the figures behind it and an estimate of the clicks it could bring.",
+    "Αν μπορείτε να κάνετε τις αλλαγές εσείς, συνδέστε το Search Console και δείτε από ποιες σελίδες αξίζει να ξεκινήσετε. Κάθε πρόταση συνοδεύεται από τα σχετικά στοιχεία και μια εκτίμηση για τα κλικ που μπορεί να φέρει.",
   ),
   plans: c("See AnotherSEOGuru App plans and prices", "Δείτε τα πακέτα και τις τιμές του AnotherSEOGuru App"),
 };

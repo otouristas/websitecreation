@@ -353,12 +353,12 @@ export default async function PlatformChromeExtensionPage({ params }: PageProps)
           }
           title={
             <>
-              {tx("The SEO extension for Chrome that knows", "Η επέκταση SEO για Chrome που ξέρει")} <Accent>{tx("your Search Console", "το Search Console σας")}</Accent>
+              {tx("Check a page’s SEO", "Έλεγχος SEO για τη σελίδα")} <Accent>{tx("while it’s open in Chrome", "που έχετε ανοιχτή στο Chrome")}</Accent>
             </>
           }
           lead={tx(
-            "Check any page's title, meta description, headings, links, schema, hreflang and Core Web Vitals in one click, free and without an account. Sign in and the same popup shows that page's clicks, impressions, CTR and position from your own Search Console.",
-            "Ελέγξτε σε ένα κλικ τίτλο, meta description, επικεφαλίδες, συνδέσμους, schema, hreflang και Core Web Vitals σε κάθε σελίδα, δωρεάν και χωρίς λογαριασμό. Συνδεθείτε και το ίδιο παράθυρο δείχνει κλικ, εμφανίσεις, CTR και θέση της σελίδας από το δικό σας Search Console.",
+            "Inspect the title, headings, links and technical settings of the page you're reading. On a site you manage, sign in to see that URL’s clicks, impressions and position from Search Console in the same window. Basic page checks work without an account.",
+            "Ελέγξτε τον τίτλο, τις επικεφαλίδες, τους συνδέσμους και τις τεχνικές ρυθμίσεις της σελίδας που βλέπετε. Αν διαχειρίζεστε τον ιστότοπο, συνδεθείτε για να δείτε στο ίδιο παράθυρο τα κλικ, τις εμφανίσεις και τη θέση της σελίδας από το Search Console. Οι βασικοί έλεγχοι γίνονται χωρίς λογαριασμό.",
           )}
           actions={
             <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">

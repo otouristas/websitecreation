@@ -92,7 +92,7 @@ export default async function BlogIndexPage({
           lead={ui.intro}
           meta={
             <p className="font-mono text-[11px] font-medium uppercase tracking-[0.12em] text-brand">
-              {posts.length} {isEl ? "άρθρα" : "articles"} · {pillars.length} {isEl ? "θεματικοί κόμβοι" : "topic hubs"}
+              {posts.length} {isEl ? "άρθρα" : "articles"} · {pillars.length} {isEl ? "θέματα" : "topics"}
             </p>
           }
           actions={null}
@@ -102,13 +102,13 @@ export default async function BlogIndexPage({
         {/* Pillar hubs - the archive's primary navigation */}
         <KitSection className="!pt-14">
           <KitHeading
-            eyebrow={isEl ? "Θεματικοί κόμβοι" : "Topic hubs"}
+            eyebrow={isEl ? "Θέματα" : "Topics"}
             eyebrowIcon={<Layers />}
-            title={accentTail(isEl ? "Ξεκινήστε από έναν κόμβο" : "Start with a hub", 1)}
+            title={accentTail(isEl ? "Τι θέλετε να μάθετε;" : "What are you working on?", 1)}
             description={
               isEl
-                ? "Κάθε κόμβος συγκεντρώνει τα άρθρα ενός θέματος, από τα βασικά μέχρι τις προχωρημένες τακτικές."
-                : "Each hub collects everything on one topic, from the fundamentals through to the advanced tactics."
+                ? "Επιλέξτε το θέμα που σας απασχολεί, από την παρουσία της επιχείρησής σας στους χάρτες μέχρι μια πτώση στα κλικ."
+                : "Choose a topic, whether you’re updating a local listing or investigating a drop in clicks."
             }
           />
           <div className="mt-10">

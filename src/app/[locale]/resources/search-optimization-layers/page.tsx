@@ -154,7 +154,7 @@ export default async function SearchOptimizationLayersPage({ params }: PageProps
         title={accentTail(el ? g.headline : 'The layers of modern search optimization', 2)}
         size="md"
         /* Answer-first: the whole model in one liftable paragraph. */
-        lead={el ? g.lead : "SEO, AEO, GEO, AIO, DEO and SXO are not six competing strategies. They are six successive moments in the same journey: being found, being quoted, being cited, being understood, being recommended, and being chosen. Each one asks something different of the same page, and none of them replaces the one below it."}
+        lead={el ? g.lead : "A traveller might find a hotel in Google, ask an AI assistant whether it accepts pets, then visit the site to book. Follow the same page through each step to see what customers and search engines need from it."}
         meta={
           <p className="mx-auto max-w-2xl text-[15px] leading-relaxed text-muted-foreground">
             {el
@@ -200,8 +200,8 @@ export default async function SearchOptimizationLayersPage({ params }: PageProps
         <KitHeading
           eyebrow={el ? g.orderEyebrow : 'Order of operations'}
           eyebrowIcon={<ListOrdered />}
-          title={accentTail(el ? g.orderTitle : 'The layers stack, so the work does too', 3)}
-          description={el ? g.orderDesc : 'Nobody buys their way to a citation while the site is uncrawlable. This is the sequence, and the reason each step is where it is.'}
+          title={accentTail(el ? g.orderTitle : 'From a technical check to a booking', 3)}
+          description={el ? g.orderDesc : 'First check that a crawler can reach the page. Then check whether it contains the answer a buyer needs and whether that answer is up to date.'}
         />
         <StepsGrid className="mt-10" steps={sequence.map((step) => ({ title: step.title, text: step.body }))} />
       </KitSection>
@@ -251,15 +251,14 @@ export default async function SearchOptimizationLayersPage({ params }: PageProps
 
       <KitFaq
         items={[...faqs]}
-        title={accentTail(el ? g.faqTitle : 'Questions this model gets asked', 2)}
-        description={el ? g.faqDesc : 'Short answers. Longer ones live on the service pages each layer links to.'}
+        title={accentTail(el ? g.faqTitle : 'Questions about search and AI visibility', 2)}
       />
 
       <KitSection className="!pb-0">
         <KitHeading
           align="center"
-          title={accentTail(el ? g.sitTitle : 'Where does your site sit on the stack?', 2)}
-          description={el ? g.sitDesc : 'An audit tells you which layer is actually blocking the next one, which is usually not the layer people arrive worried about.'}
+          title={accentTail(el ? g.sitTitle : 'Where should you start on your site?', 2)}
+          description={el ? g.sitDesc : 'Tell us which page you want customers to find and what you want them to do when they arrive.'}
         />
         <ChipLinks
           align="center"

@@ -20,7 +20,7 @@ faq:
     answer: No. Write clear, factual, well-structured content for humans. Both classic search and generative systems reward clarity, authority, and freshness.
 ---
 
-Search is splitting into **classic rankings** and **AI-mediated answers**. Winning teams treat SEO, **Generative Engine Optimization (GEO)**, and **Answer Engine Optimization (AEO)** as one operating system, not three disconnected buzzwords. Whether you sell B2B software, run a hotel group in the Aegean, or operate a rent-a-car fleet, the playbook is the same: own the entity, structure the answer, and measure what actually drives revenue.
+A customer might find your business in Google and later ask an AI assistant to compare it with a competitor. Check both experiences in the language your customer uses. Look for a page that answers the question, then record which source the assistant actually cites.
 
 ## What each discipline covers
 

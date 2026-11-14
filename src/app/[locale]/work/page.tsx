@@ -13,7 +13,6 @@ import { isValidLocale, localizedPath, type SiteLocale } from "@/lib/i18n/locale
 import { MARKET_COUNT, PROJECT_COUNT } from "@/data/company-facts";
 import { HOME_LOGOS } from "@/data/home-content";
 import { PORTFOLIO_CATEGORIES, portfolioProjects } from "@/data/portfolio";
-import { homeCopy } from "@/components/pages/home/copy";
 import { CtaBand, TrustLine } from "@/components/kit";
 import { WaveEyebrow, WaveHero } from "@/components/pages/platform-wave/ui";
 import { accentEnd } from "@/components/pages/services-wave/ui";
@@ -52,7 +51,6 @@ export default async function WorkPage({ params }: PageProps) {
   const siteLocale = locale as SiteLocale;
   const isEl = locale === "el";
   const lp = (path: string) => localizedPath(siteLocale, path);
-  const copy = homeCopy(siteLocale);
   // The index emits one CreativeWork per portfolio entry, one type across the
   // whole list, which is what makes the set readable.
   const collectionSchema = generateCollectionPageSchema({
@@ -81,12 +79,12 @@ export default async function WorkPage({ params }: PageProps) {
               {isEl ? "ΤΟ PORTFOLIO ΜΑΣ" : "OUR PORTFOLIO"} / {portfolioProjects.length} {isEl ? "ΕΡΓΑ" : "PROJECTS"}
             </WaveEyebrow>
           }
-          title={accentEnd(isEl ? "Διαφορετικές επιχειρήσεις. Ξεχωριστές ιστορίες." : "Different businesses. Distinctive stories.", 2)}
+          title={accentEnd(isEl ? "Ιστοσελίδες για επιχειρήσεις σαν τη δική σας" : "Websites for businesses like yours", 2)}
           titleClassName="text-[1.75rem] min-[400px]:text-[2rem] sm:text-[2.6rem] lg:text-[3.15rem]"
           lead={
             isEl
-              ? "Ξενοδοχεία, τοπικές επιχειρήσεις, τουριστικές πλατφόρμες και ψηφιακά προϊόντα. Γνωρίστε τα έργα, το κοινό τους και την εμπειρία πίσω από κάθε ιστοσελίδα."
-              : "Hotels, local businesses, travel platforms and digital products. Meet the projects, understand their audiences and explore each website experience."
+              ? "Δείτε πώς ένα ξενοδοχείο παρουσιάζει τα δωμάτιά του, πώς ένας ταξιδιώτης διαλέγει αυτοκίνητο και πώς μια τοπική επιχείρηση δέχεται αιτήματα. Επιλέξτε κλάδο για να βρείτε ένα σχετικό έργο."
+              : "See how a guest chooses a room, a traveller arranges a rental car or a local customer requests a quote. Pick an industry to find a project relevant to your business."
           }
           trust={
             <TrustLine
@@ -134,7 +132,7 @@ export default async function WorkPage({ params }: PageProps) {
 
         <section data-shot="logos" className="border-y border-hairline bg-surface/40">
           <div className="mx-auto max-w-[1240px] px-5 py-9 lg:px-8">
-            <p className="mb-7 text-center text-[13px] font-medium tracking-[0.01em] text-muted-foreground">{copy.trustIntro}</p>
+            <p className="mb-7 text-center text-[13px] font-medium tracking-[0.01em] text-muted-foreground">{isEl ? "Επιχειρήσεις από το portfolio μας" : "Businesses in our portfolio"}</p>
             <div className="home-logo-rail">
               <div className="home-logo-track">
                 {[false, true].map((hidden) => (

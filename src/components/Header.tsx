@@ -62,15 +62,19 @@ export default function Header({
   }, []);
 
   useEffect(() => {
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-    return () => {
-      document.body.style.overflow = "";
+    if (!isMobileMenuOpen) return;
+    const oldOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const desktop = window.matchMedia("(min-width: 64rem)");
+    const onResize = () => {
+      if (desktop.matches) closeMobileMenu();
     };
-  }, [isMobileMenuOpen]);
+    desktop.addEventListener("change", onResize);
+    return () => {
+      document.body.style.overflow = oldOverflow;
+      desktop.removeEventListener("change", onResize);
+    };
+  }, [isMobileMenuOpen, closeMobileMenu]);
 
   useEffect(() => {
     // Post-mount sync is the point here: close the mobile menu on client-side navigation,
@@ -85,7 +89,7 @@ export default function Header({
       <nav
         style={campaignVisible ? { top: 48 } : undefined}
         className="pointer-events-none fixed left-0 right-0 top-0 z-50 px-2 pt-3 min-[400px]:px-3 sm:px-6"
-        aria-label="Main"
+        aria-label={locale === "el" ? "Κύρια πλοήγηση" : "Main navigation"}
       >
         {/* Full-width ground behind the floating pill. The pill is narrower
             than the viewport and translucent, so page content (breadcrumbs,
@@ -163,6 +167,8 @@ export default function Header({
                 type="button"
                 className="grid size-11 shrink-0 place-items-center rounded-full border border-hairline text-foreground transition-colors hover:bg-foreground/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring lg:hidden"
                 onClick={toggleMobileMenu}
+                id="mobile-menu-trigger"
+                aria-haspopup="dialog"
                 aria-expanded={isMobileMenuOpen}
                 aria-label={isMobileMenuOpen ? nav.closeMenu : nav.openMenu}
               >
@@ -173,13 +179,14 @@ export default function Header({
         </div>
       </nav>
 
-      <MobileNav
-        alternateHref={alternateHref}
-        locale={locale}
-        isOpen={isMobileMenuOpen}
-        onClose={closeMobileMenu}
-        model={model}
-      />
+      {isMobileMenuOpen && (
+        <MobileNav
+          alternateHref={alternateHref}
+          locale={locale}
+          onClose={closeMobileMenu}
+          model={model}
+        />
+      )}
       <BlackMonthPopup enabled={campaignVisible && !isMobileMenuOpen && !pathname.includes('/get-started')} />
     </>
   );

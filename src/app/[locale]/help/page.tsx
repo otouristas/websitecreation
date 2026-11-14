@@ -58,14 +58,14 @@ function homeBlocks(locale: SiteLocale): Block[] {
     {
       type: "p",
       text: el
-        ? "Το **AnotherSEOGuru App** διαβάζει τα δεδομένα σας από το **Google Search Console** και τα κάνει πλάνο για την εβδομάδα: ποιες σελίδες και ποια ερωτήματα να δουλέψετε, τι να αλλάξετε και πόσα κλικ φέρνει κάθε διόρθωση. Εδώ θα βρείτε οδηγούς για κάθε οθόνη του web app και της εφαρμογής iPhone, και ένα SEO γλωσσάρι με κάθε όρο σε απλά λόγια."
-        : "**AnotherSEOGuru App** reads your **Google Search Console** data and turns it into a plan for the week: which pages and queries to work on, what to change, and how many clicks each fix is likely to bring. Here you'll find guides for every screen of the web app and the iPhone app, plus an SEO glossary with every term in plain words.",
+        ? "Αν χρησιμοποιείτε για πρώτη φορά το **AnotherSEOGuru App**, θα χρειαστείτε τον λογαριασμό Google με τον οποίο βλέπετε την ιστοσελίδα σας στο **Search Console**. Μπορείτε επίσης να ανοίξετε τη δοκιμαστική επίδειξη και να γνωρίσετε τις αναφορές με έτοιμα δεδομένα."
+        : "To set up **AnotherSEOGuru App**, use the Google account you already use for your site in **Search Console**. To look around first, open the demo and try the reports with sample data.",
     },
     {
       type: "cards",
       cols: 3,
       items: [
-        { title: el ? "Ξεκινήστε σε 5 λεπτά" : "Start in five minutes", text: el ? "Συνδέστε το Search Console και δείτε τις πρώτες διορθώσεις." : "Connect Search Console and see your first fixes.", href: h("getting-started", "connect-search-console"), icon: "rocket" },
+        { title: el ? "Συνδέστε την ιστοσελίδα σας" : "Connect your first site", text: el ? "Συνδέστε το Search Console και δείτε τις πρώτες διορθώσεις." : "Connect Search Console and see your first fixes.", href: h("getting-started", "connect-search-console"), icon: "rocket" },
         { title: el ? "Εφαρμογή iPhone" : "iPhone app", text: el ? "Η εβδομάδα σας, θέσεις, ειδοποιήσεις και Live Activities. Σε beta." : "Your week, rankings, alerts and Live Activities. In beta.", href: h(IPHONE_CATEGORY), icon: "smartphone" },
         { title: el ? "SEO γλωσσάρι" : "SEO glossary", text: el ? "Πάνω από 100 όροι SEO, AEO και GEO, ο καθένας με δική του σελίδα." : "Over 100 SEO, AEO and GEO terms, each with its own page.", href: glossaryPath(locale), icon: "library" },
       ],
@@ -84,14 +84,14 @@ function homeBlocks(locale: SiteLocale): Block[] {
         {
           title: el ? "Διαλέξτε τους ιστότοπούς σας" : "Pick your sites",
           text: el
-            ? "Κάθε ιδιότητά του Search Console γίνεται έργο. Ορίστε όρους επωνυμίας, ανταγωνιστές και αγορά. [Δείτε πώς](/help/getting-started/projects-and-sites)."
+            ? "Κάθε ιστοσελίδα που επιλέγετε από το Search Console έχει το δικό της έργο. Προσθέστε την επωνυμία σας, τους ανταγωνιστές που σας ενδιαφέρουν και την αγορά όπου δραστηριοποιείστε. [Δείτε πώς](/help/getting-started/projects-and-sites)."
             : "Each Search Console property becomes a project. Set brand terms, competitors and your market. [See how](/help/getting-started/projects-and-sites).",
         },
         {
-          title: el ? "Ανοίξτε την «Αυτή την εβδομάδα»" : "Open This week",
+          title: el ? "Ανοίξτε την ενότητα «Αυτή την εβδομάδα»" : "Open This week",
           text: el
-            ? "Οι διορθώσεις με τα περισσότερα κλικ βρίσκονται στην κορυφή, με την υγεία της αναζήτησης και την τάση της κίνησης από κάτω."
-            : "The fixes worth the most clicks sit at the top, with search health and the traffic trend underneath.",
+            ? "Στην κορυφή θα βρείτε τις αλλαγές με τη μεγαλύτερη εκτιμώμενη αύξηση κλικ. Πιο κάτω βλέπετε πώς κινήθηκε η επισκεψιμότητα της ιστοσελίδας."
+            : "The suggestions at the top have the largest estimated click gains. Below them you can see how your search traffic has changed.",
           image: shot("overview", el ? "Η οθόνη «Αυτή την εβδομάδα» με τις κορυφαίες διορθώσεις" : "The This week screen with the top fixes"),
         },
         {
@@ -207,8 +207,8 @@ export default async function HelpHomePage({ params }: PageProps) {
         title={el ? "Καλώς ήρθατε στο AnotherSEOGuru App" : "Welcome to AnotherSEOGuru App"}
         description={
           el
-            ? "Η πλατφόρμα SEO πάνω στο Google Search Console, για web και iPhone. Μάθετε να τη χρησιμοποιείτε από την πρώτη σύνδεση μέχρι τη διαχείριση μιας εταιρείας SEO."
-            : "The SEO platform built on Google Search Console, on the web and on iPhone. Learn it from your first connection to running an agency on it."
+            ? "Συνδέστε την πρώτη σας ιστοσελίδα, βρείτε πώς λειτουργεί μια αναφορά ή αναζητήστε βοήθεια για τη συνδρομή σας."
+            : "Connect your first site, find your way around a report, or get help with a subscription."
         }
         path={helpPath(locale)}
         headings={headingsOf(blocks)}

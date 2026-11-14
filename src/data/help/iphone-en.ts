@@ -24,9 +24,9 @@ export const iphoneEn: HelpCategory = {
     {
       slug: "get-the-beta",
       title: "Get the iPhone beta",
-      description: "The iPhone app is in beta through Apple's TestFlight. Here's how to request an invite and install it.",
+      description: "To try the iPhone app, request an invite and install Apple’s TestFlight.",
       body: [
-        { type: "p", text: "AnotherSEOGuru App for iPhone is a native app (not a web view) on the same account and data as the web app. It's in **beta through Apple's TestFlight**. It isn't on the App Store yet, so the only way to install it is with a TestFlight invite from us." },
+        { type: "p", text: "You can try AnotherSEOGuru App for iPhone through **Apple’s TestFlight**. Request an invitation from our team, then sign in with the account you use on the web to see your sites." },
         { type: "h2", id: "requirements", text: "What you need" },
         { type: "list", items: [
           "An iPhone on **iOS 17 or later**. On iOS 26 and later the app uses the system's Liquid Glass tab bar.",
@@ -52,7 +52,7 @@ export const iphoneEn: HelpCategory = {
           { title: "Keywords and rankings", text: "Keyword research, rank tracking and the live SERP explorer.", href: "/help/iphone-app/keywords-and-rankings", icon: "search" },
           { title: "Site audit on iPhone", text: "Run a crawl and follow it on the Lock Screen and in the Dynamic Island.", href: "/help/iphone-app/site-audit-on-iphone", icon: "shield" },
           { title: "AI visibility", text: "AI Overview citations, AI referrals and mentions in AI answers.", href: "/help/iphone-app/ai-visibility", icon: "sparkles" },
-          { title: "The assistant", text: "Ask about your own data and watch it work step by step.", href: "/help/iphone-app/assistant", icon: "bot" },
+          { title: "Aster AI", text: "Ask about a page and see which search data informed the answer.", href: "/help/iphone-app/assistant", icon: "bot" },
           { title: "Notifications and background refresh", text: "Leads, traffic swings, reports, tasks and billing, on your phone.", href: "/help/iphone-app/notifications-and-background-refresh", icon: "bell" },
           { title: "Widgets and Siri", text: "Clicks, all your sites and this week's fixes on the Home and Lock Screen.", href: "/help/iphone-app/widgets", icon: "layout" },
           { title: "iPhone app FAQ", text: "Beta, plans, languages, privacy and more.", href: "/help/iphone-app/iphone-faq", icon: "book" },
@@ -252,10 +252,10 @@ export const iphoneEn: HelpCategory = {
     },
     {
       slug: "assistant",
-      title: "The AI assistant on iPhone",
-      description: "Ask questions about your own Search Console data and follow the assistant as it thinks, reads your data and writes.",
+      title: "Aster AI on iPhone",
+      description: "Ask Aster AI about a page and open the data behind its suggestion.",
       body: [
-        { type: "p", text: "The assistant answers questions about the selected site using your own Search Console data. It writes the finished text (a new title, a rewritten intro, a plan), not just a brief." },
+        { type: "p", text: "Ask Aster AI about the selected site, for example why a page has lost clicks. You can review its sources, request a new title and keep the suggestion as a task. Questions use your plan’s daily allowance and cost no credits." },
         { type: "h2", id: "open", text: "Where to find it" },
         { type: "list", items: [
           "The **sparkles** button at the top of Today and Insights.",
@@ -265,7 +265,7 @@ export const iphoneEn: HelpCategory = {
         ] },
         { type: "p", text: "Not sure what to ask? The empty screen has suggestions such as **What should I fix first this week?**, **Why did my clicks change this month?** and **Write better titles for my top pages**." },
         { type: "h2", id: "states", text: "What the assistant is doing" },
-        { type: "p", text: "While it works, a status card shows each step, so you never stare at a blank screen:" },
+        { type: "p", text: "The status card shows which sources Aster AI is checking." },
         { type: "table", head: ["You see", "What's happening"], rows: [
           ["**Thinking…**", "It's reading your question and deciding which data it needs."],
           ["**Consulting your data…**", "It's reading your data. Each source is a line with a spinner that turns into a check, for example **Reading 1,240 searches from the last 28 days**. A source it can't use is marked not available."],
@@ -350,8 +350,8 @@ export const iphoneEn: HelpCategory = {
       description: "Quick answers about the iPhone beta, plans and credits, languages, data access and support.",
       body: [
         { type: "faq", items: [
-          { q: "Is the iPhone app on the App Store?", a: `Not yet. The app is in beta through Apple's TestFlight. Email ${BETA_MAIL} with the subject **iPhone beta access** and we'll send you an invite. See [Get the iPhone beta](/help/iphone-app/get-the-beta).` },
-          { q: "Do I need a separate subscription for the app?", a: "No. The app signs in to the same account as the web app and shows your existing plan and credits under **Settings → Plan and credits**. Plans are chosen on the website." },
+          { q: "Is the iPhone app on the App Store?", a: `Not yet. The app is in beta through Apple's TestFlight. Email ${BETA_MAIL} with the subject **iPhone beta access** to request an invite. See [Get the iPhone beta](/help/iphone-app/get-the-beta).` },
+          { q: "Do I need a separate subscription for the app?", a: "No. The app signs in to the same account as the web app and shows your existing plan and credits under **Settings → Plan and credits**. Manage the subscription with the provider you used to buy it." },
           { q: "Does the app use credits?", a: "Only for the same paid actions as the web app, such as keyword data, the SERP explorer, site audits and fresh Analytics reports. The app shows **Review the credit cost** before anything is charged, and only a completed result is charged. Reading your Search Console data, Today, fixes, tasks and widgets is free." },
           { q: "Will I see the same fixes as on the web?", a: "Yes. The app's opportunity engine and its fix, ship and measure loop are ports of the web app's own code, so both rank the same fixes for the same site. Tasks sync both ways." },
           { q: "Which iPhones are supported?", a: "iPhone on iOS 17 or later. On iOS 26 and later the app uses Apple's Liquid Glass navigation. It also runs on iPad." },

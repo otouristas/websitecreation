@@ -29,7 +29,7 @@ import { isValidLocale, localizedPath, type SiteLocale } from "@/lib/i18n/locale
 import { blogPostCanonicalUrl, blogPostingSchema, buildBlogPostMetadata } from "@/lib/blog-seo";
 import { getBlogMoneyLinks } from "@/lib/linking";
 import { seoGuideSlugSet } from "@/lib/seo-guides";
-import { getAppPath } from "@/lib/app-links";
+import { appLink } from "@/components/gsc-boost/copy";
 import {
   generateBreadcrumbSchema,
   generateFAQSchema,
@@ -309,15 +309,15 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
               <div className="rounded-2xl border border-hairline bg-surface p-5">
                 <p className="font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-brand">
-                  {isEl ? "Η πλατφόρμα μας" : "Our platform"}
+                  AnotherSEOGuru App
                 </p>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                   {isEl
-                    ? "Συνδέστε το Search Console και δείτε ποια ερωτήματα απέχουν μία θέση από τα κλικ."
-                    : "Connect Search Console and see which queries are one position from real clicks."}
+                    ? "Ποια σελίδα σας έχασε κλικ αυτόν τον μήνα; Ρωτήστε τον Aster AI και δείτε τα στοιχεία του Search Console για τη συγκεκριμένη σελίδα."
+                    : "Which page lost clicks this month? Ask Aster AI and see the Search Console figures behind the answer."}
                 </p>
                 <a
-                  href={getAppPath("/signup")}
+                  href={appLink("/signup", locale as SiteLocale, "blog-sidebar")}
                   rel="noopener noreferrer"
                   className={cn(kitSoftwareBtn, "mt-4 min-h-10 px-4 text-[13px]")}
                 >
@@ -342,7 +342,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               {pillarCopy ? (
                 <div className="rounded-2xl border border-hairline bg-surface p-5">
                   <p className="font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-muted-foreground">
-                    {isEl ? "Μέρος του κόμβου" : "Part of the hub"}
+                    {isEl ? "Περισσότερα για το θέμα" : "More on this topic"}
                   </p>
                   <Link
                     href={lp(`/blog/topics/${pillarSlug}`)}

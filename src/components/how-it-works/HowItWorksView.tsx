@@ -85,14 +85,14 @@ function AiAndSeo({ locale }: { readonly locale: SiteLocale }) {
         eyebrow={el ? "Google και AI" : "Google and AI"}
         title={
           <>
-            {el ? "SEO για το Google, AEO / GEO για " : "SEO for Google, AEO / GEO for "}
-            <WaveAccent>{el ? "ChatGPT και Gemini." : "ChatGPT and Gemini."}</WaveAccent>
+            {el ? "Πώς σας βρίσκουν στη Google και " : "How people find you in Google and "}
+            <WaveAccent>{el ? "στις απαντήσεις AI" : "in AI answers"}</WaveAccent>
           </>
         }
         lead={
           el
-            ? "Κάθε εβδομάδα ρωτάμε το ChatGPT, το Gemini και το Perplexity τις ερωτήσεις των πελατών σας και σας δείχνουμε ποιον προτείνουν. Οι ίδιες διορθώσεις βοηθούν και στα δύο."
-            : "Every week we ask ChatGPT, Gemini and Perplexity the questions your customers ask and show you who they recommend. The same fixes help on both."
+            ? "Στη Google μετράτε πόσοι βρίσκουν και ανοίγουν μια σελίδα σας. Στις απαντήσεις AI μπορείτε να παρακολουθείτε αν αναφέρεται η επιχείρησή σας όταν κάποιος κάνει μια σχετική ερώτηση."
+            : "For Google, track how many people see and open your pages. For AI answers, check whether your business gets mentioned when someone asks a question about your market."
         }
       />
       <div className="mt-10 overflow-x-auto rounded-[22px] border border-hairline bg-background/70">
@@ -149,11 +149,11 @@ export function HowItWorksView({ locale }: { readonly locale: SiteLocale }) {
           title={
             locale === "el" ? (
               <>
-                Πώς <WaveAccent>λειτουργεί</WaveAccent>
+                Πώς λειτουργεί το <WaveAccent>AnotherSEOGuru App</WaveAccent>
               </>
             ) : (
               <>
-                How it <WaveAccent>works</WaveAccent>
+                How <WaveAccent>AnotherSEOGuru App</WaveAccent> works
               </>
             )
           }

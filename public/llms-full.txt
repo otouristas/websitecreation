@@ -1,4 +1,4 @@
-Last-Updated: 2026-11-10
+Last-Updated: 2026-11-14
 Canonical: https://anotherseoguru.com/llms-full.txt
 Short-form: https://anotherseoguru.com/llms.txt
 Sitemap: https://anotherseoguru.com/sitemap.xml
@@ -12,7 +12,7 @@ This document is the machine-readable reference for AI assistants and AI search 
 
 ## 1. What AnotherSEOGuru App is
 
-AnotherSEOGuru App is SEO software built on Google Search Console. It reads every query and page in your Search Console data and turns them into one ranked list of fixes, each with an estimate of the extra clicks it could bring, plus keyword research and rank tracking, site audits, content tools, competitor data, AI visibility tracking (ChatGPT, Gemini, Perplexity, Google AI Overviews) and Aster AI, an assistant that answers from your own data. Web app at app.anotherseoguru.com, with an iPhone app, Android app, Chrome extension, WordPress plugin and an MCP server for AI assistants on the same account. English and Greek. Made by Touristas Technologies.
+AnotherSEOGuru App helps you choose which page to improve using your Google Search Console data. Check the searches behind a change in clicks, ask Aster AI about a page and save a suggested edit as a task. Compare clicks after publishing. The app also offers keyword research, rank tracking, site audits, content tools and AI visibility checks. Explore the demo with sample data or connect a site with read-only Google access. The web app, mobile apps and integrations use the same account. See each product page for access details. Available in English and Greek from Touristas Technologies.
 
 - **Category:** SEO software (SaaS), built on Google Search Console.
 - **Web app:** https://app.anotherseoguru.com · **Website:** https://anotherseoguru.com (English under /en, Greek under /el).
@@ -55,65 +55,65 @@ AnotherSEOGuru App is SEO software built on Google Search Console. It reads ever
 
 ### Opportunities (Ευκαιρίες)
 - **URL:** https://anotherseoguru.com/en/platform/features#opportunities
-- **Summary:** AnotherSEOGuru App reads every query and page in your Search Console data and turns them into one ranked list of fixes, each with an estimate of the extra clicks it could bring per month.
+- **Summary:** Compare pages by the extra monthly clicks a change could bring. Each estimate comes from the impressions and clicks in your own Search Console account.
 - **Includes:** Striking-distance keywords on positions 4–20 with real demand; Snippets that earn fewer clicks than their position should; Decaying pages, cannibalization and missing content
-- **Why it matters:** Search Console tells you what happened. The opportunity list tells you what to do next and roughly what it’s worth, so the biggest wins stop sitting unnoticed on page two.
+- **Why it matters:** Open a suggestion to check the figures before you turn it into a task.
 - **Plans:** Starter, Pro, Agency
 
 ### Performance (Απόδοση)
 - **URL:** https://anotherseoguru.com/en/platform/features#performance
-- **Summary:** Clicks, impressions, CTR and position for every query, page, country and device, with period comparisons and annotations for your releases and Google’s updates.
+- **Summary:** Find the pages behind a rise or drop in clicks. Filter by country or device and compare the dates that matter to your business.
 - **Includes:** Compare with the previous period or the same period last year; Your releases and confirmed Google updates, marked on the chart; Up to 16 months of history, segmented by device and country
-- **Why it matters:** When traffic moves, you need the reason in minutes, not after an afternoon in spreadsheets. Annotations and comparisons put cause and effect on the same chart.
+- **Why it matters:** Mark the date of a redesign or a content update so you can return to the chart and compare traffic on either side.
 - **Plans:** Starter, Pro, Agency
 
 ### Keywords (Λέξεις-κλειδιά)
 - **URL:** https://anotherseoguru.com/en/platform/features#keywords
-- **Summary:** Research keywords with volume, difficulty and intent, see who ranks today, group ideas into topics and track the positions that matter to you.
+- **Summary:** Check how often people search for a phrase and what the top pages already cover. Group related terms and follow the rankings you care about.
 - **Includes:** Volume, difficulty and intent for every idea; A SERP overview of who ranks and what they cover; Rank tracking with history for the keywords you choose
-- **Why it matters:** Search Console only shows queries you already appear for. Research shows the demand you are missing, and tracking shows whether your work is paying off.
+- **Why it matters:** Before commissioning a new page, check whether another page on your site already appears for the same searches.
 - **Plans:** Starter, Pro, Agency
 
 ### Content (Περιεχόμενο)
 - **URL:** https://anotherseoguru.com/en/platform/features#content
-- **Summary:** Build briefs from what already ranks, write and score drafts against them, and publish to WordPress without copy and paste.
+- **Summary:** Prepare a brief using the pages that appear in search today. Review the draft against that brief, then publish the finished article to WordPress.
 - **Includes:** AI briefs with an outline, questions and entities to cover; An optimizer that scores drafts and suggests titles and descriptions; Import from and publish to WordPress
-- **Why it matters:** Most content underperforms because it misses what searchers expect to find. A brief grounded in the live results closes that gap before anyone writes a word.
+- **Why it matters:** A writer can start with the questions readers need answered. An editor can use the same brief to check the draft.
 - **Plans:** Pro, Agency
 
 ### Site audit (Έλεγχος ιστότοπου)
 - **URL:** https://anotherseoguru.com/en/platform/features#audit
-- **Summary:** Crawl your site for the problems that cost rankings, such as broken pages, indexability blockers and slow templates, and fix the important ones first.
+- **Summary:** Check for broken pages, slow templates and settings that prevent Google from indexing a page. The audit lists issues by priority.
 - **Includes:** A full-site crawl with clear severity levels; Indexability and internal-link analysis; Core Web Vitals from Google PageSpeed Insights
-- **Why it matters:** Technical problems quietly cap how well good content can rank. Clear severities and plain-language fixes show where to start, without a 200-row export.
+- **Why it matters:** Use the affected URLs to give your developer a specific problem to investigate.
 - **Plans:** Starter, Pro, Agency
 
 ### Competitors (Ανταγωνιστές)
 - **URL:** https://anotherseoguru.com/en/platform/features#competitors
-- **Summary:** Find out who you really compete with in search, the keywords they rank for that you don’t, and how your backlink profiles compare.
-- **Includes:** Organic competitor discovery; Keyword gap: their rankings, your blind spots; Backlinks and referring domains
-- **Why it matters:** Your competitors have already tested what works for your audience. A gap analysis turns their rankings into a prioritized content plan for you.
+- **Summary:** Find the sites that appear for the searches you care about. Compare their rankings and backlinks with yours to identify topics you could cover.
+- **Includes:** Organic competitor discovery; Queries where competing pages already rank; Backlinks and referring domains
+- **Why it matters:** Look at the pages that rank before adding a term to your plan. Is the person searching likely to need what you offer?
 - **Plans:** Pro, Agency
 
 ### AI visibility (Ορατότητα στην AI)
 - **URL:** https://anotherseoguru.com/en/platform/features#ai-visibility
-- **Summary:** Track whether ChatGPT, Gemini and Perplexity mention or cite your brand for the questions your buyers ask, and whether you appear in Google’s AI Overviews.
+- **Summary:** Follow the questions your customers ask in ChatGPT, Gemini and Perplexity. See whether the answers mention your business or cite your pages, and check your presence in Google AI Overviews.
 - **Includes:** Mentions and citations in ChatGPT, Gemini and Perplexity; Google AI Overviews presence for your keywords; Share of voice against your competitors
-- **Why it matters:** More buying research now starts in an AI answer. If assistants don’t mention you, that demand never reaches your site, and Search Console can’t show it.
+- **Why it matters:** Compare the sources that appear for the same question over time. A single mention is one observation.
 - **Plans:** Pro, Agency
 
-### AI assistant (Βοηθός AI)
+### Aster AI (Aster AI)
 - **URL:** https://anotherseoguru.com/en/platform/features#assistant
-- **Summary:** Ask questions in plain language and get answers grounded in your Search Console numbers: why traffic moved, what to fix first, how to rewrite a title.
+- **Summary:** Ask which pages lost traffic or how you could improve a title. Aster AI can use the searches and clicks from your own site to explain its answer.
 - **Includes:** Explains changes with the numbers behind them; Opens from any opportunity with the context attached; Drafts titles, descriptions and outlines on request
-- **Why it matters:** Analysis is only useful if it turns into a decision. The assistant closes the gap between a number on a chart and the change you should make.
+- **Why it matters:** Open Aster AI from a suggested fix to discuss the page and query that led to it. Chat uses a daily question allowance for your plan.
 - **Plans:** Starter, Pro, Agency
 
 ### Agency workspace (Χώρος εργασίας agency)
 - **URL:** https://anotherseoguru.com/en/platform/features#agency
-- **Summary:** A client CRM, deal pipeline, task list and white-label reports, connected to each client’s Search Console.
+- **Summary:** Open a client’s project to check their Search Console figures, assign work and prepare a report with your own logo. You can follow new business in the same CRM.
 - **Includes:** Clients, contacts, notes and linked sites; A pipeline from lead to signed; White-label reports with your branding
-- **Why it matters:** Agencies lose hours every month moving numbers between tools. Keeping clients, work and results in one place gives that time back to the actual SEO.
+- **Why it matters:** Before the next client call, check which tasks are complete and which pages changed since your last report.
 - **Plans:** Agency
 
 ---
@@ -121,22 +121,22 @@ AnotherSEOGuru App is SEO software built on Google Search Console. It reads ever
 ## 3. Plans and credits (USD)
 
 ### Starter: $19/month or $190/year
-- For one business with one or two sites.
+- For a business managing its own website.
 - 2 sites, 1 seat, 500 credits a month.
-- Features: Every fix the engine finds, with click impact; Unlimited tasks with measured results; 100 tracked keywords and alerts; 10 AI visibility prompts; GA4, widgets and the iPhone app.
+- Features: All suggested fixes, with estimated extra clicks; Unlimited tasks with before-and-after comparisons; 100 tracked keywords and alerts; Track AI answers to 10 questions; Google Analytics 4, widgets and the iPhone beta.
 
 ### Pro: $49/month or $490/year
-- For marketers and freelancers who ship every week.
+- For marketers and freelancers publishing or updating content each week.
 - 5 sites, 2 seats, 2,500 credits a month.
-- Features: Everything in Starter; AI visibility in ChatGPT, Gemini, Perplexity and AI Overviews; Content briefs, writer, optimizer and revamp; Autopilot fixes on WordPress and GitHub; Competitors, keyword gap, backlinks and local grid; Weekly site audits up to 5,000 pages.
+- Features: Everything in Starter; AI visibility in ChatGPT, Gemini, Perplexity and AI Overviews; Tools to plan, write and update content; Autopilot fixes on WordPress and GitHub; Compare competitors’ keywords and backlinks and see local rankings on a map; Weekly site audits up to 5,000 pages.
 
 ### Agency: $299/month or $2990/year
 - For agencies managing many clients and sites.
 - 30 sites, 5 seats, 25,000 credits a month.
-- Features: Everything in Pro; White-label client reports; Site audits up to 20,000 pages per site; Onboarding call and priority support.
+- Features: Everything in Pro; Client reports with your own branding; Site audits up to 20,000 pages per site; Onboarding call and priority support.
 
 - Yearly billing gives two months free.
-- Search Console analysis, opportunities and client reports never use credits. Credits pay for third-party data and AI, and every action shows its cost before it runs.
+- Search Console analysis, opportunities and client reports never use credits. Paid data and some AI tools use credits. Aster AI chat uses the daily allowance for your plan.
 - Credit packs: 1,000 credits 1,000 credits for $12; 5,000 credits 5,000 credits for $49; 20,000 credits 20,000 credits for $159.
 - Pricing pages: https://anotherseoguru.com/en/pricing · https://anotherseoguru.com/el/pricing
 
@@ -653,37 +653,33 @@ AnotherSEOGuru App is SEO software built on Google Search Console. It reads ever
   - Q: What tools help with AI visibility / GEO?
     A: Start with a fixed prompt sampling workflow plus GSC. Dedicated citation trackers help at scale; pair them with AI Visibility services when you need execution.
 
-### Εργαλεία SEO 2026: Δωρεάν Stack + Google Analytics για SEO
+### Εργαλεία SEO για μικρές επιχειρήσεις: με ποια να ξεκινήσετε
 - **URL:** https://anotherseoguru.com/el/blog/ergaleia-seo
 - **Locale:** el · **Date:** 2026-07-23
-- **Description:** Τα καλύτερα εργαλεία SEO για ελληνικές επιχειρήσεις: Search Console, Analytics (GA4), PageSpeed, και πώς τα χρησιμοποιείτε χωρίς ακριβά suites στην αρχή.
+- **Description:** Δείτε πώς χρησιμοποιείτε Search Console, Google Analytics και PageSpeed Insights για τη δική σας ιστοσελίδα και πότε αξίζει μια συνδρομή σε εργαλείο SEO.
 - **Embedded FAQ:**
-  - Q: Ποια εργαλεία SEO χρειάζομαι στην αρχή;
-    A: Google Search Console, Google Analytics 4, PageSpeed Insights και το ίδιο το SERP. Αυτά καλύπτουν το 80% των αποφάσεων για μικρή επιχείρηση πριν πληρώσετε Ahrefs/Semrush.
-  - Q: Πώς βοηθά το Google Analytics στο SEO;
-    A: Το GA4 δείχνει ποια οργανική κίνηση μετατρέπει: σελίδες εισόδου, engagement, conversions. Συνδεδεμένο με το Search Console, συνδέει κατατάξεις με πραγματική συμπεριφορά χρηστών.
-  - Q: Χρειάζομαι πληρωμένο SEO tool;
-    A: Όχι την πρώτη μέρα. Χρειάζεται όταν κλιμακώνετε έρευνα ανταγωνισμού, backlinks και keyword gaps. Ξεκινήστε με GSC δεδομένα και καθαρό on-page.
-  - Q: Ποια εργαλεία βοηθούν στο τοπικό SEO;
-    A: Google Business Profile insights, έλεγχοι συνέπειας NAP/citations και workflows κριτικών. Συχνά αξίζουν περισσότερο από ακόμη μία keyword database.
-  - Q: Τα AI SEO tools αντικαθιστούν τα suites το 2026;
-    A: Επιταχύνουν briefs και περιλήψεις. Δεν αντικαθιστούν crawl data, backlink graphs ή analytics μετατροπών. Αντιμετωπίστε τα ως assistants μέσα στη στοίβα.
+  - Q: Ποιο εργαλείο SEO να χρησιμοποιήσω πρώτο;
+    A: Ξεκινήστε από το Google Search Console. Επιλέξτε μια σελίδα που έχει σημασία για την επιχείρησή σας και δείτε για ποιες αναζητήσεις εμφανίστηκε και πόσα κλικ πήρε.
+  - Q: Τι προσθέτει το Google Analytics;
+    A: Δείχνει από ποιες σελίδες μπήκαν οι επισκέπτες στην ιστοσελίδα και ποιες ενέργειες καταγράφηκαν στη συνέχεια. Για να μετρήσετε αιτήματα ή κρατήσεις, θα πρέπει να έχει ρυθμιστεί η αντίστοιχη ενέργεια.
+  - Q: Πότε αξίζει ένα εργαλείο με συνδρομή;
+    A: Όταν χρειάζεστε στοιχεία που λείπουν από τα δωρεάν εργαλεία ή όταν μια επαναλαμβανόμενη εργασία σάς κοστίζει χρόνο. Δοκιμάστε το με ένα πραγματικό ερώτημα πριν διαλέξετε πακέτο.
+  - Q: Ποιο εργαλείο να κοιτάξω για πελάτες από τη γειτονιά μου;
+    A: Ελέγξτε το Google Business Profile. Επιβεβαιώστε τη διεύθυνση, το τηλέφωνο και το ωράριο όπως τα βλέπει ο πελάτης στον χάρτη.
 
-### GEO vs SEO vs AEO: Ποια η Διαφορά; (2026)
+### SEO, AEO και GEO: τι χρειάζεται η δική σας ιστοσελίδα;
 - **URL:** https://anotherseoguru.com/el/blog/geo-vs-seo-vs-aeo-el
 - **Locale:** el · **Date:** 2026-07-23
-- **Description:** GEO, SEO και AEO εξηγημένα: τι αλλάζει όταν οι απαντήσεις έρχονται από AI, τι μένει ίδιο και τι χρειάζεται μια ελληνική ιστοσελίδα για να αναφέρεται.
+- **Description:** Δείτε τη διαφορά ανάμεσα σε SEO, AEO και GEO με ένα παράδειγμα ξενοδοχείου. Τι αλλάζετε στη σελίδα, πώς μετράτε τα αποτελέσματα και τι αξίζει να αναθέσετε.
 - **Embedded FAQ:**
-  - Q: Το GEO αντικαθιστά το SEO;
-    A: Όχι. Το GEO χτίζει πάνω στο SEO. Χρειάζεστε ακόμα crawlable, γρήγορες, authoritative σελίδες. Το GEO προσθέτει βελτιστοποίηση entities και citations για generative engines.
-  - Q: Τι σημαίνει AEO;
-    A: Answer Engine Optimization: δομή περιεχομένου και schema ώστε οι answer engines (AI Overviews, voice, featured answers) να επιλέγουν το brand σας.
-  - Q: Από πού ξεκινά μια μικρή επιχείρηση;
-    A: Ξεκινήστε με τεχνικό SEO + τοπικό SEO, μετά FAQ/schema AEO, και μετά προγράμματα GEO citations όταν τα θεμέλια είναι σταθερά.
-  - Q: Μπορεί μία σελίδα να υποστηρίζει SEO, AEO και GEO μαζί;
-    A: Ναι. Μια εμπορική σελίδα με καθαρή πρόθεση, answer-first FAQ, schema και μοναδικές αποδείξεις μπορεί να κατατάσσεται, να κερδίζει snippets και να παίρνει AI citations ταυτόχρονα.
-  - Q: Πώς μετράτε την επιτυχία GEO;
-    A: Παρακολουθήστε σταθερό prompt set μηνιαία σε μοντέλα, καταγράψτε mentions και links, και συσχετίστε με κλικ Search Console και leads, όχι vanity «AI rank» scores.
+  - Q: Ποια είναι η διαφορά ανάμεσα σε SEO, AEO και GEO;
+    A: Με το SEO εξετάζετε αν βρίσκουν την ιστοσελίδα σας στην αναζήτηση. Με το AEO δουλεύετε τη σαφήνεια μιας συγκεκριμένης απάντησης. Με το GEO εξετάζετε τι λένε οι βοηθοί AI για την επιχείρηση και ποιες πηγές χρησιμοποιούν.
+  - Q: Χρειάζεται ξεχωριστή σελίδα για κάθε προσέγγιση;
+    A: Μια καλή σελίδα υπηρεσίας μπορεί να καλύπτει και τις τρεις ανάγκες. Νέα σελίδα χρειάζεται όταν ο επισκέπτης έχει διαφορετική ερώτηση που αξίζει δική της απάντηση.
+  - Q: Πώς παρακολουθώ τις αναφορές σε βοηθούς AI;
+    A: Κρατήστε σταθερές τις ερωτήσεις και τη γλώσσα. Σημειώστε ποια υπηρεσία χρησιμοποιήσατε, πότε έγινε ο έλεγχος, αν αναφέρθηκε η επωνυμία σας και αν υπήρχε σύνδεσμος προς τη σελίδα σας.
+  - Q: Μπορεί μια εταιρεία SEO να εξασφαλίσει αναφορά στο ChatGPT;
+    A: Η επιλογή πηγών γίνεται από τον εκάστοτε βοηθό. Ζητήστε να συμφωνηθούν οι σελίδες που θα ελεγχθούν, οι αλλαγές που θα γίνουν και ο τρόπος με τον οποίο θα παρακολουθείτε τις απαντήσεις.
 
 ### GEO vs SEO vs AEO: Which Do You Need in 2026?
 - **URL:** https://anotherseoguru.com/en/blog/geo-vs-seo-vs-aeo
@@ -925,7 +921,7 @@ AnotherSEOGuru App is SEO software built on Google Search Console. It reads ever
   - Q: How long does SEO take to work?
     A: Expect early movement in 2–3 months and meaningful growth in 4–12 months, depending on competition, site history, and publishing cadence.
 
-### SEO για Εστιατόρια & Καφέ: Γεμίστε Τραπέζια από τη Google
+### SEO για εστιατόρια και καφέ: από το Google Maps στην κράτηση
 - **URL:** https://anotherseoguru.com/el/blog/seo-gia-estiatoria
 - **Locale:** el · **Date:** 2026-07-07
 - **Description:** Τοπικό SEO για εστιατόρια, καφέ και μπαρ στην Ελλάδα. Google Business Profile, μενού σε HTML, κριτικές, κόστος και checklist για γεμάτα τραπέζια.
@@ -941,7 +937,7 @@ AnotherSEOGuru App is SEO software built on Google Search Console. It reads ever
   - Q: Πόσες κριτικές χρειάζομαι;
     A: Μετράνε η σταθερότητα και η βαθμολογία, όχι ένας μαγικός αριθμός. Στόχος: 2–4 νέες κριτικές τον μήνα με απαντήσεις.
 
-### SEO για Οδοντιάτρους: Γεμίστε την Ατζέντα από τη Google
+### SEO για οδοντιάτρους: πώς βρίσκουν οι ασθενείς το ιατρείο σας
 - **URL:** https://anotherseoguru.com/el/blog/seo-gia-odontiatrous
 - **Locale:** el · **Date:** 2026-07-07
 - **Description:** Στρατηγική SEO για οδοντιατρεία στην Ελλάδα. Τοπική προβολή, Google Business Profile, κριτικές, σελίδες υπηρεσιών, E-E-A-T και κόστος για νέα ραντεβού.
@@ -960,7 +956,7 @@ AnotherSEOGuru App is SEO software built on Google Search Console. It reads ever
 ### Οδηγός Τοπικού SEO για τη Θεσσαλονίκη
 - **URL:** https://anotherseoguru.com/el/blog/topiko-seo-thessaloniki
 - **Locale:** el · **Date:** 2026-07-07
-- **Description:** Πώς μια επιχείρηση στη Θεσσαλονίκη κυριαρχεί στις τοπικές αναζητήσεις. Google Business Profile, τοπικές σελίδες και SEO φθηνότερα από την Αθήνα.
+- **Description:** Τοπικό SEO στη Θεσσαλονίκη για επιχειρήσεις που εξυπηρετούν συγκεκριμένες γειτονιές. Ελέγξτε την καταχώριση στο Google Maps και τις σελίδες υπηρεσιών σας.
 - **Embedded FAQ:**
   - Q: Σε πόσο καιρό φέρνει αποτέλεσμα το τοπικό SEO στη Θεσσαλονίκη;
     A: Λόγω χαμηλότερου ανταγωνισμού από την Αθήνα, οι πρώτες τοπικές κατατάξεις έρχονται συχνά σε 2–3 μήνες για σωστά στοχευμένες υπηρεσίες και περιοχές.
@@ -1005,7 +1001,7 @@ AnotherSEOGuru App is SEO software built on Google Search Console. It reads ever
   - Q: How will the e-shop get customers?
     A: A mix: SEO for categories and products for steady organic flow, Google Shopping/Ads for instant sales, and email for repeat orders.
 
-### Gym & Fitness SEO: Fill Your Gym from Google
+### Gym SEO: help nearby customers find a class
 - **URL:** https://anotherseoguru.com/en/blog/gym-fitness-seo
 - **Locale:** en · **Date:** 2026-07-06
 - **Description:** Local SEO for gyms, studios and personal trainers: win the Google map pack, rank per program and turn “gym near me” searches into new memberships.
@@ -1021,7 +1017,7 @@ AnotherSEOGuru App is SEO software built on Google Search Console. It reads ever
   - Q: When should gyms start SEO for January signups?
     A: Start in October–November. SEO needs 2–3 months to compound, so waiting until January means you miss the peak decision window.
 
-### Hotel SEO: How to Win Direct Bookings in 2026
+### Hotel SEO for guests who want to book direct
 - **URL:** https://anotherseoguru.com/en/blog/hotel-seo-guide
 - **Locale:** en · **Date:** 2026-07-06
 - **Description:** A practical hotel SEO guide: cut OTA commissions, rank in Google and win direct bookings with technical SEO, destination content and AI search visibility.
@@ -1107,7 +1103,7 @@ AnotherSEOGuru App is SEO software built on Google Search Console. It reads ever
   - Q: Πώς θα φέρει πελάτες το e-shop;
     A: Με συνδυασμό: SEO κατηγοριών και προϊόντων για σταθερή οργανική ροή, Google Shopping/Ads για άμεσες πωλήσεις και email marketing για επαναγορές. Το SEO είναι η φθηνότερη λύση μακροπρόθεσμα, οι διαφημίσεις η ταχύτερη βραχυπρόθεσμα.
 
-### Law Firm SEO: How Attorneys Win Cases from Google
+### Law firm SEO: help clients find the right practice area
 - **URL:** https://anotherseoguru.com/en/blog/law-firm-seo
 - **Locale:** en · **Date:** 2026-07-06
 - **Description:** A practical SEO guide for law firms and attorneys: local targeting, practice-area pages, trust-building content and the technical basics that bring cases.
@@ -1139,7 +1135,7 @@ AnotherSEOGuru App is SEO software built on Google Search Console. It reads ever
   - Q: Η ιστοσελίδα θα είναι δική μου;
     A: Στην AnotherSEOGuru ναι: παραδίδουμε πλήρη πρόσβαση και όλα τα αρχεία. Ρωτήστε το πάντα, γιατί πολλοί κατασκευαστές κλειδώνουν τους πελάτες στο δικό τους σύστημα.
 
-### Real Estate SEO: Win Listings and Buyers from Google
+### Real estate SEO for agents and local listings
 - **URL:** https://anotherseoguru.com/en/blog/real-estate-seo
 - **Locale:** en · **Date:** 2026-07-06
 - **Description:** SEO for real estate agencies: rank for area searches, attract sellers who want an agent, and turn Google traffic into listings and buyer enquiries.
@@ -1205,7 +1201,7 @@ AnotherSEOGuru App is SEO software built on Google Search Console. It reads ever
   - Q: Μπορώ να στοχεύσω περισσότερες από μία πόλεις;
     A: Ναι, με ξεχωριστές τοπικές σελίδες ανά πόλη και πραγματική αξία ανά σελίδα, όχι copy-paste με αλλαγμένο όνομα πόλης.
 
-### SEO για Γυμναστήρια: Γεμίστε το Γυμναστήριο από τη Google
+### SEO για γυμναστήρια: πώς σας βρίσκουν οι πελάτες της περιοχής σας
 - **URL:** https://anotherseoguru.com/el/blog/seo-gia-gymnastiria
 - **Locale:** el · **Date:** 2026-07-06
 - **Description:** Στρατηγική SEO για γυμναστήρια και στούντιο στην Ελλάδα. Τοπική προβολή, Google Maps, προγράμματα, κριτικές, εποχικό πλάνο και κόστος εγγραφών.
@@ -1429,21 +1425,19 @@ AnotherSEOGuru App is SEO software built on Google Search Console. It reads ever
   - Q: What's the first step for a redesign without losing rankings?
     A: Crawl the current site, map URL redirects, export top GSC pages, and lock the redirect + content migration plan before touching the new design system.
 
-### Why we split software pricing and agency pricing (and how to choose)
+### SEO software or an agency? How to decide who does the work
 - **URL:** https://anotherseoguru.com/en/blog/pricing-page-seo-software-vs-agency
 - **Locale:** en · **Date:** 2026-03-10
-- **Description:** Clear positioning between self-serve SEO software and done-for-you retainers on your pricing page, which reduces confusion and improves lead quality.
+- **Description:** Compare an SEO subscription with an agency fee. See who makes the changes, what to budget for and how to choose the right option for your website.
 - **Embedded FAQ:**
-  - Q: Is software cheaper than agency?
-    A: Lower cash cost: higher time cost. Total cost of ownership includes your hours or opportunity cost.
-  - Q: Can I switch from software to agency mid-year?
-    A: Yes, export GSC history and backlog. Good agencies start from data.
-  - Q: Do you need agency for [GEO/AEO](/el/blog/geo-vs-seo-vs-aeo-el)?
-    A: FAQ and entity content can be agency or in-house. LLM measurement discipline benefits from experienced guidance initially.
-  - Q: Should startups buy agency day one?
-    A: If website doesn't exist or doesn't rank: agency project often beats software alone. If learning phase: software + DIY path.
-  - Q: How do I compare agency quotes?
-    A: Same scope definition: pages delivered, GBP locations, reporting cadence, redesign inclusion. Apples-to-apples.
+  - Q: What do I get with an SEO software subscription?
+    A: You get access to the features and limits of your chosen plan. Someone on your team still needs to decide which changes to make, approve them and check the results.
+  - Q: When should I ask an agency for a quote?
+    A: Ask when you know what you want improved but need someone to carry out the work. Give the agency a real page, your goal and any deadline so it can quote for a specific deliverable.
+  - Q: Can I keep using software while an agency works on my site?
+    A: Yes. Agree who can edit the site, who approves changes and where completed work is recorded. Use the same reporting period when you review results together.
+  - Q: How can I compare two agency quotes?
+    A: Check which pages and sites are covered, who implements changes, how revisions are approved and what happens after delivery. Compare the full cost over the agreed term.
 
 ### A one-hour Google Search Console ops loop for in-house teams
 - **URL:** https://anotherseoguru.com/en/blog/gsc-weekly-ops-playbook
@@ -1592,7 +1586,7 @@ AnotherSEOGuru App is SEO software built on Google Search Console. It reads ever
 ### The Ultimate Guide to Local SEO for Home Services
 - **URL:** https://anotherseoguru.com/en/blog/local-seo-guide
 - **Locale:** en · **Date:** 2026-01-15
-- **Description:** How plumbers, HVAC techs, contractors, hotels, and rent-a-car operators can dominate Google Maps. Stop buying leads and start owning them.
+- **Description:** Help local customers find your address, opening hours and services on Google Maps. Learn what to check on your Google Business Profile and your website.
 - **Embedded FAQ:**
   - Q: What is local SEO?
     A: Local SEO is how you rank in Google’s map pack and local results for “near me” and city searches. It centers on Google Business Profile, NAP consistency, reviews, local pages, and citations.
@@ -1603,7 +1597,7 @@ AnotherSEOGuru App is SEO software built on Google Search Console. It reads ever
   - Q: How to do local SEO for beginners?
     A: Claim and fully complete Google Business Profile, match NAP everywhere, collect recent reviews, build one strong location/service page, and track calls or directions.
 
-### Google Business Profile Masterclass: Dominate Local Search
+### Google Business Profile: how to make your listing useful
 - **URL:** https://anotherseoguru.com/en/blog/google-business-profile-masterclass
 - **Locale:** en · **Date:** 2026-01-10
 - **Description:** Step-by-step guide to optimizing your Google Business Profile. Categories, photos, reviews, and the Posts strategy that keeps your profile active.
@@ -1708,11 +1702,11 @@ The same guides are in Greek under https://anotherseoguru.com/el/help. Each page
 
 ### What AnotherSEOGuru App does
 
-> A tour of the product: your Search Console data, turned into a ranked list of fixes.
+> Find a page to improve, choose a suggested fix and follow its search traffic after publication.
 
 Source: https://anotherseoguru.com/en/help/getting-started/welcome
 
-AnotherSEOGuru App reads your **Google Search Console** data and turns it into a weekly plan: which pages and queries to work on, what to change, and how many clicks each fix is likely to bring. Everything else in the product (keyword research, the site audit, content, competitors, AI visibility and client work) feeds that same plan.
+Start with a page people already find on Google. AnotherSEOGuru App uses **Google Search Console** to show the searches behind it and estimate the extra clicks an edit could bring. Save the suggestion as a task to keep a record of what you changed.
 
 ![The This week screen in AnotherSEOGuru App with search performance, sales from Analytics and the sidebar navigation](https://anotherseoguru.com/images/docs/web/overview-light.webp)
 *This week is the home screen: how search is doing and what to fix first.*
@@ -1806,7 +1800,7 @@ Use the site switcher at the top of the sidebar, or press `⌘K` and type the do
 ![The All sites screen with click totals and a card for each site showing its trend, top mover and open fixes](https://anotherseoguru.com/images/docs/web/portfolio-light.webp)
 *All sites shows every project on one screen, sorted by the biggest drop.*
 
-> **Tip:** Your plan sets how many projects you can have: 1 on Free, 2 on Starter, 5 on Pro and 50 on Agency. Paid plans can add more sites as add-ons.
+> **Tip:** Each site counts towards your plan’s project limit. See [Plans and credits](https://anotherseoguru.com/en/help/account-billing/plans-and-credits) for the current limits. Paid plans can add sites separately.
 
 ### A 10-minute weekly routine
 
@@ -2003,7 +1997,7 @@ Save keywords into collections to build a list for a campaign, a page or a clien
 ![Keywords, Clusters tab, with topic counts and a list of clusters showing clicks, impressions and average position](https://anotherseoguru.com/images/docs/web/keywords-clusters-light.webp)
 *Keywords → Clusters groups your Search Console queries into topics.*
 
-> **Note:** Keyword research uses live data and costs credits per lookup. The cost is shown on the button before you run it.
+> **Note:** When a keyword check uses credits, look at the amount on the button before you run it.
 
 ### Rank tracking from Search Console
 
@@ -2251,7 +2245,7 @@ Source: https://anotherseoguru.com/en/help/agencies/reports
 ![Reports, Client report tab, with report settings on the left and an A4 preview of a branded SEO report](https://anotherseoguru.com/images/docs/web/reports-light.webp)
 *Reports → Client report with a live A4 preview.*
 
-- Add your logo and colours in **Settings → Branding** for white-label reports.
+- If you have Agency or the report branding add-on, add your logo and colours in **Settings → Branding**.
 - Print or save as PDF straight from the report, or schedule it by email for portal clients on Pro.
 - **Reports → Strategy** exports a complete workbook: audit findings, keyword mapping, a content plan and a prioritized backlog.
 
@@ -2261,16 +2255,16 @@ Source: https://anotherseoguru.com/en/help/agencies/reports
 
 Source: https://anotherseoguru.com/en/help/account-billing/plans-and-credits
 
-Every plan includes all your Search Console analytics, opportunities and client reports at no credit cost. Credits pay for actions that cost us money to run, like live keyword data, results-page lookups, crawls and AI.
+Reading your Search Console reports and reviewing suggested fixes uses no credits. Questions for Aster AI have a separate daily limit. Actions such as a live rank check or publishing to WordPress use your monthly credits.
 
 | Plan | Price | Credits / month | Projects | Seats |
 | --- | --- | --- | --- | --- |
 | Free | $0 | 25 | 1 | 1 |
 | Starter | $19 / month | 500 | 2 | 1 |
-| Pro | $49 / month | 2,500 | 5 | 3 |
-| Agency | $299 / month | 25,000 | 50 | 15 |
+| Pro | $49 / month | 2,500 | 5 | 2 |
+| Agency | $299 / month | 25,000 | 30 | 5 |
 
-Yearly billing gives you two months free. New accounts can try Pro free for 7 days with no card. If you run out, top up with a credit pack (1,000 credits for $12, 5,000 for $49, 20,000 for $159) at any time in **Settings → Billing & credits**. Paid plans can also add extra sites, seats, keywords, AI prompts and monthly credits as add-ons.
+New accounts can try Pro for seven days without a card. Annual plans cost the same as ten monthly payments. To add credits, open **Settings → Billing & credits**. You can also add sites, tracked keywords, AI monitoring questions or report branding to a paid plan. Your plan sets the number of team members. [Compare plans and current prices](https://anotherseoguru.com/en/pricing).
 
 > **Note:** When an action costs credits, the button shows the cost before you run it, and we ask you to confirm. Actions without a cost on the button are free.
 
@@ -2295,7 +2289,7 @@ In **Settings → Alerts**, choose what you want to hear about, like traffic dro
 
 ## Branding
 
-Your logo, colours and agency name appear on client reports, proposals and the client portal.
+Set your agency name, logo and colours here. Reports with your own branding are included with Agency and available as an add-on on other paid plans.
 
 ### Your data, privacy and Google access
 
@@ -2479,7 +2473,7 @@ Use the saved answers and source pages to discuss a specific improvement with **
 
 Source: https://anotherseoguru.com/en/help/seo-in-practice/visual-seo-workspace
 
-The updated workspace keeps the same project, dates and source records across its charts and tables. Available in the web app and updated iOS and Android builds. Light and dark themes use the same controls.
+Charts and tables use the same project, dates and sources. Use the web app to follow along, or the iPhone beta if you have a TestFlight invitation. The Android app is being prepared for release.
 
 1. Open This week → Search landscape. Select a position group to see its queries. Select a transition cell to see searches observed in both comparison periods. Web CSV exports the complete filtered set, not just the five preview rows.
 2. Open Opportunities. Filter the opportunity map, select a point and open its existing recommendation. The vertical axis uses a logarithmic scale for impressions. Point size represents estimated extra clicks, not a promised outcome.
@@ -2495,7 +2489,7 @@ The network draws up to 70 pages at a time. Selecting a page brings its neighbou
 
 In Content → Page library or Content optimizer, Document mode displays headings, emphasis, lists, images and tables inside the editable page. Markdown remains available for source editing. The web writing panel answers questions using the current draft and offers opening-paragraph rewrites. Every rewrite has a before-and-after preview and requires your acceptance. Saving and publishing remain separate actions.
 
-iOS and Android include the bundled visual document editor and the existing Aster AI rewrite menu. On the phone, controls sit above the document and rewrite previews open separately. Source selection remains available for passages that cannot be mapped reliably. The web draft conversation reads at most the first 14,000 characters and tells you when the draft is longer.
+In the iPhone beta, use the document editor to ask Aster AI for a rewrite. On the phone, controls sit above the document and rewrite previews open separately. Source selection remains available for passages that cannot be mapped reliably. The web draft conversation reads at most the first 14,000 characters and tells you when the draft is longer.
 
 ## WordPress and Chrome
 
@@ -2524,7 +2518,7 @@ Beside either party, choose Find company by VAT / GEMI. Review the source and se
 
 Downloading PDF/DOCX does not record delivery or signing. Direct agreement delivery from the app is not enabled. On web, record an actual signed PDF up to 3 MB with signatories and date. The app does not verify electronic signatures.
 
-Updated iOS and Android builds offer per-client lists, draft editing, version review, preview, export and file sharing. Signed-file and termination records are managed on web. Versions and history are private. Signed files require an authorised, short-lived download link.
+In the iPhone beta you can open a client’s drafts, compare versions, preview a file and share an export. Signed-file and termination records are managed on web. Versions and history are private. Signed files require an authorised, short-lived download link.
 
 Your lawyer reviews the template and jurisdiction. Your accountant checks VAT and any requirement or exemption for [filing an agreement statement with AADE](https://www.aade.gr/ypoboli-katastasis-symfonitikon). The generic privacy clause does not replace a separate DPA where required.
 
@@ -2928,11 +2922,11 @@ Yes. Settings → Language → Greek, or Auto when the browser is Greek. The ext
 
 ### Get the iPhone beta
 
-> The iPhone app is in beta through Apple's TestFlight. Here's how to request an invite and install it.
+> To try the iPhone app, request an invite and install Apple’s TestFlight.
 
 Source: https://anotherseoguru.com/en/help/iphone-app/get-the-beta
 
-AnotherSEOGuru App for iPhone is a native app (not a web view) on the same account and data as the web app. It's in **beta through Apple's TestFlight**. It isn't on the App Store yet, so the only way to install it is with a TestFlight invite from us.
+You can try AnotherSEOGuru App for iPhone through **Apple’s TestFlight**. Request an invitation from our team, then sign in with the account you use on the web to see your sites.
 
 ## What you need
 
@@ -2963,7 +2957,7 @@ We ship beta builds often. TestFlight tells you when one is ready: open **TestFl
 - [Keywords and rankings](https://anotherseoguru.com/en/help/iphone-app/keywords-and-rankings): Keyword research, rank tracking and the live SERP explorer.
 - [Site audit on iPhone](https://anotherseoguru.com/en/help/iphone-app/site-audit-on-iphone): Run a crawl and follow it on the Lock Screen and in the Dynamic Island.
 - [AI visibility](https://anotherseoguru.com/en/help/iphone-app/ai-visibility): AI Overview citations, AI referrals and mentions in AI answers.
-- [The assistant](https://anotherseoguru.com/en/help/iphone-app/assistant): Ask about your own data and watch it work step by step.
+- [Aster AI](https://anotherseoguru.com/en/help/iphone-app/assistant): Ask about a page and see which search data informed the answer.
 - [Notifications and background refresh](https://anotherseoguru.com/en/help/iphone-app/notifications-and-background-refresh): Leads, traffic swings, reports, tasks and billing, on your phone.
 - [Widgets and Siri](https://anotherseoguru.com/en/help/iphone-app/widgets): Clicks, all your sites and this week's fixes on the Home and Lock Screen.
 - [iPhone app FAQ](https://anotherseoguru.com/en/help/iphone-app/iphone-faq): Beta, plans, languages, privacy and more.
@@ -3209,13 +3203,13 @@ Link a GA4 property to the site (see [Search performance](https://anotherseoguru
 
 **Mentions in AI answers** charts how often each platform mentions your domain. Answers vary between runs, so read the trend rather than a single check. To run new checks, add prompts or compare with competitors, tap **Open AI visibility**. New checks use credits; viewing saved ones is free.
 
-### The AI assistant on iPhone
+### Aster AI on iPhone
 
-> Ask questions about your own Search Console data and follow the assistant as it thinks, reads your data and writes.
+> Ask Aster AI about a page and open the data behind its suggestion.
 
 Source: https://anotherseoguru.com/en/help/iphone-app/assistant
 
-The assistant answers questions about the selected site using your own Search Console data. It writes the finished text (a new title, a rewritten intro, a plan), not just a brief.
+Ask Aster AI about the selected site, for example why a page has lost clicks. You can review its sources, request a new title and keep the suggestion as a task. Questions use your plan’s daily allowance and cost no credits.
 
 ## Where to find it
 
@@ -3228,7 +3222,7 @@ Not sure what to ask? The empty screen has suggestions such as **What should I f
 
 ## What the assistant is doing
 
-While it works, a status card shows each step, so you never stare at a blank screen:
+The status card shows which sources Aster AI is checking.
 
 | You see | What's happening |
 | --- | --- |
@@ -3331,11 +3325,11 @@ Source: https://anotherseoguru.com/en/help/iphone-app/iphone-faq
 
 **Is the iPhone app on the App Store?**
 
-Not yet. The app is in beta through Apple's TestFlight. Email [support@anotherseoguru.com](mailto:support@anotherseoguru.com?subject=iPhone%20beta%20access) with the subject **iPhone beta access** and we'll send you an invite. See [Get the iPhone beta](https://anotherseoguru.com/en/help/iphone-app/get-the-beta).
+Not yet. The app is in beta through Apple's TestFlight. Email [support@anotherseoguru.com](mailto:support@anotherseoguru.com?subject=iPhone%20beta%20access) with the subject **iPhone beta access** to request an invite. See [Get the iPhone beta](https://anotherseoguru.com/en/help/iphone-app/get-the-beta).
 
 **Do I need a separate subscription for the app?**
 
-No. The app signs in to the same account as the web app and shows your existing plan and credits under **Settings → Plan and credits**. Plans are chosen on the website.
+No. The app signs in to the same account as the web app and shows your existing plan and credits under **Settings → Plan and credits**. Manage the subscription with the provider you used to buy it.
 
 **Does the app use credits?**
 

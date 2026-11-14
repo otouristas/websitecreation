@@ -21,7 +21,7 @@ faq:
     answer: Crawl the current site, map URL redirects, export top GSC pages, and lock the redirect + content migration plan before touching the new design system.
 ---
 
-Buyers searching **seo**, **website design**, **web development**, and **ai seo** want one partner that ships fast *and* ranks. Fragmented stacks (agency for design, freelancer for dev, three SaaS tools for keywords, another for audits) slow execution and blur accountability. When a hotel group needs a booking-ready site that also wins "Paros family hotel" queries, or a rent-a-car operator needs fleet pages that rank at the airport, the unified approach wins.
+If customers can find your site but cannot finish a booking on a phone, a new keyword report will only take you so far. If the site works well but few people find it, a redesign may be unnecessary. Trace one customer’s route from search to enquiry before choosing software or commissioning a build.
 
 ## Why fragmented stacks fail
 
@@ -43,7 +43,7 @@ Whether you use software, an agency, or both, the capability set is the same:
 - **Content & AI workflows**: briefs, repurposing, LLM citation tracking with human review
 - **Reporting**: client-ready narratives tied to clicks, bookings, and revenue, not rank grids alone
 
-For self-serve operators, [software pricing](/platform/pricing) covers seats and workflows. For execution-heavy quarters (migrations, redesigns, multi-location launches) pair software with [get-started scoping](/get-started).
+For self-serve operators, [software pricing](/en/pricing) covers seats and workflows. For execution-heavy quarters (migrations, redesigns, multi-location launches) pair software with [get-started scoping](/get-started).
 
 ## Web design requirements for SEO
 

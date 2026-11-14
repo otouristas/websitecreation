@@ -2,19 +2,19 @@ import { Check, Download, LineChart, LockKeyhole, MessageSquare, Minus, RotateCc
 import { cn } from "@/lib/cn";
 import type { SiteLocale } from "@/lib/i18n/locale";
 import { appLink, formatCredits, formatNumber, formatUsd, type Copy } from "./copy";
-import { ADDONS, comparisonRows, CREDIT_COSTS, CREDIT_EXAMPLES, CREDIT_PACKS, PLANS } from "./plans";
+import { ADDONS, comparisonRows, CREDIT_EXAMPLES, CREDIT_PACKS, PLANS } from "./plans";
 
 type L = SiteLocale;
 
 const INCLUDED: ReadonlyArray<{ icon: LucideIcon; label: Copy }> = [
   { icon: LockKeyhole, label: { en: "Read-only Google connection", el: "Σύνδεση με τη Google μόνο για ανάγνωση" } },
-  { icon: LineChart, label: { en: "Up to 16 months of Search Console history", el: "Έως 16 μήνες ιστορικό Search Console" } },
-  { icon: Sparkles, label: { en: "Opportunity engine with click estimates", el: "Μηχανή ευκαιριών με εκτιμήσεις κλικ" } },
+  { icon: LineChart, label: { en: "Up to 16 months of Search Console history", el: "Ιστορικό έως 16 μηνών από το Search Console" } },
+  { icon: Sparkles, label: { en: "Suggested fixes with estimated extra clicks", el: "Προτάσεις για διορθώσεις με εκτίμηση για τα επιπλέον κλικ" } },
   {
     icon: MessageSquare,
     label: {
-      en: `AI assistant at ${CREDIT_COSTS.seo_ai_chat} credit per question`,
-      el: `Βοηθός AI με ${CREDIT_COSTS.seo_ai_chat} μονάδα ανά ερώτηση`,
+      en: "Questions for Aster AI within your plan’s daily limit",
+      el: "Ερωτήσεις στον Aster AI μέχρι το ημερήσιο όριο του πακέτου σας",
     },
   },
   { icon: Download, label: { en: "CSV export from every table", el: "Εξαγωγή σε CSV από κάθε πίνακα" } },
@@ -188,8 +188,8 @@ export function CreditCapacity({ locale }: { readonly locale: L }) {
       </table>
       <p className="border-t border-hairline px-4 py-3 text-[12px] text-muted-foreground">
         {isEl
-          ? "Οι στήλες των πακέτων δείχνουν πόσες φορές θα κάλυπταν οι μονάδες ενός μήνα τη συγκεκριμένη ενέργεια μόνη της. Στην πράξη, η χρήση συνδυάζει διάφορες ενέργειες."
-          : "Plan columns show how many times one month’s credits would cover that action on its own. Real usage mixes actions."}
+          ? "Κάθε στήλη δείχνει πόσες φορές μπορείτε να κάνετε τον ίδιο έλεγχο αν διαθέσετε όλες τις μονάδες του μήνα σε αυτόν."
+          : "Each column shows how many times you could run the same check if you spent your entire monthly allowance on it."}
       </p>
     </div>
   );

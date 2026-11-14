@@ -9,7 +9,6 @@ import {
     getLocationBySlug,
     formatLocationName,
     countryNameEl,
-    stateNames,
     getNearbyLocations,
     isGreekLocation,
     isServiceLocationIndexable,
@@ -155,12 +154,6 @@ export default async function ServiceLocationPage({ params }: PageProps) {
         ? getGreekLocative(locationSlug, cityName)
         : `in ${cityState}`;
     
-    const stateFull =
-        location.countryCode === 'US'
-            ? stateNames[location.stateCode] || location.state
-            : location.state;
-    const regionLabel =
-        location.countryCode === 'US' ? stateFull : location.country;
 
     const siteLocale = locale as SiteLocale;
     const otherLocale: SiteLocale = isEl ? 'en' : 'el';
@@ -207,12 +200,11 @@ export default async function ServiceLocationPage({ params }: PageProps) {
 
     const t = isEl ? {
         heroTitle: `${serviceName} ${cityLocative}`,
-        heroDesc: `Ψάχνετε για ${serviceFor} ${cityLocative}; Δουλεύουμε με δεδομένα από το Google Search Console και παραδίδουμε αποτελέσματα που κατατάσσονται ψηλά στη Google και σε μηχανές αναζήτησης AI - με διαφανείς τιμές σε ${location.currency === 'EUR' ? 'ευρώ (€)' : location.currency}.`,
+        heroDesc: serviceDesc,
         getQuote: `Προσφορά για ${cityName}`,
         allLocations: 'Όλες οι τοποθεσίες',
         browseCities: 'Πλοήγηση ανά πόλη',
         whatsIncludedTitle: `Τι περιλαμβάνεται ${cityLocative}`,
-        whatsIncludedDesc: `Το πακέτο μας για ${serviceFor} καλύπτει όσα χρειάζονται οι επιχειρήσεις ${cityLocative} για μετρήσιμα αποτελέσματα ${location.countryCode === 'GR' ? 'στην Ελλάδα' : 'στη χώρα εξυπηρέτησης'}.`,
         proofTitle: 'Σχετικά έργα μας',
         proofDesc: 'Ιστοσελίδες που έχουμε φτιάξει για επιχειρήσεις με παρόμοιο κοινό.',
         nearbyTitle: 'Κοντινές περιοχές που εξυπηρετούμε',
@@ -223,12 +215,11 @@ export default async function ServiceLocationPage({ params }: PageProps) {
         ctaBtn: `Δωρεάν προσφορά για ${cityName}`,
     } : {
         heroTitle: `${service.name} in ${cityState}`,
-        heroDesc: `Looking for professional ${service.name.toLowerCase()} in ${location.city}, ${regionLabel}? We work from Google Search Console data and deliver work that ranks in Google and AI search - with transparent pricing in ${location.currency}.`,
+        heroDesc: serviceDesc,
         getQuote: `Get ${location.city} Quote`,
         allLocations: 'All Locations',
         browseCities: 'Browse Cities',
         whatsIncludedTitle: `What's Included in ${location.city}`,
-        whatsIncludedDesc: `Our ${service.name.toLowerCase()} engagements for ${location.city} businesses cover everything you need to compete in ${location.country}.`,
         proofTitle: 'Related client work',
         proofDesc: 'Websites we have built for businesses with a similar audience.',
         nearbyTitle: 'Nearby areas we also serve',
@@ -423,7 +414,6 @@ export default async function ServiceLocationPage({ params }: PageProps) {
                             <WaveHeading
                                 eyebrow={local.included}
                                 title={accented(t.whatsIncludedTitle, isEl ? cityLocative : location.city)}
-                                lead={t.whatsIncludedDesc}
                             />
                             <ul className="mt-8 space-y-3.5">
                                 {serviceFeatures.map((feature) => (

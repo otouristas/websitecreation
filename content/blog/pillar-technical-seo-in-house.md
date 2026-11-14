@@ -23,7 +23,7 @@ faq:
     answer: "Migrations, multi-language launches, indexation crises: get scoped."
 ---
 
-Technical SEO is the art of making sites easy to crawl, fast to render, and unambiguous for search engines: **without** blocking product roadmaps. In-house teams win when they speak in tickets, risk, and revenue. The public checklist is the [technical SEO best practices guide](/en/blog/technical-seo-guide); this hub is how you turn those practices into engineering work for [hotel](/en/solutions/hotels), [rent-a-car](/en/solutions/rent-a-car), and healthcare sites.
+If a release changes your URLs, what will the team check the next morning? Keep a shortlist of important pages, their expected status codes and where Google should send searchers. The [technical SEO guide](/en/blog/technical-seo-guide) covers the checks you can give to a developer.
 
 ## Key reads
 
@@ -214,4 +214,4 @@ Migrations, multi-language launches, indexation crises: [get scoped](/en/get-sta
 
 Tell us about your site, locations, and goals: we'll recommend a scoped plan with Search Console ops, content priorities, and clear next steps.
 
-[Get started](/en/get-started) · [See our work](/en/work) · [Pricing](/en/pricing)
+Explore the [software plans](/en/pricing) if your team will handle the edits. For work you would like us to carry out, see our [agency packages in Greek](/el/ypiresies/times).

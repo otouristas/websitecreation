@@ -323,7 +323,7 @@ export const currentEn: HelpCategory = {
       "body": [
         {
           "type": "p",
-          "text": "The updated workspace keeps the same project, dates and source records across its charts and tables. Available in the web app and updated iOS and Android builds. Light and dark themes use the same controls."
+          "text": "Charts and tables use the same project, dates and sources. Use the web app to follow along, or the iPhone beta if you have a TestFlight invitation. The Android app is being prepared for release."
         },
         {
           "type": "steps",
@@ -358,7 +358,7 @@ export const currentEn: HelpCategory = {
         },
         {
           "type": "p",
-          "text": "iOS and Android include the bundled visual document editor and the existing Aster AI rewrite menu. On the phone, controls sit above the document and rewrite previews open separately. Source selection remains available for passages that cannot be mapped reliably. The web draft conversation reads at most the first 14,000 characters and tells you when the draft is longer."
+          "text": "In the iPhone beta, use the document editor to ask Aster AI for a rewrite. On the phone, controls sit above the document and rewrite previews open separately. Source selection remains available for passages that cannot be mapped reliably. The web draft conversation reads at most the first 14,000 characters and tells you when the draft is longer."
         },
         {
           "type": "h2",
@@ -413,7 +413,7 @@ export const currentEn: HelpCategory = {
         },
         {
           "type": "p",
-          "text": "Updated iOS and Android builds offer per-client lists, draft editing, version review, preview, export and file sharing. Signed-file and termination records are managed on web. Versions and history are private. Signed files require an authorised, short-lived download link."
+          "text": "In the iPhone beta you can open a client’s drafts, compare versions, preview a file and share an export. Signed-file and termination records are managed on web. Versions and history are private. Signed files require an authorised, short-lived download link."
         },
         {
           "type": "p",

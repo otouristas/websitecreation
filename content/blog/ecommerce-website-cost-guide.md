@@ -23,9 +23,9 @@ faq:
     answer: "A mix: SEO for categories and products for steady organic flow, Google Shopping/Ads for instant sales, and email for repeat orders."
 ---
 
-Building an **e-commerce website** is one of the most searched goals for business owners, and one of the most misunderstood purchases. An e-shop isn’t “a site with a cart”: it’s a store that has to be found on Google, earn trust, take payments cleanly, and deliver without complaints. Here’s what it really takes and what it costs in 2026.
+An online shop with ten products and one shipping rate is a different build from a catalogue with sizes, stock feeds and international delivery. Before comparing quotes, write down how a customer chooses a product, pays for it and gets it delivered. Those requirements explain much of the difference in price.
 
-> **Start here:** [WooCommerce e-shop builds](/en/services/eshop-woocommerce) · [e-shop SEO](/en/services/eshop-seo) · [pricing](/en/pricing) · [work](/en/work) · [free quote](/en/get-started).
+> **Start here:** [WooCommerce e-shop builds](/en/services/eshop-woocommerce) · [e-shop SEO](/en/services/eshop-seo) · [pricing](/el/ypiresies/times) · [work](/en/work) · [free quote](/en/get-started).
 
 ## WooCommerce vs Shopify
 
@@ -69,7 +69,7 @@ Terms, returns policy, GDPR, cookies: all configured from the build, not “late
 | Mid-tier (many categories, filters, ERP/carriers) | €2,500 to €4,000 | Integrations drive the quote |
 | Complex (B2B pricing, multilingual, custom) | €4,000+ | Often multi-month |
 
-See our [pricing](/en/pricing) and the general [website cost guide](/en/blog/how-much-does-a-website-cost). Watch “€300 e-shop” offers: they usually mean a theme with no SEO structure, weak payments, and no support, costs you pay later in lost sales.
+See our [pricing](/el/ypiresies/times) and the general [website cost guide](/en/blog/how-much-does-a-website-cost). Watch “€300 e-shop” offers: they usually mean a theme with no SEO structure, weak payments, and no support, costs you pay later in lost sales.
 
 ## DIY vs Agency
 

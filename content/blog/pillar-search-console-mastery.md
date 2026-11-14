@@ -22,7 +22,7 @@ faq:
     answer: "When backlog exceeds 8 weeks, redesign migration pending, or multi-property clustering exceeds team capacity: get scoped."
 ---
 
-Search Console is the ground truth for how Google surfaces your site: queries, pages, countries, devices, and core technical status. The gap is rarely "more data": it is **a repeatable way to decide what to ship this week**. This pillar connects guides on local visibility, tourism SEO, and GBP with workflows that cluster queries, spot cannibalization, and tie recommendations to verified properties.
+Search Console becomes easier to read once you know whether you’re investigating a query or a page. Start with a week, a month or a comparable seasonal period, then narrow the report to the change you need to explain. Keep clicks, impressions and average position in view together.
 
 Whether you operate a home services business, a [hotel in the Cyclades](/el/blog/topiko-seo-kykladon), or a [rent-a-car desk](/en/solutions/rent-a-car) at the airport, Search Console tells you where opportunity already exists: if you know how to read it.
 
@@ -173,4 +173,4 @@ When backlog exceeds 8 weeks, redesign migration pending, or multi-property clus
 
 Tell us about your site, locations, and goals: we'll recommend a scoped plan with Search Console ops, content priorities, and clear next steps.
 
-[Get started](/en/get-started) · [See our work](/en/work) · [Pricing](/en/pricing)
+Explore the [software plans](/en/pricing) if your team will handle the edits. For work you would like us to carry out, see our [agency packages in Greek](/el/ypiresies/times).

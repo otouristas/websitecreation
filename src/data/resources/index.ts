@@ -32,7 +32,7 @@ export const OPPORTUNITY_FINDER = {
   title: "Search Console opportunity finder",
   seoTitle: "Free Search Console Opportunity Finder",
   description:
-    "Upload your Search Console export and get the queries worth pushing, the snippets worth rewriting and a click forecast. Runs in your browser, no sign-up.",
+    "Open a Search Console export to see where a higher ranking or a better title could bring in more clicks. Your file stays in your browser. No sign-up required.",
   primaryKeyword: "search console opportunity finder",
   published: "2026-10-19",
   updated: "2026-10-19",
@@ -42,61 +42,61 @@ export const OPPORTUNITY_FINDER = {
 export const RESOURCE_CLUSTERS: ReadonlyArray<ResourceCluster> = [
   {
     id: "search-console",
-    title: "Search Console analysis",
-    summary: "Read the Performance report properly: what changed, where the demand is, what underperforms and where your pages compete.",
+    title: "Understand your Search Console data",
+    summary: "Find out which searches bring people to your site, where clicks have changed and when two of your pages show up for the same query.",
     pillar: "search-console-analysis",
     existing: [
-      { title: "A one-hour weekly Search Console loop", href: "/en/blog/gsc-weekly-ops-playbook", role: "supporting" },
-      { title: "Search Console mastery (blog hub)", href: "/en/blog/topics/search-console-mastery", role: "supporting" },
-      { title: "AnotherSEOGuru App vs Search Console alone", href: "/en/compare/search-console-alone", role: "commercial" },
+      { title: "A weekly Search Console check you can finish in an hour", href: "/en/blog/gsc-weekly-ops-playbook", role: "supporting" },
+      { title: "More guides to using Search Console", href: "/en/blog/topics/search-console-mastery", role: "supporting" },
+      { title: "What AnotherSEOGuru App adds to Search Console", href: "/en/compare/search-console-alone", role: "commercial" },
     ],
-    product: { title: "Search performance in AnotherSEOGuru App", href: "/en/platform/features#performance" },
+    product: { title: "See which searches bring you clicks in AnotherSEOGuru App", href: "/en/platform/features#performance" },
   },
   {
     id: "traffic-drops",
-    title: "Traffic drops and content decay",
-    summary: "Find out whether you lost rankings, demand or clicks, then fix the pages that are slipping.",
+    title: "Diagnose a drop in search traffic",
+    summary: "When a page loses traffic, check whether fewer people searched, your ranking fell or fewer people clicked. Each points to a different fix.",
     pillar: "organic-traffic-drop",
     existing: [
-      { title: "Website redesign without losing SEO", href: "/en/blog/website-redesign-guide", role: "supporting" },
+      { title: "How to protect your search rankings during a redesign", href: "/en/blog/website-redesign-guide", role: "supporting" },
       { title: "Technical SEO for in-house teams", href: "/en/blog/topics/technical-seo-in-house", role: "supporting" },
     ],
-    product: { title: "Decay and update annotations in AnotherSEOGuru App", href: "/en/platform/features#opportunities" },
+    product: { title: "Find pages losing clicks in AnotherSEOGuru App", href: "/en/platform/features#opportunities" },
   },
   {
     id: "forecasting",
-    title: "Forecasting and prioritization",
-    summary: "Estimate what each fix is worth in clicks, pick the quick wins and set targets you can defend.",
+    title: "Decide which SEO fixes to tackle first",
+    summary: "Estimate the extra clicks a change could bring, weigh the work involved and explain why one page comes before another.",
     pillar: "seo-forecasting",
     existing: [
-      { title: "Prioritizing Search Console queries", href: "/en/blog/gsc-query-prioritization-framework", role: "supporting" },
+      { title: "Which Search Console queries deserve your time?", href: "/en/blog/gsc-query-prioritization-framework", role: "supporting" },
       { title: "AnotherSEOGuru App vs Ahrefs", href: "/en/compare/ahrefs", role: "commercial" },
       { title: "AnotherSEOGuru App vs Semrush", href: "/en/compare/semrush", role: "commercial" },
     ],
-    product: { title: "Opportunities with click-impact estimates", href: "/en/platform/features#opportunities" },
+    product: { title: "Compare the estimated clicks for each opportunity", href: "/en/platform/features#opportunities" },
   },
   {
     id: "reporting",
     title: "SEO reporting",
-    summary: "Reports clients read: what to include, the KPIs that matter and a template to start from.",
+    summary: "Show clients which pages gained or lost clicks, what you changed and what you plan to do next. Start with a report template.",
     pillar: "seo-reporting",
     existing: [
-      { title: "Agency playbooks (blog hub)", href: "/en/blog/topics/agency-playbooks", role: "supporting" },
+      { title: "Practical guides for SEO agencies", href: "/en/blog/topics/agency-playbooks", role: "supporting" },
       { title: "AnotherSEOGuru App for agencies", href: "/en/platform/for/agencies", role: "commercial" },
     ],
-    product: { title: "Client reports and the agency workspace", href: "/en/platform/features#agency" },
+    product: { title: "Build client reports in the agency workspace", href: "/en/platform/features#agency" },
   },
   {
     id: "ai-visibility",
-    title: "AI search visibility",
-    summary: "How answer engines read, quote and cite pages, and how to measure whether they cite you.",
+    title: "Track mentions in AI search",
+    summary: "See what an AI answer says about your business, which pages it cites and how those references change over time.",
     pillar: "search-optimization-layers",
     existing: [
-      { title: "Anatomy of a page built for AI search", href: "/en/resources/ai-search-page-anatomy", role: "supporting" },
-      { title: "LLM citations and brand visibility", href: "/en/blog/llm-citations-brand-visibility", role: "supporting" },
+      { title: "How to structure a page for AI search", href: "/en/resources/ai-search-page-anatomy", role: "supporting" },
+      { title: "How to track brand mentions and citations in AI answers", href: "/en/blog/llm-citations-brand-visibility", role: "supporting" },
       { title: "Free AI visibility check", href: "/en/ai-visibility-check", role: "tool" },
     ],
-    product: { title: "AI visibility tracking in AnotherSEOGuru App", href: "/en/platform/features#ai-visibility" },
+    product: { title: "Track AI mentions and citations in AnotherSEOGuru App", href: "/en/platform/features#ai-visibility" },
   },
 ];
 
@@ -120,39 +120,46 @@ const EL_RESOURCE_ARTICLES: ReadonlyArray<ResourceArticle> = [
 
 const EL_CLUSTER_COPY: Readonly<Record<ClusterId, Pick<ResourceCluster, "title" | "summary"> & { existing: ReadonlyArray<string>; product: string }>> = {
   "search-console": {
-    title: "Ανάλυση Search Console",
-    summary: "Διαβάστε σωστά την αναφορά Απόδοσης: τι άλλαξε, πού είναι η ζήτηση, τι υστερεί και πού ανταγωνίζονται οι σελίδες σας.",
-    existing: ["Εβδομαδιαίος έλεγχος Search Console, σε μία ώρα", "Search Console, ο κόμβος στο blog", "AnotherSEOGuru App και μόνο το Search Console"],
-    product: "Απόδοση αναζήτησης στο AnotherSEOGuru App",
+    title: "Τι δείχνουν τα στοιχεία του Search Console",
+    summary: "Δείτε με ποιες αναζητήσεις σάς βρίσκουν στη Google, πού άλλαξαν τα κλικ και πότε δύο δικές σας σελίδες εμφανίζονται για την ίδια αναζήτηση.",
+    existing: ["Πώς να ελέγχετε το Search Console σε μία ώρα την εβδομάδα (στα αγγλικά)", "Περισσότεροι οδηγοί για το Search Console (στα αγγλικά)", "Τι προσθέτει το AnotherSEOGuru App στο Search Console"],
+    product: "Δείτε στο AnotherSEOGuru App ποιες αναζητήσεις σάς φέρνουν κλικ",
   },
   "traffic-drops": {
-    title: "Πτώση επισκεψιμότητας και φθορά",
-    summary: "Δείτε αν χάσατε κατατάξεις, ζήτηση ή κλικ, και διορθώστε τις σελίδες που γλιστρούν.",
-    existing: ["Ανασχεδιασμός χωρίς να χαθεί το SEO", "Τεχνικό SEO για εσωτερικές ομάδες"],
-    product: "Σημειώσεις φθοράς και ενημερώσεων στο AnotherSEOGuru App",
+    title: "Γιατί μειώθηκαν οι επισκέψεις από τη Google;",
+    summary: "Αν μια σελίδα έχασε επισκέψεις, ελέγξτε τι άλλαξε. Έπεσε η θέση της, μειώθηκαν οι αναζητήσεις ή λιγότεροι από όσους την είδαν έκαναν κλικ;",
+    existing: ["Πώς να προστατεύσετε την κατάταξή σας όταν αλλάζετε τον ιστότοπο", "Οδηγοί τεχνικού SEO για την ομάδα σας"],
+    product: "Βρείτε στο AnotherSEOGuru App τις σελίδες που χάνουν κλικ",
   },
   forecasting: {
-    title: "Πρόβλεψη και προτεραιότητα",
-    summary: "Εκτιμήστε πόσα κλικ αξίζει κάθε διόρθωση, διαλέξτε τα γρήγορα κέρδη και βάλτε στόχους που μπορείτε να υπερασπιστείτε.",
-    existing: ["Προτεραιότητα στις αναζητήσεις του Search Console", "AnotherSEOGuru App και Ahrefs", "AnotherSEOGuru App και Semrush"],
-    product: "Ευκαιρίες με εκτίμηση επίδρασης στα κλικ",
+    title: "Ποιες βελτιώσεις SEO έχουν προτεραιότητα;",
+    summary: "Υπολογίστε πόσα επιπλέον κλικ μπορεί να φέρει κάθε αλλαγή και πόση δουλειά απαιτεί. Έτσι μπορείτε να εξηγήσετε γιατί ξεκινάτε από μια συγκεκριμένη σελίδα.",
+    existing: ["Ποιες αναζητήσεις του Search Console αξίζουν πρώτα την προσοχή σας (στα αγγλικά)", "Σύγκριση του AnotherSEOGuru App με το Ahrefs", "Σύγκριση του AnotherSEOGuru App με το Semrush"],
+    product: "Συγκρίνετε τα επιπλέον κλικ που μπορεί να φέρει κάθε αλλαγή",
   },
   reporting: {
     title: "Αναφορές SEO",
-    summary: "Αναφορές που διαβάζουν οι πελάτες: τι μπαίνει μέσα, ποιοι δείκτες μετράνε και ένα πρότυπο για να ξεκινήσετε.",
-    existing: ["Playbooks για agencies, ο κόμβος στο blog", "AnotherSEOGuru App για agencies"],
-    product: "Αναφορές πελατών και ο χώρος του agency",
+    summary: "Δείξτε στους πελάτες σας ποιες σελίδες κέρδισαν ή έχασαν κλικ, τι αλλάξατε και τι θα κάνετε στη συνέχεια. Θα βρείτε και πρότυπο αναφοράς.",
+    existing: ["Πρακτικοί οδηγοί για γραφεία SEO", "Το AnotherSEOGuru App για γραφεία SEO"],
+    product: "Ετοιμάστε τις αναφορές πελατών στον χώρο της ομάδας σας",
   },
   "ai-visibility": {
-    title: "Ορατότητα σε αναζήτηση AI",
-    summary: "Πώς οι μηχανές απαντήσεων διαβάζουν, παραθέτουν και αναφέρουν σελίδες, και πώς μετράτε αν αναφέρουν εσάς.",
-    existing: ["Ανατομία σελίδας για αναζήτηση AI", "Αναφορές LLM και ορατότητα επωνυμίας", "Δωρεάν έλεγχος ορατότητας σε AI"],
-    product: "Παρακολούθηση ορατότητας AI στο AnotherSEOGuru App",
+    title: "Η επιχείρησή σας στις απαντήσεις AI",
+    summary: "Δείτε αν οι απαντήσεις AI αναφέρουν την επιχείρησή σας, ποιες σελίδες παραθέτουν ως πηγές και πώς αλλάζουν αυτές οι αναφορές με τον καιρό.",
+    existing: ["Πώς να οργανώσετε μια σελίδα για την αναζήτηση με AI", "Πώς να παρακολουθείτε ποιον αναφέρουν οι απαντήσεις AI (στα αγγλικά)", "Δωρεάν έλεγχος της παρουσίας σας στις απαντήσεις AI"],
+    product: "Παρακολουθήστε τις αναφορές στην επιχείρησή σας με το AnotherSEOGuru App",
   },
 };
 
 function shiftHref(href: string, locale: SiteLocale): string {
-  if (locale !== "el" || href.startsWith("/en/blog")) return href;
+  if (locale !== "el") return href;
+  if (href === "/en/blog/website-redesign-guide") return "/el/blog/anasxediasmos-istoselidas";
+  if (href.startsWith("/en/blog/")) {
+    if (href === "/en/blog/topics/technical-seo-in-house" || href === "/en/blog/topics/agency-playbooks") {
+      return `/el${href.slice(3)}`;
+    }
+    return href;
+  }
   if (href.startsWith("/en/")) return `/el${href.slice(3)}`;
   return href;
 }

@@ -21,7 +21,7 @@ faq:
     answer: Expect early movement in 2–3 months and meaningful growth in 4–12 months, depending on competition, site history, and publishing cadence.
 ---
 
-**SEO (Search Engine Optimization)** is the practice of improving a website so it ranks higher in unpaid Google results, and increasingly gets cited in AI answers like ChatGPT, Perplexity, and Google AI Overviews. This pillar guide explains how SEO works, the four types, beginners’ first steps, realistic costs and best practices you can apply today.
+SEO means helping people find your website in unpaid search results. For a car rental business, that might mean showing up when someone types “car hire at the port” and taking them straight to pickup details and availability. You can use Search Console to see which searches already bring visitors to your pages.
 
 For a shorter plain-English path, see [SEO for beginners](/en/blog/seo-for-beginners). For commercial programs, start with [SEO audit services](/en/services/seo-audits) or [Get Started](/en/get-started).
 
@@ -74,7 +74,7 @@ A practical strategy maps keywords to pages, fixes technical blockers, publishes
 | Local SEO (GBP + pages) | from {{ENTRY_SEO}}/mo | 1–3 months | Map pack visibility |
 | Content + authority retainer | {{ENTRY_SEO}} to {{SEO_AUTHORITY}}/mo | 3–12 months | Compounding organic traffic |
 
-Pricing context: [How much does SEO cost?](/en/blog/how-much-does-seo-cost) and [pricing](/en/pricing).
+Pricing context: [How much does SEO cost?](/en/blog/how-much-does-seo-cost) and [pricing](/el/ypiresies/times).
 
 ## Google Ranking Factors (Plain View)
 
@@ -126,4 +126,4 @@ Fix indexation and speed issues, then optimize your highest-intent service pages
 
 ## Ready to Get Started with SEO Growth?
 
-If you want a prioritized roadmap (not a 40-page report nobody acts on) book an [SEO audit](/en/services/seo-audits), review [pricing](/en/pricing), or [Get Started](/en/get-started) and tell us your niche, city and goal. We reply within 24 hours with what to fix first.
+If you want a prioritized roadmap (not a 40-page report nobody acts on) book an [SEO audit](/en/services/seo-audits), review [pricing](/el/ypiresies/times), or [Get Started](/en/get-started) and tell us your niche, city and goal. We reply within 24 hours with what to fix first.

@@ -34,7 +34,7 @@ faq:
     answer: Η Google αναφέρει ότι δεν χρειάζεται ειδικό markup για να εμφανιστεί μια σελίδα στο AI Overview ή στο AI Mode. Το schema βοηθά να είναι σαφή τα στοιχεία της επιχείρησης, αλλά δεν εγγυάται αναφορά σε καμία απάντηση AI.
 ---
 
-**Το schema markup είναι κώδικας (συνήθως JSON-LD) που λέει στη Google με τυποποιημένο τρόπο τι υπάρχει σε μια σελίδα: ότι είναι επιχείρηση με διεύθυνση και ωράριο, προϊόν με τιμή ή άρθρο με συγγραφέα. Δεν ανεβάζει από μόνο του την κατάταξη, αλλά βοηθά στην κατανόηση της σελίδας και μπορεί να την κάνει επιλέξιμη για rich results.** Για τις περισσότερες ελληνικές επιχειρήσεις αρκούν 3-5 τύποι, σωστά υλοποιημένοι στα templates.
+Schema markup gives search engines a standard way to read facts you already publish. A product page, for example, might state the price and availability both on screen and in its structured data. Check that those two versions agree before looking at eligibility for a rich result.
 
 Το schema είναι ένα κομμάτι του [τεχνικού SEO](/el/blog/techniko-seo). Ο ορισμός του όρου υπάρχει και στο [λεξικό για τα structured data](/el/glossary/structured-data).
 

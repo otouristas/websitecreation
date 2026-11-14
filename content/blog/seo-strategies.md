@@ -23,7 +23,7 @@ faq:
     answer: Serious monthly work starts at {{ENTRY_SEO}} for Foundations and scales to {{SEO_AUTHORITY}} for Authority, net of VAT. The figure follows competition, site size and whether you need content and links. It is not a price for a ranking.
 ---
 
-**Search engine optimization strategies** are the choices you make about which queries to pursue, which page should win each one, and which work you will actually ship. This guide lists 21 strategies that still hold in 2026, from intent and indexation through content, links, local search and AI answers. It is a working list. It is not a ranking formula, and it does not forecast your traffic.
+Before you choose an SEO strategy, check where the business is losing an opportunity. A page Google cannot index needs a different fix from a page that ranks well but rarely gets clicked. Use the tactics that follow to address the problem you can actually see.
 
 If you are new to the subject, start with [what SEO is](/en/blog/what-is-seo) and [SEO for beginners](/en/blog/seo-for-beginners). If you want the list turned into a sequence for one site, see [SEO audits](/en/services/seo-audits).
 
@@ -171,7 +171,7 @@ Maintenance is part of the calendar. Strategy 14 is not a bonus. A year of small
 
 Weekly reviews, title tests, internal links and Google Business Profile belong with whoever has Search Console. A migration, a slow template, a link program or an unfamiliar market needs a specialist. Write the split down so the work has an owner.
 
-A retainer without Search Console access, a person who can approve a title, or a page someone will publish is a report. Serious monthly work starts at {{ENTRY_SEO}} and scales to {{SEO_AUTHORITY}} with scope, net of VAT. [Pricing](/en/pricing) and [how much SEO costs](/en/blog/how-much-does-seo-cost) explain the bands. The price is for the work, not for a position.
+A retainer without Search Console access, a person who can approve a title, or a page someone will publish is a report. Serious monthly work starts at {{ENTRY_SEO}} and scales to {{SEO_AUTHORITY}} with scope, net of VAT. [Pricing](/el/ypiresies/times) and [how much SEO costs](/en/blog/how-much-does-seo-cost) explain the bands. The price is for the work, not for a position.
 
 ## 21. Review the strategy every quarter
 
@@ -193,4 +193,4 @@ At day 90, working means indexed money pages, titles that match the queries, a s
 
 ## Ready to put these strategies to work
 
-If you want the 21 turned into a sequence for your site, [get started](/en/get-started) with your market, the pages that already get impressions, and the queries you wish you owned. We will tell you which phase you are actually in. You can also review [pricing](/en/pricing) or book an [SEO audit](/en/services/seo-audits). Bring Search Console access. The strategies above are useless without it.
+If you want the 21 turned into a sequence for your site, [get started](/en/get-started) with your market, the pages that already get impressions, and the queries you wish you owned. We will tell you which phase you are actually in. You can also review [pricing](/el/ypiresies/times) or book an [SEO audit](/en/services/seo-audits). Bring Search Console access. The strategies above are useless without it.

@@ -28,17 +28,17 @@ export const SAMPLE_REPORT_PUBLISHED = "2026-11-08";
 
 export const SAMPLE_REPORT: SampleReportMeta = {
   slug: SAMPLE_REPORT_SLUG,
-  title: "Sample SEO report: a complete monthly client report, section by section",
+  title: "A sample monthly SEO report for a client",
   seoTitle: "Sample SEO Report: Monthly Example + PDF",
   description:
     "See a complete sample SEO report: summary, KPIs, clicks trend, rankings, top queries, wins and losses, work done and next steps. Save it as a PDF or build yours.",
-  lead: "A real-looking monthly SEO report for an invented dental clinic, built the way AnotherSEOGuru App builds client reports from Google Search Console. Read it, print it as a PDF, then see what each section is for.",
+  lead: "What would you tell a client if clicks rose overall but a key service page slipped? See how a monthly report handles both. The dental clinic and its figures are fictional. You can save the example as a PDF.",
   primaryKeyword: "sample seo report",
   eyebrow: "Example report",
   print: "Save as PDF",
-  ctaTitle: "Make this report for your own client in two minutes",
+  ctaTitle: "Build a report for your own client",
   ctaText:
-    "Connect Google Search Console (read-only), pick a site and a month, and AnotherSEOGuru App fills every section of this report from live data. Add your logo, then download the PDF or schedule a monthly email. Search Console reports cost no credits on any plan, and new accounts get a 7-day free trial with no card.",
+    "Choose a site and month to fill in the Search Console figures. Add your own summary of the work and the next steps. You can export a PDF or schedule a monthly email. White-label branding is included in Agency and available as a paid add-on.",
   signup: "Sign up free",
   demo: "Open the report in the demo",
   related: "Related guides",
@@ -46,17 +46,17 @@ export const SAMPLE_REPORT: SampleReportMeta = {
 
 export const SAMPLE_REPORT_EL: SampleReportMeta = {
   slug: SAMPLE_REPORT_SLUG,
-  title: "Δείγμα αναφοράς SEO: μια πλήρης μηνιαία αναφορά πελάτη, ενότητα προς ενότητα",
+  title: "Δείγμα μηνιαίας αναφοράς SEO για πελάτη",
   seoTitle: "Δείγμα αναφοράς SEO (μηνιαίο, σε PDF)",
   description:
     "Δείτε ένα πλήρες δείγμα μηνιαίας αναφοράς SEO: σύνοψη, KPIs, κλικ, θέσεις, κορυφαίες αναζητήσεις, εργασίες και επόμενα βήματα. Αποθηκεύστε το ως PDF.",
-  lead: "Μια ρεαλιστική μηνιαία αναφορά SEO για ένα φανταστικό οδοντιατρείο, φτιαγμένη όπως το AnotherSEOGuru App φτιάχνει αναφορές πελατών από το Google Search Console. Διαβάστε τη, αποθηκεύστε τη ως PDF και δείτε σε τι χρησιμεύει κάθε ενότητα.",
+  lead: "Πώς εξηγείτε σε έναν πελάτη ότι τα συνολικά κλικ αυξήθηκαν αλλά μια σημαντική σελίδα έχασε επισκέψεις; Δείτε πώς παρουσιάζονται και τα δύο σε μια μηνιαία αναφορά. Το οδοντιατρείο και τα στοιχεία είναι υποθετικά. Μπορείτε να αποθηκεύσετε το δείγμα σε PDF.",
   primaryKeyword: "δείγμα αναφοράς seo",
   eyebrow: "Παράδειγμα αναφοράς",
   print: "Αποθήκευση ως PDF",
-  ctaTitle: "Φτιάξτε αυτή την αναφορά για τον δικό σας πελάτη σε δύο λεπτά",
+  ctaTitle: "Ετοιμάστε μια αναφορά για τον δικό σας πελάτη",
   ctaText:
-    "Συνδέστε το Google Search Console (μόνο ανάγνωση), διαλέξτε ιστότοπο και μήνα, και το AnotherSEOGuru App συμπληρώνει κάθε ενότητα από ζωντανά δεδομένα. Προσθέστε το λογότυπό σας και κατεβάστε το PDF ή προγραμματίστε μηνιαίο email. Οι αναφορές Search Console δεν κοστίζουν μονάδες, και οι νέοι λογαριασμοί έχουν 7 ημέρες δωρεάν δοκιμή χωρίς κάρτα.",
+    "Επιλέξτε ιστοσελίδα και μήνα για να συμπληρωθούν τα στοιχεία από το Search Console. Προσθέστε τι δουλειά κάνατε και τι προτείνετε για τον επόμενο μήνα. Μπορείτε να κατεβάσετε την αναφορά σε PDF ή να προγραμματίσετε την αποστολή της. Η χρήση του δικού σας λογότυπου περιλαμβάνεται στο Agency και διατίθεται ως πρόσθετη επιλογή επί πληρωμή.",
   signup: "Εγγραφή δωρεάν",
   demo: "Δείτε την αναφορά στο demo",
   related: "Σχετικοί οδηγοί",

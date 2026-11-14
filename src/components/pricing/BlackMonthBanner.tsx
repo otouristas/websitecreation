@@ -25,7 +25,7 @@ export function BlackMonthBanner() {
           BLACK MONTH / ΥΠΗΡΕΣΙΕΣ ΙΣΤΟΣΕΛΙΔΩΝ & SEO / ΝΟΕΜΒΡΙΟΣ 2026
         </p>
         <h2 className="mt-3 font-display text-[28px] font-semibold leading-tight tracking-[-0.035em] sm:text-[36px]">
-          Ίδια τιμή. Δώρο και ο ΦΠΑ.
+          Νέα ιστοσελίδα ή μηνιαίο SEO με τον ΦΠΑ στην τιμή.
         </h2>
         <div className="mt-4 grid max-w-3xl gap-4 text-sm leading-relaxed text-[#BAC6D8] sm:grid-cols-2">
           <p>
@@ -45,7 +45,7 @@ export function BlackMonthBanner() {
           href="/el/ypiresies/times"
           className="mt-6 inline-flex min-h-12 items-center gap-3 rounded-xl bg-[var(--asg-brand-cyan)] px-5 py-3 text-sm font-semibold text-[var(--asg-brand-ink)]"
         >
-          Δείτε τις προσφορές Black Month
+          Δείτε τι περιλαμβάνει κάθε υπηρεσία
           <ArrowUpRight size={18} aria-hidden />
         </Link>
         <p className="mt-4 text-[11px] leading-relaxed text-[#BAC6D8]">

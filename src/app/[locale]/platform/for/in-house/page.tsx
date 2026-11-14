@@ -61,8 +61,8 @@ const IN_HOUSE_FAQ: readonly GscFaqItem[] = [
   {
     q: { en: "Which plan fits an in-house team?", el: "Ποιο πακέτο ταιριάζει σε μια in-house ομάδα;" },
     a: {
-      en: `Starter covers ${LAUNCH.sites} sites and ${LAUNCH.seats} seat, with every fix the engine finds, ${LAUNCH.keywords} tracked keywords, ${LAUNCH.prompts} AI visibility prompts and the AI assistant. Pro adds content briefs and WordPress publishing, competitor gaps and AI visibility tracking, with ${GROWTH.sites} sites and ${GROWTH.seats} seats.`,
-      el: `Το Starter καλύπτει ${LAUNCH.sites} ιστοτόπους και ${LAUNCH.seats} χρήστη, με κάθε διόρθωση που βρίσκει η μηχανή, ${LAUNCH.keywords} λέξεις-κλειδιά σε παρακολούθηση, ${LAUNCH.prompts} prompts ορατότητας AI και τον βοηθό AI. Το Pro προσθέτει briefs περιεχομένου και δημοσίευση στο WordPress, κενά έναντι ανταγωνιστών και ορατότητα στην AI, με ${GROWTH.sites} ιστοτόπους και ${GROWTH.seats} χρήστες.`,
+      en: `Starter covers ${LAUNCH.sites} sites and ${LAUNCH.seats} seat, with every fix the engine finds, ${LAUNCH.keywords} tracked keywords, ${LAUNCH.prompts} AI visibility prompts and access to Aster AI. Pro adds content briefs and WordPress publishing, competitor gaps and AI visibility tracking, with ${GROWTH.sites} sites and ${GROWTH.seats} seats.`,
+      el: `Το Starter καλύπτει ${LAUNCH.sites} ιστοτόπους και ${LAUNCH.seats} χρήστη, με κάθε διόρθωση που βρίσκει η μηχανή, ${LAUNCH.keywords} λέξεις-κλειδιά σε παρακολούθηση, ${LAUNCH.prompts} ερωτήσεις για έλεγχο ορατότητας σε AI και πρόσβαση στον Aster AI. Το Pro προσθέτει briefs περιεχομένου και δημοσίευση στο WordPress, κενά έναντι ανταγωνιστών και ορατότητα στην AI, με ${GROWTH.sites} ιστοτόπους και ${GROWTH.seats} χρήστες.`,
     },
     link: { kind: "site", path: "/pricing#compare", label: { en: "Compare the plans", el: "Συγκρίνετε τα πακέτα" } },
   },
@@ -88,16 +88,12 @@ export default async function PlatformForInHousePage({ params }: PageProps) {
           pill={<AnnouncePill href="#capabilities" tag={tx("In-house", "In-house")} text={tx("AnotherSEOGuru App for in-house teams", "AnotherSEOGuru App για in-house ομάδες")} />}
           title={
             <>
-              <span className="block">{tx("Know what to fix", "Μάθετε τι να διορθώσετε")}</span>
-              <span className="block">
-                {tx("on your site ", "στον ιστότοπό σας ")}
-                <WaveAccent>{tx("this week.", "αυτή την εβδομάδα.")}</WaveAccent>
-              </span>
+              {tx("Choose your team’s", "Ποια αλλαγή να αναλάβει")} <WaveAccent>{tx("next SEO task", "πρώτα η ομάδα σας;")}</WaveAccent>
             </>
           }
           lead={tx(
-            "AnotherSEOGuru App is SEO software for in-house marketers and small teams. It reads your own Search Console, ranks the fixes worth making by the clicks they could bring, gives you the keyword, content and audit tools to act on them, and shows on the chart what each change did.",
-            "Το AnotherSEOGuru App είναι λογισμικό SEO για in-house marketers και μικρές ομάδες. Διαβάζει το δικό σας Search Console, βάζει σε σειρά τις διορθώσεις που αξίζουν με βάση τα κλικ που μπορούν να φέρουν, σας δίνει τα εργαλεία λέξεων-κλειδιών, περιεχομένου και ελέγχου για να τις κάνετε και δείχνει στο γράφημα τι έφερε κάθε αλλαγή.",
+            "If you have time to update one page this week, start with the searches that already bring people to your site. AnotherSEOGuru App estimates the clicks each change could bring and lets you compare performance before and after publication.",
+            "Αν αυτή την εβδομάδα προλαβαίνετε να βελτιώσετε μόνο μία σελίδα, δείτε πρώτα πώς σας βρίσκουν ήδη οι επισκέπτες σας στη Google. Το AnotherSEOGuru App εκτιμά πόσα κλικ μπορεί να φέρει κάθε αλλαγή. Μετά τη δημοσίευση, μπορείτε να συγκρίνετε τα αποτελέσματα.",
           )}
           actions={<WaveSoftwareActions locale={locale} source="in-house-hero" />}
           trust={<TrustMarks items={copy.trust} yesLabel={copy.markYes} />}
@@ -240,7 +236,7 @@ export default async function PlatformForInHousePage({ params }: PageProps) {
             }
             lead={tx(
               "Move to Pro when you publish content every week or want competitor and AI visibility tracking. Search Console features never use credits on any plan.",
-              "Περάστε στο Pro όταν δημοσιεύετε περιεχόμενο κάθε εβδομάδα ή θέλετε ανταγωνιστές και ορατότητα στην AI. Οι λειτουργίες του Search Console δεν χρεώνουν μονάδες σε κανένα πακέτο.",
+              "Περάστε στο Pro όταν δημοσιεύετε περιεχόμενο κάθε εβδομάδα ή θέλετε να παρακολουθείτε τις θέσεις των ανταγωνιστών και τις αναφορές της επιχείρησής σας σε απαντήσεις AI. Οι λειτουργίες του Search Console δεν χρεώνουν μονάδες σε κανένα πακέτο.",
             )}
           />
           <PlanPicker locale={locale} source="in-house-plans" className="mt-10" />
@@ -263,7 +259,7 @@ export default async function PlatformForInHousePage({ params }: PageProps) {
           <WaveHeading
             align="center"
             eyebrow={tx("Other teams", "Άλλες ομάδες")}
-            title={tx("Different kind of team?", "Διαφορετικός τύπος ομάδας;")}
+            title={tx("Working with clients or running a shop?", "Διαχειρίζεστε πελάτες ή e-shop;")}
           />
           <PersonaLinks locale={locale} exclude="/platform/for/in-house" className="mx-auto mt-10 max-w-3xl md:!grid-cols-2" />
         </WaveSection>

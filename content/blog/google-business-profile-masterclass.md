@@ -1,6 +1,6 @@
 ---
 slug: google-business-profile-masterclass
-title: "Google Business Profile Masterclass: Dominate Local Search"
+title: "Google Business Profile: how to make your listing useful"
 seoTitle: "Google Business Profile Masterclass"
 description: Step-by-step guide to optimizing your Google Business Profile. Categories, photos, reviews, and the Posts strategy that keeps your profile active.
 date: 2026-01-10
@@ -21,7 +21,7 @@ faq:
     answer: "Tools help scheduling and multi-location QA, but understand Google's policies. Over-automation without quality control hurts more than helps."
 ---
 
-For local businesses, your [Google Business Profile](/en/glossary?term=google-business-profile) (GBP) is often more important than your website. It appears **before** the organic search results in the [local pack](/en/glossary?term=local-pack). If you ignore it, you are handing customers to competitors: whether you're a pizza shop, a Paros hotel, or a Mykonos rent-a-car desk.
+Look up your business on Google Maps as if you were about to visit. Can you tell whether it’s open today, where the entrance is and which number to call? Start with those details in your [Google Business Profile](/en/glossary?term=google-business-profile), then check how it appears in the [local pack](/en/glossary/local-pack).
 
 This masterclass walks through every high-impact GBP lever: categories, photos, posts, Q&A, reviews, and spam defense, with tourism examples throughout.
 
@@ -220,4 +220,4 @@ Tools help scheduling and multi-location QA, but understand Google's policies. O
 
 Tell us about your site, locations, and goals: we'll recommend a scoped plan with Search Console ops, content priorities, and clear next steps.
 
-[Get started](/en/get-started) · [See our work](/en/work) · [Pricing](/en/pricing)
+Explore the [software plans](/en/pricing) if your team will handle the edits. For work you would like us to carry out, see our [agency packages in Greek](/el/ypiresies/times).

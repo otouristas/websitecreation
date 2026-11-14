@@ -45,24 +45,21 @@ export const MODULES: ReadonlyArray<ProductModule> = [
     id: "opportunities",
     name: c("Opportunities", "Ευκαιρίες"),
     icon: Sparkles,
-    title: {
-      lead: c("The fixes that win the most clicks,", "Οι διορθώσεις που φέρνουν τα περισσότερα κλικ,"),
-      accent: c("ranked", "ταξινομημένες"),
-    },
+    title: { lead: c("Choose your", "Ποια αλλαγή"), accent: c("next SEO fix", "έχει προτεραιότητα;") },
     tagline: c("Ranked fixes with an estimated click impact for each.", "Διορθώσεις κατά προτεραιότητα, με εκτίμηση των επιπλέον κλικ για την καθεμία."),
     summary: c(
-      "AnotherSEOGuru App reads every query and page in your Search Console data and turns them into one ranked list of fixes, each with an estimate of the extra clicks it could bring per month.",
-      "Το AnotherSEOGuru App διαβάζει κάθε αναζήτηση και κάθε σελίδα στα δεδομένα του Search Console σας και τα μετατρέπει σε μία λίστα διορθώσεων με σειρά προτεραιότητας, η καθεμία με εκτίμηση για τα επιπλέον κλικ που μπορεί να φέρει κάθε μήνα.",
+      "Compare pages by the extra monthly clicks a change could bring. Each estimate comes from the impressions and clicks in your own Search Console account.",
+      "Συγκρίνετε τις σελίδες σας με βάση τα επιπλέον κλικ που θα μπορούσε να φέρει μια αλλαγή κάθε μήνα. Η εκτίμηση βασίζεται στις εμφανίσεις και στα κλικ του δικού σας Search Console.",
     ),
     bullets: [
       c("Striking-distance keywords on positions 4–20 with real demand", "Λέξεις-κλειδιά κοντά στην κορυφή, στις θέσεις 4–20, με πραγματική ζήτηση"),
       c("Snippets that earn fewer clicks than their position should", "Snippets που παίρνουν λιγότερα κλικ απ’ όσα δικαιολογεί η θέση τους"),
-      c("Decaying pages, cannibalization and missing content", "Σελίδες σε φθορά, κανιβαλισμός και περιεχόμενο που λείπει"),
+      c("Decaying pages, cannibalization and missing content", "Σελίδες που χάνουν κλικ ή ανταγωνίζονται για τις ίδιες αναζητήσεις και θέματα που λείπουν"),
     ],
     what: [
       c(
         "Scans every query and page for five kinds of opportunity: striking distance, low CTR, content decay, cannibalization and missing content.",
-        "Σαρώνει κάθε ερώτημα και σελίδα για πέντε είδη ευκαιριών: λέξεις-κλειδιά κοντά στην κορυφή, χαμηλό CTR, φθορά περιεχομένου, κανιβαλισμό και περιεχόμενο που λείπει.",
+        "Σαρώνει κάθε ερώτημα και σελίδα για πέντε είδη ευκαιριών: λέξεις-κλειδιά κοντά στην κορυφή, χαμηλό CTR, σελίδες που χάνουν κλικ, σελίδες που ανταγωνίζονται για τις ίδιες αναζητήσεις και θέματα που λείπουν.",
       ),
       c(
         "Estimates extra clicks per month for each fix with a CTR curve fitted to your own non-brand queries.",
@@ -73,17 +70,17 @@ export const MODULES: ReadonlyArray<ProductModule> = [
         "Ταξινομεί τις διορθώσεις με βάση το όφελος σε σχέση με τον κόπο και δείχνει τα νούμερα πίσω από κάθε εκτίμηση.",
       ),
       c(
-        "Sends any fix to your task list, or to the AI assistant with the context attached.",
-        "Στέλνει οποιαδήποτε διόρθωση στη λίστα εργασιών σας ή στον βοηθό AI, μαζί με όλο το context.",
+        "Sends any fix to your task list, or to Aster AI along with the relevant page and query.",
+        "Στέλνει οποιαδήποτε διόρθωση στη λίστα εργασιών σας ή στον Aster AI, μαζί με τη σχετική σελίδα και την αναζήτηση.",
       ),
     ],
     why: c(
-      "Search Console tells you what happened. The opportunity list tells you what to do next and roughly what it’s worth, so the biggest wins stop sitting unnoticed on page two.",
-      "Το Search Console σάς λέει τι συνέβη. Η λίστα ευκαιριών σάς λέει τι να κάνετε μετά και περίπου πόσο αξίζει, ώστε οι μεγαλύτερες ευκαιρίες να μη μένουν απαρατήρητες στη δεύτερη σελίδα.",
+      "Open a suggestion to check the figures before you turn it into a task.",
+      "Ανοίξτε μια πρόταση για να δείτε τα στοιχεία της πριν τη μετατρέψετε σε εργασία.",
     ),
     costs: [
       cost("gsc", c("Finding and ranking opportunities", "Εντοπισμός και ταξινόμηση ευκαιριών")),
-      cost("seo_ai_chat", c("Asking the AI how to fix one", "Ερώτηση στην AI για το πώς να διορθώσετε μία")),
+      cost("seo_ai_chat", c("Ask Aster AI about a fix", "Ερώτηση στον Aster AI για μια διόρθωση")),
       cost("cannibal_resolve"),
       cost("merge_plan"),
     ],
@@ -94,11 +91,11 @@ export const MODULES: ReadonlyArray<ProductModule> = [
     id: "performance",
     name: c("Performance", "Απόδοση"),
     icon: LineChart,
-    title: { lead: c("Every change in traffic,", "Κάθε αλλαγή στην επισκεψιμότητα,"), accent: c("explained", "εξηγημένη") },
+    title: { lead: c("See where search traffic", "Πού άλλαξε η επισκεψιμότητα"), accent: c("changed", "από τη Google;") },
     tagline: c("Clicks, impressions, CTR and rankings, with comparisons and annotations.", "Κλικ, εμφανίσεις, CTR και θέσεις κατάταξης, με συγκρίσεις και σημειώσεις."),
     summary: c(
-      "Clicks, impressions, CTR and position for every query, page, country and device, with period comparisons and annotations for your releases and Google’s updates.",
-      "Κλικ, εμφανίσεις, CTR και θέση για κάθε ερώτημα, σελίδα, χώρα και συσκευή, με συγκρίσεις περιόδων και σημειώσεις για τις δικές σας αλλαγές και τις ενημερώσεις της Google.",
+      "Find the pages behind a rise or drop in clicks. Filter by country or device and compare the dates that matter to your business.",
+      "Βρείτε σε ποιες σελίδες αυξήθηκαν ή μειώθηκαν τα κλικ. Επιλέξτε χώρα ή συσκευή και συγκρίνετε τις περιόδους που ενδιαφέρουν την επιχείρησή σας.",
     ),
     bullets: [
       c("Compare with the previous period or the same period last year", "Σύγκριση με την προηγούμενη περίοδο ή την ίδια περίοδο πέρσι"),
@@ -118,8 +115,8 @@ export const MODULES: ReadonlyArray<ProductModule> = [
       ),
     ],
     why: c(
-      "When traffic moves, you need the reason in minutes, not after an afternoon in spreadsheets. Annotations and comparisons put cause and effect on the same chart.",
-      "Όταν η επισκεψιμότητα αλλάζει, χρειάζεστε την αιτία σε λίγα λεπτά, όχι μετά από ένα απόγευμα με spreadsheets. Οι σημειώσεις και οι συγκρίσεις βάζουν αιτία και αποτέλεσμα στο ίδιο γράφημα.",
+      "Mark the date of a redesign or a content update so you can return to the chart and compare traffic on either side.",
+      "Σημειώστε πότε αλλάξατε τον σχεδιασμό ή το κείμενο μιας σελίδας. Αργότερα θα μπορείτε να συγκρίνετε τα κλικ πριν και μετά την αλλαγή.",
     ),
     costs: [cost("gsc", c("Performance reports, comparisons and annotations", "Αναφορές απόδοσης, συγκρίσεις και σημειώσεις"))],
     plans: ALL,
@@ -129,11 +126,11 @@ export const MODULES: ReadonlyArray<ProductModule> = [
     id: "keywords",
     name: c("Keywords", "Λέξεις-κλειδιά"),
     icon: KeyRound,
-    title: { lead: c("Find the demand.", "Βρείτε τη ζήτηση."), accent: c("Track", "Παρακολουθήστε"), tail: c("what you win.", "όσα κερδίζετε.") },
+    title: { lead: c("Find searches to target and", "Έρευνα λέξεων-κλειδιών και"), accent: c("track your position", "παρακολούθηση θέσεων") },
     tagline: c("Keyword research, rank tracking and topic clusters.", "Έρευνα λέξεων-κλειδιών, παρακολούθηση θέσεων και θεματικές ομάδες."),
     summary: c(
-      "Research keywords with volume, difficulty and intent, see who ranks today, group ideas into topics and track the positions that matter to you.",
-      "Ερευνήστε λέξεις-κλειδιά με όγκο, δυσκολία και πρόθεση αναζήτησης, δείτε ποιος κατατάσσεται σήμερα, ομαδοποιήστε ιδέες σε θέματα και παρακολουθήστε τις θέσεις που σας ενδιαφέρουν.",
+      "Check how often people search for a phrase and what the top pages already cover. Group related terms and follow the rankings you care about.",
+      "Δείτε πόσο συχνά αναζητούν οι χρήστες μια φράση και τι καλύπτουν ήδη οι πρώτες σελίδες. Ομαδοποιήστε τους σχετικούς όρους και παρακολουθήστε τις θέσεις που σας ενδιαφέρουν.",
     ),
     bullets: [
       c("Volume, difficulty and intent for every idea", "Όγκος, δυσκολία και πρόθεση για κάθε ιδέα"),
@@ -154,8 +151,8 @@ export const MODULES: ReadonlyArray<ProductModule> = [
       c("Tracks positions for the keywords you choose, with history.", "Παρακολουθεί τις θέσεις για τις λέξεις-κλειδιά που επιλέγετε, με ιστορικό."),
     ],
     why: c(
-      "Search Console only shows queries you already appear for. Research shows the demand you are missing, and tracking shows whether your work is paying off.",
-      "Το Search Console δείχνει μόνο αναζητήσεις στις οποίες ήδη εμφανίζεστε. Η έρευνα δείχνει τη ζήτηση που χάνετε και η παρακολούθηση δείχνει αν η δουλειά σας αποδίδει.",
+      "Before commissioning a new page, check whether another page on your site already appears for the same searches.",
+      "Πριν αναθέσετε ένα νέο κείμενο, ελέγξτε μήπως κάποια σελίδα σας εμφανίζεται ήδη για τις ίδιες αναζητήσεις.",
     ),
     costs: [
       cost("keyword_research"),
@@ -172,15 +169,11 @@ export const MODULES: ReadonlyArray<ProductModule> = [
     id: "content",
     name: c("Content", "Περιεχόμενο"),
     icon: PenLine,
-    title: {
-      lead: c("From brief to", "Από το brief μέχρι το"),
-      accent: c("published", "δημοσιευμένο"),
-      tail: c(", in one place", "κείμενο, όλα σε ένα σημείο"),
-    },
+    title: { lead: c("Plan and edit", "Ετοιμάστε το"), accent: c("your next article", "επόμενο άρθρο σας") },
     tagline: c("Briefs, AI writing, optimization and WordPress publishing.", "Briefs, γραφή με AI, βελτιστοποίηση και δημοσίευση στο WordPress."),
     summary: c(
-      "Build briefs from what already ranks, write and score drafts against them, and publish to WordPress without copy and paste.",
-      "Δημιουργήστε briefs με βάση ό,τι ήδη κατατάσσεται, γράψτε και βαθμολογήστε κείμενα με βάση αυτά και δημοσιεύστε στο WordPress χωρίς copy-paste.",
+      "Prepare a brief using the pages that appear in search today. Review the draft against that brief, then publish the finished article to WordPress.",
+      "Δείτε τι καλύπτουν οι σελίδες που εμφανίζονται στη Google και ετοιμάστε οδηγίες για τον συντάκτη. Ελέγξτε το προσχέδιο με βάση αυτές τις οδηγίες και δημοσιεύστε το τελικό άρθρο στο WordPress.",
     ),
     bullets: [
       c("AI briefs with an outline, questions and entities to cover", "AI briefs με δομή, ερωτήσεις και οντότητες που πρέπει να καλύψετε"),
@@ -206,8 +199,8 @@ export const MODULES: ReadonlyArray<ProductModule> = [
       ),
     ],
     why: c(
-      "Most content underperforms because it misses what searchers expect to find. A brief grounded in the live results closes that gap before anyone writes a word.",
-      "Το περισσότερο περιεχόμενο δεν αποδίδει επειδή δεν καλύπτει αυτό που περιμένουν να βρουν οι χρήστες. Ένα brief βασισμένο στα πραγματικά αποτελέσματα κλείνει αυτό το κενό πριν γραφτεί έστω και μία λέξη.",
+      "A writer can start with the questions readers need answered. An editor can use the same brief to check the draft.",
+      "Ο συντάκτης γνωρίζει εξαρχής σε ποιες ερωτήσεις πρέπει να απαντήσει. Στην επιμέλεια, η ομάδα σας μπορεί να ελέγξει αν το κείμενο τις καλύπτει.",
     ),
     costs: [
       cost("ai_content_brief"),
@@ -223,11 +216,11 @@ export const MODULES: ReadonlyArray<ProductModule> = [
     id: "audit",
     name: c("Site audit", "Έλεγχος ιστότοπου"),
     icon: ShieldCheck,
-    title: { lead: c("Technical issues,", "Τεχνικά προβλήματα,"), accent: c("prioritized", "με σειρά προτεραιότητας") },
+    title: { lead: c("Find the technical issues", "Δείτε ποια τεχνικά προβλήματα"), accent: c("worth fixing first", "χρειάζονται διόρθωση") },
     tagline: c("Technical health, indexability and Core Web Vitals.", "Τεχνική υγεία, δυνατότητα ευρετηρίασης και Core Web Vitals."),
     summary: c(
-      "Crawl your site for the problems that cost rankings, such as broken pages, indexability blockers and slow templates, and fix the important ones first.",
-      "Κάντε crawl στον ιστότοπό σας για να βρείτε τα προβλήματα που κοστίζουν θέσεις κατάταξης, όπως σπασμένες σελίδες, εμπόδια ευρετηρίασης και αργά templates, και διορθώστε πρώτα τα σημαντικά.",
+      "Check for broken pages, slow templates and settings that prevent Google from indexing a page. The audit lists issues by priority.",
+      "Ελέγξτε ποιες σελίδες δεν ανοίγουν, ποια πρότυπα φορτώνουν αργά και ποιες ρυθμίσεις εμποδίζουν την καταχώριση στη Google. Τα προβλήματα εμφανίζονται με σειρά προτεραιότητας.",
     ),
     bullets: [
       c("A full-site crawl with clear severity levels", "Πλήρες crawl του ιστότοπου με σαφή επίπεδα σοβαρότητας"),
@@ -253,8 +246,8 @@ export const MODULES: ReadonlyArray<ProductModule> = [
       ),
     ],
     why: c(
-      "Technical problems quietly cap how well good content can rank. Clear severities and plain-language fixes show where to start, without a 200-row export.",
-      "Τα τεχνικά προβλήματα περιορίζουν αθόρυβα το πόσο ψηλά μπορεί να φτάσει ακόμη και το καλό περιεχόμενο. Σαφή επίπεδα σοβαρότητας και διορθώσεις σε απλή γλώσσα δείχνουν από πού να ξεκινήσετε, χωρίς export 200 γραμμών.",
+      "Use the affected URLs to give your developer a specific problem to investigate.",
+      "Με τις διευθύνσεις των σελίδων που επηρεάζονται, μπορείτε να δείξετε στον προγραμματιστή σας ακριβώς πού εντοπίζεται το πρόβλημα.",
     ),
     costs: [
       cost("site_audit"),
@@ -271,15 +264,15 @@ export const MODULES: ReadonlyArray<ProductModule> = [
     id: "competitors",
     name: c("Competitors", "Ανταγωνιστές"),
     icon: Swords,
-    title: { lead: c("See what competitors win, and", "Δείτε τι κερδίζουν οι ανταγωνιστές σας, και"), accent: c("how", "πώς") },
+    title: { lead: c("See where competing sites", "Για ποιες αναζητήσεις"), accent: c("show up in search", "εμφανίζονται οι ανταγωνιστές σας;") },
     tagline: c("Competitor discovery, keyword gaps and backlinks.", "Εντοπισμός ανταγωνιστών, κενά λέξεων-κλειδιών και backlinks."),
     summary: c(
-      "Find out who you really compete with in search, the keywords they rank for that you don’t, and how your backlink profiles compare.",
-      "Μάθετε με ποιους πραγματικά ανταγωνίζεστε στην αναζήτηση, για ποιες λέξεις-κλειδιά κατατάσσονται ενώ εσείς όχι και πώς συγκρίνονται τα backlink προφίλ σας.",
+      "Find the sites that appear for the searches you care about. Compare their rankings and backlinks with yours to identify topics you could cover.",
+      "Βρείτε ποιες ιστοσελίδες εμφανίζονται για τις αναζητήσεις που σας ενδιαφέρουν. Συγκρίνετε τις θέσεις και τα backlinks τους με τα δικά σας και εντοπίστε θέματα που θα μπορούσατε να καλύψετε.",
     ),
     bullets: [
       c("Organic competitor discovery", "Εντοπισμός οργανικών ανταγωνιστών"),
-      c("Keyword gap: their rankings, your blind spots", "Keyword gap: οι δικές τους θέσεις, τα δικά σας τυφλά σημεία"),
+      c("Queries where competing pages already rank", "Αναζητήσεις στις οποίες εμφανίζονται οι ανταγωνιστές σας"),
       c("Backlinks and referring domains", "Backlinks και referring domains"),
     ],
     what: [
@@ -295,8 +288,8 @@ export const MODULES: ReadonlyArray<ProductModule> = [
       ),
     ],
     why: c(
-      "Your competitors have already tested what works for your audience. A gap analysis turns their rankings into a prioritized content plan for you.",
-      "Οι ανταγωνιστές σας έχουν ήδη δοκιμάσει τι λειτουργεί για το κοινό σας. Η ανάλυση κενών μετατρέπει τις θέσεις τους σε πρόγραμμα περιεχομένου με προτεραιότητες για εσάς.",
+      "Look at the pages that rank before adding a term to your plan. Is the person searching likely to need what you offer?",
+      "Πριν εντάξετε μια φράση στο πλάνο σας, διαβάστε τα πρώτα αποτελέσματα. Αυτό που ψάχνει ο χρήστης αντιστοιχεί σε κάτι που προσφέρετε;",
     ),
     costs: [cost("competitor_analysis"), cost("content_gap_analysis"), cost("backlink_lookup"), cost("serp_overview")],
     plans: GROWTH_UP,
@@ -306,11 +299,11 @@ export const MODULES: ReadonlyArray<ProductModule> = [
     id: "ai-visibility",
     name: c("AI visibility", "Ορατότητα στην AI"),
     icon: Bot,
-    title: { lead: c("Know when AI", "Μάθετε πότε η AI"), accent: c("recommends you", "σας προτείνει") },
+    title: { lead: c("Which AI answers", "Σε ποιες απαντήσεις AI"), accent: c("mention your business?", "εμφανίζεται η επιχείρησή σας;") },
     tagline: c("How ChatGPT, Gemini, Perplexity and AI Overviews mention you.", "Πώς σας αναφέρουν τα ChatGPT, Gemini, Perplexity και τα AI Overviews."),
     summary: c(
-      "Track whether ChatGPT, Gemini and Perplexity mention or cite your brand for the questions your buyers ask, and whether you appear in Google’s AI Overviews.",
-      "Παρακολουθήστε αν το ChatGPT, το Gemini και το Perplexity αναφέρουν ή παραθέτουν το brand σας στις ερωτήσεις που κάνουν οι πελάτες σας, και αν εμφανίζεστε στα AI Overviews της Google.",
+      "Follow the questions your customers ask in ChatGPT, Gemini and Perplexity. See whether the answers mention your business or cite your pages, and check your presence in Google AI Overviews.",
+      "Παρακολουθήστε ερωτήσεις πελατών στο ChatGPT, στο Gemini και στο Perplexity. Δείτε αν οι απαντήσεις αναφέρουν την επιχείρησή σας ή παραπέμπουν στις σελίδες σας. Μπορείτε επίσης να ελέγξετε αν εμφανίζεστε στα Google AI Overviews.",
     ),
     bullets: [
       c("Mentions and citations in ChatGPT, Gemini and Perplexity", "Αναφορές και παραπομπές σε ChatGPT, Gemini και Perplexity"),
@@ -336,8 +329,8 @@ export const MODULES: ReadonlyArray<ProductModule> = [
       ),
     ],
     why: c(
-      "More buying research now starts in an AI answer. If assistants don’t mention you, that demand never reaches your site, and Search Console can’t show it.",
-      "Όλο και περισσότερες αγοραστικές αποφάσεις ξεκινούν πλέον από μια απάντηση AI. Αν οι βοηθοί AI δεν σας αναφέρουν, αυτή η ζήτηση δεν φτάνει ποτέ στον ιστότοπό σας και το Search Console δεν μπορεί να τη δείξει.",
+      "Compare the sources that appear for the same question over time. A single mention is one observation.",
+      "Συγκρίνετε τις πηγές που εμφανίζονται για την ίδια ερώτηση σε διαφορετικές ημερομηνίες, ώστε να δείτε ποιες αναφορές επαναλαμβάνονται.",
     ),
     costs: [cost("llm_citation_tracker"), cost("ai_overview_check"), cost("citation_optimization")],
     plans: GROWTH_UP,
@@ -345,17 +338,17 @@ export const MODULES: ReadonlyArray<ProductModule> = [
   },
   {
     id: "assistant",
-    name: c("AI assistant", "Βοηθός AI"),
+    name: c("Aster AI", "Aster AI"),
     icon: MessageSquare,
-    title: { lead: c("An assistant that has", "Ένας βοηθός που έχει"), accent: c("read your data", "διαβάσει τα δεδομένα σας") },
+    title: { lead: c("Ask", "Ρωτήστε τον"), accent: c("Aster AI", "Aster AI") },
     tagline: c("Answers grounded in your own Search Console data.", "Απαντήσεις βασισμένες στα δικά σας δεδομένα Search Console."),
     summary: c(
-      "Ask questions in plain language and get answers grounded in your Search Console numbers: why traffic moved, what to fix first, how to rewrite a title.",
-      "Κάντε ερωτήσεις σε απλή γλώσσα και πάρτε απαντήσεις βασισμένες στα νούμερα του Search Console σας: γιατί άλλαξε η επισκεψιμότητα, τι να διορθώσετε πρώτα, πώς να ξαναγράψετε έναν τίτλο.",
+      "Ask which pages lost traffic or how you could improve a title. Aster AI can use the searches and clicks from your own site to explain its answer.",
+      "Ρωτήστε ποιες σελίδες έχασαν κλικ ή πώς θα μπορούσατε να βελτιώσετε έναν τίτλο. Ο Aster AI μπορεί να στηρίξει την απάντησή του στις αναζητήσεις και στα κλικ του δικού σας ιστοτόπου.",
     ),
     bullets: [
       c("Explains changes with the numbers behind them", "Εξηγεί τις αλλαγές με τα νούμερα που τις τεκμηριώνουν"),
-      c("Opens from any opportunity with the context attached", "Ανοίγει από οποιαδήποτε ευκαιρία με όλο το context έτοιμο"),
+      c("Opens from any opportunity with the context attached", "Ανοίγει από κάθε πρόταση και γνωρίζει ποια σελίδα και αναζήτηση αφορά"),
       c("Drafts titles, descriptions and outlines on request", "Γράφει τίτλους, περιγραφές και δομές κειμένων όταν του ζητηθεί"),
     ],
     what: [
@@ -368,8 +361,8 @@ export const MODULES: ReadonlyArray<ProductModule> = [
       c("Drafts titles, meta descriptions and outlines you can edit.", "Γράφει τίτλους, meta descriptions και δομές κειμένων που μπορείτε να επεξεργαστείτε."),
     ],
     why: c(
-      "Analysis is only useful if it turns into a decision. The assistant closes the gap between a number on a chart and the change you should make.",
-      "Η ανάλυση έχει αξία μόνο όταν οδηγεί σε απόφαση. Ο βοηθός γεφυρώνει την απόσταση ανάμεσα σε ένα νούμερο στο γράφημα και στην αλλαγή που πρέπει να κάνετε.",
+      "Open Aster AI from a suggested fix to discuss the page and query that led to it. Chat uses a daily question allowance for your plan.",
+      "Ανοίξτε τον Aster AI από μια προτεινόμενη διόρθωση για να συζητήσετε τη συγκεκριμένη σελίδα και αναζήτηση. Το πακέτο σας ορίζει πόσες ερωτήσεις μπορείτε να κάνετε κάθε ημέρα.",
     ),
     costs: [cost("seo_ai_chat")],
     plans: ALL,
@@ -379,11 +372,11 @@ export const MODULES: ReadonlyArray<ProductModule> = [
     id: "agency",
     name: c("Agency workspace", "Χώρος εργασίας agency"),
     icon: Building2,
-    title: { lead: c("Run every client from", "Διαχειριστείτε κάθε πελάτη από"), accent: c("one workspace", "έναν χώρο εργασίας") },
+    title: { lead: c("Keep each client’s tasks and", "Εργασίες και αναφορές"), accent: c("reports together", "ανά πελάτη") },
     tagline: c("Clients, pipeline, tasks and white-label reports.", "Πελάτες, pipeline, εργασίες και white-label αναφορές."),
     summary: c(
-      "A client CRM, deal pipeline, task list and white-label reports, connected to each client’s Search Console.",
-      "CRM πελατών, pipeline πωλήσεων, λίστα εργασιών και white-label αναφορές, συνδεδεμένα με το Search Console κάθε πελάτη.",
+      "Open a client’s project to check their Search Console figures, assign work and prepare a report with your own logo. You can follow new business in the same CRM.",
+      "Ανοίξτε το έργο του πελάτη για να δείτε τα στοιχεία του Search Console, να αναθέσετε εργασίες και να ετοιμάσετε αναφορά με το λογότυπό σας. Στο ίδιο CRM παρακολουθείτε και τις νέες συνεργασίες.",
     ),
     bullets: [
       c("Clients, contacts, notes and linked sites", "Πελάτες, επαφές, σημειώσεις και συνδεδεμένοι ιστότοποι"),
@@ -406,8 +399,8 @@ export const MODULES: ReadonlyArray<ProductModule> = [
       ),
     ],
     why: c(
-      "Agencies lose hours every month moving numbers between tools. Keeping clients, work and results in one place gives that time back to the actual SEO.",
-      "Τα agencies χάνουν ώρες κάθε μήνα μεταφέροντας νούμερα από εργαλείο σε εργαλείο. Με πελάτες, εργασίες και αποτελέσματα σε ένα σημείο, αυτός ο χρόνος επιστρέφει στο ίδιο το SEO.",
+      "Before the next client call, check which tasks are complete and which pages changed since your last report.",
+      "Πριν μιλήσετε με τον πελάτη, δείτε τι ολοκληρώθηκε και πώς απέδωσαν οι σελίδες του από την προηγούμενη αναφορά.",
     ),
     costs: [
       { label: c("Client reports", "Αναφορές πελατών"), credits: 0 },

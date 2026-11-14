@@ -123,18 +123,18 @@ export default async function PlatformIntegrationsPage({ params }: PageProps) {
           pill={<KitEyebrow icon={<Layers />}>{tx("AnotherSEOGuru App · Integrations", "AnotherSEOGuru App · Ενσωματώσεις")}</KitEyebrow>}
           title={
             <>
-              {tx("One login, everywhere you", "Ένας λογαριασμός, παντού όπου")} <Accent>{tx("work on SEO", "δουλεύετε SEO")}</Accent>
+              {tx("Bring your Search Console data", "Τα στοιχεία του Search Console")} <Accent>{tx("into the tools you use", "στα εργαλεία που ήδη χρησιμοποιείτε")}</Accent>
             </>
           }
           lead={tx(
-            "Use your Search Console data in the web app, on iPhone, in Chrome, inside WordPress and in AI assistants like Claude and ChatGPT. One AnotherSEOGuru account signs you in to all of them, and your sites and tasks stay in sync.",
-            "Χρησιμοποιήστε τα δεδομένα του Search Console στο web, στο iPhone, στο Chrome, μέσα στο WordPress και σε βοηθούς AI όπως το Claude και το ChatGPT. Ένας λογαριασμός AnotherSEOGuru σας συνδέει σε όλα, και οι ιστότοποι και οι εργασίες σας μένουν συγχρονισμένα.",
+            "See the queries for a post while you edit it in WordPress, or ask about a drop in clicks from your AI assistant. Both use the sites you've connected to AnotherSEOGuru App. Check the options below for setup and availability.",
+            "Δείτε με ποιες αναζητήσεις βρίσκουν οι αναγνώστες ένα άρθρο την ώρα που το διορθώνετε στο WordPress. Ή ρωτήστε τον βοηθό AI που χρησιμοποιείτε ποιες σελίδες έχασαν κλικ. Και στις δύο περιπτώσεις, τα στοιχεία προέρχονται από τους ιστοτόπους που έχετε συνδέσει στο AnotherSEOGuru App.",
           )}
           actions={
             <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
               <SignUpFree locale={locale} source="integrations-hero" />
               <Link href={`${lp("/get-started")}#free-audit`} className={kitSecondaryBtn}>
-                {tx("Get a quote", "Ζητήστε προσφορά")}
+                {tx("Run a free site audit", "Κάντε δωρεάν έλεγχο ιστοτόπου")}
                 <ArrowRight className="size-4 text-muted-foreground" />
               </Link>
             </div>
@@ -228,7 +228,7 @@ export default async function PlatformIntegrationsPage({ params }: PageProps) {
             eyebrow={tx("Which one when", "Τι χρησιμοποιώ πότε")}
             title={
               <>
-                {tx("Pick the one that fits", "Διαλέξτε αυτό που ταιριάζει")} <Accent>{tx("the moment", "στη στιγμή")}</Accent>
+                {tx("Which integration", "Ποια σύνδεση")} <Accent>{tx("fits your task?", "σας εξυπηρετεί;")}</Accent>
               </>
             }
           />

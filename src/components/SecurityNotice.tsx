@@ -22,7 +22,7 @@ const PLACEMENT_STYLE = `[data-chrome="security-notice"]{bottom:calc(max(var(--c
  *
  * Nothing is server-rendered: the card is not part of the indexed page and adds
  * nothing to <head>. It is fixed-position, so it shifts no layout, and it mounts
- * on the visitor's first scroll, tap or key press. Largest Contentful Paint
+ * after the visitor scrolls, clicks or releases a key. Largest Contentful Paint
  * stops recording at that first input, so the card can never become the LCP
  * element the way the late consent banner once did.
  */
@@ -36,7 +36,8 @@ export function SecurityNotice(): ReactElement | null {
       if (localStorage.getItem(DISMISS_KEY)) return;
     } catch { /* Storage unavailable: show the notice, it just will not stay closed. */ }
 
-    const events = ['scroll', 'pointerdown', 'keydown', 'touchstart'] as const;
+    // Allow the original tap or key activation to reach its target before the notice appears.
+    const events = ['scroll', 'click', 'keyup'] as const;
     const reveal = () => {
       for (const type of events) window.removeEventListener(type, reveal);
       setShow(true);

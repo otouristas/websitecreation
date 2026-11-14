@@ -23,7 +23,7 @@ export const EXPANSION_ARTICLES: ReadonlyArray<ResourceArticle> = [
     body: [
       {
         type: "p",
-        text: "**An SEO roadmap is a dated, ranked list of the SEO work you will ship, with an owner, an estimated click impact and a way to measure each item.** The most defensible way to build one is from your own Google Search Console data: list every candidate fix the data points to, size each in clicks, score it by impact, confidence and effort, then put the top items into a 90-day plan and the bigger themes into a 12-month view. A roadmap that cannot say why item one comes before item ten is a wish list.",
+        text: "Plan the next 90 days around changes your team can finish. Give each item an owner, a deadline and a way to measure it. Use your Search Console data to estimate the extra clicks, then weigh that estimate against your confidence and the work involved. Keep longer projects in a 12-month view.",
       },
       {
         type: "note",
@@ -247,7 +247,7 @@ export const EXPANSION_ARTICLES: ReadonlyArray<ResourceArticle> = [
     body: [
       {
         type: "p",
-        text: "**A content audit is a page-by-page review of a site that ends in one decision per URL: keep, update, merge, redirect or remove.** For SEO, base each decision on four numbers you can pull for every page: clicks and impressions from Google Search Console, the backlinks pointing at it, and the conversions it starts. A page with demand but slipping rankings gets updated, two pages chasing the same queries get merged, a page about something that no longer exists gets redirected, and a page with no demand, no links and no business purpose gets removed.",
+        text: "Before removing an old page, check who still needs it. Look at its Search Console clicks and impressions, the backlinks pointing to it, and any enquiries or sales it helps generate. Use those details to decide whether to keep it, update it, merge it with another page, redirect it or remove it.",
       },
       {
         type: "note",
@@ -445,7 +445,7 @@ export const EXPANSION_ARTICLES: ReadonlyArray<ResourceArticle> = [
     body: [
       {
         type: "p",
-        text: "**A zero-click search is a search that ends on the results page: the searcher gets the answer from an AI Overview, a featured snippet, a knowledge panel or another results-page feature and never visits a website.** On your own site, the effect shows up in Google Search Console as a specific pattern: impressions hold or rise, average position stays about the same, and CTR falls. You cannot win the click back on every query, so the response is to be the source the answer is built from, build demand for your brand, and focus effort on queries where the searcher still needs to visit a page.",
+        text: "Someone who finds the answer in Google may have no reason to visit a website. If impressions hold steady while clicks fall, check whether your position also stayed the same. Then look at the results themselves. An AI Overview, Featured snippet or Knowledge Panel may already answer the question.",
       },
       {
         type: "note",
@@ -593,7 +593,7 @@ export const EXPANSION_ARTICLES: ReadonlyArray<ResourceArticle> = [
     body: [
       {
         type: "p",
-        text: "**AI Overview tracking means recording, for a fixed set of queries, whether Google shows an AI Overview, whether it cites your site, which of your URLs it cites and which competitors it cites instead.** Google Search Console cannot do this on its own: it counts AI Overview links inside the normal web results without a separate filter. So you track the Overviews with a panel of queries checked on a schedule, by hand, with a SERP tracker that detects AI Overviews or with an AI visibility tool, and you join the results with Search Console clicks and CTR for the same queries.",
+        text: "Choose searches that matter to your customers. For each one, record whether Google shows an AI Overview and which pages it cites, including yours. Repeat the checks on a regular schedule. Search Console includes these links in its web results, so keep the citation records alongside the usual click figures.",
       },
       {
         type: "note",

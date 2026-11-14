@@ -22,9 +22,9 @@ faq:
     answer: "Typically 3–6 weeks after inventory and redirect mapping, depending on page count, languages, and booking/e-commerce complexity."
 ---
 
-A **website redesign** is one of the riskiest moments in a site’s life: done right, it lifts the business; done carelessly, it wipes out years of organic work overnight. This guide covers when it’s worth it, what it costs, and the right migration process: before you touch anything.
+Before approving a redesign, export the URLs that bring customers to your site today. When a service page moves, you’ll need to know where its old address should lead. That list is useful during development and again after launch if an important page starts losing clicks.
 
-> **Related:** [website redesign service](/en/services/website-redesign) · [pricing](/en/pricing) · [website cost guide](/en/blog/how-much-does-a-website-cost) · [free assessment](/en/get-started).
+> **Related:** [website redesign service](/en/services/website-redesign) · [pricing](/el/ypiresies/times) · [website cost guide](/en/blog/how-much-does-a-website-cost) · [free assessment](/en/get-started).
 
 ## When You Need a Redesign
 
@@ -66,7 +66,7 @@ The same discipline applies when you change CMS or move to a [new build](/en/ser
 | Mid-size / multilingual | {{WEBSITE_PRO}} to {{WEBSITE_BUSINESS}} | Full inventory, schema, CWV |
 | E-shop or hotel with bookings | €2,500 to €4,000+ | Category/room maps, booking, complex redirects |
 
-A redesign with proper migration typically costs the same as a new build because it includes carrying over SEO history. “Cheap” redesigns that ignore migration cost far more in lost traffic. See [pricing](/en/pricing) and the [website cost guide](/en/blog/how-much-does-a-website-cost).
+A redesign with proper migration typically costs the same as a new build because it includes carrying over SEO history. “Cheap” redesigns that ignore migration cost far more in lost traffic. See [pricing](/el/ypiresies/times) and the [website cost guide](/en/blog/how-much-does-a-website-cost).
 
 ## Common Redesign Mistakes
 
@@ -127,4 +127,4 @@ Not always, but if TTFB is poor, combine the work. See the [hosting & domain gui
 
 ## Still Need a Free Assessment Before You Touch Anything?
 
-Request a free assessment: we’ll see how much SEO value your current site holds and tell you whether a redesign or a new build makes sense, with a concrete cost and timeline. [Start here](/en/get-started).
+Planning a redesign? [Send us your current website for a free check](/el/get-started#free-audit) and say which pages already bring you customers. We can discuss what you want to preserve and what needs a separate quote before you decide which changes to commission.

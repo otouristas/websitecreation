@@ -23,7 +23,7 @@ faq:
     answer: Yes. Clear, cited, experience-rich pages are what AI systems quote. Thin keyword dumps get ignored. Pair content with GEO/AEO practices for answer engines.
 ---
 
-**Content optimization for SEO** is how you improve a URL so it answers one search intent more clearly: title, opening, headings, proof and internal links. **SEO content** is that page (a service page, location page, guide or FAQ) written so it can rank, convert and be specific enough to cite. Below: the workflow, a before-and-after example, costs, and when to use [content creation services](/en/services/content-creation).
+Choose a question someone asks before buying and decide where the answer belongs. A delivery question may need a line on a product page, while choosing between two services may warrant a guide. That decision comes before keyword counts, word counts or a publishing calendar.
 
 Start with [keyword research](/en/blog/keyword-research-guide), then [on-page SEO](/en/blog/on-page-seo), so the structure matches the results.
 
@@ -115,7 +115,7 @@ Pillars like [What is SEO?](/en/blog/what-is-seo) support clusters. How-tos such
 
 New informational guides often need **1–3 months** to gain traction; competitive commercial terms need **3–6+ months** alongside [off-page SEO](/en/blog/off-page-seo) and [link building](/en/blog/link-building-guide). A monthly cadence of 2–4 quality URLs usually beats sporadic bursts.
 
-Use an agency when you lack research capacity, writers who understand intent, or editors who enforce proof. Retainers commonly start {{ENTRY_SEO}}–{{SEO_GROWTH}}/mo for ongoing production: see [pricing](/en/pricing) and [how to increase organic traffic](/en/blog/how-to-increase-organic-traffic).
+Use an agency when you lack research capacity, writers who understand intent, or editors who enforce proof. Retainers commonly start {{ENTRY_SEO}}–{{SEO_GROWTH}}/mo for ongoing production: see [pricing](/el/ypiresies/times) and [how to increase organic traffic](/en/blog/how-to-increase-organic-traffic).
 
 ## SEO Content vs Brand Content vs AI Drafts
 
@@ -151,4 +151,4 @@ AI raises the bar for originality and clarity. Thin content loses; experience-ri
 
 ## Get a Content Roadmap
 
-If you need a prioritized map of pages to create or rewrite, start with [content creation](/en/services/content-creation), review [pricing](/en/pricing), or [Get Started](/en/get-started). Bring Search Console access and your top conversion goals: we turn demand into a publishing plan that ranks and converts.
+If you need a prioritized map of pages to create or rewrite, start with [content creation](/en/services/content-creation), review [pricing](/el/ypiresies/times), or [Get Started](/en/get-started). Bring Search Console access and your top conversion goals: we turn demand into a publishing plan that ranks and converts.

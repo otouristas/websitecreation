@@ -33,7 +33,6 @@ import {
 import {
   HOME_FAQ,
   INTEGRATIONS_PATH,
-  IntegrationCards,
   PersonaLinks,
   PlanPicker,
   PlatformLinks,
@@ -58,13 +57,13 @@ type PageProps = { params: Promise<{ locale: string }> };
  * segment at 43 characters.
  */
 const PLATFORM_TITLE = {
-  en: "SEO Software for Search Console Fixes | AnotherSEOGuru",
-  el: "Λογισμικό SEO από το Search Console | AnotherSEOGuru",
+  en: "SEO Software for Google Search Console | AnotherSEOGuru",
+  el: "Εργαλεία SEO για το Google Search Console | AnotherSEOGuru",
 } as const;
 
 const PLATFORM_DESCRIPTION = {
-  en: "AnotherSEOGuru App turns Google Search Console into ranked fixes with click estimates. Keywords, site audits and AI visibility, from your own data.",
-  el: "Το AnotherSEOGuru App κάνει το Search Console λίστα διορθώσεων με εκτίμηση κλικ. Λέξεις-κλειδιά, έλεγχοι και ορατότητα σε AI, από τα δεδομένα σας.",
+  en: "Find pages that get seen on Google but rarely clicked. Ask Aster AI what to change, review the search data and track your edits in AnotherSEOGuru App.",
+  el: "Δείτε ποιες σελίδες εμφανίζονται στη Google αλλά παίρνουν λίγα κλικ. Ο Aster AI προτείνει αλλαγές με βάση τα στοιχεία σας στο Search Console.",
 } as const;
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
@@ -102,45 +101,45 @@ export default async function PlatformHubPage({ params }: PageProps) {
   const copy = homeCopy(locale);
   const places = [
     {
-      name: tx("Web workspace", "Χώρος εργασίας web"),
-      detail: tx("Chat, evidence, documents and your existing SEO tools.", "Συνομιλία, στοιχεία, έγγραφα και τα υπάρχοντα εργαλεία SEO."),
+      name: tx("Web app", "Εφαρμογή στο web"),
+      detail: tx("Ask Aster AI about a page and keep the answer with your tasks and drafts.", "Ρωτήστε τον Aster AI για μια σελίδα και κρατήστε την απάντηση μαζί με τις εργασίες και τα προσχέδιά σας."),
       href: `${getAppPath("/demo/chat")}?lang=${locale}`,
-      state: tx("Try the sample workspace", "Δοκιμάστε το δείγμα"),
+      state: tx("Open the demo", "Ανοίξτε τη δοκιμαστική έκδοση"),
       icon: Globe,
     },
     {
       name: "iPhone",
-      detail: tx("A native app on the same account, with sharing and site context.", "Εγγενής εφαρμογή στον ίδιο λογαριασμό, με κοινή χρήση και πλαίσιο ιστοτόπου."),
+      detail: tx("Check clicks and share a page with Aster AI while you’re away from your desk.", "Δείτε τα κλικ από το κινητό σας και στείλτε μια σελίδα στον Aster AI για έλεγχο."),
       href: lp("/platform/iphone"),
-      state: "TestFlight beta",
+      state: tx("Join the TestFlight beta", "Δείτε πώς θα τη δοκιμάσετε μέσω TestFlight"),
       icon: Smartphone,
     },
     {
       name: "Android",
-      detail: tx("A native Android client using the same data and assistant.", "Εγγενής εφαρμογή Android με τα ίδια δεδομένα και βοηθό."),
+      detail: tx("The Android app is being prepared for release. It uses the same account and site data.", "Ετοιμάζουμε την εφαρμογή για Android. Θα έχετε πρόσβαση στα στοιχεία της ιστοσελίδας σας με τον ίδιο λογαριασμό."),
       href: lp("/platform/android"),
-      state: tx("Release preparation", "Προετοιμασία κυκλοφορίας"),
+      state: tx("Android release details", "Πληροφορίες για την κυκλοφορία"),
       icon: Smartphone,
     },
     {
       name: "WordPress",
-      detail: tx("Work in the editor. Preview SEO changes and approve them before applying.", "Εργαστείτε στον editor. Δείτε και εγκρίνετε τις αλλαγές SEO πριν εφαρμοστούν."),
+      detail: tx("Review a suggested title or description while you edit the page. You decide which changes to apply.", "Δείτε τον προτεινόμενο τίτλο ή την περιγραφή την ώρα που επεξεργάζεστε τη σελίδα. Εσείς επιλέγετε ποιες αλλαγές θα εφαρμόσετε."),
       href: lp("/platform/wordpress"),
-      state: tx("Plugin and editor tools", "Plugin και εργαλεία editor"),
+      state: tx("See the WordPress plugin", "Δείτε το πρόσθετο για WordPress"),
       icon: Puzzle,
     },
     {
-      name: tx("Browser extension", "Επέκταση προγράμματος περιήγησης"),
-      detail: tx("Ask about the page you choose, with your account and site context.", "Ρωτήστε για τη σελίδα που επιλέγετε, με τον λογαριασμό και τον ιστότοπό σας."),
+      name: tx("Chrome extension", "Επέκταση για Chrome"),
+      detail: tx("Open a page in your browser and ask Aster AI about it while it’s in front of you.", "Ανοίξτε τη σελίδα που σας ενδιαφέρει και ρωτήστε τον Aster AI γι’ αυτήν απευθείας από το πρόγραμμα περιήγησης."),
       href: lp("/platform/chrome-extension"),
-      state: tx("Chrome and compatible browsers", "Chrome και συμβατά προγράμματα"),
+      state: tx("See the browser extension", "Δείτε πώς λειτουργεί η επέκταση"),
       icon: Puzzle,
     },
     {
       name: "MCP / API",
-      detail: tx("Use the supported tools from external assistants with scoped permissions.", "Χρησιμοποιήστε τα υποστηριζόμενα εργαλεία από εξωτερικούς βοηθούς με συγκεκριμένα δικαιώματα."),
+      detail: tx("Bring your Search Console reports into the AI assistant you already use. You choose what it can access.", "Δείτε τις αναφορές του Search Console μέσα στον βοηθό AI που χρησιμοποιείτε ήδη. Εσείς ορίζετε τα δικαιώματα πρόσβασης."),
       href: lp("/platform/mcp"),
-      state: tx("See supported capabilities", "Δείτε τις υποστηριζόμενες δυνατότητες"),
+      state: tx("See what you can connect", "Δείτε ποιες συνδέσεις υποστηρίζονται"),
       icon: Code2,
     },
   ];
@@ -154,16 +153,15 @@ export default async function PlatformHubPage({ params }: PageProps) {
           pill={<AnnouncePill href="#aster" tag={copy.announceTag} text={copy.announce} />}
           title={
             <>
-              <span className="block">{tx("Ask Aster AI.", "Ρωτήστε τον Aster AI.")}</span>
+              <span className="block">{tx("Which page should you", "Ποια σελίδα αξίζει να")}</span>{" "}
               <span className="block">
-                {tx("Find your ", "Δείτε το ")}
-                <WaveAccent>{tx("next move.", "επόμενο βήμα.")}</WaveAccent>
+                <WaveAccent>{tx("fix first?", "βελτιώσετε πρώτα;")}</WaveAccent>
               </span>
             </>
           }
           lead={tx(
-            "How can I rank for this keyword? Why are my clicks falling? Ask in your own words. Aster AI connects your questions to Search Console evidence, page checks and a clear next step inside AnotherSEOGuru App. Inspect the sources, save a task or draft, and review each change before it goes live.",
-            "Πώς θα ανέβω για αυτή τη λέξη-κλειδί; Γιατί μειώνονται τα κλικ μου; Ρωτήστε με δικά σας λόγια. Ο Aster AI εξετάζει τα δεδομένα σας στο Search Console, ελέγχει τις σελίδες και σας προτείνει τι να κάνετε στη συνέχεια. Αποθηκεύστε μια εργασία ή ένα προσχέδιο και ελέγξτε τις αλλαγές πριν τις δημοσιεύσετε.",
+            "AnotherSEOGuru App finds pages people see on Google but rarely click. Ask Aster AI what to change. You’ll see the searches behind the suggestion, an estimate of the clicks you could gain and a task you can act on this week.",
+            "Το AnotherSEOGuru App εντοπίζει σελίδες που εμφανίζονται στη Google αλλά παίρνουν λίγα κλικ. Ο Aster AI σάς δείχνει σε ποιες αναζητήσεις εμφανίζονται, τι μπορείτε να αλλάξετε και πόσα κλικ θα μπορούσατε να κερδίσετε.",
           )}
           actions={<ChatDomainEntry locale={locale} />}
           trust={<TrustMarks items={copy.trust} yesLabel={copy.markYes} />}
@@ -172,7 +170,7 @@ export default async function PlatformHubPage({ params }: PageProps) {
             <>
               {copy.sampleCaption}{" "}
               <a href={appLink("/demo", locale, "platform-window-link")} className="font-medium text-foreground underline decoration-hairline underline-offset-4">
-                {tx("Open the live demo", "Ανοίξτε τη ζωντανή επίδειξη")}
+                {tx("Explore the sample account", "Μπείτε στον δοκιμαστικό λογαριασμό")}
               </a>
             </>
           }
@@ -190,9 +188,6 @@ export default async function PlatformHubPage({ params }: PageProps) {
                 </li>
               ))}
             </ul>
-            <p className="mt-4 text-center text-[11px] text-muted-foreground">
-              {tx("Integrations and data sources, not customer endorsements.", "Ενσωματώσεις και πηγές δεδομένων, όχι αξιολογήσεις πελατών.")}
-            </p>
           </div>
         </section>
 
@@ -203,13 +198,13 @@ export default async function PlatformHubPage({ params }: PageProps) {
               eyebrow="Aster AI"
               title={
                 <>
-                  {tx("Ask in your own words. ", "Ρωτήστε με δικά σας λόγια. ")}
-                  <WaveAccent>{tx("See the evidence.", "Δείτε τα στοιχεία.")}</WaveAccent>
+                  {tx("What would Aster AI change ", "Τι θα άλλαζε ο Aster AI ")}
+                  <WaveAccent>{tx("on this page?", "σε αυτή τη σελίδα;")}</WaveAccent>
                 </>
               }
               lead={tx(
-                "Sample data for a fictional hotel. The demo runs the real app with no account.",
-                "Δείγμα δεδομένων για ένα φανταστικό ξενοδοχείο. Η επίδειξη τρέχει την πραγματική εφαρμογή χωρίς λογαριασμό.",
+                "Pick a question about this fictional outdoor shop. Read the suggested edit and open the checks behind it.",
+                "Διαλέξτε μια ερώτηση για το υποθετικό κατάστημα ειδών πεζοπορίας. Δείτε τι προτείνει ο Aster AI και ποια στοιχεία εξετάζει.",
               )}
             />
             <div className="mx-auto mt-12 min-w-0 max-w-5xl">
@@ -221,23 +216,23 @@ export default async function PlatformHubPage({ params }: PageProps) {
         <WaveSection id="product" shot="modules">
           <div className="grid gap-8 lg:grid-cols-[1fr_1.15fr] lg:items-end">
             <div className="min-w-0">
-              <WaveEyebrow>{tx("The product", "Το προϊόν")}</WaveEyebrow>
+              <WaveEyebrow>{tx("Inside AnotherSEOGuru App", "Στο AnotherSEOGuru App")}</WaveEyebrow>
               <h2 className="mt-4 text-balance font-display text-[2rem] font-bold leading-[1.08] tracking-[-0.03em] text-foreground sm:text-[2.75rem]">
-                {tx("One workspace for the whole ", "Ένας χώρος εργασίας για ολόκληρο τον ")}
-                <WaveAccent>{tx("SEO loop", "κύκλο του SEO")}</WaveAccent>
+                {tx("What you can do with ", "Πώς μπορείτε να αξιοποιήσετε ")}
+                <WaveAccent>{tx("your search data", "τα δεδομένα αναζήτησης")}</WaveAccent>
               </h2>
             </div>
             <p className="text-pretty text-[17px] leading-[1.7] text-muted-foreground">
               {tx(
-                "Find what to fix, research what to build, ship it and prove it worked. Nine modules, all working from the same data.",
-                "Βρείτε τι να διορθώσετε, ερευνήστε τι να δημιουργήσετε, υλοποιήστε το και αποδείξτε ότι πέτυχε. Εννέα λειτουργίες, όλες πάνω στα ίδια δεδομένα.",
+                "Investigate a drop in clicks, pick the next article to write or prepare a report for a client. Each tool works with the site you’ve selected.",
+                "Δείτε γιατί μια σελίδα χάνει κλικ, βρείτε θέμα για το επόμενο άρθρο σας ή ετοιμάστε αναφορά για έναν πελάτη. Κάθε εργαλείο χρησιμοποιεί τα στοιχεία της ιστοσελίδας που έχετε επιλέξει.",
               )}
             </p>
           </div>
           <TieredModuleGrid locale={locale} source="platform-tour" ids={TOUR} />
           <p className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-center text-[14px]">
             <Link href={lp("/platform/features")} className="font-semibold text-primary hover:text-foreground">
-              {tx("Every module, with what it costs", "Όλες οι λειτουργίες, με το κόστος τους")} →
+              {tx("Explore features and costs", "Δείτε τις λειτουργίες και το κόστος τους")} →
             </Link>
             <Link href={isEl ? "/el/pos-leitourgei" : "/en/how-it-works"} className="font-semibold text-primary hover:text-foreground">
               {tx("How it works", "Πώς λειτουργεί")} →
@@ -248,24 +243,24 @@ export default async function PlatformHubPage({ params }: PageProps) {
         <WaveSection shot="decisions" tinted>
           <div className="grid gap-8 lg:grid-cols-[1fr_1.15fr] lg:items-end">
             <div className="min-w-0">
-              <WaveEyebrow>{tx("Why AnotherSEOGuru App", "Γιατί AnotherSEOGuru App")}</WaveEyebrow>
+              <WaveEyebrow>{tx("Google Search Console", "Google Search Console")}</WaveEyebrow>
               <h2 className="mt-4 text-balance font-display text-[2rem] font-bold leading-[1.08] tracking-[-0.03em] text-foreground sm:text-[2.75rem]">
-                {tx("Search Console shows you data. AnotherSEOGuru App hands you ", "Το Search Console σάς δείχνει δεδομένα. Το AnotherSEOGuru App σάς δίνει ")}
-                <WaveAccent>{tx("decisions.", "αποφάσεις.")}</WaveAccent>
+                {tx("A page can appear in hundreds of searches and ", "Μια σελίδα μπορεί να εμφανίζεται συχνά και να παίρνει ")}
+                <WaveAccent>{tx("still get few clicks.", "ελάχιστα κλικ.")}</WaveAccent>
               </h2>
             </div>
             <p className="text-pretty text-[17px] leading-[1.7] text-muted-foreground">
               {tx(
-                "Search Console’s reports are thousands of rows sorted by clicks, usually with your own brand name on top. The fixes worth making are buried further down.",
-                "Οι αναφορές του Search Console είναι χιλιάδες γραμμές ταξινομημένες κατά κλικ, συνήθως με το όνομα του brand σας στην κορυφή. Οι διορθώσεις που αξίζουν είναι θαμμένες πιο κάτω.",
+                "AnotherSEOGuru App spots searches like these in your Google data. Open a suggestion to see the page, what people searched for and why a change may be worth your time.",
+                "Το AnotherSEOGuru App εντοπίζει τέτοιες περιπτώσεις στο Search Console. Ανοίξτε μια πρόταση για να δείτε τη σελίδα, τι έψαχνε ο κόσμος και γιατί αξίζει να κάνετε μια αλλαγή.",
               )}
             </p>
           </div>
           <div className="mt-12 grid gap-5 lg:grid-cols-2">
-            <AppPanel url="search.google.com/search-console" badge={tx("Before", "Πριν")} caption={tx("Raw rows, sorted by clicks", "Ακατέργαστες γραμμές, ταξινομημένες κατά κλικ")}>
+            <AppPanel url="search.google.com/search-console" badge={tx("Before", "Πριν")} caption={tx("Searches ordered by clicks", "Αναζητήσεις κατά αριθμό κλικ")}>
               <RawQueriesPanel locale={locale} />
             </AppPanel>
-            <AppPanel url="app.anotherseoguru.com" badge={tx("After", "Μετά")} caption={tx("The same data, as ranked actions", "Τα ίδια δεδομένα, ως ενέργειες με προτεραιότητα")}>
+            <AppPanel url="app.anotherseoguru.com" badge={tx("After", "Μετά")} caption={tx("Suggested changes in priority order", "Προτεινόμενες αλλαγές με σειρά προτεραιότητας")}>
               <DecisionsPanel locale={locale} />
             </AppPanel>
           </div>
@@ -273,26 +268,26 @@ export default async function PlatformHubPage({ params }: PageProps) {
             {[
               {
                 icon: Target,
-                title: tx("Ranked by clicks, not noise", "Προτεραιότητα στα κλικ, όχι στον θόρυβο"),
+                title: tx("Decide where to spend your time", "Δείτε τι αξίζει τον χρόνο σας"),
                 text: tx(
-                  "Every fix is scored by the extra clicks it could bring and the effort it takes, so the top of the list is always the best next move.",
-                  "Κάθε διόρθωση βαθμολογείται με βάση τα επιπλέον κλικ που μπορεί να φέρει και τον κόπο που απαιτεί, οπότε η κορυφή της λίστας είναι πάντα η πιο χρήσιμη επόμενη κίνηση.",
+                  "Compare the estimated extra clicks with the effort each change takes. Start with a fix that fits the time you have.",
+                  "Συγκρίνετε τα επιπλέον κλικ που εκτιμά η εφαρμογή με τη δουλειά που απαιτεί κάθε αλλαγή. Διαλέξτε τι μπορείτε να κάνετε αυτή την εβδομάδα.",
                 ),
               },
               {
                 icon: Calculator,
-                title: tx("Every estimate explained", "Κάθε εκτίμηση τεκμηριωμένη"),
+                title: tx("Check the estimate", "Δείτε πώς προκύπτει η εκτίμηση"),
                 text: tx(
-                  "Each number shows the position, impressions and CTR behind it, measured against a CTR curve fitted to your own site.",
-                  "Κάθε νούμερο δείχνει τη θέση, τις εμφανίσεις και το CTR από τα οποία προκύπτει, σε σύγκριση με μια καμπύλη CTR προσαρμοσμένη στον δικό σας ιστότοπο.",
+                  "See the page’s position and impressions, then compare its click-through rate with what’s typical for your own site at that position.",
+                  "Δείτε τη θέση και τις εμφανίσεις της σελίδας. Συγκρίνετε το ποσοστό κλικ της με εκείνο που έχουν συνήθως οι δικές σας σελίδες στην ίδια θέση.",
                 ),
               },
               {
                 icon: ListChecks,
-                title: tx("Follow-through built in", "Ενσωματωμένη υλοποίηση"),
+                title: tx("See what happened afterwards", "Παρακολουθήστε τι άλλαξε"),
                 text: tx(
-                  "Turn a fix into a task, annotate what you shipped and see the effect on the chart, or in a client report.",
-                  "Μετατρέψτε μια διόρθωση σε εργασία, σημειώστε τι υλοποιήσατε και δείτε το αποτέλεσμα στο γράφημα ή σε μια αναφορά πελάτη.",
+                  "Save a task and mark the day you published the change. The date appears on your chart and in your client report.",
+                  "Αποθηκεύστε την πρόταση ως εργασία και σημειώστε πότε κάνατε την αλλαγή. Θα δείτε την ημερομηνία στο γράφημα και στην αναφορά για τον πελάτη σας.",
                 ),
               },
             ].map((item) => {
@@ -314,8 +309,8 @@ export default async function PlatformHubPage({ params }: PageProps) {
           eyebrow={tx("How it works", "Πώς λειτουργεί")}
           title={
             <>
-              {tx("More visits from Google and AI, in ", "Περισσότερες επισκέψεις από Google και AI, σε ")}
-              <WaveAccent>{tx("three steps.", "τρία βήματα.")}</WaveAccent>
+              {tx("Your first week with ", "Η πρώτη σας εβδομάδα με το ")}
+              <WaveAccent>{tx("AnotherSEOGuru App", "AnotherSEOGuru App")}</WaveAccent>
             </>
           }
           steps={HOW_STEPS.map((step) => ({ n: step.n, title: tx(step.titleEn, step.titleEl), body: tx(step.bodyEn, step.bodyEl) }))}
@@ -329,15 +324,15 @@ export default async function PlatformHubPage({ params }: PageProps) {
         <WaveSection id="iphone" shot="iphone">
           <div className="grid items-center gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-16">
             <div className="min-w-0">
-              <WaveEyebrow>{tx("New · iPhone app beta", "Νέο · εφαρμογή iPhone σε beta")}</WaveEyebrow>
+              <WaveEyebrow>{tx("iPhone beta", "Δοκιμαστική έκδοση για iPhone")}</WaveEyebrow>
               <h2 className="mt-4 text-balance font-display text-[2rem] font-bold leading-[1.08] tracking-[-0.03em] text-foreground sm:text-[2.75rem]">
-                {tx("Your fixes and traffic, ", "Οι διορθώσεις και η κίνησή σας, ")}
+                {tx("Check your site ", "Παρακολουθήστε την ιστοσελίδα σας ")}
                 <WaveAccent>{tx("on your iPhone", "στο iPhone")}</WaveAccent>
               </h2>
               <p className="mt-4 text-pretty text-[17px] leading-relaxed text-muted-foreground">
                 {tx(
-                  "A native iPhone app on the same account: this week's fixes, rank tracking, alerts, AI evidence, widgets and a live clicks tracker in the Dynamic Island.",
-                  "Εγγενής εφαρμογή iPhone στον ίδιο λογαριασμό: οι διορθώσεις της εβδομάδας, θέσεις, ειδοποιήσεις, δεδομένα AI, widgets και ζωντανή εικόνα των κλικ στο Dynamic Island.",
+                  "Open this week’s tasks and check your rankings with the account you already use on the web. Start a site audit and follow its progress from your Lock Screen.",
+                  "Μπείτε με τον λογαριασμό που χρησιμοποιείτε στον υπολογιστή για να δείτε τις εργασίες της εβδομάδας και τις θέσεις σας στη Google. Ξεκινήστε έναν έλεγχο της ιστοσελίδας σας και παρακολουθήστε την πρόοδό του από την οθόνη κλειδώματος.",
                 )}
               </p>
               <Link href={lp("/platform/iphone")} className="mt-8 inline-flex items-center gap-1.5 font-semibold text-primary hover:text-foreground">
@@ -351,7 +346,11 @@ export default async function PlatformHubPage({ params }: PageProps) {
                   <div className="overflow-hidden rounded-[1.6rem] border border-hairline bg-surface p-1">
                     <Image
                       src={`/images/iphone/${file}.webp`}
-                      alt={tx("AnotherSEOGuru App iPhone app screen", "Οθόνη της εφαρμογής AnotherSEOGuru App για iPhone")}
+                      alt={{
+                        today: tx("Search clicks and pages to check in the iPhone app", "Κλικ από αναζητήσεις και σελίδες για έλεγχο στην εφαρμογή iPhone"),
+                        "serp-explorer": tx("Top Google results for a search, shown on iPhone", "Τα πρώτα αποτελέσματα μιας αναζήτησης στη Google, στο iPhone"),
+                        "ai-evidence": tx("Visits from AI assistants in the iPhone app", "Επισκέψεις από βοηθούς AI στην εφαρμογή iPhone"),
+                      }[file]}
                       width={601}
                       height={1306}
                       sizes="(min-width: 1024px) 190px, 30vw"
@@ -366,15 +365,15 @@ export default async function PlatformHubPage({ params }: PageProps) {
 
         <WaveSection id="places" shot="places" tinted>
           <WaveHeading
-            eyebrow={tx("One account, the places you work", "Ένας λογαριασμός, εκεί που εργάζεστε")}
+            eyebrow={tx("Access and availability", "Πρόσβαση και διαθεσιμότητα")}
             title={
               <>
-                {tx("Keep the question, the evidence and the ", "Κρατήστε μαζί την ερώτηση, τα στοιχεία και το ")}
-                <WaveAccent>{tx("next step.", "επόμενο βήμα.")}</WaveAccent>
+                {tx("Where you can use ", "Πού μπορείτε να χρησιμοποιήσετε το ")}
+                <WaveAccent>{tx("AnotherSEOGuru App", "AnotherSEOGuru App")}</WaveAccent>
               </>
             }
           />
-          <ul className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <ul id="integrations" data-shot="integrations" className="mt-12 scroll-mt-28 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {places.map((card) => {
               const Icon = card.icon;
               return (
@@ -389,25 +388,8 @@ export default async function PlatformHubPage({ params }: PageProps) {
               );
             })}
           </ul>
-        </WaveSection>
-
-        <WaveSection id="integrations" shot="integrations">
-          <WaveHeading
-            eyebrow={tx("New · One login everywhere", "Νέο · Ένας λογαριασμός παντού")}
-            title={
-              <>
-                {tx("Also in Chrome, WordPress and ", "Και στο Chrome, στο WordPress και στους ")}
-                <WaveAccent>{tx("your AI assistant", "βοηθούς AI")}</WaveAccent>
-              </>
-            }
-            lead={tx(
-              "An SEO extension for Chrome, a Search Console plugin for WordPress and an MCP server for Claude, ChatGPT and Cursor, all on the same account and in sync.",
-              "Επέκταση SEO για Chrome, plugin Search Console για WordPress και MCP server για Claude, ChatGPT και Cursor, όλα στον ίδιο λογαριασμό και συγχρονισμένα.",
-            )}
-          />
-          <IntegrationCards locale={locale} exclude="web" className="mt-12" />
           <Link href={lp(INTEGRATIONS_PATH)} className="mt-8 inline-flex items-center gap-1.5 font-semibold text-primary hover:text-foreground">
-            {tx("See all integrations", "Δείτε όλες τις ενσωματώσεις")}
+            {tx("See all integrations", "Δείτε όλες τις διαθέσιμες συνδέσεις")}
             <ArrowRight className="size-4" aria-hidden />
           </Link>
         </WaveSection>
@@ -418,18 +400,18 @@ export default async function PlatformHubPage({ params }: PageProps) {
             eyebrow={tx("Pricing", "Τιμές")}
             title={
               <>
-                {tx("Simple plans. Credits only for ", "Απλά πακέτα. Μονάδες μόνο για ")}
-                <WaveAccent>{tx("heavy lifting.", "τη βαριά δουλειά.")}</WaveAccent>
+                {tx("Start with ", "Ξεκινήστε με ")}
+                <WaveAccent>{tx("one site for free", "μία ιστοσελίδα δωρεάν")}</WaveAccent>
               </>
             }
             lead={tx(
-              "Search Console analysis, the opportunity engine and client reports never use credits. Credits cover third-party data and AI.",
-              "Η ανάλυση Search Console, η μηχανή ευκαιριών και οι αναφορές πελατών δεν χρησιμοποιούν ποτέ μονάδες. Οι μονάδες καλύπτουν δεδομένα τρίτων και AI.",
+              "Your plan covers Search Console analysis, suggested fixes and reports. You use credits for actions such as live rank checks and publishing to WordPress. Compare the plans by sites, features and monthly allowance.",
+              "Η ανάλυση του Search Console, οι προτεινόμενες διορθώσεις και οι αναφορές περιλαμβάνονται στο πακέτο σας. Μονάδες χρησιμοποιείτε, για παράδειγμα, για να ελέγξετε τη σημερινή θέση μιας λέξης-κλειδιού ή να δημοσιεύσετε στο WordPress. Συγκρίνετε πόσες ιστοσελίδες, λειτουργίες και μονάδες καλύπτει κάθε πακέτο.",
             )}
           />
           <PlanPicker locale={locale} source="platform-plans" className="mt-10" />
           <p className="mt-10 text-center text-[14px]">
-            <Link href={`${lp("/ypiresies/times")}#compare`} className="inline-flex items-center gap-1.5 font-semibold text-primary hover:text-foreground">
+            <Link href={`${lp("/pricing")}#compare`} className="inline-flex items-center gap-1.5 font-semibold text-primary hover:text-foreground">
               {tx("Compare every feature and credit cost", "Συγκρίνετε όλες τις λειτουργίες και το κόστος σε μονάδες")}
               <ArrowRight className="size-4" aria-hidden />
             </Link>
@@ -442,8 +424,8 @@ export default async function PlatformHubPage({ params }: PageProps) {
             eyebrow={tx("Who it’s for", "Για ποιους είναι")}
             title={
               <>
-                {tx("The same software, framed around ", "Το ίδιο λογισμικό, στα μέτρα ")}
-                <WaveAccent>{tx("your team.", "της ομάδας σας.")}</WaveAccent>
+                {tx("How does it fit ", "Πώς θα το χρησιμοποιήσει ")}
+                <WaveAccent>{tx("your team?", "η ομάδα σας;")}</WaveAccent>
               </>
             }
           />
@@ -468,8 +450,8 @@ export default async function PlatformHubPage({ params }: PageProps) {
           source="platform-band"
           title={
             <>
-              {tx("Your next wins are already in your data. ", "Οι επόμενες επιτυχίες σας κρύβονται ήδη στα δεδομένα σας. ")}
-              <WaveAccent>{tx("Let’s find them.", "Ας τις βρούμε.")}</WaveAccent>
+              {tx("See which pages ", "Δείτε ποιες σελίδες ")}
+              <WaveAccent>{tx("need your attention.", "αξίζει να βελτιώσετε πρώτα.")}</WaveAccent>
             </>
           }
         />

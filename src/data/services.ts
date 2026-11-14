@@ -15,7 +15,7 @@ export const services: Service[] = [
         slug: 'website-creation',
         name: 'Website Creation',
         shortName: 'Web Creation',
-        description: 'Beautiful, fast websites built for real business results. Custom design, full SEO setup, and optimized for conversions from day one.',
+        description: 'We design your site around what customers come to do, whether that is booking a room or asking for a quote. The build includes mobile layouts, search setup and Analytics.',
         metaTitle: 'Website Creation Services',
         metaDescription: 'Professional website creation. Fast-loading, SEO-optimized sites built for conversions.',
         features: [
@@ -32,7 +32,7 @@ export const services: Service[] = [
         slug: 'website-redesign',
         name: 'Website Redesign',
         shortName: 'Redesign',
-        description: 'Transform your outdated website into a fast, modern, conversion-focused machine with our redesign services.',
+        description: 'Keep the pages that already bring enquiries while making the rest of your site faster and easier to use. We map old addresses before the move.',
         metaTitle: 'Website Redesign Services',
         metaDescription: 'Modernize your website with speed optimization, fresh design, and SEO migration.',
         features: [
@@ -49,7 +49,7 @@ export const services: Service[] = [
         slug: 'web-design',
         name: 'Web Design',
         shortName: 'Web Design',
-        description: 'Websites designed with SEO at the core. Technical SEO, schema markup, and internal linking built-in.',
+        description: 'We plan the menu and the links between pages around the services people look for, so they can reach the right page and get in touch.',
         metaTitle: 'Web Design Services Built for SEO',
         metaDescription: 'SEO-first website design with technical optimization, schema markup, and ranking-focused architecture.',
         features: [
@@ -66,7 +66,7 @@ export const services: Service[] = [
         slug: 'speed-optimization',
         name: 'Speed Optimization',
         shortName: 'Speed',
-        description: 'Website performance optimization for faster load times. Improve user experience and boost your search rankings.',
+        description: 'We measure the pages your customers use, then fix slow images, code and caching. You can compare load times before and after the work.',
         metaTitle: 'Website Speed Optimization',
         metaDescription: 'Website speed optimization for faster load times. Improve user experience and search rankings.',
         features: [
@@ -84,7 +84,7 @@ export const services: Service[] = [
         name: 'AI Visibility (GEO / AEO)',
         shortName: 'AI SEO',
         description:
-            'GEO and AEO for businesses: entity clarity, answer-shaped pages and measurement so answer engines can use your content. No citation promises.',
+            'We check what AI answers say about your business and make the facts on your pages easier to find and quote.',
         metaTitle: 'AI SEO Agency: GEO & AEO Services',
         metaDescription:
             'GEO and AEO services: entity clarity, answer-shaped pages and measurement for visibility in ChatGPT, Gemini and AI Overviews, with no citation promises.',
@@ -102,7 +102,7 @@ export const services: Service[] = [
         slug: 'logo-design',
         name: 'Logo Design',
         shortName: 'Logo',
-        description: 'Professional logo design and brand kit creation. Build a memorable brand identity that stands out.',
+        description: 'Get a logo your team can use on the website, in print and on social profiles, with the colours, type and source files in one place.',
         metaTitle: 'Logo Design & Branding Services',
         metaDescription: 'Professional logo design and brand kit creation. Build a memorable brand identity for your business.',
         features: [
@@ -119,7 +119,7 @@ export const services: Service[] = [
         slug: 'content-creation',
         name: 'Content Creation',
         shortName: 'Content',
-        description: 'SEO content services: service pages, location pages, and blogs mapped to real search demand, built to rank and convert.',
+        description: 'We write service pages and articles around the questions customers ask before they call, book or buy.',
         metaTitle: 'SEO Content Services, Pages & Blogs That Rank',
         metaDescription: 'SEO content creation for service pages, location pages, and blogs. Intent-led copy with FAQs and internal linking for organic growth.',
         features: [
@@ -136,7 +136,7 @@ export const services: Service[] = [
         slug: 'local-seo',
         name: 'Local SEO & GBP',
         shortName: 'Local SEO',
-        description: 'Local SEO services for map pack and “near me” growth. We optimize Google Business Profile, citations, reviews, and location pages.',
+        description: 'Give nearby customers accurate hours, directions and a phone number. We work on your Google Business Profile and the pages for the areas you serve.',
         metaTitle: 'Local SEO Services, Map Pack, GBP & Near Me',
         metaDescription: 'Local SEO services and local SEO agency support: Google Business Profile, citations, reviews, and city pages that win map pack rankings.',
         features: [
@@ -153,7 +153,7 @@ export const services: Service[] = [
         slug: 'link-building',
         name: 'Link Building',
         shortName: 'Backlinks',
-        description: 'White-hat link building services that earn relevant, editorial backlinks, not spam directories, to grow authority and rankings.',
+        description: 'We identify publications your customers read and pitch relevant stories that can earn a link to your business.',
         metaTitle: 'Link Building Services, White-Hat Authority Growth',
         metaDescription: 'Professional link building services: high-authority guest posts, digital PR, and niche-relevant placements with spam monitoring.',
         features: [
@@ -170,7 +170,7 @@ export const services: Service[] = [
         slug: 'seo-audits',
         name: 'SEO Audits',
         shortName: 'Audits',
-        description: 'SEO audit services and technical SEO services: prioritized crawl, indexation, Core Web Vitals, and on-page fixes that unlock rankings.',
+        description: 'Find out why your pages are hard to find in Google. We check indexing, speed and content, then give you a list of fixes in order of priority.',
         metaTitle: 'SEO Audit Services & Technical SEO Audits',
         metaDescription: 'Professional SEO audit services: technical health, Core Web Vitals, crawlability, indexation, competitor gaps, plus a clear fix roadmap.',
         features: [
@@ -187,7 +187,7 @@ export const services: Service[] = [
         slug: 'eshop-woocommerce',
         name: 'E-shop WooCommerce',
         shortName: 'E-shop Build',
-        description: 'High-converting, fully customized WooCommerce e-shops. Integrated secure payments, shipping calculators, and automated inventory systems.',
+        description: 'Open a WooCommerce shop with payments, shipping and stock set up around the way you sell.',
         metaTitle: 'WooCommerce E-shop Creation Services',
         metaDescription: 'Professional WooCommerce e-shop creation. Beautiful, secure, and SEO-optimized online stores built for sales.',
         features: [
@@ -204,7 +204,7 @@ export const services: Service[] = [
         slug: 'eshop-seo',
         name: 'E-shop SEO',
         shortName: 'E-shop SEO',
-        description: 'Ecommerce SEO services for online stores: category and product optimization, schema, speed, and content that drives organic sales.',
+        description: 'Help shoppers find the right category or product in Google. We check filters, duplicate pages and mobile speed before planning new content.',
         metaTitle: 'Ecommerce SEO Services, Categories, Products & Sales',
         metaDescription: 'Ecommerce SEO services for WooCommerce and online stores: category/product SEO, product schema, mobile speed, and conversion-focused content.',
         features: [

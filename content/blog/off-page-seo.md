@@ -23,7 +23,7 @@ faq:
     answer: Yes. Spam networks, irrelevant paid links and sudden unnatural spikes can trigger manual or algorithmic distrust. Quality and relevance beat volume every time.
 ---
 
-**Off-page SEO** covers ranking signals earned *outside* your website: primarily backlinks, brand mentions and reputation. It works best when [on-page SEO](/en/blog/on-page-seo) and [technical SEO](/en/blog/technical-seo-guide) are already solid. In 2026, Google and AI systems still treat relevant editorial links as trust votes, but they punish industrial spam harder than ever. This guide explains the **off-page SEO strategies** that earn those signals, what to avoid, how much to budget, and how off-page compounds into [organic traffic](/en/blog/how-to-increase-organic-traffic).
+Off-page SEO concerns the references to your business beyond your own site. Look at which organisations mention you, which of those mentions link to a useful page and whether the contact details are accurate. Use that alongside your [on-page SEO](/en/blog/on-page-seo) and [technical SEO](/en/blog/technical-seo-guide) checks.
 
 If you need execution help, see our [link building services](/en/services/link-building) and [SEO audits](/en/services/seo-audits).
 
@@ -79,7 +79,7 @@ One editorial link from a trusted industry publisher usually beats fifty junk li
 | Toxic link cleanup | €300 to €800 one-off | 4–12 weeks | Recovering from spam |
 | Linkable asset production | €800 to €3,000+ per asset | 1–3 months to earn | Brands that need PR hooks |
 
-Off-page never replaces weak pages. Fix intent match and [SEO content](/en/blog/seo-content-guide) first, then amplify. Transparent [pricing](/en/pricing) shows how link work usually sits in Growth and Authority packages.
+Off-page never replaces weak pages. Fix intent match and [SEO content](/en/blog/seo-content-guide) first, then amplify. Transparent [pricing](/el/ypiresies/times) shows how link work usually sits in Growth and Authority packages.
 
 ## Off-Page Checklist (Do This in Order)
 
@@ -142,4 +142,4 @@ They can. Prefer quality, relevance and gradual growth. Avoid networks and irrel
 
 ## Ready for White-Hat Outreach?
 
-If your pages deserve to rank but competitors hold more trust, start with an [SEO audit](/en/services/seo-audits), review [link building services](/en/services/link-building) and [pricing](/en/pricing), then [Get Started](/en/get-started). We only run transparent, niche-relevant outreach, no PBNs, no spam farms.
+If your pages deserve to rank but competitors hold more trust, start with an [SEO audit](/en/services/seo-audits), review [link building services](/en/services/link-building) and [pricing](/el/ypiresies/times), then [Get Started](/en/get-started). We only run transparent, niche-relevant outreach, no PBNs, no spam farms.

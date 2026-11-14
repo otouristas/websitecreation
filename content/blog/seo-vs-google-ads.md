@@ -22,7 +22,7 @@ faq:
     answer: The strategy pays off when Ads and SEO share keyword and landing-page data. One partner (or tightly aligned teams) prevents conflicting offers and wasted spend.
 ---
 
-"Should I put my money into Google Ads or SEO?" is one of the most common questions in digital marketing. The right answer depends on your time horizon and margins. Let's put them side by side, with numbers, and a practical mix most Greek SMEs can actually run.
+For an offer that ends next week, paid search gives you control over the dates and budget. For a service you expect to sell all year, it’s worth improving the page customers can find in organic search. The right mix depends on your margin, the time you have and whether you can measure enquiries.
 
 Greek version: [SEO ή Google Ads](/el/blog/seo-i-google-ads). New to organic search? Start with [What is SEO?](/en/blog/what-is-seo) or [SEO for beginners](/en/blog/seo-for-beginners).
 
@@ -67,7 +67,7 @@ That way you're never without customers, and every euro leaving Ads goes into so
 
 ## The Numbers in Practice
 
-For a local service business: €500/mo in Ads at a €1.50 CPC buys ~330 clicks/month, forever at the same rate. With {{ENTRY_SEO}}-599/mo in an [SEO package](/en/pricing), month one brings little, but by month six organic traffic usually exceeds those 330 clicks, and keeps climbing with no per-click cost.
+For a local service business: €500/mo in Ads at a €1.50 CPC buys ~330 clicks/month, forever at the same rate. With {{ENTRY_SEO}}-599/mo in an [SEO package](/el/ypiresies/times), month one brings little, but by month six organic traffic usually exceeds those 330 clicks, and keeps climbing with no per-click cost.
 
 | Month | Ads (€500/mo) | SEO (€399/mo typical) | Combined goal |
 | :--- | :--- | :--- | :--- |
@@ -120,4 +120,4 @@ No, clear, citable pages still win clicks and assistant mentions. Ads do not rep
 
 ## Ready to Get Started with a Budget Split?
 
-Tell us your niche, area and goal: we'll reply with a specific budget split and a realistic timeline. [Get Started](/en/get-started) free within 24 hours, or review [pricing](/en/pricing) if you already know you want an SEO-led mix.
+Tell us your niche, area and goal: we'll reply with a specific budget split and a realistic timeline. [Get Started](/en/get-started) free within 24 hours, or review [pricing](/el/ypiresies/times) if you already know you want an SEO-led mix.

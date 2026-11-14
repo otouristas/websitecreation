@@ -28,13 +28,13 @@ export const BLOG_PILLARS: readonly PillarMeta[] = [
       title: 'Agency Playbooks',
       heading: 'Agency playbooks',
       intro:
-        'How SEO retainers actually get delivered: scoping, reporting that clients read, pricing, and knowing when to walk away from a project.',
+        'Agree on what your fee covers, who will make the edits and how to report a month when results are mixed.',
     },
     el: {
-      title: 'Οδηγοί για agencies',
-      heading: 'Οδηγοί για agencies',
+      title: 'Οδηγοί για εταιρείες SEO',
+      heading: 'Οδηγοί για εταιρείες SEO',
       intro:
-        'Πώς παραδίδεται στην πράξη μια συνεργασία SEO: εύρος έργου, αναφορές που διαβάζονται, τιμολόγηση και πότε να πείτε όχι σε ένα project.',
+        'Δείτε πώς να συμφωνήσετε με τον πελάτη τι καλύπτει η αμοιβή σας, ποιος εφαρμόζει τις αλλαγές και τι θα περιλαμβάνει κάθε μηνιαία αναφορά.',
     },
   },
   {
@@ -44,14 +44,14 @@ export const BLOG_PILLARS: readonly PillarMeta[] = [
       seoTitle: 'Local SEO guides & Google Business Profile',
       heading: 'Local SEO',
       intro:
-        'Winning the map pack and "near me" searches: Google Business Profile, NAP consistency, reviews, citations, and city pages that answer local intent instead of substituting a place name.',
+        'Help people nearby find your opening hours, directions and services on Google. Start with your business listing, reviews and the areas you actually serve.',
     },
     el: {
       title: 'Τοπικό SEO',
       seoTitle: 'Οδηγοί τοπικού SEO και Google Maps',
       heading: 'Τοπικό SEO',
       intro:
-        'Πώς κερδίζετε το Map Pack και τις αναζητήσεις «κοντά μου»: Google Business Profile, συνέπεια στοιχείων, κριτικές, καταχωρήσεις και σελίδες πόλης που απαντούν σε πραγματική τοπική πρόθεση, όχι απλή αντικατάσταση ονόματος.',
+        'Βοηθήστε τους πελάτες της περιοχής σας να βρουν το ωράριο, τη διεύθυνση και τις υπηρεσίες σας στην Google. Ξεκινήστε από την καταχώρισή σας στον χάρτη και τις περιοχές που εξυπηρετείτε.',
     },
   },
   {
@@ -60,13 +60,13 @@ export const BLOG_PILLARS: readonly PillarMeta[] = [
       title: 'Industry Playbooks',
       heading: 'Industry playbooks',
       intro:
-        'Vertical-specific SEO: hotels, rent-a-car, restaurants, clinics and law firms. What ranks in each, and what the generic advice gets wrong.',
+        'Choose your industry to see how search leads to a reservation, appointment or enquiry. A hotel room page has a different job from a law firm’s service page.',
     },
     el: {
       title: 'Οδηγοί ανά κλάδο',
       heading: 'Οδηγοί ανά κλάδο',
       intro:
-        'SEO ανά κατηγορία: ξενοδοχεία, ενοικίαση αυτοκινήτου, εστιατόρια, ιατρεία και δικηγορικά γραφεία. Τι αποδίδει σε κάθε κλάδο στην πράξη.',
+        'Επιλέξτε τον κλάδο σας για να δείτε πώς η αναζήτηση συνδέεται με μια κράτηση, ένα ραντεβού ή ένα αίτημα προσφοράς.',
     },
   },
   {
@@ -76,14 +76,14 @@ export const BLOG_PILLARS: readonly PillarMeta[] = [
       seoTitle: 'Technical SEO guides for in-house teams',
       heading: 'Technical SEO for in-house teams',
       intro:
-        'Crawling, indexing, Core Web Vitals, hosting and migrations. The technical groundwork that has to be right before content can work.',
+        'Check why a page is missing from Google, what slows it down and which URLs need redirects before a redesign.',
     },
     el: {
       title: 'Τεχνικό SEO',
-      seoTitle: 'Οδηγοί τεχνικού SEO για in-house ομάδες',
-      heading: 'Τεχνικό SEO για in-house ομάδες',
+      seoTitle: 'Οδηγοί τεχνικού SEO για εσωτερικές ομάδες SEO',
+      heading: 'Τεχνικό SEO για εσωτερικές ομάδες SEO',
       intro:
-        'Ευρετηρίαση, Core Web Vitals, hosting και μεταπτώσεις. Τα τεχνικά θεμέλια που πρέπει να είναι σωστά πριν αποδώσει το περιεχόμενο.',
+        'Ελέγξτε γιατί μια σελίδα λείπει από την Google, τι την καθυστερεί στο κινητό και ποιες διευθύνσεις χρειάζονται ανακατεύθυνση σε έναν ανασχεδιασμό.',
     },
   },
   {
@@ -92,13 +92,13 @@ export const BLOG_PILLARS: readonly PillarMeta[] = [
       title: 'Search Console Mastery',
       heading: 'Search Console mastery',
       intro:
-        'Reading Google Search Console properly: striking-distance queries, cannibalisation, index coverage and turning impressions into clicks.',
+        'Find the page behind a drop in clicks, the searches it appears for and the period that makes a fair comparison.',
     },
     el: {
       title: 'Google Search Console',
       heading: 'Μάθετε το Search Console',
       intro:
-        'Πώς διαβάζεται σωστά το Google Search Console: όροι σε απόσταση βολής, αλληλοεπικάλυψη σελίδων και πώς οι εμφανίσεις γίνονται κλικ.',
+        'Βρείτε ποια σελίδα έχασε κλικ, για ποιες αναζητήσεις εμφανίζεται και με ποια περίοδο έχει νόημα να συγκρίνετε τα στοιχεία της.',
     },
   },
   {
@@ -107,13 +107,13 @@ export const BLOG_PILLARS: readonly PillarMeta[] = [
       title: 'AI & LLM Visibility',
       heading: 'AI and LLM visibility',
       intro:
-        'GEO and AEO in practice: getting cited by ChatGPT, Perplexity, Gemini and AI Overviews, and measuring it without inventing scores.',
+        'Check how ChatGPT, Perplexity, Gemini and Google AI Overviews answer a customer’s question. Record the wording and the sources so you can compare later.',
     },
     el: {
       title: 'Ορατότητα σε AI',
       heading: 'Ορατότητα σε AI και LLM',
       intro:
-        'GEO και AEO στην πράξη: πώς σας αναφέρουν ChatGPT, Perplexity, Gemini και AI Overviews, και πώς μετριέται χωρίς πλασματικά σκορ.',
+        'Ελέγξτε πώς απαντούν το ChatGPT, το Perplexity, το Gemini και τα AI Overviews σε μια ερώτηση πελάτη. Κρατήστε την απάντηση και τις πηγές της για να συγκρίνετε τι αλλάζει.',
     },
   },
 ];

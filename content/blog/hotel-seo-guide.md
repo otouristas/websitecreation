@@ -1,7 +1,7 @@
 ---
 slug: hotel-seo-guide
-title: "Hotel SEO: How to Win Direct Bookings in 2026"
-seoTitle: "Hotel SEO: Win More Direct Bookings"
+title: "Hotel SEO for guests who want to book direct"
+seoTitle: "Hotel SEO and direct booking pages"
 description: "A practical hotel SEO guide: cut OTA commissions, rank in Google and win direct bookings with technical SEO, destination content and AI search visibility."
 date: 2026-07-06
 updated: 2026-09-10
@@ -23,7 +23,7 @@ faq:
     answer: Yes. Clear room FAQs, schema, and proof pages help ChatGPT, Gemini, and Perplexity cite your property, not only classic blue-link rankings.
 ---
 
-Every booking that comes through Booking.com or Expedia costs you **15–25%** in commission. **Hotel SEO** is the most cost-effective way to reclaim that margin: a guest who finds you on Google books on your site, with no middleman. In 2026 that also means showing up in Maps, Google Hotels, and AI trip planners, not only ranking a thin homepage for “hotel + destination.”
+A traveller searching for a hotel with a pool on your island has a different question from someone looking up your hotel by name. Check which page each search brings up. A useful room page should show whether the room suits the guest and make it easy to check dates directly with you.
 
 We run hospitality SEO across Greece: see [hotel solutions](/en/solutions/hotels), [Hotels Santorini](/en/work/hotels-santorini) and [hotel website design](/en/blog/hotel-website-design).
 
@@ -76,7 +76,7 @@ No engine guarantees it will mention you. What you control is whether your conte
 | Time to local / branded wins | 2–3 months | Maps + “hotel + town” |
 | Time to destination head terms | 4–6+ months | Needs content + authority |
 
-Measure **direct booking share**, organic clicks to room URLs, and Search Console CTR, not sessions alone. Transparent [pricing](/en/pricing) and [how much SEO costs](/en/blog/how-much-does-seo-cost) help you compare proposals.
+Measure **direct booking share**, organic clicks to room URLs, and Search Console CTR, not sessions alone. Transparent [pricing](/el/ypiresies/times) and [how much SEO costs](/en/blog/how-much-does-seo-cost) help you compare proposals.
 
 ## Common Hotel SEO Mistakes
 
@@ -127,4 +127,4 @@ Direct bookings from organic, room-page CTR in Search Console, map-pack visibili
 
 ## Ready to Get Started?
 
-Every month that passes is bookings going to competitors or to OTA fees. [Request a free analysis](/en/get-started) of your site: we show where you lose bookings and what to change before the next season. Explore [hotel solutions](/en/solutions/hotels) and [pricing](/en/pricing) when you want a scoped direct-booking plan.
+[Request a free check of your hotel website](/el/get-started#free-audit). Tell us which room type you want guests to find and where they go to check dates. The audit gives us a starting point for discussing changes before the next season. See our [hotel website services](/el/solutions/hotels) and [agency pricing in Greek](/el/ypiresies/times).

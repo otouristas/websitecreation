@@ -19,7 +19,7 @@ export const TRAFFIC_DROP_ARTICLES: ReadonlyArray<ResourceArticle> = [
     body: [
       {
         type: "p",
-        text: "**When organic traffic drops, find out whether you lost rankings, lost demand or lost clicks at the same rankings before changing anything.** Search Console answers that in minutes: compare the drop period with the period before and the same period last year, and look at what happened to position, impressions and CTR. Then work through the seven checks below in order, because the early ones are the cheapest to rule out and the most common.",
+        text: "If organic visits dropped, check what changed before editing the site. In Search Console, compare the affected dates with the preceding period and the same dates last year. Falling positions, fewer impressions and a lower CTR point to different questions. Start with the one your figures raise.",
       },
       { type: "h2", id: "first-look", text: "The first look: rankings, demand or clicks?" },
       {
@@ -138,7 +138,7 @@ export const TRAFFIC_DROP_ARTICLES: ReadonlyArray<ResourceArticle> = [
     body: [
       {
         type: "p",
-        text: "**Content decay is the gradual loss of organic clicks on a page that used to perform, usually because competitors published something better, the information aged, or the results page changed.** To find it, compare each page's clicks with an earlier period in Search Console and look for meaningful pages that lost a large share. Then diagnose each one before acting: a page losing demand needs nothing, a page losing rankings needs a refresh, and a page losing clicks at the same ranking needs a better snippet.",
+        text: "An article that used to bring enquiries may lose clicks gradually. Compare its search performance with an earlier period before deciding to rewrite it. Falling demand, a competitor moving ahead and fewer clicks at the same position can look similar in a traffic chart. They call for different changes.",
       },
       { type: "h2", id: "find", text: "Finding decaying pages" },
       {

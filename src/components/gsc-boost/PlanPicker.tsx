@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowRight, FolderOpen } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/cn";
 import type { SiteLocale } from "@/lib/i18n/locale";
 import { CheckList } from "@/components/kit/primitives";
@@ -19,7 +19,7 @@ const T = {
   perYear: { en: "/ year", el: "/ έτος" },
   recommended: { en: "Recommended", el: "Προτείνεται" },
   credits: { en: "Credits / mo", el: "Μονάδες / μήνα" },
-  sites: { en: "Projects", el: "Έργα" },
+  sites: { en: "Sites", el: "Ιστοσελίδες" },
   seats: { en: "Seats", el: "Χρήστες" },
 } as const;
 
@@ -125,12 +125,10 @@ function PlanCard({
           {badgeLabel}
         </span>
       ) : null}
-      <div className="mb-5 flex items-center justify-between gap-3 border-b border-hairline pb-5"><span className="flex items-center gap-2 text-xs font-medium text-muted-foreground"><FolderOpen className="size-4 text-primary" aria-hidden />{plan.sites} {locale === "el" ? "έργα" : "projects"}</span><span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">ANOTHERSEOGURU</span></div>
       <h3 className="font-display text-[20px] font-semibold tracking-[-0.02em] text-foreground">{plan.id}</h3>
       <p className="mt-1.5 text-[14px] leading-relaxed text-muted-foreground sm:min-h-[44px]">{plan.tagline[locale]}</p>
       {PLAN_OUTCOMES[plan.id.toLowerCase()] ? (
         <p className="mt-2 text-[13px] leading-snug text-foreground sm:min-h-[36px]">
-          <span className="font-semibold text-primary">{locale === "el" ? "Τι κερδίζετε: " : "What you get: "}</span>
           {PLAN_OUTCOMES[plan.id.toLowerCase()][locale]}
         </p>
       ) : null}

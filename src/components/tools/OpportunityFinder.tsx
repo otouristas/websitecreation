@@ -316,7 +316,7 @@ export function OpportunityFinder({ locale = "en" }: { readonly locale?: SiteLoc
               ))}
             </div>
             <p className="mt-3 text-[12.5px] leading-relaxed text-muted-foreground">
-              {el ? "Εκτιμήσεις για το μέγεθος της ευκαιρίας, όχι υποσχέσεις. Οι αλλαγές φαίνονται συνήθως σε δύο έως έξι εβδομάδες, αφού η Google ξανακάνει crawl." : "Estimates of the size of the prize, not promises. Changes usually take two to six weeks to show after Google recrawls."}
+              {el ? "Οι αριθμοί είναι εκτιμήσεις για πιθανά επιπλέον κλικ. Μετά τη διόρθωση, δώστε χρόνο στην Google να επισκεφθεί ξανά τη σελίδα και ελέγξτε τα κλικ στο Search Console." : "These are estimated extra clicks. After you edit a page, allow time for Google to revisit it, then check what changed in Search Console."}
             </p>
           </div>
 

@@ -48,19 +48,19 @@ export default async function ContactPage({
               />
             </div>
           }
-          title={accentEnd(isEl ? elContact.h1 : "Let's Talk About Your Project", 2)}
+          title={accentEnd(isEl ? elContact.h1 : "Talk to the AnotherSEOGuru team", 2)}
           titleClassName="text-[1.7rem] min-[400px]:text-[1.95rem] sm:text-[2.45rem] lg:text-[3rem]"
           lead={
             isEl
               ? elContact.intro
-              : "Have a question or ready to get started? Send us a message and we'll get back to you within 24 hours."
+              : "Tell us what you’re trying to do. We can help you choose an app plan, look into a search problem or discuss a website you want to build."
           }
           trust={<TrustLine align="left" items={agencyTrust(l)} />}
           panel={
             <div className="min-w-0 space-y-4">
               <div className="rounded-[22px] border border-hairline bg-surface/80 p-6 shadow-[0_0_0_1px_color-mix(in_oklab,var(--primary)_18%,transparent),0_30px_80px_-28px_color-mix(in_oklab,var(--primary)_45%,transparent)]">
                 <h2 className="font-display text-[20px] font-semibold tracking-[-0.025em] text-foreground">
-                  {isEl ? t!.getInTouch : "Get in Touch"}
+                  {isEl ? t!.getInTouch : "Reach us directly"}
                 </h2>
                 <ContactChannels variant="buttons" locale={l} className="mt-5" />
                 <dl className="mt-6 divide-y divide-hairline border-t border-hairline">
@@ -78,9 +78,9 @@ export default async function ContactPage({
                   <div className="relative py-4 pl-7">
                     <dt className="text-[13px] text-muted-foreground">
                       <Clock3 className="absolute left-0 top-4 mt-0.5 size-4 text-primary" aria-hidden />
-                      {isEl ? t!.responseTime : "Response Time"}
+                      {isEl ? t!.responseTime : "When we reply"}
                     </dt>
-                    <dd className="text-[15px] font-medium text-foreground">{isEl ? t!.responseValue : "Within 24 hours"}</dd>
+                    <dd className="text-[15px] font-medium text-foreground">{isEl ? t!.responseValue : "Within 24 working hours"}</dd>
                   </div>
                   <div className="relative pt-4 pl-7">
                     <dt className="text-[13px] text-muted-foreground">
@@ -92,14 +92,14 @@ export default async function ContactPage({
                 </dl>
               </div>
               <div className="rounded-[22px] border border-hairline bg-surface/70 p-6">
-                <h3 className="text-[16px] font-semibold text-foreground">{isEl ? t!.readyTitle : "Ready to start?"}</h3>
+                <h3 className="text-[16px] font-semibold text-foreground">{isEl ? t!.readyTitle : "Have a website in mind?"}</h3>
                 <p className="mt-2 text-pretty text-[14px] leading-relaxed text-muted-foreground">
                   {isEl
                     ? t!.readyBody
-                    : "Skip the form and go straight to our onboarding wizard to choose your package and get started today."}
+                    : "Get a free SEO check for an existing site, or tell us about a site you’d like us to build. You can request either without choosing a package."}
                 </p>
                 <Link href={lp("/get-started")} className={`${waveGhostBtn} mt-5 w-full`}>
-                  {isEl ? t!.readyCta : "Start Your Project"}
+                  {isEl ? t!.readyCta : "Request an audit or a quote"}
                   <ArrowRight className="size-4" aria-hidden />
                 </Link>
               </div>

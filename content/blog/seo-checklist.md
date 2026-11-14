@@ -20,7 +20,7 @@ faq:
     answer: Yes. The sheet on this page saves ticks in your browser and downloads as Markdown or CSV, or you can print it. Nothing is uploaded.
 ---
 
-A **website SEO checklist** is the shortest honest order for checking a site: can Google crawl and keep the right URLs, does each URL match one intent, is the template usable on a phone, and do internal links point at the pages that should rank. This page is that list. Tick items in the browser, download the sheet, or print it. Ticks stay on this device.
+Start your SEO checklist with the page customers actually need. Can Google index it? Does the title describe the service? Can a visitor on a phone get to the booking form or phone number? Work through those checks on a few important URLs before applying changes across the site.
 
 If the terms are new, read [what SEO is](/en/blog/what-is-seo) and the [beginner guide](/en/blog/seo-for-beginners) first. The checks below assume you can open Google Search Console and view a page's HTML, not only the CMS preview.
 
@@ -94,4 +94,4 @@ AI search does not need a second list. Pages that answer in the first screen, us
 
 ## Ready to turn the checklist into a plan
 
-If the first pass shows index or template problems, an [SEO audit](/en/services/seo-audits) is faster than guessing from a spreadsheet. Ongoing on-page and technical work sits in retainers from {{ENTRY_SEO}}/mo, listed on [pricing](/en/pricing). [Get started](/en/get-started) with the URLs you care about and we will say which layer to fix first.
+If the first pass shows index or template problems, an [SEO audit](/en/services/seo-audits) is faster than guessing from a spreadsheet. Ongoing on-page and technical work sits in retainers from {{ENTRY_SEO}}/mo, listed on [pricing](/el/ypiresies/times). [Get started](/en/get-started) with the URLs you care about and we will say which layer to fix first.
