@@ -50,6 +50,7 @@ const nextConfig: NextConfig = {
   async redirects() {
     const appOrigin = process.env.NEXT_PUBLIC_APP_ORIGIN?.replace(/\/$/, '') || 'https://app.anotherseoguru.com';
     const list: Redirect[] = [
+      { source: "/previews/mcp/guru-v1.html", destination: "/previews/mcp/guru-v2.html", permanent: true },
       // ---- BEGIN AnotherSEOGuru App: retired /platform/features/<slug> pages ----------
       // The 27 per-feature pages described features the app does not have.
       // Each slug now lives at the closest module anchor on /platform/features
