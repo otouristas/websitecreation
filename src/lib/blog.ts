@@ -1,5 +1,4 @@
-import fs from "fs";
-import path from "path";
+import { getBlogFiles } from "./blog-files";
 import { cache } from "react";
 import matter from "gray-matter";
 import { resolvePriceTokens } from "@/data/pricing";
@@ -127,10 +126,6 @@ function parseHowTo(raw: unknown): BlogHowTo | undefined {
   return { name, description: description || name, steps };
 }
 
-function getContentDir(): string {
-  return path.join(process.cwd(), "content/blog");
-}
-
 /**
  * Frontmatter dates are unquoted YAML (`date: 2026-06-15`), so gray-matter
  * hands back a `Date`, not a string. The old `typeof d.date === "string"` test
@@ -155,8 +150,7 @@ function normalizePostDate(value: unknown, slug: string): string {
   );
 }
 
-function parsePostFile(filePath: string, fileBase: string): BlogPostParsed | null {
-  const raw = fs.readFileSync(filePath, "utf8");
+function parsePostFile(raw: string, fileBase: string): BlogPostParsed | null {
   const { data, content } = matter(raw);
   const d = data as MatterData;
   const slug = typeof d.slug === "string" ? d.slug : fileBase.replace(/\.md$/, "");
@@ -361,14 +355,9 @@ export function getTranslationCounterpart(
  * related posts).
  */
 const readAllPosts = cache((): BlogPostParsed[] => {
-  const dir = getContentDir();
-  if (!fs.existsSync(dir)) {
-    return [];
-  }
-  const files = fs.readdirSync(dir).filter((f) => f.endsWith(".md"));
   const posts: BlogPostParsed[] = [];
-  for (const file of files) {
-    const parsed = parsePostFile(path.join(dir, file), file.replace(/\.md$/, ""));
+  for (const [file, raw] of getBlogFiles()) {
+    const parsed = parsePostFile(raw, file);
     if (parsed) {
       posts.push(parsed);
     }
@@ -474,25 +463,7 @@ export function getPillarNeighbours(
  * Load a single post by slug for static generation and detail pages.
  */
 export function getBlogPostBySlug(slug: string): BlogPostParsed | null {
-  const cached = readAllPosts().find((p) => p.slug === slug);
-  if (cached) return cached;
-  const dir = getContentDir();
-  if (!fs.existsSync(dir)) {
-    return null;
-  }
-  const directPath = path.join(dir, `${slug}.md`);
-  if (fs.existsSync(directPath)) {
-    return parsePostFile(directPath, slug);
-  }
-  const files = fs.readdirSync(dir).filter((f) => f.endsWith(".md"));
-  for (const file of files) {
-    const full = path.join(dir, file);
-    const parsed = parsePostFile(full, file.replace(/\.md$/, ""));
-    if (parsed && parsed.slug === slug) {
-      return parsed;
-    }
-  }
-  return null;
+  return readAllPosts().find((post) => post.slug === slug) ?? null;
 }
 
 /**

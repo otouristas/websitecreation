@@ -13,6 +13,7 @@ import { getAllServiceSlugs } from '@/data/services';
 import { THEME_INIT_SCRIPT } from '@/brand/theme';
 import {
   AGENCY_DOMAIN,
+  AGENCY_WORKER,
   PRODUCT_ORIGIN,
   agencyDomainPath,
   comPathForAgencyDomain,
@@ -126,7 +127,7 @@ export function middleware(request: NextRequest) {
   if (host === `www.${AGENCY_DOMAIN}`) {
     return NextResponse.redirect(new URL(`${pathname}${request.nextUrl.search}`, `https://${AGENCY_DOMAIN}`), 301);
   }
-  if (host === AGENCY_DOMAIN) {
+  if (AGENCY_WORKER || host === AGENCY_DOMAIN) {
     return agencyDomainResponse(request);
   }
 

@@ -273,7 +273,7 @@ export default async function LocaleLayout({
         </div>
         <StickyMobileCta />
         <WhatsAppPill locale={isEl ? 'el' : 'en'} />
-        <Analytics />
+        {process.env.NEXT_PUBLIC_AGENCY_WORKER !== '1' && <Analytics />}
       </body>
     </html>
   );

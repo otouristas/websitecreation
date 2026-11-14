@@ -39,7 +39,8 @@ export const PRODUCT_ORIGIN = 'https://anotherseoguru.com';
  * canonical URL and redirect then goes to anotherseoguru.gr, and the Greek
  * agency pages on .com send a 301 there (see middleware).
  */
-export const AGENCY_ON_OWN_DOMAIN = false;
+export const AGENCY_WORKER = process.env.NEXT_PUBLIC_AGENCY_WORKER === '1';
+export const AGENCY_ON_OWN_DOMAIN = AGENCY_WORKER || process.env.NEXT_PUBLIC_AGENCY_ON_OWN_DOMAIN === '1';
 
 function splitSuffix(path: string): [string, string] {
   const i = path.search(/[?#]/);
@@ -72,6 +73,7 @@ export function comPathForAgencyDomain(grPathname: string): string | null {
 
 /** The public href of a Greek agency page (e.g. `/el/ypiresies/times`). */
 export function agencyHref(elPathname: string): string {
+  if (AGENCY_WORKER) return agencyDomainPath(elPathname);
   return AGENCY_ON_OWN_DOMAIN ? `${AGENCY_ORIGIN}${agencyDomainPath(elPathname)}` : elPathname;
 }
 

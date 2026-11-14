@@ -1,0 +1,68 @@
+name: Build agency Worker
+on:
+  push:
+    branches: [codex/agency-cloudflare-artifact-20261114, codex/humanize-marketing-en-el-20261114]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: agency-worker-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      NEXT_PUBLIC_AGENCY_WORKER: "1"
+      NEXT_TELEMETRY_DISABLED: "1"
+      WRANGLER_SEND_METRICS: "false"
+      NODE_OPTIONS: --max-old-space-size=5500
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Install the agency build toolchain
+        run: |
+          node cloudflare/agency/prepare.mjs
+          if test -f cloudflare/agency/package-lock.json; then
+            cp cloudflare/agency/package-lock.json package-lock.json
+            npm ci --no-audit --no-fund
+          else
+            npm install --no-audit --no-fund
+          fi
+      - name: Check vinext compatibility
+        run: npx --no-install vinext check
+      - name: Build the Worker and local assets
+        run: |
+          cp src/app/opengraph-image.png public/brand/product-og.png
+          npx --no-install vite build --config cloudflare/agency/vite.config.mjs
+          node cloudflare/agency/package-artifact.mjs "$RUNNER_TEMP/agency"
+      - name: Exercise the packaged Worker with workerd
+        run: |
+          cd "$RUNNER_TEMP/agency"
+          "$GITHUB_WORKSPACE/node_modules/.bin/wrangler" deploy --dry-run --config wrangler.jsonc
+          "$GITHUB_WORKSPACE/node_modules/.bin/wrangler" dev --local --config wrangler.jsonc --port 8787 > "$RUNNER_TEMP/agency.log" 2>&1 &
+          worker=$!
+          trap 'kill "$worker" 2>/dev/null || true; tail -80 "$RUNNER_TEMP/agency.log"' EXIT
+          for attempt in {1..60}; do
+            if curl -fsS http://127.0.0.1:8787/robots.txt >/dev/null; then break; fi
+            if ! kill -0 "$worker"; then exit 1; fi
+            sleep 1
+          done
+          node "$GITHUB_WORKSPACE/cloudflare/agency/smoke.mjs"
+      - name: Archive the tested bundle
+        run: |
+          cd "$RUNNER_TEMP/agency"
+          tar -czf "$RUNNER_TEMP/agency-worker-$GITHUB_SHA.tar.gz" dist wrangler.jsonc SOURCE_COMMIT
+          cd "$RUNNER_TEMP"
+          sha256sum "agency-worker-$GITHUB_SHA.tar.gz" > "agency-worker-$GITHUB_SHA.sha256"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: agency-worker-${{ github.sha }}
+          path: |
+            ${{ runner.temp }}/agency-worker-*.tar.gz
+            ${{ runner.temp }}/agency-worker-*.sha256
+          compression-level: 0
+          retention-days: 7
+          if-no-files-found: error

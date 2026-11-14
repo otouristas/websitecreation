@@ -48,6 +48,8 @@ const nextConfig: NextConfig = {
   agentRules: false,
 
   async redirects() {
+    // The dedicated agency Worker applies clean Greek routes in middleware.
+    if (process.env.NEXT_PUBLIC_AGENCY_WORKER === '1') return [];
     const appOrigin = process.env.NEXT_PUBLIC_APP_ORIGIN?.replace(/\/$/, '') || 'https://app.anotherseoguru.com';
     const list: Redirect[] = [
       { source: "/previews/mcp/guru-v1.html", destination: "/previews/mcp/guru-v2.html", permanent: true },
