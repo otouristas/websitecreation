@@ -25,7 +25,7 @@ faq:
 
 A hotel’s website is its most profitable sales channel, or its most expensive missed opportunity. Great **hotel website design** turns a browser into a direct booking; a slow, dated site sends that guest straight to an OTA that charges you commission. Here’s what a booking-driving hotel site needs in 2026, what it costs, and how to build it for SEO.
 
-> **Related:** [hotel solutions](/en/solutions/hotels) · [pricing](/en/pricing) · [SEO for hotels](/en/blog/hotel-seo-guide) · [website cost guide](/en/blog/how-much-does-a-website-cost) · [free quote](/en/get-started).
+> **Related:** [hotel solutions](/en/solutions/hotels) · [pricing](/el/ypiresies/times) · [SEO for hotels](/en/blog/hotel-seo-guide) · [website cost guide](/en/blog/how-much-does-a-website-cost) · [free quote](/en/get-started).
 
 ## Why Direct Bookings Matter
 

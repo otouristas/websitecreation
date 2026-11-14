@@ -58,6 +58,12 @@ const nextConfig: NextConfig = {
       .map(path => ({ source: path, destination: agency + path, statusCode: 301 }));
     const list: Redirect[] = [
       ...bareAgencyRedirects,
+      { source: '/services/eshop-seo/chania-gr', destination: agency + '/services/eshop-seo', statusCode: 301 },
+      ...['services', 'solutions', 'locations-el'].map(name => ({
+        source: '/sitemap-' + name + '.xml',
+        destination: agency + '/sitemap.xml',
+        statusCode: 301 as const,
+      })),
       { source: "/previews/mcp/guru-v1.html", destination: "/previews/mcp/guru-v2.html", permanent: true },
       // ---- BEGIN AnotherSEOGuru App: retired /platform/features/<slug> pages ----------
       // The 27 per-feature pages described features the app does not have.
