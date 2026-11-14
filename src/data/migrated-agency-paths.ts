@@ -334,3 +334,10 @@ export const migratedAgencyPaths = new Set<string>([
   "/work/vwanaki",
   "/work/weddings-folegandros",
 ]);
+
+/** The agency also serves real noindex pages that pair a known industry and service. */
+export function hasMigratedAgencyPage(path: string): boolean {
+  if (migratedAgencyPaths.has(path)) return true;
+  const pair = /^\/solutions\/([a-z0-9-]+)\/([a-z0-9-]+)$/.exec(path);
+  return Boolean(pair && migratedAgencyPaths.has('/solutions/' + pair[1]) && migratedAgencyPaths.has('/services/' + pair[2]));
+}

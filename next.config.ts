@@ -12,6 +12,7 @@ const RETIRED_WORK_SLUGS = [
   "arion-farm",
   "cocktails-in-the-city",
   "cretanways-rentals",
+  "dailyhost-eu",
   "eolides-villas",
   "ergo-and-art",
   "fabrica-cafe",
@@ -56,7 +57,25 @@ const nextConfig: NextConfig = {
     const bareAgencyRedirects: Redirect[] = Array.from(migratedAgencyPaths)
       .filter(path => path !== '/' && path !== '/times')
       .map(path => ({ source: path, destination: agency + path, statusCode: 301 }));
+    const sectionSlugs = (section: string) => Array.from(migratedAgencyPaths)
+      .filter(path => path.startsWith('/' + section + '/') && path.split('/').length === 3)
+      .map(path => path.split('/')[2])
+      .join('|');
+    const industries = sectionSlugs('solutions');
+    const services = sectionSlugs('services');
     const list: Redirect[] = [
+      ...['', '/:locale(en|el)'].flatMap(prefix => [
+        {
+          source: prefix + '/solutions/:industry(' + industries + ')/seo-web-design',
+          destination: agency + '/solutions/:industry/web-design',
+          statusCode: 301 as const,
+        },
+        {
+          source: prefix + '/solutions/:industry(' + industries + ')/:service(' + services + ')',
+          destination: agency + '/solutions/:industry/:service',
+          statusCode: 301 as const,
+        },
+      ]),
       ...bareAgencyRedirects,
       { source: '/services/eshop-seo/chania-gr', destination: agency + '/services/eshop-seo', statusCode: 301 },
       ...['services', 'solutions', 'locations-el'].map(name => ({

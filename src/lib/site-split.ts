@@ -1,4 +1,4 @@
-import { migratedAgencyPaths } from '../data/migrated-agency-paths';
+import { hasMigratedAgencyPage } from '../data/migrated-agency-paths';
 
 /**
  * anotherseoguru.com is the product site (AnotherSEOGuru App). The done-for-you
@@ -115,7 +115,7 @@ export function greekAgencyMoveRedirect(pathname: string): string | null {
   const target = agencyDomainPath(path);
   // Bare /el belongs to the product. Only published, migrated pages have successors.
   if (!isAgencyPathname(path) && !path.startsWith('/el/blog/')) return null;
-  return migratedAgencyPaths.has(target) ? `${AGENCY_ORIGIN}${target}${suffix}` : null;
+  return hasMigratedAgencyPage(target) ? `${AGENCY_ORIGIN}${target}${suffix}` : null;
 }
 
 /** Greek cities that keep service x city pages (see indexability/service-location). */
