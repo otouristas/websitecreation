@@ -81,6 +81,9 @@ export function loadGoogleAnalytics(): void {
   window.gtag!('set', 'ads_data_redaction', true);
   window.gtag!('set', 'page_referrer', '');
   window.gtag!('set', 'page_location', window.location.origin + window.location.pathname);
+  // Google tag destinations can initialize before their scoped config. Disable
+  // the default page view globally so only the consented route event is sent.
+  if (agencyBuild) window.gtag!('set', 'send_page_view', false);
   window.gtag!('js', new Date());
   window.gtag!('config', GA_MEASUREMENT_ID, { send_page_view: false, allow_google_signals: false, allow_ad_personalization_signals: false, page_location: window.location.origin + window.location.pathname, page_referrer: '' });
   configureAdsMeasurement();

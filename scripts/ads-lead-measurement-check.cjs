@@ -49,6 +49,8 @@ const payload = { form: 'contact', email: enquiry.email };
   const pages = () => Array.from(agency.commands()).filter(a => a[0] === 'event' && a[1] === 'page_view').map(a => a[2].page_path);
   agency.analytics.trackPageView(agency.window.location.href);
   agency.analytics.applyMeasurementConsent(true, false);
+  const beforeInit = agency.commands().slice(0, agency.commands().findIndex(command => command[0] === 'js'));
+  assert.ok(beforeInit.some(([op, key, value]) => op === 'set' && key === 'send_page_view' && value === false));
   agency.analytics.trackPageView(agency.window.location.href);
   agency.analytics.trackPageView(agency.window.location.href + '#free-audit');
   assert.deepEqual(pages(), ['/get-started'], 'Consent and the route watcher count one landing page');
