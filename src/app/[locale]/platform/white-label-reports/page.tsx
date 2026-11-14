@@ -5,7 +5,7 @@ import { CalendarClock, FileDown, FileText, Layers, Palette, Users } from "lucid
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
-import { ReportPreview } from "@/components/kit";
+import Image from "next/image";
 import { homeCopy } from "@/components/pages/home/copy";
 import { CapabilityGrid } from "@/components/pages/platform-wave/modules";
 import {
@@ -45,8 +45,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     path: PATH,
     title: { en: "White Label SEO Reporting Tool for Agencies", el: "Εργαλείο white-label αναφορών SEO" },
     description: {
-      en: "White-label SEO reports from Google Search Console: your logo, your colours, PDF or scheduled email, for every client. No copy-pasting and no credits. Try it free.",
-      el: "White-label αναφορές SEO από το Google Search Console: το λογότυπο και τα χρώματά σας, PDF ή προγραμματισμένο email, για κάθε πελάτη. Χωρίς copy-paste.",
+      en: "Build client SEO reports from Google Search Console, add your logo and download a PDF. Try the report builder with sample data or schedule a weekly or monthly email.",
+      el: "Φτιάξτε αναφορές SEO για κάθε πελάτη από το Google Search Console, με το λογότυπό σας. Δείτε το δείγμα PDF και πώς προγραμματίζετε τις αποστολές με email.",
     },
     keyword: { en: "white label seo reporting tool", el: "white label αναφορές seo" },
   });
@@ -71,8 +71,8 @@ const FAQ: ReadonlyArray<GscFaqItem> = [
   {
     q: c("Can I schedule reports to clients?", "Μπορώ να προγραμματίσω αποστολή στους πελάτες;"),
     a: c(
-      "Yes. Email a report straight from the app, or schedule it to go out every Monday or once a month. The email shows the same numbers and sections as the report, and the PDF can be attached.",
-      "Ναι. Στείλτε την αναφορά με email από την εφαρμογή ή προγραμματίστε την κάθε Δευτέρα ή μία φορά τον μήνα. Το email δείχνει τα ίδια νούμερα και τις ίδιες ενότητες, με το PDF συνημμένο.",
+      "Yes. Send a report now or schedule it every Monday for the last seven days of available data. Monthly reports go out on the fourth and cover the previous calendar month. Choose English or Greek for the email and its attached PDF.",
+      "Ναι. Στείλτε την αναφορά αμέσως ή κάθε Δευτέρα για τις επτά τελευταίες ημέρες με διαθέσιμα στοιχεία. Οι μηνιαίες αναφορές αποστέλλονται στις 4 και καλύπτουν τον προηγούμενο ημερολογιακό μήνα. Επιλέγετε ελληνικά ή αγγλικά για το email και το συνημμένο PDF.",
     ),
   },
   {
@@ -140,16 +140,24 @@ export default async function WhiteLabelReportsPage({ params }: PageProps) {
             "Show your client which pages gained or lost clicks, what you worked on and what you recommend next. AnotherSEOGuru App pulls the figures from their Search Console account. Add your summary, then download the PDF or schedule the email.",
             "Δείξτε στον πελάτη ποιες σελίδες κέρδισαν ή έχασαν κλικ, τι βελτιώσατε και τι προτείνετε για τον επόμενο μήνα. Το AnotherSEOGuru App συγκεντρώνει τα στοιχεία από το Search Console του πελάτη. Προσθέστε τη σύνοψή σας και κατεβάστε την αναφορά σε PDF ή προγραμματίστε την αποστολή της με email.",
           )}
-          actions={<WaveSoftwareActions locale={locale} source="white-label-hero" />}
+          actions={<WaveSoftwareActions locale={locale} source="white-label-hero" demoPath="/demo/reports" />}
           trust={<TrustMarks items={[tx("7-day free trial, no card", "7 ημέρες δωρεάν δοκιμή, χωρίς κάρτα"), tx("Read-only Google access", "Πρόσβαση στη Google μόνο για ανάγνωση"), tx("Cancel anytime", "Ακύρωση οποτεδήποτε")]} yesLabel={yes} />}
           panel={
             <a href={appLink("/demo/reports", locale, "white-label-window")} className="block min-w-0">
               <AppPanel
                 url="app.anotherseoguru.com/demo/reports"
                 badge={tx("Sample data", "Δείγμα δεδομένων")}
-                caption={tx("A monthly client report built from Search Console, under the agency's brand.", "Μηνιαία αναφορά πελάτη από το Search Console, με το brand του agency.")}
+                caption={tx("Open the Reports screen for Northwind Outdoors and try a PDF export.", "Ανοίξτε τις αναφορές της Northwind Outdoors και δοκιμάστε την εξαγωγή σε PDF.")}
               >
-                <ReportPreview locale={locale} />
+                <Image
+                  src={`/images/reporting/client-report-${locale}.webp`}
+                  width={1072}
+                  height={675}
+                  alt={tx("Report builder with the reporting period, selected client and a preview of the Northwind Outdoors report", "Επιλογή περιόδου και πελάτη με προεπισκόπηση της αναφοράς Northwind Outdoors")}
+                  sizes="(min-width: 1024px) 48vw, 94vw"
+                  priority
+                  className="h-auto w-full"
+                />
               </AppPanel>
             </a>
           }
@@ -305,7 +313,7 @@ export default async function WhiteLabelReportsPage({ params }: PageProps) {
 
         <WaveSection shot="plan">
           <div className="mb-8 flex justify-center">
-            <WaveSoftwareActions locale={locale} source="white-label-plan" align="center" />
+            <WaveSoftwareActions locale={locale} source="white-label-plan" demoPath="/demo/reports" align="center" />
           </div>
           <AgencyPlanCard locale={locale} source="white-label-plan" />
         </WaveSection>

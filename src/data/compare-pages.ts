@@ -87,6 +87,10 @@ export const COMPARE_PAGES: readonly ComparePageDefinition[] = [
     ],
     sections: [
       {
+        heading: "Compare one client month before you switch",
+        body: "Use the same site, calendar month and comparison period. Take the organic clicks and top pages from Search Console and the enquiries from the GA4 key event you use for leads. Export each report, then ask who on your team will explain a drop and record the next action. If the client also expects paid campaign and social results in that same report, include those channels in the trial.",
+      },
+      {
         heading: "The short answer",
         body: "If your agency sells SEO, the hard part of a monthly report is not the charts. It is explaining what changed, why, and what you will do next, then doing it. AnotherSEOGuru App puts those steps together: it reads each client's Search Console, lists the opportunities with an estimate of extra clicks, turns them into tasks, and builds a white-label report that includes the work you completed. If your agency reports on ten channels per client, a broad multi-channel reporting platform is the better fit.",
       },
