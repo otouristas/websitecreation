@@ -11,7 +11,7 @@ import { BASE_URL } from "@/lib/seo/schema";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
 import { isValidLocale, localizedPath, type SiteLocale } from "@/lib/i18n/locale";
 import { MARKET_COUNT, PROJECT_COUNT } from "@/data/company-facts";
-import { HOME_LOGOS } from "@/data/home-content";
+import { portfolioMarks } from "@/data/portfolio-client-marks";
 import { PORTFOLIO_CATEGORIES, portfolioProjects } from "@/data/portfolio";
 import { CtaBand, TrustLine } from "@/components/kit";
 import { WaveEyebrow, WaveHero } from "@/components/pages/platform-wave/ui";
@@ -141,7 +141,7 @@ export default async function WorkPage({ params }: PageProps) {
                     className={`home-logo-run flex shrink-0 items-center gap-x-10 pr-10 sm:gap-x-16 sm:pr-16 ${hidden ? "home-logo-copy" : ""}`}
                     aria-hidden={hidden || undefined}
                   >
-                    {HOME_LOGOS.map((logo) => (
+                    {portfolioMarks.map((logo) => (
                       <li key={`${logo.alt}-${hidden}`} className="flex h-12 shrink-0 items-center justify-center sm:h-16">
                         <Image
                           src={logo.src}
@@ -150,7 +150,7 @@ export default async function WorkPage({ params }: PageProps) {
                           height={64}
                           unoptimized
                           loading={hidden ? "lazy" : "eager"}
-                          className="home-logo"
+                          className={logo.surface ? `h-10 w-auto max-w-40 rounded-md object-contain px-2 py-1 sm:h-12 ${logo.surface === "dark" ? "bg-slate-950" : "bg-white"}` : "home-logo"}
                         />
                       </li>
                     ))}

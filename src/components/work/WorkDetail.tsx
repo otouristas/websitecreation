@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, ArrowUpRight, Globe2, Monitor, Search } from "lucide-react";
 import { getPortfolioBySlug, PORTFOLIO_CATEGORIES, portfolioProjects, type PortfolioProject } from "@/data/portfolio";
+import { caseStudyMark } from "@/data/portfolio-client-marks";
 import { PROJECT_RESEARCH } from "@/data/portfolio-research";
 import { projectStory } from "@/data/portfolio-stories";
 import { MOBILE_CAPTURES } from "@/data/portfolio-mobile";
@@ -26,6 +27,7 @@ export function WorkDetail({ project, locale = "en" }: { project: PortfolioProje
   const brief = PROJECT_RESEARCH[project.slug];
   const story = projectStory(project.slug, locale);
   const category = PORTFOLIO_CATEGORIES[project.category];
+  const mark = caseStudyMark(project.slug);
   const mobile = MOBILE_CAPTURES.includes(project.slug);
   const domain = project.url.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "");
   const related = portfolioProjects
@@ -73,6 +75,16 @@ export function WorkDetail({ project, locale = "en" }: { project: PortfolioProje
                 <span className="mx-2 text-muted-foreground">/</span>
                 {tx("A closer look", "Το έργο από κοντά")}
               </WaveEyebrow>
+              {mark && (
+                <Image
+                  src={mark.src}
+                  alt=""
+                  width={184}
+                  height={64}
+                  unoptimized
+                  className={cn("mt-5 h-12 w-auto max-w-48 rounded-lg border border-hairline object-contain px-3 py-1.5 sm:h-14", mark.surface === "dark" ? "bg-slate-950" : "bg-white")}
+                />
+              )}
               <h1 className="mt-5 text-balance font-display text-[1.85rem] font-bold leading-[1.05] tracking-[-0.04em] text-foreground min-[400px]:text-[2.2rem] sm:text-[3rem] lg:text-[3.6rem]">
                 {accentEnd(project.name, 2)}
               </h1>
