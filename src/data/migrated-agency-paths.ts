@@ -181,6 +181,7 @@ export const migratedAgencyPaths = new Set<string>([
   "/solutions/hotels/local-seo",
   "/solutions/hotels/seo-audits",
   "/solutions/hotels/web-design",
+  "/solutions/hotels/website-creation",
   "/solutions/hvac",
   "/solutions/hvac/content-creation",
   "/solutions/hvac/local-seo",
