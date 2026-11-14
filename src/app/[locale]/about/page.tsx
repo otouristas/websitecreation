@@ -6,7 +6,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Gem, MessageSquare, Search, TrendingUp, Zap } from "lucide-react";
 import { KitBreadcrumbs } from "@/components/page-kit";
-import { HOME_LOGOS } from "@/data/home-content";
+import { portfolioMarks } from "@/data/portfolio-client-marks";
 import { appLink } from "@/components/gsc-boost/copy";
 import {
   TrustMarks,
@@ -171,7 +171,7 @@ export default async function AboutPage({ params }: PageProps) {
                     className={`home-logo-run flex shrink-0 items-center gap-x-10 pr-10 sm:gap-x-16 sm:pr-16 ${hidden ? "home-logo-copy" : ""}`}
                     aria-hidden={hidden || undefined}
                   >
-                    {HOME_LOGOS.map((logo) => (
+                    {portfolioMarks.map((logo) => (
                       <li key={`${logo.alt}-${hidden}`} className="flex h-12 shrink-0 items-center justify-center sm:h-16">
                         <Image
                           src={logo.src}
@@ -180,7 +180,7 @@ export default async function AboutPage({ params }: PageProps) {
                           height={64}
                           unoptimized
                           loading={hidden ? "lazy" : "eager"}
-                          className="home-logo"
+                          className={logo.surface ? `h-10 w-auto max-w-40 rounded-md object-contain px-2 py-1 sm:h-12 ${logo.surface === "dark" ? "bg-slate-950" : "bg-white"}` : "home-logo"}
                         />
                       </li>
                     ))}
