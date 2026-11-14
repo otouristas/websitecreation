@@ -10,7 +10,7 @@ export function ProofStrip({ locale }: { readonly locale: SiteLocale }) {
   const cases = CASE_RESULTS.filter((c) => c.slug === 'onoma-hotel' || c.slug === 'helicro' || c.slug === 'antiparos-rentacar');
   if (cases.length === 0) return null;
   return (
-    <section data-shot="proof" aria-labelledby="proof-title" className="mx-auto max-w-[1240px] px-5 pb-16 lg:px-8">
+    <section data-shot="proof" aria-labelledby="proof-title" className="mx-auto max-w-[1240px] px-5 py-10 sm:py-14 lg:px-8 lg:py-16">
       <div className="rounded-[22px] border border-hairline bg-surface/60 p-6 sm:p-8">
         <p className="text-[12px] font-semibold uppercase tracking-wider text-primary">{el ? 'Στοιχεία από έργα μας' : 'Client projects'}</p>
         <h2 id="proof-title" className="mt-2 text-balance font-display text-[1.5rem] font-bold tracking-tight text-foreground sm:text-[1.9rem]">
