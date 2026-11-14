@@ -11,7 +11,7 @@ export default {
     if (preview && url.pathname === '/robots.txt') {
       response = new Response('User-agent: *\nDisallow: /\n', { headers: { 'content-type': 'text/plain; charset=utf-8' } });
     } else if (url.pathname === '/llms.txt' || url.pathname === '/llms-full.txt') {
-      response = await env.ASSETS.fetch(new URL('/agency-domain-llms.txt', url));
+      response = await env.ASSETS.fetch(new URL(`/agency-domain-${url.pathname.slice(1)}`, url));
     } else {
       // The HTML and Markdown twins share one render, including canonical URLs.
       const markdown = ['GET', 'HEAD'].includes(request.method) && (url.pathname.endsWith('.md') || request.headers.get('accept')?.includes('text/markdown'));

@@ -85,7 +85,7 @@ function agencyDomainResponse(request: NextRequest): NextResponse {
     '/sitemap.xml': '/agency-domain/sitemap.xml',
     '/sitemap-index.xml': '/agency-domain/sitemap.xml',
     '/llms.txt': '/agency-domain-llms.txt',
-    '/llms-full.txt': '/agency-domain-llms.txt',
+    '/llms-full.txt': '/agency-domain-llms-full.txt',
   };
   if (seoFile[pathname]) {
     const url = request.nextUrl.clone();

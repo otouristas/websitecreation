@@ -29,6 +29,16 @@ import {
   withVat,
 } from '../src/data/pricing.ts';
 import { SEO_MIN_TERM_MONTHS } from '../src/data/company-facts.ts';
+import { AGENCY_GUIDE_GROUPS, isAgencyGuideSlug } from '../src/data/agency-guides.ts';
+import { industriesEl } from '../src/data/industries-i18n.ts';
+import { getAllIndustrySlugs } from '../src/data/industries.ts';
+import { getServiceAngle } from '../src/data/industry-service-copy.ts';
+import { evaluateIndustryService } from '../src/lib/indexability/industry-service.ts';
+import { buildLocationServiceUrls } from '../src/lib/sitemap-locations.ts';
+import { serpMetaFor } from '../src/data/serp-meta.ts';
+import { getServiceHubCommercial } from '../src/data/service-hub-commercial.ts';
+import { getSeoServicesPillarCopy } from '../src/data/seo-services-pillar.ts';
+import { SPOKE_SLUGS, getSpokeCopy, fillSpokePrices } from '../src/data/seo-service-spokes.ts';
 import { serviceNamesEl } from '../src/data/services-i18n.ts';
 import { PLACE_PAGES, PLACE_REGION_LABEL } from '../src/data/place-seo/index.ts';
 import { WEBSITE_REGION_PAGES } from '../src/data/website-regions.ts';
@@ -49,6 +59,7 @@ import {
   AGENCY_PRICING_EL,
   AGENCY_PRICING_HREF,
   agencyDomainPath,
+  comPathForAgencyDomain,
 } from '../src/lib/site-split.ts';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -399,7 +410,7 @@ const LLMS_EXCLUDED_PROJECTS = new Set(['villa-olivia-clara']);
  * llms.txt for anotherseoguru.gr, the agency's own domain. Served there by the
  * middleware (src/lib/site-split.ts); every URL is its .gr URL.
  */
-function buildAgency() {
+function buildAgency(posts, full = false) {
   const eur = (n) => `€${formatPrice(n, 'el')}`;
   const tierPrice = (tier, per = '') => {
     const current = `${eur(currentDisplayPrice(tier))}${per} ${currentPriceVatLabel(tier, 'el')}`;
@@ -408,11 +419,13 @@ function buildAgency() {
       : current;
   };
   const lines = [];
-  lines.push(`Last-Updated: ${TODAY}`);
-  lines.push(`Canonical: ${AGENCY_ORIGIN}/llms.txt`);
+  lines.push(`Canonical: ${AGENCY_ORIGIN}/${full ? 'llms-full' : 'llms'}.txt`);
+  lines.push(`${full ? 'Short-form' : 'Long-form'}: ${AGENCY_ORIGIN}/${full ? 'llms' : 'llms-full'}.txt`);
   lines.push(`Sitemap: ${AGENCY_ORIGIN}/sitemap.xml`);
   lines.push('');
-  lines.push('# AnotherSEOGuru: ιστοσελίδες και SEO για ελληνικές επιχειρήσεις');
+  lines.push(full
+    ? '# AnotherSEOGuru: υπηρεσίες, παραδοτέα και οδηγοί για επιχειρήσεις'
+    : '# AnotherSEOGuru: κατάλογος υπηρεσιών και οδηγών για επιχειρήσεις');
   lines.push(`Source: ${AGENCY_ORIGIN}`);
   lines.push('');
   lines.push(`> Το ${AGENCY_DOMAIN} είναι η υπηρεσία «το κάνουμε εμείς» της AnotherSEOGuru (Touristas Technologies): κατασκευή ιστοσελίδων και e-shop, μηνιαίο SEO, τοπικό SEO και Google Business Profile, ορατότητα σε ChatGPT και AI (GEO/AEO), για επιχειρήσεις σε όλη την Ελλάδα, με έμφαση σε ξενοδοχεία, rent a car και τουρισμό. Στα ελληνικά. Επικοινωνία μέσω WhatsApp ή email, δωρεάν έλεγχος ιστοσελίδας. Το λογισμικό SEO (AnotherSEOGuru App) είναι στο ${BASE}.`);
@@ -427,12 +440,13 @@ function buildAgency() {
   lines.push(hubLine('Σύμβουλος SEO', gr('/el/symvoulos-seo'), 'Συνεργασία με σύμβουλο SEO.'));
   lines.push(hubLine('Διαχείριση SEO', gr('/el/diacheirisi-seo'), 'Μηνιαία διαχείριση SEO.'));
   lines.push(hubLine('SEO guru', gr('/el/seo-guru'), 'Η μέθοδος από το Search Console.'));
+  lines.push(hubLine('Υπηρεσίες ανά περιοχή', gr('/el/locations'), 'Κατασκευή ιστοσελίδας, ηλεκτρονικά καταστήματα, τεχνικός έλεγχος και τοπικό SEO ανά πόλη ή νησί.'));
   lines.push(hubLine('Κλάδοι', gr('/el/solutions'), 'Ιστοσελίδες και SEO ανά κλάδο.'));
   lines.push(hubLine('Έργα', gr('/el/work'), 'Πελάτες και case studies.'));
   lines.push('');
   lines.push('## Υπηρεσίες');
   for (const [slug, svc] of Object.entries(serviceNamesEl)) {
-    const desc = svc.description ? resolvePriceTokens(svc.description, 'el') : '';
+    const desc = resolvePriceTokens(svc.description.replaceAll('{{ENTRY_WEBSITE}}', '{{ENTRY_WEBSITE_GROSS}} με ΦΠΑ'), 'el');
     lines.push(hubLine(svc.name, gr(`/el/services/${slug}`), desc));
   }
   lines.push('');
@@ -441,6 +455,16 @@ function buildAgency() {
   lines.push(`- **Μηνιαίο SEO:** ${seoPackages.map((t) => `${t.name} ${tierPrice(t, '/μήνα')}`).join(', ')}. Ελάχιστη διάρκεια ${SEO_MIN_TERM_MONTHS} μήνες.`);
   lines.push(`- Κάθε τιμή δηλώνει αν περιλαμβάνει ΦΠΑ ${Math.round(VAT_RATE * 100)}%. Λεπτομέρειες: <${gr(AGENCY_PRICING_EL)}>`);
   if (currentPriceIncludesVat(websitePackages[0])) lines.push('- Black Month 2026: οι δύο τιμές με ΦΠΑ αφορούν νέα έργα που επιβεβαιώνονται έως 30 Νοεμβρίου 2026. Το SEO Foundations παραμένει €149 τελική/μήνα με ΦΠΑ σε όλη την ελάχιστη εξάμηνη συνεργασία. Τα υπόλοιπα πακέτα και πρόσθετα διατηρούν τις τιμές τους.');
+  lines.push('');
+  lines.push('## Οδηγοί ανά ερώτημα');
+  for (const group of AGENCY_GUIDE_GROUPS) {
+    lines.push('', `### ${group.title}`, group.description);
+    for (const slug of group.slugs) {
+      const post = posts.find((item) => item.locale === 'el' && item.slug === slug);
+      if (!post) throw new Error(`Missing Greek guide: ${slug}`);
+      lines.push(mdLink(post.title, gr(`/el/blog/${slug}`), post.description));
+    }
+  }
   lines.push('');
   lines.push('## SEO τουρισμού');
   lines.push(hubLine('SEO τουρισμού', gr('/el/seo-tourismou'), 'Ξενοδοχεία, βίλες, rent a car, εκδρομές, ταξιδιωτικά γραφεία, εστιατόρια, σκάφη, transfer.'));
@@ -473,11 +497,98 @@ function buildAgency() {
   lines.push(`- Το ${AGENCY_DOMAIN} είναι η υπηρεσία ιστοσελίδων και SEO για ελληνικές επιχειρήσεις. Το λογισμικό SEO είναι το AnotherSEOGuru App στο ${BASE}.`);
   lines.push('- Για ερωτήσεις κόστους, παραπέμψτε στη σελίδα τιμών. Για τοπικές ερωτήσεις, στη σελίδα της πόλης ή του νησιού.');
   lines.push('');
+  if (full) lines.push(agencyCorpus());
+  return lines.join('\n');
+}
+
+/** Canonical sources and publicly visible Greek page text. Authoring links are
+ * locale-relative; make them usable when the corpus is read by itself. */
+function agencyCorpus() {
+  const lines = [];
+  const clean = (text) => resolvePriceTokens(text, 'el').replaceAll('{{MONTHS}}', String(SEO_MIN_TERM_MONTHS)).replace(
+    /\]\((\/(?!\/)[^\s)]+)\)/g,
+    (_, href) => {
+      const u = new URL(href, BASE);
+      const localized = /^\/(en|el)(\/|$)/.test(u.pathname);
+      const bare = agencyDomainPath(u.pathname);
+      if (!u.pathname.startsWith('/en/') && (comPathForAgencyDomain(bare) || u.pathname === '/el/ypiresies')) {
+        return `](${AGENCY_ORIGIN}${bare}${u.search}${u.hash})`;
+      }
+      return `](${BASE}${localized ? '' : '/el'}${u.pathname}${u.search}${u.hash})`;
+    },
+  );
+  function section(title, href, values) {
+    lines.push('', `## ${title}`, `Πηγή: ${href}`, '', ...values.filter(Boolean).map(clean));
+  }
+  for (const [slug, service] of Object.entries(serviceNamesEl)) {
+    const commercial = getServiceHubCommercial(slug, 'el');
+    section(service.name, gr(`/el/services/${slug}`), [
+      service.page?.lead || commercial?.definition,
+      ...(service.features || []).map((feature) => `- ${feature}`),
+      ...(service.page?.topics || []).flatMap((topic) => [`### ${topic.title}`, ...topic.paragraphs]),
+      ...(commercial?.process || []),
+    ]);
+  }
+  const pillar = getSeoServicesPillarCopy('el');
+  section(pillar.h1, gr('/el/seo-services'), [
+    pillar.answer, pillar.answerExtra, ...pillar.includes.items.map((item) => `**${item.title}**. ${item.body}`),
+    ...pillar.process.steps.map((step) => `**${step.title}**. ${step.body}`),
+  ]);
+  for (const slug of SPOKE_SLUGS) {
+    const page = getSpokeCopy('el', slug);
+    section(page.h1, gr(`/el/seo-services/${slug}`), [
+      page.lead, page.extra, ...page.includes.items.map((item) => `**${item.title}**. ${item.body}`),
+      ...page.faqs.map((faq) => `**${faq.question}** ${faq.answer}`),
+    ].map((value) => fillSpokePrices(value, 'el')));
+  }
+  for (const entry of buildLocationServiceUrls('el', 'el')) {
+    const { pathname } = new URL(entry.loc);
+    const meta = serpMetaFor(pathname);
+    if (!meta) throw new Error(`Missing Greek city copy for ${pathname}`);
+    section(meta.title, gr(pathname), [meta.description]);
+  }
+  for (const industrySlug of getAllIndustrySlugs()) {
+    const industry = industriesEl[industrySlug];
+    if (!industry) throw new Error(`Missing Greek industry copy for ${industrySlug}`);
+    section(industry.name, gr(`/el/solutions/${industrySlug}`), [industry.description]);
+    for (const [slug, service] of Object.entries(serviceNamesEl)) {
+      if (!evaluateIndustryService(industrySlug, slug, 'el').indexable) continue;
+      const angle = getServiceAngle(slug, 'el', industrySlug);
+      const elPath = `/el/solutions/${industrySlug}/${slug}`;
+      section(`${service.name} για ${industry.nameAccusative}`, gr(elPath), [
+        serpMetaFor(elPath)?.description || industry.description, angle?.approach, angle?.outcome,
+      ]);
+    }
+  }
+  for (const [basePath, pages] of [
+    ['/el/seo', PLACE_PAGES], ['/el/seo-tourismou', TOURISM_VERTICALS],
+    ['/el/kataskevi-istoselidon', WEBSITE_REGION_PAGES],
+  ]) {
+    for (const page of pages) {
+      section(page.h1, gr(`${basePath}/${page.slug}`), [
+        page.lead, ...page.sections.flatMap((item) => [`### ${item.heading}`, ...item.paragraphs]),
+      ]);
+    }
+  }
+  const dir = path.join(ROOT, 'content/blog');
+  for (const file of fs.readdirSync(dir).filter((f) => f.endsWith('.md')).sort()) {
+    const { data, content } = matter(fs.readFileSync(path.join(dir, file), 'utf8'));
+    const slug = data.slug || file.slice(0, -3);
+    if (data.locale !== 'el' || !isAgencyGuideSlug(slug)) continue;
+    const day = (value) => value instanceof Date ? value.toISOString().slice(0, 10) : String(value).slice(0, 10);
+    section(data.title, gr(`/el/blog/${slug}`), [
+      `Δημοσιεύτηκε: ${day(data.date)}`, data.updated && `Ενημερώθηκε: ${day(data.updated)}`,
+      data.description, content.trim(),
+    ]);
+  }
   return lines.join('\n');
 }
 
 function main() {
   const posts = parseBlogPosts();
+  write('public/agency-domain-llms.txt', buildAgency(posts));
+  write('public/agency-domain-llms-full.txt', buildAgency(posts, true));
+  if (process.argv.includes('--agency-only')) return;
   console.log(`Parsed: ${MODULES.length} modules, ${PLANS.length} plans, ${posts.length} posts`);
   if (MODULES.length < 5) throw new Error('Failed to load modules');
   if (posts.length < 10) throw new Error('Failed to parse blog');
@@ -485,8 +596,6 @@ function main() {
   const ctx = { posts };
   write('public/llms.txt', buildShort(ctx));
   write('public/llms-full.txt', `${buildFull(ctx)}\n---\n\n${buildDocs()}`);
-  // Served at anotherseoguru.gr/llms.txt by the middleware.
-  write('public/agency-domain-llms.txt', buildAgency());
 }
 
 main();
