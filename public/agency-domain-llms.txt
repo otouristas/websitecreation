@@ -11,6 +11,7 @@ Source: https://anotherseoguru.gr
 - **Αρχική** (<https://anotherseoguru.gr>) - Εταιρεία SEO και κατασκευής ιστοσελίδων στην Ελλάδα.
 - **Τιμές** (<https://anotherseoguru.gr/times>) - Τιμές ιστοσελίδας και μηνιαίου SEO, με ρητή ένδειξη ΦΠΑ.
 - **Δωρεάν έλεγχος ιστοσελίδας** (<https://anotherseoguru.gr/get-started#free-audit>) - Φόρμα για δωρεάν έλεγχο SEO.
+- **Οδηγοί για επιχειρήσεις** (<https://anotherseoguru.gr/odigoi>) - Επιλογή συνεργάτη, κόστος ιστοσελίδας, ηλεκτρονικά καταστήματα και τοπικό SEO.
 - **Υπηρεσίες** (<https://anotherseoguru.gr/services>) - Όλες οι υπηρεσίες.
 - **Υπηρεσίες SEO** (<https://anotherseoguru.gr/seo-services>) - SEO για επιχειρήσεις στην Ελλάδα.
 - **Σύμβουλος SEO** (<https://anotherseoguru.gr/symvoulos-seo>) - Συνεργασία με σύμβουλο SEO.

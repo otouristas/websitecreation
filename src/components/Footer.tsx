@@ -2,7 +2,7 @@
 
 import type { ReactElement } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useMarketingPathname } from '@/lib/use-marketing-pathname';
 import { BrandLogo } from "@/components/BrandLogo";
 import { CookiePreferencesLink } from "@/components/CookiePreferencesLink";
 import { FooterCta } from "@/components/FooterCta";
@@ -309,7 +309,7 @@ function FooterColumnView({ column }: { readonly column: FooterColumn }): ReactE
 }
 
 export default function Footer({ locale: localeProp }: { locale?: SiteLocale }): ReactElement {
-  const pathname = usePathname() ?? "/en";
+  const pathname = useMarketingPathname();
   const locale = localeProp ?? siteLocaleFromPath(pathname);
   const currentYear = new Date().getFullYear();
   const isEl = locale === "el";

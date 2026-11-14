@@ -283,16 +283,39 @@ const BAND = {
 export function CtaBand({
   locale,
   title,
+  agency = false,
   description,
   source,
   className,
 }: {
   readonly locale: SiteLocale;
   readonly title?: ReactNode;
+  readonly agency?: boolean;
   readonly description?: ReactNode;
   readonly source?: string;
   readonly className?: string;
 }) {
+  if (agency) {
+    const el = locale === "el";
+    return (
+      <section className={cn("py-16 sm:py-24", className)}>
+        <Container>
+          <div className="rounded-3xl border border-hairline bg-surface px-6 py-9 sm:p-12">
+            <h2 className="max-w-3xl text-balance font-display text-3xl font-semibold tracking-tight sm:text-4xl">
+              {title ?? (el ? "Τι χρειάζεται η δική σας επιχείρηση;" : "What does your business need?")}
+            </h2>
+            <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">
+              {description ?? (el ? "Πείτε μας ποια υπηρεσία σας ενδιαφέρει και πού δυσκολεύεται σήμερα ο πελάτης σας. Θα συζητήσουμε τις επιλογές και το κόστος." : "Tell us which service you need and where customers get stuck. We’ll discuss the options and what the work would cost.")}
+            </p>
+            <div className="mt-6 flex flex-wrap items-center gap-4">
+              <Link href={localizedPath(locale, "/get-started")} className={kitPrimaryBtn}>{el ? "Συζητήστε το έργο σας" : "Discuss your project"}<ArrowRight className="size-4" aria-hidden /></Link>
+              <Link href={localizedPath(locale, "/ypiresies/times")} className={kitSecondaryBtn}>{el ? "Δείτε τιμές υπηρεσιών" : "See service prices"}</Link>
+            </div>
+          </div>
+        </Container>
+      </section>
+    );
+  }
   return (
     <section className={cn("py-20 sm:py-28", className)}>
       <Container>

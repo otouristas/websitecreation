@@ -10,7 +10,7 @@ import type { Metadata, MetadataRoute } from 'next';
 import type { BlogPostListItem } from '@/lib/blog';
 import { getTranslationCounterpart } from '@/lib/blog';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
-import { buildHreflangMapFromPaths } from '@/lib/locale-paths';
+import { AGENCY_ON_OWN_DOMAIN, AGENCY_ORIGIN, agencyDomainPath, isAgencyPathname } from '@/lib/site-split';
 import { buildMetadata, DEFAULT_OG_IMAGE } from '@/lib/seo/metadata';
 import { BASE_URL, generateArticleSchema } from '@/lib/seo/schema';
 
@@ -19,7 +19,8 @@ export function blogPostPath(locale: SiteLocale, slug: string): string {
 }
 
 export function blogPostCanonicalUrl(post: Pick<BlogPostListItem, 'locale' | 'slug'>): string {
-  return `${BASE_URL}${blogPostPath(post.locale, post.slug)}`;
+  const path = blogPostPath(post.locale, post.slug);
+  return AGENCY_ON_OWN_DOMAIN && isAgencyPathname(path) ? `${AGENCY_ORIGIN}${agencyDomainPath(path)}` : `${BASE_URL}${path}`;
 }
 
 /**
@@ -35,11 +36,10 @@ export function blogPostHreflangLanguages(
 ): Record<string, string> {
   const counterpart = getTranslationCounterpart(post);
   if (counterpart) {
-    const paired = buildHreflangMapFromPaths({
-      [post.locale]: blogPostPath(post.locale, post.slug),
-      [counterpart.locale]: blogPostPath(counterpart.locale, counterpart.slug),
-    });
-    if (paired) return paired;
+    const english = post.locale === 'en' ? post : counterpart;
+    const greek = post.locale === 'el' ? post : counterpart;
+    const en = blogPostCanonicalUrl(english);
+    return { en, el: blogPostCanonicalUrl(greek), 'x-default': en };
   }
   const url = blogPostCanonicalUrl(post);
   return {

@@ -250,9 +250,8 @@ export function buildMetadata(input: MetadataInput): Metadata {
   assertMetadataClean('description', description, path);
 
   // Agency pages exist in Greek only (src/lib/site-split.ts): no alternates.
-  const languages = isAgencyPathname(path)
-    ? undefined
-    : customLanguages ?? (hreflangPath ? getHreflangAlternates(hreflangPath, hreflangLocales) : undefined);
+  const languages = customLanguages ?? (isAgencyPathname(path) ? undefined
+    : hreflangPath ? getHreflangAlternates(hreflangPath, hreflangLocales) : undefined);
 
   const defaultOg = isAgencyPathname(path) ? AGENCY_OG_IMAGE : DEFAULT_OG_IMAGE;
 

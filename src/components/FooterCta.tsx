@@ -6,7 +6,7 @@ import { ArrowRight } from "lucide-react";
 import { Accent } from "@/components/kit/primitives";
 import { KIT_COPY, kitPrimaryBtn, kitSecondaryBtn } from "@/components/kit/sections";
 import { trackCtaClick } from "@/lib/analytics";
-import { usePathname } from "next/navigation";
+import { useMarketingPathname } from '@/lib/use-marketing-pathname';
 import { appLink } from "@/components/gsc-boost/copy";
 import { localizedPath, type SiteLocale } from "@/lib/i18n/locale";
 import { AGENCY_PRICING_HREF, isAgencyPathname } from "@/lib/site-split";
@@ -20,7 +20,7 @@ import { AGENCY_PRICING_HREF, isAgencyPathname } from "@/lib/site-split";
 export function FooterCta({ locale }: { readonly locale: SiteLocale }): ReactElement {
   const isEl = locale === "el";
   const lp = (path: string) => localizedPath(locale, path);
-  const pathname = usePathname() ?? "/en";
+  const pathname = useMarketingPathname();
   if (!isAgencyPathname(pathname)) return <ProductFooterCta locale={locale} />;
 
   return (

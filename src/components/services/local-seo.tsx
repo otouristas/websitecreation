@@ -454,7 +454,7 @@ export function LocalSeoPage({ locale }: { locale: SiteLocale }) {
       />
 
       {/* 8 - CTA */}
-      <CtaBand locale={locale} source="service-local-seo" title={<AccentTitle text={t.cta.title} />} description={t.cta.body} />
+      <CtaBand agency locale={locale} source="service-local-seo" title={<AccentTitle text={t.cta.title} />} description={t.cta.body} />
     </PageShell>
   );
 }

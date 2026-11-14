@@ -1,3 +1,4 @@
+import { isAgencyGuideSlug } from '@/data/agency-guides';
 import Link from "next/link";
 import { notFound, permanentRedirect } from "next/navigation";
 import Header from "@/components/Header";
@@ -143,6 +144,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     description: p.description,
   }));
 
+  const agencyArticle = isEl && isAgencyGuideSlug(post.slug);
   const pillarSlug = normalizePillar(post.pillar);
   const pillarCopy = pillarSlug ? getPillarCopy(pillarSlug, locale as SiteLocale) : undefined;
   const { prev, next } = getPillarNeighbours(post);
@@ -323,7 +325,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 label={isEl ? "Περιεχόμενα" : "On this page"}
               />
 
-              <div className="rounded-2xl border border-hairline bg-surface p-5">
+              {agencyArticle ? (
+                <div className="rounded-2xl border border-hairline bg-surface p-5">
+                  <p className="font-semibold text-foreground">Θέλετε βοήθεια με τη δική σας ιστοσελίδα;</p>
+                  <Link href={lp('/ypiresies/times')} className="mt-3 inline-block text-sm text-primary underline">Δείτε τι περιλαμβάνουν οι υπηρεσίες και πόσο κοστίζουν</Link>
+                </div>
+              ) : <div className="rounded-2xl border border-hairline bg-surface p-5">
                 <p className="font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-brand">
                   AnotherSEOGuru App
                 </p>
@@ -339,7 +346,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 >
                   {isEl ? "Δοκιμάστε δωρεάν" : "Try it free"}
                 </a>
-              </div>
+              </div>}
 
               {seoGuideSlugSet().has(post.slug) ? (
                 <div className="rounded-2xl border border-hairline bg-surface p-5">
@@ -372,9 +379,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </aside>
         </div>
 
-        <BlogProductCta locale={locale as SiteLocale} pillar={pillarSlug} />
+        {agencyArticle ? null : <BlogProductCta locale={locale as SiteLocale} pillar={pillarSlug} />}
 
-        <CtaBand locale={locale as SiteLocale} source="blog-post-band" />
+        <CtaBand agency={agencyArticle} locale={locale as SiteLocale} source="blog-post-band" />
       </main>
       <Footer locale={locale as SiteLocale} />
     </>

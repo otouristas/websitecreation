@@ -424,7 +424,7 @@ export function WebsiteCreationPage({ locale }: { locale: SiteLocale }) {
       />
 
       {/* 7 - CTA */}
-      <CtaBand locale={locale} source="service-website-creation" title={<AccentTitle text={t.cta.title} />} description={t.cta.body} />
+      <CtaBand agency locale={locale} source="service-website-creation" title={<AccentTitle text={t.cta.title} />} description={t.cta.body} />
     </PageShell>
   );
 }

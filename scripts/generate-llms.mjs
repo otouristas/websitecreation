@@ -421,6 +421,7 @@ function buildAgency() {
   lines.push(hubLine('Αρχική', gr(AGENCY_HOME_EL), 'Εταιρεία SEO και κατασκευής ιστοσελίδων στην Ελλάδα.'));
   lines.push(hubLine('Τιμές', gr(AGENCY_PRICING_EL), 'Τιμές ιστοσελίδας και μηνιαίου SEO, με ρητή ένδειξη ΦΠΑ.'));
   lines.push(hubLine('Δωρεάν έλεγχος ιστοσελίδας', gr(AGENCY_AUDIT_EL), 'Φόρμα για δωρεάν έλεγχο SEO.'));
+  lines.push(hubLine('Οδηγοί για επιχειρήσεις', gr('/el/odigoi'), 'Επιλογή συνεργάτη, κόστος ιστοσελίδας, ηλεκτρονικά καταστήματα και τοπικό SEO.'));
   lines.push(hubLine('Υπηρεσίες', gr('/el/services'), 'Όλες οι υπηρεσίες.'));
   lines.push(hubLine('Υπηρεσίες SEO', gr('/el/seo-services'), 'SEO για επιχειρήσεις στην Ελλάδα.'));
   lines.push(hubLine('Σύμβουλος SEO', gr('/el/symvoulos-seo'), 'Συνεργασία με σύμβουλο SEO.'));

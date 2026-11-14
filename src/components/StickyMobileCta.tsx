@@ -1,6 +1,6 @@
 'use client';
 
-import { usePathname } from 'next/navigation';
+import { useMarketingPathname } from '@/lib/use-marketing-pathname';
 import { useEffect, useState, type ReactElement } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { siteLocaleFromPath } from '@/lib/i18n/locale';
@@ -42,7 +42,7 @@ const WHATSAPP_ARIA = {
  * screen, so it does not stack on top of those controls.
  */
 export function StickyMobileCta(): ReactElement | null {
-  const pathname = usePathname() ?? '/en';
+  const pathname = useMarketingPathname();
   const locale = siteLocaleFromPath(pathname);
   const nav = getNavDictionary(locale);
   const isAgency = isAgencyPathname(pathname);

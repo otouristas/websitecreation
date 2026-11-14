@@ -301,7 +301,7 @@ export function getNavModel(locale: SiteLocale, mode: NavMode = 'product', now: 
       {
         title: t('Guides', 'Οδηγοί'),
         items: [
-          { href: lp('/seo-guides'), label: t('SEO guides', 'Οδηγοί SEO'), desc: t('Learn how to improve a page', 'Πώς να βελτιώσετε μια σελίδα'), icon: 'book' },
+          { href: lp(mode === 'agency' ? '/odigoi' : '/seo-guides'), label: mode === 'agency' ? t('Guides for businesses', 'Οδηγοί για επιχειρήσεις') : t('SEO guides', 'Οδηγοί SEO'), desc: t('Learn how to improve a page', 'Πώς να βελτιώσετε μια σελίδα'), icon: 'book' },
           { href: lp('/blog'), label: 'Blog', desc: t('SEO, AI search and web design', 'SEO, αναζήτηση AI, ιστοσελίδες'), icon: 'library' },
           { href: lp('/resources'), label: t('Resources', 'Οδηγοί & υλικό'), icon: 'library' },
           { href: lp('/resources/sample-seo-report'), label: t('Sample SEO report', 'Δείγμα αναφοράς SEO'), icon: 'file' },
@@ -329,17 +329,17 @@ export function getNavModel(locale: SiteLocale, mode: NavMode = 'product', now: 
       mode,
       homeHref: AGENCY_HOME_HREF,
       primaryCta: { href: freeAudit.href, label: freeAudit.label, shortLabel: t('Free audit', 'Δωρεάν έλεγχος') },
-      secondaryCta: { href: lp('/'), label: 'AnotherSEOGuru App' },
+      secondaryCta: { href: AGENCY_PRICING_HREF, label: t('Service prices', 'Τιμές υπηρεσιών') },
       menus: [services, industries, learn],
       links: [
         { href: AGENCY_PRICING_HREF, label: t('Pricing', 'Τιμές') },
         { href: lp('/work'), label: t('Work', 'Έργα') },
-        { href: lp('/seo-guru'), label: 'SEO guru' },
+        { href: lp('/seo-guru'), label: t('Our team', 'Η ομάδα μας') },
       ],
       promo: {
-        href: lp('/'),
-        tag: t('New', 'Νέο'),
-        text: t('Pick your next SEO task in AnotherSEOGuru App', 'Βρείτε την επόμενη εργασία SEO στο AnotherSEOGuru App'),
+        href: lp('/odigoi'),
+        tag: t('Guides', 'Οδηγοί'),
+        text: t('Plan a website or compare SEO quotes', 'Οργανώστε την ιστοσελίδα σας ή συγκρίνετε προσφορές SEO'),
       },
       freeAudit,
       startFree,

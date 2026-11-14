@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { useMarketingPathname } from '@/lib/use-marketing-pathname';
 import { useEffect, useRef, useState, type ReactElement } from 'react';
 import { createPortal } from 'react-dom';
 import { ArrowRight, ChevronRight, X } from 'lucide-react';
@@ -139,7 +139,7 @@ function FeatureBlock({ menu, onClose }: { readonly menu: NavMenu; readonly onCl
 
 export function MobileNav({ locale, alternateHref, onClose, model }: MobileNavProps): ReactElement | null {
   const nav = getNavDictionary(locale);
-  const pathname = usePathname() ?? '';
+  const pathname = useMarketingPathname();
   const copy = COPY[locale] ?? COPY.en;
   const lp = (path: string) => localizedPath(locale, path);
   const panelRef = useRef<HTMLDialogElement | null>(null);

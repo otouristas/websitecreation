@@ -195,7 +195,7 @@ export default async function LocationsPage({ params }: PageProps) {
           </div>
         </KitSection>
 
-        <CtaBand locale={siteLocale} source="locations-band" title={accentTail(t.readyTitle, 2)} description={t.readySub} />
+        <CtaBand agency locale={siteLocale} source="locations-band" title={accentTail(t.readyTitle, 2)} description={t.readySub} />
       </main>
       <Footer locale={siteLocale} />
     </>

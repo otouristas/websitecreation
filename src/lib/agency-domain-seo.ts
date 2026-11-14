@@ -14,6 +14,7 @@ import { AGENCY_ORIGIN, PRODUCT_ORIGIN, agencyDomainPath, isAgencyPathname } fro
 
 /** The .gr URL of a Greek agency URL on .com, or null for any other URL. */
 export function toAgencyDomainUrl(comUrl: string): string | null {
+  if (comUrl.startsWith(`${AGENCY_ORIGIN}/`)) return comUrl;
   if (!comUrl.startsWith(`${PRODUCT_ORIGIN}/el/`) && comUrl !== `${PRODUCT_ORIGIN}/el`) return null;
   const path = comUrl.slice(PRODUCT_ORIGIN.length);
   if (!isAgencyPathname(path)) return null;

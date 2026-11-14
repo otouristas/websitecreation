@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState, type ReactElement } from "react";
-import { usePathname } from "next/navigation";
+import { useMarketingPathname } from '@/lib/use-marketing-pathname';
 import { Menu, X } from "lucide-react";
 import { BrandLogo } from "@/components/BrandLogo";
 import { MegaNav } from "@/components/nav/MegaNav";
@@ -24,7 +24,7 @@ export default function Header({
   locale: localeProp,
   alternateHref,
 }: { locale?: SiteLocale; alternateHref?: string }): ReactElement {
-  const pathname = usePathname() ?? "/en";
+  const pathname = useMarketingPathname();
   const locale = localeProp ?? siteLocaleFromPath(pathname);
   const nav = getNavDictionary(locale);
   const [isScrolled, setIsScrolled] = useState(false);

@@ -269,7 +269,7 @@ export default async function SolutionsPage({ params }: PageProps) {
           />
         </KitSection>
 
-        <CtaBand
+        <CtaBand agency
           locale={siteLocale}
           source="solutions-band"
           title={

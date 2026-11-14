@@ -161,7 +161,7 @@ export default async function PlatformHubPage({ params }: PageProps) {
               <p className="mt-3 max-w-[48ch] text-pretty text-[16px] leading-relaxed text-muted-foreground lg:mt-5 lg:text-[19px]">
                 {tx(
                   "Aster AI finds pages people see on Google but rarely click. See what to change and the searches behind each suggestion.",
-                  "Ο Aster AI βρίσκει σελίδες που εμφανίζονται στη Google αλλά παίρνουν λίγα κλικ. Δείτε τι προτείνει να αλλάξετε και σε ποιες αναζητήσεις βασίζεται.",
+                  "Ο Aster AI βρίσκει σελίδες με λίγα κλικ στη Google. Δείτε τι να αλλάξετε και ποιες αναζητήσεις στηρίζουν την πρόταση.",
                 )}
               </p>
             </div>

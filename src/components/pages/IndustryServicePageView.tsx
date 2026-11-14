@@ -264,7 +264,7 @@ export function IndustryServicePageView({
           </p>
         </KitSection>
 
-        <CtaBand
+        <CtaBand agency
           locale={locale}
           source={`industry-service-${industrySlug}`}
           title={<>{ui.readyForService(serviceName)}</>}

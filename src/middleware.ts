@@ -18,6 +18,8 @@ import {
   comPathForAgencyDomain,
   englishAgencyRedirect,
   greekAgencyMoveRedirect,
+  greekAgencyPath,
+  isAgencyPathname,
 } from '@/lib/site-split';
 
 const LOCALE_COOKIE = 'locale';
@@ -99,6 +101,11 @@ function agencyDomainResponse(request: NextRequest): NextResponse {
   if (pathname === '/ypiresies' || pathname.startsWith('/ypiresies/')) {
     return NextResponse.redirect(new URL(`${agencyDomainPath(`/el${pathname}`)}${search}`, request.url), 301);
   }
+  // Old English and translated route aliases point straight to the final Greek URL.
+  if (pathname.startsWith('/en/') && isAgencyPathname(pathname)) {
+    const greekPath = greekAgencyPath(pathname.slice(3));
+    return NextResponse.redirect(new URL(`${agencyDomainPath(greekPath)}${search}`, request.url), 301);
+  }
   const target = comPathForAgencyDomain(pathname);
   if (target) {
     const url = request.nextUrl.clone();
@@ -116,7 +123,10 @@ export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   const host = (request.headers.get('host') ?? '').toLowerCase().split(':')[0];
-  if (host === AGENCY_DOMAIN || host === `www.${AGENCY_DOMAIN}`) {
+  if (host === `www.${AGENCY_DOMAIN}`) {
+    return NextResponse.redirect(new URL(`${pathname}${request.nextUrl.search}`, `https://${AGENCY_DOMAIN}`), 301);
+  }
+  if (host === AGENCY_DOMAIN) {
     return agencyDomainResponse(request);
   }
 

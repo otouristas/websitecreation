@@ -251,7 +251,7 @@ export function AiVisibilityPage({ locale }: { locale: SiteLocale }) {
         <RelatedPages title={t.relatedTitle} pages={related.map((r) => ({ slug: lp(r.path), title: r.title }))} />
       </KitSection>
 
-      <CtaBand locale={locale} source="service-ai-visibility" title={<AccentTitle text={t.cta.title} />} description={t.cta.body} />
+      <CtaBand agency locale={locale} source="service-ai-visibility" title={<AccentTitle text={t.cta.title} />} description={t.cta.body} />
     </PageShell>
   );
 }

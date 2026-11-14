@@ -168,7 +168,7 @@ export default async function WorkPage({ params }: PageProps) {
         </section>
 
         <div data-shot="cta">
-          <CtaBand locale={siteLocale} source="work-band" />
+          <CtaBand agency locale={siteLocale} source="work-band" />
         </div>
       </main>
       <Footer locale={siteLocale} />
