@@ -33,6 +33,7 @@ export const AGENCY_DOMAIN = 'anotherseoguru.gr';
 export const AGENCY_ORIGIN = `https://${AGENCY_DOMAIN}`;
 export const PRODUCT_ORIGIN = 'https://anotherseoguru.com';
 
+export const AGENCY_WORKER = process.env.NEXT_PUBLIC_AGENCY_WORKER === '1';
 /** The agency is served by Cloudflare Workers on its own domain. */
 export const AGENCY_ON_OWN_DOMAIN = true;
 
@@ -67,6 +68,7 @@ export function comPathForAgencyDomain(grPathname: string): string | null {
 
 /** The public href of a Greek agency page (e.g. `/el/ypiresies/times`). */
 export function agencyHref(elPathname: string): string {
+  if (AGENCY_WORKER) return agencyDomainPath(elPathname);
   return AGENCY_ON_OWN_DOMAIN ? `${AGENCY_ORIGIN}${agencyDomainPath(elPathname)}` : elPathname;
 }
 

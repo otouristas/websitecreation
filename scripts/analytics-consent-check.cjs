@@ -7,7 +7,7 @@ let consent = null;
 const scripts = [];
 const window = {location: {origin: 'https://anotherseoguru.com', pathname: '/en/contact', href: 'https://anotherseoguru.com/en/contact?email=private@example.com'}};
 const document = {title: 'Contact', cookie: '', getElementById: id => scripts.find(s => s.id === id), createElement: () => ({}), head: {appendChild: el => scripts.push(el)}};
-const context = {window, document, localStorage: {getItem: key => key === 'cookie-consent' ? consent : null}, exports: {}, URL, URLSearchParams, Date};
+const context = {process: {env: {}}, window, document, localStorage: {getItem: key => key === 'cookie-consent' ? consent : null}, exports: {}, URL, URLSearchParams, Date};
 vm.runInNewContext(source, context);
 const api = context.exports;
 api.loadGoogleAnalytics();
@@ -29,3 +29,36 @@ assert.equal(scripts.length, 1, 'Reaccepting does not duplicate the tag');
 assert.equal(window['ga-disable-G-FGFJEKZHB1'], false);
 assert.equal(commands().filter(a => a[0] === 'consent' && a[1] === 'update' && a[2].analytics_storage).at(-1)[2].analytics_storage, 'granted');
 console.log('PASS: default-off, query redaction, revocation, reacceptance and single tag');
+
+const agency = (id, hostname = 'anotherseoguru.gr') => {
+  const scripts = [];
+  const store = new Map();
+  const w = { location: { origin: 'https://' + hostname, hostname, pathname: '/times', href: 'https://' + hostname + '/times' } };
+  const doc = { title: 'Τιμές', cookie: '', getElementById: id => scripts.find(s => s.id === id), createElement: () => ({}), head: { appendChild: el => scripts.push(el) } };
+  const ctx = { process: {env: { NEXT_PUBLIC_AGENCY_WORKER: '1', NEXT_PUBLIC_AGENCY_GA_ID: id }}, window: w, document: doc,
+    localStorage: { getItem: key => store.get(key), setItem: (k,v) => store.set(k,v) }, sessionStorage: { removeItem() {} }, exports: {}, URL, URLSearchParams, Date };
+  vm.runInNewContext(source, ctx);
+  return { api: ctx.exports, scripts, w };
+};
+for (const [id, domain] of [['', 'anotherseoguru.gr'], ['invalid', 'anotherseoguru.gr'], ['G-FGFJEKZHB1', 'anotherseoguru.gr'], ['G-1234567890', 'anotherseoguru-agency.gk-3ae.workers.dev']]) {
+  const f = agency(id, domain);
+  f.api.applyMeasurementConsent(true, true);
+  assert.equal(f.scripts.length, 0, 'Unconfigured agency or preview must never load Google');
+}
+const gr = agency('G-1234567890');
+gr.api.loadGoogleAnalytics();
+assert.equal(gr.scripts.length, 0);
+gr.api.applyMeasurementConsent(true, true);
+gr.api.trackLead('contact', undefined, '00000000-0000-4000-8000-000000000000');
+assert.equal(gr.scripts.length, 1);
+assert.match(gr.scripts[0].src, /G-1234567890$/);
+const grCommands = () => gr.w.dataLayer.map(a => Array.from(a));
+assert.equal(grCommands().filter(a => a[0] === 'event' && a[1] === 'page_view').length, 1);
+assert.ok(grCommands().some(a => a[0] === 'event' && a[1] === 'generate_lead' && a[2].send_to === 'G-1234567890'));
+assert.doesNotMatch(JSON.stringify(grCommands()), /G-FGFJEKZHB1|AW-|conversion|gclid/);
+gr.api.applyMeasurementConsent(false, false);
+const countAfterReject = gr.w.dataLayer.length;
+gr.api.trackPageView(gr.w.location.href);
+assert.equal(gr.w.dataLayer.length, countAfterReject);
+assert.equal(gr.w['ga-disable-G-1234567890'], true);
+console.log('PASS: agency stream only, opt-in and withdrawal, no product/Ads/preview collection');

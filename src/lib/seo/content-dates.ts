@@ -18,4 +18,6 @@
 export const GENERATED_CONTENT_PUBLISHED = '2026-02-01T00:00:00.000Z';
 
 /** Last substantive revision of that copy. */
-export const GENERATED_CONTENT_UPDATED = '2026-08-15T00:00:00.000Z';
+export const GENERATED_CONTENT_UPDATED = process.env.NEXT_PUBLIC_AGENCY_WORKER === '1'
+  ? '2026-11-14T00:00:00.000Z'
+  : '2026-08-15T00:00:00.000Z';

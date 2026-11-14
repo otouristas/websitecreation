@@ -9,10 +9,12 @@ import {
 } from '@/lib/i18n/locale';
 import { decideServiceLocationRoute } from '@/lib/indexability/service-location';
 import { legacyWebDesignRedirect } from '@/lib/indexability/web-design-redirect';
+import { RETIRED_WORK_SLUGS } from '@/data/retired-work';
 import { getAllServiceSlugs } from '@/data/services';
 import { THEME_INIT_SCRIPT } from '@/brand/theme';
 import {
   AGENCY_DOMAIN,
+  AGENCY_WORKER,
   PRODUCT_ORIGIN,
   agencyDomainPath,
   comPathForAgencyDomain,
@@ -39,6 +41,7 @@ function detectLocale(request: NextRequest): SiteLocale {
 }
 
 const KNOWN_SERVICES = new Set(getAllServiceSlugs());
+const retiredWork = new Set<string>(RETIRED_WORK_SLUGS);
 
 function escapeHtml(value: string): string {
   return value.replace(/[&<>"']/g, (ch) => `&#${ch.charCodeAt(0)};`);
@@ -82,7 +85,7 @@ function agencyDomainResponse(request: NextRequest): NextResponse {
     '/sitemap.xml': '/agency-domain/sitemap.xml',
     '/sitemap-index.xml': '/agency-domain/sitemap.xml',
     '/llms.txt': '/agency-domain-llms.txt',
-    '/llms-full.txt': '/agency-domain-llms.txt',
+    '/llms-full.txt': '/agency-domain-llms-full.txt',
   };
   if (seoFile[pathname]) {
     const url = request.nextUrl.clone();
@@ -100,6 +103,21 @@ function agencyDomainResponse(request: NextRequest): NextResponse {
   // /ypiresies is the .gr home itself, and /ypiresies/times is /times.
   if (pathname === '/ypiresies' || pathname.startsWith('/ypiresies/')) {
     return NextResponse.redirect(new URL(`${agencyDomainPath(`/el${pathname}`)}${search}`, request.url), 301);
+  }
+  const localized = /^\/(?:el|en)(?:\/|$)/.test(pathname) ? pathname : `/el${pathname}`;
+  const work = /^\/(?:el|en)\/work\/([^/]+)\/?$/.exec(localized);
+  if (work && retiredWork.has(work[1])) {
+    return NextResponse.redirect(new URL(`/work${search}`, request.url), 301);
+  }
+  const retiredService = legacyWebDesignRedirect(localized);
+  if (retiredService) {
+    const target = greekAgencyPath(retiredService.replace(/^\/(?:el|en)/, ''));
+    return NextResponse.redirect(new URL(`${agencyDomainPath(target)}${search}`, request.url), 301);
+  }
+  const legacyCity = decideServiceLocationRoute(localized);
+  if (legacyCity?.kind === 'gone') return goneResponse(legacyCity.locale, legacyCity.service);
+  if (legacyCity?.kind === 'redirect') {
+    return NextResponse.redirect(new URL(`${agencyDomainPath(legacyCity.to)}${search}`, request.url), legacyCity.status);
   }
   // Old English and translated route aliases point straight to the final Greek URL.
   if (pathname.startsWith('/en/') && isAgencyPathname(pathname)) {
@@ -126,7 +144,7 @@ export function middleware(request: NextRequest) {
   if (host === `www.${AGENCY_DOMAIN}`) {
     return NextResponse.redirect(new URL(`${pathname}${request.nextUrl.search}`, `https://${AGENCY_DOMAIN}`), 301);
   }
-  if (host === AGENCY_DOMAIN) {
+  if (AGENCY_WORKER || host === AGENCY_DOMAIN) {
     return agencyDomainResponse(request);
   }
 

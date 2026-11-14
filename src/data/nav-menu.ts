@@ -3,7 +3,7 @@ import { localizedPath } from '@/lib/i18n/locale';
 import { getAppPath } from '@/lib/app-links';
 import { currentPriceIncludesVat, currentPriceVatLabel, entrySeoDisplay, entryWebsiteDisplay, formatPrice, seoPackages, websitePackages } from '@/data/pricing';
 import type { MarketingBadgeKind } from '@/components/kit/primitives';
-import { AGENCY_HOME_HREF, AGENCY_PRICING_HREF } from '@/lib/site-split';
+import { AGENCY_AUDIT_HREF, AGENCY_HOME_HREF, AGENCY_PRICING_HREF } from '@/lib/site-split';
 
 /**
  * One menu definition for the desktop mega menu and the mobile sheet, so the
@@ -127,7 +127,7 @@ export function getNavModel(locale: SiteLocale, mode: NavMode = 'product', now: 
   const POPULAR = { kind: 'popular' as const, label: t('Popular', 'Δημοφιλές') };
   const AI = { kind: 'ai' as const, label: 'AI' };
 
-  const freeAudit = { href: `${lp('/get-started')}#free-audit`, label: t('Free SEO audit', 'Δωρεάν έλεγχος SEO') };
+  const freeAudit = { href: mode === 'agency' ? AGENCY_AUDIT_HREF : `${lp('/get-started')}#free-audit`, label: t('Free SEO audit', 'Δωρεάν έλεγχος SEO') };
   const startFree = { href: signup, label: t('Sign up free with Google', 'Δωρεάν εγγραφή με Google') };
 
   const services: NavMenu = {

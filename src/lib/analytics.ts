@@ -1,13 +1,27 @@
-export const GA_MEASUREMENT_ID = 'G-FGFJEKZHB1';
+const agencyBuild = process.env.NEXT_PUBLIC_AGENCY_WORKER === '1';
+const agencyId = process.env.NEXT_PUBLIC_AGENCY_GA_ID?.trim() ?? '';
+const productId = 'G-FGFJEKZHB1';
+export const GA_MEASUREMENT_ID = agencyBuild
+  ? (/^G-[A-Z0-9]{10}$/.test(agencyId) && agencyId !== productId ? agencyId : '')
+  : productId;
+export const ADS_MEASUREMENT_AVAILABLE = !agencyBuild;
+
+function canMeasure(): boolean {
+  if (!GA_MEASUREMENT_ID || typeof window === 'undefined') return false;
+  return !agencyBuild || window.location.hostname === 'anotherseoguru.gr';
+}
+
+const cookieDomain = agencyBuild ? '; domain=.anotherseoguru.gr' : '; domain=.anotherseoguru.com';
 // Verified in Google Ads account 265-537-3296, conversion action 7727965390.
 export const GOOGLE_ADS_ID = 'AW-18400993971';
 export const GOOGLE_ADS_LEAD_DESTINATION = `${GOOGLE_ADS_ID}/FwkvCM7J_eQcELPFo8ZE`;
 export const ADS_CONSENT_KEY = 'ads-measurement-consent';
 let adsConfigured = false;
+let lastAgencyPage: string | undefined;
 const measuredLeads = new Set<string>();
 
 function hasAdsConsent(): boolean {
-  if (typeof window === 'undefined') return false;
+  if (!ADS_MEASUREMENT_AVAILABLE || typeof window === 'undefined') return false;
   try { return localStorage.getItem(ADS_CONSENT_KEY) === 'accepted'; } catch { return false; }
 }
 
@@ -28,6 +42,7 @@ function adsMeasurementUrl(): string {
 }
 
 function configureAdsMeasurement(): void {
+  if (!ADS_MEASUREMENT_AVAILABLE) return;
   const accepted = hasAdsConsent();
   window.gtag?.('consent', 'update', { ad_storage: accepted ? 'granted' : 'denied', ad_user_data: accepted ? 'granted' : 'denied', ad_personalization: 'denied' });
   window.gtag?.('set', 'page_location', accepted ? adsMeasurementUrl() : window.location.origin + window.location.pathname);
@@ -44,7 +59,7 @@ declare global {
 }
 
 export function loadGoogleAnalytics(): void {
-  if (typeof window === 'undefined') return;
+  if (!canMeasure()) return;
   try { if (localStorage.getItem('cookie-consent') !== 'accepted') return; } catch { return; }
   Object.assign(window, { [`ga-disable-${GA_MEASUREMENT_ID}`]: false });
   if (document.getElementById('ga-script')) {
@@ -66,6 +81,9 @@ export function loadGoogleAnalytics(): void {
   window.gtag!('set', 'ads_data_redaction', true);
   window.gtag!('set', 'page_referrer', '');
   window.gtag!('set', 'page_location', window.location.origin + window.location.pathname);
+  // Google tag destinations can initialize before their scoped config. Disable
+  // the default page view globally so only the consented route event is sent.
+  if (agencyBuild) window.gtag!('set', 'send_page_view', false);
   window.gtag!('js', new Date());
   window.gtag!('config', GA_MEASUREMENT_ID, { send_page_view: false, allow_google_signals: false, allow_ad_personalization_signals: false, page_location: window.location.origin + window.location.pathname, page_referrer: '' });
   configureAdsMeasurement();
@@ -85,10 +103,17 @@ export function enableGoogleAnalytics(): void {
 }
 
 export function trackPageView(url: string): void {
+  if (!canMeasure() || !window.gtag) return;
+  try { if (localStorage.getItem('cookie-consent') !== 'accepted') return; } catch { return; }
+  const page = new URL(url, window.location.origin);
+  const location = page.origin + page.pathname;
+  // Consent and the route watcher can both report the same navigation.
+  if (agencyBuild && lastAgencyPage === location) return;
+  if (agencyBuild) lastAgencyPage = location;
   trackEvent('page_view', {
-    page_location: new URL(url, window.location.origin).origin + new URL(url, window.location.origin).pathname,
+    page_location: location,
     page_referrer: '',
-    page_path: new URL(url, window.location.origin).pathname,
+    page_path: page.pathname,
     page_title: document.title,
   });
 }
@@ -97,13 +122,13 @@ export function trackEvent(
   eventName: string,
   params?: Record<string, string | number | boolean | undefined>,
 ): void {
-  if (typeof window === 'undefined' || !window.gtag) return;
+  if (!canMeasure() || !window.gtag) return;
   try { if (localStorage.getItem('cookie-consent') !== 'accepted') return; } catch { return; }
   window.gtag('event', eventName, { ...params, send_to: GA_MEASUREMENT_ID });
 }
 
 export function trackLead(formName: string, extra?: Record<string, string>, transactionId?: string): void {
-  if (typeof window === 'undefined') return;
+  if (!canMeasure()) return;
   try { if (localStorage.getItem('cookie-consent') !== 'accepted') return; } catch { return; }
   if (!['contact', 'get-started', 'instant_scan', 'free_audit'].includes(formName)) return;
   const id = transactionId ?? window.crypto.randomUUID();
@@ -147,12 +172,13 @@ export function captureUtmParams(): Record<string, string> {
 
 /** Revocation stops future events and removes analytics cookies, not historical server data. */
 export function disableGoogleAnalytics(): void {
+  lastAgencyPage = undefined;
   Object.assign(window, { [`ga-disable-${GA_MEASUREMENT_ID}`]: true });
   window.gtag?.('consent', 'update', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
   for (const cookie of document.cookie.split(';')) {
     const name = cookie.trim().split('=')[0];
     if (!/^_ga(?:_|$)|^_gcl_/.test(name)) continue;
-    for (const domain of ['', '; domain=.anotherseoguru.com'])
+    for (const domain of ['', cookieDomain])
       document.cookie = `${name}=; Max-Age=0; path=/${domain}`;
   }
 }
@@ -161,7 +187,7 @@ export function disableGoogleAnalytics(): void {
 export function applyMeasurementConsent(analytics: boolean, ads: boolean): void {
   try {
     localStorage.setItem('cookie-consent', analytics ? 'accepted' : 'declined');
-    localStorage.setItem(ADS_CONSENT_KEY, analytics && ads ? 'accepted' : 'declined');
+    localStorage.setItem(ADS_CONSENT_KEY, ADS_MEASUREMENT_AVAILABLE && analytics && ads ? 'accepted' : 'declined');
   } catch { return; }
   if (!ads || !analytics) {
     window.gtag?.('consent', 'update', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
@@ -171,7 +197,7 @@ export function applyMeasurementConsent(analytics: boolean, ads: boolean): void 
     for (const cookie of document.cookie.split(';')) {
       const name = cookie.trim().split('=')[0];
       if (!/^_gcl_/.test(name)) continue;
-      for (const domain of ['', '; domain=.anotherseoguru.com']) document.cookie = `${name}=; Max-Age=0; path=/${domain}`;
+      for (const domain of ['', cookieDomain]) document.cookie = `${name}=; Max-Age=0; path=/${domain}`;
     }
   }
   if (analytics) enableGoogleAnalytics(); else disableGoogleAnalytics();

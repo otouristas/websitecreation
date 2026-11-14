@@ -150,7 +150,15 @@ export function BlackMonthPopup({ enabled }: { enabled: boolean }) {
           alt="AnotherSEOGuru"
           width={1128}
           height={256}
-          className={styles.logo}
+          className={`${styles.logo} ${styles.darkLogo}`}
+          unoptimized
+        />
+        <Image
+          src="/brand/asg-lockup-on-light.svg"
+          alt="AnotherSEOGuru"
+          width={1128}
+          height={256}
+          className={`${styles.logo} ${styles.lightLogo}`}
           unoptimized
         />
         <p className={styles.eyebrow}>BLACK MONTH / ΝΟΕΜΒΡΙΟΣ 2026</p>

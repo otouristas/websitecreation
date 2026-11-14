@@ -383,3 +383,33 @@
     scroll-behavior: auto;
   }
 }
+
+/* The campaign uses the same light surfaces as the rest of the site. */
+.lightLogo { display: none; }
+:global([data-asg-theme="light"]) .lightLogo { display: block; }
+:global([data-asg-theme="light"]) .darkLogo { display: none; }
+:global([data-asg-theme="light"]) .hero {
+  background: var(--asg-surface);
+  color: var(--asg-text);
+}
+:global([data-asg-theme="light"]) .art { opacity: .08; }
+:global([data-asg-theme="light"]) .shade {
+  background: linear-gradient(110deg, var(--asg-surface) 8%, transparent 90%),
+    linear-gradient(20deg, var(--asg-surface), transparent 62%);
+}
+:global([data-asg-theme="light"]) .offer {
+  background: var(--asg-surface);
+  border-color: var(--asg-border-subtle);
+}
+:global([data-asg-theme="light"]) .offerFooter { border-color: var(--asg-border-subtle); }
+:global([data-asg-theme="light"]) :is(.edition, .lead, .was, .gross, .details, .terms, .offerLabel, .price > span) {
+  color: var(--asg-text-secondary);
+}
+:global([data-asg-theme="light"]) :is(.eyebrow, .heading h1 span, .offerLabel > span, .terms svg) {
+  color: var(--asg-link);
+}
+:global([data-asg-theme="light"]) .offerFooter > span { color: var(--asg-success); }
+:global([data-asg-theme="light"]) .offerFooter > a {
+  background: var(--asg-action);
+  color: var(--asg-action-foreground);
+}

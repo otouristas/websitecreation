@@ -1,44 +1,11 @@
 import type { NextConfig } from "next";
 import type { Redirect } from "next/dist/lib/load-custom-routes";
+import { RETIRED_WORK_SLUGS } from "./src/data/retired-work";
 import { migratedAgencyPaths } from "./src/data/migrated-agency-paths";
 import { LEGACY_FEATURE_MODULES } from "./src/data/marketing-features";
 
 /** Requests to the agency's own domain (see src/lib/site-split.ts). */
 const AGENCY_HOST = { type: "host" as const, value: "(?:www\\.)?anotherseoguru\\.gr" };
-
-/** Portfolio case studies removed from the site. Redirect sources only. */
-const RETIRED_WORK_SLUGS = [
-  "agrocult",
-  "arion-farm",
-  "cocktails-in-the-city",
-  "cretanways-rentals",
-  "dailyhost-eu",
-  "eolides-villas",
-  "ergo-and-art",
-  "fabrica-cafe",
-  "fitness-hood",
-  "greece-cyclades",
-  "huqqa-king",
-  "ilektronika-tsigara",
-  "kaffatos-vip-transfers",
-  "kipos-hotel",
-  "koini-lisi",
-  "logopedia",
-  "opticore-store",
-  "phytomore",
-  "plati-taverna",
-  "politidis-fitness",
-  "quad-safari-rethymno",
-  "rethemnos",
-  "smart-dog-training",
-  "spili-apartments",
-  "taverna-yiannis",
-  "the-ace-vip",
-  "travel-sifnos",
-  "vape-and-more",
-  "villas-katerina",
-  "way-to-crete",
-] as const;
 
 const nextConfig: NextConfig = {
   // React Compiler for performance
@@ -50,6 +17,8 @@ const nextConfig: NextConfig = {
   agentRules: false,
 
   async redirects() {
+    // The dedicated agency Worker applies clean Greek routes in middleware.
+    if (process.env.NEXT_PUBLIC_AGENCY_WORKER === '1') return [];
     const appOrigin = process.env.NEXT_PUBLIC_APP_ORIGIN?.replace(/\/$/, '') || 'https://app.anotherseoguru.com';
     const agency = 'https://anotherseoguru.gr';
     // Bare agency sections previously had a locale-prefix redirect before middleware.

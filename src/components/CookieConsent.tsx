@@ -2,14 +2,14 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import { Cookie } from 'lucide-react';
-import { ADS_CONSENT_KEY, applyMeasurementConsent } from '@/lib/analytics';
+import { ADS_CONSENT_KEY, ADS_MEASUREMENT_AVAILABLE, applyMeasurementConsent } from '@/lib/analytics';
 import { OPEN_COOKIE_PREFERENCES_EVENT } from '@/lib/cookie-preferences';
 import { localizedPath, siteLocaleFromPath } from '@/lib/i18n/locale';
+import { useMarketingPathname } from '@/lib/use-marketing-pathname';
 
 export default function CookieConsent() {
-  const pathname = usePathname() ?? '/en';
+  const pathname = useMarketingPathname();
   const locale = siteLocaleFromPath(pathname);
   const isEl = locale === 'el';
   // Rendered on the server so the banner paints with the page. Returning visitors are hidden
@@ -116,7 +116,9 @@ export default function CookieConsent() {
             {isEl ? 'Προαιρετικά cookies μετρήσεων' : 'Optional measurement cookies'}
           </p>
           <p className="text-xs leading-relaxed text-muted-foreground sm:text-sm">
-            {isEl
+            {!ADS_MEASUREMENT_AVAILABLE
+              ? (isEl ? 'Με την άδειά σας μετράμε ποιες σελίδες διαβάζετε. Μπορείτε να αλλάξετε γνώμη ανά πάσα στιγμή.' : 'With your permission, we measure which pages people read. You can change your choice at any time.')
+              : isEl
               ? 'Επιλέξτε στατιστικά επισκέψεων ή και μέτρηση Google Ads, ώστε να γνωρίζουμε ποιες διαφημίσεις φέρνουν αιτήματα. Χωρίς εξατομίκευση διαφημίσεων. Μπορείτε να ανακαλέσετε την επιλογή σας ανά πάσα στιγμή.'
               : 'Choose visit analytics, or also Google Ads measurement to learn which ads bring enquiries. No ad personalization. You can withdraw your choice at any time.'}{' '}
             <Link
@@ -139,13 +141,13 @@ export default function CookieConsent() {
           <button type="button" onClick={() => choose(true, false)} className="btn btn-outline h-10 px-4 text-sm">
             {isEl ? 'Μόνο στατιστικά' : 'Analytics only'}
           </button>
-          <button
+          {ADS_MEASUREMENT_AVAILABLE && <button
             type="button"
             onClick={() => choose(true, true)}
             className="btn btn-primary h-10 px-4 text-sm"
           >
             {isEl ? 'Αποδοχή και των δύο' : 'Accept both'}
-          </button>
+          </button>}
         </div>
       </div>
     </div>

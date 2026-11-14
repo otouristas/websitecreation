@@ -62,7 +62,8 @@ export function agencyRobotsTxt(): string {
     'Allow: /',
     'Disallow: /api/',
     '',
-    `# LLMs.txt: ${AGENCY_ORIGIN}/llms.txt`,
+    `# Agency directory: ${AGENCY_ORIGIN}/llms.txt`,
+    `# Full Greek text: ${AGENCY_ORIGIN}/llms-full.txt`,
     `Sitemap: ${AGENCY_ORIGIN}/sitemap.xml`,
     '',
   ].join('\n');
