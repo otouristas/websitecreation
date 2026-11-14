@@ -1,4 +1,5 @@
 import { isAgencyGuideSlug } from '../data/agency-guides';
+import { hasMigratedAgencyPage } from '../data/migrated-agency-paths';
 
 /**
  * anotherseoguru.com is the product site (AnotherSEOGuru App). The done-for-you
@@ -7,7 +8,7 @@ import { isAgencyGuideSlug } from '../data/agency-guides';
  * move to their own domain (anotherseoguru.gr).
  *
  * This module is imported by the middleware (edge runtime) and by client
- * components, so it must stay free of imports (locale.ts imports it). Plain strings only.
+ * components. Its only dependency is the static set of published agency paths.
  */
 
 function stripLocalePrefix(pathname: string): string {
@@ -32,15 +33,9 @@ export const AGENCY_DOMAIN = 'anotherseoguru.gr';
 export const AGENCY_ORIGIN = `https://${AGENCY_DOMAIN}`;
 export const PRODUCT_ORIGIN = 'https://anotherseoguru.com';
 
-/**
- * The one switch for the move to anotherseoguru.gr. While false, every agency
- * link goes to the Greek agency pages on anotherseoguru.com. Set it to true
- * once anotherseoguru.gr is serving the agency on Cloudflare Workers: every agency link,
- * canonical URL and redirect then goes to anotherseoguru.gr, and the Greek
- * agency pages on .com send a 301 there (see middleware).
- */
 export const AGENCY_WORKER = process.env.NEXT_PUBLIC_AGENCY_WORKER === '1';
-export const AGENCY_ON_OWN_DOMAIN = AGENCY_WORKER || process.env.NEXT_PUBLIC_AGENCY_ON_OWN_DOMAIN === '1';
+/** The agency is served by Cloudflare Workers on its own domain. */
+export const AGENCY_ON_OWN_DOMAIN = true;
 
 function splitSuffix(path: string): [string, string] {
   const i = path.search(/[?#]/);
@@ -85,6 +80,7 @@ export const AGENCY_AUDIT_HREF = agencyHref(AGENCY_AUDIT_EL);
 /** Bare-path sections (no locale prefix) that belong to the agency. */
 const AGENCY_SECTIONS = [
   AGENCY_HOME_PATH,
+  '/odigoi',
   '/services',
   '/solutions',
   '/locations',
@@ -99,7 +95,6 @@ const AGENCY_SECTIONS = [
   '/kataskevi-istoselidon',
   '/work',
   '/seo-guru',
-  '/odigoi',
   '/get-started',
 ] as const;
 
@@ -121,8 +116,12 @@ export function isAgencyPathname(pathname: string): boolean {
  */
 export function greekAgencyMoveRedirect(pathname: string): string | null {
   if (!AGENCY_ON_OWN_DOMAIN) return null;
-  if (!(pathname.startsWith('/el/') && isAgencyPathname(pathname))) return null;
-  return `${AGENCY_ORIGIN}${agencyDomainPath(pathname)}`;
+  if (!pathname.startsWith('/el/')) return null;
+  const [path, suffix] = splitSuffix(pathname);
+  const target = agencyDomainPath(path);
+  // Bare /el belongs to the product. Only published, migrated pages have successors.
+  if (!isAgencyPathname(path) && !path.startsWith('/el/blog/')) return null;
+  return hasMigratedAgencyPage(target) ? `${AGENCY_ORIGIN}${target}${suffix}` : null;
 }
 
 /** Greek cities that keep service x city pages (see indexability/service-location). */
@@ -189,5 +188,18 @@ export function englishAgencyRedirect(pathname: string): string | null {
   const bare = stripLocalePrefix(pathname).replace(/\/+$/, '') || '/';
   if (!isAgencyBarePath(bare)) return null;
   if (bare === '/get-started') return agencyHref(AGENCY_AUDIT_EL);
-  return agencyHref(greekAgencyPath(bare));
+  const target = greekAgencyPath(bare);
+  return greekAgencyMoveRedirect(target) ?? target;
+}
+
+/** Render ordinary links directly to a migrated service, article or case study. */
+export function migratedAgencyHref(href: string): string {
+  const [path, suffix] = splitSuffix(href);
+  const target = greekAgencyMoveRedirect(path) ?? englishAgencyRedirect(path);
+  if (!target?.startsWith(AGENCY_ORIGIN + '/')) return href;
+  const url = new URL(target);
+  const original = new URL(path + suffix, PRODUCT_ORIGIN);
+  url.search = original.search;
+  if (original.hash) url.hash = original.hash;
+  return url.href;
 }

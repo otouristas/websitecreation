@@ -148,11 +148,17 @@ export function middleware(request: NextRequest) {
     return agencyDomainResponse(request);
   }
 
+  const agencyRedirect = (destination: string) => {
+    const url = new URL(destination, request.url);
+    url.search = request.nextUrl.search;
+    return NextResponse.redirect(url, 301);
+  };
+
   // Legacy and city redirects that land on an English agency page go straight
   // on to its Greek page, so no request takes two hops.
   const webDesign = legacyWebDesignRedirect(pathname);
   if (webDesign) {
-    return NextResponse.redirect(new URL((englishAgencyRedirect(webDesign) ?? greekAgencyMoveRedirect(webDesign) ?? webDesign) + request.nextUrl.search, request.url), 301);
+    return agencyRedirect(englishAgencyRedirect(webDesign) ?? greekAgencyMoveRedirect(webDesign) ?? webDesign);
   }
 
   const cityRoute = decideServiceLocationRoute(pathname);
@@ -160,20 +166,14 @@ export function middleware(request: NextRequest) {
     return goneResponse(cityRoute.locale, cityRoute.service);
   }
   if (cityRoute?.kind === 'redirect') {
-    return NextResponse.redirect(new URL((englishAgencyRedirect(cityRoute.to) ?? greekAgencyMoveRedirect(cityRoute.to) ?? cityRoute.to) + request.nextUrl.search, request.url), cityRoute.status);
-  }
-
-  // Once the agency has its own domain, its Greek pages here move there.
-  const moved = greekAgencyMoveRedirect(pathname);
-  if (moved) {
-    return NextResponse.redirect(`${moved}${request.nextUrl.search}`, 301);
+    return agencyRedirect(englishAgencyRedirect(cityRoute.to) ?? greekAgencyMoveRedirect(cityRoute.to) ?? cityRoute.to);
   }
 
   // anotherseoguru.com is the product site. The agency serves Greek clients, so
   // every English agency page now lives on its Greek twin (see lib/site-split).
-  const agency = englishAgencyRedirect(pathname);
+  const agency = greekAgencyMoveRedirect(pathname) ?? englishAgencyRedirect(pathname);
   if (agency) {
-    return NextResponse.redirect(new URL(agency, request.url), 301);
+    return agencyRedirect(agency);
   }
 
   // Markdown twin of a docs page: /en/help/x/y.md -> the static Markdown route.

@@ -3,6 +3,7 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { rehypeHeadingIds } from "@/lib/rehype-heading-ids";
 import { isEnOnlySection, type SiteLocale } from "@/lib/i18n/locale";
+import { migratedAgencyHref } from "@/lib/site-split";
 import { blogHref } from "@/lib/blog";
 
 interface MarkdownBodyProps {
@@ -62,7 +63,8 @@ export function MarkdownBody({ markdown, locale = "en" }: MarkdownBodyProps) {
         ),
         a: ({ href, children }) => {
           if (href?.startsWith("/")) {
-            return <Link href={localizeHref(href, locale)}>{children}</Link>;
+            const target = migratedAgencyHref(localizeHref(href, locale));
+            return <Link href={target}>{children}</Link>;
           }
           return (
             <a href={href} target="_blank" rel="noopener noreferrer">
