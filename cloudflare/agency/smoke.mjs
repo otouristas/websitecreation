@@ -11,6 +11,8 @@ async function check(path, type, options = {}, expected = 200) {
 }
 const home = await (await check('/', 'text/html')).text();
 assert.match(home, /<html[^>]+lang="el"/);
+assert.ok(!home.includes('href="/el/ypiresies/times"'), 'Agency links point straight to pricing');
+assert.ok(home.includes('href="https://anotherseoguru.com/el/privacy"'), 'Product privacy uses the correct origin');
 assert.match(home, /rel="canonical"[^>]+anotherseoguru\.gr\/?"/);
 assert.ok(!home.includes('fonts.googleapis.com/css'), 'Fonts must be served by the Worker');
 const pricing = await (await check('/times', 'text/html')).text();

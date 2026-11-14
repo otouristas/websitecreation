@@ -16,7 +16,10 @@ export default defineConfig({
           return resolve('cloudflare/agency/blog-files.mjs');
         }
       },
-      transform(_code, id) {
+      transform(code, id) {
+        if (id.includes('/src/') && /\.[jt]sx?$/.test(id) && code.includes('next/link')) {
+          return code.replace(/(from\s+)(['"])next\/link\2/g, "$1'/cloudflare/agency/links.jsx'");
+        }
         if (id.split('?')[0].endsWith('/src/app/opengraph-image.tsx')) {
           return `export const size = {width:1200,height:630}; export const contentType = 'image/png';
             export default async function() { const { env } = await import('cloudflare:workers');
