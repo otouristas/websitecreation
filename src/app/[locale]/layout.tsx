@@ -10,6 +10,7 @@ import WhatsAppPill from '@/components/WhatsAppPill';
 import { Analytics } from '@vercel/analytics/next';
 import { isValidLocale } from '@/lib/i18n/locale';
 import { CONTACT_EMAIL } from '@/lib/contact-info';
+import { AGENCY_ORIGIN, AGENCY_WORKER } from '@/lib/site-split';
 import { APP_ORIGIN, LEGAL_ENTITY_ID, LEGAL_ENTITY_NAME } from '@/data/legal-entity';
 
 const SITE_URL = 'https://anotherseoguru.com';
@@ -36,13 +37,13 @@ export async function generateMetadata({
     : 'Find pages losing clicks in Google, ask Aster AI what changed and choose a page to improve. Try AnotherSEOGuru App on your site or explore a sample workspace.';
 
   return {
-    metadataBase: new URL(SITE_URL),
+    metadataBase: new URL(AGENCY_WORKER ? AGENCY_ORIGIN : SITE_URL),
     title: {
       default: title,
       template: '%s',
     },
     description,
-    keywords: isEl
+    keywords: AGENCY_WORKER ? undefined : isEl
       ? [
           'λογισμικό SEO',
           'εργαλείο SEO',
@@ -67,7 +68,7 @@ export async function generateMetadata({
           'white label SEO reports',
           'Aster AI',
         ],
-    authors: [{ name: 'AnotherSEOGuru', url: SITE_URL }],
+    authors: [{ name: 'AnotherSEOGuru', url: AGENCY_WORKER ? AGENCY_ORIGIN : SITE_URL }],
     creator: 'AnotherSEOGuru',
     publisher: 'AnotherSEOGuru',
     referrer: 'origin-when-cross-origin',
@@ -126,6 +127,34 @@ export async function generateMetadata({
 
 /** Site-wide Organization + WebSite JSON-LD (@graph) for rich results and entity clarity */
 function buildStructuredDataGraph(isEl: boolean) {
+  if (AGENCY_WORKER) {
+    const organization = { '@id': `${AGENCY_ORIGIN}/#organization` };
+    return {
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'Organization',
+          ...organization,
+          name: 'AnotherSEOGuru',
+          url: `${AGENCY_ORIGIN}/`,
+          logo: `${AGENCY_ORIGIN}/brand/asg-lockup-on-light@2x.png`,
+          description: 'Κατασκευή ιστοσελίδων και e-shop, τεχνικό SEO και τοπικό SEO για επιχειρήσεις στην Ελλάδα.',
+          parentOrganization: { '@type': 'Organization', '@id': LEGAL_ENTITY_ID, name: LEGAL_ENTITY_NAME },
+          areaServed: { '@type': 'Country', name: 'Ελλάδα' },
+          contactPoint: { '@type': 'ContactPoint', contactType: 'sales', email: CONTACT_EMAIL, availableLanguage: 'el' },
+        },
+        {
+          '@type': 'WebSite',
+          '@id': `${AGENCY_ORIGIN}/#website`,
+          name: 'AnotherSEOGuru',
+          url: `${AGENCY_ORIGIN}/`,
+          inLanguage: 'el',
+          publisher: organization,
+        },
+      ],
+    };
+  }
+
   return {
     '@context': 'https://schema.org',
     '@graph': [
