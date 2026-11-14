@@ -68,7 +68,15 @@ export function BlackMonthPricingHero({
               width={1128}
               height={256}
               alt="AnotherSEOGuru"
-              className={styles.logo}
+              className={`${styles.logo} ${styles.darkLogo}`}
+              unoptimized
+            />
+            <Image
+              src="/brand/asg-lockup-on-light.svg"
+              width={1128}
+              height={256}
+              alt="AnotherSEOGuru"
+              className={`${styles.logo} ${styles.lightLogo}`}
               unoptimized
             />
             <span className={styles.edition}>ΝΟΕΜΒΡΙΟΣ 2026</span>

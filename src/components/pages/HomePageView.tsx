@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, ArrowUpRight, ChevronDown } from 'lucide-react';
 import Header from '@/components/Header';
+import { WaveAccent } from '@/components/pages/platform-wave/ui';
 import Footer from '@/components/Footer';
 import { BlackMonthBanner } from '@/components/pricing/BlackMonthBanner';
 import SchemaMarkup from '@/components/seo/SchemaMarkup';
@@ -69,13 +70,17 @@ export function HomePageView({ locale }: { readonly locale: SiteLocale }) {
     <>
       <SchemaMarkup schemas={[orgSchema, generateFAQSchema({ faqs })]} />
       <Header locale={locale} />
-      <main className="overflow-x-clip bg-background text-foreground">
+      <main className="blueprint-grid relative z-0 overflow-x-clip text-foreground">
         <section aria-labelledby="agency-heading" className="hero-below-header relative isolate">
-          <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_80%_20%,color-mix(in_oklab,var(--signal)_9%,transparent),transparent_62%)]" />
+          <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+            <div className="kit-grid absolute inset-0 [mask-image:radial-gradient(ellipse_85%_85%_at_50%_0%,black_30%,transparent_100%)]" />
+            <div className="absolute -left-32 -top-52 size-[min(580px,80vw)] rounded-full bg-primary/20 blur-3xl" />
+            <div className="absolute -right-24 top-20 size-[min(500px,70vw)] rounded-full bg-signal/15 blur-3xl" />
+          </div>
           <div className={`${container} grid items-center gap-7 pb-10 pt-2 sm:pt-5 lg:grid-cols-[minmax(0,.88fr)_minmax(0,1.12fr)] lg:gap-12 lg:pb-16 lg:pt-8`}>
             <div className="min-w-0">
               <h1 id="agency-heading" className="max-w-[16ch] text-balance font-display text-[2.55rem] font-bold leading-[1.04] tracking-[-0.05em] text-foreground sm:text-6xl lg:text-[clamp(3.4rem,4.5vw,4.4rem)]">
-                Ιστοσελίδες και SEO για τη δική σας επιχείρηση.
+                Ιστοσελίδες και SEO για τη <WaveAccent>δική σας επιχείρηση.</WaveAccent>
               </h1>
               <p className="mt-4 max-w-[43ch] text-pretty text-[16px] leading-relaxed text-muted-foreground sm:text-lg">
                 Φτιάχνουμε ιστοσελίδες για κρατήσεις, ραντεβού και παραγγελίες. Αν έχετε ήδη ιστοσελίδα, αναλαμβάνουμε το SEO της.
