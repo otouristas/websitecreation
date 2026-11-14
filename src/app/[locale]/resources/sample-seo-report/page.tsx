@@ -6,7 +6,7 @@ import { DocsPage, headingsOf } from "@/components/docs/DocsPage";
 import { DocsShell } from "@/components/docs/DocsShell";
 import { ResourceCta } from "@/components/resources/ResourceCta";
 import { SampleSeoReport } from "@/components/pages/sample-report/SampleSeoReport";
-import { PrintButton } from "@/components/pages/sample-report/PrintButton";
+import { Download } from "lucide-react";
 import { appLink } from "@/components/gsc-boost/copy";
 import { articleFaqs, articleHowTos } from "@/data/help";
 import { resourcePath } from "@/data/resources";
@@ -16,6 +16,7 @@ import {
   SAMPLE_REPORT_BLOCKS_EL,
   SAMPLE_REPORT_EL,
   SAMPLE_REPORT_PUBLISHED,
+  SAMPLE_REPORT_UPDATED,
   SAMPLE_REPORT_SLUG,
 } from "@/data/resources/sample-report";
 import { isValidLocale, localizedPath } from "@/lib/i18n/locale";
@@ -64,7 +65,7 @@ export default async function SampleSeoReportPage({ params }: PageProps) {
       headline: m.title,
       description: m.description,
       datePublished: SAMPLE_REPORT_PUBLISHED,
-      dateModified: SAMPLE_REPORT_PUBLISHED,
+      dateModified: SAMPLE_REPORT_UPDATED,
       author: { name: "AnotherSEOGuru", url: BASE_URL },
       inLanguage: locale,
       mainEntityOfPage: `${BASE_URL}${path}`,
@@ -88,10 +89,15 @@ export default async function SampleSeoReportPage({ params }: PageProps) {
         wide
       >
         <div className="mt-6 flex flex-wrap items-center gap-3 print:hidden">
-          <PrintButton
-            label={m.print}
+          <a
+            href={`/downloads/reporting/monthly-seo-report-${locale}.pdf`}
+            download
+            type="application/pdf"
             className="inline-flex items-center gap-2 rounded-full border border-hairline bg-surface px-4 py-2 text-[14px] font-medium text-foreground hover:bg-accent"
-          />
+          >
+            <Download className="size-4" aria-hidden />
+            {m.download}
+          </a>
           <a
             href={appLink("/signup", locale, `${source}-top`)}
             className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-[14px] font-semibold text-primary-foreground hover:opacity-90"

@@ -220,8 +220,8 @@ export function SampleSeoReport({ locale: l }: { readonly locale: L }) {
           <Table
             head={[tx(l, "Page", "Σελίδα"), tx(l, "Clicks", "Κλικ"), tx(l, "Change", "Μεταβολή")]}
             rows={[
-              ["/emergency-dentist", n(968), <Delta key="a" v={212} />],
               ["/", n(1544), <Delta key="b" v={4} />],
+              ["/emergency-dentist", n(968), <Delta key="a" v={212} />],
               ["/teeth-whitening", n(531), <Delta key="c" v={9} />],
               ["/invisalign", n(402), <Delta key="d" v={-6} />],
               ["/dental-implants", n(357), <Delta key="e" v={11} />],
@@ -296,7 +296,7 @@ export function SampleSeoReport({ locale: l }: { readonly locale: L }) {
 
       <footer className="flex flex-wrap justify-between gap-2 border-t border-hairline bg-surface/50 px-5 py-4 text-[12px] text-muted-foreground sm:px-8">
         <span>{tx(l, "Prepared by Your Agency for Northside Dental", "Ετοιμάστηκε από το agency σας για τη Northside Dental")}</span>
-        <span>{tx(l, "Data: Google Search Console and Google Analytics", "Δεδομένα: Google Search Console και Google Analytics")}</span>
+        <span>{tx(l, "Sample sources: clicks from Search Console, appointment requests from GA4", "Πηγές του δείγματος: κλικ από το Search Console, αιτήματα ραντεβού από το GA4")}</span>
       </footer>
     </article>
   );

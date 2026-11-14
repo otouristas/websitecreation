@@ -15,7 +15,7 @@ export interface SampleReportMeta {
   readonly lead: string;
   readonly primaryKeyword: string;
   readonly eyebrow: string;
-  readonly print: string;
+  readonly download: string;
   readonly ctaTitle: string;
   readonly ctaText: string;
   readonly signup: string;
@@ -25,17 +25,18 @@ export interface SampleReportMeta {
 
 export const SAMPLE_REPORT_SLUG = "sample-seo-report";
 export const SAMPLE_REPORT_PUBLISHED = "2026-11-08";
+export const SAMPLE_REPORT_UPDATED = "2026-11-14";
 
 export const SAMPLE_REPORT: SampleReportMeta = {
   slug: SAMPLE_REPORT_SLUG,
   title: "A sample monthly SEO report for a client",
   seoTitle: "Sample SEO Report: Monthly Example + PDF",
   description:
-    "See a complete sample SEO report: summary, KPIs, clicks trend, rankings, top queries, wins and losses, work done and next steps. Save it as a PDF or build yours.",
-  lead: "What would you tell a client if clicks rose overall but a key service page slipped? See how a monthly report handles both. The dental clinic and its figures are fictional. You can save the example as a PDF.",
+    "See a complete sample SEO report: summary, KPIs, clicks trend, rankings, top queries, wins and losses, work done and next steps. Download the PDF without signing up.",
+  lead: "What would you tell a client if clicks rose overall but a key service page slipped? See how a monthly report handles both. The dental clinic and its figures are fictional. Download the full report as a PDF without signing up.",
   primaryKeyword: "sample seo report",
   eyebrow: "Example report",
-  print: "Save as PDF",
+  download: "Download the sample PDF",
   ctaTitle: "Build a report for your own client",
   ctaText:
     "Choose a site and month to fill in the Search Console figures. Add your own summary of the work and the next steps. You can export a PDF or schedule a monthly email. White-label branding is included in Agency and available as a paid add-on.",
@@ -49,11 +50,11 @@ export const SAMPLE_REPORT_EL: SampleReportMeta = {
   title: "Δείγμα μηνιαίας αναφοράς SEO για πελάτη",
   seoTitle: "Δείγμα αναφοράς SEO (μηνιαίο, σε PDF)",
   description:
-    "Δείτε ένα πλήρες δείγμα μηνιαίας αναφοράς SEO: σύνοψη, KPIs, κλικ, θέσεις, κορυφαίες αναζητήσεις, εργασίες και επόμενα βήματα. Αποθηκεύστε το ως PDF.",
-  lead: "Πώς εξηγείτε σε έναν πελάτη ότι τα συνολικά κλικ αυξήθηκαν αλλά μια σημαντική σελίδα έχασε επισκέψεις; Δείτε πώς παρουσιάζονται και τα δύο σε μια μηνιαία αναφορά. Το οδοντιατρείο και τα στοιχεία είναι υποθετικά. Μπορείτε να αποθηκεύσετε το δείγμα σε PDF.",
+    "Δείτε ένα πλήρες δείγμα μηνιαίας αναφοράς SEO: σύνοψη, KPIs, κλικ, θέσεις, κορυφαίες αναζητήσεις, εργασίες και επόμενα βήματα. Κατεβάστε το PDF χωρίς εγγραφή.",
+  lead: "Πώς εξηγείτε σε έναν πελάτη ότι τα συνολικά κλικ αυξήθηκαν αλλά μια σημαντική σελίδα έχασε επισκέψεις; Δείτε πώς παρουσιάζονται και τα δύο σε μια μηνιαία αναφορά. Το οδοντιατρείο και τα στοιχεία είναι υποθετικά. Κατεβάστε ολόκληρη την αναφορά σε PDF χωρίς εγγραφή.",
   primaryKeyword: "δείγμα αναφοράς seo",
   eyebrow: "Παράδειγμα αναφοράς",
-  print: "Αποθήκευση ως PDF",
+  download: "Κατεβάστε το δείγμα PDF",
   ctaTitle: "Ετοιμάστε μια αναφορά για τον δικό σας πελάτη",
   ctaText:
     "Επιλέξτε ιστοσελίδα και μήνα για να συμπληρωθούν τα στοιχεία από το Search Console. Προσθέστε τι δουλειά κάνατε και τι προτείνετε για τον επόμενο μήνα. Μπορείτε να κατεβάσετε την αναφορά σε PDF ή να προγραμματίσετε την αποστολή της. Η χρήση του δικού σας λογότυπου περιλαμβάνεται στο Agency και διατίθεται ως πρόσθετη επιλογή επί πληρωμή.",
@@ -119,7 +120,7 @@ export const SAMPLE_REPORT_BLOCKS: ReadonlyArray<Block> = [
     type: "faq",
     items: [
       { q: "What should a monthly SEO report include?", a: "A short written summary, non-branded clicks and leads compared with last month and last year, a 13-month clicks trend, the ranking spread, top queries and pages, wins and losses with reasons, the work completed, sized opportunities and next month's priorities." },
-      { q: "Can I download this sample SEO report as a PDF?", a: "Yes. Use the Save as PDF button above the report and choose Save as PDF in your browser's print dialog. The layout is built to print on A4 and Letter." },
+      { q: "Can I download this sample SEO report as a PDF?", a: "Yes. Choose Download the sample PDF above the report. The English file opens without an account and includes the report for the fictional dental practice." },
       { q: "Are the numbers in the sample real?", a: "No. Northside Dental is an invented clinic and every figure is sample data. The structure and the sections are the ones AnotherSEOGuru App builds from a real Search Console property." },
       { q: "How long should an SEO report be?", a: "Long enough to answer what happened, why and what is next. For most clients that is one page of summary and KPIs plus three to six supporting sections. Remove any section that has not changed a decision in three months." },
       { q: "Is there a free SEO report generator?", a: "AnotherSEOGuru App builds this report from Search Console data and its Search Console reports cost no credits. You can try it on sample data in the live demo without signing up." },
@@ -168,7 +169,7 @@ export const SAMPLE_REPORT_BLOCKS_EL: ReadonlyArray<Block> = [
     type: "faq",
     items: [
       { q: "Τι πρέπει να περιέχει μια μηνιαία αναφορά SEO;", a: "Σύντομη γραπτή σύνοψη, κλικ χωρίς επωνυμία και αιτήματα σε σύγκριση με τον προηγούμενο μήνα και πέρσι, εξέλιξη 13 μηνών, κατανομή θέσεων, κορυφαίες αναζητήσεις και σελίδες, κέρδη και απώλειες με αιτίες, εργασίες, ευκαιρίες και επόμενα βήματα." },
-      { q: "Μπορώ να κατεβάσω το δείγμα ως PDF;", a: "Ναι. Πατήστε «Αποθήκευση ως PDF» πάνω από την αναφορά και επιλέξτε αποθήκευση ως PDF στο παράθυρο εκτύπωσης." },
+      { q: "Μπορώ να κατεβάσω το δείγμα ως PDF;", a: "Ναι. Πατήστε «Κατεβάστε το δείγμα PDF» πάνω από την αναφορά. Θα πάρετε την ελληνική αναφορά για το υποθετικό οδοντιατρείο, χωρίς εγγραφή." },
       { q: "Είναι πραγματικά τα νούμερα;", a: "Όχι. Η Northside Dental είναι φανταστική και όλα τα νούμερα είναι δείγμα. Η δομή είναι αυτή που φτιάχνει το AnotherSEOGuru App από πραγματικό Search Console." },
     ],
   },
