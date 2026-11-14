@@ -11,6 +11,7 @@ import { FOUNDER_YEARS, PROJECTS_DELIVERED } from "@/data/founder";
 import { MARKET_COUNT, RESPONSE_HOURS } from "@/data/company-facts";
 import { WHATSAPP_HREF } from "@/lib/contact-info";
 import { cn } from "@/lib/cn";
+import { AGENCY_ESHOP_HREF, AGENCY_WEBSITE_HREF, migratedAgencyHref } from "@/lib/site-split";
 import { localizedPath, type SiteLocale } from "@/lib/i18n/locale";
 import { generateFAQSchema } from "@/lib/seo/schema";
 
@@ -493,14 +494,22 @@ export function WaveAgencyDoor({ locale }: { readonly locale: SiteLocale }) {
           </h2>
           <p className="mt-4 text-pretty text-[16px] leading-relaxed text-muted-foreground">
             {isEl
-              ? "Το AnotherSEOGuru App είναι το λογισμικό που χρησιμοποιεί καθημερινά η ομάδα SEO του AnotherSEOGuru. Αν προτιμάτε να αναλάβουμε εμείς τις διορθώσεις, ξεκινήστε με έναν δωρεάν έλεγχο: βλέπετε τα προβλήματα, τι διορθώνεται πρώτο και σταθερή τιμή, πριν δεσμευτείτε."
-              : "AnotherSEOGuru App is the software the AnotherSEOGuru SEO team uses every day. If you would rather we ship the fixes, start with a free audit: you get the problems, what to fix first and a fixed price before you commit."}
+              ? "Η ομάδα μας μπορεί να αναλάβει τις διορθώσεις που βρήκατε στο App. Αν ξεκινάτε κάτι καινούργιο, δείτε πώς δουλεύουμε στην "
+              : "Our team in Greece can take care of the fixes you find in the App. Starting something new? See how we "}
+            <Link href={AGENCY_WEBSITE_HREF} className="text-foreground underline decoration-primary/50 underline-offset-4 hover:text-primary">
+              {isEl ? "κατασκευή ιστοσελίδων" : "build business websites"}
+            </Link>
+            {isEl ? " και στην " : " and "}
+            <Link href={AGENCY_ESHOP_HREF} className="text-foreground underline decoration-primary/50 underline-offset-4 hover:text-primary">
+              {isEl ? "κατασκευή e-shop με WooCommerce" : "set up WooCommerce stores"}
+            </Link>
+            {isEl ? "." : ". Both service guides are in Greek."}
           </p>
         </div>
         <ul className="grid min-w-0 gap-3">
           {links.map((item) => (
             <li key={item.href}>
-              <Link href={item.href} className="flex items-center justify-between gap-4 rounded-[22px] border border-hairline bg-surface/70 px-5 py-4 transition-colors hover:border-primary/40">
+              <Link href={migratedAgencyHref(item.href)} className="flex items-center justify-between gap-4 rounded-[22px] border border-hairline bg-surface/70 px-5 py-4 transition-colors hover:border-primary/40">
                 <span className="min-w-0">
                   <span className="block font-semibold text-foreground">{item.label}</span>
                   <span className="block text-[13px] text-muted-foreground">{item.text}</span>

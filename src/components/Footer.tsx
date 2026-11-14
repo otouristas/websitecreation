@@ -12,7 +12,7 @@ import { getFooterDictionary } from "@/lib/i18n/get-dictionary";
 import { localizedPath, siteLocaleFromPath, stripLocalePrefix, type SiteLocale } from "@/lib/i18n/locale";
 import { CONTACT_EMAIL, PHONE_DISPLAY, WHATSAPP_HREF } from "@/lib/contact-info";
 import { trackCtaClick } from "@/lib/analytics";
-import { AGENCY_AUDIT_HREF, AGENCY_HOME_HREF, AGENCY_PRICING_HREF, PRODUCT_ORIGIN, isAgencyPathname, migratedAgencyHref } from "@/lib/site-split";
+import { AGENCY_AUDIT_HREF, AGENCY_ESHOP_HREF, AGENCY_WEBSITE_HREF, AGENCY_HOME_HREF, AGENCY_PRICING_HREF, PRODUCT_ORIGIN, isAgencyPathname, migratedAgencyHref } from "@/lib/site-split";
 
 /** Official SVGs from https://github.com/datatrans/payment-logos (CC-BY-SA-4.0) */
 const PAYMENT_LOGOS = [
@@ -238,15 +238,21 @@ function footerColumns(locale: SiteLocale, agency: boolean): readonly FooterColu
   }
 
   // The product site: the agency is one column of doors into the Greek pages.
+  const websiteServices: FooterLink[] = [
+    { label: isEl ? "Κατασκευή ιστοσελίδων" : "Website development in Greece", href: AGENCY_WEBSITE_HREF },
+    { label: isEl ? "Κατασκευή e-shop με WooCommerce" : "WooCommerce store development", href: AGENCY_ESHOP_HREF },
+  ];
   const doneForYou: FooterLink[] = isEl
     ? [
         { label: "Ιστοσελίδα και SEO από εμάς", href: AGENCY_HOME_HREF },
+        ...websiteServices,
         { label: "Τιμές υπηρεσιών", href: AGENCY_PRICING_HREF },
         { label: "Δωρεάν έλεγχος ιστοσελίδας", href: AGENCY_AUDIT_HREF },
         { label: t.work, href: migratedAgencyHref("/el/work") },
       ]
     : [
         { label: "Websites & SEO in Greece", href: AGENCY_HOME_HREF },
+        ...websiteServices,
         { label: "Free website audit (Greek)", href: AGENCY_AUDIT_HREF },
         { label: "Case studies", href: migratedAgencyHref("/el/work") },
       ];
