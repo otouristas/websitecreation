@@ -33,14 +33,12 @@ ${urls
 }
 
 export function buildSitemapIndexXml(sitemapLocs: string[]): string {
-  const lastmod = GENERATED_CONTENT_UPDATED;
   return `<?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${sitemapLocs
   .map(
     (loc) => `  <sitemap>
     <loc>${escapeXml(loc)}</loc>
-    <lastmod>${lastmod}</lastmod>
   </sitemap>`,
   )
   .join('\n')}

@@ -8,7 +8,7 @@ import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
 import { GENERATED_CONTENT_UPDATED } from '@/lib/seo/content-dates';
 import { consultantPath } from '@/data/founder';
 import { helpContent } from '@/data/help';
-import { OPPORTUNITY_FINDER, RESOURCE_ARTICLES } from '@/data/resources';
+import { OPPORTUNITY_FINDER, articlesFor } from '@/data/resources';
 import { allTerms } from '@/lib/docs/glossary';
 import { PLACE_PAGES } from '@/data/place-seo';
 import { WEBSITE_REGION_PAGES } from '@/data/website-regions';
@@ -20,6 +20,10 @@ import { englishAgencyRedirect, greekAgencyMoveRedirect } from '@/lib/site-split
 const BASE_URL = 'https://anotherseoguru.com';
 const LOCALES: SiteLocale[] = ['en', 'el'];
 
+// The bilingual launch changed these pages on Nov 14. Other pages keep their own dates.
+const NOVEMBER_PRODUCT_UPDATES = new Set(['/', '/pricing', '/platform/white-label-reports', '/resources/sample-seo-report', '/compare/agencyanalytics']);
+
+
 function localeUrl(locale: SiteLocale, path: string) {
   return `${BASE_URL}${localizedPath(locale, path)}`;
 }
@@ -30,7 +34,7 @@ function forBothLocales(
 ): MetadataRoute.Sitemap {
   return LOCALES.map((locale) => ({
     url: localeUrl(locale, path),
-    lastModified: opts.lastModified ?? new Date(GENERATED_CONTENT_UPDATED),
+    lastModified: opts.lastModified ?? new Date(NOVEMBER_PRODUCT_UPDATES.has(path) ? '2026-11-14' : GENERATED_CONTENT_UPDATED),
     changeFrequency: opts.changeFrequency ?? 'weekly',
     priority: opts.priority ?? 0.8,
   }));
@@ -134,17 +138,21 @@ export function allSitemapEntries(): MetadataRoute.Sitemap {
     { path: '/resources', priority: 0.88 },
     { path: '/resources/search-optimization-layers', priority: 0.86, changeFrequency: 'monthly' as const },
     { path: '/resources/ai-search-page-anatomy', priority: 0.86, changeFrequency: 'monthly' as const },
-    ...RESOURCE_ARTICLES.map((a) => ({
-      path: `/resources/${a.slug}`,
-      priority: a.kind === 'pillar' ? 0.86 : 0.8,
-      changeFrequency: 'monthly' as const,
-    })),
     { path: `/resources/${OPPORTUNITY_FINDER.slug}`, priority: 0.86, changeFrequency: 'monthly' as const },
     { path: '/resources/sample-seo-report', priority: 0.86, changeFrequency: 'monthly' as const },
     { path: '/tools', priority: 0.84 },
     // /tools/[slug] pages are noindex (the tool runs in the app), so they stay out of the sitemap.
     { path: '/compare', priority: 0.86, changeFrequency: 'monthly' as const },
   ];
+
+  const resourcePages = LOCALES.flatMap((locale) =>
+    articlesFor(locale).map((article) => ({
+      url: localeUrl(locale, `/resources/${article.slug}`),
+      lastModified: new Date(article.updated),
+      changeFrequency: 'monthly' as const,
+      priority: article.kind === 'pillar' ? 0.86 : 0.8,
+    })),
+  );
 
   const staticPages = [
     ...bilingualPaths.flatMap(({ path, priority, changeFrequency }) =>
@@ -246,6 +254,7 @@ export function allSitemapEntries(): MetadataRoute.Sitemap {
   );
 
   const all = [...staticPages,
+    ...resourcePages,
     ...placePages,
     ...consultantPages,
     ...managedPages,

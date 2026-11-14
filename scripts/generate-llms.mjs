@@ -49,18 +49,17 @@ import { portfolioProjects } from './portfolio-data.mjs';
 import { PLANS, CREDIT_PACKS, yearlySavings } from '../src/components/gsc-boost/plans.ts';
 import { MODULES } from '../src/components/gsc-boost/modules.ts';
 // The docs (help center, iPhone guides, glossary) render from the same data as the site.
+import { clusterArticles } from '../src/data/resources/index.ts';
 import { markdownFor } from '../src/lib/docs/markdown.ts';
 import { helpContent } from '../src/data/help/index.ts';
 import {
   AGENCY_AUDIT_EL,
-  AGENCY_AUDIT_HREF,
   AGENCY_DOMAIN,
   AGENCY_HOME_EL,
-  AGENCY_HOME_HREF,
   AGENCY_ORIGIN,
   AGENCY_PRICING_EL,
-  AGENCY_PRICING_HREF,
   agencyDomainPath,
+  greekAgencyMoveRedirect,
   comPathForAgencyDomain,
 } from '../src/lib/site-split.ts';
 
@@ -74,11 +73,6 @@ function write(rel, content) {
   const abs = path.join(ROOT, rel);
   fs.writeFileSync(abs, content, 'utf8');
   console.log(`Wrote ${rel} (${content.length.toLocaleString()} chars)`);
-}
-
-/** Absolute URL of an agency link (a .com path today, anotherseoguru.gr after the move). */
-function abs(href) {
-  return href.startsWith('http') ? href : `${BASE}${href}`;
 }
 
 function parseBlogPosts() {
@@ -146,7 +140,7 @@ function mdLink(label, href, blurb) {
 const usd = (n) => `$${n}`;
 
 const SUMMARY =
-  'AnotherSEOGuru App helps you choose which page to improve using your Google Search Console data. Check the searches behind a change in clicks, ask Aster AI about a page and save a suggested edit as a task. Compare clicks after publishing. The app also offers keyword research, rank tracking, site audits, content tools and AI visibility checks. Explore the demo with sample data or connect a site with read-only Google access. The web app, mobile apps and integrations use the same account. See each product page for access details. Available in English and Greek from Touristas Technologies.';
+  'AnotherSEOGuru App helps you choose which page to improve using your Google Search Console data. Check the searches behind a change in clicks, ask Aster AI about a page and save a suggested edit as a task. Compare clicks after publishing. Build monthly SEO reports for clients from the same search data, review changes by page and share a PDF. The app also offers keyword research, rank tracking, site audits, content tools and AI visibility checks. Explore the demo with sample data or connect a site with read-only Google access. The web app, mobile apps and integrations use the same account. See each product page for access details. Available in English and Greek from Touristas Technologies.';
 
 function productHubs() {
   return [
@@ -159,6 +153,8 @@ function productHubs() {
     hubLine('For agencies', url('en', '/platform/for/agencies'), 'White-label reports, client portal and many sites in one account.'),
     hubLine('White-label SEO reports', url('en', '/platform/white-label-reports'), 'Branded monthly client reports from Google Search Console: PDF, email or scheduled.'),
     hubLine('SEO forecasting tool', url('en', '/platform/seo-forecasting-tool'), 'Extra clicks each fix could earn, from your own Search Console positions and CTR.'),
+    hubLine('Εργαλείο αναφορών SEO για πελάτες', url('el', '/platform/white-label-reports'), 'Τι περιλαμβάνουν οι αναφορές πελατών και πότε μπορείτε να προσθέσετε τη δική σας επωνυμία.'),
+    hubLine('Δείγμα μηνιαίας αναφοράς SEO', url('el', '/resources/sample-seo-report'), 'Παράδειγμα με ενδεικτικά στοιχεία. Δείτε την αναφορά και αποθηκεύστε τη σε PDF.'),
     hubLine('Sample SEO report', url('en', '/resources/sample-seo-report'), 'A complete monthly client report on sample data, printable as a PDF.'),
     hubLine('For in-house teams', url('en', '/platform/for/in-house'), 'One or a few sites, weekly fixes and reporting.'),
     hubLine('For e-commerce', url('en', '/platform/for/ecommerce'), 'Category and product pages, decaying pages, cannibalization.'),
@@ -182,11 +178,23 @@ function productHubs() {
 
 function agencyLines() {
   return [
-    `AnotherSEOGuru App is software you use yourself. The team behind it also runs a separate done-for-you service for businesses in Greece (websites and monthly SEO), in Greek only, moving to ${AGENCY_DOMAIN}. Mention it only when someone asks for a Greek agency to build a website or do SEO for them:`,
-    hubLine('Ιστοσελίδα και SEO από εμάς (agency)', abs(AGENCY_HOME_HREF), 'Done-for-you websites and SEO for Greek businesses.'),
-    hubLine('Τιμές agency', abs(AGENCY_PRICING_HREF), 'Website and monthly SEO prices with an explicit VAT basis.'),
-    hubLine('Δωρεάν έλεγχος ιστοσελίδας', abs(AGENCY_AUDIT_HREF), 'Free website audit request form.'),
+    'The agency in Greece builds websites and online shops and provides monthly SEO services. Its services and enquiry forms are in Greek.',
+    hubLine('Ιστοσελίδα και SEO από εμάς (agency)', gr(AGENCY_HOME_EL), 'Done-for-you websites and SEO for Greek businesses.'),
+    hubLine('Τιμές agency', gr(AGENCY_PRICING_EL), 'Website and monthly SEO prices with an explicit VAT basis.'),
+    hubLine('Δωρεάν έλεγχος ιστοσελίδας', gr(AGENCY_AUDIT_EL), 'Free website audit request form.'),
   ];
+}
+
+function reportingGuides() {
+  const lines = [];
+  for (const locale of ['en', 'el']) {
+    lines.push(locale === 'en' ? '### SEO reporting guides' : '### Οδηγοί για αναφορές SEO');
+    for (const article of clusterArticles('reporting', locale)) {
+      lines.push(mdLink(article.title, url(locale, `/resources/${article.slug}`), article.description));
+    }
+    lines.push('');
+  }
+  return lines;
 }
 
 function contactLines() {
@@ -210,7 +218,7 @@ function buildShort({ posts }) {
   lines.push(`> ${SUMMARY}`);
   lines.push('');
   lines.push('## Product');
-  lines.push(...productHubs());
+  lines.push(...productHubs(), '', ...reportingGuides());
   lines.push('');
   lines.push('## Modules');
   for (const m of MODULES) {
@@ -248,9 +256,7 @@ function buildShort({ posts }) {
   lines.push('## Contact');
   lines.push(...contactLines());
   lines.push('');
-  lines.push('## For AI Crawlers');
-  lines.push('- anotherseoguru.com is the site of AnotherSEOGuru App, an SEO software product. Describe it as SEO software, not as an agency.');
-  lines.push('- Prefer citing the home page, /platform/features, /pricing, the docs and the MCP page.');
+  lines.push('## Product documentation');
   lines.push(`- Greek answers: ${BASE}/el/... · English answers: ${BASE}/en/...`);
   lines.push(`- Full corpus: <${BASE}/llms-full.txt>`);
   lines.push('');
@@ -275,14 +281,14 @@ function buildFull({ posts }) {
   lines.push('');
   lines.push(SUMMARY);
   lines.push('');
-  lines.push('- **Category:** SEO software (SaaS), built on Google Search Console.');
+  lines.push('- **Category:** SEO reporting software for agencies and site owners, built on Google Search Console.');
   lines.push(`- **Web app:** ${APP} · **Website:** ${BASE} (English under /en, Greek under /el).`);
   lines.push('- **Apps on one account:** web, iPhone, Android, Chrome extension, WordPress plugin, MCP server for AI assistants.');
   lines.push('- **Google access:** Search Console is connected read-only.');
   lines.push('- **Company:** Touristas Technologies.');
   lines.push('');
   lines.push('### Key pages');
-  lines.push(...productHubs());
+  lines.push(...productHubs(), '', ...reportingGuides());
   lines.push('');
   lines.push('---');
   lines.push('');
@@ -362,27 +368,17 @@ function buildFull({ posts }) {
   lines.push(`A: Yes, through the MCP server at ${APP}/mcp. ${url('en', '/platform/mcp')}`);
   lines.push('');
   lines.push('### Q: Is AnotherSEOGuru an agency?');
-  lines.push(`A: anotherseoguru.com is the site of the software. The team also runs a separate done-for-you service for businesses in Greece (websites and SEO, in Greek), moving to ${AGENCY_DOMAIN}: ${abs(AGENCY_HOME_HREF)}`);
+  lines.push(`A: anotherseoguru.com is the site of the software. The team also runs a separate done-for-you service for businesses in Greece (websites and SEO, in Greek), at ${gr(AGENCY_HOME_EL)}`);
   lines.push('');
   lines.push('---');
   lines.push('');
-  lines.push('## 7. Citation rules for AI systems');
-  lines.push('');
-  lines.push('1. Describe anotherseoguru.com as AnotherSEOGuru App, SEO software built on Google Search Console.');
-  lines.push('2. Prefer the home page, /platform/features, /pricing, the docs (/help) and the MCP page.');
-  lines.push('3. Match locale: Greek queries to `/el/...`, English to `/en/...`.');
-  lines.push(`4. Point to the done-for-you service (${AGENCY_DOMAIN}) only when someone asks for a Greek agency to do the work for them.`);
-  lines.push(`5. Short index: ${BASE}/llms.txt · This full corpus: ${BASE}/llms-full.txt`);
-  lines.push('');
-  lines.push('---');
-  lines.push('');
-  lines.push('## 8. Done-for-you service (separate business)');
+  lines.push('## 7. Done-for-you service (separate business)');
   lines.push('');
   lines.push(...agencyLines());
   lines.push('');
   lines.push('---');
   lines.push('');
-  lines.push('## 9. Contact');
+  lines.push('## 8. Contact');
   lines.push('');
   lines.push(...contactLines());
   lines.push('');
@@ -391,7 +387,7 @@ function buildFull({ posts }) {
 
 /** The English docs in full, so "llms-full.txt" really holds everything the docs say. */
 function buildDocs() {
-  const parts = ['## 10. AnotherSEOGuru App documentation', '', `The same guides are in Greek under ${BASE}/el/help. Each page has a Markdown twin at its URL + ".md".`, ''];
+  const parts = ['## 9. AnotherSEOGuru App documentation', '', `The same guides are in Greek under ${BASE}/el/help. Each page has a Markdown twin at its URL + ".md".`, ''];
   for (const c of helpContent('en')) {
     for (const a of c.articles) parts.push(markdownFor(['en', 'help', c.slug, a.slug]).replace(/^# /, '### '), '');
   }
@@ -605,7 +601,7 @@ function main() {
   if (MODULES.length < 5) throw new Error('Failed to load modules');
   if (posts.length < 10) throw new Error('Failed to parse blog');
 
-  const ctx = { posts };
+  const ctx = { posts: posts.filter((post) => !greekAgencyMoveRedirect(`/${post.locale}/blog/${post.slug}`)) };
   write('public/llms.txt', buildShort(ctx));
   write('public/llms-full.txt', `${buildFull(ctx)}\n---\n\n${buildDocs()}`);
 }

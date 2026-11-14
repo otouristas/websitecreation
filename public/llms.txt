@@ -6,7 +6,7 @@ Sitemap: https://anotherseoguru.com/sitemap.xml
 # AnotherSEOGuru App
 Source: https://anotherseoguru.com
 
-> AnotherSEOGuru App helps you choose which page to improve using your Google Search Console data. Check the searches behind a change in clicks, ask Aster AI about a page and save a suggested edit as a task. Compare clicks after publishing. The app also offers keyword research, rank tracking, site audits, content tools and AI visibility checks. Explore the demo with sample data or connect a site with read-only Google access. The web app, mobile apps and integrations use the same account. See each product page for access details. Available in English and Greek from Touristas Technologies.
+> AnotherSEOGuru App helps you choose which page to improve using your Google Search Console data. Check the searches behind a change in clicks, ask Aster AI about a page and save a suggested edit as a task. Compare clicks after publishing. Build monthly SEO reports for clients from the same search data, review changes by page and share a PDF. The app also offers keyword research, rank tracking, site audits, content tools and AI visibility checks. Explore the demo with sample data or connect a site with read-only Google access. The web app, mobile apps and integrations use the same account. See each product page for access details. Available in English and Greek from Touristas Technologies.
 
 ## Product
 - **Home (English)** (<https://anotherseoguru.com/en>) - What AnotherSEOGuru App does, live demo and free sign-up.
@@ -18,6 +18,8 @@ Source: https://anotherseoguru.com
 - **For agencies** (<https://anotherseoguru.com/en/platform/for/agencies>) - White-label reports, client portal and many sites in one account.
 - **White-label SEO reports** (<https://anotherseoguru.com/en/platform/white-label-reports>) - Branded monthly client reports from Google Search Console: PDF, email or scheduled.
 - **SEO forecasting tool** (<https://anotherseoguru.com/en/platform/seo-forecasting-tool>) - Extra clicks each fix could earn, from your own Search Console positions and CTR.
+- **Εργαλείο αναφορών SEO για πελάτες** (<https://anotherseoguru.com/el/platform/white-label-reports>) - Τι περιλαμβάνουν οι αναφορές πελατών και πότε μπορείτε να προσθέσετε τη δική σας επωνυμία.
+- **Δείγμα μηνιαίας αναφοράς SEO** (<https://anotherseoguru.com/el/resources/sample-seo-report>) - Παράδειγμα με ενδεικτικά στοιχεία. Δείτε την αναφορά και αποθηκεύστε τη σε PDF.
 - **Sample SEO report** (<https://anotherseoguru.com/en/resources/sample-seo-report>) - A complete monthly client report on sample data, printable as a PDF.
 - **For in-house teams** (<https://anotherseoguru.com/en/platform/for/in-house>) - One or a few sites, weekly fixes and reporting.
 - **For e-commerce** (<https://anotherseoguru.com/en/platform/for/ecommerce>) - Category and product pages, decaying pages, cannibalization.
@@ -36,6 +38,25 @@ Source: https://anotherseoguru.com
 - **SEO guides** (<https://anotherseoguru.com/en/seo-guides>) - Guides on keywords, on-page, technical SEO, links and local search (EN + EL).
 - **Blog** (<https://anotherseoguru.com/en/blog>) - SEO, Search Console and GEO/AEO articles (EN + EL).
 - **Sign up** (<https://app.anotherseoguru.com/signup>) - Free sign-up with Google; connects Search Console read-only.
+
+### SEO reporting guides
+- [SEO reporting: what to include, how often, and how to make clients read it](https://anotherseoguru.com/en/resources/seo-reporting) - How to build SEO reports clients and managers actually read: the three layers of a report, the metrics that belong in each, cadence, attribution of work to results and what to leave out.
+- [SEO report template: a monthly structure with a filled-in example](https://anotherseoguru.com/en/resources/seo-report-template) - A free monthly SEO report template: seven sections in the order clients read them, the question each answers, where the data comes from, and a filled-in example to copy.
+- [SEO KPIs: the metrics worth tracking and how to calculate them](https://anotherseoguru.com/en/resources/seo-kpis) - Twelve SEO KPIs in four levels, from business results to technical health, with where each comes from, how to calculate it and the vanity metrics to drop.
+- [SEO dashboard: what to show, how to lay it out and where to build it](https://anotherseoguru.com/en/resources/seo-dashboard) - How to build an SEO dashboard people use: what to show for each reader, a widget-by-widget layout, Looker Studio vs a spreadsheet vs an app, and a checklist.
+- [SEO reporting tools for client work: which one fits your reports?](https://anotherseoguru.com/en/resources/seo-reporting-tools) - Compare SEO reporting tools for a custom dashboard, a multi-channel client report or a Search Console PDF. See a complete example and test one real client month.
+- [White-label SEO reports: what to put in your client’s monthly PDF](https://anotherseoguru.com/en/resources/white-label-seo-reports) - See a white-label SEO report for a fictional client. Download the monthly PDF, learn what to brand and check Search Console and GA4 figures before sending it.
+- [SEO proposal template: a section-by-section structure, pricing and follow-up](https://anotherseoguru.com/en/resources/seo-proposal-template) - A free SEO proposal template with each section explained, how to price it, how to use the prospect's Search Console data and audit, and how to follow up.
+
+### Οδηγοί για αναφορές SEO
+- [Αναφορές SEO: τι να περιλαμβάνουν, πόσο συχνά και πώς να τις διαβάζουν οι πελάτες](https://anotherseoguru.com/el/resources/seo-reporting) - Πώς φτιάχνετε αναφορές SEO που διαβάζουν πελάτες και διοίκηση: τρία επίπεδα, οι δείκτες κάθε επιπέδου, η συχνότητα και η σύνδεση δουλειάς με αποτέλεσμα.
+- [Πρότυπο αναφοράς SEO: μηνιαία δομή με συμπληρωμένο παράδειγμα](https://anotherseoguru.com/el/resources/seo-report-template) - Δωρεάν μηνιαίο πρότυπο αναφοράς SEO: επτά ενότητες με τη σειρά που τις διαβάζουν οι πελάτες, η ερώτηση καθεμίας και συμπληρωμένο παράδειγμα.
+- [KPI SEO: οι δείκτες που αξίζει να παρακολουθείτε και πώς υπολογίζονται](https://anotherseoguru.com/el/resources/seo-kpis) - Δώδεκα KPI SEO σε τέσσερα επίπεδα, από το αποτέλεσμα της επιχείρησης έως την τεχνική υγεία, με πηγή, υπολογισμό και δείκτες που δεν αξίζει να κρατάτε.
+- [Dashboard SEO: τι να δείχνει, πώς να το διατάξετε και πού να το φτιάξετε](https://anotherseoguru.com/el/resources/seo-dashboard) - Πώς φτιάχνετε dashboard SEO που το ανοίγουν: τι δείχνετε σε κάθε αναγνώστη, διάταξη στοιχείο προς στοιχείο και επιλογή Looker Studio, φύλλου ή εφαρμογής.
+- [Εργαλεία αναφορών SEO για πελάτες: ποιο ταιριάζει στη δουλειά σας;](https://anotherseoguru.com/el/resources/seo-reporting-tools) - Συγκρίνετε εργαλεία αναφορών SEO για πίνακες, αναφορές πολλών καναλιών και PDF από το Search Console. Δείτε παράδειγμα και τι να ελέγξετε στη δοκιμή.
+- [White-label αναφορές SEO: τι να βάλετε στο μηνιαίο PDF του πελάτη](https://anotherseoguru.com/el/resources/white-label-seo-reports) - Δείτε μια μηνιαία αναφορά SEO με το λογότυπο του γραφείου σας. Κατεβάστε το δείγμα PDF και ελέγξτε τα κλικ και τα αιτήματα πριν το στείλετε σε πελάτη.
+- [Πρότυπο πρότασης SEO: δομή ενότητα προς ενότητα, αμοιβή και επόμενη επικοινωνία](https://anotherseoguru.com/el/resources/seo-proposal-template) - Δωρεάν πρότυπο πρότασης SEO, με κάθε ενότητα, πώς ορίζετε την αμοιβή, πώς χρησιμοποιείτε το Search Console του υποψήφιου και την επικοινωνία που ακολουθεί.
+
 
 ## Modules
 - **Opportunities** (<https://anotherseoguru.com/en/platform/features#opportunities>) - Ranked fixes with an estimated click impact for each.
@@ -108,15 +129,10 @@ Source: https://anotherseoguru.com
 - [iPhone app: Widgets and Siri](https://anotherseoguru.com/en/help/iphone-app/widgets.md) - Put your clicks, all your sites and this week's fixes on the Home and Lock Screen, and ask Siri how your site is doing.
 - [iPhone app: iPhone app FAQ](https://anotherseoguru.com/en/help/iphone-app/iphone-faq.md) - Quick answers about the iPhone beta, plans and credits, languages, data access and support.
 
-## Blog & Guides (92 posts)
-- [Black Month: ίδια τιμή, δώρο και ο ΦΠΑ](https://anotherseoguru.com/el/blog/black-month-istoselides-seo-2026) - Black Month: ιστοσελίδα από €1.000 + ΦΠΑ σε €599 με ΦΠΑ. SEO από €350 + ΦΠΑ σε €149/μήνα με ΦΠΑ σε όλο το εξάμηνο. Έως 30/11/2026.
-- [Εταιρεία Κατασκευής Ιστοσελίδων: Πώς να Επιλέξετε (12 Ερωτήσεις)](https://anotherseoguru.com/el/blog/etaireia-kataskevis-istoselidon) - Πώς διαλέγετε εταιρεία κατασκευής ιστοσελίδων: 12 ερωτήσεις πριν υπογράψετε, τι πρέπει να γράφει η προσφορά, ποιος κρατά τον κωδικό και πώς ελέγχετε το SEO.
+## Blog & Guides (67 posts)
 - [Τι Είναι το AEO (Answer Engine Optimization); Οδηγός 2026](https://anotherseoguru.com/el/blog/ti-einai-to-aeo) - Τι είναι το AEO, πώς διαφέρει από το SEO και πώς γράφετε σελίδες που επιλέγονται ως απάντηση από τη Google, το ChatGPT και τους φωνητικούς βοηθούς.
 - [Τι Είναι το GEO (Generative Engine Optimization); Οδηγός 2026](https://anotherseoguru.com/el/blog/ti-einai-to-geo) - Τι είναι το GEO, πώς διαλέγουν πηγές ο ChatGPT, το Gemini και οι AI απαντήσεις της Google, και τι κάνει μια ελληνική επιχείρηση για να αναφέρεται σε αυτές.
-- [Τοπικό SEO στην Αθήνα: Οδηγός για Γειτονιές και Google Maps](https://anotherseoguru.com/el/blog/topiko-seo-athina) - Πώς μια επιχείρηση στην Αθήνα βγαίνει στον χάρτη και στις πρώτες θέσεις της Google: σελίδες ανά γειτονιά, Google Business Profile, κριτικές και σύνδεσμοι.
-- [Τοπικό SEO στην Κρήτη: Ηράκλειο, Χανιά, Ρέθυμνο, Λασίθι](https://anotherseoguru.com/el/blog/topiko-seo-kriti) - Οδηγός τοπικού SEO για επιχειρήσεις στην Κρήτη: Google Business Profile, σελίδες ανά πόλη, κριτικές και σεζόν για Ηράκλειο, Χανιά, Ρέθυμνο και Λασίθι.
 - [Core Web Vitals: Οδηγός για LCP, INP και CLS (2026)](https://anotherseoguru.com/el/blog/core-web-vitals) - Core Web Vitals με απλά λόγια: τι μετρούν LCP, INP και CLS, ποια είναι τα όρια, πώς τα ελέγχετε και πώς τα διορθώνετε σε WordPress, βήμα προς βήμα.
-- [Δημιουργία Ιστοσελίδας: Οδηγός σε 10 Βήματα (2026)](https://anotherseoguru.com/el/blog/dimiourgia-istoselidas) - Δημιουργία ιστοσελίδας σε 10 βήματα: στόχος, domain, πλατφόρμα, περιεχόμενο, SEO, δημοσίευση και Search Console, με σύγκριση builder, WordPress και εταιρείας.
 - [Προώθηση Ιστοσελίδας: 12 Τρόποι που Αποδίδουν (2026)](https://anotherseoguru.com/el/blog/proothisi-istoselidas) - Προώθηση ιστοσελίδας με 12 τρόπους: SEO, Google Business Profile, διαφήμιση στο Google, περιεχόμενο, email και AI απαντήσεις, με κόστος και χρόνο ανά τρόπο.
 - [Πρώτη Σελίδα Google: Πώς να Βγείτε Πρώτοι (2026)](https://anotherseoguru.com/el/blog/proti-selida-google) - Πρώτη σελίδα Google: πώς βγαίνετε στο Map Pack, στα οργανικά αποτελέσματα και στο AI Overview, βήμα βήμα ανά αναζήτηση, και τι δεν μπορεί να εγγυηθεί κανείς.
 - [Schema Markup: Οδηγός JSON-LD για Ελληνικές Επιχειρήσεις](https://anotherseoguru.com/el/blog/schema-markup) - Schema markup στην πράξη: τι είναι τα structured data και το JSON-LD, ποιοι τύποι αξίζουν για ελληνικές επιχειρήσεις, παράδειγμα κώδικα και πώς το ελέγχετε.
@@ -127,11 +143,8 @@ Source: https://anotherseoguru.com
 - [Παράγοντες Κατάταξης Google: Τι Ισχύει](https://anotherseoguru.com/el/blog/paragontes-katataxis-google) - Ποιοι παράγοντες κατάταξης Google τεκμηριώνονται, ποιοι δημοφιλείς ισχυρισμοί διαψεύδονται και τι να διορθώσετε αντί για ψεύτικη λίστα.
 - [Website SEO Checklist (2026)](https://anotherseoguru.com/en/blog/seo-checklist) - A practical 2026 website SEO checklist for crawl, on-page, speed, internal links and local signals, with a sheet you can tick, download or print.
 - [21 SEO Strategies That Work in 2026](https://anotherseoguru.com/en/blog/seo-strategies) - Search engine optimization strategies for 2026: 21 practical tactics covering intent, technical health, content, links, local search and AI answers.
-- [Πώς Βάζω την Επιχείρησή μου στο Google Maps](https://anotherseoguru.com/el/blog/epixeirisi-sto-google-maps) - Πώς να βάλετε την επιχείρησή σας στο Google Maps βήμα βήμα, γιατί μπορεί να μην εμφανίζεται και πώς να ανεβείτε στον χάρτη με το Google Business Profile.
 - [Συμβουλές On-Page SEO και Checklist 2026](https://anotherseoguru.com/el/blog/on-page-seo-el) - Δώδεκα συμβουλές on-page SEO για τίτλους, επικεφαλίδες, κείμενο, εικόνες και εσωτερικούς συνδέσμους, με σύντομο checklist και παράδειγμα πριν και μετά.
-- [Πώς να Επιλέξετε SEO Agency: 10 Ερωτήσεις](https://anotherseoguru.com/el/blog/pos-na-epilexete-etaireia-seo) - Πώς να επιλέξετε εταιρεία SEO στην Ελλάδα: 10 ερωτήσεις πριν υπογράψετε, σημάδια κινδύνου και σύγκριση εταιρείας, freelancer και εσωτερικού συνεργάτη.
 - [Τι Είναι τα Backlinks και Πώς τα Αποκτάτε](https://anotherseoguru.com/el/blog/ti-einai-ta-backlinks) - Τι είναι τα backlinks, γιατί επηρεάζουν την κατάταξη στη Google και πώς αποκτάτε ποιοτικούς συνδέσμους από ελληνικά sites χωρίς ρίσκο ποινής.
-- [Τι Χρειάζεται για Eshop: Εφορία & Επιδότηση](https://anotherseoguru.com/el/blog/ti-xreiazetai-gia-eshop) - Τι χρειάζεται για να ανοίξετε eshop στην Ελλάδα: έναρξη στην εφορία, ΚΑΔ, πληρωμές, όροι χρήσης και ποιες επιδοτήσεις καλύπτουν το κόστος κατασκευής.
 - [Τα tags του Google AI Mode και τι τα τροφοδοτεί](https://anotherseoguru.com/el/blog/google-ai-mode-tags-el) - Τι φαίνεται να είναι τα tags εξόδου του AI Mode, γιατί ένα site δεν μπορεί να τα παράγει και τι πρέπει να δημοσιεύει μια σελίδα για να τα τροφοδοτήσει.
 - [Google AI Mode tags and what grounds them](https://anotherseoguru.com/en/blog/google-ai-mode-tags) - What AI Mode's leaked output tags appear to be, why a website cannot emit them, and what a page has to publish to fill one of those slots.
 - [How to Find and Check Website Backlinks](https://anotherseoguru.com/en/blog/backlink-checker) - How to find and check backlinks of any website, with Search Console for your site, free checkers for other domains, and a practical quality review.
@@ -149,41 +162,24 @@ Source: https://anotherseoguru.com
 - [Backlink Building Strategies & Emails](https://anotherseoguru.com/en/blog/link-building-guide) - Backlink building strategies you can run this month: a prospect sheet, three outreach email examples, realistic costs, and which tactics to refuse.
 - [Off-Page SEO Strategies](https://anotherseoguru.com/en/blog/off-page-seo) - Off-page SEO strategies for 2026: editorial links, digital PR, brand mentions and local reputation, with realistic costs, timelines and what to skip.
 - [On-Page SEO Tips: How to Optimize a Page That Ranks](https://anotherseoguru.com/en/blog/on-page-seo) - Work through these numbered on-page SEO tips for titles, headings, content, internal links and schema, plus a 2026 checklist with costs and timelines.
-- [Κόστος SEO 2026: Τιμές στην Ελλάδα](https://anotherseoguru.com/el/blog/poso-kostizei-to-seo) - Πόσο κοστίζει το SEO στην Ελλάδα το 2026: μηνιαίες τιμές ανά μέγεθος επιχείρησης, τι περιλαμβάνει ένα πακέτο και πότε το φθηνό SEO βγαίνει ακριβό.
 - [Content Optimization for SEO Guide](https://anotherseoguru.com/en/blog/seo-content-guide) - Content optimization for SEO: a six-step workflow, a before-and-after example, and how to rewrite titles, proof and links so a page matches intent.
 - [Τι Είναι το SEO και Πώς Λειτουργεί; Οδηγός 2026](https://anotherseoguru.com/el/blog/seo-gia-arxarious) - Τι είναι το SEO με απλά λόγια. Πώς κατατάσσει η Google, on-page, τεχνικό, off-page και τοπικό SEO, λέξεις-κλειδιά, κόστος και από πού ξεκινάτε.
-- [SEO Στρατηγική για Μικρές Επιχειρήσεις: Πλάνο 90 Ημερών](https://anotherseoguru.com/el/blog/seo-stratigiki-mikres-epicheiriseis) - SEO συμβουλές και στρατηγική για μικρές επιχειρήσεις στην Ελλάδα. Τι να κάνετε τις πρώτες 90 μέρες, κόστος, λάθη να αποφύγετε και πότε να προσλάβετε agency.
 - [Technical SEO Best Practices Guide](https://anotherseoguru.com/en/blog/technical-seo-guide) - Technical SEO best practices for crawl, indexation, Core Web Vitals, canonicals and schema, with costs and when an audit is worth it.
 - [Τεχνικό SEO: Βέλτιστες Πρακτικές](https://anotherseoguru.com/el/blog/techniko-seo) - Τι είναι το τεχνικό SEO και οι βέλτιστες πρακτικές για crawl, index, Core Web Vitals, schema, λάθη, κόστος και κατάταξη στη Google.
 - [What Is SEO? Search Engine Optimization Explained (2026)](https://anotherseoguru.com/en/blog/what-is-seo) - SEO is how you improve organic visibility in Google and AI answers. Learn how it works, the four types, best practices, costs and where to start.
-- [SEO για εστιατόρια και καφέ: από το Google Maps στην κράτηση](https://anotherseoguru.com/el/blog/seo-gia-estiatoria) - Τοπικό SEO για εστιατόρια, καφέ και μπαρ στην Ελλάδα. Google Business Profile, μενού σε HTML, κριτικές, κόστος και checklist για γεμάτα τραπέζια.
-- [SEO για οδοντιάτρους: πώς βρίσκουν οι ασθενείς το ιατρείο σας](https://anotherseoguru.com/el/blog/seo-gia-odontiatrous) - Στρατηγική SEO για οδοντιατρεία στην Ελλάδα. Τοπική προβολή, Google Business Profile, κριτικές, σελίδες υπηρεσιών, E-E-A-T και κόστος για νέα ραντεβού.
-- [Οδηγός Τοπικού SEO για τη Θεσσαλονίκη](https://anotherseoguru.com/el/blog/topiko-seo-thessaloniki) - Τοπικό SEO στη Θεσσαλονίκη για επιχειρήσεις που εξυπηρετούν συγκεκριμένες γειτονιές. Ελέγξτε την καταχώριση στο Google Maps και τις σελίδες υπηρεσιών σας.
-- [Μετάβαση Ιστοσελίδας χωρίς Απώλεια SEO](https://anotherseoguru.com/el/blog/anasxediasmos-istoselidas) - Μετάβαση ιστοσελίδας χωρίς απώλεια SEO: checklist για redirects, URLs, Search Console και ελέγχους μετά το launch, ώστε να μη χαθούν κατατάξεις και κίνηση.
 - [E-commerce Website Cost & Build Guide (2026)](https://anotherseoguru.com/en/blog/ecommerce-website-cost-guide) - What an e-shop costs to build in 2026, WooCommerce vs Shopify, and what to get right on payments, shipping, and SEO so your store sells from day one.
 - [Gym SEO: help nearby customers find a class](https://anotherseoguru.com/en/blog/gym-fitness-seo) - Local SEO for gyms, studios and personal trainers: win the Google map pack, rank per program and turn “gym near me” searches into new memberships.
 - [Hotel SEO for guests who want to book direct](https://anotherseoguru.com/en/blog/hotel-seo-guide) - A practical hotel SEO guide: cut OTA commissions, rank in Google and win direct bookings with technical SEO, destination content and AI search visibility.
 - [Hotel Website Design: Turn Visitors into Direct Bookings](https://anotherseoguru.com/en/blog/hotel-website-design) - What a hotel website needs in 2026: fast mobile UX, a booking engine, room pages, multilingual SEO and schema, to cut OTA commissions and win direct bookings.
 - [How Much Does a Website Cost in 2026? Full Pricing Guide](https://anotherseoguru.com/en/blog/how-much-does-a-website-cost) - What a website really costs in 2026: business sites, e-shops and hotel websites, plus the hidden costs of hosting, content and SEO. Transparent EUR pricing.
 - [How Much Does SEO Cost in 2026? Prices & Packages Explained](https://anotherseoguru.com/en/blog/how-much-does-seo-cost) - A clear breakdown of SEO pricing in 2026: monthly retainers, one-off audits, what packages include, and how to avoid the cheap-SEO trap. EUR pricing.
-- [Κατασκευή Eshop 2026: Κόστος & Τιμές](https://anotherseoguru.com/el/blog/kataskevi-eshop-odigos) - Πόσο κοστίζει ένα eshop το 2026: κόστος κατασκευής, πλατφόρμες, ετήσια έξοδα και αν αξίζει να φτιάξετε eshop μόνοι σας. Οδηγός με πραγματικά νούμερα.
 - [Law firm SEO: help clients find the right practice area](https://anotherseoguru.com/en/blog/law-firm-seo) - A practical SEO guide for law firms and attorneys: local targeting, practice-area pages, trust-building content and the technical basics that bring cases.
-- [Τιμές Κατασκευής Ιστοσελίδας 2026](https://anotherseoguru.com/el/blog/poso-kostizei-mia-istoselida) - Πόσο κοστίζει μια ιστοσελίδα στην Ελλάδα: κόστος κατασκευής ανά τύπο site, τι ανεβάζει την τιμή και τι πληρώνετε κάθε χρόνο μετά την παράδοση.
 - [Real estate SEO for agents and local listings](https://anotherseoguru.com/en/blog/real-estate-seo) - SEO for real estate agencies: rank for area searches, attract sellers who want an agent, and turn Google traffic into listings and buyer enquiries.
 - [SEO for Beginners: A 30-Day Plan](https://anotherseoguru.com/en/blog/seo-for-beginners) - SEO for beginners: how Google ranks pages, the four pillars, a 30-day starter plan, glossary links, and the fixes to make before you publish more.
-- [SEO για Μεσιτικά Γραφεία & Ακίνητα: Οδηγός 2026](https://anotherseoguru.com/el/blog/seo-gia-akinita) - Πώς τα μεσιτικά γραφεία κερδίζουν εντολές και αγοραστές από τη Google. Τοπικό SEO, σελίδες περιοχών, περιεχόμενο ιδιοκτητών, κόστος και checklist.
-- [SEO για Δικηγόρους & Δικηγορικά Γραφεία: Οδηγός 2026](https://anotherseoguru.com/el/blog/seo-gia-dikigorous) - Πώς ένα δικηγορικό γραφείο κερδίζει υποθέσεις από τη Google. SEO για δικηγόρους στην Ελλάδα: τοπική στόχευση, περιεχόμενο, δεοντολογία και κόστος.
-- [SEO για γυμναστήρια: πώς σας βρίσκουν οι πελάτες της περιοχής σας](https://anotherseoguru.com/el/blog/seo-gia-gymnastiria) - Στρατηγική SEO για γυμναστήρια και στούντιο στην Ελλάδα. Τοπική προβολή, Google Maps, προγράμματα, κριτικές, εποχικό πλάνο και κόστος εγγραφών.
-- [SEO για Ξενοδοχεία: Οδηγός για Άμεσες Κρατήσεις](https://anotherseoguru.com/el/blog/seo-gia-xenodoxeia) - SEO για ξενοδοχεία: πώς να κερδίσετε άμεσες κρατήσεις από τη Google, με τοπικό SEO, σελίδες δωματίων και περιεχόμενο για τον προορισμό σας.
-- [SEO ή Google Ads; Τι Συμφέρει το 2026](https://anotherseoguru.com/el/blog/seo-i-google-ads) - SEO ή Google Ads: κόστος, χρόνος και απόδοση σε σύγκριση, με παραδείγματα από ελληνικές επιχειρήσεις και πότε αξίζει να τρέχουν μαζί.
 - [SEO vs Google Ads: Which Is Right for Your Business in 2026?](https://anotherseoguru.com/en/blog/seo-vs-google-ads) - SEO or Google Ads? A clear comparison of cost, speed, ROI, common mistakes and when the 70/30 mix wins, so your budget goes where it actually pays.
 - [Web Hosting & Domain: A 2026 Buyer's Guide](https://anotherseoguru.com/en/blog/web-hosting-domain-guide) - How to choose hosting and a domain for your website: pricing, speed, security, and the mistakes that quietly cost you SEO rankings and credibility.
 - [Web Hosting & Domain στην Ελλάδα: Οδηγός Επιλογής 2026](https://anotherseoguru.com/el/blog/web-hosting-domain-odigos) - Πώς να επιλέξετε hosting και domain για την ιστοσελίδα σας. Τιμές, .gr ή .com, ταχύτητα, ασφάλεια και τα λάθη που κοστίζουν σε SEO και αξιοπιστία.
 - [Website Redesign Without Losing Your SEO](https://anotherseoguru.com/en/blog/website-redesign-guide) - When to redesign a website, what it costs, and how to do it with a safe SEO migration so you don't lose rankings and organic traffic.
-- [Σχεδιασμός Ιστοσελίδας Τουρισμού 2026: Τάσεις, SEO και UX](https://anotherseoguru.com/el/blog/sxediasmos-istoselidas-tourismos-2026) - Τι αλλάζει στον σχεδιασμό ιστοσελίδας τουρισμού το 2026. Τάσεις για direct bookings, ταχύτητα, mobile εμπειρία και AI βελτιστοποίηση.
-- [Τοπικό SEO στις Κυκλάδες: Οδηγός για Ξενοδοχεία και Rent-a-Car](https://anotherseoguru.com/el/blog/topiko-seo-kykladon) - Πώς να ξεχωρίσετε στο Google Maps και στην οργανική αναζήτηση στις Κυκλάδες. Οδηγός για Πάρο, Μύκονο, Σαντορίνη, Νάξο με GBP, NAP και location pages.
-- [Τι Πρέπει να Έχει η Ιστοσελίδα Ξενοδοχείου](https://anotherseoguru.com/el/blog/kataskevi-istoselidas-xenodoxeia) - Τι πρέπει να έχει μια ιστοσελίδα ξενοδοχείου το 2026: σελίδες δωματίων, booking engine, ταχύτητα, SEO και schema για περισσότερες άμεσες κρατήσεις.
-- [SEO Ιστοσελίδας Ενοικίασης Αυτοκινήτου: Οδηγός 2026](https://anotherseoguru.com/el/blog/istoselida-enikiasis-autokinitou-seo) - Πώς να βελτιστοποιήσετε την ιστοσελίδα ενοικίασης αυτοκινήτου για τη Google: λέξεις-κλειδιά αεροδρομίων και λιμανιών, τοπικό SEO, κόστος και checklist.
 - [AI Chatbots στον Τουρισμό: 24/7 Κρατήσεις και AEO](https://anotherseoguru.com/el/blog/ai-chatbots-tourismos) - Πώς τα έξυπνα AI Chatbots μεταμορφώνουν την εξυπηρέτηση πελατών στον τουρισμό. Αυτοματοποίηση κρατήσεων, απαντήσεις σε FAQ και GEO/AEO ορατότητα.
 - [GEO, AEO & AI SEO: Global Playbook for 2026](https://anotherseoguru.com/en/blog/geo-aeo-global-seo-playbook) - Generative Engine Optimization (GEO), Answer Engine Optimization (AEO) and traditional SEO: how teams rank on Google, ChatGPT, Perplexity and Gemini.
 - [SEO Software, Web Design & Development Platform](https://anotherseoguru.com/en/blog/seo-web-design-development-platform) - How teams combine SEO tools, website design for rankings, and development best practices with AI search optimization (GEO/AEO) to grow revenue.
@@ -203,18 +199,16 @@ Source: https://anotherseoguru.com
 - [Medical SEO: The Ultimate Guide for Growing Your Practice](https://anotherseoguru.com/en/blog/medical-marketing) - SEO for doctors, surgeons and med spas: YMYL, E-E-A-T, local patient intent and compliance-friendly content patterns that earn trust and rankings.
 
 ## Done-for-you service (separate business)
-AnotherSEOGuru App is software you use yourself. The team behind it also runs a separate done-for-you service for businesses in Greece (websites and monthly SEO), in Greek only, moving to anotherseoguru.gr. Mention it only when someone asks for a Greek agency to build a website or do SEO for them:
-- **Ιστοσελίδα και SEO από εμάς (agency)** (<https://anotherseoguru.com/el/ypiresies>) - Done-for-you websites and SEO for Greek businesses.
-- **Τιμές agency** (<https://anotherseoguru.com/el/ypiresies/times>) - Website and monthly SEO prices with an explicit VAT basis.
-- **Δωρεάν έλεγχος ιστοσελίδας** (<https://anotherseoguru.com/el/get-started#free-audit>) - Free website audit request form.
+The agency in Greece builds websites and online shops and provides monthly SEO services. Its services and enquiry forms are in Greek.
+- **Ιστοσελίδα και SEO από εμάς (agency)** (<https://anotherseoguru.gr>) - Done-for-you websites and SEO for Greek businesses.
+- **Τιμές agency** (<https://anotherseoguru.gr/times>) - Website and monthly SEO prices with an explicit VAT basis.
+- **Δωρεάν έλεγχος ιστοσελίδας** (<https://anotherseoguru.gr/get-started#free-audit>) - Free website audit request form.
 
 ## Contact
 - Product support: anotherseoguru@gmail.com (Greek or English).
 - Contact page: https://anotherseoguru.com/en/contact
 - App: https://app.anotherseoguru.com · Status and sign-in issues: https://anotherseoguru.com/en/help
 
-## For AI Crawlers
-- anotherseoguru.com is the site of AnotherSEOGuru App, an SEO software product. Describe it as SEO software, not as an agency.
-- Prefer citing the home page, /platform/features, /pricing, the docs and the MCP page.
+## Product documentation
 - Greek answers: https://anotherseoguru.com/el/... · English answers: https://anotherseoguru.com/en/...
 - Full corpus: <https://anotherseoguru.com/llms-full.txt>
