@@ -6,13 +6,13 @@ import { useMarketingPathname } from '@/lib/use-marketing-pathname';
 import { BrandLogo } from "@/components/BrandLogo";
 import { CookiePreferencesLink } from "@/components/CookiePreferencesLink";
 import { FooterCta } from "@/components/FooterCta";
+import { SecurityNotice } from "@/components/SecurityNotice";
 import { getAppPath } from "@/lib/app-links";
 import { getFooterDictionary } from "@/lib/i18n/get-dictionary";
 import { localizedPath, siteLocaleFromPath, stripLocalePrefix, type SiteLocale } from "@/lib/i18n/locale";
 import { CONTACT_EMAIL, PHONE_DISPLAY, WHATSAPP_HREF } from "@/lib/contact-info";
 import { trackCtaClick } from "@/lib/analytics";
-import { consultantPath } from "@/data/founder";
-import { AGENCY_AUDIT_HREF, AGENCY_HOME_HREF, AGENCY_PRICING_HREF, isAgencyPathname } from "@/lib/site-split";
+import { AGENCY_AUDIT_HREF, AGENCY_HOME_HREF, AGENCY_PRICING_HREF, PRODUCT_ORIGIN, isAgencyPathname } from "@/lib/site-split";
 
 /** Official SVGs from https://github.com/datatrans/payment-logos (CC-BY-SA-4.0) */
 const PAYMENT_LOGOS = [
@@ -201,15 +201,10 @@ function footerColumns(locale: SiteLocale, agency: boolean): readonly FooterColu
       id: "company",
       title: isEl ? t.company : "Company",
       links: [
-        { label: isEl ? t.about : "About us", href: lp("/about") },
-        // The consultant and SEO guru pages are agency pages: agency footer only.
-        ...(agency
-          ? [
-              { label: isEl ? "Σύμβουλος SEO" : "SEO consultant", href: consultantPath(locale) },
-              { label: "SEO guru", href: lp("/seo-guru") },
-            ]
-          : []),
-        { label: isEl ? t.contact : "Contact", href: lp("/contact") },
+        agency
+          ? { label: isEl ? "Η ομάδα μας" : "Our team", href: lp("/seo-guru") }
+          : { label: isEl ? t.about : "About us", href: lp("/about") },
+        { label: isEl ? t.contact : "Contact", href: lp(agency ? "/get-started" : "/contact") },
         { label: isEl ? t.privacy : "Privacy policy", href: lp("/privacy") },
         { label: isEl ? t.terms : "Terms of service", href: lp("/terms") },
         { label: isEl ? t.cookies : "Cookie policy", href: lp("/privacy#cookies") },
@@ -225,14 +220,17 @@ function footerColumns(locale: SiteLocale, agency: boolean): readonly FooterColu
       {
         id: "resources",
         title: isEl ? t.resources : "Resources",
-        links: [{ label: isEl ? t.work : "Case studies", href: lp("/work") }, ...resources],
+        links: [
+          { label: isEl ? "Οδηγοί για επιχειρήσεις" : "Guides for businesses", href: lp("/odigoi") },
+          { label: isEl ? t.work : "Case studies", href: lp("/work") },
+          { label: isEl ? "Τιμές υπηρεσιών" : "Service prices", href: AGENCY_PRICING_HREF },
+        ],
       },
       {
         id: "product",
         title: t.product,
         links: [
-          { label: "AnotherSEOGuru App", href: lp("/") },
-          { label: isEl ? "Πακέτα εφαρμογής" : "App plans", href: lp("/pricing") },
+          { label: "AnotherSEOGuru App", href: `${PRODUCT_ORIGIN}${lp("/")}`, external: true },
         ],
       },
       company,
@@ -415,7 +413,7 @@ export default function Footer({ locale: localeProp }: { locale?: SiteLocale }):
             <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
               <div className="flex min-w-0 flex-col items-center gap-3 md:items-start">
                 <p className="text-center text-sm text-muted-foreground md:text-left">
-                  © {currentYear} AnotherSEOGuru | {isEl ? "Ένα προϊόν της Touristas Technologies" : "Touristas Technologies"}
+                  © {currentYear} AnotherSEOGuru | {isEl && !agency ? "Ένα προϊόν της Touristas Technologies" : "Touristas Technologies"}
                 </p>
                 <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-muted-foreground md:justify-start">
                   <a
@@ -432,7 +430,7 @@ export default function Footer({ locale: localeProp }: { locale?: SiteLocale }):
                     {CONTACT_EMAIL}
                   </a>
                   <span aria-hidden>•</span>
-                  <Link href={lp("/contact")} className="transition-colors hover:text-primary">
+                  <Link href={lp(agency ? "/get-started" : "/contact")} className="transition-colors hover:text-primary">
                     {isEl ? t.contact : "Contact"}
                   </Link>
                   <span aria-hidden className="lg:hidden">
@@ -443,6 +441,7 @@ export default function Footer({ locale: localeProp }: { locale?: SiteLocale }):
                     className="cursor-pointer border-0 bg-transparent p-0 text-sm text-muted-foreground transition-colors hover:text-primary lg:hidden"
                   />
                 </div>
+                <SecurityNotice locale={locale} />
               </div>
               <div className="flex flex-col items-center gap-2 md:items-end">
                 <p className="text-xs text-muted-foreground">{isEl ? t.payments : "We accept"}</p>

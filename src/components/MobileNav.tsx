@@ -164,7 +164,9 @@ export function MobileNav({ locale, alternateHref, onClose, model }: MobileNavPr
   const signupHref = appLink('/signup', locale, 'mobile-nav');
   const loginHref = appLink('/login', locale, 'mobile-nav');
   const menu = model.menus.find((m) => m.id === tab) ?? section ?? model.menus[0];
-  const more: NavItem[] = [...model.links, { href: lp('/about'), label: locale === 'el' ? 'Ποιοι είμαστε' : 'About' }, { href: lp('/contact'), label: nav.contact }];
+  const more: readonly NavItem[] = isAgency
+    ? [...model.links, { href: lp('/get-started'), label: nav.contact }]
+    : [...model.links, { href: lp('/about'), label: locale === 'el' ? 'Ποιοι είμαστε' : 'About' }, { href: lp('/contact'), label: nav.contact }];
 
   return createPortal(
     <dialog

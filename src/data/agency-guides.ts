@@ -58,7 +58,11 @@ export const AGENCY_GUIDE_GROUPS = [
   },
 ] as const;
 
-const agencyGuideSlugs = new Set<string>(AGENCY_GUIDE_GROUPS.flatMap((group) => [...group.slugs]));
+const agencyGuideSlugs = new Set<string>([
+  ...AGENCY_GUIDE_GROUPS.flatMap((group) => [...group.slugs]),
+  // This agency campaign stays accessible without entering the evergreen guide directory.
+  "black-month-istoselides-seo-2026",
+]);
 
 export function isAgencyGuideSlug(slug: string): boolean {
   return agencyGuideSlugs.has(slug);

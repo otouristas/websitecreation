@@ -35,7 +35,7 @@ export const PRODUCT_ORIGIN = 'https://anotherseoguru.com';
 /**
  * The one switch for the move to anotherseoguru.gr. While false, every agency
  * link goes to the Greek agency pages on anotherseoguru.com. Set it to true
- * once anotherseoguru.gr points to this Vercel project: every agency link,
+ * once anotherseoguru.gr is serving the agency on Cloudflare Workers: every agency link,
  * canonical URL and redirect then goes to anotherseoguru.gr, and the Greek
  * agency pages on .com send a 301 there (see middleware).
  */

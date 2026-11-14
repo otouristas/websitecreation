@@ -10,7 +10,7 @@ categoryColor: bg-violet-100 text-violet-700
 pillar: ai-llm-visibility
 faq:
   - question: How is LLM visibility different from featured snippets?
-    answer: Featured snippets are Google's direct answers with known SERP tracking. LLM citations happen across multiple models with less transparency. Optimize for both with FAQ-rich, factual content.
+    answer: A featured snippet quotes a page in a Google result. To check an AI citation, save the question, the answer, its date and the URL it links to.
   - question: Should I pay for "AI SEO" tools?
     answer: Evaluate tools on workflow value (prompt batching, logging, trend charts) not magic scores. Ground decisions in Search Console and bookings.
   - question: Do AI models use my site in real time?
@@ -71,7 +71,7 @@ Report trends over 3–6 months, not single sessions.
 
 ## Connect to SEO fundamentals
 
-LLM visibility sits on the same foundation as classic SEO:
+Google’s [guide to generative search](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide) recommends publishing information people can verify. On a business site, start with these pages.
 
 - Clear entity pages: [About](/glossary?term=e-e-a-t), team, locations
 - [Structured data](/glossary?term=structured-data) aligned with visible content
@@ -156,7 +156,7 @@ Treat LLM gaps like content gap analysis: actionable backlog, not vanity metric.
 
 ### How is LLM visibility different from featured snippets?
 
-Featured snippets are Google's direct answers with known SERP tracking. LLM citations happen across multiple models with less transparency. Optimize for both with FAQ-rich, factual content: see [featured snippets](/glossary?term=featured-snippet).
+A [featured snippet](/glossary?term=featured-snippet) quotes a page in a Google result. An AI response can cite several pages or give no source at all. Save the exact question, date, answer and linked page so a colleague can check what you observed.
 
 ### Should I pay for "AI SEO" tools?
 

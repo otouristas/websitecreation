@@ -143,7 +143,6 @@ export function getNavModel(locale: SiteLocale, mode: NavMode = 'product', now: 
                 { href: lp('/seo-tourismou'), label: 'SEO για τουρισμό', desc: 'Ξενοδοχεία, rent a car, βίλες, εκδρομές', icon: 'hotel' as const },
               ]
             : []),
-          { href: lp('/seo-guru'), label: 'SEO guru', desc: t('Who we are and how the work is done', 'Ποιοι είμαστε και πώς γίνεται η δουλειά'), icon: 'users' },
           { href: lp('/seo-services'), label: t('SEO services', 'Υπηρεσίες SEO'), desc: t('Monthly work on your site', 'Κάθε μήνα βελτιώσεις στην ιστοσελίδα σας'), icon: 'trend', badge: POPULAR, meta: t(`from €${seoFrom}/mo ${seoMetaVat}`, `από €${seoFrom}/μήνα ${seoMetaVat}`) },
           { href: lp('/services/ai-visibility'), label: t('AI visibility (GEO / AEO)', 'Ορατότητα σε AI (GEO / AEO)'), desc: t('Check how AI answers describe you', 'Δείτε πώς παρουσιάζουν την επιχείρησή σας οι βοηθοί AI'), icon: 'sparkles', badge: AI },
           { href: lp('/services/local-seo'), label: t('Local SEO', 'Τοπικό SEO'), desc: t('Help nearby customers find you', 'Για πελάτες που σας ψάχνουν στην περιοχή σας'), icon: 'map' },
@@ -291,9 +290,6 @@ export function getNavModel(locale: SiteLocale, mode: NavMode = 'product', now: 
       {
         title: t('Free tools', 'Δωρεάν εργαλεία'),
         items: [
-          ...(mode === 'agency'
-            ? [{ href: `${AGENCY_HOME_HREF}#scan-url`, label: t('Instant site scan', 'Άμεσος έλεγχος ιστοσελίδας'), desc: t('13 checks, no sign-up', '13 έλεγχοι, χωρίς εγγραφή'), icon: 'scan' as const, badge: FREE }]
-            : []),
           { href: lp('/ai-visibility-check'), label: t('AI visibility check', 'Έλεγχος ορατότητας σε AI'), desc: t('Do AI assistants mention you?', 'Σας αναφέρουν οι βοηθοί AI;'), icon: 'bot', badge: FREE },
           { href: lp('/tools'), label: t('All SEO tools', 'Όλα τα εργαλεία SEO'), icon: 'grid' },
         ],
@@ -301,7 +297,7 @@ export function getNavModel(locale: SiteLocale, mode: NavMode = 'product', now: 
       {
         title: t('Guides', 'Οδηγοί'),
         items: [
-          { href: lp(mode === 'agency' ? '/odigoi' : '/seo-guides'), label: mode === 'agency' ? t('Guides for businesses', 'Οδηγοί για επιχειρήσεις') : t('SEO guides', 'Οδηγοί SEO'), desc: t('Learn how to improve a page', 'Πώς να βελτιώσετε μια σελίδα'), icon: 'book' },
+          { href: lp('/seo-guides'), label: t('SEO guides', 'Οδηγοί SEO'), desc: t('Learn how to improve a page', 'Πώς να βελτιώσετε μια σελίδα'), icon: 'book' },
           { href: lp('/blog'), label: 'Blog', desc: t('SEO, AI search and web design', 'SEO, αναζήτηση AI, ιστοσελίδες'), icon: 'library' },
           { href: lp('/resources'), label: t('Resources', 'Οδηγοί & υλικό'), icon: 'library' },
           { href: lp('/resources/sample-seo-report'), label: t('Sample SEO report', 'Δείγμα αναφοράς SEO'), icon: 'file' },
@@ -311,26 +307,35 @@ export function getNavModel(locale: SiteLocale, mode: NavMode = 'product', now: 
         ],
       },
     ],
-    feature:
-      mode === 'agency'
-        ? {
-            tone: 'agency',
-            eyebrow: t('Talk to a person', 'Μιλήστε με άνθρωπο'),
-            title: t('Not sure where to start?', 'Δεν ξέρετε από πού να ξεκινήσετε;'),
-            body: t('Send us your site and one question. We reply within 24 hours, in Greek or English.', 'Στείλτε την ιστοσελίδα σας και μία ερώτηση. Απαντάμε σε 24 ώρες.'),
-            primary: { href: lp('/contact'), label: t('Contact us', 'Επικοινωνία') },
-            secondary: { href: lp('/about'), label: t('About us', 'Ποιοι είμαστε') },
-          }
-        : agencyDoor,
+    feature: agencyDoor,
   };
 
   if (mode === 'agency') {
+    const agencyLearn: NavMenu = {
+      id: 'learn',
+      label: t('Guides', 'Οδηγοί'),
+      columns: [{
+        title: t('Before you hire us', 'Πριν αναθέσετε το έργο σας'),
+        items: [
+          { href: lp('/odigoi'), label: t('Guides for businesses', 'Οδηγοί για επιχειρήσεις'), desc: t('Plan your website or compare SEO quotes', 'Οργανώστε την ιστοσελίδα σας ή συγκρίνετε προσφορές SEO'), icon: 'book' },
+          { href: lp('/work'), label: t('Client projects', 'Έργα πελατών'), desc: t('Websites we have delivered', 'Δείτε ιστοσελίδες που έχουμε παραδώσει'), icon: 'library' },
+          { href: AGENCY_PRICING_HREF, label: t('Service prices', 'Τιμές υπηρεσιών'), desc: t('Website builds and monthly SEO', 'Κατασκευή ιστοσελίδας και μηνιαίο SEO'), icon: 'tag' },
+        ],
+      }],
+      feature: {
+        tone: 'agency',
+        eyebrow: t('Talk to our team', 'Επικοινωνία'),
+        title: t('What would you like to change?', 'Τι θα θέλατε να αλλάξετε;'),
+        body: t('Tell us what you need and send us your website if you have one.', 'Πείτε μας τι χρειάζεστε και στείλτε μας την ιστοσελίδα σας, αν έχετε ήδη μία.'),
+        primary: { href: lp('/get-started'), label: t('Discuss your project', 'Μιλήστε μας για το έργο σας') },
+      },
+    };
     return {
       mode,
       homeHref: AGENCY_HOME_HREF,
       primaryCta: { href: freeAudit.href, label: freeAudit.label, shortLabel: t('Free audit', 'Δωρεάν έλεγχος') },
       secondaryCta: { href: AGENCY_PRICING_HREF, label: t('Service prices', 'Τιμές υπηρεσιών') },
-      menus: [services, industries, learn],
+      menus: [services, industries, agencyLearn],
       links: [
         { href: AGENCY_PRICING_HREF, label: t('Pricing', 'Τιμές') },
         { href: lp('/work'), label: t('Work', 'Έργα') },
