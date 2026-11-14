@@ -10,3 +10,5 @@ Bundled locally; no requests to logo/CDN services from wp-admin. Decorative mark
 * Android uses the Android brand mark from Simple Icons at https://cdn.simpleicons.org/android.
 * Apple, X, Gemini, Claude, ChatGPT and Perplexity use the same licensed service vectors as the CRM and native apps.
 * LinkedIn uses the mark from Simple Icons 13.21.0 (CC0) in its official blue, https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/linkedin.svg.
+* Google Search Console uses the 40×40 standalone symbol from Google's current lockup at https://gstatic.com/search-console/scfe/logo_search_console.svg.
+* Google Analytics uses the original two-color mark at https://github.com/gilbarbara/logos/blob/main/logos/google-analytics.svg.
