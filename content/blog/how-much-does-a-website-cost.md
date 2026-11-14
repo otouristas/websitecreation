@@ -25,7 +25,7 @@ faq:
 
 A website in 2026 costs anywhere from **€500 for a simple site** to **€5,000+ for a custom e-shop**. The huge range has real reasons behind it: this guide shows them so you know exactly what you’re paying for before you compare quotes on price alone.
 
-> **Transparent packages:** [website pricing](/en/pricing) from {{ENTRY_WEBSITE}} · [our work](/en/work) · [website creation](/en/services/website-creation) · [free quote](/en/get-started) within 24 hours.
+> **Transparent packages:** [website pricing](/el/ypiresies/times) from {{ENTRY_WEBSITE}} · [our work](/en/work) · [website creation](/en/services/website-creation) · [free quote](/en/get-started) within 24 hours.
 
 ## Website Pricing in 2026
 
@@ -37,7 +37,7 @@ A website in 2026 costs anywhere from **€500 for a simple site** to **€5,000
 | E-shop (WooCommerce) | €1,800 to €5,000+ | 4–8 weeks |
 | Custom app / portal | €5,000+ | 2–4 months |
 
-Our packages are public: **Starter {{ENTRY_WEBSITE}}** (up to 5 pages), **Professional {{WEBSITE_PRO}}** (up to 10 pages), **Business {{WEBSITE_BUSINESS}}** (up to 20 pages). See the details on our [pricing page](/en/pricing). For hospitality, also see [hotel solutions](/en/solutions/hotels).
+Our packages are public: **Starter {{ENTRY_WEBSITE}}** (up to 5 pages), **Professional {{WEBSITE_PRO}}** (up to 10 pages), **Business {{WEBSITE_BUSINESS}}** (up to 20 pages). See the details on our [pricing page](/el/ypiresies/times). For hospitality, also see [hotel solutions](/en/solutions/hotels).
 
 ## What Determines the Price
 
@@ -124,7 +124,7 @@ Landing: 1–2 weeks. Business site: 2–3. Hotel with bookings: 3–5. E-shop: 
 
 ### Do I need a separate SEO budget after launch?
 
-If the site ships SEO-ready, the technical foundation exists. Sustained rankings still need monthly work: content, local SEO, links. See our [SEO packages](/en/pricing).
+If the site ships SEO-ready, the technical foundation exists. Sustained rankings still need monthly work: content, local SEO, links. See our [SEO packages](/el/ypiresies/times).
 
 ## Still Need a Specific Quote?
 

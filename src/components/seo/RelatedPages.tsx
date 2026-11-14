@@ -4,6 +4,7 @@
  */
 
 import Link from 'next/link';
+import { migratedAgencyHref } from '@/lib/site-split';
 
 interface RelatedPage {
     slug: string;
@@ -36,7 +37,7 @@ export default function RelatedPages({
                 {pages.map((page) => (
                     <Link
                         key={page.slug}
-                        href={page.slug.startsWith('/') ? page.slug : `/${page.slug}`}
+                        href={migratedAgencyHref(page.slug.startsWith('/') ? page.slug : `/${page.slug}`)}
                         className="group flex items-start justify-between gap-3 rounded-xl border border-hairline bg-background/60 px-4 py-3 transition-colors hover:border-brand/45 hover:bg-surface"
                     >
                         <span className="min-w-0">

@@ -24,7 +24,7 @@ faq:
 
 **Hosting** and your **domain** are the foundations of every website, and the two decisions most businesses make in a rush, on price alone. Bad hosting quietly costs you speed (and therefore Google rankings), uptime (and therefore customers), and security. This guide covers what to check before you pay, realistic 2026 pricing, and the mistakes we see on almost every [website build](/en/services/website-creation).
 
-> **Related:** [pricing](/en/pricing) · [website cost guide](/en/blog/how-much-does-a-website-cost) · [redesign guide](/en/blog/website-redesign-guide) · [free quote](/en/get-started).
+> **Related:** [pricing](/el/ypiresies/times) · [website cost guide](/en/blog/how-much-does-a-website-cost) · [redesign guide](/en/blog/website-redesign-guide) · [free quote](/en/get-started).
 
 ## Domain: What to Choose
 
@@ -59,7 +59,7 @@ Free SSL (Let’s Encrypt) is now standard, without HTTPS you lose trust and a r
 
 ### Support that answers
 
-Local-language support is worth a few euros more when something breaks the night before a campaign. Alternatively, a [maintenance retainer](/en/pricing) means your partner owns the technical layer and hosting is chosen on speed, uptime SLA, and backups, not marketing slogans.
+Local-language support is worth a few euros more when something breaks the night before a campaign. Alternatively, a [maintenance retainer](/el/ypiresies/times) means your partner owns the technical layer and hosting is chosen on speed, uptime SLA, and backups, not marketing slogans.
 
 ## CDN, DNS, and email: the forgotten triangle
 

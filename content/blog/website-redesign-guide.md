@@ -24,7 +24,7 @@ faq:
 
 A **website redesign** is one of the riskiest moments in a site’s life: done right, it lifts the business; done carelessly, it wipes out years of organic work overnight. This guide covers when it’s worth it, what it costs, and the right migration process: before you touch anything.
 
-> **Related:** [website redesign service](/en/services/website-redesign) · [pricing](/en/pricing) · [website cost guide](/en/blog/how-much-does-a-website-cost) · [free assessment](/en/get-started).
+> **Related:** [website redesign service](/en/services/website-redesign) · [pricing](/el/ypiresies/times) · [website cost guide](/en/blog/how-much-does-a-website-cost) · [free assessment](/en/get-started).
 
 ## When You Need a Redesign
 
@@ -66,7 +66,7 @@ The same discipline applies when you change CMS or move to a [new build](/en/ser
 | Mid-size / multilingual | {{WEBSITE_PRO}} to {{WEBSITE_BUSINESS}} | Full inventory, schema, CWV |
 | E-shop or hotel with bookings | €2,500 to €4,000+ | Category/room maps, booking, complex redirects |
 
-A redesign with proper migration typically costs the same as a new build because it includes carrying over SEO history. “Cheap” redesigns that ignore migration cost far more in lost traffic. See [pricing](/en/pricing) and the [website cost guide](/en/blog/how-much-does-a-website-cost).
+A redesign with proper migration typically costs the same as a new build because it includes carrying over SEO history. “Cheap” redesigns that ignore migration cost far more in lost traffic. See [pricing](/el/ypiresies/times) and the [website cost guide](/en/blog/how-much-does-a-website-cost).
 
 ## Common Redesign Mistakes
 
