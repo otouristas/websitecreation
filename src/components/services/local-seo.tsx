@@ -50,7 +50,7 @@ const topicsEl: readonly ServiceTopicEl[] = [
   {
     title: 'Κριτικές: πώς τις αυξάνετε σωστά',
     paragraphs: [
-      'Ζητήστε κριτική τη στιγμή που ο πελάτης είναι ικανοποιημένος, με έναν απευθείας σύνδεσμο προς το προφίλ σας, και απαντήστε σε κάθε κριτική, θετική ή αρνητική. Δεν γράφουμε, δεν αγοράζουμε και δεν «φιλτράρουμε» κριτικές: παραβιάζουν τις οδηγίες της Google και μπορεί να οδηγήσουν σε αναστολή του προφίλ.',
+      'Μετά την επίσκεψη ή την παραλαβή, δώστε σε όλους τους πελάτες τον ίδιο σύνδεσμο για αξιολόγηση. Αποφύγετε δώρα, εκπτώσεις ή επιλογή μόνο όσων έμειναν ευχαριστημένοι. Μια συγκεκριμένη απάντηση σε παράπονο δείχνει στον επόμενο πελάτη πώς το χειριστήκατε.',
     ],
   },
   {
@@ -79,9 +79,9 @@ const copy = {
     },
     factors: {
       eyebrow: 'What decides it',
-      title: 'Three factors, and only one of them is fixed',
+      title: 'How Google orders local results',
       body:
-        'Google states that local results are ranked on relevance, distance and prominence. You cannot move your premises, so the work goes into the other two.',
+        'Google mainly uses relevance, distance and prominence to order local results. Two people making the same search from opposite sides of town may see different businesses.',
       items: [
         {
           k: 'Relevance',
@@ -90,7 +90,7 @@ const copy = {
         },
         {
           k: 'Distance',
-          d: 'How far you are from the searcher or the place they named. This one you cannot change, so it sets a realistic radius.',
+          d: 'How far your premises are from the searcher or the location used in the search.',
           movable: false,
         },
         {
@@ -104,28 +104,28 @@ const copy = {
     },
     profile: {
       eyebrow: 'Profile',
-      title: 'A Google Business Profile is a product page you do not own',
+      title: 'What customers see on your Google Business Profile',
       body:
-        'It is often the first thing a customer sees and the last page they need. Half-filled profiles lose to complete ones for the same search.',
+        'Someone ready to visit needs current opening hours, the right entrance and a working number. We check the listing as a customer would see it on their phone.',
       points: [
         'Correct primary and secondary categories',
         'Services and service areas that match how people search',
         'Hours, holiday hours and attributes kept current',
         'Photos, products and posts that are actually maintained',
-        'Questions answered before a competitor answers them',
+        'A booking or appointment link where available',
       ],
     },
     nap: {
       eyebrow: 'Consistency',
-      title: 'The same business, listed four different ways',
+      title: 'Which listings still show your old address?',
       body:
-        'Name, address and phone need to match everywhere they appear. When they drift, the signals split between versions and none of them get full credit.',
+        'If you moved or changed your phone number, an old directory listing can still send customers to the wrong place. We compare the details on your site, map listing and main directories.',
       badLabel: 'Drifted',
       goodLabel: 'Consistent',
       bad: [
         'Acme Plumbing Ltd, 12 Iroon Str., 210-555-0100',
-        'Acme Plumbing, 12 Iroon Street, +30 210 555 0100',
-        'ACME PLUMBING LTD, Iroon 12, 2105550100',
+        'Directory: 24 Iroon Street, former premises',
+        'Map: 12 Iroon Street, old number 210 555 0199',
       ],
       good: [
         'Acme Plumbing Ltd, 12 Iroon Street, +30 210 555 0100',
@@ -137,7 +137,7 @@ const copy = {
       eyebrow: 'Coverage',
       title: 'A page per place you actually serve',
       body:
-        'One contact page listing twenty cities ranks for none of them. Real location pages, only for places you genuinely operate in.',
+        'A location page earns its place when it answers a question specific to that area, such as where customers collect a car or which days you offer appointments. We start with places where you operate.',
       more: 'See all locations',
     },
     faq: {
@@ -146,7 +146,7 @@ const copy = {
       items: [
         {
           q: 'How long before we appear in the map pack?',
-          a: 'Profile and consistency work can show movement within weeks, while prominence builds over months. Anyone who gives you a date is guessing. We work in indicative phases and report what actually changed.',
+          a: 'There is no fixed date or guaranteed position. We document the changes, sample searches from relevant locations and report available calls and direction requests.',
         },
         {
           q: 'We serve a whole region, not one address. Does local SEO still work?',
@@ -158,13 +158,13 @@ const copy = {
         },
         {
           q: 'Do we need a website if we have a Google profile?',
-          a: 'Yes. The profile is the shopfront, the site is what backs up its claims and it is where relevance is established. Businesses with a thin or missing site consistently struggle in competitive local searches.',
+          a: 'An eligible business can have a profile without a website. A website gives people somewhere to compare services, read booking terms or request an appointment.',
         },
       ],
     },
     cta: {
       title: 'Find out where you stand locally',
-      body: 'Tell us your business and the area you cover. We will look at your profile, your citations and who is currently taking the pack.',
+      body: 'Send us your profile and the area you serve. We will check what customers see and which details need attention.',
       primary: 'Request a quote',
       secondary: 'See pricing',
     },
@@ -187,7 +187,7 @@ const copy = {
       eyebrow: 'Τι το κρίνει',
       title: 'Τι είναι το τοπικό SEO και τι κρίνει τη θέση σας',
       body:
-        'Οι περισσότεροι δεν κατεβαίνουν ποτέ κάτω από τα τρία αποτελέσματα του χάρτη. Η Google αναφέρει ότι αυτά κατατάσσονται με βάση τη συνάφεια, την απόσταση και την αναγνωρισιμότητα. Την έδρα σας δεν τη μετακινείτε, οπότε η δουλειά πάει στα άλλα δύο.',
+        'Η Google εξηγεί ότι η σειρά των τοπικών αποτελεσμάτων βασίζεται κυρίως στη συνάφεια, την απόσταση και την αναγνωρισιμότητα. Δύο άνθρωποι που κάνουν την ίδια αναζήτηση σε διαφορετικά σημεία της πόλης μπορεί να δουν διαφορετικές επιχειρήσεις.',
       items: [
         {
           k: 'Συνάφεια',
@@ -196,12 +196,12 @@ const copy = {
         },
         {
           k: 'Απόσταση',
-          d: 'Πόσο μακριά είστε από τον χρήστη ή από το σημείο που ανέφερε. Αυτό δεν αλλάζει, οπότε ορίζει μια ρεαλιστική ακτίνα.',
+          d: 'Πού βρίσκεται η επιχείρησή σας σε σχέση με τον άνθρωπο που ψάχνει ή με την τοποθεσία της αναζήτησης.',
           movable: false,
         },
         {
           k: 'Αναγνωρισιμότητα',
-          d: 'Πόσο γνωστή είναι η επιχείρηση: αναφορές, σύνδεσμοι, δημοσιότητα και οι αξιολογήσεις που κερδίζετε τίμια με τον χρόνο.',
+          d: 'Πόσο γνωστή είναι η επιχείρηση. Η Google αναφέρει, μεταξύ άλλων, συνδέσμους από άλλες ιστοσελίδες, τον αριθμό των κριτικών και τις βαθμολογίες.',
           movable: true,
         },
       ],
@@ -212,26 +212,26 @@ const copy = {
       eyebrow: 'Προφίλ',
       title: 'Βελτιστοποίηση Google Business Profile',
       body:
-        'Συχνά είναι το πρώτο που βλέπει ο πελάτης και η τελευταία σελίδα που χρειάζεται. Τα μισογεμισμένα προφίλ χάνουν από τα πλήρη στην ίδια αναζήτηση.',
+        'Αν κάποιος θέλει να έρθει σήμερα, πρέπει να ξέρει αν είστε ανοιχτά και ποια είσοδο να χρησιμοποιήσει. Ελέγχουμε αυτά τα στοιχεία στο προφίλ, όπως εμφανίζονται στο κινητό του πελάτη.',
       points: [
         'Σωστή κύρια και δευτερεύουσες κατηγορίες',
         'Υπηρεσίες και περιοχές εξυπηρέτησης όπως τις ψάχνει ο κόσμος',
         'Ωράριο, αργίες και χαρακτηριστικά πάντα ενημερωμένα',
         'Φωτογραφίες, προϊόντα και δημοσιεύσεις που όντως συντηρούνται',
-        'Απαντήσεις σε ερωτήσεις πριν απαντήσει ο ανταγωνιστής',
+        'Σύνδεσμος για ραντεβού ή κράτηση, όπου προσφέρεται',
       ],
     },
     nap: {
       eyebrow: 'Συνέπεια',
-      title: 'Η ίδια επιχείρηση, καταχωρημένη με τέσσερις διαφορετικούς τρόπους',
+      title: 'Ποιες καταχωρίσεις δείχνουν ακόμη την παλιά διεύθυνση;',
       body:
-        'Επωνυμία, διεύθυνση και τηλέφωνο πρέπει να ταιριάζουν παντού. Όταν αποκλίνουν, τα σήματα μοιράζονται ανάμεσα στις εκδοχές και καμία δεν παίρνει πλήρη αξία.',
+        'Αν μετακομίσατε ή αλλάξατε τηλέφωνο, ένας παλιός κατάλογος μπορεί ακόμη να στέλνει πελάτες σε λάθος διεύθυνση. Συγκρίνουμε την ιστοσελίδα, τους Χάρτες και τις βασικές καταχωρίσεις για να βρούμε πού χρειάζεται διόρθωση.',
       badLabel: 'Με αποκλίσεις',
       goodLabel: 'Συνεπές',
       bad: [
         'Acme Υδραυλικές ΕΠΕ, Ηρώων 12, 210-555-0100',
-        'Acme Υδραυλικές, Ηρώων 12, +30 210 555 0100',
-        'ACME ΥΔΡΑΥΛΙΚΕΣ ΕΠΕ, Οδός Ηρώων 12, 2105550100',
+        'Κατάλογος: Ηρώων 24, παλιά έδρα',
+        'Χάρτης: Ηρώων 12, παλιό τηλέφωνο 210 555 0199',
       ],
       good: [
         'Acme Υδραυλικές ΕΠΕ, Ηρώων 12, +30 210 555 0100',
@@ -241,9 +241,9 @@ const copy = {
     },
     coverage: {
       eyebrow: 'Κάλυψη',
-      title: 'Σελίδες ανά περιοχή και τοπικά backlinks',
+      title: 'Πότε χρειάζεται σελίδα για μια περιοχή',
       body:
-        'Μια σελίδα επικοινωνίας με είκοσι πόλεις δεν κατατάσσεται σε καμία. Φτιάχνουμε πραγματικές σελίδες περιοχών, μόνο για μέρη όπου όντως δραστηριοποιείστε, και τις στηρίζουμε με συνδέσμους από τοπικά sites, συλλόγους και καταλόγους της περιοχής.',
+        'Μια χωριστή σελίδα έχει νόημα όταν εξηγεί κάτι χρήσιμο για τη συγκεκριμένη περιοχή, όπως πού παραλαμβάνει ο πελάτης ένα όχημα ή ποιες ημέρες κάνετε επισκέψεις. Αρχίζουμε από τα σημεία όπου πράγματι εξυπηρετείτε κόσμο.',
       more: 'Δείτε όλες τις περιοχές',
     },
     faq: {
@@ -263,12 +263,12 @@ const copy = {
           a: 'Το τοπικό SEO περιλαμβάνεται σε όλα τα μηνιαία πακέτα SEO, από {{ENTRY_SEO}} τον μήνα χωρίς ΦΠΑ. Για μία τοποθεσία σε μία πόλη συνήθως αρκεί το Foundations· περισσότερες τοποθεσίες ή ανταγωνιστικοί κλάδοι χρειάζονται μεγαλύτερο πακέτο.',
         },
         {
-          q: 'Σε πόσο καιρό θα εμφανιστούμε στο πακέτο χάρτη;',
-          a: 'Η δουλειά στο προφίλ και στη συνέπεια μπορεί να δείξει κίνηση μέσα σε εβδομάδες, ενώ η αναγνωρισιμότητα χτίζεται σε μήνες. Όποιος σας δίνει ημερομηνία μαντεύει. Δουλεύουμε σε ενδεικτικές φάσεις και αναφέρουμε τι πραγματικά άλλαξε.',
+          q: 'Μπορείτε να μας πείτε πότε θα εμφανιστούμε στον χάρτη;',
+          a: 'Δεν υπάρχει εγγυημένη ημερομηνία ή θέση. Μπορούμε να σας δείξουμε τι αλλάξαμε στο προφίλ, πού εμφανίζεται η επιχείρηση στις δοκιμές μας και ποια στοιχεία για κλήσεις ή οδηγίες πρόσβασης είναι διαθέσιμα.',
         },
         {
           q: 'Εξυπηρετούμε ολόκληρη περιοχή, όχι μία διεύθυνση. Δουλεύει το τοπικό SEO;',
-          a: 'Ναι, μέσω ρύθμισης περιοχής εξυπηρέτησης και όχι με μια καρφίτσα ανά πόλη. Η δημιουργία πλασματικών διευθύνσεων για μεγαλύτερη κάλυψη παραβιάζει τις οδηγίες της Google και οδηγεί σε αναστολή του προφίλ, οπότε δεν το κάνουμε.',
+          a: 'Ναι. Αν πηγαίνετε εσείς στον πελάτη, δηλώνετε τις περιοχές που εξυπηρετείτε. Αν δεν δέχεστε κόσμο στην έδρα σας, αποκρύπτετε τη διεύθυνση από το δημόσιο προφίλ.',
         },
         {
           q: 'Μπορείτε να μας φέρετε αξιολογήσεις;',
@@ -276,13 +276,13 @@ const copy = {
         },
         {
           q: 'Χρειαζόμαστε ιστοσελίδα αν έχουμε προφίλ Google;',
-          a: 'Ναι. Το προφίλ είναι η βιτρίνα, το site είναι αυτό που τεκμηριώνει όσα λέει και εκεί χτίζεται η συνάφεια. Επιχειρήσεις με ελλιπές ή ανύπαρκτο site δυσκολεύονται σταθερά σε ανταγωνιστικές τοπικές αναζητήσεις.',
+          a: 'Μπορείτε να έχετε επιλέξιμο προφίλ και χωρίς ιστοσελίδα. Η ιστοσελίδα είναι χρήσιμη όταν ο πελάτης θέλει να συγκρίνει υπηρεσίες, να διαβάσει όρους ή να κλείσει ραντεβού.',
         },
       ],
     },
     cta: {
       title: 'Δείτε πού βρίσκεστε στον χάρτη',
-      body: 'Πείτε μας την επιχείρηση και την περιοχή σας. Θα κοιτάξουμε το προφίλ σας, τις αναφορές σας και ποιος κρατά σήμερα το πακέτο.',
+      body: 'Στείλτε μας το προφίλ σας και πείτε μας πού εξυπηρετείτε πελάτες. Θα ελέγξουμε τι βλέπει κάποιος που σας αναζητά και ποιες πληροφορίες χρειάζονται διόρθωση.',
       primary: 'Ζητήστε προσφορά',
       secondary: 'Δείτε τιμές',
     },
@@ -348,6 +348,11 @@ export function LocalSeoPage({ locale }: { locale: SiteLocale }) {
       {/* 2 - The three ranking factors */}
       <KitSection id="factors" className="mt-6 sm:mt-10">
         <KitHeading eyebrow={t.factors.eyebrow} eyebrowIcon={<MapPin />} title={<AccentTitle text={t.factors.title} />} description={t.factors.body} />
+        <p className="mt-4 text-[14px]">
+          <a className="text-link underline underline-offset-4" href={`https://support.google.com/business/answer/7091?hl=${locale}`}>
+            {isEl ? 'Πώς εξηγεί η Google την τοπική κατάταξη' : 'How Google explains local ranking'}
+          </a>
+        </p>
         <div className="mt-12 grid gap-4 md:grid-cols-3">
           {t.factors.items.map((f, i) => (
             <div

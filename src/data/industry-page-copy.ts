@@ -38,6 +38,40 @@ export interface IndustryPageCopy {
 }
 
 const COPY: Record<string, Partial<Record<SiteLocale, IndustryPageCopy>>> = {
+  lawyers: {
+    el: {
+      h1: 'Ιστοσελίδες και τοπικό SEO για δικηγορικά γραφεία',
+      accentWords: 2,
+      lead: 'Ο άνθρωπος που χρειάζεται δικηγόρο θέλει να ξέρει αν αναλαμβάνετε τη δική του υπόθεση, ποιος θα μιλήσει μαζί του και πώς θα κλείσει την πρώτη συνάντηση. Φτιάχνουμε την ιστοσελίδα του γραφείου σας γύρω από αυτές τις ερωτήσεις.',
+      needsTitle: 'Τι χρειάζεται να γνωρίζει κανείς πριν σας καλέσει',
+      needsBody: 'Ξεκινάμε με τους τομείς δικαίου που πράγματι ασκείτε και τις πόλεις όπου δέχεστε εντολείς. Ο δικηγόρος που αναλαμβάνει τον κάθε τομέα ελέγχει τη διατύπωση πριν δημοσιευτεί.',
+      checklist: {
+        title: 'Έλεγχος πριν από τη δημοσίευση',
+        items: ['Διακριτή σελίδα για κάθε βασικό τομέα δικαίου', 'Βιογραφικό και στοιχεία επικοινωνίας του υπεύθυνου δικηγόρου', 'Ωράριο, ακριβής διεύθυνση και τρόπος να κλείσει κάποιος ραντεβού', 'Σύντομη φόρμα για την πρώτη επικοινωνία'],
+      },
+      servicesTitle: 'Υπηρεσίες για το δικηγορικό σας γραφείο',
+      topicsTitle: 'Τι να γράψετε για τις υπηρεσίες του γραφείου',
+      topics: [{
+        eyebrow: 'Πρώτη επικοινωνία',
+        title: 'Από την αναζήτηση στο πρώτο ραντεβού',
+        body: 'Αν αναλαμβάνετε μισθωτικές διαφορές, ο ενδιαφερόμενος πρέπει να το βλέπει πριν σας τηλεφωνήσει. Εξηγούμε πώς προγραμματίζεται η πρώτη συζήτηση και ποιος θα επικοινωνήσει μαζί του. Η αρχική φόρμα ζητά μόνο τα στοιχεία που χρειάζονται για να τον καλέσετε, χωρίς να τον υποχρεώνει να περιγράψει την υπόθεσή του.',
+      }],
+      ctaTitle: 'Πώς βρίσκουν σήμερα το γραφείο σας;',
+      ctaBody: 'Στείλτε μας την ιστοσελίδα σας, την πόλη και τους τομείς δικαίου που αναλαμβάνετε. Θα δούμε πού συναντά δυσκολία κάποιος που θέλει να κλείσει ραντεβού.',
+    },
+    en: {
+      h1: 'Websites and local SEO for law firms',
+      accentWords: 2,
+      lead: 'Someone looking for a lawyer wants to know whether you handle their matter, who they will speak to and how to arrange a first meeting. Those questions shape the site we build for your firm.',
+      needsTitle: 'What a prospective client needs before calling',
+      checklist: {
+        title: 'Before your site goes live',
+        items: ['A clear page for each practice area', 'The responsible lawyer’s background and contact details', 'Office location, opening hours and appointment options', 'A short enquiry form that does not require confidential case details'],
+      },
+      ctaTitle: 'How do clients find your firm?',
+      ctaBody: 'Send us your current site, office location and practice areas. We will check how easily a prospective client can arrange a first meeting.',
+    },
+  },
   'real-estate': {
     el: {
       h1: 'Ιστοσελίδες και SEO για μεσιτικά γραφεία',

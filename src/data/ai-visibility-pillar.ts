@@ -216,6 +216,16 @@ const el: AiVisibilityPillarCopy = {
   faqTitle: 'Συχνές ερωτήσεις',
   faqs: [
     {
+      question: 'Χρειάζομαι llms.txt ή ειδικό schema για την αναζήτηση AI της Google;',
+      answer:
+        'Όχι. Η Google αναφέρει ότι αγνοεί το llms.txt για την κατάταξη και την προβολή στα αποτελέσματά της. Για να μπορεί να εμφανίσει σύνδεσμο στην αναζήτηση AI, η σελίδα πρέπει να βρίσκεται στο ευρετήριο και να επιτρέπεται η εμφάνιση αποσπάσματος. Η Google επιλέγει τις πηγές για κάθε ερώτηση.',
+    },
+    {
+      question: 'Έχουν ακόμη νόημα οι συχνές ερωτήσεις;',
+      answer:
+        'Ναι, αν βοηθούν τον πελάτη. Για παράδειγμα, μπορεί να μάθει αν επιστρέφεται η προκαταβολή πριν κάνει κράτηση. Από τις 7 Μαΐου 2026 η Google έχει καταργήσει τα εμπλουτισμένα αποτελέσματα FAQ. Η σήμανση FAQPage δεν δίνει πια αυτή την εμφάνιση.',
+    },
+    {
       question: 'Τι σημαίνει GEO για τη δική μου επιχείρηση;',
       answer:
         'Με το Generative Engine Optimization ελέγχουμε τι λένε για εσάς τα εργαλεία AI. Αν μια απάντηση δίνει λάθος διεύθυνση ή παραπέμπει σε κατάλογο, εξετάζουμε ποια στοιχεία χρειάζονται διόρθωση ή λείπουν από τη σελίδα σας.',
@@ -431,6 +441,16 @@ const en: AiVisibilityPillarCopy = {
   },
   faqTitle: 'Frequently asked questions',
   faqs: [
+    {
+      question: 'Do I need llms.txt or special schema for Google’s AI search?',
+      answer:
+        'No. Google ignores llms.txt for visibility and rankings in Search. A page must be indexed and eligible to show a snippet before it can appear as a supporting link in Google’s AI features. Google decides which sources to show for each question.',
+    },
+    {
+      question: 'Are FAQs still worth writing?',
+      answer:
+        'Yes, when customers need the answers. A guest can check whether a deposit is refundable before booking. Google retired FAQ rich results on 7 May 2026, so FAQPage markup no longer produces that search appearance.',
+    },
     {
       question: 'What does GEO mean for my business?',
       answer:

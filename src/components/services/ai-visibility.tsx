@@ -248,6 +248,14 @@ export function AiVisibilityPage({ locale }: { locale: SiteLocale }) {
       <FaqBlock locale={locale} tinted title={<AccentTitle text={t.faqTitle} />} faqs={faqs} />
 
       <KitSection className="py-14 sm:py-16">
+        <p className="mb-8 flex flex-wrap gap-x-5 gap-y-2 text-[14px]">
+          <a className="text-link underline underline-offset-4" href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide">
+            {tx('Google’s guidance on AI search', 'Οι οδηγίες της Google για την αναζήτηση με AI')}
+          </a>
+          <a className="text-link underline underline-offset-4" href="https://developers.google.com/search/updates#removing-faq-rich-result">
+            {tx('Google’s update on FAQ rich results', 'Η ανακοίνωση της Google για τα εμπλουτισμένα αποτελέσματα FAQ')}
+          </a>
+        </p>
         <RelatedPages title={t.relatedTitle} pages={related.map((r) => ({ slug: lp(r.path), title: r.title }))} />
       </KitSection>
 

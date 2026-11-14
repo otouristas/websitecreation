@@ -101,13 +101,13 @@ const el: SeoServicesPillarCopy = {
         title: 'Τεχνικό SEO',
         href: '/seo-services/technical',
         body:
-          'Ό,τι εμποδίζει τη Google να διαβάσει και να ευρετηριάσει τις σελίδες που πουλάνε: σφάλματα ευρετηρίασης, canonical, ταχύτητα και Core Web Vitals, structured data που αντιστοιχούν στο ορατό περιεχόμενο, αρχιτεκτονική εσωτερικών συνδέσμων. Είναι το πρώτο που κοιτάμε, γιατί κάθε άλλη εργασία χτίζεται πάνω του.',
+          'Ελέγχουμε αν η Google μπορεί να βρει και να καταχωρίσει τις βασικές σελίδες σας. Αν, για παράδειγμα, επιλέγει λάθος έκδοση μιας σελίδας υπηρεσίας, εξετάζουμε τις διευθύνσεις, το canonical και τους εσωτερικούς συνδέσμους. Σας δείχνουμε το σημείο που χρειάζεται διόρθωση.',
       },
       {
         title: 'Αντιστοίχιση λέξεων-κλειδιών σε σελίδες',
         href: '/seo-services/strategy',
         body:
-          'Μία εμπορική ομάδα αναζητήσεων, μία σελίδα. Χωρίς αυτό, δύο σελίδες σας ανταγωνίζονται μεταξύ τους για την ίδια αναζήτηση και καμία δεν κερδίζει. Ξεκινάμε από τα δεδομένα του δικού σας Search Console, όχι από γενικές λίστες όγκου.',
+          'Βλέπουμε στο Search Console ποια σελίδα εμφανίζεται για κάθε βασική αναζήτηση. Αν δύο σελίδες απαντούν στην ίδια ερώτηση, ελέγχουμε αν έχουν διαφορετικό κοινό ή αν μία πλήρης σελίδα θα εξυπηρετούσε καλύτερα τον πελάτη.',
       },
       {
         title: 'Περιεχόμενο με εμπορική πρόθεση',
@@ -125,7 +125,7 @@ const el: SeoServicesPillarCopy = {
         title: 'GEO και AEO',
         href: '/services/ai-visibility',
         body:
-          'Απαντήσεις γραμμένες σε μορφή που μπορεί να παραθέσει μια μηχανή απάντησης, σαφή στοιχεία εταιρείας και structured data που συμφωνούν με τη σελίδα. Καμία μηχανή δεν εγγυάται ότι θα σας αναφέρει· αυτό που ελέγχετε είναι αν το περιεχόμενό σας μπορεί να χρησιμοποιηθεί.',
+          'Επιλέγουμε ερωτήσεις που ακούτε από πελάτες, όπως «Τι καλύπτει η ασφάλεια;». Ελέγχουμε αν δίνετε πλήρη απάντηση στη σελίδα σας, τι λένε οι υπηρεσίες AI και σε ποια πηγή παραπέμπουν. Καταγράφουμε τυχόν λάθη και τις πληροφορίες που μπορείτε να διορθώσετε.',
       },
     ],
   },
@@ -142,17 +142,17 @@ const el: SeoServicesPillarCopy = {
       {
         title: 'Μήνες 1-3: θεμέλια',
         body:
-          'Διόρθωση τεχνικών εμποδίων, ξαναγράψιμο των σελίδων που μπορούν να φέρουν πελάτες, Google Business Profile και τοπικά σήματα, πρώτο περιεχόμενο. Εδώ φαίνονται οι πρώτες κινήσεις σε θέσεις.',
+          'Διορθώνουμε πρώτα όσα εμποδίζουν την πρόσβαση ή την ευρετηρίαση. Έπειτα δουλεύουμε στις συμφωνημένες σελίδες υπηρεσιών και, όπου χρειάζεται, στο Google Business Profile. Σημειώνουμε πότε δημοσιεύτηκε κάθε αλλαγή.',
       },
       {
         title: 'Μήνες 4-6: επέκταση',
         body:
-          'Ευρύτερη θεματική κάλυψη, εσωτερική σύνδεση προς τις εμπορικές σελίδες, εργασία authority και σταθερή παραγωγή περιεχομένου βάσει πραγματικής ζήτησης.',
+          'Βρίσκουμε ερωτήσεις που μένουν αναπάντητες, ενημερώνουμε τις σχετικές σελίδες και τις συνδέουμε με την υπηρεσία που αφορά τον αναγνώστη. Αν μια ενέργεια δεν φαίνεται να βοηθά, επανεξετάζουμε την προτεραιότητά της.',
       },
       {
         title: 'Κάθε μήνα: μέτρηση',
         body:
-          'Αναφορά με οργανικά κλικ, θέσεις στις εμπορικές αναζητήσεις και αιτήματα που ήρθαν από την οργανική αναζήτηση. Αν κάτι δεν αποδίδει, αλλάζει· δεν επαναλαμβάνεται επειδή ήταν στο πλάνο.',
+          'Βλέπετε ποιες σελίδες αλλάξαμε, ποιες αναζητήσεις έφεραν οργανικά κλικ και πόσα αιτήματα ή κρατήσεις καταγράφηκαν, εφόσον η μέτρηση είναι ρυθμισμένη. Έτσι μπορούμε να αποφασίσουμε μαζί τι αξίζει να γίνει τον επόμενο μήνα.',
       },
     ],
   },
@@ -165,19 +165,19 @@ const el: SeoServicesPillarCopy = {
       {
         label: 'Discover Cyclades',
         line:
-          'Θεματικοί κόμβοι νησιών και εσωτερική διασύνδεση - σταθερή οργανική ανάπτυξη στις σελίδες των νησιών.',
+          'Δείτε πώς οργανώθηκαν οι οδηγοί ανά νησί και πώς συνδέονται με τις σχετικές σελίδες του προορισμού.',
         slug: 'discover-cyclades',
       },
       {
         label: 'Villa Olivia Clara',
         line:
-          'Πολυτελής βίλα στην Κρήτη - brand + luxury villa SEO με έμφαση σε μετατροπή μέσω φωτογραφίας· καλύτερα leads από την πρώτη σεζόν.',
+          'Ιστοσελίδα για βίλα στην Κρήτη. Οι φωτογραφίες και οι πληροφορίες για τη διαμονή οδηγούν τον επισκέπτη στην απευθείας επικοινωνία.',
         slug: 'villa-olivia-clara',
       },
       {
         label: 'Aggelos Rentals',
         line:
-          'Ενοικίαση αυτοκινήτου στην Πάρο - στόλος + τοπικό SEO νησιού· περισσότερες άμεσες κρατήσεις αντί μόνο μέσω aggregators.',
+          'Ιστοσελίδα ενοικίασης αυτοκινήτων στην Πάρο με παρουσίαση του στόλου και απευθείας επικοινωνία με την επιχείρηση.',
         slug: 'aggelos-rentals',
       },
     ],
@@ -188,7 +188,7 @@ const el: SeoServicesPillarCopy = {
     intro:
       'Οι τιμές είναι δημόσιες. Το SEO τιμολογείται με βάση τον ανταγωνισμό, τη ζήτηση αναζήτησης και τον όγκο περιεχομένου - όχι με αριθμό λέξεων-κλειδιών.',
     note:
-      'Όλες οι τιμές είναι καθαρές, χωρίς ΦΠΑ 24%. Η ελάχιστη διάρκεια συνεργασίας είναι 6 μήνες και στη συνέχεια ανανεώνεται μηνιαία: κάτω από αυτό το διάστημα δεν προλαβαίνει να φανεί αν η δουλειά αποδίδει.',
+      'Η ελάχιστη διάρκεια συνεργασίας είναι 6 μήνες. Στη συνέχεια η συνεργασία ανανεώνεται μηνιαία. Δείτε σε κάθε πακέτο πώς υπολογίζεται ο ΦΠΑ.',
     cta: 'Δείτε αναλυτικά τα πακέτα',
   },
   choosing: {
@@ -249,7 +249,7 @@ const el: SeoServicesPillarCopy = {
     {
       question: 'Σε πόσο καιρό θα βγω στην πρώτη σελίδα της Google;',
       answer:
-        'Εξαρτάται από τον ανταγωνισμό της αναζήτησης και από την κατάσταση του site. Οι πρώτες κινήσεις σε θέσεις φαίνονται συνήθως σε 2 έως 4 μήνες. Ουσιαστική διαφορά σε αιτήματα πελατών θέλει 6 μήνες και πάνω, και σε ανταγωνιστικούς κλάδους περισσότερο. Γι’ αυτό η ελάχιστη διάρκεια είναι 6 μήνες: κάτω από αυτό δεν προλαβαίνει να φανεί αν δουλεύει.',
+        'Από την πρώτη αναφορά βλέπετε ποιες διορθώσεις έγιναν. Το πότε αυτές θα επηρεάσουν τις εμφανίσεις, τα κλικ ή τις κρατήσεις εξαρτάται από την κατάσταση της ιστοσελίδας, τη ζήτηση και τον ανταγωνισμό. Η ελάχιστη συνεργασία είναι 6 μήνες.',
     },
     {
       question: 'Πρέπει το SEO να γίνει πριν ή μετά την κατασκευή της ιστοσελίδας;',
@@ -264,7 +264,7 @@ const el: SeoServicesPillarCopy = {
     {
       question: 'Χρειάζομαι SEO αν τρέχω Google Ads;',
       answer:
-        'Συνήθως ναι. Οι διαφημίσεις αγοράζουν εμφάνιση τώρα και σταματούν όταν σταματήσει το budget. Το SEO χτίζει θέσεις που παραμένουν, αλλά θέλει χρόνο. Οι περισσότερες επιχειρήσεις κερδίζουν από συνδυασμό: Ads για άμεση ζήτηση, SEO για κόστος απόκτησης που πέφτει με τον καιρό. Και τα δύο οδηγούν στην ίδια σελίδα, οπότε μια ιστοσελίδα που φορτώνει γρήγορα και απαντά καθαρά βελτιώνει και τις διαφημίσεις.',
+        'Αν οι διαφημίσεις σας φέρνουν πελάτες, εξετάζουμε ποιες αναζητήσεις αξίζει να καλύψετε και οργανικά. Τα δύο κανάλια μετρώνται χωριστά. Μπορούν να οδηγούν στην ίδια σελίδα, όπου ο πελάτης χρειάζεται σαφείς όρους και τρόπο επικοινωνίας.',
     },
     {
       question: 'Δίνετε εγγύηση για πρώτη θέση στη Google;',
@@ -342,7 +342,7 @@ const en: SeoServicesPillarCopy = {
         title: 'Keyword-to-page mapping',
         href: '/seo-services/strategy',
         body:
-          'One commercial cluster, one page. Without it, two of your pages compete for the same search and neither wins. We start from your own Search Console data rather than a generic volume export.',
+          'We check which pages appear for the searches you care about. If two overlap, we look at what customers need before deciding whether to keep them separate or combine them.',
       },
       {
         title: 'Content with commercial intent',
@@ -360,7 +360,7 @@ const en: SeoServicesPillarCopy = {
         title: 'GEO and AEO',
         href: '/services/ai-visibility',
         body:
-          'Answers written in a shape an answer engine can quote, clear company facts, and structured data that agrees with the page. No engine guarantees it will cite you; what you control is whether your content can be used.',
+          'We test questions customers ask, inspect the cited sources and check your own pages for gaps or errors. You see the answer we recorded and which facts you can correct.',
       },
     ],
   },
@@ -377,7 +377,7 @@ const en: SeoServicesPillarCopy = {
       {
         title: 'Months 1-3: foundations',
         body:
-          'Clear the technical blockers, rewrite the pages that can convert, sort Google Business Profile and local signals, publish the first content. This is where the first position movement shows.',
+          'We fix technical obstacles, update the agreed service pages and review your Google Business Profile where relevant. We record each publication date so you can compare what followed.',
       },
       {
         title: 'Months 4-6: expansion',
@@ -400,19 +400,19 @@ const en: SeoServicesPillarCopy = {
       {
         label: 'Discover Cyclades',
         line:
-          'Island content hubs and internal linking - steady organic growth on the island pages.',
+          'See how guides are grouped by island and link visitors to the relevant destination pages.',
         slug: 'discover-cyclades',
       },
       {
         label: 'Villa Olivia Clara',
         line:
-          'Luxury villa in Crete - brand and luxury villa SEO with photo-led conversion; stronger enquiries from the first season.',
+          'A Crete villa website that uses photography and accommodation details to help guests enquire directly.',
         slug: 'villa-olivia-clara',
       },
       {
         label: 'Aggelos Rentals',
         line:
-          'Car rental on Paros - fleet plus island local SEO; more direct bookings instead of aggregator-only demand.',
+          'A Paros car rental website that presents the fleet and gives visitors a direct route to the business.',
         slug: 'aggelos-rentals',
       },
     ],
@@ -423,7 +423,7 @@ const en: SeoServicesPillarCopy = {
     intro:
       'Pricing is public. SEO is priced on competition, search demand and content volume - not on a keyword count.',
     note:
-      'All prices are net of 24% Greek VAT. The minimum engagement is 6 months, monthly thereafter: below that there is not enough time to tell whether the work is paying.',
+      'The minimum engagement is 6 months, then the service renews monthly. Each package shows how VAT applies.',
     cta: 'See the full packages',
   },
   choosing: {
@@ -478,7 +478,7 @@ const en: SeoServicesPillarCopy = {
     {
       question: 'How long does SEO take to work?',
       answer:
-        'First position movement usually shows in 2 to 4 months. A material difference in enquiries takes 6 months or more, and longer in competitive sectors. That is why the minimum engagement is 6 months: below that there is not enough evidence to judge it.',
+        'The first report shows what we changed. When impressions, clicks or bookings change depends on your starting point, demand and competition. Our minimum engagement is 6 months.',
     },
     {
       question: 'Should SEO happen before or after the website is built?',
@@ -493,7 +493,7 @@ const en: SeoServicesPillarCopy = {
     {
       question: 'What is the difference between SEO and Google Ads?',
       answer:
-        'Ads buy visibility now and stop when the budget stops. SEO builds positions that persist but takes time. Most businesses do best with both: Ads for immediate demand, SEO for an acquisition cost that falls over time.',
+        'If ads bring customers, we look at which queries you also want to cover through organic search. We measure each channel separately. Both can lead people to the same service or product page.',
     },
     {
       question: 'Do you guarantee first position on Google?',

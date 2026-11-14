@@ -138,44 +138,44 @@ const BY_SERVICE: Record<string, { en: ServiceFaqItem[]; el: ServiceFaqItem[] }>
       {
         question: 'What is GEO / AEO and how is it different from SEO?',
         answer:
-          'SEO ranks you in classic Google results. AEO structures pages so an answer engine can lift a short answer (AI Overviews, snippets). GEO makes the business a consistent source when ChatGPT, Perplexity or Gemini compose an answer. Neither replaces SEO, and neither guarantees a citation.',
+          'SEO helps search engines find and understand your pages. With AEO we improve the answers customers can read there. With GEO we sample the questions they ask AI services and check which sources the answers cite.',
       },
       {
         question: 'Do you offer GEO / AEO services outside Greece?',
         answer:
-          'Yes. The same programme runs for tourism and local brands that sell into Greece, the EU, the UK and the US: entity consistency, visible FAQs with matching schema, and monthly mention sampling next to Search Console.',
+          'Yes. We work with tourism and local businesses reaching Greece, the EU, the UK and the US. We review the questions and sources in the languages their customers actually use.',
       },
       {
         question: 'What do AI visibility packages include?',
         answer:
-          'Dedicated GEO and AEO work is included in the SEO Growth and Authority retainers: entity cleanup, answer-shaped commercial pages, schema that matches visible text, and measurement against a fixed question set. Foundations does not include a separate GEO programme.',
+          'SEO Growth and Authority include dedicated AEO and GEO work. We review the details on your pages and sample answers to a fixed set of customer questions each month. Foundations covers the core SEO work.',
       },
       {
         question: 'How soon will we see a result?',
         answer:
-          'Entity and FAQ fixes can affect short answers within weeks on some queries. A stable mention trend on competitive questions usually takes quarters of measurement, not one ChatGPT session. We do not promise that any engine will cite you.',
+          'We show you which pages changed in the first monthly report. We can measure what a service answered on a given date, but we cannot predict when it will choose to mention or cite a business.',
       },
     ],
     el: [
       {
         question: 'Τι είναι GEO / AEO και πώς διαφέρει από το SEO;',
         answer:
-          'Το SEO σας κατατάσσει στα κλασικά αποτελέσματα Google. Το AEO δομεί τις σελίδες ώστε μια μηχανή απάντησης να σηκώσει σύντομη απάντηση (AI Overviews, snippets). Το GEO κάνει την επιχείρηση συνεπή πηγή όταν το ChatGPT, το Perplexity ή το Gemini συνθέτουν απάντηση. Κανένα δεν αντικαθιστά το SEO και κανένα δεν εγγυάται αναφορά.',
+          'Με το SEO ελέγχουμε πώς βρίσκει και διαβάζει η Google την ιστοσελίδα σας. Με το AEO βελτιώνουμε τις απαντήσεις που διαβάζει εκεί ο πελάτης. Με το GEO ελέγχουμε πώς περιγράφουν την επιχείρησή σας οι υπηρεσίες AI και ποιες πηγές παραθέτουν.',
       },
       {
         question: 'Προσφέρετε υπηρεσίες GEO / AEO εκτός Ελλάδας;',
         answer:
-          'Ναι. Το ίδιο πρόγραμμα τρέχει για τουρισμό και τοπικές επιχειρήσεις που πουλάνε σε Ελλάδα, ΕΕ, Ηνωμένο Βασίλειο και ΗΠΑ: συνέπεια οντότητας, ορατά FAQ με αντίστοιχο schema και μηνιαία δειγματοληψία αναφορών δίπλα στο Search Console.',
+          'Ναι. Συνεργαζόμαστε με τουριστικές και τοπικές επιχειρήσεις που απευθύνονται σε πελάτες στην Ελλάδα, την υπόλοιπη ΕΕ, το Ηνωμένο Βασίλειο και τις ΗΠΑ. Εξετάζουμε τις ερωτήσεις και τις πηγές στις γλώσσες των πελατών σας.',
       },
       {
         question: 'Τι περιλαμβάνει ένα πακέτο ορατότητας σε AI;',
         answer:
-          'Αφιερωμένη εργασία GEO και AEO περιλαμβάνεται στα πακέτα SEO Growth και Authority: καθαρισμός οντότητας, εμπορικές σελίδες σε μορφή απάντησης, schema που συμφωνεί με το ορατό κείμενο και μέτρηση σε σταθερό σύνολο ερωτημάτων. Το Foundations δεν περιλαμβάνει ξεχωριστό πρόγραμμα GEO.',
+          'Τα πακέτα SEO Growth και Authority περιλαμβάνουν ξεχωριστή εργασία AEO και GEO. Ελέγχουμε τις πληροφορίες στις σελίδες σας και καταγράφουμε κάθε μήνα τις απαντήσεις σε συμφωνημένες ερωτήσεις πελατών. Το Foundations καλύπτει τη βασική εργασία SEO.',
       },
       {
         question: 'Πότε θα δούμε αποτέλεσμα;',
         answer:
-          'Διορθώσεις οντότητας και FAQ μπορούν να επηρεάσουν σύντομες απαντήσεις σε εβδομάδες, σε ορισμένα ερωτήματα. Σταθερή τάση αναφορών σε ανταγωνιστικά ερωτήματα θέλει συνήθως τρίμηνα μέτρησης, όχι μία συνεδρία ChatGPT. Δεν υποσχόμαστε ότι κάποια μηχανή θα σας αναφέρει.',
+          'Στην πρώτη μηνιαία αναφορά βλέπετε τι αλλάξαμε στις σελίδες σας. Μπορούμε να δείξουμε τι απάντησε μια υπηρεσία AI σε συγκεκριμένη ερώτηση και ημερομηνία. Η ίδια η υπηρεσία επιλέγει αν και πότε θα παραθέσει την επιχείρησή σας.',
       },
     ],
   },
