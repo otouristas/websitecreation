@@ -231,3 +231,24 @@
     scroll-behavior: auto;
   }
 }
+
+.lightLogo { display: none; }
+:global([data-asg-theme="light"]) .lightLogo { display: block; }
+:global([data-asg-theme="light"]) .darkLogo { display: none; }
+:global([data-asg-theme="light"]) :is(.dialog, .close, .offers > div) {
+  background: var(--asg-surface);
+  color: var(--asg-text);
+  border-color: var(--asg-border-subtle);
+}
+:global([data-asg-theme="light"]) .art { opacity: .07; }
+:global([data-asg-theme="light"]) .shade {
+  background: linear-gradient(115deg, var(--asg-surface), transparent 90%);
+}
+:global([data-asg-theme="light"]) :is(.eyebrow, .inner h2 > span, .article) { color: var(--asg-link); }
+:global([data-asg-theme="light"]) :is(.lead, .offers span, .offers small, .was, .terms) {
+  color: var(--asg-text-secondary);
+}
+:global([data-asg-theme="light"]) .primary {
+  background: var(--asg-action);
+  color: var(--asg-action-foreground);
+}
