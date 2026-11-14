@@ -13,6 +13,14 @@ const config = JSON.parse(readFileSync(absoluteConfig, 'utf8'));
 const bundlePath = (p) => relative(process.cwd(), resolve(dirname(absoluteConfig), p)).split(sep).join('/');
 const main = bundlePath(config.main);
 const assets = bundlePath(config.assets.directory);
+const ssrDir = resolve(output, dirname(main), 'ssr');
+const runtimeEntry = resolve(ssrDir, 'index.js');
+if (!existsSync(runtimeEntry)) {
+  // vinext's generated router loads ./ssr/index.js. Vite emits .mjs in a
+  // CommonJS package, so keep the hashed SSR graph and expose its expected name.
+  if (!existsSync(resolve(ssrDir, 'index.mjs'))) throw new Error('Missing vinext SSR entry');
+  writeFileSync(runtimeEntry, "export { default } from './index.mjs';\nexport * from './index.mjs';\n");
+}
 if (!main.startsWith('dist/') || !assets.startsWith('dist/') || !existsSync(main) || !existsSync(assets)) {
   throw new Error('The artifact must include both the Worker entry and its assets');
 }
