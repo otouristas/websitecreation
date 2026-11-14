@@ -1,3 +1,4 @@
+import { ToolMark, type ToolBrand } from "@/components/ToolMark";
 import type { ReactNode } from "react";
 import Link from "next/link";
 import { ArrowRight, Clock3, CreditCard, LockKeyhole, MessageCircle, RotateCcw, ShieldCheck, type LucideIcon } from "lucide-react";
@@ -548,7 +549,7 @@ export function NameStrip({
   className,
 }: {
   readonly heading: string;
-  readonly items: ReadonlyArray<{ name: string; role?: string; href?: string }>;
+  readonly items: ReadonlyArray<{ name: string; role?: string; href?: string; brand?: ToolBrand }>;
   readonly className?: string;
 }) {
   return (
@@ -559,7 +560,7 @@ export function NameStrip({
           {items.map((w) => {
             const inner = (
               <>
-                <div className="text-[15px] font-semibold tracking-[-0.015em] text-foreground/85">{w.name}</div>
+                <div className="flex flex-col items-center gap-2 text-[15px] font-semibold tracking-[-0.015em] text-foreground/85">{w.brand && <ToolMark brand={w.brand} />}{w.name}</div>
                 {w.role ? <div className="mt-1 text-[12px] text-muted-foreground/80">{w.role}</div> : null}
               </>
             );

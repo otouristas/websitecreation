@@ -1,3 +1,4 @@
+import { ToolMark } from "@/components/ToolMark";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { McpShowcase } from "@/components/gsc-boost/McpShowcase";
@@ -167,7 +168,7 @@ export default async function PlatformMcpPage({ params }: PageProps) {
       <Header locale={locale} />
       <main className="blueprint-grid relative z-0">
         <HeroCentered
-          pill={<KitEyebrow icon={<Bot />}>{tx("Google Search Console MCP server", "MCP server για Google Search Console")}</KitEyebrow>}
+          pill={<KitEyebrow icon={<ToolMark brand="mcp" className="size-4" />}>{tx("Google Search Console MCP server", "MCP server για Google Search Console")}</KitEyebrow>}
           title={
             <>
               {tx("Ask about your Search Console data", "Ρωτήστε για τα στοιχεία του Search Console")} <Accent>{tx("in your AI assistant", "μέσα από τον βοηθό AI που χρησιμοποιείτε")}</Accent>
@@ -212,7 +213,7 @@ export default async function PlatformMcpPage({ params }: PageProps) {
             title={<>{tx("One server URL. ", "Μία διεύθυνση server. ")}<Accent>{tx("Your account.", "Ο λογαριασμός σας.")}</Accent></>}
             description={tx("Sign in to AnotherSEOGuru and choose a project. Connect Search Console when you want search reports, then add the assistant with the permissions you choose.", "Συνδεθείτε στο AnotherSEOGuru και επιλέξτε έργο. Συνδέστε το Search Console όταν θέλετε αναφορές αναζήτησης και προσθέστε τον βοηθό με τις άδειες που επιλέγετε.")} />
           <div className="mt-10 rounded-2xl border border-hairline bg-surface/60 p-5 sm:p-7">
-            <KitEyebrow icon={<Bot />}>{tx("Remote MCP connection", "Απομακρυσμένη σύνδεση MCP")}</KitEyebrow>
+            <KitEyebrow icon={<ToolMark brand="mcp" className="size-4" />}>{tx("Remote MCP connection", "Απομακρυσμένη σύνδεση MCP")}</KitEyebrow>
             <p className="mt-3 max-w-3xl text-[15px] leading-7 text-muted-foreground">{tx("Add this URL through your client's custom remote MCP controls. Choose OAuth, sign in to AnotherSEOGuru and approve the access you want to grant. No local package or API key is needed for this connection.", "Προσθέστε αυτή τη διεύθυνση στις ρυθμίσεις προσαρμοσμένης απομακρυσμένης σύνδεσης MCP της εφαρμογής σας. Επιλέξτε OAuth, συνδεθείτε στο AnotherSEOGuru και εγκρίνετε την πρόσβαση που θέλετε να δώσετε. Για αυτή τη σύνδεση δεν χρειάζεται τοπικό πακέτο ή API key.")}</p>
             <CodeBlock label={tx("Server URL", "Διεύθυνση server")} className="mt-5">{MCP_URL}</CodeBlock>
             <CheckList size="sm" className="mt-5" items={[
@@ -241,7 +242,7 @@ export default async function PlatformMcpPage({ params }: PageProps) {
               <li key={client.id} id={`client-${client.id}`} className="reveal flex min-w-0 flex-col rounded-2xl border border-hairline bg-background p-5 sm:p-6">
                 <div className="flex items-center gap-3">
                   <span className="grid size-12 shrink-0 place-items-center rounded-xl border border-hairline bg-white p-2">
-                    <Image src={client.id === "claude" ? "/logos/assets/claude-mark.png" : "/logos/assets/openai.webp"} alt="" width={32} height={32} className="size-8 object-contain" />
+                    <Image src={client.id === "claude" ? "/integrations/service-claude.svg" : "/integrations/service-chatgpt.svg"} alt="" width={32} height={32} className="size-8 object-contain" />
                   </span>
                   <h3 className="font-display text-2xl font-semibold text-foreground">{client.name}</h3>
                 </div>

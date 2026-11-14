@@ -34,15 +34,14 @@ function priceParts(plan: Plan, cycle: BillingCycle, l: SiteLocale) {
           : `or ${formatUsd(l, plan.yearly)} a year, 2 months free`,
     };
   }
-  const perMonth = formatUsd(l, plan.yearly / 12, 2);
   const savings = formatUsd(l, yearlySavings(plan));
   return {
     amount: formatUsd(l, plan.yearly),
     unit: T.perYear[l],
     note:
       l === "el"
-        ? `${perMonth} τον μήνα, με ετήσια χρέωση · εξοικονομείτε ${savings}`
-        : `${perMonth} a month, billed yearly · save ${savings}`,
+        ? `Εξοικονομείτε ${savings} με την ετήσια χρέωση`
+        : `Save ${savings} with annual billing`,
   };
 }
 

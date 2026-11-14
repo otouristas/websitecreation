@@ -1,8 +1,9 @@
+import { ToolMark } from "@/components/ToolMark";
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { ArrowRight, Calculator, Code2, Globe, ListChecks, Puzzle, Smartphone, Target } from "lucide-react";
+import { ArrowRight, Calculator, ListChecks, Target } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
@@ -102,42 +103,42 @@ export default async function PlatformHubPage({ params }: PageProps) {
       detail: tx("Ask Aster AI about a page and keep the answer with your tasks and drafts.", "Ρωτήστε τον Aster AI για μια σελίδα και κρατήστε την απάντηση μαζί με τις εργασίες και τα προσχέδιά σας."),
       href: `${getAppPath("/demo/chat")}?lang=${locale}`,
       state: tx("Open the demo", "Ανοίξτε τη δοκιμαστική έκδοση"),
-      icon: Globe,
+      brand: "web" as const,
     },
     {
       name: "iPhone",
       detail: tx("Check clicks and share a page with Aster AI while you’re away from your desk.", "Δείτε τα κλικ από το κινητό σας και στείλτε μια σελίδα στον Aster AI για έλεγχο."),
       href: lp("/platform/iphone"),
       state: tx("Join the TestFlight beta", "Δείτε πώς θα τη δοκιμάσετε μέσω TestFlight"),
-      icon: Smartphone,
+      brand: "iphone" as const,
     },
     {
       name: "Android",
       detail: tx("The Android app is being prepared for release. It uses the same account and site data.", "Ετοιμάζουμε την εφαρμογή για Android. Θα έχετε πρόσβαση στα στοιχεία της ιστοσελίδας σας με τον ίδιο λογαριασμό."),
       href: lp("/platform/android"),
       state: tx("Android release details", "Πληροφορίες για την κυκλοφορία"),
-      icon: Smartphone,
+      brand: "android" as const,
     },
     {
       name: "WordPress",
       detail: tx("Review a suggested title or description while you edit the page. You decide which changes to apply.", "Δείτε τον προτεινόμενο τίτλο ή την περιγραφή την ώρα που επεξεργάζεστε τη σελίδα. Εσείς επιλέγετε ποιες αλλαγές θα εφαρμόσετε."),
       href: lp("/platform/wordpress"),
       state: tx("See the WordPress plugin", "Δείτε το πρόσθετο για WordPress"),
-      icon: Puzzle,
+      brand: "wp" as const,
     },
     {
       name: tx("Chrome extension", "Επέκταση για Chrome"),
       detail: tx("Open a page in your browser and ask Aster AI about it while it’s in front of you.", "Ανοίξτε τη σελίδα που σας ενδιαφέρει και ρωτήστε τον Aster AI γι’ αυτήν απευθείας από το πρόγραμμα περιήγησης."),
       href: lp("/platform/chrome-extension"),
       state: tx("See the browser extension", "Δείτε πώς λειτουργεί η επέκταση"),
-      icon: Puzzle,
+      brand: "chrome" as const,
     },
     {
       name: "MCP / API",
       detail: tx("Bring your Search Console reports into the AI assistant you already use. You choose what it can access.", "Δείτε τις αναφορές του Search Console μέσα στον βοηθό AI που χρησιμοποιείτε ήδη. Εσείς ορίζετε τα δικαιώματα πρόσβασης."),
       href: lp("/platform/mcp"),
       state: tx("See what you can connect", "Δείτε ποιες συνδέσεις υποστηρίζονται"),
-      icon: Code2,
+      brand: "mcp" as const,
     },
   ];
 
@@ -182,6 +183,7 @@ export default async function PlatformHubPage({ params }: PageProps) {
               {copy.integrations.map((item) => (
                 <li key={item.label}>
                   <Link href={lp(item.href)} className="inline-flex items-center gap-2 hover:text-foreground">
+                    <ToolMark brand={item.icon} className="size-5" />
                     {item.label}
                   </Link>
                 </li>
@@ -374,11 +376,10 @@ export default async function PlatformHubPage({ params }: PageProps) {
           />
           <ul id="integrations" data-shot="integrations" className="mt-12 scroll-mt-28 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {places.map((card) => {
-              const Icon = card.icon;
               return (
                 <li key={card.name} className="min-w-0">
                   <Link href={card.href} className="flex h-full flex-col rounded-[22px] border border-hairline bg-background/70 p-6 transition-[border-color,transform] duration-200 hover:-translate-y-0.5 hover:border-primary/40 motion-reduce:hover:translate-y-0">
-                    <Icon className="size-5 text-primary" aria-hidden />
+                    <ToolMark brand={card.brand} className="size-6" />
                     <h3 className="mt-5 text-[18px] font-bold text-foreground">{card.name}</h3>
                     <p className="mt-2 flex-1 text-pretty text-[15px] leading-relaxed text-muted-foreground">{card.detail}</p>
                     <p className="mt-5 text-[13px] font-semibold text-primary">{card.state}</p>

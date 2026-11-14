@@ -49,8 +49,8 @@ export function McpShowcase({ locale }: { readonly locale: SiteLocale }) {
     <div className="grid items-center gap-8 lg:grid-cols-[0.65fr_1.35fr]">
       <div className="min-w-0">
         <div className="mb-6 flex items-center gap-3">
-          <span className="grid size-14 place-items-center rounded-2xl border border-hairline bg-white p-3"><Image src="/logos/assets/openai.webp" width={32} height={32} alt="ChatGPT" /></span>
-          <span className="grid size-14 place-items-center rounded-2xl border border-hairline bg-white p-3"><Image src="/logos/assets/claude-mark.png" width={32} height={32} alt="Claude" /></span>
+          <span className="grid size-14 place-items-center rounded-2xl border border-hairline bg-white p-3"><Image src="/integrations/service-chatgpt.svg" width={32} height={32} alt="ChatGPT" /></span>
+          <span className="grid size-14 place-items-center rounded-2xl border border-hairline bg-white p-3"><Image src="/integrations/service-claude.svg" width={32} height={32} alt="Claude" /></span>
         </div>
         <p className="font-mono text-[11px] uppercase tracking-widest text-primary">ANOTHERSEOGURU × CHATGPT / CLAUDE</p>
         <h2 className="mt-4 font-display text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">{el ? "Τα δεδομένα σας γίνονται συζήτηση." : "Your data becomes a conversation."}</h2>

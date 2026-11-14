@@ -1,6 +1,7 @@
-import type { ComponentType, ReactNode } from "react";
+import { ToolMark, type ToolBrand } from "@/components/ToolMark";
+import type { ReactNode } from "react";
 import Link from "next/link";
-import { ArrowRight, Bot, Check, Globe, Minus, Puzzle, Smartphone, type LucideIcon } from "lucide-react";
+import { ArrowRight, Check, Minus, type LucideIcon } from "lucide-react";
 import { GoogleTile } from "@/components/kit/sections";
 import { cn } from "@/lib/cn";
 import { getAppPath } from "@/lib/app-links";
@@ -56,7 +57,7 @@ export type SurfaceId = "web" | "iphone" | "chrome" | "wordpress" | "mcp";
 interface Surface {
   readonly id: SurfaceId;
   readonly path: string;
-  readonly icon: ComponentType<{ className?: string }>;
+  readonly brand: ToolBrand;
   readonly name: Copy;
   readonly where: Copy;
   readonly text: Copy;
@@ -67,7 +68,7 @@ export const SURFACES: ReadonlyArray<Surface> = [
   {
     id: "web",
     path: "/",
-    icon: Globe,
+    brand: "web",
     name: c("Web app", "Εφαρμογή web"),
     where: c("app.anotherseoguru.com", "app.anotherseoguru.com"),
     text: c(
@@ -79,7 +80,7 @@ export const SURFACES: ReadonlyArray<Surface> = [
   {
     id: "iphone",
     path: "/platform/iphone",
-    icon: Smartphone,
+    brand: "iphone",
     name: c("iPhone app", "Εφαρμογή iPhone"),
     where: c("iPhone · TestFlight beta", "iPhone · TestFlight beta"),
     text: c(
@@ -91,7 +92,7 @@ export const SURFACES: ReadonlyArray<Surface> = [
   {
     id: "chrome",
     path: CHROME_PATH,
-    icon: Puzzle,
+    brand: "chrome",
     name: c("Chrome extension", "Επέκταση Chrome"),
     where: c("Any page, and Google results", "Κάθε σελίδα και τα αποτελέσματα της Google"),
     text: c(
@@ -103,7 +104,7 @@ export const SURFACES: ReadonlyArray<Surface> = [
   {
     id: "wordpress",
     path: WORDPRESS_PATH,
-    icon: WordPressGlyph,
+    brand: "wp",
     name: c("WordPress SEO plugin", "Plugin SEO για WordPress"),
     where: c("Block and classic editor", "Block και classic editor"),
     text: c(
@@ -115,7 +116,7 @@ export const SURFACES: ReadonlyArray<Surface> = [
   {
     id: "mcp",
     path: MCP_PATH,
-    icon: Bot,
+    brand: "mcp",
     name: c("AI assistants (MCP)", "Βοηθοί AI (MCP)"),
     where: c("Claude, ChatGPT, Codex, Cursor, Grok Bot and more", "Claude, ChatGPT, Codex, Cursor, Grok Bot κ.ά."),
     text: c(
@@ -126,14 +127,8 @@ export const SURFACES: ReadonlyArray<Surface> = [
   },
 ];
 
-/** lucide has no WordPress mark; a plain "W" in a circle stands in for it. */
 export function WordPressGlyph({ className }: { readonly className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden>
-      <circle cx="12" cy="12" r="10" />
-      <path d="m6.5 8.5 3 8 2.5-6 2.5 6 3-8" />
-    </svg>
-  );
+  return <ToolMark brand="wp" className={className} />;
 }
 
 /** One card per way to use the account, linking to its page. */
@@ -149,7 +144,7 @@ export function IntegrationCards({
   const items = SURFACES.filter((s) => s.id !== exclude);
   return (
     <ul className={cn("grid gap-4 sm:grid-cols-2", items.length === 5 ? "lg:grid-cols-3" : "lg:grid-cols-4", className)}>
-      {items.map(({ id, path, icon: Icon, name, where, text, status }) => (
+      {items.map(({ id, path, brand, name, where, text, status }) => (
         <li key={id} className="reveal">
           <Link
             href={localizedPath(locale, path)}
@@ -157,7 +152,7 @@ export function IntegrationCards({
           >
             <div className="flex items-center justify-between gap-3">
               <span className="flex size-9 items-center justify-center rounded-lg bg-brand/15 text-brand">
-                <Icon className="size-4" />
+                <ToolMark brand={brand} className="size-5" />
               </span>
               <MarketingBadge kind={status.kind}>{status.label[locale]}</MarketingBadge>
             </div>
