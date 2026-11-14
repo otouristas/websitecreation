@@ -90,7 +90,7 @@ export function ManagedSeoView({ locale }: { readonly locale: SiteLocale }) {
           title={
             locale === "el" ? (
               <>
-                Η ομάδα SEO σας, <WaveAccent>μέσα στο App</WaveAccent>
+                Μηνιαία διαχείριση SEO <WaveAccent>για την επιχείρησή σας</WaveAccent>
               </>
             ) : (
               <>

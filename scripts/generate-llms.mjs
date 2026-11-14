@@ -39,7 +39,9 @@ import { serpMetaFor } from '../src/data/serp-meta.ts';
 import { getServiceHubCommercial } from '../src/data/service-hub-commercial.ts';
 import { getSeoServicesPillarCopy } from '../src/data/seo-services-pillar.ts';
 import { SPOKE_SLUGS, getSpokeCopy, fillSpokePrices } from '../src/data/seo-service-spokes.ts';
-import { serviceNamesEl } from '../src/data/services-i18n.ts';
+import { serviceNamesEl, localTopicsEl, websiteTopicsEl } from '../src/data/services-i18n.ts';
+import { getAiVisibilityPillarCopy } from '../src/data/ai-visibility-pillar.ts';
+import { getManagedSeoCopy } from '../src/data/managed-seo.ts';
 import { PLACE_PAGES, PLACE_REGION_LABEL } from '../src/data/place-seo/index.ts';
 import { WEBSITE_REGION_PAGES } from '../src/data/website-regions.ts';
 import { TOURISM_VERTICALS } from '../src/data/tourism-seo/index.ts';
@@ -438,7 +440,7 @@ function buildAgency(posts, full = false) {
   lines.push(hubLine('Υπηρεσίες', gr('/el/services'), 'Όλες οι υπηρεσίες.'));
   lines.push(hubLine('Υπηρεσίες SEO', gr('/el/seo-services'), 'SEO για επιχειρήσεις στην Ελλάδα.'));
   lines.push(hubLine('Σύμβουλος SEO', gr('/el/symvoulos-seo'), 'Συνεργασία με σύμβουλο SEO.'));
-  lines.push(hubLine('Διαχείριση SEO', gr('/el/diacheirisi-seo'), 'Μηνιαία διαχείριση SEO.'));
+  lines.push(hubLine('Διαχείριση SEO', gr('/el/diacheirisi-seo'), 'Η ομάδα εφαρμόζει τις αλλαγές στις σελίδες και ελέγχει με εσάς τα αιτήματα από την αναζήτηση.'));
   lines.push(hubLine('SEO guru', gr('/el/seo-guru'), 'Η μέθοδος από το Search Console.'));
   lines.push(hubLine('Υπηρεσίες ανά περιοχή', gr('/el/locations'), 'Κατασκευή ιστοσελίδας, ηλεκτρονικά καταστήματα, τεχνικός έλεγχος και τοπικό SEO ανά πόλη ή νησί.'));
   lines.push(hubLine('Κλάδοι', gr('/el/solutions'), 'Ιστοσελίδες και SEO ανά κλάδο.'));
@@ -522,13 +524,23 @@ function agencyCorpus() {
   }
   for (const [slug, service] of Object.entries(serviceNamesEl)) {
     const commercial = getServiceHubCommercial(slug, 'el');
+    const topics = slug === 'website-creation' ? websiteTopicsEl
+      : slug === 'local-seo' ? localTopicsEl : service.page?.topics || [];
+    const ai = slug === 'ai-visibility' ? getAiVisibilityPillarCopy('el') : null;
     section(service.name, gr(`/el/services/${slug}`), [
-      service.page?.lead || commercial?.definition,
+      ai?.answer || service.page?.lead || commercial?.definition,
       ...(service.features || []).map((feature) => `- ${feature}`),
-      ...(service.page?.topics || []).flatMap((topic) => [`### ${topic.title}`, ...topic.paragraphs]),
+      ...topics.flatMap((topic) => [`### ${topic.title}`, ...topic.paragraphs]),
+      ...(ai?.faqs || []).map((faq) => `**${faq.question}** ${faq.answer}`),
       ...(commercial?.process || []),
     ]);
   }
+  const managed = getManagedSeoCopy('el');
+  section(managed.serviceName, gr(managed.path), [
+    managed.lead,
+    ...managed.steps.map((step) => `**${step.title}**. ${step.body}`),
+    ...managed.faqs.map((faq) => `**${faq.question}** ${faq.answer}`),
+  ]);
   const pillar = getSeoServicesPillarCopy('el');
   section(pillar.h1, gr('/el/seo-services'), [
     pillar.answer, pillar.answerExtra, ...pillar.includes.items.map((item) => `**${item.title}**. ${item.body}`),

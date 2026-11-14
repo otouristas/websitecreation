@@ -18,7 +18,7 @@ import {
 import { portfolioProjects } from '@/data/portfolio';
 import { PROJECTS_DELIVERED_LABEL } from '@/data/company-facts';
 import { getServiceBySlug } from '@/data/services';
-import { getServiceEl, type ServiceTopicEl } from '@/data/services-i18n';
+import { getServiceEl, websiteTopicsEl } from '@/data/services-i18n';
 import { getIndexableServiceLocations } from '@/data/locations';
 import { resolvePriceTokens } from '@/data/pricing';
 import { getGreekLocative } from '@/lib/greek-locative';
@@ -44,32 +44,6 @@ import {
  */
 
 const SIGNATURE_HUE = 259;
-
-/**
- * Greek keyword-map H2s that have no English counterpart on this page
- * (κατασκευή ιστοσελίδας: τι περιλαμβάνει / παρουσίασης ή e-shop / WordPress).
- */
-const topicsEl: readonly ServiceTopicEl[] = [
-  {
-    title: 'Τι περιλαμβάνει η κατασκευή ιστοσελίδας',
-    paragraphs: [
-      'Σχεδιασμό στα μέτρα του brand σας (όχι έτοιμο template), responsive κατασκευή mobile-first, τεχνικά θεμέλια SEO, ρύθμιση Analytics και Search Console και εκπαίδευση για να τη διαχειρίζεστε μόνοι σας. Τα κείμενα μπορούμε να τα γράψουμε εμείς ή να σας δώσουμε brief ανά σελίδα.',
-      'Για τη συνεχή ανάπτυξη μετά το λανσάρισμα υπάρχουν οι [υπηρεσίες SEO](/seo-services), και για το συνολικό κόστος ο οδηγός [πόσο κοστίζει μια ιστοσελίδα](/blog/poso-kostizei-mia-istoselida).',
-    ],
-  },
-  {
-    title: 'Ιστοσελίδα παρουσίασης ή e-shop;',
-    paragraphs: [
-      'Μια ιστοσελίδα παρουσίασης φέρνει τηλεφωνήματα, αιτήματα και κρατήσεις: υπηρεσίες, περιοχές, έργα και φόρμα επικοινωνίας. Αν πουλάτε προϊόντα online, χρειάζεστε ηλεκτρονικό κατάστημα με πληρωμές, μεταφορικά και τιμολόγηση, δηλαδή [κατασκευή eshop](/services/eshop-woocommerce).',
-    ],
-  },
-  {
-    title: 'Κατασκευή ιστοσελίδας με WordPress ή custom;',
-    paragraphs: [
-      'Το WordPress ταιριάζει όταν θέλετε να αλλάζετε μόνοι σας κείμενα και σελίδες, και είναι η βάση κάθε e-shop που στήνουμε σε WooCommerce. Η custom κατασκευή ταιριάζει όταν χρειάζεστε ειδική λειτουργικότητα ή μέγιστη ταχύτητα. Η τιμή ορίζεται από το εύρος (σελίδες, γλώσσες, λειτουργίες), και σε κάθε περίπτωση το site μένει δικό σας.',
-    ],
-  },
-];
 
 const copy = {
   en: {
@@ -181,7 +155,7 @@ const copy = {
       eyebrow: 'Διαδικασία',
       title: 'Η διαδικασία κατασκευής ιστοσελίδας σε 4 βήματα',
       body:
-        'Τέσσερις φάσεις. Βλέπετε δουλειά στο τέλος κάθε μίας, οπότε τίποτα δεν είναι έκπληξη στο λανσάρισμα.',
+        'Πρώτα εγκρίνετε τις σελίδες και το περιεχόμενό τους. Μετά βλέπετε τη σχεδίαση σε κινητό και υπολογιστή και δοκιμάζετε την έτοιμη ιστοσελίδα πριν ανοίξει στο κοινό.',
       items: [
         {
           n: '01',
@@ -352,7 +326,7 @@ export function WebsiteCreationPage({ locale }: { locale: SiteLocale }) {
         />
       </KitSection>
 
-      {isEl ? <TopicSections topics={topicsEl} locale={locale} id="whats-included" /> : null}
+      {isEl ? <TopicSections topics={websiteTopicsEl} locale={locale} id="whats-included" /> : null}
 
       {/* 3 - Ownership */}
       <KitSection tinted>

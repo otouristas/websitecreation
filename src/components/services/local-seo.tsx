@@ -16,7 +16,7 @@ import {
 import { cn } from '@/lib/cn';
 import { getIndexableServiceLocations } from '@/data/locations';
 import { getServiceBySlug } from '@/data/services';
-import { getServiceEl, type ServiceTopicEl } from '@/data/services-i18n';
+import { getServiceEl, localTopicsEl } from '@/data/services-i18n';
 import { resolvePriceTokens } from '@/data/pricing';
 import { TopicSections } from './topic-sections';
 import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
@@ -46,21 +46,7 @@ import {
 const SIGNATURE_HUE = 200;
 
 /** Greek keyword-map H2s with no English counterpart on this page. */
-const topicsEl: readonly ServiceTopicEl[] = [
-  {
-    title: 'Κριτικές: πώς τις αυξάνετε σωστά',
-    paragraphs: [
-      'Μετά την επίσκεψη ή την παραλαβή, δώστε σε όλους τους πελάτες τον ίδιο σύνδεσμο για αξιολόγηση. Αποφύγετε δώρα, εκπτώσεις ή επιλογή μόνο όσων έμειναν ευχαριστημένοι. Μια συγκεκριμένη απάντηση σε παράπονο δείχνει στον επόμενο πελάτη πώς το χειριστήκατε.',
-    ],
-  },
-  {
-    title: 'Τοπικό SEO για ξενοδοχεία και rent-a-car στα νησιά',
-    paragraphs: [
-      'Στα νησιά ο επισκέπτης ψάχνει πριν φτάσει, συχνά στα αγγλικά και με όνομα λιμανιού ή αεροδρομίου. Το προφίλ, οι φωτογραφίες και οι σελίδες σας πρέπει να απαντούν σε αυτές τις αναζητήσεις. Δείτε πώς το εφαρμόζουμε στις [ιστοσελίδες ξενοδοχείων](/solutions/hotels) και στις [ιστοσελίδες rent a car](/solutions/rent-a-car).',
-      'Αν η επιχείρησή σας δεν είναι ακόμα στον χάρτη, ξεκινήστε από τον οδηγό [πώς βάζω την επιχείρησή μου στο Google Maps](/blog/epixeirisi-sto-google-maps).',
-    ],
-  },
-];
+
 
 const copy = {
   en: {
@@ -419,7 +405,7 @@ export function LocalSeoPage({ locale }: { locale: SiteLocale }) {
         </div>
       </KitSection>
 
-      {isEl ? <TopicSections topics={topicsEl} locale={locale} id="reviews" /> : null}
+      {isEl ? <TopicSections topics={localTopicsEl} locale={locale} id="reviews" /> : null}
 
       {/* 5 - Pricing, from src/data/pricing.ts */}
       <KitSection tinted id="pricing">
