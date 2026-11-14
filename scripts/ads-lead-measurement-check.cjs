@@ -18,34 +18,34 @@ function fixture() {
     href: 'https://anotherseoguru.com/el/contact?email=private@example.com#secret',
   } };
   const document = { title: 'Contact', cookie: '', getElementById: id => scripts.find(s => s.id === id), createElement: () => ({}), head: { appendChild: el => scripts.push(el) } };
-  let emailOk = false, appOk = false, analyticsThrows = false;
-  const shared = { window, document, localStorage, sessionStorage, URL, URLSearchParams, Date, performance: {now: () => 4000} };
+  let appOk = false, analyticsThrows = false;
+  const shared = { process: { env: {} }, window, document, localStorage, sessionStorage, URL, URLSearchParams, Date, performance: {now: () => 4000} };
   function module(path, dependencies = {}) {
     const exports = {};
     const compiled = ts.transpileModule(fs.readFileSync(path, 'utf8'), { compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022 } }).outputText;
     vm.runInNewContext(compiled, { ...shared, exports, require: name => {
       if (!(name in dependencies)) throw new Error(`Unstubbed import: ${name}`);
       return dependencies[name];
-    }, fetch: async () => ({ ok: appOk, json: async () => ({ token: 'private-lead-token' }) }) });
+    }, fetch: async () => ({ ok: appOk, json: async () => ({ ok: appOk, token: 'private-lead-token' }) }) });
     return exports;
   }
   const analytics = module('src/lib/analytics.ts');
   const leads = module('src/lib/leads.ts', {
     '@/lib/app-links': { getAppPath: path => `https://app.anotherseoguru.com${path}` },
-    '@/lib/formspree': { submitToFormspree: async () => ({ ok: emailOk, error: emailOk ? undefined : 'offline' }) },
+    '@/lib/lead-progress': { parseTeamProgress: () => null },
     '@/lib/analytics': { trackLead: (...args) => { if (analyticsThrows) throw new Error('blocked tag'); analytics.trackLead(...args); } },
   });
   const commands = () => (window.dataLayer ?? []).map(args => Array.from(args));
   const conversions = () => commands().filter(a => a[0] === 'event' && a[1] === 'conversion');
   return { window, localStorage, sessionStorage, scripts, analytics, leads, commands, conversions,
-    outcome: (email, app, throws = false) => { emailOk = email; appOk = app; analyticsThrows = throws; } };
+    outcome: (app, throws = false) => { appOk = app; analyticsThrows = throws; } };
 }
 const enquiry = { name: 'Private Person', email: 'private@example.com', phone: '+301234567890', company: 'Private Hotel', website: 'https://private-hotel.example', message: 'Private details', service: 'webdesign', locale: 'el', source: 'website-contact' };
 const payload = { form: 'contact', email: enquiry.email };
 
 (async () => {
   let f = fixture();
-  f.outcome(true, true);
+  f.outcome(true);
   assert.equal((await f.leads.submitLead(payload, enquiry)).ok, true);
   assert.equal(f.scripts.length, 0, 'Accepted forms do not enable unconsented measurement');
   f.localStorage.setItem('cookie-consent', 'accepted');
@@ -55,9 +55,9 @@ const payload = { form: 'contact', email: enquiry.email };
 
   f = fixture();
   f.analytics.applyMeasurementConsent(true, true);
-  f.outcome(true, true);
+  f.outcome(true);
   assert.equal((await f.leads.submitLead(payload, enquiry)).ok, true);
-  assert.equal(f.conversions().length, 1, 'Both accepting endpoints count one accepted enquiry');
+  assert.equal(f.conversions().length, 1, 'The primary intake counts a single accepted enquiry');
   const params = f.conversions()[0][2];
   assert.equal(params.send_to, 'AW-18400993971/FwkvCM7J_eQcELPFo8ZE');
   assert.match(params.transaction_id, /^[a-f0-9-]{36}$/i);
@@ -68,15 +68,15 @@ const payload = { form: 'contact', email: enquiry.email };
   const events = f.commands().filter(a => a[0] === 'event');
   for (const value of ['private@example.com', 'private-hotel.example', 'Private Person', 'Private details', 'private-lead-token', 'token=secret']) assert.ok(!JSON.stringify(events).includes(value), `No private enquiry data: ${value}`);
   assert.equal(f.commands().find(a => a[0] === 'config' && a[1] === 'AW-18400993971')[2].allow_enhanced_conversions, false);
-  f.outcome(false, false);
+  f.outcome(false);
   assert.equal((await f.leads.submitLead(payload, enquiry)).ok, false);
   assert.equal(f.conversions().length, 1, 'Failed submissions never count as leads');
-  f.outcome(true, false);
+  f.outcome(true);
   assert.equal((await f.leads.submitLead(payload, enquiry)).ok, true);
-  assert.equal(f.conversions().length, 2, 'Email fallback acceptance still counts');
-  f.outcome(false, true);
+  assert.equal(f.conversions().length, 2, 'A later accepted enquiry counts once');
+  f.outcome(true);
   await f.leads.submitLead(payload, enquiry);
-  assert.equal(f.conversions().length, 3, 'App fallback acceptance still counts');
+  assert.equal(f.conversions().length, 3, 'Distinct accepted enquiries count individually');
   f.analytics.applyMeasurementConsent(true, false);
   await f.leads.submitLead(payload, enquiry);
   assert.equal(f.conversions().length, 3, 'Revoking advertising consent immediately blocks conversions');
@@ -87,7 +87,7 @@ const payload = { form: 'contact', email: enquiry.email };
   assert.equal(f.commands().filter(a => a[0] === 'event').length, eventCount);
   f.analytics.applyMeasurementConsent(true, true);
   assert.equal(f.scripts.length, 1, 'Reaccepting does not add a second tag');
-  f.outcome(true, false, true);
+  f.outcome(true, true);
   assert.equal((await f.leads.submitLead(payload, enquiry)).ok, true, 'A blocked tag cannot break an accepted enquiry');
-  console.log('PASS: accepted-only leads, dual-endpoint deduplication, consent separation/revocation, attribution, no PII or false revenue, graceful tag failure');
+  console.log('PASS: accepted-only leads, transaction deduplication, consent separation/revocation, attribution, no PII or false revenue, graceful tag failure');
 })().catch(error => { console.error(error); process.exitCode = 1; });
