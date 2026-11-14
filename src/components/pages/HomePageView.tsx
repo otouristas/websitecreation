@@ -78,10 +78,10 @@ export function HomePageView({ locale }: { readonly locale: SiteLocale }) {
                 Ιστοσελίδες και SEO για τη δική σας επιχείρηση.
               </h1>
               <p className="mt-4 max-w-[43ch] text-pretty text-[16px] leading-relaxed text-muted-foreground sm:text-lg">
-                Θέλετε περισσότερα αιτήματα, ραντεβού ή κρατήσεις; Φτιάχνουμε την ιστοσελίδα σας ή βελτιώνουμε αυτή που έχετε, ώστε οι πελάτες να σας βρίσκουν και να επικοινωνούν μαζί σας.
+                Φτιάχνουμε ιστοσελίδες για κρατήσεις, ραντεβού και παραγγελίες. Αν έχετε ήδη ιστοσελίδα, αναλαμβάνουμε το SEO της.
               </p>
               <div className="mt-5 flex flex-wrap gap-2 lg:mt-7">
-                <Link className={primary} href={quote}>Προσφορά για ιστοσελίδα <ArrowRight className="size-4" aria-hidden /></Link>
+                <Link className={primary} href={quote}>Ζητήστε προσφορά <ArrowRight className="hidden size-4 sm:block" aria-hidden /></Link>
                 <Link className={secondary} href={audit}>Δωρεάν έλεγχος SEO</Link>
               </div>
               <Link href={lp('/ypiresies/times')} className={`${textLink} mt-1 text-sm`}>Δείτε τιμές και πακέτα <ArrowUpRight className="size-4" aria-hidden /></Link>
