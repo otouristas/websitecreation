@@ -57,7 +57,7 @@ const EN: Record<string, ServiceAngle> = {
     process:
       'Technical review runs against the design itself - URL structure, internal linking, schema for the entities that matter in this sector - rather than after handover.',
     outcome:
-      'A site that does not need a second "SEO optimisation" project after launch.',
+      'A site structure, page titles and internal links your team can use as you add services.',
   },
   'content-creation': {
     approach:
@@ -73,7 +73,7 @@ const EN: Record<string, ServiceAngle> = {
     process:
       'Google Business Profile is brought up to standard first - categories, services, photos, questions - alongside consistent citations and NAP, because contradictions there cost trust before any content work can pay off.',
     outcome:
-      'Consistent presence for the near-me and city-qualified searches that produce calls, with reviews handled as an ongoing process rather than a one-off push.',
+      'Accurate listings, clear directions for customers and a way to ask everyone who used the service for a review.',
   },
   'seo-audits': {
     approach:
@@ -89,7 +89,7 @@ const EN: Record<string, ServiceAngle> = {
     process:
       'We work on entity clarity and schema so the business is unambiguous to a model, and restructure key pages so they answer questions directly enough to be used.',
     outcome:
-      'Pages shaped so an answer engine can use them, with mention sampling so you can see the trend rather than a promised citation rate.',
+      'A record of which answers mentioned you, which cited a page and what information needs correcting. Referral visits are measured separately.',
   },
   'eshop-woocommerce': {
     approach:
@@ -97,7 +97,7 @@ const EN: Record<string, ServiceAngle> = {
     process:
       'WooCommerce is configured around how you actually sell and ship, with product pages built to answer the questions that otherwise stop the purchase.',
     outcome:
-      'A store whose category structure is designed to rank, because categories - not the homepage - are what commercial searches land on.',
+      'A catalogue organised around what shoppers look for, with delivery options and order costs visible at checkout.',
   },
   'eshop-seo': {
     approach:
@@ -105,7 +105,7 @@ const EN: Record<string, ServiceAngle> = {
     process:
       'Technical work comes first to stop the duplication, then category and product optimisation with product schema so price and availability can show in results.',
     outcome:
-      'Category and product pages that earn commercial traffic, with conversion work treated as part of the same job rather than a later phase.',
+      'A prioritised set of category and product improvements with baseline search data for the affected pages.',
   },
   'speed-optimization': {
     approach:
@@ -113,7 +113,7 @@ const EN: Record<string, ServiceAngle> = {
     process:
       'We profile the real templates to find what is actually holding the load - images, third-party scripts, render-blocking resources - and fix in that order.',
     outcome:
-      'Measured Core Web Vitals improvement on the pages that convert, verified after the work rather than assumed.',
+      'Before-and-after checks on the pages customers use, with real-user Core Web Vitals where enough data is available.',
   },
   'link-building': {
     approach:
@@ -121,7 +121,7 @@ const EN: Record<string, ServiceAngle> = {
     process:
       'We look for genuine reasons to be covered - expertise, data you already hold, relationships you already have - and pursue those rather than buying placements.',
     outcome:
-      'A link profile that looks like it was earned, monitored for the spam that can arrive uninvited.',
+      'A record of the publications approached and any coverage and links they choose to publish.',
   },
   'logo-design': {
     approach:
@@ -139,101 +139,131 @@ const EL: Record<string, ServiceAngle> = {
     approach:
       'Πριν σχεδιάσουμε την ιστοσελίδα, εντοπίζουμε τι ρωτά ο πελάτης πριν σας καλέσει. Έτσι ξεχωρίζουμε ποιες υπηρεσίες χρειάζονται δική τους σελίδα και πώς θα προχωρά ο επισκέπτης σε κράτηση ή αίτημα.',
     process:
-      'Χαρτογραφούμε πρώτα τη διαδρομή του αιτήματος - σε ποια σελίδα φτάνει κάποιος, τι πρέπει να απαντηθεί πριν επικοινωνήσει και τι αίρει τον τελευταίο δισταγμό - και χτίζουμε τη δομή γύρω από αυτή τη διαδρομή.',
+      'Σχεδιάζουμε τη διαδρομή από την πρώτη επίσκεψη μέχρι το αίτημα. Δοκιμάζουμε στο κινητό αν ο πελάτης βρίσκει την υπηρεσία, το τηλέφωνο ή τη φόρμα που χρειάζεται.',
     outcome:
-      'Ένα site με ξεχωριστή σελίδα για κάθε πραγματική πρόθεση αγοράς, τεχνικά σωστό από την πρώτη μέρα και δομημένο ώστε να επεκτείνεται χωρίς ξαναχτίσιμο.',
+      'Παραλαμβάνετε ιστοσελίδα με τις συμφωνημένες σελίδες και τη μέτρηση που χρειάζεστε για να δείτε ποιες φέρνουν επικοινωνίες.',
   },
   'website-redesign': {
     approach:
       'Πριν αλλάξουμε την εμφάνιση, βρίσκουμε τις σελίδες που ήδη φέρνουν αιτήματα. Για καθεμία ετοιμάζουμε την αντίστοιχη νέα διεύθυνση, ώστε να συνεχίζουν να λειτουργούν οι σύνδεσμοί της.',
     process:
-      'Καταγράφουμε τι αποδίδει σήμερα πριν σχεδιαστεί οτιδήποτε, αντιστοιχίζουμε παλιές με νέες διευθύνσεις και ξαναχτίζουμε πρώτα τα πρότυπα που μετράνε.',
+      'Ελέγχουμε ποιες σελίδες φέρνουν σήμερα επισκέψεις ή αιτήματα. Για όσες αλλάξουν διεύθυνση, βρίσκουμε την αντίστοιχη νέα σελίδα και δοκιμάζουμε την ανακατεύθυνση.',
     outcome:
-      'Νέα ιστοσελίδα με ανακατευθύνσεις από τις παλιές διευθύνσεις στις αντίστοιχες νέες. Μετά τη δημοσίευση μπορείτε να παρακολουθείτε την πορεία τους στη Google.',
+      'Έχετε αντιστοίχιση παλιών και νέων διευθύνσεων και μπορείτε να συγκρίνετε τα στοιχεία της αναζήτησης πριν και μετά τη μετάβαση.',
   },
   'web-design': {
     approach:
       'Εξετάζουμε πώς επιλέγουν οι πελάτες ανάμεσα στις υπηρεσίες σας και ποια περιοχή τους ενδιαφέρει. Με βάση αυτές τις επιλογές οργανώνουμε το μενού, ώστε να λειτουργεί καλά και στο κινητό.',
     process:
-      'Ο τεχνικός έλεγχος γίνεται πάνω στο ίδιο το σχέδιο - δομή URL, εσωτερικοί σύνδεσμοι, schema για τις οντότητες του κλάδου - και όχι μετά την παράδοση.',
+      'Σχεδιάζουμε το μενού με τα ονόματα που χρησιμοποιούν οι πελάτες σας. Ελέγχουμε αν από κάθε σελίδα υπηρεσίας βρίσκουν εύκολα το επόμενο βήμα.',
     outcome:
-      'Ένα site που δεν χρειάζεται δεύτερο έργο «βελτιστοποίησης SEO» μετά τη δημοσίευση.',
+      'Έχετε σαφή δομή σελίδων, τίτλους και εσωτερικούς συνδέσμους που μπορείτε να διατηρήσετε καθώς προσθέτετε υπηρεσίες.',
   },
   'content-creation': {
     approach:
       'Ποιες ερωτήσεις επανέρχονται στο τηλέφωνο πριν ζητήσει ο πελάτης προσφορά; Χρησιμοποιούμε τη γλώσσα των πελατών σας και ελέγχουμε στο Search Console αν ψάχνουν τα ίδια πράγματα.',
     process:
-      'Ξεκινάμε από τις ερωτήσεις που ήδη απαντά η ομάδα σας στο τηλέφωνο, ελέγχουμε ποιες έχουν πραγματική ζήτηση στην αναζήτηση και γράφουμε τις σελίδες που λείπουν.',
+      'Συγκρίνουμε όσα ρωτούν οι πελάτες σας στο τηλέφωνο με τις αναζητήσεις που βλέπετε στο Search Console. Εκεί που λείπει απάντηση, γράφουμε ή αναθεωρούμε τη σχετική σελίδα.',
     outcome:
-      'Σελίδες υπηρεσιών που εξηγούν τι πραγματικά κάνετε, μαζί με περιεχόμενο που φτάνει στον πελάτη νωρίτερα στην απόφαση.',
+      'Έχετε κείμενα που εξηγούν σε ποιον απευθύνεται κάθε υπηρεσία, τι περιλαμβάνει και πώς μπορεί κάποιος να προχωρήσει.',
   },
   'local-seo': {
     approach:
       'Ο πελάτης μπορεί να σας βρει από τον χάρτη ή από μια τοπική σελίδα. Ελέγχουμε αν βρίσκει τα ίδια στοιχεία επικοινωνίας και αν καταλαβαίνει ποιες περιοχές εξυπηρετείτε.',
     process:
-      'Πρώτα μπαίνει σε τάξη το Google Business Profile - κατηγορίες, υπηρεσίες, φωτογραφίες, ερωτήσεις - μαζί με συνεπείς καταχωρήσεις και NAP, γιατί οι αντιφάσεις εκεί κοστίζουν πριν προλάβει να αποδώσει οτιδήποτε άλλο.',
+      'Ελέγχουμε κατηγορία, ωράριο, τηλέφωνο και περιοχή εξυπηρέτησης στο Google Business Profile. Τα συγκρίνουμε με την ιστοσελίδα σας όπως θα έκανε κάποιος που ετοιμάζεται να έρθει.',
     outcome:
-      'Σταθερή παρουσία στις αναζητήσεις «κοντά μου» και ανά πόλη που παράγουν κλήσεις, με τις κριτικές ως συνεχή διαδικασία και όχι ως εφάπαξ κίνηση.',
+      'Ο πελάτης βλέπει πού και πότε σας βρίσκει. Εσείς έχετε συγκεντρωμένες τις διορθώσεις και έναν απλό τρόπο να ζητάτε κριτική από τους πελάτες σας.',
   },
   'seo-audits': {
     approach:
       'Αν το ίδιο πρόβλημα επαναλαμβάνεται σε πολλές σελίδες, μια διόρθωση στο κοινό τους πρότυπο μπορεί να το λύσει συνολικά. Βρίσκουμε αυτά τα μοτίβα και δίνουμε προτεραιότητες για την υλοποίηση.',
     process:
-      'Ελέγχουμε πρώτα crawl και ευρετηρίαση, μετά canonical και διπλότυπα, μετά on-page και επικαλύψεις περιεχομένου, και τέλος Core Web Vitals - με αυτή τη σειρά, γιατί μια γρήγορη σελίδα εκτός ευρετηρίου δεν αξίζει τίποτα.',
+      'Ελέγχουμε πρώτα αν η Google μπορεί να επισκεφθεί και να καταχωρίσει τις σημαντικές σελίδες σας. Εξετάζουμε ενδεικτικές διευθύνσεις για διπλότυπα, λάθος συνδέσμους ή προβλήματα σε κινητό.',
     outcome:
-      'Ιεραρχημένο πλάνο που λέει τι γίνεται πρώτα και γιατί, με μηνιαία αναφορά προόδου, αντί για εξαγωγή όλων των προειδοποιήσεων ενός εργαλείου.',
+      'Παραλαμβάνετε λίστα με τη σειρά των διορθώσεων, συγκεκριμένες σελίδες όπου φαίνεται το πρόβλημα και τρόπο να ελέγξετε αν λύθηκε.',
   },
   'ai-visibility': {
     approach:
       'Ελέγχουμε πώς περιγράφουν οι υπηρεσίες AI την επιχείρησή σας. Όταν λείπουν στοιχεία ή υπάρχουν ασυμφωνίες, ξεκαθαρίζουμε τις πληροφορίες που μπορεί να επιβεβαιώσει ο πελάτης στην ιστοσελίδα σας.',
     process:
-      'Δουλεύουμε στη σαφήνεια της οντότητας και στο schema ώστε η επιχείρηση να είναι αναγνωρίσιμη από ένα μοντέλο, και αναδομούμε τις βασικές σελίδες ώστε να απαντούν ευθέως.',
+      'Δοκιμάζουμε ερωτήσεις πελατών, καταγράφουμε την απάντηση και ανοίγουμε τις πηγές που παραθέτει. Αν υπάρχει ανακρίβεια, ελέγχουμε πρώτα τι πληροφορίες δίνετε στη δική σας ιστοσελίδα.',
     outcome:
-      'Σελίδες σε μορφή που μια μηχανή απάντησης μπορεί να χρησιμοποιήσει, με δειγματοληψία αναφορών ώστε να φαίνεται η τάση - όχι υποσχεμένο ποσοστό αναφορών.',
+      'Βλέπετε πότε έγινε η δοκιμή, τι απάντησε κάθε υπηρεσία AI και αν έδωσε σύνδεσμο προς εσάς. Τα καταγεγραμμένα κλικ εξετάζονται χωριστά.',
   },
   'eshop-woocommerce': {
     approach:
       'Πώς θα πληρώνει ο πελάτης και με ποιον τρόπο θα παραλαμβάνει; Σχεδιάζουμε αυτές τις επιλογές μαζί με τον κατάλογο και το απόθεμα, ώστε ο αγοραστής να μπορεί να ολοκληρώσει την παραγγελία.',
     process:
-      'Το WooCommerce ρυθμίζεται γύρω από τον τρόπο που πραγματικά πουλάτε και στέλνετε, με σελίδες προϊόντων που απαντούν στις ερωτήσεις που αλλιώς σταματούν την αγορά.',
+      'Δοκιμάζουμε μια παραγγελία με τα δικά σας μεταφορικά, τρόπους πληρωμής και επιλογές παραλαβής. Ελέγχουμε τι βλέπει ο πελάτης όταν αλλάζει μέγεθος ή εξαντλείται ένα προϊόν.',
     outcome:
-      'Κατάστημα με δομή κατηγοριών σχεδιασμένη να κατατάσσεται, γιατί οι κατηγορίες - όχι η αρχική - δέχονται τις εμπορικές αναζητήσεις.',
+      'Έχετε κατάλογο ανά κατηγορία και ταμείο που εξηγεί στον πελάτη πόσο θα πληρώσει και πώς θα παραλάβει.',
   },
   'eshop-seo': {
     approach:
       'Άλλος ψάχνει έναν συγκεκριμένο κωδικό και άλλος θέλει να συγκρίνει μια κατηγορία. Ελέγχουμε ποια σελίδα εμφανίζεται και αν τα φίλτρα, οι περιγραφές και η διαθεσιμότητα βοηθούν την επιλογή.',
     process:
-      'Πρώτα η τεχνική δουλειά για να σταματήσει η διπλοεγγραφή, μετά βελτιστοποίηση κατηγοριών και προϊόντων με schema ώστε τιμή και διαθεσιμότητα να εμφανίζονται στα αποτελέσματα.',
+      'Ελέγχουμε αν τα φίλτρα δημιουργούν περιττές διευθύνσεις και αν τα στοιχεία προϊόντος συμφωνούν με την τιμή και τη διαθεσιμότητα που βλέπει ο αγοραστής.',
     outcome:
-      'Κατηγορίες και προϊόντα που φέρνουν εμπορική επισκεψιμότητα, με το CRO να δουλεύεται μαζί και όχι σε επόμενη φάση.',
+      'Γνωρίζετε ποιες κατηγορίες και ποια προϊόντα χρειάζονται διορθώσεις και πώς θα παρακολουθήσετε τις επισκέψεις τους από την αναζήτηση.',
   },
   'speed-optimization': {
     approach:
       'Μια γρήγορη αρχική σελίδα δεν αρκεί αν αργεί η φόρμα κράτησης ή η σελίδα προϊόντος. Μετράμε τις σελίδες που χρησιμοποιεί ο πελάτης στο κινητό πριν προτείνουμε αλλαγές.',
     process:
-      'Μετράμε τα πραγματικά πρότυπα για να βρούμε τι κρατάει τον χρόνο φόρτωσης - εικόνες, scripts τρίτων, render-blocking πόροι - και διορθώνουμε με αυτή τη σειρά.',
+      'Δοκιμάζουμε τις βασικές σελίδες σε κινητό. Ελέγχουμε αν η καθυστέρηση οφείλεται σε φωτογραφίες, γραμματοσειρές ή εξωτερικές υπηρεσίες πριν επέμβουμε.',
     outcome:
-      'Μετρημένη βελτίωση Core Web Vitals στις σελίδες που μετατρέπουν, επιβεβαιωμένη μετά τη δουλειά.',
+      'Συγκρίνετε τις ίδιες σελίδες πριν και μετά τις αλλαγές. Όπου υπάρχουν αρκετά δεδομένα χρήσης, εξετάζουμε και τα Core Web Vitals πραγματικών επισκεπτών.',
   },
   'link-building': {
     approach:
       'Βρίσκουμε μέσα και ιστοσελίδες που έχουν λόγο να γράψουν για τη δουλειά σας και κοινό που ενδιαφέρεται γι’ αυτή. Τους προτείνουμε συγκεκριμένο περιεχόμενο για δημοσίευση.',
     process:
-      'Ψάχνουμε πραγματικές αφορμές κάλυψης - τεχνογνωσία, δεδομένα που ήδη έχετε, σχέσεις που ήδη υπάρχουν - αντί να αγοράζουμε τοποθετήσεις.',
+      'Αναζητούμε συγκεκριμένη αφορμή για δημοσίευση, όπως πρωτότυπα στοιχεία σας ή μια ειδικότητα για την οποία μπορεί να σας ρωτήσει ένας συντάκτης. Η τελική επιλογή ανήκει στο μέσο.',
     outcome:
-      'Προφίλ συνδέσμων που μοιάζει κερδισμένο, με παρακολούθηση για spam που έρχεται απρόσκλητο.',
+      'Βλέπετε ποια μέσα προσεγγίσαμε και πού δημοσιεύτηκε αναφορά ή σύνδεσμος προς την επιχείρησή σας.',
   },
   'logo-design': {
     approach:
       'Το λογότυπο πρέπει να διαβάζεται στην οθόνη ενός κινητού και στην επιγραφή σας. Ετοιμάζουμε τις εκδοχές και τα αρχεία που χρειάζεστε για κάθε χρήση.',
     process:
-      'Παραδίδεται με τα βασικά που το κάνουν εφαρμόσιμο - παλέτα, τυπογραφία, οδηγό χρήσης - ώστε ο επόμενος συνεργάτης να μη μαντεύει.',
+      'Συμφωνούμε πού θα χρησιμοποιείτε το λογότυπο και ελέγχουμε αν διαβάζεται σε μικρή οθόνη, σε έντυπο και στα χρώματα της επιχείρησής σας.',
     outcome:
-      'Πλήρες κιτ ταυτότητας στις μορφές που απαιτούν ψηφιακή και εκτυπωτική χρήση.',
+      'Παίρνετε αρχεία για οθόνη και εκτύπωση, μαζί με τα χρώματα, τις γραμματοσειρές και οδηγίες για τον επόμενο συνεργάτη σας.',
   },
 };
 
-export function getServiceAngle(serviceSlug: string, locale: SiteLocale): ServiceAngle | undefined {
+const websiteAngles: Record<string, Record<SiteLocale, ServiceAngle>> = {
+  hotels: {
+    el: {
+      approach: 'Πριν κλείσει, μια οικογένεια θέλει να ξέρει αν χωράει στο δωμάτιο, τι περιλαμβάνει η τιμή και τι ισχύει αν ακυρώσει. Οργανώνουμε τις σελίδες των δωματίων γύρω από αυτές τις αποφάσεις.',
+      process: 'Δοκιμάζουμε μια κράτηση στο κινητό, από την επιλογή δωματίου μέχρι τη μηχανή κρατήσεων. Ελέγχουμε αν ο επισκέπτης βρίσκει διαθέσιμες ημερομηνίες και αν διατηρείται η γλώσσα του στη διαδρομή.',
+      outcome: 'Παραλαμβάνετε σελίδες με τη χωρητικότητα και τις παροχές κάθε δωματίου, τους δικούς σας όρους και σαφή πρόσβαση στη διαθεσιμότητα. Μετράμε ολοκληρωμένες κρατήσεις όταν η μηχανή σας παρέχει επιβεβαίωση.',
+    },
+    en: {
+      approach: 'Before booking, a family needs to know who fits in the room, what the rate covers and when they can cancel. Those questions shape each room page.',
+      process: 'We try booking on a phone, from choosing a room to opening your booking engine. We check that guests can find dates and continue in their chosen language.',
+      outcome: 'Guests get room details, your booking terms and a clear way to check availability. We measure completed bookings when your booking engine supplies confirmation.',
+    },
+  },
+  'real-estate': {
+    el: {
+      approach: 'Άλλες πληροφορίες χρειάζεται ο αγοραστής που ψάχνει διαμέρισμα και άλλες ο ιδιοκτήτης που θέλει να σας αναθέσει το ακίνητό του. Σχεδιάζουμε ξεχωριστή διαδρομή για τον καθένα.',
+      process: 'Δοκιμάζουμε μια αναζήτηση με περιοχή, προϋπολογισμό και τύπο ακινήτου. Στην αγγελία ελέγχουμε αν φαίνονται τα τετραγωνικά, ο όροφος και πώς κλείνει κάποιος επίσκεψη για το συγκεκριμένο ακίνητο.',
+      outcome: 'Κάθε αίτημα επίσκεψης συνδέεται με την αγγελία που είδε ο ενδιαφερόμενος. Ο ιδιοκτήτης βρίσκει χωριστή φόρμα για να συζητήσει ανάθεση με το γραφείο σας.',
+    },
+    en: {
+      approach: 'A buyer looking for a flat needs a different page from an owner ready to list a property. We give each a clear route to your agency.',
+      process: 'We try a search by location, budget and property type, then check whether someone can find the floor area, see the particulars and ask to view that specific listing.',
+      outcome: 'Viewing enquiries identify the listing the buyer saw. Owners can contact your team separately about listing their own property.',
+    },
+  },
+};
+
+export function getServiceAngle(serviceSlug: string, locale: SiteLocale, industrySlug?: string): ServiceAngle | undefined {
+  if (serviceSlug === 'website-creation' && industrySlug && websiteAngles[industrySlug]) {
+    return websiteAngles[industrySlug][locale];
+  }
   return (locale === 'el' ? EL : EN)[serviceSlug];
 }
 
@@ -283,7 +313,7 @@ const EN_FAQS: Record<string, readonly AngleFaq[]> = {
   'local-seo': [
     { question: 'How long before local rankings move?', answer: 'Profile and citation work can show up within weeks because the signals are direct. Competitive organic terms take longer, and anyone promising a date is guessing.' },
     { question: 'Do I need a physical address?', answer: 'For the map pack, yes. Google requires a real presence in the area served. Service-area businesses can rank without a storefront but still need a verifiable base.' },
-    { question: 'Do reviews really matter?', answer: 'Yes, for both ranking and click-through. A steady flow with replies outperforms a burst of reviews followed by silence.' },
+    { question: 'Do reviews really matter?', answer: 'Google lists review count and positive ratings among the factors that can help local ranking. We help you ask all genuine customers for their feedback and answer the issues they raise.' },
   ],
   'seo-audits': [
     { question: 'What do I actually receive?', answer: 'A prioritised plan: what to fix first, why it ranks above the rest, and how you will know it worked. Not an export of every warning a crawler produced.' },
@@ -291,13 +321,13 @@ const EN_FAQS: Record<string, readonly AngleFaq[]> = {
     { question: 'How often should we re-audit?', answer: 'A site under active development benefits from a check each release, since most technical regressions arrive with a deploy. A stable site needs it after migrations and redesigns.' },
   ],
   'ai-visibility': [
-    { question: 'Is this different from normal SEO?', answer: 'It overlaps but the target differs. Ranking earns a click; being cited in an AI answer requires the model to identify you unambiguously and find a passage worth quoting.' },
+    { question: 'Is this different from normal SEO?', answer: 'The same search fundamentals apply to Google’s AI features. We also test questions from your customers and record the sources and details in the answers they see.' },
     { question: 'Can you guarantee mentions in AI answers?', answer: 'No, and neither can anyone else, because these systems are not deterministic. What can be done is remove the reasons you are not citable, and track mentions so the effect is visible.' },
     { question: 'Does this replace traditional rankings?', answer: 'No. Both matter, and the technical groundwork largely serves both.' },
   ],
   'eshop-woocommerce': [
     { question: 'Why WooCommerce rather than a hosted platform?', answer: 'Control over URL structure, templates and integrations, which is what makes category-level SEO possible. Hosted platforms trade some of that for convenience.' },
-    { question: 'Can you migrate an existing store?', answer: 'Yes. Product URLs and category structure are mapped before the move so existing rankings and links survive it.' },
+    { question: 'Can you migrate an existing store?', answer: 'Yes. We map old product and category URLs before the move, test their redirects and check the new pages after launch.' },
     { question: 'What about payments and shipping?', answer: 'Configured around how you actually sell and ship, including checkout flow and stock handling, rather than left on defaults.' },
   ],
   'eshop-seo': [
@@ -312,7 +342,7 @@ const EN_FAQS: Record<string, readonly AngleFaq[]> = {
   ],
   'link-building': [
     { question: 'How many links will I get?', answer: 'Volume is the wrong unit. A handful of relevant, genuinely earned mentions outperforms a large number of placements nobody reads, and we scope on relevance rather than count.' },
-    { question: 'Do you buy links?', answer: 'No. Paid placement is against search engine guidelines and the risk sits with your domain, not ours.' },
+    { question: 'Do you buy links?', answer: 'We do not buy links to influence rankings. A paid advertisement should be identified with a sponsored or nofollow link attribute under Google’s guidelines.' },
     { question: 'What if I already have spam links?', answer: 'The profile is reviewed as part of the work. Most unsolicited spam is ignored by search engines and needs no action; disavowal is a last resort, not a routine step.' },
   ],
   'logo-design': [
@@ -325,7 +355,7 @@ const EN_FAQS: Record<string, readonly AngleFaq[]> = {
 const EL_FAQS: Record<string, readonly AngleFaq[]> = {
   'website-creation': [
     { question: 'Πόσο διαρκεί η κατασκευή;', answer: 'Τα περισσότερα έργα ολοκληρώνονται σε δύο έως οκτώ εβδομάδες μόλις είναι έτοιμο το υλικό. Η μεταβλητή σχεδόν ποτέ δεν είναι η ανάπτυξη, αλλά το πόσο γρήγορα έρχονται κείμενα, φωτογραφίες και εγκρίσεις.' },
-    { question: 'Θα χρειαστεί ξεχωριστό έργο SEO μετά;', answer: 'Όχι. Τα τεχνικά θεμέλια, η δομή των URL και η μέτρηση είναι μέρος της κατασκευής. Ένα ξεχωριστό έργο βελτιστοποίησης μετά τη δημοσίευση συνήθως σημαίνει ότι παραλείφθηκαν.' },
+    { question: 'Θα χρειαστεί ξεχωριστό έργο SEO μετά;', answer: 'Η κατασκευή καλύπτει την τεχνική βάση, τις διευθύνσεις των σελίδων και τη μέτρηση. Αν χρειάζεστε τακτικά νέο περιεχόμενο, έλεγχο ανταγωνισμού ή δουλειά μετά από μια αλλαγή, συζητάμε χωριστά το εύρος.' },
     { question: 'Μπορεί το site να επεκταθεί αργότερα;', answer: 'Ναι, γι᾽ αυτό αποφασίζεται πρώτα η αρχιτεκτονική. Νέες σελίδες υπηρεσιών ή περιοχών προστίθενται χωρίς ξαναχτίσιμο.' },
   ],
   'website-redesign': [
@@ -344,9 +374,9 @@ const EL_FAQS: Record<string, readonly AngleFaq[]> = {
     { question: 'Θα ακούγεται σαν την επιχείρησή μας;', answer: 'Εξαρτάται από την πρόσβαση. Οι σελίδες που διαβάζονται ως αυθεντικές είναι εκείνες που πατάνε στο πώς εξηγεί τη δουλειά η ίδια η ομάδα σας.' },
   ],
   'local-seo': [
-    { question: 'Πόσο γρήγορα κινούνται οι τοπικές θέσεις;', answer: 'Η δουλειά στο προφίλ και στις καταχωρήσεις μπορεί να φανεί μέσα σε εβδομάδες, γιατί τα σήματα είναι άμεσα. Οι ανταγωνιστικοί οργανικοί όροι θέλουν περισσότερο, και όποιος υπόσχεται ημερομηνία μαντεύει.' },
+    { question: 'Πόσο γρήγορα κινούνται οι τοπικές θέσεις;', answer: 'Η ίδια αναζήτηση μπορεί να δώσει διαφορετικά αποτελέσματα λίγους δρόμους πιο πέρα. Καταγράφουμε πού έγινε ο έλεγχος και παρακολουθούμε κλήσεις ή οδηγίες πρόσβασης όπου υπάρχουν διαθέσιμα στοιχεία.' },
     { question: 'Χρειάζομαι φυσική διεύθυνση;', answer: 'Για τον χάρτη, ναι - η Google απαιτεί πραγματική παρουσία στην περιοχή. Οι επιχειρήσεις περιοχής εξυπηρέτησης μπορούν να εμφανίζονται χωρίς κατάστημα, αλλά χρειάζονται επαληθεύσιμη έδρα.' },
-    { question: 'Μετράνε πραγματικά οι κριτικές;', answer: 'Ναι, τόσο για την κατάταξη όσο και για το ποσοστό κλικ. Μια σταθερή ροή με απαντήσεις αποδίδει περισσότερο από μια έκρηξη κριτικών και μετά σιωπή.' },
+    { question: 'Μετράνε πραγματικά οι κριτικές;', answer: 'Η Google αναφέρει ότι το πλήθος των κριτικών και οι θετικές βαθμολογίες μπορούν να βοηθήσουν την τοπική κατάταξη. Ζητάμε από όλους τους πραγματικούς πελάτες να πουν τη γνώμη τους, χωρίς δώρο ή έκπτωση.' },
   ],
   'seo-audits': [
     { question: 'Τι ακριβώς παραλαμβάνω;', answer: 'Ιεραρχημένο πλάνο: τι διορθώνεται πρώτα, γιατί προηγείται και πώς θα ξέρετε ότι έπιασε. Όχι εξαγωγή όλων των προειδοποιήσεων ενός εργαλείου.' },
@@ -354,7 +384,7 @@ const EL_FAQS: Record<string, readonly AngleFaq[]> = {
     { question: 'Κάθε πότε χρειάζεται νέος έλεγχος;', answer: 'Ένα site σε ενεργή ανάπτυξη κερδίζει από έλεγχο σε κάθε release, γιατί οι περισσότερες τεχνικές παλινδρομήσεις έρχονται με τα deploy. Ένα σταθερό site τον χρειάζεται μετά από μεταφορές και ανασχεδιασμούς.' },
   ],
   'ai-visibility': [
-    { question: 'Διαφέρει από το κανονικό SEO;', answer: 'Επικαλύπτεται, αλλά ο στόχος αλλάζει. Η κατάταξη κερδίζει ένα κλικ - η αναφορά σε απάντηση AI απαιτεί το μοντέλο να σας αναγνωρίσει με βεβαιότητα και να βρει απόσπασμα που αξίζει να παραθέσει.' },
+    { question: 'Διαφέρει από το κανονικό SEO;', answer: 'Το SEO καλύπτει και την τεχνική βάση που χρειάζεται η αναζήτηση AI της Google. Με το AEO και το GEO εξετάζουμε επίσης συγκεκριμένες ερωτήσεις πελατών, ποιες πηγές παραθέτουν οι απαντήσεις και αν περιγράφουν σωστά τη δουλειά σας.' },
     { question: 'Εγγυάστε αναφορές σε απαντήσεις AI;', answer: 'Όχι. Οι απαντήσεις αλλάζουν και κάθε υπηρεσία AI επιλέγει τις δικές της πηγές. Μπορούμε να βελτιώσουμε την ακρίβεια των στοιχείων στις σελίδες σας και να παρακολουθούμε τις αναφορές.' },
     { question: 'Αντικαθιστά τις παραδοσιακές θέσεις;', answer: 'Όχι. Και τα δύο μετράνε, και η τεχνική βάση εξυπηρετεί σε μεγάλο βαθμό και τα δύο.' },
   ],
@@ -369,13 +399,13 @@ const EL_FAQS: Record<string, readonly AngleFaq[]> = {
     { question: 'Περιλαμβάνεται δουλειά μετατροπών;', answer: 'Αντιμετωπίζεται ως μέρος της ίδιας δουλειάς. Επισκεψιμότητα σε σελίδα που δεν μετατρέπει είναι κόστος, όχι αποτέλεσμα.' },
   ],
   'speed-optimization': [
-    { question: 'Ποιες σελίδες βελτιστοποιείτε;', answer: 'Τα πρότυπα που φέρνουν έσοδα, όχι την αρχική - είναι συνήθως η πιο γρήγορη και η λιγότερο αντιπροσωπευτική σελίδα κάθε site.' },
-    { question: 'Θα ανέβουν οι θέσεις μου;', answer: 'Η ταχύτητα είναι ένα σήμα ανάμεσα σε πολλά, και η ειλικρινής απάντηση είναι ότι η επίδρασή της στη μετατροπή είναι συνήθως μεγαλύτερη και πιο άμεση από την επίδραση στη θέση.' },
+    { question: 'Ποιες σελίδες βελτιστοποιείτε;', answer: 'Επιλέγουμε μαζί τις σελίδες που χρησιμοποιούν οι πελάτες σας. Μπορεί να είναι η αρχική, μια κατηγορία προϊόντων ή η φόρμα κράτησης. Μετράμε καθεμία σε κινητό πριν αποφασίσουμε τι θα αλλάξει.' },
+    { question: 'Θα ανέβουν οι θέσεις μου;', answer: 'Η Google χρησιμοποιεί τα Core Web Vitals μαζί με πολλά άλλα κριτήρια. Μπορούμε να μετρήσουμε αν η σελίδα φορτώνει ή ανταποκρίνεται ταχύτερα. Η βελτίωση αυτή δεν εγγυάται συγκεκριμένη θέση.' },
     { question: 'Πώς αποδεικνύεται η βελτίωση;', answer: 'Τα ίδια πρότυπα μετριούνται πριν και μετά, ώστε η αλλαγή να τεκμηριώνεται αντί να δηλώνεται.' },
   ],
   'link-building': [
     { question: 'Πόσους συνδέσμους θα πάρω;', answer: 'Ο όγκος είναι λάθος μονάδα. Λίγες σχετικές, πραγματικά κερδισμένες αναφορές αποδίδουν περισσότερο από πολλές τοποθετήσεις που δεν διαβάζει κανείς.' },
-    { question: 'Αγοράζετε συνδέσμους;', answer: 'Όχι. Η πληρωμένη τοποθέτηση αντιβαίνει στις οδηγίες των μηχανών αναζήτησης και ο κίνδυνος βαραίνει το δικό σας domain.' },
+    { question: 'Αγοράζετε συνδέσμους;', answer: 'Δεν αγοράζουμε συνδέσμους για να επηρεάσουμε την κατάταξη. Αν πληρώσετε ένα μέσο για διαφήμιση, η Google ζητά ο σύνδεσμος να επισημανθεί ως χορηγούμενος ή με nofollow.' },
     { question: 'Τι γίνεται αν έχω ήδη spam συνδέσμους;', answer: 'Το προφίλ ελέγχεται ως μέρος της δουλειάς. Το περισσότερο απρόσκλητο spam αγνοείται από τις μηχανές και δεν χρειάζεται ενέργεια - το disavow είναι έσχατη λύση, όχι ρουτίνα.' },
   ],
   'logo-design': [

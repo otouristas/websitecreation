@@ -49,7 +49,7 @@ export default function Header({
   const model = useMemo(() => getNavModel(locale, mode), [locale, mode]);
   const chips = getTrustChips(locale);
   const isAgency = model.mode === "agency";
-  const campaignVisible = locale === "el" && currentPriceIncludesVat(websitePackages[0]);
+  const campaignVisible = isAgency && locale === "el" && currentPriceIncludesVat(websitePackages[0]);
   const signupHref = isAgency ? model.primaryCta.href : appLink("/signup", locale, "header");
   const loginHref = appLink("/login", locale, "header");
 
