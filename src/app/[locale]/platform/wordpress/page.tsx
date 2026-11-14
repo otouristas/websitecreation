@@ -475,6 +475,12 @@ export default async function PlatformWordPressPage({ params }: PageProps) {
           </p>
         </KitSection>
 
+        <p className="mx-auto mb-10 max-w-prose px-5 text-center text-sm text-muted-foreground">
+          {tx("Need a team to build the site?", "Χρειάζεστε ομάδα για να φτιάξει τον ιστότοπό σας;")}{" "}
+          <a href="https://anotherseoguru.gr/services/website-creation" className="font-medium text-link hover:underline">
+            {tx("Explore website design and development in Greece", "Δείτε την υπηρεσία κατασκευής ιστοσελίδων")}
+          </a>.
+        </p>
         <OtherWaysSection locale={locale} current="wordpress" tinted />
         <GscFaq locale={locale} items={FAQ} />
         <CtaBand locale={locale} source="wordpress-band" />
