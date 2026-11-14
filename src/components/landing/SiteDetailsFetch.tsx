@@ -7,7 +7,7 @@ import type { SiteLocale } from "@/lib/i18n/locale";
 import type { SiteInfo } from "@/lib/scan/site-info";
 
 /**
- * "Fetch my details": reads the visitor's homepage through /api/site-info and
+ * "Use details from my site": reads the visitor's homepage through /api/site-info and
  * hands back the name, description, logo, phone and email it finds, so the
  * form can fill its empty fields and the lead arrives with the site's own
  * details attached. Shared by the free audit form and the website brief.
@@ -15,8 +15,8 @@ import type { SiteInfo } from "@/lib/scan/site-info";
 
 const COPY = {
   en: {
-    fetch: "Fetch my details",
-    fetching: "Fetching...",
+    fetch: "Use details from my site",
+    fetching: "Reading your homepage…",
     failed: "We couldn't read that site. Please fill in your details yourself.",
     needUrl: "Enter your website first, like your-business.com.",
     found: "Found on your site",
@@ -25,11 +25,11 @@ const COPY = {
     logoAlt: (name: string) => `${name} logo`,
   },
   el: {
-    fetch: "Αυτόματη συμπλήρωση στοιχείων",
-    fetching: "Φέρνουμε τα στοιχεία...",
+    fetch: "Συμπλήρωση από την ιστοσελίδα",
+    fetching: "Διαβάζουμε την αρχική σελίδα…",
     failed: "Δεν μπορέσαμε να διαβάσουμε την ιστοσελίδα. Συμπληρώστε τα στοιχεία σας χειροκίνητα.",
     needUrl: "Γράψτε πρώτα την ιστοσελίδα σας, π.χ. h-epixeirisi-sas.gr.",
-    found: "Βρήκαμε στην ιστοσελίδα σας",
+    found: "Στοιχεία από την ιστοσελίδα σας",
     filled: "Συμπληρώσαμε τα κενά πεδία. Ελέγξτε τα και αλλάξτε ό,τι χρειάζεται.",
     dismiss: "Κλείσιμο",
     logoAlt: (name: string) => `Λογότυπο ${name}`,

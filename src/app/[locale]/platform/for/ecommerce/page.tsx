@@ -65,8 +65,8 @@ const ECOMMERCE_FAQ: readonly GscFaqItem[] = [
   {
     q: { en: "Does it show revenue per page?", el: "Δείχνει έσοδα ανά σελίδα;" },
     a: {
-      en: "No. AnotherSEOGuru App estimates extra clicks, measured from your own Search Console data, and does not estimate revenue. Clicks are the part SEO controls; what they are worth depends on your conversion rate and margins.",
-      el: "Όχι. Το AnotherSEOGuru App εκτιμά επιπλέον κλικ, με βάση τα δικά σας δεδομένα Search Console, και δεν εκτιμά έσοδα. Τα κλικ είναι το κομμάτι που ελέγχει το SEO· η αξία τους εξαρτάται από το ποσοστό μετατροπής και τα περιθώριά σας.",
+      en: "No. AnotherSEOGuru App estimates extra clicks, measured from your own Search Console data, and does not estimate revenue. To estimate sales, you also need your conversion rate and margins.",
+      el: "Όχι. Το AnotherSEOGuru App εκτιμά επιπλέον κλικ, με βάση τα δικά σας δεδομένα Search Console, και δεν εκτιμά έσοδα. Για να εκτιμήσετε την αξία τους, χρειάζεστε επίσης το ποσοστό μετατροπής και το περιθώριο κέρδους σας.",
     },
   },
   ...HOME_FAQ.filter((item) => ["How are the click estimates calculated?", "What are credits used for?", "Do I need a credit card to try it?"].includes(item.q.en)),
@@ -89,15 +89,12 @@ export default async function PlatformForEcommercePage({ params }: PageProps) {
           pill={<AnnouncePill href="#capabilities" tag="E-shop" text={tx("AnotherSEOGuru App for e-commerce", "AnotherSEOGuru App για e-shop")} />}
           title={
             <>
-              <span className="block">{tx("Find the shop pages", "Βρείτε τις σελίδες του e-shop")}</span>
-              <span className="block">
-                <WaveAccent>{tx("one fix from page one.", "μία διόρθωση πριν από την πρώτη σελίδα.")}</WaveAccent>
-              </span>
+              {tx("Which product or category page", "Ποια σελίδα του e-shop σας")} <WaveAccent>{tx("should you update first?", "αξίζει να βελτιώσετε πρώτα;")}</WaveAccent>
             </>
           }
           lead={tx(
-            "AnotherSEOGuru App is SEO software that reads your shop’s Search Console data and ranks the fixes worth making: category pages on positions 4–20, product snippets that earn fewer clicks than they should, guides losing traffic and searches you have no page for, each with an estimate of the extra clicks.",
-            "Το AnotherSEOGuru App είναι λογισμικό SEO που διαβάζει τα δεδομένα Search Console του e-shop σας και βάζει σε σειρά τις διορθώσεις που αξίζουν: σελίδες κατηγοριών στις θέσεις 4–20, snippets προϊόντων με λιγότερα κλικ απ’ όσα θα έπρεπε, οδηγούς που χάνουν κίνηση και αναζητήσεις χωρίς σελίδα, με εκτίμηση των επιπλέον κλικ.",
+            "A category may appear in hundreds of searches while few shoppers click through. AnotherSEOGuru App finds those pages in your Search Console data, shows the terms shoppers used and estimates the extra clicks a change could bring.",
+            "Μια κατηγορία μπορεί να εμφανίζεται συχνά στη Google και παρ’ όλα αυτά να δέχεται λίγα κλικ. Το AnotherSEOGuru App εντοπίζει αυτές τις σελίδες στο Search Console, σας δείχνει τι έψαχναν οι υποψήφιοι πελάτες και εκτιμά πόσα επιπλέον κλικ θα μπορούσε να φέρει μια αλλαγή.",
           )}
           actions={<WaveSoftwareActions locale={locale} source="ecommerce-hero" />}
           trust={<TrustMarks items={copy.trust} yesLabel={copy.markYes} />}
@@ -133,8 +130,8 @@ export default async function PlatformForEcommercePage({ params }: PageProps) {
               </>
             }
             lead={tx(
-              "The opportunity engine scans every query and page in Search Console for the same five things on any site. On a shop they usually look like this.",
-              "Η μηχανή ευκαιριών σαρώνει κάθε αναζήτηση και σελίδα του Search Console για τα ίδια πέντε πράγματα σε κάθε ιστότοπο. Σε ένα e-shop συνήθως μοιάζουν κάπως έτσι.",
+              "These five checks use the product, category and guide pages in your shop’s Search Console data.",
+              "Οι πέντε έλεγχοι βασίζονται στα στοιχεία που έχει το Search Console για τα προϊόντα, τις κατηγορίες και τους οδηγούς αγοράς σας.",
             )}
           />
           <CapabilityGrid

@@ -23,7 +23,7 @@ faq:
     answer: "Low-competition local searches: 2–3 months. Competitive national keywords: 4–6+ months. SEO compounds: each month builds on the last."
 ---
 
-“How much does SEO cost?” is the first question every business asks, and the honest 2026 answer is **€250 to €1,500+ per month** for serious work, depending on competition and goals. This guide breaks down what sits behind those numbers so you can compare quotes with confidence, without #1 guarantees and without fluff.
+An SEO fee only makes sense once you know who will do the work. One quote may cover advice and reporting, while another includes fixing pages and writing content. Compare what will change on your site, how often you’ll hear from the team and what requires a separate budget. Ask for an example monthly report and check whether the quote includes acting on its findings.
 
 > **Compare packages:** see transparent [SEO pricing](/el/ypiresies/times) (Foundations from {{ENTRY_SEO}}/mo), our [work](/en/work), or [request a quote](/en/get-started).
 
@@ -128,6 +128,6 @@ Anyone who “guarantees” #1 is not being honest, not even Google guarantees i
 
 Rankings for agreed keywords, organic clicks/impressions, leads or conversions where tracking exists, and a clear list of work completed, not a 40-page PDF of vanity charts.
 
-## Still Need a Clear Next Step?
+## What to include when asking for an SEO quote
 
 See our [packages and pricing](/el/ypiresies/times) or [request a free quote](/en/get-started) tailored to your business. We reply within 24 hours with a concrete plan and price, no commitment.

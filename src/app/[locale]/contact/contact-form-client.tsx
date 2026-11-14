@@ -19,6 +19,7 @@ const CONTACT_SERVICE: Record<string, LeadService> = {
   "rent-a-car": "webdesign",
   "travel-ai": "webdesign",
   seo: "seo",
+  app: "seo",
   other: "both",
 };
 
@@ -130,17 +131,17 @@ export function ContactFormClient({ locale = "en" }: { locale?: SiteLocale }): R
           <Check className="size-7" strokeWidth={2.5} aria-hidden />
         </span>
         <h2 className="mt-6 font-display text-[28px] font-semibold tracking-[-0.03em] text-foreground">
-          {isEl ? t!.successTitle : "Message Sent!"}
+          {isEl ? t!.successTitle : "We’ve received your message"}
         </h2>
         <p className="mt-3 text-[15.5px] leading-relaxed text-muted-foreground">
-          {isEl ? t!.successBody : "Thank you for reaching out. We'll get back to you within 24 hours."}
+          {isEl ? t!.successBody : "We’ll reply to the email address you gave us within 24 working hours."}
         </p>
         <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
           <Link href={home} className={waveGhostBtn}>
-            {isEl ? t!.backHome : "Back to Home"}
+            {isEl ? t!.backHome : "Back to the homepage"}
           </Link>
           <Link href={pricing} className={wavePrimaryBtn}>
-            {isEl ? t!.viewPricing : "View Pricing"}
+            {isEl ? t!.viewPricing : "Compare app plans"}
           </Link>
         </div>
       </div>
@@ -149,9 +150,9 @@ export function ContactFormClient({ locale = "en" }: { locale?: SiteLocale }): R
 
   return (
     <div id="message" className="scroll-mt-28 rounded-[22px] border border-hairline bg-surface/80 p-5 text-left shadow-[0_0_0_1px_color-mix(in_oklab,var(--primary)_18%,transparent),0_30px_80px_-28px_color-mix(in_oklab,var(--primary)_45%,transparent)] sm:p-8">
-        <h2 className="font-display text-[22px] font-semibold tracking-[-0.025em] text-foreground">{isEl ? t!.formTitle : "Send a Message"}</h2>
+        <h2 className="font-display text-[22px] font-semibold tracking-[-0.025em] text-foreground">{isEl ? t!.formTitle : "Send us a message"}</h2>
         <p className="mt-1.5 text-[14px] text-muted-foreground">
-          {isEl ? "Μόνο όνομα και email είναι υποχρεωτικά." : "Only your name and email are required."}
+          {isEl ? "Χρειαζόμαστε μόνο το όνομα και το email σας για να σας απαντήσουμε." : "We only need your name and email so we can reply."}
         </p>
 
         <form onSubmit={handleSubmit} noValidate className="mt-6 space-y-5">
@@ -270,7 +271,7 @@ export function ContactFormClient({ locale = "en" }: { locale?: SiteLocale }): R
             </div>
           </div>
           <p id="website-hint" className="-mt-2 text-[13px] text-muted-foreground">
-            {isEl ? t!.websiteHint : "Add it and we reply with a free SEO audit of your site."}
+            {isEl ? t!.websiteHint : "If you have a site, include the address so we can look at the pages you’re asking about."}
           </p>
 
           <div>
@@ -286,22 +287,23 @@ export function ContactFormClient({ locale = "en" }: { locale?: SiteLocale }): R
               <option value="rent-a-car">{isEl ? t!.services["rent-a-car"] : "Rent-a-Car Website"}</option>
               <option value="travel-ai">{isEl ? t!.services["travel-ai"] : "Travel AI Chatbot"}</option>
               <option value="seo">{isEl ? t!.services.seo : "SEO / GEO / AEO Services"}</option>
+              <option value="app">{isEl ? "AnotherSEOGuru App και συνδρομές" : "AnotherSEOGuru App and plans"}</option>
               <option value="other">{isEl ? t!.services.other : "Other / Not Sure"}</option>
             </select>
           </div>
 
           <div>
-            <label htmlFor="message" className={label}>
+            <label htmlFor="contact-message" className={label}>
               {plain(isEl ? t!.message : "Message *")}
               {optional}
             </label>
             <textarea
-              id="message"
+              id="contact-message"
               name="message"
               rows={4}
               value={formData.message}
               onChange={handleChange}
-              placeholder={isEl ? t!.messagePlaceholder : "Tell us about your project..."}
+              placeholder={isEl ? t!.messagePlaceholder : "For example, we manage two sites. Which plan lets us track both?"}
               className={cn(field, "h-auto min-h-32 resize-y")}
             />
           </div>
@@ -331,7 +333,7 @@ export function ContactFormClient({ locale = "en" }: { locale?: SiteLocale }): R
               </>
             ) : (
               <>
-                {isEl ? t!.submit : "Send Message"}
+                {isEl ? t!.submit : "Send message"}
                 <ArrowRight className="size-4" aria-hidden />
               </>
             )}

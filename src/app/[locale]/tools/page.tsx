@@ -66,15 +66,15 @@ export default async function ToolsHubPage({ params }: PageProps) {
                 wrap
                 href={lp("/ai-visibility-check")}
                 tag="AI"
-                text={el ? "Νέο: ελέγξτε μία λέξη σε Google, AI Overview και ChatGPT" : "New: check one keyword in Google, AI Overview and ChatGPT"}
+                text={el ? "Εμφανίζεται η επιχείρησή σας στις απαντήσεις AI;" : "Does your business appear in AI answers?"}
               />
             </div>
           }
           title={accentEnd(el ? "Εργαλεία SEO" : "SEO tools", 1)}
           lead={
             el
-              ? "Δωρεάν εργαλεία SEO για έρευνα λέξεων, έλεγχο, ομαδοποίηση στο Search Console και ορατότητα σε AI, μαζί με ελεγκτές στον browser. Ξεκινήστε από την έρευνα ή τον δωρεάν SEO έλεγχο και συνεχίστε με τους οδηγούς."
-              : "Free SEO tools for keyword research, audits, Search Console clustering, and AI visibility, plus browser checkers in the app. Start with keyword research or a free SEO audit, then deepen with our guides."
+              ? "Ελέγξτε αν η Google και το ChatGPT εμφανίζουν τον ιστότοπό σας για μια αναζήτηση που σας ενδιαφέρει. Αν έχετε στοιχεία από το Search Console, μπορείτε επίσης να δείτε ποιες σελίδες έχουν περιθώριο για περισσότερα κλικ. Και οι δύο έλεγχοι γίνονται εδώ, χωρίς εγγραφή."
+              : "Check whether Google and ChatGPT show your site for a search that matters to you. If you have a Search Console export, you can also find pages that could earn more clicks. Both checks work here without signing up."
           }
           actions={<SoftwareCtas locale={siteLocale} align="left" source="tools-hub" />}
           trust={<TrustLine align="left" items={softwareTrust(siteLocale)} />}
@@ -93,8 +93,8 @@ export default async function ToolsHubPage({ params }: PageProps) {
                 </span>
                 <p className="mt-3 text-pretty text-[15px] leading-relaxed text-muted-foreground">
                   {el
-                    ? "Γράψτε μία λέξη-κλειδί και δείτε τις τρεις επιφάνειες δίπλα δίπλα, με το domain σας σημειωμένο όπου εμφανίζεται. Ζωντανά δεδομένα SERP και συνομιλίας, δωρεάν."
-                    : "Type one keyword and see all three surfaces side by side, with your own domain marked wherever it appears. Live SERP and chat data, free."}
+                    ? "Δώστε μια φράση που θα έψαχνε ένας πελάτης σας. Δείτε ποια αποτελέσματα εμφανίζει η Google και ποιες πηγές αναφέρει το ChatGPT."
+                    : "Enter a phrase a customer might search for. See which pages Google lists and which sources the AI answers cite."}
                 </p>
                 <span className="mt-5 inline-flex items-center gap-1.5 text-[14.5px] font-medium text-primary">
                   {el ? "Κάντε έλεγχο" : "Run a check"} <ArrowRight className="size-4" aria-hidden />
@@ -121,8 +121,8 @@ export default async function ToolsHubPage({ params }: PageProps) {
             </span>
             <p className="mt-3 max-w-3xl text-pretty text-[15px] leading-relaxed text-muted-foreground">
               {el
-                ? "Ανεβάστε την εξαγωγή του Search Console και δείτε τις αναζητήσεις που αξίζει να ανέβουν στην πρώτη σελίδα, τα snippets που αξίζει να ξαναγραφτούν και μια πρόβλεψη κλικ. Το αρχείο δεν φεύγει από τη σελίδα."
-                : "Upload your Search Console export and get the queries worth pushing onto page one, the snippets worth rewriting and a click forecast. Your file never leaves the page."}
+                ? "Επιλέξτε το αρχείο που εξαγάγατε από το Search Console. Δείτε ποιες αναζητήσεις πλησιάζουν την πρώτη δεκάδα και ποιοι τίτλοι εμφανίζονται συχνά με λίγα κλικ. Η ανάλυση γίνεται στη συσκευή σας."
+                : "Select your Search Console export to find searches near the top ten and pages people see but rarely click. The tool estimates the monthly clicks at stake. Your file stays in your browser."}
             </p>
             <span className="mt-5 inline-flex items-center gap-1.5 text-[14.5px] font-medium text-primary">
               {el ? "Βρείτε ευκαιρίες" : "Find opportunities"} <ArrowRight className="size-4" aria-hidden />
@@ -147,7 +147,7 @@ export default async function ToolsHubPage({ params }: PageProps) {
               >
                 <h3 className="text-balance font-display text-[1.2rem] font-semibold tracking-[-0.02em] text-foreground">{tool.title}</h3>
                 <p className="mt-3 flex-1 text-pretty text-[14.5px] leading-relaxed text-muted-foreground">{tool.description}</p>
-                <span className="mt-5 font-medium text-primary">{el ? "Δείτε τη σελίδα →" : "Read intent page →"}</span>
+                <span className="mt-5 font-medium text-primary">{el ? "Δείτε πώς λειτουργεί" : "See how it works"}</span>
               </Link>
             ))}
           </div>
@@ -156,8 +156,8 @@ export default async function ToolsHubPage({ params }: PageProps) {
               <h2 className="text-[18px] font-semibold text-foreground">{el ? "Κι άλλα στην εφαρμογή" : "More in the app"}</h2>
               <p className="mt-1.5 text-pretty text-[14.5px] text-muted-foreground">
                 {el
-                  ? "Γεννήτριες meta, schema, robots.txt, βοηθοί Core Web Vitals και ο πλήρης κατάλογος δωρεάν εργαλείων ζουν μέσα στο προϊόν."
-                  : "Meta generators, schema, robots.txt, CWV helpers, and the full free-tools directory live in the product."}
+                  ? "Στο AnotherSEOGuru App θα βρείτε επίσης εργαλεία για meta tags, schema, robots.txt και Core Web Vitals."
+                  : "Open AnotherSEOGuru App to work on meta tags, schema, robots.txt and Core Web Vitals."}
               </p>
             </div>
             <a href={getAppPath("/free-tools")} className={`${kitSoftwareBtn} shrink-0 !pl-5`} rel="noopener noreferrer">

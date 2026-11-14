@@ -69,16 +69,12 @@ export default async function PlatformForAgenciesPage({ params }: PageProps) {
           pill={<AnnouncePill href="#capabilities" tag={tx("Agencies", "Agencies")} text={tx("AnotherSEOGuru App for agencies", "AnotherSEOGuru App για agencies")} />}
           title={
             <>
-              <span className="block">{tx("Run every client’s SEO", "Διαχειριστείτε το SEO κάθε πελάτη")}</span>
-              <span className="block">
-                {tx("from ", "από ")}
-                <WaveAccent>{tx("one workspace.", "έναν χώρο εργασίας.")}</WaveAccent>
-              </span>
+              {tx("What changed for", "Τι άλλαξε για")} <WaveAccent>{tx("each client this month?", "κάθε πελάτη αυτόν τον μήνα;")}</WaveAccent>
             </>
           }
           lead={tx(
-            "AnotherSEOGuru App is SEO software built for agencies: a client CRM, deal pipeline, tasks and white-label reports, sitting next to each client’s Search Console data. Less time moving numbers between tools, more time doing the SEO.",
-            "Το AnotherSEOGuru App είναι λογισμικό SEO φτιαγμένο για agencies: CRM πελατών, pipeline πωλήσεων, εργασίες και white-label αναφορές, ακριβώς δίπλα στα δεδομένα Search Console κάθε πελάτη. Λιγότερος χρόνος στη μεταφορά νούμερων από εργαλείο σε εργαλείο, περισσότερος χρόνος για το ίδιο το SEO.",
+            "Open a client’s workspace to see which pages gained clicks, what your team finished and what still needs work. When it's time to report, send the client a summary under your own logo. Their Search Console figures and your tasks are already together.",
+            "Πριν μιλήσετε με έναν πελάτη, δείτε ποιες σελίδες του κέρδισαν κλικ, τι ολοκλήρωσε η ομάδα σας και τι εκκρεμεί. Όταν έρθει η ώρα της μηνιαίας αναφοράς, τα στοιχεία του Search Console και οι εργασίες είναι συγκεντρωμένα. Εσείς προσθέτετε τη σύνοψη και το λογότυπό σας.",
           )}
           actions={<WaveSoftwareActions locale={locale} source="agencies-hero" />}
           trust={<TrustMarks items={copy.trust} yesLabel={yes} />}
@@ -114,8 +110,8 @@ export default async function PlatformForAgenciesPage({ params }: PageProps) {
               </>
             }
             lead={tx(
-              "Everything an agency needs around the SEO itself, connected to the data it reports on.",
-              "Ό,τι χρειάζεται ένα agency γύρω από το ίδιο το SEO, συνδεδεμένο με τα δεδομένα στα οποία βασίζονται οι αναφορές του.",
+              "Keep the next deadline, the client’s open tasks and their search results together.",
+              "Για κάθε πελάτη βλέπετε μαζί τις προθεσμίες, τις ανοιχτές εργασίες και τα αποτελέσματα της αναζήτησης.",
             )}
           />
           <CapabilityGrid
@@ -137,10 +133,10 @@ export default async function PlatformForAgenciesPage({ params }: PageProps) {
                   {
                     key: "pipeline",
                     icon: <KanbanSquare className="size-5" aria-hidden />,
-                    title: tx("Pipeline", "Pipeline"),
+                    title: tx("Sales pipeline", "Πορεία πωλήσεων"),
                     body: tx(
                       "Deals from first call to signed contract, with the value and next step on every card.",
-                      "Deals από το πρώτο τηλεφώνημα μέχρι την υπογραφή του συμβολαίου, με την αξία και το επόμενο βήμα σε κάθε κάρτα.",
+                      "Παρακολουθήστε κάθε νέα συνεργασία από το πρώτο τηλεφώνημα μέχρι την υπογραφή, με το ποσό της προσφοράς και το επόμενο βήμα στην καρτέλα της.",
                     ),
                   },
                   {
@@ -193,7 +189,7 @@ export default async function PlatformForAgenciesPage({ params }: PageProps) {
                     title: tx("Built for 90+ properties", "Φτιαγμένο για 90+ ιδιότητες"),
                     body: tx(
                       "Every Search Console property your Google account can see is one keystroke away. Press ⌘K, type a few letters and you’re in that client’s data with your date range kept.",
-                      "Κάθε ιδιότητά του Search Console στην οποία έχει πρόσβαση ο λογαριασμός σας Google απέχει ένα πλήκτρο. Πατήστε ⌘K, πληκτρολογήστε λίγα γράμματα και βρίσκεστε στα δεδομένα του πελάτη, με το ίδιο εύρος ημερομηνιών.",
+                      "Πατήστε ⌘K και πληκτρολογήστε τα πρώτα γράμματα του ιστοτόπου που θέλετε να ανοίξετε. Το διάστημα που είχατε επιλέξει στο Search Console διατηρείται και στον επόμενο πελάτη.",
                     ),
                     points: [
                       tx("Jump between properties with ⌘K. The switcher is built to stay fast with 90+ properties.", "Μεταβείτε από ιδιότητα σε ιδιότητα με ⌘K. Η εναλλαγή παραμένει γρήγορη ακόμη και με 90+ ιδιότητες."),
@@ -208,7 +204,7 @@ export default async function PlatformForAgenciesPage({ params }: PageProps) {
         <WaveSection shot="previews" tinted>
           <div className="grid gap-5 lg:grid-cols-2">
             <div className="min-w-0">
-              <WaveHeading eyebrow={tx("White-label reports", "White-label αναφορές")} title={<>{tx("Reports clients actually ", "Αναφορές που οι πελάτες πραγματικά ")}<WaveAccent>{tx("read.", "διαβάζουν.")}</WaveAccent></>} />
+              <WaveHeading eyebrow={tx("White-label reports", "White-label αναφορές")} title={<>{tx("A monthly report in ", "Η μηνιαία αναφορά με ")}<WaveAccent>{tx("your name", "το όνομά σας")}</WaveAccent></>} />
               <div className="mt-6">
                 <AppPanel url="app.anotherseoguru.com/reports" badge={tx("Sample data", "Δείγμα δεδομένων")} caption={tx("A client report built from Search Console.", "Αναφορά πελάτη από το Search Console.")}>
                   <ReportPreview locale={locale} />
@@ -216,7 +212,7 @@ export default async function PlatformForAgenciesPage({ params }: PageProps) {
               </div>
             </div>
             <div className="min-w-0">
-              <WaveHeading eyebrow={tx("Many sites", "Πολλοί ιστότοποι")} title={<>{tx("One keystroke to the ", "Ένα πλήκτρο ως τα ")}<WaveAccent>{tx("next client.", "επόμενο πελάτη.")}</WaveAccent></>} />
+              <WaveHeading eyebrow={tx("Many sites", "Πολλοί ιστότοποι")} title={<>{tx("Switch to the ", "Περάστε στον ")}<WaveAccent>{tx("next client.", "επόμενο πελάτη")}</WaveAccent></>} />
               <div className="mt-6">
                 <AppPanel url="app.anotherseoguru.com" badge={tx("Sample data", "Δείγμα δεδομένων")} caption={tx("Site switcher for many properties.", "Εναλλαγή πολλών ιδιοτήτων.")}>
                   <SiteSwitcherMini locale={locale} />
@@ -254,13 +250,13 @@ export default async function PlatformForAgenciesPage({ params }: PageProps) {
               title: tx("Ship", "Υλοποίηση"),
               body: tx(
                 "Mark the change on the chart the day it goes live, so the effect is easy to see.",
-                "Σημειώστε την αλλαγή στο γράφημα την ημέρα που βγαίνει live, ώστε το αποτέλεσμα να φαίνεται εύκολα.",
+                "Σημειώστε την αλλαγή στο γράφημα την ημέρα της δημοσίευσης για να συγκρίνετε τα κλικ πριν και μετά.",
               ),
             },
             {
               n: "04",
               title: tx("Report", "Αναφορά"),
-              body: tx("The monthly white-label report shows the result, in your branding.", "Η μηνιαία white-label αναφορά δείχνει το αποτέλεσμα, με το δικό σας branding."),
+              body: tx("The monthly white-label report shows the result, in your branding.", "Η μηνιαία white-label αναφορά δείχνει το αποτέλεσμα, με τη δική σας εταιρική ταυτότητα."),
             },
           ]}
         />

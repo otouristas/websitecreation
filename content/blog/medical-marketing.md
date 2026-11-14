@@ -21,7 +21,7 @@ faq:
     answer: Yes, educational content builds authority, internal links, and AEO eligibility when it is medically accurate and professionally reviewed.
 ---
 
-Marketing a medical practice is different. You are not only selling a service: you are asking for trust. Whether you are a plastic surgeon targeting procedure research queries or a med spa promoting injectables, your SEO strategy must be precise, defensible, and compliant. The same clarity, authority, and verifiable facts that win [E-E-A-T](/en/glossary?term=e-e-a-t) for healthcare increasingly win AI citations too.
+A patient looking for a dentist may want to know which treatments the practice offers, who will see them and how to book. Make those details easy to verify on your website and Google profile. A clear clinician byline also helps readers understand who reviewed any medical information.
 
 AnotherSEOGuru scopes technical and local growth carefully for healthcare brands: start at [Get Started](/en/get-started), review [technical SEO](/en/blog/technical-seo-guide), and borrow operational cadence from the [GSC weekly ops playbook](/en/blog/gsc-weekly-ops-playbook) without copying clinical standards from other industries.
 
@@ -130,4 +130,4 @@ Both rely on local pack fundamentals, FAQ/AEO structure, and performance discipl
 
 ## Ready to Get Started?
 
-For practice growth scoped to SEO and web presence, [get started](/en/get-started): we separate healthcare compliance review from technical delivery planning. See [our work](/en/work), [pricing](/en/pricing), and the [technical SEO guide](/en/blog/technical-seo-guide) when you want a defensible roadmap.
+[Send us your practice website for a free check](/el/get-started#free-audit) and tell us which service a patient should be able to find. Your clinicians can review the medical wording while our team scopes any website changes. See the [technical SEO guide](/en/blog/technical-seo-guide), or browse [our projects](/el/work) and [agency pricing in Greek](/el/ypiresies/times).

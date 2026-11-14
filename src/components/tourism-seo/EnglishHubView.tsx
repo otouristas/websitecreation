@@ -43,7 +43,7 @@ export function EnglishTourismHubView() {
             </>
           }
           titleClassName="text-[1.85rem] min-[400px]:text-[2.15rem] sm:text-[2.7rem] lg:text-[3.2rem]"
-          lead="Tourism SEO for hotels, villas, rent a car, tours, boat rental, transfers, restaurants and travel agencies. The traveller who searches on Google, on the map or in an AI answer should be able to book with you, not only through a platform that takes a commission."
+          lead="When travellers look for a room, a tour or a rental car, can they find you and book directly? We review the route from search results and Google Maps to your own booking page."
           actions={
             <ServiceHeroActions
               locale="en"
@@ -96,7 +96,7 @@ export function EnglishTourismHubView() {
                 Choose the <WaveAccent>business you run</WaveAccent>
               </>
             }
-            lead="Each one wins on different searches, with different pages and different schema. The Greek pages cover the same eight businesses."
+            lead="Choose your business below. Someone looking for a table tonight needs different information from a family booking a villa for the summer."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {ENGLISH_VERTICALS.map((vertical) => (
@@ -127,7 +127,7 @@ export function EnglishTourismHubView() {
                   Tourism projects already <WaveAccent>in the portfolio</WaveAccent>
                 </>
               }
-              lead="Only work that already has a case study. No extra figures."
+              lead="See the websites and booking journeys we worked on for tourism businesses."
             />
             <WorkCards projects={projects} locale="en" />
           </WaveSection>

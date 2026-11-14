@@ -22,7 +22,7 @@ faq:
     answer: "Typically 3–6 weeks after inventory and redirect mapping, depending on page count, languages, and booking/e-commerce complexity."
 ---
 
-A **website redesign** is one of the riskiest moments in a site’s life: done right, it lifts the business; done carelessly, it wipes out years of organic work overnight. This guide covers when it’s worth it, what it costs, and the right migration process: before you touch anything.
+Before approving a redesign, export the URLs that bring customers to your site today. When a service page moves, you’ll need to know where its old address should lead. That list is useful during development and again after launch if an important page starts losing clicks.
 
 > **Related:** [website redesign service](/en/services/website-redesign) · [pricing](/el/ypiresies/times) · [website cost guide](/en/blog/how-much-does-a-website-cost) · [free assessment](/en/get-started).
 
@@ -52,7 +52,7 @@ Result: **-40% to -80% organic traffic**, with months to recover. In tourism and
 1. **Inventory**: full record of pages, rankings, and backlinks before anything changes.
 2. **Redirect map**: every old URL 301s to the right new one, not all to the homepage.
 3. **Preserve what performs**: pages that bring traffic get redesigned, not deleted.
-4. **Speed as a spec**: the new site must be measurably faster (Core Web Vitals), not just prettier.
+4. **Agree on speed targets.** Record Core Web Vitals before the redesign so you can compare the same pages after launch.
 5. **Pre-launch check**: crawl the new site on staging, broken links, meta, schema, mobile.
 6. **Post-launch monitoring**: Search Console daily for the first weeks so any issue is caught immediately.
 
@@ -127,4 +127,4 @@ Not always, but if TTFB is poor, combine the work. See the [hosting & domain gui
 
 ## Still Need a Free Assessment Before You Touch Anything?
 
-Request a free assessment: we’ll see how much SEO value your current site holds and tell you whether a redesign or a new build makes sense, with a concrete cost and timeline. [Start here](/en/get-started).
+Planning a redesign? [Send us your current website for a free check](/el/get-started#free-audit) and say which pages already bring you customers. We can discuss what you want to preserve and what needs a separate quote before you decide which changes to commission.

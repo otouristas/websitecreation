@@ -37,8 +37,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     t.short,
     el
       ? [
-          "Ορισμός, πρακτικό παράδειγμα και πώς να το εφαρμόσετε, στο SEO γλωσσάρι του AnotherSEOGuru.",
-          "Ορισμός, παράδειγμα και πώς να το εφαρμόσετε, στο SEO γλωσσάρι.",
+          "Ορισμός, πρακτικό παράδειγμα και πώς να το εφαρμόσετε, στο Λεξικό SEO του AnotherSEOGuru.",
+          "Ορισμός, παράδειγμα και πώς να το εφαρμόσετε, στο Λεξικό SEO.",
           "Ορισμός, παράδειγμα και πώς να το εφαρμόσετε.",
           "Ορισμός και παράδειγμα.",
         ]
@@ -81,13 +81,13 @@ export default async function GlossaryTermPage({ params }: PageProps) {
     {
       type: "h2",
       id: "gsc-boost",
-      text: el ? "Παρακολουθήστε το στο AnotherSEOGuru App" : "Track it in AnotherSEOGuru App",
+      text: el ? "Δείτε τα στοιχεία της δικής σας ιστοσελίδας" : "Explore your own search data",
     },
     {
       type: "p",
       text: el
-        ? "Το AnotherSEOGuru App διαβάζει τα δεδομένα σας από το Search Console και σας λέει τι να διορθώσετε πρώτα, με την εκτίμηση των κλικ που φέρνει κάθε διόρθωση. [Ξεκινήστε από τον οδηγό](/help/getting-started/welcome) ή [κάντε δωρεάν εγγραφή](/signup)."
-        : "AnotherSEOGuru App reads your Search Console data and tells you what to fix first, with the clicks each fix is likely to bring. [Start with the guide](/help/getting-started/welcome) or [sign up free](/signup).",
+        ? "Για ποιες αναζητήσεις εμφανίζεται μια συγκεκριμένη σελίδα σας; Συνδέστε το Search Console στο AnotherSEOGuru App για να δείτε τις εμφανίσεις και τα κλικ της. [Ξεκινήστε από τον οδηγό](/help/getting-started/welcome) ή [κάντε δωρεάν εγγραφή](/signup)."
+        : "Connect Search Console to AnotherSEOGuru App to see which searches bring people to a page and how its clicks have changed. [Start with the guide](/help/getting-started/welcome) or [sign up free](/signup).",
     },
     ...(related.length
       ? ([
@@ -104,7 +104,7 @@ export default async function GlossaryTermPage({ params }: PageProps) {
       : []),
     ...(links.length
       ? ([
-          { type: "h2", id: "resources", text: el ? "Σχετικοί πόροι" : "Related resources" },
+          { type: "h2", id: "resources", text: el ? "Σχετικοί οδηγοί" : "Related resources" },
           { type: "list", items: links.map((l) => `[${l.title}](${resolveMarketingPath(l.url, locale)})`) },
         ] as Block[])
       : []),
@@ -121,12 +121,12 @@ export default async function GlossaryTermPage({ params }: PageProps) {
       description: t.short,
       url,
       inLanguage: locale,
-      inDefinedTermSet: { "@type": "DefinedTermSet", "@id": `${setUrl}#glossary`, name: el ? "SEO γλωσσάρι" : "SEO glossary", url: setUrl },
+      inDefinedTermSet: { "@type": "DefinedTermSet", "@id": `${setUrl}#glossary`, name: el ? "Λεξικό SEO" : "SEO glossary", url: setUrl },
     },
     generateBreadcrumbSchema({
       items: [
         { name: el ? "Αρχική" : "Home", url: localizedPath(locale, "/") },
-        { name: el ? "SEO γλωσσάρι" : "SEO glossary", url: glossaryPath(locale) },
+        { name: el ? "Λεξικό SEO" : "SEO glossary", url: glossaryPath(locale) },
         { name: t.name, url: path },
       ],
     }),

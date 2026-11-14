@@ -146,23 +146,23 @@ export default async function ComparePage({ params }: PageProps) {
               ))}
               {c.slug === "agencyanalytics" || c.slug === "whatagraph" || c.slug === "dashthis" ? (
                 <p className="mt-8 text-[16px] text-muted-foreground">
-                  See the reports first:{" "}
+                  {el ? "Δείτε ένα παράδειγμα" : "Explore a report"}{" · "}
                   <Link href={lp("/resources/sample-seo-report")} className="font-medium text-foreground underline decoration-hairline underline-offset-4">
-                    sample SEO report
+                    {el ? "Δείγμα αναφοράς SEO" : "Sample SEO report"}
                   </Link>{" "}
                   ·{" "}
                   <Link href={lp("/platform/white-label-reports")} className="font-medium text-foreground underline decoration-hairline underline-offset-4">
-                    white-label SEO reports
+                    {el ? "Αναφορές με το λογότυπό σας" : "Reports with your branding"}
                   </Link>{" "}
                   ·{" "}
                   <Link href={lp("/pricing")} className="font-medium text-foreground underline decoration-hairline underline-offset-4">
-                    pricing
+                    {el ? "Τιμές" : "Pricing"}
                   </Link>
                 </p>
               ) : null}
               {c.faq?.length ? (
                 <div className="mt-12">
-                  <h2 className="font-display text-[1.6rem] font-semibold tracking-[-0.02em] text-foreground">Questions</h2>
+                  <h2 className="font-display text-[1.6rem] font-semibold tracking-[-0.02em] text-foreground">{el ? "Συχνές ερωτήσεις" : "Questions"}</h2>
                   <div className="mt-5 divide-y divide-hairline rounded-[22px] border border-hairline bg-background/70">
                     {c.faq.map((f) => (
                       <details key={f.q} className="group p-5">
@@ -183,7 +183,7 @@ export default async function ComparePage({ params }: PageProps) {
               align="left"
               items={[
                 { href: lp("/platform/features"), label: el ? COMPARE_HUB_EL.features : "Browse features" },
-                { href: lp("/contact"), label: el ? COMPARE_HUB_EL.agency : "Talk to agency" },
+                { href: lp("/contact"), label: el ? COMPARE_HUB_EL.agency : "Talk to our team" },
                 { href: lp("/compare"), label: el ? COMPARE_HUB_EL.all : "All comparisons" },
               ]}
             />

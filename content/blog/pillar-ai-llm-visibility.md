@@ -22,7 +22,7 @@ faq:
     answer: "Run a 20-prompt baseline across ChatGPT, Perplexity, and Gemini. Fix the top three on-site gaps (about page, FAQ, service clarity). Re-sample in 30 days."
 ---
 
-Organic SEO and "LLM visibility" share foundations (clear entities, authoritative pages, and helpful structure) but **measurement** is different. You need to know when assistants cite you, paraphrase you, or omit you entirely for high-intent prompts in your category. This hub collects our articles on framing those metrics without hype, and links to the design and development patterns that make brands citable in 2026.
+Start with a question a buyer might ask an AI assistant about your business. Save the answer and the sources it cites. Repeat that check with the same wording later. It gives you a record you can discuss with a client even when different assistants give different answers.
 
 ## Why LLM visibility matters now
 
@@ -145,4 +145,4 @@ Run a 20-prompt baseline across ChatGPT, Perplexity, and Gemini. Fix the top thr
 
 Tell us about your site, locations, and goals: we'll recommend a scoped plan with Search Console ops, content priorities, and clear next steps.
 
-[Get started](/en/get-started) · [See our work](/en/work) · [Pricing](/en/pricing)
+Explore the [software plans](/en/pricing) if your team will handle the edits. For work you would like us to carry out, see our [agency packages in Greek](/el/ypiresies/times).

@@ -55,9 +55,9 @@ const SIGNATURE_HUE = 284;
 const copy = {
   en: {
     eyebrow: 'Hotels and accommodation',
-    h1: 'When someone searches your hotel by name, they should land on you',
+    h1: 'Give guests a direct route to booking a room',
     lede:
-      'For most independent hotels the booking sites outrank the hotel for its own name, so a guest who already chose you still books through a marketplace and you still pay commission. Fixing that is the highest value work on a hotel site.',
+      'A guest who searches for your hotel by name may still end up booking through an agent. We connect room pages, photos and availability to your booking engine so they can book directly with you.',
     ctaPrimary: 'Get a quote for your hotel site',
     ctaSecondary: 'See hotel projects',
     leaks: {
@@ -184,9 +184,9 @@ const copy = {
   },
   el: {
     eyebrow: 'Ξενοδοχεία και καταλύματα',
-    h1: 'Κατασκευή ιστοσελίδας ξενοδοχείου για άμεσες κρατήσεις',
+    h1: 'Ιστοσελίδα ξενοδοχείου για απευθείας κρατήσεις',
     lede:
-      'Φτιάχνουμε ιστοσελίδες ξενοδοχείων που φέρνουν άμεσες κρατήσεις: σύνδεση με τη μηχανή κρατήσεών σας, σελίδες δωματίων με φωτογραφίες, πολύγλωσσο περιεχόμενο και SEO για τον προορισμό σας. Στα περισσότερα ανεξάρτητα ξενοδοχεία οι πλατφόρμες εμφανίζονται πάνω από το ίδιο το ξενοδοχείο για το όνομά του, οπότε ξεκινάμε από εκεί.',
+      'Ακόμη κι αν ο επισκέπτης γνωρίζει το όνομα του ξενοδοχείου σας, μπορεί να καταλήξει να κλείσει μέσω πλατφόρμας. Συνδέουμε τις πολύγλωσσες σελίδες δωματίων και τις φωτογραφίες με τη μηχανή κρατήσεών σας, για να μπορεί να κλείσει απευθείας.',
     ctaPrimary: 'Ζητήστε προσφορά για το site σας',
     ctaSecondary: 'Δείτε έργα ξενοδοχείων',
     leaks: {

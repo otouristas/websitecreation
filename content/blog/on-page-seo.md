@@ -24,7 +24,7 @@ faq:
     answer: Page rewrites often run €150–€450 per URL depending on research depth. Ongoing on-page work is usually included in retainers from {{ENTRY_SEO}}/mo.
 ---
 
-**On-page SEO** is everything you control on a URL to match search intent: title tags, headings, body copy, media, internal links and structured data. It is the highest-control lever after [technical SEO](/en/blog/technical-seo-guide), and the place most Greek businesses still leave easy wins on the table. This guide gives numbered on-page SEO tips, a checklist, realistic costs and the mistakes that keep good sites stuck on page two.
+Pick a service page that already appears in Search Console. Read the searches it shows up for, then read its title and opening paragraph. If customers are asking about cost or delivery and the page only describes your company, you have a specific on-page edit to try.
 
 Pair this with [keyword research](/en/blog/keyword-research-guide), [SEO content](/en/blog/seo-content-guide) and, when needed, [content creation services](/en/services/content-creation).
 
@@ -70,7 +70,7 @@ On-page is one layer. The [website SEO checklist](/en/blog/seo-checklist) puts i
 | Pillar guide (1,000–2,000 words) | €250 to €700 | 1–3 days | 1–4 months |
 | Ongoing on-page in retainer | from {{ENTRY_SEO}}/mo | Continuous | Compounds |
 
-If the site is slow or poorly indexed, fix technical issues first: otherwise on-page gains leak. See [pricing](/en/pricing) and [how much SEO costs](/en/blog/how-much-does-seo-cost).
+If the site is slow or poorly indexed, fix technical issues first: otherwise on-page gains leak. See [pricing](/el/ypiresies/times) and [how much SEO costs](/en/blog/how-much-does-seo-cost).
 
 ## Common On-Page Mistakes
 
@@ -92,7 +92,7 @@ Better on-page clarity raises relevance and CTR, which feeds [organic traffic gr
 Imagine a page titled “SEO Services | Company” with a 90-word blurb and a contact form. Impressions exist for “SEO agency Athens” but CTR is 1.2% and average position is 18. An on-page rewrite would:
 
 1. Retitle to a specific promise (e.g. “SEO Agency in Athens: Local & National Growth”).
-2. Open with who it is for, outcomes and a transparent price band ({{ENTRY_SEO}}–{{SEO_AUTHORITY}}/mo) linking to [pricing](/en/pricing).
+2. Open with who it is for, outcomes and a transparent price band ({{ENTRY_SEO}}–{{SEO_AUTHORITY}}/mo) linking to [pricing](/el/ypiresies/times).
 3. Add H2s for process, timeline, included work and FAQs.
 4. Insert unique proof (cities served, case snapshots, audit CTA).
 5. Internally link from [What is SEO?](/en/blog/what-is-seo), [how to increase organic traffic](/en/blog/how-to-increase-organic-traffic) and related city pages.
@@ -128,4 +128,4 @@ Use [content creation](/en/services/content-creation), run a [free SEO audit](/e
 
 ## Optimize the Pages That Already Almost Win
 
-Most growth comes from improving URLs that already get impressions, not inventing random blogs. Review [pricing](/en/pricing), book an [SEO audit](/en/services/seo-audits), or [Get Started](/en/get-started) and we will prioritize which pages to rewrite first.
+Most growth comes from improving URLs that already get impressions, not inventing random blogs. Review [pricing](/el/ypiresies/times), book an [SEO audit](/en/services/seo-audits), or [Get Started](/en/get-started) and we will prioritize which pages to rewrite first.

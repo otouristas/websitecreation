@@ -1,5 +1,5 @@
 export const glossaryUiEn = {
-  title: 'SEO Glossary - 100+ Terms Explained',
+  title: 'SEO glossary with examples',
   metaDescription:
     'SEO glossary with 100+ definitions: technical SEO, GEO, AEO, AI search, links, and Search Console. Clear examples and links to platform features and guides.',
   loading: 'Loading glossary…',
@@ -12,14 +12,14 @@ export const glossaryUiEn = {
 } as const;
 
 export const glossaryUiEl = {
-  title: 'SEO Γλωσσάρι - 100+ όροι',
+  title: 'Λεξικό SEO με παραδείγματα',
   metaDescription:
-    'Γλωσσάρι SEO με 100+ ορισμούς: τεχνικό SEO, GEO, AEO, AI αναζήτηση, links και Search Console, με συνδέσμους σε οδηγούς και στην πλατφόρμα.',
+    'Τι σημαίνει CTR, canonical ή AI Overview; Βρείτε τον ορισμό, ένα παράδειγμα και πού θα συναντήσετε τον όρο όταν ασχολείστε με την ιστοσελίδα σας.',
   loading: 'Φόρτωση γλωσσαρίου…',
-  heroTitle: 'SEO Γλωσσάρι',
+  heroTitle: 'Λεξικό SEO',
   heroSub: '100+ ορισμοί για τεχνικό SEO, GEO, AEO, AI αναζήτηση και Search Console, με συνδέσμους σε οδηγούς και στην πλατφόρμα.',
   searchPlaceholder: 'Αναζήτηση όρων…',
   allCategories: 'Όλες οι κατηγορίες',
   noResults: 'Δεν βρέθηκαν όροι.',
-  relatedResources: 'Σχετικοί πόροι',
+  relatedResources: 'Σχετικοί οδηγοί',
 } as const;

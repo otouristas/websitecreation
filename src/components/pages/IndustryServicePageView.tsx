@@ -49,6 +49,7 @@ export function IndustryServicePageView({
   const isEl = locale === 'el';
   const svcEl = isEl ? getServiceEl(serviceSlug) : null;
   const serviceName = svcEl?.name ?? baseService.name;
+  const serviceDescription = svcEl?.description ?? baseService.description;
   const features = svcEl?.features ?? baseService.features;
   const ui = isEl ? solutionsUi.el : solutionsUi.en;
   /**
@@ -56,7 +57,7 @@ export function IndustryServicePageView({
    * pain points below, this is what stops the page being the same template with
    * a noun swapped in.
    */
-  const angle = getServiceAngle(serviceSlug, locale);
+  const angle = getServiceAngle(serviceSlug, locale, industrySlug);
   const angleHeadings = isEl ? ANGLE_HEADINGS.el : ANGLE_HEADINGS.en;
   const serviceFaqs = getServiceFaqs(serviceSlug, locale);
   const lp = (path: string) => localizedPath(locale, path);
@@ -86,13 +87,13 @@ export function IndustryServicePageView({
     generateBreadcrumbSchema({ items: breadcrumbs }),
     generateServiceSchema({
       name: ui.serviceForIndustry(serviceName, industry.nameFor),
-      description: ui.serviceHeroDesc(serviceName, industry.name),
+      description: angle?.approach ?? serviceDescription,
       provider: { name: 'AnotherSEOGuru', url: 'https://anotherseoguru.com' },
-      serviceType: 'Web Development',
+      serviceType: serviceName,
     }),
     generateArticleSchema({
       headline: ui.serviceForIndustry(serviceName, industry.nameFor),
-      description: ui.serviceHeroDesc(serviceName, industry.name),
+      description: angle?.approach ?? serviceDescription,
       datePublished: GENERATED_CONTENT_PUBLISHED,
       dateModified: GENERATED_CONTENT_UPDATED,
       author: { name: 'AnotherSEOGuru' },
@@ -134,30 +135,29 @@ export function IndustryServicePageView({
               h1
             )
           }
-          lead={ui.serviceHeroDesc(serviceName, industry.name)}
+          lead={angle?.approach ?? serviceDescription}
           actions={
             <div className="flex flex-col items-center gap-3">
-              <AgencyCtas locale={locale} primaryHref={lp('/contact')} primaryLabel={ui.getIndustryQuote(industry.name)} />
+              <AgencyCtas locale={locale} primaryHref={lp('/get-started')} primaryLabel={ui.getQuote} />
               <Link
                 href={lp(`/solutions/${industrySlug}`)}
                 className="text-[14px] font-medium text-muted-foreground underline decoration-hairline underline-offset-4 hover:text-foreground"
               >
-                {ui.allIndustryServices(industry.name)}
+                {ui.allIndustryServices(industry.nameFor)}
               </Link>
             </div>
           }
         />
 
         {/* No FAQPage: `getServiceFaqs` serves the same shared default block
-            to most industry x service combinations, so this marked up
-            identical Q&A across hundreds of URLs for a rich result an agency
-            cannot earn. The visible FAQ below is the part that matters. */}
+            to most industry x service combinations. Google retired FAQ rich
+            results in May 2026. Customers can still read the answers below. */}
         {angle ? (
           <KitSection>
             <div className="grid gap-4 md:grid-cols-3">
               {(
                 [
-                  [angleHeadings.approach, angle.approach, Compass],
+                  [angleHeadings.approach, serviceDescription, Compass],
                   [angleHeadings.process, angle.process, Workflow],
                   [angleHeadings.outcome, angle.outcome, TrendingUp],
                 ] as const
@@ -173,7 +173,6 @@ export function IndustryServicePageView({
             eyebrow={tx('Included', 'Περιλαμβάνεται')}
             eyebrowIcon={<ListChecks />}
             title={ui.whatsIncluded(industry.nameFor)}
-            body={ui.whatsIncludedDesc(serviceName, industry.nameFor)}
             bullets={features}
             preview={
               <Stage>
@@ -189,7 +188,7 @@ export function IndustryServicePageView({
             eyebrow={industry.name}
             eyebrowIcon={<Target />}
             title={ui.builtFor(industry.nameFor)}
-            body={ui.builtForDesc(industry.name)}
+            body={industry.description}
             bullets={industry.painPoints}
             preview={
               <Stage>
@@ -258,17 +257,17 @@ export function IndustryServicePageView({
             </>
           ) : null}
           <p className="mt-10">
-            <Link href={lp('/contact')} className={kitSecondaryBtn}>
+            <Link href={lp('/get-started')} className={kitSecondaryBtn}>
               {ui.freeQuote}
             </Link>
           </p>
         </KitSection>
 
-        <CtaBand
+        <CtaBand agency
           locale={locale}
           source={`industry-service-${industrySlug}`}
           title={<>{ui.readyForService(serviceName)}</>}
-          description={ui.readyForServiceSub(industry.name)}
+          description={ui.quoteInstructions}
         />
       </main>
       <Footer locale={locale} />

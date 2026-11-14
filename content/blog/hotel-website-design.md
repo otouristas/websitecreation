@@ -23,7 +23,7 @@ faq:
     answer: "Usually 3–5 weeks once photos, room details, and policies are ready. Content readiness is the usual bottleneck."
 ---
 
-A hotel’s website is its most profitable sales channel, or its most expensive missed opportunity. Great **hotel website design** turns a browser into a direct booking; a slow, dated site sends that guest straight to an OTA that charges you commission. Here’s what a booking-driving hotel site needs in 2026, what it costs, and how to build it for SEO.
+Try booking a room on your own website from a phone. Can you tell which room has a sea view, whether the quoted rate includes breakfast and where to enter your dates? Those are useful design questions long before you choose a typeface or a new photo for the homepage.
 
 > **Related:** [hotel solutions](/en/solutions/hotels) · [pricing](/el/ypiresies/times) · [SEO for hotels](/en/blog/hotel-seo-guide) · [website cost guide](/en/blog/how-much-does-a-website-cost) · [free quote](/en/get-started).
 
@@ -46,7 +46,7 @@ Explore our [hotel solutions](/en/solutions/hotels) and [portfolio](/en/work).
 
 **Professional {{WEBSITE_PRO}}** and **Business {{WEBSITE_BUSINESS}}** cover most units. Compare with the general [website cost guide](/en/blog/how-much-does-a-website-cost).
 
-## What Sets a Booking-Driving Hotel Site Apart
+## What guests need before they book direct
 
 ### 1. Speed and mobile-first UX
 
@@ -106,7 +106,7 @@ After launch, plan ongoing [hotel SEO](/en/blog/hotel-seo-guide) and destination
 
 Keep the date picker visible without endless scroll, show total price early, and avoid forcing account creation before enquiry. Guests compare three tabs; friction loses the tab that asks for the most.
 
-## Booking Engine vs Enquiry Flow
+## Should guests book immediately or ask about dates?
 
 Mid-size and larger hotels benefit from a live booking engine synced to channels. Very small properties (few rooms) often start with a strong availability form, WhatsApp, and fast human reply: cheaper and less complex. The wrong move is installing a heavy engine before photos, policies, and rates are ready; software does not fix missing content.
 

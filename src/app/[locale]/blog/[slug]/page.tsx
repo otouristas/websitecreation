@@ -1,3 +1,4 @@
+import { isAgencyGuideSlug } from '@/data/agency-guides';
 import Link from "next/link";
 import { notFound, permanentRedirect } from "next/navigation";
 import Header from "@/components/Header";
@@ -29,7 +30,7 @@ import { isValidLocale, localizedPath, type SiteLocale } from "@/lib/i18n/locale
 import { blogPostCanonicalUrl, blogPostingSchema, buildBlogPostMetadata } from "@/lib/blog-seo";
 import { getBlogMoneyLinks } from "@/lib/linking";
 import { seoGuideSlugSet } from "@/lib/seo-guides";
-import { getAppPath } from "@/lib/app-links";
+import { appLink } from "@/components/gsc-boost/copy";
 import {
   generateBreadcrumbSchema,
   generateFAQSchema,
@@ -143,6 +144,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     description: p.description,
   }));
 
+  const agencyArticle = isEl && isAgencyGuideSlug(post.slug);
   const pillarSlug = normalizePillar(post.pillar);
   const pillarCopy = pillarSlug ? getPillarCopy(pillarSlug, locale as SiteLocale) : undefined;
   const { prev, next } = getPillarNeighbours(post);
@@ -213,6 +215,22 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         {/* Body + sticky TOC rail */}
         <div className="mx-auto grid max-w-6xl gap-12 px-6 py-14 lg:grid-cols-[minmax(0,1fr)_16rem] lg:gap-16">
           <article className="min-w-0">
+            {post.headings.length >= 3 ? (
+              <details className="mb-8 rounded-xl border border-hairline bg-surface px-4 lg:hidden">
+                <summary className="cursor-pointer py-3 font-semibold text-foreground">{isEl ? "Περιεχόμενα άρθρου" : "Jump to a section"}</summary>
+                <nav aria-label={isEl ? "Ενότητες άρθρου" : "Article sections"} className="pb-3">
+                  <ul>
+                    {post.headings.map((heading) => (
+                      <li key={heading.id}>
+                        <a href={`#${heading.id}`} className="block py-2 text-sm text-primary underline-offset-4 hover:underline">
+                          {heading.text}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </nav>
+              </details>
+            ) : null}
             {post.slug === 'black-month-istoselides-seo-2026' ? <BlackMonthArticleStatus /> : null}
             {showChecklist ? (
               <>
@@ -307,23 +325,28 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 label={isEl ? "Περιεχόμενα" : "On this page"}
               />
 
-              <div className="rounded-2xl border border-hairline bg-surface p-5">
+              {agencyArticle ? (
+                <div className="rounded-2xl border border-hairline bg-surface p-5">
+                  <p className="font-semibold text-foreground">Θέλετε βοήθεια με τη δική σας ιστοσελίδα;</p>
+                  <Link href={lp('/ypiresies/times')} className="mt-3 inline-block text-sm text-primary underline">Δείτε τι περιλαμβάνουν οι υπηρεσίες και πόσο κοστίζουν</Link>
+                </div>
+              ) : <div className="rounded-2xl border border-hairline bg-surface p-5">
                 <p className="font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-brand">
-                  {isEl ? "Η πλατφόρμα μας" : "Our platform"}
+                  AnotherSEOGuru App
                 </p>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                   {isEl
-                    ? "Συνδέστε το Search Console και δείτε ποια ερωτήματα απέχουν μία θέση από τα κλικ."
-                    : "Connect Search Console and see which queries are one position from real clicks."}
+                    ? "Ποια σελίδα σας έχασε κλικ αυτόν τον μήνα; Ρωτήστε τον Aster AI και δείτε τα στοιχεία του Search Console για τη συγκεκριμένη σελίδα."
+                    : "Which page lost clicks this month? Ask Aster AI and see the Search Console figures behind the answer."}
                 </p>
                 <a
-                  href={getAppPath("/signup")}
+                  href={appLink("/signup", locale as SiteLocale, "blog-sidebar")}
                   rel="noopener noreferrer"
                   className={cn(kitSoftwareBtn, "mt-4 min-h-10 px-4 text-[13px]")}
                 >
                   {isEl ? "Δοκιμάστε δωρεάν" : "Try it free"}
                 </a>
-              </div>
+              </div>}
 
               {seoGuideSlugSet().has(post.slug) ? (
                 <div className="rounded-2xl border border-hairline bg-surface p-5">
@@ -342,7 +365,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               {pillarCopy ? (
                 <div className="rounded-2xl border border-hairline bg-surface p-5">
                   <p className="font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-muted-foreground">
-                    {isEl ? "Μέρος του κόμβου" : "Part of the hub"}
+                    {isEl ? "Περισσότερα για το θέμα" : "More on this topic"}
                   </p>
                   <Link
                     href={lp(`/blog/topics/${pillarSlug}`)}
@@ -356,9 +379,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </aside>
         </div>
 
-        <BlogProductCta locale={locale as SiteLocale} />
+        {agencyArticle ? null : <BlogProductCta locale={locale as SiteLocale} pillar={pillarSlug} />}
 
-        <CtaBand locale={locale as SiteLocale} source="blog-post-band" />
+        <CtaBand agency={agencyArticle} locale={locale as SiteLocale} source="blog-post-band" />
       </main>
       <Footer locale={locale as SiteLocale} />
     </>

@@ -341,12 +341,12 @@ export default async function PlatformWordPressPage({ params }: PageProps) {
           pill={<KitEyebrow icon={<WordPressGlyph />}>{tx("WordPress SEO plugin · Free", "Plugin SEO για WordPress · Δωρεάν")}</KitEyebrow>}
           title={
             <>
-              {tx("The WordPress SEO plugin", "Το plugin SEO για WordPress")} <Accent>{tx("that knows your Google data", "που ξέρει τα δεδομένα σας στη Google")}</Accent>
+              {tx("See how readers find a post", "Δείτε πώς βρίσκουν οι αναγνώστες το άρθρο σας")} <Accent>{tx("as you edit it in WordPress", "μέσα από το WordPress")}</Accent>
             </>
           }
           lead={tx(
-            "Everything you use Yoast or Rank Math for, with a live Google preview, analysis that understands Greek, and the post's real Search Console queries in the editor. Keyword research and AI titles are one click away. Switch in minutes with the built-in importer.",
-            "Όλα όσα κάνετε με το Yoast ή το Rank Math, με ζωντανή προεπισκόπηση Google, ανάλυση που καταλαβαίνει ελληνικά, και τις πραγματικές αναζητήσεις του άρθρου από το Search Console μέσα στον editor. Έρευνα λέξεων-κλειδιών και τίτλοι με AI σε ένα κλικ. Περνάτε σε λίγα λεπτά με τον ενσωματωμένο οδηγό μεταφοράς.",
+            "Open a post and see the Google searches that bring readers to it. Use those words to revise the title and preview how it could look in search. The plugin analyses Greek and English text and can import your existing SEO settings.",
+            "Ανοίξτε ένα άρθρο και δείτε με ποιες αναζητήσεις φτάνουν σε αυτό οι αναγνώστες από τη Google. Δοκιμάστε έναν τίτλο που απαντά καλύτερα σε αυτό που ψάχνουν και δείτε την προεπισκόπησή του. Το plugin αναλύει κείμενα στα ελληνικά και στα αγγλικά και μπορεί να μεταφέρει τις υπάρχουσες ρυθμίσεις SEO.",
           )}
           actions={
             <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">

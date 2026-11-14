@@ -118,8 +118,8 @@ export default async function SolutionsPage({ params }: PageProps) {
           }
           lead={
             isEl
-              ? `Η ζήτηση αναζήτησης διαφέρει ριζικά ανά κλάδο. Έχουμε παραδώσει πάνω από ${PROJECTS_DELIVERED} έργα, με το μεγαλύτερο βάθος σε τουρισμό και φιλοξενία.`
-              : `Search demand differs sharply by sector. We have delivered more than ${PROJECTS_DELIVERED} projects, with the most depth in tourism and hospitality.`
+              ? `Άλλες ερωτήσεις έχει ο επισκέπτης ενός ξενοδοχείου και άλλες ο πελάτης ενός τεχνικού. Διαλέξτε τον κλάδο σας για να δείτε πώς οργανώνουμε μια ιστοσελίδα γύρω από τις κρατήσεις ή τα αιτήματα που θέλετε. Έχουμε παραδώσει πάνω από ${PROJECTS_DELIVERED} έργα.`
+              : `A hotel guest choosing a room and a homeowner looking for a plumber need different answers. Choose your sector to see how we plan a site around the enquiries or bookings you want. We have delivered more than ${PROJECTS_DELIVERED} projects.`
           }
         >
           <Container className="mt-14">
@@ -132,7 +132,7 @@ export default async function SolutionsPage({ params }: PageProps) {
               </Stage>
             </div>
             <p className="mt-5 text-center text-[13px] text-muted-foreground">
-              {tx("Sample data for a Paros hotel, the kind of view every client gets.", "Δείγμα δεδομένων για ξενοδοχείο στην Πάρο, η εικόνα που παίρνει κάθε πελάτης.")}{" "}
+              {tx("Example search results for a hotel on Paros.", "Παράδειγμα αποτελεσμάτων αναζήτησης για ξενοδοχείο στην Πάρο.")}{" "}
               <Link href={lp("/work")} className="font-medium text-foreground underline decoration-hairline underline-offset-4 hover:decoration-foreground">
                 {isEl ? "Δείτε τα έργα μας" : "View Our Work"}
               </Link>
@@ -151,8 +151,8 @@ export default async function SolutionsPage({ params }: PageProps) {
             }
             description={
               isEl
-                ? "Εδώ βρίσκεται το μεγαλύτερο μέρος του portfolio μας: εποχικότητα, πολύγλωσσα sites, απευθείας κρατήσεις και ανταγωνισμός με τα OTAs."
-                : "This is where most of our portfolio sits: seasonality, multilingual sites, direct bookings and competing with the OTAs."
+                ? "Τα περισσότερα έργα μας είναι στον τουρισμό. Δείτε πώς ένας επισκέπτης μπορεί να βρει το δωμάτιο, το αυτοκίνητο ή την εκδρομή που θέλει και να κλείσει απευθείας μαζί σας."
+                : "Most of our work is in tourism. See how guests can find the right room, vehicle or excursion in their language and book directly with you."
             }
           />
           <CardGrid className="mt-12">
@@ -189,8 +189,8 @@ export default async function SolutionsPage({ params }: PageProps) {
             }
             description={
               isEl
-                ? "Η ίδια μεθοδολογία εφαρμόζεται και εδώ: ανάλυση ζήτησης, τεχνικά θεμέλια, περιεχόμενο και μετρήσιμα leads."
-                : "The same method applies here: demand analysis, technical foundations, content and measurable leads."
+                ? "Βρείτε τη δική σας δραστηριότητα για να δείτε τι χρειάζεται να μάθει ο πελάτης πριν σας καλέσει ή ζητήσει ραντεβού."
+                : "Find your line of work to see what a customer needs to know before they call or request an appointment."
             }
           />
           <ValueTrio
@@ -206,7 +206,7 @@ export default async function SolutionsPage({ params }: PageProps) {
               },
               {
                 icon: Wrench,
-                title: tx("Technical foundations", "Τεχνικά θεμέλια"),
+                title: tx("Technical checks", "Τεχνικός έλεγχος"),
                 text: tx(
                   "Fast pages, clean indexing and schema, so the work that follows can rank.",
                   "Γρήγορες σελίδες, σωστή ευρετηρίαση και schema, ώστε ό,τι ακολουθεί να μπορεί να κατατάσσεται.",
@@ -214,7 +214,7 @@ export default async function SolutionsPage({ params }: PageProps) {
               },
               {
                 icon: LineChart,
-                title: tx("Content and measurable leads", "Περιεχόμενο και μετρήσιμα leads"),
+                title: tx("From visit to enquiry", "Από την επίσκεψη στην επικοινωνία"),
                 text: tx(
                   "Pages written for the searches that bring enquiries, tracked through to the call or form.",
                   "Σελίδες για τις αναζητήσεις που φέρνουν αιτήματα, με μέτρηση μέχρι το τηλέφωνο ή τη φόρμα.",
@@ -250,8 +250,8 @@ export default async function SolutionsPage({ params }: PageProps) {
               </>
             }
             body={tx(
-              "Every engagement starts from the same short list: the fixes that bring the most customers, ranked by what they are worth to you.",
-              "Κάθε συνεργασία ξεκινά από την ίδια σύντομη λίστα: τις διορθώσεις που φέρνουν τους περισσότερους πελάτες, με σειρά βάσει αξίας.",
+              "If you already have a website, we can check which services people find in Google and which pages need more work.",
+              "Αν έχετε ήδη ιστοσελίδα, μπορούμε να ελέγξουμε ποιες υπηρεσίες σας βρίσκει ο κόσμος στη Google και σε ποιες σελίδες χρειάζεται δουλειά.",
             )}
             links={[{ href: lp("/ypiresies/times"), label: isEl ? "Δείτε τις τιμές" : "View Pricing", primary: true }]}
             preview={
@@ -269,7 +269,7 @@ export default async function SolutionsPage({ params }: PageProps) {
           />
         </KitSection>
 
-        <CtaBand
+        <CtaBand agency
           locale={siteLocale}
           source="solutions-band"
           title={
@@ -279,8 +279,8 @@ export default async function SolutionsPage({ params }: PageProps) {
           }
           description={
             isEl
-              ? "Η μεθοδολογία δεν αλλάζει. Πείτε μας τι κάνετε και σε ποια αγορά, και θα δούμε αν υπάρχει πραγματική ζήτηση αναζήτησης να αξιοποιήσουμε."
-              : "The method does not change. Tell us what you do and which market, and we will look at whether there is real search demand to work with."
+              ? "Πείτε μας τι προσφέρετε, σε ποια περιοχή και τι θα θέλατε να ζητούν οι επισκέπτες από την ιστοσελίδα σας. Θα εξετάσουμε τις σχετικές αναζητήσεις."
+              : "Tell us what you offer, where you operate and what you want visitors to ask for. We can look at the searches that matter to your business."
           }
         />
       </main>

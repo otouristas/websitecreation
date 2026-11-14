@@ -9,7 +9,6 @@ import {
     getLocationBySlug,
     formatLocationName,
     countryNameEl,
-    stateNames,
     getNearbyLocations,
     isGreekLocation,
     isServiceLocationIndexable,
@@ -155,12 +154,6 @@ export default async function ServiceLocationPage({ params }: PageProps) {
         ? getGreekLocative(locationSlug, cityName)
         : `in ${cityState}`;
     
-    const stateFull =
-        location.countryCode === 'US'
-            ? stateNames[location.stateCode] || location.state
-            : location.state;
-    const regionLabel =
-        location.countryCode === 'US' ? stateFull : location.country;
 
     const siteLocale = locale as SiteLocale;
     const otherLocale: SiteLocale = isEl ? 'en' : 'el';
@@ -207,28 +200,26 @@ export default async function ServiceLocationPage({ params }: PageProps) {
 
     const t = isEl ? {
         heroTitle: `${serviceName} ${cityLocative}`,
-        heroDesc: `Ψάχνετε για ${serviceFor} ${cityLocative}; Δουλεύουμε με δεδομένα από το Google Search Console και παραδίδουμε αποτελέσματα που κατατάσσονται ψηλά στη Google και σε μηχανές αναζήτησης AI - με διαφανείς τιμές σε ${location.currency === 'EUR' ? 'ευρώ (€)' : location.currency}.`,
+        heroDesc: serviceDesc,
         getQuote: `Προσφορά για ${cityName}`,
         allLocations: 'Όλες οι τοποθεσίες',
         browseCities: 'Πλοήγηση ανά πόλη',
         whatsIncludedTitle: `Τι περιλαμβάνεται ${cityLocative}`,
-        whatsIncludedDesc: `Το πακέτο μας για ${serviceFor} καλύπτει όσα χρειάζονται οι επιχειρήσεις ${cityLocative} για μετρήσιμα αποτελέσματα ${location.countryCode === 'GR' ? 'στην Ελλάδα' : 'στη χώρα εξυπηρέτησης'}.`,
         proofTitle: 'Σχετικά έργα μας',
         proofDesc: 'Ιστοσελίδες που έχουμε φτιάξει για επιχειρήσεις με παρόμοιο κοινό.',
         nearbyTitle: 'Κοντινές περιοχές που εξυπηρετούμε',
         otherServicesTitle: `Άλλες υπηρεσίες ${cityLocative}`,
-        faqTitle: `Συχνές ερωτήσεις - ${cityName}`,
+        faqTitle: `Συχνές ερωτήσεις για επιχειρήσεις ${cityLocative}`,
         ctaTitle: `Έτοιμοι για ${serviceFor} ${cityLocative};`,
-        ctaDesc: `Ζητήστε μια δωρεάν προσφορά προσαρμοσμένη για τη δική σας επιχείρηση ${cityLocative} - τιμές σε ${location.currency === 'EUR' ? 'ευρώ' : location.currency}.`,
+        ctaDesc: `Πείτε μας τι προσφέρετε ${cityLocative} και τι θέλετε να μπορεί να κάνει ο πελάτης σας. Θα σας εξηγήσουμε τι χρειάζεται και τι θα κοστίσει.`,
         ctaBtn: `Δωρεάν προσφορά για ${cityName}`,
     } : {
         heroTitle: `${service.name} in ${cityState}`,
-        heroDesc: `Looking for professional ${service.name.toLowerCase()} in ${location.city}, ${regionLabel}? We work from Google Search Console data and deliver work that ranks in Google and AI search - with transparent pricing in ${location.currency}.`,
+        heroDesc: serviceDesc,
         getQuote: `Get ${location.city} Quote`,
         allLocations: 'All Locations',
         browseCities: 'Browse Cities',
         whatsIncludedTitle: `What's Included in ${location.city}`,
-        whatsIncludedDesc: `Our ${service.name.toLowerCase()} engagements for ${location.city} businesses cover everything you need to compete in ${location.country}.`,
         proofTitle: 'Related client work',
         proofDesc: 'Websites we have built for businesses with a similar audience.',
         nearbyTitle: 'Nearby areas we also serve',
@@ -260,11 +251,11 @@ export default async function ServiceLocationPage({ params }: PageProps) {
         },
         {
             question: `Συνδυάζετε ${serviceFor} με τοπικό SEO ${cityLocative};`,
-            answer: `Ναι. Σχεδιάζουμε τοπικές σελίδες, δομή εσωτερικών συνδέσμων, schema markup και στρατηγική Google Business Profile ώστε οι επιχειρήσεις ${cityLocative} να κατατάσσονται ψηλά για τοπικές αναζητήσεις.`,
+            answer: `Ναι. Ελέγχουμε αν οι σελίδες αναφέρουν πού εξυπηρετείτε τους πελάτες σας και αν τα στοιχεία συμφωνούν με το Google Business Profile. Για μια επιχείρηση ${cityLocative} αυτό μπορεί να σημαίνει διόρθωση του ωραρίου ή καλύτερες οδηγίες πρόσβασης.`,
         },
         {
-            question: `Τι κάνει τις ιστοσελίδες μας να ξεχωρίζουν στη Google και στην αναζήτηση με AI;`,
-            answer: `Το τεχνικό SEO, το semantic clustering από το Search Console, το GEO/AEO βελτιστοποιημένο περιεχόμενο και οι κορυφαίες επιδόσεις Core Web Vitals - όχι οι απλές, λεπτές σελίδες προτύπων.`,
+            question: `Τι μπορείτε να ελέγξετε για την παρουσία μου στην αναζήτηση με AI;`,
+            answer: `Κοιτάμε αν η Google μπορεί να βρει τις σελίδες, αν οι πληροφορίες σας είναι ακριβείς και ποιες πηγές εμφανίζονται σε συγκεκριμένες ερωτήσεις. Κάθε υπηρεσία AI αποφασίζει αν θα αναφέρει την επιχείρησή σας.`,
         },
         {
             key: 'pricing',
@@ -284,11 +275,11 @@ export default async function ServiceLocationPage({ params }: PageProps) {
         },
         {
             question: `Do you offer ${service.name.toLowerCase()} for local SEO in ${location.city}?`,
-            answer: `Yes. We build location pages, internal links, schema, and GBP strategy so ${location.city} businesses rank for commercial and "near me" queries.`,
+            answer: `Yes. We check the locations your pages describe and whether their hours, directions and service details match your Google Business Profile.`,
         },
         {
-            question: `What makes your ${location.city} sites rank in Google and AI search?`,
-            answer: `Technical SEO, semantic clustering from Search Console, GEO/AEO structured content, and fast Core Web Vitals - not thin template pages.`,
+            question: `What can you check about AI search visibility in ${location.city}?`,
+            answer: `We check whether Google can find your pages, whether their facts are accurate and which sources appear for a sample of customer questions. Each AI service decides which businesses to mention.`,
         },
         {
             key: 'pricing',
@@ -324,13 +315,7 @@ export default async function ServiceLocationPage({ params }: PageProps) {
 
     const schemas = combineSchemas(
         generateBreadcrumbSchema({ items: breadcrumbs }),
-        // No FAQPage. `getServiceFaqs` falls back to one shared DEFAULT_EL /
-        // DEFAULT_EN block for any service without its own entry, so the same
-        // Q&A pairs were marked up across hundreds of city URLs. FAQ rich
-        // results have been restricted to authoritative government and health
-        // sites since 2023, so there was no result to win in exchange - only
-        // duplicate structured data at template scale. The visible FAQ stays:
-        // that copy is what earns People Also Ask and AI-answer citations.
+        // The shared FAQ answers are rendered for readers. Google retired FAQ rich results in May 2026.
         // No LocalBusiness here on purpose. We have no physical premises in these
         // cities, and LocalBusiness + PostalAddress asserts exactly that. Service
         // with areaServed is the correct markup for a service-area business and
@@ -423,7 +408,6 @@ export default async function ServiceLocationPage({ params }: PageProps) {
                             <WaveHeading
                                 eyebrow={local.included}
                                 title={accented(t.whatsIncludedTitle, isEl ? cityLocative : location.city)}
-                                lead={t.whatsIncludedDesc}
                             />
                             <ul className="mt-8 space-y-3.5">
                                 {serviceFeatures.map((feature) => (

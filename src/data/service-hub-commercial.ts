@@ -28,43 +28,43 @@ const COMMERCIAL: Record<MoneyServiceSlug, { en: ServiceHubCommercial; el: Servi
   'seo-audits': {
     en: {
       definition:
-        'An SEO audit is a prioritized review of technical health, on-page relevance, and competitive gaps, so you know what to fix first to unlock rankings. We pair crawl findings with Search Console data and a clear fix roadmap, not a 100-page PDF you’ll never use.',
+        'We compare the crawl with Search Console to see which pages Google can reach and where search traffic has fallen. The report explains which fixes to make first and who can carry them out.',
       processTitle: 'How our SEO audit works',
       process: [
         'Crawl + indexation review (robots, sitemaps, canonicals, soft 404s)',
         'Core Web Vitals and mobile UX pass',
         'On-page and internal-link gaps on money pages',
         'Competitor SERP snapshot and quick-win keyword list',
-        'Prioritized roadmap you can execute in-house or with our retainer',
+        'A fix list for your developers or our implementation team',
       ],
       pricingTeaser:
-        'Pricing and packages are on the pricing page, with 24% VAT shown separately. Final scope follows the project.',
+        'See the packages and VAT details, then ask for a quote for the work your site needs.',
       audienceTitle: 'Who this is for',
       audience:
         'Sites stuck on page 2–3, redesigns that lost traffic, and teams that want a clear technical baseline before a retainer.',
     },
     el: {
       definition:
-        'Το SEO audit είναι προτεραιοποιημένος έλεγχος τεχνικής υγείας, on-page και ανταγωνισμού, ώστε να ξέρετε τι να διορθώσετε πρώτα για να ξεκλειδώσουν οι κατατάξεις. Συνδυάζουμε crawl με δεδομένα Search Console και καθαρό πλάνο ενεργειών, όχι PDF 100 σελίδων που δεν θα διαβάσετε ποτέ.',
+        'Συγκρίνουμε τον τεχνικό έλεγχο με τα στοιχεία του Search Console. Βλέπουμε ποιες σελίδες διαβάζει η Google, πού μειώθηκαν οι επισκέψεις και ποιες διορθώσεις αξίζει να αναλάβει πρώτα η ομάδα σας.',
       processTitle: 'Πώς δουλεύει ο τεχνικός έλεγχος',
       process: [
         'Crawl & ευρετηρίαση (robots, sitemaps, canonicals, soft 404)',
         'Έλεγχος Core Web Vitals και mobile UX',
         'Κενά on-page και εσωτερικής σύνδεσης στις money pages',
         'Στιγμιότυπο SERP ανταγωνιστών και λίστα γρήγορων wins',
-        'Προτεραιοποιημένο roadmap για in-house ή retainer',
+        'Λίστα διορθώσεων για τη δική σας ομάδα ή για ανάθεση σε εμάς',
       ],
       pricingTeaser:
-        'Οι τιμές και τα πακέτα βρίσκονται στη σελίδα τιμών, με τον ΦΠΑ 24% να εμφανίζεται ξεχωριστά. Το τελικό εύρος προκύπτει από το project.',
+        'Δείτε τι περιλαμβάνει κάθε πακέτο, πώς υπολογίζεται ο ΦΠΑ και ζητήστε προσφορά για τη δική σας ιστοσελίδα.',
       audienceTitle: 'Για ποιον είναι',
       audience:
-        'Sites κολλημένα στη 2η–3η σελίδα, redesigns που έχασαν traffic, και ομάδες που θέλουν καθαρή τεχνική βάση πριν από retainer.',
+        'Αν η επισκεψιμότητα έπεσε μετά από ανασχεδιασμό ή οι σελίδες σας μένουν χαμηλά στα αποτελέσματα, ένας έλεγχος βοηθά να αποφασίσετε τι αξίζει να διορθώσετε.',
     },
   },
   'local-seo': {
     en: {
       definition:
-        'Local SEO is how you win Google’s map pack and “near me” results: Google Business Profile, NAP consistency, reviews, citations, and city/service pages that match real local intent.',
+        'We compare your Google Business Profile with your website and other listings. A customer searching nearby should see the right address, hours and way to reach you.',
       processTitle: 'Local SEO process',
       process: [
         'GBP audit (categories, services, photos, Q&A, posts)',
@@ -74,14 +74,14 @@ const COMMERCIAL: Record<MoneyServiceSlug, { en: ServiceHubCommercial; el: Servi
         'Monthly rank + call/direction tracking',
       ],
       pricingTeaser:
-        'Pricing and packages are on the pricing page, with 24% VAT shown separately. Final scope follows the project.',
+        'See the packages and VAT details, then ask for a quote for the work your site needs.',
       audienceTitle: 'Who this is for',
       audience:
         'Clinics, law firms, hotels, rent-a-car, restaurants, and multi-location brands that need map pack visibility in Greece and abroad.',
     },
     el: {
       definition:
-        'Το τοπικό SEO είναι πώς κερδίζετε το map pack και τις αναζητήσεις «κοντά μου»: Google Business Profile, συνεπές NAP, κριτικές, citations και σελίδες πόλης/υπηρεσίας που ταιριάζουν σε πραγματική τοπική πρόθεση.',
+        'Συγκρίνουμε το Google Business Profile με την ιστοσελίδα και τις άλλες καταχωρίσεις σας. Ελέγχουμε αν ο πελάτης που ψάχνει στην περιοχή βλέπει τη σωστή διεύθυνση, το ωράριο και το τηλέφωνό σας.',
       processTitle: 'Διαδικασία τοπικού SEO',
       process: [
         'Έλεγχος GBP (κατηγορίες, υπηρεσίες, φωτογραφίες, Q&A, posts)',
@@ -91,7 +91,7 @@ const COMMERCIAL: Record<MoneyServiceSlug, { en: ServiceHubCommercial; el: Servi
         'Μηνιαία παρακολούθηση θέσεων, κλήσεων και αιτημάτων για οδηγίες',
       ],
       pricingTeaser:
-        'Οι τιμές και τα πακέτα βρίσκονται στη σελίδα τιμών, με τον ΦΠΑ 24% να εμφανίζεται ξεχωριστά. Το τελικό εύρος προκύπτει από το project.',
+        'Δείτε τι περιλαμβάνει κάθε πακέτο, πώς υπολογίζεται ο ΦΠΑ και ζητήστε προσφορά για τη δική σας ιστοσελίδα.',
       audienceTitle: 'Για ποιον είναι',
       audience:
         'Ιατρεία, δικηγόροι, ξενοδοχεία, rent-a-car, εστίαση και brands με πολλά σημεία που χρειάζονται map pack στην Ελλάδα και στο εξωτερικό.',
@@ -100,7 +100,7 @@ const COMMERCIAL: Record<MoneyServiceSlug, { en: ServiceHubCommercial; el: Servi
   'eshop-woocommerce': {
     en: {
       definition:
-        'A WooCommerce e-shop is a sales system, catalog structure, payments, shipping, trust, and SEO category architecture, not just a theme with a cart. We build stores that can rank and convert from day one.',
+        'We organise the catalogue, payment options and shipping rules together. Before the WooCommerce shop opens, we check the route from a product page through to checkout.',
       processTitle: 'How we build your e-shop',
       process: [
         'Catalog IA: categories and URLs mapped to search demand',
@@ -110,33 +110,33 @@ const COMMERCIAL: Record<MoneyServiceSlug, { en: ServiceHubCommercial; el: Servi
         'Launch checklist, training, and optional e-shop SEO retainer',
       ],
       pricingTeaser:
-        'Pricing and packages are on the pricing page, with 24% VAT shown separately. Final scope follows the project.',
+        'See the packages and VAT details, then ask for a quote for the work your site needs.',
       audienceTitle: 'Who this is for',
       audience:
         'Greek retailers who need WooCommerce ownership, local payments/couriers, and SEO-ready category structure, not a locked SaaS theme.',
     },
     el: {
       definition:
-        'Ένα e-shop WooCommerce είναι σύστημα πωλήσεων, δομή καταλόγου, πληρωμές, μεταφορικά, εμπιστοσύνη και SEO κατηγοριών, όχι απλά ένα θέμα με καλάθι. Χτίζουμε καταστήματα που κατατάσσονται και μετατρέπουν από την 1η μέρα.',
-      processTitle: 'Πώς χτίζουμε το e-shop σας',
+        'Οργανώνουμε μαζί τον κατάλογο, τους τρόπους πληρωμής και τους κανόνες αποστολής. Πριν ανοίξει το κατάστημα WooCommerce, ελέγχουμε τη διαδικασία από τη σελίδα προϊόντος μέχρι την ολοκλήρωση της παραγγελίας.',
+      processTitle: 'Πώς ετοιμάζουμε το e-shop σας',
       process: [
         'Αρχιτεκτονική καταλόγου: κατηγορίες και URLs με βάση ζήτηση αναζήτησης',
-        'Σχεδιασμός + templates προϊόντων για μετατροπή',
+        'Σχεδιασμός σελίδων προϊόντων και διαδικασίας αγοράς',
         'Ελληνικές πληρωμές, checkout με ΦΠΑ και ζώνες αποστολής',
         'Τεχνικό SEO, Product schema και Core Web Vitals',
-        'Launch checklist, εκπαίδευση και προαιρετικό e-shop SEO retainer',
+        'Έλεγχοι πριν τη δημοσίευση, εκπαίδευση και προαιρετική μηνιαία διαχείριση SEO',
       ],
       pricingTeaser:
-        'Οι τιμές και τα πακέτα βρίσκονται στη σελίδα τιμών, με τον ΦΠΑ 24% να εμφανίζεται ξεχωριστά. Το τελικό εύρος προκύπτει από το project.',
+        'Δείτε τι περιλαμβάνει κάθε πακέτο, πώς υπολογίζεται ο ΦΠΑ και ζητήστε προσφορά για τη δική σας ιστοσελίδα.',
       audienceTitle: 'Για ποιον είναι',
       audience:
-        'Έλληνες retailers που θέλουν ιδιοκτησία WooCommerce, τοπικές πληρωμές/courier και SEO δομή κατηγοριών, όχι κλειδωμένο SaaS θέμα.',
+        'Εμπόρους που θέλουν δικό τους κατάστημα WooCommerce, με ελληνικούς τρόπους πληρωμής, συνεργαζόμενες μεταφορικές και κατηγορίες που βρίσκονται στη Google.',
     },
   },
   'ai-visibility': {
     en: {
       definition:
-        'AI visibility (GEO/AEO) is the work that makes a business usable by answer engines: consistent entities, schema that matches the page, and content written in a shape ChatGPT, Perplexity or Google AI Overviews can quote. It does not replace classic rankings, and it does not guarantee a citation.',
+        'We check how clearly your site describes the business and whether the published facts agree across pages. A fixed set of questions lets us follow how AI services mention you over time.',
       processTitle: 'GEO / AEO process',
       process: [
         'Entity and brand-fact consistency audit',
@@ -153,7 +153,7 @@ const COMMERCIAL: Record<MoneyServiceSlug, { en: ServiceHubCommercial; el: Servi
     },
     el: {
       definition:
-        'Η ορατότητα σε AI (GEO/AEO) είναι η δουλειά που κάνει μια επιχείρηση χρησιμοποιήσιμη από μηχανές απάντησης: συνεπείς οντότητες, schema που συμφωνεί με τη σελίδα και περιεχόμενο σε μορφή που μπορούν να παραθέσουν το ChatGPT, το Perplexity ή τα AI Overviews. Δεν αντικαθιστά τις κλασικές κατατάξεις και δεν εγγυάται αναφορά.',
+        'Ελέγχουμε αν περιγράφετε καθαρά την επιχείρησή σας και αν συμφωνούν τα στοιχεία στις σελίδες σας. Επαναλαμβάνουμε συγκεκριμένες ερωτήσεις για να βλέπουμε πώς σας αναφέρουν οι υπηρεσίες AI με τον καιρό.',
       processTitle: 'Διαδικασία GEO / AEO',
       process: [
         'Έλεγχος οντοτήτων και συνέπειας στοιχείων',
@@ -188,7 +188,7 @@ const ADDITIONAL: Record<string, { en: ServiceHubCommercial; el: ServiceHubComme
   'website-creation': {
     en: {
       definition:
-        'A website build that starts from search demand and conversion, not from a template. We map what your market actually searches for, structure the site around it, and build on foundations that technical SEO can work with later.',
+        'We agree what your visitors should be able to do, then design the pages that get them there. The build includes mobile layouts, basic search setup and a handover so you can manage the site.',
       processTitle: 'How a build runs',
       process: [
         'Business, market and competitor analysis',
@@ -206,7 +206,7 @@ const ADDITIONAL: Record<string, { en: ServiceHubCommercial; el: ServiceHubComme
     },
     el: {
       definition:
-        'Κατασκευή ιστοσελίδας που ξεκινά από τη ζήτηση αναζήτησης και τη μετατροπή, όχι από ένα έτοιμο template. Χαρτογραφούμε τι ψάχνει πραγματικά η αγορά σας, δομούμε το site γύρω από αυτό και χτίζουμε θεμέλια πάνω στα οποία μπορεί να δουλέψει το τεχνικό SEO.',
+        'Πριν τον σχεδιασμό συμφωνούμε τι χρειάζεται να κάνει ο επισκέπτης. Η κατασκευή περιλαμβάνει εμφάνιση για κινητά, βασικό SEO και παράδοση της ιστοσελίδας ώστε να μπορείτε να τη διαχειρίζεστε.',
       processTitle: 'Πώς εξελίσσεται ένα έργο',
       process: [
         'Ανάλυση επιχείρησης, αγοράς και ανταγωνισμού',
@@ -226,7 +226,7 @@ const ADDITIONAL: Record<string, { en: ServiceHubCommercial; el: ServiceHubComme
   'website-redesign': {
     en: {
       definition:
-        'A redesign that does not cost you the rankings you already have. Most traffic losses after a rebuild come from lost URLs, changed structure and dropped content, so migration planning is part of the work, not an afterthought.',
+        'Before changing the design, we identify the pages that already attract visitors. We map their addresses, check redirects and review the new pages when the site goes live.',
       processTitle: 'How a redesign runs',
       process: [
         'Audit of what currently ranks and why',
@@ -244,7 +244,7 @@ const ADDITIONAL: Record<string, { en: ServiceHubCommercial; el: ServiceHubComme
     },
     el: {
       definition:
-        'Ανασχεδιασμός που δεν σας κοστίζει τις κατατάξεις που ήδη έχετε. Οι περισσότερες απώλειες επισκεψιμότητας μετά από ανακατασκευή προέρχονται από χαμένα URL, αλλαγμένη δομή και περιεχόμενο που αφαιρέθηκε. Γι\' αυτό το πλάνο μετάπτωσης είναι μέρος της δουλειάς.',
+        'Πριν αλλάξουμε τον σχεδιασμό, εντοπίζουμε τις σελίδες που ήδη φέρνουν επισκέπτες. Αντιστοιχίζουμε τις διευθύνσεις, ελέγχουμε τις ανακατευθύνσεις και επανεξετάζουμε τις σελίδες μετά τη δημοσίευση.',
       processTitle: 'Πώς εξελίσσεται ένας ανασχεδιασμός',
       process: [
         'Έλεγχος για το τι κατατάσσεται σήμερα και γιατί',
@@ -264,7 +264,7 @@ const ADDITIONAL: Record<string, { en: ServiceHubCommercial; el: ServiceHubComme
   'web-design': {
     en: {
       definition:
-        'Design decisions made with search in mind from the first wireframe: heading structure, internal linking, page speed and crawlable markup, rather than a visual layer that SEO has to fight afterwards.',
+        'We plan the navigation, headings and links while designing each page. A visitor can understand where to go next, and Google can follow the relationships between your services.',
       processTitle: 'What this covers',
       process: [
         'Keyword-informed page and heading structure',
@@ -280,7 +280,7 @@ const ADDITIONAL: Record<string, { en: ServiceHubCommercial; el: ServiceHubComme
     },
     el: {
       definition:
-        'Σχεδιαστικές αποφάσεις που λαμβάνουν υπόψη την αναζήτηση από το πρώτο wireframe: δομή επικεφαλίδων, εσωτερική διασύνδεση, ταχύτητα και markup που διαβάζεται, αντί για ένα οπτικό στρώμα με το οποίο θα παλέψει μετά το SEO.',
+        'Σχεδιάζουμε το μενού, τις επικεφαλίδες και τους συνδέσμους μαζί με κάθε σελίδα. Ο επισκέπτης καταλαβαίνει πού να συνεχίσει και η Google μπορεί να διαβάσει πώς συνδέονται οι υπηρεσίες σας.',
       processTitle: 'Τι περιλαμβάνει',
       process: [
         'Δομή σελίδων και επικεφαλίδων βάσει λέξεων-κλειδιών',
@@ -298,7 +298,7 @@ const ADDITIONAL: Record<string, { en: ServiceHubCommercial; el: ServiceHubComme
   'speed-optimization': {
     en: {
       definition:
-        'Work on Core Web Vitals and real-world load performance: images, fonts, JavaScript, third-party scripts and server response. Speed affects both what users do and what Google can measure.',
+        'We measure how the site behaves on a phone and find what is slowing the page down. We check images, fonts, scripts and server response, then repeat the measurements after the fixes.',
       processTitle: 'How we approach it',
       process: [
         'Field and lab measurement of current performance',
@@ -314,7 +314,7 @@ const ADDITIONAL: Record<string, { en: ServiceHubCommercial; el: ServiceHubComme
     },
     el: {
       definition:
-        'Εργασία στα Core Web Vitals και στην πραγματική ταχύτητα φόρτωσης: εικόνες, γραμματοσειρές, JavaScript, scripts τρίτων και απόκριση διακομιστή. Η ταχύτητα επηρεάζει και τη συμπεριφορά των χρηστών και όσα μπορεί να μετρήσει η Google.',
+        'Μετράμε πώς ανοίγει η σελίδα στο κινητό. Ελέγχουμε εικόνες, γραμματοσειρές, κώδικα και απόκριση του διακομιστή και επαναλαμβάνουμε τις ίδιες μετρήσεις μετά τις διορθώσεις.',
       processTitle: 'Πώς το προσεγγίζουμε',
       process: [
         'Μέτρηση της τρέχουσας απόδοσης σε πραγματικές συνθήκες και σε εργαστήριο',
@@ -332,7 +332,7 @@ const ADDITIONAL: Record<string, { en: ServiceHubCommercial; el: ServiceHubComme
   'content-creation': {
     en: {
       definition:
-        'Content written against real search demand and mapped to the pages that can convert, rather than volume for its own sake. Every piece answers a question someone is actually asking.',
+        'We match search questions to the page that can answer them. That may mean improving a service description you already have or writing a guide a customer needs before buying.',
       processTitle: 'How content gets made',
       process: [
         'Demand research and topic clustering',
@@ -349,7 +349,7 @@ const ADDITIONAL: Record<string, { en: ServiceHubCommercial; el: ServiceHubComme
     },
     el: {
       definition:
-        'Περιεχόμενο γραμμένο με βάση την πραγματική ζήτηση αναζήτησης και συνδεδεμένο με τις σελίδες που φέρνουν πελάτες, όχι όγκος για τον όγκο. Κάθε κείμενο απαντά σε ερώτηση που όντως γίνεται.',
+        'Αντιστοιχίζουμε τις ερωτήσεις των πελατών στη σελίδα που μπορεί να τις απαντήσει. Μερικές φορές χρειάζεται καλύτερη περιγραφή μιας υπηρεσίας και άλλες φορές ένας νέος οδηγός πριν την αγορά.',
       processTitle: 'Πώς παράγεται το περιεχόμενο',
       process: [
         'Έρευνα ζήτησης και ομαδοποίηση θεμάτων',
@@ -368,7 +368,7 @@ const ADDITIONAL: Record<string, { en: ServiceHubCommercial; el: ServiceHubComme
   'link-building': {
     en: {
       definition:
-        'Authority work based on analysis rather than volume: where your competitors earn links, which of those are realistically reachable, and what is worth pursuing for your market.',
+        'We look at which publications already cover your sector and why they link to other businesses. That helps us choose relevant contacts and stories for your own outreach.',
       processTitle: 'How we approach authority',
       process: [
         'Backlink gap analysis against real competitors',
@@ -384,8 +384,8 @@ const ADDITIONAL: Record<string, { en: ServiceHubCommercial; el: ServiceHubComme
     },
     el: {
       definition:
-        'Εργασία authority βασισμένη σε ανάλυση και όχι σε ποσότητα: από πού κερδίζουν συνδέσμους οι ανταγωνιστές σας, ποιοι από αυτούς είναι ρεαλιστικά προσβάσιμοι και τι αξίζει να επιδιωχθεί για την αγορά σας.',
-      processTitle: 'Πώς προσεγγίζουμε το authority',
+        'Βλέπουμε ποια μέσα καλύπτουν τον κλάδο σας και για ποιους λόγους παραπέμπουν σε άλλες επιχειρήσεις. Έτσι επιλέγουμε συντάκτες και θέματα που ταιριάζουν στη δική σας δουλειά.',
+      processTitle: 'Πώς επιλέγουμε πηγές για backlinks',
       process: [
         'Ανάλυση κενών σε backlinks σε σχέση με πραγματικούς ανταγωνιστές',
         'Αξιολόγηση συνάφειας και ποιότητας των ευκαιριών',
@@ -402,7 +402,7 @@ const ADDITIONAL: Record<string, { en: ServiceHubCommercial; el: ServiceHubComme
   'eshop-seo': {
     en: {
       definition:
-        'SEO for e-commerce: category and product architecture, faceted navigation handling, product schema, and the technical work that lets a large catalogue be crawled and understood.',
+        'We review category pages, products and filter combinations to see which versions Google should index. That helps shoppers reach the product or selection they searched for.',
       processTitle: 'What e-shop SEO covers',
       process: [
         'Category and product URL architecture',
@@ -419,7 +419,7 @@ const ADDITIONAL: Record<string, { en: ServiceHubCommercial; el: ServiceHubComme
     },
     el: {
       definition:
-        'SEO για e-commerce: αρχιτεκτονική κατηγοριών και προϊόντων, διαχείριση φίλτρων πλοήγησης, schema προϊόντων και η τεχνική εργασία που επιτρέπει σε έναν μεγάλο κατάλογο να διαβαστεί σωστά.',
+        'Ελέγχουμε κατηγορίες, προϊόντα και συνδυασμούς φίλτρων για να ξεχωρίσουμε ποιες σελίδες χρειάζεται να εμφανίζονται στη Google. Έτσι ο αγοραστής μπορεί να βρει το προϊόν ή την κατηγορία που αναζητά.',
       processTitle: 'Τι καλύπτει το SEO για e-shop',
       process: [
         'Αρχιτεκτονική URL κατηγοριών και προϊόντων',
@@ -438,7 +438,7 @@ const ADDITIONAL: Record<string, { en: ServiceHubCommercial; el: ServiceHubComme
   'logo-design': {
     en: {
       definition:
-        'Brand essentials delivered alongside a build: a logo, colour and type system, and the files you need to use them consistently. Scoped as an add-on rather than a standalone branding programme.',
+        'If you need a logo alongside a new website, we can include it as a separate add-on. You receive the design files, colours and typography for use on the site and in print.',
       processTitle: 'What you receive',
       process: [
         'Discovery on positioning and audience',
@@ -453,7 +453,7 @@ const ADDITIONAL: Record<string, { en: ServiceHubCommercial; el: ServiceHubComme
     },
     el: {
       definition:
-        'Βασικά στοιχεία brand που παραδίδονται μαζί με την κατασκευή: λογότυπο, σύστημα χρωμάτων και τυπογραφίας και τα αρχεία που χρειάζεστε για να τα χρησιμοποιείτε με συνέπεια. Ορίζεται ως πρόσθετο, όχι ως πλήρες πρόγραμμα branding.',
+        'Αν μαζί με τη νέα ιστοσελίδα χρειάζεστε λογότυπο, μπορούμε να το εντάξουμε στην προσφορά ως ξεχωριστή υπηρεσία. Παραλαμβάνετε τα αρχεία του σχεδίου, τα χρώματα και τις γραμματοσειρές για ιστοσελίδα και έντυπα.',
       processTitle: 'Τι παραλαμβάνετε',
       process: [
         'Διερεύνηση τοποθέτησης και κοινού',
@@ -464,7 +464,7 @@ const ADDITIONAL: Record<string, { en: ServiceHubCommercial; el: ServiceHubComme
       pricingTeaser: 'Τιμολογείται ως πρόσθετο. Δείτε την τιμή εκκίνησης στη σελίδα τιμών.',
       audienceTitle: 'Σε ποιους απευθύνεται',
       audience:
-        'Σε επιχειρήσεις που φτιάχνουν νέο site και χρειάζονται αντίστοιχα βασικά στοιχεία brand, όχι πλήρη επανασχεδιασμό ταυτότητας.',
+        'Σε επιχειρήσεις που ετοιμάζουν νέα ιστοσελίδα και χρειάζονται λογότυπο και βασικές οδηγίες εταιρικής ταυτότητας.',
     },
   },
 };

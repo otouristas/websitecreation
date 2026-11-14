@@ -71,8 +71,8 @@ export const SURFACES: ReadonlyArray<Surface> = [
     name: c("Web app", "Εφαρμογή web"),
     where: c("app.anotherseoguru.com", "app.anotherseoguru.com"),
     text: c(
-      "The full workspace: ranked fixes, performance, keywords, site audit, AI visibility, client reports. Plans and settings live here.",
-      "Ο πλήρης χώρος εργασίας: διορθώσεις με σειρά, απόδοση, λέξεις-κλειδιά, έλεγχος ιστότοπου, ορατότητα σε AI, αναφορές πελατών. Εδώ ορίζετε πακέτο και ρυθμίσεις.",
+      "Choose a page to improve, review its search traffic and track the work. Manage your sites and account settings here.",
+      "Επιλέξτε ποια σελίδα θα βελτιώσετε, δείτε τα κλικ της και παρακολουθήστε τις εργασίες σας. Εδώ θα βρείτε επίσης τους ιστοτόπους και τις ρυθμίσεις του λογαριασμού σας.",
     ),
     status: { kind: "live", label: c("Live", "Διαθέσιμο") },
   },
@@ -83,8 +83,8 @@ export const SURFACES: ReadonlyArray<Surface> = [
     name: c("iPhone app", "Εφαρμογή iPhone"),
     where: c("iPhone · TestFlight beta", "iPhone · TestFlight beta"),
     text: c(
-      "This week's fixes, rank tracking, alerts and widgets on your phone, on the same account.",
-      "Οι διορθώσεις της εβδομάδας, θέσεις, ειδοποιήσεις και widgets στο κινητό, με τον ίδιο λογαριασμό.",
+      "Check this week’s suggested fixes and ranking alerts from your phone, using the same account as on the web.",
+      "Δείτε από το κινητό τις προτεινόμενες αλλαγές της εβδομάδας και τις ειδοποιήσεις για τις θέσεις σας στη Google, με τον λογαριασμό που έχετε ήδη.",
     ),
     status: { kind: "new", label: c("Beta", "Beta") },
   },
@@ -95,8 +95,8 @@ export const SURFACES: ReadonlyArray<Surface> = [
     name: c("Chrome extension", "Επέκταση Chrome"),
     where: c("Any page, and Google results", "Κάθε σελίδα και τα αποτελέσματα της Google"),
     text: c(
-      "Free on-page SEO checks without an account. Signed in, the page's own Search Console numbers and tasks.",
-      "Δωρεάν έλεγχοι SEO σε κάθε σελίδα, χωρίς λογαριασμό. Με σύνδεση, τα νούμερα Search Console και οι εργασίες της σελίδας.",
+      "Inspect a page as you browse. Sign in to see its Search Console clicks and related tasks in the same window.",
+      "Ελέγξτε τη σελίδα που έχετε ανοιχτή. Συνδεθείτε για να δείτε στο ίδιο παράθυρο τα κλικ της από το Search Console και τις σχετικές εργασίες.",
     ),
     status: { kind: "new", label: c("Coming soon", "Έρχεται σύντομα") },
   },
@@ -107,8 +107,8 @@ export const SURFACES: ReadonlyArray<Surface> = [
     name: c("WordPress SEO plugin", "Plugin SEO για WordPress"),
     where: c("Block and classic editor", "Block και classic editor"),
     text: c(
-      "A full SEO plugin with a live Google preview, analysis, schema, sitemaps and redirects, plus Search Console data, keyword research and AI titles in every post.",
-      "Πλήρες plugin SEO με ζωντανή προεπισκόπηση Google, ανάλυση, schema, sitemaps και ανακατευθύνσεις, συν Search Console, έρευνα λέξεων-κλειδιών και τίτλους με AI σε κάθε άρθρο.",
+      "Look up the searches that bring readers to a post, edit its title and check the Google preview inside WordPress.",
+      "Δείτε ποιες αναζητήσεις φέρνουν αναγνώστες σε ένα άρθρο, βελτιώστε τον τίτλο και ελέγξτε την προεπισκόπηση για τη Google μέσα στο WordPress.",
     ),
     status: { kind: "free", label: c("Free download", "Δωρεάν λήψη") },
   },
@@ -119,8 +119,8 @@ export const SURFACES: ReadonlyArray<Surface> = [
     name: c("AI assistants (MCP)", "Βοηθοί AI (MCP)"),
     where: c("Claude, ChatGPT, Codex, Cursor, Grok Bot and more", "Claude, ChatGPT, Codex, Cursor, Grok Bot κ.ά."),
     text: c(
-      "Ask about your Search Console data, fix list, tasks and AI visibility, and let the assistant work through a task.",
-      "Ρωτήστε για τα δεδομένα Search Console, τις διορθώσεις, τις εργασίες και την ορατότητα σε AI, και αφήστε τον βοηθό να αναλάβει μια εργασία.",
+      "Ask your assistant which pages lost clicks, then review a proposed update to your task list before you approve it.",
+      "Ρωτήστε ποιες σελίδες έχασαν κλικ και ελέγξτε την προτεινόμενη αλλαγή στη λίστα εργασιών σας πριν τη δεχτείτε.",
     ),
     status: { kind: "live", label: c("Live", "Διαθέσιμο") },
   },
@@ -184,13 +184,13 @@ export function OtherWaysSection({ locale, current, tinted = false }: { readonly
         eyebrow={isEl ? "Ένας λογαριασμός" : "One login"}
         title={
           <>
-            {isEl ? "Ο ίδιος λογαριασμός," : "The same account,"} <Accent>{isEl ? "παντού" : "everywhere"}</Accent>
+            {isEl ? "Ο λογαριασμός σας" : "Use your account"} <Accent>{isEl ? "σε άλλες εφαρμογές" : "in other apps"}</Accent>
           </>
         }
         description={
           isEl
-            ? "Οι εργασίες, οι ιστότοποι και τα δεδομένα σας συγχρονίζονται σε web, iPhone, Chrome, WordPress και βοηθούς AI. Στις Ρυθμίσεις → Συνδεδεμένες εφαρμογές βλέπετε κάθε σύνδεση και την αποσυνδέετε με ένα κλικ."
-            : "Your tasks, sites and data sync across the web app, iPhone, Chrome, WordPress and AI assistants. Settings → Connected apps lists every connection and disconnects any of them in one click."
+            ? "Στις Ρυθμίσεις, ανοίξτε τις Συνδεδεμένες εφαρμογές για να δείτε ποια εργαλεία έχουν πρόσβαση και να αποσυνδέσετε όσα δεν χρειάζεστε."
+            : "Open Connected apps in Settings to see which tools have access to your account. You can disconnect any of them there."
         }
       />
       <IntegrationCards locale={locale} exclude={current} className="mt-12" />

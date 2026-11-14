@@ -79,7 +79,7 @@ export default async function OpportunityFinderPage({ params }: PageProps) {
         locale={locale}
         eyebrow={el ? g.eyebrow : "Free tool"}
         title={el ? g.title : "Search Console opportunity finder"}
-        description={el ? g.description : "Upload your Search Console export. Get the queries worth pushing onto page one, the snippets worth rewriting and how many clicks each could add. Nothing leaves your browser."}
+        description={el ? g.description : "Open your Search Console CSV to find searches where a better title or page could earn more clicks. You can compare the estimates before choosing what to change. The file stays on your device."}
         path={path}
         headings={headingsOf(blocks)}
         feedbackId={`resources/${TOOL.slug}`}
@@ -90,8 +90,8 @@ export default async function OpportunityFinderPage({ params }: PageProps) {
           <ArticleBody blocks={blocks} locale={locale} />
           <ResourceCta
             intent="direct"
-            title={el ? g.ctaTitle : "Run this every week, on every row"}
-            text={el ? g.ctaText : "AnotherSEOGuru App reads up to 100,000 rows per period straight from Search Console, adds decay, cannibalization and missing-content detectors, and measures each fix after you ship it. Search Console features cost no credits on any plan."}
+            title={el ? g.ctaTitle : "Check the next period without exporting a file"}
+            text={el ? g.ctaText : "Connect Search Console directly to review up to 100,000 rows per period. The app also flags pages losing clicks or competing for the same searches. Save a task and compare clicks after your edit."}
             primary={{ label: el ? g.signup : "Sign up free", href: appLink("/signup", locale, source), event: `${source}_signup` }}
             secondary={{ label: el ? g.demo : "Open the live demo", href: appLink("/demo", locale, `${source}-demo`), event: `${source}_demo` }}
           />

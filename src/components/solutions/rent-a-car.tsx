@@ -51,9 +51,9 @@ const SIGNATURE_HUE = 205;
 const copy = {
   en: {
     eyebrow: 'Rent-a-car',
-    h1: 'Car rental sites that take the booking direct',
+    h1: 'Car rental websites for direct bookings',
     lede:
-      'Rental demand arrives in a narrow season, from people comparing you against an OTA on a phone at an airport. The site has to load fast, quote a real price, and let them finish. That is what we build.',
+      'A traveller comparing rental cars on a phone needs the pickup point, the price for their dates and the rental terms. We put those details alongside the car so they can make the booking with you.',
     ctaPrimary: 'Get a quote for your rental site',
     ctaSecondary: 'See rental projects',
     widget: {
@@ -163,9 +163,9 @@ const copy = {
   },
   el: {
     eyebrow: 'Ενοικίαση αυτοκινήτων',
-    h1: 'Κατασκευή ιστοσελίδας ενοικίασης αυτοκινήτων (rent a car)',
+    h1: 'Ιστοσελίδες rent-a-car με απευθείας κρατήσεις',
     lede:
-      'Η ζήτηση έρχεται σε στενή σεζόν, από ανθρώπους που σας συγκρίνουν με ένα OTA από το κινητό τους στο αεροδρόμιο. Το site πρέπει να φορτώνει γρήγορα, να δίνει πραγματική τιμή και να τους αφήνει να ολοκληρώσουν. Αυτό χτίζουμε.',
+      'Ο ταξιδιώτης που συγκρίνει αυτοκίνητα από το κινητό θέλει να ξέρει πού θα παραλάβει, πόσο θα πληρώσει για τις ημερομηνίες του και τι καλύπτει η τιμή. Τα βάζουμε δίπλα στην κατηγορία του αυτοκινήτου, ώστε να μπορεί να ολοκληρώσει την κράτηση απευθείας.',
     ctaPrimary: 'Ζητήστε προσφορά για το site σας',
     ctaSecondary: 'Δείτε έργα ενοικίασης',
     widget: {

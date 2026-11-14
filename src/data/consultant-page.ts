@@ -58,7 +58,7 @@ const el: ConsultantCopy = {
   pillTag: 'Δωρεάν',
   pill: 'Ξεκινήστε με δωρεάν έλεγχο της ιστοσελίδας σας',
   h1: { before: 'Η ομάδα μας:', accent: 'σύμβουλος SEO', after: 'για ελληνικές επιχειρήσεις' },
-  lead: `Η ομάδα της Touristas Technologies, πίσω από την AnotherSEOGuru, αναλαμβάνει συμβουλευτική SEO για επιχειρήσεις στην Ελλάδα. Με ${years} χρόνια εμπειρίας και πάνω από ${PROJECTS_DELIVERED} έργα, δουλεύουμε κυρίως με ξενοδοχεία, rent-a-car, τουριστικές επιχειρήσεις και e-shop, από το audit μέχρι τη στρατηγική.`,
+  lead: `Έχετε ομάδα για την υλοποίηση αλλά χρειάζεστε κάποιον να σας πει από πού να αρχίσετε; Η ομάδα της Touristas Technologies ελέγχει τις σελίδες σας, συζητά μαζί σας τα ευρήματα και βάζει τις αλλαγές σε σειρά. Δουλεύουμε κυρίως με ξενοδοχεία, τουριστικές επιχειρήσεις και e-shop.`,
   leadExtra: `Αν ψάχνετε ειδικό στο SEO που θα δει την ιστοσελίδα σας και θα σας πει τι να διορθώσετε πρώτα, ξεκινήστε από τον δωρεάν έλεγχο. Απαντάμε μέσα σε ${RESPONSE_HOURS} ώρες.`,
   stats: [
     { value: years, label: 'Χρόνια στο SEO' },
@@ -193,7 +193,7 @@ const en: ConsultantCopy = {
   pillTag: 'Free',
   pill: 'Start with a free audit of your website',
   h1: { before: 'Our team:', accent: 'SEO consultant', after: 'for Greek businesses' },
-  lead: `The Touristas Technologies team, behind AnotherSEOGuru, handles SEO consulting for businesses in Greece. With ${years} years of experience and more than ${PROJECTS_DELIVERED} projects delivered, we work mostly with hotels, car rentals, tourism businesses and e-shops, from the audit to the strategy.`,
+  lead: `If your team can make changes but needs help choosing the right ones, we can review the site with you and set priorities. The Touristas Technologies team works mostly with hotels, tourism businesses and online shops in Greece.`,
   leadExtra: `If you want an SEO specialist team that looks at your site and tells you what to fix first, start with the free audit. We reply within ${RESPONSE_HOURS} hours.`,
   stats: [
     { value: years, label: 'Years in SEO' },

@@ -59,10 +59,10 @@ function cta(article: ResourceArticle, locale: SiteLocale) {
   const el = locale === "el";
   if (article.cta === "direct") {
     return {
-      title: el ? "Κάντε το στα δικά σας δεδομένα" : "Do this on your own data",
+      title: el ? "Δείτε τι συμβαίνει στη δική σας ιστοσελίδα" : "Try it with your own site",
       text: el
-        ? "Συνδέστε το Search Console μία φορά, με πρόσβαση μόνο για ανάγνωση, και το AnotherSEOGuru App τρέχει αυτή την ανάλυση για κάθε ιστότοπο που διαχειρίζεστε, κάθε εβδομάδα. Οι δυνατότητες Search Console δεν κοστίζουν credits, και ξεκινάτε με 7 ημέρες δωρεάν δοκιμή χωρίς κάρτα."
-        : "Connect Search Console once (read-only) and AnotherSEOGuru App runs this analysis for every site you manage, every week. Search Console features cost no credits on any plan, and you start with a 7-day free trial, no card.",
+        ? "Συνδέστε το Search Console μόνο για ανάγνωση. Θα μπορείτε να ελέγχετε τα κλικ κάθε σελίδας και να παρακολουθείτε τις αλλαγές που κάνατε. Η ανάλυση του Search Console δεν καταναλώνει μονάδες."
+        : "Connect Search Console with read-only access. Check clicks for an individual page and follow up after you make an edit. Search Console analysis uses no credits.",
       primary: { label: el ? "Εγγραφή δωρεάν" : "Sign up free", href: appLink("/signup", locale, source), event: `${source}_signup` },
       secondary: { label: el ? "Ανοίξτε τη ζωντανή επίδειξη" : "Open the live demo", href: appLink("/demo", locale, `${source}-demo`), event: `${source}_demo` },
     };
@@ -70,8 +70,8 @@ function cta(article: ResourceArticle, locale: SiteLocale) {
   return {
     title: el ? "Βρείτε αυτές τις ευκαιρίες στα δικά σας δεδομένα" : "Find these opportunities in your own data",
     text: el
-      ? "Ανεβάστε την εξαγωγή του Search Console στο δωρεάν εργαλείο ευκαιριών. Τρέχει στον browser σας, τίποτα δεν ανεβαίνει και δεν χρειάζεται εγγραφή."
-      : "Upload your Search Console export to the free opportunity finder. It runs in your browser, nothing is uploaded and there is no sign-up.",
+      ? "Επιλέξτε το αρχείο CSV από το Search Console για να δείτε πού υπάρχουν περιθώρια για περισσότερα κλικ. Το αρχείο μένει στη συσκευή σας και δεν χρειάζεστε λογαριασμό."
+      : "Choose your Search Console CSV to see where a page could earn more clicks. The file stays on your device and you can use the tool without an account.",
     primary: { label: el ? "Ανοίξτε το δωρεάν εργαλείο" : "Open the free tool", href: resourcePath(OPPORTUNITY_FINDER.slug, locale), event: `${source}_tool` },
     secondary: { label: el ? "Ανοίξτε τη ζωντανή επίδειξη" : "See the app on sample data", href: appLink("/demo", locale, `${source}-demo`), event: `${source}_demo` },
   };

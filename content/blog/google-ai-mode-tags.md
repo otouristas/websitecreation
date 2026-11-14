@@ -93,7 +93,7 @@ What it does not add is any promise. Nothing here makes an engine cite you. Opti
 
 ## Want to see what a machine can read on your site?
 
-Our [live site test](/en/get-started) checks the entity block, list shape and image assets described above and reports what is missing, in plain language. If you would rather read first, the [AI visibility service](/en/services/ai-visibility) explains what the ongoing work involves and what it will not promise, and the [glossary](/en/glossary) defines the terms. The wider cluster starts at [AI and LLM visibility](/en/blog/pillar-ai-llm-visibility).
+Try the [AI visibility check](/en/ai-visibility-check) with a search that matters to your business. Look at the answer, the sources it cites and whether your own page appears. For the terms used here, open the [SEO glossary](/en/glossary). For help interpreting a result, read about our [AI visibility service](/en/services/ai-visibility). The wider guide covers [how to track mentions and citations](/en/blog/pillar-ai-llm-visibility).
 
 ## FAQ
 

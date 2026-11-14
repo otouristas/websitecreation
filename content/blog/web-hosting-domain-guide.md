@@ -22,7 +22,7 @@ faq:
     answer: "No. Prefer Google Workspace or Microsoft 365. Hosting email often lands in spam and complicates DNS/SPF when you migrate the site."
 ---
 
-**Hosting** and your **domain** are the foundations of every website, and the two decisions most businesses make in a rush, on price alone. Bad hosting quietly costs you speed (and therefore Google rankings), uptime (and therefore customers), and security. This guide covers what to check before you pay, realistic 2026 pricing, and the mistakes we see on almost every [website build](/en/services/website-creation).
+Your domain is the address customers remember. Hosting is where the site runs. Before signing a [website build](/en/services/website-creation) agreement, ask whose account holds each one, what renewal costs and who can restore the site if an update fails. If the studio handles renewals, make sure your business still has access to the registrar. Ask for a recent backup date and how you would request a restore if you needed one.
 
 > **Related:** [pricing](/el/ypiresies/times) · [website cost guide](/en/blog/how-much-does-a-website-cost) · [redesign guide](/en/blog/website-redesign-guide) · [free quote](/en/get-started).
 

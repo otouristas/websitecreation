@@ -1,6 +1,6 @@
 export const footerEn = {
   tagline:
-    'A Search Console-native SEO platform and an agency that builds the strategy around your data. Organic growth, without the guarantees nobody can keep.',
+    'Our team builds websites and manages SEO for businesses in Greece, from hotels to local service providers.',
   agency: 'Services',
   resources: 'Resources',
   company: 'Company',

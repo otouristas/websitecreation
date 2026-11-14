@@ -78,28 +78,28 @@ export default async function LocationsPage({ params }: PageProps) {
         home: "Αρχική",
         locations: "Τοποθεσίες",
         h1: "Κατασκευή ιστοσελίδων & SEO ανά πόλη",
-        sub: "Σελίδες για τις πόλεις και τα νησιά όπου δουλεύουμε περισσότερο. Για κάθε άλλη περιοχή, οι σελίδες υπηρεσιών και η προσφορά ισχύουν το ίδιο.",
+        sub: "Επιλέξτε την πόλη ή το νησί που εξυπηρετείτε. Θα δείτε τις επιλογές για κατασκευή ιστοσελίδας, ηλεκτρονικό κατάστημα και SEO στην περιοχή σας.",
         getStarted: "Ξεκινήστε",
         viewPricing: "Δείτε τις τιμές",
         citiesTitle: "Πόλεις και νησιά",
         allServicesTitle: "Όλες οι υπηρεσίες",
         allServicesSub: "Δουλεύουμε με επιχειρήσεις σε όλη την Ελλάδα, όχι μόνο στις πόλεις παραπάνω.",
         readyTitle: "Έτοιμοι να ξεκινήσετε το έργο σας;",
-        readySub: "Λάβετε μια προσαρμοσμένη προσφορά για την επιχείρησή σας.",
+        readySub: "Πείτε μας την περιοχή σας, τι προσφέρετε και τι θέλετε να μπορεί να κάνει ο πελάτης στην ιστοσελίδα σας.",
         otherLocaleLink: "Cities in English →",
       }
     : {
         home: "Home",
         locations: "Locations",
         h1: "Website Creation & SEO by City",
-        sub: "Pages for London and the Greek destinations where we do most of our work. Anywhere else, the service pages and quotes apply just the same.",
+        sub: "Choose the city or island you serve to explore local SEO, website builds and online shop options for that area.",
         getStarted: "Get Started",
         viewPricing: "View Pricing",
         citiesTitle: "Cities and islands",
         allServicesTitle: "All services",
         allServicesSub: "We work with businesses well beyond the cities above.",
         readyTitle: "Ready to Start Your Project?",
-        readySub: "Get a custom quote for your business.",
+        readySub: "Tell us where you work, what you offer and what you want customers to be able to do on your site.",
         otherLocaleLink: "Πόλεις στα ελληνικά →",
       };
 
@@ -195,7 +195,7 @@ export default async function LocationsPage({ params }: PageProps) {
           </div>
         </KitSection>
 
-        <CtaBand locale={siteLocale} source="locations-band" title={accentTail(t.readyTitle, 2)} description={t.readySub} />
+        <CtaBand agency locale={siteLocale} source="locations-band" title={accentTail(t.readyTitle, 2)} description={t.readySub} />
       </main>
       <Footer locale={siteLocale} />
     </>

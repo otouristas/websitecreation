@@ -84,4 +84,4 @@ For map results, use the [local SEO guide](/en/blog/local-seo-guide). This web-r
 
 ## Ready to Get Started?
 
-If you want these documented signals checked against your own URLs, [request an SEO audit](/en/services/seo-audits) or [get a quote](/en/get-started). Ongoing work is listed on the [pricing page](/en/pricing). We will not sell a 200-factor score Google does not publish.
+If you want these documented signals checked against your own URLs, [request an SEO audit](/en/services/seo-audits) or [get a quote](/en/get-started). Ongoing work is listed on the [pricing page](/el/ypiresies/times). We will not sell a 200-factor score Google does not publish.

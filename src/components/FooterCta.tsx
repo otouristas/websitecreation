@@ -6,7 +6,7 @@ import { ArrowRight } from "lucide-react";
 import { Accent } from "@/components/kit/primitives";
 import { KIT_COPY, kitPrimaryBtn, kitSecondaryBtn } from "@/components/kit/sections";
 import { trackCtaClick } from "@/lib/analytics";
-import { usePathname } from "next/navigation";
+import { useMarketingPathname } from '@/lib/use-marketing-pathname';
 import { appLink } from "@/components/gsc-boost/copy";
 import { localizedPath, type SiteLocale } from "@/lib/i18n/locale";
 import { AGENCY_PRICING_HREF, isAgencyPathname } from "@/lib/site-split";
@@ -20,7 +20,7 @@ import { AGENCY_PRICING_HREF, isAgencyPathname } from "@/lib/site-split";
 export function FooterCta({ locale }: { readonly locale: SiteLocale }): ReactElement {
   const isEl = locale === "el";
   const lp = (path: string) => localizedPath(locale, path);
-  const pathname = usePathname() ?? "/en";
+  const pathname = useMarketingPathname();
   if (!isAgencyPathname(pathname)) return <ProductFooterCta locale={locale} />;
 
   return (
@@ -37,18 +37,18 @@ export function FooterCta({ locale }: { readonly locale: SiteLocale }): ReactEle
           >
             {isEl ? (
               <>
-                Δείτε τι <Accent>λείπει</Accent> από την ιστοσελίδα.
+                Τι θα βελτιώναμε <Accent>στη δική σας ιστοσελίδα;</Accent>
               </>
             ) : (
               <>
-                See what <Accent>is missing</Accent> from the site.
+                What would we change <Accent>on your website?</Accent>
               </>
             )}
           </h2>
           <p className="mt-2 max-w-lg text-pretty text-[15px] leading-relaxed text-muted-foreground sm:text-[16px]">
             {isEl
-              ? "Σύντομος έλεγχος και, αν θέλετε να προχωρήσουμε, σταθερή τιμή."
-              : "A short audit, and a fixed price if you want the work done."}
+              ? "Στείλτε μας τη διεύθυνση της ιστοσελίδας σας. Θα δείτε τι εντοπίσαμε και μπορείτε να μας ρωτήσετε ποια αλλαγή αξίζει να κάνετε πρώτη."
+              : "Send us your website address. We’ll share what the audit found, and you can ask us which change we’d make first."}
           </p>
         </div>
         <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:items-center lg:shrink-0">
@@ -89,18 +89,18 @@ function ProductFooterCta({ locale }: { readonly locale: SiteLocale }): ReactEle
           >
             {isEl ? (
               <>
-                Το Search Console σας, ως <Accent>λίστα ενεργειών</Accent>.
+                Με ποια σελίδα <Accent>να ξεκινήσετε;</Accent>
               </>
             ) : (
               <>
-                Your Search Console, as a <Accent>to-do list</Accent>.
+                Which page should you <Accent>work on first?</Accent>
               </>
             )}
           </h2>
           <p className="mt-2 max-w-lg text-pretty text-[15px] leading-relaxed text-muted-foreground sm:text-[16px]">
             {isEl
-              ? "Ξεκινήστε δωρεάν με τον λογαριασμό σας στη Google. Αναβαθμίζετε όταν σας φέρνει κλικ."
-              : "Start free with your Google account. Upgrade when it pays for itself."}
+              ? "Συνδέστε δωρεάν μία ιστοσελίδα. Δείτε ποιες αναζητήσεις τη φέρνουν ήδη στην Google και ποια σελίδα έχει περιθώριο για περισσότερα κλικ."
+              : "Connect one site for free. See the searches that already bring people to it and where a change could earn more clicks."}
           </p>
         </div>
         <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:items-center lg:shrink-0">

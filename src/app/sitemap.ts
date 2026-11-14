@@ -102,6 +102,7 @@ export function allSitemapEntries(): MetadataRoute.Sitemap {
     // in next.config.ts to the module anchors on /platform/features).
     // The agency's Greek landing page and prices (src/lib/site-split.ts).
     // localizedPath sends agency paths to /el, and the dedupe below keeps one.
+    { path: '/odigoi', priority: 0.8, changeFrequency: 'weekly' as const },
     { path: '/ypiresies', priority: 0.95 },
     { path: '/ypiresies/times', priority: 0.8, changeFrequency: 'monthly' as const },
     { path: '/platform/features', priority: 0.92 },
@@ -268,6 +269,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // English agency URLs redirect to their Greek page (src/lib/site-split.ts),
   // and once the agency has its own domain its Greek pages leave this sitemap.
   return allSitemapEntries().filter((entry) => {
+    if (!entry.url.startsWith(`${BASE_URL}/`)) return false;
     const path = entry.url.slice(BASE_URL.length) || '/';
     return !englishAgencyRedirect(path) && !greekAgencyMoveRedirect(path);
   });

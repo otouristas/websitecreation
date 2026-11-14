@@ -22,7 +22,7 @@ faq:
     answer: Quarterly for competitive niches, and after every major product, location, or seasonality change. Always reconcile with fresh Search Console data.
 ---
 
-**Keyword research for SEO** finds the phrases your buyers type into Google so you can build pages that match intent, not guesswork. Head terms like “keyword research” itself are dominated by free tools and mega-brands; this guide shows the process agencies use in 2026, then points you to our [free keyword research tool](/en/tools/keyword-research) and the broader [agency playbooks pillar](/en/blog/pillar-agency-playbooks).
+Write down a question a customer asked before buying. Use it as the first phrase in your [keyword research](/en/tools/keyword-research) and compare nearby searches. A phrase with lower volume can be the better choice when it describes exactly what your page sells.
 
 If you only remember one rule: **map demand to URLs**, do not collect vanity volume spreadsheets. A phrase with 50 monthly searches that converts beats a 10,000-search head term you cannot win or monetize.
 

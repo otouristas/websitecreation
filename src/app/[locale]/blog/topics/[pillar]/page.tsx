@@ -138,7 +138,7 @@ export default async function PillarHubPage({
           </div>
         </KitSection>
 
-        <BlogProductCta locale={siteLocale} />
+        <BlogProductCta locale={siteLocale} pillar={pillar} />
 
         <KitSection>
           <KitHeading

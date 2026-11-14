@@ -1,3 +1,5 @@
+import { FREE_PLAN, PLANS } from "@/components/gsc-boost/plans";
+import { formatNumber, formatUsd } from "@/components/gsc-boost/copy";
 import type { HelpCategory } from "./types";
 
 export const en: ReadonlyArray<HelpCategory> = [
@@ -9,9 +11,9 @@ export const en: ReadonlyArray<HelpCategory> = [
       {
         slug: "welcome",
         title: "What AnotherSEOGuru App does",
-        description: "A tour of the product: your Search Console data, turned into a ranked list of fixes.",
+        description: "Find a page to improve, choose a suggested fix and follow its search traffic after publication.",
         body: [
-          { type: "p", text: "AnotherSEOGuru App reads your **Google Search Console** data and turns it into a weekly plan: which pages and queries to work on, what to change, and how many clicks each fix is likely to bring. Everything else in the product (keyword research, the site audit, content, competitors, AI visibility and client work) feeds that same plan." },
+          { type: "p", text: "Start with a page people already find on Google. AnotherSEOGuru App uses **Google Search Console** to show the searches behind it and estimate the extra clicks an edit could bring. Save the suggestion as a task to keep a record of what you changed." },
           { type: "image", device: "browser", src: "/images/docs/web/overview-light.webp", srcDark: "/images/docs/web/overview-dark.webp", width: 1600, height: 1000, alt: "The This week screen in AnotherSEOGuru App with search performance, sales from Analytics and the sidebar navigation", caption: "This week is the home screen: how search is doing and what to fix first." },
           { type: "h2", id: "how-it-works", text: "How it works" },
           { type: "steps", items: [
@@ -80,7 +82,7 @@ export const en: ReadonlyArray<HelpCategory> = [
           { type: "h2", id: "switching", text: "Switching between sites" },
           { type: "p", text: "Use the site switcher at the top of the sidebar, or press `⌘K` and type the domain. **All sites** shows every project on one screen with its trend, drops, top movers and open fixes, which is the fastest way to see where to look first when you manage many sites." },
           { type: "image", device: "browser", src: "/images/docs/web/portfolio-light.webp", srcDark: "/images/docs/web/portfolio-dark.webp", width: 1600, height: 1000, alt: "The All sites screen with click totals and a card for each site showing its trend, top mover and open fixes", caption: "All sites shows every project on one screen, sorted by the biggest drop." },
-          { type: "note", tone: "tip", text: "Your plan sets how many projects you can have: 1 on Free, 2 on Starter, 5 on Pro and 50 on Agency. Paid plans can add more sites as add-ons." },
+          { type: "note", tone: "tip", text: "Each site counts towards your plan’s project limit. See [Plans and credits](/help/account-billing/plans-and-credits) for the current limits. Paid plans can add sites separately." },
         ],
       },
       {
@@ -254,7 +256,7 @@ export const en: ReadonlyArray<HelpCategory> = [
             "**Groups** let you define your own segments (a product line, a location, a campaign) and follow their clicks and impressions together.",
           ] },
           { type: "image", device: "browser", src: "/images/docs/web/keywords-clusters-light.webp", srcDark: "/images/docs/web/keywords-clusters-dark.webp", width: 1600, height: 1000, alt: "Keywords, Clusters tab, with topic counts and a list of clusters showing clicks, impressions and average position", caption: "Keywords → Clusters groups your Search Console queries into topics." },
-          { type: "note", tone: "info", text: "Keyword research uses live data and costs credits per lookup. The cost is shown on the button before you run it." },
+          { type: "note", tone: "info", text: "When a keyword check uses credits, look at the amount on the button before you run it." },
         ],
       },
       {
@@ -468,7 +470,7 @@ export const en: ReadonlyArray<HelpCategory> = [
           { type: "p", text: "**Reports → Client report** builds a branded, printable report for any site and range: headline metrics, trends, wins, top queries and pages, and the work you shipped." },
           { type: "image", device: "browser", src: "/images/docs/web/reports-light.webp", srcDark: "/images/docs/web/reports-dark.webp", width: 1600, height: 1000, alt: "Reports, Client report tab, with report settings on the left and an A4 preview of a branded SEO report", caption: "Reports → Client report with a live A4 preview." },
           { type: "list", items: [
-            "Add your logo and colours in **Settings → Branding** for white-label reports.",
+            "If you have Agency or the report branding add-on, add your logo and colours in **Settings → Branding**.",
             "Print or save as PDF straight from the report, or schedule it by email for portal clients on Pro.",
             "**Reports → Strategy** exports a complete workbook: audit findings, keyword mapping, a content plan and a prioritized backlog.",
           ] },
@@ -486,14 +488,18 @@ export const en: ReadonlyArray<HelpCategory> = [
         title: "Plans and credits",
         description: "What each plan includes and which actions use credits.",
         body: [
-          { type: "p", text: "Every plan includes all your Search Console analytics, opportunities and client reports at no credit cost. Credits pay for actions that cost us money to run, like live keyword data, results-page lookups, crawls and AI." },
+          { type: "p", text: "Reading your Search Console reports and reviewing suggested fixes uses no credits. Questions for Aster AI have a separate daily limit. Actions such as a live rank check or publishing to WordPress use your monthly credits." },
           { type: "table", head: ["Plan", "Price", "Credits / month", "Projects", "Seats"], rows: [
-            ["Free", "$0", "25", "1", "1"],
-            ["Starter", "$19 / month", "500", "2", "1"],
-            ["Pro", "$49 / month", "2,500", "5", "3"],
-            ["Agency", "$299 / month", "25,000", "50", "15"],
+            ["Free", formatUsd("en", 0), formatNumber("en", FREE_PLAN.credits), String(FREE_PLAN.sites), String(FREE_PLAN.seats)],
+            ...PLANS.map(plan => [
+              plan.id,
+              `${formatUsd("en", plan.monthly)} / month`,
+              formatNumber("en", plan.credits),
+              String(plan.sites),
+              String(plan.seats),
+            ]),
           ] },
-          { type: "p", text: "Yearly billing gives you two months free. New accounts can try Pro free for 7 days with no card. If you run out, top up with a credit pack (1,000 credits for $12, 5,000 for $49, 20,000 for $159) at any time in **Settings → Billing & credits**. Paid plans can also add extra sites, seats, keywords, AI prompts and monthly credits as add-ons." },
+          { type: "p", text: "New accounts can try Pro for seven days without a card. Annual plans cost the same as ten monthly payments. To add credits, open **Settings → Billing & credits**. You can also add sites, tracked keywords, AI monitoring questions or report branding to a paid plan. Your plan sets the number of team members. [Compare plans and current prices](/en/pricing)." },
           { type: "note", tone: "info", text: "When an action costs credits, the button shows the cost before you run it, and we ask you to confirm. Actions without a cost on the button are free." },
         ],
       },
@@ -512,7 +518,7 @@ export const en: ReadonlyArray<HelpCategory> = [
           ] },
           { type: "image", device: "browser", src: "/images/docs/web/settings-integrations-light.webp", srcDark: "/images/docs/web/settings-integrations-dark.webp", width: 1600, height: 1000, alt: "Settings, Integrations tab, with Google, Search Console, Google Analytics 4 and WordPress connected", caption: "Settings → Integrations: every connection and its status." },
           { type: "h2", id: "branding", text: "Branding" },
-          { type: "p", text: "Your logo, colours and agency name appear on client reports, proposals and the client portal." },
+          { type: "p", text: "Set your agency name, logo and colours here. Reports with your own branding are included with Agency and available as an add-on on other paid plans." },
         ],
       },
       {

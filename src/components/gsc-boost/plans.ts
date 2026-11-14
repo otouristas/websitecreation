@@ -31,7 +31,7 @@ export interface Plan {
 export const PLANS: ReadonlyArray<Plan> = [
   {
     id: "Starter",
-    tagline: c("For one business with one or two sites.", "Για μία επιχείρηση με έναν ή δύο ιστοτόπους."),
+    tagline: c("For a business managing its own website.", "Για επιχειρήσεις που φροντίζουν οι ίδιες την ιστοσελίδα τους."),
     monthly: 19,
     yearly: 190,
     credits: 500,
@@ -40,16 +40,16 @@ export const PLANS: ReadonlyArray<Plan> = [
     keywords: 100,
     prompts: 10,
     features: [
-      c("Every fix the engine finds, with click impact", "Κάθε διόρθωση που βρίσκει η μηχανή, με αντίκτυπο σε κλικ"),
-      c("Unlimited tasks with measured results", "Απεριόριστες εργασίες με μετρημένα αποτελέσματα"),
-      c("100 tracked keywords and alerts", "100 λέξεις-κλειδιά σε παρακολούθηση και ειδοποιήσεις"),
-      c("10 AI visibility prompts", "10 prompts ορατότητας στην AI"),
-      c("GA4, widgets and the iPhone app", "GA4, widgets και η εφαρμογή για iPhone"),
+      c("All suggested fixes, with estimated extra clicks", "Όλες οι προτεινόμενες διορθώσεις, με εκτίμηση για τα επιπλέον κλικ"),
+      c("Unlimited tasks with before-and-after comparisons", "Απεριόριστες εργασίες με σύγκριση πριν και μετά την αλλαγή"),
+      c("100 tracked keywords and alerts", "Παρακολούθηση 100 λέξεων-κλειδιών με ειδοποιήσεις"),
+      c("Track AI answers to 10 questions", "Παρακολούθηση απαντήσεων AI σε 10 ερωτήσεις"),
+      c("Google Analytics 4, widgets and the iPhone beta", "Google Analytics 4, widget και δοκιμαστική εφαρμογή για iPhone"),
     ],
   },
   {
     id: "Pro",
-    tagline: c("For marketers and freelancers who ship every week.", "Για marketers και freelancers που δημοσιεύουν κάθε εβδομάδα."),
+    tagline: c("For marketers and freelancers publishing or updating content each week.", "Για ομάδες μάρκετινγκ και ελεύθερους επαγγελματίες που δημοσιεύουν ή ανανεώνουν περιεχόμενο κάθε εβδομάδα."),
     monthly: 49,
     yearly: 490,
     credits: 2500,
@@ -60,10 +60,10 @@ export const PLANS: ReadonlyArray<Plan> = [
     highlight: true,
     features: [
       c("Everything in Starter", "Όλα όσα περιλαμβάνει το Starter"),
-      c("AI visibility in ChatGPT, Gemini, Perplexity and AI Overviews", "Ορατότητα στην AI σε ChatGPT, Gemini, Perplexity και AI Overviews"),
-      c("Content briefs, writer, optimizer and revamp", "Briefs περιεχομένου, συγγραφή, βελτιστοποίηση και ανανέωση"),
+      c("AI visibility in ChatGPT, Gemini, Perplexity and AI Overviews", "Έλεγχος αναφορών της επωνυμίας σας σε ChatGPT, Gemini, Perplexity και AI Overviews"),
+      c("Tools to plan, write and update content", "Εργαλεία για σχεδιασμό, συγγραφή και ανανέωση περιεχομένου"),
       c("Autopilot fixes on WordPress and GitHub", "Αυτόματες διορθώσεις σε WordPress και GitHub"),
-      c("Competitors, keyword gap, backlinks and local grid", "Ανταγωνιστές, keyword gap, backlinks και τοπικό grid"),
+      c("Compare competitors’ keywords and backlinks and see local rankings on a map", "Συγκρίνετε τις λέξεις-κλειδιά και τους συνδέσμους των ανταγωνιστών σας και δείτε σε χάρτη τις τοπικές κατατάξεις"),
       c("Weekly site audits up to 5,000 pages", "Εβδομαδιαίοι έλεγχοι ιστότοπου έως 5.000 σελίδες"),
     ],
   },
@@ -79,9 +79,9 @@ export const PLANS: ReadonlyArray<Plan> = [
     prompts: 300,
     features: [
       c("Everything in Pro", "Όλα όσα περιλαμβάνει το Pro"),
-      c("White-label client reports", "Αναφορές πελατών white-label"),
+      c("Client reports with your own branding", "Αναφορές πελατών με τη δική σας επωνυμία"),
       c("Site audits up to 20,000 pages per site", "Έλεγχοι ιστότοπου έως 20.000 σελίδες ανά ιστότοπο"),
-      c("Onboarding call and priority support", "Κλήση γνωριμίας και υποστήριξη προτεραιότητας"),
+      c("Onboarding call and priority support", "Κλήση για την αρχική ρύθμιση και προτεραιότητα στην υποστήριξη"),
     ],
   },
 ];
@@ -103,9 +103,9 @@ export interface Addon {
 export const ADDONS: ReadonlyArray<Addon> = [
   { id: "extra_site", name: c("Extra site", "Επιπλέον ιστότοπος"), monthly: 5, yearly: 50 },
   { id: "extra_keywords", name: c("500 more tracked keywords", "500 επιπλέον λέξεις-κλειδιά"), monthly: 9, yearly: 90 },
-  { id: "extra_prompts", name: c("50 more AI visibility prompts", "50 επιπλέον prompts ορατότητας AI"), monthly: 19, yearly: 190 },
+  { id: "extra_prompts", name: c("50 more AI visibility prompts", "50 επιπλέον ερωτήσεις για παρακολούθηση σε AI"), monthly: 19, yearly: 190 },
   { id: "monthly_credits", name: c("2,500 credits every month", "2.500 μονάδες κάθε μήνα"), monthly: 25, yearly: 250 },
-  { id: "white_label", name: c("White-label reports", "Αναφορές white-label"), monthly: 29, yearly: 290 },
+  { id: "white_label", name: c("White-label reports", "Αναφορές με τη δική σας επωνυμία"), monthly: 29, yearly: 290 },
 ];
 
 export function planById(id: PlanId): Plan {
@@ -175,7 +175,7 @@ export const CREDIT_COSTS = {
   eeat_audit: 12,
   merge_plan: 3,
   cannibal_resolve: 3,
-  seo_ai_chat: 1,
+  seo_ai_chat: 0,
   website_import: 1,
   wordpress_publish: 1,
 } as const;
@@ -207,8 +207,8 @@ export const COST_LABELS: Readonly<Record<CreditFeature, Copy>> = {
   citation_optimization: c("Citation optimization plan", "Πλάνο βελτιστοποίησης παραπομπών"),
   eeat_audit: c("E-E-A-T audit", "Έλεγχος E-E-A-T"),
   merge_plan: c("Page merge plan", "Πλάνο συγχώνευσης σελίδων"),
-  cannibal_resolve: c("Cannibalization fix plan", "Πλάνο διόρθωσης κανιβαλισμού"),
-  seo_ai_chat: c("AI assistant question", "Ερώτηση στον βοηθό AI"),
+  cannibal_resolve: c("Cannibalization fix plan", "Προτάσεις για σελίδες που ανταγωνίζονται στις ίδιες αναζητήσεις"),
+  seo_ai_chat: c("Question for Aster AI", "Ερώτηση στον Aster AI"),
   website_import: c("Website or WordPress import", "Εισαγωγή ιστότοπου ή WordPress"),
   wordpress_publish: c("Publish a page to WordPress", "Δημοσίευση σελίδας στο WordPress"),
 };
@@ -225,12 +225,12 @@ export function cost(feature: CreditFeature, label?: Copy): CostLine {
 /** What a month of credits covers, as on the app's pricing page. */
 export const CREDIT_EXAMPLES: ReadonlyArray<CostLine> = [
   {
-    label: c("Search Console analytics, opportunities & client reports", "Αναλυτικά Search Console, ευκαιρίες & αναφορές πελατών"),
+    label: c("Search Console analytics, opportunities & client reports", "Ανάλυση Search Console, προτεινόμενες διορθώσεις και αναφορές πελατών"),
     credits: CREDIT_COSTS.gsc,
   },
-  { label: c("Question to the AI assistant", "Ερώτηση στον βοηθό AI"), credits: CREDIT_COSTS.seo_ai_chat },
-  { label: c("SERP overview for a keyword", "Επισκόπηση SERP για μια λέξη-κλειδί"), credits: CREDIT_COSTS.serp_overview },
-  { label: c("Keyword research lookup", "Αναζήτηση λέξης-κλειδιού"), credits: CREDIT_COSTS.keyword_research },
-  { label: c("Site audit run", "Εκτέλεση ελέγχου ιστότοπου"), credits: CREDIT_COSTS.site_audit },
-  { label: c("AI content brief", "Πλάνο περιεχομένου με AI"), credits: CREDIT_COSTS.ai_content_brief },
+  { label: c("Question for Aster AI (daily plan limit)", "Ερώτηση στον Aster AI (ημερήσιο όριο ανά πακέτο)"), credits: CREDIT_COSTS.seo_ai_chat },
+  cost("website_import"),
+  cost("wordpress_publish"),
+  cost("ai_overview_check"),
+  cost("rank_tracking_per_keyword"),
 ];

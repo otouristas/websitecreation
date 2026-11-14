@@ -21,7 +21,7 @@ faq:
     answer: "If three fixes/week backlog exceeds 8 weeks consistently: get scoped help."
 ---
 
-Search Console is noisy if you open it without a script. This **one-hour loop** keeps decisions small and shippable: whether you run SEO for a plumbing company, a [Cyclades hotel group](/el/blog/topiko-seo-kykladon), or a [rent-a-car operator](/en/solutions/rent-a-car). The goal isn't to analyze everything; it's to ship three meaningful fixes every week and validate them.
+Give yourself an hour in Search Console and pick a decision to make before you open the reports. You might need to find the page behind a drop in clicks or decide which service description to rewrite. Leave time at the end to record the change so you can check it next week.
 
 ## Why a weekly loop beats monthly deep dives
 
@@ -192,4 +192,4 @@ If three fixes/week backlog exceeds 8 weeks consistently: [get scoped help](/en/
 
 Tell us about your site, locations, and goals: we'll recommend a scoped plan with Search Console ops, content priorities, and clear next steps.
 
-[Get started](/en/get-started) · [See our work](/en/work) · [Pricing](/en/pricing)
+Explore the [software plans](/en/pricing) if your team will handle the edits. For work you would like us to carry out, see our [agency packages in Greek](/el/ypiresies/times).

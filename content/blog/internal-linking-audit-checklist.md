@@ -21,7 +21,7 @@ faq:
     answer: "Compare GSC clicks on target URLs 4–8 weeks post-fix. Track orphan count monthly."
 ---
 
-Internal links distribute relevance, define site architecture for crawlers, and guide users to conversion paths. Most sites drift: new pages launch without parents, footers repeat the same targets, and blogs become dead ends. For [hotel websites](/en/solutions/hotels) with dozens of room and island pages, or [rent-a-car fleets](/en/solutions/rent-a-car) with location landing pages, poor internal linking leaves money URLs orphaned while blog posts hoard authority.
+Pick a page that matters to the business and try reaching it from the homepage without using search. Which links would a customer know to follow? Repeat the exercise from the articles people actually land on. The gaps you find give your internal linking audit a clear starting point.
 
 This checklist gives in-house teams a pragmatic audit order: fix orphans and money-page support first, then refine anchors and global modules.
 
@@ -200,4 +200,4 @@ Compare GSC clicks on target URLs 4–8 weeks post-fix. Track orphan count month
 
 Tell us about your site, locations, and goals: we'll recommend a scoped plan with Search Console ops, content priorities, and clear next steps.
 
-[Get started](/en/get-started) · [See our work](/en/work) · [Pricing](/en/pricing)
+Explore the [software plans](/en/pricing) if your team will handle the edits. For work you would like us to carry out, see our [agency packages in Greek](/el/ypiresies/times).

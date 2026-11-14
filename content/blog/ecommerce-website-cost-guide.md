@@ -23,7 +23,7 @@ faq:
     answer: "A mix: SEO for categories and products for steady organic flow, Google Shopping/Ads for instant sales, and email for repeat orders."
 ---
 
-Building an **e-commerce website** is one of the most searched goals for business owners, and one of the most misunderstood purchases. An e-shop isn’t “a site with a cart”: it’s a store that has to be found on Google, earn trust, take payments cleanly, and deliver without complaints. Here’s what it really takes and what it costs in 2026.
+An online shop with ten products and one shipping rate is a different build from a catalogue with sizes, stock feeds and international delivery. Before comparing quotes, write down how a customer chooses a product, pays for it and gets it delivered. Those requirements explain much of the difference in price.
 
 > **Start here:** [WooCommerce e-shop builds](/en/services/eshop-woocommerce) · [e-shop SEO](/en/services/eshop-seo) · [pricing](/el/ypiresies/times) · [work](/en/work) · [free quote](/en/get-started).
 
@@ -75,7 +75,7 @@ See our [pricing](/el/ypiresies/times) and the general [website cost guide](/en/
 
 You can assemble a basic WooCommerce store yourself. The hard part is not installing plugins: it is payments that work, shipping that does not confuse customers, category architecture that ranks, and mobile speed that converts. If you are aiming for real revenue, an experienced team saves months of trial and error. See how we approach [WooCommerce builds](/en/services/eshop-woocommerce).
 
-## Common Mistakes That Kill Sales
+## Where shoppers run into trouble at checkout
 
 1. **Supplier copy pasted onto every product**: duplicate content, zero differentiation.
 2. **Categories named for internal warehouse logic** instead of how people search.

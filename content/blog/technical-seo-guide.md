@@ -24,7 +24,7 @@ faq:
     answer: In Greece, focused technical audits typically run {{ENTRY_SEO}}–€1,200 depending on site size and JS complexity. Fixes are scoped separately or included in retainers.
 ---
 
-**Technical SEO best practices** make a site easy for Google to crawl, index and render: fast on mobile, with clean canonicals and structured data. If those are broken, publishing more blogs rarely helps.
+If a service page gets no search traffic, first check whether Google can find and index its URL. A blocked page, a redirect to the wrong place or a canonical pointing elsewhere calls for a different fix from a slow page. Start with the symptom before handing a list of changes to your developer.
 
 This page is the practices guide. The [technical SEO hub for in-house teams](/en/blog/pillar-technical-seo-in-house) is a separate playbook for ticket templates, release QA and engineering buy-in, so the two URLs stay distinct and link to each other. Pair with [What is SEO?](/en/blog/what-is-seo) for the wider picture.
 
@@ -64,7 +64,7 @@ Run a [free SEO audit](/en/tools/free-seo-audit) for a quick health snapshot, th
 | Schema rollout (key templates) | €200 to €800 | 1–3 days | Rich-result eligibility |
 | Migration / redesign SEO | Scoped project | Weeks | Protect rankings |
 
-See [how much SEO costs](/en/blog/how-much-does-seo-cost) and [pricing](/en/pricing) for retainer context.
+See [how much SEO costs](/en/blog/how-much-does-seo-cost) and [pricing](/el/ypiresies/times) for retainer context.
 
 ## How Technical SEO Supports Rankings
 

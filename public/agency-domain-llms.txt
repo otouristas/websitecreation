@@ -1,4 +1,4 @@
-Last-Updated: 2026-11-10
+Last-Updated: 2026-11-14
 Canonical: https://anotherseoguru.gr/llms.txt
 Sitemap: https://anotherseoguru.gr/sitemap.xml
 
@@ -11,6 +11,7 @@ Source: https://anotherseoguru.gr
 - **Αρχική** (<https://anotherseoguru.gr>) - Εταιρεία SEO και κατασκευής ιστοσελίδων στην Ελλάδα.
 - **Τιμές** (<https://anotherseoguru.gr/times>) - Τιμές ιστοσελίδας και μηνιαίου SEO, με ρητή ένδειξη ΦΠΑ.
 - **Δωρεάν έλεγχος ιστοσελίδας** (<https://anotherseoguru.gr/get-started#free-audit>) - Φόρμα για δωρεάν έλεγχο SEO.
+- **Οδηγοί για επιχειρήσεις** (<https://anotherseoguru.gr/odigoi>) - Επιλογή συνεργάτη, κόστος ιστοσελίδας, ηλεκτρονικά καταστήματα και τοπικό SEO.
 - **Υπηρεσίες** (<https://anotherseoguru.gr/services>) - Όλες οι υπηρεσίες.
 - **Υπηρεσίες SEO** (<https://anotherseoguru.gr/seo-services>) - SEO για επιχειρήσεις στην Ελλάδα.
 - **Σύμβουλος SEO** (<https://anotherseoguru.gr/symvoulos-seo>) - Συνεργασία με σύμβουλο SEO.
@@ -20,18 +21,18 @@ Source: https://anotherseoguru.gr
 - **Έργα** (<https://anotherseoguru.gr/work>) - Πελάτες και case studies.
 
 ## Υπηρεσίες
-- **Κατασκευή Ιστοσελίδων** (<https://anotherseoguru.gr/services/website-creation>) - Κατασκευή ιστοσελίδων με SEO από την πρώτη μέρα: σχεδιασμός, ανάπτυξη και βελτιστοποίηση για μετατροπές, με σταθερή τιμή από €483,06.
-- **Ανασχεδιασμός Ιστοσελίδας** (<https://anotherseoguru.gr/services/website-redesign>) - Μετατρέψτε παλιές ιστοσελίδες σε σύγχρονες, γρήγορες και φιλικές προς την αναζήτηση - με ασφαλή μεταφορά SEO.
-- **Σχεδιασμός Ιστοσελίδων (Web Design)** (<https://anotherseoguru.gr/services/web-design>) - Σχεδιασμός ιστοσελίδων με UX και SEO από την αρχή: αρχιτεκτονική, schema, εσωτερικοί σύνδεσμοι και ταχύτητα που μετατρέπουν επισκέπτες σε πελάτες.
-- **Βελτιστοποίηση Ταχύτητας** (<https://anotherseoguru.gr/services/speed-optimization>) - Core Web Vitals, caching και βελτιστοποίηση κώδικα για ταχύτερη ιστοσελίδα και καλύτερες κατατάξεις.
-- **AI SEO: Ορατότητα σε AI (GEO / AEO)** (<https://anotherseoguru.gr/services/ai-visibility>) - GEO και AEO για επιχειρήσεις: σαφή στοιχεία, σελίδες σε μορφή απάντησης και μέτρηση, ώστε οι μηχανές απάντησης να μπορούν να χρησιμοποιήσουν το περιεχόμενό σας. Χωρίς υποσχέσεις αναφοράς.
-- **Σχεδιασμός Λογοτύπου** (<https://anotherseoguru.gr/services/logo-design>) - Επαγγελματικό λογότυπο και πλήρες κιτ εταιρικής ταυτότητας για αναγνωρισιμότητα στην αγορά σας.
-- **SEO Copywriting & Δημιουργία Περιεχομένου** (<https://anotherseoguru.gr/services/content-creation>) - Κείμενα με SEO για σελίδες υπηρεσιών, τοπικές σελίδες και blog που φέρνουν οργανική επισκεψιμότητα.
-- **Τοπικό SEO & Google Business** (<https://anotherseoguru.gr/services/local-seo>) - Τοπικό SEO για Ελλάδα: βελτιστοποίηση Google Business Profile, καταχωρήσεις, κριτικές και τοπικές σελίδες ώστε να εμφανίζεστε στο map pack για Αθήνα, Θεσσαλονίκη και άλλες πόλεις.
-- **Link Building & Backlinks** (<https://anotherseoguru.gr/services/link-building>) - Link building με ποιοτικά backlinks από σχετικά ελληνικά sites, digital PR και καθαρισμό spam συνδέσμων, για αύξηση της αξιοπιστίας του domain σας.
-- **SEO Audit & Τεχνικός Έλεγχος** (<https://anotherseoguru.gr/services/seo-audits>) - SEO audit ιστοσελίδας: τεχνικός έλεγχος ευρετηρίασης, ταχύτητας, δομής και περιεχομένου, με λίστα διορθώσεων κατά προτεραιότητα. Πλήρες audit από €450.
-- **Κατασκευή Eshop με WooCommerce** (<https://anotherseoguru.gr/services/eshop-woocommerce>) - Κατασκευή eshop με WooCommerce: πληρωμές, μεταφορικά, σύνδεση με ERP και SEO κατηγοριών και προϊόντων, έτοιμο να πουλάει από την πρώτη μέρα.
-- **SEO για Eshop** (<https://anotherseoguru.gr/services/eshop-seo>) - SEO για eshop: βελτιστοποίηση κατηγοριών, προϊόντων, φίλτρων και ταχύτητας, ώστε το ηλεκτρονικό σας κατάστημα να πουλάει από την οργανική αναζήτηση.
+- **Κατασκευή Ιστοσελίδων** (<https://anotherseoguru.gr/services/website-creation>) - Σχεδιάζουμε την ιστοσελίδα γύρω από αυτό που χρειάζεται να κάνει ο πελάτης σας, από μια κράτηση μέχρι ένα αίτημα προσφοράς. Η κατασκευή ξεκινά από €483,06 και περιλαμβάνει βασικό SEO.
+- **Ανασχεδιασμός Ιστοσελίδας** (<https://anotherseoguru.gr/services/website-redesign>) - Καταγράφουμε τις σελίδες που ήδη φέρνουν αιτήματα και φροντίζουμε για τις ανακατευθύνσεις τους. Στη νέα ιστοσελίδα ο πελάτης βρίσκει πιο εύκολα αυτό που ζητά, ακόμη και από κινητό.
+- **Σχεδιασμός Ιστοσελίδων (Web Design)** (<https://anotherseoguru.gr/services/web-design>) - Σχεδιάζουμε το μενού και τις συνδέσεις μεταξύ σελίδων με βάση τις υπηρεσίες που αναζητούν οι πελάτες σας. Έτσι βρίσκουν πού να διαβάσουν περισσότερα και πώς να επικοινωνήσουν.
+- **Βελτιστοποίηση Ταχύτητας** (<https://anotherseoguru.gr/services/speed-optimization>) - Μετράμε πόσο αργούν οι σελίδες που χρησιμοποιούν οι πελάτες σας. Διορθώνουμε βαριές εικόνες, κώδικα και ρυθμίσεις προσωρινής αποθήκευσης και συγκρίνουμε τις επιδόσεις πριν και μετά.
+- **AI SEO: Ορατότητα σε AI (GEO / AEO)** (<https://anotherseoguru.gr/services/ai-visibility>) - Ελέγχουμε τι αναφέρουν οι απαντήσεις AI για την επιχείρησή σας. Ξεκαθαρίζουμε στις σελίδες σας τα στοιχεία που χρειάζονται για να περιγράψουν σωστά τις υπηρεσίες σας.
+- **Σχεδιασμός Λογοτύπου** (<https://anotherseoguru.gr/services/logo-design>) - Παραλαμβάνετε λογότυπο για ιστοσελίδα, έντυπα και κοινωνικά δίκτυα, μαζί με τα αρχεία, τα χρώματα και τις οδηγίες χρήσης του.
+- **SEO Copywriting & Δημιουργία Περιεχομένου** (<https://anotherseoguru.gr/services/content-creation>) - Γράφουμε σελίδες υπηρεσιών και άρθρα που απαντούν στις ερωτήσεις των πελατών σας πριν τηλεφωνήσουν, κλείσουν ραντεβού ή αγοράσουν.
+- **Τοπικό SEO & Google Business** (<https://anotherseoguru.gr/services/local-seo>) - Ο πελάτης της περιοχής θέλει σωστό ωράριο, τηλέφωνο και οδηγίες πρόσβασης. Φροντίζουμε το Google Business Profile και τις σελίδες για τις περιοχές που εξυπηρετείτε.
+- **Link Building & Backlinks** (<https://anotherseoguru.gr/services/link-building>) - Βρίσκουμε ιστοσελίδες και μέσα που διαβάζει το κοινό σας και τους προτείνουμε θέματα σχετικά με τη δουλειά σας, με στόχο μια δημοσίευση με σύνδεσμο.
+- **SEO Audit & Τεχνικός Έλεγχος** (<https://anotherseoguru.gr/services/seo-audits>) - Μάθετε τι δυσκολεύει τις σελίδες σας στη Google και τι αξίζει να διορθώσετε πρώτο. Ελέγχουμε ευρετηρίαση, ταχύτητα και περιεχόμενο. Πλήρης έλεγχος από €450.
+- **Κατασκευή Eshop με WooCommerce** (<https://anotherseoguru.gr/services/eshop-woocommerce>) - Ανοίξτε κατάστημα WooCommerce με πληρωμές, μεταφορικά και απόθεμα ρυθμισμένα για τον τρόπο που πουλάτε. Φροντίζουμε επίσης τις σελίδες κατηγοριών και προϊόντων.
+- **SEO για Eshop** (<https://anotherseoguru.gr/services/eshop-seo>) - Βοηθάμε τους αγοραστές να βρίσκουν στη Google τη σωστή κατηγορία ή το προϊόν που ψάχνουν. Ελέγχουμε φίλτρα, διπλότυπες σελίδες και ταχύτητα στο κινητό.
 
 ## Τιμές
 - **Ιστοσελίδα:** Website Starter πριν €1.000 + ΦΠΑ 24% (€1.240 με ΦΠΑ), τώρα €599 με ΦΠΑ 24%, Website Professional €2.500 + ΦΠΑ 24%, Website Business €4.000 + ΦΠΑ 24%. Εφάπαξ.

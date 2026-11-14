@@ -2,17 +2,17 @@
 
 import type { ReactElement } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useMarketingPathname } from '@/lib/use-marketing-pathname';
 import { BrandLogo } from "@/components/BrandLogo";
 import { CookiePreferencesLink } from "@/components/CookiePreferencesLink";
 import { FooterCta } from "@/components/FooterCta";
+import { SecurityNotice } from "@/components/SecurityNotice";
 import { getAppPath } from "@/lib/app-links";
 import { getFooterDictionary } from "@/lib/i18n/get-dictionary";
 import { localizedPath, siteLocaleFromPath, stripLocalePrefix, type SiteLocale } from "@/lib/i18n/locale";
 import { CONTACT_EMAIL, PHONE_DISPLAY, WHATSAPP_HREF } from "@/lib/contact-info";
 import { trackCtaClick } from "@/lib/analytics";
-import { consultantPath } from "@/data/founder";
-import { AGENCY_AUDIT_HREF, AGENCY_HOME_HREF, AGENCY_PRICING_HREF, isAgencyPathname, migratedAgencyHref } from "@/lib/site-split";
+import { AGENCY_AUDIT_HREF, AGENCY_HOME_HREF, AGENCY_PRICING_HREF, PRODUCT_ORIGIN, isAgencyPathname, migratedAgencyHref } from "@/lib/site-split";
 
 /** Official SVGs from https://github.com/datatrans/payment-logos (CC-BY-SA-4.0) */
 const PAYMENT_LOGOS = [
@@ -46,8 +46,8 @@ const closingRuleClass =
   "relative border-t border-hairline before:absolute before:inset-x-0 before:top-[-1px] before:h-px before:bg-[linear-gradient(90deg,transparent,var(--primary-glow)_30%,var(--brand)_70%,transparent)] before:opacity-70 before:content-['']";
 
 const PRODUCT_TAGLINE: Record<SiteLocale, string> = {
-  en: "SEO software that turns your Search Console into ranked fixes. On the web, iPhone, Android, Chrome and WordPress.",
-  el: "Λογισμικό SEO που κάνει το Search Console σας λίστα διορθώσεων. Στο web, iPhone, Android, Chrome και WordPress.",
+  en: "Find pages worth updating, ask Aster AI about your search traffic and see what changed after an edit.",
+  el: "Βρείτε ποιες σελίδες αξίζει να βελτιώσετε, ρωτήστε τον Aster AI για τα κλικ τους και δείτε τι άλλαξε μετά από κάθε διόρθωση.",
 };
 
 type FooterLink = { readonly label: string; readonly href: string; readonly external?: boolean };
@@ -78,11 +78,11 @@ function footerColumns(locale: SiteLocale, agency: boolean): readonly FooterColu
     { label: isEl ? "Εφαρμογή iPhone" : "iPhone app", href: lp("/platform/iphone") },
     { label: isEl ? "Ενσωματώσεις" : "Integrations", href: lp("/platform/integrations") },
     { label: isEl ? "Ασφάλεια" : "Security", href: lp("/platform/security") },
-    { label: isEl ? "Για agencies" : "For agencies", href: lp("/platform/for/agencies") },
+    { label: isEl ? "Για εταιρείες SEO" : "For agencies", href: lp("/platform/for/agencies") },
     { label: isEl ? "White-label αναφορές SEO" : "White-label SEO reports", href: lp("/platform/white-label-reports") },
     { label: isEl ? "Εργαλείο πρόβλεψης SEO" : "SEO forecasting tool", href: lp("/platform/seo-forecasting-tool") },
     { label: isEl ? "Δείγμα αναφοράς SEO" : "Sample SEO report", href: lp("/resources/sample-seo-report") },
-    { label: isEl ? "Για in-house ομάδες" : "For in-house teams", href: lp("/platform/for/in-house") },
+    { label: isEl ? "Για εσωτερικές ομάδες SEO" : "For in-house teams", href: lp("/platform/for/in-house") },
     { label: isEl ? "Για e-shop" : "For ecommerce", href: lp("/platform/for/ecommerce") },
   ];
   if (isEl) {
@@ -201,15 +201,10 @@ function footerColumns(locale: SiteLocale, agency: boolean): readonly FooterColu
       id: "company",
       title: isEl ? t.company : "Company",
       links: [
-        { label: isEl ? t.about : "About us", href: lp("/about") },
-        // The consultant and SEO guru pages are agency pages: agency footer only.
-        ...(agency
-          ? [
-              { label: isEl ? "Σύμβουλος SEO" : "SEO consultant", href: consultantPath(locale) },
-              { label: "SEO guru", href: lp("/seo-guru") },
-            ]
-          : []),
-        { label: isEl ? t.contact : "Contact", href: lp("/contact") },
+        agency
+          ? { label: isEl ? "Η ομάδα μας" : "Our team", href: lp("/seo-guru") }
+          : { label: isEl ? t.about : "About us", href: lp("/about") },
+        { label: isEl ? t.contact : "Contact", href: lp(agency ? "/get-started" : "/contact") },
         { label: isEl ? t.privacy : "Privacy policy", href: lp("/privacy") },
         { label: isEl ? t.terms : "Terms of service", href: lp("/terms") },
         { label: isEl ? t.cookies : "Cookie policy", href: lp("/privacy#cookies") },
@@ -225,14 +220,17 @@ function footerColumns(locale: SiteLocale, agency: boolean): readonly FooterColu
       {
         id: "resources",
         title: isEl ? t.resources : "Resources",
-        links: [{ label: isEl ? t.work : "Case studies", href: lp("/work") }, ...resources],
+        links: [
+          { label: isEl ? "Οδηγοί για επιχειρήσεις" : "Guides for businesses", href: lp("/odigoi") },
+          { label: isEl ? t.work : "Case studies", href: lp("/work") },
+          { label: isEl ? "Τιμές υπηρεσιών" : "Service prices", href: AGENCY_PRICING_HREF },
+        ],
       },
       {
         id: "product",
         title: t.product,
         links: [
-          { label: "AnotherSEOGuru App", href: lp("/") },
-          { label: isEl ? "Πακέτα εφαρμογής" : "App plans", href: lp("/pricing") },
+          { label: "AnotherSEOGuru App", href: `${PRODUCT_ORIGIN}${lp("/")}`, external: true },
         ],
       },
       company,
@@ -309,7 +307,7 @@ function FooterColumnView({ column }: { readonly column: FooterColumn }): ReactE
 }
 
 export default function Footer({ locale: localeProp }: { locale?: SiteLocale }): ReactElement {
-  const pathname = usePathname() ?? "/en";
+  const pathname = useMarketingPathname();
   const locale = localeProp ?? siteLocaleFromPath(pathname);
   const currentYear = new Date().getFullYear();
   const isEl = locale === "el";
@@ -415,7 +413,7 @@ export default function Footer({ locale: localeProp }: { locale?: SiteLocale }):
             <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
               <div className="flex min-w-0 flex-col items-center gap-3 md:items-start">
                 <p className="text-center text-sm text-muted-foreground md:text-left">
-                  © {currentYear} AnotherSEOGuru | {isEl ? "Ένα προϊόν της Touristas Technologies" : "Touristas Technologies"}
+                  © {currentYear} AnotherSEOGuru | {isEl && !agency ? "Ένα προϊόν της Touristas Technologies" : "Touristas Technologies"}
                 </p>
                 <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-muted-foreground md:justify-start">
                   <a
@@ -432,7 +430,7 @@ export default function Footer({ locale: localeProp }: { locale?: SiteLocale }):
                     {CONTACT_EMAIL}
                   </a>
                   <span aria-hidden>•</span>
-                  <Link href={lp("/contact")} className="transition-colors hover:text-primary">
+                  <Link href={lp(agency ? "/get-started" : "/contact")} className="transition-colors hover:text-primary">
                     {isEl ? t.contact : "Contact"}
                   </Link>
                   <span aria-hidden className="lg:hidden">
@@ -443,6 +441,7 @@ export default function Footer({ locale: localeProp }: { locale?: SiteLocale }):
                     className="cursor-pointer border-0 bg-transparent p-0 text-sm text-muted-foreground transition-colors hover:text-primary lg:hidden"
                   />
                 </div>
+                <SecurityNotice locale={locale} />
               </div>
               <div className="flex flex-col items-center gap-2 md:items-end">
                 <p className="text-xs text-muted-foreground">{isEl ? t.payments : "We accept"}</p>

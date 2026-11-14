@@ -110,7 +110,7 @@ export function IndustryPageView({
     { name: industry.name, url: lp(`/solutions/${industrySlug}`) },
   ];
 
-  const headline = copy?.h1 ?? `${ui.websiteSolutionsFor} ${industry.name}`;
+  const headline = copy?.h1 ?? `${ui.websiteSolutionsFor} ${industry.nameFor}`;
   const schemas = combineSchemas(
     generateBreadcrumbSchema({ items: breadcrumbs }),
     generateArticleSchema({
@@ -129,7 +129,7 @@ export function IndustryPageView({
     accentEnd(copy.h1, copy.accentWords ?? 2)
   ) : (
     <>
-      {ui.websiteSolutionsFor} <WaveAccent>{industry.name}</WaveAccent>
+      {ui.websiteSolutionsFor} <WaveAccent>{industry.nameFor}</WaveAccent>
     </>
   );
 
@@ -157,7 +157,7 @@ export function IndustryPageView({
             <ServiceHeroActions
               locale={locale}
               primaryHref={lp(`/get-started?project=${industrySlug}`)}
-              primaryLabel={ui.getQuoteFor(industry.name)}
+              primaryLabel={ui.getQuote}
               links={[{ href: "#services", label: ui.viewServices }]}
             />
           }
@@ -170,8 +170,8 @@ export function IndustryPageView({
             <div className="min-w-0">
               <WaveHeading
                 eyebrow={tx("The brief", "Οι ανάγκες")}
-                title={copy?.needsTitle ?? ui.whatWebsitesNeed(industry.name)}
-                lead={copy?.needsBody ?? ui.painIntro(industry.name)}
+                title={copy?.needsTitle ?? ui.customerNeeds}
+                lead={copy?.needsBody}
               />
               <Link href={lp("/get-started#free-audit")} className={`${wavePrimaryBtn} mt-8`}>
                 {tx("Get a free SEO audit", "Δωρεάν έλεγχος SEO")}
@@ -245,7 +245,6 @@ export function IndustryPageView({
           <WaveHeading
             eyebrow={tx("Services", "Υπηρεσίες")}
             title={copy?.servicesTitle ?? ui.servicesFor(industry.nameFor ?? industry.name)}
-            lead={ui.servicesIntro(industry.name)}
           />
           <ul className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((service) => {
@@ -286,7 +285,7 @@ export function IndustryPageView({
               <WaveHeading
                 eyebrow={tx("Local", "Τοπικά")}
                 title={ui.byCity(industry.name)}
-                lead={ui.locationsIntro(industry.name, isEl)}
+                lead={ui.locationsIntro(industry.nameFor)}
               />
               {copy?.checklist ? null : (
                 <AppPanel
@@ -377,8 +376,8 @@ export function IndustryPageView({
         <WaveClose
           locale={locale}
           source={`industry-${industrySlug}`}
-          title={accentEnd(copy?.ctaTitle ?? ui.readyCta(industry.name), 2)}
-          lead={copy?.ctaBody ?? ui.readySub(industry.name)}
+          title={accentEnd(copy?.ctaTitle ?? ui.projectQuote, 2)}
+          lead={copy?.ctaBody ?? ui.quoteInstructions}
         />
       </main>
       <Footer locale={locale} />

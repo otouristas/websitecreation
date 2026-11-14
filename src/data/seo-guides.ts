@@ -87,13 +87,13 @@ export const SEO_GUIDES_COPY = {
       'SEO guides in one index: the main ranking guide, then keywords, on-page, technical SEO, links and local search. Start with the guide that matches the job.',
     heading: 'SEO guides',
     intro:
-      'Practical guides on how Google rankings work, written from Search Console work with clients. Start with the main guide, then open the topic that matches the job in front of you.',
+      'Working on a page that has slipped in Google? Start with the guide to rankings. If you already know the issue, go straight to keywords, technical SEO or local search.',
     pillarEyebrow: 'Main guide',
     pillarTitle: 'Start with the main guide',
     topicsEyebrow: 'Topic hubs',
     topicsTitle: 'The same guides, grouped by topic',
     topicsBody:
-      'These hubs collect every article on the topic, including pieces that sit outside this set of ranking guides.',
+      'Explore related articles on Google Maps, Search Console and the technical issues that can affect your pages.',
     servicesLead: 'When you want the work done for you, see',
     servicesLabel: 'SEO services',
     pricingLabel: 'pricing',
@@ -106,13 +106,13 @@ export const SEO_GUIDES_COPY = {
       'Ένας κόμβος για τους οδηγούς SEO. Ξεκινήστε από τον βασικό οδηγό και συνεχίστε σε λέξεις-κλειδιά, on-page, τεχνικό SEO, backlinks και τοπικό SEO.',
     heading: 'Οδηγοί SEO',
     intro:
-      'Πρακτικοί οδηγοί για το πώς λειτουργεί η κατάταξη στην Google, από δουλειά με το Search Console. Ξεκινήστε από τον βασικό οδηγό και ανοίξτε το θέμα που ταιριάζει στη δουλειά μπροστά σας.',
+      'Έπεσε μια σελίδα σας στη Google; Ξεκινήστε από τον οδηγό για την κατάταξη. Αν ξέρετε ήδη τι θέλετε να ελέγξετε, περάστε κατευθείαν στις λέξεις-κλειδιά, στο τεχνικό SEO ή στην τοπική αναζήτηση.',
     pillarEyebrow: 'Βασικός οδηγός',
     pillarTitle: 'Ξεκινήστε από τον βασικό οδηγό',
     topicsEyebrow: 'Θεματικοί κόμβοι',
     topicsTitle: 'Οι ίδιοι οδηγοί, ανά θέμα',
     topicsBody:
-      'Αυτοί οι κόμβοι μαζεύουν όλα τα άρθρα του θέματος, μαζί με κείμενα που δεν ανήκουν σε αυτή τη σειρά οδηγών.',
+      'Βρείτε περισσότερα άρθρα για το Google Maps, το Search Console και τα τεχνικά θέματα που επηρεάζουν τις σελίδες σας.',
     servicesLead: 'Αν θέλετε να το αναλάβουμε εμείς, δείτε τις',
     servicesLabel: 'υπηρεσίες SEO',
     pricingLabel: 'τιμές',

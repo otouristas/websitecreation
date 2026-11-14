@@ -83,16 +83,12 @@ export default async function PlatformFeaturesPage({ params }: PageProps) {
           }
           title={
             <>
-              <span className="block">{tx("Every SEO tool you need,", "Όλα τα εργαλεία SEO που χρειάζεστε,")}</span>
-              <span className="block">
-                {tx("grounded in ", "βασισμένα στα ")}
-                <WaveAccent>{tx("your data.", "δικά σας δεδομένα.")}</WaveAccent>
-              </span>
+              {tx("See which pages", "Ποιες σελίδες σας")} <WaveAccent>{tx("need your attention", "χρειάζονται δουλειά;")}</WaveAccent>
             </>
           }
           lead={tx(
-            "AnotherSEOGuru App has nine modules in one workspace. Search Console features cost nothing on every plan; paid data and AI use credits, and every action shows its cost before you run it.",
-            "Το AnotherSEOGuru App έχει εννέα λειτουργίες σε έναν χώρο εργασίας. Οι λειτουργίες του Search Console δεν κοστίζουν τίποτα σε κανένα πακέτο· τα δεδομένα τρίτων και η AI χρησιμοποιούν μονάδες, και κάθε ενέργεια δείχνει το κόστος της πριν την εκτελέσετε.",
+            "Connect Google Search Console to see which pages are losing clicks and which searches could bring more visitors. Choose a fix, track the work and check the numbers after you publish. This part of AnotherSEOGuru App is included on every plan.",
+            "Συνδέστε το Google Search Console για να δείτε ποιες σελίδες χάνουν κλικ και ποιες αναζητήσεις θα μπορούσαν να φέρουν περισσότερους επισκέπτες. Επιλέξτε από πού θα ξεκινήσετε και δείτε πώς άλλαξαν τα κλικ μετά τη διόρθωση. Αυτές οι δυνατότητες περιλαμβάνονται σε όλα τα πακέτα του AnotherSEOGuru App.",
           )}
           actions={<WaveSoftwareActions locale={locale} source="features-hero" />}
           trust={<TrustMarks items={[copy.trust[0], tx("No credit card for the demo", "Χωρίς κάρτα για την επίδειξη"), tx("Cancel anytime", "Ακύρωση οποτεδήποτε")]} yesLabel={copy.markYes} />}
@@ -108,13 +104,13 @@ export default async function PlatformFeaturesPage({ params }: PageProps) {
             eyebrow={tx("Capabilities", "Δυνατότητες")}
             title={
               <>
-                {tx("Nine modules, ", "Εννέα λειτουργίες, ")}
-                <WaveAccent>{tx("three tiers.", "τρία επίπεδα.")}</WaveAccent>
+                {tx("Which tools come with ", "Ποια εργαλεία περιλαμβάνει ")}
+                <WaveAccent>{tx("each plan?", "κάθε πακέτο;")}</WaveAccent>
               </>
             }
             lead={tx(
-              "Search Console work is on every plan. Research, content and AI visibility open on Pro. The client workspace is the Agency plan.",
-              "Η δουλειά στο Search Console υπάρχει σε κάθε πακέτο. Η έρευνα, το περιεχόμενο και η ορατότητα σε AI ανοίγουν στο Pro. Ο χώρος εργασίας πελατών είναι το πακέτο Agency.",
+              "Every plan includes Search Console analysis. Choose Pro for keyword research, content tools and AI visibility, or Agency for client work and branded reports. You can see the credit cost of a paid action before you run it.",
+              "Όλα τα πακέτα περιλαμβάνουν ανάλυση Search Console. Το Pro προσθέτει έρευνα λέξεων-κλειδιών, εργαλεία περιεχομένου και έλεγχο ορατότητας σε AI. Με το Agency διαχειρίζεστε πελάτες και στέλνετε αναφορές με το λογότυπό σας. Πριν από κάθε ενέργεια που χρεώνεται, βλέπετε πόσες μονάδες απαιτεί.",
             )}
           />
           <TieredModuleGrid locale={locale} source="features" detailed />
@@ -125,7 +121,7 @@ export default async function PlatformFeaturesPage({ params }: PageProps) {
             eyebrow={tx("Integrations", "Ενσωματώσεις")}
             title={
               <>
-                {tx("Every module, on the same account in ", "Κάθε λειτουργία, με τον ίδιο λογαριασμό, σε ")}
+                {tx("Connect your account to ", "Σύνδεση του λογαριασμού σας με ")}
                 <WaveAccent>{tx("Chrome, WordPress and AI.", "Chrome, WordPress και AI.")}</WaveAccent>
               </>
             }
@@ -154,8 +150,8 @@ export default async function PlatformFeaturesPage({ params }: PageProps) {
           source="features-band"
           title={
             <>
-              {tx("Try every module on ", "Δοκιμάστε κάθε λειτουργία στα ")}
-              <WaveAccent>{tx("your own data.", "δικά σας δεδομένα.")}</WaveAccent>
+              {tx("Find a first task for ", "Βρείτε την πρώτη βελτίωση για ")}
+              <WaveAccent>{tx("your site", "τον ιστότοπό σας")}</WaveAccent>
             </>
           }
         />

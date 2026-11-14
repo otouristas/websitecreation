@@ -47,9 +47,9 @@ faq:
     answer: Treat each query on its own. Branded queries should show you first when your homepage is indexed. Local queries are decided largely by relevance, distance, and prominence, including your Google Business Profile. Broader queries move after the page, the internal links, and outside mentions are strong enough for that competition. Average position in Search Console is the number to watch.
 ---
 
-**Ranking higher on Google** means moving one URL up for one query in the unpaid results. It is a sequence of specific changes, measured on that query, over weeks and months. There is no switch for first place. The order you see when you search your own business is also a poor test: location, language, and your own history change the page.
+Choose one page and a search you genuinely want it to appear for. Check which pages Google shows today, then open your page’s queries in Search Console. You need to know whether the problem is indexing, relevance or a more useful competing page before deciding what to change.
 
-This guide is that sequence. It sits next to [What is SEO?](/en/blog/what-is-seo) and [SEO for beginners](/en/blog/seo-for-beginners). If you want the work done against a commercial plan, start from [SEO services](/en/seo-services) and the published [pricing](/en/pricing).
+This guide is that sequence. It sits next to [What is SEO?](/en/blog/what-is-seo) and [SEO for beginners](/en/blog/seo-for-beginners). If you want the work done against a commercial plan, start from [SEO services](/en/seo-services) and the published [pricing](/el/ypiresies/times).
 
 ## What ranking higher actually means
 
@@ -155,7 +155,7 @@ These SEO ranking tips are the order of operations. Later ones cannot rescue a p
 
 Run the same sequence on queries already in positions 4–20. Those URLs have been shown and are not yet the ones people click. Record the URL Google shows, the URL you want, the intent, and the last change. A month there usually beats a new article for a phrase with no impressions.
 
-Fix the shared cause. Five pages with one canonical bug need a template fix. Five thin pages need the commercial two rewritten and the rest combined. Add a URL only when no page answers a query you should own. This guide owns “how to rank higher on Google”. Hiring the work is [SEO services](/en/seo-services). Cost is [pricing](/en/pricing). Link them, and keep them on different queries.
+Fix the shared cause. Five pages with one canonical bug need a template fix. Five thin pages need the commercial two rewritten and the rest combined. Add a URL only when no page answers a query you should own. This guide owns “how to rank higher on Google”. Hiring the work is [SEO services](/en/seo-services). Cost is [pricing](/el/ypiresies/times). Link them, and keep them on different queries.
 
 ## How to get to the top of Google
 
@@ -233,7 +233,7 @@ These are the phases this site uses when scoping work. They are phases, not a da
 | Competitive non-brand query | Position after coverage, links, and mentions | Often 6–12 months of compounding |
 | Map pack for a new or neglected profile | Views, calls, direction requests | Weeks for completeness, longer for prominence |
 
-Enquiries usually lag the first movement in position. On this site the minimum SEO term is six months, then month to month, as published on [pricing](/en/pricing). Foundations starts at {{ENTRY_SEO}} per month, net of VAT. The fee pays for the work in the table. It does not buy a position. Seasonal businesses should compare the same month last year.
+Enquiries usually lag the first movement in position. On this site the minimum SEO term is six months, then month to month, as published on [pricing](/el/ypiresies/times). Foundations starts at {{ENTRY_SEO}} per month, net of VAT. The fee pays for the work in the table. It does not buy a position. Seasonal businesses should compare the same month last year.
 
 ## Mistakes that hold a page down
 
@@ -248,4 +248,4 @@ Enquiries usually lag the first movement in position. On this site the minimum S
 
 Bring the query, the URL that should own it, and Search Console access. The useful first deliverable is a short order of work: indexation, the page, the internal links, and whether the query is a map-pack query or an AI Overview query.
 
-If you want that diagnosis run for you, review [SEO services](/en/seo-services), the [pricing](/en/pricing), or [get started](/en/get-started) and say which queries matter to the business. An audit is the right first step when the site is large or a redesign has just shipped: [SEO audits](/en/services/seo-audits). For a single location that lives or dies by the map, start with [local SEO](/en/services/local-seo).
+If you want that diagnosis run for you, review [SEO services](/en/seo-services), the [pricing](/el/ypiresies/times), or [get started](/en/get-started) and say which queries matter to the business. An audit is the right first step when the site is large or a redesign has just shipped: [SEO audits](/en/services/seo-audits). For a single location that lives or dies by the map, start with [local SEO](/en/services/local-seo).

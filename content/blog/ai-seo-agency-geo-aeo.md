@@ -22,7 +22,7 @@ faq:
     answer: Hotels, villas, rent-a-car, tour operators, and local service brands competing for commercial queries where AI Overviews and chat answers already influence shortlists.
 ---
 
-If you searched for **AI SEO agency**, **generative engine optimization services**, or **GEO SEO**, you are already seeing the shift: discovery is splitting between classic Google results and AI answers. Buyers still click blue links, but they also ask ChatGPT, Perplexity, Gemini, and Google AI Overviews for shortlists before they ever visit a website.
+Before hiring an AI SEO agency, ask it to show you an actual answer about your business. Which source did the assistant cite? Did it get your service right? Those questions give you a much better brief than asking someone to make your brand appear in ChatGPT.
 
 AnotherSEOGuru runs [AI Visibility (GEO / AEO)](/en/services/ai-visibility) programs for tourism and local brands: the same stack we use across [70+ live portfolio projects](/en/work). This guide explains what an AI SEO agency actually ships in 2026, how **SEO**, **GEO**, and **AEO** fit together, and how to measure citations without buying hype.
 
@@ -96,7 +96,7 @@ Use this as a monthly review checklist with your agency or in-house team.
 
 ## How budgets and retainers usually work
 
-GEO/AEO rarely stand alone as a €50 side project. They sit inside retainers that already cover technical work, content, and reporting (typically in the {{ENTRY_SEO}}–{{SEO_AUTHORITY}}+/mo band depending on competition and language scope) or as scoped sprints after an audit. Transparent packages live on our [pricing page](/en/pricing). If you need a scoped start, [get started](/en/get-started?service=ai-visibility) with AI Visibility selected.
+GEO/AEO rarely stand alone as a €50 side project. They sit inside retainers that already cover technical work, content, and reporting (typically in the {{ENTRY_SEO}}–{{SEO_AUTHORITY}}+/mo band depending on competition and language scope) or as scoped sprints after an audit. Transparent packages live on our [pricing page](/el/ypiresies/times). If you need a scoped start, [get started](/en/get-started?service=ai-visibility) with AI Visibility selected.
 
 Compare software-only stacks vs agency execution in [SEO software vs agency pricing](/en/blog/pricing-page-seo-software-vs-agency) when you are deciding build vs buy.
 
@@ -124,4 +124,4 @@ Start with technical SEO and local foundations, add AEO (FAQ + schema) on commer
 
 ## Ready to Get Started?
 
-If you want one partner for rankings **and** AI citations, review [AI Visibility services](/en/services/ai-visibility), check transparent [agency pricing](/en/pricing), and [get started](/en/get-started?service=ai-visibility) with a scoped GEO/AEO plan built for tourism and local brands.
+If you want one partner for rankings **and** AI citations, review [AI Visibility services](/en/services/ai-visibility), check transparent [agency pricing](/el/ypiresies/times), and [get started](/en/get-started?service=ai-visibility) with a scoped GEO/AEO plan built for tourism and local brands.

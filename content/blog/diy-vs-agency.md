@@ -14,14 +14,14 @@ faq:
   - question: "Can I start DIY and switch to agency later?"
     answer: "Yes, and it's common. Bring your Search Console history and content; a good agency picks up from data, not zero."
   - question: "Is SEO software enough without an agency?"
-    answer: "Software provides leverage (clustering, audits, tracking) but someone must execute. Software without ops cadence fails."
+    answer: "Software can group search terms, check pages and track changes. Someone on your team still needs time each week to review the findings and publish the edits."
   - question: "How do I know if DIY is working?"
     answer: "Track commercial clicks in GSC, map actions, calls, and bookings monthly. Rankings alone mislead."
   - question: "Should tourism brands ever fully outsource SEO?"
-    answer: "Outsource execution, not oversight. You know seasonality, pricing, and guest questions: the agency knows search systems. Stay involved on content accuracy."
+    answer: "An agency can handle the SEO work. Keep someone on your team involved who knows your prices, busy dates and the questions guests actually ask. They can check the facts before a page goes live."
 ---
 
-You know you need to be on Google. The question is whether you have the time to put yourself there, and whether software plus a light process can get you far enough before you need hands-on help. Every small business owner reaches this crossroads: the website is live, but bookings and calls aren't where they should be.
+Who will actually edit your site next week? If you or a colleague can change a page and check the result, SEO software can help you decide where to start. If every update sits unassigned, ask an agency to quote for doing the work. That distinction matters more than the number of features on a plan.
 
 This guide gives you an honest framework, no scare tactics, no "agencies always win" bias. Whether you run an HVAC company, a Cyclades hotel, or a rent-a-car fleet at the airport, the tradeoffs are similar: time, money, skill, and speed.
 
@@ -142,7 +142,7 @@ Yes, and it's common. Bring your Search Console history and content; a good agen
 
 ### Is SEO software enough without an agency?
 
-Software provides leverage (clustering, audits, tracking) but someone must execute. Software without ops cadence fails.
+Software can group search terms, check pages and track changes. Someone on your team still needs time each week to review the findings and publish the edits.
 
 ### How do I know if DIY is working?
 
@@ -150,7 +150,7 @@ Track commercial clicks in GSC, map actions, calls, and bookings monthly. Rankin
 
 ### Should tourism brands ever fully outsource SEO?
 
-Outsource execution, not oversight. You know seasonality, pricing, and guest questions: the agency knows search systems. Stay involved on content accuracy.
+An agency can handle the SEO work. Keep someone on your team involved who knows your prices, busy dates and the questions guests actually ask. They can check the facts before a page goes live.
 
 ---
 
@@ -158,4 +158,4 @@ Outsource execution, not oversight. You know seasonality, pricing, and guest que
 
 Tell us about your site, locations, and goals: we'll recommend a scoped plan with Search Console ops, content priorities, and clear next steps.
 
-[Get started](/en/get-started) · [See our work](/en/work) · [Pricing](/en/pricing)
+Explore the [software plans](/en/pricing) if your team will handle the edits. For work you would like us to carry out, see our [agency packages in Greek](/el/ypiresies/times).

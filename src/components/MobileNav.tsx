@@ -1,7 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { useCallback, useEffect, useRef, useState, type ReactElement } from 'react';
+import { useMarketingPathname } from '@/lib/use-marketing-pathname';
+import { useEffect, useRef, useState, type ReactElement } from 'react';
 import { createPortal } from 'react-dom';
 import { ArrowRight, ChevronRight, X } from 'lucide-react';
 import { cn } from '@/lib/cn';
@@ -22,31 +23,28 @@ import type { NavItem, NavMenu, NavModel } from '@/data/nav-menu';
 interface MobileNavProps {
   locale: SiteLocale;
   alternateHref?: string;
-  isOpen: boolean;
   onClose: () => void;
   model: NavModel;
 }
 
-const COPY: Record<SiteLocale, { more: string; talk: string; whatsapp: string; reply: string; markets: string; vat: string }> = {
+const COPY: Record<SiteLocale, { more: string; whatsapp: string; reply: string; vat: string }> = {
   el: {
     more: 'Περισσότερα',
-    talk: 'Ας μιλήσουμε',
     whatsapp: 'WhatsApp',
     reply: 'Απαντάμε σε 24 ώρες, στα ελληνικά ή στα αγγλικά.',
-    markets: 'Αγορές',
     vat: 'Σε κάθε τιμή αναγράφεται αν περιλαμβάνει ΦΠΑ 24%.',
   },
   en: {
     more: 'More',
-    talk: "Let's talk",
     whatsapp: 'WhatsApp',
     reply: 'We reply within 24 hours, in English or Greek.',
-    markets: 'Markets',
     vat: 'Each price states whether it includes 24% VAT.',
   },
 };
 
-function Row({ item, onClose }: { readonly item: NavItem; readonly onClose: () => void }) {
+function Row({ item, pathname, onClose }: { readonly item: NavItem; readonly pathname: string; readonly onClose: () => void }) {
+  const current = pathname === item.href ? 'page' : pathname.startsWith(item.href + '/') ? 'location' : undefined;
+  const badge = item.badge?.kind === 'free' ? item.badge : undefined;
   const Icon = item.icon ? NAV_ICONS[item.icon] : null;
   const body = (
     <>
@@ -58,12 +56,12 @@ function Row({ item, onClose }: { readonly item: NavItem; readonly onClose: () =
       <span className="min-w-0 flex-1">
         <span className="flex flex-wrap items-center gap-1.5">
           <span className="text-[0.9375rem] font-semibold text-foreground">{item.label}</span>
-          {item.badge ? <MarketingBadge kind={item.badge.kind}>{item.badge.label}</MarketingBadge> : null}
+          {badge ? <MarketingBadge kind={badge.kind} className="text-foreground">{badge.label}</MarketingBadge> : null}
         </span>
-        {item.desc ? <span className="mt-0.5 block truncate text-[0.8125rem] text-muted-foreground">{item.desc}</span> : null}
+        {item.desc ? <span className="mt-0.5 block break-words text-[0.8125rem] text-muted-foreground">{item.desc}</span> : null}
       </span>
       {item.meta ? (
-        <span className="shrink-0 rounded-full bg-primary/12 px-2.5 py-1 font-mono text-[0.6875rem] font-medium text-primary-glow">{item.meta}</span>
+        <span className="shrink-0 rounded-full bg-primary/12 px-2.5 py-1 font-mono text-[0.6875rem] font-medium text-foreground">{item.meta}</span>
       ) : (
         <ChevronRight className="size-4 shrink-0 text-muted-foreground/70" aria-hidden />
       )}
@@ -75,7 +73,7 @@ function Row({ item, onClose }: { readonly item: NavItem; readonly onClose: () =
       {body}
     </a>
   ) : (
-    <Link href={item.href} className={cls} onClick={onClose}>
+    <Link href={item.href} aria-current={current} className={cn(cls, current && 'border-l-2 border-primary bg-primary/10')} onClick={onClose}>
       {body}
     </Link>
   );
@@ -139,82 +137,44 @@ function FeatureBlock({ menu, onClose }: { readonly menu: NavMenu; readonly onCl
   );
 }
 
-/**
- * Full-screen, edge-to-edge mobile navigation.
- *
- * Portalled to <body> so no page stacking context can paint over it. Every
- * row runs to both screen edges and only its content is inset. The sheet
- * opens on a promo line for AnotherSEOGuru App and four proof indicators, then four
- * tabs that mirror the desktop mega menus (same items, same badges and
- * prices, from `getNavModel`). Each tab ends on its offer, and the free audit
- * and WhatsApp stay pinned at the bottom.
- */
-export function MobileNav({ locale, alternateHref, isOpen, onClose, model }: MobileNavProps): ReactElement | null {
+export function MobileNav({ locale, alternateHref, onClose, model }: MobileNavProps): ReactElement | null {
   const nav = getNavDictionary(locale);
+  const pathname = useMarketingPathname();
   const copy = COPY[locale] ?? COPY.en;
   const lp = (path: string) => localizedPath(locale, path);
-  const panelRef = useRef<HTMLDivElement | null>(null);
+  const panelRef = useRef<HTMLDialogElement | null>(null);
   const closeButtonRef = useRef<HTMLButtonElement | null>(null);
-  const restoreFocusRef = useRef<HTMLElement | null>(null);
-  const [portalHost, setPortalHost] = useState<HTMLElement | null>(null);
-  const [tab, setTab] = useState<NavMenu['id']>(model.menus[0]?.id ?? 'software');
+  const [tab, setTab] = useState<NavMenu['id'] | null>(null);
+  const section = model.menus.find((group) => group.columns.some((column) =>
+    column.items.some(({ href }) => href === pathname || pathname.startsWith(href + '/'))
+  ));
   const isAgency = model.mode === 'agency';
 
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setPortalHost(document.body);
-  }, []);
-
-  const handleKeyDown = useCallback(
-    (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
-        event.preventDefault();
-        onClose();
-        return;
-      }
-      if (event.key !== 'Tab') return;
-      const panel = panelRef.current;
-      if (!panel) return;
-      const focusable = panel.querySelectorAll<HTMLElement>('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])');
-      if (focusable.length === 0) return;
-      const first = focusable[0];
-      const last = focusable[focusable.length - 1];
-      if (event.shiftKey && document.activeElement === first) {
-        event.preventDefault();
-        last.focus();
-      } else if (!event.shiftKey && document.activeElement === last) {
-        event.preventDefault();
-        first.focus();
-      }
-    },
-    [onClose],
-  );
-
-  useEffect(() => {
-    if (!isOpen) return;
-    restoreFocusRef.current = document.activeElement as HTMLElement | null;
-    closeButtonRef.current?.focus();
-    document.addEventListener('keydown', handleKeyDown);
+    const dialog = panelRef.current;
+    if (!dialog) return;
+    dialog.showModal();
+    closeButtonRef.current?.focus({ preventScroll: true });
     return () => {
-      document.removeEventListener('keydown', handleKeyDown);
-      restoreFocusRef.current?.focus?.();
+      dialog.close();
+      document.getElementById('mobile-menu-trigger')?.focus({ preventScroll: true });
     };
-  }, [isOpen, handleKeyDown]);
-
-  if (!isOpen || !portalHost) return null;
+  }, []);
 
   const signupHref = appLink('/signup', locale, 'mobile-nav');
   const loginHref = appLink('/login', locale, 'mobile-nav');
-  const menu = model.menus.find((m) => m.id === tab) ?? model.menus[0];
-  const more: NavItem[] = [...model.links, { href: lp('/about'), label: locale === 'el' ? 'Ποιοι είμαστε' : 'About' }, { href: lp('/contact'), label: nav.contact }];
+  const menu = model.menus.find((m) => m.id === tab) ?? section ?? model.menus[0];
+  const more: readonly NavItem[] = isAgency
+    ? [...model.links, { href: lp('/get-started'), label: nav.contact }]
+    : [...model.links, { href: lp('/about'), label: locale === 'el' ? 'Ποιοι είμαστε' : 'About' }, { href: lp('/contact'), label: nav.contact }];
 
   return createPortal(
-    <div
+    <dialog
       ref={panelRef}
-      className="fixed inset-0 z-[100] flex flex-col overscroll-contain bg-background lg:hidden"
-      role="dialog"
+      className="fixed inset-0 m-0 flex h-screen max-h-none w-full max-w-none flex-col overscroll-contain border-0 bg-background p-0 text-foreground supports-[height:100dvh]:h-dvh lg:hidden"
+      onCancel={(event) => { event.preventDefault(); onClose(); }}
       aria-modal="true"
-      aria-label={nav.openMenu}
+      aria-label={locale === 'el' ? 'Πλοήγηση' : 'Navigation'}
     >
       <div className="shrink-0 border-b border-hairline">
         <div className="flex items-center justify-between gap-2 px-4 pb-3 pt-[max(0.75rem,env(safe-area-inset-top))] min-[400px]:px-5">
@@ -267,7 +227,7 @@ export function MobileNav({ locale, alternateHref, isOpen, onClose, model }: Mob
             {model.startFree.label}
           </a>
           <div className="mt-2.5 flex items-center justify-between gap-3 text-[0.8125rem]">
-            <span className="min-w-0 truncate text-muted-foreground">{nav.signUpNote}</span>
+            <span className="min-w-0 text-muted-foreground">{locale === 'el' ? 'Μόνο για ανάγνωση στο Search Console' : 'Read-only Search Console access'}</span>
             <a href={loginHref} onClick={onClose} className="shrink-0 font-medium text-link">
               {nav.logIn}
             </a>
@@ -281,34 +241,52 @@ export function MobileNav({ locale, alternateHref, isOpen, onClose, model }: Mob
             <button
               key={m.id}
               role="tab"
+              id={`mobile-tab-${m.id}`}
+              aria-controls="mobile-nav-content"
+              tabIndex={menu.id === m.id ? 0 : -1}
+              onKeyDown={(event) => {
+                const index = model.menus.indexOf(m);
+                const count = model.menus.length;
+                const next = {
+                  ArrowRight: (index + 1) % count,
+                  ArrowLeft: (index + count - 1) % count,
+                  Home: 0,
+                  End: count - 1,
+                }[event.key];
+                if (next === undefined) return;
+                event.preventDefault();
+                const nextId = model.menus[next].id;
+                setTab(nextId);
+                document.getElementById(`mobile-tab-${nextId}`)?.focus();
+              }}
               type="button"
-              aria-selected={tab === m.id}
+              aria-selected={menu.id === m.id}
               onClick={() => setTab(m.id)}
               className={cn(
                 'relative flex min-h-12 shrink-0 flex-1 items-center justify-center gap-1.5 whitespace-nowrap px-3 text-[0.84375rem] font-medium transition-colors',
-                tab === m.id ? 'text-foreground' : 'text-muted-foreground',
+                menu.id === m.id ? 'text-foreground' : 'text-muted-foreground',
               )}
             >
               {m.label}
               {m.badge ? <span aria-label={m.badge.label} className="size-2 rounded-full bg-signal" /> : null}
-              <span className={cn('absolute inset-x-3 bottom-0 h-0.5 rounded-full', tab === m.id ? ('bg-primary') : 'bg-transparent')} />
+              <span className={cn('absolute inset-x-3 bottom-0 h-0.5 rounded-full', menu.id === m.id ? ('bg-primary') : 'bg-transparent')} />
             </button>
           ))}
         </div>
 
-        <div role="tabpanel">
+        <div id="mobile-nav-content" role="tabpanel" aria-labelledby={`mobile-tab-${menu.id}`}>
           {menu.columns.map((col) => (
             <div key={col.title}>
               <p className="px-5 pb-1.5 pt-4 font-mono text-[0.6875rem] uppercase tracking-[0.16em] text-brand">{col.title}</p>
               <div className="divide-y divide-hairline border-y border-hairline">
                 {col.items.map((item) => (
-                  <Row key={item.href + item.label} item={item} onClose={onClose} />
+                  <Row key={item.href + item.label} item={item} pathname={pathname} onClose={onClose} />
                 ))}
               </div>
             </div>
           ))}
           {menu.footer ? (
-            <Link href={menu.footer.href} onClick={onClose} className="flex min-h-12 items-center justify-between px-5 text-sm font-semibold text-link">
+            <Link href={menu.footer.href} aria-current={pathname === menu.footer.href ? "page" : undefined} onClick={onClose} className="aria-[current=page]:bg-primary/10 flex min-h-12 items-center justify-between px-5 text-sm font-semibold text-link">
               {menu.footer.label}
               <ArrowRight className="size-4" />
             </Link>
@@ -320,7 +298,7 @@ export function MobileNav({ locale, alternateHref, isOpen, onClose, model }: Mob
         <p className="px-5 pb-1.5 pt-5 font-mono text-[0.6875rem] uppercase tracking-[0.16em] text-brand">{copy.more}</p>
         <div className="divide-y divide-hairline border-y border-hairline">
           {more.map((item) => (
-            <Link key={item.href} href={item.href} onClick={onClose} className="flex min-h-14 items-center justify-between px-5 text-[0.9375rem] text-foreground active:bg-surface-raised">
+            <Link key={item.href} href={item.href} aria-current={item.href === pathname ? "page" : undefined} onClick={onClose} className="aria-[current=page]:bg-primary/10 aria-[current=page]:text-primary flex min-h-14 items-center justify-between px-5 text-[0.9375rem] text-foreground active:bg-surface-raised">
               {item.label}
               <ChevronRight className="size-4 text-muted-foreground/70" aria-hidden />
             </Link>
@@ -373,7 +351,7 @@ export function MobileNav({ locale, alternateHref, isOpen, onClose, model }: Mob
           </a>
         )}
       </div>
-    </div>,
-    portalHost,
+    </dialog>,
+    document.body,
   );
 }

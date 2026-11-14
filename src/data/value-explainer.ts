@@ -16,36 +16,36 @@ export interface ValueStep {
 export const HOW_STEPS: readonly ValueStep[] = [
   {
     n: '01',
-    titleEn: 'We find',
-    titleEl: 'Βρίσκουμε',
+    titleEn: 'Connect your site',
+    titleEl: 'Συνδέστε την ιστοσελίδα σας',
     bodyEn:
-      'We read your Search Console (read only), check your pages and compare you with competitors using Ahrefs data. We also ask ChatGPT, Gemini and Perplexity whether they recommend you.',
+      'Choose a site in Google Search Console and give the app read-only access. It uses your pages and search queries to find places where a change could bring more clicks.',
     bodyEl:
-      'Διαβάζουμε το Search Console σας (μόνο ανάγνωση), ελέγχουμε τις σελίδες σας και σας συγκρίνουμε με τους ανταγωνιστές με δεδομένα Ahrefs. Ρωτάμε επίσης το ChatGPT, το Gemini και το Perplexity αν σας προτείνουν.',
+      'Επιλέξτε την ιστοσελίδα σας στο Google Search Console και δώστε πρόσβαση μόνο για ανάγνωση. Η εφαρμογή εξετάζει τις σελίδες σας και τις αναζητήσεις στις οποίες εμφανίζονται για να βρει πού υπάρχει περιθώριο για περισσότερα κλικ.',
   },
   {
     n: '02',
-    titleEn: 'You fix',
-    titleEl: 'Διορθώνετε',
+    titleEn: 'Choose a change to make',
+    titleEl: 'Επιλέξτε τι θα αλλάξετε',
     bodyEn:
-      'Every week you get a short, ordered list of fixes with the text ready: title, description, FAQ, schema. On WordPress you apply them in one click.',
+      'Pick a suggestion from your weekly list. Review the draft title, description or page edit. If you use the WordPress plugin, you can approve changes in the editor.',
     bodyEl:
-      'Κάθε εβδομάδα παίρνετε λίγες διορθώσεις με σειρά και έτοιμο κείμενο: τίτλο, περιγραφή, FAQ, schema. Στο WordPress τις εφαρμόζετε με ένα κλικ.',
+      'Διαλέξτε μια πρόταση από την εβδομαδιαία λίστα και διαβάστε τον νέο τίτλο, την περιγραφή ή τη διόρθωση που προτείνεται. Με το πρόσθετο για WordPress μπορείτε να εγκρίνετε τις αλλαγές μέσα από τον επεξεργαστή.',
   },
   {
     n: '03',
-    titleEn: 'We measure',
-    titleEl: 'Μετράμε',
+    titleEn: 'Follow the page after publication',
+    titleEl: 'Δείτε τι έγινε μετά τη δημοσίευση',
     bodyEn:
-      '28 days before and after every fix, with clicks from Google and mentions in AI answers. You see it in the app and in the Monday email.',
+      'Mark the date you published. Once 28 days have passed, compare search clicks with the previous 28 days. Your chart keeps the date of the edit beside the numbers.',
     bodyEl:
-      '28 ημέρες πριν και μετά από κάθε διόρθωση, με κλικ από το Google και αναφορές στις απαντήσεις AI. Το βλέπετε στην εφαρμογή και στο email της Δευτέρας.',
+      'Σημειώστε πότε δημοσιεύσατε την αλλαγή. Μόλις περάσουν 28 ημέρες, συγκρίνετε τα κλικ από τη Google με τις προηγούμενες 28. Η ημερομηνία της αλλαγής φαίνεται πάνω στο γράφημα.',
   },
 ];
 
 export const VALUE_HONESTY = {
-  en: "We don't promise rankings. We show what changed, with your own numbers from Google. A before and after comparison doesn't prove the change caused it.",
-  el: 'Δεν υποσχόμαστε κατάταξη. Δείχνουμε τι άλλαξε, με τα δικά σας νούμερα από το Google. Η σύγκριση πριν και μετά δεν αποδεικνύει ότι η αλλαγή το προκάλεσε.',
+  en: "The figures come from Google Search Console. The comparison shows how clicks changed over the period. Seasonality and other changes to a site can also affect the result.",
+  el: 'Τα στοιχεία προέρχονται από το Google Search Console και δείχνουν πώς άλλαξαν τα κλικ μέσα στην περίοδο σύγκρισης. Η εποχικότητα και άλλες αλλαγές στην ιστοσελίδα μπορούν επίσης να επηρεάσουν το αποτέλεσμα.',
 } as const;
 
 /** SEO next to AEO / GEO in plain words: what we want, what we do, how we measure. */
@@ -62,10 +62,10 @@ export const SEO_VS_AI: readonly SearchKindRow[] = [
   {
     labelEn: 'The goal',
     labelEl: 'Ο στόχος',
-    seoEn: 'Show up high on Google and get the click',
-    seoEl: 'Να βγαίνετε ψηλά στο Google και να σας πατάνε',
-    aiEn: 'Get recommended by the AI, with a link to you',
-    aiEl: 'Να σας προτείνει το AI, με link προς εσάς',
+    seoEn: 'Help people find your pages in Google search results',
+    seoEl: 'Να βρίσκουν οι πελάτες τις σελίδες σας στα αποτελέσματα της Google',
+    aiEn: 'Earn a mention and a link in relevant AI answers',
+    aiEl: 'Να αναφέρεται η επιχείρησή σας σε σχετικές απαντήσεις AI με σύνδεσμο προς την ιστοσελίδα σας',
   },
   {
     labelEn: 'What we fix',
@@ -73,7 +73,7 @@ export const SEO_VS_AI: readonly SearchKindRow[] = [
     seoEn: 'Titles, content, speed, internal links',
     seoEl: 'Τίτλους, περιεχόμενο, ταχύτητα, εσωτερικά links',
     aiEn: 'Clear answers, FAQ, schema, mentions of your brand',
-    aiEl: 'Καθαρές απαντήσεις, FAQ, schema, αναφορές της επωνυμίας σας',
+    aiEl: 'Σαφείς απαντήσεις, FAQ, schema, αναφορές της επωνυμίας σας',
   },
   {
     labelEn: 'How we measure',
@@ -81,14 +81,14 @@ export const SEO_VS_AI: readonly SearchKindRow[] = [
     seoEn: 'Clicks and position in your Search Console',
     seoEl: 'Κλικ και θέση στο Search Console σας',
     aiEn: 'How many tracked questions mention you, citations, AI visits in GA4',
-    aiEl: 'Σε πόσες ερωτήσεις σας αναφέρει, παραπομπές, επισκέψεις από AI στο GA4',
+    aiEl: 'Σε ποιες απαντήσεις αναφέρεστε, ποιοι σύνδεσμοι εμφανίζονται και πόσες επισκέψεις από AI καταγράφει το GA4',
   },
 ];
 
 /** What each plan gets you, as an outcome, not a tool list. Keyed by the plan id in src/data/app-plans. */
 export const PLAN_OUTCOMES: Readonly<Record<string, { readonly en: string; readonly el: string }>> = {
-  free: { en: 'See your top 5 fixes every week and what each one brought.', el: 'Δείτε τις 5 πρώτες διορθώσεις κάθε εβδομάδα και τι έφερε η καθεμία.' },
-  starter: { en: 'Every fix every week, not just the top 5, measured before and after.', el: 'Όλες οι διορθώσεις κάθε εβδομάδα, όχι μόνο οι 5 πρώτες, μετρημένες πριν και μετά.' },
-  pro: { en: 'Find out whether ChatGPT recommends you, and what is missing.', el: 'Μάθετε αν σας προτείνει το ChatGPT και τι λείπει.' },
-  agency: { en: 'Branded reports that prove the result for up to 30 client sites.', el: 'Αναφορές με το δικό σας σήμα που δείχνουν το αποτέλεσμα για έως 30 ιστοσελίδες πελατών.' },
+  free: { en: 'Review your five highest-priority suggestions each week.', el: 'Δείτε κάθε εβδομάδα τις πέντε προτάσεις με τη μεγαλύτερη προτεραιότητα.' },
+  starter: { en: 'Work through the full weekly list and check how clicks change after each edit.', el: 'Δείτε όλη την εβδομαδιαία λίστα και παρακολουθήστε πώς αλλάζουν τα κλικ μετά από κάθε διόρθωση.' },
+  pro: { en: 'Compare how AI assistants describe your business and which competitors they mention.', el: 'Δείτε πώς παρουσιάζουν την επιχείρησή σας οι βοηθοί AI και ποιους ανταγωνιστές αναφέρουν.' },
+  agency: { en: 'Show each client what you worked on and how their search traffic changed.', el: 'Δείξτε σε κάθε πελάτη τι δουλειά κάνατε και πώς εξελίχθηκαν οι επισκέψεις του από τη Google.' },
 };

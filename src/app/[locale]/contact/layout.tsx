@@ -8,11 +8,11 @@ export async function generateMetadata({ params }: LayoutProps): Promise<Metadat
   const { locale } = await params;
   if (!isValidLocale(locale)) return {};
   return buildMetadata({
-    title: locale === 'el' ? 'Επικοινωνία - Υποστήριξη AnotherSEOGuru App' : 'Contact - AnotherSEOGuru App Support',
+    title: locale === 'el' ? 'Επικοινωνία με την ομάδα του AnotherSEOGuru' : 'Contact the AnotherSEOGuru Team',
     description:
       locale === 'el'
-        ? 'Επικοινωνήστε με την ομάδα του AnotherSEOGuru App για ερωτήσεις, βοήθεια με τον λογαριασμό ή επίδειξη. Απάντηση εντός 24 ωρών.'
-        : 'Contact the AnotherSEOGuru App team for questions, account help or a demo. We reply within 24 hours.',
+        ? 'Ρωτήστε για το AnotherSEOGuru App, ζητήστε βοήθεια με το SEO ή συζητήστε μια νέα ιστοσελίδα. Απαντάμε μέσα σε 24 εργάσιμες ώρες.'
+        : 'Ask about an AnotherSEOGuru App plan, get help with SEO or discuss a website project. Our team replies within 24 working hours.',
     path: localizedPath(locale as SiteLocale, '/contact'),
     hreflangPath: '/contact',
   });

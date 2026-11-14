@@ -13,7 +13,7 @@
   },
   "/el/pos-leitourgei": {
     "title": "Πώς Λειτουργεί το SEO, Βήμα προς Βήμα | AnotherSEOGuru",
-    "description": "Πώς λειτουργεί το SEO στο AnotherSEOGuru App: σύνδεση Search Console, ευκαιρίες που γίνονται εργασίες, υλοποίηση και σύγκριση 28 ημερών. Κλείστε μια κλήση."
+    "description": "Δείτε πώς μια αναζήτηση οδηγεί σε συγκεκριμένη διόρθωση για τη σελίδα ενός ξενοδοχείου και πώς συγκρίνετε τα κλικ πριν και μετά τη δημοσίευση της αλλαγής."
   },
   "/el/seo-services/on-page": {
     "title": "On-page SEO: Title, Επικεφαλίδες & Κείμενο | AnotherSEOGuru",
@@ -69,7 +69,7 @@
   },
   "/en/how-it-works": {
     "title": "How SEO Software Works in Search Console | AnotherSEOGuru",
-    "description": "See how SEO software works from your own Search Console: opportunities become tasks, you ship the change, then a 28-day comparison starts. Book a call."
+    "description": "Follow one hotel page from a Search Console query to a suggested edit in AnotherSEOGuru App. Compare its clicks before and after publishing the change."
   },
   "/en/tourism-seo": {
     "title": "Tourism SEO Agency for Hotels and Tours | AnotherSEOGuru",
@@ -714,5 +714,17 @@
   "/el/seo/kyklades": {
     "title": "SEO Κυκλάδες: Υπηρεσίες SEO & Google Maps | AnotherSEOGuru",
     "description": "Υπηρεσίες SEO στις Κυκλάδες για Σαντορίνη, Μύκονο, Πάρο, Νάξο και Μήλο: Google Maps, πολύγλωσσες σελίδες και απευθείας κρατήσεις. Ζητήστε δωρεάν έλεγχο."
+  },
+  "/el/solutions/hotels/website-creation": {
+    "title": "Κατασκευή ιστοσελίδας ξενοδοχείου για απευθείας κρατήσεις",
+    "description": "Σχεδιάζουμε την ιστοσελίδα του ξενοδοχείου σας με σελίδες δωματίων, όρους διαμονής και σύνδεση με τη μηχανή κρατήσεων. Ζητήστε προσφορά για το κατάλυμα."
+  },
+  "/el/solutions/real-estate/website-creation": {
+    "title": "Κατασκευή ιστοσελίδας μεσιτικού γραφείου με αγγελίες",
+    "description": "Ιστοσελίδα μεσιτικού γραφείου με φίλτρα περιοχής, σελίδες ακινήτων και φόρμα επίσκεψης για κάθε αγγελία. Δείτε πώς εξυπηρετεί αγοραστές και ιδιοκτήτες."
+  },
+  "/el/solutions/lawyers": {
+    "title": "Ιστοσελίδες δικηγορικών γραφείων με ραντεβού και τοπικό SEO",
+    "description": "Η ιστοσελίδα του γραφείου σας εξηγεί ποιες υποθέσεις αναλαμβάνετε και πώς κλείνει κανείς την πρώτη συνάντηση. Δείτε τι περιλαμβάνει η κατασκευή με SEO."
   }
 }

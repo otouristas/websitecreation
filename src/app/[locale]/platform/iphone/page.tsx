@@ -47,8 +47,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     path: PATH,
     title: { en: "SEO App for iPhone: AnotherSEOGuru App (Beta)", el: "Εφαρμογή SEO για iPhone: AnotherSEOGuru App" },
     description: {
-      en: "The AnotherSEOGuru App iPhone app turns your Google Search Console data into this week's fixes, with rank tracking, alerts, AI evidence and widgets. Now in beta.",
-      el: "Η εφαρμογή AnotherSEOGuru App για iPhone κάνει τα δεδομένα του Google Search Console διορθώσεις της εβδομάδας, με θέσεις, ειδοποιήσεις, δεδομένα AI και widgets. Σε beta.",
+      en: "Check which pages lost clicks, track your rankings and see this week’s SEO tasks on your iPhone. Request an invitation to the AnotherSEOGuru TestFlight beta.",
+      el: "Δείτε στο iPhone σας ποιες σελίδες έχασαν κλικ, τις θέσεις σας στη Google και τις εργασίες SEO της εβδομάδας. Ζητήστε πρόσκληση για τη δοκιμαστική έκδοση.",
     },
     keyword: { en: "Search Console app for iPhone", el: "εφαρμογή Search Console για iPhone" },
   });
@@ -59,121 +59,121 @@ const SCREENS: ReadonlyArray<{ file: string; title: Copy; caption: Copy }> = [
   {
     file: "today",
     title: c("Today", "Σήμερα"),
-    caption: c("Search health, clicks, impressions, CTR and position against the previous 28 days.", "Υγεία αναζήτησης, κλικ, εμφανίσεις, CTR και θέση σε σύγκριση με τις προηγούμενες 28 ημέρες."),
+    caption: c("Compare clicks, impressions, click-through rate and average position with the previous 28 days.", "Συγκρίνετε τα κλικ, τις εμφανίσεις, το ποσοστό κλικ και τη μέση θέση με τις προηγούμενες 28 ημέρες."),
   },
   {
     file: "ranking-ladder",
     title: c("Ranking ladder", "Κλίμακα θέσεων"),
-    caption: c("How many searches sit in the top 3, 10, 20 and 100, and what needs attention.", "Πόσες αναζητήσεις είναι στο top 3, 10, 20 και 100, και τι χρειάζεται προσοχή."),
+    caption: c("See how many searches put your site in the top 3, 10, 20 or 100 results.", "Δείτε σε πόσες αναζητήσεις η ιστοσελίδα σας εμφανίζεται στις πρώτες 3, 10, 20 ή 100 θέσεις."),
   },
   {
     file: "search-detail",
     title: c("Any search, in detail", "Κάθε αναζήτηση αναλυτικά"),
-    caption: c("Its trend, the pages ranking for it, and one tap to track rank or ask the assistant.", "Η πορεία της, οι σελίδες που κατατάσσονται και με ένα πάτημα παρακολούθηση θέσης ή ερώτηση στον βοηθό."),
+    caption: c("Choose a search to see which of your pages appear. Track your position or ask Aster AI about a change.", "Επιλέξτε μια αναζήτηση για να δείτε ποιες σελίδες σας εμφανίζονται. Παρακολουθήστε τη θέση σας ή ρωτήστε τον Aster AI γιατί άλλαξε."),
   },
   {
     file: "serp-explorer",
-    title: c("SERP explorer", "SERP explorer"),
-    caption: c("The live Google top 10 for a search and who gets the clicks.", "Το ζωντανό top 10 της Google για μια αναζήτηση και ποιος παίρνει τα κλικ."),
+    title: c("Google search results", "Αποτελέσματα Google"),
+    caption: c("Check today’s top ten results for a search and see how clicks are distributed.", "Δείτε ποιες δέκα σελίδες εμφανίζονται πρώτες στη Google και πώς μοιράζονται τα κλικ."),
   },
   {
     file: "ai-overview-cited",
     title: c("AI Overview check", "Έλεγχος AI Overview"),
-    caption: c("See the AI Overview for a search and whether your site is cited in it.", "Δείτε το AI Overview μιας αναζήτησης και αν αναφέρεται ο ιστότοπός σας."),
+    caption: c("Check whether Google’s AI Overview links to your site for a particular search.", "Δείτε αν η επισκόπηση AI της Google περιλαμβάνει σύνδεσμο προς την ιστοσελίδα σας για μια συγκεκριμένη αναζήτηση."),
   },
   {
     file: "traffic-acquisition",
     title: c("Traffic acquisition", "Πηγές επισκεψιμότητας"),
-    caption: c("Google Analytics 4 sessions by channel, AI assistants counted separately.", "Συνεδρίες Google Analytics 4 ανά κανάλι, με τους βοηθούς AI χωριστά."),
+    caption: c("See where visits come from in Google Analytics 4. AI assistants are listed separately.", "Δείτε από πού ήρθαν οι επισκέπτες σας σύμφωνα με το Google Analytics 4. Οι επισκέψεις από βοηθούς AI εμφανίζονται ξεχωριστά."),
   },
   {
     file: "ai-evidence",
-    title: c("AI evidence", "Δεδομένα AI"),
-    caption: c("Visits from ChatGPT, Copilot, Perplexity and Gemini, and mentions in AI answers.", "Επισκέψεις από ChatGPT, Copilot, Perplexity και Gemini, και αναφορές σε απαντήσεις AI."),
+    title: c("AI mentions and visits", "Αναφορές και επισκέψεις από AI"),
+    caption: c("See which AI answers mention your site and how many visits came from ChatGPT, Copilot, Perplexity or Gemini.", "Δείτε σε ποιες απαντήσεις AI αναφέρεται η ιστοσελίδα σας και πόσες επισκέψεις ήρθαν από ChatGPT, Copilot, Perplexity ή Gemini."),
   },
   {
     file: "keyword-research",
     title: c("Keyword research", "Έρευνα λέξεων-κλειδιών"),
-    caption: c("Volume, difficulty, CPC, intent and the 12-month trend for any keyword.", "Όγκος, δυσκολία, CPC, πρόθεση και η πορεία 12 μηνών για κάθε λέξη-κλειδί."),
+    caption: c("Look up how often people search for a term, what they’re looking for and how demand changed over the last year.", "Δείτε πόσο συχνά αναζητά ο κόσμος έναν όρο, τι θέλει να βρει και πώς άλλαξε το ενδιαφέρον τον τελευταίο χρόνο."),
   },
   {
     file: "sign-in",
     title: c("Sign in", "Σύνδεση"),
-    caption: c("Sign in with Apple, Google or email, or explore the sample workspace first.", "Σύνδεση με Apple, Google ή email, ή εξερευνήστε πρώτα το δείγμα."),
+    caption: c("Sign in with Apple, Google or email. To look around first, open the sample account.", "Συνδεθείτε με Apple, Google ή email. Για να δείτε πρώτα πώς λειτουργεί η εφαρμογή, ανοίξτε τον δοκιμαστικό λογαριασμό."),
   },
 ];
 
 const FEATURES: ReadonlyArray<{ icon: LucideIcon; title: Copy; text: Copy }> = [
   {
     icon: ListChecks,
-    title: c("This week's fixes", "Οι διορθώσεις της εβδομάδας"),
+    title: c("Which page to work on", "Με ποια σελίδα να ξεκινήσετε"),
     text: c(
-      "Striking-distance searches, low CTR, decaying pages, cannibalization and missing content, prioritized using estimated click opportunities. Estimates do not promise traffic.",
-      "Αναζητήσεις κοντά στην πρώτη σελίδα, χαμηλό CTR, σελίδες σε πτώση, αλληλοεπικάλυψη και περιεχόμενο που λείπει, με προτεραιότητα βάσει εκτιμώμενων ευκαιριών για κλικ. Οι εκτιμήσεις δεν υπόσχονται κίνηση.",
+      "Find pages that have lost clicks or appear often but get few visits. An estimate of the extra clicks each change could bring helps you choose where to start.",
+      "Δείτε ποιες σελίδες έχασαν κλικ ή εμφανίζονται συχνά αλλά δέχονται λίγες επισκέψεις. Η εφαρμογή εκτιμά πόσα επιπλέον κλικ θα μπορούσε να φέρει κάθε αλλαγή για να επιλέξετε από πού θα ξεκινήσετε.",
     ),
   },
   {
     icon: CheckCircle2,
-    title: c("Fix, ship, measure", "Διόρθωση, δημοσίευση, μέτρηση"),
+    title: c("Results after an edit", "Τι απέδωσε μια αλλαγή"),
     text: c(
-      "Mark a task shipped and the app compares clicks before and after (14, 28 or 56 days), then calls it Won, Flat or Lost.",
-      "Σημειώστε μια εργασία ως ολοκληρωμένη και η εφαρμογή συγκρίνει τα κλικ πριν και μετά (14, 28 ή 56 ημέρες) και τη χαρακτηρίζει Κέρδος, Σταθερή ή Απώλεια.",
+      "Record when you published a change. Compare clicks before and after over 14, 28 or 56 days to see whether they rose, stayed level or fell.",
+      "Σημειώστε πότε δημοσιεύσατε την αλλαγή. Συγκρίνετε τα κλικ πριν και μετά, σε διάστημα 14, 28 ή 56 ημερών, για να δείτε αν αυξήθηκαν, έμειναν σταθερά ή μειώθηκαν.",
     ),
   },
   {
     icon: Bot,
-    title: c("Assistant on your data", "Βοηθός με τα δικά σας δεδομένα"),
+    title: c("Ask Aster AI about a page", "Ρωτήστε τον Aster AI για μια σελίδα"),
     text: c(
-      "Ask questions about the selected site's Search Console data; save any answer as a task.",
-      "Κάντε ερωτήσεις για τα δεδομένα Search Console του ιστότοπου· αποθηκεύστε κάθε απάντηση ως εργασία.",
+      "Choose your site and ask about its Search Console figures. If the answer suggests a change you want to make, save it as a task.",
+      "Επιλέξτε ιστοσελίδα και ρωτήστε για τα στοιχεία της στο Search Console. Αν θέλετε να δοκιμάσετε μια πρόταση του Aster AI, αποθηκεύστε τη ως εργασία.",
     ),
   },
   {
     icon: Target,
-    title: c("Rank tracking", "Παρακολούθηση θέσεων"),
+    title: c("Rank tracking", "Η θέση σας στη Google"),
     text: c(
-      "Your tracked keywords with the daily Google position from Search Console, best position and 7-day movement.",
-      "Οι λέξεις-κλειδιά σας με την καθημερινή θέση στη Google από το Search Console, την καλύτερη θέση και την κίνηση 7 ημερών.",
+      "See the latest daily position for each keyword you track in Search Console, its best position and how it moved this week.",
+      "Για κάθε λέξη-κλειδί που παρακολουθείτε, δείτε την τελευταία ημερήσια θέση από το Search Console, την καλύτερη θέση της και πώς κινήθηκε την τελευταία εβδομάδα.",
     ),
   },
   {
     icon: Bell,
-    title: c("Alerts and push", "Ειδοποιήσεις και push"),
+    title: c("Notifications you choose", "Εσείς επιλέγετε τις ειδοποιήσεις"),
     text: c(
-      "Choose task, approval, report, conversation, payment and connection updates. Account preferences sync with web, with daily or weekly summaries, a chosen time zone, quiet hours and a daily cap. Device permission is separate.",
-      "Επιλέξτε ενημερώσεις εργασιών, εγκρίσεων, αναφορών, συζητήσεων, πληρωμών και συνδέσεων. Οι προτιμήσεις συγχρονίζονται με το web: ημερήσια ή εβδομαδιαία σύνοψη, ζώνη ώρας, ώρες ησυχίας και ημερήσιο όριο. Η άδεια κάθε συσκευής είναι ξεχωριστή.",
+      "Choose which tasks, approvals, reports or account updates you want to hear about. Set a daily or weekly summary, quiet hours and a daily limit. Allow notifications on your iPhone to receive them there.",
+      "Επιλέξτε για ποιες εργασίες, εγκρίσεις, αναφορές ή αλλαγές λογαριασμού θέλετε ενημέρωση. Ορίστε καθημερινή ή εβδομαδιαία σύνοψη, ώρες ησυχίας και ημερήσιο όριο. Για να λαμβάνετε ειδοποιήσεις στο iPhone, επιτρέψτε τις στις ρυθμίσεις της συσκευής.",
     ),
   },
   {
     icon: Sparkles,
-    title: c("AI visibility", "Ορατότητα σε AI"),
+    title: c("Where AI mentions your site", "Πού σας αναφέρουν οι βοηθοί AI"),
     text: c(
-      "AI Overview citations, visits from AI assistants and mentions in AI answers, side by side.",
-      "Αναφορές σε AI Overviews, επισκέψεις από βοηθούς AI και αναφορές σε απαντήσεις AI, δίπλα δίπλα.",
+      "See which AI answers mention your site, when Google includes it in an AI Overview and which assistants have sent visitors.",
+      "Δείτε σε ποιες απαντήσεις AI αναφέρεται η ιστοσελίδα σας, πότε τη συμπεριλαμβάνει η Google στις επισκοπήσεις AI και ποιοι βοηθοί σάς έφεραν επισκέπτες.",
     ),
   },
   {
     icon: LayoutGrid,
-    title: c("Widgets", "Widgets"),
+    title: c("Home and Lock Screen widgets", "Widget για την αρχική οθόνη και την οθόνη κλειδώματος"),
     text: c(
-      "Home and Lock Screen widgets show clicks and fixes from your last saved report. Open the app to refresh the source; the snapshot is not a live Google traffic feed.",
-      "Widgets στην αρχική οθόνη και στην οθόνη κλειδώματος δείχνουν κλικ και διορθώσεις από την τελευταία αποθηκευμένη αναφορά. Ανοίξτε την εφαρμογή για ανανέωση· το στιγμιότυπο δεν είναι ζωντανή ροή κίνησης από τη Google.",
+      "See clicks and suggested fixes from your last saved report at a glance. Open the app to refresh the figures.",
+      "Δείτε με μια ματιά τα κλικ και τις προτεινόμενες διορθώσεις από την τελευταία αποθηκευμένη αναφορά. Ανοίξτε την εφαρμογή για να ενημερωθούν τα στοιχεία.",
     ),
   },
   {
     icon: LineChart,
-    title: c("Client reports", "Αναφορές πελατών"),
+    title: c("Client reports", "Αναφορές για πελάτες"),
     text: c(
-      "Preview the branded client report from the web app and email it from your phone.",
-      "Προεπισκόπηση της επώνυμης αναφοράς πελάτη από την εφαρμογή web και αποστολή της με email από το κινητό.",
+      "Open a client report you prepared on the web, check the version with your branding and email it from your phone.",
+      "Ανοίξτε την αναφορά που ετοιμάσατε για τον πελάτη σας, ελέγξτε πώς φαίνεται με το λογότυπό σας και στείλτε τη με email από το κινητό.",
     ),
   },
   {
     icon: Languages,
-    title: c("Greek and English", "Ελληνικά και αγγλικά"),
+    title: c("Language and display", "Γλώσσα και εμφάνιση"),
     text: c(
-      "Greek and English, synced with your web account, plus light/dark appearance and scalable text on iPhone.",
-      "Ελληνικά και αγγλικά, συγχρονισμένα με τον λογαριασμό σας στο web, φωτεινή/σκούρα εμφάνιση και κείμενο που προσαρμόζεται στο iPhone.",
+      "Your Greek or English language choice carries across to the web. Adjust the text size on iPhone or switch between light and dark appearance.",
+      "Η επιλογή σας για ελληνικά ή αγγλικά ισχύει και στον υπολογιστή. Στο iPhone μπορείτε να αλλάξετε το μέγεθος των γραμμάτων και να επιλέξετε φωτεινή ή σκούρα εμφάνιση.",
     ),
   },
 ];
@@ -182,37 +182,37 @@ const FAQ: ReadonlyArray<GscFaqItem> = [
   {
     q: c("Is the AnotherSEOGuru iPhone app on the App Store?", "Είναι η εφαρμογή AnotherSEOGuru για iPhone στο App Store;"),
     a: c(
-      "Not yet. The app is in beta through Apple's TestFlight. Email us for beta access and we'll send you an invite; the App Store release follows the beta.",
-      "Όχι ακόμη. Η εφαρμογή είναι σε beta μέσω του TestFlight της Apple. Στείλτε μας email για πρόσβαση και θα σας στείλουμε πρόσκληση· η κυκλοφορία στο App Store ακολουθεί μετά τη beta.",
+      "The current iPhone version is available by invitation through Apple’s TestFlight. Email us to request an invite.",
+      "Η δοκιμαστική έκδοση για iPhone διατίθεται με πρόσκληση μέσω του TestFlight της Apple. Στείλτε μας email για να ζητήσετε πρόσβαση.",
     ),
   },
   {
     q: c("Do I need a separate subscription for the app?", "Χρειάζομαι ξεχωριστή συνδρομή για την εφαρμογή;"),
     a: c(
-      "No. Use the same account on iPhone and app.anotherseoguru.com to keep your plan, projects and credits together. App Store plans, where offered, show Apple's local price and renewal terms before purchase. An existing web subscription stays managed by its original billing provider.",
-      "Όχι. Χρησιμοποιήστε τον ίδιο λογαριασμό σε iPhone και app.anotherseoguru.com για κοινό πρόγραμμα, έργα και μονάδες. Όπου διατίθενται προγράμματα App Store, η τοπική τιμή και οι όροι ανανέωσης της Apple εμφανίζονται πριν από την αγορά. Μια υπάρχουσα συνδρομή web παραμένει στον αρχικό πάροχο χρέωσης.",
+      "Your web plan covers the iPhone app. Sign in with the same account to see your projects and credits. Manage an existing subscription where you bought it. For plans offered through Apple, you’ll see the local price and renewal terms before you buy.",
+      "Το πακέτο που έχετε στον υπολογιστή καλύπτει και το iPhone. Με τον ίδιο λογαριασμό βλέπετε τα έργα και τις μονάδες σας. Διαχειρίζεστε τη συνδρομή σας εκεί όπου την αγοράσατε. Αν επιλέξετε πακέτο μέσω της Apple, θα δείτε την τοπική τιμή και τους όρους ανανέωσης πριν από την αγορά.",
     ),
     link: { kind: "site", path: "/pricing", label: c("See the plans", "Δείτε τα πακέτα") },
   },
   {
-    q: c("Does the app rank fixes the same way as the web app?", "Βγάζει η εφαρμογή τις ίδιες διορθώσεις με την εφαρμογή web;"),
+    q: c("Does the app rank fixes the same way as the web app?", "Θα δω στο iPhone τις ίδιες προτάσεις που βλέπω στον υπολογιστή;"),
     a: c(
-      "Yes. The app's opportunity engine and its fix-ship-measure loop are ports of the web app's own code, so both rank the same fixes for the same site.",
-      "Ναι. Ο μηχανισμός ευκαιριών και ο κύκλος διόρθωση-δημοσίευση-μέτρηση της εφαρμογής είναι μεταφορά του κώδικα της εφαρμογής web, οπότε και οι δύο βγάζουν τις ίδιες διορθώσεις για τον ίδιο ιστότοπο.",
+      "Yes. Open the same site on your iPhone or the web and you’ll see the same suggested fixes, in the same order.",
+      "Ναι. Αν ανοίξετε την ίδια ιστοσελίδα στο iPhone και στον υπολογιστή, θα δείτε τις ίδιες προτεινόμενες διορθώσεις με την ίδια σειρά.",
     ),
   },
   {
     q: c("Which iPhones does it support?", "Ποια iPhone υποστηρίζει;"),
     a: c(
-      "iPhone and iPad on iOS 17 or later. It is a native SwiftUI app, not a web view, with the Liquid Glass navigation on iOS 26 and later.",
-      "iPhone και iPad με iOS 17 ή νεότερο. Είναι εγγενής εφαρμογή SwiftUI, όχι web view, με την πλοήγηση Liquid Glass στο iOS 26 και νεότερα.",
+      "You can install it on an iPhone or iPad running version 17 or later. On version 26 and later, the app uses Apple’s Liquid Glass navigation.",
+      "Σε iPhone χρειάζεστε iOS 17 ή νεότερη έκδοση και σε iPad, iPadOS 17 ή νεότερη έκδοση. Από την έκδοση 26 και μετά, η εφαρμογή χρησιμοποιεί την πλοήγηση Liquid Glass της Apple.",
     ),
   },
   {
     q: c("What access does it need to my Google data?", "Τι πρόσβαση χρειάζεται στα δεδομένα μου στη Google;"),
     a: c(
-      "The same read-only Search Console and Analytics access as the web app. It can read your data; it can't change anything in your Google account.",
-      "Την ίδια πρόσβαση μόνο για ανάγνωση σε Search Console και Analytics με την εφαρμογή web. Μπορεί να διαβάσει τα δεδομένα σας· δεν μπορεί να αλλάξει τίποτα στον λογαριασμό σας Google.",
+      "It requests read-only access to your Search Console and Analytics reports, just as it does on the web.",
+      "Ζητά άδεια μόνο για ανάγνωση των αναφορών σας στο Search Console και στο Google Analytics, όπως και στον υπολογιστή.",
     ),
     link: { kind: "site", path: "/platform/security", label: c("How we handle your data", "Πώς διαχειριζόμαστε τα δεδομένα σας") },
   },
@@ -220,7 +220,7 @@ const FAQ: ReadonlyArray<GscFaqItem> = [
     q: c("Can I try it without connecting a site?", "Μπορώ να τη δοκιμάσω χωρίς να συνδέσω ιστότοπο;"),
     a: c(
       "Yes. The app includes a sample workspace that works offline, so you can explore every screen before connecting Google.",
-      "Ναι. Η εφαρμογή έχει ένα δείγμα χώρου εργασίας που λειτουργεί και χωρίς σύνδεση, ώστε να δείτε κάθε οθόνη πριν συνδέσετε τη Google.",
+      "Ναι. Ανοίξτε τον δοκιμαστικό λογαριασμό για να δείτε τις αναφορές με ενδεικτικά δεδομένα. Λειτουργεί ακόμη και χωρίς σύνδεση στο διαδίκτυο.",
     ),
   },
 ];
@@ -281,21 +281,21 @@ export default async function PlatformIphonePage({ params }: PageProps) {
           pill={<KitEyebrow icon={<Smartphone />}>{tx("AnotherSEOGuru App for iPhone · Beta", "AnotherSEOGuru App για iPhone · Beta")}</KitEyebrow>}
           title={
             <>
-              {tx("Search Console,", "Το Search Console,")} <Accent>{tx("in your pocket", "στην τσέπη σας")}</Accent>
+              {tx("See how your site is doing on Google", "Δείτε πώς τα πάει η ιστοσελίδα σας στη Google")} <Accent>{tx("from your iPhone", "από το iPhone σας")}</Accent>
             </>
           }
           lead={tx(
-            "A native iPhone app for AnotherSEOGuru App. It turns your Google Search Console data into this week's fixes, ranked by the clicks each one is worth, then measures them after you ship.",
-            "Εγγενής εφαρμογή iPhone για το AnotherSEOGuru App. Κάνει τα δεδομένα του Google Search Console διορθώσεις της εβδομάδας, με σειρά βάσει των κλικ που αξίζει η καθεμία, και τις μετρά αφού τις δημοσιεύσετε.",
+            "Open a site to see which pages lost clicks and which changes are worth your time. Your tasks and Search Console figures are the same ones you use on the web. Request an invitation to try the iPhone beta.",
+            "Ανοίξτε τον ιστότοπο που σας ενδιαφέρει και δείτε ποιες σελίδες έχασαν κλικ και ποιες αλλαγές αξίζει να εξετάσετε. Θα βρείτε τις ίδιες εργασίες και τα ίδια στοιχεία Search Console που βλέπετε στον υπολογιστή σας. Η δοκιμαστική έκδοση για iPhone διατίθεται με πρόσκληση.",
           )}
           actions={
             <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
               <a href={BETA_HREF} className={kitPrimaryBtn}>
                 <Mail className="size-4" aria-hidden />
-                {tx("Request beta access", "Ζητήστε πρόσβαση στη beta")}
+                {tx("Request beta access", "Ζητήστε πρόσκληση για iPhone")}
               </a>
               <a href={webApp} className={kitSecondaryBtn}>
-                {tx("Try the web app demo", "Δοκιμάστε το demo στο web")}
+                {tx("Try the web app demo", "Δοκιμάστε την εφαρμογή στον browser")}
                 <ArrowRight className="size-4 text-muted-foreground" />
               </a>
             </div>
@@ -304,7 +304,7 @@ export default async function PlatformIphonePage({ params }: PageProps) {
             <TrustLine
               items={[
                 { icon: Smartphone, label: tx("iOS 17+, iPhone and iPad", "iOS 17+, iPhone και iPad") },
-                { icon: CheckCircle2, label: tx("Same account as the web app", "Ίδιος λογαριασμός με το web") },
+                { icon: CheckCircle2, label: tx("Same account as the web app", "Ο ίδιος λογαριασμός με τον υπολογιστή") },
                 { icon: Languages, label: tx("English and Greek", "Ελληνικά και αγγλικά") },
               ]}
             />
@@ -325,21 +325,21 @@ export default async function PlatformIphonePage({ params }: PageProps) {
 
         <KitSection id="next-native-preview" tinted>
           <KitHeading eyebrow={tx("Coming to iPhone · Preview", "Έρχεται στο iPhone · Προεπισκόπηση")}
-            title={tx("A clearer project workspace and country audience view", "Ξεκάθαρος χώρος έργου και εικόνα κοινού ανά χώρα")}
-            description={tx("Preview the project-focused setup and country audience screen planned for the next iPhone release. Explore connected GA4 activity on a globe or map, select a country and read its sessions, active users and views.", "Δείτε τη ρύθμιση ανά έργο και την οθόνη κοινού ανά χώρα που ετοιμάζονται για την επόμενη έκδοση iPhone. Εξερευνήστε τα συνδεδεμένα δεδομένα GA4 σε υδρόγειο ή χάρτη, επιλέξτε χώρα και δείτε συνεδρίες, ενεργούς χρήστες και προβολές.")} />
+            title={tx("Where do your visitors come from?", "Από ποιες χώρες έρχονται οι επισκέπτες σας;")}
+            description={tx("We’re working on a project setup screen and a map of your GA4 audience for the next iPhone release. Choose a country on the map or globe to see its sessions, active users and views.", "Για την επόμενη έκδοση ετοιμάζουμε νέα οθόνη ρυθμίσεων για κάθε έργο και χάρτη με το κοινό σας από το GA4. Επιλέγοντας χώρα στον χάρτη ή στην υδρόγειο θα βλέπετε τις συνεδρίες, τους ενεργούς χρήστες και τις προβολές από εκεί.")} />
         </KitSection>
 
         <KitSection id="screens">
           <KitHeading
-            eyebrow={tx("Screens from the beta", "Οθόνες από τη beta")}
+            eyebrow={tx("Screens from the beta", "Στιγμιότυπα της δοκιμαστικής έκδοσης")}
             title={
               <>
-                {tx("Your SEO reports,", "Οι αναφορές SEO σας,")} <Accent>{tx("on your phone", "στο κινητό")}</Accent>
+                {tx("Your SEO reports,", "Οι αναφορές SEO σας")} <Accent>{tx("on your phone", "στο κινητό")}</Accent>
               </>
             }
             description={tx(
-              "Real screens from the beta build, on a live Search Console property.",
-              "Πραγματικές οθόνες από την έκδοση beta, σε ζωντανό ιστότοπο του Search Console.",
+              "These screenshots come from the beta and show Search Console data for a real site.",
+              "Τα στιγμιότυπα προέρχονται από τη δοκιμαστική έκδοση και δείχνουν στοιχεία μιας πραγματικής ιστοσελίδας από το Search Console.",
             )}
           />
           <ul className="-mx-4 mt-12 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-4 sm:mx-0 sm:grid sm:grid-cols-3 sm:gap-6 sm:overflow-visible sm:px-0 lg:grid-cols-3">
@@ -362,12 +362,12 @@ export default async function PlatformIphonePage({ params }: PageProps) {
             eyebrow={tx("What's in the app", "Τι περιέχει η εφαρμογή")}
             title={
               <>
-                {tx("The same engine as the web app,", "Ο ίδιος μηχανισμός με την εφαρμογή web,")} <Accent>{tx("built for iPhone", "φτιαγμένος για iPhone")}</Accent>
+                {tx("Pick up where you left off", "Συνεχίστε στο iPhone")} <Accent>{tx("on your iPhone", "από εκεί που μείνατε")}</Accent>
               </>
             }
             description={tx(
-              "A native SwiftUI app on the same backend as app.anotherseoguru.com, so your sites, tasks, tracked keywords and alerts follow you.",
-              "Εγγενής εφαρμογή SwiftUI στο ίδιο backend με το app.anotherseoguru.com, ώστε οι ιστότοποι, οι εργασίες, οι λέξεις-κλειδιά και οι ειδοποιήσεις σας να σας ακολουθούν.",
+              "When you’re away from your desk, you can still see which site needs attention, check a new alert or send a client their report.",
+              "Ακόμη κι αν δεν είστε στον υπολογιστή, μπορείτε να δείτε ποια ιστοσελίδα χρειάζεται την προσοχή σας, να ανοίξετε μια ειδοποίηση ή να στείλετε σε πελάτη την αναφορά του.",
             )}
           />
           <ul className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-hairline bg-hairline sm:grid-cols-2 lg:grid-cols-3">

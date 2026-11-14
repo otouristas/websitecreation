@@ -23,7 +23,7 @@ faq:
     answer: Ξενοδοχεία, villas, rent-a-car, tour operators και τοπικές υπηρεσίες που ανταγωνίζονται σε εμπορικά queries όπου τα AI Overviews και οι απαντήσεις chat ήδη επηρεάζουν shortlists.
 ---
 
-Το **AI SEO** είναι η βελτιστοποίηση μιας ιστοσελίδας ώστε να χρησιμοποιείται ως πηγή από εργαλεία τεχνητής νοημοσύνης όπως το ChatGPT και τα AI Overviews της Google.
+Αν ρωτήσετε έναν βοηθό AI για τις υπηρεσίες σας, τι θα πει και από πού θα αντλήσει την απάντηση; Αυτό είναι ένα καλό σημείο εκκίνησης για το AI SEO. Ελέγχετε αν η ιστοσελίδα σας δίνει σαφείς πληροφορίες και αν οι πηγές που αναφέρονται περιγράφουν σωστά την επιχείρησή σας.
 
 Ο λόγος που έχει σημασία: η ανακάλυψη μοιράζεται ανάμεσα σε κλασικά αποτελέσματα Google και απαντήσεις AI. Οι αγοραστές εξακολουθούν να κάνουν κλικ στα blue links, αλλά ρωτούν επίσης ChatGPT, Perplexity, Gemini και Google AI Overviews πριν επισκεφτούν ιστοσελίδα.
 
@@ -108,7 +108,7 @@ faq:
 
 ## Πώς συνήθως δουλεύουν budgets και retainers
 
-Το GEO/AEO σπάνια στέκεται μόνο του ως side project €50. Εντάσσεται σε retainers που καλύπτουν ήδη τεχνική εργασία, περιεχόμενο και reporting (συνήθως στη ζώνη {{ENTRY_SEO}}–{{SEO_AUTHORITY}}+/μήνα ανάλογα με ανταγωνισμό και γλωσσικό εύρος) ή ως scoped sprints μετά από audit. Διαφανή πακέτα στη [σελίδα τιμών](/el/pricing). Για scoped έναρξη, [ξεκινήστε](/el/get-started?service=ai-visibility) με επιλεγμένο AI Visibility.
+Το GEO/AEO σπάνια στέκεται μόνο του ως side project €50. Εντάσσεται σε retainers που καλύπτουν ήδη τεχνική εργασία, περιεχόμενο και reporting (συνήθως στη ζώνη {{ENTRY_SEO}}–{{SEO_AUTHORITY}}+/μήνα ανάλογα με ανταγωνισμό και γλωσσικό εύρος) ή ως scoped sprints μετά από audit. Διαφανή πακέτα στη [σελίδα τιμών](/el/ypiresies/times). Για scoped έναρξη, [ξεκινήστε](/el/get-started?service=ai-visibility) με επιλεγμένο AI Visibility.
 
 Αν συγκρίνετε κόστος SEO γενικότερα, δείτε [πόσο κοστίζει το SEO](/el/blog/poso-kostizei-to-seo).
 
@@ -138,4 +138,4 @@ faq:
 
 ## Θέλετε να Ξεκινήσετε;
 
-Αν θέλετε έναν partner για κατατάξεις **και** αναφορές σε απαντήσεις AI, δείτε την υπηρεσία [AI SEO](/el/services/ai-visibility), τις διαφανείς [τιμές](/el/pricing) και [ξεκινήστε](/el/get-started?service=ai-visibility) με scoped σχέδιο GEO/AEO για τουρισμό και τοπικά brands.
+Αν θέλετε έναν partner για κατατάξεις **και** αναφορές σε απαντήσεις AI, δείτε την υπηρεσία [AI SEO](/el/services/ai-visibility), τις διαφανείς [τιμές](/el/ypiresies/times) και [ξεκινήστε](/el/get-started?service=ai-visibility) με scoped σχέδιο GEO/AEO για τουρισμό και τοπικά brands.

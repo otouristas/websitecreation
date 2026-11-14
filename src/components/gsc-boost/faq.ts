@@ -26,33 +26,33 @@ export const HOME_FAQ: ReadonlyArray<GscFaqItem> = [
   {
     q: c("What access do you need to my Google account?", "Τι πρόσβαση χρειάζεστε στον λογαριασμό μου Google;"),
     a: c(
-      "Read-only access to Google Search Console and Google Analytics, which you approve on Google’s own consent screen. AnotherSEOGuru App can read your performance data; it can’t change settings, submit sitemaps, remove URLs or manage users. You can revoke access at any time from your Google Account.",
-      "Πρόσβαση μόνο για ανάγνωση στο Google Search Console και στο Google Analytics, την οποία εγκρίνετε στην οθόνη συναίνεσης της ίδιας της Google. Το AnotherSEOGuru App μπορεί να διαβάσει τα δεδομένα απόδοσής σας· δεν μπορεί να αλλάξει ρυθμίσεις, να υποβάλει sitemaps, να αφαιρέσει URL ή να διαχειριστεί χρήστες. Μπορείτε να ανακαλέσετε την πρόσβαση οποιαδήποτε στιγμή από τον Λογαριασμό σας Google.",
+      "You grant read-only access to Search Console and, if you connect it, Google Analytics. That lets the app read performance reports. Settings, sitemaps, URLs and user permissions stay under your control. You can disconnect it in your Google Account at any time.",
+      "Δίνετε πρόσβαση μόνο για ανάγνωση στο Search Console και, αν το συνδέσετε, στο Google Analytics. Η εφαρμογή διαβάζει τις αναφορές απόδοσης. Εσείς διαχειρίζεστε τις ρυθμίσεις, τα sitemaps, τις διευθύνσεις και τους χρήστες. Μπορείτε να ανακαλέσετε την πρόσβαση από τον λογαριασμό σας Google όποτε θέλετε.",
     ),
     link: { kind: "site", path: "/platform/security", label: c("How we handle your data", "Πώς διαχειριζόμαστε τα δεδομένα σας") },
   },
   {
     q: c("How are the click estimates calculated?", "Πώς υπολογίζονται οι εκτιμήσεις κλικ;"),
     a: c(
-      "From your own data. For each query or page, AnotherSEOGuru App compares its CTR and position with a CTR curve fitted to your site’s non-brand queries, then estimates the extra clicks a fix would bring over a month. The estimates are deliberately conservative, and every one shows the position, impressions and CTR it is based on.",
-      "Από τα δικά σας δεδομένα. Για κάθε ερώτημα ή σελίδα, το AnotherSEOGuru App συγκρίνει το CTR και τη θέση του με μια καμπύλη CTR προσαρμοσμένη στα non-brand ερωτήματα του ιστότοπού σας και εκτιμά τα επιπλέον κλικ που θα έφερνε μια διόρθωση μέσα σε έναν μήνα. Οι εκτιμήσεις είναι σκόπιμα συντηρητικές και η καθεμία δείχνει τη θέση, τις εμφανίσεις και το CTR στα οποία βασίζεται.",
+      "The app uses searches that leave out your brand name to learn the click-through rate your site usually sees at each position. It compares that rate with the page’s actual rate and impressions to estimate how many more clicks it could receive in a month. You can inspect the figures behind each suggestion.",
+      "Η εφαρμογή εξετάζει αναζητήσεις χωρίς την επωνυμία σας και υπολογίζει τι ποσοστό κλικ παίρνουν συνήθως οι σελίδες σας σε κάθε θέση. Με βάση αυτό το ποσοστό, τις πραγματικές εμφανίσεις και τα κλικ της σελίδας, εκτιμά πόσα επιπλέον κλικ θα μπορούσε να πάρει σε έναν μήνα. Μπορείτε να δείτε τα στοιχεία πίσω από κάθε πρόταση.",
     ),
   },
   {
     q: c("Do I need a credit card to try it?", "Χρειάζομαι πιστωτική κάρτα για να το δοκιμάσω;"),
     a: c(
-      "No. New accounts get a 7-day free trial on their own site with no card, and the live demo runs the whole product on sample data with no account at all. When the trial ends, you choose a plan.",
-      "Όχι. Οι νέοι λογαριασμοί έχουν 7 ημέρες δωρεάν δοκιμή στον δικό τους ιστότοπο χωρίς κάρτα, και η ζωντανή επίδειξη τρέχει ολόκληρο το προϊόν με δείγμα δεδομένων χωρίς λογαριασμό. Μετά τη δοκιμή επιλέγετε πακέτο.",
+      "No card is required. A new account gives you seven days to try Pro on your own site. You can then use the free plan or choose a paid one. To look around before signing up, open the demo with sample data.",
+      "Μπορείτε να δοκιμάσετε το Pro στη δική σας ιστοσελίδα για επτά ημέρες χωρίς κάρτα. Στη συνέχεια μπορείτε να χρησιμοποιήσετε το δωρεάν πακέτο ή να επιλέξετε συνδρομή. Αν θέλετε πρώτα να δείτε την εφαρμογή, ανοίξτε τη δοκιμαστική έκδοση με ενδεικτικά δεδομένα χωρίς εγγραφή.",
     ),
     link: { kind: "app", path: "/demo", label: c("Open the live demo", "Ανοίξτε τη ζωντανή επίδειξη") },
   },
   {
     q: c("What are credits used for?", "Σε τι χρησιμοποιούνται οι μονάδες;"),
     a: c(
-      `Search Console analysis, the opportunity engine and client reports cost nothing. Credits pay for third-party data and AI: a keyword research lookup is ${K.keyword_research} credits, a site audit ${K.site_audit}, an AI content brief ${K.ai_content_brief} and an assistant question ${K.seo_ai_chat}. Every plan includes a monthly allowance, and you can top up any time.`,
-      `Η ανάλυση Search Console, η μηχανή ευκαιριών και οι αναφορές πελατών δεν κοστίζουν τίποτα. Οι μονάδες καλύπτουν δεδομένα τρίτων και AI: μια αναζήτηση στην έρευνα λέξεων-κλειδιών κοστίζει ${K.keyword_research} μονάδες, ένας έλεγχος ιστότοπου ${K.site_audit}, ένα AI content brief ${K.ai_content_brief} και μια ερώτηση στον βοηθό ${K.seo_ai_chat}. Κάθε πακέτο περιλαμβάνει μηνιαίο απόθεμα μονάδων και μπορείτε να αγοράσετε περισσότερες όποτε θέλετε.`,
+      "Each plan includes a monthly allowance for actions such as importing a site or checking a live ranking. The app shows the cost before you start. Search Console reports and suggested fixes use no credits. Questions for Aster AI have a separate daily limit.",
+      "Κάθε μήνα έχετε στη διάθεσή σας μονάδες για εργασίες όπως η εισαγωγή ιστοσελίδας ή ο έλεγχος της σημερινής θέσης μιας λέξης-κλειδιού. Βλέπετε το κόστος πριν ξεκινήσετε. Οι αναφορές του Search Console και οι προτεινόμενες διορθώσεις δεν καταναλώνουν μονάδες. Για τις ερωτήσεις στον Aster AI ισχύει ξεχωριστό ημερήσιο όριο.",
     ),
-    link: { kind: "site", path: "/pricing#credits", label: c("See every credit cost", "Δείτε όλα τα κόστη σε μονάδες") },
+    link: { kind: "site", path: "/pricing#credits", label: c("See credit examples", "Δείτε παραδείγματα χρέωσης") },
   },
   {
     q: c("Is my data used to train AI models?", "Χρησιμοποιούνται τα δεδομένα μου για την εκπαίδευση μοντέλων AI;"),
@@ -63,10 +63,10 @@ export const HOME_FAQ: ReadonlyArray<GscFaqItem> = [
     link: { kind: "app", path: "/privacy", label: c("Privacy policy", "Πολιτική απορρήτου") },
   },
   {
-    q: c("Does it work for agencies with many sites?", "Είναι κατάλληλο για agencies με πολλούς ιστοτόπους;"),
+    q: c("Does it work for agencies with many sites?", "Μπορώ να διαχειρίζομαι τις ιστοσελίδες των πελατών μου;"),
     a: c(
-      "Yes. The Agency plan adds 30 sites and white-label client reports, and the site switcher is built for accounts with 90+ Search Console properties.",
-      "Ναι. Το πακέτο Agency προσθέτει 30 ιστοτόπους και white-label αναφορές πελατών, ενώ η εναλλαγή ιστοτόπων είναι σχεδιασμένη για λογαριασμούς με 90+ ιδιότητες στο Search Console.",
+      "The Agency plan covers up to 30 client sites and five team members. Switch between sites in the same account and send each client a report with your agency’s name and logo.",
+      "Το Agency καλύπτει έως 30 ιστοσελίδες πελατών και πέντε μέλη της ομάδας σας. Αλλάζετε ιστοσελίδα μέσα από τον ίδιο λογαριασμό και στέλνετε σε κάθε πελάτη αναφορά με την επωνυμία και το λογότυπό σας.",
     ),
     link: { kind: "site", path: "/platform/for/agencies", label: c("See the agency workspace", "Δείτε τον χώρο εργασίας για agencies") },
   },
@@ -78,10 +78,10 @@ export const HOME_FAQ: ReadonlyArray<GscFaqItem> = [
     ),
   },
   {
-    q: c("Is AnotherSEOGuru App the same company as the AnotherSEOGuru agency?", "Το AnotherSEOGuru App είναι της ίδιας εταιρείας με το AnotherSEOGuru;"),
+    q: c("Is AnotherSEOGuru App the same company as the AnotherSEOGuru agency?", "Η ομάδα σας χρησιμοποιεί το AnotherSEOGuru App και στα έργα πελατών;"),
     a: c(
-      "Yes. AnotherSEOGuru App is the software our SEO team built and uses on client work every day. Inside the app it carries the AnotherSEOGuru name. If you would rather have us do the work, start with a free audit instead.",
-      "Ναι. Το AnotherSEOGuru App είναι το λογισμικό που έφτιαξε η ομάδα SEO μας και χρησιμοποιεί καθημερινά στη δουλειά για πελάτες. Μέσα στην εφαρμογή εμφανίζεται με το όνομα AnotherSEOGuru. Αν προτιμάτε να κάνουμε εμείς τη δουλειά, ξεκινήστε με έναν δωρεάν έλεγχο.",
+      "Yes. Our SEO team built AnotherSEOGuru App and uses it on client projects. A software plan gives you the tools to manage SEO yourself. If you want our team to do the work, request a free audit to start the conversation.",
+      "Ναι. Η ομάδα SEO μας δημιούργησε το AnotherSEOGuru App και το χρησιμοποιεί στα έργα πελατών. Με τη συνδρομή διαχειρίζεστε εσείς το SEO. Αν θέλετε να αναλάβει η ομάδα μας τη δουλειά, μπορείτε να ζητήσετε δωρεάν έλεγχο.",
     ),
     link: { kind: "site", path: "/get-started#free-audit", label: c("Get a free SEO audit", "Δωρεάν έλεγχος SEO") },
   },
@@ -91,15 +91,15 @@ export const PRICING_FAQ: ReadonlyArray<GscFaqItem> = [
   {
     q: c("What is a credit?", "Τι είναι μια μονάδα;"),
     a: c(
-      `A unit for paid work: third-party data (keyword volumes, SERPs, backlinks, crawls) and AI. Search Console analysis, opportunities and client reports cost 0 credits. Every action that uses credits shows its cost on the button before you run it, for example “Start import” shows ${K.website_import} credit per import.`,
-      `Μια μονάδα χρέωσης για εργασίες με κόστος: δεδομένα τρίτων (όγκοι λέξεων-κλειδιών, SERPs, backlinks, crawls) και AI. Η ανάλυση Search Console, οι ευκαιρίες και οι αναφορές πελατών κοστίζουν 0 μονάδες. Κάθε ενέργεια που χρησιμοποιεί μονάδες δείχνει το κόστος της πάνω στο κουμπί πριν την εκτελέσετε· για παράδειγμα, η «Έναρξη εισαγωγής» δείχνει ${K.website_import} μονάδα ανά εισαγωγή.`,
+      `Credits are the allowance your plan gives you for metered actions. For example, importing a site uses ${K.website_import} credit. Look at the button before starting to see the cost. Reading your Search Console reports uses no credits.`,
+      `Οι μονάδες περιλαμβάνονται στο πακέτο σας και χρησιμοποιούνται για συγκεκριμένες εργασίες. Για παράδειγμα, η εισαγωγή μιας ιστοσελίδας χρησιμοποιεί ${K.website_import} μονάδα. Το κόστος φαίνεται στο κουμπί πριν ξεκινήσετε. Οι αναφορές του Search Console δεν καταναλώνουν μονάδες.`,
     ),
   },
   {
     q: c("Are there add-ons?", "Υπάρχουν πρόσθετα (add-ons);"),
     a: c(
-      "No. Everything is included, with no add-ons: a plan’s price covers every feature listed for it, with no paid toolkits or per-feature upgrades on top. Credit packs are optional top-ups for busy months, not features.",
-      "Όχι. Όλα περιλαμβάνονται, χωρίς add-ons: η τιμή κάθε πακέτου καλύπτει όλες τις λειτουργίες που αναφέρει, χωρίς επιπλέον χρεώσεις για εργαλεία ή αναβαθμίσεις ανά λειτουργία. Τα πακέτα μονάδων είναι προαιρετική ενίσχυση για τους πιο φορτωμένους μήνες, όχι λειτουργίες.",
+      "Yes. On a paid plan you can add sites, tracked keywords, AI questions to monitor, monthly credits or your own branding on reports. You can also buy a one-time credit pack when you need one.",
+      "Ναι. Σε κάθε συνδρομή μπορείτε να προσθέσετε ιστοσελίδες, λέξεις-κλειδιά, ερωτήσεις για παρακολούθηση σε AI, μηνιαίες μονάδες ή τη δική σας επωνυμία στις αναφορές. Αν χρειάζεστε επιπλέον μονάδες για έναν μόνο μήνα, μπορείτε να αγοράσετε ένα πακέτο εφάπαξ.",
     ),
   },
   {
@@ -112,23 +112,23 @@ export const PRICING_FAQ: ReadonlyArray<GscFaqItem> = [
   {
     q: c("Can I try it before I pay?", "Μπορώ να το δοκιμάσω πριν πληρώσω;"),
     a: c(
-      "Yes. Connect Google and you get a 7-day free trial on your own site, with no card. The live demo also runs the full product on sample data for three fictional sites, with no account. When you’re ready, pick a plan.",
-      "Ναι. Συνδέστε τη Google και έχετε 7 ημέρες δωρεάν δοκιμή στον δικό σας ιστότοπο, χωρίς κάρτα. Η ζωντανή επίδειξη τρέχει επίσης ολόκληρο το προϊόν με δείγμα δεδομένων, χωρίς λογαριασμό. Όταν είστε έτοιμοι, επιλέξτε πακέτο.",
+      "Yes. Explore the sample account without signing up, or create an account to try Pro for seven days on your own site. You don’t need a card, and the free plan is available after the trial.",
+      "Ναι. Μπορείτε να δείτε έναν δοκιμαστικό λογαριασμό χωρίς εγγραφή. Για να δοκιμάσετε το Pro στη δική σας ιστοσελίδα, ανοίξτε λογαριασμό. Η δοκιμή διαρκεί επτά ημέρες, χωρίς κάρτα. Μετά έχετε και την επιλογή του δωρεάν πακέτου.",
     ),
     link: { kind: "app", path: "/demo", label: c("Open the live demo", "Ανοίξτε τη ζωντανή επίδειξη") },
   },
   {
     q: c("How does yearly billing work?", "Πώς λειτουργεί η ετήσια χρέωση;"),
     a: c(
-      "You pay for ten months and get twelve. Yearly plans are billed once a year, up front.",
-      "Πληρώνετε δέκα μήνες και παίρνετε δώδεκα. Τα ετήσια πακέτα χρεώνονται μία φορά τον χρόνο, προκαταβολικά.",
+      "You make one payment for the full year. It costs the same as ten monthly payments.",
+      "Προπληρώνετε όλο το έτος και το συνολικό ποσό ισούται με δέκα μηνιαίες συνδρομές.",
     ),
   },
   {
     q: c("What counts as a site?", "Τι θεωρείται ιστότοπος;"),
     a: c(
-      "A site is a website you set up as a project in AnotherSEOGuru App, usually one Search Console property, with its own settings, brand terms, competitors and reports.",
-      "Ως ιστότοπος μετράει κάθε ιστότοπος που ρυθμίζετε ως έργο στο AnotherSEOGuru App, συνήθως μία ιδιότητά του Search Console, με δικές του ρυθμίσεις, όρους επωνυμίας, ανταγωνιστές και αναφορές.",
+      "Each website you add as a project counts as one site. It usually corresponds to one Search Console property and has its own settings, competitors and reports.",
+      "Κάθε ιστοσελίδα που προσθέτετε ως ξεχωριστό έργο μετρά μία φορά. Συνήθως αντιστοιχεί σε μία ιδιοκτησία στο Search Console και έχει δικές της ρυθμίσεις, ανταγωνιστές και αναφορές.",
     ),
   },
   {
@@ -141,15 +141,15 @@ export const PRICING_FAQ: ReadonlyArray<GscFaqItem> = [
   {
     q: c("How do payments and invoices work?", "Πώς λειτουργούν οι πληρωμές και τα τιμολόγια;"),
     a: c(
-      "Payments are processed by Stripe; we never see or store your full card number. Invoices for every charge are available from Billing.",
-      "Οι πληρωμές γίνονται μέσω Stripe· δεν βλέπουμε και δεν αποθηκεύουμε ποτέ τον πλήρη αριθμό της κάρτας σας. Τα τιμολόγια για κάθε χρέωση είναι διαθέσιμα στη Χρέωση.",
+      "Stripe processes payments. We don’t see or store your full card number. Download an invoice for any charge from Billing in your account.",
+      "Την πληρωμή αναλαμβάνει η Stripe. Δεν βλέπουμε ούτε αποθηκεύουμε τον πλήρη αριθμό της κάρτας σας. Μπορείτε να κατεβάσετε το τιμολόγιο κάθε χρέωσης από την ενότητα Χρέωση στον λογαριασμό σας.",
     ),
   },
   {
     q: c("Is this the same as your agency SEO packages?", "Είναι το ίδιο με τα πακέτα SEO της εταιρείας σας;"),
     a: c(
-      "No. These are software plans: you use AnotherSEOGuru App and do the work yourself. Our agency packages are a separate service where our team does the SEO for you, priced on the main pricing page.",
-      "Όχι. Αυτά είναι πακέτα λογισμικού: χρησιμοποιείτε το AnotherSEOGuru App και κάνετε τη δουλειά μόνοι σας. Τα πακέτα της εταιρείας μας είναι ξεχωριστή υπηρεσία όπου η ομάδα μας αναλαμβάνει το SEO για εσάς, με τιμές στη βασική σελίδα τιμών.",
+      "The app subscription gives you the tools to do the work. If you want our team to plan and carry out the changes, see the separate managed SEO packages.",
+      "Με τη συνδρομή στην εφαρμογή έχετε τα εργαλεία για να κάνετε εσείς τις αλλαγές. Αν θέλετε να αναλάβουμε τον σχεδιασμό και την υλοποίηση, δείτε τα ξεχωριστά πακέτα διαχείρισης SEO.",
     ),
     link: { kind: "site", path: "/ypiresies/times", label: c("Agency SEO packages", "Πακέτα SEO της εταιρείας") },
   },

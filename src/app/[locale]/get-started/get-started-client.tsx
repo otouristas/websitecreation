@@ -58,24 +58,24 @@ function serviceFromParam(value: string | null): Service {
 
 const COPY = {
   en: {
-    title: 'Get started with SEO or a new website',
-    lead: `Pick what you need. It takes two minutes, there is no commitment, and you hear back within ${RESPONSE_HOURS} working hours.`,
+    title: 'Get a free SEO check or a website quote',
+    lead: `Send us a site to check, or describe the one you need. If you’re planning a new website, we’ll reply with ideas and a quote within ${RESPONSE_HOURS} working hours.`,
     tabsLabel: 'What do you need?',
     tabs: {
-      seo: { label: 'Free SEO audit', sub: 'I have a site and want more customers from Google' },
-      website: { label: 'New website', sub: 'A new site, a redesign or an e-shop' },
+      seo: { label: 'Free SEO audit', sub: 'Check a site I already have' },
+      website: { label: 'Website quote', sub: 'Build a site or update an existing one' },
     },
-    trust: [`${PROJECTS_DELIVERED_LABEL} projects delivered`, `${FOUNDER_YEARS}+ years in SEO`, 'Serving businesses in Greece', `Reply within ${RESPONSE_HOURS} hours`],
+    trust: [`${PROJECTS_DELIVERED_LABEL} projects delivered`, `${FOUNDER_YEARS}+ years in SEO`, 'Serving businesses in Greece', `Reply within ${RESPONSE_HOURS} working hours`],
   },
   el: {
-    title: 'Ξεκινήστε με SEO ή νέα ιστοσελίδα',
-    lead: `Διαλέξτε τι χρειάζεστε. Θέλει δύο λεπτά, χωρίς δέσμευση, και σας απαντάμε μέσα σε ${RESPONSE_HOURS} εργάσιμες ώρες.`,
+    title: 'Ζητήστε έλεγχο SEO ή προσφορά για ιστοσελίδα',
+    lead: `Στείλτε μας την ιστοσελίδα σας για δωρεάν έλεγχο ή περιγράψτε μας αυτή που θέλετε να φτιάξετε. Για νέα ιστοσελίδα θα λάβετε ιδέες και προσφορά μέσα σε ${RESPONSE_HOURS} εργάσιμες ώρες.`,
     tabsLabel: 'Τι χρειάζεστε;',
     tabs: {
-      seo: { label: 'Δωρεάν έλεγχος SEO', sub: 'Έχω ιστοσελίδα και θέλω περισσότερους πελάτες από τη Google' },
-      website: { label: 'Νέα ιστοσελίδα', sub: 'Νέα ιστοσελίδα, ανανέωση ή e-shop' },
+      seo: { label: 'Δωρεάν έλεγχος SEO', sub: 'Θέλω να ελέγξω την ιστοσελίδα μου' },
+      website: { label: 'Προσφορά για ιστοσελίδα', sub: 'Θέλω νέα ιστοσελίδα, ανανέωση ή e-shop' },
     },
-    trust: [`${PROJECTS_DELIVERED_LABEL} έργα`, `${FOUNDER_YEARS}+ χρόνια στο SEO`, 'Για επιχειρήσεις στην Ελλάδα', `Απάντηση σε ${RESPONSE_HOURS} ώρες`],
+    trust: [`${PROJECTS_DELIVERED_LABEL} έργα`, `${FOUNDER_YEARS}+ χρόνια στο SEO`, 'Για επιχειρήσεις στην Ελλάδα', `Απάντηση σε ${RESPONSE_HOURS} εργάσιμες ώρες`],
   },
 } as const;
 
@@ -88,10 +88,10 @@ type ProjectType = 'has-site' | 'new-site' | 'eshop';
 const WEBSITE_COPY = {
   en: {
     eyebrow: 'New website',
-    title: 'Tell us about the site you need. We reply with ideas and a quote.',
-    body: 'A few details are enough. If you already have a site, we read it first so you do not have to repeat yourself.',
+    title: 'What should the new site let your customers do?',
+    body: 'Tell us a little about your business. If you already have a website, add its address and we can fill in some details for you.',
     types: { 'has-site': 'I have a website', 'new-site': 'I need a new website', eshop: 'I need an e-shop' } as Record<ProjectType, string>,
-    typesLabel: 'Where are you now?',
+    typesLabel: 'What kind of project is this?',
     website: 'Your current website',
     websitePh: 'your-business.com',
     business: 'Business name',
@@ -100,10 +100,10 @@ const WEBSITE_COPY = {
     phone: 'Phone or WhatsApp (optional)',
     need: 'What do you need? (optional)',
     needPh: 'e.g. A bilingual site for our 8-room guesthouse with direct booking, ready before the summer.',
-    submit: 'Send my brief',
+    submit: 'Request a website quote',
     sending: 'Sending...',
     doneTitle: (first: string) => (first ? `Thanks, ${first}. We have your brief.` : 'Thanks. We have your brief.'),
-    doneBody: `We will reply within ${RESPONSE_HOURS} working hours with first ideas and a quote. Keep an eye on your inbox, and your spam folder just in case.`,
+    doneBody: `We’ll email our initial ideas and a quote within ${RESPONSE_HOURS} working hours.`,
     seeWork: 'See websites we have built',
     errors: {
       website: 'Enter your website address, like your-business.com.',
@@ -115,10 +115,10 @@ const WEBSITE_COPY = {
   },
   el: {
     eyebrow: 'Νέα ιστοσελίδα',
-    title: 'Πείτε μας τι ιστοσελίδα χρειάζεστε. Σας στέλνουμε ιδέες και προσφορά.',
-    body: 'Λίγα στοιχεία αρκούν. Αν έχετε ήδη ιστοσελίδα, τη διαβάζουμε πρώτα, για να μη χρειαστεί να τα γράψετε ξανά.',
+    title: 'Τι θέλετε να μπορούν να κάνουν οι πελάτες στη νέα σας ιστοσελίδα;',
+    body: 'Γράψτε μας λίγα λόγια για την επιχείρησή σας. Αν έχετε ήδη ιστοσελίδα, προσθέστε τη διεύθυνσή της για να συμπληρώσουμε αυτόματα όσα στοιχεία βρούμε.',
     types: { 'has-site': 'Έχω ιστοσελίδα', 'new-site': 'Χρειάζομαι νέα ιστοσελίδα', eshop: 'Χρειάζομαι e-shop' } as Record<ProjectType, string>,
-    typesLabel: 'Πού βρίσκεστε τώρα;',
+    typesLabel: 'Για τι είδους έργο ενδιαφέρεστε;',
     website: 'Η τωρινή σας ιστοσελίδα',
     websitePh: 'h-epixeirisi-sas.gr',
     business: 'Όνομα επιχείρησης',
@@ -127,10 +127,10 @@ const WEBSITE_COPY = {
     phone: 'Τηλέφωνο ή WhatsApp (προαιρετικό)',
     need: 'Τι χρειάζεστε; (προαιρετικό)',
     needPh: 'π.χ. Δίγλωσση ιστοσελίδα για τον ξενώνα μας με 8 δωμάτια και απευθείας κρατήσεις, έτοιμη πριν από το καλοκαίρι.',
-    submit: 'Στείλτε το αίτημα',
+    submit: 'Ζητήστε προσφορά',
     sending: 'Αποστολή...',
     doneTitle: (first: string) => (first ? `Ευχαριστούμε, ${first}. Λάβαμε το αίτημά σας.` : 'Ευχαριστούμε. Λάβαμε το αίτημά σας.'),
-    doneBody: `Θα σας απαντήσουμε μέσα σε ${RESPONSE_HOURS} εργάσιμες ώρες με πρώτες ιδέες και προσφορά. Ρίξτε μια ματιά στο email σας, και στα ανεπιθύμητα για σιγουριά.`,
+    doneBody: `Μέσα σε ${RESPONSE_HOURS} εργάσιμες ώρες θα λάβετε στο email σας τις πρώτες προτάσεις μας και την προσφορά.`,
     seeWork: 'Δείτε ιστοσελίδες που έχουμε φτιάξει',
     errors: {
       website: 'Γράψτε τη διεύθυνση της ιστοσελίδας σας, π.χ. h-epixeirisi-sas.gr.',
@@ -435,6 +435,7 @@ export function GetStartedClient({ locale }: { locale: SiteLocale }) {
     setService(next);
     const url = new URL(window.location.href);
     url.searchParams.set('service', next);
+    if (next === 'website' && url.hash === '#free-audit') url.hash = '';
     window.history.replaceState(window.history.state, '', `${url.pathname}${url.search}${url.hash}`);
   }
 

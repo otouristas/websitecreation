@@ -133,7 +133,7 @@ function mdLink(label, href, blurb) {
 const usd = (n) => `$${n}`;
 
 const SUMMARY =
-  'AnotherSEOGuru App is SEO software built on Google Search Console. It reads every query and page in your Search Console data and turns them into one ranked list of fixes, each with an estimate of the extra clicks it could bring, plus keyword research and rank tracking, site audits, content tools, competitor data, AI visibility tracking (ChatGPT, Gemini, Perplexity, Google AI Overviews) and Aster AI, an assistant that answers from your own data. Web app at app.anotherseoguru.com, with an iPhone app, Android app, Chrome extension, WordPress plugin and an MCP server for AI assistants on the same account. English and Greek. Made by Touristas Technologies.';
+  'AnotherSEOGuru App helps you choose which page to improve using your Google Search Console data. Check the searches behind a change in clicks, ask Aster AI about a page and save a suggested edit as a task. Compare clicks after publishing. The app also offers keyword research, rank tracking, site audits, content tools and AI visibility checks. Explore the demo with sample data or connect a site with read-only Google access. The web app, mobile apps and integrations use the same account. See each product page for access details. Available in English and Greek from Touristas Technologies.';
 
 function productHubs() {
   return [
@@ -208,7 +208,7 @@ function buildShort({ posts }) {
   for (const p of PLANS) {
     lines.push(`- **${p.id}:** ${usd(p.monthly)}/month or ${usd(p.yearly)}/year (save ${usd(yearlySavings(p))}). ${p.sites} sites, ${p.seats} seat${p.seats === 1 ? '' : 's'}, ${p.credits.toLocaleString('en-US')} credits a month. ${p.tagline.en}`);
   }
-  lines.push('- Search Console analysis, opportunities and client reports never use credits. Credits pay for third-party data and AI; every action shows its cost first.');
+  lines.push('- Search Console analysis, opportunities and client reports never use credits. Paid data and some AI tools use credits. Aster AI chat has a daily allowance.');
   lines.push(`- Full details: <${url('en', '/pricing')}> · <${url('el', '/pricing')}>`);
   lines.push('');
   lines.push('## For AI Agents');
@@ -296,7 +296,7 @@ function buildFull({ posts }) {
     lines.push('');
   }
   lines.push('- Yearly billing gives two months free.');
-  lines.push('- Search Console analysis, opportunities and client reports never use credits. Credits pay for third-party data and AI, and every action shows its cost before it runs.');
+  lines.push('- Search Console analysis, opportunities and client reports never use credits. Paid data and some AI tools use credits. Aster AI chat uses the daily allowance for your plan.');
   lines.push(`- Credit packs: ${CREDIT_PACKS.map((k) => `${k.name} ${k.credits.toLocaleString('en-US')}${k.bonus ? ` + ${k.bonus} bonus` : ''} credits for ${usd(k.price)}`).join('; ')}.`);
   lines.push(`- Pricing pages: ${url('en', '/pricing')} · ${url('el', '/pricing')}`);
   lines.push('');
@@ -421,6 +421,7 @@ function buildAgency() {
   lines.push(hubLine('Αρχική', gr(AGENCY_HOME_EL), 'Εταιρεία SEO και κατασκευής ιστοσελίδων στην Ελλάδα.'));
   lines.push(hubLine('Τιμές', gr(AGENCY_PRICING_EL), 'Τιμές ιστοσελίδας και μηνιαίου SEO, με ρητή ένδειξη ΦΠΑ.'));
   lines.push(hubLine('Δωρεάν έλεγχος ιστοσελίδας', gr(AGENCY_AUDIT_EL), 'Φόρμα για δωρεάν έλεγχο SEO.'));
+  lines.push(hubLine('Οδηγοί για επιχειρήσεις', gr('/el/odigoi'), 'Επιλογή συνεργάτη, κόστος ιστοσελίδας, ηλεκτρονικά καταστήματα και τοπικό SEO.'));
   lines.push(hubLine('Υπηρεσίες', gr('/el/services'), 'Όλες οι υπηρεσίες.'));
   lines.push(hubLine('Υπηρεσίες SEO', gr('/el/seo-services'), 'SEO για επιχειρήσεις στην Ελλάδα.'));
   lines.push(hubLine('Σύμβουλος SEO', gr('/el/symvoulos-seo'), 'Συνεργασία με σύμβουλο SEO.'));

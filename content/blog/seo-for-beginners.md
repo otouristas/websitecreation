@@ -24,9 +24,9 @@ faq:
     answer: Impressions and clicks in Search Console, whether the money pages are indexed, and whether organic visits turn into calls or form fills. A rank position by itself does not show that the channel is working.
 ---
 
-**SEO for beginners** means making useful pages easy for Google to find, understand, and show when someone searches for what you offer. This is the practical start: the terms, a four-week plan, and the checks that show the work is landing. For types, strategy, and AI search, read [What is SEO?](/en/blog/what-is-seo).
+Start with one page that matters to your business. Can Google find it, does the title describe what you offer, and can a visitor take the next step? This 30-day plan gives you a way to check each of those things. For a broader introduction, see [What is SEO?](/en/blog/what-is-seo).
 
-If you want a partner rather than a DIY plan, see [pricing](/en/pricing) or [Get Started](/en/get-started).
+If you want a partner rather than a DIY plan, see [pricing](/el/ypiresies/times) or [Get Started](/en/get-started).
 
 ## Chapters in this guide
 
@@ -99,7 +99,7 @@ Plan on early movement in 2–3 months and a clearer picture in 4–6 months onc
 | Months 2–3 | Service pages and the local profile | from {{ENTRY_SEO}}/mo | Which queries start to appear |
 | Months 4–12 | Content, internal links, useful mentions | {{ENTRY_SEO}}–{{SEO_AUTHORITY}}/mo | Clicks, calls, and form fills |
 
-Full breakdown: [how much SEO costs](/en/blog/how-much-does-seo-cost) and [pricing](/en/pricing).
+Full breakdown: [how much SEO costs](/en/blog/how-much-does-seo-cost) and [pricing](/el/ypiresies/times).
 
 ## A 30-day SEO plan for beginners
 
@@ -146,4 +146,4 @@ Short definitions live in the [SEO glossary](/en/glossary). This guide relies on
 
 ## Ready to start
 
-Ask for a plain-language review: what blocks indexing, which pages should change first, and whether this 30-day plan fits your market. [Get Started](/en/get-started): reply within 24 hours. Or go to [SEO audits](/en/services/seo-audits) and [pricing](/en/pricing).
+Start with a service page you can edit yourself and use the checks above. If you would like a second pair of eyes, [request the free website check](/el/get-started#free-audit). Our [SEO audit service](/el/services/seo-audits) and [agency packages in Greek](/el/ypiresies/times) explain what to expect when you hire the team.

@@ -23,15 +23,15 @@ export const COMPARE_PAGES: readonly ComparePageDefinition[] = [
     headline: "AnotherSEOGuru App vs Ahrefs",
     seoTitle: "Ahrefs Alternative: AnotherSEOGuru App",
     summary:
-      "Ahrefs is a world-class link and keyword research suite. AnotherSEOGuru App is an Ahrefs alternative built around your Google Search Console reality plus AI execution workflows - ideal when your bottleneck is acting on GSC data, not exporting another CSV.",
+      "Ahrefs helps you research keywords and backlinks across many sites. AnotherSEOGuru App starts with your own Search Console data to find pages you can improve and organise the work.",
     whenChooseUs: [
-      "You want query/page workflows wired to your verified property",
-      "You need AI-assisted briefs, clustering, and sprint-style execution",
-      "You prefer an all-in-one that pairs with optional agency delivery",
+      "You want to see which Google searches bring visitors to each page",
+      "Your writers need groups of related keywords and a brief for each page",
+      "You may want an SEO team to help make the changes",
     ],
     whenChooseThem: [
-      "Your primary job is historical backlink index scale and massive keyword mining",
-      "You already have a mature process for turning exports into action",
+      "You regularly need to research backlinks and keyword history across competing sites",
+      "Your team already uses research exports to plan its work",
     ],
   },
   {
@@ -40,15 +40,15 @@ export const COMPARE_PAGES: readonly ComparePageDefinition[] = [
     headline: "AnotherSEOGuru App vs Semrush",
     seoTitle: "Semrush Alternative: AnotherSEOGuru App",
     summary:
-      "Semrush is a broad marketing suite with deep paid and content modules. AnotherSEOGuru App, a Semrush alternative for organic SEO, focuses on operations: GSC-native views, technical checks, rank tracking, and LLM visibility - with less surface noise.",
+      "Semrush covers paid campaigns as well as organic search. AnotherSEOGuru App fits a team focused on its own search traffic, from spotting a drop in clicks to showing the client what changed.",
     whenChooseUs: [
-      "You want a calmer organic stack without re-learning twenty tabs",
-      "You connect GSC and want recommendations tied to your actual clicks and impressions",
-      "You run an agency and want client-ready narratives faster",
+      "Your team’s main job is organic search",
+      "You want recommendations based on your site’s clicks and impressions",
+      "You need to explain the month’s search results to a client",
     ],
     whenChooseThem: [
-      "You need PPC, social, and enterprise reporting in one mega-platform",
-      "Your team is already certified and embedded in Semrush workflows",
+      "You manage paid search, social campaigns and reporting together",
+      "Your team already uses Semrush for its day-to-day work",
     ],
   },
   {
@@ -57,15 +57,15 @@ export const COMPARE_PAGES: readonly ComparePageDefinition[] = [
     headline: "AnotherSEOGuru App vs Search Console alone",
     seoTitle: "AnotherSEOGuru App vs Search Console",
     summary:
-      "Search Console is free and essential, but it stops at observation. AnotherSEOGuru App adds clustering, health scoring, rank tracking, AI playbooks, and optional autopilot so observation turns into a prioritized backlog.",
+      "Search Console shows how your site performs in Google for free. Connect it to AnotherSEOGuru App when you want to group searches, find pages losing clicks and give your team a list of changes to work on.",
     whenChooseUs: [
-      "You are tired of spreadsheet gymnastics for query grouping",
-      "You want decay alerts, cannibalization checks, and experiment framing",
-      "You need one place for your team to execute weekly",
+      "You group related searches by hand each week",
+      "You want to spot pages losing traffic or competing for the same searches",
+      "Several people need to track which SEO tasks are open",
     ],
     whenChooseThem: [
-      "You only need occasional spot checks and have no budget for tooling",
-      "You already built internal ETL and dashboards",
+      "You want to check a page or query occasionally at no cost",
+      "Your team already maintains its own dashboards and task lists",
     ],
   },
   {
@@ -75,7 +75,7 @@ export const COMPARE_PAGES: readonly ComparePageDefinition[] = [
     seoTitle: "AgencyAnalytics Alternative for SEO",
     primaryKeyword: "agencyanalytics alternative",
     summary:
-      "AgencyAnalytics is a client reporting platform for marketing agencies that covers many channels. AnotherSEOGuru App is an AgencyAnalytics alternative for agencies whose work is SEO: white-label reports built from Google Search Console, plus the opportunities, tasks and client CRM that produce the results those reports show.",
+      "AgencyAnalytics brings several marketing channels into a client report. If you sell SEO, AnotherSEOGuru App can show the client’s Search Console results alongside the work you completed, in a report with your own branding.",
     whenChooseUs: [
       "Your reports are mostly about organic search and you want them built from Search Console with no connectors to maintain",
       "You want the report and the work in one place: opportunities sized in clicks, tasks, then the monthly report",
@@ -119,7 +119,7 @@ export const COMPARE_PAGES: readonly ComparePageDefinition[] = [
     seoTitle: "Whatagraph Alternative for SEO Reporting",
     primaryKeyword: "whatagraph alternative",
     summary:
-      "Whatagraph is a marketing reporting tool that blends data from many sources into reports and dashboards. AnotherSEOGuru App is a Whatagraph alternative built for SEO work: it reads Google Search Console, tells you what to fix and how many clicks it could add, and turns the result into a white-label client report.",
+      "Whatagraph combines marketing data from several sources. AnotherSEOGuru App uses Search Console to find SEO opportunities and report on them. Use it when a client needs to know which page you’ll work on next and why.",
     whenChooseUs: [
       "Your clients pay you for SEO and want a report that explains organic results, not a wall of channel charts",
       "You want the report to come with a plan: opportunities, click estimates and next steps from the same data",
@@ -157,7 +157,7 @@ export const COMPARE_PAGES: readonly ComparePageDefinition[] = [
     seoTitle: "DashThis Alternative for SEO Agencies",
     primaryKeyword: "dashthis alternative",
     summary:
-      "DashThis is a dashboard tool for marketing reports. AnotherSEOGuru App is a DashThis alternative for SEO: instead of a dashboard you configure, it reads Google Search Console, tells you what to do next and builds a white-label monthly report with the work you completed.",
+      "DashThis gives clients a dashboard across marketing channels. With AnotherSEOGuru App, an SEO team can send a monthly report explaining changes in search traffic and showing the work behind them.",
     whenChooseUs: [
       "You want an SEO report with a written summary, reasons and next steps, not only charts",
       "You want to manage the SEO work itself in the same place as the reporting",

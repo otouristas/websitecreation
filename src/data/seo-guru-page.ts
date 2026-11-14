@@ -67,7 +67,7 @@ const el: SeoGuruCopy = {
   pillTag: 'Δωρεάν',
   pill: 'Ξεκινήστε με δωρεάν έλεγχο της ιστοσελίδας σας',
   h1: { before: 'Ο', accent: 'SEO guru', after: 'για ελληνικές επιχειρήσεις' },
-  lead: `Η ομάδα της Touristas Technologies είναι ο SEO guru της AnotherSEOGuru. Με ${years} χρόνια στο SEO και πάνω από ${PROJECTS_DELIVERED} έργα, δουλεύουμε κυρίως για ξενοδοχεία, ενοικιάσεις αυτοκινήτων και τοπικές επιχειρήσεις στην Ελλάδα.`,
+  lead: `Πίσω από την AnotherSEOGuru βρίσκεται η ομάδα SEO της Touristas Technologies. Με ${years} χρόνια στον χώρο και πάνω από ${PROJECTS_DELIVERED} έργα, βοηθάμε ξενοδοχεία, επιχειρήσεις ενοικίασης αυτοκινήτων και τοπικές επιχειρήσεις να καταλάβουν πώς τις βρίσκουν οι πελάτες τους.`,
   leadExtra: `Η δουλειά ξεκινά από τα δικά σας δεδομένα στο Search Console. Απαντάμε μέσα σε ${RESPONSE_HOURS} ώρες, στα ελληνικά ή στα αγγλικά, και δεν υποσχόμαστε θέσεις που κανείς δεν μπορεί να εγγυηθεί.`,
   stats: [
     { value: years, label: 'Χρόνια στο SEO' },
@@ -118,7 +118,7 @@ const el: SeoGuruCopy = {
   services: {
     eyebrow: 'Υπηρεσίες',
     title: 'Τι αναλαμβάνει ο SEO guru',
-    intro: 'Οι υπηρεσίες είναι οι ίδιες με τον υπόλοιπο ιστότοπο. Κάθε κάρτα οδηγεί στη σελίδα της υπηρεσίας.',
+    intro: 'Χρειάζεστε νέα ιστοσελίδα, βοήθεια με το Google Maps ή κάποιον να αναλάβει το μηνιαίο SEO; Επιλέξτε την αντίστοιχη υπηρεσία.',
     cards: [
       {
         eyebrow: 'Κάθε μήνα',
@@ -213,7 +213,7 @@ const en: SeoGuruCopy = {
   pillTag: 'Free',
   pill: 'Start with a free audit of your website',
   h1: { before: 'The', accent: 'SEO guru', after: 'for Greek businesses' },
-  lead: `The Touristas Technologies team is the SEO guru behind AnotherSEOGuru. With ${years} years in SEO and more than ${PROJECTS_DELIVERED} projects delivered, we work mostly with hotels, car rentals and local businesses in Greece.`,
+  lead: `The people behind AnotherSEOGuru are the SEO team at Touristas Technologies. We bring ${years} years of experience and more than ${PROJECTS_DELIVERED} projects to our work with hotels, car rental companies and local businesses in Greece.`,
   leadExtra: `The work starts from your own Search Console data. We reply within ${RESPONSE_HOURS} hours, in Greek or English, and we do not promise rankings nobody can guarantee.`,
   stats: [
     { value: years, label: 'Years in SEO' },
@@ -264,7 +264,7 @@ const en: SeoGuruCopy = {
   services: {
     eyebrow: 'Services',
     title: 'What the SEO guru takes on',
-    intro: 'The services are the same ones as the rest of the site. Each card links to that service page.',
+    intro: 'If your priority is a new website, a local listing or help with ongoing SEO, choose the service that fits.',
     cards: [
       {
         eyebrow: 'Monthly',

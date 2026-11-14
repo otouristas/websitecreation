@@ -69,22 +69,22 @@ const el: PricingPageCopy = {
   primaryKeyword: 'τιμές seo',
   h1: 'Τιμές και πακέτα SEO, ιστοσελίδων και e-shop',
   heroLead:
-    'Το κόστος SEO στην AnotherSEOGuru ξεκινά από {{ENTRY_SEO}} τον μήνα και η κατασκευή ιστοσελίδας από {{ENTRY_WEBSITE}}. Παρακάτω θα βρείτε κάθε πακέτο SEO με τα παραδοτέα του, τις τιμές με και χωρίς ΦΠΑ και την ελάχιστη διάρκεια συνεργασίας.',
-  heroNote: 'Τα πακέτα ορίζουν το αρχικό scope. Η στρατηγική προσαρμόζεται στο έργο.',
+    'Η κατασκευή ιστοσελίδας ξεκινά από {{ENTRY_WEBSITE}} ως εφάπαξ έργο. Αν έχετε ήδη ιστοσελίδα και χρειάζεστε συνεχή δουλειά στο SEO, τα μηνιαία πακέτα ξεκινούν από {{ENTRY_SEO}}.',
+  heroNote: 'Πριν αποφασίσετε, συμφωνούμε ποιες εργασίες περιλαμβάνονται και ποιο θα είναι το τελικό κόστος για τη δική σας επιχείρηση.',
   cost: {
     eyebrow: 'Κόστος στην Ελλάδα',
     title: 'Πόσο κοστίζει το SEO στην Ελλάδα',
     answer:
-      'Στην Ελλάδα ένα σοβαρό μηνιαίο SEO ξεκινά από {{ENTRY_SEO}} και φτάνει {{SEO_AUTHORITY}} τον μήνα, προ ΦΠΑ 24%. Στην AnotherSEOGuru αυτό αντιστοιχεί στα πακέτα Foundations, Growth και Authority: η τιμή ακολουθεί το εύρος της εργασίας, όχι έναν αριθμό λέξεων-κλειδιών.',
+      'Τα δικά μας μηνιαία πακέτα SEO κυμαίνονται από {{ENTRY_SEO}} έως {{SEO_AUTHORITY}}. Η τιμή εξαρτάται από τις σελίδες, το περιεχόμενο και τον τεχνικό χρόνο που χρειάζεται η επιχείρησή σας. Κάθε πακέτο αναγράφει πώς υπολογίζεται ο ΦΠΑ.',
     websiteBand:
       'Η κατασκευή ιστοσελίδας ξεκινά από {{ENTRY_WEBSITE}} και φτάνει {{WEBSITE_BUSINESS}}+ για e-shop, πολύγλωσσα έργα ή έργα με πολλά καταλύματα. Κάθε τιμή παρακάτω εμφανίζεται καθαρή και με ΦΠΑ.',
     determinantsTitle: 'Τι καθορίζει την τιμή',
     determinantsIntro:
-      'Δύο επιχειρήσεις στον ίδιο κλάδο σπάνια χρειάζονται την ίδια εργασία. Η προσφορά ακολουθεί τέσσερα πράγματα που φαίνονται στα δεδομένα, όχι μια λίστα λέξεων-κλειδιών.',
+      'Για την προσφορά σας εξετάζουμε τον ανταγωνισμό, τις σελίδες που υπάρχουν ήδη και τις αγορές που θέλετε να προσεγγίσετε.',
     determinants: [
       {
         title: 'Ανταγωνισμός στην αναζήτηση',
-        body: 'Πόσες σοβαρές επιχειρήσεις στοχεύουν τις ίδιες εμπορικές αναζητήσεις, και πόσο ισχυρό είναι ήδη το αποτύπωμά τους. Σε τουρισμό αιχμής αυτό αλλάζει το scope πιο γρήγορα από οτιδήποτε άλλο.',
+        body: 'Εξετάζουμε ποιες επιχειρήσεις εμφανίζονται όταν ο πελάτης ψάχνει την υπηρεσία σας και πόση δουλειά χρειάζονται οι δικές σας σελίδες.',
       },
       {
         title: 'Τεχνική κατάσταση και αρχιτεκτονική',
@@ -104,7 +104,7 @@ const el: PricingPageCopy = {
     eyebrow: 'Πακέτα SEO',
     title: 'Foundations, Growth ή Authority',
     intro:
-      'Τα τρία πακέτα ορίζουν scope, όχι «Χ λέξεις-κλειδιά τον μήνα». Διαλέγετε το εύρος εργασίας που σηκώνει ο ανταγωνισμός σας. Αναλυτικά παραδοτέα στη σελίδα υπηρεσιών SEO.',
+      'Συγκρίνετε την τεχνική υποστήριξη, το περιεχόμενο και την παρακολούθηση που περιλαμβάνει κάθε μηνιαίο πακέτο.',
     rows: [
       {
         label: 'Για ποιον',
@@ -116,7 +116,7 @@ const el: PricingPageCopy = {
         label: 'Τεχνικά',
         foundations: 'Έλεγχος και ιεραρχημένο πλάνο διορθώσεων',
         growth: 'Συνεχής τεχνική εργασία πάνω στα θεμέλια',
-        authority: 'Πιο σύνθετο τεχνικό scope, μαζί με μετατροπές',
+        authority: 'Σύνθετες τεχνικές εργασίες και βελτίωση της διαδρομής αγοράς',
       },
       {
         label: 'Περιεχόμενο',
@@ -195,7 +195,7 @@ const el: PricingPageCopy = {
     {
       question: 'Ποια είναι η διαφορά Foundations, Growth και Authority;',
       answer:
-        'Το Foundations είναι το ελάχιστο σοβαρό scope: τεχνικά, on-page στις σελίδες που πουλάνε, Google Business Profile και μηνιαία αναφορά. Το Growth προσθέτει πρόγραμμα περιεχομένου, ανάλυση authority και εργασία GEO/AEO. Το Authority καλύπτει ανταγωνιστικές, e-commerce ή διεθνείς αγορές, με digital PR και ανασκόπηση κάθε δεκαπενθήμερο. Δεν πουλάμε αριθμό λέξεων-κλειδιών.',
+        'Το Foundations καλύπτει τεχνικό SEO, βελτίωση των βασικών σελίδων, Google Business Profile και μηνιαία αναφορά. Το Growth προσθέτει πρόγραμμα περιεχομένου, ανάλυση συνδέσμων και GEO/AEO. Για ανταγωνιστικές ή διεθνείς αγορές και μεγάλα e-shop, το Authority περιλαμβάνει επίσης digital PR και συζήτηση της προόδου κάθε δεκαπενθήμερο.',
     },
   ],
   proof: {
@@ -215,18 +215,18 @@ const en: PricingPageCopy = {
   primaryKeyword: 'how much does SEO cost',
   h1: 'SEO and website pricing',
   heroLead:
-    'Our pricing is not based on how cheaply we can deliver a task list. It reflects the time, technical work, research, content and strategy required to produce real organic growth.',
-  heroNote: 'Packages define the initial scope. The strategy adapts to the project.',
+    'A website build is a one-off project starting at {{ENTRY_WEBSITE}}. If you already have a site and want us to handle SEO each month, plans start at {{ENTRY_SEO}}.',
+  heroNote: 'Before you decide, we agree what work is included and what the total will be for your business.',
   cost: {
     eyebrow: 'Cost in Greece',
     title: 'How much does SEO cost in Greece',
     answer:
-      'In Greece a serious monthly SEO programme starts at {{ENTRY_SEO}} and runs to {{SEO_AUTHORITY}} a month, excluding 24% VAT. At AnotherSEOGuru that is Foundations, Growth and Authority: price follows the scope of the work, not a keyword count.',
+      'Our monthly SEO plans range from {{ENTRY_SEO}} to {{SEO_AUTHORITY}}. The price depends on the pages, content and technical work your business needs. Each package shows how VAT applies.',
     websiteBand:
       'Website projects start at {{ENTRY_WEBSITE}} and reach {{WEBSITE_BUSINESS}}+ for e-commerce, multilingual or multi-property work. Every figure below is shown net and including VAT.',
     determinantsTitle: 'What determines the price',
     determinantsIntro:
-      'Two businesses in the same sector rarely need the same work. A quote follows four things visible in the data, not a keyword list.',
+      'To prepare your quote, we look at the competition, the pages you already have and the markets you want to reach.',
     determinants: [
       {
         title: 'Search competition',
@@ -250,7 +250,7 @@ const en: PricingPageCopy = {
     eyebrow: 'SEO packages',
     title: 'Foundations, Growth or Authority',
     intro:
-      'The three packages define scope, not “X keywords a month”. You pick the breadth of work your competition requires. Full deliverables sit on the SEO services page.',
+      'Compare the technical work, content and reporting included in each monthly plan.',
     rows: [
       {
         label: 'Best for',
@@ -341,7 +341,7 @@ const en: PricingPageCopy = {
     {
       question: 'What is the difference between Foundations, Growth and Authority?',
       answer:
-        'Foundations is the minimum serious scope: technical work, on-page on the pages that sell, Google Business Profile and a monthly report. Growth adds a content programme, authority analysis and GEO/AEO. Authority covers competitive, e-commerce or international markets, with digital PR and a fortnightly review. We do not sell a keyword count.',
+        'Foundations covers technical work, your main service or sales pages, Google Business Profile and a monthly report. Growth adds a content programme, backlink analysis and GEO/AEO. Authority also includes digital PR and a fortnightly review for competitive, e-commerce or international markets.',
     },
   ],
   proof: {

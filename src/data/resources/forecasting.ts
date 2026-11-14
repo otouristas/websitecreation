@@ -19,7 +19,7 @@ export const FORECASTING_ARTICLES: ReadonlyArray<ResourceArticle> = [
     body: [
       {
         type: "p",
-        text: "**An SEO forecast estimates how many extra organic clicks a set of changes is likely to earn, and over what period.** The most reliable way to build one is bottom-up: start from the queries you already rank for in Google Search Console, estimate what a better position or a better snippet would add for each one, weight each estimate by how likely you are to achieve it, then add them up. Forecasts built from keyword-tool volumes alone tend to overshoot, because they ignore your real click-through rate.",
+        text: "Before you commit a week to a page, estimate how many extra clicks the work could bring. Start with searches where it already appears. Use its impressions and CTR to estimate the effect of a higher position or a clearer title. Allow for the chance that the change will have little effect before adding the estimates together.",
       },
       {
         type: "note",
@@ -170,7 +170,7 @@ export const FORECASTING_ARTICLES: ReadonlyArray<ResourceArticle> = [
     body: [
       {
         type: "p",
-        text: "**Organic CTR falls steeply with position: the first result earns several times the clicks of the fifth, and page two earns very little.** On the baseline curve we use, position 1 earns about 23.5% of impressions, position 3 about 9.2%, position 10 about 1.8% and position 15 under 1%. A “good” CTR is therefore not one number: it is a CTR at or above what your position usually earns for that kind of query.",
+        text: "A CTR of 2% means something different in first place and in tenth. On the baseline curve used here, position one gets about 23.5% of impressions as clicks, position three about 9.2%, and position ten about 1.8%. By position fifteen the figure is below 1%. Compare searches at similar positions before deciding to rewrite a title.",
       },
       { type: "h2", id: "curve", text: "The baseline CTR curve" },
       {
@@ -279,7 +279,7 @@ export const FORECASTING_ARTICLES: ReadonlyArray<ResourceArticle> = [
     body: [
       {
         type: "p",
-        text: "**The fastest SEO wins come from demand you already have: queries where Google shows you often but you rank just below the clicks, or rank well but lose the click to a better snippet.** Search Console shows both for free. The five fixes below need no new content and no links, and most can be shipped in an afternoon.",
+        text: "If you have an afternoon for SEO, open Search Console before starting a new article. Look for pages that appear often just below the top results, and pages that rank well but get few clicks. These five checks help you choose a change to an existing page without having to earn a new link.",
       },
       { type: "h2", id: "striking-distance", text: "1. Push striking-distance queries into the top 3" },
       {

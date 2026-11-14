@@ -167,15 +167,15 @@ export default async function PlatformMcpPage({ params }: PageProps) {
       <Header locale={locale} />
       <main className="blueprint-grid relative z-0">
         <HeroCentered
-          pill={<KitEyebrow icon={<Bot />}>{tx("MCP server · One URL, any assistant", "MCP server · Μία διεύθυνση, κάθε βοηθός")}</KitEyebrow>}
+          pill={<KitEyebrow icon={<Bot />}>{tx("Google Search Console MCP server", "MCP server για Google Search Console")}</KitEyebrow>}
           title={
             <>
-              {tx("A Google Search Console MCP server,", "Ένας MCP server για το Google Search Console,")} <Accent>{tx("built for SEO", "φτιαγμένος για SEO")}</Accent>
+              {tx("Ask about your Search Console data", "Ρωτήστε για τα στοιχεία του Search Console")} <Accent>{tx("in your AI assistant", "μέσα από τον βοηθό AI που χρησιμοποιείτε")}</Accent>
             </>
           }
           lead={tx(
-            "Use your Search Console data, fix list, tasks and AI visibility inside Claude, ChatGPT, Codex, Cursor, Grok Bot and other AI assistants. Add one URL, sign in with OAuth, and the assistant answers from your own account and can work through your SEO tasks.",
-            "Χρησιμοποιήστε τα δεδομένα Search Console, τη λίστα διορθώσεων, τις εργασίες και την ορατότητα σε AI μέσα σε Claude, ChatGPT, Codex, Cursor, Grok Bot και άλλους βοηθούς AI. Προσθέτετε μία διεύθυνση, συνδέεστε με OAuth, και ο βοηθός απαντά από τον δικό σας λογαριασμό και δουλεύει τις εργασίες SEO σας.",
+            "Ask Claude or ChatGPT which pages lost clicks last month. Connect the AnotherSEOGuru App MCP server once and your assistant can answer from your own site’s figures. If a page needs work, you can review and approve a task in the same conversation.",
+            "Ποιες σελίδες έχασαν κλικ τον περασμένο μήνα; Συνδέστε το Claude ή το ChatGPT με τον MCP server του AnotherSEOGuru App για να πάρετε απάντηση με τα στοιχεία του δικού σας ιστοτόπου. Αν χρειάζεται διόρθωση, μπορείτε να ελέγξετε και να εγκρίνετε την αντίστοιχη εργασία μέσα στην ίδια συζήτηση.",
           )}
           actions={
             <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -202,7 +202,7 @@ export default async function PlatformMcpPage({ params }: PageProps) {
         </HeroCentered>
 
         <KitSection id="connection-status">
-          <KitHeading eyebrow={tx("Your project, in your AI workflow", "Το έργο σας στη συνομιλία AI")} title={tx("Ask from your data. Approve the next step.", "Ρωτήστε με τα δεδομένα σας. Εγκρίνετε το επόμενο βήμα.")}
+          <KitHeading eyebrow={tx("Your project, in your AI workflow", "Το έργο σας στη συνομιλία AI")} title={tx("Check the answer and approve a task", "Ελέγξτε τα στοιχεία πριν εγκρίνετε μια εργασία")}
             description={tx("Explore Search Console performance in interactive ChatGPT cards, or ask Claude for the same project's MCP results. Read the dates and source, discuss the opportunities and approve task updates when you are ready to act.", "Δείτε την απόδοση Search Console σε διαδραστικές κάρτες ChatGPT ή ζητήστε από το Claude τα δεδομένα MCP του ίδιου έργου. Ελέγξτε περίοδο και πηγή, συζητήστε τις ευκαιρίες και εγκρίνετε ενημερώσεις εργασιών όταν είστε έτοιμοι να προχωρήσετε.")} />
           <p className="mt-6 max-w-3xl text-sm leading-6 text-muted-foreground">{tx("Connect using the custom setup below. Available tools follow the permissions you grant to your AnotherSEOGuru account connection.", "Συνδεθείτε με την προσαρμοσμένη ρύθμιση που ακολουθεί. Τα διαθέσιμα εργαλεία εξαρτώνται από τις άδειες που δίνετε στη σύνδεση του λογαριασμού AnotherSEOGuru.")}</p>
         </KitSection>

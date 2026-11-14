@@ -22,7 +22,7 @@ faq:
     answer: Ordinary grouping matches shared text, so paraphrases split apart and different intents merge together. Semantic clustering compares meaning, then separates by intent, which maps far more closely to how pages actually rank.
 ---
 
-Most keyword exports arrive as a few thousand rows with no structure. The question that matters is not which row has the highest volume. It is **how many pages this list actually represents**, and what each of those pages should cover. That is what clustering answers.
+Two searches that use similar words may need different pages. Someone comparing car hire prices needs a different answer from someone returning a car at the port. Group queries by the task a visitor wants to complete, then decide which groups a single page can serve.
 
 ## What semantic keyword clustering is
 

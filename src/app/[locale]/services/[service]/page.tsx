@@ -403,7 +403,7 @@ export default async function ServicePage({ params }: PageProps) {
 
                 <FaqBlock locale={siteLocale} title={<AccentTitle text={pageEl?.faqTitle ?? t.faqTitle} />} faqs={faqItems} />
 
-                <CtaBand
+                <CtaBand agency
                     locale={siteLocale}
                     source={`service-${serviceSlug}`}
                     title={<AccentTitle text={t.ctaTitle} />}

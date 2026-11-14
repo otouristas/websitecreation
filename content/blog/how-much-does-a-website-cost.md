@@ -23,7 +23,7 @@ faq:
     answer: "Domain €10–20/year, hosting €5–30/month for a typical site, SSL usually free, and maintenance from €199/month or hourly for updates, backups, and security."
 ---
 
-A website in 2026 costs anywhere from **€500 for a simple site** to **€5,000+ for a custom e-shop**. The huge range has real reasons behind it: this guide shows them so you know exactly what you’re paying for before you compare quotes on price alone.
+A basic business website and a shop with stock tracking can have very different quotes. Ask for three figures separately: the build, the annual running cost and any work you expect after launch. This makes it easier to see what a lower upfront price leaves for you to pay later.
 
 > **Transparent packages:** [website pricing](/el/ypiresies/times) from {{ENTRY_WEBSITE}} · [our work](/en/work) · [website creation](/en/services/website-creation) · [free quote](/en/get-started) within 24 hours.
 

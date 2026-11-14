@@ -22,9 +22,9 @@ export interface PlatformToolDefinition {
 export const PLATFORM_TOOLS: readonly PlatformToolDefinition[] = [
   {
     slug: "keyword-research",
-    title: "Free keyword research tool, ideas, clusters & intent",
+    title: "Research the words your customers use",
     description:
-      "Find SEO keywords and topic clusters from your seeds or Search Console themes. Group by intent, then map one primary phrase per page. Built for keyword research that turns into content, not endless spreadsheets.",
+      "Start with a product, a service or a set of searches from Search Console. Group similar phrases and choose which page should answer each group.",
     primaryKeyword: "keyword research",
     appPath: "/keyword-clustering",
     faqs: [
@@ -47,9 +47,9 @@ export const PLATFORM_TOOLS: readonly PlatformToolDefinition[] = [
   },
   {
     slug: "free-seo-audit",
-    title: "Free SEO audit, health score & prioritized fixes",
+    title: "Free SEO audit",
     description:
-      "Run a free SEO audit checklist against your site priorities: indexation, Core Web Vitals, titles, and internal links. Get a clear health score path, then upgrade to full SEO audit services when you want done-for-you fixes.",
+      "Check whether Google can index your pages, review Core Web Vitals and look for problems with titles or internal links. Use the findings to choose a first fix.",
     primaryKeyword: "free seo audit",
     appPath: "/seo-health",
     faqs: [
@@ -72,57 +72,57 @@ export const PLATFORM_TOOLS: readonly PlatformToolDefinition[] = [
   },
   {
     slug: "google-search-console-analytics",
-    title: "Google Search Console analytics workspace",
+    title: "Explore your Google Search Console data",
     description:
-      "Explore queries, pages, countries, and devices with filters built for SEO teams. Connect your property and act on real Search Console data.",
+      "See which searches brought people to a page. Filter by country or device to find out where a rise or drop in clicks occurred.",
     primaryKeyword: "Google Search Console dashboard",
     appPath: "/dashboard",
   },
   {
     slug: "gsc-query-clustering",
-    title: "GSC query clustering",
+    title: "Group related Search Console queries",
     description:
-      "Group Search Console queries by similarity to find content themes, gaps, and internal linking opportunities without spreadsheets.",
+      "See which searches ask for the same thing in different words. Use each group to update an existing page or identify a subject your site has yet to cover.",
     primaryKeyword: "search console query clustering",
     appPath: "/keyword-clustering",
   },
   {
     slug: "semantic-keyword-clusters",
-    title: "Semantic keyword clusters & topic plans",
+    title: "Build a topic plan from your keywords",
     description:
-      "Paste keywords and get AI semantic clusters with topic plans for editorial and landing page strategy.",
+      "Paste your keyword list to group phrases by meaning. Use the groups to decide which topics deserve an article and which belong on the same landing page.",
     primaryKeyword: "semantic keyword clustering",
     appPath: "/keyword-clusters",
   },
   {
     slug: "llm-citation-tracking",
-    title: "LLM citation & AI visibility tracking",
+    title: "Track citations in AI answers",
     description:
-      "Monitor how your brand and URLs appear in AI answers and citations so you can optimize for Chat-style discovery.",
+      "Check whether an AI answer mentions your business or cites one of your pages. Return to the same questions to see how the sources change.",
     primaryKeyword: "LLM SEO citation tracker",
     appPath: "/llm-citations",
   },
   {
     slug: "seo-health-score",
-    title: "SEO health score & technical checks",
+    title: "Review your site’s SEO health",
     description:
-      "Consolidated health signals and prioritized fixes so you know what moves rankings versus noise.",
+      "Start with the overall score, then open the checks behind it to see which technical issues need attention first.",
     primaryKeyword: "SEO health score tool",
     appPath: "/seo-health",
   },
   {
     slug: "internal-linking-opportunities",
-    title: "Internal linking intelligence",
+    title: "Find places to add internal links",
     description:
-      "Discover contextual internal link opportunities to distribute PageRank and support new content.",
+      "Find existing pages where a link would help a reader reach a related page. It’s a useful first check after publishing a new article.",
     primaryKeyword: "internal linking tool",
     appPath: "/internal-linking",
   },
   {
     slug: "ad-preview-tool",
-    title: "Free ad preview tool: ChatGPT, Google, Meta, TikTok and more",
+    title: "Preview an ad before publishing",
     description:
-      "Write one ad and see it as a ChatGPT answer with citations, a ChatGPT sponsored answer, and Google Search, Google Display, Facebook, Instagram feed and Stories, TikTok, LinkedIn, X and Pinterest ads. Every character limit and Google editorial rule is checked as you type.",
+      "See how a headline, image and link fit across Google, social ads and ChatGPT previews. Check for text that gets cut off before you publish.",
     primaryKeyword: "ad preview tool",
     appPath: "/tools/ad-preview",
     faqs: [
@@ -145,9 +145,9 @@ export const PLATFORM_TOOLS: readonly PlatformToolDefinition[] = [
   },
   {
     slug: "free-seo-tools",
-    title: "Free SEO tools (meta, schema, CWV, and more)",
+    title: "Free SEO checkers for individual pages",
     description:
-      "Generators and checkers for meta tags, schema, robots.txt, Core Web Vitals, and hreflang - run them in the browser. Start here if you searched for SEO tools.",
+      "Open the browser tools to check meta tags, schema or hreflang, prepare a robots.txt file, or review Core Web Vitals.",
     primaryKeyword: "seo tools",
     appPath: "/free-tools",
     faqs: [

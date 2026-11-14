@@ -61,8 +61,8 @@ export default async function GlossaryPage({ params }: PageProps) {
         title={ui.heroTitle}
         description={
           el
-            ? `${refs.length} όροι για τεχνικό SEO, GEO, AEO, αναζήτηση με AI και Search Console, ο καθένας με ορισμό, παράδειγμα και τρόπο εφαρμογής.`
-            : `${refs.length} terms for technical SEO, GEO, AEO, AI search and Search Console, each with a definition, an example and how to apply it.`
+            ? `Συναντήσατε έναν άγνωστο όρο σε αναφορά SEO; Αναζητήστε τον ανάμεσα σε ${refs.length} όρους ή επιλέξτε θέμα για να δείτε τι σημαίνει στην πράξη.`
+            : `Seen an unfamiliar term in an SEO report? Look it up among ${refs.length} entries, or browse a topic to see how the terms are used.`
         }
         path={glossaryPath(locale)}
         headings={glossaryCategories.map((c) => ({ id: c.id, text: categoryTitle(c, locale), level: 2 as const }))}

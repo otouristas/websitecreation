@@ -25,11 +25,11 @@ const HUB_EL = {
   primaryKeyword: "δωρεάν οδηγοί seo",
   eyebrow: "Υλικό",
   heading: "Οδηγοί SEO",
-  lead: "Οδηγοί για το Search Console, δωρεάν εύρεση ευκαιριών, πλαίσια για αναζήτηση AI και το λεξικό. Είναι το υλικό που χρησιμοποιεί η ομάδα μας στη δουλειά με πελάτες.",
+  lead: "Μειώθηκαν τα κλικ σας ή πλησιάζει η ώρα να στείλετε αναφορά σε πελάτη; Βρείτε τον αντίστοιχο οδηγό και δοκιμάστε το δωρεάν εργαλείο με στοιχεία από το Search Console.",
   intro:
-    "Πρακτικοί οδηγοί για να γίνουν τα δεδομένα του Google Search Console δουλειά που φέρνει ανάπτυξη: πώς τα διαβάζετε, πώς διαγιγνώσκετε μια πτώση, πώς μετράτε και βάζετε προτεραιότητα στις διορθώσεις, και πώς τα αναφέρετε. Κάθε θέμα ξεκινά με έναν οδηγό που το καλύπτει από την αρχή ως το τέλος και μετά πηγαίνει πιο βαθιά.",
+    "Αν έχετε ήδη αρχείο από το Search Console, ανοίξτε το στο εργαλείο για να εντοπίσετε σελίδες με πολλές εμφανίσεις και λίγα κλικ. Αν ετοιμάζετε αναφορά, ξεκινήστε από το δείγμα μηνιαίας αναφοράς SEO.",
   freeTool: "Δωρεάν εργαλείο",
-  finderText: "Ανεβάστε την εξαγωγή του Search Console και δείτε αναζητήσεις για άνοδο, snippets για επανεγγραφή και πρόβλεψη κλικ. Τρέχει στον browser, χωρίς εγγραφή.",
+  finderText: "Ανοίξτε το αρχείο σας από το Search Console και δείτε σε ποιες σελίδες αξίζει να δοκιμάσετε έναν νέο τίτλο. Το αρχείο μένει στη συσκευή σας.",
   aiTitle: "Έλεγχος ορατότητας σε AI",
   aiText: "Δείτε τι απαντούν το AI Overview της Google και το ChatGPT για μία λέξη-κλειδί, και ποιους αναφέρουν.",
   startHere: "Ξεκινήστε εδώ.",
@@ -37,7 +37,7 @@ const HUB_EL = {
   layersStart: "SEO, AEO, GEO, AIO, DEO και SXO σε ένα μοντέλο.",
   relatedGuide: "Σχετικός οδηγός.",
   freeToolLabel: "Δωρεάν εργαλείο.",
-  frameworks: "Πλαίσια που αξίζει να κρατήσετε",
+  frameworks: "Πώς διαβάζουν μια σελίδα οι μηχανές αναζήτησης",
   layersText: "SEO, AEO, GEO, AIO, DEO και SXO σε ένα μοντέλο: τι βελτιστοποιεί κάθε επίπεδο, τι ζητά από μια σελίδα και πώς μετράται.",
   anatomyTitle: "Ανατομία σελίδας για αναζήτηση AI",
   anatomyText: "Δώδεκα μέρη μιας σελίδας που αποφασίζουν αν μια μηχανή απαντήσεων μπορεί να τη διαβάσει, να την παραθέσει και να την αναφέρει, σημειωμένα πάνω σε ένα παράδειγμα.",
@@ -49,7 +49,7 @@ const HUB_EL = {
   appGuidesTitle: "Οδηγοί AnotherSEOGuru App",
   appGuidesText: "Πώς χρησιμοποιείτε κάθε οθόνη της εφαρμογής, με στιγμιότυπα.",
   iphoneTitle: "Εφαρμογή iPhone",
-  iphoneText: "Πάρτε την έκδοση beta, Live Activities, widgets και ειδοποιήσεις.",
+  iphoneText: "Δείτε πώς ζητάτε πρόσβαση στη beta και πώς ρυθμίζετε ειδοποιήσεις στο iPhone.",
   tools: "Δωρεάν εργαλεία",
   blog: "Από το blog",
   allArticles: "Όλα τα άρθρα",
@@ -92,7 +92,7 @@ export default async function ResourcesPage({ params }: PageProps) {
       type: "p",
       text: el
         ? g.intro
-        : "Practical guides for turning Google Search Console data into growth: how to read it, how to diagnose a drop, how to size and prioritize fixes, and how to report the results. Each topic starts with a guide that covers it end to end, then goes deeper.",
+        : "Have a Search Console export handy? Open it in the opportunity finder to spot pages with plenty of impressions and few clicks. If you need to explain the month to a client, start with the sample SEO report.",
     },
     { type: "h2", id: "free-tool", text: el ? g.freeTool : "Free tool" },
     {
@@ -101,7 +101,7 @@ export default async function ResourcesPage({ params }: PageProps) {
       items: [
         {
           title: el ? EL_FINDER.title : OPPORTUNITY_FINDER.title,
-          text: el ? g.finderText : "Upload your Search Console export and get the queries worth pushing, the snippets worth rewriting and a click forecast. Runs in your browser, no sign-up.",
+          text: el ? g.finderText : "Open a Search Console export to find pages where a clearer search snippet could earn more clicks. The file stays on your device.",
           href: rp(OPPORTUNITY_FINDER.slug),
           icon: "wrench",
         },
@@ -138,7 +138,7 @@ export default async function ResourcesPage({ params }: PageProps) {
         },
       ];
     }),
-    { type: "h2", id: "frameworks", text: el ? g.frameworks : "Frameworks worth bookmarking" },
+    { type: "h2", id: "frameworks", text: el ? g.frameworks : "How search engines read a page" },
     {
       type: "cards",
       cols: 2,
@@ -165,7 +165,7 @@ export default async function ResourcesPage({ params }: PageProps) {
         { title: el ? g.guidesTitle : "SEO guides", text: el ? g.guidesText : "The ranking guides in one index: the main guide, plus keywords, on-page, technical SEO, links and local search.", href: lp("/seo-guides"), icon: "book" },
         { title: el ? g.glossaryTitle : "SEO glossary", text: el ? g.glossaryText : "Over 100 terms, each on its own page with an example and how to apply it.", href: glossaryPath(siteLocale), icon: "library" },
         { title: el ? g.appGuidesTitle : "AnotherSEOGuru App guides", text: el ? g.appGuidesText : "How to use every screen of the web app, with screenshots.", href: lp("/help"), icon: "book" },
-        { title: el ? g.iphoneTitle : "iPhone app", text: el ? g.iphoneText : "Get the beta, Live Activities, widgets and alerts.", href: lp("/help/iphone-app"), icon: "smartphone" },
+        { title: el ? g.iphoneTitle : "iPhone app", text: el ? g.iphoneText : "Request beta access and set up widgets and alerts on your iPhone.", href: lp("/help/iphone-app"), icon: "smartphone" },
       ],
     },
     { type: "h2", id: "tools", text: el ? g.tools : "Free tools" },
@@ -219,7 +219,7 @@ export default async function ResourcesPage({ params }: PageProps) {
         locale={siteLocale}
         eyebrow={el ? g.eyebrow : "Resources"}
         title={el ? g.heading : "SEO resources"}
-        description={el ? g.lead : "Search Console guides, a free opportunity finder, AI search frameworks and the glossary: the same material our team uses on client work."}
+        description={el ? g.lead : "Investigate a drop in clicks, decide which page to update, or put together a monthly report for a client. Start with a guide or try the free tool on your own data."}
         path={lp("/resources")}
         markdown={false}
         headings={blocks.flatMap((b) => (b.type === "h2" ? [{ id: b.id, text: b.text, level: 2 as const }] : []))}

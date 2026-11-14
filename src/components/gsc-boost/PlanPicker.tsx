@@ -1,13 +1,13 @@
 "use client";
 
-import { useState } from "react";
-import { ArrowRight, FolderOpen } from "lucide-react";
+import { useId, useState } from "react";
+import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/cn";
 import type { SiteLocale } from "@/lib/i18n/locale";
 import { CheckList } from "@/components/kit/primitives";
 import { kitSecondaryBtn, kitSoftwareBtn } from "@/components/kit/sections";
 import { appLink, formatNumber, formatUsd, type Copy } from "./copy";
-import { PLANS, yearlySavings, type BillingCycle, type Plan } from "./plans";
+import { PLANS, yearlySavings, type BillingCycle, type Plan, type PlanId } from "./plans";
 import { PLAN_OUTCOMES } from "@/data/value-explainer";
 
 const T = {
@@ -19,7 +19,7 @@ const T = {
   perYear: { en: "/ year", el: "/ έτος" },
   recommended: { en: "Recommended", el: "Προτείνεται" },
   credits: { en: "Credits / mo", el: "Μονάδες / μήνα" },
-  sites: { en: "Projects", el: "Έργα" },
+  sites: { en: "Sites", el: "Ιστοσελίδες" },
   seats: { en: "Seats", el: "Χρήστες" },
 } as const;
 
@@ -125,12 +125,10 @@ function PlanCard({
           {badgeLabel}
         </span>
       ) : null}
-      <div className="mb-5 flex items-center justify-between gap-3 border-b border-hairline pb-5"><span className="flex items-center gap-2 text-xs font-medium text-muted-foreground"><FolderOpen className="size-4 text-primary" aria-hidden />{plan.sites} {locale === "el" ? "έργα" : "projects"}</span><span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">ANOTHERSEOGURU</span></div>
       <h3 className="font-display text-[20px] font-semibold tracking-[-0.02em] text-foreground">{plan.id}</h3>
       <p className="mt-1.5 text-[14px] leading-relaxed text-muted-foreground sm:min-h-[44px]">{plan.tagline[locale]}</p>
       {PLAN_OUTCOMES[plan.id.toLowerCase()] ? (
         <p className="mt-2 text-[13px] leading-snug text-foreground sm:min-h-[36px]">
-          <span className="font-semibold text-primary">{locale === "el" ? "Τι κερδίζετε: " : "What you get: "}</span>
           {PLAN_OUTCOMES[plan.id.toLowerCase()][locale]}
         </p>
       ) : null}
@@ -172,23 +170,42 @@ export function PlanPicker({
   source,
   className,
   badge,
+  compactOnMobile = false,
 }: {
   readonly locale: SiteLocale;
   readonly source: string;
   readonly className?: string;
+  readonly compactOnMobile?: boolean;
   /** Replaces the default "Recommended" label. The highlighted plan is still Pro. */
   readonly badge?: Copy;
 }) {
   const [cycle, setCycle] = useState<BillingCycle>("monthly");
+  const [selected, setSelected] = useState<PlanId>("Starter");
+  const controlId = useId();
   const badgeLabel = badge?.[locale] ?? T.recommended[locale];
   return (
     <div className={className}>
       <div className="flex justify-center">
         <BillingToggle cycle={cycle} onChange={setCycle} locale={locale} />
       </div>
-      <div className="mt-10 grid gap-5 lg:grid-cols-3 lg:items-stretch">
+      {compactOnMobile && (
+        <fieldset className="mt-6 lg:hidden">
+          <legend className="mb-2 text-sm font-medium">{locale === "el" ? "Ποιο πακέτο θέλετε να δείτε;" : "Which plan would you like to see?"}</legend>
+          <div className="grid grid-cols-3 rounded-xl border border-hairline bg-surface p-1">
+            {PLANS.map((plan) => (
+              <label key={plan.id} className="cursor-pointer">
+                <input className="peer sr-only" type="radio" name={controlId} checked={selected === plan.id} onChange={() => setSelected(plan.id)} />
+                <span className="flex min-h-11 items-center justify-center rounded-lg text-sm font-medium text-muted-foreground peer-checked:bg-foreground peer-checked:text-background peer-focus-visible:outline-2 peer-focus-visible:outline-ring">{plan.id}</span>
+              </label>
+            ))}
+          </div>
+        </fieldset>
+      )}
+      <div className={cn("grid gap-5 lg:grid-cols-3 lg:items-stretch", compactOnMobile ? "mt-6 lg:mt-10" : "mt-10")}>
         {PLANS.map((plan) => (
-          <PlanCard key={plan.id} plan={plan} cycle={cycle} locale={locale} source={source} badgeLabel={badgeLabel} />
+          <div key={plan.id} className={compactOnMobile && plan.id !== selected ? "hidden lg:block" : undefined}>
+            <PlanCard plan={plan} cycle={cycle} locale={locale} source={source} badgeLabel={badgeLabel} />
+          </div>
         ))}
       </div>
     </div>

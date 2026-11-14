@@ -16,9 +16,7 @@ export const commonEn = {
   blog: 'Blog',
   resources: 'Resources',
   securityNotice: {
-    title: 'Security notice.',
-    body: 'Since late October we have been detecting automated attempts to copy our content. Our websites are protected by a system that logs and blocks this traffic. Our design and content are protected by copyright law (Greek Law 2121/1993), and any infringement is dealt with through legal channels.',
-    signature: 'CEO',
-    close: 'Dismiss security notice',
+    title: 'Content and copyright',
+    body: 'Greek copyright law (Law 2121/1993) protects our design and writing. We detect and block automated copying. Get in touch if you would like permission to republish our work.',
   },
 } as const;

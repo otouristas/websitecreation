@@ -196,7 +196,7 @@ export function ConsultantPageView({ locale }: { locale: SiteLocale }) {
           <RelatedLinks title={t.relatedTitle} items={related} />
         </KitSection>
 
-        <CtaBand locale={locale} source="seo-consultant" title={accentTail(t.cta.title, 2)} description={t.cta.body} />
+        <CtaBand agency locale={locale} source="seo-consultant" title={accentTail(t.cta.title, 2)} description={t.cta.body} />
       </main>
       <Footer locale={locale} />
     </>

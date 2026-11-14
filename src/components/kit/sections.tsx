@@ -47,8 +47,8 @@ export const KIT_COPY = {
   readOnly: c("Read-only Google access", "Πρόσβαση στη Google μόνο για ανάγνωση"),
   noCard: c("7-day free trial, no card", "7 ημέρες δωρεάν δοκιμή, χωρίς κάρτα"),
   cancel: c("Cancel anytime", "Ακύρωση οποτεδήποτε"),
-  reply24: c("Reply within 24 hours", "Απάντηση σε 24 ώρες"),
-  noContract: c("No lock-in contract", "Χωρίς δέσμευση"),
+  reply24: c("Reply within 24 working hours", "Απάντηση εντός 24 εργάσιμων ωρών"),
+  auditFirst: c("Free check before a quote", "Δωρεάν έλεγχος πριν από την προσφορά"),
   realData: c("Built on your Search Console data", "Με βάση τα δικά σας δεδομένα Search Console"),
 } as const;
 
@@ -180,7 +180,7 @@ export function agencyTrust(locale: SiteLocale) {
   return [
     { icon: Clock3, label: KIT_COPY.reply24[locale] },
     { icon: ShieldCheck, label: KIT_COPY.realData[locale] },
-    { icon: RotateCcw, label: KIT_COPY.noContract[locale] },
+    { icon: RotateCcw, label: KIT_COPY.auditFirst[locale] },
   ];
 }
 
@@ -259,19 +259,19 @@ export function SoftwareCtas({
 /* ------------------------------------------------------------------ CTA band */
 
 const BAND = {
-  title: c("Your next customers are already searching.", "Οι επόμενοι πελάτες σας ήδη ψάχνουν."),
-  accent: c("Let’s find them", "Ας τους βρούμε"),
-  agencyTag: c("We do it for you", "Το αναλαμβάνουμε εμείς"),
-  agencyTitle: c("A free SEO audit in 24 hours", "Δωρεάν έλεγχος SEO σε 24 ώρες"),
+  title: c("Who will handle", "Ποιος θα αναλάβει"),
+  accent: c("your SEO?", "το SEO σας;"),
+  agencyTag: c("Agency services", "Υπηρεσίες SEO"),
+  agencyTitle: c("Ask our team to look at your site", "Ζητήστε έλεγχο της ιστοσελίδας σας"),
   agencyBody: c(
-    "Send your website. Receive a short summary of measured SEO findings, then tell us what you want to achieve.",
-    "Στείλτε μας την ιστοσελίδα σας. Λάβετε μια σύντομη σύνοψη με μετρημένα ευρήματα SEO και πείτε μας τι θέλετε να πετύχετε.",
+    "Send us your website for a free audit. We’ll share what we found and discuss which fixes make sense for your business.",
+    "Στείλτε μας την ιστοσελίδα σας για δωρεάν έλεγχο. Θα σας δείξουμε τι βρήκαμε και θα συζητήσουμε ποιες αλλαγές έχουν αξία για την επιχείρησή σας.",
   ),
-  softwareTag: c("Do it yourself", "Μόνοι σας"),
-  softwareTitle: c("AnotherSEOGuru App: Search Console as a to-do list", "AnotherSEOGuru App: το Search Console ως λίστα ενεργειών"),
+  softwareTag: c("AnotherSEOGuru App", "AnotherSEOGuru App"),
+  softwareTitle: c("Choose your next SEO task", "Βρείτε τι αξίζει να βελτιώσετε πρώτα"),
   softwareBody: c(
-    "Connect Google read-only and get the fixes that win the most clicks, ranked and estimated, for every site you manage.",
-    "Συνδέστε τη Google μόνο για ανάγνωση και πάρτε τις διορθώσεις που φέρνουν τα περισσότερα κλικ, με σειρά και εκτίμηση.",
+    "See which pages get fewer clicks than you’d expect. Pick one to improve and compare its clicks after the change.",
+    "Δείτε ποιες σελίδες παίρνουν λιγότερα κλικ από όσα θα περιμένατε. Επιλέξτε μία, βελτιώστε τη και συγκρίνετε τα κλικ πριν και μετά.",
   ),
 };
 
@@ -283,16 +283,39 @@ const BAND = {
 export function CtaBand({
   locale,
   title,
+  agency = false,
   description,
   source,
   className,
 }: {
   readonly locale: SiteLocale;
   readonly title?: ReactNode;
+  readonly agency?: boolean;
   readonly description?: ReactNode;
   readonly source?: string;
   readonly className?: string;
 }) {
+  if (agency) {
+    const el = locale === "el";
+    return (
+      <section className={cn("py-16 sm:py-24", className)}>
+        <Container>
+          <div className="rounded-3xl border border-hairline bg-surface px-6 py-9 sm:p-12">
+            <h2 className="max-w-3xl text-balance font-display text-3xl font-semibold tracking-tight sm:text-4xl">
+              {title ?? (el ? "Τι χρειάζεται η δική σας επιχείρηση;" : "What does your business need?")}
+            </h2>
+            <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">
+              {description ?? (el ? "Πείτε μας ποια υπηρεσία σας ενδιαφέρει και πού δυσκολεύεται σήμερα ο πελάτης σας. Θα συζητήσουμε τις επιλογές και το κόστος." : "Tell us which service you need and where customers get stuck. We’ll discuss the options and what the work would cost.")}
+            </p>
+            <div className="mt-6 flex flex-wrap items-center gap-4">
+              <Link href={localizedPath(locale, "/get-started")} className={kitPrimaryBtn}>{el ? "Συζητήστε το έργο σας" : "Discuss your project"}<ArrowRight className="size-4" aria-hidden /></Link>
+              <Link href={localizedPath(locale, "/ypiresies/times")} className={kitSecondaryBtn}>{el ? "Δείτε τιμές υπηρεσιών" : "See service prices"}</Link>
+            </div>
+          </div>
+        </Container>
+      </section>
+    );
+  }
   return (
     <section className={cn("py-20 sm:py-28", className)}>
       <Container>
@@ -305,7 +328,7 @@ export function CtaBand({
           <h2 className="mx-auto max-w-3xl text-balance break-words text-center font-display text-[30px] font-semibold leading-[1.08] tracking-[-0.035em] text-foreground sm:text-[46px]">
             {title ?? (
               <>
-                {BAND.title[locale]} <Accent>{BAND.accent[locale]}</Accent>.
+                {BAND.title[locale]} <Accent>{BAND.accent[locale]}</Accent>
               </>
             )}
           </h2>

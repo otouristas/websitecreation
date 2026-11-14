@@ -1,3 +1,4 @@
+import { isAgencyGuideSlug } from '../data/agency-guides';
 import { hasMigratedAgencyPage } from '../data/migrated-agency-paths';
 
 /**
@@ -59,7 +60,9 @@ export function comPathForAgencyDomain(grPathname: string): string | null {
   if (bare === '/') return AGENCY_HOME_EL;
   if (bare === '/times') return AGENCY_PRICING_EL;
   if (bare === '/el' || bare.startsWith('/el/') || bare === '/en' || bare.startsWith('/en/')) return null;
-  return isAgencyBarePath(bare) ? `/el${bare}` : null;
+  const article = /^\/blog\/([^/]+)$/.exec(bare);
+  if (article && isAgencyGuideSlug(article[1])) return `/el${bare}`;
+  return isAgencyBarePath(bare) ? greekAgencyPath(bare) : null;
 }
 
 /** The public href of a Greek agency page (e.g. `/el/ypiresies/times`). */
@@ -101,7 +104,8 @@ export function isAgencyBarePath(barePath: string): boolean {
 
 /** True for a locale-prefixed pathname (e.g. `/el/work/onoma-hotel`) of an agency page. */
 export function isAgencyPathname(pathname: string): boolean {
-  return isAgencyBarePath(stripLocalePrefix(pathname));
+  const article = /^\/el\/blog\/([^/?#]+)\/?(?:[?#].*)?$/.exec(pathname);
+  return article ? isAgencyGuideSlug(article[1]) : isAgencyBarePath(stripLocalePrefix(pathname));
 }
 
 /**

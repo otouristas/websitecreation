@@ -19,7 +19,7 @@ export const SEARCH_CONSOLE_ARTICLES: ReadonlyArray<ResourceArticle> = [
     body: [
       {
         type: "p",
-        text: "**Analyzing Google Search Console means turning the Performance report into a short list of changes worth making.** Most people stop at the chart. A useful analysis asks five questions in order: what changed, where the demand is, what underperforms for its position, where your own pages compete, and what people search for that you have no good page for. Each question maps to one filter or comparison in Search Console, and each answer ends in a concrete fix.",
+        text: "Open the Performance report and compare two periods. Which pages gained or lost clicks? For one of those pages, look at the searches behind the change. Its position, impressions and CTR will help you decide whether to improve the content, adjust the title or investigate why a different URL appears for the same search.",
       },
       { type: "h2", id: "basics", text: "The four metrics, read correctly" },
       {
@@ -131,7 +131,7 @@ export const SEARCH_CONSOLE_ARTICLES: ReadonlyArray<ResourceArticle> = [
     body: [
       {
         type: "p",
-        text: "**High impressions with a low CTR usually means one of two things: you rank too low for the impressions to turn into clicks, or you rank well but something on the results page takes the click first.** The fix depends entirely on which. Check the average position before you touch a title: below about position 10, CTR is low by nature and the job is ranking higher; in the top 10, a CTR far under what the position usually earns is a snippet or results-page problem.",
+        text: "Before rewriting a title that gets few clicks, check the page’s average position. A result outside the top ten can collect impressions while attracting few visits. If the page already ranks well, compare its CTR with similar positions and inspect the actual results. The title, competing listings or an answer above them may explain the difference.",
       },
       { type: "h2", id: "diagnose", text: "Diagnose it in two minutes" },
       {
@@ -212,7 +212,7 @@ export const SEARCH_CONSOLE_ARTICLES: ReadonlyArray<ResourceArticle> = [
     body: [
       {
         type: "p",
-        text: "**Branded keywords contain your company or product name; non-branded keywords do not.** The split matters because the two behave differently: branded search measures demand you created elsewhere (ads, word of mouth, sales), while non-branded search measures what SEO actually wins. In Google Search Console you separate them with a query filter set to **Custom (regex)**, using a pattern of your brand names and their common misspellings.",
+        text: "Someone searching for your business by name already knows it exists. Someone searching for your service may be finding you for the first time. Separate those searches before interpreting growth in clicks. In Search Console, use the **Custom (regex)** query filter with your brand, product names and their common misspellings.",
       },
       { type: "h2", id: "why", text: "Why the split changes your conclusions" },
       {
@@ -310,7 +310,7 @@ export const SEARCH_CONSOLE_ARTICLES: ReadonlyArray<ResourceArticle> = [
     body: [
       {
         type: "p",
-        text: "**Keyword cannibalization is harmful when two or more of your pages split impressions for the same query and the ranking page keeps changing, so neither ranks as well as one strong page would.** You confirm it in Search Console by opening the query and checking the Pages tab, then comparing over time. The fix is usually to pick one page and consolidate the rest into it, but not every overlap needs fixing. The [glossary entry](/en/glossary/keyword-cannibalization) has the short definition; this page is about the work.",
+        text: "Two pages can appear for the same search without needing a fix. Check whether Google keeps switching between them and whether either page has lost ground. Open the query in Search Console, select Pages and compare periods. Use that evidence to decide whether to keep both URLs or combine their content. See the definition of [keyword cannibalization](/en/glossary/keyword-cannibalization).",
       },
       { type: "h2", id: "harmful", text: "Harmful or harmless?" },
       {
