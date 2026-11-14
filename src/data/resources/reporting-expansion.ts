@@ -209,24 +209,63 @@ export const REPORTING_EXPANSION_ARTICLES: ReadonlyArray<ResourceArticle> = [
     slug: "seo-reporting-tools",
     cluster: "reporting",
     kind: "article",
-    title: "SEO reporting tools: how to choose, with a fair look at the main options",
-    seoTitle: "SEO Reporting Tools Compared (2026 Guide)",
+    title: "SEO reporting tools for client work: which one fits your reports?",
+    seoTitle: "SEO Reporting Tools for Client Reports",
     description:
-      "A balanced guide to SEO reporting tools: the criteria that matter, the main options by category, where each fits and how to run a trial before you commit.",
-    primaryKeyword: "seo reporting tool",
+      "Compare SEO reporting tools for a custom dashboard, a multi-channel client report or a Search Console PDF. See a complete example and test one real client month.",
+    primaryKeyword: "seo reporting tools",
     secondaryKeywords: ["seo reporting software", "best seo reporting tools", "seo agency reporting"],
     cta: "direct",
     published: PUBLISHED,
-    updated: "2026-11-08",
+    updated: "2026-11-14",
     body: [
       {
         type: "p",
-        text: "Open the last report you sent a client. If it combined search, ads and email, look for a tool that can bring those channels together. If it was mainly about Google Search, try building the same report from Search Console data. Compare the figures, time spent and cost per client with any reporting tool you already pay for.",
+        text: "Start with the last report your client opened. If it combined ads, social and organic results, test a multi-channel reporting tool. If the client asked which pages brought enquiries, look for Search Console traffic alongside GA4 key events. A custom dashboard makes sense when someone on your team will own its setup.",
       },
       {
         type: "note",
         tone: "info",
-        text: "We make AnotherSEOGuru App, one of the tools below. We have kept the descriptions of other tools at the level we can stand behind and said where our own tool is not the best fit. Features and prices change often: check each vendor's current pricing and plan details before you decide.",
+        text: "AnotherSEOGuru makes one of the products in this comparison. The links below open the vendors’ own documentation and a finished report you can inspect.",
+      },
+      {
+        "type": "h2",
+        "id": "choose-by-deliverable",
+        "text": "Choose by what the client needs to receive"
+      },
+      {
+        "type": "table",
+        "head": [
+          "Client asks for",
+          "Start with",
+          "Check before you buy"
+        ],
+        "rows": [
+          [
+            "An editable Google dashboard",
+            "Google Data Studio (formerly Looker Studio)",
+            "Choose URL impressions to report by page. A site-level Search Console source aggregates data differently."
+          ],
+          [
+            "One branded view of SEO, ads and social",
+            "AgencyAnalytics",
+            "Connect the channels your client pays for. Open the dashboard as a client and check the domain and branding included in your plan."
+          ],
+          [
+            "A monthly search report with next steps",
+            "AnotherSEOGuru App",
+            "Compare clicks with Search Console and check which GA4 event you count as an enquiry. Export the PDF your client will read."
+          ],
+          [
+            "Rank tracking or backlinks in the same report",
+            "Your current SEO suite",
+            "Label the figures observed in Search Console and the estimates supplied by your tool separately."
+          ]
+        ]
+      },
+      {
+        "type": "p",
+        "text": "Check the [Google Search Console connector](https://docs.cloud.google.com/data-studio/connect-to-search-console), [AgencyAnalytics branding options](https://agencyanalytics.com/features/white-label) and our [AgencyAnalytics comparison](/en/compare/agencyanalytics). For a finished deliverable, open the [monthly SEO report example](/en/resources/sample-seo-report) and download its PDF."
       },
       { type: "h2", id: "criteria", text: "The criteria that matter" },
       {
@@ -242,19 +281,8 @@ export const REPORTING_EXPANSION_ARTICLES: ReadonlyArray<ResourceArticle> = [
           ["Exports and sharing", "Clients read PDFs, links and emails differently", "Export a PDF, share a link and schedule an email"],
         ],
       },
-      { type: "h2", id: "categories", text: "The main categories" },
-      {
-        type: "table",
-        head: ["Category", "Examples", "Good at", "Watch for"],
-        rows: [
-          ["Free dashboard builder", "Looker Studio", "Custom layouts, blending sources, no licence cost", "Build and upkeep time; connector limits for some sources"],
-          ["Multi-channel agency reporting", "AgencyAnalytics, Whatagraph, DashThis", "Many marketing channels in one branded report", "SEO depth depends on which data sources you connect"],
-          ["SEO suite report builders", "Semrush, Ahrefs, SE Ranking", "Rankings, backlinks and audit data from the suite itself", "Reports center on the suite's own estimates"],
-          ["Search Console-based SEO tools", "AnotherSEOGuru App", "Organic analysis from your own Google data, opportunities, shipped work", "Narrower channel coverage"],
-        ],
-      },
       { type: "h2", id: "options", text: "The options, one by one" },
-      { type: "h3", id: "looker-studio", text: "Looker Studio" },
+      { type: "h3", id: "looker-studio", text: "Data Studio" },
       {
         type: "p",
         text: "Google's free dashboard tool, with native connectors for Search Console and Google Analytics and partner connectors for many other sources. It suits teams that want full control over layout or need to blend SEO with paid and CRM data. The cost is time: someone has to build the template, maintain calculated fields such as the brand split, and fix it when a connector or field changes. Partner connectors for non-Google sources are often paid. Our [SEO dashboard](/en/resources/seo-dashboard) guide includes a layout and the brand regex field to start from.",
@@ -272,7 +300,7 @@ export const REPORTING_EXPANSION_ARTICLES: ReadonlyArray<ResourceArticle> = [
       { type: "h3", id: "dashthis", text: "DashThis" },
       {
         type: "p",
-        text: "A dashboard reporting tool with integrations for many marketing channels and ready-made templates. It suits teams that want a quick, tidy multi-channel dashboard without building one in Looker Studio. Check whether its templates cover the SEO metrics in your [SEO KPIs](/en/resources/seo-kpis) list, such as the brand split, and how pricing scales with dashboards.",
+        text: "A dashboard reporting tool with integrations for many marketing channels and ready-made templates. It suits teams that want a quick, tidy multi-channel dashboard without building one in Data Studio. Check whether its templates cover the SEO metrics in your [SEO KPIs](/en/resources/seo-kpis) list, such as the brand split, and how pricing scales with dashboards.",
       },
       { type: "h3", id: "seo-suites", text: "Semrush and Ahrefs report builders" },
       {
@@ -291,7 +319,7 @@ export const REPORTING_EXPANSION_ARTICLES: ReadonlyArray<ResourceArticle> = [
       },
       {
         type: "p",
-        text: "Where it is **not** the best fit: if your reports must combine SEO with paid ads, social and email in one document, a multi-channel tool will serve you better. If you want a drag-and-drop canvas with dozens of third-party connectors, Looker Studio or a dashboard tool is more flexible. If your team lives in Semrush or Ahrefs data and reports mainly on backlinks and competitor estimates, staying in that suite is simpler. And if you manage more sites than the Agency plan's 30, check the fit with us first.",
+        text: "Where it is **not** the best fit: if your reports must combine SEO with paid ads, social and email in one document, a multi-channel tool will serve you better. If you want a drag-and-drop canvas with dozens of third-party connectors, Data Studio or a dashboard tool is more flexible. If your team lives in Semrush or Ahrefs data and reports mainly on backlinks and competitor estimates, staying in that suite is simpler. And if you manage more sites than the Agency plan's 30, check the fit with us first.",
       },
       {
         type: "p",
@@ -302,11 +330,11 @@ export const REPORTING_EXPANSION_ARTICLES: ReadonlyArray<ResourceArticle> = [
         type: "table",
         head: ["If you are...", "Start by trying"],
         rows: [
-          ["One in-house marketer, one site, tight budget", "Looker Studio, or Search Console plus a written monthly summary"],
+          ["One in-house marketer, one site, tight budget", "Data Studio, or Search Console plus a written monthly summary"],
           ["An agency selling SEO with PPC and social", "A multi-channel reporting tool (AgencyAnalytics, Whatagraph, DashThis)"],
           ["An SEO team already paying for a suite", "The suite's report builder, with Search Console clicks added"],
           ["An SEO agency or freelancer reporting organic results to many clients", "A Search Console-based tool with white-label reports and a client portal"],
-          ["A team that needs a fully custom layout", "Looker Studio"],
+          ["A team that needs a fully custom layout", "Data Studio"],
         ],
       },
       { type: "h2", id: "trial", text: "How to run a fair trial" },
@@ -343,8 +371,8 @@ export const REPORTING_EXPANSION_ARTICLES: ReadonlyArray<ResourceArticle> = [
       {
         type: "faq",
         items: [
-          { q: "What is the best SEO reporting tool?", a: "It depends on what you report. Multi-channel tools suit agencies reporting SEO with ads and social; SEO suite report builders suit teams already paying for the suite; Search Console-based tools suit teams reporting organic results from Google's own data. Looker Studio suits anyone who needs a custom layout and has time to maintain it." },
-          { q: "Is there a free SEO reporting tool?", a: "Looker Studio is free and connects to Search Console and Google Analytics. The cost is the time to build and maintain the report. Search Console itself is free but is not designed for client-facing reports." },
+          { q: "What is the best SEO reporting tool?", a: "It depends on what you report. Multi-channel tools suit agencies reporting SEO with ads and social; SEO suite report builders suit teams already paying for the suite; Search Console-based tools suit teams reporting organic results from Google's own data. Data Studio suits anyone who needs a custom layout and has time to maintain it." },
+          { q: "Is there a free SEO reporting tool?", a: "Data Studio is free and connects to Search Console and Google Analytics. The cost is the time to build and maintain the report. Search Console itself is free but is not designed for client-facing reports." },
           { q: "What should SEO reporting software include?", a: "Search Console and analytics data, a way to split branded and non-branded traffic, comparisons with previous periods, explanations of top movers, PDF or link sharing, and for agencies white-label branding and a client view." },
           { q: "How much does SEO reporting software cost?", a: "Prices vary widely and change often, and most tools price by clients, sites, dashboards or seats. Check each vendor's current pricing and calculate the cost at your current size and at double it." },
           { q: "Do SEO reporting tools replace a written report?", a: "No. They gather and chart the data. The summary, the reasons behind changes and the next steps still need someone who knows the account." },
@@ -356,15 +384,15 @@ export const REPORTING_EXPANSION_ARTICLES: ReadonlyArray<ResourceArticle> = [
     slug: "white-label-seo-reports",
     cluster: "reporting",
     kind: "article",
-    title: "White-label SEO reports: what to brand, what a client portal adds and a monthly workflow",
-    seoTitle: "White Label SEO Reports: Guide + Sample",
+    title: "White-label SEO reports: what to put in your client’s monthly PDF",
+    seoTitle: "White Label SEO Reports: Sample Client PDF",
     description:
-      "White label SEO reports explained for agencies: what to brand, what a client portal adds, a monthly reporting workflow and the pitfalls that cost trust.",
+      "See a white-label SEO report for a fictional client. Download the monthly PDF, learn what to brand and check Search Console and GA4 figures before sending it.",
     primaryKeyword: "white label seo reports",
     secondaryKeywords: ["white label seo reporting", "white label seo report", "branded seo reports"],
     cta: "direct",
     published: PUBLISHED,
-    updated: "2026-11-08",
+    updated: "2026-11-14",
     body: [
       {
         type: "p",
@@ -374,6 +402,27 @@ export const REPORTING_EXPANSION_ARTICLES: ReadonlyArray<ResourceArticle> = [
         type: "note",
         tone: "tip",
         text: "Want to see one before you read on? Here is a complete [sample SEO report](/en/resources/sample-seo-report) on invented data, and the [white-label SEO reporting tool](/en/platform/white-label-reports) that builds it from Search Console under your logo.",
+      },
+      {
+        "type": "h2",
+        "id": "client-example",
+        "text": "What a client reads on the first page"
+      },
+      {
+        "type": "p",
+        "text": "In our fictional dental-clinic example, clicks grew from 4,630 to 5,180 and appointment requests from organic search rose from 41 to 47. These are different measurements. Search Console counts search clicks. The appointment figure comes from a configured GA4 event. Explore the [complete monthly report](/en/resources/sample-seo-report) or download the [English sample PDF](https://anotherseoguru.com/downloads/reporting/monthly-seo-report-en.pdf)."
+      },
+      {
+        "type": "list",
+        "items": [
+          "**What changed?** Non-branded searches brought 3,412 clicks, up 18% from September. Name the comparison period so the client can reproduce it.",
+          "**What needs attention?** The query “invisalign cost” lost 31 clicks. Show the decline alongside the pages that gained.",
+          "**What happens next?** Review the implant pages, where nine queries average positions 5–12. That gives the client a specific action to follow up next month."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "If you send reports for several clients, [try the reporting workspace](/en/platform/white-label-reports) to choose sections, add branding and arrange delivery in English or Greek."
       },
       { type: "h2", id: "what-it-means", text: "What white-label means (and what it does not)" },
       {

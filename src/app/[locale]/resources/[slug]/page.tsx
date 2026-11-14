@@ -57,6 +57,16 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 function cta(article: ResourceArticle, locale: SiteLocale) {
   const source = `resources-${article.slug}`;
   const el = locale === "el";
+  if (["seo-reporting-tools", "white-label-seo-reports"].includes(article.slug)) {
+    return {
+      title: el ? "Δείτε την αναφορά που θα λάβει ο πελάτης" : "See the report your client would receive",
+      text: el
+        ? "Κατεβάστε το δείγμα PDF ή ανοίξτε την εφαρμογή με ενδεικτικά στοιχεία για να επιλέξετε περίοδο, ενότητες και λογότυπο."
+        : "Download the sample PDF or open the reporting workspace with sample data to choose the period, sections and branding.",
+      primary: { label: el ? "Άνοιγμα δείγματος αναφοράς" : "Open the sample report", href: resourcePath("sample-seo-report", locale), event: `${source}_sample` },
+      secondary: { label: el ? "Δοκιμή του εργαλείου αναφορών" : "Try the report builder", href: appLink("/demo/reports", locale, source), event: `${source}_demo` },
+    };
+  }
   if (article.cta === "direct") {
     return {
       title: el ? "Δείτε τι συμβαίνει στη δική σας ιστοσελίδα" : "Try it with your own site",

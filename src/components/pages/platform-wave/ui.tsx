@@ -201,10 +201,12 @@ export function AnnouncePill({ href, tag, text, wrap = false }: { readonly href:
 export function WaveSoftwareActions({
   locale,
   source,
+  demoPath = "/demo",
   align = "left",
 }: {
   readonly locale: SiteLocale;
   readonly source: string;
+  readonly demoPath?: string;
   readonly align?: "left" | "center";
 }) {
   const copy = homeCopy(locale);
@@ -214,7 +216,7 @@ export function WaveSoftwareActions({
         <GoogleTile className="size-6 rounded-full" />
         {copy.signup}
       </a>
-      <a href={appLink("/demo", locale, source)} className={waveGhostBtn}>
+      <a href={appLink(demoPath, locale, source)} className={waveGhostBtn}>
         {copy.demo}
       </a>
     </div>
