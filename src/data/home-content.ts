@@ -273,10 +273,10 @@ export interface HomeEngine {
 }
 
 export const HOME_ENGINES: readonly HomeEngine[] = [
-  { id: 'chatgpt', name: 'ChatGPT', mark: '/logos/assets/openai.webp', tone: 'oklch(0.85 0.05 160)' },
-  { id: 'perplexity', name: 'Perplexity', mark: '/logos/assets/perplexity.png', tone: 'oklch(0.8 0.1 200)' },
-  { id: 'gemini', name: 'Gemini', tone: 'oklch(0.75 0.16 285)' },
-  { id: 'aio', name: 'Google AI Overviews', tone: 'oklch(0.8 0.15 70)' },
+  { id: 'chatgpt', name: 'ChatGPT', mark: '/integrations/service-chatgpt.svg', tone: 'oklch(0.85 0.05 160)' },
+  { id: 'perplexity', name: 'Perplexity', mark: '/integrations/service-perplexity.svg', tone: 'oklch(0.8 0.1 200)' },
+  { id: 'gemini', name: 'Gemini', mark: '/integrations/service-gemini.svg', tone: 'oklch(0.75 0.16 285)' },
+  { id: 'aio', name: 'Google AI Overviews', mark: '/integrations/service-google.svg', tone: 'oklch(0.8 0.15 70)' },
 ];
 
 /**

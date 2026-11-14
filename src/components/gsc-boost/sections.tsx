@@ -192,12 +192,12 @@ export function WorksWith({ locale }: { readonly locale: L }) {
     <NameStrip
       heading={isEl ? "Συνεργάζεται με τα εργαλεία που ήδη χρησιμοποιείτε" : "Works with the tools you already use"}
       items={[
-        { name: "Google Search Console", role: isEl ? "Δεδομένα απόδοσης" : "Performance data" },
-        { name: "Google Analytics 4", role: isEl ? "Επισκεψιμότητα και μετατροπές" : "Traffic and conversions" },
-        { name: "WordPress", role: isEl ? "Εισαγωγή και δημοσίευση" : "Import and publish" },
-        { name: "ChatGPT", role: isEl ? "Ορατότητα στην AI" : "AI visibility" },
-        { name: "Gemini", role: isEl ? "Ορατότητα στην AI" : "AI visibility" },
-        { name: "Perplexity", role: isEl ? "Ορατότητα στην AI" : "AI visibility" },
+        { name: "Google Search Console", brand: "gsc", role: isEl ? "Δεδομένα απόδοσης" : "Performance data" },
+        { name: "Google Analytics 4", brand: "ga", role: isEl ? "Επισκεψιμότητα και μετατροπές" : "Traffic and conversions" },
+        { name: "WordPress", brand: "wp", role: isEl ? "Εισαγωγή και δημοσίευση" : "Import and publish" },
+        { name: "ChatGPT", brand: "chatgpt", role: isEl ? "Ορατότητα στην AI" : "AI visibility" },
+        { name: "Gemini", brand: "gemini", role: isEl ? "Ορατότητα στην AI" : "AI visibility" },
+        { name: "Perplexity", brand: "perplexity", role: isEl ? "Ορατότητα στην AI" : "AI visibility" },
       ]}
     />
   );

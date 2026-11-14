@@ -1,3 +1,4 @@
+import { ToolMark } from "@/components/ToolMark";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
@@ -278,7 +279,7 @@ export default async function PlatformIphonePage({ params }: PageProps) {
       <Header locale={locale} />
       <main className="blueprint-grid relative z-0">
         <HeroCentered
-          pill={<KitEyebrow icon={<Smartphone />}>{tx("AnotherSEOGuru App for iPhone · Beta", "AnotherSEOGuru App για iPhone · Beta")}</KitEyebrow>}
+          pill={<KitEyebrow icon={<ToolMark brand="iphone" className="size-4" />}>{tx("AnotherSEOGuru App for iPhone · Beta", "AnotherSEOGuru App για iPhone · Beta")}</KitEyebrow>}
           title={
             <>
               {tx("See how your site is doing on Google", "Δείτε πώς τα πάει η ιστοσελίδα σας στη Google")} <Accent>{tx("from your iPhone", "από το iPhone σας")}</Accent>
