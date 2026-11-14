@@ -128,6 +128,6 @@ Anyone who “guarantees” #1 is not being honest, not even Google guarantees i
 
 Rankings for agreed keywords, organic clicks/impressions, leads or conversions where tracking exists, and a clear list of work completed, not a 40-page PDF of vanity charts.
 
-## Still Need a Clear Next Step?
+## What to include when asking for an SEO quote
 
 See our [packages and pricing](/el/ypiresies/times) or [request a free quote](/en/get-started) tailored to your business. We reply within 24 hours with a concrete plan and price, no commitment.

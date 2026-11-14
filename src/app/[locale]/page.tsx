@@ -8,13 +8,12 @@ import Footer from "@/components/Footer";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
 import { ChatDomainEntry } from "@/components/landing/ChatDomainEntry";
 import { SeoChatDemo } from "@/components/landing/SeoChatDemo";
-import { SampleWindow } from "@/components/pages/home/SampleWindow";
+import { TitleRecommendation } from "@/components/pages/home/TitleRecommendation";
 import { homeCopy } from "@/components/pages/home/copy";
 import { HOW_STEPS } from "@/data/value-explainer";
 import { ProofStrip } from "@/components/pages/home/ProofStrip";
 import { TieredModuleGrid } from "@/components/pages/platform-wave/modules";
 import {
-  AnnouncePill,
   AppPanel,
   TrustMarks,
   WaveAccent,
@@ -24,7 +23,6 @@ import {
   WaveEyebrow,
   WaveFaq,
   WaveHeading,
-  WaveHero,
   WaveSection,
   WaveSoftwareActions,
   WaveStats,
@@ -36,7 +34,6 @@ import {
   PersonaLinks,
   PlanPicker,
   PlatformLinks,
-  appLink,
   gscBoostSoftwareSchema,
   platformMetadata,
   type ModuleId,
@@ -149,32 +146,34 @@ export default async function PlatformHubPage({ params }: PageProps) {
       <SchemaMarkup schemas={[gscBoostSoftwareSchema(locale)]} />
       <Header locale={locale} />
       <main className="blueprint-grid relative z-0 overflow-x-clip">
-        <WaveHero
-          pill={<AnnouncePill href="#aster" tag={copy.announceTag} text={copy.announce} />}
-          title={
-            <>
-              <span className="block">{tx("Which page should you", "Ποια σελίδα αξίζει να")}</span>{" "}
-              <span className="block">
+        <section data-shot="hero" aria-labelledby="home-heading" className="hero-below-header relative isolate">
+          <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+            <div className="kit-grid absolute inset-0 [mask-image:radial-gradient(ellipse_85%_85%_at_50%_0%,black_30%,transparent_100%)]" />
+            <div className="absolute -left-32 -top-52 size-[min(580px,80vw)] rounded-full bg-primary/20 blur-3xl" />
+            <div className="absolute -right-24 top-20 size-[min(500px,70vw)] rounded-full bg-signal/15 blur-3xl" />
+          </div>
+          <div className="mx-auto grid max-w-[1320px] items-start gap-y-5 px-5 pb-14 pt-2 sm:px-8 lg:grid-cols-[minmax(0,0.94fr)_minmax(0,1.06fr)] lg:gap-x-14 lg:gap-y-7 lg:pb-24 lg:pt-14">
+            <div className="min-w-0">
+              <h1 id="home-heading" className="text-balance font-display text-[2.15rem] font-bold leading-[1.04] tracking-[-0.045em] text-foreground sm:text-[3.25rem] lg:max-w-[13ch] lg:text-[clamp(3.5rem,4.65vw,4.5rem)]">
+                {tx("Which page should you ", "Ποια σελίδα αξίζει να ")}
                 <WaveAccent>{tx("fix first?", "βελτιώσετε πρώτα;")}</WaveAccent>
-              </span>
-            </>
-          }
-          lead={tx(
-            "AnotherSEOGuru App finds pages people see on Google but rarely click. Ask Aster AI what to change. You’ll see the searches behind the suggestion, an estimate of the clicks you could gain and a task you can act on this week.",
-            "Το AnotherSEOGuru App εντοπίζει σελίδες που εμφανίζονται στη Google αλλά παίρνουν λίγα κλικ. Ο Aster AI σάς δείχνει σε ποιες αναζητήσεις εμφανίζονται, τι μπορείτε να αλλάξετε και πόσα κλικ θα μπορούσατε να κερδίσετε.",
-          )}
-          actions={<ChatDomainEntry locale={locale} />}
-          trust={<TrustMarks items={copy.trust} yesLabel={copy.markYes} />}
-          panel={<SampleWindow copy={copy} />}
-          panelNote={
-            <>
-              {copy.sampleCaption}{" "}
-              <a href={appLink("/demo", locale, "platform-window-link")} className="font-medium text-foreground underline decoration-hairline underline-offset-4">
-                {tx("Explore the sample account", "Μπείτε στον δοκιμαστικό λογαριασμό")}
-              </a>
-            </>
-          }
-        />
+              </h1>
+              <p className="mt-3 max-w-[48ch] text-pretty text-[16px] leading-relaxed text-muted-foreground lg:mt-5 lg:text-[19px]">
+                {tx(
+                  "Aster AI finds pages people see on Google but rarely click. See what to change and the searches behind each suggestion.",
+                  "Ο Aster AI βρίσκει σελίδες που εμφανίζονται στη Google αλλά παίρνουν λίγα κλικ. Δείτε τι προτείνει να αλλάξετε και σε ποιες αναζητήσεις βασίζεται.",
+                )}
+              </p>
+            </div>
+            <div className="min-w-0 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:self-center">
+              <TitleRecommendation locale={locale} />
+            </div>
+            <div className="min-w-0 lg:col-start-1 lg:row-start-2">
+              <ChatDomainEntry locale={locale} />
+              <div className="mt-6"><TrustMarks items={copy.trust} yesLabel={copy.markYes} /></div>
+            </div>
+          </div>
+        </section>
 
         <section data-shot="tools" className="border-y border-hairline bg-surface/40">
           <div className="mx-auto max-w-[1240px] px-5 py-9 lg:px-8">

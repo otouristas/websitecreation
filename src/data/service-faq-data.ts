@@ -9,37 +9,37 @@ export type ServiceFaqItem = { question: string; answer: string };
 
 const DEFAULT_EN: ServiceFaqItem[] = [
   {
-    question: 'How long does a typical project take?',
+    question: 'When will I know the timeline?',
     answer:
-      'Most website projects ship in 2–4 weeks after kickoff. SEO retainers run monthly with measurable milestones from month one.',
+      'Before work starts, we agree which pages you need, who supplies the text and when you can review the site. A monthly SEO engagement includes a report on the work and its results.',
   },
   {
     question: 'Do you work with businesses outside Greece?',
     answer:
-      'Yes. We build and optimize sites for tourism and local brands across Greece, the EU, the UK and the US, with EN/EL bilingual setups when needed.',
+      'Yes. We work with businesses serving customers in Greece and abroad. We can build the site in English and Greek when your customers use both.',
   },
   {
     question: 'How do I get a quote?',
     answer:
-      'Use Get Started, tell us your goals and timeline, and we reply with a scoped package in EUR, no hidden fees.',
+      'Send us your website, what you want visitors to do and any date you have in mind. We’ll send you a quote in euros that lists the work it covers.',
   },
 ];
 
 const DEFAULT_EL: ServiceFaqItem[] = [
   {
-    question: 'Πόσο διαρκεί ένα τυπικό project;',
+    question: 'Πότε θα ξέρω το χρονοδιάγραμμα;',
     answer:
-      'Οι περισσότερες ιστοσελίδες παραδίδονται σε 2–4 εβδομάδες μετά το kickoff. Τα μηνιαία SEO πακέτα έχουν μετρήσιμα milestones από τον πρώτο μήνα.',
+      'Πριν ξεκινήσουμε, συμφωνούμε ποιες σελίδες χρειάζεστε, ποιος θα ετοιμάσει το υλικό και πότε θα δείτε την πρώτη εκδοχή. Για το μηνιαίο SEO λαμβάνετε αναφορά με τις αλλαγές και τα αποτελέσματα.',
   },
   {
     question: 'Δουλεύετε και εκτός Ελλάδας;',
     answer:
-      'Ναι. Φτιάχνουμε και βελτιστοποιούμε sites για τουρισμό και τοπικές επιχειρήσεις σε ΕΕ, UK, ΗΠΑ και Καναδά, με δίγλωσσα EN/EL setups όπου χρειάζεται.',
+      'Ναι. Συνεργαζόμαστε και με επιχειρήσεις που απευθύνονται σε πελάτες του εξωτερικού. Μπορούμε να ετοιμάσουμε τις σελίδες σας στα ελληνικά και στα αγγλικά.',
   },
   {
     question: 'Πώς παίρνω προσφορά;',
     answer:
-      'Συμπληρώστε τη φόρμα προσφοράς με τους στόχους και το χρονοδιάγραμμά σας. Απαντάμε με ξεκάθαρο πακέτο σε ευρώ, χωρίς κρυφές χρεώσεις.',
+      'Στείλτε μας την ιστοσελίδα σας, τι θέλετε να κάνουν οι επισκέπτες της και αν υπάρχει προθεσμία. Θα λάβετε προσφορά σε ευρώ με τις εργασίες που περιλαμβάνει.',
   },
 ];
 
@@ -49,7 +49,7 @@ const BY_SERVICE: Record<string, { en: ServiceFaqItem[]; el: ServiceFaqItem[] }>
       {
         question: 'How much does a website cost?',
         answer:
-          'Packages start at {{ENTRY_WEBSITE}} (Starter, up to 5 pages), {{WEBSITE_PRO}} (Professional) and {{WEBSITE_BUSINESS}} (Business). See Pricing for full details and add-ons.',
+          'Website Starter costs {{ENTRY_WEBSITE_GROSS}} including VAT for up to five pages. Compare the Professional and Business packages if you need more pages, languages or integrations.',
       },
       {
         question: 'Do you build websites for Athens and Thessaloniki businesses?',
@@ -67,7 +67,7 @@ const BY_SERVICE: Record<string, { en: ServiceFaqItem[]; el: ServiceFaqItem[] }>
       {
         question: 'Πόσο κοστίζει η κατασκευή μιας ιστοσελίδας;',
         answer:
-          'Τα πακέτα κατασκευής ιστοσελίδας ξεκινούν από {{ENTRY_WEBSITE}} (Starter), με {{WEBSITE_PRO}} (Professional) και {{WEBSITE_BUSINESS}} (Business) για μεγαλύτερα ή πολύγλωσσα έργα. Όλες οι τιμές είναι χωρίς ΦΠΑ και αναλύονται στη σελίδα τιμών.',
+          'Το Website Starter κοστίζει {{ENTRY_WEBSITE_GROSS}} με ΦΠΑ για έως πέντε σελίδες. Αν χρειάζεστε περισσότερες σελίδες, γλώσσες ή συνδέσεις με άλλα συστήματα, δείτε τι περιλαμβάνουν τα Professional και Business.',
       },
       {
         question: 'Πόσο χρόνο χρειάζεται η κατασκευή ιστοσελίδας;',
@@ -189,22 +189,22 @@ const BY_SERVICE: Record<string, { en: ServiceFaqItem[]; el: ServiceFaqItem[] }>
       {
         question: 'What do your local SEO services include?',
         answer:
-          'Google Business Profile optimization, local landing pages, citations, review strategy, and location schema, focused on map pack and high-intent “near me” queries.',
+          'We check the hours, contact details and services on your Google Business Profile. We also review your listings and location pages so someone nearby can find the right number, directions and booking link.',
       },
       {
         question: 'Do you run local SEO in Thessaloniki and Athens?',
         answer:
-          'Yes. We have dedicated city pages and playbooks for Athens, Thessaloniki, Crete islands and other Greek markets, plus international tourism brands.',
+          'Yes. We work with businesses in both cities and elsewhere in Greece. Tell us which locations you serve and whether customers visit your premises or you travel to them.',
       },
       {
         question: 'How much does local SEO cost?',
         answer:
-          'Retainers depend on competition and number of locations. Most small businesses start with a focused GBP + citations + location pages package, then scale monthly content and reviews.',
+          'It depends on how many locations you have and the competition in each area. A single shop usually needs a review of its Business Profile, its contact page and its main local listings first.',
       },
       {
         question: 'Does local SEO still work in 2026?',
         answer:
-          'Yes pack and “near me” searches remain high-intent. Complete profiles, recent reviews, and unique location pages still beat generic national sites for local demand.',
+          'Someone looking for a nearby service needs opening hours, directions, reviews and a way to call or book. Your business listing and location page let them check those details.',
       },
     ...DEFAULT_EN.slice(2),
     ],
@@ -212,27 +212,27 @@ const BY_SERVICE: Record<string, { en: ServiceFaqItem[]; el: ServiceFaqItem[] }>
       {
         question: 'Τι είναι το τοπικό SEO;',
         answer:
-          'Το τοπικό SEO είναι πώς κατατάσσεστε στο map pack και στα τοπικά αποτελέσματα για αναζητήσεις «κοντά μου» και πόλης. Εστιάζει σε Google Business Profile, NAP, κριτικές, τοπικές σελίδες και citations.',
+          'Είναι η δουλειά που βοηθά έναν πελάτη να σας βρει στη Google και στους Χάρτες όταν ψάχνει μια υπηρεσία στην περιοχή του. Αρχίζει από το όνομα, τη διεύθυνση, το ωράριο και το τηλέφωνό σας.',
       },
       {
         question: 'Τι περιλαμβάνει το τοπικό SEO;',
         answer:
-          'Βελτιστοποίηση Google Business Profile, τοπικές landing pages, citations, στρατηγική κριτικών και location schema, με στόχο map pack και αναζητήσεις «κοντά μου».',
+          'Ελέγχουμε το Google Business Profile, τις καταχωρίσεις σας και τις σελίδες κάθε τοποθεσίας. Έτσι ο πελάτης μπορεί να βρει σωστό τηλέφωνο, οδηγίες πρόσβασης και τρόπο να κλείσει ραντεβού.',
       },
       {
         question: 'Κάνετε τοπικό SEO σε Θεσσαλονίκη και Αθήνα;',
         answer:
-          'Ναι. Έχουμε ξεχωριστές σελίδες πόλεων και playbooks για Αθήνα, Θεσσαλονίκη, Κρήτη, τα νησιά και άλλες ελληνικές αγορές.',
+          'Ναι, και σε άλλες πόλεις και νησιά της Ελλάδας. Πείτε μας ποιες περιοχές εξυπηρετείτε και αν οι πελάτες έρχονται σε εσάς ή πηγαίνετε εσείς σε αυτούς.',
       },
       {
         question: 'Πόσο κοστίζει το τοπικό SEO;',
         answer:
-          'Το κόστος εξαρτάται από ανταγωνισμό και αριθμό τοποθεσιών. Οι περισσότερες μικρές επιχειρήσεις ξεκινούν με GBP + citations + location pages και μετά κλιμακώνουν περιεχόμενο και κριτικές.',
+          'Η τιμή εξαρτάται από τα σημεία εξυπηρέτησης και τον ανταγωνισμό σε κάθε περιοχή. Για ένα κατάστημα ξεκινάμε συνήθως από το Google Business Profile, τη σελίδα επικοινωνίας και τις βασικές τοπικές καταχωρίσεις.',
       },
       {
         question: 'Πώς να βελτιώσω το τοπικό SEO μου;',
         answer:
-          'Συμπληρώστε πλήρως το Google Business Profile, κρατήστε σταθερό NAP παντού, μαζέψτε και απαντήστε σε κριτικές, δημιουργήστε τοπικές σελίδες υπηρεσιών και χτίστε σχετικές καταχωρήσεις.',
+          'Ελέγξτε πρώτα ότι η διεύθυνση, το τηλέφωνο και το ωράριο συμφωνούν στο Google Business Profile και στην ιστοσελίδα σας. Απαντήστε στις κριτικές και εξηγήστε ποιες υπηρεσίες προσφέρετε σε κάθε περιοχή.',
       },
     ...DEFAULT_EL.slice(2),
     ],
@@ -242,12 +242,12 @@ const BY_SERVICE: Record<string, { en: ServiceFaqItem[]; el: ServiceFaqItem[] }>
       {
         question: 'What are SEO audit services?',
         answer:
-          'An SEO audit is a prioritized review of technical health, indexation, on-page relevance, content gaps, and authority. We deliver a fix roadmap, not a 200-item dump, then optional implementation.',
+          'We check which pages Google can find, where visitors run into problems and which fixes matter first. You get the affected pages, the reason for each change and a suggested order of work.',
       },
       {
         question: 'What do technical SEO services include?',
         answer:
-          'Crawlability, canonicals, sitemaps, Core Web Vitals, mobile usability, structured data, and internal linking, the foundations that unlock content and link investments.',
+          'We check whether Google can reach and index the right pages, whether redirects work and what slows the site down on mobile. We also review internal links, sitemaps and structured data.',
       },
       {
         question: 'How often should you do an SEO audit?',
@@ -270,7 +270,7 @@ const BY_SERVICE: Record<string, { en: ServiceFaqItem[]; el: ServiceFaqItem[] }>
       {
         question: 'Τι είναι το SEO audit;',
         answer:
-          'Ένα SEO audit είναι τεχνικός έλεγχος της ιστοσελίδας: ευρετηρίαση, ταχύτητα, δομή, on-page και περιεχόμενο, με λίστα διορθώσεων κατά προτεραιότητα. Δεν είναι λίστα 200 προειδοποιήσεων από εργαλείο, αλλά πλάνο για το τι διορθώνεται πρώτο και γιατί.',
+          'Ελέγχουμε ποιες σελίδες βρίσκει η Google, ποιες λείπουν και τι δυσκολεύει τον επισκέπτη. Για κάθε πρόβλημα θα δείτε ποια σελίδα αφορά, γιατί αξίζει να διορθωθεί και από πού να ξεκινήσετε.',
       },
       {
         question: 'Πόσο κοστίζει ένας έλεγχος SEO;',
@@ -280,12 +280,12 @@ const BY_SERVICE: Record<string, { en: ServiceFaqItem[]; el: ServiceFaqItem[] }>
       {
         question: 'Υπάρχει δωρεάν έλεγχος ιστοσελίδας;',
         answer:
-          'Ναι. Ο δωρεάν αρχικός έλεγχος γίνεται μέσα σε 24 ώρες σε εργάσιμες ημέρες και δείχνει αν υπάρχει σοβαρό πρόβλημα. Για άμεσο σκορ, το δωρεάν εργαλείο SEO ελέγχου δίνει αποτέλεσμα σε ένα λεπτό.',
+          'Ναι. Στείλτε μας τη διεύθυνση και το θέμα που σας απασχολεί. Ο δωρεάν αρχικός έλεγχος βοηθά να φανεί αν χρειάζεται πιο αναλυτική εξέταση.',
       },
       {
         question: 'Τι περιλαμβάνει το τεχνικό SEO;',
         answer:
-          'Crawlability, canonical, sitemaps, Core Web Vitals, προσαρμογή σε κινητά, structured data και εσωτερικούς συνδέσμους: τα θεμέλια που χρειάζονται το περιεχόμενο και οι σύνδεσμοι για να αποδώσουν.',
+          'Ελέγχουμε αν η Google βρίσκει τις σωστές σελίδες, πού οδηγούν οι ανακατευθύνσεις και τι καθυστερεί τη φόρτωση στο κινητό. Εξετάζουμε επίσης τους εσωτερικούς συνδέσμους, τα sitemaps και τα structured data.',
       },
       {
         question: 'Πότε θα δω αποτελέσματα μετά το audit;',
@@ -348,12 +348,12 @@ const BY_SERVICE: Record<string, { en: ServiceFaqItem[]; el: ServiceFaqItem[] }>
       {
         question: 'Do you write blogs and service pages?',
         answer:
-          'Yes. Pillar guides, service pages, location pages, and FAQs, with schema-ready Q&A for PAA and AI Overviews when relevant.',
+          'Yes. We write guides, service pages, location pages and answers to customer questions in English and Greek. We agree the audience and purpose before drafting.',
       },
       {
         question: 'How do you pick topics?',
         answer:
-          'From Search Console opportunities, commercial keyword clusters, and competitor gaps, prioritized by intent and business value, not vanity volume alone.',
+          'We start with searches already sending people to your site and questions customers ask before they buy. Those tell us which page to write or update first.',
       },
     ...DEFAULT_EN.slice(2),
     ],
@@ -361,7 +361,7 @@ const BY_SERVICE: Record<string, { en: ServiceFaqItem[]; el: ServiceFaqItem[] }>
       {
         question: 'Τι είναι το SEO copywriting;',
         answer:
-          'Κείμενα που απαντούν σε συγκεκριμένη πρόθεση αναζήτησης, με σωστή δομή, τίτλους και εσωτερικούς συνδέσμους, ώστε η σελίδα να κατατάσσεται και ταυτόχρονα να πείθει τον αναγνώστη να επικοινωνήσει ή να αγοράσει.',
+          'Είναι η συγγραφή μιας σελίδας γύρω από μια πραγματική ερώτηση του πελάτη. Για παράδειγμα, μια σελίδα ενοικίασης αυτοκινήτου μπορεί να εξηγεί την εγγύηση και την ασφάλιση πριν ζητήσει από τον επισκέπτη να κάνει κράτηση.',
       },
       {
         question: 'Πόσο κοστίζει ένα άρθρο SEO;',
@@ -382,7 +382,7 @@ const BY_SERVICE: Record<string, { en: ServiceFaqItem[]; el: ServiceFaqItem[] }>
       {
         question: 'Θα χάσω την κατάταξή μου με νέο site;',
         answer:
-          'Όχι, αν η μετάβαση σχεδιαστεί πριν το λανσάρισμα. Καταγράφουμε κάθε URL που φέρνει κίνηση, βάζουμε 301 redirects ένα προς ένα και παρακολουθούμε ευρετηρίαση και θέσεις τις πρώτες εβδομάδες. Οι απώλειες συμβαίνουν όταν αυτό το βήμα παραλείπεται.',
+          'Ένας ανασχεδιασμός μπορεί να επηρεάσει την κατάταξη. Πριν τη μετάβαση καταγράφουμε τις σελίδες που φέρνουν επισκέπτες και αντιστοιχίζουμε κάθε παλιά διεύθυνση με τη νέα. Μετά ελέγχουμε τις ανακατευθύνσεις, την ευρετηρίαση και τα κλικ.',
       },
       {
         question: 'Πόσο κοστίζει ένας ανασχεδιασμός ιστοσελίδας;',

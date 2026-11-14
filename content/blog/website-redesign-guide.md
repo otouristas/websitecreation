@@ -52,7 +52,7 @@ Result: **-40% to -80% organic traffic**, with months to recover. In tourism and
 1. **Inventory**: full record of pages, rankings, and backlinks before anything changes.
 2. **Redirect map**: every old URL 301s to the right new one, not all to the homepage.
 3. **Preserve what performs**: pages that bring traffic get redesigned, not deleted.
-4. **Speed as a spec**: the new site must be measurably faster (Core Web Vitals), not just prettier.
+4. **Agree on speed targets.** Record Core Web Vitals before the redesign so you can compare the same pages after launch.
 5. **Pre-launch check**: crawl the new site on staging, broken links, meta, schema, mobile.
 6. **Post-launch monitoring**: Search Console daily for the first weeks so any issue is caught immediately.
 

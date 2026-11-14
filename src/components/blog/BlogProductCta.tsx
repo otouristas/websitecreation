@@ -1,4 +1,7 @@
-import type { SiteLocale } from '@/lib/i18n/locale';
+import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
+import { localizedPath, type SiteLocale } from '@/lib/i18n/locale';
+import { articleNextStep } from '@/data/blog-next-steps';
 import { Accent, CheckList, Container, DecisionsPanel, KitEyebrow, SoftwareCtas, Stage } from '@/components/kit';
 
 /**
@@ -8,8 +11,26 @@ import { Accent, CheckList, Container, DecisionsPanel, KitEyebrow, SoftwareCtas,
  * rather than the agency quote - the reverse of the commercial pages. The kit's
  * SoftwareCtas resolve the app origin through getAppPath().
  */
-export function BlogProductCta({ locale = 'en' }: { locale?: SiteLocale }) {
+export function BlogProductCta({ locale = 'en', pillar }: { locale?: SiteLocale; pillar?: string }) {
   const isEl = locale === 'el';
+
+  const step = articleNextStep(pillar, locale);
+  if (step) {
+    return (
+      <section className="py-12" aria-labelledby="article-next-step">
+        <Container>
+          <div className="rounded-3xl border border-hairline bg-surface p-6 sm:p-10">
+            <KitEyebrow className="text-brand">AnotherSEOGuru App</KitEyebrow>
+            <h2 id="article-next-step" className="mt-3 text-balance font-display text-2xl font-semibold tracking-tight sm:text-3xl">{step.heading}</h2>
+            <p className="mt-3 max-w-2xl leading-relaxed text-muted-foreground">{step.description}</p>
+            <Link href={localizedPath(locale, step.path)} className="mt-5 inline-flex min-h-11 items-center gap-2 font-semibold text-primary underline decoration-primary/40 underline-offset-4">
+              {step.label}<ArrowRight className="size-4" aria-hidden />
+            </Link>
+          </div>
+        </Container>
+      </section>
+    );
+  }
 
   const points = isEl
     ? [

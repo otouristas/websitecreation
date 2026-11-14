@@ -213,6 +213,22 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         {/* Body + sticky TOC rail */}
         <div className="mx-auto grid max-w-6xl gap-12 px-6 py-14 lg:grid-cols-[minmax(0,1fr)_16rem] lg:gap-16">
           <article className="min-w-0">
+            {post.headings.length >= 3 ? (
+              <details className="mb-8 rounded-xl border border-hairline bg-surface px-4 lg:hidden">
+                <summary className="cursor-pointer py-3 font-semibold text-foreground">{isEl ? "Περιεχόμενα άρθρου" : "Jump to a section"}</summary>
+                <nav aria-label={isEl ? "Ενότητες άρθρου" : "Article sections"} className="pb-3">
+                  <ul>
+                    {post.headings.map((heading) => (
+                      <li key={heading.id}>
+                        <a href={`#${heading.id}`} className="block py-2 text-sm text-primary underline-offset-4 hover:underline">
+                          {heading.text}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </nav>
+              </details>
+            ) : null}
             {post.slug === 'black-month-istoselides-seo-2026' ? <BlackMonthArticleStatus /> : null}
             {showChecklist ? (
               <>
@@ -356,7 +372,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </aside>
         </div>
 
-        <BlogProductCta locale={locale as SiteLocale} />
+        <BlogProductCta locale={locale as SiteLocale} pillar={pillarSlug} />
 
         <CtaBand locale={locale as SiteLocale} source="blog-post-band" />
       </main>

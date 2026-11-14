@@ -75,7 +75,7 @@ See our [pricing](/el/ypiresies/times) and the general [website cost guide](/en/
 
 You can assemble a basic WooCommerce store yourself. The hard part is not installing plugins: it is payments that work, shipping that does not confuse customers, category architecture that ranks, and mobile speed that converts. If you are aiming for real revenue, an experienced team saves months of trial and error. See how we approach [WooCommerce builds](/en/services/eshop-woocommerce).
 
-## Common Mistakes That Kill Sales
+## Where shoppers run into trouble at checkout
 
 1. **Supplier copy pasted onto every product**: duplicate content, zero differentiation.
 2. **Categories named for internal warehouse logic** instead of how people search.

@@ -130,4 +130,4 @@ They accelerate briefs and summaries. They do not replace crawl data, backlink g
 
 ## Ready to Get Started?
 
-Explore the [free tools hub](/en/tools/free-seo-tools), run a [free SEO audit](/en/tools/free-seo-audit), and when you want execution (not just software) [get started](/en/get-started) with a scoped SEO or AI Visibility plan.
+Explore the [free tools hub](/en/tools/free-seo-tools), run a [free SEO audit](/en/tools/free-seo-audit), and if you want a team to make the changes, [ask about our services in Greece](/el/get-started) for an SEO or AI Visibility plan.
