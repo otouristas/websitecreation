@@ -9,6 +9,7 @@ import {
 } from '@/lib/i18n/locale';
 import { decideServiceLocationRoute } from '@/lib/indexability/service-location';
 import { legacyWebDesignRedirect } from '@/lib/indexability/web-design-redirect';
+import { RETIRED_WORK_SLUGS } from '@/data/retired-work';
 import { getAllServiceSlugs } from '@/data/services';
 import { THEME_INIT_SCRIPT } from '@/brand/theme';
 import {
@@ -40,6 +41,7 @@ function detectLocale(request: NextRequest): SiteLocale {
 }
 
 const KNOWN_SERVICES = new Set(getAllServiceSlugs());
+const retiredWork = new Set<string>(RETIRED_WORK_SLUGS);
 
 function escapeHtml(value: string): string {
   return value.replace(/[&<>"']/g, (ch) => `&#${ch.charCodeAt(0)};`);
@@ -102,6 +104,21 @@ function agencyDomainResponse(request: NextRequest): NextResponse {
   if (pathname === '/ypiresies' || pathname.startsWith('/ypiresies/')) {
     return NextResponse.redirect(new URL(`${agencyDomainPath(`/el${pathname}`)}${search}`, request.url), 301);
   }
+  const localized = /^\/(?:el|en)(?:\/|$)/.test(pathname) ? pathname : `/el${pathname}`;
+  const work = /^\/(?:el|en)\/work\/([^/]+)\/?$/.exec(localized);
+  if (work && retiredWork.has(work[1])) {
+    return NextResponse.redirect(new URL(`/work${search}`, request.url), 301);
+  }
+  const retiredService = legacyWebDesignRedirect(localized);
+  if (retiredService) {
+    const target = greekAgencyPath(retiredService.replace(/^\/(?:el|en)/, ''));
+    return NextResponse.redirect(new URL(`${agencyDomainPath(target)}${search}`, request.url), 301);
+  }
+  const legacyCity = decideServiceLocationRoute(localized);
+  if (legacyCity?.kind === 'gone') return goneResponse(legacyCity.locale, legacyCity.service);
+  if (legacyCity?.kind === 'redirect') {
+    return NextResponse.redirect(new URL(`${agencyDomainPath(legacyCity.to)}${search}`, request.url), legacyCity.status);
+  }
   // Old English and translated route aliases point straight to the final Greek URL.
   if (pathname.startsWith('/en/') && isAgencyPathname(pathname)) {
     const greekPath = greekAgencyPath(pathname.slice(3));
@@ -131,17 +148,11 @@ export function middleware(request: NextRequest) {
     return agencyDomainResponse(request);
   }
 
-  // Once the agency has its own domain, its Greek pages here move there.
-  const moved = greekAgencyMoveRedirect(pathname);
-  if (moved) {
-    return NextResponse.redirect(`${moved}${request.nextUrl.search}`, 301);
-  }
-
   // Legacy and city redirects that land on an English agency page go straight
   // on to its Greek page, so no request takes two hops.
   const webDesign = legacyWebDesignRedirect(pathname);
   if (webDesign) {
-    return NextResponse.redirect(new URL(englishAgencyRedirect(webDesign) ?? webDesign, request.url), 301);
+    return NextResponse.redirect(new URL((englishAgencyRedirect(webDesign) ?? greekAgencyMoveRedirect(webDesign) ?? webDesign) + request.nextUrl.search, request.url), 301);
   }
 
   const cityRoute = decideServiceLocationRoute(pathname);
@@ -149,7 +160,13 @@ export function middleware(request: NextRequest) {
     return goneResponse(cityRoute.locale, cityRoute.service);
   }
   if (cityRoute?.kind === 'redirect') {
-    return NextResponse.redirect(new URL(englishAgencyRedirect(cityRoute.to) ?? cityRoute.to, request.url), cityRoute.status);
+    return NextResponse.redirect(new URL((englishAgencyRedirect(cityRoute.to) ?? greekAgencyMoveRedirect(cityRoute.to) ?? cityRoute.to) + request.nextUrl.search, request.url), cityRoute.status);
+  }
+
+  // Once the agency has its own domain, its Greek pages here move there.
+  const moved = greekAgencyMoveRedirect(pathname);
+  if (moved) {
+    return NextResponse.redirect(`${moved}${request.nextUrl.search}`, 301);
   }
 
   // anotherseoguru.com is the product site. The agency serves Greek clients, so

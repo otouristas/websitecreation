@@ -117,7 +117,9 @@ export async function generateMetadata({
       },
     },
     verification: {
-      google: ['tkWhNe__BsE39YeIQM5fmGc8Y1W7hzw8RadiokDZquw', 'google57799cfd84f0e265'],
+      google: process.env.NEXT_PUBLIC_AGENCY_WORKER === '1'
+        ? process.env.NEXT_PUBLIC_AGENCY_GOOGLE_SITE_VERIFICATION || undefined
+        : ['tkWhNe__BsE39YeIQM5fmGc8Y1W7hzw8RadiokDZquw', 'google57799cfd84f0e265'],
     },
   };
 }

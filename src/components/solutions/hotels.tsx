@@ -120,12 +120,13 @@ const copy = {
       eyebrow: 'Structure',
       title: 'Every room type earns its own page',
       body:
-        'A room type is a product. It has a price, a capacity, a view and a set of searches attached to it. Collapsing them all into one gallery throws that away.',
+        'A family comparing rooms needs to know whether a second child fits, whether breakfast is included and when they can cancel. We put your terms on each room page alongside the photos and a route to availability.',
       points: [
-        'Rates, capacity, size and view as structured data',
+        'Room capacity, floor area, view and what the rate covers',
+        'Separate counts for booking-engine visits and confirmed bookings when the system returns a confirmation',
         'Photography per room type, not one shared carousel',
         'Availability and booking entry on every room page',
-        'Package and offer pages that can rank independently',
+        'A test booking on mobile, from the room page to the booking engine in the language the guest selected',
       ],
     },
     proof: {
@@ -249,12 +250,13 @@ const copy = {
       eyebrow: 'Δομή',
       title: 'Κάθε τύπος δωματίου αξίζει τη δική του σελίδα',
       body:
-        'Ένας τύπος δωματίου είναι προϊόν. Έχει τιμή, χωρητικότητα, θέα και ένα σύνολο αναζητήσεων πάνω του. Αν τα συγχωνεύσετε όλα σε μία γκαλερί, τα πετάτε.',
+        'Μια οικογένεια που συγκρίνει δωμάτια θέλει να ξέρει αν χωράει δεύτερο παιδί, αν το πρωινό περιλαμβάνεται στην τιμή και μέχρι πότε μπορεί να ακυρώσει. Γράφουμε τους δικούς σας όρους στη σελίδα κάθε δωματίου, δίπλα στις φωτογραφίες και στη διαθεσιμότητα.',
       points: [
-        'Τιμές, χωρητικότητα, τετραγωνικά και θέα ως structured data',
-        'Φωτογράφιση ανά τύπο δωματίου, όχι ένα κοινό carousel',
-        'Διαθεσιμότητα και είσοδος κράτησης σε κάθε σελίδα δωματίου',
-        'Σελίδες πακέτων και προσφορών που κατατάσσονται αυτόνομα',
+        'Χωρητικότητα, τετραγωνικά, θέα και τι περιλαμβάνει η τιμή',
+        'Χωριστή μέτρηση για άνοιγμα της μηχανής και για ολοκληρωμένη κράτηση, εφόσον το σύστημα δίνει επιβεβαίωση',
+        'Φωτογραφίες του συγκεκριμένου τύπου δωματίου',
+        'Έλεγχος διαθεσιμότητας για τον συγκεκριμένο τύπο δωματίου',
+        'Δοκιμή κράτησης σε κινητό από τη σελίδα δωματίου μέχρι τη μηχανή κρατήσεων, στη γλώσσα που επέλεξε ο επισκέπτης',
       ],
     },
     proof: {

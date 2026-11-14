@@ -37,7 +37,7 @@ export default async function PrivacyPage({ params }: PageProps) {
           <p className="mt-4 font-mono text-[12px] uppercase tracking-[0.12em] text-muted-foreground">{t.privacy.lastUpdated}</p>
           <KitProse className="mt-10 border-t border-hairline pt-4 text-muted-foreground">
             {t.privacy.sections.map((section) => (
-              <section key={section.heading}>
+              <section key={section.heading} id={section.heading === '3. Cookies' ? 'cookies' : undefined}>
                 <h2>{section.heading}</h2>
                 <p>{section.body}</p>
               </section>
