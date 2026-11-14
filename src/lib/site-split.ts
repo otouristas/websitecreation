@@ -76,6 +76,8 @@ export function agencyHref(elPathname: string): string {
 export const AGENCY_HOME_HREF = agencyHref(AGENCY_HOME_EL);
 export const AGENCY_PRICING_HREF = agencyHref(AGENCY_PRICING_EL);
 export const AGENCY_AUDIT_HREF = agencyHref(AGENCY_AUDIT_EL);
+export const AGENCY_WEBSITE_HREF = agencyHref('/el/services/website-creation');
+export const AGENCY_ESHOP_HREF = agencyHref('/el/services/eshop-woocommerce');
 
 /** Bare-path sections (no locale prefix) that belong to the agency. */
 const AGENCY_SECTIONS = [
