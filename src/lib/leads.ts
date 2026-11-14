@@ -7,7 +7,7 @@ export type { TeamAgent, TeamProgress } from '@/lib/lead-progress';
  * Every enquiry goes to the app's persisted agency pipeline. That endpoint
  * owns measured reports, acknowledgements and the existing owner notification.
  * A single delivery path avoids a second provider's unrelated auto-response.
- * The app endpoint answers CORS for anotherseoguru.com and this project's Vercel previews.
+ * On the agency Worker, the browser posts to its own origin. Both paths use the same app intake.
  */
 
 export type LeadSource = 'website-contact' | 'website-get-started' | 'website-scan' | 'website-free-audit';
@@ -23,6 +23,10 @@ export interface AppLead {
   message?: string;
   locale: 'en' | 'el';
   source: LeadSource;
+}
+
+function leadEndpoint(): string {
+  return process.env.NEXT_PUBLIC_AGENCY_WORKER === '1' ? '/api/agency-leads' : getAppPath('/api/leads');
 }
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -64,7 +68,7 @@ export async function sendLeadToApp(lead: AppLead): Promise<{ ok: boolean; token
   };
 
   try {
-    const res = await fetch(getAppPath('/api/leads'), {
+    const res = await fetch(leadEndpoint(), {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(body),
@@ -82,7 +86,7 @@ export async function sendLeadToApp(lead: AppLead): Promise<{ ok: boolean; token
 /** The SEO team's progress on a lead (statuses only, never findings); null when it can't be read. */
 export async function fetchTeamProgress(token: string): Promise<TeamProgress | null> {
   try {
-    const res = await fetch(`${getAppPath('/api/leads')}?token=${encodeURIComponent(token)}`, { cache: 'no-store' });
+    const res = await fetch(`${leadEndpoint()}?token=${encodeURIComponent(token)}`, { cache: 'no-store' });
     if (!res.ok) return null;
     return parseTeamProgress(await res.json());
   } catch {

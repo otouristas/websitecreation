@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Check } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
-import { BlackMonthBanner } from "@/components/pricing/BlackMonthBanner";
 import Footer from "@/components/Footer";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
-import { Accent, Container, CtaBand, HeroCentered, KitEyebrow, KitHeading, KitSection, SoftwareCtas, TrustLine, softwareTrust } from "@/components/kit";
+import { Accent, Container, CtaBand, HeroCentered, KitEyebrow, KitHeading, KitSection } from "@/components/kit";
 import {
   AddonList,
   AgencyCrossSell,
@@ -21,7 +20,6 @@ import {
   PlatformLinks,
   TRIAL,
   appLink,
-  formatUsd,
   gscBoostSoftwareSchema,
   platformBreadcrumbs,
   platformMetadata,
@@ -58,7 +56,6 @@ export default async function PlatformPricingPage({ params }: PageProps) {
   const locale: SiteLocale = raw;
   const isEl = locale === "el";
   const tx = (en: string, el: string) => (isEl ? el : en);
-  const usd = (n: number) => formatUsd(locale, n);
 
   return (
     <>
@@ -78,23 +75,26 @@ export default async function PlatformPricingPage({ params }: PageProps) {
             </>
           }
           lead={tx(
-            `Start free with one site. Starter (${usd(STARTER.monthly)}/month) gives you the full list of suggested fixes. Choose Pro (${usd(PRO.monthly)}/month) for content and competitor research, or Agency (${usd(AGENCY.monthly)}/month) for client reports under your own brand.`,
-            `Ξεκινήστε δωρεάν με μία ιστοσελίδα. Με το Starter (${usd(STARTER.monthly)}/μήνα) βλέπετε όλες τις προτεινόμενες διορθώσεις. Το Pro (${usd(PRO.monthly)}/μήνα) προσθέτει εργαλεία για περιεχόμενο και έρευνα ανταγωνισμού. Με το Agency (${usd(AGENCY.monthly)}/μήνα) στέλνετε στους πελάτες αναφορές με το δικό σας λογότυπο.`,
+            "Work on your own site, research a market or report to clients. Choose the tools you need today.",
+            "Άλλες ανάγκες έχει ένα e-shop, άλλες μια ομάδα που φροντίζει δέκα πελάτες. Διαλέξτε τις λειτουργίες που χρειάζεστε σήμερα.",
           )}
-          actions={<SoftwareCtas locale={locale} source="pricing-hero" />}
-          trust={<TrustLine items={softwareTrust(locale)} />}
         >
-          <Container className="mt-14">
-            <p className="mb-7 flex items-center justify-center gap-2 text-[14px] font-medium text-foreground">
-              <span className="flex size-5 items-center justify-center rounded-full bg-brand/15 text-brand">
-                <Check className="size-3" strokeWidth={3} aria-hidden />
-              </span>
-              {tx(
-                `The free plan includes ${FREE_PLAN.credits} credits each month. You can also try Pro for ${TRIAL.days} days without a card.`,
-                `Το δωρεάν πακέτο σας δίνει ${FREE_PLAN.credits} μονάδες κάθε μήνα. Μπορείτε επίσης να δοκιμάσετε το Pro για ${TRIAL.days} ημέρες χωρίς κάρτα.`,
-              )}
-            </p>
-            <PlanPicker locale={locale} source="pricing-plans" className="mx-auto max-w-[1100px]" />
+          <Container className="mt-8 sm:mt-10">
+            <div className="mx-auto mb-7 flex max-w-[1100px] flex-wrap items-center justify-between gap-x-6 gap-y-3 rounded-2xl border border-hairline bg-surface px-5 py-4 text-left sm:px-6">
+              <div>
+                <h2 className="font-display text-lg font-semibold">{tx("Start with one site for free", "Ξεκινήστε δωρεάν με μία ιστοσελίδα")}</h2>
+                <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                  {tx(
+                    `${FREE_PLAN.credits} credits every month. Try Pro for ${TRIAL.days} days without a payment card.`,
+                    `${FREE_PLAN.credits} μονάδες κάθε μήνα. Δοκιμάστε το Pro για ${TRIAL.days} ημέρες χωρίς κάρτα.`,
+                  )}
+                </p>
+              </div>
+              <a className="inline-flex min-h-11 items-center gap-2 rounded-full border border-primary/30 px-4 text-sm font-semibold text-link hover:bg-primary/5 focus-visible:outline-2 focus-visible:outline-ring" href={appLink("/signup", locale, "pricing-free")}>
+                {tx("Create a free account", "Δωρεάν εγγραφή")} <ArrowRight aria-hidden className="size-4" />
+              </a>
+            </div>
+            <PlanPicker locale={locale} source="pricing-plans" className="mx-auto max-w-[1100px]" compactOnMobile />
             <p className="mt-8 text-center text-[13px] text-muted-foreground">
               {tx("Prices are in US dollars. Taxes may apply.", "Οι τιμές είναι σε δολάρια ΗΠΑ. Ενδέχεται να προστεθούν φόροι.")}{" "}
               <a
@@ -107,8 +107,6 @@ export default async function PlatformPricingPage({ params }: PageProps) {
             </p>
           </Container>
         </HeroCentered>
-
-        {isEl ? <BlackMonthBanner /> : null}
 
         <section aria-labelledby="included" className="mt-20 border-y border-hairline bg-surface/35 sm:mt-24">
           <Container className="py-12">
