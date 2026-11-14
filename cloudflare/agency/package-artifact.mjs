@@ -4,7 +4,7 @@ import { dirname, resolve, relative, sep } from 'node:path';
 const [output] = process.argv.slice(2);
 if (!output) throw new Error('Pass the destination directory');
 const pointer = JSON.parse(readFileSync('.wrangler/deploy/config.json', 'utf8'));
-const absoluteConfig = resolve(pointer.configPath);
+const absoluteConfig = resolve('.wrangler/deploy', pointer.configPath);
 const dist = resolve('dist');
 if (!absoluteConfig.startsWith(dist + sep)) throw new Error(`Expected a build config inside dist, received ${absoluteConfig}`);
 mkdirSync(output, { recursive: true });

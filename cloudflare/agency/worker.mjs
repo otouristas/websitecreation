@@ -1,3 +1,4 @@
+import { scanResponse } from './scan-service.mjs';
 import handler from 'vinext/server/fetch-handler';
 import { AGENCY_DOMAIN, comPathForAgencyDomain, agencyDomainPath, isAgencyPathname } from '../../src/lib/site-split';
 import { htmlToPageMarkdown } from '../../src/lib/markdown/page-markdown';
@@ -25,7 +26,7 @@ export default {
           'content-type': 'text/markdown; charset=utf-8', 'x-robots-tag': 'noindex', link: `<${canonical}>; rel="canonical"`, vary: 'Accept',
         } });
       } else {
-        response = await handler.fetch(request, env, ctx);
+        response = await scanResponse(request, url.pathname) ?? await handler.fetch(request, env, ctx);
       }
     }
     if (!preview) return response;
