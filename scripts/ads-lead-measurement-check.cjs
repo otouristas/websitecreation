@@ -8,7 +8,7 @@ const storage = () => {
   const values = new Map();
   return { getItem: key => values.get(key) ?? null, setItem: (key, value) => values.set(key, value), removeItem: key => values.delete(key) };
 };
-function fixture() {
+function fixture(agency = false) {
   const localStorage = storage();
   const sessionStorage = storage();
   const scripts = [];
@@ -17,9 +17,10 @@ function fixture() {
     search: '?gclid=verified_google_click_1234&email=private@example.com&token=secret',
     href: 'https://anotherseoguru.com/el/contact?email=private@example.com#secret',
   } };
+  if (agency) window.location = new URL('https://anotherseoguru.gr/get-started');
   const document = { title: 'Contact', cookie: '', getElementById: id => scripts.find(s => s.id === id), createElement: () => ({}), head: { appendChild: el => scripts.push(el) } };
   let appOk = false, analyticsThrows = false;
-  const shared = { process: { env: {} }, window, document, localStorage, sessionStorage, URL, URLSearchParams, Date, performance: {now: () => 4000} };
+  const shared = { process: { env: agency ? { NEXT_PUBLIC_AGENCY_WORKER: '1', NEXT_PUBLIC_AGENCY_GA_ID: 'G-1234567890' } : {} }, window, document, localStorage, sessionStorage, URL, URLSearchParams, Date, performance: {now: () => 4000} };
   function module(path, dependencies = {}) {
     const exports = {};
     const compiled = ts.transpileModule(fs.readFileSync(path, 'utf8'), { compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022 } }).outputText;
@@ -44,6 +45,22 @@ const enquiry = { name: 'Private Person', email: 'private@example.com', phone: '
 const payload = { form: 'contact', email: enquiry.email };
 
 (async () => {
+  const agency = fixture(true);
+  const pages = () => Array.from(agency.commands()).filter(a => a[0] === 'event' && a[1] === 'page_view').map(a => a[2].page_path);
+  agency.analytics.trackPageView(agency.window.location.href);
+  agency.analytics.applyMeasurementConsent(true, false);
+  agency.analytics.trackPageView(agency.window.location.href);
+  agency.analytics.trackPageView(agency.window.location.href + '#free-audit');
+  assert.deepEqual(pages(), ['/get-started'], 'Consent and the route watcher count one landing page');
+  agency.analytics.trackPageView('/times');
+  agency.analytics.trackPageView('/get-started');
+  assert.deepEqual(pages(), ['/get-started', '/times', '/get-started'], 'Returning after another page counts');
+  agency.analytics.applyMeasurementConsent(false, false);
+  agency.analytics.trackPageView('/times');
+  assert.equal(pages().length, 3, 'Revocation suppresses subsequent views');
+  agency.analytics.applyMeasurementConsent(true, false);
+  assert.equal(pages().length, 4, 'A new consent starts measurement again');
+
   let f = fixture();
   f.outcome(true);
   assert.equal((await f.leads.submitLead(payload, enquiry)).ok, true);

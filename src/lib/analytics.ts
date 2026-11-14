@@ -17,6 +17,7 @@ export const GOOGLE_ADS_ID = 'AW-18400993971';
 export const GOOGLE_ADS_LEAD_DESTINATION = `${GOOGLE_ADS_ID}/FwkvCM7J_eQcELPFo8ZE`;
 export const ADS_CONSENT_KEY = 'ads-measurement-consent';
 let adsConfigured = false;
+let lastAgencyPage: string | undefined;
 const measuredLeads = new Set<string>();
 
 function hasAdsConsent(): boolean {
@@ -99,10 +100,17 @@ export function enableGoogleAnalytics(): void {
 }
 
 export function trackPageView(url: string): void {
+  if (!canMeasure() || !window.gtag) return;
+  try { if (localStorage.getItem('cookie-consent') !== 'accepted') return; } catch { return; }
+  const page = new URL(url, window.location.origin);
+  const location = page.origin + page.pathname;
+  // Consent and the route watcher can both report the same navigation.
+  if (agencyBuild && lastAgencyPage === location) return;
+  if (agencyBuild) lastAgencyPage = location;
   trackEvent('page_view', {
-    page_location: new URL(url, window.location.origin).origin + new URL(url, window.location.origin).pathname,
+    page_location: location,
     page_referrer: '',
-    page_path: new URL(url, window.location.origin).pathname,
+    page_path: page.pathname,
     page_title: document.title,
   });
 }
@@ -161,6 +169,7 @@ export function captureUtmParams(): Record<string, string> {
 
 /** Revocation stops future events and removes analytics cookies, not historical server data. */
 export function disableGoogleAnalytics(): void {
+  lastAgencyPage = undefined;
   Object.assign(window, { [`ga-disable-${GA_MEASUREMENT_ID}`]: true });
   window.gtag?.('consent', 'update', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
   for (const cookie of document.cookie.split(';')) {
