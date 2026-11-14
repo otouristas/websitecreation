@@ -11,7 +11,7 @@ import { Analytics } from '@vercel/analytics/next';
 import { isValidLocale } from '@/lib/i18n/locale';
 import { CONTACT_EMAIL } from '@/lib/contact-info';
 import { AGENCY_ORIGIN, AGENCY_WORKER } from '@/lib/site-split';
-import { APP_ORIGIN, LEGAL_ENTITY_ID, LEGAL_ENTITY_NAME } from '@/data/legal-entity';
+import { LEGAL_ENTITY_ID, LEGAL_ENTITY_NAME } from '@/data/legal-entity';
 
 const SITE_URL = 'https://anotherseoguru.com';
 
@@ -209,12 +209,13 @@ function buildStructuredDataGraph(isEl: boolean) {
         name: 'AnotherSEOGuru App',
         url: SITE_URL,
         applicationCategory: 'BusinessApplication',
+        applicationSubCategory: 'SEO reporting software',
         operatingSystem: 'Web, iOS, Android',
         publisher: { '@id': `${SITE_URL}/#organization` },
         offers: {
           '@type': 'Offer',
           price: '0',
-          priceCurrency: 'EUR',
+          priceCurrency: 'USD',
           description: isEl ? 'Δωρεάν πλάνο, με αναβάθμιση όποτε θέλετε' : 'Free plan, upgrade any time',
         },
       },
@@ -226,8 +227,8 @@ function buildStructuredDataGraph(isEl: boolean) {
         url: SITE_URL,
         brand: { '@type': 'Brand', name: 'AnotherSEOGuru', url: SITE_URL },
         owns: [
-          { '@type': 'WebSite', name: 'AnotherSEOGuru', url: SITE_URL },
-          { '@type': 'SoftwareApplication', name: 'AnotherSEOGuru', url: APP_ORIGIN },
+          { '@id': `${SITE_URL}/#website` },
+          { '@id': `${SITE_URL}/#app` },
         ],
       },
       {

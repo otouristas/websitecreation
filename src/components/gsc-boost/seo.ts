@@ -35,36 +35,42 @@ export function gscBoostSoftwareSchema(locale: SiteLocale, path = "/"): SchemaOu
   return {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
+    "@id": `${BASE_URL}/#app`,
     name: "AnotherSEOGuru App",
     alternateName: "AnotherSEOGuru",
     description:
       locale === "el"
-        ? "Λογισμικό SEO που διαβάζει το Google Search Console και δίνει τις διορθώσεις που φέρνουν τα περισσότερα κλικ, με σειρά και εκτίμηση."
-        : "SEO software that reads Google Search Console and hands you the fixes that win the most clicks, ranked and estimated.",
-    url: `${BASE_URL}${localizedPath(locale, path)}`,
+        ? "Λογισμικό για ανάλυση αναζητήσεων και αναφορές SEO. Συνδέστε το Google Search Console, συγκρίνετε την απόδοση ανά σελίδα και ετοιμάστε αναφορά για τον πελάτη σας."
+        : "SEO reporting software for agencies and site owners. Connect Google Search Console, compare search performance by page and prepare a client report.",
+    url: BASE_URL,
+    subjectOf: { "@type": "WebPage", url: `${BASE_URL}${localizedPath(locale, path)}` },
     applicationCategory: "BusinessApplication",
-    operatingSystem: "Web",
+    applicationSubCategory: "SEO reporting software",
+    operatingSystem: "Web, iOS, Android",
     inLanguage: locale,
     installUrl: getAppPath("/signup"),
     offers: {
       "@type": "AggregateOffer",
       priceCurrency: "USD",
-      lowPrice: String(Math.min(...PLANS.map((p) => p.monthly))),
+      lowPrice: "0",
       highPrice: String(Math.max(...PLANS.map((p) => p.monthly))),
-      offerCount: PLANS.length,
-      offers: PLANS.map((p) => ({
-        "@type": "Offer",
-        name: p.id,
-        price: String(p.monthly),
-        priceCurrency: "USD",
-        priceSpecification: {
-          "@type": "UnitPriceSpecification",
+      offerCount: PLANS.length + 1,
+      offers: [
+        { "@type": "Offer", name: "Free", price: "0", priceCurrency: "USD", url: `${BASE_URL}${localizedPath(locale, "/pricing")}` },
+        ...PLANS.map((p) => ({
+          "@type": "Offer",
+          name: p.id,
           price: String(p.monthly),
           priceCurrency: "USD",
-          unitCode: "MON",
-        },
-        url: `${BASE_URL}${localizedPath(locale, "/pricing")}`,
-      })),
+          priceSpecification: {
+            "@type": "UnitPriceSpecification",
+            price: String(p.monthly),
+            priceCurrency: "USD",
+            unitCode: "MON",
+          },
+          url: `${BASE_URL}${localizedPath(locale, "/pricing")}`,
+        })),
+      ],
     },
     provider: brandOrganization(),
     publisher: { "@type": "Organization", "@id": LEGAL_ENTITY_ID, name: LEGAL_ENTITY_NAME },
