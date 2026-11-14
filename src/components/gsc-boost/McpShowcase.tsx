@@ -33,7 +33,10 @@ export function McpShowcase({ locale }: { readonly locale: SiteLocale }) {
       } else if (message.method === "ui/notifications/size-changed" && Number.isFinite(message.params?.height)) {
         setHeight(Math.min(1600, Math.max(320, message.params.height + 2)));
       } else if (message.method === "ui/open-link") {
-        send({ jsonrpc: "2.0", id: message.id, result: { isError: true } });
+        const appUrl = "https://app.anotherseoguru.com/app";
+        const allowed = message.params?.url === appUrl;
+        send({ jsonrpc: "2.0", id: message.id, result: { isError: !allowed } });
+        if (allowed) window.location.assign(appUrl);
       }
     };
     window.addEventListener("message", onMessage);
@@ -52,14 +55,14 @@ export function McpShowcase({ locale }: { readonly locale: SiteLocale }) {
         <p className="font-mono text-[11px] uppercase tracking-widest text-primary">ANOTHERSEOGURU × CHATGPT / CLAUDE</p>
         <h2 className="mt-4 font-display text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">{el ? "Τα δεδομένα σας γίνονται συζήτηση." : "Your data becomes a conversation."}</h2>
         <p className="mt-5 text-sm leading-7 text-muted-foreground">{el ? "Κλικ, εμφανίσεις, CTR και θέση, με διαδραστικά γραφήματα μέσα στο ChatGPT. Στο Claude, τα ίδια εργαλεία δίνουν τα δεδομένα του έργου και τις εργασίες σας." : "Clicks, impressions, CTR and position, with interactive charts in ChatGPT. In Claude, the same tools provide your project data and tasks."}</p>
-        <p className="mt-4 rounded-xl border border-hairline bg-surface/70 p-4 text-xs leading-6 text-muted-foreground">{el ? "Δοκιμάστε την κάρτα: πατήστε Κλικ, Εμφανίσεις, CTR ή Μέση θέση. Αυτό είναι το component του MCP μας με υποθετικά δεδομένα επίδειξης, όχι στοιχεία πελάτη." : "Try the card: choose Clicks, Impressions, CTR or Average position. This is our MCP component with fictional demonstration data, not customer records."}</p>
+        <p className="mt-4 rounded-xl border border-hairline bg-surface/70 p-4 text-xs leading-6 text-muted-foreground">{el ? "Επιλέξτε μια μέτρηση για να δείτε πώς άλλαξε μέσα στην εβδομάδα. Ανοίξτε τον πίνακα κάτω από το γράφημα για τις τιμές κάθε ημέρας." : "Choose a metric to see how it changed over the week. Open the table below the chart to see each day’s figures."}</p>
         <a href="#clients" className="mt-6 inline-flex min-h-12 items-center gap-3 font-semibold text-primary">{el ? "Συνδέστε τον βοηθό σας" : "Connect your assistant"}<ArrowRight className="size-4" aria-hidden /></a>
       </div>
       <figure className="min-w-0 overflow-hidden rounded-3xl border border-hairline bg-white p-2 shadow-[0_24px_80px_-35px_color-mix(in_oklab,var(--primary)_35%,transparent)] sm:p-3">
         <figcaption className="flex flex-wrap items-center justify-between gap-2 px-3 py-3 text-[10px] font-semibold uppercase tracking-wider text-[#526377]">
           <span>{el ? "Διαδραστική κάρτα MCP" : "Interactive MCP card"}</span><span>{el ? "Υποθετικά δεδομένα" : "Fictional sample data"}</span>
         </figcaption>
-        {ready ? <iframe key={locale} ref={frame} title={el ? "AnotherSEOGuru MCP: διαδραστικό δείγμα απόδοσης" : "AnotherSEOGuru MCP: interactive performance sample"} src="/previews/mcp/guru-v1.html" sandbox="allow-scripts" className="w-full border-0 bg-white" style={{ height }} /> : <div className="min-h-96 p-6 text-sm text-[#526377]">{el ? "Φόρτωση διαδραστικού δείγματος…" : "Loading interactive sample…"}</div>}
+        {ready ? <iframe key={locale} ref={frame} title={el ? "AnotherSEOGuru MCP: διαδραστικό δείγμα απόδοσης" : "AnotherSEOGuru MCP: interactive performance sample"} src="/previews/mcp/guru-v2.html" sandbox="allow-scripts" className="w-full border-0 bg-white" style={{ height }} /> : <div className="min-h-96 p-6 text-sm text-[#526377]">{el ? "Φόρτωση διαδραστικού δείγματος…" : "Loading interactive sample…"}</div>}
       </figure>
     </div>
   </div>;
